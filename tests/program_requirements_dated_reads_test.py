@@ -43,6 +43,9 @@ check(D.course_codes("Intro, EMS-80") == ["EMS 80"], "a course after a comma is 
 check(D.course_codes("Intro EMS-80") == [], "a course mid-string with no comma before it is not (the SQL's anchor)")
 check(D.course_codes("-") == [] and D.course_codes("") == [] and D.course_codes(None) == [], "no course: no code")
 check(D.course_codes("ems-80") == [], "the pattern is upper case, as in SQL")
+check(D.course_codes("EMS-80 EMT,\u00a0EMS-81 Lab") == ["EMS 80"],
+      "a no-break space after the comma is not Postgres's \\s, so the second course is not read (re.ASCII)")
+check(D.course_codes("EMS-80 EMT, EMS-81 Lab") == ["EMS 80", "EMS 81"], "an ordinary space after the comma is")
 check(D.course_codes("EMS-80, EMS-80") == ["EMS 80", "EMS 80"], "a repeat stays a repeat")
 
 # 2. the aggregate
@@ -56,7 +59,7 @@ units = [
     {"college": "A College", "college_course": "", "source_code": "ACE", "exhibit_id": "X9", "credit_rec": "r9"},
 ]
 ace = {"X1": ["Basic EMT"], "X4": ["Medic One", None]}
-chatbox = {"X2": "Field Medic", "X4": "Chatbox Medic", "X3": None}
+chatbox = {"X2": ["Medic Zulu", None, "Field Medic"], "X4": ["Chatbox Medic"], "X3": [None]}
 agg = D.aggregate(units, ace, chatbox)
 e80 = agg["A College"]["EMS 80"]
 check(set(agg["A College"]) == {"EMS 80", "EMS 81"}, "a two-course string counts toward each; an empty course field toward none")
@@ -68,7 +71,10 @@ check(e80["exhibits_by_source"] == {"ACE": 2, "unnamed": 2},
       "an empty or null source reads 'unnamed'; a source of null exhibits counts zero of them (got %s)" % e80["exhibits_by_source"])
 titles = [(t["title"], t["source"], t["recs"]) for t in e80["titles"]]
 check(("Basic EMT", "ACE", 2) in titles, "a titled exhibit's recs are its distinct recommendations")
-check(("Field Medic", "unnamed", 1) in titles, "no map_ace title: chatbox_exhibits' title")
+check(("Field Medic", "unnamed", 1) in titles and not any(x[0] == "Medic Zulu" for x in titles),
+      "no map_ace title: chatbox_exhibits' first title in title order, nulls last (the ordered SQL)")
+check(D.first_title([None, "b", "A"]) == "A" and D.first_title([None]) is None and D.first_title([]) is None,
+      "the fallback skips nulls and takes the first in title order")
 check(("Medic One", "ACE", 1) in titles and ("Chatbox Medic", "ACE", 1) in titles,
       "a two-row exhibit yields both, the null row falling back to chatbox (the left join)")
 check(e80["untitled_exhibits"] == 1, "an exhibit with no title anywhere is untitled (X3; got %s)" % e80["untitled_exhibits"])
@@ -102,6 +108,75 @@ check(diff == ["EMS 81: only in the fresh read", "EMS 99: only in the filed entr
 check(not any("Basic EMT" in d or "7" in d for d in diff), "the diff carries no value")
 check(D.differences(agg["A College"], json.loads(json.dumps(agg["A College"]))) == [],
       "an entry equals its own JSON round trip")
+
+# 4b. verify's one tolerance: chatbox fallback titles and the order of tied titles
+fb = {}
+D.aggregate(units, ace, chatbox, fb)
+check(fb == {("A College", "EMS 80"): {"Medic Zulu", "Field Medic"}},
+      "the fallback candidates are the titles of an exhibit chatbox holds several of (got %s)" % fb)
+old = json.loads(json.dumps(e80))
+for x in old["titles"]:
+    if x["title"] == "Field Medic":
+        x["title"] = "Medic Zulu"   # what the unordered SQL may have taken
+check(D.fallback_only(e80 and {"EMS 80": e80}, {"EMS 80": old}, {"EMS 80": fb[("A College", "EMS 80")]}) == 2,
+      "a fallback title alone: agrees except 2 fallback titles (one in, one out)")
+swapped = json.loads(json.dumps(e80))
+swapped["titles"] = list(reversed(swapped["titles"]))
+check(D.fallback_only({"EMS 80": e80}, {"EMS 80": swapped}, {}) == 1, "titles in another order alone: one")
+wrong = json.loads(json.dumps(old))
+wrong["recs"] = 99
+check(D.fallback_only({"EMS 80": e80}, {"EMS 80": wrong}, {"EMS 80": fb[("A College", "EMS 80")]}) is None,
+      "a fallback title beside any other difference fails")
+other = json.loads(json.dumps(e80))
+other["titles"][0]["title"] = "Something Else"
+check(D.fallback_only({"EMS 80": e80}, {"EMS 80": other}, {"EMS 80": fb[("A College", "EMS 80")]}) is None,
+      "a title that is no fallback candidate fails")
+check(D.fallback_only({"EMS 80": e80}, {"EMS 80": e80, "EMS 9": {}}, {}) is None, "a missing code fails")
+
+# 4c. a name MAP does not know files an empty entry; the reads count before and after
+calls = []
+
+
+def fake(table, select, filters, order):
+    calls.append(table)
+    if table == "map_colleges":
+        return [{"college_id": 7, "college_name": "A College"}]
+    if table == "map_college_cr_unit":
+        return [{"college_id": 7, "college_course": "EMS-80 EMT", "source_code": "ACE", "exhibit_id": "X1", "credit_rec": "r1"}]
+    if table == "map_ace_exhibit_titles":
+        return [{"exhibit_id": "X1", "title": "Basic EMT"}]
+    return []
+
+
+import contextlib  # noqa: E402
+import io  # noqa: E402
+buf = io.StringIO()
+with contextlib.redirect_stdout(buf):
+    got = D.read_map(["A College", "Unknown College"], fetch=fake)
+check(got["Unknown College"] == {} and got["A College"]["EMS 80"]["recs"] == 1,
+      "a name with no map_colleges row files an empty entry beside the others (got %s)" % got)
+log = buf.getvalue()
+check("notice: 1 named colleges have no map_colleges row" in log and "Basic EMT" not in log and "r1" not in log,
+      "a count-only notice; no row reaches the log")
+
+
+def pages(counts, rows):
+    seq = iter(counts)
+
+    def fetch_page(table, qs, start, size):
+        return (rows[start:start + size], next(seq))
+    return fetch_page
+
+
+D.PAGE = 2
+check(D.paged(pages([3, 3, 3, 3], [1, 2, 3]), "t", "") == [1, 2, 3], "a still table reads whole over its pages")
+for counts, what in (([3, 4], "between pages"), ([3, 3, 3, 4], "after the last page")):
+    try:
+        D.paged(pages(counts, [1, 2, 3, 4]), "t", "")
+        check(False, "a count that moved %s stops the run" % what)
+    except SystemExit as e:
+        check("Run the dispatch again" in str(e), "a count that moved %s stops the run and says to run again" % what)
+D.PAGE = 1000
 
 # 5. the filing
 tmp = tempfile.mkdtemp()
@@ -158,6 +233,10 @@ check(list(on) == ["workflow_dispatch"], "a dispatch only (got %s)" % list(on))
 check(set(on["workflow_dispatch"]["inputs"]) == {"colleges", "verify", "by"}, "inputs: colleges, verify, by")
 check(len(on["workflow_dispatch"]["inputs"]["verify"]["default"].split(",")) == 3, "three filed colleges verified by default")
 steps = wf["jobs"]["read"]["steps"]
+check(steps[0].get("name") == "Refuse to run on main" and 'exit 1' in steps[0]["run"] and "main" in steps[0]["run"],
+      "the first step refuses main")
+runs = "\n".join(s.get("run") or "" for s in steps)
+check("${{" not in runs, "no expression is expanded inside a run script; the ref, run id and inputs come through env")
 holders = [s.get("name") for s in steps if "SUPABASE_SERVICE_KEY" in json.dumps(s)]
 check(holders == ["Verify the filed colleges, then read MAP for the named ones"],
       "the service key reaches the MAP step alone: %r" % holders)

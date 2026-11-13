@@ -21,17 +21,25 @@ and title. No student column is selected, and no row is ever printed: the log ca
 It then computes the SQL's aggregate in Python:
   - a college_course string names courses by the SQL's pattern, (?:^|,\\s*)SUBJ-NUM, and a
     string naming several courses counts toward each; the code is SUBJ and NUM with a space;
-  - an exhibit's title is map_ace_exhibit_titles' title, else chatbox_exhibits' (a left join, so
-    an exhibit with two title rows yields both, as in SQL); the source is source_code, else
+  - an exhibit's title is map_ace_exhibit_titles' title, else chatbox_exhibits' first title in
+    title order, nulls last (the SQL's `order by x.exhibit_title nulls last limit 1`); a left join,
+    so an exhibit with two map_ace rows yields both, as in SQL; the source is source_code, else
     'unnamed';
   - per college and code: recs (distinct credit_rec), exhibits (distinct exhibit_id),
     exhibits_by_source, titles ({title, source, recs} ordered by recs descending, then title in
     the database's en_US collation; null when none), untitled_exhibits;
-  - a college none of whose rows names a course gets an empty entry.
+  - a college none of whose rows names a course gets an empty entry, and so does a name with no
+    map_colleges row (the SQL returns nothing for it; Calbright College Credit), with a notice.
 
 PROOF IT EQUALS THE SQL. `verify --colleges A,B,C` recomputes colleges already filed and exits 1
 unless each equals its filed entry exactly, printing only the course codes and field names that
-differ. The workflow runs it before it reads or writes anything else.
+differ. One tolerance: until S644 the SQL's chatbox fallback had no order, so an entry filed then may
+hold another of an exhibit's chatbox titles, or list titles tied on recs and title in another order.
+A college whose only differences are those reads `agrees except N fallback titles` and passes; any
+other difference fails. The workflow runs it before it reads or writes anything else.
+
+Every table read counts the table exactly before and after it pages; a count that moved (MAP swapped
+between pages) stops the run, which is safe to run again.
 
 Usage:
   python3 kb/_program_requirements_dated_reads.py verify   --colleges "Merced College,Cuesta College"
@@ -71,7 +79,8 @@ REGISTRY_COLUMNS = ("catalog_platform", "catalog_year", "catalog_url", "census_r
                     "sequence_access", "sequence_host", "sequence_url", "sequence_note", "sequence_checked_run")
 # The SQL's pattern, unchanged: regexp_matches(u.college_course, '(?:^|,\s*)([A-Z][A-Z0-9&/ ]*?)-([0-9A-Z][0-9A-Z.]*)', 'g').
 # The subject cannot hold a hyphen, so the first hyphen ends it in both engines.
-COURSE = re.compile(r"(?:^|,\s*)([A-Z][A-Z0-9&/ ]*?)-([0-9A-Z][0-9A-Z.]*)")
+# re.ASCII: Python's \s otherwise matches a no-break space, which Postgres's does not.
+COURSE = re.compile(r"(?:^|,\s*)([A-Z][A-Z0-9&/ ]*?)-([0-9A-Z][0-9A-Z.]*)", re.ASCII)
 PAGE = 1000
 CHUNK = 150
 
@@ -119,25 +128,38 @@ def title_key(s: str):
     return (first, accents, case, s)
 
 
-def aggregate(units: list[dict], ace: dict, chatbox: dict) -> dict:
+def first_title(titles) -> str | None:
+    """chatbox_exhibits' title the SQL takes: `order by x.exhibit_title nulls last limit 1`."""
+    named = [t for t in titles or [] if t is not None]
+    return min(named, key=title_key) if named else None
+
+
+def aggregate(units: list[dict], ace: dict, chatbox: dict, fallbacks: dict | None = None) -> dict:
     """{college: {code: entry}} from the source rows.
 
     units: {college, college_course, source_code, exhibit_id, credit_rec}, one a map_college_cr_unit row.
     ace: {str(exhibit_id): [title, ...]}, every map_ace_exhibit_titles row's title (the left join).
-    chatbox: {str(exhibit_id): title}, chatbox_exhibits' title (the SQL's limit 1)."""
+    chatbox: {str(exhibit_id): [title, ...]}, every chatbox_exhibits row's title.
+    fallbacks, when given, collects {(college, code): {title, ...}}: every chatbox title an exhibit
+    that fell back to chatbox could have taken, where chatbox holds more than one, for verify."""
     groups: dict = {}
     for u in units:
         if not (u.get("college_course") or ""):
             continue
         ex = u.get("exhibit_id")
         ek = None if ex is None else str(ex)
-        fallback = chatbox.get(ek) if ek is not None else None
-        titles = [t if t is not None else fallback for t in ace.get(ek, [])] if ek is not None and ek in ace else [fallback]
+        options = chatbox.get(ek) or [] if ek is not None else []
+        fallback = first_title(options)
+        rows = ace.get(ek) if ek is not None and ek in ace else [None]
+        titles = [t if t is not None else fallback for t in rows]
+        falls_back = any(t is None for t in rows) and len(set(options)) > 1
         src = u.get("source_code") or "unnamed"
         for code in course_codes(u["college_course"]):
             g = groups.setdefault((u["college"], code), [])
             for t in titles:
                 g.append((src, ex, u.get("credit_rec"), t))
+            if falls_back and fallbacks is not None:
+                fallbacks.setdefault((u["college"], code), set()).update(t for t in options if t is not None)
     out: dict = {}
     for (college, code), rows in groups.items():
         by_src: dict = {}
@@ -173,32 +195,76 @@ def differences(got: dict, filed: dict) -> list[str]:
     return out
 
 
+def fallback_only(got: dict, filed: dict, candidates: dict) -> int | None:
+    """When every difference is a chatbox fallback title or the order of titles tied on recs and title,
+    how many title entries differ (a reorder counts one); else None. candidates: {code: {title, ...}}."""
+    if set(got) != set(filed):
+        return None
+    n = 0
+    for k in got:
+        g, f = got[k], filed[k]
+        if any(g.get(x) != f.get(x) for x in set(g) | set(f) if x != "titles"):
+            return None
+        if g.get("titles") == f.get("titles"):
+            continue
+        cand = candidates.get(k) or set()
+        gt = [(t["title"], t["source"], t["recs"]) for t in g.get("titles") or []]
+        ft = [(t["title"], t["source"], t["recs"]) for t in f.get("titles") or []]
+        if sorted(gt) == sorted(ft):
+            n += 1   # the same titles, tied ones in another order
+            continue
+        gk = sorted(x for x in gt if x[0] not in cand)
+        fk = sorted(x for x in ft if x[0] not in cand)
+        gc = sorted(x for x in gt if x[0] in cand)
+        fc = sorted(x for x in ft if x[0] in cand)
+        if gk != fk or not cand:
+            return None
+        n += len(set(gc) ^ set(fc)) or 1
+    return n
+
+
 # ── the reads ────────────────────────────────────────────────────────────────────
 def _in(values) -> str:
     return "in.(%s)" % ",".join('"%s"' % str(v).replace("\\", "\\\\").replace('"', '\\"') for v in values)
 
 
-def _paged(key: str, table: str, select: str, filters: dict, order: str) -> list[dict]:
-    """Every row, Range-paginated over an order on every selected column, checked against the exact count."""
-    rows, total = [], None
+def _page(key: str, table: str, qs: str, start: int, size: int) -> tuple[list, int]:
+    """One Range page and the exact count from Content-Range (Prefer: count=exact)."""
+    req = urllib.request.Request("%s/rest/v1/%s?%s" % (SUPABASE_URL, table, qs), headers={
+        "apikey": key, "Authorization": "Bearer " + key, "Prefer": "count=exact",
+        "Range-Unit": "items", "Range": "%d-%d" % (start, start + size - 1)})
+    with urllib.request.urlopen(req, timeout=120) as resp:
+        page = json.loads(resp.read().decode())
+        rng = resp.headers.get("Content-Range") or ""
+    if "/" not in rng or rng.endswith("/*"):
+        raise SystemExit("%s sent no exact count (Content-Range); the read cannot be checked whole." % table)
+    return page, int(rng.rsplit("/", 1)[1])
+
+
+def paged(fetch_page, table: str, qs: str) -> list[dict]:
+    """Every row, Range-paginated, the exact count read before and after; a count that moved stops the run."""
+    _, before = fetch_page(table, qs, 0, 1)
+    rows = []
+    while len(rows) < before:
+        page, total = fetch_page(table, qs, len(rows), PAGE)
+        if total != before:
+            raise SystemExit("%s changed while it was read (%d rows, then %d): MAP was replaced mid-read. "
+                             "Run the dispatch again." % (table, before, total))
+        if not page:
+            raise SystemExit("%s stopped at %d of %d rows. Run the dispatch again." % (table, len(rows), before))
+        rows.extend(page)
+    _, after = fetch_page(table, qs, 0, 1)
+    if after != before or len(rows) != before:
+        raise SystemExit("%s changed while it was read (%d rows before, %d after, %d read): MAP was replaced "
+                         "mid-read. Run the dispatch again." % (table, before, after, len(rows)))
+    return rows
+
+
+def _paged(key: str, table: str, select: str, filters: dict, order: str, fetch_page=None) -> list[dict]:
+    """Every row of a filtered read, ordered on every selected column so the pages hold still."""
     qs = "&".join(["select=" + select] + ["%s=%s" % (k, urllib.parse.quote(v, safe="(),.*")) for k, v in filters.items()]
                   + ["order=" + order])
-    while total is None or len(rows) < total:
-        req = urllib.request.Request("%s/rest/v1/%s?%s" % (SUPABASE_URL, table, qs), headers={
-            "apikey": key, "Authorization": "Bearer " + key, "Prefer": "count=exact",
-            "Range-Unit": "items", "Range": "%d-%d" % (len(rows), len(rows) + PAGE - 1)})
-        with urllib.request.urlopen(req, timeout=120) as resp:
-            page = json.loads(resp.read().decode())
-            rng = resp.headers.get("Content-Range") or ""
-        if "/" not in rng or rng.endswith("/*"):
-            raise SystemExit("%s sent no exact count (Content-Range); the read cannot be checked whole." % table)
-        total = int(rng.rsplit("/", 1)[1])
-        if not page and len(rows) < total:
-            raise SystemExit("%s stopped at %d of %d rows." % (table, len(rows), total))
-        rows.extend(page)
-    if len(rows) != total:
-        raise SystemExit("%s returned %d rows against a count of %d." % (table, len(rows), total))
-    return rows
+    return paged(fetch_page or (lambda t, q, a, n: _page(key, t, q, a, n)), table, qs)
 
 
 def _chunks(values, n=CHUNK):
@@ -214,19 +280,24 @@ def service_key() -> str:
     return key
 
 
-def read_map(colleges: list[str]) -> dict:
-    key = service_key()
-    ids = _paged(key, "map_colleges", "college_id,college_name", {"college_name": _in(colleges)},
-                 "college_id,college_name")
+def read_map(colleges: list[str], fetch=None, fallbacks: dict | None = None) -> dict:
+    """fetch(table, select, filters, order) -> rows; the service-key PostgREST read unless a test gives one."""
+    if fetch is None:
+        key = service_key()
+
+        def fetch(table, select, filters, order):
+            return _paged(key, table, select, filters, order)
+    ids = fetch("map_colleges", "college_id,college_name", {"college_name": _in(colleges)}, "college_id,college_name")
     name_of = {r["college_id"]: r["college_name"] for r in ids}
     missing = sorted(set(colleges) - set(name_of.values()))
     if missing:
-        raise SystemExit("not a map_colleges name: %s" % "; ".join(missing))
+        # The SQL joins map_colleges by name, so it returns nothing for these: an empty entry, as filed.
+        print("notice: %d named colleges have no map_colleges row and file an empty entry" % len(missing))
     units = []
     for part in _chunks(name_of):
-        for r in _paged(key, "map_college_cr_unit", "college_id,college_course,source_code,exhibit_id,credit_rec",
-                        {"college_id": _in(part), "college_course": "not.is.null"},
-                        "college_id,college_course,source_code,exhibit_id,credit_rec"):
+        for r in fetch("map_college_cr_unit", "college_id,college_course,source_code,exhibit_id,credit_rec",
+                       {"college_id": _in(part), "college_course": "not.is.null"},
+                       "college_id,college_course,source_code,exhibit_id,credit_rec"):
             r["college"] = name_of[r.pop("college_id")]
             units.append(r)
     naming = [u for u in units if course_codes(u.get("college_course"))]
@@ -234,12 +305,12 @@ def read_map(colleges: list[str]) -> dict:
     ace: dict = {}
     chatbox: dict = {}
     for part in _chunks(exhibits):
-        for r in _paged(key, "map_ace_exhibit_titles", "exhibit_id,title", {"exhibit_id": _in(part)}, "exhibit_id,title"):
+        for r in fetch("map_ace_exhibit_titles", "exhibit_id,title", {"exhibit_id": _in(part)}, "exhibit_id,title"):
             ace.setdefault(str(r["exhibit_id"]), []).append(r.get("title"))
-        for r in _paged(key, "chatbox_exhibits", "exhibit_id,exhibit_title", {"exhibit_id": _in(part)},
-                        "exhibit_id,exhibit_title"):
-            chatbox.setdefault(str(r["exhibit_id"]), r.get("exhibit_title"))
-    agg = aggregate(naming, ace, chatbox)
+        for r in fetch("chatbox_exhibits", "exhibit_id,exhibit_title", {"exhibit_id": _in(part)},
+                       "exhibit_id,exhibit_title"):
+            chatbox.setdefault(str(r["exhibit_id"]), []).append(r.get("exhibit_title"))
+    agg = aggregate(naming, ace, chatbox, fallbacks)
     out = {c: agg.get(c, {}) for c in colleges}
     for c in colleges:
         n_units = sum(1 for u in units if u["college"] == c)
@@ -355,11 +426,15 @@ def main(argv=None) -> int:
         if absent:
             print("not filed, so nothing to verify against: %s" % "; ".join(absent))
             return 1
-        got = read_map(colleges)
+        fallbacks: dict = {}
+        got = read_map(colleges, fallbacks=fallbacks)
         bad = 0
         for c in colleges:
             diff = differences(got[c], filed[c])
-            if diff:
+            n = fallback_only(got[c], filed[c], {k: v for (cc, k), v in fallbacks.items() if cc == c}) if diff else None
+            if n is not None:
+                print("agrees  %s except %d fallback titles (%d course codes)" % (c, n, len(filed[c])))
+            elif diff:
                 bad += 1
                 print("DIFFERS %s (%d keys):" % (c, len(diff)))
                 for d in diff:

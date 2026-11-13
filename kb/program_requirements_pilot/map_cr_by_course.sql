@@ -32,7 +32,7 @@ with u as (
 ), p as (
   select college, m[1] || ' ' || m[2] code, source_code, exhibit_id, credit_rec from u
 ), t as (
-  select p.*, coalesce(a.title, (select x.exhibit_title from chatbox_exhibits x where x.exhibit_id::text = p.exhibit_id::text limit 1)) title,
+  select p.*, coalesce(a.title, (select x.exhibit_title from chatbox_exhibits x where x.exhibit_id::text = p.exhibit_id::text order by x.exhibit_title nulls last limit 1)) title,
          coalesce(nullif(p.source_code,''), 'unnamed') src from p
   left join map_ace_exhibit_titles a on a.exhibit_id = p.exhibit_id
 )

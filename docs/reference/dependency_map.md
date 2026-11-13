@@ -68,7 +68,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `chatbox_college_profiles` | scripts: `map/sync_map_users.py` · `edgefn:cpl-chat` | — |
 | `chatbox_credential_recs` | none found | scripts: `kb/_sync_credential_recs.py` |
 | `chatbox_credentials` | tabs: `college-briefing`, `cpl-pathways` · `edgefn:cpl-chat` | scripts: `kb/_sync_credential_catalog.py` |
-| `chatbox_exhibits` | `edgefn:cpl-chat` | — |
+| `chatbox_exhibits` | scripts: `kb/_program_requirements_dated_reads.py` · `edgefn:cpl-chat` | — |
 | `chatbox_peer_articulations` | none found | scripts: `kb/_sync_peer_articulations.py` |
 | `class` | scripts: `kb/_identity_daily_check.py` | — |
 | `cobi_live_session` | tabs: `admin` · pages: `CPL_Dashboard.html` | — |
@@ -125,11 +125,11 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `item_updates` | tabs: `annual-report`, `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | tabs: `raci` · pages: `CPL_Dashboard.html` |
 | `kb_curation` | tabs: `canonical-subj4`, `coci-lookup`, `commons`, `cr-reference`, `credential-reference`, `exhibits`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cer_decision_apply.py`, `kb/_cer_procedures.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_cred_rename_undo.py`, `kb/_csr_confirm_authority.py`, `kb/_docket_rulings.py`, `kb/_eacr_flag_migrate.py`, `kb/_esl_sheet_apply.py`, `kb/_exhibit_subject_fill.py`, `kb/_family_tag_apply.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `coci-lookup`, `commons`, `cr-reference`, `credential-reference`, `exhibits`, `unified-courses`, `vision-2030` · modules: `kb/_family_tag_apply.py`, `prototype/ccr_universe.js` · pages: `prototype/skyview.html` · scripts: `kb/_cred_fold_resolution_write.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_cred_rename_undo.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
 | `liftoff_state` | pages: `CPL_Dashboard.html` | pages: `CPL_Dashboard.html` |
-| `map_ace_exhibit_titles` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
+| `map_ace_exhibit_titles` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · scripts: `kb/_program_requirements_dated_reads.py` | — |
 | `map_cleanup_worklist` | tabs: `map-data-quality` | — |
 | `map_college_contacts` | tabs: `college-briefing`, `college-identity`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `map-queue`, `map-users` · modules: `cpl_funding_nudge.js` · scripts: `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
 | `map_college_contacts_pub` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · modules: `scripts/funding_sierra_note.js` · scripts: `kb/_publish_college_briefing.py` | — |
-| `map_college_cr_unit` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | — |
+| `map_college_cr_unit` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · scripts: `chatbox/smoke_test.sh`, `kb/_program_requirements_dated_reads.py`, `kb/_publish_college_briefing.py` | — |
 | `map_college_cr_waiting_pub` | tabs: `college-briefing`, `cpl-pathways` | scripts: `kb/_publish_college_briefing.py` |
 | `map_college_credit_bucket` | `edgefn:cpl-chat` | — |
 | `map_college_credit_statewide` | `edgefn:cpl-chat` | — |
@@ -140,7 +140,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_college_goal2_pub` | tabs: `college-briefing`, `cpl-pathways` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_nudges` | tabs: `governance`, `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_college_users` | tabs: `map-queue`, `map-users` · modules: `cpl_funding_nudge.js` | — |
-| `map_colleges` | tabs: `college-briefing`, `college-identity`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `kb/_identity_daily_check.py` · `edgefn:cpl-chat` | — |
+| `map_colleges` | tabs: `college-briefing`, `college-identity`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `kb/_identity_daily_check.py`, `kb/_program_requirements_dated_reads.py` · `edgefn:cpl-chat` | — |
 | `map_contact_gaps` | tabs: `governance`, `map-queue`, `map-users` | — |
 | `map_contact_proposals` | tabs: `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
 | `map_credential_student_rollup` | tabs: `college-briefing`, `cpl-pathways` | — |
