@@ -1,0 +1,176 @@
+{
+ "college": "Cerro Coso Community College",
+ "route": "college set step",
+ "step": {
+  "kind": "set",
+  "field": "ge_units",
+  "value": {
+   "min": 35,
+   "max": 35
+  },
+  "awards": "transfer",
+  "only_with": [
+   "ge_pattern",
+   "degree_total"
+  ],
+  "pattern": "Cal-?\\s?GETC",
+  "source": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65",
+  "source_words": "California General Education Transfer Curriculum (Cal-GETC) (35 Units)"
+ },
+ "measured_on": {
+  "commit": "fab3e109f1c08bd6f90e40a68df4fad2d4acd751",
+  "date": "2026-11-13T13:43:18-08:00",
+  "records": "kb/program_requirements_college/<slug>/records/",
+  "tool": "python3 kb/_program_requirements_readings_measure.py --calgetc-apply 'Cerro Coso Community College'",
+  "kind": "a dry run on the filed records; the reconcile run reads the pages"
+ },
+ "counts": {
+  "rows": 6,
+  "apply": 5,
+  "held": 1,
+  "fail_to_pass": 1,
+  "pass_to_fail": 0
+ },
+ "apply": [
+  "30766",
+  "31540",
+  "38665",
+  "40868",
+  "43206"
+ ],
+ "held": [
+  "40922"
+ ],
+ "restore_before_reread": [
+  "40922"
+ ],
+ "rows": [
+  {
+   "control_number": "30766",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 35,
+    "max": 35
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    53.0,
+    54.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "31540",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 35,
+    "max": 35
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    59.0,
+    59.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "38665",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 35,
+    "max": 35
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    54.0,
+    54.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "40868",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 35,
+    "max": 35
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    57.0,
+    60.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "40922",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    68.0,
+    68.0
+   ],
+   "degree_total": 60.0,
+   "held": "overlap: the major plus the printed 35 runs past the degree total of 60; a set step checks no standing while #3250 is unmerged, so the record stays as main files it (Grossmont 46141, #3252)"
+  },
+  {
+   "control_number": "43206",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 35,
+    "max": 35
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "verdict_with_fill": "equal (within)",
+   "sum_with_fill": [
+    58.0,
+    58.0
+   ],
+   "degree_total": 60.0
+  }
+ ]
+}

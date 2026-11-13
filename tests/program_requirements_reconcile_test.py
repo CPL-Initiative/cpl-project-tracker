@@ -1174,6 +1174,67 @@ check("the plan admits only the record the rule's record gates admit, with its s
       and _plan["colleges"][CG_COLLEGE][0]["route"] == "statewide step"
       and _plan_off["counts"]["fills"] == 0 and _plan_off["needs_a_page_read"] == [CG_COLLEGE])
 
+# One college's apply plan (S649, the dry run before a reconcile dispatch, after Grossmont's #3252): a set step
+# reaches every transfer record its only_with admits; an overlap sum is held for main's record (#3250 unmerged).
+SET_COLLEGE = "Fixture Set College"
+SET_STEPS = {SET_COLLEGE: {"steps": [{"kind": "set", "field": "ge_units", "value": {"min": 35, "max": 35},
+                                      "awards": "transfer", "only_with": ["ge_pattern", "degree_total"],
+                                      "pattern": r"Cal-?\s?GETC", "source": "fixture#page=65",
+                                      "source_words": "Cal-GETC (35 Units)"}]},
+             CG_COLLEGE: CG_STEP}
+
+
+def _ap_rec(cn, major, award=CG_AWARD, ge=None, pattern="Cal-GETC"):
+    prog = {"ge_pattern": pattern, "ge_units": ge or {"min": None, "max": None}, "degree_total": {"min": 60, "max": 60},
+            "total_units": {"min": major, "max": major}, "section_heading": "Fixture %s" % cn}
+    sc = {"coverage": {"pass": True}, "invented": {"pass": True}, "pass": False,
+          "arithmetic": {"against": "degree", "status": "incomplete", "computed": [major, major], "stated": [60, 60],
+                         "why": ["the record names the degree total and the Cal-GETC pattern, but no units for it"]}}
+    return {"college": SET_COLLEGE, "control_number": cn, "award": award, "title": "Fixture %s" % cn,
+            "record": {"program": prog, "blocks": []}, "score": sc}
+
+
+_ap_recs = [_ap_rec("91001", 24), _ap_rec("91002", 33), _ap_rec("91003", 24, award="A.A. Degree"),
+            _ap_rec("91004", 24, ge={"min": 34, "max": 34})]
+_ap = RM.calgetc_apply_plan(_ap_recs, SET_COLLEGE, "abc123", "2026-11-13", steps=SET_STEPS)
+_ap_rows = {r["control_number"]: r for r in _ap["rows"]}
+check("apply plan: a set step fills an under transfer record with its printed figure, failing to passing",
+      _ap["route"] == "college set step" and _ap_rows["91001"]["ge_units_after"] == {"min": 35, "max": 35}
+      and _ap_rows["91001"]["passes_before"] is False and _ap_rows["91001"]["passes_after"] is True
+      and _ap_rows["91001"]["sum_with_fill"] == [59.0, 59.0])
+check("apply plan: a set step's overlap (33 + 35 past 60) is held, kept as main files it, and restored before the reread",
+      "overlap" in _ap_rows["91002"].get("held", "") and _ap_rows["91002"]["ge_units_after"] == {"min": None, "max": None}
+      and _ap_rows["91002"]["passes_after"] is False and _ap["held"] == ["91002"]
+      and _ap["restore_before_reread"] == ["91002"] and _ap["apply"] == ["91001"])
+check("apply plan: a local degree and a record holding GE units are not rows",
+      set(_ap_rows) == {"91001", "91002"} and _ap["counts"] == {"rows": 2, "apply": 1, "held": 1, "fail_to_pass": 1,
+                                                                "pass_to_fail": 0})
+check("apply plan: the step and the measure's commit and tool are named",
+      _ap["step"]["source_words"] == "Cal-GETC (35 Units)" and _ap["measured_on"]["commit"] == "abc123"
+      and "--calgetc-apply" in _ap["measured_on"]["tool"])
+_ap_sw = RM.calgetc_apply_plan(_plan_recs, CG_COLLEGE, steps=SET_STEPS)
+check("apply plan: a statewide college takes the record gates' fills, nothing restored (the rule holds in the run)",
+      _ap_sw["route"] == "statewide step" and _ap_sw["apply"] == ["90001"] and _ap_sw["restore_before_reread"] == []
+      and [r["ge_units_after"] for r in _ap_sw["rows"]] == [{"min": 34, "max": 34}])
+check("apply plan: a college with no Cal-GETC step has no route and no rows",
+      RM.calgetc_apply_plan(_ap_recs, SET_COLLEGE, steps={})["route"] is None)
+# Cerro Coso's committed apply plan (S649): the step's quoted page, and no passing record turned failing.
+_cc_conf = R.load_steps().get("Cerro Coso Community College") or {}
+_cc_step = next((s for s in _cc_conf.get("steps") or [] if s.get("field") == "ge_units"), {})
+check("Cerro Coso: the set step quotes p.65's printed 35 for transfer degrees naming the pattern and degree total",
+      _cc_step.get("value") == {"min": 35, "max": 35} and _cc_step.get("awards") == "transfer"
+      and _cc_step.get("source", "").endswith("#page=65")
+      and "(Cal-GETC) (35 Units)" in _cc_step.get("source_words", "")
+      and _cc_step.get("only_with") == ["ge_pattern", "degree_total"] and R.calgetc_step(_cc_conf) is None)
+_cc_plan = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "cerro_coso_community",
+                                       "calgetc_apply_plan.json")))
+check("Cerro Coso's apply plan: six programs, five applied, 40922 (overlap) held and restored, none passing to failing",
+      _cc_plan["route"] == "college set step" and len(_cc_plan["rows"]) == 6
+      and _cc_plan["apply"] == ["30766", "31540", "38665", "40868", "43206"]
+      and _cc_plan["held"] == ["40922"] and _cc_plan["restore_before_reread"] == ["40922"]
+      and _cc_plan["counts"]["pass_to_fail"] == 0
+      and all(r["ge_units_after"] == {"min": 35, "max": 35} for r in _cc_plan["rows"] if "held" not in r))
+
 # A later reconcile run keeps a statewide fill's note while its value stands (reconcile_filed, S648): a step that
 # fires on another field replaces the record's reconciled list, and the cal_getc_34 note stays in it.
 import tempfile  # noqa: E402
@@ -1205,7 +1266,7 @@ with tempfile.TemporaryDirectory() as _td:
           and _again["record"]["program"]["ge_units"] == {"min": 34, "max": 34})
 
 # A floor for this block's checks (the second readers of #3244): deleting gate checks must fail the run.
-CG_FLOOR = 83
+CG_FLOOR = 91
 check("the statewide Cal-GETC block runs at least %d checks (%d)" % (CG_FLOOR, len(results) - _cg_first),
       len(results) - _cg_first >= CG_FLOOR)
 

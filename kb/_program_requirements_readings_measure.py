@@ -407,14 +407,122 @@ def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str |
             "colleges": colleges}
 
 
+def _span_words(v) -> str:
+    lo, hi = R._lo_hi(v)
+    return "none" if lo is None else ("%g" % lo if lo == hi else "%g-%g" % (lo, hi))
+
+
+def calgetc_apply_plan_path(college: str) -> str:
+    from _program_requirements_college import slug_of
+    return os.path.join(HERE, "program_requirements_college", slug_of(college), "calgetc_apply_plan.json")
+
+
+def calgetc_apply_plan(records: list[dict], college: str, commit: str | None = None, date: str | None = None,
+                       steps: dict | None = None) -> dict:
+    """One college's Cal-GETC apply as a dry run on its filed records, before its reconcile run is dispatched
+    (S649, after Grossmont's #3252): each record the college's Cal-GETC route reaches, with its ge_units and its
+    passing (passes_live) before and after. The route is the college's own ge_units set step where its config
+    carries one (every record the step's awards and only_with admit, simulated by simulate_ge as if its
+    pattern matched), else its statewide_cal_getc step (the record gates of cal_getc_34_plan; its page gates run
+    in the reconcile run, so a fill here is an upper bound). A row is held, never applied, where the fill would
+    turn a passing record failing, or where a set step's figure puts the sum past 60 at both ends (overlap): a
+    set step checks no standing while draft #3250 is unmerged, and Grossmont 46141, the same shape, was kept as
+    main files it (#3252). A held row the set step still fills in the run is restored from main before the
+    reread (restore_before_reread)."""
+    steps = R.load_steps() if steps is None else steps
+    conf = steps.get(college) or {}
+    mine = [f for f in records if f["college"] == college]
+    own = [st for st in conf.get("steps") or [] if st.get("kind") == "set" and st.get("field") == "ge_units"]
+    rows = []
+    if own:
+        route = "college set step"
+        cands = [(f, st) for f in sorted(mine, key=lambda x: x["control_number"]) for st in own[:1]]
+    elif R.calgetc_step(conf) is not None:
+        route = "statewide step"
+        plan = cal_getc_34_plan(mine, steps=steps).get("colleges", {}).get(college, [])
+        by_cn = {f["control_number"]: f for f in mine}
+        cands = [(by_cn[r["control_number"]], dict(step_of=r)) for r in plan]
+    else:
+        return {"college": college, "route": None, "why": "the college's config carries no Cal-GETC step",
+                "rows": [], "apply": [], "restore_before_reread": [], "held": []}
+    for f, st in cands:
+        prog = f["record"].get("program") or {}
+        before = S.passes_live(f["score"])
+        if route == "statewide step":
+            pr = st["step_of"]
+            sim = {"field": "ge_units", "value": dict(R.CAL_GETC_UNITS), "awards": "transfer",
+                   "only_with": ["ge_pattern", "degree_total"]}
+            fills = bool(pr.get("fills"))
+            held = None if fills else (pr.get("held") or "the statewide rule holds it: %s" % pr.get("standing"))
+        else:
+            sim = st
+            fills, held = True, None
+        what, after = simulate_ge(f, sim)
+        if after is None:
+            continue
+        fig = sim["value"]
+        maj = R._lo_hi(prog.get("total_units"))
+        el = [R._lo_hi(prog.get(k)) for k in ("open_elective_units", "degree_elective_units")]
+        total = R._lo_hi(prog.get("degree_total"))
+        sums = None
+        if maj[0] is not None:
+            sums = [maj[0] + fig["min"] + sum(e[0] for e in el if e[0] is not None),
+                    maj[1] + fig["max"] + sum(e[1] for e in el if e[1] is not None)]
+        if held is None and before and not after:
+            held = "a passing record would fail"
+        if held is None and route == "college set step" and sums and total[0] is not None \
+                and sums[0] > total[1] and sums[1] > total[1]:
+            held = ("overlap: the major plus the printed %g runs past the degree total of %g; a set step checks no "
+                    "standing while #3250 is unmerged, so the record stays as main files it (Grossmont 46141, #3252)"
+                    % (fig["min"], total[0]))
+        row = {"control_number": f["control_number"], "title": f.get("title"), "award": f.get("award"),
+               "ge_units_before": prog.get("ge_units"),
+               "ge_units_after": prog.get("ge_units") if (held or not fills) else dict(fig),
+               "passes_before": before, "passes_after": after if (fills and not held) else before,
+               "verdict_with_fill": what, "sum_with_fill": sums,
+               "degree_total": total[0]}
+        if held:
+            row["held"] = held
+        rows.append(row)
+    apply_ = [r["control_number"] for r in rows if "held" not in r]
+    held = [r["control_number"] for r in rows if "held" in r]
+    return {"college": college, "route": route,
+            "step": own[0] if own else R.calgetc_step(conf),
+            "measured_on": {"commit": commit, "date": date,
+                            "records": "kb/program_requirements_college/<slug>/records/",
+                            "tool": "python3 kb/_program_requirements_readings_measure.py --calgetc-apply '%s'" % college,
+                            "kind": "a dry run on the filed records; the reconcile run reads the pages"},
+            "counts": {"rows": len(rows), "apply": len(apply_), "held": len(held),
+                       "fail_to_pass": sum(1 for r in rows if "held" not in r and r["passes_after"]
+                                           and not r["passes_before"]),
+                       "pass_to_fail": sum(1 for r in rows if r["passes_before"] and not r["passes_after"])},
+            "apply": apply_, "held": held,
+            "restore_before_reread": held if route == "college set step" else [],
+            "rows": rows}
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--json", action="store_true", help="print the measure as JSON, every key named")
     ap.add_argument("--calgetc-plan", action="store_true",
                     help="write the statewide Cal-GETC 34 plan (%s), a one-time measure, and print its counts"
                          % os.path.relpath(CAL_GETC_PLAN, HERE))
+    ap.add_argument("--calgetc-apply", metavar="COLLEGE",
+                    help="write one college's Cal-GETC apply plan (kb/program_requirements_college/<slug>/"
+                         "calgetc_apply_plan.json), a dry run on its filed records, and print its rows")
     args = ap.parse_args(argv)
     records = list(filed_records())
+    if args.calgetc_apply:
+        plan = calgetc_apply_plan(records, args.calgetc_apply, *_git_head())
+        with open(calgetc_apply_plan_path(args.calgetc_apply), "w") as fh:
+            fh.write(json.dumps(plan, indent=1) + "\n")
+        print(json.dumps(plan["counts"]))
+        for r in plan["rows"]:
+            print("%s %-36s ge %s -> %s  passes %s -> %s%s" % (
+                r["control_number"], (r["title"] or "")[:36], _span_words(r["ge_units_before"]),
+                _span_words(r["ge_units_after"]), r["passes_before"], r["passes_after"],
+                ("  HELD: " + r["held"][:80]) if r.get("held") else ""))
+        return 0
     if args.calgetc_plan:
         plan = cal_getc_34_plan(records, *_git_head())
         with open(CAL_GETC_PLAN, "w") as fh:
