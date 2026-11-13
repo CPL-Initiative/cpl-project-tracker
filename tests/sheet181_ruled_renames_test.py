@@ -74,8 +74,18 @@ check("a non-ASE part follows 'with', kept as written",
       test_mix.family_title(FAM, "ASE Bundle — T6, T8 + Snap-on 604") == FAM + ": T6 + T8 with Snap-on 604"
       and test_mix.family_title(FAM, "ASE G1 + ALI Lift It Right Bundle") == FAM + ": G1 with ALI Lift It Right")
 r = fr(FAM, "ASE Bundle — A6 or T6 + L3")
-check("an 'or' is unparseable: no title, and the reason says so", r["status"] == "unparseable" and r["title"] is None
-      and "or" in r["why"])
+# COBIx on #3228 (6859081196), under Sam's "defer to it's mix as written": an "or" between two tests is coded as written,
+# its own mix, never folded into "A6 + L3" or "T6 + L3". Sheet 181's frozen plan (section 2) still lists it as it stood.
+check("an 'or' between two tests is coded as written, one part, sorted by its first test",
+      r == {"status": "named", "title": FAM + ": A6 or T6 + L3", "why": ""}
+      and fr(FAM, "ASE Bundle — L3 + A6 or T6")["title"] == FAM + ": A6 or T6 + L3"
+      and fr(FAM, FAM + ": A6 or T6 + L3")["status"] == "already")
+r = fr(FAM, "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair")
+check("a mix that is only a choice of tests is any one test, never a bundle: it keeps its title (Sheet 181)",
+      r["status"] == "any-one" and r["title"] is None and test_mix.exception(
+          "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair") is None)
+r = fr(FAM, "ASE Bundle — A6 or SP/2 kit + L3")
+check("an 'or' that joins a test to something else is still left for a person", r["status"] == "unparseable" and r["title"] is None)
 r = fr(FAM, "ASE Bundle — T5, T8 + SP/2 A6 kit")
 check("a part that mixes a test code with other words is unparseable", r["status"] == "unparseable" and r["title"] is None)
 check("a title with no mix is no-mix", fr(FAM, MASTER)["status"] == "no-mix" and fr(FAM, "ASE Certification (any A1–A8)")["title"] is None)
@@ -132,9 +142,11 @@ fx = builder.build(fx_over, fx_cr, fx_ut, ftp.families())
 check("the builder names the member with more local titles as the pair's lead",
       [(e["old"], e["kind"]) for e in fx["entries"] if e["new"] == FAM + ": A2 + A3 + A6"]
       == [("ASE Bundle — A2, A3, A6", "rename"), ("ASE A2 + A3 + A6 — X", "merge")])
-check("the builder leaves out the Truck title and the any-one-test title, and lists the 'or' member",
+check("the builder leaves out the Truck title and the any-one-test title, and names the 'or' member as written",
       not {e["old"] for e in fx["entries"]} & {TRUCK, "ASE Certification (any A1–A8)"}
-      and [u["title"] for u in fx["unparseable"]] == ["ASE Bundle — A6 or T6 + L3"])
+      and fx["unparseable"] == []
+      and [(e["old"], e["new"]) for e in fx["entries"] if "or" in e["old"].split()]
+      == [("ASE Bundle — A6 or T6 + L3", FAM + ": A6 or T6 + L3")])
 
 # ── 3. the overlay rule ─────────────────────────────────────────────────────────────────────────────────
 P1 = {"plan_id": "p", "ruling": "r", "decided_by": "Sam", "decided_at": "2026-11-11T22:55:00Z", "entries": [

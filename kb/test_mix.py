@@ -11,7 +11,8 @@ than a list of codes:
 
   "ASE Bundle — A4, A5"                  -> A4, A5
   "ASE A2 + A3 + A6 — Transmission, ..."  -> A2, A3, A6
-  "ASE Bundle — A6 or T6 + L3"           -> "A6 or T6 + L3"   (an "or" is never flattened into "and")
+  "ASE Bundle — A6 or T6 + L3"           -> "A6 or T6 + L3"   (an "or" is never flattened into "and"; its family
+                                                                title is "ASE Certificate Bundles: A6 or T6 + L3")
   "ASE Bundle — T5, T8, SP/2 HD"         -> "T5, T8, SP/2 HD" (a part no code names stays)
   "ASE Certificate Bundles"              -> None (no mix named)
 
@@ -125,25 +126,31 @@ def family_read(family, title):
     Returns {"status", "title", "why"}:
       named        "title" is the member's name in the form
       already      the member already carries it ("title" is the title itself)
-      unparseable  the parser cannot code the mix (an "or", a part that mixes a test code with other words, or no
-                   test at all); "title" is None and the member is left for a person
+      unparseable  the parser cannot code the mix (a part that mixes a test code with other words, or no test at
+                   all); "title" is None and the member is left for a person
+      any-one      the whole mix is one choice of tests ("C1 or G1"): any one qualifies, so it is no bundle and keeps
+                   its own title (Sheet 181's any_one_test); "title" is None
       no-mix       the title names no mix; "title" is None
+
+    An "or" between two tests inside a bundle is coded as written and stays one part (COBIx on #3228, 2026-11-13,
+    comment 6859081196, under Sam's "defer to it's mix as written unless there was an obvious error"): "ASE Bundle — A6
+    or T6 + L3" is "ASE Certificate Bundles: A6 or T6 + L3", its own mix, never folded into "A6 + L3" or "T6 + L3".
+    Each test it names is a search alias (components). The part sorts by its first test in ASE's order.
     """
     got = parts(title)
     if not got:
         return {"status": "no-mix", "title": None, "why": "the title names no test mix"}
     if not got["tests"]:
         return {"status": "unparseable", "title": None, "why": "the mix names no ASE test the parser can code"}
-    ors = [p for p in got["tests"] if _OR.search(p)]
-    if ors:
-        return {"status": "unparseable", "title": None,
-                "why": "an \"or\" in %s: any one of the tests qualifies, so the tests cannot be joined by \"+\""
-                       % ", ".join(ors)}
+    if len(got["tests"]) == 1 and not got["with"] and _OR.search(got["tests"][0]):
+        return {"status": "any-one", "title": None,
+                "why": "any one of %s qualifies: no bundle, so it keeps its own title" % got["tests"][0]}
     bad = [p for p in got["with"] if _OR.search(p) or cert_naming.codes_named(p)]
     if bad:
         return {"status": "unparseable", "title": None,
                 "why": "a part the parser cannot read as one test or one named credential: %s" % ", ".join(bad)}
-    tests = sorted(set(t.upper() for t in got["tests"]), key=_ORDER.get)
+    tests = sorted({" or ".join(a.strip().upper() for a in _OR.split(t) if a.strip()) for t in got["tests"]},
+                   key=lambda p: (_ORDER[p.split(" or ")[0]], p))
     new = "%s: %s" % (family, " + ".join(tests))
     new += (" with " + " + ".join(got["with"])) if got["with"] else ""
     return {"status": "already" if new == (title or "").strip() else "named", "title": new, "why": ""}
@@ -157,8 +164,8 @@ def family_title(family, title):
 
 
 def exception(title):
-    """The member a person codes by hand: the parser cannot code its mix (family_read's "unparseable": an "or", a part
-    that mixes a test code with other words, or no ASE test). {"title", "mix", "tests", "with", "why"}; None for a
+    """The member a person codes by hand: the parser cannot code its mix (family_read's "unparseable": a part that mixes
+    a test code with other words, or no ASE test). An "or" between two tests is coded as written (family_read). {"title", "mix", "tests", "with", "why"}; None for a
     coded mix or a title with none.
 
     A part no ASE code names is coded as written, after "with" (family_read), and is no exception: Sam, 5:38 AM PT

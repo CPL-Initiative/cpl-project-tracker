@@ -1280,3 +1280,9 @@ Moved verbatim from `docs/reference/lanes/cer-procedures.md` by the documents wo
 - Cause of the returning cards: the sweep and the rename batch read Sam's own *(ASE A4 standards)* form as a program-first title and proposed a new one on every nightly rebuild; a keep bound to the exact proposal string did not answer the reworded proposal. One helper, `cert_naming.is_standards`, now marks the form as standing for the sweep, the batch and `fold_issuer` rule 2b.
 - An independent reader cleared the automatic writes (none change) and found that the course-title rule ran on the industry-certification path; COBIx found the keep-as-is mismatch between builder and tab and the credential branch running on every path. All three fixed with tests before merge.
 - `standards_2_ruled_renames_test.py` fails 6 of 27 on `main`, and no workflow runs it (as reported by the worker): a governance-lane NEXT.
+
+## Moved from the lane (S648)
+
+From `docs/reference/lanes/cer-procedures.md`, the Exhibits NEXT list, items done in S641, verbatim:
+
+(2) done (S641): plan 2's seven titles stand in `kb/credentials.json` on `main` (`838e9320`), and the daily runs `98ac7d6a` and `eb2ad8a2` followed; (3) done (S641 first firing, 06:30Z): ASE plan phase 3 applied, five `kb_curation` `unified_title_assignment` rows under `cer-s638@bot`, read back 5, receipt `kb/cer_decisions_out/2026-11-11-3/applied_2026-11-12T06-30-30Z.json` (`8fb7712d`), rollback by that cohort's rows in the receipt; (4) done (S641): retire aliases; check 4 passes (four renames resolve, five rulings `recurated`). Sam's Exhibits review list is on the Review view (Built line above);

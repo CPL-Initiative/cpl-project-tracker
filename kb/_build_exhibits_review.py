@@ -469,13 +469,35 @@ def _brand_words(issuer):
     return {w for w in re.findall(r"[a-z0-9]+", (issuer or "").lower()) if len(w) >= 3 and w not in STOP}
 
 
+def _fold(w):
+    """"technicians" reads "technician": a plural never decides the issuer-word test."""
+    return w[:-1] if len(w) > 3 and w.endswith("s") and not w.endswith("ss") else w
+
+
+def issuer_named(title, issuer):
+    """True when `title` carries its issuer: the issuer's short tag ("ASE", "NREMT", the words in its parentheses), or
+    at least half of the words of its name, common words (STOP) aside and a plural folded. "CompTIA Cloud+" (issuer
+    CompTIA, its one word) and "Emergency Medical Technician" (three of the four words of the National Registry of
+    Emergency Medical Technicians) pass; "Water Treatment 1" (California State Water Resources Control Board), "Fire
+    Inspector I" (IFSAC / Pro Board) and "Traffic Control" (ATSSA) share one ordinary word and do not. COBIx on #3233
+    (6856966574): one shared word "would let its generic titles match on phrase alone". The test only narrows the
+    looser one before it (a shared word of three letters or more), so no title it refused passes now."""
+    said = {w for w in re.findall(r"[a-z0-9]+", (title or "").lower())}
+    if not (said & _brand_words(issuer)):
+        return False
+    tags = {w for p in re.findall(r"\(([^)]*)\)", issuer or "") for w in re.findall(r"[a-z0-9]+", p.lower()) if len(w) >= 2}
+    if said & tags:
+        return True
+    name = {_fold(w) for w in _brand_words(re.sub(r"\([^)]*\)", " ", issuer or ""))}
+    shared = {_fold(w) for w in said} & name
+    return bool(shared) and 2 * len(shared) >= len(name)
+
+
 def named_credential(texts, index):
     """The reference title of an industry issuer that a course title or a credit recommendation names as a phrase, the
-    longest when several do, else None. The title must be two words or more and share a word of three letters or more
-    with its issuer's name, common words aside (STOP): "CompTIA Cloud+", issuer CompTIA. That test is loose: an issuer
-    whose name holds ordinary words lets its titles in on those words ("Emergency Medical Technician", issuer the
-    National Registry of Emergency Medical Technicians), so a title that is only a phrase can match; two hits of one
-    length name none, and a person confirms every card. Sam, 2026-11-13 (#3223), on CNT 7285 "Cloud Infrastructure: CompTIA Cloud+
+    longest when several do, else None. The title must be two words or more and carry its issuer (issuer_named): its
+    short tag or half its name, "CompTIA Cloud+", issuer CompTIA. Two hits of one length name none, and a person
+    confirms every card. Sam, 2026-11-13 (#3223), on CNT 7285 "Cloud Infrastructure: CompTIA Cloud+
     Certification": "for those appearing to be for industry certs, the proposed title should attempt to be the official
     cert title"."""
     blob = " ".join(t for t in texts if t)
@@ -486,7 +508,7 @@ def named_credential(texts, index):
         t, iss = o["t"], o.get("issuer") or ""
         if not iss or iss == title_in_use.LOCAL_ISSUER or len(t) < 6 or len(t.split()) < 2:
             continue
-        if not ({w for w in re.findall(r"[a-z0-9]+", t.lower())} & _brand_words(iss)):
+        if not issuer_named(t, iss):
             continue
         if re.search(r"(?<![A-Za-z0-9])" + re.escape(t) + r"(?![A-Za-z0-9+])", blob, re.I):
             hits.append(o)
@@ -623,6 +645,12 @@ def build(root):
             got = leftover_code_proposal(prop, ex, mine, index, raw, wording=step == WORDING)
             if got:
                 prop = got
+            # A CompTIA exam series is a search alias, never part of the title (cert_naming.series_aside): the card
+            # carries it as `series_aliases`, and the proposal keeps its source.
+            bare, series = cert_naming.series_aside(prop["title"], prop.get("issuer", ""))
+            if series:
+                prop = dict(prop, title=bare, series_aliases=series,
+                            alternates=[a for a in prop.get("alternates") or [] if a != bare and not cert_naming.SERIES.search(a)])
             # A proposal based on a certification goes out in the format (kb/cert_naming.py, Sam's ruling of
             # 2026-11-11); the form the rule or the classifier wrote stays beside it as an alternate. A
             # conflict's proposal is a title a person already approved, which only the rename batch moves.
@@ -685,6 +713,8 @@ def build(root):
             rec["in_use"] = prop["in_use"]
         if prop.get("needs_official_name"):
             rec["needs_official_name"] = True
+        if prop.get("series_aliases"):
+            rec["series_aliases"] = prop["series_aliases"]
         if aligned and not course_ok and prop.get("source") != SRC_COURSE:
             # The course's title, set aside, and why (Sam's ruling of 2026-11-12): the card's course line still names it.
             rec["course_title_set_aside"] = {"title": aligned["title"], "basis": basis_of(aligned), "why": course_why}

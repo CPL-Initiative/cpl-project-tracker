@@ -214,7 +214,36 @@ def ase_read(title, issuer=""):
     return None
 
 
+# CompTIA's exam series: "CV0-004" (Cloud+), "SY0-701" (Security+), "220-1101" (A+), "FC0-U61" (ITF+), "CLO-002".
+_SERIES = r"(?:220-\d{4}|(?:[A-Z]{2,3}\d|CLO|CAS|CNX)-U?\d{2,3})"
+SERIES = re.compile(r"(?<![A-Za-z0-9])" + _SERIES + r"(?![A-Za-z0-9])")
+_SERIES_JOIN = r"(?:\s*(?:[/,&]|and)\s*" + _SERIES + r")*"
+_SERIES_PARENS = re.compile(r"\s*\(\s*(?:exams?\s+)?" + _SERIES + _SERIES_JOIN + r"\s*\)", re.I)
+_SERIES_BARE = re.compile(r"\s*(?:[—–:-]\s*)?(?:exams?\s+)?(?<![A-Za-z0-9])" + _SERIES + _SERIES_JOIN
+                          + r"(?![A-Za-z0-9])", re.I)
+
+
+def series_aside(title, issuer=""):
+    """(the title without its exam series, [the series it named]) for a CompTIA title; any other title comes back as it
+    came, with no series. A CompTIA title is the credential's name, "CompTIA Cloud+", and the exam series is a search
+    alias of it, never part of the title: CompTIA retires a series every few years (CV0-003 to CV0-004), while the
+    credential's name stands. COBIx on #3223 (2026-11-13, comment 6859080666), applying Sam's bundle ruling of 2026-11-11
+    (the family and credential make the title, component codes are aliases) to CompTIA; the S648 conductor took the
+    recommendation (cpl_memory d-comptia-series-is-alias-s648)."""
+    t = (title or "").strip()
+    if "comptia" not in (issuer or "").lower() and not t.lower().startswith("comptia"):
+        return t, []
+    found = SERIES.findall(t)
+    if not found:
+        return t, []
+    bare = _SERIES_BARE.sub("", _SERIES_PARENS.sub("", t))
+    bare = re.sub(r"\s{2,}", " ", bare).strip(" -–—:,/")
+    return (bare or t), found
+
+
 def canonical(title, issuer=""):
-    """A proposed title put in the format, or the title as it came. Used for new proposals only."""
+    """A proposed title put in the format, or the title as it came. Used for new proposals only. A CompTIA title loses
+    its exam series (series_aside)."""
+    title = series_aside(title, issuer)[0]
     got = ase_read(title, issuer)
     return got["proposed"] if got and got["proposed"] else title

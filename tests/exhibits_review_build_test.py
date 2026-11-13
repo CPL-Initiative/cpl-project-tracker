@@ -364,6 +364,54 @@ check("a proposal with no course code left is never touched",
 check("a college-issued title never counts as a named credential, nor does a one-word one",
       B.named_credential(["Intro to Cloud Computing"], IDX) is None and B.named_credential([""], IDX) is None)
 
+# COBIx on #3233 (6856966574): one shared ordinary word let an issuer's generic titles match on phrase alone. A title now
+# carries its issuer only by the issuer's short tag or half the words of its name (issuer_named); the 11 proposals of
+# #3233 rest on CNT 7285 (CompTIA, its one word) and EMS 20 (three of NREMT's four words), and both still match.
+GENERIC = [{"t": "Water Treatment 1", "issuer": "California State Water Resources Control Board (SWRCB)", "locals": 4, "adopted": 3},
+           {"t": "Fire Inspector I", "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+            "locals": 2, "adopted": 2},
+           {"t": "Traffic Control", "issuer": "American Traffic Safety Services Association (ATSSA)", "locals": 3, "adopted": 2}]
+check("a generic title shares one ordinary word with its issuer: it no longer counts as named",
+      all(B.named_credential([g["t"] + " for technicians"], GENERIC) is None for g in GENERIC)
+      and all(B._brand_words(g["issuer"]) & {w.lower() for w in g["t"].split()} for g in GENERIC))
+check("a title carrying its issuer's short tag or half its name still counts",
+      B.issuer_named("CompTIA Cloud+", "CompTIA")
+      and B.issuer_named("Emergency Medical Technician", "National Registry of Emergency Medical Technicians (NREMT)")
+      and B.issuer_named("ASE A5 — Brakes", "National Institute for Automotive Service Excellence (ASE)")
+      and B.issuer_named("Certified Pharmacy Technician (CPhT)", "Pharmacy Technician Certification Board (PTCB)")
+      and not B.issuer_named("Water Treatment 1", GENERIC[0]["issuer"]))
+check("the test only narrows the old one: a title sharing no word with its issuer never passes",
+      not B.issuer_named("Cloud Computing Basics", "CompTIA") and not B.issuer_named("Brakes", "(ASE)"))
+check("the 11 proposals of #3233 hold: CNT 7285 and EMS 20 still take their official credential",
+      (B.leftover_code_proposal(prop, ex_cnt, lc, IDX2 + GENERIC, "Industry Training Evidence for CNT 7285", wording=True) or {}).get("title")
+      == "CompTIA Cloud+"
+      and (B.leftover_code_proposal({"title": "Emergency Medical Services (EMS 20)", "issuer": ""}, ex_ems,
+                                    B.local_courses(ex_ems, CIX), IDX2 + GENERIC, "Industry Training Evidence for EMS 20",
+                                    wording=True) or {}).get("title") == "Emergency Medical Technician")
+
+# COBIx on #3223 (6859080666), taken by the S648 conductor: a CompTIA exam series is a search alias, never in the title.
+SER = "CompTIA Cloud+ CV0-004 Exam"
+fix2 = json.loads(json.dumps(FIX))
+fix2["kb/cer_procedures_out/latest.json"]["needs_you"].append(
+    {"raw_title": SER, "why": "the classifier is unsure (0.80)", "colleges": ["Norco College"],
+     "proposal": {"title": "CompTIA Cloud+ (CV0-004)", "issuer": "CompTIA", "confidence": 0.8,
+                  "alternates": ["CompTIA Cloud+ CV0-004", "Cloud+ Certification"]}})
+fix2["kb/exhibit_audit/latest.json"]["title_cards"].append({"raw_title": SER, "unified_title": None, "tags": ["unclassified_in_map"]})
+with tempfile.TemporaryDirectory() as root2:
+    for rel, obj in fix2.items():
+        write(root2, rel, obj)
+    write(root2, "statewide_data.js", STATEWIDE, js="CPL_STATEWIDE")
+    write(root2, "unified_courses_members.js", MEMBERS, js="CPL_UNIFIED_MEMBERS")
+    write(root2, "statewide_prescriptive.js", PRESCRIPTIVE, js="CPL_STATEWIDE_PRESCRIPTIVE")
+    ser = {h["raw"]: h for h in B.build(root2)[0]["held"]}.get(SER) or {}
+check("a CompTIA proposal loses its exam series to series_aliases, and no alternate carries one",
+      ser.get("title") == "CompTIA Cloud+" and ser.get("series_aliases") == ["CV0-004"]
+      and not any("CV0" in a for a in ser.get("alternates") or []) and ser.get("proposal_source") != B.SRC_OFFICIAL, ser)
+check("a title from any other issuer keeps a code that looks like a series",
+      B.cert_naming.series_aside("Cisco CCNA 200-301", "Cisco") == ("Cisco CCNA 200-301", [])
+      and B.cert_naming.series_aside("CompTIA A+ 220-1101 and 220-1102") == ("CompTIA A+", ["220-1101", "220-1102"])
+      and B.cert_naming.canonical("CompTIA Security+ — SY0-701", "CompTIA") == "CompTIA Security+")
+
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))
 sys.exit(1 if failed else 0)
