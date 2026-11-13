@@ -43,14 +43,21 @@
     {
       "title": "How far the Honors split reaches, and four held re-clustering cases",
       "text": "676 of the 680 Honors courses that share an identity with their base sit under official C-ID or CCN ids. M-IDs only makes 3 new M-IDs; official ids too makes 136. AJ 160, MUS 130, REAL M1038 with M1040 and MATH M1044 are held for your word.",
-      "if_no_reply": "Only the two ready cases apply: FIRE M1274 and the BUSI split. The held cases and the Honors split wait.",
-      "link": "https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU",
-      "link_text": "Open Sheet 193"
+      "if_no_reply": "Case 2 (FIRE M1274 into FIRE 130 X) is applied; the held cases and the Honors split wait.",
+      "link": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
+      "link_text": "Open Sheet 194"
+    },
+    {
+      "title": "Remove one row a bot saved, so the BUSI M1228 split is clean",
+      "text": "A title-matching bot's row keeps Santa Ana BUS 115 inside BUSI M1228. Splitting around it leaves M1228 carrying that course's title and counts; removing the row returns the course to BUSI M10XW. The receipt keeps the row.",
+      "if_no_reply": "The BUSI split waits and the row stays.",
+      "link": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
+      "link_text": "Open Sheet 194"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-13T18:42:18Z",
+  "written_at": "2026-11-13T20:13:15Z",
   "project": "course",
   "next_step": {
     "title": "Apply the two ready re-clustering cases",
