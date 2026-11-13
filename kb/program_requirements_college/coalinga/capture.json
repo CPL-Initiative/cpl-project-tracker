@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 68,
  "with_closed_list": 62,
- "started": "2026-11-07T11:16:44Z",
+ "started": "2026-11-13T02:52:37Z",
  "scope": "/catalog/2026-2027/",
  "sitemap": {
   "url": "https://coalingacollege.edu/sitemap.xml",
@@ -14,14 +14,19 @@
   "nested": 0,
   "program_pages": 0,
   "refused": null,
-  "errors": null
+  "errors": null,
+  "failed": null
  },
  "index_fallback": 61,
+ "index_failed": [],
+ "listing_failed": 0,
  "pages_read": 61,
+ "pages_listed": 61,
+ "pages_answered": 61,
  "child_pages": 0,
  "banner_h1": null,
  "loads": 72,
- "seconds": 363.2,
+ "seconds": 366.4,
  "found": 55,
  "by_method": {
   "no_closed_list": 6,
@@ -126,30 +131,13 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/coalinga",
-  "kept": 53,
-  "programs": 2,
-  "list": [
-   {
-    "control_number": "07958",
-    "title": "Administration of Justice: Correctional Science",
-    "award": "A.S. Degree",
-    "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/administration-of-justice-correctional-science.php",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "30887",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/administration-of-justice.php",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   }
-  ]
+  "kept": 55,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": []
  },
- "run": "42367397839"
+ "run": "43355010411"
 }

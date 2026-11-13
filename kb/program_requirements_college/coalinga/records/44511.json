@@ -61,20 +61,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     54.0,
     54.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Core Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +94,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -126,7 +122,8 @@
    "outcomes": [
     "The student will understand the FAA's regulations and guidelines for safe and proper flight operation."
    ],
-   "careers": []
+   "careers": [],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -170,5 +167,14 @@
    "The description calls the award a Certificate of Completion."
   ]
  },
- "extracted_run": "39032865307"
+ "extracted_run": 43355010411,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t\t5"
+  }
+ ],
+ "read_run": "39032865307"
 }
