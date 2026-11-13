@@ -1,0 +1,295 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "33892",
+ "shape": "degree",
+ "title": "Machining for Mechanical Engineering Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-machining-for-mechanical-engineering-technology-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7191,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7191,
+    "output_tokens": 2181,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2181,
+  "output_tokens_details": {
+   "thinking_tokens": 720
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07238,
+ "ms": 18495,
+ "seconds": 18.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ENGIN120",
+    "ENGTC119"
+   ],
+   "flagged": [
+    "ENGIN120",
+    "ENGTC119"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    25.0,
+    25.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 25.0-25.0; the catalog states 22.0-22.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. Degree Local Machining for Mechanical Engineering Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "DVC General Education (Option 1) or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "read the drawing for an object and visualize the geometry.",
+    "choose the correct manufacturing method for the object.",
+    "manufacture an object from a given drawing using machine tools.",
+    "use algebra, spreadsheets and measurement data to produce QC statistics.",
+    "verify that products meet the design criteria.",
+    "design and prototype mechanical parts under the supervision of engineers.",
+    "use computer integrated manufacturing (CIM) and computer numerical control (CNC) software for automation of manufacturing."
+   ],
+   "careers": [
+    "entry-level machinists",
+    "tool and die makers",
+    "mold makers",
+    "engineers",
+    "product developers",
+    "prototype/model builders",
+    "production machinist",
+    "electro-mechanical maintenance and repair specialists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "major requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ENGTC119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGTC126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGIN120",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC162",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC166",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGTC268",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC168",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "plus at least 3 units from:",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ENGTC111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH135",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH191",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH192",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Printed totals are inconsistent: the award heading prints '(Total 22)' and 'Complete the following number of credits: 22', while the 'major requirements' block prints '(Total 28)'. The required list sums to 22 units and the math block adds at least 3, so neither printed figure matches an obvious sum. total_units records the award-level 22 as printed; reviewer should verify.",
+   "The catalog text begins mid-sentence; the outcomes lead-in sentence is not present, so outcomes were copied as printed under the 'Program Learning Outcomes' heading. These outcomes are printed for the program as a whole and are recorded for this award.",
+   "The description also says students will be prepared for careers in demand for 'aerospace, medical, electronic, high tech, and automotive and transport industries'; these are industries rather than careers and were not recorded in careers. Reviewer may wish to add them.",
+   "GE: the page advises Option 1 (DVC General Education) for non-transfer students and Cal-GETC for transfer students; no GE units or degree total are printed.",
+   "ENGTC119 and ENGIN120 are not in the closed list and are recorded as catalog additions."
+  ]
+ },
+ "extracted_run": "43379378196"
+}
