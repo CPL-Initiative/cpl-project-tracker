@@ -575,6 +575,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_fetch_program_course_files.py` | workflows: `program-course-fetch.yml` | — |
 | `kb/_fold_unclassified.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_funding_config_edit_apply.py` | workflows: `funding-config-edit-apply.yml` | — |
+| `kb/_harvest_gap_census.py` | workflows: `harvest-gap-census.yml` | — |
 | `kb/_identity_daily_check.py` | workflows: `map-users-sync.yml` | — |
 | `kb/_jev_adjudicate.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_jev_agri_families.py` | workflows: `typesafe-smoke.yml` | — |
@@ -768,7 +769,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
-| `kb/program_requirements_college/los_angeles_city/kept_passing.json` | scripts: `kb/_program_requirements_college.py` | — |
+| `kb/program_requirements_college/los_angeles_city/kept_passing.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py` | — |
 | `kb/program_requirements_pilot/records/*.json` | scripts: `kb/_build_commons_status.py` | — |
@@ -846,6 +847,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/course.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/cr.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/exhibit.json` | scripts: `kb/_build_commons_status.py` | — |
+| `kb/status/harvest_gap_census.json` | scripts: `kb/_harvest_gap_census.py` | committed by: `harvest-gap-census.yml` |
+| `kb/status/harvest_gap_census.md` | scripts: `kb/_harvest_gap_census.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/mid_outcomes_compare_*.json` | none found | committed by: `mid-outcomes-compare.yml` |
 | `kb/status/mid_outcomes_compare_*.md` | none found | committed by: `mid-outcomes-compare.yml` |
 | `kb/status/program-requirements-checked.json` | scripts: `kb/_build_commons_status.py`, `kb/_sync_program_checked.py` | scripts: `kb/_sync_program_checked.py` · committed by: `daily-dashboard.yml` |
@@ -1114,6 +1117,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/funding_origination_test.py` | workflows: `js-tests.yml` | — |
 | `tests/glyph_sweep_test.py` | workflows: `js-tests.yml` | — |
 | `tests/governance_docs_panel.test.js` | workflows: `js-tests.yml` | — |
+| `tests/harvest_gap_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ib_official_titles_test.py` | workflows: `js-tests.yml` | — |
 | `tests/identities_rekey_test.py` | workflows: `js-tests.yml` | — |
 | `tests/install_prompt_guards_test.py` | workflows: `js-tests.yml` | — |
@@ -1430,5 +1434,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 890 file
-datasets · 195 external services · 567 consumers · 69 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 894 file
+datasets · 195 external services · 569 consumers · 70 workflows · 41 tabs.

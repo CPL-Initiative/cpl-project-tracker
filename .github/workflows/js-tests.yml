@@ -313,6 +313,10 @@ jobs:
       # a thousand rows. Pure-stdlib python; same non-required check.
       - name: Program requirements, one college (sitemap, matching, shards)
         run: python3 tests/program_requirements_college_test.py
+      # The harvest gap census (S644): one cause and one lever per program without a passing
+      # record, counts that sum to the universe, levers that count their members. Pure stdlib.
+      - name: Harvest gap census (one cause per program, levers count their members)
+        run: python3 tests/harvest_gap_census_test.py
       # The course outline census (S372, Sam 2026-10-12): which system each
       # college's course outlines open in, public or sign-in, and whether they
       # print SLOs. Reads pages only and writes no table. Pure-stdlib python.
