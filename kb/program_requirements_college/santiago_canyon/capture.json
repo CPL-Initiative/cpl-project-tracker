@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 260,
  "with_closed_list": 230,
- "started": "2026-11-13T00:38:12Z",
+ "started": "2026-11-13T00:44:23Z",
  "pdf": {
   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
   "access": "ok",
@@ -2942,7 +2942,7 @@
   ]
  },
  "loads": 1,
- "seconds": 222.6,
+ "seconds": 239.9,
  "found": 222,
  "by_method": {
   "no_closed_list": 30,
@@ -5601,5 +5601,5 @@
   "held_no_gain": [],
   "held_opens_on_list": []
  },
- "run": "43338151150"
+ "run": "43339249633"
 }

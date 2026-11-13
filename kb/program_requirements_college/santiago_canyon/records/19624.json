@@ -1,0 +1,277 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "19624",
+ "shape": "certificate",
+ "title": "Water Treatment, CA",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8610,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8610,
+    "output_tokens": 2043,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2043,
+  "output_tokens_details": {
+   "thinking_tokens": 764
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0753,
+ "ms": 17724,
+ "seconds": 17.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 16,
+   "share": 0.75,
+   "missing": [
+    "WATR137",
+    "WATR146",
+    "WATR148",
+    "WATR247"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'The following number of Units' chooses units but names no minimum",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Water Treatment, CA (heading not printed in this excerpt; the section begins on the preceding page)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "The following number of Units",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WATR136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR149",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "WATR 137",
+    "why": "named only in the Certificate of Proficiency (Water Treatment, CERT) section; the CA's core list is likely on the preceding page, not in the text"
+   },
+   {
+    "code": "WATR 146",
+    "why": "named only in the Certificate of Proficiency (Water Treatment, CERT) section; the CA's core list is likely on the preceding page, not in the text"
+   },
+   {
+    "code": "WATR 247",
+    "why": "named only in the Certificate of Proficiency (Water Treatment, CERT) section; the CA's core list is likely on the preceding page, not in the text"
+   },
+   {
+    "code": "WATR 148",
+    "why": "named only in the Certificate of Proficiency and Water Utility Management sections; the CA's core list is likely on the preceding page, not in the text"
+   }
+  ],
+  "notes": [
+   "The excerpt starts at page 143 mid-section: the Water Treatment, CA heading, description, unit range, program rules and any required core list fall on page 142, which is not in the text. A reviewer should check the preceding page.",
+   "The recorded block is the elective list that ends just before 'Control Number: 19624' at the top of page 143, read as the tail of the Water Treatment, CA section because it precedes the Certificate of Proficiency section and its courses complement that certificate's required courses. Its unit minimum and any block total are cut off, so minimum and stated are null.",
+   "The Water Treatment, CERT (Certificate of Proficiency, 12 units: WATR137, WATR146, WATR247, WATR148) is a different award and was not recorded. The CA likely requires these four courses as its core, but the text does not show that.",
+   "No total units, outcomes or careers for the Certificate of Achievement appear in the excerpt. The career sentence ('careers in the public health field of drinking water treatment') belongs to the Certificate of Proficiency description, so it was not recorded."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "7d697f83a76c4210",
+ "source_codes": [
+  "WATR136",
+  "WATR137",
+  "WATR138",
+  "WATR139",
+  "WATR140",
+  "WATR141",
+  "WATR143",
+  "WATR144",
+  "WATR145",
+  "WATR146",
+  "WATR148",
+  "WATR149",
+  "WATR150",
+  "WATR155",
+  "WATR242",
+  "WATR247"
+ ],
+ "source_coverage": 1.0
+}

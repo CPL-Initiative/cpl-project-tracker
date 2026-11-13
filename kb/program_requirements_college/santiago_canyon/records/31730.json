@@ -1,0 +1,270 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "31730",
+ "shape": "adt",
+ "title": "Political Science",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=129",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11387,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11387,
+    "output_tokens": 2346,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2346,
+  "output_tokens_details": {
+   "thinking_tokens": 1225
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09247,
+ "ms": 22703,
+ "seconds": 22.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 14,
+   "share": 0.5,
+   "missing": [
+    "ECONC2001",
+    "ECONC2002",
+    "POLSC1000",
+    "POLSC1000H",
+    "POLT201",
+    "POLT220",
+    "POLT230"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECON101",
+    "ECON102"
+   ],
+   "flagged": [
+    "ECON101",
+    "ECON102"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'Unnamed list continued from page 128 (heading not in text)' chooses units but names no minimum",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Political Science, AA-T (heading not in the supplied text; only the tail of the section on page 129 is shown)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Unnamed list continued from page 128 (heading not in text)",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ANTH100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLT221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "POLSC1000",
+    "why": "not in the text; likely on page 128, which was not supplied"
+   },
+   {
+    "code": "POLSC1000H",
+    "why": "not in the text; likely on page 128, which was not supplied"
+   },
+   {
+    "code": "POLT 201",
+    "why": "not in the text; likely on page 128, which was not supplied"
+   },
+   {
+    "code": "POLT 220",
+    "why": "not in the text; likely on page 128, which was not supplied"
+   },
+   {
+    "code": "POLT 230",
+    "why": "not in the text; likely on page 128, which was not supplied"
+   },
+   {
+    "code": "ECONC2001",
+    "why": "named only as the new number of ECON101 ('This course is now ECONC2001'); recorded under ECON101"
+   },
+   {
+    "code": "ECONC2002",
+    "why": "not printed by this code; the text lists ECON102 Principles/Macro, presumably its predecessor"
+   }
+  ],
+  "notes": [
+   "The supplied text begins on page 129 mid-list; the Political Science AA-T heading, description, unit range, program rules, block names and earlier blocks are on the preceding page and are missing. Reviewer should obtain page 128.",
+   "The single block recorded is the tail of a list whose heading, rule and unit total are not in the text; rule 'choose_units' is assumed from the catalog's usual 'The following number of Units' format, and minimum and stated are left null.",
+   "Honors courses (ANTH100H, HIST101H, SOC100H) are printed as separate rows in the catalog; recorded as alternatives of their non-honors twins.",
+   "ECON101 is printed with the note 'This course is now ECONC2001'; ECON101 and ECON102 are marked as catalog additions since the closed list stores ECONC2001/ECONC2002.",
+   "Everything after the list (Psychology, Health, Public Works sections) belongs to other programs and was not used."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "1e960168a23204d7",
+ "source_codes": [
+  "ANTH100",
+  "ANTH100H",
+  "ECONC2001",
+  "HIST101",
+  "HIST101H",
+  "POLT221",
+  "SOC100",
+  "SOC100H"
+ ],
+ "source_coverage": 0.571
+}

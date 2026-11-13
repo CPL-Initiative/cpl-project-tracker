@@ -1,0 +1,220 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "32319",
+ "shape": "degree",
+ "title": "Construction Inspection for Public Works, AS",
+ "award": "A.S. Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=132",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12491,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12491,
+    "output_tokens": 1457,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1457,
+  "output_tokens_details": {
+   "thinking_tokens": 443
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0791,
+ "ms": 13291,
+ "seconds": 13.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 13,
+   "share": 0.0,
+   "missing": [
+    "BUS222",
+    "CIS101",
+    "MGMT122",
+    "PBLC150",
+    "PBLC152",
+    "PBLC50",
+    "PBLC61",
+    "PBLC63",
+    "PBLC70",
+    "PBLC86",
+    "PBLC87",
+    "PBLC88",
+    "WATR140"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Construction Inspection for Public Works, AS (heading not in the provided text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BUS 222",
+    "why": "A.S. section not in the text; named only in the CA and other programs' sections"
+   },
+   {
+    "code": "CIS 101",
+    "why": "A.S. section not in the text; named only in the CA and other programs' sections"
+   },
+   {
+    "code": "MGMT 122",
+    "why": "A.S. section not in the text; named only in the CA and other programs' sections"
+   },
+   {
+    "code": "PBLC 150",
+    "why": "A.S. section not in the text; named only in other programs' sections (CA prints PASV150)"
+   },
+   {
+    "code": "PBLC 152",
+    "why": "A.S. section not in the text; named only in other programs' sections (CA prints PASV152)"
+   },
+   {
+    "code": "PBLC 50",
+    "why": "A.S. section not in the text; named only in the CA and other programs' sections"
+   },
+   {
+    "code": "PBLC 61",
+    "why": "A.S. section not in the text; named only in the CA and other programs' sections"
+   },
+   {
+    "code": "PBLC 63",
+    "why": "A.S. section not in the text; named only in the CA and Public Works sections"
+   },
+   {
+    "code": "PBLC 70",
+    "why": "A.S. section not in the text; named only in the CA and Public Works sections"
+   },
+   {
+    "code": "PBLC 86",
+    "why": "A.S. section not in the text; CA section prints PASV086"
+   },
+   {
+    "code": "PBLC 87",
+    "why": "A.S. section not in the text; CA section prints PASV087"
+   },
+   {
+    "code": "PBLC 88",
+    "why": "A.S. section not in the text; CA section prints PASV088"
+   },
+   {
+    "code": "WATR 140",
+    "why": "A.S. section not in the text; named only in the CA section"
+   }
+  ],
+  "notes": [
+   "The provided text begins on page 132 with the Construction Inspection for Public Works, CA (Certificate of Achievement, Control Number 32319) section; the A.S. degree section for this program is not in the text (it likely appears on page 131). No blocks were recorded for the A.S. to avoid attributing certificate requirements to the degree.",
+   "For reference, the CA section totals 21 units: required PBLC050, PBLC061, CIS101 plus one of BUS222/MGMT122/PASV150/PASV152 (12 units), and three of PBLC051/PBLC063/PBLC070 (9 units), with up to 3 units from PASV086/PASV087/PASV088/WATR140 substitutable. The A.S. may be identical but a reviewer should check page 131.",
+   "The CA section prints PASV150, PASV152, PASV086, PASV087, PASV088 where the closed list has PBLC 150, PBLC 152, PBLC 86, PBLC 87, PBLC 88; PBLC051 in the CA section is not in the closed list."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "1352a18f2681528f",
+ "source_codes": [
+  "BUS222",
+  "CIS101",
+  "MGMT122",
+  "PBLC150",
+  "PBLC152",
+  "PBLC50",
+  "PBLC61",
+  "PBLC63",
+  "PBLC70",
+  "WATR140"
+ ],
+ "source_coverage": 0.769
+}

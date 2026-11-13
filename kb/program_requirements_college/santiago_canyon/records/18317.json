@@ -1,0 +1,898 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "18317",
+ "shape": "degree",
+ "title": "Liberal Arts: Arts, Humanities, and Communication, AA",
+ "award": "A.A. Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=104",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 15878,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 15878,
+    "output_tokens": 6140,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6140,
+  "output_tokens_details": {
+   "thinking_tokens": 1526
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.18631,
+ "ms": 45375,
+ "seconds": 45.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 40,
+   "listed": 114,
+   "share": 0.351,
+   "missing": [
+    "ART100",
+    "ART100H",
+    "ART102",
+    "ART102H",
+    "ASL110",
+    "ASL111",
+    "ASL116",
+    "ASL210",
+    "CINE103",
+    "CINE104",
+    "CINE107",
+    "CINE108",
+    "COMM100H",
+    "COMM101",
+    "COMM111",
+    "COMM120",
+    "COMM120H",
+    "COMMC1000",
+    "COMMC1004",
+    "DNCE100",
+    "ENGL231",
+    "ENGL232",
+    "ENGL233A",
+    "ENGL233B",
+    "ENGL241",
+    "ENGL242",
+    "ENGL270",
+    "ENGL271",
+    "ENGL272",
+    "ENGL278",
+    "ENGL279",
+    "ENGL280",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "ETHN101",
+    "ETHN110",
+    "ETHN120",
+    "ETHN130",
+    "ETHN140",
+    "FREN101",
+    "FREN102",
+    "FREN194",
+    "FREN201",
+    "FREN202",
+    "GSWS101",
+    "GSWS103",
+    "HIST101",
+    "HIST101H",
+    "HIST102",
+    "HIST102H",
+    "HIST115",
+    "HIST118",
+    "HIST120",
+    "HIST120H",
+    "HIST124",
+    "HIST125",
+    "HIST127",
+    "HIST129",
+    "HIST130",
+    "HIST132",
+    "HIST133",
+    "HIST142",
+    "HIST152",
+    "HIST162",
+    "HIST172",
+    "HISTC1002",
+    "HISTC1002H",
+    "ITAL101",
+    "ITAL102",
+    "ITAL194"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'Program Rules list (continued from previous page; heading and rule line not in text)' chooses units but names no minimum",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not printed in the extracted text; the record reads the unheaded course list at the top of page 104 that precedes 'Control Number: 18317 Liberal Arts: Mathematics and Sciences, AS'",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Rules list (continued from previous page; heading and rule line not in text)",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ITAL195",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL202",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS112",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS114A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS114B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS214",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL106H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "READ150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "READ151",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN101H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN101A",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN101B",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN111",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN194",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN195A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN195B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN201",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN202",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ART 100",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ART 100H",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ART 102",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ART 102H",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ASL 110",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ASL 111",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ASL 116",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ASL 210",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "CINE 103",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "CINE 104",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "CINE 107",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "CINE 108",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "COMM 100H",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "COMM 101",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "COMM 111",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "COMM 120",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "COMM 120H",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "DNCE 100",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL 231",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL 232",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL 233A",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL 233B",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL 241",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL 242",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL 270",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL 271",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ENGL 272",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ENGL 278",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ENGL 279",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ENGL 280",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ENGL C1003H",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ETHN 101",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ETHN 110",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ETHN 120",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ETHN 130",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ETHN 140",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "FREN101",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "FREN102",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "FREN194",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "FREN201",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "FREN202",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "GSWS 101",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "GSWS 103",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST 101",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "HIST 101H",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "HIST 102",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "HIST 102H",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "HIST 115",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST 118",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "HIST 120",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "HIST 120H",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "HIST 124",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST 125",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST 127",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST 129",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "HIST 130",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST 132",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST 133",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "HIST 142",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST 152",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST 162",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST 172",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "not in the text (section start likely on page 103)"
+   },
+   {
+    "code": "ITAL101",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ITAL102",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   },
+   {
+    "code": "ITAL194",
+    "why": "in the text only in the Multi-Cultural Studies section"
+   }
+  ],
+  "notes": [
+   "The extracted text does not include the heading, description, Unit Range, Program Rules line or outcomes for Liberal Arts: Arts, Humanities, and Communication, AA; that section evidently begins on page 103, which is not in the text.",
+   "The course list at the top of page 104 (ITAL195 through THEA100) precedes Control Number 18317 (Mathematics and Sciences) and, given the catalog's alphabetical order of Liberal Arts emphases, is read as the tail of the Arts, Humanities, and Communication list. Reviewer should confirm against page 103.",
+   "Rule recorded as choose_units by analogy with the neighbouring Liberal Arts sections ('The following number of Units', 18.0); the minimum and total are not visible for this award, so minimum, stated and total_units are null.",
+   "Honors twins (MUS101H, PHIL106H, SPAN101H) are recorded as alternatives of their standard courses.",
+   "The Mathematics and Sciences section heading reads 'AS' but its Program Rules line reads 'AA'; not relevant to this award but noted.",
+   "No general education pattern, degree total, outcomes or careers are visible for this award in the extracted text."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "abae4ef482c894e4",
+ "source_codes": [
+  "ART102",
+  "ART102H",
+  "ASL110",
+  "ASL111",
+  "ASL116",
+  "ASL210",
+  "COMM120",
+  "COMM120H",
+  "ENGL271",
+  "ENGL272",
+  "ENGL278",
+  "ENGL279",
+  "ENGL280",
+  "ETHN101",
+  "ETHN110",
+  "ETHN120",
+  "ETHN130",
+  "ETHN140",
+  "FREN101",
+  "FREN102",
+  "FREN194",
+  "FREN201",
+  "FREN202",
+  "GSWS101",
+  "GSWS103",
+  "HIST101",
+  "HIST101H",
+  "HIST102",
+  "HIST102H",
+  "HIST115",
+  "HIST118",
+  "HIST120",
+  "HIST120H",
+  "HIST124",
+  "HIST125",
+  "HIST127",
+  "HIST129",
+  "HIST130",
+  "HIST132",
+  "HIST133",
+  "HIST142",
+  "HIST152",
+  "HIST162",
+  "HIST172",
+  "HISTC1002",
+  "HISTC1002H",
+  "ITAL101",
+  "ITAL102",
+  "ITAL194",
+  "ITAL195",
+  "ITAL201",
+  "ITAL202",
+  "MUS101",
+  "MUS101H",
+  "MUS102",
+  "MUS103",
+  "MUS104",
+  "MUS111",
+  "MUS112",
+  "MUS114A",
+  "MUS114B",
+  "MUS213",
+  "MUS214",
+  "NUTR120",
+  "PHIL106",
+  "PHIL106H",
+  "PHIL108",
+  "PHIL110",
+  "PHIL111",
+  "PHIL112",
+  "PHIL115",
+  "PHIL118",
+  "PHIL120",
+  "READ150",
+  "READ151",
+  "SOC101",
+  "SPAN101",
+  "SPAN101A",
+  "SPAN101B",
+  "SPAN101H",
+  "SPAN102",
+  "SPAN110",
+  "SPAN111",
+  "SPAN194",
+  "SPAN195A",
+  "SPAN195B",
+  "SPAN201",
+  "SPAN202",
+  "THEA100"
+ ],
+ "source_coverage": 0.781
+}

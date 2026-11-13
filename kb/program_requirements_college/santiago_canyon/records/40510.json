@@ -1,0 +1,172 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "40510",
+ "shape": "noncredit",
+ "title": "Enhanced Advanced ESL Skills",
+ "award": "Noncredit program",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7655,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7655,
+    "output_tokens": 771,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 771,
+  "output_tokens_details": {
+   "thinking_tokens": 229
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04604,
+ "ms": 7056,
+ "seconds": 7.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    144.0,
+    216.0
+   ],
+   "stated": [
+    144.0,
+    216.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Enhanced Advanced ESL Skills, COM",
+   "measure": "hours",
+   "total_units": {
+    "min": 144,
+    "max": 216
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 144,
+     "max": 216
+    },
+    "courses": [
+     {
+      "code": "ESL270",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL503",
+      "units": 72,
+      "units_max": 144,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours; total printed as 'Total Hours 144.0 - 216.0' both for the program rules and the nested 'Certificate Requirements' list.",
+   "ESL270 printed as 'Total Hours 72.0 - 72.0'; ESL503 printed as 'Total Hours 72.0 - 144.0'.",
+   "Catalog prints codes without a space (ESL270, ESL503); matched to closed-list ESL 270 and ESL 503. ESL503 title printed as 'Advanced Grammar & Writing'.",
+   "Control numbers are printed after each program's rules; 'Control Number: 40510' follows this section and appears to belong to it.",
+   "No program learning outcomes or careers are printed for this award."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "5b0e8f7dc68468bb",
+ "source_codes": [
+  "ESL270",
+  "ESL503"
+ ],
+ "source_coverage": 1.0
+}

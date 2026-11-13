@@ -1,0 +1,171 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "36217",
+ "shape": "noncredit",
+ "title": "Transition to Higher Learning",
+ "award": "Noncredit program",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7627,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7627,
+    "output_tokens": 1162,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1162,
+  "output_tokens_details": {
+   "thinking_tokens": 511
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05375,
+ "ms": 11223,
+ "seconds": 11.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "WKPR1"
+   ],
+   "flagged": [
+    "WKPR1"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 1080 hours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Non-Credit Programs",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "The following number of Hours",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "WKPR001",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WKPR002",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The text starts mid-section. The program's own heading, description and Program Rules total for Transition to Higher Learning are not in the excerpt; they are likely on page 256. The section heading recorded is the page header 'Non-Credit Programs'. Only the rule lines ending at 'Control Number: 36217' are read as this program's tail.",
+   "The block lead-in 'The following number of Hours' prints no number. Rule 'all' is an assumption; please verify against the full section.",
+   "The catalog prints 'Total Hours 0.0 - 0.0' beside both WKPR001 and WKPR002, so 0 hours is recorded as printed. This looks like a catalog data gap; check the actual course hours.",
+   "WKPR001 (Transition to Higher Learning) is not in the closed list, so it is marked as a catalog addition. WKPR002 is matched to closed-list WKPR 2 (Self-Advocacy AWD).",
+   "All other programs on the page belong to other awards and are ignored: Understanding and Supporting Employees with Disabilities, Working with Students with Disabilities, Custodial Technician, the ESL certificates and Enhanced Advanced ESL Skills."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "5b0e8f7dc68468bb",
+ "source_codes": [
+  "WKPR2"
+ ],
+ "source_coverage": 1.0
+}

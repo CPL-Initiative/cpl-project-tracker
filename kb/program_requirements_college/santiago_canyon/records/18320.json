@@ -1,0 +1,709 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "18320",
+ "shape": "degree",
+ "title": "Liberal Arts: Social and Behavioral Sciences, AA",
+ "award": "A.A. Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=107",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 15252,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 15252,
+    "output_tokens": 5320,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5320,
+  "output_tokens_details": {
+   "thinking_tokens": 1454
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.16741,
+ "ms": 40053,
+ "seconds": 41.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 99,
+   "share": 0.0,
+   "missing": [
+    "ANTH100",
+    "ANTH100H",
+    "ANTH103",
+    "ANTH104",
+    "APCD110",
+    "APCD221",
+    "CDEV107H",
+    "CDEV110",
+    "CDEV202",
+    "CDEV203",
+    "CDEV221",
+    "CDEVC1000",
+    "CINE105",
+    "CJ101",
+    "CMPR100",
+    "CNSL150",
+    "CNSL165",
+    "COMM120",
+    "COMM120H",
+    "COMM225",
+    "COMM225H",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGL278",
+    "ETHN101",
+    "ETHN110",
+    "ETHN120",
+    "ETHN130",
+    "ETHN140",
+    "GEOG100",
+    "GEOG100H",
+    "GEOG102",
+    "GEOG102H",
+    "GSWS101",
+    "GSWS102",
+    "GSWS103",
+    "HIST101",
+    "HIST101H",
+    "HIST102",
+    "HIST102H",
+    "HIST115",
+    "HIST118",
+    "HIST120",
+    "HIST120H",
+    "HIST124",
+    "HIST125",
+    "HIST126",
+    "HIST127",
+    "HIST129",
+    "HIST130",
+    "HIST132",
+    "HIST133",
+    "HIST140",
+    "HIST142",
+    "HIST152",
+    "HIST162",
+    "HIST172",
+    "HISTC1002",
+    "HISTC1002H",
+    "IDS155",
+    "KIN109",
+    "POLSC1000",
+    "POLSC1000H",
+    "POLT201",
+    "POLT220",
+    "POLT221",
+    "POLT230",
+    "POLT235",
+    "PSYC157",
+    "PSYC160",
+    "PSYC170",
+    "PSYC180",
+    "PSYC190",
+    "PSYC200",
+    "PSYC220",
+    "PSYC230",
+    "PSYC240",
+    "PSYC250",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOC100",
+    "SOC100H",
+    "SOC101",
+    "SOC115",
+    "SOC116",
+    "SOC120",
+    "SOC125",
+    "SOC125H",
+    "SOC130",
+    "SOC160",
+    "SOC210",
+    "SOC220",
+    "SOC230",
+    "SOC240",
+    "SOC240H",
+    "SOC286",
+    "STATC1000",
+    "STATC1000E",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text holds no Liberal Arts: Social and Behavioral Sciences, AA heading. Page 107 opens mid-list, likely the tail of this program, followed by Social Work and Human Services Assistant, AS; Social Work and Human Services Assistant, CA; Social Work and Human Services, AA-T; Criminal Justice and Administration, AS",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH100",
+    "why": "award section not in text; appears only in the Social Work AA-T List A"
+   },
+   {
+    "code": "ANTH100H",
+    "why": "award section not in text; appears only in the Social Work AA-T List A"
+   },
+   {
+    "code": "ANTH103",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTH104",
+    "why": "not in the text"
+   },
+   {
+    "code": "APCD110",
+    "why": "not in the text"
+   },
+   {
+    "code": "APCD221",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDEV 107H",
+    "why": "award section not in text; appears only in the Social Work sections as CDEV107H"
+   },
+   {
+    "code": "CDEV 203",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDEV 221",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDEV C1000",
+    "why": "award section not in text; named only as the new code for CDEV107 in the Social Work sections"
+   },
+   {
+    "code": "CDEV110",
+    "why": "award section not in text; appears only in the Social Work AA-T List A"
+   },
+   {
+    "code": "CDEV202",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINE 105",
+    "why": "not in the text"
+   },
+   {
+    "code": "CJ 101",
+    "why": "award section not in text; appears only in the Social Work AA-T List A"
+   },
+   {
+    "code": "CMPR100",
+    "why": "not in the text"
+   },
+   {
+    "code": "CNSL 150",
+    "why": "award section not in text; appears only in the Social Work sections"
+   },
+   {
+    "code": "CNSL 165",
+    "why": "award section not in text; appears only in the Social Work sections"
+   },
+   {
+    "code": "COMM 120",
+    "why": "award section not in text; appears only in the Social Work sections"
+   },
+   {
+    "code": "COMM 120H",
+    "why": "award section not in text; appears only in the Social Work sections"
+   },
+   {
+    "code": "COMM 225",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM 225H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECONC2001",
+    "why": "award section not in text; named only as the new code for ECON101 in the Social Work AA-T"
+   },
+   {
+    "code": "ECONC2002",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 278",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 120",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 130",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHN 140",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 100",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 100H",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "GEOG 102H",
+    "why": "not in the text"
+   },
+   {
+    "code": "GSWS 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "GSWS 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "GSWS 103",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 101H",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 102H",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 115",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 118",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST 120",
+    "why": "award section not in text; appears only in the Social Work AA-T List A"
+   },
+   {
+    "code": "HIST 120H",
+    "why": "award section not in text; appears only in the Social Work AA-T List A"
+   },
+   {
+    "code": "HIST 124",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 125",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 126",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 127",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 129",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 130",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 132",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 133",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 140",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 142",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 152",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 162",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST 172",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "in the unheaded list at top of page 107 (as HIST121, now HISTC1002); heading and rule cut off"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "in the unheaded list at top of page 107 (as HIST121H, now HISTC1002H); heading and rule cut off"
+   },
+   {
+    "code": "IDS 155",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "KIN 109",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "POLSC1000",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "POLSC1000H",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "POLT 201",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "POLT 220",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "POLT 221",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "POLT 230",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "POLT 235",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC 157",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC 160",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC 170",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC 180",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC 190",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC 200",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC 220",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC 230",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC 240",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC 250",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 100",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 100H",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 101",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 115",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 116",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 120",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 125",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 125H",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 130",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 160",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 210",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 220",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 230",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 240",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 240H",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "SOC 286",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "in the unheaded list at top of page 107; heading and rule cut off"
+   }
+  ],
+  "notes": [
+   "The excerpt does not include the Liberal Arts: Social and Behavioral Sciences, AA section heading, description, program rules, totals, outcomes or careers. The source link points to page 107, but that page opens mid-list.",
+   "The unheaded course list at the top of page 107 (HIST121/HISTC1002 through STATC1000H) matches this program's closed list closely. It is very likely the continuation of this award's elective list from page 106. Its block name, rule (choose courses or units) and minimum are not in the text, so no block was recorded. A reviewer should read page 106 to capture the full requirements.",
+   "The rest of the excerpt belongs to other programs: Social Work and Human Services Assistant AS and CA, Social Work and Human Services AA-T, and the start of Criminal Justice and Administration AS. It was not used for this record.",
+   "In the unheaded list, PSYC250 is printed as 'Introduction to Abnormal Psychology', while the closed list names it 'Introduction to Psychopathology'."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "68e5bab458524544",
+ "source_codes": [
+  "ANTH100",
+  "ANTH100H",
+  "CDEV107H",
+  "CDEV110",
+  "CDEVC1000",
+  "CJ101",
+  "CNSL150",
+  "CNSL165",
+  "COMM120",
+  "COMM120H",
+  "ECONC2001",
+  "HIST120",
+  "HIST120H",
+  "HIST124",
+  "HIST125",
+  "HIST126",
+  "HIST127",
+  "HIST129",
+  "HIST130",
+  "HIST132",
+  "HIST133",
+  "HIST140",
+  "HIST142",
+  "HIST152",
+  "HIST162",
+  "HIST172",
+  "HISTC1002",
+  "HISTC1002H",
+  "IDS155",
+  "KIN109",
+  "POLSC1000",
+  "POLSC1000H",
+  "POLT201",
+  "POLT220",
+  "POLT221",
+  "POLT230",
+  "POLT235",
+  "PSYC157",
+  "PSYC160",
+  "PSYC170",
+  "PSYC180",
+  "PSYC190",
+  "PSYC200",
+  "PSYC220",
+  "PSYC230",
+  "PSYC240",
+  "PSYC250",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "SOC100",
+  "SOC100H",
+  "SOC101",
+  "SOC115",
+  "SOC116",
+  "SOC120",
+  "SOC125",
+  "SOC125H",
+  "SOC130",
+  "SOC160",
+  "SOC210",
+  "SOC220",
+  "SOC230",
+  "SOC240",
+  "SOC240H",
+  "SOC286",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.687
+}

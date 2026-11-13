@@ -1,0 +1,1683 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "45619",
+ "shape": "certificate",
+ "title": "Cal-GETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=102",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 18287,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 18287,
+    "output_tokens": 12948,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 12948,
+  "output_tokens_details": {
+   "thinking_tokens": 2538
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.33211,
+ "ms": 89054,
+ "seconds": 89.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 54,
+   "listed": 210,
+   "share": 0.257,
+   "missing": [
+    "ANTH100",
+    "ANTH100H",
+    "ANTH104",
+    "APCD107",
+    "APCD110",
+    "APCD221",
+    "ART100",
+    "ART100H",
+    "ART101",
+    "ART101H",
+    "ART102",
+    "ART102H",
+    "ASL111",
+    "ASL116",
+    "ASL210",
+    "ASTR102",
+    "ASTR103",
+    "ASTR104",
+    "CDEV110",
+    "CDEV221",
+    "CDEVC1000",
+    "CHNS102",
+    "CINE103",
+    "CINE104",
+    "COMMC1000",
+    "DNCE100",
+    "EDUC101",
+    "ENGL231",
+    "ENGL232",
+    "ENGL233A",
+    "ENGL233B",
+    "ENGL241",
+    "ENGL242",
+    "ENGL270",
+    "ENGL271",
+    "ENGL272",
+    "ENGL278",
+    "ENGL279",
+    "ENGL280",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "FREN102",
+    "FREN201",
+    "FREN202",
+    "GEOG100",
+    "GEOG100H",
+    "GEOG102",
+    "GEOG102H",
+    "GEOG140",
+    "GSWS101",
+    "GSWS102",
+    "GSWS103",
+    "HIST101",
+    "HIST101H",
+    "HIST102",
+    "HIST102H",
+    "HIST115",
+    "HIST118",
+    "HIST120",
+    "HIST120H",
+    "HIST124",
+    "HIST125",
+    "HIST126",
+    "HIST127",
+    "HIST129",
+    "HIST130",
+    "HIST132",
+    "HIST133",
+    "HIST140",
+    "HIST142",
+    "HIST152",
+    "HIST162",
+    "HIST172",
+    "HISTC1002",
+    "HISTC1002H",
+    "IDS155",
+    "ITAL102",
+    "ITAL201",
+    "ITAL202",
+    "KIN109",
+    "MATH105",
+    "MATH140",
+    "MATH150",
+    "MATH150S",
+    "MATH171",
+    "MATH180",
+    "MATH180H",
+    "MATH185",
+    "MATH225",
+    "MATH270",
+    "MATH280",
+    "MATH287",
+    "MATH290",
+    "MATH295",
+    "MATHC2210E",
+    "MUS101",
+    "MUS101H",
+    "MUS102",
+    "MUS103",
+    "MUS104",
+    "PHIL106",
+    "PHIL106H",
+    "PHIL108",
+    "PHIL110",
+    "PHIL112",
+    "PHIL115",
+    "PHIL118",
+    "PHIL120",
+    "POLSC1000",
+    "POLSC1000H",
+    "POLT150",
+    "POLT201",
+    "POLT220",
+    "POLT221",
+    "POLT230",
+    "POLT235",
+    "PSYC157",
+    "PSYC160",
+    "PSYC170",
+    "PSYC180",
+    "PSYC190",
+    "PSYC220",
+    "PSYC230",
+    "PSYC240",
+    "PSYC250",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "READ151",
+    "SOC100",
+    "SOC100H",
+    "SOC115",
+    "SOC116",
+    "SOC120",
+    "SOC125",
+    "SOC125H",
+    "SOC130",
+    "SOC160",
+    "SOC210",
+    "SOC220",
+    "SOC230",
+    "SOC240",
+    "SOC240H",
+    "SOC286",
+    "SPAN102",
+    "SPAN111",
+    "SPAN195A",
+    "SPAN195B",
+    "SPAN201",
+    "STATC1000",
+    "STATC1000E",
+    "STATC1000H",
+    "THEA100"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    7.0,
+    9.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'5A (area heading on preceding page, not in excerpt)' chooses units but names no minimum",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Cal-GETC (heading not in excerpt; section ends at Control Number: 45619)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "5A (area heading on preceding page, not in excerpt)",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM200A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM200AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM200B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG130H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSC100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS150A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS150B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS250A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS250B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS250C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "5B: Biological Science",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ANTH101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL109H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL139",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL149",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL177",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL213",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL215",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL229",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL239",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL241",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL249",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL259",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL290",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "5C: LABORATORY ACTIVITIES",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 1
+    },
+    "courses": [
+     {
+      "code": "ANTH101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASTR100L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL109L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL109HL",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL139",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL149",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL190L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL213",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL215",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL229",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL239",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL249",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL259",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL290",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM200A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CHEM200AH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM200B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH100L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH111",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSC100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS150A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS150B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS250A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS250B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS250C",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "6: Ethnic Studies",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ETHN101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH100",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "ANTH100H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "ANTH104",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "APCD107",
+    "why": "not in the text"
+   },
+   {
+    "code": "APCD110",
+    "why": "not in the text"
+   },
+   {
+    "code": "APCD221",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 100",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ART 100H",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ART 101",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "ART 101H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "ART 102",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ART 102H",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ASL 111",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ASL 116",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ASL 210",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ASTR 102",
+    "why": "not in excerpt; likely in 5A rows before page 102"
+   },
+   {
+    "code": "ASTR 103",
+    "why": "not in excerpt; likely in 5A rows before page 102"
+   },
+   {
+    "code": "ASTR 104",
+    "why": "not in excerpt; likely in 5A rows before page 102"
+   },
+   {
+    "code": "CDEV 221",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDEV C1000",
+    "why": "not in the text"
+   },
+   {
+    "code": "CDEV110",
+    "why": "not in the text"
+   },
+   {
+    "code": "CHNS102",
+    "why": "not in the text"
+   },
+   {
+    "code": "CINE 103",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "CINE 104",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "DNCE 100",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "EDUC 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "ENGL 231",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 232",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 233A",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 233B",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 241",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 242",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 270",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 271",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 272",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 278",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 279",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 280",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "ENGL C1003H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "FREN102",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "FREN201",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "FREN202",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "GEOG 100",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "GEOG 100H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "GEOG 102",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "GEOG 102H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "GEOG 140",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "GSWS 101",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "GSWS 102",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "GSWS 103",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 101",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 101H",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 102",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 102H",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 115",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 118",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 120",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 120H",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 124",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 125",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 126",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "HIST 127",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 129",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 130",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 132",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 133",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 140",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "HIST 142",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 152",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 162",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 172",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "IDS 155",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "ITAL102",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ITAL201",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "ITAL202",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "KIN 109",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 105",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 140",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 150",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 150S",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 171",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 180",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 180H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 185",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 225",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 270",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 280",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 287",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 290",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH 295",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MATH C2210E",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "MUS 101",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "MUS 101H",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "MUS 102",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "MUS 103",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "MUS 104",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 106",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 106H",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 108",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 110",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 112",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 115",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 118",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 120",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "POLSC1000",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "POLSC1000H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "POLT 150",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "POLT 201",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "POLT 220",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "POLT 221",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "POLT 230",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "POLT 235",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC 157",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC 160",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC 170",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC 180",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC 190",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC 220",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC 230",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC 240",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC 250",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "READ 151",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "SOC 100",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 100H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 115",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 116",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 120",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 125",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 125H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 130",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 160",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 210",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 220",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 230",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 240",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 240H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SOC 286",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "SPAN 102",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 111",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 195A",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 195B",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 201",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in excerpt; earlier Cal-GETC areas precede page 102"
+   },
+   {
+    "code": "THEA 100",
+    "why": "not in Cal-GETC excerpt; named only in Liberal Arts AA section"
+   }
+  ],
+  "notes": [
+   "The excerpt begins mid-section: the Cal-GETC heading, unit range for completion, Areas 1-4 and the start of Area 5A are on the preceding page(s) and are not in the text. The section is read as ending at 'Control Number: 45619'; the CSU GE Breadth and IGETC certificates and the Liberal Arts AA that follow are other programs and were not recorded.",
+   "The first block's heading (presumably 5A: Physical Science) and its unit rule are cut off at the page break; rule recorded as choose_units with minimum null. Missing 5A rows (e.g., ASTR 102/103/104) likely precede page 102.",
+   "total_units is null because the certificate's total is not in the excerpt; it would be on the preceding page.",
+   "The courses in this certificate are themselves the Cal-GETC pattern, so they were recorded as blocks; ge_pattern left null since the award is the GE pattern itself rather than a degree naming one.",
+   "Honors twins printed as separate rows (BIOL109H, BIOL109HL, CHEM200AH, GEOG101H, GEOG130H) were recorded as alternatives of their base courses.",
+   "Area 6 prints 'Select ONE course (Total Units 0.0 - 0.0)' and '6: Ethnic Studies (Total Units 3.0 - 3.0)'; recorded as choose 1 course with stated 3.",
+   "Codes are written as the catalog prints them (no space, e.g., GEOG101); treated as matching the closed-list codes (e.g., GEOG 101).",
+   "No program outcomes or careers are printed in the excerpt."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "63955efb88c7e09a",
+ "source_codes": [
+  "ANTH100",
+  "ANTH100H",
+  "ANTH101",
+  "ANTH101L",
+  "ANTH104",
+  "ART100",
+  "ART100H",
+  "ART101",
+  "ART101H",
+  "ART102",
+  "ART102H",
+  "ASL111",
+  "ASL116",
+  "ASL210",
+  "ASTR100L",
+  "ASTR102",
+  "ASTR103",
+  "ASTR104",
+  "BIOL109",
+  "BIOL109H",
+  "BIOL109HL",
+  "BIOL109L",
+  "BIOL111",
+  "BIOL115",
+  "BIOL139",
+  "BIOL149",
+  "BIOL177",
+  "BIOL190",
+  "BIOL190L",
+  "BIOL211",
+  "BIOL213",
+  "BIOL215",
+  "BIOL229",
+  "BIOL239",
+  "BIOL241",
+  "BIOL249",
+  "BIOL259",
+  "BIOL290",
+  "CHEM100",
+  "CHEM200A",
+  "CHEM200AH",
+  "CHEM200B",
+  "CINE103",
+  "CINE104",
+  "COMMC1000",
+  "DNCE100",
+  "EDUC101",
+  "ENGL231",
+  "ENGL232",
+  "ENGL233A",
+  "ENGL233B",
+  "ENGL241",
+  "ENGL242",
+  "ENGL270",
+  "ENGL271",
+  "ENGL272",
+  "ENGL278",
+  "ENGL279",
+  "ENGL280",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "ENGLC1001",
+  "ENGLC1001H",
+  "ENGLC1003",
+  "ENGLC1003H",
+  "ERTH100",
+  "ERTH100L",
+  "ERTH111",
+  "ERTH120",
+  "ERTH121",
+  "ERTH130",
+  "ERTH160",
+  "ERTH200",
+  "ETHN101",
+  "ETHN110",
+  "ETHN120",
+  "ETHN130",
+  "ETHN140",
+  "FREN102",
+  "FREN201",
+  "FREN202",
+  "GEOG101",
+  "GEOG101H",
+  "GEOG101L",
+  "GEOG130",
+  "GEOG130H",
+  "GSWS101",
+  "GSWS102",
+  "GSWS103",
+  "HIST101",
+  "HIST101H",
+  "HIST102",
+  "HIST102H",
+  "HIST115",
+  "HIST118",
+  "HIST120",
+  "HIST120H",
+  "HIST124",
+  "HIST125",
+  "HIST127",
+  "HIST129",
+  "HIST130",
+  "HIST132",
+  "HIST133",
+  "HIST140",
+  "HIST142",
+  "HIST152",
+  "HIST162",
+  "HIST172",
+  "HISTC1002",
+  "HISTC1002H",
+  "ITAL102",
+  "ITAL201",
+  "ITAL202",
+  "MATH105",
+  "MATH140",
+  "MATH150",
+  "MATH150S",
+  "MATH171",
+  "MATH180",
+  "MATH180H",
+  "MATH185",
+  "MATH280",
+  "MATH287",
+  "MATH290",
+  "MATH295",
+  "MATHC2210E",
+  "MUS101",
+  "MUS101H",
+  "MUS102",
+  "MUS103",
+  "MUS104",
+  "PHIL106",
+  "PHIL106H",
+  "PHIL108",
+  "PHIL110",
+  "PHIL112",
+  "PHIL115",
+  "PHIL118",
+  "PHIL120",
+  "PHYS100",
+  "PHYS150A",
+  "PHYS150B",
+  "PHYS250A",
+  "PHYS250B",
+  "PHYS250C",
+  "PSC100",
+  "PSYC200",
+  "READ151",
+  "SOC101",
+  "SPAN102",
+  "SPAN111",
+  "SPAN195A",
+  "SPAN195B",
+  "SPAN201",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H",
+  "THEA100"
+ ],
+ "source_coverage": 0.757
+}

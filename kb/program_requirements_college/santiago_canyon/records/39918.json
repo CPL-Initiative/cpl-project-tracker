@@ -1,0 +1,657 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "39918",
+ "shape": "degree",
+ "title": "Kinesiology - Health Promotion",
+ "award": "A.S. Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=120",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 15464,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 15464,
+    "output_tokens": 5153,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5153,
+  "output_tokens_details": {
+   "thinking_tokens": 1834
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.16492,
+ "ms": 40154,
+ "seconds": 40.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 40,
+   "listed": 62,
+   "share": 0.645,
+   "missing": [
+    "DNCE106A",
+    "DNCE106B",
+    "DNCE108A",
+    "DNCE108B",
+    "DNCE115A",
+    "DNCE115B",
+    "DNCE119A",
+    "DNCE119B",
+    "KIN100",
+    "KIN101",
+    "KIN104",
+    "KIN120A",
+    "KIN120B",
+    "KIN121A",
+    "KIN146A",
+    "KIN147",
+    "KIN185A",
+    "KIN185B",
+    "KIN185C",
+    "KIN189A",
+    "PSYCC1000",
+    "PSYCC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "BIOL239",
+    "NUTR115",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "BIOL239",
+    "NUTR115",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    6.0,
+    10.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "'FITNESS (heading not in provided text; list begins mid-section)' chooses units but names no minimum",
+    "'TEAM SPORTS' chooses units but names no minimum",
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology - Health Promotion, AS (heading not in the provided text; inferred)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "FITNESS (heading not in provided text; list begins mid-section)",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIN119",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN126A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN126B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN127A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN127B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN127C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN128A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN140A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN140B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN140C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN146B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN146C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN200",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN201",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN202",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN203",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN204",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "TEAM SPORTS",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIN160A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN160B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN163A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN168A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN168B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVES - Select a minimum of six (6) units from the following:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ACCT101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL109H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL109L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL109HL",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL139",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL149",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL229",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL239",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL249",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL259",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN102",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000E",
+        "units": 4.5,
+        "catalog_addition": true
+       },
+       {
+        "code": "STATC1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "KIN 100",
+    "why": "A.S. core requirements are on page 119, not in the provided text; appears only in the C.A. and Sport Studies sections"
+   },
+   {
+    "code": "KIN 101",
+    "why": "A.S. core requirements on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "KIN 104",
+    "why": "A.S. core requirements on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "A.S. core requirements on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "A.S. core requirements on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "KIN 185A",
+    "why": "A.S. Aquatics list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "KIN 185B",
+    "why": "A.S. Aquatics list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "KIN 185C",
+    "why": "A.S. Aquatics list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "DNCE 106A",
+    "why": "A.S. Dance list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "DNCE 106B",
+    "why": "A.S. Dance list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "DNCE 108A",
+    "why": "A.S. Dance list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "DNCE 108B",
+    "why": "A.S. Dance list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "DNCE 115A",
+    "why": "A.S. Dance list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "DNCE 115B",
+    "why": "A.S. Dance list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "DNCE 119A",
+    "why": "A.S. Dance list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "DNCE 119B",
+    "why": "A.S. Dance list on page 119 not in the provided text; appears only in other sections"
+   },
+   {
+    "code": "KIN 120A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 120B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 121A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 146A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 147",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 189A",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The provided text begins on page 120 partway through the A.S. Health Promotion section (ending at 'Control Number: 39918'); its heading, description, unit total, outcomes, core requirements and the start of the activity-area rule (Aquatics, Combatives, Dance, start of Fitness) are on page 119, which was not provided. Section heading is inferred from the parallel C.A. section; a reviewer should check page 119.",
+   "Only the tail of the A.S. section is recorded: the Fitness list (heading not visible), Team Sports and Electives. The Fitness list may be incomplete at its start.",
+   "Activity area blocks (Fitness, Team Sports) are recorded as choose_units with null minimum because the governing rule (in the C.A. section: 'Select four (4) units... one (1) unit course(s) from at least three (3) different areas') is not visible for the A.S.; the catalog prints 'Total Units 0.0 - 0.0' for the area headings, left as stated null.",
+   "The catalog prints 1.0 units for activity courses while the closed list stores 0.5; printed units recorded.",
+   "Honors twins and STAT C1000/C1000E/C1000H in Electives are recorded as alternatives though the catalog lists them as separate rows.",
+   "No total_units, degree total, GE pattern, outcomes or careers appear in the visible A.S. text; the C.A. section's statements were not used."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "270751781c59bfcb",
+ "source_codes": [
+  "ACCT101",
+  "BIOL109",
+  "BIOL109H",
+  "BIOL109HL",
+  "BIOL109L",
+  "BIOL139",
+  "BIOL149",
+  "BIOL229",
+  "BIOL249",
+  "BIOL259",
+  "DNCE106A",
+  "DNCE106B",
+  "DNCE108A",
+  "DNCE108B",
+  "DNCE115A",
+  "DNCE115B",
+  "DNCE119A",
+  "DNCE119B",
+  "ETHN101",
+  "KIN100",
+  "KIN101",
+  "KIN102",
+  "KIN104",
+  "KIN109",
+  "KIN110",
+  "KIN111",
+  "KIN119",
+  "KIN126A",
+  "KIN126B",
+  "KIN127A",
+  "KIN127B",
+  "KIN127C",
+  "KIN128A",
+  "KIN140A",
+  "KIN140B",
+  "KIN140C",
+  "KIN146B",
+  "KIN146C",
+  "KIN160A",
+  "KIN160B",
+  "KIN163A",
+  "KIN168A",
+  "KIN168B",
+  "KIN185A",
+  "KIN185B",
+  "KIN185C",
+  "KIN200",
+  "KIN201",
+  "KIN202",
+  "KIN203",
+  "KIN204",
+  "PSYC200",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "STATC1000",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.903
+}

@@ -1,0 +1,526 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "39919",
+ "shape": "certificate",
+ "title": "Kinesiology - Health Promotion",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=121",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 15567,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 15567,
+    "output_tokens": 3684,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3684,
+  "output_tokens_details": {
+   "thinking_tokens": 880
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13595,
+ "ms": 27929,
+ "seconds": 28.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 65,
+   "share": 0.0,
+   "missing": [
+    "ACCT101",
+    "BIOL109",
+    "BIOL109H",
+    "BIOL109HL",
+    "BIOL109L",
+    "BIOL139",
+    "BIOL149",
+    "BIOL229",
+    "BIOL239",
+    "BIOL249",
+    "BIOL259",
+    "DNCE106A",
+    "DNCE106B",
+    "DNCE108A",
+    "DNCE108B",
+    "DNCE115A",
+    "DNCE115B",
+    "DNCE119A",
+    "DNCE119B",
+    "ETHN101",
+    "KIN100",
+    "KIN101",
+    "KIN102",
+    "KIN104",
+    "KIN109",
+    "KIN110",
+    "KIN111",
+    "KIN119",
+    "KIN120A",
+    "KIN120B",
+    "KIN121A",
+    "KIN125A",
+    "KIN125B",
+    "KIN126A",
+    "KIN126B",
+    "KIN127A",
+    "KIN127B",
+    "KIN127C",
+    "KIN128A",
+    "KIN140A",
+    "KIN140B",
+    "KIN140C",
+    "KIN146A",
+    "KIN146B",
+    "KIN146C",
+    "KIN147",
+    "KIN160A",
+    "KIN160B",
+    "KIN163A",
+    "KIN168A",
+    "KIN168B",
+    "KIN185A",
+    "KIN185B",
+    "KIN185C",
+    "KIN189A",
+    "KIN200",
+    "KIN201",
+    "KIN202",
+    "KIN203",
+    "KIN204",
+    "PSYC200",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "STATC1000",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology - Health Promotion, CA (heading not in the supplied text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACCT 101",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "BIOL 109",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "BIOL 109H",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "BIOL 109HL",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "BIOL 109L",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "BIOL 139",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "BIOL 149",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "BIOL 229",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "BIOL 239",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in other programs' sections"
+   },
+   {
+    "code": "BIOL 249",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in other programs' sections"
+   },
+   {
+    "code": "BIOL 259",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "ETHN 101",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown)"
+   },
+   {
+    "code": "KIN 102",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "KIN 109",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "KIN 110",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "KIN 111",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "PSYC 200",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown)"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "only in an untitled list fragment at top of p.121 (award unknown) and in Sport Studies sections"
+   },
+   {
+    "code": "DNCE 106A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "DNCE 106B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "DNCE 108A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "DNCE 108B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "DNCE 115A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "DNCE 115B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "DNCE 119A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "DNCE 119B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 100",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 101",
+    "why": "named only in Sport Studies sections"
+   },
+   {
+    "code": "KIN 104",
+    "why": "named only in Sport Studies sections"
+   },
+   {
+    "code": "KIN 119",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 120A",
+    "why": "not in text"
+   },
+   {
+    "code": "KIN 120B",
+    "why": "not in text"
+   },
+   {
+    "code": "KIN 121A",
+    "why": "not in text"
+   },
+   {
+    "code": "KIN 125A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 125B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 126A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 126B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 127A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 127B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 127C",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 128A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 140A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 140B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 140C",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 146A",
+    "why": "not in text"
+   },
+   {
+    "code": "KIN 146B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 146C",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 147",
+    "why": "not in text"
+   },
+   {
+    "code": "KIN 160A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 160B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 163A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 168A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 168B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 185A",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 185B",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 185C",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 189A",
+    "why": "not in text"
+   },
+   {
+    "code": "KIN 200",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 201",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 202",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 203",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "KIN 204",
+    "why": "named only in Sport Studies and AA-T sections"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "named only in Sport Studies sections"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "named only in Sport Studies sections"
+   }
+  ],
+  "notes": [
+   "The supplied text does not contain the Kinesiology - Health Promotion Certificate of Achievement section. It holds the Kinesiology - Sport Studies AS and CA, and the start of the Kinesiology AA-T (cut off on p.123).",
+   "The top of p.121 prints a course list (ACCT101, BIOL109/109H/109HL/109L, BIOL139-259, ETHN101, KIN102, KIN109-111, NUTR115, PSYC200, STATC1000/1000E/1000H) with no heading, rule or award name. It is the tail of a preceding program, possibly a Kinesiology - Health Promotion award, but it cannot be attributed to the CA or read for a rule, so it was not recorded. A reviewer should check the preceding page (p.120) for the Health Promotion CA section.",
+   "No total, outcomes or careers for the Health Promotion CA appear in the text."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "749c36c4d4373c76",
+ "source_codes": [
+  "ACCT101",
+  "BIOL109",
+  "BIOL109H",
+  "BIOL109HL",
+  "BIOL109L",
+  "BIOL139",
+  "BIOL149",
+  "BIOL229",
+  "BIOL239",
+  "BIOL249",
+  "BIOL259",
+  "DNCE106A",
+  "DNCE106B",
+  "DNCE108A",
+  "DNCE108B",
+  "DNCE115A",
+  "DNCE115B",
+  "DNCE119A",
+  "DNCE119B",
+  "ETHN101",
+  "KIN100",
+  "KIN101",
+  "KIN102",
+  "KIN104",
+  "KIN109",
+  "KIN110",
+  "KIN111",
+  "KIN119",
+  "KIN125A",
+  "KIN125B",
+  "KIN126A",
+  "KIN126B",
+  "KIN127A",
+  "KIN127B",
+  "KIN127C",
+  "KIN128A",
+  "KIN140A",
+  "KIN140B",
+  "KIN140C",
+  "KIN146B",
+  "KIN146C",
+  "KIN160A",
+  "KIN160B",
+  "KIN163A",
+  "KIN168A",
+  "KIN168B",
+  "KIN185A",
+  "KIN185B",
+  "KIN185C",
+  "KIN200",
+  "KIN201",
+  "KIN202",
+  "KIN203",
+  "KIN204",
+  "PSYC200",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "STATC1000",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.908
+}

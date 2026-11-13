@@ -1,0 +1,264 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "11986",
+ "shape": "degree",
+ "title": "Apprenticeship Carpentry, Millwrighting",
+ "award": "A.S. Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10004,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10004,
+    "output_tokens": 1642,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1642,
+  "output_tokens_details": {
+   "thinking_tokens": 457
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07286,
+ "ms": 14552,
+ "seconds": 14.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 21,
+   "share": 0.0,
+   "missing": [
+    "AMW21",
+    "AMW22",
+    "AMW23A",
+    "AMW23B",
+    "AMW24",
+    "AMW25",
+    "AMW26",
+    "AMW27",
+    "AMW28",
+    "AMW29A",
+    "AMW29B",
+    "AMW30",
+    "AMW31",
+    "AMW32",
+    "AMW33",
+    "AMW34",
+    "AMW36A",
+    "AMW36B",
+    "AMW37",
+    "AMW39",
+    "AMW51"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AMW 21",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 22",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 023A",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 023B",
+    "why": "not in the text"
+   },
+   {
+    "code": "AMW 24",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 25",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 26",
+    "why": "A.S. section not in the text; named only in the Millwrighting certificate and Pile Driver sections"
+   },
+   {
+    "code": "AMW 27",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 28",
+    "why": "not in the text"
+   },
+   {
+    "code": "AMW 029A",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 029B",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 30",
+    "why": "not in the text"
+   },
+   {
+    "code": "AMW 31",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 32",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 33",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 34",
+    "why": "not in the text"
+   },
+   {
+    "code": "AMW 036A",
+    "why": "not in the text"
+   },
+   {
+    "code": "AMW 036B",
+    "why": "not in the text"
+   },
+   {
+    "code": "AMW 37",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW039",
+    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+   },
+   {
+    "code": "AMW 51",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (pages 319-320) contains no section for the Apprenticeship Carpentry, Millwrighting A.S. Degree. It begins with the Millwrighting Certificate of Achievement (Control Number 11986; Choose 16 courses, Total Credits 30.5 - 32.0), followed by the Pile Driver AS and CA sections. The A.S. section likely appears on an earlier page (e.g., page 318) and should be retrieved; no blocks were recorded to avoid attributing certificate requirements to the degree.",
+   "The Millwrighting certificate section lists AMW041A, AMW041B, AMW042A, AMW042B, AMW043, AMW044, AMW045, AMW046, AMW047, which are not in the closed list; the closed list's AMW 023B, AMW 28, AMW 30, AMW 34, AMW 036A, AMW 036B and AMW 51 do not appear anywhere in the text.",
+   "No outcomes or careers headings appear for the A.S. award in the supplied text."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "c0440447c38e3867",
+ "source_codes": [
+  "AMW21",
+  "AMW22",
+  "AMW23A",
+  "AMW24",
+  "AMW25",
+  "AMW26",
+  "AMW27",
+  "AMW29A",
+  "AMW29B",
+  "AMW31",
+  "AMW32",
+  "AMW33",
+  "AMW37",
+  "AMW39"
+ ],
+ "source_coverage": 0.667
+}

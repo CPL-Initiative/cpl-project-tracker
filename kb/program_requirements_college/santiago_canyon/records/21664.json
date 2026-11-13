@@ -1,0 +1,395 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "21664",
+ "shape": "certificate",
+ "title": "Apprenticeship: Carpentry, Drywall/Lather",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9377,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9377,
+    "output_tokens": 2372,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2372,
+  "output_tokens_details": {
+   "thinking_tokens": 687
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08495,
+ "ms": 19279,
+ "seconds": 19.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 23,
+   "share": 0.522,
+   "missing": [
+    "ACA74C",
+    "ACA75B",
+    "ACA76A",
+    "ACA76B",
+    "ACA77A",
+    "ACA77B",
+    "ACA77C",
+    "ACA78C",
+    "ACA78D",
+    "ACA82B",
+    "ACA82C"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 9,
+   "codes": [
+    "ACA72A",
+    "ACA72B",
+    "ACA73A",
+    "ACA73B",
+    "ACA73C",
+    "ACA75A",
+    "ACA86A",
+    "ACA96",
+    "ACA97"
+   ],
+   "flagged": [
+    "ACA72A",
+    "ACA72B",
+    "ACA73A",
+    "ACA73B",
+    "ACA73C",
+    "ACA75A",
+    "ACA86A",
+    "ACA96",
+    "ACA97"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    26.0
+   ],
+   "stated": [
+    24.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "Drywall/Lathers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate courses",
+    "rule": "choose_courses",
+    "minimum": 16,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "ACA071A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA071B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA071C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA072A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA072B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA072C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA073A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA073B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA073C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA074A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA074B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA075A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA075C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA078B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA079A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA079C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA083",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA086A",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA089",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA096",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA097",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACA 074C",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACA 075B",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACA 076A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACA 076B",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACA 077A",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACA 077B",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACA 077C",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACA 078C",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACA 078D",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACA 082B",
+    "why": "not in the text"
+   },
+   {
+    "code": "ACA 082C",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Recorded the Certificate of Achievement section (Control Number 21664), not the A.S. section printed before it, which lists the same courses.",
+   "In the certificate section ACA086A, ACA096 and ACA097 are printed with 'Total Credits 0.0 - 0.0', while the A.S. section prints 1.5 for each; units recorded as printed (0). Likely a catalog error worth checking.",
+   "Several catalog codes (ACA072A, ACA072B, ACA073A-C, ACA075A, ACA086A, ACA096, ACA097) are not in the closed list; ACA075C is titled 'Light Gage Welding AWS - B' in the catalog vs. 'Light Gage AWS B' in the closed list.",
+   "Award title in the request mentions 18 or greater units; the catalog states 24.0 - 26.0 total credits for the certificate.",
+   "No program learning outcomes are printed in the text.",
+   "Careers: the description names the occupation 'Drywall/Lathers'; it also mentions possible 'journeyworker status', which was not recorded as a career."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "b711fc14faabb2c9",
+ "source_codes": [
+  "ACA71A",
+  "ACA71B",
+  "ACA71C",
+  "ACA72C",
+  "ACA74A",
+  "ACA74B",
+  "ACA75C",
+  "ACA78B",
+  "ACA79A",
+  "ACA79C",
+  "ACA83",
+  "ACA89"
+ ],
+ "source_coverage": 0.522
+}

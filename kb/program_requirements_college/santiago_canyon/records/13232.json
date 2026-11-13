@@ -1,0 +1,234 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "13232",
+ "shape": "degree",
+ "title": "Apprenticeship: Carpentry, Framing",
+ "award": "A.S. Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13882,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13882,
+    "output_tokens": 1621,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1621,
+  "output_tokens_details": {
+   "thinking_tokens": 596
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08795,
+ "ms": 14829,
+ "seconds": 15.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 15,
+   "share": 0.0,
+   "missing": [
+    "ACA21A",
+    "ACA21B",
+    "ACA21C",
+    "ACA22A",
+    "ACA22B",
+    "ACA22D",
+    "ACA23B",
+    "ACA23C",
+    "ACA24A",
+    "ACA24B",
+    "ACA24C",
+    "ACA24D",
+    "ACA25C",
+    "ACA25D",
+    "ACA28C"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ACA 021A",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 021B",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 021C",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 022A",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 022B",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 022D",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 023B",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 023C",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 024A",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 024B",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 024C",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 024D",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 025C",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 025D",
+    "why": "A.S. section not in the text; named only in the Framing CA section"
+   },
+   {
+    "code": "ACA 028C",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The excerpt begins (page 317) with 'Apprenticeship Carpentry, Framing, CA' (Certificate of Achievement, Control Number 13232), not the A.S. Degree. The A.S. section for Framing is likely on the preceding page (316), which is not in the text, so no blocks were recorded.",
+   "The Framing CA section prints a total of 25.5-26.5 credits: a required block (19.5) of ACA004C, ACA021A, ACA021B, ACA021C, ACA021E, ACA022A, ACA022B, ACA022D, ACA023B, ACA024A, ACA024B, ACA025C, and 'Select four (4) courses' (6.0-7.0) from ACA023C, ACA024C, ACA024D, ACA025D, ACA026B, ACA072A. The A.S. may differ (closed list includes ACA 028C, absent from the CA section, and omits ACA004C and ACA021E); a reviewer should fetch page 316.",
+   "No program learning outcomes or careers sections are printed for the A.S. award in the text."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "ab54ee959097020e",
+ "source_codes": [
+  "ACA21A",
+  "ACA21B",
+  "ACA21C",
+  "ACA22A",
+  "ACA22B",
+  "ACA22D",
+  "ACA23B",
+  "ACA23C",
+  "ACA24A",
+  "ACA24B",
+  "ACA24C",
+  "ACA24D",
+  "ACA25C",
+  "ACA25D"
+ ],
+ "source_coverage": 0.933
+}

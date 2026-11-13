@@ -1,0 +1,99 @@
+{
+ "college": "Santiago Canyon College",
+ "programs": 260,
+ "with_closed_list": 230,
+ "found": 222,
+ "extracted": 222,
+ "errors": 0,
+ "passed_machine_checks": 148,
+ "failed": {
+  "coverage": 33,
+  "invented": 3,
+  "arithmetic": 65,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 16.98,
+ "cost_per_program": 0.0765,
+ "not_found": [
+  {
+   "control_number": "18790",
+   "title": "General Electrician, CA",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "pages": [
+     188,
+     189
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "18791",
+   "title": "General Electrician, AS",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "pages": [
+     188,
+     189
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "24467",
+   "title": "Secondary Education/GED Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36304",
+   "title": "Computer Retail Sales and Support",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "pages": [
+     92,
+     93
+    ],
+    "coverage": 0.833,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "38158",
+   "title": "Instructional Assistant: Special Education, CA",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
+    "coverage": 0.429
+   }
+  },
+  {
+   "control_number": "45985",
+   "title": "Healthcare Career Preparation, COM",
+   "award": "Noncredit program",
+   "near_miss": {
+    "pages": [
+     311
+    ],
+    "coverage": 1.0,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
+   "control_number": "46507",
+   "title": "Construction Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "46508",
+   "title": "Construction Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  }
+ ],
+ "run": "43339249633"
+}
