@@ -59,7 +59,9 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           host=$(sed -n 's/^host=//p' kb/course_outcomes/.load)
-          python3 kb/_course_outcomes_load.py --host "$host"
+          # kind=objective posts the objective rows only (the objectives reread, S649); absent, every row.
+          kind=$(sed -n 's/^kind=//p' kb/course_outcomes/.load)
+          python3 kb/_course_outcomes_load.py --host "$host" --kind "${kind:-all}"
 
       - name: Commit the receipt to this branch
         if: always()

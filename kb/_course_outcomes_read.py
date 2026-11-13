@@ -311,6 +311,29 @@ OBJ_INLINE = re.compile(r"^objective\s+(?=\S)", re.I)
 # Qualification".
 OBJ_STOP = re.compile(r"^(section [ivx\d]+|disciplines?|minimum qualifications?|course outline and scope:?)$", re.I)
 
+# What is collected from every course outline of record, in the one pass (Sam, 2026-11-13: "add objectives to the
+# collection list of data from cors. they should be collected when slos are collected"). parse_page files both on
+# every read path; a read's head carries this list, and the loader posts each as its own course_outcomes.kind.
+COR_COLLECTS = ("slo", "objective")
+# Whether each outline system's public page prints a Course Objectives section, from the filed trials (S649), so an
+# empty objectives column is a fact about the host and never a reader that passed them over. Held to its trials by
+# tests/course_outcomes_objectives_standing_test.py; the colleges still to read again: objectives_reread_plan.json.
+OBJECTIVES_BY_SYSTEM = {
+    "curriqunet": {"printed": True,
+                   "evidence": "every page of trials 38317539422 (RCCD), 38350787486 (SDCCD All Fields), 41436124244 "
+                               "(Santa Ana), 41595084107 (Las Positas), 42573515439 (Cuesta) and 43157883293 (Shasta)"},
+    "courseleaf": {"printed": True,
+                   "evidence": "the Coast district's outline: 9 of the 9 trial pages with SLOs (trial 38508460207, "
+                               "Coastline); 1,519 of 1,584 pages in Orange Coast's read 42585338847"},
+    "elumen": {"printed": "template",
+               "evidence": "each college's catalog template decides. None printed on the trial pages of Modesto Junior, "
+                           "Cabrillo, Mission, Lake Tahoe, Columbia (one Objectives list sits inside an HTML comment), "
+                           "West Hills Lemoore or College of Marin. Contra Costa's template carries Course Objectives "
+                           "inside an HTML comment on 11 of 12 trial pages (not printed, so not read); 11 of its 520 "
+                           "pages print an Objectives heading in their text (read 42434894498). De Anza prints Course "
+                           "Objectives where its page answers (trial 43168229927)."},
+}
+
 
 def _obj_ends(s: str) -> bool:
     bare = MARKER.sub("", s, count=1).strip()
@@ -657,7 +680,10 @@ def main(argv=None) -> int:
             # A row read from the catalog's own course page (eLumen) is a catalog row; the
             # Coast district's catalog page is the outline of record itself.
             "source_kind": "catalog" if a.catalog and page_system(index["url"]) == "elumen" else "course_outline",
-            "slugs": a.slugs, "part": a.part, "of": a.of, "wanted": len(courses), "slice": len(todo)}
+            "slugs": a.slugs, "part": a.part, "of": a.of, "wanted": len(courses), "slice": len(todo),
+            # Both kinds in the one pass (Sam, 2026-11-13), and whether this system's page prints objectives.
+            "collects": list(COR_COLLECTS),
+            "objectives_printed": (OBJECTIVES_BY_SYSTEM.get(page_system(index["url"]) or "") or {}).get("printed")}
     rows: list[dict] = []
 
     def save(done: bool):

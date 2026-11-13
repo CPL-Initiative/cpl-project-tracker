@@ -1261,6 +1261,12 @@ jobs:
       # as the only write. Pure-stdlib python.
       - name: Course outcomes load (rows, fingerprint, receipt, insert-only)
         run: python3 tests/course_outcomes_load_test.py
+      # Objectives with every SLO read (S649; Sam, 2026-11-13): each outline system's
+      # trial pages file objectives where they print them, a read with SLOs and no
+      # objectives is named by the reread plan, and the objectives load posts only
+      # objective rows, insert-only. Pure-stdlib python.
+      - name: Course objectives standing (every read path, the guard, the reread plan)
+        run: python3 tests/course_outcomes_objectives_standing_test.py
       # The nightly SLO read's queue (step 11 of scheduled_sessions; Sam, 2026-11-01):
       # most articulations first, loaded colleges and verdicts skipped, a trial before
       # an unproven host's full read. Pure-stdlib python.

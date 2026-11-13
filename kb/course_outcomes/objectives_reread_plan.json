@@ -1,0 +1,85 @@
+{
+ "_about": "The objectives reread (S649; Sam, 2026-11-13: \"add objectives to the collection list of data from cors. they should be collected when slos are collected\"). Every loaded college whose course SLOs are in course_outcomes and whose objectives are not, with what to do. kb/_course_outcomes_read.py files both kinds in the one pass on every read path; the reads below were filed before it took objectives (S584, 2026-11-05) and carry no objectives key. A full read files no page text, so none of them can be a reparse: each is read again. Runner minutes only, no model call, so the $40 extraction go never applies. One host at a time, most exhibit articulations first (the sum over the host's colleges, scripts/next_slo_colleges.py's count). Guarded by tests/course_outcomes_objectives_standing_test.py. Short form: objectives_reread_plan.md.",
+ "built": "2026-11-13",
+ "by": "S649",
+ "how": {
+  "trigger": "course-outcomes-read.yml and course-outcomes-load.yml start on a push to a claude/** branch that changes kb/course_outcomes/.run or kb/course_outcomes/.load from main's copy; neither has workflow_dispatch. The dispatch is a new branch off main carrying the trigger file's lines.",
+  "read": "On a new branch claude/slo-objectives-<host> off main, write kb/course_outcomes/.run with the read lines (run= takes the date), commit with a message that does not start with Merge, push, open a draft PR. The slices run one at a time and commit back to the branch.",
+  "load": "When every slice is filed complete (scripts/next_slo_colleges.py --college <slug> says load), write kb/course_outcomes/.load with the load lines on the same branch and push. kind=objective posts the objective rows only; the reread's SLO rows are held back and counted in the receipt.",
+  "one_host": "Start a host's read only when the previous host is loaded or stopped. Never two readers on one host: Coastline and Golden West share catalog.cccd.edu and run in turn.",
+  "merge": "Merge on a passing test once the receipt is on the branch (step 11 of docs/reference/scheduled_sessions.md)."
+ },
+ "undo": {
+  "receipt": "kb/receipts/course_outcomes_<host>_<load run>.json: {host, load_run, kind: \"objective\", held_back, posted, inserted, kept, inserted_keys: [{id, college, course_code, kind: \"objective\"}], rollback: \"delete from public.course_outcomes where id in (...);\"}",
+  "how": "Run the receipt's rollback statement: it deletes exactly the ids that load inserted, every one kind objective (Rule 10 a2).",
+  "never_replaces": "course_outcomes_load() is insert-only (on conflict (college, course_code, source_url, kind, fingerprint) do nothing), and kind is part of the key, so an objective row never updates or replaces an SLO row; with kind=objective no SLO row is posted at all."
+ },
+ "order": [
+  {
+   "step": 1, "host": "rccd", "system": "curriqunet", "colleges": ["Norco College", "Moreno Valley College", "Riverside City College"],
+   "slugs": ["norco", "moreno_valley", "riverside_city"], "articulations": 533, "first_read": "38318152644",
+   "pages": 1605, "parts": 4, "expect": "objectives on every trial page (trial 38317539422, 12 of 12)",
+   "branch": "claude/slo-objectives-rccd",
+   "read": ["index=kb/course_outline_index/index_38313849383.json", "slugs=riverside_city,moreno_valley,norco", "parts=4", "run=<today's date>"],
+   "load": ["host=rccd", "kind=objective"]
+  },
+  {
+   "step": 2, "host": "sdccd", "system": "curriqunet", "colleges": ["San Diego Miramar College", "San Diego City College", "San Diego Mesa College"],
+   "slugs": ["san_diego_miramar", "san_diego_city", "san_diego_mesa"], "articulations": 319, "first_read": "38351637385",
+   "pages": 1641, "parts": 4, "expect": "objectives on every trial page of the All Fields report (trial 38350787486, 12 of 12)",
+   "branch": "claude/slo-objectives-sdccd",
+   "read": ["index=kb/course_outline_index/index_38350560193.json", "slugs=san_diego_city,san_diego_mesa,san_diego_miramar", "parts=4", "run=<today's date>"],
+   "load": ["host=sdccd", "kind=objective"]
+  },
+  {
+   "step": 3, "host": "sac", "system": "curriqunet", "colleges": ["Santa Ana College"],
+   "slugs": ["santa_ana"], "articulations": 216, "first_read": "41589637097",
+   "pages": 1373, "parts": 4, "expect": "objectives on every trial page (trial 41436124244, 12 of 12)",
+   "branch": "claude/slo-objectives-sac",
+   "read": ["index=kb/course_outline_index/index_41399078640.json", "slugs=santa_ana", "parts=4", "run=<today's date>"],
+   "load": ["host=sac", "kind=objective"]
+  },
+  {
+   "step": 4, "host": "laspositas", "system": "curriqunet", "colleges": ["Las Positas College"],
+   "slugs": ["las_positas"], "articulations": 174, "first_read": "41784805869",
+   "pages": 776, "parts": 3, "expect": "objectives on every trial page (trial 41595084107, 12 of 12)",
+   "branch": "claude/slo-objectives-laspositas",
+   "read": ["index=kb/course_outline_index/index_41589640082.json", "slugs=las_positas", "parts=3", "run=<today's date>"],
+   "load": ["host=laspositas", "kind=objective"]
+  },
+  {
+   "step": 5, "host": "cccd", "system": "courseleaf", "colleges": ["Coastline Community College"],
+   "slugs": ["coastline_community"], "articulations": 123, "first_read": "38508963773",
+   "pages": 555, "parts": 2, "expect": "objectives on the pages that print SLOs (trial 38508460207, 9 of 9)",
+   "branch": "claude/slo-objectives-coastline",
+   "read": ["catalog=coastline_community", "parts=2", "run=<today's date>"],
+   "load": ["host=cccd", "kind=objective"]
+  },
+  {
+   "step": 6, "host": "cccd", "system": "courseleaf", "colleges": ["Golden West College"],
+   "slugs": ["golden_west"], "articulations": 88, "first_read": "41399075269",
+   "pages": 643, "parts": 2, "expect": "the Coast district's outline, as Coastline and Orange Coast (1,519 of 1,584)",
+   "branch": "claude/slo-objectives-golden-west",
+   "read": ["catalog=golden_west", "parts=2", "run=<today's date>"],
+   "load": ["host=cccd", "kind=objective"],
+   "after": "step 5 loaded: the loader takes the newest complete slice of each part count on the host, so Golden West's slices replace Coastline's in a later load (insert-only, Coastline's rows stay)"
+  }
+ ],
+ "not_reread": [
+  {"slug": "modesto_junior", "college": "Modesto Junior College", "host": "mjc", "system": "elumen", "articulations": 337, "state": "none_printed", "why": "its eLumen course pages print no objectives (trial 38505894485: 0 of 12, none in the page source); a reread would file none"},
+  {"slug": "cabrillo", "college": "Cabrillo College", "host": "cabrillo", "system": "elumen", "articulations": 293, "state": "none_printed", "why": "its eLumen course pages print no objectives (trial 38506174617: 0 of 12, none in the page source); a reread would file none"},
+  {"slug": "columbia", "college": "Columbia College", "host": "gocolumbia", "system": "elumen", "articulations": 113, "state": "none_printed", "why": "its eLumen course pages print no objectives (trial 41784829925: 0 of 12; one page's source holds a list inside an HTML comment, not printed)"},
+  {"slug": "mission", "college": "Mission College", "host": "mission", "system": "elumen", "articulations": 91, "state": "none_printed", "why": "its eLumen course pages print no objectives (trial 41993224666: 0 of 12, none in the page source); a reread would file none"},
+  {"slug": "lake_tahoe_community", "college": "Lake Tahoe Community College", "host": "ltcc", "system": "elumen", "articulations": 85, "state": "read_with_objectives", "why": "read 42346413202 ran the objectives reader: 0 of 445 pages print objectives"},
+  {"slug": "contra_costa", "college": "Contra Costa College", "host": "ccc", "system": "elumen", "articulations": 83, "state": "read_with_objectives", "why": "read 42434894498 ran the objectives reader: 11 of 520 pages print an Objectives heading in their text, and those 11 are loaded. Its catalog template holds Course Objectives inside an HTML comment (11 of 12 trial pages, trial 42346448758), which the page does not print; reading the comment is a decision, not a reread"}
+ ],
+ "held": [
+  {"slug": "de_anza", "college": "De Anza College", "why": "held on the nightly read (kb/course_outcomes/queue.json): 11 of 12 trial pages came back empty. Its pages print Course Objectives where they answer (trial 43168229927), so its first full read files both"},
+  {"slug": "college_of_marin", "college": "College of Marin", "why": "held on the nightly read (kb/course_outcomes/queue.json): its eLumen catalog prints the description only (trial 43378795532: no SLOs, no objectives)"}
+ ],
+ "done": [
+  {"slug": "orange_coast", "read": "42585338847", "objectives": "1,519 of 1,584 pages"},
+  {"slug": "cuesta", "read": "42768224688", "objectives": "679 of 679 pages"},
+  {"slug": "shasta", "read": "43168135589", "objectives": "774 of 775 pages"}
+ ]
+}

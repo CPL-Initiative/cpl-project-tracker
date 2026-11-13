@@ -13,8 +13,13 @@ The receipt (kb/receipts/course_outcomes_<host>_<load run>.json) files every id
 the load inserted and the statement that deletes them, so a load rolls back from
 its receipt (Rule 10 a2).
 
+--kind objective posts the objective rows only (the objectives reread, S649): the reread's SLO rows are held back
+and counted in the receipt (held_back), so an SLO block that changed since its first load is never posted beside
+the loaded one by an objectives load. The load is insert-only either way: an objective row never replaces an SLO row.
+
 Usage (runner): python3 kb/_course_outcomes_load.py --host rccd
                 python3 kb/_course_outcomes_load.py --host rccd --dry   (counts, no post)
+                python3 kb/_course_outcomes_load.py --host rccd --kind objective   (the objectives reread)
 """
 from __future__ import annotations
 
@@ -43,6 +48,15 @@ OFFERED_AT = {"rccd": {"RIV": "Riverside City College", "MOV": "Moreno Valley Co
 GROUPS = {"sdccd": {"City": "San Diego City College", "Mesa": "San Diego Mesa College",
                     "Miramar": "San Diego Miramar College"}}
 BATCH = 200
+KINDS = ("all", "slo", "objective")
+
+
+def only_kind(rows: list[dict], kind: str) -> tuple[list[dict], int]:
+    """The rows of one kind ("all" keeps every row), and how many were held back."""
+    if kind == "all":
+        return rows, 0
+    kept = [r for r in rows if r["kind"] == kind]
+    return kept, len(rows) - len(kept)
 
 
 def college_of(slug: str) -> str:
@@ -156,11 +170,12 @@ def _rpc(body: dict, key: str) -> dict:
 
 
 def receipt_of(host: str, run: str, paths: list[str], rows: list[dict], skipped: list[dict],
-               results: list[dict], error: str | None) -> dict:
+               results: list[dict], error: str | None, kind: str = "all", held_back: int = 0) -> dict:
     ids = [k["id"] for res in results for k in res.get("inserted_keys") or []]
     return {
         "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
         "host": host, "load_run": run, "reads": [os.path.relpath(p, os.path.dirname(HERE)) for p in paths],
+        "kind": kind, "held_back": held_back,
         "posted": len(rows), "inserted": len(ids), "kept": sum(res.get("kept", 0) for res in results),
         "skipped": len(skipped), "skipped_rows": skipped, "error": error,
         "inserted_keys": [k for res in results for k in res.get("inserted_keys") or []],
@@ -174,17 +189,21 @@ def main(argv=None) -> int:
     ap.add_argument("--host", required=True, help="the read's host folder, e.g. rccd")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID", ""))
     ap.add_argument("--dry", action="store_true")
+    ap.add_argument("--kind", default="all", choices=KINDS,
+                    help="objective: post the objective rows only (the objectives reread); default every row")
     a = ap.parse_args(argv)
     paths = read_files(a.host)
     if not paths:
         print("no complete read filed for %s" % a.host)
         return 2
     rows, skipped = rows_from(paths, a.host)
+    rows, held_back = only_kind(rows, a.kind)
     colleges: dict[str, int] = {}
     for r in rows:
         colleges[r["college"]] = colleges.get(r["college"], 0) + 1
-    print("reads: %d; rows: %d (%s); skipped courses: %d"
-          % (len(paths), len(rows), ", ".join("%s %d" % kv for kv in sorted(colleges.items())), len(skipped)))
+    print("reads: %d; rows: %d (%s); skipped courses: %d; kind %s, held back %d"
+          % (len(paths), len(rows), ", ".join("%s %d" % kv for kv in sorted(colleges.items())), len(skipped),
+             a.kind, held_back))
     if a.dry:
         return 0
     key = os.environ.get("SUPABASE_SERVICE_KEY")
@@ -201,7 +220,7 @@ def main(argv=None) -> int:
         except Exception as exc:  # the receipt still files what loaded before it
             error = "batch %d: %s" % (i // BATCH + 1, str(exc).splitlines()[0][:300])
             break
-    receipt = receipt_of(a.host, a.run, paths, rows, skipped, results, error)
+    receipt = receipt_of(a.host, a.run, paths, rows, skipped, results, error, a.kind, held_back)
     os.makedirs(RECEIPTS, exist_ok=True)
     path = os.path.join(RECEIPTS, "course_outcomes_%s_%s.json" % (a.host, a.run))
     with open(path, "w") as f:
