@@ -1,0 +1,25 @@
+{
+ "_readme": "S644, 2026-11-13. Diablo Valley's eLumen catalog names no program (S394 reads 38670917323, 38672223676, 38672391389; S402 run 38999074345) and points to www.dvc.edu/programs. This read loads that page once, prints its text and the links into program pages, the catalog, a PDF or a program map, and records the data its own scripts fetch. No model call.",
+ "college": "Diablo Valley College",
+ "questions": {
+  "program_list": "Does www.dvc.edu/programs list the college's programs, and what is one program page's address?",
+  "requirements_home": "Does a program page print its courses and units, or link elsewhere (a PDF, an eLumen address, a program map)?"
+ },
+ "keywords": [
+  "A\\.S\\.-T|A\\.A\\.-T",
+  "[Cc]ertificate of [Aa]chievement",
+  "[Aa]ssociate (?:in|of)",
+  "[Pp]rogram [Mm]ap",
+  "[Cc]atalog",
+  "[Uu]nits"
+ ],
+ "pages": [
+  {
+   "url": "https://www.dvc.edu/programs",
+   "answers": ["program_list", "requirements_home"],
+   "network": true,
+   "network_find": ["degree", "certificate", "program"],
+   "links": "/programs/|elumen|catalog|\\.pdf|program-?map"
+  }
+ ]
+}
