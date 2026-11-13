@@ -2429,6 +2429,48 @@ check(C.cd_code_kind("AST.ADJ") == "adt" and C.cd_code_kind("AAT.PSY") == "adt" 
       and C.cd_code_kind("12345") is None and C.cd_code_kind(None) is None,
       "a Coursedog code's letters name its award, as a prefix or a suffix, or none")
 check(hn["code_kind"] == "adt" and hn["code"] == "AST.ADJ", "a Coursedog tab carries its code's award kind")
+# Glendale's codes, as its program search names them (capture run 43355259728, S645): a transfer degree's
+# letters carry a hyphen, and a space may stand beside them. "AS-T ADMJ" is "Administration of Justice -
+# Associate in Science for Transfer"; read as before it named an A.S.
+GL_KINDS = {"AS-T ADMJ": "adt", "AA-T ANTHR": "adt", "ENGL AA-T": "adt", "BIO AS-T": "adt", "KIN AAT": "adt",
+            "PSYCH- AAT": "adt", "ECON-AAT": "adt", "BA2.0-AST": "adt", "ACCTG-AS": "as", "PSAST - AS": "as",
+            "ACCTG-C": None, "NCAMA": None, "ADAST-AS": "as"}
+gl_read = {c: C.cd_code_kind(c) for c in GL_KINDS}
+check(gl_read == GL_KINDS, "Glendale's hyphenated transfer letters name the transfer degree: %r" % gl_read)
+check(C.cd_code_kind("05000.AA") == "aa" and C.cd_code_kind("AST.BIO") == "adt" and C.cd_code_kind("AS.EGN") == "as",
+      "Merced's and Hartnell's codes read as before")
+# The account a Coursedog capture files when no program page answers (S645): the program addresses the
+# catalog's own index links to, and the first overviews that miss, each with what it answered.
+gl_rows = C.cd_programs({"data": [{"code": "ACCTG-AS", "programGroupId": "x7Kq2", "name": "Accounting - Associate of Science"},
+                                  {"code": "NCAMA", "programGroupId": "NCAMA", "name": "NCAMA"}]})
+check(gl_rows == [{"code": "ACCTG-AS", "name": "Accounting - Associate of Science", "group": "x7Kq2"},
+                  {"code": "NCAMA", "name": "NCAMA"}],
+      "a program group id that differs from the code is kept beside it: %r" % gl_rows)
+gl_links = C.cd_index_links({"links": [
+    {"text": "Programs", "href": "https://catalog.glendale.edu/programs"},
+    {"text": "Accounting - Associate of Science", "href": "https://catalog.glendale.edu/programs/x7Kq2"},
+    {"text": "Accounting - Associate of Science", "href": "https://catalog.glendale.edu/programs/x7Kq2"},
+    {"text": "Courses", "href": "https://catalog.glendale.edu/courses/ACCTG101"},
+    {"text": "Elsewhere", "href": "https://www.glendale.edu/programs/x"}]}, "https://catalog.glendale.edu")
+check(gl_links == [{"text": "Accounting - Associate of Science", "href": "https://catalog.glendale.edu/programs/x7Kq2"}],
+      "the index's program addresses: one each, under the catalog's own /programs/: %r" % gl_links)
+gl_over = {"url": "https://catalog.glendale.edu/programs/ACCTG-AS", "status": 200, "access": "ok",
+           "final_url": "https://catalog.glendale.edu/programs/ACCTG-AS", "title": "Glendale Community College Catalog",
+           "h1": "", "body": "Page not found\n  We could not find the page you were looking for. " + "x" * 400,
+           "links": [{"text": "Program Requirements", "href": "https://catalog.glendale.edu/programs/ACCTG-AS/program-requirements"},
+                     {"text": "Home", "href": "https://catalog.glendale.edu/"}],
+           "clickables": ["Overview", "Program Requirements"], "tabPanels": []}
+gl_info: dict = {}
+for code in ("A", "B", "C", "D", "E", "F", "G"):
+    C.cd_note_miss(gl_info, code, gl_over)
+C.cd_note_miss(gl_info, "H", {"access": "unreachable", "status": None, "error": "Timeout 30000ms exceeded."})
+gl_acc = gl_info["miss_pages"][0]
+check(gl_info["miss_answers"] == {"ok 200": 7, "unreachable None": 1} and len(gl_info["miss_pages"]) == C.CD_MISS_KEEP,
+      "every miss is counted by what it answered, the first few kept in full: %r" % gl_info.get("miss_answers"))
+check(gl_acc["text"].startswith("Page not found We could not find") and len(gl_acc["text"]) == 200
+      and gl_acc["program_link_texts"] == ["Program Requirements"] and gl_acc["clickables"] == ["Overview", "Program Requirements"]
+      and gl_acc["status"] == 200 and gl_acc["final_url"].endswith("/programs/ACCTG-AS"),
+      "a missed overview files its status, address, first 200 characters and the tab names it showed: %r" % gl_acc)
 hn_courses = [{"code": c} for c in ("ADJ 1", "ADJ 3", "ADJ 5", "STATC 1000")]
 hn_adt = {"control_number": "31971", "title": "Administration of Justice", "award": "A.S. T Degree", "closed_list": hn_courses}
 hn_as = {"control_number": "03585", "title": "Administration of Justice", "award": "A.S. Degree", "closed_list": hn_courses}

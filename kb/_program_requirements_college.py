@@ -1990,14 +1990,20 @@ def cd_award_words(name: str) -> str:
 # name the transfer degree, and "associate in science for transfer" names an A.S. too
 # (label_score). The letters settle it, as pdf_code_match() does: a tab whose code names
 # another award is no candidate (S456).
-CD_CODE_KIND = re.compile(r"(?:^|[.\-])(AAT|AST|AA|AS|CT|NCCT|BS)(?:[.\-]|$)")
+# Glendale's codes write a transfer degree's letters with a hyphen, and a space may stand beside them
+# ("AS-T ADMJ" for "Administration of Justice - Associate in Science for Transfer", "ENGL AA-T", "KIN AAT";
+# capture run 43355259728, S645). Read as before, five of its 30 transfer degrees named an A.S. or an A.A.,
+# so each tab would be no candidate for its own program, and 12 named no award. Read this way, all 30
+# name the transfer degree, ten A.A. and A.S. codes written with a space ("PSAST - AS") name their own
+# award, and no other code's reading changes.
+CD_CODE_KIND = re.compile(r"(?:^|[.\-\s])(AA-T|AS-T|AAT|AST|AA|AS|CT|NCCT|BS)(?=[.\-\s]|$)")
 
 
 def cd_code_kind(code: str | None) -> str | None:
     """The award kind a Coursedog program code's letters name (PDF_CODE_AWARD), or
     None when the catalog's codes carry none."""
     m = CD_CODE_KIND.search((code or "").strip().upper())
-    return PDF_CODE_AWARD.get(m.group(1)) if m else None
+    return PDF_CODE_AWARD.get(m.group(1).replace("-", "")) if m else None
 
 
 def cd_search_url(url: str, skip: int, limit: int) -> str:
@@ -2011,13 +2017,68 @@ def cd_search_url(url: str, skip: int, limit: int) -> str:
 
 
 def cd_programs(data: dict) -> list[dict]:
-    """[{code, name}] from one page of the search's answer, active programs only."""
+    """[{code, name}] from one page of the search's answer, active programs only. A row whose
+    programGroupId differs from its code keeps it as group: the account then shows which one the
+    catalog's own program addresses use (S645, Glendale)."""
     out = []
     for row in (data or {}).get("data") or []:
         code = (row.get("code") or row.get("programGroupId") or "").strip()
         if code and (row.get("status") or "Active") == "Active":
-            out.append({"code": code, "name": (row.get("catalogDisplayName") or row.get("name") or "").strip()})
+            prog = {"code": code, "name": (row.get("catalogDisplayName") or row.get("name") or "").strip()}
+            group = str(row.get("programGroupId") or "").strip()
+            if group and group != code:
+                prog["group"] = group
+            out.append(prog)
     return out
+
+
+# Glendale's first site capture (run 43355259728, S645) listed 261 programs from the search and read
+# none: every program's overview loaded and named no Requisites or Requirements tab, and the account
+# kept only the codes. These two readings file what the next capture needs to tell why: the program
+# addresses the catalog's own index links to, and for the first few overviews that miss, what each
+# answered and the tab names it showed.
+CD_MISS_KEEP = 5
+CD_LINKS_JS = """() => Array.from(document.querySelectorAll('a[href]')).slice(0, 2500)
+  .map(a => ({text: (a.innerText || a.textContent || '').trim().slice(0, 80), href: a.href}))"""
+
+
+def cd_index_links(got: dict, root: str, keep: int = 8) -> list[dict]:
+    """The first program addresses the catalog's /programs index links to: [{text, href}]."""
+    base = root.rstrip("/") + "/programs/"
+    out = []
+    for link in (got or {}).get("links") or []:
+        href = (link.get("href") or "") if isinstance(link, dict) else ""
+        if href.startswith(base) and len(href) > len(base) and not any(o["href"] == href for o in out):
+            out.append({"text": (link.get("text") or "")[:80], "href": href})
+            if len(out) >= keep:
+                break
+    return out
+
+
+def cd_note_miss(info: dict, code: str, page: dict) -> None:
+    """Count a missed program page by what it answered, and keep the first CD_MISS_KEEP in full."""
+    key = "%s %s" % ((page or {}).get("access"), (page or {}).get("status"))
+    answers = info.setdefault("miss_answers", {})
+    answers[key] = answers.get(key, 0) + 1
+    kept = info.setdefault("miss_pages", [])
+    if len(kept) < CD_MISS_KEEP:
+        kept.append(cd_miss_account(code, page))
+
+
+def cd_miss_account(code: str, over: dict) -> dict:
+    """What one program overview answered when it named no tab: its status and address, its
+    heading, the first 200 characters of its text, and the link and tab names it showed."""
+    over = over or {}
+    links = [l for l in over.get("links") or [] if isinstance(l, dict)]
+    tabs = [(l.get("text") or "")[:60] for l in links if "/programs/" in (l.get("href") or "") and (l.get("text") or "").strip()]
+    return {"code": code, "url": over.get("url"), "status": over.get("status"), "access": over.get("access"),
+            "final_url": over.get("final_url"), "title": (over.get("title") or "")[:120],
+            "h1": (over.get("h1") or "")[:120], "error": over.get("error"),
+            "text": re.sub(r"\s+", " ", over.get("body") or "").strip()[:200],
+            "program_link_texts": tabs[:12],
+            "clickables": [str(c)[:60] for c in (over.get("clickables") or [])][:12],
+            "tab_panels": [str((t or {}).get("label") or "")[:60] for t in (over.get("tabPanels") or [])
+                           if isinstance(t, dict)][:8]}
 
 
 def cd_list(reader, start: str, report: dict) -> list[dict]:
@@ -2052,13 +2113,19 @@ def cd_list(reader, start: str, report: dict) -> list[dict]:
                 answers.append({"error": str(exc).splitlines()[0][:160]})
     reader.page.route(CD_SEARCH, on_route)
     reader.page.on("response", on_response)
+    index_links: list = []
     try:
         reader.load(root + "/programs")
         reader.page.wait_for_timeout(2500)
+        try:
+            index_links = cd_index_links({"links": reader.page.evaluate(CD_LINKS_JS)}, root)
+        except Exception:
+            pass
     finally:
         reader.page.unroute(CD_SEARCH, on_route)
         reader.page.remove_listener("response", on_response)
     info = report.setdefault("coursedog", {"root": root})
+    info["index_program_links"] = index_links
     if not heard or not answers or "error" in answers[0]:
         info["error"] = ("the program search made no search call" if not heard
                          else "the search call's answer was not read: %s" % (answers[:1] or "none"))
@@ -2188,12 +2255,14 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
                          if CD_REQUISITES.search(l.get("text") or "") and "/programs/" in (l.get("href") or "")), None)
             if over.get("access") != "ok" or not link:
                 missed.append(prog["code"])
+                cd_note_miss(info, prog["code"], over)
                 continue
             suffix = suffix or link.rstrip("/").rsplit("/", 1)[-1]
             heard["units"], heard["hours"] = {}, {}
             got = P.load(reader, link, cache, True)
             if got.get("access") != "ok":
                 missed.append(prog["code"])
+                cd_note_miss(info, prog["code"], got)
                 continue
         got["links"] = (got.get("links") or [])[:50]
         if heard["units"] and "course_units" not in got:
