@@ -60,20 +60,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     32.0,
     36.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,7 +93,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -131,7 +127,8 @@
     "healthcare",
     "education",
     "social work"
-   ]
+   ],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -169,5 +166,14 @@
    "Careers are read from the description: 'preparation for a career in healthcare, education, social work, or any people-centered path'. 'any people-centered path' was not recorded as a named career."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t3"
+  }
+ ],
+ "read_run": "38748858322"
 }
