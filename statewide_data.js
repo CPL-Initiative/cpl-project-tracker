@@ -140883,170 +140883,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPICI-AIRT-1-001",
-      "exhibit_ids": [
-        "MAPICI-AIRT-1-001"
-      ],
-      "title": "AAG Industry Recognized Training",
-      "unified_title": "AAG Industry Recognized Training",
-      "is_classified": true,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "AAG Industry Recognized Training"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "APAG 1",
-          "credit": "4 units in APAG 1 AAG Service"
-        },
-        {
-          "course": "APAG 1L",
-          "credit": "2 units in APAG 1L AAG Service Laboratory"
-        },
-        {
-          "course": "APAG 2",
-          "credit": "4 units in APAG 2 AAG Chassis"
-        },
-        {
-          "course": "APAG 2L",
-          "credit": "2 units in APAG 2L AAG Chassis Laboratory"
-        },
-        {
-          "course": "APAG 3",
-          "credit": "4 units in APAG 3 AAG Emissions"
-        },
-        {
-          "course": "APAG 3L",
-          "credit": "2 units in APAG 3L AAG Emissions Laboratory"
-        },
-        {
-          "course": "APAG 4",
-          "credit": "4 units in APAG 4 AAG Electrical"
-        },
-        {
-          "course": "APAG 4L",
-          "credit": "2 units in APAG 4L AAG Electrical Laboratory"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-AIRT-1-001",
-          "title": "AAG Industry Recognized Training",
-          "units": 24.0,
-          "lines": 8
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 24.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 8
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
-        ]
-      },
-      "peer_units_median": 24.0,
-      "peer_units_max": 24.0,
-      "rec_units_total": 24.0
-    },
-    {
       "exhibit_id": "MAPCXS-CBEA3-1-001",
       "exhibit_ids": [
         "MAPCXS-CBEA3-1-001"
@@ -154119,6 +153955,1038 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 5.0,
       "peer_units_max": 5.0,
       "rec_units_total": 5.0
+    },
+    {
+      "exhibit_id": "MAPICA-ITEF-1-001",
+      "exhibit_ids": [
+        "MAPICA-ITEF-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APAG 1",
+      "unified_title": "Apprenticeship Training Evidence for APAG 1",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APAG 1"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 67,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "APAG 1",
+          "credit": "4 units in APAG 1 AAG Service"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ITEF-1-001",
+          "title": "Apprenticeship Training Evidence for APAG 1",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 4.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPICA-ITEF1-1-001",
+      "exhibit_ids": [
+        "MAPICA-ITEF1-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APAG 1L",
+      "unified_title": "Apprenticeship Training Evidence for APAG 1L",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APAG 1L"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 67,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "APAG 1L",
+          "credit": "2 units in APAG 1L AAG Service Laboratory"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ITEF1-1-001",
+          "title": "Apprenticeship Training Evidence for APAG 1L",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 2.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPICA-ITEF2-1-001",
+      "exhibit_ids": [
+        "MAPICA-ITEF2-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APAG 2",
+      "unified_title": "Apprenticeship Training Evidence for APAG 2",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APAG 2"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 67,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "APAG 2",
+          "credit": "4 units in APAG 2 AAG Chassis"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ITEF2-1-001",
+          "title": "Apprenticeship Training Evidence for APAG 2",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 4.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPICA-ITEF3-1-001",
+      "exhibit_ids": [
+        "MAPICA-ITEF3-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APAG 2L",
+      "unified_title": "Apprenticeship Training Evidence for APAG 2L",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APAG 2L"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 67,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "APAG 2L",
+          "credit": "2 units in APAG 2L AAG Chassis Laboratory"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ITEF3-1-001",
+          "title": "Apprenticeship Training Evidence for APAG 2L",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 2.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPICA-ITEF4-1-001",
+      "exhibit_ids": [
+        "MAPICA-ITEF4-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APAG 3",
+      "unified_title": "Apprenticeship Training Evidence for APAG 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APAG 3"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 67,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "APAG 3",
+          "credit": "4 units in APAG 3 AAG Emissions"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ITEF4-1-001",
+          "title": "Apprenticeship Training Evidence for APAG 3",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 4.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPICA-ITEF5-1-001",
+      "exhibit_ids": [
+        "MAPICA-ITEF5-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APAG 3L",
+      "unified_title": "Apprenticeship Training Evidence for APAG 3L",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APAG 3L"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 67,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "APAG 3L",
+          "credit": "2 units in APAG 3L AAG Emissions Laboratory"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ITEF5-1-001",
+          "title": "Apprenticeship Training Evidence for APAG 3L",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 2.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPICA-ITEF6-1-001",
+      "exhibit_ids": [
+        "MAPICA-ITEF6-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APAG 4",
+      "unified_title": "Apprenticeship Training Evidence for APAG 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APAG 4"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 67,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "APAG 4",
+          "credit": "4 units in APAG 4 AAG Electrical"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ITEF6-1-001",
+          "title": "Apprenticeship Training Evidence for APAG 4",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 4.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPICA-ITEF7-1-001",
+      "exhibit_ids": [
+        "MAPICA-ITEF7-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APAG 4L",
+      "unified_title": "Apprenticeship Training Evidence for APAG 4L",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APAG 4L"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 67,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "APAG 4L",
+          "credit": "2 units in APAG 4L AAG Electrical Laboratory"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ITEF7-1-001",
+          "title": "Apprenticeship Training Evidence for APAG 4L",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 2.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
     },
     {
       "exhibit_id": "MAPSAS-C:AL-1-001|MAPSAS-CAL(-1-001|MAPSAS-CAL(1-1-001|MAPSAS-CAL(2-1-001|MAPSAS-CAL-1-001|MAPSAS-CAL1-1-001|MAPSAS-CAL10-1-001|MAPSAS-CAL11-1-001|MAPSAS-CAL12-1-001|MAPSAS-CAL13-1-001|MAPSAS-CAL14-1-001|MAPSAS-CAL15-1-001|MAPSAS-CAL16-1-001|MAPSAS-CAL17-1-001|MAPSAS-CAL18-1-001|MAPSAS-CAL19-1-001|MAPSAS-CAL2-1-001|MAPSAS-CAL20-1-001|MAPSAS-CAL21-1-001|MAPSAS-CAL22-1-001|MAPSAS-CAL23-1-001|MAPSAS-CAL24-1-001|MAPSAS-CAL25-1-001|MAPSAS-CAL26-1-001|MAPSAS-CAL27-1-001|MAPSAS-CAL28-1-001|MAPSAS-CAL29-1-001|MAPSAS-CAL3-1-001|MAPSAS-CAL30-1-001|MAPSAS-CAL31-1-001|MAPSAS-CAL32-1-001|MAPSAS-CAL33-1-001|MAPSAS-CAL34-1-001|MAPSAS-CAL35-1-001|MAPSAS-CAL36-1-001|MAPSAS-CAL37-1-001|MAPSAS-CAL38-1-001|MAPSAS-CAL39-1-001|MAPSAS-CAL4-1-001|MAPSAS-CAL40-1-001|MAPSAS-CAL41-1-001|MAPSAS-CAL42-1-001|MAPSAS-CAL44-1-001|MAPSAS-CAL45-1-001|MAPSAS-CAL5-1-001|MAPSAS-CAL6-1-001|MAPSAS-CAL7-1-001|MAPSAS-CAL8-1-001|MAPSAS-CAL9-1-001|MAPSAS-CEAL-1-001|MAPSAS-CEAL1-1-001",
@@ -282639,183 +283507,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPSAA-AWPI-1-001",
-      "exhibit_ids": [
-        "MAPSAA-AWPI-1-001"
-      ],
-      "title": "Fundamentals of Construction",
-      "unified_title": "Fundamentals of Construction",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "LiUNA Laborers' Construction Training Center Industry Recognized Training"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
-      "top_codes": [
-        "60"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 35,
-      "potential_names": [
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Imperial Valley College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Pasadena City College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "Southwestern College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 36,
-      "credit_recs": [
-        {
-          "course": "APCL 100",
-          "credit": "2.5 units in APCL 100 Forklift Orientation Initial"
-        },
-        {
-          "course": "APCL 101",
-          "credit": "4.5 units in APCL 101 Fundamentals of Construction"
-        },
-        {
-          "course": "APCL 102",
-          "credit": "2.5 units in APCL 102 Hazardous Waste Removal Initial"
-        },
-        {
-          "course": "APCL 103",
-          "credit": "2.5 units in APCL 103 Safety Certification"
-        },
-        {
-          "course": "APCL 105",
-          "credit": "2.5 units in APCL 105 Rigging and Signaling"
-        },
-        {
-          "course": "APCL 106",
-          "credit": "2.5 units in APCL 106 Skid Steer Loader Orientation Initial"
-        },
-        {
-          "course": "APCL 107",
-          "credit": "5 units in APCL 107 Concrete Techniques"
-        },
-        {
-          "course": "APCL 108",
-          "credit": "4.5 units in APCL 108 Asphalt Paving Techniques"
-        },
-        {
-          "course": "APCL 109",
-          "credit": "1.5 units in APCL 109 Blueprint Reading Orientation, Basic"
-        },
-        {
-          "course": "APCL 110",
-          "credit": "0.5 units in APCL 110 Confined Space Awareness"
-        },
-        {
-          "course": "APCL 111",
-          "credit": "0.5 units in APCL 111 First Aid, CPR and AED"
-        },
-        {
-          "course": "APCL 112",
-          "credit": "0.5 units in APCL 112 Flagging Certification"
-        },
-        {
-          "course": "APCL 113",
-          "credit": "0.5 units in APCL 113 Traffic Control"
-        },
-        {
-          "course": "APCL 114",
-          "credit": "1 unit in APCL 114 OSHA 10 Hour Norcal"
-        },
-        {
-          "course": "APCL 115",
-          "credit": "2 units in APCL 115 OSHA 30 Hour Norcal"
-        },
-        {
-          "course": "APCL 116",
-          "credit": "1 unit in APCL 116 Traffic Control Technician"
-        },
-        {
-          "course": "APCL 104",
-          "credit": "1 unit in APCL 104 Aerial Work Platform Initial"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPSAA-AWPI-1-001",
-          "title": "LiUNA Laborers' Construction Training Center Industry Recognized Training",
-          "units": 35.0,
-          "lines": 17
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 35.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 17
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9,
-          10,
-          11,
-          12,
-          13,
-          14,
-          15,
-          16
-        ]
-      },
-      "peer_units_median": 35.0,
-      "peer_units_max": 35.0,
-      "rec_units_total": 35.0
-    },
-    {
       "exhibit_id": "MAPCxS-CBAF-1-001",
       "exhibit_ids": [
         "MAPCxS-CBAF-1-001"
@@ -284851,6 +285542,1655 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF3-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF3-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 100",
+      "unified_title": "Apprenticeship Training Evidence for APCL 100",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 100"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 100",
+          "credit": "2.5 units in APCL 100 Forklift Orientation Initial"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF3-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 100",
+          "units": 2.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 2.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.5,
+      "peer_units_max": 2.5,
+      "rec_units_total": 2.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF4-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF4-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 101",
+      "unified_title": "Apprenticeship Training Evidence for APCL 101",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 101"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 101",
+          "credit": "4.5 units in APCL 101 Fundamentals of Construction"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF4-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 101",
+          "units": 4.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 4.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.5,
+      "peer_units_max": 4.5,
+      "rec_units_total": 4.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF5-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF5-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 102",
+      "unified_title": "Apprenticeship Training Evidence for APCL 102",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 102"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 102",
+          "credit": "2.5 units in APCL 102 Hazardous Waste Removal Initial"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF5-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 102",
+          "units": 2.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 2.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.5,
+      "peer_units_max": 2.5,
+      "rec_units_total": 2.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF6-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF6-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 103",
+      "unified_title": "Apprenticeship Training Evidence for APCL 103",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 103"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 103",
+          "credit": "2.5 units in APCL 103 Safety Certification"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF6-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 103",
+          "units": 2.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 2.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.5,
+      "peer_units_max": 2.5,
+      "rec_units_total": 2.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF7-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF7-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 104",
+      "unified_title": "Apprenticeship Training Evidence for APCL 104",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 104"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 104",
+          "credit": "1 unit in APCL 104 Aerial Work Platform Initial"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF7-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 104",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 1.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF8-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF8-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 105",
+      "unified_title": "Apprenticeship Training Evidence for APCL 105",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 105"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 105",
+          "credit": "2.5 units in APCL 105 Rigging and Signaling"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF8-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 105",
+          "units": 2.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 2.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.5,
+      "peer_units_max": 2.5,
+      "rec_units_total": 2.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF9-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF9-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 106",
+      "unified_title": "Apprenticeship Training Evidence for APCL 106",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 106"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 106",
+          "credit": "2.5 units in APCL 106 Skid Steer Loader Orientation Initial"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF9-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 106",
+          "units": 2.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 2.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.5,
+      "peer_units_max": 2.5,
+      "rec_units_total": 2.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF10-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF10-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 107",
+      "unified_title": "Apprenticeship Training Evidence for APCL 107",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 107"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 107",
+          "credit": "5 units in APCL 107 Concrete Techniques"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF10-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 107",
+          "units": 5.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 5.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 5.0,
+      "peer_units_max": 5.0,
+      "rec_units_total": 5.0
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF11-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF11-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 108",
+      "unified_title": "Apprenticeship Training Evidence for APCL 108",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 108"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 108",
+          "credit": "4.5 units in APCL 108 Asphalt Paving Techniques"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF11-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 108",
+          "units": 4.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 4.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.5,
+      "peer_units_max": 4.5,
+      "rec_units_total": 4.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF12-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF12-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 109",
+      "unified_title": "Apprenticeship Training Evidence for APCL 109",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 109"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 109",
+          "credit": "1.5 units in APCL 109 Blueprint Reading Orientation, Basic"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF12-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 109",
+          "units": 1.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 1.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.5,
+      "peer_units_max": 1.5,
+      "rec_units_total": 1.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF13-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF13-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 110",
+      "unified_title": "Apprenticeship Training Evidence for APCL 110",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 110"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 110",
+          "credit": "0.5 units in APCL 110 Confined Space Awareness"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF13-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 110",
+          "units": 0.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 0.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 0.5,
+      "peer_units_max": 0.5,
+      "rec_units_total": 0.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF14-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF14-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 111",
+      "unified_title": "Apprenticeship Training Evidence for APCL 111",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 111"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 111",
+          "credit": "0.5 units in APCL 111 First Aid, CPR and AED"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF14-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 111",
+          "units": 0.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 0.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 0.5,
+      "peer_units_max": 0.5,
+      "rec_units_total": 0.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF15-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF15-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 112",
+      "unified_title": "Apprenticeship Training Evidence for APCL 112",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 112"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 112",
+          "credit": "0.5 units in APCL 112 Flagging Certification"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF15-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 112",
+          "units": 0.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 0.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 0.5,
+      "peer_units_max": 0.5,
+      "rec_units_total": 0.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF16-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF16-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 113",
+      "unified_title": "Apprenticeship Training Evidence for APCL 113",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 113"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 113",
+          "credit": "0.5 units in APCL 113 Traffic Control"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF16-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 113",
+          "units": 0.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 0.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 0.5,
+      "peer_units_max": 0.5,
+      "rec_units_total": 0.5
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF17-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF17-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 114",
+      "unified_title": "Apprenticeship Training Evidence for APCL 114",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 114"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 114",
+          "credit": "1 unit in APCL 114 OSHA 10 Hour Norcal"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF17-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 114",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 1.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF18-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF18-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for ACL 115",
+      "unified_title": "Apprenticeship Training Evidence for ACL 115",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for ACL 115"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 115",
+          "credit": "2 units in APCL 115 OSHA 30 Hour Norcal"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF18-1-001",
+          "title": "Apprenticeship Training Evidence for ACL 115",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 2.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF19-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF19-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APCL 116",
+      "unified_title": "Apprenticeship Training Evidence for APCL 116",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APCL 116"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "60"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "APCL 116",
+          "credit": "1 unit in APCL 116 Traffic Control Technician"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF19-1-001",
+          "title": "Apprenticeship Training Evidence for APCL 116",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 1.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
     },
     {
       "exhibit_id": "MAPSAH-AS2-1-001|MAPSAH-ASE-1-001|MAPSAS-A-S1-1-001|MAPSAS-A:S1-1-001|MAPSAS-AE-S2-1-001|MAPSAS-AES2-1-001|MAPSAS-AES4-1-001|MAPSAS-AES6-1-001|MAPSAS-AS(C-1-001|MAPSAS-AS(C1-1-001|MAPSAS-AS(O-1-001|MAPSAS-AS(O2-1-001|MAPSAS-AS-A2-1-001|MAPSAS-AS-S-1-001|MAPSAS-AS-S1-1-001|MAPSAS-AS-S2-1-001|MAPSAS-AS-S3-1-001|MAPSAS-AS-S4-1-001|MAPSAS-AS-S5-1-001|MAPSAS-AS-S6-1-001|MAPSAS-AS-S8-1-001|MAPSAS-AS1-1-001|MAPSAS-AS10-1-001|MAPSAS-AS12-1-001|MAPSAS-AS13-1-001|MAPSAS-AS14-1-001|MAPSAS-AS15-1-001|MAPSAS-AS16-1-001|MAPSAS-AS17-1-001|MAPSAS-AS18-1-001|MAPSAS-AS19-1-001|MAPSAS-AS2-1-001|MAPSAS-AS3-1-001|MAPSAS-AS4-1-001|MAPSAS-AS5-1-001|MAPSAS-AS6-1-001|MAPSAS-AS7-1-001|MAPSAS-A (O-1-001|MAPSAS-A 1-1-001",
@@ -416732,81 +419072,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPSAA-B1YC-1-001",
-      "exhibit_ids": [
-        "MAPSAA-B1YC-1-001"
-      ],
-      "title": "Boatworks 101 Yacht Electrical Systems",
-      "unified_title": "Boatworks 101 Yacht Electrical Systems",
-      "is_classified": true,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Boatworks 101 Apprenticeship Industry Recognized Training"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "cip_sector": "46",
-      "top_codes": [
-        "303",
-        "375"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 2,
-      "potential_names": [
-        "Orange Coast College",
-        "Saddleback College"
-      ],
-      "total_addressable": 3,
-      "credit_recs": [
-        {
-          "course": "APMT 51",
-          "credit": "4 units in APMT 51 Boatworks 101 Yacht Electrical Systems"
-        },
-        {
-          "course": "APMT 52",
-          "credit": "4 units in APMT 52 Boatworks 101 Yacht Propulsion Systems"
-        },
-        {
-          "course": "APMT 53",
-          "credit": "0.5 units in APMT 53 Boatworks 101 Yacht Craftsmanship Lab"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPSAA-B1YC-1-001",
-          "title": "Boatworks 101 Apprenticeship Industry Recognized Training",
-          "units": 8.5,
-          "lines": 3
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 8.5
-      },
-      "adopter_lines": {
-        "Las Positas College": 3
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0,
-          1,
-          2
-        ]
-      },
-      "peer_units_median": 8.5,
-      "peer_units_max": 8.5,
-      "rec_units_total": 8.5
-    },
-    {
       "exhibit_id": "MAPCXS-FSVC-1-001",
       "exhibit_ids": [
         "MAPCXS-FSVC-1-001"
@@ -417061,6 +419326,134 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 1.0,
       "peer_units_max": 1.0,
       "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF1-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF1-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APMT 52",
+      "unified_title": "Apprenticeship Training Evidence for APMT 52",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APMT 52"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "303"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 2,
+      "potential_names": [
+        "Orange Coast College",
+        "Saddleback College"
+      ],
+      "total_addressable": 3,
+      "credit_recs": [
+        {
+          "course": "APMT 52",
+          "credit": "4 units in APMT 52 Boatworks 101 Yacht Propulsion Systems"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF1-1-001",
+          "title": "Apprenticeship Training Evidence for APMT 52",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 4.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPICA-ATEF2-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF2-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APMT 51",
+      "unified_title": "Apprenticeship Training Evidence for APMT 51",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APMT 51"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "303"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 2,
+      "potential_names": [
+        "Orange Coast College",
+        "Saddleback College"
+      ],
+      "total_addressable": 3,
+      "credit_recs": [
+        {
+          "course": "APMT 51",
+          "credit": "4 units in APMT 51 Boatworks 101 Yacht Electrical Systems"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF2-1-001",
+          "title": "Apprenticeship Training Evidence for APMT 51",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 4.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
     },
     {
       "exhibit_id": "MAPCXS-M1E-1-001",
@@ -428102,6 +430495,67 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPICA-ATEF-1-001",
+      "exhibit_ids": [
+        "MAPICA-ATEF-1-001"
+      ],
+      "title": "Apprenticeship Training Evidence for APMT 53",
+      "unified_title": "Apprenticeship Training Evidence for APMT 53",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Apprenticeship Training Evidence for APMT 53"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "375"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Las Positas College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "APMT 53",
+          "credit": "0.5 units in APMT 53 Boatworks 101 Yacht Craftsmanship Lab"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ATEF-1-001",
+          "title": "Apprenticeship Training Evidence for APMT 53",
+          "units": 0.5,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 0.5
+      },
+      "adopter_lines": {
+        "Las Positas College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 0.5,
+      "peer_units_max": 0.5,
+      "rec_units_total": 0.5
+    },
+    {
       "exhibit_id": "MAPCBEN-PP-1-001",
       "exhibit_ids": [
         "MAPCBEN-PP-1-001"
@@ -428862,6 +431316,94 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPPRI-PR-P-1-001",
           "title": "Portfolio Review - Pharmacology and Pharmacy Calculations",
+          "units": 0,
+          "lines": 0
+        }
+      ],
+      "adopter_units": {},
+      "adopter_lines": {},
+      "adopter_rec_idx": {},
+      "peer_units_median": 0.0,
+      "peer_units_max": 0.0,
+      "rec_units_total": 0
+    },
+    {
+      "exhibit_id": "MAPSAA-AWPI-1-001",
+      "exhibit_ids": [
+        "MAPSAA-AWPI-1-001"
+      ],
+      "title": "Fundamentals of Construction",
+      "unified_title": "Fundamentals of Construction",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "LiUNA Laborers' Construction Training Center Industry Recognized Training"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "46",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAA-AWPI-1-001",
+          "title": "LiUNA Laborers' Construction Training Center Industry Recognized Training",
+          "units": 0,
+          "lines": 0
+        }
+      ],
+      "adopter_units": {},
+      "adopter_lines": {},
+      "adopter_rec_idx": {},
+      "peer_units_median": 0.0,
+      "peer_units_max": 0.0,
+      "rec_units_total": 0
+    },
+    {
+      "exhibit_id": "MAPSAA-B1YC-1-001",
+      "exhibit_ids": [
+        "MAPSAA-B1YC-1-001"
+      ],
+      "title": "Boatworks 101 Yacht Electrical Systems",
+      "unified_title": "Boatworks 101 Yacht Electrical Systems",
+      "is_classified": true,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Boatworks 101 Apprenticeship Industry Recognized Training"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "47",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAA-B1YC-1-001",
+          "title": "Boatworks 101 Apprenticeship Industry Recognized Training",
           "units": 0,
           "lines": 0
         }
@@ -431187,7 +433729,7 @@ window.CPL_STATEWIDE = {
       {
         "college": "Las Positas College",
         "credit_recs": 313,
-        "exhibits": 267,
+        "exhibits": 292,
         "disciplines": 18,
         "ccc_collaborative": 11,
         "industry_certs": 95,
@@ -432007,8 +434549,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6779,
-        "exhibits": 2492,
+        "credit_recs": 6781,
+        "exhibits": 2494,
         "courses": 444,
         "colleges": 89,
         "ccc_collaborative": 35,
@@ -432017,7 +434559,7 @@ window.CPL_STATEWIDE = {
       {
         "discipline": "Engineering and Industrial Technologies",
         "credit_recs": 3582,
-        "exhibits": 1211,
+        "exhibits": 1236,
         "courses": 1502,
         "colleges": 60,
         "ccc_collaborative": 595,
@@ -432223,8 +434765,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 5746,
-        "exhibits": 1450,
+        "credit_recs": 5748,
+        "exhibits": 1477,
         "colleges": 84,
         "pct": 34.6
       },
@@ -432266,17 +434808,17 @@ window.CPL_STATEWIDE = {
         "pct": 55.9
       },
       {
-        "mode": "Industry training (I)",
-        "credit_recs": 3133,
-        "exhibits": 1279,
-        "colleges": 80,
+        "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
+        "credit_recs": 3130,
+        "exhibits": 580,
+        "colleges": 48,
         "pct": 18.9
       },
       {
-        "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 3120,
-        "exhibits": 552,
-        "colleges": 48,
+        "mode": "Industry training (I)",
+        "credit_recs": 3125,
+        "exhibits": 1278,
+        "colleges": 80,
         "pct": 18.8
       },
       {
@@ -432332,8 +434874,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 14744,
-        "exhibits": 6590,
+        "credit_recs": 14746,
+        "exhibits": 6617,
         "colleges": 100,
         "disciplines": 23,
         "pct": 88.8
@@ -432758,8 +435300,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-12T22:31:56",
-  "total_credit_recs": 16602,
+  "generated_at": "2026-11-13T06:17:10",
+  "total_credit_recs": 16604,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-12T22:36:05Z",
+ "written_at": "2026-11-13T06:21:32Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,9 +15,9 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13987,
+     "n": 14062,
      "of": 20282,
-     "words": "complete at 114 colleges",
+     "words": "complete at 115 colleges",
      "open": "#program-requirements/list"
     },
     {
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 2942,
+     "n": 2947,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3353,
+     "n": 3273,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -50,7 +50,7 @@
    ],
    "procedures": [
     {
-     "n": 114,
+     "n": 115,
      "words": "reading procedures, one per college read, versioned",
      "open": "#program-requirements"
     },
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-12T12:11:04Z",
+    "at": "2026-11-13T01:05:23Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13987,
-    "failing": 2942,
-    "unread": 3353,
-    "records": 18553,
-    "colleges": 114,
-    "outside_active": 1624,
+    "complete": 14062,
+    "failing": 2947,
+    "unread": 3273,
+    "records": 18635,
+    "colleges": 115,
+    "outside_active": 1626,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -134,7 +134,7 @@
      "error": null
     },
     {
-     "n": 809,
+     "n": 810,
      "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
      "owner": "a curator",
      "carry": "keep_call",
@@ -180,9 +180,9 @@
     "records_stamped": 2287,
     "saved_at": "2026-11-12T16:21:46Z",
     "fold_at": "2026-11-12T20:21:39Z",
-    "map_titles": 5087,
-    "unclassified": 170,
-    "left_map": 809,
+    "map_titles": 5114,
+    "unclassified": 198,
+    "left_map": 810,
     "below_80": 1117,
     "below_60": 235,
     "no_subject": 366,
@@ -287,7 +287,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-12T22:35:14+00:00",
+    "at": "2026-11-13T06:20:30+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -499,7 +499,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-12T22:32:57Z",
+    "at": "2026-11-13T06:18:12Z",
     "every_hours": 24
    },
    "facts": {
@@ -512,7 +512,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-12",
+    "scanned_at": "2026-11-13",
     "procedures_on": 6
    },
    "sources": [
@@ -730,7 +730,7 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 809,
+      "n": 810,
       "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
       "owner": "a curator",
       "open": "#exhibits/list/left"
@@ -750,7 +750,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2942,
+    "n": 2947,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -758,7 +758,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3353,
+    "n": 3273,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -782,23 +782,12 @@
   ],
   "stalled": [
    {
-    "ref": "requirements",
-    "title": "Program Requirements",
-    "kind": "not_shrinking",
-    "n": 3353,
-    "was": 3349,
-    "since": "2026-11-05",
-    "words": "active programs with no record yet",
-    "owner": "the harvest",
-    "open": "#program-requirements/list/unread"
-   },
-   {
     "ref": "course",
     "title": "Common Course Reference",
     "kind": "not_shrinking",
     "n": 5750,
     "was": 5750,
-    "since": "2026-11-05",
+    "since": "2026-11-06",
     "words": "blank descriptions",
     "owner": "the colleges' COCI entries",
     "open": "#coci-lookup/list/nodesc"
@@ -1065,6 +1054,46 @@
     }
    ],
    "at": "2026-11-12T20:24:14Z"
+  },
+  {
+   "kind": "decision",
+   "project": "program-requirements",
+   "n": 1,
+   "title": "Should a program checked against its college's own course list count in the headline?",
+   "teaches": "1,604 active programs have no closed course list in the state's Program Course File. The plan reads them and checks each against the college's own active course list, as a separate grade outside the headline.",
+   "open": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
+   "todo_id": null,
+   "stop": "It ends when you answer the sheet."
+  },
+  {
+   "kind": "decision",
+   "project": "program-requirements",
+   "n": 1,
+   "title": "Use the statewide Cal-GETC figure of 34 units?",
+   "teaches": "So far each college's Cal-GETC figure comes from the areas its own catalog prints. A statewide figure of 34 units would let 93 more programs pass the machine checks.",
+   "open": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
+   "todo_id": null,
+   "stop": "It ends when you answer the sheet."
+  },
+  {
+   "kind": "decision",
+   "project": "program-requirements",
+   "n": 1,
+   "title": "Apply the carry-basis migration whose push the permission check refused?",
+   "teaches": "The scorer's change in #3193 has a migration that replaces one 23-line database function, the one that decides whether a person's confirmation carries to a reread record. It writes no rows. The push that applies it was refused by the permission check, and the session did not go around it. Nothing tonight depends on it: no college it touches holds a confirmation.",
+   "open": "https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ",
+   "todo_id": null,
+   "stop": "It ends when you answer the sheet."
+  },
+  {
+   "kind": "decision",
+   "project": "course",
+   "n": 1,
+   "title": "Rule on six re-clustering cases and the Honors question",
+   "teaches": "AJ 160, FIRE 130 X with FIRE M1274, REAL M1038 with M1040, MATH M1036 with M1044, MUS 130 and BUSI M1228, each a proposed split or merge with credit by exam reach; and whether an Honors course is one M-ID or two with a declared equivalence. They replace the six on Open Asks Sheet 185 card 9.",
+   "open": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/status/mid_outcomes_compare_2026-11-12.md",
+   "todo_id": null,
+   "stop": "It ends when you answer the sheet."
   },
   {
    "kind": "job",
