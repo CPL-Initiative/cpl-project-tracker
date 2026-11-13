@@ -571,6 +571,24 @@ def passes_live(score: dict | None) -> bool:
             and (sc.get("arithmetic") or {}).get("status") == "equal")
 
 
+# The arithmetic statuses the tab counts passing: program_requirements.js machineFails and its
+# headline's complete count (program_record_machine_pass on the server).
+TAB_PASSING = ("equal", "unstated")
+
+
+def counts_passing_on_tab(checks: dict | None) -> bool:
+    """Whether the COBI tab counts a live row passing, from the row's flat checks
+    (program_requirement_records.checks): coverage and invented true, arithmetic "equal" or
+    "unstated". The load writes the arithmetic as the score's status alone, so a row reads
+    "unstated" even where the scorer's own unstated test failed, and the tab counts it passing.
+    This is the tab's count, for a headline that must equal it (the gap census, S644). It is not
+    passes_live: the harvest's holds and its kept-passing guard keep equal-only (S641 review, call
+    3), so an unstated read never replaces an equal record. tests/program_requirements_pilot_test.py
+    pins TAB_PASSING to the tab's own expression."""
+    c = checks or {}
+    return c.get("coverage") is True and c.get("invented") is True and c.get("arithmetic") in TAB_PASSING
+
+
 def places_none(score: dict | None) -> bool:
     """A scored record that places none of its program's listed courses: the model
     read another program's page or a course-description listing. Sam, Open Asks
@@ -582,6 +600,41 @@ def places_none(score: dict | None) -> bool:
 
 
 ELECTIVE = re.compile(r"\belectives?\b", re.I)
+# A PDF's ligature stand-in glyph and the space the text prints after it ("elecƟ ves", Solano, S644).
+_LIGATURE_SPACED = re.compile("([%s]) ?" % "".join(_LIGATURES))
+
+
+def electives_named(prog: dict, text: str) -> bool:
+    """Whether the catalog text says electives fill the total a record says they fill: the word
+    itself, the word under a PDF's ligature stand-in ("elecƟ ves", as Solano's outcomes read it),
+    or the catalog's own sentence a reconcile step filed as electives_fill_words, which says the
+    same without the word (S644, the harvest's NEXT 5: Grossmont's 'Complete transferable units as
+    needed to reach 60', East Los Angeles's 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60
+    CSU TRANSFERABLE UNITS'). The sentence counts only where this text prints it, word for word
+    (letter case, punctuation and line breaks aside), so a later read of a page that no longer
+    prints it fails the guard again."""
+    if ELECTIVE.search(text):
+        return True
+    if _LIGATURE.search(text) and ELECTIVE.search(_LIGATURE_SPACED.sub(lambda m: _LIGATURES[m.group(1)], text)):
+        return True
+    words = prog.get("electives_fill_words")
+    if not isinstance(words, str) or not _words(words):
+        return False
+    # The sentence counts only from the record's own heading onward, and not at all where the text prints
+    # no heading: a capture window can open on the program before it (East Los Angeles, review of #3193).
+    # The files name no next program's heading, so the scope runs to the end of the text.
+    from _program_requirements_reconcile import _heading_end
+    start = _heading_end(text, prog.get("section_heading"))
+    if start is None:
+        return False
+    return " %s " % _words(words) in " %s " % _words(text[start:])
+
+
+def _words(s: str) -> str:
+    """The words of a text in order, lower case, punctuation and spacing dropped."""
+    return " ".join(re.findall(r"[a-z0-9]+", (s or "").lower()))
+
+
 # An associate degree for transfer, by the state file's award ("A.A- T Degree",
 # "A.S. T Degree") or the page's heading ("AA-T in Sociology for Transfer").
 TRANSFER = re.compile(r"\bA\.?\s?[AS]\.?[-\s]*T\b|\bfor transfer\b", re.I)
@@ -751,7 +804,7 @@ def degree_check(prog: dict, degree: tuple[float, float], lo: float, hi: float,
     g = ge or (0.0, 0.0)
     lo, hi = round(lo + g[0], 2), round(hi + g[1], 2)
     out["computed"] = [lo, hi]
-    if prog.get("electives_fill_degree") and text is not None and not ELECTIVE.search(text):
+    if prog.get("electives_fill_degree") and text is not None and not electives_named(prog, text):
         out["why"] = ["the record says electives fill the degree total, but the catalog text names no electives"]
         return out
     out.update(degree_verdict(prog, degree, lo, hi, award))
@@ -778,7 +831,121 @@ def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str
                 if _num(entry.get("units")) or _num(entry.get("units_max")):
                     return False
     labels = list(HOURS_LABEL.finditer(text))
-    return bool(labels) and all(m.group(1) and abs(float(m.group(2)) - stated[0]) <= TOL for m in labels)
+    if labels and all(m.group(1) and abs(float(m.group(2)) - stated[0]) <= TOL for m in labels):
+        return True
+    return total_hours_printed(text, stated, labels, record)
+
+
+# "Total Hours 48-54", "Total Hours 48 to 54.", "Total Hours 216": the total printed after its label with no
+# colon, one figure or a range, the figure on the label's line or the next one, and a sentence's period after it.
+TOTAL_HOURS = re.compile(r"\bTotal\s+(?:Contact\s+)?Hours?\b[ \t]*:?[ \t]*(?:\n[ \t]*)?(\d+(?:\.\d+)?)"
+                         r"(?:[ \t]*(?:[-–]|to\b)[ \t]*(\d+(?:\.\d+)?))?(?!\d)(?!\.\d)", re.I)
+# A total that runs on past what the pattern took: a range it did not take, or an alternative ("48 or 54").
+_RANGE_REST = re.compile(r"[ \t]*(?:[-–]|to\b|or\b)[ \t]*\d", re.I)
+# An hours figure printed after its label ("Lecture Hours 54", "Lab Hours: 18", "Hours 72").
+_HOURS_FIRST = re.compile(r"\bHours?\b[ \t]*:?[ \t]*(?:\n[ \t]*)?\d", re.I)
+_HOURS_WORD = re.compile(r"\b(?:hours?|hrs?)\b", re.I)
+_NUMBER = re.compile(r"\d+(?:\.\d+)?")
+_NOTHING = re.compile(r"(?<![\w.])(?:0(?:\.0+)?|N/A)(?![\w.])", re.I)
+_PER_COURSE = re.compile(r"\b(?:each|per)\s+course\b", re.I)
+# The total's whole line: the label, an optional colon, a figure or a range, an optional final period.
+_TOTAL_LINE = re.compile(r"[ \t]*Total\s+(?:Contact\s+)?Hours?[ \t]*:?[ \t]*(?:\n[ \t]*)?\d+(?:\.\d+)?"
+                         r"(?:[ \t]*(?:[-\u2013]|to)[ \t]*\d+(?:\.\d+)?)?[ \t]*\.?[ \t]*", re.I)
+# A course-code-shaped token: a capital subject and a course number that is not 0 ("VOCED 620", "ESL 501").
+_CODE_SHAPE = re.compile(r"\b[A-Z][A-Z&/]{1,7}[ \t]*-?[ \t]*(?:[1-9]\d{0,3}|0\d{1,3})[A-Z]{0,2}\b")
+
+
+def _code_pattern(code: str) -> re.Pattern | None:
+    m = re.match(r"\s*([A-Za-z&/ ]*?[A-Za-z&/])\s*-?\s*(\d[\w.]*)\s*$", code or "")
+    if not m:
+        return None
+    subj = r"\s*".join(re.escape(w) for w in m.group(1).split())
+    return re.compile(r"\b%s\s*-?\s*%s\b" % (subj, re.escape(m.group(2))), re.I)
+
+
+def total_hours_printed(text: str, stated: tuple[float, float], labels: list, record: dict) -> bool:
+    """hours_total_only's second reading (S644, the harvest's NEXT 5), for a college whose procedure
+    names it: its reconcile step sets program.hours_total_printed where the catalog prints a total as
+    'Total Hours N' or 'N-M' with no colon over a course list of 0 or N/A (San Bernardino Valley:
+    'Total Hours 48-54' over a UNITS column of 0; Coalinga: 'Total Hours 216' over 'N/A'). Read only
+    where the first reading fails, so a page it passed still passes. It asks for positive evidence,
+    all inside the record's own section, from its section_heading to the end of the text (no heading
+    found fails; the files name no next heading, so a later program's figures count against it):
+    exactly one total, after the last listed course, both ends the record's, never running on into a
+    range or an alternative it did not take, and no 'each course' or 'per course' beside it; each
+    listed course's row, from its code to the next listed code or the total, holds an explicit 0 or
+    N/A and no other number (cells split one per line read as one row); no other number within three
+    words before 'hours' or 'hrs'; no 'Hours N' or 'Hours: N' outside the total (the conductor's
+    design after the review of #3193)."""
+    prog = record.get("program") or {}
+    if not prog.get("hours_total_printed") or any(not m.group(1) for m in labels):
+        return False
+    from _program_requirements_reconcile import _heading_end
+    start = _heading_end(text, prog.get("section_heading"))
+    if start is None:
+        return False
+    sec = text[start:]
+    totals = list(TOTAL_HOURS.finditer(sec))
+    if len(totals) != 1:
+        return False
+    t = totals[0]
+    if _RANGE_REST.match(sec, t.end()):
+        return False
+    lo = float(t.group(1))
+    hi = float(t.group(2)) if t.group(2) else lo
+    if abs(lo - stated[0]) > TOL or abs(hi - stated[1]) > TOL:
+        return False
+    line_start = sec.rfind("\n", 0, t.start()) + 1
+    if _PER_COURSE.search(sec[max(0, sec.rfind("\n", 0, max(0, line_start - 1)) + 1):t.end()]):
+        return False
+    # The total's line is the total and nothing else, and the line after it says nothing of each course
+    # (the final read of #3193: 'Total Hours 48-54 per course', '(each course)', 'plus 18 lab').
+    line_end = sec.find("\n", t.end())
+    line_end = len(sec) if line_end < 0 else line_end
+    if not _TOTAL_LINE.fullmatch(sec[line_start:line_end]):
+        return False
+    after = sec[line_end + 1:].split("\n", 1)[0] if line_end < len(sec) else ""
+    if _PER_COURSE.search(after):
+        return False
+    for h in _HOURS_FIRST.finditer(sec):
+        if not (t.start() <= h.start() and h.end() <= t.end()):
+            return False
+    for w in _HOURS_WORD.finditer(sec):
+        if t.start() <= w.start() < t.end():
+            continue
+        if any(_NUMBER.search(tok) for tok in re.findall(r"\S+", sec[max(0, w.start() - 120):w.start()])[-3:]):
+            return False
+    pats = [p for p in (_code_pattern(e.get("code")) for b in record.get("blocks") or []
+                        for c in b.get("courses") or [] for e in [c] + alternatives(c)) if p]
+    if not pats:
+        return False
+    hits = sorted(((m.start(), m.end()) for p in pats for m in p.finditer(sec, 0, t.start())), key=lambda x: x[0])
+    if any(not p.search(sec, 0, t.start()) for p in pats):
+        return False
+    # Between the heading and the total, every course-code-shaped token is a listed course (a later
+    # program's rows cannot stand in for this record's), and no listed code comes back after the last
+    # listed course's first row.
+    for m in _CODE_SHAPE.finditer(sec, 0, t.start()):
+        if not any(p.fullmatch(m.group(0)) for p in pats):
+            return False
+    firsts = [p.search(sec, 0, t.start()).start() for p in pats]
+    seen_first = set(firsts)
+    if any(a > max(firsts) and a not in seen_first for a, _ in hits):
+        return False
+    for k, (a, b) in enumerate(hits):
+        row = sec[b:hits[k + 1][0] if k + 1 < len(hits) else t.start()]
+        if not _NOTHING.search(row):
+            return False
+        if any(float(n) != 0 for n in _NUMBER.findall(_NOTHING.sub(" ", row))):
+            return False
+    # Below the total, a listed course's line printing a figure other than 0 is that course's hours.
+    for p in pats:
+        for m in p.finditer(sec, t.end()):
+            ln_end = sec.find("\n", m.end())
+            rest = sec[m.end():len(sec) if ln_end < 0 else ln_end]
+            if any(float(n) != 0 for n in _NUMBER.findall(rest)):
+                return False
+    return True
 
 
 def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,
@@ -849,7 +1016,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         # guard: a text naming no electives keeps the record failing.
         fill = None
         if (not ok and not ge_included and degree is None and prog.get("electives_fill_degree")
-                and hi <= stated[0] + TOL and (text is None or ELECTIVE.search(text))):
+                and hi <= stated[0] + TOL and (text is None or electives_named(prog, text))):
             fill = [round(stated[0] - hi, 2), round(stated[1] - lo, 2)]
         ok = ok or ge_included or fill is not None
         arith = {"pass": ok, "status": "equal" if ok else "unequal",
