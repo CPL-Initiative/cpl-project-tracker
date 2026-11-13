@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-13T18:33:58.918Z",
+  "scraped_at": "2026-11-13T19:49:40.782Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -48,17 +48,17 @@
         },
         {
           "college": "West Los Angeles College",
-          "students": 791,
-          "units": 9007,
-          "avgUnits": 11.38685208596713,
-          "transcriptionRate": 85.6,
-          "avgTranscribed": 9.747155499367889,
+          "students": 792,
+          "units": 9014,
+          "avgUnits": 11.381313131313131,
+          "transcriptionRate": 85.5,
+          "avgTranscribed": 9.734848484848484,
           "criteriaMetCount": 5,
-          "militaryStudents": 156,
+          "militaryStudents": 157,
           "nonMilitaryStudents": 638,
           "apprenticeStudents": 0,
-          "savings": 9353290,
-          "yearImpact": 43859007,
+          "savings": 9365400,
+          "yearImpact": 43901476,
           "transcribedUnits": 7710
         },
         {
@@ -309,16 +309,16 @@
         {
           "college": "City College of San Francisco",
           "students": 2893,
-          "units": 13721,
-          "avgUnits": 4.7428275146906325,
+          "units": 13729.5,
+          "avgUnits": 4.745765641202904,
           "transcriptionRate": 1.6,
           "avgTranscribed": 0.07811959903214656,
           "criteriaMetCount": 2,
           "militaryStudents": 1823,
           "nonMilitaryStudents": 1073,
           "apprenticeStudents": 7,
-          "savings": 23821355,
-          "yearImpact": 83681707,
+          "savings": 23829557.5,
+          "yearImpact": 83721946,
           "transcribedUnits": 226
         },
         {
@@ -473,14 +473,14 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 633,
+          "students": 635,
           "units": 2254.2,
-          "avgUnits": 3.5611374407582934,
+          "avgUnits": 3.5499212598425194,
           "transcriptionRate": 15.7,
-          "avgTranscribed": 0.5579778830963665,
+          "avgTranscribed": 0.556220472440945,
           "criteriaMetCount": 1,
           "militaryStudents": 394,
-          "nonMilitaryStudents": 239,
+          "nonMilitaryStudents": 241,
           "apprenticeStudents": 11,
           "savings": 3434588.5,
           "yearImpact": 12999061.600000001,
@@ -622,6 +622,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Ventura College",
+          "students": 201,
+          "units": 1026,
+          "avgUnits": 5.104477611940299,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 1,
+          "militaryStudents": 201,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 1774980,
+          "yearImpact": 6224742,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Clovis Community College",
           "students": 200,
           "units": 1195,
@@ -634,21 +649,6 @@
           "apprenticeStudents": 0,
           "savings": 2046590,
           "yearImpact": 7177261,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Ventura College",
-          "students": 200,
-          "units": 1021,
-          "avgUnits": 5.105,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 1,
-          "militaryStudents": 200,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 1766330,
-          "yearImpact": 6194407,
           "transcribedUnits": 0
         },
         {
@@ -1772,15 +1772,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "60,343",
+      "value": "60,347",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "31,958"
+          "value": "31,960"
         },
         {
           "label": "Workforce/Other",
-          "value": "28,491"
+          "value": "28,493"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 60343,
-    "Units": 289313.4,
+    "Students": 60347,
+    "Units": 289333.9,
     "TranscribedUnits": 85299.65,
-    "Savings": 413055270.25,
-    "YearImpact": 1668177260.3999999,
-    "MilitaryStudents": 31958,
-    "NonMilitaryStudents": 28491,
+    "Savings": 413084232.75,
+    "YearImpact": 1668290303.3999999,
+    "MilitaryStudents": 31960,
+    "NonMilitaryStudents": 28493,
     "AprenticeStudents": 960,
-    "AverageUnits": 4.794481547155429,
-    "TranscribedAverage": 1.413579868418872
+    "AverageUnits": 4.794503455018477,
+    "TranscribedAverage": 1.413486171640678
   }
 }

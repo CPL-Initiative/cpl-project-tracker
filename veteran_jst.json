@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-13T18:33:59.351798+00:00",
+  "scraped_at": "2026-11-13T19:49:41.090041+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 31958,
+    "jst": 31960,
     "star_colleges": 68
   },
   "computed_star_colleges": 68,
@@ -72,7 +72,7 @@
     },
     "West Los Angeles College": {
       "vets": 147,
-      "jst": 156,
+      "jst": 157,
       "star": true
     },
     "Long Beach City College": {
@@ -227,7 +227,7 @@
     },
     "Ventura College": {
       "vets": 238,
-      "jst": 200,
+      "jst": 201,
       "star": true
     },
     "Evergreen Valley College": {

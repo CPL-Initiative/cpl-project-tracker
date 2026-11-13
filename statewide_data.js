@@ -432852,7 +432852,7 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-13T18:33:06",
+  "generated_at": "2026-11-13T19:48:53",
   "total_credit_recs": 16604,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
