@@ -350,9 +350,16 @@ def run_cost(out_dir: str | None, run_id) -> dict:
     for path in sorted(glob.glob(os.path.join(out_dir or "", "kept_passing_*.json"))) if out_dir else []:
         kept_list.extend(_read(path) or [])
     cost = sum(r.get("cost_usd") or 0 for r in mine) + sum(k.get("cost_usd") or 0 for k in kept_list)
+    # The calls that failed (extract_account_<shard>.json, d-extract-failure-files-nothing-s647) cost what they
+    # carried, as the college's run_cost_of counts them (S648 review).
+    failed: list = []
+    for path in sorted(glob.glob(os.path.join(out_dir or "", "extract_account_*.json"))) if out_dir else []:
+        failed.extend((_read(path) or {}).get("failed") or [])
+    cost += sum(x.get("cost_usd") or 0 for x in failed)
     # A call with usage and no price (a fallback model the table does not price) cost something the
     # sum cannot show: counted apart, and shown beside the cost.
-    unpriced = sum(1 for x in mine + kept_list if x.get("usage") and not isinstance(x.get("cost_usd"), (int, float)))
+    unpriced = sum(1 for x in mine + kept_list + failed
+                   if x.get("usage") and not isinstance(x.get("cost_usd"), (int, float)))
     not_sent: list = []
     for path in sorted(glob.glob(os.path.join(out_dir or "", "not_sent_*.json"))) if out_dir else []:
         not_sent.extend((_read(path) or {}).get("programs") or [])

@@ -4308,8 +4308,14 @@ with tempfile.TemporaryDirectory() as td:
           and "held_failing_on_main" not in json.load(open(os.path.join(dest, "summary.json"))),
           "a held read restores main's passing record, not the older filing's: %r" % kept_24432["source_url"])
     # A held program whose record fails on main is carried as main files it, and named for the load to skip.
+    # A loadable record that fails on main (a units record with a block, a numeric run, courses placed), so the load
+    # test below proves the hold keeps it out, not its shape (S648 review).
     main_fail = dict(rec_24432, source_url="https://www.glendale.edu/c.pdf#page=9", extracted_run="41049220135",
-                     score=dict(rec_24432["score"], arithmetic={"status": "unequal"}, **{"pass": False}))
+                     record={"program": {"measure": "units", "total_units": {"min": 20, "max": 20},
+                                         "section_heading": "NCHSD - High School Diploma"},
+                             "blocks": [{"name": "Core", "rule": "all", "courses": [{"code": "ABSE 15"}]}]},
+                     score=dict(rec_24432["score"], coverage={"pass": True, "placed": 1, "listed": 26},
+                                arithmetic={"status": "unequal"}, **{"pass": False}))
     C._write(os.path.join(maind, "records", "24432.json"), main_fail)
     C._write(os.path.join(dest, "records", "24432.json"), rec_24432)
     with _rk_ctx.redirect_stdout(_rk_io.StringIO()) as rk_out:
@@ -4329,9 +4335,51 @@ with tempfile.TemporaryDirectory() as td:
         _f["college"] = "Glendale Community College"
         json.dump(_f, open(os.path.join(dest, "records", _r + ".json"), "w"))
     ld_rows, ld_skipped = C.load_rows("Glendale Community College", folder=dest)
-    check([r["control_number"] for r in ld_rows] == ["31597"]
+    check([r["control_number"] for r in ld_rows] == ["31597"] and "24432" not in [r["control_number"] for r in ld_rows]
           and [(x["control_number"], "held_failing_on_main" in x["why"]) for x in ld_skipped] == [("24432", True)],
-          "the load skips a held record that fails on main and posts the rest: %r" % (ld_skipped,))
+          "the load skips a loadable held record that fails on main and posts the rest: %r" % (ld_skipped,))
+    # The summary key alone is not trusted: without held_failing_on_main the held list still keeps 24432 out.
+    _sm = json.load(open(os.path.join(dest, "summary.json")))
+    json.dump({k: v for k, v in _sm.items() if k != "held_failing_on_main"}, open(os.path.join(dest, "summary.json"), "w"))
+    check("24432" not in [r["control_number"] for r in C.load_rows("Glendale Community College", folder=dest)[0]],
+          "without the held_failing_on_main key the held list still keeps the failing record out")
+    json.dump(_sm, open(os.path.join(dest, "summary.json"), "w"))
+    # file_run, then load_rows: the workflow's file step rebuilds summary.json, and the holds stay (S648 review).
+    _fr_out = os.path.join(td, "fr_out")
+    for _d in ("records", "sources"):
+        os.makedirs(os.path.join(_fr_out, _d))
+    for _r in ("24432", "31597"):
+        C._write(os.path.join(_fr_out, "records", _r + ".json"),
+                 json.load(open(os.path.join(dest, "records", _r + ".json"))))
+    C._write(os.path.join(_fr_out, "capture.json"), dict(json.load(open(os.path.join(dest, "capture.json"))), found=1))
+    _real_cd = C.COLLEGE_DIR
+    C.COLLEGE_DIR = os.path.join(td, "colleges")
+    _fr_dest = os.path.join(C.COLLEGE_DIR, C.slug_of("Glendale Community College"))
+    try:
+        shutil.copytree(dest, _fr_dest)
+        with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+            C.file_run("Glendale Community College", _fr_out, "43500000000")
+        _fr_sum = json.load(open(os.path.join(_fr_dest, "summary.json")))
+        _fr_rows = [r["control_number"] for r in C.load_rows("Glendale Community College", folder=_fr_dest)[0]]
+    finally:
+        C.COLLEGE_DIR = _real_cd
+    check(_fr_sum.get("run") == "43500000000" and _fr_sum.get("held_failing_on_main") == ["24432"]
+          and [e["control_number"] for e in _fr_sum.get("held_wrong_tab") or []] == ["24432"]
+          and _fr_rows == ["31597"],
+          "file_run then load_rows: the held list is carried, held_failing_on_main taken again, and 24432 stays out: %r"
+          % (_fr_rows,))
+    # A record read from a refused tab is skipped by the filing's own account, with no summary key at all.
+    C._write(os.path.join(dest, "records", "24432.json"), dict(rec_24432, college="Glendale Community College",
+                                                               record=main_fail["record"], score=main_fail["score"]))
+    json.dump({"extracted": 2}, open(os.path.join(dest, "summary.json"), "w"))
+    json.dump({"college": "Glendale Community College", "tabs": {"NCHSD": {"control_number": "31597"}}},
+              open(os.path.join(dest, "tab_owners.json"), "w"))
+    _wt_rows, _wt_skip = C.load_rows("Glendale Community College", folder=dest)
+    check("24432" not in [r["control_number"] for r in _wt_rows]
+          and any(x["control_number"] == "24432" and "refuses" in x["why"] for x in _wt_skip),
+          "a record still read from a refused tab is skipped by wrong_tabs, with no summary key: %r" % (_wt_skip,))
+    os.remove(os.path.join(dest, "tab_owners.json"))
+    json.dump(_sm, open(os.path.join(dest, "summary.json"), "w"))
     os.remove(os.path.join(dest, "records", "31597.json"))
     # main's copy read a refused tab too: it is not restored, and the program is listed for a person.
     C._write(os.path.join(maind, "records", "24432.json"), dict(main_fail, source_url=NCHSD_URL))

@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 930,
+  "file_datasets": 931,
   "external_services": 195,
   "consumers": 581,
   "workflows": 72,
@@ -8498,7 +8498,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5626
+     "line": 5630
+    },
+    {
+     "id": "script:kb/_program_requirements_wave.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 356
     }
    ],
    "served": false,
@@ -8511,14 +8518,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5676
+     "line": 5680
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 363
+     "line": 370
     }
    ],
    "served": false,
@@ -16996,6 +17003,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/program_requirements_college/glendale_community/tab_owners.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 6035
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_maps_sample.json": {
    "consumers": [
     {
@@ -20591,7 +20611,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5838
+     "line": 5854
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21228,14 +21248,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5918
+     "line": 5941
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 357
+     "line": 364
     }
    ],
    "served": false,
@@ -27898,7 +27918,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 5978
+     "line": 6009
     }
    ],
    "main_committers": []
@@ -27910,7 +27930,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6075
+     "line": 6118
     }
    ],
    "main_committers": []

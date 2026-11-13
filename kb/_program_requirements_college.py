@@ -5286,6 +5286,9 @@ def refile_kept(college: str, from_dir: str, dest: str | None = None, statuses: 
              ", ".join(e["control_number"] for e in held_now) or "none", stamped, year))
     print("held records that fail on main, carried as filed there for the load to skip: %d (%s)"
           % (len(failing_held), ", ".join(failing_held) or "none"))
+    person = sorted(cn for cn, e in held.items() if e.get("for_person"))
+    print("held for a person (main's copy reads a refused tab too, nothing restored): %d (%s)"
+          % (len(person), ", ".join("%s: %s" % (cn, held[cn]["for_person"]) for cn in person) or "none"))
     return 0
 HALT_WAIT_S = 20   # the pause before the one retry of a call the function answered 503 or 401 (extract)
 
@@ -5522,7 +5525,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 failed.append({"control_number": src["control_number"], "title": src.get("title"),
                                "award": src.get("award"), "status": str(status)[:300], "kept_filed": had,
                                "model": got.get("model"), "usage": got.get("usage"),
-                               "cost_usd": X.cost(got.get("model"), got.get("usage"))})
+                               # the merged usage of a retried call, priced per try (priced, S648 review)
+                               "cost_usd": priced(got)})
             print("%-6s extract_failed: %s (%s)" % (src["control_number"], str(status)[:120],
                                                      "the filed record stays" if had else "no record filed"), flush=True)
             return
@@ -5824,6 +5828,18 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
     return 0
 
 
+def held_summary(dest: str, prior: dict) -> dict:
+    """held_wrong_tab carried from the prior summary, and held_failing_on_main taken again from the record files in
+    dest (a held program whose record stands and fails); {} when nothing is held."""
+    held = prior.get("held_wrong_tab") or []
+    if not held:
+        return {}
+    failing = sorted(e["control_number"] for e in held
+                     if _filed(os.path.join(dest, "records", e["control_number"] + ".json")) is not None
+                     and not _passing_filed_rec(_filed(os.path.join(dest, "records", e["control_number"] + ".json"))))
+    return dict({"held_wrong_tab": held}, **({"held_failing_on_main": failing} if failing else {}))
+
+
 def run_cost_of(out_dir: str, run_id, acct: dict | None = None) -> float:
     """What THIS run's model calls cost: its fresh records (extracted_run the run, no read_run), the reads
     kept_passing set aside, and the calls that failed. A record kept or carried from an earlier run cost
@@ -5839,6 +5855,13 @@ def run_cost_of(out_dir: str, run_id, acct: dict | None = None) -> float:
         with open(path) as fh:
             total += sum(k.get("cost_usd") or 0 for k in json.load(fh))
     total += sum(x.get("cost_usd") or 0 for x in (acct or extract_accounts(out_dir))["failed"])
+    # The halting answers' paid usage (extract_halt_<shard>.json cost_usd, #3227), as the wave's run_cost counts it.
+    for path in glob.glob(os.path.join(out_dir, "extract_halt_*.json")):
+        try:
+            with open(path) as fh:
+                total += json.load(fh).get("cost_usd") or 0
+        except (OSError, ValueError):
+            continue
     return round(total, 2)
 
 
@@ -5957,12 +5980,20 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     if kept:
         _write(os.path.join(dest, "kept_passing.json"), dict(run=run_id, programs=kept))
     if records or acct["calls"]:
+        try:
+            with open(os.path.join(dest, "summary.json")) as fh:
+                prior_summary = json.load(fh)
+        except (OSError, ValueError):
+            prior_summary = {}
         summary = dict(summarize(records, report, run_cost_of(out_dir, run_id, acct), acct), run=run_id)
         # The passing records kept where this read reached no page for the program, each with the reason
         # (keep_no_read, S647); named only when there are any, so no other filing's account changes shape.
         no_read = kept_no_read_entries(out_dir)
         if no_read:
             summary["kept_no_read"] = no_read
+        # The holds refile-kept made stay with the filing (S648 review of #3202): a new read files over the records,
+        # never over the decision to hold one. held_failing_on_main is taken again from the records filed now.
+        summary.update(held_summary(dest, prior_summary))
         _write(os.path.join(dest, "summary.json"), summary)
     print("filed %d records and %d sources under %s" % (len(records), len(index), os.path.relpath(dest, os.path.dirname(HERE))))
     return 0
@@ -5991,11 +6022,21 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
     dest = folder or os.path.join(COLLEGE_DIR, slug_of(college))
     with open(os.path.join(dest, "capture.json")) as fh:
         year = json.load(fh).get("catalog_year")
+    # Never trust a summary key alone (S648 review): a record read from a tab the rule refuses is skipped by the
+    # filing's own account (wrong_tabs over capture.json and the page read's tab_owners.json), and a held program
+    # whose record fails is skipped by held_failing_on_main and by the held list, either of which suffices.
     try:
         with open(os.path.join(dest, "summary.json")) as fh:
-            failing_held = set(json.load(fh).get("held_failing_on_main") or [])
+            summ = json.load(fh)
     except (OSError, ValueError):
-        failing_held = set()
+        summ = {}
+    with open(os.path.join(dest, "capture.json")) as fh:
+        cap = json.load(fh)
+    owners_path = os.path.join(dest, "tab_owners.json")
+    owners = tab_owners_file(owners_path, college) if os.path.isfile(owners_path) else {}
+    refused = {e["control_number"]: e for e in wrong_tabs(dest, cap, owners)}
+    failing_held = set(summ.get("held_failing_on_main") or []) | set(
+        (held_summary(dest, summ).get("held_failing_on_main") or []))
     rows, skipped = [], []
     for path in sorted(glob.glob(os.path.join(dest, "records", "*.json"))):
         with open(path) as fh:
@@ -6008,6 +6049,8 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
         why = None
         if rec.get("college") != college:
             why = "a record of %s" % rec.get("college")
+        elif key in refused:
+            why = "read from a tab the rule refuses (%s: %s)" % (refused[key].get("tab"), refused[key].get("reason"))
         elif key in failing_held:
             # A program refile-kept held from another program's tab whose record stands as main's and fails there
             # (summary.json held_failing_on_main; COBIx on #3202): never loaded until a read of its own passes.
