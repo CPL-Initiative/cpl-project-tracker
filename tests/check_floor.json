@@ -186,7 +186,7 @@
     "eacr_scope.test.js": 44,
     "exhibits_related_actions.test.js": 71,
     "title_in_use_parity.test.js": 56,
-    "issuer_tags.test.js": 8,
+    "issuer_tags.test.js": 10,
     "exhibits_review_list.test.js": 22,
     "factsheet_a11y.test.js": 69,
     "factsheet_edit.test.js": 35,

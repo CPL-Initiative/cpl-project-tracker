@@ -413,10 +413,15 @@ check("CompTIA and NREMT still name theirs: a one-word name whole, three of five
       B.issuer_named("CompTIA Cloud+", "CompTIA", TAGS)
       and B.issuer_named("Emergency Medical Technician", "National Registry of Emergency Medical Technicians (NREMT)", TAGS))
 DATA_TAGS = B.issuer_tags()
+def _all(issuer):
+    e = DATA_TAGS.get(issuer) or {}
+    return (e.get("tags") or []) + (e.get("acronyms") or [])
+
+
 check("the committed tag list carries the brands the review named, and drops the generic ones",
-      "Disney" in DATA_TAGS.get("The Walt Disney Company", []) and "IPC" in DATA_TAGS.get("IPC — Association Connecting Electronics Industries", [])
-      and "LEED" in DATA_TAGS.get("U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)", [])
-      and not any(t in ("ROP", "HS", "DUI", "GIS", "varies") for v in DATA_TAGS.values() for t in v))
+      "Disney" in _all("The Walt Disney Company") and "IPC" in _all("IPC — Association Connecting Electronics Industries")
+      and "LEED" in _all("U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)")
+      and not any(t in ("ROP", "HS", "DUI", "GIS", "varies") for k in DATA_TAGS for t in _all(k)))
 check("an unreadable tag file gives no tags, never an error", B.issuer_tags("/nonexistent-root") == {})
 # The conductor on #3241: a real credential of its issuer that the rule dropped is a regression. The committed list
 # restores each (its own abbreviations and certification tracks) and leaves the generic titles out.
@@ -472,10 +477,45 @@ REAL += [("California Real Estate Broker License", "California Department of Rea
          ("POST Basic Course", "California Commission on Peace Officer Standards and Training (POST)")]
 check("the issuers' own credential abbreviations name their credentials (round 2)",
       all(B.issuer_named(t, i) for t, i in REAL), [t for t, i in REAL if not B.issuer_named(t, i)])
-check("a capitals tag matches only in capitals, and a fixture tag list decides alone",
-      B.issuer_named("POST Basic Course", "X Commission (POST)", {"X Commission (POST)": ["POST"]})
-      and not B.issuer_named("Post Basic Course", "X Commission (POST)", {"X Commission (POST)": ["POST"]})
-      and B.issuer_named("servsafe manager", "Food Group", {"Food Group": ["ServSafe"]}))
+ACR = {"X Commission (POST)": {"tags": [], "acronyms": ["POST"]}, "Food Group": {"tags": ["ServSafe"], "acronyms": []},
+       "Dassault Systèmes": {"tags": ["SOLIDWORKS"], "acronyms": ["CSWA"]},
+       "California Department of Forestry and Fire Protection (CAL FIRE)": {"tags": ["CAL FIRE"], "acronyms": ["CDF"]}}
+check("an acronym the data marks matches only as written; a phrase tag in any case (COBIx, 17:42Z)",
+      B.issuer_named("POST Basic Course", "X Commission (POST)", ACR)
+      and not B.issuer_named("Post Basic Course", "X Commission (POST)", ACR)
+      and B.issuer_named("servsafe manager", "Food Group", ACR)
+      and B.issuer_named("Certified SolidWorks Associate", "Dassault Systèmes", ACR)
+      and B.issuer_named("Cal Fire Ethical Leadership", "California Department of Forestry and Fire Protection (CAL FIRE)", ACR)
+      and not B.issuer_named("Fire cdf academy", "California Department of Forestry and Fire Protection (CAL FIRE)", ACR))
+check("the committed data marks the acronyms: POST is one, SOLIDWORKS and CAL FIRE are phrase tags",
+      "POST" in (DATA_TAGS["California Commission on Peace Officer Standards and Training (POST)"]["acronyms"])
+      and "SOLIDWORKS" in DATA_TAGS["Dassault Systèmes"]["tags"]
+      and "CAL FIRE" in DATA_TAGS["California Department of Forestry and Fire Protection (CAL FIRE)"]["tags"])
+# COBIx on #3241 (17:42Z) and the conductor: a generic subject phrase is no SFT tag; a numbered course is.
+check("'Fire Prevention Technology' names no issuer; 'Fire Prevention 1A' and 'Fire Control 6' still name SFT",
+      not B.issuer_named("Fire Prevention Technology", SFT) and B.issuer_named("Fire Prevention 1A", SFT)
+      and B.issuer_named("Fire Control 6: Wildland Firefighting Essentials", SFT)
+      and not B.issuer_named("Fire Management Basics", SFT) and B.issuer_named("Fire Management 1", SFT)
+      and B.issuer_named("Fire Investigation 1B", SFT) and not B.issuer_named("Fire Investigation", SFT))
+# A title several issuers carry (case, spacing and I/1 folded) names none of them unless the text carries that
+# issuer's acronym (the conductor's decision on COBIx's finding: "a bare title several issuers share goes to a person").
+SH_TAGS = {SFT: {"tags": ["Fire Inspector", "Fire Instructor"], "acronyms": ["SFT"]},
+           "National Fire Protection Association (NFPA)": {"tags": [], "acronyms": ["NFPA"]},
+           "International Fire Service Accreditation Congress (IFSAC) / Pro Board": {"tags": ["Fire Instructor"], "acronyms": ["IFSAC"]}}
+SH_IDX = [{"t": "Fire Instructor 1", "issuer": SFT, "locals": 5, "adopted": 3},
+          {"t": "Fire Inspector 1", "issuer": SFT, "locals": 5, "adopted": 3}]
+SH_CREDS = {"Fire Instructor 1": [{"issuing_agency": SFT}, {"issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board"}],
+            "Fire Inspector 1": [{"issuing_agency": SFT}], "Fire Inspector I": [{"issuing_agency": "National Fire Protection Association (NFPA)"}],
+            "Fire Instructor 2": [{"issuing_agency": SFT}, {"issuing_agency": "California Community Colleges"}]}
+SHARED = B.shared_titles(SH_CREDS, SH_IDX)
+check("titles fold for case, spacing and I/1; a college-issued twin is no second issuer",
+      B.title_key("Fire  Inspector I") == B.title_key("fire inspector 1") and B.title_key("CompTIA A+") != B.title_key("CompTIA A")
+      and len(SHARED[B.title_key("Fire Inspector 1")]) == 2 and len(SHARED[B.title_key("Fire Instructor 2")]) == 1)
+check("a bare shared title names no one; the text's own acronym picks its issuer",
+      B.named_credential(["Fire Instructor 1"], SH_IDX, SH_TAGS, SHARED) is None
+      and B.named_credential(["Fire Inspector 1 for company officers"], SH_IDX, SH_TAGS, SHARED) is None
+      and (B.named_credential(["SFT Fire Instructor 1"], SH_IDX, SH_TAGS, SHARED) or {}).get("issuer") == SFT
+      and B.named_credential(["sft Fire Instructor 1"], SH_IDX, SH_TAGS, SHARED) is None)
 check("a name of three or four words needs a strict majority: two of four is not enough, three of four is",
       not B.issuer_named("Dental Assisting", "Dental Assisting Board of California (DBCA)", {})
       and B.issuer_named("Dental Assisting Board Exam", "Dental Assisting Board of California (DBCA)", {}))

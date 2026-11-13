@@ -86,6 +86,19 @@ check("every issuer in the reference has an entry in kb/reference/issuer_tags.js
 check("no tag is a common short word the issuer does not write in capitals, repeated, or empty",
   !live.some(function (p) { return p.indexOf("no entry: ") !== 0; }), live.filter(function (p) { return p.indexOf("no entry: ") !== 0; }));
 check("the file says where its tags came from", typeof doc._about === "string" && /issuer_named/.test(doc._about));
+// Acronyms are marked in the data, never inferred (the S648 conductor on COBIx's 17:42Z note): matched as written, so
+// each must carry a capital letter, and every issuer with acronyms has a tags entry too.
+const acr = doc.acronyms || {};
+const badAcr = [];
+Object.keys(acr).forEach(function (a) {
+  if (!Array.isArray(acr[a])) { badAcr.push("not a list: " + a); return; }
+  if (!Object.prototype.hasOwnProperty.call(tags, a)) badAcr.push("acronyms for an issuer with no entry: " + a);
+  acr[a].forEach(function (t) { if (typeof t !== "string" || !/[A-Z]/.test(t)) badAcr.push("acronym with no capital: " + a + " " + t); });
+});
+check("the acronyms are a marked list per issuer, each with a capital letter", Object.keys(acr).length > 50 && !badAcr.length, badAcr);
+check("a brand written in any case is a phrase tag, never an acronym (SOLIDWORKS, CAL FIRE)",
+  (tags["Dassault Systèmes"] || []).indexOf("SOLIDWORKS") >= 0 && (acr["Dassault Systèmes"] || []).indexOf("SOLIDWORKS") < 0
+  && (tags["California Department of Forestry and Fire Protection (CAL FIRE)"] || []).indexOf("CAL FIRE") >= 0);
 
 const failed = results.filter(function (r) { return !r[1]; });
 results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] ? "" : "  " + JSON.stringify(r[2]).slice(0, 400))); });
