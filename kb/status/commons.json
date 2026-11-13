@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T17:00:12Z",
+ "written_at": "2026-11-13T18:42:16Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14527,
+     "n": 14533,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 2955,
+     "n": 2949,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-13T07:46:13Z",
+    "at": "2026-11-13T11:59:31Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 14527,
-    "failing": 2955,
+    "complete": 14533,
+    "failing": 2949,
     "unread": 2800,
     "records": 19155,
     "colleges": 118,
@@ -287,7 +287,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-13T16:58:50+00:00",
+    "at": "2026-11-13T18:40:58+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -499,7 +499,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-13T16:56:11Z",
+    "at": "2026-11-13T18:38:30Z",
     "every_hours": 24
    },
    "facts": {
@@ -750,7 +750,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2955,
+    "n": 2949,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"

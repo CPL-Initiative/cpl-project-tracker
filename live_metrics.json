@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-13T16:56:00.369Z",
+  "scraped_at": "2026-11-13T18:33:58.918Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -352,6 +352,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Fresno City College",
+          "students": 808,
+          "units": 3022,
+          "avgUnits": 3.74009900990099,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 2,
+          "militaryStudents": 807,
+          "nonMilitaryStudents": 1,
+          "apprenticeStudents": 0,
+          "savings": 5228060,
+          "yearImpact": 18334474,
+          "transcribedUnits": 0
+        },
+        {
           "college": "College of the Desert",
           "students": 482,
           "units": 2806.5,
@@ -412,21 +427,6 @@
           "transcribedUnits": 1157.5
         },
         {
-          "college": "Fresno City College",
-          "students": 804,
-          "units": 2998,
-          "avgUnits": 3.728855721393035,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 1,
-          "militaryStudents": 803,
-          "nonMilitaryStudents": 1,
-          "apprenticeStudents": 0,
-          "savings": 5186540,
-          "yearImpact": 18188866,
-          "transcribedUnits": 0
-        },
-        {
           "college": "Mt. San Antonio College",
           "students": 734,
           "units": 2932,
@@ -473,14 +473,14 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 632,
+          "students": 633,
           "units": 2254.2,
-          "avgUnits": 3.566772151898734,
+          "avgUnits": 3.5611374407582934,
           "transcriptionRate": 15.7,
-          "avgTranscribed": 0.558860759493671,
+          "avgTranscribed": 0.5579778830963665,
           "criteriaMetCount": 1,
           "militaryStudents": 394,
-          "nonMilitaryStudents": 238,
+          "nonMilitaryStudents": 239,
           "apprenticeStudents": 11,
           "savings": 3434588.5,
           "yearImpact": 12999061.600000001,
@@ -1772,15 +1772,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "60,338",
+      "value": "60,343",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "31,954"
+          "value": "31,958"
         },
         {
           "label": "Workforce/Other",
-          "value": "28,490"
+          "value": "28,491"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 60338,
-    "Units": 289289.4,
+    "Students": 60343,
+    "Units": 289313.4,
     "TranscribedUnits": 85299.65,
-    "Savings": 413013750.25,
-    "YearImpact": 1668031652.3999999,
-    "MilitaryStudents": 31954,
-    "NonMilitaryStudents": 28490,
+    "Savings": 413055270.25,
+    "YearImpact": 1668177260.3999999,
+    "MilitaryStudents": 31958,
+    "NonMilitaryStudents": 28491,
     "AprenticeStudents": 960,
-    "AverageUnits": 4.7944810898604535,
-    "TranscribedAverage": 1.4136970068613477
+    "AverageUnits": 4.794481547155429,
+    "TranscribedAverage": 1.413579868418872
   }
 }
