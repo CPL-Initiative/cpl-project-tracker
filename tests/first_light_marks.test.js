@@ -236,7 +236,7 @@ const text = (w) => $(w, "#first-light-root").textContent;
     const a = $(w2, '[data-req="opened"] a');
     check("(g) the last Apply's pull request is a link", a && a.getAttribute("href") === "https://github.com/CPL-Initiative/cpl-project-tracker/pull/4001" && /#4001/.test(a.textContent));
     // A `nothing` stamp carries what first-light-apply.yml's stamp step wrote: the open pull request that already
-    // holds the marks, or, when a mark was held, the words saying so and no pull request (#3188 review).
+    // holds the marks (with the held words beside it when a mark was held), or, with none open, the held words alone.
     const nothing = async (row) => {
       const wn = boot({ hash: "#first-light/paintings", marks: [{ id: 1, item_set: "paintings", item_key: SEL[0].file, mark: "drop", collection: "rotation" }],
         reqs: [Object.assign({ id: 5, status: "nothing", requested_at: "2026-11-12T20:00:00Z" }, row)] });
@@ -252,6 +252,15 @@ const text = (w) => $(w, "#first-light-root").textContent;
     const pHeld = await nothing({ detail: heldWords });
     check("(g) ⭐ held marks: the line says so in the stamp's words and links no pull request",
       pHeld && !pHeld.querySelector("a") && pHeld.textContent.indexOf(heldWords) !== -1, pHeld && pHeld.outerHTML);
+    // A held mark beside an open pull request (COBIx, #3110; S646 UI pass): a held mark stays live on every run, so
+    // its words must not replace the link. The line links the pull request and says what was held.
+    const pBoth = await nothing({ pr_number: 4001, pr_url: "https://github.com/CPL-Initiative/cpl-project-tracker/pull/4001",
+      detail: "the open pull request already carries these marks; " + heldWords });
+    const aBoth = pBoth && pBoth.querySelector("a");
+    check("(g) ⭐ a held mark and an open pull request: the line links the pull request and says what was held",
+      aBoth && aBoth.getAttribute("href") === "https://github.com/CPL-Initiative/cpl-project-tracker/pull/4001" &&
+      /found nothing new: pull request #4001 carries the other marks, and Sam merges it; until then the views are unchanged\. 1 marked item could not be applied \(a painting not in the candidate pool, or a story photo missing from the stories file or sharing its name with another story\), so it is on no pull request\.$/.test(pBoth.textContent) &&
+      !/already carries these marks/.test(pBoth.textContent), pBoth && pBoth.outerHTML);
     const pBare = await nothing({});
     check("(g) nothing to change, nothing held, no pull request open: the plain line", pBare && /^The last Apply on [^(]+ found nothing to change\.$/.test(pBare.textContent) && !pBare.querySelector("a"),
       pBare && pBare.outerHTML);

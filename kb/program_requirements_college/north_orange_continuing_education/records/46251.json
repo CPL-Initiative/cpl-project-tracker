@@ -1,0 +1,168 @@
+{
+ "college": "North Orange Continuing Education",
+ "control_number": "46251",
+ "shape": "noncredit",
+ "title": "ESL for Entrepreneurs",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-entrepreneurs/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6947,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6947,
+    "output_tokens": 738,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 738,
+  "output_tokens_details": {
+   "thinking_tokens": 230
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04255,
+ "ms": 6543,
+ "seconds": 6.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    120.0,
+    174.0
+   ],
+   "stated": [
+    120.0,
+    174.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL for Entrepreneurs",
+   "measure": "hours",
+   "total_units": {
+    "min": 120,
+    "max": 174
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "entrepreneurs"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses (Required 120-174 Hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 120,
+     "max": 174
+    },
+    "courses": [
+     {
+      "code": "ESLA 1306",
+      "units": 108,
+      "units_max": 162,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLA 001",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours; total 120-174 hours as printed.",
+   "Catalog prints 'ESLA 001'; closed list stores 'ESLA001' (ESL Student Support Center). Treated as the same course, not a catalog addition.",
+   "The description says 12 hours in the 'Student Success Center' while the course list names 'ESL Student Support Center'; the hours match.",
+   "No program learning outcomes are printed in the text.",
+   "'entrepreneurs' recorded as a career from the description ('students who want to become entrepreneurs in the U.S.'); reviewer may confirm."
+  ]
+ },
+ "extracted_run": "43342034608"
+}

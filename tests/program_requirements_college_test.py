@@ -1156,6 +1156,41 @@ check("github.event.inputs.step == 'display'" in display_if and "github.event_na
       and "head_commit" not in display_if,
       "the display write runs only on a dispatch with step=display, never on a push: it changes checked "
       "programs, which waits on Sam's go")
+# S645: a display dispatch may name one college (the first live run of the parallel apply, North
+# Orange's 78 statements). Its own input, never `college` (default Cerritos would scope every display),
+# reaching the shell by env and a quoted variable; without it the step is the bare whole-build apply.
+_inputs = wf.split("workflow_dispatch:")[1].split("\n  push:")[0]
+_dc = _inputs.split("      display_college:\n")[1].split("\n      ")[0:3] if "      display_college:\n" in _inputs else []
+_apply = display_job.split("- name: Apply the display build the page carries")[1].split("- uses:")[0]
+_commit = display_job.split("- name: Commit the applied record to the branch that ran it")[1]
+_env_line = "          DISPLAY_COLLEGE: ${{ github.event.inputs.display_college }}"
+
+
+def _env_lines(st):
+    return [x for x in st.split("run: |")[0].splitlines() if "DISPLAY_COLLEGE" in x]
+
+
+def _run(st):
+    return st.split("run: |")[1]
+
+
+check(any(x.strip() == 'default: ""' for x in _dc)
+      and _env_lines(_apply) == [_env_line]
+      and "${{" not in _run(_apply)
+      and not re.search(r"inputs\.college\b", _apply)
+      and not re.search(r"DISPLAY_COLLEGE\s*=|export\s+DISPLAY_COLLEGE|:=|read\s.*DISPLAY_COLLEGE", _run(_apply))
+      and 'if [ -n "$DISPLAY_COLLEGE" ]; then' in _apply
+      and '--apply --college "$DISPLAY_COLLEGE"\n' in _apply
+      and "else\n            python3 kb/_program_requirements_display_apply.py --apply\n          fi" in _apply,
+      "the display step takes display_college (empty by default) by env into --college, never assigned in the "
+      "shell and never the college input, and a bare --apply without it")
+_msg = [x for x in _run(_commit).splitlines() if "git commit" in x]
+check(_env_lines(_commit) == [_env_line]
+      and not re.search(r"inputs\.college\b", _commit)
+      and not re.search(r"DISPLAY_COLLEGE\s*=|export\s+DISPLAY_COLLEGE|:=", _run(_commit))
+      and len(_msg) == 1 and "${{" not in _msg[0] and "${DISPLAY_COLLEGE:+ of $DISPLAY_COLLEGE}" in _msg[0]
+      and "$GITHUB_RUN_ID" in _msg[0],
+      "the applied record's commit message names a scoped run's college, by env, with no ${{ }} in the line")
 check(wf.count("contents: write") == 3 and wf.count('git push origin "HEAD:${{ github.ref_name }}"') == 3
       and wf.count("git push") == 3,
       "each job writes only to the branch that ran it")
@@ -3067,7 +3102,7 @@ finally:
 # Diablo Valley's site links each award as dvc.elumenapp.com/catalog/DVC2026-2027Catalog/
 # program,<slug> (page read 43342288026); the content call catalog,program,<slug> prints the
 # award whole (43342877522); the menu names none (43343491672), so its index is
-# www.dvc.edu/academics/explore-our-programs?page=0..5, 77 areas (43341770461, 43344234543).
+# www.dvc.edu/academics/explore-our-programs?page=0..5, 72 areas (43341770461; counted by 43362895655).
 check(C.el_program_links(SHELL, "2026-2027-Catalog") == [("ag-ed-as-fall-2026", "/"), ("culinary-coa-fall-2026", "/")]
       and C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT)["url"] == EL_BASE + "program/ag-ed-as-fall-2026"
       and C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT, "/") == EPG,
@@ -3399,6 +3434,67 @@ with tempfile.TemporaryDirectory() as td:
     stopped = C.reread_capture(td)
     open(os.path.join(td, "capture.json"), "w").write(json.dumps({"coursedog": {"slow": {"delay_s": 12.0}}}))
     check(stopped and not C.reread_capture(td), "a slow read a challenge stopped is partial; one that finished is not")
+# ── Diablo Valley's area pages write the slash form too (S645, page read 43363340544) ──
+# Administration of Justice links program,<slug>; Dental Assisting, Music, Psychology, Spanish,
+# Kinesiology and Early Childhood Education link program/<slug> on the same catalog, and the step's
+# program_links names the comma form, so run 43353452924 took none of them (115 not found).
+# The fixture is read 8's own links.
+DVC_LOADS_8 = {
+    DVC_SITE + "?page=0": {"access": "ok", "status": 200, "links": [
+        {"text": "Learn more about\nAdministration of Justice", "href": AREA + "administration-justice"},
+        {"text": "Learn more about\nDental Assisting", "href": AREA + "dental-assisting"},
+        {"text": "Learn more about\nMusic", "href": AREA + "music"}]},
+    DVC_SITE + "?page=1": {"access": "ok", "status": 200, "links": []},
+    AREA + "administration-justice": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Science for Transfer - Administration of Justice",
+         "href": DVC_EL + "program,a-s-in-administration-of-justice-for-transfer-fall-2025"}]},
+    AREA + "dental-assisting": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Science - Dental Assisting", "href": DVC_EL + "program/a-s-in-dental-assisting-fall-2026"},
+        {"text": "Certificate of Achievement - Dental Assisting",
+         "href": DVC_EL + "program/certificate-of-achievement-in-dental-assisting-fall-2026"},
+        {"text": "Certificate of Completion - Exploration of Dentistry",
+         "href": DVC_EL + "program/certificate-of-completion-exploration-of-dentistry-fall-2025"},
+        {"text": "Dental Hygiene", "href": AREA + "dental-hygiene"}]},
+    AREA + "music": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Arts - Music", "href": DVC_EL + "program/a-a-in-music-fall-2026"},
+        {"text": "Associate in Arts for Transfer - Music", "href": DVC_EL + "program/a-a-in-music-for-transfer-fall-2026"},
+        {"text": "Same award, comma form", "href": DVC_EL + "program,a-a-in-music-fall-2026"},
+        {"text": "Old year", "href": "https://dvc.elumenapp.com/catalog/DVC2025-2026Catalog/program/old-fall-2020"},
+        {"text": "Another host", "href": "https://lmc.elumenapp.com/catalog/DVC2026-2027Catalog/program/x"}]},
+}
+dvc_asked.clear()
+
+
+def dvc_load_8(reader, url, cache, spa):
+    return dict(DVC_LOADS_8.get(url) or {"access": "ok", "status": 200, "links": []})
+
+
+P.load, C.el_fetch = dvc_load_8, dvc_fetch
+try:
+    rep8 = {}
+    pages8 = C.el_pages_fast(None, DVC_START, rep8, DVC_STEP, {})
+finally:
+    P.load, C.el_fetch = real_load, real_fetch
+check([g["url"] for g in pages8] == [
+          DVC_EL + "program,a-s-in-administration-of-justice-for-transfer-fall-2025",
+          DVC_EL + "program/a-s-in-dental-assisting-fall-2026",
+          DVC_EL + "program/certificate-of-achievement-in-dental-assisting-fall-2026",
+          DVC_EL + "program/certificate-of-completion-exploration-of-dentistry-fall-2025",
+          DVC_EL + "program/a-a-in-music-fall-2026",
+          DVC_EL + "program/a-a-in-music-for-transfer-fall-2026"]
+      and rep8["elumen"]["index"]["index_programs"] == 6
+      and sum(1 for u in dvc_asked if ",program," in u) == 6,
+      "a comma-form step takes an area's slash-form awards too, each at the address the area writes, "
+      "one award in both forms once, and still no other catalog or host: %s" % [g["url"] for g in pages8])
+rx = re.compile(DVC_STEP["catalog"]["program_links"], re.I)
+check(C.el_index_link_named(rx, DVC_EL + "program/a-a-in-music-fall-2026")
+      and C.el_index_link_named(rx, DVC_EL + "program,a-a-in-music-fall-2026")
+      and not C.el_index_link_named(rx, "https://dvc.elumenapp.com/catalog/DVC2025-2026Catalog/program/old-fall-2020")
+      and not C.el_index_link_named(rx, DVC_EL + "department/music")
+      and C.el_index_link_named(re.compile(r"catalog/X/program/"), "https://h/catalog/X/program,a")
+      and not C.el_index_link_named(re.compile(r"catalog/X/program/"), "https://h/catalog/Y/program,a")
+      and C.el_index_link_named(re.compile(r"catalog/X/program/", re.I), "https://h/catalog/X/Program,a"),
+      "program_links names either form of one award's address, and nothing the swap does not make")
 
 if failures:
     print("FAIL: %d" % len(failures))
