@@ -251,6 +251,8 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("panel 1 ⭐: the row's word opens the same college in a dialog beside the list, its heading focused",
     P && !P.hasAttribute("hidden") && P.getAttribute("role") === "dialog" && P.getAttribute("aria-modal") === "true"
     && txt(x.d.getElementById("cdd-panel-h")) === "Alpha College" && x.d.activeElement === x.d.getElementById("cdd-panel-h"));
+  check("inert 1 ⭐: while the panel is open, the list behind it is inert (a college word cannot be clicked or reached), the panel is not",
+    word(2).closest("[inert]") && x.d.querySelector("#cdd-q").closest("[inert]") && !P.closest("[inert]") && x.d.querySelectorAll("[inert]").length >= 1);
   check("panel 2 ⭐: the address names the college, and the view reports it", x.w.location.hash === "#commons/data/college/alpha-college" && reported(x) === "commons/data/college/alpha-college");
   const sec = (k) => txt(P.querySelector('[data-ds="' + k + '"]'));
   [["plo", "PLO reason."], ["obj", "Objectives reason."], ["ppm", "PPM reason."], ["desc", "Descriptions reason."], ["cpl", "CPL reason."], ["mis", "MIS reason."], ["coe", "COE reason."], ["slo", "SLO reason."]].forEach(function (t) {
@@ -283,6 +285,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   key("Escape");
   check("escape 1 ⭐: Escape closes the panel and the focus returns to the word that opened it",
     P.hasAttribute("hidden") && x.d.activeElement === x.d.querySelector('[data-panel-open="1"]'));
+  check("inert 2 ⭐: closing the panel removes every inert it set", !x.d.querySelector("[inert]"));
   check("escape 2: the address drops the college", x.w.location.hash === "#commons/data" && reported(x) === "commons/data");
   x.d.querySelector('[data-panel-open="1"]').click();
   x.d.getElementById("cdd-panel-close").click();
@@ -300,6 +303,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     PY && !PY.hasAttribute("hidden") && txt(y.d.getElementById("cdd-panel-h")) === "Beta College" && y.d.activeElement === y.d.getElementById("cdd-panel-h") && reported(y) === "commons/data/college/beta-college");
   const ke = new y.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true, cancelable: true });
   y.d.activeElement.dispatchEvent(ke);
+  check("inert 3: an arrival on a college's address holds the page inert until Escape, then releases it", !y.d.querySelector("[inert]"));
   check("address 9: closing it from an arrival returns the focus to the college's word in the list", PY.hasAttribute("hidden") && y.d.activeElement === y.d.querySelector('[data-expand="2"]'));
   const z = load("#commons/data/gaps/college/gamma-college", DATA3);
   await z.M.boot(); await settle();

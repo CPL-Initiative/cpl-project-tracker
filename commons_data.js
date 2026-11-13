@@ -403,6 +403,21 @@
     out.push(section("Sources", [el("ul", { cls: "cdd-srcs" }, src.map(function (s) { return el("li", { text: s }); }))]));
     return out;
   }
+  /* A dialog that says aria-modal makes the rest of the page inert while it is open (COBIx on PR 3231): every sibling
+     on the way from the panel up to the body, the list and the site's header and menu among them, so a word behind
+     the panel cannot be clicked or reached. Only the attributes set here are removed again. */
+  var INERT = [];
+  function holdInert(box) {
+    releaseInert();
+    for (var n = box; n && n.parentNode && n !== document.body; n = n.parentNode) {
+      Array.prototype.forEach.call(n.parentNode.children, function (sib) {
+        if (sib === n || sib.hasAttribute("inert") || /^(SCRIPT|STYLE|LINK)$/.test(sib.tagName)) return;
+        sib.setAttribute("inert", ""); INERT.push(sib);
+      });
+    }
+  }
+  function releaseInert() { INERT.forEach(function (x) { x.removeAttribute("inert"); }); INERT = []; }
+  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "commons") { S.panel = null; releaseInert(); } });
   function panelShell() {
     var box = el("aside", { cls: "cdd-panel", id: "cdd-panel", role: "dialog", "aria-modal": "true", "aria-labelledby": "cdd-panel-h", hidden: "" });
     box.addEventListener("keydown", function (e) { trap(e, box); });
@@ -414,8 +429,9 @@
     if (!box || !M) return;
     var c = byId(M, S.panel);
     box.textContent = "";
-    if (!c) { box.setAttribute("hidden", ""); return; }
+    if (!c) { box.setAttribute("hidden", ""); releaseInert(); return; }
     box.removeAttribute("hidden");
+    holdInert(box);
     box.style.setProperty("--cdd-pw", S.pw + "px");
     var grip = el("div", { cls: "cdd-grip", role: "separator", "aria-orientation": "vertical", "aria-label": "Panel width", tabindex: "0",
       "aria-valuemin": String(PW.min), "aria-valuemax": String(PW.max), "aria-valuenow": String(S.pw), "aria-valuetext": S.pw + " pixels wide" });
@@ -493,6 +509,7 @@
 
   var VIEW = { root: null, M: null, noted: null, now: null, panel: null, from: null, drawBody: null };
   function render(root, M, route, now) {
+    releaseInert();   // a redraw (a new address, a figure) starts with the whole page live
     VIEW.root = root; VIEW.M = M; VIEW.now = now || VIEW.now || new Date();
     ensureCss();
     var R = parseRoute(route), pc = bySlug(M, R.college);
@@ -563,8 +580,7 @@
     list.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "Colleges", tabindex: "0" }, [table]));
     wrap.appendChild(list);
     wrap.appendChild(notes(M));
-    wrap.appendChild(panelShell());
-    var page = el("div", { cls: "cmn-page" }, [wrap]);
+    var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which goes inert while it is open
     page.addEventListener("keydown", function (e) { if (e.key === "Escape" && S.panel != null) { e.preventDefault(); closePanel(); } });
     root.appendChild(page);
     drawPanel(VIEW.now);

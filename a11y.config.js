@@ -3705,6 +3705,17 @@ module.exports = {
     /* The panel is a dialog: Tab stays inside it, and Escape closes it and returns the focus to the list. */
     keyboard: async (page) => {
       const out = [];
+      /* The list behind an open panel is inert: a real click on a college word there opens nothing. */
+      const box = await page.evaluate(() => {
+        const w = document.querySelector("#cdd-colleges [data-expand]");
+        w.scrollIntoView({ block: "center" });
+        const r = w.getBoundingClientRect();
+        return { x: r.left + 4, y: r.top + r.height / 2 };
+      });
+      await page.mouse.click(box.x, box.y);
+      const behind = await page.evaluate(() => ({ opened: !!document.querySelector("#cdd-colleges tr.cdd-more"), panel: !document.getElementById("cdd-panel").hasAttribute("hidden"),
+        inert: !!document.querySelector("#cdd-colleges [data-expand]").closest("[inert]") }));
+      out.push({ name: "a college word behind the open panel cannot be activated", ok: !behind.opened && behind.panel && behind.inert, detail: JSON.stringify(behind) });
       const inside = await page.evaluate(() => {
         const P = document.getElementById("cdd-panel");
         const f = Array.from(P.querySelectorAll('a[href], button:not([disabled]), input, [tabindex="0"]'));
@@ -3715,8 +3726,9 @@ module.exports = {
       const wrapped = await page.evaluate(() => document.getElementById("cdd-panel").contains(document.activeElement));
       out.push({ name: "Tab stays inside the side panel", ok: inside.last && wrapped, detail: inside.n + " controls; after Tab on the last, the focus is " + (wrapped ? "inside" : "outside") });
       await page.keyboard.press("Escape");
-      const closed = await page.evaluate(() => ({ hidden: document.getElementById("cdd-panel").hasAttribute("hidden"), back: !!(document.activeElement && document.activeElement.closest("#cdd-colleges")) }));
-      out.push({ name: "Escape closes the side panel and returns the focus to the list", ok: closed.hidden && closed.back, detail: JSON.stringify(closed) });
+      const closed = await page.evaluate(() => ({ hidden: document.getElementById("cdd-panel").hasAttribute("hidden"), back: !!(document.activeElement && document.activeElement.closest("#cdd-colleges")),
+        inert: document.querySelectorAll("[inert]").length }));
+      out.push({ name: "Escape closes the side panel, returns the focus to the list and releases inert", ok: closed.hidden && closed.back && closed.inert === 0, detail: JSON.stringify(closed) });
       return out;
     },
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],

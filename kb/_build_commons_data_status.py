@@ -88,16 +88,15 @@ TBA = {
     "apis": "The API connection checklist (#3220) is not a committed file yet.",
     "jst": "The JST funnel waits on an authorized-student feed from CCCStart; counts only, when it exists.",
     # slice 2: the side panel's sections with no committed source per college, each with its reason
-    "slo": "Course SLO counts per college are rows in the live course_outcomes table, which this file does not "
-           "carry; the SLO queue's state shows where the queue holds one.",
-    "plo": "Program PLOs are read with each program record in the live program requirements table, which this file "
-           "does not carry.",
-    "objectives": "Course objective counts per college are rows in the live course_outcomes table, which this file "
-                  "does not carry.",
+    "slo": "Course SLO reads are committed for 13 hosts under kb/course_outcomes/<host>/, not yet read per college "
+           "here; the SLO queue's state shows where the queue holds a college.",
+    "plo": "Program PLOs are not harvested yet: the program requirements records carry no PLO column.",
+    "objectives": "Course objective reads are committed for 13 hosts under kb/course_outcomes/<host>/, not yet read "
+                  "per college here.",
     "catalog_registry": "The catalog link, curriculum view and program map checks are rows in the live program "
                         "source registry, which this file does not carry.",
-    "ppm": "The accepted term maps (kb/program_requirements_pilot/sequences/) and the mapper hosts are committed but "
-           "not yet read per college here; Program Pathways Mapper offers no data export.",
+    "ppm": "Program Pathways Mapper has no official export; 4 pilot term maps are committed "
+           "(kb/program_requirements_pilot/sequences/), not yet read per college here.",
     "descriptions": "Usable course descriptions per college come from the description classifier (#3219), whose "
                     "counts are not a committed file yet.",
     "cpl": "MAP exhibits per college are a live sync, and no completeness denominator for CPL is defined yet.",
