@@ -1,5 +1,5 @@
 {
- "_readme": "S644, 2026-11-13. Read 1 (run 43340997697): www.dvc.edu/programs redirects to www.dvc.edu/academics/explore-our-programs, a six-page grid of program areas (Addiction Studies, Administration of Justice, ... Business on page 1), each card a Learn more link; the page fetched no data call and its only catalog link is academics/class-schedule-catalog. This read loads the grid again with its card and pager links shown, and follows the cards for Administration of Justice and Business (a transfer degree, a local degree and certificates likely in each) to see whether a program page prints its courses and units or links elsewhere. No model call.",
+ "_readme": "S644, 2026-11-13. Read 1 (run 43340997697): www.dvc.edu/programs redirects to www.dvc.edu/academics/explore-our-programs, a six-page grid of program areas (Addiction Studies, Administration of Justice, ... Business on page 1), each card a Learn more link; the page fetched no data call and its only catalog link is academics/class-schedule-catalog. This read loads the grid again with its card and pager links shown, and follows the cards for Administration of Justice and Business (a transfer degree, a local degree and certificates likely in each) to see whether a program page prints its courses and units or links elsewhere. No model call. Answered by run 43341770461 (3 loads): the grid pages by ?page=0..5 and links each area at explore-our-programs/<slug>; the Administration of Justice and Business area pages name each award (ten and fifteen) with no course or unit.",
  "college": "Diablo Valley College",
  "questions": {
   "program_links": "What address does each program card link, and how does the grid page (a query, a path)?",
@@ -16,7 +16,10 @@
  "pages": [
   {
    "url": "https://www.dvc.edu/academics/explore-our-programs",
-   "answers": ["program_links", "requirements_home"],
+   "answers": [
+    "program_links",
+    "requirements_home"
+   ],
    "links": "Learn more|[?&]page=|explore-our-programs\\?|elumen|\\.pdf",
    "follow": "Administration of Justice|Learn more about\\W*Business\\s*$"
   }

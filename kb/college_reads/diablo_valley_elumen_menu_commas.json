@@ -1,5 +1,5 @@
 {
- "_readme": "S644, 2026-11-13. Read 4 (run 43342877522, 4 loads): eLumen's content call for catalog,program,<slug> answers 200 and prints each award whole: title, award type, total units, and Program Requirements as course code, title and units with their rule totals (A.S.-T Administration of Justice 60 units, major Total 18; A.S. Local 28-30; Certificate of Achievement Police/Law Enforcement Total 20). The dvc-certs-and-degrees hub is a grid of departments by award with no link, and says 'Visit www.dvc.edu/programs'. This read renders the catalog's start page once and searches its full publish call (the side menu) and its links for program,<slug>, to learn whether eLumen alone can list the programs or the program index must come from www.dvc.edu. No model call.",
+ "_readme": "S644, 2026-11-13. Read 4 (run 43342877522, 4 loads): eLumen's content call for catalog,program,<slug> answers 200 and prints each award whole: title, award type, total units, and Program Requirements as course code, title and units with their rule totals (A.S.-T Administration of Justice 60 units, major Total 18; A.S. Local 28-30; Certificate of Achievement Police/Law Enforcement Total 20). The dvc-certs-and-degrees hub is a grid of departments by award with no link, and says 'Visit www.dvc.edu/programs'. This read renders the catalog's start page once and searches its full publish call (the side menu) and its links for program,<slug>, to learn whether eLumen alone can list the programs or the program index must come from www.dvc.edu. No model call. Answered by run 43343491672 (1 load): the full publish call (2,012,490 bytes) names no program,<slug> and the rendered page links none, so eLumen lists no program; the index must come from www.dvc.edu.",
  "college": "Diablo Valley College",
  "questions": {
   "menu_programs": "Does the catalog's side menu (the full publish call, or the rendered links) name any program at program,<slug>, and how many?"
@@ -10,11 +10,20 @@
  "pages": [
   {
    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/generalinformation",
-   "answers": ["menu_programs"],
+   "answers": [
+    "menu_programs"
+   ],
    "network": true,
-   "network_hosts": ["api-prod.elumenapp.com"],
-   "network_find": ["program,"],
+   "network_hosts": [
+    "api-prod.elumenapp.com"
+   ],
+   "network_find": [
+    "program,"
+   ],
    "links": "program,"
   }
- ]
+ ],
+ "outside_hosts": {
+  "elumenapp.com": "Diablo Valley College's own 2026-2027 catalog (dvc.elumenapp.com), served on its catalog vendor's domain, with the vendor's API its pages call (api-prod.elumenapp.com)"
+ }
 }

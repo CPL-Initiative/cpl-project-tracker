@@ -1,5 +1,5 @@
 {
- "_readme": "S644, 2026-11-13. Read 2 (run 43341770461, 3 loads): the grid at www.dvc.edu/academics/explore-our-programs pages by ?page=0..5 and links each program area at explore-our-programs/<slug> (administration-justice, business). A program area page names each award (Associate in Science - Administration of Justice; Associate in Science for Transfer - Administration of Justice; Certificate of Achievement - Police/Law Enforcement; ten in all) and prints no course or unit. This read loads the Administration of Justice page with the award links shown, and follows three awards (the transfer degree, the local degree, a certificate) where they stay on dvc.edu, to see where each award's required courses and units are printed. No model call.",
+ "_readme": "S644, 2026-11-13. Read 2 (run 43341770461, 3 loads): the grid at www.dvc.edu/academics/explore-our-programs pages by ?page=0..5 and links each program area at explore-our-programs/<slug> (administration-justice, business). A program area page names each award (Associate in Science - Administration of Justice; Associate in Science for Transfer - Administration of Justice; Certificate of Achievement - Police/Law Enforcement; ten in all) and prints no course or unit. This read loads the Administration of Justice page with the award links shown, and follows three awards (the transfer degree, the local degree, a certificate) where they stay on dvc.edu, to see where each award's required courses and units are printed. No model call. Answered by run 43342288026 (1 load; the follows were off-site, so none loaded): every award links eLumen with a comma, dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,<slug> (a-s-in-administration-of-justice-for-transfer-fall-2025).",
  "college": "Diablo Valley College",
  "questions": {
   "award_links": "Where does each award name on a program area page link (dvc.edu, eLumen, a PDF), and what is the address's shape?",
@@ -14,7 +14,10 @@
  "pages": [
   {
    "url": "https://www.dvc.edu/academics/explore-our-programs/administration-justice",
-   "answers": ["award_links", "requirements_home"],
+   "answers": [
+    "award_links",
+    "requirements_home"
+   ],
    "links": "Associate in|Certificate of|elumen|catalog|\\.pdf",
    "follow": "Associate in Science for Transfer - Administration|Associate in Science - Administration|Certificate of Achievement - Police"
   }
