@@ -46,6 +46,9 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
+sys.path.insert(0, HERE)
+from _program_requirements_college import file_code  # noqa: E402  (the one rewrite of a stored code)
+
 MEMBERSHIP = os.path.join(HERE, "reference", "coci_program_course_file.csv.gz")
 PROG_GLOB = os.path.join(ROOT, "tmc", "source_data", "coci_program_export_*.csv")
 COLLEGE_DIR = os.path.join(HERE, "program_requirements_college")
@@ -60,7 +63,9 @@ REASONS = ("cn_absent", "cn_other_college_only", "program_pending_only", "progra
 
 
 def norm_code(s: str) -> str:
-    return re.sub(r"[^A-Z0-9]", "", (s or "").upper())
+    """A code as the catalog prints it, letters and digits only: San Jose City's file stores
+    some courses as 'Air Conditioning (AIRC) 132' and others as 'AIRC 121' (file_code, S644)."""
+    return re.sub(r"[^A-Z0-9]", "", (file_code(s) or "").upper())
 
 
 def award_kind(award: str) -> str:
