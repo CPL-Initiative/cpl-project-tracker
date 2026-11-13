@@ -930,7 +930,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `nav_groups.js` | pages: `CPL_Dashboard.html` | — |
 | `nav_overlay.js` | pages: `CPL_Dashboard.html` | — |
 | `nc_learning_partners.js` | pages: `CPL_Dashboard.html` | — |
-| `not_sent_*.json` | scripts: `kb/_program_requirements_wave.py` | — |
+| `not_sent_*.json` | scripts: `kb/_program_requirements_college.py`, `kb/_program_requirements_wave.py` | — |
 | `nudges/team_directory.json` | scripts: `nudges/build_nudges.py` | — |
 | `our_process.js` | pages: `CPL_Dashboard.html` | — |
 | `package.json` | scripts: `kb/doctrine.py` | — |

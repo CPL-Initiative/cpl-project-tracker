@@ -3814,10 +3814,25 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     # Which page each program was read from, and how well it matched. The
     # catalog text itself stays in the run's artifact (the workflow keeps it 90
     # days): a college's worth of page text is megabytes, and a re-read is free.
+    # A program the ceiling held back (not_sent_<shard>.json) kept its old record, so its entry stays the
+    # one that record was read from, or none: an entry naming the new capture beside the old record
+    # would read as unchanged next run, and the program would never be sent again (S644 review).
+    not_sent: set[str] = set()
+    for path in glob.glob(os.path.join(out_dir, "not_sent_*.json")):
+        with open(path) as fh:
+            not_sent.update(json.load(fh).get("programs") or [])
+    prev: dict = {}
+    if not_sent and os.path.isfile(os.path.join(dest, "sources.json")):
+        with open(os.path.join(dest, "sources.json")) as fh:
+            prev = {x["control_number"]: x for x in json.load(fh)}
     index = []
     for path in sorted(glob.glob(os.path.join(out_dir, "sources", "*.json"))):
         with open(path) as fh:
             src = json.load(fh)
+        if src.get("control_number") in not_sent:
+            if src["control_number"] in prev:
+                index.append(prev[src["control_number"]])
+            continue
         index.append(dict({k: src.get(k) for k in ("control_number", "title", "award", "shape", "method",
                                                    "coverage", "codes_found", "source")},
                           listed=len(src.get("closed_list") or []), text_chars=len(src.get("text") or "")))

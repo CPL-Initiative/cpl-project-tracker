@@ -589,6 +589,66 @@ try:
 finally:
     shutil.rmtree(_t, ignore_errors=True)
 
+# Last finding: a program the ceiling held back keeps its old record, so sources.json must keep the entry
+# that record was read from; with the new capture's entry beside the old record it reads as unchanged and
+# is never sent again. A program whose call errored filed no record, and is sent again too.
+_t = tempfile.mkdtemp()
+_saved = (C.COLLEGE_DIR, XT.call, XT.score, os.environ.get("SUPABASE_SERVICE_KEY"))
+try:
+    C.COLLEGE_DIR = os.path.join(_t, "colleges")
+    keep = os.path.join(C.COLLEGE_DIR, C.slug_of("Test College"))
+    os.makedirs(os.path.join(keep, "records"))
+    # 05: filed from the same page at a smaller share, failing, with no fingerprint (most filed records).
+    json.dump({"control_number": "05", "record": {"blocks": []}, "source_url": "https://x.edu/05", "score": score(False)},
+              open(os.path.join(keep, "records", "05.json"), "w"))
+    json.dump([{"control_number": "05", "source": {"url": "https://x.edu/05"}, "coverage": 0.8, "codes_found": ["A1"]}],
+              open(os.path.join(keep, "sources.json"), "w"))
+
+    def _out(name):
+        out = os.path.join(_t, name)
+        os.makedirs(os.path.join(out, "sources"))
+        json.dump({"college": "Test College", "programs": 5}, open(os.path.join(out, "capture.json"), "w"))
+        srcs = []
+        for i in range(1, 6):
+            cn = "%02d" % i
+            srcs.append({"college": "Test College", "control_number": cn, "shape": "certificate", "title": "T" + cn,
+                         "award": "Certificate of Achievement", "closed_list": [{"code": "A 1"}], "text": "A 1",
+                         "coverage": 1.0, "codes_found": ["A1"], "method": "sitemap_page",
+                         "source": {"url": "https://x.edu/" + cn}})
+            json.dump(srcs[-1], open(os.path.join(out, "sources", cn + ".json"), "w"))
+        return out, srcs
+    sent = []
+
+    def _call(src, key, *a, **k):
+        sent.append(src["control_number"])
+        if src["control_number"] == "02":
+            return {"record": None, "error": "HTTP 502", "model": None, "usage": None}
+        return {"record": {"blocks": []}, "model": _m, "usage": dict(USAGE)}
+    XT.call, XT.score = _call, (lambda rec, *a, **k: score(True))
+    os.environ["SUPABASE_SERVICE_KEY"] = "test"
+    out1, srcs = _out("out1")
+    C.extract(out1, 0, 1, "81", 1, keep, None, 0.16)
+    first = list(sent)
+    C.file_run("Test College", out1, "81")
+    filed_src = {x["control_number"]: x for x in json.load(open(os.path.join(keep, "sources.json")))}
+    check(first == ["01", "02", "03"] and filed_src["05"]["coverage"] == 0.8 and "04" not in filed_src,
+          "a program not sent keeps the entry its record was read from, or none: %r %r" % (first, sorted(filed_src)))
+    wx = C.would_extract("Test College", srcs, folder=keep)
+    check(sorted(x["control_number"] for x in wx["list"]) == ["02", "04", "05"],
+          "the next preview counts every program the ceiling held back, and the one whose call errored: %r"
+          % sorted(x["control_number"] for x in wx["list"]))
+    del sent[:]
+    out2, _ = _out("out2")
+    C.extract(out2, 0, 1, "82", 1, keep, None, None)
+    check(sorted(sent) == ["02", "04", "05"], "the next run with no ceiling sends them all: %r" % sorted(sent))
+finally:
+    C.COLLEGE_DIR, XT.call, XT.score = _saved[0], _saved[1], _saved[2]
+    if _saved[3] is None:
+        os.environ.pop("SUPABASE_SERVICE_KEY", None)
+    else:
+        os.environ["SUPABASE_SERVICE_KEY"] = _saved[3]
+    shutil.rmtree(_t, ignore_errors=True)
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
