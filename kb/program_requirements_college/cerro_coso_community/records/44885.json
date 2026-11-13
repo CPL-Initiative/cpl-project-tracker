@@ -72,11 +72,8 @@
     16.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 16.0-16.5; the catalog states 16.0-16.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -195,5 +192,6 @@
    "Each course must be completed with a grade of C or better."
   ]
  },
- "extracted_run": "39046789844"
+ "extracted_run": 43520153161,
+ "read_run": "39046789844"
 }
