@@ -136,6 +136,10 @@ def awards_match(kind: str | None, award: str | None) -> bool:
         letter = "A" if kind == "local_aa" else "S"
         return (awards_match("local", award)
                 and bool(re.search(r"\bA\.?\s?%s\b" % letter, award or "", re.I)))
+    if kind == "noncredit":
+        # A noncredit program by the state file's award ("Noncredit program", S644): the no-colon hours
+        # total's flag reads these alone.
+        return bool(re.search(r"\bnon-?\s?credit\b", award or "", re.I))
     return False
 
 
@@ -573,8 +577,10 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             # A rule about a figure the reading already took (Los Angeles City, S639: the 60 a heading
             # prints is a floor only where the record holds that 60): a record without it is left alone.
             # Victor Valley's Cal-GETC (S639) too: a transfer degree that names the 60, never one
-            # that holds its major alone.
-            if st.get("only_with") and _empty(prog.get(st["only_with"])):
+            # that holds its major alone. A list names fields that must all be set (S644: a pattern's units
+            # go only to a record that names the pattern and the degree total it counts toward).
+            needs = st.get("only_with") or []
+            if any(_empty(prog.get(n)) or prog.get(n) == "" for n in ([needs] if isinstance(needs, str) else needs)):
                 continue
             words = m.group(0).strip()
             if st.get("source"):
