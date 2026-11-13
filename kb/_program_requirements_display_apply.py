@@ -28,31 +28,40 @@ HOW (S644). Until S644 it read and wrote one row at a time, in series: build
 8fbbcfb7a9c0's 17,598 statements took 69 minutes (run 43310473532). Now:
   1. One paged read (1,000 rows a page, ordered by college and control number)
      takes every row's key and display->>build. A statement whose key is not
-     in it is missing (up to 300 such keys are re-read one at a time, so a
-     page that shifted under a concurrent insert drops no row); a row already carrying
-     this build is skipped and counted `already`, so a run after a partial
-     failure costs only what is left.
+     in it is missing (up to 300 such keys are re-read one at a time: offset
+     paging has no snapshot, so a concurrent delete on an earlier page moves
+     a later row out of the read); a row already carrying this build is
+     skipped and counted `already`, so a run after a partial failure costs
+     only what is left.
   2. The plan (every key to write and its before-build) is filed in the
      applied record BEFORE the first write; a run canceled mid-write still
      leaves its rollback behind.
   3. The PATCHes run in a bounded pool (--workers, 8 by default), each retried
      on a 5xx, a timeout or a dropped connection, with backoff, at most 4
      tries; after that the row is an error.
-  4. A second paged read confirms which planned rows now carry the build, and
-     the applied record is finished from that read, never from a write's
+  4. A second paged read (with the same one-key re-read of up to 300 planned
+     keys it lacks) confirms which planned rows now carry the build, and the
+     applied record is finished from that read, never from a write's
      response: a write whose response was lost still ends confirmed.
 Missing keys are listed and reported, and are not fatal by themselves: the
-run exits 1 on an error the confirming read does not resolve, or when more
-than 1% of the statements are missing (the wrong build), and 0 otherwise.
+run exits 1 when a planned row does not carry the build afterward, or when
+more than 1% of the statements are still missing (the wrong build), and 0
+otherwise. A key missing at the first read that the confirming read finds
+(a load inserted it mid-run) is listed as `present_now`: not written, run
+again. A receipt with no statement (or none of --college's) is refused.
 
 ROLLBACK (Rule 10 a2). The applied record beside the receipt
 (<receipt>.applied_<run>.json; a --college run adds the college's slug)
 files each planned row's before-build: a row that held no display goes back
 to null, and a row that held an older build goes back by re-applying that
-build's receipt. Once confirmed, the rollback names only the rows that now
-carry the build; while the record is still a plan (state "planned" or
-"unconfirmed") it names every planned row, which is safe, because putting a
-row that was never written back to its before-build leaves it as it was. A
+build's receipt. The rollback names every row the run may have written:
+while the record is still a plan (state "planned" or "unconfirmed"), every
+planned row; once confirmed, every planned row it sent a write, errored and
+unconfirmed rows included (a PATCH that timed out can still commit after
+the confirming read), leaving out only a row never tried and a row the
+server refused outright (a 4xx) that the confirming read shows still holding
+its before-build. Naming an unwritten row is safe: putting it back to its
+before-build leaves it as it was. A
 row skipped as `already` was not written by this run and is not in its
 rollback; the earlier run that wrote it holds it in its own record. A
 display write on a checked program waits on Sam's go (his sheet 42 card 2
@@ -268,7 +277,8 @@ def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=N
         "scope": college or "the whole build", "workers": workers,
         "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "state": "planned", "statements": len(rows), "already": 0, "planned": 0, "written": None,
-        "missing": [], "errors": [], "unconfirmed": [], "before": {}, "rollback": _rollback({}, []),
+        "missing": [], "present_now": [], "errors": [], "unconfirmed": [], "before": {},
+        "rollback": _rollback({}, []),
     }
     by_key = {}
     for r in rows:
@@ -301,11 +311,14 @@ def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=N
 
     # 3. The writes, a bounded pool, each retried on a transient failure.
     failed, lock, stop, done = {}, threading.Lock(), threading.Event(), [0]
+    sent, refused = set(), set()     # sent a write; refused outright (a 4xx), so it cannot land late
 
     def write(k: str) -> None:
+        tried, no = False, False
         if stop.is_set():
             err = "not tried: %d writes had failed" % ERROR_STOP
         else:
+            tried = True
             where = _where(by_key[k]["college"], by_key[k]["control_number"])
             body = {"display": by_key[k]["display"]}
             try:
@@ -313,8 +326,13 @@ def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=N
                 err = None if len(back) == 1 else "the write matched %d rows" % len(back)
             except Exception as exc:
                 err = _first(exc)
+                no = isinstance(exc, urllib.error.HTTPError) and not _transient(exc)
         with lock:
             done[0] += 1
+            if tried:
+                sent.add(k)
+            if no:
+                refused.add(k)
             if err:
                 failed[k] = err
                 if len(failed) >= ERROR_STOP:
@@ -335,13 +353,26 @@ def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=N
         rec["unconfirmed"] = list(plan)
         _file(rec, out)
         return rec
+    # A planned key the pages lack is re-read on its own (a concurrent delete shifts a page).
+    for k in [k for k in plan if k not in post][:RECHECK_MAX]:
+        where = _where(by_key[k]["college"], by_key[k]["control_number"])
+        try:
+            got = _retry(lambda: request("GET", "%s?select=build:display->>build&%s" % (TABLE, where)), sleep)
+        except Exception:
+            continue                      # left absent: unconfirmed, and in the rollback if it was sent
+        if len(got) == 1:
+            post[k] = got[0].get("build")
     confirmed = [k for k in plan if post.get(k) == build]
     ok = set(confirmed)
     rec["state"] = "confirmed"
     rec["written"] = len(confirmed)
     rec["errors"] = [{"key": k, "error": failed[k], "confirmed": k in ok} for k in plan if k in failed]
     rec["unconfirmed"] = [k for k in plan if k not in ok]
-    rec["rollback"] = _rollback(plan, confirmed)
+    rec["present_now"] = [k for k in rec["missing"] if k in post]
+    # Every row the run may have written: each one sent a write, but a row the server
+    # refused outright that still holds its before-build. A timed-out write can land late.
+    rec["rollback"] = _rollback(plan, [k for k in plan if k in sent
+                                       and not (k in refused and k in post and post[k] == plan[k])])
     rec["finished"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
     _file(rec, out)
     return rec
@@ -350,9 +381,18 @@ def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=N
 def exit_code(rec: dict) -> int:
     """1 when the run did not confirm, when a planned row does not carry the
     build after it (an error the confirming read resolved is not one), or when
-    more than 1% of the statements are missing; 0 otherwise."""
-    over = len(rec["missing"]) > MISSING_LINE * rec["statements"]
-    return 1 if rec["state"] != "confirmed" or rec["unconfirmed"] or over else 0
+    more than 1% of the statements are still missing; 0 otherwise. A key a load
+    inserted mid-run (present_now) is not missing; the next run writes it."""
+    return 1 if rec["state"] != "confirmed" or rec["unconfirmed"] or over_line(rec) else 0
+
+
+def still_missing(rec: dict) -> list:
+    now = set(rec.get("present_now", []))
+    return [k for k in rec["missing"] if k not in now]
+
+
+def over_line(rec: dict) -> bool:
+    return len(still_missing(rec)) > MISSING_LINE * rec["statements"]
 
 
 def read_receipt(path: str) -> str:
@@ -381,7 +421,10 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep) -> int:
     build = page_build()
     receipt = receipt_for(build)
     rows = parse(read_receipt(receipt))
-    stale = [r["control_number"] for r in rows if (r["display"] or {}).get("build") != build]
+    if not rows:
+        print("REFUSING: the receipt of build %s (%s) holds no statement" % (build, os.path.relpath(receipt, ROOT)))
+        return 1
+    stale =[r["control_number"] for r in rows if (r["display"] or {}).get("build") != build]
     if stale:
         print("REFUSING: %d statements carry another build than %s (first: %s)" % (len(stale), build, stale[0]))
         return 1
@@ -405,18 +448,22 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep) -> int:
     out = applied_path(receipt, args.run, args.college)
     rec = apply(rows, build, receipt, args.run, request, out=out, workers=args.workers,
                 college=args.college, sleep=sleep)
-    if rec["missing"]:
-        print("missing %d (no row holds the key): %s%s" % (len(rec["missing"]), ", ".join(rec["missing"][:SHOW]),
-                                                         ", ..." if len(rec["missing"]) > SHOW else ""))
+    gone, now = still_missing(rec), rec.get("present_now", [])
+    if gone:
+        print("missing %d (no row holds the key): %s%s" % (len(gone), ", ".join(gone[:SHOW]),
+                                                         ", ..." if len(gone) > SHOW else ""))
+    if now:
+        print("present now, not written: run again (%d, a load inserted them mid-run): %s%s"
+              % (len(now), ", ".join(now[:SHOW]), ", ..." if len(now) > SHOW else ""))
     print("%s: written %s of %d planned; %d already; missing %d; errors %d (%d resolved by the confirming read); "
           "not confirmed %d" % (rec["state"], rec["written"] if rec["written"] is not None else "unknown",
                                 rec["planned"], rec["already"], len(rec["missing"]), len(rec["errors"]),
                                 sum(1 for e in rec["errors"] if e.get("confirmed")), len(rec["unconfirmed"])))
     for e in rec["errors"][:SHOW]:
         print("  error %s: %s" % (e["key"], e["error"]))
-    if len(rec["missing"]) > MISSING_LINE * rec["statements"]:
+    if over_line(rec):
         print("FAIL: more than 1%% of the statements are missing (%d of %d); is this the build the table holds?"
-              % (len(rec["missing"]), rec["statements"]))
+              % (len(gone), rec["statements"]))
     return exit_code(rec)
 
 
