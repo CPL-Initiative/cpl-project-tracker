@@ -1,0 +1,366 @@
+{
+ "college": "North Orange Continuing Education",
+ "programs": 109,
+ "with_closed_list": 101,
+ "found": 82,
+ "extracted": 82,
+ "errors": 0,
+ "passed_machine_checks": 77,
+ "failed": {
+  "coverage": 4,
+  "invented": 0,
+  "arithmetic": 5,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 3.66,
+ "cost_per_program": 0.0446,
+ "not_found": [
+  {
+   "control_number": "24032",
+   "title": "Fundamentals for Financial Office Applications Program",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24033",
+   "title": "Construction Technology - Electrical Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/construction/electrical-technology/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1910,
+     "content": 10657,
+     "tabs": 6405
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      406
+     ],
+     [
+      "List of Courses",
+      5953
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "24087",
+   "title": "Construction Technology - General Contracting Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/construction/electrical-technology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1910,
+     "content": 10657,
+     "tabs": 6405
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      406
+     ],
+     [
+      "List of Courses",
+      5953
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "24176",
+   "title": "Advanced Office Applications Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/office-assistant-advanced/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4025,
+     "content": 13204,
+     "tabs": 6790
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      1157
+     ],
+     [
+      "List of Courses",
+      5587
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "24208",
+   "title": "Secondary Education Certificate of Completion",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24258",
+   "title": "Secondary Education Certificate of Completion - GED Test Preparation",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/basic-skills/ged-test-preparation/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2364,
+     "content": 8181,
+     "tabs": 3459
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      212
+     ],
+     [
+      "List of Courses",
+      3201
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "24346",
+   "title": "Office Applications Essentials Program",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "24414",
+   "title": "Fundamental Computer Concepts & Skills Program",
+   "award": null,
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31327",
+   "title": "Electrical Trainee Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/construction/electrical-technology/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1910,
+     "content": 10657,
+     "tabs": 6405
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      406
+     ],
+     [
+      "List of Courses",
+      5953
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "33138",
+   "title": "Braille Transcribing Program",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/braille-transcribing/braille-transcribing/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2047,
+     "content": 5145,
+     "tabs": 726
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      103
+     ],
+     [
+      "List of Courses",
+      577
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37585",
+   "title": "Self-Advocacy",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-workplace-self-empowerment/",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4507,
+     "content": 8090,
+     "tabs": 1029
+    },
+    "tab_panels": [
+     [
+      "Plan of Study",
+      107
+     ],
+     [
+      "List of Courses",
+      876
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "37587",
+   "title": "Daily Living Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "37673",
+   "title": "Improving Individual Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46110",
+   "title": "Career Exploration: Essential Employment Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-essential-employment-skills/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1961,
+     "content": 2969,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "46260",
+   "title": "Workforce Foundations Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-essential-employment-skills/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 0 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1961,
+     "content": 2969,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "run": "43342034608"
+}

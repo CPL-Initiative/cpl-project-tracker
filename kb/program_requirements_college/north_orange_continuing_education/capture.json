@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 109,
  "with_closed_list": 101,
- "started": "2026-11-13T00:35:58Z",
+ "started": "2026-11-13T01:05:23Z",
  "scope": "/noce/",
  "sitemap": {
   "url": "https://catalog.nocccd.edu/sitemap.xml",
@@ -20,7 +20,7 @@
  "child_pages": 28,
  "banner_h1": null,
  "loads": 142,
- "seconds": 666.4,
+ "seconds": 663.9,
  "found": 82,
  "by_method": {
   "link_search": 1,
@@ -1256,5 +1256,5 @@
   "held_no_gain": [],
   "held_opens_on_list": []
  },
- "run": "43338141392"
+ "run": "43342034608"
 }
