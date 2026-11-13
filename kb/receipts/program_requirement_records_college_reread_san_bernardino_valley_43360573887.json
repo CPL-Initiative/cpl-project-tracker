@@ -1,0 +1,4784 @@
+{
+ "college": "San Bernardino Valley College",
+ "reread_run": "43360573887",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "43355003065",
+ "at": "2026-11-13T03:41:56Z",
+ "posted": 27,
+ "batches": 2,
+ "skipped": [
+  {
+   "control_number": "04881",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "04922",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "04926",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "09267",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "09378",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "16966",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19002",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22732",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22754",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22756",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22784",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22787",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22792",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22799",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22803",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22806",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22809",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22816",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22818",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22831",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22833",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31858",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32317",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39236",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41789",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 27,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "31886",
+  "31912",
+  "31927",
+  "33214",
+  "35699",
+  "35700",
+  "35891",
+  "36070",
+  "37788",
+  "38002",
+  "38006",
+  "38013",
+  "38014",
+  "38015",
+  "39191",
+  "39192",
+  "39193",
+  "39194",
+  "40280",
+  "41865",
+  "41949",
+  "41950",
+  "41951",
+  "43049",
+  "43133",
+  "44819",
+  "45878"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 20,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'San Bernardino Valley College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 43355003065;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 8,
+    "coverage": false,
+    "invented": false,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1004H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - Three courses from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "COMM 125",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 135",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM 140H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 174",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List B - One course from the following (or any course not used from List A):",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 7,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ANTH 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 102H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 176",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1002H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Demonstrate an understanding of the various forms of human communication evaluated by written or oral assessments.",
+      "Assess situations and identify the appropriate communication skills to utilize according to the context they are in, which will be evaluated by written or objective assessments."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "REQUIREMENTS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 20,
+      "min": 19
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Communication Studies",
+   "control_number": "31886"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 22,
+    "placed": 22,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "stated": {
+       "max": 11,
+       "min": 11
+      },
+      "courses": [
+       {
+        "code": "ECON 208",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 105",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 201",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - One course from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIOL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 141",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B - One course from the following (or any course not used from List A):",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CDEV C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CDEV C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 111",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List C - One course from the following (or any course not selected from List A or List B):",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PSYC 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 112",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 118",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 119",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 102",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Identify, compare, and critically evaluate theory- and research-based ideas in psychology.",
+      "Analyze and evaluate psychological concepts.",
+      "Apply psychological concepts to the analysis and evaluation of the consequences of personal behavioral choices.",
+      "Identify, analyze, and apply concepts related to statistical information and techniques as well as research methods."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 22,
+      "min": 20
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Psychology Associate in Arts for Transfer Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 19,
+      "min": 17
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 22,
+   "total_min": 20,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/psychology/psychology-aat-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Psychology",
+   "control_number": "31912"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 53,
+    "placed": 53,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ANTH 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 102H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH C1001H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH C1001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - One course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ANTH 125",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001H",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 105",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000H",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B - Two courses from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ANTH 103",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 108",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 108H",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 108",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 109",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 111",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 111H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 108",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 174",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 163",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETHS 163",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL 165",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETHS 165",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 107",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 107H",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 107",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 107H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 137",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 139",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 140H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 150",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 170",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 171",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS 107",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 141",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "POLS 141H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "RELIG 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI C1000H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 141",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 141H",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 141",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 141H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List C - One of the following or any course from List A or B not already used",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "BIOL 260",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 111",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 140",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOL 141",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GIS 130",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Express an understanding of the conceptual and methodological framework that guides anthropological work.",
+      "Apply a relativist perspective in addressing issues facing humans and specific human groups, with a focus on the role of culture."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 23,
+      "min": 21
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Anthropology AA-T Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 24,
+      "min": 22
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 23,
+   "total_min": 21,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/anthropology/anthropology-aat-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Anthropology",
+   "control_number": "31927"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 11,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "THART 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "THART 100H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "THART 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THART 114X4",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "THART 160X4",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - Three courses from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "THART 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THART 121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THART 132",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THART 136",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THART 139",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THART 165",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "THART 114X4",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "THART 160X4",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Assess the historical, social, artistic, and philosophical relevance of theatre.",
+      "Evaluate and analyze a script for rehearsal and performance.",
+      "Demonstrate basic skills and apply a basic craft of acting in performance.",
+      "Analyze a script to create a design concept.",
+      "Create a design from a design concept."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Theatre Arts Associate in Arts for Transfer Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 11,
+      "min": 10
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/theatre-arts/theatre-arts-aat-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Theatre Arts",
+   "control_number": "33214"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 4,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "VOCED 600",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOCED 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOCED 602",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOCED 603",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Use proper, effective communication with employers, co-workers, and customers.",
+      "Develop an effective resume that matches a job description.",
+      "Prepare for an employment interview, including developing responses, describing experience, and dressing for success.",
+      "Deliver excellent customer service."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 54,
+      "min": 48
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Job Readiness Skills Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 54,
+   "total_min": 48,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/vocational-education/job-readiness-skills-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Job Readiness Skills",
+   "control_number": "35699"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CIT 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOCED 600",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "VOCED 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "VOCED 602",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "VOCED 603",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "VOCED 631",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Use proper, effective communication with employers, co-workers, and customers.",
+      "Develop an effective resume that matches a job description.",
+      "Prepare for an employment interview, including developing responses, describing experience, and dressing for success.",
+      "Deliver excellent customer service."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 297,
+      "min": 194
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Workforce Literacy Skills Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 297,
+   "total_min": 194,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/vocational-education/workforce-literacy-skills-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Workforce Literacy Skills",
+   "control_number": "35700"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 83,
+    "placed": 83,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "KIN 200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Biology - One Course Sequence: BIOL 250 & BIOL 251",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "BIOL 250",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 251",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Biology sequence"
+     },
+     {
+      "name": "Biology - One Course Sequence: BIOL 260 & BIOL 261",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "BIOL 260",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 261",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Biology sequence"
+     },
+     {
+      "name": "Movement Based Courses - One course maximum from any three of the following categories",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "KINF 184A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 184B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 184C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 190A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 190B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 190C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 101A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 101B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 102A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 102B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 103A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 103B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 105A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 105B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 106A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 106B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 107X2",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 100A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 100B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 100C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 101A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 101B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 105A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 105B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 105C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 108A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 108B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 108C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 112A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 112B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 115A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 115B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 115C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 127A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 127B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 132A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 132B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 138A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 138B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 138C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 168A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 168B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINF 168C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 103A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 103B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 103C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 150A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 150B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 150C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 104A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 104B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 104C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 107A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 107B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 107C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 116A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 116B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 116C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 120A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 120B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 120C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 124A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 124B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KINS 124C",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List A - Two courses from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "BIOL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 104",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 105",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 150",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 208",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "PSYC 105",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HEALTH 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN 231",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYSIC 151",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYSIC 202",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Apply aerobic and anaerobic exercises for the proper form and alignment for a particular physical activity.",
+      "Identify strategies, techniques, and standards in the field of Exercise of Science, Pedagogical, or Human Health Movement.",
+      "Define health and skill related fitness components to promote an exercise program geared towards specific health, fitness, and wellness goals.",
+      "Explain risk factors of communicable and hypokinetic diseases to make nutritional and necessary choices to fuel the body with nutrients for various degrees of activity and weight control."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 20
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Kinesiology Associate in Arts for Transfer Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 19,
+      "min": 15
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 20,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/kinesiology-health/kinesiology-aat-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Kinesiology",
+   "control_number": "35891"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CIT 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CIT 602",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIT 605",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIT 606",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIT 603",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CIT 604",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "entry-level clerk in a business office",
+      "office worker"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate mastery of course work by presenting a digital portfolio with representative work output from each of the courses in the program.",
+      "Successfully complete one term as a credit student at an institution of higher education.",
+      "Obtain employment as an office worker or in an occupation where the application of knowledge and skills learned within this program are integral to routine duties of the occupation."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 108,
+      "min": 108
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Office Technology Fundamentals Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 108,
+   "total_min": 108,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-information-technology/office-technology-fundamentals-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Office Technology Fundamentals",
+   "control_number": "36070"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 602",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 603",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 604",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Recommended Course:",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Develop and demonstrate a progressive cumulation of skills in reading, listening, speaking and writing in the English language in various real-world situations that are necessary to advance to the composition-based ESL courses.",
+      "Recognize and anticipate cultural bias through collaborative activities that foster English language acquisition."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 216,
+      "min": 192
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "ESL Integrated Skills - Beginning Certificate of Competency",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 216,
+   "total_min": 192,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/english-second-language-esl/esl-integrated-skills-beginning-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "ESL Integrated Skills - Beginning",
+   "control_number": "37788"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HMDT 621",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HMDT 624",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HMDT 628",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HMDT 634",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HMDT 664",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Diagnose, repair, operation and maintenance of heavy-duty industrial diesel engines and computer controlled diesel engines and alternative fuel (CNG).",
+      "Have the understanding and knowledge to cover basic electrical theory, use of meters, test equipment, and wiring diagrams.",
+      "Prepare to take the the Automotive Service Excellence (ASE) National Test.",
+      "Perform routine servicing of heavy-duty vehicle engines by evaluating equipment conditions and successfully in a manner consistent with industry practices and safety standards."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 540,
+      "min": 480
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Heavy/Medium Duty Truck Engine and Fuel Injection Technology Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 540,
+   "total_min": 480,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/hmdt/heavy-medium-duty-truck-engine-and-fuel-injection-technology-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Heavy/Medium Duty Truck Engine and Fuel Injection Technology",
+   "control_number": "38002"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "WELD 645",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD 646",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD 660",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD 666",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD 680",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD 681",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD 690",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WELD 691",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Show an understanding of the safety precautions for working in a welding lab and demonstrate an awareness of the importance of safety in welding.",
+      "Use tools related to the welding industries.",
+      "Read and interpret prints and shop drawings to produce quality welds.",
+      "Read and understand Welding Procedure Specifications to produce quality welds.",
+      "Pass a Welder Performance Qualification Test that meets the standard of acceptability to a National Standard."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 1170,
+      "min": 1040
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Welding Job Readiness Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 1170,
+   "total_min": 1040,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/welding-technology/welding-job-readiness-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Welding Job Readiness",
+   "control_number": "38006"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ACR 660",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACR 650",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACR 620",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "street rod builder apprentice"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Estimate damage on a street rod and make a repair plan.",
+      "Use common resources to identify the damage sustained by the vehicle.",
+      "Measure and evaluate structural and sheet metal damage.",
+      "Determine whether or not a vehicle is a total loss or a repairable vehicle.",
+      "Restore damaged sheet metal to original shape."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 360,
+      "min": 320
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Street Rod Construction Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 360,
+   "total_min": 320,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/steel-rod-construction-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Street Rod Construction",
+   "control_number": "38013"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 4,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ACR 620",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACR 640",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACR 641",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACR 660",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "automotive interiors technician"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Identify automotive interior component integrity.",
+      "Identify and utilize materials, tools and equipment essential to the automotive interior sector.",
+      "Dismantle, remove and install automotive interior components.",
+      "Restore automotive interior components."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 486,
+      "min": 432
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Automotive Interiors Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 486,
+   "total_min": 432,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/automotive-collision/automotive-interiors-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Automotive Interiors",
+   "control_number": "38014"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 13,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "INSPEC 611",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 612",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 613",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 614",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 615",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 616",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 617",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 618",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 626",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 627",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 628",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 629",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "INSPEC 630",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "construction inspection"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Examine construction methods to verify local and state requirements are met.",
+      "Verify that construction (new, alteration, or repair) meets applicable building codes.",
+      "Read and analyze construction plans to determine compliance with local and state requirements.",
+      "Effectively and clearly communicate.",
+      "Understand and apply the California and National Building Codes."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 702,
+      "min": 624
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Inspection Technology Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 702,
+   "total_min": 624,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/inspection-technology/inspection-technology-noncredit-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Inspection Technology",
+   "control_number": "38015"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 4,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ELECTR 620",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ELECTR 621",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ELECTR 622",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ELECTR 623",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "computer networking",
+      "security and surveillance",
+      "audio-video entertainment systems",
+      "environmental controls"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Select and operate electronic test equipment during troubleshooting and repair operations, with emphasis on safety in use and accuracy in results.",
+      "Analyze, interpret, and trace wiring or schematic diagrams used in installing and troubleshooting smart devices connected to the Internet of Things (IoT).",
+      "Effectively communicate with and advise customers and co-workers, both written and orally, regarding the progress of and decisions made concerning test and repair procedures.",
+      "Sit for industry/federal-style examinations on the theory and procedures of smart systems automation technology."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 432,
+      "min": 384
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Smart Systems Automation Technology Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 432,
+   "total_min": 384,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/electricity-electronics-technical-calculations/smart-systems-automation-technology-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Smart Systems Automation Technology",
+   "control_number": "39191"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 4,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CIT 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "VOCED 631",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 629",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 631",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 652",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "water use efficiency practitioner"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Have knowledge of fundamental aspects of water resource management, conservation, distribution, treatment, collection, recycle, and disposal operations.",
+      "Perform tasks in connection with the operation, control, and maintenance of water and sanitation systems.",
+      "Demonstrate effective oral and written communication skills and apply these tools in a regulatory context (i.e. the public health protection)."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 143,
+      "min": 124
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Water Use Specialist Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 143,
+   "total_min": 124,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/water-use-specialist-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Water Use Specialist",
+   "control_number": "39192"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CIT 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "VOCED 631",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 629",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 625",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 653",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 681",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 691",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Recommended (Cooperative Work Experience)",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "WST 098",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "wastewater collections",
+      "treatment",
+      "recycle operations"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Have knowledge of fundamental aspects of water resource management, conservation, distribution, treatment, collection, recycle, and disposal operations.",
+      "Perform tasks in connection with the operation, control, and maintenance of water and sanitation systems.",
+      "Demonstrate effective oral and written communication skills and apply these tools in a regulatory context (i.e. the public health protection)."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 195,
+      "min": 164
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Wastewater Technology Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 195,
+   "total_min": 164,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/wastewater-technology-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Wastewater Technology",
+   "control_number": "39193"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CIT 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 611",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 629",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 652",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 661",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WST 671",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "water supply, delivery, and treatment operations"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Identify fundamental aspects of water resource management, conservation, distribution, treatment, collection, recycle, and disposal operations.",
+      "Perform tasks in connection with the operation, control, and maintenance of water and sanitation systems.",
+      "Demonstrate effective oral and written communication skills and apply these tools in a regulatory context (i.e. the public health protection)."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 160,
+      "min": 140
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Basic Waterworks Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 160,
+   "total_min": 140,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/water-supply-technology/basic-waterworks-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Basic Waterworks",
+   "control_number": "39194"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "AERO 621",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AERO 622",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AERO 624",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AERO 625",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AERO 626",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AERO 640",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AERO 646",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "pilot",
+      "general aviation",
+      "commercial aviation",
+      "military aviation"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Relate the basic principles of aircraft flight, airport layout, airplane construction, and types of airspace.",
+      "Relate the major aircraft structural components, and the aircraft systems and components and their relevance to aircraft operation.",
+      "Discuss the factors involved in aircraft flight safety.",
+      "Compare the different types of aircraft powerplants and discuss the advantages and disadvantages of each.",
+      "Decipher the different types of weather reports and forecast and determine if aircraft flight is safe.",
+      "Explain the basic principles of aircraft flight.",
+      "Outline how the different types of weather affect aircraft flight safety."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 468,
+      "min": 416
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Flight Operations Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 468,
+   "total_min": 416,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/aeronautics/flight-operations-certificate-completion/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Flight Operations",
+   "control_number": "40280"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 24,
+    "placed": 22,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "GLST 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GLST 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - Five courses from at least four areas below",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 15,
+       "min": 15
+      },
+      "courses": [
+       {
+        "code": "ANTH 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 102H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "HIST 170",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 171",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GIS 130",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2002H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 141",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "POLS 141H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "RELIG 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 103",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SPAN 103H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 104",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 157",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 158",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 5,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "international business",
+      "international law",
+      "government",
+      "sustainability",
+      "public health",
+      "development for social justice",
+      "education",
+      "research"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Develop an understanding of key concepts in the field of Global Studies and of key processes of globalization related to culture, economics, geography, politics, and history.",
+      "Analyze the interconnectedness of issues facing humans around the world and evaluate global responses."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 22,
+      "min": 21
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Global Studies AA-T Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 14,
+      "min": 13
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 22,
+   "total_min": 21,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/global-studies/global-studies-aat-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Global Studies",
+   "control_number": "41865"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSAD 611",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 612",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 613",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 614",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 615",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 616",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Adapt best practices to your own organization to ensure that you are successful in achieving diversity and inclusion in your organization.",
+      "Leverage best practices for organizing your work, your schedule, and your life.",
+      "Identify and implement strategies for preventing and dealing with different types of difficult behavior.",
+      "Explain the role of problem solving in customer service and how to turn problems into opportunities.",
+      "Master a range of listening skills that you can use on the job and in your personal life.",
+      "Develop knowledge, skills, and judgment around human communication that facilitate their ability to work collaboratively with others."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 108,
+      "min": 96
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Business Workplace Essential Skills Certificate",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 108,
+   "total_min": 96,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/business-administration/business-workplace-essential-skills-certificate/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Business Workplace Essential Skills",
+   "control_number": "41949"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSAD 620",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 621",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 622",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 623",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 624",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 625",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate knowledge of the business legal structures and the laws and regulations for start-up businesses.",
+      "Apply basic marketing techniques to develop simple promotion, pricing, and distribution plans, and to identify markets.",
+      "Demonstrate knowledge of accounting principles and techniques essential for managing the operations of a small business.",
+      "Demonstrate knowledge needed to create and effectively pitch a business plan to prospective lenders and investors.",
+      "Identify and apply the key managerial roles of planning, organizing, staffing, leading and controlling applications in entrepreneurial settings."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 144,
+      "min": 132
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Practical Entrepreneurship Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 144,
+   "total_min": 132,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/business-administration/practical-entrepreneurship-certificate/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Practical Entrepreneurship",
+   "control_number": "41950"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUSAD 600",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 602",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 603",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUSAD 604",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Describe the techniques needed to improve career readiness and to secure a job in the business setting.",
+      "Understand the job search process.",
+      "Recognize the qualities, skills, and abilities of the candidates applying for jobs within the business world.",
+      "Create a professional resume, cover letter, and other resources needed for a successful job search.",
+      "Describe how to communicate and work cooperatively with individuals in the workplace.",
+      "Develop employability skills such as working on a team, problem solving and organizational skills.",
+      "Describe how to to respect individual uniqueness in the workplace through diversity, equity and inclusion.",
+      "Explain how the changing workplace requires lifelong learning and acquiring new skills."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 108,
+      "min": 96
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Career Essentials for the Business World Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 108,
+   "total_min": 96,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/business-administration/career-essentials-certificate/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Career Essentials for the Business World",
+   "control_number": "41951"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 20,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses:",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1004H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A - Three courses from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "COMM 125",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 135",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM 140H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 174",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List B - One course from the following (or any course not used from List A):",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 7,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "ANTH 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 102H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 176",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1002H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Demonstrate an understanding of the various forms of human communication evaluated by written or oral assessments.",
+      "Assess situations and identify the appropriate communication skills to utilize according to the context they are in, which will be evaluated by written or objective assessments."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Communication Studies 2.0 AA-T Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 20,
+      "min": 19
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/communication-studies/communication-studies-aat-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Communication Studies 2.0",
+   "control_number": "43049"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 43,
+    "placed": 35,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HUMSV 170",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUMSV 195A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUMSV 198C",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 208",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 105",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2001H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ECON C2002",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ECON C2002H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "One course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIOL C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 260",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 261",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": "Biology"
+     },
+     {
+      "name": "or completion of BIOL 250 and BIOL 251",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "BIOL 250",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL 251",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Biology"
+     },
+     {
+      "name": "List A - Two courses from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ADJUS 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 102H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "CDEV C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CDEV C1000H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDEV 126",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "COMM 174",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST C1001H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "HIST C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST C1002H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 111",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUMSV 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 137",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 110H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "SOCI 141",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI 141H",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "ETHS 141",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ETHS 141H",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Describe social work and human services, outlining the evolution of social welfare and human services in the U.S.",
+      "Identify the legal, ethical, and professional responsibilities associated with social welfare delivery and explain the current service delivery system in which social work and human service clients’ needs are met.",
+      "Recognize and understand the systems of oppression and privilege using critical thinking skills to envision ways to collaborate, negotiate, and advocate with and within social welfare institutions and organizations."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 33,
+      "min": 29
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Social Work and Human Services Associate in Arts for Transfer Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 16,
+      "min": 12
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 33,
+   "total_min": 29,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/human-services/social-work-human-services-aat-degree/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Social Work and Human Services",
+   "control_number": "43133"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 4,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CIT 610",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIT 611",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIT 612",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIT 613",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Implement and evaluate AI and ML systems through an equity-minded lens, ensuring that solutions are inclusive, culturally responsive, and minimize bias, while promoting accessibility and anti-racist practices.",
+      "Explain fundamental concepts of Artificial Intelligence (AI) and Machine Learning (ML) and their relevance in real world scenarios.",
+      "Create a project that applies AI or ML tools to solve a defined business problem, showcasing learned skills.",
+      "Adapt AI and ML solutions to real-world scenarios, demonstrating practical application skills.",
+      "Leverage various AI and ML tools and platforms to address specific real world challenges effectively."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 104,
+      "min": 88
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Artificial Intelligence (AI) Essential Skills Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 104,
+   "total_min": 88,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/computer-information-technology/ai-essential-skills-certificate/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Artificial Intelligence (AI) Essential Skills",
+   "control_number": "44819"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SOCI 601",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI 602",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "healthcare",
+      "education",
+      "social work"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Integrate introductory mindfulness meditation practices to support social well-being in chosen career pathway.",
+      "Apply compassion-based mindfulness practices to the self in a social and workforce context.",
+      "Reflect on the benefits of sociological mindfulness in the workplace and community."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 36,
+      "min": 32
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Mindfulness for Work and Community Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 36,
+   "total_min": 32,
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/sociology/mindfulness-certificate/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38748858322,
+   "program_title": "Mindfulness for Work and Community",
+   "control_number": "45878"
+  }
+ ]
+}

@@ -82,15 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Use hand and power tools to perform welding construction and maintenance work, such as grinders, sanders, drill press, and band saw."
-   ],
-   "why": [
-    "not in the catalog text as printed: Use hand and power tools to perform welding construction and maintenance work, s"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -215,6 +211,6 @@
    "No degree total printed on the visible page; '*' marks courses with prerequisites/corequisites."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": 43355018296,
+ "read_run": 39018421038
 }

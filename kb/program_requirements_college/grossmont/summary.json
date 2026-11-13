@@ -2,19 +2,19 @@
  "college": "Grossmont College",
  "programs": 187,
  "with_closed_list": 154,
- "found": 144,
+ "found": 145,
  "extracted": 144,
  "errors": 0,
- "passed_machine_checks": 97,
+ "passed_machine_checks": 123,
  "failed": {
   "coverage": 9,
   "invented": 5,
-  "arithmetic": 47,
+  "arithmetic": 21,
   "repeated": 0,
   "outcomes": 0
  },
  "cost_usd": 10.61,
  "cost_per_program": 0.0737,
  "not_found": [],
- "run": "39753931343"
+ "run": "43355014570"
 }

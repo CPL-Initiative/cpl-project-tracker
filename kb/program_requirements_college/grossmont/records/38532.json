@@ -61,37 +61,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    55.0,
-    59.0
+    21.0,
+    25.0
    ],
    "stated": [
-    60.0,
-    60.0
+    21.0,
+    25.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     21.0,
-     25.0
+     55.0,
+     59.0
     ],
     "stated": [
-     21.0,
-     25.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     1.0,
+     5.0
+    ]
    }
   },
   "repeated": {
@@ -116,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,7 +149,8 @@
     "Identify and explain recurring, emerging, and contemporary global issues and the significance of their geographical distribution.",
     "Utilize multi-disciplinary knowledge to develop perspectives that promote global citizenry."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -284,5 +287,14 @@
    "No careers are named explicitly; the description mentions 'working in a global economy' only generally."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }

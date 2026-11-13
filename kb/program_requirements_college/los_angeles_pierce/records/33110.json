@@ -72,8 +72,7 @@
     25.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -422,5 +421,6 @@
    "No careers are named in the Anthropology section text provided."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 43355018296,
+ "read_run": "39006383070"
 }

@@ -61,8 +61,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=75",
-   "title": "75",
-   "h1": "75",
+   "title": "(STATE CODE 02808)",
+   "h1": "(STATE CODE 02808)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -72,7 +72,8 @@
     78
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a1d492269091781b"
   },
   "listed": 53,
   "text_chars": 16000
@@ -131,8 +132,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=77",
-   "title": "Equine Science AS P002809C Cal-GETC (34 units)LACCD GE (21 units)",
-   "h1": "Equine Science AS P002809C Cal-GETC (34 units)LACCD GE (21 units)",
+   "title": "Equine Science AS P002809C Cal-GETC (34 units) LACCD GE (21 units)",
+   "h1": "Equine Science AS P002809C Cal-GETC (34 units) LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -142,7 +143,8 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8f0b36ea7efef5e9"
   },
   "listed": 44,
   "text_chars": 16000
@@ -197,10 +199,11 @@
     82
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8f8e5ba8acfae705"
   },
   "listed": 37,
-  "text_chars": 5583
+  "text_chars": 5584
  },
  {
   "control_number": "02811",
@@ -233,8 +236,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=79",
-   "title": "79",
-   "h1": "79",
+   "title": "(STATE CODE 02811)",
+   "h1": "(STATE CODE 02811)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -242,10 +245,11 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ae1effd5acf0d808"
   },
   "listed": 20,
-  "text_chars": 11856
+  "text_chars": 10937
  },
  {
   "control_number": "02814",
@@ -272,8 +276,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=83",
-   "title": "83",
-   "h1": "83",
+   "title": "(STATE CODE 02814)",
+   "h1": "(STATE CODE 02814)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -281,10 +285,11 @@
     84
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1f116fac524f0b82"
   },
   "listed": 14,
-  "text_chars": 10679
+  "text_chars": 10550
  },
  {
   "control_number": "02816",
@@ -315,8 +320,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=89",
-   "title": "89",
-   "h1": "89",
+   "title": "(STATE CODE 02816)",
+   "h1": "(STATE CODE 02816)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -326,7 +331,8 @@
     92
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a0f26a0277f79992"
   },
   "listed": 18,
   "text_chars": 16000
@@ -360,8 +366,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
-   "title": "88",
-   "h1": "88",
+   "title": "(STATE CODE 02817)",
+   "h1": "(STATE CODE 02817)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -371,7 +377,8 @@
     91
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ad6a6a66869c195d"
   },
   "listed": 18,
   "text_chars": 16000
@@ -411,10 +418,11 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c527001e16da3bf7"
   },
   "listed": 14,
-  "text_chars": 15298
+  "text_chars": 15299
  },
  {
   "control_number": "02820",
@@ -440,8 +448,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=101",
-   "title": "Administrative Professional AA P002820C Cal-GETC (34 units)LACCD GE (21 units)",
-   "h1": "Administrative Professional AA P002820C Cal-GETC (34 units)LACCD GE (21 units)",
+   "title": "Administrative Professional AA P002820C Cal-GETC (34 units) LACCD GE (21 units)",
+   "h1": "Administrative Professional AA P002820C Cal-GETC (34 units) LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -451,7 +459,8 @@
     104
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "64a15631c6a36627"
   },
   "listed": 13,
   "text_chars": 16000
@@ -479,8 +488,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=106",
-   "title": "Legal Office Procedures AA P002821C Cal-GETC (34 units)LACCD GE (21 units)",
-   "h1": "Legal Office Procedures AA P002821C Cal-GETC (34 units)LACCD GE (21 units)",
+   "title": "Legal Office Procedures AA P002821C Cal-GETC (34 units) LACCD GE (21 units)",
+   "h1": "Legal Office Procedures AA P002821C Cal-GETC (34 units) LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -490,7 +499,8 @@
     109
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "959c8cefc69de02d"
   },
   "listed": 14,
   "text_chars": 16000
@@ -536,7 +546,8 @@
     134
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "54adbeb59f11d711"
   },
   "listed": 19,
   "text_chars": 16000
@@ -568,8 +579,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114",
-   "title": "114",
-   "h1": "114",
+   "title": "(STATE CODE 02824)",
+   "h1": "(STATE CODE 02824)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -578,10 +589,11 @@
     116
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d0037423a12d3bd2"
   },
   "listed": 16,
-  "text_chars": 15313
+  "text_chars": 12606
  },
  {
   "control_number": "02826",
@@ -625,8 +637,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149",
-   "title": "149",
-   "h1": "149",
+   "title": "(STATE CODE 02826)",
+   "h1": "(STATE CODE 02826)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -635,10 +647,11 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ddd4ea652f37ae1d"
   },
   "listed": 31,
-  "text_chars": 16000
+  "text_chars": 15992
  },
  {
   "control_number": "02827",
@@ -670,8 +683,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=123",
-   "title": "123",
-   "h1": "123",
+   "title": "(STATE CODE 02827)",
+   "h1": "(STATE CODE 02827)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -679,10 +692,11 @@
     124
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5e10b56eeabfca3a"
   },
   "listed": 19,
-  "text_chars": 10683
+  "text_chars": 9278
  },
  {
   "control_number": "02828",
@@ -714,8 +728,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=122",
-   "title": "122",
-   "h1": "122",
+   "title": "(STATE CODE 02828)",
+   "h1": "(STATE CODE 02828)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -723,10 +737,11 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8f7080af12cf2295"
   },
   "listed": 19,
-  "text_chars": 11536
+  "text_chars": 11419
  },
  {
   "control_number": "02831",
@@ -751,18 +766,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=126",
-   "title": "Numerical Control Programming AS P002831C Cal-GETC (34 units)LACCD GE (21 units)",
-   "h1": "Numerical Control Programming AS P002831C Cal-GETC (34 units)LACCD GE (21 units)",
+   "title": "Numerical Control Programming AS P002831C Cal-GETC (34 units) LACCD GE (21 units)",
+   "h1": "Numerical Control Programming AS P002831C Cal-GETC (34 units) LACCD GE (21 units)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     126
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5cc81e666170b1db"
   },
   "listed": 12,
-  "text_chars": 3344
+  "text_chars": 3345
  },
  {
   "control_number": "02834",
@@ -783,8 +799,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=84",
-   "title": "84",
-   "h1": "84",
+   "title": "(STATE CODE 02834)",
+   "h1": "(STATE CODE 02834)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -794,7 +810,8 @@
     87
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fd344c74a3617f91"
   },
   "listed": 10,
   "text_chars": 16000
@@ -839,10 +856,11 @@
     143
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "53488df888f40620"
   },
   "listed": 23,
-  "text_chars": 11338
+  "text_chars": 11339
  },
  {
   "control_number": "02836",
@@ -874,7 +892,8 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8e087f4747e0b5c8"
   },
   "listed": 9,
   "text_chars": 16000
@@ -897,19 +916,21 @@
    "THEATER450"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=149",
-   "title": "149",
-   "h1": "149",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=148",
+   "title": "148",
+   "h1": "148",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    148,
     149
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "db3535d78e113d1e"
   },
   "listed": 8,
-  "text_chars": 6197
+  "text_chars": 12466
  },
  {
   "control_number": "02838",
@@ -934,10 +955,11 @@
     138
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fdf7b1bf1b949fb3"
   },
   "listed": 4,
-  "text_chars": 5506
+  "text_chars": 5508
  },
  {
   "control_number": "02839",
@@ -957,18 +979,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=138",
-   "title": "138",
-   "h1": "138",
+   "title": "(STATE CODE 02839)",
+   "h1": "(STATE CODE 02839)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     138
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "09f46b51a6e4116c"
   },
   "listed": 7,
-  "text_chars": 5506
+  "text_chars": 4834
  },
  {
   "control_number": "02841",
@@ -999,10 +1022,11 @@
     144
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "45c2373a15a042e2"
   },
   "listed": 10,
-  "text_chars": 5833
+  "text_chars": 5834
  },
  {
   "control_number": "08308",
@@ -1059,10 +1083,11 @@
     82
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6730730d4f427df6"
   },
   "listed": 36,
-  "text_chars": 11591
+  "text_chars": 11593
  },
  {
   "control_number": "08311",
@@ -1096,10 +1121,11 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d5505c8de0873e9e"
   },
   "listed": 13,
-  "text_chars": 6067
+  "text_chars": 6068
  },
  {
   "control_number": "08315",
@@ -1129,8 +1155,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=91",
-   "title": "91",
-   "h1": "91",
+   "title": "(STATE CODE 08315)",
+   "h1": "(STATE CODE 08315)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1140,7 +1166,8 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "37c69613fad7f057"
   },
   "listed": 17,
   "text_chars": 16000
@@ -1163,8 +1190,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=90",
-   "title": "90",
-   "h1": "90",
+   "title": "(STATE CODE 08316)",
+   "h1": "(STATE CODE 08316)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1174,7 +1201,8 @@
     93
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "27375dda30bc3547"
   },
   "listed": 7,
   "text_chars": 16000
@@ -1206,8 +1234,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=102",
-   "title": "102",
-   "h1": "102",
+   "title": "(STATE CODE 08318)",
+   "h1": "(STATE CODE 08318)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1217,7 +1245,8 @@
     105
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2075531966ca0186"
   },
   "listed": 16,
   "text_chars": 16000
@@ -1239,8 +1268,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108",
-   "title": "108",
-   "h1": "108",
+   "title": "(STATE CODE 08319)",
+   "h1": "(STATE CODE 08319)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1248,10 +1277,11 @@
     109
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "89cb8f0f56348619"
   },
   "listed": 6,
-  "text_chars": 9603
+  "text_chars": 6598
  },
  {
   "control_number": "08320",
@@ -1283,7 +1313,8 @@
     107
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ed6bfba3374a9c43"
   },
   "listed": 8,
   "text_chars": 16000
@@ -1328,7 +1359,8 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "42f333bf447a9c0f"
   },
   "listed": 20,
   "text_chars": 16000
@@ -1388,8 +1420,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113",
-   "title": "113",
-   "h1": "113",
+   "title": "(STATE CODE 08322)",
+   "h1": "(STATE CODE 08322)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1399,7 +1431,8 @@
     116
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6b6a6054ef341f51"
   },
   "listed": 44,
   "text_chars": 16000
@@ -1419,8 +1452,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
-   "title": "112",
-   "h1": "112",
+   "title": "(STATE CODE 08323)",
+   "h1": "(STATE CODE 08323)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1428,10 +1461,11 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1ddf99cceec89d78"
   },
   "listed": 4,
-  "text_chars": 9836
+  "text_chars": 9567
  },
  {
   "control_number": "08325",
@@ -1453,8 +1487,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=136",
-   "title": "136",
-   "h1": "136",
+   "title": "(STATE CODE 08325)",
+   "h1": "(STATE CODE 08325)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1462,10 +1496,11 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "11d722599d904cb9"
   },
   "listed": 9,
-  "text_chars": 11203
+  "text_chars": 11081
  },
  {
   "control_number": "08326",
@@ -1508,7 +1543,8 @@
     114
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "85244d2d1518fed2"
   },
   "listed": 19,
   "text_chars": 16000
@@ -1530,8 +1566,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=147",
-   "title": "147",
-   "h1": "147",
+   "title": "(STATE CODE 08327)",
+   "h1": "(STATE CODE 08327)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1540,10 +1576,11 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0f546bae3dcda847"
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 15331
  },
  {
   "control_number": "08328",
@@ -1583,7 +1620,8 @@
     88
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fce1249ae245dacc"
   },
   "listed": 19,
   "text_chars": 16000
@@ -1594,7 +1632,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.947,
+  "coverage": 1.0,
   "codes_found": [
    "CHDEV1",
    "CHDEV10",
@@ -1612,23 +1650,25 @@
    "CHDEV44",
    "CHDEV45",
    "CHDEV46",
+   "CHDEV65",
    "CHDEV7",
    "CHDEV9"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
-   "title": "Child Development AA P008330C Cal-GETC (34 units)LACCD GE (21 units)",
-   "h1": "Child Development AA P008330C Cal-GETC (34 units)LACCD GE (21 units)",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
+   "title": "(STATE CODE 08330)",
+   "h1": "(STATE CODE 08330)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    96,
     97,
     98,
-    99,
-    100
+    99
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "188f7b600c06d214"
   },
   "listed": 19,
   "text_chars": 16000
@@ -1672,10 +1712,11 @@
     140
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "35ce9530da7fad28"
   },
   "listed": 20,
-  "text_chars": 5804
+  "text_chars": 5805
  },
  {
   "control_number": "10349",
@@ -1712,7 +1753,8 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5d110ee7c129dbbe"
   },
   "listed": 15,
   "text_chars": 11164
@@ -1741,8 +1783,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=97",
-   "title": "97",
-   "h1": "97",
+   "title": "(STATE CODE 10350)",
+   "h1": "(STATE CODE 10350)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1752,7 +1794,8 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c3d40e089f8913b0"
   },
   "listed": 13,
   "text_chars": 16000
@@ -1793,10 +1836,11 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e690d7bc0dc8c35a"
   },
   "listed": 16,
-  "text_chars": 11856
+  "text_chars": 11858
  },
  {
   "control_number": "10729",
@@ -1827,7 +1871,8 @@
     124
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "73d1581adcf3abcb"
   },
   "listed": 10,
   "text_chars": 4967
@@ -1861,7 +1906,8 @@
     124
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "73d1581adcf3abcb"
   },
   "listed": 10,
   "text_chars": 4967
@@ -1895,7 +1941,8 @@
     124
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "73d1581adcf3abcb"
   },
   "listed": 10,
   "text_chars": 4967
@@ -1924,8 +1971,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=85",
-   "title": "85",
-   "h1": "85",
+   "title": "(STATE CODE 10733)",
+   "h1": "(STATE CODE 10733)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1935,7 +1982,8 @@
     88
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "00bf8fa7c8cf217a"
   },
   "listed": 13,
   "text_chars": 16000
@@ -1965,6 +2013,44 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=87",
+   "title": "(STATE CODE 10734)",
+   "h1": "(STATE CODE 10734)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "a54ba83694a43135"
+  },
+  "listed": 14,
+  "text_chars": 10184
+ },
+ {
+  "control_number": "10735",
+  "title": "Sculpture",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART111",
+   "ART201",
+   "ART202",
+   "ART204",
+   "ART501",
+   "ART502",
+   "ART700",
+   "ART701",
+   "ART702",
+   "ART703",
+   "ARTHC1100",
+   "ARTHC1200"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=87",
    "title": "87",
    "h1": "87",
    "text_from": "pdf_pages",
@@ -1974,41 +2060,11 @@
     88
    ],
    "extractor": "pypdf",
-   "heading_named": false
-  },
-  "listed": 14,
-  "text_chars": 10651
- },
- {
-  "control_number": "10735",
-  "title": "Sculpture",
-  "award": "A.A. Degree",
-  "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.583,
-  "codes_found": [
-   "ART204",
-   "ART501",
-   "ART502",
-   "ART700",
-   "ART701",
-   "ART702",
-   "ART703"
-  ],
-  "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=88",
-   "title": "88",
-   "h1": "88",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    88
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "cb0b21efe2f33e7e"
   },
   "listed": 12,
-  "text_chars": 5405
+  "text_chars": 10654
  },
  {
   "control_number": "10736",
@@ -2044,7 +2100,8 @@
     88
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3f2cbe9b4a6c9a63"
   },
   "listed": 12,
   "text_chars": 16000
@@ -2075,8 +2132,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107",
-   "title": "Office Administration: Advanced Computer Applications certificate",
-   "h1": "Office Administration: Advanced Computer Applications certificate",
+   "title": "(STATE CODE 11814)",
+   "h1": "(STATE CODE 11814)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2085,10 +2142,11 @@
     109
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e25658a5981f9884"
   },
   "listed": 15,
-  "text_chars": 12290
+  "text_chars": 12473
  },
  {
   "control_number": "12188",
@@ -2096,7 +2154,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.786,
+  "coverage": 1.0,
   "codes_found": [
    "ADDICST1",
    "ADDICST10",
@@ -2116,25 +2174,33 @@
    "ADDICST7",
    "ADDICST9",
    "ADDICST91",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH16",
+   "PSYCH2",
+   "PSYCH32",
    "PSYCH41",
    "PSYCH52",
    "PSYCH60",
    "PSYCH66"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=155",
-   "title": "155",
-   "h1": "155",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=154",
+   "title": "(STATE CODE 12188)",
+   "h1": "(STATE CODE 12188)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    154,
     155
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "25fa54ed50552bff"
   },
   "listed": 28,
-  "text_chars": 4953
+  "text_chars": 9847
  },
  {
   "control_number": "14233",
@@ -2155,8 +2221,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=93",
-   "title": "93",
-   "h1": "93",
+   "title": "(STATE CODE 14233)",
+   "h1": "(STATE CODE 14233)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2164,10 +2230,11 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a3745dc65418dfaa"
   },
   "listed": 8,
-  "text_chars": 10109
+  "text_chars": 9997
  },
  {
   "control_number": "15032",
@@ -2187,8 +2254,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
-   "title": "98",
-   "h1": "98",
+   "title": "(STATE CODE 15032)",
+   "h1": "(STATE CODE 15032)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2197,10 +2264,11 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "58b20f1bd27ca065"
   },
   "listed": 7,
-  "text_chars": 15869
+  "text_chars": 13929
  },
  {
   "control_number": "15057",
@@ -2229,7 +2297,8 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0221935e04945c42"
   },
   "listed": 6,
   "text_chars": 15778
@@ -2251,8 +2320,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=99",
-   "title": "99",
-   "h1": "99",
+   "title": "(STATE CODE 15058)",
+   "h1": "(STATE CODE 15058)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2260,10 +2329,11 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ad3695c6a81dda3c"
   },
   "listed": 6,
-  "text_chars": 11164
+  "text_chars": 8523
  },
  {
   "control_number": "15074",
@@ -2282,18 +2352,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=109",
-   "title": "109",
-   "h1": "109",
+   "title": "(STATE CODE 15074)",
+   "h1": "(STATE CODE 15074)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     109
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "cdf58ad3c902c3ea"
   },
   "listed": 6,
-  "text_chars": 4668
+  "text_chars": 4535
  },
  {
   "control_number": "15079",
@@ -2312,8 +2383,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
-   "title": "112",
-   "h1": "112",
+   "title": "(STATE CODE 15079)",
+   "h1": "(STATE CODE 15079)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2323,7 +2394,8 @@
     115
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "efd5c5051add7b77"
   },
   "listed": 6,
   "text_chars": 16000
@@ -2356,10 +2428,11 @@
     87
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "3ab3e5ead9f26bfe"
   },
   "listed": 8,
-  "text_chars": 10722
+  "text_chars": 10724
  },
  {
   "control_number": "15085",
@@ -2395,7 +2468,8 @@
     116
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b1277c4c5305ef64"
   },
   "listed": 15,
   "text_chars": 4775
@@ -2415,8 +2489,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=120",
-   "title": "120",
-   "h1": "120",
+   "title": "(STATE CODE 15092)",
+   "h1": "(STATE CODE 15092)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2426,7 +2500,8 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c08e01132050ba1c"
   },
   "listed": 4,
   "text_chars": 16000
@@ -2445,8 +2520,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
-   "title": "121",
-   "h1": "121",
+   "title": "(STATE CODE 15093)",
+   "h1": "(STATE CODE 15093)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2455,10 +2530,11 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "28417aa44967d1b1"
   },
   "listed": 3,
-  "text_chars": 15580
+  "text_chars": 15457
  },
  {
   "control_number": "15094",
@@ -2474,8 +2550,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
-   "title": "121",
-   "h1": "121",
+   "title": "(STATE CODE 15094)",
+   "h1": "(STATE CODE 15094)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2484,10 +2560,11 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "448e0c47a3fdad6b"
   },
   "listed": 3,
-  "text_chars": 15580
+  "text_chars": 12700
  },
  {
   "control_number": "15097",
@@ -2505,8 +2582,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
-   "title": "92",
-   "h1": "92",
+   "title": "(STATE CODE 15097)",
+   "h1": "(STATE CODE 15097)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2514,10 +2591,11 @@
     93
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6eabde431fe082e3"
   },
   "listed": 5,
-  "text_chars": 9777
+  "text_chars": 7869
  },
  {
   "control_number": "15101",
@@ -2534,18 +2612,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=94",
-   "title": "94",
-   "h1": "94",
+   "title": "(STATE CODE 15101)",
+   "h1": "(STATE CODE 15101)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "920bc4957f719a7e"
   },
   "listed": 4,
-  "text_chars": 5519
+  "text_chars": 5416
  },
  {
   "control_number": "16756",
@@ -2564,8 +2643,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=153",
-   "title": "153",
-   "h1": "153",
+   "title": "(STATE CODE 16756)",
+   "h1": "(STATE CODE 16756)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2573,10 +2652,11 @@
     154
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cb62a6d10cb53597"
   },
   "listed": 6,
-  "text_chars": 11643
+  "text_chars": 11541
  },
  {
   "control_number": "17794",
@@ -2595,8 +2675,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=104",
-   "title": "104",
-   "h1": "104",
+   "title": "(STATE CODE 17794)",
+   "h1": "(STATE CODE 17794)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2606,7 +2686,8 @@
     107
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cbf18d9fe0ee03be"
   },
   "listed": 6,
   "text_chars": 16000
@@ -2634,18 +2715,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=116",
-   "title": "116",
-   "h1": "116",
+   "title": "(STATE CODE 17797)",
+   "h1": "(STATE CODE 17797)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     116
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "dde1b0d70025dc9c"
   },
   "listed": 12,
-  "text_chars": 4775
+  "text_chars": 3312
  },
  {
   "control_number": "17800",
@@ -2662,8 +2744,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=108",
-   "title": "108",
-   "h1": "108",
+   "title": "(STATE CODE 17800)",
+   "h1": "(STATE CODE 17800)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2671,10 +2753,11 @@
     109
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9dd09c3a5398029d"
   },
   "listed": 4,
-  "text_chars": 9603
+  "text_chars": 9097
  },
  {
   "control_number": "18837",
@@ -2691,8 +2774,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=107",
-   "title": "107",
-   "h1": "107",
+   "title": "(STATE CODE 18837)",
+   "h1": "(STATE CODE 18837)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2701,10 +2784,11 @@
     109
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3f54320a011935ef"
   },
   "listed": 6,
-  "text_chars": 15206
+  "text_chars": 14802
  },
  {
   "control_number": "19006",
@@ -2736,7 +2820,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3ad8210c571a572a"
   },
   "listed": 8,
   "text_chars": 16000
@@ -2757,8 +2842,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=121",
-   "title": "121",
-   "h1": "121",
+   "title": "(STATE CODE 19007)",
+   "h1": "(STATE CODE 19007)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2767,10 +2852,11 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8d9b283a6214cd02"
   },
   "listed": 5,
-  "text_chars": 15580
+  "text_chars": 14180
  },
  {
   "control_number": "19008",
@@ -2786,8 +2872,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=98",
-   "title": "Preschool Certificate P019008D N/A",
-   "h1": "Preschool Certificate P019008D N/A",
+   "title": "(STATE CODE 19008)",
+   "h1": "(STATE CODE 19008)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2796,10 +2882,11 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "379a37236c733f21"
   },
   "listed": 3,
-  "text_chars": 14010
+  "text_chars": 15696
  },
  {
   "control_number": "19015",
@@ -2819,8 +2906,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=146",
-   "title": "146",
-   "h1": "146",
+   "title": "(STATE CODE 19015)",
+   "h1": "(STATE CODE 19015)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2830,7 +2917,8 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "adfe12931f3076d2"
   },
   "listed": 7,
   "text_chars": 16000
@@ -2840,12 +2928,212 @@
   "title": "General Studies: Arts and Humanities",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.815,
+  "codes_found": [
+   "ANTHRO102",
+   "ANTHRO105",
+   "ANTHRO109",
+   "ANTHRO121",
+   "ANTHRO161",
+   "ART103",
+   "ART105",
+   "ART107",
+   "ART109",
+   "ART111",
+   "ART116",
+   "ART119",
+   "ART121",
+   "ART201",
+   "ART202",
+   "ART203",
+   "ART204",
+   "ART205",
+   "ART206",
+   "ART207",
+   "ART209",
+   "ART301",
+   "ART302",
+   "ART307",
+   "ART308",
+   "ART309",
+   "ART501",
+   "ART502",
+   "ART603",
+   "ART604",
+   "ART605",
+   "ART606",
+   "ART700",
+   "ART701",
+   "ART708",
+   "ART709",
+   "ARTHC1100",
+   "ARTHC1200",
+   "ASL1",
+   "ASL16",
+   "ASL2",
+   "ASL25",
+   "ASL3",
+   "ASL4",
+   "ASL40",
+   "CHICANO37",
+   "CHICANO4",
+   "CHICANO47",
+   "CHICANO54",
+   "CHICANO57",
+   "CHICANO7",
+   "CHICANO8",
+   "CINEMA104",
+   "CINEMA107",
+   "CINEMA113",
+   "CINEMA3",
+   "CINEMA5",
+   "COMM190",
+   "COUNSEL20",
+   "COUNSEL40",
+   "DANCEST452",
+   "DANCEST801",
+   "DANCEST802",
+   "DANCEST805",
+   "DANCEST814",
+   "DANCEST815",
+   "DANCEST820",
+   "DANCEST821",
+   "DANCEST822",
+   "DANCEST826",
+   "ENGLISH102",
+   "ENGLISH124",
+   "ENGLISH127",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH210",
+   "ENGLISH211",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH216",
+   "ENGLISH218",
+   "ENGLISH219",
+   "ENGLISH234",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH245",
+   "ENGLISH250",
+   "ENGLISH252",
+   "ENGLISH270",
+   "ENGLISH271",
+   "FRENCH1",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "FRENCH5",
+   "FRENCH6",
+   "HISTORY1",
+   "HISTORY19",
+   "HISTORY2",
+   "HISTORY29",
+   "HISTORY41",
+   "HISTORY42",
+   "HISTORY44",
+   "HISTORY5",
+   "HISTORY52",
+   "HISTORY6",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN31",
+   "HUMAN6",
+   "ITALIAN1",
+   "ITALIAN10",
+   "ITALIAN2",
+   "ITALIAN3",
+   "ITALIAN4",
+   "ITALIAN5",
+   "JAPAN1",
+   "JAPAN2",
+   "JAPAN27",
+   "JAPAN3",
+   "JAPAN4",
+   "JAPAN9",
+   "MULTIMD110",
+   "MUSIC111",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC2161",
+   "MUSIC321",
+   "MUSIC322",
+   "MUSIC501",
+   "MUSIC705",
+   "MUSIC721",
+   "MUSIC755",
+   "NATIVAM175",
+   "PHILOS1",
+   "PHILOS12",
+   "PHILOS14",
+   "PHILOS15",
+   "PHILOS19",
+   "PHILOS2",
+   "PHILOS20",
+   "PHILOS28",
+   "PHILOS30",
+   "PHILOS37",
+   "PHILOS40",
+   "PHILOS41",
+   "PHILOS42",
+   "PHILOS46",
+   "PHOTO101",
+   "PHOTO102",
+   "PHOTO27A",
+   "PHOTO27B",
+   "PHOTO9",
+   "SPANISH1",
+   "SPANISH10",
+   "SPANISH11",
+   "SPANISH12",
+   "SPANISH15",
+   "SPANISH16",
+   "SPANISH2",
+   "SPANISH25",
+   "SPANISH26",
+   "SPANISH27",
+   "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
+   "SPANISH37",
+   "SPANISH4",
+   "SPANISH5",
+   "SPANISH6",
+   "SPANISH65",
+   "SPANISH9",
+   "THEATER100",
+   "THEATER110",
+   "THEATER114",
+   "THEATER125",
+   "THEATER270",
+   "THEATER271",
+   "THEATER273",
+   "THEATER401"
+  ],
+  "source": {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
+   "title": "Graduation Requirements for Degrees and Certificates",
+   "h1": "Graduation Requirements for Degrees and Certificates",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    31,
+    32,
+    33
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "62fefa4fae11174d"
+  },
   "listed": 227,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "19182",
@@ -2865,34 +3153,46 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.68,
+  "coverage": 0.94,
   "codes_found": [
+   "ADDICST10",
+   "ADDICST14",
+   "ADDICST15",
    "ADMJUS1",
    "ADMJUS2",
    "ADMJUS4",
    "ADMJUS67",
+   "AFROAM19",
    "AFROAM4",
+   "AFROAM5",
    "ANTHRO101",
    "ANTHRO102",
    "ANTHRO103",
+   "ANTHRO105",
    "ANTHRO106",
+   "ANTHRO109",
    "ANTHRO111",
    "ANTHRO121",
+   "ANTHRO132",
+   "ANTHRO141",
    "ANTHRO161",
    "ART101",
    "ART102",
    "ART103",
    "ART105",
    "ART109",
+   "ART111",
    "BUS5",
    "CAOT32",
    "CAOT82",
    "CHDEV1",
    "CHDEV11",
    "CHICANO2",
+   "CHICANO20",
    "CHICANO47",
    "CHICANO7",
    "CHICANO8",
+   "CHICANO80",
    "COMM100",
    "COMM104",
    "COMM121",
@@ -2901,9 +3201,11 @@
    "COMM189",
    "COMMC1000",
    "COUNSEL20",
+   "COUNSEL40",
    "ECON1",
    "ECON10",
    "ECON2",
+   "EDUC203",
    "ENGLC1000",
    "ENGLC1001",
    "ENGLISH102",
@@ -2920,9 +3222,19 @@
    "HISTORY1",
    "HISTORY11",
    "HISTORY12",
+   "HISTORY13",
+   "HISTORY19",
    "HISTORY2",
+   "HISTORY29",
    "HISTORY41",
+   "HISTORY42",
+   "HISTORY44",
    "HISTORY5",
+   "HISTORY52",
+   "HISTORY56",
+   "HISTORY6",
+   "HISTORY81",
+   "HISTORY82",
    "HISTORY86",
    "HISTORY87",
    "JAPAN9",
@@ -2933,39 +3245,54 @@
    "MATH228B",
    "MATH238",
    "MATH240",
+   "MATH260",
    "MATH261",
    "MATH262",
    "MATH263",
    "MEDIART117",
    "NATIVAM170",
+   "NATIVAM171",
+   "NATIVAM173",
    "PHILOS5",
    "PHILOS6",
    "PHILOS9",
    "POLSC1000",
    "POLSCI19",
    "POLSCI2",
+   "POLSCI30",
    "POLSCI5",
    "POLSCI50",
    "POLSCI7",
    "PSYCC1000",
    "PSYCH13",
    "PSYCH14",
+   "PSYCH16",
    "PSYCH2",
+   "PSYCH32",
    "PSYCH41",
    "PSYCH52",
+   "PSYCH60",
    "PSYCH66",
+   "PSYCH69",
    "PSYCH74",
    "SOC1",
    "SOC11",
    "SOC125",
    "SOC13",
+   "SOC15",
    "SOC2",
    "SOC21",
    "SOC28",
+   "SOC29",
    "SOC3",
    "SOC31",
+   "SOC35",
+   "SOC37",
    "SOC4",
    "SOC86",
+   "SOC87",
+   "SPANISH10",
+   "SPANISH16",
    "SPANISH9",
    "STAT101",
    "STATC1000"
@@ -2982,7 +3309,8 @@
     33
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "62fefa4fae11174d"
   },
   "listed": 150,
   "text_chars": 16000
@@ -3041,8 +3369,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=77",
-   "title": "77",
-   "h1": "77",
+   "title": "(STATE CODE 21781)",
+   "h1": "(STATE CODE 21781)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3052,7 +3380,8 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7cc896a985190a8a"
   },
   "listed": 43,
   "text_chars": 16000
@@ -3079,8 +3408,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=78",
-   "title": "78",
-   "h1": "78",
+   "title": "(STATE CODE 21800)",
+   "h1": "(STATE CODE 21800)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3089,7 +3418,8 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d64edd045dde2035"
   },
   "listed": 11,
   "text_chars": 16000
@@ -3126,10 +3456,11 @@
     84
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2251e62b0952a907"
   },
   "listed": 13,
-  "text_chars": 5448
+  "text_chars": 5449
  },
  {
   "control_number": "21806",
@@ -3155,8 +3486,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=101",
-   "title": "101",
-   "h1": "101",
+   "title": "(STATE CODE 21806)",
+   "h1": "(STATE CODE 21806)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3166,7 +3497,8 @@
     104
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "79c3ea205ed05a03"
   },
   "listed": 13,
   "text_chars": 16000
@@ -3198,8 +3530,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=103",
-   "title": "103",
-   "h1": "103",
+   "title": "(STATE CODE 21807)",
+   "h1": "(STATE CODE 21807)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3209,7 +3541,8 @@
     106
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "56a4c6c9ab59177a"
   },
   "listed": 16,
   "text_chars": 16000
@@ -3237,8 +3570,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=106",
-   "title": "106",
-   "h1": "106",
+   "title": "(STATE CODE 21808)",
+   "h1": "(STATE CODE 21808)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3248,7 +3581,8 @@
     109
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "bd36f6c8410dbf4f"
   },
   "listed": 14,
   "text_chars": 16000
@@ -3282,18 +3616,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114",
-   "title": "114",
-   "h1": "114",
+   "title": "(STATE CODE 21810)",
+   "h1": "(STATE CODE 21810)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9579069a1f2a1140"
   },
   "listed": 18,
-  "text_chars": 5466
+  "text_chars": 5353
  },
  {
   "control_number": "21812",
@@ -3327,10 +3662,11 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c8d45f7d015ea9bc"
   },
   "listed": 17,
-  "text_chars": 5714
+  "text_chars": 5715
  },
  {
   "control_number": "21814",
@@ -3355,18 +3691,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=126",
-   "title": "126",
-   "h1": "126",
+   "title": "(STATE CODE 21814)",
+   "h1": "(STATE CODE 21814)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     126
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4b79fe2a0afc760e"
   },
   "listed": 12,
-  "text_chars": 5491
+  "text_chars": 2983
  },
  {
   "control_number": "21816",
@@ -3386,18 +3723,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=86",
-   "title": "86",
-   "h1": "86",
+   "title": "(STATE CODE 21816)",
+   "h1": "(STATE CODE 21816)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     86
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d79e46f64828011a"
   },
   "listed": 7,
-  "text_chars": 5476
+  "text_chars": 3565
  },
  {
   "control_number": "21817",
@@ -3428,18 +3766,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=155",
-   "title": "155",
-   "h1": "155",
+   "title": "(STATE CODE 21817)",
+   "h1": "(STATE CODE 21817)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     155
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "adce9cb69cc640f9"
   },
   "listed": 18,
-  "text_chars": 4953
+  "text_chars": 4233
  },
  {
   "control_number": "22923",
@@ -3458,18 +3797,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=130",
-   "title": "130",
-   "h1": "130",
+   "title": "(STATE CODE 22923)",
+   "h1": "(STATE CODE 22923)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     130
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5d18d1bbb7d543b3"
   },
   "listed": 6,
-  "text_chars": 5320
+  "text_chars": 5211
  },
  {
   "control_number": "30477",
@@ -3491,18 +3831,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=119",
-   "title": "119",
-   "h1": "119",
+   "title": "(STATE CODE 30477)",
+   "h1": "(STATE CODE 30477)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     119
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e251f049c846fe92"
   },
   "listed": 15,
-  "text_chars": 7463
+  "text_chars": 6238
  },
  {
   "control_number": "30908",
@@ -3529,10 +3870,11 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e3966b9f3f33640a"
   },
   "listed": 11,
-  "text_chars": 5320
+  "text_chars": 5321
  },
  {
   "control_number": "32244",
@@ -3573,10 +3915,11 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b0d81dc282c14d30"
   },
   "listed": 22,
-  "text_chars": 10720
+  "text_chars": 10722
  },
  {
   "control_number": "32318",
@@ -3619,10 +3962,11 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "2c4571994f7518bc"
   },
   "listed": 25,
-  "text_chars": 5261
+  "text_chars": 5262
  },
  {
   "control_number": "32336",
@@ -3641,18 +3985,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=151",
-   "title": "151",
-   "h1": "151",
+   "title": "(STATE CODE 32336)",
+   "h1": "(STATE CODE 32336)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fe8eb0357a27d17d"
   },
   "listed": 7,
-  "text_chars": 5261
+  "text_chars": 3504
  },
  {
   "control_number": "32408",
@@ -3672,18 +4017,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=50",
-   "title": "50",
-   "h1": "50",
+   "title": "(STATE CODE 32408)",
+   "h1": "(STATE CODE 32408)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     50
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "adcbd7608a359bcc"
   },
   "listed": 7,
-  "text_chars": 6011
+  "text_chars": 3454
  },
  {
   "control_number": "32484",
@@ -3744,8 +4090,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=42",
-   "title": "42",
-   "h1": "42",
+   "title": "(STATE CODE 32523)",
+   "h1": "(STATE CODE 32523)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3755,7 +4101,8 @@
     45
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "7c9173809719bc2a"
   },
   "listed": 24,
   "text_chars": 16000
@@ -3796,19 +4143,21 @@
    "SPANISH9"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=72",
-   "title": "72",
-   "h1": "72",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=71",
+   "title": "(STATE CODE 32620)",
+   "h1": "(STATE CODE 32620)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    71,
     72
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "84b56589a38e2d58"
   },
   "listed": 26,
-  "text_chars": 5989
+  "text_chars": 8477
  },
  {
   "control_number": "32621",
@@ -3843,8 +4192,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=73",
-   "title": "Students completing the Associate in Arts in Theatre Arts for Transfer",
-   "h1": "Students completing the Associate in Arts in Theatre Arts for Transfer",
+   "title": "(STATE CODE 33036)",
+   "h1": "(STATE CODE 33036)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3852,10 +4201,11 @@
     74
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "db616a2f9d1b48a9"
   },
   "listed": 14,
-  "text_chars": 8901
+  "text_chars": 9431
  },
  {
   "control_number": "33055",
@@ -3875,11 +4225,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.958,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHRO102",
    "GEOG1",
    "GEOG14",
+   "GEOG15",
    "GEOG17",
    "GEOG19",
    "GEOG2",
@@ -3903,8 +4254,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=55",
-   "title": "55",
-   "h1": "55",
+   "title": "(STATE CODE 33088)",
+   "h1": "(STATE CODE 33088)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3914,7 +4265,8 @@
     58
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "276a0b3e362839f1"
   },
   "listed": 24,
   "text_chars": 16000
@@ -3973,7 +4325,8 @@
     45
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3d5978dd8fdac8ff"
   },
   "listed": 35,
   "text_chars": 6217
@@ -3998,8 +4351,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=134",
-   "title": "134",
-   "h1": "134",
+   "title": "(STATE CODE 33253)",
+   "h1": "(STATE CODE 33253)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4007,10 +4360,11 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0b29108611c64789"
   },
   "listed": 9,
-  "text_chars": 10720
+  "text_chars": 9527
  },
  {
   "control_number": "33721",
@@ -4054,18 +4408,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=115",
-   "title": "115",
-   "h1": "115",
+   "title": "(STATE CODE 35018)",
+   "h1": "(STATE CODE 35018)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     115
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d56de01732da9fad"
   },
   "listed": 7,
-  "text_chars": 5068
+  "text_chars": 4059
  },
  {
   "control_number": "35019",
@@ -4084,18 +4439,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=82",
-   "title": "82",
-   "h1": "82",
+   "title": "(STATE CODE 35019)",
+   "h1": "(STATE CODE 35019)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     82
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "66992bca03b4849c"
   },
   "listed": 11,
-  "text_chars": 5583
+  "text_chars": 2027
  },
  {
   "control_number": "35196",
@@ -4133,7 +4489,8 @@
     64
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2ad90034aa61c53c"
   },
   "listed": 17,
   "text_chars": 6063
@@ -4157,18 +4514,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=56",
-   "title": "56",
-   "h1": "56",
+   "title": "(STATE CODE 35282)",
+   "h1": "(STATE CODE 35282)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     56
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "24574ad3a213eec0"
   },
   "listed": 8,
-  "text_chars": 5648
+  "text_chars": 5491
  },
  {
   "control_number": "35307",
@@ -4204,7 +4562,8 @@
     47
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b62eab16483e75cb"
   },
   "listed": 12,
   "text_chars": 16000
@@ -4225,19 +4584,20 @@
    "PHYSICS103"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
    "title": "Graduation Requirements for Degrees and Certificates",
    "h1": "Graduation Requirements for Degrees and Certificates",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    33
+    31
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d403b83384802875"
   },
   "listed": 6,
-  "text_chars": 6589
+  "text_chars": 6610
  },
  {
   "control_number": "35460",
@@ -4303,8 +4663,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=60",
-   "title": "Students completing the Associate in Arts in Kinesiology for Transfer",
-   "h1": "Students completing the Associate in Arts in Kinesiology for Transfer",
+   "title": "(STATE CODE 35460)",
+   "h1": "(STATE CODE 35460)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4312,10 +4672,11 @@
     61
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "068f287df0ff3df5"
   },
   "listed": 54,
-  "text_chars": 11676
+  "text_chars": 12206
  },
  {
   "control_number": "35462",
@@ -4363,8 +4724,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=54",
-   "title": "54",
-   "h1": "54",
+   "title": "(STATE CODE 35462)",
+   "h1": "(STATE CODE 35462)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4372,10 +4733,11 @@
     55
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "964ee1394c42a182"
   },
   "listed": 35,
-  "text_chars": 12418
+  "text_chars": 10823
  },
  {
   "control_number": "35464",
@@ -4415,7 +4777,8 @@
     53
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0690a8d53584d45a"
   },
   "listed": 23,
   "text_chars": 12631
@@ -4458,7 +4821,8 @@
     71
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b1cb7531f1344de9"
   },
   "listed": 19,
   "text_chars": 6102
@@ -4515,7 +4879,8 @@
     53
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a1abcd672b9f0d02"
   },
   "listed": 33,
   "text_chars": 6466
@@ -4549,19 +4914,21 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=46",
-   "title": "46",
-   "h1": "46",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=45",
+   "title": "(STATE CODE 35975)",
+   "h1": "(STATE CODE 35975)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    45,
     46
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "41b658c6eee2332f"
   },
   "listed": 19,
-  "text_chars": 5115
+  "text_chars": 7682
  },
  {
   "control_number": "35979",
@@ -4569,10 +4936,12 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.818,
+  "coverage": 1.0,
   "codes_found": [
    "BIOLOGY6",
+   "BIOLOGY7",
    "CHEM101",
+   "CHEM102",
    "MATH261",
    "PHYSICS101",
    "PHYSICS102",
@@ -4582,19 +4951,22 @@
    "PHYSICS7"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=33",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
    "title": "Graduation Requirements for Degrees and Certificates",
    "h1": "Graduation Requirements for Degrees and Certificates",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    31,
+    32,
     33
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "62fefa4fae11174d"
   },
   "listed": 11,
-  "text_chars": 6589
+  "text_chars": 16000
  },
  {
   "control_number": "36027",
@@ -4633,18 +5005,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
-   "title": "157",
-   "h1": "157",
+   "title": "(STATE CODE 36039)",
+   "h1": "(STATE CODE 36039)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f4e254ba75bbbfbc"
   },
   "listed": 2,
-  "text_chars": 4935
+  "text_chars": 4808
  },
  {
   "control_number": "36040",
@@ -4659,18 +5032,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=160",
-   "title": "160",
-   "h1": "160",
+   "title": "(STATE CODE 36040)",
+   "h1": "(STATE CODE 36040)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     160
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5180c70f896eff5b"
   },
   "listed": 2,
-  "text_chars": 1590
+  "text_chars": 890
  },
  {
   "control_number": "36044",
@@ -4703,10 +5077,11 @@
     152
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b4b593b8963036a9"
   },
   "listed": 12,
-  "text_chars": 5853
+  "text_chars": 5854
  },
  {
   "control_number": "36137",
@@ -4742,7 +5117,8 @@
     105
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "91cbea836513a5ec"
   },
   "listed": 12,
   "text_chars": 16000
@@ -4770,8 +5146,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=66",
-   "title": "66",
-   "h1": "66",
+   "title": "(STATE CODE 36294)",
+   "h1": "(STATE CODE 36294)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4781,7 +5157,8 @@
     69
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a13fc844c8cb5832"
   },
   "listed": 12,
   "text_chars": 16000
@@ -4811,18 +5188,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
-   "title": "The Phlebotomy Technician I Certificate of Completion will prepare",
-   "h1": "The Phlebotomy Technician I Certificate of Completion will prepare",
+   "title": "(STATE CODE 36613)",
+   "h1": "(STATE CODE 36613)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     166
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a992d1b0d34443f8"
   },
   "listed": 2,
-  "text_chars": 2624
+  "text_chars": 2663
  },
  {
   "control_number": "36785",
@@ -4840,8 +5218,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=135",
-   "title": "135",
-   "h1": "135",
+   "title": "(STATE CODE 36785)",
+   "h1": "(STATE CODE 36785)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4850,10 +5228,11 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "06df19ba50369404"
   },
   "listed": 5,
-  "text_chars": 16000
+  "text_chars": 14432
  },
  {
   "control_number": "36879",
@@ -4869,18 +5248,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-   "title": "164",
-   "h1": "164",
+   "title": "(STATE CODE 36879)",
+   "h1": "(STATE CODE 36879)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "225119c28dd22fd7"
   },
   "listed": 3,
-  "text_chars": 4946
+  "text_chars": 4448
  },
  {
   "control_number": "36910",
@@ -4900,19 +5280,21 @@
    "WELDING462"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=125",
-   "title": "Gas and Electric Welding AS P036910C Cal-GETC (34 units)LACCD GE (21 units)",
-   "h1": "Gas and Electric Welding AS P036910C Cal-GETC (34 units)LACCD GE (21 units)",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=124",
+   "title": "(STATE CODE 36910)",
+   "h1": "(STATE CODE 36910)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    124,
     125
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "eee3fcaa59de4f8a"
   },
   "listed": 8,
-  "text_chars": 3796
+  "text_chars": 6799
  },
  {
   "control_number": "36911",
@@ -4933,18 +5315,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=125",
-   "title": "125",
-   "h1": "125",
+   "title": "(STATE CODE 36911)",
+   "h1": "(STATE CODE 36911)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     125
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ac999a6c4ab0ff60"
   },
   "listed": 8,
-  "text_chars": 5331
+  "text_chars": 3597
  },
  {
   "control_number": "36946",
@@ -4969,19 +5352,20 @@
    "PHOTO9"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=132",
-   "title": "Photography AS P036946C Cal-GETC (34 units)LACCD GE (21 units)",
-   "h1": "Photography AS P036946C Cal-GETC (34 units)LACCD GE (21 units)",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=131",
+   "title": "(STATE CODE 36946)",
+   "h1": "(STATE CODE 36946)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    131,
     132,
     133,
-    134,
-    135
+    134
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "35bbe8540109ba78"
   },
   "listed": 13,
   "text_chars": 16000
@@ -5010,8 +5394,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=132",
-   "title": "132",
-   "h1": "132",
+   "title": "(STATE CODE 36947)",
+   "h1": "(STATE CODE 36947)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5021,7 +5405,8 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c770356cc50981a0"
   },
   "listed": 13,
   "text_chars": 16000
@@ -5044,19 +5429,21 @@
    "VOCED379CE"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=285",
-   "title": "285",
-   "h1": "285",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=165",
+   "title": "(STATE CODE 37084)",
+   "h1": "(STATE CODE 37084)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    285
+    165,
+    166
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "933fbfd93da74aca"
   },
   "listed": 8,
-  "text_chars": 7304
+  "text_chars": 7396
  },
  {
   "control_number": "37184",
@@ -5071,8 +5458,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=163",
-   "title": "Earning an EKG Technician Certificate of Completion may be the",
-   "h1": "Earning an EKG Technician Certificate of Completion may be the",
+   "title": "(STATE CODE 37184)",
+   "h1": "(STATE CODE 37184)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5080,10 +5467,11 @@
     164
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3dd0fef67dc5c2fd"
   },
   "listed": 2,
-  "text_chars": 7352
+  "text_chars": 7391
  },
  {
   "control_number": "37217",
@@ -5111,8 +5499,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=43",
-   "title": "43",
-   "h1": "43",
+   "title": "(STATE CODE 37217)",
+   "h1": "(STATE CODE 37217)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5122,7 +5510,8 @@
     46
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "284669aae1d5c43b"
   },
   "listed": 15,
   "text_chars": 16000
@@ -5155,7 +5544,8 @@
     137
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "449ed124451ed926"
   },
   "listed": 9,
   "text_chars": 5559
@@ -5173,18 +5563,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
-   "title": "162",
-   "h1": "162",
+   "title": "(STATE CODE 37835)",
+   "h1": "(STATE CODE 37835)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "70dc36f1a1877ac0"
   },
   "listed": 2,
-  "text_chars": 5188
+  "text_chars": 1685
  },
  {
   "control_number": "37957",
@@ -5209,10 +5600,11 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d7cf1b40f2caca7d"
   },
   "listed": 4,
-  "text_chars": 5253
+  "text_chars": 5254
  },
  {
   "control_number": "37976",
@@ -5237,19 +5629,20 @@
    "CIS241"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=112",
-   "title": "Cybersecurity Certificate P037976D N/A",
-   "h1": "Cybersecurity Certificate P037976D N/A",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=111",
+   "title": "(STATE CODE 37976)",
+   "h1": "(STATE CODE 37976)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    111,
     112,
     113,
-    114,
-    115
+    114
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": false,
+   "text_sha": "793b41cbd20d499f"
   },
   "listed": 13,
   "text_chars": 16000
@@ -5267,8 +5660,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
-   "title": "161",
-   "h1": "161",
+   "title": "(STATE CODE 38338)",
+   "h1": "(STATE CODE 38338)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5276,10 +5669,11 @@
     162
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c2e405c8e8e586d0"
   },
   "listed": 2,
-  "text_chars": 10123
+  "text_chars": 8131
  },
  {
   "control_number": "38339",
@@ -5294,18 +5688,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
-   "title": "162",
-   "h1": "162",
+   "title": "(STATE CODE 38339)",
+   "h1": "(STATE CODE 38339)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "423b13e9381d8b73"
   },
   "listed": 2,
-  "text_chars": 5188
+  "text_chars": 3362
  },
  {
   "control_number": "38606",
@@ -5338,7 +5733,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b8da56198c08eaf1"
   },
   "listed": 9,
   "text_chars": 16000
@@ -5363,8 +5759,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=58",
-   "title": "58",
-   "h1": "58",
+   "title": "(STATE CODE 38673)",
+   "h1": "(STATE CODE 38673)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5374,7 +5770,8 @@
     61
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7b3002cfd6a1faae"
   },
   "listed": 10,
   "text_chars": 16000
@@ -5410,8 +5807,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=148",
-   "title": "148",
-   "h1": "148",
+   "title": "(STATE CODE 39277)",
+   "h1": "(STATE CODE 39277)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5419,10 +5816,11 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6ae6216c3dc2b053"
   },
   "listed": 20,
-  "text_chars": 12463
+  "text_chars": 12365
  },
  {
   "control_number": "39501",
@@ -5436,18 +5834,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=168",
-   "title": "168",
-   "h1": "168",
+   "title": "(STATE CODE 39501)",
+   "h1": "(STATE CODE 39501)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a4204104d9502ecf"
   },
   "listed": 1,
-  "text_chars": 3608
+  "text_chars": 700
  },
  {
   "control_number": "39954",
@@ -5464,18 +5863,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=165",
-   "title": "The Landscape Technician Certificate of Completion prepares students",
-   "h1": "The Landscape Technician Certificate of Completion prepares students",
+   "title": "(STATE CODE 39954)",
+   "h1": "(STATE CODE 39954)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     165
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4df49f6036c55943"
   },
   "listed": 4,
-  "text_chars": 5508
+  "text_chars": 5547
  },
  {
   "control_number": "39969",
@@ -5493,8 +5893,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=110",
-   "title": "110",
-   "h1": "110",
+   "title": "(STATE CODE 39969)",
+   "h1": "(STATE CODE 39969)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5504,7 +5904,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "29242cb2036a4f99"
   },
   "listed": 5,
   "text_chars": 16000
@@ -5536,10 +5937,11 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a403ca7af52d27d2"
   },
   "listed": 8,
-  "text_chars": 5070
+  "text_chars": 5071
  },
  {
   "control_number": "40634",
@@ -5564,7 +5966,8 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "edc1de957ff7b72f"
   },
   "listed": 4,
   "text_chars": 5781
@@ -5593,8 +5996,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=47",
-   "title": "47",
-   "h1": "47",
+   "title": "(STATE CODE 41088)",
+   "h1": "(STATE CODE 41088)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5602,10 +6005,11 @@
     48
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "604b6915cade8df5"
   },
   "listed": 13,
-  "text_chars": 11770
+  "text_chars": 11582
  },
  {
   "control_number": "41780",
@@ -5633,8 +6037,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=92",
-   "title": "92",
-   "h1": "92",
+   "title": "(STATE CODE 41890)",
+   "h1": "(STATE CODE 41890)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5643,10 +6047,11 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "635ff42371f1f9ac"
   },
   "listed": 3,
-  "text_chars": 15298
+  "text_chars": 11689
  },
  {
   "control_number": "41891",
@@ -5662,8 +6067,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=93",
-   "title": "93",
-   "h1": "93",
+   "title": "(STATE CODE 41891)",
+   "h1": "(STATE CODE 41891)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5671,10 +6076,11 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2d5807201c19a0a2"
   },
   "listed": 3,
-  "text_chars": 10109
+  "text_chars": 8241
  },
  {
   "control_number": "41935",
@@ -5700,18 +6106,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
-   "title": "156",
-   "h1": "156",
+   "title": "(STATE CODE 41946)",
+   "h1": "(STATE CODE 41946)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     156
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f5543046c46ce0fd"
   },
   "listed": 1,
-  "text_chars": 4566
+  "text_chars": 2856
  },
  {
   "control_number": "42018",
@@ -5726,8 +6133,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
-   "title": "157",
-   "h1": "157",
+   "title": "(STATE CODE 42018)",
+   "h1": "(STATE CODE 42018)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5735,10 +6142,11 @@
     158
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a2ff5ea625e2e01d"
   },
   "listed": 2,
-  "text_chars": 10312
+  "text_chars": 6380
  },
  {
   "control_number": "42270",
@@ -5760,7 +6168,8 @@
     228
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9d15aad638ee7386"
   },
   "listed": 2,
   "text_chars": 6613
@@ -5788,7 +6197,8 @@
     229
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "607aa01c7d840550"
   },
   "listed": 2,
   "text_chars": 16000
@@ -5805,20 +6215,20 @@
    "ESLNC9CE"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=227",
-   "title": "227",
-   "h1": "227",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=159",
+   "title": "(STATE CODE 42275)",
+   "h1": "(STATE CODE 42275)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    227,
-    228
+    159
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "121a1669f1c55d6c"
   },
   "listed": 2,
-  "text_chars": 13214
+  "text_chars": 4630
  },
  {
   "control_number": "42276",
@@ -5833,18 +6243,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=158",
-   "title": "158",
-   "h1": "158",
+   "title": "(STATE CODE 42276)",
+   "h1": "(STATE CODE 42276)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     158
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3187df3621d36e2e"
   },
   "listed": 2,
-  "text_chars": 5375
+  "text_chars": 2777
  },
  {
   "control_number": "42404",
@@ -5859,18 +6270,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
-   "title": "161",
-   "h1": "161",
+   "title": "(STATE CODE 42404)",
+   "h1": "(STATE CODE 42404)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d70b12bcf0c3edc2"
   },
   "listed": 2,
-  "text_chars": 4933
+  "text_chars": 1738
  },
  {
   "control_number": "42426",
@@ -5885,18 +6297,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-   "title": "164",
-   "h1": "164",
+   "title": "(STATE CODE 42426)",
+   "h1": "(STATE CODE 42426)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f8f3a8634b474d80"
   },
   "listed": 2,
-  "text_chars": 4946
+  "text_chars": 3241
  },
  {
   "control_number": "42427",
@@ -5910,18 +6323,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
-   "title": "The Tutor Training Leadership Certificate of Completion is designed",
-   "h1": "The Tutor Training Leadership Certificate of Completion is designed",
+   "title": "(STATE CODE 42427)",
+   "h1": "(STATE CODE 42427)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     167
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1dfeb34c2df21b5f"
   },
   "listed": 1,
-  "text_chars": 2905
+  "text_chars": 992
  },
  {
   "control_number": "42428",
@@ -5941,8 +6355,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
-   "title": "The Medical Front Office Assistant Certificate of Completion trains",
-   "h1": "The Medical Front Office Assistant Certificate of Completion trains",
+   "title": "(STATE CODE 42428)",
+   "h1": "(STATE CODE 42428)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5951,10 +6365,11 @@
     168
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "765bd9b29a95e98b"
   },
   "listed": 7,
-  "text_chars": 13540
+  "text_chars": 13579
  },
  {
   "control_number": "42439",
@@ -5969,18 +6384,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=166",
-   "title": "166",
-   "h1": "166",
+   "title": "(STATE CODE 42439)",
+   "h1": "(STATE CODE 42439)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     166
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a0914ca9396b81cc"
   },
   "listed": 2,
-  "text_chars": 5251
+  "text_chars": 1131
  },
  {
   "control_number": "42512",
@@ -6004,18 +6420,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=74",
-   "title": "74",
-   "h1": "74",
+   "title": "(STATE CODE 42512)",
+   "h1": "(STATE CODE 42512)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     74
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6cf0fa0bc53e5063"
   },
   "listed": 11,
-  "text_chars": 5614
+  "text_chars": 4043
  },
  {
   "control_number": "42533",
@@ -6043,19 +6460,21 @@
    "CHEM60"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=129",
-   "title": "Biotechnology Lab Assistant Certificate P042945D N/A",
-   "h1": "Biotechnology Lab Assistant Certificate P042945D N/A",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
+   "title": "128",
+   "h1": "128",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    128,
     129
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b8a97ff11e2e8500"
   },
   "listed": 4,
-  "text_chars": 2892
+  "text_chars": 10179
  },
  {
   "control_number": "43098",
@@ -6080,8 +6499,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=128",
-   "title": "128",
-   "h1": "128",
+   "title": "(STATE CODE 43098)",
+   "h1": "(STATE CODE 43098)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6090,10 +6509,11 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "16dbd45372e3c9da"
   },
   "listed": 12,
-  "text_chars": 15500
+  "text_chars": 14600
  },
  {
   "control_number": "43219",
@@ -6112,18 +6532,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=129",
-   "title": "129",
-   "h1": "129",
+   "title": "(STATE CODE 43219)",
+   "h1": "(STATE CODE 43219)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     129
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "64b3c2c5df6b1fb6"
   },
   "listed": 6,
-  "text_chars": 4320
+  "text_chars": 2703
  },
  {
   "control_number": "43458",
@@ -6150,18 +6571,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=49",
-   "title": "49",
-   "h1": "49",
+   "title": "(STATE CODE 43458)",
+   "h1": "(STATE CODE 43458)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     49
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "26eae79883d1e35d"
   },
   "listed": 14,
-  "text_chars": 5871
+  "text_chars": 4815
  },
  {
   "control_number": "43510",
@@ -6190,8 +6612,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
-   "title": "145",
-   "h1": "145",
+   "title": "(STATE CODE 43510)",
+   "h1": "(STATE CODE 43510)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6201,7 +6623,8 @@
     148
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cf3f395d65fb7008"
   },
   "listed": 16,
   "text_chars": 16000
@@ -6222,8 +6645,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=152",
-   "title": "152",
-   "h1": "152",
+   "title": "(STATE CODE 43713)",
+   "h1": "(STATE CODE 43713)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6232,10 +6655,11 @@
     154
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e4c2a63b2ae37018"
   },
   "listed": 5,
-  "text_chars": 16000
+  "text_chars": 15181
  },
  {
   "control_number": "43745",
@@ -6250,18 +6674,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=158",
-   "title": "The GED Preparation for Spanish Speakers Certificate of completion",
-   "h1": "The GED Preparation for Spanish Speakers Certificate of completion",
+   "title": "(STATE CODE 43745)",
+   "h1": "(STATE CODE 43745)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     158
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5dbdc792d8f0ccd6"
   },
   "listed": 2,
-  "text_chars": 4192
+  "text_chars": 4231
  },
  {
   "control_number": "43746",
@@ -6276,18 +6701,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=164",
-   "title": "The Internship Workplace Support Certificate of Completion",
-   "h1": "The Internship Workplace Support Certificate of Completion",
+   "title": "(STATE CODE 43746)",
+   "h1": "(STATE CODE 43746)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5d5a029eb9904362"
   },
   "listed": 2,
-  "text_chars": 1435
+  "text_chars": 1474
  },
  {
   "control_number": "43779",
@@ -6315,18 +6741,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=163",
-   "title": "163",
-   "h1": "163",
+   "title": "(STATE CODE 43780)",
+   "h1": "(STATE CODE 43780)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     163
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5c8dc5916fe21de6"
   },
   "listed": 3,
-  "text_chars": 4781
+  "text_chars": 4015
  },
  {
   "control_number": "44232",
@@ -6365,8 +6792,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
-   "title": "141",
-   "h1": "141",
+   "title": "(STATE CODE 44966)",
+   "h1": "(STATE CODE 44966)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6375,7 +6802,8 @@
     143
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8e879e7830cb20a5"
   },
   "listed": 14,
   "text_chars": 16000
@@ -6399,8 +6827,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=142",
-   "title": "142",
-   "h1": "142",
+   "title": "(STATE CODE 44998)",
+   "h1": "(STATE CODE 44998)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6408,10 +6836,11 @@
     143
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7728fb147bedc64b"
   },
   "listed": 8,
-  "text_chars": 11338
+  "text_chars": 10143
  },
  {
   "control_number": "45035",
@@ -6419,57 +6848,87 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.596,
+  "coverage": 0.982,
   "codes_found": [
    "ADMJUS1",
    "ADMJUS2",
    "ADMJUS4",
    "ADMJUS67",
    "AFROAM4",
+   "AFROAM5",
    "ANATOMY1",
    "ANMLSC511",
    "ANTHRO101",
    "ANTHRO102",
+   "ANTHRO105",
    "ANTHRO106",
+   "ANTHRO109",
    "ANTHRO111",
+   "ANTHRO118",
    "ANTHRO121",
+   "ANTHRO132",
+   "ANTHRO141",
    "ANTHRO161",
    "ART101",
    "ART102",
    "ART103",
    "ART105",
+   "ART107",
    "ART109",
+   "ART111",
+   "ART116",
+   "ART141",
    "ART501",
    "ART502",
    "ASL1",
+   "ASL2",
    "ASL3",
+   "ASL4",
    "ASL40",
    "ASTRON1",
    "ASTRON2",
+   "BIOLOGY10",
+   "BIOLOGY110",
    "BIOLOGY121",
    "BIOLOGY3",
    "BIOLOGY6",
+   "BIOLOGY7",
    "CHDEV1",
    "CHDEV11",
    "CHEM101",
+   "CHEM102",
    "CHEM211",
+   "CHEM212",
+   "CHEM221",
    "CHEM51",
    "CHEM60",
    "CHICANO2",
+   "CHICANO20",
+   "CHICANO37",
    "CHICANO4",
    "CHICANO47",
+   "CHICANO54",
+   "CHICANO57",
    "CHICANO7",
    "CHICANO8",
+   "CHICANO80",
+   "CINEMA104",
+   "CINEMA107",
+   "CINEMA113",
    "CINEMA3",
    "COMM100",
    "COMM121",
    "COMM122",
    "COMMC1000",
    "CS131",
+   "DANCEST801",
+   "DANCEST802",
+   "DANCEST805",
    "EARTH3",
    "ECON1",
    "ECON10",
    "ECON2",
+   "EDUC203",
    "ENGLC1000",
    "ENGLC1001",
    "ENGLISH102",
@@ -6479,9 +6938,30 @@
    "ENGLISH206",
    "ENGLISH207",
    "ENGLISH208",
+   "ENGLISH210",
+   "ENGLISH211",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH216",
    "ENGLISH218",
+   "ENGLISH219",
+   "ENGLISH234",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH245",
+   "ENGLISH250",
+   "ENGLISH252",
+   "ENGLISH270",
+   "ENGLISH271",
    "ENVSCI1",
+   "ENVSCI2",
    "FRENCH1",
+   "FRENCH10",
+   "FRENCH2",
+   "FRENCH3",
+   "FRENCH4",
+   "FRENCH5",
+   "FRENCH6",
    "GEOG1",
    "GEOG14",
    "GEOG15",
@@ -6493,27 +6973,45 @@
    "GEOG7",
    "GEOLOGY1",
    "GEOLOGY10",
+   "GEOLOGY15",
    "GEOLOGY2",
    "GEOLOGY6",
    "GEOLOGY7",
    "HISTORY1",
    "HISTORY11",
    "HISTORY12",
+   "HISTORY13",
+   "HISTORY19",
    "HISTORY2",
+   "HISTORY29",
    "HISTORY41",
+   "HISTORY42",
+   "HISTORY44",
    "HISTORY5",
+   "HISTORY52",
+   "HISTORY56",
+   "HISTORY6",
    "HISTORY86",
    "HISTORY87",
+   "HUMAN31",
    "HUMAN6",
    "ITALIAN1",
+   "ITALIAN10",
+   "ITALIAN2",
+   "ITALIAN3",
+   "ITALIAN4",
+   "ITALIAN5",
    "JAPAN1",
+   "JAPAN2",
    "JAPAN3",
+   "JAPAN4",
    "JAPAN9",
    "JOURNAL100",
    "JOURNAL109",
    "JOURNAL251",
    "MATH228B",
    "MATH238",
+   "MATH260",
    "MATH261",
    "MATH262",
    "MATH275",
@@ -6521,6 +7019,7 @@
    "METEOR4",
    "METEOR5",
    "MICRO1",
+   "MICRO20",
    "MULTIMD110",
    "MUSIC111",
    "MUSIC121",
@@ -6531,58 +7030,93 @@
    "PHILOS1",
    "PHILOS12",
    "PHILOS14",
+   "PHILOS15",
    "PHILOS19",
+   "PHILOS2",
    "PHILOS20",
+   "PHILOS28",
+   "PHILOS30",
+   "PHILOS37",
+   "PHILOS40",
+   "PHILOS41",
+   "PHILOS42",
+   "PHILOS46",
    "PHILOS5",
+   "PHOTO27A",
+   "PHOTO27B",
    "PHYSICS101",
    "PHYSICS102",
    "PHYSICS103",
+   "PHYSICS12",
    "PHYSICS6",
    "PHYSICS66",
    "PHYSICS67",
    "PHYSICS7",
    "PHYSIOL1",
    "PHYSSC4",
+   "PHYSSC6",
    "PLNTSC103",
    "PLNTSC711",
    "POLSC1000",
    "POLSCI19",
    "POLSCI2",
+   "POLSCI30",
    "POLSCI5",
    "POLSCI50",
    "POLSCI7",
    "PSYCC1000",
    "PSYCH13",
    "PSYCH14",
+   "PSYCH16",
    "PSYCH2",
+   "PSYCH32",
    "PSYCH41",
    "PSYCH52",
    "PSYCH66",
+   "PSYCH69",
    "PSYCH74",
    "SOC1",
    "SOC11",
    "SOC125",
    "SOC13",
+   "SOC15",
    "SOC2",
    "SOC21",
    "SOC28",
+   "SOC29",
    "SOC3",
    "SOC31",
+   "SOC35",
+   "SOC37",
    "SOC4",
    "SOC86",
+   "SOC87",
    "SPANISH1",
+   "SPANISH10",
+   "SPANISH11",
+   "SPANISH12",
+   "SPANISH15",
+   "SPANISH16",
    "SPANISH2",
+   "SPANISH25",
+   "SPANISH26",
+   "SPANISH27",
    "SPANISH3",
    "SPANISH35",
    "SPANISH36",
+   "SPANISH37",
    "SPANISH4",
+   "SPANISH5",
+   "SPANISH6",
+   "SPANISH65",
    "SPANISH9",
    "STAT101",
    "STATC1000",
    "THEATER100",
    "THEATER110",
    "THEATER114",
-   "THEATER125"
+   "THEATER125",
+   "THEATER401"
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=31",
@@ -6596,7 +7130,8 @@
     33
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "62fefa4fae11174d"
   },
   "listed": 272,
   "text_chars": 16000
@@ -6626,18 +7161,20 @@
    "MUSIC781"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=141",
-   "title": "Applied Music Certificate P045038D N/A",
-   "h1": "Applied Music Certificate P045038D N/A",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=140",
+   "title": "(STATE CODE 45038)",
+   "h1": "(STATE CODE 45038)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    140,
     141,
     142,
     143
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "03aa0b3973d16024"
   },
   "listed": 15,
   "text_chars": 16000
@@ -6655,8 +7192,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
-   "title": "167",
-   "h1": "167",
+   "title": "(STATE CODE 45475)",
+   "h1": "(STATE CODE 45475)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6664,10 +7201,11 @@
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e2948741e7620651"
   },
   "listed": 2,
-  "text_chars": 8731
+  "text_chars": 8586
  },
  {
   "control_number": "45479",
@@ -6687,32 +7225,37 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.692,
+  "coverage": 1.0,
   "codes_found": [
+   "ACCTG1",
+   "BUS1",
    "DANCEST801",
    "DANCEST806",
+   "DANCEST820",
    "DANCEST822",
    "DANCETQ121",
    "DANCETQ231",
    "DNCESPC171",
    "DNCESPC331",
    "DNCESPC441",
+   "MGMT13",
    "THEATER411"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=146",
-   "title": "146",
-   "h1": "146",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=145",
+   "title": "(STATE CODE 45502)",
+   "h1": "(STATE CODE 45502)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    145,
     146,
     147,
-    148,
-    149
+    148
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5f99652c0aa89f2c"
   },
   "listed": 13,
   "text_chars": 16000
@@ -6754,10 +7297,11 @@
     143
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "53488df888f40620"
   },
   "listed": 17,
-  "text_chars": 11338
+  "text_chars": 11339
  },
  {
   "control_number": "45551",
@@ -6777,8 +7321,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=105",
-   "title": "105",
-   "h1": "105",
+   "title": "(STATE CODE 45551)",
+   "h1": "(STATE CODE 45551)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6788,7 +7332,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3968e811a29de178"
   },
   "listed": 7,
   "text_chars": 16000
@@ -6820,10 +7365,11 @@
     129
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b8a97ff11e2e8500"
   },
   "listed": 7,
-  "text_chars": 10178
+  "text_chars": 10179
  },
  {
   "control_number": "45605",
@@ -6838,18 +7384,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
-   "title": "156",
-   "h1": "156",
+   "title": "(STATE CODE 45605)",
+   "h1": "(STATE CODE 45605)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     156
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b84d510908e17c2e"
   },
   "listed": 2,
-  "text_chars": 4566
+  "text_chars": 1580
  },
  {
   "control_number": "45608",
@@ -6864,18 +7411,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=168",
-   "title": "168",
-   "h1": "168",
+   "title": "(STATE CODE 45608)",
+   "h1": "(STATE CODE 45608)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "df7625143c8ae33e"
   },
   "listed": 2,
-  "text_chars": 3608
+  "text_chars": 3463
  },
  {
   "control_number": "45703",
@@ -6890,18 +7438,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=161",
-   "title": "161",
-   "h1": "161",
+   "title": "(STATE CODE 45703)",
+   "h1": "(STATE CODE 45703)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "212c6739edd4b28b"
   },
   "listed": 2,
-  "text_chars": 4933
+  "text_chars": 4785
  },
  {
   "control_number": "45705",
@@ -6917,18 +7466,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=167",
-   "title": "167",
-   "h1": "167",
+   "title": "(STATE CODE 45705)",
+   "h1": "(STATE CODE 45705)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     167
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7b7047000d7ee577"
   },
   "listed": 3,
-  "text_chars": 5121
+  "text_chars": 2944
  },
  {
   "control_number": "45726",
@@ -6945,18 +7495,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=120",
-   "title": "120",
-   "h1": "120",
+   "title": "(STATE CODE 45726)",
+   "h1": "(STATE CODE 45726)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     120
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0c08dd98c8149b03"
   },
   "listed": 4,
-  "text_chars": 4416
+  "text_chars": 3402
  },
  {
   "control_number": "46078",
@@ -6989,7 +7540,8 @@
     51
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8644033950674912"
   },
   "listed": 11,
   "text_chars": 11832
@@ -7013,8 +7565,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=62",
-   "title": "62",
-   "h1": "62",
+   "title": "(STATE CODE 46088)",
+   "h1": "(STATE CODE 46088)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7022,10 +7574,11 @@
     63
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "90f1f19203ab259b"
   },
   "listed": 8,
-  "text_chars": 11663
+  "text_chars": 8887
  },
  {
   "control_number": "46089",
@@ -7055,7 +7608,8 @@
     65
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9edb16e934e21fc0"
   },
   "listed": 9,
   "text_chars": 6050
@@ -7073,18 +7627,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=157",
-   "title": "157",
-   "h1": "157",
+   "title": "(STATE CODE 46100)",
+   "h1": "(STATE CODE 46100)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "fc9a008724f1411f"
   },
   "listed": 2,
-  "text_chars": 4935
+  "text_chars": 3743
  },
  {
   "control_number": "46329",
@@ -7104,20 +7659,22 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
-   "title": "95",
-   "h1": "95",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=94",
+   "title": "(STATE CODE 46329)",
+   "h1": "(STATE CODE 46329)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    94,
     95,
     96
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "bbaf0ea22d426663"
   },
   "listed": 8,
-  "text_chars": 12212
+  "text_chars": 15999
  },
  {
   "control_number": "46331",
@@ -7134,19 +7691,21 @@
    "PLNTSC103"
   ],
   "source": {
-   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=96",
-   "title": "96",
-   "h1": "96",
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=95",
+   "title": "95",
+   "h1": "95",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    95,
     96
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d15f8459b15392cb"
   },
   "listed": 5,
-  "text_chars": 6048
+  "text_chars": 12213
  },
  {
   "control_number": "46335",
@@ -7185,7 +7744,8 @@
     53
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0690a8d53584d45a"
   },
   "listed": 20,
   "text_chars": 12631
@@ -7217,8 +7777,8 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=67",
-   "title": "67",
-   "h1": "67",
+   "title": "(STATE CODE 46342)",
+   "h1": "(STATE CODE 46342)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7228,7 +7788,8 @@
     70
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "317dafadd3ce7df5"
   },
   "listed": 16,
   "text_chars": 16000
@@ -7246,18 +7807,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=162",
-   "title": "The College Readiness Certificate of Completion is a comprehensive",
-   "h1": "The College Readiness Certificate of Completion is a comprehensive",
+   "title": "(STATE CODE 46407)",
+   "h1": "(STATE CODE 46407)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "95e33b52ef34e739"
   },
   "listed": 2,
-  "text_chars": 5044
+  "text_chars": 5083
  },
  {
   "control_number": "46408",
@@ -7273,18 +7835,19 @@
   ],
   "source": {
    "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=156",
-   "title": "156",
-   "h1": "156",
+   "title": "(STATE CODE 46408)",
+   "h1": "(STATE CODE 46408)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     156
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "69a4a42ee178932a"
   },
   "listed": 3,
-  "text_chars": 4566
+  "text_chars": 4427
  },
  {
   "control_number": "46459",
@@ -7333,7 +7896,8 @@
     44
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "74f07e3c2ac0ba97"
   },
   "listed": 30,
   "text_chars": 16000
@@ -7363,7 +7927,8 @@
     154
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "162dc25aac10901e"
   },
   "listed": 6,
   "text_chars": 6117
@@ -7399,7 +7964,8 @@
     48
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2866a72d03f0bee7"
   },
   "listed": 12,
   "text_chars": 5927

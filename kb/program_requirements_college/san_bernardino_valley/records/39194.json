@@ -129,7 +129,8 @@
    ],
    "careers": [
     "water supply, delivery, and treatment operations"
-   ]
+   ],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -203,5 +204,14 @@
    "Program Learning Outcomes are printed on the program's outcomes tab for this certificate."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t1"
+  }
+ ],
+ "read_run": "38748858322"
 }

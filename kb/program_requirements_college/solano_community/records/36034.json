@@ -61,22 +61,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     39.0,
     39.0
    ],
    "stated": [
-    60.0,
-    60.0
+    39.0,
+    39.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
@@ -84,11 +81,16 @@
      39.0
     ],
     "stated": [
-     39.0,
-     39.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     21.0,
+     21.0
+    ]
    }
   },
   "repeated": {
@@ -113,7 +115,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -282,6 +284,6 @@
    "ASTR 049 appears only in course descriptions, not in the program requirements; not placed. Course descriptions on page 146 contain no course-level outcomes."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 43355021555,
+ "read_run": 39037377728
 }

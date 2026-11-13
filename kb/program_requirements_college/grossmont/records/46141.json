@@ -141,7 +141,8 @@
    "outcomes": [
     "Students will apply the fundamental principles of physics to real world or idealized situations."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -242,5 +243,14 @@
    "The 'Minimum of 18 semester units in the major' line is a generic ADT requirement, not this award's total."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }

@@ -146,7 +146,8 @@
    ],
    "careers": [
     "STEM"
-   ]
+   ],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -248,5 +249,14 @@
    "Career field 'STEM' taken from 'The study of mathematics is a gateway to a career in STEM.'"
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }
