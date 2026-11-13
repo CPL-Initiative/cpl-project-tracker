@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 260,
  "with_closed_list": 230,
- "started": "2026-11-13T03:57:25Z",
+ "started": "2026-11-13T04:13:45Z",
  "pdf": {
   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
   "access": "ok",
@@ -14,14 +14,14 @@
   "pages_total": 374,
   "error": null,
   "chars_total": 1981072,
-  "pypdf_accepted": 214,
+  "pypdf_accepted": 213,
   "sample": [
    "p113: 'Credit Programs / 113\\nsccollege.edu\\nCredit Programs\\nCredit Courses\\nCollege Catalog 2026/27\\nSpecial Education Paraprofessional, CA\\nCertificate of Achievement\\nUnit Range for Completion : 14.0 - 15.0\\nThe Certificate of Achievement in Special E'",
    "p225: 'Credit Courses / 225 \\nsccollege.edu\\nCredit Courses\\nCollege Catalog 2026/27\\nPHIL118\\nHistory of Philosophy\\nUnits: 3\\nAn introduction to philosophy from a historical perspective: getting \\nacquainted with the thoughts of the worlds great philoso'"
   ],
   "extractor": "pypdf",
   "numbers_after": {
-   "after": 199,
+   "after": 200,
    "before": 0,
    "after_mode": true,
    "gated": true,
@@ -217,21 +217,6 @@
     "judged": "Water Conservation, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 This program prepares students for careers in Water Conservation, an"
    },
    {
-    "control_number": "11908",
-    "pages": [
-     141,
-     142,
-     143
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 141] Credit Programs / 141 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 WATR151 Wastewater Treatment (Total Units 3.0 - 3.0) WATR252 Advanced Wastewater Treatment (Total Units 3.0 - 3.0)",
-    "after_unbound": "number_not_printed"
-   },
-   {
     "control_number": "11910",
     "pages": [
      132
@@ -407,19 +392,6 @@
     "bound": "number_after"
    },
    {
-    "control_number": "11988",
-    "pages": [
-     316
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.625,
-    "opens": "[page 316] 316 / Apprenticeship Programs sccollege.edu Apprenticeship Programs College Catalog 2026/27 Apprenticeship Carpentry, Drywall/ Lather (Interior Systems), AS A.S. Degree Major The Associate of Science degree i",
-    "after_unbound": "number_not_printed"
-   },
-   {
     "control_number": "13230",
     "pages": [
      329
@@ -552,34 +524,6 @@
     "coverage": 0.98,
     "opens": "[page 106] Liberal Arts: Social and Behavioral Sciences, AA A.A. Degree Major Unit Range for Completion : 18.0 - 18.0 The integrated curriculum of the Liberal Arts degree provides a broad exposure to the arts, humaniti",
     "bound": "number_after"
-   },
-   {
-    "control_number": "18790",
-    "pages": [
-     188,
-     189
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 1.0,
-    "opens": "[page 188] 188 / Credit Courses sccollege.edu Credit Courses College Catalog 2026/27 ELCT070 Introduction to Electrical Systems Units: 3.5 This course provides an overview of career pathways within the electrical and e",
-    "after_unbound": "block_names_no_listed_course"
-   },
-   {
-    "control_number": "18791",
-    "pages": [
-     188,
-     189
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 1.0,
-    "opens": "[page 188] 188 / Credit Courses sccollege.edu Credit Courses College Catalog 2026/27 ELCT070 Introduction to Electrical Systems Units: 3.5 This course provides an overview of career pathways within the electrical and e",
-    "after_unbound": "block_names_no_listed_course"
    },
    {
     "control_number": "19587",
@@ -2204,20 +2148,6 @@
     "bound": "number_after"
    },
    {
-    "control_number": "38281",
-    "pages": [
-     259,
-     260
-    ],
-    "named": true,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 259] The Certificate of Completion in Food Handler prepares students for employment in commercial and institutional food kitchens and hospitality industry, by providing knowledge and skills in hygiene, sanitatio",
-    "after_unbound": "number_not_printed"
-   },
-   {
     "control_number": "38398",
     "pages": [
      267
@@ -2852,19 +2782,6 @@
     "bound": "number_after"
    },
    {
-    "control_number": "45985",
-    "pages": [
-     311
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 1.0,
-    "opens": "[page 311] Non-Credit Programs / 311 sccollege.edu Non-Credit Courses College Catalog 2026/27 WKPR500 Workforce Readiness This course prepares students with workforce readiness skills for success in the 21st-century wo",
-    "after_unbound": "number_not_printed"
-   },
-   {
     "control_number": "46019",
     "pages": [
      257
@@ -2904,21 +2821,17 @@
     "bound": "number_after"
    }
   ],
-  "unproven": [
-   "18790",
-   "18791",
-   "45985"
-  ]
+  "unproven": []
  },
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 78.5,
- "found": 211,
+ "seconds": 37.7,
+ "found": 208,
  "by_method": {
   "no_closed_list": 30,
-  "not_found": 19,
-  "pdf_pages": 211
+  "not_found": 22,
+  "pdf_pages": 208
  },
  "shared_pages": {
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89": [
@@ -2960,7 +2873,6 @@
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141": [
    "11907",
-   "11908",
    "19625",
    "21669"
   ],
@@ -3004,14 +2916,13 @@
    "21662",
    "35234"
   ],
-  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316": [
-   "11988",
-   "13231",
-   "21664"
-  ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=329": [
    "13230",
    "21667"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316": [
+   "13231",
+   "21664"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317": [
    "13232",
@@ -3102,7 +3013,6 @@
    "24234",
    "30646",
    "36665",
-   "38281",
    "45606"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257": [
@@ -3221,6 +3131,15 @@
  },
  "not_found": [
   {
+   "control_number": "11908",
+   "title": "Wastewater/Environmental Sanitation, AS",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
+  },
+  {
    "control_number": "11909",
    "title": "Construction Management",
    "award": "A.S. Degree",
@@ -3234,19 +3153,21 @@
    }
   },
   {
+   "control_number": "11988",
+   "title": "Apprenticeship: Carpentry, Drywall/Lather",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
+  },
+  {
    "control_number": "18117",
    "title": "CSU General Education Breadth",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=102",
-    "pages": [
-     102,
-     103,
-     104,
-     105
-    ],
-    "judged": "CHEM100 Introductory Chemistry (Total Units 4.0 - 4.0) CHEM200A General Chemistry A (Total Units 5.0 - 5.0) CHEM200AH Honors General Chemistry A (Total Units 5.",
-    "why": "the catalog prints each program's control number after it, and this window is closed by 45619's"
+    "coverage": 0.0
    }
   },
   {
@@ -3255,14 +3176,7 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=102",
-    "pages": [
-     102,
-     103,
-     104,
-     105
-    ],
-    "judged": "CHEM100 Introductory Chemistry (Total Units 4.0 - 4.0) CHEM200A General Chemistry A (Total Units 5.0 - 5.0) CHEM200AH Honors General Chemistry A (Total Units 5.",
-    "why": "the catalog prints each program's control number after it, and this window is closed by 45619's"
+    "coverage": 0.0
    }
   },
   {
@@ -3270,12 +3184,8 @@
    "title": "General Electrician, CA",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "pages": [
-     188,
-     189
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
+    "coverage": 0.0
    }
   },
   {
@@ -3283,12 +3193,8 @@
    "title": "General Electrician, AS",
    "award": "A.S. Degree",
    "near_miss": {
-    "pages": [
-     188,
-     189
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
+    "coverage": 0.0
    }
   },
   {
@@ -3308,7 +3214,10 @@
    "control_number": "24467",
    "title": "Secondary Education/GED Preparation",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263",
+    "coverage": 0.0
+   }
   },
   {
    "control_number": "36210",
@@ -3328,13 +3237,8 @@
    "title": "Computer Retail Sales and Support",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=92",
-    "pages": [
-     92,
-     93
-    ],
-    "judged": "Major requirements: (Total Units 23.0 - 23.0) The following number of Units ACCT101 Financial Accounting (Total Units 4.0 - 4.0) ACCT102 Managerial Accounting (",
-    "why": "the catalog prints each program's control number after it, and this window is closed by 11857's"
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
    }
   },
   {
@@ -3353,6 +3257,15 @@
    "near_miss": {
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
     "coverage": 0.429
+   }
+  },
+  {
+   "control_number": "38281",
+   "title": "Food Handler",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
    }
   },
   {
@@ -3396,12 +3309,8 @@
    "title": "California-specific Certified Community Association Management (CCAM)",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
-    "pages": [
-     269
-    ],
-    "judged": "Medical Billing, CC Certificate of Completion The Certificate of Completion in Medical Billing is designed to give students the necessary knowledge and skills t",
-    "why": "the catalog prints each program's control number after it, and this window is closed by 24052's"
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
    }
   },
   {
@@ -3409,11 +3318,8 @@
    "title": "Healthcare Career Preparation, COM",
    "award": "Noncredit program",
    "near_miss": {
-    "pages": [
-     311
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
    }
   },
   {
@@ -3433,24 +3339,30 @@
    "control_number": "46507",
    "title": "Construction Management",
    "award": "A.S. Degree",
-   "near_miss": null
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
   },
   {
    "control_number": "46508",
    "title": "Construction Management",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": null
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
   }
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 14,
+  "0.5-0.8": 13,
   "0.8-1.0": 49,
-  "1.0": 148
+  "1.0": 146
  },
  "would_extract": {
   "against": "kb/program_requirements_college/santiago_canyon",
-  "kept": 3,
+  "kept": 0,
   "kept_moved": 0,
   "programs": 67,
   "list": [
@@ -5260,12 +5172,26 @@
   "held_opens_on_list": [],
   "refused_passing": [
    {
+    "control_number": "11988",
+    "title": "Apprenticeship: Carpentry, Drywall/Lather",
+    "award": "A.S. Degree",
+    "closed_by": null,
+    "why": "number_not_printed"
+   },
+   {
     "control_number": "36210",
     "title": "3D Printing, CC",
     "award": "Noncredit program",
     "closed_by": "38399",
     "why": "block_names_another",
     "judged": "OFFICE TECHNOLOGY/ COMPUTER APPLICATIONS 3D Printing, CC Certificate of Completion The Certificate of Completion in 3D Printing is designed to teach students ho"
+   },
+   {
+    "control_number": "38281",
+    "title": "Food Handler",
+    "award": "Noncredit program",
+    "closed_by": null,
+    "why": "number_not_printed"
    },
    {
     "control_number": "42027",
@@ -5276,12 +5202,19 @@
     "judged": "High School Equivalency Test Prepa- ration in All Subject Areas, COM Certificate of Competency The Certificate of Competency in High School Equivalency Test (Hi"
    },
    {
+    "control_number": "43901",
+    "title": "Public Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "closed_by": null,
+    "why": "low_coverage",
+    "judged": "Public Administration, CA Certificate of Achievement Unit Range for Completion : 18.0 - 18.0 The Certificate of Achievement in Public Administration provides st"
+   },
+   {
     "control_number": "45794",
     "title": "California-specific Certified Community Association Management (CCAM)",
     "award": "Noncredit program",
-    "closed_by": "24052",
-    "why": "number_not_printed",
-    "judged": "Medical Billing, CC Certificate of Completion The Certificate of Completion in Medical Billing is designed to give students the necessary knowledge and skills t"
+    "closed_by": null,
+    "why": "number_not_printed"
    },
    {
     "control_number": "46367",
@@ -5291,7 +5224,8 @@
     "why": "block_names_another",
     "judged": "VOCATIONAL REAL ESTATE California-specific Certified Community Association Management (CCAM), CC Certificate of Completion The Certified (CA) Community Associat"
    }
-  ]
+  ],
+  "forced_unbound": []
  },
- "run": "43362151384"
+ "run": "43363975047"
 }
