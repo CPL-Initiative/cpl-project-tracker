@@ -2,14 +2,14 @@
   "schema": 1,
   "project": "program-requirements",
   "written_at": "2026-11-13T02:09:44Z",
-  "session": 644,
-  "moniker": "SkyWren",
+  "session": 645,
+  "moniker": "SkyFinch",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_645_handoff.md",
+  "handoff": "docs/session_646_handoff.md",
   "next_step": {
-    "title": "Check every catalog PDF for records filed under the wrong program",
-    "text": "Santiago Canyon's catalog prints each program's control number after the program, so two transfer degrees were filed under the local degree before them. Measure the same at every PDF college, fix the reader, and reread Santiago Canyon; its display is held."
+    "title": "Finish the PDF reader and reread Santiago Canyon",
+    "text": "Build decision 14 into #3201, run its delta review and Santiago Canyon's free capture, merge on green, then the paid reread forcing the 29 numbers; COBIx spot-checks Diablo Valley, San Jose City and the rescore before each merges."
   },
   "calls": [
     {
@@ -267,6 +267,14 @@
       },
       "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
       "link_text": "Open Sheet 187"
+    },
+    {
+      "title": "Apply the carry-basis migration whose push the permission check refused?",
+      "text": "The scorer's change in #3193 has a migration that replaces one 23-line database function, the one that decides whether a person's confirmation carries to a reread record. It writes no rows. The push that applies it was refused by the permission check, and the session did not go around it. Nothing tonight depends on it: no college it touches holds a confirmation.",
+      "if_no_reply": "The function stays as it is; a confirmation on a rescored record carries by the old rule.",
+      "link": "https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ",
+      "link_text": "Open Sheet 188",
+      "part": "reading"
     }
   ],
   "notes": {
@@ -376,6 +384,22 @@
     {
       "at": "2026-11-11T12:30:00Z",
       "text": "Redwoods: three steps for its local degrees, on the college's own 2026-2027 general education sheet (21 units, a 60-unit minimum) and its pages' words; 59 of 73 records pass on the branch, up from 53. The reread is dispatched."
+    },
+    {
+      "at": "2026-11-13T03:25:00Z",
+      "text": "The first live run of the display apply went out on North Orange Continuing Education alone: 78 of 78 rows written."
+    },
+    {
+      "at": "2026-11-13T03:33:00Z",
+      "text": "The whole display build 38a0fd8ed41f is applied: 17,595 rows written, 3 missing at Monterey Peninsula, no errors; 115 colleges now show one build."
+    },
+    {
+      "at": "2026-11-13T03:44:00Z",
+      "text": "The scorer's rescore ran at Coalinga, Grossmont, Pierce, Solano, San Bernardino Valley and East Los Angeles: 126 rows replaced, 62 programs now pass, none stopped passing."
+    },
+    {
+      "at": "2026-11-13T03:50:00Z",
+      "text": "Diablo Valley (88 records) and San Jose City (77) are loaded, unchecked; Glendale's registry row and procedure now read its 2026-27 Coursedog catalog."
     }
   ],
   "headline": [
