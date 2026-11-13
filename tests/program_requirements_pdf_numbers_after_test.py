@@ -180,6 +180,15 @@ s_aa = C.pdf_best("u", soc_pages, SOC[0], soc_c, "pypdf", numbers_after=ctx_of(s
 check(s_aa and s_aa.get("bound") == "number_after" and heads_in(s_aa["text"]) == ["Sociology, AA"],
       "and the AA its own block")
 
+# A block that names its program and none of its listed courses (the list printed in a table elsewhere):
+# the heading picker still runs, and the after path never answers None ahead of it.
+TABLE = ["%sArt, AA\nA.A. Degree\nThe courses are listed in the table that follows.\nControl Number: 11700\n" % HEADER,
+         "%sArt, AA course table\nART 100 Drawing 3\nART 110 Color 3\n" % HEADER.replace("92", "93"), HEADER]
+tb = best(TABLE, PROGS[0], ctx_of(TABLE))
+check(tb is not None and tb.get("after_unbound") == "block_names_no_listed_course" and tb["coverage"] == 1.0
+      and tb["text"] == best(TABLE, PROGS[0])["text"],
+      "a named block with no listed course goes to the heading picker: %r" % ((tb and tb.get("after_unbound")),))
+
 # ── 3. Refuse narrowly ──────────────────────────────────────────────────────────────────────────
 # A mixed catalog: after-style pages, then a page that prints the number AT the heading (finding 3).
 ACC = {"control_number": "11858", "title": "Accounting", "award": AS}
