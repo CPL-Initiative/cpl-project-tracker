@@ -1,5 +1,9 @@
 // commons_data.js — the Commons data dashboard (#3215): slice 1, the statewide tiles and the college list; slice 2, a
-// college's row that opens in place and the same college in a side panel.
+// college's row that opens in place and the same college in a side panel; slice 3, the overall bar and the live counts
+// (the builder's "live" and "overall" keys, basis live, each figure with its date in words and TBA until the first live
+// read), the data dictionary (#commons/data/dictionary, the "dictionary" key), the API checklist (#commons/data/apis,
+// the "apis" key; an unverified status never counts as connected), the catalog platform filter, and one "Coming next"
+// section naming what the mock shows beyond these, each with what it waits on.
 //
 // Sam, 2026-11-13, relayed by COBIx on #3215: a Commons dashboard for each college's datasets we pull, how complete
 // and how trustworthy each one is, what is in the way and who can help, in the Funding Follow-up Dashboard's pattern
@@ -7,9 +11,8 @@
 // them; a side panel). Slice 1 drew the figures and the list. Slice 2 opens a college's row in place (each dataset the
 // builder holds for it, with its bar, stamp and gaps) and draws the same college in a side panel (datasets grouped as
 // the mock groups them, dates, gaps, asks, cost, sources; TBA with its reason where no committed file supplies one).
-// Later slices: the overall bar and Teachout and Approved (a live export adds them to the file), AI workers,
-// integrations and the API checklist, the data dictionary, the College view and the JST funnel. COLUMNS, FILTERS,
-// datasets() and panelBody() below are where they join.
+// Still to come (the page's own "Coming next" section): AI workers, integrations per college, the College view
+// (internal only), the JST funnel, and the per-college reads of PPM, descriptions, MIS and COE.
 //
 // What it reads, one committed file the site already serves (it WRITES NOTHING):
 //   kb/status/commons_data.json   built by kb/_build_commons_data_status.py from the identity crosswalk, the harvest's
@@ -17,9 +20,10 @@
 //                                 queue, the source scouts and any committed spot-check receipt.
 // A figure the file marks TBA reads TBA, with its reason; nothing here is estimated or carried from the mock.
 //
-// Loaded by commons.js when the address names it (#commons/data, #commons/data/<filter>, and a college's panel at
-// #commons/data[/<filter>]/college/<slug>). The filter and the panel's college last the visit and live only in the
-// address; the sort, the search, the open row and the panel's width last the visit. Tokens only (the tab's --cmn roles), words
+// Loaded by commons.js when the address names it (#commons/data, #commons/data/<filter>, the platform filter at
+// #commons/data[/<filter>]/platform/<key>, a college's panel at #commons/data[/<filter>][/platform/<key>]/college/<slug>,
+// and the two views at #commons/data/dictionary and #commons/data/apis). The view, the filter, the platform and the
+// panel's college last the visit and live only in the address; the sort, the search, the open row and the panel's width last the visit. Tokens only (the tab's --cmn roles), words
 // for every control, no glyphs.
 (function () {
   "use strict";
@@ -97,22 +101,70 @@
     noncredit: { word: "Continuing education", test: function (c) { return c.kind === "continuing_education"; } },
     strong: { word: "Confidence strong", test: function (c) { return level(c) === "strong"; } },
     partial: { word: "Confidence partial", test: function (c) { return level(c) === "partial"; } },
-    limited: { word: "Confidence limited", test: function (c) { return level(c) === "limited"; } }
+    limited: { word: "Confidence limited", test: function (c) { return level(c) === "limited"; } },
+    overall: { word: "Overall completeness, lowest first", test: function (c, M) { return !!overallOf(M || VIEW.M, c); } }
   };
   /* The level the builder wrote from the rule (rule.confidence); the page never derives one of its own. */
   function level(c) { return c && c.confidence ? c.confidence.level : null; }
   var LEVEL_RANK = { strong: 3, partial: 2, limited: 1 };
-  var FILTER_SORT = { gaps: { k: "gap", d: -1 }, unread: { k: "name", d: 1 } };
+  var FILTER_SORT = { gaps: { k: "gap", d: -1 }, unread: { k: "name", d: 1 }, overall: { k: "overall", d: 1 } };
 
   function model(data) {
     data = data || {};
     var colleges = Array.isArray(data.colleges) ? data.colleges : [];
+    var obj = function (v) { return v && typeof v === "object" && !Array.isArray(v) ? v : {}; };
     return { colleges: colleges, statewide: data.statewide || {}, rule: data.rule || {}, tba: data.tba || {},
-      sources: data.sources || {}, written: data.written_at || "", fields: data.fields || {} };
+      sources: data.sources || {}, written: data.written_at || "", fields: data.fields || {},
+      live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis) };
   }
   function listFor(M, filter) {
     var f = FILTERS[filter] || FILTERS.all;
-    return M.colleges.filter(function (c) { return f.test(c); });
+    return M.colleges.filter(function (c) { return f.test(c, M); });
+  }
+
+  /* ── slice 3: the live read (the builder's "live" and "overall" keys, basis live) ──
+     Its figures always carry their basis and date in words, apart from the committed files' figures, and read TBA
+     until the first live read. A read the builder kept after a later attempt failed says so, with the earlier date. */
+  function liveRead(M) {
+    var L = M.live || {}, O = M.overall || {};
+    return L.basis === "live" && L.state === "read" && !!L.read_at && O.state === "read";
+  }
+  function attemptFailed(M) { var a = (M.live || {}).last_attempt; return a && a.ok === false ? a : null; }
+  /* "live read, Nov 13, 2026", the basis and date every live figure carries. */
+  function liveWords(M) { return "live read, " + (day((M.live || {}).read_at) || "on a date the file does not give"); }
+  /* What a reader needs beside a live figure: the earlier read's date when the builder kept it. */
+  function keptWords(M) {
+    var a = attemptFailed(M);
+    if (!a || !liveRead(M)) return "";
+    return "The latest live read" + (a.at ? ", " + day(a.at) + "," : "") + " did not complete (" + words(a.error_class || "other") + "); these figures are from the earlier read of " + day(M.live.read_at) + ".";
+  }
+  /* Why a live figure reads TBA. */
+  function liveReason(M) {
+    var a = attemptFailed(M);
+    return "The live read has not run yet." + (a ? " Its last attempt" + (a.at ? ", " + day(a.at) + "," : "") + " did not complete (" + words(a.error_class || "other") + ")." : "");
+  }
+  function overallOf(M, c) {
+    if (!liveRead(M) || !c) return null;
+    var o = ((M.overall || {}).colleges || {})[String(c.id)];
+    return o && typeof o.value === "number" ? o : null;
+  }
+  function liveOf(M, c) {
+    if (!liveRead(M) || !c) return null;
+    return ((M.live || {}).colleges || {})[String(c.id)] || null;
+  }
+  var MISSING = "The live read holds no counts for this college.";
+  var NO_COUNT = "The live read holds this college but no count for this figure.";
+  function liveSrc(M, k) { return ((M.live || {}).tables || {})[k] || "the live counts"; }
+  function pc(v) { return v == null ? "" : Math.round(v * 100) + "%"; }
+  /* A registry boolean in words: the registry records a link only when one is seen, so the word is "held". */
+  function heldWord(v) { return v ? "held" : "not held"; }
+  function pathwayWord(g) { return g.sequence_source ? "held" : g.sequence_checked ? "none found when looked for" : "not looked for yet"; }
+
+  /* ── slice 3: the catalog platform each harvested college's capture read (shareable), a filter of words ── */
+  function platformsOf(M, filter) {
+    var n = {};
+    (filter ? listFor(M, filter) : M.colleges).forEach(function (c) { if (c.platform) n[c.platform] = (n[c.platform] || 0) + 1; });
+    return Object.keys(n).sort(function (a, b) { return n[b] - n[a] || platformWord(a).localeCompare(platformWord(b)); }).map(function (k) { return [k, n[k]]; });
   }
 
   /* The figures across the top. A figure that counts colleges is the button that opens them; a figure summed over
@@ -133,15 +185,37 @@
       M.tba.confidence ? null : { f: "limited", v: fmt(n("limited")), l: "Confidence limited", d: "Machine checks only, or fewer than 5 records checked at the college" },
       { v: p == null ? "TBA" : Math.round(p * 100) + "%", l: "Program requirements passing", d: p == null ? "" : fmt(S.passing) + " of " + fmt(S.programs) + " listed programs pass the machine checks (committed files)" },
       { v: cp == null ? "TBA" : "$" + cp.toFixed(3), l: "Read cost per passing program", d: cp == null ? "" : "$" + Number(S.cost_usd).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " over " + fmt(S.passed_at_read) + " passing at read time, " + fmt(S.cost_receipts) + " receipts" },
-      { v: "TBA", l: "Overall completeness", d: M.tba.overall || "" , tba: true },
-      { v: "TBA", l: "APIs connected", d: M.tba.apis || "", tba: true },
-      { v: "TBA", l: "JST funnel", d: M.tba.jst || "", tba: true }
+      overallTile(M),
+      apiTile(M)
     ];
+  }
+  /* The statewide overall figure: the mean of the colleges' overall bars, basis live; it opens those colleges,
+     lowest first. Until the first live read it reads TBA and says why. */
+  function overallTile(M) {
+    var st = (M.overall || {}).statewide || {};
+    if (!liveRead(M) || st.mean == null) return { v: "TBA", l: "Overall completeness", d: liveReason(M), tba: true };
+    return { f: "overall", v: pc(st.mean), l: "Overall completeness", basis: liveWords(M),
+      d: "The mean of " + fmt(st.colleges) + " colleges' overall bars, " + liveWords(M) + ". " + (keptWords(M) ? keptWords(M) + " " : "") + "Opens them, lowest first." };
+  }
+  /* The API checklist's figure: connected, of the APIs a connection is needed for. A status the builder reads
+     unverified never counts as connected. It opens the checklist. */
+  function apiCount(M) {
+    var rows = Array.isArray((M.apis || {}).rows) ? M.apis.rows : [];
+    var need = rows.filter(function (r) { return r.needed === "yes"; });
+    return { rows: rows, need: need.length, connected: need.filter(function (r) { return r.status === "connected"; }).length,
+      unverified: rows.filter(function (r) { return r.status === "unverified"; }).length };
+  }
+  function apiTile(M) {
+    var a = apiCount(M);
+    if (!a.rows.length) return { v: "TBA", l: "APIs connected", d: M.tba.apis || "The API checklist is not in the file yet.", tba: true };
+    return { view: "apis", v: fmt(a.connected) + " of " + fmt(a.need), l: "APIs connected",
+      d: "Connected, of the APIs a connection is needed for" + (a.unverified ? "; " + fmt(a.unverified) + " read unverified, since the repo holds no evidence for the status claimed" : "") + ". Opens the checklist." };
   }
 
   /* ── the list's columns, each with its sort key ── */
   var COLUMNS = [
     { k: "name", label: "College", d0: 1, val: function (c) { return c.name; } },
+    { k: "overall", label: "Overall", d0: 1, val: function (c) { var o = overallOf(VIEW.M, c); return o ? o.value : -1; } },
     { k: "pr", label: "Program requirements", d0: 1, val: function (c) { return c.harvested ? pct(c.passing, c.programs) || 0 : -1; } },
     { k: "gap", label: "Still to pass", d0: -1, val: function (c) { return c.harvested ? c.gap : -1; } },
     { k: "read", label: "Last read", d0: -1, val: function (c) { return c.read_at ? new Date(c.read_at).getTime() : 0; } },
@@ -151,18 +225,29 @@
   var SORT_WORDS = { 1: { name: "A to Z", other: "low first" }, "-1": { name: "Z to A", other: "high first" } };
 
   var PW = { min: 300, max: 900, start: 480, step: 20 };   // the panel's width in px (Sam, 1:52 AM PT: 300 to 900; double-click resets)
-  var S = { filter: "all", sort: { k: "name", d: 1 }, q: "", open: null, panel: null, pw: PW.start };
+  var S = { view: "", filter: "all", platform: "", sort: { k: "name", d: 1 }, q: "", open: null, panel: null, pw: PW.start };
+  /* The two views beside the college list (slice 3), each at its own address. */
+  var VIEWS = { dictionary: "The data dictionary", apis: "The API checklist" };
+  function listRoute(filter, platform) {
+    return (filter && filter !== "all" ? "/" + filter : "") + (platform ? "/platform/" + platform : "");
+  }
   function address() {
-    var a = S.filter && S.filter !== "all" ? "commons/data/" + S.filter : "commons/data";
+    if (S.view) return "commons/data/" + S.view;
+    var a = "commons/data" + listRoute(S.filter, S.platform);
     var c = VIEW.M ? byId(VIEW.M, S.panel) : null;
     return c ? a + "/college/" + slugOf(c) : a;
   }
-  /* What the address after #commons/data names: a filter, a college, or a filter then a college. */
+  /* What the address after #commons/data names: a view (dictionary, apis), or the list's filter, then its catalog
+     platform (platform/<key>), then a college (college/<slug>), each optional. */
   function parseRoute(route) {
-    var p = String(route || "").split("/").filter(Boolean), out = { filter: "all", college: "" };
-    if (p[0] === "college") { out.college = p[1] || ""; return out; }
-    out.filter = p[0] || "all";
-    if (p[1] === "college") out.college = p[2] || "";
+    var p = String(route || "").split("/").filter(Boolean), out = { view: "", filter: "all", platform: "", college: "" };
+    if (VIEWS[p[0]]) { out.view = p[0]; return out; }
+    var i = p[0] === "college" || p[0] === "platform" ? 0 : 1;
+    if (i) out.filter = p[0] || "all";
+    for (; i < p.length; i += 2) {
+      if (p[i] === "platform") out.platform = p[i + 1] || "";
+      else if (p[i] === "college") out.college = p[i + 1] || "";
+    }
     return out;
   }
 
@@ -207,7 +292,11 @@
     word.addEventListener("click", function () { toggleRow(c.id); });
     var name = el("th", { scope: "row", "data-label": "College" }, [word, el("span", { cls: "cdd-dist", text: c.district || "" }),
       flags.length ? el("span", { cls: "cdd-flags", text: flags.join("; ") }) : null]);
-    return el("tr", { "data-college": c.name, "data-id": String(c.id), cls: open ? "cdd-open" : null }, [name, pr,
+    var ov = overallOf(M, c);
+    var ovCell = el("td", { "data-label": "Overall", cls: ov ? null : "cdd-quiet" }, ov
+      ? [el("span", { cls: "cdd-pr" }, [meter(ov.value), el("span", { cls: "cdd-n", text: pc(ov.value) }), el("span", { cls: "cdd-of", text: cap(liveWords(M)) })])]
+      : [liveRead(M) ? "Not in the live read" : "TBA"]);
+    return el("tr", { "data-college": c.name, "data-id": String(c.id), cls: open ? "cdd-open" : null }, [name, ovCell, pr,
       el("td", { "data-label": "Still to pass", cls: "cdd-num", text: c.harvested ? fmt(c.gap) : "" }),
       read,
       el("td", { "data-label": "Read cost per passing program", cls: "cdd-num", text: cp == null ? "" : "$" + cp.toFixed(3) }),
@@ -242,20 +331,57 @@
         .map(function (k) { return [causeWord(M, k), c.causes[k]]; });
       pr.stamp = { at: c.read_at, kind: c.read_kind === "capture_preview" ? "read, on a pull request branch" : "read" };
     } else pr.state = "Not read yet";
-    pr.later = [["Teachout and Approved programs", "TBA", tbaOf(M, "teachout_approved")]];
+    /* The live counts for this college (basis live, its own date), apart from the committed files' figures above. */
+    var lv = liveOf(M, c), lp = (lv && lv.programs) || {}, lr = (lv && lv.records) || {}, lc = (lv && lv.program_courses) || {},
+      lo = (lv && lv.outcomes) || {}, lg = (lv && lv.registry) || {};
+    /* A completed live read that holds no counts for this college is its own case, with its own reason. */
+    var gone = !lv && liveRead(M) ? MISSING : "";
+    var liveAt = lv ? { at: M.live.read_at, kind: "live read" } : null;
+    if (lv) {
+      pr.live = { title: "From the " + liveWords(M), lines: [["Active programs", fmt(lp.active)], ["Teachout programs (apart from Active)", fmt(lp.teachout)],
+        ["Approved programs (apart from Active)", fmt(lp.approved)], ["Program records on file", fmt(lr.total)], ["Active programs with a passing record", fmt(lr.active_passing)],
+        ["Records a person confirmed", fmt(lr.checked)], ["Courses on Active programs", fmt(lc.active_courses)]] };
+      pr.held = true; pr.src += "; live: " + liveSrc(M, "programs") + "; " + liveSrc(M, "records");
+      pr.liveStamp = liveAt;
+    } else pr.later = [["Teachout and Approved programs", "TBA", gone || liveReason(M)]];
     L.push(pr);
 
-    var slo = { key: "slo", group: "Harvested", label: "Course SLOs", held: !!c.slo_queue, src: "kb/course_outcomes/queue.json", tba: tbaOf(M, "slo") };
+    var slo = { key: "slo", group: "Harvested", label: "Course SLOs", held: !!c.slo_queue, src: "kb/course_outcomes/queue.json", tba: lv ? "" : gone || tbaOf(M, "slo") };
     if (c.slo_queue) {
       slo.state = "SLO read " + c.slo_queue.state;
       slo.note = c.slo_queue.why || "";
       if (c.slo_queue.on) slo.stamp = { at: c.slo_queue.on, kind: "queued" };
     }
+    /* A live figure: courses with the outcome, of the courses on the college's Active programs. */
+    function liveCourses(d, n, all, at, what) {
+      d.held = true; d.basis = cap(liveWords(M));
+      d.liveStamp = at ? { at: at, kind: "loaded" } : liveAt;
+      if (n == null || lc.active_courses == null) d.tba = NO_COUNT;
+      else {
+        d.num = n; d.den = lc.active_courses;
+        d.value = d.den ? pc(pct(d.num, d.den)) : "None listed";
+        d.liveNote = fmt(n) + " of " + fmt(lc.active_courses) + " courses on Active programs have " + what + (all == null ? "" : "; " + fmt(all) + " courses in all");
+      }
+      d.src = (d.src ? d.src + "; " : "") + "live: " + liveSrc(M, "outcomes") + "; " + liveSrc(M, "program_courses");
+    }
+    if (lv) liveCourses(slo, lo.slo_courses_on_active, lo.slo_courses, lo.slo_loaded_at, "SLOs");
     L.push(slo);
-    L.push({ key: "plo", group: "Harvested", label: "Program PLOs", tba: tbaOf(M, "plo") });
-    L.push({ key: "obj", group: "Harvested", label: "Course objectives", tba: tbaOf(M, "objectives") });
+    var plo = { key: "plo", group: "Harvested", label: "Program PLOs", tba: gone || tbaOf(M, "plo") };
+    if (lv) {
+      plo.held = true; plo.tba = ""; plo.basis = cap(liveWords(M)); plo.src = "live: " + liveSrc(M, "records"); plo.liveStamp = liveAt;
+      if (lr.active_with_plos == null || lp.active == null) plo.tba = NO_COUNT;
+      else {
+        plo.num = lr.active_with_plos; plo.den = lp.active;
+        plo.value = plo.den ? pc(pct(plo.num, plo.den)) : "None listed";
+        plo.liveNote = fmt(lr.active_with_plos) + " of " + fmt(lp.active) + " Active programs carry PLOs in their record";
+      }
+    }
+    L.push(plo);
+    var obj = { key: "obj", group: "Harvested", label: "Course objectives", tba: gone || tbaOf(M, "objectives") };
+    if (lv) { obj.tba = ""; liveCourses(obj, lo.objective_courses_on_active, lo.objective_courses, lo.objective_loaded_at, "objectives"); }
+    L.push(obj);
 
-    var cat = { key: "cat", group: "Harvested", label: "Catalog source", held: !!(c.platform || c.scout), tba: tbaOf(M, "catalog_registry"),
+    var cat = { key: "cat", group: "Harvested", label: "Catalog source", held: !!(c.platform || c.scout || lv), tba: lv ? "" : gone || tbaOf(M, "catalog_registry"),
       src: (c.platform ? "the capture's own record of its catalog" : "") + (c.platform && c.scout ? "; " : "") + (c.scout ? scoutFile(M, c) : "") };
     /* Each source keeps its own lines and its own stamp (the capture's read, the scout's check), so an age cue never
        dates a line another source wrote; where they disagree, both show, labeled. */
@@ -273,6 +399,11 @@
         cat.differ = "The scout found a different " + [sc.platform && sc.platform !== c.platform ? "platform" : null,
           sc.catalog_year && c.catalog_year && sc.catalog_year !== c.catalog_year ? "catalog year" : null].filter(Boolean).join(" and ") + " than the capture read.";
     }
+    if (lv) cat.parts.push({ key: "registry", title: "What the program source registry holds (" + liveWords(M) + ")",
+      lines: lg.row === false ? [["Registry row", "No registry row for this college"]]
+        : [["Catalog link", heldWord(lg.catalog_link)], ["Curriculum view", heldWord(lg.course_outline_link)], ["Pathway source", pathwayWord(lg)]],
+      stamp: { at: M.live.read_at, kind: "live read" } });
+    if (lv) cat.src = (cat.src ? cat.src + "; " : "") + "live: " + liveSrc(M, "registry");
     L.push(cat);
     L.push({ key: "ppm", group: "Harvested", label: "Program Pathways Mapper (PPM)", tba: tbaOf(M, "ppm") });
     L.push({ key: "desc", group: "Connected", label: "Course descriptions", tba: tbaOf(M, "descriptions") });
@@ -318,7 +449,16 @@
   }
   function bar(d) {
     var v = pct(d.num, d.den);
-    return el("span", { cls: "cdd-pr" }, [meter(v || 0), el("span", { cls: "cdd-n", text: d.value || (v == null ? "" : Math.round(v * 100) + "%") }), d.note ? el("span", { cls: "cdd-of", text: d.note }) : null]);
+    var note = d.liveNote || d.note;
+    return el("span", { cls: "cdd-pr" }, [meter(v || 0), el("span", { cls: "cdd-n", text: d.value || (v == null ? "" : Math.round(v * 100) + "%") }), note ? el("span", { cls: "cdd-of", text: note }) : null]);
+  }
+  /* What a dataset's live part adds below its committed-file lines: the basis in words, the live lines, its stamp. */
+  function liveBits(d, now) {
+    var out = [];
+    if (d.basis) out.push(el("p", { cls: "cdd-basis", text: d.basis }));
+    if (d.live) out.push(el("div", { cls: "cdd-part", "data-part": "live" }, [el("p", { cls: "cdd-partname", text: d.live.title }), dl(d.live.lines)]));
+    if (d.liveStamp !== undefined) out.push(stampLine(d.liveStamp, now));
+    return out;
   }
   function tba(reason) { return el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), reason || ""]); }
   /* A dataset read from more than one source: each part's lines, link and stamp together, and the disagreement. */
@@ -336,12 +476,14 @@
   function detail(M, c, now) {
     var cards = datasets(M, c).filter(function (d) { return d.held; }).map(function (d) {
       return el("section", { cls: "cdd-card", "data-ds": d.key, "aria-label": d.label }, [el("h4", { text: d.label }),
-        d.den != null ? bar(d) : null, d.state ? el("p", { cls: "cdd-state", text: d.state }) : null,
+        d.den != null ? bar(d) : d.basis && d.tba ? tba(d.tba) : null, d.state ? el("p", { cls: "cdd-state", text: d.state }) : null,
         d.state && d.note ? el("p", { cls: "cdd-of", text: d.note }) : null,
         d.lines && d.lines.length ? dl(d.lines) : null,
         d.causes && d.causes.length ? el("p", { cls: "cdd-of", text: "Still to pass, by cause: " + d.causes.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") }) : null]
-        .concat(d.parts ? parts(d, now) : [stampLine(d.stamp, now)]));
+        .concat(!d.parts && (d.stamp || d.liveStamp === undefined) ? [stampLine(d.stamp, now)] : [], liveBits(d, now), d.parts ? parts(d, now) : []));
     });
+    var ov = overallOf(M, c);
+    if (ov) cards.unshift(el("section", { cls: "cdd-card", "data-ds": "overall", "aria-label": "Overall" }, overallBits(M, ov)));
     if (c.spot_check || c.confidence) {
       var sp = c.spot_check;
       cards.push(el("section", { cls: "cdd-card", "data-ds": "confidence", "aria-label": "Confidence" }, [el("h4", { text: "Confidence" }),
@@ -367,6 +509,16 @@
     ]);
     return el("tr", { cls: "cdd-more", id: "cdd-more-" + c.id, "data-more": String(c.id) }, [el("td", { colspan: String(COLUMNS.length) }, [box])]);
   }
+  /* A college's overall bar and its four parts, with its basis and date in words (never beside a committed figure). */
+  function overallBits(M, ov, noHead) {
+    var p = ov.parts || {};
+    return [noHead ? null : el("h4", { text: "Overall" }),
+      el("span", { cls: "cdd-pr" }, [meter(ov.value), el("span", { cls: "cdd-n", text: pc(ov.value) }),
+        el("span", { cls: "cdd-of", text: "Catalog source, program requirements and outcomes (SLOs and PLOs averaged), averaged" })]),
+      dl([["Catalog source", pc(p.catalog)], ["Program requirements passing", pc(p.requirements)], ["Course SLOs", pc(p.slos)], ["Program PLOs", pc(p.plos)]]),
+      el("p", { cls: "cdd-basis", text: cap(liveWords(M)) }),
+      keptWords(M) ? el("p", { cls: "cdd-of", "data-kept": "true", text: keptWords(M) }) : null].filter(Boolean);
+  }
   function cap(s) { s = String(s || ""); return s.charAt(0).toUpperCase() + s.slice(1); }
   function toggleRow(id) {
     S.open = String(S.open) === String(id) ? null : id;
@@ -381,7 +533,9 @@
   function section(h, kids) { return el("section", { cls: "cdd-psec" }, [el("h3", { text: h })].concat(kids)); }
   function panelBody(M, c, now) {
     var sp = c.spot_check, out = [];
-    out.push(section("Overall", [tba(tbaOf(M, "overall"))]));
+    var ov = overallOf(M, c);
+    out.push(section("Overall", ov ? overallBits(M, ov, true)
+      : [tba(liveRead(M) ? "The live read holds no counts for this college." : liveReason(M) + (tbaOf(M, "overall") ? " " + tbaOf(M, "overall") : ""))]));
     out.push(section("Confidence", c.confidence ? [el("p", { cls: "cdd-state", text: cap(c.confidence.level) }), el("p", { cls: "cdd-of", text: c.confidence.why })]
       : [tba("Not read yet: confidence starts with the first read.")]));
     GROUPS.forEach(function (g) {
@@ -395,8 +549,10 @@
         if (d.lines && d.lines.length) kids.push(dl(d.lines));
         if (d.causes && d.causes.length) kids.push(el("p", { cls: "cdd-of", text: "Still to pass, by cause: " + d.causes.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") }));
         (d.later || []).forEach(function (x) { kids.push(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: x[0] + ": " + x[1] + ". " }), x[2]])); });
+        /* The committed lines' stamp sits under them, before the live block and its own stamp. */
+        if (!d.parts && (d.stamp || (d.held && d.liveStamp === undefined))) kids.push(stampLine(d.stamp, now));
+        kids = kids.concat(liveBits(d, now));
         if (d.parts) kids = kids.concat(parts(d, now));
-        else if (d.stamp || d.held) kids.push(stampLine(d.stamp, now));
         if (d.src && d.held) kids.push(el("p", { cls: "cdd-src", text: "Source: " + d.src }));
         return el("div", { cls: "cdd-pds", "data-ds": d.key }, kids);
       })));
@@ -549,24 +705,40 @@
 
   var VIEW = { root: null, M: null, noted: null, now: null, panel: null, from: null, drawBody: null };
   function render(root, M, route, now) {
-    releaseInert();   // a redraw (a new address, a figure) starts with the whole page live
+    releaseInert();   // a redraw (a new address, a figure, another view) starts with the whole page live
     VIEW.root = root; VIEW.M = M; VIEW.now = now || VIEW.now || new Date();
     ensureCss();
-    var R = parseRoute(route), pc = bySlug(M, R.college);
-    S.panel = pc ? pc.id : null;
+    var R = parseRoute(route), pcol = R.view ? null : bySlug(M, R.college);
+    S.view = R.view;
+    S.panel = pcol ? pcol.id : null;
     var f = FILTERS[R.filter] ? R.filter : "all";
     if (f !== S.filter) { S.filter = f; if (FILTER_SORT[f]) S.sort = { k: FILTER_SORT[f].k, d: FILTER_SORT[f].d }; }
+    S.platform = platformsOf(M).some(function (p) { return p[0] === R.platform; }) ? R.platform : "";
     root.removeAttribute("style");
     root.textContent = "";
     var wrap = el("div", { cls: "cmn-wrap cdd" });
-    wrap.appendChild(el("p", { cls: "cdd-trail" }, [el("a", { href: "#commons", text: "CPL Commons" }), " / ", el("span", { text: "Data" })]));
+    wrap.appendChild(el("p", { cls: "cdd-trail" }, [el("a", { href: "#commons", text: "CPL Commons" }), " / ",
+      S.view ? el("a", { href: "#commons/data", text: "Data" }) : el("span", { text: "Data" }), S.view ? " / " : null, S.view ? el("span", { text: VIEWS[S.view] }) : null]));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "cdd-h", text: "How complete each college's data is" }),
+      el("h2", { cls: "cmn-title", id: "cdd-h", text: S.view === "dictionary" ? "The data dictionary" : S.view === "apis" ? "The API checklist" : "How complete each college's data is" }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
-      el("p", { cls: "cmn-lede", text: "Every college and continuing-education campus, the datasets we read for it, how far each has come, and what is in the way. This first part shows the program requirements harvest; the other datasets join it next." })
+      el("p", { cls: "cmn-lede", text: S.view === "dictionary" ? "Every dataset the dashboard tracks: who holds it, how we get it today, what would improve it, how far it has come, and the evidence for each claim."
+        : S.view === "apis" ? "Each API the datasets would connect through: who holds it, whether a connection is needed, its status and the evidence for that status."
+        : "Every college and continuing-education campus, the datasets we read for it, how far each has come, and what is in the way." })
     ]));
+    wrap.appendChild(viewNav());
+    if (S.view) {
+      wrap.appendChild(S.view === "dictionary" ? dictionaryView(M) : apisView(M));
+      var vpage = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);
+      root.appendChild(vpage);
+      drawPanel(VIEW.now);   // no college on a view: the panel stays hidden and the page live
+      return vpage;
+    }
     wrap.appendChild(el("p", { cls: "cdd-stamp", id: "cdd-stamp" }, [el("strong", { text: "From the committed files. " }),
-      "Built " + (day(M.written) || "on a date the file does not give") + ". A program count here is the programs each college's capture listed; the Program Requirements tab counts the live Active programs. Dates are Pacific time."]));
+      "Built " + (day(M.written) || "on a date the file does not give") + ". A program count here is the programs each college's capture listed; the Program Requirements tab counts the live Active programs. Dates are Pacific time.",
+      el("span", { cls: "cdd-stamp-live", id: "cdd-stamp-live" }, [el("strong", { text: "From the live read. " }),
+        liveRead(M) ? "The overall bar and every figure marked live come from the " + liveWords(M) + ", kept apart from the committed files' figures." + (keptWords(M) ? " " + keptWords(M) : "")
+          : "The overall bar and the live counts read TBA. " + liveReason(M)])]));
 
     var grid = el("div", { cls: "cdd-tiles", role: "group", "aria-label": "Statewide figures" });
     tiles(M).filter(Boolean).forEach(function (t) {
@@ -575,6 +747,10 @@
         var b = el("button", { type: "button", cls: "cdd-tile cdd-open", "data-filter": t.f, "aria-pressed": S.filter === t.f ? "true" : "false" }, kids);
         b.addEventListener("click", function () { pick(t.f); });
         grid.appendChild(b);
+      } else if (t.view) {
+        var v = el("button", { type: "button", cls: "cdd-tile cdd-open", "data-view": t.view }, kids);
+        v.addEventListener("click", function () { go(t.view); });
+        grid.appendChild(v);
       } else grid.appendChild(el("div", { cls: "cdd-tile", "data-tile": t.l }, kids));
     });
     wrap.appendChild(grid);
@@ -585,12 +761,14 @@
     var shown = el("p", { cls: "cdd-shown", id: "cdd-shown", role: "status" });
     var clear = el("button", { type: "button", cls: "cmn-word", id: "cdd-all", text: "Show all colleges" });
     clear.addEventListener("click", function () { pick("all"); });
-    list.appendChild(el("div", { cls: "cdd-tools" }, [el("label", { "for": "cdd-q", cls: "cdd-label", text: "Find a college or district" }), search, shown, S.filter !== "all" ? clear : null]));
+    list.appendChild(el("div", { cls: "cdd-tools" }, [el("label", { "for": "cdd-q", cls: "cdd-label", text: "Find a college or district" }), search, shown, S.filter !== "all" || S.platform ? clear : null]));
+    var plats = platformControl(M);
+    if (plats) list.appendChild(plats);
     var body = el("tbody");
     var head = el("tr");
     var table = el("table", { cls: "cdd-table", id: "cdd-colleges" }, [
-      el("caption", { cls: "cdd-sr", text: "Each college: its program requirements harvest, programs still to pass, last read, read cost and confidence" }),
-      el("colgroup", null, [el("col", { cls: "cdd-c-name" }), el("col", { cls: "cdd-c-pr" }), el("col", { cls: "cdd-c-gap" }), el("col", { cls: "cdd-c-read" }), el("col", { cls: "cdd-c-cost" }), el("col", { cls: "cdd-c-conf" })]),
+      el("caption", { cls: "cdd-sr", text: "Each college: its overall completeness (live read), its program requirements harvest, programs still to pass, last read, read cost and confidence" }),
+      el("colgroup", null, [el("col", { cls: "cdd-c-name" }), el("col", { cls: "cdd-c-ov" }), el("col", { cls: "cdd-c-pr" }), el("col", { cls: "cdd-c-gap" }), el("col", { cls: "cdd-c-read" }), el("col", { cls: "cdd-c-cost" }), el("col", { cls: "cdd-c-conf" })]),
       el("thead", null, [head]), body
     ]);
     function drawHead() {
@@ -606,13 +784,14 @@
     }
     function drawBody() {
       body.textContent = "";
-      var base = listFor(M, S.filter), L = sorted(M, searched(base));
+      var base = listFor(M, S.filter).filter(function (c) { return !S.platform || c.platform === S.platform; }), L = sorted(M, searched(base));
       L.forEach(function (c) {
         body.appendChild(row(M, c, VIEW.now));
         if (String(S.open) === String(c.id)) body.appendChild(detail(M, c, VIEW.now));
       });
       if (!L.length) body.appendChild(el("tr", null, [el("td", { colspan: String(COLUMNS.length), text: "No college matches." })]));
-      shown.textContent = "Showing " + fmt(L.length) + " of " + fmt(M.colleges.length) + (S.filter !== "all" ? ": " + FILTERS[S.filter].word : "");
+      shown.textContent = "Showing " + fmt(L.length) + " of " + fmt(M.colleges.length) + (S.filter !== "all" ? ": " + FILTERS[S.filter].word : "")
+        + (S.platform ? (S.filter !== "all" ? "; " : ": ") + "catalog platform " + platformWord(S.platform) : "");
     }
     search.addEventListener("input", function () { S.q = search.value || ""; drawBody(); });
     VIEW.drawBody = drawBody;
@@ -620,17 +799,188 @@
     list.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "Colleges", tabindex: "0" }, [table]));
     wrap.appendChild(list);
     wrap.appendChild(notes(M));
+    wrap.appendChild(comingNext(M));
     var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which goes inert while it is open
     root.appendChild(page);
     drawPanel(VIEW.now);
     return page;
   }
 
+  /* The three views of the dashboard, as words: the list, the dictionary, the checklist. */
+  function viewNav() {
+    var items = [["", "The college list"], ["dictionary", VIEWS.dictionary], ["apis", VIEWS.apis]];
+    return el("nav", { cls: "cdd-views", "aria-label": "Data dashboard views" }, items.map(function (it) {
+      var on = (S.view || "") === it[0];
+      var a = el("a", { href: "#commons/data" + (it[0] ? "/" + it[0] : ""), cls: "cdd-viewword", "data-goto": it[0] || "list", "aria-current": on ? "page" : null, text: it[1] });
+      a.addEventListener("click", function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button > 0) return;   // a new window opens the address itself
+        e.preventDefault(); go(it[0]);
+      });
+      return a;
+    }));
+  }
+  /* The list's catalog platform filter: each platform the captures read, as a word with its count; it lives only in
+     the address and the visit. */
+  function platformControl(M) {
+    /* Each word's figure counts within the active filter, the list it opens; the chosen word stays even at zero. */
+    var P = platformsOf(M, S.filter);
+    if (S.platform && !P.some(function (p) { return p[0] === S.platform; })) P.push([S.platform, 0]);
+    if (!P.length) return null;
+    var kids = [el("span", { cls: "cdd-label", id: "cdd-plat-l", text: "Catalog platform" })];
+    [["", "Any", null]].concat(P.map(function (p) { return [p[0], platformWord(p[0]), p[1]]; })).forEach(function (p) {
+      var b = el("button", { type: "button", cls: "cmn-word cdd-plat", "data-platform": p[0] || "any", "aria-pressed": S.platform === p[0] ? "true" : "false",
+        text: p[1] + (p[2] != null ? " (" + fmt(p[2]) + ")" : "") });
+      b.addEventListener("click", function () { choosePlatform(p[0]); });
+      kids.push(b);
+    });
+    return el("div", { cls: "cdd-plats", role: "group", "aria-labelledby": "cdd-plat-l" }, kids);
+  }
+  function choosePlatform(key) {
+    if (!VIEW.root || !VIEW.M) return;
+    var y = window.scrollY;
+    render(VIEW.root, VIEW.M, listRoute(S.filter, key).replace(/^\//, ""));
+    setAddress();
+    try { if (window.scrollTo && y) window.scrollTo(0, y); } catch (e) { /* jsdom */ }
+    var b = VIEW.root.querySelector('.cdd-plat[data-platform="' + (key || "any") + '"]');
+    if (b && b.focus) b.focus();
+  }
+  /* Another view of the dashboard: drawn at once, its address replacing the last; the panel never follows. */
+  function go(view) {
+    if (!VIEW.root || !VIEW.M) return;
+    render(VIEW.root, VIEW.M, view || "");
+    setAddress();
+    try { if (window.scrollTo && window.scrollY) window.scrollTo(0, 0); } catch (e) { /* jsdom */ }
+    var h = VIEW.root.querySelector("#cdd-h");
+    if (h) { h.setAttribute("tabindex", "-1"); if (h.focus) h.focus(); }
+  }
+
+  /* Text from the dictionary doc, drawn as text: a `code span` becomes <code>, a *mark* loses its asterisks. Nothing
+     from the file is ever parsed as HTML. */
+  function docText(tag, s, cls) {
+    var e = el(tag, cls ? { cls: cls } : null);
+    String(s == null ? "" : s).split("`").forEach(function (part, i) {
+      if (!part) return;
+      e.appendChild(i % 2 ? el("code", { text: part }) : document.createTextNode(part.replace(/\*([^*]+)\*/g, "$1")));
+    });
+    return e;
+  }
+  function evidenceWord(s) {
+    var p = String(s || "").split("::");
+    return p.length > 1 ? p[0] + ", at " + p.slice(1).join(" ").replace(/^#+\s*/, "") : p[0];
+  }
+  /* Evidence in kinds, said apart: what the repo holds and a reader can check, what the doc family only cites, and
+     what is named but missing. */
+  function evidenceBits(x) {
+    var cited = Array.isArray(x.evidence_cited) ? x.evidence_cited : [], missing = Array.isArray(x.evidence_missing) ? x.evidence_missing : [];
+    var repo = (Array.isArray(x.evidence) ? x.evidence : []).filter(function (e) { return cited.indexOf(e) < 0 && missing.indexOf(e) < 0; });
+    var out = [];
+    function group(title, kind, L) {
+      out.push(el("div", { cls: "cdd-ev", "data-evidence": kind }, [el("p", { cls: "cdd-partname", text: title + " (" + fmt(L.length) + ")" }),
+        L.length ? el("ul", { cls: "cdd-srcs" }, L.map(function (e) { return el("li", { text: evidenceWord(e) }); })) : el("p", { cls: "cdd-of", text: "None." })]));
+    }
+    group("Verifiable in the repo", "repo", repo);
+    group("Cited, outside the repo's checks", "cited", cited);
+    if (missing.length) group("Named but not found in the repo", "missing", missing);
+    return out;
+  }
+  function unverifiedWords(x) {
+    var w = [];
+    if (x.repo_verifiable === false) w.push("Unverified: nothing in the repo outside the doc family backs this entry.");
+    if (x.unverified_claims) w.push(fmt(x.unverified_claims) + " claim" + (x.unverified_claims === 1 ? " in this entry is" : "s in this entry are") + " marked unverified in the doc.");
+    return w.join(" ");
+  }
+  var GITHUB = "https://github.com/cpl-initiative/cpl-project-tracker/blob/main/";
+  function dictionaryView(M) {
+    var D = M.dictionary || {}, L = Array.isArray(D.datasets) ? D.datasets : [];
+    var sec = el("section", { cls: "cdd-view", id: "cdd-dict", "aria-labelledby": "cdd-h" });
+    if (!L.length) { sec.appendChild(tba("The data dictionary is not in the file yet.")); return sec; }
+    var groups = [];
+    L.forEach(function (x) { if (groups.indexOf(x.group || "Other") < 0) groups.push(x.group || "Other"); });
+    var src = String(D.source || "docs/reference/data_dictionary.md");
+    sec.appendChild(el("p", { cls: "cdd-src" }, ["Parsed from ", el("a", { href: GITHUB + src.split("#")[0], text: src }),
+      " by the dashboard's builder: " + fmt(L.length) + " datasets in " + fmt(groups.length) + " groups, as the doc groups them."]));
+    if (Array.isArray(D.errors) && D.errors.length) sec.appendChild(el("p", { cls: "cdd-state", text: "The builder could not read all of the doc: " + D.errors.join("; ") }));
+    groups.forEach(function (g) {
+      var gid = "cdd-dg-" + slugOf({ name: g });
+      var gs = el("section", { cls: "cdd-dgroup", "data-group": g, "aria-labelledby": gid }, [el("h3", { cls: "cdd-h3", id: gid, text: g })]);
+      L.filter(function (x) { return (x.group || "Other") === g; }).forEach(function (x) {
+        var uv = unverifiedWords(x);
+        gs.appendChild(el("article", { cls: "cdd-entry", "data-dataset": x.name, "aria-label": x.name }, [
+          el("h4", { text: x.name }),
+          uv ? el("p", { cls: "cdd-unv", "data-unverified": "true", text: uv }) : null,
+          el("dl", { cls: "cdd-dl" }, [el("dt", { text: "Stage" }), el("dd", { text: x.stage || "TBA" }), el("dt", { text: "Owner or steward" }), docText("dd", x.owner || "TBA"),
+            el("dt", { text: "How we get it today" }), docText("dd", x.procedure_today || "TBA"), el("dt", { text: "Planned improvement" }), docText("dd", x.planned_improvement || "TBA")]),
+          x.link ? el("p", { cls: "cdd-of" }, [el("a", { href: GITHUB + x.link, text: "The entry in the data dictionary, on GitHub" })]) : null
+        ].concat(evidenceBits(x))));
+      });
+      sec.appendChild(gs);
+    });
+    return sec;
+  }
+  var API_WORDS = { connected: "connected", "in progress": "in progress", in_progress: "in progress", configured: "in progress", "in talks": "in progress",
+    planned: "planned", "not needed": "not needed", unverified: "unverified" };
+  function apiStatus(r) {
+    if (r.status === "unverified") return "unverified";
+    if (r.needed === "no" && r.status !== "connected") return "not needed";
+    return API_WORDS[r.status] || "unverified";
+  }
+  function apisView(M) {
+    var a = apiCount(M), sec = el("section", { cls: "cdd-view", id: "cdd-apis", "aria-labelledby": "cdd-h" });
+    if (!a.rows.length) { sec.appendChild(tba("The API checklist is not in the file yet.")); return sec; }
+    sec.appendChild(el("p", { cls: "cdd-stamp", id: "cdd-api-sum" }, [el("strong", { text: fmt(a.connected) + " of " + fmt(a.need) + " connected. " }),
+      "Connected, of the APIs a connection is needed for. A status reads unverified when the repo holds no evidence for it beyond the doc family's citation; an unverified API never counts as connected. Parsed from ",
+      el("a", { href: GITHUB + String((M.apis || {}).source || "docs/reference/data_dictionary.md"), text: "the checklist in the data dictionary" }), "."]));
+    var NEED = { yes: "Needed", no: "Not needed", unknown: "Unknown" };
+    var body = el("tbody", null, a.rows.map(function (r) {
+      var st = apiStatus(r);
+      return el("tr", { "data-api": r.api, "data-status": st }, [
+        el("th", { scope: "row", "data-label": "API" }, [el("span", { cls: "cdd-name", text: r.api }), r.priority ? el("span", { cls: "cdd-of", text: "Priority" }) : null, r.note ? docText("span", r.note, "cdd-of") : null]),
+        el("td", { "data-label": "Who holds it", text: r.holder || "TBA" }),
+        el("td", { "data-label": "Connection needed", text: NEED[r.needed] || "Unknown" }),
+        el("td", { "data-label": "Status" }, [el("span", { cls: "cdd-level", text: cap(st) }),
+          st === "unverified" && r.claimed ? el("span", { cls: "cdd-of", text: "Claimed " + words(r.claimed) + "; no evidence for it in the repo" }) : null]),
+        el("td", { "data-label": "Evidence" }, evidenceBits(r))
+      ]);
+    }));
+    var table = el("table", { cls: "cdd-table cdd-apitable", id: "cdd-api-table" }, [
+      el("caption", { cls: "cdd-sr", text: "Each API: who holds it, whether a connection is needed, its status and its evidence" }),
+      el("colgroup", null, [el("col", { cls: "cdd-c-api" }), el("col", { cls: "cdd-c-holder" }), el("col", { cls: "cdd-c-need" }), el("col", { cls: "cdd-c-status" }), el("col", { cls: "cdd-c-ev" })]),
+      el("thead", null, [el("tr", null, ["API", "Who holds it", "Connection needed", "Status", "Evidence"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), body]);
+    sec.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "The API checklist", tabindex: "0" }, [table]));
+    return sec;
+  }
+
+  /* What the mock shows beyond these views, each in one line with what it waits on: the builder's own reason where
+     the file holds one, and the dictionary's stage where the doc names the dataset. No empty panel. */
+  function comingNext(M) {
+    var D = Array.isArray((M.dictionary || {}).datasets) ? M.dictionary.datasets : [];
+    function stage(name) { var x = D.filter(function (d) { return d.name === name; })[0]; return x && x.stage ? " Dictionary stage: " + x.stage + "." : ""; }
+    var items = [
+      ["The College view", "Internal only: one college's page in plain words, drawn from the fields the builder flags shareable. It waits on Sam's review; it has no share link and nothing goes to a college."],
+      ["AI workers per college", "Waits on a committed record of each worker and the colleges it serves; the district bots wait on the district profiles (#3198)."],
+      ["The JST funnel", (tbaOf(M, "jst") || "Waits on an authorized-student feed.") + stage("JST authorizations")],
+      ["SIS and curriculum system tiles", "Wait on the district profiles (#3198); a college's system stays unknown until its profile names it."],
+      ["Program Pathways Mapper reads per college", (tbaOf(M, "ppm") || "Waits on a per-college read of the committed term maps.") + stage("Program Pathways Mapper (PPM)")],
+      ["Course descriptions per college", (tbaOf(M, "descriptions") || "Waits on the description classifier's counts (#3219).") + stage("Course descriptions")],
+      ["MIS course matches per college", (tbaOf(M, "mis") || "Waits on a join of the committed MIS course file to each college.") + stage("COMIS / MIS data")],
+      ["COE regional demand per college", (tbaOf(M, "coe") || "Waits on a per-college read of the regional crosswalk.") + stage("COE labor market data")]
+    ];
+    var planned = D.filter(function (d) { return d.group === "Planned"; });
+    if (planned.length) items.push(["Planned datasets", "Each waits on a connection, at its dictionary stage: " + planned.map(function (d) { return d.name + " (" + (d.stage || "TBA") + ")"; }).join("; ") + "."]);
+    return el("section", { cls: "cdd-notes cdd-next", id: "cdd-next", "aria-labelledby": "cdd-next-h" }, [
+      el("h3", { id: "cdd-next-h", cls: "cdd-h3", text: "Coming next" }),
+      el("ul", null, items.map(function (it) { return el("li", { "data-next": it[0] }, [el("strong", { text: it[0] + ". " }), it[1]]); }))
+    ]);
+  }
+
   function notes(M) {
     var R = M.rule || {}, items = [];
     if (R.basis) items.push("Basis: " + R.basis + ".");
     if (R.passing) items.push("Passing: " + R.passing + ".");
-    if (R.overall) items.push("Overall: " + R.overall + ".");
+    var O = M.overall || {}, LR = (M.live || {}).rule || {};
+    if (O.rule || R.overall) items.push("Overall (basis live): " + (O.rule || R.overall) + ".");
+    items.push("Live read: " + (liveRead(M) ? cap(liveWords(M)) + "." + (keptWords(M) ? " " + keptWords(M) : "") : liveReason(M)));
+    if (LR.registry) items.push("Registry: a link reads held when the registry records one, since it records a link only when one is seen.");
     if (R.confidence) items.push("Confidence: " + R.confidence + ".");
     if (R.age_days) items.push("Age: fresh within " + R.age_days.fresh + " days, recent within " + R.age_days.recent + ", stale after.");
     var src = Object.keys(M.sources).map(function (k) { return M.sources[k]; });
@@ -671,7 +1021,7 @@
     opts = opts || {};
     VIEW.noted = opts.noted || null;
     if (!root) return Promise.resolve(null);
-    S.q = ""; S.filter = ""; S.sort = { k: "name", d: 1 }; S.open = null; S.panel = null; S.pw = PW.start;   // a visit starts fresh: nothing is remembered
+    S.q = ""; S.filter = ""; S.view = ""; S.platform = ""; S.sort = { k: "name", d: 1 }; S.open = null; S.panel = null; S.pw = PW.start;   // a visit starts fresh: nothing is remembered
     if (VIEW.M && cache) { render(root, VIEW.M, filter, new Date()); focusArrival(); return Promise.resolve(VIEW.M); }
     root.textContent = "Reading the Commons data dashboard…";
     cache = cache || load();
@@ -731,7 +1081,7 @@
     ".cdd-unread { font-weight:600; color:var(--cmn-ask-label); }",
     ".cdd-age { color:var(--cmn-muted); }",
     ".cdd-quiet { color:var(--cmn-muted); }",
-    ".cdd-c-name { width:24%; } .cdd-c-pr { width:23%; } .cdd-c-gap { width:9%; } .cdd-c-read { width:13%; } .cdd-c-cost { width:12%; } .cdd-c-conf { width:19%; }",
+    ".cdd-c-name { width:20%; } .cdd-c-ov { width:14%; } .cdd-c-pr { width:20%; } .cdd-c-gap { width:8%; } .cdd-c-read { width:12%; } .cdd-c-cost { width:11%; } .cdd-c-conf { width:15%; }",
     ".cdd-level { display:block; font-weight:700; color:var(--cmn-heading); }",
     ".cdd-notes { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:16px 20px; display:grid; gap:8px; }",
     ".cdd-notes ul { margin:0; padding-left:20px; display:grid; gap:4px; color:var(--cmn-ink-2); }",
@@ -776,6 +1126,24 @@
     ".cdd-psec > h3 { margin:0; font-family:var(--cmn-serif); font-size:1.05rem; color:var(--cmn-heading); }",
     ".cdd-pds { display:grid; gap:4px; padding:4px 0 6px; }",
     ".cdd-panel a { color:var(--cmn-link); } .cdd-panel a:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
+    /* slice 3: the live basis, the views, the platform words, the dictionary and the API checklist */
+    ".cdd-stamp-live { display:block; margin-top:6px; }",
+    ".cdd-basis { margin:0; font-size:.84rem; font-weight:600; color:var(--cmn-ink-2); }",
+    ".cdd-views { display:flex; flex-wrap:wrap; gap:4px 20px; }",
+    ".cdd-views a { display:inline-block; min-height:24px; line-height:24px; color:var(--cmn-link); font-weight:600; text-decoration:underline; text-underline-offset:3px; }",
+    ".cdd-views a[aria-current=\"page\"] { color:var(--cmn-heading); text-decoration-thickness:3px; }",
+    ".cdd-plats { display:flex; flex-wrap:wrap; align-items:center; gap:4px 14px; }",
+    "button.cdd-plat[aria-pressed=\"true\"] { color:var(--cmn-heading); text-decoration-thickness:3px; }",
+    ".cdd-view { display:grid; gap:14px; min-width:0; }",
+    ".cdd-dgroup { display:grid; gap:10px; min-width:0; }",
+    ".cdd-view > *, .cdd-dgroup > *, .cdd-entry > *, .cdd-notes li { min-width:0; overflow-wrap:anywhere; }",
+    ".cdd-entry { display:grid; gap:6px; min-width:0; background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:12px 16px; }",
+    ".cdd-entry h4 { margin:0; font-size:1rem; color:var(--cmn-heading); }",
+    ".cdd-unv { margin:0; font-weight:700; color:var(--cmn-ask-label); }",
+    ".cdd-ev { display:grid; gap:2px; }",
+    ".cdd code { font-size:.86em; overflow-wrap:anywhere; }",
+    ".cdd-c-api { width:28%; } .cdd-c-holder { width:18%; } .cdd-c-need { width:11%; } .cdd-c-status { width:13%; } .cdd-c-ev { width:30%; }",
+    ".cdd-apitable .cdd-ev .cdd-partname { font-size:.8rem; }",
     "@media (prefers-reduced-motion: no-preference) { .cdd-grip::after { transition:background-color .15s ease; } }",
     "@media (prefers-reduced-motion: no-preference) { button.cdd-tile { transition:background-color .15s ease; } }",
     /* One column under 560px: each college becomes a block with its labels, and the sort words wrap above. */
@@ -789,6 +1157,7 @@
     "  .cdd-table td::before { content:attr(data-label); display:block; font-size:.78rem; font-weight:700; color:var(--cmn-muted); }",
     "  .cdd-table td:empty { display:none; }",
     "  .cdd-table tr.cdd-more > td::before { content:none; }",
+    "  .cdd-entry dl.cdd-dl { grid-template-columns:minmax(0, 1fr); } .cdd-entry dl.cdd-dl dd { margin-bottom:6px; }",
     "  .cdd-panel { width:100vw; border-left:0; }",
     "  .cdd-grip, .cdd-gripnote { display:none; }",
     "  .cdd-panel-in { padding:calc(14px + env(safe-area-inset-top, 0px)) 16px 24px; }",
@@ -801,8 +1170,8 @@
 
   window.CPL_COMMONS_DATA = {
     boot: boot, render: render, model: model, listFor: listFor, tiles: tiles, address: address, pick: pick, load: load, age: age,
-    datasets: datasets, gaps: gaps, asks: asks, slugOf: slugOf, parseRoute: parseRoute, openPanel: openPanel, closePanel: closePanel, PW: PW,
+    datasets: datasets, gaps: gaps, asks: asks, apiCount: apiCount, parseRouteViews: VIEWS, go: go, slugOf: slugOf, parseRoute: parseRoute, openPanel: openPanel, closePanel: closePanel, PW: PW,
     FILE: FILE, FILTERS: FILTERS, COLUMNS: COLUMNS, CSS: CSS, _state: S,
-    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.q = ""; S.sort = { k: "name", d: 1 }; S.open = null; S.panel = null; S.pw = PW.start; }
+    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.q = ""; S.sort = { k: "name", d: 1 }; S.open = null; S.panel = null; S.pw = PW.start; }
   };
 })();

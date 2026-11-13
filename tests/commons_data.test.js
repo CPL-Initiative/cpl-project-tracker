@@ -126,10 +126,12 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("filter: Show all colleges returns the whole universe", rows(o).length === 5 && o.w.location.hash === "#commons/data");
 
   // ── (4) TBA where no committed file supplies it; summed figures stay plain ──
-  ["Overall completeness", "Confidence", "APIs connected", "JST funnel"].forEach(function (l) {
+  ["Overall completeness", "Confidence", "APIs connected"].forEach(function (l) {
     const t = plain(o, l);
     check("TBA ⭐: " + l + " reads TBA with its reason and opens nothing", t && txt(t.querySelector(".cdd-v")) === "TBA" && t.tagName === "DIV" && txt(t.querySelector(".cdd-d")).length > 0);
   });
+  check("slice 3: the JST funnel draws no empty tile; it is a line under Coming next", !plain(o, "JST funnel") && /The JST funnel\. Waits on a feed\./.test(txt(o.d.querySelector('#cdd-next [data-next="The JST funnel"]'))));
+  check("slice 3: before the first live read the overall tile says the live read has not run yet", /The live read has not run yet\./.test(txt(plain(o, "Overall completeness"))));
   check("plain: program requirements passing is the file's sum, shown, not a button",
     plain(o, "Program requirements passing") && txt(plain(o, "Program requirements passing").querySelector(".cdd-v")) === "74%"
     && /140 of 190 listed programs/.test(txt(plain(o, "Program requirements passing"))));
@@ -258,7 +260,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   [["plo", "PLO reason."], ["obj", "Objectives reason."], ["ppm", "PPM reason."], ["desc", "Descriptions reason."], ["cpl", "CPL reason."], ["mis", "MIS reason."], ["coe", "COE reason."], ["slo", "SLO reason."]].forEach(function (t) {
     check("panel TBA ⭐: " + t[0] + " reads TBA with the builder's reason, no number", sec(t[0]).indexOf("TBA. " + t[1]) >= 0 && !/\d+%/.test(sec(t[0])));
   });
-  check("panel 3: the overall bar reads TBA with its reason; Teachout and Approved too", /Overall\s*TBA\. Catalog source, SLOs and PLOs are live tables\./.test(txt(P)) && /Teachout and Approved programs: TBA\. Teachout reason\./.test(sec("pr")));
+  check("panel 3: the overall bar reads TBA with its reason; Teachout and Approved too", /Overall\s*TBA\. The live read has not run yet\. Catalog source, SLOs and PLOs are live tables\./.test(txt(P)) && /Teachout and Approved programs: TBA\. The live read has not run yet\./.test(sec("pr")));
   check("panel 4: the panel groups the datasets Harvested then Connected", JSON.stringify(Array.from(P.querySelectorAll(".cdd-psec > h3")).map(txt).slice(2, 4)) === '["Harvested","Connected"]');
   check("panel 5: the dates: last read, last loaded TBA, last spot-checked, last confirmed TBA", /Last read\s*\w.* PT/.test(txt(P)) && /Last loaded\s*TBA/.test(txt(P)) && /Last spot-checked\s*\w.* PT/.test(txt(P)) && /Last confirmed by a person\s*TBA/.test(txt(P)) && /Loaded reason\./.test(txt(P)));
   check("panel 6: the asks are the census's levers in its words, the owner TBA with the reason", /Check the Program Course File for its courses/.test(txt(P)) && /20 programs, free\. Owner: TBA/.test(txt(P)) && /Owners reason\./.test(txt(P)));
@@ -379,6 +381,246 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   await settle();
   check("review renewal 2 ⭐: a renewal keeps a panel opened by a click open, on its college",
     !r11.d.getElementById("cdd-panel").hasAttribute("hidden") && txt(r11.d.getElementById("cdd-panel-h")) === "Alpha College" && r11.w.location.hash === "#commons/data/college/alpha-college");
+
+  // ── (10) slice 3: the overall bar and the live counts (read, not read, kept), the dictionary, the API checklist,
+  //        the platform filter, the addresses ──
+  const LIVE_COLLEGES = {
+    1: { names: ["Alpha College"], programs: { active: 100, teachout: 3, approved: 4 },
+      records: { total: 96, checked: 2, active: 95, active_passing: 80, active_with_plos: 50 },
+      program_courses: { rows: 900, active_courses: 400 },
+      outcomes: { slo_courses: 320, slo_courses_on_active: 300, slo_loaded_at: ago(2), objective_courses: 0, objective_courses_on_active: 0, objective_loaded_at: null },
+      registry: { row: true, catalog_link: true, course_outline_link: false, sequence_source: false, sequence_checked: true } },
+    3: { names: ["Gamma College"], programs: { active: 40, teachout: 0, approved: 1 },
+      records: { total: 20, checked: 0, active: 20, active_passing: 10, active_with_plos: 0 },
+      program_courses: { rows: 200, active_courses: 100 },
+      outcomes: { slo_courses: 0, slo_courses_on_active: 0, slo_loaded_at: null, objective_courses: 0, objective_courses_on_active: 0, objective_loaded_at: null },
+      registry: { row: true, catalog_link: true, course_outline_link: true, sequence_source: true, sequence_checked: true } }
+  };
+  const READ_AT = "2026-11-13T16:00:00Z";
+  function withLive(base, state) {
+    const d = JSON.parse(JSON.stringify(base));
+    if (state === "not read") {
+      d.live = { basis: "live", state: "not read yet", read_at: null, colleges: {}, last_attempt: null, flag: "internal" };
+      d.overall = { basis: "live", state: "not read yet", read_at: null, rule: "the rule", statewide: { mean: null, colleges: 0 }, colleges: {} };
+      return d;
+    }
+    if (state === "first failed") {
+      d.live = { basis: "live", state: "not read yet", read_at: null, colleges: {}, last_attempt: { at: "2026-11-13T17:00:00Z", ok: false, error_class: "timeout" }, flag: "internal" };
+      d.overall = { basis: "live", state: "not read yet", read_at: null, rule: "the rule", statewide: { mean: null, colleges: 0 }, colleges: {} };
+      return d;
+    }
+    d.live = { basis: "live", state: "read", read_at: READ_AT, colleges: LIVE_COLLEGES, tables: { programs: "coci_college_programs", records: "program_requirement_records",
+      outcomes: "course_outcomes", program_courses: "coci_program_courses", registry: "program_source_registry" }, rule: { registry: "catalog link = catalog_url held" },
+      last_attempt: state === "kept" ? { at: "2026-11-14T16:00:00Z", ok: false, error_class: "short read" } : { at: READ_AT, ok: true }, flag: "internal" };
+    d.overall = { basis: "live", state: "read", read_at: READ_AT, rule: "the whole-harvest rule", flag: "shareable", statewide: { mean: 0.45, colleges: 2 },
+      colleges: { 1: { value: 0.6, parts: { catalog: 0.6667, requirements: 0.8, slos: 0.75, plos: 0.5 } }, 3: { value: 0.3, parts: { catalog: 1, requirements: 0.25, slos: 0, plos: 0 } } } };
+    return d;
+  }
+  const DICT = { source: "docs/reference/data_dictionary.md", flag: "internal", errors: [], datasets: [
+    { name: "Program requirements", group: "Harvested", stage: "Connected", owner: "The college (curriculum office).", procedure_today: "A reader files to `kb/program_requirements_college/<slug>/`.",
+      planned_improvement: "One matrix run per wave.", link: "docs/reference/data_dictionary.md#program-requirements", evidence: ["kb/program_requirements_college/", "docs/reference/data_sources.md::### Harvest"],
+      evidence_cited: ["docs/reference/data_sources.md::### Harvest"], repo_verifiable: true, evidence_missing: [], unverified_claims: 0 },
+    { name: "Course descriptions", group: "Connected", stage: "Connected", owner: "CCCCO (COCI).", procedure_today: "A snapshot.", planned_improvement: "The classifier.",
+      link: "docs/reference/data_dictionary.md#course-descriptions", evidence: ["kb/reference/coci_course_list.xlsx", "kb/nowhere.json"], evidence_cited: [], repo_verifiable: true, evidence_missing: ["kb/nowhere.json"], unverified_claims: 0 },
+    { name: "JST authorizations", group: "Planned", stage: "Asked", owner: "CCCCO; steward *to confirm*. <img src=x onerror=alert(1)>", procedure_today: "Not yet.", planned_improvement: "A feed.",
+      link: "docs/reference/data_dictionary.md#jst-authorizations", evidence: ["docs/reference/data_sources.md::### JST"], evidence_cited: ["docs/reference/data_sources.md::### JST"],
+      repo_verifiable: false, evidence_missing: [], unverified_claims: 2 },
+    { name: "CVC offerings", group: "Planned", stage: "Assessed", owner: "CVC.", procedure_today: "Not yet.", planned_improvement: "A feed.", link: "docs/reference/data_dictionary.md#cvc-offerings",
+      evidence: [], evidence_cited: [], repo_verifiable: false, evidence_missing: [], unverified_claims: 1 }
+  ] };
+  const APIS = { source: "docs/reference/data_dictionary.md#api-connection-checklist", flag: "internal", connected: 1, total: 4, rows: [
+    { api: "MAP CustomReport API", holder: "MAP", needed: "yes", status: "connected", claimed: "connected", priority: false, evidence: ["scripts/daily_build.sh::Fetch CustomReport"], evidence_cited: [], evidence_missing: [], note: "Daily pull." },
+    { api: "CCCStart API", holder: "CCCCO", needed: "yes", status: "planned", claimed: "planned", priority: true, evidence: ["docs/reference/data_sources.md::### CCCStart"], evidence_cited: ["docs/reference/data_sources.md::### CCCStart"], evidence_missing: [], note: "Lands in `MAP`." },
+    { api: "Catalog platform APIs", holder: "Colleges", needed: "yes", status: "unverified", claimed: "connected", priority: false, evidence: [], evidence_cited: [], evidence_missing: ["kb/x.json"], note: "" },
+    { api: "A feed nobody needs", holder: "Someone", needed: "no", status: "planned", claimed: "planned", priority: false, evidence: [], evidence_cited: [], evidence_missing: [], note: "" }
+  ] };
+  const base3 = JSON.parse(JSON.stringify(DATA3));
+  base3.dictionary = DICT; base3.apis = APIS;
+  const READ = withLive(base3, "read"), KEPT = withLive(base3, "kept"), NOTREAD = withLive(base3, "not read"), FIRSTFAIL = withLive(base3, "first failed");
+  const ovCell = (x, n) => txt(x.d.querySelector('#cdd-colleges tr[data-college="' + n + '"] td[data-label="Overall"]'));
+
+  // read
+  const s1 = load("#commons/data", READ);
+  await s1.M.boot(); await settle();
+  const ovT = tile(s1, "overall");
+  check("overall 1 ⭐: after a live read the overall tile shows the statewide mean with its basis and date in words, and is a button",
+    ovT && ovT.tagName === "BUTTON" && txt(ovT.querySelector(".cdd-v")) === "45%" && /live read, Nov 13, 2026/.test(txt(ovT)) && !plain(s1, "Overall completeness"));
+  ovT.click();
+  check("overall 2 ⭐: the tile opens the colleges it averages, lowest first, and the address carries it",
+    JSON.stringify(rows(s1)) === JSON.stringify(["Gamma College", "Alpha College"]) && s1.w.location.hash === "#commons/data/overall" && reported(s1) === "commons/data/overall"
+    && /Mean of 2 colleges/i.test(txt(ovT)));
+  check("overall 3 ⭐: the list column shows each college's bar with Live read and its date; a college the read does not hold is not a zero",
+    /^60%\s*Live read, Nov 13, 2026$/.test(ovCell(s1, "Alpha College")) || (/60%/.test(ovCell(s1, "Alpha College")) && /Live read, Nov 13, 2026/.test(ovCell(s1, "Alpha College"))));
+  s1.d.querySelector("#cdd-all").click();
+  check("overall 4: a college outside the live read says so, never 0%", ovCell(s1, "Beta College") === "Not in the live read" && !/0%/.test(ovCell(s1, "Beta College")));
+  check("overall 5: the committed basis stays labeled apart from the live one", /From the committed files\./.test(txt(s1.d.querySelector("#cdd-stamp"))) && /From the live read\. .*live read, Nov 13, 2026/.test(txt(s1.d.querySelector("#cdd-stamp-live"))));
+  s1.d.querySelector('[data-expand="1"]').click();
+  const ovCard = s1.d.querySelector('#cdd-more-1 [data-ds="overall"]');
+  check("overall 6: the row shows the overall bar, its four parts and its basis", ovCard && /60%/.test(txt(ovCard)) && /Catalog source\s*67%/.test(txt(ovCard)) && /Program requirements passing\s*80%/.test(txt(ovCard)) && /Live read, Nov 13, 2026/.test(txt(ovCard)));
+  s1.d.querySelector('[data-panel-open="1"]').click();
+  const P1 = s1.d.getElementById("cdd-panel"), psec = (k) => txt(P1.querySelector('[data-ds="' + k + '"]'));
+  check("overall 7 ⭐: the panel's overall section shows the bar and parts, no TBA", /Overall\s*60%/.test(txt(P1)) && /Course SLOs\s*75%/.test(txt(P1)) && !/Overall\s*TBA/.test(txt(P1)));
+  check("live 1 ⭐: Active, Teachout and Approved are shown apart, from the live read",
+    /Active programs\s*100/.test(psec("pr")) && /Teachout programs \(apart from Active\)\s*3/.test(psec("pr")) && /Approved programs \(apart from Active\)\s*4/.test(psec("pr"))
+    && /Program records on file\s*96/.test(psec("pr")) && /Active programs with a passing record\s*80/.test(psec("pr")) && /From the live read, Nov 13, 2026/.test(psec("pr")) && !/Teachout and Approved programs: TBA/.test(psec("pr")));
+  check("live 2: the committed figure keeps its own label beside the live lines", /80 of 100 listed programs pass the machine checks/.test(psec("pr")));
+  check("live 3 ⭐: SLOs and PLOs read from the live counts with their basis; the TBA lines are gone",
+    /300 of 400 courses on Active programs have SLOs/.test(psec("slo")) && /75%/.test(psec("slo")) && /Live read, Nov 13, 2026/.test(psec("slo")) && !/SLO reason/.test(psec("slo"))
+    && /50 of 100 Active programs carry PLOs/.test(psec("plo")) && !/PLO reason/.test(psec("plo")) && /0 of 400 courses on Active programs have objectives/.test(psec("obj")));
+  const reg = P1.querySelector('[data-ds="cat"] [data-part="registry"]');
+  check("live 4 ⭐: the registry checks are words, held or not, never 'checked'",
+    reg && /Catalog link\s*held/.test(txt(reg)) && /Curriculum view\s*not held/.test(txt(reg)) && /Pathway source\s*none found when looked for/.test(txt(reg)) && !/checked/i.test(txt(reg)) && !/Registry reason/.test(psec("cat")));
+  check("live 5: the rest keep their committed-file reasons", /TBA\. PPM reason\./.test(psec("ppm")) && /TBA\. MIS reason\./.test(psec("mis")) && /TBA\. COE reason\./.test(psec("coe")));
+  check("live 6: the live sources are named", /live: coci_college_programs; program_requirement_records/.test(psec("pr")) && /live: course_outcomes/.test(psec("slo")));
+  // the view changes while the panel is open: nothing stays inert
+  const hd = s1.d.createElement("header"); hd.id = "site-head2"; s1.d.body.insertBefore(hd, s1.d.body.firstChild);
+  s1.D.closePanel(); s1.D.openPanel(1);
+  check("inert 4: the panel holds the page inert", hd.hasAttribute("inert"));
+  s1.w.history.replaceState(null, "", "#commons/data/dictionary");
+  s1.w.dispatchEvent(new s1.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
+  await settle();
+  check("inert 5 ⭐: moving to the dictionary view with the panel open hides the panel and releases every inert",
+    !s1.d.querySelector("[inert]") && s1.d.getElementById("cdd-panel").hasAttribute("hidden") && s1.d.getElementById("cdd-dict") && reported(s1) === "commons/data/dictionary");
+
+  // kept
+  const s2 = load("#commons/data", KEPT);
+  await s2.M.boot(); await settle();
+  check("kept 1 ⭐: a kept block says its figures are from the earlier read, with that read's date and the failed attempt's",
+    /did not complete \(short read\); these figures are from the earlier read of Nov 13, 2026/.test(txt(tile(s2, "overall"))) && /Nov 14, 2026/.test(txt(tile(s2, "overall")))
+    && /earlier read of Nov 13, 2026/.test(txt(s2.d.querySelector("#cdd-stamp-live"))));
+  s2.d.querySelector('[data-expand="1"]').click(); s2.d.querySelector('[data-panel-open="1"]').click();
+  check("kept 2: the panel's overall says it too", /earlier read of Nov 13, 2026/.test(txt(s2.d.querySelector('#cdd-panel [data-kept]'))));
+
+  // not read, and a first attempt that failed
+  const s3 = load("#commons/data", NOTREAD);
+  await s3.M.boot(); await settle();
+  check("not read 1 ⭐: until the first live read the overall tile reads TBA with the reason, and opens nothing",
+    plain(s3, "Overall completeness") && txt(plain(s3, "Overall completeness").querySelector(".cdd-v")) === "TBA" && /The live read has not run yet\./.test(txt(plain(s3, "Overall completeness"))) && !tile(s3, "overall"));
+  check("not read 2: every row's overall reads TBA", Array.from(s3.d.querySelectorAll('#cdd-colleges td[data-label="Overall"]')).every((td) => txt(td) === "TBA"));
+  s3.d.querySelector('[data-expand="1"]').click(); s3.d.querySelector('[data-panel-open="1"]').click();
+  const P3 = s3.d.getElementById("cdd-panel");
+  check("not read 3: the panel's live lines read TBA with the reason; the committed reasons stay", /Overall\s*TBA\. The live read has not run yet\./.test(txt(P3))
+    && /Teachout and Approved programs: TBA\. The live read has not run yet\./.test(txt(P3)) && /TBA\. PLO reason\./.test(txt(P3)) && !P3.querySelector('[data-part="registry"]'));
+  const s4 = load("#commons/data", FIRSTFAIL);
+  await s4.M.boot(); await settle();
+  check("not read 4: a first attempt that failed is named, still TBA", /The live read has not run yet\. Its last attempt, Nov 13, 2026, did not complete \(timeout\)\./.test(txt(plain(s4, "Overall completeness"))));
+
+  // the API checklist and its tile
+  const at = s3.d.querySelector('.cdd-tile[data-view="apis"]');
+  check("apis 1 ⭐: APIs connected reads connected of needed, the unverified one not counted, and is a button",
+    at && at.tagName === "BUTTON" && txt(at.querySelector(".cdd-v")) === "1 of 3" && /1 read unverified/.test(txt(at)));
+  at.click();
+  const AT = s3.d.getElementById("cdd-api-table");
+  const st = (n) => (s3.d.querySelector('#cdd-api-table tr[data-api="' + n + '"]') || { getAttribute: () => "" }).getAttribute("data-status");
+  check("apis 2 ⭐: the tile opens the checklist at its address", AT && s3.w.location.hash === "#commons/data/apis" && reported(s3) === "commons/data/apis" && txt(s3.d.querySelector("#cdd-h")) === "The API checklist");
+  check("apis 3 ⭐: each status in words; unverified never reads connected; a connection not needed says so",
+    st("MAP CustomReport API") === "connected" && st("CCCStart API") === "planned" && st("Catalog platform APIs") === "unverified" && st("A feed nobody needs") === "not needed"
+    && /Claimed connected; no evidence for it in the repo/.test(txt(s3.d.querySelector('#cdd-api-table tr[data-api="Catalog platform APIs"]'))));
+  check("apis 4: evidence in the repo and evidence only cited are shown apart",
+    /Verifiable in the repo \(0\)/.test(txt(s3.d.querySelector('#cdd-api-table tr[data-api="CCCStart API"]'))) && /Cited, outside the repo's checks \(1\)/.test(txt(s3.d.querySelector('#cdd-api-table tr[data-api="CCCStart API"]')))
+    && /Verifiable in the repo \(1\)/.test(txt(s3.d.querySelector('#cdd-api-table tr[data-api="MAP CustomReport API"]'))));
+  check("apis 5: th scope, a labeled scrolling region, the doc's code spans as code", AT.querySelectorAll("th[scope]").length === AT.querySelectorAll("th").length && AT.closest('[role="region"][aria-label="The API checklist"]') && AT.querySelector("code"));
+  check("apis 6: no tiles, no list and no Coming next on the checklist view", !s3.d.querySelector(".cdd-tiles") && !s3.d.querySelector("#cdd-colleges") && !s3.d.querySelector("#cdd-next"));
+
+  // the dictionary
+  s3.d.querySelector('.cdd-views a[data-goto="dictionary"]').click();
+  const DV = s3.d.getElementById("cdd-dict");
+  check("dict 1 ⭐: the view word opens the dictionary at its address", DV && s3.w.location.hash === "#commons/data/dictionary" && reported(s3) === "commons/data/dictionary"
+    && s3.d.querySelector('.cdd-views a[aria-current="page"]').getAttribute("data-goto") === "dictionary");
+  check("dict 2 ⭐: one entry per dataset, grouped as the doc groups them, in its order",
+    JSON.stringify(Array.from(DV.querySelectorAll(".cdd-dgroup")).map((g) => g.getAttribute("data-group"))) === '["Harvested","Connected","Planned"]' && DV.querySelectorAll("article.cdd-entry").length === 4);
+  const ent = (n) => DV.querySelector('article[data-dataset="' + n + '"]');
+  check("dict 3: each entry gives its stage, owner, today's procedure, the planned improvement and a GitHub link to the doc's anchor",
+    /Stage\s*Connected/.test(txt(ent("Program requirements"))) && /Owner or steward\s*The college/.test(txt(ent("Program requirements"))) && /How we get it today/.test(txt(ent("Program requirements")))
+    && /Planned improvement\s*One matrix run/.test(txt(ent("Program requirements")))
+    && ent("Program requirements").querySelector('a[href="https://github.com/cpl-initiative/cpl-project-tracker/blob/main/docs/reference/data_dictionary.md#program-requirements"]'));
+  check("dict 4 ⭐: repo-verifiable and cited evidence shown apart in words; a missing file named",
+    /Verifiable in the repo \(1\)/.test(txt(ent("Program requirements"))) && /Cited, outside the repo's checks \(1\)/.test(txt(ent("Program requirements")))
+    && /Named but not found in the repo \(1\)\s*kb\/nowhere\.json/.test(txt(ent("Course descriptions"))));
+  check("dict 5 ⭐: an unverified claim is marked in words", /Unverified: nothing in the repo outside the doc family backs this entry\. 2 claims in this entry are marked unverified/.test(txt(ent("JST authorizations")))
+    && !ent("Program requirements").querySelector("[data-unverified]"));
+  check("dict 6 ⭐: text only: markup in the file stays text, a *mark* loses its asterisks",
+    !DV.querySelector("img") && /<img src=x/.test(txt(ent("JST authorizations"))) && /steward to confirm/.test(txt(ent("JST authorizations"))));
+  check("static: no innerHTML anywhere in the view", !/innerHTML|insertAdjacentHTML|outerHTML/.test(SRC));
+
+  // Coming next, from the dictionary's stages
+  const s5 = load("#commons/data", READ);
+  await s5.M.boot(); await settle();
+  const nx = s5.d.getElementById("cdd-next");
+  check("next 1 ⭐: one Coming next section at the foot, each feature a line with what it waits on",
+    nx && s5.d.querySelectorAll("#cdd-next").length === 1 && nx === s5.d.querySelector(".cmn-wrap.cdd").lastElementChild
+    && ["The College view", "AI workers per college", "The JST funnel", "SIS and curriculum system tiles", "Program Pathways Mapper reads per college", "Course descriptions per college",
+      "MIS course matches per college", "COE regional demand per college", "Planned datasets"].every((k) => nx.querySelector('[data-next="' + k + '"]')));
+  check("next 2: the JST line carries the dictionary's stage; the planned line lists each planned dataset at its stage",
+    /Dictionary stage: Asked\./.test(txt(nx.querySelector('[data-next="The JST funnel"]'))) && /JST authorizations \(Asked\); CVC offerings \(Assessed\)/.test(txt(nx.querySelector('[data-next="Planned datasets"]'))));
+  check("next 3: the College view stays internal: no share link, nothing addressed to a college", /no share link/.test(txt(nx)) && !s5.d.querySelector('a[href*="share"]'));
+
+  // the platform filter
+  const pb = (x, k) => x.d.querySelector('.cdd-plat[data-platform="' + k + '"]');
+  check("platform 1: a word per platform the captures read, with its count, Any pressed", pb(s5, "any").getAttribute("aria-pressed") === "true" && /CourseLeaf \(1\)/.test(txt(pb(s5, "courseleaf"))) && /PDF \(1\)/.test(txt(pb(s5, "pdf"))));
+  pb(s5, "pdf").click();
+  check("platform 2 ⭐: a platform narrows the list and lives in the address", JSON.stringify(rows(s5)) === '["Gamma College"]' && s5.w.location.hash === "#commons/data/platform/pdf"
+    && reported(s5) === "commons/data/platform/pdf" && pb(s5, "pdf").getAttribute("aria-pressed") === "true" && /catalog platform PDF/.test(txt(s5.d.querySelector("#cdd-shown"))));
+  tile(s5, "gaps").click();
+  check("platform 3: a figure opens its whole list, the platform cleared", s5.w.location.hash === "#commons/data/gaps" && rows(s5).length === 2);
+  const s6 = load("#commons/data/gaps/platform/pdf/college/gamma-college", READ);
+  await s6.M.boot(); await settle();
+  check("platform 4 ⭐: filter, platform and college round-trip from the address", tile(s6, "gaps").getAttribute("aria-pressed") === "true" && JSON.stringify(rows(s6)) === '["Gamma College"]'
+    && txt(s6.d.getElementById("cdd-panel-h")) === "Gamma College" && reported(s6) === "commons/data/gaps/platform/pdf/college/gamma-college");
+  s6.w.dispatchEvent(new s6.w.CustomEvent("cpl-tab-activated", { detail: { tab: "other" } }));
+  s6.w.history.replaceState(null, "", "#commons/data");
+  s6.w.dispatchEvent(new s6.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
+  await settle();
+  check("platform 5 ⭐: a new visit remembers no platform; nothing stored", pb(s6, "any").getAttribute("aria-pressed") === "true" && rows(s6).length === 5
+    && !/platform|pdf/.test(Object.values(s6.w.localStorage._o || {}).filter((v) => !/^\{"tab"/.test(v)).join(" ")));
+  const s7 = load("#commons/data/platform/nowhere", READ);
+  await s7.M.boot(); await settle();
+  check("platform 6: an unknown platform opens the whole list", rows(s7).length === 5 && reported(s7) === "commons/data");
+  const s8 = load("#commons/data/apis", READ);
+  await s8.M.boot(); await settle();
+  check("address 13 ⭐: #commons/data/apis opens the checklist from its arrival", s8.d.getElementById("cdd-api-table") && reported(s8) === "commons/data/apis");
+  s8.d.querySelector('.cdd-views a[data-goto="list"]').click();
+  check("address 14: the list word returns to the list", s8.d.getElementById("cdd-colleges") && s8.w.location.hash === "#commons/data");
+
+  // ── (11) the review of #3236: each confirmed finding, a check that failed before its fix ──
+  const R2 = JSON.parse(JSON.stringify(READ));
+  R2.colleges[1].platform = "pdf";                                   // Beta: pdf too, so pdf counts 2 statewide
+  R2.live.colleges[4] = JSON.parse(JSON.stringify(LIVE_COLLEGES[1]));   // Delta: never harvested, but in the live read
+  R2.live.colleges[3].outcomes.slo_courses_on_active = null;            // Gamma: one table came back without a count
+  R2.live.colleges[3].registry = { row: false, catalog_link: false, course_outline_link: false, sequence_source: false, sequence_checked: false };
+  R2.overall.statewide.colleges = 7;                                    // the builder's own count behind its mean
+  const v1 = load("#commons/data/college/beta-college", R2);
+  await v1.M.boot(); await settle();
+  const PB = v1.d.getElementById("cdd-panel"), bsec = (k) => txt(PB.querySelector('[data-ds="' + k + '"]'));
+  check("review3236 missing 1 ⭐: a college the completed live read does not hold gets its own true reason, never 'has not run yet'",
+    /Teachout and Approved programs: TBA\. The live read holds no counts for this college\./.test(bsec("pr")) && !/has not run yet/.test(txt(PB)));
+  check("review3236 missing 2 ⭐: its SLO, PLO, objective and registry sections say the same, not the not-carried reasons",
+    ["slo", "plo", "obj", "cat"].every((k) => /The live read holds no counts for this college\./.test(bsec(k))) && !/Registry reason|PLO reason|Objectives reason/.test(txt(PB)));
+  const v2 = load("#commons/data/college/alpha-college", R2);
+  await v2.M.boot(); await settle();
+  const PA = v2.d.getElementById("cdd-panel"), asec = (k) => txt(PA.querySelector('[data-ds="' + k + '"]'));
+  check("review3236 stamp 1 ⭐: a live figure carries the live read's stamp, never 'Not yet' (PLOs, objectives with no load time)",
+    /Updated .* PT \(live read\)/.test(asec("plo")) && !/Not yet/.test(asec("plo")) && !/Not yet/.test(asec("obj")));
+  const v3 = load("#commons/data/college/delta-college", R2);
+  await v3.M.boot(); await settle();
+  const PD = v3.d.getElementById("cdd-panel");
+  check("review3236 stamp 2: program requirements for a college in the live read but never harvested carry the live stamp",
+    /\(live read\)/.test(txt(PD.querySelector('[data-ds="pr"]'))) && !/Not yet/.test(txt(PD.querySelector('[data-ds="pr"]'))) && /Teachout programs \(apart from Active\)\s*3/.test(txt(PD.querySelector('[data-ds="pr"]'))));
+  const v4 = load("#commons/data/college/gamma-college", R2);
+  await v4.M.boot(); await settle();
+  const PG = v4.d.getElementById("cdd-panel"), gsec = (k) => txt(PG.querySelector('[data-ds="' + k + '"]'));
+  check("review3236 null ⭐ (COBIx 1): a count the live read lacks reads TBA, never 0%", /TBA\./.test(gsec("slo")) && !/0%|0 of/.test(gsec("slo")));
+  const regG = PG.querySelector('[data-ds="cat"] [data-part="registry"]');
+  check("review3236 registry (COBIx 3): no registry row reads as such, not three not-held lines", regG && /No registry row for this college/.test(txt(regG)) && !/not held|not looked for/.test(txt(regG)));
+  const v5 = load("#commons/data", R2);
+  await v5.M.boot(); await settle();
+  check("review3236 tile (COBIx 2): the overall tile's count is the builder's, the set behind its mean", /The mean of 7 colleges/.test(txt(tile(v5, "overall"))));
+  tile(v5, "gaps").click();
+  const pw = v5.d.querySelector('.cdd-plat[data-platform="pdf"]');
+  const said = Number((txt(pw).match(/\((\d+)\)/) || [])[1]);
+  pw.click();
+  check("review3236 platform ⭐: under an active filter a platform word's figure equals the list it opens, and the filter stays",
+    said === rows(v5).length && rows(v5).length === 1 && v5.w.location.hash === "#commons/data/gaps/platform/pdf");
 
   const failed = results.filter((x) => !x[1]);
   results.forEach((x) => console.log((x[1] ? "PASS " : "FAIL ") + x[0]));

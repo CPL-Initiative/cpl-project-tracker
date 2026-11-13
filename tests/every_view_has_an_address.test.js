@@ -76,6 +76,12 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   const DATAJS = fs.readFileSync("commons_data.js", "utf8");
   check("(E) ⭐ commons/data hands its view the whole arrival, so a college's panel opens from its address",
     /DATA\.filter = a\.slice\(1\)\.join\("\/"\)/.test(COMMONS) && /"\/college\/" \+ slugOf\(c\)/.test(DATAJS) && /p\[0\] === "college"/.test(DATAJS));
+  // (E) slice 3 of #3215: the data dictionary and the API checklist are views of their own, #commons/data/dictionary and
+  // #commons/data/apis: the view reads them first from the arrival and names them in its report; the catalog platform
+  // filter lives in the address too (platform/<key>). The round trips are in tests/commons_data.test.js (10).
+  check("(E) ⭐ commons/data/dictionary and commons/data/apis open from their arrival and report themselves",
+    /dictionary: "The data dictionary", apis: "The API checklist"/.test(DATAJS) && /if \(VIEWS\[p\[0\]\]\) \{ out\.view = p\[0\]/.test(DATAJS) && /if \(S\.view\) return "commons\/data\/" \+ S\.view/.test(DATAJS));
+  check("(E) commons/data carries its catalog platform in the address", /"\/platform\/" \+ platform/.test(DATAJS) && /p\[i\] === "platform"/.test(DATAJS));
   const files = fs.readdirSync(".").filter((f) => /\.js$/.test(f) && f !== "cpl_session.js");
   files.forEach(function (f) {
     const s = fs.readFileSync(f, "utf8");

@@ -1238,6 +1238,19 @@ async function seedCommonsData(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Commons data dashboard, slice 3 (#3215): the data dictionary or the API checklist, opened by its address.
+async function seedCommonsDataView(page, theme, view) {
+  await page.evaluate((v) => { const h = "commons/data/" + v; if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, view);
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector(view === "dictionary" ? "#commons-root #cdd-dict" : "#commons-root #cdd-apis", { state: "attached", timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // The Commons data dashboard, slice 2 (#3215): one college's row opened in place, or its side panel opened by the
 // address (#commons/data/college/<slug>). The row is opened by its word, as a reader would.
 async function seedCommonsDataOpen(page, theme, what) {
@@ -3788,6 +3801,39 @@ module.exports = {
     routes: [{ hash: "commons/data/college/san-jose-city-college", name: "data-panel-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataOpen(page, "dark", "panel"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── The Commons data dashboard, slice 3 (#3215): the data dictionary and the API checklist, each its own view ── */
+  "commons-data-dictionary": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, the data dictionary",
+    routes: [{ hash: "commons/data/dictionary", name: "data-dictionary" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "dictionary"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-dictionary-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, the data dictionary, dark",
+    routes: [{ hash: "commons/data/dictionary", name: "data-dictionary-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "dark", "dictionary"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-apis": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, the API checklist",
+    routes: [{ hash: "commons/data/apis", name: "data-apis" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "apis"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-apis-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, the API checklist, dark",
+    routes: [{ hash: "commons/data/apis", name: "data-apis-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "dark", "apis"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── COCI Lookup: the Common Course Reference's Progress page (S559) ── */
