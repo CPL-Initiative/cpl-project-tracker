@@ -69,37 +69,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    62.0,
-    62.0
+    28.0,
+    28.0
    ],
    "stated": [
-    60.0,
-    60.0
+    28.0,
+    28.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     28.0,
-     28.0
+     62.0,
+     62.0
     ],
     "stated": [
-     28.0,
-     28.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -124,7 +123,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -155,7 +154,8 @@
     "Demonstrate scientific and mathematical thinking.",
     "Relate the principles of chemistry, and how they apply to Earth systems and biogeochemical cycles."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -270,5 +270,14 @@
    "The preceding section on page 94 (Geography ADT, with its own outcomes and GEOLOGY 001 in List B) belongs to another program and was not used."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

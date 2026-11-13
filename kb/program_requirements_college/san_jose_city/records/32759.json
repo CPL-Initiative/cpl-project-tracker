@@ -1,0 +1,312 @@
+{
+ "college": "San Jose City College",
+ "control_number": "32759",
+ "shape": "adt",
+ "title": "Economics",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/economics/economics-associate-arts-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7400,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7400,
+    "output_tokens": 2890,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2890,
+  "output_tokens_details": {
+   "thinking_tokens": 1428
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0874,
+ "ms": 24242,
+ "seconds": 24.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 12,
+   "share": 0.833,
+   "missing": [
+    "ACCOUNTINGAC",
+    "MATH20"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ACCTG20",
+    "MATH62"
+   ],
+   "flagged": [
+    "ACCTG20",
+    "MATH62"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    24.0
+   ],
+   "stated": [
+    18.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     74.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Economics, Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 10,
+    "max": 16
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply macroeconomic models to describe the economy based on the laws of supply and demand.",
+    "Explain the concepts of economic resources, scarcity, opportunity cost, rational behavior and elasticity.",
+    "Describe our mixed capitalist system and the national output (GDP) of the United States.",
+    "Analyze how monetary and fiscal policy impacts the economy.",
+    "Explain how markets function and the role of the government into the economy.",
+    "Describe how consumers try to maximize utilities and firms attempt to maximize profit within the context of the market structure in the United States."
+   ],
+   "careers": [
+    "public policy",
+    "government agencies",
+    "government related organizations",
+    "business",
+    "data analysis",
+    "accounting",
+    "education"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 062",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MATH 071",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "List A: Complete One Course",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ACCTG 020",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACCTG 021",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 041",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 072",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Complete One Course from this list or One Course not already used in List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH 073",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 079",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AccountingAC",
+    "why": "Closed-list code not printed; title Financial Accounting likely matches ACCTG 020 in List A, which was recorded as a catalog addition"
+   },
+   {
+    "code": "MATH 20",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Section heading is truncated in the text ('n Arts for Transfer'); recorded as 'Economics, Associate in Arts for Transfer' from the URL and description.",
+   "The 3-5 range is printed on the 'MATH 062 ... or MATH 071' row and appears to span both options (MATH 062 likely 3, MATH 071 likely 5); recorded on MATH 062 as printed, MATH 071 has no units printed beside it.",
+   "Catalog codes use leading zeros (MATH 071, ACCTG 021, CIS 041, MATH 061/072/073/079) and were matched to closed-list MATH 71, ACCTG 21, CIS 41, MATH 61/72/73/79.",
+   "List B may alternatively be satisfied by one course from List A not already used in List A.",
+   "Transferable Electives (as needed to reach 60) printed as 10-16 units outside the major; recorded in degree_elective_units.",
+   "Outcomes printed in the page's program outcomes tab; recorded for this award."
+  ]
+ },
+ "extracted_run": "43357106423"
+}

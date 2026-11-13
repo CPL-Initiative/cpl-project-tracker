@@ -1,0 +1,1097 @@
+{
+ "college": "San Jose City College",
+ "catalog_url": "https://catalog.sjcc.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 125,
+ "with_closed_list": 90,
+ "started": "2026-11-13T03:11:34Z",
+ "scope": null,
+ "sitemap": {
+  "url": "https://catalog.sjcc.edu/sitemap.xml",
+  "status": 200,
+  "listed": 379,
+  "nested": 0,
+  "program_pages": 218,
+  "refused": null,
+  "errors": null,
+  "failed": null
+ },
+ "listing_failed": 0,
+ "pages_read": 214,
+ "pages_listed": 226,
+ "pages_answered": 214,
+ "child_pages": 8,
+ "banner_h1": null,
+ "loads": 233,
+ "seconds": 1134.0,
+ "found": 84,
+ "by_method": {
+  "link_search": 2,
+  "no_closed_list": 35,
+  "not_found": 5,
+  "page_claimed": 1,
+  "sitemap_page": 82
+ },
+ "shared_pages": {
+  "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/": [
+   "06210",
+   "12546"
+  ],
+  "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-master-teacher-certificate-achievement/": [
+   "35033",
+   "35034"
+  ],
+  "https://catalog.sjcc.edu/": [
+   "43327",
+   "43328"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "06188",
+   "title": "Real Estate",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-associate-science/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.2,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 1 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6199,
+     "content": 37960,
+     "tabs": 1309
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      445
+     ],
+     [
+      "Requirements",
+      1289
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "22225",
+   "title": "Real Estate",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/real-estate-certificate-achievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.333,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 6049,
+     "content": 37187,
+     "tabs": 685
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      445
+     ],
+     [
+      "Requirements",
+      665
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "40875",
+   "title": "Business and Data Analytics",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-applications/business-data-analytics-certificate-achievement-level-1/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4798,
+     "content": 36089,
+     "tabs": 302
+    },
+    "tab_panels": [
+     [
+      "Learning Outcomes",
+      462
+     ],
+     [
+      "Requirements",
+      282
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "42654",
+   "title": "User Experience and Interaction Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/user-experience-interaction-design-certificate-achievement/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5503,
+     "content": 37105,
+     "tabs": 378
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      889
+     ],
+     [
+      "Requirements",
+      358
+     ]
+    ]
+   }
+  },
+  {
+   "control_number": "44384",
+   "title": "Motion Graphic Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/motion-graphic-design-certificate-ofachievement-level-2/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 2,
+    "why": "coarse net: the page's code tokens name 0 of 2 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4960,
+     "content": 36299,
+     "tabs": 355
+    },
+    "tab_panels": [
+     [
+      "Program Learning Outcomes",
+      652
+     ],
+     [
+      "Requirements",
+      335
+     ]
+    ]
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "41533",
+   "title": "Graphic Design",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://catalog.sjcc.edu/degrees-certificates/art/art-history-associate-arts-transfer/",
+    "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-arts/",
+    "https://catalog.sjcc.edu/degrees-certificates/art/studio-arts-associate-arts-transfer/",
+    "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 12,
+  "0.8-1.0": 35,
+  "1.0": 37
+ },
+ "would_extract": {
+  "against": null,
+  "kept": 0,
+  "kept_moved": 0,
+  "programs": 84,
+  "list": [
+   {
+    "control_number": "06185",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-associate-science/",
+    "coverage": 0.778,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06202",
+    "title": "Construction Technology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-science/",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06210",
+    "title": "Art - Drawing & Painting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06218",
+    "title": "Dental Assisting",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-associate-science/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06230",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/administration-justice-associate-science/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "06236",
+    "title": "Cosmetology",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/cosmetology/cosmetology-associate-science/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08859",
+    "title": "Construction Technology-Residential Maintenance-Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/residential-maintenance-certificate-achievement-level-2/",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10540",
+    "title": "Alcohol & Drug Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/alcohol-drug-studies/alcohol-drug-studies-associate-arts/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "10541",
+    "title": "Construction Technology",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12546",
+    "title": "Art - Photography",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "13569",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16370",
+    "title": "Chemistry",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/chemistry/chemistry-associate-arts/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18390",
+    "title": "Laser Technology 1",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/laser-technology/laser-technology-certificate-achievement-level-1/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18449",
+    "title": "Liberal Arts: Arts & Humanities",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-arts-humanities-associate-arts/",
+    "coverage": 0.937,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18450",
+    "title": "Liberal Arts: Scientific Inquiry and Quantitative Reasoning",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-scientific-inquiry-quantitative-reasoning-associate-arts/",
+    "coverage": 0.982,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18451",
+    "title": "Liberal Arts: Social & Behavioral Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/counseling/liberal-arts-social-behavioral-sciences-associate-arts/",
+    "coverage": 0.972,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18738",
+    "title": "Residential Carpentry Technology",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18921",
+    "title": "Air Conditioning & Refrigeration Technology 3",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22220",
+    "title": "Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-certificate-achievement/",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22232",
+    "title": "CIS Network Administration: General Networking",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/cis-general-networking-certificate-achievement-level-1/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22237",
+    "title": "Construction Technology-Level 3",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-certificate-achievement-level-3/",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22239",
+    "title": "Dental Assisting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/dental-assisting/dental-assisting-certificate-achievement-level-3/",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22241",
+    "title": "Alcohol & Drug Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/alcohol-drug-studies/alcohol-and-drug-studies-certificate-of-achievement-level-3/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22242",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/cosmetology/cosmetology-certificate-achievement-level-3/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22991",
+    "title": "Judicial Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/administration-justice-judicial-administration-certificate-achievement-judicial-administration/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22992",
+    "title": "Court Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/administration-justice-judicial-administration-certificate-achievement-court-management/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22993",
+    "title": "Supervison/Lead",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/administration-justice-judicial-administration-certificate-achievement-supervision-lead/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "22994",
+    "title": "Court Operations",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/administration-justice-judicial-administration-certificate-achievement-court-operations/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30403",
+    "title": "Medical Assisting: Administrative",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-administrative-associate-science/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30443",
+    "title": "Medical Assistant: Administrative Level 3",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-administrative-certificate-achievement-level-3/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32078",
+    "title": "Medical Assisting: Clinical",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-associate-science/",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32214",
+    "title": "Medical Assisting: Clinical",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-clinical-certificate-achievement-level-3/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32260",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-associate-arts-transfer/",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32304",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/psychology/psychology---associate-in-arts-for-transfer/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32554",
+    "title": "Communication Studies and Mass Media",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/communication-studies/communication-studies-certificate-achievement-level-1/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32759",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/economics/economics-associate-arts-transfer/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33073",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/art/studio-arts-associate-arts-transfer/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33766",
+    "title": "Dance Teaching",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/dance/dance-teaching-certificate-achievement-level-1/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33857",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/dance/dance-associate-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35032",
+    "title": "Early Childhood Education - Inclusion Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-inclusion-specialist-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35033",
+    "title": "Early Childhood Education - Teacher",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-master-teacher-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35034",
+    "title": "Early Childhood Education - Master Teacher",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/early-childhood-education/early-childhood-education-master-teacher-certificate-achievement/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35398",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/sociology/sociology-associate-arts-transfer/",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35591",
+    "title": "Patient Navigator",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/patient-navigator-certificate-of-achievement-level-1/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35596",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/political-science/political-science-associate-arts-transfer/",
+    "coverage": 0.76,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35835",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/geography/geography-associate-arts-transfer/",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36245",
+    "title": "Global Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/global-studies/global-studies-associate-arts-transfer/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36415",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/journalism/journalism-associate-arts-transfer/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36929",
+    "title": "ESL in Career and College - Intermediate",
+    "award": "Noncredit program",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/english-as-a-second-language/english-as-a-second-language-certificate-competency/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37492",
+    "title": "Medical Career Preparation",
+    "award": "Noncredit program",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-career-preparation---certificate-completion-noncredit/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37604",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/spanish/spanish-associate-arts-transfer/",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38113",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/theatrearts/theatre-arts-associate-in-arts-for-transfer/",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38152",
+    "title": "Global Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/global-studies/certificate-achievement-level1/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38426",
+    "title": "Child and Adolescent Development",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/psychology/child-and-adolescent-development-associate-arts-for-transfer/",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38463",
+    "title": "Emerging Tech Entrepreneurship Level 1",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-1/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38485",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/family-consumer-studies/nutrition-dietetics-associate-science-transfer/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38498",
+    "title": "Emerging Tech Entrepreneurship Level 2",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/emerging-tech-entrepreneurship-level-2/",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38499",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
+    "coverage": 0.608,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38726",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/history-associate-arts-transfer/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39247",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/biology/biology-associate-science-transfer/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39391",
+    "title": "Kinesiology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/kinesiology/kinesiology-certificate-achievement-level-2/",
+    "coverage": 0.892,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40370",
+    "title": "GOOGLE IT SUPPORT PROFESSIONAL",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/google-it-support-professional-certificate-achievement-level-1/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40372",
+    "title": "Community Health Worker",
+    "award": "Noncredit program",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/community-health-worker-certificate-completion-noncredit/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41473",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
+    "coverage": 0.545,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41629",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/environmental-science/environmental-science-associate-science-transfer/",
+    "coverage": 0.833,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41847",
+    "title": "Music Technology Recording Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/music/music-technology-recording-arts-certificate-achievement-level-2/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42242",
+    "title": "Engineering",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/engineering/engineering-associate-arts/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42529",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-science/computer-science-associate-science-transfer/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42682",
+    "title": "User Experience and Interaction Design",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/user-experience-interaction-design-associate-science/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43279",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-history-associate-arts-transfer/",
+    "coverage": 0.967,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43327",
+    "title": "Career Preparedness",
+    "award": "Noncredit program",
+    "url": "https://catalog.sjcc.edu/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43328",
+    "title": "Academic Success",
+    "award": "Noncredit program",
+    "url": "https://catalog.sjcc.edu/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43633",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/communication-studies/communication-studies2-associate-arts-transfer/",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44010",
+    "title": "Project Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-applications/project-management-certificate-achievement-level-1/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44122",
+    "title": "Health Sciences",
+    "award": "A.A. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/health-sciences/health-sciences-associate-arts/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44123",
+    "title": "Health Sciences",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/health-sciences/health-sciences-certificate-achievement-level-2/",
+    "coverage": 0.875,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44388",
+    "title": "Motion Graphic Design",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/motion-graphic-design-associate20in20science/",
+    "coverage": 0.667,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44596",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/biology/public-health-science-associate-science-transfer/",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44925",
+    "title": "Ironworking",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/ironworking/ironworking-certificate-achievelment-level-1index.html",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45796",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/cal-getc/",
+    "coverage": 0.981,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45984",
+    "title": "Information Systems Security: Cybersecurity",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/information-systems-security-cybersecurity-certificate-of-achievement-level-1/",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46067",
+    "title": "Legal Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/course-identification-numbering-system-c-id/",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46293",
+    "title": "Information Systems Security: Cybersecurity",
+    "award": "A.S. Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/computer-information-systems/cis-computer-programming-associate-science/",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46579",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.sjcc.edu/degrees-certificates/mathematics/",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": []
+ },
+ "run": "43357106423"
+}

@@ -71,9 +71,8 @@
     19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-20.0; the catalog states 18.0-19.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -92,9 +91,7 @@
     ],
     "why": [],
     "overlap": true
-   },
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   }
   },
   "repeated": {
    "codes": [],
@@ -276,5 +273,6 @@
    "The Program Learning Outcomes come from the page's outcomes tab for this program and apply to this AA-T degree."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "read_run": "38748858322"
 }

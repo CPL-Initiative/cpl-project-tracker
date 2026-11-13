@@ -61,20 +61,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     145.0,
     145.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Core Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +94,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -131,7 +127,8 @@
    "careers": [
     "field workers",
     "irrigators"
-   ]
+   ],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -211,5 +208,14 @@
    "Careers taken from the description's phrase 'upgrading the skills of current field workers or irrigators'; these name the target workforce rather than a careers list—reviewer may check."
   ]
  },
- "extracted_run": "39032865307"
+ "extracted_run": 43355010411,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t\t1"
+  }
+ ],
+ "read_run": "39032865307"
 }

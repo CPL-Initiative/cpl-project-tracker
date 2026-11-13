@@ -1,0 +1,630 @@
+{
+ "college": "San Jose City College",
+ "control_number": "38499",
+ "shape": "adt",
+ "title": "Law, Public Policy, and Society",
+ "award": "A.A- T Degree",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/administration-justice/law-public-policy-society-associate-arts-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8790,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8790,
+    "output_tokens": 4555,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4555,
+  "output_tokens_details": {
+   "thinking_tokens": 1392
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.12626,
+ "ms": 34990,
+ "seconds": 35.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 31,
+   "listed": 51,
+   "share": 0.608,
+   "missing": [
+    "AJ113",
+    "BUS60",
+    "BUSINESSBUS0",
+    "COMMC1000H",
+    "COMS190",
+    "COMS40",
+    "COMS45",
+    "ECONC2001",
+    "ECONC2002",
+    "ETH11",
+    "ETH18",
+    "ETH19",
+    "ETH22",
+    "ETH33",
+    "ETH35",
+    "ETH49",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "JOURNALISMJO"
+   ],
+   "unexplained": [
+    "BUSINESSBUS0",
+    "JOURNALISMJO"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 12,
+   "codes": [
+    "BUS71",
+    "ECON10A",
+    "ECON10B",
+    "ETH27",
+    "ETH37A",
+    "ETH37B",
+    "ETH41",
+    "GUIDE130",
+    "GUIDE96",
+    "HIST17A",
+    "HIST17B",
+    "JOURN138"
+   ],
+   "flagged": [
+    "ECON10A",
+    "ECON10B",
+    "ETH27",
+    "ETH37A",
+    "ETH37B",
+    "ETH41",
+    "GUIDE130",
+    "GUIDE96",
+    "HIST17A",
+    "HIST17B"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    30.0,
+    30.0
+   ],
+   "stated": [
+    30.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     75.0,
+     84.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Law, Public Policy, and Society - Associate in Arts for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 30,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 11,
+    "max": 20
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Identify and discuss legal framework for American institutions and systems of justice.",
+    "Discuss the adversarial nature of the American justice system.",
+    "Critically analyze issues in public policy consistent with constitutional legal standards and mandates."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core: Complete Eight Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "AJ 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "AJ 011",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 013",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 065",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 017A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 017B",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Complete Two Courses from Two of the Areas in This List. Note: Courses must not have been used above.",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "AJ 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 019",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 071",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 010A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 010B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLSC 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLOBL 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GLOBL 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURN 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH 063",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMS 035",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH 026",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH 027",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH 030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH 031",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETH 037A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH 037B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH 041",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GUIDE 096",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GUIDE 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ADS 138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AJ 138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSCI 138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOURN 138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WE 088A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AJ 113",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMM C1000H",
+    "why": "not in the text; no honors twin printed"
+   },
+   {
+    "code": "COMS 190",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMS 40",
+    "why": "not in the text"
+   },
+   {
+    "code": "COMS 45",
+    "why": "not in the text"
+   },
+   {
+    "code": "BUS 60",
+    "why": "not in the text"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; catalog prints ECON 010A instead"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; catalog prints ECON 010B instead"
+   },
+   {
+    "code": "ETH 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETH 18",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETH 19",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETH 22",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETH 33",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETH 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETH 49",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1001",
+    "why": "not in the text; catalog prints HIST 017A instead"
+   },
+   {
+    "code": "HIST C1001H",
+    "why": "not in the text"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "not in the text; catalog prints HIST 017B instead"
+   }
+  ],
+  "notes": [
+   "Catalog codes print leading zeros (e.g., AJ 010, PHIL 065, POLSC 002); treated as matching closed-list codes without zeros (AJ 10, PHIL 65, POLSC 2).",
+   "Closed-list entry 'BusinessBUS0 Legal Environment of Business' appears garbled; matched by title to catalog BUS 071 (catalog_addition false). Verify.",
+   "Closed-list entry 'JournalismJO Work Experience' appears garbled; matched by title to catalog JOURN 138 (catalog_addition false). Verify.",
+   "Work experience courses in Area 8 print 3 units in the catalog while the state file stores 1 unit.",
+   "List A: two courses must come from two different areas (Areas 1-8), and courses used in the Required Core may not be reused.",
+   "Units for alternatives AJ 011, AJ 013 (core) and HIST 017B are not printed beside them; recorded as null. ECON 010A/010B and HIST 017A/017B print no titles.",
+   "Transferable Electives printed as '(as needed to reach 60) 11-20' outside the 30-unit major; recorded as degree_elective_units 11-20.",
+   "The Required Core is a list of eight required areas; the Understanding the Law area accepts AJ 010, AJ 011 or AJ 013, and the US History area accepts HIST 017A or HIST 017B.",
+   "Outcomes are printed for the program as a whole on the outcomes tab; this award shares them."
+  ]
+ },
+ "extracted_run": "43357106423"
+}

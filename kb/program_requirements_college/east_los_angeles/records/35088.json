@@ -159,7 +159,8 @@
     "Critique the human response to environmental challenges including economics of pollution, the character of environmental regulation and policy, environmental justice and the effects of population change.",
     "Demonstrate scientific thinking and quantitative reasoning."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -388,5 +389,14 @@
    "CHEM 101 has a prerequisite; ENV SCI 022 has a corequisite."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

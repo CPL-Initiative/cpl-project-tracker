@@ -1,0 +1,191 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "43181",
+ "shape": "noncredit",
+ "title": "Advanced ESL Success",
+ "award": "Noncredit program",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-advanced-esl-success-fall-2023",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6315,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6315,
+    "output_tokens": 956,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 956,
+  "output_tokens_details": {
+   "thinking_tokens": 235
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04438,
+ "ms": 9687,
+ "seconds": 10.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    162.0,
+    234.0
+   ],
+   "stated": [
+    162.0,
+    234.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Competency - Advanced ESL Success",
+   "measure": "hours",
+   "total_units": {
+    "min": 162,
+    "max": 234
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "self-edit paragraphs and essays.",
+    "develop academic paragraphs and thesis-driven essays.",
+    "integrate readings into paragraphs and essays to support ideas.",
+    "demonstrate advanced reading skills.",
+    "demonstrate critical-thinking skills.",
+    "demonstrate advanced listening, speaking, and presentation skills."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "required course:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 108,
+     "max": 108
+    },
+    "courses": [
+     {
+      "code": "ESL097ANC",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "plus at least one of the courses below:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 126
+    },
+    "courses": [
+     {
+      "code": "ESL090NC",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL095NC",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate counted in hours: the catalog prints 'Total 162 - 234' and hours beside each course (108, 54, 72), while the page header shows '0.0 units'. All units fields hold hours.",
+   "The catalog prints codes without a space (ESL097ANC, ESL090NC, ESL095NC); these match closed-list codes ESL 097ANC, ESL 090NC, ESL 095NC.",
+   "The catalog's wording is 'Complete at least one of the following rules' for the second block, which is read as choosing at least one course (54-126 hours).",
+   "The text names no specific careers. It mentions only 'career' in a general sense, so careers is empty."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

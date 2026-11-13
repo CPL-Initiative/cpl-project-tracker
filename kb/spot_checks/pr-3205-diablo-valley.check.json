@@ -1,0 +1,119 @@
+{
+ "schema": 1,
+ "wave": "pr-3205-diablo-valley",
+ "pr": 3205,
+ "head_sha": "5aeea3956a168db91f5e41b26d570e5eeb70bee4",
+ "checked_at": "2026-11-13T09:05:00Z",
+ "checker": "cobi-cto (COBIx), by hand",
+ "loads": [
+  "robots.txt on api-prod.elumenapp.com and dvc.elumenapp.com (both 404, no rules)",
+  "5 eLumen content calls, 4 s apart (the same call the catalog's own page makes)"
+ ],
+ "records": [
+  {
+   "college": "Diablo Valley College",
+   "control_number": "01476",
+   "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-electrical-electronics-technology-fall-2023",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "26",
+    "page": "26"
+   },
+   "verdict": "agrees",
+   "evidence": "Electrical/Electronics Technology (Total 26) required courses: (Total 11) EET100, EET105, EET266; plus at least 12 units from: ...; plus at least 3 units from any course not used above or:"
+  },
+  {
+   "college": "Diablo Valley College",
+   "control_number": "01493",
+   "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-dental-hygiene-fall-2026",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "101-102",
+    "page": "101-102"
+   },
+   "verdict": "agrees",
+   "evidence": "total minimum required units - program 60; total minimum required units program and program prerequisites 101 ... (Total 101 - 102)",
+   "note": "Math block also accepts 'Any 3 unit or higher math course that satisfies Cal-GETC Area 2...'; kept only in a note, not as an open choice."
+  },
+  {
+   "college": "Diablo Valley College",
+   "control_number": "16919",
+   "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-technical-theater-fall-2026",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "23-24",
+    "page": "23-24"
+   },
+   "verdict": "agrees",
+   "evidence": "Technical Theater (Total 23 - 24) ... DRAMA201 1 - 2; plus at least 2 units from: DRAMA202 1 - 2; plus at least 2 units from DRAMA295 1 - 4; plus at least 6 units from: ..."
+  },
+  {
+   "college": "Diablo Valley College",
+   "control_number": "30737",
+   "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-psychology-for-transfer-fall-2026",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "18-19",
+    "page": "18-19"
+   },
+   "verdict": "agrees",
+   "evidence": "Psychology for Transfer (Total 18 - 19) Required Core: PSYCC1000, PSYC215; at least 3 units from: BUS240, PSYC214, STATC1000; LIST A ... LIST B ... LIST C ..."
+  },
+  {
+   "college": "Diablo Valley College",
+   "control_number": "39367",
+   "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-in-beginning-esl-success-noncredit-fall-2020",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "0",
+    "page": "0"
+   },
+   "verdict": "agrees",
+   "evidence": "Certificate of Completion Beginning ESL Success (Total 0) Complete all of the following ESL065NC ... 0 ESL067NC ... 0",
+   "note": "Page heading says Certificate of Competency, award line says Certificate of Completion; the record notes it."
+  }
+ ],
+ "tally": {
+  "Diablo Valley College": {
+   "agrees": 5,
+   "differs": 0,
+   "page_unreachable": 0
+  }
+ },
+ "holds": []
+}

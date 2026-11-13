@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 234,
  "with_closed_list": 147,
- "started": "2026-10-17T19:40:31Z",
+ "started": "2026-11-13T03:11:03Z",
  "catalog_year_from": "the procedure record's catalog step",
  "procedure_step": {
   "start": "https://www.elac.edu/academic-resources/catalog",
@@ -21,7 +21,7 @@
   "bytes": 11348307,
   "pages_total": 521,
   "error": null,
-  "chars_total": 2577221,
+  "chars_total": 2577229,
   "pypdf_accepted": 143,
   "sample": [
    "p157: 'Child, Family, and Education Studies Department\\nEAST LOS ANGELES COLLEGE  | GENERAL CATALOG | 2026-2027 153\\nEquity-Minded Education in \\nEarly Childhood Classroom\\n(Academic Plan E045413D)\\nThis certificate of achievement is designed for Early'",
@@ -36,6 +36,7 @@
      103
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.667,
@@ -47,6 +48,7 @@
      84
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -58,6 +60,7 @@
      103
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.5,
@@ -71,6 +74,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -82,6 +86,7 @@
      68
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 1.0,
@@ -94,6 +99,7 @@
      70
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -108,6 +114,7 @@
      376
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -119,7 +126,8 @@
      102,
      103
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.833,
@@ -133,6 +141,7 @@
      199
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -144,6 +153,7 @@
      387
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -155,6 +165,7 @@
      31
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -168,6 +179,7 @@
      242
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.972,
@@ -180,6 +192,7 @@
      168
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -192,6 +205,7 @@
      360
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -204,6 +218,7 @@
      178
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -218,6 +233,7 @@
      178
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -230,6 +246,7 @@
      73
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -241,6 +258,7 @@
      231
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -255,6 +273,7 @@
      94
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -269,6 +288,7 @@
      294
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -281,6 +301,7 @@
      376
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -289,13 +310,16 @@
    {
     "control_number": "33681",
     "pages": [
+     263,
+     264,
      265
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 265] Mathematics Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 261 COMPLETE FOURTEEN UNITS FROM THE FOLLOWING: 14 BIOLOGY 006* General Biology I .................................. 5 BIOLOGY 00"
+    "opens": "[page 263] • Mathematics 2.0 for Transfer [page 264] Mathematics Department 260 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 Associate Degree Programs Mathematics, Associate in Arts Degree (Academic Plan E012"
    },
    {
     "control_number": "33915",
@@ -304,6 +328,7 @@
      79
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -318,6 +343,7 @@
      356
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -331,6 +357,7 @@
      95
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 0.737,
@@ -345,6 +372,7 @@
      260
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -356,6 +384,7 @@
      130
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.833,
@@ -367,6 +396,7 @@
      161
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -378,6 +408,7 @@
      391
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -389,6 +420,7 @@
      392
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -400,6 +432,7 @@
      393
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -412,6 +445,7 @@
      177
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -424,6 +458,7 @@
      173
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -435,6 +470,7 @@
      360
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -449,6 +485,7 @@
      84
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -461,6 +498,7 @@
      95
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -475,6 +513,7 @@
      357
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -486,6 +525,7 @@
      390
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -497,6 +537,7 @@
      392
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -508,6 +549,7 @@
      40
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -520,6 +562,7 @@
      391
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -532,6 +575,7 @@
      387
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.667,
@@ -546,6 +590,7 @@
      261
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -559,6 +604,7 @@
      261
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.875,
@@ -572,6 +618,7 @@
      145
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.833,
@@ -586,6 +633,7 @@
      292
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.947,
@@ -597,6 +645,7 @@
      219
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -610,6 +659,7 @@
      313
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -624,6 +674,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -638,6 +689,7 @@
      318
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -649,6 +701,7 @@
      374
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -663,6 +716,7 @@
      291
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 0.949,
@@ -677,6 +731,7 @@
      291
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.75,
@@ -691,6 +746,7 @@
      375
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.857,
@@ -705,6 +761,7 @@
      292
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.833,
@@ -719,6 +776,7 @@
      291
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.857,
@@ -730,6 +788,7 @@
      173
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -741,6 +800,7 @@
      390
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -753,6 +813,7 @@
      199
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -765,6 +826,7 @@
      128
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -776,6 +838,7 @@
      128
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -789,6 +852,7 @@
      145
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.833,
@@ -801,6 +865,7 @@
      199
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -815,6 +880,7 @@
      376
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 1.0,
@@ -826,6 +892,7 @@
      82
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -840,6 +907,7 @@
      323
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -854,6 +922,7 @@
      199
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -868,6 +937,7 @@
      238
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.667,
@@ -880,6 +950,7 @@
      175
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -891,6 +962,7 @@
      128
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -902,6 +974,7 @@
      322
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -914,6 +987,7 @@
      323
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -926,6 +1000,7 @@
      323
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -939,6 +1014,7 @@
      323
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -953,6 +1029,7 @@
      198
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.857,
@@ -965,6 +1042,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -979,6 +1057,7 @@
      198
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.9,
@@ -991,6 +1070,7 @@
      199
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.545,
@@ -1002,6 +1082,7 @@
      199
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1015,6 +1096,7 @@
      199
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 1.0,
@@ -1029,6 +1111,7 @@
      199
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 1.0,
@@ -1041,6 +1124,7 @@
      109
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1053,6 +1137,7 @@
      199
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.727,
@@ -1065,6 +1150,7 @@
      387
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1076,6 +1162,7 @@
      387
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1087,6 +1174,7 @@
      391
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1098,6 +1186,7 @@
      391
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1109,6 +1198,7 @@
      38
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1120,6 +1210,7 @@
      128
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1131,6 +1222,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1145,6 +1237,7 @@
      133
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1157,6 +1250,7 @@
      72
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1170,6 +1264,7 @@
      323
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1181,6 +1276,7 @@
      257
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1195,6 +1291,7 @@
      95
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.933,
@@ -1206,6 +1303,7 @@
      392
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1217,6 +1315,7 @@
      392
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1228,6 +1327,7 @@
      393
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1239,6 +1339,7 @@
      389
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": false,
     "coverage": 1.0,
@@ -1253,6 +1354,7 @@
      356
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1265,6 +1367,7 @@
      168
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1278,6 +1381,7 @@
      148
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1289,6 +1393,7 @@
      390
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1302,6 +1407,7 @@
      360
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1314,6 +1420,7 @@
      156
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1325,6 +1432,7 @@
      133
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1339,6 +1447,7 @@
      241
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1353,6 +1462,7 @@
      374
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1364,6 +1474,7 @@
      155
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1375,6 +1486,7 @@
      127
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.6,
@@ -1388,6 +1500,7 @@
      158
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1399,6 +1512,7 @@
      274
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1413,6 +1527,7 @@
      375
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1425,6 +1540,7 @@
      242
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.96,
@@ -1439,6 +1555,7 @@
      278
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.941,
@@ -1453,6 +1570,7 @@
      131
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1464,6 +1582,7 @@
      393
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1478,6 +1597,7 @@
      67
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.565,
@@ -1486,13 +1606,15 @@
    {
     "control_number": "45051",
     "pages": [
+     219,
      220
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 220] Global Languages and Cultures Department 216 EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 language and culture, offering opportunities for engage - ment with diverse global contexts and internationa"
+    "opens": "[page 219] (Academic Plan E045051C) This program is designed for students interested in con - tinuing their studies in Japanese at the university level, as well as those pursuing careers in education, interna - tional r"
    },
    {
     "control_number": "45406",
@@ -1502,6 +1624,7 @@
      239
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1516,6 +1639,7 @@
      160
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1530,6 +1654,7 @@
      239
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1541,6 +1666,7 @@
      274
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1549,13 +1675,16 @@
    {
     "control_number": "45540",
     "pages": [
+     343,
+     344,
      345
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.625,
-    "opens": "[page 345] Respiratory Therapy Department EAST LOS ANGELES COLLEGE | GENERAL CATALOG | 2026-2027 341 Upon successful completion of this program, students will be able to: • Demonstrate competent and safe equipment man"
+    "opens": "[page 343] In addition, the department now offers a Bachelor of Sci - ence in Respiratory Therapy at ELAC. Faculty Haines, Michael, Chair, Clinical Director, Professor, Respiratory Therapy Chhun, Bunnarith, Professor, R"
    },
    {
     "control_number": "45587",
@@ -1566,6 +1695,7 @@
      278
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1579,6 +1709,7 @@
      279
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1591,6 +1722,7 @@
      354
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1603,6 +1735,7 @@
      71
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1616,6 +1749,7 @@
      291
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1627,6 +1761,7 @@
      322
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1640,6 +1775,7 @@
      323
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1653,6 +1789,7 @@
      322
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1665,6 +1802,7 @@
      323
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1676,6 +1814,7 @@
      323
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1687,6 +1826,7 @@
      323
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1699,6 +1839,7 @@
      131
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1713,6 +1854,7 @@
      238
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1727,6 +1869,7 @@
      242
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1738,6 +1881,7 @@
      386
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1751,6 +1895,7 @@
      71
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1762,6 +1907,7 @@
      265
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1775,6 +1921,7 @@
      313
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1789,6 +1936,7 @@
      280
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1805,7 +1953,9 @@
   ]
  },
  "loads": 2,
- "seconds": 142.5,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 120.7,
  "found": 137,
  "by_method": {
   "no_closed_list": 87,
@@ -1841,10 +1991,6 @@
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=167": [
    "32154",
    "42672"
-  ],
-  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265": [
-   "33681",
-   "46343"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=78": [
    "33915",
@@ -1898,6 +2044,10 @@
    "37965",
    "38205",
    "45602"
+  ],
+  "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219": [
+   "37969",
+   "45051"
   ],
   "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=311": [
    "38093",
@@ -2091,230 +2241,43 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/east_los_angeles",
-  "kept": 115,
-  "programs": 22,
+  "kept": 134,
+  "kept_moved": 0,
+  "programs": 2,
   "list": [
-   {
-    "control_number": "02430",
-    "title": "Architectural Design",
-    "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102",
-    "coverage": 0.667,
-    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=102",
-    "was_coverage": 0.5,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14869",
-    "title": "Stage Management and Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373",
-    "coverage": 1.0,
-    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=373",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33681",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265",
-    "coverage": 1.0,
-    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=265",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35087",
-    "title": "Environmental Studies: Social and Public Policy",
-    "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=353",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "35397",
-    "title": "Business Administration",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "35720",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=161",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "37924",
-    "title": "Public Health Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=259",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "38168",
-    "title": "Commercial Music: Instrumental/Vocal Performer",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=288",
-    "coverage": 0.949,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "38332",
-    "title": "Geo-Spatial Engineering and Technologies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "38337",
-    "title": "Geo-Spatial Engineering and Technologies",
-    "award": "A.S. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "38427",
-    "title": "Basic Training Academy",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=320",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "39795",
-    "title": "Advanced Manufacturing Engineering Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195",
-    "coverage": 0.857,
-    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39800",
-    "title": "Engineering Technology: Mechanical",
-    "award": "A.S. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "41097",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "43632",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=358",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "43725",
-    "title": "Recreation and Leisure Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=238",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "44595",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=241",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "45028",
-    "title": "Cal-GETC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=64",
-    "coverage": 0.565,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
    {
     "control_number": "45051",
     "title": "Japanese",
     "award": "A.A. Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=220",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=219",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=220",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "45540",
     "title": "Respiratory Therapy",
     "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=345",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=343",
     "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "45935",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "45986",
-    "title": "Sports Medicine",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
-    "coverage": 1.0,
-    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
-    "was_coverage": 0.857,
+    "was_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=345",
+    "was_coverage": 0.625,
     "was_method": "pdf_pages"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "33681",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=263",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": []
  },
- "run": "39063389278"
+ "run": "43357061643"
 }

@@ -137,7 +137,8 @@
     "wastewater collections",
     "treatment",
     "recycle operations"
-   ]
+   ],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -232,5 +233,14 @@
    "Careers taken from the description phrase 'entry-level employment in wastewater collections, treatment, and recycle operations'; reviewer may prefer it as a single career field."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t1"
+  }
+ ],
+ "read_run": "38748858322"
 }

@@ -3416,6 +3416,12 @@ def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None,
     return reg.get("catalog_url"), P.CATALOG_PDF_WAIT_S * 1000
 
 
+def pdf_fetch(reg: dict):
+    """How the catalog PDF is fetched: in ranges where the procedure's catalog step says
+    resume (College of the Desert, S647), else main's one whole-file request."""
+    return P.read_pdf_ranged if (P.procedure_catalog(reg.get("procedure")) or {}).get("resume") else P.read_pdf
+
+
 def is_pdf_catalog(reg: dict) -> bool:
     url = (reg.get("catalog_url") or "").lower().split("#")[0].split("?")[0]
     return reg.get("catalog_format") == "single_pdf" and url.endswith(".pdf")
@@ -3555,7 +3561,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
         pw, browser, reader = P.open_reader(delay)
         try:
             start, wait = pdf_start(reader, reg, {}, report)
-            pdf = (P.read_pdf(reader, start, {}, timeout_ms=wait) if start
+            pdf = (pdf_fetch(reg)(reader, start, {}, timeout_ms=wait) if start
                    else {"access": "no_address", "pages": []})
         finally:
             browser.close()
@@ -3585,6 +3591,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                      "bytes": pdf.get("bytes"), "pages_total": len(pages), "error": pdf.get("error"),
                      "chars_total": sum(len(t) for t in pages), "pypdf_accepted": n,
                      "sample": P.text_sample(pages)}
+    if pdf.get("ranges"):
+        report["pdf"]["ranges"] = pdf["ranges"]
     if pdf.get("data") and n < 0.5 * len(listed):
         alt = P.pdfminer_pages(pdf)
         alt_votes, alt_ctx = reading(alt["pages"]) if alt["pages"] else ({}, None)
