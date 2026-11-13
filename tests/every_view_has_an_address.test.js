@@ -71,6 +71,11 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
     check("(E) ⭐ commons/" + v[0] + " opens from its arrival and reports its address",
       new RegExp('a\\[0\\] === "' + v[0] + '"').test(COMMONS) && new RegExp(v[1] + '\\.address\\(\\) : "commons/' + v[0] + '"').test(COMMONS));
   });
+  // (E) slice 2 of #3215: a college's side panel has an address too, #commons/data[/<filter>]/college/<slug>. commons.js
+  // hands the data view the whole rest of its arrival (not only the filter), and the view names the college in its report.
+  const DATAJS = fs.readFileSync("commons_data.js", "utf8");
+  check("(E) ⭐ commons/data hands its view the whole arrival, so a college's panel opens from its address",
+    /DATA\.filter = a\.slice\(1\)\.join\("\/"\)/.test(COMMONS) && /"\/college\/" \+ slugOf\(c\)/.test(DATAJS) && /p\[0\] === "college"/.test(DATAJS));
   const files = fs.readdirSync(".").filter((f) => /\.js$/.test(f) && f !== "cpl_session.js");
   files.forEach(function (f) {
     const s = fs.readFileSync(f, "utf8");

@@ -50,7 +50,9 @@ builder then keeps the previous committed block and records the attempt (last_at
 read_at. The class comes from the fixed ERROR_CLASSES, never an exception's text, which can carry the request's
 headers (the review of #3232, finding 1). The key is stripped when read and refused, by class alone, if it still
 holds whitespace or a control character; the export refuses to write anything that holds the key or a SCRUB_RUN-
-character run of it, and the workflow's last step before the commit runs --scrub over out/ and the status file.
+character run of it, and the workflow's last step before the commit runs --scrub over out/ and the status file. For
+a JWT key only the signature (after the second dot) is tested, and a run that also sits in a committed anon key is
+skipped: both keys share the header and the start of the payload (COBIx, 6857150335).
 
 Usage, from the repo root:
   python3 kb/_commons_data_live.py [--out PATH] [--run-id ID]     the live read (needs SUPABASE_SERVICE_KEY)
@@ -481,20 +483,60 @@ def clean_key(raw: str | None) -> tuple[str | None, str | None]:
     return key, None
 
 
-def holds_key(text: str, key: str | None) -> bool:
-    """Whether the text holds the key, or any SCRUB_RUN-character run of it."""
+# The project's keys are legacy HS256 JWTs: the service key and the committed anon key share the header and the start
+# of the payload, so a run from those parts matches every JWT in the repo (COBIx, 6857150335). The secret part of a
+# JWT is its signature, after the second dot; the scrub tests runs from there alone, and skips any run that also sits
+# in a committed anon key (ANON_SOURCES), which is public by design.
+ANON_SOURCES = ("reviewer_signin.js", "team_phrase.js", "kb/_program_requirements_pilot.py")
+_JWT = re.compile(r"eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+")
+
+
+def _jwt_role(token: str) -> str | None:
+    import base64
+    try:
+        part = token.split(".")[1]
+        return json.loads(base64.urlsafe_b64decode(part + "=" * (-len(part) % 4))).get("role")
+    except (ValueError, IndexError, AttributeError):
+        return None
+
+
+def committed_anon_keys(root: str = ROOT) -> list[str]:
+    """Every JWT whose payload names the anon role in ANON_SOURCES: public by design, never a hit."""
+    out = []
+    for rel in ANON_SOURCES:
+        p = os.path.join(root, rel)
+        if os.path.isfile(p):
+            with open(p, encoding="utf-8", errors="replace") as fh:
+                out += [t for t in _JWT.findall(fh.read()) if _jwt_role(t) == "anon" and t not in out]
+    return out
+
+
+def _secret_part(key: str) -> str:
+    """The part of the key that is secret: a JWT's signature, or the whole of any other key."""
+    parts = key.split(".")
+    return parts[2] if len(parts) == 3 and key.startswith("eyJ") and parts[2] else key
+
+
+def holds_key(text: str, key: str | None, public: tuple | list = ()) -> bool:
+    """Whether the text holds the key's secret part, or any SCRUB_RUN-character run of it that no public key
+    (`public`, the committed anon keys) also holds."""
     if not key:
         return False
-    k = key.strip()
+    k = _secret_part(key.strip())
     if not k:
         return False
     if len(k) <= SCRUB_RUN:
-        return k in text
-    return any(k[i:i + SCRUB_RUN] in text for i in range(len(k) - SCRUB_RUN + 1))
+        return k in text and not any(k in p for p in public)
+    for i in range(len(k) - SCRUB_RUN + 1):
+        run = k[i:i + SCRUB_RUN]
+        if run in text and not any(run in p for p in public):
+            return True
+    return False
 
 
-def scrub(paths: list[str], key: str | None) -> list[str]:
+def scrub(paths: list[str], key: str | None, public: tuple | list | None = None) -> list[str]:
     """The files (under each path) that hold the key or a run of it. Names only, never the text."""
+    public = committed_anon_keys() if public is None else public
     hits = []
     for p in paths:
         files = [os.path.join(d, f) for d, _, fs in os.walk(p) for f in fs] if os.path.isdir(p) else [p]
@@ -502,7 +544,7 @@ def scrub(paths: list[str], key: str | None) -> list[str]:
             if not os.path.isfile(f):
                 continue
             with open(f, encoding="utf-8", errors="replace") as fh:
-                if holds_key(fh.read(), key):
+                if holds_key(fh.read(), key, public):
                     hits.append(f)
     return hits
 
@@ -566,7 +608,7 @@ def main(argv=None) -> int:
     else:
         block = export(src, resolver(), a.run_id)
     text = json.dumps(block, indent=1, ensure_ascii=False) + "\n"
-    if holds_key(text, raw):
+    if holds_key(text, raw, committed_anon_keys()):
         # Defense in depth: nothing that holds the key is written, whatever put it there.
         block = failed(block.get("at") or block.get("read_at") or iso_now(), a.run_id, "other")
         text = json.dumps(block, indent=1, ensure_ascii=False) + "\n"

@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 924,
+  "file_datasets": 925,
   "external_services": 195,
-  "consumers": 580,
+  "consumers": 581,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -1135,7 +1135,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1664
+     "line": 1683
     },
     {
      "id": "module:admin.js",
@@ -1832,7 +1832,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2317
+     "line": 2336
     }
    ],
    "main_committers": []
@@ -1888,7 +1888,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1349,
+     "line": 1352,
      "tabs": [
       "commons"
      ]
@@ -2472,7 +2472,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1274
+     "line": 1293
     }
    ],
    "main_committers": []
@@ -2491,7 +2491,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1619
+     "line": 1638
     },
     {
      "id": "module:college_briefing.js",
@@ -3193,7 +3193,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1675
+     "line": 1694
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4503,7 +4503,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1981
+     "line": 2000
     }
    ],
    "main_committers": []
@@ -5645,7 +5645,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1872
+     "line": 1891
     },
     {
      "id": "module:admin.js",
@@ -6452,7 +6452,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 903,
+     "line": 906,
      "tabs": [
       "commons"
      ]
@@ -6845,7 +6845,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2256
+     "line": 2275
     },
     {
      "id": "module:college_briefing.js",
@@ -7058,7 +7058,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1334
+     "line": 1353
     },
     {
      "id": "module:cpl_funding.js",
@@ -7907,7 +7907,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 156
+     "line": 185
     }
    ],
    "served": false,
@@ -7920,7 +7920,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 345
+     "line": 457
     }
    ],
    "served": false,
@@ -13759,7 +13759,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 111
+     "line": 114
     }
    ],
    "served": true,
@@ -16224,7 +16224,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 112
+     "line": 115
     }
    ],
    "served": false,
@@ -19076,10 +19076,23 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 113
+     "line": 116
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:kb/spot_checks/README.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 118
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:kb/statewide_exhibit_categories.json": {
@@ -19164,7 +19177,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 22,
+     "line": 27,
      "tabs": [
       "commons"
      ]
@@ -19174,7 +19187,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 108
+     "line": 111
     }
    ],
    "served": true,
@@ -22111,6 +22124,13 @@
   "file:read_*.json": {
    "consumers": [
     {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 389
+    },
+    {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
      "direction": "read",
@@ -22367,6 +22387,13 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    },
+    {
+     "id": "script:kb/_commons_data_live.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 490
     }
    ],
    "served": true,
@@ -23388,6 +23415,13 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    },
+    {
+     "id": "script:kb/_commons_data_live.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 490
     }
    ],
    "served": true,
@@ -27849,7 +27883,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1132,
+     "line": 1135,
      "tabs": [
       "commons"
      ]
@@ -31426,7 +31460,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1110,
+     "line": 1113,
      "tabs": [
       "commons"
      ]
@@ -33865,7 +33899,6 @@
   "cr_progress.js",
   "exhibit_progress.js",
   "kb/_chatbox_ghost_delete.py",
-  "kb/_commons_data_live.py",
   "kb/_program_requirements_extract.py",
   "scripts/supabase_migrate.py"
  ],

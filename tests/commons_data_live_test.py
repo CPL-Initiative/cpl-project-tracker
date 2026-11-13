@@ -18,6 +18,10 @@ guards, each a way the export could break them:
       no person's name, no URL in the output;
   (5) fail soft: a read that fails writes state "failed"; no service key reads nothing and names why (never anon);
       the builder keeps the previous block and records the attempt; a block that is not counts only is refused;
+  (5c) the scrub tests a JWT's signature alone and skips runs in a committed anon key, so a file quoting the
+      anon key is never a hit (two dummy JWTs sharing header and payload prefix);
+  (5d) accept_active_shift takes one read outside the Active band, logged in the block with both counts and the
+      run, and never waives the college floor or an empty read;
   (6) the overall bar is the quoted rule over the live block, basis live;
   (7) the workflow: the service key at the export step's scope alone, every step naming it on main alone (COBIx's
       finding 1), the builder takes --live, one push.
@@ -355,6 +359,69 @@ with tempfile.TemporaryDirectory() as tmp:
     check("(5) and a refused block keeps the previous one", refused["colleges"] == taken["colleges"]
           and refused["last_attempt"]["error_class"] == "not counts only")
 
+# (5c) the scrub never mistakes the public anon key for the service key (COBIx, 6857150335): two HS256 JWTs that
+# share the header and the start of the payload
+import base64  # noqa: E402
+
+
+def _b64(obj):
+    return base64.urlsafe_b64encode(json.dumps(obj, separators=(",", ":")).encode()).decode().rstrip("=")
+
+
+HEAD = _b64({"alg": "HS256", "typ": "JWT"})
+ANON_JWT = HEAD + "." + _b64({"iss": "supabase", "ref": "dummyprojectref00000", "role": "anon", "iat": 1}) + ".Anon0signature0ABCDEFGHIJKLMNOPQRSTUVWXYZabcdef"
+SERVICE_JWT = HEAD + "." + _b64({"iss": "supabase", "ref": "dummyprojectref00000", "role": "service_role", "iat": 1}) \
+    + ".Svc0secret0signature0zyxwvutsrqponmlkjihgfedcbaZYXWV"
+shared = os.path.commonprefix([ANON_JWT, SERVICE_JWT])
+check("(5c) the two dummy JWTs share the header and a payload prefix longer than a scrub run",
+      len(shared) > len(HEAD) + L.SCRUB_RUN, len(shared))
+check("(5c) ⭐ a file quoting the anon key is no hit for the service key", not L.holds_key("cfg = '%s'" % ANON_JWT, SERVICE_JWT))
+check("(5c) ⭐ a run of the service key's signature is a hit", L.holds_key("x" + SERVICE_JWT.split(".")[2][5:25] + "x", SERVICE_JWT))
+check("(5c) the whole service key is a hit", L.holds_key(SERVICE_JWT, SERVICE_JWT))
+twin = SERVICE_JWT.split(".")[2][:L.SCRUB_RUN]
+anon_twin = ANON_JWT.rsplit(".", 1)[0] + "." + twin + "tail"
+check("(5c) a signature run that also sits in a committed anon key is skipped, and the rest of the signature still counts",
+      not L.holds_key("q" + twin + "q", SERVICE_JWT, [anon_twin]) and L.holds_key("q" + twin + "q", SERVICE_JWT, []))
+check("(5c) a key that is not a JWT is tested whole", L.holds_key("..." + DUMMY[30:50], DUMMY))
+anon_real = L.committed_anon_keys(ROOT)
+check("(5c) the committed anon key is found in the repo, and only anon-role tokens", anon_real and all(L._jwt_role(t) == "anon" for t in anon_real))
+with tempfile.TemporaryDirectory() as tmp:
+    f = os.path.join(tmp, "status.json")
+    with open(f, "w", encoding="utf-8") as fh:
+        json.dump({"quoted": ANON_JWT, "real_anon": anon_real[0] if anon_real else ""}, fh)
+    check("(5c) ⭐ --scrub passes a status file that quotes anon keys", L.scrub([tmp], SERVICE_JWT, [ANON_JWT]) == [])
+    with open(f, "w", encoding="utf-8") as fh:
+        fh.write(SERVICE_JWT)
+    check("(5c) and fails one that holds the service key", L.scrub([tmp], SERVICE_JWT, [ANON_JWT]) == [f])
+
+# (5d) the Active band cannot ratchet: an explicit, logged override (COBIx, 6857150335)
+with tempfile.TemporaryDirectory() as tmp:
+    def take2(b, prev, accept):
+        p = os.path.join(tmp, "y.json")
+        with open(p, "w", encoding="utf-8") as fh:
+            json.dump(dict(b, run_id="777"), fh)
+        return B.live_block(p, prev, len(UNIVERSE), accept)
+
+    good_prev = take2(full_block(), None, False)
+    shifted = full_block(active_each=110, at="2026-11-16T06:00:00Z")      # a real, lasting 35% drop
+    check("(5d) without the override a shift outside the band is a short read", take2(shifted, good_prev, False)["read_at"] == good_prev["read_at"])
+    taken_o = take2(shifted, good_prev, True)
+    check("(5d) ⭐ with accept_active_shift the shifted read is taken, and the block says it was taken by override, with both counts and the run",
+          taken_o["state"] == "read" and taken_o["read_at"] == "2026-11-16T06:00:00Z"
+          and taken_o["override"] == {"accepted_by_override": "accept_active_shift", "active": 110 * len(UNIVERSE),
+                                      "previous_active": 170 * len(UNIVERSE), "run_id": "777"}
+          and taken_o["last_attempt"]["accepted_by_override"] is True, taken_o.get("override"))
+    check("(5d) the next read is compared with the accepted level, and carries no override",
+          take2(full_block(active_each=112, at="2026-11-17T06:00:00Z"), taken_o, False)["override"] is None)
+    check("(5d) ⭐ the override never waives the college floor",
+          take2(full_block(active_each=170 * 6, ids=UNIVERSE[:20]), good_prev, True)["read_at"] == good_prev["read_at"])
+    check("(5d) ⭐ the override never takes an empty read",
+          take2(dict(full_block(), colleges={}), good_prev, True)["last_attempt"]["error_class"] == "short read")
+    check("(5d) the override also lifts the first read's absolute floor, but not its college floor",
+          take2(full_block(active_each=100), None, True)["state"] == "read"
+          and take2(full_block(active_each=100, ids=UNIVERSE[:5]), None, True)["state"] == "not read yet")
+    check("(5d) a read inside the band needs no override and records none", take2(full_block(active_each=165), good_prev, True)["override"] is None)
+
 # (6) the overall bar
 ov = B.overall_block(B.live_block(None, dict(block, flag="internal")))
 a = ov["colleges"]["17"]
@@ -399,6 +466,13 @@ check("(7) the export runs before the builder, and the builder takes --live",
 check("(7) one push, and the export's file is never added", wf_text.count("git push") == 1 and "git add out" not in wf_text
       and "commons_data_live.json" not in [l for l in wf_text.splitlines() if "git add" in l].__str__())
 check("(7) the workflow stays dispatch only", list((wf.get(True) or wf.get("on") or {}).keys()) == ["workflow_dispatch"])
+inp = ((wf.get(True) or wf.get("on") or {})["workflow_dispatch"] or {}).get("inputs", {}).get("accept_active_shift") or {}
+builder_step = [s for s in steps if "_build_commons_data_status.py --live" in (s.get("run") or "")][0]
+check("(7) ⭐ accept_active_shift is a boolean dispatch input, default false, reaching the builder through env and logged",
+      inp.get("type") == "boolean" and inp.get("default") is False
+      and "inputs.accept_active_shift" in json.dumps(builder_step.get("env") or {})
+      and "--accept-active-shift" in builder_step["run"] and "::notice::" in builder_step["run"]
+      and "${{" not in builder_step["run"], inp)
 
 failed_n = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed_n), len(results)))

@@ -51,7 +51,10 @@ FOUR MORE TOP-LEVEL KEYS (S647, #3215 and #3220), the contract with the view's l
                                     "objective_courses_on_active", "objective_loaded_at"},
                        "registry": {"row", "catalog_link", "course_outline_link", "sequence_source",
                                     "sequence_checked"}}},
-                   "last_attempt": {"at", "run_id", "ok", "error_class", "http_status", "counts"} | null,
+                   "last_attempt": {"at", "run_id", "ok", "error_class", "http_status", "counts",
+                                    "accepted_by_override"} | null,
+                   "override": {"accepted_by_override": "accept_active_shift", "active", "previous_active",
+                                "run_id"} | null,
                    "flag": "internal"}
                 Until the first run: {"basis": "live", "state": "not read yet", "read_at": null, "colleges": {}, ...}
                 (LIVE_NOT_READ). FAIL SOFT: a failed read, a missing file, a block that is not counts only, or a
@@ -112,7 +115,9 @@ SLO_QUEUE = "kb/course_outcomes/queue.json"
 SCOUTS = "kb/harvest_scouting/scout-*.json"
 SPOT_CHECKS = "kb/spot_checks/*.check.json"
 SPOT_LATER = ".later.json"   # ours, beside <name>.check.json
+SPOT_README = "kb/spot_checks/README.md"   # names each receipt's source comment: the tie-break on checked_at
 STRONG_AT = 5                # strong needs this many checked records at the college, all agreeing
+HOLD_AT = 2                  # this many differing records hold the college's display (the spot-check contract, #3111)
 IN_SCOPE = ("college", "continuing_education")
 
 # The age cue on a stamp, in days, in one place (Sam, 1:23 AM PT on #3215): fresh within 7, recent within 30,
@@ -126,6 +131,11 @@ FIELDS = {
     "read_at": "shareable", "read_kind": "internal", "slug": "internal", "causes": "internal",
     "cost_usd": "internal", "passed_at_read": "internal", "slo_queue": "internal", "scout": "internal",
     "spot_check": "internal", "confidence": "shareable",
+    # slice 2 (the expanding row and the side panel): what the college's read receipt says about its read
+    "listed_closed": "shareable", "found": "shareable", "extracted": "shareable", "errors": "internal",
+    "failed_checks": "internal", "platform": "shareable", "catalog_year": "shareable", "catalog_url": "shareable",
+    "read_seconds": "internal", "run": "internal", "levers": "internal",
+    # the field list the slice 2 read figures take from a harvested college (None, never a zero, when unread)
 }
 
 # The figures slice 1 cannot read from a committed file, each with its reason (shown as TBA on the page).
@@ -138,6 +148,24 @@ TBA = {
                          "the counts wait on the first live read of the census workflow.",
     "apis": "The checklist is filed in the data dictionary; this tile shows it in the next slice of the page.",
     "jst": "The JST funnel waits on an authorized-student feed from CCCStart; counts only, when it exists.",
+    # slice 2: the side panel's sections with no committed source per college, each with its reason
+    # "slo" and "objectives" are written by outcome_reasons() from what kb/course_outcomes/ holds, so the count
+    # in the words is the count on disk.
+    "plo": "Program outcomes are filed with each committed program record (record.program.outcomes in "
+           "kb/program_requirements_college/<slug>/records/), not yet read per college here.",
+    "catalog_registry": "The catalog link, curriculum view and program map checks are rows in the live program "
+                        "source registry, which this file does not carry.",
+    "ppm": "Program Pathways Mapper has no official export; 4 pilot term maps are committed "
+           "(kb/program_requirements_pilot/sequences/), not yet read per college here.",
+    "descriptions": "Usable course descriptions per college come from the description classifier (#3219), whose "
+                    "counts are not a committed file yet.",
+    "cpl": "MAP exhibits per college are a live sync, and no completeness denominator for CPL is defined yet.",
+    "mis": "The Fall 2025 MIS course file is committed but not yet joined to each college here.",
+    "coe": "The regional labor market crosswalk (kb/regional_cpl_out/) is committed but not yet read per college here.",
+    "loaded": "The load time and a person's confirmation are columns of the live program requirements table, which "
+              "this file does not carry.",
+    "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each "
+              "ask when the asks are filed with one.",
 }
 
 RULE = {
@@ -145,10 +173,11 @@ RULE = {
     "passing": "coverage and invented true, arithmetic equal or unstated (the Program Requirements tab's own test)",
     "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest "
                "rule), from the live counts (key overall, basis live); unread parts count as zero",
-    "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = one record "
-                  "differs, or 5 agree beside an unreachable page; limited = machine checks only, fewer than 5 "
-                  "checked (a cross-college check), or 2 or more differ (display held). An unreachable page is not "
-                  "a checked record; the newest receipt by checked_at counts",
+    "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = 5 or more "
+                  "checked with one differing, or 5 agree beside an unreachable page; limited = machine checks only, "
+                  "fewer than 5 checked whatever they found (a cross-college check), or 2 or more differ (display "
+                  "held). An unreachable page is not a checked record; the newest receipt by checked_at counts, and "
+                  "on a tie the receipt with the later source comment (kb/spot_checks/README.md)",
     "age_days": AGE_DAYS,
 }
 
@@ -228,12 +257,22 @@ def harvest(root: str):
         acct = cap or prev or {}
         name = c.get("college") or summary.get("college") or acct.get("college")
         causes = dict(r["per_college"].get(name) or {})
+        levers = {}
+        for g in r["programs"]:
+            if g["college"] == name:
+                levers[g["lever"]] = levers.get(g["lever"], 0) + 1
         programs = listed.get(name, 0)
         gap = sum(causes.values())
         out[slug] = {
             "name": name, "programs": programs, "passing": programs - gap, "gap": gap, "causes": causes,
             "read_at": acct.get("started"), "read_kind": "capture" if cap else ("capture_preview" if prev else None),
             "cost_usd": summary.get("cost_usd"), "passed_at_read": summary.get("passed_machine_checks"),
+            "listed_closed": summary.get("with_closed_list"), "found": summary.get("found"),
+            "extracted": summary.get("extracted"), "errors": summary.get("errors"),
+            "failed_checks": summary.get("failed"), "platform": acct.get("platform"),
+            "catalog_year": acct.get("catalog_year"), "catalog_url": acct.get("catalog_url"),
+            "read_seconds": acct.get("seconds"), "run": summary.get("run") or acct.get("run"),
+            "levers": dict(sorted(levers.items(), key=lambda x: (-x[1], x[0]))),
         }
     return out, r
 
@@ -252,12 +291,28 @@ def crosswalk_path(root: str) -> str:
     return CL.latest_crosswalk_path(os.path.join(root, CROSSWALK_DIR))
 
 
+def receipt_comments(root: str) -> dict:
+    """{file name: source comment id} from kb/spot_checks/README.md's table, the tie-break when two receipts for
+    one college share a checked_at. A file the README does not name ranks below one it does."""
+    text = _read_text(os.path.join(root, SPOT_README))
+    return {m.group(1): int(m.group(2))
+            for m in re.finditer(r"`([^`]+\.check\.json)` \| \[#\d+ comment (\d+)\]", text)}
+
+
+def _read_text(path: str) -> str:
+    if not os.path.exists(path):
+        return ""
+    with open(path, encoding="utf-8") as f:
+        return f.read()
+
+
 def read_spot_checks(root: str, resolve, unmatched: list) -> dict:
     """Each college's newest spot-check, read as COBIx posts it: a top-level "tally" keyed by college name and a
     top-level "checked_at". A later settlement of ours (<name>.later.json, beside the receipt) moves a record's
     unreachable count to agrees, and says so. When a college has more than one receipt, the newest by checked_at
-    counts (ties: the later file name)."""
+    counts; on a tie, the later source comment id the README names (COBIx on PR 3222), never the file order."""
     spot = {}
+    comments = receipt_comments(root)
     for path in sorted(glob.glob(os.path.join(root, SPOT_CHECKS))):
         rel = os.path.relpath(path, root)
         s = load(root, rel)
@@ -281,11 +336,17 @@ def read_spot_checks(root: str, resolve, unmatched: list) -> dict:
                     notes.append(r.get("control_number"))
             entry = {"agrees": agrees, "differs": differs, "unreachable": unreachable,
                      "checked_at": s.get("checked_at"), "file": rel, "pr": s.get("pr"),
-                     "settled_later": notes or None}
+                     "comment": comments.get(os.path.basename(path)), "settled_later": notes or None,
+                     "held": differs >= HOLD_AT}
             old = spot.get(cid)
-            if old is None or (entry["checked_at"] or "") >= (old["checked_at"] or ""):
+            if old is None or _rank(entry) > _rank(old):
                 spot[cid] = entry
     return spot
+
+
+def _rank(e: dict) -> tuple:
+    """A receipt's place among one college's receipts: checked_at, then the source comment id (0 when unnamed)."""
+    return (e.get("checked_at") or "", e.get("comment") or 0)
 
 
 def confidence(spot: dict | None, harvested: bool):
@@ -299,13 +360,64 @@ def confidence(spot: dict | None, harvested: bool):
     said = "%d agree, %d differ, %d unreachable" % (a, d, u)
     if spot.get("settled_later"):
         said += " (record %s agreed later against the captured text)" % ", ".join(spot["settled_later"])
-    if d >= 2:
+    if d >= HOLD_AT:
         return {"level": "limited", "why": said + "; display held"}
-    if d == 1:
+    # A thin tally reads limited whatever it found (COBIx on PR 3222): a 1-of-1 that differs never outranks one that agrees.
+    if checked < STRONG_AT:
+        return {"level": "limited", "why": said + "; fewer than %d records checked at this college" % STRONG_AT}
+    if d == 1 or u:
         return {"level": "partial", "why": said}
-    if checked >= STRONG_AT:
-        return {"level": "partial", "why": said} if u else {"level": "strong", "why": said}
-    return {"level": "limited", "why": said + "; fewer than %d records checked at this college" % STRONG_AT}
+    return {"level": "strong", "why": said}
+
+
+SLICE2 = ("listed_closed", "found", "extracted", "errors", "failed_checks", "platform", "catalog_year", "catalog_url",
+          "read_seconds", "run", "levers")
+
+
+def slice2_fields(h: dict | None) -> dict:
+    """A college's slice 2 read figures: its harvest's, or None for each when the college is unread."""
+    return {k: (h.get(k) if h else None) for k in SLICE2}
+
+
+OUTCOMES = "kb/course_outcomes"
+
+
+def outcome_hosts(root: str) -> dict:
+    """{"slo": [host], "objectives": [host]}: the hosts whose committed outline reads (read_*.json, trial runs left
+    out) hold at least one course with outcomes, or with objectives."""
+    out = {"slo": set(), "objectives": set()}
+    for path in glob.glob(os.path.join(root, OUTCOMES, "*", "read_*.json")):
+        host = os.path.basename(os.path.dirname(path))
+        if host.startswith("trial_"):
+            continue
+        with open(path, encoding="utf-8") as f:
+            d = json.load(f)
+        for r in d.get("rows") or []:
+            if not isinstance(r, dict):
+                continue
+            if r.get("outcomes"):
+                out["slo"].add(host)
+            if r.get("objectives"):
+                out["objectives"].add(host)
+    return {k: sorted(v) for k, v in out.items()}
+
+
+def outcome_reasons(hosts: dict) -> dict:
+    s, o = hosts["slo"], hosts["objectives"]
+    return {
+        "slo": "Course SLO reads are committed for %d host%s under %s/<host>/, not yet read per college here; the SLO "
+               "queue's state shows where the queue holds a college." % (len(s), "" if len(s) == 1 else "s", OUTCOMES),
+        "objectives": ("Course objectives are committed for %d host%s (%s) under %s/<host>/, not yet read per college "
+                       "here." % (len(o), "" if len(o) == 1 else "s", ", ".join(o), OUTCOMES)) if o else
+                      "No committed outline read holds course objectives yet.",
+    }
+
+
+def census_words() -> dict:
+    """The census's own words for each cause and lever (its CAUSES and LEVER_WORDS), never restated here."""
+    import _harvest_gap_census as G  # noqa: E402  (harvest() put kb/ on the path)
+    return {"causes": dict(G.CAUSE_WORDS),
+            "levers": {k: {"kind": v[0], "what": v[1]} for k, v in G.LEVER_WORDS.items()}}
 
 
 def github_anchor(heading: str) -> str:
@@ -437,8 +549,14 @@ def counts_only(block: dict) -> str | None:
     return None
 
 
-def live_block(live_path: str | None, previous: dict | None, universe: int | None = None) -> dict:
-    """The live key: a new read, or the previous committed block kept whole (fail soft)."""
+def live_block(live_path: str | None, previous: dict | None, universe: int | None = None,
+               accept_active_shift: bool = False) -> dict:
+    """The live key: a new read, or the previous committed block kept whole (fail soft). `accept_active_shift`
+    (the census workflow's dispatch input of the same name, default false) takes, for that one run, a read whose
+    only fault is its Active count (outside ACTIVE_BAND, or under ACTIVE_FLOOR with no previous block), so a real,
+    lasting change in COCI cannot hold the block at "short read" forever (COBIx, 6857150335). It never takes a read
+    short of the college floor, nor an empty one, and the block records that it was taken by override, with the two
+    counts and the run id."""
     prev = previous if isinstance(previous, dict) and previous.get("basis") == "live" else dict(LIVE_NOT_READ)
     if not live_path:
         return prev
@@ -462,12 +580,23 @@ def live_block(live_path: str | None, previous: dict | None, universe: int | Non
         counts = short_read(new, prev, universe)
         if counts is not None:
             cls = "short read"
+    override = None
+    if cls == "short read" and accept_active_shift and counts["colleges"] > 0 and counts["coverage_ok"] \
+            and counts["active"] > 0:
+        override = {"accepted_by_override": "accept_active_shift", "active": counts["active"],
+                    "previous_active": counts["previous_active"], "run_id": _run_id(new.get("run_id"))}
+        print("::notice::the Commons live counts: a read outside the Active band was accepted by override "
+              "(%d Active, previous %s, run %s)" % (counts["active"], counts["previous_active"], override["run_id"]))
+        cls = None
     if cls is None:
         out = {"basis": "live", "state": "read"}
-        out.update({k: v for k, v in new.items() if k not in ("schema", "state", "basis", "error", "error_class", "http_status")})
+        out.update({k: v for k, v in new.items() if k not in ("schema", "state", "basis", "error", "error_class",
+                                                              "http_status", "override")})
         out["run_id"] = _run_id(new.get("run_id"))
+        out["override"] = override
         out["last_attempt"] = {"at": new["read_at"], "run_id": out["run_id"], "ok": True, "error_class": None,
-                               "http_status": None, "counts": None}
+                               "http_status": None, "counts": counts if override else None,
+                               "accepted_by_override": bool(override)}
         out["flag"] = "internal"
         return out
     status = (new or {}).get("http_status")
@@ -498,7 +627,10 @@ _STAMP = re.compile(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ")
 #              wider top allows a COCI catch-up load;
 #   floor      with no previous good block, at least ACTIVE_FLOOR Active programs (15,000: the live census read
 #              20,282 on 2026-11-13, #3215; 15,000 is about three quarters of it).
-# Otherwise the previous block stays, and last_attempt records "short read" with the counts it saw.
+# Otherwise the previous block stays, and last_attempt records "short read" with the counts it saw. The band
+# compares with the last GOOD block, so a real, lasting shift would hold the block at "short read" on every later
+# run; a person accepts the new level with the census dispatch's accept_active_shift input (live_block), which takes
+# that one read and records the override in the block, and never waives the college floor or an empty read.
 COLLEGE_SHARE = 0.90
 ACTIVE_BAND = (0.85, 1.25)
 ACTIVE_FLOOR = 15000
@@ -517,14 +649,15 @@ def short_read(new: dict, prev: dict, universe: int | None) -> dict | None:
     colleges, active = len(new.get("colleges") or {}), _active(new)
     prev_active = _active(prev) if prev.get("state") == "read" else None
     need = int(-(-COLLEGE_SHARE * universe // 1)) if universe else 1
-    ok = colleges >= need
+    coverage_ok = colleges >= need
     if prev_active:
-        ok = ok and ACTIVE_BAND[0] * prev_active <= active <= ACTIVE_BAND[1] * prev_active
+        active_ok = ACTIVE_BAND[0] * prev_active <= active <= ACTIVE_BAND[1] * prev_active
     else:
-        ok = ok and active >= ACTIVE_FLOOR
-    if ok:
+        active_ok = active >= ACTIVE_FLOOR
+    if coverage_ok and active_ok:
         return None
-    return {"colleges": colleges, "colleges_needed": need, "active": active, "previous_active": prev_active,
+    return {"colleges": colleges, "colleges_needed": need, "coverage_ok": coverage_ok, "active": active,
+            "previous_active": prev_active, "active_ok": active_ok,
             "active_band": list(ACTIVE_BAND) if prev_active else None, "active_floor": None if prev_active else ACTIVE_FLOOR}
 
 
@@ -553,7 +686,7 @@ def overall_block(live: dict) -> dict:
     return out
 
 
-def build(root: str, live_path: str | None = None, previous: dict | None = None) -> dict:
+def build(root: str, live_path: str | None = None, previous: dict | None = None, accept_active_shift: bool = False) -> dict:
     cw_path = crosswalk_path(root)
     cw = load(root, os.path.relpath(cw_path, root))
     entities = [e for e in cw.get("colleges") or [] if e.get("entity_kind") in IN_SCOPE]
@@ -592,8 +725,10 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None)
             if cid is None:
                 unmatched.append({"file": os.path.relpath(path, root), "name": c.get("college")})
                 continue
+            cu = c.get("catalog_url") if isinstance(c.get("catalog_url"), dict) else {}
             scouts[cid] = {"recommendation": c.get("recommendation"), "challenge": (c.get("access") or {}).get("challenge"),
-                           "checked_at": c.get("checked_at"), "wave": s.get("wave")}
+                           "checked_at": c.get("checked_at"), "wave": s.get("wave"),
+                           "platform": c.get("platform"), "catalog_year": cu.get("catalog_year"), "catalog_url": cu.get("found")}
 
     spot = read_spot_checks(root, resolve, unmatched)
 
@@ -610,6 +745,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None)
             "cost_usd": h["cost_usd"] if h else None, "passed_at_read": h["passed_at_read"] if h else None,
             "slo_queue": slo.get(cid), "scout": scouts.get(cid), "spot_check": spot.get(cid),
             "confidence": confidence(spot.get(cid), h is not None),
+            **slice2_fields(h),
         })
 
     hv = [c for c in colleges if c["harvested"]]
@@ -631,17 +767,18 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None)
     }
     if previous is None:
         previous = _maybe(os.path.join(root, OUT)) or {}
-    live = live_block(live_path, previous.get("live"), len(entities))
+    live = live_block(live_path, previous.get("live"), len(entities), accept_active_shift)
     dictionary, apis = parse_dictionary(root)
-    tba = TBA if not spot else {k: v for k, v in TBA.items() if k != "confidence"}
+    tba = dict(TBA if not spot else {k: v for k, v in TBA.items() if k != "confidence"}, **outcome_reasons(outcome_hosts(root)))
     if live.get("state") == "read":
         tba = {k: v for k, v in tba.items() if k not in ("overall", "teachout_approved")}
     return {
         "schema": SCHEMA,
         "written_at": iso_now(),
         "sources": {"universe": os.path.relpath(cw_path, root), "harvest": COLLEGE_DIR + "/<slug>/", "census": "kb/_harvest_gap_census.py (committed-files functions)",
-                    "slo_queue": SLO_QUEUE, "scouts": SCOUTS, "spot_checks": SPOT_CHECKS},
-        "rule": RULE, "fields": FIELDS, "tba": tba,
+                    "slo_queue": SLO_QUEUE, "scouts": SCOUTS, "spot_checks": SPOT_CHECKS, "spot_check_comments": SPOT_README},
+        "rule": dict(RULE, causes=census_words()["causes"], levers=census_words()["levers"]), "fields": FIELDS,
+        "tba": tba,
         "statewide": statewide,
         "census_check": {"universe": census["universe"], "passing": census["passing"], "gap": census["gap"]},
         "unmatched": unmatched,
@@ -663,10 +800,13 @@ def main(argv=None) -> int:
     ap.add_argument("--out", default=None)
     ap.add_argument("--live", default=None, help="the live export (kb/_commons_data_live.py's out file); without it "
                                                   "the previous committed live block is kept")
+    ap.add_argument("--accept-active-shift", action="store_true",
+                    help="take, this once, a read whose only fault is its Active count (never one short of the "
+                         "college floor, never an empty one); the block records the override")
     ap.add_argument("--check", action="store_true", help="exit 1 when the committed file differs (written_at aside)")
     ap.add_argument("--quiet", action="store_true")
     a = ap.parse_args(argv)
-    d = build(a.root, a.live)
+    d = build(a.root, a.live, accept_active_shift=a.accept_active_shift)
     out = a.out or os.path.join(a.root, OUT)
     if a.check:
         old = _maybe(out) or {}

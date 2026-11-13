@@ -16,12 +16,15 @@ What it guards, each a way the page could mislead:
       cannot turn main red: 4 agree and 1 differ reads partial; a 1-of-1 cross-college tally never reads strong;
       an unreachable page is not a checked record; a later settlement of ours moves only its own row; the newest
       receipt by checked_at counts;
-  (8) the data dictionary is parsed from docs/reference/data_dictionary.md, the one source: one entry per dataset
-      heading, every label present, evidence that exists, and the committed file equal to the doc's parse;
-  (9) the API checklist: a status counts only with evidence in the repo, a claimed connection without it reads
-      unverified;
-  (10) the live block and the overall bar keep basis live, apart from the committed-files figures (the export
-      itself is guarded by tests/commons_data_live_test.py).
+  (8) COBIx's two edge cases on PR 3222: a tally under 5 checked reads limited whatever differs, and a tie on
+      checked_at goes to the later source comment id the README names, never the file order;
+  (9) slice 2's per-college read figures (platform, catalog year, found, extracted, levers) are null when unread;
+  (11) the data dictionary is parsed from docs/reference/data_dictionary.md, the one source: one entry per dataset
+       heading, every label present, evidence that exists, and the committed file equal to the doc's parse;
+  (12) the API checklist: a status counts only with evidence in the repo, a claimed connection without it reads
+       unverified;
+  (13) the live block and the overall bar keep basis live, apart from the committed-files figures (the export
+       itself is guarded by tests/commons_data_live_test.py).
 
 Run from the repo root: python3 tests/commons_data_status_build_test.py
 """
@@ -141,6 +144,74 @@ with tempfile.TemporaryDirectory() as tmp:
     sj2 = B.read_spot_checks(tmp, in_scope_resolve, [])[byname["San Jose City College"]]
     check("(7) the newest receipt by checked_at counts, whatever its file name", sj2["checked_at"] == "2099-01-01T00:00:00Z" and B.confidence(sj2, True)["level"] == "strong")
 
+# (8) COBIx's two edge cases on PR 3222 (comment 6852333180), over fixture copies of real receipts
+check("(8) ⭐ a thin tally that differs reads limited, never above a thin tally that agrees",
+      B.confidence({"agrees": 0, "differs": 1, "unreachable": 0, "settled_later": None}, True)["level"] == "limited"
+      and B.confidence({"agrees": 3, "differs": 1, "unreachable": 0, "settled_later": None}, True)["level"] == "limited"
+      and B.confidence({"agrees": 1, "differs": 0, "unreachable": 0, "settled_later": None}, True)["level"] == "limited")
+check("(8) five or more checked with one differing still reads partial (San Jose City's 4 and 1)",
+      B.confidence({"agrees": 4, "differs": 1, "unreachable": 0, "settled_later": None}, True)["level"] == "partial")
+with tempfile.TemporaryDirectory() as tmp:
+    sc = os.path.join(tmp, "kb", "spot_checks")
+    os.makedirs(sc)
+    with open(os.path.join(FIX, "pr-3206-san-jose-city.check.json"), encoding="utf-8") as f:
+        real = json.load(f)
+    # Two receipts for one college with the same checked_at. "zzz" sorts last by name but cites the EARLIER comment,
+    # so a file-order tie-break would pick it; the comment-id tie-break must pick "aaa".
+    later = dict(real, tally={"San Jose City College": {"agrees": 5, "differs": 0, "page_unreachable": 0}})
+    with open(os.path.join(sc, "aaa-later-comment.check.json"), "w", encoding="utf-8") as f:
+        json.dump(later, f)
+    shutil.copy(os.path.join(FIX, "pr-3206-san-jose-city.check.json"), os.path.join(sc, "zzz-earlier-comment.check.json"))
+    with open(os.path.join(sc, "README.md"), "w", encoding="utf-8") as f:
+        f.write("| File | Source comment | sha256 |\n|---|---|---|\n"
+                "| `zzz-earlier-comment.check.json` | [#3206 comment 6848712362](x) | `0` |\n"
+                "| `aaa-later-comment.check.json` | [#3206 comment 6899999999](x) | `0` |\n")
+    tie = B.read_spot_checks(tmp, in_scope_resolve, [])[byname["San Jose City College"]]
+    check("(8) ⭐ a tie on checked_at goes to the later source comment id, not the file order",
+          tie["comment"] == 6899999999 and (tie["agrees"], tie["differs"]) == (5, 0), tie)
+    os.rename(os.path.join(sc, "aaa-later-comment.check.json"), os.path.join(sc, "zzz2-later-comment.check.json"))
+    with open(os.path.join(sc, "README.md"), "w", encoding="utf-8") as f:
+        f.write("| `zzz-earlier-comment.check.json` | [#3206 comment 6848712362](x) | `0` |\n"
+                "| `zzz2-later-comment.check.json` | [#3206 comment 6899999999](x) | `0` |\n")
+    tie2 = B.read_spot_checks(tmp, in_scope_resolve, [])[byname["San Jose City College"]]
+    check("(8) the tie-break holds with the file order reversed", tie2["comment"] == 6899999999, tie2)
+    check("(8) the committed receipts carry the README's comment ids",
+          all(c["spot_check"]["comment"] for c in C if c["spot_check"]))
+
+# (9) slice 2: the read receipt's own figures, null for an unread college, and the census's words in the rule
+def _receipt(slug, name):
+    for n in (name, "capture_preview.json" if name == "capture.json" else None):
+        if n and os.path.exists(os.path.join(ROOT, B.COLLEGE_DIR, slug, n)):
+            return json.load(open(os.path.join(ROOT, B.COLLEGE_DIR, slug, n), encoding="utf-8"))
+    return {}
+
+
+check("(9) each harvested college's platform, catalog year, found and extracted are its own receipts' values",
+      all(c["platform"] == _receipt(c["slug"], "capture.json").get("platform") and c["catalog_year"] == _receipt(c["slug"], "capture.json").get("catalog_year")
+          and c["found"] == _receipt(c["slug"], "summary.json").get("found") and c["extracted"] == _receipt(c["slug"], "summary.json").get("extracted") for c in hv))
+# An unread college, as a fixture: the committed universe is fully harvested today, so the live rows cannot test it.
+check("(9) ⭐ an unread college carries None for every read figure, never a zero or an empty map",
+      B.slice2_fields(None) == {k: None for k in B.SLICE2} and set(B.SLICE2) <= set(d["fields"]))
+check("(9) a harvested college's read figures pass through as its harvest holds them, zeros kept",
+      B.slice2_fields({"found": 0, "levers": {}, "platform": "pdf"})["found"] == 0 and B.slice2_fields({"levers": {}})["levers"] == {})
+check("(9) each college's levers count its programs still to pass", all(sum(c["levers"].values()) == c["gap"] for c in hv))
+# (10) the outcome reasons count what kb/course_outcomes/ holds, so the words cannot overstate it (#3231 review)
+with tempfile.TemporaryDirectory() as tmp:
+    for host, rows in (("aaa", [{"outcomes": ["x"], "objectives": ["y"]}]), ("bbb", [{"outcomes": ["x"], "objectives": []}]),
+                       ("ccc", [{"outcomes": []}]), ("trial_1", [{"outcomes": ["x"], "objectives": ["y"]}])):
+        os.makedirs(os.path.join(tmp, B.OUTCOMES, host))
+        with open(os.path.join(tmp, B.OUTCOMES, host, "read_1_p1of1.json"), "w", encoding="utf-8") as f:
+            json.dump({"rows": rows}, f)
+    oh = B.outcome_hosts(tmp)
+    check("(10) ⭐ a host counts for SLOs or objectives only when a row holds some, trial runs left out",
+          oh == {"slo": ["aaa", "bbb"], "objectives": ["aaa"]}, oh)
+    rs = B.outcome_reasons(oh)
+    check("(10) the reasons say those counts and name the objective hosts", "for 2 hosts" in rs["slo"] and "for 1 host (aaa)" in rs["objectives"], rs)
+check("(10) the committed file's reasons are the builder's count of the repo", {k: d["tba"][k] for k in ("slo", "objectives")} == B.outcome_reasons(B.outcome_hosts(ROOT)))
+check("(10) the PLO reason does not say outcomes are missing from the records", "not yet read per college here" in d["tba"]["plo"] and "no PLO" not in d["tba"]["plo"])
+check("(9) the cause and lever words are the census's own", set(d["rule"]["causes"]) >= {k for c in hv for k in c["causes"]}
+      and set(d["rule"]["levers"]) >= {k for c in hv for k in c["levers"]})
+
 # the committed receipts are byte-for-byte what the README's sha256 names
 import hashlib  # noqa: E402
 import re  # noqa: E402
@@ -156,47 +227,47 @@ check("(7) each committed receipt hashes to the README's sha256",
 committed = json.load(open(os.path.join(ROOT, B.OUT), encoding="utf-8"))
 check("the committed file has the builder's shape", set(committed) == set(d) and committed["schema"] == d["schema"])
 
-# (8) the data dictionary: the doc is the one source (S647, #3220)
+# (11) the data dictionary: the doc is the one source (S647, #3220)
 doc = open(os.path.join(ROOT, B.DICTIONARY_DOC), encoding="utf-8").read()
 D = d["dictionary"]["datasets"]
 headings = re.findall(r"^### (.+)$", B._section(doc, B.DICT_SECTION), re.M)
-check("(8) the doc parses with no error (every label, a known group and a register stage)", d["dictionary"]["errors"] == [], d["dictionary"]["errors"][:3])
-check("(8) ⭐ one dictionary entry per dataset heading in the doc, in its order", [e["name"] for e in D] == [h.strip() for h in headings])
-check("(8) ⭐ the committed file's dictionary and checklist are the doc's (a doc edit without a rebuild fails here)",
+check("(11) the doc parses with no error (every label, a known group and a register stage)", d["dictionary"]["errors"] == [], d["dictionary"]["errors"][:3])
+check("(11) ⭐ one dictionary entry per dataset heading in the doc, in its order", [e["name"] for e in D] == [h.strip() for h in headings])
+check("(11) ⭐ the committed file's dictionary and checklist are the doc's (a doc edit without a rebuild fails here)",
       committed.get("dictionary") == d["dictionary"] and committed.get("apis") == d["apis"])
-check("(8) the datasets the brief lists, Harvested, Connected and Planned (19 on #3220)", len(D) == 19
+check("(11) the datasets the brief lists, Harvested, Connected and Planned (19 on #3220)", len(D) == 19
       and {e["group"] for e in D} == set(B.GROUPS), len(D))
-check("(8) every entry names its owner, today's procedure, the planned improvement and its stage",
+check("(11) every entry names its owner, today's procedure, the planned improvement and its stage",
       all(e["owner"] and e["procedure_today"] and e["planned_improvement"] and e["stage"] in B.STAGES for e in D))
-check("(8) every entry's evidence exists in the repo", all(e["evidence"] and not e["evidence_missing"] for e in D),
+check("(11) every entry's evidence exists in the repo", all(e["evidence"] and not e["evidence_missing"] for e in D),
       [(e["name"], e["evidence_missing"]) for e in D if e["evidence_missing"] or not e["evidence"]][:3])
 anchors = [e["link"].split("#", 1)[1] for e in D]
-check("(8) each entry links its own anchor in the doc", len(set(anchors)) == len(D) and all(e["link"].startswith(B.DICTIONARY_DOC + "#") for e in D))
-check("(8) the register links the dictionary, and the dictionary the register",
+check("(11) each entry links its own anchor in the doc", len(set(anchors)) == len(D) and all(e["link"].startswith(B.DICTIONARY_DOC + "#") for e in D))
+check("(11) the register links the dictionary, and the dictionary the register",
       "data_dictionary.md" in open(os.path.join(ROOT, "docs", "reference", "data_sources.md"), encoding="utf-8").read()
       and "data_sources.md" in doc)
-check("(8) ⭐ the student boundary is stated as it is: records stay in MAP, COBI keeps counts, and the pseudonymous rows "
+check("(11) ⭐ the student boundary is stated as it is: records stay in MAP, COBI keeps counts, and the pseudonymous rows "
       "that pass through are named with where they live and both ADRs",
       "Student records stay in MAP; COBI keeps counts." in doc and "Student-level data never enters COBI" not in doc
       and all(s in doc for s in ("pseudonymous per-student rows", "stg_map_student_credit", "map_student_credit",
                                  "adr-funding-priority-metrics-privacy", "adr-student-detail-aggregate-disclosure-control",
                                  "never commits them", "before anything is committed or shown")))
 cpl = B._section(doc, B.DICT_SECTION).split("### CPL / MAP", 1)[1].split("\n### ", 1)[0]
-check("(8) ⭐ the CPL / MAP entry no longer says the pull carries no student data, and names both ADRs",
+check("(11) ⭐ the CPL / MAP entry no longer says the pull carries no student data, and names both ADRs",
       "no student data" not in cpl and "adr-funding-priority-metrics-privacy" in cpl
       and "adr-student-detail-aggregate-disclosure-control" in cpl and "pseudonymous" in cpl)
 map_row = [ln for ln in doc.splitlines() if ln.startswith("| MAP CustomReport API |")][0]
-check("(8) the MAP API row names the pseudonymous rows and both ADRs",
+check("(11) the MAP API row names the pseudonymous rows and both ADRs",
       "pseudonymous" in map_row and "adr-funding-priority-metrics-privacy" in map_row and "adr-student-detail-aggregate-disclosure-control" in map_row)
-check("(8) synced_at is defined as the promote sets it (insert or a changed value), never as the last sync",
+check("(11) synced_at is defined as the promote sets it (insert or a changed value), never as the last sync",
       "| `synced_at` | timestamptz | Last sync |" not in doc and "values last changed" in cpl)
-check("(8) ⭐ an entry backed only by citations of the doc family marks its external claims",
+check("(11) ⭐ an entry backed only by citations of the doc family marks its external claims",
       all(e["unverified_claims"] >= 1 for e in D if not e["repo_verifiable"]),
       [e["name"] for e in D if not e["repo_verifiable"] and e["unverified_claims"] < 1])
-check("(8) citations of the doc family are listed apart from the repo's own evidence",
+check("(11) citations of the doc family are listed apart from the repo's own evidence",
       all(set(e["evidence_cited"]) == {x for x in e["evidence"] if B.cited(x)} for e in D)
       and any(e["evidence_cited"] for e in D) and any(e["repo_verifiable"] for e in D))
-check("(8) the three lakes the report alone describes carry the mark on each of their report-sourced lines",
+check("(11) the three lakes the report alone describes carry the mark on each of their report-sourced lines",
       all(e["unverified_claims"] >= 2 for e in D if e["name"] in ("Ellucian Insights Data Lake (institution)",
           "Ellucian Aggregated Insights Data Lake", "InvokeClarity Data Lake (institution)")))
 with tempfile.TemporaryDirectory() as tmp:
@@ -207,35 +278,35 @@ with tempfile.TemporaryDirectory() as tmp:
         "| MAP CustomReport API | MAP (RCCD / InfoTech) | yes | connected |  | `scripts/no_such_file.sh`", 1)
     open(os.path.join(tmp, B.DICTIONARY_DOC), "w", encoding="utf-8").write(broken)
     bd, ba = B.parse_dictionary(tmp)
-    check("(8) a dataset with no Stage line is an error", any("Stage" in e for e in bd["errors"]), bd["errors"][:2])
+    check("(11) a dataset with no Stage line is an error", any("Stage" in e for e in bd["errors"]), bd["errors"][:2])
     m = [r for r in ba["rows"] if r["api"] == "MAP CustomReport API"][0]
-    check("(9) ⭐ a claimed connection whose evidence is missing reads unverified, never connected",
+    check("(12) ⭐ a claimed connection whose evidence is missing reads unverified, never connected",
           m["status"] == "unverified" and m["claimed"] == "connected" and ba["connected"] == 0, m)
     cited_only = doc.replace(
         "| ASSIST API | ASSIST (intersegmental) | yes | planned |", "| ASSIST API | ASSIST (intersegmental) | yes | connected |", 1)
     open(os.path.join(tmp, B.DICTIONARY_DOC), "w", encoding="utf-8").write(cited_only)
     _, ca = B.parse_dictionary(tmp)
     a = [r for r in ca["rows"] if r["api"] == "ASSIST API"][0]
-    check("(9) ⭐ a claimed connection whose only evidence is the register's own line reads unverified",
+    check("(12) ⭐ a claimed connection whose only evidence is the register's own line reads unverified",
           a["status"] == "unverified" and a["claimed"] == "connected" and a["evidence_cited"], a)
 
-# (9) the API checklist
+# (12) the API checklist
 A = d["apis"]
-check("(9) fifteen APIs, one connected (the MAP CustomReport API)", A["total"] == 15 and A["connected"] == 1
+check("(12) fifteen APIs, one connected (the MAP CustomReport API)", A["total"] == 15 and A["connected"] == 1
       and [r["api"] for r in A["rows"] if r["status"] == "connected"] == ["MAP CustomReport API"], A["by_status"])
-check("(9) every status is the vocabulary or unverified", all(r["status"] in B.API_STATUSES + ("unverified",) for r in A["rows"]))
-check("(9) a row with no evidence reads unverified", all(r["status"] == "unverified" for r in A["rows"] if not r["evidence"]))
-check("(9) the two priority APIs are CCCStart and the JST feed", sorted(r["api"][:8] for r in A["rows"] if r["priority"]) == ["CCCStart", "JST auth"])
-check("(9) by_status counts the rows", sum(A["by_status"].values()) == A["total"])
+check("(12) every status is the vocabulary or unverified", all(r["status"] in B.API_STATUSES + ("unverified",) for r in A["rows"]))
+check("(12) a row with no evidence reads unverified", all(r["status"] == "unverified" for r in A["rows"] if not r["evidence"]))
+check("(12) the two priority APIs are CCCStart and the JST feed", sorted(r["api"][:8] for r in A["rows"] if r["priority"]) == ["CCCStart", "JST auth"])
+check("(12) by_status counts the rows", sum(A["by_status"].values()) == A["total"])
 
-# (10) the live block and the overall bar keep their own basis
+# (13) the live block and the overall bar keep their own basis
 LV, OV = d["live"], d["overall"]
-check("(10) the live block names basis live and a state", LV["basis"] == "live" and LV["state"] in ("read", "not read yet"))
-check("(10) before its first read it carries an explicit not-read-yet block", LV["state"] == "read" or (LV["read_at"] is None and LV["colleges"] == {}))
-check("(10) every live college is a crosswalk college", set(LV["colleges"]) <= {str(c["id"]) for c in C})
-check("(10) the overall bar is basis live, with the live read time, and only for colleges the live read holds",
+check("(13) the live block names basis live and a state", LV["basis"] == "live" and LV["state"] in ("read", "not read yet"))
+check("(13) before its first read it carries an explicit not-read-yet block", LV["state"] == "read" or (LV["read_at"] is None and LV["colleges"] == {}))
+check("(13) every live college is a crosswalk college", set(LV["colleges"]) <= {str(c["id"]) for c in C})
+check("(13) the overall bar is basis live, with the live read time, and only for colleges the live read holds",
       OV["basis"] == "live" and OV["read_at"] == LV["read_at"] and set(OV["colleges"]) == set(LV["colleges"]))
-check("(10) no college row mixes in a live figure", not any(k in c for c in C for k in ("live", "overall")))
+check("(13) no college row mixes in a live figure", not any(k in c for c in C for k in ("live", "overall")))
 
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))

@@ -11,7 +11,16 @@ name: Harvest gap census
 # SUPABASE_SERVICE_KEY at that step's scope alone, counts per college only (COBIx's conditions, PR #3222).
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      # COBIx, 6857150335 on #3232: the Commons live counts compare a read's Active programs with the last good
+      # block, so a real, lasting shift would hold them at "short read". True takes this one run's read whose only
+      # fault is its Active count; the block records the override. It never waives the college floor or an empty
+      # read. Default false.
+      accept_active_shift:
+        description: "Commons live counts: accept this run's Active count outside the band (logged in the block)"
+        type: boolean
+        default: false
 
 concurrency:
   group: harvest-gap-census-${{ github.ref_name }}
@@ -57,8 +66,15 @@ jobs:
       # counts above (key live, its own basis), the data dictionary and the API checklist. Fails soft, as the
       # heading agreement does.
       - name: Commons data dashboard (committed files and the live counts; fails soft)
+        env:
+          ACCEPT_ACTIVE_SHIFT: ${{ inputs.accept_active_shift }}
         run: |
-          if ! python3 kb/_build_commons_data_status.py --live out/commons_data_live.json; then
+          shift_arg=""
+          if [ "$ACCEPT_ACTIVE_SHIFT" = "true" ]; then
+            shift_arg="--accept-active-shift"
+            echo "::notice::accept_active_shift is set for this run: a read outside the Active band may be taken, and the block will say so"
+          fi
+          if ! python3 kb/_build_commons_data_status.py --live out/commons_data_live.json $shift_arg; then
             echo "::warning::the Commons data dashboard did not regenerate; the census files without it"
             git checkout -- kb/status/commons_data.json 2>/dev/null || true
           fi
