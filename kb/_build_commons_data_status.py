@@ -66,7 +66,7 @@ FOUR MORE TOP-LEVEL KEYS (S647, #3215 and #3220), the contract with the view's l
                 --check holds between census runs.
   "overall"     each college's overall completeness, from "live" alone, basis "live". COBIx's rule on #3215
                 (comment 1, "Rules Sam may revisit"), quoted: "Overall = (catalog source + program requirements
-                passing + (SLOs + PLOs)/2) / 3, the whole-harvest rule. Unread parts count as zero. Objectives,
+                passing + (SLOs + PLOs)/2) / 3, the whole-collection rule. Unread parts count as zero. Objectives,
                 descriptions, CPL, PPM, MIS, COE and every Planned bar are left out." and "Catalog source bar: checks
                 done out of 3 (catalog link, curriculum view, program maps)." The parts here: catalog = (catalog
                 link + curriculum view held + program maps checked) / 3 (the registry records a curriculum view
@@ -173,13 +173,19 @@ TBA = {
 RULE = {
     "basis": "committed files only: the programs each college's capture listed (the gap census's committed universe)",
     "passing": "coverage and invented true, arithmetic equal or unstated (the Program Requirements tab's own test)",
-    "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest "
+    "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-collection "
                "rule), from the live counts (key overall, basis live); unread parts count as zero",
     "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = 5 or more "
                   "checked with one differing, or 5 agree beside an unreachable page; limited = machine checks only, "
                   "fewer than 5 checked whatever they found (a cross-college check), or 2 or more differ (display "
                   "held). An unreachable page is not a checked record; the newest receipt by checked_at counts, and "
                   "on a tie the receipt with the later source comment (kb/spot_checks/README.md)",
+    # The Confidence card's one line on the College Data Collection page (#3229), from the same thresholds as
+    # confidence() below, so the page never types a threshold of its own.
+    "confidence_card": "Strong: %d or more spot-checked records at the college, all agreeing. Partial: %d or more "
+                       "checked with one differing, or %d agreeing beside an unreachable page. Limited: machine checks "
+                       "only, fewer than %d checked, or %d or more differing (display held)."
+                       % (STRONG_AT, STRONG_AT, STRONG_AT, STRONG_AT, HOLD_AT),
     "age_days": AGE_DAYS,
 }
 

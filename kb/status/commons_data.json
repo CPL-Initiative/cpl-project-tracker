@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T17:22:49Z",
+ "written_at": "2026-11-13T17:37:18Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -13,8 +13,9 @@
  "rule": {
   "basis": "committed files only: the programs each college's capture listed (the gap census's committed universe)",
   "passing": "coverage and invented true, arithmetic equal or unstated (the Program Requirements tab's own test)",
-  "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest rule), from the live counts (key overall, basis live); unread parts count as zero",
+  "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-collection rule), from the live counts (key overall, basis live); unread parts count as zero",
   "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = 5 or more checked with one differing, or 5 agree beside an unreachable page; limited = machine checks only, fewer than 5 checked whatever they found (a cross-college check), or 2 or more differ (display held). An unreachable page is not a checked record; the newest receipt by checked_at counts, and on a tie the receipt with the later source comment (kb/spot_checks/README.md)",
+  "confidence_card": "Strong: 5 or more spot-checked records at the college, all agreeing. Partial: 5 or more checked with one differing, or 5 agreeing beside an unreachable page. Limited: machine checks only, fewer than 5 checked, or 2 or more differing (display held).",
   "age_days": {
    "fresh": 7,
    "recent": 30
@@ -95,7 +96,7 @@
    },
    "reconcile_steps": {
     "kind": "free",
-    "what": "the college's reconcile steps, on the catalog's own words"
+    "what": "the pipeline's reconcile steps for the college, on the catalog's own words"
    }
   }
  },
@@ -11344,7 +11345,7 @@
   "basis": "live",
   "state": "read",
   "read_at": "2026-11-13T15:53:36Z",
-  "rule": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest rule), from the live counts (key overall, basis live); unread parts count as zero",
+  "rule": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-collection rule), from the live counts (key overall, basis live); unread parts count as zero",
   "flag": "shareable",
   "statewide": {
    "mean": 0.6293,

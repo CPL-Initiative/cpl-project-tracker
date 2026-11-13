@@ -86,7 +86,7 @@ function reported(x) { x.w.CPL_SESSION.stashReturnTab("commons"); return (JSON.p
 function rows(x) { return Array.from(x.d.querySelectorAll("#cdd-colleges tbody tr[data-college]")).map((r) => r.getAttribute("data-college")); }
 function tile(x, f) { return x.d.querySelector('.cdd-tiles [data-filter="' + f + '"]'); }
 // A figure's number: a card's (the first of "3 of 5"), or a count word's inside a card of several ("2 strong").
-function fig(t) { const v = t && (t.classList.contains("cdd-partw") ? t : t.querySelector(".cdd-v")); return Number((txt(v).match(/^[\d,]+/) || [""])[0].replace(/,/g, "")); }
+function fig(t) { const v = t && (t.classList.contains("cdd-partw") ? t : (t.closest(".cdd-tile") || t).querySelector(".cdd-v")); return Number((txt(v).match(/^[\d,]+/) || [""])[0].replace(/,/g, "")); }
 // The list shows every college and no figure is pressed (the default; there is no All card since #3229).
 function isAll(x) { return !x.d.querySelector('.cdd-tiles [aria-pressed="true"]') && /^Showing (\d+) of \1$/.test(txt(x.d.querySelector("#cdd-shown"))); }
 function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + label + '"]'); }
@@ -119,7 +119,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     check("figure " + f + ": pressed, and the address carries it", tile(o, f).getAttribute("aria-pressed") === "true"
       && o.w.location.hash === (f === "all" ? "#commons/data" : "#commons/data/" + f) && reported(o) === (f === "all" ? "commons/data" : "commons/data/" + f));
   });
-  check("figure: five cards and three freshness words open a list", o.d.querySelectorAll("button.cdd-tile[data-filter]").length === 5 && o.d.querySelectorAll(".cdd-tiles button.cdd-partw").length === 3);
+  check("figure: four cards, the gaps word and three freshness words open a list", o.d.querySelectorAll("button.cdd-tile[data-filter]").length === 4 && o.d.querySelectorAll(".cdd-tiles button.cdd-openw").length === 1 && o.d.querySelectorAll(".cdd-tiles button.cdd-partw").length === 3);
 
   // ── (2) each filter's colleges ──
   tile(o, "unread").click();
@@ -145,7 +145,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("slice 3: before the first live read the overall tile says the live read has not run yet", /The live read has not run yet\./.test(txt(plain(o, "Overall completeness"))));
   check("plain: program requirements passing is the file's sum, shown, not a button",
     plain(o, "Program requirements passing") && txt(plain(o, "Program requirements passing").querySelector(".cdd-v")) === "74%"
-    && /140 of 190 listed programs/.test(txt(plain(o, "Program requirements passing"))));
+    && /Of the 190 programs listed in the committed captures, 140 pass/.test(txt(plain(o, "Program requirements passing"))));
   check("plain: read cost per passing program from the receipts", txt(plain(o, "Read cost per passing program").querySelector(".cdd-v")) === "$0.108");
   check("TBA: every college's confidence reads TBA without a spot-check receipt",
     Array.from(o.d.querySelectorAll('#cdd-colleges td[data-label="Confidence"]')).every((td) => txt(td) === "TBA"));
@@ -197,7 +197,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const k = load("#commons/data", DATA2);
   await k.M.boot(); await settle();
   check("confidence 1: no Confidence TBA once receipts are read; one Confidence card holds the three levels (#3229)",
-    !k.d.querySelector('.cdd-tiles .cdd-tba') || !/Confidence/.test(txt(k.d.querySelector('.cdd-tiles .cdd-tba').parentNode))
+    (!k.d.querySelector('.cdd-tiles .cdd-tba') || !/Confidence/.test(txt(k.d.querySelector('.cdd-tiles .cdd-tba').parentNode)))
     && k.d.querySelectorAll('.cdd-tile[data-tile="Confidence"]').length === 1 && k.d.querySelectorAll('.cdd-tile[data-tile="Confidence"] button.cdd-partw').length === 3);
   ["strong", "partial", "limited"].forEach(function (lv) {
     const t = tile(k, lv);
@@ -682,8 +682,19 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     act.tagName === "DIV" && txt(act.querySelector(".cdd-v")) === "90 of 140" && /live read, Nov 13, 2026/.test(txt(act)));
   check("3229 no person headline ⭐ (point 5): no card names a person's confirmation or a review", !labels.some((l) => /confirm|review/i.test(l))
     && !/confirmed|reviewed/i.test(txt(w1.d.querySelector(".cdd-tiles"))));
-  check("3229 gaps: Programs still to pass counts programs, of those listed, and opens their colleges",
-    txt(tile(w1, "gaps").querySelector(".cdd-v")) === "50" && /of 190 listed; opens their 2 colleges, most first/.test(txt(tile(w1, "gaps"))));
+  const gapCard = plain(w1, "Programs still to pass");
+  check("3229 gaps ⭐ (review): Programs still to pass counts programs, so the card is plain; an underlined word in it opens their colleges",
+    gapCard && gapCard.tagName === "DIV" && txt(gapCard.querySelector(".cdd-v")) === "50" && /^Of the 190 programs listed in the committed captures/.test(txt(gapCard.querySelector(".cdd-d")))
+    && tile(w1, "gaps") && tile(w1, "gaps").tagName === "BUTTON" && gapCard.contains(tile(w1, "gaps")) && txt(tile(w1, "gaps")) === "Their 2 colleges, most first");
+  tile(w1, "gaps").click();
+  check("3229 gaps 2: the word opens the colleges, most first, pressed", JSON.stringify(rows(w1)) === '["Gamma College","Alpha College"]' && tile(w1, "gaps").getAttribute("aria-pressed") === "true");
+  const prCard = plain(w1, "Program requirements passing");
+  check("3229 bases ⭐ (conductor): each completeness card's definition starts with its base, and the first says why the two differ",
+    /^Of the 190 programs listed in the committed captures, 140 pass/.test(txt(prCard.querySelector(".cdd-d")))
+    && /The captures list Active, Teachout and Approved programs; the Active programs card counts Active programs only\./.test(txt(prCard.querySelector(".cdd-d")))
+    && /^Of the 140 Active programs in COCI, live read, Nov 13, 2026,/.test(txt(plain(w1, "Active programs complete").querySelector(".cdd-d"))));
+  w1.d.querySelector("#cdd-all").click();
+  check("3229 focus (review): Show all colleges leaves the focus on the list's heading, never lost", w1.d.activeElement === w1.d.getElementById("cdd-list-h"));
   const fr = Array.from(w1.d.querySelectorAll('.cdd-tile[data-tile="Collection freshness"] button.cdd-partw'));
   check("3229 freshness: one card, fresh, recent and stale, each opening its colleges", JSON.stringify(fr.map(txt)) === '["1 fresh","1 recent","1 stale"]');
   fr[2].click();
@@ -703,14 +714,64 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("3229 row 2: the row's program requirements bar carries the college's confidence word", /Confidence: strong/.test(txt(m31.querySelector('[data-ds="pr"] .cdd-conf'))));
   w1.d.querySelector('[data-panel-open="1"]').click();
   const P31 = w1.d.getElementById("cdd-panel");
-  check("3229 panel ⭐ (points 5, 6): Confidence first; Collected is the group; the person-confirmed count is not a line of the dataset, only a quiet team note",
+  check("3229 panel ⭐ (points 5, 6; review): Confidence first; Collected is the group; no count of person review anywhere in the panel, only a quiet team date",
     txt(P31.querySelector(".cdd-psec > h3")) === "Confidence" && Array.from(P31.querySelectorAll(".cdd-psec > h3")).map(txt).indexOf("Collected") === 2
-    && !/Records a person confirmed/.test(txt(P31.querySelector('[data-ds="pr"]'))) && /Records a person confirmed: 2 \(live read, Nov 13, 2026\), a team count, not a measure of the collection\./.test(txt(P31.querySelector('[data-team="dates"]'))));
+    && !/person confirmed|confirmed by a person/i.test(txt(P31)) && /^For the team: last loaded, TBA\./.test(txt(P31.querySelector('[data-team="dates"]'))));
   check("3229 builder (point 5): the committed tba.loaded reason no longer points at a person's confirmation",
     !/confirm/i.test(JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8")).tba.loaded) && !/person's confirmation/.test(fs.readFileSync("kb/_build_commons_data_status.py", "utf8")));
   check("3229 next: the authenticated Sierra idea is a Coming next line naming what it waits on, not a build",
-    /Waits on Sierra's sign-in and access controls/.test(txt(w1.d.querySelector('#cdd-next [data-next="College staff improving their own collection"]'))));
+    /Waits on Sierra's sign-in and access controls/.test(txt(w1.d.querySelector('#cdd-next [data-next="A signed-in Sierra where college staff may direct changes"]'))));
   check("3229 static: no unreconciled figure quoted (courses on Active programs, courses with SLOs)", !/88,?736|89,?192|13,?293|12,?815/.test(SRC));
+
+  // ── (13) the review of #3243 ──
+  // Guards: a missing age rule, a zero count inside a card, and the two TBA cards' reasons.
+  const G0 = JSON.parse(JSON.stringify(C1));
+  delete G0.rule.age_days;
+  const g0 = load("#commons/data", G0);
+  await g0.M.boot(); await settle();
+  check("3243 age ⭐: with no age rule in the file the freshness card reads TBA with its reason, never 'undefined' and never every capture stale",
+    !/undefined/.test(txt(g0.d.querySelector(".cdd-tiles"))) && txt(plain(g0, "Collection freshness").querySelector(".cdd-v")) === "TBA"
+    && /no freshness thresholds/.test(txt(plain(g0, "Collection freshness"))) && !g0.d.querySelector('.cdd-tiles [data-filter="stale"]'));
+  const G1 = JSON.parse(JSON.stringify(C1));
+  G1.colleges.forEach((c) => { if (c.harvested) c.read_at = ago(1); });
+  G1.statewide.programs = 0; G1.statewide.passing = 0; G1.statewide.cost_receipts = 0;
+  const g1 = load("#commons/data", G1);
+  await g1.M.boot(); await settle();
+  const frCard = plain(g1, "Collection freshness");
+  const confCard = plain(g1, "Confidence");
+  check("3243 zero ⭐: a zero count in a card is plain text, never a word that empties the list",
+    !g1.d.querySelector('.cdd-tiles [data-filter="recent"]') && !g1.d.querySelector('.cdd-tiles [data-filter="stale"]')
+    && frCard.querySelector('[data-zero="recent"]') && txt(frCard.querySelector('[data-zero="recent"]')) === "0 recent"
+    && Array.from(g1.d.querySelectorAll('.cdd-tiles button.cdd-partw')).every((b) => fig(b) > 0) && confCard);
+  ["Program requirements passing", "Read cost per passing program"].forEach(function (l) {
+    const t = plain(g1, l);
+    check("3243 TBA: " + l + " reads TBA with a reason, never an empty line", t && txt(t.querySelector(".cdd-v")) === "TBA" && txt(t.querySelector(".cdd-d")).length > 20);
+  });
+  // The committed file itself: the Confidence card's line is the builder's, and nothing rendered says harvest or "Data dashboard".
+  const REAL = JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8"));
+  const h1 = load("#commons/data", REAL);
+  await h1.M.boot(); await settle();
+  const cc = plain(h1, "Confidence");
+  const nums = (s) => (String(s).match(/\d+/g) || []);
+  check("3243 confidence ⭐: the Confidence card's line is the builder's rule.confidence_card, and every threshold in it is in rule.confidence (the held case included)",
+    REAL.rule.confidence_card && txt(cc.querySelector(".cdd-d")) === REAL.rule.confidence_card && /display held/.test(REAL.rule.confidence_card)
+    && nums(REAL.rule.confidence_card).every((x) => nums(REAL.rule.confidence).indexOf(x) >= 0) && !/5 or more spot-checked/.test(SRC));
+  // Prose only: a file path such as kb/_harvest_gap_census.py is an identifier, not a word on the page.
+  const prose = (root) => {
+    const parts = [];
+    root.querySelectorAll("*").forEach((e) => { ["aria-label", "title"].forEach((a) => { if (e.getAttribute(a)) parts.push(e.getAttribute(a)); }); });
+    parts.push(root.textContent);
+    return parts.join(" ").replace(/[\w./<>-]*harvest[\w./<>-]*\.(py|json|md|yml)\b/gi, "").replace(/kb\/[\w./<>-]*/g, "");
+  };
+  h1.d.querySelector('[data-expand]').click();
+  h1.d.querySelector("[data-panel-open]").click();
+  const seen = prose(h1.d.querySelector(".cmn-page"));
+  check("3243 words ⭐: no rendered or announced string on the list, the row or the panel says harvest (any case) or Data dashboard",
+    !/harvest/i.test(seen) && !/data dashboard/i.test(seen), (seen.match(/.{40}harvest.{40}/i) || [""])[0]);
+  check("3243 words 2: the table caption and the views' label use the view's title and collected", /collected program requirements/.test(txt(h1.d.querySelector("#cdd-colleges caption")))
+    && h1.d.querySelector('nav.cdd-views').getAttribute("aria-label") === "College Data Collection views");
+  check("3243 lever (review): the reconcile lever names the pipeline, not work for the college",
+    !/the college's reconcile steps/.test(JSON.stringify(REAL.rule.levers || {})) && /the pipeline's reconcile steps/.test(JSON.stringify(REAL.rule.levers || {})));
 
   const failed = results.filter((x) => !x[1]);
   results.forEach((x) => console.log((x[1] ? "PASS " : "FAIL ") + x[0]));

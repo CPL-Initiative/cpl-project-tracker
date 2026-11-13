@@ -897,7 +897,7 @@
   var DATA = { on: false, filter: "" };
   function showData(root) {
     function go() {
-      if (!window.CPL_COMMONS_DATA) { notice(root, "The data dashboard (commons_data.js) could not be loaded. Reload the tab to try again."); return null; }
+      if (!window.CPL_COMMONS_DATA) { notice(root, "College Data Collection (commons_data.js) could not be loaded. Reload the tab to try again."); return null; }
       /* The view reports each address it moves to (a filter, a panel opened or closed); DATA.filter follows it, so a
          session renewal's redraw opens the view as it stands, never the arrival's stale college (#3231 review). */
       return CPL_COMMONS_DATA.boot(root, DATA.filter, { noted: function (h) { seenHash = h; DATA.filter = String(h || "").replace(/^#?commons\/data\/?/, ""); } });
