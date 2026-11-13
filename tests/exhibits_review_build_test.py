@@ -286,6 +286,84 @@ check("rec_units reads the leading figure, else 0", B.rec_units("4.5 hours in Et
 check("basis_of names the identity, else the course",
       B.basis_of({"kind": "ccn", "id": "POLS C1000"}) == "CCN POLS C1000" and B.basis_of({"kind": "course", "code": "MATH 110"}) == "the course MATH 110")
 
+# ── #3223 (S647): the local course title, and a proposal that kept a course code ──
+# Sam, 4:57 AM PT 2026-11-13, on the Las Positas card "Industry Training Evidence for CNT 7285": "the local course title has
+# been the most helpful thing for me to see ... it should be taken into account when suggesting proposed titles for
+# exhibits that appear to be for cx or noncredit" and "for those appearing to be for industry certs, the proposed title
+# should attempt to be the official cert title". On main the card proposed "Computer Networking Technology (CNT 7285)".
+MEM = {"colleges": ["Las Positas College", "Hartnell College"], "members": {"M1": [
+    {"c": 0, "n": "CNT 7285", "t": "Cloud Infrastructure: CompTIA Cloud+ Certification", "u": 3, "cn": "CCC000589345"},
+    {"c": 1, "n": "ABT 133", "t": "Facility Management for Food Safety", "u": 1.5, "cn": "CCC1"},
+    {"c": 0, "n": "AJ 54", "t": "Investigative Report Writing", "u": 3, "cn": "CCC2"}]}}
+CIX = B.course_index(MEM)
+IDX = [{"t": "CompTIA Cloud+", "issuer": "CompTIA", "locals": 3, "adopted": 5},
+       {"t": "Cloud Computing", "issuer": "California Community Colleges", "locals": 9, "adopted": 9}]
+ex_cnt = {"ids": ["MAPICI-IFC7-1-001"], "art": ["Las Positas College"], "types": [],
+          "recs": [["CNT 7285", "3 units in CNT 7285 Cloud Infrastructure: CompTIA Cloud+ Certification"]]}
+lc = B.local_courses(ex_cnt, CIX)
+check("a card carries its local course: college, code, title, units, control number and credit line",
+      lc == [["Las Positas College", "CNT 7285", "Cloud Infrastructure: CompTIA Cloud+ Certification", 3, "CCC000589345",
+              "3 units in CNT 7285 Cloud Infrastructure: CompTIA Cloud+ Certification", ""]], lc)
+prop = {"title": "Computer Networking Technology (CNT 7285)", "issuer": "California Community Colleges", "alternates": []}
+got = B.leftover_code_proposal(prop, ex_cnt, lc, IDX, "Industry Training Evidence for CNT 7285")
+check("a proposal left with its course code takes the industry credential its course title names",
+      got and got["title"] == "CompTIA Cloud+" and got["issuer"] == "CompTIA"
+      and got["alternates"][0] == "Computer Networking Technology (CNT 7285)", got)
+ex_abt = {"ids": ["MAPCXI-CBEC2-1-001"], "art": ["Hartnell College"], "types": [], "recs": [["ABT 133", "1.5 units"]]}
+got = B.leftover_code_proposal({"title": "Agricultural Business and Technology (ABT 133)", "issuer": "California Community Colleges"},
+                               ex_abt, B.local_courses(ex_abt, CIX), IDX, "Credit by Exam-- CFPL ABT 133")
+check("a credit-by-exam card left with its course code takes the local course title",
+      got and got["title"] == "Facility Management for Food Safety" and got["source"] == B.SRC_COURSE, got)
+ex_aj = {"ids": ["MAPICI-IFA5-1-001"], "art": ["Las Positas College"], "types": [], "recs": [["AJ 54", "3 units"]]}
+check("an industry-certification card whose course names no credential is left as it stands (a ruling, not a guess)",
+      B.leftover_code_proposal({"title": "Administration of Justice (AJ 54)", "issuer": ""}, ex_aj,
+                               B.local_courses(ex_aj, CIX), IDX, "Industry Training Evidence for AJ 54") is None)
+MEM["members"]["M2"] = [{"c": 0, "n": "ESL 120A", "t": "Intermediate Grammar for Reading and Writing", "u": 3, "cn": "CCC3"}]
+CIX = B.course_index(MEM)
+ex_esl = {"ids": ["MAPCXS-CBEE-1-001"], "art": ["Las Positas College"], "types": [], "recs": [["ESL 120A", "3 units in ESL 120A"]]}
+esl_prop = {"title": "English as a Second Language (ESL 220A)", "issuer": "California Community Colleges"}
+check("a noncredit card held for its code, whose credit line names the mirrored credit course, takes that course's title",
+      (B.leftover_code_proposal(esl_prop, ex_esl, B.local_courses(ex_esl, CIX), IDX, "Noncredit Course for ESL 220A", wording=True)
+       or {}).get("title") == "Intermediate Grammar for Reading and Writing"
+      and B.leftover_code_proposal(esl_prop, ex_esl, B.local_courses(ex_esl, CIX), IDX, "Noncredit Course for ESL 220A") is None)
+# Sam's ruling of 2026-11-12: a course title stays off an industry-certification exhibit, whatever its units say.
+MEM["members"]["M3"] = [{"c": 0, "n": "FIRE 50", "t": "Fire Academy Skills", "u": None, "cn": "CCC4"}]
+CIX = B.course_index(MEM)
+fire_prop = {"title": "Fire Technology (FIRE 50)", "issuer": "California Community Colleges"}
+for ids, label in ((["MAPICI-IFF5-1-001"], "an industry-certification exhibit"),
+                   (["MAPICI-IFF5-1-001", "MAPCXS-IFF5-1-001"], "a mix of paths that includes industry certification")):
+    ex_fire = {"ids": ids, "art": ["Las Positas College"], "types": [], "recs": [["FIRE 50", "3 units"]]}
+    lcf = B.local_courses(ex_fire, CIX)
+    check(label + " whose course has no units keeps its proposal: no course title",
+          lcf and lcf[0][3] is None
+          and B.leftover_code_proposal(fire_prop, ex_fire, lcf, IDX, "Noncredit Industry Evidence for FIRE 50", wording=True) is None)
+ex_t = {"ids": [], "art": ["Las Positas College"], "types": ["Industry Certification"], "recs": [["FIRE 50", "3 units"]]}
+check("with no path in its ids, MAP's CPL type Industry Certification holds the course title off too",
+      B.leftover_code_proposal(fire_prop, ex_t, B.local_courses(ex_t, CIX), IDX, "Industry for FIRE 50", wording=True) is None)
+IDX2 = IDX + [{"t": "Emergency Medical Technician", "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
+               "locals": 9, "adopted": 9}]
+MEM["members"]["M4"] = [{"c": 0, "n": "EMS 20", "t": "Emergency Medical Technician", "u": None, "cn": "CCC5"}]
+CIX = B.course_index(MEM)
+ex_ems = {"ids": ["MAPICI-IFE20-1-001"], "art": ["Las Positas College"], "types": [], "recs": [["EMS 20", "7 units"]]}
+got_ems = B.leftover_code_proposal({"title": "Emergency Medical Services (EMS 20)", "issuer": ""}, ex_ems,
+                                   B.local_courses(ex_ems, CIX), IDX2, "Industry Training Evidence for EMS 20", wording=True)
+got_cnt = B.leftover_code_proposal(prop, ex_cnt, lc, IDX2, "Industry Training Evidence for CNT 7285", wording=True)
+check("an industry certification still takes the official credential its course names: CNT 7285 and EMS 20",
+      got_cnt and got_cnt["title"] == "CompTIA Cloud+" and got_cnt["source"] == B.SRC_OFFICIAL
+      and got_ems and got_ems["title"] == "Emergency Medical Technician" and got_ems["source"] == B.SRC_OFFICIAL, (got_cnt, got_ems))
+# COBIx's review of #3233: the credential branch ran on every path. Ruling A (2026-11-11): a college's exam title stays
+# apart from the certification, so a credit-by-exam card whose course names a credential keeps the college's title and issuer.
+ex_cx = {"ids": ["MAPCXS-CNT7-1-001"], "art": ["Las Positas College"], "types": [],
+         "recs": [["CNT 7285", "3 units in CNT 7285 Cloud Infrastructure: CompTIA Cloud+ Certification"]]}
+got_cx = B.leftover_code_proposal(dict(prop), ex_cx, B.local_courses(ex_cx, CIX), IDX2, "Credit by Exam CNT 7285", wording=True)
+check("a credit-by-exam card whose course title names a certification keeps a college title and the college as issuer",
+      got_cx and got_cx["title"] == "Cloud Infrastructure: CompTIA Cloud+ Certification"
+      and got_cx["issuer"] == "California Community Colleges" and got_cx["source"] == B.SRC_COURSE, got_cx)
+check("a proposal with no course code left is never touched",
+      B.leftover_code_proposal({"title": "Firefighter 1", "issuer": "x"}, ex_cnt, lc, IDX, "raw") is None)
+check("a college-issued title never counts as a named credential, nor does a one-word one",
+      B.named_credential(["Intro to Cloud Computing"], IDX) is None and B.named_credential([""], IDX) is None)
+
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))
 sys.exit(1 if failed else 0)
