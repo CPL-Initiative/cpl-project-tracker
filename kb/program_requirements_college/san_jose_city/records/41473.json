@@ -1,0 +1,284 @@
+{
+ "college": "San Jose City College",
+ "control_number": "41473",
+ "shape": "adt",
+ "title": "Business Administration 2.0",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/business/business-administration-2.0-associate-science-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7350,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7350,
+    "output_tokens": 2522,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2522,
+  "output_tokens_details": {
+   "thinking_tokens": 1067
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07984,
+ "ms": 21980,
+ "seconds": 22.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 11,
+   "share": 0.545,
+   "missing": [
+    "ACCOUNTINGAC",
+    "BUSINESSBUS0",
+    "ECONC2001",
+    "ECONC2002",
+    "MATH20"
+   ],
+   "unexplained": [
+    "ACCOUNTINGAC",
+    "BUSINESSBUS0"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "ACCTG20",
+    "BUS71",
+    "ECON10A",
+    "ECON10B",
+    "MATH62"
+   ],
+   "flagged": [
+    "ECON10A",
+    "ECON10B",
+    "MATH62"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    30.0
+   ],
+   "stated": [
+    28.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     64.0,
+     68.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Business Administration 2.0 - Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 28,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 2,
+    "max": 4
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate knowledge of fundamental business concepts and principles and how they apply to the strategic interests of business organizations in the competitive environment.",
+    "Collaborate effectively as a member of a diverse team to define a business problem, collect relevant information, identify potential solutions, and select and support an appropriate course of action.",
+    "Prepare and present a cohesive, coherent oral argument, proposal, or illustration that advances the interests of a business organization.",
+    "Develop an awareness of ethical, social justice, and social responsibility issues in the business and economic environment and identify connections between individual and collective rights and responsibilities."
+   ],
+   "careers": [
+    "any size of business, whether profit or non-profit"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "ACCTG 020",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 021",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 071",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 082",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 010A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON 010B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 061",
+      "units": 3,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "MATH 062",
+        "units": null,
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 071",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 071H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECON C2001",
+    "why": "not in the text; catalog prints ECON 010A/010B (untitled) instead, likely the pre-common-numbering equivalents"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "not in the text; catalog prints ECON 010A/010B (untitled) instead, likely the pre-common-numbering equivalents"
+   },
+   {
+    "code": "MATH 20",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Closed-list entries 'AccountingAC' (Financial Accounting) and 'BusinessBUS0' (Legal Environment of Business) have garbled codes; matched by title to ACCTG 020 and BUS 071 and marked catalog_addition false.",
+   "ACCTG 021, BUS 082, MATH 061, MATH 071 matched to closed-list ACCTG 21, BUS 82, MATH 61, MATH 71 (leading zeros only).",
+   "ECON 010A and ECON 010B are printed without titles; recorded as catalog additions. Reviewer should check whether they correspond to ECON C2001/C2002 on the closed list.",
+   "The math requirement (MATH 061 or MATH 062 or MATH 071 or MATH 071H) prints a single range 3-5 on the first row; alternative units left null since none printed beside them.",
+   "Degree table prints Major 28-30, Cal-GETC 34, Transferable Electives (as needed to reach 60) 2-4, Total 60; electives recorded as degree_elective_units since units are printed.",
+   "Career entry taken from description 'pursue careers in any size of business, whether profit or non-profit'; the listed concentration areas (Accounting, Finance, etc.) are described as business areas for concentrating, not careers, so not recorded.",
+   "Program learning outcomes printed on the program's outcomes tab; recorded for this award."
+  ]
+ },
+ "extracted_run": "43357106423"
+}
