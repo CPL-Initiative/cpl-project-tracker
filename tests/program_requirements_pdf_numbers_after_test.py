@@ -497,8 +497,9 @@ try:
             json.dump({"control_number": cn, "record": {"program": {}}, "score": sc, "extracted_run": "old"}, fh)
     with contextlib.redirect_stdout(io.StringIO()):
         rep, srcs, acct = capture(INTRO, True, folder=folder)
-    check(srcs["11856"]["method"] == "not_found" and srcs["11856"]["after_unbound"]["refused"] == "35110",
-          "the refused program is filed not_found with its closing number: %r" % srcs["11856"].get("after_unbound"))
+    check(srcs["11856"]["method"] == "refused" and srcs["11856"]["after_unbound"]["refused"] == "35110"
+          and not srcs["11856"]["text"] and srcs["11856"]["coverage"] == 0.0,
+          "the refused program is filed refused (decision 16), no text, with its closing number: %r" % srcs["11856"].get("after_unbound"))
     check([{k: v for k, v in a.items() if k != "judged"} for a in acct or []]
           == [{"control_number": "11856", "title": "Biology", "award": AS, "closed_by": "35110", "why": "block_not_named"}]
           and (acct[0].get("judged") or "").startswith("Control Number: 11856 Biology, AS-T"),
@@ -542,7 +543,7 @@ try:
             C.file_run("Fixture College", out, "new")
         with open(os.path.join(slug, "sources.json")) as fh:
             entry = {x["control_number"]: x for x in json.load(fh)}
-        check(entry.get("11856", {}).get("source") == {"url": "old"} and entry.get("11943", {}).get("method") == "not_found",
+        check(entry.get("11856", {}).get("source") == {"url": "old"} and entry.get("11943", {}).get("method") == "refused",
               "the filing keeps a kept record's source entry, and with none the new one: %r" % entry.get("11856"))
         check(sorted(os.listdir(os.path.join(slug, "records"))) == ["11856.json", "11943.json"], "and files both")
     finally:
@@ -610,6 +611,152 @@ wf = open(os.path.join(ROOT, ".github", "workflows", "program-requirements-colle
 cap_step = wf[wf.index("- name: Capture"):wf.index("- name: Extract and score")]
 check(re.search(r"^\s*FORCE: \$\{\{ github\.event\.inputs\.force \|\| '' \}\}\s*$", cap_step, re.M),
       "the capture step carries the run's force")
+
+# ── 6. Decision 17: a block's own heading is its own full title ─────────────────────────────────
+# Art History's number line is lost above Art's block: "Art History, AA" is not "Art, AA", so the block
+# starts at Art's own heading and holds no ARTH course (round 4, finding 2).
+ARTP = UPROGS + [{"control_number": "60011", "title": "Art", "award": AA},
+                 {"control_number": "60012", "title": "Art History", "award": AA}]
+ARTB = [ublock(p) for p in UPROGS]
+ARTB = ARTB[:8] + ["Art History, AA\nA.A. Degree\nARTH 101 Survey 3\nARTH 102 Survey 3\n",
+                   "Art, AA\nA.A. Degree\nART 101 Intro 3\nART 102 Next 3\nControl Number: 60011\n"] + ARTB[8:]
+ARTC = ucatalog(ARTB)
+actx = C.pdf_after_context(ARTC, ARTP, C.pdf_numbers_after(ARTC, ARTP))
+art = C.pdf_best("u", ARTC, ARTP[-2], [{"code": "ART 101"}, {"code": "ART 102"}], "pypdf", numbers_after=actx)
+check(actx["uniform"] and art and art.get("bound") == "number_after" and art.get("named")
+      and "ARTH" not in art["text"] and "Art History" not in art["text"] and "Art, AA" in art["text"],
+      "decision 17: a longer title holding the program's words is another program's heading: %r"
+      % ((art and art["text"][:90]),))
+check(C.pdf_own_heading("Art, AA", "A.A. Degree", ARTP[-2]) and not C.pdf_own_heading("Art History, AA", "", ARTP[-2])
+      and C.pdf_own_heading("Art History", "A.A. Degree", ARTP[-1]) and not C.pdf_own_heading("Art, AA-T", "", ARTP[-2])
+      and C.pdf_own_heading("Paralegal & Legal Studies, AA", "", {"title": "Paralegal and Legal Studies", "award": AA}),
+      "pdf_own_heading: the full title with its award, on the line or the next, '&' read as 'and'")
+# Santiago Canyon's own shapes: COCI files some titles with the award in them, and a transfer degree prints
+# "Geography AA-T" with no comma; a transfer heading is never a local degree's own.
+check(C.pdf_own_heading("Water Distribution, AS", "A.S. Degree", {"title": "Water Distribution, AS", "award": "A.S. Degree"})
+      and C.pdf_own_heading("Geography AA-T", "A.A. Degree for Transfer", {"title": "Geography", "award": AAT})
+      and not C.pdf_own_heading("Economics, AA-T", "A.A. Degree for Transfer", PROGS[2])
+      and not C.pdf_own_heading("Biology, AS-T", "", PROGS[4]),
+      "pdf_own_heading: an award in the COCI title or after the name with no comma is the award, not the name")
+
+# ── 7. Decision 16: no filed record disappears, whatever the run's path ─────────────────────────
+# The filing step is the one place the invariant lives (file_run): a filed record is deleted or replaced
+# only by a record whose source is a bound read with text. Every capture method x {forced, unforced} x
+# {old record passes, fails, absent}, through the real extraction (the model call stubbed) and filing.
+import _program_requirements_extract as X  # noqa: E402
+saved_call = X.call
+X.call = lambda src, key: {"record": {"program": {"title": "new read"}}, "model": None, "usage": None}
+os.environ.setdefault("SUPABASE_SERVICE_KEY", "test-only")
+READS = ("pdf_pages", "sitemap_page", "link_search")
+METHODS = READS + ("page_claimed", "no_closed_list", "not_found", "refused")
+BIO = [{"code": "BIOL 211"}, {"code": "CHEM 200A"}]
+
+
+def bio_source(method):
+    prog = dict(PROGS[4], shape="1", status="active", load_id="1", closed_list=BIO)
+    if method in READS:
+        text = "Biology, AS\nBIOL 211 Cell Biology 4\nCHEM 200A General Chemistry 5\n"
+        return C.source_record("Fixture College", prog, {}, {"url": "https://x.edu/c.pdf#page=3", "field": "pdf_pages",
+                                                               "found": C.P.find_codes(text, BIO), "coverage": 1.0,
+                                                               "text": text}, method)
+    rec = C.source_record("Fixture College", prog, {}, None, method)
+    if method == "refused":
+        rec["after_unbound"] = {"refused": None, "why": "block_names_other_program", "judged": "Ballroom Dance Arts, AA"}
+    return rec
+
+
+lost, matrix = [], 0
+try:
+    for method in METHODS:
+        for forced in (False, True):
+            for old in ("passes", "fails", "absent"):
+                matrix += 1
+                root = tempfile.mkdtemp()
+                saved_dir = C.COLLEGE_DIR
+                C.COLLEGE_DIR = root
+                try:
+                    slug = os.path.join(root, C.slug_of("Fixture College"))
+                    os.makedirs(os.path.join(slug, "records"))
+                    filed = {"control_number": "11856", "record": {"program": {"title": "filed"}},
+                             "score": PASS if old == "passes" else FAIL, "extracted_run": "old"}
+                    if old != "absent":
+                        json.dump(filed, open(os.path.join(slug, "records", "11856.json"), "w"))
+                    out = os.path.join(root, "out")
+                    os.makedirs(os.path.join(out, "sources"))
+                    json.dump(bio_source(method), open(os.path.join(out, "sources", "11856.json"), "w"))
+                    json.dump({"college": "Fixture College"}, open(os.path.join(out, "capture.json"), "w"))
+                    with contextlib.redirect_stdout(io.StringIO()):
+                        C.extract(out, 0, 1, "new", 1, slug, {"11856"} if forced else None)
+                        os.makedirs(os.path.join(out, "records"), exist_ok=True)
+                        C.file_run("Fixture College", out, "new")
+                    path = os.path.join(slug, "records", "11856.json")
+                    got = json.load(open(path)) if os.path.isfile(path) else None
+                    case = (method, forced, old)
+                    if old != "absent" and got is None:
+                        lost.append(("dropped",) + case)
+                    elif old != "absent" and method not in READS and got != filed:
+                        lost.append(("replaced without a read",) + case)
+                    elif old == "absent" and method not in READS and got is not None:
+                        lost.append(("invented",) + case)
+                finally:
+                    C.COLLEGE_DIR = saved_dir
+                    shutil.rmtree(root)
+finally:
+    X.call = saved_call
+check(matrix == 42 and not lost, "decision 16: no filed record disappears or is replaced without a bound read: %r" % lost)
+
+# The backstop holds even when a path upstream misfiles: a record written for a program whose source is
+# a refused block (no text) never replaces the filed one, and the account counts it.
+root = tempfile.mkdtemp()
+saved_dir = C.COLLEGE_DIR
+C.COLLEGE_DIR = root
+try:
+    slug = os.path.join(root, C.slug_of("Fixture College"))
+    os.makedirs(os.path.join(slug, "records"))
+    filed = {"control_number": "11856", "score": PASS, "extracted_run": "old"}
+    json.dump(filed, open(os.path.join(slug, "records", "11856.json"), "w"))
+    json.dump([{"control_number": "11856", "method": "pdf_pages", "source": {"url": "old"}}],
+              open(os.path.join(slug, "sources.json"), "w"))
+    out = os.path.join(root, "out")
+    os.makedirs(os.path.join(out, "sources"))
+    os.makedirs(os.path.join(out, "records"))
+    json.dump(bio_source("refused"), open(os.path.join(out, "sources", "11856.json"), "w"))
+    json.dump({"control_number": "11856", "score": FAIL, "extracted_run": "new"}, open(os.path.join(out, "records", "11856.json"), "w"))
+    json.dump({"college": "Fixture College"}, open(os.path.join(out, "capture.json"), "w"))
+    with contextlib.redirect_stdout(io.StringIO()):
+        C.file_run("Fixture College", out, "new")
+    got = json.load(open(os.path.join(slug, "records", "11856.json")))
+    cap = json.load(open(os.path.join(slug, "capture.json")))
+    src_entry = json.load(open(os.path.join(slug, "sources.json")))
+    check(got == filed and cap.get("kept_unreplaced") == [{"control_number": "11856", "why": "replaced_without_a_read"}]
+          and src_entry == [{"control_number": "11856", "method": "pdf_pages", "source": {"url": "old"}}],
+          "decision 16: a record with no bound read never replaces the filed one; counted, its entry kept: %r"
+          % cap.get("kept_unreplaced"))
+finally:
+    C.COLLEGE_DIR = saved_dir
+    shutil.rmtree(root)
+
+# The regression (round 4, finding 1): a block holding only an unlisted program's heading ("Ballroom Dance
+# Arts, AA") is filed refused, never pdf_pages with no text; refused_passing names it; filing keeps it.
+bfolder = tempfile.mkdtemp()
+try:
+    os.makedirs(os.path.join(bfolder, "records"))
+    json.dump({"control_number": GOLF["control_number"], "record": {"program": {}}, "score": PASS, "extracted_run": "old"},
+              open(os.path.join(bfolder, "records", GOLF["control_number"] + ".json"), "w"))
+    with contextlib.redirect_stdout(io.StringIO()):
+        brep, bsrc, bacct = capture(MIS, True, UPROGS, folder=bfolder, course_of=lambda p: UCODE[p["control_number"]])
+    bs = bsrc[GOLF["control_number"]]
+    check(bs["method"] == "refused" and bs["text"] == "" and bs["coverage"] == 0.0 and bs["source"] is None
+          and "not on the college's list" in bs["near_miss"]["why"] and "None" not in bs["near_miss"]["why"]
+          and sorted(s["method"] for s in bsrc.values()) == ["pdf_pages"] * (len(UPROGS) - 1) + ["refused"]
+          and sum(1 for s in bsrc.values() if s.get("source")) == len(UPROGS) - 1,
+          "the Ballroom block is filed refused, not as a read page, and is not counted found: %r"
+          % ((bs["method"], bs["coverage"]),))
+    check([e["control_number"] for e in bacct or []] == [GOLF["control_number"]]
+          and bacct[0]["why"] == "block_names_other_program" and bacct[0]["closed_by"] is None,
+          "and refused_passing names it: %r" % bacct)
+finally:
+    shutil.rmtree(bfolder)
 
 # ── 5. The gate is the reconcile entry alone ────────────────────────────────────────────────────
 check(R.numbers_after("X", {"X": {"pdf_numbers_after": True}}) and not R.numbers_after("X", {"X": {}})

@@ -1103,8 +1103,11 @@ check(os.path.exists(os.path.join(_dest, "capture_preview.json")) and os.path.ex
 os.makedirs(os.path.join(_out, "records"))
 open(os.path.join(_out, "records", "NEW.json"), "w").write(_json.dumps({"score": None}))
 C.file_run("Cerritos College", _out, "2")
-check(os.listdir(os.path.join(_dest, "records")) == ["NEW.json"] and not os.path.exists(os.path.join(_dest, "capture_preview.json")),
-      "a run that extracted replaces the records whole, so a program that lost its page loses its record")
+check(sorted(os.listdir(os.path.join(_dest, "records"))) == ["NEW.json", "OLD.json"]
+      and not os.path.exists(os.path.join(_dest, "capture_preview.json"))
+      and _json.load(open(os.path.join(_dest, "capture.json"))).get("kept_unreplaced") == [{"control_number": "OLD", "why": "no_replacement"}],
+      "a run that extracted files its records, and a program with no bound read keeps its filed record, "
+      "counted (decision 16)")
 C.COLLEGE_DIR = _saved_dir
 
 # ── shards ──────────────────────────────────────────────────────────────────
