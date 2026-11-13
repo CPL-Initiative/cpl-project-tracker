@@ -180,7 +180,7 @@
   var state = {
     data: null, error: null, filter: "", cur: 0,
     students: null, studentsWord: "", total: null,
-    done: {}, note: "", courses: null, coursesErr: false, drafts: {}, teachDraft: "",
+    done: {}, reviewReadErr: "", reviewReading: false, reviewSettled: {}, note: "", courses: null, coursesErr: false, drafts: {}, teachDraft: "",
     // Back (Sam, 2026-10-31): the cards decided or skipped this visit, newest last, as {raw, saved}.
     history: [], bulkAsk: false, bulkBusy: false,
     teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false,
@@ -382,9 +382,102 @@
       .then(function (d) {
         (d.held || []).forEach(function (h, i) { h._i = i; });
         state.data = d; state.error = null;
-        return d;
+        return reconcileReview(d);
       })
       .catch(function (e) { state.error = String(e && e.message || e); state.data = null; });
+  }
+  /* The review file is built nightly, so a title someone saved since then is still in it, and a reload showed the card
+     again (#3223, Sam 2026-11-13: "the reanalysis does know I just relied on them and then brings them back
+     endlessly"). The saves are on kb_curation under _UNCLASSIFIED::<raw MAP title>: a card whose raw title carries a
+     unified_title_assignment is decided and leaves the queue. A clear deletes the row, so a cleared title stays open.
+     A conflict card is a saved title by definition, so it leaves only for a save later than the file (a re-pick
+     sends its own reviewed_at). Until the read answers the queue shows no card; a failed read leaves the file's
+     cards, says so, and turns off every control that saves a title (one could overwrite a save it cannot see).
+     Read on load and again on each return to the tab, one read at a time. A conflict card exists only because of a
+     saved title, so for it no row, or an empty one, is the decision (a clear); for every other step no row means
+     open. A read that does not answer within REVIEW_TIMEOUT_MS fails like any other, and a later return starts a
+     fresh one; an answer that arrives after that is dropped. */
+  var REVIEW_CHUNK = 40, REVIEW_PAGE = 1000, REVIEW_TIMEOUT_MS = 20000, reviewRead = null, reviewGen = 0;
+  function reconcileReview(d) {
+    if (reviewRead) return reviewRead;
+    state.reviewReadErr = "";
+    var held = ((d && d.held) || []).filter(function (h) { return h.raw; });
+    if (!held.length) return Promise.resolve();
+    var key = anonKey();
+    if (!key) { state.reviewReadErr = "COBI could not be reached from this page"; return Promise.resolve(); }
+    var built = Date.parse(d.written_at || "") || 0, byRaw = {}, gen = ++reviewGen, timer = null;
+    held.forEach(function (h) { byRaw[h.raw] = h; });
+    var raws = Object.keys(byRaw), chunks = [];
+    for (var i = 0; i < raws.length; i += REVIEW_CHUNK) chunks.push(raws.slice(i, i + REVIEW_CHUNK));
+    // Range-paged (Rule 10 b), and any chunk that fails fails the whole read, which leaves every card standing.
+    function page(url, from, acc) {
+      return fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": from + "-" + (from + REVIEW_PAGE - 1) } })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(function (rows) {
+          rows = rows || [];
+          acc = acc.concat(rows);
+          return rows.length < REVIEW_PAGE ? acc : page(url, from + REVIEW_PAGE, acc);
+        });
+    }
+    function readAll() {
+      // A title the browser cannot encode throws here, inside the promise, so it fails the read and nothing else.
+      return Promise.all(chunks.map(function (c) {
+        var quoted = c.map(function (r) { var i = UNCLASS_PREFIX + r; return encodeURIComponent('"' + i.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); });
+        return page(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at&field=eq." + FIELD_TITLE
+          + "&course_id=in.(" + quoted.join(",") + ")&order=course_id.asc", 0, []);
+      }));
+    }
+    var late = new Promise(function (resolve, reject) {
+      timer = setTimeout(function () { reject(new Error("no answer in " + Math.round(REVIEW_TIMEOUT_MS / 1000) + " seconds")); }, REVIEW_TIMEOUT_MS);
+    });
+    state.reviewReading = true;
+    reviewRead = Promise.race([Promise.resolve().then(readAll), late]).then(function (parts) {
+      if (gen !== reviewGen) return;
+      var row = {};
+      parts.forEach(function (rows) {
+        rows.forEach(function (r) {
+          var id = r.course_id || "";
+          if (r.field === FIELD_TITLE && id.indexOf(UNCLASS_PREFIX) === 0) row[id.slice(UNCLASS_PREFIX.length)] = r;
+        });
+      });
+      held.forEach(function (h) {
+        var r = row[h.raw], v = r ? String(r.value || "").trim() : "";
+        var settled = h.step === CONFLICT ? (!v || (Date.parse(r.reviewed_at || "") || 0) > built) : !!v;
+        if (!settled) return;
+        state.done[h.raw] = true; state.reviewSettled[h.raw] = true;
+        if (v) h.saved = v;  // shown as saved, never the stale proposal (COBIx, #3260)
+      });
+    }).catch(function (e) { if (gen === reviewGen) state.reviewReadErr = String(e && e.message || e); })
+      .then(function () {
+        clearTimeout(timer);
+        if (gen === reviewGen) { state.reviewReading = false; reviewRead = null; }
+      });
+    return reviewRead;
+  }
+  /* The file's tiles less the cards a saved title has settled since it was built (#3223): a settled title is named,
+     and leaves the held cards the Aligned course tile counts. */
+  function settledCount() {
+    return ((state.data && state.data.held) || []).filter(function (h) { return state.reviewSettled[h.raw] && h.step !== CONFLICT; }).length;
+  }
+  /* Saved and not yet folded: the file's count and every title saved since it was built (#3223). */
+  function savedNotFolded() {
+    return ((state.data && state.data.tiles && state.data.tiles.saved_not_folded) || 0) + settledCount();
+  }
+  function namesNow(t) {
+    if (!t.names) return null;
+    var k = Math.min(settledCount(), t.names.waiting || 0);
+    return { n: (t.names.n || 0) + k, of: t.names.of, waiting: (t.names.waiting || 0) - k };
+  }
+  function alignedNow(d) {
+    var t = (d.tiles || {}).aligned, gone = (d.held || []).filter(function (h) { return state.reviewSettled[h.raw]; });
+    if (!t) return { n: null, of: null };
+    return { n: t.n - gone.filter(function (h) { return h.course; }).length, of: t.of - gone.length };
+  }
+  /* Why a control that saves a Review title is off, or "": the saved titles are unread, or not read yet. */
+  function reviewSaveOff() {
+    if (state.reviewReading) return "Saving waits until the saved titles are read.";
+    if (state.reviewReadErr) return "Saving a title is off: the titles saved since the file was built could not be read, and a save could replace one. Reload to read them.";
+    return "";
   }
   function session() {
     var S = window.CPL_SESSION;
@@ -410,7 +503,8 @@
       if (!sess) { state.students = null; state.total = null; state.studentsWord = "signin"; return; }
       var keys = [], ids = [];
       state.data.held.forEach(function (h) {
-        (h.ids || []).forEach(function (id) { keys.push(String(h._i)); ids.push(id); keys.push("*"); ids.push(id); });
+        // A title settled since the build waits on no one: it stays out of Students waiting (#3223).
+        (h.ids || []).forEach(function (id) { keys.push(String(h._i)); ids.push(id); if (!state.reviewSettled[h.raw]) { keys.push("*"); ids.push(id); } });
       });
       return fetch(SUPABASE_URL + "/rest/v1/rpc/exhibit_title_students", {
         method: "POST", headers: headers(sess), body: JSON.stringify({ p_keys: keys, p_ids: ids })
@@ -1585,6 +1679,7 @@
     render();
   }
   function keepCurrent(h, box, issuer) {
+    if (reviewSaveOff()) { state.note = reviewSaveOff(); render(); return; }
     if (h.step === CONFLICT) {
       var kept = h.saved || h.raw.trim();
       saveRevision(h.raw, kept, issuer, h.title)
@@ -1597,6 +1692,7 @@
       .catch(failed);
   }
   function changeToProposed(h, box, issuer) {
+    if (reviewSaveOff()) { state.note = reviewSaveOff(); render(); return; }
     var title = (box || "").trim();
     if (!title) { state.note = "Write a canonical title first."; render(); return; }
     if (h.step === CONFLICT) {
@@ -1728,6 +1824,7 @@
     }).filter(function (it) { return !!it.title; });
   }
   function acceptAll(list) {
+    if (reviewSaveOff()) { state.note = reviewSaveOff(); render(); return; }
     var items = bulkItems(list);
     if (!items.length) return;
     state.bulkBusy = true; render();
@@ -1814,7 +1911,7 @@
     return box;
   }
   function stepTile(step, label) {
-    var n = step === "Saved, not folded" ? (state.data.tiles.saved_not_folded || 0) : stepCount(step);
+    var n = step === "Saved, not folded" ? savedNotFolded() : stepCount(step);
     var b = el("button", {
       type: "button", cls: "exh-step", "aria-pressed": state.filter === step ? "true" : "false",
       "data-tip": TIPS[step], "aria-label": label + ", " + fmt(n) + ". " + TIPS[step]
@@ -2355,13 +2452,15 @@
 
     var acts = el("div", { cls: "exh-acts" });
     // Change to Proposed Title first (Sam, 2026-10-31: "to the left of keep current title").
-    acts.appendChild(word("Change to Proposed Title", function () { changeToProposed(h, title.value, issuer.value.trim()); }));
-    acts.appendChild(word("Keep Current Title", function () { keepCurrent(h, title.value, issuer.value.trim()); }));
+    var saveOff = reviewSaveOff(), offAttr = saveOff ? { disabled: "disabled", "aria-describedby": "exh-save-off" } : null;
+    acts.appendChild(word("Change to Proposed Title", function () { changeToProposed(h, title.value, issuer.value.trim()); }, offAttr));
+    acts.appendChild(word("Keep Current Title", function () { keepCurrent(h, title.value, issuer.value.trim()); }, offAttr));
     acts.appendChild(word("Teach a rule", function () { state.teach = !state.teach; render(); }, { "aria-expanded": state.teach ? "true" : "false", "aria-controls": "exh-teach" }));
     if (state.history.length) acts.appendChild(word("Back", back, { "aria-label": "Back to the previous title, " + state.history[state.history.length - 1].raw }));
     acts.appendChild(word("Skip", function () { skip(list); }));
     c.appendChild(acts);
-    var many = bulkItems(list), noName = bulkNoName(list);
+    if (saveOff) c.appendChild(el("p", { cls: "exh-small exh-muted", id: "exh-save-off", text: saveOff }));
+    var many = saveOff ? [] : bulkItems(list), noName = bulkNoName(list);
     var noNameWords = noName ? "The " + fmt(noName) + " whose official name is not on file stay for a card." : "";
     if (many.length > 1) {
       var bulk = el("div", { cls: "exh-bulk" });
@@ -4726,6 +4825,8 @@
   function queueBlocked() {
     var out = [];
     if (state.error) out.push("The review file could not be read (" + state.error + "), so held titles are not counted.");
+    else if (state.reviewReadErr) out.push("The titles saved since the review file was built could not be read from COBI ("
+      + state.reviewReadErr + "), so a title decided since then may be counted again.");
     if (state.sw.error) out.push("Another look's file could not be read (" + state.sw.error + ").");
     if (state.cs.error) out.push("The reference's list could not be read (" + state.cs.error + "), so the List's counts are missing.");
     var rp = state.rq.report, cr = rp && rp.classifier_run;
@@ -4799,7 +4900,7 @@
           queueListEntry(lc, "suggested", "suggested folds in the List.", "Open them")
         ],
         after: [el("h4", { cls: "exh-qh", text: "Waiting on a process, not on a check" }), el("ul", { cls: "exh-ql" }, [
-          queueEntry(have ? (state.data.tiles && state.data.tiles.saved_not_folded || 0) : null, "titles saved and not yet folded; the nightly run adds them to the reference.", "", null),
+          queueEntry(have ? savedNotFolded() : null, "titles saved and not yet folded; the nightly run adds them to the reference.", "", null),
           queueListEntry(lc, "waiting", "folds waiting for the reviewed apply.", "Open them")])] };
     }
     if (lens === "all") {
@@ -4907,11 +5008,11 @@
       + " · queue built " + stamp(d.written_at) }));
 
     var group = el("div", { cls: "exh-group" }, [el("h3", { cls: "exh-q", text: "What is it called?" })]);
-    var t = d.tiles || {};
+    var t = d.tiles || {}, al = alignedNow(d), named = namesNow(t);
     group.appendChild(el("div", { cls: "exh-dash", role: "list", "aria-label": "What is it called" }, [
-      tile("Names", t.names && t.names.n, t.names && t.names.of, "MAP titles under a canonical credential",
-        t.names ? fmt(t.names.waiting) + " wait for a title" : ""),
-      tile("Aligned course", t.aligned && t.aligned.n, t.aligned && t.aligned.of,
+      tile("Names", named && named.n, named && named.of, "MAP titles under a canonical credential",
+        named ? fmt(named.waiting) + " wait for a title" : ""),
+      tile("Aligned course", al.n, al.of,
         "held titles articulated to a course that names them", "The course names the proposal"),
       studentsTile(), reviewListTile(d)]));
     var rlBox = reviewListBox(d);
@@ -4931,6 +5032,14 @@
       renderRename(wrap);
       return;
     }
+    // No card until the saved titles are read; the cards stand as built when they could not be read (#3223).
+    if (state.reviewReading) {
+      wrap.appendChild(el("p", { cls: "exh-empty", role: "status", text: "Reading the saved titles…" }));
+      return;
+    }
+    if (state.reviewReadErr) wrap.appendChild(el("p", { cls: "exh-small exh-unread", role: "status", text: "The titles saved since "
+      + stamp(d.written_at) + " could not be read from COBI (" + state.reviewReadErr + "), so a card decided since then may show "
+      + "again here. Saving a title is off until a reload reads them." }));
     var list = shown();
     if (state.cur >= list.length) state.cur = Math.max(0, list.length - 1);
     wrap.appendChild(finder(list));
@@ -5184,6 +5293,14 @@
     state.rb.ask = false; state.rel.all = null; state.rel.act = null; state.rel.folded = {};
     if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
+    // The saved titles are read again each visit, so a title saved in another tab or session leaves the queue (#3223).
+    if (state.data) {
+      var before = Object.keys(state.reviewSettled).length;
+      reconcileReview(state.data).then(function () {
+        // A title settled on this return leaves Students waiting too: read the counts again.
+        if (Object.keys(state.reviewSettled).length > before) return loadStudents();
+      }).then(render);
+    }
     render();
   }
   /* #exhibits/<route> opens one place, read once per visit (the Commons row's counts link here, the way
@@ -5245,6 +5362,7 @@
   window.CPL_EXHIBITS = {
     boot: boot, render: render, load: load, loadStudents: loadStudents, ensureCss: ensureCss,
     _state: state, _shown: shown, _teachText: teachText, _TIPS: TIPS,
+    _reviewTimeout: function (ms) { REVIEW_TIMEOUT_MS = ms; },
     loadCredentials: loadCredentials, openCredential: openCredential,
     _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent,
     _credCould: credCould, _routeFromHash: routeFromHash, loadSweep: loadSweep, _sweepShown: sweepShown, _sweepRows: sweepRows,

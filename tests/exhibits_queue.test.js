@@ -34,6 +34,14 @@ const CREDREF = { _generated_at: "2026-11-01T05:19:00+00:00", unified_titles: [
   { ut: "Beekeeping II", issuer: "", cpl_types: [], disc_modal: "", raw_count: 1, articulations: [] }
 ] };
 
+// The Review read (#3223): a conflict card exists because a title was saved for it, so COBI holds that row, saved
+// before the file was built. Every other held title has no row.
+function conflictRows(review, url) {
+  if (!/field=eq\.unified_title_assignment&course_id=in\./.test(url)) return null;
+  return (review.held || []).filter((h) => h.step === "Conflict with the reference")
+    .map((h) => ({ course_id: "_UNCLASSIFIED::" + h.raw, field: "unified_title_assignment", value: h.saved || "Saved earlier",
+      reviewed_at: "2026-01-01T00:00:00+00:00" }));
+}
 function load(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="exhibits-root">Loading</div></body></html>',
@@ -47,7 +55,7 @@ function load(opts) {
     if (url === "kb/exhibits_sweep.json") return ok(SWEEP);
     if (url === "kb/cer_procedures_out/latest.json") return ok(opts.report || { classifier_run: { answered: 12, errors: [] } });
     if (/\/rest\/v1\/rpc\/exhibit_title_students$/.test(url)) return ok([]);
-    if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") return ok([]);
+    if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") return ok(conflictRows(opts.review || REVIEW, url) || []);
     return no(404);
   };
   const sess = { access_token: "aaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb.cccccccccc", email: "reviewer@example.org" };

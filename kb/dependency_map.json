@@ -915,7 +915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4129,
+     "line": 4228,
      "tabs": [
       "exhibits"
      ]
@@ -5899,7 +5899,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2144,
+     "line": 2241,
      "tabs": [
       "exhibits"
      ]
@@ -6289,7 +6289,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3453,
+     "line": 3552,
      "tabs": [
       "exhibits"
      ]
@@ -6525,7 +6525,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4121,
+     "line": 4220,
      "tabs": [
       "exhibits"
      ]
@@ -6618,7 +6618,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4406,
+     "line": 4505,
      "tabs": [
       "exhibits"
      ]
@@ -7380,6 +7380,13 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    },
+    {
+     "id": "script:kb/_build_exhibits_review.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 830
     }
    ],
    "served": true,
@@ -8455,7 +8462,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4695,
+     "line": 4794,
      "tabs": [
       "exhibits"
      ]
@@ -8808,7 +8815,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 89
+     "line": 98
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
@@ -11184,7 +11191,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 810
+     "line": 919
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -13927,7 +13934,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3231,
+     "line": 3330,
      "tabs": [
       "exhibits"
      ]
@@ -14099,7 +14106,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1012,
+     "line": 1106,
      "tabs": [
       "exhibits"
      ]
@@ -14315,7 +14322,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 820
+     "line": 929
     },
     {
      "id": "script:kb/_build_sheet181_rename_plan.py",
@@ -14468,7 +14475,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 818
+     "line": 927
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -15649,7 +15656,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4143,
+     "line": 4242,
      "tabs": [
       "exhibits"
      ]
@@ -15673,7 +15680,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 822
+     "line": 931
     },
     {
      "id": "script:kb/_clep_official_titles.py",
@@ -15760,7 +15767,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3226,
+     "line": 3325,
      "tabs": [
       "exhibits"
      ]
@@ -15860,7 +15867,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 68
+     "line": 77
     },
     {
      "id": "script:kb/_build_standards_rename_plan.py",
@@ -15955,7 +15962,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3640,
+     "line": 3739,
      "tabs": [
       "exhibits"
      ]
@@ -16037,7 +16044,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 66
+     "line": 75
     },
     {
      "id": "script:kb/_mid_outcomes_compare.py",
@@ -16093,7 +16100,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 76
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -16485,7 +16492,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 88
+     "line": 97
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -18691,7 +18698,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 522
+     "line": 531
     }
    ],
    "served": true,
@@ -20210,7 +20217,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 823
+     "line": 932
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -20337,7 +20344,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 811
+     "line": 920
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -20438,7 +20445,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 817
+     "line": 926
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -23369,7 +23376,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2045,
+     "line": 2142,
      "tabs": [
       "exhibits"
      ]
@@ -23445,7 +23452,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 813
+     "line": 922
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -23598,7 +23605,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 815
+     "line": 924
     }
    ],
    "producers": [
@@ -26805,7 +26812,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2046,
+     "line": 2143,
      "tabs": [
       "exhibits"
      ]
@@ -26867,7 +26874,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 814
+     "line": 923
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -27715,7 +27722,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 529,
+     "line": 623,
      "tabs": [
       "exhibits"
      ]
@@ -27745,7 +27752,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 415,
+     "line": 509,
      "tabs": [
       "exhibits"
      ]
@@ -29638,7 +29645,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 505,
+     "line": 599,
      "tabs": [
       "exhibits"
      ]
@@ -29653,7 +29660,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 528,
+     "line": 622,
      "tabs": [
       "exhibits"
      ]
@@ -30256,7 +30263,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 450,
+     "line": 426,
      "tabs": [
       "exhibits"
      ]
@@ -30266,7 +30273,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 663,
+     "line": 757,
      "tabs": [
       "exhibits"
      ]
@@ -30369,6 +30376,13 @@
      "direction": "read",
      "how": "literal",
      "line": 84
+    },
+    {
+     "id": "script:kb/_build_exhibits_review.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 846
     },
     {
      "id": "script:kb/_cer_decision_apply.py",
