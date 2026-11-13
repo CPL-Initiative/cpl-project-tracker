@@ -213,11 +213,14 @@ jobs:
         run: python3 kb/_program_requirements_college.py "$STEP" --college "$COLLEGE" --extracted-run "$EXTRACTED_RUN"
       # The receipt is the rollback of a table write: it rides in the run's artifact before any push,
       # so a push that never lands (several rereads push to one wave branch) loses nothing.
+      # Only the receipts this run wrote (kb/receipts holds over a thousand files); an upload that fails
+      # never fails a job whose write and push succeed: the push stays the gate.
       - uses: actions/upload-artifact@v7
         if: always()
+        continue-on-error: true
         with:
           name: receipts-${{ github.run_id }}
-          path: kb/receipts
+          path: kb/receipts/*${{ github.run_id }}*
           if-no-files-found: ignore
           retention-days: 90
       - name: Commit the receipt to the branch that ran it
@@ -258,11 +261,14 @@ jobs:
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python3 kb/_program_requirements_display_apply.py --apply
+      # Only the receipts this run wrote (kb/receipts holds over a thousand files); an upload that fails
+      # never fails a job whose write and push succeed: the push stays the gate.
       - uses: actions/upload-artifact@v7
         if: always()
+        continue-on-error: true
         with:
           name: receipts-${{ github.run_id }}
-          path: kb/receipts
+          path: kb/receipts/*${{ github.run_id }}*
           if-no-files-found: ignore
           retention-days: 90
       - name: Commit the applied record to the branch that ran it

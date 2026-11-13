@@ -3450,8 +3450,27 @@ def forced(folder: str, tokens: str) -> set[str]:
     return out
 
 
+def call_charge(cost_usd, usage) -> float:
+    """What one call counts toward a ceiling (S644): its price, or, for a call that carries usage and
+    no price (a fallback model the table does not price), its usage at the most expensive model's
+    price, so an unpriced call never slips under the stop. A call with neither spent nothing the
+    function reported."""
+    import _program_requirements_extract as X
+    if isinstance(cost_usd, (int, float)):
+        return float(cost_usd)
+    if usage:
+        return max((X.cost(m, usage) or 0.0) for m in X.PRICE) if X.PRICE else 0.0
+    return 0.0
+
+
 def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6,
-            keep_from: str | None = None, force: set[str] | None = None) -> int:
+            keep_from: str | None = None, force: set[str] | None = None,
+            ceiling_usd: float | None = None) -> int:
+    """Send each source that needs a model call, score it and write its record under out_dir.
+    ceiling_usd (the wave sets it to its limit; None, the default, is no ceiling): the run's
+    actual cost is summed as each call comes back, and once it reaches the ceiling no further program
+    is sent. The calls already in flight finish, so the run can pass the ceiling by at most `workers`
+    programs' reads. A program not sent keeps its filed record and is listed in not_sent_<shard>.json."""
     import _program_requirements_extract as X
     import _program_requirements_reconcile as R
     key = os.environ.get("SUPABASE_SERVICE_KEY")
@@ -3510,10 +3529,33 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     import threading
     kept_list: list[dict] = []
     kept_lock = threading.Lock()
+    spend = {"usd": 0.0, "stopped": False}
+    not_sent: list[str] = []
 
     def one(src: dict) -> None:
         t0 = time.time()
+        if ceiling_usd is not None:
+            with kept_lock:
+                if spend["stopped"]:
+                    not_sent.append(src["control_number"])
+                    stopped = True
+                else:
+                    stopped = False
+            if stopped:
+                # Not sent: the filed record, if any, stays, so filing the run does not drop it.
+                path = os.path.join(keep_from or "", "records", src["control_number"] + ".json")
+                if keep_from and os.path.isfile(path):
+                    with open(path) as fh:
+                        _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
+                return
         got = X.call(src, key)
+        if ceiling_usd is not None:
+            with kept_lock:
+                spend["usd"] += call_charge(X.cost(got.get("model"), got.get("usage")), got.get("usage"))
+                if spend["usd"] >= ceiling_usd and not spend["stopped"]:
+                    spend["stopped"] = True
+                    print("ceiling: $%.2f reached at $%.2f; no further program is sent" % (ceiling_usd, spend["usd"]),
+                          flush=True)
         rec = got.get("record")
         # The college's reconcile steps search the page again for a figure the reading left out
         # (Sam, 2026-10-14; kb/_program_requirements_reconcile.py).
@@ -3552,6 +3594,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 kept_list.append({"control_number": src["control_number"], "title": src.get("title"),
                                   "award": src.get("award"), "source_url": row["source_url"],
                                   "filed_source_url": filed.get("source_url"), "cost_usd": row["cost_usd"],
+                                  "usage": row["usage"],
                                   "reason": why, "score": sc, "filed_score": filed.get("score")})
             print("%-6s kept_passing: %s than the filed record" % (
                 src["control_number"], "the read covers less" if why == "covers_less" else "the read passes less"),
@@ -3570,6 +3613,11 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
             list(pool.map(one, mine))
     finally:
+        if not_sent:
+            _write(os.path.join(out_dir, "not_sent_%d.json" % shard),
+                   {"ceiling_usd": ceiling_usd, "spent_usd": round(spend["usd"], 2),
+                    "programs": sorted(not_sent)})
+            print("ceiling: %d programs not sent" % len(not_sent), flush=True)
         # A call that raises stops the step; the reads already paid for and kept are still filed
         # (the wave counts their cost from this file; S644 review).
         if kept_list:
@@ -4025,6 +4073,9 @@ def main(argv: list[str] | None = None) -> int:
                                                 "unchanged, comma-separated; 'incomplete' names every filed "
                                                 "record whose arithmetic is incomplete")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID"))
+    ap.add_argument("--ceiling-usd", default=os.environ.get("EXTRACT_CEILING_USD", ""),
+                    help="extract only: stop sending programs once the run's actual cost reaches this (the wave "
+                         "sets its limit; empty, the default, is no ceiling)")
     ap.add_argument("--extracted-run", default="", help="reread only: post this extraction run's records, not the newest's")
     args = ap.parse_args(argv)
     if args.step == "pin":
@@ -4040,7 +4091,8 @@ def main(argv: list[str] | None = None) -> int:
     if args.step == "extract":
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))
         force = forced(keep, args.force) if keep and args.force else None
-        return extract(args.out, args.shard, args.shards, args.run, args.workers, keep, force)
+        ceiling = float(args.ceiling_usd) if str(args.ceiling_usd or "").strip() else None
+        return extract(args.out, args.shard, args.shards, args.run, args.workers, keep, force, ceiling)
     return file_run(args.college, args.out, args.run)
 
 

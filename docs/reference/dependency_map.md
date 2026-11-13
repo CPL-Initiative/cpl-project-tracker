@@ -930,6 +930,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `nav_groups.js` | pages: `CPL_Dashboard.html` | — |
 | `nav_overlay.js` | pages: `CPL_Dashboard.html` | — |
 | `nc_learning_partners.js` | pages: `CPL_Dashboard.html` | — |
+| `not_sent_*.json` | scripts: `kb/_program_requirements_wave.py` | — |
 | `nudges/team_directory.json` | scripts: `nudges/build_nudges.py` | — |
 | `our_process.js` | pages: `CPL_Dashboard.html` | — |
 | `package.json` | scripts: `kb/doctrine.py` | — |
@@ -1437,5 +1438,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 897 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 898 file
 datasets · 195 external services · 571 consumers · 71 workflows · 41 tabs.

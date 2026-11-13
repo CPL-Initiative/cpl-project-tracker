@@ -59,7 +59,6 @@ MAX_COLLEGES = 8
 LIMIT_CEILING_USD = 40.0       # Sam's standing go, a college a run, on the estimate
                                # (cpl_memory sam-extraction-standing-go-40-per-college-2026-10-14)
 DEFAULT_COST_PER_PROGRAM = 0.08   # also the floor: a college's rate never prices below it
-MIN_PRICED_RECORDS = 20           # fewer priced records than this and the college's rate is no evidence
 PRICE_MARGIN = 1.25
 PAGES_FLOOR = 0.9              # a capture answering less than this share of the pages it listed is partial
 WAVE_NAME = re.compile(r"^[a-z0-9][a-z0-9-]{0,39}$")
@@ -207,16 +206,14 @@ def plan_main(args) -> int:
 
 # ── price ────────────────────────────────────────────────────────────────────
 def cost_per_program(records: dict[str, dict]) -> tuple[float, str]:
-    """The rate the price reads: the mean cost of the college's filed records that carry a real cost
-    (a positive cost_usd and no error), never below the default, and the default when fewer than
-    MIN_PRICED_RECORDS carry one. summary.json's cost_per_program divides by every record, so each
-    errored call and each unpriced model counts as a program at $0 and the rate reads low: 200 errors
-    beside 100 calls at $0.08 read $0.027, and 600 programs then priced at $20 cost about $48 (S644
-    review)."""
-    priced = [r["cost_usd"] for r in records.values()
-              if isinstance(r.get("cost_usd"), (int, float)) and r["cost_usd"] > 0 and not r.get("error")]
-    if len(priced) < MIN_PRICED_RECORDS:
-        return DEFAULT_COST_PER_PROGRAM, "%d priced records, fewer than %d: the default" % (len(priced), MIN_PRICED_RECORDS)
+    """The rate the price reads: the mean cost of the college's filed records that carry a positive
+    cost, errored calls included (an errored call can still have been paid for), and never below the
+    0.08 default, so a small sample can raise the rate and never lower it. summary.json's
+    cost_per_program divides by every record, so each call with no price counts as a program at $0 and
+    the rate reads low (S644 review). No priced record: the default."""
+    priced = [r["cost_usd"] for r in records.values() if isinstance(r.get("cost_usd"), (int, float)) and r["cost_usd"] > 0]
+    if not priced:
+        return DEFAULT_COST_PER_PROGRAM, "no priced record: the default"
     rate = sum(priced) / len(priced)
     if rate < DEFAULT_COST_PER_PROGRAM:
         return DEFAULT_COST_PER_PROGRAM, "the college's rate %.4f over %d priced records is below the default" % (
@@ -340,7 +337,7 @@ def compare(base: dict[str, dict], run: dict[str, dict]) -> dict:
     return {"fail_to_pass": f2p, "pass_to_fail": p2f, "lost_coverage": lost, "new": new}
 
 
-def run_cost(out_dir: str | None, run_id) -> tuple[int, float, int]:
+def run_cost(out_dir: str | None, run_id) -> dict:
     """Extracted, cost and kept for THIS run, read from the run's own out/ folder: out/records and
     out/kept_passing_*.json, which the extraction writes call by call, so a file step that never ran
     or stopped partway still shows what the model calls cost (S644 review). summary.json's cost_usd
@@ -353,11 +350,18 @@ def run_cost(out_dir: str | None, run_id) -> tuple[int, float, int]:
     for path in sorted(glob.glob(os.path.join(out_dir or "", "kept_passing_*.json"))) if out_dir else []:
         kept_list.extend(_read(path) or [])
     cost = sum(r.get("cost_usd") or 0 for r in mine) + sum(k.get("cost_usd") or 0 for k in kept_list)
-    return len(mine), round(cost, 2), len(kept_list)
+    # A call with usage and no price (a fallback model the table does not price) cost something the
+    # sum cannot show: counted apart, and shown beside the cost.
+    unpriced = sum(1 for x in mine + kept_list if x.get("usage") and not isinstance(x.get("cost_usd"), (int, float)))
+    not_sent: list = []
+    for path in sorted(glob.glob(os.path.join(out_dir or "", "not_sent_*.json"))) if out_dir else []:
+        not_sent.extend((_read(path) or {}).get("programs") or [])
+    return {"extracted": len(mine), "cost_usd": round(cost, 2), "kept": len(kept_list), "unpriced": unpriced,
+            "not_sent": sorted(not_sent)}
 
 
 def verdict(outcomes: dict, capture: dict | None, pages: dict, priced: dict | None, cmp: dict,
-            extracted: int) -> str:
+            extracted: int, not_sent: int = 0) -> str:
     """ready: extracted, no pass to fail, no passing record lost coverage (the conductor rereads it).
     captured: a whole capture, nothing extracted (priced only). held: a person reads it first.
     failed: a step did not finish."""
@@ -374,6 +378,8 @@ def verdict(outcomes: dict, capture: dict | None, pages: dict, priced: dict | No
         return "failed: extract"
     if outcomes.get("file") != "success":
         return "failed: file"
+    if not_sent:
+        return "held: reached the limit, %d programs not sent" % not_sent
     if cmp["pass_to_fail"] or cmp["lost_coverage"]:
         return "held: %d pass to fail, %d lost coverage" % (len(cmp["pass_to_fail"]), len(cmp["lost_coverage"]))
     if not extracted:
@@ -388,16 +394,19 @@ def verify(college: str, run_dir: str, base_dir: str | None, capture: dict | Non
     run = load_records(run_dir)
     base = load_records(base_dir)
     cmp = compare(base, run)
-    extracted, cost, kept = run_cost(out_dir, run_id)
+    rc = run_cost(out_dir, run_id)
+    extracted, cost, kept = rc["extracted"], rc["cost_usd"], rc["kept"]
     pages = pages_share(capture)
     p = priced or {}
     return {"college": college, "run": str(run_id), "hosts": None,
             "would_extract": p.get("would_extract"), "price_usd": p.get("price_usd"),
-            "price_why": p.get("why"), "extracted": extracted, "cost_usd": cost,
+            "price_why": p.get("why"), "extracted": extracted, "cost_usd": cost, "unpriced": rc["unpriced"],
+            "not_sent": len(rc["not_sent"]),
             "fail_to_pass": len(cmp["fail_to_pass"]), "pass_to_fail": len(cmp["pass_to_fail"]),
             "lost_coverage": len(cmp["lost_coverage"]), "kept": kept, "new": len(cmp["new"]),
             "records": len(run), "main_records": len(base), "pages": pages, "outcomes": outcomes,
-            "verdict": verdict(outcomes, capture, pages, priced, cmp, extracted), "detail": cmp}
+            "verdict": verdict(outcomes, capture, pages, priced, cmp, extracted, len(rc["not_sent"])),
+            "detail": dict(cmp, not_sent=rc["not_sent"])}
 
 
 def baseline_from_git(ref: str, slug: str, dest: str) -> str | None:
@@ -432,6 +441,7 @@ def summarize_wave(wave: str, run_id, extract: bool, limit: float, rows: list[di
     return {"wave": wave, "run": str(run_id), "extract": extract, "limit_usd": limit,
             "colleges": len(rows), "total_cost_usd": round(sum(r.get("cost_usd") or 0 for r in rows), 2),
             "total_price_usd": round(sum(r.get("price_usd") or 0 for r in rows), 2),
+            "unpriced": sum(r.get("unpriced") or 0 for r in rows),
             # A job that stopped after its price: what it was allowed to spend, its cost unknown.
             "unfinished_allowed_usd": round(sum(r.get("allowed_usd") or 0 for r in rows if r.get("provisional")), 2),
             "ready": [r["college"] for r in rows if r.get("verdict") == "ready"],
@@ -451,6 +461,7 @@ def table_md(summary: dict) -> str:
              "`docs/program_requirements_harvest_lessons.md`, *Running a wave*." % (
                  "1" if summary["extract"] else "0", summary["limit_usd"], _money(summary["total_cost_usd"]),
                  _money(summary["total_price_usd"])) + (
+                 " The cost leaves out %d unpriced calls." % summary["unpriced"] if summary.get("unpriced") else "") + (
                  " Up to %s more at colleges whose job stopped after its price." % _money(summary["unfinished_allowed_usd"])
                  if summary.get("unfinished_allowed_usd") else ""), "",
              "| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
@@ -459,6 +470,8 @@ def table_md(summary: dict) -> str:
         pages = "%s of %s" % (pg.get("answered"), pg.get("listed")) if pg.get("listed") is not None else ""
         cost = ("up to " + _money(r.get("allowed_usd"))) if r.get("provisional") and r.get("allowed_usd") \
             else _money(r.get("cost_usd"))
+        if r.get("unpriced"):
+            cost += " plus %d unpriced call%s" % (r["unpriced"], "" if r["unpriced"] == 1 else "s")
         cells = [r["college"], r.get("would_extract"), _money(r.get("price_usd")), r.get("extracted"),
                  cost, r.get("fail_to_pass"), r.get("pass_to_fail"), r.get("lost_coverage"),
                  r.get("kept"), r.get("new"), pages, r.get("verdict")]

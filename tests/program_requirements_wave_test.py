@@ -117,19 +117,21 @@ def recs_at(n, cost, **extra):
     return {"%03d" % i: dict({"cost_usd": cost}, **extra) for i in range(n)}
 
 
-# Review finding 3: summary.json's rate divides by every record, so errored calls and unpriced
-# models count as programs at $0 and the gate passes a college whose real cost is above $40.
+# Review finding 3: summary.json's rate divides by every record, so calls with no price count as
+# programs at $0 and the gate passes a college whose real cost is above $40. Second read: every record
+# with a positive cost counts, errored or not, and the rate is never below 0.08.
 diluted = dict(recs_at(100, 0.12), **{"e%03d" % i: {"cost_usd": 0, "error": "HTTP 502"} for i in range(200)})
 diluted.update({"u%03d" % i: {"cost_usd": None} for i in range(50)})
 check(W.cost_per_program(diluted)[0] == 0.12,
-      "the rate counts only records that carry a real cost: errored and unpriced calls are no programs at $0")
-check(W.cost_per_program(recs_at(19, 0.5))[0] == 0.08 and W.cost_per_program(recs_at(20, 0.5))[0] == 0.5,
-      "fewer than 20 priced records prices at the default; 20 is the college's own rate")
+      "the rate counts only records with a positive cost: calls with no price are no programs at $0")
+check(W.cost_per_program(recs_at(19, 0.5))[0] == 0.5 and W.cost_per_program(recs_at(1, 0.5))[0] == 0.5
+      and W.cost_per_program(recs_at(1, 0.01))[0] == 0.08,
+      "a small sample can raise the rate and never lower it: 19 records at $0.50 price at $0.50")
 check(W.cost_per_program(recs_at(300, 0.03))[0] == 0.08 and W.cost_per_program({})[0] == 0.08,
       "the rate is never below the 0.08 default, and no records price at it")
 check(W.cost_per_program(dict(recs_at(30, 0.1), **{"x%d" % i: {"cost_usd": 9.0, "error": "timeout"}
-                                                     for i in range(5)}))[0] == 0.1,
-      "a record carrying an error is left out of the rate whatever its cost")
+                                                     for i in range(5)}))[0] == round(48 / 35, 4),
+      "an errored call with a cost was paid for: five errored records at $9 count")
 WHOLE = {"listed": 100, "answered": 100, "partial": False}
 at = W.price(400, 0.08, 40.0, True, WHOLE)       # 400 x 0.08 x 1.25 = 40.00
 check(at["price_usd"] == 40.0 and at["within_limit"] and at["go"], "a price exactly at the limit extracts: %r" % at)
@@ -400,8 +402,15 @@ lnames = [x.get("name") or x.get("uses") for x in load_steps]
 up = [i for i, x in enumerate(load_steps) if str(x.get("uses", "")).startswith("actions/upload-artifact")]
 push = next(x for x in load_steps if x.get("name") == "Commit the receipt to the branch that ran it")
 check(up and up[0] < lnames.index("Commit the receipt to the branch that ran it")
-      and load_steps[up[0]]["if"] == "always()" and load_steps[up[0]]["with"]["path"] == "kb/receipts",
+      and load_steps[up[0]]["if"] == "always()",
       "the receipt, the rollback of a table write, rides in the run's artifact before any push")
+# Second read, 5: only this run's receipts (kb/receipts holds over a thousand files), and an upload that
+# fails never fails a job whose write and push succeed.
+for _job in ("load", "display"):
+    _ups = [x for x in cwf["jobs"][_job]["steps"] if str(x.get("uses", "")).startswith("actions/upload-artifact")]
+    check(_ups and all(x["with"]["path"] == "kb/receipts/*${{ github.run_id }}*" and x.get("continue-on-error") is True
+                       for x in _ups),
+          "the %s job uploads only this run's receipts, and its upload never fails the job" % _job)
 check("for i in 1 2 3 4 5 6 7 8 9 10; do" in push["run"] and "RANDOM" in push["run"]
       and "::error::" in push["run"] and push["run"].rstrip().endswith("exit 1"),
       "the receipt's push tries ten times at random waits, then fails loudly naming the artifact")
@@ -424,6 +433,16 @@ check(plan_step["env"].get("ATTEMPT") == "${{ github.run_attempt }}" and '--atte
       and '--write "wave_out/$SLUG.wave.json"' in price_step["run"],
       "plan and price both read the attempt, and the price files its provisional row")
 check(read["timeout-minutes"] < 360, "the job stops under the runner's limit, so its filing steps still run")
+# Second read, 4: the wave's one push tries as the receipts' does, and its error names what to commit.
+_push = next(x for x in jobs["file"]["steps"] if x.get("name") == "Commit to the wave branch, once")["run"]
+check("for i in 1 2 3 4 5 6 7 8 9 10; do" in _push and "RANDOM" in _push
+      and "wave-filed-${{ github.run_id }}-*" in _push and "before any new wave" in _push,
+      "the wave's push tries ten times at random waits and names the artifacts to commit by hand")
+_filed_up = next(x for x in read["steps"] if str(x.get("with", {}).get("name", "")).startswith("wave-filed-"))
+check(_filed_up["with"]["retention-days"] == 90, "the wave-filed artifacts are kept 90 days")
+# Second read, 2: the wave's extraction stops at its limit; the college workflow's does not change.
+check('--ceiling-usd "$LIMIT_USD"' in ext["run"] and "ceiling" not in college_wf.lower(),
+      "the wave passes its limit as the extraction's ceiling; the college workflow sets none")
 
 import subprocess  # noqa: E402
 
@@ -495,6 +514,79 @@ finally:
         os.environ.pop("SUPABASE_SERVICE_KEY", None)
     else:
         os.environ["SUPABASE_SERVICE_KEY"] = _saved[2]
+    shutil.rmtree(_t, ignore_errors=True)
+
+# Second read, 2 and 3: a hard stop on the run's actual cost, and an unpriced call counted toward it at
+# the most expensive model's price.
+USAGE = {"input_tokens": 10000, "output_tokens": 2000}     # $0.08 at the priced model
+_m = next(iter(XT.PRICE))
+check(abs(XT.cost(_m, USAGE) - 0.08) < 1e-9 and C.call_charge(None, USAGE) == max(XT.cost(m, USAGE) for m in XT.PRICE)
+      and C.call_charge(0.02, USAGE) == 0.02 and C.call_charge(None, None) == 0.0,
+      "a call counts its price, or with usage and no price the most expensive model's price")
+
+
+def _run_ceiling(ceiling, model):
+    t = tempfile.mkdtemp()
+    keep, out = os.path.join(t, "keep"), os.path.join(t, "out")
+    os.makedirs(os.path.join(keep, "records"))
+    os.makedirs(os.path.join(out, "sources"))
+    json.dump({"control_number": "05", "record": {"blocks": []}, "source_url": "https://x.edu/old", "score": score(False)},
+              open(os.path.join(keep, "records", "05.json"), "w"))
+    for i in range(1, 6):
+        cn = "%02d" % i
+        json.dump({"college": "Test College", "control_number": cn, "shape": "certificate", "title": "T" + cn,
+                   "award": "Certificate of Achievement", "closed_list": [{"code": "A 1"}], "text": "A 1",
+                   "coverage": 1.0, "codes_found": ["A1"], "source": {"url": "https://x.edu/" + cn}},
+                  open(os.path.join(out, "sources", cn + ".json"), "w"))
+    sent = []
+
+    def _call(src, key, *a, **k):
+        sent.append(src["control_number"])
+        return {"record": {"blocks": []}, "model": model, "usage": dict(USAGE)}
+    saved = (XT.call, XT.score, os.environ.get("SUPABASE_SERVICE_KEY"))
+    XT.call, XT.score = _call, (lambda rec, *a, **k: score(True))
+    os.environ["SUPABASE_SERVICE_KEY"] = "test"
+    try:
+        rc = C.extract(out, 0, 1, "77", 1, keep, None, ceiling)
+    finally:
+        XT.call, XT.score = saved[0], saved[1]
+        if saved[2] is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = saved[2]
+    return t, out, rc, sent
+
+
+_t, _out, _rc, _sent = _run_ceiling(0.16, _m)
+try:
+    ns = json.load(open(os.path.join(_out, "not_sent_0.json")))
+    check(_rc == 0 and _sent == ["01", "02"] and ns["programs"] == ["03", "04", "05"] and ns["spent_usd"] == 0.16,
+          "once the run's actual cost reaches the ceiling, no further program is sent: %r" % _sent)
+    check(json.load(open(os.path.join(_out, "records", "05.json")))["source_url"] == "https://x.edu/old"
+          and not os.path.exists(os.path.join(_out, "records", "03.json")),
+          "a program not sent keeps its filed record, so filing the run drops nothing")
+    _v = W.verify("T College", _out, None, {"pages_listed": 5, "pages_answered": 5},
+                  {"would_extract": 5, "price_usd": 0.5, "extract_asked": True, "within_limit": True}, "77",
+                  {"capture": "success", "extract": "success", "file": "success"}, out_dir=_out)
+    check(_v["verdict"] == "held: reached the limit, 3 programs not sent" and _v["cost_usd"] == 0.16
+          and _v["not_sent"] == 3, "the row says the limit was reached, with the real cost: %r" % _v["verdict"])
+finally:
+    shutil.rmtree(_t, ignore_errors=True)
+_t, _out, _rc, _sent = _run_ceiling(None, _m)
+check(_sent == ["01", "02", "03", "04", "05"] and not os.path.exists(os.path.join(_out, "not_sent_0.json")),
+      "no ceiling, today's behavior: every program is sent")
+shutil.rmtree(_t, ignore_errors=True)
+_t, _out, _rc, _sent = _run_ceiling(0.16, "an-unpriced-model")
+try:
+    check(_sent == ["01", "02"], "an unpriced call counts toward the stop at the most expensive model's price: %r" % _sent)
+    _v = W.verify("T College", _out, None, {"pages_listed": 5, "pages_answered": 5},
+                  {"would_extract": 5, "price_usd": 0.5, "extract_asked": True, "within_limit": True}, "77",
+                  {"capture": "success", "extract": "success", "file": "success"}, out_dir=_out)
+    _md = W.table_md(W.summarize_wave("w", "77", True, 40.0, [dict(_v, college="T College")]))
+    check(_v["unpriced"] == 2 and _v["cost_usd"] == 0 and "$0.00 plus 2 unpriced calls" in _md
+          and "leaves out 2 unpriced calls" in _md,
+          "unpriced calls are counted in the row and the table: %r" % _v["unpriced"])
+finally:
     shutil.rmtree(_t, ignore_errors=True)
 
 if failures:

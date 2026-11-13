@@ -131,7 +131,11 @@ jobs:
         if: steps.price.outputs.go == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6 --force ""
+        # The hard stop: the run's actual cost is summed as calls come back, and at the limit no further
+        # program is sent (the calls in flight, six at most, finish).
+        run: >-
+          python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6 --force ""
+          --ceiling-usd "$LIMIT_USD"
       - name: File the run into this job's checkout
         id: file
         # Records already paid for are filed even when the extraction stopped partway.
@@ -156,7 +160,7 @@ jobs:
             kb/program_requirements_college/${{ matrix.slug }}
             kb/hand_filed_catalogs/${{ matrix.slug }}.json
           if-no-files-found: warn
-          retention-days: 14
+          retention-days: 90
       - uses: actions/upload-artifact@v7
         if: always()
         with:
@@ -202,8 +206,10 @@ jobs:
           git add kb/program_requirements_college kb/hand_filed_catalogs kb/program_requirements_wave
           if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
           git commit -m "File the program requirements wave $WAVE (run ${{ github.run_id }})"
-          for i in 1 2 3 4; do
+          # The same push as the college workflow's receipts: ten tries, each after a random wait.
+          for i in 1 2 3 4 5 6 7 8 9 10; do
             git push origin "HEAD:${{ github.ref_name }}" && exit 0
-            sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
+            sleep $((i * 3 + RANDOM % 20)); git pull --rebase origin "${{ github.ref_name }}"
           done
+          echo "::error::The wave $WAVE did not reach ${{ github.ref_name }} after 10 tries. Its colleges are in this run's artifacts wave-filed-${{ github.run_id }}-*: commit them by hand before any new wave."
           exit 1
