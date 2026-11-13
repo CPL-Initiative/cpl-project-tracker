@@ -89,6 +89,10 @@ on:
         description: "read: 'site' reads a Coursedog catalog from its program search instead of its PDF procedure step (S449)"
         required: false
         default: ""
+      display_college:
+        description: "display: apply only this college's statements, as the receipt names it (empty = the whole build). Not the college input, whose default would scope every display (S645)"
+        required: false
+        default: ""
   push:
     branches: ['claude/**']
     paths:
@@ -260,7 +264,14 @@ jobs:
       - name: Apply the display build the page carries
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 kb/_program_requirements_display_apply.py --apply
+          DISPLAY_COLLEGE: ${{ github.event.inputs.display_college }}
+        # A college the receipt does not name is refused; empty applies the whole build.
+        run: |
+          if [ -n "$DISPLAY_COLLEGE" ]; then
+            python3 kb/_program_requirements_display_apply.py --apply --college "$DISPLAY_COLLEGE"
+          else
+            python3 kb/_program_requirements_display_apply.py --apply
+          fi
       # Only the receipts this run wrote (kb/receipts holds over a thousand files); an upload that fails
       # never fails a job whose write and push succeed: the push stays the gate.
       - uses: actions/upload-artifact@v7

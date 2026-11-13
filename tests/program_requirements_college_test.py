@@ -1156,6 +1156,20 @@ check("github.event.inputs.step == 'display'" in display_if and "github.event_na
       and "head_commit" not in display_if,
       "the display write runs only on a dispatch with step=display, never on a push: it changes checked "
       "programs, which waits on Sam's go")
+# S645: a display dispatch may name one college (the first live run of the parallel apply, North
+# Orange's 78 statements). Its own input, never `college` (default Cerritos would scope every display),
+# reaching the shell by env and a quoted variable; without it the step is the bare whole-build apply.
+_inputs = wf.split("workflow_dispatch:")[1].split("\n  push:")[0]
+_dc = _inputs.split("      display_college:\n")[1].split("\n      ")[0:3] if "      display_college:\n" in _inputs else []
+_apply = display_job.split("- name: Apply the display build the page carries")[1].split("- uses:")[0]
+check(any(x.strip() == 'default: ""' for x in _dc)
+      and "DISPLAY_COLLEGE: ${{ github.event.inputs.display_college }}" in _apply
+      and "${{" not in _apply.split("run: |")[1]
+      and 'if [ -n "$DISPLAY_COLLEGE" ]; then' in _apply
+      and '--apply --college "$DISPLAY_COLLEGE"\n' in _apply
+      and "else\n            python3 kb/_program_requirements_display_apply.py --apply\n          fi" in _apply
+      and "github.event.inputs.college" not in _apply,
+      "the display step takes display_college (empty by default) by env into --college, and a bare --apply without it")
 check(wf.count("contents: write") == 3 and wf.count('git push origin "HEAD:${{ github.ref_name }}"') == 3
       and wf.count("git push") == 3,
       "each job writes only to the branch that ran it")
