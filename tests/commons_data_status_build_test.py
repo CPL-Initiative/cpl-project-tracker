@@ -175,7 +175,30 @@ check("(8) each entry links its own anchor in the doc", len(set(anchors)) == len
 check("(8) the register links the dictionary, and the dictionary the register",
       "data_dictionary.md" in open(os.path.join(ROOT, "docs", "reference", "data_sources.md"), encoding="utf-8").read()
       and "data_sources.md" in doc)
-check("(8) student-level data never enters COBI, said where the draft says it", "Student-level data never enters COBI" in doc)
+check("(8) ⭐ the student boundary is stated as it is: records stay in MAP, COBI keeps counts, and the pseudonymous rows "
+      "that pass through are named with where they live and both ADRs",
+      "Student records stay in MAP; COBI keeps counts." in doc and "Student-level data never enters COBI" not in doc
+      and all(s in doc for s in ("pseudonymous per-student rows", "stg_map_student_credit", "map_student_credit",
+                                 "adr-funding-priority-metrics-privacy", "adr-student-detail-aggregate-disclosure-control",
+                                 "never commits them", "before anything is committed or shown")))
+cpl = B._section(doc, B.DICT_SECTION).split("### CPL / MAP", 1)[1].split("\n### ", 1)[0]
+check("(8) ⭐ the CPL / MAP entry no longer says the pull carries no student data, and names both ADRs",
+      "no student data" not in cpl and "adr-funding-priority-metrics-privacy" in cpl
+      and "adr-student-detail-aggregate-disclosure-control" in cpl and "pseudonymous" in cpl)
+map_row = [ln for ln in doc.splitlines() if ln.startswith("| MAP CustomReport API |")][0]
+check("(8) the MAP API row names the pseudonymous rows and both ADRs",
+      "pseudonymous" in map_row and "adr-funding-priority-metrics-privacy" in map_row and "adr-student-detail-aggregate-disclosure-control" in map_row)
+check("(8) synced_at is defined as the promote sets it (insert or a changed value), never as the last sync",
+      "| `synced_at` | timestamptz | Last sync |" not in doc and "values last changed" in cpl)
+check("(8) ⭐ an entry backed only by citations of the doc family marks its external claims",
+      all(e["unverified_claims"] >= 1 for e in D if not e["repo_verifiable"]),
+      [e["name"] for e in D if not e["repo_verifiable"] and e["unverified_claims"] < 1])
+check("(8) citations of the doc family are listed apart from the repo's own evidence",
+      all(set(e["evidence_cited"]) == {x for x in e["evidence"] if B.cited(x)} for e in D)
+      and any(e["evidence_cited"] for e in D) and any(e["repo_verifiable"] for e in D))
+check("(8) the three lakes the report alone describes carry the mark on each of their report-sourced lines",
+      all(e["unverified_claims"] >= 2 for e in D if e["name"] in ("Ellucian Insights Data Lake (institution)",
+          "Ellucian Aggregated Insights Data Lake", "InvokeClarity Data Lake (institution)")))
 with tempfile.TemporaryDirectory() as tmp:
     os.makedirs(os.path.join(tmp, "docs", "reference"))
     shutil.copy(os.path.join(ROOT, "docs", "reference", "data_sources.md"), os.path.join(tmp, "docs", "reference"))
@@ -188,6 +211,13 @@ with tempfile.TemporaryDirectory() as tmp:
     m = [r for r in ba["rows"] if r["api"] == "MAP CustomReport API"][0]
     check("(9) ⭐ a claimed connection whose evidence is missing reads unverified, never connected",
           m["status"] == "unverified" and m["claimed"] == "connected" and ba["connected"] == 0, m)
+    cited_only = doc.replace(
+        "| ASSIST API | ASSIST (intersegmental) | yes | planned |", "| ASSIST API | ASSIST (intersegmental) | yes | connected |", 1)
+    open(os.path.join(tmp, B.DICTIONARY_DOC), "w", encoding="utf-8").write(cited_only)
+    _, ca = B.parse_dictionary(tmp)
+    a = [r for r in ca["rows"] if r["api"] == "ASSIST API"][0]
+    check("(9) ⭐ a claimed connection whose only evidence is the register's own line reads unverified",
+          a["status"] == "unverified" and a["claimed"] == "connected" and a["evidence_cited"], a)
 
 # (9) the API checklist
 A = d["apis"]

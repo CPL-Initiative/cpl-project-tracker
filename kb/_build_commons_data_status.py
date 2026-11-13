@@ -51,11 +51,14 @@ FOUR MORE TOP-LEVEL KEYS (S647, #3215 and #3220), the contract with the view's l
                                     "objective_courses_on_active", "objective_loaded_at"},
                        "registry": {"row", "catalog_link", "course_outline_link", "sequence_source",
                                     "sequence_checked"}}},
-                   "last_attempt": {"at", "run_id", "ok", "error"} | null, "flag": "internal"}
+                   "last_attempt": {"at", "run_id", "ok", "error_class", "http_status", "counts"} | null,
+                   "flag": "internal"}
                 Until the first run: {"basis": "live", "state": "not read yet", "read_at": null, "colleges": {}, ...}
-                (LIVE_NOT_READ). FAIL SOFT: a failed read, a missing file, or a block that is not counts only keeps
-                the previous committed block whole and records the attempt in last_attempt (ok false, the error),
-                so the page shows the older read_at. With no --live the previous block is carried unchanged, so
+                (LIVE_NOT_READ). FAIL SOFT: a failed read, a missing file, a block that is not counts only, or a
+                short read (the floors at COLLEGE_SHARE, ACTIVE_BAND and ACTIVE_FLOOR, documented there) keeps the
+                previous committed block whole and records the attempt in last_attempt (ok false, one class from
+                ERROR_CLASSES, the HTTP status, and for a short read the counts it saw; never an exception's or an
+                export's text), so the page shows the older read_at. With no --live the previous block is carried unchanged, so
                 --check holds between census runs.
   "overall"     each college's overall completeness, from "live" alone, basis "live". COBIx's rule on #3215
                 (comment 1, "Rules Sam may revisit"), quoted: "Overall = (catalog source + program requirements
@@ -73,14 +76,17 @@ FOUR MORE TOP-LEVEL KEYS (S647, #3215 and #3220), the contract with the view's l
                 A college the live read did not hold is absent (unread), never zero.
   "dictionary"  one entry per dataset of docs/reference/data_dictionary.md, parsed from the doc (the one source):
                   {"source", "flag": "internal", "errors": [...], "datasets": [{"name", "group", "stage", "owner",
-                   "procedure_today", "planned_improvement", "link", "evidence", "evidence_missing",
-                   "unverified_claims"}]}
+                   "procedure_today", "planned_improvement", "link", "evidence", "evidence_cited",
+                   "repo_verifiable", "evidence_missing", "unverified_claims"}]}
+                evidence_cited is evidence in the doc family (DOC_FAMILY), a citation and no check; repo_verifiable
+                is false when nothing else backs the entry, and then its external claims carry the doc's mark.
   "apis"        the doc's API connection checklist: each API, whether a connection is needed, its status and the
-                evidence in the repo for it. A row whose evidence is missing reads status "unverified", never the
-                status it claims (kept as "claimed").
+                evidence in the repo for it. A row whose evidence is missing, or a connected or in-progress row
+                whose evidence is only cited (the doc family), reads status "unverified", never the status it
+                claims (kept as "claimed").
                   {"source", "flag": "internal", "connected", "total", "by_status": {...},
                    "rows": [{"api", "holder", "needed", "status", "claimed", "priority", "evidence",
-                             "evidence_missing", "note"}]}
+                             "evidence_cited", "evidence_missing", "note"}]}
 
 Usage, from the repo root:
   python3 kb/_build_commons_data_status.py [--root DIR] [--out PATH] [--live PATH] [--check] [--quiet]
@@ -334,6 +340,15 @@ def evidence_ok(root: str, item: str) -> bool:
         return needle in f.read()
 
 
+# The doc family: evidence that points here is a citation of what this PR's own docs say, never a check of an
+# external claim (the review of #3232, finding 4).
+DOC_FAMILY = ("docs/reference/data_dictionary.md", "docs/reference/data_sources.md")
+
+
+def cited(item: str) -> bool:
+    return item.partition("::")[0].strip() in DOC_FAMILY
+
+
 def parse_dictionary(root: str) -> tuple[dict, dict]:
     """The data dictionary's datasets and its API checklist, from the doc alone."""
     path = os.path.join(root, DICTIONARY_DOC)
@@ -363,6 +378,8 @@ def parse_dictionary(root: str) -> tuple[dict, dict]:
             if key and key != "evidence":
                 e[key] = got.get(label)
         e.update({"link": DICTIONARY_DOC + "#" + github_anchor(name), "evidence": ev,
+                  "evidence_cited": [x for x in ev if cited(x)],
+                  "repo_verifiable": any(not cited(x) for x in ev),
                   "evidence_missing": [x for x in ev if not evidence_ok(root, x)],
                   "unverified_claims": block.count(UNVERIFIED_MARK)})
         datasets.append(e)
@@ -376,9 +393,14 @@ def parse_dictionary(root: str) -> tuple[dict, dict]:
         miss = [x for x in ev if not evidence_ok(root, x)]
         if claimed not in API_STATUSES:
             errors.append("API %s: status %r is not one of %s" % (api, claimed, ", ".join(API_STATUSES)))
+        # A connection is a fact about the repo: it needs evidence outside the doc family. A plan may rest on the
+        # register's line (a citation), the record that the plan exists.
+        repo_ev = [x for x in ev if not cited(x)]
+        held = bool(ev) and not miss and (bool(repo_ev) or claimed in ("planned", "not needed"))
         rows.append({"api": api, "holder": holder, "needed": needed,
-                     "status": claimed if ev and not miss else "unverified", "claimed": claimed,
-                     "priority": priority.lower() == "priority", "evidence": ev, "evidence_missing": miss, "note": note})
+                     "status": claimed if held else "unverified", "claimed": claimed,
+                     "priority": priority.lower() == "priority", "evidence": ev,
+                     "evidence_cited": [x for x in ev if cited(x)], "evidence_missing": miss, "note": note})
     by_status = {}
     for r in rows:
         by_status[r["status"]] = by_status.get(r["status"], 0) + 1
@@ -391,7 +413,7 @@ def parse_dictionary(root: str) -> tuple[dict, dict]:
 def counts_only(block: dict) -> str | None:
     """Why a live block is not counts only, or None. Every college figure is an int or a boolean, a *_at stamp,
     or the college's COCI spellings; anything else (a row, a URL, a person's name) refuses the block."""
-    if block.get("basis") != "live" or block.get("state") != "read" or not block.get("read_at"):
+    if block.get("basis") != "live" or block.get("state") != "read" or not _STAMP.fullmatch(str(block.get("read_at") or "")):
         return "not a read live block (basis %r, state %r)" % (block.get("basis"), block.get("state"))
     cols = block.get("colleges")
     if not isinstance(cols, dict):
@@ -415,33 +437,95 @@ def counts_only(block: dict) -> str | None:
     return None
 
 
-def live_block(live_path: str | None, previous: dict | None) -> dict:
+def live_block(live_path: str | None, previous: dict | None, universe: int | None = None) -> dict:
     """The live key: a new read, or the previous committed block kept whole (fail soft)."""
     prev = previous if isinstance(previous, dict) and previous.get("basis") == "live" else dict(LIVE_NOT_READ)
     if not live_path:
         return prev
     try:
         new = _maybe(live_path)
-    except ValueError as e:   # a half-written export
-        new, bad = None, "the export is not JSON (%s)" % e
+    except ValueError:   # a half-written export
+        new, cls = None, "other"
     else:
-        bad = None
+        cls = "not read" if new is None else None
+    counts = None
+    if new is not None and not isinstance(new, dict):
+        new, cls = None, "other"
     if new is None:
-        why = bad or "not read: no export at %s (the live step runs on a dispatch from main alone)" % live_path
+        pass
     elif new.get("state") == "failed":
-        why = new.get("error") or "the read failed"
+        cls = new.get("error_class") if new.get("error_class") in ERROR_CLASSES else "other"
+    elif counts_only(new) is not None:
+        print("the live export is not counts only: %s" % counts_only(new))   # the run's log, never the file
+        cls = "not counts only"
     else:
-        why = counts_only(new)
-    if why is None:
+        counts = short_read(new, prev, universe)
+        if counts is not None:
+            cls = "short read"
+    if cls is None:
         out = {"basis": "live", "state": "read"}
-        out.update({k: v for k, v in new.items() if k not in ("schema", "state", "basis")})
-        out["last_attempt"] = {"at": new["read_at"], "run_id": new.get("run_id"), "ok": True, "error": None}
+        out.update({k: v for k, v in new.items() if k not in ("schema", "state", "basis", "error", "error_class", "http_status")})
+        out["run_id"] = _run_id(new.get("run_id"))
+        out["last_attempt"] = {"at": new["read_at"], "run_id": out["run_id"], "ok": True, "error_class": None,
+                               "http_status": None, "counts": None}
         out["flag"] = "internal"
         return out
+    status = (new or {}).get("http_status")
+    at = (new or {}).get("at")
     kept = dict(prev)
-    kept["last_attempt"] = {"at": (new or {}).get("at") or iso_now(), "run_id": (new or {}).get("run_id"), "ok": False,
-                            "error": "kept the previous block: " + str(why)[:300]}
+    kept["last_attempt"] = {"at": at if isinstance(at, str) and _STAMP.fullmatch(at) else iso_now(),
+                            "run_id": _run_id((new or {}).get("run_id")), "ok": False, "error_class": cls,
+                            "http_status": status if isinstance(status, int) else None, "counts": counts}
     return kept
+
+
+# The builder's own last_attempt classes: the export's ERROR_CLASSES (kb/_commons_data_live.py) and its two of its
+# own. No text from an export or an exception is ever copied into the status file (the review of #3232, finding 1).
+ERROR_CLASSES = ("unauthorized", "upstream 5xx", "timeout", "bad header", "count moved", "short read",
+                 "no service key", "other", "not read", "not counts only")
+_STAMP = re.compile(r"\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ")
+
+# The floors a read must clear to replace the previous block (the review of #3232, finding 2). The export takes
+# its whole college universe from coci_college_programs, whose daily replace deletes the table and reloads it in
+# chunks, each its own transaction; a stopped sync leaves it short, and stably so, until the next day, so the
+# pager's before-and-after count agrees with itself and cannot see it. A read is kept as "read" only when:
+#   colleges   it holds at least COLLEGE_SHARE of the crosswalk's colleges (90%: 107 of 118 today). COCI lists
+#              programs at every college and campus on the crosswalk, so a full read holds nearly all of them; ten
+#              percent leaves room for a college COCI lists under a spelling the crosswalk lacks (named in
+#              "unmatched"), and a sync stopped after its first chunks holds far fewer;
+#   Active     its Active program count is within ACTIVE_BAND of the previous good block's (85% to 125%). Programs
+#              come and go by the dozen in a day, never by the thousand, so a drop past 15% is a short table; the
+#              wider top allows a COCI catch-up load;
+#   floor      with no previous good block, at least ACTIVE_FLOOR Active programs (15,000: the live census read
+#              20,282 on 2026-11-13, #3215; 15,000 is about three quarters of it).
+# Otherwise the previous block stays, and last_attempt records "short read" with the counts it saw.
+COLLEGE_SHARE = 0.90
+ACTIVE_BAND = (0.85, 1.25)
+ACTIVE_FLOOR = 15000
+
+
+def _run_id(v):
+    return str(v) if v is not None and re.fullmatch(r"\d{1,20}", str(v)) else None
+
+
+def _active(block: dict) -> int:
+    return sum(int(((e or {}).get("programs") or {}).get("active") or 0) for e in (block.get("colleges") or {}).values())
+
+
+def short_read(new: dict, prev: dict, universe: int | None) -> dict | None:
+    """None when the read clears the floors; else the counts that failed them."""
+    colleges, active = len(new.get("colleges") or {}), _active(new)
+    prev_active = _active(prev) if prev.get("state") == "read" else None
+    need = int(-(-COLLEGE_SHARE * universe // 1)) if universe else 1
+    ok = colleges >= need
+    if prev_active:
+        ok = ok and ACTIVE_BAND[0] * prev_active <= active <= ACTIVE_BAND[1] * prev_active
+    else:
+        ok = ok and active >= ACTIVE_FLOOR
+    if ok:
+        return None
+    return {"colleges": colleges, "colleges_needed": need, "active": active, "previous_active": prev_active,
+            "active_band": list(ACTIVE_BAND) if prev_active else None, "active_floor": None if prev_active else ACTIVE_FLOOR}
 
 
 def _share(n, d) -> float:
@@ -547,7 +631,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None)
     }
     if previous is None:
         previous = _maybe(os.path.join(root, OUT)) or {}
-    live = live_block(live_path, previous.get("live"))
+    live = live_block(live_path, previous.get("live"), len(entities))
     dictionary, apis = parse_dictionary(root)
     tba = TBA if not spot else {k: v for k, v in TBA.items() if k != "confidence"}
     if live.get("state") == "read":
@@ -600,7 +684,7 @@ def main(argv=None) -> int:
                  d["apis"]["total"], os.path.relpath(out, a.root)))
     la = d["live"].get("last_attempt")
     if la and not la["ok"]:
-        print("::warning::the Commons live counts: " + la["error"])
+        print("::warning::the Commons live counts were not taken (%s); the previous block stands" % la["error_class"])
     return 0
 
 

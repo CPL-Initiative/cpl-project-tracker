@@ -205,39 +205,141 @@ check("(4) paging and chunking ran (pages of 2, two control numbers at a time)",
       sum(1 for m, t, _ in src.log if m == "page" and t == "coci_college_programs") > 3)
 
 
-# (5) fail soft
+# (5) fail soft, and never the key in a file (the review of #3232, finding 1)
 class Broken(L.Fixture):
     def page(self, table, qs, start, size):
         raise RuntimeError("the network went away")
 
 
-failed = L.export(Broken({}), L.resolver(ROOT), "broken-run")
-check("(5) a read that fails writes state failed with its error", failed["state"] == "failed" and "network" in failed["error"])
+DUMMY = "dummyKEY-" + "x7Q2" * 50 + "\n"     # a stand-in service key ending in a newline, as a web paste leaves it
+
+
+class LeakyHeader(L.Fixture):
+    """What urllib raises for a key holding a newline: the whole key in the exception text."""
+    def page(self, table, qs, start, size):
+        raise ValueError("Invalid header value %r" % DUMMY.encode())
+
+
+failed = L.export(Broken({}), L.resolver(ROOT), "1234")
+check("(5) a read that fails writes state failed with a class from the fixed vocabulary, no exception text",
+      failed["state"] == "failed" and failed["error_class"] == "other" and "network" not in json.dumps(failed))
+leaky = L.export(LeakyHeader({}), L.resolver(ROOT), "1234")
+check("(5) ⭐ an exception that carries the key is stored as its class alone ('bad header'), never its text",
+      leaky["error_class"] == "bad header" and not L.holds_key(json.dumps(leaky), DUMMY), leaky)
+import urllib.error  # noqa: E402
+for exc, want in ((urllib.error.HTTPError("u", 401, "no", {}, None), ("unauthorized", 401)),
+                  (urllib.error.HTTPError("u", 503, "down", {}, None), ("upstream 5xx", 503)),
+                  (urllib.error.URLError(TimeoutError()), ("timeout", None)),
+                  (SystemExit("x changed while it was read (1 rows, then 2)"), ("count moved", None)),
+                  (SystemExit("x stopped at 5 of 9 rows"), ("short read", None))):
+    check("(5) a failure is classed %s" % want[0], L.error_class(exc) == want, L.error_class(exc))
+check("(5) the key is stripped when read; one still holding whitespace or a control character is refused by class",
+      L.clean_key("abc\n") == ("abc", None) and L.clean_key("ab\nc") == (None, "bad header")
+      and L.clean_key("ab\x07c") == (None, "bad header") and L.clean_key("") == (None, "no service key"))
+check("(5) the scrub finds any 20-character run of the key", L.holds_key("..." + DUMMY[30:50] + "...", DUMMY)
+      and not L.holds_key("..." + DUMMY[30:49] + "...", DUMMY))
 with tempfile.TemporaryDirectory() as tmp:
-    out = os.path.join(tmp, "live.json")
+    out = os.path.join(tmp, "out", "live.json")
     env = {k: v for k, v in os.environ.items() if k != L.KEY_ENV}
     r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_commons_data_live.py"), "--out", out, "--run-id", "9"],
                        capture_output=True, text=True, env=env, timeout=120)
     nokey = json.load(open(out, encoding="utf-8"))
     check("(5) without the service key it reads nothing, exits 0 and says why", r.returncode == 0 and nokey["state"] == "failed"
-          and L.KEY_ENV in nokey["error"], (r.returncode, nokey))
+          and nokey["error_class"] == "no service key" and L.KEY_ENV in r.stdout, (r.returncode, nokey))
     src_text = open(os.path.join(ROOT, "kb", "_commons_data_live.py"), encoding="utf-8").read()
     check("(5) ⭐ the export never holds the anon key", "SUPABASE_ANON" not in src_text and "role\":\"anon" not in src_text)
 
+    # the review's case end to end: a key holding a newline, the export, the builder, the scrub
+    env2 = dict(env, **{L.KEY_ENV: DUMMY + "x\n"})   # still holds a newline inside after stripping
+    r2 = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_commons_data_live.py"), "--out", out, "--run-id", "9"],
+                        capture_output=True, text=True, env=env2, timeout=120)
+    dumped = open(out, encoding="utf-8").read()
+    check("(5) ⭐ a key holding a newline is refused before any read, and neither the export file nor the log holds a run of it",
+          json.loads(dumped)["error_class"] == "bad header" and not L.holds_key(dumped, DUMMY)
+          and not L.holds_key(r2.stdout + r2.stderr, DUMMY), json.loads(dumped))
+    status = os.path.join(tmp, "commons_data.json")
+    r3 = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_commons_data_status.py"), "--root", ROOT,
+                         "--out", status, "--live", out, "--quiet"], capture_output=True, text=True, timeout=300)
+    st = open(status, encoding="utf-8").read()
+    check("(5) ⭐ the status file the builder writes holds no run of the key, and records the class",
+          r3.returncode == 0 and not L.holds_key(st, DUMMY) and json.loads(st)["live"]["last_attempt"]["error_class"] == "bad header",
+          r3.stderr[-300:])
+    with open(out, "w", encoding="utf-8") as f:   # an export that somehow carries the key in a free-text field
+        json.dump(dict(leaky, error="Invalid header value " + DUMMY), f)
+    subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_commons_data_status.py"), "--root", ROOT,
+                    "--out", status, "--live", out, "--quiet"], capture_output=True, text=True, timeout=300)
+    check("(5) ⭐ the builder copies no export text into the status file, only the class",
+          not L.holds_key(open(status, encoding="utf-8").read(), DUMMY))
+    r4 = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_commons_data_live.py"), "--scrub", os.path.dirname(out), status],
+                        capture_output=True, text=True, env=dict(env, **{L.KEY_ENV: DUMMY}), timeout=60)
+    check("(5) ⭐ --scrub fails, naming the file and never the key, when an output holds the key",
+          r4.returncode == 1 and "live.json" in r4.stdout and not L.holds_key(r4.stdout, DUMMY), r4.stdout[-200:])
+    os.remove(out)
+    r5 = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_commons_data_live.py"), "--scrub", os.path.dirname(out), status],
+                        capture_output=True, text=True, env=dict(env, **{L.KEY_ENV: DUMMY}), timeout=60)
+    check("(5) --scrub passes clean outputs", r5.returncode == 0, r5.stdout[-200:])
+
+# (5b) a short read never replaces a good block (the review of #3232, finding 2)
+cw = json.load(open(B.crosswalk_path(ROOT), encoding="utf-8"))["colleges"]
+UNIVERSE = [str(e["college_id"]) for e in cw if e["entity_kind"] in B.IN_SCOPE]
+template = block["colleges"]["17"]
+
+
+def full_block(active_each=170, ids=None, at="2026-11-14T06:00:00Z"):
+    b = json.loads(json.dumps(block))
+    b["read_at"] = at
+    b["colleges"] = {}
+    for cid in (UNIVERSE if ids is None else ids):
+        e = json.loads(json.dumps(template))
+        e["programs"]["active"] = active_each
+        b["colleges"][cid] = e
+    return b
+
+
+with tempfile.TemporaryDirectory() as tmp:
+    def take(b, prev):
+        p = os.path.join(tmp, "x.json")
+        with open(p, "w", encoding="utf-8") as f:
+            json.dump(b, f)
+        return B.live_block(p, prev, len(UNIVERSE))
+
+    normal = take(full_block(), None)
+    check("(5b) ⭐ a normal read (every college, %d Active) is taken" % (170 * len(UNIVERSE)),
+          normal["state"] == "read" and normal["last_attempt"]["ok"], normal["last_attempt"])
+    empty = take(dict(full_block(), colleges={}), normal)
+    check("(5b) ⭐ an empty read keeps the previous block and records a short read with its counts",
+          empty["colleges"] == normal["colleges"] and empty["read_at"] == normal["read_at"]
+          and empty["last_attempt"]["error_class"] == "short read" and empty["last_attempt"]["counts"]["colleges"] == 0,
+          empty["last_attempt"])
+    chunk = take(full_block(ids=UNIVERSE[:20]), normal)
+    check("(5b) ⭐ a one-chunk read (20 colleges) keeps the previous block",
+          chunk["colleges"] == normal["colleges"] and chunk["last_attempt"]["error_class"] == "short read", chunk["last_attempt"])
+    thin = take(full_block(active_each=120), normal)
+    check("(5b) every college but fewer Active programs than the band allows (a part-loaded table) keeps the previous block",
+          thin["colleges"] == normal["colleges"] and thin["last_attempt"]["counts"]["active"] == 120 * len(UNIVERSE))
+    near = take(full_block(active_each=160, at="2026-11-15T06:00:00Z"), normal)
+    check("(5b) a read within the band of the previous one (-6%) is taken", near["state"] == "read" and near["read_at"] == "2026-11-15T06:00:00Z")
+    first_thin = take(full_block(active_each=100), None)
+    check("(5b) with no previous block, a read under the absolute floor is not taken",
+          first_thin["state"] == "not read yet" and first_thin["last_attempt"]["counts"]["active_floor"] == B.ACTIVE_FLOOR)
+    check("(5b) the fixture's two-college read is a short read too", take(block, None)["state"] == "not read yet")
+
     good = os.path.join(tmp, "good.json")
     with open(good, "w", encoding="utf-8") as f:
-        json.dump(block, f)
-    taken = B.live_block(good, None)
+        json.dump(full_block(), f)
+    taken = B.live_block(good, None, len(UNIVERSE))
     check("(5) a read block is taken whole, with its read time and an ok attempt",
-          taken["state"] == "read" and taken["read_at"] == block["read_at"] and taken["last_attempt"]["ok"] and taken["colleges"] == block["colleges"])
+          taken["state"] == "read" and taken["last_attempt"]["ok"] and len(taken["colleges"]) == len(UNIVERSE))
     bad_path = os.path.join(tmp, "bad.json")
     with open(bad_path, "w", encoding="utf-8") as f:
         json.dump(failed, f)
-    kept = B.live_block(bad_path, taken)
-    check("(5) ⭐ a failed read keeps the previous block whole and records the attempt",
+    kept = B.live_block(bad_path, taken, len(UNIVERSE))
+    check("(5) ⭐ a failed read keeps the previous block whole and records the attempt by class",
           kept["read_at"] == taken["read_at"] and kept["colleges"] == taken["colleges"] and kept["last_attempt"]["ok"] is False
-          and "network" in kept["last_attempt"]["error"])
-    check("(5) a missing export keeps the previous block", B.live_block(os.path.join(tmp, "none.json"), taken)["read_at"] == taken["read_at"])
+          and kept["last_attempt"]["error_class"] == "other")
+    missing = B.live_block(os.path.join(tmp, "none.json"), taken, len(UNIVERSE))
+    check("(5) a missing export (a branch run, the step skipped) keeps the previous block and records not read",
+          missing["read_at"] == taken["read_at"] and missing["last_attempt"]["error_class"] == "not read")
     check("(5) with no export named the previous block is carried unchanged", B.live_block(None, taken) == taken)
     check("(5) the first state is an explicit not-read-yet block",
           B.live_block(None, None) == B.LIVE_NOT_READ and B.LIVE_NOT_READ["read_at"] is None and B.LIVE_NOT_READ["state"] == "not read yet")
@@ -249,7 +351,9 @@ with tempfile.TemporaryDirectory() as tmp:
     check("(5) a block carrying rows is refused", B.counts_only(leak) is not None)
     with open(bad_path, "w", encoding="utf-8") as f:
         json.dump(leak, f)
-    check("(5) and a refused block keeps the previous one", B.live_block(bad_path, taken)["colleges"] == taken["colleges"])
+    refused = B.live_block(bad_path, taken, len(UNIVERSE))
+    check("(5) and a refused block keeps the previous one", refused["colleges"] == taken["colleges"]
+          and refused["last_attempt"]["error_class"] == "not counts only")
 
 # (6) the overall bar
 ov = B.overall_block(B.live_block(None, dict(block, flag="internal")))
@@ -269,9 +373,16 @@ import yaml  # noqa: E402
 wf = yaml.safe_load(wf_text)
 steps = wf["jobs"]["census"]["steps"]
 with_key = [s.get("name") for s in steps if "SUPABASE_SERVICE_KEY" in json.dumps(s.get("env") or {})]
-check("(7) ⭐ the service key sits on the export step alone, never on the job or the workflow",
-      with_key == ["Commons data live counts (service key, counts only; fails soft)"]
+check("(7) ⭐ the service key sits on the export step and the scrub step alone, never on the job or the workflow",
+      with_key == ["Commons data live counts (service key, counts only; fails soft)", "No file holds the service key (main only)"]
       and "env" not in wf["jobs"]["census"] and "env" not in wf, with_key)
+names = [s.get("name") for s in steps]
+check("(7) ⭐ the scrub runs after the builder and before the commit and the artifact upload",
+      names.index("No file holds the service key (main only)") > [i for i, s in enumerate(steps) if "_build_commons_data_status.py" in (s.get("run") or "")][0]
+      and names.index("No file holds the service key (main only)") < names.index("Commit to the branch that ran it")
+      and "--scrub out kb/status" in steps[names.index("No file holds the service key (main only)")]["run"])
+check("(5) a key that only ends in a newline is stripped, so urllib never sees the newline",
+      L.clean_key(DUMMY)[0] == DUMMY.strip() and "\n" not in L.clean_key(DUMMY)[0])
 def mentions_key(s):
     return "SUPABASE_SERVICE_KEY" in json.dumps({k: v for k, v in s.items() if k != "name"})
 

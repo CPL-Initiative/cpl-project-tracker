@@ -22,24 +22,39 @@ get it today, and how we plan to get it faster and more accurately. The register
 keeps each source's stage and its four-step entry; this file keeps the elements, owners, procedures and improvements.
 The two link both ways.
 
-**Student-level data never enters COBI.** Student records (CCCStart, JST) land in MAP under FERPA, the student's
-consent, a data-sharing agreement and least-privilege fields (Sam, 2026-11-08). COBI shows connection status and
-counts only. Owners are named by organization or role, never by contact details.
+**Student records stay in MAP; COBI keeps counts.** COBI never fetches a student's name, date of birth or real ID,
+and never acts on an individual record (Sam, 2026-11-08). Two paths carry pseudonymous per-student rows from MAP
+today, each keyed by MAP's internal student ID or a surrogate number derived from MAP's salt-hashed ID. The daily MAP
+CustomReport pull holds them on the GitHub Actions runner for that run alone and never commits them
+(`funding/_build_funding_performance.py`; `scripts/daily_build.sh` step 4a2). `kb/_sync_map_custom_reports.py` loads
+them into `stg_map_student_credit` (service role only) and `map_student_credit` (reviewers only), which stay until
+the last step of the summarize-then-delete plan Sam ruled on 2026-11-08
+(`kb/migrations/2026-11-08_student_grain_drop_orphans.sql`). Both paths reduce the rows to counts per college or per
+exhibit before anything is committed or shown, under
+[`adr-funding-priority-metrics-privacy`](../kb-notes/adr-funding-priority-metrics-privacy.md) and
+[`adr-student-detail-aggregate-disclosure-control`](../kb-notes/adr-student-detail-aggregate-disclosure-control.md)
+(counts under 10 are masked). Student records from CCCStart or a JST feed would land in MAP under FERPA, the
+student's consent, a data-sharing agreement and least-privilege fields, never in COBI; COBI would show connection
+status and counts. Owners are named by organization or role, never by contact details.
 
 **How to read a claim.** The draft is COBIx's (#3220, 2026-11-13). Sky checked each claim it could against the repo
 (table names against the `chatbox/*.sql` and `kb/*.sql` schemas and `kb/dependency_map.json`, workflows against
 `.github/workflows/`, counts against the committed files); the **Evidence in the repo** line names what was checked.
 *To confirm* is the draft's own mark: not verified, and never promoted to fact without a source. A claim marked
 *(COBIx, 2026-11-13; not verified in the repo)* rests on a source outside the repo (the CCCCO report, vendor release
-notes, a live table) that a session could not check. Where the repo disagreed with the draft, the repo's figure is
-written and the draft's is named beside it.
+notes, a live table) that a session could not check; the mark may carry the source (*(COBIx, 2026-11-13, from the
+CCCCO report; not verified in the repo)*). Where the repo disagreed with the draft, the repo's figure is written and
+the draft's is named beside it. Evidence that points at this file or at [`data_sources`](data_sources.md) is a
+citation, not a check: the builder lists it apart (`evidence_cited`), an entry with no other evidence
+(`repo_verifiable` false) must mark its external claims, and a test fails when one does not.
 
 **The dashboard reads this file.** `kb/_build_commons_data_status.py` parses every `###` entry under *The datasets*
 (its labeled lines) into the `dictionary` key of `kb/status/commons_data.json`, and the checklist table below into the
 `apis` key, so this file is the one source and `tests/commons_data_status_build_test.py` fails when the two disagree.
 Keep each label on one line, spelled as it is here. An API status counts only with evidence in the repo: each
 backticked path in the Evidence cell must exist (a `path::text` item must also contain the text), or the builder
-reports the status as `unverified`.
+reports the status as `unverified`. A connected or in-progress status also needs evidence outside the doc family
+(a workflow, a script, a table's schema); a citation of the register alone holds only a planned status.
 
 Groups: **Harvested** (we read it from public pages), **Connected** (a file or sync from the holder), **Planned** (not
 connected). Stages are the register's: Found, Assessed, Asked, Connected, Scheduled.
@@ -165,10 +180,10 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 - **Grain:** One row per college and exhibit.
 - **Refresh:** Nightly, from the daily MAP pull; the promote fails closed on a short pull.
 - **How we procure or connect today:** The daily build fetches the MAP CustomReport with the MAP API key (`scripts/daily_build.sh`, run by `daily-dashboard.yml`); `chatbox/sync_chatbox_exhibits.py` stages it in `stg_chatbox_exhibits`, and `chatbox_exhibits_promote()` replaces `chatbox_exhibits` in one transaction.
-- **Access and terms:** Partner sync; exhibit catalog rows only, no student data (student CPL stays in MAP).
+- **Access and terms:** Partner sync. `chatbox_exhibits` holds exhibit rows only, with no student field. The same daily CustomReport pull also carries pseudonymous per-student rows (MAP's internal student ID; no name, date of birth or real ID is fetched): they stay on the GitHub Actions runner for that run alone, never committed, and `funding/_build_funding_performance.py` reduces them to per-college counts before anything is committed or shown (`adr-funding-priority-metrics-privacy`; counts under 10 masked). The reviewer-gated `map_student_credit` holds the same grain under `adr-student-detail-aggregate-disclosure-control` until the summarize-then-delete plan retires it (the boundary above).
 - **Planned improvements:** Define the CPL completeness denominator (Sam); match exhibits to COBI courses on every target course.
 - **Confidence method:** Partial: MAP is the record; counts are a sync, not a harvest.
-- **Evidence in the repo:** `scripts/daily_build.sh`, `.github/workflows/daily-dashboard.yml`, `chatbox/sync_chatbox_exhibits.py`, `kb/migrations/2026-11-12_chatbox_exhibits_refresh.sql`.
+- **Evidence in the repo:** `scripts/daily_build.sh`, `.github/workflows/daily-dashboard.yml`, `chatbox/sync_chatbox_exhibits.py`, `kb/migrations/2026-11-12_chatbox_exhibits_refresh.sql`, `funding/_build_funding_performance.py::it carries pseudonymous per-student rows`, `kb/_sync_map_custom_reports.py::StudentMAPID`, `docs/kb-notes/adr-funding-priority-metrics-privacy.md`, `docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md::reviewer-gated table`.
 
 | Field | Type | Definition | Key / join |
 |---|---|---|---|
@@ -178,7 +193,7 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 | `rec_count`, `sample_credit_recs` | int, text[] | Credit recommendations |  |
 | `courses`, `sample_courses` | text[] | Target courses |  |
 | `learning_mode` | text | MAP CPL Mode of Learning (the noncredit flag) |  |
-| `synced_at` | timestamptz | Last sync |  |
+| `synced_at` | timestamptz | When the row was inserted or its values last changed (`chatbox_exhibits_promote()`); an unchanged exhibit keeps its older stamp through every nightly sync, so it is not the time of the last sync |  |
 
 ### Catalog source
 
@@ -359,8 +374,8 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 
 | Field | Type | Definition | Key / join |
 |---|---|---|---|
-| `military_jst_optin` | string(1), T or F, nullable | CCCApply field: T = the student allows the college to obtain their JST, F = does not. Shown only to Active Duty, Veteran, Active Reserve and National Guard applicants (CCCApply v6.21, August 7, 2025, requested by MAP with the CO) | student application; delivered through the SuperGlue 5.2.2 College Adaptor |
-| `SZRAPLY.MILITARY_JST_OPTIN` (Banner), `XCTC.MILITARY.JST.OPTIN` (Colleague) | string(1) | Where the field lands in SIS staging | student |
+| `military_jst_optin` | string(1), T or F, nullable | CCCApply field: T = the student allows the college to obtain their JST, F = does not. Shown only to Active Duty, Veteran, Active Reserve and National Guard applicants (CCCApply v6.21, August 7, 2025, requested by MAP with the CO) *(COBIx, 2026-11-13, from the CCCApply release notes; not verified in the repo)* | student application; delivered through the SuperGlue 5.2.2 College Adaptor *(COBIx, 2026-11-13, from the SuperGlue release notes; not verified in the repo)* |
+| `SZRAPLY.MILITARY_JST_OPTIN` (Banner), `XCTC.MILITARY.JST.OPTIN` (Colleague) | string(1) | Where the field lands in SIS staging *(COBIx, 2026-11-13, from the SuperGlue field map; not verified in the repo)* | student |
 | CCCStart equivalent field | *to confirm* | Name and delivery path in CCCStart, not yet published |  |
 | Per-college metric: authorized students | count | Students with opt-in = T | college and term |
 | JSTs requested, received | count | Requests sent to the JST office and transcripts received | college and term |
@@ -370,10 +385,10 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 
 - **Group:** Planned
 - **Stage:** Found
-- **Purpose:** Each district's own lake on the Ellucian track: SIS and degree-audit data (Banner, Colleague, DegreeWorks) plus third-party data; feeds Insights Reporting and the district dashboard.
-- **Owner / steward:** The district (data owner); built by Ellucian for the Common Cloud (the CCCCO AI Strategy and Digital Transformation Division).
+- **Purpose:** Each district's own lake on the Ellucian track: SIS and degree-audit data (Banner, Colleague, DegreeWorks) plus third-party data; feeds Insights Reporting and the district dashboard. *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*
+- **Owner / steward:** The district (data owner); built by Ellucian for the Common Cloud (the CCCCO AI Strategy and Digital Transformation Division). *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*
 - **Grain:** *To confirm*.
-- **Refresh:** Near real time for onboarded districts (the report: about every 5 minutes).
+- **Refresh:** Near real time for onboarded districts (the report: about every 5 minutes). *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*
 - **How we procure or connect today:** Not yet.
 - **Access and terms:** A district participation agreement; role-based access. COBI would ask only for course, section and program-level data, never student records.
 - **Planned improvements:** Ask whether a course, section and program view (offered now, enrollment counts, DegreeWorks program requirement rules) can be shared to COBI per district.
@@ -390,8 +405,8 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 
 - **Group:** Planned
 - **Stage:** Found
-- **Purpose:** Aggregates the Ellucian-track institution lakes and feeds the Unified Invoke Data Lake.
-- **Owner / steward:** CCCCO (Common Cloud); built by Ellucian.
+- **Purpose:** Aggregates the Ellucian-track institution lakes and feeds the Unified Invoke Data Lake. *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*
+- **Owner / steward:** CCCCO (Common Cloud); built by Ellucian. *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*
 - **Grain:** *To confirm*.
 - **Refresh:** *To confirm*.
 - **How we procure or connect today:** Not yet.
@@ -408,8 +423,8 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 
 - **Group:** Planned
 - **Stage:** Found
-- **Purpose:** The statewide lake that combines both tracks; powers the Chancellor's Office Unified Analytics, the Chancellor's Dashboard (real-time enrollment by region, program, demographics, services).
-- **Owner / steward:** The CCCCO AI Strategy and Digital Transformation Division; built by Invoke Learning.
+- **Purpose:** The statewide lake that combines both tracks; powers the Chancellor's Office Unified Analytics, the Chancellor's Dashboard (real-time enrollment by region, program, demographics, services). *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*
+- **Owner / steward:** The CCCCO AI Strategy and Digital Transformation Division; built by Invoke Learning. *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*
 - **Grain:** *To confirm* (program and term aggregates on the dashboard).
 - **Refresh:** About every 5 minutes (the report).
 - **How we procure or connect today:** Not yet. The Chancellor's Dashboard is complete for the initial cohort (23 colleges onboarded) *(COBIx, 2026-11-13; not verified in the repo)*.
@@ -428,8 +443,8 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 
 - **Group:** Planned
 - **Stage:** Found
-- **Purpose:** Each district's own lake on the Invoke track: Oracle PeopleSoft data, third-party data, and existing MIS and 320 files; feeds the district dashboard.
-- **Owner / steward:** The district (data owner); built by Invoke Learning for the Common Cloud.
+- **Purpose:** Each district's own lake on the Invoke track: Oracle PeopleSoft data, third-party data, and existing MIS and 320 files; feeds the district dashboard. *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*
+- **Owner / steward:** The district (data owner); built by Invoke Learning for the Common Cloud. *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*
 - **Grain:** *To confirm*.
 - **Refresh:** Near real time for onboarded districts (*to confirm*).
 - **How we procure or connect today:** Not yet.
@@ -453,7 +468,7 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 - **Grain:** Course and term.
 - **Refresh:** *To confirm*.
 - **How we procure or connect today:** Not yet; parked (#3217).
-- **Access and terms:** No public offerings feed found.
+- **Access and terms:** No public offerings feed found *(COBIx, 2026-11-13; not verified in the repo)*.
 - **Planned improvements:** Sam raises a feed with CVC leadership.
 - **Confidence method:** Not connected.
 - **Evidence in the repo:** `docs/reference/data_sources.md::### CVC, the California Virtual Campus`.
@@ -471,7 +486,7 @@ each with needed (yes, no or unknown, with why), its status, and what the API wo
 
 | API | Holder | Needed | Status | Priority | Evidence | Note |
 |---|---|---|---|---|---|---|
-| MAP CustomReport API | MAP (RCCD / InfoTech) | yes | connected |  | `scripts/daily_build.sh::Fetch CustomReport from MAP API` `.github/workflows/daily-dashboard.yml` `chatbox/sync_chatbox_exhibits.py` | The daily pull with the MAP API key; feeds `chatbox_exhibits` nightly. |
+| MAP CustomReport API | MAP (RCCD / InfoTech) | yes | connected |  | `scripts/daily_build.sh::Fetch CustomReport from MAP API` `.github/workflows/daily-dashboard.yml` `chatbox/sync_chatbox_exhibits.py` | The daily pull with the MAP API key; feeds `chatbox_exhibits` (exhibit rows only) nightly. The pull also carries pseudonymous per-student rows, kept on the runner for the run alone and reduced to per-college counts before anything is committed or shown (`adr-funding-priority-metrics-privacy`, `adr-student-detail-aggregate-disclosure-control`). |
 | JST authorization feed and the JST request and receipt path | CCCCO and the CCC Technology Center (feed); the DoD JST office (transcripts) | yes | planned | priority | `docs/reference/data_sources.md::### Joint Services Transcripts through jst.mil` | With CCCStart: authorized students per college (`military_jst_optin` = T), JSTs requested and received, loaded to MAP. Waits on the CO General Counsel. |
 | CCCStart API: student ID and info layer (for MAP) | CCCCO Reimagine Apply; the CCC Technology Center operates (steward to confirm) | yes | planned | priority | `docs/reference/data_sources.md::### CCCStart` | Replaces JST parsing, Credit for Being You import, manual entry and batch upload; FERPA, a data-sharing agreement, consent and least-privilege fields; lands in MAP, never COBI. |
 | COCI course and program export | CCCCO (COCI) | yes | planned |  | `kb/reference/coci_course_list.xlsx` `docs/reference/data_sources.md::### WestEd` | Today a hand-saved snapshot; WestEd holds the current copy. |
@@ -483,6 +498,6 @@ each with needed (yes, no or unknown, with why), its status, and what the API wo
 | ASSIST API | ASSIST (intersegmental) | yes | planned |  | `docs/reference/data_sources.md::### ASSIST` | An institutional API key is needed; not requested yet. |
 | Program Pathways Mapper export or API | The Foundation for CCC; Concentric Sky | yes | planned |  | `docs/reference/data_sources.md::### PPM, the Program Pathways Mapper` | Access note drafted October 17, 2026; not recorded as sent. Mapper hosts refuse automated reading. |
 | CVC offerings and exchange feed | California Virtual Campus | yes | planned |  | `docs/reference/data_sources.md::### CVC, the California Virtual Campus` | Parked (#3217). |
-| COE labor market data export | Centers of Excellence | yes | planned |  | `kb/reference/coe_occupation_demand_2024_2029.json` `docs/reference/data_sources.md::### COE labor market data` | Today a hand export (2024-2029); COE now shows 2025-2030. |
+| COE labor market data export | Centers of Excellence | yes | planned |  | `kb/reference/coe_occupation_demand_2024_2029.json` `docs/reference/data_sources.md::### COE labor market data` | Today a hand export (2024-2029); COE now shows 2025-2030 *(COBIx, 2026-11-13; not verified in the repo)*. |
 | Curriculum system APIs (eLumen, CurriQunet/Meta, Coursedog) | Colleges; vendors | yes | planned |  |  | Would replace outline page reading and sign-in walls for course outlines, SLOs and objectives. No plan is recorded in the repo yet. |
 | Catalog platform APIs (CourseLeaf, Acalog, others) | Colleges; vendors | yes | planned |  |  | Today public catalog pages are read; an API helps where pages block readers or catalogs are PDFs. No plan is recorded in the repo yet. |

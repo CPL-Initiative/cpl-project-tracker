@@ -45,8 +45,12 @@ THE RULES, each the repo's own and never restated:
             the continuing-education campuses' " Credit" twins) count once, programs deduplicated by control
             number; a name the crosswalk does not hold is listed in "unmatched", with no figures.
 
-FAIL SOFT. A read that fails writes {"state": "failed", "error": ...} and exits 0; the builder then keeps the
-previous committed block and records the attempt (last_attempt), so the page shows the older read_at.
+FAIL SOFT. A read that fails writes {"state": "failed", "error_class", "http_status", "error"} and exits 0; the
+builder then keeps the previous committed block and records the attempt (last_attempt), so the page shows the older
+read_at. The class comes from the fixed ERROR_CLASSES, never an exception's text, which can carry the request's
+headers (the review of #3232, finding 1). The key is stripped when read and refused, by class alone, if it still
+holds whitespace or a control character; the export refuses to write anything that holds the key or a SCRUB_RUN-
+character run of it, and the workflow's last step before the commit runs --scrub over out/ and the status file.
 
 Usage, from the repo root:
   python3 kb/_commons_data_live.py [--out PATH] [--run-id ID]     the live read (needs SUPABASE_SERVICE_KEY)
@@ -423,13 +427,92 @@ def iso_now() -> str:
     return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
 
 
+# ── never the key in a file (the review of #3232, finding 1) ─────────────────────────────────────────────────
+# An exception's text can carry the request's headers: a key holding a newline makes urllib raise
+# ValueError("Invalid header value b'<the whole key>\n'"). So no exception text is ever stored. A failure is kept
+# as one class from this fixed vocabulary, plus the HTTP status where there is one; the key is stripped when read
+# and refused if it still holds whitespace or a control character; and every file written is scrubbed for the key.
+ERROR_CLASSES = ("unauthorized", "upstream 5xx", "timeout", "bad header", "count moved", "short read",
+                 "no service key", "other")
+SCRUB_RUN = 20         # any run of this many characters of the key in an output refuses the output
+
+
+def error_class(e: BaseException) -> tuple[str, int | None]:
+    """(class, HTTP status) for a failed read, from the exception's type and status alone; its text is read only
+    for the dated pager's two fixed messages and never kept."""
+    import socket
+    import urllib.error
+    status = getattr(e, "code", None) if isinstance(e, urllib.error.HTTPError) else None
+    if status in (401, 403):
+        return "unauthorized", status
+    if status is not None and 500 <= status <= 599:
+        return "upstream 5xx", status
+    if status is not None:
+        return "other", status
+    reason = getattr(e, "reason", None)
+    if isinstance(e, (TimeoutError, socket.timeout)) or isinstance(reason, (TimeoutError, socket.timeout)):
+        return "timeout", None
+    if isinstance(e, ValueError) and "header" in str(e).lower():
+        return "bad header", None
+    if isinstance(e, SystemExit):
+        text = str(e)
+        if "changed while it was read" in text:
+            return "count moved", None
+        if "stopped at" in text:
+            return "short read", None
+    return "other", None
+
+
+def failed(at: str, run_id, cls: str, status: int | None = None) -> dict:
+    cls = cls if cls in ERROR_CLASSES else "other"
+    return {"schema": SCHEMA, "basis": "live", "state": "failed", "at": at, "run_id": run_id,
+            "error_class": cls, "http_status": status,
+            "error": cls + (" (HTTP %d)" % status if isinstance(status, int) else "")}
+
+
+def clean_key(raw: str | None) -> tuple[str | None, str | None]:
+    """(key, None) or (None, the refusal's class). The key is stripped; one that still holds whitespace or a
+    control character is refused, and the refusal names no part of it."""
+    if raw is None or not raw.strip():
+        return None, "no service key"
+    key = raw.strip()
+    if any(c.isspace() or ord(c) < 32 or ord(c) == 127 for c in key):
+        return None, "bad header"
+    return key, None
+
+
+def holds_key(text: str, key: str | None) -> bool:
+    """Whether the text holds the key, or any SCRUB_RUN-character run of it."""
+    if not key:
+        return False
+    k = key.strip()
+    if not k:
+        return False
+    if len(k) <= SCRUB_RUN:
+        return k in text
+    return any(k[i:i + SCRUB_RUN] in text for i in range(len(k) - SCRUB_RUN + 1))
+
+
+def scrub(paths: list[str], key: str | None) -> list[str]:
+    """The files (under each path) that hold the key or a run of it. Names only, never the text."""
+    hits = []
+    for p in paths:
+        files = [os.path.join(d, f) for d, _, fs in os.walk(p) for f in fs] if os.path.isdir(p) else [p]
+        for f in files:
+            if not os.path.isfile(f):
+                continue
+            with open(f, encoding="utf-8", errors="replace") as fh:
+                if holds_key(fh.read(), key):
+                    hits.append(f)
+    return hits
+
+
 def export(src, resolve, run_id: str | None) -> dict:
     at = iso_now()
     try:
         r = read(src, resolve)
     except (Exception, SystemExit) as e:   # the dated reads' pager stops with SystemExit when a count moves
-        return {"schema": SCHEMA, "basis": "live", "state": "failed", "at": at, "run_id": run_id,
-                "error": "%s: %s" % (type(e).__name__, str(e)[:300])}
+        return failed(at, run_id, *error_class(e))
     return {"schema": SCHEMA, "basis": "live", "state": "read", "read_at": at, "run_id": run_id,
             "source": "kb/_commons_data_live.py in harvest-gap-census.yml, the service key",
             "tables": TABLES, "rule": RULE, "reads": {"counts": sum(1 for m, *_ in src.log if m == "count"),
@@ -449,28 +532,48 @@ def main(argv=None) -> int:
     ap.add_argument("--run-id", default=os.environ.get("GITHUB_RUN_ID"))
     ap.add_argument("--fixture", help="read {table: [rows]} from this file in place of the live tables")
     ap.add_argument("--dry-run", action="store_true", help="print the query plan; no network, write nothing")
+    ap.add_argument("--scrub", nargs="+", metavar="PATH", help="exit 1, naming the files, if any file under these "
+                    "paths holds the service key (or a %d-character run of it); reads the key from %s"
+                    % (SCRUB_RUN, KEY_ENV))
     a = ap.parse_args(argv)
+    if a.scrub:
+        hits = scrub(a.scrub, os.environ.get(KEY_ENV))
+        for h in hits:
+            print("::error::%s holds the service key; it must not be committed or uploaded" % h)
+        print("scrub: %d file(s) hold the key" % len(hits))
+        return 1 if hits else 0
+    if a.run_id is not None and not re.fullmatch(r"\d{1,20}", str(a.run_id)):
+        a.run_id = None
     if a.dry_run:
         for method, table, qs in plan():
             guard(method, table, qs)
             print("%-5s %-28s %s" % (method, table, urllib.parse.unquote(qs)))
         print("every read passes the counts-only guard")
         return 0
+    raw = os.environ.get(KEY_ENV)
+    refusal = None
     if a.fixture:
         with open(a.fixture, encoding="utf-8") as f:
             src = Fixture(json.load(f))
     else:
-        key = os.environ.get(KEY_ENV)
+        key, refusal = clean_key(raw)
         src = Live(key) if key else None
     if src is None:
-        block = {"schema": SCHEMA, "basis": "live", "state": "failed", "at": iso_now(), "run_id": a.run_id,
-                 "error": "%s is not set; the export reads with the service key alone, never the anon key" % KEY_ENV}
+        # Without a usable key it reads nothing; never the anon key. The message names no part of the value.
+        print("::warning::%s is %s; the export reads with the service key alone, never the anon key"
+              % (KEY_ENV, "not set" if refusal == "no service key" else "refused (it holds whitespace or a control character)"))
+        block = failed(iso_now(), a.run_id, refusal or "no service key")
     else:
         block = export(src, resolver(), a.run_id)
+    text = json.dumps(block, indent=1, ensure_ascii=False) + "\n"
+    if holds_key(text, raw):
+        # Defense in depth: nothing that holds the key is written, whatever put it there.
+        block = failed(block.get("at") or block.get("read_at") or iso_now(), a.run_id, "other")
+        text = json.dumps(block, indent=1, ensure_ascii=False) + "\n"
+        print("::error::the export held the service key; it wrote a failed block in its place")
     os.makedirs(os.path.dirname(os.path.abspath(a.out)), exist_ok=True)
     with open(a.out, "w", encoding="utf-8") as f:
-        json.dump(block, f, indent=1, ensure_ascii=False)
-        f.write("\n")
+        f.write(text)
     if block["state"] == "read":
         s = block["statewide"]
         print("live counts: %d colleges, %d Active programs, %d unmatched names (%d counts, %d pages) -> %s"

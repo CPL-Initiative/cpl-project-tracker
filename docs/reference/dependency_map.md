@@ -452,6 +452,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
 | `docs/reference/conductor_mode.md` | scripts: `kb/_docs_audit.py` | — |
 | `docs/reference/data_dictionary.md` | scripts: `kb/_build_commons_data_status.py` | — |
+| `docs/reference/data_sources.md` | scripts: `kb/_build_commons_data_status.py` | — |
 | `docs/reference/library_filer.md` | scripts: `scripts/library_file.py` | — |
 | `docs/reference/mid_lifecycle.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/README.md` | scripts: `kb/_doctrine_scenarios.py` | — |
@@ -1464,5 +1465,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 923 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 924 file
 datasets · 195 external services · 580 consumers · 72 workflows · 41 tabs.
