@@ -407,14 +407,81 @@ def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str |
             "colleges": colleges}
 
 
+SET_STEP_PLAN = os.path.join(HERE, "program_requirements_set_step_overlap_plan.json")
+LATER_RECONCILE = ("keeps its figure: a set step fills only an empty ge_units, and this record holds one; the "
+                   "standing hold (R.set_step_overlap) reads only a fresh reading with no GE units")
+
+
+def set_step_overlap_plan(records: list[dict], steps: dict | None = None, commit: str | None = None,
+                          date: str | None = None) -> dict:
+    """The S648 measure before a college set ge_units step took the statewide fill's standing hold: at every college
+    with such a step, (1) each filed record a college step already filled whose degree check passes only as overlap
+    (its sum past the degree total), and what a later reconcile run does to it; (2) each filed record with no GE units
+    that a transfer step's figure would now hold (R.set_step_overlap on the record alone: an upper bound, since the
+    step's page pattern and the page's double-counting words are read only in a reconcile run). One-time; no CI
+    step checks this file."""
+    steps = R.load_steps() if steps is None else steps
+    ge_steps = {c: [st for st in v.get("steps") or [] if st.get("kind") == "set" and st.get("field") == "ge_units"]
+                for c, v in steps.items()}
+    ge_steps = {c: v for c, v in ge_steps.items() if v}
+    filled, would = collections.defaultdict(list), collections.defaultdict(list)
+    for f in records:
+        college = f.get("college")
+        if college not in ge_steps:
+            continue
+        prog = f["record"].get("program") or {}
+        a = (f.get("score") or {}).get("arithmetic") or {}
+        deg = a.get("degree") or (a if a.get("against") == "degree" else {})
+        own = [n for n in f.get("reconciled") or [] if n.get("field") == "ge_units" and not n.get("statewide")]
+        if own and deg.get("overlap"):
+            notes = " ".join(str(n) for n in f["record"].get("notes") or [])
+            dc = R.DOUBLE_COUNT.search(notes)
+            filled[college].append({
+                "control_number": f["control_number"], "title": f.get("title"), "award": f.get("award"),
+                "transfer": R.awards_match("transfer", f.get("award")), "ge_units": prog.get("ge_units"),
+                "sum": deg.get("computed"), "degree_total": deg.get("stated"),
+                "double_count_in_notes": notes[max(0, dc.start() - 60):dc.end() + 60].strip() if dc else None,
+                "later_reconcile": LATER_RECONCILE})
+            continue
+        if R._empty(prog.get("ge_units")):
+            for st in ge_steps[college]:
+                if not R.awards_match(st.get("awards"), f.get("award")):
+                    continue
+                why = R.set_step_overlap(prog, st["value"], "", f.get("award"))
+                if why:
+                    would[college].append({"control_number": f["control_number"], "title": f.get("title"),
+                                           "award": f.get("award"), "value": st["value"], "why": why})
+                break
+    return {"what": "S648: records under existing college set ge_units steps that sit in overlap, before the "
+                    "standing hold; and records the hold would keep from a figure (an upper bound)",
+            "measured_on": {"commit": commit, "date": date, "records": "kb/program_requirements_college/*/records/",
+                            "kind": "a one-time measure of the committed records; no CI step checks it"},
+            "colleges_with_set_ge_steps": sorted(ge_steps),
+            "counts": {"filled_in_overlap": sum(len(v) for v in filled.values()),
+                       "filled_in_overlap_transfer": sum(1 for v in filled.values() for r in v if r["transfer"]),
+                       "would_hold_now": sum(len(v) for v in would.values())},
+            "filled_in_overlap_by_college": dict(sorted(((c, len(v)) for c, v in filled.items()),
+                                                        key=lambda x: (-x[1], x[0]))),
+            "filled_in_overlap": {c: v for c, v in sorted(filled.items())},
+            "would_hold_now": {c: v for c, v in sorted(would.items())}}
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--json", action="store_true", help="print the measure as JSON, every key named")
     ap.add_argument("--calgetc-plan", action="store_true",
                     help="write the statewide Cal-GETC 34 plan (%s), a one-time measure, and print its counts"
                          % os.path.relpath(CAL_GETC_PLAN, HERE))
+    ap.add_argument("--set-step-plan", action="store_true",
+                    help="write the set-step overlap plan (%s), a one-time measure" % os.path.relpath(SET_STEP_PLAN, HERE))
     args = ap.parse_args(argv)
     records = list(filed_records())
+    if args.set_step_plan:
+        plan = set_step_overlap_plan(records, None, *_git_head())
+        with open(SET_STEP_PLAN, "w") as fh:
+            fh.write(json.dumps(plan, indent=1) + "\n")
+        print(json.dumps(plan["counts"]), json.dumps(plan["filled_in_overlap_by_college"]))
+        return 0
     if args.calgetc_plan:
         plan = cal_getc_34_plan(records, *_git_head())
         with open(CAL_GETC_PLAN, "w") as fh:

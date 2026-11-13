@@ -201,7 +201,8 @@ def fill_course_hours(out: dict, hours: dict) -> dict:
 def reconcile(record: dict, text: str | None, college: str, award: str | None = None,
               steps: dict | None = None, course_units: dict | None = None,
               course_hours: dict | None = None, title: str | None = None,
-              siblings: list | None = None, control_number: str | None = None) -> tuple[dict, list[dict]]:
+              siblings: list | None = None, control_number: str | None = None,
+              holds: list | None = None) -> tuple[dict, list[dict]]:
     """The record with the college's reconcile steps, then the statewide ones (statewide_cal_getc), applied to
     its page text, and a note per change: the field, what it was, what it is now, and the words. A college's own
     step runs first, so a figure its catalog prints is set before a statewide figure is asked for. title is the
@@ -209,7 +210,7 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
     "section_heading"}]), which the statewide rule reads; without siblings it fills nothing. The statewide rule
     runs only at a college whose config carries a statewide_cal_getc step (calgetc_step)."""
     conf = (steps if steps is not None else load_steps()).get(college) or {}
-    out, notes = _college_steps(record, text, college, award, steps, course_units, course_hours)
+    out, notes = _college_steps(record, text, college, award, steps, course_units, course_hours, holds)
     out, more = statewide_cal_getc(out, text, award, title=title, siblings=siblings, conf=conf,
                                    control_number=control_number)
     return (out, notes + more) if (notes or more) else (record, [])
@@ -520,9 +521,40 @@ def statewide_cal_getc(record, text: str | None, award: str | None, title: str |
     return out, [note]
 
 
+def set_step_overlap(prog: dict, value, text: str | None, award: str | None) -> str | None:
+    """Why a college `set` ge_units step holds its figure from a transfer degree, or None to fill (S648, the
+    conductor after Grossmont 46141: degree total 65, 38 + 34 = 72): the same standing hold the statewide Cal-GETC
+    fill has. With the figure, the record's major (total_units) and stated electives (open_elective_units,
+    degree_elective_units) pass its degree total at the low end, and the page from the record's heading on states no
+    double counting (DOUBLE_COUNT). A record with no major units or no degree total keeps the present behavior
+    (fills), and so does any record that is not a transfer degree. The catalog-printed figure still goes to a record
+    that stands exact or under."""
+    if not awards_match("transfer", award):
+        return None
+    maj, dt, v = _lo_hi(prog.get("total_units")), _lo_hi(prog.get("degree_total")), _lo_hi(value)
+    if maj[0] is None or dt[0] is None or v[0] is None:
+        return None
+    el = [_lo_hi(prog.get(k)) for k in ("open_elective_units", "degree_elective_units")]
+    lo = maj[0] + v[0] + sum(e[0] for e in el if e[0] is not None)
+    if lo <= dt[1]:
+        return None
+    start = _heading_end(text or "", prog.get("section_heading"))
+    dc = DOUBLE_COUNT.search((text or "")[start:] if start is not None else (text or ""))
+    if dc:
+        return None
+    return ("the figure %s with the major %s and stated electives comes to at least %s, past the degree total %s, "
+            "and the page states no double counting" % (_fmt_span(v), _fmt_span(maj), _num(lo), _fmt_span(dt)))
+
+
+def _fmt_span(v) -> str:
+    lo, hi = v
+    lo, hi = _num(lo), _num(hi)
+    return str(lo) if lo == hi else "%s-%s" % (lo, hi)
+
+
 def _college_steps(record: dict, text: str | None, college: str, award: str | None = None,
                    steps: dict | None = None, course_units: dict | None = None,
-                   course_hours: dict | None = None) -> tuple[dict, list[dict]]:
+                   course_hours: dict | None = None, holds: list | None = None) -> tuple[dict, list[dict]]:
     """The record with the college's reconcile steps applied to its page text, and
     a note per change: the field, what it was, what it is now, and the words.
     course_units is the page's own course data where the reader kept it
@@ -914,6 +946,13 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             needs = st.get("only_with") or []
             if any(_empty(prog.get(n)) or prog.get(n) == "" for n in ([needs] if isinstance(needs, str) else needs)):
                 continue
+            if field == "ge_units":
+                why = set_step_overlap(prog, st["value"], text, award)
+                if why:
+                    # Held, and said (the run prints it): the figure stays the catalog's, the record stays as read.
+                    if holds is not None:
+                        holds.append({"field": field, "value": st["value"], "why": why})
+                    continue
             words = m.group(0).strip()
             if st.get("source"):
                 words = "%s (%s: %s)" % (words, st["source"], st["source_words"])

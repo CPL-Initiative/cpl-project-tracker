@@ -4737,10 +4737,14 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
             moved += 1
         if src and isinstance(rec, dict):
             sibs = [x for x in family if x["control_number"] != filed.get("control_number")]
+            set_holds: list = []
             new, notes = R.reconcile(rec, src["text"], college, filed.get("award") or src.get("award"),
                                      course_units=src.get("course_units"),
                                      course_hours=src.get("course_hours"), title=filed.get("title"),
-                                     siblings=sibs, control_number=filed.get("control_number"))
+                                     siblings=sibs, control_number=filed.get("control_number"), holds=set_holds)
+            for hd in set_holds:
+                print("set-step %s held %s %s: %s" % (filed.get("control_number"), hd["field"], hd["value"], hd["why"]),
+                      flush=True)
             # Every record the statewide Cal-GETC rule asks about says filled or held, and why, so the compare
             # gate shows the held ones beside the filled (S648).
             trace = R.calgetc_trace(filed.get("control_number"), rec, notes, src["text"],

@@ -794,6 +794,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot/sequences/sources/smc_program_219.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_reconcile.json` | scripts: `kb/_program_requirements_reconcile.py` | — |
+| `kb/program_requirements_set_step_overlap_plan.json` | scripts: `kb/_program_requirements_readings_measure.py` | scripts: `kb/_program_requirements_readings_measure.py` |
 | `kb/program_requirements_wave` | none found | committed by: `program-requirements-wave.yml` |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
@@ -1470,5 +1471,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 930 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 931 file
 datasets · 195 external services · 582 consumers · 72 workflows · 41 tabs.

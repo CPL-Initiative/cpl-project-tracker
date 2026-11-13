@@ -1,0 +1,1643 @@
+{
+ "what": "S648: records under existing college set ge_units steps that sit in overlap, before the standing hold; and records the hold would keep from a figure (an upper bound)",
+ "measured_on": {
+  "commit": "7cd722539cafb49d7780ff6b0fcb872ed306626d",
+  "date": "2026-11-13T10:35:19-08:00",
+  "records": "kb/program_requirements_college/*/records/",
+  "kind": "a one-time measure of the committed records; no CI step checks it"
+ },
+ "colleges_with_set_ge_steps": [
+  "Berkeley City College",
+  "Butte College",
+  "Ca\u00f1ada College",
+  "Cerritos College",
+  "Cerro Coso Community College",
+  "College of Alameda",
+  "College of the Redwoods",
+  "Columbia College",
+  "De Anza College",
+  "East Los Angeles College",
+  "Grossmont College",
+  "Hartnell College",
+  "Las Positas College",
+  "Los Angeles City College",
+  "Los Angeles Pierce College",
+  "Los Angeles Valley College",
+  "Los Medanos College",
+  "Monterey Peninsula College",
+  "Orange Coast College",
+  "Rio Hondo College",
+  "Taft College",
+  "Victor Valley College",
+  "West Valley College"
+ ],
+ "counts": {
+  "filled_in_overlap": 76,
+  "filled_in_overlap_transfer": 59,
+  "would_hold_now": 3
+ },
+ "filled_in_overlap_by_college": {
+  "Las Positas College": 16,
+  "Butte College": 11,
+  "Rio Hondo College": 10,
+  "Columbia College": 7,
+  "West Valley College": 7,
+  "College of the Redwoods": 5,
+  "Los Medanos College": 5,
+  "De Anza College": 4,
+  "Taft College": 4,
+  "College of Alameda": 2,
+  "Orange Coast College": 2,
+  "Ca\u00f1ada College": 1,
+  "East Los Angeles College": 1,
+  "Los Angeles Valley College": 1
+ },
+ "filled_in_overlap": {
+  "Butte College": [
+   {
+    "control_number": "01298",
+    "title": "Agriculture Science",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 21,
+     "max": 21
+    },
+    "sum": [
+     72.0,
+     72.0
+    ],
+    "degree_total": [
+     60.0,
+     62.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "07264",
+    "title": "Graphic Design for Print",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 21,
+     "max": 21
+    },
+    "sum": [
+     66.0,
+     66.0
+    ],
+    "degree_total": [
+     60.0,
+     65.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "31930",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     67.0,
+     67.0
+    ],
+    "degree_total": [
+     60.0,
+     64.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "31954",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     67.0,
+     67.0
+    ],
+    "degree_total": [
+     60.0,
+     66.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "32721",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     66.0,
+     66.0
+    ],
+    "degree_total": [
+     60.0,
+     63.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "33563",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     67.0,
+     67.0
+    ],
+    "degree_total": [
+     60.0,
+     62.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "38057",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 21,
+     "max": 21
+    },
+    "sum": [
+     67.0,
+     67.0
+    ],
+    "degree_total": [
+     61.0,
+     63.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "44135",
+    "title": "Electrical Engineering",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 21,
+     "max": 21
+    },
+    "sum": [
+     68.0,
+     68.0
+    ],
+    "degree_total": [
+     64.0,
+     66.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "44349",
+    "title": "Mathematics and Science",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 21,
+     "max": 21
+    },
+    "sum": [
+     164.0,
+     164.0
+    ],
+    "degree_total": [
+     60.0,
+     64.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "45799",
+    "title": "Concrete Industry Technician",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 21,
+     "max": 21
+    },
+    "sum": [
+     65.0,
+     68.0
+    ],
+    "degree_total": [
+     62.0,
+     67.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "46540",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     69.0,
+     69.0
+    ],
+    "degree_total": [
+     62.0,
+     66.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "Ca\u00f1ada College": [
+   {
+    "control_number": "37122",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     63.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "College of Alameda": [
+   {
+    "control_number": "32714",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     72.0,
+     76.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "42964",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     61.0,
+     61.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": "figures: 'Major units required (including units that can be double-counted) 27.00' and 'Total Major Units 20.00'. total_units record",
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "College of the Redwoods": [
+   {
+    "control_number": "01796",
+    "title": "Forestry and Natural Resource Technology",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 21,
+     "max": 21
+    },
+    "sum": [
+     65.0,
+     69.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": "GE units are named; the page only says requirements can be double counted for GE. The Natural Resources Elective block requires 4-5",
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "31005",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     64.0,
+     67.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "31934",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     61.0,
+     61.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "35895",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     68.0,
+     68.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "42575",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     61.0,
+     61.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "Columbia College": [
+   {
+    "control_number": "32444",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     61.0,
+     68.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "35150",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     68.0,
+     68.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "38901",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     63.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "40892",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     63.0,
+     63.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "41581",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     61.0,
+     62.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "45599",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     66.0,
+     66.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "46241",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     69.0,
+     69.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "De Anza College": [
+   {
+    "control_number": "33336",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 45,
+     "max": 58
+    },
+    "sum": [
+     90.5,
+     108.0
+    ],
+    "degree_total": [
+     90.0,
+     90.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "39283",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 45,
+     "max": 58
+    },
+    "sum": [
+     100.0,
+     116.0
+    ],
+    "degree_total": [
+     90.0,
+     90.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "39390",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 45,
+     "max": 58
+    },
+    "sum": [
+     92.0,
+     109.0
+    ],
+    "degree_total": [
+     90.0,
+     90.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "45492",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 45,
+     "max": 58
+    },
+    "sum": [
+     101.0,
+     129.0
+    ],
+    "degree_total": [
+     90.0,
+     90.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "East Los Angeles College": [
+   {
+    "control_number": "41097",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     64.0,
+     65.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "Las Positas College": [
+   {
+    "control_number": "01008",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 22,
+     "max": 22
+    },
+    "sum": [
+     67.0,
+     67.0
+    ],
+    "degree_total": [
+     61.0,
+     61.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "01011",
+    "title": "Computer Information Systems",
+    "award": "A.A. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 28,
+     "max": 28
+    },
+    "sum": [
+     63.0,
+     63.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "01041",
+    "title": "Occupational Safety and Health",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 22,
+     "max": 22
+    },
+    "sum": [
+     61.0,
+     64.0
+    ],
+    "degree_total": [
+     60.0,
+     63.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "09211",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 28,
+     "max": 28
+    },
+    "sum": [
+     62.0,
+     64.0
+    ],
+    "degree_total": [
+     60.0,
+     61.0
+    ],
+    "double_count_in_notes": ". GE pattern may be either LPC-GE or Cal-GETC per the page; double counting GE and major courses is permitted. Ordinal markers (1st,",
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "30415",
+    "title": "Environmental Studies",
+    "award": "A.A. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 28,
+     "max": 28
+    },
+    "sum": [
+     65.0,
+     67.0
+    ],
+    "degree_total": [
+     58.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "30691",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 22,
+     "max": 22
+    },
+    "sum": [
+     61.0,
+     61.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "30969",
+    "title": "Emergency Medical Sciences",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 22,
+     "max": 22
+    },
+    "sum": [
+     72.0,
+     72.0
+    ],
+    "degree_total": [
+     69.0,
+     69.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "31047",
+    "title": "Chemistry Education",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 22,
+     "max": 22
+    },
+    "sum": [
+     64.0,
+     65.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "31901",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     62.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "35245",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     67.0,
+     67.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "35917",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     65.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "37127",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     63.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "38879",
+    "title": "Biology UC Pathway",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 22,
+     "max": 22
+    },
+    "sum": [
+     62.0,
+     62.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "41984",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     63.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "44793",
+    "title": "Modern Policing",
+    "award": "A.S. Degree",
+    "transfer": false,
+    "ge_units": {
+     "min": 22,
+     "max": 22
+    },
+    "sum": [
+     68.0,
+     68.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "46334",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     66.0,
+     70.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "Los Angeles Valley College": [
+   {
+    "control_number": "43998",
+    "title": "UCTP Chemistry",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     87.0,
+     87.0
+    ],
+    "degree_total": [
+     71.0,
+     71.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "Los Medanos College": [
+   {
+    "control_number": "31841",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     67.0,
+     67.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "32655",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     64.0,
+     64.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "35128",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     66.0,
+     66.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "35285",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     70.0,
+     70.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "41896",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     62.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "Orange Coast College": [
+   {
+    "control_number": "32202",
+    "title": "Elementary Teacher  Education",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": null,
+     "max": 34
+    },
+    "sum": [
+     69.0,
+     74.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "45785",
+    "title": "Elementary Teacher Education: Integrated Programs",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": null,
+     "max": 34
+    },
+    "sum": [
+     69.0,
+     74.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "Rio Hondo College": [
+   {
+    "control_number": "32258",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     66.0,
+     69.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "33394",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     89.0,
+     89.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "35399",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     70.0,
+     70.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "35576",
+    "title": "Chemistry",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     70.0,
+     70.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "36267",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     61.0,
+     63.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "37356",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     63.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "39982",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     64.5
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "41347",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     62.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "42915",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     75.0,
+     75.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "46471",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     66.0,
+     69.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "Taft College": [
+   {
+    "control_number": "35547",
+    "title": "AS-T in Biology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     69.0,
+     69.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "40272",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     66.0,
+     78.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "43025",
+    "title": "Law, Public Policy and Society",
+    "award": "A.A- T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     66.0,
+     66.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "44656",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     65.0,
+     66.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ],
+  "West Valley College": [
+   {
+    "control_number": "31991",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     61.0,
+     62.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "32435",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     73.0,
+     73.0
+    ],
+    "degree_total": [
+     66.0,
+     66.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "32442",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     62.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "35557",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     62.0,
+     66.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "36700",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     67.0,
+     68.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "41144",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     66.0,
+     66.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   },
+   {
+    "control_number": "45050",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "transfer": true,
+    "ge_units": {
+     "min": 34,
+     "max": 34
+    },
+    "sum": [
+     69.0,
+     69.0
+    ],
+    "degree_total": [
+     60.0,
+     60.0
+    ],
+    "double_count_in_notes": null,
+    "later_reconcile": "keeps its figure: a set step fills only an empty ge_units, and this record holds one; the standing hold (R.set_step_overlap) reads only a fresh reading with no GE units"
+   }
+  ]
+ },
+ "would_hold_now": {
+  "Ca\u00f1ada College": [
+   {
+    "control_number": "30881",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "value": {
+     "min": 34,
+     "max": 34
+    },
+    "why": "the figure 34 with the major 42 and stated electives comes to at least 76, past the degree total 63, and the page states no double counting"
+   }
+  ],
+  "Cerro Coso Community College": [
+   {
+    "control_number": "40922",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "value": {
+     "min": 35,
+     "max": 35
+    },
+    "why": "the figure 35 with the major 33 and stated electives comes to at least 68, past the degree total 60, and the page states no double counting"
+   }
+  ],
+  "Grossmont College": [
+   {
+    "control_number": "46141",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "value": {
+     "min": 34,
+     "max": 34
+    },
+    "why": "the figure 34 with the major 38 and stated electives comes to at least 72, past the degree total 65, and the page states no double counting"
+   }
+  ]
+ }
+}

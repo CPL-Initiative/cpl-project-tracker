@@ -1230,11 +1230,70 @@ elt = {"program": {"section_heading": "KINESIOLOGY ASSOCIATE IN ARTS FOR TRANSFE
                    "total_units": {"min": 30, "max": 31}, "degree_total": {"min": 60, "max": 60},
                    "ge_units": {"min": None, "max": None}, "ge_pattern": "Cal-GETC", "electives_fill_degree": True},
        "blocks": [{"name": "Major", "rule": "all", "courses": [{"code": "KIN 101", "units": 3}]}]}
-e_new, e_notes = R.reconcile(elt, ELT, "East Los Angeles College", "A.S. T Degree", steps=ST)
+e_holds: list = []
+e_new, e_notes = R.reconcile(elt, ELT, "East Los Angeles College", "A.S. T Degree", steps=ST, holds=e_holds)
 ep = e_new["program"]
-check("East Los Angeles 41097's shape: the sentence and the ADT paragraph's 34 both filed, and the degree passes as overlap",
-      ep.get("electives_fill_words", "").startswith("ADDITIONAL CSU UNITS") and ep.get("ge_units") == {"min": 34, "max": 34}
-      and S.degree_check(ep, (60.0, 60.0), 30.0, 31.0, [], ELT, "A.S. T Degree").get("overlap"))
+# Since S648 a college set step holds its figure from a transfer degree whose sum would pass the degree total and
+# whose page states no double counting (set_step_overlap): 30-31 + 34 passes 60, so the 34 is held and said. The
+# filed 41097 keeps the 34 it took before (a set step fills only an empty ge_units).
+check("East Los Angeles 41097's shape: the sentence is filed, and the ADT paragraph's 34 is held as an overlap, with why",
+      ep.get("electives_fill_words", "").startswith("ADDITIONAL CSU UNITS") and R._empty(ep.get("ge_units"))
+      and [h["field"] for h in e_holds] == ["ge_units"] and "past the degree total 60" in e_holds[0]["why"])
+ELT_DC = ELT + "\nCourses may be double counted toward the major and Cal-GETC."
+e2 = R.reconcile(elt, ELT_DC, "East Los Angeles College", "A.S. T Degree", steps=ST)[0]["program"]
+check("with the page stating double counting, the 34 fills and the degree passes as overlap",
+      e2.get("ge_units") == {"min": 34, "max": 34}
+      and S.degree_check(e2, (60.0, 60.0), 30.0, 31.0, [], ELT_DC, "A.S. T Degree").get("overlap"))
+# A set step's standing hold (S648, Grossmont 46141: degree total 65, major 38, 38 + 34 = 72).
+SS_STEPS = {"Fixture Set College": {"steps": [{"kind": "set", "field": "ge_units", "value": {"min": 34, "max": 34},
+                                               "awards": "transfer", "pattern": r"Cal-?GETC"}]}}
+SS_TEXT = "Physics for Transfer 2.0 (AS-T)\nUnits in the major 38\nCal-GETC\nTotal Units 65\n"
+ss_rec = lambda **kw: {"program": dict({"section_heading": "Physics for Transfer 2.0 (AS-T)", "ge_pattern": "Cal-GETC",
+                                        "ge_units": {"min": None, "max": None}, "degree_total": {"min": 65, "max": 65},
+                                        "total_units": {"min": 38, "max": 38}, "electives_fill_degree": True}, **kw),
+                       "blocks": []}
+ss_holds: list = []
+ss_out, ss_notes = R.reconcile(ss_rec(), SS_TEXT, "Fixture Set College", "A.S. T Degree", steps=SS_STEPS, holds=ss_holds)
+check("a set step holds its figure from a transfer degree whose sum passes its total (46141's shape), and says why",
+      ss_notes == [] and R._empty(ss_out["program"]["ge_units"]) and len(ss_holds) == 1
+      and "at least 72" in ss_holds[0]["why"] and "65" in ss_holds[0]["why"])
+check("a record that stands exact or under still takes the printed figure",
+      R.reconcile(ss_rec(total_units={"min": 26, "max": 26}), SS_TEXT, "Fixture Set College", "A.S. T Degree",
+                  steps=SS_STEPS)[0]["program"]["ge_units"] == {"min": 34, "max": 34}
+      and R.reconcile(ss_rec(total_units={"min": 20, "max": 20}), SS_TEXT, "Fixture Set College", "A.S. T Degree",
+                      steps=SS_STEPS)[0]["program"]["ge_units"] == {"min": 34, "max": 34})
+check("stated electives count toward the sum: 26 + 34 + 6 passes 65 and is held",
+      R.reconcile(ss_rec(total_units={"min": 26, "max": 26}, open_elective_units=6), SS_TEXT, "Fixture Set College",
+                  "A.S. T Degree", steps=SS_STEPS)[1] == [])
+check("a local degree keeps the present behavior: the figure fills whatever the sum",
+      R.reconcile(ss_rec(), SS_TEXT, "Fixture Set College", "A.S. Degree",
+                  steps={"Fixture Set College": {"steps": [dict(SS_STEPS["Fixture Set College"]["steps"][0],
+                                                                awards=None)]}})[0]["program"]["ge_units"]
+      == {"min": 34, "max": 34})
+check("a record with no major units or no degree total keeps the present behavior",
+      R.reconcile(ss_rec(total_units={"min": None, "max": None}), SS_TEXT, "Fixture Set College", "A.S. T Degree",
+                  steps=SS_STEPS)[0]["program"]["ge_units"] == {"min": 34, "max": 34}
+      and R.set_step_overlap(ss_rec(degree_total={"min": None, "max": None})["program"], {"min": 34, "max": 34},
+                             SS_TEXT, "A.S. T Degree") is None)
+check("a page stating double counting after the heading lets the figure fill",
+      R.reconcile(ss_rec(), SS_TEXT + "Up to 7 units may be double counted.\n", "Fixture Set College", "A.S. T Degree",
+                  steps=SS_STEPS)[0]["program"]["ge_units"] == {"min": 34, "max": 34})
+import _program_requirements_readings_measure as _SSM  # noqa: E402
+_ss_sc = {"arithmetic": {"pass": True, "status": "equal", "against": "program",
+                         "degree": {"pass": True, "status": "equal", "computed": [72.0, 72.0], "stated": [65.0, 65.0],
+                                    "overlap": True}}, "pass": True}
+_ss_recs = [{"college": "Fixture Set College", "control_number": "70001", "award": "A.S. T Degree", "title": "Physics",
+             "record": {"program": dict(ss_rec()["program"], ge_units={"min": 34, "max": 34})}, "score": _ss_sc,
+             "reconciled": [{"field": "ge_units", "now": {"min": 34, "max": 34}}]},
+            {"college": "Fixture Set College", "control_number": "70002", "award": "A.S. T Degree", "title": "Physics 2",
+             "record": {"program": ss_rec()["program"]}, "score": {"arithmetic": {}, "pass": False}}]
+_ssp = _SSM.set_step_overlap_plan(_ss_recs, SS_STEPS, "abc", "2026-11-13")
+check("the set-step plan lists a filled overlap with what a later reconcile does, and a record the hold would keep",
+      [r["control_number"] for r in _ssp["filled_in_overlap"]["Fixture Set College"]] == ["70001"]
+      and "keeps its figure" in _ssp["filled_in_overlap"]["Fixture Set College"][0]["later_reconcile"]
+      and [r["control_number"] for r in _ssp["would_hold_now"]["Fixture Set College"]] == ["70002"])
+check("the hold is said only to a caller that asks (no holds list: the record is left as read, nothing raised)",
+      R.reconcile(ss_rec(), SS_TEXT, "Fixture Set College", "A.S. T Degree", steps=SS_STEPS)[1] == [])
 no_pat = json.loads(json.dumps(elt))
 no_pat["program"]["ge_pattern"] = None
 check("East Los Angeles: a record naming no pattern takes no units",
