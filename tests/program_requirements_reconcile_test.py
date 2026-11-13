@@ -1301,6 +1301,11 @@ check("Cosumnes River's apply plan: the statewide route fills 30566, 33072 and 3
       and _cr_plan["held"] == ["31055", "31995", "41992", "46419"] and _cr_plan["restore_before_reread"] == []
       and _cr_plan["counts"]["pass_to_fail"] == 0 and _cr_plan["first_reconcile"] is True
       and _cr_plan["page_read"]["run"] == "43519918667")
+_cr_rv = _cr_plan["run_review"]
+check("Cosumnes River's first reconcile (43521338550): only 39656 filled and is kept; the 14 rescored records restored; "
+      "none passing to failing",
+      _cr_rv["run"] == "43521338550" and _cr_rv["kept"] == ["39656"] and len(_cr_rv["restored"]) == 14
+      and "30566" in _cr_rv["restored"] and _cr_rv["pass_to_fail_kept"] == [] and _cr_rv["fail_to_pass_kept"] == ["39656"])
 # 30566's section shape from the read (p.552): a generic 'Degree Requirements' heading, ended by a sibling's heading.
 _cr_text = ("ADTs also require that students must earn a C or better.\nDegree Requirements\nPSYC C1000 Introduction "
             "to Psychology 3\nTotal Units: 19\nThe Associate in Arts in Psychology for Transfer (AA-T) degree may be\n"

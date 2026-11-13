@@ -68,8 +68,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     33.0,
     33.0
@@ -79,10 +79,8 @@
     39.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    6.0,
-    6.0
+   "why": [
+    "the blocks sum to 33.0-33.0; the catalog states 39.0-39.0"
    ]
   },
   "repeated": {
@@ -110,7 +108,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -279,6 +277,5 @@
    "BIT 140 is printed as 'Residential Electrical Code Requirements' and BIT 141 as 'Commercial Electrical Code Requirements', differing from the state file titles (Electrical I/II)."
   ]
  },
- "extracted_run": 43521338550,
- "read_run": "39047009824"
+ "extracted_run": "39047009824"
 }

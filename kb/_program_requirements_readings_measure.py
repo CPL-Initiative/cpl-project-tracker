@@ -520,7 +520,7 @@ def reconcile_run_review(plan: dict, branch: dict, main: dict, run: str, keep: d
     not passing less, or where keep names it with a rule the page text shows; every other changed record is
     restored from main whole, so its extracted_run reverts and the reread does not post it."""
     keep = keep or {}
-    fig = (plan.get("step") or {}).get("value")
+    fig = (plan.get("step") or {}).get("value") if plan.get("route") == "college set step" else dict(R.CAL_GETC_UNITS)
     rows = []
     for cn in sorted(set(branch) | set(main)):
         b, m = branch.get(cn), main.get(cn)

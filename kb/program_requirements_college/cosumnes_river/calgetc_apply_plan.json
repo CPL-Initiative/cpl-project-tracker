@@ -198,5 +198,204 @@
   "run": "43519918667",
   "result": "Both plans answered (status 200, access ok, the hand-filed copy, 653 PDF pages). PDF pp.95-96 print a minimum per Cal-GETC area and no total (quoted in kb/program_requirements_reconcile.json), so the statewide step applies and no set step is needed. A simulation of R.calgetc_hold on the read's printed text of each program's pages, with Cosumnes River's filed siblings, fills all three: 30566's section runs from its own 'Degree Requirements' (p.552, the first in its page window) to the 'Career Information' heading after its outcomes, naming Cal-GETC once with no figure; 33072's and 39656's sections name Cal-GETC with no figure and no Area line. The reconcile run reads the capture's own text, so its trace lines decide."
  },
- "first_reconcile_note": "No Cosumnes River record carries reconciled notes: the reconcile dispatched for this apply is also the college's first reconcile and rescore, and reconcile_filed rescores every record whose page it reads again with no kept-passing guard. After it is filed, run --calgetc-review 'Cosumnes River College' --run RUN --against origin/main --restore: the three apply rows are kept where ge_units alone changed to 34, every other changed record goes back to main whole, and summary.json is recounted before the reread."
+ "first_reconcile_note": "No Cosumnes River record carries reconciled notes: the reconcile dispatched for this apply is also the college's first reconcile and rescore, and reconcile_filed rescores every record whose page it reads again with no kept-passing guard. After it is filed, run --calgetc-review 'Cosumnes River College' --run RUN --against origin/main --restore: the three apply rows are kept where ge_units alone changed to 34, every other changed record goes back to main whole, and summary.json is recounted before the reread.",
+ "run_review": {
+  "run": "43521338550",
+  "changed": 15,
+  "kept": [
+   "39656"
+  ],
+  "restored": [
+   "04602",
+   "04607",
+   "04614",
+   "07305",
+   "07314",
+   "07319",
+   "11319",
+   "11338",
+   "12260",
+   "30566",
+   "31055",
+   "33542",
+   "35410",
+   "38017"
+  ],
+  "fail_to_pass_kept": [
+   "39656"
+  ],
+  "held_would_pass": [],
+  "pass_to_fail_kept": [],
+  "records": [
+   {
+    "control_number": "04602",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "04607",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "04614",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "07305",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "07314",
+    "extracted_run": 43521338550,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "07319",
+    "extracted_run": 43521338550,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "11319",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "11338",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "12260",
+    "extracted_run": 43521338550,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "30566",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "an apply row whose run changed more than ge_units: "
+   },
+   {
+    "control_number": "31055",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "held in the plan: the statewide rule holds it: overlap"
+   },
+   {
+    "control_number": "33542",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "35410",
+    "extracted_run": 43521338550,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "38017",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "39656",
+    "extracted_run": 43521338550,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Curriculum (Cal-GETC) requirements. (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13)"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   }
+  ],
+  "filing_commit": "21c0d67e",
+  "log_line": "reconcile: 1 filed records changed, 14 rescored, 11 had no fresh page (11 of them on another page)",
+  "trace": "cal-getc 39656 filled: the statewide 34; cal-getc 30566 held: the section does not name Cal-GETC; 33072 no line (its fresh page moved, so the run did not read it); cal-getc 31055, 31995, 46419 held: the section does not name Cal-GETC; 41992 no line",
+  "first_reconcile_note": "Run 43521338550 is Cosumnes River's first reconcile and rescore. Only 39656 shows the fill in the run's trace, changed in ge_units alone, and is kept. 30566 and 33072 do not fill in this run: the fresh capture picked other pages for both (30566 pp.467-470, a page that names 'History, Psychology or Sociology AA-T' as another degree; 33072 pp.94-96, the Cal-GETC pattern page), so 30566's section read there names no Cal-GETC and 33072 was held as moved; both stay as main files them and wait for a capture that picks their own pages (552, 404). The 14 rescored records go back to main whole, 7 of them fail-to-pass by the rescore alone (04602, 04607, 04614, 07305, 11319, 11338, 33542), left for a rescore apply of their own. The capture's moved picks stay in capture.json and sources.json as the run filed them. summary.json recounted from the records: 136 pass (main 135), 66 fail on arithmetic (main 67)."
+ }
 }
