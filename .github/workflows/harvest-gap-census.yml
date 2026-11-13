@@ -25,19 +25,25 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      # The heading-agreement snapshot (S645, #3201): each record's own heading against its program,
-      # from the committed per-college files alone; no network. The same dispatch writes both status sets,
-      # and nothing gates a PR on either one's freshness.
-      - name: Heading agreement (committed files only)
-        run: python3 kb/_program_requirements_heading_agreement.py
       - name: Census (anon reads only)
         run: python3 kb/_harvest_gap_census.py --export out/harvest_gap_live.json
+      # The heading-agreement snapshot (S645, #3201): each record's own heading against its program,
+      # from the committed per-college files alone; no network. It runs after the census and fails soft:
+      # a failure here warns and never stops the census's commit. Nothing gates a PR on either snapshot.
+      - name: Heading agreement (committed files only; fails soft)
+        run: |
+          if ! python3 kb/_program_requirements_heading_agreement.py; then
+            echo "::warning::the heading-agreement snapshot did not regenerate; the census files without it"
+            git checkout -- kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md 2>/dev/null || true
+          fi
       - name: Commit to the branch that ran it
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/status/harvest_gap_census.json kb/status/harvest_gap_census.md
-          git add kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md
+          for f in kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
           if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
           git commit -m "Harvest gap census (run ${{ github.run_id }})"
           for i in 1 2 3 4; do

@@ -16853,7 +16853,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4411
+     "line": 4512
     }
    ],
    "served": true,
@@ -19169,12 +19169,6 @@
      "line": 64
     }
    ],
-   "producers": [
-    {
-     "by": "workflow:harvest-gap-census.yml",
-     "how": "commit"
-    }
-   ],
    "served": false,
    "main_committers": []
   },
@@ -19186,12 +19180,6 @@
      "direction": "read",
      "how": "literal",
      "line": 65
-    }
-   ],
-   "producers": [
-    {
-     "by": "workflow:harvest-gap-census.yml",
-     "how": "commit"
     }
    ],
    "served": true,
@@ -20404,7 +20392,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4408
+     "line": 4509
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20424,7 +20412,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4386
+     "line": 4445
     }
    ],
    "served": false,
@@ -21041,7 +21029,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4386
+     "line": 4479
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -27579,7 +27567,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4428
+     "line": 4529
     }
    ],
    "main_committers": []
@@ -27591,7 +27579,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4515
+     "line": 4616
     }
    ],
    "main_committers": []
@@ -32581,14 +32569,12 @@
    "name": "Harvest gap census",
    "crons": [],
    "scripts": [
-    "kb/_program_requirements_heading_agreement.py",
-    "kb/_harvest_gap_census.py"
+    "kb/_harvest_gap_census.py",
+    "kb/_program_requirements_heading_agreement.py"
    ],
    "adds": [
     "kb/status/harvest_gap_census.json",
-    "kb/status/harvest_gap_census.md",
-    "kb/status/harvest_heading_agreement.json",
-    "kb/status/harvest_heading_agreement.md"
+    "kb/status/harvest_gap_census.md"
    ],
    "push": null,
    "deploys": [],

@@ -245,6 +245,40 @@ mg = C.pdf_best("u", MIX, GOLF, UCODE[GOLF["control_number"]], "pypdf", numbers_
 check(mv["before"] == 1 and not mxc["uniform"] and mg is not None and mg.get("bound") is None
       and mg.get("after_unbound") == "block_not_named",
       "one before vote falls back to the title test: %r" % ((mv, mg and mg.get("after_unbound")),))
+# ── 2c. Decision 14: in a uniform catalog the number line is the only binder ─────────────────────
+HOTEL, INDIA, DELTA, KILO = UPROGS[7], UPROGS[8], UPROGS[3], UPROGS[10]
+# (a) A stale number no listed program holds still ends a block: Hotel's closing line prints 09999,
+# so India's block opens on India's own heading, never on Hotel's.
+STALE_U = ucatalog([ublock(p).replace("Control Number: 50007", "Control Number: 09999") for p in UPROGS])
+sctx_u = C.pdf_after_context(STALE_U, UPROGS, C.pdf_numbers_after(STALE_U, UPROGS))
+iu = C.pdf_best("u", STALE_U, INDIA, UCODE["50008"], "pypdf", numbers_after=sctx_u)
+check(sctx_u["uniform"] and iu and iu.get("bound") == "number_after" and iu.get("named") and "Hotel" not in iu["text"],
+      "an unlisted number still ends a block: India binds its own: %r" % ((iu and iu.get("after_unbound")),))
+# (c) Hotel's own number does not print: not_found, number_not_printed, and the heading picker never runs.
+hu = C.pdf_best("u", STALE_U, HOTEL, UCODE["50007"], "pypdf", numbers_after=sctx_u)
+check(hu and hu.get("after_unbound") == "number_not_printed" and not hu["text"] and hu["coverage"] == 0.0
+      and hu.get("bound") is None and hu["pages"] == [],
+      "a number that does not print is not_found, with no picker window: %r" % ((hu and (hu.get("after_unbound"), hu["pages"])),))
+# (d) A bound block below the accept share is not_found, low_coverage, with the block judged.
+kilo3 = UCODE["50010"] + [{"code": "KILO 1%02d" % k} for k in (3, 4, 5)]
+ku = C.pdf_best("u", UNI, KILO, kilo3, "pypdf", numbers_after=uctx)
+check(ku and ku.get("after_unbound") == "low_coverage" and ku.get("bound") is None and not ku["text"]
+      and ku["coverage"] < 0.5 and ku.get("judged", "").startswith("Kilo, AA"),
+      "a bound block under the accept share is low_coverage: %r" % ((ku and (ku.get("after_unbound"), ku["coverage"])),))
+# Consecutive repeats of one number count as one line (round 2, finding 4).
+DUP = ucatalog([ublock(p).replace("Control Number: 50003\n", "Control Number: 50003\nControl Number: 50003\n")
+                if p is DELTA else ublock(p) for p in UPROGS])
+dctx = C.pdf_after_context(DUP, UPROGS, C.pdf_numbers_after(DUP, UPROGS))
+du = C.pdf_best("u", DUP, DELTA, UCODE["50003"], "pypdf", numbers_after=dctx)
+eu = C.pdf_best("u", DUP, UPROGS[4], UCODE["50004"], "pypdf", numbers_after=dctx)
+check(du and du.get("bound") == "number_after" and du.get("named") and eu and eu.get("bound") == "number_after"
+      and eu.get("named"), "a number printed twice in a row is one line: Delta and Echo each bind their own")
+dpage = next(k for k, t in enumerate(DUP) if t.count("Control Number: 50003") == 2)
+second = [m for m in C.PDF_CN_LINE.finditer(DUP[dpage]) if m.group(1) == "50003"][1]
+dseg = C.pdf_after_block(DUP, dpage, second.start(), second.end(), running=dctx["running"])
+check(dseg and "Delta, AA" in DUP[dseg[0][0]][dseg[0][1]:dseg[0][2]],
+      "the repeat's own block runs back past the first copy to Delta's heading: %r" % dseg)
+
 # A section's header at the tops of three pages is passed over; at two, it is not.
 SEC = ["Non-Credit Programs / %d\nsccollege.edu\n%s" % (260 + k, b) for k, b in
        enumerate(["Alpha, AA\nA.A. Degree\nALPH 101 3\nControl Number: 50000\n",
@@ -304,13 +338,15 @@ check(C.pdf_closed_by("Control Number: 11856\nBiology, AS\nA.S. Degree\nControl 
 
 
 # ── 4. capture_pdf, both gate states, and the account ───────────────────────────────────────────
-def capture(pages, gated, progs=PROGS, folder=None, course_of=None):
+def capture(pages, gated, progs=PROGS, folder=None, course_of=None, alt=None):
+    """capture_pdf on a hand-filed fixture; alt: the pages pdfminer would give (the file then carries data)."""
     tmp = tempfile.mkdtemp()
     os.makedirs(os.path.join(tmp, "sources"))
     programs = [dict(p, shape="1", status="active", load_id="1", closed_list=(course_of or courses)(p)) for p in progs]
-    saved = (C.read_hand_filed, R.load_steps, C.COLLEGE_DIR)
-    C.read_hand_filed = lambda hf: {"url": "https://x.edu/c.pdf", "access": "hand_filed", "pages": pages,
-                                    "extractor": "pypdf"}
+    saved = (C.read_hand_filed, R.load_steps, C.COLLEGE_DIR, C.P.pdfminer_pages)
+    C.read_hand_filed = lambda hf: dict({"url": "https://x.edu/c.pdf", "access": "hand_filed", "pages": pages,
+                                         "extractor": "pypdf"}, **({"data": b"%PDF"} if alt is not None else {}))
+    C.P.pdfminer_pages = lambda pdf: {"pages": alt or [], "extractor": "pdfminer"}
     R.load_steps = lambda path=R.STEPS: {"Fixture College": {"pdf_numbers_after": True, "steps": []}} if gated else {}
     try:
         report = {}
@@ -323,7 +359,7 @@ def capture(pages, gated, progs=PROGS, folder=None, course_of=None):
         acct = C.refused_passing(folder, recs) if folder else None
         return report, srcs, acct
     finally:
-        C.read_hand_filed, R.load_steps, C.COLLEGE_DIR = saved
+        C.read_hand_filed, R.load_steps, C.COLLEGE_DIR, C.P.pdfminer_pages = saved
         shutil.rmtree(tmp)
 
 
@@ -345,6 +381,19 @@ finally:
 choice = [n for ex, n in seen_ctx if ex is None]
 check(choice and all(isinstance(n, dict) and n.get("by_cn") for n in choice),
       "the extractor's count of accepted windows reads by the gated reading: %r" % [type(n).__name__ for n in choice[:3]])
+# Ungated, the pypdf-or-pdfminer choice is main's: pypdf's text names no listed course, pdfminer's does, and
+# every pdf_best call (the choice's counts and the reads) carries no after reading (round 2, finding 3).
+seen_ctx = []
+C.pdf_best = lambda *a, **k: seen_ctx.append((a[4], k.get("numbers_after"))) or real_best(*a, **k)
+try:
+    with contextlib.redirect_stdout(io.StringIO()):
+        rep_alt, _, _ = capture(["no course codes here"] * 3, False, alt=AFTER)
+finally:
+    C.pdf_best = real_best
+check(rep_alt["pdf"]["extractor"] == "pdfminer" and rep_alt["pdf"]["pypdf_accepted"] == 0
+      and rep_alt["pdf"]["pdfminer_accepted"] == len(PROGS) and seen_ctx and all(n is False for _, n in seen_ctx),
+      "ungated: the extractor choice and every read are main's: %r"
+      % ((rep_alt["pdf"].get("extractor"), {type(n).__name__ for _, n in seen_ctx}),))
 na = rep_on["pdf"]["numbers_after"]
 check(na["gated"] is True and na["read"] == "number_after" and na["after_mode"] is True,
       "gated: the capture files the votes and reads by number: %r" % na)
@@ -425,10 +474,12 @@ try:
         return out
     out = extract(None)
     kept = sorted(os.listdir(os.path.join(out, "records")))
-    check(kept == ["11856.json"], "a passing refused record stays on file; a failing one does not: %r" % kept)
+    check(kept == ["11856.json", "11943.json"],
+          "a refused program's filed record stays on file, passing or failing (decision 14): %r" % kept)
     listed = os.path.join(out, "kept_unbound_0.json")
-    check(os.path.isfile(listed) and json.load(open(listed)) == {"programs": ["11856"]}, "and the run lists it")
-    # Filing the run keeps the kept record's own source entry, never the refusal beside it.
+    check(os.path.isfile(listed) and json.load(open(listed)) == {"programs": ["11856", "11943"], "forced_unbound": []},
+          "and the run lists them")
+    # Filing the run keeps a kept record's own source entry, never the refusal beside it.
     dest = tempfile.mkdtemp()
     saved_dir = C.COLLEGE_DIR
     C.COLLEGE_DIR = dest
@@ -444,14 +495,62 @@ try:
         with open(os.path.join(slug, "sources.json")) as fh:
             entry = {x["control_number"]: x for x in json.load(fh)}
         check(entry.get("11856", {}).get("source") == {"url": "old"} and entry.get("11943", {}).get("method") == "not_found",
-              "the filing keeps the kept record's source entry: %r" % entry.get("11856"))
-        check(sorted(os.listdir(os.path.join(slug, "records"))) == ["11856.json"], "and files the kept record")
+              "the filing keeps a kept record's source entry, and with none the new one: %r" % entry.get("11856"))
+        check(sorted(os.listdir(os.path.join(slug, "records"))) == ["11856.json", "11943.json"], "and files both")
     finally:
         C.COLLEGE_DIR = saved_dir
         shutil.rmtree(dest)
     shutil.rmtree(out)
+    # A forced number the after path cannot bind is never extracted, keeps its record, and is named.
     out = extract({"11856"})
-    check(os.listdir(os.path.join(out, "records")) == [], "a forced control number is not kept")
+    check(sorted(os.listdir(os.path.join(out, "records"))) == ["11856.json", "11943.json"],
+          "a forced number that does not bind keeps its filed record (round 2, finding 7)")
+    fu = json.load(open(os.path.join(out, "kept_unbound_0.json")))["forced_unbound"]
+    check([(e["control_number"], e["closed_by"], e["filed"], e["passing"]) for e in fu] == [("11856", "35110", True, True)]
+          and (fu[0].get("judged") or "").startswith("Control Number: 11856"),
+          "and the run names it forced_unbound, with its closing number and the block judged: %r" % fu)
+    # The filed account moves it from refused_passing to forced_unbound.
+    dest = tempfile.mkdtemp()
+    C.COLLEGE_DIR = dest
+    try:
+        with open(os.path.join(out, "capture.json"), "w") as fh:
+            json.dump({"college": "Fixture College", "would_extract": {"refused_passing": acct, "forced_unbound": []}}, fh)
+        with contextlib.redirect_stdout(io.StringIO()):
+            C.file_run("Fixture College", out, "new")
+        filed_acct = json.load(open(os.path.join(dest, C.slug_of("Fixture College"), "capture.json")))["would_extract"]
+        check(filed_acct["refused_passing"] == [] and [e["control_number"] for e in filed_acct["forced_unbound"]] == ["11856"],
+              "the filed account names the forced one forced_unbound, the rest refused_passing: %r" % filed_acct)
+    finally:
+        C.COLLEGE_DIR = saved_dir
+        shutil.rmtree(dest)
+    shutil.rmtree(out)
+    # The capture account itself: would_extract carries both keys, split by the run's force (FORCE).
+    recs = [dict(srcs["11856"]), dict(srcs["11856"], control_number="11943")]
+    with contextlib.redirect_stdout(io.StringIO()):
+        we = C.would_extract("Fixture College", recs, folder)
+    check([e["control_number"] for e in we["refused_passing"]] == ["11856"] and we["forced_unbound"] == [],
+          "would_extract: refused_passing names the unforced passing one: %r" % we.get("refused_passing"))
+    os.environ["FORCE"] = "11856,11943"
+    try:
+        we = C.would_extract("Fixture College", recs, folder)
+    finally:
+        del os.environ["FORCE"]
+    check(we["refused_passing"] == [] and sorted((e["control_number"], e["passing"]) for e in we["forced_unbound"])
+          == [("11856", True), ("11943", False)],
+          "would_extract: forced numbers move to forced_unbound, each with its record's state: %r" % we.get("forced_unbound"))
+    # A forced number whose block was not bound, though the heading picker read a window for it (votes
+    # not uniform), is not extracted: its record stays and it is named forced_unbound (decision 14e).
+    out = tempfile.mkdtemp()
+    os.makedirs(os.path.join(out, "sources"))
+    picked = dict(srcs["11943"], control_number="11856",
+                  source=dict(srcs["11943"]["source"], after_unbound="block_not_named"))
+    with open(os.path.join(out, "sources", "11856.json"), "w") as fh:
+        json.dump(picked, fh)
+    with contextlib.redirect_stdout(io.StringIO()):
+        C.extract(out, 0, 1, "new", 1, folder, {"11856"})
+    fu = json.load(open(os.path.join(out, "kept_unbound_0.json")))["forced_unbound"]
+    check(os.listdir(os.path.join(out, "records")) == ["11856.json"] and [e["control_number"] for e in fu] == ["11856"]
+          and "11856" not in calls, "a forced picker read that did not bind is never sent: %r" % ((calls, fu),))
     shutil.rmtree(out)
     check(calls == [], "no source with text reached the model: %r" % calls)
 finally:

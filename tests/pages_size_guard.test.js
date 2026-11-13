@@ -34,8 +34,10 @@ check("no served page or script reaches kb/receipts (" + served.length + " files
 const HARVEST_INTERNAL = [["rm -rf", "_site/kb/harvest_scouting"], ["rm -f", "_site/kb/status/harvest_heading_agreement.json"],
                           ["rm -f", "_site/kb/status/harvest_heading_agreement.md"]];
 HARVEST_INTERNAL.forEach(([cmd, path]) => {
-  const at = assemble.indexOf(path);
-  check(path.replace("_site/", "") + " is pruned from the site", at >= 0 && assemble.lastIndexOf(cmd, at) >= 0);
+  // Line-anchored, so a prune commented out or its path replaced in place fails here (round 2, finding 17).
+  const esc = (s) => s.replace(/[.*+?^${}()|[\]\\\/]/g, "\\$&");
+  const line = new RegExp("^[ \\t]*" + esc(cmd) + "[ \\t]+(?:[^\\n#]*\\s)?" + esc(path) + "(?=\\s|$)", "m");
+  check(path.replace("_site/", "") + " is pruned from the site", line.test(assemble));
   const name = path.replace("_site/", "");
   const reads = served.filter((f) => fs.readFileSync(f, "utf8").indexOf(name) >= 0);
   check("no served page or script reaches " + name, reads.length === 0, reads.join(", "));
