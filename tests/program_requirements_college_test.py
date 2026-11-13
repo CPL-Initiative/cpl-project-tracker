@@ -223,6 +223,60 @@ check(byc["99999"]["closed_list"] == [] and byc["99999"]["status"] == "Active - 
 check([byc[k]["shape"] for k in ("42158", "41982", "45549", "36675")] == ["degree", "certificate", "adt", "noncredit"],
       "each program's shape comes from its award")
 
+# ── a code the state's file stores under its subject's name (San Jose City, S644) ──
+# The file stores "Accounting (ACCTG) 101"; the catalog prints ACCTG 101. Read as stored,
+# the coarse net named 0 of Accounting A.S.'s 9 listed courses on its own page and the
+# capture found 7 of 90 programs (capture-only run 43338146577).
+check(C.file_code("Accounting (ACCTG) 101") == "ACCTG 101"
+      and C.file_code("Kinesiology-Athletics, Men (KINAM) 012B") == "KINAM 012B"
+      and C.file_code("Art (ART) 027A") == "ART 027A"
+      and C.file_code("PSYCH (Psychology) 51") == "PSYCH 51",
+      "a code stored under its subject's name reads as the letters in capitals beside the number")
+check(C.file_code("AIRC 121") == "AIRC 121" and C.file_code("IWAP 40.1") == "IWAP 40.1"
+      and C.file_code(None) is None and C.file_code("Special (Topics) 9") == "Special (Topics) 9",
+      "a code already in its printed form, or with no capitals to read, is left as stored")
+# The page prints ACCTG 020 where the file, rewritten, says ACCTG 20: the normal form both the
+# net and the scorer key on reads them as one code, and a letter after the number stays.
+check(P.norm_code(C.file_code("Accounting (ACCTG) 20")) == P.norm_code("ACCTG 020") == "ACCTG20"
+      and P.norm_code(C.file_code("Art (ART) 055A")) == P.norm_code("ART 055A") == "ART55A"
+      and P.norm_code("ART 055A") != P.norm_code("ART 055B") and P.norm_code("ART 055A") != P.norm_code("ART 55"),
+      "the file's ACCTG 20 and the page's ACCTG 020 are one code; ART 055A keeps its letter")
+import _build_roep_display as RD  # noqa: E402
+import _harvest_no_closed_list_diagnosis as ND  # noqa: E402
+check(RD.ck("Accounting (ACCTG) 20") == RD.ck("ACCTG 020") and RD.ck("Art (ART) 055A") == RD.ck("ART 055A") != RD.ck("ART 055B")
+      and ND.norm_code("Air Conditioning (AIRC) 132") == ND.norm_code("AIRC 132"),
+      "the display builder's join and the no-closed-list diagnosis read a stored code through file_code()")
+# Other colleges' codes as the state's file and MAP store them (unified_courses_members.js,
+# kb/reference/coci_program_course_file.csv.gz), slashes, ampersands, campus letters and decimals
+# among them, and a course title with parentheses: none is rewritten.
+OTHER_CODES = ["HORT 001 F", "CYBR 100 F", "ATC 236 C", "CNA/N 626", "KIN/D 130A", "FAM &CS 91",
+               "M/LAT 030A", "HVAC/R 055C", "BNK/F 55", "CPSC-17", "IWAP 40.10", "CISN121", "ACCT 01AH",
+               "Red Hat Linux System Administration II (RH134)", "Introduction to Musical Instrument Digital Interface (MIDI)"]
+check(all(C.file_code(c) == c for c in OTHER_CODES),
+      "every other college's code passes through file_code() unchanged")
+other = C.group_programs([{"control_number": "1", "program_title": "X", "award": "A.S. Degree", "status": "Active"}],
+                         [{"program_control_number": "1", "course_control_number": str(n), "course_code": c, "units": 3, "load_id": "L"}
+                          for n, c in enumerate(OTHER_CODES)])[0]["closed_list"]
+check([c["code"] for c in other] == OTHER_CODES and not any("file_code" in c for c in other),
+      "another college's closed list is grouped exactly as stored, with no file_code beside any course")
+sj_progs = [{"control_number": "06185", "program_title": "Accounting", "award": "A.S. Degree", "status": "Active"}]
+sj_rows = [{"program_control_number": "06185", "course_control_number": str(n), "course_code": code, "units": 5, "load_id": "L"}
+           for n, code in enumerate(["Accounting (ACCTG) 20", "Accounting (ACCTG) 21", "Business (BUS) 071", "CIS 041"])]
+sj = C.group_programs(sj_progs, sj_rows)[0]["closed_list"]
+check([c["code"] for c in sj] == ["ACCTG 20", "ACCTG 21", "BUS 071", "CIS 041"]
+      and sj[0]["file_code"] == "Accounting (ACCTG) 20" and "file_code" not in sj[3],
+      "the closed list carries the printed code, the stored form kept beside it")
+# The Requirements tab as the capture read it on Accounting A.S.'s own page (page read 43344961799).
+SJ_TAB = ("[Tab: Requirements]\nMajor Requirements\nCourse List\nCourse\nTitle\nCredits\n"
+          "ACCTG 020\tFinancial Accounting\t5\nACCTG 021\tManagerial Accounting\t5\nACCTG 030\tQuickBooks\t3\n"
+          "BUS 071\tLegal Environment of Business\t3\nCIS 041\tIntroduction to Computer Information Systems\t3\n"
+          "Total Units\t35")
+check(C.net_hits(sj, C.page_codes(SJ_TAB)) == 4 and P.coverage(P.find_codes(SJ_TAB, sj), sj) == 1.0,
+      "the coarse net and the coverage test read every listed course on the program's own page")
+stored = P.closed_from_rows(sj_rows)
+check(C.net_hits(stored, C.page_codes(SJ_TAB)) == 1 and P.coverage(P.find_codes(SJ_TAB, stored), stored) == 0.25,
+      "read as stored, the page names only the one course already in its printed form (the S644 failure)")
+
 # ── the page each program is read from ──────────────────────────────────────
 AA_TEXT = "Field Ironworkers, A.A. Required courses IWAP 40.10 Rigging IWAP 40.20 Welding Total 60 units"
 CERT_TEXT = "Field Ironworkers Certificate of Achievement IWAP 40.10 IWAP 40.20 Total 30 units"

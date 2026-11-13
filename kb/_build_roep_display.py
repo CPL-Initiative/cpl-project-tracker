@@ -79,6 +79,7 @@ sys.path.insert(0, HERE)
 
 import _program_requirements_load as loader  # noqa: E402  (checked logic, one place)
 from _program_requirements_score import degree_reading, places_none  # noqa: E402
+from _program_requirements_college import file_code  # noqa: E402  (the one rewrite of a stored code)
 
 PILOT = os.path.join(HERE, "program_requirements_pilot")
 MAP_READ = os.path.join(PILOT, "map_cr_by_course.json")
@@ -138,8 +139,10 @@ def ck(code: str) -> str:
     """'IWAP 40.5' and 'IWAP 40.50' are one course (harvest lesson 23); the mock-up's ck().
     A hyphen reads as a space: Riverside's catalog prints 'ADJ-1' where MAP prints 'ADJ 1'.
     Leading zeros drop: West LA's catalog prints 'ANATOMY 001' where the state's file
-    lists 'ANATOMY 1' (16 West LA courses lost their title and identity without it)."""
-    s = re.sub(r"\s+", " ", str(code or "").upper().replace("-", " ")).strip()
+    lists 'ANATOMY 1' (16 West LA courses lost their title and identity without it).
+    A code the state's file stores under its subject's name reads as the catalog prints it:
+    San Jose City's 'Accounting (ACCTG) 20' is the page's 'ACCTG 020' (file_code(), S644)."""
+    s = re.sub(r"\s+", " ", str(file_code(code) or "").upper().replace("-", " ")).strip()
     m = re.match(r"^(.*?)\s*([0-9]+)(\.([0-9]+))?([A-Z]*)$", s)
     if not m:
         return s.replace(" ", "")
