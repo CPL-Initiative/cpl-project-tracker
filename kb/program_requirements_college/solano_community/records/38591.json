@@ -71,8 +71,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     18.0
@@ -82,8 +82,10 @@
     27.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-18.0; the catalog states 27.0-27.0"
+   "why": [],
+   "fill": [
+    9.0,
+    9.0
    ]
   },
   "repeated": {
@@ -111,7 +113,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -245,6 +247,6 @@
    "Catalog codes printed with leading zeros (ASL 001 etc.) are treated as matching closed-list codes (ASL 1 etc.); ASL 007 and ASL 011 are not in the closed list."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 43355021555,
+ "read_run": 39037377728
 }

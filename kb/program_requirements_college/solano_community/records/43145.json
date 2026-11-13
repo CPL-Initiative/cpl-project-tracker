@@ -67,7 +67,6 @@
   "arithmetic": {
    "pass": true,
    "status": "equal",
-   "meets": true,
    "computed": [
     18.0,
     20.0
@@ -78,7 +77,7 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -321,6 +320,6 @@
    "Program outcomes are printed specifically for this A.A.-T award."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 43355021555,
+ "read_run": 39037377728
 }

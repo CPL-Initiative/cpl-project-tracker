@@ -90,8 +90,7 @@
     37.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -410,6 +409,6 @@
    "Page 405 contains PHYS course descriptions (PHYS 002, 004, 010, etc.); these are not program requirements and were not recorded. Career-like mentions there (teachers, technicians) belong to course descriptions and were not recorded as careers."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 43355021555,
+ "read_run": 39037377728
 }
