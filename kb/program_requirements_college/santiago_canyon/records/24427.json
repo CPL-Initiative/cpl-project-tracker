@@ -1,0 +1,182 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "24427",
+ "shape": "noncredit",
+ "title": "Customer Service Representative",
+ "award": "Noncredit program",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12454,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12454,
+    "output_tokens": 915,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 915,
+  "output_tokens_details": {
+   "thinking_tokens": 317
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06812,
+ "ms": 8793,
+ "seconds": 8.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    180.0,
+    180.0
+   ],
+   "stated": [
+    180.0,
+    180.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Customer Service Representative, CC",
+   "measure": "hours",
+   "total_units": {
+    "min": 180,
+    "max": 180
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "commercial or residential service representatives"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 180,
+     "max": 180
+    },
+    "courses": [
+     {
+      "code": "VBUS119",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS260",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WKPR500",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Award is a noncredit Certificate of Completion counted in hours; all units fields hold hours.",
+   "The block is printed under 'All of the following' with the sub-line 'The following number of Hours'. Its three 60-hour courses add up to the stated 180 hours, so it is recorded as all required.",
+   "Catalog prints codes without a space (VBUS119, VBUS260, WKPR500). These match the closed-list codes VBUS 119, VBUS 260 and WKPR 500.",
+   "No program learning outcomes are printed for this award.",
+   "The description names work settings (major department stores, collection agencies, credit bureaus, airlines, travel agencies, medical insurance agencies, public utilities, telephone answering services). These are recorded as places of employment, not as careers; a reviewer may wish to check."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "b2ca08a072692b8b",
+ "source_codes": [
+  "VBUS119",
+  "VBUS260",
+  "WKPR500"
+ ],
+ "source_coverage": 1.0
+}

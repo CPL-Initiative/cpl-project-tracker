@@ -1,0 +1,172 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "24234",
+ "shape": "noncredit",
+ "title": "ESL Intermediate Multilevel, COM",
+ "award": "Noncredit program",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7681,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7681,
+    "output_tokens": 724,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 724,
+  "output_tokens_details": {
+   "thinking_tokens": 195
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0452,
+ "ms": 7186,
+ "seconds": 7.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    312.0,
+    432.0
+   ],
+   "stated": [
+    312.0,
+    432.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL Intermediate Multilevel, COM",
+   "measure": "hours",
+   "total_units": {
+    "min": 312,
+    "max": 432
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "The following number of Hours",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 312,
+     "max": 432
+    },
+    "courses": [
+     {
+      "code": "ESL303",
+      "units": 96,
+      "units_max": 216,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL500",
+      "units": 216,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Competency counted in hours; the program total (312.0 - 432.0 hours) is printed on the 'Program Rules' line.",
+   "The block heading 'The following number of Hours' does not state a choice; it is read as 'all' because the printed total (312-432) equals the sum of both courses' hour ranges (96+216 to 216+216).",
+   "ESL500 is printed with 'Total Hours 216.0 - 216.0', recorded as 216 hours with no range.",
+   "The catalog prints codes without a space (ESL303, ESL500); they match closed-list ESL 303 and ESL 500.",
+   "No program learning outcomes or careers are printed for this award; 'enhanced job opportunities' is not a named career."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "c995cbabbd1aebbd",
+ "source_codes": [
+  "ESL303",
+  "ESL500"
+ ],
+ "source_coverage": 1.0
+}

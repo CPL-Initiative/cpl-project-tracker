@@ -1,0 +1,310 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "44319",
+ "shape": "certificate",
+ "title": "Data Science, CA",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7092,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7092,
+    "output_tokens": 1751,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1751,
+  "output_tokens_details": {
+   "thinking_tokens": 519
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06339,
+ "ms": 14949,
+ "seconds": 15.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 16,
+   "share": 0.938,
+   "missing": [
+    "MATH225"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DATA100"
+   ],
+   "flagged": [
+    "DATA100"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    16.0,
+    19.5
+   ],
+   "stated": [
+    16.0,
+    19.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Data Science, CA",
+   "measure": "units",
+   "total_units": {
+    "min": 16,
+    "max": 19.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "Associate Data Scientist",
+    "Junior Data Scientist",
+    "Modeling and Simulation Specialist",
+    "Modeling and Simulation Analyst",
+    "Big Data Analyst",
+    "Senior Data Analyst"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "CIS111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CMPR120",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR131",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DATA100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH287",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH290",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following list:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "CMPR121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR149",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC125H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000E",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "MATH 225",
+    "why": "not in the text; catalog lists DATA100 Introduction to Data Science in its place (likely renumbered)"
+   }
+  ],
+  "notes": [
+   "DATA100 Introduction to Data Science is not in the closed list; it shares the title of closed-list MATH 225 and may be a renumbering of it.",
+   "Codes are recorded as the catalog prints them without a space (e.g., CIS111, STATC1000).",
+   "The catalog prints 'Please select CIS111 or CMPR120' and 'Please select MATH287 or MATH290' as (Total Units 0.0 - 0.0) choice headers inside Major Requirements; each pair is recorded as one entry with an alternative.",
+   "SOC125H and STATC1000H are recorded as honors alternatives of SOC125 and STATC1000; STATC1000E is kept as its own entry.",
+   "The certificate's section spans a page break (pages 125-126); the list appears complete.",
+   "No program learning outcomes are printed in the text."
+  ]
+ },
+ "extracted_run": "43387912036",
+ "source_sha": "8a05db99fdad52a0",
+ "source_codes": [
+  "CIS111",
+  "CMPR120",
+  "CMPR121",
+  "CMPR131",
+  "CMPR149",
+  "MATH270",
+  "MATH287",
+  "MATH290",
+  "PSYC220",
+  "SOC120",
+  "SOC125",
+  "SOC125H",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.938
+}

@@ -1,0 +1,220 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "24426",
+ "shape": "noncredit",
+ "title": "Executive Assistant",
+ "award": "Noncredit program",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6404,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6404,
+    "output_tokens": 1052,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1052,
+  "output_tokens_details": {
+   "thinking_tokens": 318
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04666,
+ "ms": 9127,
+ "seconds": 9.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 7,
+   "listed": 8,
+   "share": 0.875,
+   "missing": [
+    "WKPR508"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    360.0,
+    360.0
+   ],
+   "stated": [
+    360.0,
+    360.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Executive Assistant, CC",
+   "measure": "hours",
+   "total_units": {
+    "min": 360,
+    "max": 360
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "high-level administrative support positions"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "choose_units",
+    "minimum": 360,
+    "option_group": null,
+    "stated": {
+     "min": 360,
+     "max": 360
+    },
+    "courses": [
+     {
+      "code": "VBUS013",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS260",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS261",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS262",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS304",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS117",
+      "units": 30,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WKPR500",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "WKPR 508",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The listed course hours sum to 390 (5 x 60 + 30 + 60), but the catalog states Total Hours 360.0 for both the program and the Certificate Requirements block. The block is headed 'The following number of Hours', so it is recorded as choose_units with a minimum of 360. A reviewer should check whether all courses are required, which would make the 360 total a catalog error.",
+   "The catalog prints codes without a space (VBUS013 and so on). VBUS013 is taken to be closed-list VBUS 13.",
+   "The award is labeled Certificate of Completion (noncredit) and is counted in hours.",
+   "The text prints no program learning outcomes."
+  ]
+ },
+ "extracted_run": "43387912036",
+ "source_sha": "ec3abbd518f82a44",
+ "source_codes": [
+  "VBUS117",
+  "VBUS13",
+  "VBUS260",
+  "VBUS261",
+  "VBUS262",
+  "VBUS304",
+  "WKPR500"
+ ],
+ "source_coverage": 0.875
+}

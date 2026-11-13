@@ -1,0 +1,334 @@
+{
+ "college": "Santiago Canyon College",
+ "load_run": "43342030025",
+ "function": "program_requirement_records_college_load",
+ "at": "2026-11-13T01:05:11Z",
+ "records": 222,
+ "posted": 192,
+ "batches": 8,
+ "inserted": 192,
+ "kept": 0,
+ "skipped": [
+  {
+   "control_number": "11858",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11860",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11874",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11909",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11948",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11985",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11986",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "13230",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "13232",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "13234",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18117",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18118",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18320",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19590",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19625",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21673",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22271",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31588",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31847",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32319",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37073",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37132",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38157",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39807",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39919",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42990",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44326",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45579",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45606",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45737",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "extracted_runs": [
+  "43339249633"
+ ],
+ "machine_pass": 149,
+ "inserted_keys": [
+  "11856",
+  "11857",
+  "11859",
+  "11861",
+  "11866",
+  "11902",
+  "11903",
+  "11905",
+  "11906",
+  "11907",
+  "11908",
+  "11910",
+  "11911",
+  "11921",
+  "11925",
+  "11928",
+  "11929",
+  "11933",
+  "11938",
+  "11943",
+  "11947",
+  "11988",
+  "13231",
+  "17688",
+  "17759",
+  "18317",
+  "18318",
+  "18319",
+  "19587",
+  "19588",
+  "19589",
+  "19623",
+  "19624",
+  "21631",
+  "21635",
+  "21639",
+  "21644",
+  "21647",
+  "21649",
+  "21657",
+  "21658",
+  "21659",
+  "21660",
+  "21661",
+  "21662",
+  "21663",
+  "21664",
+  "21667",
+  "21668",
+  "21669",
+  "21674",
+  "22270",
+  "24037",
+  "24052",
+  "24093",
+  "24095",
+  "24097",
+  "24146",
+  "24187",
+  "24191",
+  "24195",
+  "24196",
+  "24198",
+  "24230",
+  "24233",
+  "24234",
+  "24285",
+  "24420",
+  "24426",
+  "24427",
+  "30644",
+  "30646",
+  "30647",
+  "30690",
+  "30985",
+  "31039",
+  "31040",
+  "31041",
+  "31366",
+  "31574",
+  "31589",
+  "31601",
+  "31706",
+  "31715",
+  "31720",
+  "31730",
+  "31735",
+  "31848",
+  "32042",
+  "32043",
+  "32044",
+  "32045",
+  "32364",
+  "32434",
+  "32599",
+  "32602",
+  "32648",
+  "32968",
+  "33137",
+  "33161",
+  "33379",
+  "33422",
+  "33561",
+  "33562",
+  "33941",
+  "35110",
+  "35233",
+  "35234",
+  "35614",
+  "35735",
+  "36208",
+  "36209",
+  "36210",
+  "36211",
+  "36212",
+  "36213",
+  "36214",
+  "36215",
+  "36216",
+  "36217",
+  "36370",
+  "36371",
+  "36372",
+  "36585",
+  "36665",
+  "36897",
+  "36898",
+  "36900",
+  "36901",
+  "36914",
+  "37102",
+  "37133",
+  "37161",
+  "37162",
+  "37164",
+  "37478",
+  "37803",
+  "37805",
+  "37806",
+  "37807",
+  "37825",
+  "37911",
+  "37913",
+  "38281",
+  "38398",
+  "38399",
+  "38400",
+  "39808",
+  "39916",
+  "39917",
+  "39918",
+  "39920",
+  "39921",
+  "40510",
+  "40639",
+  "41165",
+  "41770",
+  "42027",
+  "42317",
+  "42387",
+  "42497",
+  "42815",
+  "42991",
+  "43227",
+  "43259",
+  "43319",
+  "43691",
+  "43692",
+  "43876",
+  "43901",
+  "44174",
+  "44233",
+  "44319",
+  "44436",
+  "44459",
+  "44797",
+  "44861",
+  "44862",
+  "45504",
+  "45505",
+  "45533",
+  "45580",
+  "45581",
+  "45607",
+  "45609",
+  "45619",
+  "45794",
+  "45881",
+  "46019",
+  "46027",
+  "46150",
+  "46367"
+ ],
+ "kept_keys": [],
+ "rollback": "delete from public.program_requirement_records where college = 'Santiago Canyon College' and checked = false and control_number in ('11856', '11857', '11859', '11861', '11866', '11902', '11903', '11905', '11906', '11907', '11908', '11910', '11911', '11921', '11925', '11928', '11929', '11933', '11938', '11943', '11947', '11988', '13231', '17688', '17759', '18317', '18318', '18319', '19587', '19588', '19589', '19623', '19624', '21631', '21635', '21639', '21644', '21647', '21649', '21657', '21658', '21659', '21660', '21661', '21662', '21663', '21664', '21667', '21668', '21669', '21674', '22270', '24037', '24052', '24093', '24095', '24097', '24146', '24187', '24191', '24195', '24196', '24198', '24230', '24233', '24234', '24285', '24420', '24426', '24427', '30644', '30646', '30647', '30690', '30985', '31039', '31040', '31041', '31366', '31574', '31589', '31601', '31706', '31715', '31720', '31730', '31735', '31848', '32042', '32043', '32044', '32045', '32364', '32434', '32599', '32602', '32648', '32968', '33137', '33161', '33379', '33422', '33561', '33562', '33941', '35110', '35233', '35234', '35614', '35735', '36208', '36209', '36210', '36211', '36212', '36213', '36214', '36215', '36216', '36217', '36370', '36371', '36372', '36585', '36665', '36897', '36898', '36900', '36901', '36914', '37102', '37133', '37161', '37162', '37164', '37478', '37803', '37805', '37806', '37807', '37825', '37911', '37913', '38281', '38398', '38399', '38400', '39808', '39916', '39917', '39918', '39920', '39921', '40510', '40639', '41165', '41770', '42027', '42317', '42387', '42497', '42815', '42991', '43227', '43259', '43319', '43691', '43692', '43876', '43901', '44174', '44233', '44319', '44436', '44459', '44797', '44861', '44862', '45504', '45505', '45533', '45580', '45581', '45607', '45609', '45619', '45794', '45881', '46019', '46027', '46150', '46367');"
+}
