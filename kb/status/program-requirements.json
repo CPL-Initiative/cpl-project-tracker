@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-12T12:38:44Z",
+  "written_at": "2026-11-13T02:09:44Z",
   "session": 644,
   "moniker": "SkyWren",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_645_handoff.md",
   "next_step": {
-    "title": "Display Santiago Canyon and North Orange Continuing Education",
-    "text": "The scorer change and the dated-reads job are merged. Once the dated reads for the two colleges verify, build their display and merge it, then run the display when Sam says whether his October 10 go still stands. The scorer's live rescore is a separate reviewed step."
+    "title": "Check every catalog PDF for records filed under the wrong program",
+    "text": "Santiago Canyon's catalog prints each program's control number after the program, so two transfer degrees were filed under the local degree before them. Measure the same at every PDF college, fix the reader, and reread Santiago Canyon; its display is held."
   },
   "calls": [
     {
@@ -239,7 +239,12 @@
         "text": "Open Program Requirements"
       },
       "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
-      "link_text": "Open Sheet 187"
+      "link_text": "Open Sheet 187",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-12",
+        "words": "Relayed by COBIx: the first live run of the new display apply goes out on Sam's explicit go. After that first run, his October 10 standing go covers a display apply that follows a load that passed its checks."
+      }
     },
     {
       "title": "Should a program checked against its college's own course list count in the headline?",
@@ -268,6 +273,14 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-13T02:18:00Z",
+      "text": "Santiago Canyon's display is held: COBIx's spot-check found 2 of 5 records filed under the wrong program. Its 192 rows stay, unchecked."
+    },
+    {
+      "at": "2026-11-13T02:12:00Z",
+      "text": "Diablo Valley has its first reading procedure; the free capture of its catalog was dispatched."
+    },
     {
       "at": "2026-11-13T02:00:00Z",
       "text": "The first wave trial captured Feather River (81 of 81) and Palo Verde (96 of 96) at no cost; Copper Mountain's capture answered none of its pages and is held."
@@ -581,6 +594,12 @@
       "active": 20282,
       "complete": 13963,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-13",
+      "active": 20282,
+      "complete": 14196,
+      "colleges": 116
     }
   ],
   "next_run": {
@@ -589,7 +608,7 @@
     "at": "2026-11-12T13:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-12",
+    "day": "2026-11-13",
     "gaps": 3012,
     "parts": {
       "links": {
@@ -607,11 +626,11 @@
         ]
       },
       "roep": [
-        19154,
+        19164,
         20282
       ],
       "coci": [
-        16152,
+        16425,
         20282
       ],
       "outcomes": {
@@ -620,12 +639,12 @@
           89192
         ],
         "plo": [
-          16152,
+          16425,
           20282
         ]
       },
       "careers": [
-        15116,
+        15389,
         20282
       ]
     }

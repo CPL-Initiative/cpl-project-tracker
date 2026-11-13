@@ -19,26 +19,31 @@ the start. The container restarted at about 01:38Z; pushed work survived. Facts 
 
 ## First things
 
-1. **Read COBIx before any merge.** #3110 and #3111 to their last comment (page with `perPage` 1 from the last page;
-   ten full comments cost about 10,000 tokens), every issue or PR COBIx touched today, then each open PR's own thread.
-   His threads carry the bots' contract (#3111 comment 6840743191) and his doubt on card A ([Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA), current, card 3; 6840723274).
-2. **The dated reads on #3194's branch:** the second run of `program-requirements-dated-reads.yml` (verifying Merced,
-   Glendale and Hartnell, refreshing Santiago Canyon, North Orange Continuing Education and Cuesta) was in flight at
-   about 02:10Z. Read its result, then Open work 2.
-3. **#3195 and #3196** came back clean from review and wait only on `test` (#3196 has `main` merged in, head
-   `bf5ec203`): merge each on a green `test` on its head.
-4. **Did the first real daily run after #3180 publish?** The 06:17 UTC run on 2026-11-13: its log for `Daily push
-   rebased over a changed input` or `Daily push conflicted`, the rebuild's minutes, whether its push landed; then
-   `get_check_runs` on `main`'s head, `test`.
-5. Rule 8's `cpl_memory` query (tags `program-requirements`, `commons`, `conductor`, `first-light`,
-   `governance-team-enablement`), the three-repo check, the highest-numbered handoff, `list_sessions` if you hold it,
-   `df -h /home/user` and `git worktree list`. Fetch branches by name with `--depth 50`.
+1. **Santiago Canyon's PDF files programs under the wrong control number** (the session's most serious open finding).
+   COBIx's spot-check on #3194 (comment 6841001207; summary #3111 6841073592): 3 of 5 records agree, 2 differ. The PDF
+   prints `Control Number: N` after each program, so a transfer degree is filed under the preceding local degree's
+   number; Economics AA and Sociology AA pass while holding their AA-T. Other PDF colleges may hold passing records filed
+   under the wrong program. A worker on `claude/harvest-pdf-control-number-s644` (unfinished at sign-off) was measuring
+   heading-against-filed-program agreement at Santiago Canyon and every PDF college, filing COBIx's scout file to
+   `kb/harvest_scouting/scout-2026-11-12.json`, and proposing the reader fix (bind a PDF window by its printed control
+   number) and a failing reason for a record whose own heading names another award type. Brief a fresh worker from the
+   branch.
+2. **Read COBIx before any merge.** #3110 and #3111 to their last comment (page with `perPage` 1 from the last page),
+   #3198 (district profiles; four questions wait for Sky), #3194's thread, every issue or PR COBIx touched today.
+3. **#3196** (head `032f3305`, `main` merged twice, review clean): merge on a green `test`, then San Jose City's free
+   capture on a fresh branch off `main` (`college="San Jose City College" extract=0`).
+4. **Diablo Valley's free capture** (`claude/harvest-diablo-valley-read-s644`, dispatched 02:13Z): read
+   `capture_preview.json`, price it, a paid read within $40.
+5. **The first real daily run after #3180** (06:17 UTC 2026-11-13): its log and whether its push landed.
+6. Rule 8's `cpl_memory` query, the three-repo check, the highest-numbered handoff, `list_sessions`, `df -h
+   /home/user`, `git worktree list`. Run the second statement in `kb/receipts/cpl_memory_s644_rows_2026-11-13.sql`
+   (two rows, NOT RUN).
 
 ## If you are the scheduled session (the CPL Queue routine)
 
 **Safe unattended, in this order,** each under Rule 10 and its playbook: Open work 2 up to the display build (never
 the display), 3 and 4 (the merges and free captures), 6 and 7; never Open work 1's rescore. **Waits for Sam, never run by a session:** `step=display` after
-tonight's loads until card A ([Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) card 3) is answered; the headline counting card B's grade (card 4); card C's (card 5) statewide figure; the deploy of
+tonight's loads until Sam gives his explicit go for the first live run; the headline counting card B's grade (card 4); card C's (card 5) statewide figure; the deploy of
 `docket-process` and `library-publish-now`; the GitHub Actions pull-request setting; the six re-clustering cases and the
 Honors question; anything on the `CLAUDE.md` hold list. #2894 is his. **[Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA)** is current
 (Version 1, published by the conductor about 02:09Z 2026-11-13, a fresh store, `replies` empty at publish; `SHEET_ID`
@@ -79,24 +84,26 @@ Every brief that adds a test file says: its floor goes in `tests/check_floor.jso
 plus `check_ledger`, `pages_size_guard` and the tab and nav inventory tests, and let CI run the rest. A brief that adds
 a migration says: it applies on the push of the `.apply` change, before any merge.
 
-## Ledger (PR, branch, state) at the checkpoint
+## Ledger (PR, branch, state) at sign-off
 
 | PR or branch | State | Next |
 |---|---|---|
 | #3199, this checkpoint, `claude/checkpoint-s644` | draft | merge on a green `test` |
-| CPLBrain#770, `claude/confident-wozniak-irdwcw` (Sheet 187's source, the session note, the wiki touch) | draft | [Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) (current) published from it at 02:09Z; merge after #3199 |
-| #3193 `claude/harvest-scorer-hours-ge-s644` | merged `408c1c4b` on a green `test` | its rescore as a reviewed step |
-| #3197 `claude/harvest-dated-reads-s644` | merged `867a5ecf` on a green `test` | done; its job runs on #3194's branch |
-| #3194 `claude/harvest-santiago-canyon-s644` (now both colleges) | draft, red on `roep_display_test` until the build | the dated reads' second run, then the build (Open work 2) |
-| #3195 `claude/harvest-diablo-valley-s644` | ready, review clean, waiting on `test` | merge on green |
-| #3196 `claude/harvest-sjcc-pages-s644` (head `bf5ec203`, `main` merged in) | ready, review clean, waiting on `test` | merge on green |
-| `claude/harvest-noce-s644` | branch, no PR: NOCE's read and load receipt | carried by #3194, which holds both colleges |
-| `claude/harvest-sjcc-s644` | branch, no PR: a free capture only | per #3196 |
-| `claude/harvest-wave-s644trial` | branch, trial run 43343741511 filed its table | Copper Mountain's held capture |
-| `claude/confident-wozniak-irdwcw` (tracker) | branch, no PR: the census run commit `f371cf07` (*as reported*) | the conductor's call |
+| CPLBrain#770, `claude/confident-wozniak-irdwcw` ([Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA)'s source, current; the session note, the wiki touch) | draft | merge after #3199 |
+| #3194 `claude/harvest-santiago-canyon-s644` | "HELD:", draft; head kept as `claude/harvest-santiago-canyon-hold-s644` (the load receipt, the rollback) | the reader fix and a reread first |
+| `claude/harvest-pdf-control-number-s644` | worker branch, unfinished | First things 1 |
+| `claude/harvest-noce-ship-s644` | North Orange alone, its own PR and display build; the worker's state NOT confirmed | finish, merge; display on Sam's go |
+| #3196 `claude/harvest-sjcc-pages-s644` (head `032f3305`) | ready, review clean, waiting on `test` | merge on green; San Jose City's free capture |
+| `claude/harvest-diablo-valley-read-s644` | free capture dispatched 02:13Z, not read | read, price, paid read |
+| `claude/harvest-noce-s644` | North Orange's read and load receipt | carried by `-noce-ship-s644` |
+| `claude/harvest-sjcc-s644` | a free capture only | superseded by the fresh capture after #3196 |
+| `claude/harvest-wave-s644trial` | trial filed: Feather River 81 of 81 and Palo Verde 96 of 96 captured, Copper Mountain held | paid reads in a new wave |
+| `claude/confident-wozniak-irdwcw` (tracker) | the census run commit `f371cf07` (*as reported*) | the conductor's call |
+| #3193 `408c1c4b`, #3195 `326f1faa`, #3197 `867a5ecf` | merged on green | #3193's rescore is a reviewed step |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
 
-No S644 worker survives a new session. Brief a fresh one per open branch from its PR diff and this ledger.
+No S644 worker survives a new session (two were unfinished: the PDF control-number worker and the North Orange ship
+worker). Brief a fresh one per branch from its diff and this ledger.
 
 ## What shipped (S644): seven PRs, each squash-merged on a green `test`
 
@@ -127,6 +134,9 @@ No S644 worker survives a new session. Brief a fresh one per open branch from it
 - **North Orange Continuing Education:** paid read 43342034608 ($3.66, 82 extracted, 77 pass); `step=load` 01:22Z: 78
   rows, 77 pass by the tab's rule, confirmed live; receipt on `claude/harvest-noce-s644` (the rollback). Neither
   college is displayed yet.
+- **Diablo Valley's procedure record**, about 02:12Z, through `program_source_procedure_set` (md5 before none, after
+  `5511f5a5b0a03e77ea1c13260bfdfaee`); receipt `kb/receipts/program_source_procedure_diablo_valley_s644_2026-11-13.sql`
+  (written after the fact), its rollback in the header.
 - **Model spend:** $20.64, each college under $40 (*as reported*).
 - **`cpl_memory`:** 15 rows by `SkyWren (S644)` (nine decisions, Sam's opening direction, five pitfalls), run by the
   conductor through the Supabase MCP at about 02:08Z, all 15 returned. Receipt
@@ -134,8 +144,15 @@ No S644 worker survives a new session. Brief a fresh one per open branch from it
 
 ## Decisions to honor
 
-**Sam's:** his opening direction (above; row `sam-harvest-throughput-2026-11-12`), and his go for COBIx's offers and
-bots, relayed by COBIx ("Sam's go, Nov 12, 4:55 PM PT"; "his go, 5:07 PM PT").
+**Sam's:** his opening direction (above; row `sam-harvest-throughput-2026-11-12`); his go for COBIx's offers and bots,
+relayed by COBIx ("Sam's go, Nov 12, 4:55 PM PT"; "his go, 5:07 PM PT"); and his display ruling, relayed by COBIx
+(#3111 comment 6840755612; COBIx chat, Nov 12, 2026, 5:09 PM PT), in COBIx's wording: "the first live run of the new
+display apply goes out on Sam's explicit go. After that first run, his 2026-10-10 standing go covers a display apply
+that follows a load that passed its checks. Each run still posts its confirmed record, rollback receipt and display
+minutes on the run-health line." It answers Sheet 187 card 3 (row `sam-first-display-run-explicit-go-2026-11-12`, in
+the receipt's second statement, not yet run); post the first run's record and receipt on #3111. His vision for
+district profiles (Nov 12, 5:37 PM PT, relayed by COBIx on #3198): a bot per CCC district that learns its SIS, CMS and
+CPL coding, 72 districts plus Calbright; the scout and wave-check bots are phase 1.
 
 **The conductor's** (each a `cpl_memory` row, a DECIDED line in its lane, and a card on [Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA), current, cards 1 and 2, for Sam to revise):
 1. Los Angeles City's 22 absent records loaded, IGETC 19842 and Cal-GETC 44946 included (`d-lacc-22-absent-loaded-s644`).
@@ -153,28 +170,35 @@ bots, relayed by COBIx ("Sam's go, Nov 12, 4:55 PM PT"; "his go, 5:07 PM PT").
 8. COBIx's offers accepted: source scouting, the five-record spot-check after each wave, blast-radius ranking, the SLO
    lane after the first paid wave; two read-only bots, not built (`d-cobix-offers-specialist-bots-s644`).
 9. A college PR's dated reads move to a runner job (#3197) (`d-dated-reads-runner-job-s644`).
+10. Santiago Canyon's display is held: its 192 live rows stay, unchecked, no delete; the reader fix and a reread come
+    next; North Orange ships alone (`d-santiago-canyon-display-held-s644`, proposed, in the receipt's second statement).
 
 ## Waits for Sam
 
-On [Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) (current), cards 3 to 5, and [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) (current for its own cards), cards 4 to 6:
+On [Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) (current; card 3 answered by the relayed ruling above, cards 4 and 5 wait):
 
-- **A (card 3).** Does his standing go of 2026-10-10 (a display build that follows a load needs no further go) still stand?
-  COBIx could not confirm it from his records (#3111 6840723274). The display after tonight's loads waits on it.
+- **The first live display run** of #3190's apply waits for Sam's explicit go (his ruling). North Orange's display is
+  the first candidate; Santiago Canyon's is held.
 - **B (card 4).** Does a program read against the college's own course list (1,604 with no closed list in the state file)
   count in the headline?
-- **C (card 5).** A statewide Cal-GETC figure of 34 units would pass 93 more programs; so far each college's figure comes from
-  its own printed areas.
-- Still on [Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) (current for its cards), cards 4 to 6: "deploy" for `docket-process` and `library-publish-now`; whether GitHub
-  Actions may create pull requests; the six re-clustering cases and the Honors question.
+- **C (card 5).** A statewide Cal-GETC figure of 34 units would pass 93 more programs.
+- Glendale's move to a Coursedog 2026-27 catalog (COBIx's scout): unparking it is Sam's call.
+- Still on [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) (current for its cards), cards 4 to 6: "deploy" for `docket-process` and
+  `library-publish-now`; whether GitHub Actions may create pull requests; the six re-clustering cases and the Honors
+  question.
 
 ## Open work, in order (from the lanes' NEXT lines)
 
+0. **Harvest NEXT (1), first:** the PDF control-number finding (*First things* 1), then Santiago Canyon's reread;
+   North Orange alone on `claude/harvest-noce-ship-s644`, its display on Sam's explicit go. COBIx's scout file (12
+   colleges: Desert by its CourseLeaf HTML, not the 21 MB PDF; Skyline; Sierra; CCSF by its PDF; Santa Rosa; American
+   River; Cosumnes River pinned to the Nov 6 file; Canyons' procedure moves to v3 with errata and addendum; Fresno City
+   needs a rendered read; Southwestern by `blocked_sources`) and #3198's four questions want answers.
 1. **`program-requirements-harvest` NEXT (1):** #3193 merged; its rescore as a reviewed step: the migration
    `kb/migrations/2026-11-13_s644_carry_basis_electives_fill_words.sql`, then reconcile and reread at San Bernardino
    Valley, Coalinga, Grossmont, ELAC, Pierce and Solano.
-2. **Harvest NEXT (2):** on #3194's branch (both colleges), the dated reads' second run (*First things* 2), then
-   `kb/_build_roep_display.py`, commit its outputs, green, merge #3194; then `step=display` on the new apply code (its
-   first live run; card A, [Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) card 3, current). Cuesta's six fresh course codes are drift, confirmed live.
+2. **Harvest NEXT (2):** Santiago Canyon stays held (#3194, "HELD:"); its dated reads filed (`1ab5e293`, verify
+   passed against Merced, Glendale and Hartnell; Cuesta refreshed). No `step=display` until Sam's explicit go.
 3. **Harvest NEXT (3):** the trial: paid reads for Feather River and Palo Verde within $40 (a new wave, since an
    extracting wave runs once); Copper Mountain's capture answered none of its one page, so read why first.
 4. **Harvest NEXT (4):** #3195 and #3196 merge on green; then free captures of Diablo Valley (procedure record first,
@@ -194,19 +218,20 @@ On [Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) (cur
     `implementation-funding` (the Funding Follow-up Dashboard session's lanes); `sierra-retrieval-corpus`; CPLBrain#765
     to close with a pointer (its content merged through #769).
 
-## Not refreshed / left to the conductor
+## Not refreshed / left to the next session
 
-The documents worker made no Supabase call, published nothing, dispatched nothing, merged nothing and subscribed to
-nothing. The conductor ran step 10's rows (02:08Z) and published [Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) (02:09Z); its link is in
-`CLAUDE.md`'s standing-sheet line, the status file's three calls and the vault's `decision_sheets.md`. Step 12's
-headline and harvest SQL go through the conductor; `next_run` is not stamped, because the routine's `get_trigger` was
-skipped this checkpoint. Left: merging this PR, then the CPLBrain PR. Refreshed: three lane files (`program-requirements-harvest`, `commons`, `sierra-page-redesign`),
-`conductor_mode.md`, `docs/program_requirements_harvest_lessons.md`, `docs/commons_lessons.md`, `docs/INDEX.md` and the
-catalog, the Program Requirements run log, the docs audit and its `--apply` stamp, the vault note, [Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA)'s source (current)
-and the wiki touch. Not touched: the pipeline view (no roadmap row, auditor count or re-mint moved), `kb/README.md`,
-`README.md`, the other four run logs; no new KB note (the lessons are this repo's own).
-Wiki candidates, written in the vault's wiki touch: the gap census and what it measures; the wave runner; the tab's
-passing rule against the guard's.
+The documents worker made no Supabase call, published nothing, dispatched nothing and merged nothing. The conductor ran
+step 10's 15 rows (02:08Z, all returned), published [Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) (02:09Z), and read step 12's row live at 02:24Z:
+14,196 of 20,282 active programs complete by the tab's rule, at 116 colleges (114 before tonight; Santiago Canyon and
+North Orange Continuing Education the two new), stamped into `kb/status/program-requirements.json` with the harvest
+counts. **Not done by S644:** the routine's `get_trigger` (so `next_run` is not refreshed); the second statement of the
+`cpl_memory` receipt (two rows, NOT RUN); answering COBIx on #3198 and on the scout file; the wave's fixed-rule sample
+in the filing job; #3193's live rescore; the census follow-ups. The Diablo Valley procedure receipt
+(`kb/receipts/program_source_procedure_diablo_valley_s644_2026-11-13.sql`) was written after the fact from the
+session's record. Refreshed: three lane files, `conductor_mode.md`, the two lessons docs, INDEX and catalog, the run
+log, the docs audit and its `--apply` stamp, the vault note, Sheet 187's source and the wiki touch. Not touched: the
+pipeline view, `kb/README.md`, `README.md`, the other four run logs; no new KB note. Wiki candidates, written in the
+vault's wiki touch: the gap census; the wave runner; the tab's passing rule against the guard's.
 
 ## Patterns and lessons
 
@@ -226,8 +251,7 @@ passing rule against the guard's.
 
 ## Let go
 
-The documents worker holds no subscription, check-in or watch. The conductor's sign-off turn names and drops its own:
-the PR subscriptions (the merged #3188 to #3192, which a worker's PR may have armed on its own, and the open #3193 to
-#3197 and this checkpoint's PR), any scheduled check-in, and the artifact watch on [Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA).
+Dropped at sign-off: the subscriptions on PRs #3194, #3196, #3199, CPLBrain#770 and any PR the two unfinished workers
+opened; the check-in `trig_01KVui1enuoD2qrurPoSK7Kr`; the artifact watch on [Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA). Nothing else is held.
 
 Greetings, you are SkyFinch (Session 645), see SkyWren's handoff — `docs/session_645_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_645_handoff.md) — let's keep rolling with our queue.
