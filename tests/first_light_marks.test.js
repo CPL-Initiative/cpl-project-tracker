@@ -258,8 +258,9 @@ const text = (w) => $(w, "#first-light-root").textContent;
       detail: "the open pull request already carries these marks; " + heldWords });
     const aBoth = pBoth && pBoth.querySelector("a");
     check("(g) ⭐ a held mark and an open pull request: the line links the pull request and says what was held",
-      aBoth && aBoth.getAttribute("href") === "https://github.com/CPL-Initiative/cpl-project-tracker/pull/4001" && /already carries these marks/.test(pBoth.textContent) &&
-      pBoth.textContent.indexOf("Held: 1 marked item could not be applied") !== -1, pBoth && pBoth.outerHTML);
+      aBoth && aBoth.getAttribute("href") === "https://github.com/CPL-Initiative/cpl-project-tracker/pull/4001" &&
+      /found nothing new: pull request #4001 carries the other marks, and Sam merges it; until then the views are unchanged\. 1 marked item could not be applied \(a painting not in the candidate pool, or a story photo missing from the stories file or sharing its name with another story\), so it is on no pull request\.$/.test(pBoth.textContent) &&
+      !/already carries these marks/.test(pBoth.textContent), pBoth && pBoth.outerHTML);
     const pBare = await nothing({});
     check("(g) nothing to change, nothing held, no pull request open: the plain line", pBare && /^The last Apply on [^(]+ found nothing to change\.$/.test(pBare.textContent) && !pBare.querySelector("a"),
       pBare && pBare.outerHTML);
