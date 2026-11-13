@@ -269,7 +269,7 @@ try {
     /first_light_apply_requests\?status=eq\.pending&select=id&order=id\.asc"/.test(reqRead) && !/limit=/.test(reqRead) &&
     /first_light_marks\?select=id&order=id\.desc&limit=1"/.test(look) && look.indexOf("first_light_apply_requests") < look.indexOf("first_light_marks"));
   check("(f) an absent table (404) reads as nothing pending; any other failure fails the run", /"404"[\s\S]*?exit 0/.test(look) && /exit 1/.test(look));
-  check("(f) the apply runs only on a pending request or a dispatch", /needs: look/.test(apply) && /if: needs\.look\.outputs\.ids != '' \|\| github\.event_name == 'workflow_dispatch'/.test(apply));
+  check("(f) the apply runs only on a pending request or a dispatch, and only once the look read a mark id", /needs: look/.test(apply) && /if: needs\.look\.outputs\.through != '' && \(needs\.look\.outputs\.ids != '' \|\| github\.event_name == 'workflow_dispatch'\)/.test(apply));
   check("(f) ⭐ one Apply at a time", /concurrency:\s*\n\s*group: first-light-apply\s*\n\s*cancel-in-progress: false/.test(code));
   check("(f) one run serves every pending request: each is stamped", /id=in\.\(\$REQ_IDS\)&status=eq\.pending/.test(apply) && /\[!0-9,\]/.test(apply));
   check("(f) ⭐ a second Apply while a pull request is open builds on its branch, updates it, and appends to its description",

@@ -59,7 +59,7 @@ jobs:
             -H "apikey: $SB_KEY" -H "Authorization: Bearer $SB_KEY")
           code=$(printf '%s' "$body" | tail -n1)
           if [ "$code" = "404" ]; then
-            echo "::notice::the request table is not in place (HTTP 404); nothing to do"
+            echo "::notice::the request table is not in place (HTTP 404); nothing to do, and a dispatch does nothing either until it is"
             { echo "ids="; echo "through="; } >> "$GITHUB_OUTPUT"; exit 0
           fi
           if [ "$code" != "200" ]; then
@@ -84,7 +84,8 @@ jobs:
 
   apply:
     needs: look
-    if: needs.look.outputs.ids != '' || github.event_name == 'workflow_dispatch'
+    # A look that read no mark id (the tables not in place: its 404 notice) runs nothing, a dispatch included.
+    if: needs.look.outputs.through != '' && (needs.look.outputs.ids != '' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -170,6 +171,7 @@ jobs:
           node "$TOOLS/tools/first_light_apply.mjs" --root "$GITHUB_WORKSPACE" --plan --through "$THROUGH" --out "$RUNNER_TEMP/plan.json" | tee "$RUNNER_TEMP/plan.out"
           echo "changed=$(jq -r .changed "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
           echo "fetch=$(jq -r '.fetches | length' "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
+          echo "held=$(jq -r '.held | length' "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
 
       # Holds no secret, and runs main's installer from the tools copy, outside the checkout.
       - name: Install a browser for MAP's story photos (only when one is added)
@@ -231,16 +233,24 @@ jobs:
           PR_URL: ${{ steps.pr.outputs.url }}
           OPEN_NUMBER: ${{ steps.open.outputs.number }}
           OPEN_URL: ${{ steps.open.outputs.url }}
+          HELD: ${{ steps.plan.outputs.held }}
         run: |
           set -euo pipefail
           case "$REQ_IDS" in *[!0-9,]*) echo "::error::unexpected request ids"; exit 1 ;; esac
           detail=""
           num=$PR_NUMBER url=$PR_URL
           [ "$OUTCOME" = failed ] && detail="the run failed; its log says why"
-          # Nothing new while a pull request is open: its branch already holds what the live marks ask for (an
-          # earlier run consumed them), so the stamp names that pull request rather than none.
-          if [ "$OUTCOME" = nothing ] && [ -z "$num" ] && [ -n "$OPEN_NUMBER" ]; then
-            num=$OPEN_NUMBER url=$OPEN_URL detail="nothing new; the open pull request already carries these marks"
+          # Nothing new. A held mark (an item the Plan could not find) is said in words and names no pull request,
+          # since none carries it. Otherwise, while a pull request is open, its branch already holds what the live
+          # marks ask for (an earlier run consumed them), so the stamp names it.
+          if [ "$OUTCOME" = nothing ] && [ -z "$num" ]; then
+            case "${HELD:-0}" in ''|*[!0-9]*) HELD=0 ;; esac
+            if [ "$HELD" -gt 0 ]; then
+              items="$HELD marked items"; [ "$HELD" = 1 ] && items="1 marked item"
+              detail="held: $items could not be applied (a painting not in the candidate pool, or a story photo missing from the stories file or sharing its name with another story)"
+            elif [ -n "$OPEN_NUMBER" ]; then
+              num=$OPEN_NUMBER url=$OPEN_URL detail="the open pull request already carries these marks"
+            fi
           fi
           row=$(jq -nc --arg s "${OUTCOME:-failed}" --arg n "$num" --arg u "$url" --arg r "$RUN_URL" --arg d "$detail" \
             '{status:$s, handled_at:(now|todate), run_url:$r} + (if $n != "" then {pr_number:($n|tonumber)} else {} end)

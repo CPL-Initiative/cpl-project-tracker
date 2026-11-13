@@ -7,9 +7,12 @@
 //       highest mark id; the Plan passes it as --through; the tool consumes no mark above it. COBIx's case, end to
 //       end: a run consumed a later request's marks, so the next run saw no change and stamped that request
 //       `nothing` with no link. Now the later request's run finds its marks and updates the pull request. A run
-//       that finds nothing new while a pull request is open names that pull request in the stamp.
-//   (2) ⭐ the look: 404 (no table yet) is a notice and exit 0; 401, 403, a 5xx, a failed connection, or a failed
-//       marks read exit 1, so workflow-failure-watch.yml (which lists "First Light apply") fires.
+//       that finds nothing new while a pull request is open names that pull request in the stamp, unless a mark
+//       was held, which the stamp says in words (the #3188 review). The tool runs on a fixture root whose two
+//       lists carry their own thresholds.
+//   (2) ⭐ the look: 404 (no table yet) is a notice and exit 0, and then no apply job runs, a dispatch included;
+//       401, 403, a 5xx, a failed connection, an answer that is not a list, or a failed marks read exit 1, so
+//       workflow-failure-watch.yml (which lists "First Light apply") fires. The Plan refuses a missing id.
 //   (3) ⭐ the open pull request is this repository's own: a fork's pull request on a branch of the same name is
 //       never fetched, built on or appended to.
 //
@@ -139,7 +142,7 @@ try {
 
   // ── (1) the stamp names the open pull request when nothing is new ───────
   const stamp = (env) => {
-    const r = sh(STAMP, Object.assign({ REQ_IDS: "7", OUTCOME: "", PR_NUMBER: "", PR_URL: "", OPEN_NUMBER: "", OPEN_URL: "" }, env));
+    const r = sh(STAMP, Object.assign({ REQ_IDS: "7", OUTCOME: "", PR_NUMBER: "", PR_URL: "", OPEN_NUMBER: "", OPEN_URL: "", HELD: "" }, env));
     return Object.assign(r, { row: r.stamp ? JSON.parse(r.stamp) : null });
   };
   const sOpen = stamp({ OUTCOME: "nothing", OPEN_NUMBER: "12", OPEN_URL: own.url });
@@ -154,6 +157,44 @@ try {
   const sFail = stamp({ OUTCOME: "failed", OPEN_NUMBER: "12", OPEN_URL: own.url });
   check("(1) a failed run never borrows the open pull request's link", sFail.row && sFail.row.status === "failed" && !("pr_number" in sFail.row) && /failed/.test(sFail.row.detail || ""), JSON.stringify(sFail.row));
 
+  // A held mark: the stamp says so in words and names no pull request, open or not (#3188 review).
+  const HELD1 = "held: 1 marked item could not be applied (a painting not in the candidate pool, or a story photo missing from the stories file or sharing its name with another story)";
+  const sHeld = stamp({ OUTCOME: "nothing", HELD: "1", OPEN_NUMBER: "12", OPEN_URL: own.url });
+  check("(1) ⭐ nothing new but a mark held: the stamp says so and does not name the open pull request",
+    sHeld.row && sHeld.row.status === "nothing" && !("pr_number" in sHeld.row) && !("pr_url" in sHeld.row) && sHeld.row.detail === HELD1, JSON.stringify(sHeld.row));
+  const sHeld2 = stamp({ OUTCOME: "nothing", HELD: "2" });
+  check("(1) two held: the count in words", sHeld2.row && /^held: 2 marked items could not be applied/.test(sHeld2.row.detail || ""), JSON.stringify(sHeld2.row));
+  const sHeldOdd = stamp({ OUTCOME: "nothing", HELD: "x", OPEN_NUMBER: "12", OPEN_URL: own.url });
+  check("(1) a held count that is not a number reads as none", sHeldOdd.row && sHeldOdd.row.pr_number === 12, JSON.stringify(sHeldOdd.row));
+
+  // The look's two other exits: an answer that is not a list, and a marks answer with no id.
+  const notList = look(["200", '{"message":1}'], ["200", '[{"id":1}]']);
+  check("(2) a request answer that is not a list fails the run", notList.code === 1 && /not a list/.test(notList.text) && !notList.outputs.ids, JSON.stringify([notList.code, notList.text]));
+  for (const body of ['[{"id":"x"}]', "not json", '[{"id":-3}]']) {
+    const r = look(["200", '[{"id":7}]'], ["200", body]);
+    check("(2) a marks answer with no whole-number id (" + body + ") fails the run", r.code === 1 && /gave no mark id/.test(r.text) && !r.outputs.through, JSON.stringify([r.code, r.text]));
+  }
+
+  // The Plan's guard: no whole-number id from the look, no Plan. A stand-in for node records the call.
+  const PLAN = stepRun("Plan from the marks");
+  fs.writeFileSync(path.join(BIN, "node"), `#!/usr/bin/env bash
+echo "node $*" >> "$STUB_LOG"
+out=; while [ $# -gt 0 ]; do case "$1" in --out) out=$2; shift ;; esac; shift; done
+printf '%s' '{"changed":false,"fetches":[],"held":["Not In The Pool.jpg"]}' > "$out"
+echo '{"changed":false}'
+`);
+  fs.chmodSync(path.join(BIN, "node"), 0o755);
+  const planEnv = { RUNNER_TEMP: WORK, TOOLS: "/tools-copy", GITHUB_WORKSPACE: "/checkout" };
+  for (const t of ["", "5;rm", "x"]) {
+    const r = sh(PLAN, Object.assign({ THROUGH: t }, planEnv));
+    check("(2) ⭐ the Plan refuses a mark id of " + JSON.stringify(t) + " before it reads a mark", r.code === 1 && /read no mark id/.test(r.text) && !/node /.test(r.log), JSON.stringify([r.code, r.text, r.log]));
+  }
+  const planOk = sh(PLAN, Object.assign({ THROUGH: "5" }, planEnv));
+  check("(1) with the look's id the Plan runs main's tool with --through, and hands on the held count",
+    planOk.code === 0 && /node \/tools-copy\/tools\/first_light_apply\.mjs --root \/checkout --plan --through 5 /.test(planOk.log) &&
+    planOk.outputs.changed === "false" && planOk.outputs.held === "1", JSON.stringify([planOk.code, planOk.outputs, planOk.log, planOk.text]));
+  fs.unlinkSync(path.join(BIN, "node"));
+
   // The wiring the stand-ins cannot see: the look's id reaches the Plan, the open pull request reaches the stamp.
   const lookJob = WF_TEXT.slice(WF_TEXT.indexOf("\n  look:"), WF_TEXT.indexOf("\n  apply:"));
   const applyJob = WF_TEXT.slice(WF_TEXT.indexOf("\n  apply:"));
@@ -163,22 +204,44 @@ try {
     /first_light_apply\.mjs" --root "\$GITHUB_WORKSPACE" --plan --through "\$THROUGH"/.test(stepRun("Plan from the marks") || ""));
   check("(1) the stamp reads the open pull request's number and link",
     /OPEN_NUMBER: \$\{\{ steps\.open\.outputs\.number \}\}/.test(stampStep) && /OPEN_URL: \$\{\{ steps\.open\.outputs\.url \}\}/.test(stampStep));
+  check("(1) the stamp reads the Plan's held count", /HELD: \$\{\{ steps\.plan\.outputs\.held \}\}/.test(stampStep));
+  check("(2) ⭐ a look that read no mark id (its 404 notice) runs no apply job, a dispatch included",
+    /\n    if: needs\.look\.outputs\.through != '' && \(needs\.look\.outputs\.ids != '' \|\| github\.event_name == 'workflow_dispatch'\)\n/.test(applyJob) &&
+    absent.outputs.through === "" && /a dispatch does nothing either/.test(absent.text));
   check("(3) the lookup asks gh for isCrossRepository and keeps only false", /--json number,url,isCrossRepository/.test(FIND) && /select\(\.isCrossRepository == false\)/.test(FIND));
 } catch (e) {
   check("the workflow's shell ran", false, String(e.stack || e));
 }
 
-// ── (1) the tool: --through, and COBIx's case end to end ───────────────────
+// ── (1) the tool: --through, and COBIx's case end to end, on a fixture root ──
+// Nothing here reads the tracked lists: the test writes the selection and the hero list, each with its own
+// applied_through_mark_id (paintings 500, photos 700), since the tool spends each set against its own threshold.
 const TMP = fs.mkdtempSync(path.join(os.tmpdir(), "fl-findings-root-"));
+function png(w, h) {
+  const b = Buffer.alloc(64);
+  Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]).copy(b, 0);
+  b.writeUInt32BE(13, 8); b.write("IHDR", 12, "ascii"); b.writeUInt32BE(w, 16); b.writeUInt32BE(h, 20);
+  return b;
+}
 try {
-  const SEL0 = JSON.parse(fs.readFileSync("tools/first_light_selection.json", "utf8"));
-  const SEL = Array.isArray(SEL0) ? SEL0 : SEL0.paintings;
-  const HERO = JSON.parse(fs.readFileSync("library/photos/hero_photos.json", "utf8"));
-  const FILES = ["cpl_pathways.js", "fact-sheet/cpl_stories.js", "library/index.html", "library/adopt/index.html",
-    "library/photos/hero_photos.json", "tools/first_light_selection.json", "tools/first_light_candidates.json",
-    "tools/first_light_gallery/index.json"].concat(HERO.photos.map((p) => "library/photos/" + p.file));
-  for (const f of FILES) { fs.mkdirSync(path.dirname(path.join(TMP, f)), { recursive: true }); fs.copyFileSync(f, path.join(TMP, f)); }
-  const base = (SEL0.applied_through_mark_id || 0) + 1000;   // ids above any committed threshold
+  const put = (rel, body) => { fs.mkdirSync(path.dirname(path.join(TMP, rel)), { recursive: true }); fs.writeFileSync(path.join(TMP, rel), body); };
+  const painting = (n) => ({ file: "Fixture Painting " + n + ".jpg", title: "Fixture painting " + n, artist: "A", year: "1900", museum: "M",
+    blurb: "A fixture blurb long enough to read as one.", setting: "A setting.", alt: "A fixture description of the painting." });
+  const SEL = [1, 2, 3, 4].map(painting);
+  const PHOTOS = ["one.png", "two.png", "three.png"].map((f) => ({ file: f, width: 40, height: 30, alt: "A fixture photo.", plays: ["library"] }));
+  const PAINT_T = 500, PHOTO_T = 700;
+  put("tools/first_light_selection.json", JSON.stringify({ applied_through_mark_id: PAINT_T, held_mark_ids: [], paintings: SEL }, null, 2));
+  put("library/photos/hero_photos.json", JSON.stringify({ applied_through_mark_id: PHOTO_T, held_mark_ids: [], views: [{ id: "library" }], photos: PHOTOS }, null, 2));
+  for (const p of PHOTOS) put("library/photos/" + p.file, png(40, 30));
+  put("tools/first_light_candidates.json", JSON.stringify({ candidates: [] }));
+  put("tools/first_light_gallery/index.json", JSON.stringify({ paintings: [] }));
+  put("fact-sheet/cpl_stories.js", 'window.CPL_STORIES = {"source":"https://map.rccd.edu/cplstories","stories":[]};\n');
+  const slides = (dir) => '<div class="hero-slides" aria-hidden="true">\n' + PHOTOS.map((p, i) =>
+    '  <img class="hero-slide' + (i ? '" data-src="' : ' is-on" src="') + dir + p.file + '" alt="" width="40" height="30">').join("\n") + "\n</div>\n";
+  put("library/index.html", slides("photos/"));
+  put("library/adopt/index.html", slides("../photos/"));
+  put("cpl_pathways.js", "var HERO_PHOTOS = [" + PHOTOS.map((p) => JSON.stringify([p.file, 40, 30]).replace(/,/g, ", ")).join(", ") + "];\n");
+
   const marksFile = path.join(WORK, "marks.json");
   const tool = (args, rows) => {
     fs.writeFileSync(marksFile, JSON.stringify(rows));
@@ -189,21 +252,25 @@ try {
     if (r.status !== 0) throw new Error("plan failed: " + r.stderr);
     return JSON.parse(fs.readFileSync(out, "utf8"));
   };
-  // At the look: two marks and a request. Between the look and the Plan: a reviewer drops another painting, and
-  // (once the first request is stamped) files the second request.
+  const has = (pl, n) => pl.paintings.some((e) => e.file === SEL[n].file);
+  // Spent and live by each set's own threshold: a photo mark at 600 is spent (photos 700), a painting mark at 650
+  // is live (paintings 500). At the look: those and two more marks, and a request. Between the look and the Plan:
+  // a reviewer drops another painting, and (once the first request is stamped) files the second request.
   const atLook = [
-    { id: base + 1, item_set: "paintings", item_key: SEL[0].file, mark: "drop", collection: "rotation" },
-    { id: base + 2, item_set: "photos", item_key: HERO.photos[1].file, mark: "position", position: 1, collection: "hero_photos" }
-  ];
-  const later = { id: base + 3, item_set: "paintings", item_key: SEL[1].file, mark: "drop", collection: "rotation" };
+    { id: 600, item_set: "photos", item_key: "three.png", mark: "drop", collection: "hero_photos" },
+    { id: 650, item_set: "paintings", item_key: SEL[3].file, mark: "drop", collection: "rotation" },
+    { id: 701, item_set: "paintings", item_key: SEL[0].file, mark: "drop", collection: "rotation" },
+    { id: 702, item_set: "photos", item_key: "two.png", mark: "position", position: 1, collection: "hero_photos" }];
+  const later = { id: 703, item_set: "paintings", item_key: SEL[1].file, mark: "drop", collection: "rotation" };
   const all = atLook.concat([later]);
 
-  const p1 = planOf(["--through", String(base + 2)], all);
+  const p1 = planOf(["--through", "702"], all);
+  check("(1) each set is spent against its own threshold: the photo mark below 700 is spent, the painting mark above 500 is live",
+    p1.photos.some((p) => p.file === "three.png") && !has(p1, 3), JSON.stringify([p1.photos.map((p) => p.file), p1.paintings.map((e) => e.file)]));
   check("(1) ⭐ --through: the run consumes the marks the look saw and not the later one",
-    p1.changed && !p1.paintings.some((e) => e.file === SEL[0].file) && p1.paintings.some((e) => e.file === SEL[1].file) &&
-    p1.applied.paintings === base + 1 && p1.applied.photos === base + 2, JSON.stringify(p1.applied));
+    p1.changed && !has(p1, 0) && has(p1, 1) && p1.photos[0].file === "two.png" && p1.applied.paintings === 701 && p1.applied.photos === 702, JSON.stringify(p1.applied));
   const pAll = planOf([], all);
-  check("(1) with no --through every mark is read, as before (the tool's default)", !pAll.paintings.some((e) => e.file === SEL[1].file) && pAll.applied.paintings === base + 3);
+  check("(1) with no --through every mark is read, as before (the tool's default)", !has(pAll, 1) && pAll.applied.paintings === 703);
   const p0 = planOf(["--through", "0"], all);
   check("(1) --through 0 consumes nothing", p0.changed === false);
   const bad = tool(["--plan", "--through", "4;rm"], all);
@@ -213,12 +280,22 @@ try {
   // (request B, filed after run 1's look) plans on that branch. B's mark must still be live there.
   fs.writeFileSync(path.join(WORK, "plan1.json"), JSON.stringify(p1));
   const a1 = tool(["--apply", "--plan", path.join(WORK, "plan1.json")], all);
-  check("(1) run 1 writes the branch, recording the look's marks as consumed", a1.status === 0 &&
-    JSON.parse(fs.readFileSync(path.join(TMP, "tools/first_light_selection.json"), "utf8")).applied_through_mark_id === base + 1, a1.stderr);
-  const p2 = planOf(["--through", String(base + 3)], all);
+  const sel1 = JSON.parse(fs.readFileSync(path.join(TMP, "tools/first_light_selection.json"), "utf8"));
+  const hero1 = JSON.parse(fs.readFileSync(path.join(TMP, "library/photos/hero_photos.json"), "utf8"));
+  check("(1) run 1 writes the branch, recording the look's marks as consumed, per set", a1.status === 0 &&
+    sel1.applied_through_mark_id === 701 && hero1.applied_through_mark_id === 702, a1.stderr + JSON.stringify([sel1.applied_through_mark_id, hero1.applied_through_mark_id]));
+  const p2 = planOf(["--through", "703"], all);
   check("(1) ⭐ COBIx's case: the next run sees the later request's mark as a change, so that request is stamped with the pull request, not `nothing`",
-    p2.changed === true && !p2.paintings.some((e) => e.file === SEL[1].file) && p2.applied.paintings === base + 3 &&
+    p2.changed === true && !has(p2, 1) && p2.applied.paintings === 703 &&
     p2.summary.paintings.length === 1 && /^Drop /.test(p2.summary.paintings[0]), JSON.stringify([p2.changed, p2.summary]));
+  // The review's case: with that pull request open, a reviewer adds a painting the candidate pool does not hold.
+  // Nothing would be written, so the plan says nothing changed, and it counts the Add as held.
+  fs.writeFileSync(path.join(WORK, "plan2.json"), JSON.stringify(p2));
+  const a2 = tool(["--apply", "--plan", path.join(WORK, "plan2.json")], all);
+  const heldAdd = { id: 704, item_set: "paintings", item_key: "Not In The Pool.jpg", mark: "add", collection: "gallery_candidates" };
+  const p3 = planOf(["--through", "704"], all.concat([heldAdd]));
+  check("(1) ⭐ a held Add on the open pull request's branch: no change, and the plan counts it as held (the stamp reads that count)",
+    a2.status === 0 && p3.changed === false && JSON.stringify(p3.held) === JSON.stringify([heldAdd.item_key]), JSON.stringify([a2.stderr, p3.changed, p3.held]));
 } catch (e) {
   check("the tool ran", false, String(e.stack || e));
 } finally {
