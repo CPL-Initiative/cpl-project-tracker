@@ -28,7 +28,10 @@ Sam answered every sheet that carried a waiting card. Your work, in this order:
 4. **Carry out the six re-clustering cases as recommended** — his ruling, 13:16Z, Sheet 186 card 6 — under the
    commons lane's plan and the re-mint playbook. The **Honors** question he left for a note is Sheet 191 card 1.
 5. **The 503 change** has his go (13:21Z, [Sheet 190](https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y) card 6):
-   build it, then deploy `program-requirements-extract`. **The display go of October 10 stands for every college**
+   it is built on draft #3227 (`claude/extract-503-on-upstream-s647`, head `1a62b30a`, not deployed, no review yet):
+   a review of at most 9 agents and COBIx's read, merge on green, then dispatch `cpl-chat-deploy.yml` with
+   `confirm=DEPLOY` and `function=program-requirements-extract`. It will conflict with #3202's `extract()`
+   (`7482ece6` is only on the Glendale branch); the PR says how to resolve it. **The display go of October 10 stands for every college**
    (13:18Z, [Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) card 3), and a catalog that names
    Cal-GETC and prints no figure **takes the statewide 34 units** (13:19Z, Sheet 187 card 5) — the reconcile step and
    the rescore it earns, about 93 programs, are yours.
