@@ -267,10 +267,16 @@ code_only = code_only.split('"""', 2)[-1]
 check("the rule's code names no TOP field", "top_code" not in code_only.lower() and "top_division" not in code_only.lower())
 
 # The change is to the proposal only: the builder writes nothing but its own three files (no Supabase, no reference).
+# Since #3223 (S649) it makes one network call, a read: live_rows() GETs the saved title assignments with the anon
+# key, and only under --live. It still writes no curation row.
 bsrc = open(os.path.join(ROOT, "kb", "_build_exhibits_review.py"), encoding="utf-8").read()
-check("the builder makes no network call and writes no curation row",
-      "urllib" not in bsrc and "requests" not in bsrc and "supabase" not in bsrc.lower().replace("supabase-free", "")
-      and "kb_curation" not in bsrc)
+import re as _re  # noqa: E402
+_fn = _re.search(r"\ndef live_rows\(.*?(?=\ndef )", bsrc, _re.S)
+_rest = bsrc.replace(_fn.group(0), "") if _fn else bsrc
+check("the builder's one network call is live_rows' read, and it writes no curation row",
+      _fn is not None and "urllib" not in _rest and "requests" not in bsrc and "SERVICE_KEY" not in bsrc
+      and not _re.search(r"method\s*=|\b(POST|PATCH|PUT|DELETE)\b|resolution=merge|data\s*=", _fn.group(0))
+      and "def live_assignments(wanted=True)" in bsrc and "live_assignments(a.live)" in bsrc)
 
 n_ok = sum(1 for _, ok in results if ok)
 print("%d/%d checks passed" % (n_ok, len(results)))
