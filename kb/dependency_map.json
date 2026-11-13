@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 937,
+  "file_datasets": 938,
   "external_services": 195,
   "consumers": 585,
   "workflows": 72,
@@ -17092,6 +17092,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_college/cosumnes_river/calgetc_apply_plan.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_readings_measure.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 417
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:kb/program_requirements_college/glendale_community/capture_reread.json": {

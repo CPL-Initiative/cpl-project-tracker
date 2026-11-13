@@ -782,6 +782,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
+| `kb/program_requirements_college/cosumnes_river/calgetc_apply_plan.json` | scripts: `kb/_program_requirements_readings_measure.py` | — |
 | `kb/program_requirements_college/glendale_community/capture_reread.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_college/glendale_community/tab_owners.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
@@ -1477,5 +1478,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 937 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 938 file
 datasets · 195 external services · 585 consumers · 72 workflows · 41 tabs.

@@ -1,0 +1,202 @@
+{
+ "college": "Cosumnes River College",
+ "route": "statewide step",
+ "step": {
+  "evidence": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=95 (PDF pp.95-96, printed 95-96; read from the hand-filed copy, college-page-read run 43519918667): '2026-2027 Cal-GETC Requirements' prints a minimum per area and no total: Area 1 'Choose one course (three units minimum) from each area for a minimum of nine semester units.'; Area 2 'Choose one course for a minimum of three semester units.'; Area 3 'Choose one course (three units minimum) from each area for a minimum of six semester units.'; Area 4 'Choose two courses from different disciplines for a minimum of six semester units.'; Area 5 'Choose a minimum of two courses, with one from 5A. Physical Sciences and one from 5B. Biological Sciences' (no unit figure); Area 6 'Choose one course for a minimum of three semester units.' The three transfer degrees name Cal-GETC with no figure: Psychology AA-T 30566 (p.552) '(b) the California General Education Transfer Curriculum (Cal-GETC) Requirement.'; History AA-T 33072 (p.404) 'Students must complete a total of 60 transferable semester units with a minimum 2.0 GPA, to include the California General Education Transfer Curriculum (Cal-GETC) pattern'; Social Justice Studies: Race and Ethnicity AA-T 39656 (p.576) '(b) the California General Education Transfer Curriculum (Cal-GETC) requirements.'",
+  "checked": "2026-11-13",
+  "hold": {}
+ },
+ "measured_on": {
+  "commit": "f3a8cfd6a9519715aba6fde3200ac38815bbc8f7",
+  "date": "2026-11-13T22:31:04+00:00",
+  "records": "kb/program_requirements_college/<slug>/records/",
+  "tool": "python3 kb/_program_requirements_readings_measure.py --calgetc-apply 'Cosumnes River College'",
+  "kind": "a dry run on the filed records; the reconcile run reads the pages"
+ },
+ "counts": {
+  "rows": 7,
+  "apply": 3,
+  "held": 4,
+  "fail_to_pass": 3,
+  "pass_to_fail": 0,
+  "held_would_pass": 4
+ },
+ "first_reconcile": true,
+ "apply": [
+  "30566",
+  "33072",
+  "39656"
+ ],
+ "held": [
+  "31055",
+  "31995",
+  "41992",
+  "46419"
+ ],
+ "restore_before_reread": [],
+ "rows": [
+  {
+   "control_number": "30566",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    53.0,
+    53.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "31055",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    61.0,
+    61.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  },
+  {
+   "control_number": "31995",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    66.0,
+    66.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  },
+  {
+   "control_number": "33072",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    52.0,
+    52.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "39656",
+   "title": "Social Justice Studies: Ethnic Studies",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (transfer)",
+   "sum_with_fill": [
+    52.0,
+    52.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "41992",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    61.0,
+    63.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  },
+  {
+   "control_number": "46419",
+   "title": "Elementary Teacher Education: Integrated Programs",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    66.0,
+    66.0
+   ],
+   "degree_total": 60.0,
+   "held": "the statewide rule holds it: overlap"
+  }
+ ],
+ "page_read": {
+  "run": "43519918667",
+  "result": "Both plans answered (status 200, access ok, the hand-filed copy, 653 PDF pages). PDF pp.95-96 print a minimum per Cal-GETC area and no total (quoted in kb/program_requirements_reconcile.json), so the statewide step applies and no set step is needed. A simulation of R.calgetc_hold on the read's printed text of each program's pages, with Cosumnes River's filed siblings, fills all three: 30566's section runs from its own 'Degree Requirements' (p.552, the first in its page window) to the 'Career Information' heading after its outcomes, naming Cal-GETC once with no figure; 33072's and 39656's sections name Cal-GETC with no figure and no Area line. The reconcile run reads the capture's own text, so its trace lines decide."
+ },
+ "first_reconcile_note": "No Cosumnes River record carries reconciled notes: the reconcile dispatched for this apply is also the college's first reconcile and rescore, and reconcile_filed rescores every record whose page it reads again with no kept-passing guard. After it is filed, run --calgetc-review 'Cosumnes River College' --run RUN --against origin/main --restore: the three apply rows are kept where ge_units alone changed to 34, every other changed record goes back to main whole, and summary.json is recounted before the reread."
+}
