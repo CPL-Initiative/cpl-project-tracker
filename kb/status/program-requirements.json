@@ -2,14 +2,14 @@
   "schema": 1,
   "project": "program-requirements",
   "written_at": "2026-11-13T04:16:31Z",
-  "session": 645,
-  "moniker": "SkyFinch",
-  "run": "Sam's session",
+  "session": 646,
+  "moniker": "SkyOriole",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_646_handoff.md",
+  "handoff": "docs/session_647_handoff.md",
   "next_step": {
-    "title": "Finish the PDF reader and reread Santiago Canyon",
-    "text": "Build decision 14 into #3201, run its delta review and Santiago Canyon's free capture, merge on green, then the paid reread forcing the 29 numbers; COBIx spot-checks Diablo Valley, San Jose City and the rescore before each merges."
+    "title": "COBIx's checks, then Diablo Valley's display",
+    "text": "COBIx checks five records each of Diablo Valley, San Jose City and the rescore; each pull request merges on green, and Diablo Valley's display runs for it alone. Glendale's slow read and Santiago Canyon's paid read are read before either loads."
   },
   "calls": [
     {
@@ -281,6 +281,18 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-13T07:28:29Z",
+      "text": "The PDF reader merged: a refused program is filed as refused, and a program's own heading must match its full title and award. Santiago Canyon's proof bound 204 programs."
+    },
+    {
+      "at": "2026-11-13T07:28:00Z",
+      "text": "Diablo Valley holds 213 program records (was 88): its new listing found 214 of 244 programs, 197 pass the machine checks, and 125 were loaded. Its page waits on COBIx's check."
+    },
+    {
+      "at": "2026-11-13T07:15:00Z",
+      "text": "Glendale's catalog answered a bot-check page under load; the reader records it as a refusal, and a slow paid read went out. A free reread had read all 34 refused programs."
+    },
     {
       "at": "2026-11-13T02:18:00Z",
       "text": "Santiago Canyon's display is held: COBIx's spot-check found 2 of 5 records filed under the wrong program. Its 192 rows stay, unchecked."
