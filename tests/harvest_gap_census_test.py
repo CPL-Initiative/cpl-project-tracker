@@ -72,7 +72,7 @@ try:
         "A14": "no_closed_list",  # the file now lists its courses
         "A15": "sitemap_page",   # live unstated: the tab counts it passing
         "A16": "sitemap_page",   # live unstated, coverage fails
-        "A17": "sitemap_page",   # filed unstated whose own test failed, never loaded
+        "A17": "sitemap_page",   # live unstated; the filed score's own unstated test failed
     }, {
         "A1": score(), "A2": score(cov=False), "A3": score(inv=False), "A4": score(),
         "A5": score(), "A6": score(cov=False, placed=0),
@@ -101,6 +101,7 @@ try:
         "A11": {"checks": {"coverage": True, "invented": True, "arithmetic": "incomplete"}},
         "A15": {"checks": {"coverage": True, "invented": True, "arithmetic": "unstated"}},
         "A16": {"checks": {"coverage": False, "invented": True, "arithmetic": "unstated"}},
+        "A17": {"checks": {"coverage": True, "invented": True, "arithmetic": "unstated"}},
         "B1": {"checks": {"coverage": True, "invented": True, "arithmetic": "unequal"}},
     }
     registry = {"Delta College": "https://www.delta.edu/catalog", "Gamma College": "https://gamma.edu/c"}
@@ -111,15 +112,17 @@ try:
     want = {"A2": "coverage_fails", "A3": "course_added", "A4": "units_unequal", "A5": "not_loaded",
             "A6": "places_none", "A7": "no_closed_list", "A8": "page_not_found", "A9": "page_not_found",
             "A10": "found_not_extracted", "A11": "units_incomplete", "A12": "extraction_error",
-            "A13": "not_in_capture", "A14": "no_closed_list", "A16": "coverage_fails",
-            "A17": "not_loaded", "B1": "parked_college",
+            "A13": "not_in_capture", "A14": "no_closed_list", "A16": "coverage_fails", "B1": "parked_college",
             "G1": "college_never_read", "D1": "college_never_read"}
     for cn, cause in want.items():
         check(by.get(cn, {}).get("cause") == cause, "%s takes %s, got %s" % (cn, cause, by.get(cn, {}).get("cause")))
-    check("A1" not in by and "A15" not in by and r["passing"] == 2,
-          "the live passes are passing, through passes_live: an equal row and an unstated one (the tab's test)")
-    check(by.get("A17", {}).get("sub") == "filed record passes",
-          "a filed unstated record the tab would count passing is a load away, whatever its own unstated test said")
+    check("A1" not in by and "A15" not in by and "A17" not in by and r["passing"] == 3,
+          "passing is the tab's count: an equal row and two unstated ones")
+    check([m["control_number"] for m in r["tab_only"]["members"]] == ["A17"] and r["tab_only"]["programs"] == 1
+          and r["tab_only"]["what"] == "counts as passing on the tab; the scorer's own test fails",
+          "the unstated row whose filed score fails its own test is listed apart, and no gap: %r" % r["tab_only"])
+    check("counts as passing on the tab; the scorer's own test fails" in G.render_md(r, "now"),
+          "the report names the listed rows")
     check(not any(p["cause"] == "units_unstated" for p in r["programs"]),
           "'live, no figure stated' holds no row the tab counts passing")
     check(len(by) == len(r["programs"]), "no program appears twice in the gap")
@@ -157,10 +160,11 @@ try:
     # The live row's flat checks go through the scorer's own passes_live.
     check(G.S.passes_live(G.live_score({"coverage": True, "invented": True, "arithmetic": "equal"})),
           "flat passing checks pass")
-    check(G.S.passes_live(G.live_score({"coverage": True, "invented": True, "arithmetic": "unstated"})),
-          "an unstated figure passes live, as the tab and program_record_machine_pass count it")
-    check(not G.S.passes_live(G.live_score({"coverage": False, "invented": True, "arithmetic": "unstated"})),
-          "an unstated row whose coverage fails does not")
+    check(not G.S.passes_live(G.live_score({"coverage": True, "invented": True, "arithmetic": "unstated"})),
+          "passes_live stays equal-only (S641 review, call 3)")
+    check(G.S.counts_passing_on_tab({"coverage": True, "invented": True, "arithmetic": "unstated"})
+          and not G.S.counts_passing_on_tab({"coverage": False, "invented": True, "arithmetic": "unstated"}),
+          "the census counts an unstated row passing as the tab does, and not one whose coverage fails")
 
     # With no live read: the committed files decide, and loaded state is unknown.
     r2 = G.census(G.universe_from_committed(committed), committed, None, {}, None, parked={})

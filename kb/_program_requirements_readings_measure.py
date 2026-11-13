@@ -68,8 +68,14 @@ def _figure_free(rec: dict) -> bool:
     return True
 
 
+def flat_checks(score: dict) -> dict:
+    """A filed score's checks as the load writes them to the live row."""
+    return {"coverage": (score.get("coverage") or {}).get("pass"), "invented": (score.get("invented") or {}).get("pass"),
+            "arithmetic": (score.get("arithmetic") or {}).get("status")}
+
+
 def hours_shape(f: dict) -> str:
-    """Why an hours record that does not pass as the live table counts it fails, by its score."""
+    """Why an hours record the tab does not count passing fails, by its score."""
     a = f["score"].get("arithmetic") or {}
     st = a.get("status")
     if f["score"].get("coverage", {}).get("pass") is not True or f["score"].get("invented", {}).get("pass") is not True:
@@ -80,7 +86,9 @@ def hours_shape(f: dict) -> str:
         return "incomplete, a total and no course figure (the reading's reach)"
     if st == "incomplete":
         return "incomplete, a total and some course figures"
-    return "unequal, the courses' sum against the printed total"
+    if st == "unequal":
+        return "unequal, the courses' sum against the printed total"
+    return "arithmetic %s" % st
 
 
 def quoted_total(f: dict) -> str:
@@ -112,7 +120,7 @@ def measure_hours(records: list[dict]) -> dict:
                     and _figure_free(f["record"]))
         if in_reach and S.passes_live(f["score"]):
             reach_passing.append(f["control_number"])
-        if S.passes_live(f["score"]):
+        if S.counts_passing_on_tab(flat_checks(f["score"])):
             continue
         shapes[hours_shape(f)].append((f["college"], f["control_number"]))
         if in_reach:
@@ -253,11 +261,12 @@ def main(argv=None) -> int:
         print(json.dumps({"records": len(records), "hours": hours, "electives": elec, "ge_steps": ge,
                           "statewide_cal_getc_unruled": cal}, indent=1, default=list))
         return 0
-    print("filed records read: %d; passing by the tab's test (passes_live): %d" % (
-        len(records), sum(1 for f in records if S.passes_live(f["score"]))))
-    print("   of them unstated, the scorer's own unstated test failing (the page names a figure): %d" % sum(
-        1 for f in records if S.passes_live(f["score"]) and f["score"]["arithmetic"].get("status") == "unstated"
-        and f["score"]["arithmetic"].get("pass") is not True))
+    tab = [f for f in records if S.counts_passing_on_tab(flat_checks(f["score"]))]
+    print("filed records read: %d; passing on the tab (counts_passing_on_tab): %d; by passes_live: %d" % (
+        len(records), len(tab), sum(1 for f in records if S.passes_live(f["score"]))))
+    print("   passing on the tab while the scorer's own unstated test fails: %d" % sum(
+        1 for f in tab if f["score"]["arithmetic"].get("status") == "unstated"
+        and f["score"]["arithmetic"].get("pass") is False))
     print("\n1. hours_total_only's second reading (total_hours_printed)")
     print("   reach records that already pass (must be 0): %d" % len(hours["reach_passing"]))
     for shape, v in sorted(hours["shapes"].items(), key=lambda x: -len(x[1])):

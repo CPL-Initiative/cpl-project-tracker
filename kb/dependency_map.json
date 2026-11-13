@@ -16785,7 +16785,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 160
+     "line": 177
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -19012,7 +19012,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 53
+     "line": 56
     }
    ],
    "producers": [
@@ -19031,7 +19031,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 54
+     "line": 57
     }
    ],
    "producers": [

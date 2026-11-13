@@ -2303,6 +2303,29 @@ check(S.block_units(_blk({"min": 9, "max": 9}, [3, 3, 3], rule="all"), {})[0] ==
 check(S.block_units_summed(_blk({"min": 5, "max": 5}, [3, 5]), {})[0] == (3.0, 5.0),
       "block_units_summed keeps the reading before the floor, for the rescore")
 
+# ── S644: the tab's passing count, apart from passes_live ──
+# counts_passing_on_tab reads a live row's flat checks as program_requirements.js machineFails does and as
+# the server's program_record_machine_pass does; the statuses are pinned to both sources' own text.
+_JS = open(os.path.join(ROOT, "program_requirements.js"), encoding="utf-8").read()
+_mf = re.search(r"function machineFails\(p\)\s*\{(.*?)\n  \}", _JS, re.S)
+_js_statuses = set(re.findall(r'c\.arithmetic !== "(\w+)"', _mf.group(1))) if _mf else set()
+_SQL = open(os.path.join(ROOT, "chatbox", "supabase_program_record_verdicts.sql"), encoding="utf-8").read()
+_mp = re.search(r"function public\.program_record_machine_pass.*?coalesce\(c->>'arithmetic', ''\) in \(([^)]*)\)", _SQL, re.S)
+_sql_statuses = set(re.findall(r"'(\w+)'", _mp.group(1))) if _mp else set()
+check(_js_statuses == set(S.TAB_PASSING) == _sql_statuses,
+      "TAB_PASSING is the tab's machineFails statuses and program_record_machine_pass's: %s, %s, %s"
+      % (sorted(_js_statuses), sorted(_sql_statuses), S.TAB_PASSING))
+for _c, _want in (({"coverage": True, "invented": True, "arithmetic": "equal"}, True),
+                  ({"coverage": True, "invented": True, "arithmetic": "unstated"}, True),
+                  ({"coverage": True, "invented": True, "arithmetic": "unequal"}, False),
+                  ({"coverage": True, "invented": True, "arithmetic": "incomplete"}, False),
+                  ({"coverage": False, "invented": True, "arithmetic": "equal"}, False),
+                  ({"coverage": True, "invented": None, "arithmetic": "unstated"}, False), (None, False)):
+    check(S.counts_passing_on_tab(_c) is _want, "counts_passing_on_tab(%r) is %s" % (_c, _want))
+check(not S.passes_live({"coverage": {"pass": True}, "invented": {"pass": True},
+                         "arithmetic": {"status": "unstated", "pass": True}}),
+      "passes_live stays equal-only (S641 review, call 3): an unstated read never replaces an equal record")
+
 # ── S644: a noncredit total printed 'Total Hours N-M' with no colon (the harvest's NEXT 5) ──
 # San Bernardino Valley's Job Readiness Skills 35699, as its reading quotes the page: a course list
 # with a UNITS column of 0 and the line 'Total Hours 48-54' (a CourseLeaf table: cells tab-separated).

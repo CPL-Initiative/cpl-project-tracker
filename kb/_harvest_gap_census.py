@@ -13,12 +13,15 @@ THE UNIVERSE is the tab's own: one coci_college_programs row per control number 
 'Active' (program_requirements.js, the S415 headline; queue_status.py HEADLINE_SQL). Teachout and
 Approved rows the harvest also reads are counted apart, never inside it.
 
-PASSING is the scorer's passes_live, over the live row's checks: coverage and invented true and the
-arithmetic "equal" or "unstated", the tab's own machine test and its headline's complete count (the S644
-conductor's ruling; program_record_machine_pass). places_none is the scorer's too
+PASSING is the tab's count, the scorer's counts_passing_on_tab over the live row's flat checks: coverage
+and invented true and the arithmetic "equal" or "unstated" (program_requirements.js machineFails, the
+headline's complete count; S644), so the census headline equals the tab's. A row the tab counts passing
+whose filed score fails the scorer's own unstated test (the page names a figure the record lacks) is
+listed apart, as TAB_ONLY, and is no gap. The harvest's holds keep passes_live, equal-only (S641 review,
+call 3), for the sub-causes that ask whether a filed record passes. places_none is the scorer's too
 (kb/_program_requirements_score.py). Neither is restated here: the live table's flat checks
 (_program_requirements_load.py writes coverage and invented as booleans, arithmetic as a status) are
-put back in the score's shape and handed to passes_live.
+handed to the scorer as they are, or put back in the score's shape for passes_live.
 
 READS. On a runner, anon REST through the college script's own fetch_all (limit and offset, a page
 of PAGE_SIZE at a time): coci_college_programs, program_requirement_records (college, control
@@ -83,12 +86,13 @@ CAUSES = [
     ("course_added", "live, a course added"),
     ("units_unequal", "live, units unequal"),
     ("units_incomplete", "live, units incomplete"),
-    # Kept on the closed list, and empty: a live "unstated" row passes (passes_live, as the tab counts
-    # it), and one whose coverage or invented check fails takes that check's cause (failing_check).
     ("units_unstated", "live, no figure stated"),
     ("unknown_without_live", "filed record fails, live state unknown"),
 ]
 CAUSE_IDS = [c for c, _ in CAUSES]
+# Listed beside the gap, never in it: the tab counts the row passing on its "unstated" status while the
+# filed score's own unstated test fails.
+TAB_ONLY = ("tab_passes_scorer_fails", "counts as passing on the tab; the scorer's own test fails")
 CAUSE_WORDS = dict(CAUSES)
 
 
@@ -101,6 +105,19 @@ def host_of(url: str | None) -> str | None:
         return None
     h = urllib.parse.urlparse(url).netloc.lower()
     return h[4:] if h.startswith("www.") else (h or None)
+
+
+def flat_checks(score: dict | None) -> dict:
+    """A filed score's three checks as the load writes them to the live row (booleans and a status)."""
+    sc = score or {}
+    return {"coverage": (sc.get("coverage") or {}).get("pass"), "invented": (sc.get("invented") or {}).get("pass"),
+            "arithmetic": (sc.get("arithmetic") or {}).get("status")}
+
+
+def scorer_unstated_fails(checks: dict | None, filed: dict | None) -> bool:
+    """A row the tab counts passing on "unstated" whose filed score's own unstated test failed."""
+    a = (filed or {}).get("arithmetic") or {}
+    return (checks or {}).get("arithmetic") == "unstated" and a.get("status") == "unstated" and a.get("pass") is False
 
 
 def live_score(checks: dict | None) -> dict:
@@ -310,17 +327,22 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
     parked = PARKED if parked is None else parked
     live = records is not None
     by_slug = committed
-    gap, passing = [], 0
+    gap, passing, tab_only = [], 0, []
     for prog in universe:
         cn = norm_cn(prog["control_number"])
         slug = C.slug_of(prog["college"])
         col = by_slug.get(slug)
         rec = (records or {}).get(cn)
-        if live and rec is not None and S.passes_live(live_score(rec.get("checks"))):
+        filed = (col or {}).get("records", {}).get(cn)
+        filed = filed if isinstance(filed, dict) else None
+        if live:
+            checks = rec.get("checks") if rec is not None else None
+        else:
+            checks = flat_checks(filed) if filed is not None else None
+        if checks is not None and S.counts_passing_on_tab(checks):
             passing += 1
-            continue
-        if not live and col and isinstance(col["records"].get(cn), dict) and S.passes_live(col["records"][cn]):
-            passing += 1
+            if scorer_unstated_fails(checks, filed):
+                tab_only.append({"college": (col or {}).get("college") or prog["college"], "control_number": cn})
             continue
         cause, sub = assign({"control_number": cn, "college": prog["college"]}, col, rec, live, parked)
         college = (col or {}).get("college") or prog["college"]
@@ -386,6 +408,8 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
         "passing": passing,
         "gap": len(gap),
         "outside_universe": outside or {},
+        "tab_only": {"cause": TAB_ONLY[0], "what": TAB_ONLY[1], "programs": len(tab_only),
+                     "members": sorted(tab_only, key=lambda x: (x["college"], x["control_number"]))},
         "statewide_by_cause": {c: by_cause.get(c, 0) for c in CAUSE_IDS},
         "sub_causes": [{"cause": c, "sub": s, "programs": n}
                        for (c, s), n in sorted(by_sub.items(), key=lambda x: -x[1])],
@@ -431,6 +455,9 @@ def render_md(r: dict, when: str) -> str:
          "record, each with one cause and one lever. Counts are a snapshot; rerun "
          "`harvest-gap-census.yml` for today's." % (when, r["basis"]), "",
          "Universe %d · passing %d · without a passing record %d." % (r["universe"], r["passing"], r["gap"]), ""]
+    if (r.get("tab_only") or {}).get("programs"):
+        L += ["Of the passing, %d %s (listed in the JSON, not counted as gaps)."
+              % (r["tab_only"]["programs"], r["tab_only"]["what"]), ""]
     if r["outside_universe"]:
         L += ["Read by the harvest but outside the universe: " + ", ".join(
             "%s %d" % (k, v) for k, v in sorted(r["outside_universe"].items())) + ".", ""]

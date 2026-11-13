@@ -563,23 +563,30 @@ def careers_check(record: dict, text: str | None) -> dict:
 
 def passes_live(score: dict | None) -> bool:
     """A record that passes as the live table counts it (program_requirement_records.checks):
-    every listed course placed (coverage), none invented, and the arithmetic "equal" or "unstated".
-    That is the tab's machine test (program_requirements.js machineFails, the headline's
-    complete count) and the server's (program_record_machine_pass); the S644 conductor ruled that
-    passes_live match the tab exactly. The load writes the live arithmetic as the score's status
-    alone (_program_requirements_college.py, the load rows' checks), so a row reads "unstated" even
-    where the scorer's own unstated test failed (the page names a figure the record lacks), and the
-    tab counts that row passing; so does this, reading the status and never arithmetic.pass.
-    score["pass"] asks more (repeats, outcomes, careers, and an unstated test that holds); the
-    harvest's holds and its kept-passing guard judge a filed record by this one definition (S641
-    review, call 3)."""
+    every listed course placed (coverage), none invented, and the arithmetic equal. score["pass"]
+    asks more (repeats, outcomes, careers); the harvest's holds and its kept-passing guard judge a
+    filed record by this one definition (S641 review, call 3)."""
     sc = score or {}
     return ((sc.get("coverage") or {}).get("pass") is True and (sc.get("invented") or {}).get("pass") is True
-            and (sc.get("arithmetic") or {}).get("status") in LIVE_PASSING)
+            and (sc.get("arithmetic") or {}).get("status") == "equal")
 
 
-# The arithmetic statuses the live table counts passing (program_record_machine_pass).
-LIVE_PASSING = ("equal", "unstated")
+# The arithmetic statuses the tab counts passing: program_requirements.js machineFails and its
+# headline's complete count (program_record_machine_pass on the server).
+TAB_PASSING = ("equal", "unstated")
+
+
+def counts_passing_on_tab(checks: dict | None) -> bool:
+    """Whether the COBI tab counts a live row passing, from the row's flat checks
+    (program_requirement_records.checks): coverage and invented true, arithmetic "equal" or
+    "unstated". The load writes the arithmetic as the score's status alone, so a row reads
+    "unstated" even where the scorer's own unstated test failed, and the tab counts it passing.
+    This is the tab's count, for a headline that must equal it (the gap census, S644). It is not
+    passes_live: the harvest's holds and its kept-passing guard keep equal-only (S641 review, call
+    3), so an unstated read never replaces an equal record. tests/program_requirements_pilot_test.py
+    pins TAB_PASSING to the tab's own expression."""
+    c = checks or {}
+    return c.get("coverage") is True and c.get("invented") is True and c.get("arithmetic") in TAB_PASSING
 
 
 def places_none(score: dict | None) -> bool:
