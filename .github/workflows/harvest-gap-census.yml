@@ -1,0 +1,45 @@
+name: Harvest gap census
+
+# Every active program without a passing program requirements record, each with one cause and one
+# lever, ranked by the programs a change would move (Sam, 2026-11-12: "we need to increase our
+# throughput"; kb/_harvest_gap_census.py). Reads the live tables with the public anon key only
+# (coci_college_programs, program_requirement_records, program_source_registry, coci_program_courses)
+# and the committed per-college files; writes no table. Commits kb/status/harvest_gap_census.json
+# and .md to the branch it ran on. Dispatch only: no schedule, no secret.
+
+on:
+  workflow_dispatch: {}
+
+concurrency:
+  group: harvest-gap-census-${{ github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  census:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Census (anon reads only)
+        run: python3 kb/_harvest_gap_census.py --export out/harvest_gap_live.json
+      - name: Commit to the branch that ran it
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/status/harvest_gap_census.json kb/status/harvest_gap_census.md
+          if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
+          git commit -m "Harvest gap census (run ${{ github.run_id }})"
+          for i in 1 2 3 4; do
+            git push origin "HEAD:${{ github.ref_name }}" && exit 0
+            sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
+          done
+          exit 1
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: harvest-gap-census-${{ github.run_id }}
+          path: out
