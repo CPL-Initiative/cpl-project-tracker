@@ -1,0 +1,1666 @@
+{
+ "what": "Glendale's load plan against the live table (S648)",
+ "live_read": "2026-11-13 about 20:15Z",
+ "live": 226,
+ "live_checked": 0,
+ "main_filing_records": 260,
+ "branch_head": "8d36135e",
+ "load_rows": 242,
+ "load_skipped": [],
+ "step_load_inserts": [
+  {
+   "control_number": "02570",
+   "run": "43415972509",
+   "passes": false
+  },
+  {
+   "control_number": "02587",
+   "run": "43415972509",
+   "passes": false
+  },
+  {
+   "control_number": "15584",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "19562",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "24010",
+   "run": "43415972509",
+   "passes": false
+  },
+  {
+   "control_number": "24274",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "30813",
+   "run": "43415972509",
+   "passes": false
+  },
+  {
+   "control_number": "31597",
+   "run": "43497305929",
+   "passes": true
+  },
+  {
+   "control_number": "32738",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "36155",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "41825",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "44774",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45057",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45068",
+   "run": "43415972509",
+   "passes": false
+  },
+  {
+   "control_number": "45393",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45394",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45395",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45396",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45397",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45399",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45596",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45681",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45682",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45854",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "45996",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "46004",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "46050",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "46051",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "46052",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "46053",
+   "run": "43415972509",
+   "passes": true
+  },
+  {
+   "control_number": "46054",
+   "run": "43415972509",
+   "passes": true
+  }
+ ],
+ "step_load_inserts_none_of": [],
+ "step_reread_43415972509_replaces": [
+  {
+   "control_number": "02547",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "02551",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "02552",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "02553",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "02556",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "02571",
+   "live_run": "41040709338",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "02575",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "02602",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "02611",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "02612",
+   "live_run": "41040709338",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "02615",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "11143",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "11144",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "11145",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "11151",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "11153",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "11176",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "12498",
+   "live_run": "41040709338",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "12500",
+   "live_run": "41040709338",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "12501",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "12503",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "12570",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "12574",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "18660",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "18661",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19110",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19365",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19366",
+   "live_run": "41040709338",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19555",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19558",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19559",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19560",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19561",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19563",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19564",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19565",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19566",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19567",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19569",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19570",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19571",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19573",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19574",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19575",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19576",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19578",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "19581",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "21299",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "21304",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "21306",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "21307",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "21308",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "21314",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "21318",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "21319",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "21320",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "21323",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "24011",
+   "live_run": "39063367252",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "24042",
+   "live_run": "39063367252",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "24161",
+   "live_run": "39063367252",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "24356",
+   "live_run": "39063367252",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "24381",
+   "live_run": "39063367252",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "30031",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "30744",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "31928",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "32168",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "32199",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "32267",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "32394",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "32462",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "32605",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "32607",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "33295",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "33665",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "33934",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "35029",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "35283",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "35473",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "35585",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "35597",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36102",
+   "live_run": "39063367252",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36107",
+   "live_run": "39063367252",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36270",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36416",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36424",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36536",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36580",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36598",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36600",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36667",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36711",
+   "live_run": "41040709338",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36712",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36713",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36714",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36717",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36720",
+   "live_run": "41040709338",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36722",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36723",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36724",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36725",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36726",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "36727",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "37071",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "38717",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "39905",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "39912",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "40808",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "40814",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41379",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41573",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41650",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41651",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41730",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41767",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41768",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41775",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41776",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41826",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41827",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "41828",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "42378",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "42738",
+   "live_run": "41040709338",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44359",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44360",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44484",
+   "live_run": "41012563119",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44485",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44486",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44487",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44488",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44569",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44571",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44572",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44640",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44773",
+   "live_run": "41040709338",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "44775",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "45101",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "45108",
+   "live_run": "41049220135",
+   "branch_passes": true,
+   "live_passes": true,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "45211",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "45212",
+   "live_run": "41012563119",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  }
+ ],
+ "step_reread_43497305929_replaces": [
+  {
+   "control_number": "02603",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "18639",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "18640",
+   "live_run": "41049220135",
+   "branch_passes": false,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  },
+  {
+   "control_number": "42263",
+   "live_run": "39063367252",
+   "branch_passes": true,
+   "live_passes": false,
+   "live_record_from": "82d68cb1"
+  }
+ ],
+ "untouched_live": [
+  {
+   "control_number": "02548",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "02549",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "02550",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "02555",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "02557",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "02569",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "02572",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "02580",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "02588",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "02598",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "02599",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "09482",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "10055",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "10057",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "10412",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "11155",
+   "live_run": "41049220135",
+   "branch": "no record"
+  },
+  {
+   "control_number": "11159",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "11161",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "11162",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "11163",
+   "live_run": "41012563119",
+   "branch": "no record"
+  },
+  {
+   "control_number": "11175",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "11177",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "11189",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "11190",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "11191",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "11193",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "12499",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "12502",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "16972",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "17645",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "17760",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "18638",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "19111",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "19546",
+   "live_run": "41012563119",
+   "branch": "no record"
+  },
+  {
+   "control_number": "19577",
+   "live_run": "41012563119",
+   "branch": "no record"
+  },
+  {
+   "control_number": "21302",
+   "live_run": "41040709338",
+   "branch": "no record"
+  },
+  {
+   "control_number": "21303",
+   "live_run": "41049220135",
+   "branch": "no record"
+  },
+  {
+   "control_number": "21305",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "21315",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "21317",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "24327",
+   "live_run": "39063367252",
+   "branch": "no record"
+  },
+  {
+   "control_number": "24377",
+   "live_run": "39063367252",
+   "branch": "no record"
+  },
+  {
+   "control_number": "30814",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "32178",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "32234",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "32420",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "32463",
+   "live_run": "39063367252",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "32707",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "33294",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "33598",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "33911",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "35628",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "36419",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "36480",
+   "live_run": "41012563119",
+   "branch": "no record"
+  },
+  {
+   "control_number": "36599",
+   "live_run": "41012563119",
+   "branch": "no record"
+  },
+  {
+   "control_number": "36601",
+   "live_run": "41012563119",
+   "branch": "no record"
+  },
+  {
+   "control_number": "36710",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "36728",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "37070",
+   "live_run": "41012563119",
+   "branch": "no record"
+  },
+  {
+   "control_number": "37854",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "37855",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "37856",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "37857",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "37952",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "37960",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "38144",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "38973",
+   "live_run": "39063367252",
+   "branch": "no record"
+  },
+  {
+   "control_number": "39285",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "39289",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "39406",
+   "live_run": "41055650373",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "39910",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "40846",
+   "live_run": "39063367252",
+   "branch": "no record"
+  },
+  {
+   "control_number": "40847",
+   "live_run": "39063367252",
+   "branch": "no record"
+  },
+  {
+   "control_number": "40863",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "41729",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "42126",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "43038",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "44351",
+   "live_run": "41012563119",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "44489",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "44568",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "44570",
+   "live_run": "41040709338",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "44951",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  },
+  {
+   "control_number": "45150",
+   "live_run": "41049220135",
+   "branch": "same record as live"
+  }
+ ],
+ "regressions_pass_to_fail": [],
+ "live_record_not_found_in_history": [],
+ "main_filing_not_live": [
+  "02570",
+  "02587",
+  "12571",
+  "15584",
+  "19269",
+  "19562",
+  "24010",
+  "30032",
+  "30561",
+  "30813",
+  "31597",
+  "32738",
+  "36155",
+  "36596",
+  "41825",
+  "44774",
+  "45057",
+  "45393",
+  "45394",
+  "45395",
+  "45396",
+  "45397",
+  "45399",
+  "45596",
+  "45681",
+  "45682",
+  "45854",
+  "45996",
+  "46004",
+  "46050",
+  "46051",
+  "46052",
+  "46053",
+  "46054"
+ ],
+ "live_not_in_main_filing": [],
+ "counts": {
+  "inserts": 31,
+  "inserts_passing": 26,
+  "reread_43415972509": 139,
+  "reread_43497305929": 4,
+  "untouched_live": 83,
+  "regressions": 0,
+  "unknown_live": 0,
+  "main_filing_not_live": 34
+ },
+ "why_226_live": "main's filing holds 260 records; the 34 never loaded each place none of their listed courses (places_none: 30 of run 39063367252, 3 of 40704760867, 1 of 40711704988), which the load skips",
+ "expected": {
+  "before": {
+   "live": 226,
+   "checked": 0,
+   "on_new_runs": 0,
+   "passing": 121
+  },
+  "after_load": {
+   "live": 257,
+   "on_new_runs": 31
+  },
+  "after_reread_43415972509": {
+   "live": 257,
+   "on_new_runs": 170,
+   "replaced": 139,
+   "kept_same_run": 30
+  },
+  "after_reread_43497305929": {
+   "live": 257,
+   "on_new_runs": 174,
+   "replaced": 4,
+   "kept_same_run": 1,
+   "passing": 182
+  }
+ },
+ "untouched_note": "No step deletes a row. Live 19577 (teach-out), 24377 (run 39063367252, the 2025-26 PDF read, fails) and 37070 (run 41012563119, the 2025-26 PDF read, fails) stay as they are; neither live 24377 nor live 37070 is a wrong-tab read (those reads were branch-only and are removed). 12571 and 24432 are not live."
+}
