@@ -3000,15 +3000,16 @@ CERT_KEYS = frozenset({"ca", "cc", "com", "cp", "nc"})
 def _award_keys(text: str | None) -> set[str]:
     """The exact awards a heading's award words or a state record's award name (decision 17, round 4):
     aa, as, aat, ast; ca (Achievement), cc (Completion), com (Competency), cp (Proficiency), nc
-    (Noncredit). AA is not AS, and a Certificate of Achievement is not CC. A bare "Cert" is any
-    certificate; the state's "Noncredit program" is any noncredit certificate (cc, com or nc)."""
+    (Noncredit). AA is not AS, and a Certificate of Achievement is not CC. A bare "Cert" or "Certificate"
+    is any certificate; the state's "Noncredit program" is any noncredit certificate (cc, com or nc). The
+    transfer letters run together read as written apart ("AAT" is "AA-T", S647)."""
     t = (text or "").strip().lower()
     if not t:
         return set()
     out = set()
     transfer = bool(re.search(r"\bfor\s+transfer\b|-\s*t\b|\ba\.?\s?[as]\.?\s*t\b|\ba\.?\s?[as]\.?t\.?(?![a-z])", t))
-    arts = re.search(r"\ba\.?\s?a\b\.?|\bassociate\s+(?:of|in)\s+arts\b", t)
-    sci = re.search(r"\ba\.?\s?s\b\.?|\bassociate\s+(?:of|in)\s+science\b", t)
+    arts = re.search(r"\ba\.?\s?a(?:\b|(?=t\b))\.?|\bassociate\s+(?:of|in)\s+arts\b", t)
+    sci = re.search(r"\ba\.?\s?s(?:\b|(?=t\b))\.?|\bassociate\s+(?:of|in)\s+science\b", t)
     if arts:
         out.add("aat" if transfer else "aa")
     if sci:
@@ -3020,7 +3021,7 @@ def _award_keys(text: str | None) -> set[str]:
             out.add(key)
     if re.search(r"^noncredit\s+program\b", t):
         out |= {"cc", "com", "nc"}
-    if re.fullmatch(r"cert\.?", t):
+    if re.fullmatch(r"cert\.?|certificate", t):
         out |= CERT_KEYS
     return out
 
@@ -3042,11 +3043,24 @@ def _split_heading(s: str | None) -> tuple[str, str]:
     return s, ""
 
 
-def _title_words(s: str | None) -> list[str]:
+def _title_words(s: str | None, keep_hyphen: bool = False) -> list[str]:
     """A title's words in order: case and punctuation set aside, "&" read as "and", and a word the catalog
-    hyphenated at a line's end rejoined ("Certi- fied")."""
-    s = re.sub(r"(?<=[a-z])- (?=[a-z])", "", (s or "").lower())
+    hyphenated at a line's end rejoined ("Certi- fied"); keep_hyphen reads that hyphen as the title's own
+    ("Pre-" over "Engineering, AS" is "Pre-Engineering", S647)."""
+    s = (s or "").lower()
+    if not keep_hyphen:
+        s = re.sub(r"(?<=[a-z])- (?=[a-z])", "", s)
     return re.findall(r"[a-z0-9]+", s.replace("&", " and "))
+
+
+def _wrap_head_ok(upper: str, title: str) -> bool:
+    """Decision 18's wrapped heading, S647: a line above that ends a sentence ("... in Commercial.") is
+    prose, never the head of a wrapped heading, unless the title itself carries that word with its
+    period ("U.S.")."""
+    s = (upper or "").strip()
+    if not s or s[-1] not in ".!?;":
+        return True
+    return s.split()[-1].lower() in (title or "").lower().split()
 
 
 def pdf_own_heading(line: str, nxt: str, program: dict) -> bool:
@@ -3061,7 +3075,7 @@ def pdf_own_heading(line: str, nxt: str, program: dict) -> bool:
     if not words:
         words = (nxt or "").strip()
     want = _title_words(_split_heading(title)[0])
-    if not want or _title_words(name) != want:
+    if not want or want not in (_title_words(name), _title_words(name, keep_hyphen=True)):
         return False
     filed = _award_keys(program.get("award"))
     if filed:
@@ -3092,13 +3106,18 @@ def pdf_block_headings(text: str, program: dict, ctx: dict) -> list[tuple[int, b
         if not _heading_shaped(lines[k], nxt):
             continue
         rest = "\n".join(lines[k:k + 6])
-        if pdf_own_heading(lines[k], nxt, program):
+        # A line under one that ends in a hyphen ("Pre-" over "Engineering, AS") is that word's tail, never
+        # a heading alone (S647).
+        torn = i > 0 and re.search(r"[A-Za-z]-$", lines[content[i - 1]].strip()) is not None
+        if not torn and pdf_own_heading(lines[k], nxt, program):
             out.append((offs[k], True, None))
             continue
         # A long title wraps in the catalog's narrow column ("Apprenticeship Carpentry," over "Millwrighting,
         # AS"): the heading is the line with the one or two lines above it, still the full title (decision 18).
-        wrapped = next((content[i - j] for j in (1, 2) if i - j >= 0 and pdf_own_heading(
-            " ".join(lines[content[x]].strip() for x in range(i - j, i + 1)), nxt, program)), None)
+        wrapped = next((content[i - j] for j in (1, 2) if i - j >= 0
+                        and all(_wrap_head_ok(lines[content[x]], program.get("title") or "") for x in range(i - j, i))
+                        and pdf_own_heading(" ".join(lines[content[x]].strip() for x in range(i - j, i + 1)),
+                                            nxt, program)), None)
         if wrapped is not None:
             out.append((offs[wrapped], True, None))
             continue
