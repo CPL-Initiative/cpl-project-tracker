@@ -250,6 +250,22 @@
     return L && typeof L.url === "function" ? L.url(id) : MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW;
   }
   function whoBuilt(h) { return h.colleges && h.colleges.length ? h.colleges : h.art; }
+  /* The name source's level in words (kb/_build_exhibits_review.py name_source): strong, the issuer's own page; partial, a
+     sibling exhibit carries it; limited, anything else, including a record whose source is missing or unreadable. Only a
+     record the builder marked (an official name or a title in use) gets a line. */
+  var NAME_SOURCE_WORDS = { strong: "the issuer's own page names it", partial: "another exhibit in the reference carries it",
+    limited: "no issuer page or other exhibit names it yet" };
+  function nameSourceLevel(src) {
+    var lv = src && typeof src === "object" ? src.level : "";
+    return Object.prototype.hasOwnProperty.call(NAME_SOURCE_WORDS, lv) ? lv : "limited";
+  }
+  function nameSourceLine(h) {
+    if (!h || !("name_source" in h)) return null;
+    var src = h.name_source, lv = nameSourceLevel(src);
+    var url = lv === "strong" && src && /^https?:\/\//i.test(src.url || "") ? src.url : "";
+    return el("p", { cls: "exh-muted exh-small exh-name-source" }, ["Name source: " + lv + ", " + NAME_SOURCE_WORDS[lv] + ".",
+      url ? " " : null, url ? el("a", { href: url, target: "_blank", rel: "noopener", text: "Open the issuer's page" }) : null]);
+  }
   /* The issuer a title brings with it: an ASE certification's title names ASE, ahead of the proposal's issuer;
      what a person typed in the box wins over both. */
   function aseIssuer(title) { return ASE_CERT_TITLE.test(title || "") || ASE_CERT_FORM.test(title || "") ? ASE_ISSUER : ""; }
@@ -2207,6 +2223,10 @@
     var title = el("input", { cls: "exh-edit", id: "exh-title", type: "text", autocomplete: "off" });
     title.value = draft.title != null ? draft.title : (h.title || "");
     canon.appendChild(title);
+    // How well the proposed name is sourced, in words beside it (kb/_build_exhibits_review.py name_source; the S648
+    // conductor's d-official-name-source-confidence-s648). It never holds a proposal back; anything unknown reads limited.
+    var nameSrc = nameSourceLine(h);
+    if (nameSrc) { nameSrc.hidden = title.value.trim() !== (h.title || ""); canon.appendChild(nameSrc); }
     var issuer = el("input", { id: "exh-issuer", type: "text", autocomplete: "off", placeholder: "None named" });
     // The issuer follows the title (an ASE test names ASE) until a person types or picks one.
     var issuerTyped = draft.issuer != null;
@@ -2231,6 +2251,7 @@
     title.addEventListener("input", function () {
       if (!issuerTyped) issuer.value = issuerFor(title.value, h.issuer);
       keepDraft(); showAse(); exists.hidden = title.value.trim() !== (h.title || "");
+      if (nameSrc) nameSrc.hidden = exists.hidden;
     });
     canon.appendChild(exists);
     // Sam, 2026-11-12: a certification, license or training program takes its official name. When the repo holds none
@@ -5220,7 +5241,7 @@
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
     loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN,
-    _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _relInUse: relInUse, _levelKey: levelKey, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
+    _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _relInUse: relInUse, _levelKey: levelKey, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows, _nameSourceLine: nameSourceLine, _nameSourceLevel: nameSourceLevel,
     _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();

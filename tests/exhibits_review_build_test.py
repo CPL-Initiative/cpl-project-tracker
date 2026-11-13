@@ -412,6 +412,46 @@ check("a title from any other issuer keeps a code that looks like a series",
       and B.cert_naming.series_aside("CompTIA A+ 220-1101 and 220-1102") == ("CompTIA A+", ["220-1101", "220-1102"])
       and B.cert_naming.canonical("CompTIA Security+ — SY0-701", "CompTIA") == "CompTIA Security+")
 
+# The name source (COBIx on #3223, taken by the S648 conductor: d-official-name-source-confidence-s648). A fixture catalog:
+# the issuer's own page, an aggregator's page, and a row with no link.
+CAT = {"credentials": [
+    {"issuer": "CompTIA", "name": "CompTIA Cloud+", "url": "https://www.comptia.org/en-us/certifications/cloud/"},
+    {"issuer": "Some Board (SB)", "name": "Board Certified Tech", "url": "https://www.careeronestop.org/x?id=1"},
+    {"issuer": "Other Body", "name": "Other Cert", "url": ""}]}
+URLS = B.official_urls(CAT)
+check("strong: the catalog holds the issuer's own page for the name (case and spacing folded, issuer tag dropped)",
+      B.name_source("compTIA  cloud+", "CompTIA", URLS) == {"url": "https://www.comptia.org/en-us/certifications/cloud/", "level": "strong"}
+      and B.name_source("Board Certified Tech", "Some Board", URLS)["level"] != "strong", URLS)
+check("an aggregator's link or no link is no issuer page: partial when a sibling exhibit carries it, else limited",
+      B.name_source("Board Certified Tech", "Some Board (SB)", URLS, {"title": "Board Certified Tech", "locals": 3})
+      == {"url": "", "level": "partial"}
+      and B.name_source("Other Cert", "Other Body", URLS) == {"url": "", "level": "limited"})
+check("a record with no source reads limited, never strong, and never raises",
+      all(B.name_source(t, i, u, iu) == {"url": "", "level": "limited"}
+          for t, i, u, iu in (("", "", {}, None), (None, None, None, None), ("CompTIA Cloud+", "CompTIA", None, None),
+                              ("CompTIA Cloud+", "", URLS, None)))
+      and B.official_urls(None) == {} and B.official_urls({"credentials": [{}]}) == {})
+check("the record's level is one of three words", set(B.NAME_SOURCE_LEVELS) == {"strong", "partial", "limited"})
+fix3 = json.loads(json.dumps(fix2))
+fix3[B.CATALOG] = CAT
+with tempfile.TemporaryDirectory() as root3:
+    for rel, obj in fix3.items():
+        write(root3, rel, obj)
+    sw3 = json.loads(json.dumps(STATEWIDE))
+    sw3["exhibits"].append({"exhibit_ids": ["MAPICI-CCX-1-001"], "raw_titles": [SER], "adopter_names": ["Norco College"],
+                            "potential_names": [], "credit_recs": [], "adopter_rec_idx": {}})
+    write(root3, "statewide_data.js", sw3, js="CPL_STATEWIDE")
+    write(root3, "unified_courses_members.js", MEMBERS, js="CPL_UNIFIED_MEMBERS")
+    write(root3, "statewide_prescriptive.js", PRESCRIPTIVE, js="CPL_STATEWIDE_PRESCRIPTIVE")
+    h3 = {h["raw"]: h for h in B.build(root3)[0]["held"]}
+srcd = [h for h in h3.values() if "name_source" in h]
+check("the builder marks only an official name or a title in use, each with a level, and the CompTIA card reads strong",
+      all(h["proposal_source"] in B.NAMED_SOURCES and h["name_source"]["level"] in B.NAME_SOURCE_LEVELS for h in srcd)
+      and all("name_source" not in h for h in h3.values() if h["proposal_source"] not in B.NAMED_SOURCES)
+      and h3[SER]["proposal_source"] == B.SRC_OFFICIAL and h3[SER]["name_source"]["level"] == "strong"
+      and h3[SER]["name_source"]["url"].startswith("https://www.comptia.org/"),
+      [(h["raw"], h["proposal_source"], h.get("name_source")) for h in h3.values()])
+
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))
 sys.exit(1 if failed else 0)

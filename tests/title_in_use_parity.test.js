@@ -86,6 +86,33 @@ async function settle() { for (let i = 0; i < 10; i++) await tick(); }
   await b.M.boot(); await settle();
   check("that card drew (the check above reads a real card)", !!b.d.querySelector("#exh-title"));
   check("a card without the flag says nothing about it", !b.d.querySelector(".exh-needs-name"));
+  check("…and a record the builder gave no name source draws no source line", !b.d.querySelector(".exh-name-source"));
+
+  // The name source (d-official-name-source-confidence-s648): its level in words beside the proposal, never a glyph or a
+  // color alone; a missing or unreadable source reads limited, never strong; a limited source never holds the card back.
+  b = boot(held("Industry Training Evidence for CNT 7285", "CompTIA Cloud+", "CompTIA",
+    { proposal_source: "official_name", name_source: { url: "https://www.comptia.org/en-us/certifications/cloud/", level: "strong" } }));
+  await b.M.boot(); await settle();
+  let ns = b.d.querySelector(".exh-name-source");
+  check("a strong source says so in words and links the issuer's page",
+    ns && /^Name source: strong, the issuer's own page names it\./.test(txt(ns))
+    && ns.querySelector("a[href='https://www.comptia.org/en-us/certifications/cloud/'][target=_blank]"), txt(ns));
+  check("the source line is plain words: no glyph, no color class", ns && !/[^\x20-\x7E’]/.test(txt(ns)) && !/green|red|alert/.test(ns.className), ns && ns.className);
+  const tbox = b.d.querySelector("#exh-title");
+  tbox.value = "Something else"; tbox.dispatchEvent(new b.w.Event("input"));
+  check("the line belongs to the proposed title: it hides once the title is edited", ns.hidden === true);
+  [[null, "a null source"], [{}, "an empty source"], [{ level: "certain", url: "https://x.example" }, "an unknown level"], ["strong", "a bare string"]]
+    .forEach(function (p) {
+      const line = M._nameSourceLine(held("r", "T", "I", { name_source: p[0] }));
+      check(p[1] + " reads limited, with no link", line && /^Name source: limited, /.test(txt(line)) && !line.querySelector("a"), txt(line));
+    });
+  check("a partial source reads partial, with no link",
+    /^Name source: partial, another exhibit in the reference carries it\.$/.test(txt(M._nameSourceLine(held("r", "T", "I", { name_source: { level: "partial", url: "" } })))));
+  b = boot(held("Some Vendor Cert evidence", "Some Vendor Cert", "Some Vendor", { proposal_source: "official_name", name_source: { url: "", level: "limited" } }));
+  await b.M.boot(); await settle();
+  check("a limited source never holds the card back: it counts toward Accept all",
+    b.d.querySelector(".exh-name-source") && /^Name source: limited, /.test(txt(b.d.querySelector(".exh-name-source")))
+    && b.M._bulkItems([held("x", "Some Vendor Cert", "Some Vendor", { name_source: { url: "", level: "limited" } })]).length === 1);
   b = boot(held("Firefighter Recruit Academy Certificate", "Firefighter 1", "California State Fire Training (SFT)",
     { proposal_source: "in_use_statewide", from: "the statewide exhibit in use (11 local titles, at 19 colleges)", exists: true, alternates: ["Firefighter 1 Academy"] }));
   await b.M.boot(); await settle();

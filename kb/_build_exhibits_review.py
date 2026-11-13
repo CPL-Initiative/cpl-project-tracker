@@ -200,6 +200,40 @@ def official_name(names, title, issuer):
     return got.get(" ".join((title or "").lower().split()), "")
 
 
+# Pages that list a credential for others, never the issuer's own: a catalog row whose link is one of these is no issuer page.
+AGGREGATOR_HOSTS = ("careeronestop.org", "credentialengine.org", "credentialfinder.org")
+NAME_SOURCE_LEVELS = ("strong", "partial", "limited")
+NAMED_SOURCES = (SRC_OFFICIAL, SRC_STATEWIDE, SRC_MOST_USED)
+
+
+def official_urls(catalog):
+    """(issuer, name), both normalized as official_names folds them -> the issuer's own page for that credential, from the
+    credential watch's catalog (kb/it_ai_credential_catalog.json). A row with no web link, or whose link is an
+    aggregator's (AGGREGATOR_HOSTS), gives none. Read only."""
+    out = {}
+    for c in (catalog or {}).get("credentials") or []:
+        url = (c.get("url") or "").strip()
+        m = re.match(r"https?://(?:www\.)?([^/]+)", url, re.I)
+        if not m or any(m.group(1).lower().endswith(h) for h in AGGREGATOR_HOSTS):
+            continue
+        key = (_norm_name(c.get("issuer")), " ".join((c.get("name") or "").lower().split()))
+        if key[0] and key[1]:
+            out.setdefault(key, url)
+    return out
+
+
+def name_source(title, issuer, urls, in_use=None):
+    """How well a proposed name is sourced, {"url", "level"} (COBIx on #3223, 6859080666, taken by the S648 conductor,
+    cpl_memory d-official-name-source-confidence-s648): `strong` when the credential watch's catalog holds the issuer's
+    own page for it, `partial` when a sibling exhibit in the reference already carries it (`in_use`), else `limited`. No
+    person signs off before a title is proposed, and a limited source never holds a proposal back: the level is shown
+    beside it in words. Anything missing reads `limited`."""
+    url = (urls or {}).get((_norm_name(issuer), " ".join((title or "").lower().split())), "") if title else ""
+    if url:
+        return {"url": url, "level": "strong"}
+    return {"url": "", "level": "partial" if in_use else "limited"}
+
+
 def use_count(o):
     """"11 local titles, at 19 colleges": the reason an in-use proposal gives on the card."""
     words = "%d local title%s" % (o["locals"], "" if o["locals"] == 1 else "s")
@@ -627,7 +661,8 @@ def build(root):
     index = title_in_use.index_from_reference(creds, unified, adoption["credentials"], credential_aliases.load(root))
     in_reference = {o["t"] for o in index}
     statewide_titles = title_in_use.statewide_from_js(os.path.join(root, STATEWIDE_RECS))
-    names_on_file = official_names(load_json(root, CATALOG, {}))
+    catalog = load_json(root, CATALOG, {})
+    names_on_file, urls_on_file = official_names(catalog), official_urls(catalog)
     cindex, descs = course_index(members), coci_descriptions(root)
     items, courses = [], {}
     for n in needs:
@@ -715,6 +750,8 @@ def build(root):
             rec["needs_official_name"] = True
         if prop.get("series_aliases"):
             rec["series_aliases"] = prop["series_aliases"]
+        if rec["proposal_source"] in NAMED_SOURCES:
+            rec["name_source"] = name_source(title, prop.get("issuer", ""), urls_on_file, prop.get("in_use"))
         if aligned and not course_ok and prop.get("source") != SRC_COURSE:
             # The course's title, set aside, and why (Sam's ruling of 2026-11-12): the card's course line still names it.
             rec["course_title_set_aside"] = {"title": aligned["title"], "basis": basis_of(aligned), "why": course_why}
