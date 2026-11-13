@@ -620,10 +620,13 @@ def electives_named(prog: dict, text: str) -> bool:
     words = prog.get("electives_fill_words")
     if not isinstance(words, str) or not _words(words):
         return False
-    # The sentence counts only from the record's own heading onward, where the page prints one: a capture
-    # window can open on the program before it (East Los Angeles, review of #3193).
+    # The sentence counts only from the record's own heading onward, and not at all where the text prints
+    # no heading: a capture window can open on the program before it (East Los Angeles, review of #3193).
+    # The files name no next program's heading, so the scope runs to the end of the text.
     from _program_requirements_reconcile import _heading_end
-    start = _heading_end(text, prog.get("section_heading")) or 0
+    start = _heading_end(text, prog.get("section_heading"))
+    if start is None:
+        return False
     return " %s " % _words(words) in " %s " % _words(text[start:])
 
 
@@ -833,16 +836,18 @@ def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str
     return total_hours_printed(text, stated, labels, record)
 
 
-# "Total Hours 48-54", "Total Hours 48 to 54.", "Total Hours 216", "Non Credit - Total hours 630": the
-# total printed after its label with no colon, one figure or a range, the figure on the label's line or the
-# next one, and a sentence's period after it.
+# "Total Hours 48-54", "Total Hours 48 to 54.", "Total Hours 216": the total printed after its label with no
+# colon, one figure or a range, the figure on the label's line or the next one, and a sentence's period after it.
 TOTAL_HOURS = re.compile(r"\bTotal\s+(?:Contact\s+)?Hours?\b[ \t]*:?[ \t]*(?:\n[ \t]*)?(\d+(?:\.\d+)?)"
                          r"(?:[ \t]*(?:[-–]|to\b)[ \t]*(\d+(?:\.\d+)?))?(?!\d)(?!\.\d)", re.I)
-# What follows a total that continues as a range the pattern did not take ("48 -" then a figure).
-_RANGE_REST = re.compile(r"[ \t]*(?:[-–]|to\b)[ \t]*\d", re.I)
+# A total that runs on past what the pattern took: a range it did not take, or an alternative ("48 or 54").
+_RANGE_REST = re.compile(r"[ \t]*(?:[-–]|to\b|or\b)[ \t]*\d", re.I)
 # An hours figure printed after its label ("Lecture Hours 54", "Lab Hours: 18", "Hours 72").
 _HOURS_FIRST = re.compile(r"\bHours?\b[ \t]*:?[ \t]*(?:\n[ \t]*)?\d", re.I)
+_HOURS_WORD = re.compile(r"\b(?:hours?|hrs?)\b", re.I)
 _NUMBER = re.compile(r"\d+(?:\.\d+)?")
+_NOTHING = re.compile(r"(?<![\w.])(?:0(?:\.0+)?|N/A)(?![\w.])", re.I)
+_PER_COURSE = re.compile(r"\b(?:each|per)\s+course\b", re.I)
 
 
 def _code_pattern(code: str) -> re.Pattern | None:
@@ -853,56 +858,63 @@ def _code_pattern(code: str) -> re.Pattern | None:
     return re.compile(r"\b%s\s*-?\s*%s\b" % (subj, re.escape(m.group(2))), re.I)
 
 
-def course_rows_unpriced(record: dict, text: str) -> bool:
-    """Every course the record lists sits on a line of the page whose figures after its code are all 0:
-    the shape the readings describe ('The course list prints 0 in a UNITS column beside each course',
-    San Bernardino Valley; "'N/A' in the units column", Coalinga). A course the page does not show on
-    a line, or a line carrying any other figure (an hours column), keeps the reading closed."""
+def total_hours_printed(text: str, stated: tuple[float, float], labels: list, record: dict) -> bool:
+    """hours_total_only's second reading (S644, the harvest's NEXT 5), for a college whose procedure
+    names it: its reconcile step sets program.hours_total_printed where the catalog prints a total as
+    'Total Hours N' or 'N-M' with no colon over a course list of 0 or N/A (San Bernardino Valley:
+    'Total Hours 48-54' over a UNITS column of 0; Coalinga: 'Total Hours 216' over 'N/A'). Read only
+    where the first reading fails, so a page it passed still passes. It asks for positive evidence,
+    all inside the record's own section, from its section_heading to the end of the text (no heading
+    found fails; the files name no next heading, so a later program's figures count against it):
+    exactly one total, after the last listed course, both ends the record's, never running on into a
+    range or an alternative it did not take, and no 'each course' or 'per course' beside it; each
+    listed course's row, from its code to the next listed code or the total, holds an explicit 0 or
+    N/A and no other number (cells split one per line read as one row); no other number within three
+    words before 'hours' or 'hrs'; no 'Hours N' or 'Hours: N' outside the total (the conductor's
+    design after the review of #3193)."""
+    prog = record.get("program") or {}
+    if not prog.get("hours_total_printed") or any(not m.group(1) for m in labels):
+        return False
+    from _program_requirements_reconcile import _heading_end
+    start = _heading_end(text, prog.get("section_heading"))
+    if start is None:
+        return False
+    sec = text[start:]
+    totals = list(TOTAL_HOURS.finditer(sec))
+    if len(totals) != 1:
+        return False
+    t = totals[0]
+    if _RANGE_REST.match(sec, t.end()):
+        return False
+    lo = float(t.group(1))
+    hi = float(t.group(2)) if t.group(2) else lo
+    if abs(lo - stated[0]) > TOL or abs(hi - stated[1]) > TOL:
+        return False
+    line_start = sec.rfind("\n", 0, t.start()) + 1
+    if _PER_COURSE.search(sec[max(0, sec.rfind("\n", 0, max(0, line_start - 1)) + 1):t.end()]):
+        return False
+    for h in _HOURS_FIRST.finditer(sec):
+        if not (t.start() <= h.start() and h.end() <= t.end()):
+            return False
+    for w in _HOURS_WORD.finditer(sec):
+        if t.start() <= w.start() < t.end():
+            continue
+        if any(_NUMBER.search(tok) for tok in re.findall(r"\S+", sec[max(0, w.start() - 120):w.start()])[-3:]):
+            return False
     pats = [p for p in (_code_pattern(e.get("code")) for b in record.get("blocks") or []
                         for c in b.get("courses") or [] for e in [c] + alternatives(c)) if p]
     if not pats:
         return False
-    lines = text.splitlines()
-    for p in pats:
-        rows = [ln for ln in lines if p.search(ln)]
-        if not rows:
+    hits = sorted(((m.start(), m.end()) for p in pats for m in p.finditer(sec, 0, t.start())), key=lambda x: x[0])
+    if any(not p.search(sec, 0, t.start()) for p in pats):
+        return False
+    for k, (a, b) in enumerate(hits):
+        row = sec[b:hits[k + 1][0] if k + 1 < len(hits) else t.start()]
+        if not _NOTHING.search(row):
             return False
-        for ln in rows:
-            rest = ln[p.search(ln).end():]
-            for q in pats:
-                rest = q.sub(" ", rest)
-            if any(float(n) != 0 for n in _NUMBER.findall(rest)):
-                return False
+        if any(float(n) != 0 for n in _NUMBER.findall(_NOTHING.sub(" ", row))):
+            return False
     return True
-
-
-def total_hours_printed(text: str, stated: tuple[float, float], labels: list, record: dict) -> bool:
-    """hours_total_only's second reading (S644, the harvest's NEXT 5): the same page, its total
-    printed as 'Total Hours N' or 'Total Hours N-M' with no colon (San Bernardino Valley's 19
-    noncredit certificates, 'Total Hours 48-54' over a UNITS column of 0, as each reading quotes
-    it; Coalinga's 'Total Hours 216' over 'N/A'). Read only where the first reading fails, so a
-    page it passed still passes. Both ends of every total the page prints must equal the record's,
-    and a total that runs on into a range the pattern did not take fails, never reading as its low
-    end (review of #3193). The page must print no hours but its totals: a bare 'Hours: N', a
-    label-first 'Lecture Hours 54' outside a total, or any figure but 0 on a listed course's line
-    (an hours column) keeps it closed (course_rows_unpriced)."""
-    if any(not m.group(1) for m in labels):
-        return False
-    totals = list(TOTAL_HOURS.finditer(text))
-    if not totals:
-        return False
-    spans = [m.span() for m in totals]
-    for m in totals:
-        if _RANGE_REST.match(text, m.end()):
-            return False
-        lo = float(m.group(1))
-        hi = float(m.group(2)) if m.group(2) else lo
-        if abs(lo - stated[0]) > TOL or abs(hi - stated[1]) > TOL:
-            return False
-    for h in _HOURS_FIRST.finditer(text):
-        if not any(a <= h.start() and h.end() <= b for a, b in spans):
-            return False
-    return course_rows_unpriced(record, text)
 
 
 def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,

@@ -136,6 +136,10 @@ def awards_match(kind: str | None, award: str | None) -> bool:
         letter = "A" if kind == "local_aa" else "S"
         return (awards_match("local", award)
                 and bool(re.search(r"\bA\.?\s?%s\b" % letter, award or "", re.I)))
+    if kind == "noncredit":
+        # A noncredit program by the state file's award ("Noncredit program", S644): the no-colon hours
+        # total's flag reads these alone.
+        return bool(re.search(r"\bnon-?\s?credit\b", award or "", re.I))
     return False
 
 

@@ -980,9 +980,10 @@ check("a page whose 'units will vary' sits on an electives line, with no Cal-GET
 
 print("S644: the electives sentence and the general education units, on each catalog's own words")
 ST = R.load_steps()
-GRC = ("Units in the major 20-22\nPlus General Education Requirements (Cal-GETC) 34\nTotal Units 60\n"
+GRC = ("Sociology AA-T\nUnits in the major 20-22\nPlus General Education Requirements (Cal-GETC) 34\nTotal Units 60\n"
        "Complete transferable units as needed to reach 60.")
-grc = {"program": {"total_units": {"min": 20, "max": 22}, "degree_total": {"min": 60, "max": 60},
+grc = {"program": {"section_heading": "Sociology AA-T", "total_units": {"min": 20, "max": 22},
+                   "degree_total": {"min": 60, "max": 60},
                    "ge_units": {"min": 34, "max": 34}, "ge_pattern": "Cal-GETC", "electives_fill_degree": True},
        "blocks": []}
 g_new, g_notes = R.reconcile(grc, GRC, "Grossmont College", "A.A- T Degree", steps=ST)

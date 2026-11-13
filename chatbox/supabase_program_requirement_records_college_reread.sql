@@ -69,7 +69,7 @@ as $$
                - 'total_units' - 'degree_total' - 'ge_units' - 'ge_pattern'
                - 'open_elective_units' - 'degree_elective_units' - 'electives_fill_degree'
                - 'degree_total_minimum' - 'total_units_minimum' - 'ge_overlap'
-               - 'electives_fill_words',
+               - 'electives_fill_words' - 'hours_total_printed',
     'blocks',  coalesce(rec->'blocks', '[]'::jsonb));
 $$;
 revoke all on function public.program_record_carry_basis(jsonb) from public, anon, authenticated;

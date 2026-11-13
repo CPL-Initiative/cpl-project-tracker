@@ -2327,79 +2327,98 @@ check(not S.passes_live({"coverage": {"pass": True}, "invented": {"pass": True},
       "passes_live stays equal-only (S641 review, call 3): an unstated read never replaces an equal record")
 
 # ── S644: a noncredit total printed 'Total Hours N-M' with no colon (the harvest's NEXT 5) ──
-# San Bernardino Valley's Job Readiness Skills 35699, as its reading quotes the page: a course list
-# with a UNITS column of 0 and the line 'Total Hours 48-54' (a CourseLeaf table: cells tab-separated).
-SBVC_NC = ("Required Courses:\nCourse\tTitle\tUnits\nVOCED 600\tJob Search Skills\t0\nVOCED 601\tResume Writing\t0\n"
-           "VOCED 602\tInterview Skills\t0\nVOCED 603\tCustomer Service\t0\nTotal Hours\t48-54")
-sbvc = {"program": {"measure": "hours", "total_units": {"min": 48, "max": 54}},
+# A college's procedure names the reading (program.hours_total_printed, San Bernardino Valley's and Coalinga's
+# reconcile step), and the page must show positive evidence inside the record's own section.
+SBVC_HEAD = "Job Readiness Skills Certificate of Completion"
+SBVC_NC = (SBVC_HEAD + "\nRequired Courses:\nCourse\tTitle\tUnits\nVOCED 600\tJob Search Skills\t0\n"
+           "VOCED 601\tResume Writing\t0\nVOCED 602\tInterview Skills\t0\nVOCED 603\tCustomer Service\t0\n"
+           "Total Hours\t48-54")
+sbvc = {"program": {"measure": "hours", "total_units": {"min": 48, "max": 54}, "section_heading": SBVC_HEAD,
+                    "hours_total_printed": True},
         "blocks": [{"name": "Required Courses:", "rule": "all",
                     "courses": [{"code": "VOCED %d" % n, "units": None} for n in (600, 601, 602, 603)]}]}
 SBVC_LIST = [{"code": "VOCED %d" % n, "units": 0} for n in (600, 601, 602, 603)]
+
+
+def _with(**prog):
+    r = json.loads(json.dumps(sbvc))
+    r["program"].update(prog)
+    return r
+
+
 a = S.score(sbvc, SBVC_LIST, SBVC_NC, "Noncredit program")["arithmetic"]
 check(a["status"] == "equal" and a.get("total_only"), "SBVC 35699's 'Total Hours<TAB>48-54' passes as total only: %s"
       % json.dumps(a))
-check(S.score(sbvc, SBVC_LIST, SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48 - 54"),
-              "Noncredit program")["arithmetic"]["status"] == "equal", "a spaced range reads the same")
-check(S.score(sbvc, SBVC_LIST, SBVC_NC.replace("Total Hours\t48-54", "Total Hours\n48-54"),
-              "Noncredit program")["arithmetic"]["status"] == "equal", "the figure on the label's next line reads too")
-check(S.score(sbvc, SBVC_LIST, SBVC_NC.replace("48-54", "48-60"), "Noncredit program")["arithmetic"]["status"]
-      == "incomplete", "a range whose top is not the record's fails: both ends are compared")
-check(S.score(sbvc, SBVC_LIST, SBVC_NC.replace("48-54", "48"), "Noncredit program")["arithmetic"]["status"]
-      == "incomplete", "a single figure under a range record fails")
-check(S.score(sbvc, SBVC_LIST, SBVC_NC + "\nVOCED 600 Lecture Hours: 12", "Noncredit program")["arithmetic"]["status"]
-      == "incomplete", "a course's own 'Hours: N' keeps the reading closed")
-check(S.score(sbvc, SBVC_LIST, SBVC_NC.replace("Job Search Skills", "Job Search Skills 12 hours"),
-              "Noncredit program")["arithmetic"]["status"] == "incomplete", "a course figure printed before its word fails")
-check(S.score(sbvc, SBVC_LIST, SBVC_NC + "\nTotal Hours 60", "Noncredit program")["arithmetic"]["status"]
-      == "incomplete", "a second total that is not the record's fails")
-priced = json.loads(json.dumps(sbvc))
-priced["blocks"][0]["courses"][0]["units"] = 12
-check(S.score(priced, SBVC_LIST, SBVC_NC, "Noncredit program")["arithmetic"]["status"] == "incomplete",
-      "a record carrying a course figure is never read total only")
-check(S.score({**sbvc, "program": {**sbvc["program"], "measure": "units"}}, SBVC_LIST, SBVC_NC,
-              "Noncredit program")["arithmetic"]["status"] != "equal", "a record measured in units is never read so")
-# Coalinga's Certificate of Competency 36894 as its reading quotes it: 'Total Hours 216', 'N/A' in the units column.
-COAL = "COURSE\tTITLE\tUNITS/HOURS\nESL 501\tBeginning ESL\tN/A\nESL 502\tIntermediate ESL\tN/A\nTotal Hours 216"
-coal = {"program": {"measure": "hours", "total_units": {"min": 216, "max": 216}},
+for _t, _why in ((SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48 - 54"), "a spaced range"),
+                 (SBVC_NC.replace("Total Hours\t48-54", "Total Hours\n48-54"), "the figure on the next line"),
+                 (SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48-54."), "a sentence's period"),
+                 (SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48 to 54"), "'48 to 54'")):
+    check(S.score(sbvc, SBVC_LIST, _t, "Noncredit program")["arithmetic"]["status"] == "equal", "%s reads 48-54" % _why)
+# Coalinga's English as a Second Language 36894 as its reading quotes it: 'Total Hours 216' over 'N/A'.
+COAL_HEAD = "English as a Second Language Certificate of Competency"
+COAL = (COAL_HEAD + "\nCOURSE\tTITLE\tUNITS/HOURS\nESL 501\tBeginning ESL\tN/A\nESL 502\tIntermediate ESL\tN/A\n"
+        "Total Hours 216.")
+coal = {"program": {"measure": "hours", "total_units": {"min": 216, "max": 216}, "section_heading": COAL_HEAD,
+                    "hours_total_printed": True},
         "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "ESL 501", "units": None},
                                                                    {"code": "ESL 502", "units": None}]}]}
-check(S.score(coal, [{"code": "ESL 501", "units": 0}, {"code": "ESL 502", "units": 0}], COAL,
-              "Noncredit program")["arithmetic"].get("total_only"), "Coalinga's single 'Total Hours 216' passes")
+COAL_LIST = [{"code": "ESL 501", "units": 0}, {"code": "ESL 502", "units": 0}]
+check(S.score(coal, COAL_LIST, COAL, "Noncredit program")["arithmetic"].get("total_only"),
+      "Coalinga's 'Total Hours 216.' over N/A passes")
+# The gate: a third college with the identical page, whose procedure names no such reading, does not move.
+_ungated = json.loads(json.dumps(sbvc))
+del _ungated["program"]["hours_total_printed"]
+check(S.score(_ungated, SBVC_LIST, SBVC_NC, "Noncredit program")["arithmetic"]["status"] == "incomplete",
+      "the same page at a college whose procedure does not name the reading stays incomplete")
+check(RC.reconcile(_ungated, SBVC_NC, "Pasadena City College", "Noncredit program")[1] == []
+      and RC.reconcile(_ungated, SBVC_NC, "San Bernardino Valley College", "Noncredit program")[0]["program"]
+      .get("hours_total_printed") is True
+      and RC.reconcile(_ungated, SBVC_NC, "San Bernardino Valley College", "A.S. Degree")[1] == [],
+      "only San Bernardino Valley's (and Coalinga's) noncredit records take the flag")
+# The review's adversarial pages (second reader of #3193): every one fails.
+ADV = {
+    "cells one per line with 18s": SBVC_HEAD + "\nRequired Courses:\nVOCED 600\nJob Search\n0\n18\nVOCED 601\nResume\n0\n18\n"
+                                   "VOCED 602\nInterview\n0\n18\nVOCED 603\nCustomer Service\n0\n18\nTotal Hours 48-54",
+    "a course line with no figure": SBVC_NC.replace("Job Search Skills\t0", "Job Search Skills"),
+    "the next certificate's total": (SBVC_HEAD + "\nVOCED 600\tJob Search\t0\nVOCED 601\tResume\t0\nVOCED 602\tInterview\t0\n"
+                                     "VOCED 603\tCustomer Service\t0\nCustodial Technician Certificate of Completion\n"
+                                     "VOCED 620\tCustodial\t0\nTotal Hours 48-54"),
+    "two totals in the section": SBVC_NC + "\nWorkplace Safety Certificate of Completion\nVOCED 630\t0\nTotal Hours 48-54",
+    "'12 contact hours' in prose": SBVC_NC + "\nThis course offers 12 contact hours of instruction.",
+    "'18 lecture hours'": SBVC_NC.replace("Required Courses:", "Each class meets for 18 lecture hours.\nRequired Courses:"),
+    "Each course: Total Hours": SBVC_NC.replace("Total Hours\t48-54", "Each course: Total Hours 48-54"),
+    "'48 or 54'": SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48 or 54"),
+    "label-first course hours": SBVC_NC.replace("Job Search Skills\t0", "Job Search Skills\t0\tLecture Hours 54"),
+    "an hours column": SBVC_NC.replace("Units\n", "Units\tHours\n").replace("Skills\t0\n", "Skills\t0\t12\n"),
+    "the total ahead of the courses": SBVC_HEAD + "\nTotal Hours 48-54\n" + SBVC_NC.split("\n", 1)[1].rsplit("\n", 1)[0],
+    "no heading on the page": SBVC_NC.replace(SBVC_HEAD + "\n", ""),
+    "a total the record does not hold": SBVC_NC.replace("48-54", "48-60"),
+    "a listed course the page does not show": SBVC_NC.replace("VOCED 603\tCustomer Service\t0\n", ""),
+}
+for _why, _t in ADV.items():
+    check(S.score(sbvc, SBVC_LIST, _t, "Noncredit program")["arithmetic"]["status"] != "equal",
+          "adversarial page fails: %s" % _why)
+check(S.score(_with(total_units={"min": 48, "max": 48}), SBVC_LIST,
+              SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48 or 54"), "Noncredit program")["arithmetic"]["status"]
+      != "equal", "'Total Hours 48 or 54' against a record of 48 fails")
+for _t in (SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48-54."),
+           SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48 to 54")):
+    check(S.score(_with(total_units={"min": 48, "max": 48}), SBVC_LIST, _t, "Noncredit program")["arithmetic"]["status"]
+          != "equal", "a range never reads as its low end alone")
+_priced = json.loads(json.dumps(sbvc))
+_priced["blocks"][0]["courses"][0]["units"] = 12
+check(S.score(_priced, SBVC_LIST, SBVC_NC, "Noncredit program")["arithmetic"]["status"] == "incomplete",
+      "a record carrying a course figure is never read total only")
+check(S.score(_with(measure="units"), SBVC_LIST, SBVC_NC, "Noncredit program")["arithmetic"]["status"] != "equal",
+      "a record measured in units is never read so")
 check(S.score(nc, NC_LIST, SJD_NC, "Noncredit program")["arithmetic"].get("total_only"),
-      "the first reading's page (Delta's 'Total Contact Hours: 288') still passes")
-_V = {"blocks": [{"rule": "all", "courses": [{"code": "VOCED 600", "units": None}]}]}
-check(S.total_hours_printed("VOCED 600\t0\nTotal Hours 48-54", (48.0, 54.0), [], _V) and not S.total_hours_printed(
-      "VOCED 600\t0\nTotal Hours 48-54 Hours: 6", (48.0, 54.0),
-      list(S.HOURS_LABEL.finditer("Total Hours 48-54 Hours: 6")), _V),
-      "total_hours_printed: a bare label beside the total closes it")
-# Review of #3193, finding 1: a range the pattern does not take never reads as its low end.
-for _t in ("VOCED 600\t0\nTotal Hours 48-54.", "VOCED 600\t0\nTotal Hours 48 to 54"):
-    check(not S.total_hours_printed(_t, (48.0, 48.0), [], _V), "%r never reads as 48 alone" % _t)
-    check(S.total_hours_printed(_t, (48.0, 54.0), [], _V), "%r reads as 48-54" % _t)
-check(S.total_hours_printed("VOCED 600\t0\nTotal Hours 216.", (216.0, 216.0), [], _V),
-      "'Total Hours 216.' with a sentence's period reads 216")
-check(not S.total_hours_printed("VOCED 600\t0\nTotal Hours 48 -\t54x", (48.0, 48.0), [], _V)
-      and not S.total_hours_printed("VOCED 600\t0\nTotal Hours 48\u2013 54.5.1", (48.0, 48.0), [], _V),
-      "a total that runs on into a range it did not take fails")
-# Finding 2: course hours printed with no colon, label first or in a column, keep it closed.
-_E = {"blocks": [{"rule": "all", "courses": [{"code": "ESL 901", "units": None}, {"code": "ESL 902", "units": None}]}]}
-check(not S.total_hours_printed("ESL 901 Lecture Hours 54\nESL 902 Lecture Hours 72\nTotal Hours 108", (108.0, 108.0),
-                                [], _E), "label-first course hours that do not add up fail (54 + 72 against 108)")
-check(not S.total_hours_printed("Course\tUnits\tHours\nESL 901\t0\t54\nESL 902\t0\t72\nTotal Hours 108",
-                                (108.0, 108.0), [], _E), "an hours column beside the courses fails")
-check(not S.total_hours_printed("ESL 901\t0\nTotal Hours 108", (108.0, 108.0), [], _E),
-      "a listed course the page does not show on a line fails")
-check(S.total_hours_printed("ESL 901\tReading\tN/A\nESL 902\tWriting\t0\nTotal Hours 108", (108.0, 108.0), [], _E),
-      "Coalinga's and SBVC's shape (N/A or 0 beside each course) passes")
-check(S.score(sbvc, SBVC_LIST, SBVC_NC.replace("Job Search Skills\t0", "Job Search Skills Lab Hours 12"),
-              "Noncredit program")["arithmetic"]["status"] == "incomplete",
-      "SBVC's page with one course's 'Lab Hours 12' fails through score()")
+      "the first reading's page (Delta's 'Total Contact Hours: 288') still passes, flag or none")
 
 # ── S644: the electives guard reads the catalog's own sentence a step filed (electives_fill_words) ──
 # Grossmont's Sociology AA-T 30977 as its reading quotes the page.
-GRC = ("Units in the major 20-22\nPlus General Education Requirements (Cal-GETC) 34\nTotal Units 60\n"
+GRC = ("Sociology AA-T\nUnits in the major 20-22\nPlus General Education Requirements (Cal-GETC) 34\nTotal Units 60\n"
        "Complete transferable units as needed to reach 60.")
-grc = {"total_units": {"min": 20, "max": 22}, "degree_total": {"min": 60, "max": 60}, "ge_units": {"min": 34, "max": 34},
+grc = {"section_heading": "Sociology AA-T", "total_units": {"min": 20, "max": 22}, "degree_total": {"min": 60, "max": 60}, "ge_units": {"min": 34, "max": 34},
        "ge_pattern": "Cal-GETC", "electives_fill_degree": True}
 d0 = S.degree_check(grc, (60.0, 60.0), 20.0, 22.0, [], GRC, "A.A- T Degree")
 check(d0["status"] == "incomplete" and "names no electives" in " ".join(d0["why"]),
@@ -2410,20 +2429,25 @@ check(d1["pass"] and d1.get("fill") == [4.0, 6.0], "with the step's sentence the
       "passes with the electives filling 4-6: %s" % json.dumps(d1))
 check(not S.degree_check(grc_w, (60.0, 60.0), 20.0, 22.0, [], GRC.replace("as needed to reach 60", "to reach 60"),
                          "A.A- T Degree")["pass"], "a filed sentence the page no longer prints fails the guard again")
-check(S.electives_named({"electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"},
-                        "COMPLETE ADDITIONAL CSU UNITS, IF\nNEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"),
+check(S.electives_named({"section_heading": "KINESIOLOGY AA-T",
+                         "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"},
+                        "KINESIOLOGY AA-T\nCOMPLETE ADDITIONAL CSU UNITS, IF\nNEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"),
       "East Los Angeles's upper-case sentence reads across a line break")
-check(not S.electives_named({"electives_fill_words": "to reach 60 units"}, "to reach 600 units"),
+check(not S.electives_named({"section_heading": "X", "electives_fill_words": "to reach 60 units"}, "X to reach 600 units"),
       "the sentence matches whole words only")
 check(S.electives_named({}, "Major 23 units, General EducaƟon, and elecƟ ves as needed to complete 60"),
       "Solano's ligature stand-in ('elecƟ ves') still names electives")
 check(not S.electives_named({}, "a selecƟ ve admission program"), "'selective' under a ligature is no elective")
 check(S.electives_named({}, "Electives as needed"), "the word itself still names them")
+check(not S.electives_named({"section_heading": "Psychology AA-T", "electives_fill_words": "to reach 60 units"},
+                            "Sociology AA-T\nComplete additional units to reach 60 units"),
+      "a filed sentence counts for nothing where the text prints no heading of the record's")
 # A certificate whose page says electives make up its total (score()'s fill path) reads the same sentence.
-cert = {"program": {"total_units": {"min": 30, "max": 30}, "electives_fill_degree": True,
+cert = {"program": {"section_heading": "Office Certificate", "total_units": {"min": 30, "max": 30},
+                    "electives_fill_degree": True,
                     "electives_fill_words": "Complete transferable units as needed to reach 30"},
         "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "X 1", "units": 24}]}]}
-ca = S.score(cert, [{"code": "X 1", "units": 24}], "X 1 24\nComplete transferable units as needed to reach 30",
+ca = S.score(cert, [{"code": "X 1", "units": 24}], "Office Certificate\nX 1 24\nComplete transferable units as needed to reach 30",
              "Certificate of Achievement")["arithmetic"]
 check(ca["pass"] and ca.get("fill") == [6.0, 6.0], "a certificate's fill reads the filed sentence too: %s" % json.dumps(ca))
 cert_no = json.loads(json.dumps(cert))

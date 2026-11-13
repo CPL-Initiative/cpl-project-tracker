@@ -112,9 +112,15 @@ def quoted_total(f: dict) -> str:
     return "no colon, another figure"
 
 
-def measure_hours(records: list[dict]) -> dict:
+def gated_colleges(steps: dict) -> set:
+    """The colleges whose procedure names the no-colon hours reading (a step filing hours_total_printed)."""
+    return {c for c, e in steps.items() for st in e.get("steps") or [] if st.get("field") == "hours_total_printed"}
+
+
+def measure_hours(records: list[dict], steps: dict | None = None) -> dict:
     shapes, reach = collections.defaultdict(list), collections.defaultdict(lambda: collections.defaultdict(list))
-    reach_passing = []
+    reach_passing, expected = [], collections.defaultdict(list)
+    gated = gated_colleges(steps if steps is not None else R.load_steps())
     for f in records:
         if S.measure(f["record"]) != "hours":
             continue
@@ -127,8 +133,16 @@ def measure_hours(records: list[dict]) -> dict:
             continue
         shapes[hours_shape(f)].append((f["college"], f["control_number"]))
         if in_reach:
-            reach[quoted_total(f)][f["college"]].append(f["control_number"])
-    return {"shapes": shapes, "reach": reach, "reach_passing": reach_passing}
+            q = quoted_total(f)
+            reach[q][f["college"]].append(f["control_number"])
+            notes = " ".join(f["record"].get("notes") or [])
+            # Expected to move: the college's procedure names the reading, the reading quotes the no-colon
+            # total, describes a 0 or N/A column, and never says the page lacks the program's heading.
+            if (f["college"] in gated and q.startswith("no colon, both ends") and not HEADING_DOUBT.search(notes)
+                    and re.search(r"\b0\b[^.]{0,40}units|units[^.]{0,30}(?:column|N/A)|N/A", notes, re.I)):
+                expected[f["college"]].append(f["control_number"])
+    return {"shapes": shapes, "reach": reach, "reach_passing": reach_passing, "gated": sorted(gated),
+            "expected": expected}
 
 
 def _final(f: dict, deg: dict) -> bool:
@@ -263,7 +277,7 @@ def main(argv=None) -> int:
     args = ap.parse_args(argv)
     records = list(filed_records())
     steps = R.load_steps()
-    hours = measure_hours(records)
+    hours = measure_hours(records, steps)
     elec = measure_electives(records, steps)
     ge = measure_ge(records, steps)
     cal = statewide_cal_getc(records)
@@ -286,6 +300,9 @@ def main(argv=None) -> int:
         print("   %4d  %s" % (sum(map(len, by.values())), q))
         for c, keys in sorted(by.items(), key=lambda x: -len(x[1])):
             print("            %-44s %3d  %s" % (c, len(keys), ", ".join(keys[:3])))
+    print("   gated colleges (the procedure names the reading): %s" % ", ".join(hours["gated"]))
+    for c, keys in sorted(hours["expected"].items()):
+        print("   expected to move: %-36s %3d  %s" % (c, len(keys), ", ".join(keys[:4])))
     print("\n2. the electives guard (electives_named)")
     print("   filed records already carrying electives_fill_words (must be 0): %d" % len(elec["carrying"]))
     for c, v in sorted(elec["by_college"].items(), key=lambda x: -len(x[1])):

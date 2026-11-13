@@ -4,7 +4,7 @@
   "fill": "pattern's min (and max) fill program.<field> when it is empty; only_without / only_with name a field that must be empty / set; skip_if_equal names a field that already holds the same figure (no double count)",
   "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
   "order": "steps run in order: a clear runs before the fills that depend on it",
-  "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE)",
+  "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE); 'noncredit': a noncredit program by the state file's award (S644: the no-colon hours total's flag, San Bernardino Valley and Coalinga)",
   "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without names a field that must be empty, only_with one that must be set (Los Angeles City, S639: a heading's 'Minimum of 60' is a floor only where the record holds that total; Victor Valley's Cal-GETC, only_with degree_total). A set of electives_fill_words files the catalog's own sentence that electives fill the total, where the page never prints the word elective (Grossmont, East Los Angeles, S644): the scorer's electives guard reads it, and only where the text prints it",
   "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed)",
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
@@ -1211,6 +1211,34 @@
      ],
      "pattern": "Cal-?GETC\\s*\\(\\s*34\\s+units\\s*\\)[\\s\\S]{0,200}?LACCD\\s+GE\\s*\\(\\s*21\\s+units\\s*\\)|LACCD\\s+GE\\s*\\(\\s*21\\s+units\\s*\\)[\\s\\S]{0,200}?Cal-?GETC\\s*\\(\\s*34\\s+units\\s*\\)",
      "source_words": "Pierce award table: 'Cal-GETC (34 units)' and 'LACCD GE (21 units)' (the reading of Child Development A.A. 08330, notes)"
+    }
+   ]
+  },
+  "San Bernardino Valley College": {
+   "why": "S644, the harvest's NEXT 5 (a noncredit total printed 'Total Hours N-M' with no colon). San Bernardino Valley's noncredit certificates print the course list with a UNITS column of 0 and the line 'Total Hours 48-54' (each reading's notes: Job Readiness Skills 35699 'Total Hours 48-54', Workforce Literacy Skills 35700 'Total Hours 194-297', Office Technology Fundamentals 36070 'Total Hours 108'; 'The course list prints 0 in a UNITS column beside each course ... The page prints no per-course hours'). The step names the scorer's no-colon reading for this catalog alone (program.hours_total_printed), which then asks the page for positive evidence in the record's own section (total_hours_printed, kb/_program_requirements_score.py): one total after the last listed course, both ends the record's, each course's row an explicit 0 or N/A and no other number, no other hours figure. Measured on the filed records by kb/_program_requirements_readings_measure.py: 19 noncredit records fail as incomplete with a total and no course figure, and each reading quotes the no-colon total and a UNITS column of 0; none passes today, so none can fail. Free page read to confirm the table before the reconcile run: the diagnosis's plan san_bernardino_valley_noncredit_hours (docs/harvest_wave3_diagnoses_s639.md). Session decision for Sam to revise (d-hours-total-no-colon-s644), beside the S422 total-only reading; reversible by deleting this entry.",
+   "awards": "noncredit",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "hours_total_printed",
+     "value": true,
+     "awards": "noncredit",
+     "pattern": "\\bTotal\\s+Hours\\b[ \\t]*(?:\\n[ \\t]*)?\\d",
+     "source_words": "San Bernardino Valley noncredit certificates: 'Total Hours 48-54' over a UNITS column of 0 (the readings of 35699, 35700 and 36070, notes)"
+    }
+   ]
+  },
+  "Coalinga College": {
+   "why": "S644, the harvest's NEXT 5. Coalinga's noncredit certificates print 'Total Hours N' with no colon and 'N/A' in the units column beside each course (the readings of English as a Second Language 36894 'Total Hours 216', Unmanned Aerial System Remote Pilot 44511 'Total Hours 54', Irrigation Systems Management 44555 'Total Hours 145', notes). The step names the scorer's no-colon reading for this catalog alone, as San Bernardino Valley's does, and the scorer asks the page for the same positive evidence. Measured on the filed records: 4 records, none passing today. Session decision for Sam to revise (d-hours-total-no-colon-s644); reversible by deleting this entry.",
+   "awards": "noncredit",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "hours_total_printed",
+     "value": true,
+     "awards": "noncredit",
+     "pattern": "\\bTotal\\s+Hours\\b[ \\t]*(?:\\n[ \\t]*)?\\d",
+     "source_words": "Coalinga noncredit certificates: 'Total Hours 216' over 'N/A' in the units column (the readings of 36894, 44511 and 44555, notes)"
     }
    ]
   }
