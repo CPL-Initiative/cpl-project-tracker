@@ -2384,12 +2384,41 @@ def cd_course_hours(data: dict) -> dict:
     return out
 
 
+def run_net(text: str | None) -> set[str]:
+    """The codes a run of numbers after one subject names on a page ("CS/IS 241, 242, 243"), in the coarse
+    net's forms (with and without a subject's slash), for each subject the page prints beside a number. The
+    net (page_codes) reads the first number of a run alone, while the exact finder (find_codes, run_numbers)
+    reads them all. Glendale's 2026-27 CIS-C and CIS-AS tabs print eight of their ten lists as runs (page
+    read 43423479582): the net named 7 of Computer Information Systems' 19 listed courses, under the 7.6 it
+    asks, and the finder 11 (0.58), so neither tab was a candidate for 21305 or 37960, and CIS-C went to
+    Information Technology (37070), whose shorter list the net cleared."""
+    t = text or ""
+    out: set[str] = set()
+    seen: set[str] = set()
+    for a, _b in CODE_TOKEN_4.findall(t) + CODE_TOKEN.findall(t):
+        subj = a.strip()
+        if not subj or subj in seen:
+            continue
+        seen.add(subj)
+        parts = P.code_parts(subj + " 1")
+        if not parts:
+            continue
+        for num, _at in P.run_numbers(t, parts[0]):
+            out.add(P.norm_code(subj + " " + num))
+            out.add(P.norm_code(subj.replace("/", "") + " " + num))
+    return out
+
+
 def cd_page(got: dict, prog: dict) -> dict:
     """One Requisites tab as a page capture() reads: the program's name and award
-    words as its heading, since the page's title names only the code."""
+    words as its heading, since the page's title names only the code. Its coarse net also reads a run of
+    numbers after one subject (run_net, S647): a tab holds one program's lists, which Glendale's print as
+    runs."""
     heading = " ".join(x for x in (prog["name"], cd_award_words(prog["name"])) if x)
+    text = "\n".join([got.get("body") or "", got.get("content") or "", P.hidden_tabs_text(got)])
     return {"url": got.get("final_url") or got.get("url"), "title": got.get("title"), "h1": heading,
-            "body": got.get("body"), "content": got.get("content"), "got": got, "codes": page_net(got),
+            "body": got.get("body"), "content": got.get("content"), "got": got,
+            "codes": page_net(got) | run_net(text),
             "code": prog.get("code"), "code_kind": cd_code_kind(prog.get("code"))}
 
 

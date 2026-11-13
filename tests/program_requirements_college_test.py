@@ -4056,6 +4056,48 @@ tn_given = C.assign(tn_progs[:1], tn_pages)
 check((tn_given["37070"]["best"] or {}).get("url") == tn_pages[0]["url"],
       "with no listed program of the tab's title, the tab is read as before")
 
+# A Coursedog tab's coarse net reads a run of numbers after one subject (run_net, S647). The CIS-C tab's text as
+# the free page read 43423479582 printed it (2026-11-13): Computer Information Systems' own tab, never a
+# candidate for 21305 or 37960 because the net read 7 of their 19 listed courses (it asks 7.6) while the finder
+# reads 11. A page that is no Coursedog tab keeps the net as it was.
+CIS_C_TEXT = (
+    "CIS-C - Computer Information Systems - Certificate of Achievement\nDownload as PDF\n"
+    "Business DivisionCredit ProgramsCERT - Certificate of Achievement\n"
+    "Overview · Completion Requirements · Program Learning Outcomes · Minimum Required Units/Hours for Major · 19 · "
+    "Maximum Required Units/Hours for Major · 22 · Major Requirements · REQUIRED COURSES FOR MAJOR/CERTIFICATE · "
+    "UNITS · CS/IS 101\nIntroduction to Computer and Information Systems\n"
+    "5 · CS/IS 190 · Introduction to Computer Networks · 3 · CS/IS 240 · Cloud Computing Fundamentals · 3 · CHOOSE "
+    "ONE SPECIALIZATION FROM THE FOLLOWING · Specialization: Cloud Computing · CS/IS 241, 242, 243 · 9 · "
+    "Specialization: Computer Networking · CS/IS 194, 196, 197 · 9 · Specialization: Cybersecurity · CS/IS 193, 194, "
+    "196 · 9 · Specialization: Data Analytics · CS/IS 234, 270; MATH 137 · 11 · Specialization: Information Systems · "
+    "CS/IS 234, 260, 270 · 9 · Specialization: Information Technology · CS/IS 186, 194, 234 · 9 · Specialization: "
+    "Programming · CS/IS 112, 135, 151 · 9\nSpecialization: Unix/Linux Systems Administrator\n"
+    "CS/IS 172, CS/IS 174 · 8 · Specialization: Web Development · CS/IS 255, 260, 262 · 9 · TOTAL UNITS REQUIRED · "
+    "19-22 · Program Mapper Link\nhttps://programmap.glendale.edu/program/computer-information-systems/")
+CIS_LIST = ["BUSAD 106", "BUSAD 110", "CS/IS 101", "CS/IS 112", "CS/IS 135", "CS/IS 137", "CS/IS 139", "CS/IS 151",
+            "CS/IS 172", "CS/IS 174", "CS/IS 190", "CS/IS 193", "CS/IS 234", "CS/IS 260", "CS/IS 261", "CS/IS 262",
+            "CS/IS 50", "ENTRE 101", "ENTRE 102"]
+IT_LIST = ["BUSAD 204", "CS/IS 101", "CS/IS 112", "CS/IS 190", "CS/IS 193", "CS/IS 196", "CS/IS 197", "CSIS 185", "CSIS 194"]
+rn_got = {"url": GL_ROOT + "/programs/CIS-C/" + GL_SUFFIX, "title": "CIS-C Program | Glendale Community College Catalog",
+          "body": CIS_C_TEXT, "content": CIS_C_TEXT}
+rn_page = C.cd_page(rn_got, {"code": "CIS-C", "name": "Computer Information Systems - Certificate of Achievement"})
+rn_cis = [{"code": c} for c in CIS_LIST]
+check(C.net_hits(rn_cis, C.page_net(rn_got)) == 7 and C.net_hits(rn_cis, rn_page["codes"]) == 11,
+      "the run net reads the CIS-C tab's runs: 11 of the 19 listed, where the old net read 7: %d"
+      % C.net_hits(rn_cis, rn_page["codes"]))
+rn_progs = [{"control_number": "21305", "title": "Computer Information Systems",
+             "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+             "status": "Active", "closed_list": rn_cis},
+            {"control_number": "37070", "title": "Information Technology",
+             "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", "status": "Active",
+             "closed_list": [{"code": c} for c in IT_LIST]}]
+rn_given = C.assign(rn_progs, [rn_page])
+check((rn_given["21305"]["best"] or {}).get("url") == rn_got["url"] and rn_given["37070"]["best"] is None,
+      "Computer Information Systems reads its own tab, and Information Technology does not: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in rn_given.items()})
+check(C.run_net("BUSAD 101, 106, 120") >= {"BUSAD106", "BUSAD120"} and C.run_net("CS/IS 101 and 3 units") == set(),
+      "a run names every number after its subject, and a figure ends it")
+
 # Coursedog names a program by its code alone for 15 of Glendale's 261 (all noncredit; capture of run
 # 43415972509), so the tab's heading named no program. The index's own link text names it; a program the
 # search does name keeps that name, and a link whose text is the code names nothing. Links from the filed capture.
