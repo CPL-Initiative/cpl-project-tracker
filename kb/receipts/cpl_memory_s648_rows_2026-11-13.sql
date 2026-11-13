@@ -1,4 +1,4 @@
--- RUN 2026-11-13 about 18:55Z by the S648 conductor (12 rows inserted, 12 logged, longest summary 389); one summary (d-data-collection-two-bases-s648) corrected before the run.
+-- RUN 2026-11-13 about 18:47Z by the S648 conductor (12 rows inserted, 12 logged, longest summary 389); one summary (d-data-collection-two-bases-s648) corrected before the run.
 -- cpl_memory rows for SkyTanager (S648), conductor mode, 2026-11-13: the conductor's 12 decision rows (status proposed, for Sam to
 -- revise on Open Asks Sheet 193). Sam's two rows of this session are already written and are not here
 -- (sam-upfocus-confidence-completeness-2026-11-13, sam-college-collection-not-in-cobi-2026-11-13).
