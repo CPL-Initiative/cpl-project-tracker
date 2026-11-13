@@ -1316,21 +1316,19 @@
    "NR95A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=218",
-   "title": "Natural Resources AS Degree",
-   "h1": "Natural Resources AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=219",
+   "title": "Natural Resources AS Degree (transfer preparation)",
+   "h1": "Natural Resources AS Degree (transfer preparation)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    218,
     219
    ],
    "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "496be46605ce95ea"
+   "heading_named": true
   },
   "listed": 26,
-  "text_chars": 5718
+  "text_chars": 4333
  },
  {
   "control_number": "10196",
