@@ -6,7 +6,7 @@
   "edge_functions": 15,
   "file_datasets": 937,
   "external_services": 195,
-  "consumers": 584,
+  "consumers": 585,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -393,6 +393,13 @@
      "direction": "read",
      "how": "url",
      "line": 113
+    },
+    {
+     "id": "module:scripts/commons_data_values_check.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 62
     },
     {
      "id": "module:scripts/tab_review_sheet/capture.js",
@@ -2219,7 +2226,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1039,
+     "line": 33,
      "tabs": [
       "commons"
      ]
@@ -19430,7 +19437,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 31,
+     "line": 32,
      "tabs": [
       "commons"
      ]

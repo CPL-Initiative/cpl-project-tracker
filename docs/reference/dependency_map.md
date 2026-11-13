@@ -1256,7 +1256,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `%s` | scripts: `kb/_college_contacts_harvest.py`, `kb/_program_sequence_ppm.py` |
 | `*.github.io` | scripts: `scripts/catalog_framing.py` |
 | `127.0.0.1` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
-| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` · scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` |
+| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/commons_data_values_check.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` · scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` |
 | `127.0.0.1:9333` | scripts: `prototype/funding_video/render.mjs` |
 | `<host>` | scripts: `kb/_program_requirements_college.py` |
 | `[a-z0-9]+` | workflows: `sierra-ask.yml` |
@@ -1478,4 +1478,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 937 file
-datasets · 195 external services · 584 consumers · 72 workflows · 41 tabs.
+datasets · 195 external services · 585 consumers · 72 workflows · 41 tabs.

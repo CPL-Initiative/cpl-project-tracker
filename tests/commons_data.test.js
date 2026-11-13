@@ -244,7 +244,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const pr1 = txt(m1.querySelector('[data-ds="pr"]'));
   check("row 4: program requirements read listed, closed list, found, extracted, passing and by cause, with its bar",
     /80 of 100 listed programs/.test(pr1) && /With a closed course list\s*95/.test(pr1) && /Programs whose page the capture found\s*90/.test(pr1) && /Records extracted \(a reread can add some\)\s*88/.test(pr1)
-    && /no closed list in the Program Course File 20/.test(pr1) && m1.querySelector('[data-ds="pr"] .cdd-meter i').style.width === "80%");
+    && /^No closed list in the Program Course File\s*20$/.test(txt(m1.querySelector('[data-ds="pr"] table.cdd-causes tbody tr'))) && m1.querySelector('[data-ds="pr"] .cdd-meter i').style.width === "80%");
   check("row 5: the stamp is Pacific time with its age cue from the file", /Updated .* PT \(read\), fresh/.test(pr1));
   check("row 6: the catalog read's platform and year, the spot-check and its reason, the cost",
     /CourseLeaf/.test(txt(m1)) && /2026-2027/.test(txt(m1)) && /Strong/.test(txt(m1.querySelector('[data-ds="confidence"]'))) && /5 agree, 0 differ, 0 unreachable/.test(txt(m1))

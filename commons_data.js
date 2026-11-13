@@ -2,7 +2,8 @@
 // college's row that opens in place and the same college in a side panel; slice 3, the overall bar and the live counts
 // (the builder's "live" and "overall" keys, basis live, each figure with its date in words and TBA until the first live
 // read), the data dictionary (#commons/data/dictionary, the "dictionary" key), the API checklist (#commons/data/apis,
-// the "apis" key; an unverified status never counts as connected), the catalog platform filter, and one "Coming next"
+// the "apis" key; an unverified status never counts as connected), the district roll-up (#commons/data/districts,
+// S648), the catalog platform filter, and one "Coming next"
 // section naming what the mock shows beyond these, each with what it waits on.
 //
 // Sam, 2026-11-13, relayed by COBIx on #3215: a Commons dashboard for each college's datasets we pull, how complete
@@ -29,6 +30,7 @@
   "use strict";
 
   var FILE = "kb/status/commons_data.json";
+  var GITHUB_REPO = "https://github.com/cpl-initiative/cpl-project-tracker/";
   /* The view's name (Sam, Nov 13, 5:56 AM PT, on #3229: "rename it College Data Collection"). */
   var TITLE = "College Data Collection";
   var TZ = "America/Los_Angeles";
@@ -113,7 +115,7 @@
     strong: { word: "Confidence strong", test: function (c) { return level(c) === "strong"; } },
     partial: { word: "Confidence partial", test: function (c) { return level(c) === "partial"; } },
     limited: { word: "Confidence limited", test: function (c) { return level(c) === "limited"; } },
-    overall: { word: "Overall completeness, lowest first", test: function (c, M) { return !!overallOf(M || VIEW.M, c); } }
+    overall: { word: "Colleges with an overall bar", test: function (c, M) { return !!overallOf(M || VIEW.M, c); } }
   };
   /* The level the builder wrote from the rule (rule.confidence); the page never derives one of its own. */
   function level(c) { return c && c.confidence ? c.confidence.level : null; }
@@ -291,32 +293,39 @@
 
   var PW = { min: 300, max: 900, start: 480, step: 20 };   // the panel's width in px (Sam, 1:52 AM PT: 300 to 900; double-click resets)
   /* sort null means the default, resolved when the list draws (defaultSort); a person's own sort lasts the visit. */
-  var S = { view: "", filter: "all", platform: "", sort: null, q: "", open: null, panel: null, pw: PW.start };
+  var S = { view: "", filter: "all", platform: "", district: "", sort: null, q: "", open: null, panel: null, pw: PW.start };
   /* The list opens lowest completeness first (#3229; the commons lane's NEXT): the overall bar where the live read
      holds one, else program requirements passing. "auto" marks the default, so the words above the list say so and
      a heading's first click starts a person's own sort. */
   function defaultSort(M) { return liveRead(M) ? { k: "overall", d: 1, auto: true } : { k: "pr", d: 1, auto: true }; }
-  /* The two views beside the college list (slice 3), each at its own address. */
-  var VIEWS = { dictionary: "The data dictionary", apis: "The API checklist" };
-  function listRoute(filter, platform) {
-    return (filter && filter !== "all" ? "/" + filter : "") + (platform ? "/platform/" + platform : "");
+  /* The three views beside the college list (slice 3; the districts S648), each at its own address. */
+  var VIEWS = { districts: "Colleges by district", dictionary: "The data dictionary", apis: "The API checklist" };
+  function listRoute(filter, platform, district) {
+    return (filter && filter !== "all" ? "/" + filter : "") + (platform ? "/platform/" + platform : "") + (district ? "/district/" + district : "");
+  }
+  /* A district's address word, the way a college's is made. */
+  function districtSlug(name) { return slugOf({ name: name }); }
+  function districtName(M, slug) {
+    var c = slug ? M.colleges.filter(function (x) { return x.district && districtSlug(x.district) === slug; })[0] : null;
+    return c ? c.district : "";
   }
   function address() {
     if (S.view) return "commons/data/" + S.view;
-    var a = "commons/data" + listRoute(S.filter, S.platform);
+    var a = "commons/data" + listRoute(S.filter, S.platform, S.district);
     var c = VIEW.M ? byId(VIEW.M, S.panel) : null;
     return c ? a + "/college/" + slugOf(c) : a;
   }
   /* What the address after #commons/data names: a view (dictionary, apis), or the list's filter, then its catalog
      platform (platform/<key>), then a college (college/<slug>), each optional. */
   function parseRoute(route) {
-    var p = String(route || "").split("/").filter(Boolean), out = { view: "", filter: "all", platform: "", college: "" };
+    var p = String(route || "").split("/").filter(Boolean), out = { view: "", filter: "all", platform: "", college: "", district: "" };
     if (VIEWS[p[0]]) { out.view = p[0]; return out; }
-    var i = p[0] === "college" || p[0] === "platform" ? 0 : 1;
+    var i = p[0] === "college" || p[0] === "platform" || p[0] === "district" ? 0 : 1;
     if (i) out.filter = p[0] || "all";
     for (; i < p.length; i += 2) {
       if (p[i] === "platform") out.platform = p[i + 1] || "";
       else if (p[i] === "college") out.college = p[i + 1] || "";
+      else if (p[i] === "district") out.district = p[i + 1] || "";
     }
     return out;
   }
@@ -404,6 +413,7 @@
      the API checklist and the JST funnel join here in later slices. */
   /* The panel's groups; "Collected" was "Harvested" (Sam, Nov 13, #3229). */
   var GROUPS = ["Collected", "Connected"];
+  var CHECK_WORDS = { coverage: "coverage", invented: "a course invented", arithmetic: "units arithmetic", repeated: "a course repeated", outcomes: "outcomes" };
   function causeWord(M, k) { return ((M.rule || {}).causes || {})[k] || words(k); }
   function tbaOf(M, k) { return (M.tba || {})[k] || ""; }
   /* The scout file's name, from the builder's own source line (the page names no internal folder of its own). */
@@ -421,6 +431,11 @@
         ["Passing now", fmt(c.passing)], ["Still to pass", fmt(c.gap)]].filter(Boolean);
       pr.causes = Object.keys(c.causes || {}).sort(function (a, b) { return c.causes[b] - c.causes[a] || a.localeCompare(b); })
         .map(function (k) { return [causeWord(M, k), c.causes[k]]; });
+      /* Records failing each machine check, from the capture's committed summary (failed_checks); a record can fail
+         more than one, so these do not sum to the programs still to pass. Only the checks that failed any. */
+      var fc = c.failed_checks || {}, fk = Object.keys(fc).filter(function (k) { return fc[k] > 0; }).sort(function (a, b) { return fc[b] - fc[a] || a.localeCompare(b); });
+      if (fk.length) pr.fails = el("div", { cls: "cdd-part", "data-part": "fails" }, [el("p", { cls: "cdd-partname", text: "Records failing each machine check, of the " + (c.extracted != null ? fmt(c.extracted) + " " : "") + "records extracted as the capture read them (a record can fail more than one)" }),
+        dl(fk.map(function (k) { return [cap(CHECK_WORDS[k] || words(k)), fmt(fc[k])]; }))]);
       pr.stamp = { at: c.read_at, kind: c.read_kind === "capture_preview" ? "read, on a pull request branch" : "read" };
       /* The completeness figure carries its confidence beside it, as a word (Sam, Nov 13, #3229). */
       if (level(c)) pr.conf = "Confidence: " + level(c);
@@ -540,8 +555,33 @@
     var a = age(st.at, VIEW.M && VIEW.M.rule, now);
     return el("span", { cls: "cdd-stampline", text: "Updated " + when(st.at) + " (" + st.kind + ")" + (a ? ", " + a : "") });
   }
+  /* A value that is a figure ("144", "$3.83", "67%", "40 minutes") never breaks inside itself (S648). */
+  var FIGURE = /^\$?[\d,.]+%?( (seconds|minutes))?$/;
   function dl(lines) {
-    return el("dl", { cls: "cdd-dl" }, [].concat.apply([], lines.map(function (l) { return [el("dt", { text: l[0] }), el("dd", { text: l[1] })]; })));
+    return el("dl", { cls: "cdd-dl" }, [].concat.apply([], lines.map(function (l) {
+      return [el("dt", { text: l[0] }), el("dd", { cls: FIGURE.test(String(l[1] == null ? "" : l[1]).trim()) ? "cdd-ddn" : null, text: l[1] })];
+    })));
+  }
+  /* A link out of COBI: http(s) only, a new tab, no opener; anything else is plain text (S648). */
+  function outLink(href, word) {
+    var ok = /^https?:\/\//i.test(String(href || ""));
+    return ok ? el("a", { href: String(href), target: "_blank", rel: "noopener noreferrer", text: word + " (opens in a new tab)" }) : el("span", { text: word });
+  }
+  /* A repo path ("kb/x/", "kb/y.json (note)") as its GitHub page, the rest of the words kept as text. */
+  function repoLink(s) {
+    var m = /^((?:kb|docs|scripts|tests)\/[^\s<>*]*)(.*)$/.exec(String(s || ""));
+    if (!m) return el("span", { text: String(s || "") });
+    var path = m[1], href = GITHUB_REPO + (/\/$/.test(path) ? "tree/main/" : "blob/main/") + path;
+    return el("span", null, [el("a", { href: href, target: "_blank", rel: "noopener noreferrer", text: path + " (opens in a new tab)" }), m[2]]);
+  }
+  function runLink(run) {
+    return /^\d+$/.test(String(run || "")) ? outLink(GITHUB_REPO.replace(/\/$/, "") + "/actions/runs/" + run, "The paid read's Actions run") : null;
+  }
+  /* Still to pass, by cause: a small table, most programs first (S648; it was one long sentence). */
+  function causeTable(d) {
+    return el("table", { cls: "cdd-causes", "data-causes": "true" }, [el("caption", { text: "Still to pass, by cause" }),
+      el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Cause" }), el("th", { scope: "col", cls: "cdd-num", text: "Programs" })])]),
+      el("tbody", null, d.causes.map(function (x) { return el("tr", null, [el("th", { scope: "row", text: cap(x[0]) }), el("td", { cls: "cdd-num", text: fmt(x[1]) })]); }))]);
   }
   function bar(d) {
     var v = pct(d.num, d.den);
@@ -562,7 +602,7 @@
   function parts(d, now) {
     var out = (d.parts || []).map(function (p) {
       return el("div", { cls: "cdd-part", "data-part": p.key }, [el("p", { cls: "cdd-partname", text: p.title }), dl(p.lines),
-        p.link ? el("p", { cls: "cdd-of" }, [el("a", { href: p.link, text: p.linkWord })]) : null, stampLine(p.stamp, now)]);
+        p.link && /^https?:\/\//i.test(p.link) ? el("p", { cls: "cdd-of" }, [outLink(p.link, p.linkWord)]) : null, stampLine(p.stamp, now)]);
     });
     if (d.differ) out.push(el("p", { cls: "cdd-state", "data-differ": "true", text: d.differ }));
     return out;
@@ -576,7 +616,7 @@
         d.den != null ? bar(d) : d.basis && d.tba ? tba(d.tba) : null, d.state ? el("p", { cls: "cdd-state", text: d.state }) : null,
         d.state && d.note ? el("p", { cls: "cdd-of", text: d.note }) : null,
         d.lines && d.lines.length ? dl(d.lines) : null,
-        d.causes && d.causes.length ? el("p", { cls: "cdd-of", text: "Still to pass, by cause: " + d.causes.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") }) : null]
+        d.causes && d.causes.length ? causeTable(d) : null, d.fails ? d.fails : null]
         .concat(!d.parts && (d.stamp || d.liveStamp === undefined) ? [stampLine(d.stamp, now)] : [], liveBits(d, now), d.parts ? parts(d, now) : []));
     });
     /* The row leads with the confidence level, then completeness (the overall bar), then each dataset (Sam, Nov 13,
@@ -589,7 +629,10 @@
         c.confidence ? el("p", { cls: "cdd-state", text: cap(c.confidence.level) }) : null,
         c.confidence ? el("p", { cls: "cdd-of", text: c.confidence.why }) : null,
         sp ? dl([["Spot-check", fmt(sp.agrees) + " agree, " + fmt(sp.differs) + " differ, " + fmt(sp.unreachable) + " unreachable"]]) : null,
-        stampLine(sp ? { at: sp.checked_at, kind: "spot-checked" } : null, now)]));
+        /* With no spot-check there is no date to give: the card says what each level rests on, in the builder's words
+           (rule.confidence_card), never a bare "Not yet" (S648). */
+        sp ? stampLine({ at: sp.checked_at, kind: "spot-checked" }, now)
+          : (M.rule || {}).confidence_card ? el("p", { cls: "cdd-of", "data-levels": "true", text: M.rule.confidence_card }) : null]));
     }
     if (c.cost_usd != null) {
       var cp = costPer(c);
@@ -600,7 +643,12 @@
     var G = gaps(M, c);
     var openP = el("button", { type: "button", cls: "cmn-word", "data-panel-open": String(c.id), text: "Open " + c.name + " in the side panel" });
     openP.addEventListener("click", function () { openPanel(c.id, '[data-panel-open="' + c.id + '"]'); });
+    /* The college's sources, each opening its page in a new tab: the catalog the capture read, the capture's committed
+       folder, the paid read's run (S648: a source label that looks like a link opens what it names). */
+    var srcs = [c.catalog_url && /^https?:\/\//i.test(c.catalog_url) ? outLink(c.catalog_url, "The catalog") : null,
+      c.slug && c.harvested ? repoLink("kb/program_requirements_college/" + c.slug + "/") : null, runLink(c.run)].filter(Boolean);
     var box = el("div", { cls: "cdd-more-in" }, [
+      srcs.length ? el("p", { cls: "cdd-srcrow", "data-sources": "true" }, [el("span", { cls: "cdd-partname", text: "Sources:" })].concat(srcs)) : null,
       cards.length ? el("div", { cls: "cdd-ds" }, cards) : el("p", { cls: "cdd-of", text: "Not collected yet: no committed file holds a dataset for this college." }),
       el("div", { cls: "cdd-gapbox" }, [el("h4", { text: "Open gaps" }),
         G.length ? el("ul", { cls: "cdd-gaps" }, G.map(function (g) { return el("li", { text: g }); })) : el("p", { cls: "cdd-of", text: c.harvested ? "None recorded in the committed files." : "Not collected yet." })]),
@@ -647,7 +695,8 @@
         if (d.state && d.note) kids.push(el("p", { cls: "cdd-of", text: d.note }));
         if (d.den == null && d.tba) kids.push(tba(d.tba));
         if (d.lines && d.lines.length) kids.push(dl(d.lines));
-        if (d.causes && d.causes.length) kids.push(el("p", { cls: "cdd-of", text: "Still to pass, by cause: " + d.causes.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") }));
+        if (d.causes && d.causes.length) kids.push(causeTable(d));
+        if (d.fails) kids.push(d.fails);
         (d.later || []).forEach(function (x) { kids.push(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: x[0] + ": " + x[1] + ". " }), x[2]])); });
         /* The committed lines' stamp sits under them, before the live block and its own stamp. */
         if (!d.parts && (d.stamp || (d.held && d.liveStamp === undefined))) kids.push(stampLine(d.stamp, now));
@@ -683,7 +732,9 @@
     var src = [c.slug ? "kb/program_requirements_college/" + c.slug + "/" : null, M.sources.census || null, c.slo_queue ? M.sources.slo_queue : null,
       c.scout ? scoutFile(M, c) : null, sp ? sp.file + (sp.pr ? " (pull request " + sp.pr + ")" : "") : null,
       sp && sp.settled_later ? "a later settlement beside the receipt (kb/spot_checks/README.md)" : null, M.sources.universe || null].filter(Boolean);
-    out.push(section("Sources", [el("ul", { cls: "cdd-srcs" }, src.map(function (s) { return el("li", { text: s }); }))]));
+    out.push(section("Sources", [el("ul", { cls: "cdd-srcs" }, src.map(function (s) { return el("li", null, [repoLink(s)]); })
+      .concat([c.catalog_url && /^https?:\/\//i.test(c.catalog_url) ? el("li", null, [outLink(c.catalog_url, "The catalog the capture read")]) : null,
+        runLink(c.run) ? el("li", null, [runLink(c.run)]) : null].filter(Boolean)))]));
     return out;
   }
   /* A dialog that says aria-modal makes the rest of the page inert while it is open (COBIx on PR 3231): every sibling
@@ -827,21 +878,23 @@
     }
     if (!S.sort) S.sort = defaultSort(M);
     S.platform = platformsOf(M).some(function (p) { return p[0] === R.platform; }) ? R.platform : "";
+    S.district = districtName(M, R.district) ? R.district : "";
     root.removeAttribute("style");
     root.textContent = "";
     var wrap = el("div", { cls: "cmn-wrap cdd" });
     wrap.appendChild(el("p", { cls: "cdd-trail" }, [el("a", { href: "#commons", text: "CPL Commons" }), " / ",
       S.view ? el("a", { href: "#commons/data", text: TITLE }) : el("span", { text: TITLE }), S.view ? " / " : null, S.view ? el("span", { text: VIEWS[S.view] }) : null]));
     wrap.appendChild(el("header", { cls: "cmn-top" }, [
-      el("h2", { cls: "cmn-title", id: "cdd-h", text: S.view === "dictionary" ? "The data dictionary" : S.view === "apis" ? "The API checklist" : TITLE }),
+      el("h2", { cls: "cmn-title", id: "cdd-h", text: S.view ? VIEWS[S.view] : TITLE }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
-      el("p", { cls: "cmn-lede", text: S.view === "dictionary" ? "Every dataset College Data Collection tracks: who holds it, how we get it today, what would improve it, how far it has come, and the evidence for each claim."
+      el("p", { cls: "cmn-lede", text: S.view === "districts" ? "Each district's colleges together: how many are collected, how complete their collection is and how confident we are in it, from the same figures as the college list."
+        : S.view === "dictionary" ? "Every dataset College Data Collection tracks: who holds it, how we get it today, what would improve it, how far it has come, and the evidence for each claim."
         : S.view === "apis" ? "Each API the datasets would connect through: who holds it, whether a connection is needed, its status and the evidence for that status."
         : "Every college and continuing-education campus: what we have collected for it, how complete it is, how confident we are in it, and what is in the way." })
     ]));
     wrap.appendChild(viewNav());
     if (S.view) {
-      wrap.appendChild(S.view === "dictionary" ? dictionaryView(M) : apisView(M));
+      wrap.appendChild(S.view === "districts" ? districtsView(M) : S.view === "dictionary" ? dictionaryView(M) : apisView(M));
       var vpage = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);
       root.appendChild(vpage);
       drawPanel(VIEW.now);   // no college on a view: the panel stays hidden and the page live
@@ -876,6 +929,9 @@
         var ow = el("button", { type: "button", cls: "cmn-word cdd-openw", "data-filter": t.open.f, "aria-pressed": S.filter === t.open.f ? "true" : "false", text: t.open.word });
         ow.addEventListener("click", function () { pick(t.open.f); });
         grid.appendChild(el("div", { cls: "cdd-tile", "data-tile": t.l }, kids.concat([el("span", { cls: "cdd-d" }, [ow])])));
+      } else if (t.f && !listFor(M, t.f).length) {
+        /* A card whose count is zero would open an empty list: it draws plain (review of #3257). */
+        grid.appendChild(el("div", { cls: "cdd-tile", "data-tile": t.l, "data-zero": t.f }, kids));
       } else if (t.f) {
         var b = el("button", { type: "button", cls: "cdd-tile cdd-open", "data-filter": t.f, "aria-pressed": S.filter === t.f ? "true" : "false" }, kids);
         b.addEventListener("click", function () { pick(t.f); });
@@ -894,7 +950,7 @@
     var shown = el("p", { cls: "cdd-shown", id: "cdd-shown", role: "status" });
     var clear = el("button", { type: "button", cls: "cmn-word", id: "cdd-all", text: "Show all colleges" });
     clear.addEventListener("click", function () { pick("all"); });
-    list.appendChild(el("div", { cls: "cdd-tools" }, [el("label", { "for": "cdd-q", cls: "cdd-label", text: "Find a college or district" }), search, shown, S.filter !== "all" || S.platform ? clear : null]));
+    list.appendChild(el("div", { cls: "cdd-tools" }, [el("label", { "for": "cdd-q", cls: "cdd-label", text: "Find a college or district" }), search, shown, S.filter !== "all" || S.platform || S.district ? clear : null]));
     /* The order in words, above the list, announced when it changes (role status). */
     var sortLine = el("p", { cls: "cdd-sortline", id: "cdd-sortline", role: "status" });
     list.appendChild(sortLine);
@@ -928,14 +984,16 @@
     }
     function drawBody() {
       body.textContent = "";
-      var base = listFor(M, S.filter).filter(function (c) { return !S.platform || c.platform === S.platform; }), L = sorted(M, searched(base));
+      var base = listFor(M, S.filter).filter(function (c) { return (!S.platform || c.platform === S.platform) && (!S.district || (c.district && districtSlug(c.district) === S.district)); }),
+        L = sorted(M, searched(base));
       L.forEach(function (c) {
         body.appendChild(row(M, c, VIEW.now));
         if (String(S.open) === String(c.id)) body.appendChild(detail(M, c, VIEW.now));
       });
       if (!L.length) body.appendChild(el("tr", null, [el("td", { colspan: String(COLUMNS.length), text: "No college matches." })]));
       shown.textContent = "Showing " + fmt(L.length) + " of " + fmt(M.colleges.length) + (S.filter !== "all" ? ": " + FILTERS[S.filter].word : "")
-        + (S.platform ? (S.filter !== "all" ? "; " : ": ") + "catalog platform " + platformWord(S.platform) : "");
+        + (S.platform ? (S.filter !== "all" ? "; " : ": ") + "catalog platform " + platformWord(S.platform) : "")
+        + (S.district ? (S.filter !== "all" || S.platform ? "; " : ": ") + districtName(M, S.district) : "");
       /* Set only when the words change, so typing in the search never re-announces the order. */
       var sw = sortWords(M);
       if (sortLine.textContent !== sw) sortLine.textContent = sw;
@@ -955,7 +1013,7 @@
 
   /* The three views of the dashboard, as words: the list, the dictionary, the checklist. */
   function viewNav() {
-    var items = [["", "The college list"], ["dictionary", VIEWS.dictionary], ["apis", VIEWS.apis]];
+    var items = [["", "The college list"], ["districts", VIEWS.districts], ["dictionary", VIEWS.dictionary], ["apis", VIEWS.apis]];
     return el("nav", { cls: "cdd-views", "aria-label": "College Data Collection views" }, items.map(function (it) {
       var on = (S.view || "") === it[0];
       var a = el("a", { href: "#commons/data" + (it[0] ? "/" + it[0] : ""), cls: "cdd-viewword", "data-goto": it[0] || "list", "aria-current": on ? "page" : null, text: it[1] });
@@ -985,7 +1043,7 @@
   function choosePlatform(key) {
     if (!VIEW.root || !VIEW.M) return;
     var y = window.scrollY;
-    render(VIEW.root, VIEW.M, listRoute(S.filter, key).replace(/^\//, ""));
+    render(VIEW.root, VIEW.M, listRoute(S.filter, key, S.district).replace(/^\//, ""));
     setAddress();
     try { if (window.scrollTo && y) window.scrollTo(0, y); } catch (e) { /* jsdom */ }
     var b = VIEW.root.querySelector('.cdd-plat[data-platform="' + (key || "any") + '"]');
@@ -1036,7 +1094,7 @@
     if (x.unverified_claims) w.push(fmt(x.unverified_claims) + " claim" + (x.unverified_claims === 1 ? " in this entry is" : "s in this entry are") + " marked unverified in the doc.");
     return w.join(" ");
   }
-  var GITHUB = "https://github.com/cpl-initiative/cpl-project-tracker/blob/main/";
+  var GITHUB = GITHUB_REPO + "blob/main/";
   function dictionaryView(M) {
     var D = M.dictionary || {}, L = Array.isArray(D.datasets) ? D.datasets : [];
     var sec = el("section", { cls: "cdd-view", id: "cdd-dict", "aria-labelledby": "cdd-h" });
@@ -1044,7 +1102,7 @@
     var groups = [];
     L.forEach(function (x) { if (groups.indexOf(x.group || "Other") < 0) groups.push(x.group || "Other"); });
     var src = String(D.source || "docs/reference/data_dictionary.md");
-    sec.appendChild(el("p", { cls: "cdd-src" }, ["Parsed from ", el("a", { href: GITHUB + src.split("#")[0], text: src }),
+    sec.appendChild(el("p", { cls: "cdd-src" }, ["Parsed from ", el("a", { href: GITHUB + src.split("#")[0], target: "_blank", rel: "noopener noreferrer", text: src + " (opens in a new tab)" }),
       " by the College Data Collection builder: " + fmt(L.length) + " datasets in " + fmt(groups.length) + " groups, as the doc groups them."]));
     if (Array.isArray(D.errors) && D.errors.length) sec.appendChild(el("p", { cls: "cdd-state", text: "The builder could not read all of the doc: " + D.errors.join("; ") }));
     groups.forEach(function (g) {
@@ -1058,7 +1116,7 @@
           uv ? el("p", { cls: "cdd-unv", "data-unverified": "true", text: uv }) : null,
           el("dl", { cls: "cdd-dl" }, [el("dt", { text: "Stage" }), el("dd", { text: x.stage || "TBA" }), el("dt", { text: "Owner or steward" }), docText("dd", x.owner || "TBA"),
             el("dt", { text: "How we get it today" }), docText("dd", x.procedure_today || "TBA"), el("dt", { text: "Planned improvement" }), docText("dd", x.planned_improvement || "TBA")]),
-          x.link ? el("p", { cls: "cdd-of" }, [el("a", { href: GITHUB + x.link, text: "The entry in the data dictionary, on GitHub" })]) : null
+          x.link ? el("p", { cls: "cdd-of" }, [el("a", { href: GITHUB + x.link, target: "_blank", rel: "noopener noreferrer", text: "The entry in the data dictionary, on GitHub (opens in a new tab)" })]) : null
         ].concat(evidenceBits(x))));
       });
       sec.appendChild(gs);
@@ -1077,7 +1135,7 @@
     if (!a.rows.length) { sec.appendChild(tba("The API checklist is not in the file yet.")); return sec; }
     sec.appendChild(el("p", { cls: "cdd-stamp", id: "cdd-api-sum" }, [el("strong", { text: fmt(a.connected) + " of " + fmt(a.need) + " connected. " }),
       "Connected, of the APIs a connection is needed for. A status reads unverified when the repo holds no evidence for it beyond the doc family's citation; an unverified API never counts as connected. Parsed from ",
-      el("a", { href: GITHUB + String((M.apis || {}).source || "docs/reference/data_dictionary.md"), text: "the checklist in the data dictionary" }), "."]));
+      el("a", { href: GITHUB + String((M.apis || {}).source || "docs/reference/data_dictionary.md"), target: "_blank", rel: "noopener noreferrer", text: "the checklist in the data dictionary (opens in a new tab)" }), "."]));
     var NEED = { yes: "Needed", no: "Not needed", unknown: "Unknown" };
     var body = el("tbody", null, a.rows.map(function (r) {
       var st = apiStatus(r);
@@ -1098,6 +1156,68 @@
     return sec;
   }
 
+  /* The district roll-up (S648, a planned item whose source exists: each college's district is in the crosswalk the
+     builder reads). Each figure is summed from that district's colleges, the same figures the college list shows; the
+     district's name is the word that opens the list searched to its colleges. Nothing is stored. */
+  function districtRows(M) {
+    var by = {};
+    M.colleges.forEach(function (c) {
+      var k = c.district || "No district on file";
+      var d = by[k] || (by[k] = { name: k, none: !c.district, colleges: 0, collected: 0, programs: 0, passing: 0, ov: [], levels: {} });
+      d.colleges++;
+      if (c.harvested) { d.collected++; d.programs += c.programs || 0; d.passing += c.passing || 0; }
+      var o = overallOf(M, c); if (o) d.ov.push(o.value);
+      if (level(c)) d.levels[level(c)] = (d.levels[level(c)] || 0) + 1;
+    });
+    return Object.keys(by).map(function (k) {
+      var d = by[k]; d.mean = d.ov.length ? d.ov.reduce(function (a, b) { return a + b; }, 0) / d.ov.length : null; return d;
+    });
+  }
+  function districtsView(M) {
+    var sec = el("section", { cls: "cdd-view", id: "cdd-districts", "aria-labelledby": "cdd-h" });
+    var R = districtRows(M).sort(function (a, b) {
+      var x = a.mean == null ? 2 : a.mean, y = b.mean == null ? 2 : b.mean;
+      return x - y || a.name.localeCompare(b.name);
+    });
+    sec.appendChild(el("p", { cls: "cdd-sortline", id: "cdd-dist-sum", text: fmt(R.length) + " districts, lowest overall completeness first (" + (liveRead(M) ? liveWords(M) : "the live read has not run yet") +
+      "); a district the live read does not hold comes last. A district's name opens the college list at its colleges." }));
+    var body = el("tbody", null, R.map(function (d) {
+      /* The name opens exactly its colleges (the district is in the address, district/<slug>); the bucket of colleges
+         with no district has no address, so it stays plain text. */
+      var w = d.none ? el("span", { cls: "cdd-name", text: d.name })
+        : el("button", { type: "button", cls: "cmn-word cdd-name", "data-district": d.name, text: d.name });
+      if (!d.none) w.addEventListener("click", function () { openDistrict(d.name); });
+      var lv = ["limited", "partial", "strong"].filter(function (k) { return d.levels[k]; }).map(function (k) { return k + " " + fmt(d.levels[k]); }).join(", ");
+      return el("tr", { "data-district-row": d.name }, [
+        el("th", { scope: "row", "data-label": "District" }, [w]),
+        el("td", { "data-label": "Colleges", cls: "cdd-num", text: fmt(d.colleges) }),
+        el("td", { "data-label": "Collected", cls: "cdd-num", text: fmt(d.collected) + " of " + fmt(d.colleges) }),
+        el("td", { "data-label": "Program requirements passing" }, d.programs ? [el("span", { cls: "cdd-pr" }, [meter(d.passing / d.programs), el("span", { cls: "cdd-n", text: pc(d.passing / d.programs) }),
+          el("span", { cls: "cdd-of", text: fmt(d.passing) + " of " + fmt(d.programs) + " listed programs" })])] : [el("span", { cls: "cdd-quiet", text: "Not collected yet" })]),
+        el("td", { "data-label": "Overall, mean of its colleges" }, d.mean == null ? [el("span", { cls: "cdd-quiet", text: liveRead(M) ? "Not in the live read" : "TBA" })]
+          : [el("span", { cls: "cdd-pr" }, [meter(d.mean), el("span", { cls: "cdd-n", text: pc(d.mean) }), el("span", { cls: "cdd-of", text: "Of " + plural(d.ov.length, "college", "colleges") })])]),
+        el("td", { "data-label": "Confidence" }, [lv ? cap(lv) : el("span", { cls: "cdd-quiet", text: "TBA" })])
+      ]);
+    }));
+    var table = el("table", { cls: "cdd-table", id: "cdd-dist-table" }, [
+      el("caption", { cls: "cdd-sr", text: "Each district: its colleges, how many are collected, program requirements passing, the mean overall bar, and the confidence levels of its colleges" }),
+      el("colgroup", null, [el("col", { cls: "cdd-c-dname" }), el("col", { cls: "cdd-c-dn" }), el("col", { cls: "cdd-c-dcol" }), el("col", { cls: "cdd-c-dpr" }), el("col", { cls: "cdd-c-dov" }), el("col", { cls: "cdd-c-dconf" })]),
+      el("thead", null, [el("tr", null, ["District", "Colleges", "Collected", "Program requirements passing", "Overall, mean of its colleges", "Confidence"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), body]);
+    sec.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "Colleges by district", tabindex: "0" }, [table]));
+    return sec;
+  }
+
+  /* A district's colleges: the list at #commons/data/district/<slug>, the search cleared, the focus on its heading. */
+  function openDistrict(name) {
+    if (!VIEW.root || !VIEW.M) return;
+    S.q = "";
+    render(VIEW.root, VIEW.M, "district/" + districtSlug(name));
+    setAddress();
+    try { if (window.scrollTo && window.scrollY) window.scrollTo(0, 0); } catch (e) { /* jsdom */ }
+    var h = VIEW.root.querySelector("#cdd-list-h");
+    if (h && h.focus) h.focus();
+  }
+
   /* What the mock shows beyond these views, each in one line with what it waits on: the builder's own reason where
      the file holds one, and the dictionary's stage where the doc names the dataset. No empty panel. */
   function comingNext(M) {
@@ -1108,7 +1228,10 @@
       ["AI workers per college", "Waits on a committed record of each worker and the colleges it serves; the district bots wait on the district profiles (#3198)."],
       /* Sam, Nov 13, 7:13 AM PT, on #3229: a long-term direction, recorded here and not built. */
       ["A signed-in Sierra where college staff may direct changes", "College staff could give directions for procedure and rule changes that improve the accuracy, completeness, connectivity and visibility of their college's collection. Waits on Sierra's sign-in and access controls; a long-term direction, not built in this slice."],
-      ["The JST funnel", (tbaOf(M, "jst") || "Waits on an authorized-student feed.") + stage("JST authorizations")],
+      /* S648: the opened row's causes are a table; the programs behind each cause are not in the builder's file. */
+      ["Each cause's programs", "A cause in a college's row would open the programs it counts. Waits on the builder carrying each college's program list per cause; today the file carries the counts only."],
+      ["Curriculum view and pathway source links per college", "The live registry says whether each is held, never its address. Waits on the live read carrying the links themselves; the catalog the capture read already opens from the row."],
+      ["The JST funnel",(tbaOf(M, "jst") || "Waits on an authorized-student feed.") + stage("JST authorizations")],
       ["SIS and curriculum system tiles", "Wait on the district profiles (#3198); a college's system stays unknown until its profile names it."],
       ["Program Pathways Mapper reads per college", (tbaOf(M, "ppm") || "Waits on a per-college read of the committed term maps.") + stage("Program Pathways Mapper (PPM)")],
       ["Course descriptions per college", (tbaOf(M, "descriptions") || "Waits on the description classifier's counts (#3219).") + stage("Course descriptions")],
@@ -1175,7 +1298,7 @@
     /* A session renewal mid-visit (opts.keep) draws the view as it stands: the person's own sort and search last the
        visit. A new visit starts fresh: nothing is remembered, the order back to its default. */
     var keep = opts.keep ? { q: S.q, sort: S.sort && !S.sort.auto && !S.sort.card ? S.sort : null } : null;
-    S.q = ""; S.filter = ""; S.view = ""; S.platform = ""; S.sort = null; S.open = null; S.panel = null; S.pw = PW.start;
+    S.q = ""; S.filter = ""; S.view = ""; S.platform = ""; S.district = ""; S.sort = null; S.open = null; S.panel = null; S.pw = PW.start;
     if (keep) { S.q = keep.q || ""; S.sort = keep.sort; }
     if (VIEW.M && cache) { render(root, VIEW.M, filter, new Date()); focusArrival(); return Promise.resolve(VIEW.M); }
     root.textContent = "Reading the " + TITLE + "…";
@@ -1227,10 +1350,10 @@
     ".cdd-q:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".cdd-shown { margin:0; color:var(--cmn-muted); font-size:.9rem; font-variant-numeric:tabular-nums; }",
     ".cdd-sortline { margin:0; color:var(--cmn-ink-2); font-size:.9rem; max-width:var(--cpl-measure,none); }",
-    ".cdd-wrap { overflow-x:auto; background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; }",
+    ".cdd-wrap { container:cddlist / inline-size; overflow-x:auto; background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; }",
     ".cdd-wrap:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".cdd-table { width:100%; border-collapse:collapse; table-layout:fixed; font-size:.93rem; }",
-    ".cdd-table th, .cdd-table td { text-align:left; vertical-align:top; padding:9px 12px; border-bottom:1px solid var(--cmn-line-soft); color:var(--cmn-ink); overflow-wrap:anywhere; }",
+    ".cdd-table th, .cdd-table td { text-align:left; vertical-align:top; padding:9px 12px; border-bottom:1px solid var(--cmn-line-soft); color:var(--cmn-ink); overflow-wrap:break-word; }",
     ".cdd-table thead th { font-size:.8rem; font-weight:700; vertical-align:bottom; }",
     ".cdd-table thead button.cmn-word { font-size:.82rem; }",
     ".cdd-dir { font-weight:400; color:var(--cmn-muted); text-decoration:none; }",
@@ -1257,13 +1380,30 @@
     ".cdd-table tr.cdd-open > th, .cdd-table tr.cdd-open > td { background:var(--cmn-pill-bg); border-bottom-color:var(--cmn-pill-bg); }",
     ".cdd-table tr.cdd-more > td { background:var(--cmn-page); padding:12px 14px 16px; }",
     ".cdd-more-in { display:grid; gap:12px; }",
-    ".cdd-ds { display:grid; gap:10px; grid-template-columns:repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); }",
-    ".cdd-card { min-width:0; display:grid; gap:4px; align-content:start; background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:10px; padding:10px 12px; }",
+    /* S648: columns, so the short cards stack beside the long Program requirements card instead of each grid row
+       taking the height of its tallest card; at most three, each at least 16rem, one under that. */
+    ".cdd-ds { columns:3 16rem; column-gap:10px; }",
+    ".cdd-card { min-width:0; display:grid; gap:4px; align-content:start; break-inside:avoid; margin:0 0 10px; background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:10px; padding:10px 12px; }",
+    "table.cdd-causes { width:100%; border-collapse:collapse; font-size:.86rem; table-layout:auto; }",
+    "table.cdd-causes caption { text-align:left; font-weight:700; font-size:.84rem; color:var(--cmn-ink-2); padding:4px 0 2px; }",
+    "table.cdd-causes th, table.cdd-causes td { text-align:left; vertical-align:top; padding:2px 0; border-bottom:1px solid var(--cmn-line-soft); font-weight:400; color:var(--cmn-ink); overflow-wrap:break-word; }",
+    "table.cdd-causes thead th { color:var(--cmn-muted); font-size:.8rem; font-weight:700; }",
+    "table.cdd-causes .cdd-num { text-align:right; padding-left:12px; width:1%; }",
+    ".cdd-srcrow { margin:0; display:flex; flex-wrap:wrap; gap:2px 16px; font-size:.88rem; }",
+    /* A link's text is a long path or address: it may break anywhere, or it widens the opened row past the list's box
+       at phone width (the PR review, S648: 117 of 118 rows at 320 with break-word; 0 with anywhere). */
+    ".cdd a[target] { overflow-wrap:anywhere; }",
     ".cdd-card h4, .cdd-gapbox h4, .cdd-pds h4 { margin:0; font-size:.95rem; color:var(--cmn-heading); }",
     ".cdd-state { margin:0; font-weight:700; color:var(--cmn-heading); }",
     ".cdd-card .cdd-of, .cdd-panel .cdd-of { margin:0; }",
-    "dl.cdd-dl { margin:0; display:grid; grid-template-columns:minmax(0, auto) minmax(0, 1fr); gap:2px 12px; font-size:.86rem; }",
-    "dl.cdd-dl dt { color:var(--cmn-muted); } dl.cdd-dl dd { margin:0; color:var(--cmn-ink); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }",
+    /* S648, Sam's Skyline screenshot: the label column was minmax(0, auto), which grows to a long label's full width
+       before the value column gets any, and the value inherited overflow-wrap:anywhere, so 144 broke one digit a line.
+       Now the label takes the rest and wraps at its words; the value column sizes to its content (capped at 60%, where
+       a long value wraps at its words) and a figure never breaks (cdd-ddn: nowrap). */
+    "dl.cdd-dl { margin:0; display:grid; grid-template-columns:minmax(0, 1fr) fit-content(60%); gap:2px 12px; font-size:.86rem; }",
+    "dl.cdd-dl dt { color:var(--cmn-muted); overflow-wrap:break-word; } dl.cdd-dl dd { margin:0; min-width:0; color:var(--cmn-ink); font-variant-numeric:tabular-nums; overflow-wrap:break-word; }",
+    "dl.cdd-dl dd.cdd-ddn { white-space:nowrap; text-align:right; }",
+    ".cdd-n, .cdd-num, .cdd-nowrap { white-space:nowrap; }",
     ".cdd-stampline { display:block; font-size:.84rem; color:var(--cmn-muted); }",
     ".cdd-part { display:grid; gap:2px; padding-top:4px; }",
     ".cdd-partname { margin:0; font-size:.84rem; font-weight:700; color:var(--cmn-ink-2); }",
@@ -1306,22 +1446,31 @@
     ".cdd-entry h4 { margin:0; font-size:1rem; color:var(--cmn-heading); }",
     ".cdd-unv { margin:0; font-weight:700; color:var(--cmn-ask-label); }",
     ".cdd-ev { display:grid; gap:2px; }",
+    /* The API checklist's evidence paths break anywhere, so its table never scrolls sideways (the PR review, S648). */
+    ".cdd-ev, .cdd-ev > *, ul.cdd-srcs > li { min-width:0; overflow-wrap:anywhere; }",
+    /* A dictionary entry's labels are short words beside long prose: the prose takes the rest of the width. */
+    ".cdd-entry dl.cdd-dl { grid-template-columns:max-content minmax(0, 1fr); }",
     ".cdd code { font-size:.86em; overflow-wrap:anywhere; }",
+    ".cdd-c-dname { width:26%; } .cdd-c-dn { width:9%; } .cdd-c-dcol { width:11%; } .cdd-c-dpr { width:20%; } .cdd-c-dov { width:18%; } .cdd-c-dconf { width:16%; }",
     ".cdd-c-api { width:28%; } .cdd-c-holder { width:18%; } .cdd-c-need { width:11%; } .cdd-c-status { width:13%; } .cdd-c-ev { width:30%; }",
     ".cdd-apitable .cdd-ev .cdd-partname { font-size:.8rem; }",
     "@media (prefers-reduced-motion: no-preference) { .cdd-grip::after { transition:background-color .15s ease; } }",
     "@media (prefers-reduced-motion: no-preference) { button.cdd-tile { transition:background-color .15s ease; } }",
     /* One column under 560px: each college becomes a block with its labels, and the sort words wrap above. */
-    "@media (max-width: 560px) {",
-    "  .cdd-table, .cdd-table tbody, .cdd-table tr, .cdd-table td, .cdd-table tbody th { display:block; width:auto; }",
-    "  .cdd-table colgroup { display:none; }",
-    "  .cdd-table thead tr { display:flex; flex-wrap:wrap; gap:4px 14px; padding:10px 12px; border-bottom:1px solid var(--cmn-line); }",
-    "  .cdd-table thead th { display:block; padding:0; border:0; }",
-    "  .cdd-table tbody tr { padding:10px 12px; border-bottom:1px solid var(--cmn-line); }",
-    "  .cdd-table tbody th, .cdd-table td { padding:3px 0; border:0; }",
-    "  .cdd-table td::before { content:attr(data-label); display:block; font-size:.78rem; font-weight:700; color:var(--cmn-muted); }",
-    "  .cdd-table td:empty { display:none; }",
+    /* S648: the list's table is a block per college whenever its own box is under 760px (a container query), so a
+       narrow main column beside the side menu never squeezes a figure or a heading word to one character a line. */
+    "@container cddlist (max-width: 760px) {",
+    "  .cdd-table, .cdd-table > tbody, .cdd-table > tbody > tr, .cdd-table > tbody > tr > td, .cdd-table > tbody > tr > th { display:block; width:auto; }",
+    "  .cdd-table > colgroup { display:none; }",
+    "  .cdd-table > thead > tr { display:flex; flex-wrap:wrap; gap:4px 14px; padding:10px 12px; border-bottom:1px solid var(--cmn-line); }",
+    "  .cdd-table > thead > tr > th { display:block; padding:0; border:0; }",
+    "  .cdd-table > tbody > tr { padding:10px 12px; border-bottom:1px solid var(--cmn-line); }",
+    "  .cdd-table > tbody > tr > th, .cdd-table > tbody > tr > td { padding:3px 0; border:0; }",
+    "  .cdd-table > tbody > tr > td::before { content:attr(data-label); display:block; font-size:.78rem; font-weight:700; color:var(--cmn-muted); }",
+    "  .cdd-table > tbody > tr > td:empty { display:none; }",
     "  .cdd-table tr.cdd-more > td::before { content:none; }",
+    "}",
+    "@media (max-width: 560px) {",
     "  .cdd-entry dl.cdd-dl { grid-template-columns:minmax(0, 1fr); } .cdd-entry dl.cdd-dl dd { margin-bottom:6px; }",
     "  .cdd-panel { width:100vw; border-left:0; }",
     "  .cdd-grip, .cdd-gripnote { display:none; }",
@@ -1337,6 +1486,6 @@
     boot: boot, render: render, model: model, listFor: listFor, tiles: tiles, address: address, pick: pick, load: load, age: age,
     datasets: datasets, gaps: gaps, asks: asks, apiCount: apiCount, parseRouteViews: VIEWS, go: go, slugOf: slugOf, parseRoute: parseRoute, openPanel: openPanel, closePanel: closePanel, PW: PW,
     FILE: FILE, FILTERS: FILTERS, COLUMNS: COLUMNS, CSS: CSS, _state: S,
-    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.pw = PW.start; }
+    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.district = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.pw = PW.start; }
   };
 })();
