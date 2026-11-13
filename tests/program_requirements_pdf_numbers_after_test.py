@@ -672,6 +672,56 @@ check(C.pdf_own_heading("Home Health Aide (HHA) for Certi- fied Nurse Assistants
                         {"title": "Home Health Aide (HHA) for Certified Nurse Assistants (CNA)", "award": "Noncredit program"}),
       "a word hyphenated at a line's end is rejoined")
 
+# S647, the wrapped-heading follow-ups from run 43381048821's review. Each is still normalized equality of
+# the full title and the same award, never a token subset.
+FIRE_CA = {"control_number": "70004", "title": "Fire Technology",
+           "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"}
+EQ = [("Spanish, AAT", "", {"title": "Spanish", "award": AAT}, True),          # the letters run together
+      ("Spanish, AAT", "", {"title": "Spanish", "award": AA}, False),          # still not a local AA
+      ("Biology, AST", "", {"title": "Biology", "award": AST}, True),
+      ("Biology, AST", "", {"title": "Biology", "award": AS}, False),
+      ("Fire Technology, Certificate", "", FIRE_CA, True),                     # a bare "Certificate", as "Cert"
+      ("Fire Technology, Certificate", "", {"title": "Fire Technology", "award": AS}, False),
+      ("Fire Technology Prevention, Certificate", "", FIRE_CA, False),
+      ("Pre- Engineering, AS", "", {"title": "Pre-Engineering", "award": AS}, True),   # the title's own hyphen
+      ("Pre- Engineering, AS", "", {"title": "Engineering", "award": AS}, False)]
+miss = [(l, p["title"], p["award"]) for l, n, p, want in EQ if C.pdf_own_heading(l, n, p) != want]
+check(not miss, "S647: AAT, a bare Certificate and a hyphen at a line's end read by equality: %r" % miss)
+
+
+def own_at(text, p):
+    """The first line pdf_block_headings marks as the program's own heading, or None."""
+    heads = [h for h in C.pdf_block_headings(text, p, {"by_cn": {p["control_number"]: p}}) if h[1]]
+    return text[heads[0][0]:].split("\n")[0] if heads else None
+
+
+CM = {"control_number": "70001", "title": "Commercial Music", "award": AA}
+MUS = {"control_number": "70005", "title": "Music", "award": AA}
+PRE = {"control_number": "70002", "title": "Pre-Engineering", "award": AS}
+ENG = {"control_number": "70006", "title": "Engineering", "award": AS}
+SPA = {"control_number": "70003", "title": "Spanish", "award": AAT}
+SENT = "Students prepare for careers in\nCommercial.\nMusic, AA\nA.A. Degree\nMUS 101 Intro 3\n"
+TORN = "Pre-\nEngineering, AS\nA.S. Degree\nENGR 101 Intro 3\n"
+check(own_at(SENT, CM) is None and own_at(SENT, MUS) == "Music, AA"
+      and own_at("Commercial\nMusic, AA\nA.A. Degree\n", CM) == "Commercial"
+      and own_at("U.S.\nHistory, AA\nA.A. Degree\n", {"control_number": "1", "title": "U.S. History", "award": AA}) == "U.S.",
+      "S647: a line ending a sentence is prose, never a wrapped heading's head ('Commercial.' over 'Music, AA')")
+check(own_at(TORN, PRE) == "Pre-" and own_at(TORN, ENG) is None,
+      "S647: 'Pre-' over 'Engineering, AS' is Pre-Engineering's heading, and never Engineering's")
+check(own_at("Spanish, AAT\nAssociate in Arts for Transfer\nSPAN 101 Intro 3\n", SPA) == "Spanish, AAT"
+      and own_at("Fire Technology, Certificate\nFIRE 101 Intro 3\n", FIRE_CA) == "Fire Technology, Certificate",
+      "S647: 'Spanish, AAT' and 'Fire Technology, Certificate' are their programs' own headings in a block")
+# End to end on a uniform catalog: the hyphen-wrapped heading binds by the number line and its block starts there.
+PREB = [ublock(p) for p in UPROGS]
+PREB = PREB[:8] + ["Pre-\nEngineering, AS\nA.S. Degree\nENGR 101 Intro 3\nENGR 102 Next 3\nControl Number: 70002\n"] + PREB[8:]
+PREC = ucatalog(PREB)
+pctx = C.pdf_after_context(PREC, UPROGS + [PRE], C.pdf_numbers_after(PREC, UPROGS + [PRE]))
+pr = C.pdf_best("u", PREC, PRE, [{"code": "ENGR 101"}, {"code": "ENGR 102"}], "pypdf", numbers_after=pctx)
+check(pr and pr.get("bound") == "number_after" and pr.get("named") and "Pre-\nEngineering, AS" in pr["text"]
+      and "HOTE 101" not in pr["text"],
+      "S647: a hyphen-wrapped heading binds by the number line from its first line: %r"
+      % ((pr and (pr.get("after_unbound"), pr["text"][:80])),))
+
 # ── 7. Decisions 16 and 18: the number-line route keeps a filed record it cannot bind ─────────────
 # file_run files one read whole, for every college: a program the read does not carry loses its record
 # (decision 18 reversed 16(b), round 4's second reader). The number-line route's protection is the
