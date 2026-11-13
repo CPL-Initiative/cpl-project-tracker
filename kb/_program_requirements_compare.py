@@ -18,7 +18,8 @@ old main.
 
 Output: a first line naming both refs and the shas they resolve to (on stderr with --json, whose stdout is
 {base, head, rows}); then one line a program,
-`control_number  was PASS(grade)  now absent|fail|PASS(grade)  method  title (award)`; then a count line.
+`control_number  was PASS(grade)  now absent|error|fail|PASS(grade)  method  title (award)`, error being a
+file a failed extraction call left; then a count line.
 Exit 0 when it has a list to read (even an empty one); 2 when the two refs are one commit or the head holds no
 record file for the college, since then there is nothing to compare.
 """
@@ -43,6 +44,11 @@ def grade(rec: dict | None) -> int:
     return C.pass_grade(rec.get("score"))
 
 
+def stub(rec: dict | None) -> bool:
+    """A file a failed extraction call left (an error, no record): no read, which the list names as one."""
+    return isinstance(rec, dict) and (bool(rec.get("error")) or not isinstance(rec.get("record"), dict))
+
+
 def compare(base: dict[str, dict], branch: dict[str, dict], methods: dict[str, str]) -> list[dict]:
     """Each program passing on the base whose head record is absent or passes less (a fall from PASS(2)
     to PASS(1) included), in control-number order."""
@@ -56,7 +62,8 @@ def compare(base: dict[str, dict], branch: dict[str, dict], methods: dict[str, s
         if now_rec is not None and now >= was:
             continue
         out.append({"control_number": cn, "title": base[cn].get("title"), "award": base[cn].get("award"),
-                    "was": was, "now": "absent" if now_rec is None else ("PASS(%d)" % now if now else "fail"),
+                    "was": was, "now": "absent" if now_rec is None else ("PASS(%d)" % now if now else
+                                                                          "error" if stub(now_rec) else "fail"),
                     "method": methods.get(cn) or "not in the new read"})
     return out
 

@@ -1121,7 +1121,8 @@ recs = [{"score": {"pass": True, "coverage": {"pass": True}, "arithmetic": {"pas
         {"score": None, "error": "HTTP 500", "cost_usd": None}]
 sm = C.summarize(recs, {"college": "Cerritos College", "programs": 292, "with_closed_list": 288, "found": 270})
 check(sm["passed_machine_checks"] == 1 and sm["failed"]["arithmetic"] == 1 and sm["errors"] == 1
-      and sm["cost_usd"] == 0.12, "the account counts passes, each failed check, errors and cost")
+      and sm["cost_usd_filed"] == 0.12 and sm["cost_usd_run"] is None and "cost_usd" not in sm,
+      "the account counts passes, each failed check, errors, and the filed records' cost apart from the run's")
 
 # ── which statuses the harvest reads (Sam's go, 2026-10-10: Approved too) ──
 check("status.like.Active*" in C.STATUS_FILTER and "status.eq.Approved" in C.STATUS_FILTER
@@ -2995,7 +2996,9 @@ try:
 
     def fake_call(src, key, *a, **k):
         called.append(src["control_number"])
-        return {"record": {"program": {}, "blocks": []} if src["control_number"] in ("23", "24") else None,
+        # Every call but 22's answers with a record (scored failing below). 22's answers with none: a failed
+        # call since S647, so its filed record stays and it is listed in extract_failed.
+        return {"record": None if src["control_number"] == "22" else {"program": {}, "blocks": []},
                 "model": None, "usage": None}
     _saved_score = XT.score
     XT.score = lambda rec, *a, **k: dict(failing)
@@ -3019,10 +3022,13 @@ try:
           "a held record stays as filed, so filing the run keeps it")
     _kp = os.path.join(out_dir, "kept_passing_0.json")
     kp = json.load(open(_kp)) if os.path.exists(_kp) else []
-    # 22's read returns no record at all, 23's a failing one: both passing records stay as filed.
+    # 22's read returns no record at all, 23's a failing one: both passing records stay as filed. 23 is listed
+    # with both scores (kept_passing); 22's call failed, so it is listed in the run's extract_failed (S647).
+    _acct = C.extract_accounts(out_dir)
     check(got["23"] == dict(filed_recs["23"], control_number="23") and got["22"] == dict(filed_recs["22"], control_number="22")
-          and [x["control_number"] for x in kp] == ["22", "23"] and kp[0]["score"] is None
-          and (kp[1]["score"] or {}).get("arithmetic", {}).get("status") == "unequal" and kp[1]["filed_score"] == passing,
+          and [x["control_number"] for x in kp] == ["23"]
+          and [(x["control_number"], x["kept_filed"]) for x in _acct["failed"]] == [("22", True)]
+          and (kp[0]["score"] or {}).get("arithmetic", {}).get("status") == "unequal" and kp[0]["filed_score"] == passing,
           "a read that fails where the filed record passes leaves the filed record, listed with both scores: %r"
           % [x["control_number"] for x in kp])
     check(got["24"].get("extracted_run") == "43200000000" and got["24"]["score"]["arithmetic"]["status"] == "unequal",
@@ -3793,6 +3799,80 @@ with tempfile.TemporaryDirectory() as cmp_repo:
     check(rc == 2 and "no record file" in out_buf.getvalue(),
           "a head that holds no record file for the college exits non-zero: %r" % out_buf.getvalue())
 check(CMP.grade({"record": None, "score": G2}) == 0, "a record that holds no record is no pass")
+cmp_stub = CMP.compare({"7": {"record": {"blocks": []}, "score": G2}},
+                       {"7": {"record": None, "score": None, "error": "HTTP 401"}}, {})
+check([r["now"] for r in cmp_stub] == ["error"], "the gate names a file a failed call left as an error: %r" % cmp_stub)
+
+# A failed extraction call files nothing as read (d-extract-failure-files-nothing-s647). Run 43384599013 filed 121
+# HTTP 401 stubs over Glendale's records while the database refused connections; 118 of them replaced real records
+# that failed a check, as A1's does here (a passing one is held, since its window gains nothing). Fixture only.
+FAIL_COLLEGE = "Failcall College"
+with tempfile.TemporaryDirectory() as td:
+    real_dir = C.COLLEGE_DIR
+    C.COLLEGE_DIR = os.path.join(td, "colleges")
+    fdest = os.path.join(C.COLLEGE_DIR, C.slug_of(FAIL_COLLEGE))
+    fout = os.path.join(td, "out")
+    for d in (os.path.join(fdest, "records"), os.path.join(fout, "sources")):
+        os.makedirs(d)
+    open(os.path.join(fdest, "capture.json"), "w").write(json.dumps({"catalog_year": "2025-2026"}))
+    open(os.path.join(fout, "capture.json"), "w").write(json.dumps({"college": FAIL_COLLEGE, "programs": 4,
+                                                                    "catalog_year": "2026-2027"}))
+    filed_ok = {"college": FAIL_COLLEGE, "control_number": "A1", "title": "A", "award": "A.S.", "extracted_run": "100",
+                "source_url": "https://old.example.edu/a", "record": {"blocks": []}, "score": G0, "cost_usd": 0.05}
+    open(os.path.join(fdest, "records", "A1.json"), "w").write(json.dumps(filed_ok))
+    open(os.path.join(fdest, "sources.json"), "w").write(json.dumps(
+        [{"control_number": "A1", "source": {"url": "https://old.example.edu/a"}, "coverage": 1.0}]))
+
+    def fsrc(cn):
+        return {"college": FAIL_COLLEGE, "control_number": cn, "shape": "degree", "title": "T" + cn, "award": "A.S.",
+                "closed_list": [{"code": "A 1"}], "text": "A 1 Course", "coverage": 1.0, "codes_found": ["A1"],
+                "method": "sitemap_page", "source": {"url": "https://new.example.edu/" + cn}}
+    for cn in ("A1", "B2", "C3"):
+        json.dump(fsrc(cn), open(os.path.join(fout, "sources", cn + ".json"), "w"))
+    answers = {"A1": {"error": "HTTP 401: {\"error\":\"unauthorized\"}"},
+               "B2": {"error": "The read operation timed out"},
+               "C3": {"record": {"program": {}, "blocks": []}, "model": "m", "usage": {"in": 1}}}
+    saved_call, saved_score, saved_cost = XT.call, XT.score, XT.cost
+    XT.call = lambda src, key, *a, **k: dict(answers[src["control_number"]])
+    XT.score = lambda rec, *a, **k: dict(G2, coverage={"pass": True, "share": 1.0})
+    XT.cost = lambda model, usage: 0.07 if usage else None
+    old_key = os.environ.get("SUPABASE_SERVICE_KEY")
+    os.environ["SUPABASE_SERVICE_KEY"] = "test-only"
+    try:
+        check(C.extract(fout, 0, 1, "200", workers=1, keep_from=fdest) == 0, "extract runs to its end")
+        check(C.file_run(FAIL_COLLEGE, fout, "200") == 0, "the run files")
+    finally:
+        XT.call, XT.score, XT.cost = saved_call, saved_score, saved_cost
+        C.COLLEGE_DIR = real_dir
+        if old_key is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = old_key
+    with open(os.path.join(fdest, "records", "A1.json")) as fh:
+        a1 = json.load(fh)
+    check(a1 == filed_ok, "a 401 leaves the filed record untouched: %r" % {k: a1.get(k) for k in ("error", "extracted_run")})
+    check(sorted(os.listdir(os.path.join(fdest, "records"))) == ["A1.json", "C3.json"],
+          "a timed-out call on a program with no filed record files no record: %r"
+          % sorted(os.listdir(os.path.join(fdest, "records"))))
+    fsum = json.load(open(os.path.join(fdest, "summary.json")))
+    check([(x["control_number"], x["kept_filed"]) for x in fsum["extract_failed"]] == [("A1", True), ("B2", False)]
+          and fsum["extract_failed"][0]["status"].startswith("HTTP 401") and fsum["extract_calls"] == 3
+          and fsum["cost_usd_run"] == 0.07 and fsum["cost_usd_filed"] == 0.12 and fsum["errors"] == 0,
+          "the summary lists each failed call with its status, and this run's spend apart from the filed total: %r"
+          % {k: fsum.get(k) for k in ("extract_failed", "cost_usd_run", "cost_usd_filed", "errors")})
+    fidx = {x["control_number"]: x for x in json.load(open(os.path.join(fdest, "sources.json")))}
+    check(fidx["A1"]["source"]["url"] == "https://old.example.edu/a" and "B2" not in fidx
+          and fidx["C3"]["source"]["url"] == "https://new.example.edu/C3",
+          "a failed program's sources entry stays the one its filed record was read from, so the next run sends it")
+    check(C.check_extract(fout) == 1, "2 of 3 calls failed: the job ends red after the run is filed")
+    acct_path = os.path.join(fout, "extract_account_0.json")
+    acct0 = json.load(open(acct_path))
+    json.dump(dict(acct0, calls=5), open(acct_path, "w"))
+    check(C.check_extract(fout) == 0, "2 of 5 failed: the run stands")
+    json.dump(dict(acct0, calls=2), open(acct_path, "w"))
+    check(C.check_extract(fout) == 1, "every call failed: red")
+    os.remove(acct_path)
+    check(C.check_extract(fout) == 0, "no extraction ran: nothing to judge")
 
 if failures:
     print("FAIL: %d" % len(failures))

@@ -182,6 +182,12 @@ jobs:
           name: program-requirements-${{ github.run_id }}
           path: out
           retention-days: 90
+      # Last, after the capture and the records it kept are filed and committed: a run whose extraction calls
+      # more than half failed, or all failed, ends red (d-extract-failure-files-nothing-s647; run 43384599013
+      # answered 401 on every call and read green).
+      - name: Fail a run whose extraction calls failed
+        if: env.EXTRACT == 'true'
+        run: python3 kb/_program_requirements_college.py check-extract --college "$COLLEGE" --out out
 
   load:
     if: >-

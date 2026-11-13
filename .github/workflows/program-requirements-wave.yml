@@ -168,6 +168,11 @@ jobs:
           name: program-requirements-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.slug }}
           path: out
           retention-days: 90
+      # Last, after the college's run is filed and uploaded: extraction calls that more than half failed, or all
+      # failed, end this college's job red (d-extract-failure-files-nothing-s647).
+      - name: Fail a run whose extraction calls failed
+        if: steps.extract.outcome == 'success'
+        run: python3 kb/_program_requirements_college.py check-extract --college "$COLLEGE" --out out
 
   file:
     needs: [plan, read]

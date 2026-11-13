@@ -4142,6 +4142,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     kept_lock = threading.Lock()
     spend = {"usd": 0.0, "stopped": False}
     not_sent: list[str] = []
+    failed: list[dict] = []
+    calls = [0]
 
     def one(src: dict) -> None:
         t0 = time.time()
@@ -4168,6 +4170,27 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                     print("ceiling: $%.2f reached at $%.2f; no further program is sent" % (ceiling_usd, spend["usd"]),
                           flush=True)
         rec = got.get("record")
+        with kept_lock:
+            calls[0] += 1
+        if got.get("error") or not isinstance(rec, dict):
+            # A call that failed in transport or authorization, timed out, or answered with no record is no
+            # read (d-extract-failure-files-nothing-s647): the filed record stays as filed, a program with
+            # none gets no record file, and the program is listed with the status. Run 43384599013 filed 121
+            # HTTP 401 stubs over Glendale's records while the database refused connections.
+            status = got.get("error") or "no record (stop_reason %s)" % got.get("stop_reason")
+            path = os.path.join(keep_from or "", "records", src["control_number"] + ".json")
+            had = bool(keep_from) and os.path.isfile(path)
+            if had:
+                with open(path) as fh:
+                    _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
+            with kept_lock:
+                failed.append({"control_number": src["control_number"], "title": src.get("title"),
+                               "award": src.get("award"), "status": str(status)[:300], "kept_filed": had,
+                               "model": got.get("model"), "usage": got.get("usage"),
+                               "cost_usd": X.cost(got.get("model"), got.get("usage"))})
+            print("%-6s extract_failed: %s (%s)" % (src["control_number"], str(status)[:120],
+                                                     "the filed record stays" if had else "no record filed"), flush=True)
+            return
         # The college's reconcile steps search the page again for a figure the reading left out
         # (Sam, 2026-10-14; kb/_program_requirements_reconcile.py).
         rec, notes = R.reconcile(rec, src["text"], src["college"], src.get("award"),
@@ -4236,6 +4259,49 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                    sorted(kept_list, key=lambda x: x["control_number"]))
             print("kept_passing: %d filed records kept where the read passed less or covered less" % len(kept_list),
                   flush=True)
+        # The calls this shard made and the ones that failed, which file_run lists in the summary and
+        # check-extract reads to end the job red (extract_failed_run).
+        _write(os.path.join(out_dir, "extract_account_%d.json" % shard),
+               {"run": run_id, "shard": shard, "calls": calls[0],
+                "failed": sorted(failed, key=lambda x: x["control_number"])})
+        if failed:
+            print("extract_failed: %d of %d calls failed; the filed records stay" % (len(failed), calls[0]), flush=True)
+    return 0
+
+
+def extract_accounts(out_dir: str) -> dict:
+    """Every shard's extraction account in the run's out/: {calls, failed: [...]}, or calls None when
+    no extraction ran."""
+    calls, failed, seen = 0, [], False
+    for path in sorted(glob.glob(os.path.join(out_dir, "extract_account_*.json"))):
+        with open(path) as fh:
+            acct = json.load(fh)
+        seen = True
+        calls += int(acct.get("calls") or 0)
+        failed.extend(acct.get("failed") or [])
+    return {"calls": calls if seen else None, "failed": sorted(failed, key=lambda x: x["control_number"])}
+
+
+def extract_failed_run(acct: dict) -> bool:
+    """A run whose extraction more than half failed, or wholly failed, ends red
+    (d-extract-failure-files-nothing-s647)."""
+    calls, n = acct.get("calls") or 0, len(acct.get("failed") or [])
+    return calls > 0 and (n * 2 > calls or n == calls)
+
+
+def check_extract(out_dir: str) -> int:
+    """The last step of a read job: non-zero when extraction ran and failed as extract_failed_run says,
+    after the run's capture and the records it kept are filed and committed."""
+    acct = extract_accounts(out_dir)
+    if acct["calls"] is None:
+        print("no extraction ran")
+        return 0
+    n = len(acct["failed"])
+    if extract_failed_run(acct):
+        print("::error::%d of %d extraction calls failed (first: %s). The filed records stayed as filed; this run "
+              "is no read to load." % (n, acct["calls"], acct["failed"][0]["status"][:160]))
+        return 1
+    print("%d of %d extraction calls failed" % (n, acct["calls"]))
     return 0
 
 
@@ -4381,18 +4447,43 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
     return 0
 
 
-def summarize(records: list[dict], capture_report: dict) -> dict:
-    """The run in numbers, for the session that reads the commit and for Sam."""
+def run_cost_of(out_dir: str, run_id, acct: dict | None = None) -> float:
+    """What THIS run's model calls cost: its fresh records (extracted_run the run, no read_run), the reads
+    kept_passing set aside, and the calls that failed. A record kept or carried from an earlier run cost
+    this run nothing (summary.json once summed every filed record: a $0 run read $9.33, S647)."""
+    rid = str(run_id)
+    total = 0.0
+    for path in glob.glob(os.path.join(out_dir, "records", "*.json")):
+        with open(path) as fh:
+            r = json.load(fh)
+        if str(r.get("extracted_run")) == rid and "read_run" not in r and "carried_in" not in r:
+            total += r.get("cost_usd") or 0
+    for path in glob.glob(os.path.join(out_dir, "kept_passing_*.json")):
+        with open(path) as fh:
+            total += sum(k.get("cost_usd") or 0 for k in json.load(fh))
+    total += sum(x.get("cost_usd") or 0 for x in (acct or extract_accounts(out_dir))["failed"])
+    return round(total, 2)
+
+
+def summarize(records: list[dict], capture_report: dict, cost_usd_run: float | None = None,
+              acct: dict | None = None) -> dict:
+    """The run in numbers, for the session that reads the commit and for Sam. cost_usd_run is this run's
+    spend, cost_usd_filed the cost of every filed record whichever run paid it; extract_failed lists the
+    programs whose call failed and kept their filed record (S647)."""
     passed = [r for r in records if r.get("score") and r["score"].get("pass")]
     def fails(check):
         return sum(1 for r in records if r.get("score") and not r["score"].get(check, {}).get("pass", True))
     total = sum(r.get("cost_usd") or 0 for r in records)
+    acct = acct or {"calls": None, "failed": []}
     return {"college": capture_report.get("college"), "programs": capture_report.get("programs"),
             "with_closed_list": capture_report.get("with_closed_list"), "found": capture_report.get("found"),
             "extracted": len(records), "errors": sum(1 for r in records if r.get("error")),
             "passed_machine_checks": len(passed),
             "failed": {c: fails(c) for c in ("coverage", "invented", "arithmetic", "repeated", "outcomes")},
-            "cost_usd": round(total, 2), "cost_per_program": round(total / len(records), 4) if records else None,
+            "cost_usd_run": cost_usd_run, "cost_usd_filed": round(total, 2),
+            "cost_per_program": round(total / len(records), 4) if records else None,
+            "extract_calls": acct["calls"],
+            "extract_failed": [{k: x.get(k) for k in ("control_number", "status", "kept_filed")} for x in acct["failed"]],
             "not_found": capture_report.get("not_found")}
 
 
@@ -4437,6 +4528,10 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     for path in glob.glob(os.path.join(out_dir, "not_sent_*.json")):
         with open(path) as fh:
             not_sent.update(json.load(fh).get("programs") or [])
+    # A program whose extraction call failed kept its filed record the same way (S647), so its entry
+    # stays the one that record was read from, and the next run sends it again.
+    acct = extract_accounts(out_dir)
+    not_sent.update(x["control_number"] for x in acct["failed"])
     prev: dict = {}
     if not_sent and os.path.isfile(os.path.join(dest, "sources.json")):
         with open(os.path.join(dest, "sources.json")) as fh:
@@ -4463,8 +4558,9 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         os.remove(os.path.join(dest, "kept_passing.json"))
     if kept:
         _write(os.path.join(dest, "kept_passing.json"), dict(run=run_id, programs=kept))
-    if records:
-        _write(os.path.join(dest, "summary.json"), dict(summarize(records, report), run=run_id))
+    if records or acct["calls"]:
+        _write(os.path.join(dest, "summary.json"),
+               dict(summarize(records, report, run_cost_of(out_dir, run_id, acct), acct), run=run_id))
     print("filed %d records and %d sources under %s" % (len(records), len(index), os.path.relpath(dest, os.path.dirname(HERE))))
     return 0
 
@@ -4704,7 +4800,8 @@ def reread_capture(out_dir: str) -> bool:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("step", choices=["pin", "capture", "extract", "reconcile", "file", "load", "reread"])
+    ap.add_argument("step", choices=["pin", "capture", "extract", "reconcile", "file", "check-extract", "load",
+                                     "reread"])
     ap.add_argument("--college", default="Cerritos College")
     ap.add_argument("--out", default="out")
     ap.add_argument("--shard", type=int, default=0)
@@ -4725,6 +4822,8 @@ def main(argv: list[str] | None = None) -> int:
         return pin(args.college, args.run)
     if args.step == "capture":
         return capture(args.college, args.out, args.limit)
+    if args.step == "check-extract":
+        return check_extract(args.out)
     if args.step == "load":
         return load(args.college, args.run)
     if args.step == "reread":
