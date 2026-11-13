@@ -4,17 +4,168 @@
  "shape": "noncredit",
  "title": "Adult Basic Education",
  "award": "Noncredit program",
- "source_url": "https://catalog.glendale.edu/programs/NCABE/completion-requirements-zaZdl",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=276",
  "record_shape": 6,
- "model": null,
- "stop_reason": null,
- "usage": null,
- "cost_usd": null,
- "ms": null,
- "seconds": 12.2,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12353,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12353,
+    "output_tokens": 994,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 994,
+  "output_tokens_details": {
+   "thinking_tokens": 207
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06929,
+ "ms": 9772,
+ "seconds": 10.2,
  "parts": null,
- "error": "HTTP 401: {\"error\":\"unauthorized\"}",
- "score": null,
- "record": null,
- "extracted_run": "43384599013"
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 0,
+   "listed": 7,
+   "share": 0.0,
+   "missing": [
+    "ABSE10",
+    "ABSE122",
+    "ABSE186",
+    "ABSE20",
+    "ABSE50",
+    "ABSE61",
+    "ABSE65"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unstated",
+   "computed": null,
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record states no figure, but the catalog text names 0 Units, 320 hours, 0 Units, 32 hours"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADULT BASIC AND SECONDARY EDUCATION",
+   "measure": "hours",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ABSE 10",
+    "why": "not in the text as a program requirement; named only as recommended preparation in other course descriptions"
+   },
+   {
+    "code": "ABSE 20",
+    "why": "not in the text as a program requirement; named only as recommended preparation for ABSE 64"
+   },
+   {
+    "code": "ABSE 50",
+    "why": "not in the text as a program requirement; named only as recommended preparation in other course descriptions"
+   },
+   {
+    "code": "ABSE 61",
+    "why": "appears only as a course description (Laboratory 320 hours); no program requirements printed"
+   },
+   {
+    "code": "ABSE 65",
+    "why": "appears only as a course description (Lecture 32 hours); no program requirements printed"
+   },
+   {
+    "code": "ABSE 122",
+    "why": "appears only as a course description (Laboratory 20 hours); no program requirements printed"
+   },
+   {
+    "code": "ABSE 186",
+    "why": "appears only as a course description (Lecture 32 hours); no program requirements printed"
+   }
+  ],
+  "notes": [
+   "The supplied text (pages 276-279) contains only course descriptions for ADULT BASIC AND SECONDARY EDUCATION (ABSE 61 onward); no program section, requirement list, total hours, outcomes or careers for the Adult Basic Education noncredit program appear. Page 276 shows only a running header.",
+   "The program requirements are likely printed on another page of the catalog (possibly before page 276 or in a noncredit certificates section); a reviewer should locate that section.",
+   "Measure set to hours because this is a noncredit program; course descriptions give hours (e.g., ABSE 61 Laboratory 320 hours, ABSE 65 Lecture 32 hours, ABSE 122 Laboratory 20 hours, ABSE 186 Lecture 32 hours), but no blocks were recorded since no requirement structure is printed.",
+   "Course descriptions for ABSE 10, ABSE 20 and ABSE 50 are not in the supplied text (they would precede ABSE 61)."
+  ]
+ },
+ "extracted_run": "40704760867"
 }

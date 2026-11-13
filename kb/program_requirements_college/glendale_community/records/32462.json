@@ -4,17 +4,467 @@
  "shape": "adt",
  "title": "Psychology",
  "award": "A.A- T Degree",
- "source_url": "https://catalog.glendale.edu/programs/PSYCH-%20AAT/completion-requirements-zaZdl",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
  "record_shape": 6,
- "model": null,
- "stop_reason": null,
- "usage": null,
- "cost_usd": null,
- "ms": null,
- "seconds": 12.2,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11014,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11014,
+    "output_tokens": 3616,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3616,
+  "output_tokens_details": {
+   "thinking_tokens": 1446
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.11638,
+ "ms": 27702,
+ "seconds": 28.2,
  "parts": null,
- "error": "HTTP 401: {\"error\":\"unauthorized\"}",
- "score": null,
- "record": null,
- "extracted_run": "43384599013"
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 30,
+   "listed": 31,
+   "share": 0.968,
+   "missing": [
+    "PSYCH104"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "PSYC104"
+   ],
+   "flagged": [
+    "PSYC104"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    20.0,
+    22.0
+   ],
+   "stated": [
+    20.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 20.0-22.0; the catalog states 20.0-25.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 2,
+   "courses": 0,
+   "count": 2,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "AA-T — PSYCHOLOGY",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate how genetics and environmental factors interact to affect behaviors.",
+    "Critically analyze research articles in psychology to analyze a specific topic regarding human and animal behavior."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYCH 200",
+      "units": 4.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4.0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 5.0,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": 4.0,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 127",
+        "units": 4.0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3.0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 115",
+      "units": 4.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 122",
+      "units": 4.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 103",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PSYC 104",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 104H",
+        "units": 3.0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC 106",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHR 102",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTHR 102H",
+        "units": 3.0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 120",
+      "units": 5.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 110",
+      "units": 5.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHY 110",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO 101",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHILO 101H",
+        "units": 3.0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO 116",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO 119",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO 120",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCH 105",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH 110",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH 113",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH 115",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYCH 131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC 101",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC 101H",
+        "units": 3.0,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "PSYC 200",
+    "why": "catalog prints it as PSYCH 200 (likely same course)"
+   },
+   {
+    "code": "PSYCH 104",
+    "why": "catalog prints it as PSYC 104 (likely same course)"
+   },
+   {
+    "code": "PSYC 105",
+    "why": "catalog prints it as PSYCH 105 (likely same course)"
+   },
+   {
+    "code": "PSYC 110",
+    "why": "catalog prints it as PSYCH 110 (likely same course)"
+   },
+   {
+    "code": "PSYC 113",
+    "why": "catalog prints it as PSYCH 113 (likely same course)"
+   },
+   {
+    "code": "PSYC 115",
+    "why": "catalog prints it as PSYCH 115 (likely same course)"
+   },
+   {
+    "code": "PSYC 131",
+    "why": "catalog prints it as PSYCH 131 (likely same course)"
+   }
+  ],
+  "notes": [
+   "The catalog prints no units beside any course; units are null throughout.",
+   "Subject prefixes PSYC/PSYCH are inconsistent in the catalog versus the closed list; codes recorded as printed and flagged as catalog additions (PSYCH 200, PSYC 104, PSYCH 105/110/113/115/131). Reviewer should confirm these are the closed-list PSYC/PSYCH courses.",
+   "'STAT C 1000H' printed with a space; recorded as STAT C1000H.",
+   "List B may also be satisfied by any List A course not already used; List C may also be satisfied by any List A or List B course not already used. Those courses are not repeated in the List B/C blocks.",
+   "Required Units for Major '20 - 25 units*' carries an asterisk whose footnote is not in the extracted text.",
+   "No general education pattern or degree total printed in this section.",
+   "Outcomes text had ligature/spacing artifacts ('aﬀ ect', 'speciﬁ c') normalized to 'affect' and 'specific'."
+  ]
+ },
+ "extracted_run": 41049220135,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "STAT C1000": [
+     4.0,
+     4.0
+    ],
+    "STAT C1000E": [
+     5.0,
+     5.0
+    ],
+    "STAT C1000H": [
+     4.0,
+     4.0
+    ],
+    "PSYC C1000": [
+     3.0,
+     3.0
+    ],
+    "PSYC C1000H": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": 41012563119
 }

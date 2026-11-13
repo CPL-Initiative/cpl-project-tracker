@@ -4,8 +4,8 @@
   "title": "Architectural Drafting & Design",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.846,
   "codes_found": [
    "ARCH101",
    "ARCH102",
@@ -17,25 +17,22 @@
    "ARCH130",
    "ARCH135",
    "ARCH141",
-   "ARCH229",
-   "ARCH250",
-   "ARCH251"
+   "ARCH250"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/AD%26D-AS/completion-requirements-zaZdl",
-   "title": "AD&D-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ ad&d-as - architectural drafting & design - associate of science",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
+   "title": "ADMINISTRATION OF JUSTICE",
+   "h1": "ADMINISTRATION OF JUSTICE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 1578
+  "text_chars": 5127
  },
  {
   "control_number": "02548",
@@ -112,41 +109,37 @@
   "title": "Accounting",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.667,
   "codes_found": [
    "ACCTG101",
    "ACCTG102",
    "ACCTG120",
-   "ACCTG130",
-   "ACCTG150",
-   "ACCTG160",
    "ACCTG180",
    "BUSAD101",
    "CABOT270"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ACCTG-AS/completion-requirements-zaZdl",
-   "title": "ACCTG-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ acctg-as - accounting - associate of science",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=89",
+   "title": "The following certiﬁ cates do not satisfy the major requirements for an AA/AS degree.",
+   "h1": "The following certiﬁ cates do not satisfy the major requirements for an AA/AS degree.",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 1300
+  "text_chars": 3165
  },
  {
   "control_number": "02551",
   "title": "Financial Planning & Investment",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -163,27 +156,27 @@
    "CS/IS101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FP%26I-AS/completion-requirements-zaZdl",
-   "title": "FP&I-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ fp&i-as - financial planning & investment - associate of science",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+   "title": "BIOTECHNOLOGY",
+   "h1": "BIOTECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 1483
+  "text_chars": 8306
  },
  {
   "control_number": "02552",
   "title": "Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -201,27 +194,26 @@
    "CS/IS101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MGMT-AS/completion-requirements-zaZdl",
-   "title": "MGMT-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ mgmt-as - management - associate of science",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+   "title": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "h1": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 1419
+  "text_chars": 4790
  },
  {
   "control_number": "02553",
   "title": "Marketing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -242,20 +234,19 @@
    "CS/IS101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MRKT-AS/completion-requirements-zaZdl",
-   "title": "MRKT-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ mrkt-as - marketing - associate of science",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+   "title": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "h1": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
-  "text_chars": 1589
+  "text_chars": 4790
  },
  {
   "control_number": "02555",
@@ -301,7 +292,7 @@
   "title": "General Office",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD110",
@@ -315,20 +306,20 @@
    "CABOT260"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/GO-AS/completion-requirements-zaZdl",
-   "title": "GO-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ go-as - general office - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
+   "title": "*GENERAL OFFICE",
+   "h1": "*GENERAL OFFICE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 1295
+  "text_chars": 9219
  },
  {
   "control_number": "02557",
@@ -435,7 +426,7 @@
   "title": "Addiction Studies Counseling",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ADST101",
@@ -453,29 +444,30 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ASC-AS/completion-requirements-zaZdl",
-   "title": "ASC-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ asc-as - addiction studies counseling - associate of science",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=132",
+   "title": "110",
+   "h1": "110",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 1741
+  "text_chars": 6398
  },
  {
   "control_number": "02571",
   "title": "Visual Arts: Art History",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.895,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
+   "ARTH101",
+   "ARTH102",
    "ARTH103",
    "ARTH104",
    "ARTH105",
@@ -495,20 +487,19 @@
    "ARTH199"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/VAAH-AA/completion-requirements-zaZdl",
-   "title": "VAAH-AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ vaah-aa - visual arts: art history - associate of arts",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
+   "title": "VISUAL ARTS - ART HISTORY",
+   "h1": "VISUAL ARTS - ART HISTORY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
-  "text_chars": 1832
+  "text_chars": 5001
  },
  {
   "control_number": "02572",
@@ -587,7 +578,7 @@
   "title": "Photography",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ARTH199",
@@ -604,20 +595,19 @@
    "PHOTO146"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/PHOTO-AS/completion-requirements-zaZdl",
-   "title": "PHOTO-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ photo-as - photography - associate of science",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 1359
+  "text_chars": 5353
  },
  {
   "control_number": "02577",
@@ -648,15 +638,12 @@
   "title": "Registered Nursing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.824,
   "codes_found": [
    "COMMC1000",
    "NS200",
    "NS201",
-   "NS202",
-   "NS203",
-   "NS204",
    "NS205",
    "NS208",
    "NS210",
@@ -670,59 +657,53 @@
    "NS223"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/RN-AS/completion-requirements-zaZdl",
-   "title": "RN-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ rn-as - registered nursing - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=86",
+   "title": "REGISTERED NURSING",
+   "h1": "REGISTERED NURSING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
-  "text_chars": 1914
+  "text_chars": 10864
  },
  {
   "control_number": "02587",
   "title": "English",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.933,
+  "method": "pdf_pages",
+  "coverage": 0.6,
   "codes_found": [
+   "ENGL102",
    "ENGL103",
    "ENGL105",
    "ENGL106",
-   "ENGL109",
    "ENGL110",
    "ENGL112",
    "ENGL117",
-   "ENGL122",
    "ENGL123",
-   "ENGL125",
-   "ENGL127",
-   "ENGL130",
-   "ENGLC1000",
    "ENGLC1001"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ENG-AA/completion-requirements-zaZdl",
-   "title": "ENG-AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ eng-aa - english - associate of arts",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+   "title": "The English Creative Writing AA degree is designed to pro-",
+   "h1": "The English Creative Writing AA degree is designed to pro-",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 1827
+  "text_chars": 4536
  },
  {
   "control_number": "02588",
@@ -851,7 +832,7 @@
   "title": "Fire Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "EMT140",
@@ -870,20 +851,19 @@
    "FIRE119"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FT-AS/completion-requirements-zaZdl",
-   "title": "FT-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ ft-as - fire technology - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
+   "title": "FIRE ACADEMY",
+   "h1": "FIRE ACADEMY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
-  "text_chars": 1524
+  "text_chars": 4638
  },
  {
   "control_number": "02603",
@@ -914,11 +894,9 @@
   "title": "Machinist",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.714,
   "codes_found": [
-   "ENGR101",
-   "ENGR102",
    "MACH101",
    "MACH102",
    "MACH103",
@@ -926,27 +904,26 @@
    "MTLGY150"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MACH-AS/completion-requirements-zaZdl",
-   "title": "MACH-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ mach-as - machinist - associate of science",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+   "title": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "h1": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 1132
+  "text_chars": 4790
  },
  {
   "control_number": "02612",
   "title": "Film, Television and Media Arts",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "FTVM100",
@@ -964,20 +941,19 @@
    "FTVM272"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FTM-AA/completion-requirements-zaZdl",
-   "title": "FTM-AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ ftm-aa - film, television and media arts - associate of arts",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
+   "title": "FILM, TELEVISION AND MEDIA ARTS",
+   "h1": "FILM, TELEVISION AND MEDIA ARTS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 1816
+  "text_chars": 5999
  },
  {
   "control_number": "02615",
@@ -1177,7 +1153,7 @@
   "title": "General Business",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -1196,27 +1172,27 @@
    "ENTRE103"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/GB-AS/completion-requirements-zaZdl",
-   "title": "GB-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ gb-as - general business - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+   "title": "BIOTECHNOLOGY",
+   "h1": "BIOTECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
-  "text_chars": 1498
+  "text_chars": 8306
  },
  {
   "control_number": "11144",
   "title": "Entrepreneurship/Small Business",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -1235,27 +1211,27 @@
    "ENTRE103"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/E%2FSB-AS/completion-requirements-zaZdl",
-   "title": "E/SB-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ e/sb-as - entrepreneurship/small business - associate of science",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+   "title": "AS DEGREE",
+   "h1": "AS DEGREE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 1811
+  "text_chars": 6126
  },
  {
   "control_number": "11145",
   "title": "International Business",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -1272,20 +1248,19 @@
    "CS/IS101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/IB-AS/completion-requirements-zaZdl",
-   "title": "IB-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ ib-as - international business - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
+   "title": "GENERAL BUSINESS",
+   "h1": "GENERAL BUSINESS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 1440
+  "text_chars": 3328
  },
  {
   "control_number": "11147",
@@ -1304,7 +1279,7 @@
   "title": "Administrative Assistant",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD106",
@@ -1319,27 +1294,28 @@
    "CABOT285"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ADAST-AS/completion-requirements-zaZdl",
-   "title": "ADAST-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ adast-as - administrative assistant - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 1565
+  "text_chars": 12024
  },
  {
   "control_number": "11153",
   "title": "Receptionist/Office Clerk",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "CABOT101",
@@ -1350,20 +1326,19 @@
    "CABOT205"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ROC-C/completion-requirements-zaZdl",
-   "title": "ROC-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ roc-c - receptionist/office clerk - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=112",
+   "title": "TRADITIONAL PHOTOGRAPHY",
+   "h1": "TRADITIONAL PHOTOGRAPHY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1103
+  "text_chars": 5196
  },
  {
   "control_number": "11154",
@@ -1652,8 +1627,8 @@
   "title": "Theatre Arts: General",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.853,
   "codes_found": [
    "DANCE130",
    "DANCE145",
@@ -1669,11 +1644,8 @@
    "THTR109",
    "THTR110",
    "THTR111",
-   "THTR112",
-   "THTR113",
    "THTR121",
    "THTR123",
-   "THTR124",
    "THTR140",
    "THTR155",
    "THTR160",
@@ -1682,8 +1654,6 @@
    "THTR163",
    "THTR164",
    "THTR171",
-   "THTR172",
-   "THTR173",
    "THTR180",
    "THTR181",
    "THTR182",
@@ -1691,43 +1661,38 @@
    "THTR184"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/TA-AA/completion-requirements-zaZdl",
-   "title": "TA-AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ ta-aa - theatre arts: general - associate of arts",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+   "title": "SPORTS COACHING",
+   "h1": "SPORTS COACHING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 34,
-  "text_chars": 2844
+  "text_chars": 5988
  },
  {
   "control_number": "11177",
   "title": "Choreographic Studies & Dance Technique",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.929,
+  "method": "pdf_pages",
+  "coverage": 0.786,
   "codes_found": [
+   "ART102",
+   "ART125",
    "DANCE100",
    "DANCE102",
-   "DANCE114",
-   "DANCE117",
-   "DANCE122",
    "DANCE124",
    "DANCE127",
    "DANCE129",
    "DANCE130",
    "DANCE135",
    "DANCE136",
-   "DANCE137",
-   "DANCE190",
-   "DANCE194",
    "HUMAN115",
    "KIN157",
    "MUSIC101",
@@ -1742,20 +1707,19 @@
    "THTR123"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/CS%26DT-AS/completion-requirements-zaZdl",
-   "title": "CS&DT-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ cs&dt-as - choreographic studies & dance technique - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+   "title": "CHOREOGRAPHIC STUDIES AND DANCE",
+   "h1": "CHOREOGRAPHIC STUDIES AND DANCE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 28,
-  "text_chars": 2520
+  "text_chars": 4719
  },
  {
   "control_number": "11178",
@@ -2034,8 +1998,8 @@
   "title": "Two-Dimensional Art",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.765,
+  "method": "pdf_pages",
+  "coverage": 0.824,
   "codes_found": [
    "ART130",
    "ART131",
@@ -2048,24 +2012,24 @@
    "ART170",
    "ART179",
    "ART280",
-   "PHOTO100",
+   "ARTH101",
+   "ARTH102",
    "PHOTO101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/VA2D-AA/completion-requirements-zaZdl",
-   "title": "VA2D-AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ va2d-aa - two-dimensional art - associate of arts",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
+   "title": "VISUAL ARTS - ART HISTORY",
+   "h1": "VISUAL ARTS - ART HISTORY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
-  "text_chars": 1564
+  "text_chars": 5001
  },
  {
   "control_number": "12499",
@@ -2101,8 +2065,8 @@
   "title": "Three-Dimensional Art",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.714,
+  "method": "pdf_pages",
+  "coverage": 0.857,
   "codes_found": [
    "ART138",
    "ART152",
@@ -2113,30 +2077,31 @@
    "ART186",
    "ART187",
    "ART190",
-   "ART280"
+   "ART280",
+   "ARTH101",
+   "ARTH102"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/VA3D-AA/completion-requirements-zaZdl",
-   "title": "VA3D-AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ va3d-aa - three-dimensional art - associate of arts",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
+   "title": "VISUAL ARTS - ART HISTORY",
+   "h1": "VISUAL ARTS - ART HISTORY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    66
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
-  "text_chars": 1473
+  "text_chars": 5001
  },
  {
   "control_number": "12501",
   "title": "Photography",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ARTH199",
@@ -2150,20 +2115,19 @@
    "PHOTO146"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/VAP-AA/completion-requirements-zaZdl",
-   "title": "VAP-AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ vap-aa - photography - associate of arts",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
+   "title": "NURSING - SEE REGISTERED NURSING",
+   "h1": "NURSING - SEE REGISTERED NURSING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 1200
+  "text_chars": 5398
  },
  {
   "control_number": "12502",
@@ -2205,12 +2169,11 @@
   "title": "Interdisciplinary Humanities: Creativity",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.854,
+  "method": "pdf_pages",
+  "coverage": 0.659,
   "codes_found": [
    "ANTHR101",
    "ANTHR110",
-   "ART130",
    "ART150",
    "ART186",
    "DANCE110",
@@ -2218,10 +2181,8 @@
    "DANCE120",
    "ENGL103",
    "ENGL111",
-   "ENGL114",
-   "ENGL115",
-   "ENGL118",
    "HUMAN105",
+   "HUMAN105H",
    "HUMAN106",
    "HUMAN110",
    "HUMAN111",
@@ -2231,98 +2192,95 @@
    "HUMAN135",
    "HUMAN140",
    "HUMAN145",
-   "MUSIC125",
-   "MUSIC126",
    "PHILO116",
    "PHILO117",
    "THTR103",
    "THTR104",
    "THTR109",
    "THTR113",
-   "THTR123",
-   "THTR171",
-   "THTR172",
-   "THTR173"
+   "THTR123"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/IHC-AA/completion-requirements-zaZdl",
-   "title": "IHC-AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ ihc-aa - interdisciplinary humanities: creativity - associate of arts",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+   "title": "INFORMATION TECHNOLOGY",
+   "h1": "INFORMATION TECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 41,
-  "text_chars": 2811
+  "text_chars": 9402
  },
  {
   "control_number": "12570",
   "title": "Tax Preparer",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.667,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
    "ACCTG130",
    "ACCTG150",
+   "ACCTG155",
+   "ACCTG156",
    "ACCTG160"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/TF-C/completion-requirements-zaZdl",
-   "title": "TF-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=113",
+   "title": "RESTAURANT MANAGEMENT",
+   "h1": "RESTAURANT MANAGEMENT",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1032
+  "text_chars": 4380
  },
  {
   "control_number": "12571",
   "title": "Computerized Accounting Specialist",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.75,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
    "ACCTG120",
+   "ACCTG121",
    "ACCTG130",
    "ACCTG180"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ACCTG-C/completion-requirements-zaZdl",
-   "title": "ACCTG-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.333,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128",
+   "title": "ACCOUNTING",
+   "h1": "ACCOUNTING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
-  "text_chars": 972
+  "text_chars": 11214
  },
  {
   "control_number": "12574",
   "title": "Fitness Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD158",
@@ -2355,59 +2313,57 @@
    "PE221"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FITS-C/completion-requirements-zaZdl",
-   "title": "FITS-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ fits-c - fitness specialist - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
+   "title": "FILM, TELEVISION AND MEDIA ARTS",
+   "h1": "FILM, TELEVISION AND MEDIA ARTS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 28,
-  "text_chars": 2160
+  "text_chars": 5999
  },
  {
   "control_number": "15584",
   "title": "Health Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.824,
+  "method": "pdf_pages",
+  "coverage": 0.765,
   "codes_found": [
    "ANTHR102",
+   "ANTHR102H",
    "BIOL115",
    "BIOL120",
    "BIOL121",
    "BIOL122",
    "CHEM110",
-   "CHEM120",
-   "COMM100",
-   "COMM103",
-   "COMMC1000",
    "NUTR125",
    "PSYC106",
    "PSYCC1000",
-   "SOC101"
+   "PSYCC1000H",
+   "SOC101",
+   "SOC101H"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/HS-AS/completion-requirements-zaZdl",
-   "title": "HS-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ hs-as - health science - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+   "title": "AA-T — PSYCHOLOGY",
+   "h1": "AA-T — PSYCHOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
-  "text_chars": 1478
+  "text_chars": 11254
  },
  {
   "control_number": "16972",
@@ -2452,13 +2408,12 @@
   "title": "Web Development",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.917,
   "codes_found": [
    "CS/IS172",
    "CS/IS190",
    "CS/IS234",
-   "CS/IS240",
    "CS/IS255",
    "CS/IS260",
    "CS/IS261",
@@ -2469,20 +2424,19 @@
    "ENTRE102"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/WB-AS/completion-requirements-zaZdl",
-   "title": "WB-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ wb-as - web development - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+   "title": "SPORTS COACHING",
+   "h1": "SPORTS COACHING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 1512
+  "text_chars": 5988
  },
  {
   "control_number": "17760",
@@ -2564,7 +2518,7 @@
   "title": "Verdugo Fire Academy",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "FIRE116",
@@ -2573,55 +2527,53 @@
    "FIRE119"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/VFA-C/completion-requirements-zaZdl",
-   "title": "VFA-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ vfa-c - verdugo fire academy - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
+   "title": "CERTIFICATE NON-DEGREE",
+   "h1": "CERTIFICATE NON-DEGREE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 914
+  "text_chars": 4625
  },
  {
   "control_number": "18661",
   "title": "Verdugo Recruit Fire Academy",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "EMT139",
    "EMT140"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/VRFA-C/completion-requirements-zaZdl",
-   "title": "VRFA-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ vrfa-c - verdugo recruit fire academy - certificate of achievement",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
+   "title": "FIRE ACADEMY",
+   "h1": "FIRE ACADEMY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
-  "text_chars": 961
+  "text_chars": 4638
  },
  {
   "control_number": "19110",
   "title": "Dance Teaching",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.962,
+  "method": "pdf_pages",
+  "coverage": 0.923,
   "codes_found": [
    "BIOL120",
    "BUSAD158",
@@ -2646,32 +2598,30 @@
    "KIN157",
    "MUSIC101",
    "PSYC106",
-   "SOCS101",
    "THTR173"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/DT-C/completion-requirements-zaZdl",
-   "title": "DT-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ dt-c - dance teaching - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+   "title": "COMPUTER SOFTWARE TECHNICIAN",
+   "h1": "COMPUTER SOFTWARE TECHNICIAN",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 26,
-  "text_chars": 2234
+  "text_chars": 4687
  },
  {
   "control_number": "19111",
   "title": "Dance Teaching",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.962,
   "codes_found": [
    "BIOL120",
    "BUSAD158",
@@ -2697,24 +2647,22 @@
    "KIN157",
    "MUSIC101",
    "PSYC106",
-   "SOCS101",
    "THTR173"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/DT-AS/completion-requirements-zaZdl",
-   "title": "DT-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ dt-as - dance teaching - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+   "title": "COMPUTER SOFTWARE TECHNICIAN",
+   "h1": "COMPUTER SOFTWARE TECHNICIAN",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 26,
-  "text_chars": 2265
+  "text_chars": 4687
  },
  {
   "control_number": "19269",
@@ -2757,8 +2705,8 @@
   "title": "Insurance Professional II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.933,
   "codes_found": [
    "ACCTG101",
    "BUSAD101",
@@ -2772,59 +2720,54 @@
    "BUSAD120",
    "BUSAD204",
    "CABOT260",
-   "CABOT270",
    "CS/IS100",
    "CS/IS101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/IPII-C/completion-requirements-zaZdl",
-   "title": "IPII-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ipii-c - insurance professional ii - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
+   "title": "INFORMATION TECHNOLOGY TECHNICIAN",
+   "h1": "INFORMATION TECHNOLOGY TECHNICIAN",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107,
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
-  "text_chars": 1573
+  "text_chars": 10197
  },
  {
   "control_number": "19366",
   "title": "Unix-Linux System Administrator",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.667,
   "codes_found": [
    "CS/IS172",
    "CS/IS174",
    "CS/IS190",
    "CS/IS193",
    "CS/IS196",
-   "CS/IS197",
-   "CS/IS240",
-   "CS/IS242",
-   "CS/IS270"
+   "CS/IS197"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/USA-C/completion-requirements-zaZdl",
-   "title": "USA-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ usa-c - unix/linux system administrator - certificate of achievement",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=114",
+   "title": "TECHNICAL THEATRE",
+   "h1": "TECHNICAL THEATRE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 1316
+  "text_chars": 4669
  },
  {
   "control_number": "19546",
@@ -2843,7 +2786,7 @@
   "title": "General Business",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -2859,20 +2802,20 @@
    "CS/IS101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/GB-C/completion-requirements-zaZdl",
-   "title": "GB-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ gb-c - general business - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+   "title": "BIOTECHNOLOGY",
+   "h1": "BIOTECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 1331
+  "text_chars": 8306
  },
  {
   "control_number": "19556",
@@ -2903,7 +2846,7 @@
   "title": "Financial Planning & Investment II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -2916,60 +2859,57 @@
    "BUSAD136"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FP%26III-C/completion-requirements-zaZdl",
-   "title": "FP&III-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ fp&iii-c - financial planning & investment ii - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
+   "title": "FINANCIAL PLANNING & INVESTMENT II",
+   "h1": "FINANCIAL PLANNING & INVESTMENT II",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 1183
+  "text_chars": 5113
  },
  {
   "control_number": "19559",
   "title": "Management II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.875,
   "codes_found": [
    "ACCTG101",
    "BUSAD101",
    "BUSAD110",
    "BUSAD120",
    "BUSAD141",
-   "BUSAD144",
    "BUSAD152",
    "COMMC1000"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MGMTII-C/completion-requirements-zaZdl",
-   "title": "MGMTII-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ mgmtii-c - management ii - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
+   "title": "MANAGEMENT II",
+   "h1": "MANAGEMENT II",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 1118
+  "text_chars": 5391
  },
  {
   "control_number": "19560",
   "title": "Entrepreneurship/Small Business II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG120",
@@ -2986,27 +2926,27 @@
    "ENTRE103"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/E%2FSBII-C/completion-requirements-zaZdl",
-   "title": "E/SBII-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ e/sbii-c - entrepreneurship/small business ii - certificate of achievement",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+   "title": "CERTIFICATE",
+   "h1": "CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 1514
+  "text_chars": 6361
  },
  {
   "control_number": "19561",
   "title": "International Business II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -3020,27 +2960,26 @@
    "CABOT105"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/IBII-C/completion-requirements-zaZdl",
-   "title": "IBII-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ibii-c - international business ii - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
+   "title": "FINANCIAL PLANNING & INVESTMENT II",
+   "h1": "FINANCIAL PLANNING & INVESTMENT II",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 1250
+  "text_chars": 5113
  },
  {
   "control_number": "19562",
   "title": "Administrative Assistant",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD106",
@@ -3056,20 +2995,21 @@
    "CABOT285"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ADAST-C/completion-requirements-zaZdl",
-   "title": "ADAST-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ adast-c - administrative assistant - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70,
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 1532
+  "text_chars": 12024
  },
  {
   "control_number": "19563",
@@ -3192,7 +3132,7 @@
   "title": "Marketing II",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD101",
@@ -3207,27 +3147,26 @@
    "CABOT280"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MRKTII-C/completion-requirements-zaZdl",
-   "title": "MRKTII-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ mrktii-c - marketing ii - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
+   "title": "MANAGEMENT II",
+   "h1": "MANAGEMENT II",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 1241
+  "text_chars": 5391
  },
  {
   "control_number": "19567",
   "title": "General Office",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD110",
@@ -3241,20 +3180,20 @@
    "CABOT260"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/GO-C/completion-requirements-zaZdl",
-   "title": "GO-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ go-c - general office - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
+   "title": "*GENERAL OFFICE",
+   "h1": "*GENERAL OFFICE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    71,
+    72
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 1268
+  "text_chars": 9219
  },
  {
   "control_number": "19568",
@@ -3339,11 +3278,9 @@
   "title": "Machinist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.714,
   "codes_found": [
-   "ENGR101",
-   "ENGR102",
    "MACH101",
    "MACH102",
    "MACH103",
@@ -3351,20 +3288,19 @@
    "MTLGY150"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MACH-C/completion-requirements-zaZdl",
-   "title": "MACH-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ mach-c - machinist - certificate of achievement",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+   "title": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "h1": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 1101
+  "text_chars": 4790
  },
  {
   "control_number": "19572",
@@ -3383,15 +3319,12 @@
   "title": "Registered Nursing",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.824,
   "codes_found": [
    "COMMC1000",
    "NS200",
    "NS201",
-   "NS202",
-   "NS203",
-   "NS204",
    "NS205",
    "NS208",
    "NS210",
@@ -3405,20 +3338,20 @@
    "NS223"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/RN-C/completion-requirements-zaZdl",
-   "title": "RN-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ rn-c - registered nursing - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=86",
+   "title": "REGISTERED NURSING",
+   "h1": "REGISTERED NURSING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 1805
+  "text_chars": 10864
  },
  {
   "control_number": "19574",
@@ -3602,7 +3535,7 @@
   "title": "Fire Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "EMT140",
@@ -3621,28 +3554,27 @@
    "FIRE119"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FT-C/completion-requirements-zaZdl",
-   "title": "FT-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ft-c - fire technology - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
+   "title": "FIRE ACADEMY",
+   "h1": "FIRE ACADEMY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
-  "text_chars": 1493
+  "text_chars": 4638
  },
  {
   "control_number": "21299",
   "title": "Architectural Drafting & Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.846,
   "codes_found": [
    "ARCH101",
    "ARCH102",
@@ -3654,25 +3586,22 @@
    "ARCH130",
    "ARCH135",
    "ARCH141",
-   "ARCH229",
-   "ARCH250",
-   "ARCH251"
+   "ARCH250"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/AD%26D-C/completion-requirements-zaZdl",
-   "title": "AD&D-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ad&d-c - architectural drafting & design - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
+   "title": "ADMINISTRATION OF JUSTICE",
+   "h1": "ADMINISTRATION OF JUSTICE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    65
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 1550
+  "text_chars": 5127
  },
  {
   "control_number": "21300",
@@ -3851,13 +3780,12 @@
   "title": "Web Development",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.917,
   "codes_found": [
    "CS/IS172",
    "CS/IS190",
    "CS/IS234",
-   "CS/IS240",
    "CS/IS255",
    "CS/IS260",
    "CS/IS261",
@@ -3868,20 +3796,19 @@
    "ENTRE102"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/WB-C/completion-requirements-zaZdl",
-   "title": "WB-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ wb-c - web development - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+   "title": "SPORTS COACHING",
+   "h1": "SPORTS COACHING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 1481
+  "text_chars": 5988
  },
  {
   "control_number": "21309",
@@ -4054,23 +3981,20 @@
   "title": "Choreographic Studies & Dance Technique",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.897,
+  "method": "pdf_pages",
+  "coverage": 0.793,
   "codes_found": [
+   "ART102",
+   "ART125",
    "DANCE100",
    "DANCE102",
-   "DANCE114",
-   "DANCE117",
-   "DANCE122",
    "DANCE124",
    "DANCE127",
    "DANCE129",
    "DANCE130",
+   "DANCE131",
    "DANCE135",
    "DANCE136",
-   "DANCE137",
-   "DANCE190",
-   "DANCE194",
    "HUMAN115",
    "KIN157",
    "MUSIC101",
@@ -4085,27 +4009,26 @@
    "THTR123"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/CS%26DT-C/completion-requirements-zaZdl",
-   "title": "CS&DT-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ cs&dt-c - choreographic studies & dance technique - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+   "title": "CHOREOGRAPHIC STUDIES AND DANCE",
+   "h1": "CHOREOGRAPHIC STUDIES AND DANCE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    70
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 29,
-  "text_chars": 2491
+  "text_chars": 4719
  },
  {
   "control_number": "21318",
   "title": "Photography",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ARTH199",
@@ -4122,20 +4045,19 @@
    "PHOTO146"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/PHOTO-C/completion-requirements-zaZdl",
-   "title": "PHOTO-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ photo-c - photography - certificate of achievement",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
+   "title": "AS DEGREE OR CERTIFICATE",
+   "h1": "AS DEGREE OR CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 1328
+  "text_chars": 5353
  },
  {
   "control_number": "21319",
@@ -4254,7 +4176,7 @@
   "title": "Adult Basic Education",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ABSE10",
@@ -4266,59 +4188,63 @@
    "ABSE65"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/NCABE/completion-requirements-zaZdl",
-   "title": "NCABE Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "adult basic education certificate of completion",
-    "section_fit": 1.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=276",
+   "title": "Noncredit Continuing Education ADULT BASIC AND SECONDARY EDUCATION 273",
+   "h1": "Noncredit Continuing Education ADULT BASIC AND SECONDARY EDUCATION 273",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    276,
+    277,
+    278,
+    279
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 1336
+  "text_chars": 16000
  },
  {
   "control_number": "24011",
   "title": "Account Clerk I",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 0.875,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
    "STV11",
    "STV21",
    "STV22",
+   "STV34",
    "STV40",
    "STV70",
    "STV80",
    "STV90"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/NCAC1/completion-requirements-zaZdl",
-   "title": "NCAC1 Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "general account clerk i certificate of completion",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+   "title": "ACCOUNT CLERK I CERTIFICATE",
+   "h1": "ACCOUNT CLERK I CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    270,
+    271,
+    272
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 1082
+  "text_chars": 12512
  },
  {
   "control_number": "24042",
   "title": "Beginning ESL",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ESL1",
@@ -4329,29 +4255,31 @@
    "ESL80"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/NCESL1/completion-requirements-zaZdl",
-   "title": "NCESL1 Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "beginning esl certificate of completion",
-    "section_fit": 1.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+   "title": "ACCOUNT CLERK I CERTIFICATE",
+   "h1": "ACCOUNT CLERK I CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    270
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1833
+  "text_chars": 4688
  },
  {
   "control_number": "24161",
   "title": "Account Clerk II",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 0.625,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
+   "STV113",
+   "STV138",
+   "STV150",
    "STV23",
    "STV50",
    "STV91",
@@ -4359,50 +4287,33 @@
    "STV97"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/NCAC2/completion-requirements-zaZdl",
-   "title": "NCAC2 Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "general account clerk ii certificate of completion",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+   "title": "ACCOUNT CLERK I CERTIFICATE",
+   "h1": "ACCOUNT CLERK I CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    270,
+    271,
+    272
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 1068
+  "text_chars": 12512
  },
  {
   "control_number": "24274",
   "title": "High School Equivalency (HSE)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ABSE187",
-   "ABSE61",
-   "ABSE62",
-   "ABSE63",
-   "ABSE64"
-  ],
-  "source": {
-   "url": "https://catalog.glendale.edu/programs/NCGED/completion-requirements-zaZdl",
-   "title": "NCGED Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 1820
+  "text_chars": 0
  },
  {
   "control_number": "24297",
@@ -4445,132 +4356,106 @@
   "title": "General Office Clerk I",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 0.667,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
+   "STV100",
    "STV11",
    "STV140",
+   "STV34",
    "STV35",
+   "STV40",
    "STV55",
    "STV70",
    "STV80"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/NCGOC1/completion-requirements-zaZdl",
-   "title": "NCGOC1 Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0,
-    "section": "noncredit",
-    "section_line": "noncredit business life skills divisioncontinuing educationncgoc1 - general office clerk i",
-    "section_fit": 0.333
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
+   "title": "DRAFTING AND BASIC DESIGN CERTIFICATE",
+   "h1": "DRAFTING AND BASIC DESIGN CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    271,
+    272
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 1121
+  "text_chars": 7822
  },
  {
   "control_number": "24377",
   "title": "General Office Clerk II",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 0.5,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
    "STV12",
+   "STV138",
    "STV21",
+   "STV31",
+   "STV50",
    "STV90"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/NCGOC3/completion-requirements-zaZdl",
-   "title": "NCGOC3 Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0,
-    "section": "noncredit",
-    "section_line": "noncredit business life skills divisioncontinuing educationncgoc3 - general office clerk iii",
-    "section_fit": 0.3
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
+   "title": "DRAFTING AND BASIC DESIGN CERTIFICATE",
+   "h1": "DRAFTING AND BASIC DESIGN CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    271,
+    272
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1021
+  "text_chars": 7822
  },
  {
   "control_number": "24381",
   "title": "Dental Administrative Assistant",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.714,
   "codes_found": [
    "STV11",
-   "STV210",
    "STV34",
    "STV40",
    "STV50",
-   "STV80",
-   "STV95"
+   "STV80"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/NCDFOC/completion-requirements-zaZdl",
-   "title": "NCDFOC Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=272",
+   "title": "HOME CAREGIVER",
+   "h1": "HOME CAREGIVER",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    272
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 1149
+  "text_chars": 3401
  },
  {
   "control_number": "24432",
   "title": "Certificate of Secondary Education Completion",
   "award": null,
   "shape": "other",
-  "method": "sitemap_page",
-  "coverage": 0.615,
-  "codes_found": [
-   "ABSE15",
-   "ABSE23",
-   "ABSE24",
-   "ABSE25",
-   "ABSE26",
-   "ABSE30",
-   "ABSE31",
-   "ABSE32",
-   "ABSE33",
-   "ABSE34",
-   "ABSE40",
-   "ABSE41",
-   "ABSE42",
-   "ABSE43",
-   "ABSE44",
-   "ABSE45"
-  ],
-  "source": {
-   "url": "https://catalog.glendale.edu/programs/NCHSD/completion-requirements-zaZdl",
-   "title": "NCHSD Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.333,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 26,
-  "text_chars": 4705
+  "text_chars": 0
  },
  {
   "control_number": "30030",
@@ -4680,12 +4565,10 @@
   "title": "Sociology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.804,
+  "method": "pdf_pages",
+  "coverage": 0.549,
   "codes_found": [
    "ANTHR102",
-   "ECON127",
-   "ECON170",
    "ETHS110",
    "ETHS120",
    "ETHS121",
@@ -4695,51 +4578,40 @@
    "ETHS165",
    "ETHS166",
    "GEOG102",
-   "GEOG170",
-   "GEOG171",
    "HIST111",
-   "HIST152",
-   "POLS170",
-   "POLS171",
+   "HIST117",
    "POLSC1000",
-   "PSYC104H",
    "PSYC105",
    "PSYC131",
    "PSYC200",
-   "PSYCC1000",
+   "PSYCH104",
    "SOC101",
    "SOC102",
    "SOC103",
    "SOC104",
    "SOC105",
-   "SOC108",
-   "SOC114",
    "SOC131",
    "SOC140",
-   "SOC171",
-   "SOC200",
    "SOCS101",
    "SOCS105",
    "SOCS110",
-   "SOCS120",
-   "SOCS130",
-   "STATC1000"
+   "SOCS130"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/SOC-AAT/completion-requirements-zaZdl",
-   "title": "SOC-AAT Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "/ soc-aat - sociology - associate in arts for transfer",
-    "section_fit": 0.333
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=87",
+   "title": "D. A dvanced Placement",
+   "h1": "D. A dvanced Placement",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87,
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 51,
-  "text_chars": 3175
+  "text_chars": 11144
  },
  {
   "control_number": "30814",
@@ -4794,8 +4666,8 @@
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.94,
+  "method": "pdf_pages",
+  "coverage": 0.851,
   "codes_found": [
    "BIOL120",
    "BIOL121",
@@ -4822,15 +4694,11 @@
    "KIN100",
    "KIN167",
    "KIN168",
-   "PE101",
    "PE102",
    "PE108",
    "PE110",
    "PE111",
    "PE131",
-   "PE132",
-   "PE134",
-   "PE135",
    "PE140",
    "PE141",
    "PE150",
@@ -4843,39 +4711,39 @@
    "PE211",
    "PE215",
    "PE217",
-   "PE218",
-   "PE220",
-   "PE221",
    "PE238",
    "PE239",
-   "PE256",
-   "PE257",
    "PE261",
    "PE262",
    "PE274",
    "PE275",
    "PE295",
-   "PE296",
    "PHY105",
    "PSYCC1000",
+   "PSYCC1000H",
    "SOC101",
-   "STATC1000"
+   "SOC101H",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/KIN%20AAT/completion-requirements-zaZdl",
-   "title": "KIN AAT Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "/ kin aat - kinesiology - associate in arts for transfer",
-    "section_fit": 0.333
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=120",
+   "title": "AA-T — KINESIOLOGY",
+   "h1": "AA-T — KINESIOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120,
+    121,
+    122,
+    123
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 67,
-  "text_chars": 3841
+  "text_chars": 16000
  },
  {
   "control_number": "32168",
@@ -5092,7 +4960,7 @@
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ETHS120",
@@ -5109,20 +4977,19 @@
    "SPAN131"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/SPAN-AAT/completion-requirements-zaZdl",
-   "title": "SPAN-AAT Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "/ span-aat - spanish - associate in arts for transfer",
-    "section_fit": 0.333
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
+   "title": "AA-T — SPANISH",
+   "h1": "AA-T — SPANISH",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 1518
+  "text_chars": 4339
  },
  {
   "control_number": "32420",
@@ -5178,10 +5045,11 @@
   "title": "Psychology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.742,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
    "ANTHR102",
+   "ANTHR102H",
    "BIOL115",
    "BIOL120",
    "BIOL122",
@@ -5189,11 +5057,13 @@
    "CHEM110",
    "ECON127",
    "PHILO101",
+   "PHILO101H",
    "PHILO116",
    "PHILO119",
    "PHILO120",
    "PHY110",
    "PSYC103",
+   "PSYC104H",
    "PSYC105",
    "PSYC106",
    "PSYC110",
@@ -5202,24 +5072,29 @@
    "PSYC131",
    "PSYC200",
    "PSYCC1000",
+   "PSYCC1000H",
+   "PSYCH104",
    "SOC101",
-   "STATC1000"
+   "SOC101H",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/PSYCH-%20AAT/completion-requirements-zaZdl",
-   "title": "PSYCH- AAT Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "/ psych- aat - psychology - associate in arts for transfer",
-    "section_fit": 0.333
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+   "title": "AA-T — PSYCHOLOGY",
+   "h1": "AA-T — PSYCHOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 31,
-  "text_chars": 2253
+  "text_chars": 11254
  },
  {
   "control_number": "32463",
@@ -5324,11 +5199,12 @@
   "title": "Anthropology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.824,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
    "ANTHR101",
    "ANTHR102",
+   "ANTHR102H",
    "ANTHR103",
    "ANTHR104",
    "ANTHR105",
@@ -5343,9 +5219,12 @@
    "GEOG103",
    "GEOG155",
    "GEOL101",
+   "GEOL101H",
    "GEOL111",
+   "GEOL111H",
    "HIST101",
    "HIST102",
+   "HIST102H",
    "HIST103",
    "HIST104",
    "HUMAN115",
@@ -5354,33 +5233,36 @@
    "SOC102",
    "SOC104",
    "SOC200",
-   "STATC1000"
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/AA-T%20ANTHR/completion-requirements-zaZdl",
-   "title": "AA-T ANTHR Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "/ aa-t anthr - anthropology - associate in arts for transfer",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
+   "title": "AA-T — ANTHROPOLOGY",
+   "h1": "AA-T — ANTHROPOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116,
+    117,
+    118,
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 34,
-  "text_chars": 2568
+  "text_chars": 16000
  },
  {
   "control_number": "32707",
   "title": "Theatre Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.955,
   "codes_found": [
-   "THTR100",
    "THTR101",
    "THTR102",
    "THTR103",
@@ -5404,27 +5286,26 @@
    "THTR184"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/TA%20AA-T/completion-requirements-zaZdl",
-   "title": "TA AA-T Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "/ ta aa-t - theatre arts - associate in arts for transfer",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
+   "title": "AA-T — THEATRE ARTS",
+   "h1": "AA-T — THEATRE ARTS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 22,
-  "text_chars": 2235
+  "text_chars": 1564
  },
  {
   "control_number": "32738",
   "title": "Early Childhood Education",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "CHLDV133",
@@ -5440,20 +5321,19 @@
    "CHLDV182"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ECE%20AS-T/completion-requirements-zaZdl",
-   "title": "ECE AS-T Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "/ ece as-t - early childhood education - associate in science for transfer",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
+   "title": "CHILD DEVELOPMENT",
+   "h1": "CHILD DEVELOPMENT",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    69
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 1475
+  "text_chars": 4845
  },
  {
   "control_number": "33294",
@@ -5509,52 +5389,53 @@
   "title": "Journalism",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.75,
+  "method": "pdf_pages",
+  "coverage": 0.8,
   "codes_found": [
-   "COMM104",
-   "COMM120",
+   "ECON101",
+   "ECON102",
+   "ECON102H",
    "ECON127",
    "ENGLC1001",
    "JOURN102",
    "JOURN103",
    "JOURN104",
    "MCOMM101",
-   "MCOMM120",
    "PHILO117",
-   "PHOTO100",
    "PHOTO101",
    "POLS102",
    "POLSC1000",
-   "STATC1000"
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/JOURN%20AA-T/completion-requirements-zaZdl",
-   "title": "JOURN AA-T Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "/ journ aa-t - journalism - associate in arts for transfer",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
+   "title": "AA-T — JOURNALISM",
+   "h1": "AA-T — JOURNALISM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120,
+    121,
+    122
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
-  "text_chars": 1814
+  "text_chars": 16000
  },
  {
   "control_number": "33598",
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.778,
+  "method": "pdf_pages",
+  "coverage": 0.667,
   "codes_found": [
-   "ART138",
    "ART144",
-   "ART150",
    "ART151",
    "ART152",
    "ART160",
@@ -5562,33 +5443,32 @@
    "ART180",
    "ART186",
    "ART220",
-   "ARTH108",
-   "ARTH116",
+   "ARTH102",
+   "ARTH102H",
    "PHOTO100",
    "PHOTO101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/SA%20AA-T/completion-requirements-zaZdl",
-   "title": "SA AA-T Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "/ sa aa-t - studio arts - associate in arts for transfer",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
+   "title": "AA-T — STUDIO ARTS",
+   "h1": "AA-T — STUDIO ARTS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 18,
-  "text_chars": 1693
+  "text_chars": 2726
  },
  {
   "control_number": "33665",
   "title": "Music",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "MUSIC101",
@@ -5621,20 +5501,19 @@
    "MUSIC242"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MSC%20AA-T/completion-requirements-zaZdl",
-   "title": "MSC AA-T Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "/ msc aa-t - music - associate in arts for transfer",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=120",
+   "title": "AA-T — MUSIC",
+   "h1": "AA-T — MUSIC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 28,
-  "text_chars": 2252
+  "text_chars": 1388
  },
  {
   "control_number": "33911",
@@ -5711,32 +5590,30 @@
   "title": "Digital Content Specialist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.857,
   "codes_found": [
    "ART250",
    "ART251",
    "CS/IS260",
-   "FTVM132",
    "PHOTO100",
    "PHOTO111",
    "PHOTO130"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/DCS%20-%20C/completion-requirements-zaZdl",
-   "title": "DCS - C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ dcs - c - digital content specialist - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
+   "title": "DIGITAL CONTENT SPECIALIST",
+   "h1": "DIGITAL CONTENT SPECIALIST",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 1145
+  "text_chars": 4768
  },
  {
   "control_number": "35283",
@@ -5777,8 +5654,8 @@
   "title": "Theatre Arts: Acting",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.917,
   "codes_found": [
    "DANCE125",
    "DANCE145",
@@ -5795,8 +5672,6 @@
    "THTR109",
    "THTR110",
    "THTR111",
-   "THTR112",
-   "THTR113",
    "THTR140",
    "THTR155",
    "THTR160",
@@ -5806,20 +5681,19 @@
    "THTR164"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/TA%3AACT-AA/completion-requirements-zaZdl",
-   "title": "TA:ACT-AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ ta:act-aa - theatre arts: acting - associate of arts",
-    "section_fit": 0.6
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+   "title": "SPORTS COACHING",
+   "h1": "SPORTS COACHING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 24,
-  "text_chars": 2321
+  "text_chars": 5988
  },
  {
   "control_number": "35585",
@@ -5935,7 +5809,7 @@
   "title": "Advanced ESL",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ESL50",
@@ -5945,27 +5819,26 @@
    "ESL95"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/NCESL3/completion-requirements-zaZdl",
-   "title": "NCESL3 Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "advanced esl certificate of completion",
-    "section_fit": 1.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+   "title": "ACCOUNT CLERK I CERTIFICATE",
+   "h1": "ACCOUNT CLERK I CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    270
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 1238
+  "text_chars": 4688
  },
  {
   "control_number": "36107",
   "title": "Intermediate ESL",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ESL30",
@@ -5976,27 +5849,26 @@
    "ESL85"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/NCESL2/completion-requirements-zaZdl",
-   "title": "NCESL2 Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "noncredit",
-    "section_line": "intermediate esl certificate of completion",
-    "section_fit": 1.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
+   "title": "ACCOUNT CLERK I CERTIFICATE",
+   "h1": "ACCOUNT CLERK I CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    270
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1340
+  "text_chars": 4688
  },
  {
   "control_number": "36155",
   "title": "Addiction Studies Counseling",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ADST101",
@@ -6014,20 +5886,19 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ASC-C/completion-requirements-zaZdl",
-   "title": "ASC-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ asc-c - addiction studies counseling - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=132",
+   "title": "110",
+   "h1": "110",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 1710
+  "text_chars": 6398
  },
  {
   "control_number": "36270",
@@ -6089,7 +5960,7 @@
   "title": "Civil Engineering",
   "award": "Certificate of Achievement requiring 60+S/90+Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "CHEM101",
@@ -6117,20 +5988,21 @@
    "PHY102"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/CE-C/completion-requirements-zaZdl",
-   "title": "CE-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ce-c - engineering: civil engineering - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=100",
+   "title": "ENGINEERING",
+   "h1": "ENGINEERING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    100,
+    101,
+    102
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 23,
-  "text_chars": 1996
+  "text_chars": 15062
  },
  {
   "control_number": "36419",
@@ -6259,7 +6131,7 @@
   "title": "Business Information Worker (BIW)",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD106",
@@ -6271,20 +6143,19 @@
    "CS/IS100"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/BIW-C/completion-requirements-zaZdl",
-   "title": "BIW-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ biw-c - business information worker (biw) - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
+   "title": "FINANCIAL PLANNING & INVESTMENT II",
+   "h1": "FINANCIAL PLANNING & INVESTMENT II",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 1154
+  "text_chars": 5113
  },
  {
   "control_number": "36596",
@@ -6303,7 +6174,7 @@
   "title": "IT Technician II: Help Desk User Support",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD101",
@@ -6318,20 +6189,22 @@
    "CSIS194"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ITTII%20-%20AS/completion-requirements-zaZdl",
-   "title": "ITTII - AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ ittii - as - it technician ii: help desk user support - associate of science",
-    "section_fit": 0.875
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+   "title": "INFORMATION TECHNOLOGY",
+   "h1": "INFORMATION TECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80,
+    81,
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 1420
+  "text_chars": 16000
  },
  {
   "control_number": "36599",
@@ -6350,7 +6223,7 @@
   "title": "IT Technician III",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD101",
@@ -6368,20 +6241,21 @@
    "CSIS194"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ITTIII-%20AS/completion-requirements-zaZdl",
-   "title": "ITTIII- AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ ittiii- as - it technician iii - associate of science",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+   "title": "IT TECHNICIAN III",
+   "h1": "IT TECHNICIAN III",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    80,
+    81,
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 1526
+  "text_chars": 14352
  },
  {
   "control_number": "36601",
@@ -6400,9 +6274,10 @@
   "title": "Italian Language",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.917,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
+   "ARTH102",
    "ARTH104",
    "ARTH105",
    "ARTH106",
@@ -6416,20 +6291,20 @@
    "MUSIC120"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ITALL%20-%20C/completion-requirements-zaZdl",
-   "title": "ITALL - C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ itall - c - italian language - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+   "title": "ITALIAN LANGUAGE",
+   "h1": "ITALIAN LANGUAGE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 1478
+  "text_chars": 10341
  },
  {
   "control_number": "36710",
@@ -6471,7 +6346,7 @@
   "title": "French Language",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ARTH107",
@@ -6485,29 +6360,30 @@
    "MUSIC125"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FRENL%20-%20AA/completion-requirements-zaZdl",
-   "title": "FRENL - AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ frenl - aa - french language - associate of arts",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+   "title": "ITALIAN LANGUAGE",
+   "h1": "ITALIAN LANGUAGE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 1362
+  "text_chars": 10341
  },
  {
   "control_number": "36712",
   "title": "Italian Language",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.917,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
+   "ARTH102",
    "ARTH104",
    "ARTH105",
    "ARTH106",
@@ -6521,27 +6397,27 @@
    "MUSIC120"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ITALL%20-%20AA/completion-requirements-zaZdl",
-   "title": "ITALL - AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ itall - aa - italian language - associate of arts",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+   "title": "ITALIAN LANGUAGE",
+   "h1": "ITALIAN LANGUAGE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 1496
+  "text_chars": 10341
  },
  {
   "control_number": "36713",
   "title": "Japanese Language",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "HIST119",
@@ -6552,27 +6428,27 @@
    "LING101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/JAPNL%20-%20AA/completion-requirements-zaZdl",
-   "title": "JAPNL - AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ japnl - aa - japanese language - associate of arts",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+   "title": "ITALIAN LANGUAGE",
+   "h1": "ITALIAN LANGUAGE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1315
+  "text_chars": 10341
  },
  {
   "control_number": "36714",
   "title": "Spanish Language",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ETHS120",
@@ -6590,20 +6466,19 @@
    "SPAN131"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/SPANL%20-%20AA/completion-requirements-zaZdl",
-   "title": "SPANL - AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ spanl - aa - spanish language - associate of arts",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
+   "title": "SPANISH LANGUAGE",
+   "h1": "SPANISH LANGUAGE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 1650
+  "text_chars": 4957
  },
  {
   "control_number": "36717",
@@ -6645,7 +6520,7 @@
   "title": "French Language",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ARTH107",
@@ -6659,28 +6534,28 @@
    "MUSIC125"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FRENL%20-%20C/completion-requirements-zaZdl",
-   "title": "FRENL - C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ frenl - c - french language - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+   "title": "ITALIAN LANGUAGE",
+   "h1": "ITALIAN LANGUAGE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 1340
+  "text_chars": 10341
  },
  {
   "control_number": "36722",
   "title": "Physical Science - Physics",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.917,
+  "method": "pdf_pages",
+  "coverage": 0.667,
   "codes_found": [
    "ASTRO110",
    "ASTRO120",
@@ -6688,35 +6563,31 @@
    "CHEM110",
    "GEOL101",
    "OCEAN115",
-   "PHY101",
-   "PHY102",
-   "PHY103",
    "PHY105",
    "PHY106"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/PSPHY%20-%20AS/completion-requirements-zaZdl",
-   "title": "PSPHY - AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ psphy - as - physical science: physics - associate of science",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
+   "title": "CHEMISTRY",
+   "h1": "CHEMISTRY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 1453
+  "text_chars": 4426
  },
  {
   "control_number": "36723",
   "title": "Physical Science - Earth Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.929,
+  "method": "pdf_pages",
+  "coverage": 0.857,
   "codes_found": [
    "ASTRO110",
    "ASTRO120",
@@ -6728,33 +6599,31 @@
    "GEOL112",
    "OCEAN115",
    "OCEAN116",
-   "PHY101",
    "PHY105",
    "PHY110"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/PSES%20-%20AS/completion-requirements-zaZdl",
-   "title": "PSES - AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ pses - as - physical science: earth science - associate of science",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
+   "title": "CHEMISTRY",
+   "h1": "CHEMISTRY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
-  "text_chars": 1441
+  "text_chars": 4426
  },
  {
   "control_number": "36724",
   "title": "Physical Science - Chemistry",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.9,
+  "method": "pdf_pages",
+  "coverage": 0.8,
   "codes_found": [
    "ASTRO110",
    "ASTRO120",
@@ -6762,67 +6631,63 @@
    "CHEM102",
    "GEOL101",
    "OCEAN115",
-   "PHY101",
    "PHY105",
    "PHY110"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/PSCHM%20-AS/completion-requirements-zaZdl",
-   "title": "PSCHM -AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ pschm -as - physical science: chemistry - associate of science",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
+   "title": "CHEMISTRY",
+   "h1": "CHEMISTRY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 1226
+  "text_chars": 4426
  },
  {
   "control_number": "36725",
   "title": "Physical Science - Astronomy",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.909,
+  "method": "pdf_pages",
+  "coverage": 0.727,
   "codes_found": [
-   "ASTRO102",
    "ASTRO110",
    "ASTRO120",
    "CHEM101",
    "CHEM110",
    "GEOL101",
    "OCEAN115",
-   "PHY101",
    "PHY105",
    "PHY110"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/PSAST%20-%20AS/completion-requirements-zaZdl",
-   "title": "PSAST - AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ psast - as - physical science: astronomy - associate of science",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
+   "title": "NURSING - SEE REGISTERED NURSING",
+   "h1": "NURSING - SEE REGISTERED NURSING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84,
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 1287
+  "text_chars": 9826
  },
  {
   "control_number": "36726",
   "title": "Japanese Language",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "HIST119",
@@ -6833,27 +6698,27 @@
    "LING101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/JAPNL%20-%20C/completion-requirements-zaZdl",
-   "title": "JAPNL - C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ japnl - c - japanese language - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
+   "title": "ITALIAN LANGUAGE",
+   "h1": "ITALIAN LANGUAGE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    77,
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1297
+  "text_chars": 10341
  },
  {
   "control_number": "36727",
   "title": "Spanish Language",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ETHS120",
@@ -6871,20 +6736,19 @@
    "SPAN131"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/SPANL%20-%20C/completion-requirements-zaZdl",
-   "title": "SPANL - C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ spanl - c - spanish language - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
+   "title": "SPANISH LANGUAGE",
+   "h1": "SPANISH LANGUAGE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    78
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 1654
+  "text_chars": 4957
  },
  {
   "control_number": "36728",
@@ -6928,39 +6792,7 @@
   "title": "Information Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.778,
-  "codes_found": [
-   "CS/IS101",
-   "CS/IS112",
-   "CS/IS190",
-   "CS/IS193",
-   "CS/IS196",
-   "CS/IS197",
-   "CSIS194"
-  ],
-  "source": {
-   "url": "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl",
-   "title": "CIS-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
-  "listed": 9,
-  "text_chars": 1636
- },
- {
-  "control_number": "37071",
-  "title": "Information Technology",
-  "award": "A.S. Degree",
-  "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD204",
@@ -6974,20 +6806,58 @@
    "CSIS194"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/IT-AS/completion-requirements-zaZdl",
-   "title": "IT-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ it-as - information technology - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+   "title": "INFORMATION TECHNOLOGY",
+   "h1": "INFORMATION TECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80,
+    81,
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 1438
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37071",
+  "title": "Information Technology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAD204",
+   "CS/IS101",
+   "CS/IS112",
+   "CS/IS190",
+   "CS/IS193",
+   "CS/IS196",
+   "CS/IS197",
+   "CSIS185",
+   "CSIS194"
+  ],
+  "source": {
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+   "title": "INFORMATION TECHNOLOGY",
+   "h1": "INFORMATION TECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    79,
+    80,
+    81,
+    82
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 16000
  },
  {
   "control_number": "37854",
@@ -7445,7 +7315,7 @@
   "title": "Fitness Specialist",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD158",
@@ -7479,20 +7349,19 @@
    "PE221"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FITS-AS/completion-requirements-zaZdl",
-   "title": "FITS-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ fits-as - fitness specialist - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
+   "title": "FILM, TELEVISION AND MEDIA ARTS",
+   "h1": "FILM, TELEVISION AND MEDIA ARTS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 29,
-  "text_chars": 2187
+  "text_chars": 5999
  },
  {
   "control_number": "39910",
@@ -7964,7 +7833,7 @@
   "title": "Biotechnology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BIOL101",
@@ -7980,27 +7849,26 @@
    "MATH100"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/BT-AS/completion-requirements-zaZdl",
-   "title": "BT-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ bt-as - biotechnology - associate of science",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+   "title": "The AS degree in Biotechnology provides a strong foundation",
+   "h1": "The AS degree in Biotechnology provides a strong foundation",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 1330
+  "text_chars": 4952
  },
  {
   "control_number": "41768",
   "title": "Biotechnology Research Lab Assistant",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BIOL101",
@@ -8014,27 +7882,26 @@
    "MATH100"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/BTRA-C/completion-requirements-zaZdl",
-   "title": "BTRA-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ btra-c - biotechnology research lab assistant - certificate of achievement",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+   "title": "The Biotechnology Research Lab Assistant Certificate of",
+   "h1": "The Biotechnology Research Lab Assistant Certificate of",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 1267
+  "text_chars": 4610
  },
  {
   "control_number": "41775",
   "title": "Biotechnology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BIOL101",
@@ -8047,27 +7914,26 @@
    "MATH100"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/BT-C/completion-requirements-zaZdl",
-   "title": "BT-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ bt-c - biotechnology - certificate of achievement",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+   "title": "The Biotechnology Research Lab Assistant Certificate of",
+   "h1": "The Biotechnology Research Lab Assistant Certificate of",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 1130
+  "text_chars": 4610
  },
  {
   "control_number": "41776",
   "title": "Biotechnology Research Lab Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BIOL101",
@@ -8083,27 +7949,26 @@
    "MATH100"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/BTRT-C/completion-requirements-zaZdl",
-   "title": "BTRT-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ btrt-c - biotechnology research lab technician - certificate of achievement",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+   "title": "BIOTECHNOLOGY",
+   "h1": "BIOTECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 1382
+  "text_chars": 4976
  },
  {
   "control_number": "41825",
   "title": "Photographic Lighting",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "PHOTO100",
@@ -8111,20 +7976,19 @@
    "PHOTO112"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/PL-C/completion-requirements-zaZdl",
-   "title": "PL-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ pl-c - photographic lighting - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
+   "title": "NURSING - SEE REGISTERED NURSING",
+   "h1": "NURSING - SEE REGISTERED NURSING",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
-  "text_chars": 873
+  "text_chars": 5398
  },
  {
   "control_number": "41826",
@@ -8310,31 +8174,29 @@
   "title": "Digital Content Specialist",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.857,
+  "method": "pdf_pages",
+  "coverage": 0.714,
   "codes_found": [
    "ART250",
    "ART251",
    "CS/IS260",
-   "FTVM132",
    "PHOTO100",
    "PHOTO130"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/DCS-AS/completion-requirements-zaZdl",
-   "title": "DCS-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ dcs-as - digital content specialist - associate of science",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
+   "title": "DIGITAL CONTENT SPECIALIST",
+   "h1": "DIGITAL CONTENT SPECIALIST",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    73
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 1168
+  "text_chars": 4768
  },
  {
   "control_number": "43038",
@@ -8446,7 +8308,7 @@
   "title": "Advanced ESL: Business, Entrepreneurship & Management Pathway",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -8462,27 +8324,29 @@
    "RE101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/AEBEM-C/completion-requirements-zaZdl",
-   "title": "AEBEM-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ aebem-c - advanced esl: business, entrepreneurship & management pathway - certificate of achievement",
-    "section_fit": 0.857
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
+   "title": "ENGINEERING TECHNOLOGY - CAD & DESIGN",
+   "h1": "ENGINEERING TECHNOLOGY - CAD & DESIGN",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    101,
+    102,
+    103,
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 1755
+  "text_chars": 16000
  },
  {
   "control_number": "44484",
   "title": "Advanced ESL: Health, Wellness & Public Safety Pathway",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ADMJ101",
@@ -8499,20 +8363,22 @@
    "MOA182"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/AEHWPS-C/completion-requirements-zaZdl",
-   "title": "AEHWPS-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ aehwps-c - advanced esl: health, wellness & public safety pathway - certificate of achievement",
-    "section_fit": 0.875
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
+   "title": "ENGINEERING TECHNOLOGY - CAD & DESIGN",
+   "h1": "ENGINEERING TECHNOLOGY - CAD & DESIGN",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    101,
+    102,
+    103,
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 1616
+  "text_chars": 16000
  },
  {
   "control_number": "44485",
@@ -8554,13 +8420,12 @@
   "title": "Advanced ESL: Language & Communication Pathway",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.882,
+  "method": "pdf_pages",
+  "coverage": 0.824,
   "codes_found": [
    "ARMEN101",
    "ASL101",
    "CHIN101",
-   "COMMC1000",
    "ENGLC1000",
    "ESL151",
    "ESL155",
@@ -8574,28 +8439,30 @@
    "SPAN101"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/AELC-C/completion-requirements-zaZdl",
-   "title": "AELC-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ aelc-c - advanced esl: language & communication pathway - certificate of achievement",
-    "section_fit": 0.833
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+   "title": "ADVANCED ESL: LANGUAGE & COMMUNICATION",
+   "h1": "ADVANCED ESL: LANGUAGE & COMMUNICATION",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
-  "text_chars": 1723
+  "text_chars": 16000
  },
  {
   "control_number": "44487",
   "title": "Advanced ESL: People, Power & Perspective Pathway",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.762,
+  "method": "pdf_pages",
+  "coverage": 0.905,
   "codes_found": [
    "ANTHR102",
    "CHLDV101",
@@ -8607,36 +8474,41 @@
    "ETHS110",
    "ETHS121",
    "HIST113",
+   "HIST117",
+   "HIST118",
+   "HIST118H",
    "HIST121",
    "HIST131",
    "HIST132",
    "POLSC1000",
-   "PSYCC1000",
-   "SOC101"
+   "SOC101",
+   "SOC101H"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/AEPPP-C/completion-requirements-zaZdl",
-   "title": "AEPPP-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ aeppp-c - advanced esl: people, power & perspective pathway - certificate of achievement",
-    "section_fit": 0.857
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+   "title": "ADVANCED ESL: LANGUAGE & COMMUNICATION",
+   "h1": "ADVANCED ESL: LANGUAGE & COMMUNICATION",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 21,
-  "text_chars": 1903
+  "text_chars": 16000
  },
  {
   "control_number": "44488",
   "title": "Advanced ESL: STEM Pathway",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.875,
+  "method": "pdf_pages",
+  "coverage": 0.688,
   "codes_found": [
    "BIOL122",
    "CHEM110",
@@ -8648,26 +8520,24 @@
    "ESL155",
    "ESL159",
    "MATH100",
-   "MATH100+",
-   "MATH102",
-   "MATH103E",
-   "STATC1000"
+   "MATH100+"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/AESTEM-C/completion-requirements-zaZdl",
-   "title": "AESTEM-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ aestem-c - advanced esl: stem pathway - certificate of achievement",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
+   "title": "ADVANCED ESL: LANGUAGE & COMMUNICATION",
+   "h1": "ADVANCED ESL: LANGUAGE & COMMUNICATION",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 17,
-  "text_chars": 1626
+  "text_chars": 14594
  },
  {
   "control_number": "44489",
@@ -8711,8 +8581,8 @@
   "title": "Documentary Film Production",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.875,
   "codes_found": [
    "FTVM108",
    "FTVM120",
@@ -8720,32 +8590,31 @@
    "FTVM132",
    "FTVM135",
    "FTVM139",
-   "FTVM271",
-   "FTVM46"
+   "FTVM271"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/DFP-AA/completion-requirements-zaZdl",
-   "title": "DFP-AA Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "/ dfp-aa - documentary film production - associate of arts",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+   "title": "AA DEGREE OR CERTIFICATE",
+   "h1": "AA DEGREE OR CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 1336
+  "text_chars": 8483
  },
  {
   "control_number": "44569",
   "title": "Documentary Film Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.875,
   "codes_found": [
    "FTVM108",
    "FTVM120",
@@ -8753,24 +8622,23 @@
    "FTVM132",
    "FTVM135",
    "FTVM139",
-   "FTVM271",
-   "FTVM46"
+   "FTVM271"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/DFP-C/completion-requirements-zaZdl",
-   "title": "DFP-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ dfp-c - documentary film production - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+   "title": "AA DEGREE OR CERTIFICATE",
+   "h1": "AA DEGREE OR CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    75,
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 1318
+  "text_chars": 8483
  },
  {
   "control_number": "44570",
@@ -8855,7 +8723,7 @@
   "title": "Grip and Lighting",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "FTVM130",
@@ -8865,28 +8733,27 @@
    "THTR135"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/GL-C/completion-requirements-zaZdl",
-   "title": "GL-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ gl-c - grip and lighting - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=106",
+   "title": "SPANISH LANGUAGE",
+   "h1": "SPANISH LANGUAGE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 994
+  "text_chars": 5973
  },
  {
   "control_number": "44640",
   "title": "Data Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.621,
+  "method": "pdf_pages",
+  "coverage": 0.931,
   "codes_found": [
    "CS/IS112",
    "CS/IS125",
@@ -8894,41 +8761,51 @@
    "CS/IS151",
    "CS/IS270",
    "CSIS211",
+   "ECON101",
+   "ECON102",
+   "ECON102H",
    "ENGR156",
    "GEOG155",
    "LIB100",
    "MATH103E",
    "MATH104E",
+   "MATH104EH",
    "MATH105",
+   "MATH105H",
    "MATH107",
+   "MATH107H",
    "MATH108",
+   "MATH108H",
    "MATH137",
    "PHILO116",
    "SOC200",
-   "STATC1000"
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/DS-AS/completion-requirements-zaZdl",
-   "title": "DS-AS Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "as",
-    "section_line": "/ ds-as - data science - associate of science",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+   "title": "COMPUTER SOFTWARE TECHNICIAN",
+   "h1": "COMPUTER SOFTWARE TECHNICIAN",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    72,
+    73,
+    74
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 29,
-  "text_chars": 2097
+  "text_chars": 14525
  },
  {
   "control_number": "44773",
   "title": "Music History",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "MUSIC121",
@@ -8938,27 +8815,27 @@
    "MUSIC127"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MUSHI-C/completion-requirements-zaZdl",
-   "title": "MUSHI-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ mushi-c - music history - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
+   "title": "CERTIFICATE NON-DEGREE",
+   "h1": "CERTIFICATE NON-DEGREE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    109,
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 1015
+  "text_chars": 6665
  },
  {
   "control_number": "44774",
   "title": "Music Theory",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "MUSIC103",
@@ -8971,27 +8848,26 @@
    "MUSIC213"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MUSTH-C/completion-requirements-zaZdl",
-   "title": "MUSTH-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ musth-c - music theory - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+   "title": "MEDICAL CODING ASSISTANT",
+   "h1": "MEDICAL CODING ASSISTANT",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 1090
+  "text_chars": 5280
  },
  {
   "control_number": "44775",
   "title": "Piano",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "MUSIC113",
@@ -9000,20 +8876,19 @@
    "MUSIC163"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/PIANO-C/completion-requirements-zaZdl",
-   "title": "PIANO-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ piano-c - piano - certificate of achievement",
-    "section_fit": 1.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
+   "title": "MUSIC THEORY",
+   "h1": "MUSIC THEORY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
-  "text_chars": 1069
+  "text_chars": 5687
  },
  {
   "control_number": "44951",
@@ -9061,7 +8936,7 @@
   "title": "Social Media Marketing I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD162",
@@ -9069,295 +8944,38 @@
    "BUSAD165"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/SMM1-C/completion-requirements-zaZdl",
-   "title": "SMM1-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ smm1-c - social media marketing i - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
+   "title": "MANAGEMENT II",
+   "h1": "MANAGEMENT II",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
-  "text_chars": 907
+  "text_chars": 5391
  },
  {
   "control_number": "45068",
   "title": "Cal-GETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.938,
-  "codes_found": [
-   "ANTHR101",
-   "ANTHR102",
-   "ANTHR102H",
-   "ANTHR103",
-   "ANTHR104",
-   "ANTHR105",
-   "ANTHR111",
-   "ANTHR114",
-   "ANTHR150",
-   "ARMEN102",
-   "ARMEN116",
-   "ARMEN117",
-   "ARMEN125",
-   "ARMEN126",
-   "ARMEN127",
-   "ARTH103",
-   "ARTH104",
-   "ARTH105",
-   "ARTH106",
-   "ARTH107",
-   "ARTH108",
-   "ARTH111",
-   "ARTH112",
-   "ARTH113",
-   "ARTH115",
-   "ARTH116",
-   "ARTH118",
-   "ARTH119",
-   "ARTH120",
-   "ARTH121",
-   "ARTH125",
-   "ARTH199",
-   "ASTRO102",
-   "ASTRO110",
-   "ASTRO120",
-   "BIOL101",
-   "BIOL102",
-   "BIOL112",
-   "BIOL115",
-   "BIOL120",
-   "BIOL121",
-   "BIOL122",
-   "BIOL123",
-   "BIOL123H",
-   "BIOL125",
-   "BIOL125H",
-   "BIOL126",
-   "BIOL140",
-   "CHEM101",
-   "CHEM102",
-   "CHEM105",
-   "CHEM106",
-   "CHEM110",
-   "CHEM120",
-   "CHEM121",
-   "CHIN102",
-   "CHLDV135",
-   "COMM108",
-   "COMM115",
-   "COMM120",
-   "COMMC1000",
-   "DANCE100",
-   "DANCE102",
-   "ECON111",
-   "ECON127",
-   "ECON170",
-   "ENGL105",
-   "ENGL106",
-   "ENGL109",
-   "ENGL110",
-   "ENGL111",
-   "ENGL117",
-   "ENGL122",
-   "ENGL123",
-   "ENGL125",
-   "ENGL130",
-   "ENGLC1000",
-   "ENGLC1000E",
-   "ENGLC1000H",
-   "ENGLC1001",
-   "ETHS110",
-   "ETHS120",
-   "ETHS121",
-   "ETHS123",
-   "ETHS125",
-   "ETHS132",
-   "ETHS164",
-   "ETHS165",
-   "ETHS166",
-   "FREN102",
-   "FREN103",
-   "FREN104",
-   "FTVM100",
-   "GEOG101",
-   "GEOG102",
-   "GEOG103",
-   "GEOG106",
-   "GEOG107",
-   "GEOG110",
-   "GEOG111",
-   "GEOG170",
-   "GEOG171",
-   "GEOL101",
-   "GEOL101H",
-   "GEOL102",
-   "GEOL105",
-   "GEOL111",
-   "GEOL111H",
-   "GEOL112",
-   "GEOL115",
-   "HIST101",
-   "HIST102",
-   "HIST102H",
-   "HIST103",
-   "HIST104",
-   "HIST105",
-   "HIST106",
-   "HIST111",
-   "HIST111H",
-   "HIST113",
-   "HIST115",
-   "HIST116",
-   "HIST119",
-   "HIST120",
-   "HIST121",
-   "HIST122",
-   "HIST131",
-   "HIST132",
-   "HIST133",
-   "HIST135",
-   "HIST152",
-   "HIST170",
-   "HIST180",
-   "HLTH106",
-   "HUMAN105",
-   "HUMAN105H",
-   "HUMAN106",
-   "HUMAN110",
-   "HUMAN111",
-   "HUMAN115",
-   "HUMAN117",
-   "HUMAN125",
-   "HUMAN135",
-   "HUMAN140",
-   "ITAL102",
-   "ITAL103",
-   "ITAL104",
-   "JAPAN102",
-   "JAPAN103",
-   "JAPAN104",
-   "KOREA102",
-   "LING101",
-   "LING102",
-   "MATH100",
-   "MATH103E",
-   "MATH103EH",
-   "MATH104E",
-   "MATH104EH",
-   "MATH105",
-   "MATH105H",
-   "MATH107",
-   "MATH107H",
-   "MATH108",
-   "MATH108H",
-   "MATH110",
-   "MATH111",
-   "MATH112",
-   "MATH134",
-   "MATH135",
-   "MCOMM101",
-   "MUSIC101",
-   "MUSIC120",
-   "MUSIC121",
-   "MUSIC122",
-   "MUSIC125",
-   "MUSIC126",
-   "MUSIC127",
-   "MUSIC211",
-   "OCEAN115",
-   "OCEAN116",
-   "PHILO101",
-   "PHILO115",
-   "PHILO116",
-   "PHILO119",
-   "PHILO120",
-   "PHILO121",
-   "PHY101",
-   "PHY101H",
-   "PHY102",
-   "PHY103",
-   "PHY105",
-   "PHY106",
-   "PHY110",
-   "POLS102",
-   "POLS103",
-   "POLS104",
-   "POLS108",
-   "POLS111",
-   "POLS114",
-   "POLS115",
-   "POLS170",
-   "POLS171",
-   "POLSC1000",
-   "PSYC103",
-   "PSYC104H",
-   "PSYC105",
-   "PSYC106",
-   "PSYC113",
-   "PSYC115",
-   "PSYC131",
-   "PSYC150",
-   "PSYC200",
-   "PSYC203",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "SOC101H",
-   "SOC102",
-   "SOC103",
-   "SOC104",
-   "SOC105",
-   "SOC108",
-   "SOC114",
-   "SOC131",
-   "SOC140",
-   "SOC171",
-   "SOC200",
-   "SOCS101",
-   "SOCS105",
-   "SOCS110",
-   "SOCS120",
-   "SOCS127",
-   "SOCS130",
-   "SPAN102",
-   "SPAN103",
-   "SPAN104",
-   "SPAN124H",
-   "SPAN131",
-   "STATC1000",
-   "STATC1000E",
-   "STATC1000H",
-   "THTR101",
-   "THTR102",
-   "THTR107"
-  ],
-  "source": {
-   "url": "https://catalog.glendale.edu/programs/CALGETC/completion-requirements-zaZdl",
-   "title": "CALGETC Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ calgetc - cal-getc - certificate of achievement",
-    "section_fit": 0.667
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 260,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "45101",
   "title": "Data Analytics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "CS/IS125",
@@ -9373,20 +8991,19 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/DATA-C/completion-requirements-zaZdl",
-   "title": "DATA-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ data-c - data analytics - certificate of achievement",
-    "section_fit": 1.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=99",
+   "title": "DATA ANALYTICS",
+   "h1": "DATA ANALYTICS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 1354
+  "text_chars": 3790
  },
  {
   "control_number": "45108",
@@ -9473,7 +9090,7 @@
   "title": "Voice",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "MUSIC101",
@@ -9493,30 +9110,30 @@
    "MUSIC242"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/V-C/completion-requirements-zaZdl",
-   "title": "V-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ v-c - voice - certificate of achievement",
-    "section_fit": 1.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
+   "title": "MUSIC THEORY",
+   "h1": "MUSIC THEORY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
-  "text_chars": 1560
+  "text_chars": 5687
  },
  {
   "control_number": "45212",
   "title": "World Music",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.857,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
    "MUSIC120",
+   "MUSIC120H",
    "MUSIC121",
    "MUSIC122",
    "MUSIC127",
@@ -9524,59 +9141,55 @@
    "MUSIC148"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/WM-C/completion-requirements-zaZdl",
-   "title": "WM-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ wm-c - world music - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
+   "title": "MUSIC THEORY",
+   "h1": "MUSIC THEORY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 1124
+  "text_chars": 5687
  },
  {
   "control_number": "45393",
   "title": "Social Media Marketing II",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.714,
   "codes_found": [
    "BUSAD101",
    "BUSAD162",
    "BUSAD163",
    "BUSAD165",
-   "BUSAD166",
-   "CS/IS255",
-   "CS/IS260"
+   "BUSAD166"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/SMM2-C/completion-requirements-zaZdl",
-   "title": "SMM2-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ smm2-c - social media marketing ii - certificate of achievement",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
+   "title": "MANAGEMENT II",
+   "h1": "MANAGEMENT II",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 1153
+  "text_chars": 5391
  },
  {
   "control_number": "45394",
   "title": "Marketing I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD162",
@@ -9586,55 +9199,54 @@
    "BUSAD169"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MRKTI-C/completion-requirements-zaZdl",
-   "title": "MRKTI-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ mrkti-c - marketing i - certificate of achievement",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+   "title": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "h1": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 993
+  "text_chars": 4790
  },
  {
   "control_number": "45395",
   "title": "Management I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.75,
+  "method": "pdf_pages",
+  "coverage": 1.0,
   "codes_found": [
+   "BUSAD101",
    "BUSAD141",
    "BUSAD152",
    "COMMC1000"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/MGMTI-C/completion-requirements-zaZdl",
-   "title": "MGMTI-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ mgmti-c - management i - certificate of achievement",
-    "section_fit": 0.5
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+   "title": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "h1": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    81
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
-  "text_chars": 937
+  "text_chars": 4790
  },
  {
   "control_number": "45396",
   "title": "Human Resources Assistant I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD101",
@@ -9643,27 +9255,28 @@
    "BUSAD145"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/HRAI-C/completion-requirements-zaZdl",
-   "title": "HRAI-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ hrai-c - human resources assistant i - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=106",
+   "title": "SPANISH LANGUAGE",
+   "h1": "SPANISH LANGUAGE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107,
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
-  "text_chars": 985
+  "text_chars": 16000
  },
  {
   "control_number": "45397",
   "title": "Financial Planning & Investment I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ACCTG101",
@@ -9674,27 +9287,27 @@
    "BUSAD136"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FP%26II-C/completion-requirements-zaZdl",
-   "title": "FP&II-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ fp&ii-c - financial planning & investment i - certificate of achievement",
-    "section_fit": 0.6
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+   "title": "BIOTECHNOLOGY",
+   "h1": "BIOTECHNOLOGY",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1072
+  "text_chars": 8306
  },
  {
   "control_number": "45399",
   "title": "Entrepreneurship/Small Business I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD158",
@@ -9703,27 +9316,27 @@
    "ENTRE103"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/E%2FSBI-C/completion-requirements-zaZdl",
-   "title": "E/SBI-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ e/sbi-c - entrepreneurship/small business i - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
+   "title": "CERTIFICATE",
+   "h1": "CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 1009
+  "text_chars": 6361
  },
  {
   "control_number": "45596",
   "title": "Interior Architecture & Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "ARCH101",
@@ -9734,27 +9347,27 @@
    "ARCH250"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/INTAD-C/completion-requirements-zaZdl",
-   "title": "INTAD-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ intad-c - interior architecture & design - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=136",
+   "title": "109",
+   "h1": "109",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    136,
+    137
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1126
+  "text_chars": 12041
  },
  {
   "control_number": "45681",
   "title": "Insurance Professional I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD111",
@@ -9765,27 +9378,26 @@
    "BUSAD116"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/IPI-C/completion-requirements-zaZdl",
-   "title": "IPI-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ipi-c - insurance professional i - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
+   "title": "INFORMATION TECHNOLOGY TECHNICIAN",
+   "h1": "INFORMATION TECHNOLOGY TECHNICIAN",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1083
+  "text_chars": 4804
  },
  {
   "control_number": "45682",
   "title": "International Business I",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "BUSAD101",
@@ -9793,27 +9405,26 @@
    "BUSAD178"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/IBI-C/completion-requirements-zaZdl",
-   "title": "IBI-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ibi-c - international business i - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
+   "title": "GENERAL BUSINESS",
+   "h1": "GENERAL BUSINESS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    68
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
-  "text_chars": 926
+  "text_chars": 3328
  },
  {
   "control_number": "45854",
   "title": "Microsoft Office 365 Fundamentals",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "STV100",
@@ -9822,89 +9433,85 @@
    "STV90"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/NCMOF/completion-requirements-zaZdl",
-   "title": "NCMOF Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
+   "title": "DRAFTING AND BASIC DESIGN CERTIFICATE",
+   "h1": "DRAFTING AND BASIC DESIGN CERTIFICATE",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    271,
+    272
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
-  "text_chars": 954
+  "text_chars": 7822
  },
  {
   "control_number": "45996",
   "title": "CNC & CAM 3 Axis Mill",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.833,
   "codes_found": [
    "CAM210",
    "CAM230",
    "CAM231",
    "CAM232",
-   "ENGR102",
-   "MACH101"
+   "ENGR102"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/CCAM-C/completion-requirements-zaZdl",
-   "title": "CCAM-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ccam-c - cnc & cam 3 axis mill - certificate of achievement",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
+   "title": "COMPUTER AIDED",
+   "h1": "COMPUTER AIDED",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    169
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1091
+  "text_chars": 5967
  },
  {
   "control_number": "46004",
   "title": "CNC & CAM Lathe Y-Axis",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.833,
   "codes_found": [
    "CAM220",
    "CAM240",
    "CAM241",
    "CAM242",
-   "ENGR102",
-   "MACH101"
+   "ENGR102"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/CCLY-C/completion-requirements-zaZdl",
-   "title": "CCLY-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ccly-c - cnc & cam lathe y-axis - certificate of achievement",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
+   "title": "COMPUTER AIDED",
+   "h1": "COMPUTER AIDED",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    169
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 1096
+  "text_chars": 5967
  },
  {
   "control_number": "46050",
   "title": "CNC & CAM Mill Advanced",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "CAM210",
@@ -9916,87 +9523,82 @@
    "ENGR102"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/CCMA-C/completion-requirements-zaZdl",
-   "title": "CCMA-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ccma-c - cnc & cam mill advanced - certificate of achievement",
-    "section_fit": 0.8
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
+   "title": "COMPUTER AIDED",
+   "h1": "COMPUTER AIDED",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    169
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 1061
+  "text_chars": 5967
  },
  {
   "control_number": "46051",
   "title": "EnTech Audio",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.6,
   "codes_found": [
    "MUSIC178",
    "MUSIC181",
-   "MUSIC187",
-   "THTR189",
-   "THTR192"
+   "MUSIC187"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ENTA-C/completion-requirements-zaZdl",
-   "title": "ENTA-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ enta-c - entech audio - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+   "title": "MEDICAL CODING ASSISTANT",
+   "h1": "MEDICAL CODING ASSISTANT",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    83
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 972
+  "text_chars": 5280
  },
  {
   "control_number": "46052",
   "title": "EnTech Lighting",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
+  "method": "pdf_pages",
+  "coverage": 0.8,
   "codes_found": [
-   "THTR132",
    "THTR135",
    "THTR136",
    "THTR173",
    "THTR191"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ENTL-C/completion-requirements-zaZdl",
-   "title": "ENTL-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ entl-c - entech lighting - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=264",
+   "title": "124",
+   "h1": "124",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    264,
+    265
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 1013
+  "text_chars": 13121
  },
  {
   "control_number": "46053",
   "title": "Film and Television Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
+  "method": "pdf_pages",
   "coverage": 1.0,
   "codes_found": [
    "FTVM100",
@@ -10012,50 +9614,48 @@
    "FTVM271"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/FTP-C/completion-requirements-zaZdl",
-   "title": "FTP-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ ftp-c - film and television production - certificate of achievement",
-    "section_fit": 0.75
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
+   "title": "FILM, TELEVISION AND MEDIA ARTS",
+   "h1": "FILM, TELEVISION AND MEDIA ARTS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    76
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 1417
+  "text_chars": 5999
  },
  {
   "control_number": "46054",
   "title": "EnTech General",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.857,
+  "method": "pdf_pages",
+  "coverage": 0.714,
   "codes_found": [
    "THTR171",
    "THTR173",
+   "THTR181",
    "THTR191",
-   "THTR192",
-   "THTR193",
-   "THTR194"
+   "THTR192"
   ],
   "source": {
-   "url": "https://catalog.glendale.edu/programs/ENTG-C/completion-requirements-zaZdl",
-   "title": "ENTG-C Program | Glendale Community College Catalog",
-   "h1": "Glendale Community College",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "/ entg-c - entech general - certificate of achievement",
-    "section_fit": 0.667
-   }
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=265",
+   "title": "163",
+   "h1": "163",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    265,
+    266
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 1123
+  "text_chars": 12537
  }
 ]

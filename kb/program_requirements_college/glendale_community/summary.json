@@ -3,18 +3,692 @@
  "programs": 317,
  "with_closed_list": 267,
  "found": 238,
- "extracted": 238,
- "errors": 121,
- "passed_machine_checks": 117,
+ "extracted": 260,
+ "errors": 0,
+ "passed_machine_checks": 121,
  "failed": {
-  "coverage": 0,
-  "invented": 0,
-  "arithmetic": 0,
+  "coverage": 35,
+  "invented": 2,
+  "arithmetic": 139,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 9.33,
- "cost_per_program": 0.0392,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 20.13,
+ "cost_per_program": 0.0774,
+ "extract_calls": 134,
+ "extract_failed": [
+  {
+   "control_number": "02547",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02550",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02551",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02552",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02553",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02556",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02570",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02571",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02575",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02580",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02587",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02602",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02611",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "02612",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "11143",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "11144",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "11145",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "11151",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "11153",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "11176",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "11177",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "12498",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "12500",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "12501",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "12503",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "12570",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "12571",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "12574",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "15584",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "17645",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "18660",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "18661",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19110",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19111",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19365",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19366",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19555",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19558",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19559",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19560",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19561",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19562",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19566",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19567",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19571",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19573",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "19581",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "21299",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "21308",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "21317",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "21318",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "24010",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "24011",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "24042",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "24161",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "24274",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": false
+  },
+  {
+   "control_number": "24356",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "24377",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "24381",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "24432",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": false
+  },
+  {
+   "control_number": "30813",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "31928",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "32394",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "32462",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "32607",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "32707",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "32738",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "33295",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "33598",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "33665",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "35029",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "35473",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36102",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36107",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36155",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36416",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36580",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36598",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36600",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36667",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36711",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36712",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36713",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36714",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36720",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36722",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36723",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36724",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36725",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36726",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "36727",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "37070",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "37071",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "39905",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "41767",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "41768",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "41775",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "41776",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "41825",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "42738",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44360",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44484",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44486",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44487",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44488",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44568",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44569",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"} (filed as kept_passing by run 43384599013)",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44572",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44640",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44773",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44774",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "44775",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45057",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45068",
+   "status": "part 1 of 2: HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": false
+  },
+  {
+   "control_number": "45101",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45211",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45212",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45393",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45394",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45395",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45396",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45397",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45399",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45596",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45681",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45682",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45854",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "45996",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "46004",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "46050",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "46051",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "46052",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "46053",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  },
+  {
+   "control_number": "46054",
+   "status": "HTTP 401: {\"error\":\"unauthorized\"}",
+   "kept_filed": true
+  }
+ ],
  "not_found": [
   {
    "control_number": "02603",
