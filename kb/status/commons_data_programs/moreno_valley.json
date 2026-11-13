@@ -1,0 +1,18 @@
+{"schema":1,"college":"Moreno Valley College","slug":"moreno_valley","basis":"committed files only","programs":[
+{"cn":"40329","title":"Beginning American College English","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"30171","title":"CSU General Education","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"30139","title":"Dental Hygiene","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"30172","title":"IGETC","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"38799","title":"Social Media for Business","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"38458","title":"Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"38874","title":"Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"37393","title":"Fire Service Leadership","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"37431","title":"Fire Service Leadership","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"32638","title":"Anthropology","award":"A.A- T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4462"},
+{"cn":"45914","title":"Global Studies","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6365"},
+{"cn":"38758","title":"Guitar Performance","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4526"},
+{"cn":"33240","title":"History","award":"A.A- T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4527"},
+{"cn":"30169","title":"Humanities, Philosophy & Arts","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4925"},
+{"cn":"30167","title":"Math & Sciences","award":"A.S. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4927"},
+{"cn":"32946","title":"Philosophy","award":"A.A- T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4553"}
+]}

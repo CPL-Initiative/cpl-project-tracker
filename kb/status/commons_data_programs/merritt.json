@@ -1,0 +1,14 @@
+{"schema":1,"college":"Merritt College","slug":"merritt","basis":"committed files only","programs":[
+{"cn":"09043","title":"Business Administration","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"33054","title":"Psychology","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"19145","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/49733"},
+{"cn":"41238","title":"Clinical Medical Assisting","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/48798"},
+{"cn":"37964","title":"Computer Science","award":"A.S. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/48803"},
+{"cn":"38648","title":"Conservation and Resource Management","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/conservation-resource-mgmt"},
+{"cn":"33540","title":"Economics","award":"A.A- T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/48814"},
+{"cn":"22011","title":"Landscape Design and Construction","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/48832"},
+{"cn":"32928","title":"Mathematics","award":"A.S. T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/math2-ast"},
+{"cn":"44195","title":"Municipal Gardener, Level 1","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/48834"},
+{"cn":"44196","title":"Municipal Gardener, Level 2","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/48835"},
+{"cn":"33709","title":"Sociology","award":"A.A- T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/48853"}
+]}

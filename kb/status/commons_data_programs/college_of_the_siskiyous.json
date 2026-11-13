@@ -1,0 +1,16 @@
+{"schema":1,"college":"College of the Siskiyous","slug":"college_of_the_siskiyous","basis":"committed files only","programs":[
+{"cn":"40178","title":"Law Enforcement Academy Training","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"18964","title":"Music: Instrumental Performance","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"18963","title":"Music: Vocal Performance","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"19000","title":"CSU General Education Breadth","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"19001","title":"Intersegmental General Education Transfer Curriculum (IGETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"19812","title":"Philosophy","award":"A.A. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"40253","title":"Political Science","award":"A.A- T Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"07901","title":"Accounting","award":"A.A. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/accounting-aa-fall-2026"},
+{"cn":"06499","title":"Administration of Justice","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/administration-of-justice-aa-fall-2025"},
+{"cn":"37784","title":"Culinary and Hospitality Service Skills","award":"Noncredit program","cause":"unknown_without_live","lever":"scorer_noncredit_hours","url":"https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/culinary-and-hospitality-service-skills-non-credit-coc-fall-2021"},
+{"cn":"17596","title":"LVN to RN Step-Up","award":"A.S. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/lvn-to-rn-step-up-adn-as-fall-2026"},
+{"cn":"06495","title":"Physics","award":"A.S. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/physics-as-winter-2023-intersession"},
+{"cn":"46190","title":"Pre-Allied Health","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/pre-allied-health-coa-fall-2026"},
+{"cn":"06487","title":"Vocational Nursing","award":"A.S. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/vocational-nursing-as-fall-2026"}
+]}

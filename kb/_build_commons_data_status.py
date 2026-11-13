@@ -92,8 +92,20 @@ FOUR MORE TOP-LEVEL KEYS (S647, #3215 and #3220), the contract with the view's l
                    "rows": [{"api", "holder", "needed", "status", "claimed", "priority", "evidence",
                              "evidence_cited", "evidence_missing", "note"}]}
 
+THE CAUSE SIDECARS (S649, #3229: COBIx's item 1, Sam's "make sure any card that has what looks like a link opens up
+to something"). Beside the file, one small file per harvested college, PROGRAMS_DIR/<slug>.json, so a cause in the
+college's row opens the programs it counts. The page fetches a college's file only when its row or panel opens.
+                  {"schema", "college", "slug", "basis": "committed files only",
+                   "programs": [{"cn", "title", "award", "cause", "lever", "url"}]}
+One entry per program the census counts as still to pass at that college (the same census call as "causes", so a
+cause's list and its count agree). title and award come from the capture's sources.json; url is the filed record's
+source_url where a record is filed (it names the page the reader used), else the capture's source page, and null
+when neither is an http(s) address. Sorted by cause, then title. A college with nothing still to pass gets no file.
+A college the run no longer holds loses its file. --check compares every sidecar too.
+
 Usage, from the repo root:
-  python3 kb/_build_commons_data_status.py [--root DIR] [--out PATH] [--live PATH] [--check] [--quiet]
+  python3 kb/_build_commons_data_status.py [--root DIR] [--out PATH] [--programs-out DIR] [--live PATH] [--check] [--quiet]
+(--programs-out defaults to PROGRAMS_DIR beside the default --out, or commons_data_programs/ beside a given --out.)
 Refresh: the harvest gap census workflow runs it after the census and the live export (fails soft). Guards:
 tests/commons_data_status_build_test.py and tests/commons_data_live_test.py; the view's guard is
 tests/commons_data.test.js.
@@ -110,6 +122,7 @@ import sys
 
 SCHEMA = 1
 OUT = "kb/status/commons_data.json"
+PROGRAMS_DIR = "kb/status/commons_data_programs"   # the per-college cause sidecars (S649)
 CROSSWALK_DIR = "kb/college_identity"   # the newest dated baseline, asked of kb/_college_identity_latest.py
 COLLEGE_DIR = "kb/program_requirements_college"
 SLO_QUEUE = "kb/course_outcomes/queue.json"
@@ -129,7 +142,7 @@ AGE_DAYS = {"fresh": 7, "recent": 30}
 FIELDS = {
     "id": "shareable", "name": "shareable", "district": "shareable", "kind": "shareable",
     "harvested": "shareable", "programs": "shareable", "passing": "shareable", "gap": "shareable",
-    "read_at": "shareable", "read_kind": "internal", "slug": "internal", "causes": "internal",
+    "read_at": "shareable", "read_kind": "internal", "slug": "internal", "causes": "internal", "programs_file": "internal",
     "cost_usd": "internal", "passed_at_read": "internal", "slo_queue": "internal", "scout": "internal",
     "spot_check": "internal", "confidence": "shareable",
     # slice 2 (the expanding row and the side panel): what the college's read receipt says about its read
@@ -283,6 +296,59 @@ def harvest(root: str):
             "levers": dict(sorted(levers.items(), key=lambda x: (-x[1], x[0]))),
         }
     return out, r
+
+
+def _http(u) -> str | None:
+    return u if isinstance(u, str) and re.match(r"^https?://", u, re.I) else None
+
+
+def cause_programs(root: str, census: dict, harvested: dict) -> dict:
+    """{slug: sidecar} for each harvested college with programs still to pass: the census's own gap list, each
+    program with its title, award and catalog page (see THE CAUSE SIDECARS above)."""
+    sys.path.insert(0, os.path.join(root, "kb"))
+    import _harvest_gap_census as G  # noqa: E402
+    slug_of = {h["name"]: slug for slug, h in harvested.items() if h.get("name")}
+    by_slug = {}
+    for g in census["programs"]:
+        slug = slug_of.get(g["college"])
+        if slug:
+            by_slug.setdefault(slug, []).append(g)
+    out = {}
+    for slug, gs in sorted(by_slug.items()):
+        d = os.path.join(root, COLLEGE_DIR, slug)
+        src = {G.norm_cn(s.get("control_number")): s for s in (_maybe(os.path.join(d, "sources.json")) or [])}
+        rd = os.path.join(d, "records")
+        files = {G.norm_cn(f[:-5]): f for f in (sorted(os.listdir(rd)) if os.path.isdir(rd) else []) if f.endswith(".json")}
+        rows = []
+        for g in gs:
+            cn = g["control_number"]
+            s = src.get(cn) or {}
+            url = None
+            if cn in files:
+                url = _http((_maybe(os.path.join(rd, files[cn])) or {}).get("source_url"))
+            url = url or _http((s.get("source") or {}).get("url"))
+            rows.append({"cn": cn, "title": s.get("title"), "award": s.get("award"), "cause": g["cause"],
+                         "lever": g["lever"], "url": url})
+        rows.sort(key=lambda x: (x["cause"], (x["title"] or "").lower(), x["cn"]))
+        out[slug] = {"schema": SCHEMA, "college": harvested[slug]["name"], "slug": slug, "basis": "committed files only",
+                     "programs": rows}
+    return out
+
+
+def dumps_programs(d: dict) -> str:
+    """One program a line: small to serve, readable in a diff."""
+    head = {k: v for k, v in d.items() if k != "programs"}
+    lines = [json.dumps(p, ensure_ascii=False, separators=(",", ":")) for p in d["programs"]]
+    return (json.dumps(head, ensure_ascii=False, separators=(",", ":"))[:-1] + ',"programs":[\n'
+            + ",\n".join(lines) + "\n]}\n")
+
+
+def programs_dir_for(root: str, out_arg: str | None, programs_arg: str | None) -> str:
+    if programs_arg:
+        return programs_arg
+    if out_arg:
+        return os.path.join(os.path.dirname(os.path.abspath(out_arg)), "commons_data_programs")
+    return os.path.join(root, PROGRAMS_DIR)
 
 
 def _maybe(path: str):
@@ -702,6 +768,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
     unmatched = []
 
     harvested, census = harvest(root)
+    sidecars = cause_programs(root, census, harvested)
     by_id = {}
     for slug, h in harvested.items():
         cid = resolve(h["name"])
@@ -749,6 +816,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
             "kind": e.get("entity_kind"), "harvested": h is not None, "slug": h["slug"] if h else None,
             "programs": h["programs"] if h else None, "passing": h["passing"] if h else None,
             "gap": h["gap"] if h else None, "causes": h["causes"] if h else None,
+            "programs_file": (PROGRAMS_DIR + "/" + h["slug"] + ".json") if h and h["slug"] in sidecars else None,
             "read_at": h["read_at"] if h else None, "read_kind": h["read_kind"] if h else None,
             "cost_usd": h["cost_usd"] if h else None, "passed_at_read": h["passed_at_read"] if h else None,
             "slo_queue": slo.get(cid), "scout": scouts.get(cid), "spot_check": spot.get(cid),
@@ -784,7 +852,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "schema": SCHEMA,
         "written_at": iso_now(),
         "sources": {"universe": os.path.relpath(cw_path, root), "harvest": COLLEGE_DIR + "/<slug>/", "census": "kb/_harvest_gap_census.py (committed-files functions)",
-                    "slo_queue": SLO_QUEUE, "scouts": SCOUTS, "spot_checks": SPOT_CHECKS, "spot_check_comments": SPOT_README},
+                    "programs": PROGRAMS_DIR + "/<slug>.json (each cause's programs)", "slo_queue": SLO_QUEUE, "scouts": SCOUTS, "spot_checks": SPOT_CHECKS, "spot_check_comments": SPOT_README},
         "rule": dict(RULE, causes=census_words()["causes"], levers=census_words()["levers"]), "fields": FIELDS,
         "tba": tba,
         "statewide": statewide,
@@ -795,10 +863,12 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "overall": overall_block(live),
         "dictionary": dictionary,
         "apis": apis,
+        "_sidecars": sidecars,
     }
 
 
 def dumps(d: dict) -> str:
+    d = {k: v for k, v in d.items() if k != "_sidecars"}
     return json.dumps(d, indent=1, ensure_ascii=False, sort_keys=False) + "\n"
 
 
@@ -806,6 +876,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--root", default=os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     ap.add_argument("--out", default=None)
+    ap.add_argument("--programs-out", default=None, help="the cause sidecars' folder (see THE CAUSE SIDECARS)")
     ap.add_argument("--live", default=None, help="the live export (kb/_commons_data_live.py's out file); without it "
                                                   "the previous committed live block is kept")
     ap.add_argument("--accept-active-shift", action="store_true",
@@ -816,11 +887,25 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     d = build(a.root, a.live, accept_active_shift=a.accept_active_shift)
     out = a.out or os.path.join(a.root, OUT)
+    pdir = programs_dir_for(a.root, a.out, a.programs_out)
+    side = d["_sidecars"]
     if a.check:
         old = _maybe(out) or {}
         same = {k: v for k, v in old.items() if k != "written_at"} == json.loads(dumps({k: v for k, v in d.items() if k != "written_at"}))
-        print("commons_data.json " + ("current" if same else "STALE: rerun kb/_build_commons_data_status.py"))
-        return 0 if same else 1
+        have = sorted(f for f in os.listdir(pdir) if f.endswith(".json")) if os.path.isdir(pdir) else []
+        stale = [f for f in have if f[:-5] not in side] + [s + ".json" for s, v in side.items()
+                 if not os.path.exists(os.path.join(pdir, s + ".json"))
+                 or open(os.path.join(pdir, s + ".json"), encoding="utf-8").read() != dumps_programs(v)]
+        print("commons_data.json " + ("current" if same else "STALE: rerun kb/_build_commons_data_status.py")
+              + "; cause sidecars " + ("current" if not stale else "STALE (%d): %s" % (len(stale), ", ".join(sorted(stale)[:5]))))
+        return 0 if same and not stale else 1
+    os.makedirs(pdir, exist_ok=True)
+    for f in os.listdir(pdir):
+        if f.endswith(".json") and f[:-5] not in side:
+            os.remove(os.path.join(pdir, f))
+    for slug, v in side.items():
+        with open(os.path.join(pdir, slug + ".json"), "w", encoding="utf-8") as f:
+            f.write(dumps_programs(v))
     with open(out, "w", encoding="utf-8") as f:
         f.write(dumps(d))
     if not a.quiet:

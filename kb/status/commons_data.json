@@ -1,10 +1,11 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T18:05:05Z",
+ "written_at": "2026-11-13T22:26:25Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
   "census": "kb/_harvest_gap_census.py (committed-files functions)",
+  "programs": "kb/status/commons_data_programs/<slug>.json (each cause's programs)",
   "slo_queue": "kb/course_outcomes/queue.json",
   "scouts": "kb/harvest_scouting/scout-*.json",
   "spot_checks": "kb/spot_checks/*.check.json",
@@ -113,6 +114,7 @@
   "read_kind": "internal",
   "slug": "internal",
   "causes": "internal",
+  "programs_file": "internal",
   "cost_usd": "internal",
   "passed_at_read": "internal",
   "slo_queue": "internal",
@@ -153,12 +155,12 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15771,
-  "gap": 6564,
+  "passing": 15832,
+  "gap": 6503,
   "with_gap": 118,
-  "cost_usd": 1347.41,
-  "passed_at_read": 15256,
-  "cost_receipts": 118,
+  "cost_usd": 1327.28,
+  "passed_at_read": 15142,
+  "cost_receipts": 117,
   "slo_waiting": 9,
   "scouted": 11,
   "scout_barrier": 1,
@@ -171,8 +173,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15771,
-  "gap": 6564
+  "passing": 15832,
+  "gap": 6503
  },
  "unmatched": [],
  "colleges": [
@@ -192,6 +194,7 @@
     "places_none": 3,
     "unknown_without_live": 16
    },
+   "programs_file": "kb/status/commons_data_programs/allan_hancock.json",
    "read_at": "2026-10-16T03:03:09Z",
    "read_kind": "capture",
    "cost_usd": 12.41,
@@ -243,6 +246,7 @@
     "places_none": 33,
     "unknown_without_live": 35
    },
+   "programs_file": "kb/status/commons_data_programs/american_river.json",
    "read_at": "2026-11-12T11:49:22Z",
    "read_kind": "capture",
    "cost_usd": 29.97,
@@ -301,6 +305,7 @@
     "places_none": 13,
     "unknown_without_live": 25
    },
+   "programs_file": "kb/status/commons_data_programs/antelope_valley.json",
    "read_at": "2026-10-16T23:09:09Z",
    "read_kind": "capture",
    "cost_usd": 14.18,
@@ -353,6 +358,7 @@
     "places_none": 2,
     "unknown_without_live": 21
    },
+   "programs_file": "kb/status/commons_data_programs/bakersfield.json",
    "read_at": "2026-10-13T14:35:10Z",
    "read_kind": "capture",
    "cost_usd": 13.38,
@@ -407,6 +413,7 @@
     "places_none": 15,
     "unknown_without_live": 2
    },
+   "programs_file": "kb/status/commons_data_programs/barstow_community.json",
    "read_at": "2026-10-17T05:28:38Z",
    "read_kind": "capture",
    "cost_usd": 4.68,
@@ -456,6 +463,7 @@
     "places_none": 1,
     "unknown_without_live": 41
    },
+   "programs_file": "kb/status/commons_data_programs/berkeley_city.json",
    "read_at": "2026-11-12T02:30:35Z",
    "read_kind": "capture",
    "cost_usd": 5.81,
@@ -508,6 +516,7 @@
     "places_none": 1,
     "unknown_without_live": 26
    },
+   "programs_file": "kb/status/commons_data_programs/butte.json",
    "read_at": "2026-11-11T08:16:43Z",
    "read_kind": "capture",
    "cost_usd": 10.69,
@@ -558,6 +567,7 @@
     "places_none": 3,
     "unknown_without_live": 30
    },
+   "programs_file": "kb/status/commons_data_programs/cabrillo.json",
    "read_at": "2026-10-15T02:26:55Z",
    "read_kind": "capture",
    "cost_usd": 18.26,
@@ -608,6 +618,7 @@
     "page_not_found": 7,
     "places_none": 1
    },
+   "programs_file": "kb/status/commons_data_programs/calbright_credit.json",
    "read_at": "2026-10-17T05:28:46Z",
    "read_kind": "capture",
    "cost_usd": 0.5,
@@ -657,6 +668,7 @@
     "places_none": 3,
     "unknown_without_live": 8
    },
+   "programs_file": "kb/status/commons_data_programs/ca_ada.json",
    "read_at": "2026-10-19T05:01:45Z",
    "read_kind": "capture",
    "cost_usd": 5.5,
@@ -707,6 +719,7 @@
     "places_none": 3,
     "unknown_without_live": 26
    },
+   "programs_file": "kb/status/commons_data_programs/cerritos.json",
    "read_at": "2026-10-14T23:54:27Z",
    "read_kind": "capture",
    "cost_usd": 16.78,
@@ -762,6 +775,7 @@
     "places_none": 13,
     "unknown_without_live": 25
    },
+   "programs_file": "kb/status/commons_data_programs/cerro_coso_community.json",
    "read_at": "2026-10-17T15:51:20Z",
    "read_kind": "capture",
    "cost_usd": 4.87,
@@ -813,6 +827,7 @@
     "places_none": 2,
     "unknown_without_live": 25
    },
+   "programs_file": "kb/status/commons_data_programs/chabot.json",
    "read_at": "2026-10-16T03:03:31Z",
    "read_kind": "capture",
    "cost_usd": 15.83,
@@ -864,6 +879,7 @@
     "places_none": 2,
     "unknown_without_live": 9
    },
+   "programs_file": "kb/status/commons_data_programs/chaffey.json",
    "read_at": "2026-10-12T11:21:28Z",
    "read_kind": "capture",
    "cost_usd": 10.48,
@@ -918,6 +934,7 @@
     "places_none": 6,
     "unknown_without_live": 22
    },
+   "programs_file": "kb/status/commons_data_programs/citrus.json",
    "read_at": "2026-10-22T05:13:06Z",
    "read_kind": "capture",
    "cost_usd": 11.56,
@@ -969,6 +986,7 @@
     "places_none": 53,
     "unknown_without_live": 39
    },
+   "programs_file": "kb/status/commons_data_programs/city_of_san_francisco.json",
    "read_at": "2026-10-17T18:04:39Z",
    "read_kind": "capture",
    "cost_usd": 23.72,
@@ -1029,6 +1047,7 @@
     "places_none": 15,
     "unknown_without_live": 31
    },
+   "programs_file": "kb/status/commons_data_programs/clovis_community.json",
    "read_at": "2026-10-17T05:25:41Z",
    "read_kind": "capture",
    "cost_usd": 8.34,
@@ -1079,6 +1098,7 @@
     "places_none": 1,
     "unknown_without_live": 5
    },
+   "programs_file": "kb/status/commons_data_programs/coalinga.json",
    "read_at": "2026-11-13T02:52:37Z",
    "read_kind": "capture",
    "cost_usd": 3.48,
@@ -1139,6 +1159,7 @@
     "places_none": 14,
     "unknown_without_live": 16
    },
+   "programs_file": "kb/status/commons_data_programs/coastline_community.json",
    "read_at": "2026-10-13T18:15:00Z",
    "read_kind": "capture",
    "cost_usd": 8.52,
@@ -1189,6 +1210,7 @@
     "page_not_found": 9,
     "unknown_without_live": 24
    },
+   "programs_file": "kb/status/commons_data_programs/college_of_alameda.json",
    "read_at": "2026-11-10T20:12:35Z",
    "read_kind": "capture",
    "cost_usd": 4.05,
@@ -1239,6 +1261,7 @@
     "page_not_found": 5,
     "unknown_without_live": 8
    },
+   "programs_file": "kb/status/commons_data_programs/college_of_marin.json",
    "read_at": "2026-10-17T00:06:11Z",
    "read_kind": "capture",
    "cost_usd": 6.13,
@@ -1293,6 +1316,7 @@
     "places_none": 5,
     "unknown_without_live": 3
    },
+   "programs_file": "kb/status/commons_data_programs/college_of_san_mateo.json",
    "read_at": "2026-10-23T06:59:19Z",
    "read_kind": "capture",
    "cost_usd": 5.05,
@@ -1343,6 +1367,7 @@
     "places_none": 12,
     "unknown_without_live": 39
    },
+   "programs_file": "kb/status/commons_data_programs/college_of_the_canyons.json",
    "read_at": "2026-10-17T05:29:27Z",
    "read_kind": "capture",
    "cost_usd": 13.55,
@@ -1402,6 +1427,7 @@
     "places_none": 28,
     "unknown_without_live": 42
    },
+   "programs_file": "kb/status/commons_data_programs/college_of_the_desert.json",
    "read_at": "2026-11-13T11:59:31Z",
    "read_kind": "capture",
    "cost_usd": 28.43,
@@ -1462,6 +1488,7 @@
     "places_none": 5,
     "unknown_without_live": 9
    },
+   "programs_file": "kb/status/commons_data_programs/college_of_the_redwoods.json",
    "read_at": "2026-11-11T12:18:07Z",
    "read_kind": "capture",
    "cost_usd": 5.41,
@@ -1512,6 +1539,7 @@
     "places_none": 7,
     "unknown_without_live": 32
    },
+   "programs_file": "kb/status/commons_data_programs/college_of_the_sequoias.json",
    "read_at": "2026-10-15T14:10:10Z",
    "read_kind": "capture",
    "cost_usd": 8.75,
@@ -1561,6 +1589,7 @@
     "page_not_found": 4,
     "unknown_without_live": 7
    },
+   "programs_file": "kb/status/commons_data_programs/college_of_the_siskiyous.json",
    "read_at": "2026-11-07T08:18:59Z",
    "read_kind": "capture",
    "cost_usd": 4.86,
@@ -1610,6 +1639,7 @@
     "no_closed_list": 1,
     "unknown_without_live": 4
    },
+   "programs_file": "kb/status/commons_data_programs/columbia.json",
    "read_at": "2026-11-08T11:12:10Z",
    "read_kind": "capture",
    "cost_usd": 5.46,
@@ -1658,6 +1688,7 @@
     "places_none": 8,
     "unknown_without_live": 6
    },
+   "programs_file": "kb/status/commons_data_programs/compton.json",
    "read_at": "2026-10-17T05:28:42Z",
    "read_kind": "capture",
    "cost_usd": 5.84,
@@ -1708,6 +1739,7 @@
     "places_none": 9,
     "unknown_without_live": 29
    },
+   "programs_file": "kb/status/commons_data_programs/contra_costa.json",
    "read_at": "2026-10-16T23:09:38Z",
    "read_kind": "capture",
    "cost_usd": 6.44,
@@ -1757,6 +1789,7 @@
     "places_none": 2,
     "unknown_without_live": 10
    },
+   "programs_file": "kb/status/commons_data_programs/copper_mountain.json",
    "read_at": "2026-10-17T13:07:57Z",
    "read_kind": "capture",
    "cost_usd": 3.84,
@@ -1806,6 +1839,7 @@
     "places_none": 35,
     "unknown_without_live": 39
    },
+   "programs_file": "kb/status/commons_data_programs/cosumnes_river.json",
    "read_at": "2026-10-17T15:54:21Z",
    "read_kind": "capture",
    "cost_usd": 18.96,
@@ -1864,6 +1898,7 @@
     "page_not_found": 3,
     "unknown_without_live": 21
    },
+   "programs_file": "kb/status/commons_data_programs/crafton_hills.json",
    "read_at": "2026-10-18T09:41:56Z",
    "read_kind": "capture",
    "cost_usd": 5.37,
@@ -1913,6 +1948,7 @@
     "places_none": 2,
     "unknown_without_live": 14
    },
+   "programs_file": "kb/status/commons_data_programs/cuesta.json",
    "read_at": "2026-10-17T19:40:02Z",
    "read_kind": "capture",
    "cost_usd": 10.93,
@@ -1963,6 +1999,7 @@
     "places_none": 3,
     "unknown_without_live": 33
    },
+   "programs_file": "kb/status/commons_data_programs/cuyamaca.json",
    "read_at": "2026-10-15T14:10:08Z",
    "read_kind": "capture",
    "cost_usd": 13.84,
@@ -2012,6 +2049,7 @@
     "places_none": 6,
     "unknown_without_live": 16
    },
+   "programs_file": "kb/status/commons_data_programs/cypress.json",
    "read_at": "2026-10-22T21:15:37Z",
    "read_kind": "capture",
    "cost_usd": 18.14,
@@ -2063,6 +2101,7 @@
     "page_not_found": 1,
     "unknown_without_live": 16
    },
+   "programs_file": "kb/status/commons_data_programs/de_anza.json",
    "read_at": "2026-11-11T17:53:38Z",
    "read_kind": "capture",
    "cost_usd": 17.15,
@@ -2119,6 +2158,7 @@
     "places_none": 1,
     "unknown_without_live": 16
    },
+   "programs_file": "kb/status/commons_data_programs/diablo_valley.json",
    "read_at": "2026-11-13T06:35:26Z",
    "read_kind": "capture",
    "cost_usd": 13.85,
@@ -2181,6 +2221,7 @@
     "places_none": 4,
     "unknown_without_live": 30
    },
+   "programs_file": "kb/status/commons_data_programs/east_los_angeles.json",
    "read_at": "2026-11-13T03:11:03Z",
    "read_kind": "capture",
    "cost_usd": 10.74,
@@ -2244,6 +2285,7 @@
     "places_none": 7,
     "unknown_without_live": 28
    },
+   "programs_file": "kb/status/commons_data_programs/el_camino.json",
    "read_at": "2026-10-14T20:24:46Z",
    "read_kind": "capture",
    "cost_usd": 8.08,
@@ -2295,6 +2337,7 @@
     "places_none": 12,
     "unknown_without_live": 15
    },
+   "programs_file": "kb/status/commons_data_programs/evergreen_valley.json",
    "read_at": "2026-10-15T14:10:30Z",
    "read_kind": "capture",
    "cost_usd": 5.92,
@@ -2345,6 +2388,7 @@
     "places_none": 1,
     "unknown_without_live": 7
    },
+   "programs_file": "kb/status/commons_data_programs/feather_river.json",
    "read_at": "2026-10-16T16:52:03Z",
    "read_kind": "capture",
    "cost_usd": 3.15,
@@ -2394,6 +2438,7 @@
     "places_none": 3,
     "unknown_without_live": 17
    },
+   "programs_file": "kb/status/commons_data_programs/folsom_lake.json",
    "read_at": "2026-10-17T15:52:04Z",
    "read_kind": "capture",
    "cost_usd": 9.43,
@@ -2444,6 +2489,7 @@
     "places_none": 17,
     "unknown_without_live": 30
    },
+   "programs_file": "kb/status/commons_data_programs/foothill.json",
    "read_at": "2026-10-22T05:13:13Z",
    "read_kind": "capture",
    "cost_usd": 14.82,
@@ -2496,6 +2542,7 @@
     "places_none": 26,
     "unknown_without_live": 7
    },
+   "programs_file": "kb/status/commons_data_programs/fresno_city.json",
    "read_at": "2026-10-14T12:26:36Z",
    "read_kind": "capture",
    "cost_usd": 14.1,
@@ -2555,6 +2602,7 @@
     "places_none": 2,
     "unknown_without_live": 33
    },
+   "programs_file": "kb/status/commons_data_programs/fullerton.json",
    "read_at": "2026-10-15T03:14:32Z",
    "read_kind": "capture",
    "cost_usd": 22.21,
@@ -2606,6 +2654,7 @@
     "places_none": 5,
     "unknown_without_live": 20
    },
+   "programs_file": "kb/status/commons_data_programs/gavilan.json",
    "read_at": "2026-10-16T18:33:54Z",
    "read_kind": "capture",
    "cost_usd": 7.53,
@@ -2649,15 +2698,19 @@
    "harvested": true,
    "slug": "glendale_community",
    "programs": 317,
-   "passing": 121,
-   "gap": 196,
+   "passing": 181,
+   "gap": 136,
    "causes": {
-    "parked_college": 196
+    "found_not_extracted": 1,
+    "no_closed_list": 50,
+    "page_not_found": 24,
+    "unknown_without_live": 61
    },
-   "read_at": "2026-10-30T12:31:04Z",
+   "programs_file": "kb/status/commons_data_programs/glendale_community.json",
+   "read_at": "2026-11-13T17:24:31Z",
    "read_kind": "capture",
-   "cost_usd": 20.13,
-   "passed_at_read": 115,
+   "cost_usd": null,
+   "passed_at_read": 181,
    "slo_queue": null,
    "scout": {
     "recommendation": "capture",
@@ -2674,23 +2727,27 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 267,
-   "found": 260,
-   "extracted": 260,
+   "found": 242,
+   "extracted": 242,
    "errors": 0,
    "failed_checks": {
-    "coverage": 35,
-    "invented": 2,
-    "arithmetic": 145,
+    "coverage": 4,
+    "invented": 4,
+    "arithmetic": 60,
     "repeated": 0,
     "outcomes": 0
    },
-   "platform": "pdf",
-   "catalog_year": "2025-2026",
-   "catalog_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
-   "read_seconds": 125.1,
-   "run": "41055650373",
+   "platform": "coursedog",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.glendale.edu/",
+   "read_seconds": 8812.6,
+   "run": "43497305929",
    "levers": {
-    "unpark": 196
+    "reconcile_steps": 59,
+    "program_course_file_check": 50,
+    "reader_page_search": 24,
+    "scorer_noncredit_hours": 2,
+    "paid_read": 1
    }
   },
   {
@@ -2709,6 +2766,7 @@
     "places_none": 6,
     "unknown_without_live": 22
    },
+   "programs_file": "kb/status/commons_data_programs/golden_west.json",
    "read_at": "2026-10-21T22:41:56Z",
    "read_kind": "capture",
    "cost_usd": 8.72,
@@ -2752,19 +2810,20 @@
    "harvested": true,
    "slug": "grossmont",
    "programs": 187,
-   "passing": 123,
-   "gap": 64,
+   "passing": 124,
+   "gap": 63,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 33,
     "page_not_found": 9,
     "places_none": 4,
-    "unknown_without_live": 17
+    "unknown_without_live": 16
    },
-   "read_at": "2026-11-13T02:52:39Z",
+   "programs_file": "kb/status/commons_data_programs/grossmont.json",
+   "read_at": "2026-11-13T18:26:08Z",
    "read_kind": "capture",
    "cost_usd": 10.61,
-   "passed_at_read": 123,
+   "passed_at_read": 124,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -2791,22 +2850,22 @@
    "failed_checks": {
     "coverage": 9,
     "invented": 5,
-    "arithmetic": 21,
+    "arithmetic": 20,
     "repeated": 0,
     "outcomes": 0
    },
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.gcccd.edu/grossmont/",
-   "read_seconds": 798.5,
-   "run": "43355014570",
+   "read_seconds": 788.3,
+   "run": "43482160320",
    "levers": {
     "program_course_file_check": 33,
     "reconcile_steps": 13,
     "reader_page_search": 9,
     "reader_page_assignment": 4,
-    "ge_units_steps": 2,
     "scorer_noncredit_hours": 2,
+    "ge_units_steps": 1,
     "paid_read": 1
    }
   },
@@ -2825,6 +2884,7 @@
     "page_not_found": 11,
     "unknown_without_live": 11
    },
+   "programs_file": "kb/status/commons_data_programs/hartnell.json",
    "read_at": "2026-10-26T11:35:34Z",
    "read_kind": "capture",
    "cost_usd": 6.33,
@@ -2876,6 +2936,7 @@
     "places_none": 6,
     "unknown_without_live": 10
    },
+   "programs_file": "kb/status/commons_data_programs/imperial_valley.json",
    "read_at": "2026-10-21T23:10:18Z",
    "read_kind": "capture",
    "cost_usd": 8.02,
@@ -2925,6 +2986,7 @@
     "page_not_found": 2,
     "unknown_without_live": 14
    },
+   "programs_file": "kb/status/commons_data_programs/irvine_valley.json",
    "read_at": "2026-10-21T03:38:56Z",
    "read_kind": "capture",
    "cost_usd": 11.02,
@@ -2973,6 +3035,7 @@
     "page_not_found": 5,
     "unknown_without_live": 20
    },
+   "programs_file": "kb/status/commons_data_programs/lake_tahoe_community.json",
    "read_at": "2026-10-17T00:06:04Z",
    "read_kind": "capture",
    "cost_usd": 4.95,
@@ -3021,6 +3084,7 @@
     "page_not_found": 25,
     "unknown_without_live": 22
    },
+   "programs_file": "kb/status/commons_data_programs/laney.json",
    "read_at": "2026-10-16T16:52:09Z",
    "read_kind": "capture",
    "cost_usd": 10.1,
@@ -3070,6 +3134,7 @@
     "places_none": 2,
     "unknown_without_live": 12
    },
+   "programs_file": "kb/status/commons_data_programs/las_positas.json",
    "read_at": "2026-11-10T20:10:35Z",
    "read_kind": "capture",
    "cost_usd": 12.09,
@@ -3121,6 +3186,7 @@
     "places_none": 5,
     "unknown_without_live": 24
    },
+   "programs_file": "kb/status/commons_data_programs/lassen.json",
    "read_at": "2026-10-17T05:28:43Z",
    "read_kind": "capture",
    "cost_usd": 4.54,
@@ -3172,6 +3238,7 @@
     "places_none": 5,
     "unknown_without_live": 3
    },
+   "programs_file": "kb/status/commons_data_programs/lemoore.json",
    "read_at": "2026-10-16T23:05:16Z",
    "read_kind": "capture",
    "cost_usd": 5.29,
@@ -3226,6 +3293,7 @@
     "places_none": 19,
     "unknown_without_live": 30
    },
+   "programs_file": "kb/status/commons_data_programs/long_beach_city.json",
    "read_at": "2026-10-23T03:00:28Z",
    "read_kind": "capture",
    "cost_usd": 19.18,
@@ -3280,6 +3348,7 @@
     "places_none": 6,
     "unknown_without_live": 23
    },
+   "programs_file": "kb/status/commons_data_programs/los_angeles_city.json",
    "read_at": "2026-11-12T11:50:06Z",
    "read_kind": "capture",
    "cost_usd": 20.28,
@@ -3332,6 +3401,7 @@
     "places_none": 11,
     "unknown_without_live": 18
    },
+   "programs_file": "kb/status/commons_data_programs/los_angeles_harbor.json",
    "read_at": "2026-10-17T05:29:31Z",
    "read_kind": "capture",
    "cost_usd": 8.94,
@@ -3382,6 +3452,7 @@
     "places_none": 3,
     "unknown_without_live": 9
    },
+   "programs_file": "kb/status/commons_data_programs/los_angeles_mission.json",
    "read_at": "2026-10-17T17:40:22Z",
    "read_kind": "capture",
    "cost_usd": 8.92,
@@ -3434,6 +3505,7 @@
     "places_none": 20,
     "unknown_without_live": 10
    },
+   "programs_file": "kb/status/commons_data_programs/los_angeles_pierce.json",
    "read_at": "2026-11-13T02:53:03Z",
    "read_kind": "capture",
    "cost_usd": 15.01,
@@ -3486,6 +3558,7 @@
     "places_none": 10,
     "unknown_without_live": 10
    },
+   "programs_file": "kb/status/commons_data_programs/los_angeles_southwest.json",
    "read_at": "2026-10-17T19:17:43Z",
    "read_kind": "capture",
    "cost_usd": 6.0,
@@ -3537,6 +3610,7 @@
     "places_none": 11,
     "unknown_without_live": 24
    },
+   "programs_file": "kb/status/commons_data_programs/los_angeles_trade_technical.json",
    "read_at": "2026-10-18T09:34:14Z",
    "read_kind": "capture",
    "cost_usd": 14.2,
@@ -3584,6 +3658,7 @@
    "causes": {
     "parked_college": 35
    },
+   "programs_file": "kb/status/commons_data_programs/los_angeles_valley.json",
    "read_at": "2026-10-31T09:28:39Z",
    "read_kind": "capture",
    "cost_usd": 15.45,
@@ -3628,6 +3703,7 @@
    "causes": {
     "parked_college": 59
    },
+   "programs_file": "kb/status/commons_data_programs/los_medanos.json",
    "read_at": "2026-11-07T13:24:16Z",
    "read_kind": "capture",
    "cost_usd": 6.01,
@@ -3674,6 +3750,7 @@
     "places_none": 8,
     "unknown_without_live": 14
    },
+   "programs_file": "kb/status/commons_data_programs/madera.json",
    "read_at": "2026-10-16T16:52:10Z",
    "read_kind": "capture",
    "cost_usd": 6.89,
@@ -3724,6 +3801,7 @@
     "places_none": 25,
     "unknown_without_live": 20
    },
+   "programs_file": "kb/status/commons_data_programs/mendocino.json",
    "read_at": "2026-10-17T05:28:48Z",
    "read_kind": "capture",
    "cost_usd": 7.4,
@@ -3776,6 +3854,7 @@
     "places_none": 1,
     "unknown_without_live": 21
    },
+   "programs_file": "kb/status/commons_data_programs/merced.json",
    "read_at": "2026-10-19T10:44:44Z",
    "read_kind": "capture",
    "cost_usd": 9.69,
@@ -3824,6 +3903,7 @@
     "no_closed_list": 2,
     "unknown_without_live": 10
    },
+   "programs_file": "kb/status/commons_data_programs/merritt.json",
    "read_at": "2026-10-16T16:53:10Z",
    "read_kind": "capture",
    "cost_usd": 6.13,
@@ -3872,6 +3952,7 @@
     "places_none": 17,
     "unknown_without_live": 24
    },
+   "programs_file": "kb/status/commons_data_programs/miracosta.json",
    "read_at": "2026-10-22T08:18:02Z",
    "read_kind": "capture",
    "cost_usd": 11.96,
@@ -3922,6 +4003,7 @@
     "places_none": 3,
     "unknown_without_live": 14
    },
+   "programs_file": "kb/status/commons_data_programs/mission.json",
    "read_at": "2026-10-17T03:46:49Z",
    "read_kind": "capture",
    "cost_usd": 7.56,
@@ -3973,6 +4055,7 @@
     "places_none": 4,
     "unknown_without_live": 25
    },
+   "programs_file": "kb/status/commons_data_programs/modesto_junior.json",
    "read_at": "2026-10-13T22:28:04Z",
    "read_kind": "capture",
    "cost_usd": 12.03,
@@ -4020,6 +4103,7 @@
    "causes": {
     "parked_college": 21
    },
+   "programs_file": "kb/status/commons_data_programs/monterey_peninsula.json",
    "read_at": "2026-11-06T09:29:47Z",
    "read_kind": "capture",
    "cost_usd": 13.48,
@@ -4067,6 +4151,7 @@
     "places_none": 9,
     "unknown_without_live": 22
    },
+   "programs_file": "kb/status/commons_data_programs/moorpark.json",
    "read_at": "2026-10-21T12:37:11Z",
    "read_kind": "capture",
    "cost_usd": 10.4,
@@ -4116,6 +4201,7 @@
     "page_not_found": 4,
     "unknown_without_live": 7
    },
+   "programs_file": "kb/status/commons_data_programs/moreno_valley.json",
    "read_at": "2026-10-11T04:17:25Z",
    "read_kind": "capture",
    "cost_usd": 9.6,
@@ -4165,6 +4251,7 @@
     "places_none": 13,
     "unknown_without_live": 24
    },
+   "programs_file": "kb/status/commons_data_programs/mt_san_antonio.json",
    "read_at": "2026-10-23T02:51:00Z",
    "read_kind": "capture",
    "cost_usd": 22.47,
@@ -4219,6 +4306,7 @@
     "places_none": 3,
     "unknown_without_live": 16
    },
+   "programs_file": "kb/status/commons_data_programs/mt_san_jacinto.json",
    "read_at": "2026-11-06T11:57:46Z",
    "read_kind": "capture",
    "cost_usd": 9.28,
@@ -4269,6 +4357,7 @@
     "places_none": 4,
     "unknown_without_live": 10
    },
+   "programs_file": "kb/status/commons_data_programs/napa_valley.json",
    "read_at": "2026-10-15T14:10:14Z",
    "read_kind": "capture",
    "cost_usd": 6.36,
@@ -4319,6 +4408,7 @@
     "places_none": 1,
     "unknown_without_live": 19
    },
+   "programs_file": "kb/status/commons_data_programs/norco.json",
    "read_at": "2026-10-11T04:56:59Z",
    "read_kind": "capture",
    "cost_usd": 10.12,
@@ -4369,6 +4459,7 @@
     "places_none": 4,
     "unknown_without_live": 1
    },
+   "programs_file": "kb/status/commons_data_programs/north_orange_continuing_education.json",
    "read_at": "2026-11-13T01:05:23Z",
    "read_kind": "capture",
    "cost_usd": 3.66,
@@ -4419,6 +4510,7 @@
     "places_none": 12,
     "unknown_without_live": 8
    },
+   "programs_file": "kb/status/commons_data_programs/ohlone.json",
    "read_at": "2026-10-17T19:39:44Z",
    "read_kind": "capture",
    "cost_usd": 10.02,
@@ -4470,6 +4562,7 @@
     "places_none": 15,
     "unknown_without_live": 36
    },
+   "programs_file": "kb/status/commons_data_programs/orange_coast.json",
    "read_at": "2026-11-12T01:45:35Z",
    "read_kind": "capture",
    "cost_usd": 19.44,
@@ -4522,6 +4615,7 @@
     "places_none": 2,
     "unknown_without_live": 28
    },
+   "programs_file": "kb/status/commons_data_programs/oxnard.json",
    "read_at": "2026-10-21T13:57:35Z",
    "read_kind": "capture",
    "cost_usd": 8.98,
@@ -4571,6 +4665,7 @@
     "page_not_found": 2,
     "unknown_without_live": 27
    },
+   "programs_file": "kb/status/commons_data_programs/palo_verde.json",
    "read_at": "2026-10-22T20:58:06Z",
    "read_kind": "capture",
    "cost_usd": 5.08,
@@ -4625,6 +4720,7 @@
     "places_none": 1,
     "unknown_without_live": 16
    },
+   "programs_file": "kb/status/commons_data_programs/palomar.json",
    "read_at": "2026-11-07T12:19:04Z",
    "read_kind": "capture",
    "cost_usd": 18.75,
@@ -4675,6 +4771,7 @@
     "places_none": 4,
     "unknown_without_live": 46
    },
+   "programs_file": "kb/status/commons_data_programs/pasadena_city.json",
    "read_at": "2026-10-22T09:54:20Z",
    "read_kind": "capture",
    "cost_usd": 20.91,
@@ -4727,6 +4824,7 @@
     "places_none": 6,
     "unknown_without_live": 27
    },
+   "programs_file": "kb/status/commons_data_programs/porterville.json",
    "read_at": "2026-10-17T15:51:20Z",
    "read_kind": "capture",
    "cost_usd": 6.13,
@@ -4779,6 +4877,7 @@
     "places_none": 1,
     "unknown_without_live": 18
    },
+   "programs_file": "kb/status/commons_data_programs/reedley.json",
    "read_at": "2026-10-21T14:22:23Z",
    "read_kind": "capture",
    "cost_usd": 11.18,
@@ -4830,6 +4929,7 @@
     "places_none": 4,
     "unknown_without_live": 12
    },
+   "programs_file": "kb/status/commons_data_programs/rio_hondo.json",
    "read_at": "2026-11-12T04:22:11Z",
    "read_kind": "capture",
    "cost_usd": 18.94,
@@ -4880,6 +4980,7 @@
     "page_not_found": 18,
     "unknown_without_live": 22
    },
+   "programs_file": "kb/status/commons_data_programs/riverside_city.json",
    "read_at": "2026-10-11T03:28:38Z",
    "read_kind": "capture",
    "cost_usd": 15.03,
@@ -4929,6 +5030,7 @@
     "places_none": 22,
     "unknown_without_live": 33
    },
+   "programs_file": "kb/status/commons_data_programs/sacramento_city.json",
    "read_at": "2026-10-17T15:55:20Z",
    "read_kind": "capture",
    "cost_usd": 18.5,
@@ -4980,6 +5082,7 @@
     "places_none": 10,
     "unknown_without_live": 37
    },
+   "programs_file": "kb/status/commons_data_programs/saddleback.json",
    "read_at": "2026-10-16T03:03:07Z",
    "read_kind": "capture",
    "cost_usd": 25.88,
@@ -5032,6 +5135,7 @@
     "places_none": 25,
     "unknown_without_live": 39
    },
+   "programs_file": "kb/status/commons_data_programs/san_bernardino_valley.json",
    "read_at": "2026-11-13T02:52:38Z",
    "read_kind": "capture",
    "cost_usd": 15.44,
@@ -5095,6 +5199,7 @@
     "places_none": 4,
     "unknown_without_live": 4
    },
+   "programs_file": "kb/status/commons_data_programs/san_diego_city.json",
    "read_at": "2026-10-13T04:43:55Z",
    "read_kind": "capture",
    "cost_usd": 12.88,
@@ -5144,6 +5249,7 @@
     "page_not_found": 11,
     "places_none": 19
    },
+   "programs_file": "kb/status/commons_data_programs/san_diego_of_continuing_education.json",
    "read_at": "2026-10-17T13:07:55Z",
    "read_kind": "capture",
    "cost_usd": 4.95,
@@ -5193,6 +5299,7 @@
     "places_none": 2,
     "unknown_without_live": 2
    },
+   "programs_file": "kb/status/commons_data_programs/san_diego_mesa.json",
    "read_at": "2026-10-12T23:34:09Z",
    "read_kind": "capture",
    "cost_usd": 15.34,
@@ -5242,6 +5349,7 @@
     "page_not_found": 4,
     "unknown_without_live": 3
    },
+   "programs_file": "kb/status/commons_data_programs/san_diego_miramar.json",
    "read_at": "2026-10-13T06:17:41Z",
    "read_kind": "capture",
    "cost_usd": 9.65,
@@ -5291,6 +5399,7 @@
     "places_none": 1,
     "unknown_without_live": 2
    },
+   "programs_file": "kb/status/commons_data_programs/san_joaquin_delta.json",
    "read_at": "2026-10-27T14:43:03Z",
    "read_kind": "capture",
    "cost_usd": 13.42,
@@ -5341,6 +5450,7 @@
     "places_none": 7,
     "unknown_without_live": 26
    },
+   "programs_file": "kb/status/commons_data_programs/san_jose_city.json",
    "read_at": "2026-11-13T03:11:34Z",
    "read_kind": "capture",
    "cost_usd": 6.63,
@@ -5402,6 +5512,7 @@
     "page_not_found": 12,
     "unknown_without_live": 22
    },
+   "programs_file": "kb/status/commons_data_programs/santa_ana.json",
    "read_at": "2026-10-16T03:03:02Z",
    "read_kind": "capture",
    "cost_usd": 22.03,
@@ -5453,6 +5564,7 @@
     "places_none": 7,
     "unknown_without_live": 27
    },
+   "programs_file": "kb/status/commons_data_programs/santa_barbara_city.json",
    "read_at": "2026-10-22T13:05:28Z",
    "read_kind": "capture",
    "cost_usd": 18.39,
@@ -5505,6 +5617,7 @@
     "places_none": 13,
     "unknown_without_live": 41
    },
+   "programs_file": "kb/status/commons_data_programs/santa_monica.json",
    "read_at": "2026-10-21T08:13:16Z",
    "read_kind": "capture",
    "cost_usd": 20.34,
@@ -5558,6 +5671,7 @@
     "places_none": 45,
     "unknown_without_live": 31
    },
+   "programs_file": "kb/status/commons_data_programs/santa_rosa_junior.json",
    "read_at": "2026-10-17T13:43:10Z",
    "read_kind": "capture",
    "cost_usd": 22.48,
@@ -5617,6 +5731,7 @@
     "places_none": 6,
     "unknown_without_live": 25
    },
+   "programs_file": "kb/status/commons_data_programs/santiago_canyon.json",
    "read_at": "2026-11-13T07:46:13Z",
    "read_kind": "capture",
    "cost_usd": 16.03,
@@ -5678,6 +5793,7 @@
     "places_none": 21,
     "unknown_without_live": 41
    },
+   "programs_file": "kb/status/commons_data_programs/shasta.json",
    "read_at": "2026-10-17T05:29:29Z",
    "read_kind": "capture",
    "cost_usd": 11.12,
@@ -5729,6 +5845,7 @@
     "places_none": 9,
     "unknown_without_live": 17
    },
+   "programs_file": "kb/status/commons_data_programs/sierra.json",
    "read_at": "2026-10-23T17:14:18Z",
    "read_kind": "capture",
    "cost_usd": 10.21,
@@ -5788,6 +5905,7 @@
     "places_none": 11,
     "unknown_without_live": 2
    },
+   "programs_file": "kb/status/commons_data_programs/skyline.json",
    "read_at": "2026-10-17T13:07:43Z",
    "read_kind": "capture",
    "cost_usd": 3.83,
@@ -5846,6 +5964,7 @@
     "places_none": 18,
     "unknown_without_live": 25
    },
+   "programs_file": "kb/status/commons_data_programs/solano_community.json",
    "read_at": "2026-11-13T02:52:52Z",
    "read_kind": "capture",
    "cost_usd": 13.17,
@@ -5907,6 +6026,7 @@
     "places_none": 30,
     "unknown_without_live": 22
    },
+   "programs_file": "kb/status/commons_data_programs/southwestern.json",
    "read_at": "2026-10-14T12:26:30Z",
    "read_kind": "capture",
    "cost_usd": 13.77,
@@ -5967,6 +6087,7 @@
     "places_none": 2,
     "unknown_without_live": 19
    },
+   "programs_file": "kb/status/commons_data_programs/taft.json",
    "read_at": "2026-10-19T13:24:33Z",
    "read_kind": "capture",
    "cost_usd": 4.15,
@@ -6019,6 +6140,7 @@
     "places_none": 3,
     "unknown_without_live": 49
    },
+   "programs_file": "kb/status/commons_data_programs/ventura.json",
    "read_at": "2026-10-21T15:06:57Z",
    "read_kind": "capture",
    "cost_usd": 12.5,
@@ -6071,6 +6193,7 @@
     "places_none": 8,
     "unknown_without_live": 28
    },
+   "programs_file": "kb/status/commons_data_programs/victor_valley.json",
    "read_at": "2026-11-12T12:11:04Z",
    "read_kind": "capture",
    "cost_usd": 10.13,
@@ -6123,6 +6246,7 @@
     "places_none": 15,
     "unknown_without_live": 22
    },
+   "programs_file": "kb/status/commons_data_programs/west_los_angeles.json",
    "read_at": "2026-10-21T03:13:49Z",
    "read_kind": "capture",
    "cost_usd": 14.97,
@@ -6175,6 +6299,7 @@
     "page_not_found": 6,
     "unknown_without_live": 13
    },
+   "programs_file": "kb/status/commons_data_programs/west_valley.json",
    "read_at": "2026-11-12T02:37:11Z",
    "read_kind": "capture",
    "cost_usd": 11.19,
@@ -6225,6 +6350,7 @@
     "places_none": 1,
     "unknown_without_live": 2
    },
+   "programs_file": "kb/status/commons_data_programs/woodland_community.json",
    "read_at": "2026-10-17T05:28:57Z",
    "read_kind": "capture",
    "cost_usd": 4.7,
@@ -6274,6 +6400,7 @@
     "places_none": 4,
     "unknown_without_live": 13
    },
+   "programs_file": "kb/status/commons_data_programs/yuba.json",
    "read_at": "2026-10-17T05:31:43Z",
    "read_kind": "capture",
    "cost_usd": 7.44,

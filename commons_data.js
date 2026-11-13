@@ -15,10 +15,13 @@
 // Still to come (the page's own "Coming next" section): AI workers, integrations per college, the College view
 // (internal only), the JST funnel, and the per-college reads of PPM, descriptions, MIS and COE.
 //
-// What it reads, one committed file the site already serves (it WRITES NOTHING):
+// What it reads, committed files the site already serves (it WRITES NOTHING):
 //   kb/status/commons_data.json   built by kb/_build_commons_data_status.py from the identity crosswalk, the harvest's
 //                                 committed per-college files (through the gap census's own functions), the SLO
 //                                 queue, the source scouts and any committed spot-check receipt.
+//   kb/status/commons_data_programs/<slug>.json   the same builder's per-college list of the programs still to pass,
+//                                 each with its cause, lever and catalog page (S649); read only when that college's row
+//                                 or panel opens, so a cause opens its programs at .../college/<slug>/cause/<key>.
 // A figure the file marks TBA reads TBA, with its reason; nothing here is estimated or carried from the mock.
 //
 // Loaded by commons.js when the address names it (#commons/data, #commons/data/<filter>, the platform filter at
@@ -293,7 +296,7 @@
 
   var PW = { min: 300, max: 900, start: 480, step: 20 };   // the panel's width in px (Sam, 1:52 AM PT: 300 to 900; double-click resets)
   /* sort null means the default, resolved when the list draws (defaultSort); a person's own sort lasts the visit. */
-  var S = { view: "", filter: "all", platform: "", district: "", sort: null, q: "", open: null, panel: null, pw: PW.start };
+  var S = { view: "", filter: "all", platform: "", district: "", sort: null, q: "", open: null, panel: null, cause: null, pw: PW.start };
   /* The list opens lowest completeness first (#3229; the commons lane's NEXT): the overall bar where the live read
      holds one, else program requirements passing. "auto" marks the default, so the words above the list say so and
      a heading's first click starts a person's own sort. */
@@ -313,12 +316,13 @@
     if (S.view) return "commons/data/" + S.view;
     var a = "commons/data" + listRoute(S.filter, S.platform, S.district);
     var c = VIEW.M ? byId(VIEW.M, S.panel) : null;
-    return c ? a + "/college/" + slugOf(c) : a;
+    return c ? a + "/college/" + slugOf(c) + (S.cause && (c.causes || {})[S.cause] ? "/cause/" + S.cause : "") : a;
   }
   /* What the address after #commons/data names: a view (dictionary, apis), or the list's filter, then its catalog
-     platform (platform/<key>), then a college (college/<slug>), each optional. */
+     platform (platform/<key>), then a college (college/<slug>), then one of its causes (cause/<key>, the panel opened
+     at that cause's programs, S649), each optional. */
   function parseRoute(route) {
-    var p = String(route || "").split("/").filter(Boolean), out = { view: "", filter: "all", platform: "", college: "", district: "" };
+    var p = String(route || "").split("/").filter(Boolean), out = { view: "", filter: "all", platform: "", college: "", district: "", cause: "" };
     if (VIEWS[p[0]]) { out.view = p[0]; return out; }
     var i = p[0] === "college" || p[0] === "platform" || p[0] === "district" ? 0 : 1;
     if (i) out.filter = p[0] || "all";
@@ -326,6 +330,7 @@
       if (p[i] === "platform") out.platform = p[i + 1] || "";
       else if (p[i] === "college") out.college = p[i + 1] || "";
       else if (p[i] === "district") out.district = p[i + 1] || "";
+      else if (p[i] === "cause") out.cause = p[i + 1] || "";
     }
     return out;
   }
@@ -430,7 +435,7 @@
         c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null, c.extracted != null ? ["Records extracted (a reread can add some)", fmt(c.extracted)] : null,
         ["Passing now", fmt(c.passing)], ["Still to pass", fmt(c.gap)]].filter(Boolean);
       pr.causes = Object.keys(c.causes || {}).sort(function (a, b) { return c.causes[b] - c.causes[a] || a.localeCompare(b); })
-        .map(function (k) { return [causeWord(M, k), c.causes[k]]; });
+        .map(function (k) { return [causeWord(M, k), c.causes[k], k]; });
       /* Records failing each machine check, from the capture's committed summary (failed_checks); a record can fail
          more than one, so these do not sum to the programs still to pass. Only the checks that failed any. */
       var fc = c.failed_checks || {}, fk = Object.keys(fc).filter(function (k) { return fc[k] > 0; }).sort(function (a, b) { return fc[b] - fc[a] || a.localeCompare(b); });
@@ -577,11 +582,85 @@
   function runLink(run) {
     return /^\d+$/.test(String(run || "")) ? outLink(GITHUB_REPO.replace(/\/$/, "") + "/actions/runs/" + run, "The paid read's Actions run") : null;
   }
-  /* Still to pass, by cause: a small table, most programs first (S648; it was one long sentence). */
-  function causeTable(d) {
-    return el("table", { cls: "cdd-causes", "data-causes": "true" }, [el("caption", { text: "Still to pass, by cause" }),
+  /* Still to pass, by cause: a small table, most programs first (S648; it was one long sentence). Each cause is the
+     word that opens its programs (S649, Sam on #3229: "make sure any card that has what looks like a link opens up to
+     something"): in the opened row it opens the side panel at that cause; in the panel it shows or hides the list
+     below the table. The panel's cause is in the address, #commons/data/college/<slug>/cause/<key>. */
+  function causeTable(d, c, inPanel) {
+    var rows = d.causes.map(function (x) {
+      var k = x[2], on = !!inPanel && S.cause === k;
+      var w = c && k ? el("button", { type: "button", cls: "cmn-word cdd-cause", "data-cause": k, text: cap(x[0]) }) : null;
+      if (w && inPanel) { w.setAttribute("aria-expanded", on ? "true" : "false"); w.setAttribute("aria-controls", "cdd-cprogs"); }
+      if (w) w.addEventListener("click", function () { if (inPanel) pickCause(c, on ? null : k, k); else openPanel(c.id, '[data-expand="' + c.id + '"]', k); });
+      return el("tr", { cls: on ? "cdd-on" : null }, [el("th", { scope: "row" }, [w || cap(x[0])]), el("td", { cls: "cdd-num", text: fmt(x[1]) })]);
+    });
+    var t = el("table", { cls: "cdd-causes", "data-causes": "true" }, [el("caption", { text: "Still to pass, by cause" }),
       el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Cause" }), el("th", { scope: "col", cls: "cdd-num", text: "Programs" })])]),
-      el("tbody", null, d.causes.map(function (x) { return el("tr", null, [el("th", { scope: "row", text: cap(x[0]) }), el("td", { cls: "cdd-num", text: fmt(x[1]) })]); }))]);
+      el("tbody", null, rows)]);
+    if (!c) return t;
+    var note = el("p", { cls: "cdd-of", text: inPanel ? "A cause shows its programs below it, each opening its catalog page where the capture found one."
+      : "A cause opens its programs in the side panel." });
+    return el("div", { cls: "cdd-causebox" }, [t, note, inPanel && S.cause && (c.causes || {})[S.cause] ? causePrograms(c, S.cause) : null]);
+  }
+
+  /* ── each cause's programs (S649; COBIx's item 1 on #3229) ──
+     The builder writes one small file per college (kb/status/commons_data_programs/<slug>.json, named in the row's
+     programs_file); the page reads a college's file only when its row or its panel opens, once a visit. */
+  var PROGS = {};
+  function loadPrograms(c) {
+    if (!c || !c.programs_file || PROGS[c.programs_file]) return;
+    var key = c.programs_file;
+    PROGS[key] = { state: "loading" };
+    var p;
+    try { p = fetch(key, { cache: "no-store" }); } catch (e) { p = Promise.reject(e); }
+    Promise.resolve(p).then(function (r) {
+      if (!r || !r.ok) throw new Error(key + " answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(function (j) { PROGS[key] = { state: "ok", rows: (j && Array.isArray(j.programs)) ? j.programs : [] }; },
+      function () { PROGS[key] = { state: "error" }; })
+      .then(function () { redrawFor(c); });
+  }
+  /* A list that arrives after its college opened draws in place; the focus stays on the word it was on. */
+  function redrawFor(c) {
+    if (!VIEW.root || !VIEW.M || !onData()) return;
+    var a = document.activeElement, sel = null;
+    if (a && a.getAttribute) {
+      if (a.getAttribute("data-cause")) sel = '[data-cause="' + a.getAttribute("data-cause") + '"]';
+      else if (a.getAttribute("data-expand")) sel = '[data-expand="' + a.getAttribute("data-expand") + '"]';
+      else if (a.id) sel = "#" + a.id;
+      if (sel && VIEW.panel && VIEW.panel.contains(a)) sel = "#cdd-panel " + sel;
+    }
+    if (String(S.panel) === String(c.id)) drawPanel();
+    else if (String(S.open) === String(c.id) && VIEW.drawBody) VIEW.drawBody();
+    else return;
+    var b = sel && VIEW.root.querySelector(sel);
+    if (b && b.focus) b.focus();
+  }
+  function pickCause(c, k, from) {
+    S.cause = k;
+    drawPanel();
+    setAddress();
+    var b = VIEW.panel && (VIEW.panel.querySelector('[data-cause="' + (from || k || "") + '"]') || VIEW.panel.querySelector("#cdd-panel-h"));
+    if (b && b.focus) b.focus();
+  }
+  function causePrograms(c, k) {
+    var M = VIEW.M, n = (c.causes || {})[k] || 0, LW = (M.rule || {}).levers || {};
+    var head = el("h4", { id: "cdd-cprogs-h", text: cap(causeWord(M, k)) + ": " + plural(n, "program", "programs") });
+    var P = c.programs_file ? PROGS[c.programs_file] : null, body;
+    if (!c.programs_file) body = el("p", { cls: "cdd-of", text: "The committed files hold no program list for this college." });
+    else if (!P || P.state === "loading") body = el("p", { cls: "cdd-of", role: "status", text: "Reading the programs." });
+    else if (P.state === "error") body = el("p", { cls: "cdd-state", text: "The program list could not be read (" + c.programs_file + "). The count above stands." });
+    else {
+      var rows = P.rows.filter(function (r) { return r.cause === k; });
+      body = rows.length ? el("ul", { cls: "cdd-progs" }, rows.map(function (r) {
+        var t = r.title || ("Program " + r.cn);
+        var lw = LW[r.lever] || {};
+        return el("li", { "data-cn": r.cn }, [r.url ? outLink(r.url, t) : el("span", { cls: "cdd-ptitle", text: t }),
+          el("span", { cls: "cdd-of", text: [r.award, "control number " + r.cn, r.url ? null : "no catalog page found"].filter(Boolean).join("; ") }),
+          lw.what ? el("span", { cls: "cdd-of", text: "What would move it: " + lw.what + (lw.kind ? " (" + lw.kind + ")" : "") }) : null]);
+      })) : el("p", { cls: "cdd-of", text: "The program list holds none for this cause; the list and the count were built on different days." });
+    }
+    return el("section", { cls: "cdd-cprogs", id: "cdd-cprogs", "aria-labelledby": "cdd-cprogs-h", "data-cause-programs": k }, [head, body]);
   }
   function bar(d) {
     var v = pct(d.num, d.den);
@@ -616,7 +695,7 @@
         d.den != null ? bar(d) : d.basis && d.tba ? tba(d.tba) : null, d.state ? el("p", { cls: "cdd-state", text: d.state }) : null,
         d.state && d.note ? el("p", { cls: "cdd-of", text: d.note }) : null,
         d.lines && d.lines.length ? dl(d.lines) : null,
-        d.causes && d.causes.length ? causeTable(d) : null, d.fails ? d.fails : null]
+        d.causes && d.causes.length ? causeTable(d, c, false) : null, d.fails ? d.fails : null]
         .concat(!d.parts && (d.stamp || d.liveStamp === undefined) ? [stampLine(d.stamp, now)] : [], liveBits(d, now), d.parts ? parts(d, now) : []));
     });
     /* The row leads with the confidence level, then completeness (the overall bar), then each dataset (Sam, Nov 13,
@@ -669,6 +748,7 @@
   function cap(s) { s = String(s || ""); return s.charAt(0).toUpperCase() + s.slice(1); }
   function toggleRow(id) {
     S.open = String(S.open) === String(id) ? null : id;
+    if (S.open != null && VIEW.M) loadPrograms(byId(VIEW.M, S.open));
     if (VIEW.drawBody) VIEW.drawBody();
     var w = VIEW.root && VIEW.root.querySelector('[data-expand="' + id + '"]');
     if (w && w.focus) w.focus();
@@ -695,7 +775,7 @@
         if (d.state && d.note) kids.push(el("p", { cls: "cdd-of", text: d.note }));
         if (d.den == null && d.tba) kids.push(tba(d.tba));
         if (d.lines && d.lines.length) kids.push(dl(d.lines));
-        if (d.causes && d.causes.length) kids.push(causeTable(d));
+        if (d.causes && d.causes.length) kids.push(causeTable(d, c, true));
         if (d.fails) kids.push(d.fails);
         (d.later || []).forEach(function (x) { kids.push(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: x[0] + ": " + x[1] + ". " }), x[2]])); });
         /* The committed lines' stamp sits under them, before the live block and its own stamp. */
@@ -763,7 +843,7 @@
   /* Leaving the data view by any path (another tab, #commons, #commons/ase, browser Back from an open panel) releases
      the page: commons.js draws another view into the root without telling this module. */
   function onData() { return /^#?commons\/data(\/|$)/.test(String(location.hash || "")); }
-  function leave() { if (!onData()) { S.panel = null; releaseInert(); } }
+  function leave() { if (!onData()) { S.panel = null; S.cause = null; releaseInert(); } }
   window.addEventListener("cpl-tab-activated", leave);
   window.addEventListener("hashchange", leave);
   function panelShell() {
@@ -843,8 +923,9 @@
     try { if (window.history && history.replaceState && location.hash !== h) history.replaceState(null, "", h); } catch (e) { /* the view still draws */ }
     if (VIEW.noted) VIEW.noted(String(location.hash || ""));
   }
-  function openPanel(id, from) {
-    S.panel = id; VIEW.from = from || null;
+  function openPanel(id, from, cause) {
+    S.panel = id; VIEW.from = from || null; S.cause = cause || null;
+    if (VIEW.M) loadPrograms(byId(VIEW.M, id));
     drawPanel();
     setAddress();
     var h = VIEW.panel && VIEW.panel.querySelector("#cdd-panel-h");
@@ -852,7 +933,7 @@
   }
   function closePanel() {
     var id = S.panel;
-    S.panel = null;
+    S.panel = null; S.cause = null;
     drawPanel();
     setAddress();
     var back = (VIEW.from && VIEW.root && VIEW.root.querySelector(VIEW.from)) || (VIEW.root && VIEW.root.querySelector('[data-expand="' + id + '"]'));
@@ -868,6 +949,10 @@
     var R = parseRoute(route), pcol = R.view ? null : bySlug(M, R.college);
     S.view = R.view;
     S.panel = pcol ? pcol.id : null;
+    S.cause = pcol && R.cause && (pcol.causes || {})[R.cause] ? R.cause : null;
+    if (pcol) loadPrograms(pcol);
+    /* An address naming a cause the college does not hold opens the college alone, and says so in the address. */
+    var fixCause = !!(pcol && R.cause && !S.cause);
     var rf = FILTER_ALIAS[R.filter] || R.filter, f = FILTERS[rf] ? rf : "all";
     /* A card sets its own order (card: true) and the order lasts only while its card's list shows: on a filter change
        the default or a card's order gives way to the new card's, or to the default. A heading's order is the person's
@@ -1008,6 +1093,7 @@
     var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which goes inert while it is open
     root.appendChild(page);
     drawPanel(VIEW.now);
+    if (fixCause) setAddress();
     return page;
   }
 
@@ -1228,9 +1314,8 @@
       ["AI workers per college", "Waits on a committed record of each worker and the colleges it serves; the district bots wait on the district profiles (#3198)."],
       /* Sam, Nov 13, 7:13 AM PT, on #3229: a long-term direction, recorded here and not built. */
       ["A signed-in Sierra where college staff may direct changes", "College staff could give directions for procedure and rule changes that improve the accuracy, completeness, connectivity and visibility of their college's collection. Waits on Sierra's sign-in and access controls; a long-term direction, not built in this slice."],
-      /* S648: the opened row's causes are a table; the programs behind each cause are not in the builder's file. */
-      ["Each cause's programs", "A cause in a college's row would open the programs it counts. Waits on the builder carrying each college's program list per cause; today the file carries the counts only."],
-      ["Curriculum view and pathway source links per college", "The live registry says whether each is held, never its address. Waits on the live read carrying the links themselves; the catalog the capture read already opens from the row."],
+      /* S649: each cause opens its programs, and each program its own catalog page; what remains is the registry's. */
+      ["Curriculum view and pathway source links per college", "The live registry says whether each is held, never its address. Waits on the live read carrying the links themselves; the catalog the capture read opens from the row, and each program still to pass opens its own catalog page from its cause."],
       ["The JST funnel",(tbaOf(M, "jst") || "Waits on an authorized-student feed.") + stage("JST authorizations")],
       ["SIS and curriculum system tiles", "Wait on the district profiles (#3198); a college's system stays unknown until its profile names it."],
       ["Program Pathways Mapper reads per college", (tbaOf(M, "ppm") || "Waits on a per-college read of the committed term maps.") + stage("Program Pathways Mapper (PPM)")],
@@ -1389,6 +1474,15 @@
     "table.cdd-causes th, table.cdd-causes td { text-align:left; vertical-align:top; padding:2px 0; border-bottom:1px solid var(--cmn-line-soft); font-weight:400; color:var(--cmn-ink); overflow-wrap:break-word; }",
     "table.cdd-causes thead th { color:var(--cmn-muted); font-size:.8rem; font-weight:700; }",
     "table.cdd-causes .cdd-num { text-align:right; padding-left:12px; width:1%; }",
+    /* Each cause's programs (S649): the cause word wraps like prose; the open one carries the pressed weight. */
+    "table.cdd-causes button.cdd-cause { min-height:24px; text-align:left; font-size:inherit; overflow-wrap:break-word; }",
+    "table.cdd-causes tr.cdd-on button.cdd-cause { text-decoration-thickness:3px; color:var(--cmn-heading); font-weight:700; }",
+    ".cdd-causebox > .cdd-of { margin:4px 0 0; font-size:.82rem; }",
+    ".cdd-cprogs { margin-top:10px; padding-top:8px; border-top:1px solid var(--cmn-line); min-width:0; }",
+    ".cdd-cprogs h4 { margin:0 0 6px; }",
+    "ul.cdd-progs { margin:0; padding-left:20px; display:grid; gap:8px; font-size:.9rem; color:var(--cmn-ink); }",
+    "ul.cdd-progs > li { min-width:0; overflow-wrap:anywhere; }",
+    "ul.cdd-progs > li > .cdd-of { display:block; font-size:.82rem; }",
     ".cdd-srcrow { margin:0; display:flex; flex-wrap:wrap; gap:2px 16px; font-size:.88rem; }",
     /* A link's text is a long path or address: it may break anywhere, or it widens the opened row past the list's box
        at phone width (the PR review, S648: 117 of 118 rows at 320 with break-word; 0 with anywhere). */
@@ -1486,6 +1580,6 @@
     boot: boot, render: render, model: model, listFor: listFor, tiles: tiles, address: address, pick: pick, load: load, age: age,
     datasets: datasets, gaps: gaps, asks: asks, apiCount: apiCount, parseRouteViews: VIEWS, go: go, slugOf: slugOf, parseRoute: parseRoute, openPanel: openPanel, closePanel: closePanel, PW: PW,
     FILE: FILE, FILTERS: FILTERS, COLUMNS: COLUMNS, CSS: CSS, _state: S,
-    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.district = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.pw = PW.start; }
+    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.district = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.cause = null; S.pw = PW.start; PROGS = {}; }
   };
 })();

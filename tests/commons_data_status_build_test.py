@@ -308,6 +308,79 @@ check("(13) the overall bar is basis live, with the live read time, and only for
       OV["basis"] == "live" and OV["read_at"] == LV["read_at"] and set(OV["colleges"]) == set(LV["colleges"]))
 check("(13) no college row mixes in a live figure", not any(k in c for c in C for k in ("live", "overall")))
 
+# (14) each cause's programs (S649, COBIx's item 1 on #3229): one sidecar per college with programs still to pass.
+# A pinned fixture first: one college, four programs, each cause and each source of a catalog page.
+with tempfile.TemporaryDirectory() as tmp:
+    cd = os.path.join(tmp, B.COLLEGE_DIR, "ridge")
+    os.makedirs(os.path.join(cd, "records"))
+    srcs = [{"control_number": "00001", "title": "Welding", "award": "A.S. Degree", "method": "sitemap_page",
+             "source": {"url": "https://catalog.ridge.example.edu/welding/#p1"}},
+            {"control_number": "00002", "title": "Accounting", "award": "Certificate of Achievement", "method": "no_closed_list", "source": {}},
+            {"control_number": "00003", "title": "Nursing", "award": "A.S. Degree", "method": "pdf_section",
+             "source": {"url": "javascript:alert(1)"}},
+            {"control_number": "00004", "title": "Biology", "award": "A.S.-T Degree", "method": "page_missing", "source": {"url": "ftp://x"}}]
+    json.dump(srcs, open(os.path.join(cd, "sources.json"), "w"))
+    # 00001 has a filed record whose source_url names the page the reader used; it wins over the capture's page.
+    json.dump({"control_number": "00001", "source_url": "https://catalog.ridge.example.edu/welding/#p2", "score": None},
+              open(os.path.join(cd, "records", "00001.json"), "w"))
+    json.dump({"control_number": "00003", "source_url": "data:text/html,x", "score": None},
+              open(os.path.join(cd, "records", "00003.json"), "w"))
+    census = {"programs": [
+        {"college": "Ridge College", "control_number": "00004", "cause": "page_not_found", "lever": "reader_page_search"},
+        {"college": "Ridge College", "control_number": "00001", "cause": "extraction_error", "lever": "paid_read"},
+        {"college": "Ridge College", "control_number": "00002", "cause": "no_closed_list", "lever": "program_course_file_check"},
+        {"college": "Ridge College", "control_number": "00003", "cause": "extraction_error", "lever": "paid_read"},
+        {"college": "Elsewhere", "control_number": "99999", "cause": "not_in_capture", "lever": "capture_and_read"}]}
+    sc = B.cause_programs(tmp, census, {"ridge": {"name": "Ridge College"}, "hill": {"name": "Hill College"}})
+    rows = (sc.get("ridge") or {}).get("programs") or []
+    by = {r["cn"]: r for r in rows}
+    check("(14) ⭐ the fixture: one sidecar per college with programs still to pass, none for a college with none or one the run does not hold",
+          sorted(sc) == ["ridge"], sorted(sc))
+    check("(14) ⭐ a filed record's source_url wins over the capture's page; title and award come from sources.json",
+          by.get("00001") == {"cn": "00001", "title": "Welding", "award": "A.S. Degree", "cause": "extraction_error", "lever": "paid_read",
+                              "url": "https://catalog.ridge.example.edu/welding/#p2"}, by.get("00001"))
+    check("(14) ⭐ a page that is not http(s) is null, never a link (javascript:, data:, ftp:, or none at all)",
+          by["00002"]["url"] is None and by["00003"]["url"] is None and by["00004"]["url"] is None, rows)
+    check("(14) the order is cause, then title", [r["cn"] for r in rows] == ["00003", "00001", "00002", "00004"], [r["cn"] for r in rows])
+    text = B.dumps_programs(sc["ridge"])
+    back = json.loads(text)
+    check("(14) the sidecar is one program a line and reads back whole",
+          back == sc["ridge"] and text.count("\n") == len(rows) + 2 and back["basis"] == "committed files only", text[:200])
+    p1 = B.programs_dir_for(tmp, None, None)
+    p2 = B.programs_dir_for(tmp, os.path.join(tmp, "x", "c.json"), None)
+    check("(14) the sidecars go beside --out when one is given, never into the repo", p1 == os.path.join(tmp, B.PROGRAMS_DIR)
+          and p2 == os.path.join(tmp, "x", "commons_data_programs"), (p1, p2))
+
+# Then the repo: each committed sidecar agrees with its college's cause counts, and --check covers them.
+PD = os.path.join(ROOT, B.PROGRAMS_DIR)
+off = []
+for c in C:
+    if not c["harvested"]:
+        continue
+    want = {k: v for k, v in (c["causes"] or {}).items() if v}
+    f = c.get("programs_file")
+    if not want:
+        if f:
+            off.append(c["name"] + ": a file with nothing still to pass")
+        continue
+    if f != B.PROGRAMS_DIR + "/" + c["slug"] + ".json" or not os.path.exists(os.path.join(ROOT, f)):
+        off.append(c["name"] + ": no sidecar (" + str(f) + ")")
+        continue
+    got = {}
+    for r in json.load(open(os.path.join(ROOT, f), encoding="utf-8"))["programs"]:
+        got[r["cause"]] = got.get(r["cause"], 0) + 1
+    if got != want:
+        off.append(c["name"] + ": " + str(got) + " != " + str(want))
+check("(14) ⭐ every committed sidecar lists exactly the programs each cause counts, college by college", not off, off[:5])
+extra = sorted(set(os.listdir(PD)) - {os.path.basename(c["programs_file"]) for c in C if c.get("programs_file")}) if os.path.isdir(PD) else ["no folder"]
+check("(14) no sidecar for a college the file does not name", not extra, extra[:5])
+check("(14) every row's programs_file carries a College-view flag", B.FIELDS.get("programs_file") == "internal")
+rc = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_commons_data_status.py"), "--root", ROOT, "--check"],
+                    capture_output=True, text=True, timeout=300)
+check("(14) --check names the sidecars", "cause sidecars" in rc.stdout, rc.stdout[-300:])
+wf = open(os.path.join(ROOT, ".github", "workflows", "harvest-gap-census.yml"), encoding="utf-8").read()
+check("(14) ⭐ the census workflow commits the sidecar folder with the file", "git add -A " + B.PROGRAMS_DIR in wf, "")
+
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))
 sys.exit(1 if failed else 0)

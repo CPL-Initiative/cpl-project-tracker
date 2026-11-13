@@ -118,6 +118,8 @@ jobs:
           if ! python3 kb/_build_commons_data_status.py --live out/commons_data_live.json $shift_arg; then
             echo "::warning::the Commons data dashboard did not regenerate; the census files without it"
             git checkout -- kb/status/commons_data.json 2>/dev/null || true
+            git checkout -- kb/status/commons_data_programs 2>/dev/null || true
+            git clean -fdq -- kb/status/commons_data_programs 2>/dev/null || true
           fi
       - name: Commit to the branch that ran it
         run: |
@@ -127,6 +129,8 @@ jobs:
           for f in kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md kb/status/commons_data.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
+          # Each cause's programs, one file per college (S649); -A files a college's file removed as well as written.
+          if [ -d kb/status/commons_data_programs ]; then git add -A kb/status/commons_data_programs; fi
           if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
           git commit -m "Harvest gap census (run ${{ github.run_id }})"
           for i in 1 2 3 4; do

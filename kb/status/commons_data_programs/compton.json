@@ -1,0 +1,22 @@
+{"schema":1,"college":"Compton College","slug":"compton","basis":"committed files only","programs":[
+{"cn":"38312","title":"Mathematics","award":"A.S. T Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"cn":"45446","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"37325","title":"Early Childhood Education","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"38567","title":"Engineering Technician","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"42724","title":"Real Estate Salesperson","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"37322","title":"Special Education Assistant","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"37970","title":"Automotive Technology","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=77"},
+{"cn":"43718","title":"Communication Studies 2.0","award":"A.A- T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=93"},
+{"cn":"38172","title":"Cosmetology","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=161"},
+{"cn":"37374","title":"Cosmetology Level II","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=162"},
+{"cn":"37477","title":"Early Childhood Education","award":"A.S. T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82"},
+{"cn":"38175","title":"Physical Science","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=92"},
+{"cn":"43216","title":"Sociology","award":"A.A- T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=96"},
+{"cn":"38422","title":"Studio Arts","award":"A.A- T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95"},
+{"cn":"37373","title":"Computer Systems Applications","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=84"},
+{"cn":"38173","title":"General Science","award":"A.S. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=92"},
+{"cn":"38217","title":"General Studies: Arts and Humanities","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=93"},
+{"cn":"38219","title":"General Studies: Biological and Physical Sciences","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=94"},
+{"cn":"38176","title":"General Studies: Kinesiology and Wellness","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=95"},
+{"cn":"38387","title":"Kinesiology","award":"A.A- T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=107"}
+]}
