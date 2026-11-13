@@ -328,7 +328,16 @@
     var col = COLUMNS.filter(function (c) { return c.k === s.k; })[0] || COLUMNS[0];
     if (s.auto && s.k === "overall") return "Sorted lowest overall completeness first (" + liveWords(M) + "); a college the live read does not hold comes last. A column heading sorts another way for this visit.";
     if (s.auto) return "Sorted lowest program requirements passing first, colleges not collected yet at the top. A column heading sorts another way for this visit.";
-    return "Sorted by " + col.label.toLowerCase() + ", " + (col.k === "name" ? SORT_WORDS[String(s.d)].name : SORT_WORDS[String(s.d)].other) + ", for this visit; a new visit opens lowest completeness first.";
+    var by = "Sorted by " + col.label.toLowerCase() + ", " + (col.k === "name" ? SORT_WORDS[String(s.d)].name : SORT_WORDS[String(s.d)].other);
+    if (s.card) return by + ", as its card opens the list" + noValueWords(col, s.d) + ". Show all colleges returns to lowest completeness first.";
+    return by + ", for this visit" + noValueWords(col, s.d) + ". A new visit opens lowest completeness first.";
+  }
+  /* Where the colleges with no value for the column go, as sorted() places them: the overall bar's always last; every
+     other column's missing value sorts as the lowest. */
+  function noValueWords(col, d) {
+    if (col.k === "name") return "";
+    if (col.k === "overall") return "; colleges the live read does not hold last";
+    return "; colleges with no value " + (d === 1 ? "first" : "last");
   }
   function sorted(M, list) {
     var col = COLUMNS.filter(function (c) { return c.k === S.sort.k; })[0] || COLUMNS[0];
@@ -809,7 +818,13 @@
     S.view = R.view;
     S.panel = pcol ? pcol.id : null;
     var rf = FILTER_ALIAS[R.filter] || R.filter, f = FILTERS[rf] ? rf : "all";
-    if (f !== S.filter) { S.filter = f; if (FILTER_SORT[f]) S.sort = { k: FILTER_SORT[f].k, d: FILTER_SORT[f].d }; }
+    /* A card sets its own order (card: true) and the order lasts only while its card's list shows: on a filter change
+       the default or a card's order gives way to the new card's, or to the default. A heading's order is the person's
+       and stays for the visit. */
+    if (f !== S.filter) {
+      S.filter = f;
+      if (!S.sort || S.sort.auto || S.sort.card) S.sort = FILTER_SORT[f] ? { k: FILTER_SORT[f].k, d: FILTER_SORT[f].d, card: true } : null;
+    }
     if (!S.sort) S.sort = defaultSort(M);
     S.platform = platformsOf(M).some(function (p) { return p[0] === R.platform; }) ? R.platform : "";
     root.removeAttribute("style");
@@ -898,10 +913,16 @@
         if (col.nosort) { head.appendChild(el("th", { scope: "col", text: col.label })); return; }
         var on = S.sort.k === col.k;
         /* The default order is no click of the person's: a first click on its column starts their own sort, low first. */
-        var mine = on && !S.sort.auto;
+        var mine = on && !S.sort.auto && !S.sort.card;
         var b = el("button", { type: "button", cls: "cmn-word cdd-sort", "data-sort": col.k, text: col.label });
         if (on) b.appendChild(el("span", { cls: "cdd-dir", text: " (" + (col.k === "name" ? SORT_WORDS[String(S.sort.d)].name : SORT_WORDS[String(S.sort.d)].other) + ")" }));
-        b.addEventListener("click", function () { S.sort = { k: col.k, d: mine ? -S.sort.d : col.d0 }; drawHead(); drawBody(); });
+        b.addEventListener("click", function () {
+          S.sort = { k: col.k, d: mine ? -S.sort.d : col.d0 };
+          drawHead(); drawBody();
+          /* The header row is drawn again: the focus returns to the same column's new word, never to the body. */
+          var again = head.querySelector('button.cdd-sort[data-sort="' + col.k + '"]');
+          if (again && again.focus) again.focus();
+        });
         head.appendChild(el("th", { scope: "col", "aria-sort": on ? (S.sort.d === 1 ? "ascending" : "descending") : "none" }, [b]));
       });
     }
@@ -1151,7 +1172,11 @@
     opts = opts || {};
     VIEW.noted = opts.noted || null;
     if (!root) return Promise.resolve(null);
-    S.q = ""; S.filter = ""; S.view = ""; S.platform = ""; S.sort = null; S.open = null; S.panel = null; S.pw = PW.start;   // a visit starts fresh: nothing is remembered, the order back to its default
+    /* A session renewal mid-visit (opts.keep) draws the view as it stands: the person's own sort and search last the
+       visit. A new visit starts fresh: nothing is remembered, the order back to its default. */
+    var keep = opts.keep ? { q: S.q, sort: S.sort && !S.sort.auto && !S.sort.card ? S.sort : null } : null;
+    S.q = ""; S.filter = ""; S.view = ""; S.platform = ""; S.sort = null; S.open = null; S.panel = null; S.pw = PW.start;
+    if (keep) { S.q = keep.q || ""; S.sort = keep.sort; }
     if (VIEW.M && cache) { render(root, VIEW.M, filter, new Date()); focusArrival(); return Promise.resolve(VIEW.M); }
     root.textContent = "Reading the " + TITLE + "…";
     cache = cache || load();

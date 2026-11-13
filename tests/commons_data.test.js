@@ -791,11 +791,46 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   q14.value = "college"; q14.dispatchEvent(new d1.w.Event("input"));
   check("default 4: typing a search does not rewrite (re-announce) the order's words", sortLine(d1).firstChild === before14);
   q14.value = ""; q14.dispatchEvent(new d1.w.Event("input"));
+  const ariaSort = (x, k) => x.d.querySelector('button.cdd-sort[data-sort="' + k + '"]').parentNode.getAttribute("aria-sort");
   d1.d.querySelector('button.cdd-sort[data-sort="name"]').click();
   check("default 5 ⭐: a person's own sort orders the list and says it lasts the visit",
-    rows(d1)[0] === "Alpha College" && /^Sorted by college, A to Z, for this visit; a new visit opens lowest completeness first\.$/.test(txt(sortLine(d1))));
-  d1.d.querySelector('button.cdd-sort[data-sort="overall"]').click();
-  check("default 6: a first click on the default's own column is the person's sort, low first", rows(d1)[0] === "Gamma College" && /for this visit/.test(txt(sortLine(d1))));
+    rows(d1)[0] === "Alpha College" && /^Sorted by college, A to Z, for this visit\. A new visit opens lowest completeness first\.$/.test(txt(sortLine(d1))), txt(sortLine(d1)));
+  check("default 5b (review): College reads ascending and Overall none after the College click", ariaSort(d1, "name") === "ascending" && ariaSort(d1, "overall") === "none");
+  check("default 5c ⭐ (review): the focus stays on the clicked column's word after the header redraws",
+    d1.d.activeElement && d1.d.activeElement.getAttribute("data-sort") === "name");
+  // The default's own column, clicked on a fresh default load: the person's sort, low first, then high first.
+  const d3 = load("#commons/data", READ);
+  await d3.M.boot(); await settle();
+  d3.d.querySelector('button.cdd-sort[data-sort="overall"]').click();
+  check("default 6 ⭐ (review): a first click on Overall from the default is the person's sort, low first, said for this visit, the college the read does not hold last",
+    JSON.stringify(rows(d3)) === '["Gamma College","Alpha College","Beta College","Delta College","Epsilon Continuing Education"]' && ariaSort(d3, "overall") === "ascending"
+    && /^Sorted by overall, low first, for this visit; colleges the live read does not hold last\./.test(txt(sortLine(d3))) && d3.d.activeElement.getAttribute("data-sort") === "overall", txt(sortLine(d3)));
+  d3.d.querySelector('button.cdd-sort[data-sort="overall"]').click();
+  check("default 6b ⭐ (review): a second click reverses it, high first, and the colleges the read does not hold stay last",
+    JSON.stringify(rows(d3)) === '["Alpha College","Gamma College","Beta College","Delta College","Epsilon Continuing Education"]' && ariaSort(d3, "overall") === "descending"
+    && /^Sorted by overall, high first, for this visit; colleges the live read does not hold last\./.test(txt(sortLine(d3))));
+  d3.d.querySelector('button.cdd-sort[data-sort="pr"]').click();
+  check("default 6c (review): a person's sort on another column says where colleges with no value go", /^Sorted by program requirements, low first, for this visit; colleges with no value first\./.test(txt(sortLine(d3))), txt(sortLine(d3)));
+  // A card's order lasts only while its list shows.
+  const d4 = load("#commons/data", READ);
+  await d4.M.boot(); await settle();
+  tile(d4, "gaps").click();
+  check("default 9: a card's order is said as the card's, not the person's", /^Sorted by still to pass, high first, as its card opens the list/.test(txt(sortLine(d4))), txt(sortLine(d4)));
+  d4.d.querySelector("#cdd-all").click();
+  check("default 9b ⭐ (review): Show all colleges after a card returns to the default order, never the card's order called the person's",
+    rows(d4)[0] === "Gamma College" && /^Sorted lowest overall completeness first/.test(txt(sortLine(d4))) && !/for this visit;/.test(txt(sortLine(d4))));
+  d4.d.querySelector('button.cdd-sort[data-sort="name"]').click();
+  tile(d4, "gaps").click();
+  check("default 9c: a heading's order is the person's and stays when a card opens its list", rows(d4)[0] === "Alpha College" && /for this visit/.test(txt(sortLine(d4))));
+  // A session renewal mid-visit keeps the person's sort and search.
+  const d5 = load("#commons/data", READ);
+  await d5.M.boot(); await settle();
+  d5.d.querySelector('button.cdd-sort[data-sort="name"]').click();
+  const q5 = d5.d.querySelector("#cdd-q"); q5.value = "beta"; q5.dispatchEvent(new d5.w.Event("input"));
+  d5.w.dispatchEvent(new d5.w.CustomEvent("cpl-session-changed", { detail: { signedIn: true } }));
+  await settle();
+  check("default 10 ⭐ (review): a session renewal mid-visit keeps the person's own sort and search text",
+    /^Sorted by college, A to Z, for this visit/.test(txt(sortLine(d5))) && d5.d.querySelector("#cdd-q").value === "beta" && JSON.stringify(rows(d5)) === '["Beta College","Gamma College"]', txt(sortLine(d5)) + " / q=" + d5.d.querySelector("#cdd-q").value + " / " + rows(d5));
   d1.w.dispatchEvent(new d1.w.CustomEvent("cpl-tab-activated", { detail: { tab: "other" } }));
   d1.w.history.replaceState(null, "", "#commons/data");
   d1.w.dispatchEvent(new d1.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
