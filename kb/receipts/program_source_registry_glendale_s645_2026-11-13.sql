@@ -1,5 +1,5 @@
--- NOT RUN. Written by an S645 worker for the S645 conductor (SkyFinch), 2026-11-13. The conductor runs it through
--- the Supabase connector, then replaces this line with "APPLIED <timestamp> by <who>" and pastes the read-back.
+-- APPLIED 2026-11-13T02:52:43Z by the S645 conductor (SkyFinch) through the Supabase connector.
+-- Written by an S645 worker for the conductor; the results of each part are filed beside it below.
 --
 -- Receipt: program_source_registry, Glendale Community College, from its 2025-2026 PDF to its 2026-2027 Coursedog
 -- catalog, and a procedure record that names the new host.
@@ -31,7 +31,12 @@ from public.program_source_registry where college = 'Glendale Community College'
 -- https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf, catalog_year 2025-2026,
 -- catalog_platform pdf, catalog_format single_pdf, best_method pdf_extraction, corrected_by the S407 note.
 -- If any of the first three differs, stop: the guard below then matches no row, and someone else has moved it.
--- BEFORE (pasted by the conductor): <none yet>
+-- BEFORE (PART 0, read 02:52Z 2026-11-13 by the conductor):
+--   catalog_url https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf | catalog_year 2025-2026
+--   | catalog_platform pdf | catalog_format single_pdf | best_method pdf_extraction | access_status ok
+--   | corrected_by 'Sam (open-asks sheet 91 cards 5 and 6, as proposed; his go of 2026-10-17), appli...' (the S407 note)
+--   | corrected_at 2026-10-17 18:18:14.252247+00
+--   | procedure_md5 none | procedure_v null | no catalog step | 0 hosts | 0 steps
 --
 -- ── PART 1. THE REGISTRY ROW (a person's correction; the history trigger files the prior row) ──────────────────────
 update public.program_source_registry r set
@@ -48,10 +53,10 @@ where r.college = 'Glendale Community College'
   and r.catalog_year = '2025-2026'
   and r.catalog_platform = 'pdf';
 -- Expect UPDATE 1. UPDATE 0 means the row moved since the BEFORE read: stop and re-read.
+-- RESULT: UPDATE 1; corrected_at 2026-11-13 02:52:43.898745+00.
 --
 -- ── PART 2. THE PROCEDURE RECORD (the table's one write path, guarded on the md5 from PART 0) ──────────────────────
--- Replace PROCEDURE_MD5_FROM_PART_0 with PART 0's procedure_md5 (the word 'none' when the row holds no record).
--- Left as it stands, the function refuses the write ("the record changed since it was read"), so nothing changes.
+-- The expected md5 is PART 0's procedure_md5: 'none', since the row held no record (as run).
 -- It adds one host and one step, and a catalog step naming the 2025-2026 PDF only where the record names none.
 select public.program_source_procedure_set(p.college,
   coalesce(p.procedure, '{"v": 0, "hosts": []}'::jsonb)
@@ -71,16 +76,19 @@ select public.program_source_procedure_set(p.college,
            jsonb_build_object('run', 'scout-2026-11-12', 'date', '2026-11-13', 'plan', 'COBIx''s source scout of the gap census''s colleges',
              'found', 'catalog.glendale.edu is the 2026-2027 catalog on Coursedog, open to the reader; the 2025-2026 PDF still answers 200; glendale.elumenapp.com opens on a sign-in.'))),
   'S645 conductor: Glendale to its 2026-2027 Coursedog catalog (Sam, relayed by COBIx on #3111, 2026-11-12)',
-  'PROCEDURE_MD5_FROM_PART_0')
+  'none')
 from public.program_source_registry p
 where p.college = 'Glendale Community College';
--- The function returns {was_md5, md5, v}. Paste it here: <none yet>
+-- RESULT: {"v":"1","md5":"47c9a5f92f56e985aaadbf2be9a2a236","was_md5":"none"}
 --
 -- ── READ-BACK ──────────────────────────────────────────────────────────────────────────────────────────────────────
 select college, catalog_url, catalog_year, catalog_platform, catalog_format, best_method, corrected_by is not null as corrected,
        procedure->>'v' as procedure_v, procedure->'catalog'->>'file' as pdf_step,
        (select count(*) from jsonb_array_elements(procedure->'hosts') h where h->>'host' = 'catalog.glendale.edu') as new_host
 from public.program_source_registry where college = 'Glendale Community College';
+-- RESULT: catalog_url https://catalog.glendale.edu/ | 2026-2027 | coursedog | html_per_program | platform_reader
+--   | corrected true | procedure_v 1 | pdf_step the 2025-2026 PDF | new_host 1
+--   | procedure md5 47c9a5f92f56e985aaadbf2be9a2a236. program_source_registry_history gained 2 rows (one per part).
 --
 -- ── ROLLBACK ───────────────────────────────────────────────────────────────────────────────────────────────────────
 -- Part 1: the history trigger filed the prior row under this write's corrected_by. Restore its catalog fields and
@@ -95,8 +103,7 @@ from public.program_source_registry where college = 'Glendale Community College'
 --         and changed_by like 'Sam (relayed by COBIx on #3111, comment 6842097699%'
 --       order by changed_at desc limit 1) h
 -- where r.college = 'Glendale Community College' and r.catalog_url = 'https://catalog.glendale.edu/';
--- Part 2: the same function, with the record PART 0 read (the history table also keeps it) and the md5 PART 2 returned:
--- select public.program_source_procedure_set('Glendale Community College', '<PART 0 procedure>'::jsonb,
---   'rollback of the S645 Glendale procedure change', '<md5 PART 2 returned>');
--- Where PART 0 found no record ('none'), the function cannot set one back to null: set procedure, procedure_by and
--- procedure_at to null with a direct UPDATE as the service role, guarded on that md5.
+-- Part 2: PART 0 found no record ('none'), and the function cannot set one back to null, so part 2 rolls back by a
+-- direct UPDATE as the service role, guarded on the md5 PART 2 returned:
+-- update public.program_source_registry set procedure = null, procedure_by = null, procedure_at = null
+-- where college = 'Glendale Community College' and md5(procedure::text) = '47c9a5f92f56e985aaadbf2be9a2a236';
