@@ -101,6 +101,26 @@ async function settle() { for (let i = 0; i < 10; i++) await tick(); }
   const tbox = b.d.querySelector("#exh-title");
   tbox.value = "Something else"; tbox.dispatchEvent(new b.w.Event("input"));
   check("the line belongs to the proposed title: it hides once the title is edited", ns.hidden === true);
+  tbox.value = "CompTIA Cloud+"; tbox.dispatchEvent(new b.w.Event("input"));
+  check("…and shows again when the box holds the proposed title", ns.hidden === false);
+  // The review of #3241: a title set in code (an alternate's Use it) hides it too, though no input event fires.
+  b = boot(held("Industry Training Evidence for CNT 7285", "CompTIA Cloud+", "CompTIA",
+    { proposal_source: "official_name", alternates: ["Computer Networking Technology (CNT 7285)"],
+      name_source: { url: "https://www.comptia.org/en-us/certifications/cloud/", level: "strong" }, series_aliases: ["CV0-004"] }));
+  await b.M.boot(); await settle();
+  ns = b.d.querySelector(".exh-name-source");
+  const useAlt = Array.prototype.slice.call(b.d.querySelectorAll("button, a")).filter(function (x) {
+    return txt(x) === "Use it" && /Also proposed: Computer Networking Technology/.test(txt(x.parentNode)); })[0];
+  check("the card offers the alternate's Use it, and the source line shows before it", !!useAlt && ns && ns.hidden === false);
+  if (useAlt) useAlt.click();
+  check("an alternate's Use it hides the source line with the title it replaced",
+    b.d.querySelector("#exh-title").value === "Computer Networking Technology (CNT 7285)" && ns.hidden === true, ns && ns.hidden);
+  const ser = b.d.querySelector(".exh-series");
+  check("an exam series the builder took out shows as one muted line in words",
+    ser && txt(ser) === "Exam series: CV0-004, kept as a search alias" && /exh-muted/.test(ser.className), txt(ser));
+  check("two series read as aliases, and none, or junk, draws no line",
+    txt(M._seriesLine(held("r", "T", "I", { series_aliases: ["220-1101", "220-1102"] }))) === "Exam series: 220-1101, 220-1102, kept as search aliases"
+    && M._seriesLine(held("r", "T", "I")) === null && M._seriesLine(held("r", "T", "I", { series_aliases: "CV0-004" })) === null);
   [[null, "a null source"], [{}, "an empty source"], [{ level: "certain", url: "https://x.example" }, "an unknown level"], ["strong", "a bare string"]]
     .forEach(function (p) {
       const line = M._nameSourceLine(held("r", "T", "I", { name_source: p[0] }));

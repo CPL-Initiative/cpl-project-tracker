@@ -365,8 +365,9 @@ check("a college-issued title never counts as a named credential, nor does a one
       B.named_credential(["Intro to Cloud Computing"], IDX) is None and B.named_credential([""], IDX) is None)
 
 # COBIx on #3233 (6856966574): one shared ordinary word let an issuer's generic titles match on phrase alone. A title now
-# carries its issuer only by the issuer's short tag or half the words of its name (issuer_named); the 11 proposals of
-# #3233 rest on CNT 7285 (CompTIA, its one word) and EMS 20 (three of NREMT's four words), and both still match.
+# carries its issuer only by one of its tags, every word of a one- or two-word name, or half the words of a longer one
+# (issuer_named); the 11 proposals of #3233 rest on CNT 7285 (CompTIA, its one word) and EMS 20 (three of NREMT's five
+# words), and both still match.
 GENERIC = [{"t": "Water Treatment 1", "issuer": "California State Water Resources Control Board (SWRCB)", "locals": 4, "adopted": 3},
            {"t": "Fire Inspector I", "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
             "locals": 2, "adopted": 2},
@@ -380,8 +381,70 @@ check("a title carrying its issuer's short tag or half its name still counts",
       and B.issuer_named("ASE A5 — Brakes", "National Institute for Automotive Service Excellence (ASE)")
       and B.issuer_named("Certified Pharmacy Technician (CPhT)", "Pharmacy Technician Certification Board (PTCB)")
       and not B.issuer_named("Water Treatment 1", GENERIC[0]["issuer"]))
-check("the test only narrows the old one: a title sharing no word with its issuer never passes",
+check("a title sharing no word or tag with its issuer never passes",
       not B.issuer_named("Cloud Computing Basics", "CompTIA") and not B.issuer_named("Brakes", "(ASE)"))
+
+# The review of #3241, and the conductor's rule: each issuer's tags are data (kb/reference/issuer_tags.json); a title
+# carries one as whole tokens, or every word of a one- or two-word name, or half the words of a longer one.
+TAGS = {"National Fire Protection Association (NFPA)": ["NFPA"], "American Welding Society (AWS)": ["AWS"],
+        "International Code Council (ICC)": ["ICC"], "California State Fire Training (SFT)": ["SFT"],
+        "IPC — Association Connecting Electronics Industries": ["IPC"], "The Walt Disney Company": ["Disney"],
+        "U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)": ["USGBC", "GBCI", "LEED"],
+        "California Department of Forestry and Fire Protection (CAL FIRE)": ["CAL FIRE"],
+        "National Registry of Emergency Medical Technicians (NREMT)": ["NREMT"], "CompTIA": []}
+check("one ordinary word of a name the joining words leave short no longer names it (NFPA, AWS, ICC, SFT)",
+      not any(B.issuer_named(t, i, TAGS) for t, i in (
+          ("Fire Inspector 1", "National Fire Protection Association (NFPA)"),
+          ("Shielded Metal Arc Welding (SMAW)", "American Welding Society (AWS)"),
+          ("California Residential Code", "International Code Council (ICC)"),
+          ("Fire Inspector 1A", "California State Fire Training (SFT)"))))
+check("a parenthetical of many words is no tag: 'Fire Officer II' is not Pro Board's on 'fire'",
+      not B.issuer_named("Fire Officer II", "Pro Board (National Board on Fire Service Professional Qualifications)", TAGS)
+      and B.issuer_named("Pro Board Fire Officer II", "Pro Board (National Board on Fire Service Professional Qualifications)", TAGS))
+check("a brand the data names counts as whole tokens: IPC, Disney, LEED, CAL FIRE; and only by the data",
+      B.issuer_named("IPC Soldering Certification", "IPC — Association Connecting Electronics Industries", TAGS)
+      and B.issuer_named("Disney Human Resource Management", "The Walt Disney Company", TAGS)
+      and B.issuer_named("LEED Green Associate", "U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)", TAGS)
+      and B.issuer_named("CAL FIRE Ethical Leadership", "California Department of Forestry and Fire Protection (CAL FIRE)", TAGS)
+      and not B.issuer_named("Disney Human Resource Management", "The Walt Disney Company", {})
+      and not B.issuer_named("Fire Ethical Leadership", "California Department of Forestry and Fire Protection (CAL FIRE)", TAGS)
+      and not B.issuer_named("DisneyLand Tour", "The Walt Disney Company", TAGS))
+check("CompTIA and NREMT still name theirs: a one-word name whole, three of five words of a longer one",
+      B.issuer_named("CompTIA Cloud+", "CompTIA", TAGS)
+      and B.issuer_named("Emergency Medical Technician", "National Registry of Emergency Medical Technicians (NREMT)", TAGS))
+DATA_TAGS = B.issuer_tags()
+check("the committed tag list carries the brands the review named, and drops the generic ones",
+      "Disney" in DATA_TAGS.get("The Walt Disney Company", []) and "IPC" in DATA_TAGS.get("IPC — Association Connecting Electronics Industries", [])
+      and "LEED" in DATA_TAGS.get("U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)", [])
+      and not any(t in ("ROP", "HS", "DUI", "GIS", "varies") for v in DATA_TAGS.values() for t in v))
+check("an unreadable tag file gives no tags, never an error", B.issuer_tags("/nonexistent-root") == {})
+
+# The review of #3241 on the series strip: Network+, a list joined by "+", "or" or a short second number, any case, a
+# trailing "Exam" or leading "Version"; a title that is only a series, or one the strip would leave a joiner in, stays.
+SA = B.cert_naming.series_aside
+check("Network+, lists, short pairs, case, Exam and Version all strip clean",
+      SA("CompTIA Network+ N10-009", "CompTIA") == ("CompTIA Network+", ["N10-009"])
+      and SA("CompTIA A+ 220-1101 + 220-1102") == ("CompTIA A+", ["220-1101", "220-1102"])
+      and SA("CompTIA Cloud+ (CV0-003 or CV0-004)") == ("CompTIA Cloud+", ["CV0-003", "CV0-004"])
+      and SA("CompTIA A+ 220-1101/1102") == ("CompTIA A+", ["220-1101", "220-1102"])
+      and SA("CompTIA CySA+ cs0-003") == ("CompTIA CySA+", ["CS0-003"])
+      and SA("CompTIA Cloud+ CV0-004 Exam") == ("CompTIA Cloud+", ["CV0-004"])
+      and SA("CompTIA Security+ Version SY0-701") == ("CompTIA Security+", ["SY0-701"]))
+check("a title that is only a series, or one left with a joiner or empty parentheses, comes back as it came, no alias",
+      SA("SY0-701", "CompTIA") == ("SY0-701", []) and SA("Exam SY0-701", "CompTIA") == ("Exam SY0-701", [])
+      and SA("CompTIA A+ 220-1101 or") == ("CompTIA A+ 220-1101 or", [])
+      and SA("CompTIA A+ (220-1101 and)") == ("CompTIA A+ (220-1101 and)", []))
+check("a course title is never stripped: canonical(series=False) leaves it as the course has it",
+      B.cert_naming.canonical("CompTIA Security+ SY0-701 Prep", "", series=False) == "CompTIA Security+ SY0-701 Prep"
+      and B.cert_naming.canonical("CompTIA Security+ SY0-701 Prep", "") == "CompTIA Security+ Prep")
+
+# The review of #3241: an official name taken from the reference reads partial though settle() gave it no in_use.
+check("record_name_source: an official name in the reference reads partial, one outside it limited, a course title none",
+      B.record_name_source({"title": "Emergency Medical Technician", "issuer": "NREMT", "source": B.SRC_OFFICIAL}, {},
+                           {"Emergency Medical Technician"}) == {"url": "", "level": "partial"}
+      and B.record_name_source({"title": "New Cert", "issuer": "X", "source": B.SRC_OFFICIAL}, {}, set()) == {"url": "", "level": "limited"}
+      and B.record_name_source({"title": "A Course", "source": B.SRC_COURSE}, {}, {"A Course"}) is None
+      and B.record_name_source({}, None, None) is None)
 check("the 11 proposals of #3233 hold: CNT 7285 and EMS 20 still take their official credential",
       (B.leftover_code_proposal(prop, ex_cnt, lc, IDX2 + GENERIC, "Industry Training Evidence for CNT 7285", wording=True) or {}).get("title")
       == "CompTIA Cloud+"
@@ -434,6 +497,15 @@ check("a record with no source reads limited, never strong, and never raises",
 check("the record's level is one of three words", set(B.NAME_SOURCE_LEVELS) == {"strong", "partial", "limited"})
 fix3 = json.loads(json.dumps(fix2))
 fix3[B.CATALOG] = CAT
+# A course title that names a CompTIA series goes out as the course has it (the review of #3241).
+PREP = "Security Plus Prep Course"
+fix3["kb/cer_procedures_out/latest.json"]["needs_you"].append(
+    {"raw_title": PREP, "why": "the classifier is unsure (0.80)", "colleges": ["Norco College"],
+     "proposal": {"title": "", "issuer": "California Community Colleges", "confidence": 0.8}})
+fix3["kb/unclassified_suggestions.json"]["aligned"][PREP] = {"kind": "mid", "id": "CSIS M1999",
+                                                              "title": "CompTIA Security+ SY0-701 Prep", "code": "CIS 60",
+                                                              "college": "Norco College"}
+fix3["kb/exhibit_audit/latest.json"]["title_cards"].append({"raw_title": PREP, "unified_title": None, "tags": ["unclassified_in_map"]})
 with tempfile.TemporaryDirectory() as root3:
     for rel, obj in fix3.items():
         write(root3, rel, obj)
@@ -451,6 +523,9 @@ check("the builder marks only an official name or a title in use, each with a le
       and h3[SER]["proposal_source"] == B.SRC_OFFICIAL and h3[SER]["name_source"]["level"] == "strong"
       and h3[SER]["name_source"]["url"].startswith("https://www.comptia.org/"),
       [(h["raw"], h["proposal_source"], h.get("name_source")) for h in h3.values()])
+check("a course-title proposal keeps the series its course names, with no series alias",
+      h3.get(PREP, {}).get("title") == "CompTIA Security+ SY0-701 Prep" and h3[PREP]["proposal_source"] == B.SRC_COURSE
+      and "series_aliases" not in h3[PREP], h3.get(PREP))
 
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))

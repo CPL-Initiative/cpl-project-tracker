@@ -259,6 +259,12 @@
     var lv = src && typeof src === "object" ? src.level : "";
     return Object.prototype.hasOwnProperty.call(NAME_SOURCE_WORDS, lv) ? lv : "limited";
   }
+  function seriesLine(h) {
+    var list = (h && Array.isArray(h.series_aliases) ? h.series_aliases : []).filter(function (s) { return typeof s === "string" && s; });
+    if (!list.length) return null;
+    return el("p", { cls: "exh-muted exh-small exh-series", text: "Exam series: " + list.join(", ")
+      + (list.length === 1 ? ", kept as a search alias" : ", kept as search aliases") });
+  }
   function nameSourceLine(h) {
     if (!h || !("name_source" in h)) return null;
     var src = h.name_source, lv = nameSourceLevel(src);
@@ -2226,7 +2232,10 @@
     // How well the proposed name is sourced, in words beside it (kb/_build_exhibits_review.py name_source; the S648
     // conductor's d-official-name-source-confidence-s648). It never holds a proposal back; anything unknown reads limited.
     var nameSrc = nameSourceLine(h);
-    if (nameSrc) { nameSrc.hidden = title.value.trim() !== (h.title || ""); canon.appendChild(nameSrc); }
+    if (nameSrc) canon.appendChild(nameSrc);
+    // A CompTIA exam series the builder took out of the title (cert_naming.series_aside), said in words.
+    var series = seriesLine(h);
+    if (series) canon.appendChild(series);
     var issuer = el("input", { id: "exh-issuer", type: "text", autocomplete: "off", placeholder: "None named" });
     // The issuer follows the title (an ASE test names ASE) until a person types or picks one.
     var issuerTyped = draft.issuer != null;
@@ -2247,11 +2256,16 @@
         : el("span", { cls: "exh-muted exh-small", text: "set once it joins the reference" })]));
     var exists = el("p", { cls: "exh-muted exh-small" },
       [h.exists ? "Joins the credential already in the reference under this title." : "A new credential in the reference."]);
-    exists.hidden = title.value.trim() !== (h.title || "");
+    /* The lines about the proposed title (it joins the reference; where its name comes from) show only while the box
+       holds that title: one helper for every way the title changes, typed or set in code (the review of #3241). */
+    function markTitle(changed) {
+      exists.hidden = !!changed || title.value.trim() !== (h.title || "");
+      if (nameSrc) nameSrc.hidden = exists.hidden;
+    }
+    markTitle();
     title.addEventListener("input", function () {
       if (!issuerTyped) issuer.value = issuerFor(title.value, h.issuer);
-      keepDraft(); showAse(); exists.hidden = title.value.trim() !== (h.title || "");
-      if (nameSrc) nameSrc.hidden = exists.hidden;
+      keepDraft(); showAse(); markTitle();
     });
     canon.appendChild(exists);
     // Sam, 2026-11-12: a certification, license or training program takes its official name. When the repo holds none
@@ -2261,7 +2275,7 @@
     (h.alternates || []).forEach(function (alt) {
       canon.appendChild(el("p", { cls: "exh-muted exh-small" }, [
         (h.step === CONFLICT ? "The reference also names: " : "Also proposed: ") + alt + " ",
-        word("Use it", function () { title.value = alt; keepDraft(); exists.hidden = true; title.focus(); }, { cls: "exh-w exh-small" })]));
+        word("Use it", function () { title.value = alt; keepDraft(); markTitle(true); title.focus(); }, { cls: "exh-w exh-small" })]));
     });
     // The statewide exhibit or the most used title among the related ones (Sam, 2026-11-12), in words; Use it does
     // what the panel's Use this title does. Follows the title as it is edited.
@@ -2413,7 +2427,7 @@
       title.value = r.t;
       // The title's own issuer comes with it, as if picked.
       if (r.issuer) { issuer.value = r.issuer; issuerTyped = true; }
-      keepDraft(); showAse(); exists.hidden = true;
+      keepDraft(); showAse(); markTitle(true);
       state.note = "";
       title.focus();
     }
@@ -5241,7 +5255,7 @@
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
     loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN,
-    _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _relInUse: relInUse, _levelKey: levelKey, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows, _nameSourceLine: nameSourceLine, _nameSourceLevel: nameSourceLevel,
+    _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _relInUse: relInUse, _levelKey: levelKey, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows, _nameSourceLine: nameSourceLine, _nameSourceLevel: nameSourceLevel, _seriesLine: seriesLine,
     _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();

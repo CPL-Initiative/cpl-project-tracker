@@ -225,13 +225,24 @@ def official_urls(catalog):
 def name_source(title, issuer, urls, in_use=None):
     """How well a proposed name is sourced, {"url", "level"} (COBIx on #3223, 6859080666, taken by the S648 conductor,
     cpl_memory d-official-name-source-confidence-s648): `strong` when the credential watch's catalog holds the issuer's
-    own page for it, `partial` when a sibling exhibit in the reference already carries it (`in_use`), else `limited`. No
+    own page for it, `partial` when a sibling exhibit in the reference already carries it (`in_use`, or the title is
+    already in the reference: an official name taken from it, which settle() gives no in_use), else `limited`. No
     person signs off before a title is proposed, and a limited source never holds a proposal back: the level is shown
     beside it in words. Anything missing reads `limited`."""
     url = (urls or {}).get((_norm_name(issuer), " ".join((title or "").lower().split())), "") if title else ""
     if url:
         return {"url": url, "level": "strong"}
     return {"url": "", "level": "partial" if in_use else "limited"}
+
+
+def record_name_source(prop, urls, in_reference):
+    """The `name_source` a Review record carries, or None when its proposal is no official name and no title in use (a
+    classifier's, a procedure's or a course's title). An official name taken from the reference reads partial though
+    settle() gave it no in_use (the review of #3241: EMS 20's Emergency Medical Technician has exhibits under it)."""
+    if (prop or {}).get("source", SRC_CLASSIFIER) not in NAMED_SOURCES:
+        return None
+    title = prop.get("title") or ""
+    return name_source(title, prop.get("issuer", ""), urls, prop.get("in_use") or title in (in_reference or ()))
 
 
 def use_count(o):
@@ -504,30 +515,60 @@ def _brand_words(issuer):
 
 
 def _fold(w):
-    """"technicians" reads "technician": a plural never decides the issuer-word test."""
+    """"technicians" reads "technician": a plural never decides the issuer test."""
     return w[:-1] if len(w) > 3 and w.endswith("s") and not w.endswith("ss") else w
 
 
-def issuer_named(title, issuer):
-    """True when `title` carries its issuer: the issuer's short tag ("ASE", "NREMT", the words in its parentheses), or
-    at least half of the words of its name, common words (STOP) aside and a plural folded. "CompTIA Cloud+" (issuer
-    CompTIA, its one word) and "Emergency Medical Technician" (three of the four words of the National Registry of
-    Emergency Medical Technicians) pass; "Water Treatment 1" (California State Water Resources Control Board), "Fire
-    Inspector I" (IFSAC / Pro Board) and "Traffic Control" (ATSSA) share one ordinary word and do not. COBIx on #3233
-    (6856966574): one shared word "would let its generic titles match on phrase alone". The test only narrows the
-    looser one before it (a shared word of three letters or more), so no title it refused passes now."""
-    said = {w for w in re.findall(r"[a-z0-9]+", (title or "").lower())}
-    if not (said & _brand_words(issuer)):
+ISSUER_TAGS = "kb/reference/issuer_tags.json"
+# Words that join an issuer's name and never count toward it.
+JOINERS = {"of", "the", "and", "for", "in", "a", "an", "to", "on", "at", "inc", "llc"}
+_TAGS_CACHE = {}
+
+
+def issuer_tags(root=None):
+    """issuer -> [its tags], from kb/reference/issuer_tags.json (the S648 conductor: the issuer list is finite, so its tags
+    are data). An unreadable file gives none, so every title falls back to the words of its issuer's name."""
+    path = os.path.join(root or os.path.dirname(HERE), ISSUER_TAGS)
+    if path not in _TAGS_CACHE:
+        try:
+            with open(path, encoding="utf-8") as f:
+                _TAGS_CACHE[path] = (json.load(f) or {}).get("tags") or {}
+        except (OSError, ValueError):
+            _TAGS_CACHE[path] = {}
+    return _TAGS_CACHE[path]
+
+
+def _tokens(text):
+    return re.findall(r"[a-z0-9]+", (text or "").lower())
+
+
+def issuer_named(title, issuer, tags=None):
+    """True when `title` carries its issuer, by one rule (the S648 conductor on #3241): one of the issuer's tags
+    (issuer_tags; "ASE", "NREMT", "LEED", "Disney") stands in the title as whole tokens; or the title holds every word of an
+    issuer's name of one or two words ("CompTIA", "Pro Board"); or half the words of a longer name ("Emergency Medical
+    Technician", three of the five words of the National Registry of Emergency Medical Technicians). The name is the
+    issuer outside its parentheses, joining words (JOINERS) aside, a plural folded. So "Fire Inspector 1" is not the
+    National Fire Protection Association's on "fire", nor "Shielded Metal Arc Welding" the American Welding Society's on
+    "welding". COBIx on #3233 (6856966574): one shared word "would let its generic titles match on phrase alone"."""
+    said = _tokens(title)
+    if not said or not issuer:
         return False
-    tags = {w for p in re.findall(r"\(([^)]*)\)", issuer or "") for w in re.findall(r"[a-z0-9]+", p.lower()) if len(w) >= 2}
-    if said & tags:
-        return True
-    name = {_fold(w) for w in _brand_words(re.sub(r"\([^)]*\)", " ", issuer or ""))}
-    shared = {_fold(w) for w in said} & name
-    return bool(shared) and 2 * len(shared) >= len(name)
+    padded = " %s " % " ".join(said)
+    for tag in (issuer_tags() if tags is None else tags).get(issuer) or []:
+        tt = _tokens(tag)
+        if tt and (" %s " % " ".join(tt)) in padded:
+            return True
+    name = [_fold(w) for w in _tokens(re.sub(r"\([^)]*\)", " ", issuer)) if w not in JOINERS]
+    if not name:
+        return False
+    have = {_fold(w) for w in said}
+    shared = sum(1 for w in set(name) if w in have)
+    if len(set(name)) <= 2:
+        return shared == len(set(name))
+    return 2 * shared >= len(set(name))
 
 
-def named_credential(texts, index):
+def named_credential(texts, index, tags=None):
     """The reference title of an industry issuer that a course title or a credit recommendation names as a phrase, the
     longest when several do, else None. The title must be two words or more and carry its issuer (issuer_named): its
     short tag or half its name, "CompTIA Cloud+", issuer CompTIA. Two hits of one length name none, and a person
@@ -542,7 +583,7 @@ def named_credential(texts, index):
         t, iss = o["t"], o.get("issuer") or ""
         if not iss or iss == title_in_use.LOCAL_ISSUER or len(t) < 6 or len(t.split()) < 2:
             continue
-        if not issuer_named(t, iss):
+        if not issuer_named(t, iss, tags):
             continue
         if re.search(r"(?<![A-Za-z0-9])" + re.escape(t) + r"(?![A-Za-z0-9+])", blob, re.I):
             hits.append(o)
@@ -554,7 +595,7 @@ def named_credential(texts, index):
     return hits[0]
 
 
-def leftover_code_proposal(prop, ex, courses, index, raw, wording=False):
+def leftover_code_proposal(prop, ex, courses, index, raw, wording=False, tags=None):
     """A proposal that still carries a course code ("Computer Networking Technology (CNT 7285)", the department and the
     leftover code) takes, in order: for an industry-certification exhibit, the credential its course title or credit
     line names (named_credential); for credit by exam or noncredit, the local course title; else it stands. A college's
@@ -574,7 +615,7 @@ def leftover_code_proposal(prop, ex, courses, index, raw, wording=False):
     # the course title and never the credential (COBIx's review of #3233).
     paths = {exhibit_paths.path_of(i) for i in ex.get("ids") or []} - {""}
     industry = "ic" in paths or (not paths and "Industry Certification" in (ex.get("types") or []))
-    hit = named_credential(titles + [r[1] for r in ex.get("recs") or []], index) if industry else None
+    hit = named_credential(titles + [r[1] for r in ex.get("recs") or []], index, tags) if industry else None
     alts = [prop["title"]] + [a for a in prop.get("alternates") or [] if a != prop["title"]]
     if hit:
         return dict(prop, title=hit["t"], issuer=hit["issuer"], source=SRC_OFFICIAL, alternates=alts,
@@ -663,6 +704,7 @@ def build(root):
     statewide_titles = title_in_use.statewide_from_js(os.path.join(root, STATEWIDE_RECS))
     catalog = load_json(root, CATALOG, {})
     names_on_file, urls_on_file = official_names(catalog), official_urls(catalog)
+    tags_on_file = issuer_tags(root)
     cindex, descs = course_index(members), coci_descriptions(root)
     items, courses = [], {}
     for n in needs:
@@ -677,19 +719,21 @@ def build(root):
         prop = proposal_of(n, aligned, course_ok)
         mine = local_courses(ex, cindex, descs)
         if step != CONFLICT:
-            got = leftover_code_proposal(prop, ex, mine, index, raw, wording=step == WORDING)
+            got = leftover_code_proposal(prop, ex, mine, index, raw, wording=step == WORDING, tags=tags_on_file)
             if got:
                 prop = got
             # A CompTIA exam series is a search alias, never part of the title (cert_naming.series_aside): the card
-            # carries it as `series_aliases`, and the proposal keeps its source.
-            bare, series = cert_naming.series_aside(prop["title"], prop.get("issuer", ""))
+            # carries it as `series_aliases`, and the proposal keeps its source. A local course title goes out as the
+            # course has it: no course carries the stripped form.
+            course = prop.get("source") == SRC_COURSE
+            bare, series = (prop["title"], []) if course else cert_naming.series_aside(prop["title"], prop.get("issuer", ""))
             if series:
                 prop = dict(prop, title=bare, series_aliases=series,
                             alternates=[a for a in prop.get("alternates") or [] if a != bare and not cert_naming.SERIES.search(a)])
             # A proposal based on a certification goes out in the format (kb/cert_naming.py, Sam's ruling of
             # 2026-11-11); the form the rule or the classifier wrote stays beside it as an alternate. A
             # conflict's proposal is a title a person already approved, which only the rename batch moves.
-            formed = cert_naming.canonical(prop["title"], prop.get("issuer", ""))
+            formed = cert_naming.canonical(prop["title"], prop.get("issuer", ""), series=not course)
             if formed != prop["title"]:
                 prop = dict(prop, alternates=[prop["title"]] + [a for a in prop.get("alternates") or [] if a != formed],
                             title=formed, source=SRC_OFFICIAL)
@@ -750,8 +794,9 @@ def build(root):
             rec["needs_official_name"] = True
         if prop.get("series_aliases"):
             rec["series_aliases"] = prop["series_aliases"]
-        if rec["proposal_source"] in NAMED_SOURCES:
-            rec["name_source"] = name_source(title, prop.get("issuer", ""), urls_on_file, prop.get("in_use"))
+        got_source = record_name_source(prop, urls_on_file, in_reference)
+        if got_source:
+            rec["name_source"] = got_source
         if aligned and not course_ok and prop.get("source") != SRC_COURSE:
             # The course's title, set aside, and why (Sam's ruling of 2026-11-12): the card's course line still names it.
             rec["course_title_set_aside"] = {"title": aligned["title"], "basis": basis_of(aligned), "why": course_why}

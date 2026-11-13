@@ -39,6 +39,7 @@ import _cred_rename_apply_supabase as sup  # noqa: E402
 import _cred_rename_dryrun as dry  # noqa: E402
 import _cred_rename_undo as undo  # noqa: E402
 import _family_tag_plan as ftp  # noqa: E402
+import cert_naming  # noqa: E402
 import fold_issuer  # noqa: E402
 import ruled_renames  # noqa: E402
 import test_mix  # noqa: E402
@@ -84,6 +85,22 @@ r = fr(FAM, "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light R
 check("a mix that is only a choice of tests is any one test, never a bundle: it keeps its title (Sheet 181)",
       r["status"] == "any-one" and r["title"] is None and test_mix.exception(
           "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair") is None)
+# The review of #3241: one mix written two ways is one title; a repeated choice folds before the any-one check; an "or"
+# inside a comma list is for a person, since Sam has not ruled it.
+check("the tests inside an 'or' sort and de-duplicate: 'T6 or A6' is 'A6 or T6'",
+      fr(FAM, "ASE Bundle — T6 or A6 + L3")["title"] == FAM + ": A6 or T6 + L3"
+      and fr(FAM, "ASE Bundle — A6 or A6 + L3")["title"] == FAM + ": A6 + L3")
+check("a choice written twice is still one choice: any one test, never a bundle",
+      fr(FAM, "ASE Bundle — A6 or T6 + T6 or A6")["status"] == "any-one")
+r = fr(FAM, "ASE Bundle — A4, A5 or A6")
+check("an 'or' inside a comma list is left for a person, with its reason",
+      r["status"] == "unparseable" and r["title"] is None and "commas" in r["why"]
+      and test_mix.exception("ASE Bundle — A4, A5 or A6")["why"] == r["why"])
+fx_any = {"ASE Bundle — C1 or G1": {"unified_title_override": FAM, "unified_title_merge_confirm": FAM, "reviewed_by": SAM}}
+fx_any_plan = builder.build(fx_any, {t: [{"issuing_agency": cert_naming.ASE_ISSUER}] for t in fx_any}, {}, ftp.families())
+check("the plan builder and exception() agree on a pure choice: kept as any one test, never listed as unparseable",
+      fx_any_plan["unparseable"] == [] and "ASE Bundle — C1 or G1" in fx_any_plan["any_one_test"]
+      and test_mix.exception("ASE Bundle — C1 or G1") is None, fx_any_plan)
 r = fr(FAM, "ASE Bundle — A6 or SP/2 kit + L3")
 check("an 'or' that joins a test to something else is still left for a person", r["status"] == "unparseable" and r["title"] is None)
 r = fr(FAM, "ASE Bundle — T5, T8 + SP/2 A6 kit")

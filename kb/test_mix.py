@@ -142,15 +142,24 @@ def family_read(family, title):
         return {"status": "no-mix", "title": None, "why": "the title names no test mix"}
     if not got["tests"]:
         return {"status": "unparseable", "title": None, "why": "the mix names no ASE test the parser can code"}
-    if len(got["tests"]) == 1 and not got["with"] and _OR.search(got["tests"][0]):
+    # Each part as its set of alternatives, sorted in ASE's order and de-duplicated: "T6 or A6" is "A6 or T6".
+    alts = {}
+    for t in got["tests"]:
+        one = sorted({a.strip().upper() for a in _OR.split(t) if a.strip()}, key=_ORDER.get)
+        alts[" or ".join(one)] = one
+    ors = [k for k, v in alts.items() if len(v) > 1]
+    if ors and "," in (from_title(title) or {}).get("label", ""):
+        # "A4, A5 or A6" reads as any one of three as easily as a bundle: Sam has not ruled it, so a person codes it.
+        return {"status": "unparseable", "title": None,
+                "why": "an \"or\" in a list joined by commas (%s): one choice or a bundle, for a person to say" % ", ".join(ors)}
+    if len(alts) == 1 and ors and not got["with"]:
         return {"status": "any-one", "title": None,
-                "why": "any one of %s qualifies: no bundle, so it keeps its own title" % got["tests"][0]}
+                "why": "any one of %s qualifies: no bundle, so it keeps its own title" % ors[0]}
     bad = [p for p in got["with"] if _OR.search(p) or cert_naming.codes_named(p)]
     if bad:
         return {"status": "unparseable", "title": None,
                 "why": "a part the parser cannot read as one test or one named credential: %s" % ", ".join(bad)}
-    tests = sorted({" or ".join(a.strip().upper() for a in _OR.split(t) if a.strip()) for t in got["tests"]},
-                   key=lambda p: (_ORDER[p.split(" or ")[0]], p))
+    tests = sorted(alts, key=lambda p: (_ORDER[alts[p][0]], p))
     new = "%s: %s" % (family, " + ".join(tests))
     new += (" with " + " + ".join(got["with"])) if got["with"] else ""
     return {"status": "already" if new == (title or "").strip() else "named", "title": new, "why": ""}
