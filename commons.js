@@ -894,13 +894,16 @@
   /* The Commons data dashboard (#3215, slice 1): each college's datasets, how far each has come, what is in the way.
      #commons/data, #commons/data/<filter> and #commons/data[/<filter>]/college/<slug> (slice 2: that college's side
      panel) open it; commons_data.js draws it from kb/status/commons_data.json. */
-  var DATA = { on: false, filter: "" };
+  var DATA = { on: false, filter: "", keep: false };
   function showData(root) {
     function go() {
-      if (!window.CPL_COMMONS_DATA) { notice(root, "The data dashboard (commons_data.js) could not be loaded. Reload the tab to try again."); return null; }
+      if (!window.CPL_COMMONS_DATA) { notice(root, "College Data Collection (commons_data.js) could not be loaded. Reload the tab to try again."); return null; }
       /* The view reports each address it moves to (a filter, a panel opened or closed); DATA.filter follows it, so a
          session renewal's redraw opens the view as it stands, never the arrival's stale college (#3231 review). */
-      return CPL_COMMONS_DATA.boot(root, DATA.filter, { noted: function (h) { seenHash = h; DATA.filter = String(h || "").replace(/^#?commons\/data\/?/, ""); } });
+      /* A session renewal's redraw keeps the person's own sort and search for the visit (DATA.keep, set by the
+         cpl-session-changed listener); any other draw is a new visit and starts fresh. */
+      var keep = DATA.keep; DATA.keep = false;
+      return CPL_COMMONS_DATA.boot(root, DATA.filter, { keep: keep, noted: function (h) { seenHash = h; DATA.filter = String(h || "").replace(/^#?commons\/data\/?/, ""); } });
     }
     if (window.CPL_COMMONS_DATA || !(window.CPL_TABS && CPL_TABS.loadScript)) return Promise.resolve(go());
     return new Promise(function (res) { CPL_TABS.loadScript("commons_data.js", "CPL_COMMONS_DATA", function () { res(go()); }); });
@@ -925,7 +928,8 @@
   var reboot = null;
   window.addEventListener("cpl-session-changed", function () {
     if ((!redraw && !ASE.on && !DATA.on) || reboot || !document.getElementById(ROOT_ID)) return;
-    reboot = Promise.resolve(boot()).then(function () { reboot = null; }, function () { reboot = null; });
+    DATA.keep = DATA.on;
+    reboot = Promise.resolve(boot()).then(function () { reboot = null; DATA.keep = false; }, function () { reboot = null; DATA.keep = false; });
   });
   /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
   window.addEventListener("cpl-tab-activated", function (e) {
@@ -961,7 +965,7 @@
       el("p", { cls: "cmn-sub" }, ["Each college keeps its own catalog. The Commons gives every college one shared name to point to and shows how its own version lines up with it. ",
         el("span", { cls: "cmn-note", text: data && data.written_at ? "Figures read " + stampOf(data.written_at) + "." : "" })]),
       el("p", { cls: "cmn-sub", id: "cmn-ase-line" }, ["The first slice a student sees: ", el("a", { href: "#commons/ase", text: "where an ASE certification can count" }), ", at every college."]),
-      el("p", { cls: "cmn-sub", id: "cmn-data-line" }, ["Each college's data, how far each dataset has come and what is in the way: ", el("a", { href: "#commons/data", text: "the data dashboard" }), "."])
+      el("p", { cls: "cmn-sub", id: "cmn-data-line" }, ["What we have collected for each college, how complete it is, how confident we are in it and what is in the way: ", el("a", { href: "#commons/data", text: "College Data Collection" }), "."])
     ]));
 
     /* the decisions waiting on Sam: the band below lists them, and a decision batch closes once its call is answered */

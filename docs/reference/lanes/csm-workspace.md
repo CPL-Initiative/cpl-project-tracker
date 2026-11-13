@@ -213,6 +213,30 @@ contained in the Email Template editor"*.
 - **Rollback:** one squash commit; no table or migration. A template saved under `accept` or `request_follow` is a
   row in `csm_templates`, undone with *Put back the shipped wording*.
 
+**LIVE once its PR merges: the acceptance no longer hidden, the email record, the minute check and Bcc (2026-11-13,
+Malone in session).** His words: *"we should save who completes a step (attestation confirmation, NC confirmation, sent
+attestation request)"*; *"do refresh every minute, ideally a backend check first, if none of the data is different then
+we don't need a refresh ... We don't want to accidentally send 2 of the same email or send conflicting emails"*;
+*"put MAP@rccd.edu in bcc for the mailto: links. that way we at least always know that the map email is in the mix."*
+- **An acceptance owed comes before a second request under review (`readyOf`).** Read live 2026-11-13: Alameda,
+  Hartnell, LA Trade and LA Valley were confirmed with no Sent recorded, and their waiting noncredit attestation kept
+  them out of *Send an acceptance*. They now sit in both lists. Guard 14b5.
+- **Email record (`emails`, Look up; `emailRecord`).** Every confirmed college: who accepted and when, and what the log
+  holds for the acceptance email (marked sent, copied or drafted with no Sent, or no record), each with the reviewer.
+  Read live the same day: 17 confirmed, 3 acceptances marked Sent. Guard 14b6.
+- **Who completed a step.** The acceptances already stored it (`confirmed_by` on the confirmation and the attestation;
+  `by_email` on every log entry); the snapshot now carries it (`part.by`, `nc.by`) and the record shows *Confirmation
+  accepted by ...*. The ticks inside a review are still kept in the browser alone, by his word.
+- **The once-a-minute check (`watchCheck`, `WATCH`).** Three small reads (confirmations, attestations, log ids and
+  closures) make one string; the same string does nothing, a different one has the funding tab read again
+  (`csm.reload`) and the log reload, and the page says so. It also runs when a college is opened, and before Sent is
+  filed: a receipt another reviewer filed in the meantime stops a second one. Guard 14b7. Not yet seen across two
+  live browsers.
+- **Bcc.** Every draft the page opens (Outlook, Gmail, and the funding tab's own mail window) carries the team's
+  mailbox on Bcc (`TEAM_BCC`, `teamBcc`); the preview shows the line, and a copied email says to add it by hand.
+- **DECIDED, left as it is by his word:** the review's ticks and what Accept requires.
+- **Rollback:** one squash commit; no table or migration.
+
 ## NEXT
 
 0. **Left from the clarity mock's build** (the go-live note, `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/

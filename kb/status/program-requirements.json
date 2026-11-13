@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-13T12:38:02Z",
-  "session": 647,
-  "moniker": "SkyPipit",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-13T18:45:42Z",
+  "session": 648,
+  "moniker": "SkyTanager",
+  "run": "the conductor, with Sam in session",
   "decider": "Sam",
-  "handoff": "docs/session_648_handoff.md",
+  "handoff": "docs/session_649_handoff.md",
   "next_step": {
-    "title": "Glendale's load, then College of the Desert",
-    "text": "Glendale's reader holds 24432 as a wrong-page read, a small paid re-extract covers the programs whose page changes, one reader checks the changes, the compare tool runs, and then its records load. College of the Desert's paid read gets its pull request, a compare, a reread and its display build."
+    "title": "Grossmont's Cal-GETC apply, then Cosumnes River and Cerro Coso",
+    "text": "Grossmont's reconcile run is read and compared, then reread, displayed and merged; Cosumnes River and Cerro Coso follow, one college each. Glendale loads after its free read files, one reader checks it, and a small paid extraction runs."
   },
   "calls": [
     {
@@ -255,7 +255,12 @@
         "text": "Open Program Requirements"
       },
       "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
-      "link_text": "Open Sheet 187"
+      "link_text": "Open Sheet 187",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-13",
+        "words": "Sheet 191 card 2, reply count: \"count them but add a chip and note about the discrepancy. it is most likely a coding anomaly that will later be untangled and resolved\""
+      }
     },
     {
       "title": "Use the statewide Cal-GETC figure of 34 units?",
@@ -266,7 +271,12 @@
         "text": "Open Program Requirements"
       },
       "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
-      "link_text": "Open Sheet 187"
+      "link_text": "Open Sheet 187",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-13",
+        "words": "Sheet 187 card 5, his reply at 13:19Z: use the statewide 34 where a catalog names Cal-GETC and prints no figure."
+      }
     },
     {
       "title": "Apply the carry-basis migration whose push the permission check refused?",
@@ -274,7 +284,12 @@
       "if_no_reply": "The function stays as it is; a confirmation on a rescored record carries by the old rule.",
       "link": "https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ",
       "link_text": "Open Sheet 188",
-      "part": "reading"
+      "part": "reading",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-13",
+        "words": "Sheet 188 card 6, his reply at 13:20Z: apply it. Applied 13:27Z and read back 17:07Z."
+      }
     },
     {
       "title": "Deploy the extraction function's new error answer?",
@@ -286,13 +301,41 @@
       },
       "part": "reading",
       "link": "https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y",
-      "link_text": "Open Sheet 190"
+      "link_text": "Open Sheet 190",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-13",
+        "words": "Sheet 190 card 6, his go at 13:21Z. Merged in pull request 3227 and deployed in S648."
+      }
+    },
+    {
+      "title": "Merge or close pull request 3250, which would reverse Sheet 82 card 2",
+      "text": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way.",
+      "if_no_reply": "Pull request 3250 stays unmerged and your Sheet 82 ruling stands.",
+      "link": "https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU",
+      "link_text": "Open Sheet 193"
     }
   ],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-13T18:34:00Z",
+      "text": "College Data Collection opens its list at the lowest completeness first and says the order in words."
+    },
+    {
+      "at": "2026-11-13T18:22:00Z",
+      "text": "The statewide Cal-GETC 34 is a reconcile rule that runs only at a college whose settings quote its catalog naming Cal-GETC with no figure; 12 programs fill under the plan, and Grossmont's apply is under way."
+    },
+    {
+      "at": "2026-11-13T17:46:00Z",
+      "text": "College of the Desert's ranged read is merged: 12 programs reread, 7 loaded, 330 displayed. 10195 keeps the record it held, because the read took another program's section."
+    },
+    {
+      "at": "2026-11-13T17:32:00Z",
+      "text": "The extraction function answers 503 when the database is down; deployed."
+    },
     {
       "at": "2026-11-13T12:13:19Z",
       "text": "Glendale's records wait to load: a passing record is kept when a read finds no page for its program, unless the program is no longer active, and 19577, in teach-out, is dropped. A free read of three catalog tabs found why the two CIS programs never got their own pages; the reader is fixed, and a small paid re-extract comes next."
@@ -324,134 +367,6 @@
     {
       "at": "2026-11-13T07:28:29Z",
       "text": "The PDF reader merged: a refused program is filed as refused, and a program's own heading must match its full title and award. Santiago Canyon's proof bound 204 programs."
-    },
-    {
-      "at": "2026-11-13T07:28:00Z",
-      "text": "Diablo Valley holds 213 program records (was 88): its new listing found 214 of 244 programs, 197 pass the machine checks, and 125 were loaded. Its page waits on COBIx's check."
-    },
-    {
-      "at": "2026-11-13T07:15:00Z",
-      "text": "Glendale's catalog answered a bot-check page under load; the reader records it as a refusal, and a slow paid read went out. A free reread had read all 34 refused programs."
-    },
-    {
-      "at": "2026-11-13T02:18:00Z",
-      "text": "Santiago Canyon's display is held: COBIx's spot-check found 2 of 5 records filed under the wrong program. Its 192 rows stay, unchecked."
-    },
-    {
-      "at": "2026-11-13T02:12:00Z",
-      "text": "Diablo Valley has its first reading procedure; the free capture of its catalog was dispatched."
-    },
-    {
-      "at": "2026-11-13T02:00:00Z",
-      "text": "The first wave trial captured Feather River (81 of 81) and Palo Verde (96 of 96) at no cost; Copper Mountain's capture answered none of its pages and is held."
-    },
-    {
-      "at": "2026-11-13T01:55:00Z",
-      "text": "The scorer change and the dated-reads job merged on a green test."
-    },
-    {
-      "at": "2026-11-13T01:22:00Z",
-      "text": "North Orange Continuing Education's first read loaded: 78 records, 77 passing ($3.66)."
-    },
-    {
-      "at": "2026-11-13T01:05:00Z",
-      "text": "Santiago Canyon's first read loaded: 192 records, 149 passing by the tab's rule ($16.98)."
-    },
-    {
-      "at": "2026-11-13T00:58:00Z",
-      "text": "A wave now reads up to eight colleges in one dispatch, with a hard stop at $40 a college on actual cost."
-    },
-    {
-      "at": "2026-11-13T00:24:00Z",
-      "text": "A census gives each of the 6,758 programs without a passing record one cause and one lever; no closed list is the largest, 1,604."
-    },
-    {
-      "at": "2026-11-12T23:59:00Z",
-      "text": "Los Angeles City's 22 records its reread left out were loaded; 18 pass."
-    },
-    {
-      "at": "2026-11-12T12:35:00Z",
-      "text": "A passing record now stays when a new read passes but places fewer of its listed courses; the check caught American River's Gerontology record falling from 15 of 20 courses to 9."
-    },
-    {
-      "at": "2026-11-12T12:24:00Z",
-      "text": "American River's paid read ($3.13, 33 programs) moved 17 records to passing and none to failing; reread and loaded on its branch, 292 of 327 pass live. Los Angeles City's ($11.38, 145 programs) moved 39 to passing and none to failing; reread on its branch, 203 of 223 pass live."
-    },
-    {
-      "at": "2026-11-12T12:34:00Z",
-      "text": "College of the Desert's capture failed a third time: the host was unreachable after 1,016 seconds, so the college stays unread."
-    },
-    {
-      "at": "2026-11-12T11:30:00Z",
-      "text": "College of the Desert's catalog fetch limit was raised from 900 to 2,400 seconds: its 21 MB catalog ran past the old limit twice. A fresh capture on the new reader runs against a same-day baseline."
-    },
-    {
-      "at": "2026-11-12T11:22:00Z",
-      "text": "Shasta College's course outcomes loaded: 775 of 775 outlines read, 1,549 rows."
-    },
-    {
-      "at": "2026-11-12T11:16:00Z",
-      "text": "The PDF reader merged: a program that a renumbered catalog only moved keeps its record with no model call, a department's award list gives no heading, and a record that passes in full is replaced only by a read that passes in full."
-    },
-    {
-      "at": "2026-11-12T11:00:00Z",
-      "text": "De Anza College's outcomes trial is held: 11 of 12 pages came back empty, because its 2026-27 catalog does not answer the older course codes."
-    },
-    {
-      "at": "2026-11-12T07:24:00Z",
-      "text": "Rio Hondo College merged: transfer degrees take Cal-GETC's 34 units, summed from the catalog's printed areas; 276 of 288 records pass the machine checks."
-    },
-    {
-      "at": "2026-11-12T04:53:00Z",
-      "text": "Berkeley City College merged: local degrees take the catalog's 18 general education units and its electives rule. The reread replaced 16 live records, none held; 48 of 89 pass the machine checks."
-    },
-    {
-      "at": "2026-11-12T04:35:00Z",
-      "text": "West Valley College merged: transfer degrees take Cal-GETC's 34 units, summed from the catalog's printed areas. The reread replaced 34 live records, none held; 120 of 133 pass the machine checks."
-    },
-    {
-      "at": "2026-11-12T04:20:00Z",
-      "text": "Victor Valley College merged: noncredit hours, Cal-GETC 34 to 42 and the EMS tabs. 136 of 168 records pass the machine checks."
-    },
-    {
-      "at": "2026-11-11T22:43:14Z",
-      "text": "De Anza's load filed the 24 programs not yet on file and kept the other 197; 221 records posted, 205 pass the machine checks. The receipt names the rows the load added."
-    },
-    {
-      "at": "2026-11-11T19:50:45Z",
-      "text": "De Anza on its 2026-2027 catalog merged: course codes read as the page prints them, for De Anza alone, and the GE ranges with the 90 units as a minimum. 205 of 221 records pass the machine checks. The extraction cost $17.15 of Sam's standing forty dollar go. Two rereads replaced 197 live De Anza records; each receipt holds the values before."
-    },
-    {
-      "at": "2026-11-11T09:53:00Z",
-      "text": "Butte: two rereads replaced 92 rows with no errors; 138 of 164 records pass, up from 87. No row a person had checked was touched, and each receipt holds the values before."
-    },
-    {
-      "at": "2026-11-11T10:21:00Z",
-      "text": "Display build 052fb9eac1b5 is applied: 17,557 of 17,560 rows written, no errors; the 3 missing are Monterey Peninsula rows the table no longer holds."
-    },
-    {
-      "at": "2026-11-11T12:05:00Z",
-      "text": "De Anza no longer waits on Sam's hand-filed sheets: COBIx found the general education sheets on a second De Anza host and reported a 2026-2027 catalog on the college's catalog vendor. A procedure for refused reads is in the queue's rules: other hosts, the publisher's copy, an archive copy, then a comment to COBIx, before any card."
-    },
-    {
-      "at": "2026-11-11T12:30:00Z",
-      "text": "Redwoods: three steps for its local degrees, on the college's own 2026-2027 general education sheet (21 units, a 60-unit minimum) and its pages' words; 59 of 73 records pass on the branch, up from 53. The reread is dispatched."
-    },
-    {
-      "at": "2026-11-13T03:25:00Z",
-      "text": "The first live run of the display apply went out on North Orange Continuing Education alone: 78 of 78 rows written."
-    },
-    {
-      "at": "2026-11-13T03:33:00Z",
-      "text": "The whole display build 38a0fd8ed41f is applied: 17,595 rows written, 3 missing at Monterey Peninsula, no errors; 115 colleges now show one build."
-    },
-    {
-      "at": "2026-11-13T03:44:00Z",
-      "text": "The scorer's rescore ran at Coalinga, Grossmont, Pierce, Solano, San Bernardino Valley and East Los Angeles: 126 rows replaced, 62 programs now pass, none stopped passing."
-    },
-    {
-      "at": "2026-11-13T03:50:00Z",
-      "text": "Diablo Valley (88 records) and San Jose City (77) are loaded, unchecked; Glendale's registry row and procedure now read its 2026-27 Coursedog catalog."
     }
   ],
   "headline": [

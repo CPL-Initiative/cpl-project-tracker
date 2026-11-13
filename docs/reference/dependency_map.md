@@ -777,6 +777,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/prefix_fold_out/2026-09-03/held.json` | scripts: `kb/_prefix_fold_dryrun.py` | — |
 | `kb/prefix_fold_out/<date>/alias_map.json` | scripts: `kb/_esl_monthly_pass.py`, `kb/alias_chain.py` | — |
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
+| `kb/program_requirements_calgetc_34_plan.json` | scripts: `kb/_program_requirements_readings_measure.py` | scripts: `kb/_program_requirements_readings_measure.py` |
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
@@ -842,6 +843,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/industry_credential_skills.json` | scripts: `kb/_build_adopt_align.py`, `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/industry_credential_watch.json` | scripts: `kb/_build_it_ai_credential_catalog.py`, `kb/_diff_credential_watch.py` | — |
 | `kb/reference/issuer_family_subject.json` | scripts: `kb/_exhibit_subject_fill.py` | — |
+| `kb/reference/issuer_tags.json` | scripts: `kb/_build_exhibits_review.py` | — |
 | `kb/reference/map_college_roster_rules.json` | scripts: `excel_to_dashboard.py`, `kb/_audit_control_number_claims.py` | — |
 | `kb/reference/map_cpl_opportunities_verified.json` | tabs: `vision-2030` · scripts: `fact-sheet/_build_statewide_recs.py`, `kb/_build_adopt_page.py`, `kb/_verify_map_exhibit_links.py` | scripts: `kb/_verify_map_exhibit_links.py` |
 | `kb/reference/mis_district_college_codes.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
@@ -1202,6 +1204,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/roep_display_test.py` | workflows: `js-tests.yml` | — |
 | `tests/run.js` | workflows: `js-tests.yml` | — |
 | `tests/second_reader_test.py` | workflows: `js-tests.yml` | — |
+| `tests/sheet181_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
 | `tests/skyview_built_from_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/statewide_cid_hold_test.py` | workflows: `js-tests.yml` | — |
 | `tests/statewide_kpi_test.py` | workflows: `js-tests.yml` | — |
@@ -1472,5 +1475,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 932 file
-datasets · 195 external services · 583 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 935 file
+datasets · 195 external services · 584 consumers · 72 workflows · 41 tabs.

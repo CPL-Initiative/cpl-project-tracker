@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 643,
-  "moniker": "SkyLark",
-  "run": "Sam's session",
+  "session": 648,
+  "moniker": "SkyTanager",
+  "run": "the conductor, with Sam in session",
   "decider": "Sam",
-  "handoff": "docs/session_644_handoff.md",
+  "handoff": "docs/session_649_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -29,17 +29,35 @@
         "at": "2026-11-10",
         "words": "Correct the clear two, on Open Asks Sheet 180 card 6, and go with the recommendation on the other three."
       }
+    },
+    {
+      "title": "Three saved issuer rows read alifornia Veterinary Medical Association",
+      "text": "A person saved three rows on July 9; two drop the C of California and one sits on Water Treatment Facilities.",
+      "if_no_reply": "The rows stay as the person saved them.",
+      "link": "https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU",
+      "link_text": "Open Sheet 193"
+    },
+    {
+      "title": "Las Positas Industry Training Evidence cards: department and code, or course title",
+      "text": "22 cards, 17 still proposing department and course code; a course title reverses the November 12 ruling for them.",
+      "if_no_reply": "The cards keep department and code.",
+      "link": "https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU",
+      "link_text": "Open Sheet 193"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-12T22:15:43Z",
+  "written_at": "2026-11-13T18:42:19Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Thirty-eight cards want an official name",
-    "text": "The proposal step holds 38 industry certification cards until each carries the official name of the certificate or license, one web search each. The next nightly run rebuilds the review list, and a returned title is either on the acknowledged list or reported."
+    "title": "Merge the shared-title follow-up",
+    "text": "Pull request 3248 merges on a green test after COBIx's comments; the ASE bundle rename rides the next rename batch for Sam."
   },
   "changes": [
+    {
+      "at": "2026-11-13T18:12:00Z",
+      "text": "Issuers are named by an explicit tag list, an or between two tests is coded as written, a CompTIA title leaves out its exam series, and each proposal records how strong its name source is."
+    },
     {
       "at": "2026-11-12T21:16:02Z",
       "text": "Returned credential titles are now an acknowledged list. The three credit by exam titles that June saves brought back are on it, a title not on it raises a warning, and the Review view lists the renamed titles at its own address. Review list 12, unacknowledged 0. Pull request 3179 merged."
@@ -83,14 +101,6 @@
     {
       "at": "2026-11-12T00:54:43Z",
       "text": "Sheet 181's ruled renames applied: 22 bundle titles now read ASE Certificate Bundles: A4 + A5 and the like, and two pairs merged into one title each. Sam's 47 fold rows stayed on the old titles, 25 rows moved to the new ones, and one bot family tag on a merged twin was removed. The receipt's undo puts every value back."
-    },
-    {
-      "at": "2026-11-12T00:46:52Z",
-      "text": "The 13 rows people had saved on the eight titles the ASE plans emptied are back, under their own reviewers and stamps: 12 of Sam's and one map@rccd.edu issuer row. The four July reviewed ticks stay retired."
-    },
-    {
-      "at": "2026-11-11T23:38:21Z",
-      "text": "24 ASE bundle titles carry the ASE Certificate Bundles family as a field, beside Sam's saved folds, which stay as they are."
     }
   ]
 }

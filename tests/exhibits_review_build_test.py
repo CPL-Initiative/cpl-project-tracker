@@ -364,6 +364,320 @@ check("a proposal with no course code left is never touched",
 check("a college-issued title never counts as a named credential, nor does a one-word one",
       B.named_credential(["Intro to Cloud Computing"], IDX) is None and B.named_credential([""], IDX) is None)
 
+# COBIx on #3233 (6856966574): one shared ordinary word let an issuer's generic titles match on phrase alone. A title now
+# carries its issuer only by one of its tags, every word of a one- or two-word name, or half the words of a longer one
+# (issuer_named); the 11 proposals of #3233 rest on CNT 7285 (CompTIA, its one word) and EMS 20 (three of NREMT's five
+# words), and both still match.
+GENERIC = [{"t": "Water Treatment 1", "issuer": "California State Water Resources Control Board (SWRCB)", "locals": 4, "adopted": 3},
+           {"t": "Fire Inspector I", "issuer": "International Fire Service Accreditation Congress (IFSAC) / Pro Board",
+            "locals": 2, "adopted": 2},
+           {"t": "Traffic Control", "issuer": "American Traffic Safety Services Association (ATSSA)", "locals": 3, "adopted": 2}]
+check("a generic title shares one ordinary word with its issuer: it no longer counts as named",
+      all(B.named_credential([g["t"] + " for technicians"], GENERIC) is None for g in GENERIC)
+      and all(B._brand_words(g["issuer"]) & {w.lower() for w in g["t"].split()} for g in GENERIC))
+check("a title carrying its issuer's short tag or half its name still counts",
+      B.issuer_named("CompTIA Cloud+", "CompTIA")
+      and B.issuer_named("Emergency Medical Technician", "National Registry of Emergency Medical Technicians (NREMT)")
+      and B.issuer_named("ASE A5 — Brakes", "National Institute for Automotive Service Excellence (ASE)")
+      and B.issuer_named("Certified Pharmacy Technician (CPhT)", "Pharmacy Technician Certification Board (PTCB)")
+      and not B.issuer_named("Water Treatment 1", GENERIC[0]["issuer"]))
+check("a title sharing no word or tag with its issuer never passes",
+      not B.issuer_named("Cloud Computing Basics", "CompTIA") and not B.issuer_named("Brakes", "(ASE)"))
+
+# The review of #3241, and the conductor's rule: each issuer's tags are data (kb/reference/issuer_tags.json); a title
+# carries one as whole tokens, or every word of a one- or two-word name, or half the words of a longer one.
+TAGS = {"National Fire Protection Association (NFPA)": ["NFPA"], "American Welding Society (AWS)": ["AWS"],
+        "International Code Council (ICC)": ["ICC"], "California State Fire Training (SFT)": ["SFT"],
+        "IPC — Association Connecting Electronics Industries": ["IPC"], "The Walt Disney Company": ["Disney"],
+        "U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)": ["USGBC", "GBCI", "LEED"],
+        "California Department of Forestry and Fire Protection (CAL FIRE)": ["CAL FIRE"],
+        "National Registry of Emergency Medical Technicians (NREMT)": ["NREMT"], "CompTIA": []}
+check("one ordinary word of a name the joining words leave short no longer names it (NFPA, AWS, ICC, SFT)",
+      not any(B.issuer_named(t, i, TAGS) for t, i in (
+          ("Fire Inspector 1", "National Fire Protection Association (NFPA)"),
+          ("Shielded Metal Arc Welding (SMAW)", "American Welding Society (AWS)"),
+          ("California Residential Code", "International Code Council (ICC)"),
+          ("Fire Inspector 1A", "California State Fire Training (SFT)"))))
+check("a parenthetical of many words is no tag: 'Fire Officer II' is not Pro Board's on 'fire'",
+      not B.issuer_named("Fire Officer II", "Pro Board (National Board on Fire Service Professional Qualifications)", TAGS)
+      and B.issuer_named("Pro Board Fire Officer II", "Pro Board (National Board on Fire Service Professional Qualifications)", TAGS))
+check("a brand the data names counts as whole tokens: IPC, Disney, LEED, CAL FIRE; and only by the data",
+      B.issuer_named("IPC Soldering Certification", "IPC — Association Connecting Electronics Industries", TAGS)
+      and B.issuer_named("Disney Human Resource Management", "The Walt Disney Company", TAGS)
+      and B.issuer_named("LEED Green Associate", "U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)", TAGS)
+      and B.issuer_named("CAL FIRE Ethical Leadership", "California Department of Forestry and Fire Protection (CAL FIRE)", TAGS)
+      and not B.issuer_named("Disney Human Resource Management", "The Walt Disney Company", {})
+      and not B.issuer_named("Fire Ethical Leadership", "California Department of Forestry and Fire Protection (CAL FIRE)", TAGS)
+      and not B.issuer_named("DisneyLand Tour", "The Walt Disney Company", TAGS))
+check("CompTIA and NREMT still name theirs: a one-word name whole, three of five words of a longer one",
+      B.issuer_named("CompTIA Cloud+", "CompTIA", TAGS)
+      and B.issuer_named("Emergency Medical Technician", "National Registry of Emergency Medical Technicians (NREMT)", TAGS))
+DATA_TAGS = B.issuer_tags()
+def _all(issuer):
+    e = DATA_TAGS.get(issuer) or {}
+    return (e.get("tags") or []) + (e.get("acronyms") or [])
+
+
+check("the committed tag list carries the brands the review named, and drops the generic ones",
+      "Disney" in _all("The Walt Disney Company") and "IPC" in _all("IPC — Association Connecting Electronics Industries")
+      and "LEED" in _all("U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)")
+      and not any(t in ("ROP", "HS", "DUI", "GIS", "varies") for k in DATA_TAGS for t in _all(k)))
+check("an unreadable tag file gives no tags, never an error", B.issuer_tags("/nonexistent-root") == {})
+# The conductor on #3241: a real credential of its issuer that the rule dropped is a regression. The committed list
+# restores each (its own abbreviations and certification tracks) and leaves the generic titles out.
+SFT, EMSA = "California State Fire Training (SFT)", "California Emergency Medical Services Authority (EMSA)"
+REAL = [("Portfolio Management Professional (PfMP)", "Project Management Institute (PMI)"),
+        ("Program Management Professional (PgMP)", "Project Management Institute (PMI)"),
+        ("PCAP — Certified Associate in Python Programming", "Python Institute"),
+        ("Registered Dental Assistant (RDA) License", "Dental Board of California"),
+        ("Registered Dental Hygienist (RDH) License", "Dental Hygiene Board of California"),
+        ("Certified Occupational Therapy Assistant (COTA)", "National Board for Certification in Occupational Therapy (NBCOT)"),
+        ("Certified Payroll Professional (CPP)", "American Payroll Association (PayrollOrg)"),
+        ("Emergency Medical Technician (EMT) Certification", EMSA), ("Emergency Medical Responder (EMR)", EMSA),
+        ("Fire Inspector 1A", SFT), ("Fire Officer — Company Officer 2A", SFT), ("Chief Fire Officer 3A — Human Resource Management", SFT),
+        ("Fire Apparatus Driver/Operator 1A", SFT), ("Fire Investigation 1B", SFT), ("Training Instructor 1A", SFT),
+        ("Defense Language Proficiency Test (DLPT) — Spanish", "Defense Language Institute Foreign Language Center (DLIFLC)"),
+        ("Fire CDF Academy", "California Department of Forestry and Fire Protection (CAL FIRE)"),
+        ("Cosmetology License", "California Board of Barbering and Cosmetology"),
+        ("Biodynamic Farmer Foundation Year Certificate", "Biodynamic Association")]
+GENERIC_REF = [("Fire Technology", SFT), ("Fire Investigation", SFT), ("Fire Academy Conditioning", SFT),
+               ("Shielded Metal Arc Welding (SMAW)", "American Welding Society (AWS)"),
+               ("California Residential Code", "International Code Council (ICC)"),
+               ("Fire Inspector 1", "National Fire Protection Association (NFPA)"),
+               ("Architecture/Green Design: Principles and Practices", "U.S. Green Building Council (USGBC)"),
+               ("Agriculture Occupational Safety", "U.S. Occupational Safety and Health Administration (OSHA)"),
+               ("Basic Escrow Procedures", "California Escrow Association (CEA)")]
+check("every real credential the rule had dropped counts as named again under the committed list",
+      all(B.issuer_named(t, i) for t, i in REAL), [t for t, i in REAL if not B.issuer_named(t, i)])
+# The second readers of #3241: a name of three words or more needs a strict majority, so two of four words ("Dental
+# Assisting", DBCA) or a subject phrase (DRE's "Real Estate Finance") no longer name the issuer; a capitals tag matches
+# only in capitals; and the issuers' own credential abbreviations name their credentials.
+GENERIC_REF += [("Dental Assisting", "Dental Assisting Board of California (DBCA)"),
+                ("Real Estate Finance", "California Department of Real Estate (DRE)"),
+                ("Real Estate Principles and Practices", "California Department of Real Estate (DRE)"),
+                ("Fire Service In-Service Training — EMS", SFT),
+                ("Post Production Workflow", "California Commission on Peace Officer Standards and Training (POST)"),
+                ("Smart Home Installer", "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)"),
+                ("Bar Management Basics", "California Bureau of Automotive Repair (BAR)"),
+                ("Fire Officer II", "Pro Board (National Board on Fire Service Professional Qualifications)")]
+REAL += [("California Real Estate Broker License", "California Department of Real Estate (DRE)"),
+         ("Cisco Certified Network Associate (CCNA)", "Cisco"), ("CCNA Cybersecurity", "Cisco"),
+         ("Certified Ethical Hacker (CEH)", "EC-Council"), ("Computer Hacking Forensic Investigator (CHFI)", "EC-Council"),
+         ("Certified Nursing Assistant (CNA)", "California Department of Public Health (CDPH)"),
+         ("Basic Life Support (BLS) Certification", "American Heart Association (AHA)"),
+         ("LVN License", "California Board of Vocational Nursing and Psychiatric Technicians (BVNPT)"),
+         ("Licensed Clinical Social Worker (LCSW)", "California Board of Behavioral Sciences (BBS)"),
+         ("Licensed Marriage and Family Therapist (LMFT)", "California Board of Behavioral Sciences (BBS)"),
+         ("Licensed Professional Clinical Counselor (LPCC)", "California Board of Behavioral Sciences (BBS)"),
+         ("Certified SOLIDWORKS Associate (CSWA)", "Dassault Systèmes"),
+         ("ServSafe Food Protection Manager Certification", "National Restaurant Association"),
+         ("Class A Contractor License", "Contractors State License Board (CSLB)"),
+         ("Certified Pharmacy Technician (CPhT)", "Pharmacy Technician Certification Board (PTCB)"),
+         ("California Smog Check Repair Technician License", "California Bureau of Automotive Repair (BAR)"),
+         ("POST Basic Course", "California Commission on Peace Officer Standards and Training (POST)")]
+check("the issuers' own credential abbreviations name their credentials (round 2)",
+      all(B.issuer_named(t, i) for t, i in REAL), [t for t, i in REAL if not B.issuer_named(t, i)])
+ACR = {"X Commission (POST)": {"tags": [], "acronyms": ["POST"]}, "Food Group": {"tags": ["ServSafe"], "acronyms": []},
+       "Dassault Systèmes": {"tags": ["SOLIDWORKS"], "acronyms": ["CSWA"]},
+       "California Department of Forestry and Fire Protection (CAL FIRE)": {"tags": ["CAL FIRE"], "acronyms": ["CDF"]}}
+check("an acronym the data marks matches only as written; a phrase tag in any case (COBIx, 17:42Z)",
+      B.issuer_named("POST Basic Course", "X Commission (POST)", ACR)
+      and not B.issuer_named("Post Basic Course", "X Commission (POST)", ACR)
+      and B.issuer_named("servsafe manager", "Food Group", ACR)
+      and B.issuer_named("Certified SolidWorks Associate", "Dassault Systèmes", ACR)
+      and B.issuer_named("Cal Fire Ethical Leadership", "California Department of Forestry and Fire Protection (CAL FIRE)", ACR)
+      and not B.issuer_named("Fire cdf academy", "California Department of Forestry and Fire Protection (CAL FIRE)", ACR))
+check("the committed data marks the acronyms: POST is one, SOLIDWORKS and CAL FIRE are phrase tags",
+      "POST" in (DATA_TAGS["California Commission on Peace Officer Standards and Training (POST)"]["acronyms"])
+      and "SOLIDWORKS" in DATA_TAGS["Dassault Systèmes"]["tags"]
+      and "CAL FIRE" in DATA_TAGS["California Department of Forestry and Fire Protection (CAL FIRE)"]["tags"])
+# COBIx on #3241 (17:42Z) and the conductor: a generic subject phrase is no SFT tag; a numbered course is.
+check("'Fire Prevention Technology' names no issuer; 'Fire Prevention 1A' and 'Fire Control 6' still name SFT",
+      not B.issuer_named("Fire Prevention Technology", SFT) and B.issuer_named("Fire Prevention 1A", SFT)
+      and B.issuer_named("Fire Control 6: Wildland Firefighting Essentials", SFT)
+      and not B.issuer_named("Fire Management Basics", SFT) and B.issuer_named("Fire Management 1", SFT)
+      and B.issuer_named("Fire Investigation 1B", SFT) and not B.issuer_named("Fire Investigation", SFT))
+# A title several issuers carry (case, spacing and I/1 folded) names none of them unless the text carries that
+# issuer's acronym (the conductor's decision on COBIx's finding: "a bare title several issuers share goes to a person").
+SH_TAGS = {SFT: {"tags": ["Fire Inspector", "Fire Instructor"], "acronyms": ["SFT"]},
+           "National Fire Protection Association (NFPA)": {"tags": [], "acronyms": ["NFPA"]},
+           "International Fire Service Accreditation Congress (IFSAC) / Pro Board": {"tags": ["Fire Instructor"], "acronyms": ["IFSAC"]}}
+SH_IDX = [{"t": "Fire Instructor 1", "issuer": SFT, "locals": 5, "adopted": 3},
+          {"t": "Fire Inspector 1", "issuer": SFT, "locals": 5, "adopted": 3}]
+SH_CREDS = {"Fire Instructor 1": [{"issuing_agency": SFT}, {"issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board"}],
+            "Fire Inspector 1": [{"issuing_agency": SFT}], "Fire Inspector I": [{"issuing_agency": "National Fire Protection Association (NFPA)"}],
+            "Fire Instructor 2": [{"issuing_agency": SFT}, {"issuing_agency": "California Community Colleges"}]}
+SHARED = B.shared_titles(SH_CREDS, SH_IDX)
+check("titles fold for case, spacing and I/1; a college-issued twin is no second issuer",
+      B.title_key("Fire  Inspector I") == B.title_key("fire inspector 1") and B.title_key("CompTIA A+") != B.title_key("CompTIA A")
+      and len(SHARED[B.title_key("Fire Inspector 1")]) == 2 and len(SHARED[B.title_key("Fire Instructor 2")]) == 1)
+check("a bare shared title names no one; the text's own acronym picks its issuer",
+      B.named_credential(["Fire Instructor 1"], SH_IDX, SH_TAGS, SHARED) is None
+      and B.named_credential(["Fire Inspector 1 for company officers"], SH_IDX, SH_TAGS, SHARED) is None
+      and (B.named_credential(["SFT Fire Instructor 1"], SH_IDX, SH_TAGS, SHARED) or {}).get("issuer") == SFT
+      and B.named_credential(["sft Fire Instructor 1"], SH_IDX, SH_TAGS, SHARED) is None)
+# COBIx on #3241 (6860799161, 6860780079): only a credential's issuer makes a title shared (a school or trainer twin
+# does not, and two spellings of one issuer are one); the acronym that settles a shared title counts only in the
+# course's own title, and "NFPA 1041" there is a standard's number, not the issuer's mark.
+CNT_TAGS = {SFT: {"tags": ["Fire Instructor"], "acronyms": ["SFT"]}, "Fontana High School": {"tags": [], "acronyms": []},
+            "National Fire Protection Association (NFPA)": {"tags": [], "acronyms": ["NFPA"]},
+            "International Fire Service Accreditation Congress (IFSAC) / Pro Board": {"tags": [], "acronyms": ["IFSAC"]}}
+COUNTS = B.credential_issuers(CNT_TAGS, ["Some Vendor"])
+TW_CREDS = {"Fire Instructor 1": [{"issuing_agency": SFT}, {"issuing_agency": "Fontana High School"}],
+            "Fire Instructor 2": [{"issuing_agency": SFT}, {"issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board"}],
+            "Certified Payroll Professional (CPP)": [{"issuing_agency": "American Payroll Association (PayrollOrg)"}, {"issuing_agency": "PayrollOrg"}],
+            "Vendor Cert": [{"issuing_agency": "Some Vendor"}, {"issuing_agency": SFT}]}
+TW = B.shared_titles(TW_CREDS, [], COUNTS)
+check("a school twin is no second issuer; a catalog issuer is; two spellings of one issuer are one",
+      len(TW.get(B.title_key("Fire Instructor 1"), ())) == 1 and len(TW[B.title_key("Fire Instructor 2")]) == 2
+      and len(TW[B.title_key("Vendor Cert")]) == 2 and len(B.shared_titles(TW_CREDS, [])[B.title_key("Certified Payroll Professional (CPP)")]) == 1
+      and B.issuer_key("PayrollOrg", {"PayrollOrg": "American Payroll Association (PayrollOrg)"}) == B.issuer_key("American Payroll Association (APA)"))
+LIVE_COUNTS = B.credential_issuers()
+check("NREMT and EMSA both still count, so Emergency Medical Technician stays shared (EMS 20 goes to a person)",
+      B.issuer_key("National Registry of Emergency Medical Technicians (NREMT)") in LIVE_COUNTS
+      and B.issuer_key("California Emergency Medical Services Authority (EMSA)") in LIVE_COUNTS
+      and B.issuer_key("Fontana High School") not in LIVE_COUNTS and B.issuer_key("Riverside County Office of Education") not in LIVE_COUNTS)
+SH2 = B.shared_titles({"Fire Instructor 1": [{"issuing_agency": SFT}, {"issuing_agency": "National Fire Protection Association (NFPA)"}]},
+                      SH_IDX, COUNTS)
+check("the settling acronym counts only in the course's own title, and an acronym before a standard's number is no mark",
+      B.named_credential(["Fire Instructor 1", "3 units, SFT Fire Instructor 1"], SH_IDX, SH_TAGS, SH2, own=["Fire Instructor 1"]) is None
+      and (B.named_credential(["SFT Fire Instructor 1"], SH_IDX, SH_TAGS, SH2, own=["SFT Fire Instructor 1"]) or {}).get("issuer") == SFT
+      and not B._own_acronym("NFPA 1041 Fire Instructor 1", "NFPA", "Fire Instructor 1")
+      and B._own_acronym("NFPA Fire Instructor 1", "NFPA", "Fire Instructor 1")
+      and B._own_acronym("NFPA 1670 Swiftwater", "NFPA", "Swiftwater & Flood Rescue Operations (NFPA 1670)"))
+check("a name of three or four words needs a strict majority: two of four is not enough, three of four is",
+      not B.issuer_named("Dental Assisting", "Dental Assisting Board of California (DBCA)", {})
+      and B.issuer_named("Dental Assisting Board Exam", "Dental Assisting Board of California (DBCA)", {}))
+check("…and the generic titles stay out", not any(B.issuer_named(t, i) for t, i in GENERIC_REF),
+      [t for t, i in GENERIC_REF if B.issuer_named(t, i)])
+# CLEP and DSST titles now count as named (their tags), but a credit-by-exam card never asks named_credential
+# (d-exhibits-course-title-gate-s647): it keeps its course title and the college as issuer.
+IDX_CLEP = [{"t": "CLEP College Algebra", "issuer": "College Board", "locals": 3, "adopted": 3}]
+ex_clep = {"ids": ["MAPCXS-CA1-1-001"], "art": ["Las Positas College"], "types": [],
+           "recs": [["CNT 7285", "3 units in CNT 7285 CLEP College Algebra"]]}
+got_clep = B.leftover_code_proposal(dict(prop), ex_clep, B.local_courses(ex_clep, CIX), IDX_CLEP, "Credit by Exam CNT 7285", wording=True)
+check("a credit-by-exam card whose credit line names a CLEP exam keeps its course title, never the CLEP title",
+      B.issuer_named("CLEP College Algebra", "College Board") and got_clep and got_clep["source"] == B.SRC_COURSE
+      and got_clep["title"] != "CLEP College Algebra", got_clep)
+
+# The review of #3241 on the series strip: Network+, a list joined by "+", "or" or a short second number, any case, a
+# trailing "Exam" or leading "Version"; a title that is only a series, or one the strip would leave a joiner in, stays.
+SA = B.cert_naming.series_aside
+check("Network+, lists, short pairs, case, Exam and Version all strip clean",
+      SA("CompTIA Network+ N10-009", "CompTIA") == ("CompTIA Network+", ["N10-009"])
+      and SA("CompTIA A+ 220-1101 + 220-1102") == ("CompTIA A+", ["220-1101", "220-1102"])
+      and SA("CompTIA Cloud+ (CV0-003 or CV0-004)") == ("CompTIA Cloud+", ["CV0-003", "CV0-004"])
+      and SA("CompTIA A+ 220-1101/1102") == ("CompTIA A+", ["220-1101", "220-1102"])
+      and SA("CompTIA CySA+ cs0-003") == ("CompTIA CySA+", ["CS0-003"])
+      and SA("CompTIA Cloud+ CV0-004 Exam") == ("CompTIA Cloud+", ["CV0-004"])
+      and SA("CompTIA Security+ Version SY0-701") == ("CompTIA Security+", ["SY0-701"]))
+check("a title that is only a series, or one left with a joiner or empty parentheses, comes back as it came, no alias",
+      SA("SY0-701", "CompTIA") == ("SY0-701", []) and SA("Exam SY0-701", "CompTIA") == ("Exam SY0-701", [])
+      and SA("CompTIA A+ 220-1101 or") == ("CompTIA A+ 220-1101 or", [])
+      and SA("CompTIA A+ (220-1101 and)") == ("CompTIA A+ (220-1101 and)", []))
+check("round 2: the issuer and a series alone come back as they came; an Exam beside the parentheses strips with them",
+      SA("CompTIA N10-009", "CompTIA") == ("CompTIA N10-009", []) and SA("CompTIA SY0-701") == ("CompTIA SY0-701", [])
+      and SA("CompTIA 220-1101/1102") == ("CompTIA 220-1101/1102", [])
+      and SA("CompTIA Network+ Exam (N10-009)") == ("CompTIA Network+", ["N10-009"])
+      and SA("CompTIA Security+ Certification Exam (SY0-701)") == ("CompTIA Security+ Certification", ["SY0-701"])
+      and SA("CompTIA A+ Certification (220-1101, 220-1102) Exams") == ("CompTIA A+ Certification", ["220-1101", "220-1102"]))
+check("round 2: only CompTIA's shapes are a series, and every series CompTIA's catalog rows carry still is",
+      SA("CompTIA A+ Room B2-104") == ("CompTIA A+ Room B2-104", [])
+      and all(B.cert_naming.SERIES.fullmatch(k) for k in ("FC0-U71", "CLO-002", "SY0-701", "CY0-001", "SOT-001",
+                                                            "DA0-002", "DY0-001", "DS0-002", "N10-009", "220-1102", "CV0-004")))
+check("a course title is never stripped: canonical(series=False) leaves it as the course has it",
+      B.cert_naming.canonical("CompTIA Security+ SY0-701 Prep", "", series=False) == "CompTIA Security+ SY0-701 Prep"
+      and B.cert_naming.canonical("CompTIA Security+ SY0-701 Prep", "") == "CompTIA Security+ Prep")
+
+# The review of #3241: an official name taken from the reference reads partial though settle() gave it no in_use.
+check("record_name_source: an official name in the reference reads partial, one outside it limited, a course title none",
+      B.record_name_source({"title": "Emergency Medical Technician", "issuer": "NREMT", "source": B.SRC_OFFICIAL}, {},
+                           {"Emergency Medical Technician"}) == {"url": "", "level": "partial"}
+      and B.record_name_source({"title": "New Cert", "issuer": "X", "source": B.SRC_OFFICIAL}, {}, set()) == {"url": "", "level": "limited"}
+      and B.record_name_source({"title": "A Course", "source": B.SRC_COURSE}, {}, {"A Course"}) is None
+      and B.record_name_source({}, None, None) is None)
+check("the 11 proposals of #3233 hold: CNT 7285 and EMS 20 still take their official credential",
+      (B.leftover_code_proposal(prop, ex_cnt, lc, IDX2 + GENERIC, "Industry Training Evidence for CNT 7285", wording=True) or {}).get("title")
+      == "CompTIA Cloud+"
+      and (B.leftover_code_proposal({"title": "Emergency Medical Services (EMS 20)", "issuer": ""}, ex_ems,
+                                    B.local_courses(ex_ems, CIX), IDX2 + GENERIC, "Industry Training Evidence for EMS 20",
+                                    wording=True) or {}).get("title") == "Emergency Medical Technician")
+
+# COBIx on #3223 (6859080666), taken by the S648 conductor: a CompTIA exam series is a search alias, never in the title.
+SER = "CompTIA Cloud+ CV0-004 Exam"
+fix2 = json.loads(json.dumps(FIX))
+fix2["kb/cer_procedures_out/latest.json"]["needs_you"].append(
+    {"raw_title": SER, "why": "the classifier is unsure (0.80)", "colleges": ["Norco College"],
+     "proposal": {"title": "CompTIA Cloud+ (CV0-004)", "issuer": "CompTIA", "confidence": 0.8,
+                  "alternates": ["CompTIA Cloud+ CV0-004", "Cloud+ Certification"]}})
+fix2["kb/exhibit_audit/latest.json"]["title_cards"].append({"raw_title": SER, "unified_title": None, "tags": ["unclassified_in_map"]})
+with tempfile.TemporaryDirectory() as root2:
+    for rel, obj in fix2.items():
+        write(root2, rel, obj)
+    write(root2, "statewide_data.js", STATEWIDE, js="CPL_STATEWIDE")
+    write(root2, "unified_courses_members.js", MEMBERS, js="CPL_UNIFIED_MEMBERS")
+    write(root2, "statewide_prescriptive.js", PRESCRIPTIVE, js="CPL_STATEWIDE_PRESCRIPTIVE")
+    ser = {h["raw"]: h for h in B.build(root2)[0]["held"]}.get(SER) or {}
+check("a CompTIA proposal loses its exam series to series_aliases, and no alternate carries one",
+      ser.get("title") == "CompTIA Cloud+" and ser.get("series_aliases") == ["CV0-004"]
+      and not any("CV0" in a for a in ser.get("alternates") or []) and ser.get("proposal_source") != B.SRC_OFFICIAL, ser)
+check("a title from any other issuer keeps a code that looks like a series",
+      B.cert_naming.series_aside("Cisco CCNA 200-301", "Cisco") == ("Cisco CCNA 200-301", [])
+      and B.cert_naming.series_aside("CompTIA A+ 220-1101 and 220-1102") == ("CompTIA A+", ["220-1101", "220-1102"])
+      and B.cert_naming.canonical("CompTIA Security+ — SY0-701", "CompTIA") == "CompTIA Security+")
+
+# The name source (COBIx on #3223, taken by the S648 conductor: d-official-name-source-confidence-s648). A fixture catalog:
+# the issuer's own page, an aggregator's page, and a row with no link.
+CAT = {"credentials": [
+    {"issuer": "CompTIA", "name": "CompTIA Cloud+", "url": "https://www.comptia.org/en-us/certifications/cloud/"},
+    {"issuer": "Some Board (SB)", "name": "Board Certified Tech", "url": "https://www.careeronestop.org/x?id=1"},
+    {"issuer": "Other Body", "name": "Other Cert", "url": ""}]}
+URLS = B.official_urls(CAT)
+check("strong: the catalog holds the issuer's own page for the name (case and spacing folded, issuer tag dropped)",
+      B.name_source("compTIA  cloud+", "CompTIA", URLS) == {"url": "https://www.comptia.org/en-us/certifications/cloud/", "level": "strong"}
+      and B.name_source("Board Certified Tech", "Some Board", URLS)["level"] != "strong", URLS)
+check("an aggregator's link or no link is no issuer page: partial when a sibling exhibit carries it, else limited",
+      B.name_source("Board Certified Tech", "Some Board (SB)", URLS, {"title": "Board Certified Tech", "locals": 3})
+      == {"url": "", "level": "partial"}
+      and B.name_source("Other Cert", "Other Body", URLS) == {"url": "", "level": "limited"})
+check("a record with no source reads limited, never strong, and never raises",
+      all(B.name_source(t, i, u, iu) == {"url": "", "level": "limited"}
+          for t, i, u, iu in (("", "", {}, None), (None, None, None, None), ("CompTIA Cloud+", "CompTIA", None, None),
+                              ("CompTIA Cloud+", "", URLS, None)))
+      and B.official_urls(None) == {} and B.official_urls({"credentials": [{}]}) == {})
+check("the record's level is one of three words", set(B.NAME_SOURCE_LEVELS) == {"strong", "partial", "limited"})
+fix3 = json.loads(json.dumps(fix2))
+fix3[B.CATALOG] = CAT
+# A course title that names a CompTIA series goes out as the course has it (the review of #3241).
+PREP = "Security Plus Prep Course"
+fix3["kb/cer_procedures_out/latest.json"]["needs_you"].append(
+    {"raw_title": PREP, "why": "the classifier is unsure (0.80)", "colleges": ["Norco College"],
+     "proposal": {"title": "", "issuer": "California Community Colleges", "confidence": 0.8}})
+fix3["kb/unclassified_suggestions.json"]["aligned"][PREP] = {"kind": "mid", "id": "CSIS M1999",
+                                                              "title": "CompTIA Security+ SY0-701 Prep", "code": "CIS 60",
+                                                              "college": "Norco College"}
+fix3["kb/exhibit_audit/latest.json"]["title_cards"].append({"raw_title": PREP, "unified_title": None, "tags": ["unclassified_in_map"]})
+with tempfile.TemporaryDirectory() as root3:
+    for rel, obj in fix3.items():
+        write(root3, rel, obj)
+    sw3 = json.loads(json.dumps(STATEWIDE))
+    sw3["exhibits"].append({"exhibit_ids": ["MAPICI-CCX-1-001"], "raw_titles": [SER], "adopter_names": ["Norco College"],
+                            "potential_names": [], "credit_recs": [], "adopter_rec_idx": {}})
+    write(root3, "statewide_data.js", sw3, js="CPL_STATEWIDE")
+    write(root3, "unified_courses_members.js", MEMBERS, js="CPL_UNIFIED_MEMBERS")
+    write(root3, "statewide_prescriptive.js", PRESCRIPTIVE, js="CPL_STATEWIDE_PRESCRIPTIVE")
+    h3 = {h["raw"]: h for h in B.build(root3)[0]["held"]}
+srcd = [h for h in h3.values() if "name_source" in h]
+check("the builder marks only an official name or a title in use, each with a level, and the CompTIA card reads strong",
+      all(h["proposal_source"] in B.NAMED_SOURCES and h["name_source"]["level"] in B.NAME_SOURCE_LEVELS for h in srcd)
+      and all("name_source" not in h for h in h3.values() if h["proposal_source"] not in B.NAMED_SOURCES)
+      and h3[SER]["proposal_source"] == B.SRC_OFFICIAL and h3[SER]["name_source"]["level"] == "strong"
+      and h3[SER]["name_source"]["url"].startswith("https://www.comptia.org/"),
+      [(h["raw"], h["proposal_source"], h.get("name_source")) for h in h3.values()])
+check("a course-title proposal keeps the series its course names, with no series alias",
+      h3.get(PREP, {}).get("title") == "CompTIA Security+ SY0-701 Prep" and h3[PREP]["proposal_source"] == B.SRC_COURSE
+      and "series_aliases" not in h3[PREP], h3.get(PREP))
+
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))
 sys.exit(1 if failed else 0)

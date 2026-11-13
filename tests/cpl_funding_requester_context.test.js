@@ -152,7 +152,7 @@ check("S4: both lookups compute the MAP users' name keys once, in a materialized
   const m = decodeURIComponent(mails[0] || "");
   check("E5: Copy and open draft opens a draft to the requester alone; a browser that cannot copy gets the plain text",
     mails.length === 1 && m.indexOf("mailto:ctb@college.edu?subject=Accepted: participation confirmation, ") === 0 &&
-    /&body=Hello Cari Torres-Benavides,/.test(m) && !/cc=/.test(m) &&
+    /&body=Hello Cari Torres-Benavides,/.test(m) && !/[?&]cc=/.test(m) &&
     /would not copy/.test(flat(dlg.querySelector(".cplfund-maildlg-msg"))));
   dlg.dispatchEvent(new dom.window.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
   check("E6: Escape closes the window", !doc.getElementById("cplfund-maildlg"));
