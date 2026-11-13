@@ -1,0 +1,488 @@
+{
+ "college": "Palo Verde College",
+ "catalog_url": "https://catalog.paloverde.edu/",
+ "platform": "acalog",
+ "catalog_year": "2026-2027",
+ "programs": 69,
+ "with_closed_list": 68,
+ "started": "2026-11-13T01:20:10Z",
+ "acalog": {
+  "base": "https://catalog.paloverde.edu",
+  "start_status": 200,
+  "catoid": 2,
+  "start_links": 127,
+  "catalog_menu": [
+   [
+    "2",
+    "Palo Verde College 2026-2027 Catalog",
+    true
+   ],
+   [
+    "1",
+    "Course Catalog 2025-2026 [ARCHIVED CATALOG]",
+    false
+   ]
+  ],
+  "catalog_year_read": "2026-2027",
+  "catalog_year_from": "catalog menu",
+  "start_menu": [
+   [
+    "Presidents Welcome",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=59"
+   ],
+   [
+    "Palo Verde College Board of Trustees",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=60"
+   ],
+   [
+    "Foundation Board of Directors",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=61"
+   ],
+   [
+    "Important Dates Fall 2026",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=62"
+   ],
+   [
+    "Important Dates Spring 2027",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=63"
+   ],
+   [
+    "Important Dates Summer 2027",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=64"
+   ],
+   [
+    "About this Catalog",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=65"
+   ],
+   [
+    "Programs",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95"
+   ],
+   [
+    "Courses Information",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=97"
+   ],
+   [
+    "Courses Descriptions",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94"
+   ],
+   [
+    "Accreditation",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=66"
+   ],
+   [
+    "Non-Discrimination Policy",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=67"
+   ],
+   [
+    "EEO Plan Policy Statement",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=68"
+   ],
+   [
+    "Academic Freedom Statement",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=69"
+   ],
+   [
+    "Mission, Vision, and Philosophy of Education",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=70"
+   ],
+   [
+    "Our Values",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=71"
+   ],
+   [
+    "Institutional Learning Outcomes",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=72"
+   ],
+   [
+    "About Palo Verde College",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=73"
+   ],
+   [
+    "Diversity and Student Support",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=74"
+   ],
+   [
+    "History of Palo Verde College",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=75"
+   ],
+   [
+    "Admissions Procedures",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=76"
+   ],
+   [
+    "Fees and Expenses/Tuition",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=77"
+   ],
+   [
+    "Counseling and Support Services",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=79"
+   ],
+   [
+    "Veterans Services",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=80"
+   ],
+   [
+    "Financial Aid",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=81"
+   ],
+   [
+    "Instructional Support Services",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=82"
+   ],
+   [
+    "Student Life",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=83"
+   ],
+   [
+    "Academic Regulations and Standards",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=84"
+   ],
+   [
+    "Students Rights and Responsibilities",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=85"
+   ],
+   [
+    "Honors and Awards",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=86"
+   ],
+   [
+    "Requirements for Certificates, Degrees, and University Trans",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87"
+   ],
+   [
+    "General Information About Transferring",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=89"
+   ],
+   [
+    "Organization of the College District",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=90"
+   ],
+   [
+    "Full Time Faculty and Educational Administrators",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=91"
+   ],
+   [
+    "Glossary of Terms",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=92"
+   ],
+   [
+    "Link",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95"
+   ],
+   [
+    "Link",
+    "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94"
+   ]
+  ],
+  "sitemap_status": 404,
+  "sitemap_access": "not_found",
+  "sitemap_programs": 0,
+  "program_navs": [
+   "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95",
+   "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87"
+  ],
+  "navs_read": 2,
+  "navs": [
+   {
+    "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95",
+    "access": "ok",
+    "status": 202,
+    "title": "Programs - Palo Verde College",
+    "links": 224,
+    "sample": [
+     [
+      "Skip to Content",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95#select_catalog"
+     ],
+     [
+      "Locations",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95#"
+     ],
+     [
+      "Admissions",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95#"
+     ],
+     [
+      "Paying for College",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95#"
+     ],
+     [
+      "Academics",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95#"
+     ],
+     [
+      "Program Maps",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95#"
+     ],
+     [
+      "Student Life",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95#"
+     ],
+     [
+      "About Us",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95#"
+     ],
+     [
+      "Presidents Welcome",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=59"
+     ],
+     [
+      "Palo Verde College Board of Trustees",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=60"
+     ],
+     [
+      "Foundation Board of Directors",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=61"
+     ],
+     [
+      "Important Dates Fall 2026",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=62"
+     ],
+     [
+      "Important Dates Spring 2027",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=63"
+     ],
+     [
+      "Important Dates Summer 2027",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=64"
+     ],
+     [
+      "About this Catalog",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=65"
+     ],
+     [
+      "Programs",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95"
+     ],
+     [
+      "Courses Information",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=97"
+     ],
+     [
+      "Courses Descriptions",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94"
+     ],
+     [
+      "Accreditation",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=66"
+     ],
+     [
+      "Non-Discrimination Policy",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=67"
+     ],
+     [
+      "EEO Plan Policy Statement",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=68"
+     ],
+     [
+      "Academic Freedom Statement",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=69"
+     ],
+     [
+      "Mission, Vision, and Philosophy of Education",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=70"
+     ],
+     [
+      "Our Values",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=71"
+     ],
+     [
+      "Institutional Learning Outcomes",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=72"
+     ]
+    ]
+   },
+   {
+    "url": "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87",
+    "access": "ok",
+    "status": 200,
+    "title": "Requirements for Certificates, Degrees, and University Transfer - Palo Verde Col",
+    "links": 139,
+    "sample": [
+     [
+      "Skip to Content",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87#select_catalog"
+     ],
+     [
+      "Locations",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87#"
+     ],
+     [
+      "Admissions",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87#"
+     ],
+     [
+      "Paying for College",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87#"
+     ],
+     [
+      "Academics",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87#"
+     ],
+     [
+      "Program Maps",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87#"
+     ],
+     [
+      "Student Life",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87#"
+     ],
+     [
+      "About Us",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=87#"
+     ],
+     [
+      "Presidents Welcome",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=59"
+     ],
+     [
+      "Palo Verde College Board of Trustees",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=60"
+     ],
+     [
+      "Foundation Board of Directors",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=61"
+     ],
+     [
+      "Important Dates Fall 2026",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=62"
+     ],
+     [
+      "Important Dates Spring 2027",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=63"
+     ],
+     [
+      "Important Dates Summer 2027",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=64"
+     ],
+     [
+      "About this Catalog",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=65"
+     ],
+     [
+      "Programs",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=95"
+     ],
+     [
+      "Courses Information",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=97"
+     ],
+     [
+      "Courses Descriptions",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=94"
+     ],
+     [
+      "Accreditation",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=66"
+     ],
+     [
+      "Non-Discrimination Policy",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=67"
+     ],
+     [
+      "EEO Plan Policy Statement",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=68"
+     ],
+     [
+      "Academic Freedom Statement",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=69"
+     ],
+     [
+      "Mission, Vision, and Philosophy of Education",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=70"
+     ],
+     [
+      "Our Values",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=71"
+     ],
+     [
+      "Institutional Learning Outcomes",
+      "https://catalog.paloverde.edu/content.php?catoid=2&navoid=72"
+     ]
+    ]
+   }
+  ],
+  "program_pages": 96,
+  "listing_failed": 0
+ },
+ "pages_read": 96,
+ "pages_listed": 96,
+ "pages_answered": 96,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "loads": 100,
+ "seconds": 518.6,
+ "found": 66,
+ "by_method": {
+  "no_closed_list": 1,
+  "not_found": 1,
+  "page_claimed": 1,
+  "sitemap_page": 66
+ },
+ "shared_pages": {
+  "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=108&print": [
+   "32252",
+   "43196"
+  ],
+  "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=110&print": [
+   "39853",
+   "43010"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "09816",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=138&print",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1268,
+     "content": 30746,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "04436",
+   "title": "Business Management",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=134&print",
+    "https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=117&print"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 5,
+  "1.0": 61
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/palo_verde",
+  "kept": 66,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": []
+ },
+ "run": "43343741511"
+}

@@ -1,0 +1,155 @@
+{
+ "wave": "s644trial",
+ "run": "43343741511",
+ "extract": false,
+ "limit_usd": 40.0,
+ "colleges": 3,
+ "total_cost_usd": 0,
+ "total_price_usd": 0,
+ "unpriced": 0,
+ "unfinished_allowed_usd": 0,
+ "ready": [],
+ "rows": [
+  {
+   "college": "Feather River College",
+   "run": "43343741511",
+   "hosts": [
+    "frc.curriqunet.com"
+   ],
+   "would_extract": 0,
+   "price_usd": 0.0,
+   "price_why": "extract 0: capture and price only",
+   "extracted": 0,
+   "cost_usd": 0,
+   "unpriced": 0,
+   "not_sent": 0,
+   "fail_to_pass": 0,
+   "pass_to_fail": 0,
+   "lost_coverage": 0,
+   "kept": 0,
+   "new": 0,
+   "records": 45,
+   "main_records": 45,
+   "pages": {
+    "listed": 81,
+    "answered": 81,
+    "share": 1.0,
+    "partial": false,
+    "why": null
+   },
+   "outcomes": {
+    "capture": "success",
+    "extract": "skipped",
+    "file": "success"
+   },
+   "verdict": "captured",
+   "detail": {
+    "fail_to_pass": [],
+    "pass_to_fail": [],
+    "lost_coverage": [],
+    "new": [],
+    "not_sent": []
+   },
+   "slug": "feather_river",
+   "attempt": 1,
+   "attempts": [
+    1
+   ],
+   "filed": true
+  },
+  {
+   "college": "Palo Verde College",
+   "run": "43343741511",
+   "hosts": [
+    "catalog.paloverde.edu"
+   ],
+   "would_extract": 0,
+   "price_usd": 0.0,
+   "price_why": "extract 0: capture and price only",
+   "extracted": 0,
+   "cost_usd": 0,
+   "unpriced": 0,
+   "not_sent": 0,
+   "fail_to_pass": 0,
+   "pass_to_fail": 0,
+   "lost_coverage": 0,
+   "kept": 0,
+   "new": 0,
+   "records": 66,
+   "main_records": 66,
+   "pages": {
+    "listed": 96,
+    "answered": 96,
+    "share": 1.0,
+    "partial": false,
+    "why": null
+   },
+   "outcomes": {
+    "capture": "success",
+    "extract": "skipped",
+    "file": "success"
+   },
+   "verdict": "captured",
+   "detail": {
+    "fail_to_pass": [],
+    "pass_to_fail": [],
+    "lost_coverage": [],
+    "new": [],
+    "not_sent": []
+   },
+   "slug": "palo_verde",
+   "attempt": 1,
+   "attempts": [
+    1
+   ],
+   "filed": true
+  },
+  {
+   "college": "Copper Mountain College",
+   "run": "43343741511",
+   "hosts": [
+    "cmccd.edu"
+   ],
+   "would_extract": 0,
+   "price_usd": 0.0,
+   "price_why": "extract 0: capture and price only",
+   "extracted": 0,
+   "cost_usd": 0,
+   "unpriced": 0,
+   "not_sent": 0,
+   "fail_to_pass": 0,
+   "pass_to_fail": 0,
+   "lost_coverage": 0,
+   "kept": 0,
+   "new": 0,
+   "records": 48,
+   "main_records": 48,
+   "pages": {
+    "listed": 1,
+    "answered": 0,
+    "share": 0.0,
+    "partial": true,
+    "why": "0 of 1 pages answered"
+   },
+   "outcomes": {
+    "capture": "success",
+    "extract": "skipped",
+    "file": "success"
+   },
+   "verdict": "held: partial capture (0 of 1 pages answered)",
+   "detail": {
+    "fail_to_pass": [],
+    "pass_to_fail": [],
+    "lost_coverage": [],
+    "new": [],
+    "not_sent": []
+   },
+   "slug": "copper_mountain",
+   "attempt": 1,
+   "attempts": [
+    1
+   ],
+   "filed": true
+  }
+ ]
+}

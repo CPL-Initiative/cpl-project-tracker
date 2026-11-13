@@ -1,0 +1,106 @@
+{
+ "college": "Feather River College",
+ "catalog_url": "https://frc.curriqunet.com/Catalog/iq/1452",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 62,
+ "with_closed_list": 49,
+ "started": "2026-11-13T01:21:00Z",
+ "curriqunet": {
+  "catalog": 5,
+  "view_prefix": "https://frc.curriqunet.com/Catalog/iq/",
+  "errors": [],
+  "sections": [
+   "Earning a Degree at FRC",
+   "Degrees and Certificates"
+  ],
+  "nodes_read": 4,
+  "calls": 8,
+  "entries": 81,
+  "stopped_at_cap": false,
+  "same_title_entries": 0,
+  "entries_read": 81,
+  "failed_calls": 0
+ },
+ "pages_read": 81,
+ "pages_listed": 81,
+ "pages_answered": 81,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "loads": 312,
+ "seconds": 1377.4,
+ "found": 44,
+ "by_method": {
+  "no_closed_list": 13,
+  "not_found": 2,
+  "page_claimed": 3,
+  "sitemap_page": 44
+ },
+ "shared_pages": {
+  "https://frc.curriqunet.com/Catalog/iq/1464/1774": [
+   "44471",
+   "44639"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "34001",
+   "title": "Equine and Ranch Management",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46533",
+   "title": "Ecosystem Restoration and Applied Fire Management",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "20882",
+   "title": "Administration of Justice",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://frc.curriqunet.com/Catalog/iq/1464/1785"
+   ]
+  },
+  {
+   "control_number": "36176",
+   "title": "MATHEMATICS",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://frc.curriqunet.com/Catalog/iq/1464/1826",
+    "https://frc.curriqunet.com/Catalog/iq/1464/1771"
+   ]
+  },
+  {
+   "control_number": "44714",
+   "title": "Allied Health",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://frc.curriqunet.com/Catalog/iq/1464/1772"
+   ]
+  }
+ ],
+ "coverage_bands": {
+  "0.5-0.8": 5,
+  "0.8-1.0": 12,
+  "1.0": 27
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/feather_river",
+  "kept": 44,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": []
+ },
+ "run": "43343741511"
+}
