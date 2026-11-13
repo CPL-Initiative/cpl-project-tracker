@@ -1,9 +1,6 @@
--- S647, read-only: build Draft 2 on the server from Draft 1 (0aeed57a-9855-4abe-84be-3afa59839fa3) and the pieces below, and say whether it is
--- byte for byte the committed scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/draft.html (md5 087e2c7c08e4b653fc4d76332006b376, 49995 characters).
--- Writes nothing. Expect one row: matches = true.
-select md5(convert_to(b.h, 'UTF8')) as md5, length(b.h) as chars,
-       md5(convert_to(b.h, 'UTF8')) = '087e2c7c08e4b653fc4d76332006b376' and length(b.h) = 49995 as matches
-from (with d as (select html as h from public.cpl_library_drafts where id = '0aeed57a-9855-4abe-84be-3afa59839fa3' and library_id = '4660a13b-984e-4030-a83b-762c507510a7'),
+-- S647, read-only dry run of the forward write: builds Draft 2 from Draft 1 and checks it and both rows. Writes nothing.
+-- Expect md5 087e2c7c08e4b653fc4d76332006b376, len 49995, and page_ok, new_ok, old_ok, draft_free all true.
+with d as (select html as h from public.cpl_library_drafts where id = '0aeed57a-9855-4abe-84be-3afa59839fa3' and library_id = '4660a13b-984e-4030-a83b-762c507510a7'),
 p as (select $M$<main id="main">
 <div class="hero"><div class="hero-in">
 <div class="eyebrow">California Community Colleges Chancellor&#x27;s Office &middot; Credit for Prior Learning Initiative</div>
@@ -134,13 +131,19 @@ html.gp-on .sbar-chip { display: none; }
      noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5's frame. Source: scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/ (cpl-project-tracker). -->
 $C$::text as c,
   $U$Published by the California Community Colleges Chancellor's Office, Credit for Prior Learning Initiative. Draft 2, November 13, 2026.$U$::text as pu),
-s1 as (select left(h, strpos(h, '<main') - 1) || m || substr(h, length(h) - strpos(reverse(h), '>niam/<') + 2) as h from d, p),
-s2 as (select left(h, strpos(h, '<title>') + 6) || t || substr(h, strpos(h, '</title>')) as h from s1, p),
-s3 as (select left(h, i + 34 - 1) || ds || substr(h, i + strpos(substr(h, i), '">') - 1) as h
+s1 as materialized (select left(h, strpos(h, '<main') - 1) || m || substr(h, length(h) - strpos(reverse(h), '>niam/<') + 2) as h from d, p),
+s2 as materialized (select left(h, strpos(h, '<title>') + 6) || t || substr(h, strpos(h, '</title>')) as h from s1, p),
+s3 as materialized (select left(h, i + 34 - 1) || ds || substr(h, i + strpos(substr(h, i), '">') - 1) as h
   from (select h, strpos(h, '<meta name="description" content="') as i from s2) x, p),
-s4 as (select left(h, i - 1) || left(r, length(r) - length(ltrim(r, E' \n\t\r'))) || c || ltrim(substr(r, strpos(r, '-->') + 3), E' \n\t\r') as h
+s4 as materialized (select left(h, i - 1) || left(r, length(r) - length(ltrim(r, E' \n\t\r'))) || c || ltrim(substr(r, strpos(r, '-->') + 3), E' \n\t\r') as h
   from (select h, strpos(h, '<body>') + 6 as i, substr(h, strpos(h, '<body>') + 6) as r from s3) x, p),
-s5 as (select left(h, f + strpos(substr(h, f), '<p>') + 1) || pu || substr(h, f + strpos(substr(h, f), '</p>') - 1) as h
+s5 as materialized (select left(h, f + strpos(substr(h, f), '<p>') + 1) || pu || substr(h, f + strpos(substr(h, f), '</p>') - 1) as h
   from (select h, strpos(h, '<footer class="foot"><div class="foot-in">') as f from s4) x, p),
-s6 as (select left(h, a - 1) || pn || E'\n' || substr(h, a) as h from (select h, strpos(h, '<!-- Ask Sierra') as a from s5) x, p)
-select h from s6) b;
+s6 as materialized (select left(h, a - 1) || pn || E'\n' || substr(h, a) as h from (select h, strpos(h, '<!-- Ask Sierra') as a from s5) x, p),
+k as (select md5(convert_to(h, 'UTF8')) as md5, length(h) as len, h,
+  md5(convert_to(h, 'UTF8')) = '087e2c7c08e4b653fc4d76332006b376' and length(h) = 49995 as page_ok,
+  exists (select 1 from public.cpl_library where id = '4660a13b-984e-4030-a83b-762c507510a7' and status = 'requested' and url is null and retired_at is null and updated_at = '2026-11-12 18:28:48.277161+00') as new_ok,
+  exists (select 1 from public.cpl_library where id = 'f1078c28-d9fc-423b-bfc3-0832ae5e43fd' and updated_at = '2026-11-12 18:19:23.709551+00') as old_ok,
+  not exists (select 1 from public.cpl_library_drafts where id = 'b18c5759-b55b-4341-b3fc-f59c1fd5bcf6') as draft_free
+  from (select 1) o left join s6 on true)
+select md5, len, page_ok, new_ok, old_ok, draft_free from k;

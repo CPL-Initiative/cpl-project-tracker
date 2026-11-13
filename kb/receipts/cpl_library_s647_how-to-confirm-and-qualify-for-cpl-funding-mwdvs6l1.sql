@@ -1,10 +1,6 @@
--- S647, 2026-11-13: Draft 2 of "How to Confirm and Qualify for CPL Funding" onto mwdvs6l1; close mwdv9pl5's open ask.
--- Run _proof.sql first. Built on the server from Draft 1; refuses unless md5 087e2c7c08e4b653fc4d76332006b376 (49995 chars); re-checks both rows as read
--- 2026-11-13 ~09:14Z; raises, undoing all, unless each write touches one row. Source: scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/.
-do $$
-declare v_html text; v_n int; v_row record;
-begin
-  v_html := (with d as (select html as h from public.cpl_library_drafts where id = '0aeed57a-9855-4abe-84be-3afa59839fa3' and library_id = '4660a13b-984e-4030-a83b-762c507510a7'),
+-- S647: Draft 2 of "How to Confirm and Qualify for CPL Funding" onto mwdvs6l1; mwdv9pl5's ask closed. One statement, all or nothing.
+-- Expect ins 1, u1 1, u2 1, md5 087e2c7c08e4b653fc4d76332006b376, len 49995. A refusal reads 0 0 0 and the false check says why.
+with d as (select html as h from public.cpl_library_drafts where id = '0aeed57a-9855-4abe-84be-3afa59839fa3' and library_id = '4660a13b-984e-4030-a83b-762c507510a7'),
 p as (select $M$<main id="main">
 <div class="hero"><div class="hero-in">
 <div class="eyebrow">California Community Colleges Chancellor&#x27;s Office &middot; Credit for Prior Learning Initiative</div>
@@ -135,37 +131,27 @@ html.gp-on .sbar-chip { display: none; }
      noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5's frame. Source: scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/ (cpl-project-tracker). -->
 $C$::text as c,
   $U$Published by the California Community Colleges Chancellor's Office, Credit for Prior Learning Initiative. Draft 2, November 13, 2026.$U$::text as pu),
-s1 as (select left(h, strpos(h, '<main') - 1) || m || substr(h, length(h) - strpos(reverse(h), '>niam/<') + 2) as h from d, p),
-s2 as (select left(h, strpos(h, '<title>') + 6) || t || substr(h, strpos(h, '</title>')) as h from s1, p),
-s3 as (select left(h, i + 34 - 1) || ds || substr(h, i + strpos(substr(h, i), '">') - 1) as h
+s1 as materialized (select left(h, strpos(h, '<main') - 1) || m || substr(h, length(h) - strpos(reverse(h), '>niam/<') + 2) as h from d, p),
+s2 as materialized (select left(h, strpos(h, '<title>') + 6) || t || substr(h, strpos(h, '</title>')) as h from s1, p),
+s3 as materialized (select left(h, i + 34 - 1) || ds || substr(h, i + strpos(substr(h, i), '">') - 1) as h
   from (select h, strpos(h, '<meta name="description" content="') as i from s2) x, p),
-s4 as (select left(h, i - 1) || left(r, length(r) - length(ltrim(r, E' \n\t\r'))) || c || ltrim(substr(r, strpos(r, '-->') + 3), E' \n\t\r') as h
+s4 as materialized (select left(h, i - 1) || left(r, length(r) - length(ltrim(r, E' \n\t\r'))) || c || ltrim(substr(r, strpos(r, '-->') + 3), E' \n\t\r') as h
   from (select h, strpos(h, '<body>') + 6 as i, substr(h, strpos(h, '<body>') + 6) as r from s3) x, p),
-s5 as (select left(h, f + strpos(substr(h, f), '<p>') + 1) || pu || substr(h, f + strpos(substr(h, f), '</p>') - 1) as h
+s5 as materialized (select left(h, f + strpos(substr(h, f), '<p>') + 1) || pu || substr(h, f + strpos(substr(h, f), '</p>') - 1) as h
   from (select h, strpos(h, '<footer class="foot"><div class="foot-in">') as f from s4) x, p),
-s6 as (select left(h, a - 1) || pn || E'\n' || substr(h, a) as h from (select h, strpos(h, '<!-- Ask Sierra') as a from s5) x, p)
-select h from s6);
-  if v_html is null or md5(convert_to(v_html, 'UTF8')) <> '087e2c7c08e4b653fc4d76332006b376' or length(v_html) <> 49995 then
-    raise exception 'S647: the built page is not draft.html (md5 %, length %)', md5(convert_to(v_html, 'UTF8')), length(v_html);
-  end if;
-  select status, url, retired_at, updated_at into v_row from public.cpl_library where id = '4660a13b-984e-4030-a83b-762c507510a7' for update;
-  if not found or v_row.status is distinct from 'requested' or v_row.url is not null or v_row.retired_at is not null
-     or v_row.updated_at <> '2026-11-12 18:28:48.277161+00'::timestamptz then
-    raise exception 'S647: mwdvs6l1 moved since it was read (status %, updated_at %)', v_row.status, v_row.updated_at;
-  end if;
-  select updated_at, retired_at into v_row from public.cpl_library where id = 'f1078c28-d9fc-423b-bfc3-0832ae5e43fd' for update;
-  if not found or v_row.updated_at <> '2026-11-12 18:19:23.709551+00'::timestamptz then
-    raise exception 'S647: mwdv9pl5 moved since it was read (updated_at %)', v_row.updated_at;
-  end if;
-
-  insert into public.cpl_library_drafts (id, library_id, slug, html, based_on, request, summary, edits, model, made_by)
-  values ('b18c5759-b55b-4341-b3fc-f59c1fd5bcf6', '4660a13b-984e-4030-a83b-762c507510a7', 'how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1', v_html, 'draft 0aeed57a-9855-4abe-84be-3afa59839fa3',
-          '{"new_piece": true, "session": "S647", "carried_from": "how-to-confirm-and-qualify-for-cpl-funding-mwdv9pl5", "source": "scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/", "deadline_source": "cpl_funding_config Scenario 4 participationDeadline, read 2026-11-13; typed on the page, it does not follow the config"}'::jsonb, 'Draft 2 (S647, session) from Ally Barker''s asks of 2026-11-12: three cards that open beside the page (two guides and How to confirm), under the four minimum conditions in the published scenario''s words. npm run a11y passed.', 0, null, 'S647 session')
-  on conflict (id) do nothing;
-  get diagnostics v_n = row_count;
-  if v_n <> 1 then raise exception 'S647: the draft insert touched % rows', v_n; end if;
-
-  update public.cpl_library
+s6 as materialized (select left(h, a - 1) || pn || E'\n' || substr(h, a) as h from (select h, strpos(h, '<!-- Ask Sierra') as a from s5) x, p),
+k as (select md5(convert_to(h, 'UTF8')) as md5, length(h) as len, h,
+  md5(convert_to(h, 'UTF8')) = '087e2c7c08e4b653fc4d76332006b376' and length(h) = 49995 as page_ok,
+  exists (select 1 from public.cpl_library where id = '4660a13b-984e-4030-a83b-762c507510a7' and status = 'requested' and url is null and retired_at is null and updated_at = '2026-11-12 18:28:48.277161+00') as new_ok,
+  exists (select 1 from public.cpl_library where id = 'f1078c28-d9fc-423b-bfc3-0832ae5e43fd' and updated_at = '2026-11-12 18:19:23.709551+00') as old_ok,
+  not exists (select 1 from public.cpl_library_drafts where id = 'b18c5759-b55b-4341-b3fc-f59c1fd5bcf6') as draft_free
+  from (select 1) o left join s6 on true),
+g as (select h from k where page_ok and new_ok and old_ok and draft_free),
+ins as (insert into public.cpl_library_drafts (id, library_id, slug, html, based_on, request, summary, edits, model, made_by)
+  select 'b18c5759-b55b-4341-b3fc-f59c1fd5bcf6', '4660a13b-984e-4030-a83b-762c507510a7', 'how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1', h, 'draft 0aeed57a-9855-4abe-84be-3afa59839fa3',
+    '{"new_piece": true, "session": "S647", "carried_from": "how-to-confirm-and-qualify-for-cpl-funding-mwdv9pl5", "source": "scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/", "deadline_source": "cpl_funding_config Scenario 4 participationDeadline, read 2026-11-13; typed on the page, it does not follow the config"}'::jsonb, 'Draft 2 (S647, session) from Ally Barker''s asks of 2026-11-12: three cards that open beside the page (two guides and How to confirm), under the four minimum conditions in the published scenario''s words. npm run a11y passed.', 0, null, 'S647 session' from g
+  on conflict (id) do nothing returning id),
+u1 as (update public.cpl_library
   set regen = jsonb_build_object(
         'publish', 'show', 'new_piece', true,
         'requested_at', '2026-11-12T18:19:23.283Z', 'requested_by', 'Ally Barker',
@@ -177,15 +163,12 @@ select h from s6);
       refresh_note = 'Carried from how-to-confirm-and-qualify-for-cpl-funding-mwdv9pl5 (Ally Barker, 2026-11-12): three clickable cards, the third How to confirm, each opening its visual in a side bar, with the links in each box.',
       rebuild_from = 'node scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs (cpl-project-tracker); write_receipt.py stores it as the card''s draft.',
       updated_by = 'library-s647@bot'
-  where id = '4660a13b-984e-4030-a83b-762c507510a7' and updated_at = '2026-11-12 18:28:48.277161+00';
-  get diagnostics v_n = row_count;
-  if v_n <> 1 then raise exception 'S647: mwdvs6l1 update touched % rows', v_n; end if;
-
-  update public.cpl_library
+  where id = '4660a13b-984e-4030-a83b-762c507510a7' and updated_at = '2026-11-12 18:28:48.277161+00' and exists (select 1 from g) returning id),
+u2 as (update public.cpl_library
   set regen = null, refresh_note = null, note = 'Superseded by how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1 (S647, 2026-11-13): its Draft 2 answers this record''s last ask (Ally Barker, 2026-11-12 18:19 UTC). Drafts ab6214c8 and 62fd17cc stay. Retiring this duplicate is Ally''s press.', updated_by = 'library-s647@bot'
-  where id = 'f1078c28-d9fc-423b-bfc3-0832ae5e43fd' and updated_at = '2026-11-12 18:19:23.709551+00';
-  get diagnostics v_n = row_count;
-  if v_n <> 1 then raise exception 'S647: mwdv9pl5 update touched % rows', v_n; end if;
-
-  raise notice 'S647: draft stored on mwdvs6l1; mwdv9pl5 closed';
-end $$;
+  where id = 'f1078c28-d9fc-423b-bfc3-0832ae5e43fd' and updated_at = '2026-11-12 18:19:23.709551+00' and exists (select 1 from g) returning id),
+n as (select (select count(*) from ins) as ins, (select count(*) from u1) as u1, (select count(*) from u2) as u2)
+select n.ins, n.u1, n.u2, k.md5, k.len, k.page_ok, k.new_ok, k.old_ok, k.draft_free,
+  case when k.page_ok and k.new_ok and k.old_ok and k.draft_free and (n.ins, n.u1, n.u2) <> (1, 1, 1)
+    then ('S647: a write missed its row, so none stands: ' || n.ins || n.u1 || n.u2)::int end as undone
+from n, k;

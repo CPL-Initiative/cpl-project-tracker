@@ -51,8 +51,27 @@ function check(name, cond, why) { results.push([name, !!cond, why]); }
   const sqlBase = path.join(ROOT, "kb", "receipts", "cpl_library_s647_" + SLUG);
   const fwd = fs.readFileSync(sqlBase + ".sql", "utf8"), proof = fs.readFileSync(sqlBase + "_proof.sql", "utf8");
   check("(1) the proof and the forward SQL expect this page's md5 and length (write_receipt.py ran after build.mjs)",
-    proof.includes(`'${md5}'`) && fwd.includes(`'${md5}'`) && fwd.includes(`length(v_html) <> ${html.length}`), md5);
+    proof.includes(`'${md5}'`) && fwd.includes(`'${md5}'`) && fwd.includes(`length(h) = ${html.length}`), md5);
   check("(1) the forward SQL carries the pieces, never the whole page", fwd.length < 20000 && !fwd.includes("<!doctype html>"), fwd.length + " bytes");
+  // (1b) The receipt runs through the Supabase MCP, whose guard (scripts/supabase_sql_guard.py) lets plain data writes
+  // run and refuses DO, functions and plpgsql: the first form of this receipt was one DO block and was refused
+  // (2026-11-13). So each SQL file is one plain statement, and every write hangs on the one guard CTE.
+  const rb = fs.readFileSync(sqlBase + "_rollback.sql", "utf8");
+  const noCode = (s) => !/\bdo\s+\$|\bplpgsql\b|\bcreate\s|\blanguage\s|\bperform\b|\braise\b/i.test(s);
+  check("(1b) the forward write and the rollback carry no DO block, function or plpgsql", noCode(fwd) && noCode(rb) && noCode(proof));
+  let gd = "";
+  try {
+    gd = [fwd, rb, proof].map((sql) => JSON.parse(execFileSync("python3", ["scripts/supabase_sql_guard.py"], { cwd: ROOT, encoding: "utf8",
+      input: JSON.stringify({ tool_name: "mcp__Supabase__execute_sql", tool_input: { query: sql } }) })).hookSpecificOutput.permissionDecision).join(",");
+  } catch (e) { gd = "error: " + e.message.split("\n")[0]; }
+  check("(1b) the repo's Supabase guard allows the forward write, the rollback and the proof", gd === "allow,allow,allow", gd);
+  check("(1b) the INSERT and both UPDATEs hang on the one guard, so all land or none does",
+    /\bfrom g\s+on conflict \(id\) do nothing returning id\)/.test(fwd) && (fwd.match(/and exists \(select 1 from g\) returning id\)/g) || []).length === 2 &&
+    /then \('S647: a write missed its row[^)]*\)::int end as undone/.test(fwd));
+  // Inlined, the six build steps substitute each other's text expressions and the statement ran 37 s on one row (and an
+  // out-of-memory kill once) in a scratch Postgres 16; materialized, 10 ms.
+  check("(1b) the six build steps are materialized CTEs", (fwd.match(/^s[1-6] as materialized \(/gm) || []).length === 6 &&
+    (proof.match(/^s[1-6] as materialized \(/gm) || []).length === 6);
 
   // (2)
   check("(2) the <main> passes the drafter's allowlist (new_page.mjs mainProblems)", np.mainProblems(main).length === 0, np.mainProblems(main).join("; "));

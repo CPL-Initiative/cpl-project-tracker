@@ -391,7 +391,7 @@
     "library_list.test.js": 27,
     "library_revise_draft.test.js": 56,
     "library_publish_now.test.js": 43,
-    "library_qualify_draft.test.js": 35,
+    "library_qualify_draft.test.js": 39,
     "group_queue.test.js": 36,
     "public_library.test.js": 121,
     "pages_size_guard.test.js": 4
