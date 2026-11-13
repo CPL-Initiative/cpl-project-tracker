@@ -1,0 +1,10 @@
+{
+ "_about": "Written by Sky (S647), not by COBIx: a later settlement COBIx posted in prose, with no JSON, recorded beside his untouched receipt pr-3207-rescore-six.check.json. kb/_build_commons_data_status.py moves each row below from page_unreachable to agrees for its college.",
+ "source": "https://github.com/CPL-Initiative/cpl-project-tracker/pull/3207#issuecomment-6851481011",
+ "settled_at": "2026-11-13T11:27:18Z",
+ "basis": "read against the captured text in the run artifacts, not a live page load",
+ "records": [
+  {"college": "Grossmont College", "control_number": "30977", "was": "page_unreachable", "now": "agrees"},
+  {"college": "East Los Angeles College", "control_number": "32154", "was": "page_unreachable", "now": "agrees"}
+ ]
+}

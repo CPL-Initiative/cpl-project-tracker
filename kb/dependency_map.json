@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 914,
+  "file_datasets": 926,
   "external_services": 195,
-  "consumers": 577,
+  "consumers": 581,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -908,7 +908,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4027,
+     "line": 4094,
      "tabs": [
       "exhibits"
      ]
@@ -1135,7 +1135,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1651
+     "line": 1729
     },
     {
      "id": "module:admin.js",
@@ -1832,7 +1832,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2304
+     "line": 2382
     }
    ],
    "main_committers": []
@@ -1888,7 +1888,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1332,
+     "line": 1352,
      "tabs": [
       "commons"
      ]
@@ -2215,6 +2215,16 @@
   "external:github.com/cpl-initiative/cpl-project-tracker": {
    "consumers": [
     {
+     "id": "module:commons_data.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 892,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
      "id": "module:unified_courses.js",
      "kind": "module",
      "direction": "read",
@@ -2472,7 +2482,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1261
+     "line": 1339
     }
    ],
    "main_committers": []
@@ -2491,7 +2501,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1606
+     "line": 1684
     },
     {
      "id": "module:college_briefing.js",
@@ -3193,7 +3203,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1662
+     "line": 1740
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4503,7 +4513,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1968
+     "line": 2046
     }
    ],
    "main_committers": []
@@ -5645,7 +5655,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1859
+     "line": 1937
     },
     {
      "id": "module:admin.js",
@@ -5882,7 +5892,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2100,
+     "line": 2122,
      "tabs": [
       "exhibits"
      ]
@@ -6272,7 +6282,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3351,
+     "line": 3418,
      "tabs": [
       "exhibits"
      ]
@@ -6436,7 +6446,23 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 891,
+     "line": 892,
+     "tabs": [
+      "commons"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:commons_data.js": {
+   "consumers": [
+    {
+     "id": "module:commons.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 906,
      "tabs": [
       "commons"
      ]
@@ -6492,7 +6518,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4019,
+     "line": 4086,
      "tabs": [
       "exhibits"
      ]
@@ -6585,7 +6611,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4304,
+     "line": 4371,
      "tabs": [
       "exhibits"
      ]
@@ -6829,7 +6855,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2243
+     "line": 2321
     },
     {
      "id": "module:college_briefing.js",
@@ -7042,7 +7068,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1321
+     "line": 1399
     },
     {
      "id": "module:cpl_funding.js",
@@ -7884,6 +7910,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:docs/reference/data_dictionary.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 186
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/reference/data_sources.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 458
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:docs/reference/library_filer.md": {
    "consumers": [
     {
@@ -8389,7 +8441,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4593,
+     "line": 4660,
      "tabs": [
       "exhibits"
      ]
@@ -9476,6 +9528,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_build_commons_data_status.py": {
+   "consumers": [
+    {
+     "id": "workflow:harvest-gap-census.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_build_commons_status.py": {
    "consumers": [
     {
@@ -9842,6 +9907,19 @@
    "consumers": [
     {
      "id": "workflow:college-page-read.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_commons_data_live.py": {
+   "consumers": [
+    {
+     "id": "workflow:harvest-gap-census.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -11065,7 +11143,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 433
+     "line": 576
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -11485,7 +11563,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 645
+     "line": 665
     },
     {
      "id": "script:kb/_uc_cur_zscheme_dryrun.py",
@@ -13704,6 +13782,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/course_outcomes/queue.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 115
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/course_outline_census": {
    "consumers": [],
    "producers": [
@@ -13746,7 +13837,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3129,
+     "line": 3196,
      "tabs": [
       "exhibits"
      ]
@@ -13918,7 +14009,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 985,
+     "line": 990,
      "tabs": [
       "exhibits"
      ]
@@ -14134,7 +14225,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 443
+     "line": 586
     },
     {
      "id": "script:kb/_build_sheet181_rename_plan.py",
@@ -14287,7 +14378,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 441
+     "line": 584
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -14455,7 +14546,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 644
+     "line": 664
     },
     {
      "id": "script:kb/_verify_issuer_preseed.py",
@@ -15447,7 +15538,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4041,
+     "line": 4108,
      "tabs": [
       "exhibits"
      ]
@@ -15471,7 +15562,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 445
+     "line": 588
     },
     {
      "id": "script:kb/_clep_official_titles.py",
@@ -15558,7 +15649,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3124,
+     "line": 3191,
      "tabs": [
       "exhibits"
      ]
@@ -15753,7 +15844,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3538,
+     "line": 3605,
      "tabs": [
       "exhibits"
      ]
@@ -15849,7 +15940,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 647
+     "line": 667
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -16151,6 +16242,19 @@
     {
      "by": "workflow:program-requirements-wave.yml",
      "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/harvest_scouting/scout-*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 116
     }
    ],
    "served": false,
@@ -18988,6 +19092,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/spot_checks/*.check.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 117
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/spot_checks/README.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 119
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/statewide_exhibit_categories.json": {
    "consumers": [
     {
@@ -19062,6 +19192,29 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:kb/status/commons_data.json": {
+   "consumers": [
+    {
+     "id": "module:commons_data.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 31,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 112
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/status/commons_history.json": {
    "consumers": [
@@ -19807,7 +19960,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 446
+     "line": 589
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -19828,7 +19981,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 640
+     "line": 660
     }
    ],
    "producers": [
@@ -19934,7 +20087,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 434
+     "line": 577
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -20035,7 +20188,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 440
+     "line": 583
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -20210,7 +20363,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 639
+     "line": 659
     },
     {
      "id": "script:kb/classify_exhibits.py",
@@ -21994,6 +22147,13 @@
   "file:read_*.json": {
    "consumers": [
     {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 390
+    },
+    {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
      "direction": "read",
@@ -22250,6 +22410,13 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    },
+    {
+     "id": "script:kb/_commons_data_live.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 492
     }
    ],
    "served": true,
@@ -22952,7 +23119,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2001,
+     "line": 2023,
      "tabs": [
       "exhibits"
      ]
@@ -23028,7 +23195,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 436
+     "line": 579
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -23098,7 +23265,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 646
+     "line": 666
     },
     {
      "id": "script:kb/_sync_credential_catalog.py",
@@ -23181,7 +23348,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 438
+     "line": 581
     }
    ],
    "producers": [
@@ -23271,6 +23438,13 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    },
+    {
+     "id": "script:kb/_commons_data_live.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 492
     }
    ],
    "served": true,
@@ -23830,6 +24004,32 @@
    "main_committers": []
   },
   "file:tests/college_short_names_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/commons_data_live_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/commons_data_status_build_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -26316,7 +26516,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2002,
+     "line": 2024,
      "tabs": [
       "exhibits"
      ]
@@ -26378,7 +26578,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 437
+     "line": 580
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -27226,7 +27426,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 505,
+     "line": 507,
      "tabs": [
       "exhibits"
      ]
@@ -27706,7 +27906,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1116,
+     "line": 1135,
      "tabs": [
       "commons"
      ]
@@ -28326,6 +28526,13 @@
      ]
     },
     {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
@@ -28356,6 +28563,13 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
     },
     {
      "id": "script:kb/_program_requirements_pilot.py",
@@ -28456,6 +28670,13 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
     },
     {
      "id": "module:program_requirements.js",
@@ -29128,14 +29349,14 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 943
+     "line": 976
     },
     {
      "id": "module:exhibits.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 481,
+     "line": 483,
      "tabs": [
       "exhibits"
      ]
@@ -29150,7 +29371,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 504,
+     "line": 506,
      "tabs": [
       "exhibits"
      ]
@@ -29763,7 +29984,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 639,
+     "line": 641,
      "tabs": [
       "exhibits"
      ]
@@ -30962,6 +31183,13 @@
      ]
     },
     {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
@@ -31043,6 +31271,13 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
     },
     {
      "id": "module:program_requirements.js",
@@ -31248,7 +31483,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1094,
+     "line": 1113,
      "tabs": [
       "commons"
      ]
@@ -31765,6 +32000,9 @@
    "commons"
   ],
   "commons_ase.js": [
+   "commons"
+  ],
+  "commons_data.js": [
    "commons"
   ],
   "commons_list.js": [
@@ -32641,8 +32879,10 @@
    "name": "Harvest gap census",
    "crons": [],
    "scripts": [
+    "kb/_commons_data_live.py",
     "kb/_harvest_gap_census.py",
-    "kb/_program_requirements_heading_agreement.py"
+    "kb/_program_requirements_heading_agreement.py",
+    "kb/_build_commons_data_status.py"
    ],
    "adds": [
     "kb/status/harvest_gap_census.json",
@@ -32721,6 +32961,8 @@
     "tests/clep_official_titles_test.py",
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
+    "tests/commons_data_status_build_test.py",
+    "tests/commons_data_live_test.py",
     "kb/_build_commons_status.py",
     "tests/apply_concurrency_test.py",
     "tests/docket_rulings_test.py",

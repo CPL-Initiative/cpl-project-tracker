@@ -163,7 +163,8 @@ jobs:
       # below. The full checkout took 2 min 33 s of every shard on 10-29.
       # A suite that starts reading another receipt fails here on ENOENT, so
       # name its file on a line of its own (library_qualify_draft.test.js reads
-      # its forward SQL, its proof and its rollback, S647).
+      # its forward SQL, its proof and its rollback, S647; first_light_marks.test.js
+      # reads its migration's applied receipt, S647).
       - uses: actions/checkout@v7
         with:
           filter: blob:none
@@ -177,6 +178,7 @@ jobs:
             /kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql
             /kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1_proof.sql
             /kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1_rollback.sql
+            /kb/receipts/migration_s643_first_light_marks_43310349633.json
       - uses: actions/setup-node@v7
         with:
           node-version: '20'
@@ -515,6 +517,16 @@ jobs:
       # committed files, a figure it cannot read is null with its error, never a zero.
       - name: Commons status builder reads every row
         run: python3 tests/commons_status_build_test.py
+      # The Commons data dashboard (#3215): the universe is the crosswalk, every harvest name resolves, the
+      # statewide figures are the college rows' sums, and an unread college is null, never zero.
+      - name: Commons data dashboard builder
+        run: python3 tests/commons_data_status_build_test.py
+      # Its live counts (S647, COBIx's conditions on #3222): counts only, the service key alone, fail soft, over a
+      # fixture; no network. PyYAML for the census workflow's shape.
+      - name: Commons data dashboard live counts
+        run: |
+          pip install --quiet pyyaml
+          python3 tests/commons_data_live_test.py
       # S639's lesson 1 (#3111, a main-red lesson): the Commons readers ran only against the committed
       # kb/status/commons.json, so a change to what its builder reads passed here and broke main at the
       # next daily rebuild. Rebuild it from this tree, then run every test that reads it against the

@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-13_s644_carry_basis_electives_fill_words.sql",
+ "name": "s644_carry_basis_electives_fill_words",
+ "version": "20261113132729",
+ "sha256": "f9ddee157b2cd398ec1b0bb6cbdbe93a42eb90d50f1ed84cd6c2cc1219e2eb68",
+ "run": "43433381780",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

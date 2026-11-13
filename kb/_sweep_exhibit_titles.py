@@ -474,6 +474,8 @@ def rule_ase(raw, title, ev_one, local=True):
     form is left to the rename batch: this rule never moves a title for the form alone."""
     if not local or title.startswith("ASE ") or EXAM_BRAND.search(title):
         return None   # the ASE credential itself, another issuer's credential, or an exam brand
+    if cert_naming.is_standards(title):
+        return None   # "Brakes (ASE A5 standards)": the college's course taught to the standard, Sam's ruling A (#3228)
     have = ASE_PAREN.search(title)
     code = _ase_code_for(raw, ev_one)
     ctitle = course_title(ev_one)
@@ -583,6 +585,24 @@ def twin_key(t):
     t = to_arabic(t or "")
     t = re.sub(r"\bintro\b", "introduction", t, flags=re.I).replace("&", " and ")
     return " ".join(sorted(stem(w) for w in re.findall(r"[A-Za-z0-9]+", t.lower()) if w != "and"))
+
+
+def _one_test(t):
+    got = cert_naming.ase_read(t)
+    codes = (got or {}).get("codes") or cert_naming.codes_named(t if cert_naming.PAREN_FORM.match(t or "") else "")
+    return codes[0] if len(codes) == 1 else None
+
+
+def same_decision(new, kept):
+    """True when a proposal a person kept the current title against still answers `new`: the same words, a twin
+    spelling (twin_key), or the same one ASE test named in another form ("Automotive Technology (ASE A4 Suspension and
+    Steering)" kept on 2026-11-02, "Suspension and Steering (ASE A4)" proposed since)."""
+    if not kept:
+        return False
+    if new in kept:
+        return True
+    key, test = twin_key(new), _one_test(new)
+    return any(twin_key(k) == key or (test and _one_test(k) == test) for k in kept if k)
 
 
 def family_key(t):
@@ -775,10 +795,13 @@ def build(root="."):
                 moves[raw] = (new, prev[1] + [("fold", f"its family puts the level word "
                                                       f"{'first' if first else 'last'}, as in “{lead}”")])
 
-    # Drop what a person already kept, and anything that ended where it began.
+    # Drop what a person already kept, and anything that ended where it began. A keep answers the move, not only its
+    # wording: a proposal reworded since (a twin spelling, or the same one ASE test in a newer form) is the same
+    # question, and Sam already answered it (#3228, S647: "the Another Look candidates keep popping on the list though
+    # I have decided on them"). A person reopens it by changing the title on the card or in the List.
     for raw in list(moves):
         new, why = moves[raw]
-        if new == current[raw] or new in (kept.get(raw) or []):
+        if new == current[raw] or same_decision(new, kept.get(raw) or []):
             del moves[raw]
 
     # Cards: the local titles that share a current and a proposed title.

@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-11-13T06:18:01.213480+00:00",
+  "scraped_at": "2026-11-13T16:56:00.702783+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 31947,
+    "jst": 31954,
     "star_colleges": 68
   },
   "computed_star_colleges": 68,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 286,
-      "jst": 172,
+      "jst": 173,
       "star": false
     },
     "Santiago Canyon College": {
@@ -260,6 +260,11 @@
       "jst": 220,
       "star": true
     },
+    "Las Positas College": {
+      "vets": 234,
+      "jst": 134,
+      "star": false
+    },
     "Rio Hondo College": {
       "vets": 203,
       "jst": 130,
@@ -268,11 +273,6 @@
     "Lemoore College": {
       "vets": 76,
       "jst": 21,
-      "star": false
-    },
-    "Las Positas College": {
-      "vets": 234,
-      "jst": 129,
       "star": false
     },
     "East Los Angeles College": {
@@ -332,7 +332,7 @@
     },
     "Reedley College": {
       "vets": 100,
-      "jst": 134,
+      "jst": 135,
       "star": true
     },
     "Laney College": {

@@ -126,8 +126,10 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   when another `daily-dashboard` group run waits; deployed 17:19Z (*as reported*). Sam presses it first.
 - **One queue check (S643, #3184 `1ee58637`):** `docket-process` and `library-publish-now` import
   `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged, not
-  deployed; both wait for Sam's "deploy" ([Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4; `cpl-chat-deploy.yml`, `confirm=DEPLOY`, one function
-  per dispatch). The first deploy tests `_shared`.
+  deployed. **RULED: Sam said deploy both** (13:11Z 2026-11-13, [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4).
+  **NOT YET DEPLOYED** — this session's Supabase connector is down, so it is the next session's first item: deploy
+  `docket-process`, then `library-publish-now`, from `main` through `cpl-chat-deploy.yml` (`confirm=DEPLOY`, one
+  function per dispatch), then this lane's smoke. The first deploy tests `_shared`.
 - **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),
   saved in `cpl_library_pictures`, placed by the drafter through a marker (`pictures.mjs`), checked on the card (Cover
   or crop, Leave it out; `regen.pictures_checked_by`), and written to `library/<slug>/img/` by `library_publish.py`. A
@@ -166,11 +168,12 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the
   overview"*): in the public library's look, figures live from `live_metrics.json`; its own source, so revise it on its card.
   Every public page's header leads its Links with it (`header.html`; guarded in `tests/public_library.test.js`).
-- **Carried to S647, the Library's first item (S646 did not work it):** two `requested` rows by Ally Barker
-  (2026-11-12), both "How to confirm and qualify for CPL funding": `...mwdvs6l1` has a ready draft (`ready_at`,
-  `draft_id`); `...mwdv9pl5`'s last ask (18:19Z, "Add the links in each box to the appropriate visual") has none, and
-  she started `mwdvs6l1` nine minutes later. Read that ask and IACA's: IACA's `regen` (`iaca-mvpmcjyl`, Crystal Nasio,
-  2026-10-26) has no note or sources and waits on what she wants changed. "Adding CPL Coordinator & Noncredit Lead to
+- **Ally Barker's "How to confirm and qualify for CPL funding" (S647, #3216 `42b2d9eb`):** Draft 2 (`b18c5759`) is
+  stored on `...mwdvs6l1`, her card, and `...mwdv9pl5`'s ask is closed with a note pointing at it. Receipt
+  `kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql` (cohort `library-s647@bot`, one
+  plain `with` statement, md5 `087e2c7c08e4b653fc4d76332006b376`, 49,995 characters); its `_rollback.sql` restores
+  from `cpl_library_history`. **Waits:** IACA's `regen` (`iaca-mvpmcjyl`, Crystal Nasio, 2026-10-26) has no note or
+  sources and waits on what she wants changed; S647 did not work it. "Adding CPL Coordinator & Noncredit Lead to
   MAP" (`...mwauxci5`) has its ready draft. ELL IET reads 33,971 of Sierra's 34,000 characters: room for more comes
   out of repeated wording or a `cpl-chat` cap raise. The Coordinator Guide's Draft 2: lessons, *Moved from the lane (S646)*.
 - **Once RCCD's admin approves it, Sam connects the Microsoft 365 connector** (held, Sam, 2026-10-26); the next session after that reads the CPLLibrary folder, confirms the 16
@@ -192,7 +195,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 ✅ **① One card per project is built (S509, #2538).** `cpl_library.project` names a piece's project; pieces that share it draw as one card, a row per piece with its title as the link, and Edit, Regenerate and Details on each row (each acts on one record; the one departure from the mockup). Edit sets the project; a college's pair files under one. Receipt `kb/receipts/cpl_library_projects_2026-10-29_s509.sql` (13 projects of 2, read back). Test: `library` block (15).
 
-✅ **② The one panel is built (S509).** *Create or Remediate a Document* replaces the three add buttons, under the filters: drop or choose a file, or paste a link; *what is it for?* (Remediate, offered for a .pptx or .docx; Use it as background; File it as is); Instructions; *Start*. Start opens the brief (the instructions as *What it must say*, the kind read from their words, Sam's template defaults), the brief with the link or a text file's words as a source, or the filing form with the link and a title from the name. A dropped file filed as is asks for its SharePoint link: a record holds a link, never bytes. A visual made for a college writes its pair from the brief's Save. Proceeded on the recommendation (S509's reading of Version 20). Test: `library` block (16).
+✅ **② The one panel is built (S509).** *Create or Remediate a Document* replaces the three add buttons, under the filters: drop or choose a file, or paste a link; *what for?* (Remediate, offered for a .pptx or .docx; Use it as background; File it as is); Instructions; *Start*. Start opens the brief (the instructions as *What it must say*, the kind read from their words, Sam's template defaults), the brief with the link or a text file's words as a source, or the filing form. A dropped file filed as is asks for its SharePoint link: a record holds a link, not bytes. A visual made for a college writes its pair from the brief's Save. Proceeded on the recommendation (S509's reading of Version 20). Test: `library` block (16).
 
 ✅ **③ Remediation in the browser is built (S509):** a dropped .pptx or .docx read here by `library_remediate.js` over the vendored `jszip.min.js`, *Fixed for you* and *Needs you*, *Remediate and download*, and *Draft from the picture* through `alt-text-draft`. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S517)*.
 
