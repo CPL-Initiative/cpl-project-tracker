@@ -1135,7 +1135,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1716
+     "line": 1729
     },
     {
      "id": "module:admin.js",
@@ -1832,7 +1832,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2369
+     "line": 2382
     }
    ],
    "main_committers": []
@@ -2215,6 +2215,16 @@
   "external:github.com/cpl-initiative/cpl-project-tracker": {
    "consumers": [
     {
+     "id": "module:commons_data.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 877,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
      "id": "module:unified_courses.js",
      "kind": "module",
      "direction": "read",
@@ -2472,7 +2482,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1326
+     "line": 1339
     }
    ],
    "main_committers": []
@@ -2491,7 +2501,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1671
+     "line": 1684
     },
     {
      "id": "module:college_briefing.js",
@@ -3193,7 +3203,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1727
+     "line": 1740
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4503,7 +4513,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2033
+     "line": 2046
     }
    ],
    "main_committers": []
@@ -5645,7 +5655,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1924
+     "line": 1937
     },
     {
      "id": "module:admin.js",
@@ -6845,7 +6855,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2308
+     "line": 2321
     },
     {
      "id": "module:college_briefing.js",
@@ -7058,7 +7068,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1386
+     "line": 1399
     },
     {
      "id": "module:cpl_funding.js",
@@ -19177,7 +19187,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 27,
+     "line": 31,
      "tabs": [
       "commons"
      ]

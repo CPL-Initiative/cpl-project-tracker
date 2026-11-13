@@ -1303,7 +1303,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `canonical-subj4`, `commons`, `cr-reference`, `credential-reference`, `exhibits`, `governance`, `program-requirements`, `unified-courses` · scripts: `prototype/ironworker_video/build.py`, `prototype/noncredit_video/build.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker)` | scripts: `kb/_csr_quarterly_probe.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker;` | scripts: `tools/source_first_light_art.mjs` |
-| `github.com/cpl-initiative/cpl-project-tracker` | tabs: `unified-courses` |
+| `github.com/cpl-initiative/cpl-project-tracker` | tabs: `commons`, `unified-courses` |
 | `github.com/nodeca/pako` | tabs: `library` |
 | `hartnell.catalog.prod.coursedog.com` | scripts: `kb/_course_outline_census.py` |
 | `huggingface.co` | scripts: `prototype/funding_video/cues.py`, `prototype/funding_video/narrate.py`, `prototype/noncredit_video/cues.py` |
