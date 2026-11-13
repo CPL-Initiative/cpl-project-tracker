@@ -1,0 +1,385 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "32364",
+ "shape": "adt",
+ "title": "Geography",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=116",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10826,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10826,
+    "output_tokens": 2421,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2421,
+  "output_tokens_details": {
+   "thinking_tokens": 861
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09172,
+ "ms": 18915,
+ "seconds": 19.1,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "BIOL109",
+    "BIOL109H",
+    "ERTH160",
+    "GEOG101H",
+    "GEOG102H",
+    "GEOG130H",
+    "GEOG160",
+    "POLT220",
+    "SOC150",
+    "SURV155"
+   ],
+   "flagged": [
+    "BIOL109",
+    "BIOL109H",
+    "ERTH160",
+    "GEOG101H",
+    "GEOG102H",
+    "GEOG130H",
+    "GEOG160",
+    "POLT220",
+    "SOC150",
+    "SURV155"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    17.0,
+    19.0
+   ],
+   "stated": [
+    17.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 7,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Geography AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 17,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "urban planning",
+    "market research",
+    "land use analysis",
+    "transportation",
+    "travel and tourism",
+    "education",
+    "state, local and national government agencies"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Physical",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "GEOG101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG101H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG101L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Cultural",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "GEOG100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG102H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two (2) courses from the following (List A):",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "GEOG130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG130H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SURV155",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG160",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Select two (2) courses from the following (List B):",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ANTH100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL109H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ERTH100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ERTH160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLT220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SOC150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Department heading is misprinted 'GROGRAPHY AND THE ENVIRONMENT'; program heading is 'Geography AA-T' (A.A. Degree for Transfer), Control Number 11938 printed just above it.",
+   "'Major requirements' (Total Units 7.0) groups the Physical (4 units) and Cultural (3 units) blocks; recorded as the two sub-blocks.",
+   "Honors twins and 'considered the same course' pairs (GEOG101/GEOG101H, GEOG155/SURV155) recorded as alternatives; GEOG100/100H, GEOG102/102H, GEOG130/130H, ANTH100/100H, BIOL109/109H likewise.",
+   "List A also allows 'Any CORE course not already used'; List B also allows 'Any List A course not already used'. These are not recorded as course entries.",
+   "Catalog prints codes without a space (e.g., GEOG101) while the closed list uses 'GEOG 101'; treated as the same courses.",
+   "No program learning outcomes are printed in this section; no general education pattern or degree total is printed."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "0ddac4110d690747",
+ "source_codes": [
+  "ANTH100",
+  "ANTH100H",
+  "ERTH100",
+  "GEOG100",
+  "GEOG100H",
+  "GEOG101",
+  "GEOG101L",
+  "GEOG102",
+  "GEOG130",
+  "GEOG140",
+  "GEOG150",
+  "GEOG155"
+ ],
+ "source_coverage": 1.0
+}

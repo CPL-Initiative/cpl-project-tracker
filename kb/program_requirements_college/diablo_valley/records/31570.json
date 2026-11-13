@@ -1,0 +1,224 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "31570",
+ "shape": "certificate",
+ "title": "Graphic Design",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-graphic-design-spring-2020",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6633,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6633,
+    "output_tokens": 1455,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1455,
+  "output_tokens_details": {
+   "thinking_tokens": 464
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05563,
+ "ms": 12270,
+ "seconds": 12.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 8,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Graphic Design",
+   "measure": "units",
+   "total_units": {
+    "min": 24,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "combine appropriate aesthetic form and content to create evocative and engaging work.",
+    "create appropriate typographic solutions for a variety of design situations.",
+    "demonstrate proficiency with computers, software and production processes.",
+    "select appropriate tools, materials and processes for a range of media products.",
+    "work collaboratively within a creative team.",
+    "critically evaluate and discuss the merits of various creative ideas.",
+    "develop a professional portfolio of work."
+   ],
+   "careers": [
+    "website design and development",
+    "design and illustration of electronic magazines and books",
+    "design of interactive marketing presentations",
+    "interactive learning products",
+    "scientific visualizations",
+    "designers",
+    "illustrators",
+    "digital artists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate of Achievement Graphic Design",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "ART 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTDM 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTDM 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTDM 171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTDM 172",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTDM 190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTDM 214",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTDM 224",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g. 'ART105', 'ARTDM172'); recorded with a space between subject and number to match the closed list.",
+   "Catalog titles differ from the state file for ART 105 ('Drawing I' vs 'Introduction to Drawing') and ARTDM 172 ('User Experience Design for Web and Mobile Devices' vs 'User Experience Design for Digital Products'); codes match.",
+   "Careers are taken from the description's employment examples ('website design and development', etc.) and the occupations named in 'designers, illustrators, and digital artists'; reviewer may check whether the latter should count as careers for this program.",
+   "Source URL slug references spring-2020 though the catalog is labeled 2026-2027."
+  ]
+ },
+ "extracted_run": "43353452924"
+}

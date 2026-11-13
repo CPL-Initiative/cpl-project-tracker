@@ -1,0 +1,620 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "31735",
+ "shape": "adt",
+ "title": "Elementary Teacher Education",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9546,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9546,
+    "output_tokens": 4828,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 4828,
+  "output_tokens_details": {
+   "thinking_tokens": 1986
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.13474,
+ "ms": 37676,
+ "seconds": 37.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 46,
+   "listed": 49,
+   "share": 0.939,
+   "missing": [
+    "CDEVC1000",
+    "ENGLC1003",
+    "ENGLC1003H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "CDEV107",
+    "ENGL102",
+    "ENGL102H",
+    "MATH105",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "CDEV107",
+    "ENGL102",
+    "ENGL102H",
+    "MATH105",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    52.0,
+    57.0
+   ],
+   "stated": [
+    52.0,
+    57.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Elementary Teacher Education, AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 52,
+    "max": 57
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "paraprofessional positions in the K-12 classroom"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 45,
+     "max": 45
+    },
+    "courses": [
+     {
+      "code": "BIOL115",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMMC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "EDUC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL102H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ERTH121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLC1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST120H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH203",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLSC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSC100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following (List A)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGLC1001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLC1001H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following (List B)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ART100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ART100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MUS101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "THEA100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Up to five (5) units from the following (List C)",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ANTH104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EDUC206",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL232",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL241",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL271",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL272",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHIL106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHIL106H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000E",
+        "units": 4.5,
+        "catalog_addition": true
+       },
+       {
+        "code": "STATC1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEV C1000",
+    "why": "not in the text; catalog prints CDEV107 Child Growth and Development (DS1) instead"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "not printed as a code; catalog lists ENGL102, noting it is now ENGLC1003"
+   },
+   {
+    "code": "ENGL C1003H",
+    "why": "not printed as a code; catalog lists ENGL102H, noting it is now ENGLC1003H"
+   }
+  ],
+  "notes": [
+   "total_units 52-57 is the Program Rules total (major requirements 45 + List A 4 + List B 3 + List C 0-5); the page prints no general education pattern or degree total.",
+   "List C is 'Up to five (5) units' (Total Units 0.0 - 5.0); recorded as choose_units with minimum 0 since the program total range 52-57 implies List C may contribute 0 units. Reviewer should confirm.",
+   "CDEV107 Child Growth and Development is likely the former number of CDEV C1000; recorded as printed with catalog_addition true.",
+   "ENGL102/ENGL102H are printed with the note 'This course is now ENGLC1003/ENGLC1003H'; recorded as printed with catalog_addition true. HIST120/HIST120H similarly note 'now HISTC1001/HISTC1001H'.",
+   "In List C, STATC1000E (4.5 units) and STATC1000H are treated as alternatives to STATC1000; the catalog lists them as separate rows without an explicit 'or'.",
+   "Honors pairs in the major requirements were grouped per the catalog's 'Select X or XH. Credit will be awarded for one or the other.' rows.",
+   "No program learning outcomes are printed in the text."
+  ]
+ },
+ "extracted_run": "43387912036",
+ "source_sha": "c698dd41ba11cff9",
+ "source_codes": [
+  "ANTH104",
+  "ART100",
+  "ART100H",
+  "BIOL115",
+  "COMMC1000",
+  "DNCE100",
+  "EDUC101",
+  "EDUC110",
+  "EDUC200",
+  "EDUC206",
+  "ENGL231",
+  "ENGL232",
+  "ENGL241",
+  "ENGL242",
+  "ENGL270",
+  "ENGL271",
+  "ENGL272",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "ENGLC1001",
+  "ENGLC1001H",
+  "ENGLC1003",
+  "ENGLC1003H",
+  "ERTH121",
+  "ETHN101",
+  "FREN102",
+  "GEOG100",
+  "GEOG100H",
+  "HIST101",
+  "HIST101H",
+  "HIST120",
+  "HIST120H",
+  "HIST133",
+  "MATH203",
+  "MUS101",
+  "MUS101H",
+  "PHIL106",
+  "PHIL106H",
+  "PHIL108",
+  "PHIL110",
+  "PHIL112",
+  "POLSC1000",
+  "POLSC1000H",
+  "PSC100",
+  "SPAN102",
+  "STATC1000",
+  "STATC1000H",
+  "THEA100"
+ ],
+ "source_coverage": 0.98
+}

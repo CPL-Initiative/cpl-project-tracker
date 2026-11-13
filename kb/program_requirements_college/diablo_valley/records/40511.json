@@ -1,0 +1,191 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "40511",
+ "shape": "noncredit",
+ "title": "Intermediate ESL Success",
+ "award": "Noncredit program",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-intermediate-esl-success-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6336,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6336,
+    "output_tokens": 998,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 998,
+  "output_tokens_details": {
+   "thinking_tokens": 264
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0453,
+ "ms": 13207,
+ "seconds": 13.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    162.0,
+    234.0
+   ],
+   "stated": [
+    162.0,
+    234.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Competency - Intermediate ESL Success",
+   "measure": "hours",
+   "total_units": {
+    "min": 162,
+    "max": 234
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate ability to self-edit sentences and paragraphs.",
+    "demonstrate academic paragraph and short essays skills.",
+    "demonstrate intermediate reading and vocabulary skills.",
+    "demonstrate critical-thinking skills and prepare them for the rest of the ESL program.",
+    "demonstrate intermediate listening, and speaking skills."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "required course:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 108,
+     "max": 108
+    },
+    "courses": [
+     {
+      "code": "ESL077NC",
+      "units": 108,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "plus at least one of the courses below:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 54,
+     "max": 126
+    },
+    "courses": [
+     {
+      "code": "ESL070NC",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL075NC",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of competency: the page header shows 0.0 units, but the requirements list hours beside each course and a total of 162-234; recorded in hours.",
+   "Catalog prints codes without a space (ESL077NC, ESL070NC, ESL075NC); these match closed-list ESL 077NC, ESL 070NC, ESL 075NC.",
+   "Second block reads 'Complete at least one of the following rules' with stated total 54-126, meaning a student may take one or both of ESL070NC and ESL075NC.",
+   "Careers: the description mentions 'career' only generically; no specific career named.",
+   "The outcomes list has no lead-in sentence on the page; outcomes copied as printed."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

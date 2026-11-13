@@ -1,0 +1,232 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "35614",
+ "shape": "adt",
+ "title": "Early Childhood Education",
+ "award": "A.S. T Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=94",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 10951,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 10951,
+    "output_tokens": 1220,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1220,
+  "output_tokens_details": {
+   "thinking_tokens": 364
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0682,
+ "ms": 10377,
+ "seconds": 10.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 7,
+   "listed": 8,
+   "share": 0.875,
+   "missing": [
+    "CDEVC1000"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "CDEV107"
+   ],
+   "flagged": [
+    "CDEV107"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    24.5,
+    24.5
+   ],
+   "stated": [
+    24.5,
+    24.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Early Childhood Education, AS-T",
+   "measure": "units",
+   "total_units": {
+    "min": 24.5,
+    "max": 24.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Program Rules: Early Childhood Education, AS-T",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24.5,
+     "max": 24.5
+    },
+    "courses": [
+     {
+      "code": "CDEV107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV108",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV111A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV111B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV298A",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEV C1000",
+    "why": "not in the text; the catalog prints CDEV107 Child Growth and Development (DS1) in its place, likely the pre-common-course-numbering code"
+   }
+  ],
+  "notes": [
+   "The block is headed 'The following number of Units' but its eight courses sum exactly to the printed 24.5-unit total, so it is recorded as all required.",
+   "CDEV107 (Child Growth and Development) is not in the closed list, which names CDEV C1000 with the same title; reviewer should check whether CDEV107 has been renumbered to CDEV C1000.",
+   "The text at the top of page 94 (Major Requirements with CDEV107/CDEV110, Mathematics, Psychology, List A) belongs to a preceding program whose heading is cut off (likely Child and Adolescent Development AA-T) and was not read for this award.",
+   "The page names no general education pattern, degree total, program learning outcomes, or careers for this award."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "1493aa72ac1e02d7",
+ "source_codes": [
+  "CDEV108",
+  "CDEV110",
+  "CDEV111A",
+  "CDEV111B",
+  "CDEV112",
+  "CDEV221",
+  "CDEV298A"
+ ],
+ "source_coverage": 0.875
+}

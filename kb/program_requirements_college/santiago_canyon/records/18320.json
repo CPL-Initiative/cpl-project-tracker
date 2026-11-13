@@ -1,0 +1,990 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "18320",
+ "shape": "degree",
+ "title": "Liberal Arts: Social and Behavioral Sciences, AA",
+ "award": "A.A. Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=106",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12167,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12167,
+    "output_tokens": 6871,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 6871,
+  "output_tokens_details": {
+   "thinking_tokens": 2024
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.18609,
+ "ms": 51637,
+ "seconds": 51.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 93,
+   "listed": 99,
+   "share": 0.939,
+   "missing": [
+    "CDEVC1000",
+    "ECONC2001",
+    "ECONC2002",
+    "ETHN130",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 7,
+   "codes": [
+    "APCD107",
+    "CDEV107",
+    "CHST101",
+    "ECON101",
+    "ECON102",
+    "HIST121",
+    "HIST121H"
+   ],
+   "flagged": [
+    "APCD107",
+    "CDEV107",
+    "CHST101",
+    "ECON101",
+    "ECON102",
+    "HIST121",
+    "HIST121H"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Liberal Arts: Social and Behavioral Sciences, AA",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Plan A (associate degree only, non-transfer), Plan B (CSU-GE Breadth, CSU transfer) or Plan C (IGETC, UC or CSU transfer)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "The following number of Units",
+    "rule": "choose_units",
+    "minimum": 18,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ANTH100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ANTH100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTH104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APCD107",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "APCD110",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV107H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "CDEV110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV202",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV203",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APCD221",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CDEV221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINE105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CJ101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSL150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSL165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM120H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM225H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL278",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ETHN120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHST101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETHN140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "GEOG102H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GSWS101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GSWS102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GSWS103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST101H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST102H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST120H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST121H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST133",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST142",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST172",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDS155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLSC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLT201",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLT220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLT221",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLT230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLT235",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYCC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC190",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC200",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC125H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC220",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC240H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC210",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC286",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000E",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CDEV C1000",
+    "why": "Catalog lists CDEV107 with note 'This course is now CDEVC1000'; recorded under the printed code CDEV107"
+   },
+   {
+    "code": "ECONC2001",
+    "why": "Catalog lists ECON101 with note 'This course is now ECONC2001'; recorded under the printed code ECON101"
+   },
+   {
+    "code": "ECONC2002",
+    "why": "Catalog lists ECON102 (Principles/Macro) instead; recorded under the printed code"
+   },
+   {
+    "code": "ETHN 130",
+    "why": "Catalog lists CHST101 Introduction to Chicano Studies instead; recorded under the printed code"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "Catalog lists HIST121 with note 'This course is now HISTC1002'; recorded under the printed code HIST121"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "Catalog lists HIST121H with note 'This course is now HISTC1002H'; recorded under the printed code HIST121H"
+   }
+  ],
+  "notes": [
+   "The single list is headed only 'The following number of Units' with no number; minimum 18 taken from 'Program Rules ... (Total Units 18.0 - 18.0)' and 'Unit Range for Completion : 18.0 - 18.0'.",
+   "The row 'APCD 170 or CDEV 107 or CDEV107H or Psyc 157 credit will be given for one course (Total Units 0.0 - 0.0)' is read as a credit restriction (credit for only one of these), not a separate course; APCD 170 appears only there and may be a typo for APCD107. Not recorded as a course.",
+   "APCD107, APCD110 and APCD221 print Total Units 0.0; recorded as printed.",
+   "Several entries note successor codes (CDEV107 -> CDEVC1000, CDEV107H -> CDEVC1000H, ECON101 -> ECONC2001, HIST120/120H -> HISTC1001/HISTC1001H, HIST121/121H -> HISTC1002/HISTC1002H); courses recorded under the codes printed in the list.",
+   "Honors twins recorded as alternatives of their base course; STATC1000E kept as a separate entry.",
+   "General education: Plan A, Plan B (CSU-GE Breadth) or Plan C (IGETC); no GE units or degree total printed. Units in the emphasis may double-count for GE.",
+   "No program learning outcomes or careers printed; the description names disciplines (Criminal Justice, Economics, Political Science, Psychology, Sociology, History) as major preparation, not careers."
+  ]
+ },
+ "extracted_run": "43387912036",
+ "source_sha": "1aae5a9146ae7a5f",
+ "source_codes": [
+  "ANTH100",
+  "ANTH100H",
+  "ANTH103",
+  "ANTH104",
+  "APCD110",
+  "APCD221",
+  "CDEV107H",
+  "CDEV110",
+  "CDEV202",
+  "CDEV203",
+  "CDEV221",
+  "CDEVC1000",
+  "CINE105",
+  "CJ101",
+  "CMPR100",
+  "CNSL150",
+  "CNSL165",
+  "COMM120",
+  "COMM120H",
+  "COMM225",
+  "COMM225H",
+  "ECONC2001",
+  "ENGL278",
+  "ETHN101",
+  "ETHN110",
+  "ETHN120",
+  "ETHN140",
+  "GEOG100",
+  "GEOG100H",
+  "GEOG102",
+  "GEOG102H",
+  "GSWS101",
+  "GSWS102",
+  "GSWS103",
+  "HIST101",
+  "HIST101H",
+  "HIST102",
+  "HIST102H",
+  "HIST115",
+  "HIST118",
+  "HIST120",
+  "HIST120H",
+  "HIST124",
+  "HIST125",
+  "HIST126",
+  "HIST127",
+  "HIST129",
+  "HIST130",
+  "HIST132",
+  "HIST133",
+  "HIST140",
+  "HIST142",
+  "HIST152",
+  "HIST162",
+  "HIST172",
+  "HISTC1002",
+  "HISTC1002H",
+  "IDS155",
+  "KIN109",
+  "POLSC1000",
+  "POLSC1000H",
+  "POLT201",
+  "POLT220",
+  "POLT221",
+  "POLT230",
+  "POLT235",
+  "PSYC157",
+  "PSYC160",
+  "PSYC170",
+  "PSYC180",
+  "PSYC190",
+  "PSYC200",
+  "PSYC220",
+  "PSYC230",
+  "PSYC240",
+  "PSYC250",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "SOC100",
+  "SOC100H",
+  "SOC101",
+  "SOC115",
+  "SOC116",
+  "SOC120",
+  "SOC125",
+  "SOC125H",
+  "SOC130",
+  "SOC160",
+  "SOC210",
+  "SOC220",
+  "SOC230",
+  "SOC240",
+  "SOC240H",
+  "SOC286",
+  "STATC1000",
+  "STATC1000E",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.98
+}

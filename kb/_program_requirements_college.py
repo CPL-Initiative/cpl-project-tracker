@@ -2997,18 +2997,22 @@ PDF_AWARD_SEP = re.compile(r"\s*[,–—]\s*|\s+-\s+")
 CERT_KEYS = frozenset({"ca", "cc", "com", "cp", "nc"})
 
 
-def _award_keys(text: str | None) -> set[str]:
+def _award_keys(text: str | None, own: bool = False) -> set[str]:
     """The exact awards a heading's award words or a state record's award name (decision 17, round 4):
     aa, as, aat, ast; ca (Achievement), cc (Completion), com (Competency), cp (Proficiency), nc
     (Noncredit). AA is not AS, and a Certificate of Achievement is not CC. A bare "Cert" is any
-    certificate; the state's "Noncredit program" is any noncredit certificate (cc, com or nc)."""
+    certificate; the state's "Noncredit program" is any noncredit certificate (cc, com or nc).
+    own (pdf_own_heading's award test alone, S647): a bare "Certificate" is any certificate too, and the
+    transfer letters run together ("AAT", "AST") read as written apart; every other reader keeps main's
+    keys, so neither makes a line heading-shaped (review of #3214, findings 1 and 4)."""
     t = (text or "").strip().lower()
     if not t:
         return set()
     out = set()
     transfer = bool(re.search(r"\bfor\s+transfer\b|-\s*t\b|\ba\.?\s?[as]\.?\s*t\b|\ba\.?\s?[as]\.?t\.?(?![a-z])", t))
-    arts = re.search(r"\ba\.?\s?a\b\.?|\bassociate\s+(?:of|in)\s+arts\b", t)
-    sci = re.search(r"\ba\.?\s?s\b\.?|\bassociate\s+(?:of|in)\s+science\b", t)
+    run = r"(?:\b|(?=t\b))" if own else r"\b"
+    arts = re.search(r"\ba\.?\s?a" + run + r"\.?|\bassociate\s+(?:of|in)\s+arts\b", t)
+    sci = re.search(r"\ba\.?\s?s" + run + r"\.?|\bassociate\s+(?:of|in)\s+science\b", t)
     if arts:
         out.add("aat" if transfer else "aa")
     if sci:
@@ -3020,7 +3024,7 @@ def _award_keys(text: str | None) -> set[str]:
             out.add(key)
     if re.search(r"^noncredit\s+program\b", t):
         out |= {"cc", "com", "nc"}
-    if re.fullmatch(r"cert\.?", t):
+    if re.fullmatch(r"cert\.?|certificate", t) if own else re.fullmatch(r"cert\.?", t):
         out |= CERT_KEYS
     return out
 
@@ -3042,30 +3046,85 @@ def _split_heading(s: str | None) -> tuple[str, str]:
     return s, ""
 
 
-def _title_words(s: str | None) -> list[str]:
+def _title_words(s: str | None, keep_hyphen: bool = False) -> list[str]:
     """A title's words in order: case and punctuation set aside, "&" read as "and", and a word the catalog
-    hyphenated at a line's end rejoined ("Certi- fied")."""
-    s = re.sub(r"(?<=[a-z])- (?=[a-z])", "", (s or "").lower())
+    hyphenated at a line's end rejoined ("Certi- fied"); keep_hyphen reads that hyphen as the title's own
+    ("Pre-" over "Engineering, AS" is "Pre-Engineering", S647)."""
+    s = (s or "").lower()
+    if not keep_hyphen:
+        s = re.sub(r"(?<=[a-z])- (?=[a-z])", "", s)
     return re.findall(r"[a-z0-9]+", s.replace("&", " and "))
 
 
-def pdf_own_heading(line: str, nxt: str, program: dict) -> bool:
+def _torn_head(s: str) -> bool:
+    """A line that ends in a hyphen and reads as a heading's head: short (PDF_WRAP_CHARS), opening on a
+    capital, no course code, and some word that names a program ("Pre-", "Apprenticeship Carpentry,
+    Mill-"); a sentence wrapping mid-word ("hands-on skills in a co-") is not (review of #3214, finding 3)."""
+    from _program_requirements_score import heading_content_words
+    s = (s or "").strip()
+    small = {"a", "an", "and", "as", "at", "for", "in", "of", "on", "or", "the", "to", "with"}
+    titled = all(w[:1].isupper() or w.lower() in small for w in re.findall(r"[A-Za-z][A-Za-z']*", s))
+    return (bool(re.search(r"[A-Za-z]-$", s)) and len(s) <= PDF_WRAP_CHARS and s[:1].isupper() and titled
+            and not PDF_COURSE_LINE.match(s) and bool(heading_content_words(s)))
+
+
+def _wrap_head_ok(upper: str, title: str) -> bool:
+    """Decision 18's wrapped heading, S647: a line above that ends a sentence ("... in Commercial.") is
+    prose, never the head of a wrapped heading, unless the title itself carries that word with its
+    period ("U.S.")."""
+    s = (upper or "").strip()
+    if not s or s[-1] not in ".!?;":
+        return True
+    return s.split()[-1].lower() in (title or "").lower().split()
+
+
+PDF_BARE_CERT = re.compile(r"^(.*\S)(?:\s*[,–—]\s*|\s+-\s+)Certificate\s*$", re.I)
+PDF_RUN_TOGETHER = re.compile(r",\s*A\.?\s?[AS]T\.?\s*$", re.I)
+
+
+def _peers(program: dict, peers: dict | None) -> list[dict]:
+    """The college's other listed programs (by_cn without this one)."""
+    me = _cn(program.get("control_number"))
+    return [p for cn, p in (peers or {}).items() if cn != me]
+
+
+def pdf_own_heading(line: str, nxt: str, program: dict, peers: dict | None = None) -> bool:
     """Decision 17: a heading-shaped line is the program's own only when its name is the program's full
     title (the words in order, case, punctuation and "&" set aside, a trailing award on either read as
     the award) and its award is the program's own award (_award_keys: AA is not AS). The award stands on
     the line ("Art History, AA" names "Art History", never "Art") or on the next line alone. Never a token
-    subset. A state award the keys cannot read falls back to the scorer's award type."""
+    subset. A state award the keys cannot read falls back to the scorer's award type.
+    S647 and its review (peers: the college's list by control number, when the caller has it): "AAT" and
+    "AST" run together count only after a comma ("Spanish, AAT", never "Astronomy - AST"); a bare
+    "Certificate" is any certificate of the title, and nobody's own heading where the college lists two
+    certificates of that title; an end-of-line hyphen read either way ("Pre- Law") is nobody's own where
+    the college lists the other reading as a distinct title ("Prelaw" beside "Pre-Law")."""
     from _program_requirements_score import heading_award_types, award_type
     title = program.get("title") or ""
     name, words = _split_heading(line)
+    bare = False
     if not words:
-        words = (nxt or "").strip()
+        m = PDF_BARE_CERT.match((line or "").strip())
+        if m:
+            name, words, bare = m.group(1), "Certificate", True
+        else:
+            words = (nxt or "").strip()
     want = _title_words(_split_heading(title)[0])
-    if not want or _title_words(name) != want:
+    soft, hard = _title_words(name), _title_words(name, keep_hyphen=True)
+    if not want or want not in (soft, hard):
         return False
+    others = _peers(program, peers)
+    if soft != hard:
+        other = hard if want == soft else soft
+        if any(_title_words(_split_heading(p.get("title") or "")[0]) == other for p in others):
+            return False
+    if bare and any(_title_words(_split_heading(p.get("title") or "")[0]) == want
+                    and _award_keys(p.get("award")) & CERT_KEYS for p in others):
+        return False
+    own = bare or PDF_RUN_TOGETHER.search((line or "").strip()) is not None
     filed = _award_keys(program.get("award"))
     if filed:
-        return bool(filed & _award_keys(words))
+        return bool(filed & _award_keys(words, own=own))
     kind = award_type(program.get("award"))
     return kind is not None and kind in heading_award_types(words, title)
 
@@ -3090,15 +3149,24 @@ def pdf_block_headings(text: str, program: dict, ctx: dict) -> list[tuple[int, b
     for i, k in enumerate(content):
         nxt = lines[content[i + 1]] if i + 1 < len(content) else ""
         if not _heading_shaped(lines[k], nxt):
+            # "X, Certificate" is not heading-shaped (main's keys): it counts only as the program's own
+            # heading, so body text naming another certificate leaves the block as it was (review of #3214).
+            if PDF_BARE_CERT.match(lines[k].strip()) and pdf_own_heading(lines[k], nxt, program, by_cn):
+                out.append((offs[k], True, None))
             continue
         rest = "\n".join(lines[k:k + 6])
-        if pdf_own_heading(lines[k], nxt, program):
+        # A line under a short title-shaped line that ends in a hyphen ("Pre-" over "Engineering, AS") is
+        # that word's tail, never a heading alone (S647); a sentence's hyphen ("skills in a co-") is not.
+        torn = i > 0 and _torn_head(lines[content[i - 1]])
+        if not torn and pdf_own_heading(lines[k], nxt, program, by_cn):
             out.append((offs[k], True, None))
             continue
         # A long title wraps in the catalog's narrow column ("Apprenticeship Carpentry," over "Millwrighting,
         # AS"): the heading is the line with the one or two lines above it, still the full title (decision 18).
-        wrapped = next((content[i - j] for j in (1, 2) if i - j >= 0 and pdf_own_heading(
-            " ".join(lines[content[x]].strip() for x in range(i - j, i + 1)), nxt, program)), None)
+        wrapped = next((content[i - j] for j in (1, 2) if i - j >= 0
+                        and all(_wrap_head_ok(lines[content[x]], program.get("title") or "") for x in range(i - j, i))
+                        and pdf_own_heading(" ".join(lines[content[x]].strip() for x in range(i - j, i + 1)),
+                                            nxt, program, by_cn)), None)
         if wrapped is not None:
             out.append((offs[wrapped], True, None))
             continue
@@ -3348,6 +3416,12 @@ def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None,
     return reg.get("catalog_url"), P.CATALOG_PDF_WAIT_S * 1000
 
 
+def pdf_fetch(reg: dict):
+    """How the catalog PDF is fetched: in ranges where the procedure's catalog step says
+    resume (College of the Desert, S647), else main's one whole-file request."""
+    return P.read_pdf_ranged if (P.procedure_catalog(reg.get("procedure")) or {}).get("resume") else P.read_pdf
+
+
 def is_pdf_catalog(reg: dict) -> bool:
     url = (reg.get("catalog_url") or "").lower().split("#")[0].split("?")[0]
     return reg.get("catalog_format") == "single_pdf" and url.endswith(".pdf")
@@ -3487,7 +3561,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
         pw, browser, reader = P.open_reader(delay)
         try:
             start, wait = pdf_start(reader, reg, {}, report)
-            pdf = (P.read_pdf(reader, start, {}, timeout_ms=wait) if start
+            pdf = (pdf_fetch(reg)(reader, start, {}, timeout_ms=wait) if start
                    else {"access": "no_address", "pages": []})
         finally:
             browser.close()
@@ -3517,6 +3591,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                      "bytes": pdf.get("bytes"), "pages_total": len(pages), "error": pdf.get("error"),
                      "chars_total": sum(len(t) for t in pages), "pypdf_accepted": n,
                      "sample": P.text_sample(pages)}
+    if pdf.get("ranges"):
+        report["pdf"]["ranges"] = pdf["ranges"]
     if pdf.get("data") and n < 0.5 * len(listed):
         alt = P.pdfminer_pages(pdf)
         alt_votes, alt_ctx = reading(alt["pages"]) if alt["pages"] else ({}, None)

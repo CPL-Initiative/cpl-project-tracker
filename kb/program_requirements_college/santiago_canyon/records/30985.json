@@ -1,0 +1,207 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "30985",
+ "shape": "noncredit",
+ "title": "Receptionist/Information Clerk",
+ "award": "Noncredit program",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8140,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8140,
+    "output_tokens": 901,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 901,
+  "output_tokens_details": {
+   "thinking_tokens": 281
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05058,
+ "ms": 8364,
+ "seconds": 8.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "VBUS257",
+    "VBUS258"
+   ],
+   "flagged": [
+    "VBUS257",
+    "VBUS258"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    156.0,
+    156.0
+   ],
+   "stated": [
+    156.0,
+    156.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Receptionist/Information Clerk, CC",
+   "measure": "hours",
+   "total_units": {
+    "min": 156,
+    "max": 156
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "receptionist",
+    "information clerk"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 96,
+     "max": 96
+    },
+    "courses": [
+     {
+      "code": "VBUS258",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WKPR500",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives",
+    "rule": "choose_units",
+    "minimum": 60,
+    "option_group": null,
+    "stated": {
+     "min": 60,
+     "max": 60
+    },
+    "courses": [
+     {
+      "code": "VBUS121",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS257",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program is noncredit and counted in hours; all units fields hold hours.",
+   "Electives block reads 'The following number of Hours' with a stated total of 60 hours; read as choose 60 hours from VBUS121 or VBUS257 (each 60 hours, so effectively one course).",
+   "Catalog prints VBUS121 as 'Computer Applications Basics'; closed list title is 'Computer Application Basics'.",
+   "No program learning outcomes are printed for this certificate.",
+   "Careers taken from the description phrase 'entry-level receptionist or information clerk positions'."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "e984df5742634ab3",
+ "source_codes": [
+  "VBUS121",
+  "WKPR500"
+ ],
+ "source_coverage": 1.0
+}
