@@ -531,6 +531,12 @@
     // Nothing new: the stamp names the open pull request when its branch already carries the marks, or says in
     // its detail which marks were held (first-light-apply.yml, the stamp step).
     if (r.status === "nothing") {
+      // A held mark rides on the same stamp as the open pull request (S646 UI pass): the pull request carries the
+      // other marks, and the held item is on no pull request.
+      var held = r.detail && r.detail.indexOf("held: ") !== -1 ? r.detail.slice(r.detail.indexOf("held: ") + 6) : "";
+      if (r.pr_url && held) return '<p class="flt-p" data-req="nothing">The last Apply' + when + " found nothing new: " + pr +
+        " carries the other marks, and Sam merges it; until then the views are unchanged. " + esc(held.charAt(0).toUpperCase() + held.slice(1)) +
+        ", so it is on no pull request.</p>";
       if (r.pr_url) return '<p class="flt-p" data-req="nothing">The last Apply' + when + " found nothing new: " + pr + " already carries these marks. Sam merges it; until then the views are unchanged.</p>";
       return '<p class="flt-p" data-req="nothing">The last Apply' + when + " found nothing to change" + (r.detail ? " (" + esc(r.detail) + ")" : "") + ".</p>";
     }
