@@ -1,0 +1,17 @@
+{
+ "_readme": "S644, 2026-11-13. Reads 1-5 found that Diablo Valley's eLumen catalog prints every award's requirements (content call catalog,program,<slug>, run 43342877522) but lists none of them: its full publish call names no program,<slug> (run 43343491672), so the program index is www.dvc.edu's grid of program areas, whose area pages link each award into eLumen. The grid pages by ?page=0..5 with 13 areas on its first page. This read loads the last grid page once, to count the areas a reader would load (5 x 13 plus this page's). No model call.",
+ "college": "Diablo Valley College",
+ "questions": {
+  "area_count": "How many program areas does the grid's last page (?page=5) list, and does it name a page past it?"
+ },
+ "keywords": [
+  "Learn more about"
+ ],
+ "pages": [
+  {
+   "url": "https://www.dvc.edu/academics/explore-our-programs?page=5",
+   "answers": ["area_count"],
+   "links": "explore-our-programs/|[?&]page="
+  }
+ ]
+}
