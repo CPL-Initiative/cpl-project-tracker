@@ -1,0 +1,42 @@
+{
+ "_readme": "S644, 2026-11-13. Read 3 (run 43342288026, 1 load): each award name on a www.dvc.edu program area page links the eLumen catalog with a comma, not a slash: dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-administration-of-justice-for-transfer-fall-2025 (EL_PROGRAM_PATH and el_program_slugs take only /program/<slug>, which is why every eLumen read of Diablo Valley found 0). This read asks eLumen's content call for three of those programs (catalog,program,<slug>, the same call the reader makes for /program/<slug>) to see whether each prints its required courses and units, and renders the dvc-certs-and-degrees hub with comma links shown, to see whether eLumen itself lists every program. No model call. Answered by run 43342877522 (4 loads): each content call answers 200 and prints the award whole (A.S.-T 60 units, major Total 18: ADJUS120 3, ADJUS121 3, 6 units from a list; A.S. Local 28-30; Certificate of Achievement Police/Law Enforcement Total 20); the dvc-certs-and-degrees hub is an unlinked grid that says to visit www.dvc.edu/programs.",
+ "college": "Diablo Valley College",
+ "questions": {
+  "content_call": "Does the content call for catalog,program,<slug> answer, and does it print the award's required courses and units?",
+  "hub_programs": "Does the dvc-certs-and-degrees hub (or the departments it grids) link programs at program,<slug>?"
+ },
+ "keywords": [
+  "[Rr]equired|[Rr]equirements",
+  "rule-credits|[Uu]nits",
+  "ADJUS[- ]?\\d+|ADMJ[- ]?\\d+",
+  "program,[a-z0-9-]+",
+  "department,[a-z0-9-]+"
+ ],
+ "pages": [
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,program,a-s-in-administration-of-justice-for-transfer-fall-2025?tenant=dvc.elumenapp.com",
+   "answers": [
+    "content_call"
+   ]
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,program,a-s-in-administration-of-justice-fall-2020?tenant=dvc.elumenapp.com",
+   "answers": [
+    "content_call"
+   ]
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/DVC2026-2027Catalog,program,certificate-of-achievement-in-police-law-enforcement-fall-2020?tenant=dvc.elumenapp.com",
+   "answers": [
+    "content_call"
+   ]
+  },
+  {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/dvc-certs-and-degrees",
+   "answers": [
+    "hub_programs"
+   ],
+   "links": "program,|department,|/program/|/department/"
+  }
+ ]
+}
