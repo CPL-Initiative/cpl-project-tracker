@@ -72,8 +72,7 @@
     18.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -311,6 +310,6 @@
    "PHILOS 005 and PHILOS 006 are marked * (see course description for prerequisites/corequisites)."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": 43355018296,
+ "read_run": 39018421038
 }

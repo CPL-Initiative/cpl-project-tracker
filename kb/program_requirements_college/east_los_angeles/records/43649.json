@@ -73,37 +73,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    57.0,
-    57.0
+    30.0,
+    30.0
    ],
    "stated": [
-    60.0,
-    60.0
+    30.0,
+    30.0
    ],
-   "against": "degree",
-   "ge": [
-    27.0,
-    27.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     30.0,
-     30.0
+     57.0,
+     57.0
     ],
     "stated": [
-     30.0,
-     30.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     27.0
+    ],
+    "why": [],
+    "fill": [
+     3.0,
+     3.0
+    ]
    }
   },
   "repeated": {
@@ -128,7 +130,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -169,7 +171,8 @@
     "Administrative Assistants",
     "Public Policy Administrators",
     "Legal Support Staff"
-   ]
+   ],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -335,5 +338,14 @@
    "Text following the Paralegal section belongs to the Real Estate A.A. degree and was not read; REAL ES 005 also appears there but is placed here from the Paralegal elective list."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

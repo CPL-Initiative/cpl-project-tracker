@@ -129,7 +129,8 @@
     "Read and understand Welding Procedure Specifications to produce quality welds.",
     "Pass a Welder Performance Qualification Test that meets the standard of acceptability to a National Standard."
    ],
-   "careers": []
+   "careers": [],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -210,5 +211,14 @@
    "No careers are named; the description mentions only 'anyone in the welding industry'."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t1"
+  }
+ ],
+ "read_run": "38748858322"
 }

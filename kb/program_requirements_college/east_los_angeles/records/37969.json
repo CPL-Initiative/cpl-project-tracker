@@ -152,7 +152,8 @@
    ],
    "careers": [
     "entry level sign language interpreter"
-   ]
+   ],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -354,5 +355,14 @@
    "CH DEV 044 and LING 007 matched to closed-list CH DEV 44 and LING 7; A S L codes matched to closed-list ASL codes. Closed-list title for ASL010 ('American Sign Language-to-English') differs slightly from catalog title ('Sign-to-English')."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

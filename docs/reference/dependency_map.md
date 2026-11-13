@@ -1016,6 +1016,10 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
 | `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `first-light-apply.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-requirements-wave.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
 | `scripts/k10_disclosure_check.py` | workflows: `k10-disclosure-check.yml` | — |
+| `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/draft.html` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/write_receipt.py` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` |
+| `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/library` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` | — |
+| `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/main.html` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` | — |
+| `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/panel.html` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` | — |
 | `scripts/library_publish.py` | workflows: `library-publish.yml` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
 | `scripts/stamp_asset_versions.py` | workflows: `pages.yml` | — |
@@ -1457,5 +1461,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 917 file
-datasets · 195 external services · 577 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 921 file
+datasets · 195 external services · 579 consumers · 72 workflows · 41 tabs.

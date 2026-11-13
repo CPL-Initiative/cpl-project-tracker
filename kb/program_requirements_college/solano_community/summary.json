@@ -5,11 +5,11 @@
  "found": 162,
  "extracted": 162,
  "errors": 0,
- "passed_machine_checks": 83,
+ "passed_machine_checks": 98,
  "failed": {
   "coverage": 25,
   "invented": 6,
-  "arithmetic": 55,
+  "arithmetic": 37,
   "repeated": 0,
   "outcomes": 25
  },
@@ -22,9 +22,9 @@
    "award": "A.A. Degree",
    "near_miss": {
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=230",
-    "coverage": 0.241
+    "coverage": 0.434
    }
   }
  ],
- "run": "39037377728"
+ "run": "43355021555"
 }

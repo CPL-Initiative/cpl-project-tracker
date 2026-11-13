@@ -67,11 +67,23 @@
    "pass": true
   },
   "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     54.0,
+     55.0,
      55.0
     ],
     "stated": [
@@ -86,22 +98,9 @@
     "why": [],
     "fill": [
      5.0,
-     6.0
+     5.0
     ]
-   },
-   "pass": true,
-   "status": "equal",
-   "computed": [
-    28.0,
-    28.0
-   ],
-   "stated": [
-    28.0,
-    28.0
-   ],
-   "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   }
   },
   "repeated": {
    "codes": [],
@@ -158,7 +157,8 @@
     "athletic training",
     "physical therapy",
     "exercise science"
-   ]
+   ],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -385,5 +385,14 @@
    "Students are recommended to have basic English writing and speaking skills and ability to perform moderate physical activity; no recommended courses listed."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

@@ -72,11 +72,8 @@
     22.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.0-23.0; the catalog states 21.0-22.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -278,5 +275,6 @@
    "The intro text mentions general Computer Science Information Systems content and 'Five related but distinct areas' listing only three; this appears to be shared department text."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "read_run": "39061728041"
 }

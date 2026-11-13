@@ -151,7 +151,8 @@
     "Achieve competency in a theater work environment, either in production or performance.",
     "Synthesize the historical and philosophical context of theater arts to broaden individual perspective."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -471,5 +472,14 @@
    "The preceding text on page 375 (Lists B and C, emphases, LACCD GE 27, Total 60) belongs to the A.A. degree in Theater, not this A.A.-T, and was not recorded."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

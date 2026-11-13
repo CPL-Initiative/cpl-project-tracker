@@ -61,37 +61,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    58.0,
-    58.0
+    24.0,
+    24.0
    ],
    "stated": [
-    60.0,
-    60.0
+    24.0,
+    24.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     24.0,
-     24.0
+     58.0,
+     58.0
     ],
     "stated": [
-     24.0,
-     24.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     2.0,
+     2.0
+    ]
    }
   },
   "repeated": {
@@ -116,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,7 +149,8 @@
     "Critically examine societal and personal attitudes, beliefs, values and assumptions towards the diverse contexts of child and human development including: ethnicity, gender, language, family structure, socio-economic status, age and ability.",
     "Compare and examine differing social, economic, political, historical, cultural and family contexts and their effect on human development; demonstrate effective advocacy techniques related to current social issues pertaining to children, adults, and families."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -231,5 +234,14 @@
    "Catalog text begins mid-sentence (cut off at the start); the generic Child Development Program paragraph names no specific careers."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }

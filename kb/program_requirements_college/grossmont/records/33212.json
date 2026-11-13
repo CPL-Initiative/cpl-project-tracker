@@ -61,37 +61,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    57.0,
-    57.0
+    23.0,
+    23.0
    ],
    "stated": [
-    60.0,
-    60.0
+    23.0,
+    23.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     23.0,
-     23.0
+     57.0,
+     57.0
     ],
     "stated": [
-     23.0,
-     23.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     3.0,
+     3.0
+    ]
    }
   },
   "repeated": {
@@ -116,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -153,7 +155,8 @@
     "higher education",
     "Spanish Literature",
     "Linguistics"
-   ]
+   ],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -278,5 +281,14 @@
    "Careers taken from the description: 'entry level positions in education and business' and 'careers in higher education, Spanish Literature or Linguistics'."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }

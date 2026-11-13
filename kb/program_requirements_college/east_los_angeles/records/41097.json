@@ -71,34 +71,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     30.0,
     31.0
    ],
    "stated": [
-    60.0,
-    60.0
+    30.0,
+    31.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     30.0,
-     31.0
+     64.0,
+     65.0
     ],
     "stated": [
-     30.0,
-     31.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -123,7 +125,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -144,15 +146,16 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
     "Acquire a broad fundamental knowledge of business theory and practices to encompass the skills needed for a professional business environment.",
     "Apply the principles and practices of the business world in preparation for a formal business education."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -266,5 +269,26 @@
    "MATH 236 / MATH 235 / MATH 261 is one choice; STAT C1000 / STAT C1000E / PSYCH 091 / ECON 020 / BUS 015 is one choice (3 or 4 units, accounting for the 30-31 range)."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE \nUNITS"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "(34 \nsemester/45 quarter units)"
+  }
+ ],
+ "read_run": "39063389278"
 }

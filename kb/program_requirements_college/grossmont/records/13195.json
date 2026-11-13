@@ -72,11 +72,8 @@
     22.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.0-23.0; the catalog states 21.0-22.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -280,5 +277,6 @@
    "Introductory text mentions 'Five related but distinct areas of emphasis' but names only three; appears to be shared departmental text."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "read_run": "39061728041"
 }

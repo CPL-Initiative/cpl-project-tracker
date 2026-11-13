@@ -70,20 +70,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     194.0,
     297.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -107,7 +103,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -138,7 +134,8 @@
     "Prepare for an employment interview, including developing responses, describing experience, and dressing for success.",
     "Deliver excellent customer service."
    ],
-   "careers": []
+   "careers": [],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -212,5 +209,14 @@
    "The description mentions 'researching careers' but names no specific career or occupation, so careers is empty."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t1"
+  }
+ ],
+ "read_run": "38748858322"
 }

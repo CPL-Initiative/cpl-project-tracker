@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 171,
  "with_closed_list": 163,
- "started": "2026-10-17T13:39:28Z",
+ "started": "2026-11-13T02:52:52Z",
  "pdf": {
   "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
   "access": "ok",
@@ -13,7 +13,7 @@
   "bytes": 9098769,
   "pages_total": 459,
   "error": null,
-  "chars_total": 1495583,
+  "chars_total": 1495585,
   "pypdf_accepted": 162,
   "sample": [
    "p138: '137\\nART - Art\\nC-ID DesignaƟ on may change periodically visit c-id.net/courses/search for current designaƟ on or consult with your counselor\\n**All Prerequisite courses must be completed with a minimum grade of C, or a P if taken on a Pass/No'",
@@ -29,6 +29,7 @@
      299
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -42,6 +43,7 @@
      174
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -54,6 +56,7 @@
      108
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -66,6 +69,7 @@
      419
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -80,6 +84,7 @@
      186
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.812,
@@ -92,6 +97,7 @@
      310
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -104,6 +110,7 @@
      281
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -118,6 +125,7 @@
      212
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -132,6 +140,7 @@
      151
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -145,6 +154,7 @@
      125
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -157,6 +167,7 @@
      124
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -170,6 +181,7 @@
      125
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -182,6 +194,7 @@
      448
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -193,6 +206,7 @@
      359
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.792,
@@ -201,16 +215,17 @@
    {
     "control_number": "06535",
     "pages": [
+     433,
      434,
      435,
-     436,
-     437
+     436
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.966,
-    "opens": "[page 434] 433 Theatre Arts Theatre Arts Associate in Arts Program DescripƟ on This program is designed for students who are preparing to further their theatre educaƟ on at the CSU system, as well as those seeking a c"
+    "opens": "[page 433] Associate in Arts in Theatre Arts for Transfer (ADT: A.A.-T) Program DescripƟ on Theatre teaches pracƟ cal skills, performance techniques, and creaƟ vity. It is the goal of this department to provide student"
    },
    {
     "control_number": "06536",
@@ -218,6 +233,7 @@
      76
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.5,
@@ -232,6 +248,7 @@
      344
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.87,
@@ -245,6 +262,7 @@
      349
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -259,6 +277,7 @@
      353
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.833,
@@ -270,6 +289,7 @@
      373
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -284,6 +304,7 @@
      270
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -296,6 +317,7 @@
      405
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -309,6 +331,7 @@
      191
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -323,6 +346,7 @@
      416
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.933,
@@ -337,6 +361,7 @@
      114
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -351,6 +376,7 @@
      114
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -362,6 +388,7 @@
      77
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.727,
@@ -375,6 +402,7 @@
      285
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -383,13 +411,17 @@
    {
     "control_number": "06555",
     "pages": [
-     85
+     275,
+     276,
+     277,
+     278
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.704,
-    "opens": "[page 85] 84 Solano Community College General Education2026–2027 (Local/Non-Transfer Pathway) CPL* = Credit for Prior Learning C = Completed IP = In Progress P = Planned AREA 4 – Social and Behavioral Science"
+    "coverage": 0.963,
+    "opens": "[page 275] Students who complete the Ethnic Studies A.A. are well prepared to transfer to four-year universiƟ es as ethnic studies majors or majors in related liberal-arts ﬁ elds. The Ethnic Studies A.A. prepares studen"
    },
    {
     "control_number": "06559",
@@ -397,6 +429,7 @@
      422
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -409,6 +442,7 @@
      179
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -423,6 +457,7 @@
      213
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -435,6 +470,7 @@
      332
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -449,6 +485,7 @@
      393
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -457,14 +494,17 @@
    {
     "control_number": "07808",
     "pages": [
+     160,
+     161,
      162,
      163
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 162] Students who complete the Industrial Biotechnology Associate in Science will be able to: 1. Explain how the structure and funcƟ on of protein pharmaceuƟ cals and evaluate which protein properƟ es a producƟ on "
+    "opens": "[page 160] The Biomanufacturing program builds upon the Associate in Science in Industrial Biotechnology. In the baccalaureate program students gain knowledge in biology, chemistry, engineering, staƟ sƟ cs, quality, re"
    },
    {
     "control_number": "08337",
@@ -474,6 +514,7 @@
      305
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.938,
@@ -486,6 +527,7 @@
      359
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.783,
@@ -500,6 +542,7 @@
      213
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -512,6 +555,7 @@
      174
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -523,6 +567,7 @@
      155
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -536,6 +581,7 @@
      431
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -550,6 +596,7 @@
      166
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -563,6 +610,7 @@
      299
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -575,6 +623,7 @@
      108
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -588,6 +637,7 @@
      174
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -602,6 +652,7 @@
      179
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -614,6 +665,7 @@
      179
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -628,6 +680,7 @@
      180
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -642,6 +695,7 @@
      184
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -654,6 +708,7 @@
      419
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -666,6 +721,7 @@
      174
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -677,6 +733,7 @@
      183
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.545,
@@ -691,6 +748,7 @@
      213
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -705,6 +763,7 @@
      212
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -719,6 +778,7 @@
      213
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -733,6 +793,7 @@
      152
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -746,6 +807,7 @@
      125
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -758,6 +820,7 @@
      124
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -771,6 +834,7 @@
      125
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -785,6 +849,7 @@
      252
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -797,6 +862,7 @@
      448
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -810,6 +876,7 @@
      445
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.929,
@@ -824,6 +891,7 @@
      393
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -835,6 +903,7 @@
      77
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.667,
@@ -847,6 +916,7 @@
      305
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -861,6 +931,7 @@
      114
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -875,6 +946,7 @@
      114
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -883,13 +955,17 @@
    {
     "control_number": "20992",
     "pages": [
+     282,
+     283,
+     284,
      285
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.778,
-    "opens": "[page 285] 284 FIRE - Fire Technologygy FIRE 050 Principles of Emergency Services 3.0 Units Transferable to CSU Hours: 48-54 lecture This course provides an overview of ﬁ re protecƟ on; career opportuniƟ es"
+    "coverage": 0.889,
+    "opens": "[page 282] CERTIFICATE OF ACHIEVEMENT Fire Technology Fireﬁ ghter 1 & 2 COURSES: FIRE (FIRE) CONTACT INFORMATION: Division of Career Technical EducaƟ on and Business Building: 500 Room 509 Phone Number: (707) 864-7229"
    },
    {
     "control_number": "30034",
@@ -899,6 +975,7 @@
      252
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -913,6 +990,7 @@
      121
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -927,6 +1005,7 @@
      121
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -938,6 +1017,7 @@
      183
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -949,6 +1029,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -957,16 +1038,17 @@
    {
     "control_number": "30678",
     "pages": [
+     427,
      428,
      429,
-     430,
-     431
+     430
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 428] Associate in Arts in Sociology for Transfer (ADT: A.A.-T) Program DescripƟ on Sociology is the study of society and human behavior. Students who obtain a degree in Sociology gain a fundamental understanding o"
+    "opens": "[page 427] Sociology (AA-T) Sociology (AA) COURSES SOCI (Sociology) CONTACT INFORMATION: Division of Social and Behavioral Sciences and EducaƟ on Building: 700 Room 729 Phone Number: (707) 864-7000 x7251 Fax Number: (7"
    },
    {
     "control_number": "31659",
@@ -977,6 +1059,7 @@
      206
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -988,6 +1071,7 @@
      77
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -996,28 +1080,31 @@
    {
     "control_number": "32121",
     "pages": [
+     130,
      131,
      132,
-     133,
-     134
+     133
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.938,
-    "opens": "[page 131] Associate in Arts in Studio Arts for Transfer (ADT: A.A.-T) Program DescripƟ on This program provides the academic and pracƟ cal experience to prepare students for a career, or further educaƟ on at a four-ye"
+    "opens": "[page 130] Studio Art (AA-T) Studio Arts with Emphasis (AA) COURSES: ART (Art) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to express yourself "
    },
    {
     "control_number": "32126",
     "pages": [
+     141,
      142,
      143
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.952,
-    "opens": "[page 142] Associate in Arts in Art History for Transfer (ADT: A.A.-T) Program DescripƟ on This program provides the academic and pracƟ cal experience to prepare students for a career, or further educaƟ on at a four-y"
+    "opens": "[page 141] Art History (AA-T) COURSES: ARTH (Art History) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to express yourself creaƟ vely and using "
    },
    {
     "control_number": "32475",
@@ -1025,6 +1112,7 @@
      145
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1033,16 +1121,17 @@
    {
     "control_number": "32495",
     "pages": [
+     306,
      307,
      308,
-     309,
-     310
+     309
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 307] Associate in Arts in Journalism for Transfer (ADT: A.A.-T) Program DescripƟ on Journalism teaches criƟ cal thinking and communicaƟ on skills that enable students to translate events and issues of importance "
+    "opens": "[page 306] Journalism (AA-T) CERTIFICATES OF ACHIEVEMENT Journalism MulƟ media Journalism COURSES JOUR (Journalism) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON W"
    },
    {
     "control_number": "32903",
@@ -1053,6 +1142,7 @@
      113
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1061,83 +1151,91 @@
    {
     "control_number": "32917",
     "pages": [
+     412,
      413,
      414,
-     415,
-     416
+     415
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 413] Associate in Arts in Psychology for Transfer (ADT: A.A.-T) Program DescripƟ on The psychology program provides academic instrucƟ on in basic psychological concepts, theories, terminology, and research methods,"
+    "opens": "[page 412] Psychology (AA-T) Psychology (AA) COURSES PSYC (Psychology) CONTACT INFORMATION: Division of Social and Behavioral Sciences and EducaƟ on Building: 700 Room 729 Phone Number: (707) 864-7000 x7251 Fax Number:"
    },
    {
     "control_number": "32918",
     "pages": [
+     323,
      324,
      325,
-     326,
-     327
+     326
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.808,
-    "opens": "[page 324] 323 Kinesiology MOVEMENT ͳBASED COURSES AquaƟ cs: (maximum of one course) ..................... Units KINE 002A Swimming - Beginning .................................. 1 KINE 002B Swimming - Intermediate ...."
+    "coverage": 1.0,
+    "opens": "[page 323] Associate in Arts in Kinesiology for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Kinesiology for Transfer is designed to prepare students to transfer into the CSU system and work in th"
    },
    {
     "control_number": "32919",
     "pages": [
+     265,
      266,
      267,
-     268,
-     269
+     268
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 266] Associate in Arts in English for Transfer (ADT: A.A.-T) Program DescripƟ on This program is for students who intend to complete a bachelor’s degree in English at a CSU. Students will take courses in English a"
+    "opens": "[page 265] English (AA-T) English (AA) COURSES: ENGL (English) ESL (English as a Second Language) GPS - VISUAL, PERFORMANCE, AND LANGUAGE ARTS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires t"
    },
    {
     "control_number": "32927",
     "pages": [
+     286,
      287,
      288
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 287] Associate in Arts in Geography for Transfer (ADT: A.A.-T) Program DescripƟ on Solano Community College oﬀ ers an Associate in Arts in Geography for Transfer to introduce students to principles, theory, and ap"
+    "opens": "[page 286] Geography (AA-T) COURSES: GEOG (Geography) CONTACT INFORMATION: Division of Science, Technology, Engineering and MathemaƟ cs Building: 2700 Room 2719B Phone Number: (707) 864-7110 Fax Number: (707) 646-2054 "
    },
    {
     "control_number": "32937",
     "pages": [
+     291,
      292,
      293,
      294
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 292] Associate in Arts in History for Transfer (ADT: A.A.-T) Program DescripƟ on This program emphasizes the development of various socieƟ es through a chronological study of the major social, poliƟ cal, economic"
+    "opens": "[page 291] History (AA-T) COURSES: HIST (History) CONTACT INFORMATION: Division of Social and Behavioral Sciences and EducaƟ on Building: 700 Room 729 Phone Number: (707) 864-7000 x7251 Fax Number: (707) 646-7701 Dean:"
    },
    {
     "control_number": "32992",
     "pages": [
+     432,
      433,
      434,
-     435,
-     436
+     435
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 433] Associate in Arts in Theatre Arts for Transfer (ADT: A.A.-T) Program DescripƟ on Theatre teaches pracƟ cal skills, performance techniques, and creaƟ vity. It is the goal of this department to provide student"
+    "opens": "[page 432] Theatre Arts (AA-T) Theatre Arts (AA) CERTIFICATE OF ACHIEVEMENT Theatre Arts Technical COURSES THEA (Theatre Arts) CONTACT INFORMATION: Division of Visual, Performance, and Language Arts Building: 1300 Room"
    },
    {
     "control_number": "33291",
@@ -1148,6 +1246,7 @@
      353
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1161,6 +1260,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.778,
@@ -1169,15 +1269,17 @@
    {
     "control_number": "33373",
     "pages": [
+     126,
      127,
      128,
      129
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 127] Associate in Arts in Anthropology for Transfer (ADT: AA-T) Program DescripƟ on This program emphasizes the development and diversity of, and adaptaƟ ons in, human behavior and biology. Students in this progr"
+    "opens": "[page 126] Anthropology (AA-T) COURSES: ANTH (Anthropology) GPS - SOCIAL AND BEHAVIORAL SCIENCES AND EDUCATION GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to quesƟ on and explore physical"
    },
    {
     "control_number": "33378",
@@ -1187,6 +1289,7 @@
      411
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1198,6 +1301,7 @@
      231
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.903,
@@ -1209,6 +1313,7 @@
      204
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1223,6 +1328,7 @@
      198
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1236,6 +1342,7 @@
      264
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1247,6 +1354,7 @@
      164
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1261,6 +1369,7 @@
      152
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1275,6 +1384,7 @@
      151
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1283,15 +1393,17 @@
    {
     "control_number": "35808",
     "pages": [
+     356,
      357,
      358,
      359
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.762,
-    "opens": "[page 357] Associate in Arts in Music for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Music for Transfer provides students with the foundaƟ ons for a broad range of musical specializaƟ ons such as"
+    "opens": "[page 356] Music (AA-T) Music-Instrumental (AA) Music-Vocal (AA) CERTIFICATES OF ACHIEVEMENT Music (Non-Performance) Sound ProducƟ on Sound ProducƟ on Specialist COURSES MUSC (Music) GPS - VISUAL, PERFORMANCE, AND LANG"
    },
    {
     "control_number": "35982",
@@ -1300,6 +1412,7 @@
      383
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1312,6 +1425,7 @@
      146
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1320,16 +1434,17 @@
    {
     "control_number": "36249",
     "pages": [
-     435,
-     436,
-     437,
-     438
+     432,
+     433,
+     434,
+     435
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 435] 434 Theatre Arts Theatre Arts Technical CerƟ ﬁ cate of Achievement Program DescripƟ on The Theatre Arts Technical CerƟ ﬁ cate program prepares students for an entry-level career in Community and Professional "
+    "opens": "[page 432] CERTIFICATE OF ACHIEVEMENT Theatre Arts Technical COURSES THEA (Theatre Arts) CONTACT INFORMATION: Division of Visual, Performance, and Language Arts Building: 1300 Room 1307B Phone Number: (707) 864-7250 Fa"
    },
    {
     "control_number": "36302",
@@ -1340,6 +1455,7 @@
      158
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1351,6 +1467,7 @@
      221
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.667,
@@ -1365,6 +1482,7 @@
      252
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1378,6 +1496,7 @@
      252
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1392,6 +1511,7 @@
      346
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1406,6 +1526,7 @@
      346
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1414,28 +1535,31 @@
    {
     "control_number": "36511",
     "pages": [
+     153,
      154,
      155,
-     156,
-     157
+     156
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 154] Associate in Science in Biology for Transfer (ADT: A.S.-T.) Program DescripƟ on The Associate in Science in Biology for Transfer prepares students to seamlessly transfer to the California State University (C"
+    "opens": "[page 153] Biology (AS-T) Biology (AS) Biomedical Sciences (AS) CERTIFICATES OF ACHIEVEMENT Biomedical Sciences COURSES: BIOL (Biology) GPS - SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS GUIDED PATHWA Y SOLANO COL"
    },
    {
     "control_number": "37103",
     "pages": [
+     253,
      254,
      255
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 254] Associate in Arts in Economics for Transfer (ADT: A.A.-T) Program DescripƟ on This curriculum is designed to provide an opportunity for economics majors to achieve an Associate in Arts Degree in Economics whil"
+    "opens": "[page 253] Economics (AA-T) COURSES: ECON (Economics) GPS - CAREER TECHNICAL EDUCATION AND BUSINESS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ... desires to inﬂ uence, lead or manage to reach your "
    },
    {
     "control_number": "37158",
@@ -1444,6 +1568,7 @@
      425
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.696,
@@ -1458,6 +1583,7 @@
      135
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1470,6 +1596,7 @@
      252
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1484,6 +1611,7 @@
      239
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1498,6 +1626,7 @@
      158
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1512,6 +1641,7 @@
      158
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1524,6 +1654,7 @@
      401
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1538,6 +1669,7 @@
      119
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1552,6 +1684,7 @@
      119
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1566,6 +1699,7 @@
      168
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1580,6 +1714,7 @@
      119
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1588,13 +1723,15 @@
    {
     "control_number": "38404",
     "pages": [
+     216,
      217
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 217] Associate in Science in Computer Science for Transfer (ADT: A.S.-T) Program DescripƟ on The Associate in Science for Transfer is especially appropriate for students who plan to complete a bachelor’s degree in "
+    "opens": "[page 216] Computer Science (AS-T) COURSES: CS (Computer Science) CONTACT INFORMATION: Division of Career Technical EducaƟ on and Business Building: 500 Room 509 Phone Number: (707) 864-7229 Fax Number: (707) 864-7190 "
    },
    {
     "control_number": "38591",
@@ -1605,6 +1742,7 @@
      345
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1617,6 +1755,7 @@
      258
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.895,
@@ -1631,6 +1770,7 @@
      394
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1645,6 +1785,7 @@
      201
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1658,6 +1799,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1670,6 +1812,7 @@
      285
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1683,6 +1826,7 @@
      305
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.96,
@@ -1697,6 +1841,7 @@
      355
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1711,6 +1856,7 @@
      354
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1722,6 +1868,7 @@
      221
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1733,6 +1880,7 @@
      223
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1744,6 +1892,7 @@
      222
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1756,6 +1905,7 @@
      242
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1768,6 +1918,7 @@
      242
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1780,6 +1931,7 @@
      405
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.967,
@@ -1794,6 +1946,7 @@
      344
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1807,6 +1960,7 @@
      323
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.933,
@@ -1821,6 +1975,7 @@
      206
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1835,6 +1990,7 @@
      192
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.9,
@@ -1843,15 +1999,17 @@
    {
     "control_number": "43948",
     "pages": [
+     282,
      283,
      284,
      285
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 283] 282 Fire Technology Fire Technology CerƟ ﬁ cate of Achievement and Associate in Science Program DescripƟ on This program of study was developed to assist students who desire to advance as a ﬁ reﬁ ghter, or to"
+    "opens": "[page 282] CERTIFICATE OF ACHIEVEMENT Fire Technology Fireﬁ ghter 1 & 2 COURSES: FIRE (FIRE) CONTACT INFORMATION: Division of Career Technical EducaƟ on and Business Building: 500 Room 509 Phone Number: (707) 864-7229"
    },
    {
     "control_number": "43949",
@@ -1861,6 +2019,7 @@
      285
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1869,16 +2028,17 @@
    {
     "control_number": "44069",
     "pages": [
+     295,
      296,
      297,
-     298,
-     299
+     298
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 296] Associate in Science in Agriculture Plant Science for Transfer (ADT: A.S.-T) Program DescripƟ on The Associate in Science in Agriculture Plant Science for Transfer is an interdisciplinary degree that includes "
+    "opens": "[page 295] Agriculture Plant Science (AS-T) HorƟ culture and Plant Science (AS) CERTIFICATES OF ACHIEVEMENT HorƟ culture and Plant Science COURSES: HORT (HorƟ culture) GPS - SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMA"
    },
    {
     "control_number": "44185",
@@ -1887,6 +2047,7 @@
      361
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1899,6 +2060,7 @@
      361
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1913,6 +2075,7 @@
      186
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1927,6 +2090,7 @@
      186
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1941,6 +2105,7 @@
      247
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1955,6 +2120,7 @@
      247
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1963,16 +2129,17 @@
    {
     "control_number": "44820",
     "pages": [
+     406,
      407,
      408,
-     409,
-     410
+     409
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 407] Associate in Arts in Law, Public Policy, and Society for Transfer (ADT: A.A.-T) Program DescripƟ on The Associate in Arts in Law, Public Policy, and Society for Transfer Degree is designed for students who pl"
+    "opens": "[page 406] Law, Public Policy and Society (AA-T) PoliƟ cal Science (AA-T) COURSES POLS (PoliƟ cal Science) GPS - SOCIAL AND BEHAVIORAL SCIENCES AND EDUCATION GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO"
    },
    {
     "control_number": "44832",
@@ -1981,6 +2148,7 @@
      310
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -1992,6 +2160,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2005,6 +2174,7 @@
      114
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2016,6 +2186,7 @@
      374
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2029,6 +2200,7 @@
      364
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2040,6 +2212,7 @@
      78
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.857,
@@ -2048,16 +2221,17 @@
    {
     "control_number": "46128",
     "pages": [
+     188,
      189,
      190,
-     191,
-     192
+     191
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 189] Chemistry (AS-T-UCTP) Associate in Science for Tranfer - UC Transfer Pathway Program DescripƟ on An Associate in Science in Chemistry for UC Transfer is designed for students who plan to complete a bachelor’s"
+    "opens": "[page 188] Chemistry (AS-T-UCTP) COURSES: CHEM (Chemistry) GPS - SCIENCE, TECHNOLOGY, ENGINEERING, AND MATHEMATICS GUIDED PATHWA Y SOLANO COLLEGE ARE YOU THE KIND OF PERSON WHO... ...desires to observe, learn, analyze, "
    },
    {
     "control_number": "46201",
@@ -2066,6 +2240,7 @@
      258
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2077,6 +2252,7 @@
      380
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -2088,6 +2264,7 @@
      380
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2099,6 +2276,7 @@
      380
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -2108,7 +2286,9 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 104.1,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 131.2,
  "found": 162,
  "by_method": {
   "no_closed_list": 8,
@@ -2182,12 +2362,7 @@
   ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=189": [
    "06548",
-   "43166",
-   "46128"
-  ],
-  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=413": [
-   "06549",
-   "32917"
+   "43166"
   ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=111": [
    "06550",
@@ -2202,7 +2377,6 @@
   ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=283": [
    "06553",
-   "43948",
    "43949"
   ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=178": [
@@ -2241,6 +2415,10 @@
    "20977",
    "36421"
   ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282": [
+   "20992",
+   "43948"
+  ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=250": [
    "30034",
    "36428"
@@ -2261,6 +2439,10 @@
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=145": [
    "32475",
    "36034"
+  ],
+  "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432": [
+   "32992",
+   "36249"
   ],
   "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=221": [
    "36420",
@@ -2304,21 +2486,235 @@
    "award": "A.A. Degree",
    "near_miss": {
     "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=230",
-    "coverage": 0.241
+    "coverage": 0.434
    }
   }
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 12,
-  "0.8-1.0": 17,
-  "1.0": 133
+  "0.5-0.8": 10,
+  "0.8-1.0": 18,
+  "1.0": 134
  },
  "would_extract": {
   "against": "kb/program_requirements_college/solano_community",
-  "kept": 162,
-  "programs": 0,
-  "list": []
+  "kept": 138,
+  "kept_moved": 0,
+  "programs": 8,
+  "list": [
+   {
+    "control_number": "06555",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=275",
+    "coverage": 0.963,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=85",
+    "was_coverage": 0.704,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20992",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282",
+    "coverage": 0.889,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=285",
+    "was_coverage": 0.778,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "30678",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=427",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=428",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32917",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=412",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=413",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32918",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=323",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=324",
+    "was_coverage": 0.808,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "33373",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=127",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36511",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=153",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=154",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44069",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=295",
+    "coverage": 1.0,
+    "was_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=296",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "06535",
+    "title": "Theatre Arts",
+    "award": "A.A. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=433",
+    "coverage": 0.966,
+    "was_coverage": 0.966
+   },
+   {
+    "control_number": "07808",
+    "title": "Industrial Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=160",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32121",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=130",
+    "coverage": 0.938,
+    "was_coverage": 0.938
+   },
+   {
+    "control_number": "32126",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=141",
+    "coverage": 0.952,
+    "was_coverage": 0.952
+   },
+   {
+    "control_number": "32495",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=306",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32919",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=265",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32927",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=286",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32937",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=291",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32992",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35808",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=356",
+    "coverage": 0.762,
+    "was_coverage": 0.762
+   },
+   {
+    "control_number": "36249",
+    "title": "Theatre Arts Technical",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=432",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37103",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=253",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "38404",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=216",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "43948",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=282",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44820",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=406",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "46128",
+    "title": "UCTP Chemistry",
+    "award": "A.S. T Degree",
+    "url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=188",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": []
  },
- "run": "39037377728"
+ "run": "43355021555"
 }

@@ -98,9 +98,8 @@
     33.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 29.0-34.0; the catalog states 29.0-33.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -119,9 +118,7 @@
     ],
     "why": [],
     "overlap": true
-   },
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   }
   },
   "repeated": {
    "codes": [],
@@ -550,5 +547,6 @@
    "Footnote 1 on HUMSV 195A and HUMSV 198C: students must find and select an agency for fieldwork hours before registering."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "read_run": "38748858322"
 }

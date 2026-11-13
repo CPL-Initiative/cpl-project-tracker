@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Identify main ideas and isolate specific details from authentic listening and reading passages, while using macro-strategies to make predictions and infer the meaning of unfamiliar vocabulary."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify main ideas and isolate specific details from authentic listening and re"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -100,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -168,5 +164,6 @@
    "The text names no specific careers; it mentions only 'immediate career advancement' and the workforce generally."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 43355018296,
+ "read_run": "39006383070"
 }

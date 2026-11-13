@@ -70,37 +70,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    52.0,
-    52.0
+    18.0,
+    18.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    18.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     18.0
+     52.0,
+     52.0
     ],
     "stated": [
-     18.0,
-     18.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -125,7 +127,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -155,7 +157,8 @@
     "Analyze and interpret the meaning of artworks within their cultural, historical, and social contexts, demonstrating familiarity with major periods, styles, and movements in Western and non-Western art history, spanning from ancient to contemporary times.",
     "Create a portfolio showcasing skills in museum studies and art history through assignments such as conservation reports, gallery guides, catalog entries, museum labels, visual analyses, and field notes."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -297,5 +300,14 @@
    "Program Learning Outcomes are printed for this program as a whole; the AA-T is the only award on the page and shares them."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }

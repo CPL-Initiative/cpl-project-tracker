@@ -65,22 +65,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     23.0,
     23.0
    ],
    "stated": [
-    60.0,
-    60.0
+    23.0,
+    23.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
@@ -88,11 +85,16 @@
      23.0
     ],
     "stated": [
-     23.0,
-     23.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     37.0,
+     37.0
+    ]
    }
   },
   "repeated": {
@@ -119,7 +121,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -229,6 +231,6 @@
    "Pages 298-299 are course descriptions. Courses described there but not in the program requirements (HORT 007, 031, 101, 102, 301A-E) were not placed."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 43355021555,
+ "read_run": 39037377728
 }
