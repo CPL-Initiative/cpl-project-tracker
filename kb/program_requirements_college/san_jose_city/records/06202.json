@@ -1,0 +1,343 @@
+{
+ "college": "San Jose City College",
+ "control_number": "06202",
+ "shape": "degree",
+ "title": "Construction Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/construction-technology/construction-technology-associate-science/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7741,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7741,
+    "output_tokens": 2534,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2534,
+  "output_tokens_details": {
+   "thinking_tokens": 861
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08164,
+ "ms": 20891,
+ "seconds": 21.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "SOLARRENEWAB"
+   ],
+   "unexplained": [
+    "SOLARRENEWAB"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 6,
+   "codes": [
+    "CNSTR115",
+    "CNSTR116",
+    "CNSTR118",
+    "CNSTR120",
+    "CNSTR128",
+    "SOLAR102"
+   ],
+   "flagged": [
+    "CNSTR115",
+    "CNSTR116",
+    "CNSTR118",
+    "CNSTR120",
+    "CNSTR128"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    63.0,
+    63.0
+   ],
+   "stated": [
+    63.0,
+    63.0
+   ],
+   "against": "degree",
+   "ge": [
+    27.0,
+    27.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 17,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Construction Technology - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "local GE",
+   "degree_total": {
+    "min": 63,
+    "max": 63
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate appropriate use of construction tools, methods and materials, follow safety practices and procedures used in the industry.",
+    "Demonstrate understanding of construction terms, concepts, and hands-on applications.",
+    "Read and interpret building codes, blueprints, manuals, specifications, shop drawings.",
+    "Apply effective use of emerging technologies in the construction trades including application Virtual Design and Construction (VDC) and energy efficiency."
+   ],
+   "careers": [
+    "construction trades",
+    "Building Information Modeling (BIM)",
+    "Building Inspector",
+    "Carpenter",
+    "Concrete Form Setter",
+    "Construction Worker",
+    "Construction Management",
+    "Contractor",
+    "Drywall Hanger, Taper, and Texturing",
+    "Electrician",
+    "Estimator",
+    "Home Improvement Material Retail Sales",
+    "Insulation Installer",
+    "Painter",
+    "Plumber",
+    "Residential Maintenance",
+    "Roofer"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "CNSTR 101A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 101B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 102A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 102B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNSTR 117",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNSTR 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Approved Major Electives",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CNSTR 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNSTR 118",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNSTR 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CNSTR 138",
+      "units": 1,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMT 100",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOLAR 102",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "SOLAR 102 'Introduction to Photovoltaic Installation' is matched by title to the closed-list entry 'SolarRenewab' (truncated code, same title); recorded as not a catalog addition. Reviewer should confirm.",
+   "The page prints no single major total; it prints Major Requirements 27 and Approved Major Electives 9 separately, so total_units is left null. The degree total of 63 includes General Education Requirements 27.",
+   "The GE pattern is printed only as 'General Education Requirements'; read as the college's local GE.",
+   "The degree also requires two courses for the U.S. History, Constitution, and American Ideals Requirement (US-1, US-2, US-3); no units are printed for it.",
+   "Approved Major Electives require 9 non-duplicated units.",
+   "The outcomes list is printed for the program on this A.S. page and is recorded for this award.",
+   "'construction trades' is taken from the program description; the other careers come from the CAREER OPTIONS list."
+  ]
+ },
+ "extracted_run": "43357106423"
+}

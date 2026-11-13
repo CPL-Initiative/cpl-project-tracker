@@ -1,0 +1,296 @@
+{
+ "college": "San Jose City College",
+ "control_number": "38485",
+ "shape": "adt",
+ "title": "Nutrition and Dietetics",
+ "award": "A.S. T Degree",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/family-consumer-studies/nutrition-dietetics-associate-science-transfer/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7463,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7463,
+    "output_tokens": 2046,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2046,
+  "output_tokens_details": {
+   "thinking_tokens": 586
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07077,
+ "ms": 16635,
+ "seconds": 17.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    30.0
+   ],
+   "stated": [
+    27.0,
+    30.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     67.0,
+     76.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nutrition and Dietetics - Associate in Science for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 30
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 6,
+    "max": 12
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Assess the role of nutrients in the body, proper dietetic nutrient levels, and the effects of deficiencies upon the body.",
+    "Examine and compare various food preparation methods, ingredient functions and interactions to retain maximum nutritional value and aesthetic appeal for foods in all food groups.",
+    "Appraise scientific principles, basic terminology and techniques of food preparation."
+   ],
+   "careers": [
+    "dietitians",
+    "nutrition counselors",
+    "nutrition educators",
+    "sports nutritionists"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "BIOL 074",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 001A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FCS 019",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Complete Two Courses",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BIOL 071",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 072",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 001B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Complete One Course. Cannot use STAT C1000 if already used for List A.",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CHEM 015",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 032A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 032B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FCS 018",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (BIOL 074, BIOL 071, BIOL 072, FCS 019, FCS 018, CHEM 015) where the closed list has BIOL 74, BIOL 71, BIOL 72, FCS 19, FCS 18, CHEM 15; treated as the same courses (catalog_addition false).",
+   "BIOL 072 is printed as an 'or' alternative to BIOL 071 without units beside it; units left null.",
+   "STAT C1000 appears in both List A and List B; the catalog states it cannot be used for List B if already used for List A.",
+   "Transferable Electives are printed as 'as needed to reach 60' with units 6-12; recorded in degree_elective_units since units are printed, so electives_fill_degree is false.",
+   "The description once calls the award 'Associate in Arts in Nutrition and Dietetics for Transfer' though the heading and degree say Associate in Science for Transfer.",
+   "The generic statement of 60 units and a minimum of 18 major units is not used as a total; the Total Units 27-30 (major) and 60 (degree) are printed in the requirements tables.",
+   "The single outcomes list on the page is for the program as a whole and is recorded for this award."
+  ]
+ },
+ "extracted_run": "43357106423"
+}

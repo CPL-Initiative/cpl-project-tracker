@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 125,
  "with_closed_list": 90,
- "started": "2026-11-13T02:39:59Z",
+ "started": "2026-11-13T03:11:34Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.sjcc.edu/sitemap.xml",
@@ -24,7 +24,7 @@
  "child_pages": 8,
  "banner_h1": null,
  "loads": 233,
- "seconds": 1185.6,
+ "seconds": 1134.0,
  "found": 84,
  "by_method": {
   "link_search": 2,
@@ -1093,5 +1093,5 @@
   "held_no_gain": [],
   "held_opens_on_list": []
  },
- "run": "43353567560"
+ "run": "43357106423"
 }

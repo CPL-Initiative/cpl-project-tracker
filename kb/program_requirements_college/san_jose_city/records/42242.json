@@ -1,0 +1,297 @@
+{
+ "college": "San Jose City College",
+ "control_number": "42242",
+ "shape": "degree",
+ "title": "Engineering",
+ "award": "A.A. Degree",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/engineering/engineering-associate-arts/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7472,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7472,
+    "output_tokens": 1930,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1930,
+  "output_tokens_details": {
+   "thinking_tokens": 611
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06849,
+ "ms": 15396,
+ "seconds": 15.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "ENGR6"
+   ],
+   "flagged": [
+    "ENGR6"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    66.0,
+    68.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
+   "why": [
+    "the blocks and general education sum to 66.0-68.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     31.0,
+     32.0
+    ],
+    "stated": [
+     31.0,
+     32.0
+    ],
+    "against": "program",
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Engineering - Associate in Arts",
+   "measure": "units",
+   "total_units": {
+    "min": 31,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": 1,
+    "max": 2
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply knowledge of math, science, and engineering to identify, formulate, and solve basic engineering problems.",
+    "Analyze and interpret data resulting from conducted experiments.",
+    "Demonstrate basic design decisions regarding appropriate level engineering problems by applying techniques, skills, and modern engineering tools.",
+    "Demonstrate effective communication in working well in situations that require teamwork."
+   ],
+   "careers": [
+    "mechanical",
+    "civil",
+    "electrical",
+    "computer",
+    "industrial",
+    "aeronautical/astronautical",
+    "chemical",
+    "materials",
+    "environmental",
+    "biomedical"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 28,
+     "max": 28
+    },
+    "courses": [
+     {
+      "code": "ENGR 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 071",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 071H",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 072",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 073",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 004A",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 004B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Area of Specialization: Complete one of the following courses",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ENGR 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGR 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 032",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 033",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGR 038",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 084",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes with leading zeros (ENGR 003, MATH 071, CIS 084, etc.); these were matched to closed-list codes without zeros (ENGR 3, MATH 71, CIS 84).",
+   "ENGR 006 Engineering Graphics is not in the closed list; recorded as catalog addition.",
+   "MATH 071H printed as 'or' alternative with no units beside it.",
+   "General education pattern is printed only as 'General Education Requirements 34' without naming a pattern; ge_pattern left null.",
+   "Degree Applicable Electives 1-2 recorded as degree_elective_units (outside the major, counted toward the 60-unit degree total).",
+   "AA degree also requires two courses for the U.S. History, Constitution, and American Ideals Requirement (US-1, US-2, US-3); no units printed.",
+   "Careers taken from 'Career options include many disciplines of engineering: ...'; 'and others' omitted.",
+   "Program learning outcomes printed on the page's outcomes tab for this program."
+  ]
+ },
+ "extracted_run": "43357106423"
+}
