@@ -139,7 +139,8 @@
     "Develop critical thinking skills to apply social science concepts and theories to environmental issues.",
     "Develop problem-solving skills to solve environmental problems in real world situations."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -317,5 +318,14 @@
    "Catalog codes use leading zeros (e.g., ENV SCI 001, ECON 011) where the closed list uses ENV SCI 1, ECON 11; treated as the same courses."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

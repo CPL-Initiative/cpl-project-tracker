@@ -146,7 +146,8 @@
     "Apply concepts and theories in Engineering Graphics and Design to describe or explain use in industry.",
     "Develop conclusions for laboratory experiments that verify theory from classroom lectures."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -493,5 +494,14 @@
    "The description states the degree builds on the Computer-Aided Drafting (CAD) Certificate of Achievement with at least 2.0 GPA."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

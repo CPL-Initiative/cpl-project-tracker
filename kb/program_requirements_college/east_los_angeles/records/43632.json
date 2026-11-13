@@ -69,8 +69,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     62.0,
     67.0
@@ -84,9 +84,8 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ]
+   "why": [],
+   "overlap": true
   },
   "repeated": {
    "codes": [],
@@ -110,7 +109,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -142,7 +141,8 @@
     "Employ critical thinking skills to assess client needs and inform advocacy and counseling strategies.",
     "Communicate effectively in professional social work and human services contexts, including advocacy and counseling."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -365,5 +365,14 @@
    "SOC 020, PHYSIOL 001 and BIOLOGY 020 are marked with * (course has a prerequisite)."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

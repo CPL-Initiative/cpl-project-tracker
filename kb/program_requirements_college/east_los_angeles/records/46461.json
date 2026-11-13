@@ -136,7 +136,8 @@
     "Communicate action, narrative, and ideas through animation and other visual media.",
     "Integrate creative and technical processes in the planning and production of animation, visual effects, or interactive entertainment projects."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -538,5 +539,14 @@
    "ART 204 appears as a required course in Options 2 and 3 and as an alternative to ANIMATN 118 in Options 1 and 4."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

@@ -176,7 +176,8 @@
     "Build parts by using Computer Aided Manufacturing (CAM) techniques specifically in Additive Manufacturing and 3D printing.",
     "Apply the knowledge, techniques, skills, and modern tools of the discipline to narrowly defined technology activities."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -335,5 +336,14 @@
    "No careers or job titles are named in this section's text."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }
