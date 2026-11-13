@@ -5,12 +5,14 @@ name: First Light apply
 # first_light_apply_requests. This workflow turns the marks into ONE pull request. Sam merges it; nothing here
 # merges, approves or enables auto-merge.
 #
-#   look   (no checkout) one REST read of every pending request. An hourly run with none ends here, in seconds,
-#          because Actions minutes are tight (COBIx finding 5). A table not yet in place reads as none. One run
-#          serves every pending request it read.
+#   look   (no checkout) one REST read of every pending request, then the highest mark id. An hourly run with none
+#          pending ends here, in seconds. A table not yet in place (HTTP 404) reads as none; any other answer but
+#          200 (a revoked key, a 5xx) fails the run, so workflow-failure-watch.yml reports it (COBIx #3110 comment
+#          6837874586, finding 2). One run serves exactly the requests it read, and consumes only the marks up to
+#          the id it read after them: a request filed later waits for the next run and gets its own stamp (finding 1).
 #   apply  a sparse checkout of main. The tools are copied out of main first and always run from that copy, never
-#          from the open pull request's branch. tools/first_light_apply.mjs reads every mark through the tab's own
-#          resolver and writes the selection, the hero list (each with applied_through_mark_id, the highest mark it
+#          from the open pull request's branch. tools/first_light_apply.mjs reads the marks up to the look's id
+#          through the tab's own resolver and writes the selection, the hero list (each with applied_through_mark_id, the highest mark it
 #          consumed), the three views' copies of the list and the story photos (fetched here, as cpl-stories.yml
 #          does); the manifest builder runs. The one pull request from the branch first-light-apply is opened, or,
 #          while it is open, updated by a commit on its branch (so words a session wrote there stay) with the new
@@ -44,8 +46,9 @@ jobs:
     timeout-minutes: 3
     outputs:
       ids: ${{ steps.look.outputs.ids }}
+      through: ${{ steps.look.outputs.through }}
     steps:
-      - name: Which Applies are pending? (one REST read, no checkout)
+      - name: Which Applies are pending, and the marks through which id? (no checkout)
         id: look
         env:
           SB_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
@@ -55,17 +58,34 @@ jobs:
             "$SUPABASE_URL/rest/v1/first_light_apply_requests?status=eq.pending&select=id&order=id.asc" \
             -H "apikey: $SB_KEY" -H "Authorization: Bearer $SB_KEY")
           code=$(printf '%s' "$body" | tail -n1)
-          if [ "$code" != "200" ]; then
-            echo "::notice::the request table answered HTTP $code; nothing to do"
-            echo "ids=" >> "$GITHUB_OUTPUT"; exit 0
+          if [ "$code" = "404" ]; then
+            echo "::notice::the request table is not in place (HTTP 404); nothing to do, and a dispatch does nothing either until it is"
+            { echo "ids="; echo "through="; } >> "$GITHUB_OUTPUT"; exit 0
           fi
-          ids=$(printf '%s' "$body" | sed '$d' | jq -r '[.[].id | tostring] | join(",")')
-          echo "pending requests: ${ids:-none}"
-          echo "ids=$ids" >> "$GITHUB_OUTPUT"
+          if [ "$code" != "200" ]; then
+            echo "::error::the request table answered HTTP $code (a revoked or rotated key, or the service is down); no Apply can run"
+            exit 1
+          fi
+          ids=$(printf '%s' "$body" | sed '$d' | jq -r '[.[].id | tostring] | join(",")') || { echo "::error::the request table's answer was not a list"; exit 1; }
+          # The highest mark id, read AFTER the requests: every mark of a request read above was filed before it,
+          # so it is at or below this id. The Plan consumes no mark above it.
+          marks=$(curl -sS --max-time 20 -w '\n%{http_code}' \
+            "$SUPABASE_URL/rest/v1/first_light_marks?select=id&order=id.desc&limit=1" \
+            -H "apikey: $SB_KEY" -H "Authorization: Bearer $SB_KEY")
+          mcode=$(printf '%s' "$marks" | tail -n1)
+          if [ "$mcode" != "200" ]; then
+            echo "::error::the marks table answered HTTP $mcode; no Apply can run"
+            exit 1
+          fi
+          through=$(printf '%s' "$marks" | sed '$d' | jq -r '(.[0].id // 0) | tostring') || through=
+          case "$through" in ''|*[!0-9]*) echo "::error::the marks table gave no mark id"; exit 1 ;; esac
+          echo "pending requests: ${ids:-none}; marks through id $through"
+          { echo "ids=$ids"; echo "through=$through"; } >> "$GITHUB_OUTPUT"
 
   apply:
     needs: look
-    if: needs.look.outputs.ids != '' || github.event_name == 'workflow_dispatch'
+    # A look that read no mark id (the tables not in place: its 404 notice) runs nothing, a dispatch included.
+    if: needs.look.outputs.through != '' && (needs.look.outputs.ids != '' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
@@ -74,6 +94,7 @@ jobs:
       actions: write
     env:
       REQ_IDS: ${{ needs.look.outputs.ids }}
+      THROUGH: ${{ needs.look.outputs.through }}
       RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
     steps:
       - uses: actions/checkout@v7
@@ -124,7 +145,10 @@ jobs:
           set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          open=$(gh pr list -R "$GITHUB_REPOSITORY" --head "$BRANCH" --base main --state open --json number,url --jq '.[0] // empty')
+          # This repository's own branch only: the repository is public, so a fork's pull request can carry the same
+          # branch name (COBIx #3110 comment 6837874586, finding 3).
+          open=$(gh pr list -R "$GITHUB_REPOSITORY" --head "$BRANCH" --base main --state open --json number,url,isCrossRepository \
+            --jq '[.[] | select(.isCrossRepository == false)][0] // empty')
           if [ -n "$open" ]; then
             auth="AUTHORIZATION: basic $(printf 'x-access-token:%s' "$GH_TOKEN" | base64 -w0)"
             git -c http.extraheader="$auth" fetch -q --depth 20 origin "$BRANCH"
@@ -143,9 +167,11 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           set -euo pipefail
-          node "$TOOLS/tools/first_light_apply.mjs" --root "$GITHUB_WORKSPACE" --plan --out "$RUNNER_TEMP/plan.json" | tee "$RUNNER_TEMP/plan.out"
+          case "$THROUGH" in ''|*[!0-9]*) echo "::error::the look read no mark id"; exit 1 ;; esac
+          node "$TOOLS/tools/first_light_apply.mjs" --root "$GITHUB_WORKSPACE" --plan --through "$THROUGH" --out "$RUNNER_TEMP/plan.json" | tee "$RUNNER_TEMP/plan.out"
           echo "changed=$(jq -r .changed "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
           echo "fetch=$(jq -r '.fetches | length' "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
+          echo "held=$(jq -r '.held | length' "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
 
       # Holds no secret, and runs main's installer from the tools copy, outside the checkout.
       - name: Install a browser for MAP's story photos (only when one is added)
@@ -205,12 +231,28 @@ jobs:
           OUTCOME: ${{ job.status != 'success' && 'failed' || (steps.plan.outputs.changed != 'true' && 'nothing') || steps.pr.outputs.outcome }}
           PR_NUMBER: ${{ steps.pr.outputs.number }}
           PR_URL: ${{ steps.pr.outputs.url }}
+          OPEN_NUMBER: ${{ steps.open.outputs.number }}
+          OPEN_URL: ${{ steps.open.outputs.url }}
+          HELD: ${{ steps.plan.outputs.held }}
         run: |
           set -euo pipefail
           case "$REQ_IDS" in *[!0-9,]*) echo "::error::unexpected request ids"; exit 1 ;; esac
           detail=""
+          num=$PR_NUMBER url=$PR_URL
           [ "$OUTCOME" = failed ] && detail="the run failed; its log says why"
-          row=$(jq -nc --arg s "${OUTCOME:-failed}" --arg n "$PR_NUMBER" --arg u "$PR_URL" --arg r "$RUN_URL" --arg d "$detail" \
+          # Nothing new. A held mark (an item the Plan could not find) is said in words and names no pull request,
+          # since none carries it. Otherwise, while a pull request is open, its branch already holds what the live
+          # marks ask for (an earlier run consumed them), so the stamp names it.
+          if [ "$OUTCOME" = nothing ] && [ -z "$num" ]; then
+            case "${HELD:-0}" in ''|*[!0-9]*) HELD=0 ;; esac
+            if [ "$HELD" -gt 0 ]; then
+              items="$HELD marked items"; [ "$HELD" = 1 ] && items="1 marked item"
+              detail="held: $items could not be applied (a painting not in the candidate pool, or a story photo missing from the stories file or sharing its name with another story)"
+            elif [ -n "$OPEN_NUMBER" ]; then
+              num=$OPEN_NUMBER url=$OPEN_URL detail="the open pull request already carries these marks"
+            fi
+          fi
+          row=$(jq -nc --arg s "${OUTCOME:-failed}" --arg n "$num" --arg u "$url" --arg r "$RUN_URL" --arg d "$detail" \
             '{status:$s, handled_at:(now|todate), run_url:$r} + (if $n != "" then {pr_number:($n|tonumber)} else {} end)
              + (if $u != "" then {pr_url:$u} else {} end) + (if $d != "" then {detail:$d} else {} end)')
           curl -sS --fail --max-time 20 -X PATCH "$SUPABASE_URL/rest/v1/first_light_apply_requests?id=in.($REQ_IDS)&status=eq.pending" \
