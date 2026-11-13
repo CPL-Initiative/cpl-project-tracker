@@ -3027,7 +3027,10 @@ def _split_heading(s: str | None) -> tuple[str, str]:
 
 
 def _title_words(s: str | None) -> list[str]:
-    return re.findall(r"[a-z0-9]+", (s or "").lower().replace("&", " and "))
+    """A title's words in order: case and punctuation set aside, "&" read as "and", and a word the catalog
+    hyphenated at a line's end rejoined ("Certi- fied")."""
+    s = re.sub(r"(?<=[a-z])- (?=[a-z])", "", (s or "").lower())
+    return re.findall(r"[a-z0-9]+", s.replace("&", " and "))
 
 
 def pdf_own_heading(line: str, nxt: str, program: dict) -> bool:
@@ -3075,6 +3078,13 @@ def pdf_block_headings(text: str, program: dict, ctx: dict) -> list[tuple[int, b
         rest = "\n".join(lines[k:k + 6])
         if pdf_own_heading(lines[k], nxt, program):
             out.append((offs[k], True, None))
+            continue
+        # A long title wraps in the catalog's narrow column ("Apprenticeship Carpentry," over "Millwrighting,
+        # AS"): the heading is the line with the one or two lines above it, still the full title (decision 18).
+        wrapped = next((content[i - j] for j in (1, 2) if i - j >= 0 and pdf_own_heading(
+            " ".join(lines[content[x]].strip() for x in range(i - j, i + 1)), nxt, program)), None)
+        if wrapped is not None:
+            out.append((offs[wrapped], True, None))
             continue
         have = set(re.findall(r"[a-z0-9]+", rest[:PDF_HEADING_CHARS + PDF_NAME_REACH].lower()))
         hits = [p for cn, p in by_cn.items() if toks.get(cn) and toks[cn] <= have and pdf_text_names(rest, p, strict=True)]

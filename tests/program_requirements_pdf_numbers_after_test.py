@@ -653,6 +653,24 @@ check(C._heading_shaped("Real Estate, Certificate of Achievement", "REAL 101 Int
       and C._heading_shaped("Accounting - A.S. Degree", "ACCT 101 Intro 3")
       and not C._heading_shaped("Students earn the Certificate of Achievement in two terms", ""),
       "a heading with its award written out after a comma or a spaced dash reads as a heading")
+# Run 43379711428 (decision 17 as first built) refused 26 Santiago Canyon programs whose own heading the
+# old test found: long titles wrap in the catalog's column. A heading over two or three lines is still
+# the full title; a hyphen at a line's end rejoins its word.
+MILL = {"control_number": "60021", "title": "Apprenticeship Carpentry, Millwrighting", "award": AA}
+WRAPB = [ublock(p) for p in UPROGS]
+WRAPB = WRAPB[:8] + ["Program Rules: Apprenticeship Carpentry, Millwrighting, AA\n",
+                     "Apprenticeship Carpentry,\nMillwrighting, AA\nA.A. Degree\nMILL 101 Intro 3\nMILL 102 Next 3\n"
+                     "Control Number: 60021\n"] + WRAPB[8:]
+WRAPC = ucatalog(WRAPB)
+wctx = C.pdf_after_context(WRAPC, UPROGS + [MILL], C.pdf_numbers_after(WRAPC, UPROGS + [MILL]))
+wr = C.pdf_best("u", WRAPC, MILL, [{"code": "MILL 101"}, {"code": "MILL 102"}], "pypdf", numbers_after=wctx)
+check(wr and wr.get("bound") == "number_after" and wr.get("named") and "Program Rules" not in wr["text"]
+      and "Apprenticeship Carpentry,\nMillwrighting, AA" in wr["text"],
+      "a heading wrapped over two lines is the program's own, and its block starts there: %r"
+      % ((wr and (wr.get("after_unbound"), wr["text"][:80])),))
+check(C.pdf_own_heading("Home Health Aide (HHA) for Certi- fied Nurse Assistants (CNA), CC", "Certificate of Completion",
+                        {"title": "Home Health Aide (HHA) for Certified Nurse Assistants (CNA)", "award": "Noncredit program"}),
+      "a word hyphenated at a line's end is rejoined")
 
 # ── 7. Decisions 16 and 18: the number-line route keeps a filed record it cannot bind ─────────────
 # file_run files one read whole, for every college: a program the read does not carry loses its record
