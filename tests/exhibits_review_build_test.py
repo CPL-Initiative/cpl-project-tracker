@@ -351,6 +351,14 @@ got_cnt = B.leftover_code_proposal(prop, ex_cnt, lc, IDX2, "Industry Training Ev
 check("an industry certification still takes the official credential its course names: CNT 7285 and EMS 20",
       got_cnt and got_cnt["title"] == "CompTIA Cloud+" and got_cnt["source"] == B.SRC_OFFICIAL
       and got_ems and got_ems["title"] == "Emergency Medical Technician" and got_ems["source"] == B.SRC_OFFICIAL, (got_cnt, got_ems))
+# COBIx's review of #3233: the credential branch ran on every path. Ruling A (2026-11-11): a college's exam title stays
+# apart from the certification, so a credit-by-exam card whose course names a credential keeps the college's title and issuer.
+ex_cx = {"ids": ["MAPCXS-CNT7-1-001"], "art": ["Las Positas College"], "types": [],
+         "recs": [["CNT 7285", "3 units in CNT 7285 Cloud Infrastructure: CompTIA Cloud+ Certification"]]}
+got_cx = B.leftover_code_proposal(dict(prop), ex_cx, B.local_courses(ex_cx, CIX), IDX2, "Credit by Exam CNT 7285", wording=True)
+check("a credit-by-exam card whose course title names a certification keeps a college title and the college as issuer",
+      got_cx and got_cx["title"] == "Cloud Infrastructure: CompTIA Cloud+ Certification"
+      and got_cx["issuer"] == "California Community Colleges" and got_cx["source"] == B.SRC_COURSE, got_cx)
 check("a proposal with no course code left is never touched",
       B.leftover_code_proposal({"title": "Firefighter 1", "issuer": "x"}, ex_cnt, lc, IDX, "raw") is None)
 check("a college-issued title never counts as a named credential, nor does a one-word one",

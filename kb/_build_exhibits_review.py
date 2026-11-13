@@ -471,8 +471,11 @@ def _brand_words(issuer):
 
 def named_credential(texts, index):
     """The reference title of an industry issuer that a course title or a credit recommendation names as a phrase, the
-    longest when several do, else None. The title must carry its issuer's own name ("CompTIA Cloud+", issuer CompTIA),
-    so a generic title never matches. Sam, 2026-11-13 (#3223), on CNT 7285 "Cloud Infrastructure: CompTIA Cloud+
+    longest when several do, else None. The title must be two words or more and share a word of three letters or more
+    with its issuer's name, common words aside (STOP): "CompTIA Cloud+", issuer CompTIA. That test is loose: an issuer
+    whose name holds ordinary words lets its titles in on those words ("Emergency Medical Technician", issuer the
+    National Registry of Emergency Medical Technicians), so a title that is only a phrase can match; two hits of one
+    length name none, and a person confirms every card. Sam, 2026-11-13 (#3223), on CNT 7285 "Cloud Infrastructure: CompTIA Cloud+
     Certification": "for those appearing to be for industry certs, the proposed title should attempt to be the official
     cert title"."""
     blob = " ".join(t for t in texts if t)
@@ -497,8 +500,10 @@ def named_credential(texts, index):
 
 def leftover_code_proposal(prop, ex, courses, index, raw, wording=False):
     """A proposal that still carries a course code ("Computer Networking Technology (CNT 7285)", the department and the
-    leftover code) takes, in order: the industry credential its course title or credit line names (named_credential);
-    for credit by exam or noncredit, the local course title; else it stands, flagged for its official name. Sam, 4:57 AM
+    leftover code) takes, in order: for an industry-certification exhibit, the credential its course title or credit
+    line names (named_credential); for credit by exam or noncredit, the local course title; else it stands. A college's
+    exam never takes the certification's title or issuer (Sam's ruling A, 2026-11-11), and an industry certification
+    never takes a course title (his ruling of 2026-11-12). Sam, 4:57 AM
     PT 2026-11-13 (#3223): the local course title "should be taken into account when suggesting proposed titles for
     exhibits that appear to be for cx or noncredit". Returns the new proposal or None."""
     m = CODE_IN_PARENS.search(prop.get("title") or "")
@@ -508,15 +513,17 @@ def leftover_code_proposal(prop, ex, courses, index, raw, wording=False):
     if not m or (_code_key(m.group(1)) not in codes and not wording):
         return None
     titles = [c[2] for c in courses if c[2]]
-    hit = named_credential(titles + [r[1] for r in ex.get("recs") or []], index)
+    # The CPL path decides both branches: an exhibit on the `ic` path (a mix that includes it too, and MAP's CPL type
+    # where no id names a path) may take the credential its course names and never a course title; any other takes
+    # the course title and never the credential (COBIx's review of #3233).
+    paths = {exhibit_paths.path_of(i) for i in ex.get("ids") or []} - {""}
+    industry = "ic" in paths or (not paths and "Industry Certification" in (ex.get("types") or []))
+    hit = named_credential(titles + [r[1] for r in ex.get("recs") or []], index) if industry else None
     alts = [prop["title"]] + [a for a in prop.get("alternates") or [] if a != prop["title"]]
     if hit:
         return dict(prop, title=hit["t"], issuer=hit["issuer"], source=SRC_OFFICIAL, alternates=alts,
                     **{"from": "the credential its course names (%s)" % titles[0] if titles else "its credit recommendation"})
-    # Sam's ruling of 2026-11-12 keeps a course title off an industry-certification exhibit: an exhibit on the `ic` path
-    # (a mix that includes it too, and MAP's CPL type where no id names a path) never takes one, whatever its units say.
-    paths = {exhibit_paths.path_of(i) for i in ex.get("ids") or []} - {""}
-    industry = "ic" in paths or (not paths and "Industry Certification" in (ex.get("types") or []))
+    # Sam's ruling of 2026-11-12 keeps a course title off an industry-certification exhibit, whatever its units say.
     noncredit = bool(courses) and all(not c[3] for c in courses)
     if titles and not industry and (is_credit_by_exam(ex) or noncredit or re.match(r"^\s*Noncredit\b", raw or "", re.I)):
         own = titles[0]

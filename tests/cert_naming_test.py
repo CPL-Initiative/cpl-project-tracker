@@ -298,6 +298,17 @@ try:
           {"overrides": {"Automotive Fuel Systems": {"cert_rename_kept": "Automotive Fuel Systems"}}})
     rows4 = {r["current"] for r in rel.build(tmp3)["batches"][0]["rows"]}
     check("and a skip on it, saved as the title kept as it is, takes it out", "Automotive Fuel Systems" not in rows4, rows4)
+    # COBIx's review of #3233: the builder read a keep-as-is as answering any proposal; the tab reads it as answering
+    # only the empty one. A title kept as it is that later gains a proposal must come back, in both.
+    ut["Heating local"] = {"unified_title": "Heating and Air Conditioning", "source_exhibit_ids": ["X-Heating local"]}
+    cr3["Heating and Air Conditioning"] = [{"issuing_agency": ASE}]
+    write(os.path.join(tmp3, "kb", "unified_titles.json"), ut)
+    write(os.path.join(tmp3, "kb", "credentials.json"), cr3)
+    write(os.path.join(tmp3, "kb", "credential_review_overlay.json"),
+          {"overrides": {"Heating and Air Conditioning": {"cert_rename_kept": "Heating and Air Conditioning"}}})
+    rows5 = {r["current"]: r for r in rel.build(tmp3)["batches"][0]["rows"]}
+    check("keep-as-is, then a proposal appears: the row returns with it",
+          rows5.get("Heating and Air Conditioning", {}).get("proposed") == "Heating and Air Conditioning (ASE A7)", rows5.keys())
 finally:
     shutil.rmtree(tmp3, ignore_errors=True)
 

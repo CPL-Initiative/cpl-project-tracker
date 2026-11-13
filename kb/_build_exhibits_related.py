@@ -181,9 +181,11 @@ def build(root="."):
                 continue   # a course taught to the standard (cert_naming.is_standards; Sam's ruling A): it stands
             if approved:
                 continue   # approved: the credential rename dry-run carries it from here
+            # Skipped: this proposal was declined, or, for a row with no proposal, the title kept as it is. A keep-as-is
+            # answers only the empty proposal, as the tab reads it, so a proposal that appears later returns the row.
             kept = (ov.get("cert_rename_kept") or "").strip()
-            if kept and kept in (got["proposed"], t):
-                continue   # skipped: this proposal was declined, or (a row with no proposal) the title kept as it is
+            if kept and kept == (got["proposed"] or t):
+                continue
             if t in on_card:
                 left += 1   # its own card in Another look decides it
                 continue
