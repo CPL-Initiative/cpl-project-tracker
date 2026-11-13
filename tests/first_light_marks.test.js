@@ -386,11 +386,15 @@ const text = (w) => $(w, "#first-light-root").textContent;
     const SQL = fs.readFileSync("kb/migrations/2026-11-12_first_light_marks.sql", "utf8");
     const code = SQL.split("\n").filter((l) => !/^\s*--/.test(l)).join("\n");
     const ROLL = fs.readFileSync("kb/migrations/2026-11-12_first_light_marks_rollback.sql", "utf8");
-    const APPLY = fs.readFileSync("kb/migrations/.apply", "utf8");
-    const trig = {};
-    APPLY.split("\n").forEach((l) => { const i = l.indexOf("="); if (i > 0) trig[l.slice(0, i).trim()] = l.slice(i + 1).trim(); });
-    check("(k) ⭐ kb/migrations/.apply names the migration under s643_first_light_marks",
-      trig.file === "kb/migrations/2026-11-12_first_light_marks.sql" && trig.name === "s643_first_light_marks", JSON.stringify(trig));
+    // The migration was applied (run 43310349633), so `.apply` has since moved on to
+    // later migrations; what stays true is the applied receipt: it names this file
+    // under s643_first_light_marks, and its sha256 is the committed SQL's.
+    const RECEIPT = "kb/receipts/migration_s643_first_light_marks_43310349633.json";
+    const rec = JSON.parse(fs.readFileSync(RECEIPT, "utf8"));
+    const sha = require("crypto").createHash("sha256").update(fs.readFileSync("kb/migrations/2026-11-12_first_light_marks.sql")).digest("hex");
+    check("(k) ⭐ the applied receipt names the migration under s643_first_light_marks, at the committed SQL's sha256",
+      rec.file === "kb/migrations/2026-11-12_first_light_marks.sql" && rec.name === "s643_first_light_marks" &&
+      rec.status === 201 && rec.ledger_status === 201 && rec.sha256 === sha, JSON.stringify({ file: rec.file, name: rec.name, status: rec.status, sha_match: rec.sha256 === sha }));
     check("(k) ⭐ the rollback sits beside it and the migration's header names it",
       fs.existsSync("kb/migrations/2026-11-12_first_light_marks_rollback.sql") && /-- Rollback: kb\/migrations\/2026-11-12_first_light_marks_rollback\.sql\./.test(SQL));
     check("(k) the rollback drops both tables and both functions", /drop table public\.first_light_marks;/.test(ROLL) && /drop table public\.first_light_apply_requests;/.test(ROLL) &&

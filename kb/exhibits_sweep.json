@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-12T20:24:14Z",
+ "generated_at": "2026-11-13T16:59:37Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -53,234 +53,15 @@
   }
  ],
  "counts": {
-  "ase": 7,
+  "ase": 0,
   "numerals": 1,
   "language": 0,
   "course-code": 0,
   "level": 0,
-  "fold": 2
+  "fold": 4
  },
- "local_titles": 16,
+ "local_titles": 7,
  "cards": [
-  {
-   "current": "Auto Electrical/Electronic Systems (ASE A6 standards)",
-   "proposed": "Electrical/Electronic Systems (ASE A6)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A6's official name is Electrical/Electronic Systems"
-   ],
-   "locals": [
-    {
-     "raw": "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "AUTOTEC-15: Auto Electricity and Electronics",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "Noncredit for AUTO A6",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "430e821e4f43",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 3,
-   "moves_all": true
-  },
-  {
-   "current": "Heating and Air Conditioning (ASE A7 standards)",
-   "proposed": "Heating and Air Conditioning (ASE A7)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A7's official name is Heating and Air Conditioning"
-   ],
-   "locals": [
-    {
-     "raw": "Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
-     "colleges": [
-      "El Camino College"
-     ],
-     "course": "ATEC 81",
-     "credit": "3 hours in Automotive Air Conditioning"
-    },
-    {
-     "raw": "Basic Automotive Air Conditioning Systems",
-     "colleges": [
-      "Chaffey College"
-     ],
-     "course": "AUTOTEC 416",
-     "credit": "2 hours in Basic Automotive Air Conditioning Systems"
-    },
-    {
-     "raw": "Noncredit for AUTO A7",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "00c22b90e09a",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 3,
-   "moves_all": true
-  },
-  {
-   "current": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
-   "proposed": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE L3's official name is Light Duty Hybrid/Electric Vehicle Specialist"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO L3",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "166a7c372e22",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Light Vehicle Diesel Engines (ASE A9 standards)",
-   "proposed": "Light Vehicle Diesel Engines (ASE A9)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A9's official name is Light Vehicle Diesel Engines"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO A9",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "fb969746ce77",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Manual Drive Train and Axles (ASE A3 standards)",
-   "proposed": "Manual Drive Train and Axles (ASE A3)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A3's official name is Manual Drive Train and Axles"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO A3",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "f9f986a9f33c",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
-   "proposed": "Medium/Heavy Truck Parts Specialist (ASE P1)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE P1's official name is Medium/Heavy Truck Parts Specialist"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO P1",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "5dcc165d855e",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Suspension and Steering (ASE A4 standards)",
-   "proposed": "Suspension and Steering (ASE A4)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A4's official name is Suspension and Steering"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO A4",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "Suspension and Steering",
-     "colleges": [
-      "San Diego Miramar College"
-     ],
-     "course": "AUTO 178G",
-     "credit": "4 hours in Suspension, Steering and Handling"
-    },
-    {
-     "raw": "Suspension and Steering Systems",
-     "colleges": [
-      "Chaffey College"
-     ],
-     "course": "AUTOTEC 418",
-     "credit": "4 hours in Suspension and Steering Systems"
-    }
-   ],
-   "id": "8d34a00cb119",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 3,
-   "moves_all": true
-  },
   {
    "current": "Elementary French I",
    "proposed": "Elementary French 1",
@@ -360,6 +141,77 @@
    "proposed_locals": 0,
    "proposed_issuer": "",
    "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Introduction to Automotive Technology",
+   "proposed": "Automotive Service and Introduction",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Introduction to Automotive Technology” holds different courses at Las Positas College; this one is “Automotive Service and Introduction Lecture”, a credential already",
+    "“Introduction to Automotive Technology” holds different courses at Las Positas College; this one is “Automotive Service and Introduction Hands-On Lab”, a credential already"
+   ],
+   "locals": [
+    {
+     "raw": "Industry Training Evidence for AUTO INT",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AUTO INT",
+     "credit": "2 units in AUTO INT Automotive Service and Introduction Lecture"
+    },
+    {
+     "raw": "Industry Training Evidence for AUTO INTL",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AUTO INTL",
+     "credit": "2 units in AUTO INTL Automotive Service and Introduction Hands-On Lab"
+    }
+   ],
+   "id": "52d207f24531",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 2,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 10,
+   "moves_all": false
+  },
+  {
+   "current": "Introduction to Computer Networking",
+   "proposed": "Networking Fundamentals",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Introduction to Computer Networking” holds different courses at Las Positas College; this one is “Networking Fundamentals”"
+   ],
+   "locals": [
+    {
+     "raw": "Industry Training Evidence for CIS 66",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "CIS 66",
+     "credit": "3 units in CIS 66/CNT 52 Networking Fundamentals"
+    },
+    {
+     "raw": "Industry Training Evidence for CNT 52",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "CNT 52",
+     "credit": "3 units in CNT 52/CIS 66 Networking Fundamentals"
+    }
+   ],
+   "id": "f6aa500ab48c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 3,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 4,
    "moves_all": false
   }
  ]

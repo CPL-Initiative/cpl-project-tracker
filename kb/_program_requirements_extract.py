@@ -151,11 +151,16 @@ def _post(body: dict, key: str) -> dict:
 # A function answer that will be the same for every program, so a read stops at it rather than send the rest
 # (S647, Sam's Open Asks Sheet 190 card 6). Version 12 of the function answers 503 when its caller check could not
 # reach the database, and 401 only when the key is refused; before it, every failure answered 401, and Glendale's
-# run 43384599013 sent all 135 programs into a database outage and filed 121 error stubs. Neither costs a model call.
+# run 43384599013 sent all 135 programs into a database outage and filed 121 error stubs. The halting answer itself
+# costs no model call, but a read in parts can carry the paid usage of its other parts (the caller charges it).
+HALT_EXIT = 3     # a run the function's answer stopped (the pilot here; extract in _program_requirements_college)
 HALT_STATUS = {
     503: "the extraction function could not check the caller (the database did not answer)",
     401: "the extraction function refused the service key",
 }
+# A 503 without the caller check's upstream_* reason came from the platform in front of the function (a boot error,
+# a deploy in progress), not from the database probe (S648 review): it still halts, under its own cause.
+HALT_503_PLATFORM = "the platform answered 503 before the extraction function ran (a boot error or a deploy in progress)"
 
 
 def halt_of(got: dict | None) -> dict | None:
@@ -164,7 +169,10 @@ def halt_of(got: dict | None) -> dict | None:
     status = (got or {}).get("http_status")
     if status not in HALT_STATUS:
         return None
-    return {"status": status, "cause": HALT_STATUS[status], "reason": got.get("reason"),
+    cause = HALT_STATUS[status]
+    if status == 503 and not str(got.get("reason") or "").startswith("upstream_"):
+        cause = HALT_503_PLATFORM
+    return {"status": status, "cause": cause, "reason": got.get("reason"),
             "detail": got.get("detail"), "error": str(got.get("error") or "")[:300]}
 
 
@@ -355,6 +363,13 @@ def main(argv: list[str] | None = None) -> int:
     for src in sources:
         t0 = time.time()
         got = call(src, key)
+        h = halt_of(got)
+        if h:
+            # Every program would get the same answer, and the deploy check reads this run (S648): stop red.
+            print("::error::the pilot stopped at %s: %s (HTTP %s%s); %d programs not sent" % (
+                src["control_number"], h["cause"], h["status"], ", " + h["reason"] if h.get("reason") else "",
+                len(sources) - len(rows) - 1), flush=True)
+            return HALT_EXIT
         rec = got.get("record")
         sc = score(rec, src["closed_list"], src["text"]) if isinstance(rec, dict) else None
         row = {"college": src["college"], "control_number": src["control_number"],

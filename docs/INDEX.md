@@ -69,9 +69,9 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | KB notes | 584 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 103 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 69 | [`catalog/reference.md`](catalog/reference.md) |
+| Reference (pull-side) | 70 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 609 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1465** | |
+| **total** | **1466** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-13 (S647 SkyPipit, the afternoon, Sam in session): four merges (#3231, #3233, #3232, #3236); the Commons data dashboard complete at `#commons/data` with four views and its first live read; the Exhibits fixes of #3223 and #3228; the `live-counts` environment; Open Asks Sheet 192; handoff 648 refreshed.
 - 2026-11-13 (S647 SkyPipit, conductor, two halves of the CPL Queue routine; the first stopped without a handoff): nine merges (#3211, #3214, #3194, #3205, #3218, #3206, #3216, #3207, #3222); Santiago Canyon, Diablo Valley and San Jose City displayed, then the whole build; College of the Desert read in ranges; Glendale's keep rule; the Commons data dashboard live; Open Asks Sheet 190; handoff 648.
 - 2026-11-13 (S646 SkyOriole, conductor, the CPL Queue routine): four merges (#3208, #3210, #3212, #3201); the PDF reader merged with a `refused` method and an exact own heading, decision 16(b) reversed; Diablo Valley loaded to 213; Glendale's bot-check page read as a refusal, a slow paid read; the first real daily run after #3180 green; Open Asks Sheet 189; handoff 647.
 - 2026-11-13 (S645 SkyFinch, conductor, Sam's session): three merges (#3196, #3200, #3204); the display apply's first live runs, North Orange alone then the whole build; the #3193 rescore at six colleges; Diablo Valley and San Jose City loaded; Glendale unparked; Open Asks Sheet 188; handoff 646.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-12 (S643 SkyLark, conductor, Sam's session): eight merges (#3178, #3182, #3180, #3179, #3161, #3184, #3181, #3183); `main` red from a test pinned to a held card, fixed; the daily run rebuilds once on a changed input; First Light's marks tables live; returned titles acknowledged; re-clustering Step 1 by district and reach; full checkpoint; handoff 644.
 - 2026-11-12 (S642 SkyKestrel, conductor, Sam's session): six merges (#3157, #3158, #3164, #3162, #3160, #3166); Sierra's 230 ghost rows deleted with a receipt and undo; the Exhibits Review side panel (Course details, related titles changed to the statewide title); the First Light tab, read only; re-clustering Step 1 on #3165; handoff 643; KB note on a ledger at its line.
 - 2026-11-12 (S641 SkyOtter, two firings, the CPL Queue routine; the second the conductor): eleven merges (#3146, #3136, #3148, #3147 by the first; #3145, #3135, #3151, #3102, #3150, #3152, #3154 by the second); paid reads for American River and Los Angeles City; ASE plan phase 3 applied; Shasta's 1,549 outcome rows; DSP Version 3 public with a 25px target floor; KB notes on a rebuild running the same build script and on a target at exactly the minimum size; handoff `session_642_handoff.md`.
-- 2026-11-12 (S640 SkyHeron, conductor, Sam's session): five merges (#3131, #3137, #3141, #3138, #3142); the first standards plan applied (3 renames, 1 merge); the harvest lane back in the numbered handoff and both lanes under budget; KB note `methodology-a-proof-run-needs-a-same-day-baseline`; full checkpoint; handoff 641.

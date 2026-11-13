@@ -77,7 +77,7 @@
     "cobi_prose_measure.test.js": 16,
     "coci_lookup.test.js": 32,
     "commons_ase.test.js": 36,
-    "commons_data.test.js": 55,
+    "commons_data.test.js": 166,
     "coci_list.test.js": 40,
     "college_activity.test.js": 7,
     "college_activity_jst.test.js": 18,
@@ -396,6 +396,6 @@
     "group_queue.test.js": 36,
     "public_library.test.js": 121,
     "pages_size_guard.test.js": 4,
-    "service_caller_check.test.js": 28
+    "service_caller_check.test.js": 30
   }
 }

@@ -357,9 +357,13 @@ def run_cost(out_dir: str | None, run_id) -> dict:
     for path in sorted(glob.glob(os.path.join(out_dir or "", "not_sent_*.json"))) if out_dir else []:
         not_sent.extend((_read(path) or {}).get("programs") or [])
     # The extraction function's answer that stopped the read (503 or 401; extract_halt_<shard>.json, S647).
+    # Its cost_usd is what the halting answers carried (paid parts of a read in parts), counted with the run's cost
+    # (S648 review).
     halt = None
     for path in sorted(glob.glob(os.path.join(out_dir or "", "extract_halt_*.json"))) if out_dir else []:
-        halt = halt or _read(path)
+        h = _read(path) or {}
+        cost += h.get("cost_usd") or 0
+        halt = halt or h or None
     return {"extracted": len(mine), "cost_usd": round(cost, 2), "kept": len(kept_list), "unpriced": unpriced,
             "not_sent": sorted(not_sent), "halt": halt}
 

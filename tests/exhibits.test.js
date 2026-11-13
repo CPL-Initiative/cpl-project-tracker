@@ -264,8 +264,10 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the conflict shows the title saved earlier", /Saved earlier as “Juvenile Justice Procedures”/.test(txt(t.d.querySelector(".exh-card"))));
   check("the training site reads from the reference and is not an input", /Training site:Regional Academy/.test(txt(t.d.querySelector(".exh-read"))) && !t.d.querySelector(".exh-read input"));
   check("signed out, the students line asks for a sign-in", /Sign in as a reviewer to see students/.test(txt(t.d.querySelector(".exh-why"))));
-  check("the source links each exhibit in MAP through map_links.js, on its Non-Military card",
-    Array.from(t.d.querySelectorAll(".exh-card a")).filter(function (a) { return a.href === "https://map.example/opp?Exhibit=MAPCXS-A2-J-1-001&View=Non-Military"; }).length === 1);
+  // Sam, 2026-11-13 (#3223): the Source ids open their summary in the side panel, where Open in MAP leaves the tab.
+  check("the source links each exhibit in MAP through map_links.js, on its Non-Military card, from the side panel",
+    Array.from(t.d.querySelectorAll(".exh-cdsum a")).filter(function (a) { return a.href === "https://map.example/opp?Exhibit=MAPCXS-A2-J-1-001&View=Non-Military"; }).length === 1
+    && !!Array.from(t.d.querySelectorAll(".exh-card button")).find(function (b) { return txt(b) === "MAPCXS-A2-J-1-001"; }));
 
   // saving signed out
   byText(t.d, ".exh-acts button", "Skip").click(); await settle();

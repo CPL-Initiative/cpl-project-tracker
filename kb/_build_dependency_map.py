@@ -299,6 +299,17 @@ SEEDS = [
         "why": "insert-only credential_family rows under credential-family-s638@bot, and the guarded "
                "rollback delete, through the inherited PostgREST client",
     },
+    {   # kb/_commons_data_live.py (S647, #3215): the Commons data dashboard's live counts, read with the
+        # service key in harvest-gap-census.yml. Its tables reach the request as a variable (the counts-only
+        # guard sits between), so no call site names one literally.
+        "file": "kb/_commons_data_live.py",
+        "anchor": r'COLUMN_READS = \{',
+        "datasets": [("supabase:coci_college_programs", "read"), ("supabase:program_requirement_records", "read"),
+                     ("supabase:coci_program_courses", "read"), ("supabase:course_outcomes", "read"),
+                     ("supabase:program_source_registry", "read")],
+        "why": "counts per college only: HEAD counts on the two tables that name a person, narrow column "
+               "reads reduced to counts on the runner for the other three; it writes no table",
+    },
 ]
 
 

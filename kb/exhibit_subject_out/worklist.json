@@ -2,20 +2,20 @@
  "schema": 1,
  "_about": "Credentials with no Common SUBJ after the subject fill (kb/_exhibit_subject_fill.py), each with why, and a suggested subject from its title words where one exists. A suggestion is never a decision: title words were wrong on ASE MIL7 (Sam, 2026-11-11). The Commons' Exhibit card counts `no_subject`.",
  "rule": "A credential with no Common SUBJ takes the subject of the courses colleges credit for it (over half of them, several colleges first, then one), else its issuer family's; title words, TOP and CIP never decide; a family or certification link that names another subject holds it for a person; a subject already on the title always wins.",
- "written_at": "2026-11-12T16:21:47Z",
+ "written_at": "2026-11-13T15:48:02Z",
  "mode": "preview",
  "live_read": true,
  "by_rung": {
   "courses, several colleges": 0,
-  "courses, one college": 4,
+  "courses, one college": 11,
   "issuer family": 0
  },
  "written": 0,
- "not_yet_written": 4,
- "no_subject": 366,
- "left": 362,
+ "not_yet_written": 11,
+ "no_subject": 374,
+ "left": 363,
  "left_exhibits": 429,
- "suggested": 70,
+ "suggested": 71,
  "not_held": [
   "Theater Arts"
  ],
@@ -34,9 +34,7 @@
    "title": "AAG Industry Recognized Training",
    "why": "no signal",
    "issuer": "Automotive Apprenticeship Group (AAG)",
-   "exhibits": [
-    "MAPICI-AIRT-1-001"
-   ]
+   "exhibits": []
   },
   {
    "title": "ACE Certified Personal Trainer",
@@ -756,8 +754,8 @@
     "MAPSAS-DPOS1-1-001"
    ],
    "votes": {
-    "MGMT": 1,
-    "BUSI": 1
+    "BUSI": 1,
+    "MGMT": 1
    }
   },
   {
@@ -1109,12 +1107,12 @@
    "votes": {
     "FIRE": 9,
     "CRIM": 3,
-    "CDEV": 13,
     "BSOT": 7,
-    "BIOL": 2,
+    "CDEV": 13,
     "AUTO": 7,
-    "BUSI": 2,
     "AVIA": 1,
+    "BIOL": 2,
+    "BUSI": 2,
     "EMST": 1,
     "PARA": 1
    }
@@ -2538,6 +2536,16 @@
    "exhibits": [
     "MAPCXS-PHCE-1-001"
    ]
+  },
+  {
+   "title": "Public Safety Leadership and Administration Experience",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICI-PSL&-1-001"
+   ],
+   "suggested": "PUBS",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Public Safety: Emergency Medical Response",

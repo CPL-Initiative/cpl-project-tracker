@@ -26,6 +26,11 @@ export const PROBE_TIMEOUT_MS = 12000;
 // space or a newline in it would make fetch throw, and the throw would read as an outage.
 const HEADER_SAFE = /^[\x21-\x7e]+$/;
 
+function timedOut(e) {
+  const name = (e && e.name) || "";
+  return name === "TimeoutError" || name === "AbortError";
+}
+
 function refused(why) {
   return { ok: false, status: 401, body: { error: "unauthorized", reason: why } };
 }
@@ -54,11 +59,11 @@ export async function checkServiceCaller(supabaseUrl, bearer, fetcher = fetch, t
       signal: AbortSignal.timeout(timeoutMs),
     });
   } catch (e) {
-    const name = (e && e.name) || "";
-    if (name === "TimeoutError" || name === "AbortError") {
-      return unavailable("upstream_timeout", `no answer in ${timeoutMs} ms`);
-    }
-    return unavailable("upstream_unreachable", (e && e.message) || String(e));
+    if (timedOut(e)) return unavailable("upstream_timeout", `no answer in ${timeoutMs} ms`);
+    // The thrown text names the probe's URL, and this answer goes to a caller not yet checked: the log keeps it,
+    // the body says only what happened (S648 review).
+    console.error("service caller check: the probe threw:", (e && e.message) || String(e));
+    return unavailable("upstream_unreachable", "the probe could not connect");
   }
   // A definite refusal: the gateway or PostgREST rejected the key.
   if (r.status === 401 || r.status === 403) return refused("key_refused");
@@ -70,7 +75,9 @@ export async function checkServiceCaller(supabaseUrl, bearer, fetcher = fetch, t
   let rows;
   try {
     rows = await r.json();
-  } catch (_e) {
+  } catch (e) {
+    // The probe's signal also covers the body: a reply cut off by the timeout is a timeout, not a malformed reply.
+    if (timedOut(e)) return unavailable("upstream_timeout", `the reply did not finish in ${timeoutMs} ms`);
     return unavailable("upstream_malformed", "the reply was not JSON");
   }
   if (!Array.isArray(rows)) return unavailable("upstream_malformed", "the reply was not a list of rows");

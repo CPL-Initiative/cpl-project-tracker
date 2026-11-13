@@ -63323,5 +63323,245 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-12T12:32:50.690454+00:00",
     "reviewed_by": "slee@cccco.edu"
+  },
+  "Credit by Exam-- CFPL ABT 133": {
+    "unified_title": "Facility Management for Food Safety",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:35:03.722245+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I": {
+    "unified_title": "Modern Dance Techniques 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:35:15.409179+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II": {
+    "unified_title": "Modern Dance Techniques 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:35:17.272537+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AJ 50": {
+    "unified_title": "Introduction to Administration of Justice",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:36:44.884129+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AJ 54": {
+    "unified_title": "Investigative Report Writing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:37:18.901059+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AJ 60": {
+    "unified_title": "Concepts of Criminal Law",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:38:53.24418+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AJ 61": {
+    "unified_title": "Legal Aspects of Evidence",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:39:08.713508+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AJ 63": {
+    "unified_title": "Criminal Investigation",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:39:45.360909+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AJ 64": {
+    "unified_title": "Police Patrol Operations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:40:49.902805+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AJ 66": {
+    "unified_title": "Juvenile Procedures",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:41:49.096282+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AJ 68": {
+    "unified_title": "Police Ethics and Leadership",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:42:35.798856+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO A1": {
+    "unified_title": "ASE A1 — Engine Repair",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:43:01.418391+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO A2": {
+    "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:43:10.436127+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO A3": {
+    "unified_title": "ASE A3 — Manual Drive Train and Axles",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:43:12.775948+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO A4": {
+    "unified_title": "ASE A4 — Suspension and Steering",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:43:14.62365+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO A5": {
+    "unified_title": "ASE A5 — Brakes",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:43:15.977676+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO A6": {
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:43:17.680346+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO A7": {
+    "unified_title": "ASE A7 — Heating and Air Conditioning",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:43:22.014049+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO A8": {
+    "unified_title": "ASE A8 — Engine Performance",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:43:24.127773+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO A9": {
+    "unified_title": "ASE A9 — Light Vehicle Diesel Engines",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:43:27.738911+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO INT": {
+    "unified_title": "Introduction to Automotive Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:44:15.628762+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO INTL": {
+    "unified_title": "Introduction to Automotive Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:44:26.353672+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO L1": {
+    "unified_title": "ASE L1 — Advanced Engine Performance Specialist",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:45:05.438463+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO L3": {
+    "unified_title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:45:14.223091+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO SDR": {
+    "unified_title": "Automotive Specified Diagnostic and Repair",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:45:19.305781+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for AUTO SMOG": {
+    "unified_title": "Smog Inspector - Level 1 Training",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:45:24.324605+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for BUSN 65": {
+    "unified_title": "Federal Income Tax Accounting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:45:44.565728+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for CIS 66": {
+    "unified_title": "Introduction to Computer Networking",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:47:22.144057+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for CNT 52": {
+    "unified_title": "Introduction to Computer Networking",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:47:52.212376+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Industry Training Evidence for CNT 68": {
+    "unified_title": "Introduction to Digital Forensics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-13",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-13T12:48:50.386223+00:00",
+    "reviewed_by": "slee@cccco.edu"
   }
 }

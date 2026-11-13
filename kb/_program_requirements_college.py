@@ -4433,6 +4433,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     spend = {"usd": 0.0, "stopped": False}
     not_sent: list[str] = []
     halt: dict = {}
+    halt_paid = {"usd": 0.0}   # model usage carried by halting answers (paid parts of a read in parts)
 
     def keep_filed(cn: str) -> None:
         # Not read: the filed record, if any, stays, so filing the run does not drop it.
@@ -4455,17 +4456,31 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         if h and not halt and halt_wait_s:
             # One more try after a pause, so a single slow probe does not end a long read (S647).
             time.sleep(halt_wait_s)
-            got = X.call(src, key)
-            h = X.halt_of(got)
+            with kept_lock:
+                # Another worker may have halted the read during the pause: then send nothing more (S648 review).
+                retry = not halt
+            if retry:
+                earlier = got
+                got = X.call(src, key)
+                h = X.halt_of(got)
+                if earlier.get("usage"):
+                    # A read in parts can answer 503 after its other parts were paid: the retry's record carries
+                    # that usage too, so the ceiling and the run's cost count it (S648 review).
+                    got = dict(got, usage=X._sum_usage([earlier, got]), model=got.get("model") or earlier.get("model"))
         if h:
             # The function answered 503 (its caller check could not reach the database) or 401 (the key was
             # refused): every program would answer the same, so the read stops here, sends nothing more, and
             # files no stub over a record (S647; run 43384599013 filed 121). The calls in flight finish.
+            # Usage the halting answer carries (paid parts of a read in parts) still counts (S648 review).
+            charge = call_charge(X.cost(got.get("model"), got.get("usage")), got.get("usage"))
             with kept_lock:
                 first = not halt
                 if first:
                     halt.update(h, control_number=src["control_number"])
                 not_sent.append(src["control_number"])
+                halt_paid["usd"] += charge
+                if ceiling_usd is not None:
+                    spend["usd"] += charge
             if first:
                 print("halted at %s: %s (HTTP %s%s). No further program is sent and no record is written "
                       "over; the filed records stay." % (
@@ -4546,7 +4561,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         if halt:
             # What stopped the read, for the wave's verdict and the job log (extract_halt).
             _write(os.path.join(out_dir, "extract_halt_%d.json" % shard),
-                   dict(halt, run=run_id, shard=shard, not_sent=len(not_sent)))
+                   dict(halt, run=run_id, shard=shard, not_sent=len(not_sent),
+                        cost_usd=round(halt_paid["usd"], 5)))
         # A call that raises stops the step; the reads already paid for and kept are still filed
         # (the wave counts their cost from this file; S644 review).
         if kept_list:

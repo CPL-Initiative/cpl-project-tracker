@@ -102,6 +102,17 @@ CODE_FIRST = re.compile(r"^ASE\s+(?P<code>" + CODE + r")\s*[—–-]\s*(?P<name>
 ANY_CODE = re.compile(r"(?<![A-Za-z0-9])(" + CODE + r")(?![A-Za-z0-9])")
 ASE_NAMED = re.compile(r"^\s*(?:ASE\b|Automotive Services? Excellence\b|National Institute for Automotive "
                        r"Service Excellence\b)", re.I)
+_STANDARDS_WORDS = re.compile(r"\bstandards?\s*$", re.I)
+
+
+def is_standards(title):
+    """True for "<name> (ASE <code> standards)": a college's course taught to the certification's standard. Sam's ruling A
+    (2026-11-11, cpl_memory sam-ic-exhibits-go-to-cert-title-2026-11-11) keeps it apart from the certification: the
+    industry-certification exhibits go under the cert title, and only college-exam titles fold into the standards title,
+    which he named himself (his saved renames of 15:26Z 2026-11-11). So nothing proposes it in the cert format: the
+    rename batch and Another look both read it as standing (#3228, S647). kb/fold_issuer.py's rule 2b reads it here."""
+    m = PAREN_FORM.match((title or "").strip())
+    return bool(m and _STANDARDS_WORDS.search(m.group("words") or ""))
 
 
 def cert_title(name, short, code):
@@ -156,8 +167,14 @@ def ase_read(title, issuer=""):
       wrong-name     in the format, but the name is not the test's official name
       missing-code   ASE issues it and it names no test code
       several        a bundle, a pair or a master status: no single official name, so no proposal
+      standards      "Brakes (ASE A5 standards)", a course taught to the standard (is_standards): it stands
     """
     t = (title or "").strip()
+    if is_standards(t):
+        code = PAREN_FORM.match(t).group("code")
+        return {"kind": "standards", "codes": [code], "proposed": "",
+                "why": "a course taught to ASE %s's standard, kept apart from the certification (Sam's ruling A, "
+                       "2026-11-11)" % code}
     is_ase_issuer = "Automotive Service Excellence" in (issuer or "")
     m = NEW_FORM.match(t)
     if m:

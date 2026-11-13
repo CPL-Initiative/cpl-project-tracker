@@ -271,3 +271,4 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## Moved from docs/INDEX.md's Update history (S647, 2026-11-13)
 
 - 2026-11-12 (S639 SkyQuail, conductor, Sam's session): five merges (#3122, #3123, #3124, #3126, #3127); the credential family live on 25 titles, the 13 saved rows restored, Sheet 181's renames applied; `main` red on two family checks after the apply; lane `cer-procedures` under budget; full checkpoint; handoff 640.
+- 2026-11-12 (S640 SkyHeron, conductor, Sam's session): five merges (#3131, #3137, #3141, #3138, #3142); the first standards plan applied (3 renames, 1 merge); the harvest lane back in the numbered handoff and both lanes under budget; KB note `methodology-a-proof-run-needs-a-same-day-baseline`; full checkpoint; handoff 641.

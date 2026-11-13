@@ -255,3 +255,31 @@ Dropped at sign-off: the subscriptions on PRs #3194, #3196, #3199, CPLBrain#770 
 opened; the check-in `trig_01KVui1enuoD2qrurPoSK7Kr`; the artifact watch on [Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA). Nothing else is held.
 
 Greetings, you are SkyFinch (Session 645), see SkyWren's handoff — `docs/session_645_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_645_handoff.md) — let's keep rolling with our queue.
+
+## Addendum: Sam's replies on Open Asks Sheet 187 (an EMERGENCY checkpoint, 13:20Z 2026-11-13)
+
+Written by SkyWren (S644) at 94% context, after the sign-off, when the sheet's watch woke the session. Nothing but this
+addendum was refreshed: no lane file, no `cpl_memory` row (the Supabase connector was down), no INDEX, vault note or
+status file. [Open Asks Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) is answered and Complete was
+pressed (`replies/done`: 3 his own call, 2 as proposed, through card 5, 13:19Z 2026-11-13). Read `replies` off the sheet
+before acting; these are his, in his own call unless marked:
+
+- **Card 1** (waves, the $40 hard stop, COBIx's checks): **fine**, as proposed (not individually reviewed).
+- **Card 2** (the tab's passing rule, the 22 Los Angeles City records): **fine**, as proposed (not individually reviewed).
+- **Card 3** (the October 10 standing go for a display after a load): **"stands"**, his own call. Read it WITH his ruling
+  relayed by COBIx on #3111 (comment 6840755612): the FIRST live run of the new display apply still goes on his explicit
+  go; after that first run the standing go covers a display that follows a load that passed its checks. His sheet answer
+  came later than the relayed ruling; if the two seem to differ, ask him in one line before the first run.
+- **Card 4** (does a program checked against its college's own course list count in the headline): **no verdict**, a
+  follow-up, his words: *"I don't understand this one. give me two examples"*. Owed to him: two real programs from the
+  1,604 (`docs/harvest_no_closed_list_diagnosis_s644.md`, `kb/status/harvest_no_closed_list.json`), each shown as the
+  catalog prints it, what the state's Program Course File holds for it (nothing, or only retired courses), and what
+  each choice does to the headline. Put it on the next sheet in plain words.
+- **Card 5** (the statewide Cal-GETC figure): **"use"** 34 statewide, his own call. To carry out: a reconcile step that
+  sets Cal-GETC to 34 where a catalog names the pattern and prints no figure, naming this ruling as its source; 93
+  programs are expected to move (the S644 scorer worker's count, not re-measured). It replaces the per-college counting
+  of `d-rio-hondo-cal-getc-areas-count-s639` and `d-west-valley-cal-getc-areas-count-s639` only where no figure prints.
+
+**Owed by S645 for these:** `cpl_memory` rows for cards 3, 4 and 5 as Sam's (verified), plus the two rows left NOT RUN in
+`kb/receipts/cpl_memory_s644_rows_2026-11-13.sql`; DECIDED lines in the harvest lane; the two examples for card 4.
+Also read draft #3201 (the PDF misfiling findings, which landed after this handoff was written).

@@ -123,8 +123,11 @@ at the top of each piece of work so Sam can change the dial before it runs.
   asks. Sam, in session S639, 2026-11-11, verbatim: "Remember on the Decision Sheet that I want your decisions on it,
   not asking me for mine. I am pushing decision to you as conductor and informed by help from cobix, your force
   multiplier:)" (`sam-sheet-carries-conductor-decisions-2026-11-11`). Each card reads Decided, Evidence, and Carried out
-  with how to reverse it; its chips are Fine, Change it and Revisit later. An outward send or a go-live is a card that
-  opens on "Waits for my send or go", and an unanswered card holds only its own item. First built as Open Asks Sheet
+  with how to reverse it; its chips are Fine, Change it and Revisit later. An outward send, a go-live or anything else
+  that needs Sam is a card carrying a labeled block above its replies — "Yours to do", "Needs your word" or "Yours to
+  rule" — with numbered steps, a link wherever one exists, and replies that name the act, never a status chip (Sam,
+  2026-11-13: "change the button to be clearer an include specific instructions and links for me"); and an unanswered
+  card holds only its own item. First built as Open Asks Sheet
   181 (https://claude.ai/artifact/M3YaDrpkT7HhH8rYRnvkjx).
 - His unplanned statements are captured verbatim (the vault's braindump skill, on-the-fly mode) and he is told in one
   line. Replies to him are a few lines, active voice, stated positively.
@@ -149,6 +152,12 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A data receipt written as a `do` block cost a round trip: the repo's Supabase guard refuses it. Write one plain statement whose writes hang on one guard CTE. The conductor passes a receipt's text through a tool call, so a receipt that embeds a page costs its length twice.
 - Free disk fell to 5.3 GB with four worktrees. Remove a worker's worktree the moment its PR merges.
 - Worked: resuming a finished worker for the next branch; workers posting their own answer to COBIx on the PR thread; COBIx's reviews arriving within minutes of each push; a free capture before the paid read (College of the Desert's first capture failed for a reason unrelated to the change, at no cost).
+- The afternoon (14:30Z to 16:20Z, Sam in session): three PRs that each regenerate the dependency map cost two extra sync rounds. Merge the first, then have the others merge `main` before their last test run.
+- A review workflow of three or four agents found real faults in every PR it read after COBIx had cleared it: an inert leak, a key that could reach a committed file, a false privacy sentence. Run it on every view and every keyed job, whatever the diff's size.
+- A worker's TBA reason and COBIx's correction were both wrong about program outcomes until a reader opened a record. Check a claim about the data against a file.
+- A stale index in the shared checkout once held the pre-fix copies of two files. Never commit on a stop-hook's word without reading the staged diff.
+- Reading three COBIx comments in full still costs about 8,000 tokens each; the last page at `perPage` 1 is enough to decide.
+- The Supabase connector was down from about 12:40Z to the end of the session, so the afternoon's `cpl_memory` rows and Sam's earlier answers wait in two NOT YET RUN receipts; the next session runs them first.
 
 ## What went wrong in S646, and what worked
 

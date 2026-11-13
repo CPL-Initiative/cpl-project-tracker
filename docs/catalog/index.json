@@ -13703,7 +13703,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-10-20"
+     "updated": "2026-11-13"
     },
     {
      "created": "2026-10-24",
@@ -15906,7 +15906,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 69,
+   "count": 70,
    "docs": [
     {
      "created": "2026-08-28",
@@ -15960,7 +15960,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-11-12"
+     "updated": "2026-11-13"
     },
     {
      "created": "2026-09-08",
@@ -16118,7 +16118,7 @@
      ],
      "title": "EACR \u2014 Exhibit & CR Adoption \u2014 lane state",
      "type": null,
-     "updated": "2026-10-31"
+     "updated": "2026-11-13"
     },
     {
      "created": "2026-08-28",
@@ -16606,6 +16606,23 @@
      "updated": ""
     },
     {
+     "created": "2026-11-13",
+     "governs": [],
+     "path": "docs/reference/data_dictionary.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "commons",
+      "data-sources",
+      "data-dictionary",
+      "procedures",
+      "cobix"
+     ],
+     "title": "Data dictionary: every Commons data dashboard dataset, its owner, procedure and planned improvement",
+     "type": null,
+     "updated": "2026-11-13"
+    },
+    {
      "created": "2026-11-04",
      "governs": [],
      "path": "docs/reference/data_sources.md",
@@ -16619,7 +16636,7 @@
      ],
      "title": "Data sources: the register of datasets that could fill a Commons gap",
      "type": null,
-     "updated": "2026-11-06"
+     "updated": "2026-11-13"
     },
     {
      "created": "2026-08-30",
@@ -27198,5 +27215,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1465
+ "total": 1466
 }

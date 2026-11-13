@@ -72,11 +72,31 @@ function fake(fn) {
       check("A ⭐ PostgREST answering " + st + " answers 503 (upstream_http_" + st + ")",
         r.ok === false && r.status === 503 && r.body.reason === "upstream_http_" + st, JSON.stringify(r));
     }
-    const down = await run(fake(() => Promise.reject(new TypeError("fetch failed: connect ECONNREFUSED"))));
-    check("A the database unreachable (fetch throws) answers 503, upstream_unreachable, with the error",
-      down.status === 503 && down.body.reason === "upstream_unreachable" && /ECONNREFUSED/.test(down.body.detail), JSON.stringify(down));
+    // The thrown text names the probe's URL (host and table), and this answer goes to a caller not yet checked: the
+    // log keeps it, the body does not (S648 review).
+    const _err = console.error;
+    const logged = [];
+    console.error = function () { logged.push(Array.from(arguments).join(" ")); };
+    let down;
+    try {
+      down = await run(fake(() => Promise.reject(new TypeError(
+        "error sending request for url (https://db.example/rest/v1/allowed_reviewers?select=email&limit=1): connect ECONNREFUSED"))));
+    } finally { console.error = _err; }
+    check("A the database unreachable (fetch throws) answers 503, upstream_unreachable",
+      down.status === 503 && down.body.reason === "upstream_unreachable", JSON.stringify(down));
+    check("A ⭐ the unreachable answer echoes no exception text (no URL, host or table) to the caller; the log keeps it",
+      !/allowed_reviewers|db\.example|ECONNREFUSED|rest\/v1/.test(JSON.stringify(down.body))
+      && logged.some((l) => /ECONNREFUSED/.test(l)), JSON.stringify(down.body) + " | " + logged.join(" / "));
     const html = await run(fake(() => answer(200, "<html>gateway</html>")));
     check("A a 200 that is not JSON answers 503, upstream_malformed", html.status === 503 && html.body.reason === "upstream_malformed");
+    // A 200 whose body the probe's timeout cuts off: the body read rejects with TimeoutError. A slow database is a
+    // timeout, so the cause the runner prints names it (it read upstream_malformed before S648).
+    const cut = await run(fake(() => Promise.resolve({
+      status: 200,
+      json: function () { const e = new Error("The operation timed out."); e.name = "TimeoutError"; return Promise.reject(e); },
+    })));
+    check("A a reply cut off by the probe's timeout answers 503, upstream_timeout",
+      cut.ok === false && cut.status === 503 && cut.body.reason === "upstream_timeout", JSON.stringify(cut));
     const obj = await run(fake(() => answer(200, { rows: [{ email: "a" }] })));
     check("A a 200 that is not the row list answers 503, upstream_malformed (and never lets the caller through)",
       obj.ok === false && obj.status === 503 && obj.body.reason === "upstream_malformed");
