@@ -152,6 +152,9 @@ jobs:
         env:
           CENSUS_DELAY_MS: '4000'
           CAPTURE_ROUTE: ${{ github.event.inputs.route || '' }}
+          # The run's force, so a free capture's would_extract.forced_unbound names what a forced read
+          # would leave unbound (S645, decision 15); the capture reads it and writes nothing else from it.
+          FORCE: ${{ github.event.inputs.force || '' }}
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit "$LIMIT"
       - name: Extract and score
         if: env.EXTRACT == 'true'
