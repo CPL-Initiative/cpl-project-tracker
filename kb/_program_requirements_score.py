@@ -620,7 +620,11 @@ def electives_named(prog: dict, text: str) -> bool:
     words = prog.get("electives_fill_words")
     if not isinstance(words, str) or not _words(words):
         return False
-    return " %s " % _words(words) in " %s " % _words(text)
+    # The sentence counts only from the record's own heading onward, where the page prints one: a capture
+    # window can open on the program before it (East Los Angeles, review of #3193).
+    from _program_requirements_reconcile import _heading_end
+    start = _heading_end(text, prog.get("section_heading")) or 0
+    return " %s " % _words(words) in " %s " % _words(text[start:])
 
 
 def _words(s: str) -> str:
@@ -826,34 +830,79 @@ def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str
     labels = list(HOURS_LABEL.finditer(text))
     if labels and all(m.group(1) and abs(float(m.group(2)) - stated[0]) <= TOL for m in labels):
         return True
-    return total_hours_printed(text, stated, labels)
+    return total_hours_printed(text, stated, labels, record)
 
 
-# "Total Hours 48-54", "Total Hours 216", "Non Credit - Total hours 630": the total printed after its
-# label with no colon, one figure or a range, the figure on the label's line or the next one.
+# "Total Hours 48-54", "Total Hours 48 to 54.", "Total Hours 216", "Non Credit - Total hours 630": the
+# total printed after its label with no colon, one figure or a range, the figure on the label's line or the
+# next one, and a sentence's period after it.
 TOTAL_HOURS = re.compile(r"\bTotal\s+(?:Contact\s+)?Hours?\b[ \t]*:?[ \t]*(?:\n[ \t]*)?(\d+(?:\.\d+)?)"
-                         r"(?:[ \t]*[-–][ \t]*(\d+(?:\.\d+)?))?(?![\d.])", re.I)
+                         r"(?:[ \t]*(?:[-–]|to\b)[ \t]*(\d+(?:\.\d+)?))?(?!\d)(?!\.\d)", re.I)
+# What follows a total that continues as a range the pattern did not take ("48 -" then a figure).
+_RANGE_REST = re.compile(r"[ \t]*(?:[-–]|to\b)[ \t]*\d", re.I)
+# An hours figure printed after its label ("Lecture Hours 54", "Lab Hours: 18", "Hours 72").
+_HOURS_FIRST = re.compile(r"\bHours?\b[ \t]*:?[ \t]*(?:\n[ \t]*)?\d", re.I)
+_NUMBER = re.compile(r"\d+(?:\.\d+)?")
 
 
-def total_hours_printed(text: str, stated: tuple[float, float], labels: list) -> bool:
+def _code_pattern(code: str) -> re.Pattern | None:
+    m = re.match(r"\s*([A-Za-z&/ ]*?[A-Za-z&/])\s*-?\s*(\d[\w.]*)\s*$", code or "")
+    if not m:
+        return None
+    subj = r"\s*".join(re.escape(w) for w in m.group(1).split())
+    return re.compile(r"\b%s\s*-?\s*%s\b" % (subj, re.escape(m.group(2))), re.I)
+
+
+def course_rows_unpriced(record: dict, text: str) -> bool:
+    """Every course the record lists sits on a line of the page whose figures after its code are all 0:
+    the shape the readings describe ('The course list prints 0 in a UNITS column beside each course',
+    San Bernardino Valley; "'N/A' in the units column", Coalinga). A course the page does not show on
+    a line, or a line carrying any other figure (an hours column), keeps the reading closed."""
+    pats = [p for p in (_code_pattern(e.get("code")) for b in record.get("blocks") or []
+                        for c in b.get("courses") or [] for e in [c] + alternatives(c)) if p]
+    if not pats:
+        return False
+    lines = text.splitlines()
+    for p in pats:
+        rows = [ln for ln in lines if p.search(ln)]
+        if not rows:
+            return False
+        for ln in rows:
+            rest = ln[p.search(ln).end():]
+            for q in pats:
+                rest = q.sub(" ", rest)
+            if any(float(n) != 0 for n in _NUMBER.findall(rest)):
+                return False
+    return True
+
+
+def total_hours_printed(text: str, stated: tuple[float, float], labels: list, record: dict) -> bool:
     """hours_total_only's second reading (S644, the harvest's NEXT 5): the same page, its total
     printed as 'Total Hours N' or 'Total Hours N-M' with no colon (San Bernardino Valley's 19
     noncredit certificates, 'Total Hours 48-54' over a UNITS column of 0, as each reading quotes
-    it; Coalinga's and Coastline's 'Total Hours 216', Hartnell's 'Non Credit - Total hours 630').
-    Read only where the first reading fails, so a page it passed still passes. Both ends of every
-    total the page prints must equal the record's, where the first reading compares the low end;
-    and a bare 'Hours: N' (a course's own) keeps it closed, as it keeps the first."""
+    it; Coalinga's 'Total Hours 216' over 'N/A'). Read only where the first reading fails, so a
+    page it passed still passes. Both ends of every total the page prints must equal the record's,
+    and a total that runs on into a range the pattern did not take fails, never reading as its low
+    end (review of #3193). The page must print no hours but its totals: a bare 'Hours: N', a
+    label-first 'Lecture Hours 54' outside a total, or any figure but 0 on a listed course's line
+    (an hours column) keeps it closed (course_rows_unpriced)."""
     if any(not m.group(1) for m in labels):
         return False
     totals = list(TOTAL_HOURS.finditer(text))
     if not totals:
         return False
+    spans = [m.span() for m in totals]
     for m in totals:
+        if _RANGE_REST.match(text, m.end()):
+            return False
         lo = float(m.group(1))
         hi = float(m.group(2)) if m.group(2) else lo
         if abs(lo - stated[0]) > TOL or abs(hi - stated[1]) > TOL:
             return False
-    return True
+    for h in _HOURS_FIRST.finditer(text):
+        if not any(a <= h.start() and h.end() <= b for a, b in spans):
+            return False
+    return course_rows_unpriced(record, text)
 
 
 def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,

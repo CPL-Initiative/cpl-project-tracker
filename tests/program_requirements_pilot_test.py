@@ -2367,9 +2367,33 @@ check(S.score(coal, [{"code": "ESL 501", "units": 0}, {"code": "ESL 502", "units
               "Noncredit program")["arithmetic"].get("total_only"), "Coalinga's single 'Total Hours 216' passes")
 check(S.score(nc, NC_LIST, SJD_NC, "Noncredit program")["arithmetic"].get("total_only"),
       "the first reading's page (Delta's 'Total Contact Hours: 288') still passes")
-check(S.total_hours_printed("Total Hours 48-54", (48.0, 54.0), []) and not S.total_hours_printed(
-      "Total Hours 48-54 Hours: 6", (48.0, 54.0), list(S.HOURS_LABEL.finditer("Total Hours 48-54 Hours: 6"))),
+_V = {"blocks": [{"rule": "all", "courses": [{"code": "VOCED 600", "units": None}]}]}
+check(S.total_hours_printed("VOCED 600\t0\nTotal Hours 48-54", (48.0, 54.0), [], _V) and not S.total_hours_printed(
+      "VOCED 600\t0\nTotal Hours 48-54 Hours: 6", (48.0, 54.0),
+      list(S.HOURS_LABEL.finditer("Total Hours 48-54 Hours: 6")), _V),
       "total_hours_printed: a bare label beside the total closes it")
+# Review of #3193, finding 1: a range the pattern does not take never reads as its low end.
+for _t in ("VOCED 600\t0\nTotal Hours 48-54.", "VOCED 600\t0\nTotal Hours 48 to 54"):
+    check(not S.total_hours_printed(_t, (48.0, 48.0), [], _V), "%r never reads as 48 alone" % _t)
+    check(S.total_hours_printed(_t, (48.0, 54.0), [], _V), "%r reads as 48-54" % _t)
+check(S.total_hours_printed("VOCED 600\t0\nTotal Hours 216.", (216.0, 216.0), [], _V),
+      "'Total Hours 216.' with a sentence's period reads 216")
+check(not S.total_hours_printed("VOCED 600\t0\nTotal Hours 48 -\t54x", (48.0, 48.0), [], _V)
+      and not S.total_hours_printed("VOCED 600\t0\nTotal Hours 48\u2013 54.5.1", (48.0, 48.0), [], _V),
+      "a total that runs on into a range it did not take fails")
+# Finding 2: course hours printed with no colon, label first or in a column, keep it closed.
+_E = {"blocks": [{"rule": "all", "courses": [{"code": "ESL 901", "units": None}, {"code": "ESL 902", "units": None}]}]}
+check(not S.total_hours_printed("ESL 901 Lecture Hours 54\nESL 902 Lecture Hours 72\nTotal Hours 108", (108.0, 108.0),
+                                [], _E), "label-first course hours that do not add up fail (54 + 72 against 108)")
+check(not S.total_hours_printed("Course\tUnits\tHours\nESL 901\t0\t54\nESL 902\t0\t72\nTotal Hours 108",
+                                (108.0, 108.0), [], _E), "an hours column beside the courses fails")
+check(not S.total_hours_printed("ESL 901\t0\nTotal Hours 108", (108.0, 108.0), [], _E),
+      "a listed course the page does not show on a line fails")
+check(S.total_hours_printed("ESL 901\tReading\tN/A\nESL 902\tWriting\t0\nTotal Hours 108", (108.0, 108.0), [], _E),
+      "Coalinga's and SBVC's shape (N/A or 0 beside each course) passes")
+check(S.score(sbvc, SBVC_LIST, SBVC_NC.replace("Job Search Skills\t0", "Job Search Skills Lab Hours 12"),
+              "Noncredit program")["arithmetic"]["status"] == "incomplete",
+      "SBVC's page with one course's 'Lab Hours 12' fails through score()")
 
 # ── S644: the electives guard reads the catalog's own sentence a step filed (electives_fill_words) ──
 # Grossmont's Sociology AA-T 30977 as its reading quotes the page.

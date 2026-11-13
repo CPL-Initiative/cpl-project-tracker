@@ -46,6 +46,9 @@ GUARD = "names no electives"
 NO_UNITS = "pattern, but no units for it"
 # The general education steps S644 added (kb/program_requirements_reconcile.json).
 GE_STEP_COLLEGES = ("East Los Angeles College", "Los Angeles Pierce College")
+# A reading's note that the window does not print the program's own heading.
+HEADING_DOUBT = re.compile(r"heading[^.]{0,80}(?:not (?:printed|in)|cut off|is inferred|falls on the preceding)"
+                           r"|section_heading (?:uses|is inferred)|department head", re.I)
 
 
 def filed_records(pattern: str = GLOB):
@@ -162,14 +165,21 @@ def measure_electives(records: list[dict], steps: dict) -> dict:
             v = S.degree_verdict(prog, tuple(map(float, deg["stated"])), float(deg["computed"][0]),
                                  float(deg["computed"][1]), f.get("award"))
             ok = _final(f, v)
-        words = [st["value"] for st in (steps.get(f["college"]) or {}).get("steps") or []
-                 if st.get("field") == "electives_fill_words" and R.awards_match(st.get("awards"), f.get("award"))]
+        mine = [st for st in (steps.get(f["college"]) or {}).get("steps") or []
+                if st.get("field") == "electives_fill_words" and R.awards_match(st.get("awards"), f.get("award"))]
+        words = [st["value"] for st in mine]
+        scoped = any(st.get("before") for st in mine)
         notes = " ".join(f["record"].get("notes") or [])
         quoted = any(S._words(w) in S._words(notes) for w in words)
         live = ok and f["score"]["coverage"]["pass"] is True and f["score"]["invented"]["pass"] is True
+        # A heading-scoped step reads from the record's heading: a reading that says the window does not
+        # print it (a department header or 'Program Requirements' standing in) takes no sentence.
+        no_head = scoped and bool(HEADING_DOUBT.search(notes))
         out[f["college"]].append({"control_number": f["control_number"], "award": f.get("award"),
                                   "certificate": bool(cert), "arith_passes": ok, "passes_live": live,
-                                  "step": bool(words), "notes_quote_step": quoted})
+                                  "step": bool(words), "notes_quote_step": quoted, "heading_scoped": scoped,
+                                  "heading_not_printed": no_head,
+                                  "expected": live and quoted and not no_head})
     return {"by_college": out, "carrying": carrying}
 
 
@@ -279,9 +289,13 @@ def main(argv=None) -> int:
     print("\n2. the electives guard (electives_named)")
     print("   filed records already carrying electives_fill_words (must be 0): %d" % len(elec["carrying"]))
     for c, v in sorted(elec["by_college"].items(), key=lambda x: -len(x[1])):
-        print("   %-28s fail on the guard %3d; pass once answered %3d (live %3d); a step %s; notes quote it %d"
+        print("   %-28s fail on the guard %3d; pass once answered %3d (live %3d); a step %s%s; notes quote it %d;"
+              " heading not printed %d; expected to move %d"
               % (c, len(v), sum(r["arith_passes"] for r in v), sum(r["passes_live"] for r in v),
-                 "yes" if any(r["step"] for r in v) else "no", sum(r["notes_quote_step"] for r in v)))
+                 "yes" if any(r["step"] for r in v) else "no",
+                 " (from the heading)" if any(r["heading_scoped"] for r in v) else "",
+                 sum(r["notes_quote_step"] for r in v), sum(r["heading_not_printed"] for r in v),
+                 sum(r["expected"] for r in v)))
     print("\n3. the general education steps, as if each pattern matched")
     for name, rows in ge.items():
         print("   " + name)

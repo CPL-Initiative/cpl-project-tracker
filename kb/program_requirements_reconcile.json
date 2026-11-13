@@ -1146,13 +1146,14 @@
    ]
   },
   "East Los Angeles College": {
-   "why": "S644, the harvest's NEXT 5. East Los Angeles's degrees say electives fill the degree without the word elective, so the scorer's electives guard fails them: transfer pages print 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' (quoted by the readings of 32154, 32980, 33382, 37923, 42672 and 45935; 31017 and 35720 quote it in mixed case), local pages 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.' (43649, 37956; 35309 and 41132 quote 'Complete additional degree applicable units, if needed, to reach 60 units'). Diagnosis docs/harvest_wave3_diagnoses_s639.md, East Los Angeles causes 1 and 3. The first three steps file the sentence as electives_fill_words, which the guard (electives_named) accepts where the text prints it. The fourth gives a transfer degree that names Cal-GETC and no units the 34 the ADT paragraph of the same section prints, 'Cal-GETC ... (34 semester/45 quarter units)' (quoted by the readings of 31017, 32154, 32170, 33013, 33382, 41231 and 43632; 41097's reading saw it on page 130 and left ge_units empty), only where the record names the pattern and the degree total (only_with ge_pattern and degree_total), so a record that passes without a pattern, or holds its major alone, is never given units. Measured on the filed records by kb/_program_requirements_readings_measure.py: 20 records fail on the guard and 19 pass once it is answered (the readings of 10 quote a sentence word for word, the rest paraphrase it); with the fourth step, and its guard answered, 41097 passes as overlap and 35720 stays unequal (59-65 against 60). No passing record moves. Session decision for Sam to revise (d-electives-fill-words-s644); reversible by deleting this entry.",
+   "why": "S644, the harvest's NEXT 5. East Los Angeles's degrees say electives fill the degree without the word elective, so the scorer's electives guard fails them: transfer pages print 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' (quoted by the readings of 32154, 32980, 33382, 37923, 42672 and 45935; 31017 and 35720 quote it in mixed case), local pages 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.' (43649, 37956; 35309 and 41132 quote 'Complete additional degree applicable units, if needed, to reach 60 units'). Diagnosis docs/harvest_wave3_diagnoses_s639.md, East Los Angeles causes 1 and 3. The first three steps file the sentence as electives_fill_words, which the guard (electives_named) accepts where the text prints it. They read only from the record's own heading onward (before: end of text, so the heading scope of kb/_program_requirements_reconcile.py applies, as Glendale's steps use it): a capture is a page window that can hold the program before it, whose sentence is not this record's (review of #3193; 32170 reads pages 359-360 after Social Work's section). A record whose heading the window does not print takes no sentence. The fourth gives a transfer degree that names Cal-GETC and no units the 34 the ADT paragraph of the same section prints, 'Cal-GETC ... (34 semester/45 quarter units)' (quoted by the readings of 31017, 32154, 32170, 33013, 33382, 41231 and 43632; 41097's reading saw it on page 130 and left ge_units empty), only where the record names the pattern and the degree total (only_with ge_pattern and degree_total), so a record that passes without a pattern, or holds its major alone, is never given units. Measured on the filed records by kb/_program_requirements_readings_measure.py: 20 records fail on the guard and 19 pass once it is answered (the readings of 10 quote a sentence word for word, the rest paraphrase it; the 9 that do not quote it move only if the reconcile run finds the sentence after their own heading); with the fourth step, and its guard answered, 41097 passes as overlap and 35720 stays unequal (59-65 against 60). No passing record moves. Session decision for Sam to revise (d-electives-fill-words-s644); reversible by deleting this entry.",
    "awards": "associate",
    "steps": [
     {
      "kind": "set",
      "field": "electives_fill_words",
      "value": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+     "before": "\\Z",
      "awards": "transfer",
      "pattern": "(?i)ADDITIONAL\\s+CSU\\s+UNITS,?\\s+IF\\s+NEEDED,?\\s+TO\\s+REACH\\s+60\\s+CSU\\s+TRANSFERABLE\\s+UNITS",
      "source_words": "ELAC transfer pages: 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' (the readings of 32154, 32980, 33382, 37923, 42672, 45935, notes)"
@@ -1161,6 +1162,7 @@
      "kind": "set",
      "field": "electives_fill_words",
      "value": "ADDITIONAL CSU UNITS TO REACH 60 CSU TRANSFERABLE UNITS",
+     "before": "\\Z",
      "awards": "transfer",
      "pattern": "(?i)ADDITIONAL\\s+CSU\\s+UNITS\\s+TO\\s+REACH\\s+60\\s+CSU\\s+TRANSFERABLE\\s+UNITS",
      "source_words": "ELAC transfer pages: 'COMPLETE ADDITIONAL CSU UNITS TO REACH 60 CSU TRANSFERABLE UNITS' (a reading's note, the same sentence without 'if needed')"
@@ -1169,6 +1171,7 @@
      "kind": "set",
      "field": "electives_fill_words",
      "value": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+     "before": "\\Z",
      "awards": "local",
      "pattern": "(?i)ADDITIONAL\\s+DEGREE[-\\s]+APPLICABLE\\s+UNITS,?\\s+IF\\s+NEEDED,?\\s+TO\\s+REACH\\s+60\\s+UNITS",
      "source_words": "ELAC local pages: 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.' (the readings of 43649 and 37956; 35309 and 41132 quote 'Complete additional degree applicable units, if needed, to reach 60 units')"

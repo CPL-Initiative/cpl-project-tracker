@@ -991,12 +991,13 @@ check("Grossmont: a transfer degree files the sentence, and the scorer's guard r
       and S.degree_check(g_new["program"], (60.0, 60.0), 20.0, 22.0, [], GRC, "A.A- T Degree")["pass"]
       and not S.degree_check(grc["program"], (60.0, 60.0), 20.0, 22.0, [], GRC, "A.A- T Degree")["pass"])
 check("Grossmont: a local degree is left alone", R.reconcile(grc, GRC, "Grossmont College", "A.S. Degree", steps=ST)[1] == [])
-ELT = ("COMPLETE THE FOLLOWING: 30-31 UNITS\nCAL-GETC GE PATTERN\nCOMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU "
+ELT = ("KINESIOLOGY ASSOCIATE IN ARTS FOR TRANSFER\nCOMPLETE THE FOLLOWING: 30-31 UNITS\nKIN 101 3\nCAL-GETC GE PATTERN\nCOMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU "
        "TRANSFERABLE UNITS\nTOTAL 60\nCompletion of the California General Education Transfer Curriculum (Cal-GETC) "
        "course requirements (34 semester/45 quarter units)")
-elt = {"program": {"total_units": {"min": 30, "max": 31}, "degree_total": {"min": 60, "max": 60},
+elt = {"program": {"section_heading": "KINESIOLOGY ASSOCIATE IN ARTS FOR TRANSFER",
+                   "total_units": {"min": 30, "max": 31}, "degree_total": {"min": 60, "max": 60},
                    "ge_units": {"min": None, "max": None}, "ge_pattern": "Cal-GETC", "electives_fill_degree": True},
-       "blocks": []}
+       "blocks": [{"name": "Major", "rule": "all", "courses": [{"code": "KIN 101", "units": 3}]}]}
 e_new, e_notes = R.reconcile(elt, ELT, "East Los Angeles College", "A.S. T Degree", steps=ST)
 ep = e_new["program"]
 check("East Los Angeles 41097's shape: the sentence and the ADT paragraph's 34 both filed, and the degree passes as overlap",
@@ -1012,15 +1013,33 @@ major_only["program"]["degree_total"] = {"min": None, "max": None}
 check("East Los Angeles: a record holding its major alone takes no units",
       (R.reconcile(major_only, ELT, "East Los Angeles College", "A.S. T Degree", steps=ST)[0]["program"].get("ge_units")
        or {}).get("min") is None)
-ELL = "COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.\nTOTAL 60"
-ell = {"program": {"total_units": {"min": 30, "max": 30}, "degree_total": {"min": 60, "max": 60},
-                   "ge_units": {"min": 27, "max": 27}, "electives_fill_degree": True}, "blocks": []}
+ELL = ("SOCIOLOGY ASSOCIATE IN ARTS\nSOC 001 3\nCOMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 "
+       "UNITS.\nTOTAL 60")
+ell = {"program": {"section_heading": "SOCIOLOGY ASSOCIATE IN ARTS", "total_units": {"min": 30, "max": 30},
+                   "degree_total": {"min": 60, "max": 60}, "ge_units": {"min": 27, "max": 27},
+                   "electives_fill_degree": True},
+       "blocks": [{"name": "Major", "rule": "all", "courses": [{"code": "SOC 001", "units": 3}]}]}
 l_new = R.reconcile(ell, ELL, "East Los Angeles College", "A.A. Degree", steps=ST)[0]["program"]
 check("East Los Angeles: a local degree files the local sentence and never the transfer one or the 34",
       l_new.get("electives_fill_words", "").startswith("ADDITIONAL DEGREE-APPLICABLE")
       and S.degree_check(l_new, (60.0, 60.0), 30.0, 30.0, [], ELL, "A.A. Degree")["pass"]
       and R.reconcile(ell, ELL.replace("DEGREE-APPLICABLE", "CSU"), "East Los Angeles College", "A.A. Degree",
                       steps=ST)[1] == [])
+# Review of #3193, finding 3: a window that opens on the program before this one (32170 after Social Work).
+NEIGH = ("SOCIAL WORK ASSOCIATE IN ARTS FOR TRANSFER\nCOMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU "
+         "TRANSFERABLE UNITS\nTOTAL 60\nKINESIOLOGY ASSOCIATE IN ARTS FOR TRANSFER\nCOMPLETE THE FOLLOWING: 30-31 "
+         "UNITS\nKIN 101 3\nTOTAL 60")
+n_new = R.reconcile(elt, NEIGH, "East Los Angeles College", "A.A- T Degree", steps=ST)[0]["program"]
+check("East Los Angeles: the program before this one's sentence is not this record's",
+      not n_new.get("electives_fill_words"))
+check("the scorer reads a filed sentence only from the record's heading onward",
+      not S.electives_named(dict(elt["program"], electives_fill_words="ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU "
+                                 "TRANSFERABLE UNITS"), NEIGH))
+no_head = json.loads(json.dumps(elt))
+no_head["program"]["section_heading"] = "Kinesiology Department"
+check("East Los Angeles: a record whose heading the window does not print takes no sentence",
+      not R.reconcile(no_head, ELT, "East Los Angeles College", "A.A- T Degree", steps=ST)[0]["program"]
+      .get("electives_fill_words"))
 PRC = "General Education Options\nCal-GETC (34 units)\nLACCD GE (21 units)\nTotal 60"
 prc = {"program": {"total_units": {"min": 36, "max": 36}, "degree_total": {"min": 60, "max": 60},
                    "ge_units": {"min": None, "max": None}, "ge_pattern": "Cal-GETC or LACCD GE"}, "blocks": []}

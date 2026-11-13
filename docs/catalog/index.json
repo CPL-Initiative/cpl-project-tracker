@@ -13915,7 +13915,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 102,
+   "count": 103,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15132,6 +15132,21 @@
       "side-lane"
      ],
      "title": "Program requirements harvest \u2014 wave 3 diagnoses (S639 side session)",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-13",
+     "governs": [],
+     "path": "docs/harvest_no_closed_list_diagnosis_s644.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "program-requirements",
+      "harvest",
+      "diagnosis"
+     ],
+     "title": "Program requirements harvest \u2014 why 1,604 active programs have no closed list (S644)",
      "type": null,
      "updated": ""
     },
@@ -27127,5 +27142,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1460
+ "total": 1461
 }
