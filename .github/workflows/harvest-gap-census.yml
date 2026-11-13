@@ -36,12 +36,20 @@ jobs:
             echo "::warning::the heading-agreement snapshot did not regenerate; the census files without it"
             git checkout -- kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md 2>/dev/null || true
           fi
+      # The Commons data dashboard's figures (#3215, commons_data.js at #commons/data), from the committed files
+      # alone; no network. Fails soft, as the heading agreement does.
+      - name: Commons data dashboard (committed files only; fails soft)
+        run: |
+          if ! python3 kb/_build_commons_data_status.py; then
+            echo "::warning::the Commons data dashboard did not regenerate; the census files without it"
+            git checkout -- kb/status/commons_data.json 2>/dev/null || true
+          fi
       - name: Commit to the branch that ran it
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/status/harvest_gap_census.json kb/status/harvest_gap_census.md
-          for f in kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md; do
+          for f in kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md kb/status/commons_data.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
           if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi

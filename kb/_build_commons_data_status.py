@@ -1,0 +1,283 @@
+#!/usr/bin/env python3
+"""_build_commons_data_status.py — the Commons data dashboard's figures, college by college (#3215, slice 1).
+
+Sam, 2026-11-13, relayed by COBIx on #3215: a Commons dashboard for each college's datasets we pull, with
+completeness and confidence, known gaps and the asks that would improve them, in the Funding Follow-up
+Dashboard's pattern (tiles that filter, a college list, later a side panel). Slice 1 is the tiles and the
+college list at #commons/data (commons_data.js draws them from the file this writes).
+
+WHAT IT READS, committed files only (it writes no table and calls no network):
+  kb/college_identity/2026-11-10/crosswalk.json   the universe: every college and continuing-education campus,
+                                                   by district (the two partner entities stay off this page).
+  kb/program_requirements_college/<slug>/          each harvested college's capture (capture.json "started", or
+                                                   capture_preview.json on a pull request branch), its filed
+                                                   records' scores and summary.json (cost_usd and the programs that
+                                                   passed the machine checks at read time).
+  kb/_harvest_gap_census.py                        its committed-files functions, imported and never restated: the
+                                                   universe the captures listed, the tab's passing test, and one
+                                                   cause for each program without a passing record.
+  kb/course_outcomes/queue.json                    the colleges whose course SLO read is none, held or parser.
+  kb/harvest_scouting/scout-*.json                 COBIx's source scouts: recommendation, access challenge, date.
+  kb/spot_checks/*.check.json                      COBIx's spot-check receipts (schema 1: tally, holds, records),
+                                                   when one is committed. None is today, so confidence reads TBA.
+
+ONE BASIS. Every program figure here is the committed files' own view (the census's --committed-only
+universe: the programs each capture listed). It is not the live table's Active count, which the Program
+Requirements tab reads; the page says so beside the figure and never mixes the two.
+
+A figure no committed file supplies is null with its reason in "tba", and the page shows TBA (the house rule
+for an unmeasured metric), never a zero and never a stand-in.
+
+Usage, from the repo root:
+  python3 kb/_build_commons_data_status.py [--root DIR] [--out PATH] [--check] [--quiet]
+Refresh: the harvest gap census workflow runs it after the census (fails soft). Guard:
+tests/commons_data_status_build_test.py; the view's guard is tests/commons_data.test.js.
+"""
+from __future__ import annotations
+
+import argparse
+import datetime as dt
+import glob
+import json
+import os
+import re
+import sys
+
+SCHEMA = 1
+OUT = "kb/status/commons_data.json"
+CROSSWALK = "kb/college_identity/2026-11-10/crosswalk.json"
+COLLEGE_DIR = "kb/program_requirements_college"
+SLO_QUEUE = "kb/course_outcomes/queue.json"
+SCOUTS = "kb/harvest_scouting/scout-*.json"
+SPOT_CHECKS = "kb/spot_checks/*.check.json"
+IN_SCOPE = ("college", "continuing_education")
+
+# The age cue on a stamp, in days, in one place (Sam, 1:23 AM PT on #3215): fresh within 7, recent within 30,
+# stale after. The page reads these from the file and never restates them.
+AGE_DAYS = {"fresh": 7, "recent": 30}
+
+# Every field a college row carries, flagged for the College view (a later slice draws only "shareable").
+FIELDS = {
+    "id": "shareable", "name": "shareable", "district": "shareable", "kind": "shareable",
+    "harvested": "shareable", "programs": "shareable", "passing": "shareable", "gap": "shareable",
+    "read_at": "shareable", "read_kind": "internal", "slug": "internal", "causes": "internal",
+    "cost_usd": "internal", "passed_at_read": "internal", "slo_queue": "internal", "scout": "internal",
+    "spot_check": "internal",
+}
+
+# The figures slice 1 cannot read from a committed file, each with its reason (shown as TBA on the page).
+TBA = {
+    "confidence": "No spot-check receipt is committed yet (kb/spot_checks/). COBIx's tallies sit on the wave pull "
+                  "requests; confidence reads strong, partial or limited once a receipt is filed.",
+    "overall": "The overall bar averages catalog source, program requirements and outcomes (SLOs and PLOs "
+               "averaged). Catalog source, SLOs and PLOs per college are live tables, read in a later slice.",
+    "teachout_approved": "Teachout and Approved programs are counted apart from Active in the live COCI table, "
+                         "which this slice does not read.",
+    "apis": "The API connection checklist (#3220) is not a committed file yet.",
+    "jst": "The JST funnel waits on an authorized-student feed from CCCStart; counts only, when it exists.",
+}
+
+RULE = {
+    "basis": "committed files only: the programs each college's capture listed (the gap census's committed universe)",
+    "passing": "coverage and invented true, arithmetic equal or unstated (the Program Requirements tab's own test)",
+    "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest "
+               "rule); TBA until the three parts are read per college",
+    "confidence": "strong = 5 of 5 spot-checked records agree; partial = a difference or an unreachable page; "
+                  "limited = machine checks only, or 2 or more differ (display held)",
+    "age_days": AGE_DAYS,
+}
+
+
+def iso_now() -> str:
+    return dt.datetime.now(dt.timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def load(root: str, rel: str):
+    with open(os.path.join(root, rel), encoding="utf-8") as f:
+        return json.load(f)
+
+
+def norm(s: str | None) -> str:
+    s = (s or "").replace("Ã±", "ñ").lower()
+    s = re.sub(r"\s+(non-credit|noncredit|credit)$", "", s.strip())
+    return re.sub(r"[^a-z0-9ñ]+", " ", s).strip()
+
+
+def display_name(name: str) -> str:
+    """Calbright's crosswalk name carries COCI's credit split ("Calbright College Non-Credit"); the page names
+    the college once."""
+    return re.sub(r"\s+(Non-Credit|Credit)$", "", name)
+
+
+class Resolver:
+    """Every spelling a committed file uses for a college, to its crosswalk entity: the name, its variants and
+    its short name, compared without a trailing Credit or Non-Credit (COCI lists Calbright and the two
+    continuing-education campuses twice)."""
+
+    def __init__(self, entities: list[dict]):
+        self.by = {}
+        for e in entities:
+            for n in [e.get("college_name"), e.get("short")] + list(e.get("variants") or []):
+                if n:
+                    self.by.setdefault(norm(n), e["college_id"])
+
+    def __call__(self, name: str | None):
+        return self.by.get(norm(name))
+
+
+def harvest(root: str):
+    """Per harvested college, from the committed files through the census's own functions."""
+    sys.path.insert(0, os.path.join(root, "kb"))
+    import _harvest_gap_census as G  # noqa: E402  (the census's functions, never restated)
+    committed = G.read_committed(os.path.join(root, COLLEGE_DIR))
+    universe = G.universe_from_committed(committed)
+    r = G.census(universe, committed, None, {})
+    listed = {}
+    for u in universe:
+        listed[u["college"]] = listed.get(u["college"], 0) + 1
+    out = {}
+    for slug, c in committed.items():
+        d = os.path.join(root, COLLEGE_DIR, slug)
+        summary = _maybe(os.path.join(d, "summary.json")) or {}
+        cap = _maybe(os.path.join(d, "capture.json"))
+        prev = _maybe(os.path.join(d, "capture_preview.json"))
+        acct = cap or prev or {}
+        name = c.get("college") or summary.get("college") or acct.get("college")
+        causes = dict(r["per_college"].get(name) or {})
+        programs = listed.get(name, 0)
+        gap = sum(causes.values())
+        out[slug] = {
+            "name": name, "programs": programs, "passing": programs - gap, "gap": gap, "causes": causes,
+            "read_at": acct.get("started"), "read_kind": "capture" if cap else ("capture_preview" if prev else None),
+            "cost_usd": summary.get("cost_usd"), "passed_at_read": summary.get("passed_machine_checks"),
+        }
+    return out, r
+
+
+def _maybe(path: str):
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def build(root: str) -> dict:
+    cw = load(root, CROSSWALK)
+    entities = [e for e in cw.get("colleges") or [] if e.get("entity_kind") in IN_SCOPE]
+    resolve = Resolver(entities)
+    unmatched = []
+
+    harvested, census = harvest(root)
+    by_id = {}
+    for slug, h in harvested.items():
+        cid = resolve(h["name"])
+        if cid is None:
+            unmatched.append({"file": COLLEGE_DIR + "/" + slug, "name": h["name"]})
+            continue
+        by_id[cid] = dict(h, slug=slug)
+
+    sys.path.insert(0, os.path.join(root, "kb"))
+    import _program_requirements_college as PC  # noqa: E402  (the harvest's one slug rule)
+    slo = {}
+    q = _maybe(os.path.join(root, SLO_QUEUE)) or {}
+    slug_to_id = {h["slug"]: cid for cid, h in by_id.items()}
+    for e in entities:
+        slug_to_id.setdefault(PC.slug_of(e["college_name"]), e["college_id"])
+        slug_to_id.setdefault(PC.slug_of(display_name(e["college_name"])), e["college_id"])
+    for slug, v in (q.get("colleges") or {}).items():
+        cid = slug_to_id.get(slug)
+        if cid is None:
+            unmatched.append({"file": SLO_QUEUE, "name": slug})
+            continue
+        slo[cid] = {"state": v.get("state"), "why": v.get("why"), "on": v.get("on")}
+
+    scouts = {}
+    for path in sorted(glob.glob(os.path.join(root, SCOUTS))):
+        s = load(root, os.path.relpath(path, root))
+        for c in s.get("colleges") or []:
+            cid = resolve(c.get("college"))
+            if cid is None:
+                unmatched.append({"file": os.path.relpath(path, root), "name": c.get("college")})
+                continue
+            scouts[cid] = {"recommendation": c.get("recommendation"), "challenge": (c.get("access") or {}).get("challenge"),
+                           "checked_at": c.get("checked_at"), "wave": s.get("wave")}
+
+    spot = {}
+    for path in sorted(glob.glob(os.path.join(root, SPOT_CHECKS))):
+        s = load(root, os.path.relpath(path, root))
+        for row in s.get("colleges") or []:
+            cid = resolve(row.get("college"))
+            if cid is not None and isinstance(row.get("tally"), dict):
+                spot[cid] = {"tally": row["tally"], "checked_at": row.get("checked_at"), "file": os.path.relpath(path, root)}
+
+    colleges = []
+    for e in sorted(entities, key=lambda x: display_name(x["college_name"])):
+        cid = e["college_id"]
+        h = by_id.get(cid)
+        colleges.append({
+            "id": cid, "name": display_name(e["college_name"]), "district": e.get("district"),
+            "kind": e.get("entity_kind"), "harvested": h is not None, "slug": h["slug"] if h else None,
+            "programs": h["programs"] if h else None, "passing": h["passing"] if h else None,
+            "gap": h["gap"] if h else None, "causes": h["causes"] if h else None,
+            "read_at": h["read_at"] if h else None, "read_kind": h["read_kind"] if h else None,
+            "cost_usd": h["cost_usd"] if h else None, "passed_at_read": h["passed_at_read"] if h else None,
+            "slo_queue": slo.get(cid), "scout": scouts.get(cid), "spot_check": spot.get(cid),
+        })
+
+    hv = [c for c in colleges if c["harvested"]]
+    costed = [c for c in hv if c["cost_usd"] is not None and c["passed_at_read"]]
+    statewide = {
+        "colleges": len(colleges),
+        "continuing_education": sum(1 for c in colleges if c["kind"] == "continuing_education"),
+        "districts": len({c["district"] for c in colleges if c["district"]}),
+        "harvested": len(hv), "unread": len(colleges) - len(hv),
+        "programs": sum(c["programs"] for c in hv), "passing": sum(c["passing"] for c in hv),
+        "gap": sum(c["gap"] for c in hv), "with_gap": sum(1 for c in hv if c["gap"]),
+        "cost_usd": round(sum(c["cost_usd"] for c in costed), 2),
+        "passed_at_read": sum(c["passed_at_read"] for c in costed), "cost_receipts": len(costed),
+        "slo_waiting": len(slo), "scouted": len(scouts),
+        "scout_barrier": sum(1 for v in scouts.values() if (v.get("challenge") or "none") != "none" or v.get("recommendation") == "blocked"),
+        "spot_checked": len(spot),
+    }
+    return {
+        "schema": SCHEMA,
+        "written_at": iso_now(),
+        "sources": {"universe": CROSSWALK, "harvest": COLLEGE_DIR + "/<slug>/", "census": "kb/_harvest_gap_census.py (committed-files functions)",
+                    "slo_queue": SLO_QUEUE, "scouts": SCOUTS, "spot_checks": SPOT_CHECKS},
+        "rule": RULE, "fields": FIELDS, "tba": TBA if not spot else {k: v for k, v in TBA.items() if k != "confidence"},
+        "statewide": statewide,
+        "census_check": {"universe": census["universe"], "passing": census["passing"], "gap": census["gap"]},
+        "unmatched": unmatched,
+        "colleges": colleges,
+    }
+
+
+def dumps(d: dict) -> str:
+    return json.dumps(d, indent=1, ensure_ascii=False, sort_keys=False) + "\n"
+
+
+def main(argv=None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
+    ap.add_argument("--root", default=os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+    ap.add_argument("--out", default=None)
+    ap.add_argument("--check", action="store_true", help="exit 1 when the committed file differs (written_at aside)")
+    ap.add_argument("--quiet", action="store_true")
+    a = ap.parse_args(argv)
+    d = build(a.root)
+    out = a.out or os.path.join(a.root, OUT)
+    if a.check:
+        old = _maybe(out) or {}
+        same = {k: v for k, v in old.items() if k != "written_at"} == json.loads(dumps({k: v for k, v in d.items() if k != "written_at"}))
+        print("commons_data.json " + ("current" if same else "STALE: rerun kb/_build_commons_data_status.py"))
+        return 0 if same else 1
+    with open(out, "w", encoding="utf-8") as f:
+        f.write(dumps(d))
+    if not a.quiet:
+        s = d["statewide"]
+        print("%d colleges, %d harvested; %d of %d programs passing; %d unmatched names -> %s"
+              % (s["colleges"], s["harvested"], s["passing"], s["programs"], len(d["unmatched"]), os.path.relpath(out, a.root)))
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

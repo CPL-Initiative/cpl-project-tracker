@@ -513,6 +513,7 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "commons.js",
         "commons_ase.js",
+        "commons_data.js",
         "commons_look.js",
         "commons_progress.js"
       ],
