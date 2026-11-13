@@ -64,8 +64,9 @@ FOUND_METHODS = {"sitemap_page", "pdf_pages", "link_search"}
 
 # Colleges the lane parks (each a cpl_memory decision or the queue's stopping rule). A program there
 # takes the cause parked_college, with the cause it would otherwise carry as its sub-cause.
+# Glendale left the list on Sam's ruling (relayed by COBIx on #3111, 2026-11-12;
+# sam-glendale-unpark-2026-11-12): its 2026-27 Coursedog catalog is read, so its programs take their own causes.
 PARKED = {
-    "Glendale Community College": "glendale-parked-2026-10-30",
     "Los Angeles Valley College": "lavc-parked-2026-10-31",
     "Los Medanos College": "parked until an electives sentence in its own words (lane, S633)",
     "Monterey Peninsula College": "the queue's stopping rule (Sam, 2026-10-30; status file, S641)",

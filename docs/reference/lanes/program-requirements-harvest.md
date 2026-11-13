@@ -71,7 +71,9 @@ draft."* The harvest's tab shows its records without a Governance pass, marked
 
 🔨 **The reconcile pass (S392; Sam, 2026-10-14: "a secondary search of the catalog text to see if we can reconcile after the initial PR harvest", each catalog's own steps; `cpl_memory` `sam-reconcile-pass-after-harvest-2026-10-14`).** `kb/_program_requirements_reconcile.py` applies a college's steps (`kb/program_requirements_reconcile.json`) at extraction and on filed records (`step=reconcile`, no model call); each change names the words it came from. Orange Coast's and Monterey Peninsula's steps, Cabrillo's and Cerritos's, and Sheet 85's rulings on them (Sam, 2026-10-16, `sam-sheet-85-rulings-2026-10-16`; Victor Valley 37006 and 38352 stay as read, unchecked, shown and flagged): lessons, *Moved from the lane (S402 compaction)*.
 
-**Parked or displayed earlier** (Glendale and Los Angeles Valley parked; a choose-courses list's printed units are its floor, Sheet 144 card 2): lessons, *Moved from the lane (S644)*.
+**Parked or displayed earlier** (Los Angeles Valley parked; a choose-courses list's printed units are its floor, Sheet 144 card 2): lessons, *Moved from the lane (S644)*.
+
+**DECIDED (Sam via COBIx, #3111 6842097699, 2026-11-12; `sam-glendale-unpark-2026-11-12`):** "Glendale: unpark. Read its 2026-27 Coursedog catalog." The census parks it no longer; the registry moves by `kb/receipts/program_source_registry_glendale_s645_2026-11-13.sql`; a free capture first. Its 115 passing PDF records stay under the kept-passing guard.
 
 **Displayed or standing as filed** (eleven colleges, Monterey Peninsula to Butte): lessons, *Moved from the lane (S644)*. **A refused read follows [`blocked_sources`](../blocked_sources.md) before any card.**
 **Los Medanos** (parked), **Redwoods** and **De Anza** (open; their NEXT is Throughput's (6)): lessons, *Moved from the lane (S644)*.
