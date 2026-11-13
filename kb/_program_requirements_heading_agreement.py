@@ -35,12 +35,13 @@ WHAT THIS MEASURES, from committed files only (read-only; writes no table):
     certificate, S645 review of #3201).
 
 The committed snapshot reads only the files this tree commits (git ls-files), and says the date of
-the newest capture it reads. A college folder on an unmerged branch never enters it: measure one with
+the newest capture it reads. It is a snapshot of main that a dispatch of harvest-gap-census.yml
+rewrites; nothing gates a PR on it. A college folder on an unmerged branch never enters it: measure one with
 --extra and --college.
 
 Run from repo root:
     python3 kb/_program_requirements_heading_agreement.py            # writes the snapshot
-    python3 kb/_program_requirements_heading_agreement.py --check    # exit 1 when it is stale (check_generated.sh, CI)
+    python3 kb/_program_requirements_heading_agreement.py --check    # exit 1 when it is stale (no gate calls it)
     python3 kb/_program_requirements_heading_agreement.py --extra PATH:LABEL --college SLUG   # a folder off main
 writes kb/status/harvest_heading_agreement.json and .md. Guard: tests/program_requirements_heading_agreement_test.py.
 """
@@ -432,9 +433,10 @@ def build(root: str = COLLEGE_DIR, extra: list[str] | None = None, tracked: bool
         for k in TOTAL_KEYS:
             tot[k] += c[k]
     return {
-        "_readme": ("Written by kb/_program_requirements_heading_agreement.py from the files this tree commits "
-                    "(git ls-files), a dated snapshot: as_of is the newest capture it reads. Kept current by "
-                    "--check (scripts/check_generated.sh, CI). Each record's own heading "
+        "_readme": ("A dated snapshot of main as of as_of (the newest capture it reads), written by "
+                    "kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). "
+                    "Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on "
+                    "its freshness, so it can trail the records. Each record's own heading "
                     "(program.section_heading) against the program it is filed under (sources.json: COCI "
                     "title and award). check_would_fail_passing counts the records that pass on the committed "
                     "files (passes_live) whose heading names another award type (heading_award_check, in no "
@@ -456,9 +458,10 @@ def markdown(rep: dict) -> str:
     by = {c["slug"]: c for c in rep["colleges"]}
     extra = [r for r in rep.get("read_from") or [] if r != "main"]
     lines = ["# Harvest heading agreement", "",
-             "A dated snapshot, as of %s (the newest capture it reads), written by "
-             "`kb/_program_requirements_heading_agreement.py` from the files this tree commits%s, and kept "
-             "current by its `--check`. Each record's own heading against the program it is filed under (COCI "
+             "A dated snapshot of main, as of %s (the newest capture it reads), written by "
+             "`kb/_program_requirements_heading_agreement.py` from the files the tree commits%s. A dispatch of "
+             "`harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can "
+             "trail the records. Each record's own heading against the program it is filed under (COCI "
              "title and award)." % (rep.get("as_of") or "no capture",
                                     "" if not extra else " plus folders read from %s" % ", ".join(extra)), "",
              "All colleges: %d records, %d agree, %d disagree (%d of them pass on the committed files), %d cannot "
@@ -538,7 +541,7 @@ def main(argv=None) -> int:
             except OSError:
                 stale.append(os.path.relpath(path, os.path.dirname(HERE)))
         if stale:
-            print("STALE: %s; run python3 kb/_program_requirements_heading_agreement.py and commit both"
+            print("STALE: %s; run python3 kb/_program_requirements_heading_agreement.py (or dispatch harvest-gap-census.yml)"
                   % ", ".join(stale))
             return 1
         print("heading agreement snapshot is up to date")

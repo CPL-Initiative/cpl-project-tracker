@@ -199,7 +199,7 @@ try:
     check(fresh == 0 and stale == 1, "--check passes on a fresh snapshot and fails once the tree moves: %r"
           % ((fresh, stale),))
     md = open(out_md).read()
-    check("A dated snapshot, as of" in md and "pass on the committed files" in md and "today" not in md,
+    check("A dated snapshot of main, as of" in md and "pass on the committed files" in md and "today" not in md,
           "the snapshot says it is dated and what 'pass' means")
     with contextlib.redirect_stdout(io.StringIO()):
         refused = H.main(["--extra", col + ":claude/x"])

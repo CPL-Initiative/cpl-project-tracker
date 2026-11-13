@@ -54,9 +54,6 @@ run "orphan-parent worklist"   "python3 kb/_build_orphan_parent_worklist.py --ch
 # kb/credential_title_moves.json, which the one resolver writes, so a new rename snapshot stales it here.
 run "credential title moves"    "python3 kb/credential_aliases.py --check"
 run "credential title resolver, one copy" "python3 tests/credential_title_resolver_single_source_test.py >/dev/null"
-# The harvest's heading-agreement snapshot (S645, review of #3201) is built from the college records this
-# tree commits, so a PR that files or moves a college's records stales it here: rerun the script.
-run "harvest heading agreement snapshot" "python3 kb/_program_requirements_heading_agreement.py --check"
 # ⚠️ AND IT MISSED ONE MORE, WHICH SHIPPED (2026-09-18, #1618). prototype/skyview.html
 # is assembled by prototype/build_ccr_atlas.py, and step 4d2 of daily-dashboard.yml
 # re-runs that build whenever the unified-courses artifacts move. A session edited the
@@ -89,8 +86,7 @@ if [ "$fail" -ne 0 ]; then
   echo "Regenerate, re-run this, THEN push:"
   echo "  python3 kb/_build_docs_index.py && python3 kb/_build_dependency_map.py \\"
   echo "    && python3 kb/_build_cobi_admin_surface.py && python3 kb/_build_sierra_rule_defaults.py \\"
-  echo "    && python3 fact-sheet/_build_statewide_catalog.py && python3 kb/credential_aliases.py \\"
-  echo "    && python3 kb/_program_requirements_heading_agreement.py"
+  echo "    && python3 fact-sheet/_build_statewide_catalog.py && python3 kb/credential_aliases.py"
   exit 1
 fi
 echo "All generated files are current."
