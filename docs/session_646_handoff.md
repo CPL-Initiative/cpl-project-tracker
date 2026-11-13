@@ -81,8 +81,8 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 
 | PR or branch | State | Next |
 |---|---|---|
-| this checkpoint, `claude/confident-clarke-b8vkms` (tracker) | draft | merge on a green `test` |
-| CPLBrain, `claude/confident-clarke-b8vkms` (Sheet 188's source, the session note, the wiki touch) | draft | merge after the tracker's |
+| #3209, this checkpoint, `claude/confident-clarke-b8vkms` (tracker) | draft | merge on a green `test` |
+| CPLBrain#771, `claude/confident-clarke-b8vkms` (Sheet 188's source, the session note, the wiki touch) | draft | merge after the tracker's |
 | #3201 `claude/harvest-pdf-control-number-s644` (head `241a8950`) | draft; decision 14 *in flight* | First things 1 |
 | `claude/harvest-santiago-canyon-proof-s645` (head `b491fbae`) | proof branch; capture on decision 13 dispatched 03:55Z, not read | free capture on #3201's final head |
 | #3194 `claude/harvest-santiago-canyon-s644` | "HELD:", draft | `main` in after #3201, paid reread forcing 29 |
