@@ -29,6 +29,7 @@ with u as (
                          'Cuesta College','Cañada College','Hartnell College','Crafton Hills College','Taft College','Merced College',
                          'Calbright College Credit',
                          'North Orange Continuing Education',
+                         'Santiago Canyon College',
                          'Diablo Valley College')
     and coalesce(u.college_course,'') <> ''
 ), p as (

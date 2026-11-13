@@ -1,0 +1,174 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "45881",
+ "shape": "noncredit",
+ "title": "Becoming a Social Media Influencer",
+ "award": "Noncredit program",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7632,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7632,
+    "output_tokens": 1009,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1009,
+  "output_tokens_details": {
+   "thinking_tokens": 398
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05071,
+ "ms": 9329,
+ "seconds": 9.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    80.0,
+    80.0
+   ],
+   "stated": [
+    80.0,
+    80.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Becoming a Social Media Influencer, CC",
+   "measure": "hours",
+   "total_units": {
+    "min": 80,
+    "max": 80
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "social media influence"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 80,
+     "max": 80
+    },
+    "courses": [
+     {
+      "code": "WKPR025",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WKPR026",
+      "units": 40,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints the award as a Certificate of Completion (Control Number 45881) under the heading 'ADULTS WITH SPECIAL NEEDS'.",
+   "Catalog prints codes as WKPR025 and WKPR026; these match closed-list WKPR 25 and WKPR 26, so they are not marked as catalog additions.",
+   "Hours (40 each, 80 total) are taken from the catalog's 'Total Hours' figures, not the closed list's 0 units.",
+   "The description contains a sentence beginning 'Upon completion of the requirements for this certificate, students will be able to...' inside the program description, not as a separate outcomes list; it was not recorded as program outcomes. A reviewer may wish to check.",
+   "The career entry 'social media influence' comes from the description's phrase 'the fast-growing field of social media influence'; the description also mentions 'opportunities in the influencer industry'. A reviewer should confirm whether these count as career fields."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "8785859b89a129e5",
+ "source_codes": [
+  "WKPR25",
+  "WKPR26"
+ ],
+ "source_coverage": 1.0
+}

@@ -1,0 +1,171 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "24191",
+ "shape": "noncredit",
+ "title": "ESL for Citizenship",
+ "award": "Noncredit program",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9713,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9713,
+    "output_tokens": 629,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 629,
+  "output_tokens_details": {
+   "thinking_tokens": 177
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05143,
+ "ms": 5874,
+ "seconds": 6.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    168.0,
+    360.0
+   ],
+   "stated": [
+    168.0,
+    360.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL for Citizenship, COM",
+   "measure": "hours",
+   "total_units": {
+    "min": 168,
+    "max": 360
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "The following number of Hours",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 168,
+     "max": 360
+    },
+    "courses": [
+     {
+      "code": "ESL120",
+      "units": 72,
+      "units_max": 144,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL303",
+      "units": 96,
+      "units_max": 216,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog phrases the rule as 'The following number of Hours' rather than 'All of the following'. It is recorded as 'all' because the program minimum of 168 hours equals 72 + 96, the minimum hours of both courses.",
+   "Course codes are printed without a space (ESL120, ESL303). They match closed-list ESL 120 and ESL 303.",
+   "Course hours are recorded as the printed per-course ranges (72-144 and 96-216).",
+   "The section prints no program learning outcomes and names no careers."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "9c2742d96c6ec9dc",
+ "source_codes": [
+  "ESL120",
+  "ESL303"
+ ],
+ "source_coverage": 1.0
+}

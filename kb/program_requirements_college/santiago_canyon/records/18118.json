@@ -1,0 +1,1280 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "18118",
+ "shape": "certificate",
+ "title": "IGETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=102",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 17982,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 17982,
+    "output_tokens": 7767,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 7767,
+  "output_tokens_details": {
+   "thinking_tokens": 2058
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.22727,
+ "ms": 53566,
+ "seconds": 53.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 197,
+   "share": 0.0,
+   "missing": [
+    "ANTH100",
+    "ANTH100H",
+    "ANTH101",
+    "ANTH101L",
+    "ANTH103",
+    "ANTH104",
+    "ART100",
+    "ART100H",
+    "ART101",
+    "ART101H",
+    "ART102",
+    "ART102H",
+    "ASL110",
+    "ASL111",
+    "ASTR100L",
+    "ASTR102",
+    "ASTR103",
+    "ASTR104",
+    "BIOL109",
+    "BIOL109H",
+    "BIOL109HL",
+    "BIOL109L",
+    "BIOL115",
+    "BIOL139",
+    "BIOL149",
+    "BIOL177",
+    "BIOL190",
+    "BIOL190L",
+    "BIOL211",
+    "BIOL212",
+    "BIOL214",
+    "BIOL229",
+    "BIOL239",
+    "BIOL249",
+    "BIOL259",
+    "BIOL290",
+    "CDEVC1000",
+    "CHEM100",
+    "CHEM200A",
+    "CHEM200AH",
+    "CHEM200B",
+    "CHNS101",
+    "CHNS102",
+    "CINE103",
+    "CINE104",
+    "CINE105",
+    "CJ101",
+    "COMM100H",
+    "COMM101",
+    "COMM111",
+    "COMM120",
+    "COMM120H",
+    "COMM225",
+    "COMM225H",
+    "COMMC1000",
+    "COMMC1004",
+    "DNCE100",
+    "ECONC2001",
+    "ECONC2002",
+    "EDUC101",
+    "ENGL231",
+    "ENGL232",
+    "ENGL233A",
+    "ENGL233B",
+    "ENGL241",
+    "ENGL242",
+    "ENGL243",
+    "ENGL271",
+    "ENGL272",
+    "ENGL278",
+    "ENGL279",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "ERTH100",
+    "ERTH100L",
+    "ERTH111",
+    "ERTH120",
+    "ERTH121",
+    "ERTH130",
+    "ERTH160",
+    "ERTH200",
+    "ETHN101",
+    "FREN101",
+    "FREN102",
+    "FREN201",
+    "FREN202",
+    "GEOG100",
+    "GEOG100H",
+    "GEOG101",
+    "GEOG101H",
+    "GEOG101L",
+    "GEOG102",
+    "GEOG102H",
+    "GEOG130",
+    "GEOG140",
+    "GSWS101",
+    "GSWS102",
+    "GSWS103",
+    "HIST101",
+    "HIST101H",
+    "HIST102",
+    "HIST102H",
+    "HIST118",
+    "HIST120",
+    "HIST120H",
+    "HIST122",
+    "HIST124",
+    "HIST126",
+    "HIST127",
+    "HIST132",
+    "HIST133",
+    "HIST152",
+    "HIST162",
+    "HISTC1002",
+    "HISTC1002H",
+    "IDS155",
+    "ITAL101",
+    "ITAL102",
+    "ITAL201",
+    "ITAL202",
+    "MATH140",
+    "MATH150",
+    "MATH170",
+    "MATH171",
+    "MATH180",
+    "MATH180H",
+    "MATH185",
+    "MATH280",
+    "MATH287",
+    "MATH290",
+    "MATH295",
+    "MUS101",
+    "MUS101H",
+    "MUS102",
+    "MUS103",
+    "MUS104",
+    "PHIL106",
+    "PHIL106H",
+    "PHIL110",
+    "PHIL111",
+    "PHIL112",
+    "PHIL115",
+    "PHIL118",
+    "PHIL120",
+    "PHYS100",
+    "PHYS150A",
+    "PHYS150B",
+    "PHYS250A",
+    "PHYS250B",
+    "PHYS250C",
+    "POLSC1000",
+    "POLSC1000H",
+    "POLT110",
+    "POLT201",
+    "POLT220",
+    "POLT221",
+    "POLT230",
+    "PSC100",
+    "PSYC157",
+    "PSYC160",
+    "PSYC170",
+    "PSYC180",
+    "PSYC190",
+    "PSYC200",
+    "PSYC220",
+    "PSYC230",
+    "PSYC240",
+    "PSYC250",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "SOC100",
+    "SOC100H",
+    "SOC115",
+    "SOC116",
+    "SOC120",
+    "SOC125",
+    "SOC130",
+    "SOC150",
+    "SOC220",
+    "SOC240",
+    "SPAN101",
+    "SPAN101B",
+    "SPAN101H",
+    "SPAN102",
+    "SPAN110",
+    "SPAN111",
+    "SPAN195A",
+    "SPAN195B",
+    "SPAN201",
+    "SPAN202",
+    "STATC1000",
+    "STATC1000H",
+    "THEA100"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    34.0,
+    34.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 0.0-0.0; the catalog states 34.0-34.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Intersegmental General Education Transfer Curriculum (IGETC), CA",
+   "measure": "units",
+   "total_units": {
+    "min": 34,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "IGETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTH100",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ANTH100H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ANTH101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ANTH101L",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ANTH103",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ANTH104",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ART 100",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ART 100H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ART 101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ART 101H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ART 102",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ART 102H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ASL 110",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ASL 111",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ASTR 100L",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ASTR 102",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ASTR 103",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ASTR 104",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 109",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 109H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 109HL",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 109L",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 115",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 139",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 149",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 177",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 190",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 190L",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 211",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 212",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 214",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 229",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 239",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 249",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 259",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "BIOL 290",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CDEV C1000",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CHEM100",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CHEM200A",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CHEM200AH",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CHEM200B",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CHNS101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CHNS102",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CINE 103",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CINE 104",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CINE 105",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "CJ101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "COMM 100H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "COMM 101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "COMM 111",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "COMM 120",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "COMM 120H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "COMM 225",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "COMM 225H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "DNCE 100",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ECONC2001",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ECONC2002",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "EDUC 101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 231",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 232",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 233A",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 233B",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 241",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 242",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 243",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 271",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 272",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 278",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL 279",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ENGL C1003H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ERTH100",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ERTH100L",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ERTH111",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ERTH120",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ERTH121",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ERTH130",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ERTH160",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ERTH200",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ETHN 101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "FREN101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "FREN102",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "FREN201",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "FREN202",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GEOG 100",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GEOG 100H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GEOG 101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GEOG 101H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GEOG 101L",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GEOG 102",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GEOG 102H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GEOG 130",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GEOG 140",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GSWS 101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GSWS 102",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "GSWS 103",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 101H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 102",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 102H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 118",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 120",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 120H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 122",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 124",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 126",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 127",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 132",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 133",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 152",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST 162",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "IDS 155",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ITAL101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ITAL102",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ITAL201",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "ITAL202",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 140",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 150",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 170",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 171",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 180",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 180H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 185",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 280",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 287",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 290",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MATH 295",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MUS 101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MUS 101H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MUS 102",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MUS 103",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "MUS 104",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHIL 106",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHIL 106H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHIL 110",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHIL 111",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHIL 112",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHIL 115",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHIL 118",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHIL 120",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHYS 100",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHYS 150A",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHYS 150B",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHYS 250A",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHYS 250B",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PHYS 250C",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "POLSC1000",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "POLSC1000H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "POLT 110",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "POLT 201",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "POLT 220",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "POLT 221",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "POLT 230",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSC100",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC 157",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC 160",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC 170",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC 180",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC 190",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC 200",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC 220",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC 230",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC 240",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC 250",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SOC 100",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SOC 100H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SOC 115",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SOC 116",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SOC 120",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SOC 125",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SOC 130",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SOC 150",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SOC 220",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SOC 240",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SPAN 101",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SPAN 101B",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SPAN 101H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SPAN 102",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SPAN 110",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SPAN 111",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SPAN 195A",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SPAN 195B",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SPAN 201",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "SPAN 202",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "IGETC section prints no course list"
+   },
+   {
+    "code": "THEA 100",
+    "why": "IGETC section prints no course list"
+   }
+  ],
+  "notes": [
+   "The IGETC Certificate of Achievement section (Control Number 18118) states only 'Complete all Intersegmental General Education Transfer Curriculum Requirements (Plan C) to a minimum of 34 units' with 'Unit Range for Completion : 34.0 - 34.0'; it prints no course list, so no blocks are recorded.",
+   "The certificate is itself a general education pattern (IGETC, Plan C); its 34 units are recorded as total_units, and ge_units is left null to avoid double counting. Reviewer may prefer recording 34 as ge_units.",
+   "The area course lists at the top of page 102 (Areas 5A-5C, 6) belong to the preceding program section (Control Number 45619), not to the IGETC certificate; they were not used.",
+   "No program learning outcomes or careers are printed for this award."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "63955efb88c7e09a",
+ "source_codes": [
+  "ANTH100",
+  "ANTH100H",
+  "ANTH101",
+  "ANTH101L",
+  "ANTH104",
+  "ART100",
+  "ART100H",
+  "ART101",
+  "ART101H",
+  "ART102",
+  "ART102H",
+  "ASL110",
+  "ASL111",
+  "ASTR100L",
+  "ASTR102",
+  "ASTR103",
+  "ASTR104",
+  "BIOL109",
+  "BIOL109H",
+  "BIOL109HL",
+  "BIOL109L",
+  "BIOL115",
+  "BIOL139",
+  "BIOL149",
+  "BIOL177",
+  "BIOL190",
+  "BIOL190L",
+  "BIOL211",
+  "BIOL229",
+  "BIOL239",
+  "BIOL249",
+  "BIOL259",
+  "BIOL290",
+  "CHEM100",
+  "CHEM200A",
+  "CHEM200AH",
+  "CHEM200B",
+  "CINE103",
+  "CINE104",
+  "COMM100H",
+  "COMM101",
+  "COMM111",
+  "COMM120",
+  "COMM120H",
+  "COMM225",
+  "COMM225H",
+  "COMMC1000",
+  "COMMC1004",
+  "DNCE100",
+  "EDUC101",
+  "ENGL231",
+  "ENGL232",
+  "ENGL233A",
+  "ENGL233B",
+  "ENGL241",
+  "ENGL242",
+  "ENGL271",
+  "ENGL272",
+  "ENGL278",
+  "ENGL279",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "ENGLC1001",
+  "ENGLC1001H",
+  "ENGLC1003",
+  "ENGLC1003H",
+  "ERTH100",
+  "ERTH100L",
+  "ERTH111",
+  "ERTH120",
+  "ERTH121",
+  "ERTH130",
+  "ERTH160",
+  "ERTH200",
+  "ETHN101",
+  "FREN101",
+  "FREN102",
+  "FREN201",
+  "FREN202",
+  "GEOG101",
+  "GEOG101H",
+  "GEOG101L",
+  "GEOG130",
+  "GSWS101",
+  "GSWS102",
+  "GSWS103",
+  "HIST101",
+  "HIST101H",
+  "HIST102",
+  "HIST102H",
+  "HIST118",
+  "HIST120",
+  "HIST120H",
+  "HIST124",
+  "HIST127",
+  "HIST132",
+  "HIST133",
+  "HIST152",
+  "HIST162",
+  "HISTC1002",
+  "HISTC1002H",
+  "ITAL101",
+  "ITAL102",
+  "ITAL201",
+  "ITAL202",
+  "MATH140",
+  "MATH150",
+  "MATH171",
+  "MATH180",
+  "MATH180H",
+  "MATH185",
+  "MATH280",
+  "MATH287",
+  "MATH290",
+  "MATH295",
+  "MUS101",
+  "MUS101H",
+  "MUS102",
+  "MUS103",
+  "MUS104",
+  "PHIL106",
+  "PHIL106H",
+  "PHIL110",
+  "PHIL111",
+  "PHIL112",
+  "PHIL115",
+  "PHIL118",
+  "PHIL120",
+  "PHYS100",
+  "PHYS150A",
+  "PHYS150B",
+  "PHYS250A",
+  "PHYS250B",
+  "PHYS250C",
+  "PSC100",
+  "PSYC200",
+  "SPAN101",
+  "SPAN101B",
+  "SPAN101H",
+  "SPAN102",
+  "SPAN110",
+  "SPAN111",
+  "SPAN195A",
+  "SPAN195B",
+  "SPAN201",
+  "SPAN202",
+  "STATC1000",
+  "STATC1000H",
+  "THEA100"
+ ],
+ "source_coverage": 0.756
+}
