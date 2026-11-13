@@ -884,6 +884,10 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     return out
 
 
+REFUSED = "refused"                 # a gated PDF block refused (decision 16): filed as no read page
+NO_READ = ("not_found", REFUSED)    # the methods that carry no page: the filed record stays (decision 16)
+
+
 def source_record(college: str, program: dict, reg: dict, best: dict | None, method: str) -> dict:
     """The pilot's source shape, so its extraction, scorer and filer read a
     full college's sources unchanged."""
@@ -2970,10 +2974,45 @@ def _heading_shaped(line: str, nxt: str) -> bool:
     return bool(n) and len(n) <= 60 and bool(heading_award_types(n)) and not heading_content_words(n)
 
 
+PDF_AWARD_TAIL = re.compile(r"(?:[\s,–—-]+(?:A\.?\s?[AS]\.?(?:[\s-]*T)?|CA|CC|COM|CN|CP|NC|Cert)\.?)$", re.I)
+
+
+def _title_words(s: str | None) -> list[str]:
+    return re.findall(r"[a-z0-9]+", (s or "").lower().replace("&", " and "))
+
+
+def _name_core(s: str | None) -> str:
+    """A title or heading name with a trailing award abbreviation set aside: COCI files some titles with
+    the award in them ("Water Distribution, AS"), and the catalog prints "Geography AA-T" with no comma."""
+    s = (s or "").strip()
+    m = PDF_AWARD_TAIL.search(s)
+    return s[:m.start()] if m and m.start() > 0 else s
+
+
+def pdf_own_heading(line: str, nxt: str, program: dict) -> bool:
+    """Decision 17: a heading-shaped line is the program's own only when its name is the program's full
+    title (the words in order, case, punctuation and "&" set aside, a trailing award abbreviation on
+    either read as the award) and its award type is the program's. The name is the line before its
+    trailing award ("Art History, AA" names "Art History", never "Art"), or the whole line when the award
+    stands on the next line alone. Never a token subset."""
+    from _program_requirements_score import heading_award_types, award_type
+    title = program.get("title") or ""
+    filed = award_type(program.get("award"))
+    s = (line or "").strip()
+    m = PDF_HEADING_CODE_END.search(s) or PDF_AWARD_TAIL.search(s)
+    names = heading_award_types(s[m.start():], title) if m and m.start() > 0 else set()
+    name = s[:m.start()] if names else s
+    if not names:
+        names = heading_award_types((nxt or "").strip(), title)
+    want = _title_words(_name_core(title))
+    return filed is not None and filed in names and bool(want) and _title_words(_name_core(name)) == want
+
+
 def pdf_block_headings(text: str, program: dict, ctx: dict) -> list[tuple[int, bool, str | None]]:
     """(offset, own, listed number) for each heading-shaped line in a block, page marks and the running
-    header passed over: own, the program's strict heading (its title and its own award type); else the
-    listed program whose strict heading it is, or None for a heading no listed program's matches."""
+    header passed over: own, the program's own heading (pdf_own_heading: its full title and its own award
+    type, decision 17); else the listed program whose strict heading it is, or None for a heading no
+    listed program's matches."""
     running, by_cn = ctx.get("running") or set(), ctx.get("by_cn") or {}
     toks = ctx.get("tokens")
     if toks is None:
@@ -2991,7 +3030,7 @@ def pdf_block_headings(text: str, program: dict, ctx: dict) -> list[tuple[int, b
         if not _heading_shaped(lines[k], nxt):
             continue
         rest = "\n".join(lines[k:k + 6])
-        if pdf_text_names(rest, program, strict=True):
+        if pdf_own_heading(lines[k], nxt, program):
             out.append((offs[k], True, None))
             continue
         have = set(re.findall(r"[a-z0-9]+", rest[:PDF_HEADING_CHARS + PDF_NAME_REACH].lower()))
@@ -3467,15 +3506,22 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             unbound = ({"refused": (best or {}).get("refused"), "why": (best or {}).get("after_unbound") or "no_window",
                         **({"judged": best["judged"]} if (best or {}).get("judged") else {})}
                        if ctx and not (best and best.get("bound")) else None)
-            if best and best.get("refused"):
-                rec = source_record(college, prog, reg, None, "not_found")
+            if best and (best.get("refused") or best.get("after_unbound") == "block_names_other_program"):
+                # Decision 16 (a): a refused block is never filed as a read page. Its own method, no text,
+                # no coverage claimed; refused_passing names it where the filed record passes.
+                rec = source_record(college, prog, reg, None, REFUSED)
+                if best.get("after_unbound") == "block_names_other_program":
+                    why = ("the block that ends at this program's number holds %s's heading and none of its own"
+                           % best["refused"] if best.get("refused") else
+                           "the block that ends at this program's number holds the heading of a program not on "
+                           "the college's list, and none of its own")
+                else:
+                    why = ("the catalog prints each program's control number after it, and this window is "
+                           "closed by %s's" % best["refused"])
                 rec["near_miss"] = {"url": best["url"], "pages": best["pages"], "judged": best.get("judged"),
-                                    "why": ("the block that ends at this program's number opens on %s's heading"
-                                            if best.get("after_unbound") == "block_names_other_program" else
-                                            "the catalog prints each program's control number after it, and this "
-                                            "window is closed by %s's") % best["refused"]}
+                                    "why": why}
                 rec["after_unbound"] = unbound
-            elif best and best["coverage"] >= P.ACCEPT_SHARE:
+            elif best and best.get("text") and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
                 if unbound:
@@ -3762,7 +3808,7 @@ def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t
         shared_pages={u: cns for u, cns in urls_used.items() if len(cns) > 1},
         not_found=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                     "near_miss": r.get("near_miss")}
-                   for r in recs if r["method"] == "not_found"],
+                   for r in recs if r["method"] in NO_READ],
         page_claimed=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                        "pages": r.get("lost_pages")} for r in recs if r["method"] == "page_claimed"],
         coverage_bands={band: sum(1 for r in recs if r.get("source") and lo <= r["coverage"] < hi)
@@ -4054,7 +4100,7 @@ def unbound_of(src: dict) -> dict | None:
     """What capture_pdf filed for a gated program the after path did not bind: a not_found source's
     after_unbound (its closing number, why, the block judged), or an accepted source's after_unbound
     (the heading picker read a window for it, where the votes are not uniform)."""
-    if src.get("method") == "not_found":
+    if src.get("method") in NO_READ:
         return src.get("after_unbound") or None
     why = (src.get("source") or {}).get("after_unbound")
     return {"refused": None, "why": why} if why else None
@@ -4079,7 +4125,7 @@ def refused_passing(folder: str, recs: list[dict], force: set[str] | None = None
     out = []
     for r in recs:
         un = r.get("after_unbound")
-        if r.get("method") != "not_found" or not un or r["control_number"] in (force or ()):
+        if r.get("method") not in NO_READ or not un or r["control_number"] in (force or ()):
             continue
         if _passing_filed(os.path.join(folder, "records", r["control_number"] + ".json")):
             out.append(unbound_entry(r, un))
@@ -4201,7 +4247,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 src = json.load(fh)
             cn = src.get("control_number")
             un = unbound_of(src)
-            if not un or (src.get("method") != "not_found" and cn not in (force or ())):
+            if not un or (src.get("method") not in NO_READ and cn not in (force or ())):
                 continue
             filed = _filed(os.path.join(keep_from, "records", cn + ".json"))
             if filed:
@@ -4488,6 +4534,17 @@ def summarize(records: list[dict], capture_report: dict) -> dict:
             "not_found": capture_report.get("not_found")}
 
 
+def bound_read_source(out_dir: str, cn: str) -> bool:
+    """The run's source for this program is a bound read with text: a page the capture accepted, never a
+    refused block, a program not found, one with no closed list or a claimed page (decision 16)."""
+    path = os.path.join(out_dir, "sources", cn + ".json")
+    if not os.path.isfile(path):
+        return False
+    with open(path) as fh:
+        src = json.load(fh)
+    return bool(src.get("text")) and src.get("method") not in NO_READ + ("no_closed_list", "page_claimed")
+
+
 def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     """Copy the run's records and account into the repository. A run that
     extracted replaces the records, sources and summary together, so the three
@@ -4514,17 +4571,37 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         print("capture only: filed capture_preview.json under %s" % os.path.relpath(dest, os.path.dirname(HERE)))
         return 0
     os.makedirs(os.path.join(dest, "records"), exist_ok=True)
+    filed_before: dict[str, dict] = {}
     for old in glob.glob(os.path.join(dest, "records", "*.json")):
+        with open(old) as fh:
+            filed_before[os.path.basename(old)] = json.load(fh)
         os.remove(old)
     preview = os.path.join(dest, "capture_preview.json")
     if os.path.exists(preview):
         os.remove(preview)
-    records = []
+    records = {}
     for path in sorted(glob.glob(os.path.join(out_dir, "records", "*.json"))):
         with open(path) as fh:
             row = json.load(fh)
-        records.append(row)
+        records[os.path.basename(path)] = row
         _write(os.path.join(dest, "records", os.path.basename(path)), row)
+    # Decision 16 (b), the invariant in one place: a filed record is deleted or replaced only by a record
+    # whose source is a bound read with text (bound_read_source). Any other filed record stays as filed,
+    # whatever path the run took, and the account counts it (kept_unreplaced).
+    kept_unreplaced = []
+    for name, row in sorted(filed_before.items()):
+        new = records.get(name)
+        if new is not None and (new == row or bound_read_source(out_dir, name[:-5])):
+            continue
+        records[name] = row
+        _write(os.path.join(dest, "records", name), row)
+        kept_unreplaced.append({"control_number": name[:-5],
+                                "why": "no_replacement" if new is None else "replaced_without_a_read"})
+    if kept_unreplaced:
+        print("kept_unreplaced: %d filed records stay, with no bound read to replace them" % len(kept_unreplaced))
+    report["kept_unreplaced"] = kept_unreplaced
+    kept_unreplaced_cns = {e["control_number"] for e in kept_unreplaced}
+    records = [records[k] for k in sorted(records)]
     # Which page each program was read from, and how well it matched. The
     # catalog text itself stays in the run's artifact (the workflow keeps it 90
     # days): a college's worth of page text is megabytes, and a re-read is free.
@@ -4542,7 +4619,7 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         with open(path) as fh:
             kept_unbound.update(json.load(fh).get("programs") or [])
     prev: dict = {}
-    if (not_sent or kept_unbound) and os.path.isfile(os.path.join(dest, "sources.json")):
+    if (not_sent or kept_unbound or kept_unreplaced_cns) and os.path.isfile(os.path.join(dest, "sources.json")):
         with open(os.path.join(dest, "sources.json")) as fh:
             prev = {x["control_number"]: x for x in json.load(fh)}
     index = []
@@ -4553,13 +4630,16 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
             if src["control_number"] in prev:
                 index.append(prev[src["control_number"]])
             continue
-        if src.get("control_number") in kept_unbound and src["control_number"] in prev:
+        if src.get("control_number") in (kept_unbound | kept_unreplaced_cns) and src["control_number"] in prev:
             # A kept record keeps the entry it was read from; with none, the new entry (not_found) stands.
             index.append(prev[src["control_number"]])
             continue
         index.append(dict({k: src.get(k) for k in ("control_number", "title", "award", "shape", "method",
                                                    "coverage", "codes_found", "source")},
                           listed=len(src.get("closed_list") or []), text_chars=len(src.get("text") or "")))
+    # A kept record whose program the run captured no source for keeps the entry it was read from too.
+    have = {x.get("control_number") for x in index}
+    index.extend(prev[cn] for cn in sorted(kept_unreplaced_cns - have) if cn in prev)
     _write(os.path.join(dest, "sources.json"), index)
     _write(os.path.join(dest, "capture.json"), report)
     # The programs whose read failed where the filed record passed, for a person (kept_passing).
