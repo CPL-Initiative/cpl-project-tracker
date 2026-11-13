@@ -153,6 +153,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - Handoff 648 missed issue #3229, and Sam had to point at it. At start, list the issues COBIx opened or commented on that day and check each against the handoff's open work.
 - A NOT YET RUN receipt was never tested against the table's constraints: three S647 summaries broke the 400-character check. A prepared receipt is length-checked when it is written.
 - Worked: second readers who ran the code, not only read it, found the faults that mattered; a compare before each load caught College of the Desert 10195; workers answering COBIx on the PR thread; reusing a finished worker's worktree for the next branch (about 9 GB free with three or four worktrees).
+- After the first checkpoint: Glendale's load plan, built from `main`'s 260 filed records, was wrong about the table (226 live; 34 filed records place no course and were never live). The conductor's write-time read caught it. A load plan is measured against a live read, never against files (`p-load-plan-from-live-read-s648`).
+- The same plan's hold guard failed open: the workflow's file step dropped the hold list from `summary.json`, so the load would have refused nothing. A second reader found it; the load now derives the refused tabs itself. A guard that reads a list another step writes is tested with that list missing.
+- The conductor's insert-only preference produced a worse plan for the BUSI split than the delete it avoided (residue in M1228 and a second identity beside a live one). When the clean route needs a delete, put the delete to Sam; do not build a workaround.
+- The conductor wrote a time from memory in a receipt (18:55Z for 18:47Z), and its record's later times ran ahead of the clock (the addendum's "written 20:27Z" against a machine and GitHub clock near 20:12Z). Read `date -u` before writing any time (S640's lesson, a third time).
 
 ## What went wrong in S647, and what worked
 
