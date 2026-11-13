@@ -271,11 +271,80 @@ def statewide_cal_getc(records: list[dict]) -> dict:
     return rows
 
 
+CAL_GETC_PLAN = os.path.join(HERE, "program_requirements_calgetc_34_plan.json")
+# A figure beside Cal-GETC as a reading's notes quote the page (the estimate in cal_getc_34_plan).
+NOTES_FIGURE = re.compile(r"(?:cal\s*-?\s*getc|general\s+education\s+transfer\s+curriculum)[^.;]{0,80}?\b\d{1,2}(?:\.\d)?"
+                          r"(?:\s*[-\u2013]\s*\d{1,2})?\b|\b\d{1,2}(?:\s*[-\u2013]\s*\d{1,2})?\s*units?[^.;]{0,40}?cal\s*-?\s*getc",
+                          re.I)
+
+
+def cal_getc_34_plan(records: list[dict]) -> dict:
+    """Sam's ruling (Sheet 187 card 5, 13:19:50Z 2026-11-13: "Use 34 statewide"), measured on the filed records:
+    each record the statewide rule's record gates admit (R.statewide_cal_getc: a transfer degree, Cal-GETC alone
+    as its pattern, no general education units, a degree total), and how its machine checks read with 34 filled
+    (simulate_ge, the degree check on the stored sum). The page gates (Cal-GETC named in the record's own section,
+    no figure printed there, no other pattern) read the page text, which the files do not keep: they run in each
+    college's reconcile run, so every count here is an upper bound. As an estimate of what they hold back, a
+    record whose reading notes quote a figure beside Cal-GETC (Berkeley City's "General Education (Cal-GETC) and
+    Elective Courses 38", a combined figure the printed-figure gate keeps) is listed as likely_held_by_page_gate:
+    the notes are the model's words, so this estimates and never gates."""
+    step = {"field": "ge_units", "value": dict(R.CAL_GETC_UNITS), "awards": "transfer",
+            "only_with": ["ge_pattern", "degree_total"]}
+    by = collections.defaultdict(lambda: collections.defaultdict(list))
+    for f in records:
+        prog = f["record"].get("program") or {}
+        if not R.awards_match("transfer", f.get("award")) or not R._empty(prog.get("ge_units")) \
+                or R._empty(prog.get("degree_total")) or not R.CAL_GETC_ONLY.match(prog.get("ge_pattern") or ""):
+            continue
+        before = S.passes_live(f["score"])
+        _what, after = simulate_ge(f, step)
+        move = ("newly_passing" if after and not before else "passing_already" if before
+                else "still_failing")
+        by[f["college"]][move].append(f["control_number"])
+        by[f["college"]]["touched"].append(f["control_number"])
+        notes = " ".join(str(n) for n in f["record"].get("notes") or [])
+        if NOTES_FIGURE.search(notes):
+            by[f["college"]]["likely_held_by_page_gate"].append(f["control_number"])
+    colleges = {c: {k: sorted(v) for k, v in sorted(d.items())} for c, d in sorted(by.items())}
+    total = lambda k: sum(len(d.get(k) or []) for d in colleges.values())
+    return {"ruling": "sam-sheet-187-calgetc-34-statewide-2026-11-13 (Open Asks Sheet 187 card 5, 13:19:50Z "
+                      "2026-11-13: \"Use 34 statewide\")",
+            "rule": "kb/_program_requirements_reconcile.py statewide_cal_getc",
+            "source_words": R.CAL_GETC_SOURCE,
+            "measured_on": "the committed records under kb/program_requirements_college/*/records/ (main)",
+            "upper_bound": "the record gates only; the page gates run in each college's reconcile run",
+            "counts": {"touched": total("touched"), "newly_passing": total("newly_passing"),
+                       "newly_passing_not_likely_held": sum(
+                           len(set(d.get("newly_passing") or []) - set(d.get("likely_held_by_page_gate") or []))
+                           for d in colleges.values()),
+                       "still_failing": total("still_failing"), "passing_already": total("passing_already"),
+                       "colleges_touched": len(colleges),
+                       "colleges_newly_passing": sum(1 for d in colleges.values() if d.get("newly_passing"))},
+            "colleges": colleges}
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--json", action="store_true", help="print the measure as JSON, every key named")
+    ap.add_argument("--calgetc-plan", action="store_true",
+                    help="write the statewide Cal-GETC 34 plan (%s) and print its counts" % os.path.relpath(CAL_GETC_PLAN, HERE))
+    ap.add_argument("--check-calgetc-plan", action="store_true", help="fail when the committed plan is stale")
     args = ap.parse_args(argv)
     records = list(filed_records())
+    if args.calgetc_plan or args.check_calgetc_plan:
+        plan = cal_getc_34_plan(records)
+        text = json.dumps(plan, indent=1) + "\n"
+        if args.check_calgetc_plan:
+            try:
+                same = open(CAL_GETC_PLAN).read() == text
+            except OSError:
+                same = False
+            print("calgetc plan %s" % ("current" if same else "STALE: rerun --calgetc-plan"))
+            return 0 if same else 1
+        with open(CAL_GETC_PLAN, "w") as fh:
+            fh.write(text)
+        print(json.dumps(plan["counts"]))
+        return 0
     steps = R.load_steps()
     hours = measure_hours(records, steps)
     elec = measure_electives(records, steps)

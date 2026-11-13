@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 925,
+  "file_datasets": 926,
   "external_services": 195,
-  "consumers": 581,
+  "consumers": 582,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -16894,6 +16894,26 @@
    "main_committers": [
     "workflow:program-course-fetch.yml"
    ]
+  },
+  "file:kb/program_requirements_calgetc_34_plan.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_readings_measure.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 274
+    },
+    {
+     "id": "script:kb/_program_requirements_readings_measure.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 274
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/program_requirements_college": {
    "consumers": [],

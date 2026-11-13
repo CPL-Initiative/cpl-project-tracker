@@ -201,6 +201,71 @@ def fill_course_hours(out: dict, hours: dict) -> dict:
 def reconcile(record: dict, text: str | None, college: str, award: str | None = None,
               steps: dict | None = None, course_units: dict | None = None,
               course_hours: dict | None = None) -> tuple[dict, list[dict]]:
+    """The record with the college's reconcile steps, then the statewide ones (statewide_cal_getc), applied to
+    its page text, and a note per change: the field, what it was, what it is now, and the words. A college's own
+    step runs first, so a figure its catalog prints is set before a statewide figure is asked for."""
+    out, notes = _college_steps(record, text, college, award, steps, course_units, course_hours)
+    out, more = statewide_cal_getc(out, text, award)
+    return (out, notes + more) if (notes or more) else (record, [])
+
+
+# Sam, Open Asks Sheet 187 card 5, 13:19:50Z 2026-11-13, "Use 34 statewide" (cpl_memory
+# sam-sheet-187-calgetc-34-statewide-2026-11-13): where a catalog names Cal-GETC and prints no unit figure, the
+# record takes the statewide 34 units, named as its source. The gate asks positive evidence before it fills,
+# the S644 lesson (gate first):
+#   * a transfer degree by its award (Cal-GETC is its pattern; a local degree's page can span the sibling
+#     transfer section, Canada S421);
+#   * the record names Cal-GETC as its one pattern, by name alone (CAL_GETC_ONLY): never IGETC, CSU GE-Breadth,
+#     a local pattern, two patterns, or a pattern the reading gave a figure ("Cal-GETC (34 units)");
+#   * no general education units and a degree total in the record (the units count toward that total);
+#   * in the record's own section of the page, from its section_heading to the end of the text: a Cal-GETC name,
+#     no unit figure on a Cal-GETC line or in the cell under it (the printed figure wins, even one that is not 34),
+#     and no other pattern.
+CAL_GETC_UNITS = {"min": 34, "max": 34}
+CAL_GETC_SOURCE = "statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13"
+_CAL_GETC = r"(?:cal\s*-?\s*getc|california\s+general\s+education\s+transfer\s+curriculum)"
+CAL_GETC_ONLY = re.compile(r"^\s*%s(?:\s*\(\s*%s\s*\))?(?:\s+pattern)?\s*$" % (_CAL_GETC, _CAL_GETC), re.I)
+CAL_GETC_NAME = re.compile(_CAL_GETC, re.I)
+_UNIT_FIGURE = r"\d{1,2}(?:\.\d)?(?:\s*(?:-|\u2013|to)\s*\d{1,2}(?:\.\d)?)?\s*(?:semester\s+|quarter\s+)?units?\b"
+CAL_GETC_FIGURE = re.compile(r"%s[^\n]{0,80}?%s|%s[^\n]{0,40}?%s" % (_CAL_GETC, _UNIT_FIGURE, _UNIT_FIGURE, _CAL_GETC),
+                             re.I)
+# A table whose cells split one per line prints a Cal-GETC row's figure on the next line ("General Education
+# (Cal-GETC) and Elective Courses" over "38", Berkeley City's English AA-T): that is a printed figure too.
+CAL_GETC_CELL = re.compile(r"%s[^\n]*\n\s*\d{1,2}(?:\.\d)?(?:\s*(?:-|\u2013|to)\s*\d{1,2}(?:\.\d)?)?\s*(?:units?)?\s*(?:\n|$)"
+                           % _CAL_GETC, re.I)
+OTHER_GE_PATTERN = re.compile(r"\bIGETC\b|\bCSU\s*-?\s*GE\b|\bGE\s*-?\s*Breadth\b|\bCSU\s+General\s+Education",
+                              re.I)
+
+
+def statewide_cal_getc(record, text: str | None, award: str | None) -> tuple[dict, list[dict]]:
+    """The record with ge_units set to the statewide Cal-GETC 34 where every gate above holds, and its note
+    (words: the section's Cal-GETC words and the ruling as source); else the record unchanged and no note."""
+    if not isinstance(record, dict) or not text or not awards_match("transfer", award):
+        return record, []
+    prog = record.get("program") or {}
+    if not _empty(prog.get("ge_units")) or _empty(prog.get("degree_total")):
+        return record, []
+    if not CAL_GETC_ONLY.match(prog.get("ge_pattern") or ""):
+        return record, []
+    start = _heading_end(text, prog.get("section_heading"))
+    if start is None:
+        return record, []
+    sec = text[start:]
+    named = CAL_GETC_NAME.search(sec)
+    if not named or CAL_GETC_FIGURE.search(sec) or CAL_GETC_CELL.search(sec) or OTHER_GE_PATTERN.search(sec):
+        return record, []
+    line_start = sec.rfind("\n", 0, named.start()) + 1
+    line_end = sec.find("\n", named.end())
+    words = sec[line_start:len(sec) if line_end < 0 else line_end].strip()[:160]
+    out = copy.deepcopy(record)
+    out.setdefault("program", {})["ge_units"] = copy.deepcopy(CAL_GETC_UNITS)
+    return out, [{"field": "ge_units", "was": prog.get("ge_units"), "now": copy.deepcopy(CAL_GETC_UNITS),
+                  "words": "%s (%s)" % (words, CAL_GETC_SOURCE), "statewide": "cal_getc_34"}]
+
+
+def _college_steps(record: dict, text: str | None, college: str, award: str | None = None,
+                   steps: dict | None = None, course_units: dict | None = None,
+                   course_hours: dict | None = None) -> tuple[dict, list[dict]]:
     """The record with the college's reconcile steps applied to its page text, and
     a note per change: the field, what it was, what it is now, and the words.
     course_units is the page's own course data where the reader kept it

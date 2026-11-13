@@ -776,6 +776,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/prefix_fold_out/2026-09-03/held.json` | scripts: `kb/_prefix_fold_dryrun.py` | — |
 | `kb/prefix_fold_out/<date>/alias_map.json` | scripts: `kb/_esl_monthly_pass.py`, `kb/alias_chain.py` | — |
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
+| `kb/program_requirements_calgetc_34_plan.json` | scripts: `kb/_program_requirements_readings_measure.py` | scripts: `kb/_program_requirements_readings_measure.py` |
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
@@ -1465,5 +1466,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 925 file
-datasets · 195 external services · 581 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 926 file
+datasets · 195 external services · 582 consumers · 72 workflows · 41 tabs.

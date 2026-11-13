@@ -964,19 +964,96 @@ sw = _rh("33785")
 check("a local A.A. read from a transfer page takes none",
       R.reconcile(sw["record"], rh_text, RH, sw["award"], steps=R.load_steps())[1] == [])
 check("a certificate takes none", R.reconcile(rh, rh_text, RH, "Certificate of Achievement", steps=R.load_steps())[1] == [])
-check("a page without the line takes none",
-      R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", ""), RH, rh_filed["award"],
-                  steps=R.load_steps())[1] == [])
+# Rio Hondo's own step reads only its line; since Sam's statewide ruling (Sheet 187 card 5, S648) a page that still
+# names Cal-GETC and prints no figure takes the statewide 34 instead, named as such (college_notes keeps them apart).
+college_notes = lambda notes: [n for n in notes if not n.get("statewide")]
+statewide_34 = lambda notes: [n["now"] for n in notes if n.get("statewide")] == [{"min": 34, "max": 34}]
+_rh_none = R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", ""), RH, rh_filed["award"],
+                       steps=R.load_steps())[1]
+check("a page without the line takes none of Rio Hondo's step (the statewide 34 instead)",
+      college_notes(_rh_none) == [] and statewide_34(_rh_none))
 check("a figure the reading filed stands",
       R.reconcile({"program": dict(rh["program"], ge_units={"min": 37, "max": 39}), "blocks": rh["blocks"]}, rh_text, RH,
                   rh_filed["award"], steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 37, "max": 39})
 # Negative pages (review of #3136): the pattern's two halves, each alone.
-check("a page printing 'Cal-GETC Pattern' without '(units will vary)' takes none",
-      R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", "Cal-GETC Pattern"), RH, rh_filed["award"],
-                  steps=R.load_steps())[1] == [])
-check("a page whose 'units will vary' sits on an electives line, with no Cal-GETC line, takes none",
-      R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", "Transferable Electives (units will vary)")
-                  .replace("(Cal-GETC)", ""), RH, rh_filed["award"], steps=R.load_steps())[1] == [])
+_rh_half = R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", "Cal-GETC Pattern"), RH,
+                       rh_filed["award"], steps=R.load_steps())[1]
+check("a page printing 'Cal-GETC Pattern' without '(units will vary)' takes none of Rio Hondo's step",
+      college_notes(_rh_half) == [] and statewide_34(_rh_half))
+_rh_elec = R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", "Transferable Electives (units will vary)")
+                       .replace("(Cal-GETC)", ""), RH, rh_filed["award"], steps=R.load_steps())[1]
+check("a page whose 'units will vary' sits on an electives line, with no Cal-GETC line, takes none of Rio Hondo's step",
+      college_notes(_rh_elec) == [] and statewide_34(_rh_elec))
+
+print("The statewide Cal-GETC 34 (Sam, Sheet 187 card 5, 2026-11-13): each gate on a fixture")
+# A college with no steps of its own, so only the statewide rule can fill. Each variant breaks one gate and must
+# leave the record alone; removing that gate from statewide_cal_getc makes its check fail.
+CG_COLLEGE = "Fixture Community College"
+CG_HEAD = "Sociology - Associate in Arts for Transfer"
+CG_TEXT = (CG_HEAD + "\nRequired Core\nSOC 101 3\nSOC 102 3\nList A: choose two\n6\n"
+           "General Education: Cal-GETC Pattern\nTransferable Electives as needed to reach 60 units\nTotal Units 60\n")
+CG_REC = {"program": {"section_heading": CG_HEAD, "ge_pattern": "Cal-GETC", "ge_units": {"min": None, "max": None},
+                      "degree_total": {"min": 60, "max": 60}, "total_units": {"min": 18, "max": 18}},
+          "blocks": [{"kind": "required", "courses": [{"code": "SOC 101"}, {"code": "SOC 102"}]}]}
+CG_AWARD = "A.A- T Degree"
+
+
+def cg(rec=None, text=None, award=CG_AWARD):
+    return R.reconcile(rec or CG_REC, CG_TEXT if text is None else text, CG_COLLEGE, award, steps={})
+
+
+def cg_prog(**kw):
+    return dict(CG_REC, program=dict(CG_REC["program"], **kw))
+
+
+cg_out, cg_notes = cg()
+check("a transfer degree naming Cal-GETC alone, with no figure in its own section, takes the statewide 34",
+      cg_out["program"]["ge_units"] == {"min": 34, "max": 34} and len(cg_notes) == 1
+      and cg_notes[0]["field"] == "ge_units" and cg_notes[0]["was"] == {"min": None, "max": None}
+      and cg_notes[0].get("statewide") == "cal_getc_34")
+check("the note names the section's Cal-GETC words and the ruling as its source",
+      "General Education: Cal-GETC Pattern" in cg_notes[0]["words"]
+      and "statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13" in cg_notes[0]["words"]
+      and R.CAL_GETC_SOURCE in cg_notes[0]["words"])
+check("the input record is not changed", CG_REC["program"]["ge_units"] == {"min": None, "max": None})
+check("gate: a local degree takes nothing", cg(award="A.A. Degree")[1] == [])
+check("gate: a certificate takes nothing", cg(award="Certificate of Achievement")[1] == [])
+for g in ("IGETC", "CSU GE-Breadth", "Local General Education Pattern", "Local General Education or Cal-GETC",
+          "Cal-GETC or CSU GE-Breadth", "Cal-GETC-Breadth", "Cal-GETC (34 units)", "", None):
+    check("gate: a pattern other than Cal-GETC alone (%r) takes nothing" % g, cg(cg_prog(ge_pattern=g))[1] == [])
+for g in ("CalGETC", "CAL-GETC", "California General Education Transfer Curriculum (Cal-GETC)", "Cal-GETC pattern"):
+    check("Cal-GETC alone by another spelling (%r) takes it" % g, len(cg(cg_prog(ge_pattern=g))[1]) == 1)
+held = cg(cg_prog(ge_units={"min": 37, "max": 39}))
+check("gate: a figure the reading holds stands", held[1] == [] and held[0]["program"]["ge_units"] == {"min": 37, "max": 39})
+check("gate: a record with no degree total takes nothing", cg(cg_prog(degree_total={"min": None, "max": None}))[1] == [])
+check("gate: a page that does not print the record's heading takes nothing",
+      cg(text=CG_TEXT.replace(CG_HEAD, "Anthropology - Associate in Arts for Transfer"))[1] == [])
+check("gate: Cal-GETC named only before the record's heading (another program's section) is no evidence",
+      cg(text="General Education: Cal-GETC Pattern\n" + CG_TEXT.replace("General Education: Cal-GETC Pattern\n", ""))[1] == [])
+check("gate: a figure on the Cal-GETC line wins (37-39 units, never 34)",
+      cg(text=CG_TEXT.replace("Cal-GETC Pattern", "Cal-GETC Pattern 37-39 units"))[1] == [])
+check("gate: a figure before Cal-GETC on its line wins",
+      cg(text=CG_TEXT.replace("General Education: Cal-GETC Pattern", "39 units General Education (Cal-GETC)"))[1] == [])
+check("gate: a figure in the cell under the Cal-GETC row wins",
+      cg(text=CG_TEXT.replace("Cal-GETC Pattern\n", "Cal-GETC Pattern\n38\n"))[1] == [])
+check("gate: a section that also names IGETC or CSU GE takes nothing",
+      cg(text=CG_TEXT.replace("Cal-GETC Pattern", "Cal-GETC or IGETC"))[1] == []
+      and cg(text=CG_TEXT.replace("Cal-GETC Pattern", "Cal-GETC or CSU GE Breadth"))[1] == [])
+check("a college's own step runs first: its printed figure is set, and the statewide rule asks nothing more",
+      R.statewide_cal_getc(cg_prog(ge_units={"min": 37, "max": 37}), CG_TEXT, CG_AWARD)[1] == [])
+# The plan's measure reads the same record gates: a fixture of three filed records, one admitted.
+import _program_requirements_readings_measure as RM  # noqa: E402
+_deg = {"computed": [26.0, 26.0], "stated": [60.0, 60.0], "status": "unequal", "pass": False,
+        "why": ["names the Cal-GETC pattern, but no units for it"]}
+_sc = {"coverage": {"pass": True}, "invented": {"pass": True}, "pass": False,
+       "arithmetic": {"pass": False, "status": "unequal", "against": "degree", "degree": _deg, "why": []}}
+_plan_recs = [{"college": CG_COLLEGE, "control_number": cn, "award": aw, "record": rec, "score": _sc}
+              for cn, aw, rec in (("90001", CG_AWARD, CG_REC), ("90002", "A.A. Degree", CG_REC),
+                                  ("90003", CG_AWARD, cg_prog(ge_pattern="Local GE or Cal-GETC")))]
+_plan = RM.cal_getc_34_plan(_plan_recs)
+check("the plan admits only the record the rule's record gates admit",
+      _plan["colleges"].get(CG_COLLEGE, {}).get("touched") == ["90001"] and _plan["counts"]["touched"] == 1
+      and _plan["source_words"] == R.CAL_GETC_SOURCE)
 
 print("S644: the electives sentence and the general education units, on each catalog's own words")
 ST = R.load_steps()

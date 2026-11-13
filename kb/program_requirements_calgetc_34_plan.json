@@ -1,0 +1,453 @@
+{
+ "ruling": "sam-sheet-187-calgetc-34-statewide-2026-11-13 (Open Asks Sheet 187 card 5, 13:19:50Z 2026-11-13: \"Use 34 statewide\")",
+ "rule": "kb/_program_requirements_reconcile.py statewide_cal_getc",
+ "source_words": "statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13",
+ "measured_on": "the committed records under kb/program_requirements_college/*/records/ (main)",
+ "upper_bound": "the record gates only; the page gates run in each college's reconcile run",
+ "counts": {
+  "touched": 115,
+  "newly_passing": 95,
+  "newly_passing_not_likely_held": 71,
+  "still_failing": 20,
+  "passing_already": 0,
+  "colleges_touched": 26,
+  "colleges_newly_passing": 23
+ },
+ "colleges": {
+  "American River College": {
+   "newly_passing": [
+    "30984"
+   ],
+   "touched": [
+    "30984"
+   ]
+  },
+  "Antelope Valley College": {
+   "newly_passing": [
+    "43028"
+   ],
+   "touched": [
+    "43028"
+   ]
+  },
+  "Berkeley City College": {
+   "likely_held_by_page_gate": [
+    "31138",
+    "31835",
+    "31984",
+    "33548",
+    "37850",
+    "37851",
+    "37877",
+    "39386",
+    "39856",
+    "40244",
+    "41766",
+    "41777",
+    "41794",
+    "41795",
+    "41796",
+    "41834",
+    "41902",
+    "42381",
+    "42838",
+    "43006",
+    "43097",
+    "46229"
+   ],
+   "newly_passing": [
+    "31138",
+    "31835",
+    "33548",
+    "37850",
+    "37851",
+    "37877",
+    "39386",
+    "39856",
+    "40244",
+    "41766",
+    "41777",
+    "41794",
+    "41795",
+    "41796",
+    "41834",
+    "41902",
+    "42381",
+    "42838",
+    "43006",
+    "43097",
+    "46229"
+   ],
+   "still_failing": [
+    "31984"
+   ],
+   "touched": [
+    "31138",
+    "31835",
+    "31984",
+    "33548",
+    "37850",
+    "37851",
+    "37877",
+    "39386",
+    "39856",
+    "40244",
+    "41766",
+    "41777",
+    "41794",
+    "41795",
+    "41796",
+    "41834",
+    "41902",
+    "42381",
+    "42838",
+    "43006",
+    "43097",
+    "46229"
+   ]
+  },
+  "Cerro Coso Community College": {
+   "newly_passing": [
+    "31540"
+   ],
+   "still_failing": [
+    "30766",
+    "38665",
+    "40868",
+    "40922",
+    "43206"
+   ],
+   "touched": [
+    "30766",
+    "31540",
+    "38665",
+    "40868",
+    "40922",
+    "43206"
+   ]
+  },
+  "City College of San Francisco": {
+   "newly_passing": [
+    "32080",
+    "32401"
+   ],
+   "still_failing": [
+    "41049"
+   ],
+   "touched": [
+    "32080",
+    "32401",
+    "41049"
+   ]
+  },
+  "College of Alameda": {
+   "likely_held_by_page_gate": [
+    "32765"
+   ],
+   "newly_passing": [
+    "32765"
+   ],
+   "touched": [
+    "32765"
+   ]
+  },
+  "College of the Redwoods": {
+   "likely_held_by_page_gate": [
+    "32809"
+   ],
+   "newly_passing": [
+    "32809",
+    "46085"
+   ],
+   "touched": [
+    "32809",
+    "46085"
+   ]
+  },
+  "Cosumnes River College": {
+   "newly_passing": [
+    "30566",
+    "31055",
+    "31995",
+    "33072",
+    "39656",
+    "41992",
+    "46419"
+   ],
+   "touched": [
+    "30566",
+    "31055",
+    "31995",
+    "33072",
+    "39656",
+    "41992",
+    "46419"
+   ]
+  },
+  "Cuyamaca College": {
+   "newly_passing": [
+    "46530"
+   ],
+   "touched": [
+    "46530"
+   ]
+  },
+  "Cypress College": {
+   "still_failing": [
+    "32699",
+    "39887"
+   ],
+   "touched": [
+    "32699",
+    "39887"
+   ]
+  },
+  "Diablo Valley College": {
+   "newly_passing": [
+    "31799",
+    "31817",
+    "32015",
+    "32539",
+    "46234"
+   ],
+   "touched": [
+    "31799",
+    "31817",
+    "32015",
+    "32539",
+    "46234"
+   ]
+  },
+  "East Los Angeles College": {
+   "newly_passing": [
+    "35720"
+   ],
+   "touched": [
+    "35720"
+   ]
+  },
+  "Fresno City College": {
+   "still_failing": [
+    "32871"
+   ],
+   "touched": [
+    "32871"
+   ]
+  },
+  "Fullerton College": {
+   "newly_passing": [
+    "30885"
+   ],
+   "touched": [
+    "30885"
+   ]
+  },
+  "Grossmont College": {
+   "newly_passing": [
+    "46136",
+    "46141"
+   ],
+   "touched": [
+    "46136",
+    "46141"
+   ]
+  },
+  "Lake Tahoe Community College": {
+   "newly_passing": [
+    "30942",
+    "31829",
+    "32646",
+    "36069",
+    "37220",
+    "37225",
+    "37879",
+    "40938",
+    "43928"
+   ],
+   "still_failing": [
+    "30973",
+    "38493"
+   ],
+   "touched": [
+    "30942",
+    "30973",
+    "31829",
+    "32646",
+    "36069",
+    "37220",
+    "37225",
+    "37879",
+    "38493",
+    "40938",
+    "43928"
+   ]
+  },
+  "Lassen College": {
+   "newly_passing": [
+    "30947",
+    "31015",
+    "31037",
+    "31132",
+    "31297",
+    "31379",
+    "32083",
+    "33263",
+    "33388",
+    "33729",
+    "33730",
+    "35106",
+    "41912",
+    "42300"
+   ],
+   "touched": [
+    "30947",
+    "31015",
+    "31037",
+    "31132",
+    "31297",
+    "31379",
+    "32083",
+    "33263",
+    "33388",
+    "33729",
+    "33730",
+    "35106",
+    "41912",
+    "42300"
+   ]
+  },
+  "Los Angeles City College": {
+   "likely_held_by_page_gate": [
+    "40232"
+   ],
+   "newly_passing": [
+    "40232"
+   ],
+   "touched": [
+    "40232"
+   ]
+  },
+  "Los Angeles Southwest College": {
+   "newly_passing": [
+    "31027",
+    "33658"
+   ],
+   "touched": [
+    "31027",
+    "33658"
+   ]
+  },
+  "Mendocino College": {
+   "newly_passing": [
+    "30672",
+    "32084",
+    "32985",
+    "32986",
+    "33595",
+    "42863"
+   ],
+   "still_failing": [
+    "32095"
+   ],
+   "touched": [
+    "30672",
+    "32084",
+    "32095",
+    "32985",
+    "32986",
+    "33595",
+    "42863"
+   ]
+  },
+  "Mission College": {
+   "still_failing": [
+    "30680",
+    "44504"
+   ],
+   "touched": [
+    "30680",
+    "44504"
+   ]
+  },
+  "Ohlone College": {
+   "newly_passing": [
+    "32761",
+    "33549",
+    "46265"
+   ],
+   "touched": [
+    "32761",
+    "33549",
+    "46265"
+   ]
+  },
+  "Porterville College": {
+   "newly_passing": [
+    "31088"
+   ],
+   "touched": [
+    "31088"
+   ]
+  },
+  "Sacramento City College": {
+   "newly_passing": [
+    "30700",
+    "32001",
+    "32002",
+    "32732",
+    "35463",
+    "42894"
+   ],
+   "still_failing": [
+    "30620",
+    "32115"
+   ],
+   "touched": [
+    "30620",
+    "30700",
+    "32001",
+    "32002",
+    "32115",
+    "32732",
+    "35463",
+    "42894"
+   ]
+  },
+  "Sierra College": {
+   "newly_passing": [
+    "31259",
+    "32008",
+    "32640"
+   ],
+   "still_failing": [
+    "33639",
+    "33646"
+   ],
+   "touched": [
+    "31259",
+    "32008",
+    "32640",
+    "33639",
+    "33646"
+   ]
+  },
+  "Solano Community College": {
+   "newly_passing": [
+    "33373",
+    "35982",
+    "36511",
+    "44069"
+   ],
+   "still_failing": [
+    "38652"
+   ],
+   "touched": [
+    "33373",
+    "35982",
+    "36511",
+    "38652",
+    "44069"
+   ]
+  }
+ }
+}
