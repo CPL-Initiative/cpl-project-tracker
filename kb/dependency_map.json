@@ -4,10 +4,10 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 900,
+  "file_datasets": 903,
   "external_services": 195,
-  "consumers": 572,
-  "workflows": 71,
+  "consumers": 574,
+  "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -10295,6 +10295,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_program_requirements_dated_reads.py": {
+   "consumers": [
+    {
+     "id": "workflow:program-requirements-dated-reads.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_program_requirements_display_apply.py": {
    "consumers": [
     {
@@ -16820,7 +16833,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 156
+     "line": 177
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -16854,6 +16867,30 @@
      "direction": "read",
      "how": "literal",
      "line": 85
+    },
+    {
+     "id": "script:kb/_program_requirements_dated_reads.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 71
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:program-requirements-dated-reads.yml",
+     "how": "commit"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_pilot/map_cr_by_course.sql": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:program-requirements-dated-reads.yml",
+     "how": "commit"
     }
    ],
    "served": true,
@@ -16887,6 +16924,19 @@
      "direction": "read",
      "how": "literal",
      "line": 86
+    },
+    {
+     "id": "script:kb/_program_requirements_dated_reads.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 72
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:program-requirements-dated-reads.yml",
+     "how": "commit"
     }
    ],
    "served": true,
@@ -19058,7 +19108,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 56
     },
     {
      "id": "script:kb/_harvest_no_closed_list_diagnosis.py",
@@ -19084,7 +19134,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 52
+     "line": 57
     }
    ],
    "producers": [
@@ -24885,6 +24935,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/program_requirements_dated_reads_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/program_requirements_display_apply_test.py": {
    "consumers": [
     {
@@ -28003,6 +28066,13 @@
      "direction": "read",
      "how": "literal",
      "line": 1215
+    },
+    {
+     "id": "script:kb/_program_requirements_dated_reads.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 310
     }
    ],
    "main_committers": []
@@ -29843,6 +29913,13 @@
       "csm-workspace",
       "implementation-funding"
      ]
+    },
+    {
+     "id": "script:kb/_program_requirements_dated_reads.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 308
     }
    ],
    "main_committers": []
@@ -30018,6 +30095,13 @@
      "direction": "read",
      "how": "seeded",
      "line": 0
+    },
+    {
+     "id": "script:kb/_program_requirements_dated_reads.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 298
     },
     {
      "id": "script:kb/_publish_college_briefing.py",
@@ -30375,6 +30459,13 @@
      "direction": "read",
      "how": "literal",
      "line": 71
+    },
+    {
+     "id": "script:kb/_program_requirements_dated_reads.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 290
     }
    ],
    "main_committers": []
@@ -32443,6 +32534,7 @@
     "tests/program_requirements_wave_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
+    "tests/program_requirements_dated_reads_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
     "tests/mq_title5_rename_test.py",
@@ -32827,6 +32919,22 @@
     "kb/hand_filed_catalogs",
     "kb/receipts",
     "kb/receipts"
+   ],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "program-requirements-dated-reads.yml": {
+   "name": "Program requirements dated reads",
+   "crons": [],
+   "scripts": [
+    "kb/_program_requirements_dated_reads.py"
+   ],
+   "adds": [
+    "kb/program_requirements_pilot/registry_read.json",
+    "kb/program_requirements_pilot/map_cr_by_course.json",
+    "kb/program_requirements_pilot/map_cr_by_course.sql"
    ],
    "push": null,
    "deploys": [],

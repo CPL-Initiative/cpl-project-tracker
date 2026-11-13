@@ -1,0 +1,85 @@
+name: Program requirements dated reads
+
+# The display builder's two dated reads, refreshed on a runner (S644): for the named colleges,
+# kb/program_requirements_pilot/registry_read.json (program_source_registry's ten columns, an anon
+# read) and kb/program_requirements_pilot/map_cr_by_course.json (the aggregate map_cr_by_course.sql
+# describes, computed in Python from source rows the service key reads). Until S644 a session
+# carried those rows through the Supabase connector at every new college.
+#
+# A dispatch only, never a push or a schedule. It writes no table. The service key reaches the one
+# step that reads MAP, and that step first recomputes three filed colleges and stops, before reading
+# or filing anything, unless each equals its filed entry exactly; it prints only the course codes and
+# field names that differ, never a row. The file step then commits both files, and the SQL's college
+# list, to the branch the run was dispatched on.
+
+on:
+  workflow_dispatch:
+    inputs:
+      colleges:
+        description: "Registry names, comma-separated, or all"
+        required: true
+      verify:
+        description: "Filed colleges recomputed first; the run stops unless each equals its entry"
+        required: false
+        default: "Merced College,Cuesta College,Glendale Community College"
+      by:
+        description: "Who asked, for the files' _read_by note (a session moniker)"
+        required: false
+        default: "a dispatch"
+
+concurrency:
+  group: program-requirements-dated-reads-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  read:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      COLLEGES: ${{ github.event.inputs.colleges }}
+      VERIFY: ${{ github.event.inputs.verify }}
+      BY: ${{ github.event.inputs.by }}
+      REF_NAME: ${{ github.ref_name }}
+      RUN_ID: ${{ github.run_id }}
+    steps:
+      # The reads file to the branch they ran on, and main takes changes only through a pull request.
+      - name: Refuse to run on main
+        run: |
+          if [ "$REF_NAME" = "main" ]; then
+            echo "::error::This run files to the branch it runs on, and main changes only through a pull request. Dispatch it on a claude/* branch."
+            exit 1
+          fi
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Verify the filed colleges, then read MAP for the named ones
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          python3 kb/_program_requirements_dated_reads.py verify --colleges "$VERIFY"
+          python3 kb/_program_requirements_dated_reads.py map --colleges "$COLLEGES" --out out --verified "$VERIFY"
+      - name: Read the registry (public read)
+        run: python3 kb/_program_requirements_dated_reads.py registry --colleges "$COLLEGES" --out out
+      - name: File both reads
+        run: python3 kb/_program_requirements_dated_reads.py file --out out --by "$BY, run $RUN_ID"
+      - name: Commit to the branch that ran it
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/program_requirements_pilot/registry_read.json kb/program_requirements_pilot/map_cr_by_course.json kb/program_requirements_pilot/map_cr_by_course.sql
+          if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
+          git commit -m "Dated reads: $COLLEGES (run $RUN_ID)"
+          # Several jobs may push here at once: more tries, each after a random wait, so they fall out of step.
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            git push origin "HEAD:$REF_NAME" && exit 0
+            sleep $((i * 3 + RANDOM % 20)); git pull --rebase origin "$REF_NAME"
+          done
+          echo "::error::The dated reads did not reach $REF_NAME after 10 tries."
+          exit 1
