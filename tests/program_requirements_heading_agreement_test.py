@@ -159,6 +159,16 @@ c = S.heading_award_check(rec("Requirements for the Certificate of Achievement")
 check(not c["pass"], "without the program's title the check cannot set it aside")
 a = H.agreement(rec("Requirements for the Certificate of Achievement"), "Architecture", AS, "03105")
 check(a["verdict"] == "cannot_tell" and a["reason"] == "award_not_program", "the measure buckets it: %r" % a)
+# Round 2: the bucket holds only a heading that names no program; one naming another program's words is a
+# crossing (finding 12). "A.A.T" is a transfer degree (13); a bare "Cert" is a certificate (14).
+c = S.heading_award_check(rec("Biology Certificate of Achievement"), AS, "1", "Chemistry")
+check(not c["pass"] and c["status"] == "names_other_award", "a heading naming another program is no bucket: %r" % c)
+c = S.heading_award_check(rec("English - A.A.T"), AAT, "1", "English")
+check(c["pass"] and c["status"] == "agrees", "'A.A.T' under an AA-T agrees: %r" % c)
+c = S.heading_award_check(rec("English - A.A.T"), AA, "1", "English")
+check(not c["pass"] and c["kind"] == "transfer_under_local_degree", "and under a local AA it crosses: %r" % c)
+c = S.heading_award_check(rec("Welding Cert"), AS, "1", "Welding")
+check(not c["pass"] and c["kind"] == "certificate_under_local_degree", "a bare 'Cert' reads as a certificate: %r" % c)
 # Santa Rosa's clipped COCI titles (finding 18).
 for heading, title in (("Computer Studies: Network and Systems Security Administration", "CS Cybersecurity"),
                        ("Mechatronics: Industrial Maintenance Technician", "Mchtroncs:IndustrlMntnncTchncn")):
@@ -184,7 +194,12 @@ try:
     subprocess.run(["git", "init", "-q", repo], check=True)
     subprocess.run(["git", "-C", repo, "add", "colleges/fixture_college/sources.json",
                     "colleges/fixture_college/records/11943.json"], check=True)
+    subprocess.run(["git", "-C", repo, "-c", "user.name=t", "-c", "user.email=t@x", "commit", "-q", "-m", "fixture"],
+                   check=True)
+    sha = subprocess.run(["git", "-C", repo, "rev-parse", "HEAD"], capture_output=True, text=True).stdout.strip()
     rep = H.build(os.path.join(repo, "colleges"))
+    check((rep.get("commit") or {}).get("sha") == sha and len(rep["commit"].get("date", "")) == 10,
+          "the snapshot is dated by the commit it reads: %r" % rep.get("commit"))
     check(rep["totals"]["records"] == 1 and rep["totals"]["check_would_fail_passing"] == 1,
           "only the tracked record is read: %r" % rep["totals"])
     check(H.build(os.path.join(repo, "colleges"), tracked=False)["totals"]["records"] == 2,
@@ -199,7 +214,7 @@ try:
     check(fresh == 0 and stale == 1, "--check passes on a fresh snapshot and fails once the tree moves: %r"
           % ((fresh, stale),))
     md = open(out_md).read()
-    check("A dated snapshot of main, as of" in md and "pass on the committed files" in md and "today" not in md,
+    check(("A dated snapshot of main at commit %s" % sha[:12]) in md and "pass on the committed files" in md and "today" not in md,
           "the snapshot says it is dated and what 'pass' means")
     with contextlib.redirect_stdout(io.StringIO()):
         refused = H.main(["--extra", col + ":claude/x"])

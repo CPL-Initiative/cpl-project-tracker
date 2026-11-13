@@ -2918,21 +2918,31 @@ def pdf_after_block(pages: list[str], j: int, start: int, end: int, reach: int =
     """(page, from, to) slices of the program whose number line runs from `start` to `end` on page j,
     in page order: back from the number, which the block keeps, to the end of the previous number
     line, at most `reach` pages back. A slice holding nothing but blank lines or the running header is
-    dropped, so the block's first page is a page it prints on (review of #3201, finding 7)."""
-    segs, k, stop, cut = [], j, start, end
+    dropped, so the block's first page is a page it prints on (review of #3201, finding 7). Every
+    number line delimits, listed or not (a stale number still ends a block); the same number printed
+    again with nothing between is one line (decision 14; round 2, finding 4)."""
+    running = running or set()
+    own_m = PDF_CN_LINE.search(pages[j], start, end)
+    own = _cn(own_m.group(1)) if own_m else None
+    segs, k, stop, cut, got = [], j, start, end, False
     while True:
         prev = None
         for m in PDF_CN_LINE.finditer(pages[k], 0, stop):
             prev = m
+        if prev and own and _cn(prev.group(1)) == own and not got \
+                and not _opening(pages[k][prev.end():stop], running).strip():
+            stop = prev.start()
+            continue
         if prev:
             segs.insert(0, (k, prev.end(), cut))
             break
         segs.insert(0, (k, 0, cut))
+        got = got or bool(_opening(pages[k][0:stop], running).strip())
         if k == 0 or j - k >= reach:
             break
         k -= 1
         stop = cut = len(pages[k])
-    return [s for s in segs if _opening(pages[s[0]][s[1]:s[2]], running or set()).strip()]
+    return [s for s in segs if _opening(pages[s[0]][s[1]:s[2]], running).strip()]
 
 
 def pdf_first_heading(text: str, ctx: dict) -> dict | None:
@@ -3048,37 +3058,52 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
     program alone): the block that ends at the program's own number line, when
     it opens on the program's heading (`bound`: number_after); otherwise the
     heading picker's window, with `after_unbound` saying why, refused (`refused`,
-    no text) when another listed program's number closes it (pdf_closed_by)."""
+    no text) when another listed program's number closes it (pdf_closed_by).
+    Decision 14: where the votes are uniform (ctx["uniform"]) the number line is
+    the only binder and the heading picker never runs; a program it cannot bind
+    (number_not_printed, block_names_another, low_coverage) comes back with no
+    text, the block judged, and capture_pdf keeps its filed record."""
     ctx, unbound = None, None
     if numbers_after and not heading:
         ctx = numbers_after if isinstance(numbers_after, dict) else pdf_after_context(pages, [program])
         win = pdf_after_window(pages, program, courses, ctx)
         uniform = bool(ctx.get("uniform"))
+        judged = _judged(win["text"], ctx["running"]) if win else ""
+        found = P.find_codes(win["text"], courses) if win and win.get("text") else []
+        cov = P.coverage(found, courses) if found else 0.0
+
+        def unbound_read(why: str, refused: str | None = None) -> dict:
+            # Decision 14: in a uniform catalog the number line is the only binder, and the heading picker
+            # never runs. A program it cannot bind is filed not_found; capture_pdf keeps its filed record.
+            at = "%s#page=%d" % (url, win["pages"][0] + 1) if win and win.get("pages") else url
+            return {"url": at, "field": "pdf_pages", "found": [], "coverage": round(cov, 3), "text": "",
+                    "pages": [i + 1 for i in (win or {}).get("pages") or []], "refused": refused,
+                    "opens_on_list": False, "extractor": extractor, "named": False,
+                    "control_number_printed": win is not None, "titled": False, "got": {"title": "", "h1": ""},
+                    "after_unbound": why, "judged": judged}
+        bindable = win is not None and (win["status"] == "named" or (uniform and win["status"] == "unnamed"))
+        if bindable and found and cov >= P.ACCEPT_SHARE:
+            first = next((ln.strip() for ln in _opening(win["text"], ctx["running"]).split("\n") if ln.strip()), "")
+            note = {"after_unnamed": True, "judged": judged} if win["status"] == "unnamed" else {}
+            return {"url": "%s#page=%d" % (url, win["pages"][0] + 1), "field": "pdf_pages", "found": found,
+                    "coverage": cov, "text": win["text"], "opens_on_list": False,
+                    "pages": [i + 1 for i in win["pages"]], "extractor": extractor,
+                    "named": win["status"] == "named", "control_number_printed": True, "titled": True,
+                    "bound": "number_after",
+                    "got": {"title": first[:PDF_HEADING_CHARS], "h1": first[:PDF_HEADING_CHARS]}, **note}
         if win is None:
             unbound = "number_not_printed"
+        elif bindable:
+            # A bound block below the accept share (round 2, finding 1): never filed as the program's read.
+            unbound = "low_coverage" if found else "block_names_no_listed_course"
         elif uniform and win["status"] == "other":
-            # A uniform catalog binds by the number line, unless the block's first strict heading is another
-            # listed program's (a transfer degree's number closing its local degree's block too, finding 9).
-            return {"url": "%s#page=%d" % (url, (win["pages"] or [0])[0] + 1), "field": "pdf_pages", "found": [],
-                    "coverage": 0.0, "text": "", "pages": [i + 1 for i in win["pages"]], "refused": win["other"],
-                    "opens_on_list": False, "extractor": extractor, "named": False,
-                    "control_number_printed": True, "titled": False, "got": {"title": "", "h1": ""},
-                    "after_unbound": "block_names_another", "judged": _judged(win["text"], ctx["running"])}
-        elif win["status"] == "named" or (uniform and win["status"] == "unnamed"):
-            found = P.find_codes(win["text"], courses)
-            if found:
-                first = next((ln.strip() for ln in _opening(win["text"], ctx["running"]).split("\n") if ln.strip()), "")
-                note = ({"after_unnamed": True, "judged": _judged(win["text"], ctx["running"])}
-                        if win["status"] == "unnamed" else {})
-                return {"url": "%s#page=%d" % (url, win["pages"][0] + 1), "field": "pdf_pages", "found": found,
-                        "coverage": P.coverage(found, courses), "text": win["text"], "opens_on_list": False,
-                        "pages": [i + 1 for i in win["pages"]], "extractor": extractor,
-                        "named": win["status"] == "named", "control_number_printed": True, "titled": True,
-                        "bound": "number_after",
-                        "got": {"title": first[:PDF_HEADING_CHARS], "h1": first[:PDF_HEADING_CHARS]}, **note}
-            unbound = "block_names_no_listed_course"
+            # The block's first strict heading is another listed program's (a transfer degree's number
+            # closing its local degree's block too, finding 9).
+            return unbound_read("block_names_another", win["other"])
         else:
             unbound = "block_not_named"
+        if uniform:
+            return unbound_read("low_coverage" if unbound == "block_names_no_listed_course" else unbound)
     if heading:
         run, cn_at, head, titled = _pdf_run(pages, heading["page"], courses), -1, (1.0, True, heading["at"]), True
     else:
@@ -3940,34 +3965,79 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
                     "was_method": was.get("method")})
     return {"against": os.path.relpath(folder, os.path.dirname(HERE)) if prev else None,
             "kept": kept, "kept_moved": moved, "programs": len(out), "list": out, **holds,
-            "refused_passing": refused_passing(folder, recs)}
+            # The force a capture is run with, where the step passes it (FORCE): forced numbers leave
+            # refused_passing for forced_unbound; the filing adds the extraction's own list (file_run).
+            "refused_passing": refused_passing(folder, recs, force_named(os.environ.get("FORCE"))),
+            "forced_unbound": forced_unbound(folder, recs, force_named(os.environ.get("FORCE")))}
 
 
-def _passing_filed(path: str) -> dict | None:
-    """The filed record at path when it passes as the live table counts it (passes_live), else None."""
-    from _program_requirements_score import passes_live
+def _filed(path: str) -> dict | None:
+    """The filed record at path, when it holds a reading."""
     try:
         with open(path) as fh:
             rec = json.load(fh)
     except (OSError, ValueError):
         return None
-    return rec if isinstance(rec.get("record"), dict) and passes_live(rec.get("score")) else None
+    return rec if isinstance(rec, dict) and isinstance(rec.get("record"), dict) else None
 
 
-def refused_passing(folder: str, recs: list[dict]) -> list[dict]:
+def _passing_filed_rec(rec: dict | None) -> bool:
+    from _program_requirements_score import passes_live
+    return bool(rec) and isinstance(rec.get("record"), dict) and passes_live(rec.get("score"))
+
+
+def _passing_filed(path: str) -> dict | None:
+    """The filed record at path when it passes as the live table counts it (passes_live), else None."""
+    rec = _filed(path)
+    return rec if _passing_filed_rec(rec) else None
+
+
+def unbound_of(src: dict) -> dict | None:
+    """What capture_pdf filed for a gated program the after path did not bind: a not_found source's
+    after_unbound (its closing number, why, the block judged), or an accepted source's after_unbound
+    (the heading picker read a window for it, where the votes are not uniform)."""
+    if src.get("method") == "not_found":
+        return src.get("after_unbound") or None
+    why = (src.get("source") or {}).get("after_unbound")
+    return {"refused": None, "why": why} if why else None
+
+
+def unbound_entry(src: dict, un: dict) -> dict:
+    return {"control_number": src["control_number"], "title": src.get("title"), "award": src.get("award"),
+            "closed_by": un.get("refused"), "why": un.get("why"), **({"judged": un["judged"]} if un.get("judged") else {})}
+
+
+def force_named(tokens: str | None) -> set[str]:
+    """The control numbers a comma-separated force string names (the word 'incomplete' set aside)."""
+    return {t.strip() for t in (tokens or "").split(",") if t.strip() and t.strip().lower() != "incomplete"}
+
+
+def refused_passing(folder: str, recs: list[dict], force: set[str] | None = None) -> list[dict]:
     """Every program a gated catalog (R.numbers_after) refused or could not bind, filed not_found, whose
-    filed record passes: the extraction keeps that record on file unless the run forces its control
-    number (decision 4 of the S645 conductor; d-pdf-reader-design-calls-s640: a read never makes a
-    passing record worse). `closed_by` is the listed program whose number closed the window, if any."""
+    filed record passes and whose number the run does not force: the extraction keeps that record on
+    file (decisions 4 and 14 of the S645 conductor; d-pdf-reader-design-calls-s640: a read never makes a
+    passing record worse). `closed_by` is the listed program whose number closed the block, if any;
+    `judged`, the block's first characters."""
     out = []
     for r in recs:
         un = r.get("after_unbound")
-        if r.get("method") != "not_found" or not un:
+        if r.get("method") != "not_found" or not un or r["control_number"] in (force or ()):
             continue
         if _passing_filed(os.path.join(folder, "records", r["control_number"] + ".json")):
-            out.append({"control_number": r["control_number"], "title": r.get("title"), "award": r.get("award"),
-                        "closed_by": un.get("refused"), "why": un.get("why"),
-                        **({"judged": un["judged"]} if un.get("judged") else {})})
+            out.append(unbound_entry(r, un))
+    return out
+
+
+def forced_unbound(folder: str, recs: list[dict], force: set[str] | None) -> list[dict]:
+    """Every forced number the after path could not bind (decision 14): never extracted, its filed record
+    kept, each named with its closing number, the block judged, and whether a record is on file."""
+    out = []
+    for r in recs:
+        un = unbound_of(r)
+        if not un or r["control_number"] not in (force or ()):
+            continue
+        filed = _filed(os.path.join(folder, "records", r["control_number"] + ".json"))
+        out.append(dict(unbound_entry(r, un), filed=bool(filed), passing=_passing_filed_rec(filed)))
     return out
 
 
@@ -4062,24 +4132,36 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 fresh.append(src)
         sources = fresh
         # A program a gated catalog refused or could not bind (capture_pdf's after_unbound) reaches no
-        # read, and filing the run would drop its record: a passing one stays as filed unless forced,
-        # and its source entry stays the one that record was read from (file_run; refused_passing).
-        unbound_kept = []
+        # read, and filing the run would drop its record: the filed record stays as filed, forced or not,
+        # and its source entry stays the one that record was read from (decision 14; file_run). A forced
+        # number is extracted only when it binds: one the after path did not bind, though the heading
+        # picker read a window for it, is not sent, and keeps its record too. Each forced one is named
+        # (forced_unbound), with the closing number and the block it judged.
+        unbound_kept, forced_unbound = [], []
         for path in sorted(glob.glob(os.path.join(out_dir, "sources", "*.json"))):
             with open(path) as fh:
                 src = json.load(fh)
             cn = src.get("control_number")
-            if src.get("method") != "not_found" or not src.get("after_unbound") or cn in (force or ()):
+            un = unbound_of(src)
+            if not un or (src.get("method") != "not_found" and cn not in (force or ())):
                 continue
-            filed = _passing_filed(os.path.join(keep_from, "records", cn + ".json"))
+            filed = _filed(os.path.join(keep_from, "records", cn + ".json"))
             if filed:
                 _write(os.path.join(out_dir, "records", cn + ".json"), filed)
                 unbound_kept.append(cn)
-                print("%-6s kept: the catalog's window is %s, and the filed record passes"
-                      % (cn, "closed by %s" % src["after_unbound"]["refused"] if src["after_unbound"].get("refused")
-                         else "not bound (%s)" % src["after_unbound"].get("why")), flush=True)
-        if unbound_kept:
-            _write(os.path.join(out_dir, "kept_unbound_%d.json" % shard), {"programs": unbound_kept})
+            if cn in (force or ()):
+                forced_unbound.append(dict(unbound_entry(src, un), filed=bool(filed),
+                                           passing=bool(filed and _passing_filed_rec(filed))))
+            print("%-6s %s: the catalog's block is %s%s" % (
+                cn, "forced, not bound" if cn in (force or ()) else "kept",
+                "closed by %s" % un["refused"] if un.get("refused") else "not bound (%s)" % un.get("why"),
+                "; the filed record stays" if filed else "; no filed record"), flush=True)
+        skip = {e["control_number"] for e in forced_unbound}
+        sources = [s for s in sources if s["control_number"] not in skip]
+        fresh = [s for s in fresh if s["control_number"] not in skip]
+        if unbound_kept or forced_unbound:
+            _write(os.path.join(out_dir, "kept_unbound_%d.json" % shard),
+                   {"programs": unbound_kept, "forced_unbound": forced_unbound})
         kept += len(unbound_kept)
         print("kept %d records filed from the same page or moved with the same text (%d moved); held %d; %d to "
               "extract, %d of them forced" % (kept, moved, len(holds), len(fresh),
@@ -4357,6 +4439,17 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     with open(os.path.join(out_dir, "capture.json")) as fh:
         report = json.load(fh)
     report["run"] = run_id
+    # The forced numbers the extraction could not bind (decision 14): the filed account names them, and
+    # refused_passing keeps only the unforced ones.
+    fu: dict[str, dict] = {}
+    for path in sorted(glob.glob(os.path.join(out_dir, "kept_unbound_*.json"))):
+        with open(path) as fh:
+            for e in json.load(fh).get("forced_unbound") or []:
+                fu[e["control_number"]] = e
+    if fu and isinstance(report.get("would_extract"), dict):
+        we = report["would_extract"]
+        we["forced_unbound"] = [fu[k] for k in sorted(fu)]
+        we["refused_passing"] = [e for e in we.get("refused_passing") or [] if e["control_number"] not in fu]
     if not os.path.isdir(os.path.join(out_dir, "records")):
         os.makedirs(dest, exist_ok=True)
         _write(os.path.join(dest, "capture_preview.json"), report)
@@ -4383,11 +4476,15 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     # A program a gated catalog refused, whose passing record the extraction kept (kept_unbound_<shard>.json),
     # keeps its entry the same way.
     not_sent: set[str] = set()
-    for path in glob.glob(os.path.join(out_dir, "not_sent_*.json")) + glob.glob(os.path.join(out_dir, "kept_unbound_*.json")):
+    for path in glob.glob(os.path.join(out_dir, "not_sent_*.json")):
         with open(path) as fh:
             not_sent.update(json.load(fh).get("programs") or [])
+    kept_unbound: set[str] = set()
+    for path in glob.glob(os.path.join(out_dir, "kept_unbound_*.json")):
+        with open(path) as fh:
+            kept_unbound.update(json.load(fh).get("programs") or [])
     prev: dict = {}
-    if not_sent and os.path.isfile(os.path.join(dest, "sources.json")):
+    if (not_sent or kept_unbound) and os.path.isfile(os.path.join(dest, "sources.json")):
         with open(os.path.join(dest, "sources.json")) as fh:
             prev = {x["control_number"]: x for x in json.load(fh)}
     index = []
@@ -4397,6 +4494,10 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         if src.get("control_number") in not_sent:
             if src["control_number"] in prev:
                 index.append(prev[src["control_number"]])
+            continue
+        if src.get("control_number") in kept_unbound and src["control_number"] in prev:
+            # A kept record keeps the entry it was read from; with none, the new entry (not_found) stands.
+            index.append(prev[src["control_number"]])
             continue
         index.append(dict({k: src.get(k) for k in ("control_number", "title", "award", "shape", "method",
                                                    "coverage", "codes_found", "source")},

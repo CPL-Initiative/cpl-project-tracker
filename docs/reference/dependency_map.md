@@ -854,8 +854,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/exhibit.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/harvest_gap_census.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_harvest_no_closed_list_diagnosis.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/harvest_gap_census.md` | scripts: `kb/_harvest_gap_census.py` | committed by: `harvest-gap-census.yml` |
-| `kb/status/harvest_heading_agreement.json` | scripts: `kb/_program_requirements_heading_agreement.py` | committed by: `harvest-gap-census.yml` |
-| `kb/status/harvest_heading_agreement.md` | scripts: `kb/_program_requirements_heading_agreement.py` | committed by: `harvest-gap-census.yml` |
+| `kb/status/harvest_heading_agreement.json` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
+| `kb/status/harvest_heading_agreement.md` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
 | `kb/status/harvest_no_closed_list.json` | scripts: `kb/_harvest_no_closed_list_diagnosis.py` | — |
 | `kb/status/mid_outcomes_compare_*.json` | none found | committed by: `mid-outcomes-compare.yml` |
 | `kb/status/mid_outcomes_compare_*.md` | none found | committed by: `mid-outcomes-compare.yml` |

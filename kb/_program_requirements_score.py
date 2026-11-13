@@ -1086,12 +1086,12 @@ _HEADING_DASH = str.maketrans({"‐": "-", "‑": "-", "‒": "-", "–": "-", "
 HEADING_TRANSFER = re.compile(
     r"\bA\.?\s?[AS]\.?\s?-\s?T\b\.?|(?<![.\w])A[AS]T\b|(?<![.\w])ADT\b|\b(?:for|uc)\s+(?:uc\s+)?transfer\b"
     r"|\b(?:arts|science)[\s-]+(?:uc\s+)?transfer\b|-\s*transfer\b|\btransfer\s+degree\b"
-    r"|\bA\.?\s?[AS]\.?\s?T\.?\s+degree\b", re.I)
-HEADING_CERTIFICATE = re.compile(r"\bcertificates?\b|\bcert\.", re.I)
+    r"|\bA\.?\s?[AS]\.?\s?T\.?\s+degree\b|\bA\.\s?[AS]\.\s?T\b\.?", re.I)   # "A.A.T" (round 2, finding 13)
+HEADING_CERTIFICATE = re.compile(r"\bcertificates?\b|\bcert\b\.?", re.I)   # a bare "Cert" too (finding 14)
 # A certificate's letters, standing alone ("Construction Inspection for Public Works, CA").
 HEADING_CERTIFICATE_CODE = re.compile(r"(?:^|[\s,(:-])(?:CA|COA|CoA|CP|CC|CCL|NC)(?=\)|\s*$|\s*[,:(-])")
 # "Associate Degree Requirements" alone names no type: it is the college's general education section.
-HEADING_LOCAL = re.compile(r"\bA\.\s?[AS]\.(?!\s?-\s?T\b)|\bassociates?\s+(?:in|of)\s+(?:arts|science)\b"
+HEADING_LOCAL = re.compile(r"\bA\.\s?[AS]\.(?!\s?-?\s?T\b)|\bassociates?\s+(?:in|of)\s+(?:arts|science)\b"
                            r"|\bA[AS]\s+degree\b", re.I)
 # The bare letters, standing alone and not a transfer degree's ("General Marketing, AS").
 HEADING_LOCAL_CODE = re.compile(r"(?:^|[\s,(:/-])(?:AA|AS)(?![-\s]?T\b)(?=\)|\s*$|\s*[,:(/-]|\s+(?:in|degree|and|or|&)\s)")
@@ -1113,6 +1113,29 @@ def award_type(award: str | None) -> str | None:
     or bachelor; None when the award names none of them."""
     from _program_requirements_pilot import award_kind
     return AWARD_TYPE.get(award_kind(award))
+
+
+# Words a heading prints that name no program: "Program Requirements", "Requirements for the Major",
+# "Associate in Science Degree Major Requirements", "Plan of Study Grid", "Cal-GETC Areas and Units".
+# A heading of these words alone says nothing about which program it heads.
+HEADING_GENERIC = set("""
+a aa aas aat adt ast as an and are area areas arts associate associates award awards b ba bs c ca cal catalog
+certificate certificates certification coa completion competency complete core course courses csu curriculum d
+degree degrees description education elective electives emphasis following for from general getc graduation grid i
+id identification ii iii igetc in local major majors minimum maximum noncredit numbering of option options or plan
+program programs proficiency recommended requirement requirements required science select sequence skills
+specialization study system t the to total transfer uc unit units with achievement additional list page section
+req reqs semester year first second third fourth fall spring summer pattern california ge breadth group
+outcomes learning career careers information descriptions chapter support field time listing listings availability
+per guide credit non after acceptance into active agreements exam is are be at on by this these other
+code codes state academic number control
+""".split())
+
+
+def heading_content_words(text: str | None) -> list[str]:
+    """The heading's words that could name a program: no generic word, no number or code ("W003304C")."""
+    return [w for w in re.findall(r"[a-z0-9]+", (text or "").lower())
+            if w not in HEADING_GENERIC and not re.search(r"\d", w) and len(w) > 1]
 
 
 def _without_title(heading: str, title: str) -> str:
@@ -1186,7 +1209,9 @@ def heading_award_check(record: dict | None, award: str | None, control_number: 
     kind = "%s_under_%s" % ("_or_".join(sorted(names)), filed)
     from _program_requirements_pilot import title_tokens
     tokens = title_tokens(title or "")
-    if tokens and not set(tokens) & set(re.findall(r"[a-z0-9]+", heading.lower())):
+    # Set aside only a heading that names no program at all (round 2, finding 12): one naming another
+    # program's words is a crossing, and still fails.
+    if tokens and not heading_content_words(heading):
         return dict(base, **{"pass": True, "status": "names_award_not_program", "names": sorted(names),
                              "kind": kind,
                              "why": ["the record's heading %r names a %s and none of the program's title words: "

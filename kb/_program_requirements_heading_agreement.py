@@ -88,27 +88,10 @@ def title_share(text: str | None, title: str | None) -> float | None:
     return round(sum(1 for t in tokens if t in have) / len(tokens), 3)
 
 
-# Words a heading prints that name no program: "Program Requirements", "Requirements for the Major",
-# "Associate in Science Degree Major Requirements", "Plan of Study Grid", "Cal-GETC Areas and Units".
-# A heading of these words alone says nothing about which program it heads.
-GENERIC = set("""
-a aa aas aat adt ast as an and are area areas arts associate associates award awards b ba bs c ca cal catalog
-certificate certificates certification coa completion competency complete core course courses csu curriculum d
-degree degrees description education elective electives emphasis following for from general getc graduation grid i
-id identification ii iii igetc in local major majors minimum maximum noncredit numbering of option options or plan
-program programs proficiency recommended requirement requirements required science select sequence skills
-specialization study system t the to total transfer uc unit units with achievement additional list page section
-req reqs semester year first second third fourth fall spring summer pattern california ge breadth group
-outcomes learning career careers information descriptions chapter support field time listing listings availability
-per guide credit non after acceptance into active agreements exam is are be at on by this these other
-code codes state academic number control
-""".split())
-
-
-def content_words(text: str | None) -> list[str]:
-    """The heading's words that could name a program: no generic word, no number or code ("W003304C")."""
-    return [w for w in re.findall(r"[a-z0-9]+", (text or "").lower())
-            if w not in GENERIC and not re.search(r"\d", w) and len(w) > 1]
+# The generic heading words and the test of a heading that names a program live in the scorer (one copy:
+# heading_award_check reads them too).
+GENERIC = S.HEADING_GENERIC
+content_words = S.heading_content_words
 
 
 VOWELS = set("aeiou")
@@ -203,6 +186,17 @@ def tracked_files(root: str) -> set[str] | None:
     except (OSError, subprocess.CalledProcessError):
         return None
     return {os.path.join(top, p) for p in out.split("\0") if p}
+
+
+def tree_commit(root: str) -> dict | None:
+    """The commit the tree under root is checked out at, and its date: what the snapshot is dated by."""
+    import subprocess
+    try:
+        out = subprocess.run(["git", "-C", root, "log", "-1", "--format=%H %cs"], capture_output=True, text=True,
+                             check=True).stdout.split()
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return {"sha": out[0], "date": out[1]} if len(out) == 2 else None
 
 
 def _readable(path: str) -> bool:
@@ -433,7 +427,7 @@ def build(root: str = COLLEGE_DIR, extra: list[str] | None = None, tracked: bool
         for k in TOTAL_KEYS:
             tot[k] += c[k]
     return {
-        "_readme": ("A dated snapshot of main as of as_of (the newest capture it reads), written by "
+        "_readme": ("A dated snapshot of main at `commit` (as_of: the newest capture it reads), written by "
                     "kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). "
                     "Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on "
                     "its freshness, so it can trail the records. Each record's own heading "
@@ -442,6 +436,8 @@ def build(root: str = COLLEGE_DIR, extra: list[str] | None = None, tracked: bool
                     "files (passes_live) whose heading names another award type (heading_award_check, in no "
                     "pass rule). award_not_program counts headings that name an award and none of the "
                     "program's title words, set aside (Pasadena's one page for an A.S. and its certificate)."),
+        # The commit of main it reads (round 2, finding 15), beside the newest capture's date.
+        "commit": tree_commit(root),
         "as_of": as_of,
         "read_from": sorted({c["read_from"] for c in colleges}),
         "totals": dict(tot),
@@ -458,11 +454,13 @@ def markdown(rep: dict) -> str:
     by = {c["slug"]: c for c in rep["colleges"]}
     extra = [r for r in rep.get("read_from") or [] if r != "main"]
     lines = ["# Harvest heading agreement", "",
-             "A dated snapshot of main, as of %s (the newest capture it reads), written by "
-             "`kb/_program_requirements_heading_agreement.py` from the files the tree commits%s. A dispatch of "
+             "A dated snapshot of main at commit %s (%s; the newest capture it reads started %s), written by "
+             "`kb/_program_requirements_heading_agreement.py` from the files that commit holds%s. A dispatch of "
              "`harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can "
              "trail the records. Each record's own heading against the program it is filed under (COCI "
-             "title and award)." % (rep.get("as_of") or "no capture",
+             "title and award)." % ((rep.get("commit") or {}).get("sha", "unknown")[:12],
+                                    (rep.get("commit") or {}).get("date", "date unknown"),
+                                    rep.get("as_of") or "no capture",
                                     "" if not extra else " plus folders read from %s" % ", ".join(extra)), "",
              "All colleges: %d records, %d agree, %d disagree (%d of them pass on the committed files), %d cannot "
              "tell (%d say the heading is not in their text; %d name an award and none of the program's title "
