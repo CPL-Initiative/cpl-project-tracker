@@ -4,10 +4,10 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 890,
+  "file_datasets": 894,
   "external_services": 195,
-  "consumers": 567,
-  "workflows": 69,
+  "consumers": 569,
+  "workflows": 70,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -10111,6 +10111,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_harvest_gap_census.py": {
+   "consumers": [
+    {
+     "id": "workflow:harvest-gap-census.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_identity_daily_check.py": {
    "consumers": [
     {
@@ -16768,6 +16781,13 @@
   "file:kb/program_requirements_college/los_angeles_city/kept_passing.json": {
    "consumers": [
     {
+     "id": "script:kb/_harvest_gap_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 156
+    },
+    {
      "id": "script:kb/_program_requirements_college.py",
      "kind": "script",
      "direction": "read",
@@ -18980,6 +19000,44 @@
      "direction": "read",
      "how": "literal",
      "line": 249
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/harvest_gap_census.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_harvest_gap_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 51
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:harvest-gap-census.yml",
+     "how": "commit"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/harvest_gap_census.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_harvest_gap_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:harvest-gap-census.yml",
+     "how": "commit"
     }
    ],
    "served": true,
@@ -24239,6 +24297,19 @@
    "main_committers": []
   },
   "file:tests/governance_docs_panel.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/harvest_gap_census_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -32192,6 +32263,21 @@
    "chain": [],
    "urls": []
   },
+  "harvest-gap-census.yml": {
+   "name": "Harvest gap census",
+   "crons": [],
+   "scripts": [
+    "kb/_harvest_gap_census.py"
+   ],
+   "adds": [
+    "kb/status/harvest_gap_census.json",
+    "kb/status/harvest_gap_census.md"
+   ],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "js-tests.yml": {
    "name": "JS tests",
    "crons": [
@@ -32221,6 +32307,7 @@
     "tests/program_requirements_pilot_test.py",
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
+    "tests/harvest_gap_census_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
     "tests/mq_title5_rename_test.py",
