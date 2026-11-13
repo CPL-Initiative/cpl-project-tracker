@@ -1,4 +1,6 @@
--- NOT YET RUN. Prepared by the S648 worker on claude/harvest-desert-read-s647; run it only on the conductor's word.
+-- RUN at about 17:25Z 2026-11-13 by the S648 conductor: one row returned, extracted_run 39056007346. Prepared by the S648 worker on claude/harvest-desert-read-s647.
+-- Verified after the run: the live record and checks match this receipt's before-values byte for byte, md5 of the jsonb
+-- text: record 64f84c83faf348f060d85cc6a0505959, checks bf3c7bfd0d174bd6a60a2bce7a5e305c.
 -- What: restore College of the Desert 10195 (Natural Resources A.S.) in public.program_requirement_records to the row it
 -- held before reread run 43470869324 (receipt commit 49f340fc,
 -- kb/receipts/program_requirement_records_college_reread_college_of_the_desert_43470869324.json, its "before" entry for
