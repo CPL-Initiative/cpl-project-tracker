@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-13T02:09:44Z",
+  "written_at": "2026-11-13T04:16:31Z",
   "session": 645,
   "moniker": "SkyFinch",
   "run": "Sam's session",
@@ -622,18 +622,18 @@
     {
       "day": "2026-11-13",
       "active": 20282,
-      "complete": 14196,
-      "colleges": 116
+      "complete": 14370,
+      "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-12T13:12:00Z"
+    "at": "2026-11-13T06:12:00Z"
   },
   "harvest": {
     "day": "2026-11-13",
-    "gaps": 3012,
+    "gaps": 3039,
     "parts": {
       "links": {
         "catalog": [
@@ -650,11 +650,11 @@
         ]
       },
       "roep": [
-        19164,
+        19287,
         20282
       ],
       "coci": [
-        16425,
+        16566,
         20282
       ],
       "outcomes": {
@@ -663,12 +663,12 @@
           89192
         ],
         "plo": [
-          16425,
+          16566,
           20282
         ]
       },
       "careers": [
-        15389,
+        15530,
         20282
       ]
     }
