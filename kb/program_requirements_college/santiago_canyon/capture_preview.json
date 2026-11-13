@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 260,
  "with_closed_list": 230,
- "started": "2026-11-13T03:40:29Z",
+ "started": "2026-11-13T03:57:25Z",
  "pdf": {
   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
   "access": "ok",
@@ -14,18 +14,19 @@
   "pages_total": 374,
   "error": null,
   "chars_total": 1981072,
-  "pypdf_accepted": 195,
+  "pypdf_accepted": 214,
   "sample": [
    "p113: 'Credit Programs / 113\\nsccollege.edu\\nCredit Programs\\nCredit Courses\\nCollege Catalog 2026/27\\nSpecial Education Paraprofessional, CA\\nCertificate of Achievement\\nUnit Range for Completion : 14.0 - 15.0\\nThe Certificate of Achievement in Special E'",
    "p225: 'Credit Courses / 225 \\nsccollege.edu\\nCredit Courses\\nCollege Catalog 2026/27\\nPHIL118\\nHistory of Philosophy\\nUnits: 3\\nAn introduction to philosophy from a historical perspective: getting \\nacquainted with the thoughts of the worlds great philoso'"
   ],
   "extractor": "pypdf",
   "numbers_after": {
-   "after": 182,
+   "after": 199,
    "before": 0,
    "after_mode": true,
    "gated": true,
-   "read": "number_after"
+   "read": "number_after",
+   "binding": "number_line"
   },
   "picks": [
    {
@@ -56,18 +57,84 @@
     "bound": "number_after"
    },
    {
-    "control_number": "11861",
+    "control_number": "11858",
     "pages": [
-     124,
-     125
+     81,
+     82,
+     83,
+     84
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 124] 124 / Credit Programs sccollege.edu Credit Programs College Catalog 2026/27 BUS222 Business Writing (Total Units 3.0 - 3.0) MGMT122 Business Communications (Total Units 3.0 - 3.0) Select two (2) courses ",
-    "after_unbound": "block_not_named"
+    "opens": "[page 81] Continuing Education / 81 sccollege.edu College Catalog 2026/27 POLICIES GOVERNING STUDENTS Attendance Students are expected to attend all class meetings. Students who are enrolled but absent on the first c",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "POLICIES GOVERNING STUDENTS Attendance Students are expected to attend all class meetings. Students who are enrolled but absent on the first class session may b"
+   },
+   {
+    "control_number": "11859",
+    "pages": [
+     92
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] Business Information Worker, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The certificate of proficiency in Business Information Worker (BIW) is designed to prepare students for entr",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Business Information Worker, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The certificate of proficiency in Business Information Work"
+   },
+   {
+    "control_number": "11860",
+    "pages": [
+     92,
+     93
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] Business Management, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 13.0 The Certificate of Proficiency in Business Management is designed to enable students to handle basic problems encoun",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Business Management, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 13.0 The Certificate of Proficiency in Business Management is designed t"
+   },
+   {
+    "control_number": "11861",
+    "pages": [
+     123,
+     124
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] Human Resource Management, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Human Resource Management is designed to prepare students for various mana",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Human Resource Management, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Human Resource Management i"
+   },
+   {
+    "control_number": "11866",
+    "pages": [
+     124
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] Supervision, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Supervision is designed to prepare students for various management positions in business,",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Supervision, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Supervision is designed to prepare studen"
    },
    {
     "control_number": "11874",
@@ -124,31 +191,30 @@
    {
     "control_number": "11906",
     "pages": [
-     328,
-     329
+     328
     ],
     "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 328] 328 / Apprenticeship Programs sccollege.edu Apprenticeship Programs College Catalog 2026/27 Program Rules: Apprenticeship Operating Engineers, Special Inspector, CA (Total Credits 24.0 - 24.0) All of the fo",
-    "after_unbound": "block_not_named"
+    "opens": "[page 328] SURVEY/MAPPING SCIENCES - APPRENTICESHIP Land Surveying, AS A.S. Degree Major The Associate of Science degree in Land Surveying provides the student a thorough background in land surveying and mapping in a",
+    "bound": "number_after"
    },
    {
     "control_number": "11907",
     "pages": [
-     141,
-     142,
-     143
+     141
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 141] Credit Programs / 141 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 WATR151 Wastewater Treatment (Total Units 3.0 - 3.0) WATR252 Advanced Wastewater Treatment (Total Units 3.0 - 3.0)",
-    "after_unbound": "block_not_named"
+    "opens": "[page 141] Water Conservation, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 This program prepares students for careers in Water Conservation, and certification by the California-Nevada Section",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Water Conservation, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 This program prepares students for careers in Water Conservation, an"
    },
    {
     "control_number": "11908",
@@ -164,22 +230,6 @@
     "coverage": 1.0,
     "opens": "[page 141] Credit Programs / 141 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 WATR151 Wastewater Treatment (Total Units 3.0 - 3.0) WATR252 Advanced Wastewater Treatment (Total Units 3.0 - 3.0)",
     "after_unbound": "number_not_printed"
-   },
-   {
-    "control_number": "11909",
-    "pages": [
-     131,
-     132,
-     133,
-     134
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": true,
-    "titled": true,
-    "coverage": 0.889,
-    "opens": "[page 131] Control Number: 11909 Construction Administration for Public Works, CA Certificate of Achievement Unit Range for Completion : 21.0 - 21.0 This Certificate of Achievement in Construction Administration for Pu",
-    "after_unbound": "block_not_named"
    },
    {
     "control_number": "11910",
@@ -218,7 +268,7 @@
     "titled": true,
     "coverage": 0.966,
     "opens": "[page 88] 88 / Credit Programs sccollege.edu Credit Programs College Catalog 2026/27 Graphic Design, AS A.S. Degree Major Unit Range for Completion : 30.0 - 30.0 The Associate of Science degree in Graphic Design prepare",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "11925",
@@ -256,10 +306,12 @@
     "named": false,
     "code": null,
     "cn_printed": true,
-    "titled": false,
+    "titled": true,
     "coverage": 0.833,
     "opens": "[page 97] Credit Programs / 97 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 Communication, AA A.A. Degree Major Unit Range for Completion : 18.0 - 18.0 The associate degree curriculum in communica",
-    "after_unbound": "block_not_named"
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Communication, AA A.A. Degree Major Unit Range for Completion : 18.0 - 18.0 The associate degree curriculum in communication provides training for communicating"
    },
    {
     "control_number": "11933",
@@ -272,6 +324,20 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 93] CHEMISTRY Chemistry, AS A.S. Degree Major Unit Range for Completion : 24.0 - 24.0 The Associate of Science degree in Chemistry provides basic courses for a wide variety of occupations, or prepares the student",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11938",
+    "pages": [
+     115,
+     116
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 115] GENDER, SEXUALITY, AND WOMEN’S STUDIES STUDIES Gender, Sexuality, and Women’s Studies, AA A.A. Degree Major Unit Range for Completion : 18.0 - 19.0 The Associate of Arts degree in Gender, Sexuality, a",
     "bound": "number_after"
    },
    {
@@ -434,18 +500,16 @@
    {
     "control_number": "18317",
     "pages": [
-     104,
-     105,
-     106,
-     107
+     103,
+     104
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
-    "titled": false,
-    "coverage": 0.781,
-    "opens": "[page 104] 104 / Credit Programs sccollege.edu Credit Programs College Catalog 2026/27 ITAL195 Advanced Conversational Italian (Total Units 3.0 - 3.0) ITAL201 Intermediate Italian I (Total Units 5.0 - 5.0) ITAL202 In",
-    "after_unbound": "block_not_named"
+    "titled": true,
+    "coverage": 0.991,
+    "opens": "[page 103] Credit Programs / 103 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 Liberal Arts: Arts, Humanities, and Communication, AA A.A. Degree Major Unit Range for Completion : 18.0 - 18.0 The i",
+    "bound": "number_after"
    },
    {
     "control_number": "18318",
@@ -571,6 +635,21 @@
     "bound": "number_after"
    },
    {
+    "control_number": "19623",
+    "pages": [
+     142
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 142] Water Distribution, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Water Distribution program prepares students for careers in the public health fiel",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Water Distribution, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Water Distribution program prepare"
+   },
+   {
     "control_number": "19624",
     "pages": [
      142,
@@ -675,7 +754,7 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 99] Credit Programs / 99 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 Computer Science, CA Certificate of Achievement Unit Range for Completion : 18.0 - 18.0 The Certificate of Achievement i",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "21657",
@@ -693,10 +772,7 @@
    {
     "control_number": "21658",
     "pages": [
-     317,
-     318,
-     319,
-     320
+     317
     ],
     "named": true,
     "code": null,
@@ -704,7 +780,7 @@
     "titled": true,
     "coverage": 0.929,
     "opens": "[page 317] Apprenticeship Programs / 317 sccollege.edu Apprenticeship Programs College Catalog 2026/27 Apprenticeship Carpentry, Finish Carpentry, CA Certificate of Achievement The Certificate of Achievement in Apprent",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "21659",
@@ -724,13 +800,13 @@
     "pages": [
      322
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 322] 322 / Apprenticeship Programs sccollege.edu Apprenticeship Programs College Catalog 2026/27 Apprenticeship Carpentry, Tilt-Up, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Ca",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "21661",
@@ -826,22 +902,6 @@
     "bound": "number_after"
    },
    {
-    "control_number": "21673",
-    "pages": [
-     131,
-     132,
-     133,
-     134
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": true,
-    "titled": true,
-    "coverage": 0.889,
-    "opens": "[page 131] Credit Programs / 131 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 land-use, or municipal affairs. Program Rules: Code Enforcement Officer, CA (Total Units 10.0 - 10.0) All of the follo",
-    "after_unbound": "block_not_named"
-   },
-   {
     "control_number": "21674",
     "pages": [
      99
@@ -882,6 +942,19 @@
     "bound": "number_after"
    },
    {
+    "control_number": "24037",
+    "pages": [
+     267
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 267] VOCATIONAL CONSTRUCTION, CONSTRUCTION LABORER - OECIE Construction Laborer, CC Certificate of Completion The Certificate of Completion in Construction Laborer prepares students for entry-level employment in ",
+    "bound": "number_after"
+   },
+   {
     "control_number": "24052",
     "pages": [
      269
@@ -892,7 +965,7 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 269] Non-Credit Programs / 269 sccollege.edu Non-Credit Programs College Catalog 2026/27 Medical Billing, CC Certificate of Completion The Certificate of Completion in Medical Billing is designed to give students",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "24093",
@@ -931,7 +1004,20 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 267] Non-Credit Programs / 267 sccollege.edu Non-Credit Programs College Catalog 2026/27 VOCATIONAL CONSTRUCTION, CARPENTER - OECIE Carpenter, CC Certificate of Completion The Certificate of Completion in Carpen",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24146",
+    "pages": [
+     266
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 266] VOCATIONAL CLOTHING - OECIE Commercial Textile Worker, CC Certificate of Completion The Certificate of Completion in Commercial Textile Worker prepares students for entry-level employment in the commercial t",
+    "bound": "number_after"
    },
    {
     "control_number": "24187",
@@ -1029,13 +1115,13 @@
     "pages": [
      259
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 259] Non-Credit Programs / 259 sccollege.edu Non-Credit Programs College Catalog 2026/27 ESL Intermediate Multilevel, COM Certificate of Competency The Certificate of Competency in ESL Intermediate Multilevel dev",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "24285",
@@ -1132,16 +1218,15 @@
    {
     "control_number": "30690",
     "pages": [
-     258,
-     259
+     258
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 258] 258 / Non-Credit Programs sccollege.edu Non-Credit Programs College Catalog 2026/27 Enhanced Beginning ESL Skills, COM Certificate of Competency The Certificate of Competency in Enhanced Beginning ESL Skills",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "30985",
@@ -1247,6 +1332,22 @@
     "coverage": 1.0,
     "opens": "[page 320] Apprenticeship Carpentry, Pile Driver, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Pile Driver is designed to provide the required related and supplemental cla",
     "bound": "number_after"
+   },
+   {
+    "control_number": "31601",
+    "pages": [
+     263,
+     264
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 263] Adult High School Diploma, DIPL Adult High School Diploma The Adult High School Diploma Program is designed to offer students instruction ranging from the basic skill level to the high school level with the ",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Adult High School Diploma, DIPL Adult High School Diploma The Adult High School Diploma Program is designed to offer students instruction ranging from the basic"
    },
    {
     "control_number": "31706",
@@ -1612,13 +1713,13 @@
     "pages": [
      319
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 319] Apprenticeship Programs / 319 sccollege.edu Apprenticeship Programs College Catalog 2026/27 Apprenticeship Carpentry, Insulator, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship ",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "35614",
@@ -1676,17 +1777,15 @@
    {
     "control_number": "36211",
     "pages": [
-     261,
-     262,
-     263
+     261
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 261] Non-Credit Programs / 261 sccollege.edu Non-Credit Programs College Catalog 2026/27 Adult Secondary Education, College Preparatory Composition, COM Certificate of Competency The Certificate of Competency in ",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "36212",
@@ -1717,16 +1816,15 @@
    {
     "control_number": "36214",
     "pages": [
-     256,
-     257
+     256
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 256] 256 / Non-Credit Programs sccollege.edu Non-Credit Programs College Catalog 2026/27 Effective Communication Skills, CC Certificate of Completion The Certificate of Completion in Communication Skills for Adult",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "36215",
@@ -1915,6 +2013,19 @@
     "bound": "number_after"
    },
    {
+    "control_number": "37132",
+    "pages": [
+     137
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 137] Credit Programs / 137 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 Social Justice Studies: Chicano, AA-T A.A. Degree for Transfer Unit Range for Completion : 18.0 - 18.0 The Associate o",
+    "bound": "number_after"
+   },
+   {
     "control_number": "37133",
     "pages": [
      137,
@@ -1971,6 +2082,7 @@
    {
     "control_number": "37478",
     "pages": [
+     84,
      85
     ],
     "named": false,
@@ -1978,8 +2090,10 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.818,
-    "opens": "[page 85] Credit Programs / 85 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 General Accounting, CERT Certificate of Proficiency Unit Range for Completion : 14.0 - 14.0 The certificate prepares stu",
-    "after_unbound": "block_not_named"
+    "opens": "[page 84] Bookkeeping, CERT Certificate of Proficiency Unit Range for Completion : 10.0 - 10 -11.0 The Bookkeeping Certificate program equips students with essential skills in bookkeeping, including accrual accounting, ",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Bookkeeping, CERT Certificate of Proficiency Unit Range for Completion : 10.0 - 10 -11.0 The Bookkeeping Certificate program equips students with essential skil"
    },
    {
     "control_number": "37803",
@@ -2006,6 +2120,21 @@
     "coverage": 1.0,
     "opens": "[page 269] Nurse Assistant Acute Care, CC Certificate of Completion The Nurse Assistant Acute Care program is designed to train nurse assistants for employment in the acute care facility. Integrated throughout the prog",
     "bound": "number_after"
+   },
+   {
+    "control_number": "37806",
+    "pages": [
+     268
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 268] Home Health Aide (HHA) for Certi- fied Nurse Assistants (CNA), CC Certificate of Completion The home health aide (HHA) program prepares individuals who are Certified Nurse Assistants (CNA) to become Certified",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Home Health Aide (HHA) for Certi- fied Nurse Assistants (CNA), CC Certificate of Completion The home health aide (HHA) program prepares individuals who are Cert"
    },
    {
     "control_number": "37807",
@@ -2044,6 +2173,34 @@
     "titled": true,
     "coverage": 0.857,
     "opens": "[page 111] After School Program Associate Teacher, CA Certificate of Achievement Unit Range for Completion : 15.0 - 16.0 The Certificate of Achievement in After School Program Associate Teacher is intended to provide s",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37913",
+    "pages": [
+     112
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 112] Instructional Assistant: Bilingual, Spanish, CA Certificate of Achievement Unit Range for Completion : 7.0 - 12.0 The Instructional Assistant: Bilingual, Spanish Certificate of Achievement prepares students ",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Instructional Assistant: Bilingual, Spanish, CA Certificate of Achievement Unit Range for Completion : 7.0 - 12.0 The Instructional Assistant: Bilingual, Spanis"
+   },
+   {
+    "control_number": "38157",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 111] Credit Programs / 111 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 EDUCATION After School Program Assistant, CA Certificate of Achievement Unit Range for Completion : 9.0 - 10.0 The Ce",
     "bound": "number_after"
    },
    {
@@ -2100,6 +2257,19 @@
     "bound": "number_after"
    },
    {
+    "control_number": "39807",
+    "pages": [
+     117
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 117] Credit Programs / 117 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 HISTORY Global Studies, CA Certificate of Achievement Unit Range for Completion : 12.0 - 12.0 The certificate in Glob",
+    "bound": "number_after"
+   },
+   {
     "control_number": "39808",
     "pages": [
      114,
@@ -2116,18 +2286,15 @@
    {
     "control_number": "39916",
     "pages": [
-     118,
-     119,
-     120,
-     121
+     118
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.902,
     "opens": "[page 118] 118 / Credit Programs sccollege.edu Credit Programs College Catalog 2026/27 KINESIOLOGY Kinesiology - Fitness and Active Lifestyle, AS A.S. Degree Major Unit Range for Completion : 20.0 - 24.0 The Associate ",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "39917",
@@ -2187,10 +2354,7 @@
    {
     "control_number": "39921",
     "pages": [
-     122,
-     123,
-     124,
-     125
+     122
     ],
     "named": true,
     "code": null,
@@ -2198,7 +2362,7 @@
     "titled": true,
     "coverage": 0.889,
     "opens": "[page 122] 122 / Credit Programs sccollege.edu Credit Programs College Catalog 2026/27 Kinesiology - Sport Studies, CA Certificate of Achievement Unit Range for Completion : 20.0 - 24.0 The Certificate of Achievement in",
-    "after_unbound": "block_not_named"
+    "bound": "number_after"
    },
    {
     "control_number": "40510",
@@ -2212,6 +2376,22 @@
     "coverage": 1.0,
     "opens": "[page 257] Enhanced Advanced ESL Skills, COM Certificate of Competency The Certificate of Competency in Enhanced Advanced ESL Skills is designed to improve the reading, writing, listening, speaking, and digital litera",
     "bound": "number_after"
+   },
+   {
+    "control_number": "40639",
+    "pages": [
+     89,
+     90
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] Biotechnology Fundamentals, CERT Certificate of Proficiency Unit Range for Completion : 8.0 - 8.0 The Certificate of Proficiency in Biotechnology Fundamentals is designed for students who wish to explore the f",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Biotechnology Fundamentals, CERT Certificate of Proficiency Unit Range for Completion : 8.0 - 8.0 The Certificate of Proficiency in Biotechnology Fundamentals i"
    },
    {
     "control_number": "41165",
@@ -2358,6 +2538,21 @@
     "bound": "number_after"
    },
    {
+    "control_number": "43692",
+    "pages": [
+     125
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 125] Web Marketing, CERT Certificate of Proficiency Unit Range for Completion : 9.0 - 9.0 The Certificate of Proficiency in Web Marketing is designed to prepare students for various marketing, sales, and retail st",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Web Marketing, CERT Certificate of Proficiency Unit Range for Completion : 9.0 - 9.0 The Certificate of Proficiency in Web Marketing is designed to prepare stud"
+   },
+   {
     "control_number": "43876",
     "pages": [
      264
@@ -2411,6 +2606,19 @@
     "bound": "number_after"
    },
    {
+    "control_number": "44326",
+    "pages": [
+     322
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 322] CHILD DEVELOPMENT - APPRENTICESHIP Apprenticeship in Early Childhood, AS A.S. Degree Major The Associate Degree of Science in Apprenticeship in Early Childhood prepares students to transfer into a baccalau",
+    "bound": "number_after"
+   },
+   {
     "control_number": "44436",
     "pages": [
      143
@@ -2424,18 +2632,35 @@
     "bound": "number_after"
    },
    {
-    "control_number": "44797",
+    "control_number": "44459",
     "pages": [
-     125,
-     126
+     143
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 125] Credit Programs / 125 sccollege.edu Credit Programs Credit Courses College Catalog 2026/27 Social Media, AS A.S. Degree Major Unit Range for Completion : 25.0 - 25.5 The Associate of Science in Social Media de",
-    "after_unbound": "block_not_named"
+    "opens": "[page 143] Water Treatment, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Water Treatment is designed to prepare students for careers in the public health fiel",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Water Treatment, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Water Treatment is designed to prepar"
+   },
+   {
+    "control_number": "44797",
+    "pages": [
+     124,
+     125
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 124] Marketing, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Marketing is designed to prepare students for various marketing, sales, and retail store ma",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Marketing, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Marketing is designed to prepare students f"
    },
    {
     "control_number": "44861",
@@ -2461,6 +2686,19 @@
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 266] PROTECTIVE SERVICES Unarmed Public Safety and Security Officer Program, CC Certificate of Completion The Unarmed Public Safety and Security Officer Program provides training to be licensed as an unarmed sec",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45504",
+    "pages": [
+     267
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 267] VOCATIONAL ENERGY, CONSTRUCTION AND UTILITIES Solar Installation Technician, CC Certificate of Completion The Solar Installation Certificate program begins with foundational training in Solar Installation I",
     "bound": "number_after"
    },
    {
@@ -2515,6 +2753,21 @@
     "coverage": 0.964,
     "opens": "[page 318] Apprenticeship Carpentry, General Carpenter, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship General Carpentry provides the related and supplemental instruction required for t",
     "bound": "number_after"
+   },
+   {
+    "control_number": "45581",
+    "pages": [
+     98
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] COMPUTER SCIENCE Applied Robotics and Embedded Programming, CERT Certificate of Proficiency Unit Range for Completion : 9.0 - 9.0 The Certificate of Proficiency in Applied Robotics and Embedded Programming w",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "COMPUTER SCIENCE Applied Robotics and Embedded Programming, CERT Certificate of Proficiency Unit Range for Completion : 9.0 - 9.0 The Certificate of Proficiency"
    },
    {
     "control_number": "45606",
@@ -2586,6 +2839,19 @@
     "bound": "number_after"
    },
    {
+    "control_number": "45881",
+    "pages": [
+     255
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 255] ADULTS WITH SPECIAL NEEDS Becoming a Social Media Influencer, CC Certificate of Completion The Certificate of Completion in Becoming a Social Media Influencer introduces students to the fast-growing field o",
+    "bound": "number_after"
+   },
+   {
     "control_number": "45985",
     "pages": [
      311
@@ -2647,25 +2913,35 @@
  "loads": 1,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 67.6,
- "found": 192,
+ "seconds": 78.5,
+ "found": 211,
  "by_method": {
   "no_closed_list": 30,
-  "not_found": 38,
-  "pdf_pages": 192
+  "not_found": 19,
+  "pdf_pages": 211
  },
  "shared_pages": {
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89": [
    "11856",
-   "35110"
+   "35110",
+   "40639"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91": [
    "11857",
    "41770",
    "42991"
   ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=92": [
+   "11859",
+   "11860"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=124": [
+   "11866",
+   "44797"
+  ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115": [
    "11874",
+   "11938",
    "21644"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97": [
@@ -2675,11 +2951,8 @@
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98": [
    "11903",
-   "33379"
-  ],
-  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=85": [
-   "11905",
-   "37478"
+   "33379",
+   "45581"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=328": [
    "11906",
@@ -2690,11 +2963,6 @@
    "11908",
    "19625",
    "21669"
-  ],
-  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131": [
-   "11909",
-   "21673",
-   "32319"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=88": [
    "11921",
@@ -2759,11 +3027,8 @@
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111": [
    "17759",
    "31735",
-   "37911"
-  ],
-  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=104": [
-   "18317",
-   "18318"
+   "37911",
+   "38157"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324": [
    "19587",
@@ -2771,9 +3036,26 @@
    "19590",
    "22270"
   ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142": [
+   "19623",
+   "19624"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84": [
+   "21631",
+   "37478"
+  ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322": [
    "21660",
-   "44174"
+   "44174",
+   "44326"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267": [
+   "24037",
+   "24097",
+   "36901",
+   "38398",
+   "45504",
+   "45505"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269": [
    "24052",
@@ -2795,11 +3077,13 @@
    "36371",
    "41165"
   ],
-  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267": [
-   "24097",
-   "36901",
-   "38398",
-   "45505"
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266": [
+   "24146",
+   "24420",
+   "30985",
+   "33561",
+   "33562",
+   "44862"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258": [
    "24191",
@@ -2828,13 +3112,6 @@
    "40510",
    "46019"
   ],
-  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266": [
-   "24420",
-   "30985",
-   "33561",
-   "33562",
-   "44862"
-  ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264": [
    "24426",
    "24427",
@@ -2858,6 +3135,10 @@
    "31588",
    "31589"
   ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117": [
+   "31720",
+   "39807"
+  ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=133": [
    "31847",
    "31848"
@@ -2878,7 +3159,8 @@
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255": [
    "33422",
-   "43227"
+   "43227",
+   "45881"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261": [
    "33941",
@@ -2900,6 +3182,7 @@
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268": [
    "36212",
+   "37806",
    "37807",
    "42387",
    "44861"
@@ -2915,6 +3198,7 @@
    "44233"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137": [
+   "37132",
    "37133",
    "37162"
   ],
@@ -2927,77 +3211,26 @@
    "39917"
   ],
   "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125": [
-   "44319",
-   "44797"
+   "43692",
+   "44319"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143": [
+   "44436",
+   "44459"
   ]
  },
  "not_found": [
   {
-   "control_number": "11858",
-   "title": "Accounting",
+   "control_number": "11909",
+   "title": "Construction Management",
    "award": "A.S. Degree",
    "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131",
     "pages": [
-     84,
-     85
+     131
     ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 21631's"
-   }
-  },
-  {
-   "control_number": "11859",
-   "title": "Business Management",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=92",
-    "pages": [
-     92,
-     93,
-     94
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 11857's"
-   }
-  },
-  {
-   "control_number": "11860",
-   "title": "Entrepreneurship",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93",
-    "pages": [
-     93,
-     94
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 21635's"
-   }
-  },
-  {
-   "control_number": "11866",
-   "title": "General Marketing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=124",
-    "pages": [
-     124,
-     125
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 11861's"
-   }
-  },
-  {
-   "control_number": "11938",
-   "title": "Gender, Sexuality, and Women's Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115",
-    "pages": [
-     115,
-     116,
-     117,
-     118
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 39808's"
+    "judged": "Construction Administration for Public Works, AS A.S. Degree Major Unit Range for Completion : 21.0 - 21.0 This Associate of Science degree in Construction Admi",
+    "why": "the block that ends at this program's number opens on 42990's heading"
    }
   },
   {
@@ -3012,6 +3245,7 @@
      104,
      105
     ],
+    "judged": "CHEM100 Introductory Chemistry (Total Units 4.0 - 4.0) CHEM200A General Chemistry A (Total Units 5.0 - 5.0) CHEM200AH Honors General Chemistry A (Total Units 5.",
     "why": "the catalog prints each program's control number after it, and this window is closed by 45619's"
    }
   },
@@ -3027,6 +3261,7 @@
      104,
      105
     ],
+    "judged": "CHEM100 Introductory Chemistry (Total Units 4.0 - 4.0) CHEM200A General Chemistry A (Total Units 5.0 - 5.0) CHEM200AH Honors General Chemistry A (Total Units 5.",
     "why": "the catalog prints each program's control number after it, and this window is closed by 45619's"
    }
   },
@@ -3057,40 +3292,16 @@
    }
   },
   {
-   "control_number": "19623",
-   "title": "Water Treatment, AS",
-   "award": "A.S. Degree",
+   "control_number": "21673",
+   "title": "Construction Management",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131",
     "pages": [
-     142,
-     143
+     131
     ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 19625's"
-   }
-  },
-  {
-   "control_number": "24037",
-   "title": "Construction Laborer",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
-    "pages": [
-     267
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 24097's"
-   }
-  },
-  {
-   "control_number": "24146",
-   "title": "Commercial Textile Worker",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
-    "pages": [
-     266
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 33161's"
+    "judged": "Construction Administration for Public Works, CA Certificate of Achievement Unit Range for Completion : 21.0 - 21.0 This Certificate of Achievement in Construct",
+    "why": "the block that ends at this program's number opens on 43901's heading"
    }
   },
   {
@@ -3098,20 +3309,6 @@
    "title": "Secondary Education/GED Preparation",
    "award": "Noncredit program",
    "near_miss": null
-  },
-  {
-   "control_number": "31601",
-   "title": "Adult High School Diploma",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263",
-    "pages": [
-     263,
-     264,
-     265
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 36914's"
-   }
   },
   {
    "control_number": "36210",
@@ -3122,7 +3319,8 @@
     "pages": [
      264
     ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 31601's"
+    "judged": "OFFICE TECHNOLOGY/ COMPUTER APPLICATIONS 3D Printing, CC Certificate of Completion The Certificate of Completion in 3D Printing is designed to teach students ho",
+    "why": "the block that ends at this program's number opens on 38399's heading"
    }
   },
   {
@@ -3135,6 +3333,7 @@
      92,
      93
     ],
+    "judged": "Major requirements: (Total Units 23.0 - 23.0) The following number of Units ACCT101 Financial Accounting (Total Units 4.0 - 4.0) ACCT102 Managerial Accounting (",
     "why": "the catalog prints each program's control number after it, and this window is closed by 11857's"
    }
   },
@@ -3144,67 +3343,7 @@
    "award": "A.S. Degree",
    "near_miss": {
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=130",
-    "pages": [
-     130,
-     131,
-     132,
-     133
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 37102's"
-   }
-  },
-  {
-   "control_number": "37132",
-   "title": "Social Justice Studies: Chicano",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137",
-    "pages": [
-     137,
-     138,
-     139,
-     140
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 37162's"
-   }
-  },
-  {
-   "control_number": "37806",
-   "title": "Home Health Aide (HHA) for Certified Nurse Assistants (CNA)",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
-    "pages": [
-     268
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 36901's"
-   }
-  },
-  {
-   "control_number": "37913",
-   "title": "Bilingual Instructional Aide: Spanish",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=112",
-    "pages": [
-     112,
-     113
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 31735's"
-   }
-  },
-  {
-   "control_number": "38157",
-   "title": "After School Program Assistant",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
-    "pages": [
-     111,
-     112,
-     113
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 37911's"
+    "coverage": 0.353
    }
   },
   {
@@ -3217,31 +3356,6 @@
    }
   },
   {
-   "control_number": "39807",
-   "title": "Global Studies",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117",
-    "pages": [
-     117
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 31720's"
-   }
-  },
-  {
-   "control_number": "40639",
-   "title": "Biotechnology Lab Assistant",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90",
-    "pages": [
-     90,
-     91
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 32648's"
-   }
-  },
-  {
    "control_number": "42027",
    "title": "High School Equivalency Test Preparation in All Subject Areas",
    "award": "Noncredit program",
@@ -3250,7 +3364,8 @@
     "pages": [
      261
     ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 36211's"
+    "judged": "High School Equivalency Test Prepa- ration in All Subject Areas, COM Certificate of Competency The Certificate of Competency in High School Equivalency Test (Hi",
+    "why": "the block that ends at this program's number opens on 33941's heading"
    }
   },
   {
@@ -3258,24 +3373,13 @@
    "title": "Public Administration",
    "award": "A.S. Degree",
    "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=134",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=133",
     "pages": [
+     133,
      134
     ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 43901's"
-   }
-  },
-  {
-   "control_number": "43692",
-   "title": "Data Science, AS",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125",
-    "pages": [
-     125,
-     126
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 44797's"
+    "judged": "Public Administration and Policy, CERT Certificate of Proficiency Unit Range for Completion : 15.0 - 15.0 The Certificate of Proficiency in Public Administratio",
+    "why": "the block that ends at this program's number opens on 43901's heading"
    }
   },
   {
@@ -3288,55 +3392,6 @@
    }
   },
   {
-   "control_number": "44326",
-   "title": "Apprenticeship in Early Childhood, AS",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
-    "pages": [
-     322
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 44174's"
-   }
-  },
-  {
-   "control_number": "44459",
-   "title": "Water Utility Management",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143",
-    "pages": [
-     143
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 19624's"
-   }
-  },
-  {
-   "control_number": "45504",
-   "title": "Solar Installation Technician",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
-    "pages": [
-     267
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 24097's"
-   }
-  },
-  {
-   "control_number": "45581",
-   "title": "C++ Programming, CA",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98",
-    "pages": [
-     98,
-     99
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 21647's"
-   }
-  },
-  {
    "control_number": "45794",
    "title": "California-specific Certified Community Association Management (CCAM)",
    "award": "Noncredit program",
@@ -3345,19 +3400,8 @@
     "pages": [
      269
     ],
+    "judged": "Medical Billing, CC Certificate of Completion The Certificate of Completion in Medical Billing is designed to give students the necessary knowledge and skills t",
     "why": "the catalog prints each program's control number after it, and this window is closed by 24052's"
-   }
-  },
-  {
-   "control_number": "45881",
-   "title": "Becoming a Social Media Influencer",
-   "award": "Noncredit program",
-   "near_miss": {
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255",
-    "pages": [
-     255
-    ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 33421's"
    }
   },
   {
@@ -3379,10 +3423,10 @@
    "near_miss": {
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
     "pages": [
-     269,
-     270
+     269
     ],
-    "why": "the catalog prints each program's control number after it, and this window is closed by 24052's"
+    "judged": "VOCATIONAL REAL ESTATE California-specific Certified Community Association Management (CCAM), CC Certificate of Completion The Certified (CA) Community Associat",
+    "why": "the block that ends at this program's number opens on 45794's heading"
    }
   },
   {
@@ -3400,15 +3444,15 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 13,
+  "0.5-0.8": 14,
   "0.8-1.0": 49,
-  "1.0": 130
+  "1.0": 148
  },
  "would_extract": {
   "against": "kb/program_requirements_college/santiago_canyon",
-  "kept": 25,
+  "kept": 3,
   "kept_moved": 0,
-  "programs": 54,
+  "programs": 67,
   "list": [
    {
     "control_number": "11856",
@@ -3428,6 +3472,36 @@
     "coverage": 0.818,
     "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=92",
     "was_coverage": 0.818,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "11858",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=81",
+    "coverage": 1.0,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "11860",
+    "title": "Entrepreneurship",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=92",
+    "coverage": 1.0,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "11861",
+    "title": "Management",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=124",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -3458,6 +3532,16 @@
     "coverage": 0.944,
     "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=114",
     "was_coverage": 0.944,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "11929",
+    "title": "Communications",
+    "award": "A.A. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
+    "coverage": 0.833,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
+    "was_coverage": 0.833,
     "was_method": "pdf_pages"
    },
    {
@@ -3531,6 +3615,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "18317",
+    "title": "Liberal Arts: Arts, Humanities, and Communication, AA",
+    "award": "A.A. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=103",
+    "coverage": 0.991,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=104",
+    "was_coverage": 0.781,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "18319",
     "title": "Liberal Arts: Multi-Cultural Studies",
     "award": "A.A. Degree",
@@ -3591,6 +3685,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "21658",
+    "title": "Apprenticeship: Carpentry, Finish Carpentry",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
+    "coverage": 0.929,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
+    "was_coverage": 0.929,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "21663",
     "title": "Apprenticeship: Carpentry, Drywall Finisher",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -3637,6 +3741,16 @@
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=320",
     "coverage": 1.0,
     "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=320",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31601",
+    "title": "Adult High School Diploma",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263",
+    "coverage": 1.0,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3751,6 +3865,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "36214",
+    "title": "Effective Communication Skills",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+    "coverage": 1.0,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "36215",
     "title": "Employment Readiness",
     "award": "Noncredit program",
@@ -3791,6 +3915,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "37132",
+    "title": "Social Justice Studies: Chicano",
+    "award": "A.A- T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137",
+    "coverage": 0.786,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137",
+    "was_coverage": 0.929,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "37133",
     "title": "Social Justice Studies: Gender",
     "award": "A.A- T Degree",
@@ -3821,12 +3955,42 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "37913",
+    "title": "Bilingual Instructional Aide: Spanish",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=112",
+    "coverage": 1.0,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=112",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38157",
+    "title": "After School Program Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
+    "coverage": 0.6,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
+    "was_coverage": 0.8,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "38399",
     "title": "Office Technology",
     "award": "Noncredit program",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
     "coverage": 1.0,
     "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39807",
+    "title": "Global Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117",
+    "coverage": 1.0,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3888,6 +4052,16 @@
     "coverage": 0.938,
     "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=126",
     "was_coverage": 0.812,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44326",
+    "title": "Apprenticeship in Early Childhood, AS",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
+    "coverage": 1.0,
+    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -3995,6 +4169,22 @@
   ],
   "held_no_gain": [
    {
+    "control_number": "11859",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=92",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "11866",
+    "title": "General Marketing",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=124",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "11903",
     "title": "Computer Science",
     "award": "A.S. Degree",
@@ -4011,12 +4201,36 @@
     "was_coverage": 0.714
    },
    {
+    "control_number": "11906",
+    "title": "Land Surveying",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=328",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "11907",
+    "title": "Water Distribution, AS",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "11911",
     "title": "Art",
     "award": "A.A. Degree",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=87",
     "coverage": 0.955,
     "was_coverage": 0.955
+   },
+   {
+    "control_number": "11921",
+    "title": "Graphic Design",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=88",
+    "coverage": 0.966,
+    "was_coverage": 0.966
    },
    {
     "control_number": "11925",
@@ -4031,6 +4245,14 @@
     "title": "Chemistry",
     "award": "A.S. Degree",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "11938",
+    "title": "Gender, Sexuality, and Women's Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115",
     "coverage": 1.0,
     "was_coverage": 1.0
    },
@@ -4099,6 +4321,14 @@
     "was_coverage": 1.0
    },
    {
+    "control_number": "19623",
+    "title": "Water Treatment, AS",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "21631",
     "title": "Accounting",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -4131,6 +4361,14 @@
     "was_coverage": 1.0
    },
    {
+    "control_number": "21649",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "21657",
     "title": "Apprenticeship: Carpentry, Concrete",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -4143,6 +4381,14 @@
     "title": "Apprenticeship: Carpentry, Framing",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21660",
+    "title": "Apprenticeship: Carpentry, Tilt-Up",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
     "coverage": 1.0,
     "was_coverage": 1.0
    },
@@ -4203,6 +4449,22 @@
     "was_coverage": 1.0
    },
    {
+    "control_number": "24037",
+    "title": "Construction Laborer",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24052",
+    "title": "Medical Billing",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "24093",
     "title": "Food Service Manager",
     "award": "Noncredit program",
@@ -4215,6 +4477,22 @@
     "title": "General Office Clerk",
     "award": "Noncredit program",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24097",
+    "title": "Carpenter",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24146",
+    "title": "Commercial Textile Worker",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
     "coverage": 1.0,
     "was_coverage": 1.0
    },
@@ -4275,6 +4553,14 @@
     "was_coverage": 1.0
    },
    {
+    "control_number": "24234",
+    "title": "ESL Intermediate Multilevel, COM",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "24285",
     "title": "English as a Second Language Program",
     "award": "Noncredit program",
@@ -4317,6 +4603,14 @@
    {
     "control_number": "30647",
     "title": "Enhanced Intermediate ESL Skills",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30690",
+    "title": "Enhanced Beginning ESL Skills, COM",
     "award": "Noncredit program",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
     "coverage": 1.0,
@@ -4515,6 +4809,14 @@
     "was_coverage": 1.0
    },
    {
+    "control_number": "35234",
+    "title": "Apprenticeship Carpentry, Insulator",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "35614",
     "title": "Early Childhood Education",
     "award": "A.S. T Degree",
@@ -4535,6 +4837,14 @@
     "title": "Adult Secondary Education, College Preparation Algebra",
     "award": "Noncredit program",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36211",
+    "title": "Adult Secondary Education, College Preparatory Composition",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
     "coverage": 1.0,
     "was_coverage": 1.0
    },
@@ -4635,10 +4945,26 @@
     "was_coverage": 1.0
    },
    {
+    "control_number": "37478",
+    "title": "American College English/ESL",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84",
+    "coverage": 0.818,
+    "was_coverage": 0.818
+   },
+   {
     "control_number": "37805",
     "title": "Nurse Assistant Acute Care",
     "award": "Noncredit program",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37806",
+    "title": "Home Health Aide (HHA) for Certified Nurse Assistants (CNA)",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
     "coverage": 1.0,
     "was_coverage": 1.0
    },
@@ -4683,6 +5009,14 @@
     "was_coverage": 1.0
    },
    {
+    "control_number": "39916",
+    "title": "Kinesiology - Fitness and Active Lifestyle",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=118",
+    "coverage": 0.902,
+    "was_coverage": 0.902
+   },
+   {
     "control_number": "39920",
     "title": "Kinesiology - Sport Studies",
     "award": "A.S. Degree",
@@ -4691,10 +5025,26 @@
     "was_coverage": 0.905
    },
    {
+    "control_number": "39921",
+    "title": "Kinesiology - Sport Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=122",
+    "coverage": 0.889,
+    "was_coverage": 0.889
+   },
+   {
     "control_number": "40510",
     "title": "Enhanced Advanced ESL Skills",
     "award": "Noncredit program",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40639",
+    "title": "Biotechnology Lab Assistant",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
     "coverage": 1.0,
     "was_coverage": 1.0
    },
@@ -4771,6 +5121,14 @@
     "was_coverage": 0.929
    },
    {
+    "control_number": "43692",
+    "title": "Data Science, AS",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125",
+    "coverage": 0.938,
+    "was_coverage": 0.938
+   },
+   {
     "control_number": "43876",
     "title": "Drone Operation and Photography, CC",
     "award": "Noncredit program",
@@ -4795,6 +5153,22 @@
     "was_coverage": 1.0
    },
    {
+    "control_number": "44459",
+    "title": "Water Utility Management",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44797",
+    "title": "Social Media, AS",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=124",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "44861",
     "title": "Lactation Consultant Education",
     "award": "Noncredit program",
@@ -4807,6 +5181,14 @@
     "title": "Unarmed Public Safety and Security Officer Program",
     "award": "Noncredit program",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "45504",
+    "title": "Solar Installation Technician",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
     "coverage": 1.0,
     "was_coverage": 1.0
    },
@@ -4827,6 +5209,14 @@
     "was_coverage": 1.0
    },
    {
+    "control_number": "45581",
+    "title": "C++ Programming, CA",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
     "control_number": "45607",
     "title": "Adult Secondary Education Foreign Language",
     "award": "Noncredit program",
@@ -4839,6 +5229,14 @@
     "title": "Digital Literacy for Online Learning Skills",
     "award": "Noncredit program",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "45881",
+    "title": "Becoming a Social Media Influencer",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255",
     "coverage": 1.0,
     "was_coverage": 1.0
    },
@@ -4862,125 +5260,38 @@
   "held_opens_on_list": [],
   "refused_passing": [
    {
-    "control_number": "11859",
-    "title": "Business Management",
-    "award": "A.S. Degree",
-    "closed_by": "11857",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "11866",
-    "title": "General Marketing",
-    "award": "A.S. Degree",
-    "closed_by": "11861",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "11938",
-    "title": "Gender, Sexuality, and Women's Studies",
-    "award": "A.A. Degree",
-    "closed_by": "39808",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "19623",
-    "title": "Water Treatment, AS",
-    "award": "A.S. Degree",
-    "closed_by": "19625",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "24037",
-    "title": "Construction Laborer",
-    "award": "Noncredit program",
-    "closed_by": "24097",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "24146",
-    "title": "Commercial Textile Worker",
-    "award": "Noncredit program",
-    "closed_by": "33161",
-    "why": "block_not_named"
-   },
-   {
     "control_number": "36210",
     "title": "3D Printing, CC",
     "award": "Noncredit program",
-    "closed_by": "31601",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "37806",
-    "title": "Home Health Aide (HHA) for Certified Nurse Assistants (CNA)",
-    "award": "Noncredit program",
-    "closed_by": "36901",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "40639",
-    "title": "Biotechnology Lab Assistant",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "closed_by": "32648",
-    "why": "block_not_named"
+    "closed_by": "38399",
+    "why": "block_names_another",
+    "judged": "OFFICE TECHNOLOGY/ COMPUTER APPLICATIONS 3D Printing, CC Certificate of Completion The Certificate of Completion in 3D Printing is designed to teach students ho"
    },
    {
     "control_number": "42027",
     "title": "High School Equivalency Test Preparation in All Subject Areas",
     "award": "Noncredit program",
-    "closed_by": "36211",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "43692",
-    "title": "Data Science, AS",
-    "award": "A.S. Degree",
-    "closed_by": "44797",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "44459",
-    "title": "Water Utility Management",
-    "award": "A.S. Degree",
-    "closed_by": "19624",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "45504",
-    "title": "Solar Installation Technician",
-    "award": "Noncredit program",
-    "closed_by": "24097",
-    "why": "block_not_named"
-   },
-   {
-    "control_number": "45581",
-    "title": "C++ Programming, CA",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "closed_by": "21647",
-    "why": "block_not_named"
+    "closed_by": "33941",
+    "why": "block_names_another",
+    "judged": "High School Equivalency Test Prepa- ration in All Subject Areas, COM Certificate of Competency The Certificate of Competency in High School Equivalency Test (Hi"
    },
    {
     "control_number": "45794",
     "title": "California-specific Certified Community Association Management (CCAM)",
     "award": "Noncredit program",
     "closed_by": "24052",
-    "why": "number_not_printed"
-   },
-   {
-    "control_number": "45881",
-    "title": "Becoming a Social Media Influencer",
-    "award": "Noncredit program",
-    "closed_by": "33421",
-    "why": "block_not_named"
+    "why": "number_not_printed",
+    "judged": "Medical Billing, CC Certificate of Completion The Certificate of Completion in Medical Billing is designed to give students the necessary knowledge and skills t"
    },
    {
     "control_number": "46367",
     "title": "Real Estate Career Preparation",
     "award": "Noncredit program",
-    "closed_by": "24052",
-    "why": "block_not_named"
+    "closed_by": "45794",
+    "why": "block_names_another",
+    "judged": "VOCATIONAL REAL ESTATE California-specific Certified Community Association Management (CCAM), CC Certificate of Completion The Certified (CA) Community Associat"
    }
   ]
  },
- "run": "43360377086"
+ "run": "43362151384"
 }
