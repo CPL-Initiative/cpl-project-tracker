@@ -103,6 +103,17 @@ source_url where a record is filed (it names the page the reader used), else the
 when neither is an http(s) address. Sorted by cause, then title. A college with nothing still to pass gets no file.
 A college the run no longer holds loses its file. --check compares every sidecar too.
 
+THE OUTCOME SIDECARS (S649, Sam's asks 4 and 5 in session: the Overall card's SLO and PLO lines open what is
+collected). Beside them, PROGRAMS_DIR/<slug>.outcomes.json for each harvested college with either:
+                  {"schema", "college", "slug", "basis": "committed files only",
+                   "courses": {"slo_courses", "objective_courses", "read_at", "sources": [...],
+                               "by_subject": [{"subject", "slo_courses", "objective_courses"}]},
+                   "programs": [{"cn", "title", "award", "outcomes": ["<the record's own words>", ...]}]}
+programs are the filed records' program learning outcomes (record.program.outcomes), text; courses are counts only,
+from the committed course-outline reads (kb/course_outcomes/<folder>/read_*.json, trial folders left out), a course
+counted once on its normalized key (d-course-key-normalized-s648) and attributed through each row's named_by. The
+live read's per-college counts stay the headline; these say what the committed files hold.
+
 Usage, from the repo root:
   python3 kb/_build_commons_data_status.py [--root DIR] [--out PATH] [--programs-out DIR] [--live PATH] [--check] [--quiet]
 (--programs-out defaults to PROGRAMS_DIR beside the default --out, or commons_data_programs/ beside a given --out.)
@@ -142,7 +153,8 @@ AGE_DAYS = {"fresh": 7, "recent": 30}
 FIELDS = {
     "id": "shareable", "name": "shareable", "district": "shareable", "kind": "shareable",
     "harvested": "shareable", "programs": "shareable", "passing": "shareable", "gap": "shareable",
-    "read_at": "shareable", "read_kind": "internal", "slug": "internal", "causes": "internal", "programs_file": "internal",
+    "read_at": "shareable", "read_kind": "internal", "slug": "internal", "causes": "internal", "programs_file": "internal", "outcomes_file": "internal", "outline_system": "internal",
+    "objectives_printed": "shareable",
     "cost_usd": "internal", "passed_at_read": "internal", "slo_queue": "internal", "scout": "internal",
     "spot_check": "internal", "confidence": "shareable",
     # slice 2 (the expanding row and the side panel): what the college's read receipt says about its read
@@ -332,6 +344,94 @@ def cause_programs(root: str, census: dict, harvested: dict) -> dict:
         rows.sort(key=lambda x: (x["cause"], (x["title"] or "").lower(), x["cn"]))
         out[slug] = {"schema": SCHEMA, "college": harvested[slug]["name"], "slug": slug, "basis": "committed files only",
                      "programs": rows}
+    return out
+
+
+def course_key(code) -> str:
+    """The one course key (d-course-key-normalized-s648): uppercased, spaces and hyphens removed."""
+    return re.sub(r"[\s-]+", "", str(code or "")).upper()
+
+
+def subject_of(key: str) -> str:
+    m = re.match(r"^[A-Z&/]+", key)
+    return m.group(0) if m else "(no subject)"
+
+
+# The outline systems whose course outlines print no objectives (the SLO worker's read on #3263, S649: the five eLumen
+# colleges read so far, Cabrillo, Modesto, Mission, Columbia and Lake Tahoe, print none). A college read only on such a
+# system that holds no objective course reads "the outlines print none", never a missing figure. Once
+# kb/_course_outcomes_read.py's OBJECTIVES_BY_SYSTEM is on main, it is the source and this line goes.
+NO_OBJECTIVES_SYSTEMS = ("elumen",)
+
+
+def objectives_printed(s: dict | None):
+    """False when every committed read of the college is on a system whose outlines print no objectives and none was
+    found; None when it cannot be said (no read, or a system that prints them)."""
+    if not s or s["obj"] or not s.get("systems"):
+        return None
+    return False if all(x in NO_OBJECTIVES_SYSTEMS for x in s["systems"]) else None
+
+
+def college_outcomes(root: str, harvested: dict) -> dict:
+    """{slug: sidecar} of what is collected about outcomes (S649, Sam's ask 4 in session): each filed record's program
+    learning outcomes, in the record's own words, and the committed course-outline reads' SLO and objective courses by
+    subject (counts, never text; the reads are kb/course_outcomes/<folder>/read_*.json, trial folders left out). A
+    college with neither gets no file. See THE OUTCOME SIDECARS above."""
+    sys.path.insert(0, os.path.join(root, "kb"))
+    import _harvest_gap_census as G  # noqa: E402
+    slo = {}
+    for path in sorted(glob.glob(os.path.join(root, OUTCOMES, "*", "read_*.json"))):
+        if os.path.basename(os.path.dirname(path)).startswith("trial_"):
+            continue
+        d = _maybe(path) or {}
+        rel = os.path.relpath(path, root)
+        for row in d.get("rows") or []:
+            k = course_key(row.get("code"))
+            if not k:
+                continue
+            for slug in row.get("named_by") or []:
+                if slug not in harvested:
+                    continue
+                s = slo.setdefault(slug, {"slo": set(), "obj": set(), "at": None, "files": set(), "systems": set()})
+                if d.get("system"):
+                    s["systems"].add(d["system"])
+                # a "groups" row holds each college's SLOs in its own group (sdccd's reports)
+                if row.get("outcomes") or any((g or {}).get("outcomes") for g in row.get("groups") or []):
+                    s["slo"].add(k)
+                if row.get("objectives"):
+                    s["obj"].add(k)
+                s["files"].add(rel)
+                if d.get("at") and (s["at"] is None or d["at"] > s["at"]):
+                    s["at"] = d["at"]
+    out = {}
+    for slug, h in sorted(harvested.items()):
+        rd = os.path.join(root, COLLEGE_DIR, slug, "records")
+        plos = []
+        for f in (sorted(os.listdir(rd)) if os.path.isdir(rd) else []):
+            if not f.endswith(".json"):
+                continue
+            r = _maybe(os.path.join(rd, f)) or {}
+            o = (((r.get("record") or {}).get("program") or {}).get("outcomes")) or []
+            o = [str(x).strip() for x in o if str(x or "").strip()]
+            if o:
+                plos.append({"cn": G.norm_cn(r.get("control_number") or f[:-5]), "title": r.get("title"),
+                             "award": r.get("award"), "outcomes": o})
+        plos.sort(key=lambda x: ((x["title"] or "").lower(), x["cn"]))
+        s = slo.get(slug)
+        subjects = []
+        if s:
+            for sub in sorted({subject_of(k) for k in s["slo"] | s["obj"]}):
+                subjects.append({"subject": sub, "slo_courses": sum(1 for k in s["slo"] if subject_of(k) == sub),
+                                 "objective_courses": sum(1 for k in s["obj"] if subject_of(k) == sub)})
+        if not plos and not subjects:
+            continue
+        out[slug] = {"schema": SCHEMA, "college": h["name"], "slug": slug, "basis": "committed files only",
+                     "courses": {"slo_courses": len(s["slo"]) if s else 0, "objective_courses": len(s["obj"]) if s else 0,
+                                 "read_at": s["at"] if s else None, "sources": sorted(s["files"]) if s else [],
+                                 "systems": sorted(s["systems"]) if s else [],
+                                 "objectives_printed": objectives_printed(s),
+                                 "by_subject": subjects},
+                     "programs": plos}
     return out
 
 
@@ -769,6 +869,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
 
     harvested, census = harvest(root)
     sidecars = cause_programs(root, census, harvested)
+    outcomes = college_outcomes(root, harvested)
     by_id = {}
     for slug, h in harvested.items():
         cid = resolve(h["name"])
@@ -817,6 +918,9 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
             "programs": h["programs"] if h else None, "passing": h["passing"] if h else None,
             "gap": h["gap"] if h else None, "causes": h["causes"] if h else None,
             "programs_file": (PROGRAMS_DIR + "/" + h["slug"] + ".json") if h and h["slug"] in sidecars else None,
+            "outcomes_file": (PROGRAMS_DIR + "/" + h["slug"] + ".outcomes.json") if h and h["slug"] in outcomes else None,
+            "outline_system": ((outcomes.get(h["slug"]) or {}).get("courses") or {}).get("systems") or None if h else None,
+            "objectives_printed": ((outcomes.get(h["slug"]) or {}).get("courses") or {}).get("objectives_printed") if h else None,
             "read_at": h["read_at"] if h else None, "read_kind": h["read_kind"] if h else None,
             "cost_usd": h["cost_usd"] if h else None, "passed_at_read": h["passed_at_read"] if h else None,
             "slo_queue": slo.get(cid), "scout": scouts.get(cid), "spot_check": spot.get(cid),
@@ -863,7 +967,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "overall": overall_block(live),
         "dictionary": dictionary,
         "apis": apis,
-        "_sidecars": sidecars,
+        "_sidecars": dict([(k + ".json", v) for k, v in sidecars.items()] + [(k + ".outcomes.json", v) for k, v in outcomes.items()]),
     }
 
 
@@ -893,18 +997,18 @@ def main(argv=None) -> int:
         old = _maybe(out) or {}
         same = {k: v for k, v in old.items() if k != "written_at"} == json.loads(dumps({k: v for k, v in d.items() if k != "written_at"}))
         have = sorted(f for f in os.listdir(pdir) if f.endswith(".json")) if os.path.isdir(pdir) else []
-        stale = [f for f in have if f[:-5] not in side] + [s + ".json" for s, v in side.items()
-                 if not os.path.exists(os.path.join(pdir, s + ".json"))
-                 or open(os.path.join(pdir, s + ".json"), encoding="utf-8").read() != dumps_programs(v)]
+        stale = [f for f in have if f not in side] + [n for n, v in side.items()
+                 if not os.path.exists(os.path.join(pdir, n))
+                 or open(os.path.join(pdir, n), encoding="utf-8").read() != dumps_programs(v)]
         print("commons_data.json " + ("current" if same else "STALE: rerun kb/_build_commons_data_status.py")
-              + "; cause sidecars " + ("current" if not stale else "STALE (%d): %s" % (len(stale), ", ".join(sorted(stale)[:5]))))
+              + "; college sidecars " + ("current" if not stale else "STALE (%d): %s" % (len(stale), ", ".join(sorted(stale)[:5]))))
         return 0 if same and not stale else 1
     os.makedirs(pdir, exist_ok=True)
     for f in os.listdir(pdir):
-        if f.endswith(".json") and f[:-5] not in side:
+        if f.endswith(".json") and f not in side:
             os.remove(os.path.join(pdir, f))
-    for slug, v in side.items():
-        with open(os.path.join(pdir, slug + ".json"), "w", encoding="utf-8") as f:
+    for name, v in side.items():
+        with open(os.path.join(pdir, name), "w", encoding="utf-8") as f:
             f.write(dumps_programs(v))
     with open(out, "w", encoding="utf-8") as f:
         f.write(dumps(d))

@@ -286,7 +286,16 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("panel 6: the asks are the census's levers in its words, the owner TBA with the reason, under Team asks, said to be the team's work",
     /Check the Program Course File for its courses/.test(txt(P)) && /20 programs, free\. Owner: TBA/.test(txt(P)) && /Owners reason\./.test(txt(P))
     && /Nothing here asks the college to do anything\./.test(txt(P.querySelector('[data-team="asks"]'))) && Array.from(P.querySelectorAll(".cdd-psec > h3")).map(txt).indexOf("Team asks") >= 0 && Array.from(P.querySelectorAll(".cdd-psec > h3")).map(txt).indexOf("Asks") < 0);
-  check("panel 7: the catalog's own link, the cost, the sources", P.querySelector('a[href="https://alpha.example.edu/catalog/"]') && /\$8\.00/.test(txt(P)) && /kb\/spot_checks\/a\.check\.json/.test(txt(P)));
+  /* S649 (Sam, in session): a source opens in the panel; the panel's one link goes to the same place in a new tab. */
+  const catW = P.querySelector('button[data-pane="catalog"]');
+  if (catW) catW.click();
+  const catTab = P.querySelector('a.cdd-newtab[href="https://alpha.example.edu/catalog/"]');
+  if (catTab) P.querySelector("#cdd-pane-back").click();
+  const spotW = P.querySelector('button[data-pane="source/spot"]');
+  if (spotW) spotW.click();
+  const spotIn = /kb\/spot_checks\/a\.check\.json/.test(txt(P));
+  if (spotW) P.querySelector("#cdd-pane-back").click();
+  check("panel 7: the catalog opens in the panel with its new-tab link, the cost, the sources", catW && catTab && /\$8\.00/.test(txt(P)) && spotW && spotIn);
   check("panel 8: never 'no data yet'", !/no data yet/i.test(txt(P)) && !/no data yet/i.test(SRC));
   // the focus trap
   const f = Array.from(P.querySelectorAll('a[href], button:not([disabled]), input, [tabindex="0"]'));
@@ -556,7 +565,16 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("dict 3: each entry gives its stage, owner, today's procedure, the planned improvement and a GitHub link to the doc's anchor",
     /Stage\s*Connected/.test(txt(ent("Program requirements"))) && /Owner or steward\s*The college/.test(txt(ent("Program requirements"))) && /How we get it today/.test(txt(ent("Program requirements")))
     && /Planned improvement\s*One matrix run/.test(txt(ent("Program requirements")))
-    && ent("Program requirements").querySelector('a[href="https://github.com/cpl-initiative/cpl-project-tracker/blob/main/docs/reference/data_dictionary.md#program-requirements"]'));
+    && (function () {
+      /* S649: the entry's word opens it in the panel; the panel's new-tab link goes to the doc's anchor on GitHub. */
+      const w = ent("Program requirements").querySelector('button[data-pane="entry/program-requirements"]');
+      if (!w) return false;
+      w.click();
+      const ok = !!s3.d.querySelector('#cdd-panel a.cdd-newtab[href="https://github.com/cpl-initiative/cpl-project-tracker/blob/main/docs/reference/data_dictionary.md#program-requirements"]')
+        && s3.w.location.hash === "#commons/data/dictionary/entry/program-requirements";
+      s3.D.closePanel();
+      return ok;
+    })());
   check("dict 4 ⭐: repo-verifiable and cited evidence shown apart in words; a missing file named",
     /Verifiable in the repo \(1\)/.test(txt(ent("Program requirements"))) && /Cited, outside the repo's checks \(1\)/.test(txt(ent("Program requirements")))
     && /Named but not found in the repo \(1\)\s*kb\/nowhere\.json/.test(txt(ent("Course descriptions"))));

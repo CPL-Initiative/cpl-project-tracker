@@ -78,7 +78,7 @@
     "coci_lookup.test.js": 32,
     "commons_ase.test.js": 36,
     "commons_data.test.js": 220,
-    "commons_data_controls.test.js": 21,
+    "commons_data_controls.test.js": 41,
     "coci_list.test.js": 40,
     "college_activity.test.js": 7,
     "college_activity_jst.test.js": 18,

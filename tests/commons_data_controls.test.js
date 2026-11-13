@@ -16,6 +16,14 @@
 //       side panel at that cause, at #commons/data/college/<slug>/cause/<key>, listing exactly the programs the cause
 //       counts; a program with a catalog page links to it in a new tab, one without is plain text; a college's
 //       program file is fetched only when its row or panel opens; a file that cannot be read says so in words.
+//   (6) ⭐ every link opens in the side panel (Sam, in session, S649, reversing #3257's new tabs): in every college's
+//       row each source word (the catalog, what the capture holds, the paid read, CPL Pathways) and each SLO, PLO and
+//       objective word opens the panel at its own address with a heading and content, and the panel's one link out,
+//       "Open in a new tab", has a destination; no other link on the page leaves it. The SLO and PLO panes show what
+//       the committed files hold (Cuesta: SLO and objective courses by subject, its PLOs); Colleges with collected
+//       SLOs (#commons/data/slos) lists exactly the colleges the live read holds SLOs or objectives for, says how
+//       many are not read, and each name opens its college's SLO pane; the list carries an SLOs and objectives
+//       column; the view uses the window's full width.
 //   (3) the opened row's cause sentence is a table with th scope; the Confidence card with no spot-check says what each
 //       level rests on rather than a bare "Not yet"; the count line above the list does not repeat the order line.
 // Read against the committed kb/status/commons_data.json, so a new figure or control is walked the day it lands.
@@ -101,9 +109,11 @@ function audit(x, where, bad, seen) {
     } else if (e.tagName === "A") {
       const h = e.getAttribute("href") || "";
       if (!h) bad.push(name + " (a link with no href)");
-      else if (/^https?:/i.test(h)) {
-        if (e.getAttribute("target") !== "_blank" || !/noopener/.test(e.getAttribute("rel") || "")) bad.push(name + " (a link out without a new tab and rel=noopener)");
-        else if (!/\(opens in a new tab\)/.test(txt(e))) bad.push(name + " (opens a new tab without saying so)");
+      else if (e.getAttribute("target") === "_blank" || /^https?:/i.test(h)) {
+        /* S649: the one link that leaves the page is the panel's "Open in a new tab". */
+        if (!e.classList.contains("cdd-newtab") || !e.closest("#cdd-panel")) bad.push(name + " (a link out of the page that is not the panel's new-tab control)");
+        else if (e.getAttribute("target") !== "_blank" || !/noopener/.test(e.getAttribute("rel") || "")) bad.push(name + " (a new tab without rel=noopener)");
+        else if (txt(e) !== "Open in a new tab") bad.push(name + " (the new-tab control says something else)");
       } else if (!/^#/.test(h)) bad.push(name + " (an href that is neither a page address nor http(s): " + h + ")");
     } else bad.push(name + " (styled as a control but neither a button nor a link)");
   });
@@ -146,8 +156,21 @@ function audit(x, where, bad, seen) {
     check("row 2: a Confidence card with no spot-check says what each level rests on, never a bare Not yet",
       conf && !/Not yet/.test(txt(conf)) && (!FIX.rule.confidence_card || conf.querySelector("[data-levels]")));
     const srcs = m && m.querySelector("[data-sources]");
-    check("row 3: the row's sources open their pages in a new tab and say so", !!srcs && srcs.querySelectorAll("a").length === 3
-      && Array.from(srcs.querySelectorAll("a")).every((a) => a.target === "_blank" && /noopener/.test(a.rel) && /^https:\/\//.test(a.href) && /\(opens in a new tab\)$/.test(txt(a))));
+    check("row 3: the row's sources are words that open the side panel: the catalog, what the capture holds, the paid read, CPL Pathways",
+      !!srcs && !srcs.querySelector("a") && JSON.stringify(Array.from(srcs.querySelectorAll("button.cdd-paneword")).map((b) => b.getAttribute("data-pane"))) === '["catalog","capture","run","pathways"]');
+    /* Each opens its pane; the catalog's new tab is the catalog, the run's its log, CPL Pathways the college's view. */
+    const tabs = {};
+    for (const k of ["catalog", "capture", "run", "pathways"]) {
+      f.d.querySelector('#cdd-more-9001 button[data-pane="' + k + '"]').click(); await settle();
+      const nt = f.d.querySelector("#cdd-panel a.cdd-newtab");
+      tabs[k] = [f.w.location.hash, nt ? nt.getAttribute("href") : null, txt(f.d.querySelector("#cdd-panel-h"))];
+      f.D.closePanel(); await settle();
+    }
+    check("row 3b ⭐: each source opens its pane at its address, with a new tab to the same place",
+      tabs.catalog[0] === "#commons/data/college/ridge-college/catalog" && tabs.catalog[1] === "https://catalog.ridge.example.edu/current/"
+      && tabs.run[1] === "https://github.com/cpl-initiative/cpl-project-tracker/actions/runs/39035209486"
+      && tabs.pathways[1] === "#cpl-pathways/college/Ridge%20College" && tabs.capture[1] === "#commons/data/college/ridge-college/capture"
+      && tabs.capture[2] === "What the capture holds", tabs);
     check("row 4: the failed checks name their base, the records extracted",
       /Records failing each machine check, of the 53 records extracted as the capture read them/.test(txt(m)) && /Units arithmetic\s*16/.test(txt(m)) && !/invented\s*0/i.test(txt(m)));
     audit(f, "fixture row", bad, seen);
@@ -175,8 +198,8 @@ function audit(x, where, bad, seen) {
         && names.every((n) => y.d.querySelector('#cdd-dist-table th[scope=row] button.cmn-word[data-district="' + n.replace(/"/g, '\\"') + '"]')), rowsD.length + " of " + names.length);
     }
     if (/college\//.test(h)) {
-      const links = Array.from(y.d.querySelectorAll("#cdd-panel .cdd-srcs a"));
-      check("panel: the Sources list opens each source's page in a new tab", links.length >= 2 && links.every((a) => a.target === "_blank" && /noopener/.test(a.rel)), links.length);
+      const words = Array.from(y.d.querySelectorAll("#cdd-panel .cdd-srcs button.cdd-paneword"));
+      check("panel: the Sources list's every source is a word that opens the panel, none a link out", words.length >= 3 && !y.d.querySelector("#cdd-panel .cdd-srcs a"), words.length);
     }
   }
   /* Every district's name opens exactly its colleges, at its own address (the fixture pins Kern beside West Kern). */
@@ -235,7 +258,7 @@ function audit(x, where, bad, seen) {
           const s0 = c5.d.querySelector('#cdd-panel #cdd-cprogs[data-cause-programs="' + k + '"]');
           const n0 = s0 ? s0.querySelectorAll("ul.cdd-progs > li").length : -1;
           if (n0 !== c.causes[k] || c5.w.location.hash !== "#commons/data/college/" + c5.D.slugOf(c) + "/cause/" + k) off.push(c.name + " " + k + ": " + n0 + " of " + c.causes[k]);
-          if (s0) s0.querySelectorAll("ul.cdd-progs > li").forEach((li) => { const a = li.querySelector("a"); (a ? links : plain).push(a || li); });
+          if (s0) s0.querySelectorAll("ul.cdd-progs > li").forEach((li) => { const a = li.querySelector("button"); (a ? links : plain).push(a || li); });
           continue;
         }
         if (!c5.d.getElementById("cdd-more-" + c.id)) { c5.d.querySelector('[data-expand="' + c.id + '"]').click(); await settle(); }
@@ -248,7 +271,7 @@ function audit(x, where, bad, seen) {
         const pw = c5.d.querySelector('#cdd-panel button.cdd-cause[data-cause="' + k + '"]');
         if (n !== c.causes[k] || c5.w.location.hash !== "#commons/data/college/" + c5.D.slugOf(c) + "/cause/" + k || !pw || pw.getAttribute("aria-expanded") !== "true")
           off.push(c.name + " " + k + ": " + n + " of " + c.causes[k] + " at " + c5.w.location.hash);
-        if (sec) sec.querySelectorAll("ul.cdd-progs > li").forEach((li) => { const a = li.querySelector("a"); (a ? links : plain).push(a || li); });
+        if (sec) sec.querySelectorAll("ul.cdd-progs > li").forEach((li) => { const a = li.querySelector("button"); (a ? links : plain).push(a || li); });
         if (sec && c.id === DATA.colleges.filter((x) => x.harvested && x.gap)[0].id) audit(c5, "panel at " + k, bad, seen);
       }
       if (c5.d.querySelector("#cdd-panel:not([hidden])")) { c5.D.closePanel(); await settle(); }
@@ -258,8 +281,8 @@ function audit(x, where, bad, seen) {
     const want = DATA.colleges.reduce((n, c) => n + (c.harvested && c.gap ? Object.keys(c.causes || {}).length : 0), 0);
     check("causes 2 ⭐ (committed file): every cause word in every college's row opens the panel at #commons/data/college/<slug>/cause/<key>, listing exactly the programs it counts",
       words === want && want > 0 && !off.length, off.slice(0, 5).concat(["words " + words + " of " + want]));
-    const badLinks = links.filter((a) => a.target !== "_blank" || !/noopener/.test(a.rel) || !/^https?:\/\//.test(a.getAttribute("href")) || !/\(opens in a new tab\)$/.test(txt(a)));
-    check("causes 3 ⭐: a program with a catalog page links to it in a new tab and says so; one without is plain text, never a control",
+    const badLinks = links.filter((a) => !/^program\/./.test(a.getAttribute("data-pane") || ""));
+    check("causes 3 ⭐: a program with a catalog page is a word that opens it in the panel; one without is plain text, never a control",
       links.length > 0 && plain.length > 0 && !badLinks.length && plain.every((li) => !li.querySelector("a, button")), [links.length, plain.length, badLinks.length]);
     check("causes 4: each college's program file was fetched once, when its row opened",
       c5.w.__fetched.filter((u) => u.indexOf(SIDE) === 0).length === DATA.colleges.filter((c) => c.programs_file && c.gap).length, c5.w.__fetched.filter((u) => u.indexOf(SIDE) === 0).length);
@@ -270,7 +293,7 @@ function audit(x, where, bad, seen) {
     await a5.M.boot(); await settle();
     const sec = a5.d.querySelector('#cdd-panel #cdd-cprogs[data-cause-programs="places_none"]');
     check("causes 5: the cause's address opens the panel with its programs, the word pressed",
-      sec && sec.querySelectorAll("ul.cdd-progs > li a").length === 11 && /Program places_none 0 \(opens in a new tab\)/.test(txt(sec))
+      sec && sec.querySelectorAll('ul.cdd-progs > li button[data-pane^="program/"]').length === 11 && /Program places_none 0/.test(txt(sec))
       && a5.d.querySelector('#cdd-panel button.cdd-cause[data-cause="places_none"]').getAttribute("aria-expanded") === "true");
     a5.d.querySelector('#cdd-panel button.cdd-cause[data-cause="places_none"]').click(); await settle();
     check("causes 6: the word folds it again, the address back to the college, the focus on the word",
@@ -279,7 +302,13 @@ function audit(x, where, bad, seen) {
     a5.d.querySelector('#cdd-panel button.cdd-cause[data-cause="page_not_found"]').click(); await settle();
     const pn = a5.d.querySelector("#cdd-panel #cdd-cprogs");
     check("causes 7: a program with no catalog page reads plain, and says no page was found",
-      pn && pn.querySelectorAll("li").length === 5 && !pn.querySelector("a") && /no catalog page found/.test(txt(pn)));
+      pn && pn.querySelectorAll("li").length === 5 && !pn.querySelector("a, button") && /no catalog page found/.test(txt(pn)));
+    a5.d.querySelector('#cdd-panel button.cdd-cause[data-cause="places_none"]').click(); await settle();
+    a5.d.querySelector('#cdd-panel button[data-pane="program/pla3"]').click(); await settle();
+    const pp = a5.d.querySelector("#cdd-panel");
+    check("causes 7b ⭐: a program opens what we hold about it in the panel, at its address, with its catalog page in a new tab",
+      a5.w.location.hash === "#commons/data/college/ridge-college/program/pla3" && txt(a5.d.querySelector("#cdd-panel-h")) === "Program places_none 3"
+      && pp.querySelector('a.cdd-newtab[href="https://catalog.ridge.example.edu/p/places_none/3"]') && /Control number\s*pla3/.test(txt(pp)) && /A\.S\. Degree/.test(txt(pp)), a5.w.location.hash);
     audit(a5, "fixture panel at a cause", bad, seen);
     const e5 = load("#commons/data/college/ridge-college/cause/no_closed_list", FIX, { [SIDE + "ridge.json"]: undefined });
     await e5.M.boot(); await settle();
@@ -291,6 +320,71 @@ function audit(x, where, bad, seen) {
       !!u5.d.querySelector("#cdd-panel:not([hidden])") && !u5.d.querySelector("#cdd-cprogs") && u5.w.location.hash === "#commons/data/college/ridge-college", u5.w.location.hash);
     check("causes 10: Coming next no longer lists each cause's programs, and the links line says what now opens",
       !x.d.querySelector('#cdd-next [data-next="Each cause\'s programs"]') && /each program still to pass opens its own catalog page/.test(txt(x.d.querySelector("#cdd-next"))));
+  }
+  /* (6) every pane word in every college's row opens the panel with a heading, content and a new-tab destination. */
+  {
+    const p6 = load("#commons/data");
+    await p6.M.boot(); await settle();
+    const off = [];
+    let opened = 0;
+    for (const c of DATA.colleges) {
+      p6.d.querySelector('[data-expand="' + c.id + '"]').click();
+      const keys = Array.from(p6.d.querySelectorAll("#cdd-more-" + c.id + " button.cdd-paneword")).map((b) => b.getAttribute("data-pane"));
+      for (const k of Array.from(new Set(keys))) {
+        const b = p6.d.querySelector("#cdd-more-" + c.id + ' button.cdd-paneword[data-pane="' + k + '"]');
+        b.click(); await tick(); await tick();
+        opened++;
+        const box = p6.d.querySelector("#cdd-panel:not([hidden])"), nt = box && box.querySelector("a.cdd-newtab");
+        const want = "#commons/data/college/" + p6.D.slugOf(c) + "/" + k;
+        if (!box || !txt(p6.d.querySelector("#cdd-panel-h")) || !nt || !nt.getAttribute("href") || p6.w.location.hash !== want || txt(box).length < 80)
+          off.push(c.name + " " + k + ": " + p6.w.location.hash + " tab " + (nt && nt.getAttribute("href")));
+        if (c === DATA.colleges[0]) audit(p6, "pane " + k, bad, seen);
+        p6.D.closePanel();
+      }
+      p6.d.querySelector('[data-expand="' + c.id + '"]').click();
+    }
+    check("panes 1 ⭐ (committed file): every link-styled word in every college's row opens the side panel at its address, with a heading, content and an Open in a new tab destination",
+      opened > DATA.colleges.length * 3 && !off.length, off.slice(0, 6).concat(["opened " + opened]));
+  }
+  {
+    const LV = DATA.live && DATA.live.colleges || {};
+    const held = DATA.colleges.filter((c) => { const o = (LV[String(c.id)] || {}).outcomes || {}; return o.slo_courses || o.objective_courses; });
+    const sv = load("#commons/data/slos");
+    await sv.M.boot(); await settle();
+    const rows = Array.from(sv.d.querySelectorAll("#cdd-slos-table tbody tr")).map((r) => r.getAttribute("data-slos-row")).sort();
+    check("slos 1 ⭐: Colleges with collected SLOs lists exactly the colleges the live read holds SLOs or objectives for, and says how many are not read",
+      DATA.live.state !== "read" || (rows.length === held.length && held.length > 0 && JSON.stringify(rows) === JSON.stringify(held.map((c) => c.name).sort())
+        && new RegExp("The other " + (DATA.colleges.length - held.length) + " colleges have not been read yet").test(txt(sv.d.querySelector("#cdd-slos-sum")))),
+      [rows.length, held.length]);
+    const np = held.filter((c) => c.objectives_printed === false).map((c) => c.name).sort();
+    const npRows = Array.from(sv.d.querySelectorAll('#cdd-slos-table td[data-noobj]')).map((td) => td.closest("tr").getAttribute("data-slos-row")).sort();
+    check("slos 1b: a college whose course outlines print no objectives says so in words, never a missing figure",
+      JSON.stringify(np) === JSON.stringify(npRows) && /print no objectives/.test(txt(sv.d.querySelector("#cdd-slos-sum"))) === (np.length > 0), [np, npRows]);
+    const cu = DATA.colleges.filter((c) => c.name === "Cuesta College")[0];
+    if (cu && held.indexOf(cu) >= 0) {
+      sv.d.querySelector('#cdd-slos-table button[data-slos-college="cuesta-college"]').click(); await settle();
+      const pane = sv.d.querySelector("#cdd-panel");
+      check("slos 2 ⭐: a college's name opens its SLO pane: the live counts, objectives beside SLOs, and courses by subject from the committed reads",
+        sv.w.location.hash === "#commons/data/college/cuesta-college/slos" && /Courses with objectives, in all/.test(txt(pane))
+        && pane.querySelectorAll("table.cdd-subj tbody tr").length > 5 && pane.querySelector('table.cdd-subj th[scope="col"]'), sv.w.location.hash);
+      sv.d.querySelector("#cdd-pane-back").click(); await settle();
+      sv.d.querySelector('#cdd-panel button[data-pane="plos"]').click(); await settle();
+      check("slos 3: the PLO pane lists each program's PLOs from the committed records, a program's name showing them",
+        sv.w.location.hash === "#commons/data/college/cuesta-college/plos" && sv.d.querySelectorAll("#cdd-panel details.cdd-plo").length > 5
+        && sv.d.querySelector("#cdd-panel details.cdd-plo ol li"), sv.w.location.hash);
+    }
+    const lt = load("#commons/data");
+    await lt.M.boot(); await settle();
+    const tile = lt.d.querySelector('.cdd-tiles button[data-view="slos"]');
+    if (tile) tile.click(); await settle();
+    check("slos 4: the Colleges with collected SLOs figure opens its view", DATA.live.state !== "read" || (tile && lt.w.location.hash === "#commons/data/slos"), lt.w.location.hash);
+    const lt2 = load("#commons/data");
+    await lt2.M.boot(); await settle();
+    const headCols = Array.from(lt2.d.querySelectorAll("#cdd-colleges thead th")).map(txt);
+    const cuRow = cu ? lt2.d.querySelector('#cdd-colleges tr[data-college="Cuesta College"] td[data-label="SLOs and objectives"]') : null;
+    check("slos 5: the list carries an SLOs and objectives column, two bars in one cell",
+      headCols.some((h) => /^SLOs and objectives/.test(h)) && (!cuRow || (cuRow.querySelectorAll(".cdd-pr").length === 2 && /SLOs/.test(txt(cuRow)) && /Objectives/.test(txt(cuRow)))), headCols);
+    check("width: the view uses the window's full width", /\.cmn-wrap\.cdd \{ max-width:none; \}/.test(lt2.D.CSS));
   }
   check("controls ⭐: every element styled as a control is a button with a handler or a link with a destination", seen.n > 200 && !bad.length, bad.slice(0, 8).concat(["walked " + seen.n]));
 

@@ -372,12 +372,52 @@ for c in C:
     if got != want:
         off.append(c["name"] + ": " + str(got) + " != " + str(want))
 check("(14) ⭐ every committed sidecar lists exactly the programs each cause counts, college by college", not off, off[:5])
-extra = sorted(set(os.listdir(PD)) - {os.path.basename(c["programs_file"]) for c in C if c.get("programs_file")}) if os.path.isdir(PD) else ["no folder"]
+extra = sorted(set(os.listdir(PD)) - {os.path.basename(c[k]) for c in C for k in ("programs_file", "outcomes_file") if c.get(k)}) if os.path.isdir(PD) else ["no folder"]
 check("(14) no sidecar for a college the file does not name", not extra, extra[:5])
 check("(14) every row's programs_file carries a College-view flag", B.FIELDS.get("programs_file") == "internal")
 rc = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_commons_data_status.py"), "--root", ROOT, "--check"],
                     capture_output=True, text=True, timeout=300)
-check("(14) --check names the sidecars", "cause sidecars" in rc.stdout, rc.stdout[-300:])
+check("(14) --check names the sidecars", "college sidecars current" in rc.stdout and rc.returncode == 0, rc.stdout[-300:])
+# (15) the outcome sidecars (S649, Sam's asks 4 and 5): PLO text per program from the records, SLO and objective
+# courses by subject from the committed reads, and a college whose outlines print no objectives says so.
+nob = sorted(c["name"] for c in C if c.get("objectives_printed") is False)
+check("(15) ⭐ the colleges whose committed reads are all on an outline system that prints no objectives, and hold none, are flagged",
+      all(k in B.FIELDS for k in ("outcomes_file", "outline_system", "objectives_printed"))
+      and all(set(c["outline_system"] or []) <= set(B.NO_OBJECTIVES_SYSTEMS) for c in C if c.get("objectives_printed") is False), nob)
+oc = [c for c in C if c.get("outcomes_file")]
+bad15 = []
+for c in oc:
+    o = json.load(open(os.path.join(ROOT, c["outcomes_file"]), encoding="utf-8"))
+    cs = o["courses"]
+    if sum(r["slo_courses"] for r in cs["by_subject"]) != cs["slo_courses"] or sum(r["objective_courses"] for r in cs["by_subject"]) != cs["objective_courses"]:
+        bad15.append(c["name"] + ": by subject does not sum")
+    if any(not p["outcomes"] or not all(isinstance(x, str) and x for x in p["outcomes"]) for p in o["programs"]):
+        bad15.append(c["name"] + ": a program with no PLO text")
+check("(15) ⭐ every outcome sidecar's subjects sum to its course counts, and every listed program carries PLO text", oc and not bad15, bad15[:5])
+with tempfile.TemporaryDirectory() as tmp:
+    od = os.path.join(tmp, B.OUTCOMES, "dist")
+    os.makedirs(od)
+    rows = [{"code": "ANTH C141", "named_by": ["ridge"], "outcomes": ["a"], "objectives": []},
+            {"code": "ANTHC 141", "named_by": ["ridge"], "outcomes": ["b"], "objectives": ["x"]},
+            {"code": "BIO 1", "named_by": ["ridge"], "outcomes": [], "groups": [{"group": "Ridge", "outcomes": ["c"]}]},
+            {"code": "ART-2", "named_by": ["elsewhere"], "outcomes": ["d"]}]
+    json.dump({"system": "curriqunet", "at": "2026-11-01T00:00:00Z", "rows": rows}, open(os.path.join(od, "read_1_p1of1.json"), "w"))
+    os.makedirs(os.path.join(tmp, B.OUTCOMES, "trial_9"))
+    json.dump({"system": "elumen", "rows": [{"code": "CHEM 1", "named_by": ["ridge"], "outcomes": ["e"]}]}, open(os.path.join(tmp, B.OUTCOMES, "trial_9", "read_9_p1of1.json"), "w"))
+    rd = os.path.join(tmp, B.COLLEGE_DIR, "ridge", "records")
+    os.makedirs(rd)
+    json.dump({"control_number": "00001", "title": "Welding", "award": "A.S.", "record": {"program": {"outcomes": ["Weld.", " "]}}}, open(os.path.join(rd, "00001.json"), "w"))
+    json.dump({"control_number": "00002", "title": "Art", "record": {"program": {"outcomes": []}}}, open(os.path.join(rd, "00002.json"), "w"))
+    oo = B.college_outcomes(tmp, {"ridge": {"name": "Ridge College"}})["ridge"]
+    check("(15) the fixture: one course per normalized key, a groups row counts, a trial folder and another college's rows are left out",
+          oo["courses"]["slo_courses"] == 2 and oo["courses"]["objective_courses"] == 1
+          and oo["courses"]["by_subject"] == [{"subject": "ANTHC", "slo_courses": 1, "objective_courses": 1}, {"subject": "BIO", "slo_courses": 1, "objective_courses": 0}]
+          and oo["courses"]["objectives_printed"] is None, oo["courses"])
+    check("(15) the fixture: a program's PLOs in the record's words, blank lines dropped, a program with none left out",
+          oo["programs"] == [{"cn": "00001", "title": "Welding", "award": "A.S.", "outcomes": ["Weld."]}], oo["programs"])
+    check("(15) objectives_printed is false only when every read is on a system that prints none and none was found",
+          B.objectives_printed({"obj": set(), "systems": {"elumen"}}) is False and B.objectives_printed({"obj": {"X1"}, "systems": {"elumen"}}) is None
+          and B.objectives_printed({"obj": set(), "systems": {"elumen", "curriqunet"}}) is None and B.objectives_printed(None) is None)
 wf = open(os.path.join(ROOT, ".github", "workflows", "harvest-gap-census.yml"), encoding="utf-8").read()
 check("(14) ⭐ the census workflow commits the sidecar folder with the file", "git add -A " + B.PROGRAMS_DIR in wf, "")
 

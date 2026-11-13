@@ -85,6 +85,11 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   // #commons/data/district/<slug>; the round trips are in tests/commons_data_controls.test.js (districts 2, 3).
   check("(E) ⭐ commons/data/districts opens from its arrival, and a district's colleges carry it in the address",
     /districts: "Colleges by district"/.test(DATAJS) && /"\/district\/" \+ district/.test(DATAJS) && /p\[i\] === "district"/.test(DATAJS));
+  // S649: Colleges with collected SLOs is a view of its own (#commons/data/slos); each link opens the side panel at an
+  // address of its own (.../college/<slug>/<pane>[/<key>], or a view's source at <view>/source/<key>); the round trips
+  // are in tests/commons_data_controls.test.js (panes).
+  check("(E) commons/data/slos and every pane of the side panel carry their address",
+    /slos: "Colleges with collected SLOs"/.test(DATAJS) && /function paneRoute\(p\)/.test(DATAJS) && /if \(w in PANES\) \{ out\.pane =/.test(DATAJS));
   check("(E) commons/data carries its catalog platform in the address", /"\/platform\/" \+ platform/.test(DATAJS) && /p\[i\] === "platform"/.test(DATAJS));
   const files = fs.readdirSync(".").filter((f) => /\.js$/.test(f) && f !== "cpl_session.js");
   files.forEach(function (f) {
