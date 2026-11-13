@@ -18,8 +18,8 @@
   "source_words": "California General Education Transfer Curriculum (Cal-GETC) (35 Units)"
  },
  "measured_on": {
-  "commit": "fab3e109f1c08bd6f90e40a68df4fad2d4acd751",
-  "date": "2026-11-13T13:43:18-08:00",
+  "commit": "03302f123af1c45f9c7fe9749896919b65ea3c65",
+  "date": "2026-11-13T22:29:51+00:00",
   "records": "kb/program_requirements_college/<slug>/records/",
   "tool": "python3 kb/_program_requirements_readings_measure.py --calgetc-apply 'Cerro Coso Community College'",
   "kind": "a dry run on the filed records; the reconcile run reads the pages"
@@ -29,8 +29,10 @@
   "apply": 5,
   "held": 1,
   "fail_to_pass": 1,
-  "pass_to_fail": 0
+  "pass_to_fail": 0,
+  "held_would_pass": 0
  },
+ "first_reconcile": true,
  "apply": [
   "30766",
   "31540",
@@ -59,6 +61,7 @@
    },
    "passes_before": false,
    "passes_after": false,
+   "passes_with_fill": false,
    "verdict_with_fill": "equal (transfer)",
    "sum_with_fill": [
     53.0,
@@ -80,6 +83,7 @@
    },
    "passes_before": false,
    "passes_after": true,
+   "passes_with_fill": true,
    "verdict_with_fill": "equal (transfer)",
    "sum_with_fill": [
     59.0,
@@ -101,6 +105,7 @@
    },
    "passes_before": false,
    "passes_after": false,
+   "passes_with_fill": false,
    "verdict_with_fill": "equal (transfer)",
    "sum_with_fill": [
     54.0,
@@ -122,6 +127,7 @@
    },
    "passes_before": false,
    "passes_after": false,
+   "passes_with_fill": false,
    "verdict_with_fill": "equal (transfer)",
    "sum_with_fill": [
     57.0,
@@ -143,6 +149,7 @@
    },
    "passes_before": false,
    "passes_after": false,
+   "passes_with_fill": false,
    "verdict_with_fill": "equal (overlap)",
    "sum_with_fill": [
     68.0,
@@ -165,6 +172,7 @@
    },
    "passes_before": false,
    "passes_after": false,
+   "passes_with_fill": false,
    "verdict_with_fill": "equal (within)",
    "sum_with_fill": [
     58.0,
@@ -172,5 +180,206 @@
    ],
    "degree_total": 60.0
   }
- ]
+ ],
+ "run_review": {
+  "run": "43520153161",
+  "changed": 8,
+  "kept": [
+   "30766",
+   "31540",
+   "38665",
+   "40868",
+   "43206"
+  ],
+  "restored": [
+   "40922",
+   "41968",
+   "44885"
+  ],
+  "fail_to_pass_kept": [
+   "31540",
+   "38665",
+   "43206"
+  ],
+  "held_would_pass": [
+   "40922"
+  ],
+  "pass_to_fail_kept": [],
+  "records": [
+   {
+    "control_number": "30766",
+    "extracted_run": 43520153161,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 35,
+       "max": 35
+      },
+      "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "31540",
+    "extracted_run": 43520153161,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 35,
+       "max": 35
+      },
+      "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "38665",
+    "extracted_run": 43520153161,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 35,
+       "max": 35
+      },
+      "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "40868",
+    "extracted_run": 43520153161,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 35,
+       "max": 35
+      },
+      "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "40922",
+    "extracted_run": 43520153161,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 35,
+       "max": 35
+      },
+      "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
+     }
+    ],
+    "decision": "restore",
+    "why": "held in the plan: overlap: the major plus the printed 35 runs past the degree total of 60; a set step checks no standing while #3250 is unmerged, so the record stays as main files it (Grossmont 46141, #3252)"
+   },
+   {
+    "control_number": "41968",
+    "extracted_run": 43520153161,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "43206",
+    "extracted_run": 43520153161,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 35,
+       "max": 35
+      },
+      "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "44885",
+    "extracted_run": 43520153161,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   }
+  ],
+  "filing_commit": "bc3e399e",
+  "log_line": "reconcile: 6 filed records changed, 2 rescored, 11 had no fresh page (11 of them on another page)",
+  "first_reconcile_note": "Run 43520153161 is also Cerro Coso's first reconcile and rescore: reconcile_filed ran every rule on every record whose page it read again and rescored each, with no kept-passing guard. Every changed record was read against main; only the five apply rows, changed in ge_units alone, are kept. 41968 and 44885 (passing on main and in the run, rescored only: the Sheet 120 card 1 marker and the why lines dropped) and 40922 (held) are restored from main whole, so their extracted_run is main's and the reread does not post them. The 11 programs the capture found on another page kept their records (unread).",
+  "dry_run_note": "The dry run's passes_after understated three rows: it keeps the filed program verdict, and the run's rescore read 38665's 19-20 against 19 and 43206's 23-26 against 23 as meeting their stated majors once the degree check could add the 35 in (the scorer's meets reading, Open Asks Sheet 120 card 1). So 31540, 38665 and 43206 turn passing, and 40922 would have passed as overlap (68-72 against 60, Sheet 82 card 2): the hold costs 40922 a pass while #3250 is unmerged."
+ }
 }

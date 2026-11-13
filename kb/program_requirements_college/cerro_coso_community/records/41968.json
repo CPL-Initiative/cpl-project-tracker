@@ -86,8 +86,11 @@
     37.0
    ],
    "against": "program",
-   "why": [],
-   "meets": true
+   "why": [
+    "the blocks sum to 37.0-38.0; the catalog states 37.0-37.0"
+   ],
+   "meets": true,
+   "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
    "codes": [],
@@ -297,6 +300,5 @@
    "Text following the certificate (Administration of Justice AS-T, Anthropology AA-T) belongs to other programs and was not read."
   ]
  },
- "extracted_run": 43520153161,
- "read_run": "39046789844"
+ "extracted_run": "39046789844"
 }

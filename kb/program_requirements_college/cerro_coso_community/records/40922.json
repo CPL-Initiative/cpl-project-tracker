@@ -83,8 +83,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     33.0,
     37.0
@@ -94,26 +94,25 @@
     33.0
    ],
    "against": "program",
-   "why": [],
-   "meets": true,
+   "why": [
+    "the blocks sum to 33.0-37.0; the catalog states 33.0-33.0"
+   ],
    "degree": {
-    "pass": true,
-    "status": "equal",
+    "pass": false,
+    "status": "incomplete",
     "computed": [
-     68.0,
-     72.0
+     33.0,
+     37.0
     ],
     "stated": [
      60.0,
      60.0
     ],
     "against": "degree",
-    "ge": [
-     35.0,
-     35.0
-    ],
-    "why": [],
-    "overlap": true
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    ]
    }
   },
   "repeated": {
@@ -138,7 +137,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -159,8 +158,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": 35,
-    "max": 35
+    "min": null,
+    "max": null
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -408,20 +407,5 @@
    "No GE unit figure is printed; GE pattern is Cal-GETC (Option B). Text following the GE line belongs to the Liberal Arts degrees and was ignored."
   ]
  },
- "extracted_run": 43520153161,
- "reconciled": [
-  {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 35,
-    "max": 35
-   },
-   "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
-  }
- ],
- "read_run": "39046789844"
+ "extracted_run": "39046789844"
 }
