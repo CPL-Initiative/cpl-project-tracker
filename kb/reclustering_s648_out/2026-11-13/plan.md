@@ -6,6 +6,8 @@ Rulings: sam-sheet-186-six-cases-as-recommended-2026-11-13 (Open Asks Sheet 186 
 
 Alias chain: baseline `kb/anchor_rekey_out/2026-11-08/alias_map.json`, 0 maps pending, every named id resolves to itself and is live. Members file: unified_courses_members.js (generated 2026-11-13 16:56); curation overlay synced 2026-11-13T16:56:11Z.
 
+DECIDED (the S648 conductor, 2026-11-13, on #3245): cases 2, 4 and 6 go to review and apply, case 6 by the INSERT-only path (deleting a saved curation row is on the hold list, whoever wrote it); cases 1, 3 and 5 stay held and go to Sam on the sheet; nothing is minted for Honors.
+
 ## The six
 
 ### 1. split: AJ 160 (held)
@@ -82,7 +84,7 @@ Report: BUSI M1228, International Documentation and Supply Chain Management: pro
 - `BUSI M1228` (M-ID, Business): International Documentation and Supply Chain Management; 24 members, 21 colleges, 20 districts, units [0, 3]; 9 curation pointers fold into it; own curation row: yes.
 - group *Global Supply Chain and Logistics* (1 districts, 1 members with text, 3 of the identity's members carry its title): moves
 - group *Introduction to Supply Chain Management* (1 districts, 1 members with text, 20 of the identity's members carry its title): stays
-- moves: Santa Ana College BUS 115 *Global Supply Chain and Logistics* (control CCC000609492, units 3, COCI C-ID none, ASCCC approvals none, sits by leaf_merge_into, own leaf ['BUSI M10XW']) to BUSI M10XW (returns to its own stand-alone record). option A (recommended, no new id): a guarded DELETE of the kb_curation row (BUSI M10XW, merge_into, BUSI M1228) saved by automerge-titlelane-v1@bot, its before-values in the receipt so a re-INSERT undoes it; option B (INSERT-only): CN:CCC000609492 merge_into a newly minted stand-alone, leaving BUSI M10XW folded and empty.
+- moves: Santa Ana College BUS 115 *Global Supply Chain and Logistics* (control CCC000609492, units 3, COCI C-ID none, ASCCC approvals none, sits by leaf_merge_into, own leaf ['BUSI M10XW']) to BUSI M11TU (a new stand-alone M-ID). INSERT-only: kb_curation row (CN:CCC000609492, merge_into, BUSI M11TU) under reclustering-s648@bot, and the new catalog record BUSI M11TU (kb/_reclustering_s648_apply.py --record). Its own stand-alone BUSI M10XW stays folded into BUSI M1228 by the row automerge-titlelane-v1@bot saved, which is never deleted, and keeps no member.
 - stays: 23 members.
 - alias map: none: the identity keeps its id; each moved member leaves by a CN: re-home row, and a new stand-alone id is a mint, so it enters ALIAS_MAPS only if the apply writes a receipt map (CN:<control number> -> new id) for kb/_rekey_* tools to read.
 
@@ -104,37 +106,79 @@ Each id-keyed file, the occurrences, and its writer from `kb/dependency_map.json
 
 Committed overlay: 4 rows keyed on affected ids or moved members' CN: keys; 12 merge_into pointers land on an affected id, by reviewer {'automerge-titlelane-v1@bot': 9, 'map@rccd.edu': 1, 'automerge-v1@bot': 2}.
 
-every row keyed on an affected id or a moved member's CN: key, with who saved it:
+Before the apply, five aggregates (expected from the committed overlay, which mirrors seven fields only):
+
+1. Expect `{"merge_into / bot": 1, "unified_title / person": 1, "unified_title / bot": 1}`. If different: a merge_into row on any of the three sources means its INSERT would be skipped: hold that case. Any other new row since the overlay sync is a person's or a procedure's work on an affected key: read it before applying (Rule 10a).
 
 ```sql
-select course_id, field, value, reviewer_email, reviewed_at from public.kb_curation where course_id in ('AJ 160', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044', 'MUS 130', 'REAL M1038', 'REAL M1040', 'CN:CCC000142236', 'CN:CCC000325641', 'CN:CCC000609492', 'CN:CCC000620387') order by course_id, field;
+select field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where course_id in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044') group by 1, 2 order by 1, 2;
 ```
 
-aggregate: rows keyed on the affected ids by field and by human or bot reviewer:
+2. Expect `0`. If different: a source already folds somewhere: the INSERT would be skipped, so hold that case.
 
 ```sql
-select course_id, field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where course_id in ('AJ 160', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044', 'MUS 130', 'REAL M1038', 'REAL M1040', 'CN:CCC000142236', 'CN:CCC000325641', 'CN:CCC000609492', 'CN:CCC000620387') group by 1, 2, 3 order by 1, 2;
+select count(*) from public.kb_curation where field = 'merge_into' and course_id in ('FIRE M1274', 'MATH M1044', 'CN:CCC000609492');
 ```
 
-aggregate: merge_into pointers that land on an affected id (the chain the merge extends):
+3. Expect `{"BUSI M1228 / bot": 9, "FIRE M1274 / person": 1}`. If different: a pointer added since the sync now follows the fold too (FIRE M1274 and MATH M1044 pass their pointers on to the survivor); a pointer onto the new id means the id is no longer free: re-cut the plan.
 
 ```sql
-select value as target, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where field = 'merge_into' and value in ('AJ 160', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044', 'MUS 130', 'REAL M1038', 'REAL M1040') group by 1, 2 order by 1;
+select value, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where field = 'merge_into' and value in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044') group by 1, 2 order by 1, 2;
 ```
 
-pending title merges whose target is an affected id (Rule 10a: hold a write that fights the curator):
+4. Expect `0`. If different: a pending title merge names an affected key: the curator's merge wins, hold that case.
 
 ```sql
-select course_id, value, reviewer_email, reviewed_at from public.kb_curation where field = 'unified_title_merge_confirm' and value in ('AJ 160', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044', 'MUS 130', 'REAL M1038', 'REAL M1040');
+select count(*) from public.kb_curation where field = 'unified_title_merge_confirm' and (course_id in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044') or value in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044'));
 ```
 
-the cohort is empty before the apply (P0) and holds exactly the plan's rows after:
+5. Expect `0`. If different: the cohort already wrote (P0): the apply ran, in part or whole; read the rows first.
 
 ```sql
-select field, count(*) from public.kb_curation where reviewer_email = 'reclustering-s648@bot' group by 1;
+select count(*) from public.kb_curation where reviewer_email = 'reclustering-s648@bot';
 ```
+
+After the apply. Expect `[["CN:CCC000609492", "merge_into", "BUSI M11TU"], ["FIRE M1274", "merge_into", "FIRE 130 X"], ["MATH M1044", "merge_into", "MATH M1036"]]`. If different: fewer rows: a slot was taken and its INSERT skipped (that case did not land); run the rollback and re-read.
+
+```sql
+select course_id, field, value from public.kb_curation where reviewer_email = 'reclustering-s648@bot' order by 1;
+```
+
+## After the apply, simulated
+
+Simulated, not applied: a copy of kb/ took the case 6 record (kb/_reclustering_s648_apply.py --record, then --undo-record on the repo copy, byte-identical after) and the three cohort rows (--overlay on the copy), then export_unified_courses() ran on it through its UC_KB_DIR / UC_OUT_DIR seam. The same run on the untouched kb/ reproduced the committed unified_courses_*.js except their timestamps. Identities 49,561 to 49,560 (FIRE M1274 and MATH M1044 fold away, BUSI M11TU joins); member rows 134,485 before and after, so no course counts twice. Only these six identities' members changed and only five in-browser rows differ. The builders downstream of the export (coci_lookup, credential reference, the SkyView and CPL Pathways payloads, the row audit) were not run.
+
+- `FIRE 130 X`: members 23 to 51, units [3, 3] to [3, 4]; shown as C-ID *Building Construction for Fire Protection*.
+- `FIRE M1274`: members 28 to 0, units [3, 4] to None; no row of its own (folded).
+- `MATH M1036`: members 44 to 47, units [3, 5] to [3, 5]; shown as M-ID *College Algebra*.
+- `MATH M1044`: members 3 to 0, units [3, 3] to None; no row of its own (folded).
+- `BUSI M1228`: members 24 to 23, units [0, 3] to [0, 3]; shown as M-ID *International Documentation and Supply Chain Management*.
+- `BUSI M10XW`: members 0 to 0, units None to None; no row of its own (folded).
+- `BUSI M11TU`: members 0 to 1, units None to [3, 3]; shown as M-ID *Global Supply Chain and Logistics*.
+
+- FIRE 130 X: members 23 to 51, units 3 to 3-4, title kept; its row now carries eligible credits 1,022.4 and 58 students (was 667.4 and 48), inherited from FIRE M1274's articulations; the evidence lane's FIRE 130 X group (score 10) closes, 164 to 163 groups.
+- MATH M1036: members 44 to 47, units 3-5 kept; its row inherits MATH M1044's articulations, among them 'Basic Refrigeration & AC Lab' (4,838 eligible credits, 330 students, a credit-by-exam at San Diego City College filed against College and Matrix Algebra), so College Algebra's eligible credits read 4,866 (was 19) and 330 students (was none). The row also drops its description_and_top discipline stamp (dsrc), since a merge target is drawn by the merge path.
+- BUSI M1228: members 24 to 23. BUSI M11TU: one member, Santa Ana BUS 115, units 3, Business, TOP 0506.00 from its own record; the row's members field reads 2 (the record and its course), as all 3,942 materialized machine-cluster rows already do.
+
+Committed files the nightly build changes: by the apply: kb/coci_minted_courses.json (+1 record, BUSI M11TU) and kb/migrations/.apply; by the nightly sync: kb/coci_curation.json (+3 rows); by the export, simulated: unified_courses_data.js, unified_courses_members.js, unified_courses_index.js, unified_courses_details.js, unified_courses_member_desc.js, unified_courses_suggestions.js (aligned and standalone unchanged); by builders downstream, not simulated: coci_lookup_data.js, credential_reference_data.js, cpl_pathways_*_data.js, prototype/ccr_cpl*.json, prototype/ccr_remint_blast.json, kb/row_audit/latest.json, kb/cr_reference_worklist.json, kb/remint_blast_worklist.json.
+
+Tests: On the simulated post-apply state (the six export files and the two kb files laid over the worktree, then restored with git checkout): node tests/run.js, all 638 files passed (jsdom 29.1.1 installed locally, no-save); scripts/check_generated.sh flagged prototype/ccr_remint_blast.json STALE, which it reads from the curation overlay and which the same daily run rebuilds (kb/_build_remint_blast_radius.py), so CI stays green on the apply branch, whose overlay is unchanged until that run. No test reads the merged rows' counts.
+
+## For the sheet
+
+Four questions for Sam. Cases 2, 4 and 6 go forward on his ruling.
+
+**1. Honors under an official C-ID or CCN.** He ruled that an Honors course gets its own M-ID with a declared equivalence to its base. Of the 680 Honors courses that share an identity with their base, 676 sit under 133 official C-ID or CCN identities (437 because the college entered that C-ID in COCI, 218 by an ASCCC approval) and 4 share an M-ID. Another 508 Honors and base pairs already sit apart and need only the equivalence. Options: (a) the rule for M-IDs only, 3 new M-IDs and the equivalence for every pair; (b) Honors also leaves official ids, 136 new M-IDs, against the colleges' own C-ID entries. Recommended: (a). C-ID and CCN already decide Honors for their own courses (CCN gives Honors its own number, 23 such as PSYC C1000H), and an official id is never re-keyed.
+
+**2. AJ 160: move two courses out of the C-ID?** Modesto ADJU 205 *Community Relations* is entered as AJ 160 in COCI, and Golden West CJ G137 *Community Relations And Special Issues In Criminal Justice* holds an ASCCC approval for AJ 160 (new_authority). Only the outcome scores separate them, at partial confidence, and neither meets the four signals a C-ID claim hold needs. Options: (a) keep both under AJ 160; (b) move them out against the entry and the approval. Recommended: (a).
+
+**3. MUS 130: move San Diego Mesa MUSI 148B out?** *Music Theory II* holds an ASCCC approval for MUS 130 and carries the C-ID's title. Its outline reads differently because San Diego Mesa writes each outcome as an institutional skill, and word overlap cannot see past the phrasing. Options: (a) keep it under MUS 130; (b) move it out against the approval. Recommended: (a).
+
+**4. REAL M1038 with REAL M1040: merge?** The report merges them only if students do not take both. Both records say the course is required for the California real estate salesperson license, which asks for Real Estate Principles and Real Estate Practice as two courses. Options: (a) keep them apart; (b) merge into REAL M1040 (units 0 to 4). Recommended: (a).
 
 ## The Honors rule
+
+Nothing is minted for Honors (the S648 conductor, 2026-11-13): whether an Honors course leaves a C-ID is Sam's call, on the sheet above. This branch holds the detection rule, its tests and the worklist.
 
 - marks honors: the word Honors (or Honor) in the title, as a whole word. A code ending in H corroborates and finds the base, and never marks a course alone.
 - honors program courses: a title naming only the honors program (Colloquium, Forum, Seminar, Society) has no base: it keeps its own identity and declares nothing.
@@ -180,10 +224,8 @@ Questions only a person can rule:
 
 ## Apply sequence (after review)
 
-0. fresh read: the SELECTs in this plan, run through the Supabase MCP; compare with curation_overlay here (P3). Any row a person saved on an affected key since the overlay sync holds that case. Receipt: kb/reclustering_s648_out/<date>/fresh_read.json. Undo: nothing written. Window: window opens after the 12:17 UTC run has committed (about 12:45) and closes by 05:45 the next morning, clear of 06:17; none of 06:17, 09:17, 12:17 inside it.
-1. only when a move that is not held needs a new id (none in this plan: the one ready move returns to its own record): a code PR, merged on a green test, adding the stand-alone record to kb/coci_minted_singletons.json with the stamp _recluster_s648_from. No generated artifact (artifact policy). Receipt: the PR diff. Undo: git revert.
-2. kb_curation INSERT ... ON CONFLICT (course_id, field) DO NOTHING under reviewer_email 'reclustering-s648@bot': the merge_into rows of the merges that are ready (cases 2 and 4). Then case 6's option A, the one guarded DELETE of the bot's fold row, its before-values written to the receipt first. Through a committed migration file and supabase-migrate.yml (Rule 10c) or the MCP. Every row lands or none. Receipt: kb/receipts/reclustering_s648_<date>.sql: the rows, the deleted row's before-values, and the rollback in its header. Undo: delete from public.kb_curation where reviewer_email = 'reclustering-s648@bot'; then re-INSERT the deleted row from its before-values.
-3. python3 kb/_apply_curation.py (Supabase to kb/coci_curation.json), commit Receipt: the overlay diff: exactly the cohort's rows. Undo: the next sync after step 2's undo.
-4. dispatch daily-dashboard.yml once (workflow_dispatch) so the export folds the merges and re-homes; read unified_courses_members.js for each case's member counts against plan.json Receipt: the runner's commit. Undo: steps 2 and 3 undone, then the next run.
-5. Honors: nothing in this window. The rule waits on the questions in plan.json (honors.questions_for_a_person); once ruled it runs as its own plan through the same steps, the equivalence rows under its own cohort. Receipt: its own. Undo: its own.
-Note: No alias map is written, so kb/alias_chain.py, supabase-rekey.yml and kb/_post_apply_chain.py do not run for the merges and moves. If the conductor chooses a re-key merge between two M-IDs instead, that map joins ALIAS_MAPS in the same commit, supabase-rekey.yml re-keys kb_curation from it and kb/_post_apply_chain.py runs once, all in this window.
+0. fresh read: the five pre-apply SELECTs through the Supabase MCP, each against its expected result Receipt: kb/reclustering_s648_out/2026-11-13/fresh_read.json (the five results). Undo: nothing written. Window: one window: open after the 12:17 UTC run has committed (about 12:45), close before 06:17 the next morning; no cron fires inside it (06:17, 09:17, 12:17).
+1. this PR merged on a green test: it carries the plan, both scripts, and the migration pair (inert until triggered). Then, on a claude/* branch off main: python3 kb/_reclustering_s648_apply.py --record (adds the case 6 record; P0, P1, P2 gates), commit Receipt: the commit: kb/coci_minted_courses.json + 1 record, stamp _recluster_s648_from. Undo: python3 kb/_reclustering_s648_apply.py --undo-record, or git revert.
+2. on the same branch, set kb/migrations/.apply to file=kb/migrations/2026-11-13_s648_reclustering_cohort.sql and name=s648_reclustering_cohort, commit, push. supabase-migrate.yml runs on the claude/* push (it does not need main), posts the file, and commits its receipt to the branch Receipt: kb/receipts/ (the workflow's), plus the post-apply SELECT's result in kb/reclustering_s648_out/2026-11-13/post_read.json. Undo: set kb/migrations/.apply to the rollback pair (file=kb/migrations/2026-11-13_s648_reclustering_cohort_rollback.sql, name=s648_reclustering_cohort_rollback) and push: delete by cohort.
+3. open the branch's PR, merge on a green test (record + .apply + receipt on main), then dispatch daily-dashboard.yml once: kb/_apply_curation.py folds the three rows into kb/coci_curation.json and the export rebuilds Receipt: the runner's commit. Undo: steps 2 and 1 undone, then one more dispatch.
+4. read the rebuilt unified_courses_members.js against post_apply_simulated in plan.json Receipt: a line in the lane. Undo: -.

@@ -483,6 +483,11 @@ def plan_case(w, case, report, alloc):
                                   "merge_into_by": (w.cur.get(l) or {}).get("reviewed_by")}
                               for l in p.get("leaf_ids") or []}
                 new_id = None
+                # A course whose own record folds into this identity by a saved row cannot go back to it
+                # INSERT-only: deleting a saved row is on the hold list (the S648 conductor, 2026-11-13), and a
+                # CN: pointer at the folded record follows the fold straight back (flatten_merge_chains).
+                if own and leaf_facts[own[0]]["merge_into"] == i:
+                    own = []
                 if own:
                     target, how = own[0], "returns to its own stand-alone record"
                 else:
@@ -499,12 +504,14 @@ def plan_case(w, case, report, alloc):
                             + ". kb/reference/cid_claim_holds.json sets a COCI claim aside only on its four signals, "
                               "none of which a split by outcomes supplies, and no mechanism yet sets an ASCCC "
                               "approval aside")
-                elif own and leaf_facts[own[0]]["merge_into"] == i:
-                    mech = (f"option A (recommended, no new id): a guarded DELETE of the kb_curation row "
-                            f"({own[0]}, merge_into, {i}) saved by {leaf_facts[own[0]]['merge_into_by']}, its "
-                            "before-values in the receipt so a re-INSERT undoes it; option B (INSERT-only): "
-                            f"CN:{p.get('control_number')} merge_into a newly minted stand-alone, leaving "
-                            f"{own[0]} folded and empty")
+                elif any(v["merge_into"] == i for v in leaf_facts.values()):
+                    folded = [l for l, v in leaf_facts.items() if v["merge_into"] == i][0]
+                    mech = (f"INSERT-only: kb_curation row (CN:{p.get('control_number')}, merge_into, {target}) "
+                            f"under {COHORT}, and the new catalog record {target} "
+                            "(kb/_reclustering_s648_apply.py --record). Its own stand-alone "
+                            f"{folded} stays folded into {i} by the row "
+                            f"{leaf_facts[folded]['merge_into_by']} saved, which is never deleted, and keeps no "
+                            "member")
                 else:
                     mech = (f"kb_curation row CN:{p.get('control_number')} merge_into {target}, INSERT-only under "
                             f"{COHORT}" + ("" if own else ", plus the new stand-alone record"))
@@ -808,7 +815,7 @@ def build(raw=None, today=None):
         "id_keyed_touches": touches,
         "curation_overlay": {"rows_on_affected_keys": cur_rows, "pointers_into_affected": len(cur_pointing),
                              "pointers_into_affected_by_reviewer": dict(humans)},
-        "kb_curation_selects": selects(ids, cns),
+        "kb_curation_selects": selects(w, cases),
         "honors": {"rule": honors_rule_text(), "summary": honors_summary, "new_mids": honors_new,
                    "identities_all_honors": all_honors, "questions_for_a_person": honors_questions(honors_summary)},
         "apply_sequence": apply_sequence(),
@@ -861,63 +868,166 @@ def honors_questions(s):
     ]
 
 
-def selects(ids, cns):
+READY_CASES = (2, 4, 6)
+
+
+def apply_keys(cases):
+    """The keys the ready cases write (sources) and every id they touch (sources, targets, the folded leaf)."""
+    src, touched = [], set()
+    for c in cases:
+        if c["n"] not in READY_CASES or not c["ready"]:
+            continue
+        touched |= set(c["identities"])
+        if c["op"] == "merge":
+            src.append(c["folds"])
+        for m in c.get("moves", []):
+            src.append("CN:" + m["control_number"])
+            touched.add(m["target_id"])
+            touched |= {l for l, v in m["leaf_facts"].items() if v["merge_into"]}
+    return src, sorted(touched)
+
+
+def selects(w, cases):
+    """At most five aggregate SELECTs before the apply, each with what the committed overlay says to expect, and one
+    after. The overlay mirrors only kb/_apply_curation.py's seven fields, so live may hold more fields than it shows."""
+    src, touched = apply_keys(cases)
+    keys = sorted(set(src) | set(touched))
     q = lambda xs: ", ".join("'" + x.replace("'", "''") + "'" for x in xs)
-    keys = ids + ["CN:" + c for c in cns]
-    return [
-        {"why": "every row keyed on an affected id or a moved member's CN: key, with who saved it",
-         "sql": f"select course_id, field, value, reviewer_email, reviewed_at from public.kb_curation "
-                f"where course_id in ({q(keys)}) order by course_id, field;"},
-        {"why": "aggregate: rows keyed on the affected ids by field and by human or bot reviewer",
-         "sql": f"select course_id, field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation "
-                f"where course_id in ({q(keys)}) group by 1, 2, 3 order by 1, 2;"},
-        {"why": "aggregate: merge_into pointers that land on an affected id (the chain the merge extends)",
-         "sql": f"select value as target, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation "
-                f"where field = 'merge_into' and value in ({q(ids)}) group by 1, 2 order by 1;"},
-        {"why": "pending title merges whose target is an affected id (Rule 10a: hold a write that fights the curator)",
-         "sql": f"select course_id, value, reviewer_email, reviewed_at from public.kb_curation "
-                f"where field = 'unified_title_merge_confirm' and value in ({q(ids)});"},
-        {"why": "the cohort is empty before the apply (P0) and holds exactly the plan's rows after",
-         "sql": f"select field, count(*) from public.kb_curation where reviewer_email = '{COHORT}' group by 1;"},
-    ]
+    bot = lambda who: str(who or "").endswith("@bot")
+    by_field = Counter()
+    for k in keys:
+        for f in (w.cur.get(k) or {}):
+            if f not in ("reviewed_by", "reviewed_at"):
+                by_field[(f, bot(w.cur[k].get("reviewed_by")))] += 1
+    ptr = Counter((v, bot(w.cur[k].get("reviewed_by"))) for k, v in w.merge_into.items() if v in touched)
+    return {
+        "pre": [
+            {"sql": f"select field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation "
+                    f"where course_id in ({q(keys)}) group by 1, 2 order by 1, 2;",
+             "expect": {f"{f} / {'bot' if b else 'person'}": n for (f, b), n in sorted(by_field.items())},
+             "if_different": "a merge_into row on any of the three sources means its INSERT would be skipped: hold "
+                             "that case. Any other new row since the overlay sync is a person's or a procedure's "
+                             "work on an affected key: read it before applying (Rule 10a)."},
+            {"sql": f"select count(*) from public.kb_curation where field = 'merge_into' and course_id in ({q(src)});",
+             "expect": 0,
+             "if_different": "a source already folds somewhere: the INSERT would be skipped, so hold that case"},
+            {"sql": f"select value, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation "
+                    f"where field = 'merge_into' and value in ({q(touched)}) group by 1, 2 order by 1, 2;",
+             "expect": {f"{v} / {'bot' if b else 'person'}": n for (v, b), n in sorted(ptr.items())},
+             "if_different": "a pointer added since the sync now follows the fold too (FIRE M1274 and MATH M1044 "
+                             "pass their pointers on to the survivor); a pointer onto the new id means the id is "
+                             "no longer free: re-cut the plan"},
+            {"sql": f"select count(*) from public.kb_curation where field = 'unified_title_merge_confirm' "
+                    f"and (course_id in ({q(keys)}) or value in ({q(keys)}));",
+             "expect": 0,
+             "if_different": "a pending title merge names an affected key: the curator's merge wins, hold that case"},
+            {"sql": f"select count(*) from public.kb_curation where reviewer_email = '{COHORT}';",
+             "expect": 0,
+             "if_different": "the cohort already wrote (P0): the apply ran, in part or whole; read the rows first"},
+        ],
+        "post": {"sql": f"select course_id, field, value from public.kb_curation where reviewer_email = '{COHORT}' "
+                        "order by 1;",
+                 "expect": [list(r) for r in _cohort_rows(cases)],
+                 "if_different": "fewer rows: a slot was taken and its INSERT skipped (that case did not land); "
+                                 "run the rollback and re-read"},
+    }
+
+
+def _cohort_rows(cases):
+    out = []
+    for c in sorted(cases, key=lambda c: c["n"]):
+        if c["n"] not in READY_CASES or not c["ready"]:
+            continue
+        if c["op"] == "merge":
+            out.append((c["folds"], "merge_into", c["survivor"]))
+        for m in c.get("moves", []):
+            out.append(("CN:" + m["control_number"], "merge_into", m["target_id"]))
+    return sorted(out)
 
 
 def apply_sequence():
     return [
-        {"step": 0, "when": "window opens after the 12:17 UTC run has committed (about 12:45) and closes by 05:45 "
-                            "the next morning, clear of 06:17; none of 06:17, 09:17, 12:17 inside it",
-         "what": "fresh read: the SELECTs in this plan, run through the Supabase MCP; compare with "
-                 "curation_overlay here (P3). Any row a person saved on an affected key since the overlay sync "
-                 "holds that case.",
-         "receipt": "kb/reclustering_s648_out/<date>/fresh_read.json", "undo": "nothing written"},
-        {"step": 1, "what": "only when a move that is not held needs a new id (none in this plan: the one ready "
-                            "move returns to its own record): a code PR, merged on a green test, adding the "
-                            "stand-alone record to kb/coci_minted_singletons.json with the stamp _recluster_s648_from. "
-                            "No generated artifact (artifact policy).",
-         "receipt": "the PR diff", "undo": "git revert"},
-        {"step": 2, "what": "kb_curation INSERT ... ON CONFLICT (course_id, field) DO NOTHING under "
-                            f"reviewer_email '{COHORT}': the merge_into rows of the merges that are ready (cases 2 "
-                            "and 4). Then case 6's option A, the one guarded DELETE of the bot's fold row, its "
-                            "before-values written to the receipt first. Through a committed migration file and "
-                            "supabase-migrate.yml (Rule 10c) or the MCP. Every row lands or none.",
-         "receipt": "kb/receipts/reclustering_s648_<date>.sql: the rows, the deleted row's before-values, and the "
-                    "rollback in its header",
-         "undo": f"delete from public.kb_curation where reviewer_email = '{COHORT}'; then re-INSERT the deleted "
-                 "row from its before-values"},
-        {"step": 3, "what": "python3 kb/_apply_curation.py (Supabase to kb/coci_curation.json), commit",
-         "receipt": "the overlay diff: exactly the cohort's rows", "undo": "the next sync after step 2's undo"},
-        {"step": 4, "what": "dispatch daily-dashboard.yml once (workflow_dispatch) so the export folds the merges "
-                            "and re-homes; read unified_courses_members.js for each case's member counts against "
-                            "plan.json",
-         "receipt": "the runner's commit", "undo": "steps 2 and 3 undone, then the next run"},
-        {"step": 5, "what": "Honors: nothing in this window. The rule waits on the questions in plan.json "
-                            "(honors.questions_for_a_person); once ruled it runs as its own plan through the same "
-                            "steps, the equivalence rows under its own cohort.",
-         "receipt": "its own", "undo": "its own"},
-        {"note": "No alias map is written, so kb/alias_chain.py, supabase-rekey.yml and kb/_post_apply_chain.py "
-                 "do not run for the merges and moves. If the conductor chooses a re-key merge between two M-IDs "
-                 "instead, that map joins ALIAS_MAPS in the same commit, supabase-rekey.yml re-keys kb_curation "
-                 "from it and kb/_post_apply_chain.py runs once, all in this window."},
+        {"step": 0, "when": "one window: open after the 12:17 UTC run has committed (about 12:45), close before "
+                            "06:17 the next morning; no cron fires inside it (06:17, 09:17, 12:17)",
+         "what": "fresh read: the five pre-apply SELECTs through the Supabase MCP, each against its expected result",
+         "receipt": "kb/reclustering_s648_out/2026-11-13/fresh_read.json (the five results)",
+         "undo": "nothing written"},
+        {"step": 1, "what": "this PR merged on a green test: it carries the plan, both scripts, and the migration "
+                            "pair (inert until triggered). Then, on a claude/* branch off main: "
+                            "python3 kb/_reclustering_s648_apply.py --record (adds the case 6 record; P0, P1, P2 "
+                            "gates), commit",
+         "receipt": "the commit: kb/coci_minted_courses.json + 1 record, stamp _recluster_s648_from",
+         "undo": "python3 kb/_reclustering_s648_apply.py --undo-record, or git revert"},
+        {"step": 2, "what": "on the same branch, set kb/migrations/.apply to "
+                            "file=kb/migrations/2026-11-13_s648_reclustering_cohort.sql and "
+                            "name=s648_reclustering_cohort, commit, push. supabase-migrate.yml runs on the claude/* "
+                            "push (it does not need main), posts the file, and commits its receipt to the branch",
+         "receipt": "kb/receipts/ (the workflow's), plus the post-apply SELECT's result in "
+                    "kb/reclustering_s648_out/2026-11-13/post_read.json",
+         "undo": "set kb/migrations/.apply to the rollback pair "
+                 "(file=kb/migrations/2026-11-13_s648_reclustering_cohort_rollback.sql, "
+                 "name=s648_reclustering_cohort_rollback) and push: delete by cohort"},
+        {"step": 3, "what": "open the branch's PR, merge on a green test (record + .apply + receipt on main), then "
+                            "dispatch daily-dashboard.yml once: kb/_apply_curation.py folds the three rows into "
+                            "kb/coci_curation.json and the export rebuilds",
+         "receipt": "the runner's commit", "undo": "steps 2 and 1 undone, then one more dispatch"},
+        {"step": 4, "what": "read the rebuilt unified_courses_members.js against post_apply_simulated in plan.json",
+         "receipt": "a line in the lane", "undo": "-"},
+    ]
+
+
+def sim_section(md_path):
+    """The locally simulated post-apply state, when post_apply_simulated.json sits beside the plan."""
+    p = os.path.join(os.path.dirname(md_path), "post_apply_simulated.json")
+    if not os.path.exists(p):
+        return []
+    with open(p, encoding="utf-8") as f:
+        sim = json.load(f)
+    L = ["## After the apply, simulated", "", sim["how"], ""]
+    for r in sim["identities"]:
+        a, b = r["after"], r["before"]
+        shown = (f"shown as {a['id_system']} *{a['title']}*" if a["in_browser_row"] else "no row of its own (folded)")
+        L.append(f"- `{r['id']}`: members {b['members']} to {a['members']}, units {b['units']} to {a['units']}; {shown}.")
+    L += [""] + [f"- {n}" for n in sim.get("display_notes", [])]
+    L += ["", "Committed files the nightly build changes: " + "; ".join(sim["files_changed"]) + ".", "",
+          "Tests: " + sim["tests"], ""]
+    return L
+
+
+def sheet_section(plan):
+    by = {c["n"]: c for c in plan["cases"]}
+    h = plan["honors"]["summary"]
+    why = h["honors_rows_under_official_ids_by_why_they_sit_there"]
+    m1 = {m["college"]: m for m in by[1]["moves"]}
+    m5 = by[5]["moves"][0]
+    return [
+        "## For the sheet", "",
+        "Four questions for Sam. Cases 2, 4 and 6 go forward on his ruling.", "",
+        "**1. Honors under an official C-ID or CCN.** He ruled that an Honors course gets its own M-ID with a declared "
+        f"equivalence to its base. Of the {h['shares_base_identity']} Honors courses that share an identity with their "
+        f"base, {h['honors_rows_leaving_official_ids']} sit under {h['new_mids_from_official_ids']} official C-ID or "
+        f"CCN identities ({why.get('coci_cid_claim', 0)} because the college entered that C-ID in COCI, "
+        f"{why.get('asccc_approval', 0)} by an ASCCC approval) and {h['honors_rows_leaving_m_ids']} share an M-ID. "
+        f"Another {h['equivalence_pairs_already_apart']} Honors and base pairs already sit apart and need only the "
+        f"equivalence. Options: (a) the rule for M-IDs only, {h['new_mids_from_m_ids']} new M-IDs and the equivalence "
+        f"for every pair; (b) Honors also leaves official ids, {h['new_mids_if_ruled']} new M-IDs, against the "
+        "colleges' own C-ID entries. Recommended: (a). C-ID and CCN already decide Honors for their own courses "
+        f"(CCN gives Honors its own number, {len(h['ccn_honors_identities'])} such as PSYC C1000H), and an official "
+        "id is never re-keyed.", "",
+        "**2. AJ 160: move two courses out of the C-ID?** Modesto ADJU 205 *Community Relations* is entered as AJ 160 "
+        "in COCI, and Golden West CJ G137 *Community Relations And Special Issues In Criminal Justice* holds an "
+        f"ASCCC approval for AJ 160 ({m1['Golden West College']['asccc_approvals'][0]['disposition']}). Only the "
+        "outcome scores separate them, at partial confidence, and neither meets the four signals a C-ID claim hold "
+        "needs. Options: (a) keep both under AJ 160; (b) move them out against the entry and the approval. "
+        "Recommended: (a).", "",
+        f"**3. MUS 130: move San Diego Mesa {m5['code']} out?** *{m5['title']}* holds an ASCCC approval for MUS 130 "
+        "and carries the C-ID's title. Its outline reads differently because San Diego Mesa writes each outcome as an "
+        "institutional skill, and word overlap cannot see past the phrasing. Options: (a) keep it under MUS 130; "
+        "(b) move it out against the approval. Recommended: (a).", "",
+        "**4. REAL M1038 with REAL M1040: merge?** The report merges them only if students do not take both. Both "
+        "records say the course is required for the California real estate salesperson license, which asks for Real "
+        "Estate Principles and Real Estate Practice as two courses. Options: (a) keep them apart; (b) merge into "
+        "REAL M1040 (units 0 to 4). Recommended: (a).", "",
     ]
 
 
@@ -930,6 +1040,9 @@ def write_md(plan, path):
          f"Alias chain: baseline `{plan['alias_chain']['baseline']}`, {len(plan['alias_chain']['pending_maps'])} "
          "maps pending, every named id resolves to itself and is live. Members file: "
          f"{plan['inputs']['members']}; curation overlay synced {plan['inputs']['curation_overlay_synced_at']}.", "",
+         "DECIDED (the S648 conductor, 2026-11-13, on #3245): cases 2, 4 and 6 go to review and apply, case 6 by "
+         "the INSERT-only path (deleting a saved curation row is on the hold list, whoever wrote it); cases 1, 3 and 5 "
+         "stay held and go to Sam on the sheet; nothing is minted for Honors.", "",
          "## The six", ""]
     for c in plan["cases"]:
         ids = ", ".join(c["identities"])
@@ -977,10 +1090,19 @@ def write_md(plan, path):
              f"CN: keys; {co['pointers_into_affected']} merge_into pointers land on an affected id, by reviewer "
              f"{co['pointers_into_affected_by_reviewer']}.")
     L.append("")
-    for s in plan["kb_curation_selects"]:
-        L += [f"{s['why']}:", "", "```sql", s["sql"], "```", ""]
+    sel = plan["kb_curation_selects"]
+    L += ["Before the apply, five aggregates (expected from the committed overlay, which mirrors seven fields only):", ""]
+    for k, s in enumerate(sel["pre"], 1):
+        L += [f"{k}. Expect `{json.dumps(s['expect'])}`. If different: {s['if_different'].rstrip('.')}.", "", "```sql", s["sql"],
+              "```", ""]
+    L += [f"After the apply. Expect `{json.dumps(sel['post']['expect'])}`. If different: {sel['post']['if_different']}.",
+          "", "```sql", sel["post"]["sql"], "```", ""]
+    L += sim_section(path)
+    L += sheet_section(plan)
     h = plan["honors"]
-    L += ["## The Honors rule", ""]
+    L += ["## The Honors rule", "",
+          "Nothing is minted for Honors (the S648 conductor, 2026-11-13): whether an Honors course leaves a C-ID is "
+          "Sam's call, on the sheet above. This branch holds the detection rule, its tests and the worklist.", ""]
     for k, v in h["rule"].items():
         L.append(f"- {k.replace('_', ' ')}: {v}")
     L += ["", "Measured on the members file:", ""]

@@ -58,6 +58,19 @@ const bad = spawnSync("python3", [SCRIPT, "--drop-gate", "title_word"], { cwd: R
 check("(9) --drop-gate outside --selftest is refused, so a plan is never cut with a gate removed",
   bad.status !== 0, "exit " + bad.status);
 
+// The apply half (cases 2, 4 and 6): the committed migration is the plan's, INSERT-only under its cohort.
+const fs = require("fs");
+const chk = spawnSync("python3", ["kb/_reclustering_s648_apply.py", "--sql", "--check"], { cwd: ROOT, encoding: "utf8" });
+check("(10) the committed migration pair equals what the frozen plan writes", chk.status === 0,
+  (chk.stderr || chk.stdout || "").slice(-300));
+const mig = fs.readFileSync(path.join(ROOT, "kb/migrations/2026-11-13_s648_reclustering_cohort.sql"), "utf8")
+  .split("\n").filter((l) => !/^\s*--/.test(l)).join("\n");
+check("(11) the migration only inserts, skips a taken slot, and writes under the cohort alone",
+  /insert into public\.kb_curation/i.test(mig) && /on conflict \(course_id, field\) do nothing/i.test(mig)
+  && !/\b(update|delete|truncate|drop)\b/i.test(mig)
+  && (mig.match(/'reclustering-s648@bot'/g) || []).length === (mig.match(/^\s*\('/gm) || []).length,
+  "the migration must be INSERT ... ON CONFLICT DO NOTHING, every row under reclustering-s648@bot, nothing else");
+
 const failed = results.filter((r) => !r[1]);
 results.forEach(([name, ok, why]) =>
   console.log((ok ? "  ok  " : "  FAIL ") + name + (ok || !why ? "" : "\n        " + why)));

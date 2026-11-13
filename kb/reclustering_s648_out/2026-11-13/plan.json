@@ -780,9 +780,9 @@
      },
      "leaf_promotion_targets": {},
      "sits_by": "leaf_merge_into",
-     "to": "returns to its own stand-alone record",
-     "target_id": "BUSI M10XW",
-     "proposed_new_id": null,
+     "to": "a new stand-alone M-ID",
+     "target_id": "BUSI M11TU",
+     "proposed_new_id": "BUSI M11TU",
      "proposed_discipline": "Business",
      "leaf_facts": {
       "BUSI M10XW": {
@@ -794,7 +794,7 @@
       }
      },
      "held": false,
-     "mechanism": "option A (recommended, no new id): a guarded DELETE of the kb_curation row (BUSI M10XW, merge_into, BUSI M1228) saved by automerge-titlelane-v1@bot, its before-values in the receipt so a re-INSERT undoes it; option B (INSERT-only): CN:CCC000609492 merge_into a newly minted stand-alone, leaving BUSI M10XW folded and empty"
+     "mechanism": "INSERT-only: kb_curation row (CN:CCC000609492, merge_into, BUSI M11TU) under reclustering-s648@bot, and the new catalog record BUSI M11TU (kb/_reclustering_s648_apply.py --record). Its own stand-alone BUSI M10XW stays folded into BUSI M1228 by the row automerge-titlelane-v1@bot saved, which is never deleted, and keeps no member"
     }
    ],
    "stays_count": 23,
@@ -805,7 +805,7 @@
  ],
  "affected_ids": [
   "AJ 160",
-  "BUSI M10XW",
+  "BUSI M11TU",
   "BUSI M1228",
   "CRIM M10WC",
   "CRIM M11UI",
@@ -1823,28 +1823,63 @@
    "automerge-v1@bot": 2
   }
  },
- "kb_curation_selects": [
-  {
-   "why": "every row keyed on an affected id or a moved member's CN: key, with who saved it",
-   "sql": "select course_id, field, value, reviewer_email, reviewed_at from public.kb_curation where course_id in ('AJ 160', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044', 'MUS 130', 'REAL M1038', 'REAL M1040', 'CN:CCC000142236', 'CN:CCC000325641', 'CN:CCC000609492', 'CN:CCC000620387') order by course_id, field;"
-  },
-  {
-   "why": "aggregate: rows keyed on the affected ids by field and by human or bot reviewer",
-   "sql": "select course_id, field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where course_id in ('AJ 160', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044', 'MUS 130', 'REAL M1038', 'REAL M1040', 'CN:CCC000142236', 'CN:CCC000325641', 'CN:CCC000609492', 'CN:CCC000620387') group by 1, 2, 3 order by 1, 2;"
-  },
-  {
-   "why": "aggregate: merge_into pointers that land on an affected id (the chain the merge extends)",
-   "sql": "select value as target, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where field = 'merge_into' and value in ('AJ 160', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044', 'MUS 130', 'REAL M1038', 'REAL M1040') group by 1, 2 order by 1;"
-  },
-  {
-   "why": "pending title merges whose target is an affected id (Rule 10a: hold a write that fights the curator)",
-   "sql": "select course_id, value, reviewer_email, reviewed_at from public.kb_curation where field = 'unified_title_merge_confirm' and value in ('AJ 160', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044', 'MUS 130', 'REAL M1038', 'REAL M1040');"
-  },
-  {
-   "why": "the cohort is empty before the apply (P0) and holds exactly the plan's rows after",
-   "sql": "select field, count(*) from public.kb_curation where reviewer_email = 'reclustering-s648@bot' group by 1;"
+ "kb_curation_selects": {
+  "pre": [
+   {
+    "sql": "select field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where course_id in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044') group by 1, 2 order by 1, 2;",
+    "expect": {
+     "merge_into / bot": 1,
+     "unified_title / person": 1,
+     "unified_title / bot": 1
+    },
+    "if_different": "a merge_into row on any of the three sources means its INSERT would be skipped: hold that case. Any other new row since the overlay sync is a person's or a procedure's work on an affected key: read it before applying (Rule 10a)."
+   },
+   {
+    "sql": "select count(*) from public.kb_curation where field = 'merge_into' and course_id in ('FIRE M1274', 'MATH M1044', 'CN:CCC000609492');",
+    "expect": 0,
+    "if_different": "a source already folds somewhere: the INSERT would be skipped, so hold that case"
+   },
+   {
+    "sql": "select value, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where field = 'merge_into' and value in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044') group by 1, 2 order by 1, 2;",
+    "expect": {
+     "BUSI M1228 / bot": 9,
+     "FIRE M1274 / person": 1
+    },
+    "if_different": "a pointer added since the sync now follows the fold too (FIRE M1274 and MATH M1044 pass their pointers on to the survivor); a pointer onto the new id means the id is no longer free: re-cut the plan"
+   },
+   {
+    "sql": "select count(*) from public.kb_curation where field = 'unified_title_merge_confirm' and (course_id in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044') or value in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044'));",
+    "expect": 0,
+    "if_different": "a pending title merge names an affected key: the curator's merge wins, hold that case"
+   },
+   {
+    "sql": "select count(*) from public.kb_curation where reviewer_email = 'reclustering-s648@bot';",
+    "expect": 0,
+    "if_different": "the cohort already wrote (P0): the apply ran, in part or whole; read the rows first"
+   }
+  ],
+  "post": {
+   "sql": "select course_id, field, value from public.kb_curation where reviewer_email = 'reclustering-s648@bot' order by 1;",
+   "expect": [
+    [
+     "CN:CCC000609492",
+     "merge_into",
+     "BUSI M11TU"
+    ],
+    [
+     "FIRE M1274",
+     "merge_into",
+     "FIRE 130 X"
+    ],
+    [
+     "MATH M1044",
+     "merge_into",
+     "MATH M1036"
+    ]
+   ],
+   "if_different": "fewer rows: a slot was taken and its INSERT skipped (that case did not land); run the rollback and re-read"
   }
- ],
+ },
  "honors": {
   "rule": {
    "marks_honors": "the word Honors (or Honor) in the title, as a whole word. A code ending in H corroborates and finds the base, and never marks a course alone.",
@@ -4250,43 +4285,34 @@
  "apply_sequence": [
   {
    "step": 0,
-   "when": "window opens after the 12:17 UTC run has committed (about 12:45) and closes by 05:45 the next morning, clear of 06:17; none of 06:17, 09:17, 12:17 inside it",
-   "what": "fresh read: the SELECTs in this plan, run through the Supabase MCP; compare with curation_overlay here (P3). Any row a person saved on an affected key since the overlay sync holds that case.",
-   "receipt": "kb/reclustering_s648_out/<date>/fresh_read.json",
+   "when": "one window: open after the 12:17 UTC run has committed (about 12:45), close before 06:17 the next morning; no cron fires inside it (06:17, 09:17, 12:17)",
+   "what": "fresh read: the five pre-apply SELECTs through the Supabase MCP, each against its expected result",
+   "receipt": "kb/reclustering_s648_out/2026-11-13/fresh_read.json (the five results)",
    "undo": "nothing written"
   },
   {
    "step": 1,
-   "what": "only when a move that is not held needs a new id (none in this plan: the one ready move returns to its own record): a code PR, merged on a green test, adding the stand-alone record to kb/coci_minted_singletons.json with the stamp _recluster_s648_from. No generated artifact (artifact policy).",
-   "receipt": "the PR diff",
-   "undo": "git revert"
+   "what": "this PR merged on a green test: it carries the plan, both scripts, and the migration pair (inert until triggered). Then, on a claude/* branch off main: python3 kb/_reclustering_s648_apply.py --record (adds the case 6 record; P0, P1, P2 gates), commit",
+   "receipt": "the commit: kb/coci_minted_courses.json + 1 record, stamp _recluster_s648_from",
+   "undo": "python3 kb/_reclustering_s648_apply.py --undo-record, or git revert"
   },
   {
    "step": 2,
-   "what": "kb_curation INSERT ... ON CONFLICT (course_id, field) DO NOTHING under reviewer_email 'reclustering-s648@bot': the merge_into rows of the merges that are ready (cases 2 and 4). Then case 6's option A, the one guarded DELETE of the bot's fold row, its before-values written to the receipt first. Through a committed migration file and supabase-migrate.yml (Rule 10c) or the MCP. Every row lands or none.",
-   "receipt": "kb/receipts/reclustering_s648_<date>.sql: the rows, the deleted row's before-values, and the rollback in its header",
-   "undo": "delete from public.kb_curation where reviewer_email = 'reclustering-s648@bot'; then re-INSERT the deleted row from its before-values"
+   "what": "on the same branch, set kb/migrations/.apply to file=kb/migrations/2026-11-13_s648_reclustering_cohort.sql and name=s648_reclustering_cohort, commit, push. supabase-migrate.yml runs on the claude/* push (it does not need main), posts the file, and commits its receipt to the branch",
+   "receipt": "kb/receipts/ (the workflow's), plus the post-apply SELECT's result in kb/reclustering_s648_out/2026-11-13/post_read.json",
+   "undo": "set kb/migrations/.apply to the rollback pair (file=kb/migrations/2026-11-13_s648_reclustering_cohort_rollback.sql, name=s648_reclustering_cohort_rollback) and push: delete by cohort"
   },
   {
    "step": 3,
-   "what": "python3 kb/_apply_curation.py (Supabase to kb/coci_curation.json), commit",
-   "receipt": "the overlay diff: exactly the cohort's rows",
-   "undo": "the next sync after step 2's undo"
+   "what": "open the branch's PR, merge on a green test (record + .apply + receipt on main), then dispatch daily-dashboard.yml once: kb/_apply_curation.py folds the three rows into kb/coci_curation.json and the export rebuilds",
+   "receipt": "the runner's commit",
+   "undo": "steps 2 and 1 undone, then one more dispatch"
   },
   {
    "step": 4,
-   "what": "dispatch daily-dashboard.yml once (workflow_dispatch) so the export folds the merges and re-homes; read unified_courses_members.js for each case's member counts against plan.json",
-   "receipt": "the runner's commit",
-   "undo": "steps 2 and 3 undone, then the next run"
-  },
-  {
-   "step": 5,
-   "what": "Honors: nothing in this window. The rule waits on the questions in plan.json (honors.questions_for_a_person); once ruled it runs as its own plan through the same steps, the equivalence rows under its own cohort.",
-   "receipt": "its own",
-   "undo": "its own"
-  },
-  {
-   "note": "No alias map is written, so kb/alias_chain.py, supabase-rekey.yml and kb/_post_apply_chain.py do not run for the merges and moves. If the conductor chooses a re-key merge between two M-IDs instead, that map joins ALIAS_MAPS in the same commit, supabase-rekey.yml re-keys kb_curation from it and kb/_post_apply_chain.py runs once, all in this window."
+   "what": "read the rebuilt unified_courses_members.js against post_apply_simulated in plan.json",
+   "receipt": "a line in the lane",
+   "undo": "-"
   }
  ]
 }

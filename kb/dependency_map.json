@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 931,
+  "file_datasets": 932,
   "external_services": 195,
-  "consumers": 582,
+  "consumers": 583,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -11889,6 +11889,13 @@
      "line": 206
     },
     {
+     "id": "script:kb/_reclustering_s648_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 117
+    },
+    {
      "id": "script:kb/_reclustering_s648_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -12338,6 +12345,13 @@
      "direction": "write",
      "how": "literal",
      "line": 202
+    },
+    {
+     "id": "script:kb/_reclustering_s648_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 49
     },
     {
      "id": "script:kb/_reclustering_s648_dryrun.py",
@@ -13181,6 +13195,13 @@
      "direction": "write",
      "how": "literal",
      "line": 203
+    },
+    {
+     "id": "script:kb/_reclustering_s648_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 87
     },
     {
      "id": "script:kb/_reclustering_s648_dryrun.py",
@@ -14822,7 +14843,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 656
+     "line": 663
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -17555,7 +17576,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1021
+     "line": 1143
     }
    ],
    "served": true,
@@ -17568,20 +17589,33 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1026
+     "line": 1148
     }
    ],
    "served": true,
    "main_committers": []
   },
-  "file:kb/reclustering_s648_out/<date>/fresh_read.json": {
+  "file:kb/reclustering_s648_out/2026-11-13/post_apply_simulated.json": {
    "consumers": [
     {
      "id": "script:kb/_reclustering_s648_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 892
+     "line": 981
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reclustering_s648_out/<date>/post_read.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 966
     }
    ],
    "served": false,
