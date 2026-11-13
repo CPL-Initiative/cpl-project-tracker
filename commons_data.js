@@ -290,7 +290,12 @@
   var SORT_WORDS = { 1: { name: "A to Z", other: "low first" }, "-1": { name: "Z to A", other: "high first" } };
 
   var PW = { min: 300, max: 900, start: 480, step: 20 };   // the panel's width in px (Sam, 1:52 AM PT: 300 to 900; double-click resets)
-  var S = { view: "", filter: "all", platform: "", sort: { k: "name", d: 1 }, q: "", open: null, panel: null, pw: PW.start };
+  /* sort null means the default, resolved when the list draws (defaultSort); a person's own sort lasts the visit. */
+  var S = { view: "", filter: "all", platform: "", sort: null, q: "", open: null, panel: null, pw: PW.start };
+  /* The list opens lowest completeness first (#3229; the commons lane's NEXT): the overall bar where the live read
+     holds one, else program requirements passing. "auto" marks the default, so the words above the list say so and
+     a heading's first click starts a person's own sort. */
+  function defaultSort(M) { return liveRead(M) ? { k: "overall", d: 1, auto: true } : { k: "pr", d: 1, auto: true }; }
   /* The two views beside the college list (slice 3), each at its own address. */
   var VIEWS = { dictionary: "The data dictionary", apis: "The API checklist" };
   function listRoute(filter, platform) {
@@ -316,10 +321,22 @@
     return out;
   }
 
+  /* The list's order in words: the default says what "lowest completeness" reads from and where the colleges with no
+     value go; a person's own order says it lasts the visit. */
+  function sortWords(M) {
+    var s = S.sort || defaultSort(M);
+    var col = COLUMNS.filter(function (c) { return c.k === s.k; })[0] || COLUMNS[0];
+    if (s.auto && s.k === "overall") return "Sorted lowest overall completeness first (" + liveWords(M) + "); a college the live read does not hold comes last. A column heading sorts another way for this visit.";
+    if (s.auto) return "Sorted lowest program requirements passing first, colleges not collected yet at the top. A column heading sorts another way for this visit.";
+    return "Sorted by " + col.label.toLowerCase() + ", " + (col.k === "name" ? SORT_WORDS[String(s.d)].name : SORT_WORDS[String(s.d)].other) + ", for this visit; a new visit opens lowest completeness first.";
+  }
   function sorted(M, list) {
     var col = COLUMNS.filter(function (c) { return c.k === S.sort.k; })[0] || COLUMNS[0];
+    /* A college the live read does not hold has no overall value: it goes last in either direction, never first. */
+    var last = col.k === "overall";
     return list.slice().sort(function (a, b) {
       var x = col.val(a), y = col.val(b);
+      if (last && (x < 0 || y < 0)) return x < 0 && y < 0 ? a.name.localeCompare(b.name) : x < 0 ? 1 : -1;
       var r = typeof x === "string" ? x.localeCompare(String(y)) : x - y;
       return r * S.sort.d || a.name.localeCompare(b.name);
     });
@@ -793,6 +810,7 @@
     S.panel = pcol ? pcol.id : null;
     var rf = FILTER_ALIAS[R.filter] || R.filter, f = FILTERS[rf] ? rf : "all";
     if (f !== S.filter) { S.filter = f; if (FILTER_SORT[f]) S.sort = { k: FILTER_SORT[f].k, d: FILTER_SORT[f].d }; }
+    if (!S.sort) S.sort = defaultSort(M);
     S.platform = platformsOf(M).some(function (p) { return p[0] === R.platform; }) ? R.platform : "";
     root.removeAttribute("style");
     root.textContent = "";
@@ -862,6 +880,9 @@
     var clear = el("button", { type: "button", cls: "cmn-word", id: "cdd-all", text: "Show all colleges" });
     clear.addEventListener("click", function () { pick("all"); });
     list.appendChild(el("div", { cls: "cdd-tools" }, [el("label", { "for": "cdd-q", cls: "cdd-label", text: "Find a college or district" }), search, shown, S.filter !== "all" || S.platform ? clear : null]));
+    /* The order in words, above the list, announced when it changes (role status). */
+    var sortLine = el("p", { cls: "cdd-sortline", id: "cdd-sortline", role: "status" });
+    list.appendChild(sortLine);
     var plats = platformControl(M);
     if (plats) list.appendChild(plats);
     var body = el("tbody");
@@ -876,9 +897,11 @@
       COLUMNS.forEach(function (col) {
         if (col.nosort) { head.appendChild(el("th", { scope: "col", text: col.label })); return; }
         var on = S.sort.k === col.k;
+        /* The default order is no click of the person's: a first click on its column starts their own sort, low first. */
+        var mine = on && !S.sort.auto;
         var b = el("button", { type: "button", cls: "cmn-word cdd-sort", "data-sort": col.k, text: col.label });
         if (on) b.appendChild(el("span", { cls: "cdd-dir", text: " (" + (col.k === "name" ? SORT_WORDS[String(S.sort.d)].name : SORT_WORDS[String(S.sort.d)].other) + ")" }));
-        b.addEventListener("click", function () { S.sort = { k: col.k, d: on ? -S.sort.d : col.d0 }; drawHead(); drawBody(); });
+        b.addEventListener("click", function () { S.sort = { k: col.k, d: mine ? -S.sort.d : col.d0 }; drawHead(); drawBody(); });
         head.appendChild(el("th", { scope: "col", "aria-sort": on ? (S.sort.d === 1 ? "ascending" : "descending") : "none" }, [b]));
       });
     }
@@ -892,6 +915,9 @@
       if (!L.length) body.appendChild(el("tr", null, [el("td", { colspan: String(COLUMNS.length), text: "No college matches." })]));
       shown.textContent = "Showing " + fmt(L.length) + " of " + fmt(M.colleges.length) + (S.filter !== "all" ? ": " + FILTERS[S.filter].word : "")
         + (S.platform ? (S.filter !== "all" ? "; " : ": ") + "catalog platform " + platformWord(S.platform) : "");
+      /* Set only when the words change, so typing in the search never re-announces the order. */
+      var sw = sortWords(M);
+      if (sortLine.textContent !== sw) sortLine.textContent = sw;
     }
     search.addEventListener("input", function () { S.q = search.value || ""; drawBody(); });
     VIEW.drawBody = drawBody;
@@ -1125,7 +1151,7 @@
     opts = opts || {};
     VIEW.noted = opts.noted || null;
     if (!root) return Promise.resolve(null);
-    S.q = ""; S.filter = ""; S.view = ""; S.platform = ""; S.sort = { k: "name", d: 1 }; S.open = null; S.panel = null; S.pw = PW.start;   // a visit starts fresh: nothing is remembered
+    S.q = ""; S.filter = ""; S.view = ""; S.platform = ""; S.sort = null; S.open = null; S.panel = null; S.pw = PW.start;   // a visit starts fresh: nothing is remembered, the order back to its default
     if (VIEW.M && cache) { render(root, VIEW.M, filter, new Date()); focusArrival(); return Promise.resolve(VIEW.M); }
     root.textContent = "Reading the " + TITLE + "…";
     cache = cache || load();
@@ -1175,6 +1201,7 @@
     ".cdd-q { font:inherit; min-height:32px; flex:1 1 14rem; min-width:0; max-width:28rem; padding:4px 8px; border:1px solid var(--cmn-muted); border-radius:6px; background:var(--cmn-surface); color:var(--cmn-ink); }",
     ".cdd-q:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".cdd-shown { margin:0; color:var(--cmn-muted); font-size:.9rem; font-variant-numeric:tabular-nums; }",
+    ".cdd-sortline { margin:0; color:var(--cmn-ink-2); font-size:.9rem; max-width:var(--cpl-measure,none); }",
     ".cdd-wrap { overflow-x:auto; background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; }",
     ".cdd-wrap:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".cdd-table { width:100%; border-collapse:collapse; table-layout:fixed; font-size:.93rem; }",
@@ -1285,6 +1312,6 @@
     boot: boot, render: render, model: model, listFor: listFor, tiles: tiles, address: address, pick: pick, load: load, age: age,
     datasets: datasets, gaps: gaps, asks: asks, apiCount: apiCount, parseRouteViews: VIEWS, go: go, slugOf: slugOf, parseRoute: parseRoute, openPanel: openPanel, closePanel: closePanel, PW: PW,
     FILE: FILE, FILTERS: FILTERS, COLUMNS: COLUMNS, CSS: CSS, _state: S,
-    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.q = ""; S.sort = { k: "name", d: 1 }; S.open = null; S.panel = null; S.pw = PW.start; }
+    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.pw = PW.start; }
   };
 })();

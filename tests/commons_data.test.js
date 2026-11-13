@@ -21,6 +21,8 @@
 //       definition under every card; Collected, then confidence and completeness, then what is in the way; one
 //       confidence card; each completeness figure with its confidence word beside it; no person-confirmed headline;
 //       Confidence first in the opened row and the panel; the asks said to be the team's work.
+//   (14) ⭐ the default order: lowest completeness first (the overall bar, else program requirements passing), said
+//       in words above the list (role status), a person's sort for the visit only, back to the default on a new visit.
 // The committed file itself is guarded by tests/commons_data_status_build_test.py.
 //
 // Run from repo root: `npm test` (or `node tests/commons_data.test.js`).
@@ -772,6 +774,40 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     && h1.d.querySelector('nav.cdd-views').getAttribute("aria-label") === "College Data Collection views");
   check("3243 lever (review): the reconcile lever names the pipeline, not work for the college",
     !/the college's reconcile steps/.test(JSON.stringify(REAL.rule.levers || {})) && /the pipeline's reconcile steps/.test(JSON.stringify(REAL.rule.levers || {})));
+
+  // ── (14) the default order: lowest completeness first (#3229; the commons lane's NEXT), said in words, announced,
+  //        a person's own sort for the visit only ──
+  const d1 = load("#commons/data", READ);
+  await d1.M.boot(); await settle();
+  const sortLine = (x) => x.d.getElementById("cdd-sortline");
+  check("default 1 ⭐: with a live read the list opens lowest overall completeness first; a college the read does not hold comes last",
+    JSON.stringify(rows(d1)) === '["Gamma College","Alpha College","Beta College","Delta College","Epsilon Continuing Education"]', rows(d1));
+  check("default 2 ⭐: the order is said in words above the list and announced (role status)",
+    sortLine(d1) && sortLine(d1).getAttribute("role") === "status" && /^Sorted lowest overall completeness first \(live read, Nov 13, 2026\)/.test(txt(sortLine(d1)))
+    && (sortLine(d1).compareDocumentPosition(d1.d.getElementById("cdd-colleges")) & d1.w.Node.DOCUMENT_POSITION_FOLLOWING));
+  check("default 3: the Overall heading carries the order and aria-sort ascending",
+    d1.d.querySelector('button.cdd-sort[data-sort="overall"]').parentNode.getAttribute("aria-sort") === "ascending" && /low first/.test(txt(d1.d.querySelector('button.cdd-sort[data-sort="overall"]'))));
+  const q14 = d1.d.querySelector("#cdd-q"), before14 = sortLine(d1).firstChild;
+  q14.value = "college"; q14.dispatchEvent(new d1.w.Event("input"));
+  check("default 4: typing a search does not rewrite (re-announce) the order's words", sortLine(d1).firstChild === before14);
+  q14.value = ""; q14.dispatchEvent(new d1.w.Event("input"));
+  d1.d.querySelector('button.cdd-sort[data-sort="name"]').click();
+  check("default 5 ⭐: a person's own sort orders the list and says it lasts the visit",
+    rows(d1)[0] === "Alpha College" && /^Sorted by college, A to Z, for this visit; a new visit opens lowest completeness first\.$/.test(txt(sortLine(d1))));
+  d1.d.querySelector('button.cdd-sort[data-sort="overall"]').click();
+  check("default 6: a first click on the default's own column is the person's sort, low first", rows(d1)[0] === "Gamma College" && /for this visit/.test(txt(sortLine(d1))));
+  d1.w.dispatchEvent(new d1.w.CustomEvent("cpl-tab-activated", { detail: { tab: "other" } }));
+  d1.w.history.replaceState(null, "", "#commons/data");
+  d1.w.dispatchEvent(new d1.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
+  await settle();
+  check("default 7 ⭐: a new visit opens lowest completeness first again: the person's sort is never remembered",
+    rows(d1)[0] === "Gamma College" && /^Sorted lowest overall completeness first/.test(txt(sortLine(d1)))
+    && !/sort|overall|name/.test(Object.values(d1.w.localStorage._o || {}).filter((v) => !/^\{"tab"/.test(v)).join(" ")) && !/sort/.test(d1.w.location.hash));
+  const d2 = load("#commons/data", DATA);
+  await d2.M.boot(); await settle();
+  check("default 8: before the first live read the list opens lowest program requirements passing first, not-collected colleges at the top, and says so",
+    JSON.stringify(rows(d2)) === '["Delta College","Epsilon Continuing Education","Gamma College","Alpha College","Beta College"]'
+    && /^Sorted lowest program requirements passing first, colleges not collected yet at the top\./.test(txt(sortLine(d2))), rows(d2));
 
   const failed = results.filter((x) => !x[1]);
   results.forEach((x) => console.log((x[1] ? "PASS " : "FAIL ") + x[0]));
