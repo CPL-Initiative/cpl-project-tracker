@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 903,
+  "file_datasets": 906,
   "external_services": 195,
-  "consumers": 574,
+  "consumers": 575,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -16840,7 +16840,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3971
+     "line": 4109
     }
    ],
    "served": true,
@@ -19146,6 +19146,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/status/harvest_heading_agreement.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_heading_agreement.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 55
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/harvest_heading_agreement.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_heading_agreement.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/status/harvest_no_closed_list.json": {
    "consumers": [
     {
@@ -20353,7 +20379,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3968
+     "line": 4106
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20977,7 +21003,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3946
+     "line": 4084
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -24961,6 +24987,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/program_requirements_heading_agreement_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/program_requirements_pilot_test.py": {
    "consumers": [
     {
@@ -27489,7 +27528,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3988
+     "line": 4126
     }
    ],
    "main_committers": []
@@ -27501,7 +27540,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4075
+     "line": 4213
     }
    ],
    "main_committers": []
@@ -32535,6 +32574,7 @@
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/program_requirements_dated_reads_test.py",
+    "tests/program_requirements_heading_agreement_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
     "tests/mq_title5_rename_test.py",

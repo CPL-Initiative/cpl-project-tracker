@@ -2748,13 +2748,135 @@ def heading_above(txt: str, start: int, conf: dict | None, courses: list[dict]) 
     return s
 
 
+# ── A catalog that prints the control number AFTER its program (S644) ─────────────────────────────
+# Santiago Canyon's 2026-2027 PDF closes each program with "Control Number: N" and opens the next
+# program on the following line ("Control Number: 11856" / "Biology, AS-T" / "A.S. Degree for
+# Transfer"). pdf_best() cut the page from the number's line, the habit of catalogs that print the
+# number at the heading, so 29 of the college's windows opened on the program printed next: Biology
+# A.S. 11856 held the Biology AS-T, and Economics AA 11943 and Sociology AA 11947 passed holding their
+# AA-T's requirements (COBIx, #3194 comment 6841001207). Where the catalog's own lines show the
+# number printed after its program (pdf_numbers_after), the window that ENDS at "Control Number: N"
+# belongs to N, from the previous number line, and a window closed by another program's number is
+# never handed to this one (pdf_best: refused).
+PDF_CN_LINE = re.compile(r"(?im)^[ \t]*(?:program[ \t]+)?control[ \t]+(?:number|no\.?|#)[ \t]*:?[ \t]*0*(\d{3,6})(?![\w])")
+PDF_AFTER_VOTES = 3       # number lines that must show the habit before the catalog is read by it
+PDF_NAME_REACH = 40       # characters past a title's own length a heading is read in, after a number line
+
+
+def pdf_text_names(text: str, program: dict, strict: bool = False) -> bool:
+    """The text, from its start, names the program: every title word within the title's length and
+    PDF_NAME_REACH, and an award type that is the program's (strict) or none that is another's. The
+    award types are the scorer's heading_award_types (one copy)."""
+    from _program_requirements_score import heading_award_types, award_type, DEGREE_TYPES
+    title = program.get("title") or ""
+    tokens = P.title_tokens(title)
+    if not tokens:
+        return False
+    head = (text or "").lstrip(" \t\n)]:;,.")[:len(title) + PDF_NAME_REACH]
+    have = set(re.findall(r"[a-z0-9]+", head.lower()))
+    if not all(t in have for t in tokens):
+        return False
+    names, filed = heading_award_types(head), award_type(program.get("award"))
+    if strict:
+        return filed is not None and filed in names
+    return not names or filed is None or filed in names or ("degree" in names and filed in DEGREE_TYPES)
+
+
+def pdf_numbers_after(pages: list[str], programs: list[dict]) -> dict:
+    """Whether the catalog prints each program's control number after the program. A number line
+    followed at once by another program's heading (title and award), or by its own title under another
+    award type, votes after; one followed by its own program's heading votes before. The catalog reads
+    as after with PDF_AFTER_VOTES or more after votes and more than twice the before votes."""
+    by_cn = {str(p.get("control_number") or "").lstrip("0"): p for p in programs if p.get("control_number")}
+    votes = {"after": 0, "before": 0}
+    for txt in pages:
+        for m in PDF_CN_LINE.finditer(txt or ""):
+            own = by_cn.get(m.group(1).lstrip("0"))
+            if not own:
+                continue
+            follow = txt[m.end():]
+            mine = pdf_text_names(follow, own)
+            crossed = not mine and pdf_text_names(follow, dict(own, award=None))
+            other = crossed or any(p is not own and pdf_text_names(follow, p, strict=True) for p in by_cn.values())
+            if mine and not other:
+                votes["before"] += 1
+            elif other and not mine:
+                votes["after"] += 1
+    votes["after_mode"] = votes["after"] >= PDF_AFTER_VOTES and votes["after"] > 2 * votes["before"]
+    return votes
+
+
+def pdf_after_block(pages: list[str], j: int, start: int, end: int,
+                    reach: int = PDF_RUN_PAGES) -> list[tuple[int, int, int]]:
+    """(page, from, to) slices of the program whose number line runs from `start` to `end` on page j,
+    in page order: back from the number, which the block keeps, to the end of the previous number
+    line, at most `reach` pages back."""
+    segs, k, stop, cut = [], j, start, end
+    while True:
+        prev = None
+        for m in PDF_CN_LINE.finditer(pages[k], 0, stop):
+            prev = m
+        if prev:
+            segs.insert(0, (k, prev.end(), cut))
+            break
+        segs.insert(0, (k, 0, cut))
+        if k == 0 or j - k >= reach:
+            break
+        k -= 1
+        stop = cut = len(pages[k])
+    return segs
+
+
+def pdf_after_window(pages: list[str], program: dict, courses: list[dict]) -> dict | None:
+    """The block that ends at the program's own number line: (pages, text, first page's heading), the
+    occurrence naming the most listed codes when the number prints more than once; None when it prints
+    nowhere."""
+    cn = str(program.get("control_number") or "").lstrip("0")
+    best = None
+    for j, txt in enumerate(pages):
+        for m in PDF_CN_LINE.finditer(txt or ""):
+            if m.group(1).lstrip("0") != cn:
+                continue
+            segs = pdf_after_block(pages, j, m.start(), m.end())
+            text = "\n\n".join("[page %d]\n%s" % (k + 1, pages[k][a:b].strip("\n")) for k, a, b in segs)
+            n = len(P.find_codes(text, courses))
+            if best is None or n > best[0]:
+                best = (n, segs, text)
+    if best is None:
+        return None
+    return {"pages": sorted({k for k, _, _ in best[1]}), "text": best[2]}
+
+
+def _first_number(text: str) -> str | None:
+    m = PDF_CN_LINE.search(text or "")
+    return m.group(1).lstrip("0") if m else None
+
+
 def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], extractor: str | None,
-             heading: dict | None = None, above: dict | None = None) -> dict | None:
+             heading: dict | None = None, above: dict | None = None, numbers_after: bool = False) -> dict | None:
     """The program's pages as a source the extraction reads, in the shape
     source_record() takes: None when no page names a listed course. The text
     opens on the program's heading, so an A.S. and the certificate printed
     after it each open on their own name. A code heading (pdf_code_assign())
-    names the run's first page."""
+    names the run's first page. numbers_after (pdf_numbers_after): the catalog
+    closes each program with its number, so the window is the block that ends at
+    the program's own number line; without one printed, a window that another
+    program's number closes is refused (`refused`, no text)."""
+    if numbers_after and not heading:
+        win = pdf_after_window(pages, program, courses)
+        if win:
+            found = P.find_codes(win["text"], courses)
+            if not found:
+                return None
+            body = win["text"].split("\n", 1)[1] if "\n" in win["text"] else win["text"]
+            head = pdf_heading(body, program)
+            first = next((ln.strip() for ln in body.split("\n") if ln.strip()), "")
+            return {"url": "%s#page=%d" % (url, win["pages"][0] + 1), "field": "pdf_pages", "found": found,
+                    "coverage": P.coverage(found, courses), "text": win["text"], "opens_on_list": False,
+                    "pages": [i + 1 for i in win["pages"]], "extractor": extractor,
+                    "named": bool(head[0] == 1.0 and head[1]), "control_number_printed": True,
+                    "titled": head[0] == 1.0, "bound": "number_after",
+                    "got": {"title": first[:PDF_HEADING_CHARS], "h1": first[:PDF_HEADING_CHARS]}}
     if heading:
         run, cn_at, head, titled = _pdf_run(pages, heading["page"], courses), -1, (1.0, True, heading["at"]), True
     else:
@@ -2778,6 +2900,14 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
     text = "\n\n".join(parts)
     found = P.find_codes(text, courses)
     first = (text.split("\n", 2) + ["", ""])[1].strip()
+    closed_by = _first_number(text) if numbers_after and not heading else None
+    if closed_by and closed_by != str(program.get("control_number") or "").lstrip("0"):
+        # The catalog closes each program with its number, and the first number this window prints is
+        # another program's: the window holds that program's block. It is never handed to this one.
+        return {"url": "%s#page=%d" % (url, run[0] + 1), "field": "pdf_pages", "found": [], "coverage": 0.0,
+                "text": "", "pages": [i + 1 for i in run], "refused": closed_by, "opens_on_list": False,
+                "extractor": extractor, "named": False, "control_number_printed": False, "titled": titled,
+                "got": {"title": "", "h1": ""}}
     return {"url": "%s#page=%d" % (url, run[0] + 1), "field": "pdf_pages", "found": found,
             "coverage": P.coverage(found, courses), "text": text,
             "opens_on_list": not heading and pdf_opens_on_list(pages, run, cn_at, head, program, courses),
@@ -2989,6 +3119,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
         if m > n:
             pages, extractor = alt["pages"], alt["extractor"]
     report["pdf"]["extractor"] = extractor
+    after = pdf_numbers_after(pages, programs)
+    report["pdf"]["numbers_after"] = after
     coded = pdf_code_assign(programs, pages)
     if coded is not None:
         report["pdf"]["code_headings"] = {"codes": len({h["code"] for h in pdf_code_headings(pages)}),
@@ -3013,8 +3145,13 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             rec["near_miss"] = {"why": "the catalog heads each program with its code, and no heading names this one"}
         else:
             best = pdf_best(start, pages, prog, prog["closed_list"], extractor,
-                            (coded or {}).get(prog["control_number"]), above)
-            if best and best["coverage"] >= P.ACCEPT_SHARE:
+                            (coded or {}).get(prog["control_number"]), above, numbers_after=after["after_mode"])
+            if best and best.get("refused"):
+                rec = source_record(college, prog, reg, None, "not_found")
+                rec["near_miss"] = {"url": best["url"], "pages": best["pages"],
+                                    "why": "the catalog prints each program's control number after it, and this "
+                                           "window is closed by %s's" % best["refused"]}
+            elif best and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
                 if best["opens_on_list"]:
@@ -3032,7 +3169,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                      "code": ((coded or {}).get(prog["control_number"]) or {}).get("code"),
                      "cn_printed": best["control_number_printed"], "titled": best["titled"],
                      "coverage": round(best["coverage"], 3), "opens": re.sub(r"\s+", " ", best["text"][:220]),
-                     **({"opens_on_list": True} if best["opens_on_list"] else {})})
+                     **({"opens_on_list": True} if best["opens_on_list"] else {}),
+                     **({"bound": best["bound"]} if best.get("bound") else {})})
             else:
                 rec = source_record(college, prog, reg, None, "not_found")
                 if best:
