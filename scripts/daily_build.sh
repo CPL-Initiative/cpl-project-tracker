@@ -461,8 +461,10 @@ STEP
 # kb/exhibits_review.json and kb/exhibits_review_courses.json, and kb/exhibits_adoption.json
 # (the credential panel's Who could adopt it?, Exhibit Adoption's per-credential view, read from
 # this run's statewide_data.js and statewide_prescriptive.js); exhibits.js reads them. The
-# nightly cer-procedures.yml rebuilds them after its run too.
-step "Build the Exhibits review queue" <<'STEP'
+# nightly cer-procedures.yml rebuilds them after its run too. The service key is for one read: the
+# builder reads the saved title assignments live, so a card decided since step 3's sync stays decided
+# (#3223, S649); it writes no row.
+step "Build the Exhibits review queue" SUPABASE_SERVICE_KEY <<'STEP'
 python3 kb/_build_exhibits_review.py --quiet || echo "::warning title=Exhibits review not rebuilt::kb/_build_exhibits_review.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."
 STEP
 

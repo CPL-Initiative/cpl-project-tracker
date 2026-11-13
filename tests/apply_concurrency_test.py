@@ -208,6 +208,7 @@ SECRETS_BY_STEP = {
     "Run dashboard pipeline": ["SUPABASE_SERVICE_KEY"],
     "Refresh Sierra's exhibit list": ["SUPABASE_SERVICE_KEY"],   # 2026-11-12, #3185: writes chatbox_exhibits
     "Build funding priority-metric actuals": ["SUPABASE_SERVICE_KEY"],
+    "Build the Exhibits review queue": ["SUPABASE_SERVICE_KEY"],   # 2026-11-13, #3223 (S649): reads the saved assignments
     "Build the Exhibits List's Outcomes match hints": ["SUPABASE_SERVICE_KEY"],
     "Build the catalog's skills-to-outcomes analysis": ["SUPABASE_SERVICE_KEY"],
     "Sync CPL Pathways' confirmed records": ["SUPABASE_SERVICE_KEY"],

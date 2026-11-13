@@ -180,7 +180,7 @@
   var state = {
     data: null, error: null, filter: "", cur: 0,
     students: null, studentsWord: "", total: null,
-    done: {}, note: "", courses: null, coursesErr: false, drafts: {}, teachDraft: "",
+    done: {}, reviewReadErr: "", note: "", courses: null, coursesErr: false, drafts: {}, teachDraft: "",
     // Back (Sam, 2026-10-31): the cards decided or skipped this visit, newest last, as {raw, saved}.
     history: [], bulkAsk: false, bulkBusy: false,
     teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false,
@@ -382,9 +382,48 @@
       .then(function (d) {
         (d.held || []).forEach(function (h, i) { h._i = i; });
         state.data = d; state.error = null;
-        return d;
+        return reconcileReview(d);
       })
       .catch(function (e) { state.error = String(e && e.message || e); state.data = null; });
+  }
+  /* The review file is built nightly, so a title someone saved since then is still in it, and a reload showed the card
+     again (#3223, Sam 2026-11-13: "the reanalysis does know I just relied on them and then brings them back
+     endlessly"). The saves are on kb_curation under _UNCLASSIFIED::<raw MAP title>: a card whose raw title carries a
+     unified_title_assignment is decided and leaves the queue. A clear deletes the row, so a cleared title stays open.
+     A conflict card is a saved title by definition and stays. A failed read leaves the file's cards and says so. */
+  var REVIEW_CHUNK = 40, REVIEW_PAGE = 1000;
+  function reconcileReview(d) {
+    state.reviewReadErr = "";
+    var raws = ((d && d.held) || []).filter(function (h) { return h.step !== CONFLICT && h.raw; }).map(function (h) { return h.raw; });
+    if (!raws.length) return Promise.resolve();
+    var key = anonKey();
+    if (!key) { state.reviewReadErr = "COBI could not be reached from this page"; return Promise.resolve(); }
+    var chunks = [];
+    for (var i = 0; i < raws.length; i += REVIEW_CHUNK) chunks.push(raws.slice(i, i + REVIEW_CHUNK));
+    // Range-paged (Rule 10 b), and any chunk that fails fails the whole read, which leaves every card standing.
+    function page(url, from, acc) {
+      return fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": from + "-" + (from + REVIEW_PAGE - 1) } })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(function (rows) {
+          rows = rows || [];
+          acc = acc.concat(rows);
+          return rows.length < REVIEW_PAGE ? acc : page(url, from + REVIEW_PAGE, acc);
+        });
+    }
+    return Promise.all(chunks.map(function (c) {
+      var quoted = c.map(function (r) { var i = UNCLASS_PREFIX + r; return encodeURIComponent('"' + i.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); });
+      return page(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value&field=eq." + FIELD_TITLE
+        + "&course_id=in.(" + quoted.join(",") + ")&order=course_id.asc", 0, []);
+    })).then(function (parts) {
+      var decided = {};
+      parts.forEach(function (rows) {
+        rows.forEach(function (row) {
+          var id = row.course_id || "";
+          if (row.field === FIELD_TITLE && id.indexOf(UNCLASS_PREFIX) === 0 && String(row.value || "").trim()) decided[id.slice(UNCLASS_PREFIX.length)] = true;
+        });
+      });
+      raws.forEach(function (r) { if (decided[r]) state.done[r] = true; });
+    }).catch(function (e) { state.reviewReadErr = String(e && e.message || e); });
   }
   function session() {
     var S = window.CPL_SESSION;
@@ -4726,6 +4765,8 @@
   function queueBlocked() {
     var out = [];
     if (state.error) out.push("The review file could not be read (" + state.error + "), so held titles are not counted.");
+    else if (state.reviewReadErr) out.push("The titles saved since the review file was built could not be read from COBI ("
+      + state.reviewReadErr + "), so a title decided since then may be counted again.");
     if (state.sw.error) out.push("Another look's file could not be read (" + state.sw.error + ").");
     if (state.cs.error) out.push("The reference's list could not be read (" + state.cs.error + "), so the List's counts are missing.");
     var rp = state.rq.report, cr = rp && rp.classifier_run;
@@ -4931,6 +4972,8 @@
       renderRename(wrap);
       return;
     }
+    // The cards stand as built when the saves could not be read; the view says so (#3223).
+    if (state.reviewReadErr) wrap.appendChild(unreadNote(d.written_at, state.reviewReadErr, "card"));
     var list = shown();
     if (state.cur >= list.length) state.cur = Math.max(0, list.length - 1);
     wrap.appendChild(finder(list));

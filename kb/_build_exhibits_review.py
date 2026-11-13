@@ -28,6 +28,14 @@ What it joins, all committed files:
   kb/exhibit_audit/latest.json        the Names tile, and which titles still wait: the daily fold can settle
                                       a held title between the nightly run and this build
   kb/unclassified_assignments.json    titles a person or a rule saved since, which the fold has not added
+  kb_curation (live, read only)       the same assignments read fresh when SUPABASE_SERVICE_KEY is set: the
+                                      live set replaces the overlay, so a save or a clear since the last sync
+                                      counts (#3223, S649). The file records which set it read and when.
+
+A decided title stays decided (#3223, S649): a build with no live read refuses to write the Review file
+over one that read the decisions later than this build's overlay was synced (stale_assignments()), so a
+rebuild on a stale overlay cannot re-propose a card a person decided. Ship the code and let the nightly
+or daily run rebuild the file; the tab reconciles a card against kb_curation on load either way.
 
 Students per title are not here: they are a reviewer-only read of map_student_credit, k=10
 (exhibit_title_students(), kb/migrations/), and the tab asks for them with each title's `ids`.
@@ -44,7 +52,7 @@ kb/exhibits_adoption.json (the credential panel's "Who could adopt it?", Exhibit
 per-credential view folded into the Exhibits tab), which exhibits.js reads.
 
 Usage, from the repo root:
-  python3 kb/_build_exhibits_review.py [--root DIR] [--out PATH] [--quiet]
+  python3 kb/_build_exhibits_review.py [--root DIR] [--out PATH] [--quiet] [--no-live]
 """
 import argparse
 import datetime as dt
@@ -806,7 +814,43 @@ def name_list(creds, field):
     return sorted(out, key=str.lower)
 
 
-def build(root):
+def live_assignments():
+    """(assignments, read_at) read fresh from kb_curation when SUPABASE_SERVICE_KEY is set, else (None, None).
+    One read path, kb/_apply_unclassified_triage.py's (Range-paginated, the same grouping, a clear drops the
+    title); this builder writes no row. A failed read falls back to the committed overlay, said aloud."""
+    if not os.environ.get("SUPABASE_SERVICE_KEY"):
+        return None, None
+    try:
+        import _apply_unclassified_triage as triage
+        at = iso_now()
+        return triage.build_assignments(triage.fetch_rows())[0], at
+    except Exception as e:  # noqa: BLE001 - any failed read means the overlay, never a stop
+        print("::warning title=Exhibits review read the overlay::the live assignment read failed (%s); "
+              "the Review file is built from kb/unclassified_assignments.json" % e)
+        return None, None
+
+
+def assignments_read(data):
+    """The `sources.assignments` stamp a Review file carries: {"read": "live"|"overlay", "at": ISO time}."""
+    return ((data or {}).get("sources") or {}).get("assignments") or {}
+
+
+def stale_assignments(prior, data):
+    """Why `data` must not replace `prior`, or "". A build from the overlay may not overwrite a file that read
+    the decisions later than that overlay was synced: its cards would re-propose titles a person decided since."""
+    now, before = assignments_read(data), assignments_read(prior)
+    if now.get("read") == "live" or not before.get("at"):
+        return ""
+    if (now.get("at") or "") < before["at"]:
+        return ("the committed Review file read the saved decisions at %s (%s), later than this build's overlay "
+                "(synced %s); a rebuild would bring back cards decided since. Ship the code only and let the "
+                "nightly or daily run rebuild it, or set SUPABASE_SERVICE_KEY for a live read."
+                % (before["at"], before.get("read", "?"), now.get("at") or "never"))
+    return ""
+
+
+def build(root, live=None):
+    """`live` is live_assignments()'s pair; with no live set the committed overlay decides."""
     report = load_json(root, "kb/cer_procedures_out/latest.json", {}) or {}
     sugg = load_json(root, "kb/unclassified_suggestions.json", {}) or {}
     aligned_all = sugg.get("aligned") or {}
@@ -820,7 +864,12 @@ def build(root):
                   ((load_json(root, "kb/credential_review_overlay.json", {}) or {}).get("overrides") or {}).items()
                   if isinstance(e, dict) and e.get("training_sites") is not None}
     audit = load_json(root, "kb/exhibit_audit/latest.json", {}) or {}
-    saved = (load_json(root, "kb/unclassified_assignments.json", {}) or {}).get("assignments") or {}
+    overlay = load_json(root, "kb/unclassified_assignments.json", {}) or {}
+    live_set, live_at = live or (None, None)
+    if live_set is not None:
+        saved, read = live_set, {"read": "live", "at": live_at}
+    else:
+        saved, read = overlay.get("assignments") or {}, {"read": "overlay", "at": overlay.get("_synced_at") or ""}
     cards = audit.get("title_cards") or []
     still = {c.get("raw_title") for c in cards
              if not c.get("unified_title") and "unclassified_in_map" in (c.get("tags") or [])}
@@ -996,6 +1045,7 @@ def build(root):
             "suggestions": sugg.get("_generated_at"),
             "statewide": statewide.get("generated_at"),
             "audit": audit.get("generated_at") or audit.get("_generated_at"),
+            "assignments": read,
         },
         "tiles": {
             "names": {"n": titled, "of": len(cards), "waiting": waiting},
@@ -1032,6 +1082,14 @@ def dump(data, list_key):
     return body + ',\n "%s": [\n%s\n ]\n}\n' % (list_key, ",\n".join(rows))
 
 
+def _unstamped(d, stamp_key):
+    """The file without its stamps: `stamp_key`, and a live read's time, which changes every run."""
+    out = {k: v for k, v in (d or {}).items() if k != stamp_key}
+    if stamp_key and assignments_read(out).get("read") == "live":
+        out["sources"] = dict(out["sources"], assignments={"read": "live"})
+    return out
+
+
 def write_if_changed(path, data, list_key, stamp_key=None):
     """Leave the file alone when nothing but its stamp would change."""
     if os.path.exists(path):
@@ -1040,7 +1098,7 @@ def write_if_changed(path, data, list_key, stamp_key=None):
                 prior = json.load(f)
             except ValueError:
                 prior = None
-        strip = lambda d: {k: v for k, v in (d or {}).items() if k != stamp_key}  # noqa: E731
+        strip = lambda d: _unstamped(d, stamp_key)  # noqa: E731
         if prior is not None and strip(prior) == strip(json.loads(json.dumps(data))):
             return False
     with open(path, "w", encoding="utf-8") as f:
@@ -1048,24 +1106,38 @@ def write_if_changed(path, data, list_key, stamp_key=None):
     return True
 
 
+def prior_file(path):
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return {}
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--root", default=os.path.dirname(HERE))
     ap.add_argument("--out", default=None, help="the review file (the courses file is written beside it)")
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--no-live", action="store_true", help="build from the committed overlay alone")
     a = ap.parse_args(argv)
-    data, course_file, adoption = build(a.root)
+    data, course_file, adoption = build(a.root, None if a.no_live else live_assignments())
     out = a.out or os.path.join(a.root, OUT)
     courses_out = os.path.join(os.path.dirname(out), os.path.basename(COURSES_OUT))
     adoption_out = os.path.join(os.path.dirname(out), os.path.basename(ADOPTION_OUT))
-    wrote = [p for p, d, k, st in ((out, data, "held", "written_at"), (courses_out, course_file, "courses", None),
-                                   (adoption_out, adoption, "credentials", "written_at"))
-             if write_if_changed(p, d, k, st)]
+    outputs = [(out, data, "held", "written_at"), (courses_out, course_file, "courses", None),
+               (adoption_out, adoption, "credentials", "written_at")]
+    why = stale_assignments(prior_file(out), data)
+    if why:
+        # The Review file and its courses stay as committed; the adoption view reads no decision and still rebuilds.
+        print("::warning title=Exhibits review not rebuilt::" + why)
+        outputs = outputs[2:]
+    wrote = [p for p, d, k, st in outputs if write_if_changed(p, d, k, st)]
     if not a.quiet:
         print("exhibits review: %d held | steps %s | aligned %d | adoption %d credentials | %s"
               % (len(data["held"]), data["steps"], data["tiles"]["aligned"]["n"], len(adoption["credentials"]),
                  "wrote " + ", ".join(wrote) if wrote else "unchanged"))
-    return 0
+    return 3 if why else 0
 
 
 if __name__ == "__main__":

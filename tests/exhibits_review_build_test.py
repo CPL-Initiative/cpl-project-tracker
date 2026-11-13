@@ -678,6 +678,58 @@ check("a course-title proposal keeps the series its course names, with no series
       h3.get(PREP, {}).get("title") == "CompTIA Security+ SY0-701 Prep" and h3[PREP]["proposal_source"] == B.SRC_COURSE
       and "series_aliases" not in h3[PREP], h3.get(PREP))
 
+# A decided card stays decided (#3223, S649). Sam saved titles on Review; a rebuild on an overlay synced before
+# those saves put the cards back. The live set replaces the overlay (a save drops a card, a clear brings it back),
+# and a build from an overlay older than the committed file's read refuses to write the Review file.
+with tempfile.TemporaryDirectory() as root4:
+    for rel, obj in FIX.items():
+        write(root4, rel, obj)
+    write(root4, "statewide_data.js", STATEWIDE, js="CPL_STATEWIDE")
+    write(root4, "unified_courses_members.js", MEMBERS, js="CPL_UNIFIED_MEMBERS")
+    write(root4, "statewide_prescriptive.js", PRESCRIPTIVE, js="CPL_STATEWIDE_PRESCRIPTIVE")
+    live_at = "2026-11-13T21:00:00Z"
+    d_live = B.build(root4, ({DM: {"unified_title": "Digital Media Basics"}}, live_at))[0]
+    live_held = {h["raw"] for h in d_live["held"]}
+    check("a live save drops its card though the overlay never heard of it", DM not in live_held, sorted(live_held))
+    check("a live clear brings back a card the stale overlay still holds", SAVED in live_held, sorted(live_held))
+    check("the conflict stays whatever the live set holds", JUV in live_held)
+    check("the file says it read the live set, and when",
+          d_live["sources"]["assignments"] == {"read": "live", "at": live_at}, d_live["sources"].get("assignments"))
+    d_over = B.build(root4)[0]
+    check("with no live set the overlay decides and the file says so",
+          d_over["sources"]["assignments"]["read"] == "overlay" and SAVED not in {h["raw"] for h in d_over["held"]},
+          d_over["sources"].get("assignments"))
+
+    # The guard: overlay synced 08:56, the committed file read the decisions at 21:00.
+    over = dict(FIX["kb/unclassified_assignments.json"], _synced_at="2026-11-13T16:56:14Z")
+    write(root4, "kb/unclassified_assignments.json", over)
+    stale = B.build(root4)[0]
+    check("a build on an overlay older than the committed file's read is refused",
+          bool(B.stale_assignments(d_live, stale)), B.stale_assignments(d_live, stale))
+    check("a live build is never refused", B.stale_assignments(d_live, d_live) == "")
+    check("a build on the same overlay the file read is allowed", B.stale_assignments(stale, stale) == "")
+    check("a file with no assignments stamp (written before #3223) is not a reason to refuse",
+          B.stale_assignments({"sources": {}}, stale) == "")
+    newer = dict(over, _synced_at="2026-11-13T22:00:00Z")
+    write(root4, "kb/unclassified_assignments.json", newer)
+    check("an overlay synced after the file's read is allowed", B.stale_assignments(d_live, B.build(root4)[0]) == "")
+    write(root4, "kb/unclassified_assignments.json", over)
+
+    out4 = os.path.join(root4, "kb", "exhibits_review.json")
+    with open(out4, "w", encoding="utf-8") as f:
+        f.write(B.dump(d_live, "held"))
+    env = {k: v for k, v in os.environ.items() if k != "SUPABASE_SERVICE_KEY"}
+    r4 = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_exhibits_review.py"), "--root", root4],
+                        capture_output=True, text=True, timeout=120, env=env)
+    with open(out4, encoding="utf-8") as f:
+        kept = json.load(f)
+    check("the builder exits non-zero and leaves the committed file when its overlay is stale",
+          r4.returncode == 3 and "not rebuilt" in r4.stdout and kept["sources"]["assignments"]["read"] == "live"
+          and DM not in {h["raw"] for h in kept["held"]}, (r4.returncode, r4.stdout[-300:]))
+    check("a live read's time alone is not a change worth writing",
+          B._unstamped(d_live, "written_at") == B._unstamped(dict(d_live, sources=dict(d_live["sources"],
+                                                     assignments={"read": "live", "at": "2026-11-14T01:00:00Z"})), "written_at"))
+
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))
 sys.exit(1 if failed else 0)

@@ -120,8 +120,12 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
-      # The Exhibits tab's Review queue reads this run's held titles (kb/_build_exhibits_review.py).
+      # The Exhibits tab's Review queue reads this run's held titles (kb/_build_exhibits_review.py). The key is for
+      # one read: the saved title assignments, live, since this run syncs no overlay; a card decided since the
+      # daily's sync stays decided (#3223, S649). The builder writes no row.
       - name: Build the Exhibits review queue
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python3 kb/_build_exhibits_review.py --quiet || echo "::warning title=Exhibits review not rebuilt::kb/_build_exhibits_review.py failed; the Exhibits tab reads the previous file until the next run."
 
       # Another look (Sam, 2026-10-31) leaves a title this run holds to Review, so it rebuilds after it.
