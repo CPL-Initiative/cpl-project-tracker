@@ -638,113 +638,145 @@ check(C.pdf_own_heading("Water Distribution, AS", "A.S. Degree", {"title": "Wate
       and not C.pdf_own_heading("Economics, AA-T", "A.A. Degree for Transfer", PROGS[2])
       and not C.pdf_own_heading("Biology, AS-T", "", PROGS[4]),
       "pdf_own_heading: an award in the COCI title or after the name with no comma is the award, not the name")
+# Decision 18 (round 4's second reader): the award is the same award, and real headings match their own.
+REAL = [("Geography AA-T", "", {"title": "Geography", "award": AAT}, True),
+        ("Real Estate, Certificate of Achievement", "", {"title": "Real Estate", "award": "Certificate of Achievement requiring 16S/24Q"}, True),
+        ("Accounting - A.S. Degree", "", {"title": "Accounting", "award": AS}, True),
+        ("Accounting - A.S. Degree", "", {"title": "Accounting", "award": AA}, False),
+        ("Biology, AA", "A.A. Degree", PROGS[4], False),
+        ("Real Estate, CC", "Certificate of Completion", {"title": "Real Estate", "award": "Certificate of Achievement requiring 16S/24Q"}, False),
+        ("3D Printing, CC", "Certificate of Completion", {"title": "3D Printing, CC", "award": "Noncredit program"}, True),
+        ("Economics, AA", "A.A. Degree", PROGS[3], False)]
+miss = [(l, p["award"]) for l, n, p, want in REAL if C.pdf_own_heading(l, n, p) != want]
+check(not miss, "pdf_own_heading: AA is not AS, an Achievement certificate is not CC, and real headings match: %r" % miss)
+check(C._heading_shaped("Real Estate, Certificate of Achievement", "REAL 101 Intro 3")
+      and C._heading_shaped("Accounting - A.S. Degree", "ACCT 101 Intro 3")
+      and not C._heading_shaped("Students earn the Certificate of Achievement in two terms", ""),
+      "a heading with its award written out after a comma or a spaced dash reads as a heading")
 
-# ── 7. Decision 16: no filed record disappears, whatever the run's path ─────────────────────────
-# The filing step is the one place the invariant lives (file_run): a filed record is deleted or replaced
-# only by a record whose source is a bound read with text. Every capture method x {forced, unforced} x
-# {old record passes, fails, absent}, through the real extraction (the model call stubbed) and filing.
+# ── 7. Decisions 16 and 18: the number-line route keeps a filed record it cannot bind ─────────────
+# file_run files one read whole, for every college: a program the read does not carry loses its record
+# (decision 18 reversed 16(b), round 4's second reader). The number-line route's protection is the
+# extraction's: a refused or unbound gated program keeps its filed record, forced or not (decision 14),
+# and a refused block is filed `refused`, never a read page (16(a)). Asserted through extract and file_run
+# with the model call stubbed: every number-line capture outcome x {forced, unforced} x {old record
+# passes, fails, absent}.
 import _program_requirements_extract as X  # noqa: E402
 saved_call = X.call
 X.call = lambda src, key: {"record": {"program": {"title": "new read"}}, "model": None, "usage": None}
 os.environ.setdefault("SUPABASE_SERVICE_KEY", "test-only")
-READS = ("pdf_pages", "sitemap_page", "link_search")
-METHODS = READS + ("page_claimed", "no_closed_list", "not_found", "refused")
 BIO = [{"code": "BIOL 211"}, {"code": "CHEM 200A"}]
+BIO_TEXT = "Biology, AS\nBIOL 211 Cell Biology 4\nCHEM 200A General Chemistry 5\nControl Number: 11856\n"
+# What capture_pdf files on the number-line route, by outcome (method, after_unbound).
+OUTCOMES = {"bound": ("pdf_pages", None),
+            "refused_unlisted": (C.REFUSED, {"refused": None, "why": "block_names_other_program"}),
+            "refused_listed": (C.REFUSED, {"refused": "35110", "why": "block_names_other_program"}),
+            "refused_closed_by": (C.REFUSED, {"refused": "35110", "why": "block_not_named"}),
+            "number_not_printed": ("not_found", {"refused": None, "why": "number_not_printed"}),
+            "low_coverage": ("not_found", {"refused": None, "why": "low_coverage"}),
+            "unproven": ("not_found", {"refused": None, "why": "unproven"})}
 
 
-def bio_source(method):
+def gated_source(outcome):
+    method, un = OUTCOMES[outcome]
     prog = dict(PROGS[4], shape="1", status="active", load_id="1", closed_list=BIO)
-    if method in READS:
-        text = "Biology, AS\nBIOL 211 Cell Biology 4\nCHEM 200A General Chemistry 5\n"
-        return C.source_record("Fixture College", prog, {}, {"url": "https://x.edu/c.pdf#page=3", "field": "pdf_pages",
-                                                               "found": C.P.find_codes(text, BIO), "coverage": 1.0,
-                                                               "text": text}, method)
-    rec = C.source_record("Fixture College", prog, {}, None, method)
-    if method == "refused":
-        rec["after_unbound"] = {"refused": None, "why": "block_names_other_program", "judged": "Ballroom Dance Arts, AA"}
+    if method == "pdf_pages":
+        rec = C.source_record("Fixture College", prog, {}, {"url": "https://x.edu/c.pdf#page=3", "field": "pdf_pages",
+                                                            "found": C.P.find_codes(BIO_TEXT, BIO), "coverage": 1.0,
+                                                            "text": BIO_TEXT, "bound": "number_after"}, method)
+    else:
+        rec = C.source_record("Fixture College", prog, {}, None, method)
+        rec["after_unbound"] = dict(un, judged="Ballroom Dance Arts, AA")
     return rec
 
 
-lost, matrix = [], 0
+def extract_and_file(sources, filed, force=None):
+    """extract (stubbed model) then file_run, from a filed folder holding `filed` {cn: record}; the filed
+    records after, by number."""
+    root = tempfile.mkdtemp()
+    saved_dir = C.COLLEGE_DIR
+    C.COLLEGE_DIR = root
+    try:
+        slug = os.path.join(root, C.slug_of("Fixture College"))
+        os.makedirs(os.path.join(slug, "records"))
+        for cn, row in filed.items():
+            json.dump(row, open(os.path.join(slug, "records", cn + ".json"), "w"))
+        out = os.path.join(root, "out")
+        os.makedirs(os.path.join(out, "sources"))
+        for src in sources:
+            json.dump(src, open(os.path.join(out, "sources", src["control_number"] + ".json"), "w"))
+        json.dump({"college": "Fixture College"}, open(os.path.join(out, "capture.json"), "w"))
+        with contextlib.redirect_stdout(io.StringIO()):
+            C.extract(out, 0, 1, "new", 1, slug, force)
+            C.file_run("Fixture College", out, "new")
+        return {n[:-5]: json.load(open(os.path.join(slug, "records", n))) for n in os.listdir(os.path.join(slug, "records"))}
+    finally:
+        C.COLLEGE_DIR = saved_dir
+        shutil.rmtree(root)
+
+
+bad, matrix = [], 0
 try:
-    for method in METHODS:
+    for outcome in OUTCOMES:
         for forced in (False, True):
             for old in ("passes", "fails", "absent"):
                 matrix += 1
-                root = tempfile.mkdtemp()
-                saved_dir = C.COLLEGE_DIR
-                C.COLLEGE_DIR = root
-                try:
-                    slug = os.path.join(root, C.slug_of("Fixture College"))
-                    os.makedirs(os.path.join(slug, "records"))
-                    filed = {"control_number": "11856", "record": {"program": {"title": "filed"}},
-                             "score": PASS if old == "passes" else FAIL, "extracted_run": "old"}
-                    if old != "absent":
-                        json.dump(filed, open(os.path.join(slug, "records", "11856.json"), "w"))
-                    out = os.path.join(root, "out")
-                    os.makedirs(os.path.join(out, "sources"))
-                    json.dump(bio_source(method), open(os.path.join(out, "sources", "11856.json"), "w"))
-                    json.dump({"college": "Fixture College"}, open(os.path.join(out, "capture.json"), "w"))
-                    with contextlib.redirect_stdout(io.StringIO()):
-                        C.extract(out, 0, 1, "new", 1, slug, {"11856"} if forced else None)
-                        os.makedirs(os.path.join(out, "records"), exist_ok=True)
-                        C.file_run("Fixture College", out, "new")
-                    path = os.path.join(slug, "records", "11856.json")
-                    got = json.load(open(path)) if os.path.isfile(path) else None
-                    case = (method, forced, old)
-                    if old != "absent" and got is None:
-                        lost.append(("dropped",) + case)
-                    elif old != "absent" and method not in READS and got != filed:
-                        lost.append(("replaced without a read",) + case)
-                    elif old == "absent" and method not in READS and got is not None:
-                        lost.append(("invented",) + case)
-                finally:
-                    C.COLLEGE_DIR = saved_dir
-                    shutil.rmtree(root)
+                filed = {"control_number": "11856", "record": {"program": {"title": "filed"}},
+                         "score": PASS if old == "passes" else FAIL, "extracted_run": "old"}
+                after = extract_and_file([gated_source(outcome)], {} if old == "absent" else {"11856": filed},
+                                         {"11856"} if forced else None).get("11856")
+                case = (outcome, forced, old)
+                if outcome == "bound":
+                    if after is None or (old == "absent" and after.get("extracted_run") != "new"):
+                        bad.append(("bound read not filed",) + case)
+                elif old != "absent" and after != filed:
+                    bad.append(("filed record lost or replaced",) + case)
+                elif old == "absent" and after is not None:
+                    bad.append(("record invented",) + case)
 finally:
     X.call = saved_call
-check(matrix == 42 and not lost, "decision 16: no filed record disappears or is replaced without a bound read: %r" % lost)
+check(matrix == 42 and not bad, "number-line route: an unbound or refused program keeps its filed record, a bound "
+                                "one is read: %r" % bad)
 
-# The backstop holds even when a path upstream misfiles: a record written for a program whose source is
-# a refused block (no text) never replaces the filed one, and the account counts it.
-root = tempfile.mkdtemp()
-saved_dir = C.COLLEGE_DIR
-C.COLLEGE_DIR = root
-try:
-    slug = os.path.join(root, C.slug_of("Fixture College"))
-    os.makedirs(os.path.join(slug, "records"))
-    filed = {"control_number": "11856", "score": PASS, "extracted_run": "old"}
-    json.dump(filed, open(os.path.join(slug, "records", "11856.json"), "w"))
-    json.dump([{"control_number": "11856", "method": "pdf_pages", "source": {"url": "old"}}],
-              open(os.path.join(slug, "sources.json"), "w"))
-    out = os.path.join(root, "out")
-    os.makedirs(os.path.join(out, "sources"))
-    os.makedirs(os.path.join(out, "records"))
-    json.dump(bio_source("refused"), open(os.path.join(out, "sources", "11856.json"), "w"))
-    json.dump({"control_number": "11856", "score": FAIL, "extracted_run": "new"}, open(os.path.join(out, "records", "11856.json"), "w"))
-    json.dump({"college": "Fixture College"}, open(os.path.join(out, "capture.json"), "w"))
-    with contextlib.redirect_stdout(io.StringIO()):
-        C.file_run("Fixture College", out, "new")
-    got = json.load(open(os.path.join(slug, "records", "11856.json")))
-    cap = json.load(open(os.path.join(slug, "capture.json")))
-    src_entry = json.load(open(os.path.join(slug, "sources.json")))
-    check(got == filed and cap.get("kept_unreplaced") == [{"control_number": "11856", "why": "replaced_without_a_read"}]
-          and src_entry == [{"control_number": "11856", "method": "pdf_pages", "source": {"url": "old"}}],
-          "decision 16: a record with no bound read never replaces the filed one; counted, its entry kept: %r"
-          % cap.get("kept_unreplaced"))
-finally:
-    C.COLLEGE_DIR = saved_dir
-    shutil.rmtree(root)
+# End to end, capture_pdf -> extract -> file_run. The regression (round 4, finding 1): a block holding only
+# an unlisted program's heading ("Ballroom Dance Arts, AA") is filed refused, never pdf_pages with no text;
+# refused_passing names it; its filed record survives the run.
+X.call = lambda src, key: {"record": {"program": {"title": "new read"}}, "model": None, "usage": None}
 
-# The regression (round 4, finding 1): a block holding only an unlisted program's heading ("Ballroom Dance
-# Arts, AA") is filed refused, never pdf_pages with no text; refused_passing names it; filing keeps it.
-bfolder = tempfile.mkdtemp()
+
+def capture_extract_file(pages, gated, progs, course_of, filed):
+    root = tempfile.mkdtemp()
+    saved = (C.read_hand_filed, R.load_steps, C.COLLEGE_DIR)
+    C.COLLEGE_DIR = root
+    C.read_hand_filed = lambda hf: {"url": "https://x.edu/c.pdf", "access": "hand_filed", "pages": pages, "extractor": "pypdf"}
+    R.load_steps = lambda path=R.STEPS: {"Fixture College": {"pdf_numbers_after": True, "steps": []}} if gated else {}
+    try:
+        slug = os.path.join(root, C.slug_of("Fixture College"))
+        os.makedirs(os.path.join(slug, "records"))
+        for cn, row in filed.items():
+            json.dump(row, open(os.path.join(slug, "records", cn + ".json"), "w"))
+        out = os.path.join(root, "out")
+        os.makedirs(os.path.join(out, "sources"))
+        programs = [dict(p, shape="1", status="active", load_id="1", closed_list=course_of(p)) for p in progs]
+        with contextlib.redirect_stdout(io.StringIO()):
+            recs = C.capture_pdf("Fixture College", out, programs, {"catalog_url": "https://x.edu/c.pdf"}, {},
+                                 {"meta": {"url": "https://x.edu/c.pdf", "fetched_by": "t", "fetched_at": "2026-11-13", "sha256": "0"}})
+            acct = C.refused_passing(slug, recs)
+            json.dump({"college": "Fixture College"}, open(os.path.join(out, "capture.json"), "w"))
+            C.extract(out, 0, 1, "new", 1, slug, None)
+            C.file_run("Fixture College", out, "new")
+        srcs = {r["control_number"]: r for r in recs}
+        after = {n[:-5]: json.load(open(os.path.join(slug, "records", n))) for n in os.listdir(os.path.join(slug, "records"))}
+        return srcs, acct, after
+    finally:
+        C.read_hand_filed, R.load_steps, C.COLLEGE_DIR = saved
+        shutil.rmtree(root)
+
+
 try:
-    os.makedirs(os.path.join(bfolder, "records"))
-    json.dump({"control_number": GOLF["control_number"], "record": {"program": {}}, "score": PASS, "extracted_run": "old"},
-              open(os.path.join(bfolder, "records", GOLF["control_number"] + ".json"), "w"))
-    with contextlib.redirect_stdout(io.StringIO()):
-        brep, bsrc, bacct = capture(MIS, True, UPROGS, folder=bfolder, course_of=lambda p: UCODE[p["control_number"]])
+    gfiled = {"control_number": GOLF["control_number"], "record": {"program": {}}, "score": PASS, "extracted_run": "old"}
+    bsrc, bacct, bafter = capture_extract_file(MIS, True, UPROGS, lambda p: UCODE[p["control_number"]],
+                                               {GOLF["control_number"]: gfiled})
     bs = bsrc[GOLF["control_number"]]
     check(bs["method"] == "refused" and bs["text"] == "" and bs["coverage"] == 0.0 and bs["source"] is None
           and "not on the college's list" in bs["near_miss"]["why"] and "None" not in bs["near_miss"]["why"]
@@ -755,8 +787,17 @@ try:
     check([e["control_number"] for e in bacct or []] == [GOLF["control_number"]]
           and bacct[0]["why"] == "block_names_other_program" and bacct[0]["closed_by"] is None,
           "and refused_passing names it: %r" % bacct)
+    check(bafter.get(GOLF["control_number"]) == gfiled and len(bafter) == len(UPROGS),
+          "end to end: the refused program's filed record survives capture, extraction and filing: %r"
+          % sorted(bafter)[:3])
+    # An ordinary college (no number-line gate): a program the catalog no longer carries loses its record,
+    # since file_run files one read whole (decision 18).
+    gone = {"control_number": "99999", "record": {"program": {}}, "score": PASS, "extracted_run": "old"}
+    _, _, oafter = capture_extract_file(AFTER, False, PROGS, courses, {"99999": gone})
+    check("99999" not in oafter and sorted(oafter) == sorted(p["control_number"] for p in PROGS),
+          "end to end, ungated: a program absent from the catalog loses its filed record: %r" % sorted(oafter))
 finally:
-    shutil.rmtree(bfolder)
+    X.call = saved_call
 
 # ── 5. The gate is the reconcile entry alone ────────────────────────────────────────────────────
 check(R.numbers_after("X", {"X": {"pdf_numbers_after": True}}) and not R.numbers_after("X", {"X": {}})

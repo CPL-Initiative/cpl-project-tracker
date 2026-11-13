@@ -885,7 +885,7 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
 
 
 REFUSED = "refused"                 # a gated PDF block refused (decision 16): filed as no read page
-NO_READ = ("not_found", REFUSED)    # the methods that carry no page: the filed record stays (decision 16)
+NO_READ = ("not_found", REFUSED)    # the methods that carry no page (the extraction keeps a gated one's record)
 
 
 def source_record(college: str, program: dict, reg: dict, best: dict | None, method: str) -> dict:
@@ -2970,42 +2970,85 @@ def _heading_shaped(line: str, nxt: str) -> bool:
         return False
     if PDF_HEADING_CODE_END.search(s) and heading_award_types(s):
         return True
+    if _split_heading(s)[1]:
+        return True   # "Real Estate, Certificate of Achievement", "Accounting - A.S. Degree" (round 4)
     n = (nxt or "").strip()
     return bool(n) and len(n) <= 60 and bool(heading_award_types(n)) and not heading_content_words(n)
 
 
 PDF_AWARD_TAIL = re.compile(r"(?:[\s,–—-]+(?:A\.?\s?[AS]\.?(?:[\s-]*T)?|CA|CC|COM|CN|CP|NC|Cert)\.?)$", re.I)
+PDF_AWARD_SEP = re.compile(r"\s*[,–—]\s*|\s+-\s+")
+CERT_KEYS = frozenset({"ca", "cc", "com", "cp", "nc"})
+
+
+def _award_keys(text: str | None) -> set[str]:
+    """The exact awards a heading's award words or a state record's award name (decision 17, round 4):
+    aa, as, aat, ast; ca (Achievement), cc (Completion), com (Competency), cp (Proficiency), nc
+    (Noncredit). AA is not AS, and a Certificate of Achievement is not CC. A bare "Cert" is any
+    certificate; the state's "Noncredit program" is any noncredit certificate (cc, com or nc)."""
+    t = (text or "").strip().lower()
+    if not t:
+        return set()
+    out = set()
+    transfer = bool(re.search(r"\bfor\s+transfer\b|-\s*t\b|\ba\.?\s?[as]\.?\s*t\b|\ba\.?\s?[as]\.?t\.?(?![a-z])", t))
+    arts = re.search(r"\ba\.?\s?a\b\.?|\bassociate\s+(?:of|in)\s+arts\b", t)
+    sci = re.search(r"\ba\.?\s?s\b\.?|\bassociate\s+(?:of|in)\s+science\b", t)
+    if arts:
+        out.add("aat" if transfer else "aa")
+    if sci:
+        out.add("ast" if transfer else "as")
+    for key, pat in (("ca", r"\bcertificate\s+of\s+achievement\b|\bca\b"), ("cc", r"\bcertificate\s+of\s+completion\b|\bcc\b"),
+                     ("com", r"\bcertificate\s+of\s+competency\b|\bcom\b"),
+                     ("cp", r"\bcertificate\s+of\s+proficiency\b|\bcp\b"), ("nc", r"\bnoncredit\s+certificate\b|\bnc\b")):
+        if re.search(pat, t):
+            out.add(key)
+    if re.search(r"^noncredit\s+program\b", t):
+        out |= {"cc", "com", "nc"}
+    if re.fullmatch(r"cert\.?", t):
+        out |= CERT_KEYS
+    return out
+
+
+def _split_heading(s: str | None) -> tuple[str, str]:
+    """(name, award words) of a heading: a trailing abbreviation ("Biology, AS", "Geography AA-T"), else
+    the last comma or spaced dash whose right side reads as an award alone ("Real Estate, Certificate of
+    Achievement", "Accounting - A.S. Degree"); ("line", "") when no award stands on the line."""
+    s = (s or "").strip()
+    m = PDF_AWARD_TAIL.search(s)
+    if m and m.start() > 0:
+        return s[:m.start()], s[m.start():].strip(" ,–—-")
+    for mm in reversed(list(PDF_AWARD_SEP.finditer(s))):
+        right = s[mm.end():]
+        if mm.start() > 0 and len(right) <= 60 and _award_keys(right) and not re.search(r"[a-z]{3,}", re.sub(
+                r"(?i)\b(?:certificate|achievement|completion|competency|proficiency|noncredit|degree|associate|"
+                r"arts|science|for|transfer|of|in)\b", "", right).lower()):
+            return s[:mm.start()], right
+    return s, ""
 
 
 def _title_words(s: str | None) -> list[str]:
     return re.findall(r"[a-z0-9]+", (s or "").lower().replace("&", " and "))
 
 
-def _name_core(s: str | None) -> str:
-    """A title or heading name with a trailing award abbreviation set aside: COCI files some titles with
-    the award in them ("Water Distribution, AS"), and the catalog prints "Geography AA-T" with no comma."""
-    s = (s or "").strip()
-    m = PDF_AWARD_TAIL.search(s)
-    return s[:m.start()] if m and m.start() > 0 else s
-
-
 def pdf_own_heading(line: str, nxt: str, program: dict) -> bool:
     """Decision 17: a heading-shaped line is the program's own only when its name is the program's full
-    title (the words in order, case, punctuation and "&" set aside, a trailing award abbreviation on
-    either read as the award) and its award type is the program's. The name is the line before its
-    trailing award ("Art History, AA" names "Art History", never "Art"), or the whole line when the award
-    stands on the next line alone. Never a token subset."""
+    title (the words in order, case, punctuation and "&" set aside, a trailing award on either read as
+    the award) and its award is the program's own award (_award_keys: AA is not AS). The award stands on
+    the line ("Art History, AA" names "Art History", never "Art") or on the next line alone. Never a token
+    subset. A state award the keys cannot read falls back to the scorer's award type."""
     from _program_requirements_score import heading_award_types, award_type
     title = program.get("title") or ""
-    filed = award_type(program.get("award"))
-    s = (line or "").strip()
-    m = PDF_HEADING_CODE_END.search(s) or PDF_AWARD_TAIL.search(s)
-    names = heading_award_types(s[m.start():], title) if m and m.start() > 0 else set()
-    name = s[:m.start()] if names else s
-    if not names:
-        names = heading_award_types((nxt or "").strip(), title)
-    want = _title_words(_name_core(title))
-    return filed is not None and filed in names and bool(want) and _title_words(_name_core(name)) == want
+    name, words = _split_heading(line)
+    if not words:
+        words = (nxt or "").strip()
+    want = _title_words(_split_heading(title)[0])
+    if not want or _title_words(name) != want:
+        return False
+    filed = _award_keys(program.get("award"))
+    if filed:
+        return bool(filed & _award_keys(words))
+    kind = award_type(program.get("award"))
+    return kind is not None and kind in heading_award_types(words, title)
 
 
 def pdf_block_headings(text: str, program: dict, ctx: dict) -> list[tuple[int, bool, str | None]]:
@@ -4534,17 +4577,6 @@ def summarize(records: list[dict], capture_report: dict) -> dict:
             "not_found": capture_report.get("not_found")}
 
 
-def bound_read_source(out_dir: str, cn: str) -> bool:
-    """The run's source for this program is a bound read with text: a page the capture accepted, never a
-    refused block, a program not found, one with no closed list or a claimed page (decision 16)."""
-    path = os.path.join(out_dir, "sources", cn + ".json")
-    if not os.path.isfile(path):
-        return False
-    with open(path) as fh:
-        src = json.load(fh)
-    return bool(src.get("text")) and src.get("method") not in NO_READ + ("no_closed_list", "page_claimed")
-
-
 def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     """Copy the run's records and account into the repository. A run that
     extracted replaces the records, sources and summary together, so the three
@@ -4571,37 +4603,17 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         print("capture only: filed capture_preview.json under %s" % os.path.relpath(dest, os.path.dirname(HERE)))
         return 0
     os.makedirs(os.path.join(dest, "records"), exist_ok=True)
-    filed_before: dict[str, dict] = {}
     for old in glob.glob(os.path.join(dest, "records", "*.json")):
-        with open(old) as fh:
-            filed_before[os.path.basename(old)] = json.load(fh)
         os.remove(old)
     preview = os.path.join(dest, "capture_preview.json")
     if os.path.exists(preview):
         os.remove(preview)
-    records = {}
+    records = []
     for path in sorted(glob.glob(os.path.join(out_dir, "records", "*.json"))):
         with open(path) as fh:
             row = json.load(fh)
-        records[os.path.basename(path)] = row
+        records.append(row)
         _write(os.path.join(dest, "records", os.path.basename(path)), row)
-    # Decision 16 (b), the invariant in one place: a filed record is deleted or replaced only by a record
-    # whose source is a bound read with text (bound_read_source). Any other filed record stays as filed,
-    # whatever path the run took, and the account counts it (kept_unreplaced).
-    kept_unreplaced = []
-    for name, row in sorted(filed_before.items()):
-        new = records.get(name)
-        if new is not None and (new == row or bound_read_source(out_dir, name[:-5])):
-            continue
-        records[name] = row
-        _write(os.path.join(dest, "records", name), row)
-        kept_unreplaced.append({"control_number": name[:-5],
-                                "why": "no_replacement" if new is None else "replaced_without_a_read"})
-    if kept_unreplaced:
-        print("kept_unreplaced: %d filed records stay, with no bound read to replace them" % len(kept_unreplaced))
-    report["kept_unreplaced"] = kept_unreplaced
-    kept_unreplaced_cns = {e["control_number"] for e in kept_unreplaced}
-    records = [records[k] for k in sorted(records)]
     # Which page each program was read from, and how well it matched. The
     # catalog text itself stays in the run's artifact (the workflow keeps it 90
     # days): a college's worth of page text is megabytes, and a re-read is free.
@@ -4619,7 +4631,7 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         with open(path) as fh:
             kept_unbound.update(json.load(fh).get("programs") or [])
     prev: dict = {}
-    if (not_sent or kept_unbound or kept_unreplaced_cns) and os.path.isfile(os.path.join(dest, "sources.json")):
+    if (not_sent or kept_unbound) and os.path.isfile(os.path.join(dest, "sources.json")):
         with open(os.path.join(dest, "sources.json")) as fh:
             prev = {x["control_number"]: x for x in json.load(fh)}
     index = []
@@ -4630,16 +4642,13 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
             if src["control_number"] in prev:
                 index.append(prev[src["control_number"]])
             continue
-        if src.get("control_number") in (kept_unbound | kept_unreplaced_cns) and src["control_number"] in prev:
+        if src.get("control_number") in kept_unbound and src["control_number"] in prev:
             # A kept record keeps the entry it was read from; with none, the new entry (not_found) stands.
             index.append(prev[src["control_number"]])
             continue
         index.append(dict({k: src.get(k) for k in ("control_number", "title", "award", "shape", "method",
                                                    "coverage", "codes_found", "source")},
                           listed=len(src.get("closed_list") or []), text_chars=len(src.get("text") or "")))
-    # A kept record whose program the run captured no source for keeps the entry it was read from too.
-    have = {x.get("control_number") for x in index}
-    index.extend(prev[cn] for cn in sorted(kept_unreplaced_cns - have) if cn in prev)
     _write(os.path.join(dest, "sources.json"), index)
     _write(os.path.join(dest, "capture.json"), report)
     # The programs whose read failed where the filed record passed, for a person (kept_passing).
