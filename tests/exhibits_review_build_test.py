@@ -418,6 +418,43 @@ check("the committed tag list carries the brands the review named, and drops the
       and "LEED" in DATA_TAGS.get("U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)", [])
       and not any(t in ("ROP", "HS", "DUI", "GIS", "varies") for v in DATA_TAGS.values() for t in v))
 check("an unreadable tag file gives no tags, never an error", B.issuer_tags("/nonexistent-root") == {})
+# The conductor on #3241: a real credential of its issuer that the rule dropped is a regression. The committed list
+# restores each (its own abbreviations and certification tracks) and leaves the generic titles out.
+SFT, EMSA = "California State Fire Training (SFT)", "California Emergency Medical Services Authority (EMSA)"
+REAL = [("Portfolio Management Professional (PfMP)", "Project Management Institute (PMI)"),
+        ("Program Management Professional (PgMP)", "Project Management Institute (PMI)"),
+        ("PCAP — Certified Associate in Python Programming", "Python Institute"),
+        ("Registered Dental Assistant (RDA) License", "Dental Board of California"),
+        ("Registered Dental Hygienist (RDH) License", "Dental Hygiene Board of California"),
+        ("Certified Occupational Therapy Assistant (COTA)", "National Board for Certification in Occupational Therapy (NBCOT)"),
+        ("Certified Payroll Professional (CPP)", "American Payroll Association (PayrollOrg)"),
+        ("Emergency Medical Technician (EMT) Certification", EMSA), ("Emergency Medical Responder (EMR)", EMSA),
+        ("Fire Inspector 1A", SFT), ("Fire Officer — Company Officer 2A", SFT), ("Chief Fire Officer 3A — Human Resource Management", SFT),
+        ("Fire Apparatus Driver/Operator 1A", SFT), ("Fire Investigation 1B", SFT), ("Training Instructor 1A", SFT),
+        ("Defense Language Proficiency Test (DLPT) — Spanish", "Defense Language Institute Foreign Language Center (DLIFLC)"),
+        ("Fire CDF Academy", "California Department of Forestry and Fire Protection (CAL FIRE)"),
+        ("Cosmetology License", "California Board of Barbering and Cosmetology"),
+        ("Biodynamic Farmer Foundation Year Certificate", "Biodynamic Association")]
+GENERIC_REF = [("Fire Technology", SFT), ("Fire Investigation", SFT), ("Fire Academy Conditioning", SFT),
+               ("Shielded Metal Arc Welding (SMAW)", "American Welding Society (AWS)"),
+               ("California Residential Code", "International Code Council (ICC)"),
+               ("Fire Inspector 1", "National Fire Protection Association (NFPA)"),
+               ("Architecture/Green Design: Principles and Practices", "U.S. Green Building Council (USGBC)"),
+               ("Agriculture Occupational Safety", "U.S. Occupational Safety and Health Administration (OSHA)"),
+               ("Basic Escrow Procedures", "California Escrow Association (CEA)")]
+check("every real credential the rule had dropped counts as named again under the committed list",
+      all(B.issuer_named(t, i) for t, i in REAL), [t for t, i in REAL if not B.issuer_named(t, i)])
+check("…and the generic titles stay out", not any(B.issuer_named(t, i) for t, i in GENERIC_REF),
+      [t for t, i in GENERIC_REF if B.issuer_named(t, i)])
+# CLEP and DSST titles now count as named (their tags), but a credit-by-exam card never asks named_credential
+# (d-exhibits-course-title-gate-s647): it keeps its course title and the college as issuer.
+IDX_CLEP = [{"t": "CLEP College Algebra", "issuer": "College Board", "locals": 3, "adopted": 3}]
+ex_clep = {"ids": ["MAPCXS-CA1-1-001"], "art": ["Las Positas College"], "types": [],
+           "recs": [["CNT 7285", "3 units in CNT 7285 CLEP College Algebra"]]}
+got_clep = B.leftover_code_proposal(dict(prop), ex_clep, B.local_courses(ex_clep, CIX), IDX_CLEP, "Credit by Exam CNT 7285", wording=True)
+check("a credit-by-exam card whose credit line names a CLEP exam keeps its course title, never the CLEP title",
+      B.issuer_named("CLEP College Algebra", "College Board") and got_clep and got_clep["source"] == B.SRC_COURSE
+      and got_clep["title"] != "CLEP College Algebra", got_clep)
 
 # The review of #3241 on the series strip: Network+, a list joined by "+", "or" or a short second number, any case, a
 # trailing "Exam" or leading "Version"; a title that is only a series, or one the strip would leave a joiner in, stays.

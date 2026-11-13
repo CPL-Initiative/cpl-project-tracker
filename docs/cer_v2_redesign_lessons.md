@@ -1290,3 +1290,7 @@ From `docs/reference/lanes/cer-procedures.md`, the Exhibits NEXT list, items don
 And item (5a), verbatim:
 
 (5a) done (S642, #3168, `98430524`): `kb/_build_exhibits_review.py` proposes a same-issuer title in use (statewide, then most used; one rule in `kb/title_in_use.py`, pinned to `exhibits.js` by `tests/fixtures/title_in_use_cases.json`) before a new one; a course title stands only for credit by exam with one credit recommendation or a college-issued exhibit; level tokens must match; Accept all leaves out a card flagged `needs_official_name`. 63 of 177 held proposals changed, 38 flagged. For Sam, in `kb/status/cer_proposals_in_use_2026-11-12.md`: 30 Carpenters cards under one program title each, 10 noncredit AUTO credit-by-exam cards kept under the college while *Credit by Exam AUTO A1* sits under ASE A1, and the 38 official names to find (a web search each, then `cert_naming`). Open, from COBIx: `cbeCard` in `exhibits.js` reads ids only while Python also reads MAP's CPL types; its report counts the Proposed cards it changes; review it, then merge on a green `test`;
+
+And from the redesign section, verbatim:
+
+The AP fold (Sheet 149 card 1) applied on 2026-10-31; its receipts are in the lessons doc.

@@ -1,5 +1,5 @@
 {
- "_about": "Each industry issuer's tags: the words that, standing as whole tokens in a title, say the title is that issuer's (kb/_build_exhibits_review.py issuer_named). Derived once on 2026-11-13 (S648) from every issuer in kb/credentials.json and kb/credential_review_overlay.json: a parenthetical that is one token (ASE, NREMT), and an all-capitals word outside parentheses (IPC); then written down and corrected by hand: generic ones dropped (ROP, HS, DUI, GIS, 'varies'), split ones joined (CAL-OSHA, EC-Council, H&R Block), and brands that sit outside the issuer's short tag added (CAL FIRE, Cal OES, UC ANR, Disney, LEED, Esri, Haas, Unity, LPIC, CLEP, DSST). The S648 conductor's direction on #3241: the issuer list is finite, so its tags are data, never a pattern. An issuer missing here has no tags: its titles count as named only on the words of its name. Add an issuer when the reference gains one.",
+ "_about": "Each industry issuer's tags: the words that, standing as whole tokens in a title, say the title is that issuer's (kb/_build_exhibits_review.py issuer_named). Derived once on 2026-11-13 (S648) from every issuer in kb/credentials.json and kb/credential_review_overlay.json: a parenthetical that is one token (ASE, NREMT), and an all-capitals word outside parentheses (IPC); then written down and corrected by hand: generic ones dropped (ROP, HS, DUI, GIS, 'varies'), split ones joined (CAL-OSHA, EC-Council, H&R Block), and brands that sit outside the issuer's short tag added (CAL FIRE, Cal OES, UC ANR, Disney, LEED, Esri, Haas, Unity, LPIC, CLEP, DSST), and, after the review of #3241, each issuer's own credential abbreviations and track names where its real credentials carry no other mark of it (PMI's PfMP and PgMP, Python Institute's PCAP, the Dental Boards' RDA and RDH, NBCOT's COTA, EMSA's EMT and EMR, SFT's certification tracks such as Fire Inspector and Company Officer). The S648 conductor's direction on #3241: the issuer list is finite, so its tags are data, never a pattern. An issuer missing here has no tags: its titles count as named only on the words of its name. Add an issuer when the reference gains one.",
  "set_by": "the S648 worker for the conductor, 2026-11-13",
  "tags": {
   "A.B. Miller High School": [],
@@ -47,10 +47,13 @@
    "ANSI"
   ],
   "American Payroll Association (APA)": [
-   "APA"
+   "APA",
+   "FPC"
   ],
   "American Payroll Association (PayrollOrg)": [
-   "PayrollOrg"
+   "PayrollOrg",
+   "CPP",
+   "FPC"
   ],
   "American Red Cross": [],
   "American Red Cross / American Heart Association (varies)": [],
@@ -63,7 +66,10 @@
   "American Society for Photogrammetry and Remote Sensing (ASPRS)": [
    "ASPRS"
   ],
-  "American Society for Quality": [],
+  "American Society for Quality": [
+   "CQIA",
+   "ASQ"
+  ],
   "American Society of Mechanical Engineers (ASME)": [
    "ASME"
   ],
@@ -91,7 +97,9 @@
   "Baldwin Park Adult and Community Education": [],
   "Baldy View Regional Occupational Program": [],
   "Biocom California Institute": [],
-  "Biodynamic Association": [],
+  "Biodynamic Association": [
+   "Biodynamic"
+  ],
   "Birmingham Community Charter High School": [],
   "Board of State and Community Corrections (BSCC)": [
    "BSCC"
@@ -115,7 +123,10 @@
   "California Board of Accountancy (CBA)": [
    "CBA"
   ],
-  "California Board of Barbering and Cosmetology": [],
+  "California Board of Barbering and Cosmetology": [
+   "Cosmetology License",
+   "Barber License"
+  ],
   "California Board of Behavioral Sciences (BBS)": [
    "BBS"
   ],
@@ -151,9 +162,13 @@
    "CDCR",
    "CPOST"
   ],
-  "California Department of Corrections and Rehabilitation / Commission on Correctional Peace Officer Standards and Training (CDCR/CPOST)": [],
+  "California Department of Corrections and Rehabilitation / Commission on Correctional Peace Officer Standards and Training (CDCR/CPOST)": [
+   "CDCR",
+   "CPOST"
+  ],
   "California Department of Forestry and Fire Protection (CAL FIRE)": [
-   "CAL FIRE"
+   "CAL FIRE",
+   "CDF"
   ],
   "California Department of Industrial Relations (DIR)": [
    "DIR"
@@ -177,7 +192,11 @@
    "DAS"
   ],
   "California Emergency Medical Services Authority (EMSA)": [
-   "EMSA"
+   "EMSA",
+   "EMT",
+   "EMR",
+   "Emergency Medical Technician",
+   "Emergency Medical Responder"
   ],
   "California Energy Commission (CEC)": [
    "CEC"
@@ -205,7 +224,21 @@
   ],
   "California State Board of Pharmacy": [],
   "California State Fire Training (SFT)": [
-   "SFT"
+   "SFT",
+   "Chief Fire Officer",
+   "Company Officer",
+   "Driver/Operator",
+   "Fire Control",
+   "Fire Inspector",
+   "Fire Instructor",
+   "Fire Investigator",
+   "Fire Management",
+   "Fire Officer",
+   "Fire Prevention",
+   "Training Instructor",
+   "Fire Investigation 1A",
+   "Fire Investigation 1B",
+   "Fire Investigation 1C"
   ],
   "California State Water Resources Control Board (SWRCB)": [
    "SWRCB"
@@ -257,19 +290,29 @@
    "DSST"
   ],
   "Defense Language Institute (DLI)": [
-   "DLI"
+   "DLI",
+   "DLPT"
   ],
   "Defense Language Institute Foreign Language Center (DLIFLC)": [
-   "DLIFLC"
+   "DLIFLC",
+   "DLPT"
   ],
   "Dental Assisting Board of California (DBCA)": [
    "DBCA"
   ],
-  "Dental Board of California": [],
-  "Dental Board of California (DBC)": [
-   "DBC"
+  "Dental Board of California": [
+   "RDA",
+   "Dental Board"
   ],
-  "Dental Hygiene Board of California": [],
+  "Dental Board of California (DBC)": [
+   "DBC",
+   "RDA",
+   "Dental Board"
+  ],
+  "Dental Hygiene Board of California": [
+   "RDH",
+   "Dental Hygiene Board"
+  ],
   "Dollar General": [],
   "EC-Council": [
    "EC-Council"
@@ -365,9 +408,13 @@
   "International Brotherhood of Electrical Workers (IBEW)": [
    "IBEW"
   ],
-  "International Code Council": [],
+  "International Code Council": [
+   "ICC",
+   "Code Certification"
+  ],
   "International Code Council (ICC)": [
-   "ICC"
+   "ICC",
+   "Code Certification"
   ],
   "International Fire Service Accreditation Congress (IFSAC) / Pro Board": [
    "IFSAC"
@@ -435,7 +482,9 @@
   ],
   "National Association of Safety Professionals": [],
   "National Board for Certification in Occupational Therapy (NBCOT)": [
-   "NBCOT"
+   "NBCOT",
+   "COTA",
+   "OTR"
   ],
   "National Center for Construction Education and Research (NCCER)": [
    "NCCER"
@@ -504,9 +553,17 @@
    "PLTW"
   ],
   "Project Management Institute (PMI)": [
-   "PMI"
+   "PMI",
+   "PfMP",
+   "PgMP",
+   "PMP",
+   "CAPM"
   ],
-  "Python Institute": [],
+  "Python Institute": [
+   "PCAP",
+   "PCEP",
+   "PCPP"
+  ],
   "Rancho Cucamonga High School": [],
   "Red Hat": [],
   "Rescue International": [],
