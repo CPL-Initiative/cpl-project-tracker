@@ -167,15 +167,18 @@ import _build_exhibits_related as rel  # noqa: E402
 EXC = {t for t in conv if test_mix.exception(t)}
 # Sam, 5:38 AM PT 2026-11-13 (#3228): "I would just defer to it's mix as written unless there was an obvious error". A
 # part no ASE code names is coded after "with"; only a mix the parser cannot read is left to a person.
-check("the members left to code by hand are those the parser cannot read: an 'or' (C1 or G1 is held)",
-      "ASE Bundle — A6 or T6 + L3" in EXC and "ASE Bundle — T7, T8 + MACS/609" not in EXC
-      and "ASE G1 + ALI Lift It Right Bundle" not in EXC and "ASE Bundle — A4, A5" not in EXC
-      and all(test_mix.family_read("", t)["status"] == "unparseable" for t in EXC))
-check("a non-ASE part is coded as written after 'with', and an 'or' stays inside its part with its reason",
+# COBIx on #3228 (6859081196), under the same words: an "or" between two tests is coded as written too, so the list is
+# empty for today's members; only a part that mixes a test code with other words would land there.
+check("no member is left to code by hand: the 'or' between two tests is coded as written (C1 or G1 is held)",
+      not EXC and all(test_mix.family_read("", t)["status"] != "unparseable" for t in conv)
+      and test_mix.exception("ASE Bundle — A6 or T6 + L3") is None
+      and test_mix.exception("ASE Bundle — T5, T8 + SP/2 A6 kit")["why"])
+check("a non-ASE part is coded as written after 'with', and an 'or' stays inside its part",
       test_mix.exception("ASE Bundle — T7, T8 + MACS/609") is None
       and test_mix.parts("ASE Bundle — T7, T8 + MACS/609") == {"tests": ["T7", "T8"], "with": ["MACS/609"]}
       and test_mix.parts("ASE Bundle — A6 or T6 + L3") == {"tests": ["A6 or T6", "L3"], "with": []}
-      and '"or"' in test_mix.exception("ASE Bundle — A6 or T6 + L3")["why"])
+      and test_mix.family_title(FAM, "ASE Bundle — A6 or T6 + L3") == "ASE Certificate Bundles: A6 or T6 + L3"
+      and test_mix.components("ASE Bundle — A6 or T6 + L3")[:3] == ["ASE A6", "ASE L3", "ASE T6"])
 check("a member's proposed title is the family plus its tests",
       test_mix.family_title(FAM, "ASE Bundle — A4, A5") == "ASE Certificate Bundles: A4 + A5"
       and test_mix.family_title(FAM, "ASE G1 + ALI Lift It Right Bundle") == "ASE Certificate Bundles: G1 with ALI Lift It Right"
