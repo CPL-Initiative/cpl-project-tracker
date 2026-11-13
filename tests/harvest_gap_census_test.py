@@ -70,18 +70,26 @@ try:
         "A11": "sitemap_page",   # live incomplete; filed names a GE pattern with no units
         "A12": "sitemap_page",   # filed record, error (no score)
         "A14": "no_closed_list",  # the file now lists its courses
+        "A15": "sitemap_page",   # live unstated: the tab counts it passing
+        "A16": "sitemap_page",   # live unstated, coverage fails
+        "A17": "sitemap_page",   # filed unstated whose own test failed, never loaded
     }, {
         "A1": score(), "A2": score(cov=False), "A3": score(inv=False), "A4": score(),
         "A5": score(), "A6": score(cov=False, placed=0),
         "A11": score(arith="incomplete", why=["the record names the degree total and the X pattern, but no units for it"]),
         "A12": None,
+        "A15": score(arith="unstated", measure="hours"), "A16": score(cov=False, arith="unstated", measure="hours"),
+        "A17": dict(score(arith="unstated", measure="hours"),
+                    arithmetic={"status": "unstated", "pass": False,
+                                "why": ["the record states no figure, but the catalog text names 1.5 HOURS"]}),
     }, cost=0.2)
     write(tmp, "beta", "Beta College", {"B1": "sitemap_page"}, {"B1": score(arith="unequal")})
     write(tmp, "gamma", "Gamma College", {}, {}, capture=False)   # a preview found no pages
     committed = G.read_committed(tmp)
 
     universe = [{"college": "Alpha College", "control_number": c} for c in
-                ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14"]]
+                ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "A10", "A11", "A12", "A13", "A14",
+                 "A15", "A16", "A17"]]
     universe += [{"college": "Beta College", "control_number": "B1"},
                  {"college": "Gamma College", "control_number": "G1"},
                  {"college": "Delta College", "control_number": "D1"}]
@@ -91,6 +99,8 @@ try:
         "A3": {"checks": {"coverage": True, "invented": False, "arithmetic": "equal"}},
         "A4": {"checks": {"coverage": True, "invented": True, "arithmetic": "unequal"}},
         "A11": {"checks": {"coverage": True, "invented": True, "arithmetic": "incomplete"}},
+        "A15": {"checks": {"coverage": True, "invented": True, "arithmetic": "unstated"}},
+        "A16": {"checks": {"coverage": False, "invented": True, "arithmetic": "unstated"}},
         "B1": {"checks": {"coverage": True, "invented": True, "arithmetic": "unequal"}},
     }
     registry = {"Delta College": "https://www.delta.edu/catalog", "Gamma College": "https://gamma.edu/c"}
@@ -101,11 +111,17 @@ try:
     want = {"A2": "coverage_fails", "A3": "course_added", "A4": "units_unequal", "A5": "not_loaded",
             "A6": "places_none", "A7": "no_closed_list", "A8": "page_not_found", "A9": "page_not_found",
             "A10": "found_not_extracted", "A11": "units_incomplete", "A12": "extraction_error",
-            "A13": "not_in_capture", "A14": "no_closed_list", "B1": "parked_college",
+            "A13": "not_in_capture", "A14": "no_closed_list", "A16": "coverage_fails",
+            "A17": "not_loaded", "B1": "parked_college",
             "G1": "college_never_read", "D1": "college_never_read"}
     for cn, cause in want.items():
         check(by.get(cn, {}).get("cause") == cause, "%s takes %s, got %s" % (cn, cause, by.get(cn, {}).get("cause")))
-    check("A1" not in by and r["passing"] == 1, "the one live pass is passing, through passes_live")
+    check("A1" not in by and "A15" not in by and r["passing"] == 2,
+          "the live passes are passing, through passes_live: an equal row and an unstated one (the tab's test)")
+    check(by.get("A17", {}).get("sub") == "filed record passes",
+          "a filed unstated record the tab would count passing is a load away, whatever its own unstated test said")
+    check(not any(p["cause"] == "units_unstated" for p in r["programs"]),
+          "'live, no figure stated' holds no row the tab counts passing")
     check(len(by) == len(r["programs"]), "no program appears twice in the gap")
     check(all(p["cause"] in G.CAUSE_IDS for p in r["programs"]), "every cause is on the closed list")
     check(r["passing"] + sum(r["statewide_by_cause"].values()) == r["universe"] == len(universe),
@@ -141,8 +157,10 @@ try:
     # The live row's flat checks go through the scorer's own passes_live.
     check(G.S.passes_live(G.live_score({"coverage": True, "invented": True, "arithmetic": "equal"})),
           "flat passing checks pass")
-    check(not G.S.passes_live(G.live_score({"coverage": True, "invented": True, "arithmetic": "unstated"})),
-          "an unstated figure does not pass live")
+    check(G.S.passes_live(G.live_score({"coverage": True, "invented": True, "arithmetic": "unstated"})),
+          "an unstated figure passes live, as the tab and program_record_machine_pass count it")
+    check(not G.S.passes_live(G.live_score({"coverage": False, "invented": True, "arithmetic": "unstated"})),
+          "an unstated row whose coverage fails does not")
 
     # With no live read: the committed files decide, and loaded state is unknown.
     r2 = G.census(G.universe_from_committed(committed), committed, None, {}, None, parked={})

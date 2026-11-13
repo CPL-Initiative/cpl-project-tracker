@@ -72,18 +72,15 @@ def hours_shape(f: dict) -> str:
     """Why an hours record that does not pass as the live table counts it fails, by its score."""
     a = f["score"].get("arithmetic") or {}
     st = a.get("status")
-    if st == "unstated":
-        return "unstated, passing (the scorer passes it; passes_live counts only equal)" if a.get("pass") \
-            else "unstated, the text names a figure the record lacks"
+    if f["score"].get("coverage", {}).get("pass") is not True or f["score"].get("invented", {}).get("pass") is not True:
+        return "coverage or invented fails (arithmetic %s)" % st
     if st == "incomplete" and not a.get("stated"):
         return "incomplete, the record names no total"
     if st == "incomplete" and _figure_free(f["record"]) and a.get("against") == "program":
         return "incomplete, a total and no course figure (the reading's reach)"
     if st == "incomplete":
         return "incomplete, a total and some course figures"
-    if st == "unequal":
-        return "unequal, the courses' sum against the printed total"
-    return "arithmetic passes; coverage or invented fails"
+    return "unequal, the courses' sum against the printed total"
 
 
 def quoted_total(f: dict) -> str:
@@ -256,7 +253,11 @@ def main(argv=None) -> int:
         print(json.dumps({"records": len(records), "hours": hours, "electives": elec, "ge_steps": ge,
                           "statewide_cal_getc_unruled": cal}, indent=1, default=list))
         return 0
-    print("filed records read: %d" % len(records))
+    print("filed records read: %d; passing by the tab's test (passes_live): %d" % (
+        len(records), sum(1 for f in records if S.passes_live(f["score"]))))
+    print("   of them unstated, the scorer's own unstated test failing (the page names a figure): %d" % sum(
+        1 for f in records if S.passes_live(f["score"]) and f["score"]["arithmetic"].get("status") == "unstated"
+        and f["score"]["arithmetic"].get("pass") is not True))
     print("\n1. hours_total_only's second reading (total_hours_printed)")
     print("   reach records that already pass (must be 0): %d" % len(hours["reach_passing"]))
     for shape, v in sorted(hours["shapes"].items(), key=lambda x: -len(x[1])):

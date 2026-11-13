@@ -13,7 +13,9 @@ THE UNIVERSE is the tab's own: one coci_college_programs row per control number 
 'Active' (program_requirements.js, the S415 headline; queue_status.py HEADLINE_SQL). Teachout and
 Approved rows the harvest also reads are counted apart, never inside it.
 
-PASSING is the scorer's passes_live, over the live row's checks; places_none is the scorer's too
+PASSING is the scorer's passes_live, over the live row's checks: coverage and invented true and the
+arithmetic "equal" or "unstated", the tab's own machine test and its headline's complete count (the S644
+conductor's ruling; program_record_machine_pass). places_none is the scorer's too
 (kb/_program_requirements_score.py). Neither is restated here: the live table's flat checks
 (_program_requirements_load.py writes coverage and invented as booleans, arithmetic as a status) are
 put back in the score's shape and handed to passes_live.
@@ -81,6 +83,8 @@ CAUSES = [
     ("course_added", "live, a course added"),
     ("units_unequal", "live, units unequal"),
     ("units_incomplete", "live, units incomplete"),
+    # Kept on the closed list, and empty: a live "unstated" row passes (passes_live, as the tab counts
+    # it), and one whose coverage or invented check fails takes that check's cause (failing_check).
     ("units_unstated", "live, no figure stated"),
     ("unknown_without_live", "filed record fails, live state unknown"),
 ]

@@ -563,12 +563,23 @@ def careers_check(record: dict, text: str | None) -> dict:
 
 def passes_live(score: dict | None) -> bool:
     """A record that passes as the live table counts it (program_requirement_records.checks):
-    every listed course placed (coverage), none invented, and the arithmetic equal. score["pass"]
-    asks more (repeats, outcomes, careers); the harvest's holds and its kept-passing guard judge a
-    filed record by this one definition (S641 review, call 3)."""
+    every listed course placed (coverage), none invented, and the arithmetic "equal" or "unstated".
+    That is the tab's machine test (program_requirements.js machineFails, the headline's
+    complete count) and the server's (program_record_machine_pass); the S644 conductor ruled that
+    passes_live match the tab exactly. The load writes the live arithmetic as the score's status
+    alone (_program_requirements_college.py, the load rows' checks), so a row reads "unstated" even
+    where the scorer's own unstated test failed (the page names a figure the record lacks), and the
+    tab counts that row passing; so does this, reading the status and never arithmetic.pass.
+    score["pass"] asks more (repeats, outcomes, careers, and an unstated test that holds); the
+    harvest's holds and its kept-passing guard judge a filed record by this one definition (S641
+    review, call 3)."""
     sc = score or {}
     return ((sc.get("coverage") or {}).get("pass") is True and (sc.get("invented") or {}).get("pass") is True
-            and (sc.get("arithmetic") or {}).get("status") == "equal")
+            and (sc.get("arithmetic") or {}).get("status") in LIVE_PASSING)
+
+
+# The arithmetic statuses the live table counts passing (program_record_machine_pass).
+LIVE_PASSING = ("equal", "unstated")
 
 
 def places_none(score: dict | None) -> bool:
