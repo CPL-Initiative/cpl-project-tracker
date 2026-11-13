@@ -123,8 +123,11 @@ at the top of each piece of work so Sam can change the dial before it runs.
   asks. Sam, in session S639, 2026-11-11, verbatim: "Remember on the Decision Sheet that I want your decisions on it,
   not asking me for mine. I am pushing decision to you as conductor and informed by help from cobix, your force
   multiplier:)" (`sam-sheet-carries-conductor-decisions-2026-11-11`). Each card reads Decided, Evidence, and Carried out
-  with how to reverse it; its chips are Fine, Change it and Revisit later. An outward send or a go-live is a card that
-  opens on "Waits for my send or go", and an unanswered card holds only its own item. First built as Open Asks Sheet
+  with how to reverse it; its chips are Fine, Change it and Revisit later. An outward send, a go-live or anything else
+  that needs Sam is a card carrying a labeled block above its replies — "Yours to do", "Needs your word" or "Yours to
+  rule" — with numbered steps, a link wherever one exists, and replies that name the act, never a status chip (Sam,
+  2026-11-13: "change the button to be clearer an include specific instructions and links for me"); and an unanswered
+  card holds only its own item. First built as Open Asks Sheet
   181 (https://claude.ai/artifact/M3YaDrpkT7HhH8rYRnvkjx).
 - His unplanned statements are captured verbatim (the vault's braindump skill, on-the-fly mode) and he is told in one
   line. Replies to him are a few lines, active voice, stated positively.

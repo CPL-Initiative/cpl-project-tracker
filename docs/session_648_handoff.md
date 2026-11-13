@@ -9,6 +9,56 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are SkyTanager (Session 648)
 
+## Since this handoff was written (Sam, 13:11Z to 13:20Z 2026-11-13)
+
+Sam answered every sheet that carried a waiting card. Your work, in this order:
+
+1. **Deploy `docket-process`, then `library-publish-now`, from `main`** — his go, 13:11Z,
+   [Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4. **Not yet deployed:** S647's Supabase
+   connector was down, so this is your first item (`cpl-chat-deploy.yml`, `confirm=DEPLOY`, one function per
+   dispatch), then the library lane's smoke.
+2. **Read back the carry-basis migration.** Sam said apply at 13:20Z ([Sheet 188](https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ)
+   card 6) and it applied at 13:27Z: `supabase-migrate.yml` run 43433381780, status and ledger 201, version
+   20261113132729, receipt `kb/receipts/migration_s644_carry_basis_electives_fill_words_43433381780.json`. The
+   permission check did not refuse this time. Nobody read the function back from the database, so run
+   `select pg_get_functiondef('public.program_record_carry_basis(jsonb)'::regprocedure)` and confirm both
+   `electives_fill_words` and `hours_total_printed` are out of the carry basis.
+3. **Read the first hourly `first-light-apply.yml` run.** Sam turned on the setting that lets GitHub Actions open
+   pull requests, 13:15Z, Sheet 186 card 5, so that run can now open its one pull request.
+4. **Carry out the six re-clustering cases as recommended** — his ruling, 13:16Z, Sheet 186 card 6 — under the
+   commons lane's plan and the re-mint playbook. The **Honors** question he left for a note is Sheet 191 card 1.
+5. **The 503 change** has his go (13:21Z, [Sheet 190](https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y) card 6):
+   build it, then deploy `program-requirements-extract`. **The display go of October 10 stands for every college**
+   (13:18Z, [Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) card 3), and a catalog that names
+   Cal-GETC and prints no figure **takes the statewide 34 units** (13:19Z, Sheet 187 card 5) — the reconcile step and
+   the rescore it earns, about 93 programs, are yours.
+
+**Sam's ruling on the shape of a card that needs him (2026-11-13), verbatim.** Looking at Sheet 186 card 5, whose
+decision read "turn it on" and whose reply row opened on a highlighted *Waits for my send or go*:
+
+> "I don't understand ones like this, where you decide to turn it on, which I agree, but then give me a recommend to
+> wait or go...makes no sense to me"
+
+and, once the steps were listed for him in chat:
+
+> "ok, good. change the button to be clearer an include specific instructions and links for me (like what you just
+> did). I already did this so will mark the card:)"
+
+So a card that needs him now carries a labeled block above the replies — *Yours to do*, *Needs your word* or *Yours
+to rule* — with numbered steps and a link wherever one exists, and replies that name the act. No status chip. The
+builder (`CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py`) refuses the old shape from Sheet 191 on;
+Sheets 181 to 190 are grandfathered, because their replies are keyed to card position.
+
+**[Open Asks Sheet 191](https://claude.ai/artifact/NeR8fkQoj9GVd53NhT29b9) is current.** Two cards wait: the Honors
+question, and Sheet 187 card 4, which he marked Follow up with *"I don't understand this one. give me two examples"*
+and which 191 restates with Irvine Valley 45871 and College of Alameda 9013 against Diablo Valley's Dental Hygiene
+A.S. Sheets 186 to 190 hold no waiting card.
+
+**The `cpl_memory` rows for all of this wait in a file**, not in the table: the Supabase connector was down, so
+`kb/receipts/cpl_memory_s647_sheet_shape_2026-11-13.sql` is marked NOT YET RUN. Run it, then the rows exist.
+**S647's model fell back from Fable 5.2 to Opus 5 at about 13:20Z**; the conductor settings below still name
+Fable 5.2.
+
 Written for SkyPipit (S647, the conductor) by a documents worker at a full checkpoint, about 12:45Z 2026-11-13, for
 both halves of S647. **The first half stopped without a handoff.** A session took S647 at 08:55Z from handoff 647 and
 stopped at about 10:12Z (its last push 10:11:34Z, its last comment 10:11Z on #3202); its record is `main` since handoff

@@ -531,7 +531,15 @@ The night's first firing of the CPL Queue routine (06:12Z), on handoff 646; Sam 
 
 ## Moved from the lane (S647)
 
+Glendale at head `16e5d86e`, as the lane carried it:At head `16e5d86e`: 19577 (in teach-out) dropped through `refile-kept`; 37070 and 12571 held `held_wrong_tab`; kept records keep their own catalog year; compare 1 of 121.
+
+The whole-build apply of the #3193 rescore, as the lane carried it: run 43421037587, 18,179 written, 0 errors; 18,179 rows on `bef8ef819af7` of 18,195; `058c0a1e`.
+
 The S646 paragraphs and NEXT as they stood before S647's checkpoint, verbatim:
+
+The S647 display runs, as the lane carried them: **Displayed (S647, one college each, the prior build filed per row):** Santiago Canyon 216 (run 43415894285, build `f48d35c7623e`; #3194 `87d62329`); Diablo Valley 213 of 213 (run 43416282209, build `f48d35c7623e`; #3205 `2cd175d1`, COBIx 5 of 5); San Jose City 77 of 77 (run 43418731809, build `13fe0e778bb5`; #3206 `e97fef4d`, COBIx 4 agree, 1 differs on 37604). All unchecked.
+
+Glendale's wrong-tab cause, as the lane carried it: The free page read 43423479582 found the cause: the pre-filter read only a run's first number, so neither CIS program got its own tab; it now reads whole runs, Coursedog tabs only.
 
 **The #3193 rescore, live at six colleges (#3207, draft):** 126 rows replaced, 62 fail to pass, none pass to fail; receipts with before-values on the rescore branches (**DECIDED** `d-rescore-six-colleges-live-s645`; lessons, *Moved from the lane (S646)*). The migration `kb/migrations/2026-11-13_s644_carry_basis_electives_fill_words.sql` waits for Sam (below).
 **Loaded** (insert-only, each receipt the rollback): **Diablo Valley 213 live** (07:28Z; S646 added 125 from #3208's listing; lessons, *S646*). Its display build `90ef35707409` on #3205 is not applied: COBIx's spot-check (five records: lessons, *S646*), the merge, then `step=display display_college="Diablo Valley College"`. San Jose City 77 of 84 (#3206). All unchecked. **DECIDED (`d-dv-sjcc-loaded-s645`)** stands.
