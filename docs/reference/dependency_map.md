@@ -586,10 +586,11 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_overmerge_apply.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_overmerge_apply_supabase.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_probe_lifecycle_checks.py` | workflows: `discover-map-datasets.yml` | — |
-| `kb/_program_requirements_college.py` | workflows: `program-requirements-college.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
+| `kb/_program_requirements_college.py` | workflows: `program-requirements-college.yml`, `program-requirements-wave.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
 | `kb/_program_requirements_display_apply.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
+| `kb/_program_requirements_wave.py` | workflows: `program-requirements-wave.yml` | — |
 | `kb/_program_sequence_ppm.py` | workflows: `program-sequence-ppm.yml` | — |
 | `kb/_program_source_census.py` | workflows: `program-source-census.yml` | — |
 | `kb/_publish_college_briefing.py` | workflows: `college-briefing-publish.yml` | — |
@@ -728,7 +729,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/futuro_hth_map_reference.json` | scripts: `kb/_build_futuro_hth_crosswalk.py` | — |
 | `kb/governance_candidates.json` | tabs: `governance` | committed by: `daily-dashboard.yml` |
 | `kb/governance_register.json` | tabs: `governance` | — |
-| `kb/hand_filed_catalogs` | none found | committed by: `program-requirements-college.yml` |
+| `kb/hand_filed_catalogs` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.json` | scripts: `kb/_identities_rekey_dryrun.py` | — |
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.md` | none found | scripts: `kb/_identities_rekey_dryrun.py` |
 | `kb/insert.sql` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
@@ -766,7 +767,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/prefix_fold_out/2026-09-03/held.json` | scripts: `kb/_prefix_fold_dryrun.py` | — |
 | `kb/prefix_fold_out/<date>/alias_map.json` | scripts: `kb/_esl_monthly_pass.py`, `kb/alias_chain.py` | — |
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
-| `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml` |
+| `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/los_angeles_city/kept_passing.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_program_requirements_college.py` | — |
@@ -781,6 +782,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot/sequences/sources/smc_program_219.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_reconcile.json` | scripts: `kb/_program_requirements_reconcile.py` | — |
+| `kb/program_requirements_wave` | none found | committed by: `program-requirements-wave.yml` |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
 | `kb/projects_seed_plan.md` | none found | scripts: `kb/_seed_projects.py` · committed by: `projects-seed-apply.yml` |
@@ -894,7 +896,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/zband_retire_out/2026-09-03/duplicates.json` | scripts: `kb/_zband_retire_dryrun.py` | — |
 | `kb/zband_retire_out/2026-09-03/materialized.json` | scripts: `kb/_uc_cur_promote.py`, `kb/_zband_retire_apply.py` | — |
 | `kb/zband_retire_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
-| `kept_passing_*.json` | scripts: `kb/_program_requirements_college.py` | — |
+| `kept_passing_*.json` | scripts: `kb/_program_requirements_college.py`, `kb/_program_requirements_wave.py` | — |
 | `kpi_cards.js` | pages: `CPL_Dashboard.html` | — |
 | `kpi_history.json` | scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `kpi_reorder.js` | pages: `CPL_Dashboard.html` | — |
@@ -929,6 +931,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `nav_groups.js` | pages: `CPL_Dashboard.html` | — |
 | `nav_overlay.js` | pages: `CPL_Dashboard.html` | — |
 | `nc_learning_partners.js` | pages: `CPL_Dashboard.html` | — |
+| `not_sent_*.json` | scripts: `kb/_program_requirements_college.py`, `kb/_program_requirements_wave.py` | — |
 | `nudges/team_directory.json` | scripts: `nudges/build_nudges.py` | — |
 | `our_process.js` | pages: `CPL_Dashboard.html` | — |
 | `package.json` | scripts: `kb/doctrine.py` | — |
@@ -998,7 +1001,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/daily_gate.sh` | workflows: `daily-dashboard.yml` | — |
 | `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
-| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `first-light-apply.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
+| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `first-light-apply.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-requirements-wave.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
 | `scripts/k10_disclosure_check.py` | workflows: `k10-disclosure-check.yml` | — |
 | `scripts/library_publish.py` | workflows: `library-publish.yml` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
@@ -1156,6 +1159,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_display_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_reconcile_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_wave_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_addenda_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/queue_status_test.py` | workflows: `js-tests.yml` | — |
@@ -1436,5 +1440,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 896 file
-datasets · 195 external services · 570 consumers · 70 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 900 file
+datasets · 195 external services · 572 consumers · 71 workflows · 41 tabs.
