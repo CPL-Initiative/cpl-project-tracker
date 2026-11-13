@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "8fbbcfb7a9c0",
- "built": "2026-10-23",
+ "build": "38a0fd8ed41f",
+ "built": "2026-11-13",
  "inputs": {
-  "records": 17598,
-  "map_read_at": "2026-10-18",
-  "registry_read_at": "2026-10-23",
+  "records": 17676,
+  "map_read_at": "2026-11-13",
+  "registry_read_at": "2026-11-13",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-11-12 20:22",
-  "cer": "2026-11-12T20:22:39+00:00"
+  "memberships": "2026-11-12 22:33",
+  "cer": "2026-11-12T22:33:55+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -262,8 +262,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -757,8 +757,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -1787,8 +1787,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -2662,8 +2662,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -3733,8 +3733,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -4556,8 +4556,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -5379,8 +5379,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -6926,8 +6926,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -7462,8 +7462,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -8674,8 +8674,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -9908,8 +9908,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -10629,8 +10629,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -10982,8 +10982,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -11323,8 +11323,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -13173,8 +13173,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -13524,8 +13524,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -14253,8 +14253,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -15896,8 +15896,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -16705,8 +16705,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -17695,8 +17695,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -18473,8 +18473,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   },
   {
@@ -18641,8 +18641,8 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "8fbbcfb7a9c0",
-    "built": "2026-10-23"
+    "build": "38a0fd8ed41f",
+    "built": "2026-11-13"
    }
   }
  ]
