@@ -23,6 +23,7 @@ Each is pinned below against the module's OWN functions, with no browser and no
 network. Run from repo root: python3 tests/program_requirements_college_test.py
 """
 import glob
+import hashlib
 import json
 import os
 import re
@@ -2296,74 +2297,160 @@ check(P.procedure_catalog({"catalog": dict(COD_STEP, resume=True)}).get("resume"
       "only a step whose record says resume: true reads its file in ranges")
 
 
-class _RangeResp:
-    def __init__(self, status, body, headers):
-        self.status, self._body, self.headers = status, body, headers
+# The ranged read against a real HTTP server on this machine (http.server in a thread),
+# through a request object shaped like the runner's (get(url, timeout=ms, headers=) ->
+# status, headers, body()). Each path is one host behavior.
+import http.server  # noqa: E402
+import threading  # noqa: E402
+import time as _time  # noqa: E402
+import urllib.error  # noqa: E402
+import urllib.request  # noqa: E402
 
-    def body(self):
-        return self._body
+COD_FILE = b"%PDF-1.4\n" + bytes(range(256)) * 40 + b"\n%%EOF\n"   # 10,256 bytes: three 4,096-byte ranges
+NOT_PDF = b"<html>" + bytes(range(256)) * 40 + b"</html>"
 
 
-class _RangeHost:
-    """A host that serves FILE in ranges and drops the requests named in drop."""
-    def __init__(self, file, drop=(), honors=True, status=None):
-        self.file, self.drop, self.honors, self.status, self.calls = file, set(drop), honors, status, []
+class _StubHost(http.server.BaseHTTPRequestHandler):
+    hits = {}
+
+    def log_message(self, *a):
+        pass
+
+    def _send(self, code, body, headers, declared=None):
+        self.send_response(code)
+        for k, v in headers.items():
+            self.send_header(k, v)
+        self.send_header("Content-Length", str(len(body) if declared is None else declared))
+        self.end_headers()
+        self.wfile.write(body)
+        self.wfile.flush()
+
+    def do_GET(self):
+        path = self.path
+        n = _StubHost.hits[path] = _StubHost.hits.get(path, 0) + 1
+        if path == "/forbidden.pdf":
+            return self._send(403, b"no", {"Content-Type": "text/plain"})
+        file = NOT_PDF if path == "/notpdf.pdf" else COD_FILE
+        etag = '"v1"'
+        if path.startswith("/edition") and n >= 2:
+            file, etag = file.replace(b"\x41", b"\x42"), '"v2"'      # the college republished mid-read
+        m = re.fullmatch(r"bytes=(\d+)-(\d+)", self.headers.get("Range") or "")
+        if_range = self.headers.get("If-Range")
+        if path == "/ignore.pdf" or not m or (path == "/edition200.pdf" and if_range and if_range != etag):
+            return self._send(200, file, {"Content-Type": "application/pdf", "ETag": etag})
+        lo, hi = int(m.group(1)), min(int(m.group(2)), len(file) - 1)
+        if path == "/slow.pdf" and n >= 2:
+            _time.sleep(1.5)
+        body, total = file[lo:hi + 1], str(len(file))
+        if path == "/star.pdf":
+            total = "*"
+        if path == "/badrange.pdf" and n >= 2:
+            lo, hi = 0, len(body) - 1                                    # a range that starts elsewhere
+        head = {"Content-Type": "application/pdf", "ETag": etag, "Content-Range": "bytes %d-%d/%s" % (lo, hi, total)}
+        if path == "/drop.pdf" and n == 2:
+            return self._send(206, body[:1000], head, declared=len(body))   # the transfer stops part way
+        if path == "/short.pdf" and n >= 2:
+            return self._send(206, body[:1000], head)                        # cleanly short of its Content-Range
+        return self._send(206, body, head)
+
+
+class _UrlRequest:
+    """The runner's request, as urllib: proxies off, timeout in ms, the body read on return."""
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 
     def get(self, url, timeout=None, headers=None):
-        self.calls.append((headers or {}).get("Range"))
-        n = len(self.calls)
-        if n in self.drop:
-            raise Exception("APIRequestContext.get: read ETIMEDOUT")
-        if self.status:
-            return _RangeResp(self.status, b"", {"content-type": "text/plain"})
-        m = re.fullmatch(r"bytes=(\d+)-(\d+)", self.calls[-1] or "")
-        if not (self.honors and m):
-            return _RangeResp(200, self.file, {"content-type": "application/pdf"})
-        a, b = int(m.group(1)), min(int(m.group(2)), len(self.file) - 1)
-        return _RangeResp(206, self.file[a:b + 1], {"content-type": "application/pdf",
-                                                    "content-range": "bytes %d-%d/%d" % (a, b, len(self.file))})
+        req = urllib.request.Request(url, headers=headers or {})
+        try:
+            with self.opener.open(req, timeout=(timeout or 60000) / 1000.0) as r:
+                status, hdr, body = r.status, dict(r.headers.items()), r.read()
+        except urllib.error.HTTPError as e:
+            status, hdr, body = e.code, dict(e.headers.items()), e.read()
+        return type("Resp", (), {"status": status, "headers": hdr, "ok": 200 <= status < 300,
+                                 "body": lambda self, b=body: b})()
 
 
-class _RangeReader:
-    def __init__(self, host):
-        self.request, self.delay, self.loads = host, 4.0, 0
+class _StubReader:
+    def __init__(self):
+        self.request, self.delay, self.loads = _UrlRequest(), 4.0, 0
 
     def _robots_for(self, url):
         return None
 
 
-COD_FILE = bytes(range(256)) * 41 + b"%%EOF"   # 10,501 bytes
-cod_host = _RangeHost(COD_FILE, drop={2, 3})
-slept = []
-got = P.fetch_ranged(_RangeReader(cod_host), "https://x.edu/c.pdf", 60000, size=4096, sleep=slept.append)
-check(got["body"] == COD_FILE and got["status"] == 206
-      and got["ranges"] == {"asked": 5, "failed": 2, "honored": True}
-      and cod_host.calls == ["bytes=0-4095", "bytes=4096-8191", "bytes=4096-8191", "bytes=4096-8191",
-                             "bytes=8192-12287"]
-      and slept == [4.0] * 5,
-      "a dropped range is asked for again from the byte it stopped at, each after the polite delay: %r"
-      % (cod_host.calls,))
+_srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), _StubHost)
+threading.Thread(target=_srv.serve_forever, daemon=True).start()
+BASE = "http://127.0.0.1:%d" % _srv.server_address[1]
+_nosleep = lambda s: None  # noqa: E731
 
-whole = P.fetch_ranged(_RangeReader(_RangeHost(COD_FILE, honors=False)), "https://x.edu/c.pdf", 60000,
-                       size=4096, sleep=lambda s: None)
-check(whole["body"] == COD_FILE and whole["status"] == 200 and whole["ranges"]["honored"] is False,
-      "a host that ignores Range answers the whole file, kept as it came")
 
-_real_sleep = P.time.sleep
-P.time.sleep = lambda s: None
+def _ranged(path, timeout_ms=30000):
+    try:
+        return P.fetch_ranged(_StubReader(), BASE + path, timeout_ms, size=4096, sleep=_nosleep)
+    except Exception as exc:
+        return {"error": "%s: %s" % (type(exc).__name__, exc)}
+
+
 try:
-    dead = P.read_pdf_ranged(_RangeReader(_RangeHost(COD_FILE, drop=set(range(1, 99)))),
-                             "https://x.edu/dead.pdf", {}, timeout_ms=60000)
-    refused = P.read_pdf_ranged(_RangeReader(_RangeHost(COD_FILE, status=403)), "https://x.edu/403.pdf", {},
-                                timeout_ms=60000)
+    slept = []
+    ok = P.fetch_ranged(_StubReader(), BASE + "/ok.pdf", 30000, size=4096, sleep=slept.append)
+    check(ok.get("body") == COD_FILE and ok["status"] == 206 and slept == [4.0] * 3
+          and ok["ranges"] == {"asked": 3, "failed": 0, "honored": True, "range_bytes": 4096, "total": len(COD_FILE),
+                               "validator": '"v1"', "sha256": hashlib.sha256(COD_FILE).hexdigest()},
+          "Range honored: three ranges, the polite delay before each, the total, validator and sha256 kept: %r"
+          % (ok.get("ranges"),))
+    ign = _ranged("/ignore.pdf")
+    check(ign.get("body") == COD_FILE and ign["status"] == 200 and ign["ranges"]["honored"] is False
+          and ign["ranges"]["sha256"] == hashlib.sha256(COD_FILE).hexdigest(),
+          "Range ignored: the first request's 200 is the whole file, kept as it came: %r" % (ign.get("error"),))
+    drop = _ranged("/drop.pdf")
+    check(drop.get("body") == COD_FILE and drop["ranges"]["asked"] == 4 and drop["ranges"]["failed"] == 1,
+          "a range dropped part way is asked for again from its first byte and the read completes: %r"
+          % (drop.get("ranges") or drop.get("error"),))
+    ed206 = _ranged("/edition206.pdf")
+    ed200 = _ranged("/edition200.pdf")
+    check("body" not in ed206 and "changed mid-read" in ed206["error"]
+          and "body" not in ed200 and "answered 200 after" in ed200["error"],
+          "a new edition mid-read fails it, by validator or by the host's If-Range 200; two are never spliced: %r %r"
+          % (ed206.get("error"), ed200.get("error")))
+    bad = _ranged("/badrange.pdf")
+    star = _ranged("/star.pdf")
+    check("body" not in bad and "when asked from 4096" in bad["error"]
+          and "body" not in star and "no total" in star["error"],
+          "a Content-Range that starts elsewhere, or names no total, fails the read: %r %r"
+          % (bad.get("error"), star.get("error")))
+    short = _ranged("/short.pdf")
+    check("body" not in short and "came short" in short["error"] and _StubHost.hits["/short.pdf"] == 1 + 7,
+          "a range cleanly short of its Content-Range is a failed range, retried six times in a row, then the read fails: %r"
+          % (short.get("error"),))
+    notpdf = _ranged("/notpdf.pdf")
+    check("body" not in notpdf and "not a whole PDF" in notpdf["error"],
+          "bytes that do not start %%PDF and end %%%%EOF are never a read: %r" % (notpdf.get("error"),))
+    t0 = _time.monotonic()
+    slow = _ranged("/slow.pdf", timeout_ms=1000)
+    check("body" not in slow and "TimeoutError" in slow["error"] and _time.monotonic() - t0 < 5,
+          "the read keeps to its overall deadline: %r" % (slow.get("error"),))
+    check(P.fetch_ranged.__defaults__[1] == 6 and P.PDF_RANGE_RETRIES == 6,
+          "the retry budget is six failures of one range in a row")
+    _real_sleep = P.time.sleep
+    P.time.sleep = _nosleep
+    try:
+        dead = P.read_pdf_ranged(_StubReader(), BASE + "/short.pdf", {}, timeout_ms=30000)
+        refused = P.read_pdf_ranged(_StubReader(), BASE + "/forbidden.pdf", {}, timeout_ms=30000)
+        main_refused = P.read_pdf(_StubReader(), BASE + "/forbidden.pdf", {}, timeout_ms=30000)
+    finally:
+        P.time.sleep = _real_sleep
+    check(dead["access"] == "unreachable" and dead["pages"] == [] and "data" not in dead
+          and refused["access"] == "blocked" and refused["status"] == 403 and "ranges" in refused,
+          "a failed ranged read is unreachable, never ok; a refusal is blocked: %r %r"
+          % (dead.get("error"), refused.get("access")))
+    flagged = {"procedure": {"catalog": dict(COD_STEP, resume=True)}}
+    check(C.pdf_fetch(flagged) is P.read_pdf_ranged and C.pdf_fetch({"procedure": {"catalog": COD_STEP}}) is P.read_pdf
+          and C.pdf_fetch({}) is P.read_pdf and main_refused["access"] == "blocked" and "ranges" not in main_refused,
+          "only a flagged college reads in ranges; an unflagged one takes main's one request, with no ranges key")
 finally:
-    P.time.sleep = _real_sleep
-check(dead["access"] == "unreachable" and "ETIMEDOUT" in dead["error"] and dead["pages"] == []
-      and refused["access"] == "blocked" and refused["status"] == 403,
-      "a range that fails past its retries reads as unreachable, a refusal as blocked: %r %r"
-      % (dead.get("error"), refused.get("access")))
+    _srv.shutdown()
 check(not {"playwright", "pypdf", "pdfminer"} & set(sys.modules),
-      "the ranged read's failures pulled in no runner-only dependency")
+      "the ranged read's tests pulled in no runner-only dependency")
 
 # Coursedog prints its list lines with the code unspaced ("• ABT90 - Soil Science", Hartnell's
 # PDF, S409); MAP and COCI space them. Both the coarse net and the exact test read the PDF's form.
