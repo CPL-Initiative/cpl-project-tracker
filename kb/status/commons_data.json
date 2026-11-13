@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T17:37:18Z",
+ "written_at": "2026-11-13T18:05:05Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -153,11 +153,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15761,
-  "gap": 6574,
+  "passing": 15771,
+  "gap": 6564,
   "with_gap": 118,
   "cost_usd": 1347.41,
-  "passed_at_read": 15237,
+  "passed_at_read": 15256,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -171,8 +171,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15761,
-  "gap": 6574
+  "passing": 15771,
+  "gap": 6564
  },
  "unmatched": [],
  "colleges": [
@@ -1394,18 +1394,18 @@
    "harvested": true,
    "slug": "college_of_the_desert",
    "programs": 374,
-   "passing": 278,
-   "gap": 96,
+   "passing": 288,
+   "gap": 86,
    "causes": {
     "no_closed_list": 9,
     "page_not_found": 7,
-    "places_none": 35,
-    "unknown_without_live": 45
+    "places_none": 28,
+    "unknown_without_live": 42
    },
-   "read_at": "2026-10-17T17:58:45Z",
+   "read_at": "2026-11-13T11:59:31Z",
    "read_kind": "capture",
    "cost_usd": 28.43,
-   "passed_at_read": 221,
+   "passed_at_read": 240,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -1426,20 +1426,20 @@
    "extracted": 358,
    "errors": 0,
    "failed_checks": {
-    "coverage": 41,
+    "coverage": 34,
     "invented": 4,
-    "arithmetic": 124,
+    "arithmetic": 105,
     "repeated": 0,
     "outcomes": 2
    },
-   "platform": "custom_html",
+   "platform": "courseleaf",
    "catalog_year": "2026-2027",
-   "catalog_url": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
-   "read_seconds": 386.4,
-   "run": "39056007346",
+   "catalog_url": "https://catalog.collegeofthedesert.edu/",
+   "read_seconds": 494.7,
+   "run": "43421133593",
    "levers": {
-    "reconcile_steps": 43,
-    "reader_page_assignment": 35,
+    "reconcile_steps": 40,
+    "reader_page_assignment": 28,
     "program_course_file_check": 9,
     "reader_page_search": 7,
     "ge_units_steps": 1,
@@ -6312,8 +6312,8 @@
  "live": {
   "basis": "live",
   "state": "read",
-  "read_at": "2026-11-13T15:53:36Z",
-  "run_id": "43456843640",
+  "read_at": "2026-11-13T17:58:51Z",
+  "run_id": "43477773570",
   "source": "kb/_commons_data_live.py in the live-counts job of harvest-gap-census.yml (the live-counts environment)",
   "tables": {
    "programs": "coci_college_programs (status Active, Active - Teachout Only, Approved; distinct control numbers)",
@@ -6340,17 +6340,17 @@
     "approved": 1423
    },
    "records": {
-    "total": 18195,
+    "total": 18202,
     "checked": 32,
-    "active": 16713,
-    "active_passing": 14525,
-    "active_with_plos": 14078,
-    "teachout": 205,
-    "teachout_passing": 157,
-    "teachout_with_plos": 177,
-    "approved": 1277,
-    "approved_passing": 1074,
-    "approved_with_plos": 1000
+    "active": 16717,
+    "active_passing": 14531,
+    "active_with_plos": 14083,
+    "teachout": 206,
+    "teachout_passing": 158,
+    "teachout_with_plos": 178,
+    "approved": 1279,
+    "approved_passing": 1077,
+    "approved_with_plos": 1002
    },
    "program_courses": {
     "rows": 313710,
@@ -6718,17 +6718,17 @@
      "approved": 147
     },
     "records": {
-     "total": 323,
+     "total": 330,
      "checked": 0,
-     "active": 166,
-     "active_passing": 146,
-     "active_with_plos": 153,
-     "teachout": 19,
-     "teachout_passing": 13,
-     "teachout_with_plos": 18,
-     "approved": 138,
-     "approved_passing": 119,
-     "approved_with_plos": 126
+     "active": 170,
+     "active_passing": 152,
+     "active_with_plos": 158,
+     "teachout": 20,
+     "teachout_passing": 14,
+     "teachout_with_plos": 19,
+     "approved": 140,
+     "approved_passing": 122,
+     "approved_with_plos": 128
     },
     "program_courses": {
      "rows": 5150,
@@ -11331,8 +11331,8 @@
   },
   "override": null,
   "last_attempt": {
-   "at": "2026-11-13T15:53:36Z",
-   "run_id": "43456843640",
+   "at": "2026-11-13T17:58:51Z",
+   "run_id": "43477773570",
    "ok": true,
    "error_class": null,
    "http_status": null,
@@ -11344,11 +11344,11 @@
  "overall": {
   "basis": "live",
   "state": "read",
-  "read_at": "2026-11-13T15:53:36Z",
+  "read_at": "2026-11-13T17:58:51Z",
   "rule": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-collection rule), from the live counts (key overall, basis live); unread parts count as zero",
   "flag": "shareable",
   "statewide": {
-   "mean": 0.6293,
+   "mean": 0.6294,
    "colleges": 118
   },
   "colleges": {
@@ -11425,12 +11425,12 @@
     }
    },
    "11": {
-    "value": 0.5823,
+    "value": 0.596,
     "parts": {
      "catalog": 0.6667,
-     "requirements": 0.7087,
+     "requirements": 0.7379,
      "slos": 0.0,
-     "plos": 0.7427
+     "plos": 0.767
     }
    },
    "12": {

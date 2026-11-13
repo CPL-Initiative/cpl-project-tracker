@@ -1,8 +1,8 @@
 # Harvest heading agreement
 
-A dated snapshot of main at commit d87d21db1117 (2026-11-13; the newest capture it reads started 2026-11-13), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
+A dated snapshot of main at commit ac7c6595ab36 (2026-11-13; the newest capture it reads started 2026-11-13), written by `kb/_program_requirements_heading_agreement.py` from the files that commit holds. A dispatch of `harvest-gap-census.yml` rewrites it beside the gap census; nothing gates a PR on it, so it can trail the records. Each record's own heading against the program it is filed under (COCI title and award).
 
-All colleges: 19155 records, 14926 agree, 394 disagree (169 of them pass on the committed files), 3835 cannot tell (570 say the heading is not in their text; 77 name an award and none of the program's title words, 69 of them passing, set aside).
+All colleges: 19155 records, 14935 agree, 393 disagree (169 of them pass on the committed files), 3827 cannot tell (565 say the heading is not in their text; 77 name an award and none of the program's title words, 69 of them passing, set aside).
 
 The heading check (a heading that names another award type and some of the program's title) would fail 137 records that pass on the committed files (passes_live), 32 of them a transfer degree and a local degree crossed. It is in no pass rule.
 
@@ -16,7 +16,7 @@ A suspect record has a heading that disagrees with its program, or was read from
 |---|---|---:|---:|---:|---:|---:|---:|---:|---|---|
 | Santa Rosa Junior College | main | 268 | 104 | 17 | 10 | 147 | 0 (0) | 17 (10) | none seen | no number line |
 | City College of San Francisco | main | 349 | 237 | 15 | 2 | 97 | 0 (0) | 15 (2) | none seen | no number line |
-| College of the Desert | main | 358 | 193 | 12 | 5 | 153 | 0 (0) | 12 (5) | none seen | no number line |
+| College of the Desert | main | 358 | 202 | 11 | 5 | 145 | 0 (0) | 11 (5) | none seen | no number line |
 | Glendale Community College | main | 260 | 145 | 11 | 5 | 104 | 0 (0) | 11 (5) | none seen | no number line |
 | Mendocino College | main | 118 | 89 | 7 | 0 | 22 | 0 (0) | 7 (0) | none seen | no openings kept |
 | Shasta College | main | 124 | 69 | 7 | 3 | 48 | 0 (0) | 7 (3) | none seen | no openings kept |
