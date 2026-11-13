@@ -267,3 +267,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## Moved from docs/INDEX.md's Update history (S644, 2026-11-13)
 
 - 2026-11-10 (S634 SkyBackward, Sam's session): Sheet 180 carried out: the CCR seed confirm for every remaining discipline (#3084), Alameda's semester sum (#3086), 10-Key's issuer (#3087), Las Positas's local GE (#3085, display running); the cer lane compacted (#3089); the dashboard's sign-in (#3092); handoff 636.
+
+## Moved from docs/INDEX.md's Update history (S647, 2026-11-13)
+
+- 2026-11-12 (S639 SkyQuail, conductor, Sam's session): five merges (#3122, #3123, #3124, #3126, #3127); the credential family live on 25 titles, the 13 saved rows restored, Sheet 181's renames applied; `main` red on two family checks after the apply; lane `cer-procedures` under budget; full checkpoint; handoff 640.

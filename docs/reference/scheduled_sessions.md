@@ -101,6 +101,10 @@ is his standing preference there too.
    clone is shallow and 302 branches cost over a gigabyte), then took the queue under the same number at 10:42Z.
    A firing in that position reads `main` since the handoff as the stopped session's record, opens its draft PR
    before any other write, and writes the next handoff for both.
+   It happened again in S647 (2026-11-13): the 08:55Z session stopped at about 10:12Z with no handoff, and the 11:12Z
+   firing, finding a green PR with COBIx's check left unmerged for an hour, declared with draft #3221 at 11:17Z and
+   took the queue under the same number, refreshing that PR within each half hour, since the next firing reads an
+   older PR as a stopped session.
 2. **Paused?** If the latest handoff carries a line `Scheduled run: paused —
    <reason>`, and nothing on the standing sheet has been answered since, end in
    one line. Sam lifts a pause by answering the sheet or by saying so.

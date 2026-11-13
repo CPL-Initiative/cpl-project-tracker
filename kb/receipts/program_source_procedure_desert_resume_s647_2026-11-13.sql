@@ -21,10 +21,10 @@ select public.program_source_procedure_set(
             '{catalog,resume}', 'true'),
   'S647 (SkyPipit): the 21 MB catalog PDF stalled part way (read ETIMEDOUT, run 43212020852); read it in ranges',
   'bbf96cf25765ebfed75d8380f2f5cc3a');
--- md5 before: bbf96cf25765ebfed75d8380f2f5cc3a (expected; replace if the read above differs). md5 after: <fill in>.
+-- md5 before: bbf96cf25765ebfed75d8380f2f5cc3a (expected; replace if the read above differs). md5 after: ed460cd81c273329a671451beaebd371 (read by the conductor after the write, S647).
 --
 -- ROLLBACK (the same function; the registry's history table also keeps the version before):
 -- select public.program_source_procedure_set(
 --   'College of the Desert',
 --   (select procedure #- '{catalog,resume}' from program_source_registry where college = 'College of the Desert'),
---   'rollback of the S647 resume key', '<md5 after>');
+--   'rollback of the S647 resume key', 'ed460cd81c273329a671451beaebd371');
