@@ -2284,6 +2284,87 @@ finally:
 check(url == HN_PDF and hn_report["procedure_step"]["file"] == HN_PDF and wait == 600 * 1000,
       "the read takes the file the step names: %r" % url)
 
+# College of the Desert's 21 MB catalog PDF was read once (261 s), then dropped part way:
+# two 900 s limits and a read ETIMEDOUT after 1,016 s with 2,400 s allowed (run 43212020852,
+# S647). A step that says resume reads the file in ranges, asking again from the byte a
+# failed range stopped at; a step without it keeps the one whole-file request.
+COD_STEP = {"start": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
+            "follow": "2026-27 PDF Catalog", "format": "pdf", "timeout_s": 2400}
+check(P.procedure_catalog({"catalog": dict(COD_STEP, resume=True)}).get("resume") is True
+      and "resume" not in P.procedure_catalog({"catalog": COD_STEP})
+      and "resume" not in P.procedure_catalog({"catalog": dict(COD_STEP, resume="yes")}),
+      "only a step whose record says resume: true reads its file in ranges")
+
+
+class _RangeResp:
+    def __init__(self, status, body, headers):
+        self.status, self._body, self.headers = status, body, headers
+
+    def body(self):
+        return self._body
+
+
+class _RangeHost:
+    """A host that serves FILE in ranges and drops the requests named in drop."""
+    def __init__(self, file, drop=(), honors=True, status=None):
+        self.file, self.drop, self.honors, self.status, self.calls = file, set(drop), honors, status, []
+
+    def get(self, url, timeout=None, headers=None):
+        self.calls.append((headers or {}).get("Range"))
+        n = len(self.calls)
+        if n in self.drop:
+            raise Exception("APIRequestContext.get: read ETIMEDOUT")
+        if self.status:
+            return _RangeResp(self.status, b"", {"content-type": "text/plain"})
+        m = re.fullmatch(r"bytes=(\d+)-(\d+)", self.calls[-1] or "")
+        if not (self.honors and m):
+            return _RangeResp(200, self.file, {"content-type": "application/pdf"})
+        a, b = int(m.group(1)), min(int(m.group(2)), len(self.file) - 1)
+        return _RangeResp(206, self.file[a:b + 1], {"content-type": "application/pdf",
+                                                    "content-range": "bytes %d-%d/%d" % (a, b, len(self.file))})
+
+
+class _RangeReader:
+    def __init__(self, host):
+        self.request, self.delay, self.loads = host, 4.0, 0
+
+    def _robots_for(self, url):
+        return None
+
+
+COD_FILE = bytes(range(256)) * 41 + b"%%EOF"   # 10,501 bytes
+cod_host = _RangeHost(COD_FILE, drop={2, 3})
+slept = []
+got = P.fetch_ranged(_RangeReader(cod_host), "https://x.edu/c.pdf", 60000, size=4096, sleep=slept.append)
+check(got["body"] == COD_FILE and got["status"] == 206
+      and got["ranges"] == {"asked": 5, "failed": 2, "honored": True}
+      and cod_host.calls == ["bytes=0-4095", "bytes=4096-8191", "bytes=4096-8191", "bytes=4096-8191",
+                             "bytes=8192-12287"]
+      and slept == [4.0] * 5,
+      "a dropped range is asked for again from the byte it stopped at, each after the polite delay: %r"
+      % (cod_host.calls,))
+
+whole = P.fetch_ranged(_RangeReader(_RangeHost(COD_FILE, honors=False)), "https://x.edu/c.pdf", 60000,
+                       size=4096, sleep=lambda s: None)
+check(whole["body"] == COD_FILE and whole["status"] == 200 and whole["ranges"]["honored"] is False,
+      "a host that ignores Range answers the whole file, kept as it came")
+
+_real_sleep = P.time.sleep
+P.time.sleep = lambda s: None
+try:
+    dead = P.read_pdf_ranged(_RangeReader(_RangeHost(COD_FILE, drop=set(range(1, 99)))),
+                             "https://x.edu/dead.pdf", {}, timeout_ms=60000)
+    refused = P.read_pdf_ranged(_RangeReader(_RangeHost(COD_FILE, status=403)), "https://x.edu/403.pdf", {},
+                                timeout_ms=60000)
+finally:
+    P.time.sleep = _real_sleep
+check(dead["access"] == "unreachable" and "ETIMEDOUT" in dead["error"] and dead["pages"] == []
+      and refused["access"] == "blocked" and refused["status"] == 403,
+      "a range that fails past its retries reads as unreachable, a refusal as blocked: %r %r"
+      % (dead.get("error"), refused.get("access")))
+check(not {"playwright", "pypdf", "pdfminer"} & set(sys.modules),
+      "the ranged read's failures pulled in no runner-only dependency")
+
 # Coursedog prints its list lines with the code unspaced ("• ABT90 - Soil Science", Hartnell's
 # PDF, S409); MAP and COCI space them. Both the coarse net and the exact test read the PDF's form.
 HN_LIST = ("Complete at least 3 of the following courses:\n• ABT90 - Soil Science\n"

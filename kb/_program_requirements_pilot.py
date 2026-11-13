@@ -493,6 +493,11 @@ def procedure_catalog(procedure) -> dict | None:
     out = {"start": start, "follow": (follow or "").strip(), "format": fmt, "timeout_s": wait}
     if named:
         out["file"] = file
+    # A host that drops a large file part way (College of the Desert's 21 MB catalog: read
+    # once in 261 s, then two 900 s limits and a read ETIMEDOUT after 1,016 s, run
+    # 43212020852, S647) is read in ranges, each failed range asked for again (read_pdf_ranged).
+    if step.get("resume") is True:
+        out["resume"] = True
     # The year of the file the step names, when the record names it ("2026-2027"):
     # a row naming the catalog's page names none (East LA, S403; S407).
     year = step.get("catalog_year")
@@ -911,6 +916,89 @@ def read_pdf(reader, url: str, cache: dict, timeout_ms: int = 180000) -> dict:
         else:
             from pypdf import PdfReader
             data = resp.body()
+            pdf = PdfReader(io.BytesIO(data))
+            out.update(access="ok", bytes=len(data), data=data, extractor="pypdf",
+                       pages=[(p.extract_text() or "") for p in pdf.pages])
+    except Exception as exc:
+        out.update(access="unreachable", error=str(exc).splitlines()[0][:200], pages=[])
+    cache[url] = out
+    return out
+
+
+PDF_RANGE_BYTES = 4 * 1024 * 1024   # one range of a resumed read
+PDF_RANGE_WAIT_S = 300              # the longest one range may take
+PDF_RANGE_RETRIES = 6               # failures of one range before the read gives up
+_CONTENT_RANGE = re.compile(r"bytes (\d+)-(\d+)/(\d+|\*)")
+
+
+def fetch_ranged(reader, url: str, timeout_ms: int, size: int = PDF_RANGE_BYTES,
+                 retries: int = PDF_RANGE_RETRIES, sleep=None) -> dict:
+    """The file in ranges with the reader's own request (its user agent and delay):
+    a range that fails is asked for again from the byte it stopped at, so a host
+    that drops the transfer part way loses one range, not the file. A host that
+    ignores Range answers 200 with the whole file, which is kept as it came. The
+    whole read keeps to timeout_ms."""
+    sleep = sleep or time.sleep
+    deadline = time.monotonic() + timeout_ms / 1000.0
+    data, total, fails, asked, status, ctype = bytearray(), None, 0, 0, None, ""
+    while total is None or len(data) < total:
+        left = deadline - time.monotonic()
+        if left <= 0:
+            raise TimeoutError("the ranged read ran past %d s at %d of %s bytes"
+                               % (timeout_ms // 1000, len(data), total or "?"))
+        sleep(reader.delay)
+        reader.loads += 1
+        asked += 1
+        try:
+            resp = reader.request.get(url, timeout=int(min(left, PDF_RANGE_WAIT_S) * 1000),
+                                      headers={"Range": "bytes=%d-%d" % (len(data), len(data) + size - 1)})
+            status, ctype = resp.status, resp.headers.get("content-type", "") or ctype
+            if status == 200:
+                return {"status": 200, "content_type": ctype, "body": bytes(resp.body()),
+                        "ranges": {"asked": asked, "failed": fails, "honored": False}}
+            if status != 206:
+                return {"status": status, "content_type": ctype, "body": None,
+                        "ranges": {"asked": asked, "failed": fails, "honored": False}}
+            got = _CONTENT_RANGE.fullmatch((resp.headers.get("content-range") or "").strip())
+            if not got or int(got.group(1)) != len(data):
+                raise ValueError("the host answered a range that starts elsewhere: %r"
+                                 % resp.headers.get("content-range"))
+            body = resp.body()
+        except Exception:
+            fails += 1
+            if fails > retries:
+                raise
+            continue
+        if got.group(3) != "*":
+            total = int(got.group(3))
+        data += body
+        if total is None and len(body) < size:
+            total = len(data)
+        if not body and len(data) < (total or 0):
+            raise ValueError("the host answered an empty range at %d of %d bytes" % (len(data), total))
+    return {"status": 206, "content_type": ctype, "body": bytes(data),
+            "ranges": {"asked": asked, "failed": fails, "honored": True}}
+
+
+def read_pdf_ranged(reader, url: str, cache: dict, timeout_ms: int = 180000) -> dict:
+    """read_pdf's shape for a procedure step that says resume: robots first, then
+    the file by fetch_ranged, then pypdf's text for every page."""
+    if url in cache:
+        return cache[url]
+    from _program_source_census import robots_allows
+    out = {"url": url}
+    if not robots_allows(reader._robots_for(url), url):
+        out.update(access="robots_disallow", pages=[])
+        cache[url] = out
+        return out
+    try:
+        got = fetch_ranged(reader, url, timeout_ms)
+        out.update(status=got["status"], content_type=got["content_type"], ranges=got["ranges"])
+        if got["body"] is None:
+            out.update(access="blocked" if got["status"] in (401, 403, 429) else "unreachable", pages=[])
+        else:
+            from pypdf import PdfReader
+            data = got["body"]
             pdf = PdfReader(io.BytesIO(data))
             out.update(access="ok", bytes=len(data), data=data, extractor="pypdf",
                        pages=[(p.extract_text() or "") for p in pdf.pages])
