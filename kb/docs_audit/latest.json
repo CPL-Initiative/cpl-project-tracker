@@ -11,17 +11,17 @@
   },
   "summary": {
     "files": 1478,
-    "bytes": 15210196,
+    "bytes": 15212252,
     "over_budget": 5,
     "handoff_max": 647,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59974,
+    "always_loaded_bytes": 59985,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59974,
+        "bytes": 59985,
         "over": 0
       },
       "other": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2759101,
+        "bytes": 2760003,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 549206,
+        "bytes": 549282,
         "over": 4
       },
       "handoff": {
         "files": 608,
-        "bytes": 4261708,
+        "bytes": 4262775,
         "over": 0
       }
     },
@@ -61,20 +61,20 @@
       "vault_heavy_path": 380
     },
     "vault": {
-      "files": 135755,
-      "bytes": 23568454382,
-      "heavy_bytes": 17124085049,
+      "files": 135984,
+      "bytes": 23588010355,
+      "heavy_bytes": 17143548474,
       "heavy_share": 0.727,
       "ignore_filters": [
+        "cpl-project-tracker/.claude/worktrees/agent-a1b6fa42188221851/kb/receipts",
         "cpl-project-tracker/.claude/worktrees/agent-a3a6c88b1ac856e43/kb/receipts",
         "cpl-project-tracker/.claude/worktrees/agent-adfdb6a57177fb2aa/kb/receipts",
         "cpl-project-tracker/kb/receipts",
-        "cpl-project-tracker/.claude/worktrees/agent-a1b6fa42188221851/kb/receipts",
         "cpl-project-tracker/.claude/worktrees/agent-a4430eb44570d2fb4/kb/receipts",
+        "cpl-project-tracker/.claude/worktrees/agent-a1b6fa42188221851/kb/program_requirements_college",
         "cpl-project-tracker/.claude/worktrees/agent-a3a6c88b1ac856e43/kb/program_requirements_college",
         "cpl-project-tracker/.claude/worktrees/agent-adfdb6a57177fb2aa/kb/program_requirements_college",
         "cpl-project-tracker/kb/program_requirements_college",
-        "cpl-project-tracker/.claude/worktrees/agent-a1b6fa42188221851/kb/program_requirements_college",
         "cpl-project-tracker/.claude/worktrees/agent-a4430eb44570d2fb4/kb/program_requirements_college",
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/.claude/worktrees/agent-a1b6fa42188221851/kb/regional_cpl_out",
@@ -529,6 +529,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": ".claude/worktrees/agent-a1b6fa42188221851/kb/receipts",
+      "detail": {
+        "bytes": 2245271037,
+        "kind": "dir"
+      },
+      "message": "directory totals 2,245,271,037 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": ".claude/worktrees/agent-a3a6c88b1ac856e43/kb/receipts",
       "detail": {
         "bytes": 2245070140,
@@ -551,20 +561,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2227627629,
+        "bytes": 2227627579,
         "kind": "dir"
       },
-      "message": "directory totals 2,227,627,629 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": ".claude/worktrees/agent-a1b6fa42188221851/kb/receipts",
-      "detail": {
-        "bytes": 2227622369,
-        "kind": "dir"
-      },
-      "message": "directory totals 2,227,622,369 B inside the vault"
+      "message": "directory totals 2,227,627,579 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -575,6 +575,16 @@
         "kind": "dir"
       },
       "message": "directory totals 2,227,622,369 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": ".claude/worktrees/agent-a1b6fa42188221851/kb/program_requirements_college",
+      "detail": {
+        "bytes": 149468916,
+        "kind": "dir"
+      },
+      "message": "directory totals 149,468,916 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -600,16 +610,6 @@
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
-      "detail": {
-        "bytes": 147654109,
-        "kind": "dir"
-      },
-      "message": "directory totals 147,654,109 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": ".claude/worktrees/agent-a1b6fa42188221851/kb/program_requirements_college",
       "detail": {
         "bytes": 147654109,
         "kind": "dir"

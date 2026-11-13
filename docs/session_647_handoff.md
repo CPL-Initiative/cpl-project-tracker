@@ -9,7 +9,7 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are SkyPipit (Session 647)
 
-Written for SkyOriole (S646, the conductor) by a documents worker at a full checkpoint, about 08:15Z 2026-11-13, with
+Written for SkyOriole (S646, the conductor) by a documents worker at a full checkpoint, about 08:25Z 2026-11-13, with
 the conductor's final states. S646 was the CPL Queue routine's first firing of the night (06:12Z, started 06:14Z) on
 handoff 646. Sam was not in session; Sheets 188, 187 and 186 held no replies at 06:20Z; no `queue_todo_done` rows since
 2026-11-12; no CER rule request or exhibit re-analysis request open. The firing had no `list_sessions`, `get_trigger`,
@@ -27,12 +27,15 @@ In flight at S646's sign-off, in this order; read each from its branch or PR.
    no reply at sign-off. Merging publishes the build. #3206 and #3207 rebuild on the new `main` first. After #3205
    merges, `step=display display_college="Diablo Valley College"` under Sam's standing go.
 2. **Glendale (#3202, head `727d15e4`):** the paid `route=slow extract=1` read went out about 07:15Z (about 1 h 45 m
-   of loading, estimate $7 to $14, ceiling about $24). State at sign-off: PENDING. Next: read it, run
+   of loading, estimate $7 to $14, ceiling about $24). Still running at 08:16Z, branch head unchanged: unread. Next:
+   read it (stopped at a challenge means nothing paid; else its cost against $40), run
    `kb/_program_requirements_compare.py --college "Glendale Community College"` (on the branch), one reader on
-   `727d15e4`'s delta (unread by a reviewer), and load only after.
-3. **Santiago Canyon (#3194, "HELD:"):** the free capture 43386345303 bound 204, as the proof; the paid read went out
-   07:45Z (about 67 programs, about $5.13), filed `6fe85ba1`. State at sign-off: PENDING. Next: read it,
-   `step=reread`, COBIx's spot-check, then its display.
+   `727d15e4`'s delta (the fixes after the first reader have had no reader), and load only after both.
+3. **Santiago Canyon (#3194, "HELD:", head `f9a0b128`):** paid read 43387912036, 67 extracted, 47 pass, $4.82; load
+   43390109243, 24 inserted, 192 kept, 6 skipped, live 216 at 08:10Z; reread 43391061390, 43 replaced (before-values,
+   one rollback). Display build `023a16e0e083` (216 programs) not applied: COBIx's spot-check of 11856, 11943, 11947,
+   19588, 40639 (catalog pages 89, 110, 138-139, 324, 89-90), merge on green, then
+   `step=display display_college="Santiago Canyon College"`.
 4. **The College of Marin SLO trial** (#3211, `claude/slo-college-of-marin`, read run 43378795532): step 11 reads it.
 5. **The Library's carried item:** Ally Barker's two `requested` rows (2026-11-12, "How to confirm and qualify for CPL
    funding"): `...mwdv9pl5`'s last ask (18:19Z, "Add the links in each box to the appropriate visual") has no ready
@@ -46,14 +49,14 @@ In flight at S646's sign-off, in this order; read each from its branch or PR.
 ## If you are the scheduled session (the CPL Queue routine)
 
 **Safe unattended, in this order,** each under Rule 10 and its playbook: *First things* 1 once COBIx's spot-check of
-a PR is on its thread (merge on green, never before the check); 2 and 3 up to each load, within $40 a college; 4 and 5.
+a PR is on its thread (merge on green, never before the check), 3 included; 2 up to its load, within $40; 4 and 5.
 A display after a load that passed its checks is covered by Sam's 2026-10-10 go
 (`sam-first-display-run-explicit-go-2026-11-12`); post each run's record, receipt and minutes on #3111. **Waits for
 Sam, never run by a session:** the migration push; cards 4 and 5 of [Open Asks Sheet
 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA); cards 4 to 6 of [Open Asks Sheet
-186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt); anything on the `CLAUDE.md` hold list. #2894 is his. **Open
-Asks Sheet 189** (link PENDING, published by the conductor; `SHEET_ID` `2026-11-13-open-asks-189`, 50,213 bytes, a
-fresh store) is current: S646's decisions on cards 1 to 3, none waiting. Sheets 188, 187 and 186 stay current for
+186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt); anything on the `CLAUDE.md` hold list. #2894 is his. **[Open
+Asks Sheet 189](https://claude.ai/artifact/K8pAMkQywm4VmGBAKbSf6x)** (Version 1, published about 08:24Z by the documents worker; `SHEET_ID`
+`2026-11-13-open-asks-189`, 50,213 bytes, a fresh store, `replies` empty at publish) is current: S646's decisions on cards 1 to 3, none waiting. Sheets 188, 187 and 186 stay current for
 their own waiting cards; 189 points to them.
 
 ## You are the conductor
@@ -91,8 +94,6 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 
 ## Ledger (PR, branch, state) at writing
 
-PENDING: the conductor's final states replace this table's in-flight rows.
-
 | PR or branch | State | Next |
 |---|---|---|
 | this checkpoint, `claude/practical-meitner-pit525` (tracker) | draft | merge on a green `test` |
@@ -100,8 +101,8 @@ PENDING: the conductor's final states replace this table's in-flight rows.
 | #3205 `claude/harvest-diablo-valley-read-s644` (head `5aeea395`, build `90ef35707409`) | draft, 213 live | COBIx's spot-check, merge on green, then `step=display display_college` |
 | #3206 `claude/harvest-sjcc-s645` (build `12f8b3d6d7a4`) | draft | COBIx's spot-check; rebuild on new `main` first |
 | #3207 `claude/harvest-rescore-3193-s645` (build `1efcc13ee048`) | draft | COBIx's spot-check; rebuild on new `main` first |
-| #3202 `claude/harvest-glendale-s645` (head `727d15e4`) | draft; paid slow read PENDING | read it; compare tool; one reader on `727d15e4`'s delta; load only after |
-| #3194 `claude/harvest-santiago-canyon-s644` | draft "HELD:"; paid read PENDING | read it, `step=reread`, spot-check |
+| #3202 `claude/harvest-glendale-s645` (head `727d15e4`) | draft; paid slow read running at 08:16Z, unread | read it; compare tool; one reader on `727d15e4`'s delta; load only after |
+| #3194 `claude/harvest-santiago-canyon-s644` (head `f9a0b128`, build `023a16e0e083`) | draft "HELD:", 216 live, reread done | COBIx's spot-check, merge on green, then `step=display display_college` |
 | #3211 `claude/slo-college-of-marin` | draft, trial run 43378795532 | step 11 reads it |
 | #3208 `4c79f88d`, #3210 `8faf0960`, #3212 `46a2f43d`, #3201 `e1f52690` | merged on green | none |
 | `claude/harvest-santiago-canyon-proof-s645`, `claude/harvest-wave-s645a`, `claude/harvest-pdf-cn-proof-s645`, `claude/harvest-pdf-cn-proof2-s645`, `claude/harvest-pdf-baseline-s645` | throwaway, no PR | Sam or GitHub deletes them (sessions cannot) |
@@ -130,16 +131,17 @@ No S646 worker survives a new session. Brief a fresh one per branch from its dif
   125 inserted, 88 kept, 1 skipped (08013), live 213 at 07:28Z (insert-only; the receipt's rollback is a delete limited
   to `checked = false`); `step=reread` 43386030975 replaced none.
 - **Glendale:** free reread 43379067418 (`route=challenged`), 34 read, nothing written to a table; the first slow
-  dispatch crashed at $0; the second: PENDING.
-- **Santiago Canyon:** paid read filed `6fe85ba1`: PENDING.
-- **Model spend:** $13.85 at Diablo Valley; Santiago Canyon and Glendale PENDING. Each under $40.
-- **`cpl_memory`:** seven rows prepared in `kb/receipts/cpl_memory_s646_rows_2026-11-13.sql` (rollback in its header):
-  PENDING the conductor's run.
+  dispatch crashed at $0; the second was still running at 08:16Z, unread (ceiling about $24).
+- **Santiago Canyon:** paid read 43387912036 ($4.82; compare 0 of 148 passing worse); load 43390109243, 24 inserted
+  (the rollback names them), live 216 at 08:10Z; reread 43391061390, 43 replaced, before-values and one rollback.
+- **Model spend:** Diablo Valley $13.85, Santiago Canyon $4.82, Glendale unread (ceiling about $24). Each under $40.
+- **`cpl_memory`:** seven rows, run by the conductor at about 08:14Z, all returned; receipt
+  `kb/receipts/cpl_memory_s646_rows_2026-11-13.sql` (rollback in its header).
 
 ## Decisions to honor
 
 **The conductor's** (each a `cpl_memory` row, a DECIDED line in the harvest lane, and a card on Open Asks Sheet 189 for
-Sam to revise):
+Sam to revise on [Open Asks Sheet 189](https://claude.ai/artifact/K8pAMkQywm4VmGBAKbSf6x)):
 1. A refused PDF block is filed under its own method `refused`, no text, no coverage, listed in `refused_passing`
    (`d-pdf-refused-method-s646`; card 1).
 2. An own heading is the full title with the same award by normalized equality, a wrapped heading allowed; never a
@@ -185,8 +187,10 @@ S645's and S644's decisions stand as recorded in handoffs 646 and 645.
 ## Not refreshed / what the conductor ran
 
 The documents worker made no Supabase call, dispatched nothing, merged nothing and published nothing. **The conductor
-runs:** step 10's statement (PENDING), step 12's headline and harvest SQL and the stamp (PENDING), the routine's
-`get_trigger`, and Sheet 189's publish. **Refreshed:** the harvest lane (its superseded text moved to the lessons doc,
+ran:** step 10's statement (08:14Z, seven rows returned) and step 12's headline at 08:15Z (20,282 active, 14,525
+complete by the tab's rule, 118 colleges; 14,370 at S645's sign-off) and the harvest row; the worker stamped both.
+The routine's `get_trigger` was not read (the tool is not in this firing; the schedule is hourly to 06:12 PT), so the
+run log's next run is not refreshed. The worker published Sheet 189. **Refreshed:** the harvest lane (its superseded text moved to the lessons doc,
 *Moved from the lane (S646)*, and an *S646* section), the governance lane (back under its size budget; the #3180 detail
 moved to `governance_lessons.md`), the library lane (the carried item; two bullets moved to `library_lessons.md`),
 `credential_watch_agent.md` (the stopping rule's count), `conductor_mode.md`, the receipt, the run log's session fields,
@@ -208,8 +212,8 @@ filing step describes one read.
 
 ## Let go
 
-The conductor drops every PR subscription and artifact watch in its sign-off turn and names them here: PENDING. No
-`send_later` check-in was armed (the tool was absent). No worker survives the session. Throwaway branches a later
+This session subscribed to no PR, scheduled no check-in and watched no artifact (Sheet 189's publish confirmed no
+watch). The workers' worktrees are gone with the session. No worker survives the session. Throwaway branches a later
 session or Sam may delete are listed in the ledger.
 
 Greetings, you are SkyPipit (Session 647), see SkyOriole's handoff — `docs/session_647_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_647_handoff.md) — let's keep rolling with our queue.

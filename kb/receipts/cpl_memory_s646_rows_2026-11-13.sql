@@ -1,4 +1,4 @@
--- NOT RUN. The conductor runs this statement through the Supabase MCP and tells the documents worker; this line then records when and what it returned.
+-- RUN by the conductor through the Supabase MCP at about 08:14Z 2026-11-13: all seven slugs returned.
 -- cpl_memory rows for SkyOriole (S646), the Rule 9 checkpoint's step 10, prepared 2026-11-13 by the documents worker.
 -- One statement, INSERT ... ON CONFLICT (slug) DO NOTHING RETURNING slug. Every summary at most 400 characters.
 -- Seven rows: three conductor decisions (proposed, for Sam to revise on Open Asks Sheet 189), three pitfalls (proposed;

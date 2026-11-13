@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-13T04:16:31Z",
+  "written_at": "2026-11-13T08:22:25Z",
   "session": 646,
   "moniker": "SkyOriole",
   "run": "the CPL Queue routine",
@@ -281,6 +281,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-13T08:10:00Z",
+      "text": "Santiago Canyon holds 216 program records (was 192): a paid read of 67 programs, 47 pass, and a reread replaced 43. Its page waits on COBIx's check."
+    },
     {
       "at": "2026-11-13T07:28:29Z",
       "text": "The PDF reader merged: a refused program is filed as refused, and a program's own heading must match its full title and award. Santiago Canyon's proof bound 204 programs."
@@ -634,7 +638,7 @@
     {
       "day": "2026-11-13",
       "active": 20282,
-      "complete": 14370,
+      "complete": 14525,
       "colleges": 118
     }
   ],
@@ -666,7 +670,7 @@
         20282
       ],
       "coci": [
-        16566,
+        16713,
         20282
       ],
       "outcomes": {
@@ -675,12 +679,12 @@
           89192
         ],
         "plo": [
-          16566,
+          16713,
           20282
         ]
       },
       "careers": [
-        15530,
+        15677,
         20282
       ]
     }
