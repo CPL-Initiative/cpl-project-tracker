@@ -1,0 +1,62 @@
+{
+ "_readme": "S647, for the conductor (#3202). The 2026-27 Coursedog tabs of Computer Information Systems (CIS-C, CIS-AS) were never candidates for 21305 and 37960, whose titles they print exactly; CIS-C went to 37070 Information Technology. No committed file holds their text. This read prints both tabs and the program data their own scripts fetch from app.coursedog.com, so the refusing gate (the coarse net or coverage in candidates()) can be found against 21305's and 37960's 19 listed courses. Two tab loads and robots.txt, 12 s apart (Glendale's pace, S646), no model call, writes nothing. A fourth load, the NCHSD tab, settles whether it is Adult High School Diploma's (31597, page_claimed) or Certificate of Secondary Education Completion's (24432, which read it with 21 invented codes): the search names it by code alone.",
+ "college": "Glendale Community College",
+ "delay_ms": 12000,
+ "questions": {
+  "cis_tabs": "Which of the 19 listed CIS courses each tab prints, and in what form (CS/IS 151, CSIS 151).",
+  "nchsd": "The program the NCHSD tab names, and its course list."
+ },
+ "keywords": [
+  "CS\\s*/\\s*IS\\s*\\d+",
+  "CSIS\\s*\\d+",
+  "BUSAD\\s*\\d+",
+  "ENTRE\\s*\\d+",
+  "High School",
+  "Secondary Education",
+  "Diploma"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "cis_tabs"
+   ],
+   "url": "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl",
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ],
+   "network_find": [
+    "CS/IS 151",
+    "CSIS"
+   ]
+  },
+  {
+   "answers": [
+    "cis_tabs"
+   ],
+   "url": "https://catalog.glendale.edu/programs/CIS-AS/completion-requirements-zaZdl",
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ],
+   "network_find": [
+    "CS/IS 151",
+    "CSIS"
+   ]
+  },
+  {
+   "answers": [
+    "nchsd"
+   ],
+   "url": "https://catalog.glendale.edu/programs/NCHSD/completion-requirements-zaZdl",
+   "network": true,
+   "network_hosts": [
+    "app.coursedog.com"
+   ],
+   "network_find": [
+    "catalogDisplayName",
+    "High School"
+   ]
+  }
+ ]
+}
