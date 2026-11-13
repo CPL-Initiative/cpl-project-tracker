@@ -1,0 +1,859 @@
+{
+ "college": "North Orange Continuing Education",
+ "control_number": "31595",
+ "shape": "noncredit",
+ "title": "High School Diploma Program",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.nocccd.edu/noce/high-school-diploma-program/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12398,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12398,
+    "output_tokens": 5742,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5742,
+  "output_tokens_details": {
+   "thinking_tokens": 1194
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.16443,
+ "ms": 41119,
+ "seconds": 41.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 40,
+   "listed": 40,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 25,
+   "codes": [
+    "ABED110",
+    "ABED115",
+    "ABED116",
+    "ABED117",
+    "ABED150",
+    "BMGR412",
+    "BMGR415",
+    "BMGR417",
+    "BMGR423",
+    "BMGR431",
+    "BUSA100",
+    "CIST100",
+    "COMP685",
+    "ELET178",
+    "ENTR100",
+    "ENTR105",
+    "ENTR115",
+    "ESLA1200",
+    "ESLA1204",
+    "HRMA100",
+    "HRMA105",
+    "IHSS154",
+    "OTEC105",
+    "OTEC91",
+    "OTEC92"
+   ],
+   "flagged": [
+    "ABED110",
+    "ABED115",
+    "ABED116",
+    "ABED117",
+    "ABED150",
+    "BMGR412",
+    "BMGR415",
+    "BMGR417",
+    "BMGR423",
+    "BMGR431",
+    "BUSA100",
+    "CIST100",
+    "COMP685",
+    "ELET178",
+    "ENTR100",
+    "ENTR105",
+    "ENTR115",
+    "ESLA1200",
+    "ESLA1204",
+    "HRMA100",
+    "HRMA105",
+    "IHSS154",
+    "OTEC105",
+    "OTEC91",
+    "OTEC92"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    160.0,
+    160.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "High School Diploma Program (HSDP)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "English Core",
+    "rule": "choose_units",
+    "minimum": 30,
+    "option_group": null,
+    "stated": {
+     "min": 30,
+     "max": 30
+    },
+    "courses": [
+     {
+      "code": "IHSS 100",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 101",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 102",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Arts/Language/Career",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "IHSS 113",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 173",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 174",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 181",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 992",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 993",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Math Core - Alegbra 1",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "IHSS 118",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Math Core - Math",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "IHSS 116",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 119",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Natural Science - Biological Sciences",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "IHSS 415",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 416",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 417",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 418",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Natural Science - Physical Sciences",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "IHSS 121",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 122",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Social and Behavioral Science - Economics",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "IHSS 305",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 306",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Social and Behavioral Science - U.S. Government",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "IHSS 310",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 311",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Social and Behavioral Science - U.S. History",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "IHSS 315",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 316",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 317",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 318",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Social and Behavioral Science - World History",
+    "rule": "choose_units",
+    "minimum": 10,
+    "option_group": null,
+    "stated": {
+     "min": 10,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "IHSS 109",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Cores Courses",
+    "rule": "choose_units",
+    "minimum": 50,
+    "option_group": null,
+    "stated": {
+     "min": 50,
+     "max": 50
+    },
+    "courses": [
+     {
+      "code": "IHSS 100",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 101",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 102",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 105",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 163",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 170",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 183",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 113",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 173",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 174",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 181",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 992",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 993",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 116",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 119",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 153",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 345",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 346",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 347",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 348",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 110",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 660",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABED 110",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABED 115",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABED 116",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABED 117",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABED 150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BMGR 412",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BMGR 415",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BMGR 417",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BMGR 423",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BMGR 431",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSA 100",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIST 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMP 685",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ELET 178",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENTR 100",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENTR 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENTR 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESLA 1200",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESLA 1204",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HRMA 100",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HRMA 105",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IHSS 154",
+      "units": 1,
+      "units_max": 5,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "IHSS 300",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IHSS 994",
+      "units": 1,
+      "units_max": 10,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTEC 091",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "OTEC 092",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "OTEC 105",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The requirements are counted in high school 'Credits', not college units or hours; measure is recorded as 'units' and each units field holds those printed credits. The List of Courses tab prints contact hours for some courses (e.g., ABED 110 72 Hours), but these are not the credits used for the diploma requirements.",
+   "The catalog prints 'Required Core Courses (110 Credits)' and 'Elective Cores Courses (50 Credits)' but prints no overall diploma total, so total_units is null (the 160 total is not computed).",
+   "Each core sub-area states 'Minimum Required Credits'; these are recorded as choose_units blocks with that minimum. English Core (IHSS 100-102, 1-10 credits each, min 30) and Biological Sciences (four 2.5-credit courses, min 10) effectively require every listed course.",
+   "Math Core (20 credits) and the other core areas are split into their printed sub-lists (Alegbra 1 [sic], Math, Biological Sciences, Physical Sciences, Economics, U.S. Government, U.S. History, World History), each recorded as its own block.",
+   "The elective sub-headings (English, Humanities, Math, Natural Science, Social and Behavioral Science, Other Electives) print no separate minimums; all elective courses are recorded in one 50-credit choose_units block.",
+   "The closed list writes 'IHSS174' without a space; the catalog prints 'IHSS 174'. This is treated as the same course, not a catalog addition.",
+   "IHSS 109 appears twice in the closed list; it is placed once in the World History block.",
+   "IHSS 154 and the non-IHSS Other Electives courses are not in the closed list and are marked as catalog additions.",
+   "No program learning outcomes or named careers are printed for this program."
+  ]
+ },
+ "extracted_run": "43342034608"
+}

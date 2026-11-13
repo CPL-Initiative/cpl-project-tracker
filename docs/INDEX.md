@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-12
+updated: 2026-11-13
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 103 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 69 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 605 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1461** | |
+| Session handoffs | 606 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1462** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-13 (S644 SkyWren, conductor, Sam's session): five merges (#3188, #3189, #3191, #3190, #3192); the harvest gap census and the wave runner for throughput; Los Angeles City's 22, Santiago Canyon and North Orange Continuing Education loaded; Open Asks Sheet 187 built; handoff 645.
 - 2026-11-12 (S643 SkyLark, conductor, Sam's session): eight merges (#3178, #3182, #3180, #3179, #3161, #3184, #3181, #3183); `main` red from a test pinned to a held card, fixed; the daily run rebuilds once on a changed input; First Light's marks tables live; returned titles acknowledged; re-clustering Step 1 by district and reach; full checkpoint; handoff 644.
 - 2026-11-12 (S642 SkyKestrel, conductor, Sam's session): six merges (#3157, #3158, #3164, #3162, #3160, #3166); Sierra's 230 ghost rows deleted with a receipt and undo; the Exhibits Review side panel (Course details, related titles changed to the statewide title); the First Light tab, read only; re-clustering Step 1 on #3165; handoff 643; KB note on a ledger at its line.
 - 2026-11-12 (S641 SkyOtter, two firings, the CPL Queue routine; the second the conductor): eleven merges (#3146, #3136, #3148, #3147 by the first; #3145, #3135, #3151, #3102, #3150, #3152, #3154 by the second); paid reads for American River and Los Angeles City; ASE plan phase 3 applied; Shasta's 1,549 outcome rows; DSP Version 3 public with a 25px target floor; KB notes on a rebuild running the same build script and on a target at exactly the minimum size; handoff `session_642_handoff.md`.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-12 (S639 SkyQuail, conductor, Sam's session): five merges (#3122, #3123, #3124, #3126, #3127); the credential family live on 25 titles, the 13 saved rows restored, Sheet 181's renames applied; `main` red on two family checks after the apply; lane `cer-procedures` under budget; full checkpoint; handoff 640.
 - 2026-11-11 (S638 SkyTamarind, conductor, Sam's session): five merges (#3115, #3109, #3116, #3118, #3119), the subject fill's first live run, conductor mode (`docs/reference/conductor_mode.md`), the cer-procedures lane under its cap; handoff 639.
 - 2026-11-11 (S636 SkyAntennae, Sam's session): Butte 87 to 138 of 164 and displayed on the catalog's own GE totals, the reconcile's address guard, a stale-issuer report in the credential review apply, the harvest lane under its budget (#3100); handoff 637.
-- 2026-11-10 (S634 SkyBackward, Sam's session): Sheet 180 carried out: the CCR seed confirm for every remaining discipline (#3084), Alameda's semester sum (#3086), 10-Key's issuer (#3087), Las Positas's local GE (#3085, display running); the cer lane compacted (#3089); the dashboard's sign-in (#3092); handoff 636.
