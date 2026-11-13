@@ -3191,6 +3191,22 @@ module.exports = {
     seed: (page) => seedFirstLight(page, "light", "photos"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
+  "first-light-photos-dark": {
+    file: "index.html",
+    title: "First Light signed in as a reviewer: the photos that cycle on COBI's views, dark",
+    routes: [{ hash: "first-light/photos", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedFirstLight(page, "dark", "photos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "first-light-sierra-dark": {
+    file: "index.html",
+    title: "First Light signed in as a reviewer: Sierra's set, dark",
+    routes: [{ hash: "first-light/sierra", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedFirstLight(page, "dark", "sierra"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "first-light-sierra": {
     file: "index.html",
     title: "First Light signed in as a reviewer: Sierra's set",

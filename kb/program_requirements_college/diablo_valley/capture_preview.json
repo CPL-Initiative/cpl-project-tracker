@@ -5,848 +5,72 @@
  "catalog_year": "2026-2027",
  "programs": 267,
  "with_closed_list": 244,
- "started": "2026-10-15T02:15:27Z",
+ "started": "2026-11-13T04:16:27Z",
  "elumen": {
   "catalog": "DVC2026-2027Catalog",
-  "start_status": 200,
-  "from_start": 0,
-  "hubs": [
-   "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/transdegreecert",
-   "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/dvc-certs-and-degrees"
+  "read": "publish/content",
+  "menu_programs": 0,
+  "errors": [],
+  "menu_departments": 0,
+  "department_programs": 0,
+  "menu_hubs": [
+   "dvc-certs-and-degrees",
+   "programs"
   ],
-  "program_pages": 0
+  "hub_programs": 0,
+  "index": {
+   "index_pages": 6,
+   "index_pages_failed": 0,
+   "areas": 72,
+   "areas_failed": 0,
+   "index_programs": 266,
+   "start": "https://www.dvc.edu/academics/explore-our-programs"
+  },
+  "program_pages_listed": 266,
+  "listing_failed": 0,
+  "program_pages": 262
  },
- "pages_read": 0,
+ "pages_read": 262,
+ "pages_listed": 266,
+ "pages_answered": 262,
+ "listing_failed": 0,
  "banner_h1": null,
- "loads": 6,
- "seconds": 43.0,
- "found": 0,
+ "loads": 347,
+ "seconds": 1536.0,
+ "found": 214,
  "by_method": {
   "no_closed_list": 23,
-  "not_found": 244
+  "not_found": 11,
+  "page_claimed": 19,
+  "sitemap_page": 214
  },
- "shared_pages": {},
+ "shared_pages": {
+  "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-interaction-design-for-web-and-mobile-platforms-fall-2026": [
+   "12142",
+   "39114"
+  ],
+  "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-computer-science-for-transfer-fall-2025": [
+   "12908",
+   "45625"
+  ],
+  "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026": [
+   "18885",
+   "44445"
+  ],
+  "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-mathematics-2-0-for-transfer-fall-2026": [
+   "30743",
+   "46430"
+  ],
+  "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-physics-for-transfer-2-0-fall-2026": [
+   "32015",
+   "46234"
+  ]
+ },
  "not_found": [
-  {
-   "control_number": "01454",
-   "title": "Plant Science and Horticulture",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01455",
-   "title": "Landscape Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01456",
-   "title": "Architectural Practice",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01459",
-   "title": "General Accounting",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01461",
-   "title": "Small Business Management/Entrepreneurship",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01462",
-   "title": "Management and Leadership Studies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01464",
-   "title": "Real Estate",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01476",
-   "title": "Electricity/Electronics Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01483",
-   "title": "Construction Management",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01484",
-   "title": "Construction & Building Inspection",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01492",
-   "title": "Dental Assisting",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01493",
-   "title": "Dental Hygiene",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01497",
-   "title": "Early Childhood Education",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01511",
-   "title": "Addiction Counseling",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "01521",
-   "title": "Culinary Arts",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "07993",
-   "title": "Television Arts",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "07995",
-   "title": "Help Desk IT Specialist",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "07999",
-   "title": "Construction Supervision & Superintendency",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08013",
-   "title": "Restaurant Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "08014",
-   "title": "Baking and Pastry",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "12139",
-   "title": "Digital Media",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "12142",
-   "title": "Web Design",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "12143",
-   "title": "Art Digital Media 3D Modeling & Animation",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "12144",
-   "title": "Art Digital Media Motion Graphics",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "12145",
-   "title": "Art Digital Media Digital Audio",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "12316",
-   "title": "Early Childhood Education: Site Supervisor",
-   "award": "Certificate of Achievement requiring 60+S/90+Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "12908",
-   "title": "Computer Science",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "14592",
-   "title": "Fitness Instruction",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "14697",
-   "title": "Geographic Information Systems,Global Positioning Systems",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "14761",
-   "title": "Special Education",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "14775",
-   "title": "Addiction Studies",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15055",
-   "title": "Server and System Administration",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15302",
-   "title": "Sports Medicine/Athletic Training",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15541",
-   "title": "Kinesiology: Coaching",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15710",
-   "title": "French",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15716",
-   "title": "Spanish",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15717",
-   "title": "Music Industry Studies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "15839",
-   "title": "Animation",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16636",
-   "title": "Civil Drafting, CAD",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16637",
-   "title": "Civil Design Drafting Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "16919",
-   "title": "Technical Theater",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
   {
    "control_number": "18369",
    "title": "CSU General Education Breadth",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18811",
-   "title": "Architecture Practice",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18812",
-   "title": "Electricity/Electronics Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18846",
-   "title": "Energy Systems",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18847",
-   "title": "Energy Systems",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18861",
-   "title": "Architecture Design",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18862",
-   "title": "English",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18885",
-   "title": "Public Health",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18887",
-   "title": "Humanities",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18889",
-   "title": "Meteorology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18891",
-   "title": "Physical Geography",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18898",
-   "title": "Social, Cultural Geography",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18908",
-   "title": "Computer Information Systems",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18909",
-   "title": "Computer Information Systems: Core",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18910",
-   "title": "Computer Information Systems - Web Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18911",
-   "title": "Computer Information Systems: Web Graphics",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18912",
-   "title": "Computer Information Systems: Database Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18913",
-   "title": "Computer Information Systems: Project Management",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "18918",
-   "title": "Art Digital Media",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19698",
-   "title": "Accounting",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19699",
-   "title": "Advanced Accounting",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19700",
-   "title": "Bookkeeping",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19703",
-   "title": "Business Marketing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19761",
-   "title": "Business",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19768",
-   "title": "Advanced General Business",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19769",
-   "title": "Baking and Pastry",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19770",
-   "title": "Culinary Arts",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "19771",
-   "title": "Restaurant Management",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "20923",
-   "title": "Civil Design Drafting Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21141",
-   "title": "Business - Transfer",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21142",
-   "title": "Television Arts",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21143",
-   "title": "Server and System Admin",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21145",
-   "title": "Special Education Paraeducator/Instructional Assistant",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21146",
-   "title": "Personal Training",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21147",
-   "title": "Coaching",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21149",
-   "title": "Technical Theater",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21150",
-   "title": "Dental Assisting",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21153",
-   "title": "Addiction Counseling",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21154",
-   "title": "Addiction Studies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "21155",
-   "title": "Geographic Information Systems, Global Positioning Systems",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30219",
-   "title": "Studio Arts",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30220",
-   "title": "Environmental Science",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30221",
-   "title": "Allied Health Fundamentals",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30222",
-   "title": "Allied Health",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30223",
-   "title": "Allied Health",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30231",
-   "title": "Construction Management",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30252",
-   "title": "Construction and Building Inspection",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30253",
-   "title": "Construction Supervision and Superintendency",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30455",
-   "title": "Music",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30610",
-   "title": "Computer Architecture",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30612",
-   "title": "Computer Science- Advanced Java Programming",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30613",
-   "title": "Computer Science- Mobile and Enterprise Java Programming",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30734",
-   "title": "Geology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30737",
-   "title": "Psychology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30743",
-   "title": "Mathematics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30747",
-   "title": "Sociology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30927",
-   "title": "Nursery and Greenhouse",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "30966",
-   "title": "Natural Science",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31112",
-   "title": "Arboriculture",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31150",
-   "title": "Plumbing",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31151",
-   "title": "Plumbing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31471",
-   "title": "Philosophy",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
    "near_miss": {
     "why": "no page read names the program"
    }
@@ -860,384 +84,8 @@
    }
   },
   {
-   "control_number": "31490",
-   "title": "Printmaking",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31505",
-   "title": "Philosophy",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "31507",
    "title": "Steamfitting",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31513",
-   "title": "Civil Engineering",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31526",
-   "title": "Dance",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31536",
-   "title": "Painting and Drawing",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31570",
-   "title": "Graphic Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31573",
-   "title": "Graphic Design",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31579",
-   "title": "Ceramics",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31584",
-   "title": "Mechanical Engineering",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31628",
-   "title": "Electrical Engineering and Computer Engineering",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31724",
-   "title": "Music Industry Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31757",
-   "title": "Mandarin Chinese",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31759",
-   "title": "Spanish",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31764",
-   "title": "Japanese",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31799",
-   "title": "History",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31810",
-   "title": "Early Childhood Education",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31811",
-   "title": "Music",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31813",
-   "title": "Geology",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31815",
-   "title": "Administration of Justice",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31817",
-   "title": "Geography",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31818",
-   "title": "Journalism",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31819",
-   "title": "English",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "31914",
-   "title": "Political Science",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32015",
-   "title": "Physics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32101",
-   "title": "Studio Arts",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32128",
-   "title": "Art History",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32159",
-   "title": "Anthropology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32195",
-   "title": "mTech- Industrial maintenance machinist/mechanic",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32196",
-   "title": "mTech - Industrial Maintenance Machinist/Mechanic",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32287",
-   "title": "Sports and Recreation Management",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32539",
-   "title": "Theatre Arts",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "32712",
-   "title": "Philosophy",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33213",
-   "title": "Spanish",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33292",
-   "title": "Economics",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33531",
-   "title": "Game Design",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33651",
-   "title": "Kinesiology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33764",
-   "title": "Animation",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33770",
-   "title": "Nutrition and Dietetics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33771",
-   "title": "Biology",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33799",
-   "title": "Machining for Mechanical Engineering Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33891",
-   "title": "PreApprenticeship",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "33892",
-   "title": "Machining for Mechanical Engineering Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35114",
-   "title": "Pre-Apprenticeship",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35269",
-   "title": "Network Technology Fundamentals",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35270",
-   "title": "Network Cybersecurity",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35271",
-   "title": "Information and Communication Technology",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35272",
-   "title": "Information and Communication Technology",
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
@@ -1248,173 +96,31 @@
    "title": "Elementary Teacher Education",
    "award": "A.A- T Degree",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35679",
-   "title": "Early Childhood Education: Associate Teacher",
-   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35874",
-   "title": "Social Justice Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35941",
-   "title": "Industrial Design",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "35959",
-   "title": "Industrial Design",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36243",
-   "title": "Public Health Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "36293",
-   "title": "Film, Television, and Electronic Media",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37149",
-   "title": "Architecture Design",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37150",
-   "title": "Audio Visual Technology",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37154",
-   "title": "Audio Visual Technology",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37558",
-   "title": "Environmental Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37637",
-   "title": "Chemistry",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37642",
-   "title": "German",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37644",
-   "title": "Russian",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "37645",
-   "title": "Digital Marketing",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38241",
-   "title": "Nutrition, Health, and Wellness",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38419",
-   "title": "Hospitality Management",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "38488",
-   "title": "Agriculture Plant Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-art-in-elementary-teacher-education-integrated-programs-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.458,
+    "body": 0.458,
+    "content": 0.458,
+    "net": 11,
+    "listed": 24,
+    "why": "coverage 0.46 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4199,
+     "content": 4199,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
    "control_number": "38506",
    "title": "Professional and Technical Workplace Skills",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39114",
-   "title": "Interaction Design for Web and Mobile Platforms",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39115",
-   "title": "Interaction Design for Web and Mobile Platforms",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39367",
-   "title": "Beginning ESL Success",
-   "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
    }
@@ -1428,345 +134,9 @@
    }
   },
   {
-   "control_number": "39424",
-   "title": "Commercial Music - Performance",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39425",
-   "title": "Commercial Music - Performance",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39426",
-   "title": "Commercial Music - Technology and Production",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39427",
-   "title": "Commercial Music - Technology and Production",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39428",
-   "title": "Commercial Music - Media Composition",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39429",
-   "title": "Commercial Music - Media Composition",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39430",
-   "title": "Photograpny",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39431",
-   "title": "Photograpny",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "39730",
    "title": "Professional and Technical Workplace Skills",
    "award": "A.S. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39738",
-   "title": "Police/Law Enforcement",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39769",
-   "title": "Special Education Fundamentals",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39775",
-   "title": "Drone Technology",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "39832",
-   "title": "Game Design",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40511",
-   "title": "Intermediate ESL Success",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40512",
-   "title": "Beginning ESL for Career Success",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40513",
-   "title": "Public Safety Employment Preparation",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40697",
-   "title": "Industrial Automation and Robotics",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "40698",
-   "title": "Design for Manufacturing (D4m)",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41061",
-   "title": "Python Programming",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41068",
-   "title": "Film Post-Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41069",
-   "title": "Film Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41170",
-   "title": "Skills for College Success",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41216",
-   "title": "Master Grower",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41232",
-   "title": "Nursery and Greenhouse Entrepreneurship",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41233",
-   "title": "Arboriculture Entrepreneurship",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41237",
-   "title": "Landscape Design Entrepreneurship",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41276",
-   "title": "Music Industry Entrepreneurship",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41290",
-   "title": "Music Industry Entrepreneurship",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41486",
-   "title": "Drama - Acting",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41488",
-   "title": "Drama - Musical Theater",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41489",
-   "title": "Acting",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41490",
-   "title": "Musical Theater",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "41577",
-   "title": "Business Administration 2.0",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42399",
-   "title": "Personal Training Entrepreneurship",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42416",
-   "title": "Fitness Coach",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42845",
-   "title": "Community Health Worker",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42869",
-   "title": "Early Childhood Education Practitioner",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42949",
-   "title": "Communication Studies 2.0",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43089",
-   "title": "Cannabis Studies",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43181",
-   "title": "Advanced ESL Success",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43208",
-   "title": "Virtual Production Fundamentals",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43292",
-   "title": "High-Intermediate ESL Success",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43427",
-   "title": "Yoga Teacher Training - 200-Hour",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
    }
@@ -1780,193 +150,35 @@
    }
   },
   {
-   "control_number": "43755",
-   "title": "Entrepreneurship: Starting and Operating a Business",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43756",
-   "title": "IBM SkillsBuild Data Analytics",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
    "control_number": "43757",
    "title": "College Student Success",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43758",
-   "title": "ESL For Technology",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43759",
-   "title": "Intermediate English for College and Career Success",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43760",
-   "title": "ESL College Readiness",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43859",
-   "title": "Social Justice: LGBTQ Studies",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43966",
-   "title": "Social and Urban Dance Skills",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "43967",
-   "title": "Dance Performance Skills",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44184",
-   "title": "Architecture History and Theory",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44354",
-   "title": "Robotics Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44355",
-   "title": "Industrial Engineering Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44445",
-   "title": "Public Health",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44554",
-   "title": "IBM SkillsBuild Cybersecurity",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44564",
-   "title": "Advanced Virtual Production",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44577",
-   "title": "Data Analytics",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "44627",
-   "title": "Virtual Production",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "why": "no page read names the program"
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-in-skills-for-college-success-fall-2023",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2592,
+     "content": 2592,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
    "control_number": "45039",
    "title": "California General Education Transfer Curriculum (Cal-GETC)",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45239",
-   "title": "Exploration of Dentistry",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45512",
-   "title": "Law, Public Policy, and Society",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "45625",
-   "title": "Computer Science",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "46022",
-   "title": "English-Language Success for Early Childhood Education",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "46234",
-   "title": "Physics 2.0",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "46430",
-   "title": "Mathematics 2.0",
-   "award": "A.S. T Degree",
    "near_miss": {
     "why": "no page read names the program"
    }
@@ -1980,17 +192,2341 @@
    }
   }
  ],
- "page_claimed": [],
+ "page_claimed": [
+  {
+   "control_number": "01455",
+   "title": "Landscape Design",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-nursery-and-greenhouse-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-plant-science-and-horticulture-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-arboriculture-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-natural-science-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-agriculture-plant-science-for-transfer-fall-2026"
+   ]
+  },
+  {
+   "control_number": "07995",
+   "title": "Help Desk IT Specialist",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-information-and-communication-technology-fall-2025",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-network-technology-fundamentals-spring-2020",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-information-and-communication-technology-fall-2026"
+   ]
+  },
+  {
+   "control_number": "12143",
+   "title": "Art Digital Media 3D Modeling & Animation",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-digital-media-fall-2026"
+   ]
+  },
+  {
+   "control_number": "12144",
+   "title": "Art Digital Media Motion Graphics",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-digital-media-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-graphic-design-spring-2020",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-interaction-design-for-web-and-mobile-platforms-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-studio-arts-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-graphic-design-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-interaction-design-for-web-and-mobile-platforms-fall-2026"
+   ]
+  },
+  {
+   "control_number": "12145",
+   "title": "Art Digital Media Digital Audio",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-digital-media-fall-2026"
+   ]
+  },
+  {
+   "control_number": "15055",
+   "title": "Server and System Administration",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-information-and-communication-technology-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-information-and-communication-technology-fall-2025",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-network-technology-fundamentals-spring-2020"
+   ]
+  },
+  {
+   "control_number": "15541",
+   "title": "Kinesiology: Coaching",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sport-and-recreation-management-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-kinesiology-for-transfer-fall-2026"
+   ]
+  },
+  {
+   "control_number": "18846",
+   "title": "Energy Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-electrical-electronics-technology-fall-2023",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-electrical-electronics-technology-fall-2023"
+   ]
+  },
+  {
+   "control_number": "18847",
+   "title": "Energy Systems",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-electrical-electronics-technology-fall-2023",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-electrical-electronics-technology-fall-2023"
+   ]
+  },
+  {
+   "control_number": "18918",
+   "title": "Art Digital Media",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-digital-media-fall-2026"
+   ]
+  },
+  {
+   "control_number": "19771",
+   "title": "Restaurant Management",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sport-and-recreation-management-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-small-business-management-entrepreneurship-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-accomplishment-in-small-business-management-entrepreneurship-fall-2026"
+   ]
+  },
+  {
+   "control_number": "21143",
+   "title": "Server and System Admin",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-information-and-communication-technology-fall-2025",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-network-technology-fundamentals-spring-2020",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-information-and-communication-technology-fall-2026"
+   ]
+  },
+  {
+   "control_number": "21147",
+   "title": "Coaching",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sport-and-recreation-management-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-kinesiology-for-transfer-fall-2026"
+   ]
+  },
+  {
+   "control_number": "31151",
+   "title": "Plumbing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-plumbing-fall-2026"
+   ]
+  },
+  {
+   "control_number": "31526",
+   "title": "Dance",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-dance-performance-skills-fall-2024"
+   ]
+  },
+  {
+   "control_number": "33891",
+   "title": "PreApprenticeship",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-pre-apprenticeship-fall-2025"
+   ]
+  },
+  {
+   "control_number": "36243",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026"
+   ]
+  },
+  {
+   "control_number": "39430",
+   "title": "Photograpny",
+   "award": "A.A. Degree",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-photography-spring-2022"
+   ]
+  },
+  {
+   "control_number": "41237",
+   "title": "Landscape Design Entrepreneurship",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-arboriculture-entrepreneurship-fall-2024",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-nursery-and-greenhouse-entrepreneurship-fall-2023",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-small-business-management-entrepreneurship-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-accomplishment-in-small-business-management-entrepreneurship-fall-2026",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-personal-training-entrepreneurship-fall-2025",
+    "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-master-grower-fall-2023"
+   ]
+  }
+ ],
  "coverage_bands": {
-  "0.5-0.8": 0,
-  "0.8-1.0": 0,
-  "1.0": 0
+  "0.5-0.8": 15,
+  "0.8-1.0": 35,
+  "1.0": 164
  },
  "would_extract": {
   "against": null,
   "kept": 0,
-  "programs": 0,
-  "list": []
+  "kept_moved": 0,
+  "programs": 214,
+  "list": [
+   {
+    "control_number": "01454",
+    "title": "Plant Science and Horticulture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-plant-science-and-horticulture-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01456",
+    "title": "Architectural Practice",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-architectural-practice-fall-2026",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01459",
+    "title": "General Accounting",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-general-accounting-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01461",
+    "title": "Small Business Management/Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-small-business-management-entrepreneurship-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01462",
+    "title": "Management and Leadership Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-management-and-leadership-studies-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01464",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-real-estate-spring-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01476",
+    "title": "Electricity/Electronics Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-electrical-electronics-technology-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01483",
+    "title": "Construction Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-construction-management-fall-2024",
+    "coverage": 0.923,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01484",
+    "title": "Construction & Building Inspection",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-construction-and-building-inspection-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01492",
+    "title": "Dental Assisting",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-dental-assisting-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01493",
+    "title": "Dental Hygiene",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-dental-hygiene-fall-2026",
+    "coverage": 0.902,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01497",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-early-childhood-education-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01511",
+    "title": "Addiction Counseling",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-addiction-counseling-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "01521",
+    "title": "Culinary Arts",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-culinary-arts-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07993",
+    "title": "Television Arts",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-television-arts-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "07999",
+    "title": "Construction Supervision & Superintendency",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-construction-and-supervision-superintendency-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08013",
+    "title": "Restaurant Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-accomplishment-in-small-business-management-entrepreneurship-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "08014",
+    "title": "Baking and Pastry",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-baking-and-pastry-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12139",
+    "title": "Digital Media",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-digital-media-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12142",
+    "title": "Web Design",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-interaction-design-for-web-and-mobile-platforms-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12316",
+    "title": "Early Childhood Education: Site Supervisor",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-early-childhood-education-site-supervisor-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "12908",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-computer-science-for-transfer-fall-2025",
+    "coverage": 0.556,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14592",
+    "title": "Fitness Instruction",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-fitness-instruction-fall-2026",
+    "coverage": 0.759,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14697",
+    "title": "Geographic Information Systems,Global Positioning Systems",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-geographic-information-systems-global-positioning-system-fall-2026",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14761",
+    "title": "Special Education",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-special-education-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "14775",
+    "title": "Addiction Studies",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-addiction-studies-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15302",
+    "title": "Sports Medicine/Athletic Training",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sports-medicine-athletic-training-fall-2026",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15710",
+    "title": "French",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-french-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15716",
+    "title": "Spanish",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-spanish-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15717",
+    "title": "Music Industry Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-music-industry-studies-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "15839",
+    "title": "Animation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-animation-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16636",
+    "title": "Civil Drafting, CAD",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-civil-drafting-cad-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16637",
+    "title": "Civil Design Drafting Technology",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-civil-design-drafting-technology-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "16919",
+    "title": "Technical Theater",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-technical-theater-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18811",
+    "title": "Architecture Practice",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-architectural-practice-fall-2026",
+    "coverage": 0.933,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18812",
+    "title": "Electricity/Electronics Technology",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-electrical-electronics-technology-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18861",
+    "title": "Architecture Design",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-architecture-design-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18862",
+    "title": "English",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-english-fall-2026",
+    "coverage": 0.96,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18885",
+    "title": "Public Health",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026",
+    "coverage": 0.7,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18887",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-humanities-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18889",
+    "title": "Meteorology",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-meteorology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18891",
+    "title": "Physical Geography",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-physical-geography-fall-2026",
+    "coverage": 0.909,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18898",
+    "title": "Social, Cultural Geography",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-social-cultural-geography-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18908",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-computer-information-systems-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18909",
+    "title": "Computer Information Systems: Core",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-computer-information-systems-core-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18910",
+    "title": "Computer Information Systems - Web Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-computer-information-systems-web-technology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18911",
+    "title": "Computer Information Systems: Web Graphics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-computer-information-systems-web-graphics-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18912",
+    "title": "Computer Information Systems: Database Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-computer-information-systems-database-management-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "18913",
+    "title": "Computer Information Systems: Project Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-computer-information-systems-project-management-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19698",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-accounting-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19699",
+    "title": "Advanced Accounting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-advanced-accounting-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19700",
+    "title": "Bookkeeping",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-bookkeeping-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19703",
+    "title": "Business Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-business-marketing-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19761",
+    "title": "Business",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-business-fall-2026",
+    "coverage": 0.963,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19768",
+    "title": "Advanced General Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-advanced-general-business-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19769",
+    "title": "Baking and Pastry",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-science-in-baking-and-pastry-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "19770",
+    "title": "Culinary Arts",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-science-in-culinary-arts-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "20923",
+    "title": "Civil Design Drafting Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-civil-design-drafting-technology-fall-2025",
+    "coverage": 0.947,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21141",
+    "title": "Business - Transfer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-business-transfer-fall-2026",
+    "coverage": 0.8,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21142",
+    "title": "Television Arts",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-television-arts-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21145",
+    "title": "Special Education Paraeducator/Instructional Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-special-education-paraeducator-instructional-assistant-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21146",
+    "title": "Personal Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-personal-training-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21149",
+    "title": "Technical Theater",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-technical-theater-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21150",
+    "title": "Dental Assisting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-dental-assisting-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21153",
+    "title": "Addiction Counseling",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-addiction-counseling-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21154",
+    "title": "Addiction Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-addiction-studies-spring-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "21155",
+    "title": "Geographic Information Systems, Global Positioning Systems",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-geographic-information-systems-global-positioning-system-fall-2026",
+    "coverage": 0.867,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30219",
+    "title": "Studio Arts",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-studio-arts-fall-2026",
+    "coverage": 0.981,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30220",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-environmental-science-fall-2026",
+    "coverage": 0.85,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30221",
+    "title": "Allied Health Fundamentals",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-allied-health-fundamentals-fall-2026",
+    "coverage": 0.571,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30222",
+    "title": "Allied Health",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-allied-health-fall-2026",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30223",
+    "title": "Allied Health",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-allied-health-fall-2026",
+    "coverage": 0.5,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30231",
+    "title": "Construction Management",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-construction-construction-management-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30252",
+    "title": "Construction and Building Inspection",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-construction-construction-and-building-inspection-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30253",
+    "title": "Construction Supervision and Superintendency",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-construction-construction-supervision-and-superintendency-fall-2026",
+    "coverage": 0.917,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30455",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-music-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30610",
+    "title": "Computer Architecture",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-computer-science-computer-architecture-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30612",
+    "title": "Computer Science- Advanced Java Programming",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-computer-science-advanced-java-programming-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30613",
+    "title": "Computer Science- Mobile and Enterprise Java Programming",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-computer-science-mobile-and-enterprise-java-programming-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30734",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-geology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30737",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-psychology-for-transfer-fall-2026",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30743",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-mathematics-2-0-for-transfer-fall-2026",
+    "coverage": 0.625,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30747",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-sociology-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30927",
+    "title": "Nursery and Greenhouse",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-nursery-and-greenhouse-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "30966",
+    "title": "Natural Science",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-natural-science-fall-2026",
+    "coverage": 0.691,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31112",
+    "title": "Arboriculture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-arboriculture-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31150",
+    "title": "Plumbing",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-plumbing-fall-2026",
+    "coverage": 0.762,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31471",
+    "title": "Philosophy",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-philosophy-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31490",
+    "title": "Printmaking",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-printmaking-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31505",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-philosophy-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31513",
+    "title": "Civil Engineering",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-civil-engineering-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31536",
+    "title": "Painting and Drawing",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-painting-and-drawing-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31570",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-graphic-design-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31573",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-graphic-design-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31579",
+    "title": "Ceramics",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-ceramics-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31584",
+    "title": "Mechanical Engineering",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-mechanical-engineering-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31628",
+    "title": "Electrical Engineering and Computer Engineering",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-electrical-engineering-and-computer-engineering-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31724",
+    "title": "Music Industry Studies",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-music-industry-studies-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31757",
+    "title": "Mandarin Chinese",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-mandarin-chinese-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31759",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-spanish-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31764",
+    "title": "Japanese",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-japanese-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31799",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-history-for-transfer-fall-2026",
+    "coverage": 0.882,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31810",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-early-childhood-education-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31811",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-music-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31813",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-geology-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31815",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-administration-of-justice-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31817",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-geography-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31818",
+    "title": "Journalism",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-journalism-for-transfer-fall-2026",
+    "coverage": 0.846,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31819",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-english-for-transfer-fall-2026",
+    "coverage": 0.968,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "31914",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-political-science-for-transfer-fall-2026",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32015",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-physics-for-transfer-2-0-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32101",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-studio-arts-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32128",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-art-history-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32159",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-anthropology-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32195",
+    "title": "mTech- Industrial maintenance machinist/mechanic",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-mtech-industrial-maintenance-machinist-mechanic-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32196",
+    "title": "mTech - Industrial Maintenance Machinist/Mechanic",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-mtech-industrial-maintenance-machinist-mechanic-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32287",
+    "title": "Sports and Recreation Management",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sport-and-recreation-management-fall-2026",
+    "coverage": 0.962,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32539",
+    "title": "Theatre Arts",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-theater-arts-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "32712",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-philosophy-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33213",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-spanish-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33292",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-economics-for-transfer-fall-2026",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33531",
+    "title": "Game Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-game-design-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33651",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-kinesiology-for-transfer-fall-2026",
+    "coverage": 0.959,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33764",
+    "title": "Animation",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-animation-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33770",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-nutrition-and-dietetics-for-transfer-fall-2026",
+    "coverage": 0.692,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33771",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-biology-for-transfer-fall-2026",
+    "coverage": 0.733,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33799",
+    "title": "Machining for Mechanical Engineering Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-machining-for-mechanical-engineering-technology-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "33892",
+    "title": "Machining for Mechanical Engineering Technology",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-machining-for-mechanical-engineering-technology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35114",
+    "title": "Pre-Apprenticeship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-pre-apprenticeship-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35269",
+    "title": "Network Technology Fundamentals",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-network-technology-fundamentals-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35270",
+    "title": "Network Cybersecurity",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-network-cybersecurity-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35271",
+    "title": "Information and Communication Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-information-and-communication-technology-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35272",
+    "title": "Information and Communication Technology",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-information-and-communication-technology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35679",
+    "title": "Early Childhood Education: Associate Teacher",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-early-childhood-education-associate-teacher-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35874",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-social-justice-studies-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35941",
+    "title": "Industrial Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-industrial-design-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "35959",
+    "title": "Industrial Design",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-industrial-design-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "36293",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-film-television-and-electronic-media-for-transfer-fall-2026",
+    "coverage": 0.955,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37149",
+    "title": "Architecture Design",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-architecture-design-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37150",
+    "title": "Audio Visual Technology",
+    "award": "A.S. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-audio-visual-technology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37154",
+    "title": "Audio Visual Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-audio-visual-technology-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37558",
+    "title": "Environmental Science",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-environmental-science-for-transfer-fall-2026",
+    "coverage": 0.75,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37637",
+    "title": "Chemistry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-chemistry-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37642",
+    "title": "German",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-german-spring-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37644",
+    "title": "Russian",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-russian-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "37645",
+    "title": "Digital Marketing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-digital-marketing-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38241",
+    "title": "Nutrition, Health, and Wellness",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-nutrition-health-and-wellness-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38419",
+    "title": "Hospitality Management",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-hospitality-management-for-transfer-fall-2026",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "38488",
+    "title": "Agriculture Plant Science",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-agriculture-plant-science-for-transfer-fall-2026",
+    "coverage": 0.889,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39114",
+    "title": "Interaction Design for Web and Mobile Platforms",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-interaction-design-for-web-and-mobile-platforms-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39115",
+    "title": "Interaction Design for Web and Mobile Platforms",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-interaction-design-for-web-and-mobile-platforms-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39367",
+    "title": "Beginning ESL Success",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-in-beginning-esl-success-noncredit-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39424",
+    "title": "Commercial Music - Performance",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-commercial-music-performance-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39425",
+    "title": "Commercial Music - Performance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-commercial-music-performance-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39426",
+    "title": "Commercial Music - Technology and Production",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-commercial-music-technology-and-production-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39427",
+    "title": "Commercial Music - Technology and Production",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-commercial-music-technology-and-production-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39428",
+    "title": "Commercial Music - Media Composition",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-commercial-music-media-composition-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39429",
+    "title": "Commercial Music - Media Composition",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-commercial-music-media-composition-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39431",
+    "title": "Photograpny",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-photography-spring-2022",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39738",
+    "title": "Police/Law Enforcement",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-police-law-enforcement-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39769",
+    "title": "Special Education Fundamentals",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-special-education-fundamentals-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39775",
+    "title": "Drone Technology",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-drone-technology-fall-2026",
+    "coverage": 0.769,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "39832",
+    "title": "Game Design",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-game-design-fall-2020",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40511",
+    "title": "Intermediate ESL Success",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-intermediate-esl-success-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40512",
+    "title": "Beginning ESL for Career Success",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-beginning-esl-for-career-success-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40513",
+    "title": "Public Safety Employment Preparation",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-completion-public-safety-employment-preparation-noncredit-fall-2021",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40697",
+    "title": "Industrial Automation and Robotics",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-industrial-automation-and-robotics-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "40698",
+    "title": "Design for Manufacturing (D4m)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-design-for-manufacturing-d4m-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41061",
+    "title": "Python Programming",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-python-programming-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41068",
+    "title": "Film Post-Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-film-post-production-fall-2026",
+    "coverage": 0.929,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41069",
+    "title": "Film Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-film-production-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41170",
+    "title": "Skills for College Success",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-in-skills-for-college-success-fall-2023",
+    "coverage": 0.6,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41216",
+    "title": "Master Grower",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-master-grower-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41232",
+    "title": "Nursery and Greenhouse Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-nursery-and-greenhouse-entrepreneurship-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41233",
+    "title": "Arboriculture Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-arboriculture-entrepreneurship-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41276",
+    "title": "Music Industry Entrepreneurship",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-music-industry-entrepreneurship-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41290",
+    "title": "Music Industry Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-music-industry-entrepreneurship-fall-2026",
+    "coverage": 0.957,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41486",
+    "title": "Drama - Acting",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-drama-acting-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41488",
+    "title": "Drama - Musical Theater",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-drama-musical-theater-fall-2026",
+    "coverage": 0.938,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41489",
+    "title": "Acting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-acting-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41490",
+    "title": "Musical Theater",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-musical-theater-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "41577",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-business-administration-for-transfer-2-0-fall-2026",
+    "coverage": 0.818,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42399",
+    "title": "Personal Training Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-personal-training-entrepreneurship-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42416",
+    "title": "Fitness Coach",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-fitness-coach-fall-2025",
+    "coverage": 0.9,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42845",
+    "title": "Community Health Worker",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-community-health-worker-fall-2026",
+    "coverage": 0.857,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42869",
+    "title": "Early Childhood Education Practitioner",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-early-childhood-education-practitioner-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "42949",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-communication-studies-for-transfer-2-0-fall-2026",
+    "coverage": 0.944,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43089",
+    "title": "Cannabis Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-cannabis-studies-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43181",
+    "title": "Advanced ESL Success",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-advanced-esl-success-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43208",
+    "title": "Virtual Production Fundamentals",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-virtual-production-fundamentals-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43292",
+    "title": "High-Intermediate ESL Success",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-high-intermediate-esl-success-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43427",
+    "title": "Yoga Teacher Training - 200-Hour",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-yoga-teacher-training-200-hour-fall-2023",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43755",
+    "title": "Entrepreneurship: Starting and Operating a Business",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-completion-entrepreneurship-starting-and-operating-a-business-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43756",
+    "title": "IBM SkillsBuild Data Analytics",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-completion-ibm-skillsbuild-data-analytics-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43758",
+    "title": "ESL For Technology",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-esl-for-technology-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43759",
+    "title": "Intermediate English for College and Career Success",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-intermediate-english-for-college-and-career-success-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43760",
+    "title": "ESL College Readiness",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-esl-college-readiness-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43859",
+    "title": "Social Justice: LGBTQ Studies",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-social-justice-lgbtq-studies-for-transfer-fall-2025",
+    "coverage": 0.941,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43966",
+    "title": "Social and Urban Dance Skills",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-social-and-urban-dance-skills-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "43967",
+    "title": "Dance Performance Skills",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-dance-performance-skills-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44184",
+    "title": "Architecture History and Theory",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-architecture-history-and-theory-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44354",
+    "title": "Robotics Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-robotics-technician-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44355",
+    "title": "Industrial Engineering Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-industrial-engineering-technician-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44445",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026",
+    "coverage": 0.692,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44554",
+    "title": "IBM SkillsBuild Cybersecurity",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-completion-ibm-skillsbuild-cybersecurity-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44564",
+    "title": "Advanced Virtual Production",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-advanced-virtual-production-fall-2024",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44577",
+    "title": "Data Analytics",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-data-analytics-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "44627",
+    "title": "Virtual Production",
+    "award": "A.A. Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-a-in-virtual-production-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45239",
+    "title": "Exploration of Dentistry",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-completion-exploration-of-dentistry-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45512",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-law-public-policy-and-society-for-transfer-fall-2026",
+    "coverage": 0.884,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "45625",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-computer-science-for-transfer-fall-2025",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46022",
+    "title": "English-Language Success for Early Childhood Education",
+    "award": "Noncredit program",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/english-language-success-for-early-childhood-education-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46234",
+    "title": "Physics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-physics-for-transfer-2-0-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   },
+   {
+    "control_number": "46430",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-mathematics-2-0-for-transfer-fall-2026",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": null,
+    "was_method": null
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": []
  },
- "run": "38669937625"
+ "run": "43364246863"
 }

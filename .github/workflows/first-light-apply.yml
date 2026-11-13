@@ -240,16 +240,22 @@ jobs:
           detail=""
           num=$PR_NUMBER url=$PR_URL
           [ "$OUTCOME" = failed ] && detail="the run failed; its log says why"
-          # Nothing new. A held mark (an item the Plan could not find) is said in words and names no pull request,
-          # since none carries it. Otherwise, while a pull request is open, its branch already holds what the live
-          # marks ask for (an earlier run consumed them), so the stamp names it.
+          # Nothing new. While a pull request is open, its branch already holds what the live marks ask for (an
+          # earlier run consumed them), so the stamp always names it. A held mark (an item the Plan could not find)
+          # is said in words beside it: a held mark stays live on every run, so letting it replace the link would
+          # hide the open pull request for as long as the mark stays (COBIx, #3110, S646 UI pass).
           if [ "$OUTCOME" = nothing ] && [ -z "$num" ]; then
             case "${HELD:-0}" in ''|*[!0-9]*) HELD=0 ;; esac
+            held_words=""
             if [ "$HELD" -gt 0 ]; then
               items="$HELD marked items"; [ "$HELD" = 1 ] && items="1 marked item"
-              detail="held: $items could not be applied (a painting not in the candidate pool, or a story photo missing from the stories file or sharing its name with another story)"
-            elif [ -n "$OPEN_NUMBER" ]; then
+              held_words="held: $items could not be applied (a painting not in the candidate pool, or a story photo missing from the stories file or sharing its name with another story)"
+            fi
+            if [ -n "$OPEN_NUMBER" ]; then
               num=$OPEN_NUMBER url=$OPEN_URL detail="the open pull request already carries these marks"
+              [ -n "$held_words" ] && detail="$detail; $held_words"
+            else
+              detail="$held_words"
             fi
           fi
           row=$(jq -nc --arg s "${OUTCOME:-failed}" --arg n "$num" --arg u "$url" --arg r "$RUN_URL" --arg d "$detail" \

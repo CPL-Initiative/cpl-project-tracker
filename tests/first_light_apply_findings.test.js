@@ -7,8 +7,9 @@
 //       highest mark id; the Plan passes it as --through; the tool consumes no mark above it. COBIx's case, end to
 //       end: a run consumed a later request's marks, so the next run saw no change and stamped that request
 //       `nothing` with no link. Now the later request's run finds its marks and updates the pull request. A run
-//       that finds nothing new while a pull request is open names that pull request in the stamp, unless a mark
-//       was held, which the stamp says in words (the #3188 review). The tool runs on a fixture root whose two
+//       that finds nothing new while a pull request is open names that pull request in the stamp; a held mark
+//       adds its words beside the link, and with no pull request open the words stand alone (the #3188 review,
+//       then COBIx on #3110: a held mark stays live, so it must not hide the link). The tool runs on a fixture root whose two
 //       lists carry their own thresholds.
 //   (2) ⭐ the look: 404 (no table yet) is a notice and exit 0, and then no apply job runs, a dispatch included;
 //       401, 403, a 5xx, a failed connection, an answer that is not a list, or a failed marks read exit 1, so
@@ -157,11 +158,16 @@ try {
   const sFail = stamp({ OUTCOME: "failed", OPEN_NUMBER: "12", OPEN_URL: own.url });
   check("(1) a failed run never borrows the open pull request's link", sFail.row && sFail.row.status === "failed" && !("pr_number" in sFail.row) && /failed/.test(sFail.row.detail || ""), JSON.stringify(sFail.row));
 
-  // A held mark: the stamp says so in words and names no pull request, open or not (#3188 review).
+  // A held mark: the stamp says so in words. A held mark stays live on every run, so while a pull request is open
+  // the stamp still names it and adds the held words (COBIx, #3110; S646 UI pass); with none open, the words alone.
   const HELD1 = "held: 1 marked item could not be applied (a painting not in the candidate pool, or a story photo missing from the stories file or sharing its name with another story)";
   const sHeld = stamp({ OUTCOME: "nothing", HELD: "1", OPEN_NUMBER: "12", OPEN_URL: own.url });
-  check("(1) ⭐ nothing new but a mark held: the stamp says so and does not name the open pull request",
-    sHeld.row && sHeld.row.status === "nothing" && !("pr_number" in sHeld.row) && !("pr_url" in sHeld.row) && sHeld.row.detail === HELD1, JSON.stringify(sHeld.row));
+  check("(1) ⭐ nothing new, a mark held, a pull request open: the stamp names the pull request and says what was held",
+    sHeld.row && sHeld.row.status === "nothing" && sHeld.row.pr_number === 12 && sHeld.row.pr_url === own.url &&
+    sHeld.row.detail === "the open pull request already carries these marks; " + HELD1, JSON.stringify(sHeld.row));
+  const sHeldAlone = stamp({ OUTCOME: "nothing", HELD: "1" });
+  check("(1) a mark held and no pull request open: the held words and no link",
+    sHeldAlone.row && !("pr_number" in sHeldAlone.row) && !("pr_url" in sHeldAlone.row) && sHeldAlone.row.detail === HELD1, JSON.stringify(sHeldAlone.row));
   const sHeld2 = stamp({ OUTCOME: "nothing", HELD: "2" });
   check("(1) two held: the count in words", sHeld2.row && /^held: 2 marked items could not be applied/.test(sHeld2.row.detail || ""), JSON.stringify(sHeld2.row));
   const sHeldOdd = stamp({ OUTCOME: "nothing", HELD: "x", OPEN_NUMBER: "12", OPEN_URL: own.url });

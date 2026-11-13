@@ -1241,6 +1241,17 @@
      "source_words": "Coalinga noncredit certificates: 'Total Hours 216' over 'N/A' in the units column (the readings of 36894, 44511 and 44555, notes)"
     }
    ]
+  },
+  "Santiago Canyon College": {
+   "why": "S645, the conductor's design for #3201 (review of the S644 fix, 13 findings standing). Santiago Canyon's 2026-2027 catalog PDF prints 'Control Number: N' AFTER each program and opens the next program on the following line ('Control Number: 11856' / 'Biology, AS-T' / 'A.S. Degree for Transfer'). The reader cut each page from the number's line, so a window opened on the program printed next: COBIx's spot-check (#3194 comment 6841001207) found Biology AS 11856 holding the Biology AS-T, and Economics AA 11943 and Sociology AA 11947 passing while holding their AA-T's requirements. pdf_numbers_after names the reader setting for this catalog alone (kb/_program_requirements_college.py pdf_best): a program whose own number line prints takes the block that ends at that line, only when the block opens on the program's own title and award; anything else reads by the heading picker, refused only where another listed program's number closes the window. The reader's own count of the habit is a measurement filed in every PDF capture (capture.json pdf.numbers_after) and never switches the reading: a gated catalog whose count disagrees reads by the heading picker and files numbers_after_disagrees. Session decision for Sam to revise; reversible by deleting this entry.",
+   "pdf_numbers_after": true,
+   "pdf_numbers_after_votes": {
+    "after": 182,
+    "before": 0,
+    "counted_by": "pdf_numbers_after over the full 2026-2027 catalog PDF (374 pages, pypdf), in the capture of run 43360377086 on claude/harvest-santiago-canyon-proof-s645 (capture_preview.json pdf.numbers_after)",
+    "earlier_count": "29 after, 0 before over the 114 distinct pick openings of the capture on claude/harvest-santiago-canyon-s644@1ab5e293"
+   },
+   "steps": []
   }
  }
 }

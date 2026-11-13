@@ -72,6 +72,7 @@ COLLEGE_NAMES = {
     "Santa Rosa Junior College": "SANTA ROSA", "Modesto Junior College": "MODESTO", "Madera College": "Madera",
     "San Bernardino Valley College": "SAN BERNARDINO", "Calbright College Credit": "CALBRIGHT",
     "San Diego College of Continuing Education": "SAN DIEGO ADULT",
+    "North Orange Continuing Education": "NORTH ORANGE ADULT",
 }
 
 

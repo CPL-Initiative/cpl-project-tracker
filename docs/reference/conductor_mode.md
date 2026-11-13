@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-12
+updated: 2026-11-13
 tags: [reference, conductor, governance-team-enablement, scheduled-sessions]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -139,6 +139,39 @@ at the top of each piece of work so Sam can change the dial before it runs.
   the handoff, then gives the one opening line (`CLAUDE.md`, *Sign off*).
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
+
+## What went wrong in S645, and what worked
+
+- The conductor's decision 9 on #3201 had every college PR regenerate and `--check` a committed snapshot, so each would conflict on one 335 KB file; it was corrected to the gap census's pattern (a dispatch-only workflow writes the snapshot).
+- Its title test refused right blocks: in a catalog whose number lines all vote one way, 16 of 17 refused records were right. Bind by the number line there (decisions 13 and 14).
+- The display step writes the whole committed build and ignored `college`, so the first live run went out on one college through a new `display_college` input (#3204), and the whole build followed once the live count matched.
+- A dated-reads job fails its verify unless the branch carries `main`'s latest refresh (Diablo Valley, after #3200): merge `main` first.
+- A wave over colleges whose records are all filed extracts nothing (wave s645a): read the census before naming a wave.
+- Merging a college PR publishes its display build to the page, so COBIx's spot-check comes before the merge.
+- A worker's PR subscribes the session, and each notice costs context: drop the subscription when the PR opens.
+- The disk allowance held three worktrees, so finished workers were resumed for the next task instead of new ones.
+- A `get` on issue #3111 and a full-comment read of the scout file cost about 40,000 tokens at the start: page from the last comment, read files by section.
+- Worked: one college first, a count gate, then the whole build (two runs, 0 errors); a compare gate before each reread; the permission refusal left to Sam, not worked around.
+
+## What went wrong in S644, and what worked
+
+- A new workflow file cannot be dispatched until it is on `main` (the wave runner, #3191): merge first, then trial on
+  a branch.
+- The conductor missed COBIx's 00:21Z reply for forty minutes, and his finding on #3191's own thread was caught only
+  because the thread was read before the merge. Read COBIx's threads at every wake, not only before merging.
+- A fetch of ten full comments on #3111 cost about 10,000 tokens. Page with `perPage` 1 from the last page.
+- A regex reading of free catalog text (the no-colon hours reading, #3193) took three review rounds and still passed
+  constructed pages; gating it per college with positive evidence in the record's own section ended it. Gate first.
+- The conductor's own design rules were wrong twice (the price rate rule, widening `passes_live`), and review and the
+  existing tests caught both. A decision that changes a pinned test reverses someone's earlier decision: read why the
+  test exists before changing it.
+- `get_job_logs` returns the runner's cleanup as its tail; reproduce a lint failure locally.
+- A first-read college PR cannot go green without the display build (`tests/roep_display_test.py`), so plan the dated
+  reads and the build as part of the read (#3197 moves the dated reads to a runner job).
+- A worker's PR subscribes the session on its own, and each notice costs context.
+- Worked: the gap census before choosing work (one cause and one lever per program); one wave, one branch, one filing
+  job, agreed with COBIx before the build; COBIx's offers taken on Sam's relayed go. The container restarted at about
+  01:38Z and pushed work survived.
 
 ## What went wrong in S643, and what worked
 

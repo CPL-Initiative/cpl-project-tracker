@@ -17,6 +17,9 @@ S196, and the INDEX history rotated out before 2026-09-17. [Part 7](roadmap_arch
 2026-11-03, S563) holds the rotation of 2026-08-16, the narratives of S62, S113, S146 and S147, and the INDEX
 history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-11-13)
+- 2026-11-11 (S636 SkyAntennae, Sam's session): Butte 87 to 138 of 164 and displayed on the catalog's own GE totals, the reconcile's address guard, a stale-issuer report in the credential review apply, the harvest lane under its budget (#3100); handoff 637.
+
 ## INDEX update-history entries rotated out (2026-11-12)
 - 2026-11-10 (S626b SkyUmbrella, Sam in session): the review opens itself, no scroll gate, the drawer, the landing page and the contacts in the panel (#3061, #3063, #3064, #3066, #3067); Email templates a reviewer can change (#3068); handoff 633.
 
@@ -259,3 +262,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## Moved from docs/INDEX.md's Update history (S643, 2026-11-12)
 
 - 2026-11-10 (SkyFermi, Library side session): handoff 635; the Library reads any file and drafts a new piece (#3077); Pages prune of kb/receipts (#3088); Pages deploys still timing out.
+
+## Moved from docs/INDEX.md's Update history (S644, 2026-11-13)
+
+- 2026-11-10 (S634 SkyBackward, Sam's session): Sheet 180 carried out: the CCR seed confirm for every remaining discipline (#3084), Alameda's semester sum (#3086), 10-Key's issuer (#3087), Las Positas's local GE (#3085, display running); the cer lane compacted (#3089); the dashboard's sign-in (#3092); handoff 636.

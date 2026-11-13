@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-12T12:38:44Z",
-  "session": 641,
-  "moniker": "SkyOtter",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-13T04:16:31Z",
+  "session": 645,
+  "moniker": "SkyFinch",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_642_handoff.md",
+  "handoff": "docs/session_646_handoff.md",
   "next_step": {
-    "title": "Merge American River and Los Angeles City, then Victor Valley's four certificates",
-    "text": "Both paid reads are verified and reread on their branches, and each pull request merges on a green test. Victor Valley's four EMS certificates are checked against main's records, reread and counted. Then the session decides Los Angeles City's load of its 22 absent records, and College of the Desert goes by the blocked-sources order."
+    "title": "Finish the PDF reader and reread Santiago Canyon",
+    "text": "Build decision 14 into #3201, run its delta review and Santiago Canyon's free capture, merge on green, then the paid reread forcing the 29 numbers; COBIx spot-checks Diablo Valley, San Jose City and the rescore before each merges."
   },
   "calls": [
     {
@@ -229,12 +229,94 @@
         "at": "2026-11-10",
         "words": "Count them, on Open Asks Sheet 180 card 4: A.A. 28 and A.S. 22, summed from the areas."
       }
+    },
+    {
+      "title": "Does your October 10 go for a display after a load still stand?",
+      "text": "On Oct 10 you said a display build that follows a load needs no further go. COBIx could not confirm it from your records. Santiago Canyon (192 records) and North Orange Continuing Education (78) were loaded tonight, and their display waits on your answer.",
+      "if_no_reply": "The two colleges stay loaded and undisplayed; CPL Pathways and Sierra do not show them yet.",
+      "view": {
+        "href": "#program-requirements",
+        "text": "Open Program Requirements"
+      },
+      "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
+      "link_text": "Open Sheet 187",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-12",
+        "words": "Relayed by COBIx: the first live run of the new display apply goes out on Sam's explicit go. After that first run, his October 10 standing go covers a display apply that follows a load that passed its checks."
+      }
+    },
+    {
+      "title": "Should a program checked against its college's own course list count in the headline?",
+      "text": "1,604 active programs have no closed course list in the state's Program Course File. The plan reads them and checks each against the college's own active course list, as a separate grade outside the headline.",
+      "if_no_reply": "The grade is shown apart and the headline counts none of them.",
+      "view": {
+        "href": "#program-requirements",
+        "text": "Open Program Requirements"
+      },
+      "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
+      "link_text": "Open Sheet 187"
+    },
+    {
+      "title": "Use the statewide Cal-GETC figure of 34 units?",
+      "text": "So far each college's Cal-GETC figure comes from the areas its own catalog prints. A statewide figure of 34 units would let 93 more programs pass the machine checks.",
+      "if_no_reply": "Each college keeps its own printed figure, and the 93 stay failing.",
+      "view": {
+        "href": "#program-requirements",
+        "text": "Open Program Requirements"
+      },
+      "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
+      "link_text": "Open Sheet 187"
+    },
+    {
+      "title": "Apply the carry-basis migration whose push the permission check refused?",
+      "text": "The scorer's change in #3193 has a migration that replaces one 23-line database function, the one that decides whether a person's confirmation carries to a reread record. It writes no rows. The push that applies it was refused by the permission check, and the session did not go around it. Nothing tonight depends on it: no college it touches holds a confirmation.",
+      "if_no_reply": "The function stays as it is; a confirmation on a rescored record carries by the old rule.",
+      "link": "https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ",
+      "link_text": "Open Sheet 188",
+      "part": "reading"
     }
   ],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-13T02:18:00Z",
+      "text": "Santiago Canyon's display is held: COBIx's spot-check found 2 of 5 records filed under the wrong program. Its 192 rows stay, unchecked."
+    },
+    {
+      "at": "2026-11-13T02:12:00Z",
+      "text": "Diablo Valley has its first reading procedure; the free capture of its catalog was dispatched."
+    },
+    {
+      "at": "2026-11-13T02:00:00Z",
+      "text": "The first wave trial captured Feather River (81 of 81) and Palo Verde (96 of 96) at no cost; Copper Mountain's capture answered none of its pages and is held."
+    },
+    {
+      "at": "2026-11-13T01:55:00Z",
+      "text": "The scorer change and the dated-reads job merged on a green test."
+    },
+    {
+      "at": "2026-11-13T01:22:00Z",
+      "text": "North Orange Continuing Education's first read loaded: 78 records, 77 passing ($3.66)."
+    },
+    {
+      "at": "2026-11-13T01:05:00Z",
+      "text": "Santiago Canyon's first read loaded: 192 records, 149 passing by the tab's rule ($16.98)."
+    },
+    {
+      "at": "2026-11-13T00:58:00Z",
+      "text": "A wave now reads up to eight colleges in one dispatch, with a hard stop at $40 a college on actual cost."
+    },
+    {
+      "at": "2026-11-13T00:24:00Z",
+      "text": "A census gives each of the 6,758 programs without a passing record one cause and one lever; no closed list is the largest, 1,604."
+    },
+    {
+      "at": "2026-11-12T23:59:00Z",
+      "text": "Los Angeles City's 22 records its reread left out were loaded; 18 pass."
+    },
     {
       "at": "2026-11-12T12:35:00Z",
       "text": "A passing record now stays when a new read passes but places fewer of its listed courses; the check caught American River's Gerontology record falling from 15 of 20 courses to 9."
@@ -302,6 +384,22 @@
     {
       "at": "2026-11-11T12:30:00Z",
       "text": "Redwoods: three steps for its local degrees, on the college's own 2026-2027 general education sheet (21 units, a 60-unit minimum) and its pages' words; 59 of 73 records pass on the branch, up from 53. The reread is dispatched."
+    },
+    {
+      "at": "2026-11-13T03:25:00Z",
+      "text": "The first live run of the display apply went out on North Orange Continuing Education alone: 78 of 78 rows written."
+    },
+    {
+      "at": "2026-11-13T03:33:00Z",
+      "text": "The whole display build 38a0fd8ed41f is applied: 17,595 rows written, 3 missing at Monterey Peninsula, no errors; 115 colleges now show one build."
+    },
+    {
+      "at": "2026-11-13T03:44:00Z",
+      "text": "The scorer's rescore ran at Coalinga, Grossmont, Pierce, Solano, San Bernardino Valley and East Los Angeles: 126 rows replaced, 62 programs now pass, none stopped passing."
+    },
+    {
+      "at": "2026-11-13T03:50:00Z",
+      "text": "Diablo Valley (88 records) and San Jose City (77) are loaded, unchecked; Glendale's registry row and procedure now read its 2026-27 Coursedog catalog."
     }
   ],
   "headline": [
@@ -520,16 +618,22 @@
       "active": 20282,
       "complete": 13963,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-13",
+      "active": 20282,
+      "complete": 14370,
+      "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-12T13:12:00Z"
+    "at": "2026-11-13T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-12",
-    "gaps": 3012,
+    "day": "2026-11-13",
+    "gaps": 3039,
     "parts": {
       "links": {
         "catalog": [
@@ -546,11 +650,11 @@
         ]
       },
       "roep": [
-        19154,
+        19287,
         20282
       ],
       "coci": [
-        16152,
+        16566,
         20282
       ],
       "outcomes": {
@@ -559,12 +663,12 @@
           89192
         ],
         "plo": [
-          16152,
+          16566,
           20282
         ]
       },
       "careers": [
-        15116,
+        15530,
         20282
       ]
     }
