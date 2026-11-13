@@ -86,15 +86,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Identify the risks and threats to an organization’s data and provide a structured way to address how to safeguard these areas."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify the risks and threats to an organization's data and provide a structure"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -104,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -280,5 +276,6 @@
    "The preceding section (Cloud, Networking, and Cybersecurity AS) and following certificates were not used."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 43355018296,
+ "read_run": "39006383070"
 }
