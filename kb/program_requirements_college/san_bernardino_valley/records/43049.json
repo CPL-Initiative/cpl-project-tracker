@@ -69,12 +69,26 @@
    "pass": true
   },
   "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    21.0,
+    23.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 21.0-23.0; the catalog states 18.0-19.0"
+   ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     71.0,
-     73.0
+     74.0,
+     77.0
     ],
     "stated": [
      60.0,
@@ -87,20 +101,7 @@
     ],
     "why": [],
     "overlap": true
-   },
-   "pass": false,
-   "status": "unequal",
-   "computed": [
-    21.0,
-    23.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   }
   },
   "repeated": {
    "codes": [],
@@ -346,5 +347,6 @@
    "Program learning outcomes come from the page's outcomes tab for this award."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "read_run": "38748858322"
 }
