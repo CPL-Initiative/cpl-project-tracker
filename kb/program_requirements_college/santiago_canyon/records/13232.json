@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13882,
+  "input_tokens": 7001,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13882,
-    "output_tokens": 1621,
+    "input_tokens": 7001,
+    "output_tokens": 1537,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,64 +30,61 @@
     "model": null
    }
   ],
-  "output_tokens": 1621,
+  "output_tokens": 1537,
   "output_tokens_details": {
-   "thinking_tokens": 596
+   "thinking_tokens": 339
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08795,
- "ms": 14829,
- "seconds": 15.0,
+ "cost_usd": 0.05874,
+ "ms": 11912,
+ "seconds": 12.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 14,
    "listed": 15,
-   "share": 0.0,
+   "share": 0.933,
    "missing": [
-    "ACA21A",
-    "ACA21B",
-    "ACA21C",
-    "ACA22A",
-    "ACA22B",
-    "ACA22D",
-    "ACA23B",
-    "ACA23C",
-    "ACA24A",
-    "ACA24B",
-    "ACA24C",
-    "ACA24D",
-    "ACA25C",
-    "ACA25D",
     "ACA28C"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "ACA21E",
+    "ACA26B",
+    "ACA4C",
+    "ACA72A"
+   ],
+   "flagged": [
+    "ACA21E",
+    "ACA26B",
+    "ACA4C",
+    "ACA72A"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    25.5,
+    26.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    25.5,
+    26.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -104,7 +101,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -114,15 +111,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Apprenticeship Carpentry, Framing, AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25.5,
+    "max": 26.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -140,80 +137,178 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "Framers"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Major requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19.5,
+     "max": 19.5
+    },
+    "courses": [
+     {
+      "code": "ACA004C",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA021A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA021B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA021C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA021E",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA022A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA022B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA022D",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA023B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA024A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA024B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA025C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select four (4) courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ACA023C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA024C",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA024D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA025D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACA026B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ACA072A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
-   {
-    "code": "ACA 021A",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 021B",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 021C",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 022A",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 022B",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 022D",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 023B",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 023C",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 024A",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 024B",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 024C",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 024D",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 025C",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
-   {
-    "code": "ACA 025D",
-    "why": "A.S. section not in the text; named only in the Framing CA section"
-   },
    {
     "code": "ACA 028C",
     "why": "not in the text"
    }
   ],
   "notes": [
-   "The excerpt begins (page 317) with 'Apprenticeship Carpentry, Framing, CA' (Certificate of Achievement, Control Number 13232), not the A.S. Degree. The A.S. section for Framing is likely on the preceding page (316), which is not in the text, so no blocks were recorded.",
-   "The Framing CA section prints a total of 25.5-26.5 credits: a required block (19.5) of ACA004C, ACA021A, ACA021B, ACA021C, ACA021E, ACA022A, ACA022B, ACA022D, ACA023B, ACA024A, ACA024B, ACA025C, and 'Select four (4) courses' (6.0-7.0) from ACA023C, ACA024C, ACA024D, ACA025D, ACA026B, ACA072A. The A.S. may differ (closed list includes ACA 028C, absent from the CA section, and omits ACA004C and ACA021E); a reviewer should fetch page 316.",
-   "No program learning outcomes or careers sections are printed for the A.S. award in the text."
+   "The program total 'Total Credits 25.5 - 26.5' is printed under Program Rules with no general education listed; recorded as total_units (major requirements), not as a degree total.",
+   "Major requirements block sum (19.5) matches its printed total.",
+   "No program learning outcomes are printed in the text.",
+   "ACA004C, ACA021E, ACA026B and ACA072A appear in the catalog but not in the closed list; marked as catalog additions."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "ab54ee959097020e",
+ "extracted_run": "43387912036",
+ "source_sha": "c903d0807834d7af",
  "source_codes": [
   "ACA21A",
   "ACA21B",

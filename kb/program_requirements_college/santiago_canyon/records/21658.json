@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13830,
+  "input_tokens": 6862,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13830,
-    "output_tokens": 1482,
+    "input_tokens": 6862,
+    "output_tokens": 1409,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1482,
+  "output_tokens": 1409,
   "output_tokens_details": {
-   "thinking_tokens": 482
+   "thinking_tokens": 311
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08496,
- "ms": 12798,
- "seconds": 13.0,
+ "cost_usd": 0.05563,
+ "ms": 12198,
+ "seconds": 12.3,
  "parts": null,
  "error": null,
  "score": {
@@ -109,7 +109,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Apprenticeship Carpentry, Finish Carpentry, CA",
+   "section_heading": "Apprenticeship Carpentry, Finish Carpentry, CA Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 25,
@@ -142,8 +142,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 25,
+     "max": 25
     },
     "courses": [
      {
@@ -257,14 +257,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Closed-list code 'ACA033A033A' (Cabinet Millwork and Assembly, units not stored) appears malformed; matched to catalog ACA033A (1.5 credits).",
-   "ACA004C Print Reading is listed in the catalog section but not in the closed list; recorded as a catalog addition.",
-   "All 15 listed courses sum to 25.0 credits, matching the printed program total of 25.0; read as all required.",
-   "No program learning outcomes are printed for this award in the provided text."
+   "The closed list stores code 'ACA033A033A' (Cabinet Millwork and Assembly, units not stored); it has been matched to catalog course ACA033A Cabinet Millwork and Assembly (1.5 credits). The reviewer should confirm this match.",
+   "ACA004C Print Reading (2.0) is not in the closed list and is recorded as a catalog addition.",
+   "The 'Total Credits 25.0 - 25.0' figure is recorded as the certificate total. The printed course credits sum to 25.0.",
+   "No program learning outcomes are printed in the text.",
+   "The career entry 'Finish carpenters' is taken from the program description. The description also mentions 'journeyworker status', which is recorded as a completion status, not as a career."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "884a87f2243247e5",
+ "extracted_run": "43387912036",
+ "source_sha": "7fe4cf2ca2715862",
  "source_codes": [
   "ACA21A",
   "ACA21B",

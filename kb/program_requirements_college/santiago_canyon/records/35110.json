@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13041,
+  "input_tokens": 6526,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13041,
-    "output_tokens": 1874,
+    "input_tokens": 6526,
+    "output_tokens": 1586,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1874,
+  "output_tokens": 1586,
   "output_tokens_details": {
-   "thinking_tokens": 771
+   "thinking_tokens": 555
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08964,
- "ms": 15685,
- "seconds": 15.8,
+ "cost_usd": 0.05782,
+ "ms": 14186,
+ "seconds": 14.3,
  "parts": null,
  "error": null,
  "score": {
@@ -260,15 +260,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The chemistry Rule Group is printed as 'At least one of the following' (5-15 units) over CHEM200A, CHEM200AH and CHEM200B. Recorded as printed (choose 1, with CHEM200AH as the honors twin of CHEM200A). However, the stated program total of 37 units (15 BIOL + 4 MATH + 8 PHYS = 27) implies 10 chemistry units, i.e. CHEM200A or CHEM200AH plus CHEM200B are both required; reviewer should check.",
-   "The math Rule Group (4-8 units, 'At least one of the following') lists MATH180 and its honors twin MATH180H; recorded as one choice with an alternative.",
-   "No general education pattern, degree total, or program learning outcomes are printed in this section.",
-   "Careers taken from the description: 'careers in teaching, medicine and health sciences'. Microbiology, botany, zoology are named as disciplines, not careers.",
-   "The page also prints a separate Biology, AS (A.S. Degree Major, 25 units) section; it was not used."
+   "The chemistry rule group is printed as 'At least one of the following' (5-15 units), but the stated program total of 37 units (15 BIOL + 4 MATH + 8 PHYS = 27) implies 10 chemistry units, i.e. CHEM200A (or CHEM200AH) and CHEM200B. Recorded as printed (choose 1 course); reviewer should verify whether both CHEM200A/AH and CHEM200B are required.",
+   "CHEM200AH and MATH180H recorded as honors alternatives of CHEM200A and MATH180; the catalog lists them as separate rows under 'At least one of the following'.",
+   "BIOL221 and BIOL231 are not in the closed list and are marked as catalog additions.",
+   "No general education pattern, degree total, or program learning outcomes are printed in this section; 37 units is the major total."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "6e8722e8f48bce15",
+ "extracted_run": "43387912036",
+ "source_sha": "757bea4ac0498138",
  "source_codes": [
   "BIOL211",
   "CHEM200A",

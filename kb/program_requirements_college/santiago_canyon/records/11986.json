@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10004,
+  "input_tokens": 7265,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10004,
-    "output_tokens": 1642,
+    "input_tokens": 7265,
+    "output_tokens": 2196,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,70 +30,77 @@
     "model": null
    }
   ],
-  "output_tokens": 1642,
+  "output_tokens": 2196,
   "output_tokens_details": {
-   "thinking_tokens": 457
+   "thinking_tokens": 627
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07286,
- "ms": 14552,
- "seconds": 14.7,
+ "cost_usd": 0.07298,
+ "ms": 17640,
+ "seconds": 17.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 14,
    "listed": 21,
-   "share": 0.0,
+   "share": 0.667,
    "missing": [
-    "AMW21",
-    "AMW22",
-    "AMW23A",
     "AMW23B",
-    "AMW24",
-    "AMW25",
-    "AMW26",
-    "AMW27",
     "AMW28",
-    "AMW29A",
-    "AMW29B",
     "AMW30",
-    "AMW31",
-    "AMW32",
-    "AMW33",
     "AMW34",
     "AMW36A",
     "AMW36B",
-    "AMW37",
-    "AMW39",
     "AMW51"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 9,
+   "codes": [
+    "AMW41A",
+    "AMW41B",
+    "AMW42A",
+    "AMW42B",
+    "AMW43",
+    "AMW44",
+    "AMW45",
+    "AMW46",
+    "AMW47"
+   ],
+   "flagged": [
+    "AMW41A",
+    "AMW41B",
+    "AMW42A",
+    "AMW42B",
+    "AMW43",
+    "AMW44",
+    "AMW45",
+    "AMW46",
+    "AMW47"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    30.5,
+    32.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    30.5,
+    32.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -110,7 +117,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -120,15 +127,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Apprenticeship Carpentry, Millwrighting, AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 30.5,
+    "max": 32
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -146,73 +153,190 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "Millwright",
+    "construction Millwright mechanics"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Major courses",
+    "rule": "choose_courses",
+    "minimum": 20,
+    "option_group": null,
+    "stated": {
+     "min": 30.5,
+     "max": 32
+    },
+    "courses": [
+     {
+      "code": "AMW021",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW022",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW023A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW024",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW025",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW026",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW027",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW029A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW029B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW031",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW032",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW033",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW037",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW039",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AMW041A",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMW041B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMW042A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMW042B",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMW043",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMW044",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMW045",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMW046",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AMW047",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "AMW 21",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AMW 22",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AMW 023A",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
     "code": "AMW 023B",
-    "why": "not in the text"
-   },
-   {
-    "code": "AMW 24",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AMW 25",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AMW 26",
-    "why": "A.S. section not in the text; named only in the Millwrighting certificate and Pile Driver sections"
-   },
-   {
-    "code": "AMW 27",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AMW 28",
-    "why": "not in the text"
-   },
-   {
-    "code": "AMW 029A",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AMW 029B",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AMW 30",
-    "why": "not in the text"
-   },
-   {
-    "code": "AMW 31",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AMW 32",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AMW 33",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AMW 34",
     "why": "not in the text"
    },
    {
@@ -224,12 +348,16 @@
     "why": "not in the text"
    },
    {
-    "code": "AMW 37",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+    "code": "AMW 28",
+    "why": "not in the text"
    },
    {
-    "code": "AMW039",
-    "why": "A.S. section not in the text; named only in the Certificate of Achievement section"
+    "code": "AMW 30",
+    "why": "not in the text"
+   },
+   {
+    "code": "AMW 34",
+    "why": "not in the text"
    },
    {
     "code": "AMW 51",
@@ -237,13 +365,14 @@
    }
   ],
   "notes": [
-   "The supplied text (pages 319-320) contains no section for the Apprenticeship Carpentry, Millwrighting A.S. Degree. It begins with the Millwrighting Certificate of Achievement (Control Number 11986; Choose 16 courses, Total Credits 30.5 - 32.0), followed by the Pile Driver AS and CA sections. The A.S. section likely appears on an earlier page (e.g., page 318) and should be retrieved; no blocks were recorded to avoid attributing certificate requirements to the degree.",
-   "The Millwrighting certificate section lists AMW041A, AMW041B, AMW042A, AMW042B, AMW043, AMW044, AMW045, AMW046, AMW047, which are not in the closed list; the closed list's AMW 023B, AMW 28, AMW 30, AMW 34, AMW 036A, AMW 036B and AMW 51 do not appear anywhere in the text.",
-   "No outcomes or careers headings appear for the A.S. award in the supplied text."
+   "Catalog prints codes without a space and with zero-padded numbers (e.g. AMW021); these were matched to closed-list codes (e.g. AMW 21) and marked catalog_addition false.",
+   "The major block says 'Choose 20 courses' from a list of 23 courses, with Total Credits 30.5 - 32.0 printed for both the program and the block.",
+   "No general education pattern, degree total, or program learning outcomes are printed in this section.",
+   "AMW041A/B (Alignment), AMW042A/B (Rigging), AMW043-AMW047 are not in the closed list; closed-list courses such as AMW 28 Machinery Shaft Alignment and AMW 30 Rigging Hardware and Procedures may have been replaced by these."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "c0440447c38e3867",
+ "extracted_run": "43387912036",
+ "source_sha": "aae2b47b4efacbdc",
  "source_codes": [
   "AMW21",
   "AMW22",

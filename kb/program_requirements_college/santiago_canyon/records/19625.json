@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Water Distribution, CA",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10659,
+  "input_tokens": 6657,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10659,
-    "output_tokens": 1207,
+    "input_tokens": 6657,
+    "output_tokens": 1064,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,59 +30,53 @@
     "model": null
    }
   ],
-  "output_tokens": 1207,
+  "output_tokens": 1064,
   "output_tokens_details": {
-   "thinking_tokens": 367
+   "thinking_tokens": 221
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06678,
- "ms": 10726,
- "seconds": 10.9,
+ "cost_usd": 0.04791,
+ "ms": 8732,
+ "seconds": 8.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "WATR136",
-    "WATR137",
-    "WATR138",
-    "WATR139",
-    "WATR140",
-    "WATR141",
-    "WATR143",
-    "WATR144",
-    "WATR146",
-    "WATR155"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "WATR242"
+   ],
+   "flagged": [
+    "WATR242"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    21.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -99,22 +93,22 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Water Distribution, CA",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -132,61 +126,124 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "public health field of drinking water distribution"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "WATR 136",
-    "why": "Water Distribution, CA section not in the text; named only in Water Treatment sections"
+    "name": "Certificate requirements:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "WATR137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR242",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    },
    {
-    "code": "WATR 137",
-    "why": "Water Distribution, CA section not in the text; named only in Water Distribution, CERT and Water Treatment sections"
-   },
-   {
-    "code": "WATR 138",
-    "why": "Water Distribution, CA section not in the text; named only in Water Distribution, CERT and Water Treatment sections"
-   },
-   {
-    "code": "WATR 139",
-    "why": "Water Distribution, CA section not in the text; named only in Water Treatment sections"
-   },
-   {
-    "code": "WATR 140",
-    "why": "Water Distribution, CA section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "WATR 141",
-    "why": "Water Distribution, CA section not in the text; named only in Water Distribution, CERT and Water Treatment sections"
-   },
-   {
-    "code": "WATR 143",
-    "why": "Water Distribution, CA section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "WATR 144",
-    "why": "Water Distribution, CA section not in the text; named only in other programs' sections"
-   },
-   {
-    "code": "WATR 146",
-    "why": "Water Distribution, CA section not in the text; named only in Water Treatment sections"
-   },
-   {
-    "code": "WATR 155",
-    "why": "Water Distribution, CA section not in the text; named only in Water Treatment and Water Utility Management sections"
+    "name": "Select four (4) courses from the following:",
+    "rule": "choose_courses",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "WATR136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR138",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR139",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR143",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR146",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WATR155",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The text, which begins with page 142, has no section for the Water Distribution Certificate of Achievement (CA). It begins with 'Water Distribution, CERT' (Certificate of Proficiency, Control Number 19625, 12 units). That section is a different award and was not recorded.",
-   "The CA section probably sits on the preceding page (141). The 'Control Number: 19625' line at the top of page 142 may close that preceding program. A reviewer should check page 141 of the 2026-2027 catalog.",
-   "The closed list (WATR 136, 139, 143, 144, 146, 155, etc.) is broader than the CERT's courses, which supports reading the CA as a separate program.",
-   "The CERT section also names WATR242 Advanced Water Distribution, which is not on the closed list."
+   "Catalog prints course codes without a space (e.g., WATR137); recorded as printed.",
+   "WATR242 Advanced Water Distribution is a required course in the catalog but is not in the closed list; recorded as a catalog addition.",
+   "Requirements continue from page 141 to page 142; the table appears complete (9 + 12 = 21 units matches the stated total).",
+   "No program learning outcomes are printed in this section."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "3025c36f6efb44bc",
+ "extracted_run": "43387912036",
+ "source_sha": "7054bcea37f05344",
  "source_codes": [
   "WATR136",
   "WATR137",

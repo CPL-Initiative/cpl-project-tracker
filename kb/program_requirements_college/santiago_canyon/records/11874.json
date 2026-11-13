@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7195,
+  "input_tokens": 6180,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7195,
-    "output_tokens": 1046,
+    "input_tokens": 6180,
+    "output_tokens": 515,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,35 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1046,
+  "output_tokens": 515,
   "output_tokens_details": {
-   "thinking_tokens": 398
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0497,
- "ms": 10375,
- "seconds": 10.7,
+ "cost_usd": 0.03502,
+ "ms": 5071,
+ "seconds": 5.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "GEM11",
-    "GEM12",
-    "GEM20",
-    "GEM30",
-    "GEM50"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -68,13 +62,17 @@
   },
   "arithmetic": {
    "pass": true,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the catalog prints no total, no hours and no units"
-   ]
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -91,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
@@ -101,15 +99,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "No A.S. Degree section for Gemology in the text (only 'Gemology, CA' Certificate of Achievement is printed)",
+   "section_heading": "Gemology, AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -127,40 +125,72 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "jewelry appraiser",
+    "diamond and colored stones sales",
+    "jewelry buyer",
+    "jewelry wholesaler",
+    "laboratory gemologist"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "GEM011",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "GEM012",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "GEM020",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "GEM030",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "GEM050",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
+    "name": "Program Rules: Gemology, AS",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "GEM011",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEM012",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEM020",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEM030",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEM050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text prints only the Gemology Certificate of Achievement (Control Number 11874, 18.0 units: GEM011 4, GEM012 4, GEM020 4, GEM030 3, GEM050 3), followed by the Gender, Sexuality, and Women's Studies AA. No Gemology A.S. Degree section appears, so no requirements, totals or careers were recorded for the A.S.",
-   "The certificate section names careers (jewelry appraiser, diamond and colored stones sales, jewelry buyer, jewelry wholesaler, laboratory gemologist), but these are printed for the certificate only and were not recorded for the A.S.",
-   "Reviewer should check whether the A.S. Degree in Gemology is printed elsewhere in the 2026-2027 catalog (e.g., an adjacent page) or whether the college offers only the certificate."
+   "The rule reads 'The following number of Units' without a stated number; since the listed courses sum to the 18-unit total, all are recorded as required.",
+   "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "4075e220bb7504c8",
+ "extracted_run": "43387912036",
+ "source_sha": "43c28bb37f173024",
  "source_codes": [
   "GEM11",
   "GEM12",

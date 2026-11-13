@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Elementary Teacher Education",
  "award": "A.A- T Degree",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=112",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13995,
+  "input_tokens": 9546,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13995,
-    "output_tokens": 4344,
+    "input_tokens": 9546,
+    "output_tokens": 4828,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4344,
+  "output_tokens": 4828,
   "output_tokens_details": {
-   "thinking_tokens": 1500
+   "thinking_tokens": 1986
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14286,
- "ms": 38588,
- "seconds": 38.7,
+ "cost_usd": 0.13474,
+ "ms": 37676,
+ "seconds": 37.8,
  "parts": null,
  "error": null,
  "score": {
@@ -77,17 +77,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     52.0,
     57.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    52.0,
+    57.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -104,7 +105,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -114,15 +115,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Elementary Teacher Education, AA-T (heading not in the supplied text; section begins mid-list at the top of page 112)",
+   "section_heading": "Elementary Teacher Education, AA-T",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 52,
+    "max": 57
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -140,17 +141,19 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "paraprofessional positions in the K-12 classroom"
+   ]
   },
   "blocks": [
    {
-    "name": "Required courses (block heading not in supplied text)",
+    "name": "Major requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 45,
+     "max": 45
     },
     "courses": [
      {
@@ -283,7 +286,7 @@
     ]
    },
    {
-    "name": "Select one (1) course from the following (List A):",
+    "name": "Select one (1) course from the following (List A)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -315,7 +318,7 @@
     ]
    },
    {
-    "name": "Select one (1) course from the following (List B):",
+    "name": "Select one (1) course from the following (List B)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -367,9 +370,9 @@
     ]
    },
    {
-    "name": "Up to five (5) units from the following (List C):",
+    "name": "Up to five (5) units from the following (List C)",
     "rule": "choose_units",
-    "minimum": null,
+    "minimum": 0,
     "option_group": null,
     "stated": {
      "min": 0,
@@ -540,28 +543,29 @@
   "missing_explained": [
    {
     "code": "CDEV C1000",
-    "why": "not in the text; the catalog prints CDEV107 Child Growth and Development in its place"
+    "why": "not in the text; catalog prints CDEV107 Child Growth and Development (DS1) instead"
    },
    {
     "code": "ENGL C1003",
-    "why": "not listed as a course; named only as the new number of ENGL102 ('This course is now ENGLC1003')"
+    "why": "not printed as a code; catalog lists ENGL102, noting it is now ENGLC1003"
    },
    {
     "code": "ENGL C1003H",
-    "why": "not listed as a course; named only as the new number of ENGL102H ('This course is now ENGLC1003H')"
+    "why": "not printed as a code; catalog lists ENGL102H, noting it is now ENGLC1003H"
    }
   ],
   "notes": [
-   "The supplied text starts mid-section at the top of page 112; the program heading, description, unit range/total, any outcomes or careers, and the heading of the first required block are on the preceding page and not in the text. Section heading, total_units, outcomes and careers could not be read and should be checked against page 111.",
-   "The first block's 'all' rule is inferred from the list of required courses with 'Select X or XH' honors pairs; its heading is not in the text.",
-   "ENGL102/ENGL102H are printed with the note 'This course is now ENGLC1003/ENGLC1003H'; recorded as printed (catalog additions). HIST120/HIST120H similarly note they are now HISTC1001/HISTC1001H.",
-   "List C reads 'Up to five (5) units' with stated 0.0-5.0; recorded as choose_units with minimum null because the catalog gives no required minimum. Reviewer should confirm whether a course from List C is required.",
-   "STATC1000E (4.5 units) recorded as an alternative to STATC1000 alongside the honors STATC1000H.",
-   "Unit values in the closed list missing for several courses (ANTH104, ERTH121, FREN102, POLSC1000/H, PSC100); units taken from the catalog."
+   "total_units 52-57 is the Program Rules total (major requirements 45 + List A 4 + List B 3 + List C 0-5); the page prints no general education pattern or degree total.",
+   "List C is 'Up to five (5) units' (Total Units 0.0 - 5.0); recorded as choose_units with minimum 0 since the program total range 52-57 implies List C may contribute 0 units. Reviewer should confirm.",
+   "CDEV107 Child Growth and Development is likely the former number of CDEV C1000; recorded as printed with catalog_addition true.",
+   "ENGL102/ENGL102H are printed with the note 'This course is now ENGLC1003/ENGLC1003H'; recorded as printed with catalog_addition true. HIST120/HIST120H similarly note 'now HISTC1001/HISTC1001H'.",
+   "In List C, STATC1000E (4.5 units) and STATC1000H are treated as alternatives to STATC1000; the catalog lists them as separate rows without an explicit 'or'.",
+   "Honors pairs in the major requirements were grouped per the catalog's 'Select X or XH. Credit will be awarded for one or the other.' rows.",
+   "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "28f0c8852bd9b50a",
+ "extracted_run": "43387912036",
+ "source_sha": "c698dd41ba11cff9",
  "source_codes": [
   "ANTH104",
   "ART100",

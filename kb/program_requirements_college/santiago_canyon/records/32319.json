@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Construction Inspection for Public Works, AS",
  "award": "A.S. Degree",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=132",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12491,
+  "input_tokens": 6939,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12491,
-    "output_tokens": 1457,
+    "input_tokens": 6939,
+    "output_tokens": 2694,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,62 +30,69 @@
     "model": null
    }
   ],
-  "output_tokens": 1457,
+  "output_tokens": 2694,
   "output_tokens_details": {
-   "thinking_tokens": 443
+   "thinking_tokens": 1157
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0791,
- "ms": 13291,
- "seconds": 13.4,
+ "cost_usd": 0.08164,
+ "ms": 23483,
+ "seconds": 23.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 8,
    "listed": 13,
-   "share": 0.0,
+   "share": 0.615,
    "missing": [
-    "BUS222",
-    "CIS101",
-    "MGMT122",
     "PBLC150",
     "PBLC152",
-    "PBLC50",
-    "PBLC61",
-    "PBLC63",
-    "PBLC70",
     "PBLC86",
     "PBLC87",
-    "PBLC88",
-    "WATR140"
+    "PBLC88"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 6,
+   "codes": [
+    "PASV150",
+    "PASV152",
+    "PASV86",
+    "PASV87",
+    "PASV88",
+    "PBLC51"
+   ],
+   "flagged": [
+    "PASV150",
+    "PASV152",
+    "PASV86",
+    "PASV87",
+    "PASV88",
+    "PBLC51"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    21.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -102,7 +109,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -112,15 +119,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Construction Inspection for Public Works, AS (heading not in the provided text)",
+   "section_heading": "Construction Inspection for Public Works, AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -138,83 +145,190 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "public works inspectors"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PBLC050",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PBLC061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MGMT122",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PASV150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PASV152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Please select three (3) courses from the list below.",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "PBLC051",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PBLC063",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PBLC070",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PASV086",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PASV087",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PASV088",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "WATR140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "BUS 222",
-    "why": "A.S. section not in the text; named only in the CA and other programs' sections"
-   },
-   {
-    "code": "CIS 101",
-    "why": "A.S. section not in the text; named only in the CA and other programs' sections"
-   },
-   {
-    "code": "MGMT 122",
-    "why": "A.S. section not in the text; named only in the CA and other programs' sections"
-   },
-   {
     "code": "PBLC 150",
-    "why": "A.S. section not in the text; named only in other programs' sections (CA prints PASV150)"
+    "why": "catalog prints this course (same title) as PASV150; recorded under that code"
    },
    {
     "code": "PBLC 152",
-    "why": "A.S. section not in the text; named only in other programs' sections (CA prints PASV152)"
-   },
-   {
-    "code": "PBLC 50",
-    "why": "A.S. section not in the text; named only in the CA and other programs' sections"
-   },
-   {
-    "code": "PBLC 61",
-    "why": "A.S. section not in the text; named only in the CA and other programs' sections"
-   },
-   {
-    "code": "PBLC 63",
-    "why": "A.S. section not in the text; named only in the CA and Public Works sections"
-   },
-   {
-    "code": "PBLC 70",
-    "why": "A.S. section not in the text; named only in the CA and Public Works sections"
+    "why": "catalog prints this course (same title) as PASV152; recorded under that code"
    },
    {
     "code": "PBLC 86",
-    "why": "A.S. section not in the text; CA section prints PASV086"
+    "why": "catalog prints this course (same title) as PASV086; recorded under that code"
    },
    {
     "code": "PBLC 87",
-    "why": "A.S. section not in the text; CA section prints PASV087"
+    "why": "catalog prints this course (same title) as PASV087; recorded under that code"
    },
    {
     "code": "PBLC 88",
-    "why": "A.S. section not in the text; CA section prints PASV088"
-   },
-   {
-    "code": "WATR 140",
-    "why": "A.S. section not in the text; named only in the CA section"
+    "why": "catalog prints this course (same title) as PASV088; recorded under that code"
    }
   ],
   "notes": [
-   "The provided text begins on page 132 with the Construction Inspection for Public Works, CA (Certificate of Achievement, Control Number 32319) section; the A.S. degree section for this program is not in the text (it likely appears on page 131). No blocks were recorded for the A.S. to avoid attributing certificate requirements to the degree.",
-   "For reference, the CA section totals 21 units: required PBLC050, PBLC061, CIS101 plus one of BUS222/MGMT122/PASV150/PASV152 (12 units), and three of PBLC051/PBLC063/PBLC070 (9 units), with up to 3 units from PASV086/PASV087/PASV088/WATR140 substitutable. The A.S. may be identical but a reviewer should check page 131.",
-   "The CA section prints PASV150, PASV152, PASV086, PASV087, PASV088 where the closed list has PBLC 150, PBLC 152, PBLC 86, PBLC 87, PBLC 88; PBLC051 in the CA section is not in the closed list."
+   "The catalog's 'Major Requirements' heading prints 12 units, which includes PBLC050, PBLC061, CIS101 (9 units) plus the nested 'Select one (1) course' choice (3 units); the 'all' block's stated is left null and the nested choice is its own block with stated 3.",
+   "PASV150 and PASV152 appear after the page break (page 132) at the same indentation as BUS222 and MGMT122, read as part of the 'Select one (1) course' list.",
+   "The second list is printed as 'Please select three (3) courses' (9 units) from PBLC051, PBLC063, PBLC070, with a 'Substitute' sub-list (printed 0.0 units): three units from PASV086, PASV087, PASV088, WATR140 may substitute any one course on the list. Recorded as a single choose_units 9 block holding all seven courses; reviewer should check that at most 3 substitute units count.",
+   "Catalog prints codes with the PASV prefix where the closed list has PBLC (150, 152, 86, 87, 88); titles match, likely a subject-code change. Marked as catalog additions under the printed codes.",
+   "PBLC051 Infrastructure Construction and Maintenance is not in the closed list.",
+   "No program learning outcomes are printed in the text.",
+   "Total units 21.0 is the program (major) total; no degree total or GE pattern is printed in this section."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "1352a18f2681528f",
+ "extracted_run": "43387912036",
+ "source_sha": "189e3da1ff2acf85",
  "source_codes": [
   "BUS222",
   "CIS101",
   "MGMT122",
-  "PBLC150",
-  "PBLC152",
   "PBLC50",
   "PBLC61",
   "PBLC63",
   "PBLC70",
   "WATR140"
  ],
- "source_coverage": 0.769
+ "source_coverage": 0.615
 }

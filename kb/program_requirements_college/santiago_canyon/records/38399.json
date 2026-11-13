@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7852,
+  "input_tokens": 5949,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7852,
-    "output_tokens": 1014,
+    "input_tokens": 5949,
+    "output_tokens": 1023,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1014,
+  "output_tokens": 1023,
   "output_tokens_details": {
-   "thinking_tokens": 415
+   "thinking_tokens": 451
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05169,
- "ms": 11057,
- "seconds": 11.2,
+ "cost_usd": 0.04426,
+ "ms": 9854,
+ "seconds": 10.0,
  "parts": null,
  "error": null,
  "score": {
@@ -137,8 +137,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 120,
-     "max": 120
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -161,17 +161,16 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints 'Total Hours 0.0 - 0.0' beside each course; these look like placeholders rather than real course hours, but they are recorded as printed. The program total is printed as Total Hours 120.0 - 120.0.",
-   "The rule is printed as 'The following number of Hours' over two courses. I read it as both courses required (rule 'all'); a reviewer should confirm.",
-   "The program total of 120 hours is recorded both as total_units and as the block's stated total, since the rule line sits directly under the program total.",
-   "Closed-list WKPR 18 'Digital Safety and Media AWD' is matched to the catalog's WKPR018 'Social Media and Online Safety in the Workplace'. The code matches but the title differs; it is possibly a retitled course.",
-   "WKPR009 Beginning Computers is not in the closed list, so it is marked as a catalog addition.",
-   "Control Number: 38399.",
-   "The text prints no outcomes and no careers for this program."
+   "The award is a noncredit Certificate of Completion counted in hours. The program total is printed as 'Total Hours 120.0 - 120.0'.",
+   "Each course is printed with 'Total Hours 0.0 - 0.0'. These were recorded as printed, but they look like placeholders rather than real course hours. They do not sum to the 120-hour program total.",
+   "WKPR018 is printed with the title 'Social Media and Online Safety in the Workplace'. It was matched to closed-list WKPR 18, which is titled 'Digital Safety and Media AWD'; please verify the match.",
+   "WKPR009 (Beginning Computers) is not in the closed list, so it is recorded as a catalog addition.",
+   "The block is read as 'all' because the text lists the courses under 'The following number of Hours' with no choice stated.",
+   "The section prints no program learning outcomes. Its description names no specific careers, only 'employment'."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "4a2a40d4437e6e72",
+ "extracted_run": "43387912036",
+ "source_sha": "cbbbf63578de481a",
  "source_codes": [
   "WKPR18"
  ],

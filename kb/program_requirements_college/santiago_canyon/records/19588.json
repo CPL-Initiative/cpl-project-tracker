@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9313,
+  "input_tokens": 6348,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9313,
-    "output_tokens": 1566,
+    "input_tokens": 6348,
+    "output_tokens": 857,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1566,
+  "output_tokens": 857,
   "output_tokens_details": {
-   "thinking_tokens": 661
+   "thinking_tokens": 197
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06857,
- "ms": 13845,
- "seconds": 14.0,
+ "cost_usd": 0.04253,
+ "ms": 8819,
+ "seconds": 9.0,
  "parts": null,
  "error": null,
  "score": {
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Apprenticeship Electricity, Sound Installer, CA — Certificate of Achievement (Control Number: 19588)",
+   "section_heading": "Apprenticeship Electricity, Sound Installer, AS",
    "measure": "units",
    "total_units": {
     "min": 27,
@@ -186,15 +186,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Award mismatch: the requested award is the A.S. Degree in Apprenticeship: Electricity, Sound Installer, but the text contains no Sound Installer A.S. section. It prints only 'Apprenticeship Electricity, Sound Installer, CA' (Certificate of Achievement, 27 credits, AEL021-AEL026) and a different program, 'Apprenticeship Electricity, Sound Technician, AS' (36 credits, AEL021-AEL028).",
-   "This record reads the Sound Installer certificate section because its title and six courses match the program title and the closed list exactly. A reviewer should check whether a Sound Installer A.S. section appears on an earlier page (e.g., page 323) and whether its requirements differ, for example by adding general education.",
-   "Closed-list codes 'AEL 21' to 'AEL 25' appear in the catalog as 'AEL021' to 'AEL025'. They are treated as the same courses, not as catalog additions.",
-   "The Sound Technician A.S. section also lists AEL027 and AEL028, which are not on the closed list. They are not recorded because that section belongs to a different program.",
-   "No program learning outcomes or careers are printed. The text mentions only that completion 'may lead to state journeyworker certification', which is a certification, not a career."
+   "The catalog prints codes as AEL021-AEL025; these were matched to closed-list entries AEL 21-AEL 25 (same titles and units, formatting difference only), so catalog_addition is false.",
+   "The closed list stores no units for AEL026; the catalog prints 4.5 credits.",
+   "Program total 27.0 credits is printed in the Program Rules line; it is recorded as total_units and as the block's stated total. No general education pattern or degree total is printed on the page.",
+   "No program learning outcomes or careers are printed in this section; 'state journeyworker certification' is a certification, not recorded as a career."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "467ba542149b8497",
+ "extracted_run": "43387912036",
+ "source_sha": "4de46460d674700c",
  "source_codes": [
   "AEL21",
   "AEL22",

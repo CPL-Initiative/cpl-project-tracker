@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Computer Information Systems",
  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10922,
+  "input_tokens": 6927,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10922,
-    "output_tokens": 1176,
+    "input_tokens": 6927,
+    "output_tokens": 1504,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,33 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 1176,
+  "output_tokens": 1504,
   "output_tokens_details": {
-   "thinking_tokens": 424
+   "thinking_tokens": 380
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06721,
- "ms": 10689,
- "seconds": 11.1,
+ "cost_usd": 0.05779,
+ "ms": 12413,
+ "seconds": 12.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 13,
    "listed": 13,
-   "share": 0.538,
-   "missing": [
-    "ACCT101",
-    "BUS150",
-    "CIS106",
-    "CMPR105",
-    "CMPR112",
-    "CMPR120"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -68,17 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    19.0,
-    22.0
+    22.0,
+    23.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    22.0,
+    23.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -95,22 +89,22 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Heading not in text (section begins before page 98; rules end with Control Number: 21647)",
+   "section_heading": "Computer Information Systems, CA — Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 22,
+    "max": 23
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -128,17 +122,75 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "information systems",
+    "computer programming",
+    "systems analysis"
+   ]
   },
   "blocks": [
    {
-    "name": "Rule Group",
+    "name": "Certificate requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 16,
-     "max": 16
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "ACCT101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
     },
     "courses": [
      {
@@ -175,77 +227,49 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Rule Group",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 6
-    },
-    "courses": [
+     },
      {
       "code": "CIS110",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PBLC110",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "PBLC110",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ACCT 101",
-    "why": "not in the visible text; may be on preceding page"
-   },
-   {
-    "code": "BUS 150",
-    "why": "not in the visible text; may be on preceding page"
-   },
-   {
-    "code": "CIS 106",
-    "why": "not in the visible text; may be on preceding page"
-   },
-   {
-    "code": "CMPR 105",
-    "why": "not in the visible text; may be on preceding page"
-   },
-   {
-    "code": "CMPR 112",
-    "why": "named only in other programs' sections (Applied Robotics, Computer Science)"
-   },
-   {
-    "code": "CMPR 120",
-    "why": "named only in other programs' sections (C++ Programming, Computer Science)"
-   }
-  ],
-  "notes": []
+  "missing_explained": [],
+  "notes": [
+   "The 'Select one (1) course from the following' group (3-4 units) contains two nested 'Rule Group' sub-headings: one labeled 'All of the following' (16 units: ACCT100, ACCT102, CIS103, CMPR121, CMPR213) and one 'At least one of the following' (CIS110, PBLC110). Read as a single pick-one-course list because the parent states 'Select one (1) course' with a 3-4 unit total, consistent with the 22-23 unit program total (19 + 3-4); the nested 'All of the following' label appears to be a curriculum-system artifact. Reviewer should verify.",
+   "CIS110 and PBLC110 share the title 'Introduction to Microsoft Project' and are recorded as alternatives (likely cross-listed).",
+   "The text prints no program learning outcomes for this certificate.",
+   "Careers taken from 'prepared for employment as trainees in information systems, computer programming, and systems analysis'.",
+   "The section spans a page break (pages 97-98)."
+  ]
  },
- "extracted_run": "43339249633",
- "source_sha": "ffaa949335f0145c",
+ "extracted_run": "43387912036",
+ "source_sha": "f63275e1f5d087e0",
  "source_codes": [
   "ACCT100",
+  "ACCT101",
   "ACCT102",
+  "BUS150",
   "CIS103",
+  "CIS106",
   "CIS110",
+  "CMPR105",
   "CMPR112",
   "CMPR120",
   "CMPR121",
   "CMPR213",
   "PBLC110"
  ],
- "source_coverage": 0.692
+ "source_coverage": 1.0
 }

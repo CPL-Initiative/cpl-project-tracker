@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12972,
+  "input_tokens": 6252,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12972,
-    "output_tokens": 2148,
+    "input_tokens": 6252,
+    "output_tokens": 1254,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2148,
+  "output_tokens": 1254,
   "output_tokens_details": {
-   "thinking_tokens": 905
+   "thinking_tokens": 433
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09485,
- "ms": 18241,
- "seconds": 19.1,
+ "cost_usd": 0.05009,
+ "ms": 11460,
+ "seconds": 12.3,
  "parts": null,
  "error": null,
  "score": {
@@ -58,40 +58,31 @@
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 2,
    "codes": [
     "BIOL221",
-    "BIOL231",
-    "MATH180",
-    "MATH180H",
-    "PHYS150A",
-    "PHYS150B"
+    "BIOL231"
    ],
    "flagged": [
     "BIOL221",
-    "BIOL231",
-    "MATH180",
-    "MATH180H",
-    "PHYS150A",
-    "PHYS150B"
+    "BIOL231"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    32.0,
-    46.0
+    25.0,
+    30.0
    ],
    "stated": [
-    37.0,
-    37.0
+    25.0,
+    25.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 32.0-46.0; the catalog states 37.0-37.0"
-   ]
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -118,15 +109,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Biology, AS-T",
+   "section_heading": "Biology, AS",
    "measure": "units",
    "total_units": {
-    "min": 37,
-    "max": 37
+    "min": 25,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -152,13 +143,13 @@
   },
   "blocks": [
    {
-    "name": "Rule Group",
+    "name": "The following number of Units",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 15,
-     "max": 15
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -181,31 +172,6 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Rule Group",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 5,
-     "max": 15
-    },
-    "courses": [
-     {
-      "code": "CHEM200A",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "CHEM200AH",
-        "units": 5,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
      },
      {
       "code": "CHEM200B",
@@ -222,48 +188,22 @@
     "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 4,
-     "max": 8
+     "min": 5,
+     "max": 10
     },
     "courses": [
      {
-      "code": "MATH180",
-      "units": 4,
+      "code": "CHEM200A",
+      "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "MATH180H",
-        "units": 4,
-        "catalog_addition": true
+        "code": "CHEM200AH",
+        "units": 5,
+        "catalog_addition": false
        }
       ],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Rule Group",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": 8,
-     "max": 8
-    },
-    "courses": [
-     {
-      "code": "PHYS150A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHYS150B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    }
@@ -272,24 +212,22 @@
   "missing_explained": [
    {
     "code": "BIOL 212",
-    "why": "not in the text; catalog lists BIOL221 Animal Diversity and Evolution instead"
+    "why": "not in the text; catalog prints BIOL221 Animal Diversity and Evolution instead"
    },
    {
     "code": "BIOL 214",
-    "why": "not in the text; catalog lists BIOL231 Plant Diversity and Ecology instead"
+    "why": "not in the text; catalog prints BIOL231 Plant Diversity and Ecology instead"
    }
   ],
   "notes": [
-   "The only Biology A.S. section in the text is 'Biology, AS-T' (A.S. Degree for Transfer, Control Number 11856); recorded that section for the requested A.S. Degree award.",
-   "Closed list names BIOL 212 Animal Diversity and Ecology and BIOL 214 Plant Diversity and Evolution, while the catalog prints BIOL221 Animal Diversity and Evolution and BIOL231 Plant Diversity and Ecology (titles swapped); recorded the catalog codes as additions. Reviewer should check whether these are renumbered equivalents.",
-   "Chemistry group is printed as 'At least one of the following' (5-15 units), but the stated total of 37 units (15+10+4+8) implies both CHEM200A (or CHEM200AH) and CHEM200B are required. Recorded as printed with minimum 1; CHEM200AH treated as honors alternative of CHEM200A.",
-   "MATH180H recorded as honors alternative of MATH180 in the 'At least one of the following' group.",
-   "No program learning outcomes printed for this award.",
-   "Disciplines named (microbiology, botany, zoology) are baccalaureate fields, not recorded as careers."
+   "The catalog lists BIOL221 (Animal Diversity and Evolution) and BIOL231 (Plant Diversity and Ecology), while the closed list has BIOL 212 (Animal Diversity and Ecology) and BIOL 214 (Plant Diversity and Evolution); these may be renumbered versions of the same courses. Reviewer should check.",
+   "CHEM200A and its honors twin CHEM200AH are recorded as one choice under the 'Rule Group' ('At least one of the following', Total Units 5.0 - 10.0).",
+   "No program learning outcomes are printed in the text.",
+   "Microbiology, botany and zoology are named as transfer disciplines, not careers, so they are not recorded as careers."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "a96f4ca24117b5e9",
+ "extracted_run": "43387912036",
+ "source_sha": "c6091851c611fa28",
  "source_codes": [
   "BIOL211",
   "CHEM200A",

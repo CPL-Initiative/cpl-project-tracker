@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6975,
+  "input_tokens": 6506,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6975,
-    "output_tokens": 2687,
+    "input_tokens": 6506,
+    "output_tokens": 1887,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2687,
+  "output_tokens": 1887,
   "output_tokens_details": {
-   "thinking_tokens": 1035
+   "thinking_tokens": 815
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08164,
- "ms": 21549,
- "seconds": 21.7,
+ "cost_usd": 0.06376,
+ "ms": 16920,
+ "seconds": 17.0,
  "parts": null,
  "error": null,
  "score": {
@@ -57,29 +57,15 @@
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 3,
    "codes": [
-    "BUS222",
     "ECON101",
     "ECON102",
-    "MATH180",
-    "MATH180H",
-    "MATH185",
-    "MATH280",
-    "MATH287",
-    "MATH290",
     "STATC1000E"
    ],
    "flagged": [
-    "BUS222",
     "ECON101",
     "ECON102",
-    "MATH180",
-    "MATH180H",
-    "MATH185",
-    "MATH280",
-    "MATH287",
-    "MATH290",
     "STATC1000E"
    ],
    "pass": true
@@ -89,11 +75,11 @@
    "status": "equal",
    "computed": [
     21.0,
-    24.5
+    23.5
    ],
    "stated": [
     21.0,
-    24.5
+    23.5
    ],
    "against": "program",
    "why": []
@@ -113,7 +99,7 @@
    "pass": true
   },
   "careers": {
-   "count": 4,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
@@ -127,11 +113,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Economics, AA-T",
+   "section_heading": "Economics, AA",
    "measure": "units",
    "total_units": {
     "min": 21,
-    "max": 24.5
+    "max": 23.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -150,23 +136,38 @@
    "electives_fill_degree": false,
    "outcomes": [],
    "careers": [
-    "economic research",
-    "consulting",
     "accounting",
-    "marketing"
+    "marketing",
+    "business",
+    "government",
+    "teaching"
    ]
   },
   "blocks": [
    {
-    "name": "Economics",
+    "name": "Major Requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": 14,
+     "max": 14
     },
     "courses": [
+     {
+      "code": "ACCT101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "ECON101",
       "units": 3,
@@ -186,6 +187,32 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Mathematics and Quantitative Reasoning",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BUS150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
@@ -220,141 +247,27 @@
       "catalog_addition": true
      }
     ]
-   },
-   {
-    "name": "Calculus Requirement",
-    "rule": "choose_units",
-    "minimum": 4,
-    "option_group": null,
-    "stated": {
-     "min": 4,
-     "max": 5
-    },
-    "courses": [
-     {
-      "code": "MATH150",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH180",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "MATH180H",
-        "units": 4,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Select one (1) course from the following (List A):",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 4,
-     "max": 4
-    },
-    "courses": [
-     {
-      "code": "ACCT101",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH185",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Select one (1) course from the following (List B):",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 5
-    },
-    "courses": [
-     {
-      "code": "ACCT102",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS150",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS222",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH280",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH287",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH290",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
    }
   ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "ECONC2002",
-    "why": "not in the text; catalog lists ECON102 Principles/Macro without naming ECONC2002 (likely its renumbered successor)"
+    "why": "not in the text; catalog lists ECON102 Principles/Macro, likely its predecessor, without naming ECONC2002"
    }
   ],
   "notes": [
-   "The only section in the text is 'Economics, AA-T' (A.A. Degree for Transfer, Control Number 11943); recorded it as the requested A.A. Degree.",
-   "Catalog prints 'ECON101 Principles/Micro - This course is now ECONC2001'; ECONC2001 recorded as an alternative of ECON101 with the same 3 units.",
-   "MATH180 and MATH180H are noted as now MATHC2210 and MATHC2210H; MATH185 as now MATHC2220. Codes recorded as printed.",
-   "STATC1000 / STATC1000H match closed-list STAT C1000 / STAT C1000H (spacing differs); STATC1000H recorded as honors alternative.",
-   "'Major requirements: (Total Units 14.0 - 15.5)' is a heading over the Economics, Statistics and Probability, and Calculus Requirement blocks; the 14.0-15.5 subtotal is not stored as a block total.",
-   "Statistics and Calculus blocks print 'The following number of Units' with no explicit count; recorded as choose_units with minimum equal to the low end of the stated range (effectively one course).",
-   "BUS150 printed with 4 units in the catalog; the state file stores 3.",
-   "Careers taken from 'career opportunities in economic research, consulting, accounting, and marketing in the areas of business, teaching, and public policy'; the areas (business, teaching, public policy) were not recorded as separate careers — reviewer may check.",
-   "No program learning outcomes printed in the text."
+   "Catalog prints 'ECON101 Principles/Micro - This course is now ECONC2001'; recorded ECON101 with ECONC2001 as its renumbered equivalent (alternative).",
+   "ECON102 is printed without a C-ID renumbering note; it is probably now ECONC2002 but the text does not say so.",
+   "Codes are printed without spaces (e.g., ACCT101); treated as matching closed-list codes (ACCT 101).",
+   "Mathematics and Statistics blocks read 'The following number of Units' with no explicit number; minimum taken as low end of printed block total (3 and 4).",
+   "STATC1000H treated as honors alternative of STATC1000; STATC1000E (4.5 units) listed separately as a catalog addition.",
+   "No program learning outcomes printed in the text.",
+   "Career entries 'business', 'government' and 'teaching' are read from 'in the areas of business, government and teaching'."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "23d9b7cccf7bb5f5",
+ "extracted_run": "43387912036",
+ "source_sha": "2c84950d00ba3f33",
  "source_codes": [
   "ACCT101",
   "ACCT102",

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13609,
+  "input_tokens": 9407,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13609,
-    "output_tokens": 4673,
+    "input_tokens": 9407,
+    "output_tokens": 4601,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4673,
+  "output_tokens": 4601,
   "output_tokens_details": {
-   "thinking_tokens": 1133
+   "thinking_tokens": 1103
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1479,
- "ms": 34882,
- "seconds": 35.0,
+ "cost_usd": 0.12965,
+ "ms": 33597,
+ "seconds": 33.7,
  "parts": null,
  "error": null,
  "score": {
@@ -594,19 +594,19 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog labels figures 'Total Credits' but states 'credits are in hours'; all figures recorded as hours (each high school credit = 14.4 hours, e.g. 5 credits = 72 hours).",
-   "The English composition block prints 72 hours though its heading says the English area requires 576 hours (72 composition + 504 electives).",
-   "The English electives heading contains a bracketed limit that is cut off: '[A maximum of 10 high school credits (144 hours) from High School Subjects Reading 089, 090' - the closing text is missing; reviewer should check the full rule.",
-   "Natural Sciences: the first block prints 288 hours for the whole area (20 credits, i.e. four 72-hour courses) and requires at least one biological science course; the physical science block prints 0.0 hours and requires one physical science course. How the remaining 144 hours are chosen is not stated; recorded each as choose 1 course with the printed totals.",
-   "HSENG070 'The Short Story' is not in the closed list (closed list has HSART 70 'Short Stories'); recorded as a catalog addition. HSRDG089, HSRDG090 and HSRDG093 are also not in the closed list.",
-   "VBUS118 is printed as 'Introduction to Windows' while the closed list titles it 'Microsoft Windows Overview'; treated as the same course.",
-   "ABE009 is printed with a range of 72.0 - 288.0 hours in the electives block.",
-   "Codes are recorded as printed without spaces (e.g. HSENG083 = closed-list HSENG 83).",
-   "The page prints no program learning outcomes and names no specific careers (only general 'job opportunities')."
+   "The catalog prints 'credits' but states they are in hours; all figures recorded as hours. Total 2304 hours = 72 + 504 + 288 + 432 + 144 + 288 + 576 block totals.",
+   "Catalog codes are printed without spaces and with leading zeros (e.g., HSENG083); matched to closed-list codes (e.g., HSENG 83).",
+   "English requires 40 high school credits (576 hours): one composition course (72 hours) plus seven English electives (504 hours).",
+   "English electives text has an unclosed bracket: '[A maximum of 10 high school credits (144 hours) from High School Subjects Reading 089, 090' - the limit on HSRDG089/HSRDG090 appears cut off.",
+   "HSENG070 'The Short Story', HSRDG089, HSRDG090 and HSRDG093 are not in the closed list (closed list has HSART 70 'Short Stories' separately); marked as catalog additions.",
+   "Natural Sciences requires 20 high school credits (288 hours) but only specifies one biological and one physical science course (144 hours); the 288-hour total is printed on the biological block and 0.0 on the physical block. How the remaining 144 hours are satisfied is not stated; reviewer should check.",
+   "VBUS118 is printed as 'Introduction to Windows' while the closed list titles it 'Microsoft Windows Overview'.",
+   "ABE009 is printed with a range of 72-288 hours.",
+   "No program learning outcomes or named careers are printed in this section."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "3046a4c555cf1114",
+ "extracted_run": "43387912036",
+ "source_sha": "ae58d1229f79aab2",
  "source_codes": [
   "ABE23",
   "ABE24",

@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Secondary Education",
  "award": "Noncredit program",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12708,
+  "input_tokens": 11439,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12708,
-    "output_tokens": 5798,
+    "input_tokens": 11439,
+    "output_tokens": 6720,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,104 +30,75 @@
     "model": null
    }
   ],
-  "output_tokens": 5798,
+  "output_tokens": 6720,
   "output_tokens_details": {
-   "thinking_tokens": 1427
+   "thinking_tokens": 1536
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.16679,
- "ms": 41791,
- "seconds": 41.9,
+ "cost_usd": 0.18016,
+ "ms": 47618,
+ "seconds": 47.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 44,
+   "placed": 79,
    "listed": 80,
-   "share": 0.55,
+   "share": 0.988,
    "missing": [
-    "HSART845",
-    "HSART846",
-    "HSENG201",
-    "HSENG202",
-    "HSENG203",
-    "HSENG204",
-    "HSENG50",
-    "HSENG51",
-    "HSENG63",
-    "HSENG64",
-    "HSENG86",
-    "HSMTH101",
-    "HSMTH124",
-    "HSMTH125",
-    "HSMTH154",
-    "HSMTH155",
-    "HSMTH158",
-    "HSMTH161",
-    "HSMTH165",
-    "HSMTH166",
-    "HSMTH176",
-    "HSMTH177",
-    "HSMTH180",
-    "HSOTH505",
-    "HSOTH510",
-    "HSOTH513",
-    "HSOTH514",
-    "HSSCI100",
-    "HSSCI182",
-    "HSSCI183",
-    "HSSCI184",
-    "HSSCI196",
-    "HSSOC216",
-    "HSSOC217",
-    "MATHCE206",
-    "MATHCE255"
+    "HSMTH158"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 11,
    "codes": [
+    "HSENG30",
     "HSENG66",
     "HSENG67",
     "HSENG68",
     "HSENG70",
     "HSENG85",
-    "VBUS118",
-    "VBUS260"
+    "HSMTH102",
+    "HSMTH120",
+    "HSMTH121",
+    "HSMTH122",
+    "HSMTH123"
    ],
    "flagged": [
+    "HSENG30",
     "HSENG66",
     "HSENG67",
     "HSENG68",
     "HSENG70",
     "HSENG85",
-    "VBUS118",
-    "VBUS260"
+    "HSMTH102",
+    "HSMTH120",
+    "HSMTH121",
+    "HSMTH122",
+    "HSMTH123"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    2376.0,
-    2376.0
+    2304.0,
+    2304.0
    ],
    "stated": [
     2304.0,
     2304.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 2376.0-2376.0; the catalog states 2304.0-2304.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -151,11 +122,11 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Adult High School Diploma, DIPL",
+   "section_heading": "Secondary Education, COM",
    "measure": "hours",
    "total_units": {
     "min": 2304,
@@ -181,7 +152,7 @@
   },
   "blocks": [
    {
-    "name": "ENGLISH - Required courses (credits are in hours). Forty (40) high school credits required (576 hours). Must include one (1) of the following composition courses:",
+    "name": "ENGLISH: 576 hours. Required courses: Must include one (1) of the following composition courses:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -210,13 +181,20 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
+     },
+     {
+      "code": "HSENG086",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "ENGLISH - electives (credits are in hours). Select seven (7) of the following English electives (504 hours).",
-    "rule": "choose_courses",
-    "minimum": 7,
+    "name": "Electives: 504 hours",
+    "rule": "choose_units",
+    "minimum": 504,
     "option_group": null,
     "stated": {
      "min": 504,
@@ -231,6 +209,27 @@
       "catalog_addition": false
      },
      {
+      "code": "HSENG030",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HSENG050",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSENG051",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "HSENG052",
       "units": 72,
       "units_max": null,
@@ -239,6 +238,20 @@
      },
      {
       "code": "HSENG053",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSENG063",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSENG064",
       "units": 72,
       "units_max": null,
       "alternatives": [],
@@ -294,6 +307,34 @@
       "catalog_addition": false
      },
      {
+      "code": "HSENG201",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSENG202",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSENG203",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSENG204",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "HSRDG089",
       "units": 72,
       "units_max": null,
@@ -316,7 +357,7 @@
      },
      {
       "code": "HSRDG094",
-      "units": 72,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -324,13 +365,13 @@
     ]
    },
    {
-    "name": "NATURAL SCIENCES - Required courses (credits are in hours). Twenty (20) high school credits are required (288 hours). Must include one (1) of the following biological science course:",
+    "name": "NATURAL SCIENCES: 288 hours. Must include one (1) of the following biological science courses:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 288,
-     "max": 288
+     "min": 72,
+     "max": 72
     },
     "courses": [
      {
@@ -357,15 +398,29 @@
     ]
    },
    {
-    "name": "NATURAL SCIENCES - Must include one (1) one of the following physical science courses:",
+    "name": "Must include one (1) of the following physical science courses: 72 hours",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 0,
-     "max": 0
+     "min": 72,
+     "max": 72
     },
     "courses": [
+     {
+      "code": "HSSCI100",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSSCI184",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "HSSCI190",
       "units": 72,
@@ -390,22 +445,48 @@
     ]
    },
    {
-    "name": "SOCIAL AND BEHAVIORAL SCIENCES - Required courses (credits are in hours). Thirty (30) high school credits required (432 hours). Must include all of the following six (6) courses:",
-    "rule": "all",
-    "minimum": null,
+    "name": "Electives: 144 hours",
+    "rule": "choose_units",
+    "minimum": 144,
     "option_group": null,
     "stated": {
-     "min": 432,
-     "max": 432
+     "min": 144,
+     "max": 144
     },
     "courses": [
      {
-      "code": "HSSOC215",
+      "code": "HSSCI182",
       "units": 72,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
+     {
+      "code": "HSSCI183",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSSCI196",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "SOCIAL AND BEHAVIORAL SCIENCES: 432 hours. Must include both of the following US History courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 144,
+     "max": 144
+    },
+    "courses": [
      {
       "code": "HSSOC218",
       "units": 72,
@@ -419,6 +500,25 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Must include both of the following courses: 144 hours",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 144,
+     "max": 144
+    },
+    "courses": [
+     {
+      "code": "HSSOC215",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      },
      {
       "code": "HSSOC222",
@@ -426,7 +526,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Must include both of the following World History courses: 144 hours",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 144,
+     "max": 144
+    },
+    "courses": [
      {
       "code": "HSSOC229",
       "units": 72,
@@ -444,9 +556,35 @@
     ]
    },
    {
-    "name": "HUMANITIES - Required courses (credits are in hours). Ten (10) high school credits required (144 hours). Select two (2) of the following courses:",
-    "rule": "choose_courses",
-    "minimum": 2,
+    "name": "Electives:",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "HSSOC216",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSSOC217",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "HUMANITIES: 144 hours",
+    "rule": "choose_units",
+    "minimum": 144,
     "option_group": null,
     "stated": {
      "min": 144,
@@ -480,19 +618,103 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "HSART845",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSART846",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "MATHEMATICS - Required courses (credits are in hours). Twenty (20) high school credits are required (288 hours). Select four (4) of the following courses:",
-    "rule": "choose_courses",
-    "minimum": 4,
+    "name": "MATHEMATICS: 288 hours",
+    "rule": "choose_units",
+    "minimum": 288,
     "option_group": null,
     "stated": {
      "min": 288,
      "max": 288
     },
     "courses": [
+     {
+      "code": "HSMTH101",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSMTH102",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HSMTH120",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HSMTH121",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HSMTH122",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HSMTH123",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HSMTH124",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSMTH125",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSMTH154",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSMTH155",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "HSMTH156",
       "units": 72,
@@ -515,6 +737,13 @@
       "catalog_addition": false
      },
      {
+      "code": "HSMTH161",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "HSMTH163",
       "units": 72,
       "units_max": null,
@@ -523,6 +752,20 @@
      },
      {
       "code": "HSMTH164",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSMTH165",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSMTH166",
       "units": 72,
       "units_max": null,
       "alternatives": [],
@@ -541,11 +784,46 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "HSMTH176",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSMTH177",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSMTH180",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATHCE255",
+      "units": 144,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATHCE206",
+      "units": 144,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "ELECTIVES - (credits are in hours). Forty (40) high school credits are required (576 hours). Select elective courses from the following:",
+    "name": "ELECTIVE COURSES: 576 hours",
     "rule": "choose_units",
     "minimum": 576,
     "option_group": null,
@@ -557,7 +835,7 @@
      {
       "code": "ABE009",
       "units": 72,
-      "units_max": 288,
+      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
@@ -604,6 +882,34 @@
       "catalog_addition": false
      },
      {
+      "code": "HSOTH505",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSOTH510",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSOTH513",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSOTH514",
+      "units": 72,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "HSS338",
       "units": 15,
       "units_max": null,
@@ -616,20 +922,6 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "VBUS118",
-      "units": 60,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "VBUS260",
-      "units": 60,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      }
     ]
    }
@@ -637,167 +929,23 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ABE 9",
-    "why": "placed as ABE009 in Electives block (catalog formatting)"
-   },
-   {
-    "code": "HSART 845",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSART 846",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSENG 201",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSENG 202",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSENG 203",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSENG 204",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSENG 50",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSENG 51",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSENG 63",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSENG 64",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSENG 86",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH 124",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH 125",
-    "why": "not in the text"
-   },
-   {
     "code": "HSMTH 158",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH 161",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH 165",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH 166",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH 176",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH 177",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH 180",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH154",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSMTH155",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSOTH 505",
-    "why": "listed only in a preceding program's section on page 263, not in the diploma section"
-   },
-   {
-    "code": "HSOTH 510",
-    "why": "listed only in a preceding program's section on page 263, not in the diploma section"
-   },
-   {
-    "code": "HSOTH 513",
-    "why": "listed only in a preceding program's section on page 263, not in the diploma section"
-   },
-   {
-    "code": "HSOTH514",
-    "why": "listed only in a preceding program's section on page 263, not in the diploma section"
-   },
-   {
-    "code": "HSSCI 100",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSSCI 182",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSSCI 183",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSSCI 184",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSSCI 196",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSSOC 216",
-    "why": "not in the text"
-   },
-   {
-    "code": "HSSOC 217",
-    "why": "not in the text"
-   },
-   {
-    "code": "MATHCE 206",
-    "why": "not in the text"
-   },
-   {
-    "code": "MATHCE 255",
-    "why": "not in the text"
+    "why": "Math Fundamentals 1 not in the text"
    }
   ],
   "notes": [
-   "The program title 'Secondary Education' is not printed as a heading; the Adult High School Diploma, DIPL section (Control Number 33942) was chosen because the closed list matches its courses. The adjacent 'Secondary Education/GED Preparation, CC' (ABE009, HSGED031) is a different award; reviewer should confirm.",
-   "Catalog counts credits in hours ('credits are in hours'); total 2304 hours printed as 'Total Credits 2304.0 - 2304.0'. The description says each course is worth five high school credits.",
-   "Natural Sciences requires 288 hours (20 credits) but lists only one biological and one physical science choice; the physical science block prints 'Total Credits 0.0 - 0.0', recorded as printed. How the remaining natural science hours are met is not stated.",
-   "English requires 576 hours in total: one composition course (72) plus seven electives (504). English electives allow a maximum of 144 hours (10 credits) from High School Subjects Reading 089, 090; the bracketed note is cut off.",
-   "ABE009 is printed with a range of 72-288 hours in the electives list.",
-   "HSENG070 'The Short Story' is not on the closed list (closed list has HSART 70 Short Stories); recorded as a catalog addition.",
-   "Catalog prints codes without spaces and with leading zeros (e.g., HSENG083); matched to closed-list codes such as HSENG 83.",
-   "No outcomes or careers printed for this award."
+   "The catalog prints codes with zero-padded numbers and no space (e.g. HSENG083); these were matched to closed-list codes such as HSENG 83.",
+   "Total 2304 hours from 'Program Rules ... (Total Hours 2304.0 - 2304.0)' and 'Certificates Requirements: 2,304 hours'; the latter line also shows an artifact '(Total Hours 0.0 - 0.0)'.",
+   "Area totals: English 576 (72 composition + 504 electives), Natural Sciences 288, Social and Behavioral Sciences 432, Humanities 144, Mathematics 288, Elective Courses 576; they sum to 2304.",
+   "Social and Behavioral Sciences 'Electives:' block (HSSOC216, HSSOC217) prints Total Hours 0.0 and no hour requirement; the three required pairs already make 432 hours. Recorded as choose_units with minimum 0; reviewer should check.",
+   "Several courses print 0.0 hours (HSRDG094, HSMTH120-125); recorded as printed.",
+   "HSENG070 is printed as 'The Short Story'; the closed list has HSART 70 'Short Stories' but no HSENG 70, so HSENG070 is marked a catalog addition. HSART070 is listed separately under Humanities.",
+   "HSMTH101 is printed as 'Introduction to Calculus 1A' while the closed list titles HSMTH 101 'AP Calculus Preparation 1B'; matched by code.",
+   "No program learning outcomes or specific careers are printed; the description mentions only 'other higher educational or job opportunities'."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "ac56b24a0f4aa6f8",
+ "extracted_run": "43387912036",
+ "source_sha": "f81a00fe2db11edf",
  "source_codes": [
   "ABE23",
   "ABE24",
@@ -808,21 +956,43 @@
   "HSART70",
   "HSART828",
   "HSART837",
+  "HSART845",
+  "HSART846",
   "HSENG20",
+  "HSENG201",
+  "HSENG202",
+  "HSENG203",
+  "HSENG204",
+  "HSENG50",
+  "HSENG51",
   "HSENG52",
   "HSENG53",
+  "HSENG63",
+  "HSENG64",
   "HSENG72",
   "HSENG76",
   "HSENG83",
   "HSENG84",
+  "HSENG86",
   "HSENG98",
+  "HSMTH101",
+  "HSMTH124",
+  "HSMTH125",
+  "HSMTH154",
+  "HSMTH155",
   "HSMTH156",
   "HSMTH157",
   "HSMTH159",
+  "HSMTH161",
   "HSMTH163",
   "HSMTH164",
+  "HSMTH165",
+  "HSMTH166",
   "HSMTH167",
   "HSMTH168",
+  "HSMTH176",
+  "HSMTH177",
+  "HSMTH180",
   "HSOTH202",
   "HSOTH50",
   "HSOTH505",
@@ -835,18 +1005,27 @@
   "HSRDG94",
   "HSS338",
   "HSS770",
+  "HSSCI100",
   "HSSCI168",
   "HSSCI169",
+  "HSSCI182",
+  "HSSCI183",
+  "HSSCI184",
   "HSSCI190",
   "HSSCI191",
   "HSSCI192",
   "HSSCI193",
+  "HSSCI196",
   "HSSOC215",
+  "HSSOC216",
+  "HSSOC217",
   "HSSOC218",
   "HSSOC219",
   "HSSOC222",
   "HSSOC229",
-  "HSSOC230"
+  "HSSOC230",
+  "MATHCE206",
+  "MATHCE255"
  ],
- "source_coverage": 0.6
+ "source_coverage": 0.988
 }

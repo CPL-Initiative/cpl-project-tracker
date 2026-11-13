@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7652,
+  "input_tokens": 6338,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7652,
-    "output_tokens": 1178,
+    "input_tokens": 6338,
+    "output_tokens": 964,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,54 +30,55 @@
     "model": null
    }
   ],
-  "output_tokens": 1178,
+  "output_tokens": 964,
   "output_tokens_details": {
-   "thinking_tokens": 515
+   "thinking_tokens": 248
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05417,
- "ms": 11749,
- "seconds": 11.9,
+ "cost_usd": 0.04463,
+ "ms": 9135,
+ "seconds": 9.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "ASV101",
-    "ASV102",
-    "ASV103",
-    "ASV104",
-    "ASV105"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ASV30",
+    "ASV40"
+   ],
+   "flagged": [
+    "ASV30",
+    "ASV40"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    25.6,
+    25.6
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    25.6,
+    25.6
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -94,7 +95,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -104,15 +105,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Control Number: 21666",
+   "section_heading": "Apprenticeship Surveying, Chainman, AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25.6,
+    "max": 25.6
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,41 +131,85 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "surveying"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ASV 101",
-    "why": "named only in the Chainman Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "ASV 102",
-    "why": "named only in the Chainman Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "ASV 103",
-    "why": "named only in the Chainman Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "ASV 104",
-    "why": "named only in the Chainman Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "ASV 105",
-    "why": "named only in the Chainman Certificate of Achievement section; A.S. section not in text"
+    "name": "The following number of Credits",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25.6,
+     "max": 25.6
+    },
+    "courses": [
+     {
+      "code": "ASV030",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASV040",
+      "units": 0.1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ASV101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASV102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASV103",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASV104",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASV105",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The excerpt contains no section for the Apprenticeship Surveying, Chainman A.S. Degree. It prints the Chainman Certificate of Achievement (Control Number 13230), then the Chief of Party A.S. and the Chief of Party CA. It ends at 'Control Number: 21666', which is likely the start of the Chainman A.S. section continuing on the next page (page 330). Check that page.",
-   "The Chainman Certificate of Achievement section (Total Credits 25.6) lists ASV030 (0.5), ASV040 (0.1) and ASV101 through ASV105 (5.0 each), all required. These were not recorded as the A.S. requirements because they belong to a different award.",
-   "The section_heading is the last line printed, the cut-off start of the next section, not a confirmed A.S. heading.",
-   "The certificate's career text ('a career in surveying', its employers) belongs to the CA section and was not recorded for the A.S."
+   "The total of 25.6 credits is printed under 'Program Rules' as the program total; recorded as total_units (major). The page names no general education pattern and prints no degree total.",
+   "Codes are printed without a space (e.g., ASV101); closed list writes them as 'ASV 101'. Matched accordingly.",
+   "ASV030 Labor Relations and ASV040 Standard First Aid are not in the closed list; recorded as catalog additions.",
+   "No program learning outcomes are printed in the text.",
+   "Career recorded from 'prepares students for a career in surveying'; employer types (land surveying and civil engineering firms, general construction contractors) not recorded as careers."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "8bb75e1b9f1afe56",
+ "extracted_run": "43387912036",
+ "source_sha": "34a1e6cceb242c2c",
  "source_codes": [
   "ASV101",
   "ASV102",

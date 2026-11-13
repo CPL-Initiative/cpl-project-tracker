@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Social Work and Human Services Assistant",
  "award": "A.S. Degree",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=108",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=107",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11750,
+  "input_tokens": 7843,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11750,
-    "output_tokens": 2281,
+    "input_tokens": 7843,
+    "output_tokens": 3024,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,74 +30,59 @@
     "model": null
    }
   ],
-  "output_tokens": 2281,
+  "output_tokens": 3024,
   "output_tokens_details": {
-   "thinking_tokens": 664
+   "thinking_tokens": 1241
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09262,
- "ms": 19912,
- "seconds": 20.1,
+ "cost_usd": 0.09185,
+ "ms": 25613,
+ "seconds": 25.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 23,
    "listed": 25,
-   "share": 0.0,
+   "share": 0.92,
    "missing": [
-    "APCD107",
-    "CDEV107H",
     "CDEVC1000",
-    "CNSL150",
-    "CNSL151",
-    "CNSL160A",
-    "CNSL160B",
-    "CNSL161",
-    "CNSL165",
-    "COMM120",
-    "COMM120H",
-    "PBLC110",
-    "PBLC156",
-    "PSYC157",
-    "PSYC240",
-    "PSYCC1000",
-    "PSYCC1000H",
-    "SOC100",
-    "SOC100H",
-    "SOC115",
-    "SOC116",
-    "SOC130",
-    "SOC230",
-    "SOC240",
-    "SOC240H"
+    "PBLC156"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "CDEV107",
+    "PASV156"
+   ],
+   "flagged": [
+    "CDEV107",
+    "PASV156"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    19.0,
+    20.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -114,7 +99,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -124,15 +109,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found in text (no Social Work and Human Services Assistant A.S. section)",
+   "section_heading": "Social Work and Human Services Assistant, AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 19,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -150,120 +135,225 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "helping professions"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Major Requirements:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "CNSL150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSL151",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSL160A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSL160B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSL165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYCC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYCC1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "CNSL161",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "APCD107",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CDEV107",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "CDEV107H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC157",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC240H",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SOC240",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC240",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM120H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PBLC110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PASV156",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "APCD107",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
-    "code": "CDEV 107H",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
     "code": "CDEV C1000",
-    "why": "mentioned only as the new number of CDEV107 in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
-    "code": "CNSL 150",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "CNSL 151",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
-    "code": "CNSL 160A",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "CNSL 160B",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "CNSL 161",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
-    "code": "CNSL 165",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
-    "code": "COMM 120",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "COMM 120H",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "PBLC 110",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
+    "why": "not listed as a course; catalog lists CDEV107 with a note that it is now CDEVC1000"
    },
    {
     "code": "PBLC 156",
-    "why": "not in the text (Certificate of Achievement section prints PASV156 Family and Community Violence); no A.S. section in text"
-   },
-   {
-    "code": "PSYC 157",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "PSYC 240",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "PSYC C1000H",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "SOC 100",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "SOC 100H",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "SOC 115",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
-    "code": "SOC 116",
-    "why": "named only in the Certificate of Achievement and AA-T sections; no A.S. section in text"
-   },
-   {
-    "code": "SOC 130",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
-    "code": "SOC 230",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
-    "code": "SOC 240",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
-   },
-   {
-    "code": "SOC 240H",
-    "why": "named only in the Certificate of Achievement section; no A.S. section in text"
+    "why": "not in the text; catalog prints PASV156 Family and Community Violence (same title) instead"
    }
   ],
   "notes": [
-   "The supplied text (pages 108-109) contains the Social Work and Human Services Assistant Certificate of Achievement (Control Number 45737) and the Social Work and Human Services AA-T (Control Number 46150), but no A.S. Degree section for Social Work and Human Services Assistant. The A.S. section may be on a preceding page (e.g., page 107) not included in the text; a reviewer should check.",
-   "The Certificate of Achievement section's course list (19 units: CNSL150, CNSL151, CNSL160A, CNSL160B, CNSL165, PSYCC1000/H, SOC100/H, plus one of CNSL161, SOC115, SOC116, SOC130, SOC230, SOC240/240H/PSYC240, APCD107/CDEV107/107H/PSYC157, COMM120/120H, PBLC110, PASV156) matches the closed list closely, suggesting the A.S. degree may share these requirements, but it was not recorded because it belongs to a different award.",
-   "The certificate section prints PASV156 Family and Community Violence where the closed list has PBLC 156."
+   "The Program Rules line names the program 'Social Work and Human Service Assistants, AS' (Total Units 19.0 - 19.0); the heading reads 'Social Work and Human Services Assistant, AS'.",
+   "The equivalence note reads 'APC107, CDEV107/107H, PSYC156 are considered the same course', but the courses listed under it are APCD107, CDEV107, CDEV107H and PSYC157. PSYC157 was recorded as an alternative in that group; PSYC156 does not appear as a listed course. Please verify.",
+   "APCD107 is printed with Total Units 0.0 - 0.0; recorded as 0 units as printed.",
+   "CDEV107 is not in the closed list (catalog_addition true). The catalog says CDEV107 is now CDEVC1000, and CDEV107H is now CDEVC1000H.",
+   "PASV156 Family and Community Violence matches the title of closed-list PBLC 156; the subject prefix differs, so it is recorded as a catalog addition.",
+   "CNSL150 is titled 'Introduction to Human Services' in the catalog and 'Introduction to Social Work and Human Services' in the closed list.",
+   "CNSL161 carries 1.0 - 4.0 units, while the elective block states 3 units, so CNSL161 may need to be taken for at least 3 units to satisfy the block.",
+   "No general education pattern, degree total, or program learning outcomes are printed in this section.",
+   "The career entry is taken from 'pursue careers in the helping professions'. The description also mentions roles in city, state, and nonprofit organizations, which are employers rather than careers."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "5dd0d04bf8ee5b1e",
+ "extracted_run": "43387912036",
+ "source_sha": "6a01130ed6123f3f",
  "source_codes": [
   "APCD107",
   "CDEV107H",

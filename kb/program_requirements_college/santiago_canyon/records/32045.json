@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Spanish",
  "award": "A.A- T Degree",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=140",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=139",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9209,
+  "input_tokens": 8568,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9209,
-    "output_tokens": 3957,
+    "input_tokens": 8568,
+    "output_tokens": 2958,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 3957,
+  "output_tokens": 2958,
   "output_tokens_details": {
-   "thinking_tokens": 1955
+   "thinking_tokens": 986
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11598,
- "ms": 34438,
- "seconds": 34.6,
+ "cost_usd": 0.09343,
+ "ms": 24105,
+ "seconds": 24.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 28,
+   "placed": 33,
    "listed": 33,
-   "share": 0.848,
-   "missing": [
-    "SPAN101",
-    "SPAN101A",
-    "SPAN101B",
-    "SPAN101H",
-    "SPAN102"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -68,15 +62,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    13.0,
-    13.0
+    20.5,
+    23.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    18.0,
+    25.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 20.5-23.0; the catalog states 18.0-25.0"
    ]
   },
   "repeated": {
@@ -94,7 +91,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 13,
    "not_verbatim": [],
    "pass": true
   },
@@ -108,11 +105,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Spanish A.A- T Degree (heading not in the provided text; section begins on the previous page)",
+   "section_heading": "Spanish, AA-T",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,19 +127,63 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "healthcare",
+    "law enforcement",
+    "public safety",
+    "public service",
+    "education",
+    "U.S. government",
+    "translation and/or interpreting",
+    "business",
+    "international relations",
+    "food services",
+    "teaching English in Spanish speaking countries",
+    "hospitality",
+    "travel industry"
+   ]
   },
   "blocks": [
    {
-    "name": "Major Requirements (CORE) (heading not in the provided text)",
+    "name": "Major Requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 15,
+     "max": 22
     },
     "courses": [
+     {
+      "code": "SPAN101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SPAN101H",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN101A",
+        "units": 2.5,
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN101B",
+        "units": 2.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "SPAN110",
       "units": 5,
@@ -213,7 +254,7 @@
    },
    {
     "name": "Substitution List for Major Requirements (CORE)",
-    "rule": "recommended",
+    "rule": "choose_units",
     "minimum": null,
     "option_group": null,
     "stated": {
@@ -265,7 +306,13 @@
       "code": "ETHN101",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "SOC101",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
@@ -337,13 +384,6 @@
       "catalog_addition": false
      },
      {
-      "code": "SOC101",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "SOC116",
       "units": 3,
       "units_max": null,
@@ -361,39 +401,18 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "SPAN 101",
-    "why": "not in the text; likely on the previous page (139), which is cut off"
-   },
-   {
-    "code": "SPAN 101A",
-    "why": "not in the text; likely on the previous page (139), which is cut off"
-   },
-   {
-    "code": "SPAN 101B",
-    "why": "not in the text; likely on the previous page (139), which is cut off"
-   },
-   {
-    "code": "SPAN 101H",
-    "why": "not in the text; likely on the previous page (139), which is cut off"
-   },
-   {
-    "code": "SPAN 102",
-    "why": "not in the text; likely on the previous page (139), which is cut off"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The provided text begins mid-section on page 140; the program heading, description, total units, GE pattern, outcomes, careers and the start of the core (likely SPAN 101/101H/101A+101B and SPAN 102) are on page 139 and not in the text. total_units left null.",
-   "The core rows read as 'SPAN110' and 'SPAN201' followed by an 'SPAN111 or SPAN 202' row with its members; the 'or' header for SPAN110/SPAN201 is presumably on the previous page. SPAN110 or SPAN201 was recorded as one choice by analogy with the SPAN111 or SPAN 202 row; reviewer should verify against page 139.",
-   "The Substitution List is used only when a student places out of an elementary core course without units; its courses do not normally count toward the total (printed 0.0 units). It was recorded with rule 'recommended' so it is not counted; it is a conditional substitution list, not a recommendation.",
-   "Catalog note: ETHN 101 and SOC 101 are 'same as' and credit is not given for both; recorded as separate entries in catalog order.",
-   "Catalog note: students placing out of core courses must reach at least 18 total units in the major; suggested substitutions include courses in List A.",
-   "Text after the Spanish section belongs to Water and Wastewater Technology programs and was ignored."
+   "The first core entry is SPAN101 or SPAN101H, or the pair SPAN101A and SPAN101B together (2.5 + 2.5 units); recorded as one entry with SPAN101H, SPAN101A and SPAN101B as alternatives.",
+   "Catalog prints the core block under 'The following number of Units' with a total of 15.0-22.0; read as all required (SPAN101/101H or 101A+101B, SPAN102, SPAN110 or SPAN201, SPAN111 or SPAN202). A note refers to 'Option 1' though no option is labeled.",
+   "The Substitution List is conditional: used only when a student places out of an elementary core course without units, to reach at least 18 units in the major. Catalog prints its total as 0.0-0.0; no minimum recorded. Students placing out may also take additional List A courses.",
+   "ETHN 101 and SOC 101 are 'same as' courses (no credit for both); recorded as alternatives of one entry.",
+   "Honors twins (ANTH100H, COMM120H, GEOG100H, SOC100H, SPAN101H) recorded as alternatives.",
+   "No GE pattern, degree total, or program learning outcomes printed in this section."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "d680d6b457b8a1da",
+ "extracted_run": "43387912036",
+ "source_sha": "8b63af5855de354c",
  "source_codes": [
   "ANTH100",
   "ANTH100H",
@@ -415,6 +434,11 @@
   "SOC101",
   "SOC116",
   "SOC220",
+  "SPAN101",
+  "SPAN101A",
+  "SPAN101B",
+  "SPAN101H",
+  "SPAN102",
   "SPAN110",
   "SPAN111",
   "SPAN194",
@@ -424,5 +448,5 @@
   "SPAN202",
   "SPAN213"
  ],
- "source_coverage": 0.848
+ "source_coverage": 1.0
 }

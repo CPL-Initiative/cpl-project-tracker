@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Sociology",
  "award": "A.A. Degree",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=139",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=138",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11266,
+  "input_tokens": 7412,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11266,
-    "output_tokens": 2438,
+    "input_tokens": 7412,
+    "output_tokens": 2014,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2438,
+  "output_tokens": 2014,
   "output_tokens_details": {
-   "thinking_tokens": 833
+   "thinking_tokens": 568
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09382,
- "ms": 19781,
- "seconds": 20.0,
+ "cost_usd": 0.06993,
+ "ms": 19505,
+ "seconds": 19.7,
  "parts": null,
  "error": null,
  "score": {
@@ -55,34 +55,25 @@
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "ETHN101",
-    "GSWS101",
-    "PSYC240",
-    "SOC240H"
-   ],
-   "flagged": [
-    "ETHN101",
-    "GSWS101",
-    "PSYC240",
-    "SOC240H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    19.0,
+    18.0,
     20.5
    ],
    "stated": [
-    19.0,
-    20.5
+    18.0,
+    20.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -113,11 +104,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Sociology, AA-T",
+   "section_heading": "Sociology, AA",
    "measure": "units",
    "total_units": {
-    "min": 19,
-    "max": 20.5
+    "min": 18,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -144,8 +135,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -160,45 +151,49 @@
        }
       ],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Select two (2) courses from the following core requirements",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 7
+    },
+    "courses": [
      {
       "code": "SOC116",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select one (1) course from the following core requirements",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 4,
-     "max": 4.5
-    },
-    "courses": [
+     },
+     {
+      "code": "SOC120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "STATC1000",
       "units": 4,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STATC1000E",
-      "units": 4.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STATC1000H",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "STATC1000E",
+        "units": 4.5,
+        "catalog_addition": false
+       },
+       {
+        "code": "STATC1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      }
     ]
@@ -214,27 +209,7 @@
     },
     "courses": [
      {
-      "code": "ETHN101",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "SOC101",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "SOC115",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "SOC120",
+      "code": "SOC101",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -255,25 +230,7 @@
       "catalog_addition": false
      },
      {
-      "code": "PSYC240",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "SOC240",
-        "units": 3,
-        "catalog_addition": false
-       },
-       {
-        "code": "SOC240H",
-        "units": 3,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "SOC286",
+      "code": "SOC240",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -282,7 +239,7 @@
     ]
    },
    {
-    "name": "Select one (1) course from the following (List B)",
+    "name": "Select two (1) courses from the following (List B)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -318,24 +275,25 @@
       "catalog_addition": false
      },
      {
-      "code": "ETHN101",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "SOC101",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "GSWS101",
+      "code": "SOC101",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC286",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      },
      {
       "code": "PSYCC1000",
@@ -356,15 +314,16 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requested award is 'A.A. Degree' for Sociology; the only Sociology section in the text is 'Sociology, AA-T' (A.A. Degree for Transfer), whose courses match the closed list, so that section was recorded.",
-   "The catalog prints codes without a space (e.g. SOC100, STATC1000, ENGLC1001); these were matched to the closed-list codes (SOC 100, STAT C1000, ENGL C1001) and not marked as additions.",
-   "ETHN101 and SOC101 are printed as the same course (credit for only one), and PSYC 240 and SOC240/240H likewise; each set is recorded as one entry with alternatives. ETHN101 also appears with SOC101 in List B, where they are recorded the same way.",
-   "SOC101 appears in both List A and List B; the catalog does not say whether one course may satisfy both lists.",
-   "No degree total, general education pattern, program learning outcomes, or careers are printed in the Sociology section."
+   "Catalog prints codes without a space between subject and number (e.g. SOC100, STATC1000); these match closed-list codes (SOC 100, STAT C1000) and are marked catalog_addition false.",
+   "List B heading reads 'Select two (1) courses'; the printed block total (3.0 - 4.0) and the program total (18.0 - 20.0) indicate one course, so minimum is recorded as 1. Reviewer should confirm.",
+   "Honors twins (SOC100H, ANTH100H, ENGLC1001H, PSYCC1000H) and STATC1000E/STATC1000H are recorded as alternatives per the catalog notes that credit is awarded for only one of these courses.",
+   "Core block stated total is printed as 6.0 - 7.0 although choosing SOC116/SOC120 with STATC1000E would total 7.5 units.",
+   "SOC101 appears in both List A and List B; recorded in each block.",
+   "The section prints no program learning outcomes or careers, and no general education pattern or degree total."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "2e9d44770461db14",
+ "extracted_run": "43387912036",
+ "source_sha": "029aa7dba6a54669",
  "source_codes": [
   "ANTH100",
   "ANTH100H",

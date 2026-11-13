@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7104,
+  "input_tokens": 6155,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7104,
-    "output_tokens": 832,
+    "input_tokens": 6155,
+    "output_tokens": 566,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 832,
+  "output_tokens": 566,
   "output_tokens_details": {
-   "thinking_tokens": 360
+   "thinking_tokens": 133
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04506,
- "ms": 8862,
- "seconds": 9.0,
+ "cost_usd": 0.03594,
+ "ms": 6410,
+ "seconds": 6.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 2,
-   "share": 0.0,
-   "missing": [
-    "COSM40",
-    "COSM5"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -64,17 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    42.0,
+    42.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -101,15 +99,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Cosmetology, AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 42,
+    "max": 42
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,26 +127,45 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "COSM 40",
-    "why": "named only in the Cosmetology Certificate of Achievement section; no A.S. Degree section in the text"
-   },
-   {
-    "code": "COSM 5",
-    "why": "named only in the Cosmetology and Esthetician Certificate of Achievement sections; no A.S. Degree section in the text"
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 42,
+     "max": 42
+    },
+    "courses": [
+     {
+      "code": "COSM005",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COSM040",
+      "units": 35,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The excerpt has no section for the Cosmetology A.S. Degree. It shows only the Cosmetology Certificate of Achievement (Control Number 11948), the Esthetician Certificate of Achievement and the start of the Cal-GETC certificate. No A.S. requirements are recorded, and section_heading is left empty.",
-   "For reference, the Cosmetology Certificate of Achievement prints 42.0 total units: COSM005 Health and Safety (7.0) and COSM040 Cosmetology (35.0). The state file stores 0.5 units for each of these courses. The certificate was not recorded because it is a different award.",
-   "A reviewer should check whether the catalog prints the A.S. Degree on another page."
+   "The catalog prints codes as COSM005 and COSM040; these match closed-list COSM 5 and COSM 40.",
+   "The catalog gives 7.0 units for COSM005 and 35.0 for COSM040; the state file stores 0.5 units for each.",
+   "The section prints no general education pattern, no degree total, no program learning outcomes and no careers.",
+   "Total Units 42.0 is printed for both the program rules and the major requirements; it is recorded as the major total."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "6a5ad03a6d3ca724",
+ "extracted_run": "43387912036",
+ "source_sha": "f86b228abf53980e",
  "source_codes": [
   "COSM40",
   "COSM5"

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7277,
+  "input_tokens": 6633,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7277,
-    "output_tokens": 1325,
+    "input_tokens": 6633,
+    "output_tokens": 1362,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,58 +30,55 @@
     "model": null
    }
   ],
-  "output_tokens": 1325,
+  "output_tokens": 1362,
   "output_tokens_details": {
-   "thinking_tokens": 500
+   "thinking_tokens": 443
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05561,
- "ms": 12055,
- "seconds": 12.2,
+ "cost_usd": 0.05377,
+ "ms": 11758,
+ "seconds": 11.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "AEL51",
-    "AEL52",
-    "AEL53",
-    "AEL56",
-    "AEL57",
-    "AEL58",
-    "AEL59",
-    "AEL60",
-    "AEL61"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "AEL54",
+    "AEL55"
+   ],
+   "flagged": [
+    "AEL54",
+    "AEL55"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    46.5,
+    46.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    46.5,
+    46.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +95,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -108,15 +105,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Apprenticeship Electricity, Industrial, AS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 46.5,
+    "max": 46.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -134,56 +131,113 @@
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "electrical inside wiremen apprentices"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AEL 51",
-    "why": "A.S. section not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AEL 52",
-    "why": "A.S. section not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AEL 53",
-    "why": "A.S. section not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AEL 56",
-    "why": "A.S. section not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AEL 57",
-    "why": "A.S. section not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AEL 58",
-    "why": "A.S. section not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AEL 59",
-    "why": "A.S. section not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AEL 60",
-    "why": "A.S. section not in text; named only in the Certificate of Achievement section"
-   },
-   {
-    "code": "AEL 61",
-    "why": "A.S. section not in text; named only in the Certificate of Achievement section"
+    "name": "The following number of Credits",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AEL051",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL052",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL053",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL054",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AEL055",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AEL056",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL057",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL058",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL059",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL060",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL061",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The text has no section for the A.S. Degree in Apprenticeship Electricity, Industrial. It prints 'Apprenticeship Electricity, Industrial, CA - Certificate of Achievement' (Control Number 11985) and then 'Apprenticeship Electricity, Intelligent Transportation Systems Electrician, AS', a different program. The A.S. section is likely on another page, perhaps page 322 or 324, and should be checked.",
-   "For reference only, not recorded as this award's requirements: the Certificate of Achievement section requires all of AEL051-AEL061, each 4.5 credits except AEL061 at 1.5, Total Credits 46.5. That list includes AEL054 and AEL055 (Inside Wireman 4 and 5), which are not in the closed list.",
-   "The certificate description says successful completion may result in journeyworker status and meets state requirements as an electrician trainee program. It describes state-indentured electrical inside wiremen apprentices. No careers or outcomes were recorded because no A.S. section was found."
+   "Catalog prints codes without a space and with leading zeros (AEL051); they correspond to closed-list codes such as AEL 51.",
+   "AEL054 and AEL055 are not in the closed list and are recorded as catalog additions.",
+   "Program Rules total 46.5 credits recorded as total_units; the 11 listed courses sum to 49.5 units (10 x 4.5 + 1.5 = 46.5 only if one Inside Wireman course is excluded), so a reviewer should check the discrepancy.",
+   "No general education pattern, degree total, or program learning outcomes are printed in this section.",
+   "Career entry 'electrical inside wiremen apprentices' is taken from the program description; the text also mentions journeyworker status and an electrician trainee program."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "9401706f08708d5c",
+ "extracted_run": "43387912036",
+ "source_sha": "f5ab368b9cb79e8e",
  "source_codes": [
   "AEL51",
   "AEL52",

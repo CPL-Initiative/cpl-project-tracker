@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Kinesiology - Fitness and Active Lifestyle",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=119",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=118",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 15458,
+  "input_tokens": 9861,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 15458,
-    "output_tokens": 6022,
+    "input_tokens": 9861,
+    "output_tokens": 5582,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 6022,
+  "output_tokens": 5582,
   "output_tokens_details": {
-   "thinking_tokens": 2132
+   "thinking_tokens": 2102
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.18227,
- "ms": 48243,
- "seconds": 48.4,
+ "cost_usd": 0.15108,
+ "ms": 44071,
+ "seconds": 44.2,
  "parts": null,
  "error": null,
  "score": {
@@ -75,17 +75,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     20.0,
     24.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    20.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -109,15 +110,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Kinesiology - Fitness and Active Lifestyle, CA (heading not in supplied text; section read is the requirement list continuing at the top of page 119, before 'Control Number: 39917 Kinesiology - Health Promotion, AS')",
+   "section_heading": "Kinesiology - Fitness and Active Lifestyle, CA",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 20,
+    "max": 24
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -139,13 +140,13 @@
   },
   "blocks": [
    {
-    "name": "Required courses (block heading cut off before page 119)",
+    "name": "Certificate Requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 9,
+     "max": 9
     },
     "courses": [
      {
@@ -178,13 +179,13 @@
     ]
    },
    {
-    "name": "AQUATICS - Select one (1) unit from the following:",
+    "name": "Select five (5) units from the following. Must select one (1) unit course(s) from three (3) different areas: Aquatics, Combatives, Dance, Fitness, or Team Sports.",
     "rule": "choose_units",
-    "minimum": 1,
+    "minimum": 5,
     "option_group": null,
     "stated": {
-     "min": 1,
-     "max": 1
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -207,19 +208,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "COMBATIVES - Select one (1) unit from the following:",
-    "rule": "choose_units",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 1,
-     "max": 1
-    },
-    "courses": [
+     },
      {
       "code": "KIN 125A",
       "units": 1,
@@ -240,19 +229,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "DANCE - Select one (1) unit from the following:",
-    "rule": "choose_units",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 1,
-     "max": 1
-    },
-    "courses": [
+     },
      {
       "code": "DNCE 106A",
       "units": 1,
@@ -308,19 +285,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "FITNESS - Select one (1) unit from the following:",
-    "rule": "choose_units",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 1,
-     "max": 1
-    },
-    "courses": [
+     },
      {
       "code": "KIN 119",
       "units": 1,
@@ -358,13 +323,6 @@
      },
      {
       "code": "KIN 127C",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "KIN 128A",
       "units": 1,
       "units_max": null,
       "alternatives": [],
@@ -439,19 +397,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "TEAM SPORTS - Select one (1) unit from the following:",
-    "rule": "choose_units",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 1,
-     "max": 1
-    },
-    "courses": [
+     },
      {
       "code": "KIN 160A",
       "units": 1,
@@ -627,7 +573,7 @@
   "missing_explained": [
    {
     "code": "BIOL 139",
-    "why": "named only in the Health Promotion AS/CA sections, not in this section's electives"
+    "why": "not in the text"
    },
    {
     "code": "KIN 120A",
@@ -655,25 +601,25 @@
    }
   ],
   "notes": [
-   "The supplied text begins mid-section at the top of page 119; the program heading, description, unit range for completion, any outcomes/careers and the first part of the required-course block are on the previous page and not in the text. The requirement list before 'Control Number: 39917 Kinesiology - Health Promotion, AS' was read as the Fitness and Active Lifestyle Certificate of Achievement (programs appear in AS-then-CA order); reviewer should confirm it is the CA and not the AS, and check page 118 for additional required courses and the total.",
-   "total_units left null because the unit range for this award is not in the supplied text.",
-   "The PSYC choice is printed as 'Select one (1) PSYC course from the following: (Total Units 0.0 - 0.0)'; recorded as PSYC C1000 with honors alternative PSYC C1000H inside the required block. The 0.0 totals printed on sub-headings appear to be software artifacts and were not recorded as stated totals.",
-   "Activity rule printed: 'Select five (5) units from the following. Must select one (1) unit course(s) from three (3) different areas: Aquatics, Combatives, Dance, Fitness, or Team Sports.' Each area is printed with 'Select one (1) unit from the following: (Total Units 1.0 - 1.0)' and recorded as its own choose_units block of 1; this conflicts with the parent rule (5 units with at least three areas represented), so the exact distribution is ambiguous.",
-   "Catalog prints 1.0 unit for each KIN/DNCE activity course, while the state file stores 0.5 for the KIN activity courses; catalog units recorded.",
-   "KIN 128A is printed under both COMBATIVES and FITNESS and recorded in both blocks.",
-   "Honors twins (BIOL 109/109H, BIOL 109L/109HL, STAT C1000/C1000H) and STAT C1000E are printed as separate lines; recorded as alternatives of one entry. STAT C1000E (4.5 units) is not in the closed list.",
-   "NUTR 115 is not in the closed list (catalog addition).",
-   "Codes are printed without spaces (e.g., 'KIN100'); recorded with a space between subject and number to match the closed list."
+   "The catalog prints codes without spaces (e.g. KIN100, PSYCC1000); recorded with a space between subject and number.",
+   "The PSYC choice ('Select one (1) PSYC course from the following', printed Total Units 0.0 - 0.0) is an honors-twin choice; recorded inside the Certificate Requirements block as PSYC C1000 with PSYC C1000H as alternative, which makes the block total match the printed 9.0 units.",
+   "Activity block: catalog prints 'Total Units 0.0 - 0.0' for the five-unit selection, so stated is left null. Rule requires one-unit courses from three of the five areas (Aquatics, Combatives, Dance, Fitness, Team Sports); each area is printed with 'Select one (1) unit' (Total Units 1.0). Recorded as one choose_units 5 block with courses in catalog order; reviewer should check how the area constraint and the 5-unit minimum interact (5 area totals of 1 unit sum to 5).",
+   "KIN 128A (Basic Tai Chi) is listed under both COMBATIVES and FITNESS; recorded once.",
+   "Activity courses are printed at 1.0 unit each, while the state file stores 0.5 for the KIN activity courses; recorded as printed.",
+   "Honors twins BIOL 109H/BIOL 109HL and STAT C1000H, plus STAT C1000E (not in closed list, 4.5 units), recorded as alternatives in the electives block.",
+   "NUTR 115 and STAT C1000E are not in the closed list (catalog additions).",
+   "Total 20.0-24.0 = 9 core + 5 activity + 6-10 electives.",
+   "The description includes the sentence 'Upon completion of the Certificate of Achievement ... students will have a general understanding and appreciation of human movement for personal expression and wellness, and be able to apply fitness-based concepts.' It is not printed under an outcomes heading, so program.outcomes was left empty; reviewer may consider it a program outcome.",
+   "No careers named in the text."
   ]
  },
- "extracted_run": "43339249633",
- "source_sha": "08bd39e24872839a",
+ "extracted_run": "43387912036",
+ "source_sha": "51ac8e54e975730b",
  "source_codes": [
   "BIOL109",
   "BIOL109H",
   "BIOL109HL",
   "BIOL109L",
-  "BIOL139",
   "BIOL149",
   "BIOL229",
   "BIOL239",
@@ -726,5 +672,5 @@
   "STATC1000",
   "STATC1000H"
  ],
- "source_coverage": 0.903
+ "source_coverage": 0.887
 }
