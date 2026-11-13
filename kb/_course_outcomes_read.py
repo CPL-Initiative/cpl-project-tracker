@@ -599,6 +599,19 @@ def read_one(reader, course: dict) -> dict:
             "chars": len(body), "offered_at": offered_at(body), **got}
 
 
+def read_courses(reader, todo: list[dict], rows: list[dict], after=None) -> list[dict]:
+    """The full read's loop, apart from the browser so a test can drive it: each course read by read_one and filed
+    into rows as read (SLOs and objectives both, S649); after(n, course, row) runs once a row is filed."""
+    for n, course in enumerate(todo, 1):
+        row = read_one(reader, course)
+        rows.append(row)
+        print("%4d %-10s %s %-9s %d" % (n, course["code"], row["status"], row["shape"], len(row["outcomes"])),
+              flush=True)
+        if after:
+            after(n, course, row)
+    return rows
+
+
 def spread(items: list, n: int) -> list:
     """n items spread across the list (one per subject where it can)."""
     if n >= len(items):
@@ -701,11 +714,8 @@ def main(argv=None) -> int:
         probe.close()
         ctx = browser.new_context(user_agent=ua + " " + census.UA_SUFFIX, accept_downloads=False)
         reader = census.Reader(ctx.new_page(), ctx.request, a.delay)
-        for n, course in enumerate(todo, 1):
-            row = read_one(reader, course)
-            rows.append(row)
-            print("%4d %-10s %s %-9s %d" % (n, course["code"], row["status"], row["shape"], len(row["outcomes"])),
-                  flush=True)
+
+        def after(n, course, row):
             if a.trial:
                 stem = re.sub(r"[^A-Za-z0-9]+", "_", course["code"])
                 with open(os.path.join(out_dir, stem + ".txt"), "w") as f:
@@ -714,6 +724,8 @@ def main(argv=None) -> int:
                     f.write(reader.page.content())
             if n % SAVE_EVERY == 0:
                 save(False)
+
+        read_courses(reader, todo, rows, after)
         browser.close()
     save(True)
     print(json.dumps(summarize(rows), indent=1))

@@ -28,6 +28,7 @@ import glob
 import hashlib
 import json
 import os
+import re
 import sys
 import urllib.request
 
@@ -88,6 +89,53 @@ def read_files(host: str, slugs: list[str] | None = None) -> list[str]:
         if key not in best or int(d["run"]) > int(best[key][0]):
             best[key] = (d["run"], path)
     return [p for _, p in sorted(best.values(), key=lambda x: x[1])]
+
+
+def _heads(host: str) -> list[tuple[str, dict]]:
+    """Every slice file a host holds, complete or not, with its head (no rows)."""
+    out = []
+    for path in glob.glob(os.path.join(OUT_DIR, host, "read_*_p*of*.json")):
+        d = json.load(open(path))
+        out.append((path, {k: d.get(k) for k in ("run", "part", "of", "slugs", "complete")}))
+    return out
+
+
+def _slug_set(d: dict) -> frozenset:
+    return frozenset(x for x in str(d.get("slugs") or "").split(",") if x)
+
+
+def unknown_slugs(host: str, slugs: list[str]) -> list[str]:
+    """The --slugs entries no complete read of the host names (a typo must fail, never load the rest quietly)."""
+    named = set().union(*[_slug_set(d) for _, d in _heads(host) if d.get("complete")] or [set()])
+    return [s for s in slugs if s not in named]
+
+
+def whole_run_problem(host: str, slugs: list[str] | None, paths: list[str]) -> str | None:
+    """For a kind= load (the objectives reread): each read's newest run must be filed whole, every part 1..of
+    complete, and every chosen slice must come from it. Otherwise read_files would fall back to an earlier run's
+    slice for an unfinished part, and the load would post objectives for only some of the courses."""
+    want = set(slugs or [])
+    newest: dict[frozenset, tuple] = {}
+    for path, d in _heads(host):
+        key = _slug_set(d)
+        if want and not (want & key):
+            continue
+        run = int(d["run"])
+        if key not in newest or run > newest[key][0]:
+            newest[key] = (run, int(d["of"]), {})
+        if run == newest[key][0]:
+            newest[key][2][int(d["part"])] = (bool(d.get("complete")), int(d["of"]), path)
+    chosen = {os.path.abspath(p) for p in paths}
+    for key, (run, of, parts) in sorted(newest.items(), key=lambda kv: sorted(kv[0])):
+        for i in range(1, of + 1):
+            got = parts.get(i)
+            if not got or not got[0] or got[1] != of:
+                return ("read %s (%s): part %d of %d is %s; a kind= load takes one whole read run, never an earlier "
+                        "run's slice in its place" % (run, ",".join(sorted(key)), i, of,
+                                                      "not complete" if got else "not filed"))
+            if os.path.abspath(got[2]) not in chosen:
+                return "read %s part %d of %d is not among the chosen slices" % (run, i, of)
+    return None
 
 
 def colleges_for(host: str, row: dict, names: dict) -> list[str]:
@@ -189,7 +237,8 @@ def rollback_by_key(sent: list[dict]) -> str | None:
         return None
     kinds = sorted({r.get("kind") or "slo" for r in sent})
     pairs = sorted({(r["college"], str(r["read_run"])) for r in sent})
-    return ("delete from public.course_outcomes where kind in (%s) and (college, read_run) in (%s);"
+    return ("-- also removes rows an earlier load of these read runs inserted\n"
+            "delete from public.course_outcomes where kind in (%s) and (college, read_run) in (%s);"
             % (", ".join(_lit(k) for k in kinds), ", ".join("(%s, %s)" % (_lit(c), int(run)) for c, run in pairs)))
 
 
@@ -209,11 +258,13 @@ def receipt_of(host: str, run: str, paths: list[str], rows: list[dict], skipped:
         "inserted_keys": [k for res in results for k in res.get("inserted_keys") or []],
         "rollback": ("delete from public.course_outcomes where id in (%s);" % ", ".join(map(str, ids)))
                     if ids else None,
-        "rollback_by_key": rollback_by_key(sent),
-        "rollback_note": ("rollback deletes the ids the responses named. When error is set, a batch may have "
-                          "committed without its response: use rollback_by_key, which takes every row of the "
-                          "sent kinds and (college, read_run) pairs, including any an earlier load of the same "
-                          "read inserted."),
+        # Only when a batch failed: its response may be lost though it committed. On a clean load the ids are
+        # the whole record, and a key-scoped delete would also take rows an earlier load of the same read inserted.
+        "rollback_by_key_if_error": rollback_by_key(sent) if error else None,
+        "rollback_note": ("rollback deletes the ids the responses named. rollback_by_key_if_error is filed only "
+                          "when error is set: a batch may have committed without its response. It takes every "
+                          "row of the sent kinds and (college, read_run) pairs, including any an earlier load "
+                          "of the same read inserted."),
     }
 
 
@@ -226,10 +277,20 @@ def main(argv=None) -> int:
                     help="objective: post the objective rows only (the objectives reread); default every row")
     ap.add_argument("--slugs", default="", help="only the reads whose slugs name one of these (comma list)")
     a = ap.parse_args(argv)
-    paths = read_files(a.host, [x for x in a.slugs.split(",") if x])
+    slugs = [x.strip() for x in a.slugs.split(",") if x.strip()]
+    missing = unknown_slugs(a.host, slugs)
+    if missing:
+        print("--slugs names %s, which no complete read of %s names" % (", ".join(missing), a.host))
+        return 2
+    paths = read_files(a.host, slugs)
     if not paths:
         print("no complete read filed for %s" % a.host)
         return 2
+    if a.kind != "all":
+        problem = whole_run_problem(a.host, slugs, paths)
+        if problem:
+            print("kind=%s load refused: %s" % (a.kind, problem))
+            return 1
     rows, skipped = rows_from(paths, a.host)
     rows, held_back = only_kind(rows, a.kind)
     if a.kind != "all" and not rows:
@@ -240,6 +301,7 @@ def main(argv=None) -> int:
     colleges: dict[str, int] = {}
     for r in rows:
         colleges[r["college"]] = colleges.get(r["college"], 0) + 1
+    print("reads: %d (%s)" % (len(paths), ", ".join(re.sub(r"^read_|\.json$", "", os.path.basename(p)) for p in paths)))
     print("reads: %d; rows: %d (%s); skipped courses: %d; kind %s, held back %d"
           % (len(paths), len(rows), ", ".join("%s %d" % kv for kv in sorted(colleges.items())), len(skipped),
              a.kind, held_back))

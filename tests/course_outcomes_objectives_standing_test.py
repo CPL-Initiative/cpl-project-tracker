@@ -144,26 +144,27 @@ def _():
     assert got["objectives"] == [], got["objectives"]
 
 
-def newest_reads():
-    """Each host's newest complete read, by college slug: (host, slug) -> (system, read files)."""
+def newest_reads(out_dir=None):
+    """What the load would take for each college: (host, slug) -> the docs of load.read_files(host, [slug]), the
+    newest complete slice per part. A reread with an unfinished part keeps the earlier run's slice in view, as the
+    load would post it, so the guard sees the courses that slice leaves without objectives."""
+    out_dir = out_dir or OUT
+    saved = load.OUT_DIR
+    load.OUT_DIR = out_dir
     out = {}
-    for host_dir in sorted(glob.glob(os.path.join(OUT, "*"))):
-        host = os.path.basename(host_dir)
-        if not os.path.isdir(host_dir) or host.startswith("trial_"):
-            continue
-        by_slugs = {}
-        for path in glob.glob(os.path.join(host_dir, "read_*_p*of*.json")):
-            d = json.load(open(path))
-            if not d.get("complete"):
+    try:
+        for host_dir in sorted(glob.glob(os.path.join(out_dir, "*"))):
+            host = os.path.basename(host_dir)
+            if not os.path.isdir(host_dir) or host.startswith("trial_"):
                 continue
-            key = d.get("slugs") or host
-            if key not in by_slugs or int(d["run"]) > by_slugs[key][0]:
-                by_slugs[key] = (int(d["run"]), [])
-            if int(d["run"]) == by_slugs[key][0]:
-                by_slugs[key][1].append(d)
-        for slugs, (_, docs) in by_slugs.items():
-            for slug in slugs.split(","):
-                out[(host, slug)] = docs
+            slugs = set()
+            for _, d in load._heads(host):
+                if d.get("complete"):
+                    slugs |= load._slug_set(d)
+            for slug in sorted(slugs):
+                out[(host, slug)] = [json.load(open(p)) for p in load.read_files(host, [slug])]
+    finally:
+        load.OUT_DIR = saved
     return out
 
 
@@ -243,6 +244,12 @@ def _():
         assert s["load"] == ["host=%s" % s["host"], "kind=objective",
                              "slugs=%s" % ",".join(sorted(s["slugs"]))], s["load"]
         assert s["branch"].startswith("claude/slo-objectives-"), s["branch"]
+        # The reread repeats the first read's slugs string and part count, so its slices replace that read's.
+        first = glob.glob(os.path.join(OUT, s["host"], "read_%s_p1of*.json" % s["first_read"]))
+        assert len(first) == 1, (s["host"], s["first_read"])
+        fd = json.load(open(first[0]))
+        assert lines.get("slugs", lines.get("catalog")) == fd["slugs"], (s["host"], fd["slugs"])
+        assert int(lines["parts"]) == fd["of"], (s["host"], lines["parts"], fd["of"])
         assert os.path.isdir(os.path.join(OUT, s["host"])), s["host"]
     cccd = [s for s in steps if s["host"] == "cccd"]
     assert all("after" in s for s in cccd[1:]), "a second read on one host must wait for the first"
@@ -332,9 +339,11 @@ class FakeTable:
 
 def run_main(table, argv, batch=None):
     """load.main against the pinned Cuesta read and a fake table, receipts in a temp dir: (exit, receipt)."""
-    saved = (load.read_files, load._rpc, load.RECEIPTS, load.BATCH, os.environ.get("SUPABASE_SERVICE_KEY"))
+    saved = (load.read_files, load._rpc, load.RECEIPTS, load.BATCH, os.environ.get("SUPABASE_SERVICE_KEY"),
+             load.whole_run_problem)
     tmp = tempfile.mkdtemp(prefix="co_load_")
     load.read_files = lambda host, slugs=None: [CUESTA]
+    load.whole_run_problem = lambda host, slugs, paths: None  # a trial file is no run; the refusal has its own check
     load._rpc = table.rpc
     load.RECEIPTS = tmp
     if batch:
@@ -344,6 +353,7 @@ def run_main(table, argv, batch=None):
         code = load.main(argv)
     finally:
         load.read_files, load._rpc, load.RECEIPTS, load.BATCH = saved[:4]
+        load.whole_run_problem = saved[5]
         if saved[4] is None:
             os.environ.pop("SUPABASE_SERVICE_KEY", None)
         else:
@@ -368,6 +378,7 @@ def _():
     assert rec["kind"] == "objective" and rec["held_back"] == len(slo), (rec["held_back"], len(slo))
     assert rec["posted"] == len(obj) and rec["kept"] == 3, (rec["posted"], rec["kept"])
     assert sorted(k["id"] for k in rec["inserted_keys"]) == sorted(v["id"] for v in new)
+    assert rec["rollback_by_key_if_error"] is None and rec["error"] is None, "a key-scoped delete on a clean receipt"
     assert all(k["kind"] == "objective" for k in rec["inserted_keys"])
 
 
@@ -393,7 +404,7 @@ def _():
     held = len(table.rows)
     assert held == 10 and len(rec["inserted_keys"]) == 5, (held, len(rec["inserted_keys"]))  # 5 rows no id names
     assert rec["posted"] == 10, rec["posted"]  # the batches sent, the failed one included
-    assert _apply_delete(table, rec["rollback_by_key"]) == held and not table.rows, len(table.rows)
+    assert _apply_delete(table, rec["rollback_by_key_if_error"]) == held and not table.rows, len(table.rows)
 
 
 @check("rollback_by_key never reaches another kind or another read of the same college, and doubles a quote")
@@ -447,6 +458,102 @@ def _():
     got = cs.building_outcomes(tmp)
     want = sum(json.load(open(p))["summary"]["outcomes"] for p in one)
     assert got["facts"]["outcomes"] == want and got["facts"]["reads"] == len(one), (got["facts"], want)
+
+
+def _shasta_with_reread(tmp, part2_complete):
+    """Shasta's filed read, plus a reread (a newer run, objectives on every row) whose part 2 may be unfinished."""
+    dst = os.path.join(tmp, "shasta")
+    os.makedirs(dst)
+    for p in glob.glob(os.path.join(OUT, "shasta", "read_*_p*of*.json")):
+        shutil.copy(p, dst)
+        d = json.load(open(p))
+        d["run"] = str(int(d["run"]) + 1)
+        if d["part"] == 2:
+            d["complete"] = part2_complete
+        json.dump(d, open(os.path.join(dst, "read_%s_p%dof%d.json" % (d["run"], d["part"], d["of"])), "w"))
+    return int(d["run"])
+
+
+@check("PARTIAL REREAD: a kind= load refuses a read whose newest run has an unfinished part, naming it")
+def _():
+    tmp = tempfile.mkdtemp(prefix="co_part_")
+    saved = load.OUT_DIR
+    try:
+        run = _shasta_with_reread(tmp, part2_complete=False)
+        load.OUT_DIR = tmp
+        paths = load.read_files("shasta")
+        runs = sorted({json.load(open(p))["run"] for p in paths})
+        assert len(runs) == 2, runs  # the ordinary selection mixes the two runs
+        problem = load.whole_run_problem("shasta", [], paths)
+        assert problem and "part 2 of 2 is not complete" in problem and str(run) in problem, problem
+        code = load.main(["--host", "shasta", "--kind", "objective", "--dry"])
+        assert code == 1, code
+        # The guard sees what the load would take: the old part 2 stays in view.
+        docs = newest_reads(tmp)[("shasta", "shasta")]
+        assert sorted(d["run"] for d in docs) == runs, [d["run"] for d in docs]
+        shutil.rmtree(tmp)
+        tmp = tempfile.mkdtemp(prefix="co_part_")
+        _shasta_with_reread(tmp, part2_complete=True)
+        load.OUT_DIR = tmp
+        paths = load.read_files("shasta")
+        assert len(paths) == 2, paths
+        assert load.whole_run_problem("shasta", [], paths) is None
+        assert load.main(["--host", "shasta", "--kind", "objective", "--dry"]) == 0
+    finally:
+        load.OUT_DIR = saved
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+@check("--slugs: an entry no complete read names fails, naming it, even beside a good one")
+def _():
+    assert load.unknown_slugs("cccd", ["orange_coast", "golden_wset"]) == ["golden_wset"]
+    assert load.unknown_slugs("cccd", ["orange_coast", "golden_west"]) == []
+    assert load.main(["--host", "cccd", "--kind", "objective", "--slugs", "orange_coast,golden_wset", "--dry"]) == 2
+
+
+@check("the full read's loop (read_courses) files every row with the objectives keys")
+def _():
+    folder = os.path.dirname(CUESTA)
+    trial = json.load(open(CUESTA))["rows"][:3]
+
+    def fake(reader, url):
+        row = next(r for r in trial if r["report"] == url)
+        stem = re.sub(r"[^A-Za-z0-9]+", "_", row["code"])
+        return {"status": 200, "final_url": url, "title": row["code"],
+                "html": gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read(),
+                "body": open(os.path.join(folder, stem + ".txt")).read()}
+    saved = read.cor.load_full
+    read.cor.load_full = fake
+    seen = []
+    try:
+        rows = read.read_courses(None, [{"code": r["code"], "report": r["report"]} for r in trial], [],
+                                 lambda n, c, row: seen.append(n))
+    finally:
+        read.cor.load_full = saved
+    assert seen == [1, 2, 3] and len(rows) == 3, seen
+    assert all("objectives" in r and r["objectives"] for r in rows), [len(r.get("objectives") or []) for r in rows]
+    src = open(os.path.join(ROOT, "kb", "_course_outcomes_read.py")).read()
+    assert "read_courses(reader, todo, rows, after)" in src, "main() no longer reads through read_courses"
+
+
+@check("the Commons card counts a reread once whatever its slugs order or part count")
+def _():
+    cs = _mod("commons_status", "kb/_build_commons_status.py")
+    tmp = tempfile.mkdtemp(prefix="co_cs2_")
+    try:
+        dst = os.path.join(tmp, "kb", "course_outcomes", "rccd")
+        os.makedirs(dst)
+        old = glob.glob(os.path.join(OUT, "rccd", "read_*.json"))
+        for p in old:
+            shutil.copy(p, dst)
+        d = json.load(open(old[0]))
+        d.update(run="99999999999", part=1, of=1, slugs="moreno_valley,norco,riverside_city",
+                 summary={"outcomes": 7}, rows=[])
+        json.dump(d, open(os.path.join(dst, "read_99999999999_p1of1.json"), "w"))
+        got = cs.building_outcomes(tmp)
+        assert got["facts"]["outcomes"] == 7 and got["facts"]["reads"] == 1, got["facts"]
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
 
 
 @check("every list of what is collected from course outlines names objectives beside SLOs")
