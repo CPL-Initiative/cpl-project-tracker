@@ -20,8 +20,8 @@ this test guards the runner's half:
   D. A 503 that clears on the retry is no halt: the read goes on and files its records. A refused key (401)
      halts the same way.
   E. The wave's verdict names the halt; the one-college workflow's file step still needs extract to pass.
-  F. The pilot (kb/_program_requirements_extract.py, the deploy check's one-program read) stops red at a 503,
-     so a deploy check during an outage never reads as a clean run.
+  F. The pilot (kb/_program_requirements_extract.py, run by program-requirements-extract.yml on a dispatch or an
+     [extract] push) stops red at a 503, so a pilot run during an outage never reads as a clean run.
   G. (S648 review) Six workers halt the same way; a retry whose pause ends after another worker halted is never
      sent; paid usage a halting answer carries counts in extract_halt's cost_usd and the wave's run cost, and a
      retried program's record carries its first try's usage. A platform 503 (A) halts under its own cause.
@@ -33,6 +33,7 @@ import os
 import shutil
 import sys
 import tempfile
+import threading
 import time
 import urllib.error
 
@@ -227,12 +228,26 @@ try:
     dest5, out5, cns5 = college_dirs("six_workers")
     C.COLLEGE_DIR = os.path.dirname(dest5)
     before5 = snapshot(dest5)
-    X.call = lambda src, key, *a, **k: {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_timeout"}
-    rc5 = C.extract(out5, 0, 1, "43400000004", 6, dest5, None, None, halt_wait_s=0.01)
+    sent5, lock5 = [], threading.Lock()
+
+    def six(src, key, *a, **k):
+        cn = src["control_number"]
+        with lock5:
+            again = cn in sent5
+            sent5.append(cn)
+        if not again and cn in cns5[:6]:
+            # The six first answers come back 0.1 s apart, all inside the first pause, so every worker pauses; the
+            # first retry halts the read before the other five pauses end, and they must then send nothing more.
+            time.sleep(0.1 * cns5.index(cn))
+        return {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_timeout"}
+    X.call = six
+    rc5 = C.extract(out5, 0, 1, "43400000004", 6, dest5, None, None, halt_wait_s=1.0)
     ns5 = json.load(open(os.path.join(out5, "not_sent_0.json"))) if os.path.exists(os.path.join(out5, "not_sent_0.json")) else {}
     check("G ⭐ with six workers an all-503 read halts, keeps every filed record and lists every program not sent",
           rc5 == C.HALT_EXIT and snapshot(out5) == before5 and sorted(ns5.get("programs") or []) == cns5,
           "rc %r, %d records, not_sent %r" % (rc5, len(snapshot(out5)), ns5.get("programs")))
+    check("G ⭐ with six workers only the first program is retried: six first calls and one retry, no more",
+          len(sent5) == 7 and sorted(set(sent5)) == sorted(cns5[:6]) and sent5.count(cns5[0]) == 2, repr(sent5))
 
     # G. A worker whose pause ends after another worker halted the read sends nothing more (S648 review).
     dest6, out6, cns6 = college_dirs("late_retry")
@@ -280,6 +295,42 @@ try:
     r8 = json.load(open(os.path.join(out8, "records", cns8[0] + ".json")))
     check("G ⭐ a retried program's record carries the first try's paid usage, so its cost counts both",
           rc8 == 0 and abs((r8.get("cost_usd") or 0) - 5.0) < 1e-6, repr((rc8, r8.get("cost_usd"), r8.get("usage"))))
+
+    # G. Unpriced usage on a halting answer is priced as a record's is (X.cost): no dollars, counted apart. It is
+    # never the ceiling's dearest-model price, which would put $8 in the run's cost here. One answer carrying both
+    # tries counts once, as a record does (S648 review).
+    dest9, out9, cns9 = college_dirs("unpriced_halt")
+    C.COLLEGE_DIR = os.path.dirname(dest9)
+    X.call = lambda src, key, *a, **k: {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_timeout",
+                                        "model": "an-unpriced-fallback", "usage": PAID}
+    rc9 = C.extract(out9, 0, 1, "43400000008", 1, dest9, None, None, halt_wait_s=0.01)
+    h9, rcost9 = C.extract_halt(out9) or {}, W.run_cost(out9, "43400000008")
+    check("G ⭐ a halt's unpriced usage adds no dollars to cost_usd and is counted apart, in run_cost too",
+          rc9 == C.HALT_EXIT and h9.get("cost_usd") == 0 and h9.get("unpriced") == 1
+          and rcost9["cost_usd"] == 0 and rcost9["unpriced"] == 1, "halt %r, run_cost %r" % (h9, rcost9))
+
+    # G. The two tries answered on different models (the function's server-side fallback): each is priced on its
+    # own model and the dollars summed, never the summed usage at the retry's rate.
+    dest10, out10, cns10 = college_dirs("two_models")
+    C.COLLEGE_DIR = os.path.dirname(dest10)
+    X.PRICE["a-cheaper-model"] = {"input": 1.00, "output": 5.00, "cache_read": 0.05, "cache_write": 1.25}
+    seen10 = []
+
+    def two_models(src, key, *a, **k):
+        seen10.append(src["control_number"])
+        if len(seen10) == 1:
+            return {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_timeout",
+                    "model": "a-cheaper-model", "usage": PAID}                          # $1.00 at its own rate
+        return {"record": {"program": {}, "blocks": []}, "model": "claude-opus-5-5",
+                "usage": {"input_tokens": 0, "output_tokens": 50000}}               # $1.00
+    X.call = two_models
+    try:
+        rc10 = C.extract(out10, 0, 1, "43400000009", 1, dest10, None, None, halt_wait_s=0.01)
+    finally:
+        X.PRICE.pop("a-cheaper-model", None)
+    r10 = json.load(open(os.path.join(out10, "records", cns10[0] + ".json")))
+    check("G ⭐ two tries on two models are each priced on their own model: $2.00, not $5.00 at the retry's rate",
+          rc10 == 0 and abs((r10.get("cost_usd") or 0) - 2.0) < 1e-6, repr((rc10, r10.get("cost_usd"))))
 finally:
     X.call, C.COLLEGE_DIR = _saved[0], _saved[1]
     if _saved[2] is None:
@@ -302,7 +353,7 @@ check("E the one-college workflow's file step has no if:, so a halted extract (r
       file_step.strip().startswith("run: python3 kb/_program_requirements_college.py file") and "if:" not in file_step,
       file_step[:200])
 
-# ── F. The pilot (kb/_program_requirements_extract.py, the deploy check's 200 read) stops red at a halt ──
+# ── F. The pilot (kb/_program_requirements_extract.py, program-requirements-extract.yml's run) stops red at a halt ──
 _pilot = (X.load_sources, X.call, os.environ.get("SUPABASE_SERVICE_KEY"))
 try:
     os.environ["SUPABASE_SERVICE_KEY"] = "k"

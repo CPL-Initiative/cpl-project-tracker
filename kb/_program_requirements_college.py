@@ -4433,7 +4433,12 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     spend = {"usd": 0.0, "stopped": False}
     not_sent: list[str] = []
     halt: dict = {}
-    halt_paid = {"usd": 0.0}   # model usage carried by halting answers (paid parts of a read in parts)
+    # Model usage carried by halting answers (paid parts of a read in parts): priced as a record is, unpriced apart.
+    halt_paid = {"usd": 0.0, "unpriced": 0}
+
+    def priced(got: dict):
+        # A record's price (X.cost), or the per-try sum a retried call carries (_cost_usd, S648 review).
+        return got["_cost_usd"] if "_cost_usd" in got else X.cost(got.get("model"), got.get("usage"))
 
     def keep_filed(cn: str) -> None:
         # Not read: the filed record, if any, stays, so filing the run does not drop it.
@@ -4465,22 +4470,31 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 h = X.halt_of(got)
                 if earlier.get("usage"):
                     # A read in parts can answer 503 after its other parts were paid: the retry's record carries
-                    # that usage too, so the ceiling and the run's cost count it (S648 review).
-                    got = dict(got, usage=X._sum_usage([earlier, got]), model=got.get("model") or earlier.get("model"))
+                    # that usage too, so the ceiling and the run's cost count it (S648 review). The function's
+                    # server-side fallback can answer the two tries on different models, so each try is priced
+                    # on its own model and the dollars summed; either unpriced leaves the sum unpriced (None).
+                    c1, c2 = X.cost(earlier.get("model"), earlier.get("usage")), X.cost(got.get("model"), got.get("usage"))
+                    got = dict(got, usage=X._sum_usage([earlier, got]), model=got.get("model") or earlier.get("model"),
+                               _cost_usd=round(c1 + c2, 5) if c1 is not None and c2 is not None else None)
         if h:
             # The function answered 503 (its caller check could not reach the database) or 401 (the key was
             # refused): every program would answer the same, so the read stops here, sends nothing more, and
             # files no stub over a record (S647; run 43384599013 filed 121). The calls in flight finish.
             # Usage the halting answer carries (paid parts of a read in parts) still counts (S648 review).
-            charge = call_charge(X.cost(got.get("model"), got.get("usage")), got.get("usage"))
+            # cost_usd is priced as a record's is (X.cost; unpriced usage counted apart), so run_cost adds like to
+            # like; call_charge's dearest-model price is for the ceiling only.
+            price = priced(got)
             with kept_lock:
                 first = not halt
                 if first:
                     halt.update(h, control_number=src["control_number"])
                 not_sent.append(src["control_number"])
-                halt_paid["usd"] += charge
+                if isinstance(price, (int, float)):
+                    halt_paid["usd"] += price
+                elif got.get("usage"):
+                    halt_paid["unpriced"] += 1
                 if ceiling_usd is not None:
-                    spend["usd"] += charge
+                    spend["usd"] += call_charge(price, got.get("usage"))
             if first:
                 print("halted at %s: %s (HTTP %s%s). No further program is sent and no record is written "
                       "over; the filed records stay." % (
@@ -4490,7 +4504,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             return
         if ceiling_usd is not None:
             with kept_lock:
-                spend["usd"] += call_charge(X.cost(got.get("model"), got.get("usage")), got.get("usage"))
+                spend["usd"] += call_charge(priced(got), got.get("usage"))
                 if spend["usd"] >= ceiling_usd and not spend["stopped"]:
                     spend["stopped"] = True
                     print("ceiling: $%.2f reached at $%.2f; no further program is sent" % (ceiling_usd, spend["usd"]),
@@ -4512,7 +4526,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                "title": src["title"], "award": src.get("award"),
                "source_url": (src.get("source") or {}).get("url"), "record_shape": X.RECORD_SHAPE,
                "model": got.get("model"), "stop_reason": got.get("stop_reason"), "usage": got.get("usage"),
-               "cost_usd": X.cost(got.get("model"), got.get("usage")), "ms": got.get("ms"),
+               "cost_usd": priced(got), "ms": got.get("ms"),
                "seconds": round(time.time() - t0, 1), "parts": got.get("parts"), "error": got.get("error"), "score": sc,
                "record": rec, "extracted_run": run_id}
         if (src.get("source") or {}).get("text_sha"):
@@ -4562,7 +4576,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             # What stopped the read, for the wave's verdict and the job log (extract_halt).
             _write(os.path.join(out_dir, "extract_halt_%d.json" % shard),
                    dict(halt, run=run_id, shard=shard, not_sent=len(not_sent),
-                        cost_usd=round(halt_paid["usd"], 5)))
+                        cost_usd=round(halt_paid["usd"], 5), unpriced=halt_paid["unpriced"]))
         # A call that raises stops the step; the reads already paid for and kept are still filed
         # (the wave counts their cost from this file; S644 review).
         if kept_list:

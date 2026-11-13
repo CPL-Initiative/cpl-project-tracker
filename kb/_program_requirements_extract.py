@@ -365,7 +365,8 @@ def main(argv: list[str] | None = None) -> int:
         got = call(src, key)
         h = halt_of(got)
         if h:
-            # Every program would get the same answer, and the deploy check reads this run (S648): stop red.
+            # Every program would get the same answer, and program-requirements-extract.yml (a dispatch or an
+            # [extract] push) should show the outage as a red run, never a clean one (S648): stop red.
             print("::error::the pilot stopped at %s: %s (HTTP %s%s); %d programs not sent" % (
                 src["control_number"], h["cause"], h["status"], ", " + h["reason"] if h.get("reason") else "",
                 len(sources) - len(rows) - 1), flush=True)

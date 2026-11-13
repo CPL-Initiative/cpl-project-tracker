@@ -363,6 +363,7 @@ def run_cost(out_dir: str | None, run_id) -> dict:
     for path in sorted(glob.glob(os.path.join(out_dir or "", "extract_halt_*.json"))) if out_dir else []:
         h = _read(path) or {}
         cost += h.get("cost_usd") or 0
+        unpriced += h.get("unpriced") or 0
         halt = halt or h or None
     return {"extracted": len(mine), "cost_usd": round(cost, 2), "kept": len(kept_list), "unpriced": unpriced,
             "not_sent": sorted(not_sent), "halt": halt}
