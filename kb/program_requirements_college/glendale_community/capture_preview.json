@@ -5,14 +5,155 @@
  "catalog_year": "2026-2027",
  "programs": 317,
  "with_closed_list": 267,
- "started": "2026-11-13T02:56:44Z",
+ "started": "2026-11-13T03:51:45Z",
  "route": "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)",
  "coursedog": {
   "root": "https://catalog.glendale.edu",
+  "index_program_links": [
+   {
+    "text": "Administrative Medical Assistant",
+    "href": "https://catalog.glendale.edu/programs/NCAMA"
+   },
+   {
+    "text": "Certified Nursing Aide",
+    "href": "https://catalog.glendale.edu/programs/NCCNA"
+   },
+   {
+    "text": "Customer Service",
+    "href": "https://catalog.glendale.edu/programs/NCCS"
+   },
+   {
+    "text": "Drafting and Basic Design",
+    "href": "https://catalog.glendale.edu/programs/NCDBD"
+   },
+   {
+    "text": "Drafting and Basic Interior Design",
+    "href": "https://catalog.glendale.edu/programs/NCDBID"
+   },
+   {
+    "text": "Dental Administrative Assistant",
+    "href": "https://catalog.glendale.edu/programs/NCDFOC"
+   },
+   {
+    "text": "HSE Preparation",
+    "href": "https://catalog.glendale.edu/programs/NCGED"
+   },
+   {
+    "text": "General Office Clerk 1",
+    "href": "https://catalog.glendale.edu/programs/NCGOC1"
+   }
+  ],
   "search": "https://app.coursedog.com/api/v1/cm/glendale_peoplesoft_direct/programs/search/%24filters?catalogId=DkIRcSDQoTRqG0sgSLDS&skip=0&limit=250&sortBy=catalogDisplayName&effectiveDatesRange=2026-08-31%2C2026-08-31&columns=name%2Ctype%2CdegreeDesignation%2Ccontacts%2ClongName%2CcatalogDisplayName%2CtranscriptDescription%2CcatalogDescription%2CcatalogImageUrl%2CcipCode%2Ccampus%2Clevel",
   "listed": 261,
   "programs": 261,
   "errors": [],
+  "miss_answers": {
+   "ok 200": 210,
+   "unreachable 405": 50,
+   "not_found 404": 1
+  },
+  "miss_pages": [
+   {
+    "code": "NCAMA",
+    "url": "https://catalog.glendale.edu/programs/NCAMA",
+    "status": 200,
+    "access": "ok",
+    "final_url": "https://catalog.glendale.edu/programs/NCAMA/overview-aoYks",
+    "title": "NCAMA Program | Glendale Community College Catalog",
+    "h1": "Glendale Community College",
+    "error": null,
+    "text": "Skip to Main Content Catalog Home Academic Calendar Class Schedule Archived Catalogs Search . . . Courses Programs About Admissions & Academics Student Services Home / Programs / NCAMA - Administrativ",
+    "program_link_texts": [
+     "Skip to Main Content",
+     "NCAMA - Administrative Medical Assistant",
+     "Overview",
+     "Completion Requirements",
+     "Program Learning Outcomes"
+    ],
+    "clickables": [],
+    "tab_panels": []
+   },
+   {
+    "code": "NCCNA",
+    "url": "https://catalog.glendale.edu/programs/NCCNA",
+    "status": 200,
+    "access": "ok",
+    "final_url": "https://catalog.glendale.edu/programs/NCCNA/overview-aoYks",
+    "title": "NCCNA Program | Glendale Community College Catalog",
+    "h1": "Glendale Community College",
+    "error": null,
+    "text": "Skip to Main Content Catalog Home Academic Calendar Class Schedule Archived Catalogs Search . . . Courses Programs About Admissions & Academics Student Services Home / Programs / NCCNA - Certified Nur",
+    "program_link_texts": [
+     "Skip to Main Content",
+     "NCCNA - Certified Nursing Aide",
+     "Overview",
+     "Completion Requirements",
+     "Program Learning Outcomes"
+    ],
+    "clickables": [],
+    "tab_panels": []
+   },
+   {
+    "code": "NCCS",
+    "url": "https://catalog.glendale.edu/programs/NCCS",
+    "status": 200,
+    "access": "ok",
+    "final_url": "https://catalog.glendale.edu/programs/NCCS/overview-aoYks",
+    "title": "NCCS Program | Glendale Community College Catalog",
+    "h1": "Glendale Community College",
+    "error": null,
+    "text": "Skip to Main Content Catalog Home Academic Calendar Class Schedule Archived Catalogs Search . . . Courses Programs About Admissions & Academics Student Services Home / Programs / NCCS - Customer Servi",
+    "program_link_texts": [
+     "Skip to Main Content",
+     "NCCS - Customer Service",
+     "Overview",
+     "Completion Requirements",
+     "Program Learning Outcomes"
+    ],
+    "clickables": [],
+    "tab_panels": []
+   },
+   {
+    "code": "NCDBD",
+    "url": "https://catalog.glendale.edu/programs/NCDBD",
+    "status": 200,
+    "access": "ok",
+    "final_url": "https://catalog.glendale.edu/programs/NCDBD/overview-aoYks",
+    "title": "NCDBD Program | Glendale Community College Catalog",
+    "h1": "Glendale Community College",
+    "error": null,
+    "text": "Skip to Main Content Catalog Home Academic Calendar Class Schedule Archived Catalogs Search . . . Courses Programs About Admissions & Academics Student Services Home / Programs / NCDBD - Drafting and ",
+    "program_link_texts": [
+     "Skip to Main Content",
+     "NCDBD - Drafting and Basic Design",
+     "Overview",
+     "Completion Requirements",
+     "Program Learning Outcomes"
+    ],
+    "clickables": [],
+    "tab_panels": []
+   },
+   {
+    "code": "NCDBID",
+    "url": "https://catalog.glendale.edu/programs/NCDBID",
+    "status": 200,
+    "access": "ok",
+    "final_url": "https://catalog.glendale.edu/programs/NCDBID/overview-aoYks",
+    "title": "NCDBID Program | Glendale Community College Catalog",
+    "h1": "Glendale Community College",
+    "error": null,
+    "text": "Skip to Main Content Catalog Home Academic Calendar Class Schedule Archived Catalogs Search . . . Courses Programs About Admissions & Academics Student Services Home / Programs / NCDBID - Drafting and",
+    "program_link_texts": [
+     "Skip to Main Content",
+     "NCDBID - Drafting and Basic Interior Design",
+     "Overview",
+     "Completion Requirements",
+     "Program Learning Outcomes"
+    ],
+    "clickables": [],
+    "tab_panels": []
+   }
+  ],
   "requisites_suffix": null,
   "program_pages": 0,
   "direct": 0,
@@ -1132,7 +1273,7 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 263,
- "seconds": 1865.0,
+ "seconds": 1990.9,
  "found": 0,
  "by_method": {
   "no_closed_list": 50,
@@ -3293,5 +3434,5 @@
   "held_no_gain": [],
   "held_opens_on_list": []
  },
- "run": "43355259728"
+ "run": "43361595138"
 }
