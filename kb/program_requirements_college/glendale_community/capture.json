@@ -5,20 +5,12 @@
  "catalog_year": "2026-2027",
  "programs": 317,
  "with_closed_list": 267,
- "started": "2026-11-13T07:18:15Z",
+ "started": "2026-11-13T17:24:31Z",
  "route": "slow (the whole site read at 12 s between loads, stopping at the first challenge)",
  "slow": true,
  "coursedog": {
   "root": "https://catalog.glendale.edu",
   "index_program_links": [
-   {
-    "text": "Administrative Medical Assistant",
-    "href": "https://catalog.glendale.edu/programs/NCAMA"
-   },
-   {
-    "text": "Certified Nursing Aide",
-    "href": "https://catalog.glendale.edu/programs/NCCNA"
-   },
    {
     "text": "Customer Service",
     "href": "https://catalog.glendale.edu/programs/NCCS"
@@ -42,6 +34,14 @@
    {
     "text": "General Office Clerk 1",
     "href": "https://catalog.glendale.edu/programs/NCGOC1"
+   },
+   {
+    "text": "General Office Clerk II",
+    "href": "https://catalog.glendale.edu/programs/NCGOC2"
+   },
+   {
+    "text": "General Office Clerk III",
+    "href": "https://catalog.glendale.edu/programs/NCGOC3"
    }
   ],
   "index_program_links_n": 250,
@@ -84,6 +84,7 @@
   "programs": 261,
   "errors": [],
   "index_hrefs_used": 250,
+  "names_from_index": 13,
   "slow": {
    "delay_s": 12.0
   },
@@ -94,72 +95,78 @@
   "challenged": [],
   "catalog": [
    {
-    "code": "NCAMA",
-    "name": "NCAMA"
-   },
-   {
-    "code": "NCCNA",
-    "name": "NCCNA"
-   },
-   {
     "code": "NCCS",
-    "name": "NCCS"
+    "name": "Customer Service",
+    "control_number": "38973"
    },
    {
     "code": "NCDBD",
-    "name": "NCDBD"
+    "name": "Drafting and Basic Design",
+    "control_number": "40848"
    },
    {
     "code": "NCDBID",
-    "name": "NCDBID"
+    "name": "Drafting and Basic Interior Design",
+    "control_number": "42262"
    },
    {
     "code": "NCDFOC",
-    "name": "NCDFOC"
+    "name": "Dental Administrative Assistant",
+    "control_number": "24381"
    },
    {
     "code": "NCGED",
-    "name": "NCGED"
+    "name": "HSE Preparation",
+    "control_number": "24274"
    },
    {
     "code": "NCGOC1",
-    "name": "NCGOC1"
+    "name": "General Office Clerk 1",
+    "control_number": "24356"
    },
    {
     "code": "NCGOC2",
-    "name": "NCGOC2"
+    "name": "General Office Clerk II",
+    "control_number": "24377"
    },
    {
     "code": "NCGOC3",
-    "name": "NCGOC3"
+    "name": "General Office Clerk III",
+    "control_number": "24327"
    },
    {
     "code": "NCGW",
-    "name": "NCGW"
+    "name": "Google Workspace",
+    "control_number": "42263"
    },
    {
     "code": "NCHC",
-    "name": "NCHC"
+    "name": "Home Caregiver",
+    "control_number": "39932"
    },
    {
     "code": "NCHSD",
-    "name": "NCHSD"
+    "name": "High School Diploma",
+    "control_number": "31597"
    },
    {
     "code": "NCMA",
-    "name": "NCMA"
+    "name": "Medical Assistant",
+    "control_number": "39933"
    },
    {
     "code": "NCMOF",
-    "name": "NCMOF"
+    "name": "Microsoft Office 365 Fundamentals"
    },
    {
     "code": "NCAC1",
-    "name": "Account Clerk I - Noncredit Certificate"
+    "name": "Account Clerk I - Noncredit Certificate",
+    "control_number": "24011"
    },
    {
     "code": "NCAC2",
-    "name": "Account Clerk II - Noncredit Certificate"
+    "name": "Account Clerk II - Noncredit Certificate",
+    "control_number": "24161"
    },
    {
     "code": "NCAC3",
@@ -167,19 +174,23 @@
    },
    {
     "code": "ACCTG-AS",
-    "name": "Accounting - Associate of Science"
+    "name": "Accounting - Associate of Science",
+    "control_number": "02550"
    },
    {
     "code": "ACCTG-C",
-    "name": "Accounting - Certificate of Achievement"
+    "name": "Accounting - Certificate of Achievement",
+    "control_number": "19557"
    },
    {
     "code": "ASC-AS",
-    "name": "Addiction Studies Counseling - Associate of Science"
+    "name": "Addiction Studies Counseling - Associate of Science",
+    "control_number": "02570"
    },
    {
     "code": "ASC-C",
-    "name": "Addiction Studies Counseling - Certificate of Achievement"
+    "name": "Addiction Studies Counseling - Certificate of Achievement",
+    "control_number": "36155"
    },
    {
     "code": "AS-T ADMJ",
@@ -187,71 +198,93 @@
    },
    {
     "code": "AJ-AS",
-    "name": "Administration of Justice - Associate of Science"
+    "name": "Administration of Justice - Associate of Science",
+    "control_number": "02598"
    },
    {
     "code": "AJ-C",
-    "name": "Administration of Justice - Certificate of Achievement"
+    "name": "Administration of Justice - Certificate of Achievement",
+    "control_number": "21323"
    },
    {
     "code": "ADAST-AS",
-    "name": "Administrative Assistant - Associate of Science"
+    "name": "Administrative Assistant - Associate of Science",
+    "control_number": "11151"
    },
    {
     "code": "ADAST-C",
-    "name": "Administrative Assistant - Certificate of Achievement"
+    "name": "Administrative Assistant - Certificate of Achievement",
+    "control_number": "19562"
    },
    {
     "code": "AMA-AS",
-    "name": "Administrative Medical Assistant - Associate of Science"
+    "name": "Administrative Medical Assistant - Associate of Science",
+    "control_number": "35628"
    },
    {
     "code": "AMA-C",
-    "name": "Administrative Medical Assistant - Certificate of Achievement"
+    "name": "Administrative Medical Assistant - Certificate of Achievement",
+    "control_number": "35597"
+   },
+   {
+    "code": "NCAMA",
+    "name": "Administrative Medical Assistant - Noncredit Certificate",
+    "control_number": "40846"
    },
    {
     "code": "NCABE",
-    "name": "Adult Basic Education - Noncredit Certificate"
+    "name": "Adult Basic Education - Noncredit Certificate",
+    "control_number": "24010"
    },
    {
     "code": "NCESL3",
-    "name": "Advanced ESL - Noncredit Certificate"
+    "name": "Advanced ESL - Noncredit Certificate",
+    "control_number": "36102"
    },
    {
     "code": "AEBEM-C",
-    "name": "Advanced ESL: Business, Entrepreneurship & Management Pathway - Certificate of Achievement"
+    "name": "Advanced ESL: Business, Entrepreneurship & Management Pathway - Certificate of Achievement",
+    "control_number": "44360"
    },
    {
     "code": "AEHWPS-C",
-    "name": "Advanced ESL: Health, Wellness & Public Safety Pathway - Certificate of Achievement"
+    "name": "Advanced ESL: Health, Wellness & Public Safety Pathway - Certificate of Achievement",
+    "control_number": "44484"
    },
    {
     "code": "AEITA-C",
-    "name": "Advanced ESL: Industrial Technology & Aviation Pathway - Certificate of Achievement"
+    "name": "Advanced ESL: Industrial Technology & Aviation Pathway - Certificate of Achievement",
+    "control_number": "44485"
    },
    {
     "code": "AELC-C",
-    "name": "Advanced ESL: Language & Communication Pathway - Certificate of Achievement"
+    "name": "Advanced ESL: Language & Communication Pathway - Certificate of Achievement",
+    "control_number": "44486"
    },
    {
     "code": "AEPPP-C",
-    "name": "Advanced ESL: People, Power & Perspective Pathway - Certificate of Achievement"
+    "name": "Advanced ESL: People, Power & Perspective Pathway - Certificate of Achievement",
+    "control_number": "44487"
    },
    {
     "code": "AESTEM-C",
-    "name": "Advanced ESL: STEM Pathway - Certificate of Achievement"
+    "name": "Advanced ESL: STEM Pathway - Certificate of Achievement",
+    "control_number": "44488"
    },
    {
     "code": "AEVPA-C",
-    "name": "Advanced ESL: Visual & Performing Arts Pathway - Certificate of Achievement"
+    "name": "Advanced ESL: Visual & Performing Arts Pathway - Certificate of Achievement",
+    "control_number": "44489"
    },
    {
     "code": "AVGD-AS",
-    "name": "Animation, Visual Effects, and Game Design - Associate of Science"
+    "name": "Animation, Visual Effects, and Game Design - Associate of Science",
+    "control_number": "10412"
    },
    {
     "code": "AVGD-C",
-    "name": "Animation, Visual Effects, and Game Design - Certificate of Achievement"
+    "name": "Animation, Visual Effects, and Game Design - Certificate of Achievement",
+    "control_number": "21304"
    },
    {
     "code": "AA-T ANTHR",
@@ -259,11 +292,13 @@
    },
    {
     "code": "AD&D-AS",
-    "name": "Architectural Drafting & Design - Associate of Science"
+    "name": "Architectural Drafting & Design - Associate of Science",
+    "control_number": "02547"
    },
    {
     "code": "AD&D-C",
-    "name": "Architectural Drafting & Design - Certificate of Achievement"
+    "name": "Architectural Drafting & Design - Certificate of Achievement",
+    "control_number": "21299"
    },
    {
     "code": "ARMNL - AA",
@@ -275,7 +310,8 @@
    },
    {
     "code": "ART-C",
-    "name": "Art - Certificate of Achievement"
+    "name": "Art - Certificate of Achievement",
+    "control_number": "19572"
    },
    {
     "code": "AH AA-T",
@@ -283,19 +319,23 @@
    },
    {
     "code": "ATAD-AS",
-    "name": "Aviation Administration - Associate of Science"
+    "name": "Aviation Administration - Associate of Science",
+    "control_number": "02565"
    },
    {
     "code": "ATAD-C",
-    "name": "Aviation Administration - Certificate of Achievement"
+    "name": "Aviation Administration - Certificate of Achievement",
+    "control_number": "19579"
    },
    {
     "code": "NCESL1",
-    "name": "Beginning ESL - Noncredit Certificate"
+    "name": "Beginning ESL - Noncredit Certificate",
+    "control_number": "24042"
    },
    {
     "code": "BIO-AS",
-    "name": "Biological Sciences - Associate of Science"
+    "name": "Biological Sciences - Associate of Science",
+    "control_number": "02548"
    },
    {
     "code": "BIO AS-T",
@@ -303,19 +343,23 @@
    },
    {
     "code": "BT-AS",
-    "name": "Biotechnology - Associate of Science"
+    "name": "Biotechnology - Associate of Science",
+    "control_number": "41767"
    },
    {
     "code": "BT-C",
-    "name": "Biotechnology - Certificate of Achievement"
+    "name": "Biotechnology - Certificate of Achievement",
+    "control_number": "41775"
    },
    {
     "code": "BTRA-C",
-    "name": "Biotechnology Research Lab Assistant - Certificate of Achievement"
+    "name": "Biotechnology Research Lab Assistant - Certificate of Achievement",
+    "control_number": "41768"
    },
    {
     "code": "BTRT-C",
-    "name": "Biotechnology Research Lab Technician - Certificate of Achievement"
+    "name": "Biotechnology Research Lab Technician - Certificate of Achievement",
+    "control_number": "41776"
    },
    {
     "code": "BA-AA",
@@ -323,123 +367,158 @@
    },
    {
     "code": "BA2.0-AST",
-    "name": "Business Administration 2.0 - Associate in Science for Transfer"
+    "name": "Business Administration 2.0 - Associate in Science for Transfer",
+    "control_number": "43038"
    },
    {
     "code": "BIW-C",
-    "name": "Business Information Worker (BIW) - Certificate of Achievement"
+    "name": "Business Information Worker (BIW) - Certificate of Achievement",
+    "control_number": "36580"
    },
    {
     "code": "CCAM-C",
-    "name": "CNC & CAM 3 Axis Mill - Certificate of Achievement"
+    "name": "CNC & CAM 3 Axis Mill - Certificate of Achievement",
+    "control_number": "45996"
    },
    {
     "code": "CCLY-C",
-    "name": "CNC & CAM Lathe Y-Axis - Certificate of Achievement"
+    "name": "CNC & CAM Lathe Y-Axis - Certificate of Achievement",
+    "control_number": "46004"
    },
    {
     "code": "CCMA-C",
-    "name": "CNC & CAM Mill Advanced - Certificate of Achievement"
+    "name": "CNC & CAM Mill Advanced - Certificate of Achievement",
+    "control_number": "46050"
    },
    {
     "code": "CALGETC",
-    "name": "Cal-GETC - Certificate of Achievement"
+    "name": "Cal-GETC - Certificate of Achievement",
+    "control_number": "45068"
    },
    {
     "code": "CER-AS",
-    "name": "Ceramics - Associate of Science"
+    "name": "Ceramics - Associate of Science",
+    "control_number": "11175"
    },
    {
     "code": "CER-C",
-    "name": "Ceramics - Certificate of Achievement"
+    "name": "Ceramics - Certificate of Achievement",
+    "control_number": "21314"
+   },
+   {
+    "code": "NCCNA",
+    "name": "Certified Nursing Aide - Noncredit Certificate",
+    "control_number": "40847"
    },
    {
     "code": "CDITT-AS",
-    "name": "Child Development: Infant/Toddler - Associate of Science"
+    "name": "Child Development: Infant/Toddler - Associate of Science",
+    "control_number": "11189"
    },
    {
     "code": "CDITT-C",
-    "name": "Child Development: Infant/Toddler - Certificate of Achievement"
+    "name": "Child Development: Infant/Toddler - Certificate of Achievement",
+    "control_number": "19578"
    },
    {
     "code": "CDMT-AS",
-    "name": "Child Development: Master Teacher - Associate of Science"
+    "name": "Child Development: Master Teacher - Associate of Science",
+    "control_number": "11191"
    },
    {
     "code": "CDMT-C",
-    "name": "Child Development: Master Teacher - Certificate of Achievement"
+    "name": "Child Development: Master Teacher - Certificate of Achievement",
+    "control_number": "19575"
    },
    {
     "code": "CDSACT-AS",
-    "name": "Child Development: School-Age Care - Associate of Science"
+    "name": "Child Development: School-Age Care - Associate of Science",
+    "control_number": "11190"
    },
    {
     "code": "CDSACT-C",
-    "name": "Child Development: School-Age Care - Certificate of Achievement"
+    "name": "Child Development: School-Age Care - Certificate of Achievement",
+    "control_number": "19576"
    },
    {
     "code": "CDSS-AS",
-    "name": "Child Development: Site Supervisor - Associate of Science"
+    "name": "Child Development: Site Supervisor - Associate of Science",
+    "control_number": "11192"
    },
    {
     "code": "CDTP-AS",
-    "name": "Child Development: Teacher - Associate of Science"
+    "name": "Child Development: Teacher - Associate of Science",
+    "control_number": "02599"
    },
    {
     "code": "CDTP-C",
-    "name": "Child Development: Teacher - Certificate of Achievement"
+    "name": "Child Development: Teacher - Certificate of Achievement",
+    "control_number": "19574"
    },
    {
     "code": "CS&DT-AA",
-    "name": "Choreographic Studies & Dance Technique - Associate of Arts"
+    "name": "Choreographic Studies & Dance Technique - Associate of Arts",
+    "control_number": "10055"
    },
    {
     "code": "CS&DT-AS",
-    "name": "Choreographic Studies & Dance Technique - Associate of Science"
+    "name": "Choreographic Studies & Dance Technique - Associate of Science",
+    "control_number": "11177"
    },
    {
     "code": "CS&DT-C",
-    "name": "Choreographic Studies & Dance Technique - Certificate of Achievement"
+    "name": "Choreographic Studies & Dance Technique - Certificate of Achievement",
+    "control_number": "21317"
    },
    {
     "code": "CCF-C",
-    "name": "Cloud Computing - Certificate of Achievement"
+    "name": "Cloud Computing - Certificate of Achievement",
+    "control_number": "41379"
    },
    {
     "code": "COM2.0-AAT",
-    "name": "Communication Studies 2.0 - Associate in Arts for Transfer"
+    "name": "Communication Studies 2.0 - Associate in Arts for Transfer",
+    "control_number": "44951"
    },
    {
     "code": "CIS-AS",
-    "name": "Computer Information Systems - Associate of Science"
+    "name": "Computer Information Systems - Associate of Science",
+    "control_number": "37960"
    },
    {
     "code": "CIS-C",
-    "name": "Computer Information Systems - Certificate of Achievement"
+    "name": "Computer Information Systems - Certificate of Achievement",
+    "control_number": "21305"
    },
    {
     "code": "CN-CERT",
-    "name": "Computer Networking - Certificate of Achievement"
+    "name": "Computer Networking - Certificate of Achievement",
+    "control_number": "41650"
    },
    {
     "code": "CP-C",
-    "name": "Computer Programmer - Certificate of Achievement"
+    "name": "Computer Programmer - Certificate of Achievement",
+    "control_number": "11161"
    },
    {
     "code": "CS-AS",
-    "name": "Computer Science - Associate of Science"
+    "name": "Computer Science - Associate of Science",
+    "control_number": "11159"
    },
    {
     "code": "CS-C",
-    "name": "Computer Science - Certificate of Achievement"
+    "name": "Computer Science - Certificate of Achievement",
+    "control_number": "21306"
    },
    {
     "code": "CST-AS",
-    "name": "Computer Software Technician - Associate of Science"
+    "name": "Computer Software Technician - Associate of Science",
+    "control_number": "11162"
    },
    {
     "code": "CST-C",
-    "name": "Computer Software Technician - Certificate of Achievement"
+    "name": "Computer Software Technician - Certificate of Achievement",
+    "control_number": "21307"
    },
    {
     "code": "CW - C",
@@ -447,35 +526,43 @@
    },
    {
     "code": "CYBERSP-C",
-    "name": "Cybersecurity Specialist - Certificate of Achievement"
+    "name": "Cybersecurity Specialist - Certificate of Achievement",
+    "control_number": "41651"
    },
    {
     "code": "DT-AS",
-    "name": "Dance Teaching - Associate of Science"
+    "name": "Dance Teaching - Associate of Science",
+    "control_number": "19111"
    },
    {
     "code": "DT-C",
-    "name": "Dance Teaching - Certificate of Achievement"
+    "name": "Dance Teaching - Certificate of Achievement",
+    "control_number": "19110"
    },
    {
     "code": "DATA-C",
-    "name": "Data Analytics - Certificate of Achievement"
+    "name": "Data Analytics - Certificate of Achievement",
+    "control_number": "45101"
    },
    {
     "code": "DS-AS",
-    "name": "Data Science - Associate of Science"
+    "name": "Data Science - Associate of Science",
+    "control_number": "44640"
    },
    {
     "code": "DSS-AS",
-    "name": "Dietetic Services Supervisor - Associate of Science"
+    "name": "Dietetic Services Supervisor - Associate of Science",
+    "control_number": "11193"
    },
    {
     "code": "DSS-C",
-    "name": "Dietetic Services Supervisor - Certificate of Achievement"
+    "name": "Dietetic Services Supervisor - Certificate of Achievement",
+    "control_number": "21320"
    },
    {
     "code": "DCS-AS",
-    "name": "Digital Content Specialist - Associate of Science"
+    "name": "Digital Content Specialist - Associate of Science",
+    "control_number": "42738"
    },
    {
     "code": "DCS - C",
@@ -483,27 +570,33 @@
    },
    {
     "code": "DP-AS",
-    "name": "Digital Photography - Associate of Science"
+    "name": "Digital Photography - Associate of Science",
+    "control_number": "42126"
    },
    {
     "code": "DP-C",
-    "name": "Digital Photography - Certificate of Achievement"
+    "name": "Digital Photography - Certificate of Achievement",
+    "control_number": "41827"
    },
    {
     "code": "DIGPT-C",
-    "name": "Digital Photography Technician - Certificate of Achievement"
+    "name": "Digital Photography Technician - Certificate of Achievement",
+    "control_number": "41826"
    },
    {
     "code": "DFP-AA",
-    "name": "Documentary Film Production - Associate of Arts"
+    "name": "Documentary Film Production - Associate of Arts",
+    "control_number": "44568"
    },
    {
     "code": "DFP-C",
-    "name": "Documentary Film Production - Certificate of Achievement"
+    "name": "Documentary Film Production - Certificate of Achievement",
+    "control_number": "44569"
    },
    {
     "code": "DRNP-C",
-    "name": "Drone Photography - Certificate of Achievement"
+    "name": "Drone Photography - Certificate of Achievement",
+    "control_number": "41828"
    },
    {
     "code": "ECE AS-T",
@@ -511,67 +604,83 @@
    },
    {
     "code": "ECON-AAT",
-    "name": "Economics - Associate in Arts for Transfer"
+    "name": "Economics - Associate in Arts for Transfer",
+    "control_number": "39285"
    },
    {
     "code": "EET-AS",
-    "name": "Electronics Technology Technician - Associate of Science"
+    "name": "Electronics Technology Technician - Associate of Science",
+    "control_number": "09482"
    },
    {
     "code": "EET-C",
-    "name": "Electronics Technology Technician - Certificate of Achievement"
+    "name": "Electronics Technology Technician - Certificate of Achievement",
+    "control_number": "21310"
    },
    {
     "code": "ETE-AAT",
-    "name": "Elementary Teacher Education - Associate in Arts for Transfer"
+    "name": "Elementary Teacher Education - Associate in Arts for Transfer",
+    "control_number": "37952"
    },
    {
     "code": "ENTA-C",
-    "name": "EnTech Audio - Certificate of Achievement"
+    "name": "EnTech Audio - Certificate of Achievement",
+    "control_number": "46051"
    },
    {
     "code": "ENTG-C",
-    "name": "EnTech General - Certificate of Achievement"
+    "name": "EnTech General - Certificate of Achievement",
+    "control_number": "46054"
    },
    {
     "code": "ENTL-C",
-    "name": "EnTech Lighting - Certificate of Achievement"
+    "name": "EnTech Lighting - Certificate of Achievement",
+    "control_number": "46052"
    },
    {
     "code": "ETCDD-AS",
-    "name": "Engineering Technology-CAD - Associate of Science"
+    "name": "Engineering Technology-CAD - Associate of Science",
+    "control_number": "36419"
    },
    {
     "code": "ETCDD-C",
-    "name": "Engineering Technology–CAD - Certificate of Achievement"
+    "name": "Engineering Technology–CAD - Certificate of Achievement",
+    "control_number": "19569"
    },
    {
     "code": "CE-AS",
-    "name": "Engineering: Civil Engineering - Associate of Science"
+    "name": "Engineering: Civil Engineering - Associate of Science",
+    "control_number": "37855"
    },
    {
     "code": "CE-C",
-    "name": "Engineering: Civil Engineering - Certificate of Achievement"
+    "name": "Engineering: Civil Engineering - Certificate of Achievement",
+    "control_number": "36416"
    },
    {
     "code": "COMPEN-AS",
-    "name": "Engineering: Computer Engineering - Associate of Science"
+    "name": "Engineering: Computer Engineering - Associate of Science",
+    "control_number": "37854"
    },
    {
     "code": "EE-AS",
-    "name": "Engineering: Electrical Engineering - Associate in Science"
+    "name": "Engineering: Electrical Engineering - Associate in Science",
+    "control_number": "37856"
    },
    {
     "code": "EE-C",
-    "name": "Engineering: Electrical Engineering - Certificate of Achievement"
+    "name": "Engineering: Electrical Engineering - Certificate of Achievement",
+    "control_number": "36536"
    },
    {
     "code": "ME-AS",
-    "name": "Engineering: Mechanical Engineering - Associate of Science"
+    "name": "Engineering: Mechanical Engineering - Associate of Science",
+    "control_number": "37857"
    },
    {
     "code": "ME-C",
-    "name": "Engineering: Mechanical, Aerospace, and Manufacturing Engineering - Certificate of Achievement"
+    "name": "Engineering: Mechanical, Aerospace, and Manufacturing Engineering - Certificate of Achievement",
+    "control_number": "36424"
    },
    {
     "code": "ENGL AA-T",
@@ -579,51 +688,63 @@
    },
    {
     "code": "ENG-AA",
-    "name": "English - Associate of Arts"
+    "name": "English - Associate of Arts",
+    "control_number": "02587"
    },
    {
     "code": "ENG:CW-AA",
-    "name": "English: Creative Writing - Associate of Arts"
+    "name": "English: Creative Writing - Associate of Arts",
+    "control_number": "38144"
    },
    {
     "code": "EA-AA",
-    "name": "Entertainment Art - Associate of Arts"
+    "name": "Entertainment Art - Associate of Arts",
+    "control_number": "12502"
    },
    {
     "code": "E/SB-AS",
-    "name": "Entrepreneurship/Small Business - Associate of Science"
+    "name": "Entrepreneurship/Small Business - Associate of Science",
+    "control_number": "11144"
    },
    {
     "code": "E/SBI-C",
-    "name": "Entrepreneurship/Small Business I - Certificate of Achievement"
+    "name": "Entrepreneurship/Small Business I - Certificate of Achievement",
+    "control_number": "45399"
    },
    {
     "code": "E/SBII-C",
-    "name": "Entrepreneurship/Small Business II - Certificate of Achievement"
+    "name": "Entrepreneurship/Small Business II - Certificate of Achievement",
+    "control_number": "19560"
    },
    {
     "code": "FS-AA",
-    "name": "Film Studies - Associate of Arts"
+    "name": "Film Studies - Associate of Arts",
+    "control_number": "44570"
    },
    {
     "code": "FS-C",
-    "name": "Film Studies - Certificate of Achievement"
+    "name": "Film Studies - Certificate of Achievement",
+    "control_number": "44571"
    },
    {
     "code": "FTP-C",
-    "name": "Film and Television Production - Certificate of Achievement"
+    "name": "Film and Television Production - Certificate of Achievement",
+    "control_number": "46053"
    },
    {
     "code": "FTM-AA",
-    "name": "Film, Television and Media Arts - Associate of Arts"
+    "name": "Film, Television and Media Arts - Associate of Arts",
+    "control_number": "02612"
    },
    {
     "code": "FTEM-AST",
-    "name": "Film, Television, and Electronic Media - Associate in Science for Transfer"
+    "name": "Film, Television, and Electronic Media - Associate in Science for Transfer",
+    "control_number": "36270"
    },
    {
     "code": "FP&I-AS",
-    "name": "Financial Planning & Investment - Associate of Science"
+    "name": "Financial Planning & Investment - Associate of Science",
+    "control_number": "02551"
    },
    {
     "code": "FP&II-C",
@@ -631,31 +752,38 @@
    },
    {
     "code": "FP&III-C",
-    "name": "Financial Planning & Investment II - Certificate of Achievement"
+    "name": "Financial Planning & Investment II - Certificate of Achievement",
+    "control_number": "19558"
    },
    {
     "code": "FT-AS",
-    "name": "Fire Technology - Associate of Science"
+    "name": "Fire Technology - Associate of Science",
+    "control_number": "02602"
    },
    {
     "code": "FT-C",
-    "name": "Fire Technology - Certificate of Achievement"
+    "name": "Fire Technology - Certificate of Achievement",
+    "control_number": "19581"
    },
    {
     "code": "FITS-AS",
-    "name": "Fitness Specialist - Associate of Science"
+    "name": "Fitness Specialist - Associate of Science",
+    "control_number": "39905"
    },
    {
     "code": "FITS-C",
-    "name": "Fitness Specialist - Certificate of Achievement"
+    "name": "Fitness Specialist - Certificate of Achievement",
+    "control_number": "12574"
    },
    {
     "code": "FA-C",
-    "name": "Flight Attendant - Certificate of Achievement"
+    "name": "Flight Attendant - Certificate of Achievement",
+    "control_number": "02615"
    },
    {
     "code": "FLS-AA",
-    "name": "Foreign Languages - Associate of Arts"
+    "name": "Foreign Languages - Associate of Arts",
+    "control_number": "39406"
    },
    {
     "code": "FRENL - AA",
@@ -667,19 +795,23 @@
    },
    {
     "code": "GB-AS",
-    "name": "General Business - Associate of Science"
+    "name": "General Business - Associate of Science",
+    "control_number": "11143"
    },
    {
     "code": "GB-C",
-    "name": "General Business - Certificate of Achievement"
+    "name": "General Business - Certificate of Achievement",
+    "control_number": "19555"
    },
    {
     "code": "GO-AS",
-    "name": "General Office - Associate of Science"
+    "name": "General Office - Associate of Science",
+    "control_number": "02556"
    },
    {
     "code": "GO-C",
-    "name": "General Office - Certificate of Achievement"
+    "name": "General Office - Certificate of Achievement",
+    "control_number": "19567"
    },
    {
     "code": "AA-T GEOG",
@@ -687,31 +819,38 @@
    },
    {
     "code": "GEOL-AST",
-    "name": "Geology - Associate in Science for Transfer"
+    "name": "Geology - Associate in Science for Transfer",
+    "control_number": "40814"
    },
    {
     "code": "GRPHD-AA",
-    "name": "Graphic Design - Associate of Science"
+    "name": "Graphic Design - Associate of Science",
+    "control_number": "12499"
    },
    {
     "code": "GRPHD-C",
-    "name": "Graphic Design - Certificate of Achievement"
+    "name": "Graphic Design - Certificate of Achievement",
+    "control_number": "21319"
    },
    {
     "code": "GL-C",
-    "name": "Grip and Lighting - Certificate of Achievement"
+    "name": "Grip and Lighting - Certificate of Achievement",
+    "control_number": "44572"
    },
    {
     "code": "HS-AS",
-    "name": "Health Science - Associate of Science"
+    "name": "Health Science - Associate of Science",
+    "control_number": "15584"
    },
    {
     "code": "HA-AS",
-    "name": "Healthcare Administration - Associate of Science"
+    "name": "Healthcare Administration - Associate of Science",
+    "control_number": "41729"
    },
    {
     "code": "HA-C",
-    "name": "Healthcare Administration - Certificate of Achievement"
+    "name": "Healthcare Administration - Certificate of Achievement",
+    "control_number": "41730"
    },
    {
     "code": "HIST AA-T",
@@ -719,7 +858,8 @@
    },
    {
     "code": "HRAI-C",
-    "name": "Human Resources Assistant I - Certificate of Achievement"
+    "name": "Human Resources Assistant I - Certificate of Achievement",
+    "control_number": "45396"
    },
    {
     "code": "HRAII-C",
@@ -735,15 +875,18 @@
    },
    {
     "code": "IT-AS",
-    "name": "Information Technology - Associate of Science"
+    "name": "Information Technology - Associate of Science",
+    "control_number": "37071"
    },
    {
     "code": "ITT-C",
-    "name": "Information Technology Technician - Certificate of Achievement"
+    "name": "Information Technology Technician - Certificate of Achievement",
+    "control_number": "41573"
    },
    {
     "code": "IPI-C",
-    "name": "Insurance Professional I - Certificate of Achievement"
+    "name": "Insurance Professional I - Certificate of Achievement",
+    "control_number": "45682"
    },
    {
     "code": "IPII-C",
@@ -751,39 +894,48 @@
    },
    {
     "code": "IS-AS",
-    "name": "Insurance Specialist:Property and Casualty - Associate of Science"
+    "name": "Insurance Specialist:Property and Casualty - Associate of Science",
+    "control_number": "16972"
    },
    {
     "code": "IS-C",
-    "name": "Insurance Specialist:Property and Casualty - Certificate of Achievement"
+    "name": "Insurance Specialist:Property and Casualty - Certificate of Achievement",
+    "control_number": "19563"
    },
    {
     "code": "IHC-AA",
-    "name": "Interdisciplinary Humanities: Creativity - Associate of Arts"
+    "name": "Interdisciplinary Humanities: Creativity - Associate of Arts",
+    "control_number": "12503"
    },
    {
     "code": "INTAD-C",
-    "name": "Interior Architecture & Design - Certificate of Achievement"
+    "name": "Interior Architecture & Design - Certificate of Achievement",
+    "control_number": "45596"
    },
    {
     "code": "NCESL2",
-    "name": "Intermediate ESL - Noncredit Certificate"
+    "name": "Intermediate ESL - Noncredit Certificate",
+    "control_number": "36107"
    },
    {
     "code": "IEAC-C",
-    "name": "Intermediate ESL and Academic & Career Preparation - Certificate of Achievement"
+    "name": "Intermediate ESL and Academic & Career Preparation - Certificate of Achievement",
+    "control_number": "44351"
    },
    {
     "code": "IB-AS",
-    "name": "International Business - Associate of Science"
+    "name": "International Business - Associate of Science",
+    "control_number": "11145"
    },
    {
     "code": "IBI-C",
-    "name": "International Business I - Certificate of Achievement"
+    "name": "International Business I - Certificate of Achievement",
+    "control_number": "19561"
    },
    {
     "code": "IBII-C",
-    "name": "International Business II - Certificate of Achievement"
+    "name": "International Business II - Certificate of Achievement",
+    "control_number": "19561"
    },
    {
     "code": "ITALL - AA",
@@ -811,71 +963,88 @@
    },
    {
     "code": "A&H-AA",
-    "name": "Liberal Arts: Arts and Humanities Emphasis - Associate of Arts"
+    "name": "Liberal Arts: Arts and Humanities Emphasis - Associate of Arts",
+    "control_number": "18638"
    },
    {
     "code": "SM-AA",
-    "name": "Liberal Arts: Science and Mathematics Emphasis - Associate of Arts"
+    "name": "Liberal Arts: Science and Mathematics Emphasis - Associate of Arts",
+    "control_number": "18639"
    },
    {
     "code": "SBS-AA",
-    "name": "Liberal Arts: Social and Behavioral Sciences Emphasis - Associate of Arts"
+    "name": "Liberal Arts: Social and Behavioral Sciences Emphasis - Associate of Arts",
+    "control_number": "18640"
    },
    {
     "code": "MACH-AS",
-    "name": "Machinist - Associate of Science"
+    "name": "Machinist - Associate of Science",
+    "control_number": "02611"
    },
    {
     "code": "MACH-C",
-    "name": "Machinist - Certificate of Achievement"
+    "name": "Machinist - Certificate of Achievement",
+    "control_number": "19571"
    },
    {
     "code": "MGMT-AS",
-    "name": "Management - Associate of Science"
+    "name": "Management - Associate of Science",
+    "control_number": "02552"
    },
    {
     "code": "MGMTI-C",
-    "name": "Management I - Certificate of Achievement"
+    "name": "Management I - Certificate of Achievement",
+    "control_number": "45395"
    },
    {
     "code": "MGMTII-C",
-    "name": "Management II - Certificate of Achievement"
+    "name": "Management II - Certificate of Achievement",
+    "control_number": "19559"
    },
    {
     "code": "MRKT-AS",
-    "name": "Marketing - Associate of Science"
+    "name": "Marketing - Associate of Science",
+    "control_number": "02553"
    },
    {
     "code": "MRKTI-C",
-    "name": "Marketing I - Certificate of Achievement"
+    "name": "Marketing I - Certificate of Achievement",
+    "control_number": "45394"
    },
    {
     "code": "MRKTII-C",
-    "name": "Marketing II - Certificate of Achievement"
+    "name": "Marketing II - Certificate of Achievement",
+    "control_number": "19566"
    },
    {
     "code": "MC-AS",
-    "name": "Mass Communications - Associate of Science"
+    "name": "Mass Communications - Associate of Science",
+    "control_number": "11155"
    },
    {
     "code": "MC-C",
-    "name": "Mass Communications - Certificate of Achievement"
+    "name": "Mass Communications - Certificate of Achievement",
+    "control_number": "21303"
    },
    {
     "code": "MATH-AST",
-    "name": "Mathematics - Associate in Science for Transfer"
+    "name": "Mathematics - Associate in Science for Transfer",
+    "control_number": "30744"
    },
    {
     "code": "MATH-AS",
-    "name": "Mathematics - Associate of Science"
+    "name": "Mathematics - Associate of Science",
+    "control_number": "40863"
    },
    {
     "code": "MCS-AS",
-    "name": "Medical Coding Specialist - Associate of Science"
+    "name": "Medical Coding Specialist - Associate of Science",
+    "control_number": "33911"
    },
    {
     "code": "MCS-C",
-    "name": "Medical Coding Specialist - Certificate of Achievement"
+    "name": "Medical Coding Specialist - Certificate of Achievement",
+    "control_number": "33934"
    },
    {
     "code": "MSC AA-T",
@@ -883,31 +1052,38 @@
    },
    {
     "code": "MUSIC-AA",
-    "name": "Music - Associate of Arts"
+    "name": "Music - Associate of Arts",
+    "control_number": "10057"
    },
    {
     "code": "MUSIC-AS",
-    "name": "Music - Associate of Science"
+    "name": "Music - Associate of Science",
+    "control_number": "02572"
    },
    {
     "code": "MUSIC-C",
-    "name": "Music - Certificate of Achievement"
+    "name": "Music - Certificate of Achievement",
+    "control_number": "21315"
    },
    {
     "code": "MUSHI-C",
-    "name": "Music History - Certificate of Achievement"
+    "name": "Music History - Certificate of Achievement",
+    "control_number": "44773"
    },
    {
     "code": "MUSTH-C",
-    "name": "Music Theory - Certificate of Achievement"
+    "name": "Music Theory - Certificate of Achievement",
+    "control_number": "44774"
    },
    {
     "code": "ND-AST",
-    "name": "Nutrition and Dietetics - Associate in Science for Transfer"
+    "name": "Nutrition and Dietetics - Associate in Science for Transfer",
+    "control_number": "45150"
    },
    {
     "code": "PARAMED-C",
-    "name": "Paramedic - Certificate of Achievement"
+    "name": "Paramedic - Certificate of Achievement",
+    "control_number": "44359"
    },
    {
     "code": "AA-T PHILO",
@@ -915,19 +1091,23 @@
    },
    {
     "code": "PL-C",
-    "name": "Photographic Lighting - Certificate of Achievement"
+    "name": "Photographic Lighting - Certificate of Achievement",
+    "control_number": "41825"
    },
    {
     "code": "VAP-AA",
-    "name": "Photography - Associate of Arts"
+    "name": "Photography - Associate of Arts",
+    "control_number": "12501"
    },
    {
     "code": "PHOTO-AS",
-    "name": "Photography - Associate of Science"
+    "name": "Photography - Associate of Science",
+    "control_number": "02575"
    },
    {
     "code": "PHOTO-C",
-    "name": "Photography - Certificate of Achievement"
+    "name": "Photography - Certificate of Achievement",
+    "control_number": "21318"
    },
    {
     "code": "PSAST - AS",
@@ -951,15 +1131,18 @@
    },
    {
     "code": "PIANO-C",
-    "name": "Piano - Certificate of Achievement"
+    "name": "Piano - Certificate of Achievement",
+    "control_number": "44775"
    },
    {
     "code": "PT-AS",
-    "name": "Pilot Training - Associate of Science"
+    "name": "Pilot Training - Associate of Science",
+    "control_number": "02566"
    },
    {
     "code": "PT-C",
-    "name": "Pilot Training - Certificate of Achievement"
+    "name": "Pilot Training - Certificate of Achievement",
+    "control_number": "19580"
    },
    {
     "code": "POL S AAT",
@@ -971,71 +1154,88 @@
    },
    {
     "code": "PH-AST",
-    "name": "Public Health - Associate in Science for Transfer"
+    "name": "Public Health - Associate in Science for Transfer",
+    "control_number": "45108"
    },
    {
     "code": "REA-AS",
-    "name": "Real Estate Appraisal - Associate of Science"
+    "name": "Real Estate Appraisal - Associate of Science",
+    "control_number": "17760"
    },
    {
     "code": "REA-C",
-    "name": "Real Estate Appraisal - Certificate of Achievement"
+    "name": "Real Estate Appraisal - Certificate of Achievement",
+    "control_number": "19564"
    },
    {
     "code": "RE-AS",
-    "name": "Real Estate Broker - Associate of Science"
+    "name": "Real Estate Broker - Associate of Science",
+    "control_number": "02555"
    },
    {
     "code": "RE-C",
-    "name": "Real Estate Broker - Certificate of Achievement"
+    "name": "Real Estate Broker - Certificate of Achievement",
+    "control_number": "19565"
    },
    {
     "code": "ROC-C",
-    "name": "Receptionist/Office Clerk - Certificate of Achievement"
+    "name": "Receptionist/Office Clerk - Certificate of Achievement",
+    "control_number": "11153"
    },
    {
     "code": "RN-AS",
-    "name": "Registered Nursing - Associate of Science"
+    "name": "Registered Nursing - Associate of Science",
+    "control_number": "02580"
    },
    {
     "code": "RN-C",
-    "name": "Registered Nursing - Certificate of Achievement"
+    "name": "Registered Nursing - Certificate of Achievement",
+    "control_number": "19573"
    },
    {
     "code": "RM-AS",
-    "name": "Restaurant Management - Associate of Science"
+    "name": "Restaurant Management - Associate of Science",
+    "control_number": "11194"
    },
    {
     "code": "RM-C",
-    "name": "Restaurant Management - Certificate of Achievement"
+    "name": "Restaurant Management - Certificate of Achievement",
+    "control_number": "21321"
    },
    {
     "code": "SJGS-AAT",
-    "name": "Social Justice: Gender Studies - Associate in Arts for Transfer"
+    "name": "Social Justice: Gender Studies - Associate in Arts for Transfer",
+    "control_number": "38717"
    },
    {
     "code": "SMM1-C",
-    "name": "Social Media Marketing I - Certificate of Achievement"
+    "name": "Social Media Marketing I - Certificate of Achievement",
+    "control_number": "45057"
    },
    {
     "code": "SMM2-C",
-    "name": "Social Media Marketing II - Certificate of Achievement"
+    "name": "Social Media Marketing II - Certificate of Achievement",
+    "control_number": "45393"
    },
    {
     "code": "SS-AA",
-    "name": "Social Science - Associate of Arts"
+    "name": "Social Science - Associate of Arts",
+    "control_number": "02603"
    },
    {
     "code": "SWHS-AAT",
-    "name": "Social Work and Human Services - Associate in Arts for Transfer"
+    "name": "Social Work and Human Services - Associate in Arts for Transfer",
+    "control_number": "39289"
    },
    {
     "code": "SOC-AAT",
-    "name": "Sociology - Associate in Arts for Transfer"
+    "name": "Sociology - Associate in Arts for Transfer",
+    "control_number": "30813"
    },
    {
     "code": "SPAN-AAT",
-    "name": "Spanish - Associate in Arts for Transfer"
+    "name": "Spanish - Associate in Arts for Transfer",
+    "control_number": "32394"
    },
    {
     "code": "SPANL - AA",
@@ -1047,15 +1247,18 @@
    },
    {
     "code": "SC-AA",
-    "name": "Speech/Communication - Associate of Arts"
+    "name": "Speech/Communication - Associate of Arts",
+    "control_number": "02588"
    },
    {
     "code": "SPCO-AS",
-    "name": "Sports Coaching - Associate of Science"
+    "name": "Sports Coaching - Associate of Science",
+    "control_number": "39910"
    },
    {
     "code": "SPCO-C",
-    "name": "Sports Coaching - Certificate of Achievement"
+    "name": "Sports Coaching - Certificate of Achievement",
+    "control_number": "39912"
    },
    {
     "code": "SA AA-T",
@@ -1063,11 +1266,13 @@
    },
    {
     "code": "TF-C",
-    "name": "Tax Fundamentals - Certificate of Achievement"
+    "name": "Tax Fundamentals - Certificate of Achievement",
+    "control_number": "12570"
    },
    {
     "code": "TA-C",
-    "name": "Technical Theatre - Certificate of Achievement"
+    "name": "Technical Theatre - Certificate of Achievement",
+    "control_number": "35585"
    },
    {
     "code": "TA AA-T",
@@ -1075,67 +1280,83 @@
    },
    {
     "code": "TA:ACT-AA",
-    "name": "Theatre Arts: Acting - Associate of Arts"
+    "name": "Theatre Arts: Acting - Associate of Arts",
+    "control_number": "35473"
    },
    {
     "code": "TA-AA",
-    "name": "Theatre Arts: General - Associate of Arts"
+    "name": "Theatre Arts: General - Associate of Arts",
+    "control_number": "11176"
    },
    {
     "code": "VA3D-AA",
-    "name": "Three-Dimensional Art - Associate of Arts"
+    "name": "Three-Dimensional Art - Associate of Arts",
+    "control_number": "12500"
    },
    {
     "code": "TPH-C",
-    "name": "Traditional Photography - Certificate of Achievement"
+    "name": "Traditional Photography - Certificate of Achievement",
+    "control_number": "42378"
    },
    {
     "code": "TK-C",
-    "name": "Transitional Kindergarten - Certificate of Achievement"
+    "name": "Transitional Kindergarten - Certificate of Achievement",
+    "control_number": "40808"
    },
    {
     "code": "VA2D-AA",
-    "name": "Two-Dimensional Art - Associate of Arts"
+    "name": "Two-Dimensional Art - Associate of Arts",
+    "control_number": "12498"
    },
    {
     "code": "USA-C",
-    "name": "Unix/Linux System Administrator - Certificate of Achievement"
+    "name": "Unix/Linux System Administrator - Certificate of Achievement",
+    "control_number": "19366"
    },
    {
     "code": "VFA-C",
-    "name": "Verdugo Fire Academy - Certificate of Achievement"
+    "name": "Verdugo Fire Academy - Certificate of Achievement",
+    "control_number": "18660"
    },
    {
     "code": "VRFA-C",
-    "name": "Verdugo Recruit Fire Academy - Certificate of Achievement"
+    "name": "Verdugo Recruit Fire Academy - Certificate of Achievement",
+    "control_number": "18661"
    },
    {
     "code": "VAAH-AA",
-    "name": "Visual Arts: Art History - Associate of Arts"
+    "name": "Visual Arts: Art History - Associate of Arts",
+    "control_number": "02571"
    },
    {
     "code": "V-C",
-    "name": "Voice - Certificate of Achievement"
+    "name": "Voice - Certificate of Achievement",
+    "control_number": "45211"
    },
    {
     "code": "WB-AS",
-    "name": "Web Development - Associate of Science"
+    "name": "Web Development - Associate of Science",
+    "control_number": "17645"
    },
    {
     "code": "WB-C",
-    "name": "Web Development - Certificate of Achievement"
+    "name": "Web Development - Certificate of Achievement",
+    "control_number": "21308"
    },
    {
     "code": "WELD-AS",
-    "name": "Welding - Associate of Science"
+    "name": "Welding - Associate of Science",
+    "control_number": "02569"
    },
    {
     "code": "WELD-C",
-    "name": "Welding - Certificate of Achievement"
+    "name": "Welding - Certificate of Achievement",
+    "control_number": "19570"
    },
    {
     "code": "WM-C",
-    "name": "World Music - Certificate of Achievement"
+    "name": "World Music - Certificate of Achievement",
+    "control_number": "45212"
    }
   ]
  },
@@ -1146,13 +1367,13 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 524,
- "seconds": 8391.3,
- "found": 238,
+ "seconds": 8812.6,
+ "found": 242,
  "by_method": {
   "no_closed_list": 50,
-  "not_found": 17,
-  "page_claimed": 12,
-  "sitemap_page": 238
+  "not_found": 24,
+  "page_claimed": 1,
+  "sitemap_page": 242
  },
  "shared_pages": {
   "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl": [
@@ -1166,38 +1387,13 @@
  },
  "not_found": [
   {
-   "control_number": "02603",
-   "title": "Social Science",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://catalog.glendale.edu/programs/SS-AA/completion-requirements-zaZdl",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.92,
-    "body": 0.92,
-    "content": 0.0,
-    "net": 10,
-    "listed": 87,
-    "why": "coarse net: the page's code tokens name 10 of 87 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1785,
-     "content": 321694,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
    "control_number": "11147",
    "title": "Bookkeeping",
    "award": "A.S. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "11155",
@@ -1219,89 +1415,48 @@
     "error": null,
     "chars": {
      "body": 1940,
-     "content": 321630,
+     "content": 321776,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
-   "control_number": "18638",
-   "title": "Liberal Arts: Arts and Humanities Emphasis",
-   "award": "A.A. Degree",
+   "control_number": "11163",
+   "title": "Computer Support Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://catalog.glendale.edu/programs/A%26H-AA/completion-requirements-zaZdl",
+    "url": "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl",
     "label": {
      "award": 1,
-     "title": 1.0
+     "title": 0.667
     },
     "field": "innerText",
-    "coverage": 0.948,
-    "body": 0.948,
-    "content": 0.17,
-    "net": 15,
-    "listed": 135,
-    "why": "coarse net: the page's code tokens name 15 of 135 listed courses",
+    "coverage": 0.75,
+    "body": 0.75,
+    "content": 0.0,
+    "net": 3,
+    "listed": 4,
+    "why": "a candidate, lost to a program the page names more fully",
     "error": null,
     "chars": {
-     "body": 1943,
-     "content": 321890,
+     "body": 1362,
+     "content": 321379,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
-   "control_number": "18639",
-   "title": "Liberal Arts: Science and Mathematics Emphasis",
-   "award": "A.A. Degree",
+   "control_number": "12571",
+   "title": "Computerized Accounting Specialist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
-    "url": "https://catalog.glendale.edu/programs/SM-AA/completion-requirements-zaZdl",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.726,
-    "body": 0.726,
-    "content": 0.06,
-    "net": 20,
-    "listed": 84,
-    "why": "coarse net: the page's code tokens name 20 of 84 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1900,
-     "content": 321817,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
-  {
-   "control_number": "18640",
-   "title": "Liberal Arts: Social and Behavioral Sciences Emphasis",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "https://catalog.glendale.edu/programs/SBS-AA/completion-requirements-zaZdl",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.897,
-    "body": 0.897,
-    "content": 0.056,
-    "net": 12,
-    "listed": 107,
-    "why": "coarse net: the page's code tokens name 12 of 107 listed courses",
-    "error": null,
-    "chars": {
-     "body": 1604,
-     "content": 321585,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "19269",
@@ -1323,11 +1478,21 @@
     "error": null,
     "chars": {
      "body": 1440,
-     "content": 321308,
+     "content": 321454,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "19546",
+   "title": "Medical Front Office",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "19556",
@@ -1335,7 +1500,35 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "19577",
+   "title": "Child Development: Site Supervisor",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/CDITT-C/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.643,
+    "body": 0.643,
+    "content": 0.0,
+    "net": 9,
+    "listed": 14,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1546,
+     "content": 321547,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "21302",
@@ -1343,7 +1536,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "21303",
@@ -1365,11 +1559,12 @@
     "error": null,
     "chars": {
      "body": 1913,
-     "content": 321603,
+     "content": 321749,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24297",
@@ -1377,14 +1572,15 @@
    "award": null,
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24322",
    "title": "Medical Front Office Clerk",
    "award": null,
    "near_miss": {
-    "url": "https://catalog.glendale.edu/programs/ROC-C/completion-requirements-zaZdl",
+    "url": "https://catalog.glendale.edu/programs/NCGOC1/completion-requirements-zaZdl",
     "label": {
      "award": 0,
      "title": 0.5
@@ -1398,12 +1594,13 @@
     "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
     "error": null,
     "chars": {
-     "body": 1103,
-     "content": 321015,
+     "body": 1121,
+     "content": 321178,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24327",
@@ -1429,24 +1626,224 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24377",
+   "title": "General Office Clerk II",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/NCAC2/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.167,
+    "body": 0.167,
+    "content": 0.0,
+    "net": 1,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1068,
+     "content": 321015,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24432",
+   "title": "Certificate of Secondary Education Completion",
+   "award": null,
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/NCABE/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 26,
+    "why": "coarse net: the page's code tokens name 0 of 26 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1336,
+     "content": 321402,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "30032",
+   "title": "Dental Front Office / Billing and Coding",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "30561",
+   "title": "Insurance Specialist: Life and Health Associate's Degree Major",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/IS-AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.769,
+    "body": 0.769,
+    "content": 0.0,
+    "net": 10,
+    "listed": 13,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1489,
+     "content": 321464,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36480",
+   "title": "Medical Front Office",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "36596",
+   "title": "IT Technician I: Computer Retail Sales and Support",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/ITTII%20-%20AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 6,
+    "listed": 6,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1420,
+     "content": 321445,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "36599",
+   "title": "IT Technician II: Help Desk User Support",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/ITTII%20-%20AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 10,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1420,
+     "content": 321445,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36601",
+   "title": "IT Technician III",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/ITTIII-%20AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 13,
+    "listed": 13,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1526,
+     "content": 321504,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "38973",
    "title": "Customer Service",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
+    "url": "https://catalog.glendale.edu/programs/NCCS/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 939,
+     "content": 320984,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "40846",
    "title": "Administrative Medical Assisting",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://catalog.glendale.edu/programs/AMA-AS/completion-requirements-zaZdl",
+    "url": "https://catalog.glendale.edu/programs/NCAMA/completion-requirements-zaZdl",
     "label": {
-     "award": 0,
+     "award": 1,
      "title": 0.667
     },
     "field": "innerText",
@@ -1458,177 +1855,65 @@
     "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
     "error": null,
     "chars": {
-     "body": 1411,
-     "content": 321278,
+     "body": 1163,
+     "content": 321114,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40847",
    "title": "Certified Nursing Aide",
    "award": "Noncredit program",
    "near_miss": {
-    "why": "no page read names the program"
-   }
-  },
-  {
-   "control_number": "42263",
-   "title": "Google Workspace",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
+    "url": "https://catalog.glendale.edu/programs/NCCNA/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 958,
+     "content": 321083,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
   {
-   "control_number": "11163",
-   "title": "Computer Support Technician",
+   "control_number": "37070",
+   "title": "Information Technology",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "pages": [
-    "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CS-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CN-CERT/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CP-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CCF-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/AESTEM-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CYBERSP-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/USA-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/WB-C/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "19546",
-   "title": "Medical Front Office",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.glendale.edu/programs/GO-C/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "19577",
-   "title": "Child Development: Site Supervisor",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://catalog.glendale.edu/programs/CDMT-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CDITT-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CDSACT-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CDTP-C/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "21305",
-   "title": "Computer Information Systems",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "pages": [
-    "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "30032",
-   "title": "Dental Front Office / Billing and Coding",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.glendale.edu/programs/GO-C/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "30561",
-   "title": "Insurance Specialist: Life and Health Associate's Degree Major",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.glendale.edu/programs/IS-AS/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/IS-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/IPII-C/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "31597",
-   "title": "Adult High School Diploma",
-   "award": "Noncredit program",
-   "pages": [
-    "https://catalog.glendale.edu/programs/NCHSD/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "36480",
-   "title": "Medical Front Office",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.glendale.edu/programs/GO-AS/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/GO-C/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "36596",
-   "title": "IT Technician I: Computer Retail Sales and Support",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "pages": [
-    "https://catalog.glendale.edu/programs/IPII-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/GB-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/AEBEM-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/IS-C/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "36599",
-   "title": "IT Technician II: Help Desk User Support",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "pages": [
-    "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/IPII-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CN-CERT/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CYBERSP-C/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "36601",
-   "title": "IT Technician III",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "pages": [
-    "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CN-CERT/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CYBERSP-C/completion-requirements-zaZdl"
-   ]
-  },
-  {
-   "control_number": "37960",
-   "title": "Computer Information Systems",
-   "award": "A.S. Degree",
-   "pages": [
-    "https://catalog.glendale.edu/programs/CST-AS/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl"
-   ]
+    "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl"
+   ],
+   "status": "Active"
   }
  ],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 24,
-  "0.8-1.0": 42,
-  "1.0": 172
+  "0.5-0.8": 23,
+  "0.8-1.0": 46,
+  "1.0": 173
  },
  "would_extract": {
   "against": "kb/program_requirements_college/glendale_community",
-  "kept": 0,
+  "kept": 169,
   "kept_moved": 0,
-  "programs": 238,
+  "programs": 73,
   "list": [
-   {
-    "control_number": "02547",
-    "title": "Architectural Drafting & Design",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/AD%26D-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
-    "was_coverage": 0.846,
-    "was_method": "pdf_pages"
-   },
    {
     "control_number": "02548",
     "title": "Biological Sciences",
@@ -1655,39 +1940,9 @@
     "award": "A.S. Degree",
     "url": "https://catalog.glendale.edu/programs/ACCTG-AS/completion-requirements-zaZdl",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=89",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02551",
-    "title": "Financial Planning & Investment",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/FP%26I-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "was_url": "https://catalog.glendale.edu/programs/ACCTG-AS/completion-requirements-zaZdl",
     "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02552",
-    "title": "Management",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/MGMT-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02553",
-    "title": "Marketing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/MRKT-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "02555",
@@ -1698,16 +1953,6 @@
     "was_url": "https://catalog.glendale.edu/programs/RE-AS/completion-requirements-zaZdl",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "02556",
-    "title": "General Office",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/GO-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
    },
    {
     "control_number": "02557",
@@ -1730,26 +1975,6 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "02570",
-    "title": "Addiction Studies Counseling",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/ASC-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=132",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02571",
-    "title": "Visual Arts: Art History",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/VAAH-AA/completion-requirements-zaZdl",
-    "coverage": 0.895,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "02572",
     "title": "Music",
     "award": "A.S. Degree",
@@ -1760,34 +1985,14 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "02575",
-    "title": "Photography",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/PHOTO-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "02580",
     "title": "Registered Nursing",
     "award": "A.S. Degree",
     "url": "https://catalog.glendale.edu/programs/RN-AS/completion-requirements-zaZdl",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=86",
-    "was_coverage": 0.824,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02587",
-    "title": "English",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/ENG-AA/completion-requirements-zaZdl",
-    "coverage": 0.933,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "was_coverage": 0.6,
-    "was_method": "pdf_pages"
+    "was_url": "https://catalog.glendale.edu/programs/RN-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "02588",
@@ -1820,44 +2025,14 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "02602",
-    "title": "Fire Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/FT-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02611",
-    "title": "Machinist",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/MACH-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02612",
-    "title": "Film, Television and Media Arts",
+    "control_number": "02603",
+    "title": "Social Science",
     "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/FTM-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02615",
-    "title": "Flight Attendant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/FA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/FA-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
+    "url": "https://catalog.glendale.edu/programs/SS-AA/completion-requirements-zaZdl",
+    "coverage": 0.92,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "09482",
@@ -1900,56 +2075,6 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "11143",
-    "title": "General Business",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/GB-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11144",
-    "title": "Entrepreneurship/Small Business",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/E%2FSB-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11145",
-    "title": "International Business",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/IB-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11151",
-    "title": "Administrative Assistant",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/ADAST-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11153",
-    "title": "Receptionist/Office Clerk",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/ROC-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=112",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "11159",
     "title": "Computer Science",
     "award": "A.S. Degree",
@@ -1990,24 +2115,14 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "11176",
-    "title": "Theatre Arts: General",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/TA-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "was_coverage": 0.853,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "11177",
     "title": "Choreographic Studies & Dance Technique",
     "award": "A.S. Degree",
     "url": "https://catalog.glendale.edu/programs/CS%26DT-AS/completion-requirements-zaZdl",
     "coverage": 0.929,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-    "was_coverage": 0.786,
-    "was_method": "pdf_pages"
+    "was_url": "https://catalog.glendale.edu/programs/CS%26DT-AS/completion-requirements-zaZdl",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "11189",
@@ -2050,16 +2165,6 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "12498",
-    "title": "Two-Dimensional Art",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/VA2D-AA/completion-requirements-zaZdl",
-    "coverage": 0.765,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
-    "was_coverage": 0.824,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "12499",
     "title": "Graphic Design",
     "award": "A.A. Degree",
@@ -2070,26 +2175,6 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "12500",
-    "title": "Three-Dimensional Art",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/VA3D-AA/completion-requirements-zaZdl",
-    "coverage": 0.714,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
-    "was_coverage": 0.857,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12501",
-    "title": "Photography",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/VAP-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "12502",
     "title": "Entertainment Art",
     "award": "A.A. Degree",
@@ -2098,56 +2183,6 @@
     "was_url": "https://catalog.glendale.edu/programs/EA-AA/completion-requirements-zaZdl",
     "was_coverage": 0.833,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "12503",
-    "title": "Interdisciplinary Humanities: Creativity",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/IHC-AA/completion-requirements-zaZdl",
-    "coverage": 0.854,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "was_coverage": 0.659,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12570",
-    "title": "Tax Preparer",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/TF-C/completion-requirements-zaZdl",
-    "coverage": 0.667,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=113",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12571",
-    "title": "Computerized Accounting Specialist",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/ACCTG-C/completion-requirements-zaZdl",
-    "coverage": 0.75,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=128",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12574",
-    "title": "Fitness Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/FITS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15584",
-    "title": "Health Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/HS-AS/completion-requirements-zaZdl",
-    "coverage": 0.824,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
-    "was_coverage": 0.765,
-    "was_method": "pdf_pages"
    },
    {
     "control_number": "16972",
@@ -2165,9 +2200,9 @@
     "award": "A.S. Degree",
     "url": "https://catalog.glendale.edu/programs/WB-AS/completion-requirements-zaZdl",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "was_coverage": 0.917,
-    "was_method": "pdf_pages"
+    "was_url": "https://catalog.glendale.edu/programs/WB-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "17760",
@@ -2180,34 +2215,34 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "18660",
-    "title": "Verdugo Fire Academy",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/VFA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
+    "control_number": "18638",
+    "title": "Liberal Arts: Arts and Humanities Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/A%26H-AA/completion-requirements-zaZdl",
+    "coverage": 0.948,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "18661",
-    "title": "Verdugo Recruit Fire Academy",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/VRFA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
+    "control_number": "18639",
+    "title": "Liberal Arts: Science and Mathematics Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/SM-AA/completion-requirements-zaZdl",
+    "coverage": 0.726,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "19110",
-    "title": "Dance Teaching",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.glendale.edu/programs/DT-C/completion-requirements-zaZdl",
-    "coverage": 0.962,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-    "was_coverage": 0.923,
-    "was_method": "pdf_pages"
+    "control_number": "18640",
+    "title": "Liberal Arts: Social and Behavioral Sciences Emphasis",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/SBS-AA/completion-requirements-zaZdl",
+    "coverage": 0.897,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "19111",
@@ -2215,289 +2250,19 @@
     "award": "A.S. Degree",
     "url": "https://catalog.glendale.edu/programs/DT-AS/completion-requirements-zaZdl",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-    "was_coverage": 0.962,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19365",
-    "title": "Insurance Professional II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/IPII-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
-    "was_coverage": 0.933,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19366",
-    "title": "Unix-Linux System Administrator",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/USA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=114",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19555",
-    "title": "General Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/GB-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+    "was_url": "https://catalog.glendale.edu/programs/DT-AS/completion-requirements-zaZdl",
     "was_coverage": 1.0,
-    "was_method": "pdf_pages"
+    "was_method": "sitemap_page"
    },
    {
-    "control_number": "19558",
-    "title": "Financial Planning & Investment II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/FP%26III-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19559",
-    "title": "Management II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/MGMTII-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19560",
-    "title": "Entrepreneurship/Small Business II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/E%2FSBII-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19561",
-    "title": "International Business II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/IBII-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19562",
-    "title": "Administrative Assistant",
+    "control_number": "21305",
+    "title": "Computer Information Systems",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://catalog.glendale.edu/programs/ADAST-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19563",
-    "title": "Insurance Specialist: Property & Casualty",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/IS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/IS-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19564",
-    "title": "Real Estate Appraisal",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/REA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/REA-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19565",
-    "title": "Real Estate Broker",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/RE-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/RE-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19566",
-    "title": "Marketing II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/MRKTII-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19567",
-    "title": "General Office",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/GO-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19569",
-    "title": "Engineering Technology - CAD",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/ETCDD-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/ETCDD-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19570",
-    "title": "Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/WELD-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/WELD-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19571",
-    "title": "Machinist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/MACH-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19573",
-    "title": "Registered Nursing",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/RN-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=86",
-    "was_coverage": 0.824,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19574",
-    "title": "Child Development: Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CDTP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/CDTP-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19575",
-    "title": "Child Development: Master Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CDMT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/CDMT-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19576",
-    "title": "Child Development: School-Age Care",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CDSACT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/CDSACT-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19578",
-    "title": "Child Development: Infant/Toddler",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CDITT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/CDITT-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19581",
-    "title": "Fire Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/FT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21299",
-    "title": "Architectural Drafting & Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/AD%26D-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
-    "was_coverage": 0.846,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21304",
-    "title": "Animation, Visual Effects, and Game Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AVGD-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/AVGD-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "21306",
-    "title": "Computer Science",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/CS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/CS-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "21307",
-    "title": "Computer Software Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "21308",
-    "title": "Web Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/WB-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "was_coverage": 0.917,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21314",
-    "title": "Ceramics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CER-C/completion-requirements-zaZdl",
-    "coverage": 0.9,
-    "was_url": "https://catalog.glendale.edu/programs/CER-C/completion-requirements-zaZdl",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
+    "url": "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl",
+    "coverage": 0.579,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "21315",
@@ -2515,169 +2280,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://catalog.glendale.edu/programs/CS%26DT-C/completion-requirements-zaZdl",
     "coverage": 0.897,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-    "was_coverage": 0.793,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21318",
-    "title": "Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/PHOTO-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21319",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/GRPHD-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/GRPHD-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CS%26DT-C/completion-requirements-zaZdl",
+    "was_coverage": 0.897,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "21320",
-    "title": "Dietetic Services Supervisor",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/DSS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/DSS-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "21323",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/AJ-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/AJ-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "24010",
-    "title": "Adult Basic Education",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCABE/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=276",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "24011",
-    "title": "Account Clerk I",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCAC1/completion-requirements-zaZdl",
-    "coverage": 0.875,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "24042",
-    "title": "Beginning ESL",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCESL1/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "24161",
-    "title": "Account Clerk II",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCAC2/completion-requirements-zaZdl",
-    "coverage": 0.625,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "24274",
-    "title": "High School Equivalency (HSE)",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCGED/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "24356",
-    "title": "General Office Clerk I",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCGOC1/completion-requirements-zaZdl",
-    "coverage": 0.667,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "24377",
-    "title": "General Office Clerk II",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCGOC3/completion-requirements-zaZdl",
-    "coverage": 0.5,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "24381",
-    "title": "Dental Administrative Assistant",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCDFOC/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=272",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "24432",
-    "title": "Certificate of Secondary Education Completion",
-    "award": null,
-    "url": "https://catalog.glendale.edu/programs/NCHSD/completion-requirements-zaZdl",
-    "coverage": 0.615,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "30031",
-    "title": "Human Resources Assistant II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/HRAII-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/HRAII-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30744",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/MATH-AST/completion-requirements-zaZdl",
-    "coverage": 0.526,
-    "was_url": "https://catalog.glendale.edu/programs/MATH-AST/completion-requirements-zaZdl",
-    "was_coverage": 0.526,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30813",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/SOC-AAT/completion-requirements-zaZdl",
-    "coverage": 0.804,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=87",
-    "was_coverage": 0.549,
-    "was_method": "pdf_pages"
    },
    {
     "control_number": "30814",
@@ -2690,24 +2295,14 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "31928",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/KIN%20AAT/completion-requirements-zaZdl",
-    "coverage": 0.94,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=120",
-    "was_coverage": 0.851,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32168",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/AS-T%20ADMJ/completion-requirements-zaZdl",
-    "coverage": 0.84,
-    "was_url": "https://catalog.glendale.edu/programs/AS-T%20ADMJ/completion-requirements-zaZdl",
-    "was_coverage": 0.84,
-    "was_method": "sitemap_page"
+    "control_number": "31597",
+    "title": "Adult High School Diploma",
+    "award": "Noncredit program",
+    "url": "https://catalog.glendale.edu/programs/NCHSD/completion-requirements-zaZdl",
+    "coverage": 0.949,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
    },
    {
     "control_number": "32178",
@@ -2717,16 +2312,6 @@
     "coverage": 0.867,
     "was_url": "https://catalog.glendale.edu/programs/AA-T%20GEOG/completion-requirements-zaZdl",
     "was_coverage": 0.867,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32199",
-    "title": "PHYSICS",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/AS-T%20PHY/completion-requirements-zaZdl",
-    "coverage": 0.545,
-    "was_url": "https://catalog.glendale.edu/programs/AS-T%20PHY/completion-requirements-zaZdl",
-    "was_coverage": 0.545,
     "was_method": "sitemap_page"
    },
    {
@@ -2740,26 +2325,6 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "32267",
-    "title": "Business Administration",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl",
-    "coverage": 0.8,
-    "was_url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl",
-    "was_coverage": 0.8,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32394",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/SPAN-AAT/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "32420",
     "title": "Political Science",
     "award": "A.A- T Degree",
@@ -2768,16 +2333,6 @@
     "was_url": "https://catalog.glendale.edu/programs/POL%20S%20AAT/completion-requirements-zaZdl",
     "was_coverage": 0.8,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32462",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/PSYCH-%20AAT/completion-requirements-zaZdl",
-    "coverage": 0.742,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
    },
    {
     "control_number": "32463",
@@ -2790,44 +2345,14 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "32605",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/AA-T%20PHILO/completion-requirements-zaZdl",
-    "coverage": 0.846,
-    "was_url": "https://catalog.glendale.edu/programs/AA-T%20PHILO/completion-requirements-zaZdl",
-    "was_coverage": 0.846,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32607",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/AA-T%20ANTHR/completion-requirements-zaZdl",
-    "coverage": 0.824,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "32707",
     "title": "Theatre Arts",
     "award": "A.A- T Degree",
     "url": "https://catalog.glendale.edu/programs/TA%20AA-T/completion-requirements-zaZdl",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
-    "was_coverage": 0.955,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32738",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/ECE%20AS-T/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
+    "was_url": "https://catalog.glendale.edu/programs/TA%20AA-T/completion-requirements-zaZdl",
     "was_coverage": 1.0,
-    "was_method": "pdf_pages"
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33294",
@@ -2840,34 +2365,14 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "33295",
-    "title": "Journalism",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/JOURN%20AA-T/completion-requirements-zaZdl",
-    "coverage": 0.75,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
-    "was_coverage": 0.8,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "33598",
     "title": "Studio Arts",
     "award": "A.A- T Degree",
     "url": "https://catalog.glendale.edu/programs/SA%20AA-T/completion-requirements-zaZdl",
     "coverage": 0.778,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33665",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/MSC%20AA-T/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=120",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
+    "was_url": "https://catalog.glendale.edu/programs/SA%20AA-T/completion-requirements-zaZdl",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33911",
@@ -2876,66 +2381,6 @@
     "url": "https://catalog.glendale.edu/programs/MCS-AS/completion-requirements-zaZdl",
     "coverage": 1.0,
     "was_url": "https://catalog.glendale.edu/programs/MCS-AS/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33934",
-    "title": "Medical Coding Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/MCS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/MCS-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "35029",
-    "title": "Digital Content Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/DCS%20-%20C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-    "was_coverage": 0.857,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35283",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/BIO%20AS-T/completion-requirements-zaZdl",
-    "coverage": 0.818,
-    "was_url": "https://catalog.glendale.edu/programs/BIO%20AS-T/completion-requirements-zaZdl",
-    "was_coverage": 0.818,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "35473",
-    "title": "Theatre Arts: Acting",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/TA%3AACT-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-    "was_coverage": 0.917,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35585",
-    "title": "Technical Theatre",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/TA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/TA-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "35597",
-    "title": "Administrative Medical Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AMA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/AMA-C/completion-requirements-zaZdl",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -2950,56 +2395,6 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "36102",
-    "title": "Advanced ESL",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCESL3/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36107",
-    "title": "Intermediate ESL",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCESL2/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36155",
-    "title": "Addiction Studies Counseling",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/ASC-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=132",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36270",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/FTEM-AST/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/FTEM-AST/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "36416",
-    "title": "Civil Engineering",
-    "award": "Certificate of Achievement requiring 60+S/90+Q units",
-    "url": "https://catalog.glendale.edu/programs/CE-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=100",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "36419",
     "title": "Engineering Technology - CAD",
     "award": "A.S. Degree",
@@ -3008,66 +2403,6 @@
     "was_url": "https://catalog.glendale.edu/programs/ETCDD-AS/completion-requirements-zaZdl",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "36424",
-    "title": "Mechanical/Aerospace/Manufacturing Engineering",
-    "award": "Certificate of Achievement requiring 60+S/90+Q units",
-    "url": "https://catalog.glendale.edu/programs/ME-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/ME-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "36536",
-    "title": "Electrical Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/EE-C/completion-requirements-zaZdl",
-    "coverage": 0.923,
-    "was_url": "https://catalog.glendale.edu/programs/EE-C/completion-requirements-zaZdl",
-    "was_coverage": 0.923,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "36580",
-    "title": "Business Information Worker (BIW)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/BIW-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=93",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36598",
-    "title": "IT Technician II: Help Desk User Support",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/ITTII%20-%20AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36600",
-    "title": "IT Technician III",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/ITTIII-%20AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36667",
-    "title": "Italian Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/ITALL%20-%20C/completion-requirements-zaZdl",
-    "coverage": 0.917,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
    },
    {
     "control_number": "36710",
@@ -3080,126 +2415,6 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "36711",
-    "title": "French Language",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/FRENL%20-%20AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36712",
-    "title": "Italian Language",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/ITALL%20-%20AA/completion-requirements-zaZdl",
-    "coverage": 0.917,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36713",
-    "title": "Japanese Language",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/JAPNL%20-%20AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36714",
-    "title": "Spanish Language",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/SPANL%20-%20AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36717",
-    "title": "Armenian Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/ARMNL%20-%20C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/ARMNL%20-%20C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "36720",
-    "title": "French Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/FRENL%20-%20C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36722",
-    "title": "Physical Science - Physics",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/PSPHY%20-%20AS/completion-requirements-zaZdl",
-    "coverage": 0.917,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36723",
-    "title": "Physical Science - Earth Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/PSES%20-%20AS/completion-requirements-zaZdl",
-    "coverage": 0.929,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-    "was_coverage": 0.857,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36724",
-    "title": "Physical Science - Chemistry",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/PSCHM%20-AS/completion-requirements-zaZdl",
-    "coverage": 0.9,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-    "was_coverage": 0.8,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36725",
-    "title": "Physical Science - Astronomy",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/PSAST%20-%20AS/completion-requirements-zaZdl",
-    "coverage": 0.909,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "was_coverage": 0.727,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36726",
-    "title": "Japanese Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/JAPNL%20-%20C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36727",
-    "title": "Spanish Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/SPANL%20-%20C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "36728",
     "title": "Creative Writing",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -3208,26 +2423,6 @@
     "was_url": "https://catalog.glendale.edu/programs/CW%20-%20C/completion-requirements-zaZdl",
     "was_coverage": 0.923,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37070",
-    "title": "Information Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl",
-    "coverage": 0.778,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37071",
-    "title": "Information Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/IT-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
    },
    {
     "control_number": "37854",
@@ -3280,6 +2475,16 @@
     "was_method": "sitemap_page"
    },
    {
+    "control_number": "37960",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/CIS-AS/completion-requirements-zaZdl",
+    "coverage": 0.579,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
     "control_number": "38144",
     "title": "English: Creative Writing",
     "award": "A.A. Degree",
@@ -3287,16 +2492,6 @@
     "coverage": 0.923,
     "was_url": "https://catalog.glendale.edu/programs/ENG%3ACW-AA/completion-requirements-zaZdl",
     "was_coverage": 0.923,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "38717",
-    "title": "Social Justice: Gender Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/SJGS-AAT/completion-requirements-zaZdl",
-    "coverage": 0.885,
-    "was_url": "https://catalog.glendale.edu/programs/SJGS-AAT/completion-requirements-zaZdl",
-    "was_coverage": 0.885,
     "was_method": "sitemap_page"
    },
    {
@@ -3330,52 +2525,12 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "39905",
-    "title": "Fitness Specialist",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/FITS-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "39910",
     "title": "Sports Coaching",
     "award": "A.S. Degree",
     "url": "https://catalog.glendale.edu/programs/SPCO-AS/completion-requirements-zaZdl",
     "coverage": 1.0,
     "was_url": "https://catalog.glendale.edu/programs/SPCO-AS/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "39912",
-    "title": "Sports Coaching",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/SPCO-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/SPCO-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "40808",
-    "title": "Transitional Kindergarten",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/TK-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/TK-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "40814",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/GEOL-AST/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/GEOL-AST/completion-requirements-zaZdl",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -3390,142 +2545,12 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "41379",
-    "title": "Cloud Computing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CCF-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/CCF-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41573",
-    "title": "Information Technology Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41650",
-    "title": "Computer Networking",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CN-CERT/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/CN-CERT/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41651",
-    "title": "Cybersecurity Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CYBERSP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/CYBERSP-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
     "control_number": "41729",
     "title": "Healthcare Administration",
     "award": "A.S. Degree",
     "url": "https://catalog.glendale.edu/programs/HA-AS/completion-requirements-zaZdl",
     "coverage": 1.0,
     "was_url": "https://catalog.glendale.edu/programs/HA-AS/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41730",
-    "title": "Healthcare Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/HA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/HA-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41767",
-    "title": "Biotechnology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/BT-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41768",
-    "title": "Biotechnology Research Lab Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/BTRA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41775",
-    "title": "Biotechnology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/BT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41776",
-    "title": "Biotechnology Research Lab Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/BTRT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41825",
-    "title": "Photographic Lighting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/PL-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41826",
-    "title": "Digital Photography Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/DIGPT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/DIGPT-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41827",
-    "title": "Digital Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/DP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/DP-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41828",
-    "title": "Drone Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/DRNP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/DRNP-C/completion-requirements-zaZdl",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -3540,24 +2565,14 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "42378",
-    "title": "Traditional Photography",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/TPH-C/completion-requirements-zaZdl",
+    "control_number": "42263",
+    "title": "Google Workspace",
+    "award": "Noncredit program",
+    "url": "https://catalog.glendale.edu/programs/NCGW/completion-requirements-zaZdl",
     "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/TPH-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42738",
-    "title": "Digital Content Specialist",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/DCS-AS/completion-requirements-zaZdl",
-    "coverage": 0.857,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "43038",
@@ -3580,76 +2595,6 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "44359",
-    "title": "Paramedic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/PARAMED-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/PARAMED-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44360",
-    "title": "Advanced ESL: Business, Entrepreneurship & Management Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AEBEM-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44484",
-    "title": "Advanced ESL: Health, Wellness & Public Safety Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AEHWPS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44485",
-    "title": "Advanced ESL: Industrial Technology & Aviation Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AEITA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/AEITA-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44486",
-    "title": "Advanced ESL: Language & Communication Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AELC-C/completion-requirements-zaZdl",
-    "coverage": 0.882,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "was_coverage": 0.824,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44487",
-    "title": "Advanced ESL: People, Power & Perspective Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AEPPP-C/completion-requirements-zaZdl",
-    "coverage": 0.762,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "was_coverage": 0.905,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44488",
-    "title": "Advanced ESL: STEM Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AESTEM-C/completion-requirements-zaZdl",
-    "coverage": 0.875,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-    "was_coverage": 0.688,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "44489",
     "title": "Advanced ESL: Visual & Performing Arts Pathway",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -3665,19 +2610,9 @@
     "award": "A.A. Degree",
     "url": "https://catalog.glendale.edu/programs/DFP-AA/completion-requirements-zaZdl",
     "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44569",
-    "title": "Documentary Film Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/DFP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
+    "was_url": "https://catalog.glendale.edu/programs/DFP-AA/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "44570",
@@ -3690,66 +2625,6 @@
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "44571",
-    "title": "Film Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/FS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/FS-C/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44572",
-    "title": "Grip and Lighting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/GL-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=106",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44640",
-    "title": "Data Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/DS-AS/completion-requirements-zaZdl",
-    "coverage": 0.621,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-    "was_coverage": 0.931,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44773",
-    "title": "Music History",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/MUSHI-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44774",
-    "title": "Music Theory",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/MUSTH-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44775",
-    "title": "Piano",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/PIANO-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "44951",
     "title": "Communication Studies 2.0",
     "award": "A.A- T Degree",
@@ -3757,46 +2632,6 @@
     "coverage": 0.762,
     "was_url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl",
     "was_coverage": 0.762,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45057",
-    "title": "Social Media Marketing I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/SMM1-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45068",
-    "title": "Cal-GETC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/CALGETC/completion-requirements-zaZdl",
-    "coverage": 0.938,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "45101",
-    "title": "Data Analytics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/DATA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=99",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45108",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/PH-AST/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://catalog.glendale.edu/programs/PH-AST/completion-requirements-zaZdl",
-    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
@@ -3808,201 +2643,13 @@
     "was_url": "https://catalog.glendale.edu/programs/ND-AST/completion-requirements-zaZdl",
     "was_coverage": 0.75,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45211",
-    "title": "Voice",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/V-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45212",
-    "title": "World Music",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/WM-C/completion-requirements-zaZdl",
-    "coverage": 0.857,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=110",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45393",
-    "title": "Social Media Marketing II",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/SMM2-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=108",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45394",
-    "title": "Marketing I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/MRKTI-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45395",
-    "title": "Management I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/MGMTI-C/completion-requirements-zaZdl",
-    "coverage": 0.75,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45396",
-    "title": "Human Resources Assistant I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/HRAI-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=106",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45397",
-    "title": "Financial Planning & Investment I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/FP%26II-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45399",
-    "title": "Entrepreneurship/Small Business I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/E%2FSBI-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=92",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45596",
-    "title": "Interior Architecture & Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/INTAD-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=136",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45681",
-    "title": "Insurance Professional I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/IPI-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45682",
-    "title": "International Business I",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/IBI-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45854",
-    "title": "Microsoft Office 365 Fundamentals",
-    "award": "Noncredit program",
-    "url": "https://catalog.glendale.edu/programs/NCMOF/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45996",
-    "title": "CNC & CAM 3 Axis Mill",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CCAM-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
-    "was_coverage": 0.833,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46004",
-    "title": "CNC & CAM Lathe Y-Axis",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CCLY-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
-    "was_coverage": 0.833,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46050",
-    "title": "CNC & CAM Mill Advanced",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CCMA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=169",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46051",
-    "title": "EnTech Audio",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/ENTA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-    "was_coverage": 0.6,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46052",
-    "title": "EnTech Lighting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/ENTL-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=264",
-    "was_coverage": 0.8,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46053",
-    "title": "Film and Television Production",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/FTP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46054",
-    "title": "EnTech General",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/ENTG-C/completion-requirements-zaZdl",
-    "coverage": 0.857,
-    "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=265",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
    }
   ],
   "held_worse_window": [],
   "held_no_gain": [],
-  "held_opens_on_list": []
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
  "fingerprints": {
   "02547": {
@@ -4088,6 +2735,10 @@
   "02602": {
    "sha256": "8adef91dcca50154e481a3c1dac108c918d1fac0ed02c518feb951813295eb3e",
    "url": "https://catalog.glendale.edu/programs/FT-AS/completion-requirements-zaZdl"
+  },
+  "02603": {
+   "sha256": "b68788811d521a6c3b3a3859ebf08987285a35e915b2963efead6924aa0fc045",
+   "url": "https://catalog.glendale.edu/programs/SS-AA/completion-requirements-zaZdl"
   },
   "02611": {
    "sha256": "9248515434faf66ee4b7aa8b3c3f520b06ee3cb304b2fac639680d028fe4dfc4",
@@ -4205,10 +2856,6 @@
    "sha256": "577dcd2173d777025314871f70492dfe372ed0eeeb00fe98ffc2f4cd21091da2",
    "url": "https://catalog.glendale.edu/programs/TF-C/completion-requirements-zaZdl"
   },
-  "12571": {
-   "sha256": "0a010b02e78ba755fe053f16f847793de3982b66e863d72d1928321b71daa992",
-   "url": "https://catalog.glendale.edu/programs/ACCTG-C/completion-requirements-zaZdl"
-  },
   "12574": {
    "sha256": "b1f8c33eb48e2919c7fccfd7a7730d7f9ca365c75aee94505c3a96c9dfc57c89",
    "url": "https://catalog.glendale.edu/programs/FITS-C/completion-requirements-zaZdl"
@@ -4228,6 +2875,18 @@
   "17760": {
    "sha256": "503bdd684fc66b92c5fa46e62c8a464f9fe5769fb2f6ed7b35423b246f01f4ae",
    "url": "https://catalog.glendale.edu/programs/REA-AS/completion-requirements-zaZdl"
+  },
+  "18638": {
+   "sha256": "05664b2f29aa82b12d421b0c49a95cb29ec62af7356f2bd36786a9779e484005",
+   "url": "https://catalog.glendale.edu/programs/A%26H-AA/completion-requirements-zaZdl"
+  },
+  "18639": {
+   "sha256": "8afac2e326ebc03d346531314b270cdebcea3563ffba2b55c66ed94a98719e2c",
+   "url": "https://catalog.glendale.edu/programs/SM-AA/completion-requirements-zaZdl"
+  },
+  "18640": {
+   "sha256": "7f58a3b3dd291ee6eb082073735f7adf5207bc537847931e24761713c9294a82",
+   "url": "https://catalog.glendale.edu/programs/SBS-AA/completion-requirements-zaZdl"
   },
   "18660": {
    "sha256": "ecf2a215d0502333fc97337589079be713a55c2c1ccf06aeb5b0a03fdb7d160b",
@@ -4341,6 +3000,10 @@
    "sha256": "95fef042d25b4faf4d31bb9a5f0811f770c6a0ad7bdbd77a2609ab7684c18ffb",
    "url": "https://catalog.glendale.edu/programs/AVGD-C/completion-requirements-zaZdl"
   },
+  "21305": {
+   "sha256": "31aa4d3fb93457066bf1525ca785f5a57473f5a568dfe87e659ea5d9edc6e46b",
+   "url": "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl"
+  },
   "21306": {
    "sha256": "33bc5597391b930de4424fdc03620f18d1179fbb6450481423e507aac15141a2",
    "url": "https://catalog.glendale.edu/programs/CS-C/completion-requirements-zaZdl"
@@ -4405,17 +3068,9 @@
    "sha256": "cfee41ec3dc26eec44ab1fae8c3be142292f32aa07447156821ca6fc825ab0d0",
    "url": "https://catalog.glendale.edu/programs/NCGOC1/completion-requirements-zaZdl"
   },
-  "24377": {
-   "sha256": "cc6cd2db90559bf502daad72f5f0a966a180a566a7102fa123eb363113800cad",
-   "url": "https://catalog.glendale.edu/programs/NCGOC3/completion-requirements-zaZdl"
-  },
   "24381": {
    "sha256": "6d87521badbec2441596eeb5e207f60e024f2fd5719d4744999f4561ad458502",
    "url": "https://catalog.glendale.edu/programs/NCDFOC/completion-requirements-zaZdl"
-  },
-  "24432": {
-   "sha256": "27277549836528d32f72b41770bd0f0c786a8c4d9af11ad36c3f30a48b40e063",
-   "url": "https://catalog.glendale.edu/programs/NCHSD/completion-requirements-zaZdl"
   },
   "30031": {
    "sha256": "d5e0da25238503b9600615270548bc1f17ee1847839a1b8c49a154bb1817b839",
@@ -4432,6 +3087,10 @@
   "30814": {
    "sha256": "a279c7c6b123bd48e1e73b089837bd1162605686b65791ee275a3d5d82cc70d1",
    "url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl"
+  },
+  "31597": {
+   "sha256": "27277549836528d32f72b41770bd0f0c786a8c4d9af11ad36c3f30a48b40e063",
+   "url": "https://catalog.glendale.edu/programs/NCHSD/completion-requirements-zaZdl"
   },
   "31928": {
    "sha256": "512a3c6f7381421a956b2a26c261b006c2f938c9d8d12118bd522256f4d89568",
@@ -4641,10 +3300,6 @@
    "sha256": "24a686f91f86d7842d85cf6bff409182afba00391b2cafb3f61db9687e0dfab1",
    "url": "https://catalog.glendale.edu/programs/CW%20-%20C/completion-requirements-zaZdl"
   },
-  "37070": {
-   "sha256": "31aa4d3fb93457066bf1525ca785f5a57473f5a568dfe87e659ea5d9edc6e46b",
-   "url": "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl"
-  },
   "37071": {
    "sha256": "29f55b43fbe2294b8577b6883f9476934fd8a75bacc0f430e9f72d97809d5976",
    "url": "https://catalog.glendale.edu/programs/IT-AS/completion-requirements-zaZdl"
@@ -4668,6 +3323,10 @@
   "37952": {
    "sha256": "43dbde7220d5ff020d7c0be316c248bd2a41492f86f81646bc6e4e6e3dd46c52",
    "url": "https://catalog.glendale.edu/programs/ETE-AAT/completion-requirements-zaZdl"
+  },
+  "37960": {
+   "sha256": "bd6a5851cbe04ef31ffea996b69a680de395487848dc85d60d65121bed5cedcd",
+   "url": "https://catalog.glendale.edu/programs/CIS-AS/completion-requirements-zaZdl"
   },
   "38144": {
    "sha256": "68cca575a3f5145ba1c40516f18e7c93922687ab1c62e689c8fcbbf517662390",
@@ -4772,6 +3431,10 @@
   "42126": {
    "sha256": "cfb26f7a5ac777991290d55b9929c5a10fc88bf6cd2bdffbf0593160430b7b75",
    "url": "https://catalog.glendale.edu/programs/DP-AS/completion-requirements-zaZdl"
+  },
+  "42263": {
+   "sha256": "d3c8c677e0f4642b32b59a2a5ec3ec9d12a3f41a685b22fad9a1da9575c2a892",
+   "url": "https://catalog.glendale.edu/programs/NCGW/completion-requirements-zaZdl"
   },
   "42378": {
    "sha256": "a6e03e748fb79c672568a9ca029b99f37e809efd98196bd835c63c04768b7960",
@@ -4959,9 +3622,9 @@
   }
  },
  "staged_from": {
-  "run": "43384599013",
-  "proof": "the filed account equal but for its run, and 238 programs at their address and coverage",
+  "run": "43472166835",
+  "proof": "text sha256 of 242 programs",
   "pages_loaded": 0
  },
- "run": "43415972509"
+ "run": "43497305929"
 }

@@ -1,5 +1,5 @@
 {
- "run": "43415972509",
+ "run": "43497305929",
  "programs": [
   {
    "control_number": "02548",
@@ -7,7 +7,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/BIO-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
-   "cost_usd": 0.04262,
+   "cost_usd": 0.04414,
    "usage": {
     "input_tokens": 6375,
     "cache_creation_input_tokens": 0,
@@ -19,7 +19,7 @@
     "iterations": [
      {
       "input_tokens": 6375,
-      "output_tokens": 856,
+      "output_tokens": 932,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -30,9 +30,9 @@
       "model": null
      }
     ],
-    "output_tokens": 856,
+    "output_tokens": 932,
     "output_tokens_details": {
-     "thinking_tokens": 153
+     "thinking_tokens": 172
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -178,7 +178,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/BA-AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
-   "cost_usd": 0.05137,
+   "cost_usd": 0.05213,
    "usage": {
     "input_tokens": 6583,
     "cache_creation_input_tokens": 0,
@@ -190,7 +190,7 @@
     "iterations": [
      {
       "input_tokens": 6583,
-      "output_tokens": 1252,
+      "output_tokens": 1290,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -201,9 +201,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1252,
+    "output_tokens": 1290,
     "output_tokens_details": {
-     "thinking_tokens": 273
+     "thinking_tokens": 261
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -347,7 +347,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/ACCTG-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=89",
-   "cost_usd": 0.05168,
+   "cost_usd": 0.05342,
    "usage": {
     "input_tokens": 6516,
     "cache_creation_input_tokens": 0,
@@ -359,7 +359,7 @@
     "iterations": [
      {
       "input_tokens": 6516,
-      "output_tokens": 1281,
+      "output_tokens": 1368,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -370,9 +370,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1281,
+    "output_tokens": 1368,
     "output_tokens_details": {
-     "thinking_tokens": 327
+     "thinking_tokens": 371
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -576,7 +576,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/RE-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-   "cost_usd": 0.06042,
+   "cost_usd": 0.06012,
    "usage": {
     "input_tokens": 6741,
     "cache_creation_input_tokens": 0,
@@ -588,7 +588,7 @@
     "iterations": [
      {
       "input_tokens": 6741,
-      "output_tokens": 1673,
+      "output_tokens": 1658,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -599,9 +599,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1673,
+    "output_tokens": 1658,
     "output_tokens_details": {
-     "thinking_tokens": 469
+     "thinking_tokens": 470
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -757,7 +757,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/MC-C/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-   "cost_usd": 0.06951,
+   "cost_usd": 0.07383,
    "usage": {
     "input_tokens": 6743,
     "cache_creation_input_tokens": 0,
@@ -769,7 +769,7 @@
     "iterations": [
      {
       "input_tokens": 6743,
-      "output_tokens": 2127,
+      "output_tokens": 2343,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -780,9 +780,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2127,
+    "output_tokens": 2343,
     "output_tokens_details": {
-     "thinking_tokens": 531
+     "thinking_tokens": 752
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -957,7 +957,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/WELD-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-   "cost_usd": 0.04778,
+   "cost_usd": 0.04828,
    "usage": {
     "input_tokens": 6474,
     "cache_creation_input_tokens": 0,
@@ -969,7 +969,7 @@
     "iterations": [
      {
       "input_tokens": 6474,
-      "output_tokens": 1094,
+      "output_tokens": 1119,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -980,9 +980,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1094,
+    "output_tokens": 1119,
     "output_tokens_details": {
-     "thinking_tokens": 245
+     "thinking_tokens": 311
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -1126,7 +1126,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/MUSIC-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-   "cost_usd": 0.11175,
+   "cost_usd": 0.11609,
    "usage": {
     "input_tokens": 8358,
     "cache_creation_input_tokens": 0,
@@ -1138,7 +1138,7 @@
     "iterations": [
      {
       "input_tokens": 8358,
-      "output_tokens": 3916,
+      "output_tokens": 4133,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -1149,9 +1149,9 @@
       "model": null
      }
     ],
-    "output_tokens": 3916,
+    "output_tokens": 4133,
     "output_tokens_details": {
-     "thinking_tokens": 629
+     "thinking_tokens": 822
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -1370,7 +1370,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/RN-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=86",
-   "cost_usd": 0.07146,
+   "cost_usd": 0.07092,
    "usage": {
     "input_tokens": 6986,
     "cache_creation_input_tokens": 0,
@@ -1382,7 +1382,7 @@
     "iterations": [
      {
       "input_tokens": 6986,
-      "output_tokens": 2176,
+      "output_tokens": 2149,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -1393,9 +1393,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2176,
+    "output_tokens": 2149,
     "output_tokens_details": {
-     "thinking_tokens": 595
+     "thinking_tokens": 599
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -1576,7 +1576,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/SC-AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-   "cost_usd": 0.05162,
+   "cost_usd": 0.05122,
    "usage": {
     "input_tokens": 6579,
     "cache_creation_input_tokens": 0,
@@ -1588,7 +1588,7 @@
     "iterations": [
      {
       "input_tokens": 6579,
-      "output_tokens": 1265,
+      "output_tokens": 1245,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -1599,9 +1599,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1265,
+    "output_tokens": 1245,
     "output_tokens_details": {
-     "thinking_tokens": 281
+     "thinking_tokens": 230
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -1771,7 +1771,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/AJ-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
-   "cost_usd": 0.05254,
+   "cost_usd": 0.05474,
    "usage": {
     "input_tokens": 6749,
     "cache_creation_input_tokens": 0,
@@ -1783,7 +1783,7 @@
     "iterations": [
      {
       "input_tokens": 6749,
-      "output_tokens": 1277,
+      "output_tokens": 1387,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -1794,9 +1794,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1277,
+    "output_tokens": 1387,
     "output_tokens_details": {
-     "thinking_tokens": 177
+     "thinking_tokens": 244
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -1965,7 +1965,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/CDTP-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-   "cost_usd": 0.04623,
+   "cost_usd": 0.04435,
    "usage": {
     "input_tokens": 6568,
     "cache_creation_input_tokens": 0,
@@ -1977,7 +1977,7 @@
     "iterations": [
      {
       "input_tokens": 6568,
-      "output_tokens": 998,
+      "output_tokens": 904,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -1988,9 +1988,9 @@
       "model": null
      }
     ],
-    "output_tokens": 998,
+    "output_tokens": 904,
     "output_tokens_details": {
-     "thinking_tokens": 208
+     "thinking_tokens": 138
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -2133,7 +2133,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/EET-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-   "cost_usd": 0.04774,
+   "cost_usd": 0.04966,
    "usage": {
     "input_tokens": 6464,
     "cache_creation_input_tokens": 0,
@@ -2145,7 +2145,7 @@
     "iterations": [
      {
       "input_tokens": 6464,
-      "output_tokens": 1094,
+      "output_tokens": 1190,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -2156,9 +2156,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1094,
+    "output_tokens": 1190,
     "output_tokens_details": {
-     "thinking_tokens": 254
+     "thinking_tokens": 312
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -2310,7 +2310,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/CS%26DT-AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-   "cost_usd": 0.05477,
+   "cost_usd": 0.05455,
    "usage": {
     "input_tokens": 6663,
     "cache_creation_input_tokens": 0,
@@ -2322,7 +2322,7 @@
     "iterations": [
      {
       "input_tokens": 6663,
-      "output_tokens": 1406,
+      "output_tokens": 1395,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -2333,9 +2333,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1406,
+    "output_tokens": 1395,
     "output_tokens_details": {
-     "thinking_tokens": 254
+     "thinking_tokens": 310
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -2491,7 +2491,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/MUSIC-AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-   "cost_usd": 0.07722,
+   "cost_usd": 0.07714,
    "usage": {
     "input_tokens": 7475,
     "cache_creation_input_tokens": 0,
@@ -2503,7 +2503,7 @@
     "iterations": [
      {
       "input_tokens": 7475,
-      "output_tokens": 2366,
+      "output_tokens": 2362,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -2514,9 +2514,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2366,
+    "output_tokens": 2362,
     "output_tokens_details": {
-     "thinking_tokens": 595
+     "thinking_tokens": 537
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -2662,7 +2662,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/AVGD-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
-   "cost_usd": 0.0573,
+   "cost_usd": 0.05826,
    "usage": {
     "input_tokens": 6785,
     "cache_creation_input_tokens": 0,
@@ -2674,7 +2674,7 @@
     "iterations": [
      {
       "input_tokens": 6785,
-      "output_tokens": 1508,
+      "output_tokens": 1556,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -2685,9 +2685,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1508,
+    "output_tokens": 1556,
     "output_tokens_details": {
-     "thinking_tokens": 289
+     "thinking_tokens": 294
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -2839,7 +2839,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/CS-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-   "cost_usd": 0.06312,
+   "cost_usd": 0.0627,
    "usage": {
     "input_tokens": 6926,
     "cache_creation_input_tokens": 0,
@@ -2851,7 +2851,7 @@
     "iterations": [
      {
       "input_tokens": 6926,
-      "output_tokens": 1771,
+      "output_tokens": 1750,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -2862,9 +2862,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1771,
+    "output_tokens": 1750,
     "output_tokens_details": {
-     "thinking_tokens": 435
+     "thinking_tokens": 416
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -3018,7 +3018,7 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "source_url": "https://catalog.glendale.edu/programs/CP-C/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
-   "cost_usd": 0.04633,
+   "cost_usd": 0.04779,
    "usage": {
     "input_tokens": 6312,
     "cache_creation_input_tokens": 0,
@@ -3030,7 +3030,7 @@
     "iterations": [
      {
       "input_tokens": 6312,
-      "output_tokens": 1054,
+      "output_tokens": 1127,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -3041,9 +3041,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1054,
+    "output_tokens": 1127,
     "output_tokens_details": {
-     "thinking_tokens": 314
+     "thinking_tokens": 356
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -3187,7 +3187,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/CST-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-   "cost_usd": 0.05144,
+   "cost_usd": 0.05452,
    "usage": {
     "input_tokens": 6491,
     "cache_creation_input_tokens": 0,
@@ -3199,7 +3199,7 @@
     "iterations": [
      {
       "input_tokens": 6491,
-      "output_tokens": 1274,
+      "output_tokens": 1428,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -3210,9 +3210,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1274,
+    "output_tokens": 1428,
     "output_tokens_details": {
-     "thinking_tokens": 358
+     "thinking_tokens": 442
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -3374,7 +3374,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/CER-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
-   "cost_usd": 0.0437,
+   "cost_usd": 0.04294,
    "usage": {
     "input_tokens": 6391,
     "cache_creation_input_tokens": 0,
@@ -3386,7 +3386,7 @@
     "iterations": [
      {
       "input_tokens": 6391,
-      "output_tokens": 907,
+      "output_tokens": 869,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -3397,9 +3397,9 @@
       "model": null
      }
     ],
-    "output_tokens": 907,
+    "output_tokens": 869,
     "output_tokens_details": {
-     "thinking_tokens": 133
+     "thinking_tokens": 121
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -3551,7 +3551,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/CS%26DT-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-   "cost_usd": 0.08198,
+   "cost_usd": 0.0819,
    "usage": {
     "input_tokens": 7595,
     "cache_creation_input_tokens": 0,
@@ -3563,7 +3563,7 @@
     "iterations": [
      {
       "input_tokens": 7595,
-      "output_tokens": 2580,
+      "output_tokens": 2576,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -3574,9 +3574,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2580,
+    "output_tokens": 2576,
     "output_tokens_details": {
-     "thinking_tokens": 462
+     "thinking_tokens": 534
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -3751,7 +3751,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/CDITT-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-   "cost_usd": 0.04814,
+   "cost_usd": 0.04654,
    "usage": {
     "input_tokens": 6639,
     "cache_creation_input_tokens": 0,
@@ -3763,7 +3763,7 @@
     "iterations": [
      {
       "input_tokens": 6639,
-      "output_tokens": 1079,
+      "output_tokens": 999,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -3774,9 +3774,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1079,
+    "output_tokens": 999,
     "output_tokens_details": {
-     "thinking_tokens": 206
+     "thinking_tokens": 154
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -3919,7 +3919,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/CDSACT-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-   "cost_usd": 0.04698,
+   "cost_usd": 0.0476,
    "usage": {
     "input_tokens": 6621,
     "cache_creation_input_tokens": 0,
@@ -3931,7 +3931,7 @@
     "iterations": [
      {
       "input_tokens": 6621,
-      "output_tokens": 1025,
+      "output_tokens": 1056,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -3942,9 +3942,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1025,
+    "output_tokens": 1056,
     "output_tokens_details": {
-     "thinking_tokens": 157
+     "thinking_tokens": 144
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -4090,7 +4090,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/CDMT-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-   "cost_usd": 0.04802,
+   "cost_usd": 0.04908,
    "usage": {
     "input_tokens": 6765,
     "cache_creation_input_tokens": 0,
@@ -4102,7 +4102,7 @@
     "iterations": [
      {
       "input_tokens": 6765,
-      "output_tokens": 1048,
+      "output_tokens": 1101,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -4113,7 +4113,7 @@
       "model": null
      }
     ],
-    "output_tokens": 1048,
+    "output_tokens": 1101,
     "output_tokens_details": {
      "thinking_tokens": 203
     },
@@ -4256,7 +4256,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/DSS-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-   "cost_usd": 0.04814,
+   "cost_usd": 0.04654,
    "usage": {
     "input_tokens": 6535,
     "cache_creation_input_tokens": 0,
@@ -4268,7 +4268,7 @@
     "iterations": [
      {
       "input_tokens": 6535,
-      "output_tokens": 1100,
+      "output_tokens": 1020,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -4279,9 +4279,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1100,
+    "output_tokens": 1020,
     "output_tokens_details": {
-     "thinking_tokens": 305
+     "thinking_tokens": 255
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -4425,7 +4425,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/GRPHD-AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
-   "cost_usd": 0.04738,
+   "cost_usd": 0.04784,
    "usage": {
     "input_tokens": 6354,
     "cache_creation_input_tokens": 0,
@@ -4437,7 +4437,7 @@
     "iterations": [
      {
       "input_tokens": 6354,
-      "output_tokens": 1098,
+      "output_tokens": 1121,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -4448,9 +4448,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1098,
+    "output_tokens": 1121,
     "output_tokens_details": {
-     "thinking_tokens": 224
+     "thinking_tokens": 227
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -4622,7 +4622,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/EA-AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
-   "cost_usd": 0.05542,
+   "cost_usd": 0.0558,
    "usage": {
     "input_tokens": 6649,
     "cache_creation_input_tokens": 0,
@@ -4634,7 +4634,7 @@
     "iterations": [
      {
       "input_tokens": 6649,
-      "output_tokens": 1441,
+      "output_tokens": 1460,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -4645,9 +4645,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1441,
+    "output_tokens": 1460,
     "output_tokens_details": {
-     "thinking_tokens": 267
+     "thinking_tokens": 230
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -4803,7 +4803,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/IS-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
-   "cost_usd": 0.05327,
+   "cost_usd": 0.05217,
    "usage": {
     "input_tokens": 6682,
     "cache_creation_input_tokens": 0,
@@ -4815,7 +4815,7 @@
     "iterations": [
      {
       "input_tokens": 6682,
-      "output_tokens": 1327,
+      "output_tokens": 1272,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -4826,9 +4826,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1327,
+    "output_tokens": 1272,
     "output_tokens_details": {
-     "thinking_tokens": 283
+     "thinking_tokens": 250
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -4976,7 +4976,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/WB-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-   "cost_usd": 0.05726,
+   "cost_usd": 0.0565,
    "usage": {
     "input_tokens": 6685,
     "cache_creation_input_tokens": 0,
@@ -4988,7 +4988,7 @@
     "iterations": [
      {
       "input_tokens": 6685,
-      "output_tokens": 1526,
+      "output_tokens": 1488,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -4999,7 +4999,7 @@
       "model": null
      }
     ],
-    "output_tokens": 1526,
+    "output_tokens": 1488,
     "output_tokens_details": {
      "thinking_tokens": 433
     },
@@ -5153,7 +5153,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/REA-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
-   "cost_usd": 0.05722,
+   "cost_usd": 0.0613,
    "usage": {
     "input_tokens": 6745,
     "cache_creation_input_tokens": 0,
@@ -5165,7 +5165,7 @@
     "iterations": [
      {
       "input_tokens": 6745,
-      "output_tokens": 1512,
+      "output_tokens": 1716,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -5176,9 +5176,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1512,
+    "output_tokens": 1716,
     "output_tokens_details": {
-     "thinking_tokens": 295
+     "thinking_tokens": 465
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -5329,12 +5329,235 @@
    }
   },
   {
+   "control_number": "18638",
+   "title": "Liberal Arts: Arts and Humanities Emphasis",
+   "award": "A.A. Degree",
+   "source_url": "https://catalog.glendale.edu/programs/A%26H-AA/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
+   "cost_usd": 0.21444,
+   "usage": {
+    "input_tokens": 9644,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 9644,
+      "output_tokens": 8793,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 8793,
+    "output_tokens_details": {
+     "thinking_tokens": 1989
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 128,
+     "listed": 135,
+     "share": 0.948,
+     "missing": [
+      "ARTH101",
+      "ARTH101H",
+      "ARTH102",
+      "ARTH102H",
+      "HIST117",
+      "HIST118",
+      "HIST118H"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 19,
+     "codes": [
+      "ARTHC1100",
+      "ARTHC1100H",
+      "ARTHC1200",
+      "ARTHC1200H",
+      "DANCE103",
+      "ENGL107",
+      "ENGLC1002",
+      "ENGLC1002H",
+      "FIL101",
+      "HISTC1001",
+      "HISTC1001H",
+      "HISTC1002",
+      "HISTC1002H",
+      "HUMAN140",
+      "LING105",
+      "LING107",
+      "MUSIC124",
+      "PHILO121H",
+      "THTR124"
+     ],
+     "flagged": [
+      "ARTHC1100",
+      "ARTHC1100H",
+      "ARTHC1200",
+      "ARTHC1200H",
+      "DANCE103",
+      "ENGL107",
+      "ENGLC1002",
+      "ENGLC1002H",
+      "FIL101",
+      "HISTC1001",
+      "HISTC1001H",
+      "HISTC1002",
+      "HISTC1002H",
+      "HUMAN140",
+      "LING105",
+      "LING107",
+      "MUSIC124",
+      "PHILO121H",
+      "THTR124"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unequal",
+     "computed": [
+      6.0,
+      6.0
+     ],
+     "stated": [
+      18.0,
+      20.0
+     ],
+     "against": "program",
+     "why": [
+      "the blocks sum to 6.0-6.0; the catalog states 18.0-20.0"
+     ],
+     "degree": {
+      "pass": false,
+      "status": "unequal",
+      "computed": [
+       6.0,
+       6.0
+      ],
+      "stated": [
+       60.0,
+       60.0
+      ],
+      "against": "degree",
+      "ge": null,
+      "why": [
+       "the blocks and general education sum to 6.0-6.0; the catalog prints 60.0-60.0 for the degree"
+      ]
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 135,
+     "listed": 135,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "HUMAN140"
+     ],
+     "flagged": [
+      "HUMAN140"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
    "control_number": "19111",
    "title": "Dance Teaching",
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/DT-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
-   "cost_usd": 0.0874,
+   "cost_usd": 0.09332,
    "usage": {
     "input_tokens": 7379,
     "cache_creation_input_tokens": 0,
@@ -5346,7 +5569,7 @@
     "iterations": [
      {
       "input_tokens": 7379,
-      "output_tokens": 2894,
+      "output_tokens": 3190,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -5357,9 +5580,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2894,
+    "output_tokens": 3190,
     "output_tokens_details": {
-     "thinking_tokens": 757
+     "thinking_tokens": 993
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -5499,12 +5722,201 @@
    }
   },
   {
+   "control_number": "21305",
+   "title": "Computer Information Systems",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "source_url": "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
+   "cost_usd": 0.08586,
+   "usage": {
+    "input_tokens": 6906,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 6906,
+      "output_tokens": 2912,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2912,
+    "output_tokens_details": {
+     "thinking_tokens": 414
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "covers_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 11,
+     "listed": 19,
+     "share": 0.579,
+     "missing": [
+      "BUSAD106",
+      "BUSAD110",
+      "CS/IS137",
+      "CS/IS139",
+      "CS/IS261",
+      "CS/IS50",
+      "ENTRE101",
+      "ENTRE102"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 11,
+     "codes": [
+      "CS/IS186",
+      "CS/IS194",
+      "CS/IS196",
+      "CS/IS197",
+      "CS/IS240",
+      "CS/IS241",
+      "CS/IS242",
+      "CS/IS243",
+      "CS/IS255",
+      "CS/IS270",
+      "MATH137"
+     ],
+     "flagged": [
+      "CS/IS186",
+      "CS/IS194",
+      "CS/IS196",
+      "CS/IS197",
+      "CS/IS240",
+      "CS/IS241",
+      "CS/IS242",
+      "CS/IS243",
+      "CS/IS255",
+      "CS/IS270",
+      "MATH137"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      19.0,
+      22.0
+     ],
+     "stated": [
+      19.0,
+      22.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 19,
+     "listed": 19,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "CS/IS130",
+      "ENGL101"
+     ],
+     "flagged": [
+      "CS/IS130",
+      "ENGL101"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      32.0,
+      33.0
+     ],
+     "stated": [
+      32.0,
+      32.0
+     ],
+     "against": "program",
+     "why": [],
+     "meets": true
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 1,
+     "courses": 0,
+     "count": 1,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 9,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
    "control_number": "21315",
    "title": "Music",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "source_url": "https://catalog.glendale.edu/programs/MUSIC-C/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=109",
-   "cost_usd": 0.11216,
+   "cost_usd": 0.11222,
    "usage": {
     "input_tokens": 8370,
     "cache_creation_input_tokens": 0,
@@ -5516,7 +5928,7 @@
     "iterations": [
      {
       "input_tokens": 8370,
-      "output_tokens": 3934,
+      "output_tokens": 3937,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -5527,9 +5939,9 @@
       "model": null
      }
     ],
-    "output_tokens": 3934,
+    "output_tokens": 3937,
     "output_tokens_details": {
-     "thinking_tokens": 706
+     "thinking_tokens": 626
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -5728,7 +6140,7 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "source_url": "https://catalog.glendale.edu/programs/CS%26DT-C/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
-   "cost_usd": 0.08434,
+   "cost_usd": 0.08062,
    "usage": {
     "input_tokens": 7631,
     "cache_creation_input_tokens": 0,
@@ -5740,7 +6152,7 @@
     "iterations": [
      {
       "input_tokens": 7631,
-      "output_tokens": 2691,
+      "output_tokens": 2505,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -5751,9 +6163,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2691,
+    "output_tokens": 2505,
     "output_tokens_details": {
-     "thinking_tokens": 660
+     "thinking_tokens": 507
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -5911,7 +6323,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-   "cost_usd": 0.06637,
+   "cost_usd": 0.06625,
    "usage": {
     "input_tokens": 6842,
     "cache_creation_input_tokens": 0,
@@ -5923,7 +6335,7 @@
     "iterations": [
      {
       "input_tokens": 6842,
-      "output_tokens": 1950,
+      "output_tokens": 1944,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -5934,9 +6346,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1950,
+    "output_tokens": 1944,
     "output_tokens_details": {
-     "thinking_tokens": 472
+     "thinking_tokens": 439
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -6127,7 +6539,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/AA-T%20GEOG/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
-   "cost_usd": 0.06325,
+   "cost_usd": 0.06411,
    "usage": {
     "input_tokens": 6753,
     "cache_creation_input_tokens": 0,
@@ -6139,7 +6551,7 @@
     "iterations": [
      {
       "input_tokens": 6753,
-      "output_tokens": 1812,
+      "output_tokens": 1855,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -6150,9 +6562,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1812,
+    "output_tokens": 1855,
     "output_tokens_details": {
-     "thinking_tokens": 573
+     "thinking_tokens": 539
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -6303,7 +6715,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/ENGL%20AA-T/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
-   "cost_usd": 0.09261,
+   "cost_usd": 0.09445,
    "usage": {
     "input_tokens": 8193,
     "cache_creation_input_tokens": 0,
@@ -6315,7 +6727,7 @@
     "iterations": [
      {
       "input_tokens": 8193,
-      "output_tokens": 2992,
+      "output_tokens": 3084,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -6326,9 +6738,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2992,
+    "output_tokens": 3084,
     "output_tokens_details": {
-     "thinking_tokens": 495
+     "thinking_tokens": 508
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -6484,7 +6896,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/POL%20S%20AAT/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
-   "cost_usd": 0.09833,
+   "cost_usd": 0.09881,
    "usage": {
     "input_tokens": 7477,
     "cache_creation_input_tokens": 0,
@@ -6496,7 +6908,7 @@
     "iterations": [
      {
       "input_tokens": 7477,
-      "output_tokens": 3421,
+      "output_tokens": 3445,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -6507,9 +6919,9 @@
       "model": null
      }
     ],
-    "output_tokens": 3421,
+    "output_tokens": 3445,
     "output_tokens_details": {
-     "thinking_tokens": 1158
+     "thinking_tokens": 1197
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -6668,7 +7080,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/HIST%20AA-T/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
-   "cost_usd": 0.09525,
+   "cost_usd": 0.09923,
    "usage": {
     "input_tokens": 7982,
     "cache_creation_input_tokens": 0,
@@ -6680,7 +7092,7 @@
     "iterations": [
      {
       "input_tokens": 7982,
-      "output_tokens": 3166,
+      "output_tokens": 3365,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -6691,9 +7103,9 @@
       "model": null
      }
     ],
-    "output_tokens": 3166,
+    "output_tokens": 3365,
     "output_tokens_details": {
-     "thinking_tokens": 585
+     "thinking_tokens": 737
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -6835,7 +7247,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/TA%20AA-T/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
-   "cost_usd": 0.07944,
+   "cost_usd": 0.0755,
    "usage": {
     "input_tokens": 7300,
     "cache_creation_input_tokens": 0,
@@ -6847,7 +7259,7 @@
     "iterations": [
      {
       "input_tokens": 7300,
-      "output_tokens": 2512,
+      "output_tokens": 2315,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -6858,9 +7270,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2512,
+    "output_tokens": 2315,
     "output_tokens_details": {
-     "thinking_tokens": 945
+     "thinking_tokens": 735
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -6888,7 +7300,7 @@
      "pass": false,
      "status": "unequal",
      "computed": [
-      15.0,
+      18.0,
       19.0
      ],
      "stated": [
@@ -6897,13 +7309,13 @@
      ],
      "against": "program",
      "why": [
-      "the blocks sum to 15.0-19.0; the catalog states 18.0-20.0"
+      "the blocks sum to 18.0-19.0; the catalog states 18.0-20.0"
      ],
      "degree": {
       "pass": true,
       "status": "equal",
       "computed": [
-       15.0,
+       18.0,
        19.0
       ],
       "stated": [
@@ -6916,7 +7328,7 @@
       "transfer": true,
       "fill": [
        41.0,
-       45.0
+       42.0
       ]
      }
     },
@@ -7013,7 +7425,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/AH%20AA-T/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
-   "cost_usd": 0.07629,
+   "cost_usd": 0.07635,
    "usage": {
     "input_tokens": 7242,
     "cache_creation_input_tokens": 0,
@@ -7025,7 +7437,7 @@
     "iterations": [
      {
       "input_tokens": 7242,
-      "output_tokens": 2366,
+      "output_tokens": 2369,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -7036,9 +7448,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2366,
+    "output_tokens": 2369,
     "output_tokens_details": {
-     "thinking_tokens": 471
+     "thinking_tokens": 483
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -7194,7 +7606,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/SA%20AA-T/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
-   "cost_usd": 0.07053,
+   "cost_usd": 0.06981,
    "usage": {
     "input_tokens": 6877,
     "cache_creation_input_tokens": 0,
@@ -7206,7 +7618,7 @@
     "iterations": [
      {
       "input_tokens": 6877,
-      "output_tokens": 2151,
+      "output_tokens": 2115,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -7217,9 +7629,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2151,
+    "output_tokens": 2115,
     "output_tokens_details": {
-     "thinking_tokens": 578
+     "thinking_tokens": 549
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -7387,7 +7799,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/MCS-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
-   "cost_usd": 0.04621,
+   "cost_usd": 0.04701,
    "usage": {
     "input_tokens": 6612,
     "cache_creation_input_tokens": 0,
@@ -7399,7 +7811,7 @@
     "iterations": [
      {
       "input_tokens": 6612,
-      "output_tokens": 988,
+      "output_tokens": 1028,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -7410,9 +7822,9 @@
       "model": null
      }
     ],
-    "output_tokens": 988,
+    "output_tokens": 1028,
     "output_tokens_details": {
-     "thinking_tokens": 163
+     "thinking_tokens": 202
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -7556,7 +7968,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/AMA-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-   "cost_usd": 0.04903,
+   "cost_usd": 0.04801,
    "usage": {
     "input_tokens": 6568,
     "cache_creation_input_tokens": 0,
@@ -7568,7 +7980,7 @@
     "iterations": [
      {
       "input_tokens": 6568,
-      "output_tokens": 1138,
+      "output_tokens": 1087,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -7579,9 +7991,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1138,
+    "output_tokens": 1087,
     "output_tokens_details": {
-     "thinking_tokens": 193
+     "thinking_tokens": 232
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -7725,7 +8137,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/ETCDD-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=74",
-   "cost_usd": 0.04798,
+   "cost_usd": 0.04922,
    "usage": {
     "input_tokens": 6440,
     "cache_creation_input_tokens": 0,
@@ -7737,7 +8149,7 @@
     "iterations": [
      {
       "input_tokens": 6440,
-      "output_tokens": 1111,
+      "output_tokens": 1173,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -7748,9 +8160,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1111,
+    "output_tokens": 1173,
     "output_tokens_details": {
-     "thinking_tokens": 242
+     "thinking_tokens": 341
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -7894,7 +8306,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/ARMNL%20-%20AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=77",
-   "cost_usd": 0.05404,
+   "cost_usd": 0.04758,
    "usage": {
     "input_tokens": 6606,
     "cache_creation_input_tokens": 0,
@@ -7906,7 +8318,7 @@
     "iterations": [
      {
       "input_tokens": 6606,
-      "output_tokens": 1381,
+      "output_tokens": 1058,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -7917,9 +8329,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1381,
+    "output_tokens": 1058,
     "output_tokens_details": {
-     "thinking_tokens": 410
+     "thinking_tokens": 211
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -8063,7 +8475,7 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "source_url": "https://catalog.glendale.edu/programs/CW%20-%20C/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=98",
-   "cost_usd": 0.05593,
+   "cost_usd": 0.05335,
    "usage": {
     "input_tokens": 6763,
     "cache_creation_input_tokens": 0,
@@ -8075,7 +8487,7 @@
     "iterations": [
      {
       "input_tokens": 6763,
-      "output_tokens": 1444,
+      "output_tokens": 1315,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -8086,9 +8498,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1444,
+    "output_tokens": 1315,
     "output_tokens_details": {
-     "thinking_tokens": 266
+     "thinking_tokens": 167
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -8224,7 +8636,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/COMPEN-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-   "cost_usd": 0.04948,
+   "cost_usd": 0.05222,
    "usage": {
     "input_tokens": 6600,
     "cache_creation_input_tokens": 0,
@@ -8236,7 +8648,7 @@
     "iterations": [
      {
       "input_tokens": 6600,
-      "output_tokens": 1154,
+      "output_tokens": 1291,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -8247,9 +8659,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1154,
+    "output_tokens": 1291,
     "output_tokens_details": {
-     "thinking_tokens": 217
+     "thinking_tokens": 358
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -8393,7 +8805,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/CE-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
-   "cost_usd": 0.0557,
+   "cost_usd": 0.0563,
    "usage": {
     "input_tokens": 6796,
     "cache_creation_input_tokens": 0,
@@ -8405,7 +8817,7 @@
     "iterations": [
      {
       "input_tokens": 6796,
-      "output_tokens": 1426,
+      "output_tokens": 1456,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -8416,9 +8828,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1426,
+    "output_tokens": 1456,
     "output_tokens_details": {
-     "thinking_tokens": 279
+     "thinking_tokens": 289
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -8562,7 +8974,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/EE-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=74",
-   "cost_usd": 0.05184,
+   "cost_usd": 0.05022,
    "usage": {
     "input_tokens": 6650,
     "cache_creation_input_tokens": 0,
@@ -8574,7 +8986,7 @@
     "iterations": [
      {
       "input_tokens": 6650,
-      "output_tokens": 1262,
+      "output_tokens": 1181,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -8585,9 +8997,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1262,
+    "output_tokens": 1181,
     "output_tokens_details": {
-     "thinking_tokens": 248
+     "thinking_tokens": 223
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -8731,7 +9143,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/ME-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=74",
-   "cost_usd": 0.05456,
+   "cost_usd": 0.05454,
    "usage": {
     "input_tokens": 6814,
     "cache_creation_input_tokens": 0,
@@ -8743,7 +9155,7 @@
     "iterations": [
      {
       "input_tokens": 6814,
-      "output_tokens": 1365,
+      "output_tokens": 1364,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -8754,9 +9166,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1365,
+    "output_tokens": 1364,
     "output_tokens_details": {
-     "thinking_tokens": 254
+     "thinking_tokens": 211
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -8900,7 +9312,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/ETE-AAT/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
-   "cost_usd": 0.08775,
+   "cost_usd": 0.08727,
    "usage": {
     "input_tokens": 7608,
     "cache_creation_input_tokens": 0,
@@ -8912,7 +9324,7 @@
     "iterations": [
      {
       "input_tokens": 7608,
-      "output_tokens": 2866,
+      "output_tokens": 2842,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -8923,9 +9335,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2866,
+    "output_tokens": 2842,
     "output_tokens_details": {
-     "thinking_tokens": 669
+     "thinking_tokens": 734
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -9083,12 +9495,221 @@
    }
   },
   {
+   "control_number": "37960",
+   "title": "Computer Information Systems",
+   "award": "A.S. Degree",
+   "source_url": "https://catalog.glendale.edu/programs/CIS-AS/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
+   "cost_usd": 0.09285,
+   "usage": {
+    "input_tokens": 6897,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 6897,
+      "output_tokens": 3263,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3263,
+    "output_tokens_details": {
+     "thinking_tokens": 794
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 11,
+     "listed": 19,
+     "share": 0.579,
+     "missing": [
+      "BUSAD106",
+      "BUSAD110",
+      "CS/IS137",
+      "CS/IS139",
+      "CS/IS261",
+      "CS/IS50",
+      "ENTRE101",
+      "ENTRE102"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 11,
+     "codes": [
+      "CS/IS186",
+      "CS/IS194",
+      "CS/IS196",
+      "CS/IS197",
+      "CS/IS240",
+      "CS/IS241",
+      "CS/IS242",
+      "CS/IS243",
+      "CS/IS255",
+      "CS/IS270",
+      "MATH137"
+     ],
+     "flagged": [
+      "CS/IS186",
+      "CS/IS194",
+      "CS/IS196",
+      "CS/IS197",
+      "CS/IS240",
+      "CS/IS241",
+      "CS/IS242",
+      "CS/IS243",
+      "CS/IS255",
+      "CS/IS270",
+      "MATH137"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unequal",
+     "computed": [
+      19.0,
+      22.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the blocks and general education sum to 19.0-22.0; the catalog prints 60.0-60.0 for the degree"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       19.0,
+       22.0
+      ],
+      "stated": [
+       19.0,
+       22.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 19,
+     "listed": 19,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "CS/IS130",
+      "ENGL101"
+     ],
+     "flagged": [
+      "CS/IS130",
+      "ENGL101"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      32.0,
+      33.0
+     ],
+     "stated": [
+      32.0,
+      32.0
+     ],
+     "against": "program",
+     "why": [],
+     "meets": true
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 1,
+     "courses": 0,
+     "count": 1,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 9,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
    "control_number": "38144",
    "title": "English: Creative Writing",
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/ENG%3ACW-AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-   "cost_usd": 0.05704,
+   "cost_usd": 0.0545,
    "usage": {
     "input_tokens": 6815,
     "cache_creation_input_tokens": 0,
@@ -9100,7 +9721,7 @@
     "iterations": [
      {
       "input_tokens": 6815,
-      "output_tokens": 1489,
+      "output_tokens": 1362,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -9111,9 +9732,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1489,
+    "output_tokens": 1362,
     "output_tokens_details": {
-     "thinking_tokens": 356
+     "thinking_tokens": 249
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -9263,7 +9884,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/ECON-AAT/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-   "cost_usd": 0.08476,
+   "cost_usd": 0.08534,
    "usage": {
     "input_tokens": 7115,
     "cache_creation_input_tokens": 0,
@@ -9275,7 +9896,7 @@
     "iterations": [
      {
       "input_tokens": 7115,
-      "output_tokens": 2815,
+      "output_tokens": 2844,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -9286,9 +9907,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2815,
+    "output_tokens": 2844,
     "output_tokens_details": {
-     "thinking_tokens": 914
+     "thinking_tokens": 989
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -9447,7 +10068,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/SWHS-AAT/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
-   "cost_usd": 0.10365,
+   "cost_usd": 0.10063,
    "usage": {
     "input_tokens": 7432,
     "cache_creation_input_tokens": 0,
@@ -9459,7 +10080,7 @@
     "iterations": [
      {
       "input_tokens": 7432,
-      "output_tokens": 3696,
+      "output_tokens": 3545,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -9470,9 +10091,9 @@
       "model": null
      }
     ],
-    "output_tokens": 3696,
+    "output_tokens": 3545,
     "output_tokens_details": {
-     "thinking_tokens": 1474
+     "thinking_tokens": 1318
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -9643,7 +10264,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/FLS-AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
-   "cost_usd": 0.07241,
+   "cost_usd": 0.07111,
    "usage": {
     "input_tokens": 7517,
     "cache_creation_input_tokens": 0,
@@ -9655,7 +10276,7 @@
     "iterations": [
      {
       "input_tokens": 7517,
-      "output_tokens": 2117,
+      "output_tokens": 2052,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -9666,9 +10287,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2117,
+    "output_tokens": 2052,
     "output_tokens_details": {
-     "thinking_tokens": 331
+     "thinking_tokens": 288
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -9815,7 +10436,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/SPCO-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
-   "cost_usd": 0.07501,
+   "cost_usd": 0.07647,
    "usage": {
     "input_tokens": 7217,
     "cache_creation_input_tokens": 0,
@@ -9827,7 +10448,7 @@
     "iterations": [
      {
       "input_tokens": 7217,
-      "output_tokens": 2307,
+      "output_tokens": 2380,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -9838,9 +10459,9 @@
       "model": null
      }
     ],
-    "output_tokens": 2307,
+    "output_tokens": 2380,
     "output_tokens_details": {
-     "thinking_tokens": 537
+     "thinking_tokens": 546
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -9984,7 +10605,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/MATH-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
-   "cost_usd": 0.04498,
+   "cost_usd": 0.04416,
    "usage": {
     "input_tokens": 6421,
     "cache_creation_input_tokens": 0,
@@ -9996,7 +10617,7 @@
     "iterations": [
      {
       "input_tokens": 6421,
-      "output_tokens": 965,
+      "output_tokens": 924,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -10007,9 +10628,9 @@
       "model": null
      }
     ],
-    "output_tokens": 965,
+    "output_tokens": 924,
     "output_tokens_details": {
-     "thinking_tokens": 217
+     "thinking_tokens": 189
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -10153,7 +10774,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/HA-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
-   "cost_usd": 0.0447,
+   "cost_usd": 0.04306,
    "usage": {
     "input_tokens": 6440,
     "cache_creation_input_tokens": 0,
@@ -10165,7 +10786,7 @@
     "iterations": [
      {
       "input_tokens": 6440,
-      "output_tokens": 947,
+      "output_tokens": 865,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -10176,9 +10797,9 @@
       "model": null
      }
     ],
-    "output_tokens": 947,
+    "output_tokens": 865,
     "output_tokens_details": {
-     "thinking_tokens": 188
+     "thinking_tokens": 171
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -10322,7 +10943,7 @@
    "award": "A.S. Degree",
    "source_url": "https://catalog.glendale.edu/programs/DP-AS/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
-   "cost_usd": 0.05146,
+   "cost_usd": 0.04994,
    "usage": {
     "input_tokens": 6496,
     "cache_creation_input_tokens": 0,
@@ -10334,7 +10955,7 @@
     "iterations": [
      {
       "input_tokens": 6496,
-      "output_tokens": 1274,
+      "output_tokens": 1198,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -10345,9 +10966,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1274,
+    "output_tokens": 1198,
     "output_tokens_details": {
-     "thinking_tokens": 255
+     "thinking_tokens": 219
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -10493,7 +11114,7 @@
    "award": "A.S. T Degree",
    "source_url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-   "cost_usd": 0.05332,
+   "cost_usd": 0.05398,
    "usage": {
     "input_tokens": 6564,
     "cache_creation_input_tokens": 0,
@@ -10505,7 +11126,7 @@
     "iterations": [
      {
       "input_tokens": 6564,
-      "output_tokens": 1353,
+      "output_tokens": 1386,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -10516,9 +11137,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1353,
+    "output_tokens": 1386,
     "output_tokens_details": {
-     "thinking_tokens": 368
+     "thinking_tokens": 417
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -10674,7 +11295,7 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "source_url": "https://catalog.glendale.edu/programs/IEAC-C/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
-   "cost_usd": 0.0583,
+   "cost_usd": 0.05382,
    "usage": {
     "input_tokens": 6725,
     "cache_creation_input_tokens": 0,
@@ -10686,7 +11307,7 @@
     "iterations": [
      {
       "input_tokens": 6725,
-      "output_tokens": 1570,
+      "output_tokens": 1346,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -10697,9 +11318,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1570,
+    "output_tokens": 1346,
     "output_tokens_details": {
-     "thinking_tokens": 455
+     "thinking_tokens": 277
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -10825,7 +11446,7 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "source_url": "https://catalog.glendale.edu/programs/AEVPA-C/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=102",
-   "cost_usd": 0.06625,
+   "cost_usd": 0.06575,
    "usage": {
     "input_tokens": 6882,
     "cache_creation_input_tokens": 0,
@@ -10837,7 +11458,7 @@
     "iterations": [
      {
       "input_tokens": 6882,
-      "output_tokens": 1936,
+      "output_tokens": 1911,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -10848,9 +11469,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1936,
+    "output_tokens": 1911,
     "output_tokens_details": {
-     "thinking_tokens": 480
+     "thinking_tokens": 430
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -11001,7 +11622,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/DFP-AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-   "cost_usd": 0.05154,
+   "cost_usd": 0.05264,
    "usage": {
     "input_tokens": 6491,
     "cache_creation_input_tokens": 0,
@@ -11013,7 +11634,7 @@
     "iterations": [
      {
       "input_tokens": 6491,
-      "output_tokens": 1279,
+      "output_tokens": 1334,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -11024,9 +11645,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1279,
+    "output_tokens": 1334,
     "output_tokens_details": {
-     "thinking_tokens": 340
+     "thinking_tokens": 338
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -11180,7 +11801,7 @@
    "award": "A.A. Degree",
    "source_url": "https://catalog.glendale.edu/programs/FS-AA/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
-   "cost_usd": 0.06016,
+   "cost_usd": 0.06094,
    "usage": {
     "input_tokens": 6961,
     "cache_creation_input_tokens": 0,
@@ -11192,7 +11813,7 @@
     "iterations": [
      {
       "input_tokens": 6961,
-      "output_tokens": 1616,
+      "output_tokens": 1655,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -11203,9 +11824,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1616,
+    "output_tokens": 1655,
     "output_tokens_details": {
-     "thinking_tokens": 208
+     "thinking_tokens": 282
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -11349,7 +11970,7 @@
    "award": "A.A- T Degree",
    "source_url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
-   "cost_usd": 0.06786,
+   "cost_usd": 0.06942,
    "usage": {
     "input_tokens": 7009,
     "cache_creation_input_tokens": 0,
@@ -11361,7 +11982,7 @@
     "iterations": [
      {
       "input_tokens": 7009,
-      "output_tokens": 1991,
+      "output_tokens": 2069,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -11372,9 +11993,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1991,
+    "output_tokens": 2069,
     "output_tokens_details": {
-     "thinking_tokens": 407
+     "thinking_tokens": 442
     },
     "service_tier": "standard",
     "inference_geo": "global",
@@ -11536,7 +12157,7 @@
    "award": "A.S. T Degree",
    "source_url": "https://catalog.glendale.edu/programs/ND-AST/completion-requirements-zaZdl",
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
-   "cost_usd": 0.06751,
+   "cost_usd": 0.06837,
    "usage": {
     "input_tokens": 6913,
     "cache_creation_input_tokens": 0,
@@ -11548,7 +12169,7 @@
     "iterations": [
      {
       "input_tokens": 6913,
-      "output_tokens": 1993,
+      "output_tokens": 2036,
       "cache_read_input_tokens": 0,
       "cache_creation_input_tokens": 0,
       "cache_creation": {
@@ -11559,9 +12180,9 @@
       "model": null
      }
     ],
-    "output_tokens": 1993,
+    "output_tokens": 2036,
     "output_tokens_details": {
-     "thinking_tokens": 555
+     "thinking_tokens": 622
     },
     "service_tier": "standard",
     "inference_geo": "global",
