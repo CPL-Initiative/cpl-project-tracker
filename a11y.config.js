@@ -936,6 +936,39 @@ async function seedExhibitsRelated(page, theme, where) {
   await page.waitForTimeout(300);
 }
 
+/* A Review card with Course details above its Related titles (S647, #3223; Sam, 2026-11-13: "the course details link is
+   very helpful but should have the details listed in a section above Words in common on sidebar"). The Review file is
+   answered here with one Wording check card carrying its local course, a noncredit one beside it for the lead note. */
+async function seedExhibitsReviewCard(page, theme) {
+  const CCC = "California Community Colleges";
+  await page.route("**/kb/exhibits_review.json*", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({
+    schema: 1, written_at: "2026-11-13T06:21:00Z", sources: {}, tiles: { names: { n: 10, of: 12, waiting: 2 }, aligned: { n: 0, of: 2 } },
+    steps: { "Wording check": 2 }, colleges: ["Las Positas College", "Hartnell College"], issuers: [CCC, "CompTIA"], sites: [],
+    held: [
+      { raw: "Industry Training Evidence for CNT 7285", step: "Wording check", why: "the classifier's title has a course code left in", colleges: [0],
+        title: "CompTIA Cloud+", issuer: "CompTIA", from: "the statewide exhibit in use (3 local titles, at 5 colleges)", ids: ["MAPICI-IFC7-1-001"],
+        art: [0], could: [], basis: "", same: false, alternates: ["Computer Networking Technology (CNT 7285)"],
+        local_courses: [[0, "CNT 7285", "Cloud Infrastructure: CompTIA Cloud+ Certification", 3, "CCC000589345",
+          "3 units in CNT 7285 Cloud Infrastructure: CompTIA Cloud+ Certification",
+          "This course is designed for anyone looking to learn about the hardware and software used in data centers."]] },
+      { raw: "Noncredit Course for ESL 501", step: "Wording check", why: "the classifier's title has a course code left in", colleges: [1],
+        title: "English as a Second Language (ESL 501)", issuer: CCC, from: "the classifier", ids: ["MAPCXS-ESL5-1-001"],
+        art: [1], could: [], basis: "", same: false, local_courses: [[1, "ESL 501", "Beginning Literacy", 0, "CCC9", "", "ESL."]] }] }) }));
+  await page.route("**/kb/exhibits_related.json*", (route) => route.fulfill({ status: 200, contentType: "application/json", body: JSON.stringify({
+    schema: 1, generated_at: "2026-11-13T06:21:01Z", issuers: [CCC, "CompTIA"], paths: {},
+    titles: [["CompTIA Cloud+", 1, 3, 5, 0], ["CompTIA Cloud Essentials+", 1, 2, 2, 0], ["Cloud Computing", 0, 4, 3, 0]],
+    pending: {}, batches: [], waiting: [], families: {} }) }));
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/held") location.hash = "exhibits/held"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => document.querySelector("#exhibits-root section.exh-cdsum .exh-cd-title"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 /* The Exhibits tab's Requests view (SkyLoop, 2026-11-06): the public's asks to prioritize a credential, one line per
    credential. The rows read behind the team phrase, which the sweep does not hold, so the read is answered here with
    three rows (two credentials), and the table, its region and the counts are measured. */
@@ -4034,6 +4067,22 @@ module.exports = {
     routes: [{ hash: "exhibits/another-look", name: "related-dark" }],
     widths: [390, 1440],
     seed: (page) => seedExhibitsRelated(page, "dark", "another-look"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-review-card": {
+    file: "index.html",
+    title: "Exhibits: a Review card with Course details above its related titles",
+    routes: [{ hash: "exhibits/held", name: "review-card" }],
+    widths: [320, 390, 1024, 1440],
+    seed: (page) => seedExhibitsReviewCard(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-review-card-dark": {
+    file: "index.html",
+    title: "Exhibits: a Review card with Course details, dark",
+    routes: [{ hash: "exhibits/held", name: "review-card-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsReviewCard(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "exhibits-rename-batch": {

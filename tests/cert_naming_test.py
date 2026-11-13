@@ -259,6 +259,59 @@ for wf in ("cer-procedures.yml", "daily-dashboard.yml"):
     check(wf + " builds the related titles after Another look and commits the file",
           y.index("_sweep_exhibit_titles.py") < y.index("_build_exhibits_related.py") and "git add kb/exhibits_related.json" in y)
 
+# ── #3228 (S647): the standards titles and the decisions that kept coming back ──
+# Sam, 5:38 AM PT 2026-11-13: "the Another Look candidates keep popping on the list though I have decided on them ... Also
+# the rename batch. I acted already on the Rename batch, but the keep coming back." The cause on main: cert_naming read
+# "Brakes (ASE A5 standards)" (Sam's own name, ruling A) as program-first, so the batch and Another look proposed the
+# cert form on every rebuild; and a keep answered only the exact wording it was saved against.
+STD = "Suspension and Steering (ASE A4 standards)"
+got = cn.ase_read(STD, CCC)
+check("a standards title is read as standing, with no proposal", cn.is_standards(STD) and got["kind"] == "standards"
+      and got["proposed"] == "" and got["codes"] == ["A4"] and cn.canonical(STD, CCC) == STD, got)
+check("the cert form and a program-first title are not standards titles",
+      not cn.is_standards("Suspension and Steering (ASE A4)") and not cn.is_standards("Automotive Technology (ASE A5 Brakes)"))
+import fold_issuer  # noqa: E402
+check("the fold's rule 2b reads the same form", fold_issuer.standards_body(STD) == ASE and fold_issuer.standards_body("Brakes (ASE A5)") is None)
+check("Another look never proposes the cert form for a standards title",
+      sw.rule_ase("Noncredit for AUTO A4", STD, {"courses": [["AUTO", "A4", ""]]}, True) is None
+      and sw.propose("Suspension and Steering Systems", STD, {}, True) == (STD, []))
+check("a keep answers a reworded proposal for the same one test",
+      sw.same_decision("Suspension and Steering (ASE A4)", ["Automotive Technology (ASE A4 Suspension and Steering)"])
+      and sw.same_decision("Elementary French 1", ["Elementary French I"]))
+check("but not a proposal for another test or other words",
+      not sw.same_decision("Brakes (ASE A5)", ["Automotive Technology (ASE A4 Suspension and Steering)"])
+      and not sw.same_decision("Guitar 2", ["Guitar 1"]) and not sw.same_decision("Guitar 2", []))
+tmp3 = tempfile.mkdtemp(prefix="cert-naming-std-")
+try:
+    fixture(tmp3)
+    ut = json.load(open(os.path.join(tmp3, "kb", "unified_titles.json"), encoding="utf-8"))
+    cr3 = json.load(open(os.path.join(tmp3, "kb", "credentials.json"), encoding="utf-8"))
+    for raw, t, iss in (("Noncredit for AUTO A4", STD, CCC), ("Fuel systems local", "Automotive Fuel Systems", ASE)):
+        ut[raw] = {"unified_title": t, "source_exhibit_ids": ["X-" + raw]}
+        cr3[t] = [{"issuing_agency": iss}]
+    write(os.path.join(tmp3, "kb", "unified_titles.json"), ut)
+    write(os.path.join(tmp3, "kb", "credentials.json"), cr3)
+    rows3 = {r["current"]: r for r in rel.build(tmp3)["batches"][0]["rows"]}
+    check("the rename batch leaves a standards title alone", STD not in rows3)
+    check("a row with no proposal stays until it is decided", rows3.get("Automotive Fuel Systems", {}).get("proposed") == "", rows3.keys())
+    write(os.path.join(tmp3, "kb", "credential_review_overlay.json"),
+          {"overrides": {"Automotive Fuel Systems": {"cert_rename_kept": "Automotive Fuel Systems"}}})
+    rows4 = {r["current"] for r in rel.build(tmp3)["batches"][0]["rows"]}
+    check("and a skip on it, saved as the title kept as it is, takes it out", "Automotive Fuel Systems" not in rows4, rows4)
+    # COBIx's review of #3233: the builder read a keep-as-is as answering any proposal; the tab reads it as answering
+    # only the empty one. A title kept as it is that later gains a proposal must come back, in both.
+    ut["Heating local"] = {"unified_title": "Heating and Air Conditioning", "source_exhibit_ids": ["X-Heating local"]}
+    cr3["Heating and Air Conditioning"] = [{"issuing_agency": ASE}]
+    write(os.path.join(tmp3, "kb", "unified_titles.json"), ut)
+    write(os.path.join(tmp3, "kb", "credentials.json"), cr3)
+    write(os.path.join(tmp3, "kb", "credential_review_overlay.json"),
+          {"overrides": {"Heating and Air Conditioning": {"cert_rename_kept": "Heating and Air Conditioning"}}})
+    rows5 = {r["current"]: r for r in rel.build(tmp3)["batches"][0]["rows"]}
+    check("keep-as-is, then a proposal appears: the row returns with it",
+          rows5.get("Heating and Air Conditioning", {}).get("proposed") == "Heating and Air Conditioning (ASE A7)", rows5.keys())
+finally:
+    shutil.rmtree(tmp3, ignore_errors=True)
+
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:
     print(("PASS " if ok else "FAIL ") + name + ("" if ok else "  " + repr(why)[:500]))

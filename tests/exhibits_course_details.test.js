@@ -30,7 +30,9 @@ const REVIEW = { schema: 1, written_at: "2026-11-12T07:50:00Z", sources: { proce
   held: [
     { raw: "Credit by Exam-- CFPL ABT 133", step: "Wording check", why: "the classifier's title has a course code left in", colleges: [0],
       title: "Agricultural Business and Technology (ABT 133)", issuer: CCC, from: "the classifier", ids: ["MAPCXI-CBEC2-1-001"],
-      art: [0], could: [], basis: "", same: false, under: [], under_count: 0 },
+      art: [0], could: [], basis: "", same: false, under: [], under_count: 0,
+      local_courses: [[0, "ABT 133", "Facility Management for Food Safety", 1.5, "CCC000519246", "1.5 hours in Facility Management for Food Safety",
+        "Covers food safety issues and concerns in the manufacturing facility."]] },
     { raw: "Welding Exam", step: "Proposed", why: "unsure", colleges: [1], title: "Welding 1", issuer: CCC, from: "the classifier",
       ids: ["MAPCXI-WELD-1-001"], art: [1], could: [], basis: "", same: false, under: [], under_count: 0 }] };
 const RELATED = { schema: 1, generated_at: "2026-11-12T07:55:00Z", issuers: [CCC], paths: {},
@@ -90,6 +92,21 @@ function esc(w, target) { target.dispatchEvent(new w.KeyboardEvent("keydown", { 
     btn && btn.tagName === "BUTTON" && txt(btn) === "Course details" && /^Source:/.test(txt(btn.parentNode))
     && !!btn.closest("section.exh-card") && btn.getAttribute("aria-expanded") === "false");
   check("Related titles shows beside the card before it is pressed", !!aside(t.d, "Related titles") && !aside(t.d, "Course details"));
+  // #3223 (Sam, 4:57 AM PT 2026-11-13): "the course details link is very helpful but should have the details listed in a
+  // section above Words in common on sidebar. the local course title has been the most helpful thing for me to see".
+  const sum = t.d.querySelector("section.exh-cdsum"), side = sum && sum.parentNode;
+  check("the side panel lists Course details above Related titles, without a press and without reading the big files",
+    sum && side.className === "exh-side" && side.children[0] === sum && side.children[1] === aside(t.d, "Related titles")
+    && txt(sum.querySelector("h4")) === "Course details" && !t.loaded.some(function (u) { return /statewide_data|unified_courses_members/.test(u); }));
+  check("it leads with the local course title, then the college, the code and the units, the credit line and the COCI description",
+    txt(sum.querySelector(".exh-cd-title")) === "Facility Management for Food Safety"
+    && /Hartnell College · ABT 133 · 1\.5 units/.test(txt(sum)) && /Credit recommendation: 1\.5 hours/.test(txt(sum))
+    && /COCI description: Covers food safety issues/.test(txt(sum)));
+  check("the card's MAP exhibit is summarized there, with Open in MAP in a new tab, and the Source id points at it",
+    /MAPCXI-CBEC2-1-001 · Credit by Exam-- CFPL ABT 133, Hartnell/.test(txt(sum.querySelector(".exh-cdsum-map")))
+    && !!Array.from(sum.querySelectorAll("a")).find(function (a) { return txt(a) === "Open in MAP" && a.target === "_blank"; })
+    && !!Array.from(t.d.querySelectorAll(".exh-card p.exh-small button")).find(function (b) { return txt(b) === "MAPCXI-CBEC2-1-001"
+      && b.getAttribute("aria-controls") === "exh-cdsum-map"; }));
   // The Fact Sheet's statewide list (47 KB) is read at boot: the card names the statewide exhibit from it (S642).
   check("nothing large is read until it is pressed", t.loaded.filter(function (n) { return n !== "fact-sheet/statewide_recs.js"; }).length === 0);
 
@@ -133,6 +150,18 @@ function esc(w, target) { target.dispatchEvent(new w.KeyboardEvent("keydown", { 
   check("a course not in the data says so in plain words", /not in the course data COBI reads/.test(txt(p)));
   check("and still names the college, the code and the MAP link", /Norco College · WELD 99/.test(txt(p))
     && !!Array.from(p.querySelectorAll("a")).find(function (a) { return txt(a) === "MAPCXI-WELD-1-001 in MAP"; }));
+
+  // #3219 via #3223: a noncredit course's COCI description is marked a lead, never shown as settled.
+  REVIEW.held.unshift({ raw: "Noncredit Course for ESL 501", step: "Wording check", why: "the classifier's title has a course code left in",
+    colleges: [1], title: "English as a Second Language (ESL 501)", issuer: CCC, from: "the classifier", ids: ["MAPCXS-ESL5-1-001"],
+    art: [1], could: [], basis: "", same: false, under: [], under_count: 0,
+    local_courses: [[1, "ESL 501", "Beginning Literacy", 0, "CCC9", "", "Develops beginning reading and writing."]] });
+  t = load();
+  await t.M.boot(); await settle();
+  const nc = t.d.querySelector("section.exh-cdsum");
+  check("a noncredit course reads Noncredit, and its COCI description is marked a lead only",
+    nc && /Norco College · ESL 501 · Noncredit/.test(txt(nc)) && /Read it as a lead only: COCI descriptions of noncredit courses/.test(txt(nc.querySelector(".exh-cd-lead"))));
+  REVIEW.held.shift();
 
   let failed = 0;
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0]); if (!r[1]) failed++; });

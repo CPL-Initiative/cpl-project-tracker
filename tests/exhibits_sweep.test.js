@@ -78,6 +78,7 @@ function load(opts) {
     if (url === "kb/exhibits_review.json") return ok(REVIEW);
     if (url === "kb/exhibits_sweep.json") return opts.noSweep ? bad(404) : ok(SWEEP);
     if (/\/rest\/v1\/rpc\/exhibit_title_students$/.test(url)) return ok([]);
+    if (opts.savedFail && /\/rest\/v1\/kb_curation\?select=/.test(url)) return bad(503);
     if (/\/rest\/v1\/kb_curation/.test(url)) return Promise.resolve({ ok: true, status: 201, json: function () { return Promise.resolve(null); } });
     return bad(404);
   };
@@ -181,6 +182,17 @@ function card(d) { return d.querySelector("section.exh-card"); }
   byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
   check("signed out, Change asks for a sign-in and writes nothing",
     posts(t).length === 0 && /Sign in as a reviewer to save\./.test(txt(t.d.querySelector(".exh-status"))));
+
+  // ── #3228 fix 1: the saved decisions could not be read. On main the file's cards came back with no word. ──
+  t = load({ signedIn: true, hash: "#exhibits/another-look", savedFail: true });
+  await t.M.boot(); await settle();
+  const un = t.d.querySelector(".exh-unread");
+  check("when the saved decisions cannot be read, Another look says so and that a decided card may show again",
+    un && /could not be read from COBI \(HTTP 503\), so a card decided since then may show again here/.test(txt(un))
+    && un.getAttribute("role") === "status" && !!card(t.d));
+  t = load({ signedIn: true, hash: "#exhibits/another-look" });
+  await t.M.boot(); await settle();
+  check("and a read that succeeds says nothing of it", !t.d.querySelector(".exh-unread"));
 
   // ── no sweep file: the tile waits, Review is untouched ──
   t = load({ signedIn: true, noSweep: true });
