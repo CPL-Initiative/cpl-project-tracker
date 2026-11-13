@@ -625,12 +625,31 @@ def open_reader(delay_ms: int):
     return pw, browser, Reader(page, ctx.request, delay_ms)
 
 
+# A bot check served in place of the page (S646): Glendale's Coursedog host answered 34 of 261
+# program overviews 405 "Let's confirm you are human" in runs of consecutive loads (capture
+# 43366669415), which the census's access reading files as unreachable. A challenge is its own
+# answer kind, a refusal, so a capture never reads it as a page or a program as absent from the
+# catalog. The reader never tries to pass one (docs/reference/blocked_sources.md).
+CHALLENGE_TITLE = re.compile(
+    r"confirm you are (?:a )?human|verify (?:that )?you are (?:a )?human|are you a (?:robot|human)|"
+    r"just a moment|captcha|security check|bot verification|pardon our interruption", re.I)
+
+
+def is_challenge(got: dict | None) -> bool:
+    """A load that served a bot check: its title or heading names one."""
+    got = got or {}
+    return got.get("access") != "robots_disallow" and bool(
+        CHALLENGE_TITLE.search(got.get("title") or "") or CHALLENGE_TITLE.search(got.get("h1") or ""))
+
+
 def load(reader, url: str, cache: dict, spa: bool) -> dict:
     """One page through the census's Reader (robots, delay), then this pass's
     own reading of it. A page one college's programs share loads once."""
     if url in cache:
         return cache[url]
     got = reader.load(url)
+    if is_challenge(got):
+        got["access"] = "challenge"
     if got.get("access") == "ok" and "application/pdf" not in (got.get("content_type") or ""):
         if spa:
             reader.page.wait_for_timeout(2500)   # a JavaScript catalog fills in late

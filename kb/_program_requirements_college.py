@@ -544,6 +544,26 @@ def heading_names_program(page: dict, program: dict) -> bool:
     return of_title >= HIDDEN_HEADING_TITLE and of_heading >= HIDDEN_HEADING_OWN
 
 
+# A general education pattern (Cal-GETC, IGETC, the CSU GE Breadth pattern). Glendale's Cal-GETC
+# certificate page (/programs/CALGETC/completion-requirements-zaZdl) lists courses in every
+# discipline, and it was a candidate for 17 programs in capture 43366669415 (S646): the
+# certificate kept it and 16 others (Speech/Communication A.A., Social Science A.A., Spanish
+# A.A.-T among them) filed it as a page they lost. A pattern's page is never another program's list.
+GE_PATTERN = re.compile(r"\bcal[\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge\b|\bcsu[\s-]general[\s-]education\b|"
+                        r"\bgeneral[\s-]education[\s-](?:breadth|pattern)", re.I)
+
+
+def ge_pattern(text: str | None) -> bool:
+    """Whether a title or heading names a general education pattern."""
+    return bool(GE_PATTERN.search(text or ""))
+
+
+def ge_pattern_page(pg: dict) -> bool:
+    """A page whose Coursedog code, heading, title or address names a general education pattern."""
+    path = urllib.parse.unquote(urllib.parse.urlparse(pg.get("url") or "").path).replace("/", " ")
+    return any(ge_pattern(x) for x in (pg.get("code"), pg.get("h1"), pg.get("title"), path))
+
+
 def candidates(program: dict, pages: list[dict]) -> list[dict]:
     """Every page naming at least ACCEPT_SHARE of the program's listed courses,
     best first: the page naming its award, then the larger share of its title,
@@ -561,6 +581,11 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
         # degree never reads its transfer sibling's tab, nor a certificate its degree's
         # (cd_code_kind, S456). An award the codes cannot name ("other") reads as before.
         if pg.get("code_kind") and kind != "other" and pg["code_kind"] != kind:
+            continue
+        # A general education pattern's page lists courses in every discipline, so it names
+        # most of many programs' lists; it is the list of a program only when the program is
+        # that pattern (ge_pattern(), S646).
+        if ge_pattern_page(pg) and not ge_pattern(program.get("title")):
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
@@ -2266,14 +2291,108 @@ def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
             except Exception:
                 pass
     reader.page.on("response", on_courses)
+    reread = report.get("reread")
     try:
+        if reread:
+            return _cd_read(reader, root, programs, info, heard, cache, only=reread["codes"],
+                            suffix=reread.get("suffix"))
         return _cd_read(reader, root, programs, info, heard, cache)
     finally:
         reader.page.remove_listener("response", on_courses)
 
 
-def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, cache: dict) -> list[dict]:
-    suffix, pages, direct, missed = None, [], 0, []
+# One polite way back to the programs a bot check refused (S646): route=challenged re-reads only
+# the codes the college's last filed capture recorded as challenged (an account filed before S646
+# names them only as missed), at CD_REREAD_DELAY_S between loads, and stops at the first challenge
+# page instead of going on. Glendale's 34 refusals came in runs of consecutive loads at the
+# census's 4 seconds (capture 43366669415). The run files its account as capture_reread.json,
+# beside the full capture it does not replace, and never extracts.
+CD_REREAD_ROUTE = "challenged"
+CD_REREAD_DELAY_S = 12.0
+CAPTURE_FILES = ("capture_preview.json", "capture.json", "capture_reread.json")
+
+
+def is_reread(route: str | None) -> bool:
+    return (route or "").strip().lower() == CD_REREAD_ROUTE
+
+
+def cd_reread_plan(college_dir: str) -> dict | None:
+    """The codes to re-read, from the newest filed capture of the college (by its start time):
+    {codes, suffix, of_run, from, named_as}, or None when no filed capture names one."""
+    best = None
+    for name in CAPTURE_FILES:
+        try:
+            with open(os.path.join(college_dir, name)) as fh:
+                rep = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        if best is None or (rep.get("started") or "") > (best[1].get("started") or ""):
+            best = (name, rep)
+    if best is None:
+        return None
+    name, rep = best
+    cd = rep.get("coursedog") or {}
+    codes = cd["challenged"] if "challenged" in cd else cd.get("missed") or []
+    if not codes:
+        return None
+    return {"codes": list(codes), "suffix": cd.get("requisites_suffix"), "of_run": rep.get("run"), "from": name,
+            "named_as": "challenged" if "challenged" in cd else "missed"}
+
+
+# The award a Coursedog program name's tail names ("General Business - Associate of Science").
+CD_NAME_KIND = (("adt", re.compile(r"for transfer", re.I)), ("as", re.compile(r"associate (?:in|of) science", re.I)),
+                ("aa", re.compile(r"associate (?:in|of) arts", re.I)), ("coa", re.compile(r"certificate of achievement", re.I)),
+                ("noncredit", re.compile(r"noncredit|certificate of (?:competency|completion)", re.I)))
+
+
+def _plain(text: str | None) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", (text or "").lower()).strip()
+
+
+def cd_name_title_kind(name: str | None) -> tuple[str, str | None]:
+    """A Coursedog program name read as (its title, the award its tail names or None)."""
+    head, sep, tail = (name or "").rpartition(" - ")
+    if not sep:
+        return _plain(name), None
+    kind = next((k for k, pat in CD_NAME_KIND if pat.search(tail)), None)
+    return _plain(head), kind
+
+
+def cd_challenged_programs(programs: list[dict], info: dict) -> dict[str, str]:
+    """{control number: code} for each state program whose own catalog entry a bot check refused:
+    the entry's title is the program's, and its award is the program's or names none. Such a program
+    reads page_challenged, never not_found or a sibling's page: Glendale's General Business A.S.
+    (11143) lost seven business pages to their own programs while its own, GB-AS, was refused
+    (capture 43366669415, S646)."""
+    names = {c["code"]: c.get("name") for c in info.get("catalog") or []}
+    refused = [(code,) + cd_name_title_kind(names.get(code)) for code in info.get("challenged") or [] if names.get(code)]
+    out = {}
+    for prog in programs:
+        title, kind = _plain(prog.get("title")), P.award_kind(prog.get("award"))
+        for code, t, k in refused:
+            if t and t == title and (k is None or kind == "other" or k == kind):
+                out[prog["control_number"]] = code
+                break
+    return out
+
+
+def _cd_stop(info: dict, programs: list[dict], i: int, challenged: list) -> None:
+    """A re-read's stop at its first challenge: the codes not yet tried stay named for the next one."""
+    rest = [p["code"] for p in programs[i + 1:]]
+    challenged.extend(rest)
+    info["reread"].update(stopped_at=programs[i]["code"], not_tried=len(rest))
+
+
+def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, cache: dict,
+             only: list | None = None, suffix: str | None = None) -> list[dict]:
+    pages, direct, missed, challenged = [], 0, [], []
+    if only is not None:
+        # The re-read: only the named codes, slower, and no load past the first challenge.
+        want = set(only)
+        programs = [p for p in programs if p["code"] in want]
+        reader.delay = max(reader.delay, CD_REREAD_DELAY_S)
+        info["reread"] = {"asked": len(want), "listed": len(programs),
+                          "not_listed": sorted(want - {p["code"] for p in programs}), "delay_s": reader.delay}
     for i, prog in enumerate(programs):
         base = (prog.get("href") or "%s/programs/%s" % (root, urllib.parse.quote(prog["code"]))).rstrip("/")
         got = None
@@ -2283,8 +2402,16 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
             if got.get("access") == "ok" and (got.get("final_url") or "").rstrip("/").endswith(suffix) \
                     and CD_TOTAL.search(got.get("body") or ""):
                 direct += 1
-            else:
+            elif got.get("access") != "challenge":
                 got = None
+        if got is not None and got.get("access") == "challenge":
+            missed.append(prog["code"])
+            challenged.append(prog["code"])
+            cd_note_miss(info, prog["code"], got)
+            if only is not None:
+                _cd_stop(info, programs, i, challenged)
+                break
+            continue
         if got is None:
             over = P.load(reader, base, cache, True)
             link = next((l["href"] for l in over.get("links") or []
@@ -2292,6 +2419,11 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
             if over.get("access") != "ok" or not link:
                 missed.append(prog["code"])
                 cd_note_miss(info, prog["code"], over)
+                if over.get("access") == "challenge":
+                    challenged.append(prog["code"])
+                    if only is not None:
+                        _cd_stop(info, programs, i, challenged)
+                        break
                 continue
             suffix = suffix or link.rstrip("/").rsplit("/", 1)[-1]
             heard["units"], heard["hours"] = {}, {}
@@ -2299,6 +2431,11 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
             if got.get("access") != "ok":
                 missed.append(prog["code"])
                 cd_note_miss(info, prog["code"], got)
+                if got.get("access") == "challenge":
+                    challenged.append(prog["code"])
+                    if only is not None:
+                        _cd_stop(info, programs, i, challenged)
+                        break
                 continue
         got["links"] = (got.get("links") or [])[:50]
         if heard["units"] and "course_units" not in got:
@@ -2312,7 +2449,7 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
     # from no page (page_claimed, not_found) is checked against the names the
     # catalog lists, so a program the catalog no longer offers reads as that.
     info.update(requisites_suffix=suffix, program_pages=len(pages), direct=direct, missed=missed[:60],
-                catalog=[{"code": p["code"], "name": p["name"]} for p in programs])
+                challenged=challenged, catalog=[{"code": p["code"], "name": p["name"]} for p in programs])
     return pages
 
 
@@ -3216,6 +3353,17 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         return finish_capture(college, out_dir, recs, report, t0)
     if prefer_site(platform, os.environ.get("CAPTURE_ROUTE")) and start:
         report["route"] = "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)"
+        if is_reread(os.environ.get("CAPTURE_ROUTE")):
+            plan = cd_reread_plan(os.path.join(COLLEGE_DIR, slug_of(college)))
+            if not plan:
+                report["stopped"] = ("route=challenged re-reads the codes a filed Coursedog capture recorded as "
+                                     "challenged; no filed capture of %s names one" % college)
+                _write(os.path.join(out_dir, "capture.json"), report)
+                print(report["stopped"])
+                return 1
+            report["reread"] = plan
+            report["route"] = ("challenged (the %d codes %s named as %s, at %.0f s between loads, stopping at the "
+                               "first challenge)" % (len(plan["codes"]), plan["from"], plan["named_as"], CD_REREAD_DELAY_S))
     elif reads_as_pdf(reg) and (start or reg.get("procedure")):
         year = (P.procedure_catalog(reg.get("procedure")) or {}).get("catalog_year")
         if year and not reg.get("catalog_year"):
@@ -3226,6 +3374,11 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         return finish_capture(college, out_dir, recs, report, t0)
     # A college's own HTML catalog (custom_html, S404) takes CourseLeaf's road: its
     # sitemap, or its front page's program indexes, then each page's children.
+    if report.get("reread") and platform != "coursedog":
+        report["stopped"] = "route=challenged reads a Coursedog catalog only; %s reads %s" % (college, platform)
+        _write(os.path.join(out_dir, "capture.json"), report)
+        print(report["stopped"])
+        return 1
     if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html", "smartcatalog", "coursedog"):
         # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380), Acalog (S389), SmartCatalog (S411,
         # the generic road through child_base()) and Coursedog (S414); another platform names its own enumeration first.
@@ -3319,9 +3472,14 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         recs, fallback = [], 0
         P.MAX_LOADS = FALLBACK_LOADS      # the link search, shorter here: most programs already have a page
         given = assign(programs, pages)
+        refused = cd_challenged_programs(programs, report.get("coursedog") or {}) if platform == "coursedog" else {}
         for prog in programs:
             if not prog["closed_list"]:
                 rec = source_record(college, prog, reg, None, "no_closed_list")
+            elif prog["control_number"] in refused:
+                # Its own page answered a bot check: no other page stands in for it (S646).
+                rec = source_record(college, prog, reg, None, "page_challenged")
+                rec["challenged_code"] = refused[prog["control_number"]]
             else:
                 g = given.get(prog["control_number"]) or {}
                 best, method = g.get("best"), "sitemap_page"
@@ -3432,6 +3590,8 @@ def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t
                    for r in recs if r["method"] == "not_found"],
         page_claimed=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                        "pages": r.get("lost_pages")} for r in recs if r["method"] == "page_claimed"],
+        page_challenged=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
+                          "code": r.get("challenged_code")} for r in recs if r["method"] == "page_challenged"],
         coverage_bands={band: sum(1 for r in recs if r.get("source") and lo <= r["coverage"] < hi)
                         for band, lo, hi in (("0.5-0.8", .5, .8), ("0.8-1.0", .8, 1.0), ("1.0", 1.0, 9))})
     report["would_extract"] = would_extract(college, recs)
@@ -4058,6 +4218,11 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     with open(os.path.join(out_dir, "capture.json")) as fh:
         report = json.load(fh)
     report["run"] = run_id
+    if report.get("reread"):
+        os.makedirs(dest, exist_ok=True)
+        _write(os.path.join(dest, "capture_reread.json"), report)
+        print("re-read: filed capture_reread.json under %s" % os.path.relpath(dest, os.path.dirname(HERE)))
+        return 0
     if not os.path.isdir(os.path.join(out_dir, "records")):
         os.makedirs(dest, exist_ok=True)
         _write(os.path.join(dest, "capture_preview.json"), report)
@@ -4338,6 +4503,15 @@ def _write(path: str, obj) -> None:
         fh.write("\n")
 
 
+def reread_capture(out_dir: str) -> bool:
+    """Whether the run's capture is a route=challenged re-read (a partial read by design)."""
+    try:
+        with open(os.path.join(out_dir, "capture.json")) as fh:
+            return bool(json.load(fh).get("reread"))
+    except (OSError, ValueError):
+        return False
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("step", choices=["pin", "capture", "extract", "reconcile", "file", "load", "reread"])
@@ -4366,8 +4540,14 @@ def main(argv: list[str] | None = None) -> int:
     if args.step == "reread":
         return reread(args.college, args.run, extracted_run=args.extracted_run or None)
     if args.step == "reconcile":
+        if reread_capture(args.out):
+            print("::error::a route=challenged capture reads only the refused codes; reconcile on a full capture")
+            return 1
         return reconcile_filed(args.college, args.out, args.run, os.path.join(COLLEGE_DIR, slug_of(args.college)))
     if args.step == "extract":
+        if reread_capture(args.out):
+            print("::error::a route=challenged capture reads only the refused codes; it never extracts (dispatch extract=0)")
+            return 1
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))
         force = forced(keep, args.force) if keep and args.force else None
         ceiling = float(args.ceiling_usd) if str(args.ceiling_usd or "").strip() else None

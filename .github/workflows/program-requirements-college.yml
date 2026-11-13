@@ -86,7 +86,7 @@ on:
         required: false
         default: ""
       route:
-        description: "read: 'site' reads a Coursedog catalog from its program search instead of its PDF procedure step (S449)"
+        description: "read: 'site' reads a Coursedog catalog from its program search instead of its PDF procedure step (S449); 'challenged' re-reads only the codes the last filed capture recorded as challenged (or missed), 12 s between loads, stopping at the first challenge, filed as capture_reread.json (extract 0; S646)"
         required: false
         default: ""
   push:

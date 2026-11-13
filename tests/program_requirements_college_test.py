@@ -3171,6 +3171,155 @@ finally:
 check(not loaded and "index" not in rep2["elumen"],
       "with no index step in the procedure record, the college's site is never read")
 
+# ── Glendale's bot check, the re-read and the general education page (S646) ──
+# Capture 43366669415 met "Let's confirm you are human" on 34 of 261 overviews, in runs of
+# consecutive loads, and filed each as "unreachable 405". The miss below is the first one it
+# kept in full (coursedog.miss_pages[0]).
+GL_CHALLENGE = {"url": "https://catalog.glendale.edu/programs/DFP-AA", "status": 405, "access": "unreachable",
+                "final_url": "https://catalog.glendale.edu/programs/DFP-AA", "title": "Let's confirm you are human",
+                "h1": "Let's confirm you are human",
+                "body": "Let's confirm you are human Complete the security check before continuing.", "links": []}
+check(P.is_challenge(GL_CHALLENGE) and P.is_challenge({"title": "Just a moment...", "access": "blocked"})
+      and not P.is_challenge({"title": "GB-AS Program | Glendale Community College Catalog", "h1": "General Business",
+                              "access": "ok"})
+      and not P.is_challenge({"title": "", "access": "robots_disallow"}),
+      "a page whose title or heading names a bot check is a challenge, and only such a page")
+
+
+class _ChallengeReader:
+    def __init__(self, answer):
+        self.answer, self.loads, self.delay = answer, 0, 4.0
+        self.page = self
+
+    def load(self, url):
+        self.loads += 1
+        return dict(self.answer, url=url)
+
+    def evaluate(self, js):
+        raise AssertionError("a challenge page is never read as a page")
+
+
+got = P.load(_ChallengeReader(GL_CHALLENGE), GL_CHALLENGE["url"], {}, True)
+check(got["access"] == "challenge", "the reader files a bot check as its own answer kind: %r" % got.get("access"))
+
+GL_TAB = "Completion Requirements\nGB 101 Business\nGB 102 More Business\nTotal Required Credits\n60"
+GL_SUFFIX = "completion-requirements-zaZdl"
+
+
+def _gl_ok(url):
+    if url.endswith(GL_SUFFIX):
+        return {"url": url, "final_url": url, "status": 200, "access": "ok", "title": "Program", "body": GL_TAB,
+                "content": GL_TAB, "links": []}
+    return {"url": url, "final_url": url, "status": 200, "access": "ok", "title": "Program", "body": "Overview",
+            "links": [{"text": "Completion Requirements", "href": url + "/" + GL_SUFFIX}]}
+
+
+def gl_session(refused):
+    asked = []
+
+    def fake(reader, url, cache, spa):
+        asked.append(url)
+        code = urllib.parse.unquote(url.split("/programs/", 1)[1].split("/", 1)[0])
+        return dict(GL_CHALLENGE, url=url, access="challenge") if code in refused else _gl_ok(url)
+    return asked, fake
+
+
+GL_PROGS = [{"code": c, "name": n} for c, n in (
+    ("ACCTG-AS", "Accounting - Associate of Science"), ("GB-AS", "General Business - Associate of Science"),
+    ("GB-C", "General Business - Certificate of Achievement"), ("SC-AA", "Speech/Communication - Associate of Arts"),
+    ("MC-AS", "Mass Communications - Associate of Science"))]
+heard0 = {"call": None, "units": {}, "hours": {}}
+asked, fake = gl_session({"GB-AS", "SC-AA"})
+real_load = P.load
+P.load = fake
+try:
+    full_info: dict = {}
+    full_pages = C._cd_read(_ChallengeReader({}), GL_ROOT, GL_PROGS, full_info, dict(heard0), {})
+finally:
+    P.load = real_load
+check(full_info["challenged"] == ["GB-AS", "SC-AA"] and full_info["miss_answers"] == {"challenge 405": 2}
+      and [p["code"] for p in full_pages] == ["ACCTG-AS", "GB-C", "MC-AS"],
+      "a full capture goes on past a challenge, files it as challenged and reads it as no page: %r"
+      % {k: full_info.get(k) for k in ("challenged", "miss_answers")})
+
+# The re-read: only the named codes, 12 s between loads, the known tab suffix, and a stop at the first challenge.
+asked, fake = gl_session({"SC-AA"})
+P.load = fake
+slow = _ChallengeReader({})
+try:
+    re_info: dict = {}
+    re_pages = C._cd_read(slow, GL_ROOT, GL_PROGS, re_info, dict(heard0), {},
+                          only=["GB-AS", "SC-AA", "MC-AS", "GONE-AA"], suffix=GL_SUFFIX)
+finally:
+    P.load = real_load
+check([p["code"] for p in re_pages] == ["GB-AS"] and re_info["challenged"] == ["SC-AA", "MC-AS"]
+      and re_info["reread"] == {"asked": 4, "listed": 3, "not_listed": ["GONE-AA"], "delay_s": 12.0,
+                                "stopped_at": "SC-AA", "not_tried": 1}
+      and slow.delay == C.CD_REREAD_DELAY_S
+      and asked == [GL_ROOT + "/programs/GB-AS/" + GL_SUFFIX, GL_ROOT + "/programs/SC-AA/" + GL_SUFFIX],
+      "the re-read reads only the named codes, slower, straight to the tab, and loads nothing past the first "
+      "challenge, naming what it did not try: %r %r" % (re_info.get("reread"), asked))
+
+# The plan comes from the newest filed capture: an account filed before S646 names the refused codes only as
+# missed; a later one names them as challenged.
+with tempfile.TemporaryDirectory() as td:
+    check(C.cd_reread_plan(td) is None, "no filed capture, no re-read")
+    _write = lambda name, obj: open(os.path.join(td, name), "w").write(json.dumps(obj))
+    _write("capture_preview.json", {"started": "2026-11-13T04:38:11Z", "run": "43366669415",
+                                    "coursedog": {"missed": ["DFP-AA", "DFP-C"], "requisites_suffix": GL_SUFFIX}})
+    plan = C.cd_reread_plan(td)
+    check(plan == {"codes": ["DFP-AA", "DFP-C"], "suffix": GL_SUFFIX, "of_run": "43366669415",
+                   "from": "capture_preview.json", "named_as": "missed"},
+          "an account filed before S646 names its refused codes as missed: %r" % plan)
+    _write("capture_reread.json", {"started": "2026-11-14T01:00:00Z", "run": "2", "reread": {},
+                                   "coursedog": {"missed": ["DFP-C", "X"], "challenged": ["DFP-C"]}})
+    plan = C.cd_reread_plan(td)
+    check(plan["codes"] == ["DFP-C"] and plan["from"] == "capture_reread.json" and plan["named_as"] == "challenged",
+          "the newest capture's challenged codes, not its other misses: %r" % plan)
+    _write("capture_reread.json", {"started": "2026-11-15T01:00:00Z", "coursedog": {"challenged": []}})
+    check(C.cd_reread_plan(td) is None, "nothing left challenged, nothing to re-read")
+    os.makedirs(os.path.join(td, "out"))
+    open(os.path.join(td, "out", "capture.json"), "w").write(json.dumps({"reread": {"codes": ["A"]}}))
+    check(C.reread_capture(os.path.join(td, "out")) and not C.reread_capture(td),
+          "a re-read capture is known as one, so extract and reconcile refuse it")
+check(C.is_reread("challenged") and C.is_reread(" Challenged ") and not C.is_reread("site")
+      and C.prefer_site("coursedog", "challenged"),
+      "route=challenged is a site read")
+
+# A state program whose own catalog entry was refused reads page_challenged (General Business A.S., 11143,
+# lost seven business pages to their own programs while GB-AS answered the bot check).
+gl_state = [{"control_number": "11143", "title": "General Business", "award": "A.S. Degree"},
+            {"control_number": "19999", "title": "General Business", "award": "Certificate of Achievement requiring 16S/24Q"},
+            {"control_number": "02588", "title": "Speech/Communication", "award": "A.A. Degree"},
+            {"control_number": "11155", "title": "Mass Communications", "award": "A.S. Degree"}]
+gl_ref = C.cd_challenged_programs(gl_state, {"catalog": GL_PROGS, "challenged": ["GB-AS", "SC-AA"]})
+check(gl_ref == {"11143": "GB-AS", "02588": "SC-AA"},
+      "each program whose own entry was refused is named, by title and award, and no sibling award: %r" % gl_ref)
+check(C.cd_name_title_kind("Business Administration 2.0 - Associate in Science for Transfer") == ("business administration 2 0", "adt")
+      and C.cd_name_title_kind("NCAMA") == ("ncama", None),
+      "a Coursedog name reads as its title and the award its tail names")
+
+# The Cal-GETC certificate's page is its own list and no other program's (16 page_claimed entries in
+# capture 43366669415 named /programs/CALGETC/completion-requirements-zaZdl).
+GE_BODY = "Completion Requirements\nCOMM 101 Public Speaking\nSPAN 101 Spanish I\nSOC 101 Sociology\nTotal Required Credits\n34"
+ge_got = {"url": GL_ROOT + "/programs/CALGETC/" + GL_SUFFIX, "final_url": GL_ROOT + "/programs/CALGETC/" + GL_SUFFIX,
+          "title": "CALGETC Program | Glendale Community College Catalog", "body": GE_BODY, "content": GE_BODY}
+ge_page = C.cd_page(ge_got, {"code": "CALGETC", "name": "Cal-GETC - Certificate of Achievement"})
+ge_courses = [{"code": c} for c in ("COMM 101", "SPAN 101", "SOC 101")]
+calgetc = {"control_number": "45068", "title": "Cal-GETC", "award": "Certificate of Achievement requiring 30S/45Q",
+           "closed_list": ge_courses}
+speech = {"control_number": "02588", "title": "Speech/Communication", "award": "A.A. Degree", "closed_list": ge_courses}
+check(C.ge_pattern_page(ge_page) and C.ge_pattern("IGETC Certificate of Achievement")
+      and C.ge_pattern_page({"url": "https://x.edu/general-education/csu-ge-breadth/"})
+      and not C.ge_pattern("General Business") and not C.ge_pattern_page(full_pages[0]),
+      "a general education pattern's page is told apart by its code, heading or address")
+check(len(C.candidates(calgetc, [ge_page])) == 1 and C.candidates(speech, [ge_page]) == [],
+      "the pattern's page is a candidate for the pattern's own certificate and for no other program")
+ge_given = C.assign([calgetc, speech], [ge_page])
+check((ge_given["45068"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CALGETC")
+      and ge_given["02588"]["best"] is None and ge_given["02588"]["lost"] == [],
+      "a program never files the pattern's page as one it lost: %r" % {k: v["lost"] for k, v in ge_given.items()})
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

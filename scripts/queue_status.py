@@ -287,7 +287,7 @@ def filed_gaps(root=ROOT):
                 c = json.load(f)
         except (OSError, ValueError):
             continue
-        n += len(c.get("not_found") or []) + len(c.get("page_claimed") or [])
+        n += len(c.get("not_found") or []) + len(c.get("page_claimed") or []) + len(c.get("page_challenged") or [])
         n += int((c.get("by_method") or {}).get("no_closed_list") or 0)
     return n
 
