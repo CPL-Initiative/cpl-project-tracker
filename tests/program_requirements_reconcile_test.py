@@ -986,6 +986,7 @@ check("a page whose 'units will vary' sits on an electives line, with no Cal-GET
       college_notes(_rh_elec) == [] and statewide_34(_rh_elec))
 
 print("The statewide Cal-GETC 34 (Sam, Sheet 187 card 5, 2026-11-13): each gate on a fixture")
+_cg_first = len(results)
 # A college with no steps of its own, so only the statewide rule can fill. Each variant breaks one gate and must
 # leave the record alone; removing that gate from calgetc_hold makes its check fail.
 CG_COLLEGE = "Fixture Community College"
@@ -998,11 +999,16 @@ CG_REC = {"program": {"section_heading": CG_HEAD, "ge_pattern": "Cal-GETC", "ge_
           "blocks": [{"kind": "required", "courses": [{"code": "SOC 101"}, {"code": "SOC 102"}]}]}
 CG_AWARD = "A.A- T Degree"
 CG_SIBS = [{"control_number": "90009", "title": "Anthropology", "section_heading": "Anthropology - Associate in Arts for Transfer"}]
+# The fixture college's statewide step (d-calgetc-34-per-college-evidence-s648): the rule runs only where it is.
+CG_STEP = {"statewide_cal_getc": {"evidence": "fixture: the catalog's Cal-GETC page prints no unit figure",
+                                  "checked": "2026-11-13", "hold": {"90077": "a fixture held by name"}}}
+CG_STEPS = {CG_COLLEGE: CG_STEP}
 
 
-def cg(rec=None, text=None, award=CG_AWARD, title="Sociology", siblings=CG_SIBS, steps=None):
+def cg(rec=None, text=None, award=CG_AWARD, title="Sociology", siblings=CG_SIBS, steps=None, control_number=None):
     return R.reconcile(rec or CG_REC, CG_TEXT if text is None else text, CG_COLLEGE, award,
-                       steps={} if steps is None else steps, title=title, siblings=siblings)
+                       steps=CG_STEPS if steps is None else steps, title=title, siblings=siblings,
+                       control_number=control_number)
 
 
 def cg_prog(**kw):
@@ -1023,6 +1029,14 @@ check("the note names the section's Cal-GETC words and the ruling as its source"
       "General Education: Cal-GETC Pattern" in cg_notes[0]["words"]
       and "statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13" in cg_notes[0]["words"])
 check("the input record is not changed", CG_REC["program"]["ge_units"] == {"min": None, "max": None})
+check("gate: a college with no statewide_cal_getc step fills nothing, even a record passing every other gate",
+      cg(steps={})[1] == [] and cg(steps={CG_COLLEGE: {"statewide_cal_getc": {"evidence": " "}}})[1] == []
+      and cg(steps={CG_COLLEGE: {"steps": []}})[1] == [])
+check("gate: a record the step holds by name takes nothing", cg(control_number="90077")[1] == []
+      and len(cg(control_number="90078")[1]) == 1)
+check("gate: an explicit 0 GE units is a reading, and is held",
+      cg(cg_prog(ge_units={"min": 0, "max": 0}))[1] == [] and cg(cg_prog(ge_units=0))[1] == [])
+check("gate: an empty siblings list is unknown, and is held", cg(siblings=[])[1] == [])
 check("exact: major 18 + 34 + 8 stated electives is 60, and fills",
       cg(cg_prog(electives_fill_degree=False, open_elective_units=8))[1][0]["standing"] == "exact")
 _s81 = cg(cg_prog(electives_fill_degree=False))[1]
@@ -1095,6 +1109,21 @@ for name, line in (("on one line with no unit word", "General Education (Cal-GET
                    ("a bare figure on the line above", "37\nGeneral Education (Cal-GETC)")):
     check("gate: a printed figure (%s) wins" % name,
           cg(text=cg_text("General Education: Cal-GETC Pattern", line))[1] == [])
+for name, line in (("in parentheses", "General Education: Cal-GETC (34)"),
+                   ("a range in parentheses", "General Education: Cal-GETC Pattern (34-37)"),
+                   ("before the name", "34 Cal-GETC"),
+                   ("in a table row", "| Cal-GETC | 37 |"),
+                   ("after a blank line", "General Education: Cal-GETC Pattern\n\n34"),
+                   ("with a mark after it", "Cal-GETC 34*"),
+                   ("on a general education line without the name", "General Education Units: 37\nCal-GETC pattern")):
+    check("gate: the broad figure hold (%s) holds" % name,
+          cg(text=cg_text("General Education: Cal-GETC Pattern", line))[1] == [])
+for name, line in (("a page number", "General Education: Cal-GETC Pattern (see page 37)"),
+                   ("units in the major", "General Education: Cal-GETC Pattern; 24 units in the major"),
+                   ("the degree total", "General Education: Cal-GETC Pattern toward the 60 units"),
+                   ("area of emphasis", "General Education: Cal-GETC Pattern and the area of emphasis")):
+    check("the broad hold ignores %s, and the record fills" % name,
+          len(cg(text=cg_text("General Education: Cal-GETC Pattern", line))[1]) == 1)
 for name, line in (("Intersegmental", "Cal-GETC Pattern; Intersegmental General Education Transfer Curriculum"),
                    ("CSU spelled out", "Cal-GETC Pattern; California State University General Education Breadth"),
                    ("CSU Breadth", "Cal-GETC Pattern; CSU Breadth"),
@@ -1113,12 +1142,21 @@ check("and the 2.0 number itself fills",
       len(cg(_pair_rec, _pair_text, title="Sociology 2.0",
              siblings=[{"control_number": "31297", "title": "Sociology",
                         "section_heading": "Sociology 2.0 - Associate in Arts for Transfer"}] + CG_SIBS)[1]) == 1)
-_own = cg(steps={CG_COLLEGE: {"steps": [{"kind": "set", "field": "ge_units", "pattern": r"Cal-GETC Pattern",
-                                         "value": {"min": 37, "max": 37}}]}})
+_own = cg(steps={CG_COLLEGE: dict(CG_STEP, steps=[{"kind": "set", "field": "ge_units", "pattern": r"Cal-GETC Pattern",
+                                                    "value": {"min": 37, "max": 37}}])})
 check("order: a college's own set step for ge_units runs first and wins; no statewide note is written",
       _own[0]["program"]["ge_units"] == {"min": 37, "max": 37} and _own[1]
       and not any(n.get("statewide") for n in _own[1]))
 check("a record filled once is left alone the next time", cg(cg_out)[1] == [])
+# The trace a reconcile run prints for each record the rule asks about.
+check("the trace: filled, filled by the college's figure, held with the reason, and silent for any other record",
+      R.calgetc_trace("90001", CG_REC, cg_notes, CG_TEXT, CG_AWARD, "Sociology", CG_SIBS, CG_STEP)
+      == "cal-getc 90001 filled: the statewide 34"
+      and R.calgetc_trace("90001", CG_REC, _own[1], CG_TEXT, CG_AWARD, "Sociology", CG_SIBS, CG_STEP)
+      .startswith("cal-getc 90001 filled by the college's own figure")
+      and R.calgetc_trace("90001", CG_REC, [], CG_TEXT, CG_AWARD, "Sociology", CG_SIBS, {})
+      .startswith("cal-getc 90001 held: no statewide_cal_getc step")
+      and R.calgetc_trace("90001", CG_REC, [], CG_TEXT, "A.A. Degree", "Sociology", CG_SIBS, CG_STEP) is None)
 # The plan's measure reads the same record gates: four filed records, one admitted.
 import _program_requirements_readings_measure as RM  # noqa: E402
 _sc = {"coverage": {"pass": True}, "invented": {"pass": True}, "pass": False,
@@ -1127,11 +1165,14 @@ _plan_recs = [{"college": CG_COLLEGE, "control_number": cn, "award": aw, "title"
               for cn, aw, rec in (("90001", CG_AWARD, CG_REC), ("90002", "A.A. Degree", CG_REC),
                                   ("90003", CG_AWARD, cg_prog(ge_pattern="Local GE or Cal-GETC")),
                                   ("90004", CG_AWARD, cg_prog(degree_total={"min": 90, "max": 90})))]
-_plan = RM.cal_getc_34_plan(_plan_recs, "abc123", "2026-11-13")
+_plan = RM.cal_getc_34_plan(_plan_recs, "abc123", "2026-11-13", steps=CG_STEPS)
+_plan_off = RM.cal_getc_34_plan(_plan_recs, "abc123", "2026-11-13", steps={})
 check("the plan admits only the record the rule's record gates admit, with its standing and the measure's commit",
       [r["control_number"] for r in _plan["colleges"].get(CG_COLLEGE, [])] == ["90001"]
       and _plan["colleges"][CG_COLLEGE][0]["standing"] == "under" and _plan["counts"]["fills"] == 1
-      and _plan["measured_on"]["commit"] == "abc123" and _plan["source_words"] == R.CAL_GETC_SOURCE)
+      and _plan["measured_on"]["commit"] == "abc123" and _plan["source_words"] == R.CAL_GETC_SOURCE
+      and _plan["colleges"][CG_COLLEGE][0]["route"] == "statewide step"
+      and _plan_off["counts"]["fills"] == 0 and _plan_off["needs_a_page_read"] == [CG_COLLEGE])
 
 # A later reconcile run keeps a statewide fill's note while its value stands (reconcile_filed, S648): a step that
 # fires on another field replaces the record's reconciled list, and the cal_getc_34 note stays in it.
@@ -1162,6 +1203,11 @@ with tempfile.TemporaryDirectory() as _td:
           [n["field"] for n in _again["reconciled"]] == ["open_elective_units", "ge_units"]
           and _again["reconciled"][1].get("statewide") == "cal_getc_34"
           and _again["record"]["program"]["ge_units"] == {"min": 34, "max": 34})
+
+# A floor for this block's checks (the second readers of #3244): deleting gate checks must fail the run.
+CG_FLOOR = 83
+check("the statewide Cal-GETC block runs at least %d checks (%d)" % (CG_FLOOR, len(results) - _cg_first),
+      len(results) - _cg_first >= CG_FLOOR)
 
 print("S644: the electives sentence and the general education units, on each catalog's own words")
 ST = R.load_steps()

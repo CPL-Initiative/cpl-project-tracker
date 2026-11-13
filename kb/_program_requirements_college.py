@@ -4736,10 +4736,18 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
             src = None
             moved += 1
         if src and isinstance(rec, dict):
+            sibs = [x for x in family if x["control_number"] != filed.get("control_number")]
             new, notes = R.reconcile(rec, src["text"], college, filed.get("award") or src.get("award"),
                                      course_units=src.get("course_units"),
                                      course_hours=src.get("course_hours"), title=filed.get("title"),
-                                     siblings=[x for x in family if x["control_number"] != filed.get("control_number")])
+                                     siblings=sibs, control_number=filed.get("control_number"))
+            # Every record the statewide Cal-GETC rule asks about says filled or held, and why, so the compare
+            # gate shows the held ones beside the filled (S648).
+            trace = R.calgetc_trace(filed.get("control_number"), rec, notes, src["text"],
+                                    filed.get("award") or src.get("award"), filed.get("title"), sibs,
+                                    R.load_steps().get(college))
+            if trace:
+                print(trace, flush=True)
             if notes:
                 # A statewide fill a run made earlier keeps its note while its value stands, so the fill stays
                 # told apart from a catalog's own figure if the ruling is ever reversed (S648).

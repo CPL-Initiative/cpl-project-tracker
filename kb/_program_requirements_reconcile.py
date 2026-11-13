@@ -201,21 +201,30 @@ def fill_course_hours(out: dict, hours: dict) -> dict:
 def reconcile(record: dict, text: str | None, college: str, award: str | None = None,
               steps: dict | None = None, course_units: dict | None = None,
               course_hours: dict | None = None, title: str | None = None,
-              siblings: list | None = None) -> tuple[dict, list[dict]]:
+              siblings: list | None = None, control_number: str | None = None) -> tuple[dict, list[dict]]:
     """The record with the college's reconcile steps, then the statewide ones (statewide_cal_getc), applied to
     its page text, and a note per change: the field, what it was, what it is now, and the words. A college's own
     step runs first, so a figure its catalog prints is set before a statewide figure is asked for. title is the
     program's title and siblings the college's other filed programs ([{"control_number", "title",
-    "section_heading"}]), which the statewide rule reads; without siblings it fills nothing."""
+    "section_heading"}]), which the statewide rule reads; without siblings it fills nothing. The statewide rule
+    runs only at a college whose config carries a statewide_cal_getc step (calgetc_step)."""
+    conf = (steps if steps is not None else load_steps()).get(college) or {}
     out, notes = _college_steps(record, text, college, award, steps, course_units, course_hours)
-    out, more = statewide_cal_getc(out, text, award, title=title, siblings=siblings)
+    out, more = statewide_cal_getc(out, text, award, title=title, siblings=siblings, conf=conf,
+                                   control_number=control_number)
     return (out, notes + more) if (notes or more) else (record, [])
 
 
 # Sam, Open Asks Sheet 187 card 5, 13:19:50Z 2026-11-13, "Use 34 statewide" (cpl_memory
 # sam-sheet-187-calgetc-34-statewide-2026-11-13): where a catalog names Cal-GETC and prints no unit figure, the
-# record takes the statewide 34 units, named as its source. The rule fills only on positive evidence (the S644
-# lesson, gate first; the conductor's direction after the review of #3244):
+# record takes the statewide 34 units, named as its source. That the catalog prints no figure is a fact about the
+# college's catalog, which a program section cannot establish (its GE page may print one: Cerro Coso's p.65 prints
+# "Cal-GETC (35 Units)"), so the rule runs ONLY at a college whose reconcile config carries
+#   "statewide_cal_getc": {"evidence": "<where the catalog names Cal-GETC, and the words showing it prints no unit
+#                          figure, with page or URL>", "checked": "<date>", "hold": {"<control number>": "<why>"}}
+# (d-calgetc-34-per-college-evidence-s648). No step, no fill. A college whose catalog prints its own figure takes a
+# `set` step with that figure instead, which runs first. On top of the step, every record passes these holds (the
+# S644 lesson, gate first; the conductor's direction after the reviews of #3244):
 #   * the program: a transfer degree by its award, whose record's degree total is exactly 60 (the semester total
 #     of an associate degree for transfer: a quarter-unit 90, Lake Tahoe, or a UC-transfer 72-75, Los Angeles
 #     City 40232, is held), never a partial Cal-GETC (a "UCTP" or "UC Transfer" heading or title, or a Cal-GETC
@@ -245,7 +254,14 @@ FIG_AFTER_MARK = re.compile(r"[\t:]\s*%s\b" % _FIG, re.I)
 FIG_ALONE = re.compile(r"^\s*(?:(?:units?|credits?)\s*:?\s*)?%s\s*(?:%s)?\s*$" % (_FIG, _UNIT_WORD), re.I)
 UNITS_LABEL = re.compile(r"^\s*(?:units?|credits?)\s*:?\s*$", re.I)
 PARTIAL_TITLE = re.compile(r"\bUCTP\b|\bUC\s+Transfer\b", re.I)
-PARTIAL_LINE = re.compile(r"\bAreas?\b|\bone\s+course\b|\bfor\s+STEM\b", re.I)
+PARTIAL_LINE = re.compile(r"\bAreas?\b(?!\s+of\s+emphasis)|\bone\s+course\b|\bfor\s+STEM\b", re.I)
+# Any standalone figure of 20-45 on a line naming Cal-GETC or general education, or on the next line that is not
+# blank: a broad hold over the shapes the figure patterns miss ("Cal-GETC (34)", "| Cal-GETC | 37 |", "34 Cal-GETC",
+# "General Education Units: 37"). Not a figure after GPA or page, nor one followed by "units in the major".
+GE_LINE = re.compile(r"%s|\bgeneral\s+education\b|\bGE\b" % _CAL_GETC, re.I)
+GE_FIGURE = re.compile(r"(?<![\w.])([2-4]\d)(?:\.\d+)?(?![\w.])")
+NOT_GE_FIGURE_BEFORE = re.compile(r"(?:GPA|page|pg\.?|p\.)\s*(?:of\s*)?$", re.I)
+NOT_GE_FIGURE_AFTER = re.compile(r"^\s*(?:-\s*\d+\s*)?(?:semester\s+)?units?\s+in\s+the\s+major", re.I)
 OTHER_GE_PATTERN = re.compile(
     r"\bIGETC\b|\bCSU\s*-?\s*GE\b|\bGE\s*-?\s*Breadth\b|\bCSU\s+Breadth\b|\bCSU\s+General\s+Education"
     r"|Intersegmental\s+General\s+Education|California\s+State\s+University\s+General\s+Education"
@@ -269,7 +285,7 @@ def calgetc_section(text: str, heading: str | None, siblings: list | None) -> st
     """The record's own section: from its heading to the first sibling program's heading after it (a sibling
     whose heading is this one's reads the same section), or None when the heading is not printed or the
     siblings are not known."""
-    if siblings is None:
+    if not siblings:
         return None
     here = _alnum_find(text, heading)
     if here is None:
@@ -281,18 +297,33 @@ def calgetc_section(text: str, heading: str | None, siblings: list | None) -> st
     return text[here[1]:min(ends) if ends else len(text)]
 
 
+def _not_ge_figure(line: str, m) -> bool:
+    """A figure a Cal-GETC line prints that is no GE figure: the degree total (60), one after GPA or page, or
+    one followed by "units in the major"."""
+    num = re.search(r"\d{1,2}(?:\.\d{1,2})?", m.group(0))
+    if not num:
+        return True
+    at = m.start() + num.start()
+    if float(num.group(0)) == ADT_DEGREE_TOTAL:
+        return True
+    if NOT_GE_FIGURE_BEFORE.search(line[:at]):
+        return True
+    return bool(re.match(r"^\s*(?:-\s*\d+\s*)?(?:semester\s+)?(?:units?\s+)?in\s+the\s+major", line[at + len(num.group(0)):], re.I))
+
+
 def calgetc_figure(sec: str) -> str | None:
     """The first printed figure for Cal-GETC in a section, as its line reads, or None: a figure with a unit word
     on a Cal-GETC line, a figure after a tab or colon there, a figure ending it, a figure alone in the cell below
     (a "Units:" label first, or alone a line further on under a bare label), or a figure alone on the line above."""
-    lines = sec.split("\n")
+    lines = [ln for ln in sec.split("\n") if ln.strip()]   # a blank line never separates a row from its cell
     for i, line in enumerate(lines):
         if not CAL_GETC_NAME.search(line):
             continue
-        if FIG_WITH_UNIT.search(line) or FIG_AFTER_MARK.search(line) or FIG_ENDS_LINE.search(line):
+        if any(not _not_ge_figure(line, m) for rx in (FIG_WITH_UNIT, FIG_AFTER_MARK, FIG_ENDS_LINE)
+               for m in rx.finditer(line)):
             return line.strip()
         below = lines[i + 1] if i + 1 < len(lines) else ""
-        if FIG_ALONE.match(below):
+        if FIG_ALONE.match(below) and not _not_ge_figure(below, FIG_ALONE.match(below)):
             return (line.strip() + " / " + below.strip())
         if UNITS_LABEL.match(below) and i + 2 < len(lines) and FIG_ALONE.match(lines[i + 2]):
             return (line.strip() + " / " + below.strip() + " " + lines[i + 2].strip())
@@ -302,6 +333,36 @@ def calgetc_figure(sec: str) -> str | None:
         if i > 0 and FIG_ALONE.match(lines[i - 1]) and (i < 2 or FIG_ALONE.match(lines[i - 2]) or not lines[i - 2].strip()):
             return (lines[i - 1].strip() + " / " + line.strip())
     return None
+
+
+def calgetc_broad_figure(sec: str, degree_total: float = ADT_DEGREE_TOTAL) -> str | None:
+    """The first standalone figure of 20-45 on a line naming Cal-GETC or general education, or on the next line
+    that is not blank, other than the degree total, a figure after GPA or page, or one followed by "units in the
+    major"; None when there is none. A hold only, never a figure the rule takes."""
+    lines = [ln for ln in sec.split("\n") if ln.strip()]
+    for i, line in enumerate(lines):
+        if not GE_LINE.search(line):
+            continue
+        for ln in (line, lines[i + 1] if i + 1 < len(lines) else ""):
+            for m in GE_FIGURE.finditer(ln):
+                n = int(m.group(1))
+                if not 20 <= n <= 45 or n == degree_total:
+                    continue
+                if NOT_GE_FIGURE_BEFORE.search(ln[:m.start()]) or NOT_GE_FIGURE_AFTER.match(ln[m.end():]):
+                    continue
+                return (line.strip() + ("" if ln is line else " / " + ln.strip()))[:160]
+    return None
+
+
+def calgetc_step(conf: dict | None) -> dict | None:
+    """The college's statewide_cal_getc step, when its config carries one with its evidence, else None."""
+    st = (conf or {}).get("statewide_cal_getc")
+    return st if isinstance(st, dict) and str(st.get("evidence") or "").strip() else None
+
+
+def _no_ge_units(v) -> bool:
+    """No general education units read: none, or a range with neither end. An explicit 0 is a reading."""
+    return v is None or (isinstance(v, dict) and v.get("min") is None and v.get("max") is None)
 
 
 def _lo_hi(v):
@@ -365,15 +426,21 @@ def calgetc_legacy_of(title: str | None, heading: str | None, siblings: list | N
 
 
 def calgetc_hold(record, text: str | None, award: str | None, title: str | None = None,
-                 siblings: list | None = None) -> tuple[str | None, dict]:
+                 siblings: list | None = None, conf: dict | None = None,
+                 control_number: str | None = None) -> tuple[str | None, dict]:
     """(why the statewide rule holds this record, or None to fill; what it read: section words, standing)."""
+    step = calgetc_step(conf)
+    if step is None:
+        return "no statewide_cal_getc step for this college (its catalog's evidence is not on file)", {}
+    if control_number and control_number in (step.get("hold") or {}):
+        return "held by name: %s" % step["hold"][control_number], {}
     if not isinstance(record, dict) or not text:
         return "no record or no page text", {}
     if not awards_match("transfer", award):
         return "not a transfer degree", {}
     prog = record.get("program") or {}
-    if not _empty(prog.get("ge_units")):
-        return "the record holds general education units", {}
+    if not _no_ge_units(prog.get("ge_units")):
+        return "the record holds general education units (an explicit 0 is a reading)", {}
     if not CAL_GETC_ONLY.match(prog.get("ge_pattern") or ""):
         return "the record's pattern is not Cal-GETC alone", {}
     if _lo_hi(prog.get("degree_total")) != (float(ADT_DEGREE_TOTAL), float(ADT_DEGREE_TOTAL)):
@@ -392,7 +459,7 @@ def calgetc_hold(record, text: str | None, award: str | None, title: str | None 
         return "the section does not name Cal-GETC", {}
     if any(PARTIAL_LINE.search(ln) for ln in named):
         return "a Cal-GETC line asks part of it (an Area, one course, for STEM)", {"words": named[0].strip()}
-    fig = calgetc_figure(sec)
+    fig = calgetc_figure(sec) or calgetc_broad_figure(sec)
     if fig:
         return "the page prints a figure for it: %s" % fig[:120], {"words": fig}
     other = OTHER_GE_PATTERN.search(sec)
@@ -410,12 +477,35 @@ def calgetc_hold(record, text: str | None, award: str | None, title: str | None 
     return None, read
 
 
+def calgetc_touched(record, award: str | None) -> bool:
+    """A record the statewide rule asks about: a transfer degree naming Cal-GETC alone, with no GE units read."""
+    prog = (record or {}).get("program") or {} if isinstance(record, dict) else {}
+    return (awards_match("transfer", award) and _no_ge_units(prog.get("ge_units"))
+            and bool(CAL_GETC_ONLY.match(prog.get("ge_pattern") or "")))
+
+
+def calgetc_trace(control_number: str, record, notes: list, text: str | None, award: str | None,
+                  title: str | None, siblings: list | None, conf: dict | None) -> str | None:
+    """One line for the run's log about a record the rule asks about (calgetc_touched): filled, filled by the
+    college's own printed figure, or held with calgetc_hold's reason; None for any other record."""
+    if not calgetc_touched(record, award):
+        return None
+    if any(n.get("statewide") for n in notes or []):
+        return "cal-getc %s filled: the statewide 34" % control_number
+    own = [n for n in notes or [] if n.get("field") == "ge_units"]
+    if own:
+        return "cal-getc %s filled by the college's own figure: %s" % (control_number, own[0].get("now"))
+    why, _read = calgetc_hold(record, text, award, title, siblings, conf, control_number)
+    return "cal-getc %s held: %s" % (control_number, why)
+
+
 def statewide_cal_getc(record, text: str | None, award: str | None, title: str | None = None,
-                       siblings: list | None = None) -> tuple[dict, list[dict]]:
+                       siblings: list | None = None, conf: dict | None = None,
+                       control_number: str | None = None) -> tuple[dict, list[dict]]:
     """The record with ge_units set to the statewide Cal-GETC 34 where calgetc_hold finds no reason to hold, and
     its note (words: the section's Cal-GETC words and the ruling as source; statewide: cal_getc_34, kept by a
     later reconcile run); else the record unchanged and no note."""
-    why, read = calgetc_hold(record, text, award, title, siblings)
+    why, read = calgetc_hold(record, text, award, title, siblings, conf, control_number)
     if why is not None:
         return record, []
     out = copy.deepcopy(record)

@@ -22,6 +22,45 @@
   "heading_above_code": "a PDF catalog that prints a program's heading on the lines above its control number's line (Los Angeles City, S639: title, award and 'Major Units: 39  T otal Units: Minimum of 60' above '(State Code: 02718; ...)'): the capture's cut at the control number's line keeps up to `lines` lines above it, never a line `stop` names (the running header) and never a line naming a listed course, so the reconcile steps see the heading and the codes found stay the same (kb/_program_requirements_college.py heading_above)"
  },
  "colleges": {
+  "Cerro Coso Community College": {
+   "why": "S648, d-calgetc-34-per-college-evidence-s648. Cerro Coso's catalog prints its own Cal-GETC figure: the pattern page (PDF p.65, printed p.57) heads 'California General Education Transfer Curriculum (Cal-GETC) (35 Units)', the heading the readings of 01980 and 38705 filed from that page, and the program pages name the pattern as 'OPTION B Cal-GETC'. The printed figure wins over the statewide 34 (Sam, Sheet 187 card 5), so a transfer degree naming Cal-GETC with no units read takes 35 from that page, only where the record names its pattern and degree total. Reversible by deleting this entry.",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {"min": 35, "max": 35},
+     "awards": "transfer",
+     "only_with": ["ge_pattern", "degree_total"],
+     "pattern": "Cal-?\\s?GETC",
+     "source": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65",
+     "source_words": "California General Education Transfer Curriculum (Cal-GETC) (35 Units)"
+    }
+   ]
+  },
+  "Cosumnes River College": {
+   "why": "S648, d-calgetc-34-per-college-evidence-s648. Cosumnes River's catalog names Cal-GETC and prints no unit figure for it: its Cal-GETC page (PDF p.95, filed as the Cal-GETC certificate 45203) prints area minimums and no total (the reading: 'No total units for the certificate is printed (Cal-GETC areas give minimums: Area 1 nine units, Area 2 three, Area 3 six, Area 4 six, Area 6 three)', 'Area 5 prints no unit'), and its transfer degrees' readings say no units are printed for Cal-GETC (30566, 33072, 39656). So the statewide 34 applies (Sam, Sheet 187 card 5). Reversible by deleting this entry.",
+   "steps": [],
+   "statewide_cal_getc": {
+    "evidence": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=95: the Cal-GETC pattern page prints area minimums (Area 1 nine units, 2 three, 3 six, 4 six, 6 three; Area 5 none) and no total, as the filed reading of 45203 records ('No total units for the certificate is printed'); the transfer degrees' readings 30566, 33072 and 39656 record no unit figure printed for Cal-GETC on their pages.",
+    "checked": "2026-11-13",
+    "hold": {}
+   }
+  },
+  "Cuyamaca College": {
+   "why": "S648, d-calgetc-34-per-college-evidence-s648. Cuyamaca's transfer pages print their own Cal-GETC figure, 34 (Psychology AA-T 30597: 'Units for the Major 20-21, Double-Counted Units 6-9, Cal-GETC 34, Total Transferable Elective Units 11-15, Total Units 60'; Sociology AA-T 30598). The printed figure is the college's own, so a transfer degree naming Cal-GETC with no units read takes it from that page, only where the record names its pattern and degree total. Reversible by deleting this entry.",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {"min": 34, "max": 34},
+     "awards": "transfer",
+     "only_with": ["ge_pattern", "degree_total"],
+     "pattern": "Cal-?\\s?GETC",
+     "source": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/psychology/psychology-transfer-aa-t/",
+     "source_words": "Cal-GETC 34 (Psychology AA-T 30597's reading of its page)"
+    }
+   ]
+  },
   "College of the Redwoods": {
    "why": "S608 SkyCondor, 2026-11-08, read Redwoods' failures by shape: 14 transfer degrees name the degree's 60 and CalGETC with no units and fail the degree check as incomplete; 8 local degrees name the 60 and no GE pattern. A free page read (college-page-read 42479757804, kb/college_reads/redwoods_ge_units.json) gave the transfer words: the Biology AS-T page prints 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis.' Redwoods' own Cal-GETC page (grad5) renders no text to the reader, so this step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Columbia's, Taft's and Los Medanos's steps are. The local degrees wait: their pages print no GE pattern or figure, and the CR-GE page (grad4) was not read. Proceeded on the recommendation; reversible by deleting this entry. S636 SkyAntennae, 2026-11-11: the 8 local degrees. COBIx found the college's 2026-2027 CRGE pattern sheet on its counseling page (#3096); read 43013608134 verified it: 'CRGE Units Required 21', 'Major Requirements and Elective Units 18+', 'Minimum Degree Units for Associate 60'. Read 43015726456 gave the local pages' own words as the capture holds them: the title line 'A.S. Degree ( 60.0 Credits )', blocks headed '(Total N)', no general education line, and on Forestry 'This program includes requirements that can be double counted for GE requirements'. Three local steps: ge_units 21; degree_total_minimum where the title prints 60.0; ge_overlap where the page says double counted. Simulated on the filed records: 6 of the 8 read equal; Registered Nursing 01831 and LVN to RN 08393 print their own totals and stay. Session call, cpl_memory d-redwoods-crge-21-s636; reversible by deleting the three local steps. The college-level gate read 'transfer' and held the local steps out (reconcile 43016437012 changed none); it now reads 'associate', and each step keeps its own gate.",
    "awards": "associate",
@@ -1142,6 +1181,16 @@
      "awards": "transfer",
      "pattern": "Complete\\s+transferable\\s+units\\s+as\\s+needed\\s+to\\s+reach\\s+60\\b",
      "source_words": "Grossmont AA-T and AS-T pages: 'Units in the major 20-22', 'Plus General Education Requirements (Cal-GETC) 34', 'Total Units 60', 'Complete transferable units as needed to reach 60.' (the readings of Psychology AA-T 30978 and Sociology AA-T 30977, notes)"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {"min": 34, "max": 34},
+     "awards": "transfer",
+     "only_with": ["ge_pattern", "degree_total"],
+     "pattern": "Cal-?\\s?GETC",
+     "source": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/psychology-aat/",
+     "source_words": "Plus General Education Requirements (Cal-GETC) 34 (S648, d-calgetc-34-per-college-evidence-s648: Grossmont's transfer pages print their own Cal-GETC figure; Psychology AA-T 30978 and History AA-T 31814 quote it)"
     }
    ]
   },

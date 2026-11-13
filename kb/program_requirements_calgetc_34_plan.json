@@ -3,8 +3,8 @@
  "rule": "kb/_program_requirements_reconcile.py statewide_cal_getc (calgetc_hold)",
  "source_words": "statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13",
  "measured_on": {
-  "commit": "2dc7aa2e746cee3c0a351c80c6e3ec124c9b5fcd",
-  "date": "2026-11-13T17:45:23+00:00",
+  "commit": "6a73b4337f1f29a0781d8f9fff7941cc12d9166a",
+  "date": "2026-11-13T17:51:38+00:00",
   "records": "kb/program_requirements_college/*/records/",
   "kind": "a one-time measure of the committed records; no CI step checks it"
  },
@@ -21,34 +21,81 @@
   "short": 0,
   "unknown": 3,
   "legacy_left_out": 3,
-  "fills": 68,
-  "fills_not_likely_held_by_page_gate": 52,
-  "colleges_filling": 22
+  "fills": 13,
+  "fills_statewide": 3,
+  "fills_college_set_step": 10,
+  "needs_a_page_read": 78,
+  "fills_not_likely_held_by_page_gate": 12,
+  "colleges_filling": 6
  },
  "fills_by_college": {
-  "Berkeley City College": 15,
-  "Lassen College": 10,
-  "Sacramento City College": 6,
-  "Cerro Coso Community College": 5,
-  "Mendocino College": 5,
-  "City College of San Francisco": 3,
+  "Cerro Coso Community College": 6,
   "Cosumnes River College": 3,
-  "Diablo Valley College": 3,
-  "Sierra College": 3,
-  "Los Angeles Southwest College": 2,
-  "Solano Community College": 2,
-  "American River College": 1,
-  "Antelope Valley College": 1,
   "College of Alameda": 1,
   "Cuyamaca College": 1,
-  "Cypress College": 1,
-  "Fresno City College": 1,
-  "Fullerton College": 1,
-  "Grossmont College": 1,
-  "Mission College": 1,
-  "Ohlone College": 1,
-  "Porterville College": 1
+  "East Los Angeles College": 1,
+  "Grossmont College": 1
  },
+ "statewide_step_colleges": {
+  "Cosumnes River College": 3
+ },
+ "college_set_step_colleges": {
+  "Cerro Coso Community College": {
+   "min": 35,
+   "max": 35
+  },
+  "College of Alameda": {
+   "min": 34,
+   "max": 34
+  },
+  "Cuyamaca College": {
+   "min": 34,
+   "max": 34
+  },
+  "East Los Angeles College": {
+   "min": 34,
+   "max": 34
+  },
+  "Grossmont College": {
+   "min": 34,
+   "max": 34
+  }
+ },
+ "needs_a_page_read": [
+  "American River College",
+  "Berkeley City College",
+  "City College of San Francisco",
+  "Cypress College",
+  "Diablo Valley College",
+  "Fresno City College",
+  "Fullerton College",
+  "Lassen College",
+  "Los Angeles Southwest College",
+  "Mendocino College",
+  "Mission College",
+  "Ohlone College",
+  "Porterville College",
+  "Sacramento City College",
+  "Sierra College",
+  "Solano Community College"
+ ],
+ "held_by_name": [
+  {
+   "college": "Antelope Valley College",
+   "control_number": "43028",
+   "why": "its page prints a GE table (39 CSU / 37 IGETC) and its sibling AS-Ts print 'Completion of Cal-GETC Units 35 units'"
+  },
+  {
+   "college": "Los Angeles Southwest College",
+   "control_number": "33658",
+   "why": "its major reads 25 against a printed 'minimum of 37-39 units in the major' (a draft catalog); held until the major is read again"
+  },
+  {
+   "college": "Sacramento City College",
+   "control_number": "30700",
+   "why": "its section heading is not printed on its page"
+  }
+ ],
  "legacy_pairs": [
   {
    "college": "Lassen College",
@@ -114,7 +161,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "Antelope Valley College": [
@@ -141,7 +189,9 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "held by name",
+    "held": "its page prints a GE table (39 CSU / 37 IGETC) and its sibling AS-Ts print 'Completion of Cal-GETC Units 35 units'",
+    "fills": false
    }
   ],
   "Berkeley City College": [
@@ -169,7 +219,8 @@
      4.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "31835",
@@ -190,6 +241,7 @@
     "degree_total": 60,
     "standing": "overlap",
     "likely_held_by_page_gate": true,
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -216,7 +268,8 @@
      8.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "33548",
@@ -242,7 +295,8 @@
      6.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "37850",
@@ -268,7 +322,8 @@
      2.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "37851",
@@ -294,7 +349,8 @@
      8.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "37877",
@@ -320,7 +376,8 @@
      7.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "39386",
@@ -346,7 +403,8 @@
      7.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "39856",
@@ -372,7 +430,8 @@
      8.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "40244",
@@ -398,7 +457,8 @@
      3.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "41766",
@@ -419,6 +479,7 @@
     "degree_total": 60,
     "standing": "overlap",
     "likely_held_by_page_gate": true,
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -445,7 +506,8 @@
      8.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "41794",
@@ -471,7 +533,8 @@
      8.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "41795",
@@ -497,7 +560,8 @@
      7.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "41796",
@@ -523,7 +587,8 @@
      5.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "41834",
@@ -549,7 +614,8 @@
      7.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "41902",
@@ -570,6 +636,7 @@
     "degree_total": 60,
     "standing": "overlap",
     "likely_held_by_page_gate": true,
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -591,6 +658,7 @@
     "degree_total": 60,
     "standing": "overlap",
     "likely_held_by_page_gate": true,
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -612,6 +680,7 @@
     "degree_total": 60,
     "standing": "overlap",
     "likely_held_by_page_gate": true,
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -638,7 +707,8 @@
      8.0
     ],
     "likely_held_by_page_gate": true,
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "43097",
@@ -659,6 +729,7 @@
     "degree_total": 60,
     "standing": "overlap",
     "likely_held_by_page_gate": true,
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -680,6 +751,7 @@
     "degree_total": 60,
     "standing": "overlap",
     "likely_held_by_page_gate": true,
+    "route": "needs a page read",
     "fills": false
    }
   ],
@@ -707,6 +779,11 @@
      7.0,
      8.0
     ],
+    "route": "college set step",
+    "figure": {
+     "min": 35,
+     "max": 35
+    },
     "fills": true
    },
    {
@@ -732,6 +809,11 @@
      2.0,
      2.0
     ],
+    "route": "college set step",
+    "figure": {
+     "min": 35,
+     "max": 35
+    },
     "fills": true
    },
    {
@@ -757,6 +839,11 @@
      7.0,
      7.0
     ],
+    "route": "college set step",
+    "figure": {
+     "min": 35,
+     "max": 35
+    },
     "fills": true
    },
    {
@@ -782,6 +869,11 @@
      1.0,
      4.0
     ],
+    "route": "college set step",
+    "figure": {
+     "min": 35,
+     "max": 35
+    },
     "fills": true
    },
    {
@@ -802,7 +894,12 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
-    "fills": false
+    "route": "college set step",
+    "figure": {
+     "min": 35,
+     "max": 35
+    },
+    "fills": true
    },
    {
     "control_number": "43206",
@@ -827,6 +924,11 @@
      3.0,
      3.0
     ],
+    "route": "college set step",
+    "figure": {
+     "min": 35,
+     "max": 35
+    },
     "fills": true
    }
   ],
@@ -854,7 +956,8 @@
      2.0,
      2.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "32401",
@@ -879,7 +982,8 @@
      2.0,
      2.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "41049",
@@ -904,7 +1008,8 @@
      3.5,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "College of Alameda": [
@@ -932,6 +1037,11 @@
      8.0
     ],
     "likely_held_by_page_gate": true,
+    "route": "college set step",
+    "figure": {
+     "min": 34,
+     "max": 34
+    },
     "fills": true
    }
   ],
@@ -959,6 +1069,7 @@
      7.0,
      7.0
     ],
+    "route": "statewide step",
     "fills": true
    },
    {
@@ -979,6 +1090,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "statewide step",
     "fills": false
    },
    {
@@ -999,6 +1111,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "statewide step",
     "fills": false
    },
    {
@@ -1024,6 +1137,7 @@
      8.0,
      8.0
     ],
+    "route": "statewide step",
     "fills": true
    },
    {
@@ -1049,6 +1163,7 @@
      8.0,
      8.0
     ],
+    "route": "statewide step",
     "fills": true
    },
    {
@@ -1069,6 +1184,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "statewide step",
     "fills": false
    },
    {
@@ -1089,6 +1205,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "statewide step",
     "fills": false
    }
   ],
@@ -1112,6 +1229,11 @@
     "degree_total": 60,
     "standing": "overlap",
     "double_count_words": "d. 'Total Transferable Elective Units 5-10' recorded as degree_elective_units; 'Double-Counted Units 3-7' also printed (major units double-counted with Cal-GETC). Cal-GETC",
+    "route": "college set step",
+    "figure": {
+     "min": 34,
+     "max": 34
+    },
     "fills": true
    }
   ],
@@ -1139,7 +1261,8 @@
      5.0,
      7.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "39887",
@@ -1159,6 +1282,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    }
   ],
@@ -1186,7 +1310,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "31817",
@@ -1211,7 +1336,8 @@
      7.0,
      7.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "32539",
@@ -1236,7 +1362,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "46234",
@@ -1256,6 +1383,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    }
   ],
@@ -1267,7 +1395,12 @@
     "standing": "unknown",
     "major": null,
     "why": "the record holds no major units (total_units)",
-    "fills": false
+    "route": "college set step",
+    "figure": {
+     "min": 34,
+     "max": 34
+    },
+    "fills": true
    }
   ],
   "Fresno City College": [
@@ -1294,7 +1427,8 @@
      2.0,
      5.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "Fullerton College": [
@@ -1321,7 +1455,8 @@
      4.0,
      6.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "Grossmont College": [
@@ -1348,6 +1483,11 @@
      2.0,
      3.0
     ],
+    "route": "college set step",
+    "figure": {
+     "min": 34,
+     "max": 34
+    },
     "fills": true
    }
   ],
@@ -1375,7 +1515,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "31015",
@@ -1400,7 +1541,8 @@
      2.0,
      2.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "31037",
@@ -1425,7 +1567,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "31132",
@@ -1450,7 +1593,8 @@
      2.0,
      2.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "31297",
@@ -1476,6 +1620,7 @@
      2.0
     ],
     "legacy_of": "42300",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -1501,7 +1646,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "32083",
@@ -1526,7 +1672,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "33263",
@@ -1551,7 +1698,8 @@
      6.0,
      6.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "33388",
@@ -1560,6 +1708,7 @@
     "standing": "unknown",
     "major": null,
     "why": "the record holds no major units (total_units)",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -1585,7 +1734,8 @@
      6.0,
      7.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "33730",
@@ -1610,7 +1760,8 @@
      2.0,
      5.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "35106",
@@ -1630,6 +1781,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -1650,6 +1802,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -1675,7 +1828,8 @@
      2.0,
      2.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "Los Angeles Southwest College": [
@@ -1702,7 +1856,8 @@
      1.0,
      1.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "33658",
@@ -1727,7 +1882,9 @@
      1.0,
      1.0
     ],
-    "fills": true
+    "route": "held by name",
+    "held": "its major reads 25 against a printed 'minimum of 37-39 units in the major' (a draft catalog); held until the major is read again",
+    "fills": false
    }
   ],
   "Mendocino College": [
@@ -1755,6 +1912,7 @@
      8.0
     ],
     "legacy_of": "42863",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -1780,7 +1938,8 @@
      2.0,
      2.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "32095",
@@ -1800,7 +1959,8 @@
     ],
     "degree_total": 60,
     "standing": "exact",
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "32985",
@@ -1825,7 +1985,8 @@
      1.0,
      4.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "32986",
@@ -1850,7 +2011,8 @@
      1.0,
      1.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "33595",
@@ -1870,6 +2032,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -1895,7 +2058,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "Mission College": [
@@ -1923,6 +2087,7 @@
      8.0
     ],
     "legacy_of": "44504",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -1948,7 +2113,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "Ohlone College": [
@@ -1970,6 +2136,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -1995,7 +2162,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "Porterville College": [
@@ -2018,7 +2186,8 @@
     "degree_total": 60,
     "standing": "overlap",
     "double_count_words": "'Select one course'; effectively required. Page prints 'Total Units that may be Double Counted 3 units' and 'Elective (CSU transferable) Units 5 units'; the 5 elective unit",
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "Sacramento City College": [
@@ -2029,6 +2198,7 @@
     "standing": "unknown",
     "major": null,
     "why": "the record holds no major units (total_units)",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -2054,7 +2224,9 @@
      7.0,
      8.0
     ],
-    "fills": true
+    "route": "held by name",
+    "held": "its section heading is not printed on its page",
+    "fills": false
    },
    {
     "control_number": "32001",
@@ -2079,7 +2251,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "32002",
@@ -2099,6 +2272,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -2124,7 +2298,8 @@
      7.0,
      7.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "32732",
@@ -2149,7 +2324,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "35463",
@@ -2174,7 +2350,8 @@
      5.0,
      5.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "42894",
@@ -2199,7 +2376,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "Sierra College": [
@@ -2226,7 +2404,8 @@
      8.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "32008",
@@ -2251,7 +2430,8 @@
      5.0,
      8.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "32640",
@@ -2276,7 +2456,8 @@
      4.0,
      7.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "33639",
@@ -2296,6 +2477,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -2316,6 +2498,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    }
   ],
@@ -2343,7 +2526,8 @@
      2.5,
      5.5
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    },
    {
     "control_number": "35982",
@@ -2363,6 +2547,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -2383,6 +2568,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -2403,6 +2589,7 @@
     ],
     "degree_total": 60,
     "standing": "overlap",
+    "route": "needs a page read",
     "fills": false
    },
    {
@@ -2428,7 +2615,8 @@
      4.0,
      6.0
     ],
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ]
  }

@@ -288,7 +288,18 @@ def _git_head() -> tuple[str | None, str | None]:
         return None, None
 
 
-def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str | None = None) -> dict:
+# Records held by name until a person reads them again (the conductor, S648, from the second readers of #3244).
+HELD_BY_NAME = {
+    "Antelope Valley College": {"43028": "its page prints a GE table (39 CSU / 37 IGETC) and its sibling AS-Ts print "
+                                         "'Completion of Cal-GETC Units 35 units'"},
+    "Los Angeles Southwest College": {"33658": "its major reads 25 against a printed 'minimum of 37-39 units in the "
+                                               "major' (a draft catalog); held until the major is read again"},
+    "Sacramento City College": {"30700": "its section heading is not printed on its page"},
+}
+
+
+def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str | None = None,
+                     steps: dict | None = None) -> dict:
     """Sam's ruling (Sheet 187 card 5, 13:19:50Z 2026-11-13: "Use 34 statewide"), measured once on the filed
     records. A record is touched when the statewide rule's record gates admit it (R.calgetc_hold's: a transfer
     degree, Cal-GETC alone, no general education units, a degree total of exactly 60, no UC-transfer heading or
@@ -300,6 +311,7 @@ def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str |
     page gates (the section's own words: a printed figure, a partial Cal-GETC line, another pattern) read the
     page text, which the files do not keep; they run in each college's reconcile run. likely_held_by_page_gate
     estimates them from the reading's notes and never gates. A one-time measure: no CI step checks this file."""
+    steps = R.load_steps() if steps is None else steps
     by_college = collections.defaultdict(list)
     for f in records:
         by_college[f["college"]].append(f)
@@ -332,14 +344,32 @@ def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str |
                 row["legacy_of"] = legacy
                 pairs.append({"college": college, "legacy": f["control_number"], "two_point_oh": legacy,
                               "section_heading": prog.get("section_heading")})
-            row["fills"] = (not legacy and (stand["standing"] in ("exact", "under")
-                                            or (stand["standing"] == "overlap" and bool(dc))))
+            conf = steps.get(college) or {}
+            own = [st for st in conf.get("steps") or [] if st.get("kind") == "set" and st.get("field") == "ge_units"
+                   and R.awards_match(st.get("awards"), f.get("award"))]
+            named = (R.calgetc_step(conf) or {}).get("hold") or {}
+            if f["control_number"] in HELD_BY_NAME.get(college, {}):
+                row["route"], row["held"] = "held by name", HELD_BY_NAME[college][f["control_number"]]
+                row["fills"] = False
+            elif own:
+                # The college's own printed figure, by its set step (it runs first; the statewide rule never asks).
+                row["route"], row["figure"] = "college set step", own[0]["value"]
+                row["fills"] = True
+            elif R.calgetc_step(conf) is None:
+                row["route"], row["fills"] = "needs a page read", False
+            elif f["control_number"] in named:
+                row["route"], row["held"], row["fills"] = "held by name", named[f["control_number"]], False
+            else:
+                row["route"] = "statewide step"
+                row["fills"] = (not legacy and (stand["standing"] in ("exact", "under")
+                                                or (stand["standing"] == "overlap" and bool(dc))))
             rows.append(row)
         if rows:
             colleges[college] = rows
     allrows = [r for rs in colleges.values() for r in rs]
     count = lambda pred: sum(1 for r in allrows if pred(r))
     fill_by = {c: sum(1 for r in rs if r["fills"]) for c, rs in colleges.items()}
+    route_of = lambda c: sorted({r["route"] for r in colleges[c]})
     return {"ruling": "sam-sheet-187-calgetc-34-statewide-2026-11-13 (Open Asks Sheet 187 card 5, 13:19:50Z "
                       "2026-11-13: \"Use 34 statewide\")",
             "rule": "kb/_program_requirements_reconcile.py statewide_cal_getc (calgetc_hold)",
@@ -358,9 +388,18 @@ def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str |
                        "unknown": count(lambda r: r["standing"] == "unknown"),
                        "legacy_left_out": len(pairs),
                        "fills": count(lambda r: r["fills"]),
+                       "fills_statewide": count(lambda r: r["fills"] and r["route"] == "statewide step"),
+                       "fills_college_set_step": count(lambda r: r["fills"] and r["route"] == "college set step"),
+                       "needs_a_page_read": count(lambda r: r["route"] == "needs a page read"),
                        "fills_not_likely_held_by_page_gate": count(lambda r: r["fills"] and not r.get("likely_held_by_page_gate")),
                        "colleges_filling": sum(1 for n in fill_by.values() if n)},
             "fills_by_college": dict(sorted(((c, n) for c, n in fill_by.items() if n), key=lambda x: (-x[1], x[0]))),
+            "statewide_step_colleges": {c: fill_by[c] for c in colleges if "statewide step" in route_of(c)},
+            "college_set_step_colleges": {c: next(r["figure"] for r in colleges[c] if r.get("figure"))
+                                          for c in colleges if "college set step" in route_of(c)},
+            "needs_a_page_read": sorted(c for c in colleges if "needs a page read" in route_of(c)),
+            "held_by_name": [{"college": c, "control_number": r["control_number"], "why": r["held"]}
+                             for c, rs in colleges.items() for r in rs if r.get("held")],
             "legacy_pairs": pairs,
             "unknown_held": [{"college": c, "control_number": r["control_number"], "title": r.get("title"),
                               "why": r.get("why")} for c, rs in colleges.items() for r in rs
