@@ -430,8 +430,8 @@
    "name": "First Light",
    "page": "index.html#first-light",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-11-13",
+   "outcome": "First pass (S646). npm run a11y clean on all three views, light and dark (dark targets added for photos and Sierra), at 320, 390 and 1440 px; no raw hex, every var() token defined, no glyph findings; wiring: no figure shared with another view. Fixed COBIx's minor finding (#3110): a held mark no longer hides the open pull request link, in first-light-apply.yml's stamp and the tab's Apply line."
   }
  ]
 }
