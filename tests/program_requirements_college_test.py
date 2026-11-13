@@ -3037,7 +3037,7 @@ finally:
 # Diablo Valley's site links each award as dvc.elumenapp.com/catalog/DVC2026-2027Catalog/
 # program,<slug> (page read 43342288026); the content call catalog,program,<slug> prints the
 # award whole (43342877522); the menu names none (43343491672), so its index is
-# www.dvc.edu/academics/explore-our-programs?page=0..5, 77 areas (43341770461, 43344234543).
+# www.dvc.edu/academics/explore-our-programs?page=0..5, 72 areas (43341770461; counted by 43362895655).
 check(C.el_program_links(SHELL, "2026-2027-Catalog") == [("ag-ed-as-fall-2026", "/"), ("culinary-coa-fall-2026", "/")]
       and C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT)["url"] == EL_BASE + "program/ag-ed-as-fall-2026"
       and C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT, "/") == EPG,
@@ -3140,6 +3140,67 @@ finally:
     P.load, C.el_fetch = real_load, real_fetch
 check(not loaded and "index" not in rep2["elumen"],
       "with no index step in the procedure record, the college's site is never read")
+
+# ── Diablo Valley's area pages write the slash form too (S645, page read 43363340544) ──
+# Administration of Justice links program,<slug>; Dental Assisting, Music, Psychology, Spanish,
+# Kinesiology and Early Childhood Education link program/<slug> on the same catalog, and the step's
+# program_links names the comma form, so run 43353452924 took none of them (115 not found).
+# The fixture is read 8's own links.
+DVC_LOADS_8 = {
+    DVC_SITE + "?page=0": {"access": "ok", "status": 200, "links": [
+        {"text": "Learn more about\nAdministration of Justice", "href": AREA + "administration-justice"},
+        {"text": "Learn more about\nDental Assisting", "href": AREA + "dental-assisting"},
+        {"text": "Learn more about\nMusic", "href": AREA + "music"}]},
+    DVC_SITE + "?page=1": {"access": "ok", "status": 200, "links": []},
+    AREA + "administration-justice": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Science for Transfer - Administration of Justice",
+         "href": DVC_EL + "program,a-s-in-administration-of-justice-for-transfer-fall-2025"}]},
+    AREA + "dental-assisting": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Science - Dental Assisting", "href": DVC_EL + "program/a-s-in-dental-assisting-fall-2026"},
+        {"text": "Certificate of Achievement - Dental Assisting",
+         "href": DVC_EL + "program/certificate-of-achievement-in-dental-assisting-fall-2026"},
+        {"text": "Certificate of Completion - Exploration of Dentistry",
+         "href": DVC_EL + "program/certificate-of-completion-exploration-of-dentistry-fall-2025"},
+        {"text": "Dental Hygiene", "href": AREA + "dental-hygiene"}]},
+    AREA + "music": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Arts - Music", "href": DVC_EL + "program/a-a-in-music-fall-2026"},
+        {"text": "Associate in Arts for Transfer - Music", "href": DVC_EL + "program/a-a-in-music-for-transfer-fall-2026"},
+        {"text": "Same award, comma form", "href": DVC_EL + "program,a-a-in-music-fall-2026"},
+        {"text": "Old year", "href": "https://dvc.elumenapp.com/catalog/DVC2025-2026Catalog/program/old-fall-2020"},
+        {"text": "Another host", "href": "https://lmc.elumenapp.com/catalog/DVC2026-2027Catalog/program/x"}]},
+}
+dvc_asked.clear()
+
+
+def dvc_load_8(reader, url, cache, spa):
+    return dict(DVC_LOADS_8.get(url) or {"access": "ok", "status": 200, "links": []})
+
+
+P.load, C.el_fetch = dvc_load_8, dvc_fetch
+try:
+    rep8 = {}
+    pages8 = C.el_pages_fast(None, DVC_START, rep8, DVC_STEP, {})
+finally:
+    P.load, C.el_fetch = real_load, real_fetch
+check([g["url"] for g in pages8] == [
+          DVC_EL + "program,a-s-in-administration-of-justice-for-transfer-fall-2025",
+          DVC_EL + "program/a-s-in-dental-assisting-fall-2026",
+          DVC_EL + "program/certificate-of-achievement-in-dental-assisting-fall-2026",
+          DVC_EL + "program/certificate-of-completion-exploration-of-dentistry-fall-2025",
+          DVC_EL + "program/a-a-in-music-fall-2026",
+          DVC_EL + "program/a-a-in-music-for-transfer-fall-2026"]
+      and rep8["elumen"]["index"]["index_programs"] == 6
+      and sum(1 for u in dvc_asked if ",program," in u) == 6,
+      "a comma-form step takes an area's slash-form awards too, each at the address the area writes, "
+      "one award in both forms once, and still no other catalog or host: %s" % [g["url"] for g in pages8])
+rx = re.compile(DVC_STEP["catalog"]["program_links"], re.I)
+check(C.el_index_link_named(rx, DVC_EL + "program/a-a-in-music-fall-2026")
+      and C.el_index_link_named(rx, DVC_EL + "program,a-a-in-music-fall-2026")
+      and not C.el_index_link_named(rx, "https://dvc.elumenapp.com/catalog/DVC2025-2026Catalog/program/old-fall-2020")
+      and not C.el_index_link_named(rx, DVC_EL + "department/music")
+      and C.el_index_link_named(re.compile(r"catalog/X/program/"), "https://h/catalog/X/program,a")
+      and not C.el_index_link_named(re.compile(r"catalog/X/program/"), "https://h/catalog/Y/program,a"),
+      "program_links names either form of one award's address, and nothing the swap does not make")
 
 if failures:
     print("FAIL: %d" % len(failures))
