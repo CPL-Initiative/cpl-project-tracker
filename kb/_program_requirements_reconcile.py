@@ -313,26 +313,40 @@ def _lo_hi(v):
     return (None, None) if v is None else (float(v), float(v))
 
 
-def calgetc_standing(prog: dict) -> dict:
+def calgetc_standing(prog: dict, award: str | None = None) -> dict:
     """How a record stands with 34 filled: major (total_units) + 34 + stated electives (open_elective_units,
-    degree_elective_units) against the degree total of 60. exact: 60 lies within the sum; under: the sum is
-    below 60 and the record says electives fill the degree (electives_fill_degree); overlap: the sum is past
-    60; short: below 60 with nothing stated to fill it; unknown: no major units."""
+    degree_elective_units) against the degree total of 60, read by the scorer's own degree_verdict
+    (kb/_program_requirements_score.py), never a second copy of its rules:
+      exact    the verdict is equal with nothing to fill (60 is the sum, or lies within it);
+      under    the sum is below 60 and the verdict fills it, with its basis: "stated" (the record says electives
+               fill the degree, electives_fill_degree) or "sheet-81" (Sam's Open Asks Sheet 81 card 2 "adt",
+               2026-10-14: transferable electives make up a transfer degree's 60; degree_verdict's "transfer"
+               reading, which asks a transfer degree, a sum under the total at both ends, and no open electives);
+      overlap  the sum is past 60 at both ends (degree_verdict passes it as overlap with no bound, so the rule
+               holds it unless the page states double counting);
+      short    below 60 and no verdict fills it (an open electives figure the Sheet 81 reading does not take);
+      unknown  the record holds no major units, so there is no sum to read."""
+    from _program_requirements_score import degree_verdict
     maj = _lo_hi(prog.get("total_units"))
     if maj[0] is None:
-        return {"standing": "unknown", "major": None}
+        return {"standing": "unknown", "major": None, "why": "the record holds no major units (total_units)"}
     el = [_lo_hi(prog.get(k)) for k in ("open_elective_units", "degree_elective_units")]
     el_lo = sum(e[0] for e in el if e[0] is not None)
     el_hi = sum(e[1] for e in el if e[1] is not None)
     lo, hi = maj[0] + 34 + el_lo, maj[1] + 34 + el_hi
-    total = ADT_DEGREE_TOTAL
-    if lo <= total <= hi:
-        st = "exact"
-    elif hi < total:
-        st = "under" if prog.get("electives_fill_degree") else "short"
-    else:
-        st = "overlap"
-    return {"standing": st, "major": list(maj), "electives": [el_lo, el_hi], "sum": [lo, hi], "degree_total": total}
+    total = float(ADT_DEGREE_TOTAL)
+    out = {"major": list(maj), "electives": [el_lo, el_hi], "sum": [lo, hi], "degree_total": ADT_DEGREE_TOTAL}
+    if lo > total and hi > total:
+        return dict(out, standing="overlap")
+    v = degree_verdict(dict(prog, ge_units=dict(CAL_GETC_UNITS)), (total, total), lo, hi, award)
+    fill = v.get("fill")
+    if v.get("pass") and not v.get("overlap") and (not fill or not any(fill)):
+        return dict(out, standing="exact")
+    if v.get("pass") and v.get("transfer"):
+        return dict(out, standing="under", basis="sheet-81", fill=fill)
+    if v.get("pass") and prog.get("electives_fill_degree") and fill:
+        return dict(out, standing="under", basis="stated", fill=fill)
+    return dict(out, standing="short", why=(v.get("why") or [None])[0])
 
 
 def calgetc_legacy_of(title: str | None, heading: str | None, siblings: list | None) -> str | None:
@@ -384,7 +398,7 @@ def calgetc_hold(record, text: str | None, award: str | None, title: str | None 
     other = OTHER_GE_PATTERN.search(sec)
     if other:
         return "the section names another pattern: %s" % other.group(0), {}
-    stand = calgetc_standing(prog)
+    stand = calgetc_standing(prog, award)
     read = {"words": named[0].strip()[:160], "standing": stand}
     if stand["standing"] == "overlap":
         dc = DOUBLE_COUNT.search(sec)
@@ -409,6 +423,8 @@ def statewide_cal_getc(record, text: str | None, award: str | None, title: str |
     note = {"field": "ge_units", "was": (record.get("program") or {}).get("ge_units"),
             "now": copy.deepcopy(CAL_GETC_UNITS), "words": "%s (%s)" % (read["words"], CAL_GETC_SOURCE),
             "statewide": "cal_getc_34", "standing": read["standing"]["standing"]}
+    if read["standing"].get("basis"):
+        note["basis"] = read["standing"]["basis"]
     if read.get("double_count"):
         note["double_count"] = read["double_count"]
     return out, [note]

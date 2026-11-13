@@ -3,8 +3,8 @@
  "rule": "kb/_program_requirements_reconcile.py statewide_cal_getc (calgetc_hold)",
  "source_words": "statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13",
  "measured_on": {
-  "commit": "428d4ea21f1e1fea909bcd5d221e62c764693d15",
-  "date": "2026-11-13T17:34:45+00:00",
+  "commit": "2dc7aa2e746cee3c0a351c80c6e3ec124c9b5fcd",
+  "date": "2026-11-13T17:45:23+00:00",
   "records": "kb/program_requirements_college/*/records/",
   "kind": "a one-time measure of the committed records; no CI step checks it"
  },
@@ -13,23 +13,40 @@
   "touched": 98,
   "colleges_touched": 23,
   "exact": 1,
-  "under": 14,
+  "under": 68,
+  "under_basis_stated": 14,
+  "under_basis_sheet_81": 54,
   "overlap": 26,
   "overlap_with_double_count_words": 2,
-  "short": 54,
+  "short": 0,
   "unknown": 3,
   "legacy_left_out": 3,
-  "fills": 16,
-  "fills_not_likely_held_by_page_gate": 16,
-  "colleges_filling": 7
+  "fills": 68,
+  "fills_not_likely_held_by_page_gate": 52,
+  "colleges_filling": 22
  },
  "fills_by_college": {
+  "Berkeley City College": 15,
   "Lassen College": 10,
+  "Sacramento City College": 6,
+  "Cerro Coso Community College": 5,
+  "Mendocino College": 5,
+  "City College of San Francisco": 3,
+  "Cosumnes River College": 3,
+  "Diablo Valley College": 3,
+  "Sierra College": 3,
+  "Los Angeles Southwest College": 2,
+  "Solano Community College": 2,
+  "American River College": 1,
+  "Antelope Valley College": 1,
+  "College of Alameda": 1,
   "Cuyamaca College": 1,
   "Cypress College": 1,
+  "Fresno City College": 1,
+  "Fullerton College": 1,
   "Grossmont College": 1,
-  "Los Angeles Southwest College": 1,
-  "Mendocino College": 1,
+  "Mission College": 1,
+  "Ohlone College": 1,
   "Porterville College": 1
  },
  "legacy_pairs": [
@@ -52,13 +69,32 @@
    "section_heading": "Communication Studies 2.0 AA-T"
   }
  ],
+ "unknown_held": [
+  {
+   "college": "East Los Angeles College",
+   "control_number": "35720",
+   "title": "Nutrition and Dietetics",
+   "why": "the record holds no major units (total_units)"
+  },
+  {
+   "college": "Lassen College",
+   "control_number": "33388",
+   "title": "Kinesiology",
+   "why": "the record holds no major units (total_units)"
+  },
+  {
+   "college": "Sacramento City College",
+   "control_number": "30620",
+   "title": "Mathematics",
+   "why": "the record holds no major units (total_units)"
+  }
+ ],
  "colleges": {
   "American River College": [
    {
     "control_number": "30984",
     "title": "Administration of Justice",
     "section_heading": "A.S.-T. in Administration of Justice",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -72,7 +108,13 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    }
   ],
   "Antelope Valley College": [
@@ -80,7 +122,6 @@
     "control_number": "43028",
     "title": "Communication Studies 2.0",
     "section_heading": "Communication Studies AA-T 2.0",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -94,7 +135,13 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    }
   ],
   "Berkeley City College": [
@@ -102,7 +149,6 @@
     "control_number": "31138",
     "title": "English",
     "section_heading": "English - AA-T Degree",
-    "standing": "short",
     "major": [
      22.0,
      22.0
@@ -116,14 +162,19 @@
      56.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     4.0,
+     4.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "31835",
     "title": "Elementary Teacher Education",
     "section_heading": "Elementary Teacher Education: Integrated Programs - AA-T",
-    "standing": "overlap",
     "major": [
      39.0,
      44.0
@@ -137,6 +188,7 @@
      78.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "likely_held_by_page_gate": true,
     "fills": false
    },
@@ -144,7 +196,6 @@
     "control_number": "31984",
     "title": "Political Science",
     "section_heading": "Political Science - AA-T Degree",
-    "standing": "short",
     "major": [
      18.0,
      19.0
@@ -158,14 +209,19 @@
      53.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     8.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "33548",
     "title": "Economics",
     "section_heading": "Economics - AA-T Degree",
-    "standing": "short",
     "major": [
      20.0,
      25.0
@@ -179,14 +235,19 @@
      59.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     1.0,
+     6.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "37850",
     "title": "Studio Arts",
     "section_heading": "Studio Arts - AA-T Degree",
-    "standing": "short",
     "major": [
      24.0,
      24.0
@@ -200,14 +261,19 @@
      58.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     2.0,
+     2.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "37851",
     "title": "Art History",
     "section_heading": "Art History - AA-T Degree",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -221,14 +287,19 @@
      52.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "37877",
     "title": "Film, Television, And Electronic Media",
     "section_heading": "Film, Television, And Electronic Media - AS-T Degree",
-    "standing": "short",
     "major": [
      19.0,
      19.0
@@ -242,14 +313,19 @@
      53.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     7.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "39386",
     "title": "Sociology",
     "section_heading": "Sociology - AA-T Degree",
-    "standing": "short",
     "major": [
      19.0,
      19.0
@@ -263,14 +339,19 @@
      53.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     7.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "39856",
     "title": "Anthropology",
     "section_heading": "Anthropology - AA-T Degree",
-    "standing": "short",
     "major": [
      18.0,
      19.0
@@ -284,14 +365,19 @@
      53.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     8.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "40244",
     "title": "Spanish",
     "section_heading": "Spanish - AA-T Degree",
-    "standing": "short",
     "major": [
      23.0,
      23.0
@@ -305,14 +391,19 @@
      57.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     3.0,
+     3.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "41766",
     "title": "Business Administration 2.0",
     "section_heading": "Business Administration 2.0 - AS-T Degree",
-    "standing": "overlap",
     "major": [
      28.0,
      28.0
@@ -326,6 +417,7 @@
      62.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "likely_held_by_page_gate": true,
     "fills": false
    },
@@ -333,7 +425,6 @@
     "control_number": "41777",
     "title": "Philosophy",
     "section_heading": "Philosophy - AA-T Degree",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -347,14 +438,19 @@
      52.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "41794",
     "title": "History",
     "section_heading": "History - AA-T Degree",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -368,14 +464,19 @@
      52.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "41795",
     "title": "Psychology",
     "section_heading": "Psychology - AA-T Degree",
-    "standing": "short",
     "major": [
      19.0,
      20.0
@@ -389,14 +490,19 @@
      54.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     6.0,
+     7.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "41796",
     "title": "Global Studies",
     "section_heading": "Global Studies - AA-T Degree",
-    "standing": "short",
     "major": [
      21.0,
      25.0
@@ -410,14 +516,19 @@
      59.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     1.0,
+     5.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "41834",
     "title": "Child and Adolescent Development",
     "section_heading": "Child and Adolescent Development - AA-T Degree",
-    "standing": "short",
     "major": [
      19.0,
      20.0
@@ -431,14 +542,19 @@
      54.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     6.0,
+     7.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "41902",
     "title": "Biology",
     "section_heading": "Biology - AS-T Degree",
-    "standing": "overlap",
     "major": [
      35.0,
      35.0
@@ -452,6 +568,7 @@
      69.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "likely_held_by_page_gate": true,
     "fills": false
    },
@@ -459,7 +576,6 @@
     "control_number": "42381",
     "title": "Social Work and Human Services",
     "section_heading": "Social Work and Human Services - AA-T Degree",
-    "standing": "overlap",
     "major": [
      28.0,
      29.0
@@ -473,6 +589,7 @@
      63.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "likely_held_by_page_gate": true,
     "fills": false
    },
@@ -480,7 +597,6 @@
     "control_number": "42838",
     "title": "Physics",
     "section_heading": "Physics - AS-T Degree",
-    "standing": "overlap",
     "major": [
      30.0,
      30.0
@@ -494,6 +610,7 @@
      64.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "likely_held_by_page_gate": true,
     "fills": false
    },
@@ -501,7 +618,6 @@
     "control_number": "43006",
     "title": "Communication Studies 2.0",
     "section_heading": "Communication Studies 2.0 - AA-T Degree",
-    "standing": "short",
     "major": [
      18.0,
      19.0
@@ -515,14 +631,19 @@
      53.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     8.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    },
    {
     "control_number": "43097",
     "title": "Law, Public Policy, and Society",
     "section_heading": "Law, Public Policy, and Society - AA-T Degree",
-    "standing": "overlap",
     "major": [
      32.0,
      32.0
@@ -536,6 +657,7 @@
      66.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "likely_held_by_page_gate": true,
     "fills": false
    },
@@ -543,7 +665,6 @@
     "control_number": "46229",
     "title": "Elementary Teacher Education: Integrated Programs",
     "section_heading": "Elementary Teacher Education: Integrated Programs - AA-T",
-    "standing": "overlap",
     "major": [
      39.0,
      44.0
@@ -557,6 +678,7 @@
      78.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "likely_held_by_page_gate": true,
     "fills": false
    }
@@ -566,7 +688,6 @@
     "control_number": "30766",
     "title": "Administration of Justice",
     "section_heading": "Administration of Justice Associate in Science Degree for Transfer (AS-T)",
-    "standing": "short",
     "major": [
      18.0,
      19.0
@@ -580,13 +701,18 @@
      53.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     8.0
+    ],
+    "fills": true
    },
    {
     "control_number": "31540",
     "title": "Studio Arts",
     "section_heading": "Studio Arts Associate in Arts Degree for Transfer (AA-T)",
-    "standing": "short",
     "major": [
      24.0,
      24.0
@@ -600,13 +726,18 @@
      58.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     2.0,
+     2.0
+    ],
+    "fills": true
    },
    {
     "control_number": "38665",
     "title": "Sociology",
     "section_heading": "Sociology Associate in Arts Degree for Transfer (AA-T)",
-    "standing": "short",
     "major": [
      19.0,
      19.0
@@ -620,13 +751,18 @@
      53.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     7.0
+    ],
+    "fills": true
    },
    {
     "control_number": "40868",
     "title": "Spanish",
     "section_heading": "Spanish Associate in Arts Degree for Transfer (AA-T)",
-    "standing": "short",
     "major": [
      22.0,
      25.0
@@ -640,13 +776,18 @@
      59.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     1.0,
+     4.0
+    ],
+    "fills": true
    },
    {
     "control_number": "40922",
     "title": "Law, Public Policy, and Society",
     "section_heading": "Law, Public Policy, and Society Associate in Arts Degree for Transfer (AA-T)",
-    "standing": "overlap",
     "major": [
      33.0,
      33.0
@@ -660,13 +801,13 @@
      67.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "43206",
     "title": "Nutrition and Dietetics",
     "section_heading": "Nutrition and Dietetics Associate in Science Degree for Transfer (AS-T)",
-    "standing": "short",
     "major": [
      23.0,
      23.0
@@ -680,7 +821,13 @@
      57.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     3.0,
+     3.0
+    ],
+    "fills": true
    }
   ],
   "City College of San Francisco": [
@@ -688,7 +835,6 @@
     "control_number": "32080",
     "title": "Early Childhood Education",
     "section_heading": "Early Childhood Education \u2013 AS-T Degree",
-    "standing": "short",
     "major": [
      24.0,
      24.0
@@ -702,13 +848,18 @@
      58.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     2.0,
+     2.0
+    ],
+    "fills": true
    },
    {
     "control_number": "32401",
     "title": "Studio Arts",
     "section_heading": "Studio Arts \u2013 Associate of Arts for Transfer (heading not printed in the extracted text)",
-    "standing": "short",
     "major": [
      24.0,
      24.0
@@ -722,13 +873,18 @@
      58.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     2.0,
+     2.0
+    ],
+    "fills": true
    },
    {
     "control_number": "41049",
     "title": "Hospitality Management",
     "section_heading": "Hospitality Management \u2013 AS-T Degree (heading not printed in the excerpt; text begins with 'The AS-T in Hospitality Management')",
-    "standing": "short",
     "major": [
      18.0,
      22.5
@@ -742,7 +898,13 @@
      56.5
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     3.5,
+     8.0
+    ],
+    "fills": true
    }
   ],
   "College of Alameda": [
@@ -750,7 +912,6 @@
     "control_number": "32765",
     "title": "Art History",
     "section_heading": "Art History A.A-T (no section heading printed in the extracted text)",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -764,8 +925,14 @@
      52.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
     "likely_held_by_page_gate": true,
-    "fills": false
+    "fills": true
    }
   ],
   "Cosumnes River College": [
@@ -773,7 +940,6 @@
     "control_number": "30566",
     "title": "Psychology",
     "section_heading": "Degree Requirements",
-    "standing": "short",
     "major": [
      19.0,
      19.0
@@ -787,13 +953,18 @@
      53.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     7.0
+    ],
+    "fills": true
    },
    {
     "control_number": "31055",
     "title": "Physics",
     "section_heading": "Degree Requirements",
-    "standing": "overlap",
     "major": [
      27.0,
      27.0
@@ -807,13 +978,13 @@
      61.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "31995",
     "title": "Elementary Teacher Education",
     "section_heading": "A.A.-T. in Elementary Teacher Education: Integrated Programs",
-    "standing": "overlap",
     "major": [
      32.0,
      32.0
@@ -827,13 +998,13 @@
      66.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "33072",
     "title": "History",
     "section_heading": "Associate in Arts in History for Transfer Degree (AA-T)",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -847,13 +1018,18 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    },
    {
     "control_number": "39656",
     "title": "Social Justice Studies: Ethnic Studies",
     "section_heading": "A.A.-T. in Social Justice Studies: Race and Ethnicity",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -867,13 +1043,18 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    },
    {
     "control_number": "41992",
     "title": "Business Administration 2.0",
     "section_heading": "Associate in Science in Business Administration 2.0 for Transfer (AS-T) degree (heading cut off before page 219; requirements under 'Degree Requirements')",
-    "standing": "overlap",
     "major": [
      27.0,
      29.0
@@ -887,13 +1068,13 @@
      63.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "46419",
     "title": "Elementary Teacher Education: Integrated Programs",
     "section_heading": "A.A.-T. in Elementary Teacher Education: Integrated Programs",
-    "standing": "overlap",
     "major": [
      32.0,
      32.0
@@ -907,6 +1088,7 @@
      66.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    }
   ],
@@ -915,7 +1097,6 @@
     "control_number": "46530",
     "title": "Mathematics 2.0",
     "section_heading": "Mathematics 2.0 for Transfer (AS-T)",
-    "standing": "overlap",
     "major": [
      23.0,
      24.0
@@ -929,6 +1110,7 @@
      68.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "double_count_words": "d. 'Total Transferable Elective Units 5-10' recorded as degree_elective_units; 'Double-Counted Units 3-7' also printed (major units double-counted with Cal-GETC). Cal-GETC",
     "fills": true
    }
@@ -938,7 +1120,6 @@
     "control_number": "32699",
     "title": "Anthropology",
     "section_heading": "Course List",
-    "standing": "under",
     "major": [
      19.0,
      21.0
@@ -952,13 +1133,18 @@
      55.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     5.0,
+     7.0
+    ],
     "fills": true
    },
    {
     "control_number": "39887",
     "title": "Environmental Science",
     "section_heading": "Environmental Science, Associate in Science Degree for Transfer",
-    "standing": "overlap",
     "major": [
      41.0,
      41.0
@@ -972,6 +1158,7 @@
      75.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    }
   ],
@@ -980,7 +1167,6 @@
     "control_number": "31799",
     "title": "History",
     "section_heading": "A.A. in History for Transfer",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -994,13 +1180,18 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    },
    {
     "control_number": "31817",
     "title": "Geography",
     "section_heading": "A.A. in Geography for Transfer",
-    "standing": "short",
     "major": [
      19.0,
      19.0
@@ -1014,13 +1205,18 @@
      53.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     7.0
+    ],
+    "fills": true
    },
    {
     "control_number": "32539",
     "title": "Theatre Arts",
     "section_heading": "Theater Arts for Transfer",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -1034,13 +1230,18 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    },
    {
     "control_number": "46234",
     "title": "Physics 2.0",
     "section_heading": "A.S. in Physics for Transfer 2.0",
-    "standing": "overlap",
     "major": [
      38.0,
      39.0
@@ -1054,6 +1255,7 @@
      73.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    }
   ],
@@ -1064,6 +1266,7 @@
     "section_heading": "Child, Family, and Education Studies Department",
     "standing": "unknown",
     "major": null,
+    "why": "the record holds no major units (total_units)",
     "fills": false
    }
   ],
@@ -1072,7 +1275,6 @@
     "control_number": "32871",
     "title": "Spanish",
     "section_heading": "Spanish for Transfer, Associate in Arts - Major #5550",
-    "standing": "short",
     "major": [
      21.0,
      24.0
@@ -1086,7 +1288,13 @@
      58.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     2.0,
+     5.0
+    ],
+    "fills": true
    }
   ],
   "Fullerton College": [
@@ -1094,7 +1302,6 @@
     "control_number": "30885",
     "title": "Psychology",
     "section_heading": "Psychology Associate in Arts Degree for Transfer",
-    "standing": "short",
     "major": [
      20.0,
      22.0
@@ -1108,7 +1315,13 @@
      56.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     4.0,
+     6.0
+    ],
+    "fills": true
    }
   ],
   "Grossmont College": [
@@ -1116,7 +1329,6 @@
     "control_number": "46136",
     "title": "Mathematics 2.0",
     "section_heading": "Mathematics for Transfer 2.0 (AS-T)",
-    "standing": "under",
     "major": [
      23.0,
      24.0
@@ -1130,6 +1342,12 @@
      58.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     2.0,
+     3.0
+    ],
     "fills": true
    }
   ],
@@ -1138,7 +1356,6 @@
     "control_number": "30947",
     "title": "Administration of Justice",
     "section_heading": "Associate in Science in Administration of Justice for Transfer",
-    "standing": "under",
     "major": [
      18.0,
      18.0
@@ -1152,13 +1369,18 @@
      52.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     8.0,
+     8.0
+    ],
     "fills": true
    },
    {
     "control_number": "31015",
     "title": "Early Childhood Education",
     "section_heading": "Associate in Science Degree in Early Childhood Education for Transfer",
-    "standing": "under",
     "major": [
      24.0,
      24.0
@@ -1172,13 +1394,18 @@
      58.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     2.0,
+     2.0
+    ],
     "fills": true
    },
    {
     "control_number": "31037",
     "title": "Sociology",
     "section_heading": "Associate in Arts Degree in Sociology for Transfer",
-    "standing": "under",
     "major": [
      18.0,
      18.0
@@ -1192,13 +1419,18 @@
      52.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     8.0,
+     8.0
+    ],
     "fills": true
    },
    {
     "control_number": "31132",
     "title": "Studio Arts",
     "section_heading": "Associate in Arts in Studio Arts for Transfer",
-    "standing": "under",
     "major": [
      24.0,
      24.0
@@ -1212,13 +1444,18 @@
      58.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     2.0,
+     2.0
+    ],
     "fills": true
    },
    {
     "control_number": "31297",
     "title": "Business Administration",
     "section_heading": "Associate in Science Degree in Business Administration for Transfer 2.0",
-    "standing": "under",
     "major": [
      24.0,
      24.0
@@ -1232,6 +1469,12 @@
      58.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     2.0,
+     2.0
+    ],
     "legacy_of": "42300",
     "fills": false
    },
@@ -1239,7 +1482,6 @@
     "control_number": "31379",
     "title": "History",
     "section_heading": "Associate in Arts Degree in History for Transfer",
-    "standing": "under",
     "major": [
      18.0,
      18.0
@@ -1253,13 +1495,18 @@
      52.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     8.0,
+     8.0
+    ],
     "fills": true
    },
    {
     "control_number": "32083",
     "title": "Psychology",
     "section_heading": "Associate in Arts Degree in Psychology for Transfer",
-    "standing": "under",
     "major": [
      18.0,
      18.0
@@ -1273,13 +1520,18 @@
      52.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     8.0,
+     8.0
+    ],
     "fills": true
    },
    {
     "control_number": "33263",
     "title": "Economics",
     "section_heading": "Associate in Arts Degree in Economics for Transfer",
-    "standing": "under",
     "major": [
      20.0,
      20.0
@@ -1293,6 +1545,12 @@
      54.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     6.0,
+     6.0
+    ],
     "fills": true
    },
    {
@@ -1301,13 +1559,13 @@
     "section_heading": "Associate in Arts Degree in Kinesiology for Transfer",
     "standing": "unknown",
     "major": null,
+    "why": "the record holds no major units (total_units)",
     "fills": false
    },
    {
     "control_number": "33729",
     "title": "Agriculture Animal Science",
     "section_heading": "Associate in Science Degree: Agriculture Animal Science for Transfer",
-    "standing": "under",
     "major": [
      19.0,
      20.0
@@ -1321,13 +1579,18 @@
      54.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     6.0,
+     7.0
+    ],
     "fills": true
    },
    {
     "control_number": "33730",
     "title": "Agriculture Business",
     "section_heading": "Associate in Science Degree: Agriculture Business for Transfer",
-    "standing": "under",
     "major": [
      21.0,
      24.0
@@ -1341,13 +1604,18 @@
      58.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     2.0,
+     5.0
+    ],
     "fills": true
    },
    {
     "control_number": "35106",
     "title": "Nutrition and Dietetics",
     "section_heading": "Associate in Science Degree in Nutrition and Dietetics for Transfer",
-    "standing": "overlap",
     "major": [
      27.0,
      28.0
@@ -1361,13 +1629,13 @@
      62.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "41912",
     "title": "Social Work and Human Services",
     "section_heading": "Associate in Arts Degree in Social Work and Human Services for Transfer",
-    "standing": "overlap",
     "major": [
      28.0,
      28.0
@@ -1381,13 +1649,13 @@
      62.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "42300",
     "title": "Business Administration 2.0",
     "section_heading": "Associate in Science Degree in Business Administration for Transfer 2.0",
-    "standing": "under",
     "major": [
      24.0,
      24.0
@@ -1401,6 +1669,12 @@
      58.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     2.0,
+     2.0
+    ],
     "fills": true
    }
   ],
@@ -1409,7 +1683,6 @@
     "control_number": "31027",
     "title": "Early Childhood Education",
     "section_heading": "ASSOCIATE IN SCIENCE FOR TRANSFER EARLY CHILDHOOD EDUCATION",
-    "standing": "under",
     "major": [
      25.0,
      25.0
@@ -1423,13 +1696,18 @@
      59.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "stated",
+    "fill": [
+     1.0,
+     1.0
+    ],
     "fills": true
    },
    {
     "control_number": "33658",
     "title": "Spanish",
     "section_heading": "Associate in Arts in Spanish for Transfer Degree",
-    "standing": "short",
     "major": [
      25.0,
      25.0
@@ -1443,7 +1721,13 @@
      59.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     1.0,
+     1.0
+    ],
+    "fills": true
    }
   ],
   "Mendocino College": [
@@ -1451,7 +1735,6 @@
     "control_number": "30672",
     "title": "Communication Studies",
     "section_heading": "ASSOCIATE IN ARTS IN COMMUNICATION STUDIES FOR TRANSFER 2.0",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -1465,6 +1748,12 @@
      52.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
     "legacy_of": "42863",
     "fills": false
    },
@@ -1472,7 +1761,6 @@
     "control_number": "32084",
     "title": "Music",
     "section_heading": "ASSOCIATE IN ARTS IN MUSIC FOR TRANSFER",
-    "standing": "short",
     "major": [
      24.0,
      24.0
@@ -1486,13 +1774,18 @@
      58.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     2.0,
+     2.0
+    ],
+    "fills": true
    },
    {
     "control_number": "32095",
     "title": "Kinesiology",
     "section_heading": "ASSOCIATE IN ARTS IN KINESIOLOGY FOR TRANSFER",
-    "standing": "exact",
     "major": [
      22.0,
      26.0
@@ -1506,13 +1799,13 @@
      60.0
     ],
     "degree_total": 60,
+    "standing": "exact",
     "fills": true
    },
    {
     "control_number": "32985",
     "title": "Economics",
     "section_heading": "ASSOCIATE IN ARTS IN ECONOMICS FOR TRANSFER",
-    "standing": "short",
     "major": [
      22.0,
      25.0
@@ -1526,13 +1819,18 @@
      59.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     1.0,
+     4.0
+    ],
+    "fills": true
    },
    {
     "control_number": "32986",
     "title": "Early Childhood Education",
     "section_heading": "ASSOCIATE IN SCIENCE IN EARLY CHILDHOOD EDUCATION FOR TRANSFER",
-    "standing": "short",
     "major": [
      25.0,
      25.0
@@ -1546,13 +1844,18 @@
      59.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     1.0,
+     1.0
+    ],
+    "fills": true
    },
    {
     "control_number": "33595",
     "title": "Computer Science",
     "section_heading": "ASSOCIATE IN SCIENCE IN COMPUTER SCIENCE FOR TRANSFER",
-    "standing": "overlap",
     "major": [
      32.0,
      32.0
@@ -1566,13 +1869,13 @@
      66.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "42863",
     "title": "Communication Studies 2.0",
     "section_heading": "ASSOCIATE IN ARTS IN COMMUNICATION STUDIES FOR TRANSFER 2.0",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -1586,7 +1889,13 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    }
   ],
   "Mission College": [
@@ -1594,7 +1903,6 @@
     "control_number": "30680",
     "title": "Communication Studies",
     "section_heading": "Communication Studies 2.0 AA-T",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -1608,6 +1916,12 @@
      52.0
     ],
     "degree_total": 60,
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
     "legacy_of": "44504",
     "fills": false
    },
@@ -1615,7 +1929,6 @@
     "control_number": "44504",
     "title": "Communication Studies 2.0",
     "section_heading": "Communication Studies 2.0 AA-T",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -1629,7 +1942,13 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    }
   ],
   "Ohlone College": [
@@ -1637,7 +1956,6 @@
     "control_number": "32761",
     "title": "Early Childhood Education",
     "section_heading": "EARLY CHILDHOOD EDUCATION FOR TRANSFER \u2014 Associate in Science in Early Childhood Education for Transfer (ADT)",
-    "standing": "overlap",
     "major": [
      27.0,
      27.0
@@ -1651,13 +1969,13 @@
      61.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "33549",
     "title": "Administration of Justice",
     "section_heading": "REQUIREMENTS FOR ASSOCIATE IN SCIENCE FOR TRANSFER DEGREE",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -1671,7 +1989,13 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    }
   ],
   "Porterville College": [
@@ -1679,7 +2003,6 @@
     "control_number": "31088",
     "title": "Studio Arts",
     "section_heading": "Associate in Arts in Studio Art for Transfer",
-    "standing": "overlap",
     "major": [
      24.0,
      24.0
@@ -1693,6 +2016,7 @@
      63.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "double_count_words": "'Select one course'; effectively required. Page prints 'Total Units that may be Double Counted 3 units' and 'Elective (CSU transferable) Units 5 units'; the 5 elective unit",
     "fills": true
    }
@@ -1704,13 +2028,13 @@
     "section_heading": "Associate in Science in Mathematics 2.0 for Transfer (AS-T) (heading not printed in the excerpt)",
     "standing": "unknown",
     "major": null,
+    "why": "the record holds no major units (total_units)",
     "fills": false
    },
    {
     "control_number": "30700",
     "title": "Psychology",
     "section_heading": "Degree Requirements (A.A.-T in Psychology; award heading falls before the excerpt)",
-    "standing": "short",
     "major": [
      18.0,
      19.0
@@ -1724,13 +2048,18 @@
      53.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     8.0
+    ],
+    "fills": true
    },
    {
     "control_number": "32001",
     "title": "Art History",
     "section_heading": "A.A.-T. in Art History",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -1744,13 +2073,18 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    },
    {
     "control_number": "32002",
     "title": "Business Administration",
     "section_heading": "Degree Requirements (A.S.-T in Business Administration 2.0; program heading cut off before page 218)",
-    "standing": "overlap",
     "major": [
      27.0,
      29.0
@@ -1764,13 +2098,13 @@
      63.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "32115",
     "title": "Geography",
     "section_heading": "Associate in Arts in Geography for Transfer (AA-T) degree",
-    "standing": "short",
     "major": [
      19.0,
      19.0
@@ -1784,13 +2118,18 @@
      53.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     7.0,
+     7.0
+    ],
+    "fills": true
    },
    {
     "control_number": "32732",
     "title": "Theatre Arts",
     "section_heading": "A.A.-T. in Theatre Arts",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -1804,13 +2143,18 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    },
    {
     "control_number": "35463",
     "title": "Economics",
     "section_heading": "A.A.-T. in Economics",
-    "standing": "short",
     "major": [
      21.0,
      21.0
@@ -1824,13 +2168,18 @@
      55.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     5.0,
+     5.0
+    ],
+    "fills": true
    },
    {
     "control_number": "42894",
     "title": "Communication Studies 2.0",
     "section_heading": "A.A.-T. in Communication Studies 2.0",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -1844,7 +2193,13 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    }
   ],
   "Sierra College": [
@@ -1852,7 +2207,6 @@
     "control_number": "31259",
     "title": "History",
     "section_heading": "History for Transfer AA-T Degree",
-    "standing": "short",
     "major": [
      18.0,
      18.0
@@ -1866,13 +2220,18 @@
      52.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     8.0,
+     8.0
+    ],
+    "fills": true
    },
    {
     "control_number": "32008",
     "title": "Anthropology",
     "section_heading": "Anthropology for Transfer AA-T Degree",
-    "standing": "short",
     "major": [
      18.0,
      21.0
@@ -1886,13 +2245,18 @@
      55.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     5.0,
+     8.0
+    ],
+    "fills": true
    },
    {
     "control_number": "32640",
     "title": "Geography",
     "section_heading": "Geography for Transfer AA-T Degree",
-    "standing": "short",
     "major": [
      19.0,
      22.0
@@ -1906,13 +2270,18 @@
      56.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     4.0,
+     7.0
+    ],
+    "fills": true
    },
    {
     "control_number": "33639",
     "title": "Biology",
     "section_heading": "Biology for Transfer AS-T Degree",
-    "standing": "overlap",
     "major": [
      31.5,
      38.0
@@ -1926,13 +2295,13 @@
      72.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "33646",
     "title": "Nutrition and Dietetics",
     "section_heading": "Nutrition and Dietetics for Transfer AS-T Degree",
-    "standing": "overlap",
     "major": [
      29.0,
      30.0
@@ -1946,6 +2315,7 @@
      64.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    }
   ],
@@ -1954,7 +2324,6 @@
     "control_number": "33373",
     "title": "Anthropology",
     "section_heading": "Associate in Arts in Anthropology for Transfer (ADT: AA-T)",
-    "standing": "short",
     "major": [
      20.5,
      23.5
@@ -1968,13 +2337,18 @@
      57.5
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     2.5,
+     5.5
+    ],
+    "fills": true
    },
    {
     "control_number": "35982",
     "title": "Nutrition",
     "section_heading": "Associate in Science in Nutrition and Dietetics for Transfer (A.S.-T)",
-    "standing": "overlap",
     "major": [
      27.0,
      28.0
@@ -1988,13 +2362,13 @@
      62.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "36511",
     "title": "Biology",
     "section_heading": "Associate in Science in Biology for Transfer (ADT: A.S.-T.)",
-    "standing": "overlap",
     "major": [
      34.0,
      34.0
@@ -2008,13 +2382,13 @@
      68.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "38652",
     "title": "Elementary Teacher Education",
     "section_heading": "Associate in Arts in Elementary Teacher Education: Integrated Programs for Transfer (ADT: A.A.-T)",
-    "standing": "overlap",
     "major": [
      45.0,
      47.0
@@ -2028,13 +2402,13 @@
      81.0
     ],
     "degree_total": 60,
+    "standing": "overlap",
     "fills": false
    },
    {
     "control_number": "44069",
     "title": "Agriculture Plant Science",
     "section_heading": "Associate in Science in Agriculture Plant Science for Transfer (ADT: A.S.-T)",
-    "standing": "short",
     "major": [
      20.0,
      22.0
@@ -2048,7 +2422,13 @@
      56.0
     ],
     "degree_total": 60,
-    "fills": false
+    "standing": "under",
+    "basis": "sheet-81",
+    "fill": [
+     4.0,
+     6.0
+    ],
+    "fills": true
    }
   ]
  }

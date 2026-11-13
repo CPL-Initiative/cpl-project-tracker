@@ -292,8 +292,9 @@ def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str |
     """Sam's ruling (Sheet 187 card 5, 13:19:50Z 2026-11-13: "Use 34 statewide"), measured once on the filed
     records. A record is touched when the statewide rule's record gates admit it (R.calgetc_hold's: a transfer
     degree, Cal-GETC alone, no general education units, a degree total of exactly 60, no UC-transfer heading or
-    title). Each touched record's standing with 34 filled (R.calgetc_standing: exact, under, overlap, short,
-    unknown) is listed with its numbers; the rule fills exact and under only, and holds an overlap record unless
+    title). Each touched record's standing with 34 filled (R.calgetc_standing, read by the scorer's degree_verdict:
+    exact, under with its basis "stated" or "sheet-81", overlap, short, unknown) is listed with its numbers; the
+    rule fills exact and under only, and holds an overlap record unless
     the catalog states double counting (the notes are searched here and quoted; the rule reads the page). A
     legacy number reading its "2.0" sibling's section is listed with its pair and left out of the apply. The
     page gates (the section's own words: a printed figure, a partial Cal-GETC line, another pattern) read the
@@ -318,7 +319,7 @@ def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str |
                 continue
             sibs = [x for x in family if x["control_number"] != f["control_number"]]
             legacy = R.calgetc_legacy_of(f.get("title"), prog.get("section_heading"), sibs)
-            stand = R.calgetc_standing(prog)
+            stand = R.calgetc_standing(prog, f.get("award"))
             notes = " ".join(str(n) for n in f["record"].get("notes") or [])
             row = {"control_number": f["control_number"], "title": f.get("title"),
                    "section_heading": prog.get("section_heading"), **stand}
@@ -349,6 +350,8 @@ def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str |
             "counts": {"touched": len(allrows), "colleges_touched": len(colleges),
                        "exact": count(lambda r: r["standing"] == "exact"),
                        "under": count(lambda r: r["standing"] == "under"),
+                       "under_basis_stated": count(lambda r: r.get("basis") == "stated"),
+                       "under_basis_sheet_81": count(lambda r: r.get("basis") == "sheet-81"),
                        "overlap": count(lambda r: r["standing"] == "overlap"),
                        "overlap_with_double_count_words": count(lambda r: "double_count_words" in r),
                        "short": count(lambda r: r["standing"] == "short"),
@@ -359,6 +362,9 @@ def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str |
                        "colleges_filling": sum(1 for n in fill_by.values() if n)},
             "fills_by_college": dict(sorted(((c, n) for c, n in fill_by.items() if n), key=lambda x: (-x[1], x[0]))),
             "legacy_pairs": pairs,
+            "unknown_held": [{"college": c, "control_number": r["control_number"], "title": r.get("title"),
+                              "why": r.get("why")} for c, rs in colleges.items() for r in rs
+                             if r["standing"] == "unknown"],
             "colleges": colleges}
 
 

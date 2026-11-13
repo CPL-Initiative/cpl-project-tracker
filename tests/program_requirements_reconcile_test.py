@@ -1025,8 +1025,24 @@ check("the note names the section's Cal-GETC words and the ruling as its source"
 check("the input record is not changed", CG_REC["program"]["ge_units"] == {"min": None, "max": None})
 check("exact: major 18 + 34 + 8 stated electives is 60, and fills",
       cg(cg_prog(electives_fill_degree=False, open_elective_units=8))[1][0]["standing"] == "exact")
-check("gate: a sum under 60 with no electives stated to fill it (short) is held",
-      cg(cg_prog(electives_fill_degree=False))[1] == [])
+_s81 = cg(cg_prog(electives_fill_degree=False))[1]
+check("a short transfer record at 60 with no electives stated fills, on Sam's Sheet 81 card 2 (basis sheet-81)",
+      len(_s81) == 1 and _s81[0]["standing"] == "under" and _s81[0].get("basis") == "sheet-81")
+check("the stated basis: a record saying electives fill the degree is under with basis stated",
+      R.calgetc_standing(CG_REC["program"], CG_AWARD).get("basis") == "stated")
+check("gate: a short sum the Sheet 81 reading does not take (an open electives figure under 60) is held",
+      cg(cg_prog(electives_fill_degree=False, open_elective_units=4))[1] == []
+      and R.calgetc_standing(dict(CG_REC["program"], electives_fill_degree=False, open_elective_units=4),
+                             CG_AWARD)["standing"] == "short")
+check("gate: a short local record at 60 does not fill, and its standing never reads Sheet 81",
+      cg(cg_prog(electives_fill_degree=False), award="A.A. Degree")[1] == []
+      and R.calgetc_standing(dict(CG_REC["program"], electives_fill_degree=False,
+                                  section_heading="Sociology - Associate in Arts"), "A.A. Degree")["standing"] == "short")
+check("gate: a short transfer record whose degree total is not 60 does not fill",
+      cg(cg_prog(electives_fill_degree=False, degree_total={"min": 90, "max": 90}))[1] == [])
+check("unknown: a record with no major units has no sum, and is held",
+      R.calgetc_standing(dict(CG_REC["program"], total_units={"min": None, "max": None}), CG_AWARD)["standing"] == "unknown"
+      and cg(cg_prog(total_units={"min": None, "max": None}))[1] == [])
 check("gate: a sum past 60 (overlap) is held", cg(cg_prog(total_units={"min": 30, "max": 30}))[1] == [])
 _dc = cg(cg_prog(total_units={"min": 30, "max": 30}),
          cg_text("Total Units 60", "Courses may be double counted toward the major and general education.\nTotal Units 60"))[1]
