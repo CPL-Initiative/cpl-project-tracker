@@ -1192,6 +1192,19 @@ async function seedCommonsAse(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Commons data dashboard (#3215, slice 1): opened by its address, as the Commons' first view links to it.
+async function seedCommonsData(page, theme) {
+  await page.evaluate(() => { if (!/^commons\/data/.test(location.hash.replace(/^#/, ""))) location.hash = "commons/data"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#commons-root .cdd-notes", { state: "attached", timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // The Common Course Reference's Progress page (S559): COCI Lookup's Progress view, the Commons' opened page read
 // from the real kb/status/commons.json the origin serves.
 async function seedCociProgress(page, theme) {
@@ -3627,6 +3640,24 @@ module.exports = {
     routes: [{ hash: "commons/ase/ASE%20A5%20%E2%80%94%20Brakes", name: "ase-a5-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsAse(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── The Commons data dashboard, slice 1 (#3215): the statewide figures and the college list ──
+     commons_data.js, opened from #commons/data; measured on the whole list and on one figure's filtered list. */
+  "commons-data": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, every college",
+    routes: [{ hash: "commons/data", name: "data-all" }, { hash: "commons/data/slo", name: "data-slo" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsData(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, dark",
+    routes: [{ hash: "commons/data", name: "data-all-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsData(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── COCI Lookup: the Common Course Reference's Progress page (S559) ── */

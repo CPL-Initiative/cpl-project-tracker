@@ -1,0 +1,3511 @@
+{
+ "schema": 1,
+ "written_at": "2026-11-13T12:01:38Z",
+ "sources": {
+  "universe": "kb/college_identity/2026-11-10/crosswalk.json",
+  "harvest": "kb/program_requirements_college/<slug>/",
+  "census": "kb/_harvest_gap_census.py (committed-files functions)",
+  "slo_queue": "kb/course_outcomes/queue.json",
+  "scouts": "kb/harvest_scouting/scout-*.json",
+  "spot_checks": "kb/spot_checks/*.check.json"
+ },
+ "rule": {
+  "basis": "committed files only: the programs each college's capture listed (the gap census's committed universe)",
+  "passing": "coverage and invented true, arithmetic equal or unstated (the Program Requirements tab's own test)",
+  "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest rule); TBA until the three parts are read per college",
+  "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = one record differs, or 5 agree beside an unreachable page; limited = machine checks only, fewer than 5 checked (a cross-college check), or 2 or more differ (display held). An unreachable page is not a checked record; the newest receipt by checked_at counts",
+  "age_days": {
+   "fresh": 7,
+   "recent": 30
+  }
+ },
+ "fields": {
+  "id": "shareable",
+  "name": "shareable",
+  "district": "shareable",
+  "kind": "shareable",
+  "harvested": "shareable",
+  "programs": "shareable",
+  "passing": "shareable",
+  "gap": "shareable",
+  "read_at": "shareable",
+  "read_kind": "internal",
+  "slug": "internal",
+  "causes": "internal",
+  "cost_usd": "internal",
+  "passed_at_read": "internal",
+  "slo_queue": "internal",
+  "scout": "internal",
+  "spot_check": "internal",
+  "confidence": "shareable"
+ },
+ "tba": {
+  "overall": "The overall bar averages catalog source, program requirements and outcomes (SLOs and PLOs averaged). Catalog source, SLOs and PLOs per college are live tables, read in a later slice.",
+  "teachout_approved": "Teachout and Approved programs are counted apart from Active in the live COCI table, which this slice does not read.",
+  "apis": "The API connection checklist (#3220) is not a committed file yet.",
+  "jst": "The JST funnel waits on an authorized-student feed from CCCStart; counts only, when it exists."
+ },
+ "statewide": {
+  "colleges": 118,
+  "continuing_education": 2,
+  "districts": 73,
+  "harvested": 118,
+  "unread": 0,
+  "programs": 22335,
+  "passing": 15761,
+  "gap": 6574,
+  "with_gap": 118,
+  "cost_usd": 1347.41,
+  "passed_at_read": 15237,
+  "cost_receipts": 118,
+  "slo_waiting": 9,
+  "scouted": 11,
+  "scout_barrier": 1,
+  "spot_checked": 8,
+  "confidence": {
+   "strong": 2,
+   "partial": 1,
+   "limited": 115
+  }
+ },
+ "census_check": {
+  "universe": 22335,
+  "passing": 15761,
+  "gap": 6574
+ },
+ "unmatched": [],
+ "colleges": [
+  {
+   "id": 17,
+   "name": "Allan Hancock College",
+   "district": "Allan Hancock Joint Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "allan_hancock",
+   "programs": 226,
+   "passing": 137,
+   "gap": 89,
+   "causes": {
+    "no_closed_list": 47,
+    "page_not_found": 23,
+    "places_none": 3,
+    "unknown_without_live": 16
+   },
+   "read_at": "2026-10-16T03:03:09Z",
+   "read_kind": "capture",
+   "cost_usd": 12.41,
+   "passed_at_read": 136,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 18,
+   "name": "American River College",
+   "district": "Los Rios Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "american_river",
+   "programs": 371,
+   "passing": 300,
+   "gap": 71,
+   "causes": {
+    "no_closed_list": 3,
+    "places_none": 33,
+    "unknown_without_live": 35
+   },
+   "read_at": "2026-11-12T11:49:22Z",
+   "read_kind": "capture",
+   "cost_usd": 29.97,
+   "passed_at_read": 297,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "page_read",
+    "challenge": "none",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 19,
+   "name": "Antelope Valley College",
+   "district": "Antelope Valley Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "antelope_valley",
+   "programs": 199,
+   "passing": 157,
+   "gap": 42,
+   "causes": {
+    "no_closed_list": 2,
+    "page_not_found": 2,
+    "places_none": 13,
+    "unknown_without_live": 25
+   },
+   "read_at": "2026-10-16T23:09:09Z",
+   "read_kind": "capture",
+   "cost_usd": 14.18,
+   "passed_at_read": 153,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 20,
+   "name": "Bakersfield College",
+   "district": "Kern Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "bakersfield",
+   "programs": 249,
+   "passing": 208,
+   "gap": 41,
+   "causes": {
+    "no_closed_list": 8,
+    "page_not_found": 10,
+    "places_none": 2,
+    "unknown_without_live": 21
+   },
+   "read_at": "2026-10-13T14:35:10Z",
+   "read_kind": "capture",
+   "cost_usd": 13.38,
+   "passed_at_read": 207,
+   "slo_queue": {
+    "state": "none",
+    "why": "its eLumen course pages print no SLOs",
+    "on": "2026-10-13"
+   },
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 10,
+   "name": "Barstow Community College",
+   "district": "Barstow Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "barstow_community",
+   "programs": 76,
+   "passing": 54,
+   "gap": 22,
+   "causes": {
+    "page_not_found": 5,
+    "places_none": 15,
+    "unknown_without_live": 2
+   },
+   "read_at": "2026-10-17T05:28:38Z",
+   "read_kind": "capture",
+   "cost_usd": 4.68,
+   "passed_at_read": 51,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 21,
+   "name": "Berkeley City College",
+   "district": "Peralta Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "berkeley_city",
+   "programs": 99,
+   "passing": 48,
+   "gap": 51,
+   "causes": {
+    "no_closed_list": 2,
+    "page_not_found": 7,
+    "places_none": 1,
+    "unknown_without_live": 41
+   },
+   "read_at": "2026-11-12T02:30:35Z",
+   "read_kind": "capture",
+   "cost_usd": 5.81,
+   "passed_at_read": 47,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 22,
+   "name": "Butte College",
+   "district": "Butte-Glenn Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "butte",
+   "programs": 192,
+   "passing": 138,
+   "gap": 54,
+   "causes": {
+    "no_closed_list": 24,
+    "page_not_found": 3,
+    "places_none": 1,
+    "unknown_without_live": 26
+   },
+   "read_at": "2026-11-11T08:16:43Z",
+   "read_kind": "capture",
+   "cost_usd": 10.69,
+   "passed_at_read": 138,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 23,
+   "name": "Cabrillo College",
+   "district": "Cabrillo Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "cabrillo",
+   "programs": 291,
+   "passing": 238,
+   "gap": 53,
+   "causes": {
+    "no_closed_list": 10,
+    "page_not_found": 10,
+    "places_none": 3,
+    "unknown_without_live": 30
+   },
+   "read_at": "2026-10-15T02:26:55Z",
+   "read_kind": "capture",
+   "cost_usd": 18.26,
+   "passed_at_read": 238,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 24,
+   "name": "Calbright College",
+   "district": "California Online Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "calbright_credit",
+   "programs": 20,
+   "passing": 11,
+   "gap": 9,
+   "causes": {
+    "no_closed_list": 1,
+    "page_not_found": 7,
+    "places_none": 1
+   },
+   "read_at": "2026-10-17T05:28:46Z",
+   "read_kind": "capture",
+   "cost_usd": 0.5,
+   "passed_at_read": 11,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 25,
+   "name": "Cañada College",
+   "district": "San Mateo County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "ca_ada",
+   "programs": 127,
+   "passing": 62,
+   "gap": 65,
+   "causes": {
+    "no_closed_list": 52,
+    "page_not_found": 2,
+    "places_none": 3,
+    "unknown_without_live": 8
+   },
+   "read_at": "2026-10-19T05:01:45Z",
+   "read_kind": "capture",
+   "cost_usd": 5.5,
+   "passed_at_read": 61,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 26,
+   "name": "Cerritos College",
+   "district": "Cerritos Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "cerritos",
+   "programs": 325,
+   "passing": 276,
+   "gap": 49,
+   "causes": {
+    "no_closed_list": 4,
+    "page_not_found": 16,
+    "places_none": 3,
+    "unknown_without_live": 26
+   },
+   "read_at": "2026-10-14T23:54:27Z",
+   "read_kind": "capture",
+   "cost_usd": 16.78,
+   "passed_at_read": 265,
+   "slo_queue": {
+    "state": "none",
+    "why": "its CourseLeaf course entries print no SLOs",
+    "on": "2026-10-14"
+   },
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 27,
+   "name": "Cerro Coso Community College",
+   "district": "Kern Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "cerro_coso_community",
+   "programs": 80,
+   "passing": 27,
+   "gap": 53,
+   "causes": {
+    "no_closed_list": 6,
+    "page_not_found": 9,
+    "places_none": 13,
+    "unknown_without_live": 25
+   },
+   "read_at": "2026-10-17T15:51:20Z",
+   "read_kind": "capture",
+   "cost_usd": 4.87,
+   "passed_at_read": 19,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 28,
+   "name": "Chabot College",
+   "district": "Chabot-Las Positas Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "chabot",
+   "programs": 248,
+   "passing": 206,
+   "gap": 42,
+   "causes": {
+    "no_closed_list": 4,
+    "page_not_found": 11,
+    "places_none": 2,
+    "unknown_without_live": 25
+   },
+   "read_at": "2026-10-16T03:03:31Z",
+   "read_kind": "capture",
+   "cost_usd": 15.83,
+   "passed_at_read": 201,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 9,
+   "name": "Chaffey College",
+   "district": "Chaffey Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "chaffey",
+   "programs": 202,
+   "passing": 182,
+   "gap": 20,
+   "causes": {
+    "no_closed_list": 3,
+    "page_not_found": 6,
+    "places_none": 2,
+    "unknown_without_live": 9
+   },
+   "read_at": "2026-10-12T11:21:28Z",
+   "read_kind": "capture",
+   "cost_usd": 10.48,
+   "passed_at_read": 181,
+   "slo_queue": {
+    "state": "none",
+    "why": "both public dashboard reports (225 and 1225) print objectives only; its outcomes FAQ keeps course outcomes on section syllabi",
+    "on": "2026-10-13"
+   },
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 29,
+   "name": "Citrus College",
+   "district": "Citrus Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "citrus",
+   "programs": 193,
+   "passing": 147,
+   "gap": 46,
+   "causes": {
+    "no_closed_list": 8,
+    "page_not_found": 10,
+    "places_none": 6,
+    "unknown_without_live": 22
+   },
+   "read_at": "2026-10-22T05:13:06Z",
+   "read_kind": "capture",
+   "cost_usd": 11.56,
+   "passed_at_read": 145,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 30,
+   "name": "City College of San Francisco",
+   "district": "San Francisco Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "city_of_san_francisco",
+   "programs": 417,
+   "passing": 257,
+   "gap": 160,
+   "causes": {
+    "no_closed_list": 46,
+    "page_not_found": 22,
+    "places_none": 53,
+    "unknown_without_live": 39
+   },
+   "read_at": "2026-10-17T18:04:39Z",
+   "read_kind": "capture",
+   "cost_usd": 23.72,
+   "passed_at_read": 248,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "page_read",
+    "challenge": "none",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 31,
+   "name": "Clovis Community College",
+   "district": "State Center Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "clovis_community",
+   "programs": 129,
+   "passing": 69,
+   "gap": 60,
+   "causes": {
+    "no_closed_list": 8,
+    "page_not_found": 6,
+    "places_none": 15,
+    "unknown_without_live": 31
+   },
+   "read_at": "2026-10-17T05:25:41Z",
+   "read_kind": "capture",
+   "cost_usd": 8.34,
+   "passed_at_read": 65,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 113,
+   "name": "Coalinga College",
+   "district": "West Hills Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "coalinga",
+   "programs": 68,
+   "passing": 49,
+   "gap": 19,
+   "causes": {
+    "no_closed_list": 6,
+    "page_not_found": 7,
+    "places_none": 1,
+    "unknown_without_live": 5
+   },
+   "read_at": "2026-11-13T02:52:37Z",
+   "read_kind": "capture",
+   "cost_usd": 3.48,
+   "passed_at_read": 49,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": {
+    "agrees": 1,
+    "differs": 0,
+    "unreachable": 0,
+    "checked_at": "2026-11-13T09:05:00Z",
+    "file": "kb/spot_checks/pr-3207-rescore-six.check.json",
+    "pr": 3207,
+    "settled_later": null
+   },
+   "confidence": {
+    "level": "limited",
+    "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
+   }
+  },
+  {
+   "id": 32,
+   "name": "Coastline Community College",
+   "district": "Coast Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "coastline_community",
+   "programs": 175,
+   "passing": 124,
+   "gap": 51,
+   "causes": {
+    "no_closed_list": 16,
+    "page_not_found": 5,
+    "places_none": 14,
+    "unknown_without_live": 16
+   },
+   "read_at": "2026-10-13T18:15:00Z",
+   "read_kind": "capture",
+   "cost_usd": 8.52,
+   "passed_at_read": 124,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 33,
+   "name": "College of Alameda",
+   "district": "Peralta Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "college_of_alameda",
+   "programs": 85,
+   "passing": 35,
+   "gap": 50,
+   "causes": {
+    "no_closed_list": 17,
+    "page_not_found": 9,
+    "unknown_without_live": 24
+   },
+   "read_at": "2026-11-10T20:12:35Z",
+   "read_kind": "capture",
+   "cost_usd": 4.05,
+   "passed_at_read": 35,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 34,
+   "name": "College of Marin",
+   "district": "Marin Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "college_of_marin",
+   "programs": 155,
+   "passing": 81,
+   "gap": 74,
+   "causes": {
+    "no_closed_list": 61,
+    "page_not_found": 5,
+    "unknown_without_live": 8
+   },
+   "read_at": "2026-10-17T00:06:11Z",
+   "read_kind": "capture",
+   "cost_usd": 6.13,
+   "passed_at_read": 74,
+   "slo_queue": {
+    "state": "held",
+    "why": "the eLumen catalog prints none (its course pages print the description only, 0 of 12); course outline reports on marin.elumenapp.com/public are untried (COBIx, #3211; Marin's SLO FAQ places course SLOs in the outline of record there). Waits on a reader for eLumen's public Course Outline Report, then a 12-page trial; Marin moves to Coursedog in mid-Fall 2026, so the eLumen source may not last",
+    "on": "2026-11-13"
+   },
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 35,
+   "name": "College of San Mateo",
+   "district": "San Mateo County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "college_of_san_mateo",
+   "programs": 98,
+   "passing": 53,
+   "gap": 45,
+   "causes": {
+    "no_closed_list": 34,
+    "page_not_found": 3,
+    "places_none": 5,
+    "unknown_without_live": 3
+   },
+   "read_at": "2026-10-23T06:59:19Z",
+   "read_kind": "capture",
+   "cost_usd": 5.05,
+   "passed_at_read": 52,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 36,
+   "name": "College of the Canyons",
+   "district": "Santa Clarita Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "college_of_the_canyons",
+   "programs": 283,
+   "passing": 109,
+   "gap": 174,
+   "causes": {
+    "no_closed_list": 19,
+    "page_not_found": 104,
+    "places_none": 12,
+    "unknown_without_live": 39
+   },
+   "read_at": "2026-10-17T05:29:27Z",
+   "read_kind": "capture",
+   "cost_usd": 13.55,
+   "passed_at_read": 104,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "procedure_change",
+    "challenge": "none",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 11,
+   "name": "College of the Desert",
+   "district": "Desert Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "college_of_the_desert",
+   "programs": 374,
+   "passing": 278,
+   "gap": 96,
+   "causes": {
+    "no_closed_list": 9,
+    "page_not_found": 7,
+    "places_none": 35,
+    "unknown_without_live": 45
+   },
+   "read_at": "2026-10-17T17:58:45Z",
+   "read_kind": "capture",
+   "cost_usd": 28.43,
+   "passed_at_read": 221,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "page_read",
+    "challenge": "none",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 37,
+   "name": "College of the Redwoods",
+   "district": "Redwoods Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "college_of_the_redwoods",
+   "programs": 79,
+   "passing": 59,
+   "gap": 20,
+   "causes": {
+    "no_closed_list": 3,
+    "page_not_found": 3,
+    "places_none": 5,
+    "unknown_without_live": 9
+   },
+   "read_at": "2026-11-11T12:18:07Z",
+   "read_kind": "capture",
+   "cost_usd": 5.41,
+   "passed_at_read": 59,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 38,
+   "name": "College of the Sequoias",
+   "district": "Sequoias Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "college_of_the_sequoias",
+   "programs": 137,
+   "passing": 86,
+   "gap": 51,
+   "causes": {
+    "page_not_found": 12,
+    "places_none": 7,
+    "unknown_without_live": 32
+   },
+   "read_at": "2026-10-15T14:10:10Z",
+   "read_kind": "capture",
+   "cost_usd": 8.75,
+   "passed_at_read": 85,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 39,
+   "name": "College of the Siskiyous",
+   "district": "Siskiyou Joint Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "college_of_the_siskiyous",
+   "programs": 80,
+   "passing": 66,
+   "gap": 14,
+   "causes": {
+    "no_closed_list": 3,
+    "page_not_found": 4,
+    "unknown_without_live": 7
+   },
+   "read_at": "2026-11-07T08:18:59Z",
+   "read_kind": "capture",
+   "cost_usd": 4.86,
+   "passed_at_read": 66,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 40,
+   "name": "Columbia College",
+   "district": "Yosemite Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "columbia",
+   "programs": 83,
+   "passing": 78,
+   "gap": 5,
+   "causes": {
+    "no_closed_list": 1,
+    "unknown_without_live": 4
+   },
+   "read_at": "2026-11-08T11:12:10Z",
+   "read_kind": "capture",
+   "cost_usd": 5.46,
+   "passed_at_read": 78,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 41,
+   "name": "Compton College",
+   "district": "Compton Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "compton",
+   "programs": 87,
+   "passing": 67,
+   "gap": 20,
+   "causes": {
+    "no_closed_list": 1,
+    "page_not_found": 5,
+    "places_none": 8,
+    "unknown_without_live": 6
+   },
+   "read_at": "2026-10-17T05:28:42Z",
+   "read_kind": "capture",
+   "cost_usd": 5.84,
+   "passed_at_read": 56,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 42,
+   "name": "Contra Costa College",
+   "district": "Contra Costa Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "contra_costa",
+   "programs": 131,
+   "passing": 59,
+   "gap": 72,
+   "causes": {
+    "no_closed_list": 26,
+    "page_not_found": 8,
+    "places_none": 9,
+    "unknown_without_live": 29
+   },
+   "read_at": "2026-10-16T23:09:38Z",
+   "read_kind": "capture",
+   "cost_usd": 6.44,
+   "passed_at_read": 57,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 12,
+   "name": "Copper Mountain College",
+   "district": "Copper Mountain Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "copper_mountain",
+   "programs": 59,
+   "passing": 36,
+   "gap": 23,
+   "causes": {
+    "no_closed_list": 11,
+    "places_none": 2,
+    "unknown_without_live": 10
+   },
+   "read_at": "2026-10-17T13:07:57Z",
+   "read_kind": "capture",
+   "cost_usd": 3.84,
+   "passed_at_read": 32,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 43,
+   "name": "Cosumnes River College",
+   "district": "Los Rios Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "cosumnes_river",
+   "programs": 226,
+   "passing": 143,
+   "gap": 83,
+   "causes": {
+    "no_closed_list": 7,
+    "page_not_found": 2,
+    "places_none": 35,
+    "unknown_without_live": 39
+   },
+   "read_at": "2026-10-17T15:54:21Z",
+   "read_kind": "capture",
+   "cost_usd": 18.96,
+   "passed_at_read": 135,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "page_read",
+    "challenge": "none",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 7,
+   "name": "Crafton Hills College",
+   "district": "San Bernardino Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "crafton_hills",
+   "programs": 118,
+   "passing": 55,
+   "gap": 63,
+   "causes": {
+    "no_closed_list": 39,
+    "page_not_found": 3,
+    "unknown_without_live": 21
+   },
+   "read_at": "2026-10-18T09:41:56Z",
+   "read_kind": "capture",
+   "cost_usd": 5.37,
+   "passed_at_read": 53,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 44,
+   "name": "Cuesta College",
+   "district": "San Luis Obispo County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "cuesta",
+   "programs": 206,
+   "passing": 167,
+   "gap": 39,
+   "causes": {
+    "no_closed_list": 8,
+    "page_not_found": 15,
+    "places_none": 2,
+    "unknown_without_live": 14
+   },
+   "read_at": "2026-10-17T19:40:02Z",
+   "read_kind": "capture",
+   "cost_usd": 10.93,
+   "passed_at_read": 161,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 45,
+   "name": "Cuyamaca College",
+   "district": "Grossmont-Cuyamaca Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "cuyamaca",
+   "programs": 186,
+   "passing": 146,
+   "gap": 40,
+   "causes": {
+    "page_not_found": 4,
+    "places_none": 3,
+    "unknown_without_live": 33
+   },
+   "read_at": "2026-10-15T14:10:08Z",
+   "read_kind": "capture",
+   "cost_usd": 13.84,
+   "passed_at_read": 146,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 46,
+   "name": "Cypress College",
+   "district": "North Orange County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "cypress",
+   "programs": 282,
+   "passing": 252,
+   "gap": 30,
+   "causes": {
+    "page_not_found": 8,
+    "places_none": 6,
+    "unknown_without_live": 16
+   },
+   "read_at": "2026-10-22T21:15:37Z",
+   "read_kind": "capture",
+   "cost_usd": 18.14,
+   "passed_at_read": 240,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 47,
+   "name": "De Anza College",
+   "district": "Foothill-De Anza Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "de_anza",
+   "programs": 248,
+   "passing": 205,
+   "gap": 43,
+   "causes": {
+    "found_not_extracted": 21,
+    "no_closed_list": 5,
+    "page_not_found": 1,
+    "unknown_without_live": 16
+   },
+   "read_at": "2026-11-11T17:53:38Z",
+   "read_kind": "capture",
+   "cost_usd": 17.15,
+   "passed_at_read": 205,
+   "slo_queue": {
+    "state": "held",
+    "why": "11 of its 12 trial pages came back empty (HTTP 200, no text) from its eLumen 2026-27 catalog; the one page with text, PSYCC 1000 (a common course number), printed SLOs the reader parsed (4). The catalog does not answer the older course codes in its MAP records; waits on the reader mapping those codes to the ones the 2026-27 catalog prints, then a fresh trial",
+    "on": "2026-11-12"
+   },
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 48,
+   "name": "Diablo Valley College",
+   "district": "Contra Costa Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "diablo_valley",
+   "programs": 267,
+   "passing": 197,
+   "gap": 70,
+   "causes": {
+    "no_closed_list": 23,
+    "page_not_found": 30,
+    "places_none": 1,
+    "unknown_without_live": 16
+   },
+   "read_at": "2026-11-13T06:35:26Z",
+   "read_kind": "capture",
+   "cost_usd": 13.85,
+   "passed_at_read": 197,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": {
+    "agrees": 5,
+    "differs": 0,
+    "unreachable": 0,
+    "checked_at": "2026-11-13T09:05:00Z",
+    "file": "kb/spot_checks/pr-3205-diablo-valley.check.json",
+    "pr": 3205,
+    "settled_later": null
+   },
+   "confidence": {
+    "level": "strong",
+    "why": "5 agree, 0 differ, 0 unreachable"
+   }
+  },
+  {
+   "id": 49,
+   "name": "East Los Angeles College",
+   "district": "Los Angeles Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "east_los_angeles",
+   "programs": 234,
+   "passing": 103,
+   "gap": 131,
+   "causes": {
+    "no_closed_list": 87,
+    "page_not_found": 10,
+    "places_none": 4,
+    "unknown_without_live": 30
+   },
+   "read_at": "2026-11-13T03:11:03Z",
+   "read_kind": "capture",
+   "cost_usd": 10.74,
+   "passed_at_read": 101,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": {
+    "agrees": 1,
+    "differs": 0,
+    "unreachable": 0,
+    "checked_at": "2026-11-13T09:05:00Z",
+    "file": "kb/spot_checks/pr-3207-rescore-six.check.json",
+    "pr": 3207,
+    "settled_later": [
+     "32154"
+    ]
+   },
+   "confidence": {
+    "level": "limited",
+    "why": "1 agree, 0 differ, 0 unreachable (record 32154 agreed later against the captured text); fewer than 5 records checked at this college"
+   }
+  },
+  {
+   "id": 50,
+   "name": "El Camino College",
+   "district": "El Camino Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "el_camino",
+   "programs": 189,
+   "passing": 89,
+   "gap": 100,
+   "causes": {
+    "no_closed_list": 54,
+    "page_not_found": 11,
+    "places_none": 7,
+    "unknown_without_live": 28
+   },
+   "read_at": "2026-10-14T20:24:46Z",
+   "read_kind": "capture",
+   "cost_usd": 8.08,
+   "passed_at_read": 86,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 51,
+   "name": "Evergreen Valley College",
+   "district": "San Jose-Evergreen Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "evergreen_valley",
+   "programs": 93,
+   "passing": 59,
+   "gap": 34,
+   "causes": {
+    "no_closed_list": 1,
+    "page_not_found": 6,
+    "places_none": 12,
+    "unknown_without_live": 15
+   },
+   "read_at": "2026-10-15T14:10:30Z",
+   "read_kind": "capture",
+   "cost_usd": 5.92,
+   "passed_at_read": 54,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 52,
+   "name": "Feather River College",
+   "district": "Feather River Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "feather_river",
+   "programs": 62,
+   "passing": 37,
+   "gap": 25,
+   "causes": {
+    "no_closed_list": 13,
+    "page_not_found": 4,
+    "places_none": 1,
+    "unknown_without_live": 7
+   },
+   "read_at": "2026-10-16T16:52:03Z",
+   "read_kind": "capture",
+   "cost_usd": 3.15,
+   "passed_at_read": 33,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 53,
+   "name": "Folsom Lake College",
+   "district": "Los Rios Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "folsom_lake",
+   "programs": 108,
+   "passing": 87,
+   "gap": 21,
+   "causes": {
+    "page_not_found": 1,
+    "places_none": 3,
+    "unknown_without_live": 17
+   },
+   "read_at": "2026-10-17T15:52:04Z",
+   "read_kind": "capture",
+   "cost_usd": 9.43,
+   "passed_at_read": 83,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 54,
+   "name": "Foothill College",
+   "district": "Foothill-De Anza Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "foothill",
+   "programs": 209,
+   "passing": 138,
+   "gap": 71,
+   "causes": {
+    "no_closed_list": 19,
+    "page_not_found": 5,
+    "places_none": 17,
+    "unknown_without_live": 30
+   },
+   "read_at": "2026-10-22T05:13:13Z",
+   "read_kind": "capture",
+   "cost_usd": 14.82,
+   "passed_at_read": 138,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 55,
+   "name": "Fresno City College",
+   "district": "State Center Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "fresno_city",
+   "programs": 266,
+   "passing": 204,
+   "gap": 62,
+   "causes": {
+    "no_closed_list": 15,
+    "page_not_found": 14,
+    "places_none": 26,
+    "unknown_without_live": 7
+   },
+   "read_at": "2026-10-14T12:26:36Z",
+   "read_kind": "capture",
+   "cost_usd": 14.1,
+   "passed_at_read": 203,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "page_read",
+    "challenge": "none",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 56,
+   "name": "Fullerton College",
+   "district": "North Orange County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "fullerton",
+   "programs": 332,
+   "passing": 278,
+   "gap": 54,
+   "causes": {
+    "no_closed_list": 6,
+    "page_not_found": 13,
+    "places_none": 2,
+    "unknown_without_live": 33
+   },
+   "read_at": "2026-10-15T03:14:32Z",
+   "read_kind": "capture",
+   "cost_usd": 22.21,
+   "passed_at_read": 260,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 57,
+   "name": "Gavilan College",
+   "district": "Gavilan Joint Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "gavilan",
+   "programs": 135,
+   "passing": 81,
+   "gap": 54,
+   "causes": {
+    "no_closed_list": 15,
+    "page_not_found": 14,
+    "places_none": 5,
+    "unknown_without_live": 20
+   },
+   "read_at": "2026-10-16T18:33:54Z",
+   "read_kind": "capture",
+   "cost_usd": 7.53,
+   "passed_at_read": 77,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 58,
+   "name": "Glendale Community College",
+   "district": "Glendale Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "glendale_community",
+   "programs": 317,
+   "passing": 121,
+   "gap": 196,
+   "causes": {
+    "parked_college": 196
+   },
+   "read_at": "2026-10-30T12:31:04Z",
+   "read_kind": "capture",
+   "cost_usd": 20.13,
+   "passed_at_read": 115,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "capture",
+    "challenge": "none",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 59,
+   "name": "Golden West College",
+   "district": "Coast Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "golden_west",
+   "programs": 181,
+   "passing": 107,
+   "gap": 74,
+   "causes": {
+    "no_closed_list": 29,
+    "page_not_found": 17,
+    "places_none": 6,
+    "unknown_without_live": 22
+   },
+   "read_at": "2026-10-21T22:41:56Z",
+   "read_kind": "capture",
+   "cost_usd": 8.72,
+   "passed_at_read": 102,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 60,
+   "name": "Grossmont College",
+   "district": "Grossmont-Cuyamaca Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "grossmont",
+   "programs": 187,
+   "passing": 123,
+   "gap": 64,
+   "causes": {
+    "found_not_extracted": 1,
+    "no_closed_list": 33,
+    "page_not_found": 9,
+    "places_none": 4,
+    "unknown_without_live": 17
+   },
+   "read_at": "2026-11-13T02:52:39Z",
+   "read_kind": "capture",
+   "cost_usd": 10.61,
+   "passed_at_read": 123,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": {
+    "agrees": 1,
+    "differs": 0,
+    "unreachable": 0,
+    "checked_at": "2026-11-13T09:05:00Z",
+    "file": "kb/spot_checks/pr-3207-rescore-six.check.json",
+    "pr": 3207,
+    "settled_later": [
+     "30977"
+    ]
+   },
+   "confidence": {
+    "level": "limited",
+    "why": "1 agree, 0 differ, 0 unreachable (record 30977 agreed later against the captured text); fewer than 5 records checked at this college"
+   }
+  },
+  {
+   "id": 61,
+   "name": "Hartnell College",
+   "district": "Hartnell Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "hartnell",
+   "programs": 112,
+   "passing": 83,
+   "gap": 29,
+   "causes": {
+    "no_closed_list": 7,
+    "page_not_found": 11,
+    "unknown_without_live": 11
+   },
+   "read_at": "2026-10-26T11:35:34Z",
+   "read_kind": "capture",
+   "cost_usd": 6.33,
+   "passed_at_read": 83,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 62,
+   "name": "Imperial Valley College",
+   "district": "Imperial Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "imperial_valley",
+   "programs": 149,
+   "passing": 115,
+   "gap": 34,
+   "causes": {
+    "no_closed_list": 7,
+    "page_not_found": 11,
+    "places_none": 6,
+    "unknown_without_live": 10
+   },
+   "read_at": "2026-10-21T23:10:18Z",
+   "read_kind": "capture",
+   "cost_usd": 8.02,
+   "passed_at_read": 109,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 63,
+   "name": "Irvine Valley College",
+   "district": "South Orange County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "irvine_valley",
+   "programs": 171,
+   "passing": 130,
+   "gap": 41,
+   "causes": {
+    "no_closed_list": 25,
+    "page_not_found": 2,
+    "unknown_without_live": 14
+   },
+   "read_at": "2026-10-21T03:38:56Z",
+   "read_kind": "capture",
+   "cost_usd": 11.02,
+   "passed_at_read": 122,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 64,
+   "name": "Lake Tahoe Community College",
+   "district": "Lake Tahoe Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "lake_tahoe_community",
+   "programs": 87,
+   "passing": 58,
+   "gap": 29,
+   "causes": {
+    "no_closed_list": 4,
+    "page_not_found": 5,
+    "unknown_without_live": 20
+   },
+   "read_at": "2026-10-17T00:06:04Z",
+   "read_kind": "capture",
+   "cost_usd": 4.95,
+   "passed_at_read": 57,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 65,
+   "name": "Laney College",
+   "district": "Peralta Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "laney",
+   "programs": 175,
+   "passing": 128,
+   "gap": 47,
+   "causes": {
+    "page_not_found": 25,
+    "unknown_without_live": 22
+   },
+   "read_at": "2026-10-16T16:52:09Z",
+   "read_kind": "capture",
+   "cost_usd": 10.1,
+   "passed_at_read": 118,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 66,
+   "name": "Las Positas College",
+   "district": "Chabot-Las Positas Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "las_positas",
+   "programs": 204,
+   "passing": 181,
+   "gap": 23,
+   "causes": {
+    "no_closed_list": 3,
+    "page_not_found": 6,
+    "places_none": 2,
+    "unknown_without_live": 12
+   },
+   "read_at": "2026-11-10T20:10:35Z",
+   "read_kind": "capture",
+   "cost_usd": 12.09,
+   "passed_at_read": 181,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 67,
+   "name": "Lassen College",
+   "district": "Lassen Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "lassen",
+   "programs": 78,
+   "passing": 35,
+   "gap": 43,
+   "causes": {
+    "no_closed_list": 5,
+    "page_not_found": 9,
+    "places_none": 5,
+    "unknown_without_live": 24
+   },
+   "read_at": "2026-10-17T05:28:43Z",
+   "read_kind": "capture",
+   "cost_usd": 4.54,
+   "passed_at_read": 35,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 114,
+   "name": "Lemoore College",
+   "district": "West Hills Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "lemoore",
+   "programs": 90,
+   "passing": 65,
+   "gap": 25,
+   "causes": {
+    "no_closed_list": 8,
+    "page_not_found": 9,
+    "places_none": 5,
+    "unknown_without_live": 3
+   },
+   "read_at": "2026-10-16T23:05:16Z",
+   "read_kind": "capture",
+   "cost_usd": 5.29,
+   "passed_at_read": 63,
+   "slo_queue": {
+    "state": "none",
+    "why": "its eLumen 26-27 course pages print units, transfer, requisites and hours, and no SLOs (0 of 12)",
+    "on": "2026-11-10"
+   },
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 68,
+   "name": "Long Beach City College",
+   "district": "Long Beach Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "long_beach_city",
+   "programs": 391,
+   "passing": 319,
+   "gap": 72,
+   "causes": {
+    "no_closed_list": 6,
+    "page_not_found": 17,
+    "places_none": 19,
+    "unknown_without_live": 30
+   },
+   "read_at": "2026-10-23T03:00:28Z",
+   "read_kind": "capture",
+   "cost_usd": 19.18,
+   "passed_at_read": 317,
+   "slo_queue": {
+    "state": "none",
+    "why": "its CourseLeaf course entries print no SLOs",
+    "on": "2026-10-14"
+   },
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 69,
+   "name": "Los Angeles City College",
+   "district": "Los Angeles Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "los_angeles_city",
+   "programs": 260,
+   "passing": 221,
+   "gap": 39,
+   "causes": {
+    "no_closed_list": 2,
+    "page_not_found": 8,
+    "places_none": 6,
+    "unknown_without_live": 23
+   },
+   "read_at": "2026-11-12T11:50:06Z",
+   "read_kind": "capture",
+   "cost_usd": 20.28,
+   "passed_at_read": 210,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 70,
+   "name": "Los Angeles Harbor College",
+   "district": "Los Angeles Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "los_angeles_harbor",
+   "programs": 124,
+   "passing": 89,
+   "gap": 35,
+   "causes": {
+    "no_closed_list": 3,
+    "page_not_found": 3,
+    "places_none": 11,
+    "unknown_without_live": 18
+   },
+   "read_at": "2026-10-17T05:29:31Z",
+   "read_kind": "capture",
+   "cost_usd": 8.94,
+   "passed_at_read": 86,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 71,
+   "name": "Los Angeles Mission College",
+   "district": "Los Angeles Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "los_angeles_mission",
+   "programs": 160,
+   "passing": 116,
+   "gap": 44,
+   "causes": {
+    "no_closed_list": 20,
+    "page_not_found": 12,
+    "places_none": 3,
+    "unknown_without_live": 9
+   },
+   "read_at": "2026-10-17T17:40:22Z",
+   "read_kind": "capture",
+   "cost_usd": 8.92,
+   "passed_at_read": 109,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 72,
+   "name": "Los Angeles Pierce College",
+   "district": "Los Angeles Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "los_angeles_pierce",
+   "programs": 208,
+   "passing": 163,
+   "gap": 45,
+   "causes": {
+    "extraction_error": 1,
+    "found_not_extracted": 1,
+    "no_closed_list": 12,
+    "page_not_found": 1,
+    "places_none": 20,
+    "unknown_without_live": 10
+   },
+   "read_at": "2026-11-13T02:53:03Z",
+   "read_kind": "capture",
+   "cost_usd": 15.01,
+   "passed_at_read": 152,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 73,
+   "name": "Los Angeles Southwest College",
+   "district": "Los Angeles Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "los_angeles_southwest",
+   "programs": 136,
+   "passing": 74,
+   "gap": 62,
+   "causes": {
+    "no_closed_list": 40,
+    "page_not_found": 2,
+    "places_none": 10,
+    "unknown_without_live": 10
+   },
+   "read_at": "2026-10-17T19:17:43Z",
+   "read_kind": "capture",
+   "cost_usd": 6.0,
+   "passed_at_read": 69,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 74,
+   "name": "Los Angeles Trade Technical College",
+   "district": "Los Angeles Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "los_angeles_trade_technical",
+   "programs": 211,
+   "passing": 143,
+   "gap": 68,
+   "causes": {
+    "no_closed_list": 23,
+    "page_not_found": 10,
+    "places_none": 11,
+    "unknown_without_live": 24
+   },
+   "read_at": "2026-10-18T09:34:14Z",
+   "read_kind": "capture",
+   "cost_usd": 14.2,
+   "passed_at_read": 135,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 75,
+   "name": "Los Angeles Valley College",
+   "district": "Los Angeles Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "los_angeles_valley",
+   "programs": 237,
+   "passing": 202,
+   "gap": 35,
+   "causes": {
+    "parked_college": 35
+   },
+   "read_at": "2026-10-31T09:28:39Z",
+   "read_kind": "capture",
+   "cost_usd": 15.45,
+   "passed_at_read": 197,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 76,
+   "name": "Los Medanos College",
+   "district": "Contra Costa Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "los_medanos",
+   "programs": 103,
+   "passing": 44,
+   "gap": 59,
+   "causes": {
+    "parked_college": 59
+   },
+   "read_at": "2026-11-07T13:24:16Z",
+   "read_kind": "capture",
+   "cost_usd": 6.01,
+   "passed_at_read": 44,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 77,
+   "name": "Madera College",
+   "district": "State Center Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "madera",
+   "programs": 111,
+   "passing": 84,
+   "gap": 27,
+   "causes": {
+    "page_not_found": 5,
+    "places_none": 8,
+    "unknown_without_live": 14
+   },
+   "read_at": "2026-10-16T16:52:10Z",
+   "read_kind": "capture",
+   "cost_usd": 6.89,
+   "passed_at_read": 81,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 78,
+   "name": "Mendocino College",
+   "district": "Mendocino-Lake Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "mendocino",
+   "programs": 125,
+   "passing": 73,
+   "gap": 52,
+   "causes": {
+    "no_closed_list": 2,
+    "page_not_found": 5,
+    "places_none": 25,
+    "unknown_without_live": 20
+   },
+   "read_at": "2026-10-17T05:28:48Z",
+   "read_kind": "capture",
+   "cost_usd": 7.4,
+   "passed_at_read": 73,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 79,
+   "name": "Merced College",
+   "district": "Merced Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "merced",
+   "programs": 182,
+   "passing": 141,
+   "gap": 41,
+   "causes": {
+    "no_closed_list": 10,
+    "page_not_found": 9,
+    "places_none": 1,
+    "unknown_without_live": 21
+   },
+   "read_at": "2026-10-19T10:44:44Z",
+   "read_kind": "capture",
+   "cost_usd": 9.69,
+   "passed_at_read": 134,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 80,
+   "name": "Merritt College",
+   "district": "Peralta Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "merritt",
+   "programs": 83,
+   "passing": 71,
+   "gap": 12,
+   "causes": {
+    "no_closed_list": 2,
+    "unknown_without_live": 10
+   },
+   "read_at": "2026-10-16T16:53:10Z",
+   "read_kind": "capture",
+   "cost_usd": 6.13,
+   "passed_at_read": 68,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 81,
+   "name": "MiraCosta College",
+   "district": "MiraCosta Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "miracosta",
+   "programs": 187,
+   "passing": 101,
+   "gap": 86,
+   "causes": {
+    "no_closed_list": 26,
+    "page_not_found": 19,
+    "places_none": 17,
+    "unknown_without_live": 24
+   },
+   "read_at": "2026-10-22T08:18:02Z",
+   "read_kind": "capture",
+   "cost_usd": 11.96,
+   "passed_at_read": 98,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 82,
+   "name": "Mission College",
+   "district": "West Valley-Mission Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "mission",
+   "programs": 124,
+   "passing": 91,
+   "gap": 33,
+   "causes": {
+    "no_closed_list": 11,
+    "page_not_found": 5,
+    "places_none": 3,
+    "unknown_without_live": 14
+   },
+   "read_at": "2026-10-17T03:46:49Z",
+   "read_kind": "capture",
+   "cost_usd": 7.56,
+   "passed_at_read": 85,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 83,
+   "name": "Modesto Junior College",
+   "district": "Yosemite Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "modesto_junior",
+   "programs": 199,
+   "passing": 160,
+   "gap": 39,
+   "causes": {
+    "no_closed_list": 3,
+    "page_not_found": 7,
+    "places_none": 4,
+    "unknown_without_live": 25
+   },
+   "read_at": "2026-10-13T22:28:04Z",
+   "read_kind": "capture",
+   "cost_usd": 12.03,
+   "passed_at_read": 159,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 84,
+   "name": "Monterey Peninsula College",
+   "district": "Monterey Peninsula Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "monterey_peninsula",
+   "programs": 206,
+   "passing": 185,
+   "gap": 21,
+   "causes": {
+    "parked_college": 21
+   },
+   "read_at": "2026-11-06T09:29:47Z",
+   "read_kind": "capture",
+   "cost_usd": 13.48,
+   "passed_at_read": 184,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 85,
+   "name": "Moorpark College",
+   "district": "Ventura County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "moorpark",
+   "programs": 151,
+   "passing": 113,
+   "gap": 38,
+   "causes": {
+    "no_closed_list": 6,
+    "page_not_found": 1,
+    "places_none": 9,
+    "unknown_without_live": 22
+   },
+   "read_at": "2026-10-21T12:37:11Z",
+   "read_kind": "capture",
+   "cost_usd": 10.4,
+   "passed_at_read": 100,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 3,
+   "name": "Moreno Valley College",
+   "district": "Riverside Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "moreno_valley",
+   "programs": 149,
+   "passing": 133,
+   "gap": 16,
+   "causes": {
+    "no_closed_list": 5,
+    "page_not_found": 4,
+    "unknown_without_live": 7
+   },
+   "read_at": "2026-10-11T04:17:25Z",
+   "read_kind": "capture",
+   "cost_usd": 9.6,
+   "passed_at_read": 132,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 86,
+   "name": "Mt. San Antonio College",
+   "district": "Mt. San Antonio Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "mt_san_antonio",
+   "programs": 469,
+   "passing": 360,
+   "gap": 109,
+   "causes": {
+    "no_closed_list": 41,
+    "page_not_found": 31,
+    "places_none": 13,
+    "unknown_without_live": 24
+   },
+   "read_at": "2026-10-23T02:51:00Z",
+   "read_kind": "capture",
+   "cost_usd": 22.47,
+   "passed_at_read": 359,
+   "slo_queue": {
+    "state": "none",
+    "why": "its CourseLeaf course entries print no SLOs",
+    "on": "2026-10-14"
+   },
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 6,
+   "name": "Mt. San Jacinto College",
+   "district": "Mt. San Jacinto Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "mt_san_jacinto",
+   "programs": 174,
+   "passing": 97,
+   "gap": 77,
+   "causes": {
+    "no_closed_list": 22,
+    "page_not_found": 36,
+    "places_none": 3,
+    "unknown_without_live": 16
+   },
+   "read_at": "2026-11-06T11:57:46Z",
+   "read_kind": "capture",
+   "cost_usd": 9.28,
+   "passed_at_read": 97,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 87,
+   "name": "Napa Valley College",
+   "district": "Napa Valley Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "napa_valley",
+   "programs": 127,
+   "passing": 84,
+   "gap": 43,
+   "causes": {
+    "no_closed_list": 16,
+    "page_not_found": 13,
+    "places_none": 4,
+    "unknown_without_live": 10
+   },
+   "read_at": "2026-10-15T14:10:14Z",
+   "read_kind": "capture",
+   "cost_usd": 6.36,
+   "passed_at_read": 83,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 1,
+   "name": "Norco College",
+   "district": "Riverside Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "norco",
+   "programs": 161,
+   "passing": 128,
+   "gap": 33,
+   "causes": {
+    "no_closed_list": 11,
+    "page_not_found": 2,
+    "places_none": 1,
+    "unknown_without_live": 19
+   },
+   "read_at": "2026-10-11T04:56:59Z",
+   "read_kind": "capture",
+   "cost_usd": 10.12,
+   "passed_at_read": 126,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 121,
+   "name": "North Orange Continuing Education",
+   "district": "North Orange County Community College District",
+   "kind": "continuing_education",
+   "harvested": true,
+   "slug": "north_orange_continuing_education",
+   "programs": 109,
+   "passing": 77,
+   "gap": 32,
+   "causes": {
+    "no_closed_list": 8,
+    "page_not_found": 19,
+    "places_none": 4,
+    "unknown_without_live": 1
+   },
+   "read_at": "2026-11-13T01:05:23Z",
+   "read_kind": "capture",
+   "cost_usd": 3.66,
+   "passed_at_read": 77,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 88,
+   "name": "Ohlone College",
+   "district": "Ohlone Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "ohlone",
+   "programs": 204,
+   "passing": 126,
+   "gap": 78,
+   "causes": {
+    "no_closed_list": 25,
+    "page_not_found": 33,
+    "places_none": 12,
+    "unknown_without_live": 8
+   },
+   "read_at": "2026-10-17T19:39:44Z",
+   "read_kind": "capture",
+   "cost_usd": 10.02,
+   "passed_at_read": 117,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 89,
+   "name": "Orange Coast College",
+   "district": "Coast Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "orange_coast",
+   "programs": 328,
+   "passing": 223,
+   "gap": 105,
+   "causes": {
+    "no_closed_list": 27,
+    "page_not_found": 27,
+    "places_none": 15,
+    "unknown_without_live": 36
+   },
+   "read_at": "2026-11-12T01:45:35Z",
+   "read_kind": "capture",
+   "cost_usd": 19.44,
+   "passed_at_read": 216,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 90,
+   "name": "Oxnard College",
+   "district": "Ventura County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "oxnard",
+   "programs": 133,
+   "passing": 90,
+   "gap": 43,
+   "causes": {
+    "no_closed_list": 1,
+    "page_not_found": 12,
+    "places_none": 2,
+    "unknown_without_live": 28
+   },
+   "read_at": "2026-10-21T13:57:35Z",
+   "read_kind": "capture",
+   "cost_usd": 8.98,
+   "passed_at_read": 86,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 13,
+   "name": "Palo Verde College",
+   "district": "Palo Verde Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "palo_verde",
+   "programs": 69,
+   "passing": 39,
+   "gap": 30,
+   "causes": {
+    "no_closed_list": 1,
+    "page_not_found": 2,
+    "unknown_without_live": 27
+   },
+   "read_at": "2026-10-22T20:58:06Z",
+   "read_kind": "capture",
+   "cost_usd": 5.08,
+   "passed_at_read": 38,
+   "slo_queue": {
+    "state": "held",
+    "why": "its 2026-27 catalog moved to Acalog, where the read has no course page parser; its 2025-26 eLumen pages printed SLOs",
+    "on": "2026-10-23"
+   },
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 15,
+   "name": "Palomar College",
+   "district": "Palomar Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "palomar",
+   "programs": 342,
+   "passing": 265,
+   "gap": 77,
+   "causes": {
+    "no_closed_list": 11,
+    "page_not_found": 49,
+    "places_none": 1,
+    "unknown_without_live": 16
+   },
+   "read_at": "2026-11-07T12:19:04Z",
+   "read_kind": "capture",
+   "cost_usd": 18.75,
+   "passed_at_read": 265,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 91,
+   "name": "Pasadena City College",
+   "district": "Pasadena Area Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "pasadena_city",
+   "programs": 367,
+   "passing": 247,
+   "gap": 120,
+   "causes": {
+    "no_closed_list": 49,
+    "page_not_found": 21,
+    "places_none": 4,
+    "unknown_without_live": 46
+   },
+   "read_at": "2026-10-22T09:54:20Z",
+   "read_kind": "capture",
+   "cost_usd": 20.91,
+   "passed_at_read": 242,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 92,
+   "name": "Porterville College",
+   "district": "Kern Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "porterville",
+   "programs": 91,
+   "passing": 49,
+   "gap": 42,
+   "causes": {
+    "no_closed_list": 6,
+    "page_not_found": 3,
+    "places_none": 6,
+    "unknown_without_live": 27
+   },
+   "read_at": "2026-10-17T15:51:20Z",
+   "read_kind": "capture",
+   "cost_usd": 6.13,
+   "passed_at_read": 39,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 93,
+   "name": "Reedley College",
+   "district": "State Center Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "reedley",
+   "programs": 213,
+   "passing": 177,
+   "gap": 36,
+   "causes": {
+    "no_closed_list": 13,
+    "page_not_found": 4,
+    "places_none": 1,
+    "unknown_without_live": 18
+   },
+   "read_at": "2026-10-21T14:22:23Z",
+   "read_kind": "capture",
+   "cost_usd": 11.18,
+   "passed_at_read": 167,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 94,
+   "name": "Rio Hondo College",
+   "district": "Rio Hondo Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "rio_hondo",
+   "programs": 321,
+   "passing": 276,
+   "gap": 45,
+   "causes": {
+    "no_closed_list": 20,
+    "page_not_found": 9,
+    "places_none": 4,
+    "unknown_without_live": 12
+   },
+   "read_at": "2026-11-12T04:22:11Z",
+   "read_kind": "capture",
+   "cost_usd": 18.94,
+   "passed_at_read": 276,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 2,
+   "name": "Riverside City College",
+   "district": "Riverside Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "riverside_city",
+   "programs": 268,
+   "passing": 222,
+   "gap": 46,
+   "causes": {
+    "no_closed_list": 6,
+    "page_not_found": 18,
+    "unknown_without_live": 22
+   },
+   "read_at": "2026-10-11T03:28:38Z",
+   "read_kind": "capture",
+   "cost_usd": 15.03,
+   "passed_at_read": 221,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 95,
+   "name": "Sacramento City College",
+   "district": "Los Rios Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "sacramento_city",
+   "programs": 227,
+   "passing": 149,
+   "gap": 78,
+   "causes": {
+    "no_closed_list": 20,
+    "page_not_found": 3,
+    "places_none": 22,
+    "unknown_without_live": 33
+   },
+   "read_at": "2026-10-17T15:55:20Z",
+   "read_kind": "capture",
+   "cost_usd": 18.5,
+   "passed_at_read": 148,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 16,
+   "name": "Saddleback College",
+   "district": "South Orange County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "saddleback",
+   "programs": 367,
+   "passing": 274,
+   "gap": 93,
+   "causes": {
+    "no_closed_list": 14,
+    "page_not_found": 32,
+    "places_none": 10,
+    "unknown_without_live": 37
+   },
+   "read_at": "2026-10-16T03:03:07Z",
+   "read_kind": "capture",
+   "cost_usd": 25.88,
+   "passed_at_read": 270,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 8,
+   "name": "San Bernardino Valley College",
+   "district": "San Bernardino Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "san_bernardino_valley",
+   "programs": 236,
+   "passing": 161,
+   "gap": 75,
+   "causes": {
+    "found_not_extracted": 4,
+    "no_closed_list": 4,
+    "page_not_found": 3,
+    "places_none": 25,
+    "unknown_without_live": 39
+   },
+   "read_at": "2026-11-13T02:52:38Z",
+   "read_kind": "capture",
+   "cost_usd": 15.44,
+   "passed_at_read": 161,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": {
+    "agrees": 1,
+    "differs": 0,
+    "unreachable": 0,
+    "checked_at": "2026-11-13T09:05:00Z",
+    "file": "kb/spot_checks/pr-3207-rescore-six.check.json",
+    "pr": 3207,
+    "settled_later": null
+   },
+   "confidence": {
+    "level": "limited",
+    "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
+   }
+  },
+  {
+   "id": 96,
+   "name": "San Diego City College",
+   "district": "San Diego Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "san_diego_city",
+   "programs": 203,
+   "passing": 163,
+   "gap": 40,
+   "causes": {
+    "no_closed_list": 12,
+    "page_not_found": 20,
+    "places_none": 4,
+    "unknown_without_live": 4
+   },
+   "read_at": "2026-10-13T04:43:55Z",
+   "read_kind": "capture",
+   "cost_usd": 12.88,
+   "passed_at_read": 160,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 119,
+   "name": "San Diego College of Continuing Education",
+   "district": "San Diego Community College District",
+   "kind": "continuing_education",
+   "harvested": true,
+   "slug": "san_diego_of_continuing_education",
+   "programs": 144,
+   "passing": 90,
+   "gap": 54,
+   "causes": {
+    "no_closed_list": 24,
+    "page_not_found": 11,
+    "places_none": 19
+   },
+   "read_at": "2026-10-17T13:07:55Z",
+   "read_kind": "capture",
+   "cost_usd": 4.95,
+   "passed_at_read": 89,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 97,
+   "name": "San Diego Mesa College",
+   "district": "San Diego Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "san_diego_mesa",
+   "programs": 202,
+   "passing": 173,
+   "gap": 29,
+   "causes": {
+    "no_closed_list": 18,
+    "page_not_found": 7,
+    "places_none": 2,
+    "unknown_without_live": 2
+   },
+   "read_at": "2026-10-12T23:34:09Z",
+   "read_kind": "capture",
+   "cost_usd": 15.34,
+   "passed_at_read": 171,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 98,
+   "name": "San Diego Miramar College",
+   "district": "San Diego Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "san_diego_miramar",
+   "programs": 146,
+   "passing": 117,
+   "gap": 29,
+   "causes": {
+    "no_closed_list": 22,
+    "page_not_found": 4,
+    "unknown_without_live": 3
+   },
+   "read_at": "2026-10-13T06:17:41Z",
+   "read_kind": "capture",
+   "cost_usd": 9.65,
+   "passed_at_read": 114,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 99,
+   "name": "San Joaquin Delta College",
+   "district": "San Joaquin Delta Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "san_joaquin_delta",
+   "programs": 251,
+   "passing": 200,
+   "gap": 51,
+   "causes": {
+    "no_closed_list": 18,
+    "page_not_found": 30,
+    "places_none": 1,
+    "unknown_without_live": 2
+   },
+   "read_at": "2026-10-27T14:43:03Z",
+   "read_kind": "capture",
+   "cost_usd": 13.42,
+   "passed_at_read": 200,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 100,
+   "name": "San Jose City College",
+   "district": "San Jose-Evergreen Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "san_jose_city",
+   "programs": 125,
+   "passing": 51,
+   "gap": 74,
+   "causes": {
+    "no_closed_list": 35,
+    "page_not_found": 6,
+    "places_none": 7,
+    "unknown_without_live": 26
+   },
+   "read_at": "2026-11-13T03:11:34Z",
+   "read_kind": "capture",
+   "cost_usd": 6.63,
+   "passed_at_read": 50,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": {
+    "agrees": 4,
+    "differs": 1,
+    "unreachable": 0,
+    "checked_at": "2026-11-13T09:05:00Z",
+    "file": "kb/spot_checks/pr-3206-san-jose-city.check.json",
+    "pr": 3206,
+    "settled_later": null
+   },
+   "confidence": {
+    "level": "partial",
+    "why": "4 agree, 1 differ, 0 unreachable"
+   }
+  },
+  {
+   "id": 101,
+   "name": "Santa Ana College",
+   "district": "Rancho Santiago Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "santa_ana",
+   "programs": 370,
+   "passing": 324,
+   "gap": 46,
+   "causes": {
+    "extraction_error": 1,
+    "no_closed_list": 11,
+    "page_not_found": 12,
+    "unknown_without_live": 22
+   },
+   "read_at": "2026-10-16T03:03:02Z",
+   "read_kind": "capture",
+   "cost_usd": 22.03,
+   "passed_at_read": 307,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 102,
+   "name": "Santa Barbara City College",
+   "district": "Santa Barbara Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "santa_barbara_city",
+   "programs": 319,
+   "passing": 220,
+   "gap": 99,
+   "causes": {
+    "no_closed_list": 32,
+    "page_not_found": 33,
+    "places_none": 7,
+    "unknown_without_live": 27
+   },
+   "read_at": "2026-10-22T13:05:28Z",
+   "read_kind": "capture",
+   "cost_usd": 18.39,
+   "passed_at_read": 210,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 103,
+   "name": "Santa Monica College",
+   "district": "Santa Monica Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "santa_monica",
+   "programs": 256,
+   "passing": 184,
+   "gap": 72,
+   "causes": {
+    "extraction_error": 1,
+    "no_closed_list": 16,
+    "page_not_found": 1,
+    "places_none": 13,
+    "unknown_without_live": 41
+   },
+   "read_at": "2026-10-21T08:13:16Z",
+   "read_kind": "capture",
+   "cost_usd": 20.34,
+   "passed_at_read": 157,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 104,
+   "name": "Santa Rosa Junior College",
+   "district": "Sonoma County Junior College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "santa_rosa_junior",
+   "programs": 283,
+   "passing": 191,
+   "gap": 92,
+   "causes": {
+    "extraction_error": 1,
+    "found_not_extracted": 5,
+    "no_closed_list": 4,
+    "page_not_found": 6,
+    "places_none": 45,
+    "unknown_without_live": 31
+   },
+   "read_at": "2026-10-17T13:43:10Z",
+   "read_kind": "capture",
+   "cost_usd": 22.48,
+   "passed_at_read": 180,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "page_read",
+    "challenge": "none",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 105,
+   "name": "Santiago Canyon College",
+   "district": "Rancho Santiago Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "santiago_canyon",
+   "programs": 260,
+   "passing": 191,
+   "gap": 69,
+   "causes": {
+    "no_closed_list": 30,
+    "page_not_found": 8,
+    "places_none": 6,
+    "unknown_without_live": 25
+   },
+   "read_at": "2026-11-13T07:46:13Z",
+   "read_kind": "capture",
+   "cost_usd": 16.03,
+   "passed_at_read": 191,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": {
+    "agrees": 5,
+    "differs": 0,
+    "unreachable": 0,
+    "checked_at": "2026-11-13T09:05:00Z",
+    "file": "kb/spot_checks/pr-3194-santiago-canyon-reread.check.json",
+    "pr": 3194,
+    "settled_later": null
+   },
+   "confidence": {
+    "level": "strong",
+    "why": "5 agree, 0 differ, 0 unreachable"
+   }
+  },
+  {
+   "id": 106,
+   "name": "Shasta College",
+   "district": "Shasta-Tehama-Trinity Joint Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "shasta",
+   "programs": 150,
+   "passing": 62,
+   "gap": 88,
+   "causes": {
+    "no_closed_list": 13,
+    "page_not_found": 13,
+    "places_none": 21,
+    "unknown_without_live": 41
+   },
+   "read_at": "2026-10-17T05:29:29Z",
+   "read_kind": "capture",
+   "cost_usd": 11.12,
+   "passed_at_read": 50,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 107,
+   "name": "Sierra College",
+   "district": "Sierra Joint Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "sierra",
+   "programs": 190,
+   "passing": 85,
+   "gap": 105,
+   "causes": {
+    "no_closed_list": 65,
+    "page_not_found": 14,
+    "places_none": 9,
+    "unknown_without_live": 17
+   },
+   "read_at": "2026-10-23T17:14:18Z",
+   "read_kind": "capture",
+   "cost_usd": 10.21,
+   "passed_at_read": 84,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "page_read",
+    "challenge": "none",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 108,
+   "name": "Skyline College",
+   "district": "San Mateo County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "skyline",
+   "programs": 144,
+   "passing": 40,
+   "gap": 104,
+   "causes": {
+    "no_closed_list": 86,
+    "page_not_found": 5,
+    "places_none": 11,
+    "unknown_without_live": 2
+   },
+   "read_at": "2026-10-17T13:07:43Z",
+   "read_kind": "capture",
+   "cost_usd": 3.83,
+   "passed_at_read": 37,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "page_read",
+    "challenge": "none",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 109,
+   "name": "Solano Community College",
+   "district": "Solano County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "solano_community",
+   "programs": 171,
+   "passing": 119,
+   "gap": 52,
+   "causes": {
+    "no_closed_list": 8,
+    "page_not_found": 1,
+    "places_none": 18,
+    "unknown_without_live": 25
+   },
+   "read_at": "2026-11-13T02:52:52Z",
+   "read_kind": "capture",
+   "cost_usd": 13.17,
+   "passed_at_read": 98,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": {
+    "agrees": 1,
+    "differs": 0,
+    "unreachable": 0,
+    "checked_at": "2026-11-13T09:05:00Z",
+    "file": "kb/spot_checks/pr-3207-rescore-six.check.json",
+    "pr": 3207,
+    "settled_later": null
+   },
+   "confidence": {
+    "level": "limited",
+    "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
+   }
+  },
+  {
+   "id": 110,
+   "name": "Southwestern College",
+   "district": "Southwestern Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "southwestern",
+   "programs": 272,
+   "passing": 168,
+   "gap": 104,
+   "causes": {
+    "no_closed_list": 39,
+    "page_not_found": 13,
+    "places_none": 30,
+    "unknown_without_live": 22
+   },
+   "read_at": "2026-10-14T12:26:30Z",
+   "read_kind": "capture",
+   "cost_usd": 13.77,
+   "passed_at_read": 162,
+   "slo_queue": null,
+   "scout": {
+    "recommendation": "blocked",
+    "challenge": "firewall",
+    "checked_at": "2026-11-13T01:26:36Z",
+    "wave": "scout-2026-11-12"
+   },
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 111,
+   "name": "Taft College",
+   "district": "West Kern Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "taft",
+   "programs": 80,
+   "passing": 36,
+   "gap": 44,
+   "causes": {
+    "found_not_extracted": 1,
+    "no_closed_list": 17,
+    "page_not_found": 5,
+    "places_none": 2,
+    "unknown_without_live": 19
+   },
+   "read_at": "2026-10-19T13:24:33Z",
+   "read_kind": "capture",
+   "cost_usd": 4.15,
+   "passed_at_read": 34,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 112,
+   "name": "Ventura College",
+   "district": "Ventura County Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "ventura",
+   "programs": 184,
+   "passing": 121,
+   "gap": 63,
+   "causes": {
+    "no_closed_list": 6,
+    "page_not_found": 5,
+    "places_none": 3,
+    "unknown_without_live": 49
+   },
+   "read_at": "2026-10-21T15:06:57Z",
+   "read_kind": "capture",
+   "cost_usd": 12.5,
+   "passed_at_read": 121,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 14,
+   "name": "Victor Valley College",
+   "district": "Victor Valley Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "victor_valley",
+   "programs": 219,
+   "passing": 140,
+   "gap": 79,
+   "causes": {
+    "no_closed_list": 18,
+    "page_not_found": 25,
+    "places_none": 8,
+    "unknown_without_live": 28
+   },
+   "read_at": "2026-11-12T12:11:04Z",
+   "read_kind": "capture",
+   "cost_usd": 10.13,
+   "passed_at_read": 140,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 115,
+   "name": "West Los Angeles College",
+   "district": "Los Angeles Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "west_los_angeles",
+   "programs": 245,
+   "passing": 177,
+   "gap": 68,
+   "causes": {
+    "no_closed_list": 17,
+    "page_not_found": 14,
+    "places_none": 15,
+    "unknown_without_live": 22
+   },
+   "read_at": "2026-10-21T03:13:49Z",
+   "read_kind": "capture",
+   "cost_usd": 14.97,
+   "passed_at_read": 173,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 116,
+   "name": "West Valley College",
+   "district": "West Valley-Mission Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "west_valley",
+   "programs": 145,
+   "passing": 120,
+   "gap": 25,
+   "causes": {
+    "extraction_error": 1,
+    "found_not_extracted": 2,
+    "no_closed_list": 3,
+    "page_not_found": 6,
+    "unknown_without_live": 13
+   },
+   "read_at": "2026-11-12T02:37:11Z",
+   "read_kind": "capture",
+   "cost_usd": 11.19,
+   "passed_at_read": 120,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 117,
+   "name": "Woodland Community College",
+   "district": "Yuba Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "woodland_community",
+   "programs": 69,
+   "passing": 62,
+   "gap": 7,
+   "causes": {
+    "no_closed_list": 4,
+    "places_none": 1,
+    "unknown_without_live": 2
+   },
+   "read_at": "2026-10-17T05:28:57Z",
+   "read_kind": "capture",
+   "cost_usd": 4.7,
+   "passed_at_read": 58,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  },
+  {
+   "id": 118,
+   "name": "Yuba College",
+   "district": "Yuba Community College District",
+   "kind": "college",
+   "harvested": true,
+   "slug": "yuba",
+   "programs": 104,
+   "passing": 76,
+   "gap": 28,
+   "causes": {
+    "no_closed_list": 10,
+    "page_not_found": 1,
+    "places_none": 4,
+    "unknown_without_live": 13
+   },
+   "read_at": "2026-10-17T05:31:43Z",
+   "read_kind": "capture",
+   "cost_usd": 7.44,
+   "passed_at_read": 75,
+   "slo_queue": null,
+   "scout": null,
+   "spot_check": null,
+   "confidence": {
+    "level": "limited",
+    "why": "machine checks only; no spot-check yet"
+   }
+  }
+ ]
+}

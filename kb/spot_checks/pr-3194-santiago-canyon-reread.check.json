@@ -1,0 +1,146 @@
+{
+ "schema": 1,
+ "wave": "pr-3194-santiago-canyon-reread",
+ "pr": 3194,
+ "head_sha": "f9a0b1289ee0a1c1124d89d09ab633169a864367",
+ "checked_at": "2026-11-13T09:05:00Z",
+ "checker": "cobi-cto (COBIx), by hand",
+ "source": {
+  "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+  "sha256": "d7a386e4eda3742d6a0602332faa23d69e6e90764f9d1ab042b1d0cf01b30d14",
+  "bytes": 9489873,
+  "last_modified": "2026-11-02T20:07:09Z",
+  "note": "HEAD this pass matched size of the copy read Nov 12; pages read from that copy"
+ },
+ "loads": [
+  "robots.txt (soft-404 HTML, no rules)",
+  "HEAD of the PDF"
+ ],
+ "out_of_sample": [
+  {
+   "college": "Santiago Canyon College",
+   "control_number": "11910",
+   "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=132",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": false,
+   "total": {
+    "record": "21-21",
+    "page": "21-21"
+   },
+   "verdict": "differs",
+   "evidence": "Substitute: Three (3) units from the courses below can be used to substitute any of the above courses on this list. [PASV086, PASV087, PASV088, WATR140]",
+   "note": "Unchanged since the first read (last commit 3ff8d382). The cap sits only in a note; the block is still a plain choose-9-units pool. Not counted in the tally."
+  }
+ ],
+ "records": [
+  {
+   "college": "Santiago Canyon College",
+   "control_number": "11856",
+   "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "25-25",
+    "page": "25-25"
+   },
+   "verdict": "agrees",
+   "evidence": "Program Rules: Biology, AS (Total Units 25.0 - 25.0) ... BIOL211, BIOL221, BIOL231, CHEM200B ... At least one of the following CHEM200A, CHEM200AH ... Control Number: 11856"
+  },
+  {
+   "college": "Santiago Canyon College",
+   "control_number": "11943",
+   "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=110",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "21-23.5",
+    "page": "21-23.5"
+   },
+   "verdict": "agrees",
+   "evidence": "Program Rules: Economics, AA (Total Units 21.0 - 23.5) ... Major Requirements (14.0) ACCT101, ACCT102, ECON101, ECON102 ... BUS150 (3.0) / MATH150 ... STATC1000/E/H; Control Number: 11943"
+  },
+  {
+   "college": "Santiago Canyon College",
+   "control_number": "11947",
+   "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=138",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "18-20",
+    "page": "18-20"
+   },
+   "verdict": "agrees",
+   "evidence": "Program Rules: Sociology, AA (Total Units 18.0 - 20.0) ... SOC100/SOC100H ... Select two core ... List A ... Select two (1) courses from the following (List B) ... Control Number: 11947"
+  },
+  {
+   "college": "Santiago Canyon College",
+   "control_number": "19588",
+   "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "27-27",
+    "page": "27-27"
+   },
+   "verdict": "agrees",
+   "evidence": "Program Rules: Apprenticeship Electricity, Sound Installer, AS (Total Credits 27.0 - 27.0) AEL021 ... AEL026 Sound and Communication Apprentice 6 (4.5) Control Number: 19588"
+  },
+  {
+   "college": "Santiago Canyon College",
+   "control_number": "40639",
+   "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "12-13",
+    "page": "12-13"
+   },
+   "verdict": "agrees",
+   "evidence": "Program Rules: Biotechnology Lab Assistant, CA (Total Units 12.0 - 13.0) ... BIOL191, CHEM100 ... Select BIOL 190/190L or BIOL 211: (4.0 - 5.0) ... Control Number: 40639"
+  }
+ ],
+ "tally": {
+  "Santiago Canyon College": {
+   "agrees": 5,
+   "differs": 0,
+   "page_unreachable": 0
+  }
+ },
+ "holds": []
+}

@@ -64,6 +64,13 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
     check("(D) " + id + " keeps no view in browser storage for the return",
       !/(local|session)Storage\.setItem\([^)]*(?:view_?addr|return_?view|cpl_view)/i.test(all));
   });
+  // (E) the Commons' sub-views (#commons/ase, #commons/data, #3215): commons.js opens each from its arrival and
+  // reports its address; the round trip itself is in tests/commons_ase.test.js and tests/commons_data.test.js.
+  const COMMONS = fs.readFileSync("commons.js", "utf8");
+  [["ase", "CPL_COMMONS_ASE"], ["data", "CPL_COMMONS_DATA"]].forEach(function (v) {
+    check("(E) ⭐ commons/" + v[0] + " opens from its arrival and reports its address",
+      new RegExp('a\\[0\\] === "' + v[0] + '"').test(COMMONS) && new RegExp(v[1] + '\\.address\\(\\) : "commons/' + v[0] + '"').test(COMMONS));
+  });
   const files = fs.readdirSync(".").filter((f) => /\.js$/.test(f) && f !== "cpl_session.js");
   files.forEach(function (f) {
     const s = fs.readFileSync(f, "utf8");
