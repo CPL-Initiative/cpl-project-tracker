@@ -1162,14 +1162,35 @@ check("github.event.inputs.step == 'display'" in display_if and "github.event_na
 _inputs = wf.split("workflow_dispatch:")[1].split("\n  push:")[0]
 _dc = _inputs.split("      display_college:\n")[1].split("\n      ")[0:3] if "      display_college:\n" in _inputs else []
 _apply = display_job.split("- name: Apply the display build the page carries")[1].split("- uses:")[0]
+_commit = display_job.split("- name: Commit the applied record to the branch that ran it")[1]
+_env_line = "          DISPLAY_COLLEGE: ${{ github.event.inputs.display_college }}"
+
+
+def _env_lines(st):
+    return [x for x in st.split("run: |")[0].splitlines() if "DISPLAY_COLLEGE" in x]
+
+
+def _run(st):
+    return st.split("run: |")[1]
+
+
 check(any(x.strip() == 'default: ""' for x in _dc)
-      and "DISPLAY_COLLEGE: ${{ github.event.inputs.display_college }}" in _apply
-      and "${{" not in _apply.split("run: |")[1]
+      and _env_lines(_apply) == [_env_line]
+      and "${{" not in _run(_apply)
+      and not re.search(r"inputs\.college\b", _apply)
+      and not re.search(r"DISPLAY_COLLEGE\s*=|export\s+DISPLAY_COLLEGE|:=|read\s.*DISPLAY_COLLEGE", _run(_apply))
       and 'if [ -n "$DISPLAY_COLLEGE" ]; then' in _apply
       and '--apply --college "$DISPLAY_COLLEGE"\n' in _apply
-      and "else\n            python3 kb/_program_requirements_display_apply.py --apply\n          fi" in _apply
-      and "github.event.inputs.college" not in _apply,
-      "the display step takes display_college (empty by default) by env into --college, and a bare --apply without it")
+      and "else\n            python3 kb/_program_requirements_display_apply.py --apply\n          fi" in _apply,
+      "the display step takes display_college (empty by default) by env into --college, never assigned in the "
+      "shell and never the college input, and a bare --apply without it")
+_msg = [x for x in _run(_commit).splitlines() if "git commit" in x]
+check(_env_lines(_commit) == [_env_line]
+      and not re.search(r"inputs\.college\b", _commit)
+      and not re.search(r"DISPLAY_COLLEGE\s*=|export\s+DISPLAY_COLLEGE|:=", _run(_commit))
+      and len(_msg) == 1 and "${{" not in _msg[0] and "${DISPLAY_COLLEGE:+ of $DISPLAY_COLLEGE}" in _msg[0]
+      and "$GITHUB_RUN_ID" in _msg[0],
+      "the applied record's commit message names a scoped run's college, by env, with no ${{ }} in the line")
 check(wf.count("contents: write") == 3 and wf.count('git push origin "HEAD:${{ github.ref_name }}"') == 3
       and wf.count("git push") == 3,
       "each job writes only to the branch that ran it")

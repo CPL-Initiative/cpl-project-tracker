@@ -284,12 +284,15 @@ jobs:
           retention-days: 90
       - name: Commit the applied record to the branch that ran it
         if: always()
+        # The message names a scoped run's college, so git log tells it from a whole-build run.
+        env:
+          DISPLAY_COLLEGE: ${{ github.event.inputs.display_college }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/receipts
           if git diff --cached --quiet; then echo "no applied record"; exit 0; fi
-          git commit -m "Applied record: the page's display build (run ${{ github.run_id }})"
+          git commit -m "Applied record: the page's display build${DISPLAY_COLLEGE:+ of $DISPLAY_COLLEGE} (run $GITHUB_RUN_ID)"
           for i in 1 2 3 4; do
             git push origin "HEAD:${{ github.ref_name }}" && exit 0
             sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
