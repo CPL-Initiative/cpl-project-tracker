@@ -1,0 +1,20 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "24274",
+ "shape": "noncredit",
+ "title": "High School Equivalency (HSE)",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.glendale.edu/programs/NCGED/completion-requirements-zaZdl",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 12.2,
+ "parts": null,
+ "error": "HTTP 401: {\"error\":\"unauthorized\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "43384599013"
+}

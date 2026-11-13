@@ -1,0 +1,1036 @@
+{
+ "run": "43384599013",
+ "programs": [
+  {
+   "control_number": "02550",
+   "title": "Accounting",
+   "award": "A.S. Degree",
+   "source_url": "https://catalog.glendale.edu/programs/ACCTG-AS/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=89",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 9,
+     "listed": 9,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 27,
+     "codes": [
+      "ACCTG110",
+      "ACCTG121",
+      "ACCTG155",
+      "ACCTG156",
+      "ACCTG157",
+      "ACCTG165",
+      "ACCTG170",
+      "ACCTG175",
+      "ACCTG201",
+      "ACCTG202",
+      "ACCTG210",
+      "ACCTG220",
+      "ACCTG225",
+      "ACCTG230",
+      "ACCTG235",
+      "BUSAD106",
+      "BUSAD120",
+      "BUSAD131",
+      "BUSAD135",
+      "BUSAD136",
+      "CABOT105",
+      "CABOT106",
+      "CABOT271",
+      "CS/IS101",
+      "ECON101",
+      "ECON102",
+      "INTERN50(ACCTG)"
+     ],
+     "flagged": [
+      "ACCTG110",
+      "ACCTG121",
+      "ACCTG155",
+      "ACCTG156",
+      "ACCTG157",
+      "ACCTG165",
+      "ACCTG170",
+      "ACCTG175",
+      "ACCTG201",
+      "ACCTG202",
+      "ACCTG210",
+      "ACCTG220",
+      "ACCTG225",
+      "ACCTG230",
+      "ACCTG235",
+      "BUSAD106",
+      "BUSAD120",
+      "BUSAD131",
+      "BUSAD135",
+      "BUSAD136",
+      "CABOT105",
+      "CABOT106",
+      "CABOT271",
+      "CS/IS101",
+      "ECON101",
+      "ECON102",
+      "INTERN50(ACCTG)"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      34.0,
+      35.0
+     ],
+     "stated": [
+      34.0,
+      35.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "02580",
+   "title": "Registered Nursing",
+   "award": "A.S. Degree",
+   "source_url": "https://catalog.glendale.edu/programs/RN-AS/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=86",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 14,
+     "listed": 17,
+     "share": 0.824,
+     "missing": [
+      "NS202",
+      "NS203",
+      "NS204"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 8,
+     "codes": [
+      "BIOL112",
+      "BIOL120",
+      "BIOL121",
+      "ENGLC1000",
+      "NS217",
+      "NS218",
+      "PSYCC1000",
+      "STATC1000"
+     ],
+     "flagged": [
+      "BIOL112",
+      "BIOL120",
+      "BIOL121",
+      "ENGLC1000",
+      "NS217",
+      "NS218",
+      "PSYCC1000",
+      "STATC1000"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      48.5,
+      68.0
+     ],
+     "stated": [
+      48.5,
+      48.5
+     ],
+     "against": "program",
+     "why": [],
+     "meets": true
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "11177",
+   "title": "Choreographic Studies & Dance Technique",
+   "award": "A.S. Degree",
+   "source_url": "https://catalog.glendale.edu/programs/CS%26DT-AS/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 28,
+     "listed": 28,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 5,
+     "codes": [
+      "ART130",
+      "DANCE126",
+      "DANCE128",
+      "TART129",
+      "TART134"
+     ],
+     "flagged": [
+      "ART130",
+      "DANCE126",
+      "DANCE128",
+      "TART129",
+      "TART134"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      25.0,
+      25.0
+     ],
+     "stated": [
+      25.0,
+      25.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 1,
+     "courses": 0,
+     "count": 1,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 2,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "17645",
+   "title": "Web Development",
+   "award": "A.S. Degree",
+   "source_url": "https://catalog.glendale.edu/programs/WB-AS/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 11,
+     "listed": 12,
+     "share": 0.917,
+     "missing": [
+      "CS/IS240"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "CS/IS112",
+      "CS/IS264"
+     ],
+     "flagged": [
+      "CS/IS112",
+      "CS/IS264"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      24.0,
+      24.0
+     ],
+     "stated": [
+      24.0,
+      24.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 1,
+     "courses": 0,
+     "count": 1,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "19110",
+   "title": "Dance Teaching",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "source_url": "https://catalog.glendale.edu/programs/DT-C/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 25,
+     "listed": 26,
+     "share": 0.962,
+     "missing": [
+      "HLTH110"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "HLTH101"
+     ],
+     "flagged": [
+      "HLTH101"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      30.0,
+      34.0
+     ],
+     "stated": [
+      30.0,
+      31.0
+     ],
+     "against": "program",
+     "why": [],
+     "meets": true
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 1,
+     "courses": 0,
+     "count": 1,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "19111",
+   "title": "Dance Teaching",
+   "award": "A.S. Degree",
+   "source_url": "https://catalog.glendale.edu/programs/DT-AS/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=72",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 26,
+     "listed": 26,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      30.0,
+      34.0
+     ],
+     "stated": [
+      30.0,
+      31.0
+     ],
+     "against": "program",
+     "why": [],
+     "meets": true
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 1,
+     "courses": 0,
+     "count": 1,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "19365",
+   "title": "Insurance Professional II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://catalog.glendale.edu/programs/IPII-C/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 15,
+     "listed": 15,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      24.0
+     ],
+     "stated": [
+      18.0,
+      24.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 7,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "21308",
+   "title": "Web Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://catalog.glendale.edu/programs/WB-C/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 11,
+     "listed": 12,
+     "share": 0.917,
+     "missing": [
+      "CS/IS240"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "CS/IS112",
+      "CS/IS264"
+     ],
+     "flagged": [
+      "CS/IS112",
+      "CS/IS264"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      24.0,
+      24.0
+     ],
+     "stated": [
+      24.0,
+      24.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 1,
+     "courses": 0,
+     "count": 1,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "21317",
+   "title": "Choreographic Studies & Dance Technique",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://catalog.glendale.edu/programs/CS%26DT-C/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 28,
+     "listed": 29,
+     "share": 0.966,
+     "missing": [
+      "DANCE131"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 5,
+     "codes": [
+      "ART130",
+      "DANCE126",
+      "DANCE128",
+      "TART129",
+      "TART134"
+     ],
+     "flagged": [
+      "ART130",
+      "DANCE126",
+      "DANCE128",
+      "TART129",
+      "TART134"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      25.0,
+      25.0
+     ],
+     "stated": [
+      25.0,
+      25.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 1,
+     "courses": 0,
+     "count": 1,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 2,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "32707",
+   "title": "Theatre Arts",
+   "award": "A.A- T Degree",
+   "source_url": "https://catalog.glendale.edu/programs/TA%20AA-T/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 21,
+     "listed": 22,
+     "share": 0.955,
+     "missing": [
+      "THTR100"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "meets": true,
+     "computed": [
+      18.0,
+      20.0
+     ],
+     "stated": [
+      18.0,
+      19.0
+     ],
+     "against": "program",
+     "why": [],
+     "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "33598",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "source_url": "https://catalog.glendale.edu/programs/SA%20AA-T/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 18,
+     "listed": 18,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "ART130"
+     ],
+     "flagged": [
+      "ART130"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      24.0,
+      24.0
+     ],
+     "stated": [
+      24.0,
+      24.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "44568",
+   "title": "Documentary Film Production",
+   "award": "A.A. Degree",
+   "source_url": "https://catalog.glendale.edu/programs/DFP-AA/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 7,
+     "listed": 8,
+     "share": 0.875,
+     "missing": [
+      "FTVM46"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "MCOMM101"
+     ],
+     "flagged": [
+      "MCOMM101"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      20.0,
+      20.0
+     ],
+     "stated": [
+      20.0,
+      20.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 2,
+     "courses": 0,
+     "count": 2,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "44569",
+   "title": "Documentary Film Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "source_url": "https://catalog.glendale.edu/programs/DFP-C/completion-requirements-zaZdl",
+   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
+   "cost_usd": null,
+   "usage": null,
+   "reason": "passes_less",
+   "score": null,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 7,
+     "listed": 8,
+     "share": 0.875,
+     "missing": [
+      "FTVM46"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "MCOMM101"
+     ],
+     "flagged": [
+      "MCOMM101"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      20.0,
+      20.0
+     ],
+     "stated": [
+      20.0,
+      20.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 2,
+     "courses": 0,
+     "count": 2,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  }
+ ]
+}

@@ -772,7 +772,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/glendale_community/capture_reread.json` | scripts: `kb/_program_requirements_college.py` | — |
-| `kb/program_requirements_college/los_angeles_city/kept_passing.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py`, `kb/_program_requirements_dated_reads.py` | committed by: `program-requirements-dated-reads.yml` |
 | `kb/program_requirements_pilot/map_cr_by_course.sql` | none found | committed by: `program-requirements-dated-reads.yml` |
@@ -1444,5 +1443,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 904 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 903 file
 datasets · 195 external services · 574 consumers · 72 workflows · 41 tabs.

@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 904,
+  "file_datasets": 903,
   "external_services": 195,
   "consumers": 574,
   "workflows": 72,
@@ -16834,26 +16834,6 @@
      "direction": "read",
      "how": "literal",
      "line": 2392
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:kb/program_requirements_college/los_angeles_city/kept_passing.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_harvest_gap_census.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 178
-    },
-    {
-     "id": "script:kb/_program_requirements_college.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 4462
     }
    ],
    "served": true,
