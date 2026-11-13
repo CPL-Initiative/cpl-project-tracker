@@ -613,23 +613,88 @@ def title_key(title):
     return " ".join(_NUMERALS.get(w, w) for w in re.findall(r"[a-z0-9+]+", (title or "").lower()))
 
 
-def shared_titles(creds=None, index=None):
-    """title_key -> the issuers other than the colleges themselves that carry it, from every record of kb/credentials.json
-    and the index's issuer for each title. A college-issued twin of a title is no second issuer."""
+def issuer_key(issuer, aliases=None):
+    """One key per issuer, however it is spelled: an alias the tag file names ("PayrollOrg" is the American Payroll
+    Association), else the name without its parenthetical, case and spacing folded ("National Registry of Emergency
+    Medical Technicians" and its "(NREMT)" spelling are one)."""
+    a = (issuer or "").strip()
+    a = (aliases or {}).get(a, a)
+    return " ".join(re.sub(r"\([^)]*\)", " ", a).lower().split())
+
+
+def credential_issuers(tags=None, catalog_issuers=None):
+    """issuer_key -> True for the issuers that count as a credential's issuer when a title is shared: one with tags or
+    acronyms in kb/reference/issuer_tags.json, or one the credential watch's catalog lists (an industry issuer). A high
+    school, an ROP or an adult school that carries a title is a trainer's twin, never a second issuer (COBIx on #3241,
+    6860799161)."""
+    tags = issuer_tags() if tags is None else tags
+    aliases = issuer_aliases()
     out = {}
-    for t, recs in (creds or {}).items():
-        for r in recs if isinstance(recs, list) else []:
-            a = ((r or {}).get("issuing_agency") or "").strip() if isinstance(r, dict) else ""
-            if a and a != title_in_use.LOCAL_ISSUER:
-                out.setdefault(title_key(t), set()).add(a)
-    for o in index or []:
-        a = (o.get("issuer") or "").strip()
-        if a and a != title_in_use.LOCAL_ISSUER:
-            out.setdefault(title_key(o["t"]), set()).add(a)
+    for k in tags:
+        phrases, acronyms = _entry(tags, k)
+        if phrases or acronyms:
+            out[issuer_key(k, aliases)] = True
+    for k in catalog_issuers or ():
+        out[issuer_key(k, aliases)] = True
     return out
 
 
-def named_credential(texts, index, tags=None, shared=None):
+def issuer_aliases(root=None):
+    """alias -> the issuer's one spelling, from kb/reference/issuer_tags.json `aliases`."""
+    path = os.path.join(root or os.path.dirname(HERE), ISSUER_TAGS)
+    try:
+        with open(path, encoding="utf-8") as f:
+            return (json.load(f) or {}).get("aliases") or {}
+    except (OSError, ValueError):
+        return {}
+
+
+def shared_titles(creds=None, index=None, counts=None):
+    """title_key -> the issuers (one key each, issuer_key) other than the colleges themselves that carry it, from every
+    record of kb/credentials.json and the index's issuer for each title. A college-issued twin is no second issuer; with
+    `counts` (credential_issuers), neither is a school or trainer outside it, and two spellings of one issuer are one."""
+    aliases = issuer_aliases()
+    out = {}
+
+    def add(t, a):
+        a = (a or "").strip()
+        if not a or a == title_in_use.LOCAL_ISSUER:
+            return
+        k = issuer_key(a, aliases)
+        if counts is not None and k not in counts:
+            return
+        out.setdefault(title_key(t), set()).add(k)
+    for t, recs in (creds or {}).items():
+        for r in recs if isinstance(recs, list) else []:
+            if isinstance(r, dict):
+                add(t, r.get("issuing_agency"))
+    for o in index or []:
+        add(o["t"], o.get("issuer"))
+    return out
+
+
+# An acronym followed by a number is a standard's reference ("NFPA 1041", "ISO 9001"), not the issuer's credential.
+_STANDARD_NUMBER = re.compile(r"^\d{3,5}$")
+
+
+def _own_acronym(text, acronym, title=""):
+    """True when the acronym stands in `text` as written and as the issuer's mark: not followed by a standard's number,
+    unless the reference title itself carries that reference ("Swiftwater & Flood Rescue Operations (NFPA 1670)")."""
+    want = re.findall(r"[A-Za-z0-9]+", acronym or "")
+    have = re.findall(r"[A-Za-z0-9]+", text or "")
+    own = re.findall(r"[A-Za-z0-9]+", title or "")
+    n = len(want)
+    for i in range(len(have) - n + 1):
+        if have[i:i + n] != want:
+            continue
+        nxt = have[i + n] if i + n < len(have) else ""
+        if _STANDARD_NUMBER.match(nxt) and not any(own[j:j + n + 1] == want + [nxt] for j in range(len(own) - n)):
+            continue
+        return True
+    return False
+
+
+def named_credential(texts, index, tags=None, shared=None, own=None):
     """The reference title of an industry issuer that a course title or a credit recommendation names as a phrase, the
     longest when several do, else None. The title must be two words or more and carry its issuer (issuer_named): its
     tag, its acronym, or its name, "CompTIA Cloud+", issuer CompTIA. A title that more than one issuer carries
@@ -642,6 +707,9 @@ def named_credential(texts, index, tags=None, shared=None):
     blob = " ".join(t for t in texts if t)
     if not blob:
         return None
+    # The acronym that settles a shared title counts only in the course's own title (`own`), never in a credit line
+    # that cites a standard (COBIx on #3241, 6860780079).
+    mine = " ".join(t for t in (texts if own is None else own) if t)
     tags = issuer_tags() if tags is None else tags
     shared = shared_titles(None, index) if shared is None else shared
     hits = []
@@ -653,8 +721,8 @@ def named_credential(texts, index, tags=None, shared=None):
             continue
         if not re.search(r"(?<![A-Za-z0-9])" + re.escape(t) + r"(?![A-Za-z0-9+])", blob, re.I):
             continue
-        if len(shared.get(title_key(t)) or ()) > 1 and not any(_has_acronym(blob, a) for a in _entry(tags, iss)[1]):
-            continue   # several issuers carry this title and the text names none of them: a person picks
+        if len(shared.get(title_key(t)) or ()) > 1 and not any(_own_acronym(mine, a, t) for a in _entry(tags, iss)[1]):
+            continue   # several issuers carry this title and the course's own title names none of them: a person picks
         hits.append(o)
     if not hits:
         return None
@@ -684,7 +752,7 @@ def leftover_code_proposal(prop, ex, courses, index, raw, wording=False, tags=No
     # the course title and never the credential (COBIx's review of #3233).
     paths = {exhibit_paths.path_of(i) for i in ex.get("ids") or []} - {""}
     industry = "ic" in paths or (not paths and "Industry Certification" in (ex.get("types") or []))
-    hit = named_credential(titles + [r[1] for r in ex.get("recs") or []], index, tags, shared) if industry else None
+    hit = named_credential(titles + [r[1] for r in ex.get("recs") or []], index, tags, shared, own=titles) if industry else None
     alts = [prop["title"]] + [a for a in prop.get("alternates") or [] if a != prop["title"]]
     if hit:
         return dict(prop, title=hit["t"], issuer=hit["issuer"], source=SRC_OFFICIAL, alternates=alts,
@@ -774,7 +842,8 @@ def build(root):
     catalog = load_json(root, CATALOG, {})
     names_on_file, urls_on_file = official_names(catalog), official_urls(catalog)
     tags_on_file = issuer_tags(root)
-    shared_on_file = shared_titles(creds, index)
+    shared_on_file = shared_titles(creds, index, credential_issuers(tags_on_file, [c.get("issuer") for c in
+                                                                                  catalog.get("credentials") or []]))
     cindex, descs = course_index(members), coci_descriptions(root)
     items, courses = [], {}
     for n in needs:

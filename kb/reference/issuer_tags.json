@@ -1,5 +1,5 @@
 {
- "_about": "Each industry issuer's tags: the words that, standing as whole tokens in a title, say the title is that issuer's (kb/_build_exhibits_review.py issuer_named). Derived once on 2026-11-13 (S648) from every issuer in kb/credentials.json and kb/credential_review_overlay.json: a parenthetical that is one token (ASE, NREMT), and an all-capitals word outside parentheses (IPC); then written down and corrected by hand: generic ones dropped (ROP, HS, DUI, GIS, 'varies'), split ones joined (CAL-OSHA, EC-Council, H&R Block), and brands that sit outside the issuer's short tag added (CAL FIRE, Cal OES, UC ANR, Disney, LEED, Esri, Haas, Unity, LPIC, CLEP, DSST), and, after the review of #3241, each issuer's own credential abbreviations and track names where its real credentials carry no other mark of it (PMI's PfMP and PgMP, Python Institute's PCAP, the Dental Boards' RDA and RDH, NBCOT's COTA, EMSA's EMT and EMR, SFT's certification tracks such as Fire Inspector and Company Officer). The S648 conductor's direction on #3241: the issuer list is finite, so its tags are data, never a pattern. An issuer missing here has no tags: its titles count as named only on the words of its name. Add an issuer when the reference gains one. Two lists per issuer: `tags`, phrases matched in any case (\"SOLIDWORKS\" matches \"SolidWorks\", \"CAL FIRE\" matches \"Cal Fire\"), a trailing \"#\" asking for a level after the phrase (\"Fire Prevention #\" matches \"Fire Prevention 1A\", never \"Fire Prevention Technology\"); and `acronyms`, the issuer's short tags, matched only as written (POST never matches \"Post Production\"). A reference title that several issuers carry names none of them unless the freehand text carries that issuer's acronym (\"SFT Fire Instructor 1\"). NFPA's and Pro Board's bare Fire Inspector, Fire Officer and Firefighter titles stay out on purpose (the S648 conductor, 2026-11-13): several issuers share the bare title, so its card goes to a person.",
+ "_about": "Each industry issuer's tags: the words that, standing as whole tokens in a title, say the title is that issuer's (kb/_build_exhibits_review.py issuer_named). Derived once on 2026-11-13 (S648) from every issuer in kb/credentials.json and kb/credential_review_overlay.json: a parenthetical that is one token (ASE, NREMT), and an all-capitals word outside parentheses (IPC); then written down and corrected by hand: generic ones dropped (ROP, HS, DUI, GIS, 'varies'), split ones joined (CAL-OSHA, EC-Council, H&R Block), and brands that sit outside the issuer's short tag added (CAL FIRE, Cal OES, UC ANR, Disney, LEED, Esri, Haas, Unity, LPIC, CLEP, DSST), and, after the review of #3241, each issuer's own credential abbreviations and track names where its real credentials carry no other mark of it (PMI's PfMP and PgMP, Python Institute's PCAP, the Dental Boards' RDA and RDH, NBCOT's COTA, EMSA's EMT and EMR, SFT's certification tracks such as Fire Inspector and Company Officer). The S648 conductor's direction on #3241: the issuer list is finite, so its tags are data, never a pattern. An issuer missing here has no tags: its titles count as named only on the words of its name. Add an issuer when the reference gains one. Two lists per issuer: `tags`, phrases matched in any case (\"SOLIDWORKS\" matches \"SolidWorks\", \"CAL FIRE\" matches \"Cal Fire\"), a trailing \"#\" asking for a level after the phrase (\"Fire Prevention #\" matches \"Fire Prevention 1A\", never \"Fire Prevention Technology\"); and `acronyms`, the issuer's short tags, matched only as written (POST never matches \"Post Production\"). A reference title that several issuers carry names none of them unless the freehand text carries that issuer's acronym (\"SFT Fire Instructor 1\"). NFPA's and Pro Board's bare Fire Inspector, Fire Officer and Firefighter titles stay out on purpose (the S648 conductor, 2026-11-13): several issuers share the bare title, so its card goes to a person. `aliases` folds spellings of one issuer before a title is counted as shared (COBIx on #3241, 6860799161); the misspelled CVMA entry comes from kb_curation rows the MAP team saved on 2026-07-09 and stays here only until those rows are corrected. Schools, districts, county offices of education, ROPs and adult schools carry no tags: they train for a credential and never issue one, so they never make a title shared.",
  "set_by": "the S648 worker for the conductor, 2026-11-13",
  "tags": {
   "A.B. Miller High School": [],
@@ -123,6 +123,7 @@
    "Fire Investigation #"
   ],
   "California State Water Resources Control Board (SWRCB)": [],
+  "California Veterinary Medical Association (CVMA)": [],
   "California Veterinary Medical Board (CVMB)": [],
   "California Water Environment Association (CWEA)": [],
   "Canyon High School": [],
@@ -565,6 +566,9 @@
   "California State Water Resources Control Board (SWRCB)": [
    "SWRCB"
   ],
+  "California Veterinary Medical Association (CVMA)": [
+   "CVMA"
+  ],
   "California Veterinary Medical Board (CVMB)": [
    "CVMB"
   ],
@@ -583,9 +587,7 @@
   "Century High School": [],
   "Certiport": [],
   "Chaffey Joint Union High School District": [],
-  "CHAMPS High School": [
-   "CHAMPS"
-  ],
+  "CHAMPS High School": [],
   "Chef Ann Foundation": [],
   "Cisco": [
    "CCNA",
@@ -607,9 +609,7 @@
   ],
   "Corona High School": [],
   "Corona-Norco Unified School District": [],
-  "Corona-Norco Unified School District (CNUSD)": [
-   "CNUSD"
-  ],
+  "Corona-Norco Unified School District (CNUSD)": [],
   "Council for Professional Recognition": [],
   "Dassault Systèmes": [
    "CSWA"
@@ -699,9 +699,7 @@
   ],
   "H&R Block": [],
   "Haas Automation": [],
-  "Hanford Joint Union High School District (HJUHSD)": [
-   "HJUHSD"
-  ],
+  "Hanford Joint Union High School District (HJUHSD)": [],
   "Hanford West High School": [],
   "Honeywell": [],
   "Inland Counties Emergency Medical Agency (ICEMA)": [
@@ -765,9 +763,7 @@
    "LiUNA"
   ],
   "Lake Elsinore Unified School District": [],
-  "Lake Elsinore Unified School District (LEUSD)": [
-   "LEUSD"
-  ],
+  "Lake Elsinore Unified School District (LEUSD)": [],
   "Lemoore High School": [],
   "Lincoln Education Center": [],
   "Linux Professional Institute (LPI)": [
@@ -786,9 +782,7 @@
   "Microsoft": [],
   "Middle College": [],
   "Moreno Valley Unified School District": [],
-  "Moreno Valley Unified School District (MVUSD)": [
-   "MVUSD"
-  ],
+  "Moreno Valley Unified School District (MVUSD)": [],
   "Music Teachers' Association of California (MTAC)": [
    "MTAC"
   ],
@@ -850,12 +844,8 @@
   "North American Technician Excellence (NATE)": [
    "NATE"
   ],
-  "North Orange County ROP (NOCROP) — Los Alamitos HS": [
-   "NOCROP"
-  ],
-  "Nuview Union School District (NUSD)": [
-   "NUSD"
-  ],
+  "North Orange County ROP (NOCROP) — Los Alamitos HS": [],
+  "Nuview Union School District (NUSD)": [],
   "Office of the State Fire Marshall": [],
   "Oracle": [],
   "Orange High School": [],
@@ -890,13 +880,9 @@
   "Red Hat": [],
   "Rescue International": [],
   "Riverside County Office of Education": [],
-  "Riverside County Office of Education (RCOE)": [
-   "RCOE"
-  ],
+  "Riverside County Office of Education (RCOE)": [],
   "Riverside Unified School District": [],
-  "Riverside Unified School District (RUSD)": [
-   "RUSD"
-  ],
+  "Riverside Unified School District (RUSD)": [],
   "San Bernardino City Unified School District": [],
   "Santa Ana High School": [],
   "Santiago High School": [],
@@ -964,14 +950,18 @@
   ],
   "Upland High School": [],
   "Val Verde Unified School District": [],
-  "Val Verde Unified School District (VVUSD)": [
-   "VVUSD"
-  ],
+  "Val Verde Unified School District (VVUSD)": [],
   "Valley High School": [],
   "Villa Park High School": [],
   "William S. Hart Union High School District": [],
   "Wine & Spirit Education Trust (WSET)": [
    "WSET"
   ]
+ },
+ "aliases": {
+  "PayrollOrg": "American Payroll Association (PayrollOrg)",
+  "American Payroll Association (APA)": "American Payroll Association (PayrollOrg)",
+  "PayrollOrg: Fundamental Payroll Certification (FPC)": "American Payroll Association (PayrollOrg)",
+  "alifornia Veterinary Medical Association (CVMA)": "California Veterinary Medical Association (CVMA)"
  }
 }

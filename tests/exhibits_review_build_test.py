@@ -516,6 +516,35 @@ check("a bare shared title names no one; the text's own acronym picks its issuer
       and B.named_credential(["Fire Inspector 1 for company officers"], SH_IDX, SH_TAGS, SHARED) is None
       and (B.named_credential(["SFT Fire Instructor 1"], SH_IDX, SH_TAGS, SHARED) or {}).get("issuer") == SFT
       and B.named_credential(["sft Fire Instructor 1"], SH_IDX, SH_TAGS, SHARED) is None)
+# COBIx on #3241 (6860799161, 6860780079): only a credential's issuer makes a title shared (a school or trainer twin
+# does not, and two spellings of one issuer are one); the acronym that settles a shared title counts only in the
+# course's own title, and "NFPA 1041" there is a standard's number, not the issuer's mark.
+CNT_TAGS = {SFT: {"tags": ["Fire Instructor"], "acronyms": ["SFT"]}, "Fontana High School": {"tags": [], "acronyms": []},
+            "National Fire Protection Association (NFPA)": {"tags": [], "acronyms": ["NFPA"]},
+            "International Fire Service Accreditation Congress (IFSAC) / Pro Board": {"tags": [], "acronyms": ["IFSAC"]}}
+COUNTS = B.credential_issuers(CNT_TAGS, ["Some Vendor"])
+TW_CREDS = {"Fire Instructor 1": [{"issuing_agency": SFT}, {"issuing_agency": "Fontana High School"}],
+            "Fire Instructor 2": [{"issuing_agency": SFT}, {"issuing_agency": "International Fire Service Accreditation Congress (IFSAC) / Pro Board"}],
+            "Certified Payroll Professional (CPP)": [{"issuing_agency": "American Payroll Association (PayrollOrg)"}, {"issuing_agency": "PayrollOrg"}],
+            "Vendor Cert": [{"issuing_agency": "Some Vendor"}, {"issuing_agency": SFT}]}
+TW = B.shared_titles(TW_CREDS, [], COUNTS)
+check("a school twin is no second issuer; a catalog issuer is; two spellings of one issuer are one",
+      len(TW.get(B.title_key("Fire Instructor 1"), ())) == 1 and len(TW[B.title_key("Fire Instructor 2")]) == 2
+      and len(TW[B.title_key("Vendor Cert")]) == 2 and len(B.shared_titles(TW_CREDS, [])[B.title_key("Certified Payroll Professional (CPP)")]) == 1
+      and B.issuer_key("PayrollOrg", {"PayrollOrg": "American Payroll Association (PayrollOrg)"}) == B.issuer_key("American Payroll Association (APA)"))
+LIVE_COUNTS = B.credential_issuers()
+check("NREMT and EMSA both still count, so Emergency Medical Technician stays shared (EMS 20 goes to a person)",
+      B.issuer_key("National Registry of Emergency Medical Technicians (NREMT)") in LIVE_COUNTS
+      and B.issuer_key("California Emergency Medical Services Authority (EMSA)") in LIVE_COUNTS
+      and B.issuer_key("Fontana High School") not in LIVE_COUNTS and B.issuer_key("Riverside County Office of Education") not in LIVE_COUNTS)
+SH2 = B.shared_titles({"Fire Instructor 1": [{"issuing_agency": SFT}, {"issuing_agency": "National Fire Protection Association (NFPA)"}]},
+                      SH_IDX, COUNTS)
+check("the settling acronym counts only in the course's own title, and an acronym before a standard's number is no mark",
+      B.named_credential(["Fire Instructor 1", "3 units, SFT Fire Instructor 1"], SH_IDX, SH_TAGS, SH2, own=["Fire Instructor 1"]) is None
+      and (B.named_credential(["SFT Fire Instructor 1"], SH_IDX, SH_TAGS, SH2, own=["SFT Fire Instructor 1"]) or {}).get("issuer") == SFT
+      and not B._own_acronym("NFPA 1041 Fire Instructor 1", "NFPA", "Fire Instructor 1")
+      and B._own_acronym("NFPA Fire Instructor 1", "NFPA", "Fire Instructor 1")
+      and B._own_acronym("NFPA 1670 Swiftwater", "NFPA", "Swiftwater & Flood Rescue Operations (NFPA 1670)"))
 check("a name of three or four words needs a strict majority: two of four is not enough, three of four is",
       not B.issuer_named("Dental Assisting", "Dental Assisting Board of California (DBCA)", {})
       and B.issuer_named("Dental Assisting Board Exam", "Dental Assisting Board of California (DBCA)", {}))

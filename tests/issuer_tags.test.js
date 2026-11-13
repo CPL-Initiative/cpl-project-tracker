@@ -96,6 +96,14 @@ Object.keys(acr).forEach(function (a) {
   acr[a].forEach(function (t) { if (typeof t !== "string" || !/[A-Z]/.test(t)) badAcr.push("acronym with no capital: " + a + " " + t); });
 });
 check("the acronyms are a marked list per issuer, each with a capital letter", Object.keys(acr).length > 50 && !badAcr.length, badAcr);
+// Aliases fold spellings of one issuer (COBIx on #3241, 6860799161): each points at an issuer the list holds, and a
+// school, district or ROP carries no tag, so it never makes a title shared.
+const al = doc.aliases || {};
+check("every alias names an issuer the list holds, never itself",
+  Object.keys(al).length >= 1 && Object.keys(al).every(function (k) { return al[k] !== k && Object.prototype.hasOwnProperty.call(tags, al[k]); }), al);
+check("no school, district, county office or ROP carries a tag or an acronym",
+  Object.keys(tags).filter(function (k) { return /High School|School District|Office of Education|\bROP\b|Adult School/i.test(k); })
+    .every(function (k) { return !(tags[k] || []).length && !((acr[k] || []).length); }));
 check("a brand written in any case is a phrase tag, never an acronym (SOLIDWORKS, CAL FIRE)",
   (tags["Dassault Systèmes"] || []).indexOf("SOLIDWORKS") >= 0 && (acr["Dassault Systèmes"] || []).indexOf("SOLIDWORKS") < 0
   && (tags["California Department of Forestry and Fire Protection (CAL FIRE)"] || []).indexOf("CAL FIRE") >= 0);
