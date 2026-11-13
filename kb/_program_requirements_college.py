@@ -1846,6 +1846,22 @@ def el_load_failed(url: str, got: dict) -> str | None:
     return "%s: %s" % (url, got.get("access") or got.get("error") or "not loaded")
 
 
+def el_index_link_named(program_links, href: str) -> bool:
+    """Whether a step's program_links names this award link, in either of the two
+    forms one program's address takes (program/<slug> and program,<slug>, one content
+    call). Diablo Valley's area pages write both: Administration of Justice links
+    program,<slug>, while Dental Assisting, Music, Psychology, Spanish, Kinesiology and
+    Early Childhood Education link program/<slug> on the same catalog (page read
+    43363340544, S645), and a step written from the first form alone took none of
+    the second (115 programs not found, run 43353452924)."""
+    if program_links.search(href):
+        return True
+    # Case-blind like EL_PROGRAM_PATH, which admits /catalog/<c>/Program,<slug> (S646 review).
+    other = re.sub(r"(/catalog/[^/]+/program)([/,])", lambda m: m.group(1) + ("," if m.group(2) == "/" else "/"),
+                   href, count=1, flags=re.I)
+    return other != href and bool(program_links.search(other))
+
+
 def el_index_links(reader, step: dict, catalog: str, host: str, cache: dict,
                    errors: list) -> tuple[list[tuple[str, str]], dict]:
     """The (slug, separator) pairs a college's own program index reaches, each once, in
@@ -1877,7 +1893,7 @@ def el_index_links(reader, step: dict, catalog: str, host: str, cache: dict,
             u = urllib.parse.urlparse(href)
             m = EL_PROGRAM_PATH.match(u.path or "")
             if (not m or (u.hostname or "").lower() != host.lower() or m.group(1).lower() != (catalog or "").lower()
-                    or not step["program_links"].search(href)):
+                    or not el_index_link_named(step["program_links"], href)):
                 continue
             tail = u.path.rstrip("/").split("/")[-1]
             sep, slug = ("," , tail.split(",", 1)[1]) if tail.lower().startswith("program,") else ("/", tail)
