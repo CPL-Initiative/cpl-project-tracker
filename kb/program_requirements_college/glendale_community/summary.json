@@ -3,9 +3,9 @@
  "programs": 317,
  "with_closed_list": 267,
  "found": 238,
- "extracted": 241,
+ "extracted": 240,
  "errors": 0,
- "passed_machine_checks": 181,
+ "passed_machine_checks": 180,
  "failed": {
   "coverage": 4,
   "invented": 3,
@@ -14,8 +14,8 @@
   "outcomes": 0
  },
  "cost_usd_run": 13.97,
- "cost_usd_filed": 15.71,
- "cost_per_program": 0.0652,
+ "cost_usd_filed": 15.6,
+ "cost_per_program": 0.065,
  "extract_calls": 238,
  "extract_failed": [],
  "not_found": [
@@ -513,6 +513,130 @@
     },
     "pass": false
    }
+  },
+  {
+   "control_number": "24432",
+   "title": "Certificate of Secondary Education Completion",
+   "award": null,
+   "tab": "NCHSD",
+   "tab_name": "NCHSD",
+   "names": [
+    "31597"
+   ],
+   "reason": "the tab's own program data names another listed program's control number (tab_control_owner)",
+   "read_score": {
+    "measure": "hours",
+    "coverage": {
+     "placed": 16,
+     "listed": 26,
+     "share": 0.615,
+     "missing": [
+      "ABSE21",
+      "ABSE22",
+      "ABSE27",
+      "ABSE48",
+      "ABSE70",
+      "DSL11",
+      "DSL13",
+      "DSL14",
+      "DSL49",
+      "DSL53"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 21,
+     "codes": [
+      "ABSE110",
+      "ABSE111",
+      "ABSE112",
+      "ABSE113",
+      "ABSE114",
+      "ABSE115",
+      "ABSE116",
+      "ABSE117",
+      "ABSE146",
+      "ABSE147",
+      "ABSE148",
+      "ABSE149",
+      "ABSE150",
+      "ABSE18",
+      "ABSE19",
+      "ABSE28",
+      "ABSE29",
+      "ABSE35",
+      "ABSE36",
+      "ABSE37",
+      "ABSE38"
+     ],
+     "flagged": [
+      "ABSE110",
+      "ABSE111",
+      "ABSE112",
+      "ABSE113",
+      "ABSE114",
+      "ABSE115",
+      "ABSE116",
+      "ABSE117",
+      "ABSE146",
+      "ABSE147",
+      "ABSE148",
+      "ABSE149",
+      "ABSE150",
+      "ABSE18",
+      "ABSE19",
+      "ABSE28",
+      "ABSE29",
+      "ABSE35",
+      "ABSE36",
+      "ABSE37",
+      "ABSE38"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      3200.0,
+      3200.0
+     ],
+     "stated": [
+      3200.0,
+      3200.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   },
+   "read_run": "43415972509",
+   "filed": false,
+   "filed_score": null
   },
   {
    "control_number": "37070",

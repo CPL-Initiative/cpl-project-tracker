@@ -90,7 +90,7 @@ on:
         required: false
         default: ""
       sources_from:
-        description: "read: an earlier run id whose artifact (program-requirements-<run>) holds this college's filed capture. Its pages are staged in place of a capture: no page is loaded and no site is contacted. Refused unless the artifact is the filed capture's own (college, catalog year, page counts, each program's text). Extraction then runs under the $40 estimate gate and the $40 hard stop (S647)"
+        description: "read: an earlier run id whose artifact (program-requirements-<run>) holds this college's filed capture, or the capture-only read filed as its capture_preview.json (S648). Its pages are staged in place of a capture: no page is loaded and no site is contacted. Refused unless the artifact is the filed capture's own (college, catalog year, page counts, each program's text). Extraction then runs under the $40 estimate gate and the $40 hard stop (S647)"
         required: false
         default: ""
       display_college:

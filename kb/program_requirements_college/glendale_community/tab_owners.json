@@ -1,0 +1,15 @@
+{
+  "_readme": "The control number each Coursedog tab's own program data names (customFields.eL_programControlNumber), as the free page read 43423479582 (job 131879425520, 2026-11-13, no model call) printed it. The capture of run 43384599013 predates the reader's own reading of that data, so refile-kept --tab-owners reads this account to hold a filed read from a tab another listed program owns (tab_control_owner, wrong_tabs; S648). The excerpts of CIS-C and CIS-AS the read printed did not reach the field, so only NCHSD is named.",
+  "college": "Glendale Community College",
+  "run": "43423479582",
+  "tabs": {
+    "NCHSD": {
+      "control_number": "31597",
+      "field": "customFields.eL_programControlNumber",
+      "data_call": "https://app.coursedog.com/api/v1/cm/glendale_peoplesoft_direct/programs?programGroupIds=NCHSD (includeMappedDocumentItems=true)",
+      "heading": "NCHSD - High School Diploma",
+      "program_title": "High School Diploma (Cert)",
+      "read_by": "24432 (Certificate of Secondary Education Completion), capture 43384599013, record of run 43415972509 with 21 invented codes"
+    }
+  }
+}

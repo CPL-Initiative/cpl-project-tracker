@@ -4056,6 +4056,136 @@ tn_given = C.assign(tn_progs[:1], tn_pages)
 check((tn_given["37070"]["best"] or {}).get("url") == tn_pages[0]["url"],
       "with no listed program of the tab's title, the tab is read as before")
 
+# A tab whose own program data names another listed program's control number is never read into this program
+# (tab_control_owner, S648). Fixture: Glendale's NCHSD tab as the free page read 43423479582 printed it
+# (2026-11-13, job 131879425520): the heading "NCHSD - High School Diploma" matches no listed title, and the
+# program data the tab's own scripts fetched names 31597 (Adult High School Diploma). The capture of run
+# 43384599013 gave the tab to 24432 (Certificate of Secondary Education Completion) at coverage 0.615, and its
+# record passed with 21 invented codes. 24432's list is its record's (16 placed, 10 missing); 31597's list is
+# not on file here, so the tab's own required courses stand in for it.
+NCHSD_URL = GL_ROOT + "/programs/NCHSD/" + GL_SUFFIX
+NCHSD_DATA_URL = ("https://app.coursedog.com/api/v1/cm/glendale_peoplesoft_direct/programs?programGroupIds=NCHSD"
+                  "&effectiveDatesRange=2026-08-31%2C2026-08-31&doNotDisplayAllMappedRevisionsAsDependencies=true"
+                  "&formatDependents=true&includeMappedDocumentItems=true")
+NCHSD_DATA = {"NCHSD-1901-01-01": {"_id": "NCHSD-1901-01-01", "code": "NCHSD", "programGroupId": "NCHSD",
+                                   "college": "NCR - Noncredit", "status": "Active",
+                                   "customFields": {"eL_credentialId": "NCHSD",
+                                                    "eL_programTitle": "High School Diploma (Cert)",
+                                                    "eL_awardType": "High School Diploma",
+                                                    "eL_status": "Active", "eL_programControlNumber": "31597",
+                                                    "eL_programVersionStatus": "Approved"}}}
+NCHSD_COLUMNS = {"NCHSD-1901-01-01": {"_id": "NCHSD-1901-01-01", "code": "NCHSD", "name": "NCHSD",
+                                      "programGroupId": "NCHSD", "status": "Active"}}
+NCHSD_TEXT = (
+    "NCHSD - High School Diploma · Download as PDF\n"
+    "Noncredit Business Life Skills DivisionContinuing EducationNCHSD - High School Diploma\n"
+    "Overview · Completion Requirements · Program Learning Outcomes · Minimum Required Units/Hours for Major · 20 · "
+    "Maximum Required Units/Hours for Major · 160 · Major Requirements\n"
+    "High School Diploma (Total Hours 3200.0 - 3200.0) All of the following A total of 160 credits from ABSE courses "
+    "must be completed. English (40 credits) (Total Hours 800.0 - 800.0) All of the following ABSE110 ENGLISH 9A "
+    "ABSE111 ENGLISH 9B ABSE112 ENGLISH 10A ABSE113 ENGLISH 10B ABSE114 ENGLISH 11A ABSE115 ENGLISH 11B ABSE116 "
+    "ENGLISH 12A ABSE117 ENGLISH 12B World History (10 credits) All of the following ABSE40 WORLD HISTORY 1A ABSE41 "
+    "WORLD HISTORY 1B United States History (10 credits) ABSE42 US HISTORY 1A ABSE43 US HISTORY 1B American "
+    "Government (5 credits) ABSE44 AMERICAN GOVERNMENT Economics (5 credits) ABSE45 ECONOMICS Science (20 credits) "
+    "ABSE30 LIFE SCIENCE 1A ABSE31 LIFE SCIENCE 1B ABSE32 PHYSICAL SCIENCE 1A ABSE33 PHYSICAL SCIENCE 1B Mathematics "
+    "(20 credits) The following number of Credits ABSE23 ALGEBRA 1A ABSE24 ALGEBRA 1B ABSE28 Algebra 2A ABSE29 "
+    "Algebra 2B ABSE18 Integrated Mathematics 1A ABSE19 Integrated Mathematics 1B ABSE35 Integrated Mathematics 2A "
+    "ABSE36 Integrated Mathematics 2B ABSE37 Integrated Mathematics 3A ABSE38 Integrated Mathematics 3B ABSE25 "
+    "GEOMETRY 1A ABSE26 GEOMETRY 1B Health (5 credits) ABSE34 Health and Guidance Humanities (10 credits) ABSE149 ART "
+    "HISTORY 1A ABSE150 ART HISTORY 1B Electives (35 credits) ABSE146 Ethnic Studies ABSE15 Vocabulary ABSE147 WORLD "
+    "GEOGRAPHY 1A ABSE148 WORLD GEOGRAPHY 1B")
+LIST_24432 = ["ABSE15", "ABSE21", "ABSE22", "ABSE23", "ABSE24", "ABSE25", "ABSE26", "ABSE27", "ABSE30", "ABSE31",
+              "ABSE32", "ABSE33", "ABSE34", "ABSE40", "ABSE41", "ABSE42", "ABSE43", "ABSE44", "ABSE45", "ABSE48",
+              "ABSE70", "DSL11", "DSL13", "DSL14", "DSL49", "DSL53"]
+LIST_31597 = ["ABSE110", "ABSE111", "ABSE112", "ABSE113", "ABSE114", "ABSE115", "ABSE116", "ABSE117", "ABSE40",
+              "ABSE41", "ABSE42", "ABSE43", "ABSE44", "ABSE45", "ABSE30", "ABSE31", "ABSE32", "ABSE33", "ABSE34"]
+check(C.CD_PROGRAM_DATA.search(NCHSD_DATA_URL)
+      and not C.CD_PROGRAM_DATA.search("https://app.coursedog.com/api/v1/glendale_peoplesoft_direct/general/terms")
+      and C.cd_program_control_number(NCHSD_DATA, "NCHSD") == "31597"
+      and C.cd_program_control_number(NCHSD_COLUMNS, "NCHSD") is None
+      and C.cd_program_control_number(NCHSD_DATA, "CIS-C") is None
+      and C.cd_program_control_number({"a": {"code": "X", "customFields": {"eL_programControlNumber": "1234"}}}) == "01234"
+      and C.cd_program_control_number(dict(NCHSD_DATA, b={"code": "NCHSD", "customFields": {
+          "eL_programControlNumber": "24432"}}), "NCHSD") is None,
+      "a tab's program data names one control number, five digits, from its own code's rows; two names none")
+cn_got = {"url": NCHSD_URL, "title": "NCHSD Program | Glendale Community College Catalog", "body": NCHSD_TEXT,
+          "content": NCHSD_TEXT}
+cn_prog = {"code": "NCHSD", "name": "NCHSD"}
+cn_old = C.cd_page(dict(cn_got), cn_prog)                                       # the capture of run 43384599013
+cn_new = C.cd_page(dict(cn_got, control_number_named=C.cd_program_control_number(NCHSD_DATA, "NCHSD")), cn_prog)
+cn_progs = [{"control_number": "24432", "title": "Certificate of Secondary Education Completion", "award": None,
+             "status": "Active", "closed_list": [{"code": c} for c in LIST_24432]},
+            {"control_number": "31597", "title": "Adult High School Diploma", "award": "Noncredit program",
+             "status": "Active", "closed_list": [{"code": c} for c in LIST_31597]}]
+cn_cands = C.candidates(cn_progs[0], [cn_new])
+check("control_number" not in cn_old and cn_new.get("control_number") == "31597"
+      and cn_cands and round(cn_cands[0]["coverage"], 3) == 0.615 and cn_cands[0]["names_control_number"] == "31597",
+      "the tab carries the number its data names, and 24432 still covers it at 0.615: %r"
+      % [(c["coverage"], c.get("names_control_number")) for c in cn_cands])
+cn_given = C.assign(cn_progs, [cn_new])
+check(cn_given["24432"]["best"] is None and (cn_given["31597"]["best"] or {}).get("url") == NCHSD_URL,
+      "the NCHSD tab names 31597: 24432 never reads it, and 31597 does: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in cn_given.items()})
+cn_given = C.assign(cn_progs[:1], [cn_new])
+check((cn_given["24432"]["best"] or {}).get("url") == NCHSD_URL,
+      "a number no listed program holds settles nothing: the tab is read as before")
+check(C.tab_control_owner({"one_program": True, "names_control_number": "31597"}, {"24432": "", "31597": ""}) == "31597"
+      and C.tab_control_owner({"one_program": False, "names_control_number": "31597"}, {"31597": ""}) is None
+      and C.tab_control_owner({"one_program": True}, {"31597": ""}) is None,
+      "only a Coursedog tab's number decides, and only a listed one")
+
+# refile-kept holds the filed 24432 read (the S648 conductor's hold, d-keep-passing-record-no-read-s647): the
+# capture of run 43384599013 kept no program data, so the page read's account names NCHSD's owner
+# (kb/program_requirements_college/glendale_community/tab_owners.json); a capture that read the data names it in its catalog.
+with tempfile.TemporaryDirectory() as td:
+    prior, dest = os.path.join(td, "prior"), os.path.join(td, "dest")
+    for d in (os.path.join(prior, "records"), os.path.join(dest, "records")):
+        os.makedirs(d)
+    with open(os.path.join(prior, "capture.json"), "w") as fh:
+        json.dump({"catalog_year": "2025-2026", "run": "41055650373"}, fh)
+    rec_24432 = {"college": "Glendale Community College", "control_number": "24432", "source_url": NCHSD_URL,
+                 "extracted_run": "43415972509", "record": {"program": {"section_heading": "NCHSD - High School Diploma"}},
+                 "score": {"coverage": {"pass": True}, "invented": {"pass": True, "count": 21},
+                           "arithmetic": {"status": "equal"}, "pass": True}}
+    C._write(os.path.join(dest, "records", "24432.json"), rec_24432)
+    with open(os.path.join(dest, "sources.json"), "w") as fh:
+        json.dump([{"control_number": "24432", "title": "Certificate of Secondary Education Completion", "award": None},
+                   {"control_number": "31597", "title": "Adult High School Diploma", "award": "Noncredit program"}], fh)
+    cn_cap = {"college": "Glendale Community College", "catalog_year": "2026-2027", "run": "43415972509",
+              "coursedog": {"root": GL_ROOT, "catalog": [{"code": "NCHSD", "name": "NCHSD"}]},
+              "page_claimed": [{"control_number": "31597", "title": "Adult High School Diploma",
+                                "award": "Noncredit program", "pages": [NCHSD_URL]}]}
+    with open(os.path.join(dest, "capture.json"), "w") as fh:
+        json.dump(cn_cap, fh)
+    with open(os.path.join(dest, "summary.json"), "w") as fh:
+        json.dump({"extracted": 1, "passed_machine_checks": 1, "cost_usd_run": 0.11, "extract_calls": 1}, fh)
+    check(C.wrong_tabs(dest, cn_cap) == [], "without the tab's number, the NCHSD read looks like 24432's own")
+    owners_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "kb",
+                               "program_requirements_college", "glendale_community", "tab_owners.json")
+    cn_owners = C.tab_owners_file(owners_path, "Glendale Community College")
+    try:
+        C.tab_owners_file(owners_path, "Hartnell College")
+        cn_refused = False
+    except ValueError:
+        cn_refused = True
+    check(cn_owners == {"NCHSD": "31597"} and cn_refused and C.tab_owners_file(None, "x") == {},
+          "the page read's account names NCHSD's owner, for its own college only: %r" % cn_owners)
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+        cn_rc = C.refile_kept("Glendale Community College", prior, dest, {}, owners=cn_owners)
+    cn_sum = json.load(open(os.path.join(dest, "summary.json")))
+    cn_held = cn_sum.get("held_wrong_tab") or [{}]
+    check(cn_rc == 0 and os.listdir(os.path.join(dest, "records")) == []
+          and [(h["control_number"], h["tab"], h["names"], h["filed"], h["reason"]) for h in cn_held]
+          == [("24432", "NCHSD", ["31597"], False, C.TAB_OWNED_BY_ANOTHER)]
+          and cn_sum["extracted"] == 0,
+          "24432's read of 31597's tab is held, and with no earlier record it files none: %r" % cn_held)
+    # A capture that read the tab's data names the owner in its own catalog, with no page read's account.
+    C._write(os.path.join(dest, "records", "24432.json"), rec_24432)
+    cn_cap2 = dict(cn_cap, coursedog=dict(cn_cap["coursedog"], catalog=[{"code": "NCHSD", "name": "NCHSD",
+                                                                          "control_number": "31597"}]))
+    check([(w["control_number"], w["names"]) for w in C.wrong_tabs(dest, cn_cap2)] == [("24432", ["31597"])],
+          "a capture's own catalog number holds the read the same way")
+
 # A Coursedog tab's coarse net reads a run of numbers after one subject (run_net, S647). The CIS-C tab's text as
 # the free page read 43423479582 printed it (2026-11-13): Computer Information Systems' own tab, never a
 # candidate for 21305 or 37960 because the net read 7 of their 19 listed courses (it asks 7.6) while the finder
@@ -4327,6 +4457,17 @@ with tempfile.TemporaryDirectory() as td:
     rc, sout, msg = st_run("out_fp")
     check(rc == 0 and json.load(open(os.path.join(sout, "capture.json")))["staged_from"]["proof"] == "text sha256 of 1 programs",
           "matching fingerprints stage: %s" % msg)
+    # A capture-only run files capture_preview.json beside the filed capture; its artifact stages by its run
+    # (S648: Glendale's free read names the priced list, then extracts from that read's pages).
+    st_files({"fingerprints": good_fp})
+    json.dump(dict(account, run="779", fingerprints=good_fp), open(os.path.join(sdest, "capture_preview.json"), "w"))
+    rc, sout, msg = st_run("out_preview", "779")
+    check(rc == 0 and json.load(open(os.path.join(sout, "capture.json")))["staged_from"]["run"] == "779",
+          "a capture-only run's preview stages by its own run: %s" % msg)
+    rc, out, msg = st_run("out_preview_other", "780")
+    check(rc == 2 and "not run 780" in msg and not os.path.exists(out),
+          "a run neither the capture nor the preview names is refused: %s" % msg.strip())
+    os.remove(os.path.join(sdest, "capture_preview.json"))
     # The staged pages extract with no fetch: every page load and network call raises.
     import urllib.request as _ur
     saved = (P.load, _ur.urlopen, XT.call, XT.score)
