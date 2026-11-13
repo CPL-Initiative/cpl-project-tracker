@@ -163,7 +163,7 @@ S644's decisions stand as recorded in handoff 645.
 
 ## Open work, in order (from the lanes' NEXT lines)
 
-1. **Harvest NEXT (1):** #3201 (*First things* 1). Santiago Canyon's force list (29): 11856, 11858, 11860, 11874, 11909,
+1. **`program-requirements-harvest` NEXT (1):** #3201 (*First things* 1). Santiago Canyon's force list (29): 11856, 11858, 11860, 11874, 11909,
    11943, 11947, 11948, 11985, 11986, 13230, 13232, 13234, 19588, 19590, 22271, 31588, 31847, 32319, 37073, 37132,
    38157, 39807, 40639, 42990, 44326, 45579, 45606, 45737.
 2. **Harvest NEXT (2):** #3205, #3206, #3207 after COBIx's spot-checks, each on green; a later merge rebuilds its

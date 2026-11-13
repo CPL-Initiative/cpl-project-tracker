@@ -10,33 +10,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 1476,
-    "bytes": 15141216,
-    "over_budget": 6,
-    "handoff_max": 645,
+    "files": 1477,
+    "bytes": 15177433,
+    "over_budget": 8,
+    "handoff_max": 646,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59997,
+    "always_loaded_bytes": 60057,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59997,
-        "over": 0
+        "bytes": 60057,
+        "over": 1
       },
       "other": {
         "files": 152,
-        "bytes": 4662557,
+        "bytes": 4706493,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 9653,
+        "bytes": 9693,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2770675,
+        "bytes": 2745538,
         "over": 0
       },
       "kb_note": {
@@ -46,33 +46,33 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 550596,
-        "over": 5
+        "bytes": 550606,
+        "over": 6
       },
       "handoff": {
-        "files": 606,
-        "bytes": 4226400,
+        "files": 607,
+        "bytes": 4243708,
         "over": 0
       }
     },
     "by_rule": {
+      "oversized_doc": 8,
       "kb_note_dialect": 1,
-      "oversized_doc": 6,
       "vault_heavy_path": 304
     },
     "vault": {
-      "files": 108439,
-      "bytes": 18825730240,
-      "heavy_bytes": 13701254159,
+      "files": 108670,
+      "bytes": 18827879232,
+      "heavy_bytes": 13703246285,
       "heavy_share": 0.728,
       "ignore_filters": [
         "cpl-project-tracker/.claude/worktrees/agent-afe71e52346f03140/kb/receipts",
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/.claude/worktrees/agent-a30ebe6a671f31f78/kb/receipts",
         "cpl-project-tracker/.claude/worktrees/agent-ae806a4743e3ea59f/kb/receipts",
+        "cpl-project-tracker/.claude/worktrees/agent-a30ebe6a671f31f78/kb/program_requirements_college",
         "cpl-project-tracker/.claude/worktrees/agent-afe71e52346f03140/kb/program_requirements_college",
         "cpl-project-tracker/kb/program_requirements_college",
-        "cpl-project-tracker/.claude/worktrees/agent-a30ebe6a671f31f78/kb/program_requirements_college",
         "cpl-project-tracker/.claude/worktrees/agent-ae806a4743e3ea59f/kb/program_requirements_college",
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/.claude/worktrees/agent-a30ebe6a671f31f78/kb/regional_cpl_out",
@@ -375,6 +375,19 @@
   },
   "findings": [
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 60057,
+        "limit": 60000,
+        "lane": "always_loaded",
+        "over_by": 57,
+        "ratio": 1.0
+      },
+      "message": "60,057 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -454,6 +467,19 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
+        "bytes": 20008,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 8,
+        "ratio": 1.0
+      },
+      "message": "20,008 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/program-requirements-harvest.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
         "bytes": 20474,
         "limit": 20000,
         "lane": "roadmap_lane",
@@ -478,20 +504,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2227609276,
+        "bytes": 2227622386,
         "kind": "dir"
       },
-      "message": "directory totals 2,227,609,276 B inside the vault"
+      "message": "directory totals 2,227,622,386 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": ".claude/worktrees/agent-a30ebe6a671f31f78/kb/receipts",
       "detail": {
-        "bytes": 2227609276,
+        "bytes": 2227616938,
         "kind": "dir"
       },
-      "message": "directory totals 2,227,609,276 B inside the vault"
+      "message": "directory totals 2,227,616,938 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -502,6 +528,16 @@
         "kind": "dir"
       },
       "message": "directory totals 2,227,609,276 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": ".claude/worktrees/agent-a30ebe6a671f31f78/kb/program_requirements_college",
+      "detail": {
+        "bytes": 149574599,
+        "kind": "dir"
+      },
+      "message": "directory totals 149,574,599 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -517,16 +553,6 @@
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
-      "detail": {
-        "bytes": 147612570,
-        "kind": "dir"
-      },
-      "message": "directory totals 147,612,570 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": ".claude/worktrees/agent-a30ebe6a671f31f78/kb/program_requirements_college",
       "detail": {
         "bytes": 147612570,
         "kind": "dir"
@@ -908,10 +934,10 @@
       "fixable": false,
       "path": ".claude/worktrees/agent-a30ebe6a671f31f78/tests",
       "detail": {
-        "bytes": 11926196,
+        "bytes": 11935521,
         "kind": "dir"
       },
-      "message": "directory totals 11,926,196 B inside the vault"
+      "message": "directory totals 11,935,521 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
