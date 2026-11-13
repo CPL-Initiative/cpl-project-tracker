@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T15:10:41Z",
+ "written_at": "2026-11-13T15:42:01Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -13,7 +13,7 @@
  "rule": {
   "basis": "committed files only: the programs each college's capture listed (the gap census's committed universe)",
   "passing": "coverage and invented true, arithmetic equal or unstated (the Program Requirements tab's own test)",
-  "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest rule); TBA until the three parts are read per college",
+  "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest rule), from the live counts (key overall, basis live); unread parts count as zero",
   "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = 5 or more checked with one differing, or 5 agree beside an unreachable page; limited = machine checks only, fewer than 5 checked whatever they found (a cross-college check), or 2 or more differ (display held). An unreachable page is not a checked record; the newest receipt by checked_at counts, and on a tie the receipt with the later source comment (kb/spot_checks/README.md)",
   "age_days": {
    "fresh": 7,
@@ -131,9 +131,9 @@
   "levers": "internal"
  },
  "tba": {
-  "overall": "The overall bar averages catalog source, program requirements and outcomes (SLOs and PLOs averaged). Catalog source, SLOs and PLOs per college are live tables, read in a later slice.",
-  "teachout_approved": "Teachout and Approved programs are counted apart from Active in the live COCI table, which this slice does not read.",
-  "apis": "The API connection checklist (#3220) is not a committed file yet.",
+  "overall": "The overall bar averages catalog source, program requirements and outcomes (SLOs and PLOs averaged), from live counts per college. It waits on the first live read of the census workflow.",
+  "teachout_approved": "Teachout and Approved programs are counted apart from Active in the live COCI table; the counts wait on the first live read of the census workflow.",
+  "apis": "The checklist is filed in the data dictionary; this tile shows it in the next slice of the page.",
   "jst": "The JST funnel waits on an authorized-student feed from CCCStart; counts only, when it exists.",
   "plo": "Program outcomes are filed with each committed program record (record.program.outcomes in kb/program_requirements_college/<slug>/records/), not yet read per college here.",
   "catalog_registry": "The catalog link, curriculum view and program map checks are rows in the live program source registry, which this file does not carry.",
@@ -6309,5 +6309,644 @@
     "reader_page_search": 1
    }
   }
- ]
+ ],
+ "live": {
+  "basis": "live",
+  "state": "not read yet",
+  "read_at": null,
+  "run_id": null,
+  "source": "kb/_commons_data_live.py in harvest-gap-census.yml, the service key",
+  "statewide": {},
+  "unmatched": [],
+  "colleges": {},
+  "last_attempt": null,
+  "flag": "internal"
+ },
+ "overall": {
+  "basis": "live",
+  "state": "not read yet",
+  "read_at": null,
+  "rule": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest rule), from the live counts (key overall, basis live); unread parts count as zero",
+  "flag": "shareable",
+  "statewide": {
+   "mean": null,
+   "colleges": 0
+  },
+  "colleges": {}
+ },
+ "dictionary": {
+  "source": "docs/reference/data_dictionary.md",
+  "flag": "internal",
+  "errors": [],
+  "datasets": [
+   {
+    "name": "Program requirements",
+    "group": "Harvested",
+    "stage": "Connected",
+    "owner": "The college (catalog owner: curriculum office). COBI holds a read copy; COCI (CCCCO) is the program list of record.",
+    "procedure_today": "A catalog reader per platform (CourseLeaf, Acalog, PDF and others) in GitHub Actions; filed to `kb/program_requirements_college/<slug>/`, loaded to `program_requirement_records`. The live counts per college (Active, Teachout and Approved apart) come from `kb/_commons_data_live.py`, run by the `live-counts` job of `harvest-gap-census.yml` on main alone, in the `live-counts` GitHub environment that holds the service key (restricted to main; Sam, 2026-11-13, on COBIx's recommendation); it hands the census job one artifact of counts.",
+    "planned_improvement": "One matrix run per wave with per-college receipts; v2 automatic reread after verify; spot-check 5 records per college; platform readers before PDF extraction.",
+    "link": "docs/reference/data_dictionary.md#program-requirements",
+    "evidence": [
+     "chatbox/supabase_program_requirement_records.sql",
+     ".github/workflows/program-requirements-wave.yml",
+     "kb/program_requirements_college/",
+     "kb/spot_checks/",
+     "docs/reference/blocked_sources.md"
+    ],
+    "evidence_cited": [],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 0
+   },
+   {
+    "name": "Course SLOs",
+    "group": "Harvested",
+    "stage": "Scheduled",
+    "owner": "The college (SLO coordinator, curriculum office). Systems: eLumen, CurriQunet/Meta, Coursedog and others.",
+    "procedure_today": "The course-outline reader writes `kb/course_outcomes/<slug>/read_<run>_pNofM.json`, and `course_outcomes_load()` loads it (insert-only, service role).",
+    "planned_improvement": "Parser fixes for the parser colleges; feed derived descriptions (#3219); spot-check outcomes against the outline.",
+    "link": "docs/reference/data_dictionary.md#course-slos",
+    "evidence": [
+     "chatbox/supabase_course_outcomes.sql",
+     "kb/migrations/2026-11-05_course_outcomes_kind.sql",
+     "kb/_course_outcomes_load.py",
+     ".github/workflows/course-outcomes-read.yml",
+     ".github/workflows/course-outcomes-load.yml",
+     "scripts/next_slo_colleges.py",
+     "kb/course_outcomes/queue.json"
+    ],
+    "evidence_cited": [],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 0
+   },
+   {
+    "name": "Program PLOs",
+    "group": "Harvested",
+    "stage": "Connected",
+    "owner": "The college (curriculum office).",
+    "procedure_today": "The same catalog reader as program requirements; the outcomes sit inside the record.",
+    "planned_improvement": "A separate PLO completeness check; spot-check with the program record.",
+    "link": "docs/reference/data_dictionary.md#program-plos",
+    "evidence": [
+     "chatbox/supabase_program_requirement_records.sql",
+     "kb/program_requirements_college/"
+    ],
+    "evidence_cited": [],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 0
+   },
+   {
+    "name": "Course objectives",
+    "group": "Harvested",
+    "stage": "Connected",
+    "owner": "The college (curriculum office).",
+    "procedure_today": "The course-outline reader; `kb/_course_outcomes_load.py` adds them with kind `objective`.",
+    "planned_improvement": "Read objectives in the same pass as SLOs; per-college parser status in `queue.json`.",
+    "link": "docs/reference/data_dictionary.md#course-objectives",
+    "evidence": [
+     "kb/_course_outcomes_load.py",
+     "kb/migrations/2026-11-05_course_outcomes_kind.sql"
+    ],
+    "evidence_cited": [],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 0
+   },
+   {
+    "name": "Course descriptions",
+    "group": "Connected",
+    "stage": "Connected",
+    "owner": "CCCCO (COCI, the Chancellor's Office Curriculum Inventory); each college's curriculum office enters the content. A vendor operates COCI for the CO (*to confirm*).",
+    "procedure_today": "The COCI course list export saved to `kb/reference/coci_course_list.xlsx`; WestEd holds the current COCI (the partner exchange). The snapshot's date is May 21, 2026, from the committed export itself (its sheet is named \"20260521 Course List from MAP C\", and the file was created and saved that day). The register's WestEd entry calls our COCI copy July's, which may be another copy; the conflict stays open (*to confirm*).",
+    "planned_improvement": "A scheduled COCI pull (API *to confirm*); dedupe double-listed institutions; type untyped rows from MIS; derived descriptions with provenance (#3219).",
+    "link": "docs/reference/data_dictionary.md#course-descriptions",
+    "evidence": [
+     "kb/reference/coci_course_list.xlsx",
+     "docs/reference/data_sources.md"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md"
+    ],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 0
+   },
+   {
+    "name": "CPL / MAP",
+    "group": "Connected",
+    "stage": "Scheduled",
+    "owner": "MAP (RCCD / InfoTech), the system of record for CPL; colleges enter exhibits.",
+    "procedure_today": "The daily build fetches the MAP CustomReport with the MAP API key (`scripts/daily_build.sh`, run by `daily-dashboard.yml`); `chatbox/sync_chatbox_exhibits.py` stages it in `stg_chatbox_exhibits`, and `chatbox_exhibits_promote()` replaces `chatbox_exhibits` in one transaction.",
+    "planned_improvement": "Define the CPL completeness denominator (Sam); match exhibits to COBI courses on every target course.",
+    "link": "docs/reference/data_dictionary.md#cpl--map",
+    "evidence": [
+     "scripts/daily_build.sh",
+     ".github/workflows/daily-dashboard.yml",
+     "chatbox/sync_chatbox_exhibits.py",
+     "kb/migrations/2026-11-12_chatbox_exhibits_refresh.sql",
+     "funding/_build_funding_performance.py::it carries pseudonymous per-student rows",
+     "kb/_sync_map_custom_reports.py::StudentMAPID",
+     "docs/kb-notes/adr-funding-priority-metrics-privacy.md",
+     "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md::reviewer-gated table"
+    ],
+    "evidence_cited": [],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 0
+   },
+   {
+    "name": "Catalog source",
+    "group": "Harvested",
+    "stage": "Scheduled",
+    "owner": "COBI (the registry), describing college-owned sites.",
+    "procedure_today": "The census workflow writes `program_source_registry` through its definer function; the live export reads whether a catalog link, a curriculum view and a sequence source are held, as counts.",
+    "planned_improvement": "Flag changed catalog years automatically. The draft's \"census on a schedule\" is already true: the census runs weekly.",
+    "link": "docs/reference/data_dictionary.md#catalog-source",
+    "evidence": [
+     "kb/supabase_program_source_registry.sql",
+     "kb/_program_source_census.py",
+     ".github/workflows/program-source-census.yml::cron: '29 10 * * 0'",
+     "kb/harvest_scouting/"
+    ],
+    "evidence_cited": [],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 0
+   },
+   {
+    "name": "Program Pathways Mapper (PPM)",
+    "group": "Harvested",
+    "stage": "Assessed",
+    "owner": "The Foundation for California Community Colleges (host) with Concentric Sky (vendor); each college curates its maps.",
+    "procedure_today": "Read from the colleges' own map pages; mapper hosts answer 403 to automated reading (lesson 33).",
+    "planned_improvement": "Ask the Foundation and Concentric Sky for an export or read access (the October 17 note, not recorded as sent); or receive maps through Common Cloud.",
+    "link": "docs/reference/data_dictionary.md#program-pathways-mapper-ppm",
+    "evidence": [
+     "kb/program_requirements_pilot/sequences/",
+     "kb/college_reads/",
+     "docs/program_requirements_harvest_lessons_archive.md::lesson 33",
+     "docs/reference/data_sources.md::### PPM, the Program Pathways Mapper"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### PPM, the Program Pathways Mapper"
+    ],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 1
+   },
+   {
+    "name": "COMIS / MIS data",
+    "group": "Connected",
+    "stage": "Connected",
+    "owner": "The CCCCO Management Information Systems (MIS) unit; districts submit through COMIS.",
+    "procedure_today": "The CB file supplied to the team (`kb/reference/cb_course_basic_fall2025.csv`); Appendix A codes from the MIS Data Element Dictionary (Sam, 2026-08-08; `kb/reference/mis_district_college_codes.json`). Public aggregates: the MIS Data Mart (datamart.cccco.edu).",
+    "planned_improvement": "A scheduled termly CB pull; add XB sections for \"offered now\"; Common Cloud's real-time feed could replace the lag (the MIS and 320 go/no-go at the end of FY 2026-27, *(COBIx, 2026-11-13; not verified in the repo)*).",
+    "link": "docs/reference/data_dictionary.md#comis--mis-data",
+    "evidence": [
+     "kb/reference/cb_course_basic_fall2025.csv",
+     "kb/reference/mis_district_college_codes.json",
+     "docs/reference/data_sources.md::### MIS"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### MIS"
+    ],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 2
+   },
+   {
+    "name": "COE labor market data",
+    "group": "Connected",
+    "stage": "Connected",
+    "owner": "The Centers of Excellence for Labor Market Research (COE, coeccc.net), funded by the CCCCO; the underlying data comes from Lightcast, BLS and EDD, and CO MIS supply.",
+    "procedure_today": "The COE \"Lookup: Occupational Demand\" export, supplied by the team, in `kb/reference/coe_occupation_demand_2024_2029.json`; `kb/_build_regional_cpl_opportunity.py` writes `kb/regional_cpl_out/2026-09-30-*/crosswalk.json`.",
+    "planned_improvement": "Refresh to 2025-2030; add COE supply by TOP; use COE's TOP-CIP-SOC crosswalk; per-college matches reviewed by a person.",
+    "link": "docs/reference/data_dictionary.md#coe-labor-market-data",
+    "evidence": [
+     "kb/reference/coe_occupation_demand_2024_2029.json",
+     "kb/_build_regional_cpl_opportunity.py",
+     "kb/regional_cpl_out/",
+     "kb/reference/swp_region_roster.json"
+    ],
+    "evidence_cited": [],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 1
+   },
+   {
+    "name": "ASSIST articulation",
+    "group": "Planned",
+    "stage": "Assessed",
+    "owner": "ASSIST (intersegmental; governed by EMOC and TAC, hosted with the UC Office of the President, *to confirm*). Articulation officers enter agreements.",
+    "procedure_today": "Not yet. Three committed program records quote assist.org text (the draft counted 7 records, likely in the live table); the C-ID approvals (28,070, `kb/reference/cid_articulations.json`) are a related but different source.",
+    "planned_improvement": "Request an institutional key through a sponsoring college or the CO; start with transferability extracts; read a sample to measure the second-signal yield.",
+    "link": "docs/reference/data_dictionary.md#assist-articulation",
+    "evidence": [
+     "kb/reference/cid_articulations.json",
+     "docs/reference/data_sources.md::### ASSIST"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### ASSIST"
+    ],
+    "repo_verifiable": true,
+    "evidence_missing": [],
+    "unverified_claims": 1
+   },
+   {
+    "name": "Common Cloud Data Platform",
+    "group": "Planned",
+    "stage": "Assessed",
+    "owner": "The CCCCO AI Strategy and Digital Transformation Division; build partners Ellucian and Invoke Learning; districts supply data.",
+    "procedure_today": "Not yet. 23 colleges onboarded (the CCCCO Common Cloud legislative report under AB 102, January 28, 2026); the report does not list which *(COBIx, 2026-11-13; not verified in the repo)*.",
+    "planned_improvement": "Ask the division whether COBI or MAP can be an integration under Deliverable 4 (articulation and CPL data are named success measures); follow the Amicus Consilii synthesis.",
+    "link": "docs/reference/data_dictionary.md#common-cloud-data-platform",
+    "evidence": [
+     "docs/reference/data_sources.md::### Common Cloud Data Platform"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Common Cloud Data Platform"
+    ],
+    "repo_verifiable": false,
+    "evidence_missing": [],
+    "unverified_claims": 1
+   },
+   {
+    "name": "CCCStart (formerly CCCApply): student ID and info layer",
+    "group": "Planned",
+    "stage": "Found",
+    "owner": "CCCCO (the Reimagine Apply initiative); operated by the CCC Technology Center (steward *to confirm*). Students own their application data; each college is the FERPA custodian of its student records.",
+    "procedure_today": "Not yet. Today's student-ID paths into MAP: JST parsing, Credit for Being You import, manual entry by college staff, batch upload. The API would remove re-keying, JST parse errors, duplicate or inconsistent MAP Student IDs, and batch lag.",
+    "planned_improvement": "Ask the CO and the Technology Center for a CCCStart API or event feed for MAP (ID match, the military and JST opt-in); confirm the steward; get the CCCStart data dictionary; record each college's cutover date.",
+    "link": "docs/reference/data_dictionary.md#cccstart-formerly-cccapply-student-id-and-info-layer",
+    "evidence": [
+     "docs/reference/data_sources.md::### CCCStart"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### CCCStart"
+    ],
+    "repo_verifiable": false,
+    "evidence_missing": [],
+    "unverified_claims": 2
+   },
+   {
+    "name": "JST authorizations",
+    "group": "Planned",
+    "stage": "Asked",
+    "owner": "The field: CCCCO (CCCApply and CCCStart, operated by the CCC Technology Center; CCCStart steward *to confirm*). The transcript: the U.S. Department of Defense JST office (jst.doded.mil). The records: the college (FERPA custodian); CPL decisions in MAP.",
+    "procedure_today": "By hand: staff must know the field exists, run a CCCApply Report Center report (or query the SIS staging table) for opt-in = T, request each JST through the JST site (institutional request mechanics *to confirm*), wait for the transcript; then an evaluator reviews it for ACE recommendations and faculty decide CPL in MAP. Many colleges never pull the list. In June 2026 the CPL Initiative asked RAD for the opted-in students; the request now waits on the CO General Counsel's procedural OK (the register's JST entry).",
+    "planned_improvement": "The top ask: an authorized-student feed per college from CCCStart, then a system-level JST request and receipt path into MAP per college, then an evaluator queue; publish a one-page \"where to find your list\" guide for colleges; add CCCStart's field here once it is published.",
+    "link": "docs/reference/data_dictionary.md#jst-authorizations",
+    "evidence": [
+     "docs/reference/data_sources.md::### Joint Services Transcripts through jst.mil"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Joint Services Transcripts through jst.mil"
+    ],
+    "repo_verifiable": false,
+    "evidence_missing": [],
+    "unverified_claims": 4
+   },
+   {
+    "name": "Ellucian Insights Data Lake (institution)",
+    "group": "Planned",
+    "stage": "Found",
+    "owner": "The district (data owner); built by Ellucian for the Common Cloud (the CCCCO AI Strategy and Digital Transformation Division). *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*",
+    "procedure_today": "Not yet.",
+    "planned_improvement": "Ask whether a course, section and program view (offered now, enrollment counts, DegreeWorks program requirement rules) can be shared to COBI per district.",
+    "link": "docs/reference/data_dictionary.md#ellucian-insights-data-lake-institution",
+    "evidence": [
+     "docs/reference/data_sources.md::### Common Cloud: the Ellucian Insights lake"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Common Cloud: the Ellucian Insights lake"
+    ],
+    "repo_verifiable": false,
+    "evidence_missing": [],
+    "unverified_claims": 3
+   },
+   {
+    "name": "Ellucian Aggregated Insights Data Lake",
+    "group": "Planned",
+    "stage": "Found",
+    "owner": "CCCCO (Common Cloud); built by Ellucian. *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*",
+    "procedure_today": "Not yet.",
+    "planned_improvement": "Prefer the unified lake for statewide reads; use this one only if the unified lake lacks Ellucian-track fields.",
+    "link": "docs/reference/data_dictionary.md#ellucian-aggregated-insights-data-lake",
+    "evidence": [
+     "docs/reference/data_sources.md::### Common Cloud: the Ellucian Aggregated Insights lake"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Common Cloud: the Ellucian Aggregated Insights lake"
+    ],
+    "repo_verifiable": false,
+    "evidence_missing": [],
+    "unverified_claims": 2
+   },
+   {
+    "name": "Unified Invoke Data Lake (statewide)",
+    "group": "Planned",
+    "stage": "Found",
+    "owner": "The CCCCO AI Strategy and Digital Transformation Division; built by Invoke Learning. *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*",
+    "procedure_today": "Not yet. The Chancellor's Dashboard is complete for the initial cohort (23 colleges onboarded) *(COBIx, 2026-11-13; not verified in the repo)*.",
+    "planned_improvement": "Propose COBI's program requirements, course descriptions, CPL exhibits and PPM maps as an inbound integration; take program-level enrollment back for the completion view.",
+    "link": "docs/reference/data_dictionary.md#unified-invoke-data-lake-statewide",
+    "evidence": [
+     "docs/reference/data_sources.md::### Common Cloud: the Unified Invoke lake"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Common Cloud: the Unified Invoke lake"
+    ],
+    "repo_verifiable": false,
+    "evidence_missing": [],
+    "unverified_claims": 3
+   },
+   {
+    "name": "InvokeClarity Data Lake (institution)",
+    "group": "Planned",
+    "stage": "Found",
+    "owner": "The district (data owner); built by Invoke Learning for the Common Cloud. *(COBIx, 2026-11-13, from the CCCCO report; not verified in the repo)*",
+    "procedure_today": "Not yet.",
+    "planned_improvement": "Pilot with LACCD (PeopleSoft, #3198) for sections offered now and program enrollment.",
+    "link": "docs/reference/data_dictionary.md#invokeclarity-data-lake-institution",
+    "evidence": [
+     "docs/reference/data_sources.md::### Common Cloud: the InvokeClarity lake"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Common Cloud: the InvokeClarity lake"
+    ],
+    "repo_verifiable": false,
+    "evidence_missing": [],
+    "unverified_claims": 2
+   },
+   {
+    "name": "CVC offerings",
+    "group": "Planned",
+    "stage": "Assessed",
+    "owner": "The California Virtual Campus (Foothill-De Anza CCD, *to confirm*).",
+    "procedure_today": "Not yet; parked (#3217).",
+    "planned_improvement": "Sam raises a feed with CVC leadership.",
+    "link": "docs/reference/data_dictionary.md#cvc-offerings",
+    "evidence": [
+     "docs/reference/data_sources.md::### CVC, the California Virtual Campus"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### CVC, the California Virtual Campus"
+    ],
+    "repo_verifiable": false,
+    "evidence_missing": [],
+    "unverified_claims": 1
+   }
+  ]
+ },
+ "apis": {
+  "source": "docs/reference/data_dictionary.md#api-connection-checklist",
+  "flag": "internal",
+  "connected": 1,
+  "total": 15,
+  "by_status": {
+   "connected": 1,
+   "planned": 12,
+   "unverified": 2
+  },
+  "rows": [
+   {
+    "api": "MAP CustomReport API",
+    "holder": "MAP (RCCD / InfoTech)",
+    "needed": "yes",
+    "status": "connected",
+    "claimed": "connected",
+    "priority": false,
+    "evidence": [
+     "scripts/daily_build.sh::Fetch CustomReport from MAP API",
+     ".github/workflows/daily-dashboard.yml",
+     "chatbox/sync_chatbox_exhibits.py"
+    ],
+    "evidence_cited": [],
+    "evidence_missing": [],
+    "note": "The daily pull with the MAP API key; feeds `chatbox_exhibits` (exhibit rows only) nightly. The pull also carries pseudonymous per-student rows, kept on the runner for the run alone and reduced to per-college counts before anything is committed or shown (`adr-funding-priority-metrics-privacy`, `adr-student-detail-aggregate-disclosure-control`)."
+   },
+   {
+    "api": "JST authorization feed and the JST request and receipt path",
+    "holder": "CCCCO and the CCC Technology Center (feed); the DoD JST office (transcripts)",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": true,
+    "evidence": [
+     "docs/reference/data_sources.md::### Joint Services Transcripts through jst.mil"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Joint Services Transcripts through jst.mil"
+    ],
+    "evidence_missing": [],
+    "note": "With CCCStart: authorized students per college (`military_jst_optin` = T), JSTs requested and received, loaded to MAP. Waits on the CO General Counsel."
+   },
+   {
+    "api": "CCCStart API: student ID and info layer (for MAP)",
+    "holder": "CCCCO Reimagine Apply; the CCC Technology Center operates (steward to confirm)",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": true,
+    "evidence": [
+     "docs/reference/data_sources.md::### CCCStart"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### CCCStart"
+    ],
+    "evidence_missing": [],
+    "note": "Replaces JST parsing, Credit for Being You import, manual entry and batch upload; FERPA, a data-sharing agreement, consent and least-privilege fields; lands in MAP, never COBI."
+   },
+   {
+    "api": "COCI course and program export",
+    "holder": "CCCCO (COCI)",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [
+     "kb/reference/coci_course_list.xlsx",
+     "docs/reference/data_sources.md::### WestEd"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### WestEd"
+    ],
+    "evidence_missing": [],
+    "note": "Today a hand-saved snapshot; WestEd holds the current copy."
+   },
+   {
+    "api": "COMIS / MIS course and section files (CB, XB)",
+    "holder": "CCCCO MIS unit",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [
+     "kb/reference/cb_course_basic_fall2025.csv",
+     "docs/reference/data_sources.md::### MIS"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### MIS"
+    ],
+    "evidence_missing": [],
+    "note": "Today one Fall 2025 CB file; course level only."
+   },
+   {
+    "api": "Common Cloud: Unified Invoke Data Lake",
+    "holder": "CCCCO AI Strategy and Digital Transformation; Invoke Learning",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [
+     "docs/reference/data_sources.md::### Common Cloud: the Unified Invoke lake"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Common Cloud: the Unified Invoke lake"
+    ],
+    "evidence_missing": [],
+    "note": "Documented APIs are a Deliverable 1 output through FY 2027-28."
+   },
+   {
+    "api": "Common Cloud: Ellucian Insights lake (district)",
+    "holder": "Districts; Ellucian",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [
+     "docs/reference/data_sources.md::### Common Cloud: the Ellucian Insights lake"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Common Cloud: the Ellucian Insights lake"
+    ],
+    "evidence_missing": [],
+    "note": "Banner, Colleague and DegreeWorks districts."
+   },
+   {
+    "api": "Common Cloud: Ellucian Aggregated Insights lake",
+    "holder": "CCCCO; Ellucian",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [
+     "docs/reference/data_sources.md::### Common Cloud: the Ellucian Aggregated Insights lake"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Common Cloud: the Ellucian Aggregated Insights lake"
+    ],
+    "evidence_missing": [],
+    "note": "Feeds the unified lake."
+   },
+   {
+    "api": "Common Cloud: InvokeClarity lake (district)",
+    "holder": "Districts; Invoke Learning",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [
+     "docs/reference/data_sources.md::### Common Cloud: the InvokeClarity lake"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### Common Cloud: the InvokeClarity lake"
+    ],
+    "evidence_missing": [],
+    "note": "PeopleSoft districts (an LACCD pilot candidate, #3198)."
+   },
+   {
+    "api": "ASSIST API",
+    "holder": "ASSIST (intersegmental)",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [
+     "docs/reference/data_sources.md::### ASSIST"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### ASSIST"
+    ],
+    "evidence_missing": [],
+    "note": "An institutional API key is needed; not requested yet."
+   },
+   {
+    "api": "Program Pathways Mapper export or API",
+    "holder": "The Foundation for CCC; Concentric Sky",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [
+     "docs/reference/data_sources.md::### PPM, the Program Pathways Mapper"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### PPM, the Program Pathways Mapper"
+    ],
+    "evidence_missing": [],
+    "note": "Access note drafted October 17, 2026; not recorded as sent. Mapper hosts refuse automated reading."
+   },
+   {
+    "api": "CVC offerings and exchange feed",
+    "holder": "California Virtual Campus",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [
+     "docs/reference/data_sources.md::### CVC, the California Virtual Campus"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### CVC, the California Virtual Campus"
+    ],
+    "evidence_missing": [],
+    "note": "Parked (#3217)."
+   },
+   {
+    "api": "COE labor market data export",
+    "holder": "Centers of Excellence",
+    "needed": "yes",
+    "status": "planned",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [
+     "kb/reference/coe_occupation_demand_2024_2029.json",
+     "docs/reference/data_sources.md::### COE labor market data"
+    ],
+    "evidence_cited": [
+     "docs/reference/data_sources.md::### COE labor market data"
+    ],
+    "evidence_missing": [],
+    "note": "Today a hand export (2024-2029); COE now shows 2025-2030 *(COBIx, 2026-11-13; not verified in the repo)*."
+   },
+   {
+    "api": "Curriculum system APIs (eLumen, CurriQunet/Meta, Coursedog)",
+    "holder": "Colleges; vendors",
+    "needed": "yes",
+    "status": "unverified",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [],
+    "evidence_cited": [],
+    "evidence_missing": [],
+    "note": "Would replace outline page reading and sign-in walls for course outlines, SLOs and objectives. No plan is recorded in the repo yet."
+   },
+   {
+    "api": "Catalog platform APIs (CourseLeaf, Acalog, others)",
+    "holder": "Colleges; vendors",
+    "needed": "yes",
+    "status": "unverified",
+    "claimed": "planned",
+    "priority": false,
+    "evidence": [],
+    "evidence_cited": [],
+    "evidence_missing": [],
+    "note": "Today public catalog pages are read; an API helps where pages block readers or catalogs are PDFs. No plan is recorded in the repo yet."
+   }
+  ]
+ }
 }

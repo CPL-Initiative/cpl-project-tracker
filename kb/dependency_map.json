@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 921,
+  "file_datasets": 925,
   "external_services": 195,
-  "consumers": 579,
+  "consumers": 581,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -7900,6 +7900,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:docs/reference/data_dictionary.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 186
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/reference/data_sources.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 458
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:docs/reference/library_filer.md": {
    "consumers": [
     {
@@ -9858,6 +9884,19 @@
    "consumers": [
     {
      "id": "workflow:college-page-read.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_commons_data_live.py": {
+   "consumers": [
+    {
+     "id": "workflow:harvest-gap-census.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -13720,7 +13759,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 54
+     "line": 115
     }
    ],
    "served": true,
@@ -16185,7 +16224,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 55
+     "line": 116
     }
    ],
    "served": false,
@@ -19037,7 +19076,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 56
+     "line": 117
     }
    ],
    "served": false,
@@ -19050,7 +19089,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 58
+     "line": 119
     }
    ],
    "served": true,
@@ -19148,7 +19187,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 112
     }
    ],
    "served": true,
@@ -22089,7 +22128,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 310
+     "line": 390
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -22348,6 +22387,13 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    },
+    {
+     "id": "script:kb/_commons_data_live.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 492
     }
    ],
    "served": true,
@@ -23369,6 +23415,13 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    },
+    {
+     "id": "script:kb/_commons_data_live.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 492
     }
    ],
    "served": true,
@@ -23928,6 +23981,19 @@
    "main_committers": []
   },
   "file:tests/college_short_names_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/commons_data_live_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -28437,6 +28503,13 @@
      ]
     },
     {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
@@ -28467,6 +28540,13 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
     },
     {
      "id": "script:kb/_program_requirements_pilot.py",
@@ -28567,6 +28647,13 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
     },
     {
      "id": "module:program_requirements.js",
@@ -31073,6 +31160,13 @@
      ]
     },
     {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
@@ -31154,6 +31248,13 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
     },
     {
      "id": "module:program_requirements.js",
@@ -32755,6 +32856,7 @@
    "name": "Harvest gap census",
    "crons": [],
    "scripts": [
+    "kb/_commons_data_live.py",
     "kb/_harvest_gap_census.py",
     "kb/_program_requirements_heading_agreement.py",
     "kb/_build_commons_data_status.py"
@@ -32837,6 +32939,7 @@
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
     "tests/commons_data_status_build_test.py",
+    "tests/commons_data_live_test.py",
     "kb/_build_commons_status.py",
     "tests/apply_concurrency_test.py",
     "tests/docket_rulings_test.py",

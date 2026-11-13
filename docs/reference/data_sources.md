@@ -1,7 +1,7 @@
 ---
 title: "Data sources: the register of datasets that could fill a Commons gap"
 created: 2026-11-04
-updated: 2026-11-06
+updated: 2026-11-13
 tags: [reference, commons, data-sources, wishlist, procedures]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -9,6 +9,7 @@ related:
   - "[[CLAUDE]]"
   - "[[commons]]"
   - "[[ctdl-partner-exchange]]"
+  - "[[data_dictionary]]"
 ---
 
 # Data sources
@@ -35,6 +36,11 @@ doctrine's two-signals-agree gate, carried to every source).
 4. **Connect and schedule.** Build the read, put it on a schedule, and show its date in the Commons status, so a source
    that goes stale becomes an item for the team.
 
+**The dictionary beside it:** [`data_dictionary`](data_dictionary.md) keeps, for every dataset on the Commons data
+dashboard (#3215), its key elements, its owner, the procedure used today to procure or connect to it, the planned
+improvement and its stage, plus the API connection checklist. This register keeps each source's stage and its
+four-step entry; when a stage moves, change it in both.
+
 **Stages:** Found (recorded), Assessed (step 2 done), Asked (a request is out or a partner is engaged), Connected (read
 at least once), Scheduled (read on a routine). An entry states its current stage only; replace it when it moves.
 
@@ -47,9 +53,16 @@ at least once), Scheduled (read on a routine). An entry states its current stage
 | MIS | Connected, in part | Courses, Programs, CPL counts | Name the course elements a nightly read would use; the student match needs an agreement |
 | WestEd | Asked | Courses, Subjects, Programs | The partner exchange's seed, with Malone |
 | PPM, the Program Pathways Mapper | Assessed | Programs | Confirm whether the October 17 note went out |
-| ASSIST | Assessed | Courses, Programs | Read a sample of public agreements to measure the second-signal yield |
+| ASSIST | Assessed; its API needs an institutional key | Courses, Programs | Request an institutional key through a sponsoring college or the CO; read a sample of public agreements to measure the second-signal yield |
 | CVC, the California Virtual Campus | Assessed | Courses, Programs | Find who holds the exchange's course equivalencies; draft a note |
-| Common Cloud Data Platform | Assessed | Courses, Programs, CPL counts | Ask the CO's data team what it exposes and to whom; draft a note for the lead |
+| Common Cloud Data Platform | Assessed; the January 2026 report names its four lakes and its deliverables | Courses, Programs, CPL counts | Ask the AI Strategy and Digital Transformation Division whether COBI or MAP can be a Deliverable 4 integration; draft a note for the lead |
+| Common Cloud: the Ellucian Insights lake (each district) | Found | Courses, Programs | Ask for a course, section and program view per district, no student records |
+| Common Cloud: the Ellucian Aggregated Insights lake | Found | Courses, Programs | Read through the unified lake unless fields are missing |
+| Common Cloud: the Unified Invoke lake (statewide) | Found | Courses, Programs, CPL counts | Propose COBI's references as an inbound integration; take program enrollment back |
+| Common Cloud: the InvokeClarity lake (each district) | Found | Courses, Programs | A course and section view with a PeopleSoft district (LACCD, #3198) |
+| COE labor market data | Connected | Programs, Credentials, Exhibits | Refresh to COE's 2025-2030 demand; add COE supply by TOP |
+| CCCStart (formerly CCCApply), the student ID and info layer for MAP | Found | CPL counts (in MAP) | The lead asks the CO and the CCC Technology Center for an API or event feed for MAP; confirm the steward |
+| Joint Services Transcripts for students who opted in | Asked | CPL counts (in MAP), Credit Recommendations | The CO General Counsel's procedural OK; then a per-college authorized-student feed and a JST request and receipt path into MAP |
 | The Foundation's certification skills | Assessed | Skills, Outcomes, Credit Recommendations | Confirm what the Foundation holds and how it shares it; draft a note for the lead |
 | ACE, the new partnership | Found | Credit Recommendations, Exhibits | The lead shares the partnership's details |
 | WestEd's environmental scan of datasets and connections | Found | Every reference | The lead shares the scan; each dataset in it gets its own entry |
@@ -95,7 +108,9 @@ section 5); the record does not show it sent. Named by Sam, 2026-11-04.
 ### ASSIST
 Course-to-course articulation from each community college to UC and CSU. Gap: two colleges' courses that articulate
 to the same UC or CSU course are a second signal for one common course, and ASSIST supplies the CSU-transferable flag
-program requirements need. Named by Sam, 2026-11-04.
+program requirements need. Connecting takes an API key from ASSIST: institutional requestors first, public access
+expected in 2026-27, under its Terms of Use (COBIx's reading of the ASSIST API docs and data governance policy,
+2026-11-13, #3220; not verified in the repo). Named by Sam, 2026-11-04.
 
 ### CVC, the California Virtual Campus
 The statewide catalog of online courses and its course exchange between colleges. Gap: the exchange's record of which
@@ -106,6 +121,58 @@ What the exchange records is this register's reading, to confirm. Named by Sam, 
 Where college data comes together for the system. Gap: current sections and enrollments would show which courses and
 programs are in use now. Sam named it earlier as part of the scalable catalog read (catalog reading, Common Cloud and
 CVC together). Named by Sam, 2026-11-04.
+
+The CCCCO's legislative report under AB 102 (January 28, 2026), as COBIx read it on #3215 and #3220 (not verified in
+the repo): 23 colleges onboarded with data refreshed about every 5 minutes (the report does not list which); the
+Chancellor's Dashboard complete for that cohort; MIS file generation not fully delivered and the 320 report delayed;
+Deliverable 1 (the systemwide lake, documented APIs and onboarding guides) by the end of FY 2027-28, Deliverable 4
+(new integrations) and Deliverable 5 (governance and a critical data element catalog). Its success measures name
+program mapping, articulation and CPL data, and it says the Program Pathways Mapper's database is being integrated.
+Districts join through participation agreements; there is no outside access path yet. Plug-in: the four lakes below,
+each its own entry. Plan: a note for the lead to the AI Strategy and Digital Transformation Division asking whether
+COBI or MAP can be a Deliverable 4 integration, course and program level only.
+
+### Common Cloud: the Ellucian Insights lake
+Each district's lake on the Ellucian track (Banner, Colleague, DegreeWorks and third-party data), feeding Insights
+Reporting and the district dashboard; held by the district, built by Ellucian. Gap: sections offered now, enrollment
+counts and DegreeWorks program rules would show which programs are in use and how they are built. Plan: ask for a
+course, section and program view per district, never student records. Found by COBIx, 2026-11-13 (#3220), in Figure 4
+of the report, at Sam's ask (2:25 AM PT).
+
+### Common Cloud: the Ellucian Aggregated Insights lake
+The Ellucian-track districts' lakes combined, feeding the unified lake; held by the CO, built by Ellucian. Plan: read
+through the unified lake unless it lacks Ellucian-track fields. Found by COBIx, 2026-11-13 (#3220), in Figure 4.
+
+### Common Cloud: the Unified Invoke lake
+The statewide lake that combines both tracks and powers the Chancellor's Dashboard (real-time enrollment by region,
+program, demographics and services); held by the CO's AI Strategy and Digital Transformation Division, built by Invoke
+Learning. Plug-in: program-level enrollment for a completion view, and the natural inbound home for COBI's program
+requirements, course descriptions, CPL exhibits and program maps. Plan: propose that integration under Deliverable 4.
+Found by COBIx, 2026-11-13 (#3220), in Figure 4.
+
+### Common Cloud: the InvokeClarity lake
+Each district's lake on the Invoke track (Oracle PeopleSoft, third-party data, existing MIS and 320 files), feeding the
+district dashboard; held by the district, built by Invoke Learning. Plan: a course and section view with a PeopleSoft
+district, LACCD first (#3198). Found by COBIx, 2026-11-13 (#3220), in Figure 4.
+
+### COE labor market data
+The Centers of Excellence for Labor Market Research's regional occupational demand (coeccc.net, funded by the CCCCO):
+9 regions and 4,869 region-occupation rows for 2024-2029 in `kb/reference/coe_occupation_demand_2024_2029.json`,
+supplied by the team on September 16, 2026, crossed with each college's programs on September 30
+(`kb/_build_regional_cpl_opportunity.py`, `kb/regional_cpl_out/`). Gap: which CPL opportunities serve a college's local
+jobs. The crossing's matches are candidates a person has not reviewed. Plan: refresh to COE's 2025-2030 lookup, add
+COE supply by TOP, and confirm the reuse terms for any Lightcast-licensed field. Recorded here by Sky, 2026-11-13
+(S647), from #3220; the file itself was connected in September.
+
+### CCCStart (formerly CCCApply), the student ID and info layer for MAP
+The CO's new application (the Reimagine Apply initiative, operated by the CCC Technology Center, steward to confirm),
+rolling out in waves from July 2026 to June 2027 (COBIx's reading of cccco.edu and memo ISTI 26-300-02, #3220; not
+verified in the repo). Sam named it a priority API on 2026-11-13: the student ID and info layer for CPL records in MAP,
+replacing four paths (parsing the student from the JST, importing from Credit for Being You, manual entry and batch
+upload). Student-level records land in MAP under FERPA, consent, a data-sharing agreement and least-privilege fields,
+never in COBI (Sam, 2026-11-08); COBI shows connection status and counts. Plan: the lead asks the CO and the
+Technology Center for an API or event feed for MAP, the steward named, and its data dictionary. Named by Sam,
+2026-11-13, relayed by COBIx on #3220.
 
 ### The Foundation's certification skills
 The skills each certification teaches, matched to course outcomes. Gap: 39 credentials list their issuer's skills
@@ -119,6 +186,10 @@ most of MAP's credit recommendation rows (the military half, lane
 [`military-ace-cr-reference`](lanes/military-ace-cr-reference.md)). Steps 2 to 4 wait on the details he shares.
 
 ### Joint Services Transcripts through jst.mil, for students who opted in on CCCApply
+The funnel the Commons data dashboard counts per college, counts only (Sam, 2026-11-13, #3215): authorized students,
+JSTs requested, JSTs received, CPL applied. Its dictionary entry names the fields and today's procedure by hand
+([`data_dictionary`](data_dictionary.md#jst-authorizations)).
+
 Sam, 2026-11-08 (S611), background for the KB, *"I need to bring this up to the CO GC freshly as I think it's fallen off the
 table"*. CCCApply asks military-connected applicants whether they authorize their college to obtain their JST (the opt-in,
 page 164 of the Standard Application Data Dictionary; Sam reviewed the prompt's revision). In June 2026 the CPL Initiative
