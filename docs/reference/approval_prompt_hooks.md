@@ -2,7 +2,7 @@
 title: "Approval-prompt guards — why the allowlist never worked, and where the hooks must live"
 date: 2026-09-19
 session: 278 (SkyWarden)
-updated: 2026-10-05
+updated: 2026-11-13
 tags: [reference, hooks, permissions, settings, tooling]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -13,6 +13,11 @@ related:
 ---
 
 # The approval-prompt storm
+
+## 2026-11-13 (S645, SkyFinch): an SQL prompt on an allowed tool, and a refused push
+
+- Sam, in session at about 02:55Z, verbatim: *"FYI got an sql approve request you should have with for already"*. `execute_sql` was on the allow list at the session root and in the repo's settings when he saw it; the source of the prompt is not found.
+- At about 03:25Z the auto-mode permission check refused the conductor's `git push` of a `kb/migrations/.apply` change (the push that applies `kb/migrations/2026-11-13_s644_carry_basis_electives_fill_words.sql` through `supabase-migrate.yml`), with no reason given. It was not worked around: a permission-check denial is on the hold list, so the push waits for Sam's go (Open Asks Sheet 188).
 
 ## ⭐ 2026-10-05 (S332, SkyBridge): `apply_migration` joins the allow list
 

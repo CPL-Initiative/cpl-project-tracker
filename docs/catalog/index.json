@@ -16523,7 +16523,7 @@
      ],
      "title": "Approval-prompt guards \u2014 why the allowlist never worked, and where the hooks must live",
      "type": null,
-     "updated": "2026-10-05"
+     "updated": "2026-11-13"
     },
     {
      "created": "2026-11-11",
@@ -16898,8 +16898,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 606,
+   "count": 607,
    "docs": [
+    {
+     "created": "2026-11-13",
+     "governs": [],
+     "n": 646,
+     "path": "docs/session_646_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 646 handoff (from SkyFinch, S645)",
+     "type": null,
+     "updated": "2026-11-13"
+    },
     {
      "created": "2026-11-13",
      "governs": [],
@@ -27156,5 +27170,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1462
+ "total": 1463
 }

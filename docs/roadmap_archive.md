@@ -17,6 +17,9 @@ S196, and the INDEX history rotated out before 2026-09-17. [Part 7](roadmap_arch
 2026-11-03, S563) holds the rotation of 2026-08-16, the narratives of S62, S113, S146 and S147, and the INDEX
 history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-11-13)
+- 2026-11-11 (S636 SkyAntennae, Sam's session): Butte 87 to 138 of 164 and displayed on the catalog's own GE totals, the reconcile's address guard, a stale-issuer report in the credential review apply, the harvest lane under its budget (#3100); handoff 637.
+
 ## INDEX update-history entries rotated out (2026-11-12)
 - 2026-11-10 (S626b SkyUmbrella, Sam in session): the review opens itself, no scroll gate, the drawer, the landing page and the contacts in the panel (#3061, #3063, #3064, #3066, #3067); Email templates a reviewer can change (#3068); handoff 633.
 
