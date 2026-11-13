@@ -6844,8 +6844,10 @@
       '" width="200" height="37" style="display:block;border:0;width:200px;height:37px;"></p></div>';
     return { to: rev.email || "", subject: subject, text: t, html: html };
   }
+  var TEAM_BCC = "MAP@rccd.edu";
   function mailHref(m, withBody) {
-    return "mailto:" + encodeURIComponent(m.to) + "?subject=" + encodeURIComponent(m.subject) +
+    // The team's mailbox rides Bcc on every draft (asked in session, 2026-11-13), so a sent email leaves a copy there.
+    return "mailto:" + encodeURIComponent(m.to) + "?subject=" + encodeURIComponent(m.subject) + "&bcc=" + encodeURIComponent(TEAM_BCC) +
       (withBody ? "&body=" + encodeURIComponent(m.text) : "");
   }
   function openMailHref(href) {
@@ -7035,6 +7037,10 @@
         coordMissing: (ELIG.coordMissing || {})[key] || "", note: "", req: null, prios: csmPrioLines(c) };
       if (reviewer) {
         out.note = noteFor(key);
+        // Who completed each step (asked in session, 2026-11-13): the reviewer who accepted, from the review rows.
+        var revBy = optinReviewOf(key), ncBy = ncOn ? ncAttestReviewOf(key) : null;
+        out.part.by = revBy && revBy.confirmed_by ? String(revBy.confirmed_by) : "";
+        if (out.nc) out.nc.by = ncBy && ncBy.confirmed_by ? String(ncBy.confirmed_by) : "";
         var rev = optinReviewOf(key), nrev = ncOn ? ncAttestReviewOf(key) : null, nr = null;
         if (nrev) {
           nr = {};
@@ -19523,6 +19529,8 @@
     csm: { snapshot: csmSnapshot, act: csmAct, acceptMail: csmAcceptMail, focus: csmFocus, nudge: function () { openNudge(); },
       // The two emails this tab writes, for the dashboard's Email templates: the wording with nothing saved there, and
       // the saved wording handed back after a save.
+      // Read the confirmations and attestations again (the dashboard's once-a-minute check asks when something changed).
+      reload: function () { return loadEligibility(); }, teamBcc: TEAM_BCC,
       templateDefaults: function () { return { accept: plainNormalize(textPlain("accept_email")), request_follow: FOLLOWUP_EMAIL_DEFAULT }; },
       setTemplates: function (o) { CSM_TPL = { accept: (o && o.accept) || null, request_follow: (o && o.request_follow) || null }; },
       // The workspace's log (csm_log) reads and writes with the reviewer's own credential, as the notes do.
