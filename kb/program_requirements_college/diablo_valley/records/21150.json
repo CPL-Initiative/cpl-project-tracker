@@ -1,0 +1,263 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "21150",
+ "shape": "certificate",
+ "title": "Dental Assisting",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-dental-assisting-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7213,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7213,
+    "output_tokens": 1990,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1990,
+  "output_tokens_details": {
+   "thinking_tokens": 658
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06865,
+ "ms": 16863,
+ "seconds": 17.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 12,
+   "share": 0.917,
+   "missing": [
+    "DENTL120"
+   ],
+   "unexplained": [
+    "DENTL120"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "DENTL120NC"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Dental Assisting",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "act as a member of the dental health team and apply professional, ethical and legal principles while functioning in the role of the Registered Dental Assistant (RDA).",
+    "assume responsibility for prevention of disease transmission utilizing universal precautions in the work environment to protect those entrusted to their care.",
+    "show competence in skills as described in the current California Dental Practice Act. Said professional should perform with a balance of professionalism and sensitivity characteristic of genuine compassionate care.",
+    "exhibit knowledge necessary for successful completion of the California Registered Dental Assistant’s Examination and the National Certified Dental Assistant’s Examination.",
+    "apply critical thinking and self-assessment skills to enhance learning, research, patient care, professional growth, and continued competency.",
+    "integrate and apply health literacy and culturally competent communication skills to oral health care services, academic endeavors, community projects, and professional activities."
+   ],
+   "careers": [
+    "Registered Dental Assistant (RDA)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "program prerequiste",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "DENTL120NC",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "major requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "DENHY124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL171",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL173",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL176",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL182",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL183",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL184",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "DENTL120NC (Overview of Dental Assisting - Noncredit) is matched to closed-list DENTL 120; the catalog prints 0 units for it while the state file stores 0.3. It is a program prerequisite (Total 0), not part of the 36-unit major.",
+   "Course codes are recorded as printed on the page, without a space between subject and number (e.g., DENHY124 = DENHY 124, ENGLC1000 = ENGL C1000).",
+   "Major requirements sum to 36 units, matching the printed total of 36.",
+   "Catalog notes ENGL-C1000 is strongly recommended before entering the program, but it is listed as a required major course and recorded in the major block.",
+   "Career 'Registered Dental Assistant (RDA)' is taken from the program learning outcomes text (the role graduates function in); no separate careers heading is printed."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

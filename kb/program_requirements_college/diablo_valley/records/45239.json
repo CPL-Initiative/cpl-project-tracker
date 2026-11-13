@@ -1,0 +1,188 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "45239",
+ "shape": "noncredit",
+ "title": "Exploration of Dentistry",
+ "award": "Noncredit program",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-completion-exploration-of-dentistry-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6272,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6272,
+    "output_tokens": 1199,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1199,
+  "output_tokens_details": {
+   "thinking_tokens": 495
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04907,
+ "ms": 11503,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    36.0
+   ],
+   "stated": [
+    27.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Completion - Exploration of Dentistry",
+   "measure": "hours",
+   "total_units": {
+    "min": 27,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "recognize the various professions in the dental industry.",
+    "select the dental career path that aligns with their interests and professional goals.",
+    "qualify for entry into the DVC Dental Assisting or Dental Hygiene Program."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Required Course:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "DENTL110NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "plus at least one of the courses below:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "DENHY101NC",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL120NC",
+      "units": 9,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit certificate of completion counted in hours; the header 'Units: 0.0' reflects noncredit status, while the requirements table prints hours (Total 27-36).",
+   "Course codes are printed without a space (e.g., DENTL110NC); they match closed-list codes DENTL 110NC, DENHY 101NC, DENTL 120NC.",
+   "Second block reads 'plus at least one of the courses below' with 'Complete the following number of hours: 9-18'; recorded as choose_courses minimum 1 with stated 9-18.",
+   "The page names Dental Assisting and Dental Hygiene as follow-on programs and refers generally to 'career options in dentistry'; no specific careers are named, so careers is empty."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

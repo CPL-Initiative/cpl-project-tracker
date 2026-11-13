@@ -4,12 +4,37 @@
   "title": "Plant Science and Horticulture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CONST135",
+   "HORT110",
+   "HORT111",
+   "HORT112",
+   "HORT113",
+   "HORT114",
+   "HORT120",
+   "HORT121",
+   "HORT170",
+   "HORT171",
+   "HORT187",
+   "HORT295"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-plant-science-and-horticulture-fall-2026",
+   "title": "Certificate of Achievement in Plant Science and Horticulture",
+   "h1": "Certificate of Achievement in Plant Science and Horticulture",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in plant science and horticulture",
+    "section_fit": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2433
  },
  {
   "control_number": "01455",
@@ -211,72 +236,253 @@
   "title": "Electricity/Electronics Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNT103",
+   "CONST110",
+   "EET100",
+   "EET101",
+   "EET105",
+   "EET107",
+   "EET116",
+   "EET130",
+   "EET140",
+   "EET155",
+   "EET210",
+   "EET220",
+   "EET230",
+   "EET266",
+   "EET267",
+   "EET268"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-electrical-electronics-technology-fall-2023",
+   "title": "Certificate of Achievement in Electrical/Electronics Technology",
+   "h1": "Certificate of Achievement in Electrical/Electronics Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2352
  },
  {
   "control_number": "01483",
   "title": "Construction Management",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.923,
+  "codes_found": [
+   "ARCHI126",
+   "ARCHI127",
+   "ARCHI244",
+   "BUS101",
+   "COMSC101",
+   "CONST135",
+   "CONST136",
+   "CONST144",
+   "CONST244",
+   "CONST273",
+   "CONST276",
+   "PHYS110"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-construction-management-fall-2024",
+   "title": "Certificate of Achievement in Construction Management",
+   "h1": "Certificate of Achievement in Construction Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in construction management",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 1803
  },
  {
   "control_number": "01484",
   "title": "Construction & Building Inspection",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CONST114",
+   "CONST124",
+   "CONST170",
+   "CONST181",
+   "CONST182",
+   "CONST183",
+   "CONST192",
+   "CONST266",
+   "CONST267",
+   "CONST273"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-construction-and-building-inspection-fall-2025",
+   "title": "Certificate of Achievement in Construction and Building Inspection",
+   "h1": "Certificate of Achievement in Construction and Building Inspection",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in construction and building inspection",
+    "section_fit": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 1620
  },
  {
   "control_number": "01492",
   "title": "Dental Assisting",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENHY124",
+   "DENTL120",
+   "DENTL160",
+   "DENTL171",
+   "DENTL173",
+   "DENTL174",
+   "DENTL176",
+   "DENTL180",
+   "DENTL182",
+   "DENTL183",
+   "DENTL184"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-dental-assisting-fall-2026",
+   "title": "A.S. in Dental Assisting",
+   "h1": "A.S. in Dental Assisting",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in dental assisting",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3604
  },
  {
   "control_number": "01493",
   "title": "Dental Hygiene",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.902,
+  "codes_found": [
+   "CHEM108",
+   "CHEM109",
+   "COMM130",
+   "COMMC1000",
+   "DENHY101",
+   "DENHY120",
+   "DENHY121A",
+   "DENHY121B",
+   "DENHY122A",
+   "DENHY122B",
+   "DENHY123",
+   "DENHY124",
+   "DENHY125",
+   "DENHY126",
+   "DENHY127",
+   "DENHY128",
+   "DENHY129",
+   "DENHY131",
+   "DENHY133",
+   "DENHY134",
+   "DENHY135",
+   "DENHY136",
+   "DENHY219",
+   "DENHY223",
+   "DENHY225",
+   "DENHY226",
+   "DENHY230A",
+   "DENHY230B",
+   "DENHY231A",
+   "DENHY231B",
+   "DENHY290",
+   "ENGLC1000",
+   "MATH135",
+   "PSYC122",
+   "PSYCC1000",
+   "SOCIO120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-dental-hygiene-fall-2026",
+   "title": "A.S. in Dental Hygiene",
+   "h1": "A.S. in Dental Hygiene",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in dental hygiene",
+    "section_fit": 1.0
+   }
+  },
   "listed": 41,
-  "text_chars": 0
+  "text_chars": 6276
  },
  {
   "control_number": "01497",
   "title": "Early Childhood Education",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE123",
+   "ECE124",
+   "ECE128",
+   "ECE129",
+   "ECE130",
+   "ECE230",
+   "ECE231",
+   "ECE241",
+   "ECE242",
+   "ECE243",
+   "ECE249",
+   "ECE250",
+   "ECE251",
+   "ECE252",
+   "ECE253",
+   "ECE269",
+   "ECE298"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-early-childhood-education-fall-2025",
+   "title": "A.S. in Early Childhood Education",
+   "h1": "A.S. in Early Childhood Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in early childhood education",
+    "section_fit": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2960
  },
  {
   "control_number": "01503",
@@ -341,12 +547,34 @@
   "title": "Culinary Arts",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP100",
+   "HOSP110",
+   "HOSP121",
+   "HOSP161",
+   "HOSP165",
+   "HOSP166",
+   "HOSP171",
+   "HOSP181",
+   "HOSP261"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-culinary-arts-fall-2025",
+   "title": "Certificate of Achievement in Culinary Arts",
+   "h1": "Certificate of Achievement in Culinary Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in culinary arts",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1787
  },
  {
   "control_number": "07993",
@@ -403,12 +631,34 @@
   "title": "Construction Supervision & Superintendency",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS101",
+   "BUSMG120",
+   "BUSMG121",
+   "CONST114",
+   "CONST116",
+   "CONST124",
+   "CONST244",
+   "CONST273",
+   "CONST276"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-construction-and-supervision-superintendency-fall-2025",
+   "title": "Certificate of Achievement in Construction and Supervision Superintendency",
+   "h1": "Certificate of Achievement in Construction and Supervision Superintendency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in construction and supervision superintendency",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1377
  },
  {
   "control_number": "08011",
@@ -453,12 +703,34 @@
   "title": "Baking and Pastry",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP100",
+   "HOSP110",
+   "HOSP121",
+   "HOSP161",
+   "HOSP181",
+   "HOSP185",
+   "HOSP186",
+   "HOSP281",
+   "HOSP282"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-baking-and-pastry-fall-2025",
+   "title": "Certificate of Achievement in Baking and Pastry",
+   "h1": "Certificate of Achievement in Baking and Pastry",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in baking and pastry",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1678
  },
  {
   "control_number": "12139",
@@ -591,12 +863,51 @@
   "title": "Early Childhood Education: Site Supervisor",
   "award": "Certificate of Achievement requiring 60+S/90+Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE100",
+   "ECE101",
+   "ECE102",
+   "ECE103",
+   "ECE104",
+   "ECE105",
+   "ECE106",
+   "ECE110",
+   "ECE111",
+   "ECE112",
+   "ECE113",
+   "ECE114",
+   "ECE123",
+   "ECE124",
+   "ECE125",
+   "ECE128",
+   "ECE129",
+   "ECE130",
+   "ECE230",
+   "ECE231",
+   "ECE249",
+   "ECE250",
+   "ECE251",
+   "ECE252",
+   "ECE253",
+   "ECE269"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-early-childhood-education-site-supervisor-fall-2024",
+   "title": "Certificate of Achievement in Early Childhood Education - Site Supervisor",
+   "h1": "Certificate of Achievement in Early Childhood Education - Site Supervisor",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in early childhood education - site supervisor",
+    "section_fit": 1.0
+   }
+  },
   "listed": 26,
-  "text_chars": 0
+  "text_chars": 4117
  },
  {
   "control_number": "12908",
@@ -633,36 +944,125 @@
   "title": "Fitness Instruction",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.759,
+  "codes_found": [
+   "KINES100",
+   "KINES234",
+   "KINES242",
+   "KINES248",
+   "KINES250",
+   "KINES252",
+   "KINES254",
+   "KINES255",
+   "KNACT110A",
+   "KNACT110C",
+   "KNACT120",
+   "KNACT122A",
+   "KNACT124A",
+   "KNACT124B",
+   "KNACT140",
+   "KNACT146A",
+   "KNACT146B",
+   "KNACT146C",
+   "KNACT146D",
+   "KNACT148A",
+   "KNACT148B",
+   "PH230"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-fitness-instruction-fall-2026",
+   "title": "A.S. in Fitness Instruction",
+   "h1": "A.S. in Fitness Instruction",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in fitness instruction",
+    "section_fit": 1.0
+   }
+  },
   "listed": 29,
-  "text_chars": 0
+  "text_chars": 3724
  },
  {
   "control_number": "14697",
   "title": "Geographic Information Systems,Global Positioning Systems",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "COMSC101",
+   "COMSC110",
+   "COMSC120",
+   "COMSC255",
+   "ENGTC126",
+   "GEOG120",
+   "GEOG125",
+   "GEOG126",
+   "GEOG129",
+   "GEOG160",
+   "GEOG162",
+   "GEOL120"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-geographic-information-systems-global-positioning-system-fall-2026",
+   "title": "A.S. in Geographic Information Systems/Global Positioning System",
+   "h1": "A.S. in Geographic Information Systems/Global Positioning System",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in geographic information systems/global positioning system",
+    "section_fit": 0.833
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2637
  },
  {
   "control_number": "14761",
   "title": "Special Education",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM128",
+   "ECE123",
+   "ECE124",
+   "ECE125",
+   "ECE126",
+   "ECE129",
+   "ECE130",
+   "ECE269",
+   "EDUC120",
+   "EDUSP101",
+   "EDUSP102",
+   "EDUSP103",
+   "PSYC122",
+   "SIGN280",
+   "SIGN281",
+   "SIGN282"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-special-education-fall-2026",
+   "title": "A.A. in Special Education",
+   "h1": "A.A. in Special Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in special education",
+    "section_fit": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2824
  },
  {
   "control_number": "14775",
@@ -712,19 +1112,50 @@
   "title": "Sports Medicine/Athletic Training",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.818,
+  "codes_found": [
+   "CHEM107",
+   "CHEM108",
+   "CHEM109",
+   "CHEM120",
+   "KINES210",
+   "KINES230",
+   "KINES232",
+   "KINES234",
+   "KINES235",
+   "KINES236",
+   "KINES237",
+   "KINES238",
+   "KINES239",
+   "KINES242",
+   "PH230",
+   "PHYS110",
+   "PHYS120",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sports-medicine-athletic-training-fall-2026",
+   "title": "A.S. in Sports Medicine/Athletic Training",
+   "h1": "A.S. in Sports Medicine/Athletic Training",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in sports medicine/athletic training",
+    "section_fit": 1.0
+   }
+  },
   "listed": 22,
-  "text_chars": 0
+  "text_chars": 3174
  },
  {
   "control_number": "15541",
   "title": "Kinesiology: Coaching",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -736,12 +1167,31 @@
   "title": "French",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FRNCH120",
+   "FRNCH121",
+   "FRNCH220",
+   "FRNCH221",
+   "FRNCH230",
+   "FRNCH231"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-french-fall-2023",
+   "title": "Certificate of Achievement in French",
+   "h1": "Certificate of Achievement in French",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in french",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1982
  },
  {
   "control_number": "15711",
@@ -808,24 +1258,76 @@
   "title": "Spanish",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN120",
+   "SPAN121",
+   "SPAN220",
+   "SPAN221",
+   "SPAN230",
+   "SPAN231"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-spanish-fall-2025",
+   "title": "Certificate of Achievement in Spanish",
+   "h1": "Certificate of Achievement in Spanish",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in spanish",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2053
  },
  {
   "control_number": "15717",
   "title": "Music Industry Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC121",
+   "MUSX100",
+   "MUSX101",
+   "MUSX110",
+   "MUSX120",
+   "MUSX124",
+   "MUSX125",
+   "MUSX172",
+   "MUSX173",
+   "MUSX174",
+   "MUSX175",
+   "MUSX176",
+   "MUSX177",
+   "MUSX178",
+   "MUSX181",
+   "MUSX182",
+   "MUSX183",
+   "MUSX221",
+   "MUSX270",
+   "MUSX282"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-music-industry-studies-fall-2026",
+   "title": "Certificate of Achievement in Music Industry Studies",
+   "h1": "Certificate of Achievement in Music Industry Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in music industry studies",
+    "section_fit": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 2438
  },
  {
   "control_number": "15839",
@@ -867,36 +1369,135 @@
   "title": "Civil Drafting, CAD",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHI126",
+   "ARCHI135",
+   "ARCHI136",
+   "ARCHI226",
+   "CONST114",
+   "CONST116",
+   "ENGIN140",
+   "ENGTC111",
+   "ENGTC119",
+   "ENGTC126",
+   "ENGTC226",
+   "GEOG124",
+   "GEOG125",
+   "GEOG126",
+   "GEOG129",
+   "GEOG160",
+   "GEOG162",
+   "MATH121"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-civil-drafting-cad-fall-2025",
+   "title": "Certificate of Achievement in Civil Drafting, CAD",
+   "h1": "Certificate of Achievement in Civil Drafting, CAD",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in civil drafting, cad",
+    "section_fit": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 2351
  },
  {
   "control_number": "16637",
   "title": "Civil Design Drafting Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHI126",
+   "ARCHI226",
+   "CONST114",
+   "CONST116",
+   "ENGIN121",
+   "ENGIN140",
+   "ENGTC111",
+   "ENGTC119",
+   "ENGTC126",
+   "ENGTC226",
+   "GEOG124",
+   "GEOG125",
+   "GEOG126",
+   "GEOG129",
+   "GEOG160",
+   "GEOG162",
+   "MATH121",
+   "MATH191",
+   "PHYS110"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-civil-design-drafting-technology-fall-2025",
+   "title": "A.S. in Civil Design Drafting Technology",
+   "h1": "A.S. in Civil Design Drafting Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in civil design drafting technology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 3076
  },
  {
   "control_number": "16919",
   "title": "Technical Theater",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARCHI126",
+   "ART102",
+   "ART105",
+   "ART107",
+   "ART138",
+   "ARTDM149",
+   "COMM124",
+   "DRAMA111",
+   "DRAMA112",
+   "DRAMA113",
+   "DRAMA122",
+   "DRAMA130",
+   "DRAMA139",
+   "DRAMA142",
+   "DRAMA150",
+   "DRAMA170",
+   "DRAMA200",
+   "DRAMA202",
+   "DRAMA275",
+   "DRAMA299",
+   "ENGTC119",
+   "MUSX120",
+   "SOCIO122"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-technical-theater-fall-2026",
+   "title": "A.A. in Technical Theater",
+   "h1": "A.A. in Technical Theater",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in technical theater",
+    "section_fit": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 2856
  },
  {
   "control_number": "18369",
@@ -966,19 +1567,48 @@
   "title": "Electricity/Electronics Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNT103",
+   "CONST110",
+   "EET100",
+   "EET101",
+   "EET105",
+   "EET107",
+   "EET116",
+   "EET130",
+   "EET140",
+   "EET155",
+   "EET210",
+   "EET220",
+   "EET230",
+   "EET266",
+   "EET267",
+   "EET268"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-electrical-electronics-technology-fall-2023",
+   "title": "A.S. in Electrical/Electronics Technology",
+   "h1": "A.S. in Electrical/Electronics Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2834
  },
  {
   "control_number": "18846",
   "title": "Energy Systems",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -990,7 +1620,7 @@
   "title": "Energy Systems",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1038,72 +1668,220 @@
   "title": "English",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.96,
+  "codes_found": [
+   "ENGL151",
+   "ENGL152",
+   "ENGL153",
+   "ENGL154",
+   "ENGL163",
+   "ENGL164",
+   "ENGL168",
+   "ENGL170",
+   "ENGL173",
+   "ENGL175",
+   "ENGL176",
+   "ENGL177",
+   "ENGL178",
+   "ENGL180",
+   "ENGL190",
+   "ENGL222",
+   "ENGL223",
+   "ENGL224",
+   "ENGL225",
+   "ENGL253",
+   "ENGL262",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLC1002"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-english-fall-2026",
+   "title": "A.A. in English",
+   "h1": "A.A. in English",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in english",
+    "section_fit": 1.0
+   }
+  },
   "listed": 25,
-  "text_chars": 0
+  "text_chars": 4150
  },
  {
   "control_number": "18885",
   "title": "Public Health",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.7,
+  "codes_found": [
+   "BUS240",
+   "CHEM108",
+   "CHEM120",
+   "PH124",
+   "PH127",
+   "PH130",
+   "PH132",
+   "PH135",
+   "PH137",
+   "PH140",
+   "PH145",
+   "PH152",
+   "PH170",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026",
+   "title": "A.S. in Public Health for Transfer",
+   "h1": "A.S. in Public Health for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 3730
  },
  {
   "control_number": "18887",
   "title": "Humanities",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HUMAN105",
+   "HUMAN108",
+   "HUMAN110",
+   "HUMAN111",
+   "HUMAN112",
+   "HUMAN115",
+   "HUMAN116",
+   "HUMAN118",
+   "HUMAN124"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-humanities-fall-2026",
+   "title": "A.A. in Humanities",
+   "h1": "A.A. in Humanities",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in humanities",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3098
  },
  {
   "control_number": "18889",
   "title": "Meteorology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG120",
+   "GEOG121",
+   "GEOG135",
+   "GEOG140",
+   "GEOG141",
+   "GEOG162",
+   "PHYS120"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-meteorology-fall-2026",
+   "title": "A.S. in Meteorology",
+   "h1": "A.S. in Meteorology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in meteorology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2358
  },
  {
   "control_number": "18891",
   "title": "Physical Geography",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.909,
+  "codes_found": [
+   "GEOG120",
+   "GEOG121",
+   "GEOG125",
+   "GEOG135",
+   "GEOG140",
+   "GEOG141",
+   "GEOG162",
+   "GEOL120",
+   "GEOL122",
+   "GEOL125"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-physical-geography-fall-2026",
+   "title": "A.S. in Physical Geography",
+   "h1": "A.S. in Physical Geography",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in physical geography",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2831
  },
  {
   "control_number": "18898",
   "title": "Social, Cultural Geography",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR130",
+   "GEOG120",
+   "GEOG130",
+   "GEOG135",
+   "GEOG162",
+   "SOCIO131"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-social-cultural-geography-fall-2026",
+   "title": "A.A. in Social/Cultural Geography",
+   "h1": "A.A. in Social/Cultural Geography",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in social/cultural geography",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2408
  },
  {
   "control_number": "18908",
@@ -1636,24 +2414,75 @@
   "title": "Baking and Pastry",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAC181",
+   "HOSP100",
+   "HOSP110",
+   "HOSP121",
+   "HOSP181",
+   "HOSP185",
+   "HOSP186",
+   "HOSP238",
+   "HOSP239",
+   "HOSP281",
+   "HOSP282",
+   "HOSP285"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-science-in-baking-and-pastry-fall-2025",
+   "title": "Associate in Science in Baking and Pastry",
+   "h1": "Associate in Science in Baking and Pastry",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "associate in science in baking and pastry",
+    "section_fit": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2006
  },
  {
   "control_number": "19770",
   "title": "Culinary Arts",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAC181",
+   "HOSP100",
+   "HOSP110",
+   "HOSP121",
+   "HOSP161",
+   "HOSP165",
+   "HOSP166",
+   "HOSP171",
+   "HOSP181",
+   "HOSP238",
+   "HOSP261",
+   "HOSP266",
+   "HOSP267"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-science-in-culinary-arts-fall-2025",
+   "title": "Associate in Science in Culinary Arts",
+   "h1": "Associate in Science in Culinary Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "associate in science in culinary arts",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2149
  },
  {
   "control_number": "19771",
@@ -1672,12 +2501,43 @@
   "title": "Civil Design Drafting Technology",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.947,
+  "codes_found": [
+   "ARCHI126",
+   "ARCHI226",
+   "CONST114",
+   "CONST116",
+   "ENGIN121",
+   "ENGIN140",
+   "ENGTC111",
+   "ENGTC119",
+   "ENGTC126",
+   "ENGTC226",
+   "GEOG124",
+   "GEOG125",
+   "GEOG126",
+   "GEOG160",
+   "GEOG162",
+   "MATH121",
+   "MATH191",
+   "PHYS110"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-civil-design-drafting-technology-fall-2025",
+   "title": "Certificate of Achievement in Civil Design Drafting Technology",
+   "h1": "Certificate of Achievement in Civil Design Drafting Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in civil design drafting technology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 2733
  },
  {
   "control_number": "20925",
@@ -1814,19 +2674,40 @@
   "title": "Personal Training",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM128",
+   "KINES234",
+   "KINES242",
+   "KINES250",
+   "KINES252",
+   "KINES254",
+   "KINES255",
+   "NUTRI115"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-personal-training-fall-2025",
+   "title": "Certificate of Achievement in Personal Training",
+   "h1": "Certificate of Achievement in Personal Training",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in personal training",
+    "section_fit": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2722
  },
  {
   "control_number": "21147",
   "title": "Coaching",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1838,24 +2719,67 @@
   "title": "Technical Theater",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA111",
+   "DRAMA112",
+   "DRAMA122",
+   "DRAMA200",
+   "DRAMA202"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-technical-theater-fall-2026",
+   "title": "Certificate of Achievement in Technical Theater",
+   "h1": "Certificate of Achievement in Technical Theater",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in technical theater",
+    "section_fit": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 1955
  },
  {
   "control_number": "21150",
   "title": "Dental Assisting",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENHY124",
+   "DENTL120",
+   "DENTL160",
+   "DENTL171",
+   "DENTL173",
+   "DENTL174",
+   "DENTL176",
+   "DENTL180",
+   "DENTL182",
+   "DENTL183",
+   "DENTL184",
+   "ENGLC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-dental-assisting-fall-2026",
+   "title": "Certificate of Achievement in Dental Assisting",
+   "h1": "Certificate of Achievement in Dental Assisting",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in dental assisting",
+    "section_fit": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3383
  },
  {
   "control_number": "21153",
@@ -1897,24 +2821,69 @@
   "title": "Addiction Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADS102",
+   "ADS152",
+   "ADS154",
+   "ADS170",
+   "PH127",
+   "PH137"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-addiction-studies-spring-2023",
+   "title": "Certificate of Achievement in Addiction Studies",
+   "h1": "Certificate of Achievement in Addiction Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in addiction studies",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2187
  },
  {
   "control_number": "21155",
   "title": "Geographic Information Systems, Global Positioning Systems",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.867,
+  "codes_found": [
+   "COMSC101",
+   "COMSC110",
+   "COMSC120",
+   "COMSC255",
+   "ENGTC126",
+   "GEOG120",
+   "GEOG124",
+   "GEOG125",
+   "GEOG126",
+   "GEOG129",
+   "GEOG160",
+   "GEOG162",
+   "GEOL120"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-geographic-information-systems-global-positioning-system-fall-2026",
+   "title": "Certificate of Achievement in Geographic Information Systems/Global Positioning System",
+   "h1": "Certificate of Achievement in Geographic Information Systems/Global Positioning System",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in geographic information systems/global positioning system",
+    "section_fit": 0.833
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 2550
  },
  {
   "control_number": "30201",
@@ -2222,24 +3191,79 @@
   "title": "Construction Supervision and Superintendency",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.917,
+  "codes_found": [
+   "BUS101",
+   "BUSMG120",
+   "BUSMG121",
+   "CONST110",
+   "CONST114",
+   "CONST124",
+   "CONST136",
+   "CONST181",
+   "CONST244",
+   "CONST273",
+   "CONST276"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-construction-construction-supervision-and-superintendency-fall-2026",
+   "title": "A.S. in Construction - Construction Supervision and Superintendency",
+   "h1": "A.S. in Construction - Construction Supervision and Superintendency",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in construction - construction supervision and superintendency",
+    "section_fit": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3058
  },
  {
   "control_number": "30455",
   "title": "Music",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC100",
+   "MUSIC103",
+   "MUSIC122",
+   "MUSIC123",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC137",
+   "MUSIC140",
+   "MUSIC150",
+   "MUSIC151",
+   "MUSIC162",
+   "MUSIC166",
+   "MUSIC180",
+   "MUSIC222",
+   "MUSIC223",
+   "MUSIC240",
+   "MUSIC252",
+   "MUSIC290"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-music-fall-2026",
+   "title": "A.A. in Music",
+   "h1": "A.A. in Music",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in music",
+    "section_fit": 1.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3499
  },
  {
   "control_number": "30610",
@@ -2349,24 +3373,87 @@
   "title": "Geology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM120",
+   "CHEM121",
+   "GEOG125",
+   "GEOG160",
+   "GEOG162",
+   "GEOL120",
+   "GEOL121",
+   "GEOL122",
+   "GEOL124",
+   "GEOL125",
+   "GEOL135",
+   "MATH192",
+   "MATH193",
+   "MATH292",
+   "PHYS120",
+   "PHYS121",
+   "PHYS130",
+   "PHYS230",
+   "PHYS231"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-geology-fall-2026",
+   "title": "A.S. in Geology",
+   "h1": "A.S. in Geology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in geology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 3786
  },
  {
   "control_number": "30737",
   "title": "Psychology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "BUS240",
+   "PSYC122",
+   "PSYC130",
+   "PSYC140",
+   "PSYC141",
+   "PSYC145",
+   "PSYC160",
+   "PSYC190",
+   "PSYC195",
+   "PSYC200",
+   "PSYC214",
+   "PSYC215",
+   "PSYC220",
+   "PSYC225",
+   "PSYC230",
+   "PSYC240",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-psychology-for-transfer-fall-2026",
+   "title": "A.A. in Psychology for Transfer",
+   "h1": "A.A. in Psychology for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 3851
  },
  {
   "control_number": "30743",
@@ -2403,24 +3490,70 @@
   "title": "Sociology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS240",
+   "PSYC225",
+   "SOCIO120",
+   "SOCIO121",
+   "SOCIO122",
+   "SOCIO123",
+   "SOCIO125",
+   "SOCIO131",
+   "SOCIO135",
+   "SOCSC120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-sociology-for-transfer-fall-2025",
+   "title": "A.A. in Sociology for Transfer",
+   "h1": "A.A. in Sociology for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 3351
  },
  {
   "control_number": "30927",
   "title": "Nursery and Greenhouse",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT110",
+   "HORT111",
+   "HORT112",
+   "HORT113",
+   "HORT114",
+   "HORT163",
+   "HORT183",
+   "HORT185",
+   "HORT187"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-nursery-and-greenhouse-fall-2026",
+   "title": "Certificate of Achievement Nursery and Greenhouse",
+   "h1": "Certificate of Achievement Nursery and Greenhouse",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement nursery and greenhouse",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1951
  },
  {
   "control_number": "30966",
@@ -2490,31 +3623,80 @@
   "title": "Arboriculture",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HORT110",
+   "HORT120",
+   "HORT125",
+   "HORT171",
+   "HORT179",
+   "HORT185",
+   "HORT187"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-arboriculture-fall-2026",
+   "title": "Certificate of Achievement in Arboriculture",
+   "h1": "Certificate of Achievement in Arboriculture",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in arboriculture",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 1755
  },
  {
   "control_number": "31150",
   "title": "Plumbing",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.762,
+  "codes_found": [
+   "PLUMB110",
+   "PLUMB111",
+   "PLUMB112",
+   "PLUMB113",
+   "PLUMB115",
+   "PLUMB116",
+   "PLUMB117",
+   "PLUMB118",
+   "PLUMB119",
+   "PLUMB120",
+   "PLUMB121",
+   "PLUMB122",
+   "PLUMB123",
+   "PLUMB124",
+   "PLUMB128",
+   "PLUMB129"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-plumbing-fall-2026",
+   "title": "A.S. in Plumbing",
+   "h1": "A.S. in Plumbing",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in plumbing",
+    "section_fit": 1.0
+   }
+  },
   "listed": 21,
-  "text_chars": 0
+  "text_chars": 2744
  },
  {
   "control_number": "31151",
   "title": "Plumbing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2526,12 +3708,29 @@
   "title": "Philosophy",
   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHILO120",
+   "PHILO122",
+   "PHILO130",
+   "PHILO224"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-philosophy-spring-2020",
+   "title": "Certificate of Achievement in Philosophy",
+   "h1": "Certificate of Achievement in Philosophy",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in philosophy",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1289
  },
  {
   "control_number": "31489",
@@ -2582,12 +3781,34 @@
   "title": "Philosophy",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHILO120",
+   "PHILO122",
+   "PHILO130",
+   "PHILO141",
+   "PHILO145",
+   "PHILO160",
+   "PHILO220",
+   "PHILO224",
+   "PHILO225"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-philosophy-fall-2026",
+   "title": "A.A. in Philosophy",
+   "h1": "A.A. in Philosophy",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in philosophy",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3036
  },
  {
   "control_number": "31507",
@@ -2606,19 +3827,45 @@
   "title": "Civil Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM120",
+   "ENGIN135",
+   "ENGIN136",
+   "ENGIN230",
+   "ENGIN240",
+   "ENGIN255",
+   "ENGIN257",
+   "MATH192",
+   "MATH193",
+   "MATH292",
+   "MATH294",
+   "PHYS130",
+   "PHYS230"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-civil-engineering-spring-2020",
+   "title": "A.S. in Civil Engineering",
+   "h1": "A.S. in Civil Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in civil engineering",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3336
  },
  {
   "control_number": "31526",
   "title": "Dance",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2762,36 +4009,121 @@
   "title": "Mechanical Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM120",
+   "ENGIN135",
+   "ENGIN136",
+   "ENGIN230",
+   "ENGIN240",
+   "ENGIN255",
+   "ENGIN257",
+   "MATH192",
+   "MATH193",
+   "MATH292",
+   "MATH294",
+   "PHYS130",
+   "PHYS230"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-mechanical-engineering-fall-2023",
+   "title": "A.S. in Mechanical Engineering",
+   "h1": "A.S. in Mechanical Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in mechanical engineering",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3218
  },
  {
   "control_number": "31628",
   "title": "Electrical Engineering and Computer Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM120",
+   "ENGIN136",
+   "ENGIN230",
+   "ENGTC126",
+   "MATH192",
+   "MATH193",
+   "MATH194",
+   "MATH195",
+   "MATH292",
+   "MATH294",
+   "PHYS130",
+   "PHYS230",
+   "PHYS231"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-electrical-engineering-and-computer-engineering-fall-2026",
+   "title": "A.S. in Electrical Engineering and Computer Engineering",
+   "h1": "A.S. in Electrical Engineering and Computer Engineering",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in electrical engineering and computer engineering",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3292
  },
  {
   "control_number": "31724",
   "title": "Music Industry Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC121",
+   "MUSX100",
+   "MUSX101",
+   "MUSX110",
+   "MUSX120",
+   "MUSX124",
+   "MUSX125",
+   "MUSX172",
+   "MUSX173",
+   "MUSX174",
+   "MUSX175",
+   "MUSX176",
+   "MUSX177",
+   "MUSX178",
+   "MUSX181",
+   "MUSX182",
+   "MUSX183",
+   "MUSX221",
+   "MUSX270",
+   "MUSX282"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-music-industry-studies-fall-2026",
+   "title": "A.A. in Music Industry Studies",
+   "h1": "A.A. in Music Industry Studies",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in music industry studies",
+    "section_fit": 1.0
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 2809
  },
  {
   "control_number": "31757",
@@ -2839,12 +4171,31 @@
   "title": "Spanish",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN120",
+   "SPAN121",
+   "SPAN220",
+   "SPAN221",
+   "SPAN230",
+   "SPAN231"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-spanish-fall-2026",
+   "title": "A.A. in Spanish",
+   "h1": "A.A. in Spanish",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in spanish",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2687
  },
  {
   "control_number": "31760",
@@ -2863,60 +4214,175 @@
   "title": "Japanese",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "JAPAN120",
+   "JAPAN121",
+   "JAPAN130",
+   "JAPAN131",
+   "JAPAN132",
+   "JAPAN220",
+   "JAPAN221"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-japanese-fall-2026",
+   "title": "A.A. in Japanese",
+   "h1": "A.A. in Japanese",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in japanese",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 3175
  },
  {
   "control_number": "31799",
   "title": "History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.882,
+  "codes_found": [
+   "HIST122",
+   "HIST124",
+   "HIST125",
+   "HIST126",
+   "HIST127",
+   "HIST128",
+   "HIST129",
+   "HIST135",
+   "HIST136",
+   "HIST140",
+   "HIST141",
+   "HIST150",
+   "HIST151",
+   "HIST170",
+   "HIST171"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-history-for-transfer-fall-2026",
+   "title": "A.A. in History for Transfer",
+   "h1": "A.A. in History for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 3741
  },
  {
   "control_number": "31810",
   "title": "Early Childhood Education",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE123",
+   "ECE124",
+   "ECE130",
+   "ECE249",
+   "ECE250"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-early-childhood-education-for-transfer-fall-2025",
+   "title": "A.S. in Early Childhood Education for Transfer",
+   "h1": "A.S. in Early Childhood Education for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2935
  },
  {
   "control_number": "31811",
   "title": "Music",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC100",
+   "MUSIC103",
+   "MUSIC122",
+   "MUSIC123",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC137",
+   "MUSIC140",
+   "MUSIC162",
+   "MUSIC166",
+   "MUSIC222",
+   "MUSIC223",
+   "MUSIC240",
+   "MUSIC252",
+   "MUSIC290"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-music-for-transfer-fall-2026",
+   "title": "A.A. in Music for Transfer",
+   "h1": "A.A. in Music for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 3148
  },
  {
   "control_number": "31813",
   "title": "Geology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM120",
+   "CHEM121",
+   "GEOL120",
+   "GEOL121",
+   "GEOL122",
+   "GEOL124",
+   "MATH192",
+   "MATH193"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-geology-for-transfer-fall-2025",
+   "title": "A.S. in Geology for Transfer",
+   "h1": "A.S. in Geology for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2831
  },
  {
   "control_number": "31815",
@@ -2962,48 +4428,169 @@
   "title": "Geography",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTHR130",
+   "GEOG120",
+   "GEOG121",
+   "GEOG125",
+   "GEOG126",
+   "GEOG129",
+   "GEOG130",
+   "GEOG135",
+   "GEOG140",
+   "GEOG160",
+   "GEOG165",
+   "GEOL120"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-geography-for-transfer-fall-2025",
+   "title": "A.A. in Geography for Transfer",
+   "h1": "A.A. in Geography for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 3109
  },
  {
   "control_number": "31818",
   "title": "Journalism",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.846,
+  "codes_found": [
+   "ART160",
+   "BUS240",
+   "COMM123",
+   "ENGLC1001",
+   "JRNAL110",
+   "JRNAL120",
+   "JRNAL126",
+   "JRNAL127",
+   "POLS220",
+   "POLSC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-journalism-for-transfer-fall-2026",
+   "title": "A.A. in Journalism for Transfer",
+   "h1": "A.A. in Journalism for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3233
  },
  {
   "control_number": "31819",
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.968,
+  "codes_found": [
+   "ENGL124",
+   "ENGL151",
+   "ENGL152",
+   "ENGL153",
+   "ENGL154",
+   "ENGL163",
+   "ENGL164",
+   "ENGL166",
+   "ENGL167",
+   "ENGL168",
+   "ENGL170",
+   "ENGL173",
+   "ENGL175",
+   "ENGL176",
+   "ENGL177",
+   "ENGL178",
+   "ENGL180",
+   "ENGL190",
+   "ENGL222",
+   "ENGL223",
+   "ENGL224",
+   "ENGL225",
+   "ENGL253",
+   "ENGL262",
+   "ENGL263",
+   "ENGL272",
+   "ENGL273",
+   "ENGLC1001",
+   "ENGLC1002",
+   "JRNAL120"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-english-for-transfer-fall-2026",
+   "title": "A.A. in English for Transfer",
+   "h1": "A.A. in English for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 31,
-  "text_chars": 0
+  "text_chars": 4387
  },
  {
   "control_number": "31914",
   "title": "Political Science",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "ANTHR130",
+   "BUS240",
+   "HIST140",
+   "HIST141",
+   "POLS120",
+   "POLS122",
+   "POLS123",
+   "POLS127",
+   "POLS151",
+   "POLS210",
+   "POLS220",
+   "POLS240",
+   "POLS250",
+   "POLSC1000",
+   "SOCSC101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-political-science-for-transfer-fall-2026",
+   "title": "A.A. Political Science for Transfer",
+   "h1": "A.A. Political Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 18,
-  "text_chars": 0
+  "text_chars": 3454
  },
  {
   "control_number": "32015",
@@ -3190,84 +4777,287 @@
   "title": "mTech- Industrial maintenance machinist/mechanic",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CONST110",
+   "EET101",
+   "ENGTC111",
+   "ENGTC119",
+   "ENGTC165",
+   "ENGTC166",
+   "ENGTC175",
+   "ENGTC176",
+   "ENGTC268",
+   "MATH121",
+   "MATH135",
+   "MATH191",
+   "MATH192"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-mtech-industrial-maintenance-machinist-mechanic-fall-2026",
+   "title": "A.S. in mTECH - Industrial Maintenance Machinist/Mechanic",
+   "h1": "A.S. in mTECH - Industrial Maintenance Machinist/Mechanic",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in mtech - industrial maintenance machinist/mechanic",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3118
  },
  {
   "control_number": "32196",
   "title": "mTech - Industrial Maintenance Machinist/Mechanic",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CONST110",
+   "EET101",
+   "ENGTC111",
+   "ENGTC119",
+   "ENGTC165",
+   "ENGTC166",
+   "ENGTC175",
+   "ENGTC176",
+   "ENGTC268",
+   "MATH121",
+   "MATH135",
+   "MATH191",
+   "MATH192"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-mtech-industrial-maintenance-machinist-mechanic-fall-2024",
+   "title": "Certificate of Achievement - mTECH - Industrial Maintenance Machinist/Mechanic",
+   "h1": "Certificate of Achievement - mTECH - Industrial Maintenance Machinist/Mechanic",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement - mtech - industrial maintenance machinist/mechanic",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2702
  },
  {
   "control_number": "32287",
   "title": "Sports and Recreation Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "BUS109",
+   "BUS240",
+   "BUS250",
+   "BUS294",
+   "BUSAC181",
+   "BUSAC186",
+   "BUSAC187",
+   "KINES100",
+   "KINES210",
+   "KINES220",
+   "KINES248",
+   "KINES249",
+   "KNACT100A",
+   "KNACT100B",
+   "KNACT102A",
+   "KNACT102B",
+   "KNACT110A",
+   "KNACT110C",
+   "KNACT120",
+   "KNACT122A",
+   "KNACT122B",
+   "KNACT124A",
+   "KNACT124B",
+   "KNACT130A",
+   "KNACT130B",
+   "KNACT132",
+   "KNACT140",
+   "KNACT146A",
+   "KNACT146B",
+   "KNACT146C",
+   "KNACT146D",
+   "KNACT148A",
+   "KNACT148B",
+   "KNACT164A",
+   "KNACT164B",
+   "KNACT166A",
+   "KNACT166B",
+   "KNACT170A",
+   "KNACT170B",
+   "KNACT174A",
+   "KNACT174B",
+   "KNACT176A",
+   "KNACT176B",
+   "KNACT178A",
+   "KNACT178B",
+   "KNACT182A",
+   "KNACT182B",
+   "KNACT182C",
+   "KNACT195A",
+   "KNACT195B",
+   "KNACT195C"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-sport-and-recreation-management-fall-2026",
+   "title": "A.S. in Sport and Recreation Management",
+   "h1": "A.S. in Sport and Recreation Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.667,
+    "section": "as",
+    "section_line": "a.s. degree local sports and recreation management",
+    "section_fit": 0.75
+   }
+  },
   "listed": 53,
-  "text_chars": 0
+  "text_chars": 5036
  },
  {
   "control_number": "32539",
   "title": "Theatre Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA111",
+   "DRAMA112",
+   "DRAMA113",
+   "DRAMA122",
+   "DRAMA123",
+   "DRAMA139",
+   "DRAMA200",
+   "DRAMA270"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-theater-arts-for-transfer-fall-2025",
+   "title": "A.A. in Theater Arts for Transfer",
+   "h1": "A.A. in Theater Arts for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 3216
  },
  {
   "control_number": "32712",
   "title": "Philosophy",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHILO120",
+   "PHILO122",
+   "PHILO130",
+   "PHILO141",
+   "PHILO145",
+   "PHILO160",
+   "PHILO170",
+   "PHILO220",
+   "PHILO224",
+   "PHILO225"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-philosophy-for-transfer-fall-2025",
+   "title": "A.A. in Philosophy for Transfer",
+   "h1": "A.A. in Philosophy for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3493
  },
  {
   "control_number": "33213",
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "SPAN120",
+   "SPAN121",
+   "SPAN220",
+   "SPAN221",
+   "SPAN230"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-spanish-for-transfer-fall-2026",
+   "title": "A.A. in Spanish for Transfer",
+   "h1": "A.A. in Spanish for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2886
  },
  {
   "control_number": "33292",
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "BUS240",
+   "BUSAC186",
+   "BUSAC187",
+   "ECON101",
+   "ECON210",
+   "MATH181",
+   "MATH182",
+   "MATH192",
+   "MATH193",
+   "MATH194",
+   "MATH292",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-economics-for-transfer-fall-2026",
+   "title": "A.A. in Economics for Transfer",
+   "h1": "A.A. in Economics for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3283
  },
  {
   "control_number": "33531",
@@ -3308,12 +5098,72 @@
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.959,
+  "codes_found": [
+   "BUS240",
+   "CHEM107",
+   "CHEM120",
+   "DANCE168A",
+   "DANCE168B",
+   "DANCE170A",
+   "DANCE170B",
+   "KINES210",
+   "KNACT100A",
+   "KNACT100B",
+   "KNACT102A",
+   "KNACT110A",
+   "KNACT122A",
+   "KNACT124A",
+   "KNACT124B",
+   "KNACT130A",
+   "KNACT132",
+   "KNACT146A",
+   "KNACT146B",
+   "KNACT146C",
+   "KNACT148A",
+   "KNACT148B",
+   "KNACT160A",
+   "KNACT160B",
+   "KNACT164A",
+   "KNACT164B",
+   "KNACT166A",
+   "KNACT166B",
+   "KNACT170A",
+   "KNACT170B",
+   "KNACT176A",
+   "KNACT176B",
+   "KNACT178A",
+   "KNACT178B",
+   "KNACT182A",
+   "KNACT182B",
+   "KNACT182C",
+   "KNACT210",
+   "KNACT220",
+   "KNACT224",
+   "PH124",
+   "PH230",
+   "PHYS120",
+   "PHYS130",
+   "PSYCC1000",
+   "SOCIO120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-kinesiology-for-transfer-fall-2026",
+   "title": "A.A. in Kinesiology for Transfer",
+   "h1": "A.A. in Kinesiology for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 49,
-  "text_chars": 0
+  "text_chars": 4964
  },
  {
   "control_number": "33764",
@@ -3355,12 +5205,34 @@
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.692,
+  "codes_found": [
+   "ANTHR130",
+   "BUS240",
+   "CHEM120",
+   "CHEM121",
+   "CHEM226",
+   "NUTRI130",
+   "PSYCC1000",
+   "SOCIO120",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-nutrition-and-dietetics-for-transfer-fall-2026",
+   "title": "A.S. in Nutrition and Dietetics for Transfer",
+   "h1": "A.S. in Nutrition and Dietetics for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3296
  },
  {
   "control_number": "33771",
@@ -3403,19 +5275,46 @@
   "title": "Machining for Mechanical Engineering Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGTC111",
+   "ENGTC119",
+   "ENGTC126",
+   "ENGTC128",
+   "ENGTC160",
+   "ENGTC162",
+   "ENGTC165",
+   "ENGTC166",
+   "ENGTC168",
+   "ENGTC268",
+   "MATH121",
+   "MATH135",
+   "MATH191",
+   "MATH192"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-machining-for-mechanical-engineering-technology-fall-2024",
+   "title": "Certificate of Achievement in Machining for Mechanical Engineering Technology",
+   "h1": "Certificate of Achievement in Machining for Mechanical Engineering Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in machining for mechanical engineering technology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2784
  },
  {
   "control_number": "33891",
   "title": "PreApprenticeship",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -3427,24 +5326,71 @@
   "title": "Machining for Mechanical Engineering Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGTC111",
+   "ENGTC126",
+   "ENGTC128",
+   "ENGTC160",
+   "ENGTC162",
+   "ENGTC165",
+   "ENGTC166",
+   "ENGTC168",
+   "ENGTC268",
+   "MATH121",
+   "MATH135",
+   "MATH191",
+   "MATH192"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-machining-for-mechanical-engineering-technology-fall-2026",
+   "title": "A.S. in Machining for Mechanical Engineering Technology",
+   "h1": "A.S. in Machining for Mechanical Engineering Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in machining for mechanical engineering technology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3207
  },
  {
   "control_number": "35114",
   "title": "Pre-Apprenticeship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CARER140",
+   "CONST105",
+   "CONST110",
+   "CONST114",
+   "CONST135",
+   "CONST215",
+   "KNACT120",
+   "MATH92"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-pre-apprenticeship-fall-2025",
+   "title": "Certificate of Achievement in Pre-Apprenticeship",
+   "h1": "Certificate of Achievement in Pre-Apprenticeship",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in pre-apprenticeship",
+    "section_fit": 1.0
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 2434
  },
  {
   "control_number": "35269",
@@ -3605,55 +5551,171 @@
   "title": "Early Childhood Education: Associate Teacher",
   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE123",
+   "ECE124",
+   "ECE130"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-early-childhood-education-associate-teacher-spring-2020",
+   "title": "Certificate of Achievement in Early Childhood Education - Associate Teacher",
+   "h1": "Certificate of Achievement in Early Childhood Education - Associate Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in early childhood education - associate teacher",
+    "section_fit": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1578
  },
  {
   "control_number": "35874",
   "title": "Social Justice Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENGL163",
+   "ENGL164",
+   "ENGL168",
+   "ENGL173",
+   "ENGL190",
+   "FTVE210",
+   "FTVE260",
+   "HIST125",
+   "HIST127",
+   "HIST128",
+   "HIST129",
+   "HIST170",
+   "HIST171",
+   "HUMAN115",
+   "MUSIC112",
+   "MUSIC117",
+   "MUSIC118",
+   "PH135",
+   "PH170",
+   "POLS122",
+   "POLS123",
+   "PSYC140",
+   "PSYC141",
+   "PSYC215",
+   "SOCIO121",
+   "SOCIO123",
+   "SOCIO124",
+   "SOCIO125",
+   "SOCIO135",
+   "SOCSC101",
+   "SOCSC120",
+   "SOCSC220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-social-justice-studies-for-transfer-fall-2025",
+   "title": "A.A. Social Justice Studies for Transfer",
+   "h1": "A.A. Social Justice Studies for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 33,
-  "text_chars": 0
+  "text_chars": 4869
  },
  {
   "control_number": "35941",
   "title": "Industrial Design",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART102",
+   "ART105",
+   "ARTDM214",
+   "ENGIN120",
+   "ENGTC119",
+   "ENGTC126",
+   "ENGTC128",
+   "IDSGN105",
+   "IDSGN107",
+   "IDSGN120",
+   "IDSGN121",
+   "IDSGN131",
+   "IDSGN220",
+   "IDSGN221"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-industrial-design-fall-2025",
+   "title": "Certificate of Achievement in Industrial Design",
+   "h1": "Certificate of Achievement in Industrial Design",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in industrial design",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2907
  },
  {
   "control_number": "35959",
   "title": "Industrial Design",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART102",
+   "ART105",
+   "ARTDM214",
+   "ENGIN120",
+   "ENGTC119",
+   "ENGTC126",
+   "ENGTC128",
+   "IDSGN105",
+   "IDSGN107",
+   "IDSGN120",
+   "IDSGN121",
+   "IDSGN131",
+   "IDSGN220",
+   "IDSGN221"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-industrial-design-fall-2026",
+   "title": "A.S. in Industrial Design",
+   "h1": "A.S. in Industrial Design",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in industrial design",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3417
  },
  {
   "control_number": "36243",
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -3740,24 +5802,62 @@
   "title": "Audio Visual Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNT103",
+   "FTVE120",
+   "FTVE160",
+   "MUSX100",
+   "MUSX120",
+   "MUSX124"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-audio-visual-technology-fall-2026",
+   "title": "A.S. in Audio Visual Technology",
+   "h1": "A.S. in Audio Visual Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "a.s. in audio visual technology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2818
  },
  {
   "control_number": "37154",
   "title": "Audio Visual Technology",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNT103",
+   "FTVE120",
+   "FTVE160",
+   "MUSX100",
+   "MUSX120",
+   "MUSX124"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-audio-visual-technology-fall-2026",
+   "title": "Certificate of Achievement in Audio Visual Technology",
+   "h1": "Certificate of Achievement in Audio Visual Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in audio visual technology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2199
  },
  {
   "control_number": "37558",
@@ -3834,24 +5934,60 @@
   "title": "German",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "GRMAN120",
+   "GRMAN121",
+   "GRMAN220",
+   "GRMAN221",
+   "GRMAN230",
+   "GRMAN231"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-german-spring-2020",
+   "title": "A.A. in German",
+   "h1": "A.A. in German",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in german",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 2687
  },
  {
   "control_number": "37644",
   "title": "Russian",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "RUSS120",
+   "RUSS121",
+   "RUSS220",
+   "RUSS221"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-russian-fall-2026",
+   "title": "A.A. in Russian",
+   "h1": "A.A. in Russian",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in russian",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 2572
  },
  {
   "control_number": "37645",
@@ -3892,12 +6028,32 @@
   "title": "Nutrition, Health, and Wellness",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "HOSP110",
+   "NUTRI100",
+   "NUTRI120",
+   "NUTRI130",
+   "NUTRI160",
+   "PH124",
+   "PSYCC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-nutrition-health-and-wellness-fall-2025",
+   "title": "Certificate of Achievement in Nutrition, Health, and Wellness",
+   "h1": "Certificate of Achievement in Nutrition, Health, and Wellness",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in nutrition, health, and wellness",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2947
  },
  {
   "control_number": "38349",
@@ -3916,24 +6072,67 @@
   "title": "Hospitality Management",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "BUS240",
+   "BUS294",
+   "BUSAC186",
+   "BUSAC187",
+   "HOSP100",
+   "HOSP110",
+   "HOSP130",
+   "PSYC214",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-hospitality-management-for-transfer-fall-2026",
+   "title": "A.S. in Hospitality Management for Transfer",
+   "h1": "A.S. in Hospitality Management for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 3117
  },
  {
   "control_number": "38488",
   "title": "Agriculture Plant Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.889,
+  "codes_found": [
+   "BUS240",
+   "CHEM108",
+   "CHEM120",
+   "CHEM226",
+   "HORT110",
+   "HORT113",
+   "HORT114",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-agriculture-plant-science-for-transfer-fall-2026",
+   "title": "A.S. in Agriculture Plant Science for Transfer",
+   "h1": "A.S. in Agriculture Plant Science for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 3277
  },
  {
   "control_number": "38506",
@@ -4036,12 +6235,27 @@
   "title": "Beginning ESL Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL65NC",
+   "ESL67NC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-in-beginning-esl-success-noncredit-fall-2020",
+   "title": "Certificate of Competency in Beginning ESL Success - Noncredit",
+   "h1": "Certificate of Competency in Beginning ESL Success - Noncredit",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "certificate of completion beginning esl success",
+    "section_fit": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1053
  },
  {
   "control_number": "39371",
@@ -4060,72 +6274,267 @@
   "title": "Commercial Music - Performance",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC100",
+   "MUSIC103",
+   "MUSIC122",
+   "MUSIC127",
+   "MUSIC128",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC137",
+   "MUSIC150",
+   "MUSIC151",
+   "MUSIC152",
+   "MUSIC160",
+   "MUSIC162",
+   "MUSIC168",
+   "MUSIC170",
+   "MUSIC171",
+   "MUSIC179",
+   "MUSIC188",
+   "MUSIC250",
+   "MUSIC251",
+   "MUSIC256",
+   "MUSX120",
+   "MUSX124",
+   "MUSX172",
+   "MUSX174",
+   "MUSX181",
+   "MUSX182",
+   "MUSX183",
+   "MUSX282"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-commercial-music-performance-fall-2025",
+   "title": "A.A. in Commercial Music – Performance",
+   "h1": "A.A. in Commercial Music – Performance",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in commercial music – performance",
+    "section_fit": 1.0
+   }
+  },
   "listed": 29,
-  "text_chars": 0
+  "text_chars": 3462
  },
  {
   "control_number": "39425",
   "title": "Commercial Music - Performance",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC100",
+   "MUSIC103",
+   "MUSIC127",
+   "MUSIC128",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC137",
+   "MUSIC150",
+   "MUSIC151",
+   "MUSIC152",
+   "MUSIC160",
+   "MUSIC162",
+   "MUSIC168",
+   "MUSIC170",
+   "MUSIC171",
+   "MUSIC179",
+   "MUSIC188",
+   "MUSIC250",
+   "MUSIC251",
+   "MUSIC256",
+   "MUSX120",
+   "MUSX124",
+   "MUSX172",
+   "MUSX174",
+   "MUSX181",
+   "MUSX182",
+   "MUSX183",
+   "MUSX282"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-commercial-music-performance-fall-2025",
+   "title": "Certificate of Achievement in Commercial Music – Performance",
+   "h1": "Certificate of Achievement in Commercial Music – Performance",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in commercial music – performance",
+    "section_fit": 1.0
+   }
+  },
   "listed": 28,
-  "text_chars": 0
+  "text_chars": 2711
  },
  {
   "control_number": "39426",
   "title": "Commercial Music - Technology and Production",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC117",
+   "MUSIC122",
+   "MUSIC150",
+   "MUSIC151",
+   "MUSX100",
+   "MUSX120",
+   "MUSX124",
+   "MUSX172",
+   "MUSX174",
+   "MUSX175",
+   "MUSX176",
+   "MUSX177",
+   "MUSX181",
+   "MUSX182"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-commercial-music-technology-and-production-fall-2023",
+   "title": "A.A. in Commercial Music – Technology and Production",
+   "h1": "A.A. in Commercial Music – Technology and Production",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in commercial music – technology and production",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2591
  },
  {
   "control_number": "39427",
   "title": "Commercial Music - Technology and Production",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC117",
+   "MUSIC122",
+   "MUSIC150",
+   "MUSIC151",
+   "MUSX100",
+   "MUSX120",
+   "MUSX124",
+   "MUSX172",
+   "MUSX174",
+   "MUSX175",
+   "MUSX176",
+   "MUSX177",
+   "MUSX181",
+   "MUSX182"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-commercial-music-technology-and-production-fall-2023",
+   "title": "Certificate of Achievement in Commercial Music – Technology and Production",
+   "h1": "Certificate of Achievement in Commercial Music – Technology and Production",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in commercial music – technology and production",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 2185
  },
  {
   "control_number": "39428",
   "title": "Commercial Music - Media Composition",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC123",
+   "MUSIC127",
+   "MUSIC129",
+   "MUSIC150",
+   "MUSIC176",
+   "MUSIC221",
+   "MUSX120",
+   "MUSX124",
+   "MUSX172",
+   "MUSX174",
+   "MUSX178",
+   "MUSX181",
+   "MUSX182",
+   "MUSX221"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-commercial-music-media-composition-fall-2020",
+   "title": "Certificate of Achievement in Commercial Music – Media Composition",
+   "h1": "Certificate of Achievement in Commercial Music – Media Composition",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in commercial music – media composition",
+    "section_fit": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2259
  },
  {
   "control_number": "39429",
   "title": "Commercial Music - Media Composition",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC123",
+   "MUSIC127",
+   "MUSIC129",
+   "MUSIC150",
+   "MUSIC176",
+   "MUSIC221",
+   "MUSX120",
+   "MUSX124",
+   "MUSX172",
+   "MUSX174",
+   "MUSX178",
+   "MUSX181",
+   "MUSX182",
+   "MUSX221"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-commercial-music-media-composition-fall-2020",
+   "title": "A.A. in Commercial Music – Media Composition",
+   "h1": "A.A. in Commercial Music – Media Composition",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in commercial music – media composition",
+    "section_fit": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 2753
  },
  {
   "control_number": "39430",
@@ -4225,24 +6634,74 @@
   "title": "Special Education Fundamentals",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE124",
+   "EDUSP101",
+   "EDUSP102",
+   "EDUSP103"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-special-education-fundamentals-fall-2020",
+   "title": "Certificate of Achievement in Special Education Fundamentals",
+   "h1": "Certificate of Achievement in Special Education Fundamentals",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in special education fundamentals",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1604
  },
  {
   "control_number": "39775",
   "title": "Drone Technology",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.769,
+  "codes_found": [
+   "ADJUS203",
+   "ADJUS222",
+   "ADJUS250",
+   "ARCHI120",
+   "ARTDM105",
+   "ARTDM117",
+   "CONST124",
+   "CONST170",
+   "CONST298",
+   "GEOG125",
+   "GEOG129",
+   "GEOG140",
+   "GEOG160",
+   "GEOG164",
+   "GEOG165",
+   "HORT110",
+   "HORT179",
+   "HORT185",
+   "HORT298",
+   "RE162"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-drone-technology-fall-2026",
+   "title": "Certificate of Achievement in Drone Technology",
+   "h1": "Certificate of Achievement in Drone Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in drone technology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 26,
-  "text_chars": 0
+  "text_chars": 2908
  },
  {
   "control_number": "39832",
@@ -4281,24 +6740,54 @@
   "title": "Intermediate ESL Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL70NC",
+   "ESL75NC",
+   "ESL77NC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-intermediate-esl-success-fall-2025",
+   "title": "Certificate of Competency - Intermediate ESL Success",
+   "h1": "Certificate of Competency - Intermediate ESL Success",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "certificate of competency - intermediate esl success",
+    "section_fit": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1355
  },
  {
   "control_number": "40512",
   "title": "Beginning ESL for Career Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL32NC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-beginning-esl-for-career-success-fall-2024",
+   "title": "Certificate of Competency- Beginning ESL for Career Success",
+   "h1": "Certificate of Competency- Beginning ESL for Career Success",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "certificate of competency- beginning esl for career success",
+    "section_fit": 1.0
+   }
+  },
   "listed": 1,
-  "text_chars": 0
+  "text_chars": 1199
  },
  {
   "control_number": "40513",
@@ -4333,24 +6822,77 @@
   "title": "Industrial Automation and Robotics",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CONST110",
+   "EET100",
+   "EET107",
+   "EET140",
+   "EET155",
+   "ENGTC108",
+   "ENGTC110",
+   "ENGTC160",
+   "ENGTC165",
+   "ENGTC168",
+   "ENGTC175",
+   "ENGTC176",
+   "ENGTC180"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-industrial-automation-and-robotics-fall-2025",
+   "title": "Certificate of Achievement in Industrial Automation and Robotics",
+   "h1": "Certificate of Achievement in Industrial Automation and Robotics",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in industrial automation and robotics",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 3342
  },
  {
   "control_number": "40698",
   "title": "Design for Manufacturing (D4m)",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSMK256",
+   "ENGIN120",
+   "ENGTC108",
+   "ENGTC119",
+   "ENGTC128",
+   "ENGTC165",
+   "ENGTC168",
+   "ENGTC268",
+   "IDSGN105",
+   "IDSGN107",
+   "IDSGN120",
+   "IDSGN121",
+   "IDSGN220",
+   "IDSGN221"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-design-for-manufacturing-d4m-fall-2025",
+   "title": "Certificate of Achievement in Design for Manufacturing (D4m)",
+   "h1": "Certificate of Achievement in Design for Manufacturing (D4m)",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in design for manufacturing (d4m)",
+    "section_fit": 0.667
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3365
  },
  {
   "control_number": "41061",
@@ -4467,36 +7009,98 @@
   "title": "Skills for College Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.6,
+  "codes_found": [
+   "MATH2NC",
+   "MATH3NC",
+   "MATH4NC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-in-skills-for-college-success-fall-2023",
+   "title": "Certificate of Competency in Skills for College Success",
+   "h1": "Certificate of Competency in Skills for College Success",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "certificate of competency in skills for college success",
+    "section_fit": 1.0
+   }
+  },
   "listed": 5,
-  "text_chars": 0
+  "text_chars": 2592
  },
  {
   "control_number": "41216",
   "title": "Master Grower",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAC185",
+   "BUSAC188",
+   "BUSEN192",
+   "BUSMG191",
+   "BUSMK259",
+   "BUSMK260",
+   "HORT110",
+   "HORT125",
+   "HORT151",
+   "HORT163",
+   "HORT168"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-master-grower-fall-2023",
+   "title": "Certificate of Achievement - Master Grower",
+   "h1": "Certificate of Achievement - Master Grower",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement - master grower",
+    "section_fit": 1.0
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 2032
  },
  {
   "control_number": "41232",
   "title": "Nursery and Greenhouse Entrepreneurship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAC185",
+   "BUSAC188",
+   "BUSEN192",
+   "BUSMG191",
+   "BUSMK259",
+   "BUSMK260",
+   "HORT110",
+   "HORT163",
+   "HORT168"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-nursery-and-greenhouse-entrepreneurship-fall-2023",
+   "title": "Certificate of Achievement in Nursery and Greenhouse Entrepreneurship",
+   "h1": "Certificate of Achievement in Nursery and Greenhouse Entrepreneurship",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in nursery and greenhouse entrepreneurship",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 2130
  },
  {
   "control_number": "41233",
@@ -4504,30 +7108,34 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
    "BUSAC185",
    "BUSAC188",
    "BUSEN192",
    "BUSMG191",
    "BUSMK259",
-   "BUSMK260"
+   "BUSMK260",
+   "HORT110",
+   "HORT170",
+   "HORT171",
+   "HORT179"
   ],
   "source": {
-   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-accomplishment-in-small-business-management-entrepreneurship-fall-2026",
-   "title": "Certificate of Accomplishment in Small Business Management/Entrepreneurship",
-   "h1": "Certificate of Accomplishment in Small Business Management/Entrepreneurship",
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-arboriculture-entrepreneurship-fall-2024",
+   "title": "Certificate of Achievement in Arboriculture Entrepreneurship",
+   "h1": "Certificate of Achievement in Arboriculture Entrepreneurship",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in arboriculture entrepreneurship",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2436
+  "text_chars": 1831
  },
  {
   "control_number": "41237",
@@ -4546,72 +7154,251 @@
   "title": "Music Industry Entrepreneurship",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS109",
+   "BUSEN192",
+   "BUSMG191",
+   "BUSMK259",
+   "BUSMK260",
+   "MUSIC121",
+   "MUSX100",
+   "MUSX101",
+   "MUSX120",
+   "MUSX124",
+   "MUSX125",
+   "MUSX172",
+   "MUSX173",
+   "MUSX174",
+   "MUSX175",
+   "MUSX176",
+   "MUSX177",
+   "MUSX178",
+   "MUSX181",
+   "MUSX182",
+   "MUSX183",
+   "MUSX270",
+   "MUSX282"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-music-industry-entrepreneurship-fall-2026",
+   "title": "A.A. Music Industry Entrepreneurship",
+   "h1": "A.A. Music Industry Entrepreneurship",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. music industry entrepreneurship",
+    "section_fit": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 3192
  },
  {
   "control_number": "41290",
   "title": "Music Industry Entrepreneurship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "BUS109",
+   "BUSEN192",
+   "BUSMG191",
+   "BUSMK259",
+   "BUSMK260",
+   "MUSIC121",
+   "MUSX100",
+   "MUSX120",
+   "MUSX124",
+   "MUSX125",
+   "MUSX172",
+   "MUSX173",
+   "MUSX174",
+   "MUSX175",
+   "MUSX176",
+   "MUSX177",
+   "MUSX178",
+   "MUSX181",
+   "MUSX182",
+   "MUSX183",
+   "MUSX270",
+   "MUSX282"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-music-industry-entrepreneurship-fall-2026",
+   "title": "Certificate of Achievement in Music Industry Entrepreneurship",
+   "h1": "Certificate of Achievement in Music Industry Entrepreneurship",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in music industry entrepreneurship",
+    "section_fit": 1.0
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 2670
  },
  {
   "control_number": "41486",
   "title": "Drama - Acting",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DRAMA122",
+   "DRAMA123",
+   "DRAMA124",
+   "DRAMA125",
+   "DRAMA127",
+   "DRAMA130",
+   "DRAMA139",
+   "DRAMA142",
+   "DRAMA150",
+   "DRAMA200",
+   "DRAMA201",
+   "DRAMA202",
+   "DRAMA270"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-drama-acting-fall-2026",
+   "title": "A.A. in Drama - Acting",
+   "h1": "A.A. in Drama - Acting",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in drama - acting",
+    "section_fit": 1.0
+   }
+  },
   "listed": 13,
-  "text_chars": 0
+  "text_chars": 2986
  },
  {
   "control_number": "41488",
   "title": "Drama - Musical Theater",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "COMM124",
+   "DRAMA122",
+   "DRAMA123",
+   "DRAMA124",
+   "DRAMA125",
+   "DRAMA127",
+   "DRAMA139",
+   "DRAMA142",
+   "DRAMA150",
+   "DRAMA170",
+   "DRAMA171",
+   "DRAMA200",
+   "DRAMA202",
+   "MUSIC166",
+   "MUSIC170"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-drama-musical-theater-fall-2026",
+   "title": "A.A. in Drama - Musical Theater",
+   "h1": "A.A. in Drama - Musical Theater",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "a.a. in drama - musical theater",
+    "section_fit": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 3226
  },
  {
   "control_number": "41489",
   "title": "Acting",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM124",
+   "DRAMA122",
+   "DRAMA123",
+   "DRAMA124",
+   "DRAMA125",
+   "DRAMA127",
+   "DRAMA130",
+   "DRAMA139",
+   "DRAMA142",
+   "DRAMA150",
+   "DRAMA200",
+   "DRAMA201"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-acting-fall-2025",
+   "title": "Certificate of Achievement in Acting",
+   "h1": "Certificate of Achievement in Acting",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in acting",
+    "section_fit": 1.0
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 2817
  },
  {
   "control_number": "41490",
   "title": "Musical Theater",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMM124",
+   "DRAMA122",
+   "DRAMA123",
+   "DRAMA124",
+   "DRAMA125",
+   "DRAMA127",
+   "DRAMA139",
+   "DRAMA142",
+   "DRAMA150",
+   "DRAMA170",
+   "DRAMA171",
+   "DRAMA200",
+   "DRAMA202",
+   "DRAMA275",
+   "MUSIC166",
+   "MUSIC170"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-musical-theater-fall-2025",
+   "title": "Certificate of Achievement in Musical Theater",
+   "h1": "Certificate of Achievement in Musical Theater",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in musical theater",
+    "section_fit": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 3092
  },
  {
   "control_number": "41577",
@@ -4652,48 +7439,155 @@
   "title": "Personal Training Entrepreneurship",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSAC185",
+   "BUSAC188",
+   "BUSEN192",
+   "BUSMG191",
+   "BUSMK259",
+   "BUSMK260",
+   "KINES100",
+   "KINES242",
+   "KINES250",
+   "KINES254",
+   "KNACT110A",
+   "KNACT110C",
+   "KNACT122B",
+   "KNACT124A",
+   "KNACT124B",
+   "KNACT140",
+   "KNACT146A"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-personal-training-entrepreneurship-fall-2025",
+   "title": "Certificate of Achievement in Personal Training Entrepreneurship",
+   "h1": "Certificate of Achievement in Personal Training Entrepreneurship",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in personal training entrepreneurship",
+    "section_fit": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2400
  },
  {
   "control_number": "42416",
   "title": "Fitness Coach",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.9,
+  "codes_found": [
+   "KINES100",
+   "KINES242",
+   "KINES250",
+   "KINES254",
+   "KNACT110A",
+   "KNACT110C",
+   "KNACT124A",
+   "KNACT124B",
+   "KNACT140"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-fitness-coach-fall-2025",
+   "title": "Certificate of Achievement in Fitness Coach",
+   "h1": "Certificate of Achievement in Fitness Coach",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in fitness coach",
+    "section_fit": 1.0
+   }
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 1973
  },
  {
   "control_number": "42845",
   "title": "Community Health Worker",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.857,
+  "codes_found": [
+   "PH124",
+   "PH127",
+   "PH130",
+   "PH135",
+   "PH137",
+   "PH140",
+   "PH145",
+   "PH152",
+   "PH170",
+   "PH200",
+   "PH201",
+   "PH202"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-community-health-worker-fall-2026",
+   "title": "Certificate of Achievement - Community Health Worker",
+   "h1": "Certificate of Achievement - Community Health Worker",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement - community health worker",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 3240
  },
  {
   "control_number": "42869",
   "title": "Early Childhood Education Practitioner",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECE100",
+   "ECE101",
+   "ECE102",
+   "ECE103",
+   "ECE104",
+   "ECE105",
+   "ECE106",
+   "ECE110",
+   "ECE111",
+   "ECE112",
+   "ECE113",
+   "ECE123",
+   "ECE124",
+   "ECE125",
+   "ECE130",
+   "ECE230",
+   "ECE231"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-early-childhood-education-practitioner-fall-2026",
+   "title": "Certificate of Achievement - Early Childhood Education Practitioner",
+   "h1": "Certificate of Achievement - Early Childhood Education Practitioner",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement - early childhood education practitioner",
+    "section_fit": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2871
  },
  {
   "control_number": "42949",
@@ -4782,12 +7676,28 @@
   "title": "Advanced ESL Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL90NC",
+   "ESL95NC",
+   "ESL97ANC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-advanced-esl-success-fall-2023",
+   "title": "Certificate of Competency - Advanced ESL Success",
+   "h1": "Certificate of Competency - Advanced ESL Success",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "certificate of competency - advanced esl success",
+    "section_fit": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1290
  },
  {
   "control_number": "43208",
@@ -4829,24 +7739,59 @@
   "title": "High-Intermediate ESL Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL80NC",
+   "ESL85NC",
+   "ESL87NC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-high-intermediate-esl-success-fall-2023",
+   "title": "Certificate of Competency - High-Intermediate ESL Success",
+   "h1": "Certificate of Competency - High-Intermediate ESL Success",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "certificate of competency - high-intermediate esl success",
+    "section_fit": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1312
  },
  {
   "control_number": "43427",
   "title": "Yoga Teacher Training - 200-Hour",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "KINES110",
+   "KINES112",
+   "KINES114",
+   "KINES116",
+   "KINES118",
+   "KINES120"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-yoga-teacher-training-200-hour-fall-2023",
+   "title": "Certificate of Achievement - Yoga Teacher Training – 200-Hour",
+   "h1": "Certificate of Achievement - Yoga Teacher Training – 200-Hour",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement - yoga teacher training – 200-hour",
+    "section_fit": 1.0
+   }
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 1929
  },
  {
   "control_number": "43481",
@@ -4931,72 +7876,225 @@
   "title": "ESL For Technology",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL30NC",
+   "ESL40NC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-esl-for-technology-fall-2024",
+   "title": "Certificate of Competency - ESL for Technology",
+   "h1": "Certificate of Competency - ESL for Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "certificate of competency - esl for technology",
+    "section_fit": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1030
  },
  {
   "control_number": "43759",
   "title": "Intermediate English for College and Career Success",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL40NC",
+   "ESL41NC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-intermediate-english-for-college-and-career-success-fall-2024",
+   "title": "Certificate of Competency - Intermediate English for College and Career Success",
+   "h1": "Certificate of Competency - Intermediate English for College and Career Success",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "certificate of competency - intermediate english for college and career success",
+    "section_fit": 1.0
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 1132
  },
  {
   "control_number": "43760",
   "title": "ESL College Readiness",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL100NC",
+   "ESL115NC",
+   "ESL117ANC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-esl-college-readiness-fall-2024",
+   "title": "Certificate of Competency - ESL College Readiness",
+   "h1": "Certificate of Competency - ESL College Readiness",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "certificate of competency - esl college readiness",
+    "section_fit": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1382
  },
  {
   "control_number": "43859",
   "title": "Social Justice: LGBTQ Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.941,
+  "codes_found": [
+   "EDUSP102",
+   "ENGL163",
+   "ENGL164",
+   "ENGL166",
+   "ENGL167",
+   "ENGL173",
+   "ENGL190",
+   "ETHN101",
+   "FTVE210",
+   "FTVE260",
+   "HIST125",
+   "HIST127",
+   "HIST128",
+   "HIST129",
+   "HIST170",
+   "HIST171",
+   "PH135",
+   "POLS122",
+   "POLS123",
+   "PSYC140",
+   "PSYC141",
+   "PSYC160",
+   "PSYC215",
+   "SOCIO123",
+   "SOCIO124",
+   "SOCIO125",
+   "SOCIO135",
+   "SOCSC101",
+   "SOCSC120",
+   "SOCSC130",
+   "SOCSC220",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-social-justice-lgbtq-studies-for-transfer-fall-2025",
+   "title": "A.A. in Social Justice: LGBTQ Studies for Transfer",
+   "h1": "A.A. in Social Justice: LGBTQ Studies for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 34,
-  "text_chars": 0
+  "text_chars": 4575
  },
  {
   "control_number": "43966",
   "title": "Social and Urban Dance Skills",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANCE168A",
+   "DANCE168B",
+   "DANCE170A",
+   "DANCE170B",
+   "DANCE200",
+   "DANCE201",
+   "DANCE205",
+   "DANCE222",
+   "DANCE232",
+   "DANCE242",
+   "DANCE243",
+   "DANCE246",
+   "DANCE247",
+   "DANCE250",
+   "DRAMA142",
+   "ETHN101",
+   "MUSIC112"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-social-and-urban-dance-skills-fall-2024",
+   "title": "Certificate of Achievement in Social and Urban Dance Skills",
+   "h1": "Certificate of Achievement in Social and Urban Dance Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in social and urban dance skills",
+    "section_fit": 1.0
+   }
+  },
   "listed": 17,
-  "text_chars": 0
+  "text_chars": 2896
  },
  {
   "control_number": "43967",
   "title": "Dance Performance Skills",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DANCE168A",
+   "DANCE170A",
+   "DANCE200",
+   "DANCE201",
+   "DANCE205",
+   "DANCE212",
+   "DANCE213",
+   "DANCE222",
+   "DANCE223",
+   "DANCE232",
+   "DANCE233",
+   "DANCE242",
+   "DANCE243",
+   "DANCE246",
+   "DANCE247",
+   "DANCE250",
+   "DRAMA112",
+   "DRAMA113",
+   "DRAMA122"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-dance-performance-skills-fall-2024",
+   "title": "Certificate of Achievement in Dance Performance Skills",
+   "h1": "Certificate of Achievement in Dance Performance Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in dance performance skills",
+    "section_fit": 1.0
+   }
+  },
   "listed": 19,
-  "text_chars": 0
+  "text_chars": 2629
  },
  {
   "control_number": "44184",
@@ -5032,36 +8130,109 @@
   "title": "Robotics Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CONST110",
+   "EET100",
+   "EET140",
+   "EET155",
+   "ENGTC160",
+   "ENGTC175",
+   "ENGTC180"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-robotics-technician-fall-2024",
+   "title": "Certificate of Achievement - Robotics Technician",
+   "h1": "Certificate of Achievement - Robotics Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement - robotics technician",
+    "section_fit": 1.0
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 2204
  },
  {
   "control_number": "44355",
   "title": "Industrial Engineering Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "EET101",
+   "EET107",
+   "ENGTC108",
+   "ENGTC111",
+   "ENGTC119",
+   "ENGTC138",
+   "ENGTC165",
+   "ENGTC168",
+   "ENGTC176"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-industrial-engineering-technician-fall-2025",
+   "title": "Certificate of Achievement - Industrial Engineering Technician",
+   "h1": "Certificate of Achievement - Industrial Engineering Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement - industrial engineering technician",
+    "section_fit": 1.0
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 1856
  },
  {
   "control_number": "44445",
   "title": "Public Health",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.692,
+  "codes_found": [
+   "BUS240",
+   "CHEM108",
+   "CHEM120",
+   "PH100",
+   "PH124",
+   "PH126",
+   "PH127",
+   "PH128",
+   "PH130",
+   "PH132",
+   "PH135",
+   "PH137",
+   "PH140",
+   "PH145",
+   "PH152",
+   "PH170",
+   "PH230",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026",
+   "title": "A.S. in Public Health for Transfer",
+   "h1": "A.S. in Public Health for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 26,
-  "text_chars": 0
+  "text_chars": 3730
  },
  {
   "control_number": "44554",
@@ -5215,24 +8386,91 @@
   "title": "Exploration of Dentistry",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "DENHY101NC",
+   "DENTL110NC",
+   "DENTL120NC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-completion-exploration-of-dentistry-fall-2025",
+   "title": "Certificate of Completion - Exploration of Dentistry",
+   "h1": "Certificate of Completion - Exploration of Dentistry",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "certificate of completion - exploration of dentistry",
+    "section_fit": 1.0
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 1209
  },
  {
   "control_number": "45512",
   "title": "Law, Public Policy, and Society",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.884,
+  "codes_found": [
+   "ADJUS120",
+   "ADJUS121",
+   "ADJUS122",
+   "ADJUS124",
+   "ADJUS126",
+   "ADJUS130",
+   "ADJUS221",
+   "ADJUS230",
+   "ANTHR130",
+   "BUS294",
+   "COMM121",
+   "COMM123",
+   "COMM125",
+   "COMM130",
+   "COMMC1000",
+   "COUNS120",
+   "COUNS140",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG130",
+   "PH127",
+   "PH135",
+   "PHILO122",
+   "PHILO130",
+   "POLS120",
+   "POLS122",
+   "POLS123",
+   "POLS127",
+   "POLS210",
+   "POLS220",
+   "POLS240",
+   "POLS250",
+   "POLSC1000",
+   "SOCIO121",
+   "SOCIO124",
+   "SOCIO135",
+   "SOCSC101",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-law-public-policy-and-society-for-transfer-fall-2026",
+   "title": "A.A. in Law, Public Policy, and Society for Transfer",
+   "h1": "A.A. in Law, Public Policy, and Society for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
   "listed": 43,
-  "text_chars": 0
+  "text_chars": 5408
  },
  {
   "control_number": "45625",
@@ -5272,12 +8510,29 @@
   "title": "English-Language Success for Early Childhood Education",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL110NC",
+   "ESL111NC",
+   "ESL112NC",
+   "ESL113NC"
+  ],
+  "source": {
+   "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/english-language-success-for-early-childhood-education-fall-2026",
+   "title": "English-Language Success for Early Childhood Education",
+   "h1": "English-Language Success for Early Childhood Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english-language success for early childhood education certificate of competency",
+    "section_fit": 1.0
+   }
+  },
   "listed": 4,
-  "text_chars": 0
+  "text_chars": 1540
  },
  {
   "control_number": "46234",

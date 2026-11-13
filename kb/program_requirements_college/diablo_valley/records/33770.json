@@ -1,0 +1,328 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "33770",
+ "shape": "adt",
+ "title": "Nutrition and Dietetics",
+ "award": "A.S. T Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-nutrition-and-dietetics-for-transfer-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7173,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7173,
+    "output_tokens": 2554,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2554,
+  "output_tokens_details": {
+   "thinking_tokens": 933
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07977,
+ "ms": 20832,
+ "seconds": 22.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 9,
+   "listed": 13,
+   "share": 0.692,
+   "missing": [
+    "BIOSC119",
+    "BIOSC139",
+    "BIOSC140",
+    "BIOSC146"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 5,
+   "codes": [
+    "BIOL119",
+    "BIOL139",
+    "BIOL140",
+    "BIOL146",
+    "NUTRI160"
+   ],
+   "flagged": [
+    "BIOL119",
+    "BIOL139",
+    "BIOL140",
+    "BIOL146",
+    "NUTRI160"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    26.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nutrition and Dietetics for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 26
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze data and critique information in the nutritional sciences.",
+    "identify nutrition-related chronic diseases by applying knowledge of nutrient",
+    "explain how genetics and life style factors affect nutritional and health status.",
+    "assess a diet for nutrient adequacy using a current computerized dietary analysis database"
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "major requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 11,
+     "max": 11
+    },
+    "courses": [
+     {
+      "code": "CHEM 120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRI 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "plus at least 4 units from",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL 119",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 146",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "plus at least 8 units from",
+    "rule": "choose_units",
+    "minimum": 8,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 8
+    },
+    "courses": [
+     {
+      "code": "BIOL 139",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 140",
+        "units": 5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 121",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 226",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "plus at least 3 units from",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ANTHR 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTRI 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOCIO 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOSC 119",
+    "why": "not in the text; catalog prints BIOL119 Fundamentals of Microbiology (same title), recorded as catalog addition"
+   },
+   {
+    "code": "BIOSC 139",
+    "why": "not in the text; catalog prints BIOL139 Human Anatomy (same title), recorded as catalog addition"
+   },
+   {
+    "code": "BIOSC 140",
+    "why": "not in the text; catalog prints BIOL140 Human Physiology (same title), recorded as catalog addition"
+   },
+   {
+    "code": "BIOSC 146",
+    "why": "not in the text; catalog prints BIOL146 Principles of Microbiology (same title), recorded as catalog addition"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes without a space (e.g., CHEM120, PSYCC1000); recorded with subject and number separated.",
+   "The catalog uses subject BIOL where the state closed list uses BIOSC for the same course numbers and titles (119, 139, 140, 146); likely a subject-code renaming. Reviewer should confirm.",
+   "NUTRI 160 Nutrition: Science and Applications is required but absent from the closed list.",
+   "Total 26 is printed for the major (Nutrition and Dietetics for Transfer). The page's '60 CSU-transferable units' and 'minimum of 18 units in the major' are generic ADT requirements, not recorded as degree_total or total_units.",
+   "GE pattern is Cal-GETC; no GE units printed.",
+   "The second program learning outcome appears truncated in the source ('...applying knowledge of nutrient'); copied as printed.",
+   "Catalog text starts mid-sentence; description mentions organizations (medical facilities, research labs, etc.) and further training in medicine/public health, but no explicit career titles were recorded. The beginning of the description may have been cut off."
+  ]
+ },
+ "extracted_run": "43379378196"
+}
