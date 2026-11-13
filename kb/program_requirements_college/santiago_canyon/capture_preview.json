@@ -1,0 +1,4491 @@
+{
+ "college": "Santiago Canyon College",
+ "catalog_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+ "platform": "pdf",
+ "catalog_year": "2026-2027",
+ "programs": 260,
+ "with_closed_list": 230,
+ "started": "2026-11-13T09:10:20Z",
+ "pdf": {
+  "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+  "access": "ok",
+  "status": 200,
+  "bytes": 9489873,
+  "pages_total": 374,
+  "error": null,
+  "chars_total": 1981072,
+  "pypdf_accepted": 213,
+  "sample": [
+   "p113: 'Credit Programs / 113\\nsccollege.edu\\nCredit Programs\\nCredit Courses\\nCollege Catalog 2026/27\\nSpecial Education Paraprofessional, CA\\nCertificate of Achievement\\nUnit Range for Completion : 14.0 - 15.0\\nThe Certificate of Achievement in Special E'",
+   "p225: 'Credit Courses / 225 \\nsccollege.edu\\nCredit Courses\\nCollege Catalog 2026/27\\nPHIL118\\nHistory of Philosophy\\nUnits: 3\\nAn introduction to philosophy from a historical perspective: getting \\nacquainted with the thoughts of the worlds great philoso'"
+  ],
+  "extractor": "pypdf",
+  "numbers_after": {
+   "after": 200,
+   "before": 0,
+   "after_mode": true,
+   "gated": true,
+   "read": "number_after",
+   "binding": "number_line"
+  },
+  "picks": [
+   {
+    "control_number": "11856",
+    "pages": [
+     89
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 89] Biology, AS A.S. Degree Major Unit Range for Completion : 25.0 - 25.0 The Associate of Science degree in Biology prepares students for transfer to a four-year institution leading to a baccalaureate degree in b",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11857",
+    "pages": [
+     91,
+     92
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 91] Business Administration, AS A.S. Degree Major Unit Range for Completion : 26.0 - 28.0 The Associate of Science degree in Business Administration enables students to transfer to a four-year institution leading ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11858",
+    "pages": [
+     84
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Accounting, AS A.S. Degree Major Unit Range for Completion : 20.0 - 20.0 The Associate of Science degree in Accounting prepares students for entry-level positions and promotional opportunities in accounting an",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11859",
+    "pages": [
+     92
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 92] Business Management, AS A.S. Degree Major Unit Range for Completion : 21.0 - 22.0 The Associate of Science degree in Business Management is designed to enable students to handle basic problems encountered in m",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11860",
+    "pages": [
+     93
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] Entrepreneurship, AS A.S. Degree Major Unit Range for Completion : 17.0 - 19.0 The Associate of Science degree in Entrepreneurship is designed to assist the student in the development of fundamental skills nec",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11861",
+    "pages": [
+     123,
+     124
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 123] Management, AS A.S. Degree Major Unit Range for Completion : 19.0 - 20.0 The Associate of Science degree in Management is designed to prepare students for various management positions in business, government,",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11874",
+    "pages": [
+     115
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 115] Gemology, AS A.S. Degree Major Unit Range for Completion : 18.0 - 18.0 The Associate of Science degree in Gemology provides technical and practical theory and knowledge in diamonds and colored stones includin",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11902",
+    "pages": [
+     97
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] Computer Information Systems, AS A.S. Degree Major Unit Range for Completion : 26.0 - 28.0 The Associate of Science degree in Computer Information Systems is concerned with the development of procedures which ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11903",
+    "pages": [
+     98
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 98] Computer Science, AS A.S. Degree Major Unit Range for Completion : 18.0 - 18.0 The Associate of Science in Computer Science offers a blend of theoretical and practical knowledge in computer programming, data ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11905",
+    "pages": [
+     85
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.714,
+    "opens": "[page 85] American Sign Language, CA Certificate of Achievement Unit Range for Completion : 21.0 - 21.0 The Certificate of Achievement in American Sign Language (ASL) is offered as preparation for developing linguistic ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11906",
+    "pages": [
+     328
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 328] Land Surveying, AS A.S. Degree Major The Associate of Science degree in Land Surveying provides the student a thorough background in land surveying and mapping in addition to an introduction to collection, m",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11907",
+    "pages": [
+     141
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 141] Water Distribution, AS A.S. Degree Major Unit Range for Completion : 21.0 - 21.0 The Associate of Science degree in Water Distribution program is designed to prepare students for careers in the public health ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11910",
+    "pages": [
+     132
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.615,
+    "opens": "[page 132] Construction Inspection for Public Works, CA Certificate of Achievement Unit Range for Completion : 21.0 - 21.0 The Certificate of Achievement in Construction Inspection for Public Works is designed for publ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11911",
+    "pages": [
+     87
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.955,
+    "opens": "[page 87] Art, AA A.A. Degree Major Unit Range for Completion : 30.0 - 30.0 The Associate of Arts degree in Art provides students with an opportunity for individual creative stimulus and development. Completion of the a",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11921",
+    "pages": [
+     88
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.966,
+    "opens": "[page 88] Graphic Design, AS A.S. Degree Major Unit Range for Completion : 30.0 - 30.0 The Associate of Science degree in Graphic Design prepares students for entry into the broad field of visual communication, with an ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11925",
+    "pages": [
+     126,
+     127
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.977,
+    "opens": "[page 126] Modern Languages, AA A.A. Degree Major Unit Range for Completion : 21.0 - 23.0 The Associate of Arts degree in Modern Languages is designed to meet the needs of both the student who wishes to transfer to a fo",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11928",
+    "pages": [
+     113,
+     114
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.944,
+    "opens": "[page 113] English, AA A.A. Degree Major Unit Range for Completion : 30.0 - 30.0 The Associate of Arts degree in English is designed to develop proficiency in written communication and in the understanding of human natu",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11933",
+    "pages": [
+     93
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] Chemistry, AS A.S. Degree Major Unit Range for Completion : 24.0 - 24.0 The Associate of Science degree in Chemistry provides basic courses for a wide variety of occupations, or prepares the student to enter a",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11938",
+    "pages": [
+     115,
+     116
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 115] Gender, Sexuality, and Women’s Studies, AA A.A. Degree Major Unit Range for Completion : 18.0 - 19.0 The Associate of Arts degree in Gender, Sexuality, and Women’s Studies is a liberal arts major offe",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11943",
+    "pages": [
+     110
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 110] Economics, AA A.A. Degree Major Unit Range for Completion : 21.0 - 23.5 The Associate of Arts degree in Economics is a program of basic courses which enable students to move into a curriculum in a four-year i",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11947",
+    "pages": [
+     138,
+     139
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] Sociology, AA A.A. Degree Major Unit Range for Completion : 18.0 - 20.0 The Associate of Arts degree in Sociology is an interdisciplinary social science program providing students an understanding of behavior",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11948",
+    "pages": [
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] Cosmetology, AS A.S. Degree Major Unit Range for Completion : 42.0 - 42.0 The Associate of Science degree in Cosmetology is designed to exceed minimum California Board of Barbering and Cosmetology standards. ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11985",
+    "pages": [
+     323
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 323] Apprenticeship Electricity, Industrial, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Electricity Industrial provides the required related and supplemental instruction for state-i",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "11986",
+    "pages": [
+     319
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 319] Apprenticeship Carpentry, Millwrighting, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Carpentry Millwrighting provide the required related and supplemental classroom instruction ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "13230",
+    "pages": [
+     329
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 329] Apprenticeship Surveying, Chainman, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Surveying Chainman prepares students for a career in surveying and provides the related and suppl",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "13231",
+    "pages": [
+     316
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 316] Apprenticeship Carpentry, Finish Carpentry, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Carpentry, Finish Carpentry provides the related and supplemental instruction required in t",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "13232",
+    "pages": [
+     317
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.933,
+    "opens": "[page 317] Apprenticeship Carpentry, Framing, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Carpentry, Framing provides related and supplemental instruction including the technical skills and k",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "13234",
+    "pages": [
+     315
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 315] Apprenticeship Carpentry, Drywall Finisher, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Carpentry, Drywall Finisher is designed to provide related and supplemental instruction inc",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "17688",
+    "pages": [
+     327
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 327] Apprenticeship Operating Engineers, Special Inspector, AS A.S. Degree Major The Associate of Science degree in Aprenticeship Operating Engineers Special Inspector provides the required related and supplemen",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "17759",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.833,
+    "opens": "[page 111] Elementary Education, AA A.A. Degree Major Unit Range for Completion : 25.0 - 27.0 The Associate of Arts degree in Elementary Education is designed to prepare students for transfer to a four-year university ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "18317",
+    "pages": [
+     103,
+     104
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.991,
+    "opens": "[page 103] Liberal Arts: Arts, Humanities, and Communication, AA A.A. Degree Major Unit Range for Completion : 18.0 - 18.0 The integrated curriculum of the Liberal Arts degree provides a broad exposure to the arts, hum",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "18318",
+    "pages": [
+     104,
+     105
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.986,
+    "opens": "[page 104] Liberal Arts: Mathematics and Sciences, AS A.S. Degree Major Unit Range for Completion : 18.0 - 18.0 The integrated curriculum of the Liberal Arts degree provides a broad exposure to the arts, humanities, ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "18319",
+    "pages": [
+     105,
+     106
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 105] Liberal Arts: Multi-Cultural Studies, AA A.A. Degree Major Unit Range for Completion : 18.0 - 18.0 The integrated curriculum of the Liberal Arts degree provides a broad exposure to the arts, humanities, scien",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "18320",
+    "pages": [
+     106,
+     107
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.98,
+    "opens": "[page 106] Liberal Arts: Social and Behavioral Sciences, AA A.A. Degree Major Unit Range for Completion : 18.0 - 18.0 The integrated curriculum of the Liberal Arts degree provides a broad exposure to the arts, humaniti",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "19587",
+    "pages": [
+     324
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 324] Apprenticeship Electricity, Sound Installer, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Electricity, Sound Installer provides related and supplemental instruction for ele",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "19588",
+    "pages": [
+     324
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 324] Apprenticeship Electricity, Sound Installer, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Electricity Sound Installer provides related and supplemental instruction for electrical a",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "19589",
+    "pages": [
+     325
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 325] Apprenticeship Electricity, Sound Technician, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Electricity, Sound Technician provides related and supplemental instruction for el",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "19590",
+    "pages": [
+     324,
+     325
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 324] Apprenticeship Electricity, Sound Technician, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Electricity Sound Technician provides related and supplemental instruction for electrical ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "19623",
+    "pages": [
+     142
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 142] Water Treatment, AS A.S. Degree Major Unit Range for Completion : 21.0 - 21.0 The Associate of Science degree in Water Treatment is designed to prepare students for careers in the public health field of drink",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "19624",
+    "pages": [
+     142,
+     143
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 142] Water Treatment, CA Certificate of Achievement Unit Range for Completion : 21.0 - 21.0 The Certificate of Achievement in Water Treatment is designed to prepare students for careers in the public health field ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "19625",
+    "pages": [
+     141,
+     142
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 141] Water Distribution, CA Certificate of Achievement Unit Range for Completion : 21.0 - 21.0 The Certificate of Achievement in Water Distribution is designed to prepare students for careers in the public health ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21631",
+    "pages": [
+     84
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Accounting, CA Certificate of Achievement Unit Range for Completion : 20.0 - 20.0 The Certificate of Achievement in Accounting prepares students for entry-level positions and promotional opportunities in accou",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21635",
+    "pages": [
+     93
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 93] Entrepreneurship, CA Certificate of Achievement Unit Range for Completion : 17.0 - 19.0 The Certificate of Achievement in Entrepreneurship is designed to assist the student in the development of fundamental sk",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21639",
+    "pages": [
+     135
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 135] Real Estate, CA Certificate of Achievement Unit Range for Completion : 22.5 - 25.5 The Certificate of Achievement in Real Estate is designed for individuals interested in careers in real estate as salesperson",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21644",
+    "pages": [
+     115
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 115] Gemology, CA Certificate of Achievement Unit Range for Completion : 18.0 - 18.0 The Certificate of Achievement in Gemology provides technical and practical theory and knowledge in diamonds and colored stones ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21647",
+    "pages": [
+     97,
+     98
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] Computer Information Systems, CA Certificate of Achievement Unit Range for Completion : 22.0 - 23.0 The Certificate of Achievement in Computer Information Systems is concerned with the development of procedure",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21649",
+    "pages": [
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] Computer Science, CA Certificate of Achievement Unit Range for Completion : 18.0 - 18.0 The Certificate of Achievement in Computer Science (CA) provides a focused, accelerated pathway for students to develop e",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21657",
+    "pages": [
+     315
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 315] Apprenticeship Carpentry, Concrete, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Concrete is designed to provide the related and supplemental instruction requi",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21658",
+    "pages": [
+     317
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 317] Apprenticeship Carpentry, Finish Carpentry, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Finish Carpentry provides the related and supplemental instruction requi",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21659",
+    "pages": [
+     317
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 317] Apprenticeship Carpentry, Framing, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Framing provides related and supplemental instruction including the technical skil",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21660",
+    "pages": [
+     322
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 322] Apprenticeship Carpentry, Tilt-Up, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Tilt-Up is designed to provide related and supplemental instruction including the ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21661",
+    "pages": [
+     323
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 323] Apprenticeship Electricity, Industrial, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Electricity, Industrial provides the required related and supplemental instruction f",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21662",
+    "pages": [
+     319,
+     320
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.7,
+    "opens": "[page 319] Apprenticeship Carpentry, Millwrighting, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry Millwrighting provide the required related and supplemental classroom inst",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21663",
+    "pages": [
+     315
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 315] Apprenticeship Carpentry, Drywall Finisher, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Drywall Finisher is designed to provide related and supplemental instruc",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21667",
+    "pages": [
+     329
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 329] Apprenticeship Surveying, Chainman, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Surveying, Chainman prepares students for a career in surveying and provides the related a",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21668",
+    "pages": [
+     328,
+     329
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 328] Land Surveying, CA Certificate of Achievement The Certificate of Achievement in Land Surveying provides the student a thorough background in land surveying and mapping in addition to an introduction to colle",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21669",
+    "pages": [
+     141
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 141] Wastewater/Environmental Sanitation, CA Certificate of Achievement Unit Range for Completion : 21.0 - 21.0 The Certificate of Achievement in Wastewater/Environmental Sanitation program is designed to prepa",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "21674",
+    "pages": [
+     99
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] Cosmetology, CA Certificate of Achievement Unit Range for Completion : 42.0 - 42.0 The Certificate of Achievement in Cosmetology is designed to exceed minimum California Board of Barbering and Cosmetology stan",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "22270",
+    "pages": [
+     324
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 324] Apprenticeship Electricity, Intelligent Transportation Systems Electrician, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Electricity, Intelligent Transportation Systems Elec",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "22271",
+    "pages": [
+     323,
+     324
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 323] Apprenticeship Electricity, Intelligent Transportation Systems Electrician, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Electricity Intelligent Transportation Systems Electrician p",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24037",
+    "pages": [
+     267
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 267] Construction Laborer, CC Certificate of Completion The Certificate of Completion in Construction Laborer prepares students for entry-level employment in the construction industry by providing basic knowledge",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24052",
+    "pages": [
+     269
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 269] Medical Billing, CC Certificate of Completion The Certificate of Completion in Medical Billing is designed to give students the necessary knowledge and skills to hold a medical billing position. Students wil",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24093",
+    "pages": [
+     260
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 260] Food Service Manager, CC Certificate of Completion The Certificate of Completion in Food Service Manager prepares students for employment in commercial and institutional food kitchens, especially in the rest",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24095",
+    "pages": [
+     265
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 265] General Office Clerk, CC Certificate of Completion The Certificate of Completion in General Office Clerk is designed to give students the skills for entry-level positions in the business world. Clerk typist,",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24097",
+    "pages": [
+     267
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 267] Carpenter, CC Certificate of Completion The Certificate of Completion in Carpenter prepares students for entry-level employment in companies that manufacture kitchen and bathroom cabinets, music/media furnit",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24146",
+    "pages": [
+     266
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 266] Commercial Textile Worker, CC Certificate of Completion The Certificate of Completion in Commercial Textile Worker prepares students for entry-level employment in the commercial textile industry. Students wi",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24187",
+    "pages": [
+     265
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 265] First-Line Supervisor/ Manager, Office & Administrative Support Workers, CC Certificate of Completion The Certificate of Completion in First-Line Supervisor/Manager, Office and Administrative Support Workers",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24191",
+    "pages": [
+     258
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 258] ESL for Citizenship, COM Certificate of Competency The Certificate of Competency in ESL for Citizenship enhances the English language skills of limited-English speaking students while preparing them for the ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24195",
+    "pages": [
+     258
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 258] ESL Intermediate Communication, COM Certificate of Competency The Certificate of Competency in ESL Intermediate Communication develops the ability of limited-English speaking students in non-verbal communic",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24196",
+    "pages": [
+     259
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 259] ESL Intermediate Writing, COM Certificate of Competency The Certificate of Competency in ESL Intermediate Writing develops the ability of English language learners in composition and other essential written ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24198",
+    "pages": [
+     259
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 259] Vocational ESL, COM Certificate of Competency The Certificate of Competency in Vocational ESL develops the English language and workplace skills of limited-English speaking students. Program Rules: Certifica",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24230",
+    "pages": [
+     259
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 259] ESL Literacy, COM Certificate of Competency The Certificate of Competency in ESL Literacy develops the ability of non-English speaking students in basic literacy skills, including letter and number recogniti",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24233",
+    "pages": [
+     258
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 258] ESL Beginning Multilevel, COM Certificate of Competency The Certificate of Competency in ESL Beginning Multilevel is designed to give fundamental reading, writing, listening, speaking, and digital literacy s",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24234",
+    "pages": [
+     259
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 259] ESL Intermediate Multilevel, COM Certificate of Competency The Certificate of Competency in ESL Intermediate Multilevel develops the ability of limited-English speaking students in a variety of intermediate ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24285",
+    "pages": [
+     257
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 257] English as a Second Language Program, COM Certificate of Competency The Certificate of Competency in English as a Second Language Program is designed to develop the reading, writing, speaking, and listenin",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24420",
+    "pages": [
+     266
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 266] Web Associate, CC Certificate of Completion The Certificate of Completion in Web Associate is designed to give students the necessary knowledge and skills to support providers and consumers of web services. ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24426",
+    "pages": [
+     264,
+     265
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 264] Executive Assistant, CC Certificate of Completion The Certificate of Completion in Executive Assistant is designed to give students the necessary knowledge and skills from diversified training, including tec",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "24427",
+    "pages": [
+     264
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 264] Customer Service Representative, CC Certificate of Completion The Certificate of Completion in Customer Service Representative is designed to give students the necessary knowledge and skills to deal directly",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "30644",
+    "pages": [
+     258
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 258] ESL Beginning, COM Certificate of Competency The Certificate of Competency in ESL Beginning is designed to give fundamental reading, writing, listening, speaking, and digital literacy skills to limited-Engli",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "30646",
+    "pages": [
+     259
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 259] ESL Intermediate, COM Certificate of Competency The Certificate of Competency in ESL Intermediate is designed to give essential reading, writing, listening, speaking, and digital literacy skills to limited-E",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "30647",
+    "pages": [
+     258
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 258] Enhanced Intermediate ESL Skills, COM Certificate of Competency The Certificate of Competency in Enhanced Intermediate ESL Skills is designed to improve the reading, writing, listening, speaking, employabil",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "30690",
+    "pages": [
+     258
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 258] Enhanced Beginning ESL Skills, COM Certificate of Competency The Certificate of Competency in Enhanced Beginning ESL Skills improves the reading, writing, listening, speaking, and employabil - ity skills of ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "30985",
+    "pages": [
+     266
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 266] Receptionist/Information Clerk, CC Certificate of Completion The Certificate of Completion in Receptionist/Information Clerk is designed to give students the skills for entry-level receptionist or informatio",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31039",
+    "pages": [
+     128
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] Physics, AS-T A.S. Degree for Transfer Unit Range for Completion : 27.0 - 27.0 The Associate in Science in Physics for Transfer degree provides a foundation in physics and mathematics for students planning to",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31040",
+    "pages": [
+     126
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 126] Mathematics, AS-T A.S. Degree for Transfer Unit Range for Completion : 18.0 - 22.0 The Associate in Science in Mathematics for Transfer degree prepares students to transfer to a four-year institution leading ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31041",
+    "pages": [
+     129,
+     130
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.966,
+    "opens": "[page 129] Psychology, AA-T A.A. Degree for Transfer Unit Range for Completion : 20.0 - 21.0 The Associate in Arts in Psychology for Transfer degree prepares students to transfer to a four-year institution leading to a ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31366",
+    "pages": [
+     114
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 114] English, AA-T A.A. Degree for Transfer Unit Range for Completion : 20.0 - 20.0 The Associate in Arts in English for Transfer degree enables students to develop proficiency in written communication and in the ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31574",
+    "pages": [
+     326
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 326] Apprenticeship Operating Engineers, Construction Safety Inspector, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Operating Engineers, Construction Safety Inspector provides t",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31588",
+    "pages": [
+     320
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 320] Apprenticeship Carpentry, Pile Driver, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Carpentry, Pile Driver is designed to provide the required related and supplemental classroom i",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31589",
+    "pages": [
+     320
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 320] Apprenticeship Carpentry, Pile Driver, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Pile Driver is designed to provide the required related and supplemental cla",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31601",
+    "pages": [
+     263,
+     264
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 263] Adult High School Diploma, DIPL Adult High School Diploma The Adult High School Diploma Program is designed to offer students instruction ranging from the basic skill level to the high school level with the ",
+    "bound": "number_after",
+    "after_unnamed": true,
+    "judged": "Adult High School Diploma, DIPL Adult High School Diploma The Adult High School Diploma Program is designed to offer students instruction ranging from the basic"
+   },
+   {
+    "control_number": "31706",
+    "pages": [
+     321
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 321] Apprenticeship Carpentry, Plastering, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Plastering provides the required related and supplemental instruction for ap",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31715",
+    "pages": [
+     88
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] Studio Arts, AA-T A.A. Degree for Transfer Unit Range for Completion : 24.0 - 24.0 The Associate in Arts in Studio Arts for Transfer degree provides students with an opportunity to explore studio arts both con",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31720",
+    "pages": [
+     117
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.966,
+    "opens": "[page 117] History, AA-T A.A. Degree for Transfer Unit Range for Completion : 18.0 - 18.0 The Associate in Arts in History for Transfer degree introduces students to the methods and perspectives of historical inquiry, f",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31730",
+    "pages": [
+     128,
+     129
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 128] Political Science, AA-T A.A. Degree for Transfer Unit Range for Completion : 18.0 - 18.0 The Associate in Arts in Political Science for Transfer degree prepares students to transfer to a four-year institution",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31735",
+    "pages": [
+     111,
+     112
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.98,
+    "opens": "[page 111] Elementary Teacher Education, AA-T A.A. Degree for Transfer Unit Range for Completion : 52.0 - 57.0 The Associate in Arts in Elementary Teacher Education for Transfer degree is designed to prepare students fo",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31847",
+    "pages": [
+     133
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] Environmental Management, AS A.S. Degree Major Unit Range for Completion : 21.0 - 21.0 The Associate of Science degree in Environmental Management is designed for students who have completed either or both of",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "31848",
+    "pages": [
+     133
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] Environmental Management, CA Certificate of Achievement Unit Range for Completion : 21.0 - 21.0 This Certificate of Achievement in Environmental Management is de- signed for students who have completed either ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32042",
+    "pages": [
+     128
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] Philosophy, AA-T A.A. Degree for Transfer Unit Range for Completion : 19.0 - 20.0 The Associate in Arts in Philosophy for Transfer degree prepares students to transfer to a four-year institution leading to a ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32043",
+    "pages": [
+     86,
+     87
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 86] Anthropology, AA-T A.A. Degree for Transfer Unit Range for Completion : 18.0 - 18-19.0 The Associate in Arts in Anthropology for Transfer degree is designed to provide students with an understanding of the sci",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32044",
+    "pages": [
+     116
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] Geology, AS-T A.S. Degree for Transfer Unit Range for Completion : 26.0 - 26.0 The Associate in Science in Geology for Transfer degree prepares students for transfer to a four-year college or university to co",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32045",
+    "pages": [
+     139,
+     140
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 139] Spanish, AA-T A.A. Degree for Transfer Unit Range for Completion : 18.0 - 25.0 The Associate in Arts in Spanish for Transfer Degree is designed for students intending to transfer to the California State Unive",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32319",
+    "pages": [
+     131,
+     132
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.615,
+    "opens": "[page 131] Construction Inspection for Public Works, AS A.S. Degree Major Unit Range for Completion : 21.0 - 21.0 The Associate of Science degree in Construction Inspection for Public Works is designed for public works",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32364",
+    "pages": [
+     116
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] Geography AA-T A.A. Degree for Transfer Unit Range for Completion : 17.0 - 19.0 The Associate of Arts degree for Transfer curriculum in Geography provides students with a global understanding and environmenta",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32434",
+    "pages": [
+     122,
+     123
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 122] Kinesiology, AA-T A.A. Degree for Transfer Unit Range for Completion : 20.0 - 24.0 The Associate in Arts in Kinesiology for Transfer degree prepares students to transfer to a four-year institution leading to ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32599",
+    "pages": [
+     90
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] Biotechnology, AS A.S. Degree Major Unit Range for Completion : 34.0 - 34.0 The Associate of Science degree in Biotechnology is designed for students who wish to obtain the skills required to gain employment i",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32602",
+    "pages": [
+     90,
+     91
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 90] General Biotechnology Technician, CA Certificate of Achievement Unit Range for Completion : 30.0 - 35.0 The Certificate of Achievement in Biotechnology Laboratory Technician is designed for students who wish t",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32648",
+    "pages": [
+     90
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] Biotechnology Laboratory Technician: Food Safety, CA Certificate of Achievement Unit Range for Completion : 10.0 - 11.0 The Certificate of Achievement in Biotechnology Laboratory Technician of Food Safety i",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "32968",
+    "pages": [
+     110
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 110] Economics, AA-T A.A. Degree for Transfer Unit Range for Completion : 21.0 - 24.5 The Associate in Arts in Economics for Transfer degree provides students with a program of basic courses which enables students",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "33137",
+    "pages": [
+     258
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 258] ESL Advanced, COM Certificate of Competency The Certificate of Competency in ESL Advanced improves limited- English speaking students’ communication skills in English with an emphasis on grammar and writing ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "33161",
+    "pages": [
+     265,
+     266
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 265] Multi-Media Artists and Animators, CC Certificate of Completion The Certificate of Completion in Multi-Media Artists and Animators is designed to develop the technical and creative knowledge and skills neces",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "33379",
+    "pages": [
+     98
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] Computer Science, AS-T A.S. Degree for Transfer Unit Range for Completion : 30.0 - 30.0 The Associate in Science in Computer Science for Transfer prepares students to move into a curriculum at a four-year inst",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "33422",
+    "pages": [
+     255
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 255] Adult Basic Education/Adult Secondary Education Mathematics, COM Certificate of Competency The Certificate of Competency in ABE/ASE Mathematics is designed to prepare students for higher level math skills",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "33561",
+    "pages": [
+     266
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 266] Shelter Dog Training, CC Certificate of Completion The Certificate of Completion in Shelter Dog Training provides training and education in dog handling for students while preparing dogs from the animal shel",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "33562",
+    "pages": [
+     266
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 266] Warehousing, CC Certificate of Completion The Certificate of Completion in Warehousing provides instruction, demonstration and discussion of topics that are critical for the entry level warehouse worker. St",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "33941",
+    "pages": [
+     261
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 261] High School Equivalency Test (HiSET), COM Certificate of Competency The Certificate of Competency in High School Equivalency Test (HiSet) provides individualized prescriptive instruction in preparation for ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "35110",
+    "pages": [
+     89
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] Biology, AS-T A.S. Degree for Transfer Unit Range for Completion : 37.0 - 37.0 The Associate in Science in Biology for Transfer degree prepares students for transfer to a four-year institution leading to a bac",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "35233",
+    "pages": [
+     318
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 318] Apprenticeship Carpentry, Insulator, AS A.S. Degree Major The Associate of Science degree in Apprenticeship Carpentry, Insulator provides the highest quality training to those interested in a career in the v",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "35234",
+    "pages": [
+     319
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 319] Apprenticeship Carpentry, Insulator, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Insulator provides the highest quality training to those interested in a career ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "35614",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.875,
+    "opens": "[page 94] Early Childhood Education, AS-T A.S. Degree for Transfer Unit Range for Completion : 24.5 - 24.5 The Associate Degree in Science in Early Childhood Education prepares students to transfer into a baccalaureate ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "35735",
+    "pages": [
+     127,
+     128
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] Nutrition and Dietetics, AS-T A.S. Degree for Transfer Unit Range for Completion : 27.0 - 30.0 The Associate in Science in Nutrition and Dietetics for Transfer degree prepares students to transfer to a four-y",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36208",
+    "pages": [
+     270
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 270] General Medical Office Clerk, CC Certificate of Completion The Certificate of Completion in General Medical Office Clerk is designed to prepare students in acquiring or improving critical thinking, communica",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36209",
+    "pages": [
+     260
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 260] Adult Secondary Education, College Preparation Algebra, COM Certificate of Competency The Certificate of Competency in Adult Secondary Education, College Preparation Algebra is designed to prepare students f",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36210",
+    "pages": [
+     264
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 264] 3D Printing, CC Certificate of Completion The Certificate of Completion in 3D Printing is designed to teach students how to use a 3D printer and the technology behind 3D printing. Students will learn about t",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36211",
+    "pages": [
+     261
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 261] Adult Secondary Education, College Preparatory Composition, COM Certificate of Competency The Certificate of Competency in College Preparatory Composition is designed to prepare students for college level wr",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36212",
+    "pages": [
+     268
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 268] Medical Assistant, CC Certificate of Completion The Medical Assistant Certificate is designed to provide the hands-on training, practical experience, and industry support it takes to pursue a professional he",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36213",
+    "pages": [
+     269
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 269] Nursing Assistant, CC Certificate of Completion The Certificate of Completion in Nursing Assistant is designed to provide students with the clinical and theoretical knowledge to prepare for the Certified Nu",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36214",
+    "pages": [
+     256
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 256] Effective Communication Skills, CC Certificate of Completion The Certificate of Completion in Communication Skills for Adults is designed to develop the foundational communication skills necessary for succes",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36215",
+    "pages": [
+     256
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 256] Employment Readiness, CC Certificate of Completion Provides courses designed to meet specific needs of students with intellectual and learning disabilities focusing on basic education and job skills. Provid",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36216",
+    "pages": [
+     256
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 256] Technical Skills for Higher Learning, CC Certificate of Completion The Certificate of Completion in Technical Skills for Higher Learning is designed to provide students the necessary knowledge and technical ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36217",
+    "pages": [
+     256,
+     257
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 256] Transition to Higher Learning, CC Certificate of Completion The Certificate of Completion in Transition to Higher Learning is designed to give students with intellectual, developmental, and learning disabili",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36370",
+    "pages": [
+     270
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 270] Basic Employment Skills, CC Certificate of Completion The Certificate of Completion in Basic Employment Skills is designed to provide strategies to reinforce and maintain money handling, reading, and writin",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36371",
+    "pages": [
+     265
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 265] Home-Based Business, CC Certificate of Completion The Certificate of Completion in Home-Based Business is designed to give students the necessary knowledge and skills to plan, develop, and operate a home-bas",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36372",
+    "pages": [
+     261
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 261] College Readiness, COM Certificate of Competency This certificate will provide college readiness algebra and composition classes to prepare students to be successful in college and/or university placement an",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36585",
+    "pages": [
+     264
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 264] Digital Marketing Specialist, CC Certificate of Completion This program is designed to prepare students to determine potential sales of a product or service by researching and analyzing market conditions in ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36665",
+    "pages": [
+     259
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 259] ESL Communication, COM Certificate of Competency The Certificate of Competency in ESL Communication improves the English language skills of limited-English speaking students with an emphasis on speaking and",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36897",
+    "pages": [
+     261
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 261] College Preparation Mathematics, COM Certificate of Competency The Certificate of Competency in Adult Secondary Education, College Preparation Mathematics is designed to prepare students with arithmetic and",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36898",
+    "pages": [
+     261
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 261] Essential Mathematics and Math Study Skills Support, COM Certificate of Competency The Certificate of Competency in Adult Secondary Education, Essential Mathematics and Math Study Skills Support is designed ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36900",
+    "pages": [
+     257
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 257] Custodial Technician, CC Certificate of Completion The Certificate of Completion in Custodial Technician is designed to give students the necessary knowledge and skills to hold a custodial technician positio",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36901",
+    "pages": [
+     267,
+     268
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 267] Caregiver / Personal Care Aide, CC Certificate of Completion This program prepares students to assist the elderly, convalescents, or persons with disabilities with daily living activities at the person’s hom",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "36914",
+    "pages": [
+     261,
+     262,
+     263
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.988,
+    "opens": "[page 261] Secondary Education, COM Certificate of Competency The Certificate of Competency in Secondary Education is designed to offer students instruction ranging from the basic skill level to the high school level w",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37102",
+    "pages": [
+     130
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] Code Enforcement and Compliance, CA Certificate of Achievement Unit Range for Completion : 18.0 - 18.0 The Certificate of Achievement in Code Enforcement and Compliance provides students with the course work ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37132",
+    "pages": [
+     137
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.786,
+    "opens": "[page 137] Social Justice Studies: Chicano, AA-T A.A. Degree for Transfer Unit Range for Completion : 18.0 - 18.0 The Associate of Arts in Social Justice: Chicano Studies for Transfer degree is an interdisciplinary soci",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37133",
+    "pages": [
+     137,
+     138
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 137] Social Justice Studies: Gender, AA-T A.A. Degree for Transfer Unit Range for Completion : 18.0 - 18.0 The Associate of Arts in Social Justice Studies: Gender Studies for Transfer degree is an interdisciplinar",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37161",
+    "pages": [
+     138
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 138] Social Justice Studies: General, AA-T A.A. Degree for Transfer Unit Range for Completion : 18.0 - 19.0 The Associate of Arts in Social Justice for Transfer degree is an interdisciplinary social science and hu",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37162",
+    "pages": [
+     137
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.882,
+    "opens": "[page 137] Social Justice Studies: Ethnic, AA-T A.A. Degree for Transfer Unit Range for Completion : 18.0 - 18.0 The Associate of Arts in Social Justice: Ethnic Studies for Transfer degree is an interdisciplinary social",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37164",
+    "pages": [
+     108,
+     109
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 108] Social Work and Human Services, AA-T A.A. Degree for Transfer Unit Range for Completion : 29.5 - 30.5 The Social Work and Human Services Associate in Arts Degree for Transfer provides an interdisciplinary ex",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37478",
+    "pages": [
+     85
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 85] American College English/ESL, CA Certificate of Achievement Unit Range for Completion : 16.5 - 16.5 The Certificate of Achievement in American College English (ACE), is an intensive academic English as a Secon",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37803",
+    "pages": [
+     256
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.75,
+    "opens": "[page 256] Office Leadership Skills, CC Certificate of Completion The Certificate of Completion in Office Leadership Skills is designed to give students the necessary knowledge and skills to support entry-level front o",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37805",
+    "pages": [
+     269
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 269] Nurse Assistant Acute Care, CC Certificate of Completion The Nurse Assistant Acute Care program is designed to train nurse assistants for employment in the acute care facility. Integrated throughout the prog",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37806",
+    "pages": [
+     268
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 268] Home Health Aide (HHA) for Certi- fied Nurse Assistants (CNA), CC Certificate of Completion The home health aide (HHA) program prepares individuals who are Certified Nurse Assistants (CNA) to become Certified",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37807",
+    "pages": [
+     268
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 268] Healthcare Support Worker, CC Certificate of Completion This program provides students with the basic foundation of knowledge and skills to become a healthcare support worker. Designed for students who want ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37825",
+    "pages": [
+     270
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 270] Workforce Skills, CC Certificate of Completion This program provides students with classroom discussion and information about discovering/accepting responsibility for attitudes and behaviors (past, present a",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "37911",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 111] After School Program Associate Teacher, CA Certificate of Achievement Unit Range for Completion : 15.0 - 16.0 The Certificate of Achievement in After School Program Associate Teacher is intended to provide s",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "38157",
+    "pages": [
+     111
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.6,
+    "opens": "[page 111] After School Program Assistant, CA Certificate of Achievement Unit Range for Completion : 9.0 - 10.0 The Certificate of Achievement in After School Program Assistant is intended to prepare a student for an en",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "38398",
+    "pages": [
+     267
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 267] Behavior Technician, CC Certificate of Completion The Behavior Technician Program prepares individuals for a certification exam and frontline work in the field of applied behavior analysis. This is an entry-",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "38399",
+    "pages": [
+     256
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 256] Office Technology, CC Certificate of Completion The Certificate of Completion in Office Technology is designed to prepare students in acquiring or improving critical thinking, communication skills, and basic",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "38400",
+    "pages": [
+     257
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 257] Working with Students with Disabilities, CC Certificate of Completion This program provides students with classroom discussion about creating an inclusive classroom for students with disabilities by develop",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "39807",
+    "pages": [
+     117
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 117] Global Studies, CA Certificate of Achievement Unit Range for Completion : 12.0 - 12.0 The certificate in Global Studies within the Department of History is intended to prepare a student in the History Departm",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "39808",
+    "pages": [
+     114,
+     115
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.824,
+    "opens": "[page 114] Ethnic Studies, AA A.A. Degree Major Unit Range for Completion : 18.0 - 18.0 The Associate in Arts Degree in Ethnic Studies is designed to provide students with a comparative and interdisciplinary examination",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "39916",
+    "pages": [
+     118
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.902,
+    "opens": "[page 118] Kinesiology - Fitness and Active Lifestyle, AS A.S. Degree Major Unit Range for Completion : 20.0 - 24.0 The Associate in Science degree in Kinesiology - Fitness and Active Lifestyle provides students with a",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "39917",
+    "pages": [
+     118,
+     119
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.887,
+    "opens": "[page 118] Kinesiology - Fitness and Active Lifestyle, CA Certificate of Achievement Unit Range for Completion : 20.0 - 24.0 The Certificate of Achievement in Kinesiology - Fitness and Active Lifestyle provides student",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "39918",
+    "pages": [
+     119,
+     120
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.903,
+    "opens": "[page 119] Kinesiology - Health Promotion, AS A.S. Degree Major Unit Range for Completion : 22.0 - 26.0 The Associate in Science degree in Kinesiology - Health Promotion provides students with a qualification in Kinesio",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "39919",
+    "pages": [
+     120,
+     121
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.908,
+    "opens": "[page 120] Kinesiology - Health Promotion, CA Certificate of Achievement Unit Range for Completion : 22.0 - 26.0 The Certificate of Achievement in Kinesiology - Health Promotion provides students with a qualification in",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "39920",
+    "pages": [
+     121
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.905,
+    "opens": "[page 121] Kinesiology - Sport Studies, AS A.S. Degree Major Unit Range for Completion : 20.0 - 24.0 The Associate in Science degree in Kinesiology - Sport Studies provides students with a qualification in Kinesiology a",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "39921",
+    "pages": [
+     122
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 122] Kinesiology - Sport Studies, CA Certificate of Achievement Unit Range for Completion : 20.0 - 24.0 The Certificate of Achievement in Kinesiology - Sport Studies provides students with a qualification in Kines",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "40510",
+    "pages": [
+     257
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 257] Enhanced Advanced ESL Skills, COM Certificate of Competency The Certificate of Competency in Enhanced Advanced ESL Skills is designed to improve the reading, writing, listening, speaking, and digital litera",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "40639",
+    "pages": [
+     89,
+     90
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] Biotechnology Lab Assistant, CA Certificate of Achievement Unit Range for Completion : 12.0 - 13.0 The Certificate of Achievement in Biotechnology Lab Assistant is designed for students who wish to obtain the ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "41165",
+    "pages": [
+     265
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 265] Financial Advisor Preparation, CC Certificate of Completion This program is designed to prepare students for entry-level employment in the financial services sector, on a pathway to potentially become financ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "42027",
+    "pages": [
+     261
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 261] High School Equivalency Test Prepa- ration in All Subject Areas, COM Certificate of Competency The Certificate of Competency in High School Equivalency Test (HiSet) provides individualized prescriptive instru",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "42317",
+    "pages": [
+     258
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 258] ESL for CNA and Caregiving, COM Certificate of Competency The ESL for CNA and Caregiving Certificate of Competency is designed to enhance the English language, workplace, and digital literacy skills of stude",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "42387",
+    "pages": [
+     268
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 268] Lactation Educator Specialist, CC Certificate of Completion The Lactation Education Specialist Program prepares individuals interested in working to promote health and wellness for families to become lactati",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "42497",
+    "pages": [
+     113
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 113] Water System Automation, CA Certificate of Achievement Unit Range for Completion : 12.0 - 12.0 The Certificate of Achievement in Water System Automation is designed to prepare students for careers in the publ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "42815",
+    "pages": [
+     260
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 260] Adult Secondary Education Visual and Performing Arts, COM Certificate of Competency The Certificate of Competency in Adult Secondary Education Visual and Performing Arts is designed to offer students a basic",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "42991",
+    "pages": [
+     91
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.917,
+    "opens": "[page 91] Business Administration 2.0, AS-T A.S. Degree for Transfer Unit Range for Completion : 28.0 - 29.5 The Associate in Science in Business Administration for Transfer degree provides students with a comprehensive",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "43227",
+    "pages": [
+     255
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 255] Diversity in the Workforce, CC Certificate of Completion The Certificate of Completion in Diversity in the Workforce is designed to give students the necessary knowledge and skills to be successful in the wo",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "43259",
+    "pages": [
+     256
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 256] Making Remote Employment Work for You, CC Certificate of Completion The Certificate of Completion in Making Remote Employment Work for You is designed to prepare students in acquiring or improving their sof",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "43319",
+    "pages": [
+     269,
+     270
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 269] Vocational Real Estate Salesperson, CC Certificate of Completion The Real Estate Certificate of Completion is designed for individuals interested in careers in real estate as salespersons, brokers, and real ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "43691",
+    "pages": [
+     129
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.929,
+    "opens": "[page 129] Companion Animal Training, AA A.A. Degree Major Unit Range for Completion : 22.0 - 22.0 The Associate of Arts Degree in Companion Animal Training is designed for students who wish to obtain the foundational k",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "43692",
+    "pages": [
+     125
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 125] Data Science, AS A.S. Degree Major Unit Range for Completion : 16.0 - 19.5 The Associate of Science degree in Data Science will provide students with a solid foundation in the fields of data science, industry",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "43876",
+    "pages": [
+     264
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 264] Drone Operation and Photography, CC Certificate of Completion This introductory program equips students with the skills to operate drones effectively and prepare for FAA Part 107 and/or TRUST certification e",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "44174",
+    "pages": [
+     322
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 322] Apprenticeship in Early Childhood, CA Certificate of Achievement This Certificate of Achievement in Apprenticeship in Early Childhood prepares students in Child Development or a related field of study, while",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "44233",
+    "pages": [
+     256
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 256] Introduction to Artificial Intelligence (AI) in the Workforce, CC Certificate of Completion The Certificate of Completion in Introduction to Artificial Intelligence (AI) in the Workforce is designed to give ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "44319",
+    "pages": [
+     125,
+     126
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.938,
+    "opens": "[page 125] Data Science, CA Certificate of Achievement Unit Range for Completion : 16.0 - 19.5 The Certificate of Achievement in Data Science will provide students with a solid foundation in the fields of data science, ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "44326",
+    "pages": [
+     322
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 322] Apprenticeship in Early Childhood, AS A.S. Degree Major The Associate Degree of Science in Apprenticeship in Early Childhood prepares students to transfer into a baccalaureate degree program in Child Develop",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "44436",
+    "pages": [
+     143
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.9,
+    "opens": "[page 143] Water Utility Management, CA Certificate of Achievement Unit Range for Completion : 15.0 - 15.0 The Certificate of Achievement in Water Utility Management program provides current and potential employees with",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "44459",
+    "pages": [
+     143
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 143] Water Utility Management, AS A.S. Degree Major Unit Range for Completion : 21.0 - 21.0 The Associate of Science (A.S.) in Water Utility Management program provides current students and water industry employee",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "44797",
+    "pages": [
+     125
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 125] Social Media, AS A.S. Degree Major Unit Range for Completion : 25.0 - 25.5 The Associate of Science in Social Media degree provides students with a comprehensive business education in social media. Completing",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "44861",
+    "pages": [
+     268
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 268] Lactation Consultant Education, CC Certificate of Completion The Lactation Consultant Education Certificate of Completion prepares individuals to specialize in the clinical management of breastfeeding. This ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "44862",
+    "pages": [
+     266
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 266] Unarmed Public Safety and Security Officer Program, CC Certificate of Completion The Unarmed Public Safety and Security Officer Program provides training to be licensed as an unarmed security guard in the St",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45504",
+    "pages": [
+     267
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 267] Solar Installation Technician, CC Certificate of Completion The Solar Installation Certificate program begins with foundational training in Solar Installation I, covering principles of solar energy, system c",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45505",
+    "pages": [
+     267
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 267] Solar Sales Representative, CC Certificate of Completion The Solar Sales Certificate program begins with Solar Sales I, where students learn essential skills for designing and selling grid- tie solar systems,",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45579",
+    "pages": [
+     317,
+     318
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.964,
+    "opens": "[page 317] Apprenticeship Carpentry, General Carpenter, AS A.S. Degree Major The Associate of Science degree in Apprenticeship General Carpentry provides the related and supplemental instruction required for the Gener",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45580",
+    "pages": [
+     318
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.964,
+    "opens": "[page 318] Apprenticeship Carpentry, General Carpenter, CA Certificate of Achievement The Certificate of Achievement in Apprenticeship General Carpentry provides the related and supplemental instruction required for t",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45581",
+    "pages": [
+     98
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] C++ Programming, CA Certificate of Achievement Unit Range for Completion : 9.0 - 9.0 The Certificate of Achievement in C++ Programming is designed to provide students with a strong foundation in C++ —a powerfu",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45606",
+    "pages": [
+     259
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.5,
+    "opens": "[page 259] ESL Advanced Writing, COM Certificate of Competency The Certificate of Competency in ESL Advanced Writing develops the abilities of advanced English language learners in grammar, composition, and other essen",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45607",
+    "pages": [
+     260
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 260] Adult Secondary Education Foreign Language, COM Certificate of Competency The Certificate of Competency in Foreign Language is designed to prepare students for college level Spanish.The certificate gives st",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45609",
+    "pages": [
+     270
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 270] Digital Literacy for Online Learning Skills, CC Certificate of Completion The Digital Literacy for Online Learning Skills Certificate of Completion provides foundational digital literacy skills for online l",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45737",
+    "pages": [
+     107,
+     108
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 107] Social Work and Human Services Assistant, AS A.S. Degree Major Unit Range for Completion : 19.0 - 19.0 The Associate of Science in Social Work and Human Services Assistant program equips students with founda",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "45881",
+    "pages": [
+     255
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 255] Becoming a Social Media Influencer, CC Certificate of Completion The Certificate of Completion in Becoming a Social Media Influencer introduces students to the fast-growing field of social media influence, ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "46019",
+    "pages": [
+     257
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 257] AI and Computer Literacy for ESL, COM Certificate of Competency The AI and Computer Literacy for ESL Certificate of Competency is designed to enhance the English language, workplace, and digital literacy sk",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "46027",
+    "pages": [
+     260
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 260] Adult Secondary Education Advanced Mathematical Concepts, COM Certificate of Competency The Certificate of Competency in ABE/ASE Mathematics is intended to provide students with the knowledge and skills ",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "46150",
+    "pages": [
+     108
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.96,
+    "opens": "[page 108] Social Work and Human Services Assistant, CA Certificate of Achievement Unit Range for Completion : 19.0 - 19.0 The Certificate of Achievement in Social Work and Human Services Assistant equips students with",
+    "bound": "number_after"
+   },
+   {
+    "control_number": "46367",
+    "pages": [
+     269
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 269] Real Estate Career Preparation, CC Certificate of Completion Prepare to launch your career in real estate with this two-course certificate designed for individuals exploring entry-level opportunities in the ",
+    "bound": "number_after"
+   }
+  ],
+  "unproven": []
+ },
+ "loads": 1,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 38.6,
+ "found": 204,
+ "by_method": {
+  "no_closed_list": 30,
+  "not_found": 14,
+  "pdf_pages": 204,
+  "refused": 12
+ },
+ "shared_pages": {
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89": [
+   "11856",
+   "35110",
+   "40639"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91": [
+   "11857",
+   "42991"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84": [
+   "11858",
+   "21631"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93": [
+   "11860",
+   "11933",
+   "21635"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115": [
+   "11874",
+   "11938",
+   "21644"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97": [
+   "11902",
+   "21647"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98": [
+   "11903",
+   "33379",
+   "45581"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=85": [
+   "11905",
+   "37478"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=328": [
+   "11906",
+   "21668"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141": [
+   "11907",
+   "19625",
+   "21669"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=88": [
+   "11921",
+   "31715"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=126": [
+   "11925",
+   "31040"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113": [
+   "11928",
+   "42497"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=110": [
+   "11943",
+   "32968"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=138": [
+   "11947",
+   "37161"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99": [
+   "11948",
+   "21649",
+   "21674"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323": [
+   "11985",
+   "21661",
+   "22271"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319": [
+   "11986",
+   "21662",
+   "35234"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=329": [
+   "13230",
+   "21667"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317": [
+   "13232",
+   "21658",
+   "21659",
+   "45579"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315": [
+   "13234",
+   "21657",
+   "21663"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111": [
+   "17759",
+   "31735",
+   "37911",
+   "38157"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324": [
+   "19587",
+   "19588",
+   "19590",
+   "22270"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142": [
+   "19623",
+   "19624"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322": [
+   "21660",
+   "44174",
+   "44326"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267": [
+   "24037",
+   "24097",
+   "36901",
+   "38398",
+   "45504",
+   "45505"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269": [
+   "24052",
+   "36213",
+   "37805",
+   "43319",
+   "46367"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260": [
+   "24093",
+   "36209",
+   "42815",
+   "45607",
+   "46027"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265": [
+   "24095",
+   "24187",
+   "33161",
+   "36371",
+   "41165"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266": [
+   "24146",
+   "24420",
+   "30985",
+   "33561",
+   "33562",
+   "44862"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258": [
+   "24191",
+   "24195",
+   "24233",
+   "30644",
+   "30647",
+   "30690",
+   "33137",
+   "42317"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259": [
+   "24196",
+   "24198",
+   "24230",
+   "24234",
+   "30646",
+   "36665",
+   "45606"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257": [
+   "24285",
+   "36900",
+   "38400",
+   "40510",
+   "46019"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264": [
+   "24426",
+   "24427",
+   "36210",
+   "36585",
+   "43876"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128": [
+   "31039",
+   "31730",
+   "32042"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=129": [
+   "31041",
+   "43691"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=114": [
+   "31366",
+   "39808"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=320": [
+   "31588",
+   "31589"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117": [
+   "31720",
+   "39807"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=133": [
+   "31847",
+   "31848"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=116": [
+   "32044",
+   "32364"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=122": [
+   "32434",
+   "39921"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90": [
+   "32599",
+   "32602",
+   "32648"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255": [
+   "33422",
+   "43227",
+   "45881"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261": [
+   "33941",
+   "36211",
+   "36372",
+   "36897",
+   "36898",
+   "36914",
+   "42027"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=318": [
+   "35233",
+   "45580"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270": [
+   "36208",
+   "36370",
+   "37825",
+   "45609"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268": [
+   "36212",
+   "37806",
+   "37807",
+   "42387",
+   "44861"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256": [
+   "36214",
+   "36215",
+   "36216",
+   "36217",
+   "37803",
+   "38399",
+   "43259",
+   "44233"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137": [
+   "37132",
+   "37133",
+   "37162"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=108": [
+   "37164",
+   "46150"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=118": [
+   "39916",
+   "39917"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125": [
+   "43692",
+   "44319",
+   "44797"
+  ],
+  "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143": [
+   "44436",
+   "44459"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "11866",
+   "title": "General Marketing",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=124",
+    "pages": [
+     124
+    ],
+    "judged": "Supervision, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Supervision is designed to prepare studen",
+    "why": "the block that ends at this program's number holds the heading of a program not on the college's list, and none of its own"
+   }
+  },
+  {
+   "control_number": "11908",
+   "title": "Wastewater/Environmental Sanitation, AS",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
+  },
+  {
+   "control_number": "11909",
+   "title": "Construction Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131",
+    "pages": [
+     131
+    ],
+    "judged": "Construction Administration for Public Works, AS A.S. Degree Major Unit Range for Completion : 21.0 - 21.0 This Associate of Science degree in Construction Admi",
+    "why": "the block that ends at this program's number holds the heading of a program not on the college's list, and none of its own"
+   }
+  },
+  {
+   "control_number": "11929",
+   "title": "Communications",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
+    "pages": [
+     97
+    ],
+    "judged": "Communication, AA A.A. Degree Major Unit Range for Completion : 18.0 - 18.0 The associate degree curriculum in communication provides training for communicating",
+    "why": "the block that ends at this program's number holds the heading of a program not on the college's list, and none of its own"
+   }
+  },
+  {
+   "control_number": "11988",
+   "title": "Apprenticeship: Carpentry, Drywall/Lather",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
+  },
+  {
+   "control_number": "18117",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=102",
+    "pages": [
+     102
+    ],
+    "judged": "California State University General Education Breadth (CSU), CA Certificate of Achievement Unit Range for Completion : 39.0 - 39.0 Complete all CSU General Educ",
+    "why": "the block that ends at this program's number holds 18117's heading and none of its own"
+   }
+  },
+  {
+   "control_number": "18118",
+   "title": "IGETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=102",
+    "pages": [
+     102
+    ],
+    "judged": "Intersegmental General Education Transfer Curriculum (IGETC), CA Certificate of Achievement Unit Range for Completion : 34.0 - 34.0 Complete all Intersegmental ",
+    "why": "the block that ends at this program's number holds the heading of a program not on the college's list, and none of its own"
+   }
+  },
+  {
+   "control_number": "18790",
+   "title": "General Electrician, CA",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
+    "coverage": 0.0
+   }
+  },
+  {
+   "control_number": "18791",
+   "title": "General Electrician, AS",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
+    "coverage": 0.0
+   }
+  },
+  {
+   "control_number": "21664",
+   "title": "Apprenticeship: Carpentry, Drywall/Lather",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316",
+    "pages": [
+     316
+    ],
+    "judged": "Apprenticeship Carpentry, Drywall/ Lather (Interior Systems), CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Drywall/",
+    "why": "the block that ends at this program's number holds the heading of a program not on the college's list, and none of its own"
+   }
+  },
+  {
+   "control_number": "21673",
+   "title": "Construction Management",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131",
+    "pages": [
+     131
+    ],
+    "judged": "Construction Administration for Public Works, CA Certificate of Achievement Unit Range for Completion : 21.0 - 21.0 This Certificate of Achievement in Construct",
+    "why": "the block that ends at this program's number holds the heading of a program not on the college's list, and none of its own"
+   }
+  },
+  {
+   "control_number": "24467",
+   "title": "Secondary Education/GED Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263",
+    "coverage": 0.0
+   }
+  },
+  {
+   "control_number": "36304",
+   "title": "Computer Retail Sales and Support",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
+  },
+  {
+   "control_number": "37073",
+   "title": "Code Enforcement and Compliance",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=130",
+    "coverage": 0.353
+   }
+  },
+  {
+   "control_number": "37913",
+   "title": "Bilingual Instructional Aide: Spanish",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=112",
+    "pages": [
+     112
+    ],
+    "judged": "Instructional Assistant: Bilingual, Spanish, CA Certificate of Achievement Unit Range for Completion : 7.0 - 12.0 The Instructional Assistant: Bilingual, Spanis",
+    "why": "the block that ends at this program's number holds the heading of a program not on the college's list, and none of its own"
+   }
+  },
+  {
+   "control_number": "38158",
+   "title": "Instructional Assistant: Special Education, CA",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
+    "pages": [
+     113
+    ],
+    "judged": "Special Education Paraprofessional, CA Certificate of Achievement Unit Range for Completion : 14.0 - 15.0 The Certificate of Achievement in Special Education Pa",
+    "why": "the block that ends at this program's number holds the heading of a program not on the college's list, and none of its own"
+   }
+  },
+  {
+   "control_number": "38281",
+   "title": "Food Handler",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
+  },
+  {
+   "control_number": "41770",
+   "title": "Pre-Nursing and Allied Health Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91",
+    "pages": [
+     91
+    ],
+    "judged": "Pre-Nursing and Allied Health Science, AS A.S. Degree Major Unit Range for Completion : 27.0 - 28.5 The Associate of Science degree in Pre-Nursing and Allied He",
+    "why": "the block that ends at this program's number holds 41770's heading and none of its own"
+   }
+  },
+  {
+   "control_number": "42990",
+   "title": "Public Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=134",
+    "coverage": 0.167
+   }
+  },
+  {
+   "control_number": "43901",
+   "title": "Public Administration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=134",
+    "coverage": 0.167
+   }
+  },
+  {
+   "control_number": "45533",
+   "title": "Clinical Genetics and Molecular Biology Scientist (CGMBS) Training Program",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90",
+    "pages": [
+     90
+    ],
+    "judged": "Clinical Genetics and Molecular Biology Scientist (CGMBS) Training Program, CA Certificate of Achievement Unit Range for Completion : 9.0 - 9.0 The Certificate ",
+    "why": "the block that ends at this program's number holds the heading of a program not on the college's list, and none of its own"
+   }
+  },
+  {
+   "control_number": "45619",
+   "title": "Cal-GETC",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99",
+    "pages": [
+     99,
+     100,
+     101,
+     102
+    ],
+    "judged": "COUNSELING Cal-GETC, CA Certificate of Achievement Unit Range for Completion : 35.0 - 44.5 The California General Education Transfer Curriculum (Cal-GETC)/Plan ",
+    "why": "the block that ends at this program's number holds 45619's heading and none of its own"
+   }
+  },
+  {
+   "control_number": "45794",
+   "title": "California-specific Certified Community Association Management (CCAM)",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
+  },
+  {
+   "control_number": "45985",
+   "title": "Healthcare Career Preparation, COM",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
+  },
+  {
+   "control_number": "46507",
+   "title": "Construction Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
+  },
+  {
+   "control_number": "46508",
+   "title": "Construction Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+    "coverage": 0.0
+   }
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 12,
+  "0.8-1.0": 47,
+  "1.0": 145
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/santiago_canyon",
+  "kept": 67,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [
+   {
+    "control_number": "11910",
+    "title": "Construction Inspection for Public Works, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=132",
+    "coverage": 0.615,
+    "was_coverage": 0.769
+   },
+   {
+    "control_number": "37161",
+    "title": "Social Justice Studies: General",
+    "award": "A.A- T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=138",
+    "coverage": 0.96,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37162",
+    "title": "Social Justice Studies: Ethnic",
+    "award": "A.A- T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137",
+    "coverage": 0.882,
+    "was_coverage": 0.941
+   },
+   {
+    "control_number": "39808",
+    "title": "Ethnic Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=114",
+    "coverage": 0.824,
+    "was_coverage": 0.882
+   },
+   {
+    "control_number": "44436",
+    "title": "Water Utility Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143",
+    "coverage": 0.9,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_no_gain": [
+   {
+    "control_number": "11859",
+    "title": "Business Management",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=92",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "11903",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98",
+    "coverage": 0.889,
+    "was_coverage": 0.889
+   },
+   {
+    "control_number": "11905",
+    "title": "American Sign Language",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=85",
+    "coverage": 0.714,
+    "was_coverage": 0.714
+   },
+   {
+    "control_number": "11906",
+    "title": "Land Surveying",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=328",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "11907",
+    "title": "Water Distribution, AS",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "11911",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=87",
+    "coverage": 0.955,
+    "was_coverage": 0.955
+   },
+   {
+    "control_number": "11921",
+    "title": "Graphic Design",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=88",
+    "coverage": 0.966,
+    "was_coverage": 0.966
+   },
+   {
+    "control_number": "11925",
+    "title": "Modern Languages",
+    "award": "A.A. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=126",
+    "coverage": 0.977,
+    "was_coverage": 0.977
+   },
+   {
+    "control_number": "11933",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "11938",
+    "title": "Gender, Sexuality, and Women's Studies",
+    "award": "A.A. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "17688",
+    "title": "Apprenticeship: Operating Engineers, Special Inspector",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=327",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "17759",
+    "title": "Elementary Education",
+    "award": "A.A. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
+    "coverage": 0.833,
+    "was_coverage": 0.833
+   },
+   {
+    "control_number": "18318",
+    "title": "Liberal Arts: Mathematics and Sciences, AS",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=104",
+    "coverage": 0.986,
+    "was_coverage": 0.986
+   },
+   {
+    "control_number": "19587",
+    "title": "Apprenticeship: Electricity, Sound Installer",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "19589",
+    "title": "Apprenticeship: Electricity, Sound Technician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=325",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "19623",
+    "title": "Water Treatment, AS",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21631",
+    "title": "Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21635",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21639",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=135",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21644",
+    "title": "Gemology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21649",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21657",
+    "title": "Apprenticeship: Carpentry, Concrete",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21659",
+    "title": "Apprenticeship: Carpentry, Framing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21660",
+    "title": "Apprenticeship: Carpentry, Tilt-Up",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21661",
+    "title": "Apprenticeship: Electricity, Industrial",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21662",
+    "title": "Apprenticeship: Carpentry, Millwrighting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319",
+    "coverage": 0.7,
+    "was_coverage": 0.7
+   },
+   {
+    "control_number": "21667",
+    "title": "Apprenticeship: Surveying, Chainman",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=329",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21669",
+    "title": "Wastewater/Environmental Sanitation, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21674",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "22270",
+    "title": "Apprenticeship: Electricity, Intelligent Transportation Systems Electrician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24037",
+    "title": "Construction Laborer",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24052",
+    "title": "Medical Billing",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24093",
+    "title": "Food Service Manager",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24095",
+    "title": "General Office Clerk",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24097",
+    "title": "Carpenter",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24146",
+    "title": "Commercial Textile Worker",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24187",
+    "title": "First-Line Supervisor/Manager, Office & Administrative Support Workers",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24191",
+    "title": "ESL for Citizenship",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24195",
+    "title": "ESL Intermediate Communication",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24196",
+    "title": "ESL Intermediate Writing, COM",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24198",
+    "title": "Vocational ESL",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24230",
+    "title": "ESL Literacy, COM",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24233",
+    "title": "ESL Beginning Multilevel",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24234",
+    "title": "ESL Intermediate Multilevel, COM",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24285",
+    "title": "English as a Second Language Program",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24420",
+    "title": "Web Associate",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "24427",
+    "title": "Customer Service Representative",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30644",
+    "title": "ESL Beginning, COM",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30646",
+    "title": "ESL Intermediate, COM",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30647",
+    "title": "Enhanced Intermediate ESL Skills",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30690",
+    "title": "Enhanced Beginning ESL Skills, COM",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30985",
+    "title": "Receptionist/Information Clerk",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31039",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31040",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=126",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31041",
+    "title": "Psychology",
+    "award": "A.A- T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=129",
+    "coverage": 0.966,
+    "was_coverage": 0.966
+   },
+   {
+    "control_number": "31366",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=114",
+    "coverage": 0.938,
+    "was_coverage": 0.938
+   },
+   {
+    "control_number": "31574",
+    "title": "Apprenticeship: Operating Engineers, Construction Safety Inspector",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=326",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31589",
+    "title": "Apprenticeship: Carpentry, Pile Driver",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=320",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31706",
+    "title": "Apprenticeship: Carpentry, Plastering",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=321",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31715",
+    "title": "Studio Arts",
+    "award": "A.A- T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=88",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31720",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117",
+    "coverage": 0.966,
+    "was_coverage": 0.966
+   },
+   {
+    "control_number": "31848",
+    "title": "Environmental Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=133",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32042",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32044",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=116",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32364",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=116",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32599",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32648",
+    "title": "Biotechnology Laboratory Technician: Food Safety",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32968",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=110",
+    "coverage": 0.929,
+    "was_coverage": 0.929
+   },
+   {
+    "control_number": "33137",
+    "title": "ESL Advanced",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33379",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33422",
+    "title": "Adult Basic Education/Adult Secondary Education Mathematics",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33561",
+    "title": "Shelter Dog Training",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33562",
+    "title": "Warehousing",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33941",
+    "title": "High School Equivalency Test (HiSET)",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35233",
+    "title": "Apprenticeship Carpentry, Insulator",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=318",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35234",
+    "title": "Apprenticeship Carpentry, Insulator",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35614",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=94",
+    "coverage": 0.875,
+    "was_coverage": 0.875
+   },
+   {
+    "control_number": "36208",
+    "title": "General Medical Office Clerk",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36209",
+    "title": "Adult Secondary Education, College Preparation Algebra",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36210",
+    "title": "3D Printing, CC",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36211",
+    "title": "Adult Secondary Education, College Preparatory Composition",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36212",
+    "title": "Medical Assistant",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36213",
+    "title": "Nursing Assistant",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36370",
+    "title": "Basic Employment Skills",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36371",
+    "title": "Home-Based Business",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36372",
+    "title": "College Readiness",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36585",
+    "title": "Digital Marketing Specialist, CC",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36665",
+    "title": "ESL Communication",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36897",
+    "title": "College Preparation Mathematics",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36898",
+    "title": "Essential Mathematics and Math Study Skills Support",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36900",
+    "title": "Custodial Technician",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "36901",
+    "title": "Caregiver / Personal Care Aide",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37102",
+    "title": "Code Enforcement and Compliance, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=130",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37478",
+    "title": "American College English/ESL",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=85",
+    "coverage": 0.818,
+    "was_coverage": 0.818
+   },
+   {
+    "control_number": "37805",
+    "title": "Nurse Assistant Acute Care",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37806",
+    "title": "Home Health Aide (HHA) for Certified Nurse Assistants (CNA)",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37807",
+    "title": "Healthcare Support Worker",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37825",
+    "title": "Workforce Skills",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37911",
+    "title": "After School Program Associate Teacher",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
+    "coverage": 0.857,
+    "was_coverage": 0.857
+   },
+   {
+    "control_number": "38398",
+    "title": "Behavior Technician",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "38400",
+    "title": "Working with Students with Disabilities",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "39916",
+    "title": "Kinesiology - Fitness and Active Lifestyle",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=118",
+    "coverage": 0.902,
+    "was_coverage": 0.902
+   },
+   {
+    "control_number": "39920",
+    "title": "Kinesiology - Sport Studies",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=121",
+    "coverage": 0.905,
+    "was_coverage": 0.905
+   },
+   {
+    "control_number": "39921",
+    "title": "Kinesiology - Sport Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=122",
+    "coverage": 0.889,
+    "was_coverage": 0.889
+   },
+   {
+    "control_number": "40510",
+    "title": "Enhanced Advanced ESL Skills",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41165",
+    "title": "Financial Advisor Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
+    "coverage": 0.5,
+    "was_coverage": 0.5
+   },
+   {
+    "control_number": "42027",
+    "title": "High School Equivalency Test Preparation in All Subject Areas",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "42317",
+    "title": "ESL for CNA and Caregiving",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "42387",
+    "title": "Lactation Educator Specialist",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "42497",
+    "title": "Water System Automation, CA",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
+    "coverage": 0.5,
+    "was_coverage": 0.5
+   },
+   {
+    "control_number": "42815",
+    "title": "Adult Secondary Education Visual and Performing Arts",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "42991",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91",
+    "coverage": 0.917,
+    "was_coverage": 0.917
+   },
+   {
+    "control_number": "43227",
+    "title": "Diversity in the Workforce",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "43259",
+    "title": "Making Remote Employment Work for You",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "43691",
+    "title": "Companion Animal Training, AA",
+    "award": "A.A. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=129",
+    "coverage": 0.929,
+    "was_coverage": 0.929
+   },
+   {
+    "control_number": "43692",
+    "title": "Data Science, AS",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125",
+    "coverage": 0.938,
+    "was_coverage": 0.938
+   },
+   {
+    "control_number": "43876",
+    "title": "Drone Operation and Photography, CC",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44174",
+    "title": "Apprenticeship in Early Childhood, CA",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44233",
+    "title": "Introduction to Artificial Intelligence (AI) in the Workforce, CC",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44459",
+    "title": "Water Utility Management",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44797",
+    "title": "Social Media, AS",
+    "award": "A.S. Degree",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44861",
+    "title": "Lactation Consultant Education",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44862",
+    "title": "Unarmed Public Safety and Security Officer Program",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "45504",
+    "title": "Solar Installation Technician",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "45505",
+    "title": "Solar Sales Representative",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "45581",
+    "title": "C++ Programming, CA",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "45607",
+    "title": "Adult Secondary Education Foreign Language",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "45609",
+    "title": "Digital Literacy for Online Learning Skills",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "45881",
+    "title": "Becoming a Social Media Influencer",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "46019",
+    "title": "AI and Computer Literacy for ESL, COM",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "46150",
+    "title": "Social Work and Human Services Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=108",
+    "coverage": 0.96,
+    "was_coverage": 0.96
+   },
+   {
+    "control_number": "46367",
+    "title": "Real Estate Career Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [
+   {
+    "control_number": "11866",
+    "title": "General Marketing",
+    "award": "A.S. Degree",
+    "closed_by": null,
+    "why": "block_names_other_program",
+    "judged": "Supervision, CERT Certificate of Proficiency Unit Range for Completion : 12.0 - 12.0 The Certificate of Proficiency in Supervision is designed to prepare studen"
+   },
+   {
+    "control_number": "11988",
+    "title": "Apprenticeship: Carpentry, Drywall/Lather",
+    "award": "A.S. Degree",
+    "closed_by": null,
+    "why": "number_not_printed"
+   },
+   {
+    "control_number": "21664",
+    "title": "Apprenticeship: Carpentry, Drywall/Lather",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "closed_by": null,
+    "why": "block_names_other_program",
+    "judged": "Apprenticeship Carpentry, Drywall/ Lather (Interior Systems), CA Certificate of Achievement The Certificate of Achievement in Apprenticeship Carpentry, Drywall/"
+   },
+   {
+    "control_number": "38281",
+    "title": "Food Handler",
+    "award": "Noncredit program",
+    "closed_by": null,
+    "why": "number_not_printed"
+   },
+   {
+    "control_number": "43901",
+    "title": "Public Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "closed_by": null,
+    "why": "low_coverage",
+    "judged": "Public Administration, CA Certificate of Achievement Unit Range for Completion : 18.0 - 18.0 The Certificate of Achievement in Public Administration provides st"
+   },
+   {
+    "control_number": "45533",
+    "title": "Clinical Genetics and Molecular Biology Scientist (CGMBS) Training Program",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "closed_by": null,
+    "why": "block_names_other_program",
+    "judged": "Clinical Genetics and Molecular Biology Scientist (CGMBS) Training Program, CA Certificate of Achievement Unit Range for Completion : 9.0 - 9.0 The Certificate "
+   },
+   {
+    "control_number": "45794",
+    "title": "California-specific Certified Community Association Management (CCAM)",
+    "award": "Noncredit program",
+    "closed_by": null,
+    "why": "number_not_printed"
+   }
+  ],
+  "forced_unbound": []
+ },
+ "run": "43398874322"
+}
