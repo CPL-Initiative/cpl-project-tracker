@@ -223,6 +223,36 @@ check(byc["99999"]["closed_list"] == [] and byc["99999"]["status"] == "Active - 
 check([byc[k]["shape"] for k in ("42158", "41982", "45549", "36675")] == ["degree", "certificate", "adt", "noncredit"],
       "each program's shape comes from its award")
 
+# ── a code the state's file stores under its subject's name (San Jose City, S644) ──
+# The file stores "Accounting (ACCTG) 101"; the catalog prints ACCTG 101. Read as stored,
+# the coarse net named 0 of Accounting A.S.'s 9 listed courses on its own page and the
+# capture found 7 of 90 programs (capture-only run 43338146577).
+check(C.file_code("Accounting (ACCTG) 101") == "ACCTG 101"
+      and C.file_code("Kinesiology-Athletics, Men (KINAM) 012B") == "KINAM 012B"
+      and C.file_code("Art (ART) 027A") == "ART 027A"
+      and C.file_code("PSYCH (Psychology) 51") == "PSYCH 51",
+      "a code stored under its subject's name reads as the letters in capitals beside the number")
+check(C.file_code("AIRC 121") == "AIRC 121" and C.file_code("IWAP 40.1") == "IWAP 40.1"
+      and C.file_code(None) is None and C.file_code("Special (Topics) 9") == "Special (Topics) 9",
+      "a code already in its printed form, or with no capitals to read, is left as stored")
+sj_progs = [{"control_number": "06185", "program_title": "Accounting", "award": "A.S. Degree", "status": "Active"}]
+sj_rows = [{"program_control_number": "06185", "course_control_number": str(n), "course_code": code, "units": 5, "load_id": "L"}
+           for n, code in enumerate(["Accounting (ACCTG) 20", "Accounting (ACCTG) 21", "Business (BUS) 071", "CIS 041"])]
+sj = C.group_programs(sj_progs, sj_rows)[0]["closed_list"]
+check([c["code"] for c in sj] == ["ACCTG 20", "ACCTG 21", "BUS 071", "CIS 041"]
+      and sj[0]["file_code"] == "Accounting (ACCTG) 20" and "file_code" not in sj[3],
+      "the closed list carries the printed code, the stored form kept beside it")
+# The Requirements tab as the capture read it on Accounting A.S.'s own page (page read 43344961799).
+SJ_TAB = ("[Tab: Requirements]\nMajor Requirements\nCourse List\nCourse\nTitle\nCredits\n"
+          "ACCTG 020\tFinancial Accounting\t5\nACCTG 021\tManagerial Accounting\t5\nACCTG 030\tQuickBooks\t3\n"
+          "BUS 071\tLegal Environment of Business\t3\nCIS 041\tIntroduction to Computer Information Systems\t3\n"
+          "Total Units\t35")
+check(C.net_hits(sj, C.page_codes(SJ_TAB)) == 4 and P.coverage(P.find_codes(SJ_TAB, sj), sj) == 1.0,
+      "the coarse net and the coverage test read every listed course on the program's own page")
+stored = P.closed_from_rows(sj_rows)
+check(C.net_hits(stored, C.page_codes(SJ_TAB)) == 1 and P.coverage(P.find_codes(SJ_TAB, stored), stored) == 0.25,
+      "read as stored, the page names only the one course already in its printed form (the S644 failure)")
+
 # ── the page each program is read from ──────────────────────────────────────
 AA_TEXT = "Field Ironworkers, A.A. Required courses IWAP 40.10 Rigging IWAP 40.20 Welding Total 60 units"
 CERT_TEXT = "Field Ironworkers Certificate of Achievement IWAP 40.10 IWAP 40.20 Total 30 units"

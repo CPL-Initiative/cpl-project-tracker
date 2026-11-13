@@ -174,6 +174,40 @@ def net_hits(courses: list[dict], codes: set) -> int:
                or (c.get("printed") and P.norm_code(c["printed"]) in codes))
 
 
+# San Jose City's rows in the state's file store a course code under its subject's name:
+# "Accounting (ACCTG) 101", once "PSYCH (Psychology) 51" (718 of its 748 courses, and no
+# other college's). norm_code() reads ACCOUNTING(ACCTG)101, which no page prints: the capture
+# reached the program's own page for 82 programs and read none of its listed courses there
+# (Accounting A.S., 0 of 9; capture-only run 43338146577, S644). The code is the letters in
+# capitals, beside the number.
+NAMED_SUBJECT = re.compile(r"^\s*(?P<a>[^()]*?)\s*\((?P<b>[^()]*)\)\s*(?P<num>C?\d\S*)\s*$")
+SUBJECT_LETTERS = re.compile(r"[A-Z][A-Z&/]{0,7}")
+
+
+def file_code(code: str | None) -> str | None:
+    """The code a catalog prints for one the state's file stores under its subject's name,
+    or the code as stored: "Accounting (ACCTG) 101" -> "ACCTG 101", "PSYCH (Psychology) 51"
+    -> "PSYCH 51". A code with nothing in capitals on either side is left alone."""
+    m = NAMED_SUBJECT.match(code or "")
+    if not m:
+        return code
+    for side in (m.group("b"), m.group("a")):
+        if SUBJECT_LETTERS.fullmatch(side.strip()):
+            return "%s %s" % (side.strip(), m.group("num"))
+    return code
+
+
+def with_file_codes(closed: list[dict]) -> list[dict]:
+    """Each listed course under the code its catalog prints, the stored form kept as
+    "file_code". The code itself changes, not a "printed" twin, because the scorer keys
+    the closed list by code: a record placing ACCTG 101 must meet ACCTG 101 there."""
+    for c in closed:
+        k = file_code(c.get("code"))
+        if k != c.get("code"):
+            c["file_code"], c["code"] = c.get("code"), k
+    return closed
+
+
 def group_programs(progs: list[dict], rows: list[dict]) -> list[dict]:
     by_cn: dict[str, list[dict]] = {}
     for r in rows:
@@ -188,7 +222,7 @@ def group_programs(progs: list[dict], rows: list[dict]) -> list[dict]:
         out.append({"control_number": cn, "title": p.get("program_title") or "", "award": p.get("award"),
                     "status": p.get("status"), "top_code": p.get("top_code"),
                     "shape": shape_of(p.get("award")),
-                    "closed_list": P.closed_from_rows(mine),
+                    "closed_list": with_file_codes(P.closed_from_rows(mine)),
                     "load_id": mine[0].get("load_id") if mine else None})
     return out
 
