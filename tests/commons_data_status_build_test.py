@@ -15,7 +15,10 @@ What it guards, each a way the page could mislead:
       checked_at), over fixture copies of two real receipts under tests/fixtures/spot_checks/ so a later receipt
       cannot turn main red: 4 agree and 1 differ reads partial; a 1-of-1 cross-college tally never reads strong;
       an unreachable page is not a checked record; a later settlement of ours moves only its own row; the newest
-      receipt by checked_at counts.
+      receipt by checked_at counts;
+  (8) COBIx's two edge cases on PR 3222: a tally under 5 checked reads limited whatever differs, and a tie on
+      checked_at goes to the later source comment id the README names, never the file order;
+  (9) slice 2's per-college read figures (platform, catalog year, found, extracted, levers) are null when unread.
 
 Run from the repo root: python3 tests/commons_data_status_build_test.py
 """
@@ -132,6 +135,48 @@ with tempfile.TemporaryDirectory() as tmp:
         json.dump(newer, f)
     sj2 = B.read_spot_checks(tmp, in_scope_resolve, [])[byname["San Jose City College"]]
     check("(7) the newest receipt by checked_at counts, whatever its file name", sj2["checked_at"] == "2099-01-01T00:00:00Z" and B.confidence(sj2, True)["level"] == "strong")
+
+# (8) COBIx's two edge cases on PR 3222 (comment 6852333180), over fixture copies of real receipts
+check("(8) ⭐ a thin tally that differs reads limited, never above a thin tally that agrees",
+      B.confidence({"agrees": 0, "differs": 1, "unreachable": 0, "settled_later": None}, True)["level"] == "limited"
+      and B.confidence({"agrees": 3, "differs": 1, "unreachable": 0, "settled_later": None}, True)["level"] == "limited"
+      and B.confidence({"agrees": 1, "differs": 0, "unreachable": 0, "settled_later": None}, True)["level"] == "limited")
+check("(8) five or more checked with one differing still reads partial (San Jose City's 4 and 1)",
+      B.confidence({"agrees": 4, "differs": 1, "unreachable": 0, "settled_later": None}, True)["level"] == "partial")
+with tempfile.TemporaryDirectory() as tmp:
+    sc = os.path.join(tmp, "kb", "spot_checks")
+    os.makedirs(sc)
+    with open(os.path.join(FIX, "pr-3206-san-jose-city.check.json"), encoding="utf-8") as f:
+        real = json.load(f)
+    # Two receipts for one college with the same checked_at. "zzz" sorts last by name but cites the EARLIER comment,
+    # so a file-order tie-break would pick it; the comment-id tie-break must pick "aaa".
+    later = dict(real, tally={"San Jose City College": {"agrees": 5, "differs": 0, "page_unreachable": 0}})
+    with open(os.path.join(sc, "aaa-later-comment.check.json"), "w", encoding="utf-8") as f:
+        json.dump(later, f)
+    shutil.copy(os.path.join(FIX, "pr-3206-san-jose-city.check.json"), os.path.join(sc, "zzz-earlier-comment.check.json"))
+    with open(os.path.join(sc, "README.md"), "w", encoding="utf-8") as f:
+        f.write("| File | Source comment | sha256 |\n|---|---|---|\n"
+                "| `zzz-earlier-comment.check.json` | [#3206 comment 6848712362](x) | `0` |\n"
+                "| `aaa-later-comment.check.json` | [#3206 comment 6899999999](x) | `0` |\n")
+    tie = B.read_spot_checks(tmp, in_scope_resolve, [])[byname["San Jose City College"]]
+    check("(8) ⭐ a tie on checked_at goes to the later source comment id, not the file order",
+          tie["comment"] == 6899999999 and (tie["agrees"], tie["differs"]) == (5, 0), tie)
+    os.rename(os.path.join(sc, "aaa-later-comment.check.json"), os.path.join(sc, "zzz2-later-comment.check.json"))
+    with open(os.path.join(sc, "README.md"), "w", encoding="utf-8") as f:
+        f.write("| `zzz-earlier-comment.check.json` | [#3206 comment 6848712362](x) | `0` |\n"
+                "| `zzz2-later-comment.check.json` | [#3206 comment 6899999999](x) | `0` |\n")
+    tie2 = B.read_spot_checks(tmp, in_scope_resolve, [])[byname["San Jose City College"]]
+    check("(8) the tie-break holds with the file order reversed", tie2["comment"] == 6899999999, tie2)
+    check("(8) the committed receipts carry the README's comment ids",
+          all(c["spot_check"]["comment"] for c in C if c["spot_check"]))
+
+# (9) slice 2: the read receipt's own figures, null for an unread college, and the census's words in the rule
+check("(9) every harvested college names its platform, catalog year, found and extracted from its receipts",
+      all(c["platform"] and c["catalog_year"] and c["found"] is not None and c["extracted"] is not None for c in hv))
+check("(9) an unread college carries none of them", all(c["platform"] is None and c["found"] is None and c["levers"] is None for c in unread))
+check("(9) each college's levers count its programs still to pass", all(sum(c["levers"].values()) == c["gap"] for c in hv))
+check("(9) the cause and lever words are the census's own", set(d["rule"]["causes"]) >= {k for c in hv for k in c["causes"]}
+      and set(d["rule"]["levers"]) >= {k for c in hv for k in c["levers"]})
 
 # the committed receipts are byte-for-byte what the README's sha256 names
 import hashlib  # noqa: E402

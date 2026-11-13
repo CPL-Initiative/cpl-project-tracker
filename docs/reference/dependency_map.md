@@ -851,6 +851,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/row_audit/latest.json` | tabs: `pipeline`, `unified-courses` · scripts: `kb/_build_commons_status.py` · workflows: `overmerge-apply.yml`, `phase-1e-apply.yml` | committed by: `daily-dashboard.yml` |
 | `kb/sjcoe_occupation_scope_map.json` | scripts: `kb/_build_occupation_cpl_crosswalk.py` | — |
 | `kb/spot_checks/*.check.json` | scripts: `kb/_build_commons_data_status.py` | — |
+| `kb/spot_checks/README.md` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/statewide_exhibit_categories.json` | scripts: `excel_to_dashboard.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_seed_statewide_categories.py` | scripts: `kb/_seed_statewide_categories.py` |
 | `kb/status/commons.json` | tabs: `canonical-subj4`, `coci-lookup`, `cpl-pathways`, `cr-reference`, `exhibits`, `library`, `program-requirements` · scripts: `kb/_build_commons_status.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/status/commons_data.json` | tabs: `commons` · scripts: `kb/_build_commons_data_status.py` | — |
@@ -1460,5 +1461,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 920 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 921 file
 datasets · 195 external services · 579 consumers · 72 workflows · 41 tabs.

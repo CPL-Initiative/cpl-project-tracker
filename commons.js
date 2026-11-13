@@ -892,7 +892,8 @@
     return new Promise(function (res) { CPL_TABS.loadScript("commons_ase.js", "CPL_COMMONS_ASE", function () { res(go()); }); });
   }
   /* The Commons data dashboard (#3215, slice 1): each college's datasets, how far each has come, what is in the way.
-     #commons/data and #commons/data/<filter> open it; commons_data.js draws it from kb/status/commons_data.json. */
+     #commons/data, #commons/data/<filter> and #commons/data[/<filter>]/college/<slug> (slice 2: that college's side
+     panel) open it; commons_data.js draws it from kb/status/commons_data.json. */
   var DATA = { on: false, filter: "" };
   function showData(root) {
     function go() {
@@ -911,7 +912,7 @@
     ASE.on = !!(a && a[0] === "ase");
     DATA.on = !!(a && a[0] === "data");
     if (ASE.on) { ASE.title = a.slice(1).join("/"); return true; }
-    if (DATA.on) { DATA.filter = a[1] || ""; return true; }
+    if (DATA.on) { DATA.filter = a.slice(1).join("/"); return true; }   // a filter, a college (college/<slug>) or both
     if (a && a[0] === "case" && a[1]) { BATCH.pin = a.slice(1).join("/"); return true; }
     if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
     return false;
@@ -1342,9 +1343,9 @@
      theme every role mapped onto a First Light dark token, so no color is invented there (Rule 4 holds: the dark
      roles live in both HTMLs' :root). */
   var TOKENS = [
-    "#tab-commons { --cmn-page:#F5FAFF; --cmn-page-end:#EEF6FB; --cmn-surface:#FFFFFF; --cmn-ink:#17243B; --cmn-ink-2:#3E4C61; --cmn-muted:#58677D; --cmn-heading:#082B61; --cmn-title:#072C66; --cmn-link:#0D5BC6; --cmn-accent:#1671D9; --cmn-gold:#F4B300; --cmn-line:#D9E4EF; --cmn-line-soft:#E8EEF5; --cmn-track:#E3ECF5; --cmn-pill-bg:#EAF4FE; --cmn-pill-fg:#355A80; --cmn-ask-bg:#FFF4D6; --cmn-ask-fg:#5C4000; --cmn-ask-label:#5C4000; --cmn-done-bg:#E3F4EA; --cmn-done-fg:#1E5B37; --cmn-serif:Georgia,'Times New Roman',serif; --cmn-sans:Inter,ui-sans-serif,system-ui,sans-serif; }",
-    ":root[data-theme=\"dark\"] #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); --cmn-done-bg:var(--surface-muted); --cmn-done-fg:var(--text-strong); }",
-    "@media (prefers-color-scheme: dark) { :root:not([data-theme=\"light\"]) #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); --cmn-done-bg:var(--surface-muted); --cmn-done-fg:var(--text-strong); } }"
+    "#tab-commons { --cmn-page:#F5FAFF; --cmn-page-end:#EEF6FB; --cmn-surface:#FFFFFF; --cmn-ink:#17243B; --cmn-ink-2:#3E4C61; --cmn-muted:#58677D; --cmn-heading:#082B61; --cmn-title:#072C66; --cmn-link:#0D5BC6; --cmn-accent:#1671D9; --cmn-gold:#F4B300; --cmn-line:#D9E4EF; --cmn-line-soft:#E8EEF5; --cmn-track:#E3ECF5; --cmn-pill-bg:#EAF4FE; --cmn-pill-fg:#355A80; --cmn-ask-bg:#FFF4D6; --cmn-ask-fg:#5C4000; --cmn-ask-label:#5C4000; --cmn-done-bg:#E3F4EA; --cmn-done-fg:#1E5B37; --cmn-dialog:#FFFFFF; --cmn-serif:Georgia,'Times New Roman',serif; --cmn-sans:Inter,ui-sans-serif,system-ui,sans-serif; }",
+    ":root[data-theme=\"dark\"] #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); --cmn-done-bg:var(--surface-muted); --cmn-done-fg:var(--text-strong); --cmn-dialog:var(--surface-opaque); }",
+    "@media (prefers-color-scheme: dark) { :root:not([data-theme=\"light\"]) #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); --cmn-done-bg:var(--surface-muted); --cmn-done-fg:var(--text-strong); --cmn-dialog:var(--surface-opaque); } }"
   ].join("\n");
   var FONT_HREF = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";
   function ensureCss() {
