@@ -207,8 +207,13 @@ jobs:
           git add kb/program_requirements_college kb/hand_filed_catalogs kb/program_requirements_wave
           # The heading-agreement snapshot reads the records the index holds, so it follows the add
           # (its --check runs in CI; S645 review of #3201).
-          python3 kb/_program_requirements_heading_agreement.py
-          git add kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md
+          # Guarded: a snapshot that fails to regenerate never stops the records from filing.
+          if python3 kb/_program_requirements_heading_agreement.py; then
+            git add kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md
+          else
+            echo "::warning::the heading-agreement snapshot did not regenerate; the records file without it"
+            git checkout -- kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md || true
+          fi
           if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
           git commit -m "File the program requirements wave $WAVE (run ${{ github.run_id }})"
           # The same push as the college workflow's receipts: ten tries, each after a random wait.
