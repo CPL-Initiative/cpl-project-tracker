@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 926,
+  "file_datasets": 928,
   "external_services": 195,
   "consumers": 582,
   "workflows": 72,
@@ -659,7 +659,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 125
+     "line": 133
     },
     {
      "id": "script:kb/_xai_smoke.py",
@@ -8490,6 +8490,26 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:extract_halt_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 4608
+    },
+    {
+     "id": "script:kb/_program_requirements_wave.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 363
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:fact-sheet/_build_statewide_catalog.py": {
    "consumers": [
@@ -16977,7 +16997,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4779
+     "line": 4871
     }
    ],
    "served": true,
@@ -20565,7 +20585,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4776
+     "line": 4868
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20585,7 +20605,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4712
+     "line": 4804
     }
    ],
    "served": false,
@@ -21202,7 +21222,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4746
+     "line": 4838
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -25292,6 +25312,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/program_requirements_extract_halt_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/program_requirements_heading_agreement_test.py": {
    "consumers": [
     {
@@ -27846,7 +27879,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4796
+     "line": 4888
     }
    ],
    "main_committers": []
@@ -27858,7 +27891,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4883
+     "line": 4975
     }
    ],
    "main_committers": []
@@ -28225,14 +28258,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 339
-    },
-    {
-     "id": "edgefn:program-requirements-extract",
-     "kind": "edgefn",
-     "direction": "write",
-     "how": "literal",
-     "line": 423
+     "line": 57
     }
    ],
    "main_committers": []
@@ -32929,6 +32955,7 @@
     "tests/program_requirements_pilot_test.py",
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
+    "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_wave_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",

@@ -61,7 +61,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 
 | Dataset | Read by | Written by |
 |---|---|---|
-| `allowed_reviewers` | `edgefn:cer-classify`, `edgefn:cpl-news-harvest`, `edgefn:program-requirements-extract` | `edgefn:program-requirements-extract` |
+| `allowed_reviewers` | `edgefn:cer-classify`, `edgefn:cpl-news-harvest`, `edgefn:program-requirements-extract` | — |
 | `budget_funding` | tabs: `budget`, `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | tabs: `budget` |
 | `chat_interactions` | tabs: `sierra-training` | `edgefn:cpl-chat` |
 | `chatbox_college_courses` | scripts: `kb/_course_title_cleanup_apply.py` · `edgefn:cpl-chat` | scripts: `kb/_sync_college_courses.py` |
@@ -481,6 +481,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `exhibits_cpl_ai.js` | tabs: `exhibits` | — |
 | `exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v5.docx` | none found | scripts: `kb/_build_55050_redline_docx.py`, `kb/_verify_55050_redline.py` |
 | `exports/unified_courses.xlsx` | scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
+| `extract_halt_*.json` | scripts: `kb/_program_requirements_college.py`, `kb/_program_requirements_wave.py` | — |
 | `fact-sheet/_build_statewide_catalog.py` | workflows: `daily-dashboard.yml` | — |
 | `fact-sheet/_build_statewide_recs.py` | workflows: `daily-dashboard.yml` | — |
 | `fact-sheet/cpl_stories_render.js` | pages: `fact-sheet/index.html` | — |
@@ -1181,6 +1182,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_college_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_dated_reads_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_display_apply_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_extract_halt_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_heading_agreement_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pdf_numbers_after_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
@@ -1466,5 +1468,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 926 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 928 file
 datasets · 195 external services · 582 consumers · 72 workflows · 41 tabs.
