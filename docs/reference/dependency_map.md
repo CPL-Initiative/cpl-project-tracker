@@ -409,7 +409,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cobi_refresh.js` | pages: `CPL_Dashboard.html` | — |
 | `coci_lookup.js` | pages: `CPL_Dashboard.html` | — |
 | `coci_lookup_desc_*.js` | tabs: `coci-lookup` · scripts: `kb/_audit_cid_claims.py`, `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_ccr_desc_signal.py` | — |
-| `coci_program_export_*.csv` | scripts: `chatbox/build_coci_offerings.py` | — |
+| `coci_program_export_*.csv` | scripts: `chatbox/build_coci_offerings.py`, `kb/_harvest_no_closed_list_diagnosis.py` | — |
 | `coci_program_export_<date>.csv` | scripts: `kb/_build_baccalaureate_pathways.py`, `kb/_build_coci_programs.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_program_course_graph.py`, `kb/_classify_noncredit_programs.py`, `tmc/_build_college_adts.py` | — |
 | `college_activity.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `college_activity_template.html` | scripts: `excel_to_dashboard.py`, `kb/_test_light_theme.py` | committed by: `daily-dashboard.yml` |
@@ -849,8 +849,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/course.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/cr.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/exhibit.json` | scripts: `kb/_build_commons_status.py` | — |
-| `kb/status/harvest_gap_census.json` | scripts: `kb/_harvest_gap_census.py` | committed by: `harvest-gap-census.yml` |
+| `kb/status/harvest_gap_census.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_harvest_no_closed_list_diagnosis.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/harvest_gap_census.md` | scripts: `kb/_harvest_gap_census.py` | committed by: `harvest-gap-census.yml` |
+| `kb/status/harvest_no_closed_list.json` | scripts: `kb/_harvest_no_closed_list_diagnosis.py` | — |
 | `kb/status/mid_outcomes_compare_*.json` | none found | committed by: `mid-outcomes-compare.yml` |
 | `kb/status/mid_outcomes_compare_*.md` | none found | committed by: `mid-outcomes-compare.yml` |
 | `kb/status/program-requirements-checked.json` | scripts: `kb/_build_commons_status.py`, `kb/_sync_program_checked.py` | scripts: `kb/_sync_program_checked.py` · committed by: `daily-dashboard.yml` |
@@ -1121,6 +1122,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/glyph_sweep_test.py` | workflows: `js-tests.yml` | — |
 | `tests/governance_docs_panel.test.js` | workflows: `js-tests.yml` | — |
 | `tests/harvest_gap_census_test.py` | workflows: `js-tests.yml` | — |
+| `tests/harvest_no_closed_list_diagnosis_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ib_official_titles_test.py` | workflows: `js-tests.yml` | — |
 | `tests/identities_rekey_test.py` | workflows: `js-tests.yml` | — |
 | `tests/install_prompt_guards_test.py` | workflows: `js-tests.yml` | — |
@@ -1438,5 +1440,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 898 file
-datasets · 195 external services · 571 consumers · 71 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 900 file
+datasets · 195 external services · 572 consumers · 71 workflows · 41 tabs.
