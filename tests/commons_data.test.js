@@ -226,12 +226,12 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     JSON.stringify(cards(m1)) === JSON.stringify(["pr", "cat", "confidence", "cost"]) && !/TBA|PLO|Course objectives|Pathways Mapper/.test(txt(m1)), cards(m1));
   const pr1 = txt(m1.querySelector('[data-ds="pr"]'));
   check("row 4: program requirements read listed, closed list, found, extracted, passing and by cause, with its bar",
-    /80 of 100 listed programs/.test(pr1) && /With a closed course list\s*95/.test(pr1) && /Pages found at read time\s*90/.test(pr1) && /Extracted at read time\s*88/.test(pr1)
+    /80 of 100 listed programs/.test(pr1) && /With a closed course list\s*95/.test(pr1) && /Programs whose page the capture found\s*90/.test(pr1) && /Records extracted \(a reread can add some\)\s*88/.test(pr1)
     && /no closed list in the Program Course File 20/.test(pr1) && m1.querySelector('[data-ds="pr"] .cdd-meter i').style.width === "80%");
   check("row 5: the stamp is Pacific time with its age cue from the file", /Updated .* PT \(read\), fresh/.test(pr1));
   check("row 6: the catalog read's platform and year, the spot-check and its reason, the cost",
     /CourseLeaf/.test(txt(m1)) && /2026-2027/.test(txt(m1)) && /Strong/.test(txt(m1.querySelector('[data-ds="confidence"]'))) && /5 agree, 0 differ, 0 unreachable/.test(txt(m1))
-    && /\$8\.00/.test(txt(m1)) && /\$0\.100/.test(txt(m1)) && /10 minutes/.test(txt(m1)));
+    && /\$8\.00/.test(txt(m1)) && /\$0\.100/.test(txt(m1)) && /Page-finding time \(the capture, before the paid read\)\s*10 minutes/.test(txt(m1)) && !/Run time/.test(txt(m1)));
   check("row 7: the open gaps are the census's causes in its words", /No closed list in the Program Course File: 20 programs/.test(txt(m1.querySelector(".cdd-gapbox"))));
   word(2).click();
   const m2 = x.d.getElementById("cdd-more-2");
@@ -321,6 +321,64 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("address 12: an unknown college opens no panel and reports the list", n.d.getElementById("cdd-panel").hasAttribute("hidden") && reported(n) === "commons/data");
   check("slug: accents drop and words join by hyphens", x.D.slugOf({ name: "Cañada College" }) === "canada-college" && x.D.slugOf({ name: "Mt. San Antonio College" }) === "mt-san-antonio-college");
   check("static: the panel's CSS goes full width under 560px and hides the edge", /max-width: 560px\) \{[\s\S]*\.cdd-panel \{ width:100vw/.test(css) && /\.cdd-grip, \.cdd-gripnote \{ display:none/.test(css));
+
+  // ── (9) the #3231 review: each finding, a check that failed before its fix ──
+  // the catalog card: each source its own lines and stamp; both shown, labeled, where the scout and the capture disagree
+  const DATA4 = JSON.parse(JSON.stringify(DATA3));
+  Object.assign(DATA4.colleges[2], { read_at: ago(40), read_seconds: 300, run: "456", catalog_url: "https://gamma.example.edu/catalog.pdf" });
+  Object.assign(DATA4.colleges[2].scout, { platform: "coursedog", catalog_year: "2026-2027", catalog_url: "https://catalog.gamma.example.edu/" });
+  const r9 = load("#commons/data", DATA4);
+  await r9.M.boot(); await settle();
+  // the site's header and menu sit beside the tab, as in COBI; the panel must make them inert, and leaving must release them
+  const head9 = r9.d.createElement("header"); head9.id = "site-head"; r9.d.body.insertBefore(head9, r9.d.body.firstChild);
+  r9.d.querySelector('[data-expand="3"]').click();
+  const cat9 = r9.d.querySelector('#cdd-more-3 [data-ds="cat"]');
+  const capP = cat9 && cat9.querySelector('[data-part="capture"]'), scP = cat9 && cat9.querySelector('[data-part="scout"]');
+  check("review catalog 1 ⭐: the capture's platform and year carry the capture's own stamp (stale), never the scout's fresh one",
+    capP && /PDF/.test(txt(capP)) && /2025-2026/.test(txt(capP)) && /\(read\), stale/.test(txt(capP)) && !/scouted/.test(txt(capP)));
+  check("review catalog 2 ⭐: the scout's findings show beside it, labeled, with the scout's stamp",
+    scP && /What the source scout found/.test(txt(scP)) && /Coursedog/.test(txt(scP)) && /2026-2027/.test(txt(scP)) && /\(scouted\), fresh/.test(txt(scP)));
+  check("review catalog 3: the disagreement is said in words", cat9 && /different platform and catalog year than the capture read/.test(txt(cat9.querySelector("[data-differ]"))));
+  r9.d.querySelector('[data-panel-open="3"]').click();
+  const P9 = r9.d.getElementById("cdd-panel");
+  check("review cost: the capture's time is labeled as the capture's, apart from the paid read's run",
+    /Page-finding time \(the capture, before the paid read\)/.test(txt(P9)) && !/Run time/.test(txt(P9)));
+  // Escape after a click on the panel's plain text (the focus is then the body)
+  r9.d.activeElement.blur();
+  r9.d.body.dispatchEvent(new r9.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true, cancelable: true }));
+  check("review escape ⭐: Escape closes the panel when the focus is the body, not the panel", P9.hasAttribute("hidden") && !r9.d.querySelector("[inert]"));
+  // the Tab trap skips a control with no box (the width edge is display:none under 560px)
+  r9.d.querySelector('[data-panel-open="3"]').click();
+  const grip9 = P9.querySelector('[role="separator"]');
+  grip9.style.display = "none";
+  const f9 = Array.from(P9.querySelectorAll('a[href], button:not([disabled])'));
+  f9[f9.length - 1].focus();
+  f9[f9.length - 1].dispatchEvent(new r9.w.KeyboardEvent("keydown", { key: "Tab", bubbles: true, cancelable: true }));
+  check("review trap ⭐: Tab on the last control wraps to the first drawn one, past the hidden edge",
+    r9.d.activeElement === r9.d.getElementById("cdd-panel-close"));
+  // inert released when the address moves to another Commons view while the panel is open
+  check("review inert 0: the panel holds the page inert, the site's header with it", head9.hasAttribute("inert"));
+  r9.w.history.replaceState(null, "", "#commons");
+  r9.w.dispatchEvent(new r9.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
+  await settle();
+  check("review inert 1 ⭐: moving to #commons with the panel open releases every inert (the header and menu live again)", !head9.hasAttribute("inert") && !r9.d.querySelector("[inert]") && !r9.d.querySelector("#cdd-h"));
+  const r10 = load("#commons/data/college/gamma-college", DATA4);
+  await r10.M.boot(); await settle();
+  r10.w.history.replaceState(null, "", "#commons/ase");
+  r10.w.dispatchEvent(new r10.w.HashChangeEvent("hashchange"));
+  check("review inert 2: a hashchange to #commons/ase releases it too", !r10.d.querySelector("[inert]"));
+  // a session renewal redraws the view as it stands, never the arrival's college
+  const r11 = load("#commons/data/college/gamma-college", DATA4);
+  await r11.M.boot(); await settle();
+  r11.d.getElementById("cdd-panel-close").click();
+  r11.w.dispatchEvent(new r11.w.CustomEvent("cpl-session-changed", { detail: { signedIn: true } }));
+  await settle();
+  check("review renewal 1 ⭐: a renewal after Close does not reopen the arrival's panel", r11.d.getElementById("cdd-panel").hasAttribute("hidden") && r11.w.location.hash === "#commons/data");
+  r11.d.querySelector('[data-expand="1"]').click(); r11.d.querySelector('[data-panel-open="1"]').click();
+  r11.w.dispatchEvent(new r11.w.CustomEvent("cpl-session-changed", { detail: { signedIn: true } }));
+  await settle();
+  check("review renewal 2 ⭐: a renewal keeps a panel opened by a click open, on its college",
+    !r11.d.getElementById("cdd-panel").hasAttribute("hidden") && txt(r11.d.getElementById("cdd-panel-h")) === "Alpha College" && r11.w.location.hash === "#commons/data/college/alpha-college");
 
   const failed = results.filter((x) => !x[1]);
   results.forEach((x) => console.log((x[1] ? "PASS " : "FAIL ") + x[0]));

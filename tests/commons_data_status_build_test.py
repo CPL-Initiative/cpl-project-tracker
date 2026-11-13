@@ -171,10 +171,36 @@ with tempfile.TemporaryDirectory() as tmp:
           all(c["spot_check"]["comment"] for c in C if c["spot_check"]))
 
 # (9) slice 2: the read receipt's own figures, null for an unread college, and the census's words in the rule
-check("(9) every harvested college names its platform, catalog year, found and extracted from its receipts",
-      all(c["platform"] and c["catalog_year"] and c["found"] is not None and c["extracted"] is not None for c in hv))
-check("(9) an unread college carries none of them", all(c["platform"] is None and c["found"] is None and c["levers"] is None for c in unread))
+def _receipt(slug, name):
+    for n in (name, "capture_preview.json" if name == "capture.json" else None):
+        if n and os.path.exists(os.path.join(ROOT, B.COLLEGE_DIR, slug, n)):
+            return json.load(open(os.path.join(ROOT, B.COLLEGE_DIR, slug, n), encoding="utf-8"))
+    return {}
+
+
+check("(9) each harvested college's platform, catalog year, found and extracted are its own receipts' values",
+      all(c["platform"] == _receipt(c["slug"], "capture.json").get("platform") and c["catalog_year"] == _receipt(c["slug"], "capture.json").get("catalog_year")
+          and c["found"] == _receipt(c["slug"], "summary.json").get("found") and c["extracted"] == _receipt(c["slug"], "summary.json").get("extracted") for c in hv))
+# An unread college, as a fixture: the committed universe is fully harvested today, so the live rows cannot test it.
+check("(9) ⭐ an unread college carries None for every read figure, never a zero or an empty map",
+      B.slice2_fields(None) == {k: None for k in B.SLICE2} and set(B.SLICE2) <= set(d["fields"]))
+check("(9) a harvested college's read figures pass through as its harvest holds them, zeros kept",
+      B.slice2_fields({"found": 0, "levers": {}, "platform": "pdf"})["found"] == 0 and B.slice2_fields({"levers": {}})["levers"] == {})
 check("(9) each college's levers count its programs still to pass", all(sum(c["levers"].values()) == c["gap"] for c in hv))
+# (10) the outcome reasons count what kb/course_outcomes/ holds, so the words cannot overstate it (#3231 review)
+with tempfile.TemporaryDirectory() as tmp:
+    for host, rows in (("aaa", [{"outcomes": ["x"], "objectives": ["y"]}]), ("bbb", [{"outcomes": ["x"], "objectives": []}]),
+                       ("ccc", [{"outcomes": []}]), ("trial_1", [{"outcomes": ["x"], "objectives": ["y"]}])):
+        os.makedirs(os.path.join(tmp, B.OUTCOMES, host))
+        with open(os.path.join(tmp, B.OUTCOMES, host, "read_1_p1of1.json"), "w", encoding="utf-8") as f:
+            json.dump({"rows": rows}, f)
+    oh = B.outcome_hosts(tmp)
+    check("(10) ⭐ a host counts for SLOs or objectives only when a row holds some, trial runs left out",
+          oh == {"slo": ["aaa", "bbb"], "objectives": ["aaa"]}, oh)
+    rs = B.outcome_reasons(oh)
+    check("(10) the reasons say those counts and name the objective hosts", "for 2 hosts" in rs["slo"] and "for 1 host (aaa)" in rs["objectives"], rs)
+check("(10) the committed file's reasons are the builder's count of the repo", {k: d["tba"][k] for k in ("slo", "objectives")} == B.outcome_reasons(B.outcome_hosts(ROOT)))
+check("(10) the PLO reason does not say outcomes are missing from the records", "not yet read per college here" in d["tba"]["plo"] and "no PLO" not in d["tba"]["plo"])
 check("(9) the cause and lever words are the census's own", set(d["rule"]["causes"]) >= {k for c in hv for k in c["causes"]}
       and set(d["rule"]["levers"]) >= {k for c in hv for k in c["levers"]})
 

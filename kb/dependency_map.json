@@ -1888,7 +1888,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1350,
+     "line": 1352,
      "tabs": [
       "commons"
      ]
@@ -6452,7 +6452,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 904,
+     "line": 906,
      "tabs": [
       "commons"
      ]
@@ -22085,6 +22085,13 @@
   "file:read_*.json": {
    "consumers": [
     {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 310
+    },
+    {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
      "direction": "read",
@@ -27810,7 +27817,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1133,
+     "line": 1135,
      "tabs": [
       "commons"
      ]
@@ -31352,7 +31359,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1111,
+     "line": 1113,
      "tabs": [
       "commons"
      ]

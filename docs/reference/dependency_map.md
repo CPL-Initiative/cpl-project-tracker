@@ -995,7 +995,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
 | `raci.js` | pages: `CPL_Dashboard.html` | — |
 | `read*.json` | scripts: `scripts/next_slo_colleges.py` | — |
-| `read_*.json` | scripts: `kb/_build_commons_status.py` | — |
+| `read_*.json` | scripts: `kb/_build_commons_data_status.py`, `kb/_build_commons_status.py` | — |
 | `read_*_p*of*.json` | scripts: `kb/_course_outcomes_load.py` | — |
 | `reflections/build_reflections_summary.py` | workflows: `weekly-reflections-summary.yml` | — |
 | `reflections/summary.json` | scripts: `reflections/build_reflections_summary.py` | committed by: `weekly-reflections-summary.yml` |

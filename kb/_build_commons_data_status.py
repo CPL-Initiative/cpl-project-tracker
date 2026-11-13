@@ -75,6 +75,7 @@ FIELDS = {
     "listed_closed": "shareable", "found": "shareable", "extracted": "shareable", "errors": "internal",
     "failed_checks": "internal", "platform": "shareable", "catalog_year": "shareable", "catalog_url": "shareable",
     "read_seconds": "internal", "run": "internal", "levers": "internal",
+    # the field list the slice 2 read figures take from a harvested college (None, never a zero, when unread)
 }
 
 # The figures slice 1 cannot read from a committed file, each with its reason (shown as TBA on the page).
@@ -88,11 +89,10 @@ TBA = {
     "apis": "The API connection checklist (#3220) is not a committed file yet.",
     "jst": "The JST funnel waits on an authorized-student feed from CCCStart; counts only, when it exists.",
     # slice 2: the side panel's sections with no committed source per college, each with its reason
-    "slo": "Course SLO reads are committed for 13 hosts under kb/course_outcomes/<host>/, not yet read per college "
-           "here; the SLO queue's state shows where the queue holds a college.",
-    "plo": "Program PLOs are not harvested yet: the program requirements records carry no PLO column.",
-    "objectives": "Course objective reads are committed for 13 hosts under kb/course_outcomes/<host>/, not yet read "
-                  "per college here.",
+    # "slo" and "objectives" are written by outcome_reasons() from what kb/course_outcomes/ holds, so the count
+    # in the words is the count on disk.
+    "plo": "Program outcomes are filed with each committed program record (record.program.outcomes in "
+           "kb/program_requirements_college/<slug>/records/), not yet read per college here.",
     "catalog_registry": "The catalog link, curriculum view and program map checks are rows in the live program "
                         "source registry, which this file does not carry.",
     "ppm": "Program Pathways Mapper has no official export; 4 pilot term maps are committed "
@@ -291,6 +291,49 @@ def confidence(spot: dict | None, harvested: bool):
     return {"level": "strong", "why": said}
 
 
+SLICE2 = ("listed_closed", "found", "extracted", "errors", "failed_checks", "platform", "catalog_year", "catalog_url",
+          "read_seconds", "run", "levers")
+
+
+def slice2_fields(h: dict | None) -> dict:
+    """A college's slice 2 read figures: its harvest's, or None for each when the college is unread."""
+    return {k: (h.get(k) if h else None) for k in SLICE2}
+
+
+OUTCOMES = "kb/course_outcomes"
+
+
+def outcome_hosts(root: str) -> dict:
+    """{"slo": [host], "objectives": [host]}: the hosts whose committed outline reads (read_*.json, trial runs left
+    out) hold at least one course with outcomes, or with objectives."""
+    out = {"slo": set(), "objectives": set()}
+    for path in glob.glob(os.path.join(root, OUTCOMES, "*", "read_*.json")):
+        host = os.path.basename(os.path.dirname(path))
+        if host.startswith("trial_"):
+            continue
+        with open(path, encoding="utf-8") as f:
+            d = json.load(f)
+        for r in d.get("rows") or []:
+            if not isinstance(r, dict):
+                continue
+            if r.get("outcomes"):
+                out["slo"].add(host)
+            if r.get("objectives"):
+                out["objectives"].add(host)
+    return {k: sorted(v) for k, v in out.items()}
+
+
+def outcome_reasons(hosts: dict) -> dict:
+    s, o = hosts["slo"], hosts["objectives"]
+    return {
+        "slo": "Course SLO reads are committed for %d host%s under %s/<host>/, not yet read per college here; the SLO "
+               "queue's state shows where the queue holds a college." % (len(s), "" if len(s) == 1 else "s", OUTCOMES),
+        "objectives": ("Course objectives are committed for %d host%s (%s) under %s/<host>/, not yet read per college "
+                       "here." % (len(o), "" if len(o) == 1 else "s", ", ".join(o), OUTCOMES)) if o else
+                      "No committed outline read holds course objectives yet.",
+    }
+
+
 def census_words() -> dict:
     """The census's own words for each cause and lever (its CAUSES and LEVER_WORDS), never restated here."""
     import _harvest_gap_census as G  # noqa: E402  (harvest() put kb/ on the path)
@@ -337,8 +380,10 @@ def build(root: str) -> dict:
             if cid is None:
                 unmatched.append({"file": os.path.relpath(path, root), "name": c.get("college")})
                 continue
+            cu = c.get("catalog_url") if isinstance(c.get("catalog_url"), dict) else {}
             scouts[cid] = {"recommendation": c.get("recommendation"), "challenge": (c.get("access") or {}).get("challenge"),
-                           "checked_at": c.get("checked_at"), "wave": s.get("wave")}
+                           "checked_at": c.get("checked_at"), "wave": s.get("wave"),
+                           "platform": c.get("platform"), "catalog_year": cu.get("catalog_year"), "catalog_url": cu.get("found")}
 
     spot = read_spot_checks(root, resolve, unmatched)
 
@@ -355,8 +400,7 @@ def build(root: str) -> dict:
             "cost_usd": h["cost_usd"] if h else None, "passed_at_read": h["passed_at_read"] if h else None,
             "slo_queue": slo.get(cid), "scout": scouts.get(cid), "spot_check": spot.get(cid),
             "confidence": confidence(spot.get(cid), h is not None),
-            **{k: (h[k] if h else None) for k in ("listed_closed", "found", "extracted", "errors", "failed_checks", "platform",
-                                                  "catalog_year", "catalog_url", "read_seconds", "run", "levers")},
+            **slice2_fields(h),
         })
 
     hv = [c for c in colleges if c["harvested"]]
@@ -381,7 +425,8 @@ def build(root: str) -> dict:
         "written_at": iso_now(),
         "sources": {"universe": os.path.relpath(cw_path, root), "harvest": COLLEGE_DIR + "/<slug>/", "census": "kb/_harvest_gap_census.py (committed-files functions)",
                     "slo_queue": SLO_QUEUE, "scouts": SCOUTS, "spot_checks": SPOT_CHECKS, "spot_check_comments": SPOT_README},
-        "rule": dict(RULE, causes=census_words()["causes"], levers=census_words()["levers"]), "fields": FIELDS, "tba": TBA if not spot else {k: v for k, v in TBA.items() if k != "confidence"},
+        "rule": dict(RULE, causes=census_words()["causes"], levers=census_words()["levers"]), "fields": FIELDS,
+        "tba": dict(TBA if not spot else {k: v for k, v in TBA.items() if k != "confidence"}, **outcome_reasons(outcome_hosts(root))),
         "statewide": statewide,
         "census_check": {"universe": census["universe"], "passing": census["passing"], "gap": census["gap"]},
         "unmatched": unmatched,

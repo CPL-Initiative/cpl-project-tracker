@@ -236,7 +236,7 @@
       pr.num = c.passing; pr.den = c.programs; pr.value = v == null ? "None listed" : Math.round(v * 100) + "%";
       pr.note = fmt(c.passing) + " of " + fmt(c.programs) + " listed programs pass the machine checks";
       pr.lines = [["Listed by the capture", fmt(c.programs)], c.listed_closed != null ? ["With a closed course list", fmt(c.listed_closed)] : null,
-        c.found != null ? ["Pages found at read time", fmt(c.found)] : null, c.extracted != null ? ["Extracted at read time", fmt(c.extracted)] : null,
+        c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null, c.extracted != null ? ["Records extracted (a reread can add some)", fmt(c.extracted)] : null,
         ["Passing now", fmt(c.passing)], ["Still to pass", fmt(c.gap)]].filter(Boolean);
       pr.causes = Object.keys(c.causes || {}).sort(function (a, b) { return c.causes[b] - c.causes[a] || a.localeCompare(b); })
         .map(function (k) { return [causeWord(M, k), c.causes[k]]; });
@@ -257,11 +257,22 @@
 
     var cat = { key: "cat", group: "Harvested", label: "Catalog source", held: !!(c.platform || c.scout), tba: tbaOf(M, "catalog_registry"),
       src: (c.platform ? "the capture's own record of its catalog" : "") + (c.platform && c.scout ? "; " : "") + (c.scout ? scoutFile(M, c) : "") };
-    cat.lines = [c.platform ? ["Catalog platform", platformWord(c.platform)] : null, c.catalog_year ? ["Catalog year read", c.catalog_year] : null,
-      c.scout ? ["Source scout", "recommends " + words(c.scout.recommendation) + (c.scout.challenge && c.scout.challenge !== "none" ? "; " + words(c.scout.challenge) : "; no access barrier")] : null].filter(Boolean);
-    cat.link = c.catalog_url || null;
-    if (c.scout && c.scout.checked_at) cat.stamp = { at: c.scout.checked_at, kind: "scouted" };
-    else if (c.platform && c.read_at) cat.stamp = { at: c.read_at, kind: "read" };
+    /* Each source keeps its own lines and its own stamp (the capture's read, the scout's check), so an age cue never
+       dates a line another source wrote; where they disagree, both show, labeled. */
+    cat.parts = [];
+    if (c.platform || c.catalog_year) cat.parts.push({ key: "capture", title: "What the capture read",
+      lines: [c.platform ? ["Catalog platform", platformWord(c.platform)] : null, c.catalog_year ? ["Catalog year", c.catalog_year] : null].filter(Boolean),
+      link: c.catalog_url || null, linkWord: "The catalog the capture read", stamp: c.read_at ? { at: c.read_at, kind: "read" } : null });
+    if (c.scout) {
+      var sc = c.scout;
+      cat.parts.push({ key: "scout", title: "What the source scout found",
+        lines: [sc.platform ? ["Catalog platform", platformWord(sc.platform)] : null, sc.catalog_year ? ["Catalog year", sc.catalog_year] : null,
+          ["Recommends", words(sc.recommendation) + (sc.challenge && sc.challenge !== "none" ? "; " + words(sc.challenge) : "; no access barrier")]].filter(Boolean),
+        link: sc.catalog_url || null, linkWord: "The catalog the scout found", stamp: sc.checked_at ? { at: sc.checked_at, kind: "scouted" } : null });
+      if (c.platform && ((sc.platform && sc.platform !== c.platform) || (sc.catalog_year && c.catalog_year && sc.catalog_year !== c.catalog_year)))
+        cat.differ = "The scout found a different " + [sc.platform && sc.platform !== c.platform ? "platform" : null,
+          sc.catalog_year && c.catalog_year && sc.catalog_year !== c.catalog_year ? "catalog year" : null].filter(Boolean).join(" and ") + " than the capture read.";
+    }
     L.push(cat);
     L.push({ key: "ppm", group: "Harvested", label: "Program Pathways Mapper (PPM)", tba: tbaOf(M, "ppm") });
     L.push({ key: "desc", group: "Connected", label: "Course descriptions", tba: tbaOf(M, "descriptions") });
@@ -310,6 +321,15 @@
     return el("span", { cls: "cdd-pr" }, [meter(v || 0), el("span", { cls: "cdd-n", text: d.value || (v == null ? "" : Math.round(v * 100) + "%") }), d.note ? el("span", { cls: "cdd-of", text: d.note }) : null]);
   }
   function tba(reason) { return el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), reason || ""]); }
+  /* A dataset read from more than one source: each part's lines, link and stamp together, and the disagreement. */
+  function parts(d, now) {
+    var out = (d.parts || []).map(function (p) {
+      return el("div", { cls: "cdd-part", "data-part": p.key }, [el("p", { cls: "cdd-partname", text: p.title }), dl(p.lines),
+        p.link ? el("p", { cls: "cdd-of" }, [el("a", { href: p.link, text: p.linkWord })]) : null, stampLine(p.stamp, now)]);
+    });
+    if (d.differ) out.push(el("p", { cls: "cdd-state", "data-differ": "true", text: d.differ }));
+    return out;
+  }
 
   /* The row, opened in place: the datasets the builder holds for this college and nothing else, the spot-check, the
      read's cost, the open gaps; a word opens the same college in the side panel. */
@@ -319,8 +339,8 @@
         d.den != null ? bar(d) : null, d.state ? el("p", { cls: "cdd-state", text: d.state }) : null,
         d.state && d.note ? el("p", { cls: "cdd-of", text: d.note }) : null,
         d.lines && d.lines.length ? dl(d.lines) : null,
-        d.causes && d.causes.length ? el("p", { cls: "cdd-of", text: "Still to pass, by cause: " + d.causes.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") }) : null,
-        stampLine(d.stamp, now)]);
+        d.causes && d.causes.length ? el("p", { cls: "cdd-of", text: "Still to pass, by cause: " + d.causes.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") }) : null]
+        .concat(d.parts ? parts(d, now) : [stampLine(d.stamp, now)]));
     });
     if (c.spot_check || c.confidence) {
       var sp = c.spot_check;
@@ -334,7 +354,7 @@
       var cp = costPer(c);
       cards.push(el("section", { cls: "cdd-card", "data-ds": "cost", "aria-label": "Read cost" }, [el("h4", { text: "Read cost" }),
         dl([["Cost of the last read", "$" + Number(c.cost_usd).toFixed(2)], cp == null ? null : ["Per passing program", "$" + cp.toFixed(3)],
-          c.read_seconds != null ? ["Run time", minutes(c.read_seconds)] : null].filter(Boolean))]));
+          c.read_seconds != null ? ["Page-finding time (the capture, before the paid read)", minutes(c.read_seconds)] : null].filter(Boolean))]));
     }
     var G = gaps(M, c);
     var openP = el("button", { type: "button", cls: "cmn-word", "data-panel-open": String(c.id), text: "Open " + c.name + " in the side panel" });
@@ -375,8 +395,8 @@
         if (d.lines && d.lines.length) kids.push(dl(d.lines));
         if (d.causes && d.causes.length) kids.push(el("p", { cls: "cdd-of", text: "Still to pass, by cause: " + d.causes.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") }));
         (d.later || []).forEach(function (x) { kids.push(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: x[0] + ": " + x[1] + ". " }), x[2]])); });
-        if (d.link) kids.push(el("p", { cls: "cdd-of" }, [el("a", { href: d.link, text: "The catalog the capture read" })]));
-        if (d.stamp || d.held) kids.push(stampLine(d.stamp, now));
+        if (d.parts) kids = kids.concat(parts(d, now));
+        else if (d.stamp || d.held) kids.push(stampLine(d.stamp, now));
         if (d.src && d.held) kids.push(el("p", { cls: "cdd-src", text: "Source: " + d.src }));
         return el("div", { cls: "cdd-pds", "data-ds": d.key }, kids);
       })));
@@ -395,7 +415,8 @@
     if (c.cost_usd != null) {
       var cp = costPer(c);
       out.push(section("Cost and run", [dl([["Cost of the last read", "$" + Number(c.cost_usd).toFixed(2)], cp == null ? null : ["Per passing program at read time", "$" + cp.toFixed(3)],
-        c.read_seconds != null ? ["Run time", minutes(c.read_seconds)] : null, c.run ? ["Actions run", String(c.run)] : null].filter(Boolean))]));
+        c.run ? ["Actions run of the paid read", String(c.run)] : null,
+        c.read_seconds != null ? ["Page-finding time (the capture, before the paid read)", minutes(c.read_seconds)] : null].filter(Boolean))]));
     }
     var src = [c.slug ? "kb/program_requirements_college/" + c.slug + "/" : null, M.sources.census || null, c.slo_queue ? M.sources.slo_queue : null,
       c.scout ? scoutFile(M, c) : null, sp ? sp.file + (sp.pr ? " (pull request " + sp.pr + ")" : "") : null,
@@ -416,8 +437,22 @@
       });
     }
   }
-  function releaseInert() { INERT.forEach(function (x) { x.removeAttribute("inert"); }); INERT = []; }
-  window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "commons") { S.panel = null; releaseInert(); } });
+  /* Idempotent: removes only what holdInert set, and the document's Escape with it. */
+  function releaseInert() {
+    INERT.forEach(function (x) { x.removeAttribute("inert"); }); INERT = [];
+    document.removeEventListener("keydown", onDocKey, true);
+  }
+  /* Escape closes the panel wherever the focus is, a click on its plain text included (the focus is then the body). */
+  function onDocKey(e) {
+    if (e.key !== "Escape" || S.panel == null) return;
+    e.preventDefault(); e.stopPropagation(); closePanel();
+  }
+  /* Leaving the data view by any path (another tab, #commons, #commons/ase, browser Back from an open panel) releases
+     the page: commons.js draws another view into the root without telling this module. */
+  function onData() { return /^#?commons\/data(\/|$)/.test(String(location.hash || "")); }
+  function leave() { if (!onData()) { S.panel = null; releaseInert(); } }
+  window.addEventListener("cpl-tab-activated", leave);
+  window.addEventListener("hashchange", leave);
   function panelShell() {
     var box = el("aside", { cls: "cdd-panel", id: "cdd-panel", role: "dialog", "aria-modal": "true", "aria-labelledby": "cdd-panel-h", hidden: "" });
     box.addEventListener("keydown", function (e) { trap(e, box); });
@@ -432,6 +467,8 @@
     if (!c) { box.setAttribute("hidden", ""); releaseInert(); return; }
     box.removeAttribute("hidden");
     holdInert(box);
+    document.removeEventListener("keydown", onDocKey, true);
+    document.addEventListener("keydown", onDocKey, true);
     box.style.setProperty("--cdd-pw", S.pw + "px");
     var grip = el("div", { cls: "cdd-grip", role: "separator", "aria-orientation": "vertical", "aria-label": "Panel width", tabindex: "0",
       "aria-valuemin": String(PW.min), "aria-valuemax": String(PW.max), "aria-valuenow": String(S.pw), "aria-valuetext": S.pw + " pixels wide" });
@@ -474,11 +511,14 @@
     });
   }
   function focusables(box) {
-    return Array.prototype.filter.call(box.querySelectorAll('a[href], button:not([disabled]), input, [tabindex="0"]'), function (x) { return !x.closest("[hidden]"); });
+    /* Only what is drawn: the width edge is display:none under 560px, and a control with no box takes no focus. */
+    return Array.prototype.filter.call(box.querySelectorAll('a[href], button:not([disabled]), input, [tabindex="0"]'), function (x) {
+      if (x.closest("[hidden]")) return false;
+      try { return window.getComputedStyle(x).display !== "none"; } catch (e) { return true; }
+    });
   }
   function trap(e, box) {
-    if (e.key === "Escape") { e.preventDefault(); e.stopPropagation(); closePanel(); return; }
-    if (e.key !== "Tab") return;
+    if (e.key !== "Tab") return;   // Escape is the document's (onDocKey)
     var f = focusables(box);
     if (!f.length) return;
     var first = f[0], last = f[f.length - 1], a = document.activeElement;
@@ -581,7 +621,6 @@
     wrap.appendChild(list);
     wrap.appendChild(notes(M));
     var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which goes inert while it is open
-    page.addEventListener("keydown", function (e) { if (e.key === "Escape" && S.panel != null) { e.preventDefault(); closePanel(); } });
     root.appendChild(page);
     drawPanel(VIEW.now);
     return page;
@@ -711,6 +750,8 @@
     "dl.cdd-dl { margin:0; display:grid; grid-template-columns:minmax(0, auto) minmax(0, 1fr); gap:2px 12px; font-size:.86rem; }",
     "dl.cdd-dl dt { color:var(--cmn-muted); } dl.cdd-dl dd { margin:0; color:var(--cmn-ink); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }",
     ".cdd-stampline { display:block; font-size:.84rem; color:var(--cmn-muted); }",
+    ".cdd-part { display:grid; gap:2px; padding-top:4px; }",
+    ".cdd-partname { margin:0; font-size:.84rem; font-weight:700; color:var(--cmn-ink-2); }",
     ".cdd-gapbox { display:grid; gap:4px; }",
     "ul.cdd-gaps, ul.cdd-srcs { margin:0; padding-left:20px; display:grid; gap:4px; color:var(--cmn-ink-2); font-size:.9rem; }",
     "ul.cdd-gaps li > span { display:block; }",

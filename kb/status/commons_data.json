@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T15:03:29Z",
+ "written_at": "2026-11-13T15:10:41Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -135,9 +135,7 @@
   "teachout_approved": "Teachout and Approved programs are counted apart from Active in the live COCI table, which this slice does not read.",
   "apis": "The API connection checklist (#3220) is not a committed file yet.",
   "jst": "The JST funnel waits on an authorized-student feed from CCCStart; counts only, when it exists.",
-  "slo": "Course SLO reads are committed for 13 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
-  "plo": "Program PLOs are not harvested yet: the program requirements records carry no PLO column.",
-  "objectives": "Course objective reads are committed for 13 hosts under kb/course_outcomes/<host>/, not yet read per college here.",
+  "plo": "Program outcomes are filed with each committed program record (record.program.outcomes in kb/program_requirements_college/<slug>/records/), not yet read per college here.",
   "catalog_registry": "The catalog link, curriculum view and program map checks are rows in the live program source registry, which this file does not carry.",
   "ppm": "Program Pathways Mapper has no official export; 4 pilot term maps are committed (kb/program_requirements_pilot/sequences/), not yet read per college here.",
   "descriptions": "Usable course descriptions per college come from the description classifier (#3219), whose counts are not a committed file yet.",
@@ -145,7 +143,9 @@
   "mis": "The Fall 2025 MIS course file is committed but not yet joined to each college here.",
   "coe": "The regional labor market crosswalk (kb/regional_cpl_out/) is committed but not yet read per college here.",
   "loaded": "The load time and a person's confirmation are columns of the live program requirements table, which this file does not carry.",
-  "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one."
+  "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
+  "slo": "Course SLO reads are committed for 12 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "objectives": "Course objectives are committed for 4 hosts (ccc, cccd, cuesta, shasta) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -253,7 +253,10 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "pdf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf"
    },
    "spot_check": null,
    "confidence": {
@@ -976,7 +979,10 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "pdf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf"
    },
    "spot_check": null,
    "confidence": {
@@ -1347,7 +1353,10 @@
     "recommendation": "procedure_change",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "pdf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf"
    },
    "spot_check": null,
    "confidence": {
@@ -1403,7 +1412,10 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "courseleaf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.collegeofthedesert.edu/"
    },
    "spot_check": null,
    "confidence": {
@@ -1804,7 +1816,10 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "pdf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf"
    },
    "spot_check": null,
    "confidence": {
@@ -2491,7 +2506,10 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "curriqunet",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover"
    },
    "spot_check": null,
    "confidence": {
@@ -2646,7 +2664,10 @@
     "recommendation": "capture",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "coursedog",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.glendale.edu/"
    },
    "spot_check": null,
    "confidence": {
@@ -5547,7 +5568,10 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "pdf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf"
    },
    "spot_check": null,
    "confidence": {
@@ -5715,7 +5739,10 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "courseleaf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.sierracollege.edu/"
    },
    "spot_check": null,
    "confidence": {
@@ -5771,7 +5798,10 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "custom",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.skylinecollege.edu/current/"
    },
    "spot_check": null,
    "confidence": {
@@ -5887,7 +5917,10 @@
     "recommendation": "blocked",
     "challenge": "firewall",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "courseleaf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.swccd.edu/"
    },
    "spot_check": null,
    "confidence": {

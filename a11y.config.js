@@ -3705,6 +3705,22 @@ module.exports = {
     /* The panel is a dialog: Tab stays inside it, and Escape closes it and returns the focus to the list. */
     keyboard: async (page) => {
       const out = [];
+      /* At 390 the width edge is display:none, so Tab on the last control must wrap to Close (#3231 review). */
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.waitForTimeout(150);
+      const narrow = await page.evaluate(() => {
+        const P = document.getElementById("cdd-panel");
+        const f = Array.from(P.querySelectorAll('a[href], button:not([disabled])'));
+        f[f.length - 1].focus();
+        return f.length;
+      });
+      await page.keyboard.press("Tab");
+      const wrapped390 = await page.evaluate(() => document.activeElement && document.activeElement.id);
+      await page.keyboard.press("Shift+Tab");
+      const back390 = await page.evaluate(() => !!document.activeElement && document.getElementById("cdd-panel").contains(document.activeElement) && document.activeElement.id !== "cdd-panel-close");
+      out.push({ name: "at 390, Tab wraps past the hidden width edge to Close, and Shift+Tab wraps back", ok: wrapped390 === "cdd-panel-close" && back390, detail: narrow + " drawn controls; Tab lands on " + wrapped390 });
+      await page.setViewportSize({ width: 1024, height: 900 });
+      await page.waitForTimeout(150);
       /* The list behind an open panel is inert: a real click on a college word there opens nothing. */
       const box = await page.evaluate(() => {
         const w = document.querySelector("#cdd-colleges [data-expand]");
