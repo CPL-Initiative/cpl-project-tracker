@@ -844,6 +844,44 @@ with tempfile.TemporaryDirectory() as root4:
         else:
             os.environ["SUPABASE_ANON_KEY"] = saved_env
 
+# The daily's overlay was synced in the same run, so a failed live read there must not freeze the file: a clear Sam
+# made since the committed file, synced into the overlay, puts the card back (#3260 round 2).
+with tempfile.TemporaryDirectory() as root5:
+    for rel, obj in FIX.items():
+        write(root5, rel, obj)
+    write(root5, "statewide_data.js", STATEWIDE, js="CPL_STATEWIDE")
+    write(root5, "unified_courses_members.js", MEMBERS, js="CPL_UNIFIED_MEMBERS")
+    write(root5, "statewide_prescriptive.js", PRESCRIPTIVE, js="CPL_STATEWIDE_PRESCRIPTIVE")
+    prior5 = B.build(root5, ({DM: {"unified_title": "Digital Media Basics"}}, "2026-11-13T21:00:00Z"))[0]
+    out5 = os.path.join(root5, "kb", "exhibits_review.json")
+    write(root5, "kb/unclassified_assignments.json", {"_synced_at": "2026-11-12T08:00:00Z", "assignments": {}})
+
+    def run5(*extra):
+        with open(out5, "w", encoding="utf-8") as f:
+            f.write(B.dump(prior5, "held"))
+        r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_exhibits_review.py"), "--root", root5] + list(extra),
+                           capture_output=True, text=True, timeout=120, env=ENV)
+        with open(out5, encoding="utf-8") as f:
+            return r, json.load(f)
+    r_guard, kept5 = run5()
+    check("a local build on that overlay is still refused", r_guard.returncode == 3 and DM not in {h["raw"] for h in kept5["held"]},
+          r_guard.returncode)
+    r_fresh, wrote5 = run5("--overlay-fresh")
+    check("with --overlay-fresh the build writes, and the cleared title is a card again",
+          r_fresh.returncode == 0 and DM in {h["raw"] for h in wrote5["held"]}
+          and wrote5["sources"]["assignments"]["read"] == "overlay", (r_fresh.returncode, r_fresh.stdout[-300:]))
+
+# The anon key is read whatever quote style or declaration the script uses.
+check("the anon key parses from var, let or const, in double, single or back quotes",
+      B.anon_key_in('var SUPABASE_ANON = "a.b.c";') == "a.b.c" and B.anon_key_in("const SUPABASE_ANON='a.b.c'") == "a.b.c"
+      and B.anon_key_in("  let SUPABASE_ANON =\n `a.b.c`;") == "a.b.c")
+try:
+    B.anon_key_in("var SUPABASE_URL = 'x';")
+    no_key = ""
+except ValueError as e:
+    no_key = str(e)
+check("a script with no anon key raises, so the build falls back to the overlay", no_key == "no anon key in cpl_session.js")
+
 # Both runs that rebuild the Review file read live with --live, take no secret for it, and read exit 3 as the
 # builder's own refusal.
 with open(os.path.join(ROOT, ".github", "workflows", "cer-procedures.yml"), encoding="utf-8") as f:
@@ -855,7 +893,9 @@ with open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8") as 
     daily = f.read()
 check("daily_build.sh's Review step reads live with no secret, and reads exit 3 as a refusal",
       'step "Build the Exhibits review queue" <<\'STEP\'' in daily
-      and 'rc=0; python3 kb/_build_exhibits_review.py --live --quiet || rc=$?' in daily and '[ "$rc" != 3 ]' in daily)
+      and 'rc=0; python3 kb/_build_exhibits_review.py --live --overlay-fresh --quiet || rc=$?' in daily and '[ "$rc" != 3 ]' in daily)
+check("only the daily, whose step 3 synced the overlay, turns the stale guard off; cer-procedures.yml keeps it",
+      "--overlay-fresh" not in step[0]["run"])
 
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))

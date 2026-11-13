@@ -45,7 +45,7 @@ function load(opts) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="exhibits-root">Loading</div></body></html>',
     { url: "https://example.org/" + (opts.hash || "#exhibits"), runScripts: "dangerously" });
   const w = dom.window;
-  const reads = [], posts = [];
+  const reads = [], posts = [], studentReads = [];
   w.fetch = function (url, init) {
     url = String(url); init = init || {};
     const method = init.method || "GET";
@@ -53,10 +53,11 @@ function load(opts) {
     const no = (n) => Promise.resolve({ ok: false, status: n, json: () => Promise.resolve({}) });
     if (url === "kb/exhibits_review.json") return ok(opts.review || REVIEW);
     if (url === "kb/exhibits_sweep.json") return no(404);
-    if (/\/rest\/v1\/rpc\/exhibit_title_students$/.test(url)) return ok([]);
+    if (/\/rest\/v1\/rpc\/exhibit_title_students$/.test(url)) { studentReads.push(JSON.parse(init.body)); return ok([]); }
     if (/kb_curation/.test(url) && method !== "GET") { posts.push({ url: url, body: init.body }); return ok(null); }
     if (/\/rest\/v1\/kb_curation\?select=course_id,field,value,reviewed_at&field=eq\.unified_title_assignment&course_id=in\./.test(url)) {
       reads.push({ url: url, range: (init.headers || {}).Range });
+      if (opts.hang && reads.length <= opts.hang) return new Promise(() => {});
       let answer;
       if (opts.fail) answer = () => no(503);
       else if (opts.pages) answer = () => ok(opts.pages((init.headers || {}).Range));
@@ -81,7 +82,8 @@ function load(opts) {
   // The statewide list's script answers at once: a render path of its own, before the saved-titles read answers.
   w.CPL_TABS = { loadScript: function (s, name, cb) { setTimeout(cb, 0); } };
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
-  return { w: w, d: w.document, M: w.CPL_EXHIBITS, reads: reads, posts: posts };
+  if (opts.timeout) w.CPL_EXHIBITS._reviewTimeout(opts.timeout);
+  return { w: w, d: w.document, M: w.CPL_EXHIBITS, reads: reads, posts: posts, studentReads: studentReads };
 }
 const tick = () => new Promise((r) => setTimeout(r, 0));
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -118,17 +120,60 @@ const P = "_UNCLASSIFIED::";
     check("the Names tile counts the two settled titles as named, and two fewer wait",
       /Names102 of 200/.test(tileText) && /98 wait for a title/.test(tileText));
     check("the Aligned course tile leaves the settled cards out", /Aligned course1 of 3/.test(tileText));
+    const notFolded = Array.from(rootOf(t).querySelectorAll(".exh-steps button")).find((b) => /Saved, not folded/.test(txt(b)));
+    check("Saved, not folded counts the two titles saved since the build", notFolded && /^2Saved, not folded$/.test(txt(notFolded)));
+    check("Students waiting leaves the settled cards' exhibits out", (function () {
+      const last = t.studentReads[t.studentReads.length - 1];
+      if (!last) return false;
+      const star = last.p_ids.filter((id, k) => last.p_keys[k] === "*");
+      return star.indexOf("MAPCX-Industry Training Evidence for EMS 10") < 0 && star.indexOf("MAPCX-Open Title") >= 0;
+    })());
 
     // A return to the tab reads the saves again: a title saved elsewhere meanwhile leaves the queue.
     saved[P + "Open Title"] = "Saved In Another Tab";
     t.w.dispatchEvent(new t.w.CustomEvent("cpl-tab-activated", { detail: { tab: "exhibits" } }));
     await settle();
     check("returning to the tab reads the saves again", t.reads.length === 2 && shownRaws(t).indexOf("Open Title") < 0);
+    check("and a title settled on the return leaves Students waiting too", (function () {
+      const last = t.studentReads[t.studentReads.length - 1];
+      return t.studentReads.length >= 2 && last.p_ids.filter((id, k) => last.p_keys[k] === "*").indexOf("MAPCX-Open Title") < 0;
+    })());
 
-    // A clear deletes the row: the same file, no save on COBI, every card returns.
+    // A clear deletes the row. On an ordinary card that reopens it; a conflict card exists only because of a saved
+    // title, so a cleared one is decided and never comes back.
     t = load({ saved: {} });
     await t.M.boot(); await settle();
-    check("with no save on COBI every card the file holds is open", shownRaws(t).length === 6);
+    raws = shownRaws(t);
+    check("with no save on COBI every ordinary card the file holds is open", ["Industry Training Evidence for EMS 10", ODD,
+      "Cleared Title", "Open Title"].every((r) => raws.indexOf(r) >= 0));
+    check("a conflict card cleared in an earlier visit does not come back on a reload",
+      raws.indexOf("Saved Conflict") < 0 && raws.indexOf("Re-picked Conflict") < 0);
+    const emptied = {};
+    emptied[P + "Saved Conflict"] = { value: "", at: "2026-10-30T09:00:00+00:00" };
+    t = load({ saved: emptied });
+    await t.M.boot(); await settle();
+    check("an emptied conflict row is a clear too", shownRaws(t).indexOf("Saved Conflict") < 0);
+
+    // A read that never answers fails after the time limit, and a return to the tab reads again.
+    t = load({ saved: saved, hang: 1, timeout: 40 });
+    const hung = t.M.boot();
+    await wait(10);
+    check("while the read hangs the queue waits", /Reading the saved titles/.test(txt(rootOf(t))));
+    await hung; await wait(20); t.M.render(); await settle();
+    check("a read with no answer in time fails, says so, and leaves the cards",
+      !t.M._state.reviewReading && /could not be read from COBI \(no answer in 0 seconds\)/.test(txt(t.d.querySelector(".exh-unread")))
+      && shownRaws(t).length === 6);
+    t.w.dispatchEvent(new t.w.CustomEvent("cpl-tab-activated", { detail: { tab: "exhibits" } }));
+    await settle();
+    check("a return to the tab starts a fresh read, which settles the saved titles", t.reads.length === 2
+      && !t.d.querySelector(".exh-unread") && shownRaws(t).indexOf("Industry Training Evidence for EMS 10") < 0);
+
+    // A raw title the browser cannot encode fails the read, never the view.
+    t = load({ review: reviewOf([heldOf("Bad \ud800 title", "Proposed", { ids: ["MAPCX-BAD-1"] }), heldOf("Fine Title", "Proposed")]) });
+    await t.M.boot(); await settle();
+    check("a title the browser cannot encode puts the read in the failed state and the view still draws its cards",
+      !t.M._state.error && !t.M._state.reviewReading && /could not be read from COBI \(URI malformed\)/.test(txt(t.d.querySelector(".exh-unread")))
+      && shownRaws(t).length === 2);
 
     // A full page asks for the next.
     t = load({ pages: (range) => range === "0-999"
@@ -191,7 +236,7 @@ const P = "_UNCLASSIFIED::";
     check("the Queue names the unread saves in its blocked line",
       /titles saved since the review file was built could not be read from COBI \(HTTP 503\)/.test(txt(t.d.querySelector(".exh-qb"))));
   } catch (e) {
-    check("the run finished without an error: " + (e && e.message), false);
+    check("the run finished without an error: " + (e && e.stack), false);
   }
 
   const failed = results.filter((x) => !x[1]);

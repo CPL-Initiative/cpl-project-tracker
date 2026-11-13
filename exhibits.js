@@ -393,8 +393,11 @@
      A conflict card is a saved title by definition, so it leaves only for a save later than the file (a re-pick
      sends its own reviewed_at). Until the read answers the queue shows no card; a failed read leaves the file's
      cards, says so, and turns off every control that saves a title (one could overwrite a save it cannot see).
-     Read on load and again on each return to the tab, one read at a time. */
-  var REVIEW_CHUNK = 40, REVIEW_PAGE = 1000, reviewRead = null;
+     Read on load and again on each return to the tab, one read at a time. A conflict card exists only because of a
+     saved title, so for it no row, or an empty one, is the decision (a clear); for every other step no row means
+     open. A read that does not answer within REVIEW_TIMEOUT_MS fails like any other, and a later return starts a
+     fresh one; an answer that arrives after that is dropped. */
+  var REVIEW_CHUNK = 40, REVIEW_PAGE = 1000, REVIEW_TIMEOUT_MS = 20000, reviewRead = null, reviewGen = 0;
   function reconcileReview(d) {
     if (reviewRead) return reviewRead;
     state.reviewReadErr = "";
@@ -402,7 +405,7 @@
     if (!held.length) return Promise.resolve();
     var key = anonKey();
     if (!key) { state.reviewReadErr = "COBI could not be reached from this page"; return Promise.resolve(); }
-    var built = Date.parse(d.written_at || "") || 0, byRaw = {};
+    var built = Date.parse(d.written_at || "") || 0, byRaw = {}, gen = ++reviewGen, timer = null;
     held.forEach(function (h) { byRaw[h.raw] = h; });
     var raws = Object.keys(byRaw), chunks = [];
     for (var i = 0; i < raws.length; i += REVIEW_CHUNK) chunks.push(raws.slice(i, i + REVIEW_CHUNK));
@@ -416,28 +419,49 @@
           return rows.length < REVIEW_PAGE ? acc : page(url, from + REVIEW_PAGE, acc);
         });
     }
+    function readAll() {
+      // A title the browser cannot encode throws here, inside the promise, so it fails the read and nothing else.
+      return Promise.all(chunks.map(function (c) {
+        var quoted = c.map(function (r) { var i = UNCLASS_PREFIX + r; return encodeURIComponent('"' + i.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); });
+        return page(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at&field=eq." + FIELD_TITLE
+          + "&course_id=in.(" + quoted.join(",") + ")&order=course_id.asc", 0, []);
+      }));
+    }
+    var late = new Promise(function (resolve, reject) {
+      timer = setTimeout(function () { reject(new Error("no answer in " + Math.round(REVIEW_TIMEOUT_MS / 1000) + " seconds")); }, REVIEW_TIMEOUT_MS);
+    });
     state.reviewReading = true;
-    reviewRead = Promise.all(chunks.map(function (c) {
-      var quoted = c.map(function (r) { var i = UNCLASS_PREFIX + r; return encodeURIComponent('"' + i.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); });
-      return page(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at&field=eq." + FIELD_TITLE
-        + "&course_id=in.(" + quoted.join(",") + ")&order=course_id.asc", 0, []);
-    })).then(function (parts) {
+    reviewRead = Promise.race([Promise.resolve().then(readAll), late]).then(function (parts) {
+      if (gen !== reviewGen) return;
+      var row = {};
       parts.forEach(function (rows) {
-        rows.forEach(function (row) {
-          var id = row.course_id || "", h = byRaw[id.slice(UNCLASS_PREFIX.length)];
-          if (!h || row.field !== FIELD_TITLE || id.indexOf(UNCLASS_PREFIX) !== 0 || !String(row.value || "").trim()) return;
-          if (h.step === CONFLICT && !((Date.parse(row.reviewed_at || "") || 0) > built)) return;
-          state.done[h.raw] = true; state.reviewSettled[h.raw] = true; h.saved = String(row.value).trim();  // shown as saved, never the stale proposal (COBIx, #3260)
+        rows.forEach(function (r) {
+          var id = r.course_id || "";
+          if (r.field === FIELD_TITLE && id.indexOf(UNCLASS_PREFIX) === 0) row[id.slice(UNCLASS_PREFIX.length)] = r;
         });
       });
-    }).catch(function (e) { state.reviewReadErr = String(e && e.message || e); })
-      .then(function () { state.reviewReading = false; reviewRead = null; });
+      held.forEach(function (h) {
+        var r = row[h.raw], v = r ? String(r.value || "").trim() : "";
+        var settled = h.step === CONFLICT ? (!v || (Date.parse(r.reviewed_at || "") || 0) > built) : !!v;
+        if (!settled) return;
+        state.done[h.raw] = true; state.reviewSettled[h.raw] = true;
+        if (v) h.saved = v;  // shown as saved, never the stale proposal (COBIx, #3260)
+      });
+    }).catch(function (e) { if (gen === reviewGen) state.reviewReadErr = String(e && e.message || e); })
+      .then(function () {
+        clearTimeout(timer);
+        if (gen === reviewGen) { state.reviewReading = false; reviewRead = null; }
+      });
     return reviewRead;
   }
   /* The file's tiles less the cards a saved title has settled since it was built (#3223): a settled title is named,
      and leaves the held cards the Aligned course tile counts. */
   function settledCount() {
     return ((state.data && state.data.held) || []).filter(function (h) { return state.reviewSettled[h.raw] && h.step !== CONFLICT; }).length;
+  }
+  /* Saved and not yet folded: the file's count and every title saved since it was built (#3223). */
+  function savedNotFolded() {
+    return ((state.data && state.data.tiles && state.data.tiles.saved_not_folded) || 0) + settledCount();
   }
   function namesNow(t) {
     if (!t.names) return null;
@@ -1887,7 +1911,7 @@
     return box;
   }
   function stepTile(step, label) {
-    var n = step === "Saved, not folded" ? (state.data.tiles.saved_not_folded || 0) : stepCount(step);
+    var n = step === "Saved, not folded" ? savedNotFolded() : stepCount(step);
     var b = el("button", {
       type: "button", cls: "exh-step", "aria-pressed": state.filter === step ? "true" : "false",
       "data-tip": TIPS[step], "aria-label": label + ", " + fmt(n) + ". " + TIPS[step]
@@ -4876,7 +4900,7 @@
           queueListEntry(lc, "suggested", "suggested folds in the List.", "Open them")
         ],
         after: [el("h4", { cls: "exh-qh", text: "Waiting on a process, not on a check" }), el("ul", { cls: "exh-ql" }, [
-          queueEntry(have ? (state.data.tiles && state.data.tiles.saved_not_folded || 0) : null, "titles saved and not yet folded; the nightly run adds them to the reference.", "", null),
+          queueEntry(have ? savedNotFolded() : null, "titles saved and not yet folded; the nightly run adds them to the reference.", "", null),
           queueListEntry(lc, "waiting", "folds waiting for the reviewed apply.", "Open them")])] };
     }
     if (lens === "all") {
@@ -5270,7 +5294,13 @@
     if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
     // The saved titles are read again each visit, so a title saved in another tab or session leaves the queue (#3223).
-    if (state.data) reconcileReview(state.data).then(render);
+    if (state.data) {
+      var before = Object.keys(state.reviewSettled).length;
+      reconcileReview(state.data).then(function () {
+        // A title settled on this return leaves Students waiting too: read the counts again.
+        if (Object.keys(state.reviewSettled).length > before) return loadStudents();
+      }).then(render);
+    }
     render();
   }
   /* #exhibits/<route> opens one place, read once per visit (the Commons row's counts link here, the way
@@ -5332,6 +5362,7 @@
   window.CPL_EXHIBITS = {
     boot: boot, render: render, load: load, loadStudents: loadStudents, ensureCss: ensureCss,
     _state: state, _shown: shown, _teachText: teachText, _TIPS: TIPS,
+    _reviewTimeout: function (ms) { REVIEW_TIMEOUT_MS = ms; },
     loadCredentials: loadCredentials, openCredential: openCredential,
     _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent,
     _credCould: credCould, _routeFromHash: routeFromHash, loadSweep: loadSweep, _sweepShown: sweepShown, _sweepRows: sweepRows,

@@ -53,7 +53,7 @@ kb/exhibits_adoption.json (the credential panel's "Who could adopt it?", Exhibit
 per-credential view folded into the Exhibits tab), which exhibits.js reads.
 
 Usage, from the repo root:
-  python3 kb/_build_exhibits_review.py [--root DIR] [--out PATH] [--quiet] [--live]
+  python3 kb/_build_exhibits_review.py [--root DIR] [--out PATH] [--quiet] [--live] [--overlay-fresh]
 """
 import argparse
 import datetime as dt
@@ -828,10 +828,15 @@ def anon_key():
     if key:
         return key
     with open(os.path.join(os.path.dirname(HERE), "cpl_session.js"), encoding="utf-8") as f:
-        m = re.search(r'var SUPABASE_ANON = "([^"]+)"', f.read())
+        return anon_key_in(f.read())
+
+
+def anon_key_in(text):
+    """The anon key a script declares (`var|let|const SUPABASE_ANON = "..."`, any quote style), or ValueError."""
+    m = re.search(r"""\b(?:var|let|const)\s+SUPABASE_ANON\s*=\s*(["'`])([^"'`\s]+)\1""", text)
     if not m:
         raise ValueError("no anon key in cpl_session.js")
-    return m.group(1)
+    return m.group(2)
 
 
 def live_rows(key):
@@ -1183,6 +1188,8 @@ def main(argv=None):
     ap.add_argument("--root", default=os.path.dirname(HERE))
     ap.add_argument("--out", default=None, help="the review file (the courses file is written beside it)")
     ap.add_argument("--quiet", action="store_true")
+    ap.add_argument("--overlay-fresh", action="store_true",
+                    help="the overlay was synced in this run (daily_build.sh step 3): build from it without the stale guard")
     ap.add_argument("--live", action="store_true",
                     help="read the saved title assignments from kb_curation (anon, read only); else the overlay decides")
     a = ap.parse_args(argv)
@@ -1192,7 +1199,9 @@ def main(argv=None):
     adoption_out = os.path.join(os.path.dirname(out), os.path.basename(ADOPTION_OUT))
     outputs = [(out, data, "held", "written_at"), (courses_out, course_file, "courses", None),
                (adoption_out, adoption, "credentials", "written_at")]
-    why = stale_assignments(prior_file(out), data)
+    # In the daily the overlay was synced minutes ago, so a refusal there could only be wrong (a clear synced on
+    # purpose); the guard stays for cer-procedures.yml, which syncs no overlay, and for local builds.
+    why = "" if a.overlay_fresh else stale_assignments(prior_file(out), data)
     if why:
         # The Review file and its courses stay as committed; the adoption view reads no decision and still rebuilds.
         print("::warning title=Exhibits review not rebuilt::" + why)
