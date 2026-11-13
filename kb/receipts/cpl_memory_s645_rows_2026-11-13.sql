@@ -18,8 +18,8 @@ insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,v
 ('sam-banner-pilot-citrus-2026-11-12','decision','Sam: the three SIS pilots are Los Angeles CCD, Citrus and Riverside CCD','Sam via COBIx on #3198 (2026-11-12): the district-profile SIS pilots are Los Angeles CCD, Citrus and Riverside CCD.',array['program-requirements','commons','decision'],'verified','Sam, relayed by COBIx, issue 3198','Sam Lee',now(),'SkyFinch (S645)',date '2026-11-12')
 on conflict (slug) do nothing returning slug;
 
--- SECOND STATEMENT, NOT RUN: for the conductor to run through the Supabase MCP and record the time and the slugs
--- returned here. Thirteen rows: seven conductor decisions (proposed, for Sam to revise on Open Asks Sheet 188),
+-- SECOND STATEMENT, RUN by the conductor through the Supabase MCP at 04:15Z 2026-11-13: all 13 slugs returned.
+-- Thirteen rows: seven conductor decisions (proposed, for Sam to revise on Open Asks Sheet 188),
 -- five pitfalls (proposed), and Sam's in-session FYI (verified, verified_by Sam Lee).
 -- ROLLBACK:
 -- delete from cpl_memory where author = 'SkyFinch (S645)' and slug in ('d-display-first-run-one-college-s645', 'd-pdf-reader-number-line-design-s645', 'd-rescore-six-colleges-live-s645', 'd-district-profiles-files-first-s645', 'd-glendale-registry-coursedog-s645', 'd-merge-is-publication-spot-check-first-s645', 'd-dv-sjcc-loaded-s645', 'p-snapshot-check-couples-college-prs-s645', 'p-title-test-refuses-uniform-catalog-s645', 'p-dated-reads-need-main-refresh-s645', 'p-wave-over-filed-colleges-extracts-nothing-s645', 'p-display-step-writes-whole-build-s645', 'sam-sql-approve-fyi-2026-11-13');
