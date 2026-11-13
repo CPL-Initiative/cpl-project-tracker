@@ -357,7 +357,7 @@ off = []
 for c in C:
     if not c["harvested"]:
         continue
-    want = {k: v for k, v in (c["causes"] or {}).items() if v}
+    want = {k: v for k, v in (c.get("census_causes") or c["causes"] or {}).items() if v}
     f = c.get("programs_file")
     if not want:
         if f:
@@ -371,7 +371,37 @@ for c in C:
         got[r["cause"]] = got.get(r["cause"], 0) + 1
     if got != want:
         off.append(c["name"] + ": " + str(got) + " != " + str(want))
-check("(14) ⭐ every committed sidecar lists exactly the programs each cause counts, college by college", not off, off[:5])
+check("(14) ⭐ every committed sidecar lists exactly the programs each cause counts (the census basis), college by college", not off, off[:5])
+# (16) the review of #3261: the lists and their counts come from the gap census's live read where it holds the college.
+CEN = json.load(open(os.path.join(ROOT, B.CENSUS), encoding="utf-8"))
+if CEN.get("basis") == "live":
+    live_total = sum(sum((c.get("census_causes") or {}).values()) for c in C if c["harvested"] and (c.get("census_basis") or {}).get("basis") == "live")
+    covered = [c for c in C if c["harvested"] and (c.get("census_basis") or {}).get("basis") == "live"]
+    want_total = sum(len(v) for k, v in CEN["programs_by_college"].items())
+    check("(16) ⭐ with a live census on file, every college it holds counts its causes from it, and the totals agree",
+          covered and live_total == want_total, (live_total, want_total, len(covered)))
+    check("(16) no college's cause list carries the committed-files-only cause where the live census holds it",
+          not any("unknown_without_live" in (c.get("census_causes") or {}) for c in covered))
+with tempfile.TemporaryDirectory() as tmp:
+    os.makedirs(os.path.join(tmp, "kb", "status"))
+    json.dump({"basis": "live", "written_at": "2026-11-13 18:04Z",
+               "programs_by_college": {"Ridge College": {"00001": "units_unequal", "00002": "parked_college|units_unequal"}},
+               "levers": [{"lever": "reconcile_steps", "members": ["00001"]}, {"lever": "unpark", "members": ["00002"]}]},
+              open(os.path.join(tmp, B.CENSUS), "w"))
+    lv = B.read_live_census(tmp, None)
+    res = lambda n: {"Ridge College": 1, "Hill College": 2}.get(n)
+    merged, basis = B.merge_census({"programs": [{"college": "Hill College", "control_number": "9", "cause": "unknown_without_live", "lever": "reconcile_steps"},
+                                                 {"college": "Ridge College", "control_number": "7", "cause": "unknown_without_live", "lever": "reconcile_steps"}]},
+                                   lv, {"ridge": {"name": "Ridge College"}, "hill": {"name": "Hill College"}}, res)
+    check("(16) ⭐ the fixture: a college the live census holds takes its causes (text before |) and levers; one it does not keeps the committed files, labeled",
+          sorted((g["college"], g["control_number"], g["cause"], g["lever"]) for g in merged)
+          == [("Hill College", "9", "unknown_without_live", "reconcile_steps"), ("Ridge College", "00001", "units_unequal", "reconcile_steps"),
+              ("Ridge College", "00002", "parked_college", "unpark")]
+          and basis == {"ridge": {"basis": "live", "at": "2026-11-13 18:04Z"}, "hill": {"basis": "committed files only", "at": None}}, (merged, basis))
+    json.dump({"basis": "committed files only", "programs_by_college": {}}, open(os.path.join(tmp, B.CENSUS), "w"))
+    check("(16) a census written from the committed files alone is not taken as live", B.read_live_census(tmp, None) is None)
+check("(16) ⭐ the census workflow hands the builder the census it just wrote",
+      "--census kb/status/harvest_gap_census.json" in open(os.path.join(ROOT, ".github", "workflows", "harvest-gap-census.yml"), encoding="utf-8").read())
 extra = sorted(set(os.listdir(PD)) - {os.path.basename(c[k]) for c in C for k in ("programs_file", "outcomes_file") if c.get(k)}) if os.path.isdir(PD) else ["no folder"]
 check("(14) no sidecar for a college the file does not name", not extra, extra[:5])
 check("(14) every row's programs_file carries a College-view flag", B.FIELDS.get("programs_file") == "internal")

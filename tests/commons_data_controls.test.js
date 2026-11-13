@@ -245,10 +245,11 @@ function audit(x, where, bad, seen) {
     check("causes 1: the list alone fetches no program file", !c5.w.__fetched.some((u) => u.indexOf(SIDE) === 0), c5.w.__fetched);
     const off = [], links = [], plain = [];
     let words = 0;
-    for (const c of DATA.colleges.filter((c) => c.harvested && c.gap)) {
+    const causesOf = (c) => c.census_causes || c.causes || {};
+    for (const c of DATA.colleges.filter((c) => c.harvested && Object.keys(causesOf(c)).length)) {
       /* The first cause through the row's word, the rest through the panel's own words (the row's words are the same
          buttons drawn the same way; the full walk through the row took two minutes). */
-      const k0 = Object.keys(c.causes || {});
+      const k0 = Object.keys(causesOf(c));
       for (let i = 0; i < k0.length; i++) {
         const k = k0[i];
         if (i) {
@@ -257,7 +258,7 @@ function audit(x, where, bad, seen) {
           words++; pw0.click(); await settle();
           const s0 = c5.d.querySelector('#cdd-panel #cdd-cprogs[data-cause-programs="' + k + '"]');
           const n0 = s0 ? s0.querySelectorAll("ul.cdd-progs > li").length : -1;
-          if (n0 !== c.causes[k] || c5.w.location.hash !== "#commons/data/college/" + c5.D.slugOf(c) + "/cause/" + k) off.push(c.name + " " + k + ": " + n0 + " of " + c.causes[k]);
+          if (n0 !== causesOf(c)[k] || c5.w.location.hash !== "#commons/data/college/" + c5.D.slugOf(c) + "/cause/" + k) off.push(c.name + " " + k + ": " + n0 + " of " + c.causes[k]);
           if (s0) s0.querySelectorAll("ul.cdd-progs > li").forEach((li) => { const a = li.querySelector("button"); (a ? links : plain).push(a || li); });
           continue;
         }
@@ -269,23 +270,36 @@ function audit(x, where, bad, seen) {
         const sec = c5.d.querySelector('#cdd-panel #cdd-cprogs[data-cause-programs="' + k + '"]');
         const n = sec ? sec.querySelectorAll("ul.cdd-progs > li").length : -1;
         const pw = c5.d.querySelector('#cdd-panel button.cdd-cause[data-cause="' + k + '"]');
-        if (n !== c.causes[k] || c5.w.location.hash !== "#commons/data/college/" + c5.D.slugOf(c) + "/cause/" + k || !pw || pw.getAttribute("aria-expanded") !== "true")
-          off.push(c.name + " " + k + ": " + n + " of " + c.causes[k] + " at " + c5.w.location.hash);
+        if (n !== causesOf(c)[k] || c5.w.location.hash !== "#commons/data/college/" + c5.D.slugOf(c) + "/cause/" + k || !pw || pw.getAttribute("aria-expanded") !== "true")
+          off.push(c.name + " " + k + ": " + n + " of " + causesOf(c)[k] + " at " + c5.w.location.hash);
         if (sec) sec.querySelectorAll("ul.cdd-progs > li").forEach((li) => { const a = li.querySelector("button"); (a ? links : plain).push(a || li); });
-        if (sec && c.id === DATA.colleges.filter((x) => x.harvested && x.gap)[0].id) audit(c5, "panel at " + k, bad, seen);
+        if (sec && c.id === DATA.colleges.filter((x) => x.harvested && Object.keys(causesOf(x)).length)[0].id) audit(c5, "panel at " + k, bad, seen);
       }
       if (c5.d.querySelector("#cdd-panel:not([hidden])")) { c5.D.closePanel(); await settle(); }
       const more = c5.d.getElementById("cdd-more-" + c.id);
       if (more) { c5.d.querySelector('[data-expand="' + c.id + '"]').click(); await settle(); }
     }
-    const want = DATA.colleges.reduce((n, c) => n + (c.harvested && c.gap ? Object.keys(c.causes || {}).length : 0), 0);
+    const want = DATA.colleges.reduce((n, c) => n + (c.harvested ? Object.keys(causesOf(c)).length : 0), 0);
     check("causes 2 ⭐ (committed file): every cause word in every college's row opens the panel at #commons/data/college/<slug>/cause/<key>, listing exactly the programs it counts",
       words === want && want > 0 && !off.length, off.slice(0, 5).concat(["words " + words + " of " + want]));
     const badLinks = links.filter((a) => !/^program\/./.test(a.getAttribute("data-pane") || ""));
     check("causes 3 ⭐: a program with a catalog page is a word that opens it in the panel; one without is plain text, never a control",
       links.length > 0 && plain.length > 0 && !badLinks.length && plain.every((li) => !li.querySelector("a, button")), [links.length, plain.length, badLinks.length]);
     check("causes 4: each college's program file was fetched once, when its row opened",
-      c5.w.__fetched.filter((u) => u.indexOf(SIDE) === 0).length === DATA.colleges.filter((c) => c.programs_file && c.gap).length, c5.w.__fetched.filter((u) => u.indexOf(SIDE) === 0).length);
+      c5.w.__fetched.filter((u) => u.indexOf(SIDE) === 0).length === DATA.colleges.filter((c) => c.programs_file && Object.keys(causesOf(c)).length).length, c5.w.__fetched.filter((u) => u.indexOf(SIDE) === 0).length);
+    const lc = DATA.colleges.filter((c) => (c.census_basis || {}).basis === "live" && Object.keys(causesOf(c)).length)[0];
+    if (lc) {
+      const lk = Object.keys(causesOf(lc))[0];
+      const b4 = load("#commons/data/college/" + c5.D.slugOf(lc) + "/cause/" + lk);
+      await b4.M.boot(); await settle();
+      const bn = b4.d.querySelector('#cdd-panel [data-census-basis="live"]');
+      check("causes 4b ⭐ (review of #3261, finding 1): the cause box names its basis, the gap census's live read, and its list equals its count",
+        bn && /live read/.test(txt(bn)) && b4.d.querySelectorAll("#cdd-panel ul.cdd-progs > li").length === causesOf(lc)[lk], [lc.name, lk]);
+    }
+    const f4 = load("#commons/data/college/ridge-college/cause/places_none", FIX);
+    await f4.M.boot(); await settle();
+    check("causes 4c: without the census's counts the box says its causes come from the committed files only",
+      /From the committed files only/.test(txt(f4.d.querySelector('#cdd-panel [data-census-basis="committed files only"]'))));
   }
   /* The fixture: the address opens the panel at a cause, the word folds it again, and a missing file says so. */
   {
@@ -314,6 +328,13 @@ function audit(x, where, bad, seen) {
     await e5.M.boot(); await settle();
     check("causes 8: a program file that cannot be read says so in words; the count stands",
       /The program list could not be read/.test(txt(e5.d.querySelector("#cdd-panel #cdd-cprogs"))) && !e5.d.querySelector("#cdd-panel ul.cdd-progs"));
+    /* Review of #3261, finding 2: a program whose list fails to load says the list could not be read, never that the
+       program does not exist. */
+    const pe = load("#commons/data/college/ridge-college/program/pla3", FIX, { [SIDE + "ridge.json"]: undefined });
+    await pe.M.boot(); await settle();
+    const peT = txt(pe.d.querySelector("#cdd-panel"));
+    check("causes 8b ⭐: a program pane whose list cannot be read says so, never that the program is not there",
+      /The program list could not be read/.test(peT) && !/holds no program/.test(peT) && pe.d.querySelector('[data-program-state="error"]'), peT.slice(0, 200));
     const u5 = load("#commons/data/college/ridge-college/cause/not_a_cause", FIX);
     await u5.M.boot(); await settle();
     check("causes 9: an address naming a cause the college does not hold opens the college alone",
@@ -364,14 +385,22 @@ function audit(x, where, bad, seen) {
     if (cu && held.indexOf(cu) >= 0) {
       sv.d.querySelector('#cdd-slos-table button[data-slos-college="cuesta-college"]').click(); await settle();
       const pane = sv.d.querySelector("#cdd-panel");
-      check("slos 2 ⭐: a college's name opens its SLO pane: the live counts, objectives beside SLOs, and courses by subject from the committed reads",
-        sv.w.location.hash === "#commons/data/college/cuesta-college/slos" && /Courses with objectives, in all/.test(txt(pane))
+      check("slos 2 ⭐: a college's name opens its SLO pane over the view: the live counts, objectives beside SLOs, courses by subject and why that total can differ",
+        sv.w.location.hash === "#commons/data/slos/college/cuesta-college/slos" && !!sv.d.querySelector("#cdd-slos") && /Courses with objectives, in all/.test(txt(pane))
+        && pane.querySelector("[data-subject-note]")
         && pane.querySelectorAll("table.cdd-subj tbody tr").length > 5 && pane.querySelector('table.cdd-subj th[scope="col"]'), sv.w.location.hash);
       sv.d.querySelector("#cdd-pane-back").click(); await settle();
       sv.d.querySelector('#cdd-panel button[data-pane="plos"]').click(); await settle();
       check("slos 3: the PLO pane lists each program's PLOs from the committed records, a program's name showing them",
-        sv.w.location.hash === "#commons/data/college/cuesta-college/plos" && sv.d.querySelectorAll("#cdd-panel details.cdd-plo").length > 5
+        sv.w.location.hash === "#commons/data/slos/college/cuesta-college/plos" && sv.d.querySelectorAll("#cdd-panel details.cdd-plo").length > 5
         && sv.d.querySelector("#cdd-panel details.cdd-plo ol li"), sv.w.location.hash);
+      sv.d.querySelector("#cdd-panel-close").click(); await settle();
+      const fa = sv.d.activeElement;
+      check("slos 3b ⭐ (review of #3261, finding 3): Close returns to Colleges with collected SLOs, the focus on the college's name that opened the pane",
+        sv.w.location.hash === "#commons/data/slos" && !!sv.d.querySelector("#cdd-slos") && fa && fa.getAttribute("data-slos-college") === "cuesta-college", [sv.w.location.hash, fa && fa.outerHTML.slice(0, 80)]);
+      const sa = load("#commons/data/slos/college/cuesta-college/slos");
+      await sa.M.boot(); await settle();
+      check("slos 3c: the address of a college's pane over the view opens both", !!sa.d.querySelector("#cdd-slos") && !!sa.d.querySelector("#cdd-panel:not([hidden]) table.cdd-subj"));
     }
     const lt = load("#commons/data");
     await lt.M.boot(); await settle();
@@ -385,6 +414,14 @@ function audit(x, where, bad, seen) {
     check("slos 5: the list carries an SLOs and objectives column, two bars in one cell",
       headCols.some((h) => /^SLOs and objectives/.test(h)) && (!cuRow || (cuRow.querySelectorAll(".cdd-pr").length === 2 && /SLOs/.test(txt(cuRow)) && /Objectives/.test(txt(cuRow)))), headCols);
     check("width: the view uses the window's full width", /\.cmn-wrap\.cdd \{ max-width:none; \}/.test(lt2.D.CSS));
+    check("bars: an empty bar keeps a 3:1 edge (its track carries a --cmn-muted border); the outcome words wrap as a flex row",
+      /\.cdd-meter \{[^}]*border:1px solid var\(--cmn-muted\)/.test(lt2.D.CSS) && /\.cdd-dsword \{[^}]*display:flex; flex-wrap:wrap/.test(lt2.D.CSS));
+    /* Source and dictionary panes never send a reader to a code, data or markdown file on GitHub. */
+    const dv = load("#commons/data/dictionary/source/dictionary");
+    await dv.M.boot(); await settle();
+    const dvt = dv.d.querySelector("#cdd-panel a.cdd-newtab");
+    check("sources: a source pane says what its file is, and its new tab opens the same pane, never a file on GitHub",
+      dvt && /^#commons\/data\/dictionary\/source\/dictionary$/.test(dvt.getAttribute("href")) && !dv.d.querySelector('#cdd-panel a[href*="github.com"]'), dvt && dvt.getAttribute("href"));
   }
   check("controls ⭐: every element styled as a control is a button with a handler or a link with a destination", seen.n > 200 && !bad.length, bad.slice(0, 8).concat(["walked " + seen.n]));
 

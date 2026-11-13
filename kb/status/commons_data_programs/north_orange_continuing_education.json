@@ -1,12 +1,12 @@
-{"schema":1,"college":"North Orange Continuing Education","slug":"north_orange_continuing_education","basis":"committed files only","programs":[
-{"cn":"24404","title":"Early Childhood Education Program","award":null,"cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"39461","title":"ESL Civics","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"39364","title":"ESL Reading and Writing Skills, Beginning","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"39363","title":"ESL Reading and Writing Skills, Intermediate to Advanced","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"40945","title":"ESL Speaking Skills, Beginning","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"24064","title":"Graphic, Design and Web Skills Program","award":null,"cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"32943","title":"Graphic, Design and Web Skills Program","award":null,"cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"24305","title":"Literacy Program","award":null,"cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"schema":1,"college":"North Orange Continuing Education","slug":"north_orange_continuing_education","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"cn":"24404","title":"Early Childhood Education Program","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"39461","title":"ESL Civics","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"39364","title":"ESL Reading and Writing Skills, Beginning","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"39363","title":"ESL Reading and Writing Skills, Intermediate to Advanced","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"40945","title":"ESL Speaking Skills, Beginning","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"24064","title":"Graphic, Design and Web Skills Program","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"32943","title":"Graphic, Design and Web Skills Program","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"24305","title":"Literacy Program","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"38319","title":"Administrative Professional","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"24176","title":"Advanced Office Applications Program","award":null,"cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"33138","title":"Braille Transcribing Program","award":null,"cause":"page_not_found","lever":"reader_page_search","url":null},
@@ -30,5 +30,5 @@
 {"cn":"46253","title":"ESL for Personal Care Aides","award":"Noncredit program","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-office-assistants/"},
 {"cn":"39325","title":"ESL Specialty Courses","award":"Noncredit program","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/"},
 {"cn":"39625","title":"GED/HiSET Test Preparation","award":"Noncredit program","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/basic-skills/"},
-{"cn":"31595","title":"High School Diploma Program","award":"Noncredit program","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://catalog.nocccd.edu/noce/high-school-diploma-program/"}
+{"cn":"31595","title":"High School Diploma Program","award":"Noncredit program","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.nocccd.edu/noce/high-school-diploma-program/"}
 ]}

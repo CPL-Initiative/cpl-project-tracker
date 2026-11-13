@@ -1,7 +1,7 @@
-{"schema":1,"college":"Las Positas College","slug":"las_positas","basis":"committed files only","programs":[
-{"cn":"38875","title":"Actors Conservatory","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"45027","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"44894","title":"Lesbian, Gay, Bisexual, Transgender, and Queer Studies","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"schema":1,"college":"Las Positas College","slug":"las_positas","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"cn":"38875","title":"Actors Conservatory","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"45027","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"44894","title":"Lesbian, Gay, Bisexual, Transgender, and Queer Studies","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"45080","title":"Achievement in Community College for ESL Students","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"09219","title":"Automotive Chassis","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"30408","title":"Biology: Allied Health","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
@@ -10,16 +10,10 @@
 {"cn":"42163","title":"Vocational ESL: Retail","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"36449","title":"Athletic Training/Sports Medicine","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1858"},
 {"cn":"18813","title":"Early Childhood Intervention","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1646"},
-{"cn":"01004","title":"Art: Emphasis in Painting","award":"A.A. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/125/1270/1272"},
-{"cn":"09214","title":"Computer Science","award":"A.S. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1628"},
-{"cn":"09227","title":"Early Childhood Development","award":"A.A. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1643"},
-{"cn":"36227","title":"Economics","award":"A.A- T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/135/1651/1656"},
-{"cn":"38886","title":"Electrical Engineering","award":"A.S. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1693"},
-{"cn":"36351","title":"Graphic Design","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1789"},
-{"cn":"01032","title":"Humanities","award":"A.A. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/150/1820/1825"},
-{"cn":"45955","title":"Liberal Arts & Sciences: Health and Wellness","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/2204"},
-{"cn":"36362","title":"Liberal Arts & Sciences: Language Arts and Communication","award":"A.A. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1878"},
-{"cn":"36341","title":"Liberal Arts & Sciences: Mathematics and Science","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"},
-{"cn":"01037","title":"Marketing","award":"A.A. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/157/1888/1891"},
-{"cn":"36235","title":"Theater Arts","award":"A.A. Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2106"}
+{"cn":"09214","title":"Computer Science","award":"A.S. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1628"},
+{"cn":"09227","title":"Early Childhood Development","award":"A.A. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1643"},
+{"cn":"38886","title":"Electrical Engineering","award":"A.S. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1693"},
+{"cn":"36235","title":"Theater Arts","award":"A.A. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2106"},
+{"cn":"36351","title":"Graphic Design","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1789"},
+{"cn":"36341","title":"Liberal Arts & Sciences: Mathematics and Science","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"}
 ]}

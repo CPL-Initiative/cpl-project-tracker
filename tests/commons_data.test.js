@@ -562,7 +562,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     JSON.stringify(Array.from(DV.querySelectorAll(".cdd-dgroup")).map((g) => g.getAttribute("data-group"))) === '["Harvested","Connected","Planned"]' && DV.querySelectorAll("article.cdd-entry").length === 4
     && JSON.stringify(Array.from(DV.querySelectorAll(".cdd-dgroup > h3")).map(txt)) === '["Collected","Connected","Planned"]');
   const ent = (n) => DV.querySelector('article[data-dataset="' + n + '"]');
-  check("dict 3: each entry gives its stage, owner, today's procedure, the planned improvement and a GitHub link to the doc's anchor",
+  check("dict 3: each entry gives its stage, owner, today's procedure, the planned improvement, and opens its entry in the panel",
     /Stage\s*Connected/.test(txt(ent("Program requirements"))) && /Owner or steward\s*The college/.test(txt(ent("Program requirements"))) && /How we get it today/.test(txt(ent("Program requirements")))
     && /Planned improvement\s*One matrix run/.test(txt(ent("Program requirements")))
     && (function () {
@@ -570,7 +570,8 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
       const w = ent("Program requirements").querySelector('button[data-pane="entry/program-requirements"]');
       if (!w) return false;
       w.click();
-      const ok = !!s3.d.querySelector('#cdd-panel a.cdd-newtab[href="https://github.com/cpl-initiative/cpl-project-tracker/blob/main/docs/reference/data_dictionary.md#program-requirements"]')
+      /* Review of #3261: the pane shows the entry's own words; its new tab opens the same pane, never GitHub's markdown. */
+      const ok = !!s3.d.querySelector('#cdd-panel a.cdd-newtab[href="#commons/data/dictionary/entry/program-requirements"]') && /One matrix run/.test(txt(s3.d.querySelector("#cdd-panel")))
         && s3.w.location.hash === "#commons/data/dictionary/entry/program-requirements";
       s3.D.closePanel();
       return ok;

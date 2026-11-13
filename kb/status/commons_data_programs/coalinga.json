@@ -1,21 +1,14 @@
-{"schema":1,"college":"Coalinga College","slug":"coalinga","basis":"committed files only","programs":[
-{"cn":"01628","title":"Biology","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"07957","title":"Health Science: General","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"01635","title":"Kinesiology","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"19021","title":"Liberal Arts: Arts & Humanities","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"37024","title":"Transfer Studies – Full IGETC Certification: CSU","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"37025","title":"Transfer Studies – Full IGETC Certification: UC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"schema":1,"college":"Coalinga College","slug":"coalinga","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"cn":"07957","title":"Health Science: General","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"19021","title":"Liberal Arts: Arts & Humanities","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"20332","title":"Business: Bookkeeping","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"20333","title":"Business: Business Management","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"20334","title":"Business: Retail Business Management","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"43642","title":"Communication Studies 2.0","award":"A.A- T Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"19009","title":"CSU General Education-Breadth","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"46574","title":"Medical Assisting","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"45288","title":"Transfer Studies: Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
-{"cn":"07610","title":"Business: Bookkeeping","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/business-bookkeeping-cert.php"},
-{"cn":"39230","title":"Food Science and Safety","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/food-science-safety.php"},
-{"cn":"35492","title":"Integrated Pest Management","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/integrated-pest-management.php"},
-{"cn":"44545","title":"Law, Public Policy, and Society","award":"A.A- T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/law-public-policy-and-society.php"},
-{"cn":"19019","title":"Liberal Arts: Math & Science","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/liberal-arts-area-of-emphasis-for-math-and-science.php"},
-{"cn":"19023","title":"Liberal Arts: Social & Behavioral Science","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/liberal-arts-for-social-and-behavioral-science.php"}
+{"cn":"39230","title":"Food Science and Safety","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/food-science-safety.php"},
+{"cn":"35492","title":"Integrated Pest Management","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/integrated-pest-management.php"},
+{"cn":"44545","title":"Law, Public Policy, and Society","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/law-public-policy-and-society.php"},
+{"cn":"19019","title":"Liberal Arts: Math & Science","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/liberal-arts-area-of-emphasis-for-math-and-science.php"},
+{"cn":"19023","title":"Liberal Arts: Social & Behavioral Science","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://coalingacollege.edu/catalog/2026-2027/programs-of-study/liberal-arts-for-social-and-behavioral-science.php"}
 ]}

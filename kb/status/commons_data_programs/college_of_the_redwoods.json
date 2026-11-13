@@ -1,7 +1,9 @@
-{"schema":1,"college":"College of the Redwoods","slug":"college_of_the_redwoods","basis":"committed files only","programs":[
-{"cn":"08395","title":"Early Childhood Education","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"18226","title":"Liberal Arts: Mathematics","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
-{"cn":"30418","title":"North Coast Paramedic","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_check","url":null},
+{"schema":1,"college":"College of the Redwoods","slug":"college_of_the_redwoods","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"cn":"18225","title":"Liberal Arts: Science Exploration","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-exploration-fall-2019"},
+{"cn":"31934","title":"Studio Arts","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/studio-arts-for-transfer-fall-2026"},
+{"cn":"08395","title":"Early Childhood Education","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"18226","title":"Liberal Arts: Mathematics","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"30418","title":"North Coast Paramedic","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"46099","title":"Data Science","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"46338","title":"Respiratory Care","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"46337","title":"Surgical Technology","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
@@ -10,13 +12,9 @@
 {"cn":"01816","title":"Automotive Technology","award":"A.S. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-ca-fall-2024"},
 {"cn":"13559","title":"Early Childhood Education","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"places_none","lever":"reader_page_assignment","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/early-childhood-education-fall-2018"},
 {"cn":"30811","title":"North Coast Paramedic","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"places_none","lever":"reader_page_assignment","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/north-coast-paramedic-summer-2019"},
-{"cn":"16505","title":"Addiction Studies","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/addiction-studies-ca-fall-2026"},
-{"cn":"42895","title":"Aquaculture Technology","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023"},
-{"cn":"18225","title":"Liberal Arts: Science Exploration","award":"A.A. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-exploration-fall-2019"},
-{"cn":"08393","title":"LVN or Paramedic to RN - Career Mobility","award":"A.S. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/lvn-or-paramedic-to-rn-career-mobility-fall-2026"},
-{"cn":"31005","title":"Mathematics","award":"A.S. T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026"},
-{"cn":"32809","title":"Physics","award":"A.S. T Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026"},
-{"cn":"46085","title":"Physics 2.0","award":"A.S. T Degree","cause":"unknown_without_live","lever":"ge_units_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026"},
-{"cn":"01831","title":"Registered Nursing","award":"A.S. Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/registered-nursing-fall-2026"},
-{"cn":"31934","title":"Studio Arts","award":"A.A- T Degree","cause":"unknown_without_live","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/studio-arts-for-transfer-fall-2026"}
+{"cn":"46085","title":"Physics 2.0","award":"A.S. T Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/physics-2-0-for-transfer-fall-2026"},
+{"cn":"16505","title":"Addiction Studies","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/addiction-studies-ca-fall-2026"},
+{"cn":"42895","title":"Aquaculture Technology","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-fall-2023"},
+{"cn":"08393","title":"LVN or Paramedic to RN - Career Mobility","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/lvn-or-paramedic-to-rn-career-mobility-fall-2026"},
+{"cn":"01831","title":"Registered Nursing","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/registered-nursing-fall-2026"}
 ]}

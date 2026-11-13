@@ -1,5 +1,6 @@
-{"schema":1,"college":"Monterey Peninsula College","slug":"monterey_peninsula","basis":"committed files only","programs":[
+{"schema":1,"college":"Monterey Peninsula College","slug":"monterey_peninsula","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
 {"cn":"32361","title":"Administration of Justice","award":"A.S. T Degree","cause":"parked_college","lever":"unpark","url":"https://catalog.mpc.edu/programs-study/administration-justice/administration-justice-as-t/"},
+{"cn":"39361","title":"Administration of Justice - Level I Policing","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"parked_college","lever":"unpark","url":"https://catalog.mpc.edu/programs-study/administration-justice/level-policing-coa/"},
 {"cn":"39356","title":"Administration of Justice - Level II Corrections","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"parked_college","lever":"unpark","url":"https://catalog.mpc.edu/programs-study/administration-justice/level-ii-corrections-coa/"},
 {"cn":"03653","title":"Administration of Justice: Law Enforcement","award":"A.S. Degree","cause":"parked_college","lever":"unpark","url":"https://catalog.mpc.edu/programs-study/administration-justice/law-enforcement-as/"},
 {"cn":"22098","title":"Administration of Justice: Law Enforcement","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"parked_college","lever":"unpark","url":"https://catalog.mpc.edu/programs-study/administration-justice/law-enforcement-coa/"},

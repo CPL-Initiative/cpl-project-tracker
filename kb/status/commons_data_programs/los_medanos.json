@@ -1,4 +1,4 @@
-{"schema":1,"college":"Los Medanos College","slug":"los_medanos","basis":"committed files only","programs":[
+{"schema":1,"college":"Los Medanos College","slug":"los_medanos","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
 {"cn":"01528","title":"Accounting","award":"A.S. Degree","cause":"parked_college","lever":"unpark","url":"https://lmc.elumenapp.com/catalog/26-27/program/accounting-associate-of-science-as-degree-fall-2025"},
 {"cn":"32221","title":"Administration of Justice","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"parked_college","lever":"unpark","url":"https://lmc.elumenapp.com/catalog/26-27/program/administration-of-justice-certificate-of-achievement-spring-2022"},
 {"cn":"39637","title":"Advanced English for Academic and Professional Advancement","award":"Noncredit program","cause":"parked_college","lever":"unpark","url":null},
