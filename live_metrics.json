@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-12T22:32:46.825Z",
+  "scraped_at": "2026-11-13T06:18:00.923Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -1073,14 +1073,14 @@
         },
         {
           "college": "East Los Angeles College",
-          "students": 238,
+          "students": 239,
           "units": 705,
-          "avgUnits": 2.96218487394958,
+          "avgUnits": 2.9497907949790796,
           "transcriptionRate": 11.1,
-          "avgTranscribed": 0.3277310924369748,
+          "avgTranscribed": 0.3263598326359833,
           "criteriaMetCount": 0,
           "militaryStudents": 236,
-          "nonMilitaryStudents": 2,
+          "nonMilitaryStudents": 3,
           "apprenticeStudents": 0,
           "savings": 1219650,
           "yearImpact": 4277235,
@@ -1772,7 +1772,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "60,328",
+      "value": "60,329",
       "breakdowns": [
         {
           "label": "Military",
@@ -1780,7 +1780,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "28,487"
+          "value": "28,488"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 60328,
+    "Students": 60329,
     "Units": 289254.4,
     "TranscribedUnits": 85299.65,
     "Savings": 412953200.25,
     "YearImpact": 1667819307.3999999,
     "MilitaryStudents": 31947,
-    "NonMilitaryStudents": 28487,
+    "NonMilitaryStudents": 28488,
     "AprenticeStudents": 960,
-    "AverageUnits": 4.794695663705079,
-    "TranscribedAverage": 1.4139313419970825
+    "AverageUnits": 4.794616187902999,
+    "TranscribedAverage": 1.4139079049876508
   }
 }
