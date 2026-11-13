@@ -1080,6 +1080,14 @@ def build():
         add_edges(cid, "edgefn", supabase_edges(rel, text), "literal", source=rel)
         add_edges(cid, "edgefn", external_edges(text), "url", source=rel)
         add_producer("edgefn:%s" % fn, "file:%s" % rel, "source")
+        # A module the function imports from ../_shared/ ships in its bundle, so what the module reads is the
+        # function's read (S647: program-requirements-extract's caller check reads allowed_reviewers there).
+        for sm in re.finditer(r'from "(\.\./_shared/[A-Za-z0-9_.-]+\.m?[jt]s)"', text):
+            shared = os.path.normpath(os.path.join(os.path.dirname(rel), sm.group(1))).replace(os.sep, "/")
+            if shared in tracked:
+                stext = read(shared)
+                add_edges(cid, "edgefn", supabase_edges(shared, stext), "literal", source=shared)
+                add_edges(cid, "edgefn", external_edges(stext), "url", source=shared)
 
     # shell scripts
     for rel in [f for f in tracked if f.endswith(".sh") and not excluded(f)]:

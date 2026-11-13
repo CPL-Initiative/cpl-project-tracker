@@ -356,15 +356,24 @@ def run_cost(out_dir: str | None, run_id) -> dict:
     not_sent: list = []
     for path in sorted(glob.glob(os.path.join(out_dir or "", "not_sent_*.json"))) if out_dir else []:
         not_sent.extend((_read(path) or {}).get("programs") or [])
+    # The extraction function's answer that stopped the read (503 or 401; extract_halt_<shard>.json, S647).
+    # Its cost_usd is what the halting answers carried (paid parts of a read in parts), counted with the run's cost
+    # (S648 review).
+    halt = None
+    for path in sorted(glob.glob(os.path.join(out_dir or "", "extract_halt_*.json"))) if out_dir else []:
+        h = _read(path) or {}
+        cost += h.get("cost_usd") or 0
+        unpriced += h.get("unpriced") or 0
+        halt = halt or h or None
     return {"extracted": len(mine), "cost_usd": round(cost, 2), "kept": len(kept_list), "unpriced": unpriced,
-            "not_sent": sorted(not_sent)}
+            "not_sent": sorted(not_sent), "halt": halt}
 
 
 def verdict(outcomes: dict, capture: dict | None, pages: dict, priced: dict | None, cmp: dict,
-            extracted: int, not_sent: int = 0) -> str:
+            extracted: int, not_sent: int = 0, halt: dict | None = None) -> str:
     """ready: extracted, no pass to fail, no passing record lost coverage (the conductor rereads it).
     captured: a whole capture, nothing extracted (priced only). held: a person reads it first.
-    failed: a step did not finish."""
+    failed: a step did not finish. An extraction the function's answer stopped names it (halt, S647)."""
     if outcomes.get("capture") != "success" or not capture:
         return "failed: capture"
     if pages.get("partial"):
@@ -375,6 +384,9 @@ def verdict(outcomes: dict, capture: dict | None, pages: dict, priced: dict | No
     if p.get("extract_asked") and p.get("would_extract") and not p.get("within_limit"):
         return "held: price over the limit"
     if outcomes.get("extract") not in (None, "", "success", "skipped"):
+        if halt:
+            return "failed: extract stopped, HTTP %s%s: %s" % (
+                halt.get("status"), " " + halt["reason"] if halt.get("reason") else "", halt.get("cause"))
         return "failed: extract"
     if outcomes.get("file") != "success":
         return "failed: file"
@@ -405,8 +417,8 @@ def verify(college: str, run_dir: str, base_dir: str | None, capture: dict | Non
             "fail_to_pass": len(cmp["fail_to_pass"]), "pass_to_fail": len(cmp["pass_to_fail"]),
             "lost_coverage": len(cmp["lost_coverage"]), "kept": kept, "new": len(cmp["new"]),
             "records": len(run), "main_records": len(base), "pages": pages, "outcomes": outcomes,
-            "verdict": verdict(outcomes, capture, pages, priced, cmp, extracted, len(rc["not_sent"])),
-            "detail": dict(cmp, not_sent=rc["not_sent"])}
+            "verdict": verdict(outcomes, capture, pages, priced, cmp, extracted, len(rc["not_sent"]), rc["halt"]),
+            "detail": dict(cmp, not_sent=rc["not_sent"], halt=rc["halt"])}
 
 
 def baseline_from_git(ref: str, slug: str, dest: str) -> str | None:
