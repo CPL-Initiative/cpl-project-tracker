@@ -319,6 +319,10 @@ jobs:
       # a thousand rows. Pure-stdlib python; same non-required check.
       - name: Program requirements, one college (sitemap, matching, shards)
         run: python3 tests/program_requirements_college_test.py
+      # S647 (Sam, Sheet 190 card 6): a read stops at the extraction function's 503 (or 401) and files
+      # nothing over a record; run 43384599013 filed 121 stubs in a database outage. Pure stdlib.
+      - name: Program requirements extraction halts on an outage (503, 401)
+        run: python3 tests/program_requirements_extract_halt_test.py
       # A wave (S644): several colleges in one dispatch. The plan refuses two reads on one host, a
       # ninth college and a limit above $40; the price gate; each verify verdict; the table's sums.
       # Python with PyYAML for the workflow's shape; same non-required check.

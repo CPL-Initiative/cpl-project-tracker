@@ -986,3 +986,5 @@ Moved verbatim from the data dashboard's LIVE paragraph when #3229 renamed the v
 Sam's 2:53 AM PT words covered slice 1 (**DECIDED** `d-commons-data-slice1-on-relayed-go-s647`); his go for the rest, in session about 14:30Z: *"looks like we have more room in t his session, can we complete the college data collection dash?"* (`sam-complete-data-dash-2026-11-13`).
 
 **#3219** (Sam, 1:52 AM PT, verbatim: "coci does not have reliable course descriptions, especially for noncredit so we will need to add a procedure in our cor queue where we grab the slos and objectives to complete the description field when needed--this will really help with all those thousands of nc standalone courses we have in the system") is still open: a COR-queue step, not a go; Sam approves the PR.
+
+**DECIDED** `d-student-boundary-wording-s647`: the dictionary's first privacy sentence was false; it now reads "Student records stay in MAP; COBI keeps counts." and names the boundary (pseudonymous rows pass through the runner and sit in reviewer-gated `map_student_credit` until the summarize-then-delete plan retires it; both ADRs).

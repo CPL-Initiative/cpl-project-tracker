@@ -108,6 +108,13 @@
 // guessed id fails with a 404 that reads like a bad key). Sam's call 6 on sheet
 // 23 still holds: the xAI key lives here as a function secret, never in GitHub;
 // the runner (kb/_second_reader.py) presents the service key as it always has.
+// Version 12 (S647, 2026-11-13): the caller check answers 503 when its lookup gives no answer, and 401
+// only for a real refusal. Sam's Open Asks Sheet 190 card 6 (13:21Z, "deploy"), on COBIx's finding on #3202
+// (comment 6850015321). Every failure answered 401 before: from about 09:29Z to 11:15Z that day the database
+// refused connections, and Glendale's paid read (run 43384599013) had all 135 calls answer 401, filed 121 error
+// stubs over good records and read as an expired key for an hour. The check lives in
+// ../_shared/service_caller.mjs (plain JavaScript, so tests/service_caller_check.test.js runs it in Node);
+// the runner (kb/_program_requirements_college.py, extract) stops a read at a 503.
 // Deploy from main with cpl-chat-deploy.yml (function program-requirements-extract);
 // before S360 it went out with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
@@ -116,6 +123,7 @@
 // For provider "xai" (Sam sets them, Edge Function secrets): XAI_API_KEY, XAI_MODEL.
 
 import Anthropic from "npm:@anthropic-ai/sdk";
+import { checkServiceCaller } from "../_shared/service_caller.mjs";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://hvuwhnbuahrtptokpqfh.supabase.co";
 const MODEL = "claude-opus-5-5";
@@ -333,21 +341,6 @@ Careers. Copy each career, job title, occupation or career field the text names 
 
 Record only what the text states. Use notes for anything a reviewer should check: a table cut off at a page break, a rule you read as ambiguous, a section that seems to belong to another catalog year.`;
 
-// ── Caller check (the cpl-news-harvest pattern) ─────────────────────────────
-async function isServiceCred(bearer: string): Promise<boolean> {
-  try {
-    const r = await fetch(`${SUPABASE_URL}/rest/v1/allowed_reviewers?select=email&limit=1`, {
-      headers: { apikey: bearer, Authorization: `Bearer ${bearer}` },
-      signal: AbortSignal.timeout(12000),
-    });
-    if (!r.ok) return false;
-    const rows = await r.json().catch(() => []);
-    return Array.isArray(rows) && rows.length >= 1;
-  } catch (_e) {
-    return false;
-  }
-}
-
 function reply(status: number, body: unknown): Response {
   return new Response(JSON.stringify(body), { status, headers: JSON_HEADERS });
 }
@@ -467,7 +460,10 @@ async function readWithXai(model: string, user: string, part: Part | null): Prom
 Deno.serve(async (req) => {
   if (req.method !== "POST") return reply(405, { error: "POST only" });
   const bearer = (req.headers.get("authorization") || "").replace(/^Bearer\s+/i, "").trim();
-  if (!bearer || !(await isServiceCred(bearer))) return reply(401, { error: "unauthorized" });
+  // The caller check (../_shared/service_caller.mjs): 401 when the lookup refuses the key, 503 when the lookup
+  // gives no answer (version 12). Nothing below runs unless it says ok.
+  const caller = await checkServiceCaller(SUPABASE_URL, bearer);
+  if (!caller.ok) return reply(caller.status, caller.body);
 
   let body: Record<string, unknown>;
   try {
