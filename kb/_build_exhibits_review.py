@@ -391,6 +391,138 @@ def adoption_file(statewide, prescriptive):
     }
 
 
+def course_index(members):
+    """(college, course code), both normalized -> {code, title, units, cn}: each local course in the members file, the
+    one source the tab's Course details panel reads (unified_courses_members.js)."""
+    names = [norm_college(clean_college(n)) for n in members.get("colleges") or []]
+    out = {}
+    for rows in (members.get("members") or {}).values():
+        for r in rows or []:
+            c = r.get("c")
+            if c is None or c >= len(names) or not r.get("n"):
+                continue
+            out.setdefault((names[c], _code_key(r["n"])), {"code": r["n"].strip(), "title": (r.get("t") or "").strip(),
+                                                           "units": r.get("u"), "cn": r.get("cn") or ""})
+    return out
+
+
+def _code_key(code):
+    return re.sub(r"[^A-Z0-9]", "", (code or "").upper())
+
+
+LOCAL_COURSES_CAP = 4
+DESC_CAP = 360   # characters of a course's COCI description a card carries; the full text is in the COCI Lookup
+
+
+def coci_descriptions(root):
+    """(code, control number) -> the course's COCI description, read from the COCI Lookup's shards (coci_lookup_desc_<letter>.js,
+    keyed by the code's first letter as exhibits.js reads them), each shard once and only when asked."""
+    shards = {}
+
+    def get(code, cn):
+        if not cn:
+            return ""
+        key = code[:1].upper() if code[:1].isalpha() else "0"
+        if key not in shards:
+            path = os.path.join(root, "coci_lookup_desc_%s.js" % key)
+            shards[key] = {}
+            if os.path.exists(path):
+                with open(path, encoding="utf-8") as f:
+                    src = f.read()
+                at = src.find("] = {")
+                if at >= 0:
+                    shards[key] = json.loads(src[at + 4:src.rindex("}") + 1])
+        d = " ".join((shards[key].get(cn) or "").split())
+        return d if len(d) <= DESC_CAP else d[:DESC_CAP].rsplit(" ", 1)[0] + "…"
+    return get
+
+
+def local_courses(ex, cindex, desc=None):
+    """The local courses behind a card's exhibits, [college, code, title, units, control number, credit line], from its
+    credit recommendations at the colleges that articulate it. Sam, 4:57 AM PT 2026-11-13 (#3223): "the local course
+    title has been the most helpful thing for me to see in many of these decisions", so the card's side panel lists
+    them above Words in common, with no 26 MB read on a click. The seventh field is the course's COCI description, cut at
+    DESC_CAP; the tab marks it a lead for a noncredit course (#3219: COCI descriptions are unreliable there)."""
+    out, seen = [], set()
+    for code, credit in ex.get("recs") or []:
+        if not code:
+            continue
+        for college in ex.get("art") or []:
+            got = cindex.get((norm_college(college), _code_key(code)))
+            if not got or (college, got["code"]) in seen:
+                continue
+            seen.add((college, got["code"]))
+            out.append([college, got["code"], got["title"], got["units"], got["cn"], credit])
+    out = out[:LOCAL_COURSES_CAP]
+    for row in out:
+        row.append(desc(row[1], row[4]) if desc else "")
+    return out
+
+
+# A course code left in a proposal, "(CNT 7285)": the Wording check's reason (#3223).
+CODE_IN_PARENS = re.compile(r"\s*\(([A-Z]{2,6}[\s-]*\d{1,4}[A-Z]{0,2})\)\s*$")
+STOP = {"the", "and", "of", "for", "in", "a", "an", "to", "inc", "institute", "association", "national", "american",
+        "council", "society", "board", "california", "state", "department", "international", "certification"}
+
+
+def _brand_words(issuer):
+    return {w for w in re.findall(r"[a-z0-9]+", (issuer or "").lower()) if len(w) >= 3 and w not in STOP}
+
+
+def named_credential(texts, index):
+    """The reference title of an industry issuer that a course title or a credit recommendation names as a phrase, the
+    longest when several do, else None. The title must carry its issuer's own name ("CompTIA Cloud+", issuer CompTIA),
+    so a generic title never matches. Sam, 2026-11-13 (#3223), on CNT 7285 "Cloud Infrastructure: CompTIA Cloud+
+    Certification": "for those appearing to be for industry certs, the proposed title should attempt to be the official
+    cert title"."""
+    blob = " ".join(t for t in texts if t)
+    if not blob:
+        return None
+    hits = []
+    for o in index:
+        t, iss = o["t"], o.get("issuer") or ""
+        if not iss or iss == title_in_use.LOCAL_ISSUER or len(t) < 6 or len(t.split()) < 2:
+            continue
+        if not ({w for w in re.findall(r"[a-z0-9]+", t.lower())} & _brand_words(iss)):
+            continue
+        if re.search(r"(?<![A-Za-z0-9])" + re.escape(t) + r"(?![A-Za-z0-9+])", blob, re.I):
+            hits.append(o)
+    if not hits:
+        return None
+    hits.sort(key=lambda o: -len(o["t"]))
+    if len(hits) > 1 and len(hits[1]["t"]) == len(hits[0]["t"]):
+        return None   # two titles of one length: no lead, so a person picks
+    return hits[0]
+
+
+def leftover_code_proposal(prop, ex, courses, index, raw, wording=False):
+    """A proposal that still carries a course code ("Computer Networking Technology (CNT 7285)", the department and the
+    leftover code) takes, in order: the industry credential its course title or credit line names (named_credential);
+    for credit by exam or noncredit, the local course title; else it stands, flagged for its official name. Sam, 4:57 AM
+    PT 2026-11-13 (#3223): the local course title "should be taken into account when suggesting proposed titles for
+    exhibits that appear to be for cx or noncredit". Returns the new proposal or None."""
+    m = CODE_IN_PARENS.search(prop.get("title") or "")
+    codes = {_code_key(c[1]) for c in courses} | {_code_key(r[0]) for r in ex.get("recs") or [] if r[0]}
+    # The code is the course's own, or the procedures run held the card for a code left in (a noncredit "ESL 220A"
+    # whose credit recommendation names its mirrored credit course, ESL 120A).
+    if not m or (_code_key(m.group(1)) not in codes and not wording):
+        return None
+    titles = [c[2] for c in courses if c[2]]
+    hit = named_credential(titles + [r[1] for r in ex.get("recs") or []], index)
+    alts = [prop["title"]] + [a for a in prop.get("alternates") or [] if a != prop["title"]]
+    if hit:
+        return dict(prop, title=hit["t"], issuer=hit["issuer"], source=SRC_OFFICIAL, alternates=alts,
+                    **{"from": "the credential its course names (%s)" % titles[0] if titles else "its credit recommendation"})
+    noncredit = bool(courses) and all(not c[3] for c in courses)
+    if titles and (is_credit_by_exam(ex) or noncredit or re.match(r"^\s*Noncredit\b", raw or "", re.I)):
+        own = titles[0]
+        if CODE_IN_PARENS.search(own) or own == prop["title"]:
+            return None
+        return dict(prop, title=own, source=SRC_COURSE, alternates=alts,
+                    **{"from": "the local course title (%s %s)" % (courses[0][0], courses[0][1])})
+    return None
+
+
 def identity_colleges(members, ident):
     """college name -> [[code, title, units]] for the courses an identity holds at each college."""
     names = members.get("colleges") or []
@@ -463,6 +595,7 @@ def build(root):
     in_reference = {o["t"] for o in index}
     statewide_titles = title_in_use.statewide_from_js(os.path.join(root, STATEWIDE_RECS))
     names_on_file = official_names(load_json(root, CATALOG, {}))
+    cindex, descs = course_index(members), coci_descriptions(root)
     items, courses = [], {}
     for n in needs:
         raw = n.get("raw_title") or ""
@@ -474,7 +607,11 @@ def build(root):
         first = n.get("proposal") or (n.get("proposals") or [{}])[0] or {}
         course_ok, course_why = course_title_fits(ex, first.get("issuer", "")) if aligned else (True, "")
         prop = proposal_of(n, aligned, course_ok)
+        mine = local_courses(ex, cindex, descs)
         if step != CONFLICT:
+            got = leftover_code_proposal(prop, ex, mine, index, raw, wording=step == WORDING)
+            if got:
+                prop = got
             # A proposal based on a certification goes out in the format (kb/cert_naming.py, Sam's ruling of
             # 2026-11-11); the form the rule or the classifier wrote stays beside it as an alternate. A
             # conflict's proposal is a title a person already approved, which only the rename batch moves.
@@ -524,6 +661,8 @@ def build(root):
         }
         if key:
             rec["courses_key"] = key
+        if mine:
+            rec["local_courses"] = mine
         conf = (n.get("proposal") or {}).get("confidence")
         if isinstance(conf, (int, float)):
             rec["confidence"] = conf
@@ -564,11 +703,14 @@ def build(root):
     # A college is named once, in `colleges`; the records carry its index (468 titles each listing
     # up to a hundred could-adopt colleges were 1.9 MB as names).
     names = sorted({c for r in items for c in r["art"] + r["could"] + r["colleges"]}
+                   | {lc[0] for r in items for lc in r.get("local_courses") or []}
                    | {c for by in courses.values() for c in by}, key=str.lower)
     at = {c: i for i, c in enumerate(names)}
     for r in items:
         for k in ("art", "could", "colleges"):
             r[k] = [at[c] for c in r[k]]
+        for lc in r.get("local_courses") or []:
+            lc[0] = at[lc[0]]
     # The courses behind a could-adopt chip open on a click, so they sit in their own file the
     # tab loads then (unified_courses_members.js's pattern): identity -> college index -> rows.
     course_file = {"schema": SCHEMA, "colleges": names,

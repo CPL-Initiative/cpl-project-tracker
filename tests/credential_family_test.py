@@ -165,14 +165,17 @@ check("the field is mapped in the governance surface map", "field:kb_curation.cr
 import _build_exhibits_related as rel  # noqa: E402
 
 EXC = {t for t in conv if test_mix.exception(t)}
-check("the members the parser cannot code fully are the eleven with an 'or' or a non-ASE part (C1 or G1 is held)",
-      len(EXC) == 11 and {"ASE Bundle — A6 or T6 + L3", "ASE Bundle — T7, T8 + MACS/609",
-                          "ASE G1 + ALI Lift It Right Bundle"} <= EXC
-      and "ASE Bundle — A4, A5" not in EXC)
-check("a non-ASE part joins with 'with', an 'or' stays inside its part",
-      test_mix.exception("ASE Bundle — T7, T8 + MACS/609") == {"title": "ASE Bundle — T7, T8 + MACS/609", "mix": "T7, T8 + MACS/609",
-                                                              "tests": ["T7", "T8"], "with": ["MACS/609"]}
-      and test_mix.parts("ASE Bundle — A6 or T6 + L3") == {"tests": ["A6 or T6", "L3"], "with": []})
+# Sam, 5:38 AM PT 2026-11-13 (#3228): "I would just defer to it's mix as written unless there was an obvious error". A
+# part no ASE code names is coded after "with"; only a mix the parser cannot read is left to a person.
+check("the members left to code by hand are those the parser cannot read: an 'or' (C1 or G1 is held)",
+      "ASE Bundle — A6 or T6 + L3" in EXC and "ASE Bundle — T7, T8 + MACS/609" not in EXC
+      and "ASE G1 + ALI Lift It Right Bundle" not in EXC and "ASE Bundle — A4, A5" not in EXC
+      and all(test_mix.family_read("", t)["status"] == "unparseable" for t in EXC))
+check("a non-ASE part is coded as written after 'with', and an 'or' stays inside its part with its reason",
+      test_mix.exception("ASE Bundle — T7, T8 + MACS/609") is None
+      and test_mix.parts("ASE Bundle — T7, T8 + MACS/609") == {"tests": ["T7", "T8"], "with": ["MACS/609"]}
+      and test_mix.parts("ASE Bundle — A6 or T6 + L3") == {"tests": ["A6 or T6", "L3"], "with": []}
+      and '"or"' in test_mix.exception("ASE Bundle — A6 or T6 + L3")["why"])
 check("a member's proposed title is the family plus its tests",
       test_mix.family_title(FAM, "ASE Bundle — A4, A5") == "ASE Certificate Bundles: A4 + A5"
       and test_mix.family_title(FAM, "ASE G1 + ALI Lift It Right Bundle") == "ASE Certificate Bundles: G1 with ALI Lift It Right"
@@ -229,11 +232,9 @@ same = [r for r in famrows if r["proposed"] == "ASE Certificate Bundles: A2 + A3
 check("two titles with one mix share one proposed title: one leads, the other folds into it",
       len(same) == 2 and sorted(bool(r["merge"]) for r in same) == [False, True])
 exl = built["families"][FAM]["exceptions"]
-check("the family's exception list holds the members to code by hand, each with its tests and its 'with' parts",
-      {e["title"] for e in exl} == EXC | {"ASE Certificate Bundles: T7 + T8 with MACS/609"}
-      and all("tests" in e and "with" in e for e in exl)
-      and next(e for e in exl if e["title"] == DONE[1])["with"] == ["MACS/609"]
-      and next(e for e in exl if e["title"] == DONE[1])["tests"] == ["T7", "T8"])
+check("the family's exception list holds only the members the parser cannot read, each with its tests and why",
+      {e["title"] for e in exl} == EXC and all("tests" in e and "with" in e and e["why"] for e in exl)
+      and DONE[1] not in {e["title"] for e in exl})
 
 # Against the committed kb data, before or after a rename: every member in the reference is in the family form, is
 # proposed in it, is on the exception list, or is carried by a ruled plan; no held title is a member or proposed.
