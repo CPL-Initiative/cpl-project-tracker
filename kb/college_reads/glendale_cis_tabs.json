@@ -58,5 +58,8 @@
     "High School"
    ]
   }
- ]
+ ],
+ "outside_hosts": {
+  "coursedog.com": "Glendale's catalog vendor: catalog.glendale.edu's own scripts fetch each program's data from app.coursedog.com (the harvest's Coursedog reader reads the same search)."
+ }
 }
