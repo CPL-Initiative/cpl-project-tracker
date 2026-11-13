@@ -142,6 +142,8 @@
   "teaches:Emergency Medical Technician": {"17": [["FIRE 717", "", 3.0]]},
   "teaches:High-Beginning Reading and Writing": {"15": [["ESL 285B", "", 6.0]], "68": [["ENSL 321", "", 5.0], ["ENSL 421", "", 0.0]], "104": [["ESLW 030RW", "", 5.0], ["NCEL 030RW", "", 0.0]]},
   "teaches:High-Intermediate Reading and Writing": {"66": [["ESL 960RW", "", 6.0], ["NCE 960RW", "", 0.0]], "104": [["ESLW 060RW", "", 5.0], ["NCEL 060RW", "", 0.0]]},
-  "teaches:Principles of Emergency Services": {"9": [["FT 1", "", 3.0]], "10": [["FIRETEC 1", "", 3.0]], "17": [["FIRE 715", "", 3.0]], "19": [["FIRE 1", "", 3.0]], "67": [["FTECH 301", "", 3.0]], "68": [["FPTC 1", "", 3.0]], "79": [["FIRE 1", "", 3.0]], "80": [["FIRE P101", "", 3.0]], "98": [["FIRE 50", "", 3.0]], "102": [["FIRE 100", "", 3.0]]}
+  "teaches:Principles of Emergency Services": {"9": [["FT 1", "", 3.0]], "10": [["FIRETEC 1", "", 3.0]], "17": [["FIRE 715", "", 3.0]], "19": [["FIRE 1", "", 3.0]], "67": [["FTECH 301", "", 3.0]], "68": [["FPTC 1", "", 3.0]], "79": [["FIRE 1", "", 3.0]], "80": [["FIRE P101", "", 3.0]], "98": [["FIRE 50", "", 3.0]], "102": [["FIRE 100", "", 3.0]]},
+  "teaches:Traffic Control": {"11": [["PUB 162", "", 3.0]]},
+  "teaches:Traffic Control Technician": {"11": [["PUB 162", "", 3.0]]}
  }
 }

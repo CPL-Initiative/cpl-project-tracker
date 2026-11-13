@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T06:21:32Z",
+ "written_at": "2026-11-13T15:48:19Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,9 +15,9 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14062,
+     "n": 14527,
      "of": 20282,
-     "words": "complete at 115 colleges",
+     "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
     },
     {
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 2947,
+     "n": 2955,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3273,
+     "n": 2800,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -50,7 +50,7 @@
    ],
    "procedures": [
     {
-     "n": 115,
+     "n": 118,
      "words": "reading procedures, one per college read, versioned",
      "open": "#program-requirements"
     },
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-13T01:05:23Z",
+    "at": "2026-11-13T07:46:13Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 14062,
-    "failing": 2947,
-    "unread": 3273,
-    "records": 18635,
-    "colleges": 115,
-    "outside_active": 1626,
+    "complete": 14527,
+    "failing": 2955,
+    "unread": 2800,
+    "records": 19155,
+    "colleges": 118,
+    "outside_active": 1673,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -118,15 +118,15 @@
    ],
    "issues": [
     {
-     "n": 179,
+     "n": 198,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37, a merge would join two issuers 2)",
+     "owner": "a curator (the classifier is unsure 160, the classifier's title has a course code left in 36, a merge would join two issuers 2)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
     },
     {
-     "n": 366,
+     "n": 374,
      "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
@@ -185,7 +185,7 @@
     "left_map": 810,
     "below_80": 1117,
     "below_60": 235,
-    "no_subject": 366,
+    "no_subject": 374,
     "review_list": 12,
     "returned_unacknowledged": 0
    },
@@ -535,7 +535,7 @@
    ],
    "pair": [
     {
-     "n": 7726,
+     "n": 7727,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -545,16 +545,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7726,
+    "credentials": 7727,
     "issuers": 1525,
     "in_map": 206,
     "articulated": 160,
-    "with_issuer_skills": 197,
+    "with_issuer_skills": 205,
     "tech_giant": 567
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-12T00:00:00Z",
+    "at": "2026-11-13T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -621,7 +621,7 @@
    "links": [],
    "pair": [
     {
-     "n": 197,
+     "n": 205,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -631,11 +631,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 197
+    "with_issuer_skills": 205
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-12T00:00:00Z",
+    "at": "2026-11-13T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -680,9 +680,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 179,
+      "n": 198,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37, a merge would join two issuers 2)",
+      "owner": "a curator (the classifier is unsure 160, the classifier's title has a course code left in 36, a merge would join two issuers 2)",
       "open": "#exhibits/held"
      },
      {
@@ -750,7 +750,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2947,
+    "n": 2955,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -758,7 +758,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3273,
+    "n": 2800,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -766,7 +766,7 @@
    {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
-    "n": 366,
+    "n": 374,
     "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
@@ -996,64 +996,40 @@
  "batches": [
   {
    "kind": "another-look",
-   "n": 6,
-   "of": 10,
+   "n": 3,
+   "of": 3,
    "open": "#exhibits/another-look/batch",
-   "title": "Another look at 6 exhibit titles",
+   "title": "Another look at 3 exhibit titles",
    "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
    "stop": "The batch ends when its cards are decided.",
    "rules": [
-    "ase"
+    "fold",
+    "numerals"
    ],
    "cards": [
     {
-     "id": "430e821e4f43",
-     "current": "Auto Electrical/Electronic Systems (ASE A6 standards)",
+     "id": "47c90f286f99",
+     "current": "Elementary French I",
      "keys": [
-      "_UNCLASSIFIED::AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
-      "_UNCLASSIFIED::AUTOTEC-15: Auto Electricity and Electronics",
-      "_UNCLASSIFIED::Noncredit for AUTO A6"
+      "_UNCLASSIFIED::French 1-Elementary French 1st Quarter"
      ]
     },
     {
-     "id": "00c22b90e09a",
-     "current": "Heating and Air Conditioning (ASE A7 standards)",
+     "id": "ac293bc9e949",
+     "current": "Agricultural Business and Technology",
      "keys": [
-      "_UNCLASSIFIED::Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
-      "_UNCLASSIFIED::Basic Automotive Air Conditioning Systems",
-      "_UNCLASSIFIED::Noncredit for AUTO A7"
+      "_UNCLASSIFIED::Credit By Exam- CFPL ABT 135"
      ]
     },
     {
-     "id": "166a7c372e22",
-     "current": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+     "id": "8100a6573c4e",
+     "current": "Agricultural Business and Technology",
      "keys": [
-      "_UNCLASSIFIED::Noncredit for AUTO L3"
-     ]
-    },
-    {
-     "id": "fb969746ce77",
-     "current": "Light Vehicle Diesel Engines (ASE A9 standards)",
-     "keys": [
-      "_UNCLASSIFIED::Noncredit for AUTO A9"
-     ]
-    },
-    {
-     "id": "f9f986a9f33c",
-     "current": "Manual Drive Train and Axles (ASE A3 standards)",
-     "keys": [
-      "_UNCLASSIFIED::Noncredit for AUTO A3"
-     ]
-    },
-    {
-     "id": "5dcc165d855e",
-     "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
-     "keys": [
-      "_UNCLASSIFIED::Noncredit for AUTO P1"
+      "_UNCLASSIFIED::Credit by Exam-- CFPL ABT 132"
      ]
     }
    ],
-   "at": "2026-11-12T20:24:14Z"
+   "at": "2026-11-13T14:46:22Z"
   },
   {
    "kind": "decision",
@@ -1087,6 +1063,16 @@
   },
   {
    "kind": "decision",
+   "project": "program-requirements",
+   "n": 1,
+   "title": "Deploy the extraction function's new error answer?",
+   "teaches": "While the database was unreachable on Nov 13, every call to the extraction function answered 401, which reads as a bad key, and a paid read at Glendale spent about $9 with nothing extracted. COBIx suggests the function answer 503 when the database fails and 401 only for a real refusal. It changes a deployed function, so it waits for your word.",
+   "open": "https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y",
+   "todo_id": null,
+   "stop": "It ends when you answer the sheet."
+  },
+  {
+   "kind": "decision",
    "project": "course",
    "n": 1,
    "title": "Rule on six re-clustering cases and the Honors question",
@@ -1108,63 +1094,39 @@
  ],
  "next_batch": {
   "kind": "another-look",
-  "n": 6,
-  "of": 10,
+  "n": 3,
+  "of": 3,
   "open": "#exhibits/another-look/batch",
-  "title": "Another look at 6 exhibit titles",
+  "title": "Another look at 3 exhibit titles",
   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
   "stop": "The batch ends when its cards are decided.",
   "rules": [
-   "ase"
+   "fold",
+   "numerals"
   ],
   "cards": [
    {
-    "id": "430e821e4f43",
-    "current": "Auto Electrical/Electronic Systems (ASE A6 standards)",
+    "id": "47c90f286f99",
+    "current": "Elementary French I",
     "keys": [
-     "_UNCLASSIFIED::AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
-     "_UNCLASSIFIED::AUTOTEC-15: Auto Electricity and Electronics",
-     "_UNCLASSIFIED::Noncredit for AUTO A6"
+     "_UNCLASSIFIED::French 1-Elementary French 1st Quarter"
     ]
    },
    {
-    "id": "00c22b90e09a",
-    "current": "Heating and Air Conditioning (ASE A7 standards)",
+    "id": "ac293bc9e949",
+    "current": "Agricultural Business and Technology",
     "keys": [
-     "_UNCLASSIFIED::Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
-     "_UNCLASSIFIED::Basic Automotive Air Conditioning Systems",
-     "_UNCLASSIFIED::Noncredit for AUTO A7"
+     "_UNCLASSIFIED::Credit By Exam- CFPL ABT 135"
     ]
    },
    {
-    "id": "166a7c372e22",
-    "current": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+    "id": "8100a6573c4e",
+    "current": "Agricultural Business and Technology",
     "keys": [
-     "_UNCLASSIFIED::Noncredit for AUTO L3"
-    ]
-   },
-   {
-    "id": "fb969746ce77",
-    "current": "Light Vehicle Diesel Engines (ASE A9 standards)",
-    "keys": [
-     "_UNCLASSIFIED::Noncredit for AUTO A9"
-    ]
-   },
-   {
-    "id": "f9f986a9f33c",
-    "current": "Manual Drive Train and Axles (ASE A3 standards)",
-    "keys": [
-     "_UNCLASSIFIED::Noncredit for AUTO A3"
-    ]
-   },
-   {
-    "id": "5dcc165d855e",
-    "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
-    "keys": [
-     "_UNCLASSIFIED::Noncredit for AUTO P1"
+     "_UNCLASSIFIED::Credit by Exam-- CFPL ABT 132"
     ]
    }
   ],
-  "at": "2026-11-12T20:24:14Z"
+  "at": "2026-11-13T14:46:22Z"
  }
 }
