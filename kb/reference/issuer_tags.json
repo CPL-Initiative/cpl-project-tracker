@@ -1,0 +1,977 @@
+{
+ "_about": "Each industry issuer's tags: the words that, standing as whole tokens in a title, say the title is that issuer's (kb/_build_exhibits_review.py issuer_named). Derived once on 2026-11-13 (S648) from every issuer in kb/credentials.json and kb/credential_review_overlay.json: a parenthetical that is one token (ASE, NREMT), and an all-capitals word outside parentheses (IPC); then written down and corrected by hand: generic ones dropped (ROP, HS, DUI, GIS, 'varies'), split ones joined (CAL-OSHA, EC-Council, H&R Block), and brands that sit outside the issuer's short tag added (CAL FIRE, Cal OES, UC ANR, Disney, LEED, Esri, Haas, Unity, LPIC, CLEP, DSST), and, after the review of #3241, each issuer's own credential abbreviations and track names where its real credentials carry no other mark of it (PMI's PfMP and PgMP, Python Institute's PCAP, the Dental Boards' RDA and RDH, NBCOT's COTA, EMSA's EMT and EMR, SFT's certification tracks such as Fire Inspector and Company Officer). The S648 conductor's direction on #3241: the issuer list is finite, so its tags are data, never a pattern. An issuer missing here has no tags: its titles count as named only on the words of its name. Add an issuer when the reference gains one. Two lists per issuer: `tags`, phrases matched in any case (\"SOLIDWORKS\" matches \"SolidWorks\", \"CAL FIRE\" matches \"Cal Fire\"), a trailing \"#\" asking for a level after the phrase (\"Fire Prevention #\" matches \"Fire Prevention 1A\", never \"Fire Prevention Technology\"); and `acronyms`, the issuer's short tags, matched only as written (POST never matches \"Post Production\"). A reference title that several issuers carry names none of them unless the freehand text carries that issuer's acronym (\"SFT Fire Instructor 1\"). NFPA's and Pro Board's bare Fire Inspector, Fire Officer and Firefighter titles stay out on purpose (the S648 conductor, 2026-11-13): several issuers share the bare title, so its card goes to a person.",
+ "set_by": "the S648 worker for the conductor, 2026-11-13",
+ "tags": {
+  "A.B. Miller High School": [],
+  "Adobe": [],
+  "Agriculture Education Services and Technology (AEST)": [],
+  "alifornia Veterinary Medical Association (CVMA)": [],
+  "Alvord Unified School District": [],
+  "Amazon Web Services (AWS)": [],
+  "American Bankers Association (ABA)": [],
+  "American College of Sports Medicine (ACSM)": [],
+  "American College of Sports Medicine (ACSM) / National Strength and Conditioning Association (NSCA)": [],
+  "American Correctional Association (ACA)": [],
+  "American Council on Education (ACE)": [],
+  "American Council on Exercise": [],
+  "American Council on Exercise (ACE)": [],
+  "American Heart Association (AHA)": [],
+  "American Heart Association (AHA) / American Red Cross": [],
+  "American Marketing Association (AMA)": [],
+  "American National Standards Institute (ANSI)": [],
+  "American Payroll Association (APA)": [],
+  "American Payroll Association (PayrollOrg)": [
+   "PayrollOrg"
+  ],
+  "American Red Cross": [],
+  "American Red Cross / American Heart Association (varies)": [],
+  "American Registry of Radiologic Technologists (ARRT)": [],
+  "American Society for Nondestructive Testing (ASNT)": [],
+  "American Society for Photogrammetry and Remote Sensing (ASPRS)": [],
+  "American Society for Quality": [],
+  "American Society of Mechanical Engineers (ASME)": [],
+  "American Traffic Safety Services Association (ATSSA)": [],
+  "American Water Works Association": [],
+  "American Welding Society": [],
+  "American Welding Society (AWS)": [],
+  "Arduino": [],
+  "Arroyo Valley High School": [],
+  "Association for Supply Chain Management (ASCM)": [],
+  "Association of Nutrition & Foodservice Professionals (ANFP) / Certifying Board for Dietary Managers (CBDM)": [],
+  "Autodesk": [],
+  "Automotive Apprenticeship Group (AAG)": [],
+  "Baldwin Park Adult and Community Education": [],
+  "Baldy View Regional Occupational Program": [],
+  "Biocom California Institute": [],
+  "Biodynamic Association": [
+   "Biodynamic"
+  ],
+  "Birmingham Community Charter High School": [],
+  "Board of State and Community Corrections (BSCC)": [],
+  "Board of Vocational Nursing and Psychiatric Technicians (BVNPT)": [],
+  "C++ Institute": [],
+  "Cajon High School": [],
+  "CAL-OSHA": [
+   "Cal/OSHA"
+  ],
+  "CalAPS": [],
+  "CalCERTS, Inc.": [],
+  "California Air Resources Board (CARB)": [],
+  "California Alliance of Paralegal Associations": [],
+  "California Board of Accountancy (CBA)": [],
+  "California Board of Barbering and Cosmetology": [
+   "Cosmetology License",
+   "Barber License",
+   "Barbering License"
+  ],
+  "California Board of Behavioral Sciences (BBS)": [],
+  "California Board of State and Community Corrections (BSCC) — STC Program": [],
+  "California Board of Vocational Nursing and Psychiatric Technicians (BVNPT)": [],
+  "California Bureau of Automotive Repair (BAR)": [
+   "Smog Check"
+  ],
+  "California Bureau of Real Estate Appraisers (BREA)": [],
+  "California Certifying Board for Medical Assistants (CCBMA)": [],
+  "California Commission on Peace Officer Standards and Training (POST)": [],
+  "California Community College Chancellor's Office": [],
+  "California Conservation Corps": [],
+  "California Consortium of Addiction Programs and Professionals (CCAPP)": [],
+  "California Consortium of Addiction Programs and Professionals (CCAPP) / California Association of DUI Treatment Programs (CADTP)": [],
+  "California Department of Corrections and Rehabilitation (CDCR) / Commission on Correctional Peace Officer Standards and Training (CPOST)": [],
+  "California Department of Corrections and Rehabilitation / Commission on Correctional Peace Officer Standards and Training (CDCR/CPOST)": [],
+  "California Department of Forestry and Fire Protection (CAL FIRE)": [
+   "CAL FIRE"
+  ],
+  "California Department of Industrial Relations (DIR)": [],
+  "California Department of Motor Vehicles (DMV)": [],
+  "California Department of Pesticide Regulation (DPR)": [],
+  "California Department of Public Health (CDPH)": [],
+  "California Department of Real Estate (DRE)": [],
+  "California Department of Social Services (CDSS)": [],
+  "California Division of Apprenticeship Standards (DAS)": [],
+  "California Emergency Medical Services Authority (EMSA)": [
+   "Emergency Medical Technician",
+   "Emergency Medical Responder"
+  ],
+  "California Energy Commission (CEC)": [],
+  "California Escrow Association (CEA)": [],
+  "California Governor's Office of Emergency Services (Cal OES)": [
+   "Cal OES"
+  ],
+  "California Joint Apprenticeship Committee (Cal-JAC)": [
+   "Cal-JAC"
+  ],
+  "California Landscape Contractors Association (CLCA)": [],
+  "California Native Plant Society (CNPS)": [],
+  "California Office of the State Fire Marshal (OSFM)": [],
+  "California Specialized Training Institute (CSTI)": [],
+  "California State Board of Pharmacy": [
+   "Pharmacy Technician License"
+  ],
+  "California State Fire Training (SFT)": [
+   "Chief Fire Officer",
+   "Company Officer",
+   "Driver/Operator",
+   "Fire Control #",
+   "Fire Inspector",
+   "Fire Instructor",
+   "Fire Investigator",
+   "Fire Management #",
+   "Fire Officer",
+   "Fire Prevention #",
+   "Training Instructor",
+   "Fire Investigation #"
+  ],
+  "California State Water Resources Control Board (SWRCB)": [],
+  "California Veterinary Medical Board (CVMB)": [],
+  "California Water Environment Association (CWEA)": [],
+  "Canyon High School": [],
+  "Carpenters Training Committee for Northern California (CTCNC)": [],
+  "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship": [],
+  "Center for Financial Training (CFT)": [],
+  "Centinela Valley Unified School District": [],
+  "Century High School": [],
+  "Certiport": [],
+  "Chaffey Joint Union High School District": [],
+  "CHAMPS High School": [],
+  "Chef Ann Foundation": [],
+  "Cisco": [],
+  "City of Los Angeles Department of Building and Safety": [],
+  "Cleveland High School": [],
+  "College Board": [],
+  "Colton High School": [],
+  "Colton Joint Unified School District": [],
+  "Colton-Redlands-Yucaipa ROP": [],
+  "CompTIA": [],
+  "Contractors State License Board (CSLB)": [
+   "Contractor License"
+  ],
+  "Corona High School": [],
+  "Corona-Norco Unified School District": [],
+  "Corona-Norco Unified School District (CNUSD)": [],
+  "Council for Professional Recognition": [],
+  "Dassault Systèmes": [
+   "SOLIDWORKS"
+  ],
+  "Defense Activity for Non-Traditional Education Support (DANTES)": [],
+  "Defense Language Institute (DLI)": [],
+  "Defense Language Institute Foreign Language Center (DLIFLC)": [],
+  "Dental Assisting Board of California (DBCA)": [],
+  "Dental Board of California": [
+   "Dental Board"
+  ],
+  "Dental Board of California (DBC)": [
+   "Dental Board"
+  ],
+  "Dental Hygiene Board of California": [
+   "Dental Hygiene Board"
+  ],
+  "Dollar General": [],
+  "EC-Council": [
+   "EC-Council"
+  ],
+  "El Modena High School": [],
+  "Emergency Care and Safety Institute (ECSI)": [],
+  "Emergency Medical Technician-Paramedic-Didactic": [],
+  "Emergency Nurses Association (ENA)": [],
+  "Employer Issued": [],
+  "Epic Games": [],
+  "ESCO Institute": [],
+  "Esri (Environmental Systems Research Institute)": [
+   "Esri"
+  ],
+  "Federal Aviation Administration (FAA)": [],
+  "Federal Aviation Administration (FAA) / California Commission on Peace Officer Standards and Training (POST)": [],
+  "Federal Communications Commission (FCC)": [],
+  "Federal Emergency Management Agency (FEMA)": [],
+  "Federal Law Enforcement Training Centers (FLETC)": [],
+  "Festo": [],
+  "Fiber Optics Association (FOA)": [],
+  "Field Ironworkers Local 416": [],
+  "Fontana Adult School": [],
+  "Fontana High": [],
+  "Fontana High School": [],
+  "Garden Grove High School": [],
+  "GIS Certification Institute (GISCI)": [],
+  "Global Information Assurance Certification (GIAC)": [],
+  "Godinez High School": [],
+  "Google": [],
+  "Graduate Level Institution of Higher Education": [],
+  "Green Business Certification Inc. (GBCI)": [],
+  "H&R Block": [
+   "H&R Block"
+  ],
+  "Haas Automation": [
+   "Haas"
+  ],
+  "Hanford Joint Union High School District (HJUHSD)": [],
+  "Hanford West High School": [],
+  "Honeywell": [],
+  "Inland Counties Emergency Medical Agency (ICEMA)": [],
+  "Inland Empire Electrical Training Center": [],
+  "Inter-Industry Conference on Auto Collision Repair (I-CAR)": [],
+  "Internal Revenue Service (IRS)": [],
+  "International Association for Identification (IAI)": [],
+  "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers": [],
+  "International Association of Fire Fighters (IAFF)": [],
+  "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)": [],
+  "International Baccalaureate Organization (IBO)": [],
+  "International Brotherhood of Electrical Workers (IBEW)": [],
+  "International Code Council": [
+   "Code Certification"
+  ],
+  "International Code Council (ICC)": [
+   "Code Certification"
+  ],
+  "International Fire Service Accreditation Congress (IFSAC) / Pro Board": [],
+  "International Fluid Power Society": [],
+  "International Society of Arboriculture (ISA)": [],
+  "International Society of Automation (ISA)": [],
+  "Intuit": [],
+  "IPC — Association Connecting Electronics Industries": [],
+  "Irrigation Association": [],
+  "Irvine High School": [],
+  "ISC2": [],
+  "JobTrain": [],
+  "Johnson Controls Training Institute": [],
+  "Jurupa Hills High School": [],
+  "Jurupa Unified School District": [],
+  "Kaiser High School": [],
+  "Kern County Fire Department": [],
+  "Laborers' International Union of North America (LiUNA)": [],
+  "Lake Elsinore Unified School District": [],
+  "Lake Elsinore Unified School District (LEUSD)": [],
+  "Lemoore High School": [],
+  "Lincoln Education Center": [],
+  "Linux Professional Institute (LPI)": [],
+  "Local Adult School": [],
+  "Local High School": [],
+  "Long Beach Unified School District": [],
+  "Manufacturing Skill Standards Council (MSSC)": [],
+  "Mastercam University": [],
+  "Mater Dei High School": [],
+  "McDonald's Corporation": [],
+  "Microsoft": [],
+  "Middle College": [],
+  "Moreno Valley Unified School District": [],
+  "Moreno Valley Unified School District (MVUSD)": [],
+  "Music Teachers' Association of California (MTAC)": [],
+  "Napa Valley Cooking School": [],
+  "National Academy of Sports Medicine": [],
+  "National Academy of Sports Medicine (NASM)": [],
+  "National Association of Landscape Professionals (NALP)": [],
+  "National Association of Safety Professionals": [],
+  "National Board for Certification in Occupational Therapy (NBCOT)": [],
+  "National Center for Construction Education and Research (NCCER)": [],
+  "National Elevator Industry Educational Program (NEIEP)": [],
+  "National Fire Protection Association (NFPA)": [],
+  "National Healthcareer Association": [],
+  "National Institute for Automotive Service Excellence (ASE)": [],
+  "National Institute for Metalworking Skills (NIMS)": [],
+  "National Registry of Emergency Medical Technicians": [],
+  "National Registry of Emergency Medical Technicians (NREMT)": [],
+  "National Restaurant Association": [
+   "ServSafe"
+  ],
+  "National Strength and Conditioning Association (NSCA)": [],
+  "National Wildfire Coordinating Group (NWCG)": [],
+  "National Wildfire Coordinating Group (NWCG) / FEMA": [],
+  "NCCER": [],
+  "North America's Building Trades Unions (NABTU)": [],
+  "North American Board of Certified Energy Practitioners (NABCEP)": [],
+  "North American Technician Excellence (NATE)": [],
+  "North Orange County ROP (NOCROP) — Los Alamitos HS": [],
+  "Nuview Union School District (NUSD)": [],
+  "Office of the State Fire Marshall": [],
+  "Oracle": [],
+  "Orange High School": [],
+  "PayrollOrg": [],
+  "PayrollOrg: Fundamental Payroll Certification (FPC)": [],
+  "Pharmacy Technician Certification Board (PTCB)": [],
+  "Phase One": [],
+  "Precision Nutrition": [],
+  "Pro Board (National Board on Fire Service Professional Qualifications)": [],
+  "Project Lead The Way": [],
+  "Project Lead The Way (PLTW)": [],
+  "Project Management Institute (PMI)": [],
+  "Python Institute": [],
+  "Rancho Cucamonga High School": [],
+  "Red Hat": [],
+  "Rescue International": [],
+  "Riverside County Office of Education": [],
+  "Riverside County Office of Education (RCOE)": [],
+  "Riverside Unified School District": [],
+  "Riverside Unified School District (RUSD)": [],
+  "San Bernardino City Unified School District": [],
+  "Santa Ana High School": [],
+  "Santiago High School": [],
+  "Schneider Electric's EcoXpert program": [],
+  "Segerstrom High School": [],
+  "Siemens": [],
+  "Sonoma-Marin Saving Water Partnership (QWEL)": [],
+  "Southwest Carpenter And Affiliated Trade J.A.T.C.": [],
+  "Spaulding Marine Center": [],
+  "State Bar of California": [],
+  "State Water Resources Control Board (SWRCB)": [],
+  "Summit High School": [],
+  "The Walt Disney Company": [
+   "Disney"
+  ],
+  "U.S. Army Child and Youth Services (CYS)": [],
+  "U.S. Department of Defense (DoD)": [],
+  "U.S. Department of Veterans Affairs (VA)": [],
+  "U.S. Environmental Protection Agency (EPA)": [],
+  "U.S. Federal Communications Commission (FCC)": [],
+  "U.S. Federal Emergency Management Agency (FEMA)": [],
+  "U.S. Green Building Council (USGBC)": [],
+  "U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)": [],
+  "U.S. Occupational Safety and Health Administration (OSHA)": [],
+  "U.S. Transportation Security Administration (TSA)": [],
+  "UL Fire Safety Research Institute (FSRI)": [],
+  "United Association (UA)": [],
+  "United Association (UA) Local 342": [],
+  "Unity Technologies": [
+   "Unity"
+  ],
+  "University High School": [],
+  "University of California Agriculture and Natural Resources (UC ANR)": [],
+  "Upland High School": [],
+  "Val Verde Unified School District": [],
+  "Val Verde Unified School District (VVUSD)": [],
+  "Valley High School": [],
+  "Villa Park High School": [],
+  "William S. Hart Union High School District": [],
+  "Wine & Spirit Education Trust (WSET)": []
+ },
+ "acronyms": {
+  "A.B. Miller High School": [],
+  "Adobe": [],
+  "Agriculture Education Services and Technology (AEST)": [
+   "AEST"
+  ],
+  "alifornia Veterinary Medical Association (CVMA)": [
+   "CVMA"
+  ],
+  "Alvord Unified School District": [],
+  "Amazon Web Services (AWS)": [
+   "AWS"
+  ],
+  "American Bankers Association (ABA)": [
+   "ABA"
+  ],
+  "American College of Sports Medicine (ACSM)": [
+   "ACSM"
+  ],
+  "American College of Sports Medicine (ACSM) / National Strength and Conditioning Association (NSCA)": [
+   "ACSM",
+   "NSCA"
+  ],
+  "American Correctional Association (ACA)": [
+   "ACA"
+  ],
+  "American Council on Education (ACE)": [
+   "ACE"
+  ],
+  "American Council on Exercise": [],
+  "American Council on Exercise (ACE)": [
+   "ACE"
+  ],
+  "American Heart Association (AHA)": [
+   "AHA",
+   "BLS"
+  ],
+  "American Heart Association (AHA) / American Red Cross": [
+   "AHA",
+   "BLS"
+  ],
+  "American Marketing Association (AMA)": [
+   "AMA"
+  ],
+  "American National Standards Institute (ANSI)": [
+   "ANSI"
+  ],
+  "American Payroll Association (APA)": [
+   "APA",
+   "FPC"
+  ],
+  "American Payroll Association (PayrollOrg)": [
+   "CPP",
+   "FPC"
+  ],
+  "American Red Cross": [],
+  "American Red Cross / American Heart Association (varies)": [],
+  "American Registry of Radiologic Technologists (ARRT)": [
+   "ARRT"
+  ],
+  "American Society for Nondestructive Testing (ASNT)": [
+   "ASNT"
+  ],
+  "American Society for Photogrammetry and Remote Sensing (ASPRS)": [
+   "ASPRS"
+  ],
+  "American Society for Quality": [
+   "CQIA",
+   "ASQ"
+  ],
+  "American Society of Mechanical Engineers (ASME)": [
+   "ASME"
+  ],
+  "American Traffic Safety Services Association (ATSSA)": [
+   "ATSSA"
+  ],
+  "American Water Works Association": [],
+  "American Welding Society": [],
+  "American Welding Society (AWS)": [
+   "AWS"
+  ],
+  "Arduino": [],
+  "Arroyo Valley High School": [],
+  "Association for Supply Chain Management (ASCM)": [
+   "ASCM"
+  ],
+  "Association of Nutrition & Foodservice Professionals (ANFP) / Certifying Board for Dietary Managers (CBDM)": [
+   "ANFP",
+   "CBDM"
+  ],
+  "Autodesk": [],
+  "Automotive Apprenticeship Group (AAG)": [
+   "AAG"
+  ],
+  "Baldwin Park Adult and Community Education": [],
+  "Baldy View Regional Occupational Program": [],
+  "Biocom California Institute": [],
+  "Biodynamic Association": [],
+  "Birmingham Community Charter High School": [],
+  "Board of State and Community Corrections (BSCC)": [
+   "BSCC"
+  ],
+  "Board of Vocational Nursing and Psychiatric Technicians (BVNPT)": [
+   "BVNPT",
+   "LVN"
+  ],
+  "C++ Institute": [],
+  "Cajon High School": [],
+  "CAL-OSHA": [
+   "OSHA",
+   "CAL-OSHA"
+  ],
+  "CalAPS": [],
+  "CalCERTS, Inc.": [],
+  "California Air Resources Board (CARB)": [
+   "CARB"
+  ],
+  "California Alliance of Paralegal Associations": [],
+  "California Board of Accountancy (CBA)": [
+   "CBA"
+  ],
+  "California Board of Barbering and Cosmetology": [],
+  "California Board of Behavioral Sciences (BBS)": [
+   "BBS",
+   "LCSW",
+   "LMFT",
+   "LPCC"
+  ],
+  "California Board of State and Community Corrections (BSCC) — STC Program": [
+   "BSCC",
+   "STC"
+  ],
+  "California Board of Vocational Nursing and Psychiatric Technicians (BVNPT)": [
+   "BVNPT",
+   "LVN"
+  ],
+  "California Bureau of Automotive Repair (BAR)": [
+   "BAR"
+  ],
+  "California Bureau of Real Estate Appraisers (BREA)": [
+   "BREA"
+  ],
+  "California Certifying Board for Medical Assistants (CCBMA)": [
+   "CCBMA"
+  ],
+  "California Commission on Peace Officer Standards and Training (POST)": [
+   "POST"
+  ],
+  "California Community College Chancellor's Office": [],
+  "California Conservation Corps": [],
+  "California Consortium of Addiction Programs and Professionals (CCAPP)": [
+   "CCAPP"
+  ],
+  "California Consortium of Addiction Programs and Professionals (CCAPP) / California Association of DUI Treatment Programs (CADTP)": [
+   "CCAPP",
+   "CADTP"
+  ],
+  "California Department of Corrections and Rehabilitation (CDCR) / Commission on Correctional Peace Officer Standards and Training (CPOST)": [
+   "CDCR",
+   "CPOST"
+  ],
+  "California Department of Corrections and Rehabilitation / Commission on Correctional Peace Officer Standards and Training (CDCR/CPOST)": [
+   "CDCR",
+   "CPOST"
+  ],
+  "California Department of Forestry and Fire Protection (CAL FIRE)": [
+   "CDF"
+  ],
+  "California Department of Industrial Relations (DIR)": [
+   "DIR"
+  ],
+  "California Department of Motor Vehicles (DMV)": [
+   "DMV"
+  ],
+  "California Department of Pesticide Regulation (DPR)": [
+   "DPR"
+  ],
+  "California Department of Public Health (CDPH)": [
+   "CDPH",
+   "CNA"
+  ],
+  "California Department of Real Estate (DRE)": [
+   "DRE"
+  ],
+  "California Department of Social Services (CDSS)": [
+   "CDSS"
+  ],
+  "California Division of Apprenticeship Standards (DAS)": [
+   "DAS"
+  ],
+  "California Emergency Medical Services Authority (EMSA)": [
+   "EMSA",
+   "EMT",
+   "EMR"
+  ],
+  "California Energy Commission (CEC)": [
+   "CEC"
+  ],
+  "California Escrow Association (CEA)": [
+   "CEA"
+  ],
+  "California Governor's Office of Emergency Services (Cal OES)": [],
+  "California Joint Apprenticeship Committee (Cal-JAC)": [],
+  "California Landscape Contractors Association (CLCA)": [
+   "CLCA"
+  ],
+  "California Native Plant Society (CNPS)": [
+   "CNPS"
+  ],
+  "California Office of the State Fire Marshal (OSFM)": [
+   "OSFM"
+  ],
+  "California Specialized Training Institute (CSTI)": [
+   "CSTI"
+  ],
+  "California State Board of Pharmacy": [],
+  "California State Fire Training (SFT)": [
+   "SFT"
+  ],
+  "California State Water Resources Control Board (SWRCB)": [
+   "SWRCB"
+  ],
+  "California Veterinary Medical Board (CVMB)": [
+   "CVMB"
+  ],
+  "California Water Environment Association (CWEA)": [
+   "CWEA"
+  ],
+  "Canyon High School": [],
+  "Carpenters Training Committee for Northern California (CTCNC)": [
+   "CTCNC"
+  ],
+  "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship": [],
+  "Center for Financial Training (CFT)": [
+   "CFT"
+  ],
+  "Centinela Valley Unified School District": [],
+  "Century High School": [],
+  "Certiport": [],
+  "Chaffey Joint Union High School District": [],
+  "CHAMPS High School": [
+   "CHAMPS"
+  ],
+  "Chef Ann Foundation": [],
+  "Cisco": [
+   "CCNA",
+   "CCNP"
+  ],
+  "City of Los Angeles Department of Building and Safety": [],
+  "Cleveland High School": [],
+  "College Board": [
+   "CLEP"
+  ],
+  "Colton High School": [],
+  "Colton Joint Unified School District": [],
+  "Colton-Redlands-Yucaipa ROP": [],
+  "CompTIA": [
+   "CompTIA"
+  ],
+  "Contractors State License Board (CSLB)": [
+   "CSLB"
+  ],
+  "Corona High School": [],
+  "Corona-Norco Unified School District": [],
+  "Corona-Norco Unified School District (CNUSD)": [
+   "CNUSD"
+  ],
+  "Council for Professional Recognition": [],
+  "Dassault Systèmes": [
+   "CSWA"
+  ],
+  "Defense Activity for Non-Traditional Education Support (DANTES)": [
+   "DANTES",
+   "DSST"
+  ],
+  "Defense Language Institute (DLI)": [
+   "DLI",
+   "DLPT"
+  ],
+  "Defense Language Institute Foreign Language Center (DLIFLC)": [
+   "DLIFLC",
+   "DLPT"
+  ],
+  "Dental Assisting Board of California (DBCA)": [
+   "DBCA",
+   "RDA"
+  ],
+  "Dental Board of California": [
+   "RDA"
+  ],
+  "Dental Board of California (DBC)": [
+   "DBC",
+   "RDA"
+  ],
+  "Dental Hygiene Board of California": [
+   "RDH"
+  ],
+  "Dollar General": [],
+  "EC-Council": [
+   "CEH",
+   "CHFI"
+  ],
+  "El Modena High School": [],
+  "Emergency Care and Safety Institute (ECSI)": [
+   "ECSI"
+  ],
+  "Emergency Medical Technician-Paramedic-Didactic": [],
+  "Emergency Nurses Association (ENA)": [
+   "ENA"
+  ],
+  "Employer Issued": [],
+  "Epic Games": [],
+  "ESCO Institute": [
+   "ESCO"
+  ],
+  "Esri (Environmental Systems Research Institute)": [],
+  "Federal Aviation Administration (FAA)": [
+   "FAA"
+  ],
+  "Federal Aviation Administration (FAA) / California Commission on Peace Officer Standards and Training (POST)": [
+   "FAA",
+   "POST"
+  ],
+  "Federal Communications Commission (FCC)": [
+   "FCC"
+  ],
+  "Federal Emergency Management Agency (FEMA)": [
+   "FEMA"
+  ],
+  "Federal Law Enforcement Training Centers (FLETC)": [
+   "FLETC"
+  ],
+  "Festo": [],
+  "Fiber Optics Association (FOA)": [
+   "FOA"
+  ],
+  "Field Ironworkers Local 416": [],
+  "Fontana Adult School": [],
+  "Fontana High": [],
+  "Fontana High School": [],
+  "Garden Grove High School": [],
+  "GIS Certification Institute (GISCI)": [
+   "GISCI"
+  ],
+  "Global Information Assurance Certification (GIAC)": [
+   "GIAC"
+  ],
+  "Godinez High School": [],
+  "Google": [],
+  "Graduate Level Institution of Higher Education": [],
+  "Green Business Certification Inc. (GBCI)": [
+   "GBCI",
+   "LEED"
+  ],
+  "H&R Block": [],
+  "Haas Automation": [],
+  "Hanford Joint Union High School District (HJUHSD)": [
+   "HJUHSD"
+  ],
+  "Hanford West High School": [],
+  "Honeywell": [],
+  "Inland Counties Emergency Medical Agency (ICEMA)": [
+   "ICEMA"
+  ],
+  "Inland Empire Electrical Training Center": [],
+  "Inter-Industry Conference on Auto Collision Repair (I-CAR)": [
+   "I-CAR"
+  ],
+  "Internal Revenue Service (IRS)": [
+   "IRS"
+  ],
+  "International Association for Identification (IAI)": [
+   "IAI"
+  ],
+  "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers": [],
+  "International Association of Fire Fighters (IAFF)": [
+   "IAFF"
+  ],
+  "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)": [
+   "SMART"
+  ],
+  "International Baccalaureate Organization (IBO)": [
+   "IBO"
+  ],
+  "International Brotherhood of Electrical Workers (IBEW)": [
+   "IBEW"
+  ],
+  "International Code Council": [
+   "ICC"
+  ],
+  "International Code Council (ICC)": [
+   "ICC"
+  ],
+  "International Fire Service Accreditation Congress (IFSAC) / Pro Board": [
+   "IFSAC"
+  ],
+  "International Fluid Power Society": [],
+  "International Society of Arboriculture (ISA)": [
+   "ISA"
+  ],
+  "International Society of Automation (ISA)": [
+   "ISA"
+  ],
+  "Intuit": [],
+  "IPC — Association Connecting Electronics Industries": [
+   "IPC"
+  ],
+  "Irrigation Association": [],
+  "Irvine High School": [],
+  "ISC2": [
+   "ISC2"
+  ],
+  "JobTrain": [],
+  "Johnson Controls Training Institute": [],
+  "Jurupa Hills High School": [],
+  "Jurupa Unified School District": [],
+  "Kaiser High School": [],
+  "Kern County Fire Department": [],
+  "Laborers' International Union of North America (LiUNA)": [
+   "LiUNA"
+  ],
+  "Lake Elsinore Unified School District": [],
+  "Lake Elsinore Unified School District (LEUSD)": [
+   "LEUSD"
+  ],
+  "Lemoore High School": [],
+  "Lincoln Education Center": [],
+  "Linux Professional Institute (LPI)": [
+   "LPI",
+   "LPIC"
+  ],
+  "Local Adult School": [],
+  "Local High School": [],
+  "Long Beach Unified School District": [],
+  "Manufacturing Skill Standards Council (MSSC)": [
+   "MSSC"
+  ],
+  "Mastercam University": [],
+  "Mater Dei High School": [],
+  "McDonald's Corporation": [],
+  "Microsoft": [],
+  "Middle College": [],
+  "Moreno Valley Unified School District": [],
+  "Moreno Valley Unified School District (MVUSD)": [
+   "MVUSD"
+  ],
+  "Music Teachers' Association of California (MTAC)": [
+   "MTAC"
+  ],
+  "Napa Valley Cooking School": [],
+  "National Academy of Sports Medicine": [],
+  "National Academy of Sports Medicine (NASM)": [
+   "NASM"
+  ],
+  "National Association of Landscape Professionals (NALP)": [
+   "NALP"
+  ],
+  "National Association of Safety Professionals": [],
+  "National Board for Certification in Occupational Therapy (NBCOT)": [
+   "NBCOT",
+   "COTA",
+   "OTR"
+  ],
+  "National Center for Construction Education and Research (NCCER)": [
+   "NCCER"
+  ],
+  "National Elevator Industry Educational Program (NEIEP)": [
+   "NEIEP"
+  ],
+  "National Fire Protection Association (NFPA)": [
+   "NFPA"
+  ],
+  "National Healthcareer Association": [],
+  "National Institute for Automotive Service Excellence (ASE)": [
+   "ASE"
+  ],
+  "National Institute for Metalworking Skills (NIMS)": [
+   "NIMS"
+  ],
+  "National Registry of Emergency Medical Technicians": [],
+  "National Registry of Emergency Medical Technicians (NREMT)": [
+   "NREMT"
+  ],
+  "National Restaurant Association": [],
+  "National Strength and Conditioning Association (NSCA)": [
+   "NSCA",
+   "CSCS"
+  ],
+  "National Wildfire Coordinating Group (NWCG)": [
+   "NWCG"
+  ],
+  "National Wildfire Coordinating Group (NWCG) / FEMA": [
+   "NWCG",
+   "FEMA"
+  ],
+  "NCCER": [
+   "NCCER"
+  ],
+  "North America's Building Trades Unions (NABTU)": [
+   "NABTU"
+  ],
+  "North American Board of Certified Energy Practitioners (NABCEP)": [
+   "NABCEP"
+  ],
+  "North American Technician Excellence (NATE)": [
+   "NATE"
+  ],
+  "North Orange County ROP (NOCROP) — Los Alamitos HS": [
+   "NOCROP"
+  ],
+  "Nuview Union School District (NUSD)": [
+   "NUSD"
+  ],
+  "Office of the State Fire Marshall": [],
+  "Oracle": [],
+  "Orange High School": [],
+  "PayrollOrg": [],
+  "PayrollOrg: Fundamental Payroll Certification (FPC)": [
+   "FPC"
+  ],
+  "Pharmacy Technician Certification Board (PTCB)": [
+   "PTCB",
+   "CPhT"
+  ],
+  "Phase One": [],
+  "Precision Nutrition": [],
+  "Pro Board (National Board on Fire Service Professional Qualifications)": [],
+  "Project Lead The Way": [],
+  "Project Lead The Way (PLTW)": [
+   "PLTW"
+  ],
+  "Project Management Institute (PMI)": [
+   "PMI",
+   "PfMP",
+   "PgMP",
+   "PMP",
+   "CAPM"
+  ],
+  "Python Institute": [
+   "PCAP",
+   "PCEP",
+   "PCPP"
+  ],
+  "Rancho Cucamonga High School": [],
+  "Red Hat": [],
+  "Rescue International": [],
+  "Riverside County Office of Education": [],
+  "Riverside County Office of Education (RCOE)": [
+   "RCOE"
+  ],
+  "Riverside Unified School District": [],
+  "Riverside Unified School District (RUSD)": [
+   "RUSD"
+  ],
+  "San Bernardino City Unified School District": [],
+  "Santa Ana High School": [],
+  "Santiago High School": [],
+  "Schneider Electric's EcoXpert program": [],
+  "Segerstrom High School": [],
+  "Siemens": [],
+  "Sonoma-Marin Saving Water Partnership (QWEL)": [
+   "QWEL"
+  ],
+  "Southwest Carpenter And Affiliated Trade J.A.T.C.": [],
+  "Spaulding Marine Center": [],
+  "State Bar of California": [],
+  "State Water Resources Control Board (SWRCB)": [
+   "SWRCB"
+  ],
+  "Summit High School": [],
+  "The Walt Disney Company": [],
+  "U.S. Army Child and Youth Services (CYS)": [
+   "CYS"
+  ],
+  "U.S. Department of Defense (DoD)": [
+   "DoD"
+  ],
+  "U.S. Department of Veterans Affairs (VA)": [
+   "VA"
+  ],
+  "U.S. Environmental Protection Agency (EPA)": [
+   "EPA"
+  ],
+  "U.S. Federal Communications Commission (FCC)": [
+   "FCC"
+  ],
+  "U.S. Federal Emergency Management Agency (FEMA)": [
+   "FEMA"
+  ],
+  "U.S. Green Building Council (USGBC)": [
+   "USGBC",
+   "LEED"
+  ],
+  "U.S. Green Building Council (USGBC) / Green Business Certification Inc. (GBCI)": [
+   "USGBC",
+   "GBCI",
+   "LEED"
+  ],
+  "U.S. Occupational Safety and Health Administration (OSHA)": [
+   "OSHA"
+  ],
+  "U.S. Transportation Security Administration (TSA)": [
+   "TSA"
+  ],
+  "UL Fire Safety Research Institute (FSRI)": [
+   "FSRI",
+   "UL"
+  ],
+  "United Association (UA)": [
+   "UA"
+  ],
+  "United Association (UA) Local 342": [
+   "UA"
+  ],
+  "Unity Technologies": [],
+  "University High School": [],
+  "University of California Agriculture and Natural Resources (UC ANR)": [
+   "UC ANR"
+  ],
+  "Upland High School": [],
+  "Val Verde Unified School District": [],
+  "Val Verde Unified School District (VVUSD)": [
+   "VVUSD"
+  ],
+  "Valley High School": [],
+  "Villa Park High School": [],
+  "William S. Hart Union High School District": [],
+  "Wine & Spirit Education Trust (WSET)": [
+   "WSET"
+  ]
+ }
+}
