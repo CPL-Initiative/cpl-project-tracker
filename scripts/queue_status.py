@@ -253,11 +253,16 @@ select (select count(*) from act) active, (select count(*) from c) complete,
 
 # The whole harvest's counts, in one read (the Progress view's "The whole harvest" band). Programs
 # and courses are COCI's active ones; a record counts when it is an active program's.
+# A course is one (college, code key) and an SLO matches on that key: the code uppercased with its spaces
+# and hyphens removed, so "ANTH C141" and "ANTHC 141" are one course (d-course-key-normalized-s648; the
+# Commons data dashboard's code_key in kb/_commons_data_live.py reads the same key). An empty key is no course.
+COURSE_KEY_SQL = "upper(regexp_replace(%s, '[\\s-]+', '', 'g'))"
 HARVEST_SQL = """with act as (select college, control_number from coci_college_programs where status = 'Active'),
 rec as (select r.record, r.checks, r.display from program_requirement_records r
         join act a on a.college = r.college and a.control_number = r.control_number),
-crs as (select distinct pc.college, pc.course_code from coci_program_courses pc
-        join act a on a.college = pc.college and a.control_number = pc.program_control_number)
+crs as (select distinct pc.college, """ + COURSE_KEY_SQL % "pc.course_code" + """ code_key from coci_program_courses pc
+        join act a on a.college = pc.college and a.control_number = pc.program_control_number
+        where """ + COURSE_KEY_SQL % "coalesce(pc.course_code, '')" + """ <> '')
 select (select count(*) from program_source_registry) colleges,
   (select count(*) from program_source_registry where catalog_url is not null) catalog_links,
   (select count(*) from program_source_registry where cor_access is not null) cms_links,
@@ -269,7 +274,8 @@ select (select count(*) from program_source_registry) colleges,
   (select count(*) from rec where record->'program' ? 'careers') careers_read,
   (select count(*) from crs) program_courses,
   (select count(*) from crs c where exists (select 1 from course_outcomes o
-      where o.college = c.college and o.course_code = c.course_code and o.kind = 'slo')) slo_courses;"""
+      where o.college = c.college and """ + COURSE_KEY_SQL % "o.course_code" + """ = c.code_key
+        and o.kind = 'slo')) slo_courses;"""
 HARVEST_KEYS = ("colleges", "catalog_links", "cms_links", "ppm_links", "active_programs", "roep_programs",
                 "coci_compared", "plo_read", "careers_read", "program_courses", "slo_courses")
 WHOLE_PARTS = {"links": ("catalog", "cms", "ppm"), "roep": None, "coci": None,

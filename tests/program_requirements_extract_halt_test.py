@@ -1,0 +1,389 @@
+#!/usr/bin/env python3
+"""A read stops at the extraction function's 503 (or 401) and files nothing over a record (S647).
+
+    python3 tests/program_requirements_extract_halt_test.py
+
+Sam, Open Asks Sheet 190 card 6 (2026-11-13 13:21Z, "deploy"), on COBIx's finding on #3202 (comment
+6850015321). From about 09:29Z to 11:15Z that day the database refused connections, and
+program-requirements-extract answered 401 to every one of Glendale's 135 paid calls (run 43384599013): the read
+went on through all of them, filed 121 error stubs over good records, and read as an expired key for an hour.
+Version 12 of the function answers 503 when its caller check gets no answer (tests/service_caller_check.test.js);
+this test guards the runner's half:
+
+  A. _post keeps the HTTP status and the function's reason beside the error text, a read in parts carries them,
+     and halt_of stops on 503 and 401 only (a 400, 500 or 502 is one program's failure, as before).
+  B. extract(): the first 503 is tried once more; answered 503 again, the read stops. No further program is
+     sent, every program keeps its filed record exactly, none gets a stub, the halt names the cause in
+     extract_halt_<shard>.json, and the step returns HALT_EXIT (red).
+  C. Filing such a run (the wave files it; the one-college workflow skips its file step) leaves every filed
+     record and its sources.json entry as they were.
+  D. A 503 that clears on the retry is no halt: the read goes on and files its records. A refused key (401)
+     halts the same way.
+  E. The wave's verdict names the halt; the one-college workflow's file step still needs extract to pass.
+  F. The pilot (kb/_program_requirements_extract.py, run by program-requirements-extract.yml on a dispatch or an
+     [extract] push) stops red at a 503, so a pilot run during an outage never reads as a clean run.
+  G. (S648 review) Six workers halt the same way; a retry whose pause ends after another worker halted is never
+     sent; paid usage a halting answer carries counts in extract_halt's cost_usd and the wave's run cost, and a
+     retried program's record carries its first try's usage. A platform 503 (A) halts under its own cause.
+"""
+import glob
+import io
+import json
+import os
+import shutil
+import sys
+import tempfile
+import threading
+import time
+import urllib.error
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "kb"))
+import _program_requirements_college as C  # noqa: E402
+import _program_requirements_extract as X  # noqa: E402
+import _program_requirements_wave as W  # noqa: E402
+
+results = []
+
+
+def check(name, ok, why=""):
+    results.append((name, bool(ok), why))
+
+
+ANSWER_503 = {"ok": False, "error": "the caller check could not reach the database, so no call was made; try "
+                                    "again once it answers", "reason": "upstream_timeout",
+              "detail": "no answer in 12000 ms"}
+
+
+def http_error(code, body):
+    raw = json.dumps(body) if isinstance(body, dict) else body
+    return urllib.error.HTTPError("https://x/functions/v1/program-requirements-extract", code, "x", {},
+                                  io.BytesIO(raw.encode()))
+
+
+# ── A. The status and the function's reason ride beside the error ──
+_urlopen = X.urllib.request.urlopen
+try:
+    def raising(code, body):
+        def f(req, timeout=None):
+            raise http_error(code, body)
+        return f
+    X.urllib.request.urlopen = raising(503, ANSWER_503)
+    got = X._post({"text": "t"}, "k")
+    check("A the 503 answer keeps its status, reason and detail beside the error text",
+          got.get("http_status") == 503 and got.get("reason") == "upstream_timeout"
+          and got.get("detail") == "no answer in 12000 ms" and got["error"].startswith("HTTP 503: "), repr(got))
+    h = X.halt_of(got)
+    check("A halt_of stops on the 503 and names the cause and the function's reason",
+          h and h["status"] == 503 and h["reason"] == "upstream_timeout" and "database" in h["cause"], repr(h))
+    X.urllib.request.urlopen = raising(401, {"error": "unauthorized", "reason": "key_refused"})
+    h401 = X.halt_of(X._post({}, "k"))
+    check("A halt_of stops on a 401 (the key refused)", h401 and h401["status"] == 401 and h401["reason"] == "key_refused")
+    for code in (400, 413, 429, 500, 502):
+        X.urllib.request.urlopen = raising(code, "<html>%d</html>" % code)
+        g = X._post({}, "k")
+        check("A an HTTP %d is one program's failure, not a halt" % code,
+              g.get("http_status") == code and X.halt_of(g) is None)
+    check("A an answer with no status (a timeout, a record) is no halt",
+          X.halt_of({"error": "timed out"}) is None and X.halt_of({"record": {}}) is None and X.halt_of(None) is None)
+    # A 503 from the platform in front of the function (a boot error, a deploy in progress) carries no upstream_*
+    # reason: it halts, but never reads as the database not answering (S648 review).
+    X.urllib.request.urlopen = raising(503, "<html>BOOT_ERROR</html>")
+    hp = X.halt_of(X._post({}, "k"))
+    check("A a platform 503 (no caller-check reason) halts under its own cause, not the database's",
+          hp and hp["status"] == 503 and hp["cause"] == X.HALT_503_PLATFORM and "database" not in hp["cause"], repr(hp))
+finally:
+    X.urllib.request.urlopen = _urlopen
+
+src_parts = {"college": "T", "control_number": "1", "closed_list": [{"code": "A %d" % i} for i in range(3)],
+             "text": "A 0 A 1 A 2"}
+parts = X.call_in_parts(src_parts, "k", {"text": "t"},
+                        post=lambda b, k: {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_http_503"}
+                        if b["part"]["index"] == 2 else {"record": {"blocks": []}})
+check("A a read in parts carries the failing part's status and reason, so it halts too",
+      parts.get("http_status") == 503 and parts.get("reason") == "upstream_http_503" and X.halt_of(parts), repr(parts))
+
+# ── B to D. extract() and file_run() over a college with filed records ──
+_saved = (X.call, C.COLLEGE_DIR, os.environ.get("SUPABASE_SERVICE_KEY"))
+_tmp = tempfile.mkdtemp(prefix="extract_halt_")
+COLLEGE = "Test College"
+
+
+def college_dirs(name):
+    """A filed college (12 programs, a record each) and a run's out/ whose capture read them all on new pages."""
+    base = os.path.join(_tmp, name)
+    dest = os.path.join(base, "filed", C.slug_of(COLLEGE))
+    out = os.path.join(base, "out")
+    os.makedirs(os.path.join(dest, "records"))
+    os.makedirs(os.path.join(out, "sources"))
+    cns = ["%05d" % (10000 + i) for i in range(12)]
+    entries = []
+    for cn in cns:
+        filed = {"college": COLLEGE, "control_number": cn, "title": "P" + cn, "award": "Certificate of Achievement",
+                 "source_url": "https://old.example/%s" % cn, "record": {"program": {}, "blocks": [{"name": "Core"}]},
+                 "score": {"pass": False}, "extracted_run": "43000000000", "error": None}
+        json.dump(filed, open(os.path.join(dest, "records", cn + ".json"), "w"))
+        entries.append({"control_number": cn, "title": "P" + cn, "source": {"url": "https://old.example/%s" % cn}})
+        json.dump({"college": COLLEGE, "control_number": cn, "shape": "certificate", "title": "P" + cn,
+                   "award": "Certificate of Achievement", "closed_list": [{"code": "A 1"}], "text": "A 1 Core",
+                   "coverage": 1.0, "codes_found": ["A1"], "method": "page",
+                   "source": {"url": "https://new.example/%s" % cn, "text_sha": "new" + cn}},
+                  open(os.path.join(out, "sources", cn + ".json"), "w"))
+    json.dump(entries, open(os.path.join(dest, "sources.json"), "w"))
+    json.dump({"college": COLLEGE, "programs": len(cns)}, open(os.path.join(out, "capture.json"), "w"))
+    return dest, out, cns
+
+
+def snapshot(dest):
+    return {os.path.basename(p): json.load(open(p)) for p in sorted(glob.glob(os.path.join(dest, "records", "*.json")))}
+
+
+try:
+    os.environ["SUPABASE_SERVICE_KEY"] = "test"
+
+    # B. A database outage: every call answers 503.
+    dest, out, cns = college_dirs("outage")
+    C.COLLEGE_DIR = os.path.dirname(dest)
+    before, before_sources = snapshot(dest), open(os.path.join(dest, "sources.json")).read()
+    calls = []
+
+    def outage(src, key, *a, **k):
+        calls.append(src["control_number"])
+        return {"error": "HTTP 503: " + json.dumps(ANSWER_503), "http_status": 503,
+                "reason": "upstream_timeout", "detail": ANSWER_503["detail"]}
+    X.call = outage
+    rc = C.extract(out, 0, 1, "43400000000", 1, dest, None, None, halt_wait_s=0.01)
+    check("B ⭐ a 503 halts the read: the step returns HALT_EXIT, red", rc == C.HALT_EXIT and rc != 0, repr(rc))
+    check("B ⭐ the first program is tried once more and no other program is sent",
+          calls == [cns[0], cns[0]], repr(calls))
+    got = snapshot(out)
+    check("B ⭐ every program keeps its filed record exactly, and none gets a stub",
+          got == before and len(got) == len(cns) and not any("HTTP 503" in json.dumps(r) for r in got.values()),
+          "%d of %d" % (len(got), len(before)))
+    halt = C.extract_halt(out)
+    check("B extract_halt_0.json names the status, the cause, the function's reason and where it stopped",
+          halt and halt["status"] == 503 and halt["reason"] == "upstream_timeout" and halt["control_number"] == cns[0]
+          and halt["not_sent"] == len(cns) and "database" in halt["cause"], repr(halt))
+    _ns = os.path.join(out, "not_sent_0.json")
+    ns = json.load(open(_ns)) if os.path.exists(_ns) else {}
+    check("B every program is listed not sent, with the halt",
+          sorted(ns.get("programs") or []) == cns and (ns.get("halted") or {}).get("status") == 503)
+    check("B the step's message names the outage and that nothing was filed over a record",
+          bool(halt) and "HTTP 503, upstream_timeout" in C.halt_message(halt, len(cns))
+          and "Nothing was filed over a record" in C.halt_message(halt, len(cns)))
+
+    # C. Filing the halted run (the wave files it) leaves the college as it was.
+    C.file_run(COLLEGE, out, "43400000000")
+    check("C ⭐ filing a halted run overwrites no record", snapshot(dest) == before)
+    check("C ⭐ and keeps every program's sources.json entry, so the next run sends each one again",
+          json.load(open(os.path.join(dest, "sources.json"))) == json.loads(before_sources))
+
+    # D. A 503 that clears on the retry is no halt; the read goes on.
+    dest2, out2, cns2 = college_dirs("blip")
+    C.COLLEGE_DIR = os.path.dirname(dest2)
+    seen = []
+
+    def blip(src, key, *a, **k):
+        seen.append(src["control_number"])
+        if len(seen) == 1:
+            return {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_timeout"}
+        return {"record": {"program": {}, "blocks": []}, "model": None, "usage": None}
+    X.call = blip
+    rc2 = C.extract(out2, 0, 1, "43400000001", 1, dest2, None, None, halt_wait_s=0.01)
+    fresh = [json.load(open(p)) for p in glob.glob(os.path.join(out2, "records", "*.json"))]
+    check("D ⭐ a 503 that clears on the retry is no halt: the allowed caller proceeds and every program is read",
+          rc2 == 0 and len(seen) == len(cns2) + 1 and C.extract_halt(out2) is None
+          and len(fresh) == len(cns2) and all(r.get("extracted_run") == "43400000001" for r in fresh),
+          "rc %r, %d calls, %d records" % (rc2, len(seen), len(fresh)))
+
+    dest3, out3, cns3 = college_dirs("refused")
+    C.COLLEGE_DIR = os.path.dirname(dest3)
+    before3, n3 = snapshot(dest3), []
+
+    def refused(src, key, *a, **k):
+        n3.append(src["control_number"])
+        return {"error": "HTTP 401: {}", "http_status": 401, "reason": "key_refused"}
+    X.call = refused
+    rc3 = C.extract(out3, 0, 1, "43400000002", 1, dest3, None, None, halt_wait_s=0.01)
+    got3 = snapshot(out3)
+    check("D a refused key (401) halts the same way, with no record written over",
+          rc3 == C.HALT_EXIT and len(n3) == 2 and got3 == before3 and (C.extract_halt(out3) or {}).get("status") == 401)
+
+    dest4, out4, cns4 = college_dirs("one_bad")
+    C.COLLEGE_DIR = os.path.dirname(dest4)
+    n4 = []
+
+    def one_bad(src, key, *a, **k):
+        n4.append(src["control_number"])
+        if src["control_number"] == cns4[0]:
+            return {"error": "HTTP 502: bad gateway", "http_status": 502}
+        return {"record": {"program": {}, "blocks": []}, "model": None, "usage": None}
+    X.call = one_bad
+    rc4 = C.extract(out4, 0, 1, "43400000003", 1, dest4, None, None, halt_wait_s=0.01)
+    check("D a 502 is one program's failure, as before: no halt, every program sent once",
+          rc4 == 0 and sorted(n4) == cns4 and C.extract_halt(out4) is None)
+
+    # G. Six workers, as both workflows run it (S648 review): an outage still halts, files nothing over a record
+    # and lists every program not sent.
+    dest5, out5, cns5 = college_dirs("six_workers")
+    C.COLLEGE_DIR = os.path.dirname(dest5)
+    before5 = snapshot(dest5)
+    sent5, lock5 = [], threading.Lock()
+
+    def six(src, key, *a, **k):
+        cn = src["control_number"]
+        with lock5:
+            again = cn in sent5
+            sent5.append(cn)
+        if not again and cn in cns5[:6]:
+            # The six first answers come back 0.1 s apart, all inside the first pause, so every worker pauses; the
+            # first retry halts the read before the other five pauses end, and they must then send nothing more.
+            time.sleep(0.1 * cns5.index(cn))
+        return {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_timeout"}
+    X.call = six
+    rc5 = C.extract(out5, 0, 1, "43400000004", 6, dest5, None, None, halt_wait_s=1.0)
+    ns5 = json.load(open(os.path.join(out5, "not_sent_0.json"))) if os.path.exists(os.path.join(out5, "not_sent_0.json")) else {}
+    check("G ⭐ with six workers an all-503 read halts, keeps every filed record and lists every program not sent",
+          rc5 == C.HALT_EXIT and snapshot(out5) == before5 and sorted(ns5.get("programs") or []) == cns5,
+          "rc %r, %d records, not_sent %r" % (rc5, len(snapshot(out5)), ns5.get("programs")))
+    check("G ⭐ with six workers only the first program is retried: six first calls and one retry, no more",
+          len(sent5) == 7 and sorted(set(sent5)) == sorted(cns5[:6]) and sent5.count(cns5[0]) == 2, repr(sent5))
+
+    # G. A worker whose pause ends after another worker halted the read sends nothing more (S648 review).
+    dest6, out6, cns6 = college_dirs("late_retry")
+    C.COLLEGE_DIR = os.path.dirname(dest6)
+    sent6 = []
+
+    def staggered(src, key, *a, **k):
+        cn = src["control_number"]
+        if cn == cns6[1] and cn not in sent6:
+            time.sleep(0.3)   # its first 503 comes back later, so its pause ends after the first worker halts
+        sent6.append(cn)
+        return {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_timeout"}
+    X.call = staggered
+    rc6 = C.extract(out6, 0, 1, "43400000005", 2, dest6, None, None, halt_wait_s=0.5)
+    check("G ⭐ a retry whose pause ends after the read halted is never sent",
+          rc6 == C.HALT_EXIT and sorted(sent6) == sorted([cns6[0], cns6[0], cns6[1]]), repr(sent6))
+
+    # G. Paid usage a halting answer carries (the paid parts of a read in parts) counts toward the run's cost.
+    dest7, out7, cns7 = college_dirs("paid_halt")
+    C.COLLEGE_DIR = os.path.dirname(dest7)
+    PAID = {"input_tokens": 1000000, "output_tokens": 0}   # $4.00 at claude-opus-5-5's price
+    X.call = lambda src, key, *a, **k: {"error": "part 2 of 2: HTTP 503: {}", "http_status": 503,
+                                        "reason": "upstream_timeout", "model": "claude-opus-5-5", "usage": PAID}
+    rc7 = C.extract(out7, 0, 1, "43400000006", 1, dest7, None, None, halt_wait_s=0.01)
+    h7 = C.extract_halt(out7) or {}
+    rcost7 = W.run_cost(out7, "43400000006")
+    check("G ⭐ a halt's paid usage is written to extract_halt (the try and the retry) and counted in the run's cost",
+          rc7 == C.HALT_EXIT and abs((h7.get("cost_usd") or 0) - 8.0) < 1e-6 and abs(rcost7["cost_usd"] - 8.0) < 1e-6,
+          "halt %r, run_cost %r" % (h7.get("cost_usd"), rcost7.get("cost_usd")))
+
+    # G. A 503 that clears on the retry: the first try's paid usage rides on the record the retry wrote.
+    dest8, out8, cns8 = college_dirs("paid_blip")
+    C.COLLEGE_DIR = os.path.dirname(dest8)
+    seen8 = []
+
+    def paid_blip(src, key, *a, **k):
+        seen8.append(src["control_number"])
+        if len(seen8) == 1:
+            return {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_timeout",
+                    "model": "claude-opus-5-5", "usage": PAID}
+        return {"record": {"program": {}, "blocks": []}, "model": "claude-opus-5-5",
+                "usage": {"input_tokens": 0, "output_tokens": 50000}}   # $1.00
+    X.call = paid_blip
+    rc8 = C.extract(out8, 0, 1, "43400000007", 1, dest8, None, None, halt_wait_s=0.01)
+    r8 = json.load(open(os.path.join(out8, "records", cns8[0] + ".json")))
+    check("G ⭐ a retried program's record carries the first try's paid usage, so its cost counts both",
+          rc8 == 0 and abs((r8.get("cost_usd") or 0) - 5.0) < 1e-6, repr((rc8, r8.get("cost_usd"), r8.get("usage"))))
+
+    # G. Unpriced usage on a halting answer is priced as a record's is (X.cost): no dollars, counted apart. It is
+    # never the ceiling's dearest-model price, which would put $8 in the run's cost here. One answer carrying both
+    # tries counts once, as a record does (S648 review).
+    dest9, out9, cns9 = college_dirs("unpriced_halt")
+    C.COLLEGE_DIR = os.path.dirname(dest9)
+    X.call = lambda src, key, *a, **k: {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_timeout",
+                                        "model": "an-unpriced-fallback", "usage": PAID}
+    rc9 = C.extract(out9, 0, 1, "43400000008", 1, dest9, None, None, halt_wait_s=0.01)
+    h9, rcost9 = C.extract_halt(out9) or {}, W.run_cost(out9, "43400000008")
+    check("G ⭐ a halt's unpriced usage adds no dollars to cost_usd and is counted apart, in run_cost too",
+          rc9 == C.HALT_EXIT and h9.get("cost_usd") == 0 and h9.get("unpriced") == 1
+          and rcost9["cost_usd"] == 0 and rcost9["unpriced"] == 1, "halt %r, run_cost %r" % (h9, rcost9))
+
+    # G. The two tries answered on different models (the function's server-side fallback): each is priced on its
+    # own model and the dollars summed, never the summed usage at the retry's rate.
+    dest10, out10, cns10 = college_dirs("two_models")
+    C.COLLEGE_DIR = os.path.dirname(dest10)
+    X.PRICE["a-cheaper-model"] = {"input": 1.00, "output": 5.00, "cache_read": 0.05, "cache_write": 1.25}
+    seen10 = []
+
+    def two_models(src, key, *a, **k):
+        seen10.append(src["control_number"])
+        if len(seen10) == 1:
+            return {"error": "HTTP 503: {}", "http_status": 503, "reason": "upstream_timeout",
+                    "model": "a-cheaper-model", "usage": PAID}                          # $1.00 at its own rate
+        return {"record": {"program": {}, "blocks": []}, "model": "claude-opus-5-5",
+                "usage": {"input_tokens": 0, "output_tokens": 50000}}               # $1.00
+    X.call = two_models
+    try:
+        rc10 = C.extract(out10, 0, 1, "43400000009", 1, dest10, None, None, halt_wait_s=0.01)
+    finally:
+        X.PRICE.pop("a-cheaper-model", None)
+    r10 = json.load(open(os.path.join(out10, "records", cns10[0] + ".json")))
+    check("G ⭐ two tries on two models are each priced on their own model: $2.00, not $5.00 at the retry's rate",
+          rc10 == 0 and abs((r10.get("cost_usd") or 0) - 2.0) < 1e-6, repr((rc10, r10.get("cost_usd"))))
+finally:
+    X.call, C.COLLEGE_DIR = _saved[0], _saved[1]
+    if _saved[2] is None:
+        os.environ.pop("SUPABASE_SERVICE_KEY", None)
+    else:
+        os.environ["SUPABASE_SERVICE_KEY"] = _saved[2]
+    shutil.rmtree(_tmp, ignore_errors=True)
+
+# ── E. Where the halt shows ──
+outcomes = {"capture": "success", "extract": "failure", "file": "success"}
+cmp = {"pass_to_fail": [], "lost_coverage": []}
+v = W.verdict(outcomes, {"x": 1}, {}, {}, cmp, 0, 12,
+              {"status": 503, "reason": "upstream_timeout", "cause": X.HALT_STATUS[503]})
+check("E the wave's verdict names the halt's status, reason and cause",
+      v.startswith("failed: extract stopped, HTTP 503 upstream_timeout") and "database" in v, v)
+check("E with no halt the verdict reads as before", W.verdict(outcomes, {"x": 1}, {}, {}, cmp, 0, 0) == "failed: extract")
+WF = open(os.path.join(ROOT, ".github", "workflows", "program-requirements-college.yml"), encoding="utf-8").read()
+file_step = WF.split("- name: File the run\n", 1)[1].split("- name:", 1)[0] if "- name: File the run\n" in WF else ""
+check("E the one-college workflow's file step has no if:, so a halted extract (red) files nothing",
+      file_step.strip().startswith("run: python3 kb/_program_requirements_college.py file") and "if:" not in file_step,
+      file_step[:200])
+
+# ── F. The pilot (kb/_program_requirements_extract.py, program-requirements-extract.yml's run) stops red at a halt ──
+_pilot = (X.load_sources, X.call, os.environ.get("SUPABASE_SERVICE_KEY"))
+try:
+    os.environ["SUPABASE_SERVICE_KEY"] = "k"
+    X.load_sources = lambda only: [{"college": COLLEGE, "control_number": "P%d" % i, "shape": "s", "title": "t",
+                                    "_file": "f", "coverage": 1.0, "closed_list": [], "text": "x"} for i in range(3)]
+    sent = []
+
+    def pilot_outage(src, key, *a, **k):
+        sent.append(src["control_number"])
+        return {"error": "HTTP 503: x", "http_status": 503, "reason": "upstream_http_503"}
+    X.call = pilot_outage
+    _out = io.StringIO()
+    _stdout, sys.stdout = sys.stdout, _out
+    try:
+        rc = X.main([])
+    finally:
+        sys.stdout = _stdout
+    check("F the pilot stops at a 503 with HALT_EXIT, names the cause, and sends no further program",
+          rc == X.HALT_EXIT and sent == ["P0"] and "::error::" in _out.getvalue()
+          and "upstream_http_503" in _out.getvalue() and "2 programs not sent" in _out.getvalue(),
+          "rc=%r sent=%r %s" % (rc, sent, _out.getvalue()[-300:]))
+finally:
+    X.load_sources, X.call = _pilot[0], _pilot[1]
+    if _pilot[2] is None:
+        os.environ.pop("SUPABASE_SERVICE_KEY", None)
+    else:
+        os.environ["SUPABASE_SERVICE_KEY"] = _pilot[2]
+
+failed = [r for r in results if not r[1]]
+for name, ok, why in results:
+    print(("ok   " if ok else "FAIL ") + name + ("" if ok or not why else "\n       " + str(why)[:400]))
+print("\nprogram_requirements_extract_halt_test.py: %d/%d checks passed" % (len(results) - len(failed), len(results)))
+sys.exit(1 if failed else 0)

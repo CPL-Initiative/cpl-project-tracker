@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Automotive Electrical",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=119",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=124",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9648,
+  "input_tokens": 12282,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9648,
-    "output_tokens": 1034,
+    "input_tokens": 12282,
+    "output_tokens": 992,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,36 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1034,
+  "output_tokens": 992,
   "output_tokens_details": {
-   "thinking_tokens": 282
+   "thinking_tokens": 212
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05927,
- "ms": 9285,
- "seconds": 9.8,
+ "cost_usd": 0.06897,
+ "ms": 9185,
+ "seconds": 10.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 6,
    "listed": 6,
-   "share": 0.0,
-   "missing": [
-    "AUTO10",
-    "AUTO11B",
-    "AUTO11C",
-    "AUTO21A",
-    "AUTO43A",
-    "AUTO95A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -68,30 +61,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -102,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Automotive Electrical Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -127,41 +121,88 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Safely work in a shop environment and on the basic 12-volt vehicle systems.",
+    "Describe the basic operation of the major vehicle electrical/electronic systems.",
+    "Perform safe basic service, repair, maintenance and diagnostic on the vehicle’s electrical/electronic systems."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AUTO 011B",
-    "why": "No Automotive Electrical section in the text; named only in the Advanced Transportation Technologies AS and Automotive Alternative Fuels sections"
-   },
-   {
-    "code": "AUTO 011C",
-    "why": "No Automotive Electrical section in the text; named only in the Advanced Transportation Technologies AS section"
-   },
-   {
-    "code": "AUTO 021A",
-    "why": "No Automotive Electrical section in the text; named only in the Advanced Transportation Technologies AS section"
-   },
-   {
-    "code": "AUTO 043A",
-    "why": "No Automotive Electrical section in the text; named only in the Advanced Transportation Technologies AS and Automotive Alternative Fuels sections"
-   },
-   {
-    "code": "AUTO 095A",
-    "why": "No Automotive Electrical section in the text; named only in the Advanced Transportation Technologies AS and Automotive Alternative Fuels sections"
-   },
-   {
-    "code": "AUTO 10",
-    "why": "No Automotive Electrical section in the text; printed as AUTO 010 only in the Advanced Transportation Technologies AS and Automotive Alternative Fuels sections"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AUTO 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 011B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 011C",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 021A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 043A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AUTO 095A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The provided catalog text (pages 119-120 of the 2026-2027 catalog) contains no section for the Automotive Electrical Certificate of Achievement. It covers the Advanced Transportation Technologies AS degree, the Automotive Alternative Fuels Certificate of Achievement (18 units), and noncredit CNG certificates of completion. The program list on page 119 names only Automotive Alternative Fuels among certificates of achievement, so Automotive Electrical may have been discontinued or printed elsewhere in the catalog.",
-   "No requirements, outcomes, or careers were recorded, since none of the sections in the text belong to the named award. A reviewer should locate the Automotive Electrical section (possibly under Automotive Technology) in the catalog."
+   "The catalog prints AUTO 010; matched to closed-list AUTO 10 (Introduction to Automotive Technology) as the same course.",
+   "AUTO 095A row reads '(Maximum of 2 units may be used for work experience) 1' then '2'; the '1' is read as footnote marker and 2 as the units. The footnote says work experience may be fulfilled through a special shop project or an appropriate elective in extenuating circumstances.",
+   "The 'CERTIFICATE TOTAL 17' at the top of page 124 belongs to the preceding program, not this certificate; this certificate's total is 18.",
+   "Required course units sum to 18, matching the printed certificate total.",
+   "No careers are named in this certificate's section."
   ]
  },
- "extracted_run": "39056007346"
+ "extracted_run": "43421133593",
+ "source_sha": "e4ee077954d0d647",
+ "source_codes": [
+  "AUTO10",
+  "AUTO11B",
+  "AUTO11C",
+  "AUTO21A",
+  "AUTO43A",
+  "AUTO95A"
+ ],
+ "source_coverage": 1.0
 }

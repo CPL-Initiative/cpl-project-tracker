@@ -1,0 +1,2259 @@
+{
+ "college": "College of the Desert",
+ "reread_run": "43470869324",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "43421133593",
+ "at": "2026-11-13T17:16:46Z",
+ "posted": 19,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "04356",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07913",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07926",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07929",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18689",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18834",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31538",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35778",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35780",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35794",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35811",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35907",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35969",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36139",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36308",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36768",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36769",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36770",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38979",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38980",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39017",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39023",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39024",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39401",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40196",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40197",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44964",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45323",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 12,
+ "absent": 7,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "04361",
+  "07908",
+  "07928",
+  "10195",
+  "24341",
+  "35863",
+  "37211",
+  "37288",
+  "37413",
+  "39116",
+  "45437",
+  "45693"
+ ],
+ "absent_keys": [
+  "18687",
+  "19311",
+  "35623",
+  "35627",
+  "35810",
+  "36513",
+  "45392"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 13,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'College of the Desert' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 43421133593;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 22,
+    "placed": 21,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BI 013",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BI 014",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BI 015",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 4,
+        "units_max": 5,
+        "alternatives": [
+         {
+          "code": "ENGL C1000E",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSY 003",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "COMM C1004",
+          "units": null,
+          "catalog_addition": true
+         },
+         {
+          "code": "COMM 013",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "COMM 017",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 003",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "STAT C1000",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRN 110",
+        "units": 7,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRN 120",
+        "units": 7,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRN 130",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRN 140",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRN 210",
+        "units": 7,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRN 220",
+        "units": 6.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRN 230",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRN 240",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NRN 250",
+        "units": 0.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate accountability for the delivery of nursing care while influencing the behaviors of others to achieve shared goals.",
+      "Assimilate clinical judgement, rooted in evidence-based practice, to provide nursing care at an entry level.",
+      "Design client-centered care for individuals that recognizes the client as a full partner with individual preferences and beliefs.",
+      "Integrate communication principles to foster a respectful environment that supports shared decision-making in the efforts of improving client's optimal wellness.",
+      "Competently manages all aspects of safety for clients through system effectiveness, individual performance, and quality improvement to minimize risk of harm to patients.",
+      "Demonstrate the professional identity of the nurse."
+     ],
+     "ge_pattern": "COD GE",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 73,
+      "min": 71
+     },
+     "section_heading": "Registered Nursing Course Sequence",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=224",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Registered Nursing",
+   "control_number": "04361"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 21,
+    "placed": 20,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 16,
+       "min": 16
+      },
+      "courses": [
+       {
+        "code": "NR 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BI 005",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BI 006",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "CH 003",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CH 001A",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "GEOG 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "NR 003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 017",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 020",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 021",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 041A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "NR 041B",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 050",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "NR 051A",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "NR 051B",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 058",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 059",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 095A",
+        "units": 1,
+        "units_max": 8,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGPS 001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGPS 002",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGPS 032",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "GEOG 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 10,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "park ranger",
+      "zookeeper"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Understand and explain the problems facing wildlife and ecosystem managers.",
+      "Apply GIS technology to solve conservation challenges."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Natural Resources AS Degree (transfer preparation)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=219",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Natural Resources",
+   "control_number": "07908"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 19,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 39,
+       "min": 39
+      },
+      "courses": [
+       {
+        "code": "HSAD 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 004",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 024",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 036",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 020",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 022",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 025",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 030",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 034",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 032A",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 032B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 033A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 033B",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HSAD 095B",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "PSY 003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSY 007",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "PSY 010",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM C1004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "supervised chemical dependency counselors"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 23,
+      "min": 23
+     },
+     "outcomes": [
+      "Apply critical thinking skills to execute daily duties in the substance abuse treatment field.",
+      "Display the skills and aptitude necessary to qualify for certification exams in addiction counseling professionals.",
+      "Fulfill the requirements for an entry- level position in substance abuse treatment field.",
+      "Transfer to a higher level learning institution."
+     ],
+     "ge_pattern": "COD General Education Pattern",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Alcohol and Drug Studies AS Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=103",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Alcohol and Drug Studies",
+   "control_number": "07928"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 26,
+    "placed": 23,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 16,
+       "min": 16
+      },
+      "courses": [
+       {
+        "code": "NR 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BI 005",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BI 006",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CH 003",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CH 001A",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "GEOG 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "NR 003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 017",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 020",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 021",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 041A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "NR 041B",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 050",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "NR 051A",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "NR 051B",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 058",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 059",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 095A",
+        "units": 1,
+        "units_max": 8,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGPS 001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGPS 002",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGPS 032",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "GEOG 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 10,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "wildlife management",
+      "ecosystem management",
+      "wildlife ecology",
+      "landscape ecology",
+      "parks and recreation planning",
+      "environmental consulting",
+      "GIS (Geographic Information Systems)",
+      "natural resources law enforcement",
+      "forensic entomology",
+      "urban planning",
+      "alternative energy",
+      "park ranger",
+      "zookeeper"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Understand and explain the problems facing wildlife and ecosystem managers.",
+      "Apply GIS technology to solve conservation challenges."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Natural Resources AS Degree (transfer preparation)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=219",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Natural Resources",
+   "control_number": "10195"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unstated"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESLN 310D",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESLN 310E",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Electives (Optional)",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESLN 388D",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESLN 388E",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESLN 390B",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "English language learners will be able to apply academic language skills to be prepared for Adult Basic Education or credit classes, and/or be successful in the workforce."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Academic English Certiﬁcate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=190",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Academic English",
+   "control_number": "24341"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unstated"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 352",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 353",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 370",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 370A",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 371",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 371A",
+        "units": 0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate comprehension of and ability to read critically a variety of authentic texts.",
+      "Demonstrate ability to write expository essays.",
+      "Demonstrate ability to use various grammatical structures to establish sequence and coherence.",
+      "Speak with increasing conﬁdence, fluency, and control in formal and informal oral communication.",
+      "Recognize and correct pronunciation and speech problems that impede successful communication."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Advanced Academic English as a Second Language Noncredit Certiﬁcate of Competency",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=189",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Advanced Academic English as a Second Language Noncredit",
+   "control_number": "35863"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 7,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses (continued)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESYS 004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESYS 033",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESYS 034",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESYS 035",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESYS 095A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 19,
+      "min": 19
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Lighting and Controls Technology Certificate of Achievement (heading not in excerpt; requirements table continues at top of page 138)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 19,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=138",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Lighting and Controls Technology",
+   "control_number": "37211"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 14,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BI 005",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CH 001A",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CH 001B",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "G 001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GEOG 001",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "GEOG 001L",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "G 022",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "NR 001",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH C2210",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Physics sequence: PH 002A & PH 002B",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "PH 002A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PH 002B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Physics"
+     },
+     {
+      "name": "Physics sequence: PH 003A & PH 003B",
+      "rule": "all",
+      "stated": {
+       "max": 8,
+       "min": 8
+      },
+      "courses": [
+       {
+        "code": "PH 003A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PH 003B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Physics"
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Evaluate and analyze concepts and methods from physical and applied sciences and their application in environmental problem solving.",
+      "Examine the relationship between ethical, cross-cultural, and historical environmental issues with anthropogenic and natural systems.",
+      "Demonstrate proﬁciency in quantitative methods, qualitative analysis, critical thinking, and written and oral communication of environmental processes.",
+      "Ability to transfer to a four-year university environmental science program."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 41,
+      "min": 41
+     },
+     "degree_total": {
+      "max": 62,
+      "min": 62
+     },
+     "section_heading": "Environmental Science AS-T Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 41,
+   "total_min": 41,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=235",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Environmental Science",
+   "control_number": "37288"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 9,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 25,
+       "min": 25
+      },
+      "courses": [
+       {
+        "code": "CIS 010",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 053",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 060",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 080",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 081",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 087",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CIS 088",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUMA 003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUMA 020A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "entry-level computer or network support technician",
+      "Computer support technicians",
+      "Computer network technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Exhibit basic understanding of information technology and information systems challenges and opportunities from a multi-faceted perspective of hardware, software, databases, telecommunications, people, and procedures.",
+      "Demonstrate the ability to locate, critically evaluate and solve business problems with technology solutions using qualitative and quantitative information.",
+      "Demonstrate a fundamental ability to identify and analyze user needs in the selection, creation, evaluation and administration of computer-based systems.",
+      "Prepare students for transfer into a four-year institution."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Computer Information Systems AS Degree (transfer preparation)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=154",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Computer Information Systems",
+   "control_number": "37413"
+  },
+  {
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "checks": {
+    "listed": 7,
+    "placed": 7,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CJ 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRE 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "FIRE 001A",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "FIRE 001B",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMR 080",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "EMR 080A",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "EMR 080B",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Public Safety"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Exhibit a working knowledge of the various aspects of the Fire Service to include but not limited to Fire Department structure, operations, educational and experiential requirements for ﬁre service jobs.",
+      "Describe employment criteria required in Criminal Justice and Law Enforcement industries.",
+      "Display aptitude and knowledge necessary to qualify for employment in Emergency Medical Service industries."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 9,
+      "min": 9
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Program Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 9,
+   "total_min": 9,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=186",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Public Safety",
+   "control_number": "39116"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 11,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 29,
+       "min": 23
+      },
+      "courses": [
+       {
+        "code": "KINE 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HS 073",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 003",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "STAT C1000",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "BUMA 003",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BI 004",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CH 003",
+        "units": 4,
+        "units_max": 9,
+        "alternatives": [
+         {
+          "code": "CH 001A",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "BI 013",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "BI 014",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HS 075",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY 012",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 34
+     },
+     "outcomes": [
+      "Explain the core functions of public health, including disease prevention, health promotion, and population health protection, by integrating knowledge from biological, psychological, and social sciences.",
+      "Utilize statistical methods and public health research techniques to collect, interpret, and analyze health data for informed decision-making in public health initiatives.",
+      "Assess and address health issues within diverse populations, taking into account the influence of socioeconomic status, cultural values, environmental factors, and social determinants of health.",
+      "Design, implement, and evaluate public health programs aimed at disease prevention, health promotion, and community wellness, demonstrating knowledge of program planning and outcome assessment.",
+      "Apply culturally competent communication strategies and practices when engaging with individuals and communities to promote health equity and foster inclusive public health practices.",
+      "Exhibit readiness for successful transfer to a CSU public health or health science program, demonstrating a solid foundation in public health principles and analytical skills."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 29,
+      "min": 23
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Public Health AS-T Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 29,
+   "total_min": 23,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=199",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Public Health",
+   "control_number": "45437"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 26,
+    "placed": 26,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 16,
+       "min": 16
+      },
+      "courses": [
+       {
+        "code": "NR 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BI 005",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "BI 006",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CH 003",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CH 001A",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Electives",
+      "rule": "choose_units",
+      "stated": {
+       "max": 10,
+       "min": 10
+      },
+      "courses": [
+       {
+        "code": "NR 003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 017",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 020",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 021",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 041A",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "NR 041B",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 050",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "NR 051A",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "NR 051B",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "NR 058",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 059",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "NR 095A",
+        "units": 1,
+        "units_max": 8,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGPS 001",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGPS 002",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AGPS 032",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 001L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 10,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "wildlife management",
+      "ecosystem management",
+      "wildlife ecology",
+      "landscape ecology",
+      "parks and recreation planning",
+      "environmental consulting",
+      "GIS (Geographic Information Systems)",
+      "natural resources law enforcement",
+      "forensic entomology",
+      "urban planning",
+      "alternative energy",
+      "park ranger",
+      "zookeeper"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Understand and explain the problems facing wildlife and ecosystem managers.",
+      "Apply GIS technology to solve conservation challenges."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Natural Resources AS Degree (transfer preparation)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=219",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39056007346,
+   "program_title": "Natural Resources",
+   "control_number": "45693"
+  }
+ ]
+}

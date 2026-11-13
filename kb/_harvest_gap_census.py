@@ -316,7 +316,7 @@ LEVER_WORDS = {
     "reread": ("free", "step=reread: the filed record passes and the live row is older"),
     "ge_units_steps": ("free", "reconcile steps give the general education pattern its units"),
     "scorer_noncredit_hours": ("free", "a scorer reading for a noncredit total in hours"),
-    "reconcile_steps": ("free", "the college's reconcile steps, on the catalog's own words"),
+    "reconcile_steps": ("free", "the pipeline's reconcile steps for the college, on the catalog's own words"),
 }
 
 
