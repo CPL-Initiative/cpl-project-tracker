@@ -962,6 +962,10 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     return out
 
 
+REFUSED = "refused"                 # a gated PDF block refused (decision 16): filed as no read page
+NO_READ = ("not_found", REFUSED)    # the methods that carry no page (the extraction keeps a gated one's record)
+
+
 def source_record(college: str, program: dict, reg: dict, best: dict | None, method: str) -> dict:
     """The pilot's source shape, so its extraction, scorer and filer read a
     full college's sources unchanged."""
@@ -3164,13 +3168,542 @@ def heading_above(txt: str, start: int, conf: dict | None, courses: list[dict]) 
     return s
 
 
+# ── A catalog that prints the control number AFTER its program (S644; rebuilt S645) ───────────────
+# Santiago Canyon's 2026-2027 PDF closes each program with "Control Number: N" and opens the next
+# program on the following line ("Control Number: 11856" / "Biology, AS-T" / "A.S. Degree for
+# Transfer"). pdf_best() cut the page from the number's line, the habit of catalogs that print the
+# number at the heading, so 29 of the college's windows opened on the program printed next: Biology
+# A.S. 11856 held the Biology AS-T, and Economics AA 11943 and Sociology AA 11947 passed holding their
+# AA-T's requirements (COBIx, #3194 comment 6841001207).
+#
+# The reading is gated per college (p-gate-free-text-reading-per-college-s644): a college's reconcile
+# entry names pdf_numbers_after, with the votes that are its evidence, and only there does pdf_best
+# take the block that ENDS at a program's own number line (pdf_after_window), and then only when that
+# block opens on the program's own heading. Anything else goes to the heading picker, as before, and
+# its window is refused only when the first number line at or after its heading is ANOTHER listed
+# program's (pdf_closed_by). pdf_numbers_after measures the habit in every PDF and switches nothing:
+# capture_pdf files its votes, a flag where a gated college's votes disagree, and a lead
+# (numbers_after_suspected) where an ungated college's votes say after (S645 review of #3201).
+# Decision 13 (S645, from the proof capture: 182 after, 0 before, and 17 passing programs refused
+# because a section header or a banner pushed the title out of reach): where the votes are uniform
+# (pdf_uniform), a block binds by its number line alone, refused only when its first strict heading
+# is another listed program's; a block naming no program binds with an after_unnamed note.
+PDF_CN_LINE = re.compile(r"(?im)^[ \t]*(?:program[ \t]+)?control[ \t]+(?:number|no\.?|#)[ \t]*:?[ \t]*0*(\d{3,6})(?![\w])")
+PDF_AFTER_VOTES = 3       # number lines that must show the habit before the votes read as after
+PDF_NAME_REACH = 40       # characters past a title's own length a heading is read in, after a number line
+PDF_RUNNING_TOP = 6       # a page's first non-empty lines a running header is looked for in
+PDF_RUNNING_PAGES = 3     # a line shape at the top of this many pages is a running or section header
+PDF_UNIFORM_AFTER = 20    # after votes, with no before vote, that bind a gated catalog by the number line alone
+PDF_JUDGED_CHARS = 160    # characters of a judged block the capture account keeps
+
+
+def pdf_text_names(text: str, program: dict, strict: bool = False) -> bool:
+    """The text, from its start, names the program: every title word within the title's length and
+    PDF_NAME_REACH, and an award type that is the program's (strict) or none that is another's. The
+    award types are the scorer's heading_award_types (one copy), read with the program's own title
+    set aside (Irvine Valley's "Chemistry for UC" is an A.S., and its heading's "for UC Transfer"
+    names no transfer degree)."""
+    from _program_requirements_score import heading_award_types, award_type, DEGREE_TYPES
+    title = program.get("title") or ""
+    tokens = P.title_tokens(title)
+    if not tokens:
+        return False
+    head = (text or "").lstrip(" \t\n)]:;,.")[:len(title) + PDF_NAME_REACH]
+    have = set(re.findall(r"[a-z0-9]+", head.lower()))
+    if not all(t in have for t in tokens):
+        return False
+    names, filed = heading_award_types(head, title), award_type(program.get("award"))
+    if strict:
+        return filed is not None and filed in names
+    return not names or filed is None or filed in names or ("degree" in names and filed in DEGREE_TYPES)
+
+
+def pdf_running_lines(pages: list[str]) -> set[str]:
+    """The line shapes (_furniture_key: numbers set aside) printed among the first PDF_RUNNING_TOP
+    non-empty lines of PDF_RUNNING_PAGES pages or more: the running header ("92 / Credit Programs",
+    "sccollege.edu", "College Catalog 2026/27" at Santiago Canyon) and a section's own header
+    ("Non-Credit Programs / 267" on its two dozen pages; decision 13), which a block opening at a
+    page's top reads past before its heading. A line read so is only ever passed over at a block's
+    opening, never removed from its text."""
+    count: dict[str, int] = {}
+    for txt in pages:
+        top = [ln for ln in (txt or "").split("\n") if ln.strip()][:PDF_RUNNING_TOP]
+        for key in {_furniture_key(ln) for ln in top}:
+            count[key] = count.get(key, 0) + 1
+    return {k for k, n in count.items() if n >= PDF_RUNNING_PAGES}
+
+
+def _opening(text: str, running: set[str]) -> str:
+    """The text from its first line that is no page mark, no blank line and no running header."""
+    lines = (text or "").split("\n")
+    k = 0
+    while k < len(lines) and (not lines[k].strip() or PAGE_MARK.match(lines[k].strip())
+                              or _furniture_key(lines[k]) in running):
+        k += 1
+    return "\n".join(lines[k:])
+
+
+def _cn(s) -> str:
+    return str(s or "").lstrip("0")
+
+
+def pdf_uniform(votes: dict | None) -> bool:
+    """The votes show every number printed after its program: no before vote and PDF_UNIFORM_AFTER after.
+    A number printed at its own heading casts a before vote (its own heading follows it), so a mixed
+    catalog never reads as uniform (decision 13; round 1's finding 4)."""
+    return bool(votes) and votes.get("before") == 0 and (votes.get("after") or 0) >= PDF_UNIFORM_AFTER
+
+
+def pdf_after_context(pages: list[str], programs: list[dict], votes: dict | None = None) -> dict:
+    """What a gated reading needs once a catalog: the college's own program list by control number
+    (pdf_closed_by and pdf_block_headings read only them), the running header
+    (pdf_running_lines), and whether the votes are uniform (pdf_uniform: the block is then bound by
+    its number line alone)."""
+    return {"by_cn": {_cn(p.get("control_number")): p for p in programs if p.get("control_number")},
+            "running": pdf_running_lines(pages), "uniform": pdf_uniform(votes)}
+
+
+def _follow(pages: list[str], j: int, end: int, running: set[str]) -> str:
+    """What follows a number line: the rest of its page, or the next page's opening when the line
+    ends its page (a number at a page's foot still votes; review of #3201, finding 12)."""
+    rest = _opening(pages[j][end:], running)
+    if not rest.strip() and j + 1 < len(pages):
+        rest = _opening(pages[j + 1], running)
+    return rest
+
+
+def pdf_numbers_after(pages: list[str], programs: list[dict]) -> dict:
+    """A MEASUREMENT of whether the catalog prints each program's control number after the program;
+    it switches no reading (the reconcile entry does). A number line followed at once by another
+    program's heading (title and award), or by its own title under another award type, votes after;
+    one followed by its own program's heading votes before. after_mode: PDF_AFTER_VOTES or more after
+    votes and more than twice the before votes."""
+    ctx = pdf_after_context(pages, programs)
+    by_cn, running = ctx["by_cn"], ctx["running"]
+    votes = {"after": 0, "before": 0}
+    for j, txt in enumerate(pages):
+        for m in PDF_CN_LINE.finditer(txt or ""):
+            own = by_cn.get(_cn(m.group(1)))
+            if not own:
+                continue
+            follow = _follow(pages, j, m.end(), running)
+            mine = pdf_text_names(follow, own)
+            crossed = not mine and pdf_text_names(follow, dict(own, award=None))
+            other = crossed or any(p is not own and pdf_text_names(follow, p, strict=True) for p in by_cn.values())
+            if mine and not other:
+                votes["before"] += 1
+            elif other and not mine:
+                votes["after"] += 1
+    votes["after_mode"] = votes["after"] >= PDF_AFTER_VOTES and votes["after"] > 2 * votes["before"]
+    return votes
+
+
+def pdf_after_block(pages: list[str], j: int, start: int, end: int, reach: int = PDF_RUN_PAGES,
+                    running: set[str] | None = None) -> list[tuple[int, int, int]]:
+    """(page, from, to) slices of the program whose number line runs from `start` to `end` on page j,
+    in page order: back from the number, which the block keeps, to the end of the previous number
+    line, at most `reach` pages back. A slice holding nothing but blank lines or the running header is
+    dropped, so the block's first page is a page it prints on (review of #3201, finding 7). Every
+    number line delimits, listed or not (a stale number still ends a block); the same number printed
+    again with nothing between is one line (decision 14; round 2, finding 4)."""
+    running = running or set()
+    own_m = PDF_CN_LINE.search(pages[j], start, end)
+    own = _cn(own_m.group(1)) if own_m else None
+    segs, k, stop, cut, got = [], j, start, end, False
+    while True:
+        prev = None
+        for m in PDF_CN_LINE.finditer(pages[k], 0, stop):
+            prev = m
+        if prev and own and _cn(prev.group(1)) == own and not got \
+                and not _opening(pages[k][prev.end():stop], running).strip():
+            stop = prev.start()
+            continue
+        if prev:
+            segs.insert(0, (k, prev.end(), cut))
+            break
+        segs.insert(0, (k, 0, cut))
+        got = got or bool(_opening(pages[k][0:stop], running).strip())
+        if k == 0 or j - k >= reach:
+            break
+        k -= 1
+        stop = cut = len(pages[k])
+    return [s for s in segs if _opening(pages[s[0]][s[1]:s[2]], running).strip()]
+
+
+def _judged(text: str, running: set[str]) -> str:
+    """The first characters of what a reading judged, past page marks and the running header, whitespace
+    folded: what the capture account shows a person who checks a refusal without the PDF (decision 13)."""
+    return re.sub(r"\s+", " ", _opening(text, running)).strip()[:PDF_JUDGED_CHARS]
+
+
+PDF_COURSE_LINE = re.compile(r"^[A-Z]{2,5}\s?\d")
+PDF_HEADING_CODE_END = re.compile(r"[,–—-]\s*[A-Za-z][A-Za-z.+\-]{0,6}\s*$")
+
+
+def _heading_shaped(line: str, nxt: str) -> bool:
+    """A line that reads as a program's heading, whatever program it names: short, no course code at its
+    start, no sentence, some word that names a program (the scorer's heading_content_words), and an award
+    type, either at the line's end after a comma or dash ("Paralegal Studies, AA") or on the next line
+    alone ("A.A. Degree"). Decision 15 reads such lines inside a block."""
+    from _program_requirements_score import heading_award_types, heading_content_words
+    s = (line or "").strip()
+    if not s or len(s) > PDF_HEADING_CHARS or PDF_COURSE_LINE.match(s) or s.endswith(".") \
+            or not heading_content_words(s):
+        return False
+    if PDF_HEADING_CODE_END.search(s) and heading_award_types(s):
+        return True
+    if _split_heading(s)[1]:
+        return True   # "Real Estate, Certificate of Achievement", "Accounting - A.S. Degree" (round 4)
+    n = (nxt or "").strip()
+    return bool(n) and len(n) <= 60 and bool(heading_award_types(n)) and not heading_content_words(n)
+
+
+PDF_AWARD_TAIL = re.compile(r"(?:[\s,–—-]+(?:A\.?\s?[AS]\.?(?:[\s-]*T)?|CA|CC|COM|CN|CP|NC|Cert)\.?)$", re.I)
+PDF_AWARD_SEP = re.compile(r"\s*[,–—]\s*|\s+-\s+")
+CERT_KEYS = frozenset({"ca", "cc", "com", "cp", "nc"})
+
+
+def _award_keys(text: str | None, own: bool = False) -> set[str]:
+    """The exact awards a heading's award words or a state record's award name (decision 17, round 4):
+    aa, as, aat, ast; ca (Achievement), cc (Completion), com (Competency), cp (Proficiency), nc
+    (Noncredit). AA is not AS, and a Certificate of Achievement is not CC. A bare "Cert" is any
+    certificate; the state's "Noncredit program" is any noncredit certificate (cc, com or nc).
+    own (pdf_own_heading's award test alone, S647): a bare "Certificate" is any certificate too, and the
+    transfer letters run together ("AAT", "AST") read as written apart; every other reader keeps main's
+    keys, so neither makes a line heading-shaped (review of #3214, findings 1 and 4)."""
+    t = (text or "").strip().lower()
+    if not t:
+        return set()
+    out = set()
+    transfer = bool(re.search(r"\bfor\s+transfer\b|-\s*t\b|\ba\.?\s?[as]\.?\s*t\b|\ba\.?\s?[as]\.?t\.?(?![a-z])", t))
+    run = r"(?:\b|(?=t\b))" if own else r"\b"
+    arts = re.search(r"\ba\.?\s?a" + run + r"\.?|\bassociate\s+(?:of|in)\s+arts\b", t)
+    sci = re.search(r"\ba\.?\s?s" + run + r"\.?|\bassociate\s+(?:of|in)\s+science\b", t)
+    if arts:
+        out.add("aat" if transfer else "aa")
+    if sci:
+        out.add("ast" if transfer else "as")
+    for key, pat in (("ca", r"\bcertificate\s+of\s+achievement\b|\bca\b"), ("cc", r"\bcertificate\s+of\s+completion\b|\bcc\b"),
+                     ("com", r"\bcertificate\s+of\s+competency\b|\bcom\b"),
+                     ("cp", r"\bcertificate\s+of\s+proficiency\b|\bcp\b"), ("nc", r"\bnoncredit\s+certificate\b|\bnc\b")):
+        if re.search(pat, t):
+            out.add(key)
+    if re.search(r"^noncredit\s+program\b", t):
+        out |= {"cc", "com", "nc"}
+    if re.fullmatch(r"cert\.?|certificate", t) if own else re.fullmatch(r"cert\.?", t):
+        out |= CERT_KEYS
+    return out
+
+
+def _split_heading(s: str | None) -> tuple[str, str]:
+    """(name, award words) of a heading: a trailing abbreviation ("Biology, AS", "Geography AA-T"), else
+    the last comma or spaced dash whose right side reads as an award alone ("Real Estate, Certificate of
+    Achievement", "Accounting - A.S. Degree"); ("line", "") when no award stands on the line."""
+    s = (s or "").strip()
+    m = PDF_AWARD_TAIL.search(s)
+    if m and m.start() > 0:
+        return s[:m.start()], s[m.start():].strip(" ,–—-")
+    for mm in reversed(list(PDF_AWARD_SEP.finditer(s))):
+        right = s[mm.end():]
+        if mm.start() > 0 and len(right) <= 60 and _award_keys(right) and not re.search(r"[a-z]{3,}", re.sub(
+                r"(?i)\b(?:certificate|achievement|completion|competency|proficiency|noncredit|degree|associate|"
+                r"arts|science|for|transfer|of|in)\b", "", right).lower()):
+            return s[:mm.start()], right
+    return s, ""
+
+
+def _title_words(s: str | None, keep_hyphen: bool = False) -> list[str]:
+    """A title's words in order: case and punctuation set aside, "&" read as "and", and a word the catalog
+    hyphenated at a line's end rejoined ("Certi- fied"); keep_hyphen reads that hyphen as the title's own
+    ("Pre-" over "Engineering, AS" is "Pre-Engineering", S647)."""
+    s = (s or "").lower()
+    if not keep_hyphen:
+        s = re.sub(r"(?<=[a-z])- (?=[a-z])", "", s)
+    return re.findall(r"[a-z0-9]+", s.replace("&", " and "))
+
+
+def _torn_head(s: str) -> bool:
+    """A line that ends in a hyphen and reads as a heading's head: short (PDF_WRAP_CHARS), opening on a
+    capital, no course code, and some word that names a program ("Pre-", "Apprenticeship Carpentry,
+    Mill-"); a sentence wrapping mid-word ("hands-on skills in a co-") is not (review of #3214, finding 3)."""
+    from _program_requirements_score import heading_content_words
+    s = (s or "").strip()
+    small = {"a", "an", "and", "as", "at", "for", "in", "of", "on", "or", "the", "to", "with"}
+    titled = all(w[:1].isupper() or w.lower() in small for w in re.findall(r"[A-Za-z][A-Za-z']*", s))
+    return (bool(re.search(r"[A-Za-z]-$", s)) and len(s) <= PDF_WRAP_CHARS and s[:1].isupper() and titled
+            and not PDF_COURSE_LINE.match(s) and bool(heading_content_words(s)))
+
+
+def _wrap_head_ok(upper: str, title: str) -> bool:
+    """Decision 18's wrapped heading, S647: a line above that ends a sentence ("... in Commercial.") is
+    prose, never the head of a wrapped heading, unless the title itself carries that word with its
+    period ("U.S.")."""
+    s = (upper or "").strip()
+    if not s or s[-1] not in ".!?;":
+        return True
+    return s.split()[-1].lower() in (title or "").lower().split()
+
+
+PDF_BARE_CERT = re.compile(r"^(.*\S)(?:\s*[,–—]\s*|\s+-\s+)Certificate\s*$", re.I)
+PDF_RUN_TOGETHER = re.compile(r",\s*A\.?\s?[AS]T\.?\s*$", re.I)
+
+
+def _peers(program: dict, peers: dict | None) -> list[dict]:
+    """The college's other listed programs (by_cn without this one)."""
+    me = _cn(program.get("control_number"))
+    return [p for cn, p in (peers or {}).items() if cn != me]
+
+
+def pdf_own_heading(line: str, nxt: str, program: dict, peers: dict | None = None) -> bool:
+    """Decision 17: a heading-shaped line is the program's own only when its name is the program's full
+    title (the words in order, case, punctuation and "&" set aside, a trailing award on either read as
+    the award) and its award is the program's own award (_award_keys: AA is not AS). The award stands on
+    the line ("Art History, AA" names "Art History", never "Art") or on the next line alone. Never a token
+    subset. A state award the keys cannot read falls back to the scorer's award type.
+    S647 and its review (peers: the college's list by control number, when the caller has it): "AAT" and
+    "AST" run together count only after a comma ("Spanish, AAT", never "Astronomy - AST"); a bare
+    "Certificate" is any certificate of the title, and nobody's own heading where the college lists two
+    certificates of that title; an end-of-line hyphen read either way ("Pre- Law") is nobody's own where
+    the college lists the other reading as a distinct title ("Prelaw" beside "Pre-Law")."""
+    from _program_requirements_score import heading_award_types, award_type
+    title = program.get("title") or ""
+    name, words = _split_heading(line)
+    bare = False
+    if not words:
+        m = PDF_BARE_CERT.match((line or "").strip())
+        if m:
+            name, words, bare = m.group(1), "Certificate", True
+        else:
+            words = (nxt or "").strip()
+    want = _title_words(_split_heading(title)[0])
+    soft, hard = _title_words(name), _title_words(name, keep_hyphen=True)
+    if not want or want not in (soft, hard):
+        return False
+    others = _peers(program, peers)
+    if soft != hard:
+        other = hard if want == soft else soft
+        if any(_title_words(_split_heading(p.get("title") or "")[0]) == other for p in others):
+            return False
+    if bare and any(_title_words(_split_heading(p.get("title") or "")[0]) == want
+                    and _award_keys(p.get("award")) & CERT_KEYS for p in others):
+        return False
+    own = bare or PDF_RUN_TOGETHER.search((line or "").strip()) is not None
+    filed = _award_keys(program.get("award"))
+    if filed:
+        return bool(filed & _award_keys(words, own=own))
+    kind = award_type(program.get("award"))
+    return kind is not None and kind in heading_award_types(words, title)
+
+
+def pdf_block_headings(text: str, program: dict, ctx: dict) -> list[tuple[int, bool, str | None]]:
+    """(offset, own, listed number) for each heading-shaped line in a block, page marks and the running
+    header passed over: own, the program's own heading (pdf_own_heading: its full title and its own award
+    type, decision 17); else the listed program whose strict heading it is, or None for a heading no
+    listed program's matches."""
+    running, by_cn = ctx.get("running") or set(), ctx.get("by_cn") or {}
+    toks = ctx.get("tokens")
+    if toks is None:
+        toks = ctx["tokens"] = {cn: set(P.title_tokens(p.get("title") or "")) for cn, p in by_cn.items()}
+    lines = (text or "").split("\n")
+    content = [k for k, ln in enumerate(lines)
+               if ln.strip() and not PAGE_MARK.match(ln.strip()) and _furniture_key(ln) not in running]
+    offs, pos = [], 0
+    for ln in lines:
+        offs.append(pos)
+        pos += len(ln) + 1
+    out = []
+    for i, k in enumerate(content):
+        nxt = lines[content[i + 1]] if i + 1 < len(content) else ""
+        if not _heading_shaped(lines[k], nxt):
+            # "X, Certificate" is not heading-shaped (main's keys): it counts only as the program's own
+            # heading, so body text naming another certificate leaves the block as it was (review of #3214).
+            if PDF_BARE_CERT.match(lines[k].strip()) and pdf_own_heading(lines[k], nxt, program, by_cn):
+                out.append((offs[k], True, None))
+            continue
+        rest = "\n".join(lines[k:k + 6])
+        # A line under a short title-shaped line that ends in a hyphen ("Pre-" over "Engineering, AS") is
+        # that word's tail, never a heading alone (S647); a sentence's hyphen ("skills in a co-") is not.
+        torn = i > 0 and _torn_head(lines[content[i - 1]])
+        if not torn and pdf_own_heading(lines[k], nxt, program, by_cn):
+            out.append((offs[k], True, None))
+            continue
+        # A long title wraps in the catalog's narrow column ("Apprenticeship Carpentry," over "Millwrighting,
+        # AS"): the heading is the line with the one or two lines above it, still the full title (decision 18).
+        wrapped = next((content[i - j] for j in (1, 2) if i - j >= 0
+                        and all(_wrap_head_ok(lines[content[x]], program.get("title") or "") for x in range(i - j, i))
+                        and pdf_own_heading(" ".join(lines[content[x]].strip() for x in range(i - j, i + 1)),
+                                            nxt, program, by_cn)), None)
+        if wrapped is not None:
+            out.append((offs[wrapped], True, None))
+            continue
+        have = set(re.findall(r"[a-z0-9]+", rest[:PDF_HEADING_CHARS + PDF_NAME_REACH].lower()))
+        hits = [p for cn, p in by_cn.items() if toks.get(cn) and toks[cn] <= have and pdf_text_names(rest, p, strict=True)]
+        top = max(hits, key=lambda p: len(p.get("title") or "")) if hits else None
+        out.append((offs[k], False, _cn(top.get("control_number")) if top else None))
+    return out
+
+
+def _block_from(text: str, at: int) -> tuple[str, int]:
+    """The block's text from offset `at`, under the page mark it falls on, and that page's index."""
+    marks = list(re.finditer(r"(?m)^\[page (\d+)\]$", text[:at + 1]))
+    if not marks:
+        return text[at:], 0
+    m = marks[-1]
+    page = int(m.group(1)) - 1
+    if not text[m.end():at].strip():
+        return text[m.start():], page
+    return "[page %d]\n%s" % (page + 1, text[at:]), page
+
+
+def pdf_uniform_block(text: str, program: dict, ctx: dict) -> dict:
+    """Decision 15, a uniform catalog: the block that ends at the program's own number line starts at its
+    own heading. Where the program's strict heading occurs inside the block, the block starts at the last
+    run of it before the number line (a repeated own heading, a page's continued heading, stays in it);
+    what stands above belongs to a program whose number did not print. With no own heading, a block that
+    holds any other program's heading, listed or not, is refused (`other`: the listed number, if any);
+    with no heading at all, it binds unnamed."""
+    heads = pdf_block_headings(text, program, ctx)
+    own = [i for i, h in enumerate(heads) if h[1]]
+    if own:
+        i = own[-1]
+        while i > 0 and heads[i - 1][1]:
+            i -= 1
+        cut, page = _block_from(text, heads[i][0])
+        return {"status": "named", "text": cut, "from_page": page}
+    if heads:
+        return {"status": "other", "other": next((h[2] for h in heads if h[2]), None), "text": text}
+    return {"status": "unnamed", "text": text}
+
+
+def pdf_after_window(pages: list[str], program: dict, courses: list[dict], ctx: dict) -> dict | None:
+    """The block that ends at the program's own number line, None when the number prints nowhere.
+    Uniform votes (decision 15, pdf_uniform_block): named, the block cut to start at the program's own
+    heading; other, another program's heading and none of its own (`other`: the listed number, if any);
+    unnamed, no heading at all. Votes not uniform: named only where the block opens on the program's
+    title and award (decision 2), else unnamed. The number printing more than once: named before unnamed before other, then the occurrence
+    naming the most listed codes."""
+    cn = _cn(program.get("control_number"))
+    running = ctx.get("running") or set()
+    best, printed = None, False
+    rank = {"named": 2, "unnamed": 1, "other": 0}
+    for j, txt in enumerate(pages):
+        for m in PDF_CN_LINE.finditer(txt or ""):
+            if _cn(m.group(1)) != cn:
+                continue
+            printed = True
+            segs = pdf_after_block(pages, j, m.start(), m.end(), running=running)
+            if not segs:
+                continue
+            text = "\n\n".join("[page %d]\n%s" % (k + 1, pages[k][a:b].strip("\n")) for k, a, b in segs)
+            if ctx.get("uniform"):
+                # Decision 15: the block starts at its own heading; another program's heading with none of
+                # its own refuses it; no heading at all binds it unnamed.
+                ub = pdf_uniform_block(text, program, ctx)
+                status, other, text = ub["status"], ub.get("other"), ub["text"]
+                if "from_page" in ub:
+                    segs = [sg for sg in segs if sg[0] >= ub["from_page"]]
+            elif pdf_text_names(_opening(text, running), program, strict=True):
+                status, other = "named", None
+            else:
+                # Votes not uniform: decision 2's title test as built, the block's opening alone.
+                status, other = "unnamed", None
+            key = (rank[status], len(P.find_codes(text, courses)))
+            if best is None or key > best[0]:
+                best = (key, segs, text, status, other)
+    if not printed:
+        return None
+    if best is None:
+        return {"status": "unnamed", "pages": [], "text": ""}
+    return {"status": best[3], "other": best[4], "pages": sorted({k for k, _, _ in best[1]}), "text": best[2]}
+
+
+def pdf_closed_by(text: str, program: dict, ctx: dict) -> str | None:
+    """The listed program whose number closes a heading picker's window, or None (decision 3 of the
+    S645 conductor). The window's heading is where the program's own heading follows a number line
+    (that number closes the program printed above, or is the program's own at its heading: none),
+    else the window's start. The first number line at or after it decides: the program's own
+    number closes its block (none), unless it opens the window with nothing before it, when it closes
+    the block printed above and is passed over; another listed program's number closes that program's
+    block (refused); a number no listed program holds refuses nothing."""
+    own, running, by_cn = _cn(program.get("control_number")), ctx.get("running") or set(), ctx.get("by_cn") or {}
+    nums = list(PDF_CN_LINE.finditer(text or ""))
+    start = 0
+    for m in nums:
+        if pdf_text_names(_opening(text[m.end():], running), program, strict=True):
+            if _cn(m.group(1)) == own:
+                return None
+            start = m.end()
+            break
+    for m in nums:
+        if m.start() < start:
+            continue
+        n = _cn(m.group(1))
+        if n == own:
+            if not _opening(text[start:m.start()], running).strip():
+                continue
+            return None
+        return n if n in by_cn else None
+    return None
+
+
 def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], extractor: str | None,
-             heading: dict | None = None, above: dict | None = None) -> dict | None:
+             heading: dict | None = None, above: dict | None = None,
+             numbers_after: dict | bool = False) -> dict | None:
     """The program's pages as a source the extraction reads, in the shape
     source_record() takes: None when no page names a listed course. The text
     opens on the program's heading, so an A.S. and the certificate printed
     after it each open on their own name. A code heading (pdf_code_assign())
-    names the run's first page."""
+    names the run's first page. numbers_after (a college whose reconcile entry
+    names pdf_numbers_after: pdf_after_context(), or True for a context of this
+    program alone): the block that ends at the program's own number line, when
+    it opens on the program's heading (`bound`: number_after); otherwise the
+    heading picker's window, with `after_unbound` saying why, refused (`refused`,
+    no text) when another listed program's number closes it (pdf_closed_by).
+    Decision 14: where the votes are uniform (ctx["uniform"]) the number line is
+    the only binder and the heading picker never runs; a program it cannot bind
+    (number_not_printed, block_names_other_program, low_coverage) comes back with no
+    text, the block judged, and capture_pdf keeps its filed record."""
+    ctx, unbound = None, None
+    if numbers_after and not heading:
+        ctx = numbers_after if isinstance(numbers_after, dict) else pdf_after_context(pages, [program])
+        win = pdf_after_window(pages, program, courses, ctx)
+        uniform = bool(ctx.get("uniform"))
+        judged = _judged(win["text"], ctx["running"]) if win else ""
+        found = P.find_codes(win["text"], courses) if win and win.get("text") else []
+        cov = P.coverage(found, courses) if found else 0.0
+
+        def unbound_read(why: str, refused: str | None = None) -> dict:
+            # Decision 14: in a uniform catalog the number line is the only binder, and the heading picker
+            # never runs. A program it cannot bind is filed not_found; capture_pdf keeps its filed record.
+            at = "%s#page=%d" % (url, win["pages"][0] + 1) if win and win.get("pages") else url
+            return {"url": at, "field": "pdf_pages", "found": [], "coverage": round(cov, 3), "text": "",
+                    "pages": [i + 1 for i in (win or {}).get("pages") or []], "refused": refused,
+                    "opens_on_list": False, "extractor": extractor, "named": False,
+                    "control_number_printed": win is not None, "titled": False, "got": {"title": "", "h1": ""},
+                    "after_unbound": why, "judged": judged}
+        bindable = win is not None and (win["status"] == "named" or (uniform and win["status"] == "unnamed"))
+        if bindable and found and cov >= P.ACCEPT_SHARE:
+            first = next((ln.strip() for ln in _opening(win["text"], ctx["running"]).split("\n") if ln.strip()), "")
+            note = {"after_unnamed": True, "judged": judged} if win["status"] == "unnamed" else {}
+            return {"url": "%s#page=%d" % (url, win["pages"][0] + 1), "field": "pdf_pages", "found": found,
+                    "coverage": cov, "text": win["text"], "opens_on_list": False,
+                    "pages": [i + 1 for i in win["pages"]], "extractor": extractor,
+                    "named": win["status"] == "named", "control_number_printed": True, "titled": True,
+                    "bound": "number_after",
+                    "got": {"title": first[:PDF_HEADING_CHARS], "h1": first[:PDF_HEADING_CHARS]}, **note}
+        if win is None:
+            unbound = "number_not_printed"
+        elif bindable:
+            # A bound block below the accept share (round 2, finding 1): never filed as the program's read.
+            unbound = "low_coverage" if found else "block_names_no_listed_course"
+        elif uniform and win["status"] == "other":
+            # The block's first strict heading is another listed program's (a transfer degree's number
+            # closing its local degree's block too, finding 9).
+            return unbound_read("block_names_other_program", win["other"])
+        else:
+            unbound = "block_not_named"
+        if uniform:
+            return unbound_read("low_coverage" if unbound == "block_names_no_listed_course" else unbound)
     if heading:
         run, cn_at, head, titled = _pdf_run(pages, heading["page"], courses), -1, (1.0, True, heading["at"]), True
     else:
@@ -3194,12 +3727,21 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
     text = "\n\n".join(parts)
     found = P.find_codes(text, courses)
     first = (text.split("\n", 2) + ["", ""])[1].strip()
+    gated = {"after_unbound": unbound} if ctx else {}
+    closed_by = pdf_closed_by(text, program, ctx) if ctx else None
+    if closed_by:
+        # Another listed program's number closes the window: it holds that program's block, and it is
+        # never handed to this one. A passing filed record stays on file (capture_pdf, extract).
+        return {"url": "%s#page=%d" % (url, run[0] + 1), "field": "pdf_pages", "found": [], "coverage": 0.0,
+                "text": "", "pages": [i + 1 for i in run], "refused": closed_by, "opens_on_list": False,
+                "extractor": extractor, "named": False, "control_number_printed": False, "titled": titled,
+                "got": {"title": "", "h1": ""}, "judged": _judged(text, ctx["running"]), **gated}
     return {"url": "%s#page=%d" % (url, run[0] + 1), "field": "pdf_pages", "found": found,
             "coverage": P.coverage(found, courses), "text": text,
             "opens_on_list": not heading and pdf_opens_on_list(pages, run, cn_at, head, program, courses),
             "pages": [i + 1 for i in run], "extractor": extractor,
             "named": bool(head[0] == 1.0 and head[1]), "control_number_printed": cn_at >= 0, "titled": titled,
-            "got": {"title": first[:PDF_HEADING_CHARS], "h1": first[:PDF_HEADING_CHARS]}}
+            "got": {"title": first[:PDF_HEADING_CHARS], "h1": first[:PDF_HEADING_CHARS]}, **gated}
 
 
 PDF_CN_SHARE = 0.5        # a catalog printing this share of its programs' control numbers prints them all
@@ -3238,6 +3780,12 @@ def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None,
         if href:
             return href, step["timeout_s"] * 1000
     return reg.get("catalog_url"), P.CATALOG_PDF_WAIT_S * 1000
+
+
+def pdf_fetch(reg: dict):
+    """How the catalog PDF is fetched: in ranges where the procedure's catalog step says
+    resume (College of the Desert, S647), else main's one whole-file request."""
+    return P.read_pdf_ranged if (P.procedure_catalog(reg.get("procedure")) or {}).get("resume") else P.read_pdf
 
 
 def is_pdf_catalog(reg: dict) -> bool:
@@ -3379,7 +3927,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
         pw, browser, reader = P.open_reader(delay)
         try:
             start, wait = pdf_start(reader, reg, {}, report)
-            pdf = (P.read_pdf(reader, start, {}, timeout_ms=wait) if start
+            pdf = (pdf_fetch(reg)(reader, start, {}, timeout_ms=wait) if start
                    else {"access": "no_address", "pages": []})
         finally:
             browser.close()
@@ -3388,23 +3936,57 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
     listed = [p for p in programs if p["closed_list"]]
     furniture = None   # the running headers, found once the extractor is settled
     import _program_requirements_reconcile as R
-    above = (R.load_steps().get(college) or {}).get("heading_above_code")
+    steps = R.load_steps()
+    above = (steps.get(college) or {}).get("heading_above_code")
+    # A catalog that prints each program's number after it is read so only where the college's
+    # reconcile entry says it does (R.numbers_after); the votes each extractor's pages cast are a
+    # measurement, filed below, and a gated catalog whose votes disagree reads by the heading picker.
+    gate = R.numbers_after(college, steps)
 
-    def accepted(pg: list[str]) -> int:
+    def reading(pg: list[str]) -> tuple[dict, dict | None]:
+        votes = pdf_numbers_after(pg, programs)
+        return votes, (pdf_after_context(pg, programs, votes) if gate and votes["after_mode"] else None)
+
+    def accepted(pg: list[str], ctx: dict | None) -> int:
         return sum(1 for p in listed
-                   if (lambda b: b and b["coverage"] >= P.ACCEPT_SHARE)(pdf_best(start, pg, p, p["closed_list"], None)))
-    n = accepted(pages)
+                   if (lambda b: b and b["coverage"] >= P.ACCEPT_SHARE)(
+                       pdf_best(start, pg, p, p["closed_list"], None, numbers_after=ctx or False)))
+    votes, ctx = reading(pages)
+    n = accepted(pages, ctx)
     report["pdf"] = {"url": start, "access": pdf.get("access"), "status": pdf.get("status"),
                      "bytes": pdf.get("bytes"), "pages_total": len(pages), "error": pdf.get("error"),
                      "chars_total": sum(len(t) for t in pages), "pypdf_accepted": n,
                      "sample": P.text_sample(pages)}
+    if pdf.get("ranges"):
+        report["pdf"]["ranges"] = pdf["ranges"]
     if pdf.get("data") and n < 0.5 * len(listed):
         alt = P.pdfminer_pages(pdf)
-        m = accepted(alt["pages"]) if alt["pages"] else 0
+        alt_votes, alt_ctx = reading(alt["pages"]) if alt["pages"] else ({}, None)
+        m = accepted(alt["pages"], alt_ctx) if alt["pages"] else 0
         report["pdf"].update(pdfminer_accepted=m, pdfminer_error=alt.get("error"))
         if m > n:
-            pages, extractor = alt["pages"], alt["extractor"]
+            pages, extractor, votes, ctx = alt["pages"], alt["extractor"], alt_votes, alt_ctx
     report["pdf"]["extractor"] = extractor
+    report["pdf"]["numbers_after"] = dict(votes, gated=gate, read="number_after" if ctx else "heading")
+    if ctx:
+        # Decision 13: uniform votes bind each block by its number line alone; otherwise decision 2's title test.
+        report["pdf"]["numbers_after"]["binding"] = "number_line" if ctx["uniform"] else "title"
+        if not ctx["uniform"]:
+            report["pdf"]["numbers_after"]["binding_why"] = (
+                "the votes are not uniform (%d before, %d after; the number line binds alone at 0 before and %d "
+                "after): a block binds only where it opens on its own title and award"
+                % (votes["before"], votes["after"], PDF_UNIFORM_AFTER))
+    if gate and not ctx:
+        report["pdf"]["numbers_after_disagrees"] = {
+            "votes": votes, "why": "the college's reconcile entry reads each program's number after it, and this "
+                                   "catalog's own number lines do not show it: every program read by the heading picker"}
+        print("::warning::%s: the reconcile entry names pdf_numbers_after, and the catalog's votes (%d after, %d "
+              "before) do not show it; read by the heading picker" % (college, votes["after"], votes["before"]),
+              flush=True)
+    elif not gate and votes.get("after_mode"):
+        report["pdf"]["numbers_after_suspected"] = {
+            "votes": votes, "why": "the catalog's number lines look printed after each program, and no reconcile "
+                                   "entry says so: read by the heading picker, for a person to check"}
     coded = pdf_code_assign(programs, pages)
     if coded is not None:
         report["pdf"]["code_headings"] = {"codes": len({h["code"] for h in pdf_code_headings(pages)}),
@@ -3429,10 +4011,32 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             rec["near_miss"] = {"why": "the catalog heads each program with its code, and no heading names this one"}
         else:
             best = pdf_best(start, pages, prog, prog["closed_list"], extractor,
-                            (coded or {}).get(prog["control_number"]), above)
-            if best and best["coverage"] >= P.ACCEPT_SHARE:
+                            (coded or {}).get(prog["control_number"]), above, numbers_after=ctx or False)
+            # A gated program the after path did not bind (pdf_best's after_unbound; none at all when the
+            # picker found no window): a passing filed record stays on file unless the run forces it.
+            unbound = ({"refused": (best or {}).get("refused"), "why": (best or {}).get("after_unbound") or "no_window",
+                        **({"judged": best["judged"]} if (best or {}).get("judged") else {})}
+                       if ctx and not (best and best.get("bound")) else None)
+            if best and (best.get("refused") or best.get("after_unbound") == "block_names_other_program"):
+                # Decision 16 (a): a refused block is never filed as a read page. Its own method, no text,
+                # no coverage claimed; refused_passing names it where the filed record passes.
+                rec = source_record(college, prog, reg, None, REFUSED)
+                if best.get("after_unbound") == "block_names_other_program":
+                    why = ("the block that ends at this program's number holds %s's heading and none of its own"
+                           % best["refused"] if best.get("refused") else
+                           "the block that ends at this program's number holds the heading of a program not on "
+                           "the college's list, and none of its own")
+                else:
+                    why = ("the catalog prints each program's control number after it, and this window is "
+                           "closed by %s's" % best["refused"])
+                rec["near_miss"] = {"url": best["url"], "pages": best["pages"], "judged": best.get("judged"),
+                                    "why": why}
+                rec["after_unbound"] = unbound
+            elif best and best.get("text") and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
+                if unbound:
+                    rec["source"]["after_unbound"] = unbound["why"]
                 if best["opens_on_list"]:
                     rec["source"]["opens_on_list"] = True   # held() holds a passing record read from it
                 if hf:
@@ -3448,11 +4052,18 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                      "code": ((coded or {}).get(prog["control_number"]) or {}).get("code"),
                      "cn_printed": best["control_number_printed"], "titled": best["titled"],
                      "coverage": round(best["coverage"], 3), "opens": re.sub(r"\s+", " ", best["text"][:220]),
-                     **({"opens_on_list": True} if best["opens_on_list"] else {})})
+                     **({"opens_on_list": True} if best["opens_on_list"] else {}),
+                     **({"bound": best["bound"]} if best.get("bound") else {}),
+                     # A uniform catalog's block bound by its number line alone, naming no program: a note for
+                     # the conductor, with what was judged (decision 13); it refuses nothing.
+                     **({"after_unnamed": True, "judged": best.get("judged")} if best.get("after_unnamed") else {}),
+                     **({"after_unbound": unbound["why"]} if unbound else {})})
             else:
                 rec = source_record(college, prog, reg, None, "not_found")
                 if best:
                     rec["near_miss"] = {"url": best["url"], "coverage": round(best["coverage"], 3)}
+                if unbound:
+                    rec["after_unbound"] = unbound
         recs.append(rec)
     picks = {p["control_number"]: p for p in report["pdf"].get("picks") or []}
     drop = pdf_unproven(list(picks.values()))
@@ -3464,6 +4075,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             recs[i] = rec = source_record(college, byc[cn], reg, None, "not_found")
             rec["near_miss"] = {"pages": picks[cn]["pages"], "coverage": picks[cn]["coverage"],
                                 "why": "the page prints neither the control number nor the title and award"}
+            if ctx:
+                rec["after_unbound"] = {"refused": None, "why": "unproven"}
         _write(os.path.join(out_dir, "sources", cn + ".json"), rec)
         print("%-6s %-12s cov %-5s %s" % (cn, rec["method"][:12], rec["coverage"],
                                           (rec.get("source") or {}).get("url") or ""), flush=True)
@@ -3737,7 +4350,7 @@ def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t
         shared_pages={u: cns for u, cns in urls_used.items() if len(cns) > 1},
         not_found=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                     "near_miss": r.get("near_miss")}
-                   for r in recs if r["method"] == "not_found"],
+                   for r in recs if r["method"] in NO_READ],
         page_claimed=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                        "pages": r.get("lost_pages")} for r in recs if r["method"] == "page_claimed"],
         page_challenged=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
@@ -4112,7 +4725,81 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
                     "was_url": (was.get("source") or {}).get("url"), "was_coverage": was.get("coverage"),
                     "was_method": was.get("method")})
     return {"against": os.path.relpath(folder, os.path.dirname(HERE)) if prev else None,
-            "kept": kept, "kept_moved": moved, "programs": len(out), "list": out, **holds}
+            "kept": kept, "kept_moved": moved, "programs": len(out), "list": out, **holds,
+            # The force a capture is run with, where the step passes it (FORCE): forced numbers leave
+            # refused_passing for forced_unbound; the filing adds the extraction's own list (file_run).
+            "refused_passing": refused_passing(folder, recs, force_named(os.environ.get("FORCE"))),
+            "forced_unbound": forced_unbound(folder, recs, force_named(os.environ.get("FORCE")))}
+
+
+def _filed(path: str) -> dict | None:
+    """The filed record at path, when it holds a reading."""
+    try:
+        with open(path) as fh:
+            rec = json.load(fh)
+    except (OSError, ValueError):
+        return None
+    return rec if isinstance(rec, dict) and isinstance(rec.get("record"), dict) else None
+
+
+def _passing_filed_rec(rec: dict | None) -> bool:
+    from _program_requirements_score import passes_live
+    return bool(rec) and isinstance(rec.get("record"), dict) and passes_live(rec.get("score"))
+
+
+def _passing_filed(path: str) -> dict | None:
+    """The filed record at path when it passes as the live table counts it (passes_live), else None."""
+    rec = _filed(path)
+    return rec if _passing_filed_rec(rec) else None
+
+
+def unbound_of(src: dict) -> dict | None:
+    """What capture_pdf filed for a gated program the after path did not bind: a not_found source's
+    after_unbound (its closing number, why, the block judged), or an accepted source's after_unbound
+    (the heading picker read a window for it, where the votes are not uniform)."""
+    if src.get("method") in NO_READ:
+        return src.get("after_unbound") or None
+    why = (src.get("source") or {}).get("after_unbound")
+    return {"refused": None, "why": why} if why else None
+
+
+def unbound_entry(src: dict, un: dict) -> dict:
+    return {"control_number": src["control_number"], "title": src.get("title"), "award": src.get("award"),
+            "closed_by": un.get("refused"), "why": un.get("why"), **({"judged": un["judged"]} if un.get("judged") else {})}
+
+
+def force_named(tokens: str | None) -> set[str]:
+    """The control numbers a comma-separated force string names (the word 'incomplete' set aside)."""
+    return {t.strip() for t in (tokens or "").split(",") if t.strip() and t.strip().lower() != "incomplete"}
+
+
+def refused_passing(folder: str, recs: list[dict], force: set[str] | None = None) -> list[dict]:
+    """Every program a gated catalog (R.numbers_after) refused or could not bind, filed not_found, whose
+    filed record passes and whose number the run does not force: the extraction keeps that record on
+    file (decisions 4 and 14 of the S645 conductor; d-pdf-reader-design-calls-s640: a read never makes a
+    passing record worse). `closed_by` is the listed program whose number closed the block, if any;
+    `judged`, the block's first characters."""
+    out = []
+    for r in recs:
+        un = r.get("after_unbound")
+        if r.get("method") not in NO_READ or not un or r["control_number"] in (force or ()):
+            continue
+        if _passing_filed(os.path.join(folder, "records", r["control_number"] + ".json")):
+            out.append(unbound_entry(r, un))
+    return out
+
+
+def forced_unbound(folder: str, recs: list[dict], force: set[str] | None) -> list[dict]:
+    """Every forced number the after path could not bind (decision 14): never extracted, its filed record
+    kept, each named with its closing number, the block judged, and whether a record is on file."""
+    out = []
+    for r in recs:
+        un = unbound_of(r)
+        if not un or r["control_number"] not in (force or ()):
+            continue
+        filed = _filed(os.path.join(folder, "records", r["control_number"] + ".json"))
+        out.append(dict(unbound_entry(r, un), filed=bool(filed), passing=_passing_filed_rec(filed)))
+    return out
 
 
 def forced(folder: str, tokens: str) -> set[str]:
@@ -4242,6 +4929,38 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             else:
                 fresh.append(src)
         sources = fresh
+        # A program a gated catalog refused or could not bind (capture_pdf's after_unbound) reaches no
+        # read, and filing the run would drop its record: the filed record stays as filed, forced or not,
+        # and its source entry stays the one that record was read from (decision 14; file_run). A forced
+        # number is extracted only when it binds: one the after path did not bind, though the heading
+        # picker read a window for it, is not sent, and keeps its record too. Each forced one is named
+        # (forced_unbound), with the closing number and the block it judged.
+        unbound_kept, forced_unbound = [], []
+        for path in sorted(glob.glob(os.path.join(out_dir, "sources", "*.json"))):
+            with open(path) as fh:
+                src = json.load(fh)
+            cn = src.get("control_number")
+            un = unbound_of(src)
+            if not un or (src.get("method") not in NO_READ and cn not in (force or ())):
+                continue
+            filed = _filed(os.path.join(keep_from, "records", cn + ".json"))
+            if filed:
+                _write(os.path.join(out_dir, "records", cn + ".json"), filed)
+                unbound_kept.append(cn)
+            if cn in (force or ()):
+                forced_unbound.append(dict(unbound_entry(src, un), filed=bool(filed),
+                                           passing=bool(filed and _passing_filed_rec(filed))))
+            print("%-6s %s: the catalog's block is %s%s" % (
+                cn, "forced, not bound" if cn in (force or ()) else "kept",
+                "closed by %s" % un["refused"] if un.get("refused") else "not bound (%s)" % un.get("why"),
+                "; the filed record stays" if filed else "; no filed record"), flush=True)
+        skip = {e["control_number"] for e in forced_unbound}
+        sources = [s for s in sources if s["control_number"] not in skip]
+        fresh = [s for s in fresh if s["control_number"] not in skip]
+        if unbound_kept or forced_unbound:
+            _write(os.path.join(out_dir, "kept_unbound_%d.json" % shard),
+                   {"programs": unbound_kept, "forced_unbound": forced_unbound})
+        kept += len(unbound_kept)
         print("kept %d records filed from the same page or moved with the same text (%d moved); held %d; %d to "
               "extract, %d of them forced" % (kept, moved, len(holds), len(fresh),
                                              sum(1 for x in fresh if x["control_number"] in (force or ()))),
@@ -4614,6 +5333,17 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         _write(os.path.join(dest, "capture_reread.json"), report)
         print("re-read: filed capture_reread.json under %s" % os.path.relpath(dest, os.path.dirname(HERE)))
         return 0
+    # The forced numbers the extraction could not bind (decision 14): the filed account names them, and
+    # refused_passing keeps only the unforced ones.
+    fu: dict[str, dict] = {}
+    for path in sorted(glob.glob(os.path.join(out_dir, "kept_unbound_*.json"))):
+        with open(path) as fh:
+            for e in json.load(fh).get("forced_unbound") or []:
+                fu[e["control_number"]] = e
+    if fu and isinstance(report.get("would_extract"), dict):
+        we = report["would_extract"]
+        we["forced_unbound"] = [fu[k] for k in sorted(fu)]
+        we["refused_passing"] = [e for e in we.get("refused_passing") or [] if e["control_number"] not in fu]
     if not os.path.isdir(os.path.join(out_dir, "records")):
         os.makedirs(dest, exist_ok=True)
         _write(os.path.join(dest, "capture_preview.json"), report)
@@ -4637,6 +5367,8 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     # A program the ceiling held back (not_sent_<shard>.json) kept its old record, so its entry stays the
     # one that record was read from, or none: an entry naming the new capture beside the old record
     # would read as unchanged next run, and the program would never be sent again (S644 review).
+    # A program a gated catalog refused, whose passing record the extraction kept (kept_unbound_<shard>.json),
+    # keeps its entry the same way.
     not_sent: set[str] = set()
     for path in glob.glob(os.path.join(out_dir, "not_sent_*.json")):
         with open(path) as fh:
@@ -4645,8 +5377,12 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     # stays the one that record was read from, and the next run sends it again.
     acct = extract_accounts(out_dir)
     not_sent.update(x["control_number"] for x in acct["failed"])
+    kept_unbound: set[str] = set()
+    for path in glob.glob(os.path.join(out_dir, "kept_unbound_*.json")):
+        with open(path) as fh:
+            kept_unbound.update(json.load(fh).get("programs") or [])
     prev: dict = {}
-    if not_sent and os.path.isfile(os.path.join(dest, "sources.json")):
+    if (not_sent or kept_unbound) and os.path.isfile(os.path.join(dest, "sources.json")):
         with open(os.path.join(dest, "sources.json")) as fh:
             prev = {x["control_number"]: x for x in json.load(fh)}
     index = []
@@ -4656,6 +5392,10 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         if src.get("control_number") in not_sent:
             if src["control_number"] in prev:
                 index.append(prev[src["control_number"]])
+            continue
+        if src.get("control_number") in kept_unbound and src["control_number"] in prev:
+            # A kept record keeps the entry it was read from; with none, the new entry (not_found) stands.
+            index.append(prev[src["control_number"]])
             continue
         index.append(dict({k: src.get(k) for k in ("control_number", "title", "award", "shape", "method",
                                                    "coverage", "codes_found", "source")},

@@ -1,0 +1,262 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "18891",
+ "shape": "degree",
+ "title": "Physical Geography",
+ "award": "A.S. Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-physical-geography-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6906,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6906,
+    "output_tokens": 1747,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1747,
+  "output_tokens_details": {
+   "thinking_tokens": 560
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06256,
+ "ms": 14550,
+ "seconds": 14.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 11,
+   "share": 0.909,
+   "missing": [
+    "BIOSC126"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BIOL126"
+   ],
+   "flagged": [
+    "BIOL126"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 3,
+   "courses": 0,
+   "count": 3,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Physical Geography",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC (advised for transfer) or DVC General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "demonstrate proficiency in the use of field data collection and mapping techniques.",
+    "demonstrate an understanding of how the physical and human elements of the environment interact and what are the outcomes",
+    "demonstrate a grounding in the modern technical skills of the discipline, including computer cartography, geographic information systems and global positioning systems."
+   ],
+   "careers": [
+    "spatial technologies",
+    "environmental sciences"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "major requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "GEOG 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 121",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 141",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "plus at least 4 units from",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "BIOL 126",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 122",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOSC 126",
+    "why": "not in the text; catalog prints BIOL126 Ecology and Field Biology (same title and units), likely a subject renaming"
+   }
+  ],
+  "notes": [
+   "The catalog prints the total as 18 units (header and '(Total 18)'), but the description says the major 'consists of 24 units of study'; total_units records the printed requirement total of 18.",
+   "The catalog prints BIOL126 Ecology and Field Biology, while the closed list has BIOSC 126 with the same title and units; BIOL 126 is recorded as a catalog addition. A reviewer should check whether these are the same course.",
+   "Codes are printed without a space in the catalog (e.g. GEOG120); they are recorded with a space between subject and number.",
+   "The degree requires completing general education 'as listed in the catalog'; transfer students are advised to select Cal-GETC, and DVC General Education is 'not generally advised'. No GE units or degree total are printed.",
+   "The outcomes are from the Program Learning Outcomes list printed in this A.S. section."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

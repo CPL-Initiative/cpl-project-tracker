@@ -1,0 +1,291 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "11902",
+ "shape": "degree",
+ "title": "Computer Information Systems",
+ "award": "A.S. Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6890,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6890,
+    "output_tokens": 2235,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2235,
+  "output_tokens_details": {
+   "thinking_tokens": 1071
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07226,
+ "ms": 19227,
+ "seconds": 19.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 1,
+   "codes": [
+    "BUS105"
+   ],
+   "flagged": [
+    "BUS105"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    25.0,
+    26.0
+   ],
+   "stated": [
+    26.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 25.0-26.0; the catalog states 26.0-28.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Computer Information Systems, AS",
+   "measure": "units",
+   "total_units": {
+    "min": 26,
+    "max": 28
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "information systems",
+    "computer programming",
+    "systems analysis"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major requirements:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "ACCT101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ACCT102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ACCT100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CMPR213",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PBLC110",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Total conflict: the header prints 'Unit Range for Completion : 26.0 - 28.0' (recorded as total_units), while 'Program Rules' prints 'Total Units 22.0 - 23.0'. Reviewer should check.",
+   "The 'Major requirements' block states 19 units but lists seven courses totaling 22 units (including BUS105, not on the closed list). Recorded as 'all' with stated 19; it may instead be a choose-19-units rule or BUS105 may be extraneous.",
+   "The 'Select one (1) course' block is printed as two nested 'Rule Group' entries (one 'All of the following' totaling 16 units, one 'At least one of the following' for CIS110/PBLC110); read as a single choose-one list given the heading and its 3.0-4.0 total. CIS110 and PBLC110 share a title and are recorded as alternatives.",
+   "Careers drawn from 'prepared for employment as trainees in information systems, computer programming, and systems analysis'.",
+   "No program learning outcomes are printed in this text."
+  ]
+ },
+ "extracted_run": "43387912036",
+ "source_sha": "3687785679653c73",
+ "source_codes": [
+  "ACCT100",
+  "ACCT101",
+  "ACCT102",
+  "BUS150",
+  "CIS103",
+  "CIS106",
+  "CIS110",
+  "CMPR105",
+  "CMPR112",
+  "CMPR120",
+  "CMPR121",
+  "CMPR213",
+  "PBLC110"
+ ],
+ "source_coverage": 1.0
+}

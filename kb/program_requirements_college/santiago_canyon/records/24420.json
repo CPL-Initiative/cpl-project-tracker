@@ -1,0 +1,197 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "24420",
+ "shape": "noncredit",
+ "title": "Web Associate",
+ "award": "Noncredit program",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8194,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8194,
+    "output_tokens": 1255,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1255,
+  "output_tokens_details": {
+   "thinking_tokens": 574
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05788,
+ "ms": 13436,
+ "seconds": 13.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 5,
+   "listed": 5,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    300.0,
+    300.0
+   ],
+   "stated": [
+    300.0,
+    300.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Web Associate, CC",
+   "measure": "hours",
+   "total_units": {
+    "min": 300,
+    "max": 300
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements:",
+    "rule": "choose_units",
+    "minimum": 300,
+    "option_group": null,
+    "stated": {
+     "min": 300,
+     "max": 300
+    },
+    "courses": [
+     {
+      "code": "VBUS010",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS107",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS242",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS302",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VBUS303",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes without a space (e.g., VBUS010); matched to closed-list codes VBUS 10, VBUS 107, VBUS 242, VBUS 302, VBUS 303.",
+   "The block is printed as 'The following number of Hours' with a 300-hour total; the five 60-hour courses sum to exactly 300, so in effect all five are required.",
+   "The catalog counts this noncredit certificate in hours; all unit fields hold hours.",
+   "No program learning outcomes are printed for this certificate.",
+   "The description refers to 'the web associate' and to business areas (web design, Internet marketing, hosting, programming, technology projects) but names no explicit career list; careers left empty for reviewer check.",
+   "Control Number 24420 printed after the section appears to belong to the Web Associate program (control numbers follow each program in this layout)."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "e984df5742634ab3",
+ "source_codes": [
+  "VBUS10",
+  "VBUS107",
+  "VBUS242",
+  "VBUS302",
+  "VBUS303"
+ ],
+ "source_coverage": 1.0
+}

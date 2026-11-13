@@ -1,0 +1,329 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "01497",
+ "shape": "degree",
+ "title": "Early Childhood Education",
+ "award": "A.S. Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-early-childhood-education-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7186,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7186,
+    "output_tokens": 2261,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2261,
+  "output_tokens_details": {
+   "thinking_tokens": 655
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07396,
+ "ms": 20023,
+ "seconds": 20.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 17,
+   "listed": 17,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ECE125",
+    "ECE126",
+    "ECE144"
+   ],
+   "flagged": [
+    "ECE125",
+    "ECE126",
+    "ECE144"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Early Childhood Education",
+   "measure": "units",
+   "total_units": {
+    "min": 29,
+    "max": 29
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "identify developmentally appropriate activities for infants, toddlers and preschool age children.",
+    "analyze the psychological, physical and cognitive influences on child development.",
+    "apply the professional code of ethics.",
+    "evaluate strategies to maximize the health, safety and nutrition of children in early childhood education programs.",
+    "create a developmentally appropriate integrated curriculum.",
+    "assess how socializing agents impact the lives of children and families.",
+    "apply the principles of anti-bias pedagogy.",
+    "apply observation and assessments to create appropriate environments.",
+    "apply positive guidance skills with young children.",
+    "apply constructivist theory and intentional teaching methodologies to teacher-child interactions."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "major requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 29,
+     "max": 29
+    },
+    "courses": [
+     {
+      "code": "ECE123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECE126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECE128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECE249",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "recommended degree electives",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "ECE129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE241",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE242",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE243",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE253",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE269",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE298",
+      "units": 0.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints course codes without a space (e.g. ECE123); recorded as printed. They correspond to closed-list codes such as ECE 123.",
+   "ECE125, ECE126 and ECE144 are required in the major but absent from the closed list; marked catalog_addition.",
+   "Recommended degree electives block prints '(Total 0)' and 'Complete the following number of credits: 0'; recorded as recommended with stated 0.",
+   "ECE298 printed as '0.5 - 3' units; recorded as 0.5-3.",
+   "The page refers to 'general education requirements as listed in the catalog' and labels the award 'A.S. Degree Local' but names no specific GE pattern or GE units; ge_pattern left null.",
+   "The page names no degree total including GE; degree_total null. The 29 units is the major total.",
+   "Description mentions 'various careers working directly with children, families and other adults in the early childhood profession' without naming specific job titles; careers left empty for reviewer judgment.",
+   "URL slug references fall-2025 while catalog is 2026-2027; reviewer may confirm currency."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

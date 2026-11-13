@@ -1,0 +1,471 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "18908",
+ "shape": "degree",
+ "title": "Computer Information Systems",
+ "award": "A.S. Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,a-s-in-computer-information-systems-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6925,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6925,
+    "output_tokens": 2874,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2874,
+  "output_tokens_details": {
+   "thinking_tokens": 727
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08518,
+ "ms": 23268,
+ "seconds": 23.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 1,
+   "listed": 1,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 19,
+   "codes": [
+    "CIS100",
+    "CIS101",
+    "CIS105",
+    "CIS106",
+    "CIS107",
+    "CIS108",
+    "CIS115",
+    "CIS116",
+    "CIS117",
+    "CIS118",
+    "CIS119",
+    "CIS120",
+    "CIS130",
+    "CIS132",
+    "CIS160",
+    "CIS170",
+    "CIS180",
+    "CIS181",
+    "CIS185"
+   ],
+   "flagged": [
+    "CIS100",
+    "CIS101",
+    "CIS105",
+    "CIS106",
+    "CIS107",
+    "CIS108",
+    "CIS115",
+    "CIS116",
+    "CIS117",
+    "CIS118",
+    "CIS119",
+    "CIS120",
+    "CIS130",
+    "CIS132",
+    "CIS160",
+    "CIS170",
+    "CIS180",
+    "CIS181",
+    "CIS185"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 10,
+   "courses": 0,
+   "count": 10,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. Degree Local Computer Information Systems",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "perform the duties of information technologies and management workers as identified by the Bureau of Labor Statistics",
+    "provide technical assistance and training to computer system users.",
+    "investigate and resolve computer software and hardware problems of users.",
+    "perform the professional duties demanded in any modern office environment.",
+    "design and maintain static and dynamic web sites.",
+    "integrate elements such as graphics, animation and streaming media on web sites.",
+    "develop and implement database systems for stand-alone or internet based deployment.",
+    "use technology to manage multi-faceted projects.",
+    "demonstrate basic graphical user interface operations in a computer environment.",
+    "produce spreadsheets, documents and presentations by using basic to advanced software operations."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CIS115",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS116",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS118",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "plus at least 2 units from:",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "CIS100",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS101",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "plus at least 4 units from:",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CIS117",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS119",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS170",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Database Management – required courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Technical specialization area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS107",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS117",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Project Management – required courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Technical specialization area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS181",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "project management – recommended elective:",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS185",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Web Graphics – required courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Technical specialization area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS130",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS132",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS133",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Web Technology – required courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Technical specialization area",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS105",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS106",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS107",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "web technology – recommended electives:",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CIS108",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS117",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS120",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS160",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The heading 'Choose one of the following four technical specialization areas:' prints (Total 6); each of the four specialization blocks is recorded as an option in option_group 'Technical specialization area'.",
+   "Each specialization sub-block prints '(Total 0)' and 'Complete the following number of credits: 0', which looks like a catalog-system artifact; stated left null for those blocks. Each specialization's required courses sum to 6 units, matching the parent total of 6.",
+   "Recommended elective blocks (project management and web technology) are listed with option_group null; they belong with their specialization but do not count toward the total.",
+   "CIS117 appears in the core 4-unit choice block, the Database Management specialization, and the Web Technology recommended electives; whether a course may count in both core and specialization is not stated.",
+   "The program learning outcomes list appears to be printed for the program as a whole (the text begins mid-sentence referring to multiple specializations); recorded as this award's outcomes since the A.S. shares it.",
+   "Text is truncated at the start; any program description or career information preceding the outcomes is not present."
+  ]
+ },
+ "extracted_run": "43353452924"
+}

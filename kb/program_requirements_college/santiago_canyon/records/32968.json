@@ -1,0 +1,360 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "32968",
+ "shape": "adt",
+ "title": "Economics",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=110",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8600,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8600,
+    "output_tokens": 2701,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2701,
+  "output_tokens_details": {
+   "thinking_tokens": 1113
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08842,
+ "ms": 23446,
+ "seconds": 23.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 14,
+   "share": 0.929,
+   "missing": [
+    "ECONC2002"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "BUS222",
+    "ECON101",
+    "ECON102",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "BUS222",
+    "ECON101",
+    "ECON102",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    21.0,
+    24.5
+   ],
+   "stated": [
+    21.0,
+    24.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Economics, AA-T",
+   "measure": "units",
+   "total_units": {
+    "min": 21,
+    "max": 24.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "economic research",
+    "consulting",
+    "accounting",
+    "marketing"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Economics",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "ECON101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECONC2001",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECON102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Statistics and Probability",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4.5
+    },
+    "courses": [
+     {
+      "code": "STATC1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STATC1000E",
+        "units": 4.5,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Calculus Requirement",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH150",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH180",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH180H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following (List A):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "ACCT101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH185",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one (1) course from the following (List B):",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ACCT102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS150",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH280",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH287",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH290",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ECONC2002",
+    "why": "not in the text; the section prints ECON102 with no new-number note"
+   }
+  ],
+  "notes": [
+   "The Economics, Statistics and Probability, and Calculus blocks sit under 'Major requirements: (Total Units 14.0 - 15.5)'; that parent total is not recorded as a block.",
+   "ECON101 is printed with 'This course is now ECONC2001'; ECONC2001 recorded as an alternative to ECON101 on that basis.",
+   "ECON102 is likely the predecessor of closed-list ECONC2002, but the text does not say so.",
+   "MATH180/MATH180H are printed as 'now MATHC2210/MATHC2210H' and MATH185 as 'now MATHC2220'; the new codes are not recorded as courses.",
+   "STATC1000E (4.5 units) is not in the closed list; recorded as an alternative to STATC1000 along with the honors twin.",
+   "List B units printed in the catalog differ from the state file for BUS150 (4 vs 3), MATH280 (3 vs 4), MATH287 (4 vs 5) and MATH290 (5 vs 3); they appear shifted by one row. Recorded as printed; reviewer should check.",
+   "The Statistics and Calculus blocks are printed as 'The following number of Units' with a unit range; read as choose one course (choose_units at the low end of the range).",
+   "Careers taken from the description; it also names areas 'business, teaching, and public policy', not recorded as separate careers.",
+   "No program learning outcomes and no general education pattern or degree total printed in this section."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "a38ce923451bedd7",
+ "source_codes": [
+  "ACCT101",
+  "ACCT102",
+  "BUS150",
+  "ECONC2001",
+  "MATH150",
+  "MATH180",
+  "MATH180H",
+  "MATH185",
+  "MATH280",
+  "MATH287",
+  "MATH290",
+  "STATC1000",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.929
+}

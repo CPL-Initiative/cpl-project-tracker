@@ -1,0 +1,287 @@
+{
+ "college": "San Jose City College",
+ "control_number": "06210",
+ "shape": "degree",
+ "title": "Art - Drawing & Painting",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7808,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7808,
+    "output_tokens": 2286,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2286,
+  "output_tokens_details": {
+   "thinking_tokens": 748
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.07695,
+ "ms": 18788,
+ "seconds": 19.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 11,
+   "listed": 11,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     27.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 18,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Art emphasis in Drawing and Painting - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Create artworks that demonstrate an understanding of the formal elements and principles of design.",
+    "Communicate an idea through an artwork by skillfully using materials and techniques to achieve the desired effect.",
+    "Practice an aesthetic process to develop concepts which enrich the appreciation of making and viewing visual art.",
+    "Recognize and list major artists and historical art trends and styles, and place art in a contemporary context.",
+    "Analyze the objective and subjective qualities of an artwork in order to evaluate and assess its worthiness and discuss those conclusions."
+   ],
+   "careers": [
+    "Fashion Design and Illustration",
+    "Fine Art Framer",
+    "Floral Arranger and Designer",
+    "Interior Designer",
+    "Illustrator",
+    "Printing press work",
+    "Silk screen tee-shirts and banners",
+    "Textile Designer",
+    "Window and Retail Display",
+    "Animation",
+    "Architecture",
+    "Art Education and Teaching",
+    "Art Direction",
+    "Industrial Ceramics Technician",
+    "Landscaping",
+    "Marketing and Advertising",
+    "Medical Illustration",
+    "Service Bureau Technician"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Major Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "ART 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 026",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 091",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 092",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Art emphasis in Drawing and Painting AS Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ART 055A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 055B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 060",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes are zero-padded (ART 012, ART 014, ART 060, etc.); matched to closed-list ART012, ART013, ART 14, ART 24, ART 26, ART 60, ART 61, ART 91, ART 92 as the same courses.",
+   "Catalog titles ART 026 'Intermediate Drawing' while the closed list titles ART 26 'Representational Drawing and Perspective'; treated as the same course. ART 091 and ART 092 print no titles.",
+   "total_units 33 is the printed 'Major Requirements and Area of Emphasis 33'; degree total 60 includes 'General Education Requirements 27'. The GE pattern is not named, so ge_pattern is null (likely SJCC local GE).",
+   "Page also requires two courses for the U.S. History, Constitution, and American Ideals Requirement (US-1, US-2, US-3), not recorded as a block.",
+   "The Photography emphasis (PHOTO courses, 36 units, total 63) belongs to a different emphasis and was not recorded.",
+   "A minimum of 3 courses in the Art major must be taken at San José City College; grade of C or better (or P) required.",
+   "Careers taken from 'Drawing and Painting Emphasis Career Options' and its 'RELATED OCCUPATIONS' list only; Photography emphasis careers excluded.",
+   "Outcomes taken from the list headed 'Upon successful completion of Art emphasis in Drawing and Painting'."
+  ]
+ },
+ "extracted_run": "43357106423"
+}
