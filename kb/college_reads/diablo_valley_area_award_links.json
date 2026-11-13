@@ -1,0 +1,22 @@
+{
+ "_readme": "S645, 2026-11-13. Read 7 (run 43362895655, 6 loads): the program grid lists 72 areas, not 77, each at /academics/explore-our-programs/<slug>, and the paid read's index step read all 72 (areas 72, areas_failed 0). So the 115 programs with no page sit in areas the step read and took no eLumen link from: Dental Assisting, Dental Hygiene, Early Childhood Education, Culinary Arts, Kinesiology, Music, Philosophy, Spanish, Japanese, Russian, Dance, Drama, English as a Second Language, Psychology, Sociology, English, History, Plumbing. This read loads six of those area pages and one area that gave its programs (Administration of Justice, read 3) with every award, catalog and eLumen link shown, to see how a silent area links its awards: another catalog year, eLumen's program/<slug> with a slash, a dvc.edu page between, a PDF, or no link at all. No model call.",
+ "college": "Diablo Valley College",
+ "questions": {
+  "award_links": "Where does each award an area page names link (its host, the eLumen catalog slug and separator, a dvc.edu page, a PDF), and how does a silent area's link differ from Administration of Justice's?"
+ },
+ "keywords": [
+  "Associate (?:in|of)",
+  "Certificate of (?:Achievement|Accomplishment|Completion)",
+  "A\\.[AS]\\.(?:-T)?",
+  "elumen|[Cc]atalog"
+ ],
+ "pages": [
+  {"url": "https://www.dvc.edu/academics/explore-our-programs/administration-justice", "answers": ["award_links"], "links": "elumen|catalog|program|\\.pdf|Associate|Certificate"},
+  {"url": "https://www.dvc.edu/academics/explore-our-programs/dental-assisting", "answers": ["award_links"], "links": "elumen|catalog|program|\\.pdf|Associate|Certificate"},
+  {"url": "https://www.dvc.edu/academics/explore-our-programs/music", "answers": ["award_links"], "links": "elumen|catalog|program|\\.pdf|Associate|Certificate"},
+  {"url": "https://www.dvc.edu/academics/explore-our-programs/psychology", "answers": ["award_links"], "links": "elumen|catalog|program|\\.pdf|Associate|Certificate"},
+  {"url": "https://www.dvc.edu/academics/explore-our-programs/spanish", "answers": ["award_links"], "links": "elumen|catalog|program|\\.pdf|Associate|Certificate"},
+  {"url": "https://www.dvc.edu/academics/explore-our-programs/kinesiology", "answers": ["award_links"], "links": "elumen|catalog|program|\\.pdf|Associate|Certificate"},
+  {"url": "https://www.dvc.edu/academics/explore-our-programs/early-childhood-education", "answers": ["award_links"], "links": "elumen|catalog|program|\\.pdf|Associate|Certificate"}
+ ]
+}
