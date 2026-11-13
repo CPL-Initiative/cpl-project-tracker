@@ -1444,7 +1444,10 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
 # (/programs answers "Catalog is not Published"). So the program index is the
 # menu's links, from the start page and the "Programs of Study" page it links,
 # and each program page is read rendered, as a CourseLeaf page is.
-EL_PROGRAM_PATH = re.compile(r"^/catalog/([^/]+)/program/[^/]+/?$", re.I)
+# Diablo Valley writes the slug after a comma, /catalog/<catalog>/program,<slug> (page
+# read 43342288026, S644); its content call is the same catalog,program,<slug>, so both
+# forms read, and a page's address keeps the form its catalog writes.
+EL_PROGRAM_PATH = re.compile(r"^/catalog/([^/]+)/program[/,][^/,]+/?$", re.I)
 EL_MAX_HUBS = 3
 
 
@@ -1565,11 +1568,18 @@ def el_href(catalog: str, host: str = "") -> str:
 def el_program_slugs(html_text: str, catalog: str, host: str = "") -> list[str]:
     """The program slugs a publish call's menu links, each once, in order. The
     menu writes them relative to /catalog/: href="2026-2027-Catalog/program/<slug>"."""
-    pat = re.compile(el_href(catalog, host) + r'program/([^"/?#]+)' + EL_HREF_END, re.I)
-    out = []
-    for slug in pat.findall(html_text or ""):
-        if slug not in out:
-            out.append(slug)
+    return [s for s, _ in el_program_links(html_text, catalog, host)]
+
+
+def el_program_links(html_text: str, catalog: str, host: str = "") -> list[tuple[str, str]]:
+    """The program slugs a page links, each once, in order, with the separator its
+    catalog writes before the slug: "/" (program/<slug>) or "," (program,<slug>)."""
+    pat = re.compile(el_href(catalog, host) + r'program([/,])([^"/?#,]+)' + EL_HREF_END, re.I)
+    out, seen = [], set()
+    for sep, slug in pat.findall(html_text or ""):
+        if slug not in seen:
+            seen.add(slug)
+            out.append((slug, sep))
     return out
 
 
@@ -1652,15 +1662,17 @@ def el_text(html_text: str, packed: bool = False) -> str:
     return cq_text(EL_STRIP.sub(" ", el_fix_codes(html_text, packed)))
 
 
-def el_page(start: str, slug: str, html_text: str) -> dict | None:
-    """One program's page in the shape assign() reads."""
+def el_page(start: str, slug: str, html_text: str, sep: str = "/") -> dict | None:
+    """One program's page in the shape assign() reads; sep is the separator its
+    catalog writes before the slug ("/" or ",")."""
     text = el_text(html_text, el_packed_host(start))
     if not text:
         return None
     m = EL_HEADING.search(EL_STRIP.sub(" ", html_text or ""))
     title = cq_text(m.group(1)).replace("\n", " ") if m else slug.replace("-", " ")
     u = urllib.parse.urlparse(start)
-    url = "%s://%s/catalog/%s/program/%s" % (u.scheme or "https", u.netloc, el_catalog(start), slug)
+    url = "%s://%s/catalog/%s/program%s%s" % (u.scheme or "https", u.netloc, el_catalog(start),
+                                               "," if sep == "," else "/", slug)
     got = {"final_url": url, "title": title, "h1": title, "body": text, "content": text,
            "status": 200, "access": "ok", "links": []}
     return {"url": url, "title": title, "h1": title, "body": text, "content": text, "got": got,
@@ -1712,7 +1724,7 @@ EL_WALK_DEPTH = 3          # menu page, its topic (26-27/degrees), the departmen
 # read through its full call when its content names nothing, the walk takes such
 # pages first, and a page may sit two segments under the catalog.
 EL_HUB_LIKE = re.compile(r"program|degree|certificate|major|department|discipline|area|pathway|award", re.I)
-EL_NOT_PAGE = re.compile(r"^(?:program|course|department|search)(?:/|$)", re.I)
+EL_NOT_PAGE = re.compile(r"^(?:program|course|department|search)(?:[/,]|$)", re.I)
 
 
 def el_page_links(html_text: str, catalog: str, host: str = "") -> list[tuple[str, str]]:
@@ -1738,9 +1750,10 @@ def el_hub_first(links: list[tuple[str, str]], depth: int) -> list[tuple[str, in
 
 
 def el_walk(reader, start: str, shell: str, catalog: str, slugs: list[str], skip: set,
-            errors: list) -> dict:
+            errors: list, seps: dict | None = None) -> dict:
     """Adds to slugs every program the menu's pages link, and the pages they link,
-    EL_WALK_DEPTH steps deep, hub-like pages first; the account of the walk."""
+    EL_WALK_DEPTH steps deep, hub-like pages first; the account of the walk. seps, when
+    given, takes each new slug's separator (el_program_links)."""
     host = urllib.parse.urlparse(start).netloc
     links = el_page_links(shell, catalog, host)
     hubs = {p for p, t in links if EL_HUB_LIKE.search(p) or EL_HUB_LIKE.search(t)}
@@ -1751,7 +1764,12 @@ def el_walk(reader, start: str, shell: str, catalog: str, slugs: list[str], skip
         path, depth = queue.pop(0)
         page = el_html(el_fetch(reader, el_publish_url(start, path.split("/"), content=True), errors))
         calls += 1
-        found = [p for p in el_program_slugs(page, catalog, host) if p not in slugs]
+        found = []
+        for p, sep in el_program_links(page, catalog, host):
+            if p not in slugs and p not in found:
+                found.append(p)
+                if seps is not None:
+                    seps[p] = sep
         slugs += found
         if depth >= EL_WALK_DEPTH:
             continue
@@ -1774,40 +1792,147 @@ def el_walk(reader, start: str, shell: str, catalog: str, slugs: list[str], skip
             "walk_stopped_at_cap": bool(queue)}
 
 
-def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
+# A catalog whose menu names no program (Diablo Valley: the full publish call of
+# 2,012,490 bytes names none, page read 43343491672, S644) is listed from the
+# college's own site. Its procedure record's catalog step names the index:
+#   {"format": "html", "start": <the index page>, "pages": "?page=0..5",
+#    "follow": <a pattern for the area pages it links>,
+#    "program_links": <a pattern for the catalog program links an area page carries>}
+# The index pages are start plus each page suffix (start alone when pages is absent);
+# each area page they link is loaded once (robots first, the census delay, like every
+# load) and every link on it matching program_links into this catalog adds its slug.
+# An award two areas both link is read once. An index or area page that fails counts
+# as a listing call lost (listing_failed).
+EL_INDEX_PAGES = re.compile(r"^(\D*?)(\d{1,3})\.\.(\d{1,3})$")
+EL_INDEX_MAX_PAGES = 50
+EL_INDEX_MAX_AREAS = 400
+
+
+def el_index_step(procedure) -> dict | None:
+    """The program-index step a procedure record's catalog step names, or None. Anything
+    malformed is ignored, never guessed at."""
+    step = (procedure or {}).get("catalog") if isinstance(procedure, dict) else None
+    if not isinstance(step, dict) or (step.get("format") or "") != "html":
+        return None
+    start, follow, links = step.get("start"), step.get("follow"), step.get("program_links")
+    if not (isinstance(start, str) and start.startswith("https://") and isinstance(follow, str)
+            and follow.strip() and isinstance(links, str) and links.strip()):
+        return None
+    try:
+        follow_rx, links_rx = re.compile(follow, re.I), re.compile(links, re.I)
+    except re.error:
+        return None
+    pages = step.get("pages")
+    if pages is None:
+        urls = [start]
+    else:
+        m = EL_INDEX_PAGES.match(pages) if isinstance(pages, str) else None
+        if not m or int(m.group(2)) > int(m.group(3)) or int(m.group(3)) - int(m.group(2)) >= EL_INDEX_MAX_PAGES:
+            return None
+        urls = [start + m.group(1) + str(n) for n in range(int(m.group(2)), int(m.group(3)) + 1)]
+    return {"start": start, "pages": urls, "follow": follow_rx, "program_links": links_rx}
+
+
+def el_load_failed(url: str, got: dict) -> str | None:
+    """An index or area load's failure, in the reader's error words (failed_calls())."""
+    if got.get("access") == "ok":
+        return None
+    if got.get("status"):
+        return "%s: HTTP %s" % (url, got["status"])
+    return "%s: %s" % (url, got.get("access") or got.get("error") or "not loaded")
+
+
+def el_index_links(reader, step: dict, catalog: str, host: str, cache: dict,
+                   errors: list) -> tuple[list[tuple[str, str]], dict]:
+    """The (slug, separator) pairs a college's own program index reaches, each once, in
+    order, and the account of the read."""
+    areas, failed = [], 0
+    for url in step["pages"]:
+        got = P.load(reader, url, cache, False)
+        bad = el_load_failed(url, got)
+        if bad:
+            errors.append(bad)
+            failed += 1
+            continue
+        for ln in got.get("links") or []:
+            href = (ln.get("href") or "").split("#")[0]
+            if (href.startswith("http") and P.same_site(href, step["start"]) and href not in areas
+                    and href not in step["pages"] and step["follow"].search(href)):
+                areas.append(href)
+    areas = areas[:EL_INDEX_MAX_AREAS]
+    out, seen, area_failed = [], set(), 0
+    for url in areas:
+        got = P.load(reader, url, cache, False)
+        bad = el_load_failed(url, got)
+        if bad:
+            errors.append(bad)
+            area_failed += 1
+            continue
+        for ln in got.get("links") or []:
+            href = (ln.get("href") or "").split("#")[0].split("?")[0]
+            u = urllib.parse.urlparse(href)
+            m = EL_PROGRAM_PATH.match(u.path or "")
+            if (not m or (u.hostname or "").lower() != host.lower() or m.group(1).lower() != (catalog or "").lower()
+                    or not step["program_links"].search(href)):
+                continue
+            tail = u.path.rstrip("/").split("/")[-1]
+            sep, slug = ("," , tail.split(",", 1)[1]) if tail.lower().startswith("program,") else ("/", tail)
+            if slug not in seen:
+                seen.add(slug)
+                out.append((slug, sep))
+    return out, {"index_pages": len(step["pages"]), "index_pages_failed": failed, "areas": len(areas),
+                 "areas_failed": area_failed, "index_programs": len(out)}
+
+
+def el_pages_fast(reader, start: str, report: dict, procedure=None, cache: dict | None = None) -> list[dict]:
     """The catalog's program pages from its own publish calls: the full call
     once for the menu, then the content call per program. An empty list sends
-    capture() to the rendered read."""
+    capture() to the rendered read. A procedure record's program-index step
+    (el_index_step) adds the programs the college's own site links."""
     errors: list = []
     catalog = el_catalog(start)
     shell = el_html(el_fetch(reader, el_publish_url(start, el_start_parts(start)), errors))
     host = urllib.parse.urlparse(start).netloc
-    slugs = el_program_slugs(shell, catalog, host)
+    slugs, seps = [], {}
+
+    def take(pairs):
+        for slug, sep in pairs:
+            if slug not in seps:
+                seps[slug] = sep
+                slugs.append(slug)
+
+    take(el_program_links(shell, catalog, host))
     report["elumen"] = {"catalog": catalog, "read": "publish/content", "menu_programs": len(slugs),
                         "errors": errors}
     # A menu of departments (Cabrillo): each department's content call lists its programs.
     depts = el_department_slugs(shell, catalog, host)
     for d in depts:
         page = el_html(el_fetch(reader, el_publish_url(start, ["department", d], content=True), errors))
-        slugs += [s for s in el_program_slugs(page, catalog, host) if s not in slugs]
+        take(el_program_links(page, catalog, host))
     report["elumen"].update(menu_departments=len(depts), department_programs=len(slugs))
     # A menu of program and award hubs (Modesto, Palo Verde): each hub's content call lists its programs.
     hubs = el_hub_slugs(shell, catalog, host)
     for h in hubs:
         page = el_html(el_fetch(reader, el_publish_url(start, [h], content=True), errors))
-        slugs += [s for s in el_program_slugs(page, catalog, host) if s not in slugs]
+        take(el_program_links(page, catalog, host))
     report["elumen"].update(menu_hubs=hubs, hub_programs=len(slugs))
+    # The college's own program index, when its procedure record names one (Diablo Valley, S644).
+    step = el_index_step(procedure)
+    if step:
+        pairs, account = el_index_links(reader, step, catalog, host, {} if cache is None else cache, errors)
+        take(pairs)
+        report["elumen"]["index"] = dict(account, start=step["start"])
     want = report.get("with_closed_list") or 0
     if want and len(slugs) < EL_WALK_SHORT * want:
         report["elumen"].update(el_walk(reader, start, shell, catalog, slugs,
-                                        set(hubs) | set(el_start_parts(start)), errors))
+                                        set(hubs) | set(el_start_parts(start)), errors, seps))
     slugs = slugs[:MAX_PAGES]
-    # pages_account(): listed beside answered, and the menu, department and hub calls that failed.
+    # pages_account(): listed beside answered, and the menu, department, hub and index calls that failed.
     report["elumen"].update(program_pages_listed=len(slugs), listing_failed=failed_calls(errors))
     pages = []
     for i, slug in enumerate(slugs):
         html_text = el_html(el_fetch(reader, el_publish_url(start, ["program", slug], content=True), errors))
-        pg = el_page(start, slug, html_text)
+        pg = el_page(start, slug, html_text, seps.get(slug, "/"))
         if pg:
             pages.append(pg)
         if i % 50 == 49:
@@ -3015,7 +3140,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             print("%s: %d programs (%d with a course list), %d curriQunet program pages, %.1f s between loads"
                   % (college, len(programs), report["with_closed_list"], len(pages), delay / 1000), flush=True)
         elif platform == "elumen":
-            urls, pages = [], el_pages_fast(reader, start, report)
+            urls, pages = [], el_pages_fast(reader, start, report, reg.get("procedure"), cache)
             if not pages:
                 # The publish calls gave no program: read the menu's pages rendered.
                 urls = el_pages(reader, start, cache, report)
