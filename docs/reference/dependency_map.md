@@ -587,6 +587,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_overmerge_apply_supabase.py` | workflows: `overmerge-apply.yml` | — |
 | `kb/_probe_lifecycle_checks.py` | workflows: `discover-map-datasets.yml` | — |
 | `kb/_program_requirements_college.py` | workflows: `program-requirements-college.yml`, `program-requirements-wave.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
+| `kb/_program_requirements_dated_reads.py` | workflows: `program-requirements-dated-reads.yml` | — |
 | `kb/_program_requirements_display_apply.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
@@ -772,9 +773,10 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/los_angeles_city/kept_passing.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
-| `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py` | — |
+| `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py`, `kb/_program_requirements_dated_reads.py` | committed by: `program-requirements-dated-reads.yml` |
+| `kb/program_requirements_pilot/map_cr_by_course.sql` | none found | committed by: `program-requirements-dated-reads.yml` |
 | `kb/program_requirements_pilot/records/*.json` | scripts: `kb/_build_commons_status.py` | — |
-| `kb/program_requirements_pilot/registry_read.json` | scripts: `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_roep_display.py` | — |
+| `kb/program_requirements_pilot/registry_read.json` | scripts: `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_roep_display.py`, `kb/_program_requirements_dated_reads.py` | committed by: `program-requirements-dated-reads.yml` |
 | `kb/program_requirements_pilot/reviewed_readings.json` | scripts: `kb/_program_requirements_file.py`, `kb/_program_requirements_load.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/ivc_all_program_maps_p1.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/mtsac_gps_n0486.json` | scripts: `kb/_program_map_parse.py` | — |
@@ -1156,6 +1158,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_map_parse_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_record_verdicts_sql_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_college_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_dated_reads_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_display_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_reconcile_test.py` | workflows: `js-tests.yml` | — |
@@ -1440,5 +1443,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 900 file
-datasets · 195 external services · 572 consumers · 71 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 903 file
+datasets · 195 external services · 574 consumers · 72 workflows · 41 tabs.

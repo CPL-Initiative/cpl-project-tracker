@@ -328,6 +328,8 @@ jobs:
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)
         run: python3 tests/harvest_no_closed_list_diagnosis_test.py
+      - name: Program requirements dated reads (the SQL's aggregate in Python, verify first)
+        run: python3 tests/program_requirements_dated_reads_test.py
       # The course outline census (S372, Sam 2026-10-12): which system each
       # college's course outlines open in, public or sign-in, and whether they
       # print SLOs. Reads pages only and writes no table. Pure-stdlib python.
