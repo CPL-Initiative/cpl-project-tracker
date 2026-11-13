@@ -68,22 +68,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     22.0,
     22.0
    ],
    "stated": [
-    60.0,
-    60.0
+    22.0,
+    22.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
@@ -91,11 +88,16 @@
      22.0
     ],
     "stated": [
-     22.0,
-     22.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     38.0,
+     38.0
+    ]
    }
   },
   "repeated": {
@@ -120,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -296,6 +298,6 @@
    "The A.A. and A.A.-T print identical program outcomes; recorded the outcomes printed under the A.A. section."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 43355021555,
+ "read_run": 39037377728
 }

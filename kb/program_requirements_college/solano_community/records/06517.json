@@ -116,13 +116,12 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    21.0,
-    21.5
+    24.0,
+    24.5
    ],
    "stated": null,
    "against": null,
    "why": [
-    "'ElecƟves (Complete 3 units)' chooses 1 courses but 0 carry units",
     "the record names no total"
    ]
   },
@@ -470,6 +469,6 @@
    "Journalism Courses block says 'Complete 9 units' and lists exactly three 3-unit courses; recorded as 'all'."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 43355021555,
+ "read_run": 39037377728
 }
