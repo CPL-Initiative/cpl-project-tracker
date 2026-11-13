@@ -1,22 +1,102 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T12:01:38Z",
+ "written_at": "2026-11-13T15:10:41Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
   "census": "kb/_harvest_gap_census.py (committed-files functions)",
   "slo_queue": "kb/course_outcomes/queue.json",
   "scouts": "kb/harvest_scouting/scout-*.json",
-  "spot_checks": "kb/spot_checks/*.check.json"
+  "spot_checks": "kb/spot_checks/*.check.json",
+  "spot_check_comments": "kb/spot_checks/README.md"
  },
  "rule": {
   "basis": "committed files only: the programs each college's capture listed (the gap census's committed universe)",
   "passing": "coverage and invented true, arithmetic equal or unstated (the Program Requirements tab's own test)",
   "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest rule); TBA until the three parts are read per college",
-  "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = one record differs, or 5 agree beside an unreachable page; limited = machine checks only, fewer than 5 checked (a cross-college check), or 2 or more differ (display held). An unreachable page is not a checked record; the newest receipt by checked_at counts",
+  "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = 5 or more checked with one differing, or 5 agree beside an unreachable page; limited = machine checks only, fewer than 5 checked whatever they found (a cross-college check), or 2 or more differ (display held). An unreachable page is not a checked record; the newest receipt by checked_at counts, and on a tie the receipt with the later source comment (kb/spot_checks/README.md)",
   "age_days": {
    "fresh": 7,
    "recent": 30
+  },
+  "causes": {
+   "parked_college": "parked college",
+   "college_never_read": "college never read",
+   "not_in_capture": "program not in the college's capture",
+   "no_closed_list": "no closed list in the Program Course File",
+   "page_not_found": "page not found",
+   "found_not_extracted": "page found, never extracted",
+   "places_none": "extracted, places none of its courses",
+   "not_loaded": "extracted, not loaded",
+   "extraction_error": "extracted, no score (an error)",
+   "coverage_fails": "live, coverage fails",
+   "course_added": "live, a course added",
+   "units_unequal": "live, units unequal",
+   "units_incomplete": "live, units incomplete",
+   "units_unstated": "live, no figure stated",
+   "unknown_without_live": "filed record fails, live state unknown"
+  },
+  "levers": {
+   "unpark": {
+    "kind": "free",
+    "what": "a session takes the parked college back up under its decision"
+   },
+   "first_read": {
+    "kind": "paid",
+    "what": "a first read of a college never read (capture free, extraction paid)"
+   },
+   "capture_and_read": {
+    "kind": "paid",
+    "what": "a fresh capture lists the program, then its extraction"
+   },
+   "capture_rerun_closed_list_now_filed": {
+    "kind": "paid",
+    "what": "the Program Course File now lists its courses: a fresh capture, then extraction"
+   },
+   "program_course_file_refresh": {
+    "kind": "free",
+    "what": "the Program Course File lists no course for it: program-course-fetch.yml, or none exists"
+   },
+   "program_course_file_check": {
+    "kind": "free",
+    "what": "check the Program Course File for its courses (needs the live read)"
+   },
+   "reader_page_search": {
+    "kind": "free",
+    "what": "a reader change finds the program's page (a free page read first)"
+   },
+   "paid_read": {
+    "kind": "paid",
+    "what": "extraction of a page the capture already found"
+   },
+   "reader_page_assignment": {
+    "kind": "paid",
+    "what": "a reader change hands it its own page, then extraction"
+   },
+   "load": {
+    "kind": "free",
+    "what": "step=load: the filed record passes and was never loaded"
+   },
+   "reconcile_then_load": {
+    "kind": "free",
+    "what": "the filed record fails: reconcile steps, then step=load"
+   },
+   "reread": {
+    "kind": "free",
+    "what": "step=reread: the filed record passes and the live row is older"
+   },
+   "ge_units_steps": {
+    "kind": "free",
+    "what": "reconcile steps give the general education pattern its units"
+   },
+   "scorer_noncredit_hours": {
+    "kind": "free",
+    "what": "a scorer reading for a noncredit total in hours"
+   },
+   "reconcile_steps": {
+    "kind": "free",
+    "what": "the college's reconcile steps, on the catalog's own words"
+   }
   }
  },
  "fields": {
@@ -37,13 +117,35 @@
   "slo_queue": "internal",
   "scout": "internal",
   "spot_check": "internal",
-  "confidence": "shareable"
+  "confidence": "shareable",
+  "listed_closed": "shareable",
+  "found": "shareable",
+  "extracted": "shareable",
+  "errors": "internal",
+  "failed_checks": "internal",
+  "platform": "shareable",
+  "catalog_year": "shareable",
+  "catalog_url": "shareable",
+  "read_seconds": "internal",
+  "run": "internal",
+  "levers": "internal"
  },
  "tba": {
   "overall": "The overall bar averages catalog source, program requirements and outcomes (SLOs and PLOs averaged). Catalog source, SLOs and PLOs per college are live tables, read in a later slice.",
   "teachout_approved": "Teachout and Approved programs are counted apart from Active in the live COCI table, which this slice does not read.",
   "apis": "The API connection checklist (#3220) is not a committed file yet.",
-  "jst": "The JST funnel waits on an authorized-student feed from CCCStart; counts only, when it exists."
+  "jst": "The JST funnel waits on an authorized-student feed from CCCStart; counts only, when it exists.",
+  "plo": "Program outcomes are filed with each committed program record (record.program.outcomes in kb/program_requirements_college/<slug>/records/), not yet read per college here.",
+  "catalog_registry": "The catalog link, curriculum view and program map checks are rows in the live program source registry, which this file does not carry.",
+  "ppm": "Program Pathways Mapper has no official export; 4 pilot term maps are committed (kb/program_requirements_pilot/sequences/), not yet read per college here.",
+  "descriptions": "Usable course descriptions per college come from the description classifier (#3219), whose counts are not a committed file yet.",
+  "cpl": "MAP exhibits per college are a live sync, and no completeness denominator for CPL is defined yet.",
+  "mis": "The Fall 2025 MIS course file is committed but not yet joined to each college here.",
+  "coe": "The regional labor market crosswalk (kb/regional_cpl_out/) is committed but not yet read per college here.",
+  "loaded": "The load time and a person's confirmation are columns of the live program requirements table, which this file does not carry.",
+  "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
+  "slo": "Course SLO reads are committed for 12 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "objectives": "Course objectives are committed for 4 hosts (ccc, cccd, cuesta, shasta) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -101,6 +203,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 179,
+   "found": 156,
+   "extracted": 156,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 0,
+    "arithmetic": 20,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+   "read_seconds": 6807.4,
+   "run": "38843474519",
+   "levers": {
+    "program_course_file_check": 47,
+    "reader_page_search": 23,
+    "reconcile_steps": 13,
+    "reader_page_assignment": 3,
+    "scorer_noncredit_hours": 2,
+    "ge_units_steps": 1
    }
   },
   {
@@ -127,12 +253,37 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "pdf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 368,
+   "found": 368,
+   "extracted": 368,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 33,
+    "invented": 0,
+    "arithmetic": 68,
+    "repeated": 0,
+    "outcomes": 5
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+   "read_seconds": 514.7,
+   "run": "43212067552",
+   "levers": {
+    "reader_page_assignment": 33,
+    "reconcile_steps": 22,
+    "ge_units_steps": 13,
+    "program_course_file_check": 3
    }
   },
   {
@@ -161,6 +312,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 197,
+   "found": 195,
+   "extracted": 195,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 13,
+    "invented": 0,
+    "arithmetic": 42,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+   "read_seconds": 816.2,
+   "run": "38979725726",
+   "levers": {
+    "ge_units_steps": 14,
+    "reader_page_assignment": 13,
+    "reconcile_steps": 10,
+    "program_course_file_check": 2,
+    "reader_page_search": 2,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -193,6 +368,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 241,
+   "found": 231,
+   "extracted": 231,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 2,
+    "invented": 0,
+    "arithmetic": 24,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+   "read_seconds": 1182.0,
+   "run": "38414480070",
+   "levers": {
+    "reconcile_steps": 19,
+    "reader_page_search": 10,
+    "program_course_file_check": 8,
+    "reader_page_assignment": 2,
+    "scorer_noncredit_hours": 2
    }
   },
   {
@@ -220,6 +418,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 76,
+   "found": 71,
+   "extracted": 71,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 15,
+    "invented": 0,
+    "arithmetic": 20,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
+   "read_seconds": 26.7,
+   "run": "39006332820",
+   "levers": {
+    "reader_page_assignment": 15,
+    "reader_page_search": 5,
+    "reconcile_steps": 2
    }
   },
   {
@@ -248,6 +467,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 97,
+   "found": 78,
+   "extracted": 90,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 42,
+    "repeated": 0,
+    "outcomes": 1
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://bcc.curriqunet.com/catalog/view//iq/40258",
+   "read_seconds": 2013.2,
+   "run": "43141644775",
+   "levers": {
+    "ge_units_steps": 21,
+    "reconcile_steps": 18,
+    "reader_page_search": 7,
+    "program_course_file_check": 2,
+    "scorer_noncredit_hours": 2,
+    "reader_page_assignment": 1
    }
   },
   {
@@ -276,6 +519,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 168,
+   "found": 165,
+   "extracted": 165,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 27,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://butte.curriqunet.com/Catalog//iq/25371",
+   "read_seconds": 5488.0,
+   "run": "42985449223",
+   "levers": {
+    "reconcile_steps": 26,
+    "program_course_file_check": 24,
+    "reader_page_search": 3,
+    "reader_page_assignment": 1
    }
   },
   {
@@ -304,6 +569,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 281,
+   "found": 271,
+   "extracted": 271,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 0,
+    "arithmetic": 32,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "read_seconds": 1528.4,
+   "run": "38670925488",
+   "levers": {
+    "reconcile_steps": 29,
+    "program_course_file_check": 10,
+    "reader_page_search": 10,
+    "reader_page_assignment": 3,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -331,6 +619,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 19,
+   "found": 12,
+   "extracted": 12,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 0,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf",
+   "read_seconds": 13.2,
+   "run": "39006334571",
+   "levers": {
+    "reader_page_search": 7,
+    "program_course_file_check": 1,
+    "reader_page_assignment": 1
    }
   },
   {
@@ -359,6 +668,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 75,
+   "found": 73,
+   "extracted": 73,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 0,
+    "arithmetic": 12,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.canadacollege.edu/current/",
+   "read_seconds": 56.5,
+   "run": "39202270482",
+   "levers": {
+    "program_course_file_check": 52,
+    "reconcile_steps": 8,
+    "reader_page_assignment": 3,
+    "reader_page_search": 2
    }
   },
   {
@@ -391,6 +722,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 321,
+   "found": 304,
+   "extracted": 305,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 0,
+    "arithmetic": 36,
+    "repeated": 2,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://cerritos-public.courseleaf.com/",
+   "read_seconds": 1767.0,
+   "run": "38656800189",
+   "levers": {
+    "reconcile_steps": 25,
+    "reader_page_search": 16,
+    "program_course_file_check": 4,
+    "reader_page_assignment": 3,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -419,6 +773,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 74,
+   "found": 65,
+   "extracted": 65,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 17,
+    "invented": 4,
+    "arithmetic": 38,
+    "repeated": 0,
+    "outcomes": 11
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+   "read_seconds": 33.6,
+   "run": "39046789844",
+   "levers": {
+    "reconcile_steps": 14,
+    "reader_page_assignment": 13,
+    "ge_units_steps": 11,
+    "reader_page_search": 9,
+    "program_course_file_check": 6
    }
   },
   {
@@ -447,6 +824,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 244,
+   "found": 233,
+   "extracted": 233,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 2,
+    "invented": 0,
+    "arithmetic": 30,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/6077",
+   "read_seconds": 5559.5,
+   "run": "38843479215",
+   "levers": {
+    "reconcile_steps": 24,
+    "reader_page_search": 11,
+    "program_course_file_check": 4,
+    "reader_page_assignment": 2,
+    "ge_units_steps": 1
    }
   },
   {
@@ -479,6 +879,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 199,
+   "found": 193,
+   "extracted": 193,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 1,
+    "arithmetic": 11,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://chaffey.curriqunet.com/catalog/iq/18783",
+   "read_seconds": 2804.7,
+   "run": "38242003226",
+   "levers": {
+    "reconcile_steps": 9,
+    "reader_page_search": 6,
+    "program_course_file_check": 3,
+    "reader_page_assignment": 2
    }
   },
   {
@@ -507,6 +929,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 185,
+   "found": 175,
+   "extracted": 175,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 7,
+    "invented": 0,
+    "arithmetic": 29,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.citruscollege.edu/",
+   "read_seconds": 1804.6,
+   "run": "39726639865",
+   "levers": {
+    "reconcile_steps": 19,
+    "reader_page_search": 10,
+    "program_course_file_check": 8,
+    "reader_page_assignment": 6,
+    "ge_units_steps": 3
    }
   },
   {
@@ -534,12 +979,39 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "pdf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 371,
+   "found": 349,
+   "extracted": 349,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 62,
+    "invented": 8,
+    "arithmetic": 73,
+    "repeated": 1,
+    "outcomes": 1
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.ccsf.edu/catalog",
+   "read_seconds": 318.4,
+   "run": "39056434592",
+   "levers": {
+    "reader_page_assignment": 53,
+    "program_course_file_check": 46,
+    "reconcile_steps": 35,
+    "reader_page_search": 22,
+    "ge_units_steps": 2,
+    "scorer_noncredit_hours": 2
    }
   },
   {
@@ -568,6 +1040,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 121,
+   "found": 115,
+   "extracted": 115,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 21,
+    "invented": 6,
+    "arithmetic": 45,
+    "repeated": 0,
+    "outcomes": 5
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
+   "read_seconds": 39.5,
+   "run": "39006155986",
+   "levers": {
+    "reconcile_steps": 31,
+    "reader_page_assignment": 15,
+    "program_course_file_check": 8,
+    "reader_page_search": 6
    }
   },
   {
@@ -599,11 +1093,35 @@
     "checked_at": "2026-11-13T09:05:00Z",
     "file": "kb/spot_checks/pr-3207-rescore-six.check.json",
     "pr": 3207,
-    "settled_later": null
+    "comment": 6848713027,
+    "settled_later": null,
+    "held": false
    },
    "confidence": {
     "level": "limited",
     "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
+   },
+   "listed_closed": 62,
+   "found": 55,
+   "extracted": 55,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 6,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://coalingacollege.edu/catalog/2026-2027/",
+   "read_seconds": 366.4,
+   "run": "43355010411",
+   "levers": {
+    "reader_page_search": 7,
+    "program_course_file_check": 6,
+    "reconcile_steps": 5,
+    "reader_page_assignment": 1
    }
   },
   {
@@ -632,6 +1150,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 159,
+   "found": 154,
+   "extracted": 154,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 14,
+    "invented": 0,
+    "arithmetic": 29,
+    "repeated": 1,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.cccd.edu/coastline/",
+   "read_seconds": 1236.9,
+   "run": "38445051060",
+   "levers": {
+    "program_course_file_check": 16,
+    "reader_page_assignment": 14,
+    "reconcile_steps": 11,
+    "reader_page_search": 5,
+    "scorer_noncredit_hours": 5
    }
   },
   {
@@ -659,6 +1200,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 68,
+   "found": 59,
+   "extracted": 59,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 3,
+    "arithmetic": 21,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://coa.curriqunet.com/catalog/iq/47367",
+   "read_seconds": 955.4,
+   "run": "42892493763",
+   "levers": {
+    "program_course_file_check": 17,
+    "reconcile_steps": 13,
+    "reader_page_search": 9,
+    "ge_units_steps": 6,
+    "scorer_noncredit_hours": 5
    }
   },
   {
@@ -690,6 +1254,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 94,
+   "found": 89,
+   "extracted": 89,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 14,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://marin.elumenapp.com/catalog/current/home",
+   "read_seconds": 1050.8,
+   "run": "38984695817",
+   "levers": {
+    "program_course_file_check": 61,
+    "reconcile_steps": 6,
+    "reader_page_search": 5,
+    "ge_units_steps": 2
    }
   },
   {
@@ -718,6 +1304,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 64,
+   "found": 61,
+   "extracted": 61,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 0,
+    "arithmetic": 8,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.collegeofsanmateo.edu/current/",
+   "read_seconds": 1399.5,
+   "run": "39914644770",
+   "levers": {
+    "program_course_file_check": 34,
+    "reader_page_assignment": 5,
+    "reader_page_search": 3,
+    "reconcile_steps": 3
    }
   },
   {
@@ -745,12 +1353,38 @@
     "recommendation": "procedure_change",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "pdf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 264,
+   "found": 160,
+   "extracted": 160,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 34,
+    "invented": 23,
+    "arithmetic": 43,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf",
+   "read_seconds": 94.6,
+   "run": "39006378829",
+   "levers": {
+    "reader_page_search": 104,
+    "reconcile_steps": 38,
+    "program_course_file_check": 19,
+    "reader_page_assignment": 12,
+    "ge_units_steps": 1
    }
   },
   {
@@ -778,12 +1412,39 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "courseleaf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.collegeofthedesert.edu/"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 365,
+   "found": 358,
+   "extracted": 358,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 41,
+    "invented": 4,
+    "arithmetic": 124,
+    "repeated": 0,
+    "outcomes": 2
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
+   "read_seconds": 386.4,
+   "run": "39056007346",
+   "levers": {
+    "reconcile_steps": 43,
+    "reader_page_assignment": 35,
+    "program_course_file_check": 9,
+    "reader_page_search": 7,
+    "ge_units_steps": 1,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -812,6 +1473,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 76,
+   "found": 73,
+   "extracted": 73,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 7,
+    "invented": 1,
+    "arithmetic": 13,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
+   "read_seconds": 642.8,
+   "run": "43018781168",
+   "levers": {
+    "reconcile_steps": 7,
+    "reader_page_assignment": 5,
+    "program_course_file_check": 3,
+    "reader_page_search": 3,
+    "ge_units_steps": 2
    }
   },
   {
@@ -839,6 +1523,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 137,
+   "found": 125,
+   "extracted": 125,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 7,
+    "invented": 0,
+    "arithmetic": 40,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.cos.edu/",
+   "read_seconds": 879.9,
+   "run": "38748848139",
+   "levers": {
+    "reconcile_steps": 28,
+    "reader_page_search": 12,
+    "reader_page_assignment": 7,
+    "scorer_noncredit_hours": 4
    }
   },
   {
@@ -866,6 +1572,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 77,
+   "found": 73,
+   "extracted": 73,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 7,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/2026-27cataloghomepage",
+   "read_seconds": 1310.5,
+   "run": "42354853403",
+   "levers": {
+    "reader_page_search": 4,
+    "ge_units_steps": 3,
+    "program_course_file_check": 3,
+    "reconcile_steps": 3,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -892,6 +1621,26 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 82,
+   "found": 82,
+   "extracted": 82,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 4,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/admissions/getting-started",
+   "read_seconds": 433.5,
+   "run": "42471133430",
+   "levers": {
+    "reconcile_steps": 4,
+    "program_course_file_check": 1
    }
   },
   {
@@ -920,6 +1669,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 86,
+   "found": 81,
+   "extracted": 81,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 9,
+    "invented": 0,
+    "arithmetic": 23,
+    "repeated": 0,
+    "outcomes": 2
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf",
+   "read_seconds": 34.1,
+   "run": "39006336111",
+   "levers": {
+    "reader_page_assignment": 8,
+    "reconcile_steps": 6,
+    "reader_page_search": 5,
+    "program_course_file_check": 1
    }
   },
   {
@@ -948,6 +1719,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 105,
+   "found": 97,
+   "extracted": 97,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 9,
+    "invented": 0,
+    "arithmetic": 40,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/home",
+   "read_seconds": 785.0,
+   "run": "38979730323",
+   "levers": {
+    "reconcile_steps": 29,
+    "program_course_file_check": 26,
+    "reader_page_assignment": 9,
+    "reader_page_search": 8
    }
   },
   {
@@ -975,6 +1768,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 48,
+   "found": 48,
+   "extracted": 48,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 6,
+    "invented": 4,
+    "arithmetic": 15,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
+   "read_seconds": 28.8,
+   "run": "39035222722",
+   "levers": {
+    "program_course_file_check": 11,
+    "reconcile_steps": 10,
+    "reader_page_assignment": 2
    }
   },
   {
@@ -1002,12 +1816,38 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "pdf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 219,
+   "found": 217,
+   "extracted": 217,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 43,
+    "invented": 8,
+    "arithmetic": 67,
+    "repeated": 0,
+    "outcomes": 8
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.crc.losrios.edu/catalog",
+   "read_seconds": 171.3,
+   "run": "39047009824",
+   "levers": {
+    "reader_page_assignment": 35,
+    "reconcile_steps": 22,
+    "ge_units_steps": 17,
+    "program_course_file_check": 7,
+    "reader_page_search": 2
    }
   },
   {
@@ -1035,6 +1875,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 79,
+   "found": 76,
+   "extracted": 76,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 6,
+    "invented": 5,
+    "arithmetic": 20,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "smartcatalog",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
+   "read_seconds": 1229.3,
+   "run": "39116269641",
+   "levers": {
+    "program_course_file_check": 39,
+    "reconcile_steps": 21,
+    "reader_page_search": 3
    }
   },
   {
@@ -1063,6 +1924,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 198,
+   "found": 183,
+   "extracted": 183,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 2,
+    "invented": 0,
+    "arithmetic": 22,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://cuesta.curriqunet.com/catalog/iq/29951",
+   "read_seconds": 4604.7,
+   "run": "39063368678",
+   "levers": {
+    "reader_page_search": 15,
+    "reconcile_steps": 13,
+    "program_course_file_check": 8,
+    "reader_page_assignment": 2,
+    "ge_units_steps": 1
    }
   },
   {
@@ -1090,6 +1974,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 186,
+   "found": 182,
+   "extracted": 182,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 4,
+    "invented": 0,
+    "arithmetic": 36,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.gcccd.edu/cuyamaca/",
+   "read_seconds": 1827.5,
+   "run": "38748833332",
+   "levers": {
+    "reconcile_steps": 32,
+    "reader_page_search": 4,
+    "reader_page_assignment": 3,
+    "ge_units_steps": 1
    }
   },
   {
@@ -1117,6 +2023,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 282,
+   "found": 274,
+   "extracted": 274,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 6,
+    "invented": 0,
+    "arithmetic": 34,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.nocccd.edu/cypress-college/",
+   "read_seconds": 1911.6,
+   "run": "39853370754",
+   "levers": {
+    "reconcile_steps": 13,
+    "reader_page_search": 8,
+    "reader_page_assignment": 6,
+    "ge_units_steps": 2,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -1149,6 +2078,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 243,
+   "found": 242,
+   "extracted": 221,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 2,
+    "invented": 2,
+    "arithmetic": 15,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://deanza.elumenapp.com/catalog/2026-2027/home",
+   "read_seconds": 2213.4,
+   "run": "43072075772",
+   "levers": {
+    "paid_read": 21,
+    "reconcile_steps": 13,
+    "program_course_file_check": 5,
+    "scorer_noncredit_hours": 2,
+    "ge_units_steps": 1,
+    "reader_page_search": 1
    }
   },
   {
@@ -1180,11 +2133,37 @@
     "checked_at": "2026-11-13T09:05:00Z",
     "file": "kb/spot_checks/pr-3205-diablo-valley.check.json",
     "pr": 3205,
-    "settled_later": null
+    "comment": 6848711688,
+    "settled_later": null,
+    "held": false
    },
    "confidence": {
     "level": "strong",
     "why": "5 agree, 0 differ, 0 unreachable"
+   },
+   "listed_closed": 244,
+   "found": 214,
+   "extracted": 214,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 6,
+    "invented": 4,
+    "arithmetic": 12,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/generalinformation",
+   "read_seconds": 1567.3,
+   "run": "43379378196",
+   "levers": {
+    "reader_page_search": 30,
+    "program_course_file_check": 23,
+    "reconcile_steps": 10,
+    "ge_units_steps": 5,
+    "reader_page_assignment": 1,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -1216,13 +2195,38 @@
     "checked_at": "2026-11-13T09:05:00Z",
     "file": "kb/spot_checks/pr-3207-rescore-six.check.json",
     "pr": 3207,
+    "comment": 6848713027,
     "settled_later": [
      "32154"
-    ]
+    ],
+    "held": false
    },
    "confidence": {
     "level": "limited",
     "why": "1 agree, 0 differ, 0 unreachable (record 32154 agreed later against the captured text); fewer than 5 records checked at this college"
+   },
+   "listed_closed": 147,
+   "found": 137,
+   "extracted": 137,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 6,
+    "invented": 2,
+    "arithmetic": 33,
+    "repeated": 0,
+    "outcomes": 1
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.elac.edu/academic-resources/catalog",
+   "read_seconds": 120.7,
+   "run": "43357061643",
+   "levers": {
+    "program_course_file_check": 87,
+    "reconcile_steps": 27,
+    "reader_page_search": 10,
+    "reader_page_assignment": 4,
+    "ge_units_steps": 3
    }
   },
   {
@@ -1251,6 +2255,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 135,
+   "found": 124,
+   "extracted": 124,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 7,
+    "invented": 0,
+    "arithmetic": 38,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "acalog",
+   "catalog_year": "2026-2027",
+   "catalog_url": "http://catalog.elcamino.edu/",
+   "read_seconds": 1453.5,
+   "run": "38631686677",
+   "levers": {
+    "program_course_file_check": 54,
+    "reconcile_steps": 23,
+    "reader_page_search": 11,
+    "reader_page_assignment": 7,
+    "scorer_noncredit_hours": 5
    }
   },
   {
@@ -1279,6 +2306,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 92,
+   "found": 86,
+   "extracted": 86,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 12,
+    "invented": 0,
+    "arithmetic": 32,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2025-2026",
+   "catalog_url": "https://catalog.evc.edu/",
+   "read_seconds": 725.5,
+   "run": "38748875071",
+   "levers": {
+    "reconcile_steps": 15,
+    "reader_page_assignment": 12,
+    "reader_page_search": 6,
+    "program_course_file_check": 1
    }
   },
   {
@@ -1307,6 +2356,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 49,
+   "found": 45,
+   "extracted": 45,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 2,
+    "invented": 2,
+    "arithmetic": 10,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://frc.curriqunet.com/Catalog/iq/1452",
+   "read_seconds": 1366.4,
+   "run": "38935127435",
+   "levers": {
+    "program_course_file_check": 13,
+    "reconcile_steps": 7,
+    "reader_page_search": 4,
+    "reader_page_assignment": 1
    }
   },
   {
@@ -1334,6 +2405,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 108,
+   "found": 107,
+   "extracted": 107,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 0,
+    "arithmetic": 23,
+    "repeated": 0,
+    "outcomes": 1
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://flc.losrios.edu/2026-2027-official-catalog",
+   "read_seconds": 85.9,
+   "run": "39046850071",
+   "levers": {
+    "reconcile_steps": 12,
+    "ge_units_steps": 5,
+    "reader_page_assignment": 3,
+    "reader_page_search": 1
    }
   },
   {
@@ -1362,6 +2455,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 190,
+   "found": 185,
+   "extracted": 185,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 21,
+    "invented": 0,
+    "arithmetic": 45,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.foothill.edu/",
+   "read_seconds": 664.2,
+   "run": "39726637264",
+   "levers": {
+    "reconcile_steps": 22,
+    "program_course_file_check": 19,
+    "reader_page_assignment": 17,
+    "ge_units_steps": 7,
+    "reader_page_search": 5,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -1389,12 +2506,38 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "curriqunet",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 251,
+   "found": 237,
+   "extracted": 237,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 26,
+    "invented": 0,
+    "arithmetic": 33,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
+   "read_seconds": 2202.7,
+   "run": "38563582873",
+   "levers": {
+    "reader_page_assignment": 26,
+    "program_course_file_check": 15,
+    "reader_page_search": 14,
+    "reconcile_steps": 6,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -1423,6 +2566,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 326,
+   "found": 313,
+   "extracted": 313,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 16,
+    "invented": 12,
+    "arithmetic": 41,
+    "repeated": 1,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.nocccd.edu/fullerton-college/",
+   "read_seconds": 2078.3,
+   "run": "38675136988",
+   "levers": {
+    "reconcile_steps": 29,
+    "reader_page_search": 13,
+    "program_course_file_check": 6,
+    "ge_units_steps": 4,
+    "reader_page_assignment": 2
    }
   },
   {
@@ -1451,6 +2617,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 120,
+   "found": 106,
+   "extracted": 106,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 0,
+    "arithmetic": 29,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://gavilan.curriqunet.com/catalog/alias/2026-2027catalog",
+   "read_seconds": 898.3,
+   "run": "38948144064",
+   "levers": {
+    "reconcile_steps": 19,
+    "program_course_file_check": 15,
+    "reader_page_search": 14,
+    "reader_page_assignment": 5,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -1475,12 +2664,34 @@
     "recommendation": "capture",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "coursedog",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.glendale.edu/"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 267,
+   "found": 260,
+   "extracted": 260,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 35,
+    "invented": 2,
+    "arithmetic": 145,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2025-2026",
+   "catalog_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
+   "read_seconds": 125.1,
+   "run": "41055650373",
+   "levers": {
+    "unpark": 196
    }
   },
   {
@@ -1509,6 +2720,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 152,
+   "found": 135,
+   "extracted": 135,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 6,
+    "invented": 0,
+    "arithmetic": 33,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.cccd.edu/golden-west/",
+   "read_seconds": 1025.2,
+   "run": "39688079435",
+   "levers": {
+    "program_course_file_check": 29,
+    "reconcile_steps": 21,
+    "reader_page_search": 17,
+    "reader_page_assignment": 6,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -1541,13 +2775,40 @@
     "checked_at": "2026-11-13T09:05:00Z",
     "file": "kb/spot_checks/pr-3207-rescore-six.check.json",
     "pr": 3207,
+    "comment": 6848713027,
     "settled_later": [
      "30977"
-    ]
+    ],
+    "held": false
    },
    "confidence": {
     "level": "limited",
     "why": "1 agree, 0 differ, 0 unreachable (record 30977 agreed later against the captured text); fewer than 5 records checked at this college"
+   },
+   "listed_closed": 154,
+   "found": 145,
+   "extracted": 144,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 9,
+    "invented": 5,
+    "arithmetic": 21,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.gcccd.edu/grossmont/",
+   "read_seconds": 798.5,
+   "run": "43355014570",
+   "levers": {
+    "program_course_file_check": 33,
+    "reconcile_steps": 13,
+    "reader_page_search": 9,
+    "reader_page_assignment": 4,
+    "ge_units_steps": 2,
+    "scorer_noncredit_hours": 2,
+    "paid_read": 1
    }
   },
   {
@@ -1575,6 +2836,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 105,
+   "found": 94,
+   "extracted": 94,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 1,
+    "invented": 1,
+    "arithmetic": 11,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "coursedog",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://hartnell.catalog.prod.coursedog.com/",
+   "read_seconds": 920.3,
+   "run": "40314109801",
+   "levers": {
+    "reader_page_search": 11,
+    "program_course_file_check": 7,
+    "reconcile_steps": 7,
+    "ge_units_steps": 2,
+    "scorer_noncredit_hours": 2
    }
   },
   {
@@ -1603,6 +2887,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 142,
+   "found": 131,
+   "extracted": 131,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 6,
+    "invented": 0,
+    "arithmetic": 22,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://imperial.curriqunet.com/catalog/iq/8512/8586",
+   "read_seconds": 839.9,
+   "run": "39691376155",
+   "levers": {
+    "reader_page_search": 11,
+    "reconcile_steps": 10,
+    "program_course_file_check": 7,
+    "reader_page_assignment": 6
    }
   },
   {
@@ -1630,6 +2936,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 146,
+   "found": 144,
+   "extracted": 144,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 1,
+    "arithmetic": 19,
+    "repeated": 0,
+    "outcomes": 1
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://irvine.curriqunet.com/Catalog/iq/48953",
+   "read_seconds": 4520.7,
+   "run": "39539599944",
+   "levers": {
+    "program_course_file_check": 25,
+    "reconcile_steps": 14,
+    "reader_page_search": 2
    }
   },
   {
@@ -1657,6 +2984,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 83,
+   "found": 78,
+   "extracted": 78,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 21,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog",
+   "read_seconds": 770.2,
+   "run": "38984692790",
+   "levers": {
+    "ge_units_steps": 13,
+    "reconcile_steps": 7,
+    "reader_page_search": 5,
+    "program_course_file_check": 4
    }
   },
   {
@@ -1683,6 +3032,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 175,
+   "found": 150,
+   "extracted": 150,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 32,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://lan.curriqunet.com/catalog/view/iq/44232",
+   "read_seconds": 1549.8,
+   "run": "38935141023",
+   "levers": {
+    "reader_page_search": 25,
+    "reconcile_steps": 16,
+    "scorer_noncredit_hours": 6
    }
   },
   {
@@ -1711,6 +3081,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 201,
+   "found": 195,
+   "extracted": 195,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 2,
+    "invented": 0,
+    "arithmetic": 14,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://laspositas.curriqunet.com/catalog/iq/881",
+   "read_seconds": 2650.7,
+   "run": "42892238131",
+   "levers": {
+    "ge_units_steps": 8,
+    "reader_page_search": 6,
+    "reconcile_steps": 4,
+    "program_course_file_check": 3,
+    "reader_page_assignment": 2
    }
   },
   {
@@ -1739,6 +3132,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 73,
+   "found": 64,
+   "extracted": 64,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 0,
+    "arithmetic": 29,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf",
+   "read_seconds": 30.3,
+   "run": "39006337658",
+   "levers": {
+    "ge_units_steps": 19,
+    "reader_page_search": 9,
+    "program_course_file_check": 5,
+    "reader_page_assignment": 5,
+    "reconcile_steps": 5
    }
   },
   {
@@ -1771,6 +3187,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 82,
+   "found": 73,
+   "extracted": 73,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 0,
+    "arithmetic": 10,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/Welcome",
+   "read_seconds": 341.0,
+   "run": "38979392604",
+   "levers": {
+    "reader_page_search": 9,
+    "program_course_file_check": 8,
+    "reader_page_assignment": 5,
+    "reconcile_steps": 3
    }
   },
   {
@@ -1803,6 +3241,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 385,
+   "found": 368,
+   "extracted": 368,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 19,
+    "invented": 0,
+    "arithmetic": 51,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://lbcc-public.courseleaf.com/",
+   "read_seconds": 10701.5,
+   "run": "39891611701",
+   "levers": {
+    "reconcile_steps": 30,
+    "reader_page_assignment": 19,
+    "reader_page_search": 17,
+    "program_course_file_check": 6
    }
   },
   {
@@ -1831,6 +3291,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 258,
+   "found": 250,
+   "extracted": 250,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 14,
+    "invented": 8,
+    "arithmetic": 24,
+    "repeated": 0,
+    "outcomes": 14
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
+   "read_seconds": 116.0,
+   "run": "43212072618",
+   "levers": {
+    "reconcile_steps": 18,
+    "reader_page_search": 8,
+    "reader_page_assignment": 6,
+    "scorer_noncredit_hours": 4,
+    "program_course_file_check": 2,
+    "ge_units_steps": 1
    }
   },
   {
@@ -1859,6 +3343,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 121,
+   "found": 118,
+   "extracted": 118,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 15,
+    "invented": 4,
+    "arithmetic": 29,
+    "repeated": 0,
+    "outcomes": 1
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf",
+   "read_seconds": 63.9,
+   "run": "39006381839",
+   "levers": {
+    "reconcile_steps": 18,
+    "reader_page_assignment": 11,
+    "program_course_file_check": 3,
+    "reader_page_search": 3
    }
   },
   {
@@ -1887,6 +3393,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 140,
+   "found": 128,
+   "extracted": 128,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 2,
+    "arithmetic": 11,
+    "repeated": 0,
+    "outcomes": 5
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.lamc.edu/academics/calendar-schedules/schedules-catalog",
+   "read_seconds": 59.5,
+   "run": "39054675770",
+   "levers": {
+    "program_course_file_check": 20,
+    "reader_page_search": 12,
+    "reconcile_steps": 9,
+    "reader_page_assignment": 3
    }
   },
   {
@@ -1917,6 +3445,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 196,
+   "found": 192,
+   "extracted": 194,
+   "errors": 1,
+   "failed_checks": {
+    "coverage": 20,
+    "invented": 0,
+    "arithmetic": 30,
+    "repeated": 0,
+    "outcomes": 11
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+   "read_seconds": 165.8,
+   "run": "43355018296",
+   "levers": {
+    "reader_page_assignment": 20,
+    "program_course_file_check": 12,
+    "reconcile_steps": 9,
+    "paid_read": 2,
+    "ge_units_steps": 1,
+    "reader_page_search": 1
    }
   },
   {
@@ -1945,6 +3497,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 96,
+   "found": 94,
+   "extracted": 94,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 16,
+    "invented": 6,
+    "arithmetic": 19,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf",
+   "read_seconds": 62.0,
+   "run": "39061735776",
+   "levers": {
+    "program_course_file_check": 40,
+    "reader_page_assignment": 10,
+    "reconcile_steps": 8,
+    "ge_units_steps": 2,
+    "reader_page_search": 2
    }
   },
   {
@@ -1973,6 +3548,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 188,
+   "found": 178,
+   "extracted": 178,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 19,
+    "invented": 8,
+    "arithmetic": 37,
+    "repeated": 1,
+    "outcomes": 1
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.lattc.edu/academic-resources/catalog",
+   "read_seconds": 145.2,
+   "run": "39115770293",
+   "levers": {
+    "reconcile_steps": 24,
+    "program_course_file_check": 23,
+    "reader_page_assignment": 11,
+    "reader_page_search": 10
    }
   },
   {
@@ -1998,6 +3595,25 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 232,
+   "found": 223,
+   "extracted": 223,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 8,
+    "invented": 0,
+    "arithmetic": 21,
+    "repeated": 0,
+    "outcomes": 5
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
+   "read_seconds": 137.5,
+   "run": "41188677929",
+   "levers": {
+    "unpark": 35
    }
   },
   {
@@ -2023,6 +3639,25 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 97,
+   "found": 83,
+   "extracted": 83,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 8,
+    "invented": 8,
+    "arithmetic": 34,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://lmc.elumenapp.com/catalog/26-27/art",
+   "read_seconds": 836.2,
+   "run": "42376691800",
+   "levers": {
+    "unpark": 59
    }
   },
   {
@@ -2050,6 +3685,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 111,
+   "found": 106,
+   "extracted": 106,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 13,
+    "invented": 4,
+    "arithmetic": 23,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover",
+   "read_seconds": 925.4,
+   "run": "38935148408",
+   "levers": {
+    "reconcile_steps": 13,
+    "reader_page_assignment": 8,
+    "reader_page_search": 5,
+    "ge_units_steps": 1
    }
   },
   {
@@ -2078,6 +3735,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 123,
+   "found": 118,
+   "extracted": 118,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 26,
+    "invented": 1,
+    "arithmetic": 44,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf",
+   "read_seconds": 29.7,
+   "run": "39006339282",
+   "levers": {
+    "reader_page_assignment": 25,
+    "reconcile_steps": 11,
+    "ge_units_steps": 8,
+    "reader_page_search": 5,
+    "program_course_file_check": 2,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -2106,6 +3787,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 172,
+   "found": 163,
+   "extracted": 163,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 6,
+    "invented": 5,
+    "arithmetic": 25,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "coursedog",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.mccd.edu/",
+   "read_seconds": 1700.6,
+   "run": "39239492986",
+   "levers": {
+    "reconcile_steps": 21,
+    "program_course_file_check": 10,
+    "reader_page_search": 9,
+    "reader_page_assignment": 1
    }
   },
   {
@@ -2132,6 +3835,26 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 81,
+   "found": 81,
+   "extracted": 81,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 13,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://mc.curriqunet.com/catalog/iq/46097",
+   "read_seconds": 3791.3,
+   "run": "38935152199",
+   "levers": {
+    "reconcile_steps": 10,
+    "program_course_file_check": 2
    }
   },
   {
@@ -2160,6 +3883,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 161,
+   "found": 142,
+   "extracted": 142,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 17,
+    "invented": 0,
+    "arithmetic": 41,
+    "repeated": 0,
+    "outcomes": 2
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.miracosta.edu/",
+   "read_seconds": 1735.1,
+   "run": "39746427354",
+   "levers": {
+    "program_course_file_check": 26,
+    "reconcile_steps": 24,
+    "reader_page_search": 19,
+    "reader_page_assignment": 17
    }
   },
   {
@@ -2188,6 +3933,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 113,
+   "found": 108,
+   "extracted": 108,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 2,
+    "arithmetic": 22,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://mission.elumenapp.com/catalog/24-25/cataloghome",
+   "read_seconds": 798.0,
+   "run": "39000023893",
+   "levers": {
+    "program_course_file_check": 11,
+    "reconcile_steps": 11,
+    "reader_page_search": 5,
+    "ge_units_steps": 3,
+    "reader_page_assignment": 3
    }
   },
   {
@@ -2216,6 +3984,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 196,
+   "found": 189,
+   "extracted": 189,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 1,
+    "arithmetic": 30,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "elumen",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge",
+   "read_seconds": 897.7,
+   "run": "38477845911",
+   "levers": {
+    "reconcile_steps": 25,
+    "reader_page_search": 7,
+    "reader_page_assignment": 4,
+    "program_course_file_check": 3
    }
   },
   {
@@ -2241,6 +4031,25 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 205,
+   "found": 205,
+   "extracted": 205,
+   "errors": 3,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 0,
+    "arithmetic": 14,
+    "repeated": 2,
+    "outcomes": 1
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.mpc.edu/",
+   "read_seconds": 1588.3,
+   "run": "42195216637",
+   "levers": {
+    "unpark": 21
    }
   },
   {
@@ -2269,6 +4078,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 145,
+   "found": 144,
+   "extracted": 144,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 10,
+    "invented": 1,
+    "arithmetic": 43,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.vcccd.edu/moorpark/",
+   "read_seconds": 1448.3,
+   "run": "39600815599",
+   "levers": {
+    "reconcile_steps": 22,
+    "reader_page_assignment": 9,
+    "program_course_file_check": 6,
+    "reader_page_search": 1
    }
   },
   {
@@ -2296,6 +4127,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 144,
+   "found": 140,
+   "extracted": 140,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 2,
+    "invented": 2,
+    "arithmetic": 6,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4710",
+   "read_seconds": 1237.7,
+   "run": "38111056537",
+   "levers": {
+    "reconcile_steps": 7,
+    "program_course_file_check": 5,
+    "reader_page_search": 4
    }
   },
   {
@@ -2328,6 +4180,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 428,
+   "found": 397,
+   "extracted": 397,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 9,
+    "invented": 0,
+    "arithmetic": 29,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.mtsac.edu/",
+   "read_seconds": 2866.0,
+   "run": "39891607837",
+   "levers": {
+    "program_course_file_check": 41,
+    "reader_page_search": 31,
+    "reconcile_steps": 24,
+    "reader_page_assignment": 13
    }
   },
   {
@@ -2356,6 +4230,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 152,
+   "found": 116,
+   "extracted": 116,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 0,
+    "arithmetic": 19,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.msjc.edu/",
+   "read_seconds": 1079.1,
+   "run": "42212319155",
+   "levers": {
+    "reader_page_search": 36,
+    "program_course_file_check": 22,
+    "reconcile_steps": 16,
+    "reader_page_assignment": 3
    }
   },
   {
@@ -2384,6 +4280,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 111,
+   "found": 98,
+   "extracted": 98,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 4,
+    "invented": 0,
+    "arithmetic": 15,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.napavalley.edu/",
+   "read_seconds": 872.2,
+   "run": "38748853261",
+   "levers": {
+    "program_course_file_check": 16,
+    "reader_page_search": 13,
+    "reconcile_steps": 10,
+    "reader_page_assignment": 4
    }
   },
   {
@@ -2412,6 +4330,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 150,
+   "found": 148,
+   "extracted": 148,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 4,
+    "arithmetic": 20,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5358",
+   "read_seconds": 1379.7,
+   "run": "38113150250",
+   "levers": {
+    "reconcile_steps": 19,
+    "program_course_file_check": 11,
+    "reader_page_search": 2,
+    "reader_page_assignment": 1
    }
   },
   {
@@ -2440,6 +4380,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 101,
+   "found": 82,
+   "extracted": 82,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 4,
+    "invented": 0,
+    "arithmetic": 5,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.nocccd.edu/noce/",
+   "read_seconds": 663.9,
+   "run": "43342034608",
+   "levers": {
+    "reader_page_search": 19,
+    "program_course_file_check": 8,
+    "reader_page_assignment": 4,
+    "reconcile_steps": 1
    }
   },
   {
@@ -2468,6 +4430,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 179,
+   "found": 146,
+   "extracted": 146,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 13,
+    "invented": 1,
+    "arithmetic": 18,
+    "repeated": 0,
+    "outcomes": 8
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
+   "read_seconds": 54.1,
+   "run": "39063337090",
+   "levers": {
+    "reader_page_search": 33,
+    "program_course_file_check": 25,
+    "reader_page_assignment": 12,
+    "reconcile_steps": 5,
+    "ge_units_steps": 3
    }
   },
   {
@@ -2496,6 +4481,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 301,
+   "found": 274,
+   "extracted": 274,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 19,
+    "invented": 3,
+    "arithmetic": 46,
+    "repeated": 0,
+    "outcomes": 8
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.cccd.edu/orange-coast/",
+   "read_seconds": 2317.4,
+   "run": "43136182950",
+   "levers": {
+    "program_course_file_check": 27,
+    "reader_page_search": 27,
+    "reconcile_steps": 23,
+    "reader_page_assignment": 15,
+    "ge_units_steps": 12,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -2524,6 +4533,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 132,
+   "found": 120,
+   "extracted": 120,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 3,
+    "arithmetic": 32,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.vcccd.edu/oxnard/",
+   "read_seconds": 1299.0,
+   "run": "39612119359",
+   "levers": {
+    "reconcile_steps": 28,
+    "reader_page_search": 12,
+    "reader_page_assignment": 2,
+    "program_course_file_check": 1
    }
   },
   {
@@ -2555,6 +4586,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 68,
+   "found": 66,
+   "extracted": 66,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 28,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "acalog",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.paloverde.edu/",
+   "read_seconds": 527.3,
+   "run": "39852997888",
+   "levers": {
+    "reconcile_steps": 23,
+    "scorer_noncredit_hours": 4,
+    "reader_page_search": 2,
+    "program_course_file_check": 1
    }
   },
   {
@@ -2583,6 +4636,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 331,
+   "found": 282,
+   "extracted": 282,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 1,
+    "arithmetic": 14,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/Cover",
+   "read_seconds": 3170.1,
+   "run": "42371822077",
+   "levers": {
+    "reader_page_search": 49,
+    "reconcile_steps": 16,
+    "program_course_file_check": 11,
+    "reader_page_assignment": 1
    }
   },
   {
@@ -2611,6 +4686,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 318,
+   "found": 297,
+   "extracted": 297,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 4,
+    "invented": 0,
+    "arithmetic": 55,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://curriculum.pasadena.edu/",
+   "read_seconds": 1981.2,
+   "run": "39758679671",
+   "levers": {
+    "program_course_file_check": 49,
+    "scorer_noncredit_hours": 26,
+    "reader_page_search": 21,
+    "reconcile_steps": 18,
+    "reader_page_assignment": 4,
+    "ge_units_steps": 2
    }
   },
   {
@@ -2639,6 +4738,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 85,
+   "found": 82,
+   "extracted": 82,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 11,
+    "invented": 5,
+    "arithmetic": 40,
+    "repeated": 0,
+    "outcomes": 3
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+   "read_seconds": 31.9,
+   "run": "39046786897",
+   "levers": {
+    "reconcile_steps": 24,
+    "program_course_file_check": 6,
+    "reader_page_assignment": 6,
+    "reader_page_search": 3,
+    "ge_units_steps": 2,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -2667,6 +4790,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 200,
+   "found": 196,
+   "extracted": 196,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 6,
+    "invented": 5,
+    "arithmetic": 24,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100",
+   "read_seconds": 1422.2,
+   "run": "39616074283",
+   "levers": {
+    "reconcile_steps": 17,
+    "program_course_file_check": 13,
+    "reader_page_search": 4,
+    "reader_page_assignment": 1,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -2695,6 +4841,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 301,
+   "found": 288,
+   "extracted": 292,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 5,
+    "invented": 0,
+    "arithmetic": 15,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22177",
+   "read_seconds": 7535.4,
+   "run": "43154073220",
+   "levers": {
+    "program_course_file_check": 20,
+    "reconcile_steps": 11,
+    "reader_page_search": 9,
+    "reader_page_assignment": 4,
+    "ge_units_steps": 1
    }
   },
   {
@@ -2722,6 +4891,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 262,
+   "found": 244,
+   "extracted": 244,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 9,
+    "invented": 9,
+    "arithmetic": 15,
+    "repeated": 0,
+    "outcomes": 1
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111",
+   "read_seconds": 2130.5,
+   "run": "38108461470",
+   "levers": {
+    "reconcile_steps": 22,
+    "reader_page_search": 18,
+    "program_course_file_check": 6
    }
   },
   {
@@ -2750,6 +4940,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 207,
+   "found": 204,
+   "extracted": 204,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 25,
+    "invented": 3,
+    "arithmetic": 54,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://scc.losrios.edu/2026-2027-official-catalog",
+   "read_seconds": 209.5,
+   "run": "39047070975",
+   "levers": {
+    "reader_page_assignment": 22,
+    "program_course_file_check": 20,
+    "reconcile_steps": 19,
+    "ge_units_steps": 14,
+    "reader_page_search": 3
    }
   },
   {
@@ -2778,6 +4991,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 353,
+   "found": 321,
+   "extracted": 321,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 10,
+    "invented": 0,
+    "arithmetic": 51,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://saddleback.curriqunet.com/catalog/iq/45443",
+   "read_seconds": 8038.2,
+   "run": "38843470509",
+   "levers": {
+    "reconcile_steps": 36,
+    "reader_page_search": 32,
+    "program_course_file_check": 14,
+    "reader_page_assignment": 10,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -2810,11 +5046,38 @@
     "checked_at": "2026-11-13T09:05:00Z",
     "file": "kb/spot_checks/pr-3207-rescore-six.check.json",
     "pr": 3207,
-    "settled_later": null
+    "comment": 6848713027,
+    "settled_later": null,
+    "held": false
    },
    "confidence": {
     "level": "limited",
     "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
+   },
+   "listed_closed": 232,
+   "found": 227,
+   "extracted": 225,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 30,
+    "invented": 5,
+    "arithmetic": 61,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.valleycollege.edu/",
+   "read_seconds": 1514.5,
+   "run": "43355003065",
+   "levers": {
+    "reader_page_assignment": 25,
+    "reconcile_steps": 22,
+    "ge_units_steps": 12,
+    "scorer_noncredit_hours": 5,
+    "paid_read": 4,
+    "program_course_file_check": 4,
+    "reader_page_search": 3
    }
   },
   {
@@ -2843,6 +5106,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 191,
+   "found": 171,
+   "extracted": 171,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 4,
+    "invented": 0,
+    "arithmetic": 11,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489",
+   "read_seconds": 5466.0,
+   "run": "38347787891",
+   "levers": {
+    "reader_page_search": 20,
+    "program_course_file_check": 12,
+    "reader_page_assignment": 4,
+    "reconcile_steps": 4
    }
   },
   {
@@ -2870,6 +5155,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 120,
+   "found": 109,
+   "extracted": 109,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 19,
+    "invented": 0,
+    "arithmetic": 1,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf",
+   "read_seconds": 33.9,
+   "run": "39035224783",
+   "levers": {
+    "program_course_file_check": 24,
+    "reader_page_assignment": 19,
+    "reader_page_search": 11
    }
   },
   {
@@ -2898,6 +5204,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 184,
+   "found": 177,
+   "extracted": 177,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 2,
+    "invented": 0,
+    "arithmetic": 6,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/mesa26-27",
+   "read_seconds": 5055.4,
+   "run": "38322747831",
+   "levers": {
+    "program_course_file_check": 18,
+    "reader_page_search": 7,
+    "reader_page_assignment": 2,
+    "reconcile_steps": 2
    }
   },
   {
@@ -2925,6 +5253,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 124,
+   "found": 120,
+   "extracted": 120,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 6,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/miramar26-27",
+   "read_seconds": 4118.8,
+   "run": "38355780721",
+   "levers": {
+    "program_course_file_check": 22,
+    "reader_page_search": 4,
+    "reconcile_steps": 3
    }
   },
   {
@@ -2953,6 +5302,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 233,
+   "found": 203,
+   "extracted": 203,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 3,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "acalog",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.deltacollege.edu/",
+   "read_seconds": 1379.8,
+   "run": "40523400149",
+   "levers": {
+    "reader_page_search": 30,
+    "program_course_file_check": 18,
+    "reconcile_steps": 2,
+    "reader_page_assignment": 1
    }
   },
   {
@@ -2984,11 +5355,36 @@
     "checked_at": "2026-11-13T09:05:00Z",
     "file": "kb/spot_checks/pr-3206-san-jose-city.check.json",
     "pr": 3206,
-    "settled_later": null
+    "comment": 6848712362,
+    "settled_later": null,
+    "held": false
    },
    "confidence": {
     "level": "partial",
     "why": "4 agree, 1 differ, 0 unreachable"
+   },
+   "listed_closed": 90,
+   "found": 84,
+   "extracted": 84,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 23,
+    "invented": 15,
+    "arithmetic": 18,
+    "repeated": 1,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.sjcc.edu/",
+   "read_seconds": 1134.0,
+   "run": "43357106423",
+   "levers": {
+    "program_course_file_check": 35,
+    "reconcile_steps": 25,
+    "reader_page_assignment": 7,
+    "reader_page_search": 6,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -3017,6 +5413,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 359,
+   "found": 347,
+   "extracted": 347,
+   "errors": 1,
+   "failed_checks": {
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 39,
+    "repeated": 1,
+    "outcomes": 0
+   },
+   "platform": "curriqunet",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/36562",
+   "read_seconds": 7227.4,
+   "run": "38843461766",
+   "levers": {
+    "reconcile_steps": 21,
+    "reader_page_search": 12,
+    "program_course_file_check": 11,
+    "ge_units_steps": 1,
+    "paid_read": 1
    }
   },
   {
@@ -3045,6 +5464,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 287,
+   "found": 254,
+   "extracted": 254,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 8,
+    "invented": 0,
+    "arithmetic": 43,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.sbcc.edu/",
+   "read_seconds": 1851.4,
+   "run": "39782741424",
+   "levers": {
+    "reader_page_search": 33,
+    "program_course_file_check": 32,
+    "reconcile_steps": 25,
+    "reader_page_assignment": 7,
+    "scorer_noncredit_hours": 2
    }
   },
   {
@@ -3074,6 +5516,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 240,
+   "found": 239,
+   "extracted": 239,
+   "errors": 1,
+   "failed_checks": {
+    "coverage": 14,
+    "invented": 1,
+    "arithmetic": 78,
+    "repeated": 1,
+    "outcomes": 5
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.smc.edu/current/index.php",
+   "read_seconds": 220.6,
+   "run": "39567439681",
+   "levers": {
+    "reconcile_steps": 41,
+    "program_course_file_check": 16,
+    "reader_page_assignment": 13,
+    "paid_read": 1,
+    "reader_page_search": 1
    }
   },
   {
@@ -3103,12 +5568,38 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "pdf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 279,
+   "found": 273,
+   "extracted": 268,
+   "errors": 1,
+   "failed_checks": {
+    "coverage": 56,
+    "invented": 11,
+    "arithmetic": 78,
+    "repeated": 2,
+    "outcomes": 1
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
+   "read_seconds": 337.2,
+   "run": "39037637820",
+   "levers": {
+    "reader_page_assignment": 45,
+    "reconcile_steps": 31,
+    "paid_read": 6,
+    "reader_page_search": 6,
+    "program_course_file_check": 4
    }
   },
   {
@@ -3140,11 +5631,36 @@
     "checked_at": "2026-11-13T09:05:00Z",
     "file": "kb/spot_checks/pr-3194-santiago-canyon-reread.check.json",
     "pr": 3194,
-    "settled_later": null
+    "comment": 6848711006,
+    "settled_later": null,
+    "held": false
    },
    "confidence": {
     "level": "strong",
     "why": "5 agree, 0 differ, 0 unreachable"
+   },
+   "listed_closed": 230,
+   "found": 204,
+   "extracted": 222,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 10,
+    "invented": 4,
+    "arithmetic": 24,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+   "read_seconds": 63.2,
+   "run": "43387912036",
+   "levers": {
+    "program_course_file_check": 30,
+    "reconcile_steps": 17,
+    "reader_page_search": 8,
+    "scorer_noncredit_hours": 8,
+    "reader_page_assignment": 6
    }
   },
   {
@@ -3173,6 +5689,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 137,
+   "found": 124,
+   "extracted": 124,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 21,
+    "invented": 0,
+    "arithmetic": 72,
+    "repeated": 0,
+    "outcomes": 5
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
+   "read_seconds": 104.6,
+   "run": "39006384701",
+   "levers": {
+    "reconcile_steps": 40,
+    "reader_page_assignment": 21,
+    "program_course_file_check": 13,
+    "reader_page_search": 13,
+    "ge_units_steps": 1
    }
   },
   {
@@ -3200,12 +5739,38 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "courseleaf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.sierracollege.edu/"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 125,
+   "found": 111,
+   "extracted": 111,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 11,
+    "invented": 2,
+    "arithmetic": 25,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.sierracollege.edu/",
+   "read_seconds": 293.1,
+   "run": "39993005180",
+   "levers": {
+    "program_course_file_check": 65,
+    "reader_page_search": 14,
+    "reconcile_steps": 14,
+    "reader_page_assignment": 9,
+    "ge_units_steps": 3
    }
   },
   {
@@ -3233,12 +5798,37 @@
     "recommendation": "page_read",
     "challenge": "none",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "custom",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.skylinecollege.edu/current/"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 58,
+   "found": 53,
+   "extracted": 53,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 11,
+    "invented": 0,
+    "arithmetic": 16,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.skylinecollege.edu/current/",
+   "read_seconds": 2422.4,
+   "run": "39035209486",
+   "levers": {
+    "program_course_file_check": 86,
+    "reader_page_assignment": 11,
+    "reader_page_search": 5,
+    "reconcile_steps": 2
    }
   },
   {
@@ -3270,11 +5860,36 @@
     "checked_at": "2026-11-13T09:05:00Z",
     "file": "kb/spot_checks/pr-3207-rescore-six.check.json",
     "pr": 3207,
-    "settled_later": null
+    "comment": 6848713027,
+    "settled_later": null,
+    "held": false
    },
    "confidence": {
     "level": "limited",
     "why": "1 agree, 0 differ, 0 unreachable; fewer than 5 records checked at this college"
+   },
+   "listed_closed": 163,
+   "found": 162,
+   "extracted": 162,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 25,
+    "invented": 6,
+    "arithmetic": 37,
+    "repeated": 0,
+    "outcomes": 25
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
+   "read_seconds": 131.2,
+   "run": "43355021555",
+   "levers": {
+    "reader_page_assignment": 18,
+    "reconcile_steps": 17,
+    "ge_units_steps": 8,
+    "program_course_file_check": 8,
+    "reader_page_search": 1
    }
   },
   {
@@ -3302,12 +5917,38 @@
     "recommendation": "blocked",
     "challenge": "firewall",
     "checked_at": "2026-11-13T01:26:36Z",
-    "wave": "scout-2026-11-12"
+    "wave": "scout-2026-11-12",
+    "platform": "courseleaf",
+    "catalog_year": "2026-2027",
+    "catalog_url": "https://catalog.swccd.edu/"
    },
    "spot_check": null,
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 233,
+   "found": 220,
+   "extracted": 220,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 32,
+    "invented": 2,
+    "arithmetic": 55,
+    "repeated": 0,
+    "outcomes": 1
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.swccd.edu/",
+   "read_seconds": 2152.6,
+   "run": "38563578596",
+   "levers": {
+    "program_course_file_check": 39,
+    "reader_page_assignment": 30,
+    "reconcile_steps": 21,
+    "reader_page_search": 13,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -3337,6 +5978,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 63,
+   "found": 58,
+   "extracted": 58,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 2,
+    "invented": 0,
+    "arithmetic": 24,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "smartcatalog",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://taftcollege.smartcatalogiq.com/2026-2027/2026-2027-catalog",
+   "read_seconds": 904.2,
+   "run": "39259699774",
+   "levers": {
+    "reconcile_steps": 18,
+    "program_course_file_check": 17,
+    "reader_page_search": 5,
+    "reader_page_assignment": 2,
+    "ge_units_steps": 1,
+    "paid_read": 1
    }
   },
   {
@@ -3365,6 +6030,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 178,
+   "found": 173,
+   "extracted": 173,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 3,
+    "invented": 0,
+    "arithmetic": 52,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.vcccd.edu/ventura/",
+   "read_seconds": 1598.6,
+   "run": "39622549965",
+   "levers": {
+    "reconcile_steps": 43,
+    "program_course_file_check": 6,
+    "ge_units_steps": 5,
+    "reader_page_search": 5,
+    "reader_page_assignment": 3,
+    "scorer_noncredit_hours": 1
    }
   },
   {
@@ -3393,6 +6082,30 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 201,
+   "found": 176,
+   "extracted": 176,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 9,
+    "invented": 0,
+    "arithmetic": 35,
+    "repeated": 1,
+    "outcomes": 0
+   },
+   "platform": "courseleaf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://catalog.vvc.edu/",
+   "read_seconds": 1670.7,
+   "run": "43215222441",
+   "levers": {
+    "reader_page_search": 25,
+    "program_course_file_check": 18,
+    "reconcile_steps": 15,
+    "scorer_noncredit_hours": 11,
+    "reader_page_assignment": 8,
+    "ge_units_steps": 2
    }
   },
   {
@@ -3421,6 +6134,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 228,
+   "found": 214,
+   "extracted": 214,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 20,
+    "invented": 5,
+    "arithmetic": 36,
+    "repeated": 0,
+    "outcomes": 1
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+   "read_seconds": 93.6,
+   "run": "39536207109",
+   "levers": {
+    "program_course_file_check": 17,
+    "reconcile_steps": 17,
+    "reader_page_assignment": 15,
+    "reader_page_search": 14,
+    "scorer_noncredit_hours": 5
    }
   },
   {
@@ -3450,6 +6186,29 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 142,
+   "found": 136,
+   "extracted": 134,
+   "errors": 1,
+   "failed_checks": {
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 13,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "custom_html",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://www.westvalley.edu/catalog/",
+   "read_seconds": 807.6,
+   "run": "43142245126",
+   "levers": {
+    "reconcile_steps": 9,
+    "reader_page_search": 6,
+    "ge_units_steps": 4,
+    "paid_read": 3,
+    "program_course_file_check": 3
    }
   },
   {
@@ -3477,6 +6236,27 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 65,
+   "found": 65,
+   "extracted": 65,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 4,
+    "repeated": 0,
+    "outcomes": 3
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf",
+   "read_seconds": 21.0,
+   "run": "39006340803",
+   "levers": {
+    "program_course_file_check": 4,
+    "reconcile_steps": 2,
+    "reader_page_assignment": 1
    }
   },
   {
@@ -3505,6 +6285,28 @@
    "confidence": {
     "level": "limited",
     "why": "machine checks only; no spot-check yet"
+   },
+   "listed_closed": 94,
+   "found": 93,
+   "extracted": 93,
+   "errors": 0,
+   "failed_checks": {
+    "coverage": 6,
+    "invented": 2,
+    "arithmetic": 17,
+    "repeated": 0,
+    "outcomes": 0
+   },
+   "platform": "pdf",
+   "catalog_year": "2026-2027",
+   "catalog_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf",
+   "read_seconds": 177.9,
+   "run": "39006517642",
+   "levers": {
+    "reconcile_steps": 13,
+    "program_course_file_check": 10,
+    "reader_page_assignment": 4,
+    "reader_page_search": 1
    }
   }
  ]
