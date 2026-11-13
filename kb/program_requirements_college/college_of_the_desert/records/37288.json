@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9535,
-    "output_tokens": 3119,
+    "output_tokens": 2830,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3119,
+  "output_tokens": 2830,
   "output_tokens_details": {
-   "thinking_tokens": 1461
+   "thinking_tokens": 1188
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10052,
- "ms": 26881,
- "seconds": 27.3,
+ "cost_usd": 0.09474,
+ "ms": 24971,
+ "seconds": 25.1,
  "parts": null,
  "error": null,
  "score": {
@@ -245,10 +245,10 @@
     ]
    },
    {
-    "name": "Physics sequence: PH 002A & PH 002B",
+    "name": "Required Core: PH 002A & PH 002B",
     "rule": "all",
     "minimum": null,
-    "option_group": "Physics",
+    "option_group": "Physics sequence",
     "stated": {
      "min": 8,
      "max": 8
@@ -271,10 +271,10 @@
     ]
    },
    {
-    "name": "Physics sequence: PH 003A & PH 003B",
+    "name": "Required Core: PH 003A & PH 003B",
     "rule": "all",
     "minimum": null,
-    "option_group": "Physics",
+    "option_group": "Physics sequence",
     "stated": {
      "min": 8,
      "max": 8
@@ -301,19 +301,34 @@
   "missing_explained": [
    {
     "code": "ECON 2",
-    "why": "not in the text; the catalog prints ECON C2001 Principles of Microeconomics in its place (likely the renumbered course)"
+    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics (likely common-course renumbering)"
    }
   ],
   "notes": [
-   "The top of page 235 under the running header 'Environmental Science AS-T Degree' holds the tail of a preceding program (likely Chemistry AS-T: CH 010A/B, MATH C2220, subtotal 36, degree total 63); it was ignored. The second 'Environmental Science AS-T Degree' section was read.",
-   "The section's Required Subtotal is 41 and the text also says '41 units in the major'; recorded as total_units. DEGREE TOTAL printed as 62.",
-   "The description is internally inconsistent: it says 'Completion of 62 semester units' in one paragraph and '60 CSU transferable units' in another; degree_total follows the printed DEGREE TOTAL 62.",
-   "G 001 (4 units) may be replaced by the pair GEOG 001 & GEOG 001L (Physical Geography and Lab); both recorded as alternatives with no units printed beside them.",
-   "NR 001 is printed as an alternative to G 022 with no units beside it.",
-   "The physics row prints 8 units for the pair 'PH 002A & PH 002B or PH 003A & PH 003B'; recorded as two sequence blocks in option_group 'Physics' with stated 8 and no per-course units printed.",
-   "Codes printed with leading zeros (BI 005, G 001, G 022, GEOG 001, NR 001, CH 001A) were matched to closed-list entries BI 5, G 1, G 22, GEOG 1, NR 1, CH001A.",
-   "ECON C2001 and STAT C1000 are not in the closed list; marked as catalog additions. ECON C2001 likely corresponds to closed-list ECON 2 (same title)."
+   "The first block of text on page 235 (headed 'Environmental Science AS-T Degree' by the page header, with CH 010A/010B, MATH C2220, subtotal 36, total 63 and an outcome about chemistry transfer) is the tail of the preceding Chemistry AS-T section and was not used.",
+   "The physics row 'PH 002A & PH 002B 8 or PH 003A & PH 003B' was recorded as two option blocks in option_group 'Physics sequence'; 8 units is printed for the pair, not per course, so individual course units are null. In the catalog this row sits between MATH C2210 and STAT C1000.",
+   "'G 001 4 or GEOG 001 & 001L' recorded as G 001 with alternatives GEOG 001 and GEOG 001L (taken together); units for the GEOG alternatives are not printed. NR 001 units also not printed.",
+   "total_units is the printed 'Required Subtotal 41'; degree_total is 'DEGREE TOTAL 62'. The description says 'Completion of 62 semester units' in one paragraph and '60 CSU transferable units ... and 41 units in the major' in another; reviewer should check the 60 vs 62 discrepancy.",
+   "Cal-GETC footnote: units for the major may be double counted for Cal-GETC.",
+   "BI 005, G 001, G 022, GEOG 001, NR 001 treated as the closed-list BI 5, G 1, G 22, GEOG 1, NR 1 (zero-padded numbering). ECON C2001 and STAT C1000 are not in the closed list and marked as catalog additions."
   ]
  },
- "extracted_run": "39056007346"
+ "extracted_run": "43421133593",
+ "source_sha": "adbc47a183be5690",
+ "source_codes": [
+  "BI5",
+  "CH1A",
+  "CH1B",
+  "G1",
+  "G22",
+  "GEOG1",
+  "GEOG1L",
+  "MATHC2210",
+  "NR1",
+  "PH2A",
+  "PH2B",
+  "PH3A",
+  "PH3B"
+ ],
+ "source_coverage": 0.929
 }

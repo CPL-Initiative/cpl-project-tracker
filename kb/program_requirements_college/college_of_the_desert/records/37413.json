@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Computer Information Systems",
  "award": "A.S. Degree",
- "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=154",
+ "source_url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=153",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7593,
+  "input_tokens": 7756,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7593,
-    "output_tokens": 2326,
+    "input_tokens": 7756,
+    "output_tokens": 1931,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2326,
+  "output_tokens": 1931,
   "output_tokens_details": {
-   "thinking_tokens": 1165
+   "thinking_tokens": 833
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07689,
- "ms": 20616,
- "seconds": 20.9,
+ "cost_usd": 0.06964,
+ "ms": 17167,
+ "seconds": 17.3,
  "parts": null,
  "error": null,
  "score": {
@@ -61,17 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     25.0,
     25.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    25.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -95,15 +96,15 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Computer Information Systems AS Degree (transfer preparation)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -211,13 +212,25 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page holds two sections. The first, under a heading that reads like a running header, has CIS 040 and a 23-unit elective list, ends with 'COD General Education Pattern 23' and 'DEGREE TOTAL 60', and has outcome 4 'Prepare students for entry-level employment'. It appears to be a different (non-transfer) CIS AS degree. This record reads the second section, which matches the closed list (BUMA 003, BUMA 020A, CIS 060/080/081).",
-   "The second section is cut off at the page end after 'Cal-GETC (p. 78) 34'. Any electives and the degree total (likely 60) are probably on the next page, so degree_total is left null.",
-   "'Required Subtotal 25' is recorded as the block's stated total. total_units is left null because the page does not clearly print it as the major's total, and further major units may follow on the next page.",
-   "CIS 088 is printed as an 'or' alternative to CIS 087 with no units beside it.",
-   "The catalog prints zero-padded codes (CIS 010, BUMA 003), which correspond to closed-list CIS 10 and BUMA 3.",
-   "In outcome 3, 'computer-based' is joined across a hyphenated line break."
+   "The page shows two sections both headed 'Computer Information Systems AS Degree (transfer preparation)'. The first one, at the top of page 154, ends with the outcome 'Prepare students for entry-level employment' and lists Required Units 14, Electives Units 23, COD General Education 23, and DEGREE TOTAL 60. That appears to be the Employment Prep degree carried over from page 153, so it was not recorded. The second section matches the closed list exactly and is the one recorded.",
+   "The recorded section ends at the bottom of page 153 of the catalog, right after 'Cal-GETC (p. 78) 34'. Any electives line or degree total (likely 60) printed on the next page is not in the text, so degree_total is null. A reviewer should check the following page.",
+   "'Required Subtotal 25' is recorded as total_units and as the block's stated total.",
+   "No units are printed beside the CIS 088 alternative.",
+   "The hyphenated line break in 'computer-based' was read as a single word."
   ]
  },
- "extracted_run": "39056007346"
+ "extracted_run": "43421133593",
+ "source_sha": "fdef7594f444576d",
+ "source_codes": [
+  "BUMA20A",
+  "BUMA3",
+  "CIS10",
+  "CIS53",
+  "CIS60",
+  "CIS80",
+  "CIS81",
+  "CIS87",
+  "CIS88"
+ ],
+ "source_coverage": 1.0
 }
