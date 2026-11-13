@@ -3,8 +3,8 @@
  "rule": "kb/_program_requirements_reconcile.py statewide_cal_getc (calgetc_hold)",
  "source_words": "statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13",
  "measured_on": {
-  "commit": "6a73b4337f1f29a0781d8f9fff7941cc12d9166a",
-  "date": "2026-11-13T17:51:38+00:00",
+  "commit": "9bbc0a6e8d0d62c6f5ff9fe6311f670f916f0526",
+  "date": "2026-11-13T17:55:27+00:00",
   "records": "kb/program_requirements_college/*/records/",
   "kind": "a one-time measure of the committed records; no CI step checks it"
  },
@@ -21,18 +21,17 @@
   "short": 0,
   "unknown": 3,
   "legacy_left_out": 3,
-  "fills": 13,
+  "fills": 12,
   "fills_statewide": 3,
-  "fills_college_set_step": 10,
-  "needs_a_page_read": 78,
-  "fills_not_likely_held_by_page_gate": 12,
-  "colleges_filling": 6
+  "fills_college_set_step": 9,
+  "needs_a_page_read": 79,
+  "fills_not_likely_held_by_page_gate": 11,
+  "colleges_filling": 5
  },
  "fills_by_college": {
   "Cerro Coso Community College": 6,
   "Cosumnes River College": 3,
   "College of Alameda": 1,
-  "Cuyamaca College": 1,
   "East Los Angeles College": 1,
   "Grossmont College": 1
  },
@@ -45,10 +44,6 @@
    "max": 35
   },
   "College of Alameda": {
-   "min": 34,
-   "max": 34
-  },
-  "Cuyamaca College": {
    "min": 34,
    "max": 34
   },
@@ -65,6 +60,7 @@
   "American River College",
   "Berkeley City College",
   "City College of San Francisco",
+  "Cuyamaca College",
   "Cypress College",
   "Diablo Valley College",
   "Fresno City College",
@@ -1229,12 +1225,8 @@
     "degree_total": 60,
     "standing": "overlap",
     "double_count_words": "d. 'Total Transferable Elective Units 5-10' recorded as degree_elective_units; 'Double-Counted Units 3-7' also printed (major units double-counted with Cal-GETC). Cal-GETC",
-    "route": "college set step",
-    "figure": {
-     "min": 34,
-     "max": 34
-    },
-    "fills": true
+    "route": "needs a page read",
+    "fills": false
    }
   ],
   "Cypress College": [

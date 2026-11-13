@@ -46,21 +46,6 @@
     "hold": {}
    }
   },
-  "Cuyamaca College": {
-   "why": "S648, d-calgetc-34-per-college-evidence-s648. Cuyamaca's transfer pages print their own Cal-GETC figure, 34 (Psychology AA-T 30597: 'Units for the Major 20-21, Double-Counted Units 6-9, Cal-GETC 34, Total Transferable Elective Units 11-15, Total Units 60'; Sociology AA-T 30598). The printed figure is the college's own, so a transfer degree naming Cal-GETC with no units read takes it from that page, only where the record names its pattern and degree total. Reversible by deleting this entry.",
-   "steps": [
-    {
-     "kind": "set",
-     "field": "ge_units",
-     "value": {"min": 34, "max": 34},
-     "awards": "transfer",
-     "only_with": ["ge_pattern", "degree_total"],
-     "pattern": "Cal-?\\s?GETC",
-     "source": "https://catalog.gcccd.edu//cuyamaca/associate-degree-programs-certificates/behavioral-social-sciences/psychology/psychology-transfer-aa-t/",
-     "source_words": "Cal-GETC 34 (Psychology AA-T 30597's reading of its page)"
-    }
-   ]
-  },
   "College of the Redwoods": {
    "why": "S608 SkyCondor, 2026-11-08, read Redwoods' failures by shape: 14 transfer degrees name the degree's 60 and CalGETC with no units and fail the degree check as incomplete; 8 local degrees name the 60 and no GE pattern. A free page read (college-page-read 42479757804, kb/college_reads/redwoods_ge_units.json) gave the transfer words: the Biology AS-T page prints 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis.' Redwoods' own Cal-GETC page (grad5) renders no text to the reader, so this step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Columbia's, Taft's and Los Medanos's steps are. The local degrees wait: their pages print no GE pattern or figure, and the CR-GE page (grad4) was not read. Proceeded on the recommendation; reversible by deleting this entry. S636 SkyAntennae, 2026-11-11: the 8 local degrees. COBIx found the college's 2026-2027 CRGE pattern sheet on its counseling page (#3096); read 43013608134 verified it: 'CRGE Units Required 21', 'Major Requirements and Elective Units 18+', 'Minimum Degree Units for Associate 60'. Read 43015726456 gave the local pages' own words as the capture holds them: the title line 'A.S. Degree ( 60.0 Credits )', blocks headed '(Total N)', no general education line, and on Forestry 'This program includes requirements that can be double counted for GE requirements'. Three local steps: ge_units 21; degree_total_minimum where the title prints 60.0; ge_overlap where the page says double counted. Simulated on the filed records: 6 of the 8 read equal; Registered Nursing 01831 and LVN to RN 08393 print their own totals and stay. Session call, cpl_memory d-redwoods-crge-21-s636; reversible by deleting the three local steps. The college-level gate read 'transfer' and held the local steps out (reconcile 43016437012 changed none); it now reads 'associate', and each step keeps its own gate.",
    "awards": "associate",
