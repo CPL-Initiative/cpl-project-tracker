@@ -513,13 +513,19 @@ def _prog_diff(a: dict, b: dict) -> list[str]:
     return out + (["blocks"] if a.get("blocks") != b.get("blocks") else [])
 
 
-def reconcile_run_review(plan: dict, branch: dict, main: dict, run: str, keep: dict | None = None) -> dict:
+def reconcile_run_review(plan: dict, branch: dict, main: dict, run: str, keep: dict | None = None,
+                         pages: dict | None = None, pins: dict | None = None) -> dict:
     """The whole filing of a reconcile run against main, record by record (S649, the review of #3259: a college's
     first reconcile runs every rule and rescores every record with no kept-passing guard). branch and main map a
     control number to its filed file. A changed record is kept only as an apply row taking the plan's figure and
     not passing less, or where keep names it with a rule the page text shows; every other changed record is
-    restored from main whole, so its extracted_run reverts and the reread does not post it."""
+    restored from main whole, so its extracted_run reverts and the reread does not post it.
+    pages ({cn: {"main": [...], "run": [...]}}, sources.json at the ref and the run's): a row is kept only on
+    the pages main reads it from (S650, finding B1). pins (the run's capture pdf.pinned): a pinned program
+    whose pin was refused is restored, never kept from another page (finding A). A held row is restored
+    whatever else names it (finding B2)."""
     keep = keep or {}
+    held = set(plan.get("held") or [])
     fig = (plan.get("step") or {}).get("value") if plan.get("route") == "college set step" else dict(R.CAL_GETC_UNITS)
     rows = []
     for cn in sorted(set(branch) | set(main)):
@@ -537,6 +543,18 @@ def reconcile_run_review(plan: dict, branch: dict, main: dict, run: str, keep: d
             row["decision"], row["why"] = "restore", "present on one side only"
         elif row["passes_main"] and not row["passes_run"]:
             row["decision"], row["why"] = "restore", "a passing record would fail"
+        elif cn in held:
+            # Finding B2: a held row is restored even where the apply list or a keep also names it.
+            row["decision"] = "restore"
+            row["why"] = "held in the plan: %s" % next((r["held"] for r in plan.get("rows") or []
+                                                         if r["control_number"] == cn and r.get("held")), "")
+        elif (pins or {}).get(cn) and not pins[cn].get("bound"):
+            row["decision"], row["why"] = "restore", "its pdf_pages pin was refused: %s" % pins[cn].get("why")
+        elif pages is not None and (pages.get(cn) or {}).get("main") != (pages.get(cn) or {}).get("run"):
+            # Finding B1: a row the fresh capture moved says nothing about main's page.
+            row["decision"] = "restore"
+            row["why"] = "the run read it from other pages (%s, main %s)" % ((pages.get(cn) or {}).get("run"),
+                                                                           (pages.get(cn) or {}).get("main"))
         elif cn in plan.get("apply") or []:
             ok = ge == fig and set(row["fields"]) <= {"ge_units"}
             row["decision"] = "keep" if ok else "restore"
@@ -548,10 +566,7 @@ def reconcile_run_review(plan: dict, branch: dict, main: dict, run: str, keep: d
             row["decision"], row["why"] = "keep", keep[cn]
         else:
             row["decision"] = "restore"
-            row["why"] = ("held in the plan: %s" % next((r["held"] for r in plan.get("rows") or []
-                                                           if r["control_number"] == cn and r.get("held")), "")
-                          if cn in (plan.get("held") or []) else
-                          "not an apply row: the first reconcile's other rules or rescore, kept as main files it")
+            row["why"] = "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
         rows.append(row)
     # What the run itself scored, beside the dry run's figures: the run rescored on the fresh page, so a hold's cost
     # and an apply row's passing read from it (the dry run keeps a filed program verdict the rescore can change).
@@ -560,7 +575,7 @@ def reconcile_run_review(plan: dict, branch: dict, main: dict, run: str, keep: d
             "restored": [r["control_number"] for r in rows if r["decision"] == "restore"],
             "fail_to_pass_kept": [r["control_number"] for r in rows if r["decision"] == "keep"
                                   and r["passes_run"] and not r["passes_main"]],
-            "held_would_pass": [r["control_number"] for r in rows if r["control_number"] in (plan.get("held") or [])
+            "held_would_pass": [r["control_number"] for r in rows if r["control_number"] in held
                                 and r["passes_run"] and not r["passes_main"]],
             "pass_to_fail_kept": [r["control_number"] for r in rows if r["decision"] == "keep"
                                   and r["passes_main"] and not r["passes_run"]],
@@ -651,7 +666,14 @@ def main(argv=None) -> int:
             branch = {n[:-5]: json.load(open(os.path.join(here, n))) for n in os.listdir(here) if n.endswith(".json")}
             main = {cn: json.loads(raw) for cn, raw in main_raw.items()}
             keep = dict(k.split("=", 1) for k in args.keep)
-            review = reconcile_run_review(plan, branch, main, args.run, keep)
+            run_src = json.load(open(os.path.join(college_dir, "sources.json")))
+            main_src = json.loads(at_ref("sources.json"))
+            pages = {e.get("control_number"): {"main": _pages(e)} for e in main_src}
+            for e in run_src:
+                pages.setdefault(e.get("control_number"), {})["run"] = _pages(e)
+            pins = (json.load(open(os.path.join(college_dir, "capture.json"))).get("pdf") or {}).get("pinned") or {}
+            review = reconcile_run_review(plan, branch, main, args.run, keep, pages, pins)
+            review["pins"] = pins
             for r in review["records"]:
                 print("%s %-7s main %s run %s  %s  %s" % (r["control_number"], r["decision"], r["passes_main"],
                                                         r["passes_run"], ",".join(r["fields"]), r["why"][:90]))
@@ -685,10 +707,17 @@ def main(argv=None) -> int:
             review["files"] = ("sources.json and capture.json are %s's but for the kept programs' entries; "
                                "summary.json is %s's with its counts taken again from the records"
                                % (args.against, args.against))
+        if prior and prior.get("run") != review.get("run"):
+            # A later run's review keeps the earlier one beside it (S650: Cosumnes River's second reconcile).
+            plan["earlier_run_reviews"] = (plan.get("earlier_run_reviews") or []) + [prior]
         plan["run_review"] = review
         with open(path, "w") as fh:
             fh.write(json.dumps(plan, indent=1) + "\n")
         print(json.dumps({k: review.get(k) for k in ("run", "changed", "kept", "restored")}))
+        for cn, pin in sorted((review.get("pins") or {}).items()):
+            # Read before the reread: a pin not bound leaves its program as main files it (S650, finding A).
+            print("pin %s: page %s, bound %s%s" % (cn, pin.get("page"), pin.get("bound"),
+                                                   "" if pin.get("bound") else " (%s)" % pin.get("why")))
         if review.get("pages_moved_restored") is not None:
             print("pages moved by the run, restored: %s" % ", ".join(
                 "%s %s->%s" % (m["control_number"], m["main"], m["run"]) for m in review["pages_moved_restored"]))

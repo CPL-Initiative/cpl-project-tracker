@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T02:40:28Z",
+ "written_at": "2026-11-14T10:41:24Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14596,
+     "n": 14598,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 2866,
+     "n": 2864,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -68,8 +68,8 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 14596,
-    "failing": 2866,
+    "complete": 14598,
+    "failing": 2864,
     "unread": 2820,
     "records": 19129,
     "colleges": 118,
@@ -375,7 +375,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T20:24:41Z",
+    "at": "2026-11-13T16:10:11-08:00",
     "every_hours": null
    },
    "facts": {
@@ -535,7 +535,7 @@
    ],
    "pair": [
     {
-     "n": 7727,
+     "n": 7728,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -545,16 +545,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7727,
+    "credentials": 7728,
     "issuers": 1525,
-    "in_map": 206,
+    "in_map": 208,
     "articulated": 160,
-    "with_issuer_skills": 205,
-    "tech_giant": 567
+    "with_issuer_skills": 213,
+    "tech_giant": 568
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-13T00:00:00Z",
+    "at": "2026-11-14T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -573,7 +573,7 @@
    ],
    "pair": [
     {
-     "n": 41949,
+     "n": 42376,
      "of": null,
      "words": "outcomes read from 11,599 courses at 16 colleges",
      "open": "#coci-lookup"
@@ -583,7 +583,7 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 41949,
+    "outcomes": 42376,
     "courses": 11599,
     "colleges": [
      "cabrillo",
@@ -607,7 +607,7 @@
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-12T07:42:29Z",
+    "at": "2026-11-14T10:20:16Z",
     "every_hours": null
    },
    "sources": [
@@ -621,7 +621,7 @@
    "links": [],
    "pair": [
     {
-     "n": 205,
+     "n": 213,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -631,11 +631,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 205
+    "with_issuer_skills": 213
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-13T00:00:00Z",
+    "at": "2026-11-14T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -750,7 +750,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2866,
+    "n": 2864,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"

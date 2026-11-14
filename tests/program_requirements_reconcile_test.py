@@ -1425,7 +1425,9 @@ check("Cosumnes River's apply plan: the statewide route fills 30566, 33072 and 3
       and _cr_plan["held"] == ["31055", "31995", "41992", "46419"] and _cr_plan["restore_before_reread"] == []
       and _cr_plan["counts"]["pass_to_fail"] == 0 and _cr_plan["first_reconcile"] is True
       and _cr_plan["page_read"]["run"] == "43519918667")
-_cr_rv = _cr_plan["run_review"]
+# A later reconcile's review keeps this one in earlier_run_reviews (S650).
+_cr_rv = next(r for r in [_cr_plan["run_review"]] + (_cr_plan.get("earlier_run_reviews") or [])
+              if r.get("run") == "43521338550")
 check("Cosumnes River's first reconcile (43521338550): only 39656 filled and is kept; the 14 rescored records restored; "
       "none passing to failing",
       _cr_rv["run"] == "43521338550" and _cr_rv["kept"] == ["39656"] and len(_cr_rv["restored"]) == 14
@@ -1449,6 +1451,150 @@ _cr_why, _cr_read = R.calgetc_hold(_cr_rec, _cr_text, "A.A- T Degree", "Psycholo
 check("Cosumnes River 30566: the section ends at the sibling's heading, before a course's 'Cal-GETC Area' line, and fills",
       _cr_why is None and "(Cal-GETC) Requirement" in _cr_read["words"]
       and R.calgetc_hold(_cr_rec, _cr_text, "A.A- T Degree", "Psychology", [], _cr_conf, "30566")[0] is not None)
+
+# Cosumnes River's own pages for 30566 and 33072 (S650): reconcile 43521338550's fresh capture took them to pp.467-470
+# and 94-96, so neither took the 34. The college's entry names each page with the words the filed capture of
+# 2026-10-17 opened on there (pdf_pages), and the capture binds a pin only while the page prints them.
+print("Cosumnes River's pinned pages (S650)")
+import re as _re  # noqa: E402
+import shutil as _shutil  # noqa: E402
+import tempfile as _tempfile  # noqa: E402
+_CR = "Cosumnes River College"
+_CR_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "cosumnes_river")
+_cr_pins = _cr_conf.get("pdf_pages") or {}
+_cr_capture = json.load(open(os.path.join(_CR_DIR, "capture.json")))
+_cr_picks = {p["control_number"]: p for p in _cr_capture["pdf"]["picks"]}
+check("the entry pins 30566 to p.552 and 33072 to p.404, and nothing else",
+      {cn: v["page"] for cn, v in _cr_pins.items()} == {"30566": 552, "33072": 404})
+check("each pin's words are what the filed capture opened on, on the pinned page, and its evidence names both runs",
+      all(" ".join(v["words"].split()) in _cr_picks[cn]["opens"] and _cr_picks[cn]["pages"][0] == v["page"]
+          and "43519918667" in v["evidence"] and "43521338550" in v["evidence"] for cn, v in _cr_pins.items()))
+check("each pinned page is the page the filed record was extracted from",
+      all(as_read(os.path.join(_CR_DIR, "records", cn + ".json"))["source_url"].endswith("#page=%d" % v["page"])
+          for cn, v in _cr_pins.items()))
+check("no other college names pdf_pages", [k for k, v in R.load_steps().items() if v.get("pdf_pages")] == [_CR])
+_fx = json.load(open(os.path.join(ROOT, "tests", "fixtures", "program_requirements_cosumnes_pinned_pages.json")))
+_fx_pages = [""] * _fx["pages_total"]
+for _k, _v in _fx["pages"].items():
+    _fx_pages[int(_k) - 1] = _v
+_fx_progs = {p["control_number"]: dict(p, closed_list=[{"code": c} for c in p["courses"]]) for p in _fx["programs"]}
+_fx_want = {"30566": (552, 467), "33072": (404, 94)}
+for _cn, (_own, _decoy) in _fx_want.items():
+    _p = _fx_progs[_cn]
+    _plain = C.pdf_best("https://x.edu/c.pdf", _fx_pages, _p, _p["closed_list"], "pypdf")
+    _head, _why = C.pdf_pinned_heading(_fx_pages, _p, _cr_pins[_cn])
+    _got = C.pdf_best("https://x.edu/c.pdf", _fx_pages, _p, _p["closed_list"], "pypdf", _head)
+    check("%s: on the fixture the heading picker takes the decoy p.%d" % (_cn, _decoy), _plain["pages"][0] == _decoy)
+    check("%s: the pin binds p.%d, its window opens on the pin's words and names every listed course" % (_cn, _own),
+          _why is None and _got["pages"][0] == _own and _got["url"].endswith("#page=%d" % _own)
+          and _re.sub(r"\s+", " ", _got["text"]).startswith("[page %d] %s" % (_own, _cr_pins[_cn]["words"]))
+          and _got["coverage"] == 1.0)
+_p30 = _fx_progs["30566"]
+check("a pinned page that lacks the words binds nothing, and says so",
+      C.pdf_pinned_heading(_fx_pages[:551] + ["Degree Requirements\nPSYC C1000 3"], _p30, _cr_pins["30566"])
+      == (None, "the quoted words are not on PDF page 552"))
+check("a pinned page that lacks a title word binds nothing",
+      C.pdf_pinned_heading(_fx_pages, dict(_p30, title="Sociology"), _cr_pins["30566"])[0] is None)
+check("a pin past the file's last page binds nothing",
+      C.pdf_pinned_heading(_fx_pages[:400], _p30, _cr_pins["30566"])[0] is None)
+check("no pin, no heading", C.pdf_pinned_heading(_fx_pages, _p30, None) == (None, None))
+# The pinned text is what reconcile reads: the filed records take the statewide 34 on it.
+_cr_family = [{"control_number": f.get("control_number"), "title": f.get("title"),
+               "section_heading": ((f.get("record") or {}).get("program") or {}).get("section_heading")}
+              for f in (as_read(os.path.join(_CR_DIR, "records", n)) for n in sorted(os.listdir(os.path.join(_CR_DIR, "records"))))]
+for _cn, (_own, _decoy) in _fx_want.items():
+    _f = as_read(os.path.join(_CR_DIR, "records", _cn + ".json"))
+    _sibs = [x for x in _cr_family if x["control_number"] != _cn]
+    _head, _ = C.pdf_pinned_heading(_fx_pages, _fx_progs[_cn], _cr_pins[_cn])
+    _txt = C.pdf_best("https://x.edu/c.pdf", _fx_pages, _fx_progs[_cn], _fx_progs[_cn]["closed_list"], "pypdf", _head)["text"]
+    _new, _notes = R.reconcile(_f["record"], _txt, _CR, _f["award"], title=_f["title"], siblings=_sibs,
+                               control_number=_cn, steps=R.load_steps())
+    check("%s: on its pinned page the filed record takes the statewide 34 and nothing else moves" % _cn,
+          _new["program"]["ge_units"] == {"min": 34, "max": 34} and [n["field"] for n in _notes] == ["ge_units"])
+
+
+def _cr_capture_run(pages):
+    """capture_pdf on the fixture under Cosumnes River's own entry, the hand-filed file stood in by the pages."""
+    tmp = _tempfile.mkdtemp()
+    os.makedirs(os.path.join(tmp, "sources"))
+    programs = [dict(p, shape="adt", status="active", load_id="1") for p in _fx_progs.values()]
+    saved = C.read_hand_filed
+    C.read_hand_filed = lambda hf: {"url": "https://x.edu/c.pdf", "access": "hand_filed", "pages": pages,
+                                    "extractor": "pypdf"}
+    try:
+        report = {}
+        C.capture_pdf(_CR, tmp, programs, {"catalog_url": "https://x.edu/c.pdf"}, report,
+                      {"meta": {"url": "https://x.edu/c.pdf", "fetched_by": "test", "fetched_at": "2026-11-14", "sha256": "0"}})
+        srcs = {n[:-5]: json.load(open(os.path.join(tmp, "sources", n))) for n in os.listdir(os.path.join(tmp, "sources"))}
+        return report, srcs
+    finally:
+        C.read_hand_filed = saved
+        _shutil.rmtree(tmp)
+
+
+_rep, _srcs = _cr_capture_run(_fx_pages)
+check("capture_pdf: both programs are read from their own pages, the picks marked pinned",
+      _srcs["30566"]["source"]["pages"][0] == 552 and _srcs["33072"]["source"]["pages"][0] == 404
+      and all(p.get("pinned") for p in _rep["pdf"]["picks"])
+      and _rep["pdf"]["pinned"] == {"30566": {"page": 552, "bound": True}, "33072": {"page": 404, "bound": True}})
+_moved = list(_fx_pages)
+_moved[551] = _moved[551].replace("ADTs also require", "Transfer degrees require")
+_rep2, _srcs2 = _cr_capture_run(_moved)
+check("capture_pdf: a refused pin gives its program no fresh text (never the picker's p.467), and the capture says why",
+      _srcs2["30566"]["method"] == "not_found" and not _srcs2["30566"].get("text")
+      and "pin is refused" in _srcs2["30566"]["near_miss"]["why"]
+      and _srcs2["33072"]["source"]["pages"][0] == 404
+      and _rep2["pdf"]["pinned"]["30566"] == {"page": 552, "bound": False,
+                                              "why": "the quoted words are not on PDF page 552"})
+
+# The review of the run, on the fixture's captures (S650, the second reader's findings A, B1, B2).
+print("Cosumnes River's review: only the two pinned rows, on main's pages (S650)")
+_rv_main = {cn: as_read(os.path.join(_CR_DIR, "records", cn + ".json")) for cn in ("30566", "33072", "31055")}
+_rv_branch = {}
+for _cn in ("30566", "33072"):
+    _f = _rv_main[_cn]
+    _txt = _srcs[_cn]["text"]
+    _new, _notes = R.reconcile(_f["record"], _txt, _CR, _f["award"], title=_f["title"],
+                               siblings=[x for x in _cr_family if x["control_number"] != _cn],
+                               control_number=_cn, steps=R.load_steps())
+    _rv_branch[_cn] = dict(_f, record=_new, reconciled=_notes, extracted_run="9")
+_f31 = _rv_main["31055"]
+_rv_branch["31055"] = dict(_f31, record=dict(_f31["record"], program=dict(_f31["record"]["program"],
+                                                                           ge_units={"min": 34, "max": 34})),
+                           extracted_run="9")
+_own = {cn: _srcs[cn]["source"]["pages"] for cn in ("30566", "33072")}
+_pg = {cn: {"main": p, "run": p} for cn, p in _own.items()}
+_pg["31055"] = {"main": [1], "run": [1]}
+_pins_ok = _rep["pdf"]["pinned"]
+_rv = RM2.reconcile_run_review(_cr_plan, _rv_branch, _rv_main, "9", None, _pg, _pins_ok)
+check("both pinned rows are kept on main's pages, and the held overlap 31055 is restored",
+      _rv["kept"] == ["30566", "33072"] and _rv["restored"] == ["31055"] and _rv["fail_to_pass_kept"] == []
+      and _rv["pass_to_fail_kept"] == [])
+_pg_moved = dict(_pg, **{"30566": {"main": _own["30566"], "run": [467]}})
+_rv_b1 = RM2.reconcile_run_review(_cr_plan, _rv_branch, _rv_main, "9", None, _pg_moved, _pins_ok)
+check("B1: a row the fresh capture moved is restored though only ge_units changed",
+      _rv_b1["kept"] == ["33072"] and "30566" in _rv_b1["restored"]
+      and "other pages" in next(r["why"] for r in _rv_b1["records"] if r["control_number"] == "30566"))
+_rv_a = RM2.reconcile_run_review(_cr_plan, _rv_branch, _rv_main, "9", None, _pg, _rep2["pdf"]["pinned"])
+check("A: a pinned program whose pin was refused is restored",
+      _rv_a["kept"] == ["33072"] and "30566" in _rv_a["restored"]
+      and "pin was refused" in next(r["why"] for r in _rv_a["records"] if r["control_number"] == "30566"))
+_plan_b2 = dict(_cr_plan, held=_cr_plan["held"] + ["30566"])
+_rv_b2 = RM2.reconcile_run_review(_plan_b2, _rv_branch, _rv_main, "9", {"31055": "a keep naming a held row"}, _pg,
+                                  _pins_ok)
+check("B2: a row on the held list is restored though the apply list or a keep names it",
+      _rv_b2["kept"] == ["33072"] and set(_rv_b2["restored"]) == {"30566", "31055"})
+_plan_noheld = {k: v for k, v in _cr_plan.items() if k != "held"}
+_rv_nh = RM2.reconcile_run_review(_plan_noheld, _rv_branch, _rv_main, "9", None, _pg, _pins_ok)
+check("B2: with no held list the review runs, and 31055 (no apply row, no keep) is still restored",
+      _rv_nh["kept"] == ["30566", "33072"] and _rv_nh["restored"] == ["31055"])
+check("Cosumnes River's next run names the two pinned rows alone; the seven rescore-only rows are out and wait",
+      _cr_plan["next_run"]["apply"] == ["30566", "33072"] and "rescore_apply" not in _cr_plan
+      and "rescore_apply" not in _cr_plan["next_run"] and _cr_plan["next_run"]["expect"]["kept"] == ["30566", "33072"]
+      and _cr_plan["next_run"]["expect"]["pins"] == {"30566": {"page": 552, "bound": True},
+                                                      "33072": {"page": 404, "bound": True}}
+      and all(cn in _cr_plan["next_run"]["not_in_this_run"]
+              for cn in ("04602", "04607", "04614", "07305", "11319", "11338", "33542")))
 
 # Glendale's 2026-27 site read beside its 2025-2026 PDF's units (S646): where the page's own call priced the
 # read, a code the call does not price stays unpriced, and the note says so instead of naming the call.

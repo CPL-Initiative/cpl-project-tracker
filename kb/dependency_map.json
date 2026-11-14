@@ -498,7 +498,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 423
+     "line": 407
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -825,7 +825,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 447
+     "line": 431
     }
    ],
    "main_committers": []
@@ -915,7 +915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4228,
+     "line": 4241,
      "tabs": [
       "exhibits"
      ]
@@ -1142,7 +1142,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1729
+     "line": 1732
     },
     {
      "id": "module:admin.js",
@@ -1344,6 +1344,13 @@
      "direction": "read",
      "how": "url",
      "line": 39
+    },
+    {
+     "id": "script:veteran-sprint-map/build_selfcontained.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 190
     },
     {
      "id": "worker:cloudflare-worker-proxy.js",
@@ -1617,6 +1624,13 @@
      "line": 39
     },
     {
+     "id": "script:veteran-sprint-map/build_selfcontained.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 194
+    },
+    {
      "id": "worker:cloudflare-worker-proxy.js",
      "kind": "worker",
      "direction": "read",
@@ -1716,6 +1730,13 @@
      "tabs": [
       "sierra-training"
      ]
+    },
+    {
+     "id": "script:veteran-sprint-map/build_selfcontained.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 195
     }
    ],
    "main_committers": []
@@ -1839,7 +1860,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2382
+     "line": 2385
     }
    ],
    "main_committers": []
@@ -2489,7 +2510,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1339
+     "line": 1342
     }
    ],
    "main_committers": []
@@ -2508,7 +2529,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1684
+     "line": 1687
     },
     {
      "id": "module:college_briefing.js",
@@ -3210,7 +3231,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1740
+     "line": 1743
     },
     {
      "id": "module:dashboard_filters.js",
@@ -3471,6 +3492,13 @@
      "direction": "read",
      "how": "url",
      "line": 41
+    },
+    {
+     "id": "script:veteran-sprint-map/build_selfcontained.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 181
     }
    ],
    "main_committers": []
@@ -3519,6 +3547,13 @@
       "map-queue",
       "map-users"
      ]
+    },
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 165
     }
    ],
    "main_committers": []
@@ -4436,7 +4471,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 347
+     "line": 483
     }
    ],
    "main_committers": []
@@ -4520,7 +4555,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2046
+     "line": 2049
     }
    ],
    "main_committers": []
@@ -5662,7 +5697,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1937
+     "line": 1940
     },
     {
      "id": "module:admin.js",
@@ -5899,7 +5934,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2241,
+     "line": 2254,
      "tabs": [
       "exhibits"
      ]
@@ -6289,7 +6324,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3552,
+     "line": 3565,
      "tabs": [
       "exhibits"
      ]
@@ -6525,7 +6560,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4220,
+     "line": 4233,
      "tabs": [
       "exhibits"
      ]
@@ -6618,7 +6653,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4505,
+     "line": 4518,
      "tabs": [
       "exhibits"
      ]
@@ -6862,7 +6897,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2321
+     "line": 2324
     },
     {
      "id": "module:college_briefing.js",
@@ -7075,7 +7110,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1399
+     "line": 1402
     },
     {
      "id": "module:cpl_funding.js",
@@ -7938,7 +7973,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 225
+     "line": 248
     }
    ],
    "served": false,
@@ -7951,7 +7986,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 679
+     "line": 749
     }
    ],
    "served": false,
@@ -8462,7 +8497,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4794,
+     "line": 4807,
      "tabs": [
       "exhibits"
      ]
@@ -8526,7 +8561,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5630
+     "line": 5679
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8546,7 +8581,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5680
+     "line": 5729
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -13942,7 +13977,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 144
+     "line": 145
     }
    ],
    "served": true,
@@ -13977,7 +14012,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 661
+     "line": 645
     }
    ],
    "served": false,
@@ -13990,7 +14025,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3330,
+     "line": 3343,
      "tabs": [
       "exhibits"
      ]
@@ -14162,7 +14197,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1106,
+     "line": 1119,
      "tabs": [
       "exhibits"
      ]
@@ -14181,7 +14216,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -14219,7 +14254,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -15712,7 +15747,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4242,
+     "line": 4255,
      "tabs": [
       "exhibits"
      ]
@@ -15823,7 +15858,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3325,
+     "line": 3338,
      "tabs": [
       "exhibits"
      ]
@@ -16018,7 +16053,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3739,
+     "line": 3752,
      "tabs": [
       "exhibits"
      ]
@@ -16428,7 +16463,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 145
+     "line": 146
     }
    ],
    "served": false,
@@ -17190,7 +17225,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6061
+     "line": 6110
     }
    ],
    "served": true,
@@ -19400,7 +19435,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 146
+     "line": 147
     }
    ],
    "served": false,
@@ -19413,7 +19448,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 148
+     "line": 149
     }
    ],
    "served": true,
@@ -19511,7 +19546,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 139
+     "line": 140
     }
    ],
    "served": true,
@@ -19588,7 +19623,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 140
+     "line": 141
     },
     {
      "id": "script:kb/_harvest_gap_census.py",
@@ -20879,7 +20914,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5880
+     "line": 5929
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20899,7 +20934,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5099
+     "line": 5148
     }
    ],
    "served": false,
@@ -21516,7 +21551,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5967
+     "line": 6016
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -22472,7 +22507,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 431
+     "line": 463
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -23440,7 +23475,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2142,
+     "line": 2155,
      "tabs": [
       "exhibits"
      ]
@@ -26929,7 +26964,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2143,
+     "line": 2156,
      "tabs": [
       "exhibits"
      ]
@@ -27264,14 +27299,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 648
+     "line": 784
     },
     {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 648
+     "line": 784
     }
    ],
    "served": true,
@@ -27846,7 +27881,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 623,
+     "line": 636,
      "tabs": [
       "exhibits"
      ]
@@ -27876,7 +27911,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 509,
+     "line": 522,
      "tabs": [
       "exhibits"
      ]
@@ -28259,7 +28294,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6035
+     "line": 6084
     }
    ],
    "main_committers": []
@@ -28271,7 +28306,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6144
+     "line": 6193
     }
    ],
    "main_committers": []
@@ -29769,7 +29804,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 599,
+     "line": 612,
      "tabs": [
       "exhibits"
      ]
@@ -29784,7 +29819,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 622,
+     "line": 635,
      "tabs": [
       "exhibits"
      ]
@@ -30387,7 +30422,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 426,
+     "line": 427,
      "tabs": [
       "exhibits"
      ]
@@ -30397,7 +30432,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 757,
+     "line": 770,
      "tabs": [
       "exhibits"
      ]

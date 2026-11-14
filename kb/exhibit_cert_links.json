@@ -1609,84 +1609,84 @@
    "issuer": "National Center for Construction Education and Research (NCCER)",
    "family": "NCCER"
   },
-  "ITC7629": {
+  "ITC7630": {
    "code": null,
    "name": "Airplane Instrument Rating",
    "catalog_name": "Airplane Instrument Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7632": {
+  "ITC7633": {
    "code": null,
    "name": "Certified Flight Instrument Instructor Rating",
    "catalog_name": "Certified Flight Instrument Instructor Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7633": {
+  "ITC7634": {
    "code": null,
    "name": "Commercial Pilot",
    "catalog_name": "Commercial Pilot",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7637": {
+  "ITC7638": {
    "code": null,
    "name": "Commercial Pilot, Helicopter Rating",
    "catalog_name": "Commercial Pilot, Helicopter Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7640": {
+  "ITC7641": {
    "code": null,
    "name": "Helicopter Class Rating",
    "catalog_name": "Helicopter Class Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7641": {
+  "ITC7642": {
    "code": null,
    "name": "Instrument - Powered-lift Rating",
    "catalog_name": "Instrument - Powered-lift Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7643": {
+  "ITC7644": {
    "code": null,
    "name": "Instrument-Helicopter Rating",
    "catalog_name": "Instrument-Helicopter Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7648": {
+  "ITC7649": {
    "code": null,
    "name": "Private Pilot",
    "catalog_name": "Private Pilot",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7651": {
+  "ITC7652": {
    "code": null,
    "name": "Private Pilot, Helicopter Rating",
    "catalog_name": "Private Pilot, Helicopter Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7652": {
+  "ITC7653": {
    "code": null,
    "name": "Remote Pilot Certificate",
    "catalog_name": "Remote Pilot Certificate",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7656": {
+  "ITC7657": {
    "code": null,
    "name": "Drone Pilot Certification",
    "catalog_name": "Drone Pilot Certification",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7659": {
+  "ITC7660": {
    "code": null,
    "name": "Private Pilot Certificate",
    "catalog_name": "Private Pilot Certificate",
@@ -3069,23 +3069,23 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC7632"
+    "ITC7633"
    ]
   },
   "FAA Commercial Pilot Certificate": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC7633"
+    "ITC7634"
    ]
   },
   "FAA Instrument Rating": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC7629",
-    "ITC7643",
-    "ITC7641"
+    "ITC7630",
+    "ITC7644",
+    "ITC7642"
    ]
   },
   "FAA Mechanic Certificate — Airframe Rating": {
@@ -3121,25 +3121,25 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC7651",
-    "ITC7637",
-    "ITC7640"
+    "ITC7652",
+    "ITC7638",
+    "ITC7641"
    ]
   },
   "FAA Private Pilot Certificate": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC7648",
-    "ITC7659"
+    "ITC7649",
+    "ITC7660"
    ]
   },
   "FAA Remote Pilot Certificate (Part 107)": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC7652",
-    "ITC7656"
+    "ITC7653",
+    "ITC7657"
    ]
   },
   "Heating and Air Conditioning (ASE A7 standards)": {
@@ -3692,8 +3692,8 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC7648",
-    "ITC7659"
+    "ITC7649",
+    "ITC7660"
    ]
   },
   "Project Management Professional (PMP)": {

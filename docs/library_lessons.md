@@ -1110,3 +1110,20 @@ Verbatim from the lane's Next list, moved at the S646 checkpoint when Ally Barke
   of 2026-11-11 15:30Z, approved 15:31Z).** ELL IET Version 5's form, from the vault source. The record moved by guarded
   UPDATE (version `3`, a fourth `versions` entry, `refresh_note` and `regen` emptied, `library-s641@bot`); receipt and
   rollback `kb/receipts/cpl_library_dsp_v3_public_s641_2026-11-12.sql`.
+
+## Moved from the lane (S650 checkpoint)
+
+Verbatim from `docs/reference/lanes/library.md`, replaced by short lines in the S650 checkpoint (the four open rows restated as one current paragraph).
+
+✅ **① One card per project is built (S509, #2538).** `cpl_library.project` names a piece's project; pieces that share it draw as one card, a row per piece with its title as the link, and Edit, Regenerate and Details on each row (each acts on one record; the one departure from the mockup). Edit sets the project; a college's pair files under one. Receipt `kb/receipts/cpl_library_projects_2026-10-29_s509.sql` (13 projects of 2, read back). Test: `library` block (15).
+
+✅ **② The one panel is built (S509).** *Create or Remediate a Document* replaces the three add buttons, under the filters: drop or choose a file, or paste a link; *what for?* (Remediate, offered for a .pptx or .docx; Use it as background; File it as is); Instructions; *Start*. Start opens the brief (the instructions as *What it must say*, the kind read from their words, Sam's template defaults), the brief with the link or a text file's words as a source, or the filing form. A dropped file filed as is asks for its SharePoint link: a record holds a link, not bytes. A visual made for a college writes its pair from the brief's Save. Proceeded on the recommendation (S509's reading of Version 20). Test: `library` block (16).
+
+- **Ally Barker's "How to confirm and qualify for CPL funding" (S647, #3216 `42b2d9eb`):** Draft 2 (`b18c5759`) is
+  stored on `...mwdvs6l1`, her card, and `...mwdv9pl5`'s ask is closed with a note pointing at it. Receipt
+  `kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql` (cohort `library-s647@bot`, one
+  plain `with` statement, md5 `087e2c7c08e4b653fc4d76332006b376`, 49,995 characters); its `_rollback.sql` restores
+  from `cpl_library_history`. **Waits:** IACA's `regen` (`iaca-mvpmcjyl`, Crystal Nasio, 2026-10-26) has no note or
+  sources and waits on what she wants changed; S647 did not work it. "Adding CPL Coordinator & Noncredit Lead to
+  MAP" (`...mwauxci5`) has its ready draft. ELL IET reads 33,971 of Sierra's 34,000 characters: room for more comes
+  out of repeated wording or a `cpl-chat` cap raise. The Coordinator Guide's Draft 2: lessons, *Moved from the lane (S646)*.

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-14T01:11:33Z",
-  "session": 649,
-  "moniker": "SkyOriole",
-  "run": "the conductor, with Sam in session",
+  "written_at": "2026-11-14T08:02:35Z",
+  "session": 650,
+  "moniker": "SkyPlover",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_650_handoff.md",
+  "handoff": "docs/session_651_handoff.md",
   "next_step": {
-    "title": "The objectives reread, Riverside's district first",
-    "text": "The Riverside district's outlines are read again for course objectives on the runner; the loader's dry run and a live count come before the load, which adds objectives and never replaces an SLO row. San Diego, Santa Ana, Las Positas, Coastline and Golden West follow, one host at a time. Then Cosumnes River's display record is confirmed and its seven records that pass on the rescore alone go in their own apply."
+    "title": "Lassen's Cal-GETC page, then the San Diego objectives load",
+    "text": "Lassen's catalog page is read for free for the 14 transfer degrees that name Cal-GETC with no figure; its words go into the college's reconcile steps, then a reread, the display build and COBIx's spot-check. The San Diego district's course objectives load once all four slices of its read are filed."
   },
   "calls": [
     {
@@ -321,68 +321,24 @@
   },
   "changes": [
     {
-      "at": "2026-11-14T01:07:00Z",
-      "text": "Cosumnes River's display step was dispatched from main for the build that carries program 39656 at the statewide Cal-GETC 34 units."
+      "at": "2026-11-14T07:59:00Z",
+      "text": "Cosumnes River's display was rebuilt on main for the two programs read again from their own pages, so CPL Pathways and Sierra show them as passing."
     },
     {
-      "at": "2026-11-14T01:06:50Z",
-      "text": "Cosumnes River: the catalog prints a minimum for each Cal-GETC area and no total, so the statewide 34 units stand. One program, 39656, took the figure; two others keep their filed records because the fresh capture matched them to the wrong pages."
+      "at": "2026-11-14T07:13:00Z",
+      "text": "Cosumnes River: two programs, 30566 Psychology AA-T and 33072 History AA-T, were read again from their own catalog pages (552 and 404) and now pass; the receipt keeps the rows as they were."
     },
     {
-      "at": "2026-11-14T00:12:33Z",
-      "text": "Cerro Coso: five programs take the 35 units of Cal-GETC its catalog prints on page 65, and three of them now pass the machine checks. The first reconcile at the college rescored every record, so every record was compared with the filed ones and only the five planned rows changed."
+      "at": "2026-11-14T07:13:30Z",
+      "text": "Cosumnes River's seven programs that would pass on a rescore alone are held for the one dry run, because the electives fill can pass a degree whose major is incomplete."
     },
     {
-      "at": "2026-11-14T00:10:11Z",
-      "text": "Course objectives are collected with every SLO read, and each read says which systems print them. Ten colleges read before November 5 are read again for objectives, one host at a time, at no model cost."
+      "at": "2026-11-14T07:20:00Z",
+      "text": "Lassen became the sweep's next college: a free read of its Cal-GETC page started for 14 transfer degrees."
     },
     {
-      "at": "2026-11-13T18:34:00Z",
-      "text": "College Data Collection opens its list at the lowest completeness first and says the order in words."
-    },
-    {
-      "at": "2026-11-13T18:22:00Z",
-      "text": "The statewide Cal-GETC 34 is a reconcile rule that runs only at a college whose settings quote its catalog naming Cal-GETC with no figure; 12 programs fill under the plan, and Grossmont's apply is under way."
-    },
-    {
-      "at": "2026-11-13T17:46:00Z",
-      "text": "College of the Desert's ranged read is merged: 12 programs reread, 7 loaded, 330 displayed. 10195 keeps the record it held, because the read took another program's section."
-    },
-    {
-      "at": "2026-11-13T17:32:00Z",
-      "text": "The extraction function answers 503 when the database is down; deployed."
-    },
-    {
-      "at": "2026-11-13T12:13:19Z",
-      "text": "Glendale's records wait to load: a passing record is kept when a read finds no page for its program, unless the program is no longer active, and 19577, in teach-out, is dropped. A free read of three catalog tabs found why the two CIS programs never got their own pages; the reader is fixed, and a small paid re-extract comes next."
-    },
-    {
-      "at": "2026-11-13T12:08:55Z",
-      "text": "College of the Desert's whole catalog was read in pieces at last: 358 programs extracted, 241 pass the machine checks (221 before). Not loaded yet."
-    },
-    {
-      "at": "2026-11-13T12:02:47Z",
-      "text": "The page shows the rescore at six colleges: the whole display build applied, 18,179 rows written with no errors. Three Monterey Peninsula programs in the build are not in the table."
-    },
-    {
-      "at": "2026-11-13T11:40:25Z",
-      "text": "San Jose City's 77 program records show on CPL Pathways and in Sierra, after COBIx's check (4 agree, 1 differs)."
-    },
-    {
-      "at": "2026-11-13T11:24:06Z",
-      "text": "Diablo Valley's 213 program records show on CPL Pathways and in Sierra, after COBIx's check of five."
-    },
-    {
-      "at": "2026-11-13T11:19:07Z",
-      "text": "Santiago Canyon's 216 program records show on CPL Pathways and in Sierra, after COBIx's check."
-    },
-    {
-      "at": "2026-11-13T08:10:00Z",
-      "text": "Santiago Canyon holds 216 program records (was 192): a paid read of 67 programs, 47 pass, and a reread replaced 43. Its page waits on COBIx's check."
-    },
-    {
-      "at": "2026-11-13T07:28:29Z",
-      "text": "The PDF reader merged: a refused program is filed as refused, and a program's own heading must match its full title and award. Santiago Canyon's proof bound 204 programs."
+      "at": "2026-11-14T06:25:00Z",
+      "text": "The San Diego district's course outlines are being read again for course objectives, in four parts, on the runner."
     }
   ],
   "headline": [
@@ -611,7 +567,7 @@
     {
       "day": "2026-11-14",
       "active": 20282,
-      "complete": 14594,
+      "complete": 14596,
       "colleges": 118
     }
   ],

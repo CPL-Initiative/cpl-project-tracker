@@ -133,6 +133,139 @@ FONTS = "\n".join(
         ("Source Sans 3", 700, "source-sans-3-latin-700-normal.woff2")])
 
 
+# ----- The public header (Sam, 2026-10-21: a public page carries it) -----
+# The CPL Initiative logo to the Chancellor's Office CPL page, the links out behind one
+# Links word (each with a gray line saying what it is, Sam, 2026-10-26), and Light and
+# Dark on the cpl_theme contract. The one source is the vault's header.html
+# (CPLBrain/04-projects/cpl-initiative/public-header); this is its copy, kept here so the
+# build and CI's --check need no vault. Three departures, each for this page: the header's
+# tokens alias the map's First Light tokens (so its dark is the map's dark), its row is the
+# map's 1320px measure, and it is hidden under ?embed=1, where COBI's Military Partnerships
+# frame shows the map bare. The logos are the tracker's copies in sierra/, embedded as data
+# URIs, so the page still loads nothing from the internet. tests/veteran_map_public_header.test.js
+# holds the links, the embed and (with the vault beside the tracker) the copy against its source.
+PUBLIC_HEADER = r"""<!-- cpl-public-header:start (copied by veteran-sprint-map/build_selfcontained.py from CPLBrain/04-projects/cpl-initiative/public-header/header.html) -->
+<style>
+.cplh{--cplh-bg:var(--surface);--cplh-line:var(--border);--cplh-fg:var(--body);--cplh-muted:var(--muted);--cplh-link:var(--cobalt);--cplh-strong:var(--ink)}
+.cplh{position:relative;z-index:50;background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:var(--font);font-size:.95rem;line-height:1.4}
+.cplh-in{position:relative;max-width:1320px;margin:0 auto;padding-block:.6rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem}
+.cplh-logo{display:inline-flex;min-height:25px}
+.cplh-logo img{display:block;height:40px;width:auto;max-width:100%}
+.cplh-logo .cplh-dark{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cplh-logo .cplh-light{display:none}:root:not([data-theme="light"]) .cplh-logo .cplh-dark{display:block}}
+:root[data-theme="dark"] .cplh-logo .cplh-light{display:none}
+:root[data-theme="dark"] .cplh-logo .cplh-dark{display:block}
+.cplh-end{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.6rem}
+.cplh a{color:var(--cplh-link)}
+/* 25px, one past the 24px floor (S641): a control sized at exactly 24 reads 23.9 at a browser zoom of 90% or 133%. */
+.cplh-word,.cplh-theme button{background:none;border:0;padding:0 2px;min-height:25px;min-width:25px;font:inherit;font-weight:600;color:var(--cplh-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cplh-word[aria-expanded="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
+.cplh-panel{box-sizing:border-box;position:absolute;top:100%;right:max(16px,env(safe-area-inset-right,0px));width:min(38rem,calc(100% - 32px));margin-top:1px;background:var(--cplh-bg);border:1px solid var(--cplh-line);box-shadow:var(--shadow);padding:.35rem 1rem}
+.cplh-panel[hidden]{display:none}
+.cplh-nav{margin:0;padding:0;list-style:none}
+.cplh-nav li{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.1rem 1rem;align-items:baseline;padding:.5rem 0;border-top:1px solid var(--cplh-line)}
+.cplh-nav li:first-child{border-top:0}
+.cplh-nav a{display:inline-flex;align-items:center;min-height:25px;font-weight:600;text-underline-offset:3px}
+.cplh-desc{color:var(--cplh-muted);font-size:.9rem}
+.cplh-theme{display:flex;gap:.9rem;align-items:center}
+.cplh-theme span{color:var(--cplh-fg)}
+.cplh-theme button[aria-pressed="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
+.cplh a:focus-visible,.cplh button:focus-visible{outline:2px solid var(--cplh-link);outline-offset:2px}
+@media (max-width:560px){.cplh-logo img{height:32px}.cplh-end{margin-left:0}.cplh-nav li{grid-template-columns:minmax(0,1fr)}}
+/* COBI's Military Partnerships frame (?embed=1) shows the map bare: the head script sets
+   html.embed before the first paint, so the header never paints there and nothing shifts. */
+.embed .cplh{display:none}
+</style>
+<header class="cplh" role="banner">
+  <div class="cplh-in">
+    <a class="cplh-logo" href="https://www.cccco.edu/about-us/chancellors-office/divisions/educational-services-and-support/credit-for-prior-learning/" target="_blank" rel="noopener">
+      <img class="cplh-light" src="__LOGO_NAVY__" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
+      <img class="cplh-dark" src="__LOGO_WHITE__" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
+    </a>
+    <div class="cplh-end">
+      <nav class="cplh-links" aria-label="CPL pages">
+        <button type="button" class="cplh-word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Links</button>
+        <div class="cplh-panel" id="cplh-panel" hidden>
+          <ul class="cplh-nav">
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/" target="_blank" rel="noopener" aria-describedby="cplh-d-about">The CPL Initiative</a><span class="cplh-desc" id="cplh-d-about">What the Chancellor&#x27;s Office CPL Initiative does, in one page</span></li>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener" aria-describedby="cplh-d-fact">CPL Fact Sheet</a><span class="cplh-desc" id="cplh-d-fact">Credit for prior learning (CPL) in California: goals, live progress and funding</span></li>
+            <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener" aria-describedby="cplh-d-map">MAP</a><span class="cplh-desc" id="cplh-d-map">The Mapping Articulated Pathways (MAP) platform, where colleges record the credit they award</span></li>
+            <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener" aria-describedby="cplh-d-college">Find your college</a><span class="cplh-desc" id="cplh-d-college">Your college's credit for prior learning page and the person to contact</span></li>
+            <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener" aria-describedby="cplh-d-dash">MAP dashboard</a><span class="cplh-desc" id="cplh-d-dash">Live statewide counts of students, units of credit and savings, by college</span></li>
+            <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener" aria-describedby="cplh-d-cfby">Credit for Being You</a><span class="cplh-desc" id="cplh-d-cfby">The student portal: add what you have learned and request credit</span></li>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/" target="_blank" rel="noopener" aria-describedby="cplh-d-lib">CPL Library</a><span class="cplh-desc" id="cplh-d-lib">Presentations, films, visuals and briefs from the Credit for Prior Learning Initiative</span></li>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/" target="_blank" rel="noopener" aria-describedby="cplh-d-catalog">Credential Catalog</a><span class="cplh-desc" id="cplh-d-catalog">Credentials colleges award credit for, and how to adopt one in MAP</span></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="cplh-theme" role="group" aria-label="Theme">
+        <span>Theme</span>
+        <button type="button" data-cplh-theme="light" aria-pressed="false">Light</button>
+        <button type="button" data-cplh-theme="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+(function () {
+  var KEY = "cpl_theme", root = document.documentElement;
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function current() {
+    var t = root.getAttribute("data-theme");
+    if (t === "light" || t === "dark") return t;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  function paint() {
+    var t = current();
+    Array.prototype.forEach.call(document.querySelectorAll("[data-cplh-theme]"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-cplh-theme") === t));
+    });
+  }
+  var saved = read();
+  if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-cplh-theme]") : null;
+    if (!b) return;
+    var t = b.getAttribute("data-cplh-theme");
+    root.setAttribute("data-theme", t);
+    try { localStorage.setItem(KEY, t); } catch (err) { /* private window: the choice holds for this visit */ }
+    paint();
+  });
+  if (window.matchMedia) { try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint); } catch (e) {} }
+  // The head script follows a choice made in another tab (the storage event); the pressed word follows it too.
+  window.addEventListener("storage", function (e) { if (e && e.key === KEY) paint(); });
+  paint();
+
+  // Links: one word opens the list. Escape, a click outside it, or Tab past its last
+  // link shuts it; Escape hands focus back to the word.
+  var word = document.querySelector("[data-cplh-links]");
+  var panel = word && document.getElementById(word.getAttribute("aria-controls"));
+  var nav = word && word.closest ? word.closest("nav") : null;
+  if (!word || !panel || !nav) return;
+  function isOpen() { return word.getAttribute("aria-expanded") === "true"; }
+  function setOpen(on) { word.setAttribute("aria-expanded", String(on)); panel.hidden = !on; }
+  word.addEventListener("click", function () { setOpen(!isOpen()); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape" || !isOpen()) return;
+    var inside = nav.contains(document.activeElement);
+    setOpen(false);
+    if (inside) word.focus();
+  });
+  document.addEventListener("click", function (e) { if (isOpen() && !nav.contains(e.target)) setOpen(false); });
+  nav.addEventListener("focusout", function (e) { if (isOpen() && e.relatedTarget && !nav.contains(e.relatedTarget)) setOpen(false); });
+})();
+</script>
+<!-- cpl-public-header:end -->
+"""
+
+def png(name):
+    with open(os.path.join(HERE, "..", "sierra", name), "rb") as f:
+        return "data:image/png;base64," + base64.b64encode(f.read()).decode("ascii")
+
+PUBLIC_HEADER = (PUBLIC_HEADER.replace("__LOGO_NAVY__", png("cpl-initiative-logo-navy.png"))
+                 .replace("__LOGO_WHITE__", png("cpl-initiative-logo.png")))
+
+
 HTML = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -205,7 +338,7 @@ header .lede{margin:0;font-size:clamp(1rem,.95rem + .25vw,1.15rem);color:var(--b
 .toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin:22px 0 12px}
 .group{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
 .group-lab{font-size:.85rem;font-weight:600;color:var(--muted);margin-right:4px}
-.btn{font:inherit;font-size:.9rem;font-weight:500;min-height:24px;padding:2px 0;cursor:pointer;
+.btn{font:inherit;font-size:.9rem;font-weight:500;min-height:25px;padding:2px 0;cursor:pointer;
   border:0;background:none;color:var(--cobalt);
   text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .btn:hover{text-decoration-thickness:2px}
@@ -254,7 +387,7 @@ svg.grabbing{cursor:grabbing}
 .near li{padding:9px 0;border-top:1px solid var(--border)}
 .near li:first-child{border-top:0}
 .near a,.linkbtn{font:inherit;font-weight:700;color:var(--cobalt);text-decoration:underline;text-underline-offset:2px}
-.linkbtn{background:none;border:0;padding:0;cursor:pointer;text-align:left;min-height:24px}
+.linkbtn{background:none;border:0;padding:0;cursor:pointer;text-align:left;min-height:25px}
 .meta{font-size:.88rem;color:var(--muted);margin-top:2px}
 .search{width:100%;font:inherit;font-size:.95rem;min-height:40px;padding:8px 12px;border:1px solid var(--border-strong);border-radius:10px;
   background:var(--surface);color:var(--ink);margin-bottom:10px}
@@ -268,7 +401,10 @@ svg.grabbing{cursor:grabbing}
 .dir li:hover{background:var(--subtle)}
 .dir .nm{color:var(--ink);font-weight:600}
 .dir .ct{color:var(--muted);font-weight:400;font-size:.88rem}
-.dir a{font-size:.88rem;font-weight:700;color:var(--cobalt);flex:0 0 auto}
+/* A public page's controls take the public header's 25px floor, never exactly 24 (S641: a 24px box
+   measures 23.98 at 90% and 133% zoom). The directory's CPL page link painted 21px tall; it fills the row's
+   height now, so a phone has the whole row end to tap (S650 UI pass). */
+.dir a{font-size:.88rem;font-weight:700;color:var(--cobalt);flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px}
 .empty{color:var(--muted);padding:14px 4px}
 footer{margin:18px 2px 0;font-size:.88rem;color:var(--muted);max-width:var(--cpl-measure,none)}
 footer p{margin:0 0 6px}
@@ -315,7 +451,7 @@ label.toggle:focus-within,.dir .row:focus-visible,.mk:focus-visible{outline:3px 
 </head>
 <body>
 <a class="skip" href="#side">Skip to the details panel</a>
-<div class="wrap">
+__PUBLIC_HEADER__<main class="wrap">
   <header>
     <h1>California community colleges and military installations</h1>
     <p class="lede">Where a college and a nearby installation can partner to award Credit for Prior Learning to service members and veterans.</p>
@@ -385,7 +521,7 @@ label.toggle:focus-within,.dir .row:focus-visible,.mk:focus-visible{outline:3px 
     <p id="foot-pairs"></p>
     <p>Locations are at the campus or installation and approximate. Counts of service members and veterans served come from the MAP platform's CPL Insights dashboard<span id="foot-asof"></span>. Source: CPL Initiative, California Community Colleges Chancellor's Office. The page loads nothing from the internet.</p>
   </footer>
-</div>
+</main>
 <div id="tip" role="presentation"></div>
 
 <script>
@@ -644,7 +780,7 @@ buildColList(""); buildBaseList(""); renderDefault(); applyVB();
 # scripts/check_generated.sh run it.
 if __name__ == "__main__":
     import sys
-    page = HTML.replace("__FONTS__", FONTS).replace("__DATA_JS__", DATA_JS)
+    page = HTML.replace("__FONTS__", FONTS).replace("__DATA_JS__", DATA_JS).replace("__PUBLIC_HEADER__", PUBLIC_HEADER)
     out = os.path.join(HERE, "ca_cpl_map_selfcontained.html")
     if "--check" in sys.argv[1:]:
         with open(out, encoding="utf-8") as f:
