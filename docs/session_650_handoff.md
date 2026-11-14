@@ -99,7 +99,9 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 |---|---|---|
 | #3265 `claude/slo-objectives-rccd` | merged `7d1c3770`, 03:18Z | none |
 | this refresh, `claude/checkpoint-s649-final` | open | merge on green |
-| #3268, #3278 (side session) | open | its own gates |
+| #3268 `c07f0647` (03:11Z), #3278 `6c2cf9a7` (03:29Z) (side session) | merged | none |
+| #3280 `7d100154` (04:00Z) (side session) | merged; its deploy checked 04:08Z | none |
+| `claude/commons-identities-apply-s649b` `7c2f9edb` (side session) | pushed, no PR: the fresh dry-run plan | Sam's two answers, then the apply |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
 | merged since the checkpoint: #3271 (01:38Z), #3270 and #3267 (02:02Z), #3275 `b27d7aab` (02:12Z), #3274 `a7af46ee` (02:32Z), #3272 `91d451aa` and #3276 `18c74d87` (02:55Z) | merged | none |
 | #3250 | closed 01:21Z (Sheet 195 card 5) | none |
@@ -172,14 +174,58 @@ pitfall `p-back-to-back-merges-stale-status-s649`.
   three passing-function changes; the plan becomes `kb/strategic_plan.json` with a read-only view whose measures point
   at live sources; the next conductor posts Sky's plan v2 against COBIx's nine questions first.
 
-## The side session (SkyOriole-B), as reported by it at 02:40Z
+## The side session (SkyOriole-B), written by it at 03:41Z 2026-11-14 (`date -u`)
 
-Merged #3266, #3270, #3267, #3276, #3272 (the last two confirmed on `main`). Open: #3268 (workplan reports) and #3278
-(Pages publishes from an allowlist, issue #3104: once it merges, a NEW tracked file at the repo root or directly under
-`kb/`, `kb/reference` or `kb/status` needs a line in `.github/pages_allowlist.txt` or `test` fails). It plans a
-follow-up withholding `kb/contacts_harvest` (named officials with email and phone, served by Pages today), `.claude/`,
-`CLAUDE.md` and `kb/migrations` from the site. Its ask (the 625 held identity entries, the refused commit) goes on
-Sheet 196.
+It outlived the conductor (signed off 03:31Z) and is the only writer from then on. Its decisions are five `cpl_memory`
+rows (receipt `kb/receipts/cpl_memory_s649b_side_session_rows_2026-11-14.sql`, RUN 03:40Z; undo by slug).
+
+**Merged, each after a review and a green `test`:** #3266 and #3270 (four governance guards; COBIx's two follow-up
+points), #3267 (design principles v3 as `docs/reference/design-principles.md`, with its `CLAUDE.md` pointer; Sam, in
+session: "commit the bullet"), #3276 (`docs/reference/sam_rulings.md`: 57 rulings quoted with sources, 10 rules with no
+verbatim record), #3268 (workplan reports: the 2029-30 stretch, year-exact cells, the summary Current from the
+Activities tab), #3272 (the identities rebuild's builder and reviewed plan; Sam: "Commit identities") and #3278.
+
+**The public site publishes from an allowlist (#3278, `d-pages-publish-from-allowlist-s649b`).** Day one equal (22,711
+files both ways); the first deploy, run 43551846606, succeeded and the dashboard, Sierra, the Fact Sheet, the Library
+and five data files loaded at about 03:36Z. **Every session must know:** a NEW tracked file at the repo root or directly
+under `kb/`, `kb/reference` or `kb/status` needs a line in `.github/pages_allowlist.txt` (`publish`, `publish?` for a
+file a workflow creates later, or a narrow `withhold` pattern) or `test` fails, naming the line to add; a folder
+already published keeps publishing its new files. Troubleshooting has the entry. Undo: `git revert`, then rebuild the
+dependency map.
+
+**#3280 merged (`7d100154`, 04:00Z):** the site stops serving 965 files no page reads (`kb/contacts_harvest` with
+officials' emails and phones, `.claude/`, `CLAUDE.md`, the gitleaks files, `.gitignore`, `kb/migrations`, SQL,
+`kb/docs_audit`, internal scripts); it publishes 21,750. Checked at 04:08Z: the dashboard, Sierra, the Fact Sheet, the
+Library, SkyView and two data files load; `CLAUDE.md`, `kb/contacts_harvest_seeds.json`, `kb/_row_audit.py` and the
+root generator script return 404. A guard fails if a served page ever loads a withheld path. A new `kb/` script is
+withheld by pattern and needs no line.
+
+**What the side session did NOT refresh (it closed at the context emergency line, 04:17Z):** it ran no `/checkpoint` of
+its own. After the conductor's 03:31Z checkpoint it wrote only this section, the lane lines inside its own PRs
+(governance, workplan-annual-goals), five memory rows and a vault note. Not refreshed for #3268, #3278, #3280 and #3281:
+the docs audit files, `docs/INDEX.md`'s handoff entry, the To-Do feed, the pipeline view, the READMEs, the lessons
+docs, KB notes, the wiki, and the open-asks sheet (the identities ask is on no sheet yet). The commons lane has no
+DECIDED line for the identities rebuild beyond the conductor's 02:40Z line; the library and public-split lanes do not
+yet name the allowlist.
+
+**Let go by the side session (04:09Z):** every PR subscription was dropped as it was created; its last check-in fires
+only to merge this note's PR; no artifact watch. Vault note: CPLBrain#785.
+
+**WAITS FOR SAM, asked in session, unanswered at 03:41Z:** the identities apply. Two answers: "apply it" or "hold", and
+"drop the 625" or "keep them". The fresh plan (`kb/identities_rebuild_out/2026-11-14b/plan.json` on
+`claude/commons-identities-apply-s649b`, `7c2f9edb`) equals the reviewed one by every count and all 1,854 entry
+hashes: fill 651, refresh 578, held 625; 513 in-browser rows; FIRE 130 X 5 to 16 adopters and 6 to 32 potential; the
+Fact Sheet's "Could adopt" 114 to 115. The command, run in a window clear of the daily run, re-measured first if `main`
+moved: `python3 kb/_identities_rebuild.py --apply --expect-plan kb/identities_rebuild_out/2026-11-14b/plan.json`, with
+`--drop-orphans --ruling "<Sam's words>"` on his word. It writes `apply_receipt.json` with before-values; `--undo
+<receipt>` restores. This is commons NEXT 1 and belongs on the next sheet as a *Needs your word* card.
+
+**Follow-ups it leaves, none started:** the records' `adoption_leverage`, `over_merged` and `identity_confidence`
+(1b recomputed them; they feed public figures, so measure first); an unarticulated merge member gets no entry (FIRE
+M10CH); `--check` wired into lints after the apply; the Admin tab's *Public on Pages* chip (44 datasets disagree with
+the map); two small report differences from the tab (a live "148k" prints as written; no Current prints a dash where
+the tab prints 0); issues #3098 and #3069 (no ruling needed), #3106 (the MAP sync carries no role: Sam's ask of ITPI),
+the TMC contact columns (`tmc_submissions.contact_name` and `contact_email` are readable signed out; 0 rows today).
 
 ## Open work, in order (from the lanes' NEXT lines)
 
