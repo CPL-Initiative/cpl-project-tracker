@@ -73,6 +73,41 @@ check(not sc["coverage"]["missing"], "and SPCH 20 still covers the listed COMM 2
 check(S.with_course_ids(rec, {"HIS14": 3, "ENGL1A": 3}, {"HIST14": "HIS14"})["blocks"][0]["courses"][0]
       == {"code": "HIS14", "units": 3, "printed_code": "HIST14", "matched_by": "course_id"},
       "the rename keeps the printed code and names its route")
+# The tag stays on the filed score through a reread and reaches the display (S653 review, item 2).
+filed = {"record": rec, "score": S.score(rec, closed, "x", "A.A. Degree")}
+check(filed["score"]["coverage"].get("course_id") == [{"printed": "HIST14", "listed": "HIS14", "matched_by": "course_id"}],
+      "the filed score names the course-id match: %s" % filed["score"]["coverage"].get("course_id"))
+check(filed["record"]["blocks"][0]["courses"][0]["code"] == "HIST 14", "the filed record keeps the code as printed")
+reread = json.loads(json.dumps(filed))     # the reread loads the filed record and rescores it (reconcile's step)
+check(S.score(reread["record"], closed, "x", "A.A. Degree") == filed["score"],
+      "a reread's rescore of the filed record keeps the course-id tag, and nothing else moves")
+check("course_id" not in S.score(rec, [{"code": "HIST 14", "units": 3}, {"code": "ENGL 1A", "units": 3}], "x",
+                                 "A.A. Degree")["coverage"], "a score with no course-id match carries no tag")
+import _build_roep_display as D  # noqa: E402
+shown = D.tag_course_id({"HIST 14": {"title": "x"}, "ENGL 1A": {"title": "y"}}, reread["score"])
+check(shown["HIST 14"].get("matched_by") == "course_id" and shown["HIST 14"].get("listed_as") == "HIS14"
+      and "matched_by" not in shown["ENGL 1A"], "the display's course names its course-id route: %s" % shown)
+
+# The capture carries both twins: a kept alias's printed code and the id (S653 review, item 1).
+import _program_requirements_college as PC  # noqa: E402
+import _program_requirements_pilot as PP  # noqa: E402
+prog = PC.with_renumbers([{"closed_list": [{"code": "COMM 20", "units": 3, "crsid": "COMMC1004"},
+                                           {"code": "COMM 1", "units": 3}]}], {}, {"SPCH": "COMM"})[0]
+c20 = prog["closed_list"][0]
+check(c20.get("printed") == "SPCH 20" and c20.get("printed_also") == ["COMM C1004"],
+      "COMM 20 keeps the alias's SPCH 20 and gains the id COMM C1004: %s" % c20)
+check(prog["closed_list"][1].get("printed") == "SPCH 1" and "printed_also" not in prog["closed_list"][1],
+      "a course with no id keeps the alias alone")
+for page, what in (("SPCH 20 and SPCH 1", "the alias's code"), ("COMM C1004 and SPCH 1", "the id")):
+    check(PC.net_hits(prog["closed_list"], PC.page_codes(page)) == 2,
+          "net_hits counts COMM 20 by %s (%s)" % (what, page))
+    check(PP.coverage(PP.find_codes(page, prog["closed_list"]), prog["closed_list"]) == 1.0,
+          "find_codes finds COMM 20 by %s" % what)
+idonly = PC.with_renumbers([{"closed_list": [{"code": "HIS 14", "crsid": "HIST14"}]}], {}, {})[0]["closed_list"][0]
+check(idonly.get("printed") == "HIST 14" and "printed_also" not in idonly, "with no alias the id is the printed twin")
+same = PC.with_renumbers([{"closed_list": [{"code": "HIS 14", "crsid": "HIST14"}]}], {}, {"HIST": "HIS"})[0]["closed_list"][0]
+check(same.get("printed") == "HIST 14" and "printed_also" not in same, "an alias and an id that agree carry one form")
+
 ids = CI.load_ids()
 check(ids.get("CCC000520542") == "HIST1", "the Program Course File's id for Moreno Valley's HIST 1 control number")
 

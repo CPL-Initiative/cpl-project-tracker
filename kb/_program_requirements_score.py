@@ -995,6 +995,10 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         if k:
             listed[k] = _num(c.get("units"))
     record = with_course_ids(record, listed, CI.listed_ids(closed) if course_ids is None else course_ids, aliases)
+    # The matches the course-id route made, so a filed score names them and the display can pick them out
+    # (S653 review: 806 of its 1,634 matches have no course name on file to confirm them).
+    by_id = sorted({(e["printed_code"], e["code"]) for _, e, _ in placed_codes(record)
+                    if e.get("matched_by") == "course_id"})
     record = with_prefix_aliases(record, listed, aliases)
     placed = [(listed_key(e.get("code"), listed, packed), e, b) for _, e, b in placed_codes(record)]
     placed_keys = {k for k, _, _ in placed}
@@ -1091,6 +1095,8 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
                      "share": round((n - len(missing)) / n, 3) if n else None,
                      "missing": missing, "unexplained": unexplained,
                      "none_placed": none_placed,
+                     **({"course_id": [{"printed": p, "listed": k, "matched_by": "course_id"} for p, k in by_id]}
+                        if by_id else {}),
                      "pass": cov_ok},
         "invented": {"count": len(invented), "codes": invented, "flagged": flagged,
                      "pass": not unflagged},
