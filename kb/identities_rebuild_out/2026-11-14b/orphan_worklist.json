@@ -1,0 +1,4383 @@
+{
+  "_status": "DRY-RUN 2026-11-14 — held; nothing dropped",
+  "_generated_by": "kb/_identities_rebuild.py",
+  "_rule": "Sam's ruling 5, 2026-09-05: a removed set is a worklist, never a silent drop.",
+  "count": 625,
+  "rows": [
+    {
+      "identity": "AGAS M1002",
+      "entry_title": "Agriculture, Environment and Society",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AGRI M1003",
+      "entry_title": "Introduction to Agriculture Education",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ANTH M1093",
+      "entry_title": "World Prehistory",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARAB M1001",
+      "entry_title": "Elementary Arabic",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARAB M1004",
+      "entry_title": "INTERMEDIATE ARABIC",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M1001",
+      "entry_title": "Advanced AutoCAD",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M1013",
+      "entry_title": "Architectural Design I",
+      "colleges_offering": 12,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M1077",
+      "entry_title": "INTRODUCTION TO ARCHITECTURE",
+      "colleges_offering": 7,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M1084",
+      "entry_title": "Materials of Construction",
+      "colleges_offering": 15,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M10FL",
+      "entry_title": "BLUEPRINT PLANS AND SPECIFICATION READING",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M10FX",
+      "entry_title": "COMBINATION RESIDENTIAL DWELLING INSPECTION",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M10GF",
+      "entry_title": "CONCRETE INSPECTION",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M10IF",
+      "entry_title": "ELECTRICAL CODE INSPECTION",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M10KV",
+      "entry_title": "INTERNATIONAL BUILDING CODE INSPECTION",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M10MP",
+      "entry_title": "MECHANICAL CODE - HEATING, AC, REFRIGERATION, AND DUCTWORK",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M10MZ",
+      "entry_title": "PLUMBING CODES - DRAINS, WASTE, VENTS, WATER, AND GAS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARCH M10NO",
+      "entry_title": "REVIT AND BUILDING INFORMATION MANAGEMENT(BIM)",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARTH M10AR",
+      "entry_title": "Contemporary Art: 1945-Present",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ARTH M10CM",
+      "entry_title": "SURVEY OF WESTERN ART HISTORY I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ASTR M1008",
+      "entry_title": "DESCRIPTIVE ASTRONOMY",
+      "colleges_offering": 12,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ASTR M1031",
+      "entry_title": "Life in the Universe",
+      "colleges_offering": 15,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ASTR M1039",
+      "entry_title": "Stars and Galaxies",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ASTR M10CA",
+      "entry_title": "Life in the Universe Laboratory",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ASTR M10CH",
+      "entry_title": "Planets and the Solar System With Lab",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1004",
+      "entry_title": "Advanced Engine Management",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1005",
+      "entry_title": "Advanced Engine Performance",
+      "colleges_offering": 11,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1016",
+      "entry_title": "Automatic Transmissions",
+      "colleges_offering": 11,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1017",
+      "entry_title": "Automatic Transmissions and Transaxles",
+      "colleges_offering": 12,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1018",
+      "entry_title": "Automatic Transmissions and Transaxles - Laboratory",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1020",
+      "entry_title": "Automotive Air Conditioning",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1023",
+      "entry_title": "Automotive Brake Inspection",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1026",
+      "entry_title": "Automotive Brakes - Laboratory",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1027",
+      "entry_title": "Automotive Braking Systems",
+      "colleges_offering": 12,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1032",
+      "entry_title": "Automotive Electrical/Electronic Systems",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1037",
+      "entry_title": "Automotive Engine Performance",
+      "colleges_offering": 9,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1039",
+      "entry_title": "Automotive Engine Repair",
+      "colleges_offering": 7,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1043",
+      "entry_title": "Automotive Fundamentals",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1044",
+      "entry_title": "Automotive Heating & Air-Conditioning",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1045",
+      "entry_title": "Automotive Heating and Air Conditioning",
+      "colleges_offering": 13,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1047",
+      "entry_title": "Automotive Ignition, Fuel and Emission Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1049",
+      "entry_title": "Automotive Light DIesel Engines",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1050",
+      "entry_title": "Automotive Lubrication Service",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1053",
+      "entry_title": "Automotive Manual Transmissions and Drive Train Systems",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1061",
+      "entry_title": "Automotive Service Management",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1067",
+      "entry_title": "Automotive Suspension, Steering and Alignment",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1069",
+      "entry_title": "Automotive Tire Service",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1086",
+      "entry_title": "Electrical and Electronic Systems",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1087",
+      "entry_title": "Electrical/Electronic Systems",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10AS",
+      "entry_title": "Advanced Collision Repair, Estimating, Refinish",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10BS",
+      "entry_title": "Air Conditioning Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10CQ",
+      "entry_title": "AUTO BODY AND FENDER II",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10CR",
+      "entry_title": "Auto Body Construction, Repair and Welding Fundamentals",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10DA",
+      "entry_title": "Auto Electricity and Electronics",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10DE",
+      "entry_title": "Auto Electronics & Electrical Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10DR",
+      "entry_title": "Auto Transmissions and Transaxles",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10DT",
+      "entry_title": "Automatic & Manual Transmission",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10DX",
+      "entry_title": "AUTOMATIC TRANSMISSION AND TRANSAXLE",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10EE",
+      "entry_title": "Automatic Transmission Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10EJ",
+      "entry_title": "Automatic Transmissions/Axles",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10EK",
+      "entry_title": "AUTOMOBILE BRAKING SYSTEMS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10EL",
+      "entry_title": "AUTOMOBILE ELECTRICAL/ELECTRONIC SYSTEMS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10EN",
+      "entry_title": "AUTOMOBILE HEATING AND AIR CONDITIONING",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10ET",
+      "entry_title": "Automotive Air Conditioning, Heating System, Cooling Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10EV",
+      "entry_title": "Automotive Automatic Transmission",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10EX",
+      "entry_title": "Automotive Basic Skills",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10FJ",
+      "entry_title": "AUTOMOTIVE COLLISION REPAIR I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10FW",
+      "entry_title": "Automotive Electrical",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10HK",
+      "entry_title": "Automotive Fuel Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10IC",
+      "entry_title": "Automotive Manual Transmission",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10ID",
+      "entry_title": "Automotive Manual Transmissions and Drive Trains",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10IK",
+      "entry_title": "Automotive Parts and Service Advising",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10JF",
+      "entry_title": "Automotive Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10JJ",
+      "entry_title": "AUTOMOTIVE THEORY AND REPAIR I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10JK",
+      "entry_title": "AUTOMOTIVE THEORY AND REPAIR II",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10JL",
+      "entry_title": "AUTOMOTIVE THEORY AND REPAIR IV",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10JM",
+      "entry_title": "AUTOMOTIVE THEORY AND REPAIR V",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10JN",
+      "entry_title": "AUTOMOTIVE THEORY AND REPAIR VI",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10JP",
+      "entry_title": "Automotive Wheel Alignment",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10JW",
+      "entry_title": "BAR Specified Diagnostic, Repair, and Level 2 Inspection Training",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10KB",
+      "entry_title": "Basic Automotive Air Conditioning Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10KI",
+      "entry_title": "Basic Electricity and Electrical Systems Fundamentals",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10KT",
+      "entry_title": "Body and Chassis Electrical Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10LP",
+      "entry_title": "California State Bureau Of Automotive Repair Smog Inspector",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10LQ",
+      "entry_title": "California State Bureau of Automotive Repair Specified Diagnosis and Repair",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10LY",
+      "entry_title": "Climate Control Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10MC",
+      "entry_title": "COMPUTER CONTROL AND FUEL INJECTION",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10MX",
+      "entry_title": "DRIVE TRAIN COMPONENTS PRINCIPLES AND PRACTICES",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10NM",
+      "entry_title": "ELECTRICAL/ELECTRONIC SYSTEMS THEORY, INSPECTION & REPAIR",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10NO",
+      "entry_title": "Electrical Fundamentals Lecture",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10OF",
+      "entry_title": "Engine and Related Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10ON",
+      "entry_title": "Engine Electrical Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10OO",
+      "entry_title": "Engine Management Systems and Drivability",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10OQ",
+      "entry_title": "Engine Operation and Service",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10OT",
+      "entry_title": "Engine Performance and Drivability",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10PD",
+      "entry_title": "Engine Performance - Laboratory",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10PL",
+      "entry_title": "Engine Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10PM",
+      "entry_title": "Engine Theory, Design and Diagnosis",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10PN",
+      "entry_title": "ESTIMATING BODY DAMAGE",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10PZ",
+      "entry_title": "FUEL & EMISSIONS SYSTEMS THEORY, INSPECTION & REPAIR",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10QA",
+      "entry_title": "Fuel, Ignition, and Emission Control Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10QJ",
+      "entry_title": "Fundamentals of Automotive Management and Services",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10TL",
+      "entry_title": "INTERMEDIATE COLLISION REPAIR-PARTS, METAL, FRAME",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10TO",
+      "entry_title": "Intro to Automotive Mechanics",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10TY",
+      "entry_title": "INTRODUCTION TO AUTOMOBILE TECHNOLOGY",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10UP",
+      "entry_title": "Introduction to the Automotive Program",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10VI",
+      "entry_title": "Light Duty Diesel Performance",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10VQ",
+      "entry_title": "Light Duty Hybrid Electrical Vehicles",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10VS",
+      "entry_title": "Light/Medium Duty Diesel Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10VX",
+      "entry_title": "Manual and Automatic Transmissions, Transaxles and Drive Trains",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10WH",
+      "entry_title": "Manual Transmission and Drivetrain Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10WN",
+      "entry_title": "Manual Transmissions and Drivetrain",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10WP",
+      "entry_title": "Manual Transmissions and Transaxles",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10WQ",
+      "entry_title": "Manual Transmissions and Transaxles - Laboratory",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10XQ",
+      "entry_title": "PAINT PREPARATION AND APPLICATION",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10XT",
+      "entry_title": "Principles of Automotive Technology",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10YE",
+      "entry_title": "Smog Check Diagnostic & Repair Technician Training",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10ZA",
+      "entry_title": "STEERING,SUSPENSION,BRAKES,PRINCIPLES AND PRACTICES",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M10ZG",
+      "entry_title": "Suspension, Steering and Handling",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1102",
+      "entry_title": "Engine Repair - Laboratory",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1108",
+      "entry_title": "Heating and Air Conditioning",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1109",
+      "entry_title": "Heavy Duty Alternative Fuels",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1115",
+      "entry_title": "Ignition Analysis and Oscilloscope Diagnosis",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1121",
+      "entry_title": "Introduction to Automotive and Light Truck Diesel Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1126",
+      "entry_title": "Introduction to Electrified Vehicles",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1129",
+      "entry_title": "Introduction to Hybrid and Electric Vehicle Technology",
+      "colleges_offering": 7,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1136",
+      "entry_title": "Light Vehicle Diesel Engines",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1140",
+      "entry_title": "Manual Transmissions & Transaxles",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1148",
+      "entry_title": "Smog Check Inspector Training, Level 1 & 2",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1152",
+      "entry_title": "Smog Level One and Level Two",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1153",
+      "entry_title": "Specified Diagnostic and Repair",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1154",
+      "entry_title": "Suspension and Steering",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1155",
+      "entry_title": "SUSPENSION, STEERING, AND WHEEL ALIGNMENT",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1157",
+      "entry_title": "Upper End Engine Rebuilding and Machining",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M1158",
+      "entry_title": "Wheel Alignment, Chassis Dynamics, ADAS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M11AC",
+      "entry_title": "UNITIZED BODY PANEL, SECTION, & FRAME; REPLACEMENT & ALIGNMENT Ã‚Â",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M11AM",
+      "entry_title": "Wheel Alignment and Suspension",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M90BH",
+      "entry_title": "Electric Vehicle Auxiliary Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M90BI",
+      "entry_title": "Electric Vehicle Battery Technology",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M90BJ",
+      "entry_title": "Electric Vehicle Motor Technology",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AUTO M90BK",
+      "entry_title": "Electric Vehicle Power Management",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10AA",
+      "entry_title": "Advanced Instrument Flight Instructor Lab",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10AE",
+      "entry_title": "Aircraft Metal Assembly, Inspection, and Evaluation",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10AF",
+      "entry_title": "Aircraft Metal Assembly Inspection and Evaluation Laboratory",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10AJ",
+      "entry_title": "ASSEMBLY, RIGGING AND INSPECTION",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10AK",
+      "entry_title": "ASSEMBLY, RIGGING AND INSPECTION LABORATORY",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10AT",
+      "entry_title": "BASIC AIRCRAFT SCIENCE",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10AU",
+      "entry_title": "BASIC AIRCRAFT SCIENCE LABORATORY",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10AV",
+      "entry_title": "BASIC ELECTRICITY AND AUXILIARY SYSTEMS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10AW",
+      "entry_title": "BASIC ELECTRICITY AND AUXILIARY SYSTEMS LABORATORY",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10AX",
+      "entry_title": "Basic Instrument Flight Instructor Lab",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BC",
+      "entry_title": "ELECTRICAL AND INSTRUMENT SYSTEMS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BD",
+      "entry_title": "ELECTRICAL AND INSTRUMENT SYSTEMS LABORATORY",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BG",
+      "entry_title": "Helicopter Ground School",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BH",
+      "entry_title": "HYDRAULIC, LANDING GEAR, AND FUEL SYSTEMS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BI",
+      "entry_title": "HYDRAULIC, LANDING GEAR AND FUEL SYSTEMS LABORATORY",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BJ",
+      "entry_title": "IGNITION AND FUEL METERING SYSTEMS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BK",
+      "entry_title": "IGNITION AND FUEL METERING SYSTEMS LABORATORY",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BM",
+      "entry_title": "MAINTENANCE PROCEDURES",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BN",
+      "entry_title": "MAINTENANCE PROCEDURES LABORATORY",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BO",
+      "entry_title": "Powerplant Turbine and Reciprocating Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BP",
+      "entry_title": "Powerplant Turbine and Reciprocating Systems Lab",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BQ",
+      "entry_title": "Private Pilot Grounded School",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BR",
+      "entry_title": "PROPELLER AND POWERPLANT SYSTEMS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "AVIA M10BS",
+      "entry_title": "PROPELLER AND POWERPLANT SYSTEMS LABORATORY",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1002",
+      "entry_title": "Anatomy and Physiology",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1046",
+      "entry_title": "Environmental Science",
+      "colleges_offering": 20,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1062",
+      "entry_title": "Fundamentals of Biology",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1063",
+      "entry_title": "Fundamentals of Biology Laboratory",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1068",
+      "entry_title": "General Biology",
+      "colleges_offering": 27,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1069",
+      "entry_title": "General Biology I",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M10AR",
+      "entry_title": "Applied Biotechnology I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M10JV",
+      "entry_title": "Introduction to Biology Lecture/Lab",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M10KG",
+      "entry_title": "Introduction to Life Science Lab",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M10LH",
+      "entry_title": "Introductory Topics in Biology: Cells to Ecosystems (formerly Topics in Biology)",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1111",
+      "entry_title": "Introduction to Biology",
+      "colleges_offering": 23,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1114",
+      "entry_title": "Introduction to Biotechnology",
+      "colleges_offering": 14,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1121",
+      "entry_title": "Introduction to Human Biology",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1124",
+      "entry_title": "Introduction to Life Science Lecture",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BIOL M1143",
+      "entry_title": "Microbiology",
+      "colleges_offering": 44,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BSOT M1001",
+      "entry_title": "Computer Basics",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "BUSI M10AY",
+      "entry_title": "Leadership for Effective Organizations",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M1006",
+      "entry_title": "Specialty Systems",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M1008",
+      "entry_title": "Transit Level and Laser",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M1010",
+      "entry_title": "Welding II SMAW",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AA",
+      "entry_title": "Access Floor Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AB",
+      "entry_title": "Acoustical Blueprint Reading",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AE",
+      "entry_title": "Acoustical Exterior Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AG",
+      "entry_title": "Advanced Blueprint Reading for Mill Cabinet",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AI",
+      "entry_title": "Advanced Formwork",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AJ",
+      "entry_title": "Advanced Grid Ceilings",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AK",
+      "entry_title": "Advanced Machinery Operation",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AM",
+      "entry_title": "Advanced Pile Driving Land and Water",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AO",
+      "entry_title": "Advanced Structural Blueprints and Bridge Building",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AU",
+      "entry_title": "Blueprint Reading and Aerial Lift",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AV",
+      "entry_title": "Blueprint Reading-Commercial",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10AW",
+      "entry_title": "Blueprint Reading for Scaffold Erectors",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BB",
+      "entry_title": "Cabinet Hardware Installation",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BC",
+      "entry_title": "CAD Basics for Mill Cabinetry",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BD",
+      "entry_title": "Commercial and Industrial Insulation and Aerial Lift",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BE",
+      "entry_title": "Commercial Blueprint Reading and Mobile Tower Scaffolds",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BF",
+      "entry_title": "Commercial Concrete",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BG",
+      "entry_title": "Commercial Door Hardware",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BL",
+      "entry_title": "Concrete - Precast and Prestressed",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BN",
+      "entry_title": "Conveyors for Millwrights",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BO",
+      "entry_title": "CPR for Carpenters Apprentices",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BP",
+      "entry_title": "Cutting and Welding I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BQ",
+      "entry_title": "Cutting and Welding III",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BW",
+      "entry_title": "Drapery, Window Coverings, and Fine Furnishings",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BX",
+      "entry_title": "Energy Conservation Codes and Standards",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BY",
+      "entry_title": "Engineered Structural Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10BZ",
+      "entry_title": "Falsework, Shoring, and Heavy Timber Framing",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CA",
+      "entry_title": "Finishing and Repairing Floors",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CB",
+      "entry_title": "Floor to Ceiling Wall System Construction",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CC",
+      "entry_title": "Form Detailing, Construction, and Erection for Pile Drivers",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CD",
+      "entry_title": "Form Detailing, Construction & Erection",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CF",
+      "entry_title": "Foundations and Floors",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CH",
+      "entry_title": "Hazard Awareness for Scaffold Erectors",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CK",
+      "entry_title": "Infection Control Risk Assessment and Hospital Code for Acoustical Installers",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CL",
+      "entry_title": "Integrated Ceilings and Special Techniques",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CN",
+      "entry_title": "Interior Finish",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CO",
+      "entry_title": "Interior Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CQ",
+      "entry_title": "Introduction to CNC",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CR",
+      "entry_title": "Introduction to Grid Ceiling Installation",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CS",
+      "entry_title": "Introduction to Land and Water Pile Driving",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CT",
+      "entry_title": "Introduction to Office Modular Systems Installation",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CU",
+      "entry_title": "Introduction to Scaffolds and Confined Space",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CV",
+      "entry_title": "Introduction to Structural Blueprints and Layout Instruments",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CW",
+      "entry_title": "Introduction to the Skilled Trades I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CY",
+      "entry_title": "Introduction to Welding and Cutting",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10CZ",
+      "entry_title": "Introduction to Working Drawings, Construction Math and Fire Stop Installation",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DD",
+      "entry_title": "Layout/Leveling Construction Site Practice",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DE",
+      "entry_title": "Layout Procedures for Millwrights",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DG",
+      "entry_title": "Machinery Maintenance for Mill Cabinet",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DH",
+      "entry_title": "Machinery Maintenance for Millwrights",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DK",
+      "entry_title": "Math for the Mill Cabinet Trade",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DL",
+      "entry_title": "Mill Cabinet Safety and Tool Skills",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DN",
+      "entry_title": "Millwright Math Applications",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DO",
+      "entry_title": "Millwright Rigging",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DP",
+      "entry_title": "Millwright Safety and Tool Skills",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DQ",
+      "entry_title": "Modular System Construction and Quality Control II",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DR",
+      "entry_title": "Modular System Installer Safety",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DS",
+      "entry_title": "Modular Systems Construction and Quality Control I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DU",
+      "entry_title": "Monorails",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DV",
+      "entry_title": "OSHA 10-hour Construction Training Course",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10DY",
+      "entry_title": "Pile Driver Rigging",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10EB",
+      "entry_title": "Precision Optical Instruments",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10EC",
+      "entry_title": "Precision Tools for Millwrights",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10EE",
+      "entry_title": "Print Reading Measurement and Layout",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10EG",
+      "entry_title": "Residential Blueprint Reading and Forklift Safety",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10EJ",
+      "entry_title": "Residential Insulation and Weatherization",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10EO",
+      "entry_title": "Solid Surface Material, Fabrication, and Installation",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10EP",
+      "entry_title": "Specialty Ceiling Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CARP M10EQ",
+      "entry_title": "Stair Building",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHEM M1028",
+      "entry_title": "General Chemistry",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHEM M1030",
+      "entry_title": "General Chemistry I",
+      "colleges_offering": 21,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHEM M1033",
+      "entry_title": "General Chemistry II",
+      "colleges_offering": 26,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHEM M1046",
+      "entry_title": "Introduction to Chemistry",
+      "colleges_offering": 14,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHEM M1048",
+      "entry_title": "Introduction to General Chemistry",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHEM M1080",
+      "entry_title": "Preparation for General Chemistry",
+      "colleges_offering": 9,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHEM M10CE",
+      "entry_title": "Elements of General Chemistry",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHEM M10FO",
+      "entry_title": "Pre-General Chemistry",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHIN M1003",
+      "entry_title": "Beginning Chinese I",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHIN M1020",
+      "entry_title": "Elementary Mandarin Chinese I",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHIN M1021",
+      "entry_title": "Elementary Mandarin Chinese II",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CHIN M1023",
+      "entry_title": "Intermediate Chinese",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CNST M1010",
+      "entry_title": "Introduction to Construction",
+      "colleges_offering": 9,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CNST M10AC",
+      "entry_title": "Basic Construction Principles",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COMM M1025",
+      "entry_title": "Group Communication",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COMP M1001",
+      "entry_title": "C/C++ Programming",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COMP M1014",
+      "entry_title": "Introduction to Computer and Information Sciences",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COMP M1021",
+      "entry_title": "Linux Operating System",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COMP M1022",
+      "entry_title": "Unix System Administration",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COMP M10AC",
+      "entry_title": "A+ Core PC Operating Systems Technology",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COMP M10AD",
+      "entry_title": "A+ PC Hardware Technology",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COMP M10AM",
+      "entry_title": "Introduction to Systems & Network Cybersecurity",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COMP M10CY",
+      "entry_title": "IT Technical Support Fundamentals",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M1005",
+      "entry_title": "Barbering",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M1045",
+      "entry_title": "Salon Experience",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10DJ",
+      "entry_title": "Curly Hair Techniques 2",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10EB",
+      "entry_title": "Hair Coloring 1",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10EC",
+      "entry_title": "Hair Coloring 2",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10ED",
+      "entry_title": "Hair Coloring 3",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10EE",
+      "entry_title": "Hair Cutting 1",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10EF",
+      "entry_title": "Hair Cutting 2",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10EG",
+      "entry_title": "Hair Cutting 3",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10EI",
+      "entry_title": "Hair Styling 1",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10EJ",
+      "entry_title": "Hair Styling 2",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10FI",
+      "entry_title": "Multi Texture Styling",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10FK",
+      "entry_title": "Nail Care 1",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10FL",
+      "entry_title": "Nail Care 2",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10FM",
+      "entry_title": "Nail Care 3",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10FR",
+      "entry_title": "Permanent Waving",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10FY",
+      "entry_title": "Related Science 1A",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10FZ",
+      "entry_title": "Related Science 1B",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10GA",
+      "entry_title": "Related Science 2",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10GB",
+      "entry_title": "Related Science 3",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10GH",
+      "entry_title": "Short Hair Cutting",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10GJ",
+      "entry_title": "Skin Care 1",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10GK",
+      "entry_title": "Skin Care 2A",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10GL",
+      "entry_title": "Skin Care 2B",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COSM M10HB",
+      "entry_title": "Written Preparation for Barbering State Board Exam",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COUN M1010",
+      "entry_title": "CAREER EXPLORATION",
+      "colleges_offering": 25,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COUN M1020",
+      "entry_title": "Careers In Teaching",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COUN M1023",
+      "entry_title": "College and Career Success",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COUN M10CW",
+      "entry_title": "HELPING SKILLS FOR INTERPERSONAL RELATIONSHIPS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "COUN M10DG",
+      "entry_title": "HUMAN RELATIONSHIPS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CRIM M1001",
+      "entry_title": "Control and Supervision in Corrections",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CRIM M1002",
+      "entry_title": "Correctional Interviewing and Counseling",
+      "colleges_offering": 13,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CRIM M1010",
+      "entry_title": "Probation and Parole",
+      "colleges_offering": 13,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CRIM M10AE",
+      "entry_title": "Criminal Justice Report Writng",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CRIM M10AG",
+      "entry_title": "Institutional Treatment and Supervision of Offenders",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CULN M1001",
+      "entry_title": "Advanced Culinary",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CULN M10AR",
+      "entry_title": "Dairy Products, Breakfast Foods, Salads, and Appetizers",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CULN M10AT",
+      "entry_title": "Essential Baking and Meat, Poultry & Seafood Cooking Methods",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "CULN M10BT",
+      "entry_title": "Vegetables, Legumes, and Other Starches",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M1068",
+      "entry_title": "Choreography I",
+      "colleges_offering": 13,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M1069",
+      "entry_title": "Choreography II",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M10PA",
+      "entry_title": "Dance Rehearsal & Performance 3",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M10ZT",
+      "entry_title": "Mexican Folklorico III",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M10ZU",
+      "entry_title": "Mexican Folklorico IV",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M1166",
+      "entry_title": "Hip Hop",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M11GF",
+      "entry_title": "Street Dance I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M11GG",
+      "entry_title": "Street Dance II",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M11GH",
+      "entry_title": "Street Dance III",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M11GI",
+      "entry_title": "Street Dance IV",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M1265",
+      "entry_title": "Modern Dance Techniques I",
+      "colleges_offering": 7,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DANC M1266",
+      "entry_title": "Modern Dance Techniques II",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DENT M1007",
+      "entry_title": "Dental Office Procedures",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DENT M1012",
+      "entry_title": "Infection Control in Dentistry",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DENT M1015",
+      "entry_title": "Oral Radiology",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DENT M10AK",
+      "entry_title": "Basic Dental Sciences",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DENT M90AG",
+      "entry_title": "Ultrasonic Scaling",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DRAF M1005",
+      "entry_title": "REVIT",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "DRAF M10AD",
+      "entry_title": "Advanced CAD Modeling and Applications",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ECON M1024",
+      "entry_title": "Principles of Macroeconomics",
+      "colleges_offering": 15,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ECON M1026",
+      "entry_title": "Principles of Microeconomics",
+      "colleges_offering": 13,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "EDUC M1026",
+      "entry_title": "STEM Field Teaching",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "EDUC M1031",
+      "entry_title": "Teaching as a Profession",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "EDUC M1037",
+      "entry_title": "Universal Design for Learning",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ELEC M1032",
+      "entry_title": "Residential Wiring",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ELEC M10AN",
+      "entry_title": "Alternating Current Circuit Analysis",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ELEC M10AO",
+      "entry_title": "Alternating Current Circuit Laboratory",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ELEC M10CH",
+      "entry_title": "Direct Current Circuit Analysis",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ELEC M10CI",
+      "entry_title": "Direct Current Circuit Laboratory",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ENGL M1257",
+      "entry_title": "Reading Comprehension",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ENGR M1029",
+      "entry_title": "Engineering Graphics",
+      "colleges_offering": 35,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ENGR M1053",
+      "entry_title": "Introduction to Engineering Design",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ENGR M1076",
+      "entry_title": "Solidworks Beginning Solid Modeling",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ENGR M10DI",
+      "entry_title": "Engineering Design/CAD",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FASH M1010",
+      "entry_title": "Apparel Construction I",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FASH M1015",
+      "entry_title": "Beginning Sewing",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FASH M1075",
+      "entry_title": "Introduction to the Fashion Industry",
+      "colleges_offering": 9,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FASH M10BP",
+      "entry_title": "Apparel Construction I Laboratory",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1010",
+      "entry_title": "Basic Wildland Firefighter Training",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1033",
+      "entry_title": "Company Officer 2A",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1034",
+      "entry_title": "Company Officer 2A: Human Resource Management",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1035",
+      "entry_title": "Company Officer 2A: Human Resource Management for Company Officers",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1036",
+      "entry_title": "Company Officer 2B",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1037",
+      "entry_title": "Company Officer 2B: General Administration Functions for Company Officers",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1038",
+      "entry_title": "Company Officer 2B: General Administrative Functions",
+      "colleges_offering": 12,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1043",
+      "entry_title": "Company Officer 2C: Fire Inspections and Investigations",
+      "colleges_offering": 11,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1045",
+      "entry_title": "Company Officer 2D",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1046",
+      "entry_title": "Company Officer 2D: All-Risk Command Operations",
+      "colleges_offering": 15,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1049",
+      "entry_title": "Company Officer 2E: Wildland Incident Operations",
+      "colleges_offering": 14,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1050",
+      "entry_title": "Company Officer 2E: Wildland Incident Operations for Company Officers",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1051",
+      "entry_title": "Confined Space Awareness",
+      "colleges_offering": 11,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1052",
+      "entry_title": "Confined Space Rescue Technician",
+      "colleges_offering": 11,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1062",
+      "entry_title": "Ethical Leadership for Instructors",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1073",
+      "entry_title": "Fire Apparatus and Equipment",
+      "colleges_offering": 11,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1075",
+      "entry_title": "Fire Apparatus Driver Operator 1A",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1076",
+      "entry_title": "Fire Apparatus Driver/Operator 1A: Emergency Vehicle Operations",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1078",
+      "entry_title": "Fire Apparatus Driver/Operator 1B",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1079",
+      "entry_title": "Fire Apparatus Driver/Operator 1B - Pumping Apparatus Operations",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1088",
+      "entry_title": "Fire Behavior and Combustion",
+      "colleges_offering": 44,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1089",
+      "entry_title": "Fire Behavior & Combustion",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1098",
+      "entry_title": "Fire Fighting Tactics and Strategy",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10BB",
+      "entry_title": "Basic Power Saw Safety",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10BE",
+      "entry_title": "Basic Wildland Firefighter",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10CI",
+      "entry_title": "Company Officer 2E",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10CX",
+      "entry_title": "Driver/Operator Training 1B",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10EJ",
+      "entry_title": "Fire and Emergency Services Instructor 1",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10FR",
+      "entry_title": "Fire Hydraulics & Water Supply",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10FS",
+      "entry_title": "Fire Inspections and Investigation for Company Officers - CO 2C",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10FW",
+      "entry_title": "Fire Inspector 1D: Field Inspection Ã¢â‚¬â€œCA Specific",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10FX",
+      "entry_title": "Fire Inspector 1D: Field Inspection-California",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10GT",
+      "entry_title": "Fire Protect Equipment and Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10JU",
+      "entry_title": "Fundamentals of Fire Apparatus and Equipment",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10KH",
+      "entry_title": "General Administrative Functions for Company Officers - CO 2B",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10KU",
+      "entry_title": "Hazardous Materials Operations",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10KX",
+      "entry_title": "Hazardous Materials Tech/Spec 1A: Basic Chemistry",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10LQ",
+      "entry_title": "Human Resource Management for Company Officers - CO 2A",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10MM",
+      "entry_title": "Introduction to Fire Protection Organizations",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10OV",
+      "entry_title": "SFM Company Officer 2E",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10OY",
+      "entry_title": "Strategies and Tactics",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10PU",
+      "entry_title": "Wildland Fire Chainsaws",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10PY",
+      "entry_title": "Wildland Fire Fighting",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M10QE",
+      "entry_title": "Wildland Incident Operations for Company Officers - CO 2E",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1104",
+      "entry_title": "Fire Inspector 1C: Field Inspection",
+      "colleges_offering": 14,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1105",
+      "entry_title": "Fire Inspector 1D: Field Inspection - California Specific",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1115",
+      "entry_title": "Fire Prevention",
+      "colleges_offering": 20,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1116",
+      "entry_title": "Fire Prevention Technology",
+      "colleges_offering": 21,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1117",
+      "entry_title": "Fire Protection Equipment and Systems",
+      "colleges_offering": 27,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1148",
+      "entry_title": "Instructor 1",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1149",
+      "entry_title": "Instructor 1 - Instructional Methodology",
+      "colleges_offering": 7,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1150",
+      "entry_title": "Instructor 1: Instructor Methodology",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1154",
+      "entry_title": "Instructor I: Instructional Methodology",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1155",
+      "entry_title": "Instructor II: Instructional Development",
+      "colleges_offering": 7,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1165",
+      "entry_title": "Low Angle Rope Rescue Operational",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1168",
+      "entry_title": "Occupational Safety and Health for Emergency Services",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1171",
+      "entry_title": "Physical Fitness for Public Safety Personnel",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1172",
+      "entry_title": "Principles of Emergency Services",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1174",
+      "entry_title": "Principles of Fire and Emergency Services Safety and Survival",
+      "colleges_offering": 18,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1175",
+      "entry_title": "Principles of Fire and Emergency Services Safety-Survival",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1180",
+      "entry_title": "Rescue Systems 1: Basic Rescue Skills",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1198",
+      "entry_title": "S-290 Intermediate Wildland Fire Behavior",
+      "colleges_offering": 7,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1208",
+      "entry_title": "Swiftwater Rescue Technician I",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1214",
+      "entry_title": "Trench Rescue Technician",
+      "colleges_offering": 9,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FIRE M1216",
+      "entry_title": "Wildland Fire Control",
+      "colleges_offering": 17,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FREN M1013",
+      "entry_title": "Elementary French",
+      "colleges_offering": 16,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FREN M1015",
+      "entry_title": "Elementary French 2",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FREN M1017",
+      "entry_title": "Elementary French II",
+      "colleges_offering": 31,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "FTVE M1005",
+      "entry_title": "Introduction to Film Production",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "GEOG M1012",
+      "entry_title": "Environmental Geography",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "GEOG M1019",
+      "entry_title": "Field Geography: Mountains",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "GEOG M1036",
+      "entry_title": "Introduction to Cultural Geography",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "GEOG M1037",
+      "entry_title": "Introduction to Geographic Information Systems",
+      "colleges_offering": 12,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "GEOG M1038",
+      "entry_title": "Introduction to Geographic Information Systems and Laboratory",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "GEOG M1044",
+      "entry_title": "Introduction to Global Positioning Systems (GPS)",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "GEOG M1051",
+      "entry_title": "Map Interpretation and Analysis",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "GERM M1005",
+      "entry_title": "ELEMENTARY GERMAN",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "GERM M1013",
+      "entry_title": "Intermediate German",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1032",
+      "entry_title": "Development of Western Culture",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1084",
+      "entry_title": "History of the United States",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M10KL",
+      "entry_title": "HISTORY OF THE UNITED STATES TO 1815",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M10LD",
+      "entry_title": "HISTORY OF WESTERN CIVILIZATION TO 800 CE",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M10PG",
+      "entry_title": "Political and Social History of the United States from 1865",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M10PH",
+      "entry_title": "Political and Social History of the United States to 1877",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M10QI",
+      "entry_title": "SURVEY OF UNITED STATES HISTORY",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M10VQ",
+      "entry_title": "World History From 1500",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1113",
+      "entry_title": "INTRODUCTION TO WESTERN CIVILIZATION I",
+      "colleges_offering": 7,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1114",
+      "entry_title": "INTRODUCTION TO WESTERN CIVILIZATION II",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1115",
+      "entry_title": "INTRODUCTION TO WORLD CIVILIZATION I",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1116",
+      "entry_title": "INTRODUCTION TO WORLD CIVILIZATION II",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1155",
+      "entry_title": "United States History to 1877",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1157",
+      "entry_title": "Western Civilization",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1172",
+      "entry_title": "World Civilizations Since the 16th Century",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1174",
+      "entry_title": "World History I to 1600",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1177",
+      "entry_title": "World History Since 1500",
+      "colleges_offering": 11,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HIST M1178",
+      "entry_title": "World History to 1500",
+      "colleges_offering": 11,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HMDT M1002",
+      "entry_title": "Auto/Truck Electrical Systems",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HMDT M1006",
+      "entry_title": "Heavy-Duty Truck Brakes",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HMDT M1007",
+      "entry_title": "Heavy-Duty Truck Engines",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HORT M1008",
+      "entry_title": "Integrated Pest Management",
+      "colleges_offering": 19,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HORT M1009",
+      "entry_title": "Intermediate Berry Production",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HORT M1016",
+      "entry_title": "Introductory Berry Production",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HORT M1024",
+      "entry_title": "Landscape Design",
+      "colleges_offering": 17,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HORT M1031",
+      "entry_title": "Permaculture Design",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HORT M10DQ",
+      "entry_title": "Irrigation Design Fundamentals",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HORT M10DV",
+      "entry_title": "LANDSCAPE CAD-FUNDAMENTALS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HORT M10GJ",
+      "entry_title": "PLANT MATERIALS-EDIBLES",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HORT M10GN",
+      "entry_title": "PLANT MATERIALS-ORNAMENTAL",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HVAC M1021",
+      "entry_title": "Refrigeration Service",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "HVAC M10CX",
+      "entry_title": "Welding for HVAC/R",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ITAL M1013",
+      "entry_title": "Elementary Italian",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ITAL M1015",
+      "entry_title": "Elementary Italian 2",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ITAL M1021",
+      "entry_title": "Intermediate Italian",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ITAL M1028",
+      "entry_title": "Introduction to Italian Culture",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "ITAL M10AE",
+      "entry_title": "BEG ITALIAN I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "JAPN M1004",
+      "entry_title": "Elementary Japanese 1",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "JAPN M1005",
+      "entry_title": "Elementary Japanese 2",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "JOUR M1009",
+      "entry_title": "Broadcasting and Podcasting",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "KINE M10FM",
+      "entry_title": "Jogging, Powerwalking, & Running",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "KINE M12PA",
+      "entry_title": "The African American Experience in the United States",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "KINE M2003",
+      "entry_title": "Race and Ethnic Relations - Honors",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MACH M1001",
+      "entry_title": "Advanced MACH Tool Technology Lab",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MACH M1006",
+      "entry_title": "Introduction to CNC Machining",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MACH M1009",
+      "entry_title": "Introduction to Manual Machining",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MACH M1017",
+      "entry_title": "Welding I",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MACH M1018",
+      "entry_title": "Welding II",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MACH M10BG",
+      "entry_title": "CNC Lathe Programming",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MACH M10BO",
+      "entry_title": "CNC Mill Programming",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MACH M10EE",
+      "entry_title": "Machine Trades Print Reading",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1032",
+      "entry_title": "Calculus 2",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1045",
+      "entry_title": "Calculus for Life Sciences I",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1046",
+      "entry_title": "Calculus for Life Sciences II",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1048",
+      "entry_title": "Calculus I",
+      "colleges_offering": 13,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1057",
+      "entry_title": "Calculus II",
+      "colleges_offering": 13,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1065",
+      "entry_title": "College Algebra",
+      "colleges_offering": 57,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1076",
+      "entry_title": "College and Matrix Algebra",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M10EH",
+      "entry_title": "Calculus I With Analytic Geometry",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M10EM",
+      "entry_title": "Calculus II With Analytic Geometry",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M10JA",
+      "entry_title": "Elementary Statistics with Applications for Health Care Professionals",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1134",
+      "entry_title": "Intermediate Algebra",
+      "colleges_offering": 59,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1149",
+      "entry_title": "Introduction to Data Science",
+      "colleges_offering": 19,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1173",
+      "entry_title": "Liberal Arts Mathematics",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1208",
+      "entry_title": "Plane Trigonometry",
+      "colleges_offering": 9,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1211",
+      "entry_title": "Pre-Calculus",
+      "colleges_offering": 21,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1212",
+      "entry_title": "PRE-CALCULUS MATHEMATICS",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1228",
+      "entry_title": "Precalculus & Trigonometry",
+      "colleges_offering": 13,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1245",
+      "entry_title": "Statistics Pathway Part II",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MATH M1299",
+      "entry_title": "Trigonometry",
+      "colleges_offering": 54,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MGMT M1015",
+      "entry_title": "ORGANIZATION AND MANAGEMENT THEORY",
+      "colleges_offering": 7,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MGMT M1018",
+      "entry_title": "Principles of Management",
+      "colleges_offering": 32,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MULT M1006",
+      "entry_title": "Introduction To Multimedia Computer Applications",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MULT M10AU",
+      "entry_title": "Digital Video I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MULT M10BK",
+      "entry_title": "Introduction to Visual Communication",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1024",
+      "entry_title": "Beginning Guitar",
+      "colleges_offering": 31,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1057",
+      "entry_title": "Elementary Piano I",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1073",
+      "entry_title": "Fundamentals of Music",
+      "colleges_offering": 15,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1082",
+      "entry_title": "Harmony I",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M10AW",
+      "entry_title": "Applications of Digital Audio Workstations",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M10MT",
+      "entry_title": "Music Theory and Culture I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M10MU",
+      "entry_title": "Music Theory and Culture II",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M10MV",
+      "entry_title": "Music Theory and Culture III",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1103",
+      "entry_title": "INTRODUCTION TO RECORDING ARTS",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1104",
+      "entry_title": "Introductory Music",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1146",
+      "entry_title": "Music Skills I",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1147",
+      "entry_title": "Music Skills II",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1148",
+      "entry_title": "Music Skills III",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1158",
+      "entry_title": "Musicianship I",
+      "colleges_offering": 8,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1159",
+      "entry_title": "Musicianship II",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1160",
+      "entry_title": "Musicianship III",
+      "colleges_offering": 11,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1163",
+      "entry_title": "Piano Class I",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "MUSI M1188",
+      "entry_title": "Studies in Music Composition",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "NUTR M1011",
+      "entry_title": "Food Safety and Sanitation",
+      "colleges_offering": 12,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "NUTR M10AU",
+      "entry_title": "Foods for Healthy Lifestyles",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "NUTR M10CK",
+      "entry_title": "Rotations in Supervised Practice, Level A",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "OSHA M10AA",
+      "entry_title": "Federal OSHA Outreach: Construction Industry Safety",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "OSHA M10AB",
+      "entry_title": "Federal OSHA Outreach: General Industry Safety",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHIL M1061",
+      "entry_title": "Introduction to Philosophy",
+      "colleges_offering": 50,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHOT M1021",
+      "entry_title": "Beginning Photoshop",
+      "colleges_offering": 7,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHOT M1061",
+      "entry_title": "Introduction to Cameras and Composition",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHOT M1063",
+      "entry_title": "Introduction to Digital Photography",
+      "colleges_offering": 23,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHOT M1091",
+      "entry_title": "Portrait Photography",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHOT M10CL",
+      "entry_title": "Beginning Drone Piloting and Imaging",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHOT M10JZ",
+      "entry_title": "Phase One - Capture One",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHOT M10KE",
+      "entry_title": "Photo Editing: Lightroom",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHYS M1023",
+      "entry_title": "General Physics",
+      "colleges_offering": 17,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHYS M1025",
+      "entry_title": "GENERAL PHYSICS: CALCULUS SUPPLEMENT",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHYS M1026",
+      "entry_title": "General Physics I",
+      "colleges_offering": 20,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHYS M1037",
+      "entry_title": "Introduction to Physics",
+      "colleges_offering": 13,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHYS M1041",
+      "entry_title": "Introductory Physics",
+      "colleges_offering": 19,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHYS M1063",
+      "entry_title": "PHYSICS FUNDAMENTALS",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PHYS M1065",
+      "entry_title": "Physics with Calculus for Life Science Majors I",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "POLS M1009",
+      "entry_title": "Comparative Politics",
+      "colleges_offering": 14,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "POLS M1020",
+      "entry_title": "Introduction to Comparative Politics",
+      "colleges_offering": 14,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "POLS M10AA",
+      "entry_title": "American Government and Politics",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PORT M1002",
+      "entry_title": "Elementary Portuguese",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PUBS M1004",
+      "entry_title": "Cardiology Assessment and Medical Emergencies",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PUBS M1010",
+      "entry_title": "Fire Command 2E: Wildland Fire Fighting Tactics",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "PUBS M1016",
+      "entry_title": "Introduction to Emergency Medical Service Systems",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "RADT M1020",
+      "entry_title": "Radiation Physics",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "READ M1007",
+      "entry_title": "Critical Reading",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "READ M10AP",
+      "entry_title": "College Reading - Comprehension",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M1003",
+      "entry_title": "LEGAL ASPECTS OF REAL ESTATE I",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M1005",
+      "entry_title": "Principles of Real Estate",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M1007",
+      "entry_title": "Real Estate Appraisal I",
+      "colleges_offering": 9,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M1008",
+      "entry_title": "REAL ESTATE APPRAISAL II",
+      "colleges_offering": 4,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M1009",
+      "entry_title": "Real Estate Appraisal (Residential)",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M1010",
+      "entry_title": "Real Estate Finance I",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M1013",
+      "entry_title": "Residential Report Writing and Case Studies",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M10AL",
+      "entry_title": "Principles of Appraising",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M10AM",
+      "entry_title": "REAL ESTATE APPRAISAL: ASSESSMENT PRACTICE",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M10AO",
+      "entry_title": "REAL ESTATE APPRAISAL: REAL ESTATE FOUNDATIONS",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M10AP",
+      "entry_title": "REAL ESTATE APPRAISAL: RESIDENTIAL COST APPROACH",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "REAL M10AX",
+      "entry_title": "UNIFORM STANDARDS OF PROFESSIONAL APPR",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1015",
+      "entry_title": "Beginning Spanish",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1024",
+      "entry_title": "College Spanish II",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1026",
+      "entry_title": "COLLEGE SPANISH III",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1039",
+      "entry_title": "Elementary Spanish",
+      "colleges_offering": 16,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1044",
+      "entry_title": "Elementary Spanish I",
+      "colleges_offering": 28,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1045",
+      "entry_title": "Elementary Spanish II",
+      "colleges_offering": 25,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1064",
+      "entry_title": "Intermediate Spanish 1",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1065",
+      "entry_title": "Intermediate Spanish 2",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1069",
+      "entry_title": "Intermediate Spanish I",
+      "colleges_offering": 20,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1095",
+      "entry_title": "Spanish for Heritage Speakers 2",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1097",
+      "entry_title": "Spanish for Heritage Speakers II",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M10BN",
+      "entry_title": "CIVILIZATION OF SPAIN 1898 TO PRESENT",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M10BO",
+      "entry_title": "CIVILIZATION OF SPAIN THROUGH 1898",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M10DN",
+      "entry_title": "Honors English Translations Of Hispanic Literature",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M10FD",
+      "entry_title": "Introduction to Spanish and Latin American Literature",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M10HU",
+      "entry_title": "Spanish for Heritage Speakers 1",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1107",
+      "entry_title": "SPANISH FOR SPANISH SPEAKERS I",
+      "colleges_offering": 12,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "SPAN M1108",
+      "entry_title": "SPANISH FOR SPANISH SPEAKERS II",
+      "colleges_offering": 9,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "STMF M1011",
+      "entry_title": "Pumps",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "THTR M1057",
+      "entry_title": "Make-Up",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "THTR M1058",
+      "entry_title": "Motion Picture Performance Production",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "THTR M1069",
+      "entry_title": "Rehearsal and Performance in Production",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "THTR M1082",
+      "entry_title": "Single Camera Production",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "THTR M10RU",
+      "entry_title": "Theatre Design-Lighting",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "THTR M10RZ",
+      "entry_title": "Theatre History: 1700-present",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "VOCE M1001",
+      "entry_title": "Introduction to Baking",
+      "colleges_offering": 3,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1004",
+      "entry_title": "Advanced Gas Tungsten Arc Welding",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1009",
+      "entry_title": "Advanced Shielded Metal Arc Welding",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1011",
+      "entry_title": "Advanced Welding",
+      "colleges_offering": 10,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1019",
+      "entry_title": "BASIC WELDING",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1022",
+      "entry_title": "Blueprint Reading",
+      "colleges_offering": 19,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1029",
+      "entry_title": "Gas Metal Arc Welding",
+      "colleges_offering": 9,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1056",
+      "entry_title": "Introduction to the Welding Processes",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1057",
+      "entry_title": "Introduction to Welding",
+      "colleges_offering": 18,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1060",
+      "entry_title": "Introduction to Welding Processes",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1079",
+      "entry_title": "Shielded Metal Arc Welding",
+      "colleges_offering": 6,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1080",
+      "entry_title": "Shielded Metal Arc Welding - Beginning",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1083",
+      "entry_title": "Shielded Metal Arc Welding - Intermediate",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M1095",
+      "entry_title": "Welding Fundamentals",
+      "colleges_offering": 5,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10AR",
+      "entry_title": "Advanced Electric Arc Welding",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10BZ",
+      "entry_title": "Basic Pipe Welding - Gas Metal Arc Welding and Flux Cored Arc Weldin",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10CB",
+      "entry_title": "Basic Pipe Welding - Shielded Metal Arc Welding",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10CT",
+      "entry_title": "Blueprint Reading for Welders and Machinists",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10CU",
+      "entry_title": "Blueprint Reading (Metal Trades)",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10DE",
+      "entry_title": "ELECTRIC WELDING I",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10EJ",
+      "entry_title": "Gas Metal Arc Welding (GMAW)",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10EU",
+      "entry_title": "Gas Tungsten Arc - Ferrous",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10EW",
+      "entry_title": "Gas Tungsten Arc - Non-Ferrous",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10GL",
+      "entry_title": "Intermediate Electric Arc Welding",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10GZ",
+      "entry_title": "Introduction GMAW Gas Metal Arc Welding and FCAW Flux Core Arc Weld",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10JJ",
+      "entry_title": "Oxygen-Acetylene Welding and Cutting",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10JX",
+      "entry_title": "Position Welding (Arc Welding)",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10KL",
+      "entry_title": "Shielded Metal Arc Weld and Cut",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10LQ",
+      "entry_title": "Structural Welding FCAW",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10LR",
+      "entry_title": "Structural Welding SMAW",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10MN",
+      "entry_title": "Welding Certification D1.1 Code Clinic",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10ON",
+      "entry_title": "Welding Theory & Practice 1",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M10OO",
+      "entry_title": "Welding Theory & Practice 2",
+      "colleges_offering": 1,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    },
+    {
+      "identity": "WELD M9001",
+      "entry_title": "Shielded Metal Arc Welding 2",
+      "colleges_offering": 2,
+      "rekeyed_from": null,
+      "why": "no articulation record names this id, so the export's rollup reads an entry with nothing to adopt"
+    }
+  ]
+}

@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 938,
+  "file_datasets": 937,
   "external_services": 195,
   "consumers": 587,
   "workflows": 72,
@@ -16432,19 +16432,6 @@
     }
    ],
    "served": false,
-   "main_committers": []
-  },
-  "file:kb/identities_rebuild_out/2026-11-14/orphan_worklist.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_identities_rebuild.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 473
-    }
-   ],
-   "served": true,
    "main_committers": []
   },
   "file:kb/identities_rekey_out/2026-09-05/dead_worklist.json": {
