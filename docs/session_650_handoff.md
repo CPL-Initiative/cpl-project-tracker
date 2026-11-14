@@ -100,7 +100,7 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 | #3265 `claude/slo-objectives-rccd` | merged `7d1c3770`, 03:18Z | none |
 | this refresh, `claude/checkpoint-s649-final` | open | merge on green |
 | #3268 `c07f0647` (03:11Z), #3278 `6c2cf9a7` (03:29Z) (side session) | merged | none |
-| #3280 `claude/pages-withhold-internal-s649b` (side session) | open, in review at 03:41Z | *The side session* below |
+| #3280 `7d100154` (04:00Z) (side session) | merged; its deploy checked 04:08Z | none |
 | `claude/commons-identities-apply-s649b` `7c2f9edb` (side session) | pushed, no PR: the fresh dry-run plan | Sam's two answers, then the apply |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
 | merged since the checkpoint: #3271 (01:38Z), #3270 and #3267 (02:02Z), #3275 `b27d7aab` (02:12Z), #3274 `a7af46ee` (02:32Z), #3272 `91d451aa` and #3276 `18c74d87` (02:55Z) | merged | none |
@@ -193,9 +193,15 @@ file a workflow creates later, or a narrow `withhold` pattern) or `test` fails, 
 already published keeps publishing its new files. Troubleshooting has the entry. Undo: `git revert`, then rebuild the
 dependency map.
 
-**Open: #3280** withholds 963 files no page reads (`kb/contacts_harvest` with officials' emails and phones, `.claude/`,
-`CLAUDE.md`, the gitleaks files, `kb/migrations`, SQL, `kb/docs_audit`, internal scripts). In review; it merges on a
-clean reader proof and a green `test`, then its deploy is checked the same way.
+**#3280 merged (`7d100154`, 04:00Z):** the site stops serving 965 files no page reads (`kb/contacts_harvest` with
+officials' emails and phones, `.claude/`, `CLAUDE.md`, the gitleaks files, `.gitignore`, `kb/migrations`, SQL,
+`kb/docs_audit`, internal scripts); it publishes 21,750. Checked at 04:08Z: the dashboard, Sierra, the Fact Sheet, the
+Library, SkyView and two data files load; `CLAUDE.md`, `kb/contacts_harvest_seeds.json`, `kb/_row_audit.py` and the
+root generator script return 404. A guard fails if a served page ever loads a withheld path. A new `kb/` script is
+withheld by pattern and needs no line.
+
+**Let go by the side session (04:09Z):** every PR subscription was dropped as it was created; its last check-in fires
+only to merge this note's PR; no artifact watch. Vault note: CPLBrain#785.
 
 **WAITS FOR SAM, asked in session, unanswered at 03:41Z:** the identities apply. Two answers: "apply it" or "hold", and
 "drop the 625" or "keep them". The fresh plan (`kb/identities_rebuild_out/2026-11-14b/plan.json` on
