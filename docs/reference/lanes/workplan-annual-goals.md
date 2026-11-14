@@ -121,9 +121,15 @@ The paste that deletes the 12 extra rows and adds the unique index is
     `activity_summaries.js` and `_row_current_years` still read it as a fallback until then).
 0e. ✅ The two drafted descriptions landed through the runner (read back 21:07Z); the tab shows all 34 after the
     next build. A row Sam empties later shows in `--brief` again; draft it the same way.
-0d. **The reports still print the 2025-26 pair** (`generate_reports.js` and `master_report.js` hard-code
-    `kpi_goal_2526` beside `kpi_metric`); the fiscal-year pair belongs there too, with `kpi_current_<year>` exported
-    from the GOAL row's `cur_*` columns.
+0d. ✅ **The reports print each year's own pair (S649, SkyOriole-B).** `_build_wg_ladder` exports
+    `kpi_current_2526` .. `kpi_current_2930` from the GOAL row's `cur_*` (blank when null; 2025-26 also reads
+    `current`); `apply_live_project_current` overwrites a live row's with the live KPI for this fiscal year and the
+    `kpi_history` year-end for closed years; `CPL_DATA.workplan_fy` names the fiscal year. Both docx reports print
+    each year's Current over its Goal, head the summary column and the Current with this fiscal year, and fall back
+    to `kpi_metric` for this year only; the Custom Report prompt sends this year's goal, stretch and current. The
+    "2030 Stretch" is `kpi_stretch_2930` (both reports printed the 2028-29 stretch). Guards:
+    `tests/workplan_reports_year_pair.test.js` (both docx read back, the prompt) and
+    `tests/workplan_reports_year_pair_test.py` (the export, the live stamp; wired in `js-tests.yml`).
 0b. ✅ **Move stays reviewer-only (Sam, Open Asks Sheet 73 card 1, *Keep it reviewer-only*, 2026-10-13 11:45:21Z).** His later, direct answer stands over Sheet 72 card 4's *phrase* (03:50Z); read from the sheet store by S381 (`cpl_memory` `sam-sheet-73-card-1-keep-reviewer-only-2026-10-13`). Nothing to build; the function and the control stay as they went live.
 1. **The first Refresh Sam runs:** read the posted rows (`item_updates` where `item_type = 'activity'` and `raw` names `activity_summaries.js`) and his edits (`raw.edited`, `raw.draft`). What he changes in a draft is the prompt's next revision.
 2. **The first Move a reviewer makes:** read its `workplan_id_moves` row (before-values and counts) and the guard's verdict; the undo is in `kb/supabase_workplan_move.sql`'s header.

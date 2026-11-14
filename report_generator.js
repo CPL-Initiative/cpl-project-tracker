@@ -444,18 +444,49 @@
             elevation: elevation,
             kpis: data.kpis || {},
             lastUpdated: data.last_updated || 'N/A',
+            workplanFy: data.workplan_fy || '',
+        };
+    }
+
+    // This fiscal year's goal, stretch and current for one sub-activity (S649).
+    // The year is CPL_DATA.workplan_fy ('2026-27', written by the daily build from
+    // current_workplan_year()), else July 1 to June 30 from today, clamped to the
+    // ladder's 2025-26 .. 2029-30. Current is kpi_current_<year>; kpi_metric is
+    // the fallback so a row never goes blank.
+    function fiscalYearPair(p, label, today) {
+        var m = /^20(\d\d)-(\d\d)$/.exec(String(label || ''));
+        var sfx;
+        if (m) {
+            sfx = m[1] + m[2];
+        } else {
+            var d = today || new Date();
+            var start = d.getMonth() >= 6 ? d.getFullYear() : d.getFullYear() - 1;
+            start = Math.max(2025, Math.min(2029, start));
+            sfx = String(start).slice(2) + String(start + 1).slice(2);
+        }
+        var cur = p['kpi_current_' + sfx];
+        if (cur == null || cur === '') cur = p.kpi_metric || '';
+        var goal = p['kpi_goal_' + sfx]
+            || (sfx === '2526' ? p.kpi_target_2026 : sfx === '2930' ? p.kpi_target_2030 : '') || '';
+        return {
+            year: sfx.slice(0, 2) + '-' + sfx.slice(2),
+            goal: goal,
+            stretch: p['kpi_stretch_' + sfx] || '',
+            current: String(cur),
         };
     }
 
     // ── Build Claude prompt ──
     function buildPrompt(sel) {
         var projectSummaries = sel.projects.map(function (p) {
+            var fy = fiscalYearPair(p, sel.workplanFy);
             return '- **' + p.id + ' ' + p.name + '** (' + p.activity + ')\n'
                 + '  Status: ' + p.status + ' | ' + p.pct + '% complete\n'
                 + '  Description: ' + p.desc + '\n'
                 + '  KPI: ' + (p.kpi_metric || 'N/A') + ' ' + (p.kpi_unit || '') + '\n'
                 + (p.count_note ? '  How it is counted: ' + p.count_note + '\n' : '')
-                + '  Goal 25-26: ' + (p.kpi_goal_2526 || 'N/A') + ' | Stretch: ' + (p.kpi_stretch_2526 || 'N/A') + '\n'
+                + '  Goal ' + fy.year + ': ' + (fy.goal || 'N/A') + ' | Stretch: ' + (fy.stretch || 'N/A')
+                + ' | Current ' + fy.year + ': ' + (fy.current || 'N/A') + '\n'
                 + '  Latest Update: ' + (p.update || 'N/A') + (p.update && p.update_date ? ' (' + p.update_date + ')' : '') + '\n'
                 + '  Milestones: ' + (p.milestones || 'N/A') + '\n'
                 + '  Workplan Notes: ' + (p.workplan_notes || 'N/A') + '\n'
@@ -805,6 +836,7 @@
         activityUpdatesFor: activityUpdatesFor,
         buildPrompt: buildPrompt,
         buildSystem: buildSystem,
+        fiscalYearPair: fiscalYearPair,
         fetchLiveOverlay: fetchLiveOverlay,
         // Session 97 additions (elevation / audience titles / naming rule)
         AUDIENCES: AUDIENCES,
