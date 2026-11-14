@@ -75,6 +75,10 @@
   --sierra-bar-heading: var(--seal-blue-text); --sierra-bar-link: var(--cobalt); --sierra-bar-focus: var(--cobalt);
   --sierra-bar-chip-bg: var(--seal-blue); --sierra-bar-chip-ink: var(--on-seal);
   --sierra-bar-shadow: color-mix(in srgb, var(--ink) 16%, transparent); --sierra-bar-head-font: var(--font-display);
+  /* The public header (index.html, the cpl-public-header block; S653b) paints with these,
+     mapped onto this page's own the same way, so its dark is the page's dark. */
+  --cplh-bg: var(--surface); --cplh-line: var(--border); --cplh-fg: var(--body);
+  --cplh-muted: var(--muted); --cplh-link: var(--cobalt); --cplh-strong: var(--ink);
 }
 
 /* COBI's dark values (index.html, :root[data-theme="dark"]), under the reader's
