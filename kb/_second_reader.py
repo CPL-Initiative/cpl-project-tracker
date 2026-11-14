@@ -200,6 +200,16 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
               open(path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print("wrote %s: %d read, %d skipped (no page), %d error(s); verdicts %s"
           % (os.path.relpath(path, os.path.dirname(HERE)), len(rows), len(skipped), errors, json.dumps(counts)))
+    if not rows:
+        # The one legitimate empty run: the college has no record failing a machine check, so there is nothing
+        # to read. Any other empty run (every chosen record skipped because the capture found no page) read nothing
+        # and must not look clean.
+        if not records:
+            print("no record fails a machine check: nothing to read", file=sys.stderr)
+            return 0
+        print("nothing was read: all %d chosen record(s) skipped (no page the first reading came from)"
+              % len(skipped), file=sys.stderr)
+        return 1
     # A call error is a row with an error and no reading. A reading the scorer could not read is still a reading,
     # filed with its reason, and does not count here.
     call_errors = [r for r in rows if r["second"].get("error") and not r["second"].get("record")]

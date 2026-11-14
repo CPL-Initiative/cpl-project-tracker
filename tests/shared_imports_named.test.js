@@ -48,16 +48,26 @@ function sharedImports(root) {
   return found;
 }
 
+// A name counts only whole: "-" and word characters belong to the name, so "extract" is not named by
+// "program-requirements-extract" (COBIx on #3266).
+function names(text, name) {
+  const esc = name.replace(/[.*+?^${}()|[\]\\\/]/g, "\\$&");
+  return new RegExp("(^|[^\\w-])" + esc + "([^\\w-]|$)").test(text);
+}
+check("a shorter name inside a longer one does not count",
+  !names("# program-requirements-extract imports it", "extract") && !names("# old_group_queue.mjs", "group_queue.mjs")
+  && names("# program-requirements-extract imports it", "program-requirements-extract"));
+
 const comment = sharedComment(DEPLOY);
 check("cpl-chat-deploy.yml carries a SHARED CODE comment", comment.length > 0);
 
 const imports = sharedImports(FN_DIR);
 check("at least one function imports a _shared file (the scan reads the functions)", imports.size > 0);
 for (const [file, fns] of imports) {
-  check("the SHARED CODE comment names _shared/" + file, comment.includes(file),
+  check("the SHARED CODE comment names _shared/" + file, names(comment, file),
     "imported by " + [...fns].join(", ") + "; name it, and its importers, in the comment");
   for (const fn of fns) {
-    check("the SHARED CODE comment names " + fn + " as importing " + file, comment.includes(fn),
+    check("the SHARED CODE comment names " + fn + " as importing " + file, names(comment, fn),
       "add " + fn + " to the comment");
   }
   check("_shared/" + file + " exists", fs.existsSync(path.join(FN_DIR, "_shared", file)));
@@ -71,7 +81,7 @@ try {
   fs.writeFileSync(path.join(tmp, "planted-fn", "index.ts"), 'import { x } from "../_shared/planted_helper.mjs";\n');
   const got = sharedImports(tmp);
   check("a planted import of an unnamed _shared file is found and is not in the comment",
-    got.has("planted_helper.mjs") && !comment.includes("planted_helper.mjs"));
+    got.has("planted_helper.mjs") && !names(comment, "planted_helper.mjs"));
 } finally {
   fs.rmSync(tmp, { recursive: true, force: true });
 }
