@@ -1181,6 +1181,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/next_slo_colleges_test.py` | workflows: `js-tests.yml` | — |
 | `tests/occupation_matcher_stemming_test.py` | workflows: `js-tests.yml` | — |
 | `tests/orphan_parent_worklist_test.py` | workflows: `js-tests.yml` | — |
+| `tests/pages_allowlist.test.js` | workflows: `js-tests.yml` | — |
 | `tests/partner_crosswalk_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_dryrun_test.py` | workflows: `js-tests.yml` | — |
@@ -1479,5 +1480,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 939 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 940 file
 datasets · 195 external services · 587 consumers · 72 workflows · 41 tabs.

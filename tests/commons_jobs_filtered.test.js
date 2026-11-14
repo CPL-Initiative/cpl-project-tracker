@@ -110,8 +110,9 @@ const SCAN = { _scanned_at: "2026-11-04T06:00:00Z", _mid_codes: { stray_codes: 0
 
   // ── (4) the deploy ──
   const PG = fs.readFileSync(".github/workflows/pages.yml", "utf8");
-  check("(4) ⭐ the prune spares the daily scan", /if \[ "\$d" = "_site\/kb\/csr_out" \]; then find "\$d" -mindepth 1 -maxdepth 1 ! -name latest\.json/.test(PG)
-    && !/rm -rf _site\/kb\/\*_out /.test(PG));
+  const AL = fs.readFileSync(".github/pages_allowlist.txt", "utf8");
+  check("(4) ⭐ the Pages allowlist publishes the daily scan, and the rest of kb/csr_out stays withheld",
+    /^publish kb\/csr_out\/latest\.json$/m.test(AL) && !/^publish kb\/csr_out$/m.test(AL) && /^withhold kb\/\*_out$/m.test(AL));
   check("(4) the deploy fails if it goes missing", /"_site\/kb\/csr_out\/latest\.json"/.test(PG));
   H.report(results);
 })().catch((e) => { console.error(e); process.exit(1); });

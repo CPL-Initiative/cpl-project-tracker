@@ -898,10 +898,16 @@ def parse_workflow(rel: str, text: str) -> dict:
             "chain": chain, "urls": urls}
 
 
-def pages_excludes(text: str) -> list:
-    """The prune list in pages.yml is ground truth for served-vs-internal."""
-    return sorted({m.group(1).rstrip("/")
-                   for m in re.finditer(r"rm -r?f?\s+(?:-rf\s+)?_site/([^\s;]+)", text)})
+def pages_allowlist(text: str) -> tuple:
+    """.github/pages_allowlist.txt is ground truth for served-vs-internal: pages.yml publishes its "publish"
+    lines and nothing else (S649, #3104). Returns (publish, withhold), each a sorted list of paths; a folder
+    covers everything under it."""
+    pub, wh = set(), set()
+    for line in text.splitlines():
+        m = re.match(r"^(publish\??|withhold) (\S+)$", line)
+        if m:
+            (wh if m.group(1) == "withhold" else pub).add(m.group(2))
+    return sorted(pub), sorted(wh)
 
 
 # ── externals ───────────────────────────────────────────────────────────────
@@ -984,11 +990,12 @@ def build():
                     module_tabs[target].append(t)
 
     # ── page inventory ─────────────────────────────────────────────────────
-    pages_yml = read(".github/workflows/pages.yml")
-    not_served = pages_excludes(pages_yml)
+    publish_lines, not_served = pages_allowlist(read(".github/pages_allowlist.txt"))
+    publish_set = set(publish_lines)
 
     def served(rel: str) -> bool:
-        return not any(rel == e or rel.startswith(e + "/") for e in not_served)
+        parts = rel.split("/")
+        return any("/".join(parts[:i]) in publish_set for i in range(1, len(parts) + 1))
 
     # index.html is byte-identical to CPL_Dashboard.html by Rule 4 — scanning
     # both would double every dashboard edge, so the pair is treated as ONE page.
