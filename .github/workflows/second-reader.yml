@@ -65,6 +65,7 @@ jobs:
             ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }} \
             ${{ inputs.model && format('--model {0}', inputs.model) || '' }}
       - name: Upload the comparison
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v7
         with:
           name: second-reader
