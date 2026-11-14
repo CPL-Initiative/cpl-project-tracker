@@ -38,3 +38,20 @@ from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
 where m.slug in
   ('sam-identities-apply-and-drop-2026-11-14','sam-catalog-first-collection-2026-11-14','d-catalog-first-slice-order-s652','d-ncl-lookup-not-listed-needs-catalog-list-s652','d-prefix-alias-evidence-rule-s652','d-lassen-stale-note-known-defect-s652','d-sheet-pickers-are-buttons-s652','electives-fill-outside-section-census-s652','identities-map-applied-and-dropped-s652','p-merged-before-reading-pr-comment-s652','p-worker-delete-refused-surface-to-sam-s652','p-new-matcher-needs-self-recall-test-s652','p-mis-codes-carry-record-id-suffix-s652')
 group by m.slug, m.summary order by m.slug;
+
+-- ===========================================================================================================
+-- STATEMENT 2 -- NOT YET RUN (1 row; summary 392 characters, measured by script). Sam's answers on Open Asks Sheet 197
+-- (Complete pressed 14:38Z 2026-11-14), verified, his picker values quoted. Rollback by slug, as above. The conductor runs
+-- it as one execute_sql call and records RUN here.
+-- ===========================================================================================================
+insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('sam-sheet-197-answers-2026-11-14','decision','Sam''s Sheet 197 answers: Honors delete and design, slice B go','Sam, Open Asks Sheet 197, his own calls, 14:35Z to 14:38Z 2026-11-14. Card 1 (S652 decisions): "fine". Card 2: "delete" the bot rows HUMA M10ME and LIBR M10CJ. Card 3: "Base number plus H (MATH M1036H)"; "Two-way: either satisfies the other"; "Build the field first, then the rows"; "Rows for all 508 pairs"; "I name who in the note" (note empty). Card 4, slice B: "go", with the four guards.',array['commons','program-requirements-harvest','honors','decision'],'verified','Sam, Open Asks Sheet 197 (his own call)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyAvocet (S652)', 'create', 'S652 checkpoint, Sheet 197 answers (2026-11-14)', to_jsonb(m)
+from public.cpl_memory m where m.slug in ('sam-sheet-197-answers-2026-11-14')
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+select m.slug, length(m.summary) as summary_chars, count(l.id) filter (where l.action = 'create') as creates
+from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
+where m.slug in ('sam-sheet-197-answers-2026-11-14')
+group by m.slug, m.summary order by m.slug;

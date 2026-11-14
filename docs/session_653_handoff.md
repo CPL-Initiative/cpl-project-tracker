@@ -24,9 +24,11 @@ the UTC day were S650's; the contacts harvest is Sundays.
 
 ## First things, in order
 
-1. **Read the replies on [Open Asks Sheet 197](https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd)** (current) before any other work; carry out what Sam
-   answered. Card 1 carries S652's decisions; the Honors deletes (card 2), the Honors design (card 3) and slice B's go (card 4) wait on him. Sheet 196 is superseded by 197. An unanswered card
-   holds only itself.
+1. **[Open Asks Sheet 197](https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd) is answered in full (Complete pressed 14:38Z
+   2026-11-14); carry out what remains.** Card 1 *"fine"*; card 2 *"delete"* (First things 4); card 3: *"Base number plus H
+   (MATH M1036H)"*, *"Two-way: either satisfies the other"*, *"Build the field first, then the rows"*, *"Rows for all 508
+   pairs"*, *"I name who in the note"* with the note empty (who is asked about MATH M1044 is asked in the sheet's thread);
+   card 4 *"go"*, with the four guards (First things 9). Sheet 196 is superseded.
 2. **Slice A on draft #3300** (`claude/ncl-catalog-lookup-s652`): Skyline's free capture (run 43600982846) filed
    `capture_preview.json` at `18f220ac`. Of Skyline's 86 no-closed-list programs, 49 are `found` on 49 distinct pages
    (05809 on `programs/accounting-as.php`), 37 `not_matched`, none `not_listed`; the run's self-test on real pages was
@@ -56,17 +58,21 @@ the UTC day were S650's; the contacts harvest is Sundays.
    reader before any dispatch, and a count of how many curriQunet colleges' next capture would lose pages the same way.
    This is the catalog-first weakness #3299 names (a reader missing a program that is in the catalog): tell COBIx.
    Then Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley, one college at a time.
-4. **The `CrsId` prefix route:** the build takes the prefix from the Program Course File's `CrsId` where the course
+4. **The two Honors bot-row deletes** (`claude/honors-two-row-delete-s652`, a draft PR to follow; nothing applied): one
+   guarded delete of the `automerge-v1@bot` rows HUMA M10ME and LIBR M10CJ, on Sam's "delete" (Sheet 197 card 2). The
+   conductor's live reads, a second reader on the plan, then the push of `.apply`.
+5. **The `CrsId` prefix route:** the build takes the prefix from the Program Course File's `CrsId` where the course
    list disagrees; 11 of slice C's 17 pairs then retire.
-5. **Draft #3293** (the passing dry run, head `cb60a1b0`) after slice A's first capture: fold the own-list rule in,
+6. **Draft #3293** (the passing dry run, head `cb60a1b0`) after slice A's first capture: fold the own-list rule in,
    then one migration and one rescore; Cosumnes River's seven held passes follow. COBIx's statewide count is delivered
    (#3297).
-6. **Allan Hancock's trial on #3284**, due 2026-11-15 (`index=kb/course_outline_index/index_43566318943.json`,
+7. **Allan Hancock's trial on #3284**, due 2026-11-15 (`index=kb/course_outline_index/index_43566318943.json`,
    `slugs=allan_hancock`, `trial=12`), and the next objectives host, sac (a new full read).
-7. **Lassen:** a capture pinned to main's pages for 31132, 33263, 33729, 33730 and 42300, then the `set` step with a
+8. **Lassen:** a capture pinned to main's pages for 31132, 33263, 33729, 33730 and 42300, then the `set` step with a
    per-record hold; and the structured-fields design's migration step 1, Lassen first, with COBIx's spot-check before
    step 4.
-8. **Slice B** of #3299 on Sam's go (Sheet 197 card 4), under the conductor's four guards (#3299, comment 6877610924).
+9. **Slice B** of #3299: Sam's go is given (Sheet 197 card 4, 14:38Z); build it after slice A merges and its second look
+   has run per college, both bases side by side on the headline, under the conductor's four guards (#3299, comment 6877610924).
 
 Then Rule 8's `cpl_memory` query, the three-repo check, the highest-numbered handoff, `list_sessions` if you have it
 (otherwise the open PRs and `main` since this handoff), `df -h /`, `git worktree list`.
@@ -74,10 +80,10 @@ Then Rule 8's `cpl_memory` query, the three-repo check, the highest-numbered han
 ## If you are the scheduled session (the CPL Queue routine)
 
 **Safe unattended, in this order,** each under Rule 10 and its playbook: *First things* 1 (answered cards not on the
-hold list), 2, 3 (the reread is a data write: the compare and COBIx's spot-check first), 4, 5, 6 and 7, and code-only
+hold list), 2, 3 (the reread is a data write: the compare and COBIx's spot-check first), 4 (his word is given; it
+still needs the reviewed plan), 5, 6, 7, 8 and 9 under its guards, and code-only
 items from the lanes' NEXT lines. The display go of 2026-10-10 stands for every college; a merge that publishes waits
-on COBIx's spot-check. **Never run without Sam's word:** slice B (it moves a public figure); the two Honors bot-row
-deletes (HUMA M10ME, LIBR M10CJ); any Honors mint; the Sierra `is_test` deploy; anything on the `CLAUDE.md` hold list.
+on COBIx's spot-check. **Never run without Sam's word:** any Honors mint (held until the `honors_of` field is built); the Sierra `is_test` deploy; anything on the `CLAUDE.md` hold list.
 #2894 is his.
 
 ## You are the conductor
@@ -121,14 +127,15 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 | #3300 `claude/ncl-catalog-lookup-s652` | draft, head `13fe2023`; Skyline run 43600982846 | First things 2 |
 | `claude/riverside-city-prefix-rescore-s652` | no PR; `e9a6304f`, the short fresh capture: do not reread from it | First things 3 |
 | `claude/riverside-city-prefix-rescore-filed-s652` | no PR; cut from `main` `936c75d8`; the filed-pages reconcile dispatched 14:38Z | First things 3 (a) |
-| #3301 (slice C, prefix aliases) | merged `c6e0b893` (14:04Z) | First things 3 and 4 |
+| `claude/honors-two-row-delete-s652` | a worker's branch; draft PR to follow; nothing applied | First things 4 |
+| #3301 (slice C, prefix aliases) | merged `c6e0b893` (14:04Z) | First things 3 and 5 |
 | #3303 (COBIx's review of the design) | merged `3b2d9b38` (about 13:59Z) | none |
 | #3302 (the drop of the 625) | merged `bd549c5f` (13:40Z) | commons NEXT 6 |
 | #3298 (the identities apply) | merged `feeeeef2` (about 13:31Z) | commons NEXT 6 |
-| #3296 (the display design) | merged `19ed0958` (about 12:53Z) | First things 7 |
-| #3297 (the electives-fill census) | merged `e713ee10` (about 12:45Z) | First things 5 |
-| #3293 `claude/passing-dry-run-s651` | draft, head `cb60a1b0`, not reviewed by COBIx | First things 5 |
-| #3284 (Allan Hancock) | draft | First things 6 (due 2026-11-15) |
+| #3296 (the display design) | merged `19ed0958` (about 12:53Z) | First things 8 |
+| #3297 (the electives-fill census) | merged `e713ee10` (about 12:45Z) | First things 6 |
+| #3293 `claude/passing-dry-run-s651` | draft, head `cb60a1b0`, not reviewed by COBIx | First things 6 |
+| #3284 (Allan Hancock) | draft | First things 7 (due 2026-11-15) |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
 | samueltlee/CPLBrain#788 `claude/determined-mayer-7rzj3f` | draft, head `0dd1cbd9`: Sheet 197 and this session's note | merge on green |
 
@@ -159,6 +166,11 @@ per branch from its diff and this ledger, and remove a worktree whose branch is 
 - No Supabase table written by the session's PRs; no model spend; no paid run.
 
 ## Decisions to honor
+
+**Sam's, on Open Asks Sheet 197 (his own calls, 14:35Z to 14:38Z 2026-11-14; `sam-sheet-197-answers-2026-11-14`):**
+card 1 *"fine"*; card 2 *"delete"*; card 3 *"Base number plus H (MATH M1036H)"*, *"Two-way: either satisfies the other"*,
+*"Build the field first, then the rows"*, *"Rows for all 508 pairs"*, *"I name who in the note"* (note empty); card 4
+*"go"* (*Go, with the four guards*).
 
 **Sam's, in session (2026-11-14):** *"1. apply 2 drop"* (about 13:07Z) and *"drop"* (about 13:19Z), on Sheet 196
 card 4 (`sam-identities-apply-and-drop-2026-11-14`). His other words: *"see cobix notes on adjusting our college data
@@ -203,12 +215,12 @@ file.
 
 ## Open work, in order (from the lanes' NEXT lines)
 
-1. **`program-requirements-harvest`:** First things 2 to 8; then Los Medanos, Monterey Peninsula and Los Angeles Valley
+1. **`program-requirements-harvest`:** First things 2 to 9; then Los Medanos, Monterey Peninsula and Los Angeles Valley
    (a person); the standing list (Cerro Coso 40922 and Grossmont 46141 held; Chaffey's objectives-only read; the RCCD
    district profile; COBIx's three Glendale follow-ups; Desert 10195's stored hold; the reading-procedure check; the PDF
    headings; the free GE page reads; the district phase 0 builder; the wave sample, De Anza, Redwoods); objectives
    laspositas, Coastline, Golden West after sac.
-2. **`commons`:** the Honors design (Sheet 197 cards 2 and 3); FIRE 130 X's row-audit card; price the model pass; a
+2. **`commons`:** the Honors build as Sam ruled it (the `honors_of` field, the 508 pairs' rows, base-plus-H mints; MATH M1044's contact); FIRE 130 X's row-audit card; price the model pass; a
    potential-CPL column; the Leadership outlines; the #3298 and #3302 follow-ups (`title_differs_in_substance` and the 16
    `_superseded_rekeyed_from` entries; the header's 2,319; a merge member with no articulation record gets no entry;
    the drop report's rows section; `standards_2_ruled_renames_test.py` and `ccc_metric_test.py` failing on `main` with

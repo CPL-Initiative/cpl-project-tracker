@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-14T14:32:03Z",
+  "written_at": "2026-11-14T14:41:29Z",
   "session": 652,
   "moniker": "SkyAvocet",
   "run": "the CPL Queue routine",
@@ -325,7 +325,12 @@
       "text": "Open Asks Sheet 197 card 4. Your catalog-first rule (relayed by COBIx on issue 3299) flags a program on COCI but not listed in the catalog and moves on. Slice B would make the completeness base the catalog-listed Active programs, with a chip on each COCI-only row, which moves a public figure. It waits on slice A's results and your go, under four guards: each not-listed records its basis; the headline shows both bases side by side; a chipped program with awards in the last three years says so on its chip; closed-list programs whose page was claimed or not found stay in Still to pass until the second look has run for their college.",
       "if_no_reply": "The base stays every Active program; the lookup only records what it finds.",
       "link": "https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd",
-      "link_text": "Open Sheet 197"
+      "link_text": "Open Sheet 197",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-14",
+        "words": "go, with the four guards (Open Asks Sheet 197 card 4, 14:38Z). Slice B is built after slice A merges and its second look has run per college, with both bases side by side on the headline."
+      }
     }
   ],
   "notes": {

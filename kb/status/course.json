@@ -81,18 +81,34 @@
       "text": "Open Asks Sheet 197 cards 2 and 3 (carried from Sheet 196): whether to delete the bot rows HUMA M10ME and LIBR M10CJ, and five design choices for a new Honors M-ID (its numbering, one-way or two-way equivalence, the honors_of field, equivalence rows for the 508 pairs already apart, and who is asked about MATH M1044).",
       "if_no_reply": "No Honors M-ID is minted and the two rows stay.",
       "link": "https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd",
+      "link_text": "Open Sheet 197",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-14",
+        "words": "Open Asks Sheet 197, his own calls: card 2 \"delete\" (14:35Z); card 3 (14:37Z) \"Base number plus H (MATH M1036H)\", \"Two-way: either satisfies the other\", \"Build the field first, then the rows\", \"Rows for all 508 pairs\", \"I name who in the note\" with the note empty."
+      }
+    },
+    {
+      "title": "Who is asked about MATH M1044?",
+      "text": "MATH M1044 into M1036 waits on the MAP team's view of San Diego City College's credit-by-exam exhibit MAPCBES-CBES-1-001, Basic Refrigeration and AC Lab. On Sheet 197 card 3 you chose to name who in the note, and the note was empty; the conductor asked in the sheet's comment thread.",
+      "if_no_reply": "MATH M1044 stays as it is and no one is asked.",
+      "link": "https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd",
       "link_text": "Open Sheet 197"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-14T14:32:17Z",
+  "written_at": "2026-11-14T14:41:29Z",
   "project": "course",
   "next_step": {
-    "title": "The Honors design, then the identities map's follow-ups",
-    "text": "The identities map is applied and its 625 held entries are dropped. Next: the Honors design choices wait on Sam; FIRE 130 X's row-audit card is still unchecked; the map's title comparison, its header count and two failing tests are follow-ups from the review."
+    "title": "The honors_of field, then the 508 pairs, then the Honors mints",
+    "text": "Sam ruled the Honors design on Sheet 197: build the honors_of field in the curation apply first, then two-way equivalence rows for all 508 pairs, then new Honors M-IDs numbered base plus H. The two bot-row deletes go as one guarded delete after their review."
   },
   "changes": [
+    {
+      "at": "2026-11-14T14:37:00Z",
+      "text": "Sam answered the Honors cards on Sheet 197: delete the two bot rows; Honors M-IDs numbered base plus H with a two-way equivalence; the field first, then rows for all 508 pairs."
+    },
     {
       "at": "2026-11-14T13:49:00Z",
       "text": "The daily run rebuilt the adoption lists from the new map: the statewide could-adopt count reads 115 (was 114), and five fire and nursing credentials show fewer colleges that could adopt them."
@@ -112,10 +128,6 @@
     {
       "at": "2026-11-13T18:36:00Z",
       "text": "The re-clustering plan is drafted: two cases ready, four held for Sam, and the Honors counts measured. Nothing applied."
-    },
-    {
-      "at": "2026-11-12T21:05:44Z",
-      "text": "Re-clustering Step 1 revised on COBIx's four points: one district is one voice, two exhibit reach columns, cases chosen by reach, a subject code check, and a stop when a live read returns no rows. 678 confirmed, 760 proposed splits, 71 merge candidates, 348 with too little text. Pull request 3182 merged."
     }
   ]
 }
