@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T15:16:14Z",
+ "written_at": "2026-11-14T16:02:22Z",
  "rows": [
   {
    "key": "requirements",
@@ -367,7 +367,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-13T18:55:12-08:00",
+    "at": "2026-11-13T07:24:46-08:00",
     "every_hours": null
    },
    "facts": {
@@ -1038,40 +1038,10 @@
   },
   {
    "kind": "decision",
-   "project": "program-requirements",
-   "n": 1,
-   "title": "Merge or close pull request 3250, which would reverse Sheet 82 card 2",
-   "teaches": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way. Carried to Sheet 195 as card 5.",
-   "open": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
-   "todo_id": null,
-   "stop": "It ends when you answer the sheet."
-  },
-  {
-   "kind": "decision",
    "project": "exhibit",
    "n": 1,
    "title": "Three saved issuer rows read alifornia Veterinary Medical Association",
    "teaches": "A person saved three rows on July 9; two drop the C of California and one sits on Water Treatment Facilities.",
-   "open": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
-   "todo_id": null,
-   "stop": "It ends when you answer the sheet."
-  },
-  {
-   "kind": "decision",
-   "project": "course",
-   "n": 1,
-   "title": "How far the Honors split reaches, and four held re-clustering cases",
-   "teaches": "676 of the 680 Honors courses that share an identity with their base sit under official C-ID or CCN ids. M-IDs only makes 3 new M-IDs; official ids too makes 136. AJ 160, MUS 130, REAL M1038 with M1040 and MATH M1044 are held for your word.",
-   "open": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
-   "todo_id": null,
-   "stop": "It ends when you answer the sheet."
-  },
-  {
-   "kind": "decision",
-   "project": "course",
-   "n": 1,
-   "title": "Remove one row a bot saved, so the BUSI M1228 split is clean",
-   "teaches": "A title-matching bot's row keeps Santa Ana BUS 115 inside BUSI M1228. Splitting around it leaves M1228 carrying that course's title and counts; removing the row returns the course to BUSI M10XW. The receipt keeps the row.",
    "open": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
    "todo_id": null,
    "stop": "It ends when you answer the sheet."
