@@ -4635,7 +4635,7 @@
      "line": 326
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:.claude/settings.json": {
@@ -4662,7 +4662,7 @@
      "line": 263
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:/tmp/metrics_status": {
@@ -4803,7 +4803,7 @@
      "line": 86
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:CPL_Dashboard.html": {
@@ -8416,7 +8416,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:exhibit_progress.js": {
@@ -8569,7 +8569,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:fact-sheet/_build_statewide_recs.py": {
@@ -8582,7 +8582,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:fact-sheet/cpl_stories.js": {
@@ -8922,7 +8922,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:fetch_veteran_jst.py": {
@@ -8935,7 +8935,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:first_light.js": {
@@ -9364,7 +9364,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_apply_college_short_names.py": {
@@ -9377,7 +9377,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_apply_credential_review.py": {
@@ -9397,7 +9397,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_apply_curation.py": {
@@ -9410,7 +9410,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_apply_unclassified_triage.py": {
@@ -9423,7 +9423,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_audit_cid_claims.py": {
@@ -9436,7 +9436,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_audit_exhibits.py": {
@@ -9449,7 +9449,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_adopt_align.py": {
@@ -9462,7 +9462,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_adopt_page.py": {
@@ -9475,7 +9475,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_ccr_atlas_extract.py": {
@@ -9488,7 +9488,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_ccr_cpl.py": {
@@ -9508,7 +9508,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_ccr_cpl_universe.py": {
@@ -9521,7 +9521,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_ccr_cpl_universe_members.py": {
@@ -9534,7 +9534,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_ccr_sky.py": {
@@ -9547,7 +9547,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_ccr_universe.py": {
@@ -9567,7 +9567,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_college_courses.py": {
@@ -9580,7 +9580,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_commons_data_status.py": {
@@ -9593,7 +9593,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_commons_status.py": {
@@ -9620,7 +9620,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_cpl_pathway_ccr.py": {
@@ -9633,7 +9633,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_cpl_pathway_membership.py": {
@@ -9646,7 +9646,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_cr_reference.py": {
@@ -9659,7 +9659,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_credential_recs.py": {
@@ -9679,7 +9679,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_dependency_map.py": {
@@ -9692,7 +9692,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_discipline_blanks_worklist.py": {
@@ -9705,7 +9705,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_docs_index.py": {
@@ -9718,7 +9718,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_exhibit_cert_links.py": {
@@ -9731,7 +9731,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_exhibit_slo_neighbors.py": {
@@ -9744,7 +9744,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_exhibits_ai_sort.py": {
@@ -9757,7 +9757,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_exhibits_related.py": {
@@ -9777,7 +9777,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_exhibits_review.py": {
@@ -9797,7 +9797,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_governance_candidates.py": {
@@ -9810,7 +9810,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_orphan_parent_worklist.py": {
@@ -9823,7 +9823,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_peer_articulations.py": {
@@ -9843,7 +9843,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_program_course_graph.py": {
@@ -9863,7 +9863,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_build_remint_blast_radius.py": {
@@ -9890,7 +9890,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_ccr_seed_recheck_dryrun.py": {
@@ -9903,7 +9903,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_cer_decision_apply.py": {
@@ -9916,7 +9916,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_cer_procedures.py": {
@@ -9929,7 +9929,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_chatbox_ghost_delete.py": {
@@ -9942,7 +9942,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_college_contacts_harvest.py": {
@@ -9955,7 +9955,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_college_page_read.py": {
@@ -9968,7 +9968,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_commons_data_live.py": {
@@ -9981,7 +9981,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_course_outcomes_load.py": {
@@ -9994,7 +9994,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_course_outcomes_read.py": {
@@ -10007,7 +10007,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_course_outline_census.py": {
@@ -10020,7 +10020,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_course_outline_index.py": {
@@ -10033,7 +10033,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_course_title_cleanup_apply.py": {
@@ -10046,7 +10046,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_cred_fold_resolution_write.py": {
@@ -10059,7 +10059,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_cred_rename_apply.py": {
@@ -10072,7 +10072,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_cred_rename_apply_supabase.py": {
@@ -10085,7 +10085,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_cred_rename_dryrun.py": {
@@ -10105,7 +10105,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_csr_confirm_authority.py": {
@@ -10118,7 +10118,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_csr_quarterly_probe.py": {
@@ -10131,7 +10131,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_csr_trail.py": {
@@ -10144,7 +10144,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_description_units.py": {
@@ -10157,7 +10157,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_docket_process.py": {
@@ -10170,7 +10170,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_esl_sheet_apply.py": {
@@ -10183,7 +10183,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_exhibit_reanalysis_jev.py": {
@@ -10196,7 +10196,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_exhibit_subject_fill.py": {
@@ -10209,7 +10209,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_family_tag_apply.py": {
@@ -10222,7 +10222,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_fetch_program_course_files.py": {
@@ -10235,7 +10235,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_fold_unclassified.py": {
@@ -10248,7 +10248,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_funding_config_edit_apply.py": {
@@ -10261,7 +10261,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_harvest_gap_census.py": {
@@ -10274,7 +10274,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_identity_daily_check.py": {
@@ -10287,7 +10287,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_jev_adjudicate.py": {
@@ -10300,7 +10300,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_jev_agri_families.py": {
@@ -10313,7 +10313,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_jev_battery.py": {
@@ -10326,7 +10326,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_jev_harvest.py": {
@@ -10339,7 +10339,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_match_cos_authority.py": {
@@ -10352,7 +10352,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_mid_outcomes_compare.py": {
@@ -10365,7 +10365,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_overmerge_apply.py": {
@@ -10378,7 +10378,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_overmerge_apply_supabase.py": {
@@ -10391,7 +10391,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_probe_lifecycle_checks.py": {
@@ -10404,7 +10404,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_program_requirements_college.py": {
@@ -10438,7 +10438,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_program_requirements_dated_reads.py": {
@@ -10451,7 +10451,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_program_requirements_display_apply.py": {
@@ -10464,7 +10464,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_program_requirements_extract.py": {
@@ -10477,7 +10477,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_program_requirements_heading_agreement.py": {
@@ -10490,7 +10490,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_program_requirements_pilot.py": {
@@ -10503,7 +10503,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_program_requirements_wave.py": {
@@ -10523,7 +10523,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_program_sequence_ppm.py": {
@@ -10536,7 +10536,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_program_source_census.py": {
@@ -10549,7 +10549,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_publish_college_briefing.py": {
@@ -10562,7 +10562,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_rekey_kb_curation_supabase.py": {
@@ -10575,7 +10575,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_row_audit.py": {
@@ -10602,7 +10602,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_second_reader.py": {
@@ -10615,7 +10615,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_seed_projects_apply.py": {
@@ -10628,7 +10628,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_seed_workplan_goals_apply.py": {
@@ -10641,7 +10641,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_subj4_apply.py": {
@@ -10654,7 +10654,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_subj4_apply_supabase.py": {
@@ -10667,7 +10667,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_subj4_dryrun.py": {
@@ -10687,7 +10687,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_suggest_unclassified.py": {
@@ -10700,7 +10700,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_sweep_exhibit_titles.py": {
@@ -10720,7 +10720,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_sync_college_courses.py": {
@@ -10733,7 +10733,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_sync_cos_certifications.py": {
@@ -10746,7 +10746,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_sync_credential_catalog.py": {
@@ -10759,7 +10759,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_sync_credential_recs.py": {
@@ -10772,7 +10772,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_sync_map_custom_reports.py": {
@@ -10785,7 +10785,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_sync_moc_crosswalk.py": {
@@ -10798,7 +10798,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_sync_peer_articulations.py": {
@@ -10811,7 +10811,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_sync_program_checked.py": {
@@ -10824,7 +10824,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_typesafe_cr_trial.py": {
@@ -10837,7 +10837,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_typesafe_smoke.py": {
@@ -10850,7 +10850,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/_xai_smoke.py": {
@@ -10863,7 +10863,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/agab_remint_out/<date>/alias_map.json": {
@@ -13803,7 +13803,7 @@
      "line": 57
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/convergence_singletons_out/<date>/alias_map.json": {
@@ -14274,7 +14274,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/credential_merges.json": {
@@ -16745,7 +16745,7 @@
      "line": 13
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/morph_variant_out/2026-06-24/dryrun.json": {
@@ -19961,7 +19961,7 @@
      "line": 28
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/synonym_map.json": {
@@ -21310,7 +21310,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:map/sync_landing_contacts.py": {
@@ -21323,7 +21323,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:map/sync_map_users.py": {
@@ -21336,7 +21336,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:map_cleanup_views.js": {
@@ -21676,7 +21676,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:prototype/ccr_atlas_data.json": {
@@ -22027,7 +22027,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:prototype/funding_video/.dur": {
@@ -23419,7 +23419,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:statewide_data.js": {
@@ -27247,7 +27247,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:veteran-sprint-map/ca_cpl_map_selfcontained.html": {
@@ -34326,12 +34326,21 @@
   }
  },
  "not_served": [
+  "*.py",
   "*.xlsx",
+  ".claude",
   ".github",
+  ".gitleaks.toml",
+  ".gitleaksignore",
+  ".video-context",
+  "CLAUDE.md",
   "archive",
   "chatbox",
   "docs",
+  "documents/*.py",
+  "fact-sheet/*.py",
   "funding",
+  "kb/*.py",
   "kb/*_apply",
   "kb/*_dryrun",
   "kb/*_fold",
@@ -34341,11 +34350,18 @@
   "kb/coci_minted_memberships.json",
   "kb/coci_minted_singletons.json",
   "kb/coci_unified_courses.json",
+  "kb/college_identity",
   "kb/common_courses.json",
+  "kb/contacts_harvest",
+  "kb/contacts_harvest_seeds.json",
   "kb/course_crosswalk.json",
+  "kb/cpl_memory_*seed*.json",
   "kb/discipline_inference.json",
+  "kb/docs_audit",
   "kb/exhibit_audit/*.md",
   "kb/harvest_scouting",
+  "kb/memory_audit",
+  "kb/migrations",
   "kb/promotions.json",
   "kb/receipts",
   "kb/reference/*.xlsx",
@@ -34357,13 +34373,28 @@
   "kb/status/harvest_heading_agreement.md",
   "kb/status/mid_outcomes_compare_*",
   "kb/subj4_*",
+  "kb/supabase_*.sql",
+  "map",
   "news",
   "nudges",
+  "partners/ctdl-exchange/seed/tools/*.py",
+  "presentations/*.py",
+  "presentations/cac_2026-08/*.py",
+  "prototype/*.py",
+  "prototype/funding_video/*.py",
+  "prototype/globe/*.py",
+  "prototype/ironworker_video/*.py",
+  "prototype/mockup_harness/*.py",
+  "prototype/noncredit_video/*.py",
+  "raci/*.py",
   "reflections",
   "scripts",
+  "statewide",
   "tests",
+  "tmc/*.py",
   "tmc/source_data",
-  "tools"
+  "tools",
+  "veteran-sprint-map/*.py"
  ],
  "stale_risk": [
   "cpl_pathways_ccr_data.js rebuilt by kb/_build_cpl_pathway_ccr.py under daily-dashboard.yml but not in its commit list",

@@ -82,7 +82,9 @@ jobs:
           # >>> allowlist export (tests/pages_allowlist.test.js runs this block on a fixture repo)
           allow=.github/pages_allowlist.txt
           have=$(mktemp)
-          # Every tracked file and every folder above one, NUL-safe so no name is quoted.
+          # Every tracked file and every folder above one. -z keeps git from quoting a name
+          # with non-ASCII bytes; tr then splits on newlines again, so a name that itself
+          # holds a newline would still break the list (none is tracked).
           git ls-tree -r -z --name-only HEAD | tr '\0' '\n' \
             | awk '{ n = split($0, a, "/"); p = ""; for (i = 1; i <= n; i++) { p = (i == 1 ? a[1] : p "/" a[i]); print p } }' \
             | sort -u > "$have"
@@ -169,6 +171,11 @@ jobs:
             "_site/fact-sheet/index.html"
             "_site/kb-portal/index.html"
             "_site/sierra/index.html"
+            # One page per public family the allowlist serves (#3104 follow-up): the Library,
+            # the college-facing CPL opportunity page and the veteran map.
+            "_site/library/index.html"
+            "_site/cpl-opportunity/index.html"
+            "_site/veteran-sprint-map/ca_cpl_map_selfcontained.html"
             "_site/kb/liftoff_plan.json"
             "_site/kb/project_lifecycle.json"
             "_site/kb/coci_articulations.json"
@@ -226,7 +233,7 @@ jobs:
           jscount=$(find _site -maxdepth 1 -name '*.js' | wc -l)
           if [ "$jscount" -lt 30 ]; then echo "::error::only $jscount root *.js in _site (expected 30+)"; missing=1; fi
           # Served subdirs must be non-empty.
-          for d in exports reports tmc/source_pdfs; do
+          for d in exports reports tmc/source_pdfs cip_fitcheck; do
             if [ -z "$(ls -A _site/$d 2>/dev/null)" ]; then echo "::error::served dir empty/missing: _site/$d"; missing=1; fi
           done
           if [ "$missing" -ne 0 ]; then echo "Served-path assertion FAILED — not deploying."; exit 1; fi
