@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-14T07:46:02Z",
+  "written_at": "2026-11-14T08:02:35Z",
   "session": 650,
   "moniker": "SkyPlover",
   "run": "the CPL Queue routine",
@@ -320,6 +320,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-14T07:59:00Z",
+      "text": "Cosumnes River's display was rebuilt on main for the two programs read again from their own pages, so CPL Pathways and Sierra show them as passing."
+    },
     {
       "at": "2026-11-14T07:13:00Z",
       "text": "Cosumnes River: two programs, 30566 Psychology AA-T and 33072 History AA-T, were read again from their own catalog pages (552 and 404) and now pass; the receipt keeps the rows as they were."

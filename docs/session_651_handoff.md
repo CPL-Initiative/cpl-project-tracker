@@ -99,14 +99,15 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 | #3286, #3290 | merged `edf92643`, `24205f4c` | none |
 | #3287 | merged `b48434bd` (credential harvest 2026-11-14) | none |
 | #3289 | merged `26d3849b` (UI pass: the Veteran map) | none |
-| #3288 (Cosumnes River) | merged `<MERGE_SHA_3288>`; display run `<DISPLAY_RUN_3288>` | COBIx spot-checked; none |
+| #3288 (Cosumnes River) | merged `5d8c7c69` (about 07:56Z, green `test` at `94a6b697`); display run 43573475225 | COBIx's five non-blocking points (harvest lessons, *S650*) |
 | #3291 `claude/sweep-next-s650` | draft, head `cb9c3350`, Lassen's page read started about 07:25Z, not read back | First things 2 |
 | #3283 | draft, sdccd objectives read running | First things 3 |
 | #3284 | draft, Allan Hancock outline index | First things 4 |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
 | samueltlee/CPLBrain#786 | open: Sheet 196's source, this session's note | merge on green |
 
-Workers do not survive the session; brief a fresh worker per branch from its diff and this ledger.
+One worktree is left: `.claude/worktrees/agent-ae065bc97f3375f36` on `claude/sweep-next-s650` (#3291), to reuse or
+remove (`git worktree unlock` first). Workers do not survive the session; brief a fresh worker per branch from its diff and this ledger.
 
 ## What shipped (S650)
 
@@ -134,7 +135,9 @@ Workers do not survive the session; brief a fresh worker per branch from its dif
   `kb/receipts/program_requirement_records_college_reread_cosumnes_river_43568812092.json` (before-values; the guarded
   rollback restores them). The conductor read the table before (about 06:40Z) and after (about 07:13Z); COBIx
   spot-checked both against the public catalog. Display: `step=display`, `display_college=Cosumnes River College`, run
-  `<DISPLAY_RUN_3288>` on `main` after merge `<MERGE_SHA_3288>`.
+  43573475225 on `main` (07:57Z to 07:59Z, success) after merge `5d8c7c699ce1e50bbe7f7bc0dc01be5d5ec5bd9a`; the conductor's
+  live read after it: 30566, 33072 and 39656 carry display build `31471a8114e3`. Undo: the receipt's guarded rollback,
+  then a display run.
 - `cpl_memory`: five rows, `kb/receipts/cpl_memory_s650_rows_2026-11-14.sql` (RUN about 07:40Z 2026-11-14; undo by slug).
 - No `kb_curation` write; no model spend.
 
