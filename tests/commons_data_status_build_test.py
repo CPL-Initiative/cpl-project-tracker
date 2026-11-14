@@ -495,6 +495,16 @@ with tempfile.TemporaryDirectory() as tmp:
 members = B.ppm_members(ROOT)
 check("(16) the Program Pathways Mapper list is parsed from the committed SQL, every row a (college, host) pair",
       len(members) >= 60 and ("Modesto Junior College", "programmap.mjc.edu") in members and all(h and "." in h for _, h in members), len(members))
+check("(16) ⭐ every VALUES row of the mapper list is parsed: the parsed count equals the rows the SQL holds (60), so a row "
+      "with an escaped quote or a different shape cannot vanish before it reaches unmatched",
+      len(members) == B.ppm_values_rows(ROOT) == 60 and d["collection"]["ppm_list"]["colleges"] == len(members), (len(members), B.ppm_values_rows(ROOT)))
+with tempfile.TemporaryDirectory() as tmp16:
+    os.makedirs(os.path.join(tmp16, os.path.dirname(B.PPM_LIST)))
+    with open(os.path.join(tmp16, B.PPM_LIST), "w", encoding="utf-8") as f16:
+        f16.write("with v(college, host) as (values\n('A College','a.edu'),\n( 'St. Mary''s College' , 'b.edu' ),\n('C College','c.edu')\n)\nselect 1;\n")
+    m16 = B.ppm_members(tmp16)
+    check("(16) the parse reads an escaped quote and loose spacing as rows, never dropping one",
+          len(m16) == B.ppm_values_rows(tmp16) == 3 and ("St. Mary's College", "b.edu") in m16, m16)
 col16 = {c["name"]: c for c in d["colleges"]}
 cc16 = col16["Columbia College"]["collection"]
 check("(16) ⭐ Columbia: the program reader's model, records, run and cost from the receipts; its SLO read's run, system and kind",

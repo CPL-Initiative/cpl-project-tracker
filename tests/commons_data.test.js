@@ -594,7 +594,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const nx = s5.d.getElementById("cdd-next");
   check("next 1 ⭐: one Coming next section at the foot, each feature a line with what it waits on",
     nx && s5.d.querySelectorAll("#cdd-next").length === 1 && nx === s5.d.querySelector(".cmn-wrap.cdd").lastElementChild
-    && ["The College view", "AI workers per college", "The JST funnel", "SIS and curriculum system tiles", "Program Pathways Mapper reads per college", "Course descriptions per college",
+    && ["The College view", "AI workers per college", "The JST funnel", "SIS and curriculum system tiles", "Program pathway maps per college", "Course descriptions per college",
       "MIS course matches per college", "COE regional demand per college", "Planned datasets"].every((k) => nx.querySelector('[data-next="' + k + '"]')));
   check("next 2: the JST line carries the dictionary's stage; the planned line lists each planned dataset at its stage",
     /Dictionary stage: Asked\./.test(txt(nx.querySelector('[data-next="The JST funnel"]'))) && /JST authorizations \(Asked\); CVC offerings \(Assessed\)/.test(txt(nx.querySelector('[data-next="Planned datasets"]'))));

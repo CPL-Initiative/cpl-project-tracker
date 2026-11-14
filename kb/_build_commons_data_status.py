@@ -520,7 +520,10 @@ def college_outcomes(root: str, harvested: dict) -> dict:
 # ── #3310 (Sam, 2026-11-14): three cards on a college's panel, How it's collected, Program pathway maps, Data
 # sources, and the SIS and curriculum system integration line. Each line is what a committed file says, or it says
 # plainly that nothing records it. The live registry's pathway state stays in the live block; the page joins the two.
-PPM_LIST = "kb/supabase_program_source_ppm_hosts_s444.sql"   # Sam's 63 members of programmapper.org/ppm-schools
+# The Program Pathways Mapper member list: the 60 VALUES rows the S444 file holds. Its header says the list pasted
+# from programmapper.org/ppm-schools named 63 community colleges; the file does not record which three were not filed
+# (COBIx asked on #3316; the parse reads all 60, and tests/commons_data_status_build_test.py (16) pins that count).
+PPM_LIST = "kb/supabase_program_source_ppm_hosts_s444.sql"
 PPM_LIST_BY = "programmapper.org/ppm-schools, copied 2026-10-21"   # supplied by Sam (S444); the cards name roles, never people
 MAP_FILES = "kb/program_requirements_pilot/sequences/*.json"   # the committed term-by-term program maps
 COCI_EXPORTS = ("kb/reference/coci_course_list.xlsx", "tmc/source_data/coci_program_export_*.csv")
@@ -540,7 +543,14 @@ def ppm_members(root: str) -> list:
     """[(college, host)] from the VALUES list Sam supplied (the whole list, whichever rows the update wrote)."""
     text = _read_text(os.path.join(root, PPM_LIST))
     m = re.search(r"with v\(college, host\) as \(values(.*?)\n\)", text, re.S)
-    return re.findall(r"\('((?:[^']|'')*)','([^']*)'\)", m.group(1)) if m else []
+    return [(a.replace("''", "'"), b) for a, b in re.findall(r"\(\s*'((?:[^']|'')*)'\s*,\s*'((?:[^']|'')*)'\s*\)", m.group(1))] if m else []
+
+
+def ppm_values_rows(root: str) -> int:
+    """How many rows the list's VALUES block holds, counted by line, so a row the parse drops cannot vanish unseen."""
+    text = _read_text(os.path.join(root, PPM_LIST))
+    m = re.search(r"with v\(college, host\) as \(values(.*?)\n\)", text, re.S)
+    return sum(1 for line in (m.group(1) if m else "").splitlines() if line.strip().startswith("("))
 
 
 def collection_facts(root: str, harvested: dict, outcomes: dict, resolve, unmatched: list) -> tuple[dict, dict]:

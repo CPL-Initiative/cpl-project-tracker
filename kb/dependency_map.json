@@ -7993,7 +7993,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 867
+     "line": 877
     }
    ],
    "served": false,
@@ -17471,7 +17471,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 525
+     "line": 528
     }
    ],
    "served": false,
@@ -18481,7 +18481,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 526
+     "line": 529
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -26424,7 +26424,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 526
+     "line": 529
     }
    ],
    "served": false,

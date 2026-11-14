@@ -118,8 +118,21 @@
     strong: { word: "Confidence strong", test: function (c) { return level(c) === "strong"; } },
     partial: { word: "Confidence partial", test: function (c) { return level(c) === "partial"; } },
     limited: { word: "Confidence limited", test: function (c) { return level(c) === "limited"; } },
-    overall: { word: "Colleges with an overall bar", test: function (c, M) { return !!overallOf(M || VIEW.M, c); } }
+    overall: { word: "Colleges with an overall bar", test: function (c, M) { return !!overallOf(M || VIEW.M, c); } },
+    /* Program pathway maps (#3310, COBIx's review of #3316): the colleges whose term-by-term maps are committed, and
+       the colleges by mapState, so the statewide line's counts each open what they count. */
+    maps: { word: "Program maps held", test: function (c) { return ((c.collection || {}).maps || {}).held > 0; } },
+    maps_none: { word: "Program maps: none found when looked for", test: function (c, M) { return mapState(M || VIEW.M, c) === "none"; } },
+    maps_unknown: { word: "Program maps: not known", test: function (c, M) { return mapState(M || VIEW.M, c) === "unknown"; } }
   };
+  /* A college's program-maps state, the one rule the statewide line and the Program pathway maps card share (the card
+     reads it through its helpers): held when the mapper member list names the college, the registry holds a map source
+     or a map is committed; none when the registry's reader looked and found none; otherwise unknown. */
+  function mapState(M, c) {
+    var k = (c && c.collection) || {}, g = ((liveOf(M, c) || {}).registry) || null;
+    var reg = !g || g.row === false ? "unknown" : g.sequence_source ? "held" : g.sequence_checked ? "none" : "unknown";
+    return k.ppm_member || reg === "held" || ((k.maps || {}).held) ? "held" : reg === "none" ? "none" : "unknown";
+  }
   /* The level the builder wrote from the rule (rule.confidence); the page never derives one of its own. */
   function level(c) { return c && c.confidence ? c.confidence.level : null; }
   var LEVEL_RANK = { strong: 3, partial: 2, limited: 1 };
@@ -1076,10 +1089,18 @@
   var CARD_MODULES = [["commons_data_cards.js", "CPL_COMMONS_DATA_CARDS"]];
   function moreCards(M, c) {
     var H = { el: el, section: section, dl: dl, when: when, day: day, fmt: fmt, liveOf: liveOf, liveRead: liveRead, liveWords: liveWords,
-      platformWord: platformWord, paneWord: paneWord };
+      platformWord: platformWord, paneWord: paneWord, mapState: mapState };
     return [].concat.apply([], CARD_MODULES.map(function (m) {
       var mod = window[m[1]];
-      if (mod && mod.sections) { try { return mod.sections(M, c, H) || []; } catch (e) { return []; } }
+      /* A card module that throws says so, quietly, on the panel and in the console (COBIx's review of #3316): a
+         broken card never reads as a college with nothing to show. */
+      if (mod && mod.sections) {
+        try { return mod.sections(M, c, H) || []; }
+        catch (e) {
+          try { if (window.console && console.warn) console.warn("College Data Collection: " + m[0] + " could not draw its cards for " + c.name, e); } catch (w) { /* no console */ }
+          return [el("p", { cls: "cdd-of", "data-card-error": m[0], text: "This card could not be shown." })];
+        }
+      }
       if (window.CPL_TABS && window.CPL_TABS.loadScript && !moreCards[m[0]]) {
         moreCards[m[0]] = true;
         window.CPL_TABS.loadScript(m[0], m[1], function () { if (window[m[1]] && S.panel != null && VIEW.panel && !S.pane) drawPanel(); });
@@ -1647,6 +1668,24 @@
 
   /* What the mock shows beyond these views, each in one line with what it waits on: the builder's own reason where
      the file holds one, and the dictionary's stage where the doc names the dataset. No empty panel. */
+  /* The statewide program-maps line (COBIx's review of #3316): the committed maps (collection.maps.held), then the
+     colleges none found when looked for and not known, each count the word that opens the colleges it counts. A zero
+     count is plain text, since its list would be empty. */
+  function mapsLine(M) {
+    var held = ((M.collection || {}).maps || {}).held || 0;
+    function n(f) { return listFor(M, f).length; }
+    function word(f, text) {
+      if (!n(f)) return el("span", { "data-zero": f, text: text });
+      var b = el("button", { type: "button", cls: "cmn-word", "data-filter": f, text: text });
+      b.addEventListener("click", function () { pick(f); });
+      return b;
+    }
+    return el("span", { "data-maps-line": "true" }, [
+      word("maps", fmt(held) + " term-by-term " + (held === 1 ? "map" : "maps") + " committed, at " + plural(n("maps"), "college", "colleges")),
+      "; ", word("maps_none", plural(n("maps_none"), "college", "colleges") + " none found when looked for"),
+      "; ", word("maps_unknown", plural(n("maps_unknown"), "college", "colleges") + " not known"),
+      ". Each college's Program pathway maps card says where and on what platform."]);
+  }
   function comingNext(M) {
     var D = Array.isArray((M.dictionary || {}).datasets) ? M.dictionary.datasets : [];
     function stage(name) { var x = D.filter(function (d) { return d.name === name; })[0]; return x && x.stage ? " Dictionary stage: " + x.stage + "." : ""; }
@@ -1659,7 +1698,7 @@
       ["Curriculum view and pathway source links per college", "The live registry says whether each is held, never its address. Waits on the live read carrying the links themselves; the catalog the capture read opens from the row, and each program still to pass opens its own catalog page from its cause."],
       ["The JST funnel",(tbaOf(M, "jst") || "Waits on an authorized-student feed.") + stage("JST authorizations")],
       ["SIS and curriculum system tiles", "Wait on the district profiles (#3198); a college's system stays unknown until its profile names it."],
-      ["Program Pathways Mapper reads per college", (tbaOf(M, "ppm") || "Waits on a per-college read of the committed term maps.") + stage("Program Pathways Mapper (PPM)")],
+      ["Program pathway maps per college", mapsLine(M)],
       ["Course descriptions per college", (tbaOf(M, "descriptions") || "Waits on the description classifier's counts (#3219).") + stage("Course descriptions")],
       ["MIS course matches per college", (tbaOf(M, "mis") || "Waits on a join of the committed MIS course file to each college.") + stage("COMIS / MIS data")],
       ["COE regional demand per college", (tbaOf(M, "coe") || "Waits on a per-college read of the regional crosswalk.") + stage("COE labor market data")]

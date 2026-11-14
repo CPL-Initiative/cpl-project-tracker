@@ -184,6 +184,39 @@ async function panel(slug) { const x = load("#commons/data/college/" + slug, DAT
   check("lazy ⭐: the panel asks CPL_TABS for commons_data_cards.js once and draws the cards when it arrives",
     JSON.stringify(l.lazy) === '["commons_data_cards.js"]' && !!card(l, "how") && !!card(l, "maps") && !!card(l, "sources"), JSON.stringify(l.lazy));
 
+  // ── the statewide maps line (COBIx's review of #3316): the committed count, then none found and not known, each the
+  //    word that opens the colleges it counts ──
+  const s = load("#commons/data", DATA);
+  await s.M.boot(); await settle();
+  const ml = s.d.querySelector("[data-maps-line]");
+  const heldMaps = (DATA.collection.maps || {}).held;
+  check("maps line ⭐: the statewide line gives the committed maps' count, and none found and not known beside it, never TBA",
+    ml && new RegExp("^" + heldMaps + " term-by-term maps? committed").test(txt(ml)) && /none found when looked for/.test(txt(ml)) && /not known/.test(txt(ml)) && !/TBA|Waits on/.test(txt(ml.parentNode)), txt(ml));
+  const D = s.w.CPL_COMMONS_DATA, MM = D.model(DATA);
+  const noneU = D.listFor(MM, "maps_none"), unk = D.listFor(MM, "maps_unknown");
+  check("maps line: none found and not known never overlap, and a college with committed maps is in neither",
+    noneU.every((c) => unk.indexOf(c) < 0) && D.listFor(MM, "maps").every((c) => c.collection.maps.held > 0 && noneU.indexOf(c) < 0 && unk.indexOf(c) < 0));
+  const mw = ml && ml.querySelector('button[data-filter="maps"]');
+  if (mw) mw.click();
+  await settle();
+  check("maps line ⭐: the committed count opens the colleges whose maps are committed, and the list holds exactly those",
+    !!mw && D.address() === "commons/data/maps" && s.d.querySelectorAll("#cdd-colleges tbody tr[data-id]").length === D.listFor(MM, "maps").length, D.address());
+  const mcard = await panel("mt-san-antonio-college");
+  const st = mcard.d.querySelector('#cdd-panel [data-card="maps"] .cdd-state');
+  check("maps line: the card's state and the line's filter agree (one rule, mapState)",
+    st && st.getAttribute("data-state") === "held" && D.listFor(MM, "maps").some((c) => c.name === "Mt. San Antonio College")
+      && !D.listFor(MM, "maps_none").concat(D.listFor(MM, "maps_unknown")).some((c) => c.name === "Mt. San Antonio College"));
+
+  // ── a card module that throws (COBIx's review of #3316): a quiet line and a console warning, never silence ──
+  const b = load("#commons/data/college/columbia-college", DATA);
+  const warned = [];
+  b.w.console.warn = function () { warned.push([].slice.call(arguments).join(" ")); };
+  b.w.CPL_COMMONS_DATA_CARDS.sections = function () { throw new Error("broken on purpose"); };
+  await b.M.boot(); await settle();
+  const errLine = b.d.querySelector('#cdd-panel [data-card-error="commons_data_cards.js"]');
+  check("broken module ⭐: the panel says This card could not be shown, and the console names the module",
+    errLine && txt(errLine) === "This card could not be shown." && warned.some((x) => /commons_data_cards\.js/.test(x)) && !card(b, "maps"), JSON.stringify(warned));
+
   results.forEach((r) => console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : " — " + String(r[2]).slice(0, 300))));
   const failed = results.filter((r) => !r[1]);
   console.log("\n" + (results.length - failed.length) + "/" + results.length + " checks passed");

@@ -104,7 +104,9 @@
   function maps(M, c, H) {
     var k = c.collection || {}, ppm = k.ppm_member, held = (k.maps || {}).held || 0, onr = (k.maps || {}).on_records || 0;
     var reg = pathwayState(H, M, c), act = activeOf(H, M, c);
-    var state = ppm || reg === "held" || held ? "held" : reg === "none" ? "none" : "unknown";
+    /* One rule with the statewide line: commons_data.js's mapState, through the helpers; the same rule inline when a
+       caller passes none. */
+    var state = H.mapState ? H.mapState(M, c) : ppm || reg === "held" || held ? "held" : reg === "none" ? "none" : "unknown";
     var lines = [];
     lines.push(["Publishes maps", state === "held" ? "Yes" : state === "none" ? "None found when looked for" : "Not looked for yet"]);
     lines.push(["Program source registry", reg === "held" ? "Holds a map source" + (H.liveRead(M) ? " (" + H.liveWords(M) + ")" : "")
