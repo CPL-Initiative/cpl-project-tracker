@@ -79,8 +79,12 @@ check("(c) the fiscal year turns on July 1 and clamps to the ladder",
     && api.fiscalYearSuffix(new Date(2031, 0, 1)) === "2029_30" && api.fiscalYearSuffix(new Date(2024, 0, 1)) === "2025_26");
 const gf = api.goalFacts({ yr_2027_28: 200, cur_2026_27: 48, current: 30 }, "2027_28");
 check("(c) a year with no Current yet reads the latest year that has one", gf && gf.year === "2027-28" && gf.goal === 200 && gf.current === 48);
-check("(c) before any cur_ column, the one-column current still counts",
-  api.goalFacts({ yr_2026_27: 120, current: 30 }, "2026_27").current === 30);
+// Superseded (S653b, d-workplan-drop-current-two-steps-s653b): this pinned "before any
+// cur_ column, the one-column current still counts". The column is dropped in a second
+// step, so the drafter never reads it; cur_2025_26 is the one source for 2025-26.
+check("(c) the legacy one-column current is ignored (S653b)",
+  api.goalFacts({ yr_2026_27: 120, current: 30 }, "2026_27").current === 0
+    && api.goalFacts({ current: 30 }, "2025_26") === null);
 check("(c) a sub-activity with neither a goal nor a Current for the year states no fact",
   api.goalFacts({ yr_2025_26: 5 }, "2026_27") === null);
 check("(c) three updates per sub-activity, newest first",
