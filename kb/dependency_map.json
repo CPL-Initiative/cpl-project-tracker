@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 941,
+  "file_datasets": 940,
   "external_services": 195,
   "consumers": 586,
   "workflows": 72,
