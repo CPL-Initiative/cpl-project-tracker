@@ -1,0 +1,139 @@
+-- cpl_memory rows for SkyAvocet (S652), the checkpoint, 2026-11-14. One statement.
+-- Every summary at most 400 characters (the table's check), measured by script when this file was written:
+--   340, 325, 325, 366, 393, 337, 295, 397, 387, 284, 293, 390, 208; the longest is 397.
+-- INSERT ... ON CONFLICT (slug) DO NOTHING (a replay is harmless), then the cpl_memory_log append, then the verify.
+-- ROLLBACK (by slug; never by author):
+--   delete from cpl_memory_log where memory_id in (select id from cpl_memory where slug in (<the slugs>));
+--   delete from cpl_memory where slug in (<the slugs>);
+-- No row is superseded.
+
+-- ===========================================================================================================
+-- STATEMENT 1 -- RUN by the conductor at 14:37Z 2026-11-14 (13 rows inserted, 13 create log rows, longest summary 397; the log insert
+-- and the verify selected the rows by author and date in place of the slug list). Sam's two rulings (verified, his words verbatim) and the S652 conductor's
+-- decisions, facts and pitfalls (status proposed, for Sam to revise on Sheet 197 card 1). The conductor runs it as one
+-- execute_sql call and records RUN here.
+-- ===========================================================================================================
+insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('sam-identities-apply-and-drop-2026-11-14','decision','Sam: apply the identities rebuild and drop the 625 held entries','Sam, Sheet 196 card 4 ("Go", 11:52Z 2026-11-14), then in session S652: "1. apply 2 drop" (about 13:07Z) and "drop" (about 13:19Z). #3298 applied 651 fills and 578 refreshes (2,290 to 2,941 entries); #3302 dropped the 625 held entries (2,941 to 2,316). Undo: the drop receipt, then the 14b receipt, each via kb/_identities_rebuild.py --undo.',array['commons','identities','decision'],'verified','Sam, in session S652 (verbatim)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14'),
+('sam-catalog-first-collection-2026-11-14','decision','Sam: catalog-first collection; nothing stops the collection bus','Sam, relayed by COBIx on #3299 (his go, Nov 14 2026 about 4:55 AM PT): "nothing stops the collection bus from rolling." Start from the published catalog; compare back to COCI; one second look in the catalog by title and award; if still not found, flag "on COCI, not listed in the catalog" and move on, never in Still to pass.',array['program-requirements-harvest','catalog-first','decision'],'verified','Sam, relayed by COBIx, #3299','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14'),
+('d-catalog-first-slice-order-s652','decision','Catalog-first collection in three slices: C, A, then B','The S652 conductor cut #3299 into slices worked in order C (per-college prefix aliases, free, no table), A (the no-closed-list lookup, records only), B (the completeness base counts catalog-listed Active programs). B moves a public figure, so it waits on Sams go (Sheet 197 card 4) and four guards (#3299 comment 6877610924).',array['program-requirements-harvest','catalog-first','decision'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('d-ncl-lookup-not-listed-needs-catalog-list-s652','decision','The no-closed-list lookup: not_listed only on the catalogs own list','The S652 conductor, draft #3300: catalog_lookup reads found, not_listed, not_matched or not_searched. not_listed only when the catalogs own program list was read without the program; an empty search is not_matched and stays in Still to pass; a college under 80% self-recall or with any false match is not_searched. The method stays no_closed_list, so no count moves.',array['program-requirements-harvest','catalog-first','decision'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('d-prefix-alias-evidence-rule-s652','decision','A prefix alias is per college, on positive evidence','The S652 conductor, #3301 (c6e0b893): a college gets a prefix_aliases pair only with at least three courses matching on number, suffix and title and no counterexample. 17 pairs at 13 colleges; Los Rios ENGL for ENGWR removed by a second reader. Live coverage fails 225 to 205, 15 newly pass, none pass to fail. Next lever: take the prefix from the Program Course File CrsId (retires 11 of 17).',array['program-requirements-harvest','reconcile','decision'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('d-lassen-stale-note-known-defect-s652','decision','Lassens stale "no units printed" note stays as a known defect','The S652 conductor, answering COBIx on #3291 (comment 6877180917): Lassen published with the stale "no units printed" note on 30947, 31015, 31037, 31379 and 32083. It stays as a known defect until the structured-fields migration (design #3296, review folded in #3303), whose step 1 runs Lassen first with COBIxs spot-check before step 4.',array['program-requirements-harvest','display','decision'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('d-sheet-pickers-are-buttons-s652','decision','A decision sheet prints its choices as buttons on the card','The S652 conductor, on Sams report about Sheet 196 card 4: "196 said pick but there was not indication I could find of what I was supposed to pick--no options to choose from". The type-ahead pickers showed him no options and he typed Go twice. A cards choices are printed as buttons on the card.',array['decision-sheets','governance-team-enablement','decision'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('electives-fill-outside-section-census-s652','fact','Electives-fill census: 31 outside the section at most, about 2 real','S652, #3297 (e713ee10), for COBIx on #3111: of 749 passing records that pass on a fill behind the word guard, the match sits inside the section in 314, in the programs own window in 356, outside in 31 at most (Desert 23, Canada 5, Lassen 2, American River 1), span unknown 48. Only Lassen 32083 and Canada 35834 have no electives word in the record (30947 maybe). Measured by page: an upper bound.',array['program-requirements-harvest','scorer','fact'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('identities-map-applied-and-dropped-s652','fact','The identities map: applied and its 625 held entries dropped','S652: kb/coci_articulations.json identities went 2,290 to 2,941 (#3298) then 2,316 (#3302). No articulation record names any of the 625 dropped. Daily run 43600934967 rebuilt the lists: 371 in-browser rows lost 2,327 potential colleges, 625 export rows 2,692, no adopter changed; statewide could-adopt 114 to 115. Receipts under kb/identities_rebuild_out/2026-11-14b and 2026-11-14-drop.',array['commons','identities','fact'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('p-merged-before-reading-pr-comment-s652','pitfall','Merged a PR twelve minutes after a review without reading it','S652: the conductor merged #3296 twelve minutes after COBIx posted four findings on its thread (comment 6877408834), without reading them; #3303 folded them in afterward. Read a PRs own comments to the last page in the same batch of calls as its check runs, every time before a merge.',array['conductor','merging','pitfall'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('p-worker-delete-refused-surface-to-sam-s652','pitfall','A permission refusal goes to Sam, never around the check','S652: the permission check refused a workers run of the identities drop. The conductor told Sam, who was in session, and asked whether to run the one command itself; he said "drop" and the conductor ran it at 13:19:30Z. A refused write is surfaced to a person; it is never retried another way.',array['conductor','permissions','pitfall'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('p-new-matcher-needs-self-recall-test-s652','pitfall','A new matcher is gated by a self-recall test before it says not found','S652, draft #3300: the first strict title rule found only 63% of program pages the captures already held. After fixes the self-test finds 9,982 of 11,702 (85.3%) with no false match; colleges under the 80% floor report not_searched. Run a new matcher on records whose answer is held before its silence counts. Note: docs/kb-notes/methodology-a-new-matcher-is-gated-by-a-self-recall-test.md.',array['program-requirements-harvest','matching','pitfall'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('p-mis-codes-carry-record-id-suffix-s652','pitfall','An MIS course code can carry a record id after a hyphen','S652, the prefix-alias census: an MIS course code such as ENGL304-2507 carries a record id after the hyphen; read it as ENGL 304. A matcher that keeps the suffix misses the course or reads a different number.',array['program-requirements-harvest','course-key','pitfall'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyAvocet (S652)', 'create', 'S652 checkpoint (2026-11-14)', to_jsonb(m)
+from public.cpl_memory m where m.slug in
+  ('sam-identities-apply-and-drop-2026-11-14','sam-catalog-first-collection-2026-11-14','d-catalog-first-slice-order-s652','d-ncl-lookup-not-listed-needs-catalog-list-s652','d-prefix-alias-evidence-rule-s652','d-lassen-stale-note-known-defect-s652','d-sheet-pickers-are-buttons-s652','electives-fill-outside-section-census-s652','identities-map-applied-and-dropped-s652','p-merged-before-reading-pr-comment-s652','p-worker-delete-refused-surface-to-sam-s652','p-new-matcher-needs-self-recall-test-s652','p-mis-codes-carry-record-id-suffix-s652')
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+select m.slug, length(m.summary) as summary_chars, count(l.id) filter (where l.action = 'create') as creates
+from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
+where m.slug in
+  ('sam-identities-apply-and-drop-2026-11-14','sam-catalog-first-collection-2026-11-14','d-catalog-first-slice-order-s652','d-ncl-lookup-not-listed-needs-catalog-list-s652','d-prefix-alias-evidence-rule-s652','d-lassen-stale-note-known-defect-s652','d-sheet-pickers-are-buttons-s652','electives-fill-outside-section-census-s652','identities-map-applied-and-dropped-s652','p-merged-before-reading-pr-comment-s652','p-worker-delete-refused-surface-to-sam-s652','p-new-matcher-needs-self-recall-test-s652','p-mis-codes-carry-record-id-suffix-s652')
+group by m.slug, m.summary order by m.slug;
+
+-- ===========================================================================================================
+-- STATEMENT 2 -- RUN by the conductor at 14:42Z 2026-11-14 (1 row inserted, 1 create log row) (1 row; summary 392 characters, measured by script). Sam's answers on Open Asks Sheet 197
+-- (Complete pressed 14:38Z 2026-11-14), verified, his picker values quoted. Rollback by slug, as above. The conductor runs
+-- it as one execute_sql call and records RUN here.
+-- ===========================================================================================================
+insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('sam-sheet-197-answers-2026-11-14','decision','Sam''s Sheet 197 answers: Honors delete and design, slice B go','Sam, Open Asks Sheet 197, his own calls, 14:35Z to 14:38Z 2026-11-14. Card 1 (S652 decisions): "fine". Card 2: "delete" the bot rows HUMA M10ME and LIBR M10CJ. Card 3: "Base number plus H (MATH M1036H)"; "Two-way: either satisfies the other"; "Build the field first, then the rows"; "Rows for all 508 pairs"; "I name who in the note" (note empty). Card 4, slice B: "go", with the four guards.',array['commons','program-requirements-harvest','honors','decision'],'verified','Sam, Open Asks Sheet 197 (his own call)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyAvocet (S652)', 'create', 'S652 checkpoint, Sheet 197 answers (2026-11-14)', to_jsonb(m)
+from public.cpl_memory m where m.slug in ('sam-sheet-197-answers-2026-11-14')
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+select m.slug, length(m.summary) as summary_chars, count(l.id) filter (where l.action = 'create') as creates
+from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
+where m.slug in ('sam-sheet-197-answers-2026-11-14')
+group by m.slug, m.summary order by m.slug;
+
+-- ===========================================================================================================
+-- STATEMENT 3 -- RUN by the conductor at 14:46Z 2026-11-14 (1 row; summary 366 characters). Sam's pick-a-lane ruling, verbatim.
+-- Recorded here as the insert that ran; a replay is harmless.
+-- ===========================================================================================================
+insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('sam-conductor-picks-a-lane-2026-11-14','decision','Sam: the conductor picks a lane; an ask shows examples','Sam, in session S652, about 14:45Z 2026-11-14, on Sheet 197''s asks: "language is obtuse. would be more effective to show examples of each ask." "stop being so cautious and pick a lane and go with it. I will see the results on the commons and if there is a problem, I can address it based on the reality I''m seeing rather than vague choices." "Conductor can conduct!"',array['governance-team-enablement','decision-sheets','conductor','decision'],'verified','Sam, in session S652 (verbatim)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyAvocet (S652)', 'create', 'S652 checkpoint, the pick-a-lane ruling (2026-11-14)', to_jsonb(m)
+from public.cpl_memory m where m.slug in ('sam-conductor-picks-a-lane-2026-11-14')
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+select m.slug, length(m.summary) as summary_chars, count(l.id) filter (where l.action = 'create') as creates
+from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
+where m.slug in ('sam-conductor-picks-a-lane-2026-11-14')
+group by m.slug, m.summary order by m.slug;
+
+-- ===========================================================================================================
+-- STATEMENT 4 -- WITHDRAWN, never run. It proposed `d-math-m1044-via-csm-workspace-s652` (the MATH M1044 question to San
+-- Diego City College through the CSM Workspace); Sam reversed that in session before it ran. STATEMENT 5 replaces it.
+-- ===========================================================================================================
+
+-- ===========================================================================================================
+-- STATEMENT 5 -- RUN by the conductor at 14:51Z 2026-11-14 (2 rows inserted, 2 create log rows; summaries 396 and 391).
+-- Sam's in-session ruling on M-IDs (verified, verbatim) and the reversed MATH M1044 decision (proposed).
+-- Slugs: sam-mids-are-ours-trial-and-error-2026-11-14, d-math-m1044-stays-no-one-asked-s652. Rollback by slug, as above.
+-- The insert ran in the shape of STATEMENT 2, with the log insert and the verify selected by these two slugs.
+-- ===========================================================================================================
+
+-- ===========================================================================================================
+-- STATEMENT 6 -- RUN by the conductor at 14:55Z 2026-11-14: sam-mid-care-goes-into-the-rewiring-2026-11-14.
+-- ===========================================================================================================
+
+-- ===========================================================================================================
+-- STATEMENT 7 -- RUN by the conductor at 14:57Z 2026-11-14: sam-ccn-structures-gold-standard-2026-11-14.
+-- ===========================================================================================================
+
+-- ===========================================================================================================
+-- STATEMENT 8 -- RUN by the conductor at 15:37Z 2026-11-14 (2 rows; 21 S652 rows in the table in all) (2 rows; summaries 354 and 367 characters, measured by script). The conductor's
+-- HUMA M10OI decision and the Riverside City rescore fact (status proposed). One execute_sql call; record RUN here.
+-- ===========================================================================================================
+insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('d-huma-m10oi-into-m1110-s652','decision','Merge HUMA M10OI into HUMA M1110 directly','The S652 conductor: the dismissal row that holds HUMA M1110 and M10ME apart (#3304, honors-s652@bot) also stops the matcher proposing HUMA M10OI ("World Religion") with M1110 ("World Religions"). Merge M10OI into M1110 directly as its own small M-ID change under a receipt that undoes it, with one reader on the rewiring. Not done at the S652 checkpoint.',array['commons','honors','decision'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('riverside-city-rescored-prefix-aliases-s652','fact','Riverside City rescored from its filed pages under prefix aliases','S652, slice C of #3299: Riverside City reconciled from its filed pages (run 43605883626, sources_from=38108461470, no page loaded), reread run 43608708424 (244 posted, 240 replaced, 4 held). Live passing 222 to 230 of 244 (15:10Z, 15:15Z). Receipt kb/receipts/program_requirement_records_college_reread_riverside_city_43608708424.json. Display waits on COBIx (#3305).',array['program-requirements-harvest','reconcile','fact'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyAvocet (S652)', 'create', 'S652 checkpoint, final refresh (2026-11-14)', to_jsonb(m)
+from public.cpl_memory m where m.slug in ('d-huma-m10oi-into-m1110-s652','riverside-city-rescored-prefix-aliases-s652')
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+select m.slug, length(m.summary) as summary_chars, count(l.id) filter (where l.action = 'create') as creates
+from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
+where m.slug in ('d-huma-m10oi-into-m1110-s652','riverside-city-rescored-prefix-aliases-s652')
+group by m.slug, m.summary order by m.slug;
+
+-- ===========================================================================================================
+-- STATEMENTS 3, 5, 6 and 7, AS THEY STAND IN THE TABLE (read back by the conductor at 15:48Z 2026-11-14, on COBIx's
+-- review of #3295: the blocks above recorded these as RUN with no SQL). Replaying this insert rebuilds the five rows;
+-- each ran with a log insert of action 'create' selected by its slug. STATEMENT 1's log insert and verify ran with
+--   where m.author = 'SkyAvocet (S652)' and m.event_date = date '2026-11-14'
+--     and (m.slug like '%-s652' or m.slug in ('sam-identities-apply-and-drop-2026-11-14','sam-catalog-first-collection-2026-11-14'))
+-- in place of the slug list printed in STATEMENT 1.
+-- ROLLBACK, the full slug set of this file (21 rows):
+--   sam-identities-apply-and-drop-2026-11-14, sam-catalog-first-collection-2026-11-14, d-catalog-first-slice-order-s652,
+--   d-ncl-lookup-not-listed-needs-catalog-list-s652, d-prefix-alias-evidence-rule-s652, d-lassen-stale-note-known-defect-s652,
+--   d-sheet-pickers-are-buttons-s652, electives-fill-outside-section-census-s652, identities-map-applied-and-dropped-s652,
+--   p-merged-before-reading-pr-comment-s652, p-worker-delete-refused-surface-to-sam-s652,
+--   p-new-matcher-needs-self-recall-test-s652, p-mis-codes-carry-record-id-suffix-s652, sam-sheet-197-answers-2026-11-14,
+--   sam-conductor-picks-a-lane-2026-11-14, sam-mids-are-ours-trial-and-error-2026-11-14, d-math-m1044-stays-no-one-asked-s652,
+--   sam-mid-care-goes-into-the-rewiring-2026-11-14, sam-ccn-structures-gold-standard-2026-11-14,
+--   d-huma-m10oi-into-m1110-s652, riverside-city-rescored-prefix-aliases-s652
+-- ===========================================================================================================
+insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('sam-conductor-picks-a-lane-2026-11-14','decision','Sam: pick a lane and go; show examples; he reacts to results','Sam, in session S652, about 14:45Z 2026-11-14, on Sheet 197''s asks: "language is obtuse. would be more effective to show examples of each ask." "stop being so cautious and pick a lane and go with it. I will see the results on the commons and if there is a problem, I can address it based on the reality I''m seeing rather than vague choices." "Conductor can conduct!"',array['governance-team-enablement','decision-sheets','conductor','decision'],'verified','Sam, in session S652 (verbatim)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14'),
+('d-math-m1044-stays-no-one-asked-s652','decision','MATH M1044 stays apart from M1036; no one is asked','The S652 conductor first sent the MATH M1044 question to San Diego City College, and Sam reversed it in session (2026-11-14): "why are we asking anyone anything about a MID course, which is our own construct (synthetic)". MATH M1044 stays apart from M1036 and no one is asked. An M-ID question never goes to a college; the exhibit''s likely mis-filed articulation is a clean-up worklist item.',array['commons','honors','decision'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('sam-mids-are-ours-trial-and-error-2026-11-14','decision','Sam: an M-ID is our own construct; expect trial and error','Sam, in session S652, about 14:50Z 2026-11-14: "why are we asking anyone anything about a MID course, which is our own construct (synthetic)... they have no idea that MIDs even exist"; "we will be adjusting and deleting and refolding and reminting MIDs for quite a while as we figure out the best way to do it almost through trial and error". M-ID staging changes are the conductor''s, by receipt.',array['commons','mid-lifecycle','conductor','decision'],'verified','Sam, in session S652 (verbatim)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14'),
+('sam-mid-care-goes-into-the-rewiring-2026-11-14','decision','Sam: an M-ID change is low stakes if its rewiring is done correctly','Sam, in session S652, about 14:53Z 2026-11-14: "the thing that probably makes them not low stakes to you is all the ways mids are wired to dependencies that have to be rewired when changes are made... still low stakes on the end user side provided that all the rewiring along the way is done correctly". The M-ID choice is low stakes; the care and the review go into rewiring its dependents.',array['commons','mid-lifecycle','conductor','decision'],'verified','Sam, in session S652 (verbatim)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14'),
+('sam-ccn-structures-gold-standard-2026-11-14','decision','Sam: CCN structures are our gold standard','Sam, in session S652, about 14:58Z 2026-11-14, after asking whether the Honors CCNs are distinct records (ENGL C1000 and ENGL C1000H): "CCN structures should be our gold standard". The conductor''s reading: where the common course numbering system settles a structural question (Honors as a suffixed sibling record, embedded support, numbering), an M-ID follows it.',array['commons','mid-lifecycle','honors','decision'],'verified','Sam, in session S652 (verbatim)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyAvocet (S652)', 'create', 'S652, Sam in session (2026-11-14)', to_jsonb(m)
+from public.cpl_memory m where m.slug in ('sam-conductor-picks-a-lane-2026-11-14','d-math-m1044-stays-no-one-asked-s652','sam-mids-are-ours-trial-and-error-2026-11-14','sam-mid-care-goes-into-the-rewiring-2026-11-14','sam-ccn-structures-gold-standard-2026-11-14')
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
