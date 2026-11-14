@@ -162,6 +162,12 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   sources (public header, the agency visual, tabs; CPLBrain `0e4b1091`), and seven other public pages, `library/index.html`
   and `library/adopt/` took the header's lengths. Guard `tests/public_target_floor.test.js`. A new public page takes the
   header's lengths, never `24px`.
+- **NEXT (S650 UI pass): the public veteran map carries no public header.** `veteran-sprint-map/ca_cpl_map_selfcontained.html`
+  has no `cpl-public-header` block, no Links and no Light or Dark words (it follows `cpl_theme` only); the Fact Sheet has
+  none either. The fix belongs in `build_selfcontained.py`, not the HTML (`--check` in `scripts/check_generated.sh`): take
+  the header's markup and its 25px lengths, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one
+  column, and loading nothing from another host (the page is self-contained: logos as data URIs, as `apply.py` writes them).
+  The same pass raised the map's own control floors to 25px and the directory's CPL page link to its 44px row.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the

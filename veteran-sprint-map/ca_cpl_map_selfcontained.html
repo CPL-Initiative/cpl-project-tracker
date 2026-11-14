@@ -73,7 +73,7 @@ header .lede{margin:0;font-size:clamp(1rem,.95rem + .25vw,1.15rem);color:var(--b
 .toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin:22px 0 12px}
 .group{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
 .group-lab{font-size:.85rem;font-weight:600;color:var(--muted);margin-right:4px}
-.btn{font:inherit;font-size:.9rem;font-weight:500;min-height:24px;padding:2px 0;cursor:pointer;
+.btn{font:inherit;font-size:.9rem;font-weight:500;min-height:25px;padding:2px 0;cursor:pointer;
   border:0;background:none;color:var(--cobalt);
   text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 .btn:hover{text-decoration-thickness:2px}
@@ -122,7 +122,7 @@ svg.grabbing{cursor:grabbing}
 .near li{padding:9px 0;border-top:1px solid var(--border)}
 .near li:first-child{border-top:0}
 .near a,.linkbtn{font:inherit;font-weight:700;color:var(--cobalt);text-decoration:underline;text-underline-offset:2px}
-.linkbtn{background:none;border:0;padding:0;cursor:pointer;text-align:left;min-height:24px}
+.linkbtn{background:none;border:0;padding:0;cursor:pointer;text-align:left;min-height:25px}
 .meta{font-size:.88rem;color:var(--muted);margin-top:2px}
 .search{width:100%;font:inherit;font-size:.95rem;min-height:40px;padding:8px 12px;border:1px solid var(--border-strong);border-radius:10px;
   background:var(--surface);color:var(--ink);margin-bottom:10px}
@@ -136,7 +136,10 @@ svg.grabbing{cursor:grabbing}
 .dir li:hover{background:var(--subtle)}
 .dir .nm{color:var(--ink);font-weight:600}
 .dir .ct{color:var(--muted);font-weight:400;font-size:.88rem}
-.dir a{font-size:.88rem;font-weight:700;color:var(--cobalt);flex:0 0 auto}
+/* A public page's controls take the public header's 25px floor, never exactly 24 (S641: a 24px box
+   measures 23.98 at 90% and 133% zoom). The directory's CPL page link painted 21px tall; it fills the row's
+   height now, so a phone has the whole row end to tap (S650 UI pass). */
+.dir a{font-size:.88rem;font-weight:700;color:var(--cobalt);flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px}
 .empty{color:var(--muted);padding:14px 4px}
 footer{margin:18px 2px 0;font-size:.88rem;color:var(--muted);max-width:var(--cpl-measure,none)}
 footer p{margin:0 0 6px}

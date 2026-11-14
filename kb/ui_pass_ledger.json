@@ -14,8 +14,8 @@
    "name": "Veteran map",
    "page": "veteran-sprint-map/ca_cpl_map_selfcontained.html",
    "audience": "public",
-   "last": "2026-11-08",
-   "outcome": "S604: npm run a11y passes all three targets (light, dark, embedded) at nine widths; no datasets to wire; First Light holds (every hex sits in a token definition; the one change since the last pass, #2867, added data files and extract scripts, no styles). Nothing to fix."
+   "last": "2026-11-14",
+   "outcome": "S650: npm run a11y passes light, dark and embedded at nine widths before and after; no datasets to wire; First Light holds (every hex in a token definition, Playfair Display and Source Sans 3 through var(--display) and var(--font), no rendered glyph). Fixed in build_selfcontained.py: the directory's CPL page link painted 21px tall (passed only on the spacing exception) and now fills its 44px row; .btn and .linkbtn floors 24 to 25px, the public header's lengths (S641). Guard: veteran_map_controls_words.test.js, floored at 12. Lane item (library.md NEXT): the page carries no public header."
   },
   {
    "id": "skyview",
