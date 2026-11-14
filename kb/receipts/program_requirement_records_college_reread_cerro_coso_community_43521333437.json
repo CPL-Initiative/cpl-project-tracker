@@ -1,0 +1,1007 @@
+{
+ "college": "Cerro Coso Community College",
+ "reread_run": "43521333437",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "43520153161",
+ "at": "2026-11-13T22:43:19Z",
+ "posted": 5,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "01980",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11580",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20632",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30793",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33715",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38666",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38705",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42678",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44598",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44996",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46220",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46361",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46375",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 5,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "30766",
+  "31540",
+  "38665",
+  "40868",
+  "43206"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 3,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Cerro Coso Community College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 43520153161;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 13,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Area A - Complete the following courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ADMJ C101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADMJ C105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Area B - Select at least 6 units from the following courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ADMJ C115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADMJ C121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETHN C121",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADMJ C125",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADMJ C131",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADMJ C151",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ADMJ C230",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     },
+     {
+      "name": "Area C - Select at least 6 units from the following courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000H",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "law enforcement"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Describe the individual functions and integrations of the components of the criminal justice system: police, courts, and corrections.",
+      "Use legal research skills to locate, analyze, and discuss the content of statutory and case law.",
+      "Examine criminal justice and/or social science data and explain their significance.",
+      "Explain the underlying causes of antisocial and criminal behavior.",
+      "Apply constitutional principles to the practice of criminal justice.",
+      "Articulate, either orally or in writing, concepts or theories applicable to the criminal justice system."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Administration of Justice Associate in Science Degree for Transfer (AS-T)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=76",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39046789844,
+   "program_title": "Administration of Justice",
+   "control_number": "30766"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 12,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Complete all of the following courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ART C1200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ART C111",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART C115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART C121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Select 3 units from the following courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ART C101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART C1100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "Select 9 units from the following courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ART C131",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART C141",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART C151",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART C221",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART C231",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART C240",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 9,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Demonstrate knowledge of the arts through associated terminology, historical practices and contemporary developments.",
+      "Identify the formal, technical and expressive aspects in visual artworks, using critical skills to describe, analyze, interpret and evaluate such works.",
+      "Demonstrate proficiency in basic foundation level art techniques and practices.",
+      "Use a wide range of materials and means of expression to communicate visual ideas, including traditional or digital studio practices."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Studio Arts Associate in Arts Degree for Transfer (AA-T)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=120",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39046789844,
+   "program_title": "Studio Arts",
+   "control_number": "31540"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 10,
+    "placed": 10,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core: Complete all courses.",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000H",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A: Choose two courses",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PSYC C271",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOSC C271",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C131",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C151",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETHN C151",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "SOCI C161",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List B: Choose any unused course from List A or choose one course listed below",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SOCI C210",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETHN C210",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "sociology",
+      "social work",
+      "law",
+      "business",
+      "politics",
+      "education",
+      "criminology",
+      "human services"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Use the scientific method to analyze social and cultural patterns among human groups.",
+      "Identify and define core sociological theories and how they inform the sociological perspective.",
+      "Analyze the way identities such as race, class, gender, age, sexual orientation, religion, and nationality contribute to a range of social experiences and social perspectives.",
+      "Use sociological theory to analyze the role of social institutions and how they reflect dominant social values."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 19
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Sociology Associate in Arts Degree for Transfer (AA-T)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 19,
+   "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=117",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39046789844,
+   "program_title": "Sociology",
+   "control_number": "38665"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Complete all of the following courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SPAN C101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN C102",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN C180",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN C182",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A: Select one course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FREN C101",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FREN C110",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LATN C101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LATN C102",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN C211",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETHN C211",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Substitution Courses",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ANTH C111",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C249",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C210",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ETHN C210",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "healthcare",
+      "the legal system",
+      "social work",
+      "business",
+      "customer service",
+      "foreign service",
+      "public relations",
+      "journalism",
+      "hospitality",
+      "travel industry",
+      "bilingual education",
+      "translation and interpretation",
+      "non-profit organizations"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Use proper Spanish in oral and written communication in real-world settings by integrating advanced grammar, vocabulary and idiomatic expressions.",
+      "Interpret Spanish-language literary and cultural readings in a critically analytical way.",
+      "Express intercultural awareness, appreciation and understanding of the diverse Latin cultures."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 25,
+      "min": 22
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Spanish Associate in Arts Degree for Transfer (AA-T)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 25,
+   "total_min": 22,
+   "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=118",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39046789844,
+   "program_title": "Spanish",
+   "control_number": "40868"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 13,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 17,
+       "min": 16
+      },
+      "courses": [
+       {
+        "code": "BIOL C262",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM C111",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HCRS C121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "LIST A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "BIOL C251",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BIOL C255",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM C113",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CHEM C113H",
+          "units": 6,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM C221",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000H",
+          "units": 5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "LIST B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "HCRS C122",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "nutrition science",
+      "medical nutrition therapy",
+      "community nutrition",
+      "food management and production"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Identify the macronutrients and major micronutrients, their main sources, functions, and signs of toxicity and deficiency.",
+      "Evaluate safety and sanitation practices and appropriate techniques in the preparation and cooking of a variety of foods.",
+      "Describe applied areas of psychology, including clinical counseling and community, organization, and school health.",
+      "Explain the driving force behind chemical bonding, be able to classify bonds as ionic, covalent or both, apply bonding theories to predict structure and properties of substances.",
+      "Compare and contrast different mechanisms used by various pathogens to invade host organ systems and cause disease.",
+      "Apply concepts of anatomy, physiology, chemistry, or statistics."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 23,
+      "min": 23
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Nutrition and Dietetics Associate in Science Degree for Transfer (AS-T)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 23,
+   "total_min": 23,
+   "source_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=111",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39046789844,
+   "program_title": "Nutrition and Dietetics",
+   "control_number": "43206"
+  }
+ ]
+}

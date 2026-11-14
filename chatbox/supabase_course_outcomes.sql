@@ -19,7 +19,9 @@
 --     course, one source, one fingerprint (md5 of the outcomes as printed). A row
 --     already there is never touched (ON CONFLICT DO NOTHING, counted as kept); a
 --     re-read that finds the same text inserts nothing, and one that finds changed
---     text adds a row beside the old one, so the newest read_run is current.
+--     text adds a row beside the old one, so the newest read_run is current, per
+--     kind since S584 (kind slo or objective: a course's SLOs and its objectives are
+--     each current at their own newest read_run; a reader names the kind it wants).
 --   * Rows for a college that is not in program_source_registry are refused, and
 --     only the service role may call it: the body checks the caller's role as well
 --     as the grant, so the function is closed even before the grant is applied.
@@ -65,7 +67,7 @@ create index if not exists course_outcomes_college_course
 comment on table public.course_outcomes is
   'Course SLOs exactly as printed, by college and course (Sam, Open Asks Sheet 70 card 3). '
   'Written only by course_outcomes_load() on the service role, insert-only; the newest read_run '
-  'per college and course is current. Public read.';
+  'per college, course and kind is current (kind since S584). Public read.';
 
 alter table public.course_outcomes enable row level security;
 

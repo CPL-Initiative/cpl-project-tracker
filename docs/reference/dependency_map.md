@@ -782,6 +782,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
+| `kb/program_requirements_college/cerro_coso_community/calgetc_apply_plan.json` | scripts: `kb/_program_requirements_readings_measure.py` | — |
 | `kb/program_requirements_college/glendale_community/capture_reread.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_college/glendale_community/tab_owners.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
@@ -1099,6 +1100,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/commons_status_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outcomes_load_test.py` | workflows: `js-tests.yml` | — |
+| `tests/course_outcomes_objectives_standing_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outcomes_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outline_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outline_index_test.py` | workflows: `js-tests.yml` | — |
@@ -1477,5 +1479,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 937 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 938 file
 datasets · 195 external services · 585 consumers · 72 workflows · 41 tabs.

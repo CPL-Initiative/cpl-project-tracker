@@ -311,6 +311,30 @@ OBJ_INLINE = re.compile(r"^objective\s+(?=\S)", re.I)
 # Qualification".
 OBJ_STOP = re.compile(r"^(section [ivx\d]+|disciplines?|minimum qualifications?|course outline and scope:?)$", re.I)
 
+# What is collected from every course outline of record, in the one pass (Sam, 2026-11-13: "add objectives to the
+# collection list of data from cors. they should be collected when slos are collected"). parse_page files both on
+# every read path; a read's head carries this list, and the loader posts each as its own course_outcomes.kind.
+COR_COLLECTS = ("slo", "objective")
+# Whether each outline system's public page prints a Course Objectives section, from the filed trials (S649), so an
+# empty objectives column is a fact about the host and never a reader that passed them over. Held to its trials by
+# tests/course_outcomes_objectives_standing_test.py; the colleges still to read again: objectives_reread_plan.json.
+OBJECTIVES_BY_SYSTEM = {
+    "curriqunet": {"printed": True,
+                   "evidence": "every page of trials 38317539422 (RCCD), 38350787486 (SDCCD All Fields), 41436124244 "
+                               "(Santa Ana), 41595084107 (Las Positas), 42573515439 (Cuesta) and 43157883293 (Shasta)"},
+    "courseleaf": {"printed": True,
+                   "evidence": "the Coast district's outline: 9 of the 9 trial pages with SLOs (trial 38508460207, "
+                               "Coastline); 1,519 of 1,584 pages in Orange Coast's read 42585338847"},
+    "elumen": {"printed": "template",
+               "evidence": "each college's catalog template decides. None printed on the trial pages of Modesto Junior, "
+                           "Cabrillo, Mission or Lake Tahoe (SLOs on 11 or 12 of 12 each). Columbia (12 of 12) and Contra "
+                           "Costa (11 of 12) carry Course Objectives inside an HTML comment, not printed, so not read: "
+                           "reading a comment is a decision, not a reread; 11 of Contra Costa's 520 pages print an "
+                           "Objectives heading in their text (read 42434894498). West Hills Lemoore's and College of "
+                           "Marin's trial pages printed neither SLOs nor objectives. De Anza: one trial page answered "
+                           "and it printed both (trial 43168229927)."},
+}
+
 
 def _obj_ends(s: str) -> bool:
     bare = MARKER.sub("", s, count=1).strip()
@@ -575,6 +599,19 @@ def read_one(reader, course: dict) -> dict:
             "chars": len(body), "offered_at": offered_at(body), **got}
 
 
+def read_courses(reader, todo: list[dict], rows: list[dict], after=None) -> list[dict]:
+    """The full read's loop, apart from the browser so a test can drive it: each course read by read_one and filed
+    into rows as read (SLOs and objectives both, S649); after(n, course, row) runs once a row is filed."""
+    for n, course in enumerate(todo, 1):
+        row = read_one(reader, course)
+        rows.append(row)
+        print("%4d %-10s %s %-9s %d" % (n, course["code"], row["status"], row["shape"], len(row["outcomes"])),
+              flush=True)
+        if after:
+            after(n, course, row)
+    return rows
+
+
 def spread(items: list, n: int) -> list:
     """n items spread across the list (one per subject where it can)."""
     if n >= len(items):
@@ -657,7 +694,10 @@ def main(argv=None) -> int:
             # A row read from the catalog's own course page (eLumen) is a catalog row; the
             # Coast district's catalog page is the outline of record itself.
             "source_kind": "catalog" if a.catalog and page_system(index["url"]) == "elumen" else "course_outline",
-            "slugs": a.slugs, "part": a.part, "of": a.of, "wanted": len(courses), "slice": len(todo)}
+            "slugs": a.slugs, "part": a.part, "of": a.of, "wanted": len(courses), "slice": len(todo),
+            # Both kinds in the one pass (Sam, 2026-11-13), and whether this system's page prints objectives.
+            "collects": list(COR_COLLECTS),
+            "objectives_printed": (OBJECTIVES_BY_SYSTEM.get(page_system(index["url"]) or "") or {}).get("printed")}
     rows: list[dict] = []
 
     def save(done: bool):
@@ -674,11 +714,8 @@ def main(argv=None) -> int:
         probe.close()
         ctx = browser.new_context(user_agent=ua + " " + census.UA_SUFFIX, accept_downloads=False)
         reader = census.Reader(ctx.new_page(), ctx.request, a.delay)
-        for n, course in enumerate(todo, 1):
-            row = read_one(reader, course)
-            rows.append(row)
-            print("%4d %-10s %s %-9s %d" % (n, course["code"], row["status"], row["shape"], len(row["outcomes"])),
-                  flush=True)
+
+        def after(n, course, row):
             if a.trial:
                 stem = re.sub(r"[^A-Za-z0-9]+", "_", course["code"])
                 with open(os.path.join(out_dir, stem + ".txt"), "w") as f:
@@ -687,6 +724,8 @@ def main(argv=None) -> int:
                     f.write(reader.page.content())
             if n % SAVE_EVERY == 0:
                 save(False)
+
+        read_courses(reader, todo, rows, after)
         browser.close()
     save(True)
     print(json.dumps(summarize(rows), indent=1))
