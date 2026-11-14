@@ -1490,5 +1490,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 949 file
-datasets · 195 external services · 593 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 950 file
+datasets · 195 external services · 594 consumers · 72 workflows · 41 tabs.

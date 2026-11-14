@@ -253,7 +253,8 @@ finding below stands after a refuter reproduced it, and each must be met before 
 Each step lands only after the one before it, under its own receipt, and each has its undo.
 
 0. **The field** (#3313, code only). Undo: `git revert`.
-1. **First rows and the restamp**: HUMA M1110's and LIBR M1040's `unified_title` rows restamped from
+1. **First rows and the restamp** (done: applied 2026-11-14T18:44:02Z by supabase-migrate run 43627165705; receipt
+   `kb/receipts/migration_s653_honors_of_field_43627165705.json`): HUMA M1110's and LIBR M1040's `unified_title` rows restamped from
    `automerge-v1@bot` 2026-06-12 to `honors-s652@bot` (COBIx's review of #3304, item 2), and `honors_of` for HUMA M10ME
    and LIBR M10CJ. Its own PR (`claude/honors-of-step1-s653`), after five readers of #3315 judged it safe; items 3
    and 6 above are met there. The S652 follow-ups rollback refuses unless it restores both titles, so after step 1
