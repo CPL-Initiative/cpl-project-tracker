@@ -1,0 +1,25 @@
+{
+ "_readme": "S649 (worker for SkyOriole). The second half of Cosumnes River's Cal-GETC evidence: the sections of the three transfer degrees the statewide step would fill (Psychology AA-T 30566, PDF pp.552-554; History AA-T 33072, pp.404-407; Social Justice Studies AA-T 39656, pp.576-579), so the session can quote that each names Cal-GETC and prints no figure for it. 30566's filed heading is the generic 'Degree Requirements', so this read keys on its title sentence. One load of the hand-filed copy (kb/hand_filed_catalogs/cosumnes_river.json), no model call.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "ge_units": "How each of the three transfer degrees words Cal-GETC and the 60 units, and whether it prints a figure for Cal-GETC."
+ },
+ "keywords": [
+  "Associate in Arts in Psychology for Transfer",
+  "Associate in Arts in History for Transfer",
+  "Social Justice Studies: Race and Ethnicity"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  404,
+  579
+ ],
+ "pdf_after": 2
+}

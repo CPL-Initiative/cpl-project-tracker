@@ -782,7 +782,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
-| `kb/program_requirements_college/cerro_coso_community/calgetc_apply_plan.json` | scripts: `kb/_program_requirements_readings_measure.py` | — |
 | `kb/program_requirements_college/glendale_community/capture_reread.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_college/glendale_community/tab_owners.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
@@ -872,7 +871,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/course.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/cr.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/exhibit.json` | scripts: `kb/_build_commons_status.py` | — |
-| `kb/status/harvest_gap_census.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_harvest_no_closed_list_diagnosis.py` | committed by: `harvest-gap-census.yml` |
+| `kb/status/harvest_gap_census.json` | scripts: `kb/_build_commons_data_status.py`, `kb/_harvest_gap_census.py`, `kb/_harvest_no_closed_list_diagnosis.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/harvest_gap_census.md` | scripts: `kb/_harvest_gap_census.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/harvest_heading_agreement.json` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
 | `kb/status/harvest_heading_agreement.md` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
@@ -1480,5 +1479,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 940 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 939 file
 datasets · 195 external services · 585 consumers · 72 workflows · 41 tabs.

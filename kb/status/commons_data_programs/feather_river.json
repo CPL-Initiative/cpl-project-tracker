@@ -1,0 +1,23 @@
+{"schema":1,"college":"Feather River College","slug":"feather_river","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"cn":"04321","title":"Biology","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"04332","title":"Early Childhood Education","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"20881","title":"Early Childhood Education","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"32763","title":"English as a Second Language","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"12244","title":"Equine Studies: Horse Training Skills","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"12243","title":"Equine Studies: Ranch Skills","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"20877","title":"Health & Exercise Studies","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"30384","title":"Health and Exercise Sciences","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"31776","title":"History","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"17753","title":"Nutrition, Foods & Culinary Arts","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"04326","title":"Physical Science","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"04334","title":"Social Science","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"44714","title":"Allied Health","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"46533","title":"Ecosystem Restoration and Applied Fire Management","award":"Baccalaureate of Science (B.S.) Degree.","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"34001","title":"Equine and Ranch Management","award":"Baccalaureate of Science (B.S.) Degree.","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"36176","title":"MATHEMATICS","award":"A.S. T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://frc.curriqunet.com/Catalog/iq/1464/1824"},
+{"cn":"45095","title":"CalGETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://frc.curriqunet.com/Catalog/iq/1464/1771"},
+{"cn":"46487","title":"Elementary Teacher Education: Integrated Programs","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://frc.curriqunet.com/Catalog/iq/1464/1909"},
+{"cn":"04320","title":"Equine Studies","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://frc.curriqunet.com/Catalog/iq/1464/1788"},
+{"cn":"31895","title":"Office Technology","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://frc.curriqunet.com/Catalog/iq/1464/1857"},
+{"cn":"11771","title":"Vocational Nursing","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://frc.curriqunet.com/Catalog/iq/1464/1905"}
+]}

@@ -54,13 +54,15 @@ const RELATED = { schema: 1, generated_at: "2026-11-12T07:55:00Z", rule: {}, iss
   families: {}, pending: {}, batches: [], waiting: [] };
 const ALIAS_MAP = { _generated_at: "2026-11-12T11:53:49Z", renames: {}, merges: {}, held_family: [], held_emptied: [],
   ruled: { applied: [{ old: "Firefighter Ruled Academy", "new": "Firefighter 2", kind: "rename", plan_id: "plan-x" }], held: [], done: [] } };
-// The real files, for the four cards the #3160 review measured.
+// The real files, for the four cards the #3160 review measured. The cards themselves are pinned in a fixture: the live
+// kb/exhibits_review.json drops a card once a reviewer rules on it, and its held list may be empty (S643, S649).
 const REAL_REVIEW = JSON.parse(fs.readFileSync("kb/exhibits_review.json", "utf8"));
+const MEASURED = JSON.parse(fs.readFileSync("tests/fixtures/exhibits_review_measured_cards.json", "utf8"));
 const REAL_RELATED = JSON.parse(fs.readFileSync("kb/exhibits_related.json", "utf8"));
 const REAL_PLANS = JSON.parse(fs.readFileSync("kb/cred_rename_dryrun/alias_map.json", "utf8"));
 const REAL_SW_SRC = fs.readFileSync("fact-sheet/statewide_recs.js", "utf8");
 const REAL_STATEWIDE = JSON.parse(REAL_SW_SRC.slice(REAL_SW_SRC.indexOf("{"), REAL_SW_SRC.lastIndexOf("}") + 1));
-function realCard(raw) { return REAL_REVIEW.held.find(function (h) { return h.raw === raw; }); }
+function realCard(raw) { return MEASURED.held.find(function (h) { return h.raw === raw; }); }
 const STATEWIDE = { "Firefighter 1": [{ t: "3 hours in Fire Protection Organization", id: "MAPICI-FF1-1-001" }], "Firefighter 1A": [{ t: "3 hours", id: "MAPICI-FF1A-1-001" }] };
 
 function load(opts) {
@@ -274,15 +276,15 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
     t.d.querySelector(".exh-align").hidden && !/Firefighter 1/.test(txt(t.d.querySelector(".exh-align"))), txt(t.d.querySelector(".exh-align")));
 
   // ── the #3160 review: the real files, four cards ──
-  // A held card leaves kb/exhibits_review.json once a reviewer rules on it (the recruit academy card did on 2026-11-12,
-  // and the daily run then failed this file on main). A real-data check runs only while its card is still held; the
-  // fixture checks above hold the rules themselves, and at least one of the four must still be held.
+  // A held card leaves kb/exhibits_review.json once a reviewer rules on it (the recruit academy card on 2026-11-12, the
+  // rest on 2026-11-13, and each time the daily run then failed this file on main). The four cards are pinned in
+  // tests/fixtures/exhibits_review_measured_cards.json and read against the real related, plans and statewide files.
   async function real(raw) { return boot({ real: true, card: realCard(raw) }); }
   const REAL_RAWS = ["Firefighter Recruit Academy Certificate", "Nor Cal Carpenters Training Carpenter Apprenticeship Year 1",
     "NorCal Valley Sheet Metal Apprenticeship Journeyperson", "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1"];
-  const stillHeld = REAL_RAWS.filter(realCard);
-  REAL_RAWS.filter(function (r) { return !realCard(r); }).forEach(function (r) { console.log("  (skipped, no longer held: " + r + ")"); });
-  check("real data: at least one of the four measured cards is still held (else choose new ones)", stillHeld.length >= 1, stillHeld.join(" | "));
+  check("the fixture pins all four measured cards", REAL_RAWS.every(realCard), REAL_RAWS.filter(function (r) { return !realCard(r); }).join(" | "));
+  // The live queue: a list, and an empty one is a valid state (every card ruled on and saved in COBI).
+  check("real data: kb/exhibits_review.json carries a held list (empty is valid)", Array.isArray(REAL_REVIEW.held), typeof REAL_REVIEW.held);
   if (realCard(REAL_RAWS[0])) {
   t = await real("Firefighter Recruit Academy Certificate");
   // Since the S642 proposal step (kb/title_in_use.py), the pipeline proposes the statewide exhibit itself, so the card
