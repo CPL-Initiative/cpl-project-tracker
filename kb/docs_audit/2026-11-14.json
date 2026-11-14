@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1492,
-    "bytes": 15644142,
+    "bytes": 15646196,
     "over_budget": 3,
     "handoff_max": 653,
     "always_loaded_files": 1,
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 614,
-        "bytes": 4376487,
+        "bytes": 4378541,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 228
     },
     "vault": {
-      "files": 84144,
-      "bytes": 14840091478,
-      "heavy_bytes": 10822992234,
+      "files": 84156,
+      "bytes": 14843049270,
+      "heavy_bytes": 10823109448,
       "heavy_share": 0.729,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -91,8 +91,8 @@
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/cpl_ai",
         "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/cpl_ai",
         "cpl-project-tracker/library",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/library",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/library",
+        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/library",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/tmc",
@@ -181,8 +181,8 @@
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
         "cpl-project-tracker/unified_courses_data.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/unified_courses_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/unified_courses_data.js",
+        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/unified_courses_data.js",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/remint_dryrun/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/remint_dryrun/alias_map.json",
@@ -199,8 +199,8 @@
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
         "cpl-project-tracker/kb/coci_articulations.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/coci_articulations.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/coci_articulations.json",
+        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/coci_articulations.json",
         "cpl-project-tracker/prototype/ccr_universe.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/ccr_universe.json",
         "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/ccr_universe.json",
@@ -211,8 +211,8 @@
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_E.js",
         "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_E.js",
         "cpl-project-tracker/exports/unified_courses.xlsx",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/exports/unified_courses.xlsx",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/exports/unified_courses.xlsx",
+        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/exports/unified_courses.xlsx",
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/plan.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/automerge_out/2026-06-13-titlelane/plan.json",
         "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/automerge_out/2026-06-13-titlelane/plan.json",
@@ -353,10 +353,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2426302188,
+        "bytes": 2426302365,
         "kind": "dir"
       },
-      "message": "directory totals 2,426,302,188 B inside the vault"
+      "message": "directory totals 2,426,302,365 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -601,7 +601,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/library",
+      "path": ".claude/worktrees/agent-a308250014c9995ad/library",
       "detail": {
         "bytes": 20326582,
         "kind": "dir"
@@ -611,12 +611,12 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a308250014c9995ad/library",
+      "path": ".claude/worktrees/agent-aef967aa254e37687/library",
       "detail": {
-        "bytes": 20326100,
+        "bytes": 20326582,
         "kind": "dir"
       },
-      "message": "directory totals 20,326,100 B inside the vault"
+      "message": "directory totals 20,326,582 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -653,10 +653,10 @@
       "fixable": false,
       "path": ".claude/worktrees/agent-a308250014c9995ad/tests",
       "detail": {
-        "bytes": 12725708,
+        "bytes": 12733417,
         "kind": "dir"
       },
-      "message": "directory totals 12,725,708 B inside the vault"
+      "message": "directory totals 12,733,417 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1501,7 +1501,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/unified_courses_data.js",
+      "path": ".claude/worktrees/agent-a308250014c9995ad/unified_courses_data.js",
       "detail": {
         "bytes": 10147022,
         "kind": "file"
@@ -1511,12 +1511,12 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a308250014c9995ad/unified_courses_data.js",
+      "path": ".claude/worktrees/agent-aef967aa254e37687/unified_courses_data.js",
       "detail": {
-        "bytes": 10145059,
+        "bytes": 10147022,
         "kind": "file"
       },
-      "message": "10,145,059 B single file inside the vault"
+      "message": "10,147,022 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1681,7 +1681,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/coci_articulations.json",
+      "path": ".claude/worktrees/agent-a308250014c9995ad/kb/coci_articulations.json",
       "detail": {
         "bytes": 7625028,
         "kind": "file"
@@ -1691,12 +1691,12 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a308250014c9995ad/kb/coci_articulations.json",
+      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/coci_articulations.json",
       "detail": {
-        "bytes": 7519745,
+        "bytes": 7625028,
         "kind": "file"
       },
-      "message": "7,519,745 B single file inside the vault"
+      "message": "7,625,028 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1801,7 +1801,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/exports/unified_courses.xlsx",
+      "path": ".claude/worktrees/agent-a308250014c9995ad/exports/unified_courses.xlsx",
       "detail": {
         "bytes": 6718235,
         "kind": "file"
@@ -1811,12 +1811,12 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a308250014c9995ad/exports/unified_courses.xlsx",
+      "path": ".claude/worktrees/agent-aef967aa254e37687/exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6716635,
+        "bytes": 6718235,
         "kind": "file"
       },
-      "message": "6,716,635 B single file inside the vault"
+      "message": "6,718,235 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

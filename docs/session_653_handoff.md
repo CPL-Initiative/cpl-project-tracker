@@ -27,18 +27,35 @@ the UTC day were S650's; the contacts harvest is Sundays.
 1. **Read the replies on [Open Asks Sheet 197](https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd)** (current) before any other work; carry out what Sam
    answered. Card 1 carries S652's decisions; the Honors deletes (card 2), the Honors design (card 3) and slice B's go (card 4) wait on him. Sheet 196 is superseded by 197. An unanswered card
    holds only itself.
-2. **Slice A on draft #3300** (`claude/ncl-catalog-lookup-s652`, head `13fe2023`): Skyline's free capture, run
-   43600982846 (dispatched 13:40Z, in its Capture step at 14:21Z). Read `capture_preview.json` on the branch, count
-   `catalog_lookup` by value for Skyline's 86, check 05809 is `found`; then a second reader on the fixed head; then
-   merge on a green `test`.
-3. **Riverside City under the prefix aliases** (`claude/riverside-city-prefix-rescore-s652`, no PR; reconcile
-   dispatched 14:05Z, `step=reconcile`, `extract=0`, branch files only): compare against `main` record by record
-   (`compare(load_records(main), load_records(branch))` in `kb/_program_requirements_wave.py`); then `step=reread` with
-   `force=<the reconcile run id>` (receipt
-   `kb/receipts/program_requirement_records_college_reread_riverside_city_<run>.json`); then `step=display` with
-   `display_college=Riverside City College` after COBIx's spot-check. Expected newly passing, *as reported*: 32938,
-   41749, 41757, 42719, 43695, 43896, 44155 (and 44363, 44469; passing 18113, 31163, 37483 change coverage). Then
-   Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley, one college at a time.
+2. **Slice A on draft #3300** (`claude/ncl-catalog-lookup-s652`): Skyline's free capture (run 43600982846) filed
+   `capture_preview.json` at `18f220ac`. Of Skyline's 86 no-closed-list programs, 49 are `found` on 49 distinct pages
+   (05809 on `programs/accounting-as.php`), 37 `not_matched`, none `not_listed`; the run's self-test on real pages was
+   27 of 28 with no false match (*as reported* by the worker, who judged the 49 by page address: run artifacts cannot be
+   downloaded here). At least five `not_matched` look like matcher misses (Interdisciplinary Studies titles written
+   with abbreviations or "Opt I"). The worker was adding each `not_matched` reason, each found page's heading and the
+   self-test numbers to the filed preview when S652 ended: read the branch's head and PR body first. Then a second
+   reader on that head, then merge on a green `test`. Extracting Skyline's 49 found pages is about $3.44 (estimated),
+   inside the $40 limit: the conductor's call after the merge.
+3. **Riverside City under the prefix aliases: the reread is HELD, and the reader has a fault.** The first reconcile
+   (run 43603042173, branch `claude/riverside-city-prefix-rescore-s652` at `e9a6304f`, a fresh capture) read 244 pages
+   where the filed capture (run 38108461470) read 435 index entries: `cq_distinct` in
+   `kb/_program_requirements_college.py` now drops curriQunet index entries whose title key repeats (191 dropped; the
+   rule came from Chaffey, run 38203335820). 36 transfer-degree "(CalGETC)" pages went `page_claimed` with no source
+   and 33218, 33229, 37483, 41364 `not_found`; no page errored. Only 42719 moved to passing; no record went pass to
+   fail; 31892's sum changed (21 to 42 against 24) and it still fails. **Do not reread from that branch.** Two next
+   steps: (a) the alias proof over the FILED pages: run dispatched at 14:38Z on
+   `claude/riverside-city-prefix-rescore-filed-s652` (`step=reconcile`, `extract=0`, `sources_from=38108461470`,
+   `limit=0`; free, no page loaded): compare it with `main` record by record
+   (`compare(load_records(main), load_records(branch))` in `kb/_program_requirements_wave.py`), expecting 32938, 41749,
+   41757, 42719, 43695, 43896, 44155 newly passing (and 44363, 44469; 18113, 31163, 37483 change coverage); then
+   `step=reread` with `force=<that run id>` (receipt
+   `kb/receipts/program_requirement_records_college_reread_riverside_city_<run>.json`), rebuild
+   `kb/status/commons_data.json` and `commons.json` on the branch, and `step=display` with
+   `display_college=Riverside City College` after COBIx's spot-check. (b) **the `cq_distinct` fix**: dedupe by page id
+   or key on `cq_group`'s local award codes, so two programs sharing an index title both keep their pages; a second
+   reader before any dispatch, and a count of how many curriQunet colleges' next capture would lose pages the same way.
+   This is the catalog-first weakness #3299 names (a reader missing a program that is in the catalog): tell COBIx.
+   Then Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley, one college at a time.
 4. **The `CrsId` prefix route:** the build takes the prefix from the Program Course File's `CrsId` where the course
    list disagrees; 11 of slice C's 17 pairs then retire.
 5. **Draft #3293** (the passing dry run, head `cb60a1b0`) after slice A's first capture: fold the own-list rule in,
@@ -102,7 +119,8 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 |---|---|---|
 | #3295 `claude/practical-meitner-7rzj3f` | open: the declaration and this checkpoint | merge on green |
 | #3300 `claude/ncl-catalog-lookup-s652` | draft, head `13fe2023`; Skyline run 43600982846 | First things 2 |
-| `claude/riverside-city-prefix-rescore-s652` | no PR; equal to `main` `c6e0b893` plus the reconcile's files when it files | First things 3 |
+| `claude/riverside-city-prefix-rescore-s652` | no PR; `e9a6304f`, the short fresh capture: do not reread from it | First things 3 |
+| `claude/riverside-city-prefix-rescore-filed-s652` | no PR; cut from `main` `936c75d8`; the filed-pages reconcile dispatched 14:38Z | First things 3 (a) |
 | #3301 (slice C, prefix aliases) | merged `c6e0b893` (14:04Z) | First things 3 and 4 |
 | #3303 (COBIx's review of the design) | merged `3b2d9b38` (about 13:59Z) | none |
 | #3302 (the drop of the 625) | merged `bd549c5f` (13:40Z) | commons NEXT 6 |

@@ -8,7 +8,8 @@
 -- No row is superseded.
 
 -- ===========================================================================================================
--- STATEMENT 1 -- NOT YET RUN (13 rows). Sam's two rulings (verified, his words verbatim) and the S652 conductor's
+-- STATEMENT 1 -- RUN by the conductor at 14:37Z 2026-11-14 (13 rows inserted, 13 create log rows, longest summary 397; the log insert
+-- and the verify selected the rows by author and date in place of the slug list). Sam's two rulings (verified, his words verbatim) and the S652 conductor's
 -- decisions, facts and pitfalls (status proposed, for Sam to revise on Sheet 197 card 1). The conductor runs it as one
 -- execute_sql call and records RUN here.
 -- ===========================================================================================================
