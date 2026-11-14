@@ -622,6 +622,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_sync_moc_crosswalk.py` | workflows: `moc-crosswalk-sync.yml` | — |
 | `kb/_sync_peer_articulations.py` | workflows: `credential-catalog-sync.yml` | — |
 | `kb/_sync_program_checked.py` | workflows: `daily-dashboard.yml` | — |
+| `kb/_test_workplan_current_hybrid.py` | workflows: `js-tests.yml` | — |
 | `kb/_typesafe_cr_trial.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_typesafe_smoke.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_xai_smoke.py` | workflows: `xai-smoke.yml` | — |
@@ -1237,6 +1238,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/video_context_test.py` | workflows: `js-tests.yml` | — |
 | `tests/vision_2030_first_light_test.py` | workflows: `js-tests.yml` | — |
 | `tests/workflow_failure_watch_test.py` | workflows: `js-tests.yml` | — |
+| `tests/workplan_goals_current_column_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/workplan_reports_year_pair_test.py` | workflows: `js-tests.yml` | — |
 | `tests/zband_retire_apply_test.py` | workflows: `js-tests.yml` | — |
 | `thumbs-more.json` | pages: `tools/first_light_gallery/gallery.html` | — |
@@ -1490,5 +1492,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 949 file
-datasets · 195 external services · 593 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 952 file
+datasets · 195 external services · 594 consumers · 72 workflows · 41 tabs.
