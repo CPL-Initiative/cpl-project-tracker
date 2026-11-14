@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 940,
+  "file_datasets": 941,
   "external_services": 195,
-  "consumers": 587,
+  "consumers": 588,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -8439,6 +8439,26 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:electives_fill_section_census_<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_electives_fill_section_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
+    },
+    {
+     "id": "script:kb/_electives_fill_section_census.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 65
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:excel_to_dashboard.py": {

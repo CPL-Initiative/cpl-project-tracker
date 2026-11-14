@@ -475,6 +475,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/visuals/<date>-pilot-records-review.html` | scripts: `kb/_build_pilot_records_review_sheet.py` | scripts: `kb/_build_pilot_records_review_sheet.py` |
 | `docs/visuals/<date>-sierra-credit-source.html` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` | scripts: `kb/_build_sierra_credit_source_decision_sheet.py` |
 | `docx.min.js` | tabs: `annual-report`, `college-briefing`, `cpl-pathways`, `letters` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
+| `electives_fill_section_census_<date>.json` | scripts: `kb/_electives_fill_section_census.py` | scripts: `kb/_electives_fill_section_census.py` |
 | `excel_to_dashboard.py` | workflows: `daily-dashboard.yml` | — |
 | `exhibit_progress.js` | tabs: `credential-reference` | — |
 | `exhibits.js` | pages: `CPL_Dashboard.html` · scripts: `scripts/build_exhibits_list_preview.py` | — |
@@ -1480,5 +1481,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 940 file
-datasets · 195 external services · 587 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 941 file
+datasets · 195 external services · 588 consumers · 72 workflows · 41 tabs.
