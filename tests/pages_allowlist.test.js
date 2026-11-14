@@ -94,11 +94,29 @@ tracked.forEach((f) => {
   const w = withholdFor(f);
   if (w) usedWh.add(w); else undecided.push(f);
 });
+// The one line that decides a path: its shortest prefix no existing line sits on or under (a new folder gets
+// one folder line, a new file in a split folder its own line), and the publish line it sorts after.
+function lineToAdd(file) {
+  const parts = file.split("/");
+  const lines = L.order.concat(literalWh);
+  let p = file;
+  for (let i = 1; i <= parts.length; i++) {
+    const q = parts.slice(0, i).join("/");
+    if (!lines.some((x) => x === q || x.startsWith(q + "/"))) { p = q; break; }
+  }
+  const before = L.order.filter((x) => x < p).sort().pop();
+  return "  add \"publish " + p + "\" after \"" + (before ? (L.optional.includes(before) ? "publish? " : "publish ") + before : "# ── publish ──") +
+    "\" if a page reads it, or \"withhold " + p + "\" in the withhold block if not";
+}
+const undecidedLines = [...new Set(undecided.map(lineToAdd))];
 check("B every tracked file is under a publish line or matched by a withhold line (" + tracked.length + " files)", undecided.length === 0,
-  "decide each in " + LIST + " (docs/reference/troubleshooting.md, Pages): " + undecided.slice(0, 10).join(", ") + (undecided.length > 10 ? " ..." : ""));
-const stale = L.publish.filter((p) => !usedPub.has(p)).concat(literalWh.filter((w) => !usedWh.has(w)));
+  undecided.length + " undecided path(s) in " + LIST + " (docs/reference/troubleshooting.md, Pages):\n" +
+  undecidedLines.slice(0, 10).join("\n") + (undecidedLines.length > 10 ? "\n  ..." : ""));
+const stale = L.publish.map((p) => "publish " + p).filter((l) => !usedPub.has(l.slice(8)))
+  .concat(literalWh.filter((w) => !usedWh.has(w)).map((w) => "withhold " + w));
 check("B every plain publish line and literal withhold line covers a tracked file", stale.length === 0,
-  "stale (remove it, or mark a not-yet-committed output publish?): " + stale.slice(0, 10).join(", "));
+  "delete each line from " + LIST + " (or, for an output a workflow will commit later, change \"publish\" to \"publish?\"):\n" +
+  stale.slice(0, 10).map((l) => "  " + l).join("\n"));
 check("B the published set is non-trivial (" + published.size + " files)", published.size > 1000);
 check("B a new top-level folder is undecided until it is given a line", !decided("brand_new_folder/x.json"));
 check("B a new kb/ folder is undecided until it is given a line", !decided("kb/brand_new_folder/x.json"));
@@ -169,7 +187,7 @@ const DYNAMIC = {
   "funding-config-edit-apply.yml": "stages $PLAN_DIR, a plan folder already committed on main before the apply runs",
   "credential-family-apply.yml": "stages $DIR = kb/receipts/credential_family_..., inside the withheld kb/receipts",
   "harvest-gap-census.yml": "stages \"$f\" over a fixed list of kb/status files, each tracked and decided",
-  "docket-process.yml": "stages git add -A kb/ (the docket's rulings and receipts); a new kb/ path it writes fails check B on main",
+  "docket-process.yml": "stages git add -A kb/ (receipts under the published kb/docket, its allowed scripts' output under the withheld kb/*_out, and the Commons status files it rebuilds, each already decided); main turns red only if the docket writes a NEW path directly in a split folder (kb/, kb/status/, kb/reference/), which check B then names with the line to add",
   "chatbox-ghost-delete.yml": "stages $RECEIPT, a kb/receipts/chatbox_ghost_delete_<UTC> folder inside the withheld kb/receipts",
   "cred-rename-apply.yml": "stages $RECEIPT, the apply's receipt folder under the withheld kb/receipts",
   "overmerge-apply.yml": "stages the split kb/row_audit/ whole: its dated .md are withheld by pattern, latest.json published",
@@ -184,10 +202,12 @@ sources.forEach(([name, text]) => {
   const joined = text.split("\n").filter((l) => !/^\s*#/.test(l)).join("\n").replace(/\\\n\s*/g, " ");
   for (const m of joined.matchAll(/\bgit add\b([^\n;|&)]*)/g)) {
     const tokens = m[1].replace(/\s\d?>\S*/g, " ").trim().split(/\s+/).filter(Boolean);
+    // A bare git add -A / --all / -u (no path) stages whatever changed anywhere: unreadable by definition.
+    if (tokens.some((t) => /^(-A|--all|-u|--update)$/.test(t)) && !tokens.some((t) => !/^-/.test(t))) { dynamicSeen.add(name); return; }
     tokens.forEach((t) => {
       if (/^-/.test(t)) return;
       const tok = t.replace(/^["']|["']$/g, "");
-      if (/[$`]/.test(tok) || tok === "." || tok === "kb/" || tok === "kb") { dynamicSeen.add(name); return; }
+      if (/[$`]/.test(tok) || tok === "." || tok === "./" || tok === "kb/" || tok === "kb") { dynamicSeen.add(name); return; }
       const p = tok.replace(/\/$/, "");
       // A whole split folder (some tracked file under it, no one line covering it) cannot be read path by path.
       const splitFolder = !p.includes("*") && tracked.some((f) => f.startsWith(p + "/")) && !publishLineFor(p) && !withholdFor(p);

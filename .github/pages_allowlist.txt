@@ -9,6 +9,8 @@
 #                       A folder publishes everything under it, including what is added later.
 #   publish? <path>     The same, for a path a workflow will create (a generator output a code-only PR
 #                       introduces): published once it is in the commit, skipped with a notice until then.
+#                       A publish? line stays publish? after its path is tracked, by design: the workflow
+#                       may delete and recreate it, and the deploy must not stop in between.
 #   withhold <pattern>  Never published. A literal path or a shell pattern (* within one path segment, never
 #                       a leading dot), matched from the top as the old prune matched it. Withhold lines only
 #                       record a decision; the deploy reads publish lines alone, so a withhold line can never
