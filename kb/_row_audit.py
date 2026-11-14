@@ -254,7 +254,7 @@ def tier_of(score: float) -> str:
 
 # ─── id-scheme classifier ────────────────────────────────────────────────────
 # CCN-aligned surrogate M-ID: SUBJ M####  or  SUBJ M<band><d><LL>  (4-char tail).
-M_ID_RE = re.compile(r"^[A-Z]{2,6} M[0-9][0-9A-Z]{3}$")
+M_ID_RE = re.compile(r"^[A-Z]{2,6} M[0-9][0-9A-Z]{3}H?$")   # H: an Honors M-ID (kb/honors_of.py)
 # The 2026-06-15 UC-CUR→Z re-mint's synthetic-Unified shape, SUBJ Z<band><seq:03d>.
 # RETIRED 2026-09-03 (items 20-21 of Sam's rulings; kb/_zband_retire_apply.py):
 # every machine cluster is a real M-ID record now (origin 'machine cluster'), so

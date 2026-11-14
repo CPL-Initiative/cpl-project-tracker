@@ -494,6 +494,13 @@ Moved from `CLAUDE.md` §11 on 2026-10-21 (S442 SkyManzanita, Open Asks Sheet 10
 
 **M-ID structural invariants** (enforced at every re-mint; deviations
 become audit findings):
+- **Honors exception (S653; Sam, Sheet 197 card 3, 2026-11-14).** An Honors
+  M-ID is its base's id plus `H` (*MATH M1036H* beside *MATH M1036*), and its
+  `honors_of` names the base; the equivalence runs both ways and is derived.
+  Only an M-ID base takes an H; C-ID and CCN keep their own numbers. Every
+  re-mint that moves a base carries its H id in the same alias map. The field,
+  the parsers that accept the `H`, and every dependent:
+  `docs/reference/honors_of_design.md`.
 - SUBJ portion is exactly **4 letters**. The single-letter SUBJ
   artifacts (`A M1001`, `F M1001`, …) were folded by the 2026-06-12
   canonical fold; residue = **1** (`F M1002`, blank-discipline —

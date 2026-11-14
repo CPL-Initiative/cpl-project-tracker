@@ -72,6 +72,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import _zband_retire_dryrun as zdry  # noqa: E402
+import curation_pointers  # noqa: E402  (the overlay's id-valued fields, re-keyed together)
 import _zband_retire_apply as zapp  # noqa: E402
 from _authority_recode_apply import (_atomic_dump, _trailing_nl, fresh_read_matches,  # noqa: E402
                                      plan_fidelity, rebuild_overlay)
@@ -329,10 +330,8 @@ def apply_plan(docs, plan, now, today=None):
     materialized = []
     new_cur = {}
     for k, v in curations.items():
-        if isinstance(v, dict) and v.get("merge_into") in alias:
-            v = dict(v)
-            v["merge_into"] = alias[v["merge_into"]]
-            stats["curation_pointers"] += 1
+        v, moved = curation_pointers.rekey_entry(v, alias)   # merge_into and honors_of values
+        stats["curation_pointers"] += moved
         if k in alias:
             stats["curation_keys"] += 1
             new_cur[alias[k]] = v

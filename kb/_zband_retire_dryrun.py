@@ -125,9 +125,10 @@ def rekey_state(courses, singletons, curations, identities, alias):
     s2 = {rk(k): v for k, v in singletons.items()}
     cur2 = {}
     for k, v in curations.items():
-        if isinstance(v, dict) and v.get("merge_into") in alias:
-            v = dict(v)
-            v["merge_into"] = alias[v["merge_into"]]
+        if HERE not in sys.path:
+            sys.path.insert(0, HERE)
+        import curation_pointers   # merge_into and honors_of values (kb/curation_pointers.py)
+        v, _ = curation_pointers.rekey_entry(v, alias)
         cur2[rk(k)] = v
     id2 = {rk(k): v for k, v in (identities or {}).items()}
     return c2, s2, cur2, id2

@@ -13,7 +13,8 @@
 //   (6) static: tokens only, no write path, no storage, th scope and a labeled scrolling region, no mock values.
 //   (8) ⭐ slice 2: a college's name opens its row in place (aria-expanded), and the row shows the datasets the
 //       builder holds for that college and nothing else; one row at a time; the row opens the same college in a
-//       side panel (a dialog: its heading takes the focus, Tab stays inside, Escape closes it and returns the focus);
+//       side panel (a non-modal dialog, #3310: its heading takes the focus, the page beside it stays live and a college
+//       word there replaces the panel's college, Escape closes it and returns the focus);
 //       a section with no committed source reads TBA with the builder's reason; #commons/data[/<filter>]/college/<slug>
 //       opens the panel, the view reports it, and a new visit remembers neither the panel nor the row.
 //   (12) ⭐ #3229, College Data Collection: the title; Collected for Harvested and Not collected yet for Not read yet,
@@ -21,7 +22,7 @@
 //       definition under every card; Collected, then confidence and completeness, then what is in the way; one
 //       confidence card; each completeness figure with its confidence word beside it; no person-confirmed headline;
 //       Confidence first in the opened row and the panel; the asks said to be the team's work.
-//   (14) ⭐ the default order: lowest completeness first (the overall bar, else program requirements passing), said
+//   (14) ⭐ the default order: highest completeness first (#3310; the overall bar, else program requirements passing), said
 //       in words above the list (role status), a person's sort for the visit only, back to the default on a new visit.
 // The committed file itself is guarded by tests/commons_data_status_build_test.py.
 //
@@ -265,11 +266,11 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const opener = x.d.querySelector('[data-panel-open="1"]');
   opener.focus(); opener.click();
   const P = x.d.getElementById("cdd-panel");
-  check("panel 1 ⭐: the row's word opens the same college in a dialog beside the list, its heading focused",
-    P && !P.hasAttribute("hidden") && P.getAttribute("role") === "dialog" && P.getAttribute("aria-modal") === "true"
+  check("panel 1 ⭐: the row's word opens the same college in a non-modal dialog beside the list, its heading focused",
+    P && !P.hasAttribute("hidden") && P.getAttribute("role") === "dialog" && P.getAttribute("aria-modal") !== "true"
     && txt(x.d.getElementById("cdd-panel-h")) === "Alpha College" && x.d.activeElement === x.d.getElementById("cdd-panel-h"));
-  check("inert 1 ⭐: while the panel is open, the list behind it is inert (a college word cannot be clicked or reached), the panel is not",
-    word(2).closest("[inert]") && x.d.querySelector("#cdd-q").closest("[inert]") && !P.closest("[inert]") && x.d.querySelectorAll("[inert]").length >= 1);
+  check("live 1 ⭐ (#3310): while the panel is open, nothing on the page is inert: the list, the search and the figures take a click",
+    !x.d.querySelector("[inert]") && !word(2).closest("[inert]") && !x.d.querySelector("#cdd-q").closest("[inert]"));
   check("panel 2 ⭐: the address names the college, and the view reports it", x.w.location.hash === "#commons/data/college/alpha-college" && reported(x) === "commons/data/college/alpha-college");
   const sec = (k) => txt(P.querySelector('[data-ds="' + k + '"]'));
   [["plo", "PLO reason."], ["obj", "Objectives reason."], ["desc", "Descriptions reason."], ["cpl", "CPL reason."], ["mis", "MIS reason."], ["coe", "COE reason."], ["slo", "SLO reason."]].forEach(function (t) {
@@ -297,16 +298,12 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   if (spotW) P.querySelector("#cdd-pane-back").click();
   check("panel 7: the catalog opens in the panel with its new-tab link, the cost, the sources", catW && catTab && /\$8\.00/.test(txt(P)) && spotW && spotIn);
   check("panel 8: never 'no data yet'", !/no data yet/i.test(txt(P)) && !/no data yet/i.test(SRC));
-  // the focus trap
+  // no focus trap: a non-modal panel lets Tab move on to the page (#3310)
   const f = Array.from(P.querySelectorAll('a[href], button:not([disabled]), input, [tabindex="0"]'));
   const key = (k, shift) => { const e = new x.w.KeyboardEvent("keydown", { key: k, shiftKey: !!shift, bubbles: true, cancelable: true }); x.d.activeElement.dispatchEvent(e); return e; };
   f[f.length - 1].focus();
   const t1 = key("Tab");
-  check("trap 1 ⭐: Tab on the last control returns to the first", t1.defaultPrevented && x.d.activeElement === f[0]);
-  const t2 = key("Tab", true);
-  check("trap 2 ⭐: Shift+Tab on the first goes to the last", t2.defaultPrevented && x.d.activeElement === f[f.length - 1]);
-  x.d.getElementById("cdd-panel-h").focus(); key("Tab", true);
-  check("trap 3: Shift+Tab from the heading stays inside", P.contains(x.d.activeElement));
+  check("live 2 (#3310): Tab on the panel's last control is the browser's, never held inside the panel", !t1.defaultPrevented);
   // the width
   const grip = P.querySelector('[role="separator"]');
   grip.focus(); key("ArrowLeft");
@@ -318,7 +315,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   key("Escape");
   check("escape 1 ⭐: Escape closes the panel and the focus returns to the word that opened it",
     P.hasAttribute("hidden") && x.d.activeElement === x.d.querySelector('[data-panel-open="1"]'));
-  check("inert 2 ⭐: closing the panel removes every inert it set", !x.d.querySelector("[inert]"));
+  check("live 3: closing the panel leaves nothing inert", !x.d.querySelector("[inert]"));
   check("escape 2: the address drops the college", x.w.location.hash === "#commons/data" && reported(x) === "commons/data");
   x.d.querySelector('[data-panel-open="1"]').click();
   x.d.getElementById("cdd-panel-close").click();
@@ -336,7 +333,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     PY && !PY.hasAttribute("hidden") && txt(y.d.getElementById("cdd-panel-h")) === "Beta College" && y.d.activeElement === y.d.getElementById("cdd-panel-h") && reported(y) === "commons/data/college/beta-college");
   const ke = new y.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true, cancelable: true });
   y.d.activeElement.dispatchEvent(ke);
-  check("inert 3: an arrival on a college's address holds the page inert until Escape, then releases it", !y.d.querySelector("[inert]"));
+  check("live 4: an arrival on a college's address leaves nothing inert", !y.d.querySelector("[inert]"));
   check("address 9: closing it from an arrival returns the focus to the college's word in the list", PY.hasAttribute("hidden") && y.d.activeElement === y.d.querySelector('[data-expand="2"]'));
   const z = load("#commons/data/gaps/college/gamma-college", DATA3);
   await z.M.boot(); await settle();
@@ -362,7 +359,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   Object.assign(DATA4.colleges[2].scout, { platform: "coursedog", catalog_year: "2026-2027", catalog_url: "https://catalog.gamma.example.edu/" });
   const r9 = load("#commons/data", DATA4);
   await r9.M.boot(); await settle();
-  // the site's header and menu sit beside the tab, as in COBI; the panel must make them inert, and leaving must release them
+  // the site's header and menu sit beside the tab, as in COBI; the panel leaves them live (#3310)
   const head9 = r9.d.createElement("header"); head9.id = "site-head"; r9.d.body.insertBefore(head9, r9.d.body.firstChild);
   r9.d.querySelector('[data-expand="3"]').click();
   const cat9 = r9.d.querySelector('#cdd-more-3 [data-ds="cat"]');
@@ -380,21 +377,26 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   r9.d.activeElement.blur();
   r9.d.body.dispatchEvent(new r9.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true, cancelable: true }));
   check("review escape ⭐: Escape closes the panel when the focus is the body, not the panel", P9.hasAttribute("hidden") && !r9.d.querySelector("[inert]"));
-  // the Tab trap skips a control with no box (the width edge is display:none under 560px)
   r9.d.querySelector('[data-panel-open="3"]').click();
-  const grip9 = P9.querySelector('[role="separator"]');
-  grip9.style.display = "none";
-  const f9 = Array.from(P9.querySelectorAll('a[href], button:not([disabled])'));
-  f9[f9.length - 1].focus();
-  f9[f9.length - 1].dispatchEvent(new r9.w.KeyboardEvent("keydown", { key: "Tab", bubbles: true, cancelable: true }));
-  check("review trap ⭐: Tab on the last control wraps to the first drawn one, past the hidden edge",
-    r9.d.activeElement === r9.d.getElementById("cdd-panel-close"));
-  // inert released when the address moves to another Commons view while the panel is open
-  check("review inert 0: the panel holds the page inert, the site's header with it", head9.hasAttribute("inert"));
+  // ⭐ #3310 (Sam, Nov 14): a click on the main page works with the panel open. A college word in the list replaces
+  // the panel's college; a column heading sorts; a figure applies its filter. Before the fix the page was inert.
+  check("live 5 ⭐ (#3310): the panel leaves the site's header live", !head9.hasAttribute("inert") && !r9.d.querySelector("[inert]"));
+  r9.d.querySelector('#cdd-colleges [data-expand="1"]').click();
+  check("live 6 ⭐ (#3310): with the panel open, a college word in the list replaces the panel's college, and the address follows",
+    !P9.hasAttribute("hidden") && txt(r9.d.getElementById("cdd-panel-h")) === "Alpha College" && r9.w.location.hash === "#commons/data/college/alpha-college"
+    && !r9.d.getElementById("cdd-more-1"));
+  r9.d.querySelector('button.cdd-sort[data-sort="name"]').click();
+  check("live 7 ⭐ (#3310): with the panel open, a column heading sorts the list and the panel stays",
+    /^Sorted by college, A to Z/.test(txt(r9.d.getElementById("cdd-sortline"))) && !P9.hasAttribute("hidden"));
+  tile(r9, "gaps").click();
+  check("live 8 ⭐ (#3310): with the panel open, a figure applies its filter", tile(r9, "gaps").getAttribute("aria-pressed") === "true" && /^#commons\/data\/gaps/.test(r9.w.location.hash));
+  r9.d.querySelector("#cdd-all").click();
+  if (!r9.d.querySelector('[data-panel-open="3"]')) r9.d.querySelector('[data-expand="3"]').click();
+  r9.d.querySelector('[data-panel-open="3"]').click();
   r9.w.history.replaceState(null, "", "#commons");
   r9.w.dispatchEvent(new r9.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
   await settle();
-  check("review inert 1 ⭐: moving to #commons with the panel open releases every inert (the header and menu live again)", !head9.hasAttribute("inert") && !r9.d.querySelector("[inert]") && !r9.d.querySelector("#cdd-h"));
+  check("review leave 1 ⭐: moving to #commons with the panel open leaves the header and menu live", !head9.hasAttribute("inert") && !r9.d.querySelector("[inert]") && !r9.d.querySelector("#cdd-h"));
   const r10 = load("#commons/data/college/gamma-college", DATA4);
   await r10.M.boot(); await settle();
   r10.w.history.replaceState(null, "", "#commons/ase");
@@ -504,14 +506,14 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("cards hook (#3310): without commons_data_cards.js loaded the panel still draws, with no card of the module's", !P1.querySelector("[data-card]") && !!P1.querySelector('[data-ds="cat"]'));
   check("live 5: the rest keep their committed-file reasons; the pathway source has its own card (#3310), no PPM dataset row", !P1.querySelector('[data-ds="ppm"]') && /TBA\. MIS reason\./.test(psec("mis")) && /TBA\. COE reason\./.test(psec("coe")));
   check("live 6: the live sources are named", /live: coci_college_programs; program_requirement_records/.test(psec("pr")) && /live: course_outcomes/.test(psec("slo")));
-  // the view changes while the panel is open: nothing stays inert
+  // the view changes while the panel is open: the panel hides
   const hd = s1.d.createElement("header"); hd.id = "site-head2"; s1.d.body.insertBefore(hd, s1.d.body.firstChild);
   s1.D.closePanel(); s1.D.openPanel(1);
-  check("inert 4: the panel holds the page inert", hd.hasAttribute("inert"));
+  check("live 9: the panel leaves the site's header live", !hd.hasAttribute("inert"));
   s1.w.history.replaceState(null, "", "#commons/data/dictionary");
   s1.w.dispatchEvent(new s1.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
   await settle();
-  check("inert 5 ⭐: moving to the dictionary view with the panel open hides the panel and releases every inert",
+  check("leave 5 ⭐: moving to the dictionary view with the panel open hides the panel, nothing inert",
     !s1.d.querySelector("[inert]") && s1.d.getElementById("cdd-panel").hasAttribute("hidden") && s1.d.getElementById("cdd-dict") && reported(s1) === "commons/data/dictionary");
 
   // kept
@@ -795,18 +797,18 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("3243 lever (review): the reconcile lever names the pipeline, not work for the college",
     !/the college's reconcile steps/.test(JSON.stringify(REAL.rule.levers || {})) && /the pipeline's reconcile steps/.test(JSON.stringify(REAL.rule.levers || {})));
 
-  // ── (14) the default order: lowest completeness first (#3229; the commons lane's NEXT), said in words, announced,
+  // ── (14) the default order: highest completeness first (#3310, Sam: "show progress first"), said in words, announced,
   //        a person's own sort for the visit only ──
   const d1 = load("#commons/data", READ);
   await d1.M.boot(); await settle();
   const sortLine = (x) => x.d.getElementById("cdd-sortline");
-  check("default 1 ⭐: with a live read the list opens lowest overall completeness first; a college the read does not hold comes last",
-    JSON.stringify(rows(d1)) === '["Gamma College","Alpha College","Beta College","Delta College","Epsilon Continuing Education"]', rows(d1));
+  check("default 1 ⭐: with a live read the list opens highest overall completeness first; a college the read does not hold comes last",
+    JSON.stringify(rows(d1)) === '["Alpha College","Gamma College","Beta College","Delta College","Epsilon Continuing Education"]', rows(d1));
   check("default 2 ⭐: the order is said in words above the list and announced (role status)",
-    sortLine(d1) && sortLine(d1).getAttribute("role") === "status" && /^Sorted lowest overall completeness first \(live read, Nov 13, 2026\)/.test(txt(sortLine(d1)))
+    sortLine(d1) && sortLine(d1).getAttribute("role") === "status" && /^Sorted highest overall completeness first \(live read, Nov 13, 2026\)/.test(txt(sortLine(d1)))
     && (sortLine(d1).compareDocumentPosition(d1.d.getElementById("cdd-colleges")) & d1.w.Node.DOCUMENT_POSITION_FOLLOWING));
-  check("default 3: the Overall heading carries the order and aria-sort ascending",
-    d1.d.querySelector('button.cdd-sort[data-sort="overall"]').parentNode.getAttribute("aria-sort") === "ascending" && /low first/.test(txt(d1.d.querySelector('button.cdd-sort[data-sort="overall"]'))));
+  check("default 3: the Overall heading carries the order and aria-sort descending",
+    d1.d.querySelector('button.cdd-sort[data-sort="overall"]').parentNode.getAttribute("aria-sort") === "descending" && /high first/.test(txt(d1.d.querySelector('button.cdd-sort[data-sort="overall"]'))));
   const q14 = d1.d.querySelector("#cdd-q"), before14 = sortLine(d1).firstChild;
   q14.value = "college"; q14.dispatchEvent(new d1.w.Event("input"));
   check("default 4: typing a search does not rewrite (re-announce) the order's words", sortLine(d1).firstChild === before14);
@@ -814,7 +816,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const ariaSort = (x, k) => x.d.querySelector('button.cdd-sort[data-sort="' + k + '"]').parentNode.getAttribute("aria-sort");
   d1.d.querySelector('button.cdd-sort[data-sort="name"]').click();
   check("default 5 ⭐: a person's own sort orders the list and says it lasts the visit",
-    rows(d1)[0] === "Alpha College" && /^Sorted by college, A to Z, for this visit\. A new visit opens lowest completeness first\.$/.test(txt(sortLine(d1))), txt(sortLine(d1)));
+    rows(d1)[0] === "Alpha College" && /^Sorted by college, A to Z, for this visit\. A new visit opens highest completeness first\.$/.test(txt(sortLine(d1))), txt(sortLine(d1)));
   check("default 5b (review): College reads ascending and Overall none after the College click", ariaSort(d1, "name") === "ascending" && ariaSort(d1, "overall") === "none");
   check("default 5c ⭐ (review): the focus stays on the clicked column's word after the header redraws",
     d1.d.activeElement && d1.d.activeElement.getAttribute("data-sort") === "name");
@@ -838,7 +840,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("default 9: a card's order is said as the card's, not the person's", /^Sorted by still to pass, high first, as its card opens the list/.test(txt(sortLine(d4))), txt(sortLine(d4)));
   d4.d.querySelector("#cdd-all").click();
   check("default 9b ⭐ (review): Show all colleges after a card returns to the default order, never the card's order called the person's",
-    rows(d4)[0] === "Gamma College" && /^Sorted lowest overall completeness first/.test(txt(sortLine(d4))) && !/for this visit;/.test(txt(sortLine(d4))));
+    rows(d4)[0] === "Alpha College" && /^Sorted highest overall completeness first/.test(txt(sortLine(d4))) && !/for this visit;/.test(txt(sortLine(d4))));
   d4.d.querySelector('button.cdd-sort[data-sort="name"]').click();
   tile(d4, "gaps").click();
   check("default 9c: a heading's order is the person's and stays when a card opens its list", rows(d4)[0] === "Alpha College" && /for this visit/.test(txt(sortLine(d4))));
@@ -855,14 +857,14 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   d1.w.history.replaceState(null, "", "#commons/data");
   d1.w.dispatchEvent(new d1.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
   await settle();
-  check("default 7 ⭐: a new visit opens lowest completeness first again: the person's sort is never remembered",
-    rows(d1)[0] === "Gamma College" && /^Sorted lowest overall completeness first/.test(txt(sortLine(d1)))
+  check("default 7 ⭐: a new visit opens highest completeness first again: the person's sort is never remembered",
+    rows(d1)[0] === "Alpha College" && /^Sorted highest overall completeness first/.test(txt(sortLine(d1)))
     && !/sort|overall|name/.test(Object.values(d1.w.localStorage._o || {}).filter((v) => !/^\{"tab"/.test(v)).join(" ")) && !/sort/.test(d1.w.location.hash));
   const d2 = load("#commons/data", DATA);
   await d2.M.boot(); await settle();
-  check("default 8: before the first live read the list opens lowest program requirements passing first, not-collected colleges at the top, and says so",
-    JSON.stringify(rows(d2)) === '["Delta College","Epsilon Continuing Education","Gamma College","Alpha College","Beta College"]'
-    && /^Sorted lowest program requirements passing first, colleges not collected yet at the top\./.test(txt(sortLine(d2))), rows(d2));
+  check("default 8: before the first live read the list opens highest program requirements passing first, not-collected colleges at the bottom, and says so",
+    JSON.stringify(rows(d2)) === '["Beta College","Alpha College","Gamma College","Delta College","Epsilon Continuing Education"]'
+    && /^Sorted highest program requirements passing first, colleges not collected yet at the bottom\./.test(txt(sortLine(d2))), rows(d2));
 
   const failed = results.filter((x) => !x[1]);
   results.forEach((x) => console.log((x[1] ? "PASS " : "FAIL ") + x[0]));
