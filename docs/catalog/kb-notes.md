@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-585 document(s).
+586 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -162,6 +162,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A name a join keys on is a key, whatever the table calls it](../kb-notes/methodology-a-name-a-join-keys-on-is-a-key.md) | methodology | published | 2026-11-02 | 2026-11-02 |
 | [A negative result needs a positive control in the same run](../kb-notes/methodology-a-negative-result-needs-a-positive-control.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A new assertion must fail in the shape the grid counts — or the grid reads "0 failing" over a failed run](../kb-notes/methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [A new matcher is gated by a self-recall test on records whose answer is already held](../kb-notes/methodology-a-new-matcher-is-gated-by-a-self-recall-test.md) | methodology | published | 2026-11-14 | 2026-11-14 |
 | [A normalization and the screens that judge it must see the same text](../kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md) | methodology | published | 2026-08-13 |  |
 | [A not-applicable score must be confirmed by the source](../kb-notes/methodology-a-not-applicable-score-must-be-confirmed-by-the-source.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [A one-rule class must be checked against its own text](../kb-notes/methodology-a-one-rule-class-must-be-checked-against-its-own-text.md) | methodology | published | 2026-08-19 | 2026-08-19 |
