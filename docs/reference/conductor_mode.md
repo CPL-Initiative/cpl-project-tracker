@@ -147,6 +147,11 @@ at the top of each piece of work so Sam can change the dial before it runs.
 
 - The 12:12Z firing of 2026-11-14 (SkyAvocet) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 10:55Z) and `main` at the S651 checkpoint (`5278e928`) were the one-writer check, and this PR declared the queue at 12:19Z.
 
+- The conductor merged the display design (#3296) twelve minutes after COBIx posted four findings on its thread, without reading them; they became a follow-up. Read the PR's own comments in the same batch of calls as the check runs, every time (S642's lesson again).
+- The sheet's type-ahead pickers showed Sam no options (Sheet 196 card 4: he typed "Go" twice). A picker's choices are buttons printed on the card.
+- A worker's delete was refused by the permission check; the conductor surfaced it to Sam, who was in session, and ran the one command itself on his word. The refusal went to a person and was never worked around.
+- A second reader's self-recall test (look up each program whose page is already held as if it were unknown) measured a new matcher at 63% before it ran on any college. Ask for that test in the brief of any new lookup.
+
 ## What went wrong in S651, and what worked
 
 - The 09:12Z firing of 2026-11-14 (SkyDunlin) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 08:26Z) and `main` at the S650 checkpoint were the one-writer check, and this PR declared the queue at 09:14Z.
