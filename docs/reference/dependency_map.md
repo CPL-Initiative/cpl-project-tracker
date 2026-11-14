@@ -1138,7 +1138,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/csr_trail_rules_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ctdl_exchange_seed_test.py` | workflows: `js-tests.yml` | — |
 | `tests/custom_report_duplicate_view_test.py` | workflows: `js-tests.yml` | — |
-| `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
+| `tests/custom_report_payload_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
 | `tests/daily_scrape_fails_loudly_test.py` | workflows: `js-tests.yml` | — |
 | `tests/dependency_map_test.py` | workflows: `js-tests.yml` | — |
