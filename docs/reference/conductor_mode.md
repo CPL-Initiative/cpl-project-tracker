@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-13
+updated: 2026-11-14
 tags: [reference, conductor, governance-team-enablement, scheduled-sessions]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -142,6 +142,15 @@ at the top of each piece of work so Sam can change the dial before it runs.
   the handoff, then gives the one opening line (`CLAUDE.md`, *Sign off*).
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
+
+## What went wrong in S649, and what worked
+
+- Times written from memory ran 20 minutes ahead of the clock again in the first half hour (dispatch notes said 22:50Z at 22:30Z). Read `date -u` first (a fourth time).
+- Reviewers copied the repository into the scratchpad twice (4.7 GB each) despite the brief (`p-reviewer-copies-repo-s649`). A reviewer brief names a READ-ONLY worktree to serve from, and the conductor checks `du` on the scratchpad during each review.
+- A test asserting a non-empty live queue turned `main` red when Sam's saves emptied it (`p-test-reads-live-review-file-s649`; S643's lesson a second time). A test pins a measured fixture, never a live file's size.
+- Merging two PRs in a row without re-running the second on the new `main` worked only because both had merged `main` minutes before; `main` went red for an unrelated reason (the live-data test above).
+- Each worker PR's subscription notice still cost about 4,000 tokens (seven PRs). Context: 47% at 2 h 10 m with four workers.
+- Worked: reviewers serving a worker's worktree read-only instead of copying; a second reader on every PR found a real fault after round one each time; COBIx's thread read by a low-effort reader agent (one tally for five PRs); workers answering COBIx themselves; one `send_later` per wait; a declared side session (SkyOriole-B) taking the untouched lanes, writing no numbered handoff and sending its ledger to the conductor.
 
 ## What went wrong in S648, and what worked
 

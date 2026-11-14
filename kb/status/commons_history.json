@@ -51,7 +51,7 @@
   "2026-11-14": {
    "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
    "exhibit|#exhibits/list/nosubj|credentials with no Common SUBJ (# exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist": 374,
-   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 2870,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 2866,
    "requirements|#program-requirements/list/unread|active programs with no record yet": 2820
   }
  },

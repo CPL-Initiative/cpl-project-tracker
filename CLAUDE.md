@@ -638,6 +638,8 @@ file.
 - **Controls are underlined words (Sam, 2026-10-09).** No border and no fill,
   underlined at rest, 24px tall, a `<button>` where it acts; each view converts
   at its UI pass. Spec: [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).
+- **A screen leads with the job; a tool is built to scale (Sam and Malone, 2026-11-11).** Rules and ship
+  checks: [`design-principles`](docs/reference/design-principles.md).
 - **American spelling, always** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 
@@ -737,7 +739,7 @@ stays here.
 > time. [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> ([Sheet 194](https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq), current; waiting: 194 2-6). An answer
+> ([Sheet 195](https://claude.ai/artifact/WqSfUB7wrQdxpX1ShbYRhX), current; waiting: 195 2-5). An answer
 > changes its lane's marker in one PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

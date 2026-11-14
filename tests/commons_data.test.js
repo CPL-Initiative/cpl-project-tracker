@@ -243,7 +243,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     JSON.stringify(cards(m1)) === JSON.stringify(["confidence", "pr", "cat", "cost"]) && !/TBA|PLO|Course objectives|Pathways Mapper/.test(txt(m1)), cards(m1));
   const pr1 = txt(m1.querySelector('[data-ds="pr"]'));
   check("row 4: program requirements read listed, closed list, found, extracted, passing and by cause, with its bar",
-    /80 of 100 listed programs/.test(pr1) && /With a closed course list\s*95/.test(pr1) && /Programs whose page the capture found\s*90/.test(pr1) && /Records extracted \(a reread can add some\)\s*88/.test(pr1)
+    /80 of 100 listed programs/.test(pr1) && /With a closed course list \(the capture\)\s*95/.test(pr1) && /Programs whose page the capture found\s*90/.test(pr1) && /Records extracted \(the capture; a reread can add some\)\s*88/.test(pr1)
     && /^No closed list in the Program Course File\s*20$/.test(txt(m1.querySelector('[data-ds="pr"] table.cdd-causes tbody tr'))) && m1.querySelector('[data-ds="pr"] .cdd-meter i').style.width === "80%");
   check("row 5: the stamp is Pacific time with its age cue from the file", /Updated .* PT \(read\), fresh/.test(pr1));
   check("row 6: the catalog read's platform and year, the spot-check and its reason, the cost",
@@ -286,7 +286,16 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("panel 6: the asks are the census's levers in its words, the owner TBA with the reason, under Team asks, said to be the team's work",
     /Check the Program Course File for its courses/.test(txt(P)) && /20 programs, free\. Owner: TBA/.test(txt(P)) && /Owners reason\./.test(txt(P))
     && /Nothing here asks the college to do anything\./.test(txt(P.querySelector('[data-team="asks"]'))) && Array.from(P.querySelectorAll(".cdd-psec > h3")).map(txt).indexOf("Team asks") >= 0 && Array.from(P.querySelectorAll(".cdd-psec > h3")).map(txt).indexOf("Asks") < 0);
-  check("panel 7: the catalog's own link, the cost, the sources", P.querySelector('a[href="https://alpha.example.edu/catalog/"]') && /\$8\.00/.test(txt(P)) && /kb\/spot_checks\/a\.check\.json/.test(txt(P)));
+  /* S649 (Sam, in session): a source opens in the panel; the panel's one link goes to the same place in a new tab. */
+  const catW = P.querySelector('button[data-pane="catalog"]');
+  if (catW) catW.click();
+  const catTab = P.querySelector('a.cdd-newtab[href="https://alpha.example.edu/catalog/"]');
+  if (catTab) P.querySelector("#cdd-pane-back").click();
+  const spotW = P.querySelector('button[data-pane="source/spot"]');
+  if (spotW) spotW.click();
+  const spotIn = /kb\/spot_checks\/a\.check\.json/.test(txt(P));
+  if (spotW) P.querySelector("#cdd-pane-back").click();
+  check("panel 7: the catalog opens in the panel with its new-tab link, the cost, the sources", catW && catTab && /\$8\.00/.test(txt(P)) && spotW && spotIn);
   check("panel 8: never 'no data yet'", !/no data yet/i.test(txt(P)) && !/no data yet/i.test(SRC));
   // the focus trap
   const f = Array.from(P.querySelectorAll('a[href], button:not([disabled]), input, [tabindex="0"]'));
@@ -485,7 +494,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("live 1 ⭐: Active, Teachout and Approved are shown apart, from the live read",
     /Active programs\s*100/.test(psec("pr")) && /Teachout programs \(apart from Active\)\s*3/.test(psec("pr")) && /Approved programs \(apart from Active\)\s*4/.test(psec("pr"))
     && /Program records on file\s*96/.test(psec("pr")) && /Active programs with a passing record\s*80/.test(psec("pr")) && /From the live read, Nov 13, 2026/.test(psec("pr")) && !/Teachout and Approved programs: TBA/.test(psec("pr")));
-  check("live 2: the committed figure keeps its own label beside the live lines", /80 of 100 listed programs pass the machine checks/.test(psec("pr")));
+  check("live 2: the committed figure keeps its own label beside the live lines", /80 of 100 listed programs, committed captures, pass the machine checks/.test(psec("pr")));
   check("live 3 ⭐: SLOs and PLOs read from the live counts with their basis; the TBA lines are gone",
     /300 of 400 courses on Active programs have SLOs/.test(psec("slo")) && /75%/.test(psec("slo")) && /Live read, Nov 13, 2026/.test(psec("slo")) && !/SLO reason/.test(psec("slo"))
     && /50 of 100 Active programs carry PLOs/.test(psec("plo")) && !/PLO reason/.test(psec("plo")) && /0 of 400 courses on Active programs have objectives/.test(psec("obj")));
@@ -553,10 +562,20 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     JSON.stringify(Array.from(DV.querySelectorAll(".cdd-dgroup")).map((g) => g.getAttribute("data-group"))) === '["Harvested","Connected","Planned"]' && DV.querySelectorAll("article.cdd-entry").length === 4
     && JSON.stringify(Array.from(DV.querySelectorAll(".cdd-dgroup > h3")).map(txt)) === '["Collected","Connected","Planned"]');
   const ent = (n) => DV.querySelector('article[data-dataset="' + n + '"]');
-  check("dict 3: each entry gives its stage, owner, today's procedure, the planned improvement and a GitHub link to the doc's anchor",
+  check("dict 3: each entry gives its stage, owner, today's procedure, the planned improvement, and opens its entry in the panel",
     /Stage\s*Connected/.test(txt(ent("Program requirements"))) && /Owner or steward\s*The college/.test(txt(ent("Program requirements"))) && /How we get it today/.test(txt(ent("Program requirements")))
     && /Planned improvement\s*One matrix run/.test(txt(ent("Program requirements")))
-    && ent("Program requirements").querySelector('a[href="https://github.com/cpl-initiative/cpl-project-tracker/blob/main/docs/reference/data_dictionary.md#program-requirements"]'));
+    && (function () {
+      /* S649: the entry's word opens it in the panel; the panel's new-tab link goes to the doc's anchor on GitHub. */
+      const w = ent("Program requirements").querySelector('button[data-pane="entry/program-requirements"]');
+      if (!w) return false;
+      w.click();
+      /* Review of #3261: the pane shows the entry's own words; its new tab opens the same pane, never GitHub's markdown. */
+      const ok = !!s3.d.querySelector('#cdd-panel a.cdd-newtab[href="#commons/data/dictionary/entry/program-requirements"]') && /One matrix run/.test(txt(s3.d.querySelector("#cdd-panel")))
+        && s3.w.location.hash === "#commons/data/dictionary/entry/program-requirements";
+      s3.D.closePanel();
+      return ok;
+    })());
   check("dict 4 ⭐: repo-verifiable and cited evidence shown apart in words; a missing file named",
     /Verifiable in the repo \(1\)/.test(txt(ent("Program requirements"))) && /Cited, outside the repo's checks \(1\)/.test(txt(ent("Program requirements")))
     && /Named but not found in the repo \(1\)\s*kb\/nowhere\.json/.test(txt(ent("Course descriptions"))));

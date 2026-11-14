@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-13T18:45:42Z",
-  "session": 648,
-  "moniker": "SkyTanager",
+  "written_at": "2026-11-14T01:11:33Z",
+  "session": 649,
+  "moniker": "SkyOriole",
   "run": "the conductor, with Sam in session",
   "decider": "Sam",
-  "handoff": "docs/session_649_handoff.md",
+  "handoff": "docs/session_650_handoff.md",
   "next_step": {
-    "title": "Grossmont's Cal-GETC apply, then Cosumnes River and Cerro Coso",
-    "text": "Grossmont's reconcile run is read and compared, then reread, displayed and merged; Cosumnes River and Cerro Coso follow, one college each. Glendale loads after its free read files, one reader checks it, and a small paid extraction runs."
+    "title": "The objectives reread, Riverside's district first",
+    "text": "The Riverside district's outlines are read again for course objectives on the runner; the loader's dry run and a live count come before the load, which adds objectives and never replaces an SLO row. San Diego, Santa Ana, Las Positas, Coastline and Golden West follow, one host at a time. Then Cosumnes River's display record is confirmed and its seven records that pass on the rescore alone go in their own apply."
   },
   "calls": [
     {
@@ -310,7 +310,7 @@
     },
     {
       "title": "Merge or close pull request 3250, which would reverse Sheet 82 card 2",
-      "text": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way.",
+      "text": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way. Carried to Sheet 195 as card 5.",
       "if_no_reply": "Pull request 3250 stays unmerged and your Sheet 82 ruling stands.",
       "link": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
       "link_text": "Open Sheet 194"
@@ -320,6 +320,22 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-14T01:07:00Z",
+      "text": "Cosumnes River's display step was dispatched from main for the build that carries program 39656 at the statewide Cal-GETC 34 units."
+    },
+    {
+      "at": "2026-11-14T01:06:50Z",
+      "text": "Cosumnes River: the catalog prints a minimum for each Cal-GETC area and no total, so the statewide 34 units stand. One program, 39656, took the figure; two others keep their filed records because the fresh capture matched them to the wrong pages."
+    },
+    {
+      "at": "2026-11-14T00:12:33Z",
+      "text": "Cerro Coso: five programs take the 35 units of Cal-GETC its catalog prints on page 65, and three of them now pass the machine checks. The first reconcile at the college rescored every record, so every record was compared with the filed ones and only the five planned rows changed."
+    },
+    {
+      "at": "2026-11-14T00:10:11Z",
+      "text": "Course objectives are collected with every SLO read, and each read says which systems print them. Ten colleges read before November 5 are read again for objectives, one host at a time, at no model cost."
+    },
     {
       "at": "2026-11-13T18:34:00Z",
       "text": "College Data Collection opens its list at the lowest completeness first and says the order in words."
@@ -591,16 +607,22 @@
       "active": 20282,
       "complete": 14525,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-14",
+      "active": 20282,
+      "complete": 14594,
+      "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-13T06:12:00Z"
+    "at": "2026-11-14T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-13",
-    "gaps": 3185,
+    "day": "2026-11-14",
+    "gaps": 3203,
     "parts": {
       "links": {
         "catalog": [
@@ -617,25 +639,25 @@
         ]
       },
       "roep": [
-        19898,
+        19950,
         20282
       ],
       "coci": [
-        16713,
+        16747,
         20282
       ],
       "outcomes": {
         "slo": [
-          12815,
-          89192
+          13293,
+          88736
         ],
         "plo": [
-          16713,
+          16747,
           20282
         ]
       },
       "careers": [
-        15677,
+        15711,
         20282
       ]
     }

@@ -693,6 +693,7 @@ _ALL = [
     "- **PROSE RUNS THE FULL WIDTH.** `--cpl-measure`.",
     "- **CONTROLS ARE UNDERLINED WORDS.** no border and no fill.",
     "- **A FIGURE CARD OPENS WHAT IT COUNTS.**",
+    "- **A SCREEN LEADS WITH THE JOB; A TOOL IS BUILT TO SCALE.**",
 ]
 _e = _claude_presentation(_ALL)
 check("presentation doctrine: silent when every rule is stated",
@@ -749,6 +750,15 @@ if _os.path.isfile(_LIVE):
             _one_to_one = False
     check("presentation doctrine: each LIVE rule bullet is guarded 1:1 "
           "(no rule satisfied by a neighbour's wording)", _one_to_one)
+    # The doctrine anchor guards a bullet's heading, not its link: a bullet
+    # whose pointer sentence is reworded away still passes above. This live
+    # check fails when an offload (e.g. design-principles, #3107) loses the
+    # CLAUDE.md link that makes it reachable.
+    _root = _os.path.dirname(_LIVE)
+    _uo = da.rule_unreferenced_offload({"rel": "CLAUDE.md", "path": _LIVE}, _root)
+    check("unreferenced offload: the live CLAUDE.md reaches every offload"
+          + (f" (missing: {_uo['detail']['missing']})" if _uo else ""),
+          _uo is None)
 
 # ── critical_rule_doctrine ────────────────────────────────────────────────
 # Run against the LIVE CLAUDE.md, not a fixture. The synthetic fixture for

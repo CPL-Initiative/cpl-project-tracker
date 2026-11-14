@@ -11660,7 +11660,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 94,
+   "count": 95,
    "docs": [
     {
      "created": "2026-08-14",
@@ -12707,7 +12707,7 @@
      ],
      "title": "Exhibit canonicalization lessons \u2014 archive (2026-05-24 PR-B through Session 32, 2026-06-04)",
      "type": null,
-     "updated": "2026-10-18"
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-05-24",
@@ -13703,7 +13703,21 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-14"
+    },
+    {
+     "created": "2026-11-14",
+     "governs": [],
+     "path": "docs/commons_lessons_archive.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "commons"
+     ],
+     "title": "The Commons \u2014 lessons archive (S433 and S437 onward)",
+     "type": null,
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-10-24",
@@ -13915,7 +13929,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 103,
+   "count": 104,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15105,6 +15119,21 @@
      "updated": "2026-11-12"
     },
     {
+     "created": "2026-11-14",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_5.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 5 (S637 onward)",
+     "type": null,
+     "updated": "2026-11-14"
+    },
+    {
      "created": "2026-11-12",
      "governs": [],
      "path": "docs/harvest_side_handoff_s639.md",
@@ -15906,7 +15935,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 70,
+   "count": 71,
    "docs": [
     {
      "created": "2026-08-28",
@@ -15960,7 +15989,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-09-08",
@@ -16358,7 +16387,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-08-28",
@@ -16484,7 +16513,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-08-28",
@@ -16580,7 +16609,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-08-29",
@@ -16670,6 +16699,22 @@
      "title": "Dependency map \u2014 dataset to consuming tabs, scripts, workflows and surfaces",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-11-11",
+     "governs": [],
+     "path": "docs/reference/design-principles.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "design",
+      "ui",
+      "presentation-rules",
+      "first-light"
+     ],
+     "title": "Design principles \u2014 every COBI screen (v3)",
+     "type": null,
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-09-27",
@@ -16915,8 +16960,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 610,
+   "count": 611,
    "docs": [
+    {
+     "created": "2026-11-14",
+     "governs": [],
+     "n": 650,
+     "path": "docs/session_650_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 650 handoff (from SkyOriole, S649)",
+     "type": null,
+     "updated": "2026-11-14"
+    },
     {
      "created": "2026-11-13",
      "governs": [],
@@ -27229,5 +27288,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1467
+ "total": 1471
 }

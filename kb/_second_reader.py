@@ -200,6 +200,26 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
               open(path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print("wrote %s: %d read, %d skipped (no page), %d error(s); verdicts %s"
           % (os.path.relpath(path, os.path.dirname(HERE)), len(rows), len(skipped), errors, json.dumps(counts)))
+    if not rows:
+        # The one legitimate empty run: the college has no record failing a machine check, so there is nothing
+        # to read. Any other empty run (every chosen record skipped because the capture found no page) read nothing
+        # and must not look clean.
+        if not records:
+            print("no record fails a machine check: nothing to read", file=sys.stderr)
+            return 0
+        print("nothing was read: all %d chosen record(s) skipped (no page the first reading came from)"
+              % len(skipped), file=sys.stderr)
+        return 1
+    # A call error is a row with an error and no reading. A reading the scorer could not read is still a reading,
+    # filed with its reason, and does not count here.
+    call_errors = [r for r in rows if r["second"].get("error") and not r["second"].get("record")]
+    if rows and len(call_errors) == len(rows):
+        # Every call errored (the database or the function down, or the function answering "XAI_API_KEY not set").
+        # The file stays written as the record, but the run made no second reading, and exit 0 would report it
+        # as a clean one.
+        print("every one of the %d call(s) errored: no second reading was made; the first error: %s"
+              % (len(rows), call_errors[0]["second"]["error"]), file=sys.stderr)
+        return 1
     return 0
 
 

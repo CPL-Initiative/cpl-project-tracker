@@ -105,6 +105,63 @@ with tempfile.TemporaryDirectory() as tmp:
     check("the same requirements read as agree", cmp["verdict"] == "agree" and cmp["same_requirements"])
     check("no second reading has its own verdict", R.compare(failing, None, None)["verdict"] == "no_second_reading")
 
+    # 4b. a run where every call errors exits nonzero (the database down is no clean second read);
+    #     a run where only some calls error exits 0
+    R.COLLEGE_DIR, R.OUT = tmp, os.path.join(tmp, "second_out_err")
+    X._post = lambda body, key: {"record": None, "error": "HTTP 503: the database is unavailable"}
+    rc_all = R.run("Test College", os.path.join(tmp, "out"), key="service-key", workers=1)
+    check("a run whose every call errors exits nonzero", rc_all != 0)
+    check("the all-error run still writes its file", os.path.isfile(os.path.join(R.OUT, "second_test.json")))
+    json.dump(dict(failing, control_number="00003"), open(os.path.join(rec_dir, "00003.json"), "w"))
+    json.dump(dict(same, control_number="00003"), open(os.path.join(cap, "00003.json"), "w"))
+    calls = []
+
+    def half(body, key):
+        calls.append(1)
+        return fake_post(body, key) if len(calls) == 1 else {"record": None, "error": "HTTP 500"}
+
+    X._post = half
+    rc_some = R.run("Test College", os.path.join(tmp, "out"), key="service-key", workers=1)
+    check("a run where only some calls error exits 0", rc_some == 0 and len(calls) == 2)
+
+    # 4c. every call returns a reading but the scorer raises on each: the readings were made, so the run exits 0
+    #     and each row files its reading with the score error
+    X._post = fake_post
+    score_saved = X.score
+
+    def bad_score(*a, **k):
+        raise ValueError("unreadable reading")
+
+    X.score = bad_score
+    R.OUT = os.path.join(tmp, "second_out_score")
+    rc_score = R.run("Test College", os.path.join(tmp, "out"), key="service-key", workers=1)
+    X.score = score_saved
+    sdoc = json.load(open(os.path.join(R.OUT, "second_test.json"), encoding="utf-8"))
+    check("a run whose readings all came back but could not be scored exits 0", rc_score == 0)
+    check("each unscored row keeps its reading and names the score error",
+          len(sdoc["rows"]) == 2 and all(r["second"]["record"] and r["second"]["error"].startswith("score: ")
+                                         for r in sdoc["rows"]))
+
+    # 4d. a run that reads nothing exits nonzero: the capture found no page, so every chosen record is skipped.
+    #     The one legitimate empty run, a college with no failing record, exits 0.
+    empty_cap = os.path.join(tmp, "empty_capture")
+    os.makedirs(os.path.join(empty_cap, "sources"))
+    posted = []
+    X._post = lambda body, key: posted.append(body) or fake_post(body, key)
+    R.OUT = os.path.join(tmp, "second_out_empty")
+    rc_empty = R.run("Test College", empty_cap, key="service-key", workers=1)
+    edoc = json.load(open(os.path.join(R.OUT, "second_test.json"), encoding="utf-8"))
+    check("a run that reads nothing (every record skipped, no page) exits nonzero", rc_empty != 0)
+    check("the empty run still writes its file, naming what it skipped",
+          edoc["read"] == 0 and len(edoc["skipped_no_page"]) == 2 and not posted)
+    clean = os.path.join(tmp, "clean")
+    os.makedirs(os.path.join(clean, "test", "records"))
+    json.dump(passing, open(os.path.join(clean, "test", "records", "00001.json"), "w"))
+    R.COLLEGE_DIR, R.OUT = clean, os.path.join(tmp, "second_out_clean")
+    rc_clean = R.run("Test College", os.path.join(tmp, "out"), key="service-key", workers=1)
+    check("a college with no failing record has nothing to read and exits 0", rc_clean == 0 and not posted)
+    R.COLLEGE_DIR, R.OUT = saved, out_saved
+
 # 5. the extractor's call carries provider and model only when given
 captured = []
 X._post = lambda body, key: (captured.append(body) or {"record": None, "error": "x"})

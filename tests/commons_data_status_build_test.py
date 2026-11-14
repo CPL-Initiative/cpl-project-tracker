@@ -308,6 +308,149 @@ check("(13) the overall bar is basis live, with the live read time, and only for
       OV["basis"] == "live" and OV["read_at"] == LV["read_at"] and set(OV["colleges"]) == set(LV["colleges"]))
 check("(13) no college row mixes in a live figure", not any(k in c for c in C for k in ("live", "overall")))
 
+# (14) each cause's programs (S649, COBIx's item 1 on #3229): one sidecar per college with programs still to pass.
+# A pinned fixture first: one college, four programs, each cause and each source of a catalog page.
+with tempfile.TemporaryDirectory() as tmp:
+    cd = os.path.join(tmp, B.COLLEGE_DIR, "ridge")
+    os.makedirs(os.path.join(cd, "records"))
+    srcs = [{"control_number": "00001", "title": "Welding", "award": "A.S. Degree", "method": "sitemap_page",
+             "source": {"url": "https://catalog.ridge.example.edu/welding/#p1"}},
+            {"control_number": "00002", "title": "Accounting", "award": "Certificate of Achievement", "method": "no_closed_list", "source": {}},
+            {"control_number": "00003", "title": "Nursing", "award": "A.S. Degree", "method": "pdf_section",
+             "source": {"url": "javascript:alert(1)"}},
+            {"control_number": "00004", "title": "Biology", "award": "A.S.-T Degree", "method": "page_missing", "source": {"url": "ftp://x"}}]
+    json.dump(srcs, open(os.path.join(cd, "sources.json"), "w"))
+    # 00001 has a filed record whose source_url names the page the reader used; it wins over the capture's page.
+    json.dump({"control_number": "00001", "source_url": "https://catalog.ridge.example.edu/welding/#p2", "score": None},
+              open(os.path.join(cd, "records", "00001.json"), "w"))
+    json.dump({"control_number": "00003", "source_url": "data:text/html,x", "score": None},
+              open(os.path.join(cd, "records", "00003.json"), "w"))
+    census = {"programs": [
+        {"college": "Ridge College", "control_number": "00004", "cause": "page_not_found", "lever": "reader_page_search"},
+        {"college": "Ridge College", "control_number": "00001", "cause": "extraction_error", "lever": "paid_read"},
+        {"college": "Ridge College", "control_number": "00002", "cause": "no_closed_list", "lever": "program_course_file_check"},
+        {"college": "Ridge College", "control_number": "00003", "cause": "extraction_error", "lever": "paid_read"},
+        {"college": "Elsewhere", "control_number": "99999", "cause": "not_in_capture", "lever": "capture_and_read"}]}
+    sc = B.cause_programs(tmp, census, {"ridge": {"name": "Ridge College"}, "hill": {"name": "Hill College"}})
+    rows = (sc.get("ridge") or {}).get("programs") or []
+    by = {r["cn"]: r for r in rows}
+    check("(14) ⭐ the fixture: one sidecar per college with programs still to pass, none for a college with none or one the run does not hold",
+          sorted(sc) == ["ridge"], sorted(sc))
+    check("(14) ⭐ a filed record's source_url wins over the capture's page; title and award come from sources.json",
+          by.get("00001") == {"cn": "00001", "title": "Welding", "award": "A.S. Degree", "cause": "extraction_error", "lever": "paid_read",
+                              "url": "https://catalog.ridge.example.edu/welding/#p2"}, by.get("00001"))
+    check("(14) ⭐ a page that is not http(s) is null, never a link (javascript:, data:, ftp:, or none at all)",
+          by["00002"]["url"] is None and by["00003"]["url"] is None and by["00004"]["url"] is None, rows)
+    check("(14) the order is cause, then title", [r["cn"] for r in rows] == ["00003", "00001", "00002", "00004"], [r["cn"] for r in rows])
+    text = B.dumps_programs(sc["ridge"])
+    back = json.loads(text)
+    check("(14) the sidecar is one program a line and reads back whole",
+          back == sc["ridge"] and text.count("\n") == len(rows) + 2 and back["basis"] == "committed files only", text[:200])
+    p1 = B.programs_dir_for(tmp, None, None)
+    p2 = B.programs_dir_for(tmp, os.path.join(tmp, "x", "c.json"), None)
+    check("(14) the sidecars go beside --out when one is given, never into the repo", p1 == os.path.join(tmp, B.PROGRAMS_DIR)
+          and p2 == os.path.join(tmp, "x", "commons_data_programs"), (p1, p2))
+
+# Then the repo: each committed sidecar agrees with its college's cause counts, and --check covers them.
+PD = os.path.join(ROOT, B.PROGRAMS_DIR)
+off = []
+for c in C:
+    if not c["harvested"]:
+        continue
+    want = {k: v for k, v in (c.get("census_causes") or c["causes"] or {}).items() if v}
+    f = c.get("programs_file")
+    if not want:
+        if f:
+            off.append(c["name"] + ": a file with nothing still to pass")
+        continue
+    if f != B.PROGRAMS_DIR + "/" + c["slug"] + ".json" or not os.path.exists(os.path.join(ROOT, f)):
+        off.append(c["name"] + ": no sidecar (" + str(f) + ")")
+        continue
+    got = {}
+    for r in json.load(open(os.path.join(ROOT, f), encoding="utf-8"))["programs"]:
+        got[r["cause"]] = got.get(r["cause"], 0) + 1
+    if got != want:
+        off.append(c["name"] + ": " + str(got) + " != " + str(want))
+check("(14) ⭐ every committed sidecar lists exactly the programs each cause counts (the census basis), college by college", not off, off[:5])
+# (16) the review of #3261: the lists and their counts come from the gap census's live read where it holds the college.
+CEN = json.load(open(os.path.join(ROOT, B.CENSUS), encoding="utf-8"))
+if CEN.get("basis") == "live":
+    live_total = sum(sum((c.get("census_causes") or {}).values()) for c in C if c["harvested"] and (c.get("census_basis") or {}).get("basis") == "live")
+    covered = [c for c in C if c["harvested"] and (c.get("census_basis") or {}).get("basis") == "live"]
+    want_total = sum(len(v) for k, v in CEN["programs_by_college"].items())
+    check("(16) ⭐ with a live census on file, every college it holds counts its causes from it, and the totals agree",
+          covered and live_total == want_total, (live_total, want_total, len(covered)))
+    check("(16) no college's cause list carries the committed-files-only cause where the live census holds it",
+          not any("unknown_without_live" in (c.get("census_causes") or {}) for c in covered))
+with tempfile.TemporaryDirectory() as tmp:
+    os.makedirs(os.path.join(tmp, "kb", "status"))
+    json.dump({"basis": "live", "written_at": "2026-11-13 18:04Z",
+               "programs_by_college": {"Ridge College": {"00001": "units_unequal", "00002": "parked_college|units_unequal"}},
+               "levers": [{"lever": "reconcile_steps", "members": ["00001"]}, {"lever": "unpark", "members": ["00002"]}]},
+              open(os.path.join(tmp, B.CENSUS), "w"))
+    lv = B.read_live_census(tmp, None)
+    res = lambda n: {"Ridge College": 1, "Hill College": 2}.get(n)
+    merged, basis = B.merge_census({"programs": [{"college": "Hill College", "control_number": "9", "cause": "unknown_without_live", "lever": "reconcile_steps"},
+                                                 {"college": "Ridge College", "control_number": "7", "cause": "unknown_without_live", "lever": "reconcile_steps"}]},
+                                   lv, {"ridge": {"name": "Ridge College"}, "hill": {"name": "Hill College"}}, res)
+    check("(16) ⭐ the fixture: a college the live census holds takes its causes (text before |) and levers; one it does not keeps the committed files, labeled",
+          sorted((g["college"], g["control_number"], g["cause"], g["lever"]) for g in merged)
+          == [("Hill College", "9", "unknown_without_live", "reconcile_steps"), ("Ridge College", "00001", "units_unequal", "reconcile_steps"),
+              ("Ridge College", "00002", "parked_college", "unpark")]
+          and basis == {"ridge": {"basis": "live", "at": "2026-11-13 18:04Z"}, "hill": {"basis": "committed files only", "at": None}}, (merged, basis))
+    json.dump({"basis": "committed files only", "programs_by_college": {}}, open(os.path.join(tmp, B.CENSUS), "w"))
+    check("(16) a census written from the committed files alone is not taken as live", B.read_live_census(tmp, None) is None)
+check("(16) ⭐ the census workflow hands the builder the census it just wrote",
+      "--census kb/status/harvest_gap_census.json" in open(os.path.join(ROOT, ".github", "workflows", "harvest-gap-census.yml"), encoding="utf-8").read())
+extra = sorted(set(os.listdir(PD)) - {os.path.basename(c[k]) for c in C for k in ("programs_file", "outcomes_file") if c.get(k)}) if os.path.isdir(PD) else ["no folder"]
+check("(14) no sidecar for a college the file does not name", not extra, extra[:5])
+check("(14) every row's programs_file carries a College-view flag", B.FIELDS.get("programs_file") == "internal")
+rc = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_commons_data_status.py"), "--root", ROOT, "--check"],
+                    capture_output=True, text=True, timeout=300)
+check("(14) --check names the sidecars", "college sidecars current" in rc.stdout and rc.returncode == 0, rc.stdout[-300:])
+# (15) the outcome sidecars (S649, Sam's asks 4 and 5): PLO text per program from the records, SLO and objective
+# courses by subject from the committed reads, and a college whose outlines print no objectives says so.
+nob = sorted(c["name"] for c in C if c.get("objectives_printed") is False)
+check("(15) ⭐ the colleges whose committed reads are all on an outline system that prints no objectives, and hold none, are flagged",
+      all(k in B.FIELDS for k in ("outcomes_file", "outline_system", "objectives_printed"))
+      and all(set(c["outline_system"] or []) <= set(B.NO_OBJECTIVES_SYSTEMS) for c in C if c.get("objectives_printed") is False), nob)
+oc = [c for c in C if c.get("outcomes_file")]
+bad15 = []
+for c in oc:
+    o = json.load(open(os.path.join(ROOT, c["outcomes_file"]), encoding="utf-8"))
+    cs = o["courses"]
+    if sum(r["slo_courses"] for r in cs["by_subject"]) != cs["slo_courses"] or sum(r["objective_courses"] for r in cs["by_subject"]) != cs["objective_courses"]:
+        bad15.append(c["name"] + ": by subject does not sum")
+    if any(not p["outcomes"] or not all(isinstance(x, str) and x for x in p["outcomes"]) for p in o["programs"]):
+        bad15.append(c["name"] + ": a program with no PLO text")
+check("(15) ⭐ every outcome sidecar's subjects sum to its course counts, and every listed program carries PLO text", oc and not bad15, bad15[:5])
+with tempfile.TemporaryDirectory() as tmp:
+    od = os.path.join(tmp, B.OUTCOMES, "dist")
+    os.makedirs(od)
+    rows = [{"code": "ANTH C141", "named_by": ["ridge"], "outcomes": ["a"], "objectives": []},
+            {"code": "ANTHC 141", "named_by": ["ridge"], "outcomes": ["b"], "objectives": ["x"]},
+            {"code": "BIO 1", "named_by": ["ridge"], "outcomes": [], "groups": [{"group": "Ridge", "outcomes": ["c"]}]},
+            {"code": "ART-2", "named_by": ["elsewhere"], "outcomes": ["d"]}]
+    json.dump({"system": "curriqunet", "at": "2026-11-01T00:00:00Z", "rows": rows}, open(os.path.join(od, "read_1_p1of1.json"), "w"))
+    os.makedirs(os.path.join(tmp, B.OUTCOMES, "trial_9"))
+    json.dump({"system": "elumen", "rows": [{"code": "CHEM 1", "named_by": ["ridge"], "outcomes": ["e"]}]}, open(os.path.join(tmp, B.OUTCOMES, "trial_9", "read_9_p1of1.json"), "w"))
+    rd = os.path.join(tmp, B.COLLEGE_DIR, "ridge", "records")
+    os.makedirs(rd)
+    json.dump({"control_number": "00001", "title": "Welding", "award": "A.S.", "record": {"program": {"outcomes": ["Weld.", " "]}}}, open(os.path.join(rd, "00001.json"), "w"))
+    json.dump({"control_number": "00002", "title": "Art", "record": {"program": {"outcomes": []}}}, open(os.path.join(rd, "00002.json"), "w"))
+    oo = B.college_outcomes(tmp, {"ridge": {"name": "Ridge College"}})["ridge"]
+    check("(15) the fixture: one course per normalized key, a groups row counts, a trial folder and another college's rows are left out",
+          oo["courses"]["slo_courses"] == 2 and oo["courses"]["objective_courses"] == 1
+          and oo["courses"]["by_subject"] == [{"subject": "ANTHC", "slo_courses": 1, "objective_courses": 1}, {"subject": "BIO", "slo_courses": 1, "objective_courses": 0}]
+          and oo["courses"]["objectives_printed"] is None, oo["courses"])
+    check("(15) the fixture: a program's PLOs in the record's words, blank lines dropped, a program with none left out",
+          oo["programs"] == [{"cn": "00001", "title": "Welding", "award": "A.S.", "outcomes": ["Weld."]}], oo["programs"])
+    check("(15) objectives_printed is false only when every read is on a system that prints none and none was found",
+          B.objectives_printed({"obj": set(), "systems": {"elumen"}}) is False and B.objectives_printed({"obj": {"X1"}, "systems": {"elumen"}}) is None
+          and B.objectives_printed({"obj": set(), "systems": {"elumen", "curriqunet"}}) is None and B.objectives_printed(None) is None)
+wf = open(os.path.join(ROOT, ".github", "workflows", "harvest-gap-census.yml"), encoding="utf-8").read()
+check("(14) ⭐ the census workflow commits the sidecar folder with the file", "git add -A " + B.PROGRAMS_DIR in wf, "")
+
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))
 sys.exit(1 if failed else 0)

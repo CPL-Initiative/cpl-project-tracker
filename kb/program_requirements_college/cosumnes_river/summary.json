@@ -5,11 +5,11 @@
  "found": 217,
  "extracted": 217,
  "errors": 0,
- "passed_machine_checks": 135,
+ "passed_machine_checks": 136,
  "failed": {
   "coverage": 43,
   "invented": 8,
-  "arithmetic": 67,
+  "arithmetic": 66,
   "repeated": 0,
   "outcomes": 8
  },
