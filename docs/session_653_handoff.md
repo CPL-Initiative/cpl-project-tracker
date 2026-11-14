@@ -27,8 +27,10 @@ the UTC day were S650's; the contacts harvest is Sundays.
 1. **[Open Asks Sheet 197](https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd) is answered in full (Complete pressed 14:38Z
    2026-11-14); carry out what remains.** Card 1 *"fine"*; card 2 *"delete"* (First things 4); card 3: *"Base number plus H
    (MATH M1036H)"*, *"Two-way: either satisfies the other"*, *"Build the field first, then the rows"*, *"Rows for all 508
-   pairs"*, *"I name who in the note"* with the note empty (who is asked about MATH M1044 is asked in the sheet's thread);
-   card 4 *"go"*, with the four guards (First things 9). Sheet 196 is superseded.
+   pairs"*, *"I name who in the note"* with the note empty (the conductor decided MATH M1044:
+   `d-math-m1044-via-csm-workspace-s652`); card 4 *"go"*, with the four guards (First things 9). Sheet 196 is superseded.
+   **No ask is open on any sheet.** The next sheet (198) is a record of decisions, each card with one real example
+   before and after and where on the Commons to see it.
 2. **Slice A on draft #3300** (`claude/ncl-catalog-lookup-s652`): Skyline's free capture (run 43600982846) filed
    `capture_preview.json` at `18f220ac`. Of Skyline's 86 no-closed-list programs, 49 are `found` on 49 distinct pages
    (05809 on `programs/accounting-as.php`), 37 `not_matched`, none `not_listed`; the run's self-test on real pages was
@@ -83,7 +85,8 @@ Then Rule 8's `cpl_memory` query, the three-repo check, the highest-numbered han
 hold list), 2, 3 (the reread is a data write: the compare and COBIx's spot-check first), 4 (his word is given; it
 still needs the reviewed plan), 5, 6, 7, 8 and 9 under its guards, and code-only
 items from the lanes' NEXT lines. The display go of 2026-10-10 stands for every college; a merge that publishes waits
-on COBIx's spot-check. **Never run without Sam's word:** any Honors mint (held until the `honors_of` field is built); the Sierra `is_test` deploy; anything on the `CLAUDE.md` hold list.
+on COBIx's spot-check. **Decide near-equal choices and move** (Sam's pick-a-lane ruling, below); hold only the hold list.
+**Never run without Sam's word:** any Honors mint (held until the `honors_of` field is built); the Sierra `is_test` deploy; anything on the `CLAUDE.md` hold list.
 #2894 is his.
 
 ## You are the conductor
@@ -167,6 +170,21 @@ per branch from its diff and this ledger, and remove a worktree whose branch is 
 
 ## Decisions to honor
 
+**Sam's, in session S652 (about 14:45Z 2026-11-14; `sam-conductor-picks-a-lane-2026-11-14`), on Sheet 197's asks:**
+*"on 197 asks, my honest read is that I don't really understand the asks the way they are written--language is obtuse.
+would be more effective to show examples of each ask. I just tried to go with your recommendation since any choice seems
+fairly inconsequential and it would be better for you to make a choice and record it and move on. action is better than
+stopping and asking about choices that seem like 6 of 1 or half a dozen of another--in other words, stop being so
+cautious and pick a lane and go with it. I will see the results on the commons and if there is a problem, I can address
+it based on the reality I'm seeing rather than vague choices. I learn by doing and then seeing the results. it's much
+easier for me to react to a decision you've made than to engage my mind in the weeds of the logic choices you are
+contemplating and trying to express to me as succinctly as you can--not your fault! these are fuzzy procedures we're
+dealing with and I want you to lean into making the least fuzzy choice among fuzzy choices. Conductor can conduct!"*
+The rule: a choice among near-equal options is the conductor's to make, carry out and record, never an ask; the
+`CLAUDE.md` hold list stands; an ask that remains shows a worked example on real rows (today, and under each choice);
+a decision card shows one real before and after and where on the Commons to see it (`conductor_mode.md`, *Recording
+and Sam*). Applied at once: `d-math-m1044-via-csm-workspace-s652`.
+
 **Sam's, on Open Asks Sheet 197 (his own calls, 14:35Z to 14:38Z 2026-11-14; `sam-sheet-197-answers-2026-11-14`):**
 card 1 *"fine"*; card 2 *"delete"*; card 3 *"Base number plus H (MATH M1036H)"*, *"Two-way: either satisfies the other"*,
 *"Build the field first, then the rows"*, *"Rows for all 508 pairs"*, *"I name who in the note"* (note empty); card 4
@@ -220,7 +238,7 @@ file.
    district profile; COBIx's three Glendale follow-ups; Desert 10195's stored hold; the reading-procedure check; the PDF
    headings; the free GE page reads; the district phase 0 builder; the wave sample, De Anza, Redwoods); objectives
    laspositas, Coastline, Golden West after sac.
-2. **`commons`:** the Honors build as Sam ruled it (the `honors_of` field, the 508 pairs' rows, base-plus-H mints; MATH M1044's contact); FIRE 130 X's row-audit card; price the model pass; a
+2. **`commons`:** the Honors build as Sam ruled it (the `honors_of` field, the 508 pairs' rows, base-plus-H mints; MATH M1044 as a CSM Workspace follow-up to San Diego City College); FIRE 130 X's row-audit card; price the model pass; a
    potential-CPL column; the Leadership outlines; the #3298 and #3302 follow-ups (`title_differs_in_substance` and the 16
    `_superseded_rekeyed_from` entries; the header's 2,319; a merge member with no articulation record gets no entry;
    the drop report's rows section; `standards_2_ruled_renames_test.py` and `ccc_metric_test.py` failing on `main` with

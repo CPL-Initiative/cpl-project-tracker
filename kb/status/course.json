@@ -93,12 +93,17 @@
       "text": "MATH M1044 into M1036 waits on the MAP team's view of San Diego City College's credit-by-exam exhibit MAPCBES-CBES-1-001, Basic Refrigeration and AC Lab. On Sheet 197 card 3 you chose to name who in the note, and the note was empty; the conductor asked in the sheet's comment thread.",
       "if_no_reply": "MATH M1044 stays as it is and no one is asked.",
       "link": "https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd",
-      "link_text": "Open Sheet 197"
+      "link_text": "Open Sheet 197",
+      "answer": {
+        "by": "the conductor, on Sam's pick-a-lane ruling",
+        "at": "2026-11-14",
+        "words": "Decided, not asked (d-math-m1044-via-csm-workspace-s652): the question goes to San Diego City College as a CSM Workspace follow-up; MATH M1044 into M1036 stays as it is until the college answers. Sam, 14:45Z: \"Conductor can conduct!\""
+      }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-14T14:41:29Z",
+  "written_at": "2026-11-14T14:47:26Z",
   "project": "course",
   "next_step": {
     "title": "The honors_of field, then the 508 pairs, then the Honors mints",

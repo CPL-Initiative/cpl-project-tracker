@@ -399,18 +399,19 @@ first day.** Do the remembering for them.
   could always confer with cobix on them, but we should not slow down with all
   these decision sheets which are generally pro-forma approved by me."* Make
   the call, carry it out when `git revert` or its Rule 10 receipt can undo it,
-  and store it: a `cpl_memory` decision row and a DECIDED line in the lane;
-  COBIx may be consulted. **The sheet is the record of those decisions**, his to
+  and store it: a `cpl_memory` decision row and a DECIDED line in the lane.
+  **The sheet is the record of those decisions**, his to
   open and revise (*"a record of your decisions that i can access when needed
   and revise if needed"*). **An ask that waits for his reply only when there is
   no recommended way forward, the blast radius is in doubt, or it is on the hold list:** anything outward, a public KB merge, deleting data, a production
   deploy outside a standing authorization, funding figures published to
   colleges, the program's name or identity, who does what on the team, a cost
   above a standing limit, reversing a dated ruling of his, a permission-check
-  denial, and any call a lane marks as his. This is the one hold list.
+  denial, and any call a lane marks as his. This is the one hold list
+  (2026-11-14: pick a lane; show examples: `conductor_mode`).
   **An unanswered card holds only itself (Sam, 2026-11-02):** *"Let's keep building even when there is a
   decision sheet unanswered. Just build all that you can apart from the issue raised by the sheet. I don't
-  want to hold up the bus for outliers."* Never park a lane's other work behind an open card.
+  want to hold up the bus for outliers."*
   ⚠️ **Read the replies BEFORE executing** — they are
   the artifact's own store, not chat. Mechanics (the reply-chip injector,
   `capabilities: {db: {}}`, the `replies` collection, where the file lives,

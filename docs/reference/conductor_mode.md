@@ -123,12 +123,18 @@ at the top of each piece of work so Sam can change the dial before it runs.
   asks. Sam, in session S639, 2026-11-11, verbatim: "Remember on the Decision Sheet that I want your decisions on it,
   not asking me for mine. I am pushing decision to you as conductor and informed by help from cobix, your force
   multiplier:)" (`sam-sheet-carries-conductor-decisions-2026-11-11`). Each card reads Decided, Evidence, and Carried out
-  with how to reverse it; its chips are Fine, Change it and Revisit later. An outward send, a go-live or anything else
+  with how to reverse it, and shows one real example before and after with where on the Commons to see it; its chips are Fine, Change it and Revisit later. An outward send, a go-live or anything else
   that needs Sam is a card carrying a labeled block above its replies — "Yours to do", "Needs your word" or "Yours to
   rule" — with numbered steps, a link wherever one exists, and replies that name the act, never a status chip (Sam,
   2026-11-13: "change the button to be clearer an include specific instructions and links for me"); and an unanswered
   card holds only its own item. First built as Open Asks Sheet
   181 (https://claude.ai/artifact/M3YaDrpkT7HhH8rYRnvkjx).
+- **Pick a lane (Sam, in session S652, about 14:45Z 2026-11-14; `cpl_memory` `sam-conductor-picks-a-lane-2026-11-14`).**
+  On Sheet 197's asks: "would be more effective to show examples of each ask." "stop being so cautious and pick a lane
+  and go with it. I will see the results on the commons and if there is a problem, I can address it based on the
+  reality I'm seeing rather than vague choices." "Conductor can conduct!" A choice among near-equal options is the
+  conductor's to make, carry out and record; it never becomes an ask. The `CLAUDE.md` hold list stands. An ask that
+  remains on it shows a worked example on real rows: the row today, and the row under each choice.
 - His unplanned statements are captured verbatim (the vault's braindump skill, on-the-fly mode) and he is told in one
   line. Replies to him are a few lines, active voice, stated positively.
 
