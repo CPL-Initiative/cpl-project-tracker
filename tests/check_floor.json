@@ -402,6 +402,6 @@
     "service_caller_check.test.js": 30,
     "district_profiles.test.js": 10,
     "reclustering_honors.test.js": 39,
-    "shared_imports_named.test.js": 10
+    "shared_imports_named.test.js": 11
   }
 }
