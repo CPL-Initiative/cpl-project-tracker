@@ -17,7 +17,24 @@ const deploy = WF.slice(WF.indexOf("uses: actions/deploy-pages@")).split("\n    
 // deploy-pages caps its wait at 10 minutes (COBIx on #3088), so a longer timeout input would only look like a fix.
 check("deploy-pages sets no timeout it cannot honor", !/timeout:/.test(deploy));
 // Every served page and script, root and subfolders, whatever its size (COBIx on #3088), minus what the deploy prunes.
-const PRUNED = /^(docs|tests|tools|archive|chatbox|funding|reflections|nudges|news|scripts|\.github|node_modules|kb|\.git)(\/|$)/;
+// The pruned set is read from pages.yml's own rm lines, so it is what the deploy removes and no more: kb/ is served,
+// and only the kb/ paths the deploy names are skipped here (the guard once skipped all of kb/).
+const rmPaths = [];
+assemble.replace(/\\\n\s*/g, " ").split("\n").forEach((l) => {
+  if (!/^\s*rm\s+-r?f\s/.test(l)) return;
+  (l.split("#")[0].match(/_site\/\S+/g) || []).forEach((t) => rmPaths.push(t.replace(/^_site\//, "")));
+});
+const globRe = (g) => g.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^/]*");
+// Never in the archive the deploy extracts: git archive omits .git and everything gitignored.
+const NOT_ARCHIVED = ["\\.git", "node_modules", "\\.claude/worktrees"];
+// The *_out loop: every kb/*_out directory goes, except latest.json in csr_out and cer_procedures_out.
+const OUT_LOOP = /for d in _site\/kb\/\*_out;[\s\S]*?csr_out[\s\S]*?cer_procedures_out[\s\S]*?else rm -rf "\$d"; fi/.test(assemble);
+const PRUNED = new RegExp("^(?:(?:" + NOT_ARCHIVED.concat(rmPaths.map(globRe)).join("|") + ")(?:/|$)" +
+  (OUT_LOOP ? "|kb/[^/]*_out/(?!latest\\.json$)|kb/(?!(?:csr_out|cer_procedures_out)(?:/|$))[^/]*_out(?:/|$)" : "") + ")");
+check("the pruned set is read from pages.yml's rm lines (kb/receipts, docs and the kb/*_out loop among them)",
+  rmPaths.includes("kb/receipts") && rmPaths.includes("docs") && OUT_LOOP && !rmPaths.includes("kb"), rmPaths.join(" "));
+check("kb/ itself is walked: a served kb/ file is not skipped", !PRUNED.test("kb/cos_matches.json") &&
+  !PRUNED.test("kb/csr_out") && !PRUNED.test("kb/csr_out/latest.json") && PRUNED.test("kb/receipts/x.json") && PRUNED.test("kb/agab_remint_out/a.json"));
 function walk(dir, out) {
   fs.readdirSync(dir, { withFileTypes: true }).forEach((e) => {
     const p = dir === "." ? e.name : dir + "/" + e.name;
