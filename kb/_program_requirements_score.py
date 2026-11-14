@@ -140,6 +140,30 @@ from _program_requirements_pilot import norm_code  # noqa: E402
 
 TOL = 0.01
 
+# S651: the passing-function changes that go out as one dry run, one migration and one rescore
+# (d-one-rescore-for-three-rules-s649; p-degree-electives-fill-false-pass-s650). Off by default, so
+# every score filed or loaded today is unchanged; kb/_program_requirements_passing_dryrun.py turns it
+# on to measure the change by college, and the rescore that follows the review on #3111 turns it on
+# for good. What it changes, each where it lives:
+#   noncredit Total Hours     total_hours_printed reads at every college, not only where a reconcile
+#                             step set hours_total_printed (Sam, sam-noncredit-total-hours-2026-11-13).
+#   the electives-fill guard  program_total_fill: a degree's record total is its major's, which
+#                             electives never fill, and the word "elective" counts only outside a
+#                             block's own heading line (S650 lessons; the KB note
+#                             methodology-a-fill-must-check-what-it-fills).
+#   the GE-pattern rule       counts_passing_on_tab counts a row checked against its GE pattern
+#                             whose catalog words are quoted (COBIx on #3229, accepted S649).
+# The own-list rule (sam-headline-counts-own-list-2026-11-13) is not here: what a pass against a
+# college's own course list checks is not written down (the dry run's report says so).
+PASSING_S651 = os.environ.get("PROGRAM_REQUIREMENTS_PASSING_S651") == "1"
+
+
+def set_passing_s651(on: bool) -> bool:
+    """Turn the S651 changes on or off; returns the previous setting (the dry run restores it)."""
+    global PASSING_S651
+    prev, PASSING_S651 = PASSING_S651, bool(on)
+    return prev
+
 
 def _num(v) -> float | None:
     try:
@@ -586,7 +610,42 @@ def counts_passing_on_tab(checks: dict | None) -> bool:
     3), so an unstated read never replaces an equal record. tests/program_requirements_pilot_test.py
     pins TAB_PASSING to the tab's own expression."""
     c = checks or {}
+    if PASSING_S651 and c.get("checked_against") == "ge_pattern":
+        # The GE-pattern rule (S651 flag): the state's file lists no courses for the certificate by
+        # design, so it passes on its pattern, quoted from the catalog, and never on a course list.
+        return c.get("pattern_evidence") == "quoted"
     return c.get("coverage") is True and c.get("invented") is True and c.get("arithmetic") in TAB_PASSING
+
+
+# COBIx's GE-pattern completion-certificate rule (#3229 comment 6869816372, accepted by the S649 conductor
+# with three amendments, d-one-rescore-for-three-rules-s649). A program counts as checked against its GE
+# pattern when (1) the Program Course File holds no list for it, (2) its award is a Certificate of
+# Achievement, (3) its title names exactly one of Cal-GETC, IGETC or CSU-GE (a Transfer Studies TOP code
+# alone is not enough), and (4) the college's reconcile config quotes the 2026-27 catalog printing that
+# certificate (ge_pattern_certificates, like statewide_cal_getc). Amendment 2: IGETC and CSU-GE are
+# checked for Active status and teach-out first; that check is a catalog read, so it rides criterion 4.
+GE_PATTERN_TITLES = (
+    ("Cal-GETC", re.compile(r"\bCal[\s-]*GETC\b|\bCalifornia General Education Transfer Curriculum\b", re.I)),
+    ("IGETC", re.compile(r"\bIGETC\b|\bIntersegmental General Education Transfer Curriculum\b", re.I)),
+    ("CSU-GE", re.compile(r"\bCSU[\s-]*GE\b|\b(?:CSU|California State University)\s+General\s+Education\b", re.I)),
+)
+CERTIFICATE_OF_ACHIEVEMENT = re.compile(r"\bCertificate of Achievement\b", re.I)
+
+
+def ge_pattern_certificate(title: str | None, award: str | None, has_closed_list: bool) -> str | None:
+    """The GE pattern a program is checked against under criteria 1 to 3, or None. Criterion 4, the quoted
+    catalog words, is ge_pattern_evidence's."""
+    if has_closed_list or not CERTIFICATE_OF_ACHIEVEMENT.search(award or ""):
+        return None
+    named = [name for name, pat in GE_PATTERN_TITLES if pat.search(title or "")]
+    return named[0] if len(named) == 1 else None
+
+
+def ge_pattern_evidence(college_entry: dict | None, control_number: str, pattern: str) -> bool:
+    """Criterion 4: the college's reconcile entry quotes its catalog printing this certificate under the
+    same pattern (ge_pattern_certificates: {control number: {"pattern", "evidence", "checked"}})."""
+    e = ((college_entry or {}).get("ge_pattern_certificates") or {}).get(str(control_number)) or {}
+    return e.get("pattern") == pattern and bool((e.get("evidence") or "").strip())
 
 
 def places_none(score: dict | None) -> bool:
@@ -604,7 +663,24 @@ ELECTIVE = re.compile(r"\belectives?\b", re.I)
 _LIGATURE_SPACED = re.compile("([%s]) ?" % "".join(_LIGATURES))
 
 
-def electives_named(prog: dict, text: str) -> bool:
+def _without_block_headings(text: str, record: dict | None) -> str:
+    """The text less each line that is one of the record's block names ("Art History Electives", "Art
+    History Electives (3 units)"): a heading names a list, and never says electives fill a total (S650,
+    Cosumnes River 11338). A line counts as the heading when it holds the name's words and at most four
+    more."""
+    names = [_words(b.get("name")) for b in (record or {}).get("blocks") or [] if _words(b.get("name"))]
+    if not names:
+        return text
+    keep = []
+    for line in text.split("\n"):
+        w = _words(line)
+        if w and any((" %s " % n) in (" %s " % w) and len(w.split()) <= len(n.split()) + 4 for n in names):
+            continue
+        keep.append(line)
+    return "\n".join(keep)
+
+
+def electives_named(prog: dict, text: str, record: dict | None = None) -> bool:
     """Whether the catalog text says electives fill the total a record says they fill: the word
     itself, the word under a PDF's ligature stand-in ("elecƟ ves", as Solano's outcomes read it),
     or the catalog's own sentence a reconcile step filed as electives_fill_words, which says the
@@ -612,10 +688,12 @@ def electives_named(prog: dict, text: str) -> bool:
     needed to reach 60', East Los Angeles's 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60
     CSU TRANSFERABLE UNITS'). The sentence counts only where this text prints it, word for word
     (letter case, punctuation and line breaks aside), so a later read of a page that no longer
-    prints it fails the guard again."""
-    if ELECTIVE.search(text):
+    prints it fails the guard again. With record and the S651 flag, the word counts only outside the
+    record's own block headings (_without_block_headings); the filed sentence is read as before."""
+    worded = _without_block_headings(text, record) if (PASSING_S651 and record is not None) else text
+    if ELECTIVE.search(worded):
         return True
-    if _LIGATURE.search(text) and ELECTIVE.search(_LIGATURE_SPACED.sub(lambda m: _LIGATURES[m.group(1)], text)):
+    if _LIGATURE.search(worded) and ELECTIVE.search(_LIGATURE_SPACED.sub(lambda m: _LIGATURES[m.group(1)], worded)):
         return True
     words = prog.get("electives_fill_words")
     if not isinstance(words, str) or not _words(words):
@@ -760,6 +838,30 @@ def hours_meets_top(record: dict, stated: tuple[float, float], lo: float, hi: fl
     return True
 
 
+def fill_total_is_major(award: str | None, prog: dict) -> bool:
+    """Whether a record's program total is a degree's major total: electives fill the degree's total
+    (60 for an associate degree), never its major's, so the program-total fill does not reach it (S650,
+    Cosumnes River 11338 and 04614; p-degree-electives-fill-false-pass-s650)."""
+    return award_type(award) in DEGREE_TYPES or transfer_degree(award, prog)
+
+
+def program_total_fill(prog: dict, stated: tuple[float, float], lo: float, hi: float, award: str | None = None,
+                       text: str | None = None, record: dict | None = None) -> list | None:
+    """The units electives make up of a program total the blocks fall short of, or None (S424, San Joaquin
+    Delta 11970: "Complete elective units to meet the minimum 60 unit requirement for this certificate").
+    The record says electives fill it (electives_fill_degree), the blocks' high end sits at or under the
+    total's low end, and the text, where one came, names electives. With the S651 flag the fill also checks
+    the units it fills: never a degree's major total (fill_total_is_major), and the word "elective" only
+    outside the record's own block headings. The dry run calls it on filed sums with no text."""
+    if not prog.get("electives_fill_degree") or hi > stated[0] + TOL:
+        return None
+    if PASSING_S651 and fill_total_is_major(award, prog):
+        return None
+    if text is not None and not electives_named(prog, text, record):
+        return None
+    return [round(stated[0] - hi, 2), round(stated[1] - lo, 2)]
+
+
 def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: float,
                     record: dict | None = None) -> dict:
     """How the blocks' sum (lo-hi) meets the program total the page prints: pass,
@@ -815,13 +917,10 @@ def degree_check(prog: dict, degree: tuple[float, float], lo: float, hi: float,
 HOURS_LABEL = re.compile(r"\b(Total\s+(?:Contact\s+)?)?Hours?\s*:\s*(\d+(?:\.\d+)?)", re.I)
 
 
-def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str | None) -> bool:
-    """A noncredit program whose page prints its total hours and no hours for any course
-    (San Joaquin Delta, S422: "Total Contact Hours: 288" and "Units: 0" beside each course):
-    there is nothing to add, as 'unstated' passes a page with no figure. The record must carry
-    no course or block figure, and every hours figure on the page must be a total equal to the
-    one the record states, so a reading that dropped printed course hours still fails."""
-    if measure(record) != "hours" or stated is None or not text or FIGURE.search(text):
+def hours_figureless(record: dict) -> bool:
+    """A record measured in hours whose blocks and courses carry no figure: the shape the total-only
+    readings ask for before they read the page (hours_total_only)."""
+    if measure(record) != "hours":
         return False
     for b in record.get("blocks") or []:
         if _span(b.get("stated")):
@@ -830,6 +929,17 @@ def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str
             for entry in [c] + alternatives(c):
                 if _num(entry.get("units")) or _num(entry.get("units_max")):
                     return False
+    return True
+
+
+def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str | None) -> bool:
+    """A noncredit program whose page prints its total hours and no hours for any course
+    (San Joaquin Delta, S422: "Total Contact Hours: 288" and "Units: 0" beside each course):
+    there is nothing to add, as 'unstated' passes a page with no figure. The record must carry
+    no course or block figure, and every hours figure on the page must be a total equal to the
+    one the record states, so a reading that dropped printed course hours still fails."""
+    if stated is None or not text or FIGURE.search(text) or not hours_figureless(record):
+        return False
     labels = list(HOURS_LABEL.finditer(text))
     if labels and all(m.group(1) and abs(float(m.group(2)) - stated[0]) <= TOL for m in labels):
         return True
@@ -878,7 +988,10 @@ def total_hours_printed(text: str, stated: tuple[float, float], labels: list, re
     words before 'hours' or 'hrs'; no 'Hours N' or 'Hours: N' outside the total (the conductor's
     design after the review of #3193)."""
     prog = record.get("program") or {}
-    if not prog.get("hours_total_printed") or any(not m.group(1) for m in labels):
+    # S651 flag (Sam, sam-noncredit-total-hours-2026-11-13: "Yes, let the checker read Total Hours for
+    # noncredit wherever the page prints it"): every hours record takes the reading, not only a college whose
+    # reconcile step set hours_total_printed; every check below still asks the page for its evidence.
+    if not (prog.get("hours_total_printed") or PASSING_S651) or any(not m.group(1) for m in labels):
         return False
     from _program_requirements_reconcile import _heading_end
     start = _heading_end(text, prog.get("section_heading"))
@@ -1015,9 +1128,8 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         # the total passes with the fill named, as degree_verdict reads a degree's. The same
         # guard: a text naming no electives keeps the record failing.
         fill = None
-        if (not ok and not ge_included and degree is None and prog.get("electives_fill_degree")
-                and hi <= stated[0] + TOL and (text is None or electives_named(prog, text))):
-            fill = [round(stated[0] - hi, 2), round(stated[1] - lo, 2)]
+        if not ok and not ge_included and degree is None:
+            fill = program_total_fill(prog, stated, lo, hi, award, text, record)
         ok = ok or ge_included or fill is not None
         arith = {"pass": ok, "status": "equal" if ok else "unequal",
                  "computed": [round(lo, 2), round(hi, 2)], "stated": list(stated), "against": "program",

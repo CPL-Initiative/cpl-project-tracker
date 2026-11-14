@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 940,
+  "file_datasets": 943,
   "external_services": 195,
-  "consumers": 587,
+  "consumers": 588,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -5930,6 +5930,13 @@
      "direction": "read",
      "how": "literal",
      "line": 53
+    },
+    {
+     "id": "script:kb/_program_requirements_passing_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 57
     }
    ],
    "served": false,
@@ -17216,6 +17223,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/program_requirements_passing_dryrun/passing_s651.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_passing_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 60
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_passing_dryrun/passing_s651.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_passing_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/program_requirements_pilot/map_cr_by_course.json": {
    "consumers": [
     {
@@ -17386,6 +17419,13 @@
   },
   "file:kb/program_requirements_reconcile.json": {
    "consumers": [
+    {
+     "id": "script:kb/_program_requirements_passing_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 58
+    },
     {
      "id": "script:kb/_program_requirements_reconcile.py",
      "kind": "script",
@@ -19610,6 +19650,13 @@
      "direction": "read",
      "how": "literal",
      "line": 55
+    },
+    {
+     "id": "script:kb/_program_requirements_passing_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
     }
    ],
    "producers": [
@@ -25666,6 +25713,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_heading_agreement_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_passing_s651_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -33348,6 +33408,7 @@
     "tests/library_publish_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
+    "tests/program_requirements_passing_s651_test.py",
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_extract_halt_test.py",

@@ -314,6 +314,11 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Program requirements pilot (course codes, page finder, scorer)
         run: python3 tests/program_requirements_pilot_test.py
+      # The S651 passing-function changes behind their flag (S651): a degree's major total is never
+      # filled by electives (Cosumnes River 11338 and 04614 fail), a true fill still passes, noncredit
+      # Total Hours read at every college, COBIx's GE-pattern rule; and the dry run that measures them.
+      - name: Program requirements passing function, S651 changes and their dry run
+        run: python3 tests/program_requirements_passing_s651_test.py
       # The reconcile steps' award filters and Cañada's Cal-GETC step (S421): a transfer-only
       # step leaves a local degree alone though its captured page spans the sibling section.
       - name: Program requirements reconcile (award filters, the Cal-GETC step)
