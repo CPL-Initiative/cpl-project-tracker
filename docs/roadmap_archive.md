@@ -17,6 +17,9 @@ S196, and the INDEX history rotated out before 2026-09-17. [Part 7](roadmap_arch
 2026-11-03, S563) holds the rotation of 2026-08-16, the narratives of S62, S113, S146 and S147, and the INDEX
 history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-11-14)
+- 2026-11-13 (S644 SkyWren, conductor, Sam's session): five merges (#3188, #3189, #3191, #3190, #3192); the harvest gap census and the wave runner for throughput; Los Angeles City's 22, Santiago Canyon and North Orange Continuing Education loaded; Open Asks Sheet 187 built; handoff 645.
+
 ## INDEX update-history entries rotated out (2026-11-13)
 - 2026-11-11 (S638 SkyTamarind, conductor, Sam's session): five merges (#3115, #3109, #3116, #3118, #3119), the subject fill's first live run, conductor mode (`docs/reference/conductor_mode.md`), the cer-procedures lane under its cap; handoff 639.
 - 2026-11-11 (S636 SkyAntennae, Sam's session): Butte 87 to 138 of 164 and displayed on the catalog's own GE totals, the reconcile's address guard, a stale-issuer report in the credential review apply, the harvest lane under its budget (#3100); handoff 637.
