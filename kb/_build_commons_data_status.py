@@ -130,6 +130,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import glob
+import importlib.util
 import json
 import os
 import re
@@ -154,6 +155,26 @@ IN_SCOPE = ("college", "continuing_education")
 # stale after. The page reads these from the file and never restates them.
 AGE_DAYS = {"fresh": 7, "recent": 30}
 
+# A college whose displayed catalog link differs from its capture root (COBIx's correction on #3229, comment
+# 6867640358, 23:35Z 2026-11-13; taken by the S649 conductor at 02:59Z 2026-11-14): only Copper Mountain. Its capture
+# read the 09.03.26 catalog PDF, which now answers 404; the academic-catalogs page answers and links the 26-27 catalog
+# reissued 10.26.26. The capture root stays what the capture read until a recapture moves the registry's catalog_url
+# (a live write, not this file's). Cosumnes River, El Camino and Citrus answered from outside and stay as stored.
+CATALOG_LINKS = {
+    "copper_mountain": {
+        "display": "https://www.cmccd.edu/academic-catalogs/",
+        "current_file": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
+        "checks": [
+            {"url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
+             "status": 404, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"},
+            {"url": "https://www.cmccd.edu/academic-catalogs/",
+             "status": 200, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"},
+            {"url": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
+             "status": 200, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"},
+        ],
+    },
+}
+
 # Every field a college row carries, flagged for the College view (a later slice draws only "shareable").
 FIELDS = {
     "id": "shareable", "name": "shareable", "district": "shareable", "kind": "shareable",
@@ -167,6 +188,7 @@ FIELDS = {
     # slice 2 (the expanding row and the side panel): what the college's read receipt says about its read
     "listed_closed": "shareable", "found": "shareable", "extracted": "shareable", "errors": "internal",
     "failed_checks": "internal", "platform": "shareable", "catalog_year": "shareable", "catalog_url": "shareable",
+    "capture_root": "shareable", "catalog_now": "shareable", "catalog_checks": "internal",
     "read_seconds": "internal", "run": "internal", "levers": "internal",
     # the field list the slice 2 read figures take from a harvested college (None, never a zero, when unread)
 }
@@ -310,7 +332,7 @@ def harvest(root: str):
             "listed_closed": summary.get("with_closed_list"), "found": summary.get("found"),
             "extracted": summary.get("extracted"), "errors": summary.get("errors"),
             "failed_checks": summary.get("failed"), "platform": acct.get("platform"),
-            "catalog_year": acct.get("catalog_year"), "catalog_url": acct.get("catalog_url"),
+            "catalog_year": acct.get("catalog_year"), **catalog_links(slug, acct.get("catalog_url")),
             "read_seconds": acct.get("seconds"), "run": summary.get("run") or acct.get("run"),
             "levers": dict(sorted(levers.items(), key=lambda x: (-x[1], x[0]))),
         }
@@ -405,11 +427,20 @@ def subject_of(key: str) -> str:
     return m.group(0) if m else "(no subject)"
 
 
-# The outline systems whose course outlines print no objectives (the SLO worker's read on #3263, S649: the five eLumen
-# colleges read so far, Cabrillo, Modesto, Mission, Columbia and Lake Tahoe, print none). A college read only on such a
-# system that holds no objective course reads "the outlines print none", never a missing figure. Once
-# kb/_course_outcomes_read.py's OBJECTIVES_BY_SYSTEM is on main, it is the source and this line goes.
-NO_OBJECTIVES_SYSTEMS = ("elumen",)
+def _no_objectives_systems() -> tuple:
+    """The outline systems whose course outlines are not known to print objectives, read from the SLO reader's own
+    OBJECTIVES_BY_SYSTEM (kb/_course_outcomes_read.py, #3263), the one source: every system whose "printed" is not
+    True ("template" for eLumen, where each college's catalog template decides and the trial pages printed none). A
+    college read only on such a system that holds no objective course reads "the outlines print none", never a
+    missing figure. Never restated here (S650)."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    spec = importlib.util.spec_from_file_location("course_outcomes_read", os.path.join(here, "_course_outcomes_read.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return tuple(sorted(k for k, v in mod.OBJECTIVES_BY_SYSTEM.items() if (v or {}).get("printed") is not True))
+
+
+NO_OBJECTIVES_SYSTEMS = _no_objectives_systems()
 
 
 def objectives_printed(s: dict | None):
@@ -593,7 +624,31 @@ def confidence(spot: dict | None, harvested: bool):
 
 
 SLICE2 = ("listed_closed", "found", "extracted", "errors", "failed_checks", "platform", "catalog_year", "catalog_url",
-          "read_seconds", "run", "levers")
+          "capture_root", "catalog_now", "catalog_checks", "read_seconds", "run", "levers")
+
+
+def link_check_result(chk: dict) -> str:
+    """One link check in the page's words. A 500 whose server is Pingora with an empty body is the checker's own
+    egress refusing (COBIx on #3229, 23:35Z 2026-11-13: his box's egress answers 500 to every plain-http request), so
+    it reads "unreachable from here", never as a dead link. Only a 404 or 410 reads "not found"."""
+    st = chk.get("status")
+    if st == 500 and "pingora" in str(chk.get("server") or "").lower() and not chk.get("body_bytes"):
+        return "unreachable from here"
+    if st in (404, 410):
+        return "not found"
+    if isinstance(st, int) and 200 <= st < 400:
+        return "answered"
+    return "answered %s" % st if st is not None else "not checked"
+
+
+def catalog_links(slug: str, capture_url) -> dict:
+    """The catalog link the page displays, split from the capture root the readers use (S650). The capture root stays
+    the capture's own catalog_url, the address it read; a college in CATALOG_LINKS shows its display link instead, the
+    file its catalog page links to now, and the checks behind the split, each with its result in words."""
+    o = CATALOG_LINKS.get(slug) or {}
+    return {"catalog_url": o.get("display") or capture_url, "capture_root": capture_url,
+            "catalog_now": o.get("current_file"),
+            "catalog_checks": [dict(c, result=link_check_result(c)) for c in o.get("checks") or []] or None}
 
 
 def slice2_fields(h: dict | None) -> dict:

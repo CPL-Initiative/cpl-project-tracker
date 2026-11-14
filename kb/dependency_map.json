@@ -1142,7 +1142,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1729
+     "line": 1732
     },
     {
      "id": "module:admin.js",
@@ -1839,7 +1839,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2382
+     "line": 2385
     }
    ],
    "main_committers": []
@@ -2489,7 +2489,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1339
+     "line": 1342
     }
    ],
    "main_committers": []
@@ -2508,7 +2508,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1684
+     "line": 1687
     },
     {
      "id": "module:college_briefing.js",
@@ -3210,7 +3210,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1740
+     "line": 1743
     },
     {
      "id": "module:dashboard_filters.js",
@@ -3519,6 +3519,13 @@
       "map-queue",
       "map-users"
      ]
+    },
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 165
     }
    ],
    "main_committers": []
@@ -4520,7 +4527,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2046
+     "line": 2049
     }
    ],
    "main_committers": []
@@ -5662,7 +5669,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1937
+     "line": 1940
     },
     {
      "id": "module:admin.js",
@@ -6862,7 +6869,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2321
+     "line": 2324
     },
     {
      "id": "module:college_briefing.js",
@@ -7075,7 +7082,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1399
+     "line": 1402
     },
     {
      "id": "module:cpl_funding.js",
@@ -7938,7 +7945,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 225
+     "line": 247
     }
    ],
    "served": false,
@@ -7951,7 +7958,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 679
+     "line": 734
     }
    ],
    "served": false,
@@ -13942,7 +13949,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 144
+     "line": 145
     }
    ],
    "served": true,
@@ -16428,7 +16435,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 145
+     "line": 146
     }
    ],
    "served": false,
@@ -19400,7 +19407,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 146
+     "line": 147
     }
    ],
    "served": false,
@@ -19413,7 +19420,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 148
+     "line": 149
     }
    ],
    "served": true,
@@ -19511,7 +19518,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 139
+     "line": 140
     }
    ],
    "served": true,
@@ -19588,7 +19595,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 140
+     "line": 141
     },
     {
      "id": "script:kb/_harvest_gap_census.py",
@@ -22472,7 +22479,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 431
+     "line": 462
     },
     {
      "id": "script:kb/_build_commons_status.py",
