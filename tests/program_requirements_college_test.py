@@ -3709,7 +3709,34 @@ check((C.ge_page_owner({"h1": "Physics 2.0 - Associate in Science for Transfer (
       "version: Moreno Valley's one Physics, listed with no version, keeps its 2.0 page")
 check((C.ge_page_owner({"h1": "Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24"},
                        _gp(("32948", "Kinesiology", "A.A- T Degree"))) or {}).get("control_number") == "32948",
-      "version: a PDF window's unit counts are no version")
+      "control: a heading printing the program's control number is its page, its unit counts no version")
+# The third reader's synthetic headings (S653): every identity the heading prints agrees, both ways.
+_phys = _gp(("1", "Physics", "A.S. T Degree"), ("2", "Physics 2.0", "A.S. T Degree"))
+for _h in ("Physics 2 - Associate in Science for Transfer (CalGETC)", "Physics v2 - Associate in Science for Transfer (CalGETC)",
+           "Physics Version 2 - Associate in Science for Transfer (CalGETC)"):
+    check((C.ge_page_owner({"h1": _h}, _phys) or {}).get("control_number") == "2",
+          "version in any spelling: %r goes to Physics 2.0, never Physics" % _h)
+check((C.ge_page_owner({"h1": "Chemistry 2.0 AS-T Cal-GETC 37.5"},
+                       _gp(("1", "Chemistry", "A.S. T Degree"), ("2", "Chemistry 2.0", "A.S. T Degree"))) or {})
+      .get("control_number") == "2", "version: a number after the award is units, never a version (37.5)")
+_span = _gp(("1", "Spanish I", "Certificate of Achievement"), ("2", "Spanish II", "Certificate of Achievement"))
+check((C.ge_page_owner({"h1": "Spanish II - Certificate of Achievement (CalGETC)"}, _span) or {}).get("control_number") == "2"
+      and C.ge_page_owner({"h1": "Spanish II - Certificate of Achievement (CalGETC)"}, _span[:1]) is None,
+      "identity: Spanish II is Spanish II's page, never Spanish I's")
+check(C.ge_page_owner({"h1": "Accounting Level II (CalGETC)"}, _gp(("1", "Accounting Level I", "Certificate of Achievement"))) is None,
+      "identity: Level II is never Level I's")
+check(C.ge_page_owner({"h1": "Kinesiology Option B - Associate in Arts (CSU GE)"}, _gp(("1", "Kinesiology Option A", "A.A. Degree"))) is None,
+      "identity: Option B is never Option A's")
+_ba = {"h1": "Business Administration: Accounting - Associate in Science (IGETC)"}
+check(C.ge_page_owner(_ba, _gp(("1", "Business Administration", "A.S. Degree"),
+                               ("2", "Business Administration: Management", "A.S. Degree"))) is None
+      and C.ge_page_owner(_ba, _gp(("1", "Business Administration", "A.S. Degree"))) is None,
+      "title: an emphasis after a colon is never plain Business Administration's")
+check(C.ge_page_owner({"h1": "Psychology (UC) - Associate in Arts (IGETC)"}, _gp(("1", "Psychology (CSU)", "A.A. Degree"))) is None,
+      "title: Psychology (UC) is never Psychology (CSU)'s")
+check((C.ge_page_owner({"h1": "Equine Science AS P002809C Cal-GETC (34 units) LACCD GE (21 units)"},
+                       _gp(("02809", "Equine Science", "A.S. Degree"))) or {}).get("control_number") == "02809",
+      "noise: LACCD and GE beside the units name no program")
 check(C.ge_pattern("California General Education Transfer Curriculum")
       and C.ge_pattern("Intersegmental General Education Transfer Curriculum")
       and C.ge_pattern("Intersegmental GE Transfer Curriculum")
@@ -3720,7 +3747,8 @@ check(C.ge_pattern("California General Education Transfer Curriculum")
 # words the heading names), with its owner written from the heading's own text: the award code or words (AA-T,
 # AS-T, "for Transfer", AS, AA), the version ("2.0") and the full title. Read from the headings, not from the rule
 # or the filed claim (the filed claim is wrong for Riverside City's four 2.0 pages and Moreno Valley's MAS643).
-# 24 pages: 13 award sibling sets, 4 version sibling sets, 7 longer-title sets (Art History, Social Justice).
+# 24 pages: 13 award sibling sets, 4 version sibling sets, 7 longer-title sets (Art History, Social Justice);
+# and five LA Trade-Tech PDF windows whose cut headings print the program's own control number (T031018H).
 GE_OWNERS = {
     # award siblings: the heading prints AS or AA, a degree, never the certificate of the same title
     ("los_angeles_pierce", "Equine Science AS P002809C"): "02809",
@@ -3750,6 +3778,12 @@ GE_OWNERS = {
     ("riverside_city", "Social Justice Studies: Asian American Studies - Associate of Arts for Transfer (ADT) - AA1072"): "43695",
     ("riverside_city", "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074"): "43897",
     ("riverside_city", "Social Justice: Native American and Indigenous Studies - Associate in Arts for Transfer (ADT)"): "44469",
+    # control numbers: the heading prints the program's own
+    ("los_angeles_trade_technical", "T031018H AS-T"): "31018",
+    ("los_angeles_trade_technical", "Development T038461G AA-T"): "38461",
+    ("los_angeles_trade_technical", "T039546G AAT"): "39546",
+    ("los_angeles_trade_technical", "Dietetics T040026H AST"): "40026",
+    ("los_angeles_trade_technical", "Administration 2.0 T042785H AS-T"): "42785",
 }
 ge_seen, ge_two, ge_allow, ge_refuse = {}, [], set(), set()
 for _path in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "sources.json"))):
@@ -3774,16 +3808,16 @@ for _path in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_col
             if _k == _slug and _head.replace("\xa0", " ").startswith(_start):
                 ge_seen[(_k, _start)] = _owners
 check(ge_two == [], "no filed pattern page is allowed to two programs: %r" % ge_two[:3])
-check(len(ge_seen) == len(GE_OWNERS) == 24,
+check(len(ge_seen) == len(GE_OWNERS) == 29,
       "every hand-checked sibling page is among the filed pages (%d of %d)" % (len(ge_seen), len(GE_OWNERS)))
 check(all(ge_seen.get(k) == [cn] for k, cn in GE_OWNERS.items()),
       "each hand-checked sibling page goes to the owner its heading names: %r"
       % [(k[0], k[1][:30], ge_seen.get(k), cn) for k, cn in GE_OWNERS.items() if ge_seen.get(k) != [cn]][:4])
 # Measured, not hand-checked: the filed claims on a pattern's page S646's rule refused whole (140), as the rule
 # reads them now. Moreno Valley's 30150 on MAS643 and Riverside City's 30578, 32692, 32745 and 33829 on their 2.0
-# siblings' pages are refused; so are five LA Trade-Tech PDF windows whose cut headings name too little.
-check(len(ge_allow) == 83 and len(ge_refuse) == 57,
-      "83 filed claims on a pattern's page allowed, 57 refused (%d, %d)" % (len(ge_allow), len(ge_refuse)))
+# siblings' pages are refused; the rest are a pattern's own page another program claimed.
+check(len(ge_allow) == 88 and len(ge_refuse) == 52,
+      "88 filed claims on a pattern's page allowed, 52 refused (%d, %d)" % (len(ge_allow), len(ge_refuse)))
 check({("moreno_valley", "30150"), ("riverside_city", "30578"), ("riverside_city", "32692"),
        ("riverside_city", "32745"), ("riverside_city", "33829")} <= ge_refuse,
       "the five wrong filed claims (30150 and the four 2.0 pages' plain siblings) are refused")

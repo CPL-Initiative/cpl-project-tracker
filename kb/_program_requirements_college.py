@@ -570,10 +570,40 @@ def ge_pattern_page(pg: dict) -> bool:
     return any(ge_pattern(x) for x in (pg.get("code"), pg.get("h1"), pg.get("title"), path))
 
 
-def _version(ident) -> frozenset:
-    """The version a title or heading prints (ncl_words' identity: "2.0" reads v20), never its other numbers:
-    a PDF window's heading carries unit counts ("Kinesiology T032948G AA-T Cal-GETC 21-24")."""
-    return frozenset(x for x in ident if re.fullmatch(r"v\d+", x))
+# A heading's state control number: LACCD's catalog PDFs print it beside the award ("English T032905G AA-T",
+# "Equine Science AS P002809C"), a letter, the number with a leading zero, a letter.
+GE_CONTROL = re.compile(r"(?<![A-Za-z0-9])[A-Z]?0*(\d{5})[A-Z]?(?![A-Za-z0-9])")
+# Words a pattern page's heading prints that say nothing of which program it is (S653 third reader): the district,
+# a stray "GE" or "Associate" left once the award and the pattern are set aside, a PDF table's "Y".
+GE_HEAD_NOISE = {"laccd", "ge", "associate", "y"}
+# A version or a number in a title: "2.0", "2", "v2", "Version 2", "V2.0" all read 2.
+GE_NUMBER = re.compile(r"\b(?:v(?:ersion)?\s*)?(\d+(?:\.\d+)?)\b", re.I)
+
+
+def _award_start(text: str) -> int:
+    """Where a heading's award begins (NCL_ADT, NCL_KIND), the end when it prints none: the title and its version
+    sit before it, its unit counts after ("Chemistry 2.0 AS-T 37.5")."""
+    letters = [c for c in text if c.isalpha()]
+    shouting = bool(letters) and sum(c.isupper() for c in letters) > 0.6 * len(letters)
+    at = len(text)
+    for pat in NCL_ADT + [p for _, p in NCL_KIND if not (shouting and not p.flags & re.I)]:
+        m = pat.search(text)
+        if m:
+            at = min(at, m.start())
+    return at
+
+
+def ge_identity(text: str | None, heading: bool = False) -> tuple[frozenset, frozenset, frozenset]:
+    """(title words, identity tokens, numbers) of a title, or of a heading's part before its award with its
+    control number and noise words set aside. Identity is a Roman numeral or an option letter (Spanish II,
+    Level I, Option A); numbers are versions in any spelling, "2.0" and "v2" alike."""
+    t = text or ""
+    if heading:
+        t = GE_CONTROL.sub(" ", t[:_award_start(t)])
+    nums = frozenset(re.sub(r"\.0+$", "", m.group(1)) for m in GE_NUMBER.finditer(t))
+    words, ident = ncl_words(GE_NUMBER.sub(" ", t))
+    words = frozenset(w for w in words if not (heading and w in GE_HEAD_NOISE))
+    return words, frozenset(x for x in ident if not x.isdigit()), nums
 
 
 def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
@@ -582,19 +612,27 @@ def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
     in Arts for Transfer (ADT) - AA696 (CalGETC)", and under the S646 rule each lost its own page (36
     page_claimed in capture 43619958385). The pattern's words set aside, every component the heading prints
     must agree with the program, each one comparison here:
-      title    the heading names every word of the program's title (ncl_words), and the program whose title
-               names the most of the heading's words owns it ("Art History AA-T" is never History's);
+      control  a heading printing a listed program's state control number is that program's page and no
+               other's (LA Trade-Tech's cut PDF windows, "Development T038461G AA-T");
+      title    the heading's words before its award are the program's title words, both ways ("Art History
+               AA-T" is never History's, "Business Administration: Accounting" never plain Business
+               Administration's);
+      identity a Roman numeral or option letter agrees (Spanish II is never Spanish I's, Option B never A's);
       award    a heading that names an award takes that award only (Moreno Valley's MAS643, the A.S.-T's
                page, is never its Administration of Justice A.S.'s);
-      version  a heading printing a version (2.0) never takes a program carrying another, and goes to the
-               sibling carrying its own where one is listed; a heading printing none goes to the sibling
-               carrying none where one is listed (Riverside City's Communication Studies and Communication
-               Studies 2.0). Only the version is compared: a PDF window's unit counts are not one.
+      version  a number in the title part ("2.0", "2", "v2") goes to the sibling printing the same one where
+               one is listed; where none is, a program printing no number keeps it (Moreno Valley's one
+               Physics, 43792, on its 2.0 page), and a heading printing none goes to the sibling printing none.
+               A number after the award is units, never a version.
     More than one program left, or none, owns nothing. A pattern's own page ("Cal-GETC - Certificate of
     Achievement", Glendale's, the S646 case) names no program once the pattern is set aside."""
     head = GE_PATTERN.sub(" ", pg.get("h1") or TITLE_SPLIT.split(pg.get("title") or "")[0] or "")
-    words, ident = ncl_words(head)
-    words, version = set(words), _version(ident)
+    ctl = {m.group(1) for m in GE_CONTROL.finditer(head)}
+    if ctl:
+        named = [p for p in programs if str(p.get("control_number") or "").lstrip("0").zfill(5) in ctl]
+        if named:
+            return named[0] if len(named) == 1 else None
+    words, ident, nums = ge_identity(head, heading=True)
     if not words:
         return None
     kinds = award_kinds_in(head)
@@ -606,21 +644,13 @@ def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
         return all(kind in NCL_CLASS[c] for c in classes) and (not kinds or kind in kinds)
     fits = []
     for p in programs:
-        tw, tid = ncl_words(p.get("title"))
-        v = _version(tid)
-        if tw and all(_named(w, words) for w in tw) and award_agrees(p) and (not v or not version or v == version):
-            fits.append((p, tw, v))
-    # The version decides between siblings: the one printing the heading's version, else the one printing
-    # none. A program the state lists with no version keeps a "2.0" page no sibling carries (Moreno Valley's
-    # one Physics, 43792, on MAS1108).
-    if any(v == version for _, _, v in fits):
-        fits = [f for f in fits if f[2] == version]
-    if not fits:
-        return None
-    reach = {id(p): sum(1 for h in words if _named(h, tw)) for p, tw, _ in fits}
-    top = max(reach.values())
-    best = [p for p, _, _ in fits if reach[id(p)] == top]
-    return best[0] if len(best) == 1 else None
+        tw, tid, tn = ge_identity(p.get("title"))
+        if tw and all(_named(w, words) for w in tw) and all(_named(h, tw) for h in words) and tid == ident \
+                and award_agrees(p) and (not tn or not nums or tn == nums):
+            fits.append((p, tn))
+    if any(tn == nums for _, tn in fits):
+        fits = [f for f in fits if f[1] == nums]
+    return fits[0][0] if len(fits) == 1 else None
 
 
 def ge_page_names_program(pg: dict, program: dict, programs: list | None = None) -> bool:
