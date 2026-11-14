@@ -43,6 +43,10 @@ import re
 FIELD = "honors_of"
 SUFFIX = "H"
 # The newest applied re-mint when the field was born (2026-11-14). Only maps after it can move an honors_of value.
+# A value in the live set is NEVER moved, even when a later map names it. That is safe only while every re-keyer
+# moves honors_of with the key it points at (kb/curation_pointers.py and the live re-key, in the same land): then a
+# live value is current, and a later map naming it means its slot was reused by another row, which resolving would
+# wrongly follow. Today it holds: no map is pending after this baseline. A re-keyer that skips honors_of breaks it.
 FIELD_BASELINE = "kb/anchor_rekey_out/2026-11-08/alias_map.json"
 
 # An M-ID (or a retired Z id): SUBJ, a space, M or Z, the band digit, three more characters, then the optional H
@@ -234,47 +238,62 @@ def holds_pair(ids, hmap):
     return any(i in hmap and _bases(hmap[i]) & (present - {i}) for i in present)
 
 
-def partner_ends(hmap):
-    """Each id's partners, both ways, from an alias-resolved hmap: {id: set of partner ids}."""
-    out = {}
-    for h, b in hmap.items():
-        for bb in _bases(b):
-            out.setdefault(h, set()).add(bb)
-            out.setdefault(bb, set()).add(h)
-    return out
+def pair_list(hmap):
+    """Every (Honors id, base) pair the hmap names, sorted: computed once, then handed to `would_join`."""
+    return sorted({(h, bb) for h, b in hmap.items() for bb in _bases(b) if h != bb})
 
 
-def phase_b_members(mems, oid, merge_into, pends, honors_ids):
-    """Phase B's member rows for official id `oid`, less any whose fold into it would join a partner pair. Bases are
-    taken before Honors ids (`honors_ids`, the hmap's keys), so where a pair shares the group the Honors id is the
-    one left standing; the kept rows keep their order."""
+def joined_pairs(merge_into, pairs):
+    """[(honors id, base)] that end under one id in this merge map. `pairs` is a pair_list or an hmap."""
+    if isinstance(pairs, dict):
+        pairs = pair_list(pairs)
+    return [(a, b) for a, b in pairs if _end(merge_into, a) == _end(merge_into, b)]
+
+
+_MISSING = object()
+
+
+def would_join(src, target, merge_into, pairs):
+    """True when writing src -> target into this merge map would put a pair that is apart now under one id.
+
+    A trial over EVERY pair, not a look at src's own partners: a fold of a third id that one side already merged
+    into joins the pair as surely as a fold of the side itself (COBIx's review of #3313, round 2). The write is made
+    in place and undone, so the map is never copied. The generator's in-memory folds (Phase B, R4, routing) ask this
+    before each write, because they also consume and synthesize rows and a later cut could not restore them."""
+    if not pairs:
+        return False
+    before = {p for p in pairs if _end(merge_into, p[0]) == _end(merge_into, p[1])}
+    prev = merge_into.get(src, _MISSING)
+    merge_into[src] = target
+    try:
+        return any(p not in before and _end(merge_into, p[0]) == _end(merge_into, p[1]) for p in pairs)
+    finally:
+        if prev is _MISSING:
+            del merge_into[src]
+        else:
+            merge_into[src] = prev
+
+
+def phase_b_members(mems, oid, merge_into, pairs, honors_ids):
+    """Phase B's member rows for official id `oid`, less any whose fold into it would join a pair. Members are tried
+    one by one in a stable order (bases before Honors ids, then by id), each against the map with the members
+    accepted so far, so the result never depends on the order the rows came in; the kept rows keep their order."""
     trial = dict(merge_into)
-    ordered = sorted(range(len(mems)), key=lambda k: mems[k]["id"] in honors_ids)
+    ordered = sorted(range(len(mems)), key=lambda k: (mems[k]["id"] in honors_ids, mems[k]["id"]))
     keep = set()
     for k in ordered:
         i = mems[k]["id"]
-        if would_join(i, oid, trial, pends):
+        if would_join(i, oid, trial, pairs):
             continue
         trial[i] = oid
         keep.add(k)
     return [m for k, m in enumerate(mems) if k in keep]
 
 
-def joined_pairs(merge_into, hmap):
-    """[(honors id, base)] that end under one id in this merge map."""
-    out = []
-    for h, b in sorted(hmap.items()):
-        for bb in sorted(_bases(b)):
-            if h != bb and _end(merge_into, h) == _end(merge_into, bb):
-                out.append((h, bb))
-    return out
-
-
-def would_join(src, target, merge_into, pends):
-    """True when folding src into target would put src and one of its partners under one id: the partner is the
-    target, or already ends where the target ends. The generator's in-memory folds (Phase B, R4, routing) ask this
-    before each write, because they also consume and synthesize rows and a later cut could not restore them."""
-    if src not in pends:
-        return False
-    t_end = _end(merge_into, target)
-    return any(p == target or _end(merge_into, p) == t_end for p in pends[src])
+def check_apart(merge_into, pairs, strict=False):
+    """The assertion after every fold: no pair ends under one id. `would_join` is complete by construction, so this
+    never fires; when it does, a fold was added without the guard. strict (the test suite, --check) fails the run."""
+    left = joined_pairs(merge_into, pairs)
+    if left and strict:
+        raise SystemExit("honors_of: a fold joined " + ", ".join(f"{a}/{b}" for a, b in left[:10]))
+    return left

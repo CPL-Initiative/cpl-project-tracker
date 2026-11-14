@@ -16,16 +16,17 @@ POINTER_FIELDS = ("merge_into", "honors_of")
 
 
 def rekey_entry(entry, alias):
-    """(entry, moved): the overlay entry with each pointer value the flat alias map names moved to its new id. The
-    caller's dict is never changed: a copy is returned when anything moves, else the same entry."""
+    """(entry, moved): the overlay entry with each pointer value the flat alias map names moved to its new id.
+    `moved` is 1 when the entry changed and 0 when not, so the callers' receipt counters keep meaning what they meant
+    before honors_of (entries re-pointed, not fields). The caller's dict is never changed: a copy is returned when
+    anything moves, else the same entry."""
     if not isinstance(entry, dict):
         return entry, 0
-    out, moved = entry, 0
+    out = entry
     for field in POINTER_FIELDS:
         v = entry.get(field)
         if v and v in alias and alias[v]:
             if out is entry:
                 out = dict(entry)
             out[field] = alias[v]
-            moved += 1
-    return out, moved
+    return out, int(out is not entry)

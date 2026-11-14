@@ -487,9 +487,12 @@
   // M-ID, value = its base. Returned as { base: {honors id: base id}, hop:
   // {id: its live merge target} } for each base and each hop after it, so the
   // worklist reads a base that merged into a third id at its chain end
-  // (kb/honors_of.py holds the same rule server-side). The live values are
-  // current: supabase-rekey.yml moves honors_of values with merge_into values at
-  // every re-mint. No honors_of row, no second read.
+  // (kb/honors_of.py holds the same rule server-side). THIS RELIES ON THE LIVE
+  // RE-KEY: the browser resolves no alias map, so a live value naming a
+  // re-minted base would offer the pair here while Python holds it. It holds
+  // because supabase-rekey.yml moves honors_of values with merge_into values
+  // at every re-mint, and the rows migration refuses a value outside the live
+  // id set (docs/reference/honors_of_design.md). No honors_of row, no second read.
   function fetchHonorsOf() {
     var empty = { base: {}, hop: {} };
     return fetchAllRows("/rest/v1/kb_curation?select=course_id,value&field=eq.honors_of&order=course_id.asc")

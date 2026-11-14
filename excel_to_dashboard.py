@@ -8541,7 +8541,7 @@ def export_unified_courses():
     import honors_of as _honors_of
     _hmap = _honors_of.honors_map(curation, live=set(cat) | set(sg)) if any(
         isinstance(_c, dict) and _c.get("honors_of") for _c in curation.values()) else {}
-    _hpends = _honors_of.partner_ends(_hmap)
+    _hpairs = _honors_of.pair_list(_hmap)
     merge_into, _honors_held, _ = _honors_of.hold_merges(merge_into, _hmap)
     if _honors_held:
         print(f"  honors_of: {len(_honors_held)} merge(s) held apart from their base")
@@ -9327,11 +9327,11 @@ def export_unified_courses():
         consumed, synthesized, folds = set(), [], 0
         for oid, g in groups.items():
             mems = g["members"]
-            if _hpends:
+            if _hpairs:
                 # honors_of: a member whose partner is the official id, sits in
                 # this group, or already ends there stays its own row. Bases
                 # fold first, so the Honors side is the one left standing.
-                mems = _honors_of.phase_b_members(mems, oid, merge_into, _hpends, set(_hmap))
+                mems = _honors_of.phase_b_members(mems, oid, merge_into, _hpairs, set(_hmap))
             anchor = anchor_by_id.get(oid)
             if not anchor and len(mems) < 2:
                 continue
@@ -9448,8 +9448,8 @@ def export_unified_courses():
                 continue
             oid = m.get("ccn") or m.get("cid")
             tgt = row_by_id.get(oid) if oid else None
-            if (tgt is not None and _hpends
-                    and _honors_of.would_join(sid, oid, merge_into, _hpends)):
+            if (tgt is not None and _hpairs
+                    and _honors_of.would_join(sid, oid, merge_into, _hpairs)):
                 continue  # honors_of: the stand-alone stays apart from its partner
             if tgt is not None and tgt.get("id_system") in ("C-ID", "CCN-ID"):
                 merge_into[sid] = oid
@@ -9484,8 +9484,8 @@ def export_unified_courses():
                 if not cn or cn not in _routed_live or sid in merge_into:
                     continue
                 tgt = row_by_id.get(ROUTE.get(cn))
-                if (tgt is not None and _hpends
-                        and _honors_of.would_join(sid, tgt["id"], merge_into, _hpends)):
+                if (tgt is not None and _hpairs
+                        and _honors_of.would_join(sid, tgt["id"], merge_into, _hpairs)):
                     continue  # honors_of: the stand-alone stays apart from its partner
                 if tgt is not None and tgt.get("id_system") == "C-ID":
                     merge_into[sid] = tgt["id"]
@@ -9503,8 +9503,8 @@ def export_unified_courses():
                     continue  # entangled rows just shrink; curation owns them
                 targets = {ROUTE[c] for c in cns if c in ROUTE}
                 tgt = row_by_id.get(next(iter(targets))) if len(targets) == 1 else None
-                if (tgt is not None and _hpends
-                        and _honors_of.would_join(mid, tgt["id"], merge_into, _hpends)):
+                if (tgt is not None and _hpairs
+                        and _honors_of.would_join(mid, tgt["id"], merge_into, _hpairs)):
                     continue  # honors_of: the M-ID stays apart from its partner
                 if tgt is not None and tgt.get("id_system") == "C-ID":
                     merge_into[mid] = tgt["id"]
@@ -9518,13 +9518,17 @@ def export_unified_courses():
                   f"members display under their descriptor rows; {_r_mids} fully-routed "
                   f"M-IDs + {_r_single} stand-alones folded (rfold)")
 
-    # honors_of: after every fold, no pair may end under one id. Reported, so a
-    # fold added later without the guard shows in the run's log.
-    if _hpends:
-        _hleft = _honors_of.joined_pairs(merge_into, _hmap)
+    # honors_of: after every fold, no pair may end under one id. would_join is
+    # complete by construction, so this never fires; when it does, a fold was
+    # added without the guard. The test suite and --check (or
+    # HONORS_OF_STRICT=1) fail the run; the daily run prints a named warning.
+    if _hpairs:
+        _hleft = _honors_of.check_apart(
+            merge_into, _hpairs,
+            strict=os.environ.get("HONORS_OF_STRICT") == "1" or "--check" in sys.argv)
         if _hleft:
-            print(f"  honors_of: WARNING {len(_hleft)} pair(s) fold together after the in-memory folds: "
-                  + ", ".join(f"{h}/{b}" for h, b in _hleft[:5]))
+            print(f"  honors_of: WARNING honors-pair-joined: {len(_hleft)} pair(s) fold together after the "
+                  "in-memory folds: " + ", ".join(f"{h}/{b}" for h, b in _hleft[:5]))
 
     # ---- per-course CPL impact: Eligible units + Students -------------------
     # Roll the CER's per-credential eligible-credit + student totals up to each
