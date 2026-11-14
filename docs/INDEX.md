@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 104 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 72 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 612 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1474** | |
+| Session handoffs | 613 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1475** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-14 (S651 SkyDunlin, the CPL Queue routine's 09:12Z firing, full checkpoint): #3291 Lassen (Cal-GETC 34 from its own catalog, five rows reread, display run 43586782908); #3294 the Veteran map's public header; #3283 sdccd's 2,532 objective rows loaded; draft #3293 the one dry run, held for COBIx; a display rule withdrawn for structured fields; plan v2 on #3111 (the August drop is Pierce); harvest lessons compacted into archive 5; handoff `session_652_handoff.md`.
 - 2026-11-14 (S650 SkyPlover, the CPL Queue routine's 06:12Z firing, full checkpoint): Open Asks Sheet 196 published; #3285 (Exhibits cross-tab reopen), #3286 and #3290 (College Data Collection), #3287 (credential harvest), #3289 (Veteran map UI pass) and #3288 (Cosumnes River's two pinned pages, 136 to 138 passing) merged; the degree electives-fill false pass found and held for the one dry run; Lassen and sdccd started; handoff 651 (SkyDunlin).
 - 2026-11-14 (S649 SkyOriole, the light final refresh): Sheet 195 answered and carried out (#3274 the BUSI split delete, #3275 the three CVMA rows, #3250 closed); the Riverside district's 2,536 objective rows loaded (#3265); the conductor's positions on #3237, #3229 and #3111; Sheet 196 owed for the Honors cards
 - 2026-11-14 (S649 SkyOriole, conductor, Sam in session; written while the session continued): seven merges (#3260, #3263, #3259, #3269, #3266, #3261, #3262); the Exhibits Review reads saved titles live (held 168 to 0); objectives collected with every SLO read; Cal-GETC applied at Cerro Coso (35) and Cosumnes River (39656 at 34); College Data Collection on Sam's six asks; lanes `cer-procedures` and `commons` compacted under budget; new archives `commons_lessons_archive.md` and `program_requirements_harvest_lessons_archive_5.md`; handoff 650 (SkyPlover).
@@ -131,4 +132,3 @@ Authoritative external sources we've cached:
 - 2026-11-13 (S648 SkyTanager, conductor, Sam in session; written while the session continued): eight merges (#3227, #3242, #3240, #3243, #3241, #3246, #3244, #3247); College Data Collection on Sam's #3229 words; Cal-GETC 34 by per-college evidence; the issuer tag list; Open Asks Sheet 193; handoff 649.
 - 2026-11-13 (S647 SkyPipit, the afternoon, Sam in session): four merges (#3231, #3233, #3232, #3236); the Commons data dashboard complete at `#commons/data` with four views and its first live read; the Exhibits fixes of #3223 and #3228; the `live-counts` environment; Open Asks Sheet 192; handoff 648 refreshed.
 - 2026-11-13 (S647 SkyPipit, conductor, two halves of the CPL Queue routine; the first stopped without a handoff): nine merges (#3211, #3214, #3194, #3205, #3218, #3206, #3216, #3207, #3222); Santiago Canyon, Diablo Valley and San Jose City displayed, then the whole build; College of the Desert read in ranges; Glendale's keep rule; the Commons data dashboard live; Open Asks Sheet 190; handoff 648.
-- 2026-11-13 (S646 SkyOriole, conductor, the CPL Queue routine): four merges (#3208, #3210, #3212, #3201); the PDF reader merged with a `refused` method and an exact own heading, decision 16(b) reversed; Diablo Valley loaded to 213; Glendale's bot-check page read as a refusal, a slow paid read; the first real daily run after #3180 green; Open Asks Sheet 189; handoff 647.

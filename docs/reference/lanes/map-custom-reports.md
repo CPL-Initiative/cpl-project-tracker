@@ -1,7 +1,7 @@
 ---
 title: "MAP Custom Reports (3 new) / ITPI automation — lane state"
 created: 2026-08-28
-updated: 2026-09-10
+updated: 2026-11-14
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -26,3 +26,5 @@ related:
 - ✅ **A gateway error is followed by a read-back (S317).** A 504 on 2026-09-18 printed "rolled back" over a promotion that committed (`map_data_loads` 35), and a 520 on one staging batch on 2026-09-30 cost a night. The loader now counts the table after a failed batch (re-sends one that did not land, never one that did), checks staging holds exactly the rows sent before it promotes (the gates refuse only a short table), and after a failed promotion call polls `map_data_loads` instead of re-sending. Runbook: [`map_custom_report_load`](../../map_custom_report_load.md) "A gateway error is not an answer"; guard section 10 of `tests/map_custom_report_sync_test.py`, now in PR CI too.
 
 ⚠️ **THE CATALOG-YEAR VIEW COUNTS SOME APPLIED CREDIT TWICE (S308/S309, 2026-09-30).** At *Applied to CPL Plan*, `map_college_cr_unit` (view A) sums 171,077.6 units and `map_student_credit` (view B) 162,603.4, 26 of 63 colleges differing. 6,782.2 of the 8,474.2 gap is 253 college × exhibit × catalog year × recommendation keys at 24 colleges where A reads exactly twice B with the same students (college 79, `MAPSAS-ASL2-1-001`, 2024-2025, "3 hours in CSU GE C2": 918 students, 5,508 against 2,754); 62 keys sit only in B (−637), 342 differ otherwise (+2,329). B matches the recommendation, so the breakdowns and P1's feed read B. **The note to Pedro is Sam's to edit and send (sheet 11 card 5, 2026-09-30: "I'll edit it first");** the draft is in `docs/session_310_handoff.md`. `cpl_memory` `map-catalog-year-view-doubles-applied-2026-09-30`.
+
+**The August 2026 drop is one college (S651, plan v2 Q3 on #3111, comment 6875161191; `august-2026-transcribed-drop-pierce-s651`).** Statewide transcribed units fell on Aug 6 and Aug 7, 2026 (102,591, 93,289, 76,262 in `live_metrics.json` at `484e3242`, `2eb8a5e2`, `9ca3d9af`). Los Angeles Pierce College alone accounts for it (about 27,700, 17,943, about 1,400 transcribed units; students 1,787 to 332; apprentice students 163 to 0; loss 26,555 against a statewide net of 26,330); Workforce and Other and Apprentice fell, Military held flat. Our code and API parameters did not change. **NEXT:** the MAP team or Pierce can say whether it was a re-upload, a deduplication or a correction.

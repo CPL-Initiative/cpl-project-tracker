@@ -285,3 +285,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## INDEX update history moved at the S650 checkpoint (2026-11-14)
 
 - 2026-11-13 (S645 SkyFinch, conductor, Sam's session): three merges (#3196, #3200, #3204); the display apply's first live runs, North Orange alone then the whole build; the #3193 rescore at six colleges; Diablo Valley and San Jose City loaded; Glendale unparked; Open Asks Sheet 188; handoff 646.
+
+## INDEX update history moved at the S651 checkpoint (2026-11-14)
+
+- 2026-11-13 (S646 SkyOriole, conductor, the CPL Queue routine): four merges (#3208, #3210, #3212, #3201); the PDF reader merged with a `refused` method and an exact own heading, decision 16(b) reversed; Diablo Valley loaded to 213; Glendale's bot-check page read as a refusal, a slow paid read; the first real daily run after #3180 green; Open Asks Sheet 189; handoff 647.

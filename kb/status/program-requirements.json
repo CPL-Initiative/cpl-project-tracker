@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-14T08:02:35Z",
-  "session": 650,
-  "moniker": "SkyPlover",
+  "written_at": "2026-11-14T10:57:28Z",
+  "session": 651,
+  "moniker": "SkyDunlin",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_651_handoff.md",
+  "handoff": "docs/session_652_handoff.md",
   "next_step": {
-    "title": "Lassen's Cal-GETC page, then the San Diego objectives load",
-    "text": "Lassen's catalog page is read for free for the 14 transfer degrees that name Cal-GETC with no figure; its words go into the college's reconcile steps, then a reread, the display build and COBIx's spot-check. The San Diego district's course objectives load once all four slices of its read are filed."
+    "title": "The one dry run's review, then one migration and one rescore",
+    "text": "The dry run for the four passing-function changes is posted for COBIx's review. Once he answers, one migration and one rescore follow, and Cosumnes River's seven held programs are decided by it. Lassen's five restored programs need a capture pinned to the catalog's own pages."
   },
   "calls": [
     {
@@ -321,24 +321,24 @@
   },
   "changes": [
     {
-      "at": "2026-11-14T07:59:00Z",
-      "text": "Cosumnes River's display was rebuilt on main for the two programs read again from their own pages, so CPL Pathways and Sierra show them as passing."
+      "at": "2026-11-14T10:48:00Z",
+      "text": "Lassen's display was rebuilt on main, so CPL Pathways and Sierra show its five programs read again."
     },
     {
-      "at": "2026-11-14T07:13:00Z",
-      "text": "Cosumnes River: two programs, 30566 Psychology AA-T and 33072 History AA-T, were read again from their own catalog pages (552 and 404) and now pass; the receipt keeps the rows as they were."
+      "at": "2026-11-14T10:46:00Z",
+      "text": "A change that rewrote the display's notes from the reconcile's words was withdrawn before Lassen's merge, because most notes it quoted were curator notes, not catalog words."
     },
     {
-      "at": "2026-11-14T07:13:30Z",
-      "text": "Cosumnes River's seven programs that would pass on a rescore alone are held for the one dry run, because the electives fill can pass a degree whose major is incomplete."
+      "at": "2026-11-14T10:28:00Z",
+      "text": "The San Diego district's course objectives were loaded: 2,532 rows at City, Mesa and Miramar, the SLO rows unchanged."
     },
     {
-      "at": "2026-11-14T07:20:00Z",
-      "text": "Lassen became the sweep's next college: a free read of its Cal-GETC page started for 14 transfer degrees."
+      "at": "2026-11-14T09:42:00Z",
+      "text": "Lassen: five transfer degrees were read again with the 34 Cal-GETC units its catalog prints on page 72; two now pass, Lassen 37 of 59. The receipt keeps the rows as they were."
     },
     {
-      "at": "2026-11-14T06:25:00Z",
-      "text": "The San Diego district's course outlines are being read again for course objectives, in four parts, on the runner."
+      "at": "2026-11-14T09:35:47Z",
+      "text": "The dry run for the four passing-function changes was posted for review; nothing was applied."
     }
   ],
   "headline": [
@@ -567,7 +567,7 @@
     {
       "day": "2026-11-14",
       "active": 20282,
-      "complete": 14596,
+      "complete": 14597,
       "colleges": 118
     }
   ],

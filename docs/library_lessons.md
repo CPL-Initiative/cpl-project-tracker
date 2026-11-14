@@ -1127,3 +1127,14 @@ Verbatim from `docs/reference/lanes/library.md`, replaced by short lines in the 
   sources and waits on what she wants changed; S647 did not work it. "Adding CPL Coordinator & Noncredit Lead to
   MAP" (`...mwauxci5`) has its ready draft. ELL IET reads 33,971 of Sierra's 34,000 characters: room for more comes
   out of repeated wording or a `cpl-chat` cap raise. The Coordinator Guide's Draft 2: lessons, *Moved from the lane (S646)*.
+
+## Moved from the lane (S651 checkpoint)
+
+Verbatim from `docs/reference/lanes/library.md`, replaced when #3294 built the Veteran map's public header (S651).
+
+- **NEXT (S650 UI pass): the public veteran map carries no public header.** `veteran-sprint-map/ca_cpl_map_selfcontained.html`
+  has no `cpl-public-header` block, no Links and no Light or Dark words (it follows `cpl_theme` only); the Fact Sheet has
+  none either. The fix belongs in `build_selfcontained.py`, not the HTML (`--check` in `scripts/check_generated.sh`): take
+  the header's markup and its 25px lengths, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one
+  column, and loading nothing from another host (the page is self-contained: logos as data URIs, as `apply.py` writes them).
+  The same pass raised the map's own control floors to 25px and the directory's CPL page link to its 44px row.
