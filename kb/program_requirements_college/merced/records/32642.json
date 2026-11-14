@@ -46,17 +46,14 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 23,
    "listed": 28,
-   "share": 0.714,
+   "share": 0.821,
    "missing": [
     "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H",
-    "POLS2",
-    "POLS3",
-    "POLS4",
     "POLSC1000"
    ],
    "unexplained": [],
@@ -64,26 +61,20 @@
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 5,
    "codes": [
     "HIST17A",
     "HIST17AH",
     "HIST17B",
     "HIST17BH",
-    "POSC1",
-    "POSC2",
-    "POSC3",
-    "POSC4"
+    "POSC1"
    ],
    "flagged": [
     "HIST17A",
     "HIST17AH",
     "HIST17B",
     "HIST17BH",
-    "POSC1",
-    "POSC2",
-    "POSC3",
-    "POSC4"
+    "POSC1"
    ],
    "pass": true
   },
@@ -441,5 +432,6 @@
    "No program learning outcomes, careers, degree total or GE pattern printed on this Requisites page."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

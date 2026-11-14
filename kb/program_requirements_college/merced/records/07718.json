@@ -88,14 +88,15 @@
    "status": "equal",
    "computed": [
     50.0,
-    50.0
+    56.0
    ],
    "stated": [
     50.0,
     50.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -319,5 +320,6 @@
    "No program learning outcomes or careers appear in the text; no general education pattern or degree total is printed."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

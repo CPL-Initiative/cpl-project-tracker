@@ -79,14 +79,15 @@
    "status": "equal",
    "computed": [
     27.0,
-    27.0
+    30.0
    ],
    "stated": [
     27.0,
     27.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -296,5 +297,6 @@
    "No program learning outcomes or careers appear in the provided text (Program Overview tab content not included)."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }
