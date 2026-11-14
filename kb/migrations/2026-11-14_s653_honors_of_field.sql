@@ -15,10 +15,14 @@
 -- 2026-06-12T22:47:01.69179+00:00, never validated; both Honors records free of any merge_into row (#3304's delete
 -- stands); no honors_of row anywhere (the field is new); no row by a reviewer outside @bot on the four ids, or in
 -- merge_into, unified_title_merge_confirm or merge_dismissed naming one of them.
--- RETURNING puts each update's before-image and each insert whole into the runner's receipt
--- (kb/receipts/migration_s653_honors_of_field_<run>.json). Rollback: 2026-11-14_s653_honors_of_field_rollback.sql,
--- keyed on the new stamps. ORDER: run that rollback BEFORE 2026-11-14_s652_honors_followups_rollback.sql, which
--- keys on the June stamp this statement replaces.
+-- Before-values of the two restamped rows, committed: kb/honors_of_s653_out/2026-11-14/step1_restamp_before.json
+-- (Rule 10 a2); the guard refuses unless both rows read exactly that. RETURNING puts each update's before-image and
+-- each insert whole into the runner's receipt (four images, about 1,500 characters, inside the runner's 4,000).
+-- Rollback: 2026-11-14_s653_honors_of_field_rollback.sql. It refuses while any step-2 row (honors-rows-s653@bot)
+-- stands, and unless it restores both titles; it deletes this cohort's honors_of rows by cohort and field, so it
+-- still finds them after a mint re-keys HUMA M10ME and LIBR M10CJ. ORDER: run that rollback BEFORE
+-- 2026-11-14_s652_honors_followups_rollback.sql, which refuses while a title reads honors-s652@bot.
+-- Redrawn 2026-11-14T18:06Z for #3315's review.
 
 with expected (course_id, value) as (
   values ('HUMA M1110', 'World Religions'), ('LIBR M1040', 'Media & Information Literacy')

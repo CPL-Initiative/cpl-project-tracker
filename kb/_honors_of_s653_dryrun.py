@@ -47,7 +47,8 @@ import _reclustering_s648_dryrun as s648  # noqa: E402
 import _mid_outcomes_compare as cmp  # noqa: E402
 import alias_chain  # noqa: E402
 
-COHORT = "honors-s653@bot"
+COHORT = "honors-s653@bot"          # step 1: the first two honors_of rows (2026-11-14_s653_honors_of_field.sql)
+COHORT_ROWS = "honors-rows-s653@bot"  # step 2: its own cohort, so each rollback keys on cohort and field alone
 ho_LEDGER = ("reviewed_by", "reviewed_at", "validated_at", "validated_by")
 # The two rows #3304 deleted live (receipt kb/receipts/migration_s652_honors_two_row_delete_43607926526.json).
 S652_DELETED = [
@@ -201,6 +202,54 @@ def folded_identities(out_dir):
     return out
 
 
+def merge_path(merge_into, i):
+    """i and every id its merge_into chain passes through, in order (a cycle stops the walk)."""
+    path, seen = [i], {i}
+    while path[-1] in merge_into and merge_into[path[-1]] not in seen:
+        path.append(merge_into[path[-1]])
+        seen.add(path[-1])
+    return path
+
+
+def joining_edges(merge_into, h, b):
+    """The merge edges that put h and b under one id: each side's edges up to the first id both paths reach. None when
+    the two stay apart. An edge is the id that carries the merge_into row."""
+    ph, pb = merge_path(merge_into, h), merge_path(merge_into, b)
+    meet = [i for i in ph if i in set(pb)]
+    if not meet:
+        return None
+    m = meet[0]
+    return ph[:ph.index(m)] + pb[:pb.index(m)]
+
+
+def honors_titles(w, i):
+    return sorted({s648.strip_honors(m["title"]) for m in (w.members.get(i) or [])
+                   if s648.is_honors(m["title"], m["code"])[0] == "honors"} - {""})
+
+
+# Words that name no course of their own: a fold check reads past them ("Introduction to Astronomy Laboratory" is
+# "Astronomy Laboratory").
+FOLD_FILLER = {"introduction", "intro", "introductory", "principles", "fundamentals"}
+
+
+def _fold_words(title):
+    t = re.split(r"\bformerly\b", title or "", maxsplit=1)[0]
+    return {w for w in t.split() if len(w) > 1 and w not in s648.STOP and w not in FOLD_FILLER
+            and not (re.search(r"\d", w) and re.search(r"[a-z]", w))}   # a course code (240h) is not a word
+
+
+def same_course(titles_a, titles_b):
+    """The two ids' Honors titles name one course: every word of each title, past fillers, is in a title of the other
+    id, spelled out or abbreviated. A shared stem is not enough: "Survey of Music History and Literature, Greek
+    Antiquity to 1750" and "... 1750 to the Present" share five words and are parts I and II (#3315's review, item 9)."""
+    def agree(x, y):
+        wx, wy = _fold_words(x), _fold_words(y)
+        return bool(wx) and bool(wy) and all(any(s648._abbreviates(a, b) for b in wy) for a in wx) \
+            and all(any(s648._abbreviates(b, a) for a in wx) for b in wy)
+    return bool(titles_a) and bool(titles_b) and all(any(agree(a, b) for b in titles_b) for a in titles_a) \
+        and all(any(agree(a, b) for a in titles_a) for b in titles_b)
+
+
 def plan_pairs(w, rows, out_dir, live_cur):
     pairs = pairs_of(rows)
     folded = folded_identities(out_dir)
@@ -213,8 +262,17 @@ def plan_pairs(w, rows, out_dir, live_cur):
     bases_of = defaultdict(set)
     for (h, b) in pairs:
         bases_of[h].add(b)
-    # The Honors M-IDs whose courses name this base and no other: they share the base's one H id. The first (most
-    # local courses, then id) takes it by re-key; the rest fold into it (CCN keeps one H record per base).
+    # A base whose courses already pair with a CCN Honors record (ASTR C1001H beside ASTR M1012): CCN holds that
+    # Honors course, so an M-ID Honors pair on the same base waits for it (the #3313 review's addition).
+    ccn_h_partner = defaultdict(set)
+    for (h, b) in pairs:
+        if s648.World.id_system(w, h) == "CCN-ID" and h.endswith("H"):
+            ccn_h_partner[b].add(h)
+    # The Honors M-IDs whose courses name this base and no other share the base's one H id (decision 3). The first
+    # (most local courses, then id) takes it by a one-to-one alias map at the mint; each other one keeps its own
+    # honors_of row under its own id and folds by a merge into the minted H id, its own change after the mint. So the
+    # mint never moves two ids onto one key, and no (course_id, field) slot is ever written twice (#3315's review,
+    # item 5).
     honors_of_base = defaultdict(set)
     for (h, b) in pairs:
         if s648.World.id_system(w, h).startswith("M-ID") and len(bases_of[h]) == 1:
@@ -225,6 +283,7 @@ def plan_pairs(w, rows, out_dir, live_cur):
     promotions = jload(os.path.join(HERE, "promotions.json"))["promotions"]
     merge_into = {k: v["merge_into"] for k, v in live_cur.items() if isinstance(v, dict) and v.get("merge_into")}
     pending, _ = alias_chain.pending_maps(None, baseline_through=alias_chain.ALIAS_MAPS[-1])
+    pmaps = alias_chain.load_maps(pending)
 
     def system(i):
         s = w.id_system(i)
@@ -256,8 +315,7 @@ def plan_pairs(w, rows, out_dir, live_cur):
                         "folded_identities": folded.get(b)},
                "proposed_h_id": ho.honors_id_for(b) if bs == "M-ID" else None,
                "holds": [], "notes": []}
-        if alias_chain.resolve_id(h, alias_chain.load_maps(pending)) != h or \
-                alias_chain.resolve_id(b, alias_chain.load_maps(pending)) != b:
+        if alias_chain.resolve_id(h, pmaps) != h or alias_chain.resolve_id(b, pmaps) != b:
             rec["holds"].append("an id moves under a pending alias map")
         if hs != "M-ID":
             rec["action"] = "none: the Honors side is a " + hs + " record, which stays as its body numbers it"
@@ -265,20 +323,36 @@ def plan_pairs(w, rows, out_dir, live_cur):
                 rec["notes"].append("CCN already holds this pair as base and H record")
             out.append(rec)
             continue
+        # Item 5: a row's key and value are live ids today; the migration repeats the test against its named set.
+        for i in (h, b):
+            if i not in live_ids:
+                raise SystemExit(f"ABORT: {i} (pair {h} with {b}) is not in the live id set")
         if not pure:
             rec["holds"].append(f"the Honors course shares its M-ID with {hc['local_courses'] - hc['honors_courses'] - hc['program_courses']} "
                                 "non-Honors course(s): a split comes before any row")
         if len(bases_of[h]) > 1:
             rec["holds"].append(f"the Honors M-ID's courses name {len(bases_of[h])} base identities: "
                                 + ", ".join(sorted(bases_of[h])))
+        if ccn_h_partner.get(b):
+            rec["holds"].append(f"the CCN Honors record {', '.join(sorted(ccn_h_partner[b]))} already pairs with a "
+                                f"course in {b}: this M-ID's Honors courses belong beside it")
         if bs == "M-ID":
             hid = rec["proposed_h_id"]
             if hid in live_ids and hid != h:
                 rec["holds"].append(f"the proposed id {hid} already exists")
             if len(honors_of_base[b]) > 1 and h in honors_of_base[b] and h_order(b)[0] != h:
+                lead = h_order(b)[0]
                 rec["fold_into"] = hid
-                rec["notes"].append(f"the base has {len(honors_of_base[b])} single-base Honors M-IDs "
-                                    f"({', '.join(h_order(b))}): {h_order(b)[0]} takes {hid}, this one folds into it")
+                rec["fold_lead"] = lead
+                mine, theirs = honors_titles(w, h), honors_titles(w, lead)
+                rec["fold_titles"] = {"this": mine, "lead": theirs}
+                if not same_course(mine, theirs):
+                    rec["holds"].append(f"the fold would join distinct Honors courses: {lead} takes {hid}, and this "
+                                        "id's Honors titles name another course in a base that lumps several")
+                else:
+                    rec["notes"].append(f"the base has {len(honors_of_base[b])} single-base Honors M-IDs "
+                                        f"({', '.join(h_order(b))}): {lead} takes {hid} at the mint; this one keeps "
+                                        "its own honors_of row and merges into the H id after the mint, its own change")
         elif bs == "CCN-ID":
             if b + "H" in live_ids:
                 rec["holds"].append(f"the CCN record {b}H already holds Honors courses beside {b}: this M-ID's "
@@ -292,51 +366,82 @@ def plan_pairs(w, rows, out_dir, live_cur):
                 rec["holds"].append(f"the {side} {i} is slated to merge into {merge_into[i]}")
             if i in DECIDED_MERGES:
                 rec["holds"].append(f"the {side} {i} is DECIDED to merge into {DECIDED_MERGES[i]}")
+        # Item 1: a person's saved row holds the pair only where the pair's honors_of would contradict it: a person's
+        # merge that puts the Honors id and its base under one id. A person's merge of a third course into either
+        # side, a title, a discipline or a Keep as-is agrees with the pair standing apart.
+        edges = joining_edges(merge_into, h, b)
+        if edges:
+            by = sorted({live_cur[e].get("reviewed_by") or "?" for e in edges})
+            if any(not ho.is_bot(x) for x in by):
+                rec["holds"].append("a person's merge joins the Honors id and its base: Rule 10, the person's row wins")
+            else:
+                rec["holds"].append("a bot's merge joins the Honors id and its base")
+        if (live_cur.get(h) or {}).get("honors_of"):
+            rec["holds"].append(f"the Honors id already carries honors_of {live_cur[h]['honors_of']}")
         for i, side in ((h, "Honors id"), (b, "base")):
             p = person(i)
-            if not p:
-                continue
-            fields = sorted(k for k in (live_cur.get(i) or {}) if k not in ho_LEDGER)
-            if set(fields) & {"merge_into", "merge_dismissed", "honors_of"}:
-                rec["holds"].append(f"a person saved {', '.join(fields)} on the {side} ({p}): Rule 10, held")
-            else:
+            if p:
+                fields = sorted(k for k in (live_cur.get(i) or {}) if k not in ho_LEDGER)
                 rec["notes"].append(f"a person saved {', '.join(fields)} on the {side}: the row overrides nothing"
                                     + (" and the mint carries it to the H id" if side == "Honors id" else ""))
+        pm = sorted(k for k, v in merge_into.items() if v in (h, b) and person(k))
+        if pm:
+            rec["notes"].append(f"a person merged other courses into the pair's ids, and none joins the pair: {len(pm)}")
+            rec["person_merges_in"] = pm
         if len(bases_of[h]) > 1:
             share = Counter({bb: pairs[(h, bb)] for bb in bases_of[h]})
             top, n_top = share.most_common(1)[0]
             rec["modal_base"] = {"id": top, "course_pairs": n_top, "of": sum(share.values())}
         tg = ((promotions.get(h) or {}).get("official_targets") or {})
         if any(t.split(":", 1)[-1] == b for t in tg):
-            rec["holds"].append("kb/promotions.json names the base among the Honors id's official targets "
-                                "(Phase B evidence; today's fold keeps them apart)")
+            rec["notes"].append("kb/promotions.json names the base among the Honors id's official targets: held, then "
+                                "released by the generator's Phase B guard (#3313, decision 4)")
         if rec["holds"]:
             rec["action"] = "held"
         elif bs == "M-ID" and rec.get("fold_into"):
-            rec["action"] = "row and fold into the H id"
+            rec["action"] = "row, fold after the mint"
         elif bs == "M-ID":
             rec["action"] = "row and mint"
         else:
             rec["action"] = "row only (official base)"
         out.append(rec)
+    mints = Counter(p["proposed_h_id"] for p in out if p["action"] == "row and mint")
+    dup = [k for k, v in mints.items() if v > 1]
+    if dup:
+        raise SystemExit(f"ABORT: two mints name one H id: {dup}")
     return out
 
 
-def summarize(plan):
+def hold_class(hold):
+    return re.sub(r"[A-Z]{2,6} [A-Z]?\w*\d\w*", "<id>", hold).split(":")[0].split(" (")[0]
+
+
+def summarize(plan, live_cur=None):
     s = {"pairs": len(plan), "by_action": dict(Counter(p["action"].split(":")[0] for p in plan).most_common()),
          "by_systems": dict(Counter(f"{p['honors_system']} Honors, {p['base_system']} base" for p in plan).most_common()),
          "holds_by_reason": {}}
     reasons = Counter()
     for p in plan:
         for h in p["holds"]:
-            reasons[re.sub(r"[A-Z]{2,6} [A-Z]?\w*\d\w*", "<id>", h).split(":")[0].split(" (")[0]] += 1
+            reasons[hold_class(h)] += 1
     s["holds_by_reason"] = dict(reasons.most_common())
+    s["held_pairs_by_first_reason"] = dict(Counter(hold_class(p["holds"][0]) for p in plan if p["holds"]).most_common())
     s["notes_by_reason"] = dict(Counter(re.sub(r"[A-Z]{2,6} [A-Z]?\w*\d\w*", "<id>", n).split(":")[0]
                                         for p in plan for n in p["notes"]).most_common())
     s["pairs_held"] = sum(1 for p in plan if p["holds"])
     s["rows_to_write"] = sum(1 for p in plan if p["action"].startswith("row"))
     s["mints"] = sum(1 for p in plan if p["action"] == "row and mint")
-    s["folds_into_an_h_id"] = sum(1 for p in plan if p["action"] == "row and fold into the H id")
+    s["folds_after_the_mint"] = sum(1 for p in plan if p["action"] == "row, fold after the mint")
+    named = {i for p in plan if p["action"].startswith("row") for i in (p["honors_id"], p["base_id"])}
+    if live_cur is not None:
+        pm = [k for k, v in live_cur.items() if v.get("merge_into") in named and v.get("reviewed_by")
+              and not ho.is_bot(v["reviewed_by"])]
+        s["person_merges_into_a_planned_id"] = {
+            "measure": "overlay entries (kb/coci_curation.json, the live-equivalent fold) whose merge_into names an id "
+                       "of a planned row and whose reviewed_by is not a bot",
+            "rows": len(pm),
+            "joining_a_planned_pair": sum(1 for p in plan if any("a person's merge joins" in h for h in p["holds"])),
+        }
     return s
 
 
@@ -359,15 +464,45 @@ def write_md(doc, path):
     for f, v in c["files"].items():
         L.append(f"- `{f}`: {v['keys_live']:,} keys live, {v['keys_field']:,} with the field; "
                  f"{len(v['differ'])} differ" + (": " + ", ".join(f"`{k}`" for k in v["differ"][:6]) if v["differ"] else "") + ".")
+    rc = doc.get("recall") or {}
+    if rc:
+        L += ["", "## The matcher's recall", "",
+              f"`kb/_honors_matcher_recall.py` derives the pairs a second way and sets them against `measure_honors`, "
+              f"on the live-equivalent members file ({rc['measure']}): right {rc['right']}, wrong {rc['wrong']}, "
+              f"missed {rc['missed']} of {rc['code_path_m_id_pairs']} code-path pairs with an M-ID Honors side. "
+              f"Before this branch's fix, on the committed members file: 508 pairs, right 507, wrong 1, missed 14. "
+              "Labeled and held out: " + ("; ".join(f"`{a}` with `{b}` ({why})" for a, b, why in rc["not_misses"]) or "none")
+              + "."]
+    pm = s.get("person_merges_into_a_planned_id") or {}
     L += ["", "## The plan", "",
           f"- pairs: {s['pairs']}",
           f"- by action: {s['by_action']}",
           f"- by systems: {s['by_systems']}",
-          f"- rows to write (no hold): {s['rows_to_write']}, of which mints (base plus H): {s['mints']}",
-          f"- holds by reason (a pair can carry several): {s['holds_by_reason']}", "",
+          f"- rows to write (no hold): {s['rows_to_write']}, of which mints (base plus H): {s['mints']}, "
+          f"folds after the mint: {s['folds_after_the_mint']}; step 1 writes "
+          f"{sum(1 for p in doc['pairs'] if p['action'].startswith('row') and p['honors_id'] in STEP1_IDS)} of them "
+          f"and step 2 the rest",
+          f"- held pairs by first reason: {s['held_pairs_by_first_reason']}",
+          f"- holds by reason (a pair can carry several): {s['holds_by_reason']}",
+          (f"- person merges into a planned id ({pm['measure']}): {pm['rows']}; pairs a person's merge joins: "
+           f"{pm['joining_a_planned_pair']}. Only a join holds a pair (Rule 10); the rest proceed." if pm else ""),
+          f"- the rows' digest: md5 `{doc.get('rows_md5')}` over the step-2 rows, `course_id>value` joined by `|` in "
+          "C order; the migration refuses unless what it inserts has the same digest", "",
+          "**The fan-in order.** One H id per base (decision 3). The Honors M-ID with the most local courses takes "
+          "it at the mint, by a one-to-one alias map. Each other single-base Honors M-ID on that base keeps its own "
+          "`honors_of` row under its own id and merges into the H id after the mint, its own change. The mint never "
+          "moves two ids onto one key, so no `(course_id, field)` slot is written twice. A follower whose Honors "
+          "titles name a different course from the lead's is held: the fold would join distinct courses.", "",
           "Measures: *local courses* = rows in `unified_courses_members.js`; *folded identities* = the row's "
           "`members` in `unified_courses_data.js` or `unified_courses_standalone.js`.", "",
-          "### Two examples per class", ""]
+          "### Held pairs, by first reason", ""]
+    held = defaultdict(list)
+    for p in doc["pairs"]:
+        if p["holds"]:
+            held[hold_class(p["holds"][0])].append(p)
+    for k in sorted(held, key=lambda x: (-len(held[x]), x)):
+        L.append(f"- **{k}** ({len(held[k])}): " + ", ".join(f"`{p['honors_id']}` with `{p['base_id']}`" for p in held[k]))
+    L += ["", "### Two examples per class", ""]
     by = defaultdict(list)
     for p in doc["pairs"]:
         key = p["action"].split(":")[0] if not p["holds"] else "held: " + p["holds"][0].split(":")[0].split(" (")[0]
@@ -396,93 +531,182 @@ def q(s):
     return "'" + str(s).replace("'", "''") + "'"
 
 
-def write_rows_sql(doc):
+def step2_rows(doc):
+    """The step-2 rows: every unheld pair's honors_of, less step 1's two, sorted by key (C order)."""
+    return sorted((p["honors_id"], p["base_id"]) for p in doc["pairs"]
+                  if p["action"].startswith("row") and p["honors_id"] not in STEP1_IDS)
+
+
+def rows_md5(rows):
+    """The digest the migration computes over what it inserts: md5 of course_id>value joined by | in C order."""
+    import hashlib
+    return hashlib.md5("|".join(f"{h}>{b}" for h, b in sorted(rows)).encode("utf-8")).hexdigest()
+
+
+def write_rows_sql(doc, write=True):
     """Step 2's migration and rollback, drafted from plan.json: one insert-only statement under one guard."""
-    rows = [(p["honors_id"], p["base_id"]) for p in doc["pairs"]
-            if p["action"].startswith("row") and p["honors_id"] not in STEP1_IDS]
+    rows = step2_rows(doc)
     ids = sorted({i for r in rows for i in r})
+    digest = rows_md5(rows)
     plan_rel = f"kb/honors_of_s653_out/{doc['date']}/plan.json"
     vals = ",\n    ".join(f"({q(h)}, {q(b)})" for h, b in rows)
-    idl = ", ".join(q(i) for i in ids)
+    s1 = ", ".join(q(i) for i in STEP1_IDS)
     head = [
         "-- DRAFT, NOT IN kb/migrations/.apply. Step 2 of the Honors build (S653): the honors_of rows for every pair the",
         f"-- plan writes ({len(rows)} rows; {plan_rel}, written {doc['written']}). Design: docs/reference/honors_of_design.md.",
         "-- Ruling: Sam, Sheet 197 card 3 (14:37Z 2026-11-14): \"Build the field first, then the rows\"; \"Rows for all 508",
-        "-- pairs\". The plan holds what it cannot write without a person's call (the design's *Holds*); held pairs get no row.",
+        "-- pairs\". The plan holds what it cannot write without a person's call; held pairs get no row (plan.md lists them).",
         "-- Written by kb/_honors_of_s653_dryrun.py --sql-only from the committed plan. Lands after step 1",
         "-- (2026-11-14_s653_honors_of_field.sql) and after the conductor's live reads re-measure the plan.",
-        "-- Insert-only under cohort honors-s653@bot, ON CONFLICT DO NOTHING (Rule 10). One plain statement: the insert hangs",
-        "-- on one guard CTE, and a failed guard raises, so nothing is written. The guard: step 1's two honors_of rows",
-        "-- present and no other honors_of row; no merge_into row keyed on any id the plan names (each is a live identity in",
-        "-- the plan's fold); no person's merge_into, merge_dismissed or unified_title_merge_confirm row naming one of them.",
-        "-- RETURNING puts every inserted row into the runner's receipt. Rollback: 2026-11-14_s653_honors_of_rows_rollback.sql.",
+        f"-- Insert-only under its own cohort, {COHORT_ROWS}, ON CONFLICT DO NOTHING (Rule 10). One plain statement: the",
+        "-- insert hangs on one guard CTE, and a failed guard raises, so nothing is written. The guard refuses when:",
+        f"--   * step 1's two honors_of rows ({COHORT}) are not both present, or any other honors_of row exists;",
+        "--   * a planned value or key is outside the named set: each named id was a live id (the payload index, members,",
+        "--     minted and stand-alone records) when the plan was drawn, and the dry run aborts on any that is not;",
+        "--   * any named id carries a merge_into row: an id merged away is no longer a live identity, and its row would be",
+        "--     stale. The CCR resolves no alias map, so a stale value would offer a pair Python holds (#3315, item 14);",
+        "--   * a pair's two ids already end under one id through merge_into rows (counted, and by a person apart). A",
+        "--     person's merge of a third course into either side does not refuse: it agrees with the pair standing apart",
+        "--     (#3315's review, item 1; 45 such rows today);",
+        "--   * what it inserts differs from the plan in count or digest.",
+        f"-- The result is a count and an md5 ({digest}) over the inserted rows, course_id>value joined by | in C order, so",
+        "-- the runner's receipt (scripts/supabase_migrate.py keeps the first 4,000 characters) holds the whole record and",
+        "-- checks against plan.json. No row image is returned: the insert-only cohort rolls back by its reviewer_email.",
+        "-- Rollback: 2026-11-14_s653_honors_of_rows_rollback.sql, keyed on the cohort and the field, never on ids, so it",
+        "-- finds every row after a mint re-keys them.",
         "",
     ]
-    body = f"""with planned (course_id, value) as (
+    body = f"""with recursive planned (course_id, value) as (
   values
     {vals}
 ),
 named (id) as (
   values {", ".join(f"({q(i)})" for i in ids)}
 ),
+stale as (
+  select count(*) as n from planned p
+  where p.course_id not in (select id from named) or p.value not in (select id from named)
+),
 step1 as (
   select count(*) as n from public.kb_curation s
-  where s.field = 'honors_of' and s.reviewer_email = 'honors-s653@bot' and s.course_id in ({", ".join(q(i) for i in STEP1_IDS)})
+  where s.field = 'honors_of' and s.reviewer_email = '{COHORT}' and s.course_id in ({s1})
 ),
 other_honors as (
   select count(*) as n from public.kb_curation o
-  where o.field = 'honors_of' and o.course_id not in ({", ".join(q(i) for i in STEP1_IDS)})
+  where o.field = 'honors_of' and not (o.reviewer_email = '{COHORT}' and o.course_id in ({s1}))
 ),
-merges as (
+moved as (
   select count(*) as n from public.kb_curation m where m.field = 'merge_into' and m.course_id in (select id from named)
 ),
-person as (
-  select count(*) as n from public.kb_curation p
-  where p.reviewer_email not like '%@bot'
-    and p.field in ('merge_into', 'merge_dismissed', 'unified_title_merge_confirm')
-    and (p.course_id in (select id from named)
-         or exists (select 1 from named n where p.value = n.id or p.value like '%' || n.id || '|%'
-                    or p.value like '%|' || n.id || '%'))
+walk (honors_id, side, id, person, depth) as (
+  select p.course_id, 'h', p.course_id, false, 0 from planned p
+  union all
+  select p.course_id, 'b', p.value, false, 0 from planned p
+  union all
+  select w.honors_id, w.side, m.value, w.person or m.reviewer_email not like '%@bot', w.depth + 1
+  from walk w join public.kb_curation m on m.course_id = w.id and m.field = 'merge_into'
+  where w.depth < 40
+),
+joined as (
+  select h.honors_id, bool_or(h.person or b.person) as by_person
+  from walk h join walk b on b.honors_id = h.honors_id and b.side = 'b' and b.id = h.id
+  where h.side = 'h'
+  group by h.honors_id
 ),
 guard as (
-  select (select n from step1) = 2 and (select n from other_honors) = 0 and (select n from merges) = 0
-     and (select n from person) = 0 as ok,
-     (select n from step1) as step1_rows, (select n from other_honors) as other_honors_rows,
-     (select n from merges) as merge_rows, (select n from person) as person_rows
+  select (select n from stale) = 0 and (select n from step1) = 2 and (select n from other_honors) = 0
+     and (select n from moved) = 0 and (select count(*) from joined) = 0 as ok,
+     (select n from stale) as stale_rows, (select n from step1) as step1_rows,
+     (select n from other_honors) as other_honors_rows, (select n from moved) as merged_ids,
+     (select count(*) from joined) as joined_pairs, (select count(*) from joined where by_person) as person_joined
 ),
 added as (
   insert into public.kb_curation as k (course_id, field, value, reviewer_email)
-  select p.course_id, 'honors_of', p.value, 'honors-s653@bot'
+  select p.course_id, 'honors_of', p.value, '{COHORT_ROWS}'
   from guard g cross join planned p
   where g.ok
   on conflict (course_id, field) do nothing
-  returning jsonb_build_object('op', 'insert', 'row', to_jsonb(k)) as image
+  returning k.course_id, k.value
+),
+digest as (
+  select count(*) as n,
+         md5(coalesce(string_agg(a.course_id || '>' || a.value, '|' order by a.course_id collate "C"), '')) as md5
+  from added a
 )
-select case when g.ok and (select count(*) from added) = {len(rows)}
-            then (select jsonb_agg(image) from added)
-            else ('refused by the guard: step 1 rows ' || g.step1_rows || ', other honors_of rows '
-                  || g.other_honors_rows || ', merge rows on a named id ' || g.merge_rows || ', person rows '
-                  || g.person_rows || ', or an insert met a taken slot')::int::text::jsonb
+select case when g.ok and d.n = {len(rows)} and d.md5 = '{digest}'
+            then jsonb_build_object('inserted', d.n, 'md5', d.md5, 'cohort', '{COHORT_ROWS}')
+            else ('refused by the guard: stale rows ' || g.stale_rows || ', step 1 rows ' || g.step1_rows
+                  || ', other honors_of rows ' || g.other_honors_rows || ', named ids merged away ' || g.merged_ids
+                  || ', pairs already joined ' || g.joined_pairs || ' (by a person ' || g.person_joined
+                  || '), inserted ' || d.n || ' of {len(rows)} with digest ' || d.md5)::int::text::jsonb
        end as changed
-from guard g;
+from guard g cross join digest d;
 
--- Read back: expect {len(rows) + 2} honors_of rows, all honors-s653@bot.
---   select count(*), count(distinct reviewer_email) from public.kb_curation where field = 'honors_of';
+-- Read back: expect {len(rows)} honors_of rows under {COHORT_ROWS} and 2 under {COHORT}.
+--   select reviewer_email, count(*) from public.kb_curation where field = 'honors_of' group by 1;
 """
-    with open(ROWS_SQL, "w", encoding="utf-8") as f:
-        f.write("\n".join(head) + body)
+    sql = "\n".join(head) + body
     rb = "\n".join([
-        "-- DRAFT. Rollback for 2026-11-14_s653_honors_of_rows.sql: the cohort's step-2 rows go, by cohort, field and the",
-        "-- planned keys; step 1's two rows stay (their own rollback removes them). A row a person saved is never touched.",
-        "delete from public.kb_curation k",
-        "where k.reviewer_email = 'honors-s653@bot' and k.field = 'honors_of'",
-        f"  and k.course_id in ({', '.join(q(h) for h, _ in rows)})",
-        "returning k.course_id, k.value;",
-        "-- Read back: expect 2 honors_of rows (step 1's).",
+        "-- DRAFT. Rollback for 2026-11-14_s653_honors_of_rows.sql: the step-2 cohort's rows go, keyed on the cohort",
+        f"-- ({COHORT_ROWS}) and the field, never on ids, so it finds every row after a mint re-keys them (#3315's",
+        "-- review, item 2). Step 1's rows are another cohort and stay (their own rollback removes them, and refuses while",
+        "-- any row of this cohort stands). A row a person re-saved carries the person's reviewer and is never touched.",
+        "-- The result is the count and an md5 over the deleted rows (course_id>value, | joined, C order); before a mint it",
+        f"-- equals the forward digest ({digest}).",
+        "with removed as (",
+        "  delete from public.kb_curation k",
+        f"  where k.reviewer_email = '{COHORT_ROWS}' and k.field = 'honors_of'",
+        "  returning k.course_id, k.value",
+        ")",
+        "select jsonb_build_object('deleted', count(*), 'md5',",
+        "       md5(coalesce(string_agg(r.course_id || '>' || r.value, '|' order by r.course_id collate \"C\"), ''))) as undone",
+        "from removed r;",
+        f"-- Read back: expect 0 rows under {COHORT_ROWS}.",
         ""])
-    with open(ROWS_RB, "w", encoding="utf-8") as f:
-        f.write(rb)
+    if not write:
+        return sql, rb
+    for path, text in ((ROWS_SQL, sql), (ROWS_RB, rb)):
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(text)
     return len(rows)
+
+
+def live_id_set(root=ROOT):
+    """The live id set: the payload's index and members, the minted courses and the stand-alones."""
+    members, _ = cmp.load_members(root)
+    return (set(cmp.load_index(root)) | set(members)
+            | set(jload(os.path.join(HERE, "coci_minted_courses.json"))["courses"])
+            | set(jload(os.path.join(HERE, "coci_minted_singletons.json"))["courses"]))
+
+
+def check_plan(doc, root=ROOT, sql_only=False):
+    """Refuse a stale plan: the committed SQL must be what the plan writes, every planned id must be live in the
+    committed payload, and no alias map may have landed after the plan (a re-mint would leave its values stale).
+    Run in full before the rows apply; CI runs the SQL half (--check-sql), since the payload moves daily."""
+    problems = []
+    sql, rb = write_rows_sql(doc, write=False)
+    for path, text in ((ROWS_SQL, sql), (ROWS_RB, rb)):
+        if not os.path.exists(path) or open(path, encoding="utf-8").read() != text:
+            problems.append(f"{os.path.relpath(path, ROOT)} differs from what the plan writes (run --sql-only)")
+    if rows_md5(step2_rows(doc)) != doc.get("rows_md5"):
+        problems.append("plan.json's rows_md5 is not the digest of its rows")
+    if sql_only:
+        if problems:
+            raise SystemExit("STALE: " + "; ".join(problems))
+        print(f"SQL current: {doc['step2_rows']} step-2 rows, digest {doc['rows_md5']}")
+        return 0
+    if doc.get("alias_era") != alias_chain.ALIAS_MAPS[-1]:
+        problems.append(f"an alias map landed after the plan ({doc.get('alias_era')} -> {alias_chain.ALIAS_MAPS[-1]}): "
+                        "redraw it")
+    live = live_id_set(root)
+    gone = sorted({i for p in doc["pairs"] if p["action"].startswith("row") for i in (p["honors_id"], p["base_id"])}
+                  - live)
+    if gone:
+        problems.append(f"{len(gone)} planned ids are not live in the committed payload: {gone[:8]}")
+    if problems:
+        raise SystemExit("STALE: " + "; ".join(problems))
+    print(f"plan current: {doc['step2_rows']} step-2 rows, digest {doc['rows_md5']}, era {doc['alias_era']}")
+    return 0
 
 
 def main():
@@ -491,14 +715,24 @@ def main():
     ap.add_argument("--date", default=datetime.now(timezone.utc).strftime("%Y-%m-%d"))
     ap.add_argument("--sql-only", action="store_true",
                     help="draft step 2's migration and rollback from the committed plan.json; no export")
+    ap.add_argument("--check", action="store_true",
+                    help="refuse unless the committed SQL is what the plan writes, every row's ids are live in the "
+                         "committed payload, and no alias map landed after the plan")
+    ap.add_argument("--check-sql", action="store_true", help="the SQL half of --check alone (CI)")
+    ap.add_argument("--reuse", action="store_true", help="reuse the exports already in --tmp")
     a = ap.parse_args()
-    if a.sql_only:
+    if a.sql_only or a.check or a.check_sql:
         doc = jload(os.path.join(HERE, "honors_of_s653_out", a.date, "plan.json"))
+        if a.check or a.check_sql:
+            return check_plan(doc, sql_only=a.check_sql)
         print(f"drafted {write_rows_sql(doc)} rows: {os.path.relpath(ROWS_SQL, ROOT)}, {os.path.relpath(ROWS_RB, ROOT)}")
         return
     if not a.tmp:
         raise SystemExit("pass --tmp <empty scratch dir>")
-    outs = run_exports(a.tmp)
+    if a.reuse:
+        outs = {n: os.path.join(a.tmp, "out_" + n) for n in ("live", "field")}
+    else:
+        outs = run_exports(a.tmp)
     sim = compare_runs(outs)
 
     wc = Shim(ROOT)
@@ -513,16 +747,27 @@ def main():
                   "base identity) whose Honors course and base course at one college sit in different identities"}
     live_cur = overlay_live(jload(os.path.join(HERE, "coci_curation.json")))["curations"]
     plan = plan_pairs(wl, rows_l, outs["live"], live_cur)
+    import _honors_matcher_recall as recall
+    rc = recall.measure(wl.members)
+    if rc["wrong"] or rc["must_find_missing"] or not all(f["pass"] for f in rc["fixtures"]):
+        raise SystemExit("ABORT: the matcher's recall test fails: " + json.dumps({k: rc[k] for k in (
+            "wrong_pairs", "must_find_missing")}))
     doc = {"_about": "Dry run of the honors_of rows and base-plus-H mints. Nothing applied. Design: "
                      "docs/reference/honors_of_design.md.",
            "written": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "date": a.date,
-           "cohort": COHORT, "reproduction": rep, "simulation": sim, "summary": summarize(plan), "pairs": plan}
+           "cohort": COHORT, "cohort_rows": COHORT_ROWS, "alias_era": alias_chain.ALIAS_MAPS[-1],
+           "reproduction": rep, "simulation": sim,
+           "recall": {k: v for k, v in rc.items() if k != "fixtures"},
+           "summary": summarize(plan, live_cur), "pairs": plan}
+    doc["rows_md5"] = rows_md5(step2_rows(doc))
+    doc["step2_rows"] = len(step2_rows(doc))
     od = os.path.join(HERE, "honors_of_s653_out", a.date)
     os.makedirs(od, exist_ok=True)
     with open(os.path.join(od, "plan.json"), "w", encoding="utf-8") as f:
         json.dump(doc, f, indent=1, ensure_ascii=False)
         f.write("\n")
     write_md(doc, os.path.join(od, "plan.md"))
+    write_rows_sql(doc)
     print(json.dumps({"reproduction": {k: rep[k] for k in ("committed", "live", "live_only", "committed_only")},
                       "summary": doc["summary"],
                       "simulation": {f: len(v["differ"]) for f, v in sim["files"].items()}}, indent=1))

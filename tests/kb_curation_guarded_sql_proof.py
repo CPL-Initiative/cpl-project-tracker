@@ -219,36 +219,60 @@ FIELD = {
 if os.path.exists(os.path.join(ROOT, FIELD["forward"])):
     PAIRS.append(FIELD)
 
-# S653, step 2 (a draft): the honors_of rows for every pair the plan writes, insert-only, on the state step 1 leaves.
+# S653, step 2 (a draft): the honors_of rows for every pair the plan writes, insert-only under its own cohort, on the
+# state step 1 leaves. Redrawn for #3315's review: the person guard holds a pair only where a merge joins it, so the
+# 45 person merges into planned ids today must PASS; the result is a count and a digest; the rollback keys on the
+# cohort and the field.
 ROWS_FWD = "kb/migrations/2026-11-14_s653_honors_of_rows.sql"
+ROWS_RB = "kb/migrations/2026-11-14_s653_honors_of_rows_rollback.sql"
+STEP1_COHORT, ROWS_COHORT = "honors-s653" + "@bot", "honors-rows-s653" + "@bot"
+STEP1_AT = "2026-11-14T18:30:00+00:00"
+STEP1_DONE = [r for r in FIELD_ROWS if r[1] != "unified_title"] + [
+    ("LIBR M1040", "unified_title", "Media & Information Literacy", HS, STEP1_AT),
+    ("HUMA M1110", "unified_title", "World Religions", HS, STEP1_AT),
+    ("HUMA M10ME", "honors_of", "HUMA M1110", STEP1_COHORT, STEP1_AT),
+    ("LIBR M10CJ", "honors_of", "LIBR M1040", STEP1_COHORT, STEP1_AT),
+]
+PLANNED, PERSON_MERGES = [], []
 if os.path.exists(os.path.join(ROOT, ROWS_FWD)):
     import re as _re
     _src = open(os.path.join(ROOT, ROWS_FWD), encoding="utf-8").read()
     _planned = _re.search(r"planned \(course_id, value\) as \(\s*values\s*(.*?)\n\),", _src, _re.S).group(1)
-    _keys = [(h, "honors_of") for h, _ in _re.findall(r"\('([^']+)', '([^']+)'\)", _planned)]
-    STEP1 = [r for r in FIELD_ROWS if r[1] != "unified_title"] + [
-        ("LIBR M1040", "unified_title", "Media & Information Literacy", HS, "2026-11-14T18:00:00+00:00"),
-        ("HUMA M1110", "unified_title", "World Religions", HS, "2026-11-14T18:00:00+00:00"),
-        ("HUMA M10ME", "honors_of", "HUMA M1110", "honors-s653" + "@bot", "2026-11-14T18:00:00+00:00"),
-        ("LIBR M10CJ", "honors_of", "LIBR M1040", "honors-s653" + "@bot", "2026-11-14T18:00:00+00:00"),
-    ]
-    _h0, _b0 = _keys[0][0], _re.findall(r"\('([^']+)', '([^']+)'\)", _planned)[0][1]
+    PLANNED = _re.findall(r"\('([^']+)', '([^']+)'\)", _planned)
+    _named = {i for p in PLANNED for i in p}
+    # Today's person merges whose value names a planned id (the overlay's view; the reviewer is a placeholder). The
+    # old guard refused the whole insert on these; the redrawn one must pass them.
+    _cur = json.load(open(os.path.join(ROOT, "kb", "coci_curation.json"), encoding="utf-8"))["curations"]
+    PERSON_MERGES = sorted((k, "merge_into", v["merge_into"], "someone@college.edu", "2026-10-01T00:00:00+00:00")
+                           for k, v in _cur.items()
+                           if v.get("merge_into") in _named and v.get("reviewed_by")
+                           and not str(v["reviewed_by"]).endswith("@bot"))
+    _h0, _b0 = PLANNED[0]
+    _h1, _b1 = PLANNED[1]
     PAIRS.append({
-        "name": "honors_of rows", "forward": ROWS_FWD,
-        "rollback": "kb/migrations/2026-11-14_s653_honors_of_rows_rollback.sql",
-        "rows": STEP1, "changed_keys": _keys,
+        "name": "honors_of rows", "forward": ROWS_FWD, "rollback": ROWS_RB,
+        "rows": STEP1_DONE + PERSON_MERGES, "changed_keys": [(h, "honors_of") for h, _ in PLANNED],
+        "result": "digest",
         "refusals": {
             "step 1 has not landed": "delete from kb_curation where field = 'honors_of'",
             "another honors_of row exists": "insert into kb_curation (course_id, field, value, reviewer_email) "
                                             "values ('MATH M10ZZ', 'honors_of', 'MATH M1036', 'somebody@bot')",
-            "a named id carries a merge": "insert into kb_curation (course_id, field, value, reviewer_email) "
-                                          f"values ('{_h0}', 'merge_into', '{_b0}', 'somebody@bot')",
-            "a person merged a course into a base": "insert into kb_curation (course_id, field, value, reviewer_email) "
-                                                    f"values ('ZZZZ M1999', 'merge_into', '{_b0}', "
-                                                    "'someone@college.edu')",
-            "a person's Keep as-is names an Honors id": "insert into kb_curation (course_id, field, value, "
-                                                        f"reviewer_email) values ('UC:z', 'merge_dismissed', "
-                                                        f"'{_b0}|{_h0}', 'someone@college.edu')",
+            "a planned Honors id already holds a row (a person's honors_of)":
+                "insert into kb_curation (course_id, field, value, reviewer_email) "
+                f"values ('{_h0}', 'honors_of', '{_b0}', 'someone@college.edu')",
+            "a named id was merged away by a bot": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                                   f"values ('{_b1}', 'merge_into', 'ZZZZ M1999', 'somebody@bot')",
+            "a person merged the Honors id into its base": "insert into kb_curation (course_id, field, value, "
+                                                           f"reviewer_email) values ('{_h0}', 'merge_into', '{_b0}', "
+                                                           "'someone@college.edu')",
+            "a person merged the Honors id into a course that ends at its base":
+                "insert into kb_curation (course_id, field, value, reviewer_email) values "
+                f"('{_h0}', 'merge_into', 'ZZZZ M1998', 'someone@college.edu'), "
+                f"('ZZZZ M1998', 'merge_into', '{_b0}', 'somebody@bot')",
+        },
+        # Each must refuse when the file itself is edited: the guard re-reads its own planned rows.
+        "sql_refusals": {
+            "a planned value is outside the named live set": (f"('{_h0}', '{_b0}')", f"('{_h0}', 'ZZZZ M1997')"),
         },
     })
 
@@ -275,6 +299,98 @@ def seed(db, rows, reviewer=None):
     vals = ",\n".join("(%s)" % ", ".join("'" + str(v).replace("'", "''") + "'" for v in
                                           (r[:3] + ((reviewer or r[3]),) + r[4:])) for r in rows)
     psql(db, "insert into kb_curation (course_id, field, value, reviewer_email, reviewed_at) values " + vals + ";")
+
+
+def sequences(db, results):
+    """S653: the Honors steps run in order and undone in reverse, across a mint's re-key (#3315's review, items 2-6)."""
+    if not PLANNED or not os.path.exists(os.path.join(ROOT, FIELD["forward"])):
+        return
+    sql = {k: open(os.path.join(ROOT, v), encoding="utf-8").read() for k, v in {
+        "s652_rb": FOLLOWUPS["rollback"], "step1": FIELD["forward"], "step1_rb": FIELD["rollback"],
+        "step2": ROWS_FWD, "step2_rb": ROWS_RB}.items()}
+    plan = json.load(open(os.path.join(ROOT, "kb", "honors_of_s653_out", "2026-11-14", "plan.json"), encoding="utf-8"))
+    before_file = json.load(open(os.path.join(ROOT, "kb", "honors_of_s653_out", "2026-11-14",
+                                              "step1_restamp_before.json"), encoding="utf-8"))["rows"]
+    name = "honors sequence: "
+
+    def run(key):
+        return psql(db, sql[key], ok_fail=True)
+
+    def count(where):
+        return int(psql(db, "select count(*) from kb_curation where " + where + ";")[1])
+
+    def titles():
+        return sorted((r["course_id"], r["value"], r["reviewer_email"], r["reviewed_at"])
+                      for r in state(db) if r["field"] == "unified_title")
+
+    # 1. The committed before-values are what step 1's guard expects and what its rollback restores.
+    seed(db, FIELD_ROWS)
+    start = state(db)
+    got = [{k: r[k] for k in ("course_id", "field", "value", "reviewer_email", "validated_at", "validated_by")}
+           for r in start if r["field"] == "unified_title"]
+    want = [{k: r[k] for k in ("course_id", "field", "value", "reviewer_email", "validated_at", "validated_by")}
+            for r in before_file]
+    results.append((name + "step1_restamp_before.json is the state step 1 reads",
+                    sorted(got, key=str) == sorted(want, key=str)
+                    and all(r["reviewed_at"].startswith("2026-06-12T22:47:01.69179") for r in start
+                            if r["field"] == "unified_title"), got))
+    # 2. Run after step 1, the S652 follow-ups rollback refuses and changes nothing (it used to exit 0 having
+    #    deleted both Keep as-is rows and restored no title).
+    run("step1")
+    s1 = state(db)
+    c, _, e = run("s652_rb")
+    results.append((name + "after step 1 the S652 follow-ups rollback refuses and changes nothing",
+                    c != 0 and "refused by the guard" in e and state(db) == s1, e[:200] or "it ran"))
+    # 3. A person edits a title after step 1: the step-1 rollback refuses rather than restore one title of two.
+    psql(db, "update kb_curation set value = 'World Religions!', reviewer_email = 'someone@college.edu' "
+             "where course_id = 'HUMA M1110' and field = 'unified_title';")
+    s1p = state(db)
+    c, _, e = run("step1_rb")
+    results.append((name + "a person's later title edit makes the step-1 rollback refuse, whole",
+                    c != 0 and "refused by the guard" in e and state(db) == s1p, e[:200] or "it ran"))
+    # 4. Last in, first out: with step 2 applied, the step-1 rollback refuses.
+    seed(db, FIELD_ROWS + PERSON_MERGES)
+    c1, _, e1 = run("step1")
+    c2, out2, e2 = run("step2")
+    results.append((name + f"steps 1 and 2 apply beside today's {len(PERSON_MERGES)} person merges into planned ids",
+                    c1 == 0 and c2 == 0 and count("field = 'honors_of'") == len(PLANNED) + 2,
+                    (e1 or e2)[:200]))
+    s2 = state(db)
+    c, _, e = run("step1_rb")
+    results.append((name + "the step-1 rollback refuses while a step-2 row stands",
+                    c != 0 and "refused by the guard" in e and state(db) == s2, e[:200] or "it ran"))
+    # 5. A mint re-keys the rows: each 'row and mint' Honors id moves to its H id, one to one, by the live re-key's
+    #    rule (every field of the key moves). No key collides; each follower then merges into its lead's H id.
+    mints = {p["honors_id"]: p["proposed_h_id"] for p in plan["pairs"] if p["action"] == "row and mint"}
+    folds = {p["honors_id"]: p["fold_into"] for p in plan["pairs"] if p["action"].startswith("row, fold")}
+    results.append((name + "the mint's alias map is one to one (no two Honors ids onto one H id)",
+                    len(set(mints.values())) == len(mints) and not set(mints.values()) & set(mints), len(mints)))
+    pairs_sql = ",".join(f"('{a}','{b}')" for a, b in sorted(mints.items()))
+    c, _, e = psql(db, f"update kb_curation k set course_id = m.new from (values {pairs_sql}) as m(old, new) "
+                       "where k.course_id = m.old;", ok_fail=True)
+    fold_sql = ",".join(f"('{a}','merge_into','{b}','somebody@bot')" for a, b in sorted(folds.items()))
+    c3, _, e3 = psql(db, "insert into kb_curation (course_id, field, value, reviewer_email) values " + fold_sql + ";",
+                     ok_fail=True) if folds else (0, "", "")
+    moved = count("field = 'honors_of' and course_id like '% M____H'")
+    results.append((name + "the re-key and the follower merges hit no key", c == 0 and c3 == 0 and moved > 300,
+                    (e or e3)[:200] or moved))
+    # 6. The step-2 rollback still finds every row after the re-key: none of its cohort is left.
+    c, out, e = run("step2_rb")
+    left = count(f"reviewer_email = '{ROWS_COHORT}'")
+    results.append((name + "after the re-key the step-2 rollback leaves zero rows of its cohort",
+                    c == 0 and left == 0 and json.loads(out.splitlines()[-1]).get("deleted") == len(PLANNED),
+                    (e or out)[:200]))
+    # 7. Then the step-1 rollback finds its two rows wherever the mint moved them, and restores both titles.
+    c, _, e = run("step1_rb")
+    results.append((name + "the step-1 rollback then removes its rows by cohort and restores both titles",
+                    c == 0 and count("field = 'honors_of'") == 0
+                    and titles() == sorted((r[0], r[2], r[3], "2026-06-12T22:47:01.69179+00:00")
+                                           for r in FIELD_ROWS if r[1] == "unified_title"), e[:200] or titles()))
+    # 8. And the S652 follow-ups rollback runs last, restoring the "(Honors)" titles.
+    c, _, e = run("s652_rb")
+    results.append((name + "the S652 follow-ups rollback then runs and restores both titles",
+                    c == 0 and count("field = 'merge_dismissed'") == 0
+                    and all(t[1].endswith("(Honors)") for t in titles()), e[:200] or titles()))
 
 
 def main():
@@ -305,9 +421,14 @@ def main():
             results.append((p["name"] + ": the forward file runs on the planned state", code == 0, err))
             results.append((p["name"] + ": it changes exactly the planned keys",
                             changed == set(p["changed_keys"]), sorted(changed)))
-            imgs = json.loads(out.splitlines()[-1]) if code == 0 and out else []
-            results.append((p["name"] + ": its result carries one before-image per changed row",
-                            len(imgs) == len(p["changed_keys"]), out[:300]))
+            res = json.loads(out.splitlines()[-1]) if code == 0 and out else []
+            if p.get("result") == "digest":
+                results.append((p["name"] + ": its result is a count and a digest, small enough for the receipt",
+                                isinstance(res, dict) and res.get("inserted") == len(p["changed_keys"])
+                                and len(out) < 4000, out[:300]))
+            else:
+                results.append((p["name"] + ": its result carries one before-image per changed row",
+                                len(res) == len(p["changed_keys"]), out[:300]))
             code2, _, err2 = psql(db, rb, ok_fail=True)
             restored = state(db)
             results.append((p["name"] + ": the rollback restores every row exactly (to_jsonb equal)",
@@ -319,6 +440,14 @@ def main():
                 c, _, e = psql(db, fwd, ok_fail=True)
                 results.append((p["name"] + ": the guard refuses when " + why + ", and writes nothing",
                                 c != 0 and "refused by the guard" in e and state(db) == broken, e[:200] or "it ran"))
+            for why, (old, new) in (p.get("sql_refusals") or {}).items():
+                seed(db, p["rows"], reviewer)
+                broken = state(db)
+                c, _, e = psql(db, fwd.replace(old, new, 1), ok_fail=True)
+                results.append((p["name"] + ": the guard refuses when " + why + ", and writes nothing",
+                                fwd.count(old) >= 1 and c != 0 and "refused by the guard" in e and state(db) == broken,
+                                e[:200] or "it ran"))
+        sequences(db, results)
     finally:
         subprocess.run(["dropdb", db])
     bad = [r for r in results if not r[1]]

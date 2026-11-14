@@ -116,7 +116,9 @@ SCAN_MAX_BYTES = 60_000_000
 
 GATES = ("title_word", "code_not_enough", "program_course", "same_college", "base_not_honors", "code_and_title",
          "unique_title")
-HONORS_WORD = re.compile(r"\bhonou?rs?\b", re.I)
+# HNRS is the catalog abbreviation (Glendale's "HNRS ART HIST: PREHIST-GOTHIC"); the S653 recall test found three
+# Honors courses it hid (tests/honors_matcher_recall.test.js).
+HONORS_WORD = re.compile(r"\b(?:honou?rs?|hnrs)\b", re.I)
 HONORS_LOOSE = re.compile(r"honou?r", re.I)
 HONORS_NUM = re.compile(r" \S*\d[A-Z]?H[A-Z]?$")  # a course number ending in the H marker (1AH, 102HF)
 PROGRAM_WORDS = {"colloquium", "forum", "seminar", "program", "society", "project", "research", "scholars",
@@ -124,7 +126,7 @@ PROGRAM_WORDS = {"colloquium", "forum", "seminar", "program", "society", "projec
                  "contract", "directed", "and", "in", "the", "of", "a", "for", "to", "i", "ii", "iii", "iv", "1", "2",
                  "3", "4", "humanities", "sciences", "social", "natural", "biological", "applied", "interdisciplinary",
                  "leadership", "transfer", "capstone", "course"}
-STOP = {"and", "of", "the", "in", "to", "for", "a", "an", "with", "on", "honors", "honor", "honours", "honour"}
+STOP = {"and", "of", "the", "in", "to", "for", "a", "an", "with", "on", "honors", "honor", "honours", "honour", "hnrs"}
 
 
 def _words(title):
@@ -145,6 +147,37 @@ def title_agree(a, b):
     if not sa or not sb:
         return 0.0
     return len(sa & sb) / len(sa | sb)
+
+
+def _abbreviates(s, l):
+    """One title word stands for another: equal, a prefix of three letters or more (HIST, history), or the same first
+    letter and its letters in order (INTL, international; CULTRL, cultural)."""
+    if s == l:
+        return True
+    if len(s) > len(l):
+        s, l = l, s
+    if len(s) < 3 or s[0] != l[0]:
+        return False
+    if l.startswith(s):
+        return True
+    it = iter(l)
+    return all(ch in it for ch in s)
+
+
+def abbrev_agree(a, b):
+    """The share of the shorter title's words that the other title spells out or abbreviates. A catalog often
+    shortens the base title ("Hist Of Arch 2" beside "History of Architecture 2 Honors"), which the stem overlap reads
+    as a different course. Used only beside a code match at one college, never alone."""
+    wa = [w for w in _words(HONORS_WORD.sub(" ", a or "")) if w not in STOP and len(w) > 1]
+    wb = [w for w in _words(HONORS_WORD.sub(" ", b or "")) if w not in STOP and len(w) > 1]
+    if not wa or not wb:
+        return 0.0
+    short, long_ = (wa, wb) if len(wa) <= len(wb) else (wb, wa)
+    return sum(1 for s in short if any(_abbreviates(s, l) for l in long_)) / len(short)
+
+
+CODE_TITLE_AGREE = 0.5     # stem overlap of the two titles, for a code match
+CODE_ABBREV_AGREE = 0.6    # or: this share of the shorter title's words spelled out or abbreviated in the other
 
 
 @lru_cache(maxsize=None)
@@ -168,7 +201,8 @@ def is_honors(title, code, drop=()):
 
 def honors_code_base(code):
     """The base course's code: the honors code with its H marker removed, or None when the code carries none.
-    'ENGL 1AH' -> 'ENGL 1A'; 'ACCT 102HF' -> 'ACCT 102F'; 'CHEMH 206' -> 'CHEM 206'; 'HIST 484' -> None."""
+    'ENGL 1AH' -> 'ENGL 1A'; 'ACCT 102HF' -> 'ACCT 102F'; 'CHEMH 206' -> 'CHEM 206'; 'CHEM H206' -> 'CHEM 206';
+    'HIST 484' -> None."""
     c = " ".join((code or "").split()).upper()
     if " " not in c:
         return None
@@ -176,6 +210,9 @@ def honors_code_base(code):
     m = re.match(r"^(.*\d[A-Z]?)H([A-Z]?)$", num)
     if m and m.group(1):
         return f"{subj} {m.group(1)}{m.group(2)}"
+    m = re.match(r"^H(\d+[A-Z]?)$", num)
+    if m:
+        return f"{subj} {m.group(1)}"
     if subj.endswith("H") and len(subj) > 2:
         return f"{subj[:-1]} {num}"
     return None
@@ -201,7 +238,8 @@ def find_base(row, college_rows, drop=()):
     if want_code:
         by_code = [r for r in pool if code_key(r["code"]) == code_key(want_code)]
         if "code_and_title" not in drop:
-            by_code = [r for r in by_code if title_agree(strip_honors(row["title"]), r["title"]) >= 0.5]
+            by_code = [r for r in by_code if title_agree(strip_honors(row["title"]), r["title"]) >= CODE_TITLE_AGREE
+                       or abbrev_agree(row["title"], r["title"]) >= CODE_ABBREV_AGREE]
         if len(by_code) >= 1:
             return by_code[0], "code"
     want_title = strip_honors(row["title"])

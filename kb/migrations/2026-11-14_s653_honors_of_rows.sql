@@ -1,18 +1,28 @@
 -- DRAFT, NOT IN kb/migrations/.apply. Step 2 of the Honors build (S653): the honors_of rows for every pair the
--- plan writes (387 rows; kb/honors_of_s653_out/2026-11-14/plan.json, written 2026-11-14T17:22:06Z). Design: docs/reference/honors_of_design.md.
+-- plan writes (388 rows; kb/honors_of_s653_out/2026-11-14/plan.json, written 2026-11-14T18:09:21Z). Design: docs/reference/honors_of_design.md.
 -- Ruling: Sam, Sheet 197 card 3 (14:37Z 2026-11-14): "Build the field first, then the rows"; "Rows for all 508
--- pairs". The plan holds what it cannot write without a person's call (the design's *Holds*); held pairs get no row.
+-- pairs". The plan holds what it cannot write without a person's call; held pairs get no row (plan.md lists them).
 -- Written by kb/_honors_of_s653_dryrun.py --sql-only from the committed plan. Lands after step 1
 -- (2026-11-14_s653_honors_of_field.sql) and after the conductor's live reads re-measure the plan.
--- Insert-only under cohort honors-s653@bot, ON CONFLICT DO NOTHING (Rule 10). One plain statement: the insert hangs
--- on one guard CTE, and a failed guard raises, so nothing is written. The guard: step 1's two honors_of rows
--- present and no other honors_of row; no merge_into row keyed on any id the plan names (each is a live identity in
--- the plan's fold); no person's merge_into, merge_dismissed or unified_title_merge_confirm row naming one of them.
--- RETURNING puts every inserted row into the runner's receipt. Rollback: 2026-11-14_s653_honors_of_rows_rollback.sql.
-with planned (course_id, value) as (
+-- Insert-only under its own cohort, honors-rows-s653@bot, ON CONFLICT DO NOTHING (Rule 10). One plain statement: the
+-- insert hangs on one guard CTE, and a failed guard raises, so nothing is written. The guard refuses when:
+--   * step 1's two honors_of rows (honors-s653@bot) are not both present, or any other honors_of row exists;
+--   * a planned value or key is outside the named set: each named id was a live id (the payload index, members,
+--     minted and stand-alone records) when the plan was drawn, and the dry run aborts on any that is not;
+--   * any named id carries a merge_into row: an id merged away is no longer a live identity, and its row would be
+--     stale. The CCR resolves no alias map, so a stale value would offer a pair Python holds (#3315, item 14);
+--   * a pair's two ids already end under one id through merge_into rows (counted, and by a person apart). A
+--     person's merge of a third course into either side does not refuse: it agrees with the pair standing apart
+--     (#3315's review, item 1; 45 such rows today);
+--   * what it inserts differs from the plan in count or digest.
+-- The result is a count and an md5 (20d4fab9316392f96b1f48039acdba98) over the inserted rows, course_id>value joined by | in C order, so
+-- the runner's receipt (scripts/supabase_migrate.py keeps the first 4,000 characters) holds the whole record and
+-- checks against plan.json. No row image is returned: the insert-only cohort rolls back by its reviewer_email.
+-- Rollback: 2026-11-14_s653_honors_of_rows_rollback.sql, keyed on the cohort and the field, never on ids, so it
+-- finds every row after a mint re-keys them.
+with recursive planned (course_id, value) as (
   values
     ('ANTH M1005', 'ANTH M1006'),
-    ('ANTH M1015', 'ETHS M1117'),
     ('ANTH M10AK', 'ANTH M10AL'),
     ('ANTH M10BN', 'ANTH M1017'),
     ('ANTH M10EJ', 'ANTH M1042'),
@@ -23,7 +33,9 @@ with planned (course_id, value) as (
     ('ANTH M1121', 'ANTH M1101'),
     ('ARAB M10AQ', 'ARAB M1015'),
     ('ARCH M10AK', 'ARCH M1142'),
+    ('ARCH M10AP', 'ARCH M10AN'),
     ('ARCH M10BL', 'ARCH M10BK'),
+    ('ARCH M10BP', 'ARCH M10BD'),
     ('ARCH M10CE', 'ARCH M10CF'),
     ('ARCH M10JH', 'ARCH M1059'),
     ('ARCH M10JX', 'ARCH M1065'),
@@ -43,10 +55,12 @@ with planned (course_id, value) as (
     ('ARTS M10PX', 'ARTS M10PY'),
     ('ARTS M10QA', 'ARTH 120'),
     ('ARTS M10QM', 'ARTH 130'),
-    ('ASTR M1010', 'ASTR M1012'),
+    ('ARTS M10UM', 'ARTS M10UN'),
+    ('ARTS M10UU', 'ARTS M10UV'),
     ('ASTR M1039', 'ASTR M1044'),
     ('ASTR M1048', 'ASTR M1053'),
     ('ASTR M1049', 'ASTR M1019'),
+    ('ASTR M10AC', 'PHSC M1003'),
     ('ASTR M10AU', 'ASTR M10AT'),
     ('ASTR M10BC', 'ASTR M1014'),
     ('ASTR M10BE', 'ASTR M1023'),
@@ -92,9 +106,12 @@ with planned (course_id, value) as (
     ('BUSI M10FE', 'ACCT 110'),
     ('BUSI M10SK', 'BUS 120'),
     ('BUSI M10SS', 'BUSI M1172'),
+    ('BUSI M10TV', 'BUSI M10UK'),
     ('BUSI M11LQ', 'LPPS 110'),
     ('CDEV M11GJ', 'CDEV M1280'),
     ('CHEM M1016', 'CHEM 101'),
+    ('CHEM M1033', 'CHEM M10DH'),
+    ('CHEM M1053', 'CHEM 120 S'),
     ('CHEM M10FL', 'CHEM 160 S'),
     ('COMM M1035', 'COMM M1034'),
     ('COMM M10AW', 'COMM M10AX'),
@@ -120,7 +137,6 @@ with planned (course_id, value) as (
     ('ECON M10BC', 'ECON M1007'),
     ('ECON M10BI', 'ECON M1012'),
     ('ECON M10BO', 'ECON M1022'),
-    ('ECON M10BX', 'ECON M1026'),
     ('ENGL M1033', 'ENGL M1034'),
     ('ENGL M1061', 'ENGL M1063'),
     ('ENGL M10BA', 'ENGL 160'),
@@ -141,8 +157,6 @@ with planned (course_id, value) as (
     ('ENGL M10YU', 'THTR 114'),
     ('ENGL M11AV', 'HUMA M10KJ'),
     ('ENGL M11BL', 'ENGL M1258'),
-    ('ENGL M11BM', 'ENGL M1258'),
-    ('ENGL M11BN', 'ENGL M1258'),
     ('ENGL M11CF', 'ENGL M11CG'),
     ('ENGL M11EE', 'ENGL M1438'),
     ('ENGL M11EP', 'ENGL M1436'),
@@ -158,7 +172,6 @@ with planned (course_id, value) as (
     ('ENGL M11FK', 'ENGL M1375'),
     ('ENGL M1203', 'ENGL M1206'),
     ('ENGL M1261', 'ENGL M1263'),
-    ('ENGL M1269', 'ENGL M1272'),
     ('ENGL M1282', 'ENGL M1298'),
     ('ENGL M1284', 'ENGL M1338'),
     ('ENGL M1415', 'PHIL M1034'),
@@ -189,7 +202,6 @@ with planned (course_id, value) as (
     ('ETHS M1194', 'ETHS M1195'),
     ('ETHS M1204', 'SOCI 150'),
     ('ETHS M1261', 'ETHS M1082'),
-    ('ETHS M1266', 'ETHS M1213'),
     ('ETHS M1278', 'ENGL M1336'),
     ('FA M10AA', 'ARTS M1129'),
     ('FDNT M10BE', 'NUTR M1018'),
@@ -227,6 +239,7 @@ with planned (course_id, value) as (
     ('HIST M10BI', 'HIST 160'),
     ('HIST M10HN', 'HIST M1096'),
     ('HIST M10HW', 'HIST M10HX'),
+    ('HIST M10KJ', 'HIST M1220'),
     ('HIST M10KV', 'HIST M10LD'),
     ('HIST M10MO', 'HIST M1095'),
     ('HIST M10NK', 'HIST M10NL'),
@@ -311,12 +324,10 @@ with planned (course_id, value) as (
     ('MATH M11CM', 'MATH 130'),
     ('MATH M11DN', 'MATH 151'),
     ('MATH M11DO', 'MATH 151'),
-    ('MATH M1330', 'MATH 250'),
     ('MATH M1333', 'MATH 210'),
     ('MRKT M10BN', 'BUSI M1361'),
     ('MUSI M1040', 'MUSI M1043'),
     ('MUSI M10BT', 'MUSI M1002'),
-    ('MUSI M10CE', 'MUSI M1002'),
     ('MUSI M10LX', 'MUSI M10LZ'),
     ('MUSI M10LY', 'MUSI M10MC'),
     ('MUSI M10MH', 'MUSI M1582'),
@@ -390,6 +401,7 @@ with planned (course_id, value) as (
     ('SOCS M10GW', 'SJS 110'),
     ('SPAN M1045', 'SPAN 100'),
     ('SPAN M1046', 'SPAN 110'),
+    ('SPAN M1073', 'SPAN 100'),
     ('SPAN M10DH', 'SPAN M1026'),
     ('SPAN M10FX', 'SPAN M10FY'),
     ('THTR M10PG', 'THTR M1056'),
@@ -400,7 +412,11 @@ with planned (course_id, value) as (
     ('THTR M11MI', 'THTR 113')
 ),
 named (id) as (
-  values ('ACCT 110'), ('ACCT 120'), ('AG-PS 104 104'), ('AJ 120'), ('ANTH M1005'), ('ANTH M1006'), ('ANTH M1015'), ('ANTH M1017'), ('ANTH M1042'), ('ANTH M1085'), ('ANTH M10AK'), ('ANTH M10AL'), ('ANTH M10BN'), ('ANTH M10EJ'), ('ANTH M10EW'), ('ANTH M10IF'), ('ANTH M10IG'), ('ANTH M10IM'), ('ANTH M10JV'), ('ANTH M1101'), ('ANTH M1102'), ('ANTH M1121'), ('ANTH M1122'), ('ANTH M1131'), ('ARAB M1015'), ('ARAB M10AQ'), ('ARCH M1059'), ('ARCH M1065'), ('ARCH M1066'), ('ARCH M10AK'), ('ARCH M10BK'), ('ARCH M10BL'), ('ARCH M10CE'), ('ARCH M10CF'), ('ARCH M10JH'), ('ARCH M10JX'), ('ARCH M10KJ'), ('ARCH M1142'), ('ARTC M10AH'), ('ARTH 120'), ('ARTH 130'), ('ARTH 150'), ('ARTH M1005'), ('ARTH M1006'), ('ARTH M1011'), ('ARTH M1027'), ('ARTH M1037'), ('ARTH M10CZ'), ('ARTH M10DA'), ('ARTS 210'), ('ARTS M1006'), ('ARTS M1074'), ('ARTS M1078'), ('ARTS M10KT'), ('ARTS M10LJ'), ('ARTS M10MX'), ('ARTS M10MY'), ('ARTS M10NC'), ('ARTS M10NI'), ('ARTS M10NS'), ('ARTS M10PL'), ('ARTS M10PX'), ('ARTS M10PY'), ('ARTS M10QA'), ('ARTS M10QM'), ('ARTS M1129'), ('ARTS M1134'), ('ARTS M1310'), ('ARTS M1331'), ('ARTS M1411'), ('ARTS M1566'), ('ASTR M1002'), ('ASTR M1010'), ('ASTR M1012'), ('ASTR M1014'), ('ASTR M1017'), ('ASTR M1019'), ('ASTR M1023'), ('ASTR M1028'), ('ASTR M1039'), ('ASTR M1040'), ('ASTR M1044'), ('ASTR M1048'), ('ASTR M1049'), ('ASTR M1053'), ('ASTR M10AT'), ('ASTR M10AU'), ('ASTR M10BC'), ('ASTR M10BE'), ('ASTR M10BZ'), ('ASTR M10CO'), ('BIOL 135 S'), ('BIOL 140'), ('BIOL 190'), ('BIOL M1049'), ('BIOL M1063'), ('BIOL M1065'), ('BIOL M1067'), ('BIOL M1087'), ('BIOL M1088'), ('BIOL M1089'), ('BIOL M1091'), ('BIOL M1092'), ('BIOL M1096'), ('BIOL M1097'), ('BIOL M1098'), ('BIOL M10GG'), ('BIOL M10GH'), ('BIOL M10GV'), ('BIOL M10GW'), ('BIOL M10HU'), ('BIOL M10HV'), ('BIOL M10IT'), ('BIOL M10IW'), ('BIOL M10KY'), ('BIOL M10LH'), ('BIOL M10LZ'), ('BIOL M10NT'), ('BIOL M10NU'), ('BIOL M10NW'), ('BIOL M10OA'), ('BIOL M10OB'), ('BIOL M10OI'), ('BIOL M10OU'), ('BIOL M10OV'), ('BIOL M10OX'), ('BIOL M10OY'), ('BIOL M10QB'), ('BIOL M10QW'), ('BIOL M10QZ'), ('BIOL M10UX'), ('BIOL M10ZV'), ('BIOL M10ZW'), ('BIOL M10ZX'), ('BIOL M1101'), ('BIOL M1102'), ('BIOL M1103'), ('BIOL M1104'), ('BIOL M1105'), ('BIOL M1119'), ('BIOL M1126'), ('BIOL M1127'), ('BIOL M1167'), ('BIOL M11AA'), ('BIOL M11BA'), ('BIOL M11BJ'), ('BIOL M1226'), ('BIOL M1254'), ('BIOL M1262'), ('BIOL M1317'), ('BIOL M1318'), ('BIOL M1320'), ('BIOT 101 B X'), ('BIOT 150 X'), ('BIOT 220 X'), ('BRDC M1011'), ('BRDC M1015'), ('BRDC M1062'), ('BUS 120'), ('BUSI M1061'), ('BUSI M10FD'), ('BUSI M10FE'), ('BUSI M10SK'), ('BUSI M10SS'), ('BUSI M1172'), ('BUSI M11LQ'), ('BUSI M1361'), ('CDEV M11GJ'), ('CDEV M1280'), ('CHEM 101'), ('CHEM 160 S'), ('CHEM M1016'), ('CHEM M1044'), ('CHEM M10FL'), ('CHIN M1058'), ('COMM 120'), ('COMM 130'), ('COMM 140'), ('COMM M1034'), ('COMM M1035'), ('COMM M1067'), ('COMM M10AW'), ('COMM M10AX'), ('COMM M10DK'), ('COMP 112'), ('COMP 132'), ('COMP M1085'), ('COMP M10DM'), ('COMP M10IG'), ('COMP M10QS'), ('COUN M1004'), ('COUN M1045'), ('COUN M1069'), ('COUN M10BK'), ('COUN M10BL'), ('COUN M10BM'), ('COUN M10KU'), ('COUN M10ME'), ('COUN M10PX'), ('COUN M10UD'), ('COUN M1155'), ('COUN M1159'), ('COUN M1188'), ('CRIM M1066'), ('CRIM M1068'), ('CRIM M11DJ'), ('DANC M1054'), ('DANC M1056'), ('DANC M1057'), ('DANC M10JE'), ('DANC M10JF'), ('DANC M11GZ'), ('DANC M11SK'), ('DANC M11SN'), ('DANC M1208'), ('DANC M1460'), ('ECON M1007'), ('ECON M1012'), ('ECON M1022'), ('ECON M1026'), ('ECON M1029'), ('ECON M10AX'), ('ECON M10AY'), ('ECON M10BC'), ('ECON M10BI'), ('ECON M10BO'), ('ECON M10BX'), ('ENGL 120'), ('ENGL 160'), ('ENGL 165'), ('ENGL 200'), ('ENGL M1033'), ('ENGL M1034'), ('ENGL M1061'), ('ENGL M1063'), ('ENGL M10BA'), ('ENGL M10BB'), ('ENGL M10DS'), ('ENGL M10IB'), ('ENGL M10IR'), ('ENGL M10IS'), ('ENGL M10JI'), ('ENGL M10JJ'), ('ENGL M10JX'), ('ENGL M10LQ'), ('ENGL M10LR'), ('ENGL M10MG'), ('ENGL M10MH'), ('ENGL M10MS'), ('ENGL M10MT'), ('ENGL M10QH'), ('ENGL M10QI'), ('ENGL M10UR'), ('ENGL M10US'), ('ENGL M10VV'), ('ENGL M10XI'), ('ENGL M10XJ'), ('ENGL M10YU'), ('ENGL M1140'), ('ENGL M1179'), ('ENGL M11AV'), ('ENGL M11BL'), ('ENGL M11BM'), ('ENGL M11BN'), ('ENGL M11CF'), ('ENGL M11CG'), ('ENGL M11EE'), ('ENGL M11EP'), ('ENGL M11EU'), ('ENGL M11EX'), ('ENGL M11EY'), ('ENGL M11FB'), ('ENGL M11FC'), ('ENGL M11FD'), ('ENGL M11FE'), ('ENGL M11FF'), ('ENGL M11FG'), ('ENGL M11FK'), ('ENGL M11HC'), ('ENGL M1203'), ('ENGL M1206'), ('ENGL M1239'), ('ENGL M1258'), ('ENGL M1261'), ('ENGL M1263'), ('ENGL M1269'), ('ENGL M1272'), ('ENGL M1282'), ('ENGL M1284'), ('ENGL M1290'), ('ENGL M1298'), ('ENGL M1336'), ('ENGL M1338'), ('ENGL M1346'), ('ENGL M1348'), ('ENGL M1352'), ('ENGL M1353'), ('ENGL M1369'), ('ENGL M1375'), ('ENGL M1393'), ('ENGL M1395'), ('ENGL M1415'), ('ENGL M1417'), ('ENGL M1436'), ('ENGL M1438'), ('ENGL M1440'), ('ENGL M1441'), ('ENVS 100'), ('ENVS M1064'), ('ENVS M10LD'), ('ENVS M10LE'), ('ENVS M10LF'), ('ENVS M10NA'), ('ENVS M10NB'), ('ETHA M1002'), ('ETHN M1019'), ('ETHN M1028'), ('ETHN M1034'), ('ETHS M1013'), ('ETHS M1014'), ('ETHS M1068'), ('ETHS M1082'), ('ETHS M1085'), ('ETHS M1086'), ('ETHS M1097'), ('ETHS M1098'), ('ETHS M10DF'), ('ETHS M10DG'), ('ETHS M10EL'), ('ETHS M10HG'), ('ETHS M10IR'), ('ETHS M10MD'), ('ETHS M10ME'), ('ETHS M10NO'), ('ETHS M10OD'), ('ETHS M10OE'), ('ETHS M10PH'), ('ETHS M10SH'), ('ETHS M10SI'), ('ETHS M10TG'), ('ETHS M1103'), ('ETHS M1104'), ('ETHS M1117'), ('ETHS M1147'), ('ETHS M1150'), ('ETHS M1166'), ('ETHS M1170'), ('ETHS M1172'), ('ETHS M1177'), ('ETHS M1194'), ('ETHS M1195'), ('ETHS M1204'), ('ETHS M1213'), ('ETHS M1256'), ('ETHS M1260'), ('ETHS M1261'), ('ETHS M1266'), ('ETHS M1278'), ('ETHS M1285'), ('FA M10AA'), ('FDNT M10BE'), ('FLNG M11LR'), ('FREN M1003'), ('FREN M1006'), ('FREN M1014'), ('FREN M1035'), ('FREN M1036'), ('FREN M1050'), ('FREN M1053'), ('FREN M10AA'), ('FREN M10AH'), ('FREN M10AZ'), ('FTVE 105'), ('FTVE M1002'), ('FTVE M1003'), ('FTVE M1018'), ('FTVE M1019'), ('FTVE M1021'), ('FTVE M1029'), ('FTVE M1045'), ('FTVE M1046'), ('FTVE M1074'), ('FTVE M1078'), ('FTVE M1079'), ('FTVE M1081'), ('FTVE M10DA'), ('FTVE M10DJ'), ('FTVE M10DK'), ('FTVE M10DX'), ('FTVE M10EV'), ('FTVE M10HO'), ('FTVE M10HR'), ('FTVE M10LA'), ('FTVE M10LJ'), ('FTVE M10LK'), ('FTVE M10NK'), ('FTVM M10AF'), ('FTVM M10AS'), ('FTVM M10AT'), ('FTVM M10AU'), ('GEOG 110'), ('GEOG 140'), ('GEOG M10CM'), ('GEOG M10FA'), ('GEOL 100'), ('GEOL 100 L'), ('GEOL M1022'), ('GEOL M1041'), ('GEOL M1054'), ('GEOL M1056'), ('GEOL M10EU'), ('GEOL M10HI'), ('GFCD M10FI'), ('GFCD M10FJ'), ('GLST 101'), ('GLST 102'), ('HIST 160'), ('HIST M1090'), ('HIST M1095'), ('HIST M1096'), ('HIST M10AV'), ('HIST M10BI'), ('HIST M10HN'), ('HIST M10HW'), ('HIST M10HX'), ('HIST M10KV'), ('HIST M10LD'), ('HIST M10MO'), ('HIST M10NK'), ('HIST M10NL'), ('HIST M10NY'), ('HIST M10NZ'), ('HIST M10PT'), ('HIST M10QP'), ('HIST M10QQ'), ('HIST M10TA'), ('HIST M10TB'), ('HIST M10TI'), ('HIST M10UK'), ('HIST M10UL'), ('HIST M10UM'), ('HIST M10UN'), ('HIST M10VY'), ('HIST M10WP'), ('HIST M1101'), ('HIST M1107'), ('HIST M1108'), ('HIST M1112'), ('HIST M1126'), ('HIST M1129'), ('HIST M1130'), ('HIST M1156'), ('HIST M1163'), ('HIST M1165'), ('HIST M1172'), ('HIST M1178'), ('HIST M1183'), ('HIST M1190'), ('HIST M1191'), ('HIST M1194'), ('HIST M1196'), ('HIST M1200'), ('HIST M1201'), ('HIST M1231'), ('HLTH M1079'), ('HLTH M10AS'), ('HLTH M10RO'), ('HLTH M10ZH'), ('HLTH M1134'), ('HLTH M11BP'), ('HORT M10MA'), ('HUMA M1018'), ('HUMA M1019'), ('HUMA M1027'), ('HUMA M1029'), ('HUMA M1052'), ('HUMA M1055'), ('HUMA M1084'), ('HUMA M1088'), ('HUMA M1097'), ('HUMA M10BC'), ('HUMA M10BD'), ('HUMA M10BZ'), ('HUMA M10CM'), ('HUMA M10CN'), ('HUMA M10CS'), ('HUMA M10CT'), ('HUMA M10DQ'), ('HUMA M10DS'), ('HUMA M10EO'), ('HUMA M10FA'), ('HUMA M10GW'), ('HUMA M10HG'), ('HUMA M10HQ'), ('HUMA M10HW'), ('HUMA M10HX'), ('HUMA M10HY'), ('HUMA M10ID'), ('HUMA M10IF'), ('HUMA M10II'), ('HUMA M10IJ'), ('HUMA M10IX'), ('HUMA M10IZ'), ('HUMA M10KI'), ('HUMA M10KJ'), ('HUMA M10KQ'), ('HUMA M10LR'), ('HUMA M10LS'), ('HUMA M10LT'), ('HUMA M10LU'), ('HUMA M10LX'), ('HUMA M10LZ'), ('HUMA M10MD'), ('HUMA M10MF'), ('HUMA M10MJ'), ('HUMA M10MP'), ('HUMA M10MW'), ('HUMA M10OF'), ('HUMA M10OM'), ('HUMA M1100'), ('HUMA M1114'), ('HUMA M1119'), ('HUMA M1125'), ('HUMN M1002'), ('HUMN M1003'), ('HUMN M1004'), ('HUMN M10BG'), ('IDST M1094'), ('IDST M1098'), ('IDST M10CL'), ('IDST M10CM'), ('IDST M10JC'), ('IDST M10JD'), ('IDST M10JU'), ('IDST M10OJ'), ('IDST M10RM'), ('IDST M10RQ'), ('IDST M10TE'), ('IDST M10WV'), ('INFO M1002'), ('INFO M1003'), ('INFO M10AB'), ('INFO M10AC'), ('ITIS 130'), ('ITIS M1068'), ('ITIS M10KP'), ('ITIS M10SQ'), ('ITIS M1113'), ('ITIS M11LX'), ('ITIS M1262'), ('JAPN M1003'), ('JAPN M1006'), ('JAPN M1015'), ('JAPN M1017'), ('JAPN M1018'), ('JAPN M1032'), ('JAPN M10AD'), ('JAPN M10AK'), ('JAPN M10AW'), ('JAPN M10BG'), ('JAPN M10BH'), ('JAPN M10CP'), ('JOUR 100'), ('JOUR 160'), ('KINE M13AD'), ('KINE M1523'), ('LATN M1001'), ('LATN M10AD'), ('LATN M10AG'), ('LIBR M1009'), ('LIBR M1026'), ('LIBR M1035'), ('LIBR M1040'), ('LIBR M10AR'), ('LIBR M10BO'), ('LIBR M10CI'), ('LIBR M10CK'), ('LIBR M10CL'), ('LIBR M10CX'), ('LPPS 110'), ('MATH 130'), ('MATH 151'), ('MATH 210'), ('MATH 230'), ('MATH 250'), ('MATH M10NA'), ('MATH M10NC'), ('MATH M10PL'), ('MATH M1123'), ('MATH M11CM'), ('MATH M11DN'), ('MATH M11DO'), ('MATH M1330'), ('MATH M1333'), ('MRKT M10BN'), ('MUSI M1002'), ('MUSI M1040'), ('MUSI M1043'), ('MUSI M1044'), ('MUSI M1072'), ('MUSI M10BT'), ('MUSI M10CE'), ('MUSI M10LX'), ('MUSI M10LY'), ('MUSI M10LZ'), ('MUSI M10MC'), ('MUSI M10MH'), ('MUSI M10MN'), ('MUSI M10MO'), ('MUSI M10PH'), ('MUSI M10PI'), ('MUSI M11AP'), ('MUSI M11PS'), ('MUSI M11QG'), ('MUSI M11XO'), ('MUSI M1236'), ('MUSI M1237'), ('MUSI M1252'), ('MUSI M1254'), ('MUSI M12CD'), ('MUSI M12CE'), ('MUSI M1334'), ('MUSI M1488'), ('MUSI M1518'), ('MUSI M1522'), ('MUSI M1582'), ('MUSI M1589'), ('MUSI M1634'), ('NUTR M1014'), ('NUTR M1018'), ('NUTR M10BL'), ('NUTR M10CB'), ('NUTR M10CC'), ('PH 100'), ('PHIL 110'), ('PHIL 120'), ('PHIL 130'), ('PHIL 140'), ('PHIL M1028'), ('PHIL M1034'), ('PHIL M1090'), ('PHIL M1095'), ('PHIL M10AW'), ('PHIL M10DI'), ('PHIL M10DO'), ('PHIL M10EW'), ('PHIL M10FI'), ('PHIL M10FS'), ('PHIL M10GA'), ('PHIL M10GB'), ('PHIL M10GC'), ('PHOT M1055'), ('PHOT M1096'), ('PHOT M10DT'), ('PHOT M10DU'), ('PHOT M10HE'), ('PHOT M10HF'), ('PHOT M10IH'), ('PHOT M10MS'), ('PHOT M10MV'), ('PHOT M1137'), ('PHSC M10BM'), ('PHSC M10BO'), ('PHSC M10CP'), ('PHSC M10FT'), ('PHYS 105'), ('PHYS 205'), ('PHYS M10DH'), ('PHYS M10EV'), ('PHYS M10FR'), ('POLS 130'), ('POLS 140'), ('POLS M1002'), ('POLS M1020'), ('POLS M1027'), ('POLS M1033'), ('POLS M1059'), ('POLS M10AH'), ('POLS M10AU'), ('POLS M10AV'), ('POLS M10BY'), ('POLS M10CH'), ('PSY 120'), ('PSY 130'), ('PSY 150'), ('PSY 180'), ('PSYC M1042'), ('PSYC M1059'), ('PSYC M1061'), ('PSYC M1087'), ('PSYC M10DA'), ('PSYC M10DB'), ('PSYC M10DQ'), ('PSYC M10FM'), ('PSYC M10FO'), ('PSYC M10FZ'), ('PSYC M10GF'), ('PSYC M10ID'), ('PSYC M1121'), ('PSYC M1140'), ('PUBS M1005'), ('SJS 110'), ('SJS 120'), ('SJS 130'), ('SLNA M1022'), ('SLNA M1023'), ('SLNA M1028'), ('SLNA M1033'), ('SLNA M1036'), ('SLNA M1097'), ('SLNA M10AM'), ('SOCI 115'), ('SOCI 125'), ('SOCI 140'), ('SOCI 150'), ('SOCI M1059'), ('SOCI M1079'), ('SOCI M10BI'), ('SOCI M10DN'), ('SOCI M10DT'), ('SOCI M10EC'), ('SOCS M1039'), ('SOCS M1040'), ('SOCS M10BN'), ('SOCS M10BP'), ('SOCS M10CO'), ('SOCS M10CP'), ('SOCS M10CQ'), ('SOCS M10DH'), ('SOCS M10DW'), ('SOCS M10DX'), ('SOCS M10DY'), ('SOCS M10GA'), ('SOCS M10GB'), ('SOCS M10GW'), ('SPAN 100'), ('SPAN 110'), ('SPAN M1026'), ('SPAN M1045'), ('SPAN M1046'), ('SPAN M10DH'), ('SPAN M10FX'), ('SPAN M10FY'), ('THTR 111'), ('THTR 113'), ('THTR 114'), ('THTR M1056'), ('THTR M10PG'), ('THTR M10RT'), ('THTR M10YI'), ('THTR M10YJ'), ('THTR M1187'), ('THTR M11CE'), ('THTR M11CF'), ('THTR M11MI'), ('THTR M1269')
+  values ('ACCT 110'), ('ACCT 120'), ('AG-PS 104 104'), ('AJ 120'), ('ANTH M1005'), ('ANTH M1006'), ('ANTH M1017'), ('ANTH M1042'), ('ANTH M1085'), ('ANTH M10AK'), ('ANTH M10AL'), ('ANTH M10BN'), ('ANTH M10EJ'), ('ANTH M10EW'), ('ANTH M10IF'), ('ANTH M10IG'), ('ANTH M10IM'), ('ANTH M10JV'), ('ANTH M1101'), ('ANTH M1102'), ('ANTH M1121'), ('ANTH M1122'), ('ANTH M1131'), ('ARAB M1015'), ('ARAB M10AQ'), ('ARCH M1059'), ('ARCH M1065'), ('ARCH M1066'), ('ARCH M10AK'), ('ARCH M10AN'), ('ARCH M10AP'), ('ARCH M10BD'), ('ARCH M10BK'), ('ARCH M10BL'), ('ARCH M10BP'), ('ARCH M10CE'), ('ARCH M10CF'), ('ARCH M10JH'), ('ARCH M10JX'), ('ARCH M10KJ'), ('ARCH M1142'), ('ARTC M10AH'), ('ARTH 120'), ('ARTH 130'), ('ARTH 150'), ('ARTH M1005'), ('ARTH M1006'), ('ARTH M1011'), ('ARTH M1027'), ('ARTH M1037'), ('ARTH M10CZ'), ('ARTH M10DA'), ('ARTS 210'), ('ARTS M1006'), ('ARTS M1074'), ('ARTS M1078'), ('ARTS M10KT'), ('ARTS M10LJ'), ('ARTS M10MX'), ('ARTS M10MY'), ('ARTS M10NC'), ('ARTS M10NI'), ('ARTS M10NS'), ('ARTS M10PL'), ('ARTS M10PX'), ('ARTS M10PY'), ('ARTS M10QA'), ('ARTS M10QM'), ('ARTS M10UM'), ('ARTS M10UN'), ('ARTS M10UU'), ('ARTS M10UV'), ('ARTS M1129'), ('ARTS M1134'), ('ARTS M1310'), ('ARTS M1331'), ('ARTS M1411'), ('ARTS M1566'), ('ASTR M1002'), ('ASTR M1014'), ('ASTR M1017'), ('ASTR M1019'), ('ASTR M1023'), ('ASTR M1028'), ('ASTR M1039'), ('ASTR M1040'), ('ASTR M1044'), ('ASTR M1048'), ('ASTR M1049'), ('ASTR M1053'), ('ASTR M10AC'), ('ASTR M10AT'), ('ASTR M10AU'), ('ASTR M10BC'), ('ASTR M10BE'), ('ASTR M10BZ'), ('ASTR M10CO'), ('BIOL 135 S'), ('BIOL 140'), ('BIOL 190'), ('BIOL M1049'), ('BIOL M1063'), ('BIOL M1065'), ('BIOL M1067'), ('BIOL M1087'), ('BIOL M1088'), ('BIOL M1089'), ('BIOL M1091'), ('BIOL M1092'), ('BIOL M1096'), ('BIOL M1097'), ('BIOL M1098'), ('BIOL M10GG'), ('BIOL M10GH'), ('BIOL M10GV'), ('BIOL M10GW'), ('BIOL M10HU'), ('BIOL M10HV'), ('BIOL M10IT'), ('BIOL M10IW'), ('BIOL M10KY'), ('BIOL M10LH'), ('BIOL M10LZ'), ('BIOL M10NT'), ('BIOL M10NU'), ('BIOL M10NW'), ('BIOL M10OA'), ('BIOL M10OB'), ('BIOL M10OI'), ('BIOL M10OU'), ('BIOL M10OV'), ('BIOL M10OX'), ('BIOL M10OY'), ('BIOL M10QB'), ('BIOL M10QW'), ('BIOL M10QZ'), ('BIOL M10UX'), ('BIOL M10ZV'), ('BIOL M10ZW'), ('BIOL M10ZX'), ('BIOL M1101'), ('BIOL M1102'), ('BIOL M1103'), ('BIOL M1104'), ('BIOL M1105'), ('BIOL M1119'), ('BIOL M1126'), ('BIOL M1127'), ('BIOL M1167'), ('BIOL M11AA'), ('BIOL M11BA'), ('BIOL M11BJ'), ('BIOL M1226'), ('BIOL M1254'), ('BIOL M1262'), ('BIOL M1317'), ('BIOL M1318'), ('BIOL M1320'), ('BIOT 101 B X'), ('BIOT 150 X'), ('BIOT 220 X'), ('BRDC M1011'), ('BRDC M1015'), ('BRDC M1062'), ('BUS 120'), ('BUSI M1061'), ('BUSI M10FD'), ('BUSI M10FE'), ('BUSI M10SK'), ('BUSI M10SS'), ('BUSI M10TV'), ('BUSI M10UK'), ('BUSI M1172'), ('BUSI M11LQ'), ('BUSI M1361'), ('CDEV M11GJ'), ('CDEV M1280'), ('CHEM 101'), ('CHEM 120 S'), ('CHEM 160 S'), ('CHEM M1016'), ('CHEM M1033'), ('CHEM M1044'), ('CHEM M1053'), ('CHEM M10DH'), ('CHEM M10FL'), ('CHIN M1058'), ('COMM 120'), ('COMM 130'), ('COMM 140'), ('COMM M1034'), ('COMM M1035'), ('COMM M1067'), ('COMM M10AW'), ('COMM M10AX'), ('COMM M10DK'), ('COMP 112'), ('COMP 132'), ('COMP M1085'), ('COMP M10DM'), ('COMP M10IG'), ('COMP M10QS'), ('COUN M1004'), ('COUN M1045'), ('COUN M1069'), ('COUN M10BK'), ('COUN M10BL'), ('COUN M10BM'), ('COUN M10KU'), ('COUN M10ME'), ('COUN M10PX'), ('COUN M10UD'), ('COUN M1155'), ('COUN M1159'), ('COUN M1188'), ('CRIM M1066'), ('CRIM M1068'), ('CRIM M11DJ'), ('DANC M1054'), ('DANC M1056'), ('DANC M1057'), ('DANC M10JE'), ('DANC M10JF'), ('DANC M11GZ'), ('DANC M11SK'), ('DANC M11SN'), ('DANC M1208'), ('DANC M1460'), ('ECON M1007'), ('ECON M1012'), ('ECON M1022'), ('ECON M1026'), ('ECON M1029'), ('ECON M10AX'), ('ECON M10AY'), ('ECON M10BC'), ('ECON M10BI'), ('ECON M10BO'), ('ENGL 120'), ('ENGL 160'), ('ENGL 165'), ('ENGL 200'), ('ENGL M1033'), ('ENGL M1034'), ('ENGL M1061'), ('ENGL M1063'), ('ENGL M10BA'), ('ENGL M10BB'), ('ENGL M10DS'), ('ENGL M10IB'), ('ENGL M10IR'), ('ENGL M10IS'), ('ENGL M10JI'), ('ENGL M10JJ'), ('ENGL M10JX'), ('ENGL M10LQ'), ('ENGL M10LR'), ('ENGL M10MG'), ('ENGL M10MH'), ('ENGL M10MS'), ('ENGL M10MT'), ('ENGL M10QH'), ('ENGL M10QI'), ('ENGL M10UR'), ('ENGL M10US'), ('ENGL M10VV'), ('ENGL M10XI'), ('ENGL M10XJ'), ('ENGL M10YU'), ('ENGL M1140'), ('ENGL M1179'), ('ENGL M11AV'), ('ENGL M11BL'), ('ENGL M11CF'), ('ENGL M11CG'), ('ENGL M11EE'), ('ENGL M11EP'), ('ENGL M11EU'), ('ENGL M11EX'), ('ENGL M11EY'), ('ENGL M11FB'), ('ENGL M11FC'), ('ENGL M11FD'), ('ENGL M11FE'), ('ENGL M11FF'), ('ENGL M11FG'), ('ENGL M11FK'), ('ENGL M11HC'), ('ENGL M1203'), ('ENGL M1206'), ('ENGL M1239'), ('ENGL M1258'), ('ENGL M1261'), ('ENGL M1263'), ('ENGL M1282'), ('ENGL M1284'), ('ENGL M1290'), ('ENGL M1298'), ('ENGL M1336'), ('ENGL M1338'), ('ENGL M1346'), ('ENGL M1348'), ('ENGL M1352'), ('ENGL M1353'), ('ENGL M1369'), ('ENGL M1375'), ('ENGL M1393'), ('ENGL M1395'), ('ENGL M1415'), ('ENGL M1417'), ('ENGL M1436'), ('ENGL M1438'), ('ENGL M1440'), ('ENGL M1441'), ('ENVS 100'), ('ENVS M1064'), ('ENVS M10LD'), ('ENVS M10LE'), ('ENVS M10LF'), ('ENVS M10NA'), ('ENVS M10NB'), ('ETHA M1002'), ('ETHN M1019'), ('ETHN M1028'), ('ETHN M1034'), ('ETHS M1013'), ('ETHS M1014'), ('ETHS M1068'), ('ETHS M1082'), ('ETHS M1085'), ('ETHS M1086'), ('ETHS M1097'), ('ETHS M1098'), ('ETHS M10DF'), ('ETHS M10DG'), ('ETHS M10EL'), ('ETHS M10HG'), ('ETHS M10IR'), ('ETHS M10MD'), ('ETHS M10ME'), ('ETHS M10NO'), ('ETHS M10OD'), ('ETHS M10OE'), ('ETHS M10PH'), ('ETHS M10SH'), ('ETHS M10SI'), ('ETHS M10TG'), ('ETHS M1103'), ('ETHS M1104'), ('ETHS M1147'), ('ETHS M1150'), ('ETHS M1166'), ('ETHS M1170'), ('ETHS M1172'), ('ETHS M1177'), ('ETHS M1194'), ('ETHS M1195'), ('ETHS M1204'), ('ETHS M1256'), ('ETHS M1260'), ('ETHS M1261'), ('ETHS M1278'), ('ETHS M1285'), ('FA M10AA'), ('FDNT M10BE'), ('FLNG M11LR'), ('FREN M1003'), ('FREN M1006'), ('FREN M1014'), ('FREN M1035'), ('FREN M1036'), ('FREN M1050'), ('FREN M1053'), ('FREN M10AA'), ('FREN M10AH'), ('FREN M10AZ'), ('FTVE 105'), ('FTVE M1002'), ('FTVE M1003'), ('FTVE M1018'), ('FTVE M1019'), ('FTVE M1021'), ('FTVE M1029'), ('FTVE M1045'), ('FTVE M1046'), ('FTVE M1074'), ('FTVE M1078'), ('FTVE M1079'), ('FTVE M1081'), ('FTVE M10DA'), ('FTVE M10DJ'), ('FTVE M10DK'), ('FTVE M10DX'), ('FTVE M10EV'), ('FTVE M10HO'), ('FTVE M10HR'), ('FTVE M10LA'), ('FTVE M10LJ'), ('FTVE M10LK'), ('FTVE M10NK'), ('FTVM M10AF'), ('FTVM M10AS'), ('FTVM M10AT'), ('FTVM M10AU'), ('GEOG 110'), ('GEOG 140'), ('GEOG M10CM'), ('GEOG M10FA'), ('GEOL 100'), ('GEOL 100 L'), ('GEOL M1022'), ('GEOL M1041'), ('GEOL M1054'), ('GEOL M1056'), ('GEOL M10EU'), ('GEOL M10HI'), ('GFCD M10FI'), ('GFCD M10FJ'), ('GLST 101'), ('GLST 102'), ('HIST 160'), ('HIST M1090'), ('HIST M1095'), ('HIST M1096'), ('HIST M10AV'), ('HIST M10BI'), ('HIST M10HN'), ('HIST M10HW'), ('HIST M10HX'), ('HIST M10KJ'), ('HIST M10KV'), ('HIST M10LD'), ('HIST M10MO'), ('HIST M10NK'), ('HIST M10NL'), ('HIST M10NY'), ('HIST M10NZ'), ('HIST M10PT'), ('HIST M10QP'), ('HIST M10QQ'), ('HIST M10TA'), ('HIST M10TB'), ('HIST M10TI'), ('HIST M10UK'), ('HIST M10UL'), ('HIST M10UM'), ('HIST M10UN'), ('HIST M10VY'), ('HIST M10WP'), ('HIST M1101'), ('HIST M1107'), ('HIST M1108'), ('HIST M1112'), ('HIST M1126'), ('HIST M1129'), ('HIST M1130'), ('HIST M1156'), ('HIST M1163'), ('HIST M1165'), ('HIST M1172'), ('HIST M1178'), ('HIST M1183'), ('HIST M1190'), ('HIST M1191'), ('HIST M1194'), ('HIST M1196'), ('HIST M1200'), ('HIST M1201'), ('HIST M1220'), ('HIST M1231'), ('HLTH M1079'), ('HLTH M10AS'), ('HLTH M10RO'), ('HLTH M10ZH'), ('HLTH M1134'), ('HLTH M11BP'), ('HORT M10MA'), ('HUMA M1018'), ('HUMA M1019'), ('HUMA M1027'), ('HUMA M1029'), ('HUMA M1052'), ('HUMA M1055'), ('HUMA M1084'), ('HUMA M1088'), ('HUMA M1097'), ('HUMA M10BC'), ('HUMA M10BD'), ('HUMA M10BZ'), ('HUMA M10CM'), ('HUMA M10CN'), ('HUMA M10CS'), ('HUMA M10CT'), ('HUMA M10DQ'), ('HUMA M10DS'), ('HUMA M10EO'), ('HUMA M10FA'), ('HUMA M10GW'), ('HUMA M10HG'), ('HUMA M10HQ'), ('HUMA M10HW'), ('HUMA M10HX'), ('HUMA M10HY'), ('HUMA M10ID'), ('HUMA M10IF'), ('HUMA M10II'), ('HUMA M10IJ'), ('HUMA M10IX'), ('HUMA M10IZ'), ('HUMA M10KI'), ('HUMA M10KJ'), ('HUMA M10KQ'), ('HUMA M10LR'), ('HUMA M10LS'), ('HUMA M10LT'), ('HUMA M10LU'), ('HUMA M10LX'), ('HUMA M10LZ'), ('HUMA M10MD'), ('HUMA M10MF'), ('HUMA M10MJ'), ('HUMA M10MP'), ('HUMA M10MW'), ('HUMA M10OF'), ('HUMA M10OM'), ('HUMA M1100'), ('HUMA M1114'), ('HUMA M1119'), ('HUMA M1125'), ('HUMN M1002'), ('HUMN M1003'), ('HUMN M1004'), ('HUMN M10BG'), ('IDST M1094'), ('IDST M1098'), ('IDST M10CL'), ('IDST M10CM'), ('IDST M10JC'), ('IDST M10JD'), ('IDST M10JU'), ('IDST M10OJ'), ('IDST M10RM'), ('IDST M10RQ'), ('IDST M10TE'), ('IDST M10WV'), ('INFO M1002'), ('INFO M1003'), ('INFO M10AB'), ('INFO M10AC'), ('ITIS 130'), ('ITIS M1068'), ('ITIS M10KP'), ('ITIS M10SQ'), ('ITIS M1113'), ('ITIS M11LX'), ('ITIS M1262'), ('JAPN M1003'), ('JAPN M1006'), ('JAPN M1015'), ('JAPN M1017'), ('JAPN M1018'), ('JAPN M1032'), ('JAPN M10AD'), ('JAPN M10AK'), ('JAPN M10AW'), ('JAPN M10BG'), ('JAPN M10BH'), ('JAPN M10CP'), ('JOUR 100'), ('JOUR 160'), ('KINE M13AD'), ('KINE M1523'), ('LATN M1001'), ('LATN M10AD'), ('LATN M10AG'), ('LIBR M1009'), ('LIBR M1026'), ('LIBR M1035'), ('LIBR M1040'), ('LIBR M10AR'), ('LIBR M10BO'), ('LIBR M10CI'), ('LIBR M10CK'), ('LIBR M10CL'), ('LIBR M10CX'), ('LPPS 110'), ('MATH 130'), ('MATH 151'), ('MATH 210'), ('MATH 230'), ('MATH M10NA'), ('MATH M10NC'), ('MATH M10PL'), ('MATH M1123'), ('MATH M11CM'), ('MATH M11DN'), ('MATH M11DO'), ('MATH M1333'), ('MRKT M10BN'), ('MUSI M1002'), ('MUSI M1040'), ('MUSI M1043'), ('MUSI M1044'), ('MUSI M1072'), ('MUSI M10BT'), ('MUSI M10LX'), ('MUSI M10LY'), ('MUSI M10LZ'), ('MUSI M10MC'), ('MUSI M10MH'), ('MUSI M10MN'), ('MUSI M10MO'), ('MUSI M10PH'), ('MUSI M10PI'), ('MUSI M11AP'), ('MUSI M11PS'), ('MUSI M11QG'), ('MUSI M11XO'), ('MUSI M1236'), ('MUSI M1237'), ('MUSI M1252'), ('MUSI M1254'), ('MUSI M12CD'), ('MUSI M12CE'), ('MUSI M1334'), ('MUSI M1488'), ('MUSI M1518'), ('MUSI M1522'), ('MUSI M1582'), ('MUSI M1589'), ('MUSI M1634'), ('NUTR M1014'), ('NUTR M1018'), ('NUTR M10BL'), ('NUTR M10CB'), ('NUTR M10CC'), ('PH 100'), ('PHIL 110'), ('PHIL 120'), ('PHIL 130'), ('PHIL 140'), ('PHIL M1028'), ('PHIL M1034'), ('PHIL M1090'), ('PHIL M1095'), ('PHIL M10AW'), ('PHIL M10DI'), ('PHIL M10DO'), ('PHIL M10EW'), ('PHIL M10FI'), ('PHIL M10FS'), ('PHIL M10GA'), ('PHIL M10GB'), ('PHIL M10GC'), ('PHOT M1055'), ('PHOT M1096'), ('PHOT M10DT'), ('PHOT M10DU'), ('PHOT M10HE'), ('PHOT M10HF'), ('PHOT M10IH'), ('PHOT M10MS'), ('PHOT M10MV'), ('PHOT M1137'), ('PHSC M1003'), ('PHSC M10BM'), ('PHSC M10BO'), ('PHSC M10CP'), ('PHSC M10FT'), ('PHYS 105'), ('PHYS 205'), ('PHYS M10DH'), ('PHYS M10EV'), ('PHYS M10FR'), ('POLS 130'), ('POLS 140'), ('POLS M1002'), ('POLS M1020'), ('POLS M1027'), ('POLS M1033'), ('POLS M1059'), ('POLS M10AH'), ('POLS M10AU'), ('POLS M10AV'), ('POLS M10BY'), ('POLS M10CH'), ('PSY 120'), ('PSY 130'), ('PSY 150'), ('PSY 180'), ('PSYC M1042'), ('PSYC M1059'), ('PSYC M1061'), ('PSYC M1087'), ('PSYC M10DA'), ('PSYC M10DB'), ('PSYC M10DQ'), ('PSYC M10FM'), ('PSYC M10FO'), ('PSYC M10FZ'), ('PSYC M10GF'), ('PSYC M10ID'), ('PSYC M1121'), ('PSYC M1140'), ('PUBS M1005'), ('SJS 110'), ('SJS 120'), ('SJS 130'), ('SLNA M1022'), ('SLNA M1023'), ('SLNA M1028'), ('SLNA M1033'), ('SLNA M1036'), ('SLNA M1097'), ('SLNA M10AM'), ('SOCI 115'), ('SOCI 125'), ('SOCI 140'), ('SOCI 150'), ('SOCI M1059'), ('SOCI M1079'), ('SOCI M10BI'), ('SOCI M10DN'), ('SOCI M10DT'), ('SOCI M10EC'), ('SOCS M1039'), ('SOCS M1040'), ('SOCS M10BN'), ('SOCS M10BP'), ('SOCS M10CO'), ('SOCS M10CP'), ('SOCS M10CQ'), ('SOCS M10DH'), ('SOCS M10DW'), ('SOCS M10DX'), ('SOCS M10DY'), ('SOCS M10GA'), ('SOCS M10GB'), ('SOCS M10GW'), ('SPAN 100'), ('SPAN 110'), ('SPAN M1026'), ('SPAN M1045'), ('SPAN M1046'), ('SPAN M1073'), ('SPAN M10DH'), ('SPAN M10FX'), ('SPAN M10FY'), ('THTR 111'), ('THTR 113'), ('THTR 114'), ('THTR M1056'), ('THTR M10PG'), ('THTR M10RT'), ('THTR M10YI'), ('THTR M10YJ'), ('THTR M1187'), ('THTR M11CE'), ('THTR M11CF'), ('THTR M11MI'), ('THTR M1269')
+),
+stale as (
+  select count(*) as n from planned p
+  where p.course_id not in (select id from named) or p.value not in (select id from named)
 ),
 step1 as (
   select count(*) as n from public.kb_curation s
@@ -408,40 +424,54 @@ step1 as (
 ),
 other_honors as (
   select count(*) as n from public.kb_curation o
-  where o.field = 'honors_of' and o.course_id not in ('HUMA M10ME', 'LIBR M10CJ')
+  where o.field = 'honors_of' and not (o.reviewer_email = 'honors-s653@bot' and o.course_id in ('HUMA M10ME', 'LIBR M10CJ'))
 ),
-merges as (
+moved as (
   select count(*) as n from public.kb_curation m where m.field = 'merge_into' and m.course_id in (select id from named)
 ),
-person as (
-  select count(*) as n from public.kb_curation p
-  where p.reviewer_email not like '%@bot'
-    and p.field in ('merge_into', 'merge_dismissed', 'unified_title_merge_confirm')
-    and (p.course_id in (select id from named)
-         or exists (select 1 from named n where p.value = n.id or p.value like '%' || n.id || '|%'
-                    or p.value like '%|' || n.id || '%'))
+walk (honors_id, side, id, person, depth) as (
+  select p.course_id, 'h', p.course_id, false, 0 from planned p
+  union all
+  select p.course_id, 'b', p.value, false, 0 from planned p
+  union all
+  select w.honors_id, w.side, m.value, w.person or m.reviewer_email not like '%@bot', w.depth + 1
+  from walk w join public.kb_curation m on m.course_id = w.id and m.field = 'merge_into'
+  where w.depth < 40
+),
+joined as (
+  select h.honors_id, bool_or(h.person or b.person) as by_person
+  from walk h join walk b on b.honors_id = h.honors_id and b.side = 'b' and b.id = h.id
+  where h.side = 'h'
+  group by h.honors_id
 ),
 guard as (
-  select (select n from step1) = 2 and (select n from other_honors) = 0 and (select n from merges) = 0
-     and (select n from person) = 0 as ok,
-     (select n from step1) as step1_rows, (select n from other_honors) as other_honors_rows,
-     (select n from merges) as merge_rows, (select n from person) as person_rows
+  select (select n from stale) = 0 and (select n from step1) = 2 and (select n from other_honors) = 0
+     and (select n from moved) = 0 and (select count(*) from joined) = 0 as ok,
+     (select n from stale) as stale_rows, (select n from step1) as step1_rows,
+     (select n from other_honors) as other_honors_rows, (select n from moved) as merged_ids,
+     (select count(*) from joined) as joined_pairs, (select count(*) from joined where by_person) as person_joined
 ),
 added as (
   insert into public.kb_curation as k (course_id, field, value, reviewer_email)
-  select p.course_id, 'honors_of', p.value, 'honors-s653@bot'
+  select p.course_id, 'honors_of', p.value, 'honors-rows-s653@bot'
   from guard g cross join planned p
   where g.ok
   on conflict (course_id, field) do nothing
-  returning jsonb_build_object('op', 'insert', 'row', to_jsonb(k)) as image
+  returning k.course_id, k.value
+),
+digest as (
+  select count(*) as n,
+         md5(coalesce(string_agg(a.course_id || '>' || a.value, '|' order by a.course_id collate "C"), '')) as md5
+  from added a
 )
-select case when g.ok and (select count(*) from added) = 387
-            then (select jsonb_agg(image) from added)
-            else ('refused by the guard: step 1 rows ' || g.step1_rows || ', other honors_of rows '
-                  || g.other_honors_rows || ', merge rows on a named id ' || g.merge_rows || ', person rows '
-                  || g.person_rows || ', or an insert met a taken slot')::int::text::jsonb
+select case when g.ok and d.n = 388 and d.md5 = '20d4fab9316392f96b1f48039acdba98'
+            then jsonb_build_object('inserted', d.n, 'md5', d.md5, 'cohort', 'honors-rows-s653@bot')
+            else ('refused by the guard: stale rows ' || g.stale_rows || ', step 1 rows ' || g.step1_rows
+                  || ', other honors_of rows ' || g.other_honors_rows || ', named ids merged away ' || g.merged_ids
+                  || ', pairs already joined ' || g.joined_pairs || ' (by a person ' || g.person_joined
+                  || '), inserted ' || d.n || ' of 388 with digest ' || d.md5)::int::text::jsonb
        end as changed
-from guard g;
+from guard g cross join digest d;
 
--- Read back: expect 389 honors_of rows, all honors-s653@bot.
---   select count(*), count(distinct reviewer_email) from public.kb_curation where field = 'honors_of';
+-- Read back: expect 388 honors_of rows under honors-rows-s653@bot and 2 under honors-s653@bot.
+--   select reviewer_email, count(*) from public.kb_curation where field = 'honors_of' group by 1;
