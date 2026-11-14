@@ -524,16 +524,20 @@ for path in fixtures:
 # ── The filed records: today's scorer must agree with the run that filed them ─
 records = sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_pilot", "records", "*.json")))
 check(len(records) >= 16, "extraction run 2's 16 records are filed (37171952080)")
+# Matches the course-id route makes that the run did not (S653): Mt. San Antonio's page prints NURS 212 where the
+# list names that control number NURS 11, and the Program Course File's id for it is NURS212. {missing: invented}.
+ID_ROUTE_GAINS = {"mtsac_08086.json": {"NURS11": "NURS212"}}
 for path in records:
     with open(path) as fh:
         fr = json.load(fh)
     with open(os.path.join(ROOT, fr["source_file"])) as fh:
         fx = json.load(fh)
     again = S.score(fr["record"], fx["closed_list"], fx["text"])
+    gains = ID_ROUTE_GAINS.get(os.path.basename(path), {})
     check(again["pass"] == fr["score"]["pass"]
           and again["arithmetic"]["status"] == fr["score"]["arithmetic"]["status"]
-          and again["coverage"]["missing"] == fr["score"]["coverage"]["missing"]
-          and again["invented"]["codes"] == fr["score"]["invented"]["codes"],
+          and again["coverage"]["missing"] == [k for k in fr["score"]["coverage"]["missing"] if k not in gains]
+          and again["invented"]["codes"] == [k for k in fr["score"]["invented"]["codes"] if k not in gains.values()],
           "%s: today's scorer reads the filed record as the run did (%s %s now, %s %s then)"
           % (os.path.basename(path), again["pass"], again["arithmetic"]["status"],
              fr["score"]["pass"], fr["score"]["arithmetic"]["status"]))
@@ -2122,9 +2126,13 @@ soc = {"program": {"total_units": {"min": 3, "max": 3}, "measure": "units"},
        "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "SOC 2", "units": 3}]}]}
 check(not S.score(soc, [{"code": "SOCI 2", "units": 3}], "x", "A.A. Degree", MER)["coverage"]["missing"],
       "and Merced's reads its own SOC 2 as the listed SOCI 2")
-RCC = RC.prefix_aliases("Riverside City College")
-check(RCC == {"HIST": "HIS"} and not (RC.prefix_aliases("College of the Canyons") or {}),
-      "Riverside City carries HIST for HIS; College of the Canyons stays held (its catalog prefixes have no title on file)")
+# Riverside City's HIST for HIS retired in S653: the course-id route reproduces all its matches
+# (kb/_course_id_route_census.py; tests/course_id_route_test.py), and its cited evidence stays, marked retired.
+RCC_CONF = RC.load_steps().get("Riverside City College") or {}
+check(not RC.prefix_aliases("Riverside City College")
+      and [c.get("retired", {}).get("session") for c in RCC_CONF.get("prefix_aliases_cited") or []] == ["S653"]
+      and not (RC.prefix_aliases("College of the Canyons") or {}),
+      "Riverside City's HIST for HIS is retired to the course-id route, its evidence kept; College of the Canyons stays held")
 # Los Angeles Valley (S533): "COMPLETE 4 COURSES FROM THE FOLLOWING: (COURSES MAY BE REPEATED)" read with the count and
 # not the repeat (Music 02962). The repeat step takes a minimum equal to n; another figure stays the reading's.
 mus = {"program": {"total_units": {"min": 33, "max": 35}, "measure": "units"},
