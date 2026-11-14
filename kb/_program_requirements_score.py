@@ -231,7 +231,7 @@ def _listed_key(code: str | None, listed: dict) -> str:
     return k
 
 
-def with_course_ids(record: dict, listed: dict, ids: dict | None) -> dict:
+def with_course_ids(record: dict, listed: dict, ids: dict | None, aliases: dict | None = None) -> dict:
     """The record with each code the list lacks named as the listed course whose Program
     Course File id it is (S653, kb/_course_id_route.py): Riverside City's catalog prints
     HIST 14, the list names that control number HIS 14 and the file's CrsId says HIST14.
@@ -239,11 +239,15 @@ def with_course_ids(record: dict, listed: dict, ids: dict | None) -> dict:
     prefix_aliases, which stay as the fallback; a code the list holds is never renamed.
     A listed course the record already places under its own code is never named a second
     time: Laney's page prints COMM C1004 beside COMM 20, the file's id for COMM 20's control
-    number is the common-course number, and renaming it would repeat COMM 20 in its block."""
+    number is the common-course number, and renaming it would repeat COMM 20 in its block.
+    aliases is the college's prefix_aliases that run after: a listed course the record
+    places only through one (SPCH 20 for COMM 20) counts as placed, so the route never
+    names it a second time (S653 review)."""
     if not ids:
         return record
     out = json.loads(json.dumps(record))
-    have = {k for k, _, _ in placed_codes(record) if k in listed}
+    seen = with_prefix_aliases(record, listed, aliases) if aliases else record
+    have = {k for k, _, _ in placed_codes(seen) if k in listed}
 
     def rename(entry: dict) -> None:
         k = norm_code(entry.get("code"))
@@ -990,7 +994,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         k = norm_code(c.get("code"))
         if k:
             listed[k] = _num(c.get("units"))
-    record = with_course_ids(record, listed, CI.listed_ids(closed) if course_ids is None else course_ids)
+    record = with_course_ids(record, listed, CI.listed_ids(closed) if course_ids is None else course_ids, aliases)
     record = with_prefix_aliases(record, listed, aliases)
     placed = [(listed_key(e.get("code"), listed, packed), e, b) for _, e, b in placed_codes(record)]
     placed_keys = {k for k, _, _ in placed}

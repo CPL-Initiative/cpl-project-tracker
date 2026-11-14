@@ -101,12 +101,25 @@ def bars(rec: dict, rec0: dict, listed: dict) -> dict:
             "invented": not (invented - flagged), "repeated": not S.repeated(rec)}
 
 
-def units(rec: dict, listed: dict) -> str:
-    """The blocks' sum (program_units) with the list's units, as text; an error reads as its message."""
-    try:
-        return json.dumps(S.program_units(rec, listed), default=str)
-    except Exception as exc:   # one record the sum cannot read never stops the census
-        return "error: %s" % str(exc)[:80]
+def arithmetic(before: dict, after: dict, listed: dict, filed: dict) -> dict | None:
+    """The arithmetic on the renamed record where the renames move it, else None (the filed arithmetic stands).
+    The census holds no page text, so both sides are scored without it and only a difference counts: a renamed
+    course takes the list's units, and the blocks' sum moves (Mt. San Antonio 18236, S653 review)."""
+    closed = [{"code": k, "units": u} for k, u in listed.items()]
+    award = filed.get("award")
+    b = S.score(before, closed, None, award, None, False, {})["arithmetic"]
+    a = S.score(after, closed, None, award, None, False, {})["arithmetic"]
+    key = lambda x: (x.get("pass"), x.get("status"), json.dumps(x.get("computed")))
+    return None if key(a) == key(b) else a
+
+
+def checks_pass(filed: dict, r: dict, arith: dict | None) -> tuple[bool, bool]:
+    """(score pass, the tab's count), with the filed arithmetic unless the renames move it."""
+    if arith is None:
+        return A.checks_pass(filed, r)
+    sc = dict(filed.get("score") or {})
+    sc["arithmetic"] = arith
+    return A.checks_pass(dict(filed, score=sc), r)
 
 
 def college_names(path: str = A.COCI) -> tuple[dict, dict]:
@@ -212,7 +225,9 @@ def build() -> dict:
                 names = (coci_names.get(college, {}).get(p, set()) | mis_names.get(cc, {}).get(p, set()))
                 mine_t = {A.title_key(t) for _, t in pcf_titles.get(cc, {}).get(p, ())}
                 clash = sorted(t for c, t in names if c != ctl_of.get(k) and t not in mine_t)
-                verdict = "conflict" if clash else "consistent"
+                # confirmed: the college's own course names hold the printed code for this course; no_names: they
+                # name it nowhere, so nothing held stands against the match or for it.
+                verdict = "conflict" if clash else "confirmed" if names else "consistent_no_names"
                 new[verdict] += 1
                 sp, sk = A.split(p), A.split(k)
                 kind = "common_course" if A.CCN.match(p) else "prefix" if sp and sk and sp[1] == sk[1] else "other"
@@ -233,12 +248,15 @@ def build() -> dict:
         for f, rec0, lists in work:
             for listed, lid, which in lists:
                 b = S.with_prefix_aliases(rec0, listed, aliases)
-                a = S.with_prefix_aliases(S.with_course_ids(rec0, listed, lid), listed, kept)
-                fb, tb = A.checks_pass(f, bars(b, rec0, listed))
-                fa, ta = A.checks_pass(f, bars(a, rec0, listed))
-                if which == "committed_list" and renames(a) != renames(b) and units(b, listed) != units(a, listed):
-                    # The blocks' sum moves once a renamed course takes the list's units: the rescore decides.
-                    arith[college].append(f.get("control_number"))
+                a = S.with_prefix_aliases(S.with_course_ids(rec0, listed, lid, kept), listed, kept)
+                fb, tb = checks_pass(f, bars(b, rec0, listed), None)
+                moved_arith = arithmetic(b, a, listed, f)
+                fa, ta = checks_pass(f, bars(a, rec0, listed), moved_arith)
+                if which == "committed_list" and moved_arith is not None:
+                    arith[college].append({"record": f.get("control_number"),
+                                           "filed": (f.get("score") or {}).get("arithmetic", {}).get("status"),
+                                           "renamed": moved_arith.get("status"),
+                                           "computed": moved_arith.get("computed"), "stated": moved_arith.get("stated")})
                 if (fb, tb) != (fa, ta):
                     moved[which]["%s_to_%s" % ("pass" if tb else "fail", "pass" if ta else "fail")].append(
                         {"college": college, "record": f.get("control_number"), "score_pass": [fb, fa],
@@ -260,7 +278,7 @@ def build() -> dict:
     plan["new_matches"] = {"counts": dict(new), "by_kind": dict(new_kind),
                            "prefix_by_college": dict(sorted(new_prefix.items())), "examples": dict(new_examples)}
     plan["status_change"] = {w: {k: v for k, v in sorted(m.items())} for w, m in sorted(moved.items())}
-    plan["arithmetic_may_move"] = {k: v for k, v in sorted(arith.items())}
+    plan["arithmetic_moves"] = {k: v for k, v in sorted(arith.items())}
     plan["unmatched_records"] = {"no_rebuilt_closed_list": dict(sorted(unmatched.items())),
                                  "rebuilt_list_differs_from_filed_score": dict(sorted(list_differs.items()))}
     allp = [p for c in per_college.values() for p in c["pairs"]]
@@ -268,7 +286,7 @@ def build() -> dict:
                        "keep": sum(p["verdict"] == "keep" for p in allp),
                        "self_recall": dict(recall), "new_matches": dict(new), "new_matches_by_kind": dict(new_kind),
                        "status_change": {w: {k: len(v) for k, v in sorted(m.items())} for w, m in sorted(moved.items())},
-                       "arithmetic_may_move": sum(len(v) for v in arith.values())}
+                       "arithmetic_moves": sum(len(v) for v in arith.values())}
     return plan
 
 

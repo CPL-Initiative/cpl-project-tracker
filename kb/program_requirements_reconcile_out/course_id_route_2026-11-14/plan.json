@@ -1,17 +1,65 @@
 {
  "_what": "The course-id route's proof over the filed records (S653): which of slice C's prefix_aliases pairs it retires, its self-recall test, and the status change on every filed record. Read-only over committed files; no site contacted, nothing dispatched, no table written.",
- "arithmetic_may_move": {
+ "arithmetic_moves": {
   "Moreno Valley College": [
-   "30167"
+   {
+    "computed": [
+     7.0,
+     16.0
+    ],
+    "filed": "incomplete",
+    "record": "30167",
+    "renamed": "incomplete",
+    "stated": [
+     18.0,
+     18.0
+    ]
+   }
   ],
   "Mt. San Antonio College": [
-   "18236"
+   {
+    "computed": [
+     18.0,
+     19.0
+    ],
+    "filed": "incomplete",
+    "record": "18236",
+    "renamed": "equal",
+    "stated": [
+     18.0,
+     18.0
+    ]
+   }
   ],
   "Norco College": [
-   "30107"
+   {
+    "computed": [
+     7.0,
+     16.0
+    ],
+    "filed": "incomplete",
+    "record": "30107",
+    "renamed": "incomplete",
+    "stated": [
+     18.0,
+     18.0
+    ]
+   }
   ],
   "Orange Coast College": [
-   "32189"
+   {
+    "computed": [
+     16.0,
+     23.0
+    ],
+    "filed": "incomplete",
+    "record": "32189",
+    "renamed": "unequal",
+    "stated": [
+     19.0,
+     19.0
+    ]
+   }
   ]
  },
  "colleges": {
@@ -939,7 +987,8 @@
    "prefix": 131
   },
   "counts": {
-   "consistent": 1634
+   "confirmed": 828,
+   "consistent_no_names": 806
   },
   "examples": {
    "common_course": [
@@ -1322,6 +1371,18 @@
       false,
       true
      ]
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "record": "18236",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
     }
    ]
   },
@@ -1415,10 +1476,11 @@
   }
  },
  "summary": {
-  "arithmetic_may_move": 4,
+  "arithmetic_moves": 4,
   "keep": 10,
   "new_matches": {
-   "consistent": 1634
+   "confirmed": 828,
+   "consistent_no_names": 806
   },
   "new_matches_by_kind": {
    "common_course": 1443,
@@ -1433,7 +1495,7 @@
   },
   "status_change": {
    "committed_list": {
-    "fail_to_pass": 7
+    "fail_to_pass": 8
    },
    "filed_list": {
     "fail_to_pass": 7

@@ -31,6 +31,8 @@ check(CI.mis_code("ENGL304-2507") == "ENGL304", "ENGL304-2507 reads as ENGL 304"
 check(CI.mis_code("ENG303-26954 ") == "ENG303", "a five-digit record id is set aside too")
 check(CI.mis_code("NC-1001") == "NC1001", "a subject and a number (Southwestern's NC-1001) stay as written")
 check(CI.mis_code("PSYC-C1000") == "PSYCC1000", "a common-course number's hyphen is no record id")
+check(CI.mis_code("NURS 117-MS") == "NURS117MS", "letters after the hyphen are no record id (NURS 117-MS)")
+check(CI.mis_code("ACCT-101") == "ACCT101", "a hyphen before the number is no record id (ACCT-101)")
 check(CI.mis_code("HIST14") == "HIST14" and CI.mis_code(None) == "", "a plain id reads as itself")
 check(CI.spaced("HIST14") == "HIST 14" and CI.spaced("MATHC2220") == "MATH C2220" and CI.spaced("CPSC17") == "CPSC 17",
       "the capture's printed twin spaces the subject from the number, a common-course C kept with the number")
@@ -58,6 +60,16 @@ laney = {"program": {"total_units": {"min": 3, "max": 3}, "measure": "units"},
 renamed = S.with_course_ids(laney, {"COMM20": 3}, {"COMMC1004": "COMM20"})
 check(not S.repeated(renamed) and renamed["blocks"][0]["courses"][0]["code"] == "COMM C1004",
       "a listed course the record already places is never named a second time (Laney 35261)")
+# A listed course placed only through a kept alias (SPCH 20 for COMM 20) is placed: the route never names
+# COMM C1004 onto it a second time (S653 review).
+spch = {"program": {"total_units": {"min": 3, "max": 3}, "measure": "units"},
+        "blocks": [{"name": "Required", "rule": "all",
+                    "courses": [{"code": "COMM C1004", "units": 3, "catalog_addition": True},
+                                {"code": "SPCH 20", "units": 3}]}]}
+sc = S.score(spch, [{"code": "COMM 20", "units": 3, "crsid": "COMMC1004"}], "x", "A.A. Degree", {"SPCH": "COMM"})
+check(sc["repeated"]["pass"] and not sc["repeated"]["codes"],
+      "a course placed through a kept alias is never repeated by the route: %s" % sc["repeated"]["codes"])
+check(not sc["coverage"]["missing"], "and SPCH 20 still covers the listed COMM 20")
 check(S.with_course_ids(rec, {"HIS14": 3, "ENGL1A": 3}, {"HIST14": "HIS14"})["blocks"][0]["courses"][0]
       == {"code": "HIS14", "units": 3, "printed_code": "HIST14", "matched_by": "course_id"},
       "the rename keeps the printed code and names its route")
@@ -67,10 +79,9 @@ check(ids.get("CCC000520542") == "HIST1", "the Program Course File's id for More
 # ── The proof and the self-recall test, rebuilt from committed files ──────────────────────────────
 import _course_id_route_census as K  # noqa: E402
 
+# The dated plan is a record of S653, never compared byte for byte: a newly filed record moves it. The
+# invariants below hold on whatever records are filed today.
 plan = K.build()
-text = json.dumps(plan, indent=1, sort_keys=True, ensure_ascii=False) + "\n"
-with open(K.OUT, encoding="utf-8") as fh:
-    check(fh.read() == text, "the committed plan is current (python3 kb/_course_id_route_census.py)")
 
 recall = plan["self_recall"]["counts"]
 # Floor (S653): 385 held matches named right by the route, none wrong. The 267 missed are matches whose file id

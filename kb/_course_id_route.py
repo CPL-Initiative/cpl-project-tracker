@@ -81,7 +81,9 @@ def load_ids(path: str = PCF) -> dict:
 
 def course_id(entry: dict, ids: dict | None = None) -> str | None:
     """A closed-list course's id when it differs from its listed code: the entry's own "crsid" when it carries
-    one, else the Program Course File's for its control number ("ccn"); None when the two agree or none is known."""
+    one, else the Program Course File's for its control number ("ccn"); None when the two agree or none is known.
+    Nothing writes "crsid" onto a closed list today: that path is test-only until a builder carries the key, and
+    every live closed list takes the "ccn" path."""
     if not isinstance(entry, dict):
         return None
     k = mis_code(entry.get("crsid")) if entry.get("crsid") else None
