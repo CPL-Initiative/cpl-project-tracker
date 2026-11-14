@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 144,
  "with_closed_list": 58,
- "started": "2026-11-14T14:56:32Z",
+ "started": "2026-11-14T17:08:47Z",
  "scope": "/current/",
  "sitemap": {
   "url": "https://catalog.skylinecollege.edu/sitemap.xml",
@@ -26,8 +26,8 @@
  "catalog_lookup": {
   "self_test": {
    "tested": 28,
-   "hits": 27,
-   "recall": 0.964,
+   "hits": 26,
+   "recall": 0.929,
    "false": 0,
    "false_off_own": 0,
    "false_no_claims": 0,
@@ -39,12 +39,12 @@
   },
   "programs": 86,
   "by_result": {
-   "found": 49,
-   "not_matched": 37
+   "found": 52,
+   "not_matched": 34
   },
-  "found": 49,
-  "found_active": 49,
-  "found_pages": 49,
+  "found": 52,
+  "found_active": 52,
+  "found_pages": 52,
   "found_programs": [
    {
     "control_number": "05809",
@@ -275,6 +275,18 @@
     ]
    },
    {
+    "control_number": "10526",
+    "title": "Automotive Engines Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-engines-technology-ca.php",
+    "h1": " Automotive Engines Technology Certificate of Achievement",
+    "page_title": "Automotive Engines Technology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
     "control_number": "10527",
     "title": "Automotive Drive Train Technology",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -282,6 +294,18 @@
     "url": "https://catalog.skylinecollege.edu/current/programs/automotive-drive-train-technology-ca.php",
     "h1": " Automotive Drive Train Technology Certificate of Achievement",
     "page_title": "Automotive Drive Train Technology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "10528",
+    "title": "Automotive Engine Performance Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-engine-performance-technology-ca.php",
+    "h1": " Automotive Engine Performance Technology Certificate of Achievement",
+    "page_title": "Automotive Engine Performance Technology Certificate of Achievement",
     "awards": [
      "coa"
     ]
@@ -486,6 +510,18 @@
     "url": "https://catalog.skylinecollege.edu/current/programs/general-merchandising-ca.php",
     "h1": "",
     "page_title": "General Merchandising Certificate",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21506",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/early-childhood-education-ca.php",
+    "h1": " Early Childhood Education Certificate of Achievement",
+    "page_title": "Early Childhood Education Certificate of Achievement",
     "awards": [
      "coa"
     ]
@@ -717,22 +753,6 @@
     "why": "no page read names it by title and award"
    },
    {
-    "control_number": "10526",
-    "title": "Automotive Engines Technology",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "status": "Active",
-    "result": "not_matched",
-    "why": "two pages name it: https://catalog.skylinecollege.edu/current/programs/automotive-engine-performance-technology-ca.php, https://catalog.skylinecollege.edu/current/programs/automotive-engines-technology-ca.php"
-   },
-   {
-    "control_number": "10528",
-    "title": "Automotive Engine Performance Technology",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "status": "Active",
-    "result": "not_matched",
-    "why": "two pages name it: https://catalog.skylinecollege.edu/current/programs/automotive-advanced-engine-performance-technology-ca.php, https://catalog.skylinecollege.edu/current/programs/automotive-engine-performance-technology-ca.php"
-   },
-   {
     "control_number": "10529",
     "title": "Automotive Advanced Engine Performance Technology",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -903,14 +923,6 @@
     "why": "no page read names it by title and award"
    },
    {
-    "control_number": "21506",
-    "title": "Early Childhood Education",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "status": "Active",
-    "result": "not_matched",
-    "why": "two pages name it: https://catalog.skylinecollege.edu/current/programs/early-childhood-education-ca.php, https://catalog.skylinecollege.edu/current/programs/early-childhood-special-education-ca.php"
-   },
-   {
     "control_number": "21508",
     "title": "Administration of Justice",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -948,7 +960,7 @@
   ]
  },
  "loads": 494,
- "seconds": 2561.3,
+ "seconds": 2581.0,
  "found": 50,
  "by_method": {
   "link_search": 7,
@@ -1346,5 +1358,5 @@
    "url": "https://catalog.skylinecollege.edu/current/programs/dance-aa.php"
   }
  },
- "run": "43607267460"
+ "run": "43619276697"
 }
