@@ -451,8 +451,9 @@
     // This fiscal year's goal, stretch and current for one sub-activity (S649).
     // The year is CPL_DATA.workplan_fy ('2026-27', written by the daily build from
     // current_workplan_year()), else July 1 to June 30 from today, clamped to the
-    // ladder's 2025-26 .. 2029-30. Current is kpi_current_<year>; kpi_metric is
-    // the fallback so a row never goes blank.
+    // ladder's 2025-26 .. 2029-30. Current is kpi_current_<year>, the Annual
+    // Goals tab's figure; kpi_metric stands in only when the data file carries no
+    // kpi_current_* key at all (written before the generator added them).
     function fiscalYearPair(p, label, today) {
         var m = /^20(\d\d)-(\d\d)$/.exec(String(label || ''));
         var sfx;
@@ -465,7 +466,11 @@
             sfx = String(start).slice(2) + String(start + 1).slice(2);
         }
         var cur = p['kpi_current_' + sfx];
-        if (cur == null || cur === '') cur = p.kpi_metric || '';
+        var hasKeys = ['2526', '2627', '2728', '2829', '2930'].some(function (s) {
+            return Object.prototype.hasOwnProperty.call(p, 'kpi_current_' + s);
+        });
+        if ((cur == null || cur === '') && !hasKeys) cur = p.kpi_metric || '';
+        if (cur == null) cur = '';
         var goal = p['kpi_goal_' + sfx]
             || (sfx === '2526' ? p.kpi_target_2026 : sfx === '2930' ? p.kpi_target_2030 : '') || '';
         return {
@@ -837,6 +842,7 @@
         buildPrompt: buildPrompt,
         buildSystem: buildSystem,
         fiscalYearPair: fiscalYearPair,
+        getSelectedData: getSelectedData,
         fetchLiveOverlay: fetchLiveOverlay,
         // Session 97 additions (elevation / audience titles / naming rule)
         AUDIENCES: AUDIENCES,

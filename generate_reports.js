@@ -63,10 +63,9 @@ const updateLog = DATA.update_log || {};
 const liveUpdates = DATA.live_updates || {};
 // ── Annual goal ladder (S649) ──
 // Each year prints its own pair: that year's Current over that year's Goal
-// (kpi_current_<year>, exported by excel_to_dashboard.py from the GOAL row's
-// cur_* columns, or from the live KPI and kpi_history for a live row). This
-// fiscal year falls back to kpi_metric so a row never goes blank. The fiscal
-// year is DATA.workplan_fy ("2026-27"), else July 1 to June 30 from today.
+// (kpi_current_<year>, stamped by excel_to_dashboard.py from the project's
+// Annual Goals row by the tab's own rule). The fiscal year is DATA.workplan_fy
+// ("2026-27"), else July 1 to June 30 from today.
 const LADDER_YEARS = ["2526", "2627", "2728", "2829", "2930"];
 function fySuffix(label, today) {
   const m = /^20(\d\d)-(\d\d)$/.exec(String(label || ""));
@@ -84,10 +83,16 @@ function yearGoal(p, s) {
   if (s === "2930") return p.kpi_target_2030 || "";
   return "";
 }
+// kpi_metric stands in for this year's Current only in a data file written
+// before the generator carried kpi_current_* at all; once the keys exist, a
+// blank year prints the dash, as the Annual Goals tab shows it.
+function hasYearCurrents(p) {
+  return LADDER_YEARS.some(s => Object.prototype.hasOwnProperty.call(p, "kpi_current_" + s));
+}
 function yearCurrent(p, s, fy) {
   const v = p["kpi_current_" + s];
   if (v != null && v !== "") return String(v);
-  return s === fy ? (p.kpi_metric || "") : "";
+  return s === fy && !hasYearCurrents(p) ? (p.kpi_metric || "") : "";
 }
 function yearPair(p, s, fy) {
   return `${yearCurrent(p, s, fy) || "—"}/${yearGoal(p, s) || "—"}`;
