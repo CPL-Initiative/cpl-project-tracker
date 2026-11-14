@@ -8,8 +8,9 @@
 -- No row is superseded.
 
 -- ===========================================================================================================
--- STATEMENT 1 -- NOT YET RUN. The S650 conductor's decisions and one pitfall (status proposed, for Sam to revise on
--- the next sheet's card 1). Run through the Supabase MCP, then mark this header RUN with the time.
+-- STATEMENT 1 -- RUN about 07:40Z 2026-11-14 by the S650 conductor (5 inserted; verify returned five slugs, one create each,
+-- lengths 344, 375, 335, 343, 352). The S650 conductor's decisions and one pitfall (status proposed, for Sam to revise on
+-- the next sheet's card 1). Do not rerun (ON CONFLICT makes a replay harmless).
 -- ===========================================================================================================
 insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
 ('d-cosumnes-two-pins-loaded-seven-held-s650','decision','Cosumnes River: two pinned rows loaded, seven rescore-only passes held','The S650 conductor, #3288: reread run 43568812092 replaced two program_requirement_records rows, 30566 Psychology AA-T (p.552) and 33072 History AA-T (p.404), GE units 34, both pass (filed passing 136 to 138); receipt holds before-values. The seven rescore-only passes (04602, 04607, 04614, 07305, 11319, 11338, 33542) wait for the one dry run.',array['program-requirements-harvest','decision'],'proposed','S650 checkpoint; docs/session_651_handoff.md and the lane files',null,null,'SkyPlover (S650)',date '2026-11-14'),

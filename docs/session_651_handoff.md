@@ -100,7 +100,7 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 | #3287 | merged `b48434bd` (credential harvest 2026-11-14) | none |
 | #3289 | merged `26d3849b` (UI pass: the Veteran map) | none |
 | #3288 (Cosumnes River) | merged `<MERGE_SHA_3288>`; display run `<DISPLAY_RUN_3288>` | COBIx spot-checked; none |
-| #3291 `claude/sweep-next-s650` | draft, head `cb9c3350`, Lassen's page read running | First things 2 |
+| #3291 `claude/sweep-next-s650` | draft, head `cb9c3350`, Lassen's page read started about 07:25Z, not read back | First things 2 |
 | #3283 | draft, sdccd objectives read running | First things 3 |
 | #3284 | draft, Allan Hancock outline index | First things 4 |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
@@ -135,7 +135,7 @@ Workers do not survive the session; brief a fresh worker per branch from its dif
   rollback restores them). The conductor read the table before (about 06:40Z) and after (about 07:13Z); COBIx
   spot-checked both against the public catalog. Display: `step=display`, `display_college=Cosumnes River College`, run
   `<DISPLAY_RUN_3288>` on `main` after merge `<MERGE_SHA_3288>`.
-- `cpl_memory`: five rows, `kb/receipts/cpl_memory_s650_rows_2026-11-14.sql` (NOT YET RUN at writing; undo by slug).
+- `cpl_memory`: five rows, `kb/receipts/cpl_memory_s650_rows_2026-11-14.sql` (RUN about 07:40Z 2026-11-14; undo by slug).
 - No `kb_curation` write; no model spend.
 
 ## Decisions to honor
@@ -189,8 +189,8 @@ names or emails to cover before publishing; `iaca-mvpmcjyl` waits on Crystal Nas
 Touched: the docs audit (and `--apply`); this handoff; the lanes `program-requirements-harvest`, `commons`, `library`
 (each under 20,000 bytes, retired text moved verbatim to their lessons docs, *Moved from the lane (S650 checkpoint)*);
 the harvest lessons' S650 section; `conductor_mode.md`'s S650 lessons; a KB note; the index rebuild; the run logs
-`kb/status/program-requirements.json` and `exhibit.json`; the memory receipt; the vault note.
-**Skipped, with reason:** step 12's headline and harvest rows `<STEP12_STATUS>`; the pipeline view (no M-ID stage,
+`kb/status/program-requirements.json` (headline and harvest included) and `exhibit.json`; the memory receipt (RUN); the vault note.
+Step 12's headline and harvest rows were refreshed from the conductor's reads at about 07:40Z (headline: 14,596 of 20,282 active programs pass, at 118 colleges; S649's was 14,594); the run log's `next_run` stays as written, since this firing had no `get_trigger` (the routine fires by its schedule, hourly 10:12 PM to 6:12 AM Pacific). Lassen's page read (#3291) started on the push at about 07:25Z and was not read back. **Skipped, with reason:** the pipeline view (no M-ID stage,
 auditor count or re-mint moved); `kb/README.md` and `README.md` (no structure or user-facing surface beyond lane
 detail); `CLAUDE.md`'s §11 rows (no lane changed state; the sheet pointer already moved). Wiki candidates
 (`/wiki-ingest`, not written): Sheet 196 is the current sheet; a fill must check the units it fills.

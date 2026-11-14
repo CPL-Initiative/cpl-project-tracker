@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1488,
-    "bytes": 15530343,
+    "bytes": 15531037,
     "over_budget": 4,
     "handoff_max": 651,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 157,
-        "bytes": 4900003,
+        "bytes": 4900259,
         "over": 1
       },
       "index": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 612,
-        "bytes": 4342977,
+        "bytes": 4343415,
         "over": 0
       }
     },
@@ -62,8 +62,8 @@
     },
     "vault": {
       "files": 84045,
-      "bytes": 14728342261,
-      "heavy_bytes": 10732484109,
+      "bytes": 14728343073,
+      "heavy_bytes": 10732484222,
       "heavy_share": 0.729,
       "ignore_filters": [
         "cpl-project-tracker/.claude/worktrees/agent-abe7c3a6eebe4b653/kb/receipts",
@@ -376,10 +376,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2390428720,
+        "bytes": 2390428833,
         "kind": "dir"
       },
-      "message": "directory totals 2,390,428,720 B inside the vault"
+      "message": "directory totals 2,390,428,833 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

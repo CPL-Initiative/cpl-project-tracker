@@ -154,6 +154,7 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - Background `sleep` timers were the only wait (no `send_later`); one timer per wait, one batch of calls per wake.
 - The conductor used `gh api` once for check runs, against the rule. MCP `get_check_runs` with `perPage` 1 is the way.
 - A worker copied #3265's Claude-Session trailer into #3283's first commit; it was left, since a push would start a second reader. A brief names the session's own trailer.
+- A college load changes `kb/status/commons_data.json` and `commons.json`: #3288's `test` failed in lints on head 74a05742 after Cosumnes River's 136 to 138. The college PR rebuilds both before its last test run (S649's stale-status lesson, a third time).
 - Worked: the checkpoint's documents went to one worker while the conductor kept the Supabase reads and the memory receipt's run.
 
 ## What went wrong in S649, and what worked
