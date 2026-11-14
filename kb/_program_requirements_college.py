@@ -1963,17 +1963,42 @@ def cq_title_key(nav: dict) -> str:
     return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", text.lower()).strip()
 
 
+def cq_identity(nav: dict) -> tuple[str, str]:
+    """An entry's identity: its title key and its award. The title key keeps
+    every word of the title but case, spacing and dashes, so a pattern or kind
+    the title names ("(CalGETC)", "(IGETC)", "(CSU GE)", "Noncredit") keeps two
+    programs apart; the award is the local award codes the title ends with, else
+    the award its words name, else none."""
+    text = nav.get("text") or ""
+    codes = cq_group(text, "")
+    award = codes or (cq_name_award(text)[1] or "").lower()
+    return cq_title_key(nav), award
+
+
+def cq_twin(kept: dict, other: dict) -> None:
+    """Record on the kept entry the id of a twin listing it stands for."""
+    oid = other.get("id")
+    if oid is not None and oid != kept.get("id") and oid not in kept.setdefault("twin_ids", []):
+        kept["twin_ids"].append(oid)
+
+
 def cq_distinct(entries: list[dict]) -> tuple[list[dict], int]:
     """Each program entry once. Chaffey lists every program in its index and
-    again under its school, under two ids with one title (401 entries for 202
-    programs, 1,226 loads in run 38203335820); the first is read."""
-    out, keys = [], set()
+    again under its school, under two ids with one title and award (401 entries
+    for 202 programs, 1,226 loads in run 38203335820): the two are a twin
+    listing, the first is read, and the other's id is kept on it as `twin_ids`.
+    The entries returned are copies; the list passed in is left as it was."""
+    out, kept = [], {}
     for e in entries:
-        k = cq_title_key(e)
-        if k in keys:
+        k = cq_identity(e)
+        if k in kept:
+            cq_twin(kept[k], e)
             continue
-        keys.add(k)
-        out.append(e)
+        kept[k] = dict(e, twin_ids=[]) if "twin_ids" not in e else dict(e, twin_ids=list(e["twin_ids"]))
+        out.append(kept[k])
+    for e in out:
+        if not e["twin_ids"]:
+            del e["twin_ids"]
     return out, len(entries) - len(out)
 
 
@@ -2022,8 +2047,11 @@ def cq_page(entry: dict, page: dict | None, prefix: str, children: list | None =
     url = prefix + (entry.get("aliaspath") or str(entry.get("id")))
     got = {"final_url": url, "title": title, "h1": title, "body": text, "content": text,
            "status": 200, "access": "ok", "links": []}
-    return {"url": url, "title": title, "h1": title, "body": text, "content": text, "got": got,
-            "codes": page_codes(text), "node": entry.get("id"), "group": cq_group(entry.get("text") or title, url)}
+    out = {"url": url, "title": title, "h1": title, "body": text, "content": text, "got": got,
+           "codes": page_codes(text), "node": entry.get("id"), "group": cq_group(entry.get("text") or title, url)}
+    if entry.get("twin_ids"):
+        out["twin_ids"] = list(entry["twin_ids"])
+    return out
 
 
 # A dropped connection loses a whole branch of the walk: Las Positas's two
@@ -2093,7 +2121,12 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
     get = lambda u: cq_json(reader, u, errors)  # noqa: E731
     entries, dropped = cq_distinct(entries)
     report["curriqunet"]["same_title_entries"] = dropped
-    queue, seen, i = list(entries), {e.get("id") for e in entries} | {cq_title_key(e) for e in entries}, 0
+    # Ids and identities are kept apart: a program nested under another is a
+    # twin only when its title and award match an entry's, and then its id is
+    # recorded on that entry rather than dropped unseen.
+    queue, i = list(entries), 0
+    ids = {e.get("id") for e in entries} | {t for e in entries for t in e.get("twin_ids") or []}
+    by_identity = {cq_identity(e): e for e in entries}
     while i < len(queue) and i < MAX_PAGES:
         e = queue[i]
         i += 1
@@ -2102,15 +2135,23 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
         if page and e.get("haschildbodynavs"):
             children, more = cq_children(get, catalog, root, page)
             for m in more:
-                if m.get("id") not in seen and cq_title_key(m) not in seen:
-                    seen.update((m.get("id"), cq_title_key(m)))
-                    queue.append(m)
+                if m.get("id") in ids:
+                    continue
+                ids.add(m.get("id"))
+                twin = by_identity.get(cq_identity(m))
+                if twin is not None:
+                    cq_twin(twin, m)
+                    report["curriqunet"]["same_title_entries"] += 1
+                    continue
+                by_identity[cq_identity(m)] = m
+                queue.append(m)
         pg = cq_page(e, page, prefix, children)
         if pg:
             pages.append(pg)
         if i % 50 == 0:
             print("  read %d of %d program pages" % (i, len(queue)), flush=True)
     report["curriqunet"]["entries_read"] = i
+    report["curriqunet"]["twin_ids"] = {str(e.get("id")): e["twin_ids"] for e in queue if e.get("twin_ids")}
     report["curriqunet"]["failed_calls"] = failed_calls(errors)   # before the list is cut (pages_account())
     del errors[40:]
     return pages
