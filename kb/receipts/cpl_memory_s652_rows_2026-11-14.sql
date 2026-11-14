@@ -91,3 +91,20 @@ group by m.slug, m.summary order by m.slug;
 -- ===========================================================================================================
 -- STATEMENT 7 -- RUN by the conductor at 14:57Z 2026-11-14: sam-ccn-structures-gold-standard-2026-11-14.
 -- ===========================================================================================================
+
+-- ===========================================================================================================
+-- STATEMENT 8 -- NOT YET RUN (2 rows; summaries 354 and 367 characters, measured by script). The conductor's
+-- HUMA M10OI decision and the Riverside City rescore fact (status proposed). One execute_sql call; record RUN here.
+-- ===========================================================================================================
+insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('d-huma-m10oi-into-m1110-s652','decision','Merge HUMA M10OI into HUMA M1110 directly','The S652 conductor: the dismissal row that holds HUMA M1110 and M10ME apart (#3304, honors-s652@bot) also stops the matcher proposing HUMA M10OI ("World Religion") with M1110 ("World Religions"). Merge M10OI into M1110 directly as its own small M-ID change under a receipt that undoes it, with one reader on the rewiring. Not done at the S652 checkpoint.',array['commons','honors','decision'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('riverside-city-rescored-prefix-aliases-s652','fact','Riverside City rescored from its filed pages under prefix aliases','S652, slice C of #3299: Riverside City reconciled from its filed pages (run 43605883626, sources_from=38108461470, no page loaded), reread run 43608708424 (244 posted, 240 replaced, 4 held). Live passing 222 to 230 of 244 (15:10Z, 15:15Z). Receipt kb/receipts/program_requirement_records_college_reread_riverside_city_43608708424.json. Display waits on COBIx (#3305).',array['program-requirements-harvest','reconcile','fact'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyAvocet (S652)', 'create', 'S652 checkpoint, final refresh (2026-11-14)', to_jsonb(m)
+from public.cpl_memory m where m.slug in ('d-huma-m10oi-into-m1110-s652','riverside-city-rescored-prefix-aliases-s652')
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
+select m.slug, length(m.summary) as summary_chars, count(l.id) filter (where l.action = 'create') as creates
+from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
+where m.slug in ('d-huma-m10oi-into-m1110-s652','riverside-city-rescored-prefix-aliases-s652')
+group by m.slug, m.summary order by m.slug;

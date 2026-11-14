@@ -24,70 +24,48 @@ the UTC day were S650's; the contacts harvest is Sundays.
 
 ## First things, in order
 
-1. **[Open Asks Sheet 197](https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd) is answered in full (Complete pressed 14:38Z
-   2026-11-14); carry out what remains.** Card 1 *"fine"*; card 2 *"delete"* (First things 4); card 3: *"Base number plus H
-   (MATH M1036H)"*, *"Two-way: either satisfies the other"*, *"Build the field first, then the rows"*, *"Rows for all 508
-   pairs"*, *"I name who in the note"* with the note empty (the conductor decided MATH M1044:
-   `d-math-m1044-stays-no-one-asked-s652`: it stays apart from M1036 and no one is asked, on Sam's word that an M-ID is our own construct); card 4 *"go"*, with the four guards (First things 9). Sheet 196 is superseded.
-   **No ask is open on any sheet.** The next sheet (198) is a record of decisions, each card with one real example
-   before and after and where on the Commons to see it.
-2. **Slice A on draft #3300** (`claude/ncl-catalog-lookup-s652`): Skyline's free capture (run 43600982846) filed
-   `capture_preview.json` at `18f220ac`. Of Skyline's 86 no-closed-list programs, 49 are `found` on 49 distinct pages
-   (05809 on `programs/accounting-as.php`), 37 `not_matched`, none `not_listed`; the run's self-test on real pages was
-   27 of 28 with no false match (*as reported* by the worker, who judged the 49 by page address: run artifacts cannot be
-   downloaded here). At least five `not_matched` look like matcher misses (Interdisciplinary Studies titles written
-   with abbreviations or "Opt I"). The worker was adding each `not_matched` reason, each found page's heading and the
-   self-test numbers to the filed preview when S652 ended: read the branch's head and PR body first. Then a second
-   reader on that head, then merge on a green `test`. Extracting Skyline's 49 found pages is about $3.44 (estimated),
-   inside the $40 limit: the conductor's call after the merge.
-3. **Riverside City under the prefix aliases: the reread is HELD, and the reader has a fault.** The first reconcile
-   (run 43603042173, branch `claude/riverside-city-prefix-rescore-s652` at `e9a6304f`, a fresh capture) read 244 pages
-   where the filed capture (run 38108461470) read 435 index entries: `cq_distinct` in
-   `kb/_program_requirements_college.py` now drops curriQunet index entries whose title key repeats (191 dropped; the
-   rule came from Chaffey, run 38203335820). 36 transfer-degree "(CalGETC)" pages went `page_claimed` with no source
-   and 33218, 33229, 37483, 41364 `not_found`; no page errored. Only 42719 moved to passing; no record went pass to
-   fail; 31892's sum changed (21 to 42 against 24) and it still fails. **Do not reread from that branch.** Two next
-   steps: (a) the alias proof over the FILED pages: run dispatched at 14:38Z on
-   `claude/riverside-city-prefix-rescore-filed-s652` (`step=reconcile`, `extract=0`, `sources_from=38108461470`,
-   `limit=0`; free, no page loaded): compare it with `main` record by record
-   (`compare(load_records(main), load_records(branch))` in `kb/_program_requirements_wave.py`), expecting 32938, 41749,
-   41757, 42719, 43695, 43896, 44155 newly passing (and 44363, 44469; 18113, 31163, 37483 change coverage); then
-   `step=reread` with `force=<that run id>` (receipt
-   `kb/receipts/program_requirement_records_college_reread_riverside_city_<run>.json`), rebuild
-   `kb/status/commons_data.json` and `commons.json` on the branch, and `step=display` with
-   `display_college=Riverside City College` after COBIx's spot-check. (b) **the `cq_distinct` fix**: dedupe by page id
-   or key on `cq_group`'s local award codes, so two programs sharing an index title both keep their pages; a second
-   reader before any dispatch, and a count of how many curriQunet colleges' next capture would lose pages the same way.
-   This is the catalog-first weakness #3299 names (a reader missing a program that is in the catalog): tell COBIx.
-   Then Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley, one college at a time.
-4. **The two Honors bot-row deletes** (`claude/honors-two-row-delete-s652`, a draft PR to follow; nothing applied): one
-   guarded delete of the `automerge-v1@bot` rows HUMA M10ME and LIBR M10CJ, on Sam's "delete" (Sheet 197 card 2). The
-   conductor's live reads, a second reader on the plan, then the push of `.apply`.
-5. **The `CrsId` prefix route:** the build takes the prefix from the Program Course File's `CrsId` where the course
-   list disagrees; 11 of slice C's 17 pairs then retire.
-6. **Draft #3293** (the passing dry run, head `cb60a1b0`) after slice A's first capture: fold the own-list rule in,
-   then one migration and one rescore; Cosumnes River's seven held passes follow. COBIx's statewide count is delivered
-   (#3297).
-7. **Allan Hancock's trial on #3284**, due 2026-11-15 (`index=kb/course_outline_index/index_43566318943.json`,
-   `slugs=allan_hancock`, `trial=12`), and the next objectives host, sac (a new full read).
-8. **Lassen:** a capture pinned to main's pages for 31132, 33263, 33729, 33730 and 42300, then the `set` step with a
-   per-record hold; and the structured-fields design's migration step 1, Lassen first, with COBIx's spot-check before
-   step 4.
-9. **Slice B** of #3299: Sam's go is given (Sheet 197 card 4, 14:38Z); build it after slice A merges and its second look
-   has run per college, both bases side by side on the headline, under the conductor's four guards (#3299, comment 6877610924).
+1. **No sheet ask is open.** [Open Asks Sheet 197](https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd) is answered in full (Complete pressed 14:38Z 2026-11-14; card 1
+   *"fine"*, card 2 *"delete"*, card 3 the Honors design, card 4 *"go"*); Sheet 196 is superseded. Build Sheet 198 as a
+   record of decisions, each card with one real example before and after and where on the Commons to see it.
+2. **Read COBIx first:** #3299, #3300, #3305 and #3111, from the last comment. Sam looped him into this session's
+   conversation (about 15:15Z) and he will comment.
+3. **Slice A, #3300** (`claude/ncl-catalog-lookup-s652`, head `5e1657c3`): merge `main` (with this checkpoint) in; read
+   the fresh free Skyline capture on `5e1657c3` (dispatched about 15:21Z; until it files, the committed
+   `skyline/capture_preview.json` is from `13fe2023`): count `catalog_lookup` by value, check 05809 is `found`, check
+   each `found` by heading and award; merge on a green `test`. Then Skyline's extraction estimate.
+4. **The five colleges and Riverside City's display.** Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo
+   Valley each have a free filed-pages reconcile (dispatched about 15:23Z, branch `claude/<college>-prefix-rescore-filed-s652`):
+   the compare (`compare(load_records(main), load_records(branch))` in `kb/_program_requirements_wave.py`), then
+   `step=reread` with `force=<its reconcile run id>`, the two status builders, a PR, COBIx's spot-check, the display.
+   Riverside City (draft #3305): `step=display` with `display_college=Riverside City College` after COBIx's spot-check
+   of 32938, 42719, 43897, 44155 and 44469 (#3299, comment 6879661422).
+5. **The `cq_distinct` fix** in `kb/_program_requirements_college.py` (it drops curriQunet index entries whose title key
+   repeats; Riverside City lost 191 of 435): dedupe by page id or award code, with a count of the curriQunet colleges it
+   affects and a second reader before any dispatch.
+6. **#3304** (`claude/honors-two-row-delete-s652`): merge `main` in (its `commons.md` sentence is already in this
+   checkpoint's lane: take this branch's text in the conflict), a green `test`, merge. Then the Honors build: the
+   `honors_of` field in `kb/_apply_curation.py` (a design, one reader on the rewiring), rows for the 508 pairs, mints
+   numbered base plus H on the CCN pattern; HUMA M10OI into M1110 (`d-huma-m10oi-into-m1110-s652`).
+7. **The `CrsId` prefix route:** 11 of slice C's 17 pairs retire.
+8. **Slice B** of #3299 (Sam's go given, Sheet 197 card 4): after slice A merges and its second look has run per
+   college, both bases side by side on the headline, under the four guards (#3299, comment 6877610924).
+9. **Draft #3293** after slice A; Cosumnes River's seven held passes follow.
+10. **Allan Hancock's trial on #3284** (`index=kb/course_outline_index/index_43566318943.json`, `slugs=allan_hancock`,
+    `trial=12`) and the objectives host sac, both due 2026-11-15.
+11. **Lassen's five records** (31132, 33263, 33729, 33730, 42300: a capture pinned to main's pages, then the `set` step
+    with a per-record hold) and the display design's migration step 1, Lassen first.
 
 Then Rule 8's `cpl_memory` query, the three-repo check, the highest-numbered handoff, `list_sessions` if you have it
 (otherwise the open PRs and `main` since this handoff), `df -h /`, `git worktree list`.
 
 ## If you are the scheduled session (the CPL Queue routine)
 
-**Safe unattended, in this order,** each under Rule 10 and its playbook: *First things* 1 (answered cards not on the
-hold list), 2, 3 (the reread is a data write: the compare and COBIx's spot-check first), 4 (his word is given; it
-still needs the reviewed plan), 5, 6, 7, 8 and 9 under its guards, and code-only
-items from the lanes' NEXT lines. The display go of 2026-10-10 stands for every college; a merge that publishes waits
-on COBIx's spot-check. **Decide near-equal choices and move** (Sam's pick-a-lane ruling, below); hold only the hold list.
-**Never run without Sam's word:** any Honors mint (held until the `honors_of` field is built); the Sierra `is_test` deploy; anything on the `CLAUDE.md` hold list.
-#2894 is his.
+**Safe unattended, in this order,** each under Rule 10 and its playbook: *First things* 1 to 11, the data writes
+(rereads, displays, the Honors build) each with its compare, reader and spot-check first, and code-only items from the
+lanes' NEXT lines. The display go of 2026-10-10 stands for every college; a merge that publishes waits on COBIx's
+spot-check. **Decide near-equal choices and move** (Sam's pick-a-lane ruling, below); an M-ID change is the
+conductor's under a receipt that undoes it. **Hold only the hold list:** the Sierra `is_test` deploy and anything on
+the `CLAUDE.md` hold list. #2894 is his.
 
 ## You are the conductor
 
@@ -127,24 +105,20 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 | PR or branch | State | Next |
 |---|---|---|
 | #3295 `claude/practical-meitner-7rzj3f` | open: the declaration and this checkpoint | merge on green |
-| #3300 `claude/ncl-catalog-lookup-s652` | draft, head `13fe2023`; Skyline run 43600982846 | First things 2 |
-| `claude/riverside-city-prefix-rescore-s652` | no PR; `e9a6304f`, the short fresh capture: do not reread from it | First things 3 |
-| `claude/riverside-city-prefix-rescore-filed-s652` | no PR; cut from `main` `936c75d8`; the filed-pages reconcile dispatched 14:38Z | First things 3 (a) |
-| `claude/honors-two-row-delete-s652` | a worker's branch; draft PR to follow; nothing applied | First things 4 |
-| #3301 (slice C, prefix aliases) | merged `c6e0b893` (14:04Z) | First things 3 and 5 |
-| #3303 (COBIx's review of the design) | merged `3b2d9b38` (about 13:59Z) | none |
-| #3302 (the drop of the 625) | merged `bd549c5f` (13:40Z) | commons NEXT 6 |
-| #3298 (the identities apply) | merged `feeeeef2` (about 13:31Z) | commons NEXT 6 |
-| #3296 (the display design) | merged `19ed0958` (about 12:53Z) | First things 8 |
-| #3297 (the electives-fill census) | merged `e713ee10` (about 12:45Z) | First things 6 |
-| #3293 `claude/passing-dry-run-s651` | draft, head `cb60a1b0`, not reviewed by COBIx | First things 6 |
-| #3284 (Allan Hancock) | draft | First things 7 (due 2026-11-15) |
+| #3300 `claude/ncl-catalog-lookup-s652` | draft, head `5e1657c3`; fresh Skyline capture dispatched about 15:21Z | First things 3 |
+| #3305 `claude/riverside-city-prefix-rescore-filed-s652` | draft, head `f8ddc754`; reread run 43608708424 landed | First things 4 |
+| `claude/merced-prefix-rescore-filed-s652`, `claude/moreno-valley-prefix-rescore-filed-s652`, `claude/norco-prefix-rescore-filed-s652`, `claude/san-bernardino-valley-prefix-rescore-filed-s652`, `claude/diablo-valley-prefix-rescore-filed-s652` | no PR; filed-pages reconciles dispatched about 15:23Z off `main` `936c75d8` | First things 4 |
+| `claude/riverside-city-prefix-rescore-s652` | `e9a6304f`, the short fresh capture; leave it for GitHub to delete; never reread from it | none |
+| #3304 `claude/honors-two-row-delete-s652` | open; the delete and its follow-up migration applied | First things 6 |
+| #3301, #3303, #3302, #3298, #3296, #3297 | merged (slice C `c6e0b893`; design review `3b2d9b38`; the drop `bd549c5f`; the apply `feeeeef2`; the design `19ed0958`; the census `e713ee10`) | none |
+| #3293 `claude/passing-dry-run-s651` | draft, head `cb60a1b0` | First things 9 |
+| #3284 (Allan Hancock) | draft | First things 10 (due 2026-11-15) |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
-| samueltlee/CPLBrain#788 `claude/determined-mayer-7rzj3f` | draft, head `0dd1cbd9`: Sheet 197 and this session's note | merge on green |
+| samueltlee/CPLBrain#788, #789 | merged (`ccfde40d`, `59251222`) | none |
 
-Worktrees: `.claude/worktrees/agent-a308250014c9995ad` (slice A, #3300) and
-`.claude/worktrees/agent-aef967aa254e37687` (Riverside City). Workers do not survive the session: brief a fresh worker
-per branch from its diff and this ledger, and remove a worktree whose branch is pushed and whose worker is gone.
+Worktrees still on disk: `.claude/worktrees/agent-a308250014c9995ad` (#3300), `.claude/worktrees/agent-aef967aa254e37687`
+(Riverside City) and `.claude/worktrees/agent-a871597cc45dacfc5` (#3304). Workers do not survive the session: brief a
+fresh worker per branch from its diff and this ledger, and remove a worktree whose branch is pushed and whose worker is gone.
 
 ## What shipped (S652)
 
@@ -155,7 +129,11 @@ per branch from its diff and this ledger, and remove a worktree whose branch is 
 - **The display's structured-fields design** (#3296, COBIx's review folded in by #3303).
 - **COBIx's electives-fill census** (#3297; on #3111, comment 6877317551): 31 outside candidates at most, about 2 real.
 - **Draft #3300**, slice A: the no-closed-list lookup, self-tested at 85.3% recall with no false match.
-- Headline (the conductor's reads at 14:22Z): 14,597 of 20,282 active programs pass, at 118 colleges (unchanged).
+- **Riverside City rescored from its filed pages** (#3305): 222 to 230 of 244 passing (the conductor's reads at 15:10Z
+  and 15:15Z).
+- **The Honors rows apart** (#3304): the two bot rows deleted and the pairs held apart by dismissal rows.
+- Headline (the conductor's reads at 14:22Z): 14,597 of 20,282 active programs pass, at 118 colleges; Riverside City's
+  8 newly passing landed after that read.
 
 ## Live data written, each with its undo
 
@@ -164,9 +142,17 @@ per branch from its diff and this ledger, and remove a worktree whose branch is 
   `kb/identities_rebuild_out/2026-11-14-drop/apply_receipt.json` (each dropped entry whole). Undo in order, each by
   `python3 kb/_identities_rebuild.py --undo <receipt>`: the drop's receipt first, then the 14b receipt; then a daily
   run.
-- `cpl_memory`: the rows in `kb/receipts/cpl_memory_s652_rows_2026-11-14.sql` (the conductor runs it at the checkpoint;
-  its header says RUN once it is; undo by slug).
-- No Supabase table written by the session's PRs; no model spend; no paid run.
+- `kb_curation` (#3304): run 43607926526 (15:01Z to 15:07Z) deleted the `automerge-v1@bot` rows folding HUMA M10ME into
+  HUMA M1110 and LIBR M10CJ into LIBR M1040 (live count 0 at 15:07Z; 40,711 to 40,709 rows); receipt
+  `kb/receipts/migration_s652_honors_two_row_delete_43607926526.json` (both rows whole); undo
+  `kb/migrations/2026-11-14_s652_honors_two_row_delete_rollback.sql`. The follow-up migration (pushed 15:15Z; read
+  15:21Z) holds the titles and writes two dismissal rows under `honors-s652@bot`; its rollback file sits beside it.
+- `program_requirement_records`, Riverside City: reread run 43608708424 (244 posted, 240 replaced, 4 held: 22804, 31456,
+  39033, 40061); receipt `kb/receipts/program_requirement_records_college_reread_riverside_city_43608708424.json`
+  (before-values, guarded rollback). The display has not run.
+- `cpl_memory`: 18 rows run by the conductor (STATEMENTS 1 to 3 and 5 to 7 of `kb/receipts/cpl_memory_s652_rows_2026-11-14.sql`;
+  STATEMENT 4 withdrawn), plus STATEMENT 8's two rows, not yet run; undo by slug.
+- No model spend; no paid run.
 
 ## Decisions to honor
 
@@ -185,6 +171,14 @@ and, a minute later: *"think of MIDs as low stakes attempts to get our course cl
 staging layer (a merge, a split, a re-mint under the playbook, removing a row a bot saved) is the conductor's to decide
 and carry out under a receipt that undoes it, with no card first; a row a person saved still wins (Rule 10); the
 result shows on the Commons, and that is where he reacts.
+
+**Sam, in session, about 14:57Z 2026-11-14,** after asking *"are the honors CCNs distinct records ENGL C1000 and ENGL
+C1000N?"* and *"ENGL C1000H"*: *"CCN structures should be our gold standard"* (`sam-ccn-structures-gold-standard-2026-11-14`).
+A reader measured: ENGL C1000 (115 members, 114 colleges) and ENGL C1000H (35 members, 35 colleges) are separate
+records; of 57 CCN rows, 24 are H records beside their base, and no CCN base holds an Honors course; 3 E records (MATH
+C2210E, MATH C2211E, STAT C1000E). Under C-ID, 144 of 484 bases hold Honors local courses and C-ID has no H ids; those
+stay as the official body numbers them (Sheet 195). At about 15:15Z: *"i looped cobix in our conversation this session
+and he'll have some comments for you based on it. this was a really helpful session!"*
 
 **Sam's, in session S652 (about 14:45Z 2026-11-14; `sam-conductor-picks-a-lane-2026-11-14`), on Sheet 197's asks:**
 *"on 197 asks, my honest read is that I don't really understand the asks the way they are written--language is obtuse.
@@ -219,7 +213,7 @@ if still not found, flag "on COCI, not listed in the catalog" and move on, never
 **The conductor's,** each a `cpl_memory` row (proposed) and a DECIDED line in its lane, for Sam to revise on the
 sheet's card 1: `d-catalog-first-slice-order-s652`, `d-ncl-lookup-not-listed-needs-catalog-list-s652`,
 `d-prefix-alias-evidence-rule-s652`, `d-lassen-stale-note-known-defect-s652` (program-requirements-harvest);
-`d-sheet-pickers-are-buttons-s652` (the vault's sheet builder). Facts `electives-fill-outside-section-census-s652`,
+`d-sheet-pickers-are-buttons-s652` (the vault's sheet builder); `d-huma-m10oi-into-m1110-s652` (commons; not done). Facts `electives-fill-outside-section-census-s652`,
 `identities-map-applied-and-dropped-s652`.
 
 ## Pitfalls learned
@@ -230,12 +224,16 @@ sheet's card 1: `d-catalog-first-slice-order-s652`, `d-ncl-lookup-not-listed-nee
 - `p-new-matcher-needs-self-recall-test-s652`: the first title rule found 63% of pages already held
   ([note](kb-notes/methodology-a-new-matcher-is-gated-by-a-self-recall-test.md)).
 - `p-mis-codes-carry-record-id-suffix-s652`: ENGL304-2507 reads as ENGL 304.
-- Times from memory were wrong twice; run `date -u`. Run scripts in the shared scratchpad with `python3 -I` from a
+- A lane compaction dropped `objectives_reread_plan`, a link a test reads, and the lints job failed: after compacting
+  a lane, run the Python tests that read lanes. A config change proved on a fresh capture measured the reader
+  (`cq_distinct`): prove it on the filed pages.
+- Times from memory were wrong five times, by 2 to 10 minutes; take every time from `date -u` in the same command. Run scripts in the shared scratchpad with `python3 -I` from a
   subfolder (a stray `inspect.py` shadowed the standard library).
 
 ## COBIx threads
 
-On #3111: plan v2, the August drop, the dry run (6875299481) and the census (6877317551) await him. On #3299: the
+Sam looped COBIx into this session's conversation; read his comments first. On #3300 he reviewed slice A (6879508862,
+answered by the worker). On #3299: the Riverside City spot-check ask (6879661422). On #3111: plan v2, the August drop, the dry run (6875299481) and the census (6877317551) await him. On #3299: the
 conductor's guards (6877610924) and 6878460974. #3110 (6877162522) is moot: Sam answered in session. His v2 on #3237
 is still awaited. On #3291 the conductor answered his question (6877180917). Read him from the last comment (`perPage`
 1 from the last page); never `get` #3111 or #3110.
@@ -249,12 +247,12 @@ file.
 
 ## Open work, in order (from the lanes' NEXT lines)
 
-1. **`program-requirements-harvest`:** First things 2 to 9; then Los Medanos, Monterey Peninsula and Los Angeles Valley
+1. **`program-requirements-harvest`:** First things 3 to 5 and 7 to 11; then Los Medanos, Monterey Peninsula and Los Angeles Valley
    (a person); the standing list (Cerro Coso 40922 and Grossmont 46141 held; Chaffey's objectives-only read; the RCCD
    district profile; COBIx's three Glendale follow-ups; Desert 10195's stored hold; the reading-procedure check; the PDF
    headings; the free GE page reads; the district phase 0 builder; the wave sample, De Anza, Redwoods); objectives
    laspositas, Coastline, Golden West after sac.
-2. **`commons`:** the Honors build as Sam ruled it (the `honors_of` field, the 508 pairs' rows, base-plus-H mints; MATH M1044 stays apart and no one is asked; exhibit MAPCBES-CBES-1-001's likely mis-filed articulation goes on the clean-up worklist); FIRE 130 X's row-audit card; price the model pass; a
+2. **`commons`:** the Honors build as Sam ruled it (First things 6: the `honors_of` field, the 508 pairs' rows, base-plus-H mints; HUMA M10OI into M1110; LIBR M10CJ's stale entry in `kb/coci_minted_courses.json`; MATH M1044 stays apart and no one is asked; exhibit MAPCBES-CBES-1-001's likely mis-filed articulation goes on the clean-up worklist); FIRE 130 X's row-audit card; price the model pass; a
    potential-CPL column; the Leadership outlines; the #3298 and #3302 follow-ups (`title_differs_in_substance` and the 16
    `_superseded_rekeyed_from` entries; the header's 2,319; a merge member with no articulation record gets no entry;
    the drop report's rows section; `standards_2_ruled_renames_test.py` and `ccc_metric_test.py` failing on `main` with
@@ -280,13 +278,14 @@ its archive; a KB note, `methodology-a-new-matcher-is-gated-by-a-self-recall-tes
 `kb/status/program-requirements.json` and `kb/status/course.json`; the memory receipt. The vault note and Sheet 197
 are the vault worker's. **Skipped, with reason:** the pipeline view (the identities map feeds the adoption lists, not
 the M-ID stage list; no auditor count or re-mint moved); `kb/README.md` and `README.md` (no KB structure, generator or
-user-facing surface changed beyond lane detail). Wiki candidates (`/wiki-ingest`): the identities map applied and its
-625 held entries dropped (2,316 entries); catalog-first collection is Sam's rule.
+user-facing surface changed beyond lane detail). The final refresh added the Honors delete, Riverside City's
+reread, slice A's narrowed rules and the lints fix. Wiki candidates (`/wiki-ingest`): the identities map applied and its
+625 held entries dropped (2,316 entries); catalog-first collection is Sam's rule; CCN structures are the gold standard
+for M-ID Honors records; the conductor picks a lane among near-equal choices.
 
 ## Let go
 
-The conductor drops every PR subscription it holds (#3295, #3300 and any worker PR), holds no artifact watch and no
-scheduled check-in; its background timers end with it. The next session watches Sheet 197, #3300 and the Riverside
-City branch.
+The conductor holds no PR subscription and no sheet watch it started; its background timers end with the session.
+The next session watches #3300, #3304, #3305 and the five rescore branches.
 
 Greetings, you are SkyGodwit (Session 653), see SkyAvocet's handoff — `docs/session_653_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_653_handoff.md) — let's keep rolling with our queue.

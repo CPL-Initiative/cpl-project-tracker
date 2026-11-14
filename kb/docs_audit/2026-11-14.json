@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1492,
-    "bytes": 15655592,
+    "bytes": 15668088,
     "over_budget": 3,
     "handoff_max": 653,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 158,
-        "bytes": 4988422,
+        "bytes": 4992376,
         "over": 1
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2789626,
+        "bytes": 2798023,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 554534,
+        "bytes": 554210,
         "over": 2
       },
       "handoff": {
         "files": 614,
-        "bytes": 4384057,
+        "bytes": 4384526,
         "over": 0
       }
     },
@@ -61,15 +61,15 @@
       "vault_heavy_path": 304
     },
     "vault": {
-      "files": 112286,
-      "bytes": 19792295625,
-      "heavy_bytes": 14430766475,
+      "files": 112288,
+      "bytes": 19811149883,
+      "heavy_bytes": 14449602448,
       "heavy_share": 0.729,
       "ignore_filters": [
+        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/receipts",
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/receipts",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/receipts",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/receipts",
         "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/program_requirements_college",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/program_requirements_college",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -427,12 +427,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "kb/receipts",
+      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/receipts",
       "detail": {
-        "bytes": 2426308121,
+        "bytes": 2445123592,
         "kind": "dir"
       },
-      "message": "directory totals 2,426,308,121 B inside the vault"
+      "message": "directory totals 2,445,123,592 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts",
+      "detail": {
+        "bytes": 2426310730,
+        "kind": "dir"
+      },
+      "message": "directory totals 2,426,310,730 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -448,16 +458,6 @@
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": ".claude/worktrees/agent-a308250014c9995ad/kb/receipts",
-      "detail": {
-        "bytes": 2426291078,
-        "kind": "dir"
-      },
-      "message": "directory totals 2,426,291,078 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/receipts",
       "detail": {
         "bytes": 2426291078,
         "kind": "dir"
@@ -829,10 +829,10 @@
       "fixable": false,
       "path": ".claude/worktrees/agent-a308250014c9995ad/tests",
       "detail": {
-        "bytes": 12743032,
+        "bytes": 12743882,
         "kind": "dir"
       },
-      "message": "directory totals 12,743,032 B inside the vault"
+      "message": "directory totals 12,743,882 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

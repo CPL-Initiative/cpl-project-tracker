@@ -103,13 +103,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-14T14:50:33Z",
+  "written_at": "2026-11-14T15:31:10Z",
   "project": "course",
   "next_step": {
     "title": "The honors_of field, then the 508 pairs, then the Honors mints",
-    "text": "Sam ruled the Honors design on Sheet 197: build the honors_of field in the curation apply first, then two-way equivalence rows for all 508 pairs, then new Honors M-IDs numbered base plus H. The two bot-row deletes go as one guarded delete after their review."
+    "text": "The two Honors bot rows are deleted. Next: build the honors_of field in the curation apply with one reader on the rewiring, then two-way equivalence rows for all 508 pairs, then new Honors M-IDs numbered base plus H on the CCN pattern, and HUMA M10OI merged into M1110."
   },
   "changes": [
+    {
+      "at": "2026-11-14T15:21:00Z",
+      "text": "A follow-up migration keeps the titles World Religions and Media & Information Literacy and holds each Honors pair apart with a dismissal row, so the matcher does not propose them again."
+    },
+    {
+      "at": "2026-11-14T15:07:00Z",
+      "text": "The two bot rows that folded MiraCosta's Honors courses into HUMA M1110 and LIBR M1040 were deleted on Sam's word (Sheet 197 card 2); the receipt keeps both rows."
+    },
     {
       "at": "2026-11-14T14:37:00Z",
       "text": "Sam answered the Honors cards on Sheet 197: delete the two bot rows; Honors M-IDs numbered base plus H with a two-way equivalence; the field first, then rows for all 508 pairs."
@@ -125,14 +133,6 @@
     {
       "at": "2026-11-14T13:20:00Z",
       "text": "The identities map rebuild was applied on Sam's go: 651 fills and 578 refreshes, 2,290 to 2,941 entries, equal to the plan. FIRE 130 X takes FIRE M1274's lists."
-    },
-    {
-      "at": "2026-11-13T22:30:00Z",
-      "text": "FIRE 130 X on main carries 51 members, 3 to 4 units, 1,022.4 eligible credits and 58 students; FIRE M1274 is gone from the index."
-    },
-    {
-      "at": "2026-11-13T18:36:00Z",
-      "text": "The re-clustering plan is drafted: two cases ready, four held for Sam, and the Honors counts measured. Nothing applied."
     }
   ]
 }

@@ -164,6 +164,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - `git ls-remote` with several patterns dropped a branch line three times. Ask for one ref per call.
 - The Agent tool's worktree isolation failed once, when the shell's directory had reset to `/home/user`. `cd` into the checkout before spawning a worker with a worktree.
 - Worked: check runs read on the current head each time a PR was marked ready and merged right after; second readers who rebuilt the evidence from independent sources (seven for the prefix aliases, which removed Los Rios's ENGL for ENGWR); one daily-run dispatch after two stacked data PRs, so every list rebuilt once.
+- A reader's findings on slice A stopped being a new class at round three; the conductor merged the residue fix without a fourth round because nothing consumes the field yet. COBIx's one finding was a design point three code readers missed (the order of evidence: pages before the catalog list). Ask him for design, the readers for code.
+- The checkpoint's lane compaction dropped a link a test reads (`objectives_reread_plan`), and the lints job failed. After compacting a lane, run the Python tests that read lanes and status files before the push.
+- The conductor wrote times from memory five times this session, each wrong by 2 to 10 minutes. Every time written comes from `date -u` in the same command.
+- A config change proved on a fresh capture measured the reader, not the change: Riverside City's fresh capture lost 191 pages to `cq_distinct`. Prove a config change on the filed pages (`sources_from`).
 
 ## What went wrong in S651, and what worked
 
