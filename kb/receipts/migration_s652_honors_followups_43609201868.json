@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-14_s652_honors_followups.sql",
+ "name": "s652_honors_followups",
+ "version": "20261114152103",
+ "sha256": "f1add85bdd4ca9295cc065b67f708dd5a3898b22294d0158b2e4717581861ef0",
+ "run": "43609201868",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"changed\":[{\"op\":\"update\",\"row_before\":{\"field\":\"unified_title\",\"value\":\"World Religions (Honors)\",\"course_id\":\"HUMA M1110\",\"reviewed_at\":\"2026-06-12T22:47:01.69179+00:00\",\"validated_at\":null,\"validated_by\":null,\"reviewer_email\":\"automerge-v1@bot\",\"reviewer_label\":\"automerge-v1@bot\"},\"value_after\":\"World Religions\"},{\"op\":\"update\",\"row_before\":{\"field\":\"unified_title\",\"value\":\"Media & Information Literacy (Honors)\",\"course_id\":\"LIBR M1040\",\"reviewed_at\":\"2026-06-12T22:47:01.69179+00:00\",\"validated_at\":null,\"validated_by\":null,\"reviewer_email\":\"automerge-v1@bot\",\"reviewer_label\":\"automerge-v1@bot\"},\"value_after\":\"Media & Information Literacy\"},{\"op\":\"insert\",\"row\":{\"field\":\"merge_dismissed\",\"value\":\"HUMA M10ME|HUMA M10OI|HUMA M1110\",\"course_id\":\"HUMA M10ME\",\"reviewed_at\":\"2026-11-14T15:21:04.075029+00:00\",\"validated_at\":null,\"validated_by\":null,\"reviewer_email\":\"honors-s652@bot\",\"reviewer_label\":\"honors-s652@bot\"}},{\"op\":\"insert\",\"row\":{\"field\":\"merge_dismissed\",\"value\":\"LIBR M1040|LIBR M10CJ\",\"course_id\":\"LIBR M1040\",\"reviewed_at\":\"2026-11-14T15:21:04.075029+00:00\",\"validated_at\":null,\"validated_by\":null,\"reviewer_email\":\"honors-s652@bot\",\"reviewer_label\":\"honors-s652@bot\"}}]}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
