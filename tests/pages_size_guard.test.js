@@ -19,8 +19,8 @@ const assemble = WF.slice(WF.indexOf("Assemble lean site"), WF.indexOf("Stamp as
 // The allowlist: each tracked file sits under one line; the publish lines are the site.
 const kindOf = new Map();
 fs.readFileSync(".github/pages_allowlist.txt", "utf8").split("\n").forEach((l) => {
-  const m = /^(publish|withhold) (\S+)$/.exec(l);
-  if (m) kindOf.set(m[2], m[1]);
+  const m = /^(publish\??|withhold) (\S+)$/.exec(l);
+  if (m) kindOf.set(m[2], m[1] === "withhold" ? "withhold" : "publish");
 });
 function lineFor(file) {
   const parts = file.split("/");

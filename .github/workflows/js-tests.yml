@@ -216,6 +216,11 @@ jobs:
       - name: Docs-reading jsdom tests (run even when the suite is skipped)
         if: needs.gate.outputs.decision == 'skip'
         run: node tests/governance_docs_panel.test.js
+      # The Pages allowlist (#3104; #3278 review, finding 6). A docs-shaped PR that adds a root *.md skips the
+      # suite, and an undecided path would then first fail on main and turn every later PR red. This runs on
+      # every PR and every main run, whatever the gate decides (~3 s).
+      - name: Pages allowlist (every tracked and staged path decided)
+        run: node tests/pages_allowlist.test.js
       # First Light contrast lint (Session 49) — verifies the live :root in
       # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
       # on worst-case backdrops. Pure-stdlib python; part of this same

@@ -3,23 +3,27 @@
 # Sam on #3104 (relayed by COBIx, 2026-11-11 3:34 AM PT): "yes to all recommendations". The first of them:
 # publish only from an allowlist, so a new file or folder stays off the public site until someone decides.
 #
-# Two kinds of line:
+# Three kinds of line:
 #   publish <path>      A tracked file or folder, literal. "Assemble lean site" exports exactly these paths
 #                       from the commit (git archive) and fails, naming it, if one is not in the commit.
 #                       A folder publishes everything under it, including what is added later.
+#   publish? <path>     The same, for a path a workflow will create (a generator output a code-only PR
+#                       introduces): published once it is in the commit, skipped with a notice until then.
 #   withhold <pattern>  Never published. A literal path or a shell pattern (* within one path segment, never
 #                       a leading dot), matched from the top as the old prune matched it. Withhold lines only
 #                       record a decision; the deploy reads publish lines alone, so a withhold line can never
 #                       put anything on the site. A publish line wins over a withhold pattern: that is how
-#                       kb/csr_out/latest.json is served from inside the withheld kb/*_out.
+#                       kb/csr_out/latest.json is served from inside the withheld kb/*_out. A pattern carries a
+#                       fixed stem or folder: "*.js", "*.html", "*.json" alone would hide every future page.
 #
-# Every tracked file must be under a publish line or matched by a withhold line, or
-# tests/pages_allowlist.test.js fails: give a new path a line in the same change that adds it.
+# Every tracked file, and every path a workflow stages with git add, must be under a publish line or
+# matched by a withhold line, or tests/pages_allowlist.test.js fails: give a new path a line in the same
+# change that adds it (publish? when the workflow, not the PR, will commit it).
 # Where a folder is split (the root, kb/, kb/reference/ ...), each published entry has its own line.
 #
-# Day one (S649) publishes exactly the files the old prune published (the test's baseline proves it).
+# Day one (S649) publishes exactly the 22,705 files the old prune published (proven three times in #3278).
 # Why each withheld path stays internal: docs/pages_lean_deploy_scope.md and the history of pages.yml.
-# Keep each block sorted.
+# Keep the publish block sorted.
 
 # ── withhold ───────────────────────────────────────────────────────────────────────────────────
 # Repo machinery, never browser-fetched.
@@ -35,8 +39,7 @@ withhold scripts
 withhold tests
 withhold tmc/source_data
 withhold tools
-# Root workbooks and backups.
-withhold *.bak
+# Root workbooks.
 withhold *.xlsx
 # kb/ staging, curated anchors and lexicons: generator inputs baked into the served unified_courses_*.js.
 withhold kb/cid_articulation_joins.json
@@ -57,7 +60,6 @@ withhold kb/*_out
 withhold kb/subj4_*
 # Audit provenance: only the slim latest.json summaries are served.
 withhold kb/exhibit_audit/*.md
-withhold kb/row_audit/*.full.json
 withhold kb/row_audit/*.md
 # Data-write receipts (Rule 10 a2): 2.0 GB of the 2.9 GB site on 2026-11-10 (COBIx on #3077).
 withhold kb/receipts
@@ -65,6 +67,8 @@ withhold kb/receipts
 withhold kb/reference/*.xlsx
 withhold kb/reference/cos_certifications.json
 withhold kb/reference/moc_crosswalk.json
+# The bulk COCI program and program-course dumps program-course-fetch.yml commits; no page reads them.
+withhold kb/reference/coci_program_*.csv
 # The harvest's scout files and heading-agreement snapshot (S645, review of #3201).
 withhold kb/harvest_scouting
 withhold kb/status/harvest_heading_agreement.json
@@ -670,6 +674,7 @@ publish kb/program_requirements_pilot
 publish kb/program_requirements_pilot_sample.json
 publish kb/program_requirements_reconcile.json
 publish kb/program_requirements_units
+publish? kb/program_requirements_wave
 publish kb/project_lifecycle.json
 publish kb/projects_seed_plan.md
 publish kb/projects_snapshot.json

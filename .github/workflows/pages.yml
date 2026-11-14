@@ -7,8 +7,10 @@ name: Deploy Pages (lean)
 #
 # What it publishes: only the paths marked "publish" in .github/pages_allowlist.txt
 # (Sam on #3104, 2026-11-11: "yes to all recommendations"; the allowlist since S649).
-# A new file or folder stays off the public site until it is given a line there, and
-# tests/pages_allowlist.test.js fails until it is. The served-file ASSERTION below
+# A new path in a split folder (the root, kb/, kb/status/ ...) stays off the public
+# site until it is given a line there, and tests/pages_allowlist.test.js fails until
+# it is. A folder line (library, prototype, kb/contacts_harvest ...) publishes
+# everything under it, including what is added later. The served-file ASSERTION below
 # fails the build loudly if a known browser-served path is ever missing from _site.
 #
 # Triggers (all three are load-bearing):
@@ -70,28 +72,41 @@ jobs:
           mkdir -p _site
           # Export only COMMITTED files, and of those only the paths the allowlist marks
           # "publish" (.github/pages_allowlist.txt; Sam on #3104: "yes to all
-          # recommendations"). A path not on the list is never published: a new folder
+          # recommendations"). A new path in a split folder (the root, kb/, kb/status/ ...)
           # stays off the public site until someone gives it a line, and
-          # tests/pages_allowlist.test.js fails until they do. The reasons each withheld
-          # path stays internal (kb/ staging and receipts, re-mint output, audit
-          # provenance, the CareerOneStop registry, docs/tests/tools ...) are in
-          # docs/pages_lean_deploy_scope.md. git archive omits .git, node_modules and
-          # everything gitignored, as before.
-          mapfile -t publish < <(awk '$1 == "publish" { print $2 }' .github/pages_allowlist.txt)
-          if [ "${#publish[@]}" -lt 100 ]; then
-            echo "::error::.github/pages_allowlist.txt names only ${#publish[@]} publish paths (expected hundreds); not deploying."
+          # tests/pages_allowlist.test.js fails until they do. A folder line publishes
+          # everything under it, including what is added later. "publish?" names a path a
+          # workflow will create: published once it is in the commit, skipped with a notice
+          # until then. Why each withheld path stays internal: docs/pages_lean_deploy_scope.md.
+          # git archive omits .git, node_modules and everything gitignored, as before.
+          # >>> allowlist export (tests/pages_allowlist.test.js runs this block on a fixture repo)
+          allow=.github/pages_allowlist.txt
+          have=$(mktemp)
+          # Every tracked file and every folder above one, NUL-safe so no name is quoted.
+          git ls-tree -r -z --name-only HEAD | tr '\0' '\n' \
+            | awk '{ n = split($0, a, "/"); p = ""; for (i = 1; i <= n; i++) { p = (i == 1 ? a[1] : p "/" a[i]); print p } }' \
+            | sort -u > "$have"
+          mapfile -t strict < <(awk '$1 == "publish" { print $2 }' "$allow")
+          mapfile -t optional < <(awk '$1 == "publish?" { print $2 }' "$allow")
+          if [ "${#strict[@]}" -lt 100 ]; then
+            echo "::error::$allow names only ${#strict[@]} publish paths (expected hundreds); not deploying."
             exit 1
           fi
-          # Fail loudly, naming every one, if an allowlisted path is not in the commit
-          # (a rename or a deletion that left its line behind).
-          git ls-tree -r --name-only HEAD > /tmp/tracked.txt
-          missing=$(printf '%s\n' "${publish[@]}" | awk 'NR == FNR { n = split($0, a, "/"); p = ""; for (i = 1; i <= n; i++) { p = (i == 1 ? a[1] : p "/" a[i]); have[p] = 1 }; next } !($0 in have)' /tmp/tracked.txt -)
+          # Fail loudly, naming every one, if a publish line is not in the commit (a rename or
+          # a deletion that left its line behind). Dispatching again will not clear this.
+          missing=$(printf '%s\n' "${strict[@]}" | grep -vxF -f "$have" || true)
           if [ -n "$missing" ]; then
             while IFS= read -r m; do echo "::error::allowlisted path is not in the commit: $m"; done <<< "$missing"
-            echo "Fix .github/pages_allowlist.txt (remove or rename the line) — not deploying."
+            echo "Fix $allow (remove or rename the line, or mark it publish?) in a PR; not deploying."
             exit 1
           fi
+          publish=("${strict[@]}")
+          for p in "${optional[@]}"; do
+            if grep -qxF -- "$p" "$have"; then publish+=("$p")
+            else echo "::notice::publish? line not in the commit yet, skipped: $p"; fi
+          done
           git --literal-pathspecs archive --format=tar HEAD -- "${publish[@]}" | tar -x -C _site
+          # <<< allowlist export
           # GitHub Pages must skip Jekyll for a static site (the repo also ships a
           # root .nojekyll; this is belt + braces).
           touch _site/.nojekyll

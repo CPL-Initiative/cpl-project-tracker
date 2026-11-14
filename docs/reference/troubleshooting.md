@@ -34,6 +34,18 @@ related:
    `rerun_failed_jobs` — re-running the job re-runs the upload step, leaving TWO
    `github-pages` artifacts → `deploy-pages` fails with *"Multiple artifacts named
    github-pages"*. Playbook: [`docs/kb-notes/playbook-github-pages-manual-redeploy.md`](docs/kb-notes/playbook-github-pages-manual-redeploy.md).
+4. **`allowlisted path is not in the commit: <path>`** in "Assemble lean site" (the
+   Pages allowlist, #3104): a file or folder with a `publish` line in
+   `.github/pages_allowlist.txt` was renamed or deleted. The site stays on its last
+   good build, and **dispatching again fails the same way.** Fix in a PR: rename or
+   remove the line, or mark it `publish?` when a workflow will create the path later.
+5. **`B every tracked file is under a publish line ...` fails** in
+   `tests/pages_allowlist.test.js` (the lints job, every PR and `main`): a new path
+   has no line. Decide it in the same PR: `publish <path>` if a page reads it,
+   `withhold <path>` if not (a pattern needs a fixed stem or folder; never
+   `*.js`, `*.html` or `*.json` alone). For a generator output the workflow will
+   commit later, add `publish? <path>`. Check F names any path a workflow
+   stages with `git add` that has no line yet.
 
 ### Scrape returning errors
 1. The daily run's scrape step logs the worker's HTTP status and reply, and the run's last

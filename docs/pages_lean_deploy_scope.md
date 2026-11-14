@@ -77,8 +77,11 @@ committed files: **0 served files dropped**.
 
 ## Rollback
 
-The allowlist: `git revert` its squash commit on `main`. That restores the export-then-prune
-step, and the next `pages.yml` run (the revert's own push) redeploys the old way.
+The allowlist: revert any later allowlist follow-up first, then `git revert` its squash commit
+on `main`, run `python3 kb/_build_dependency_map.py` (the reverted builder reads the prune
+lines again), drop the `pages_allowlist.test.js` floor from `tests/check_floor.json`, and run
+`scripts/check_generated.sh` before pushing. The revert's push redeploys the old way, and the
+old prune then publishes every file added since that the allowlist withheld.
 
 The whole custom deploy: flip Settings → Pages → Source back to "Deploy from a branch" (main / root). The
 `.nojekyll` keeps that path fast. `pages.yml` then no-ops (its `deploy-pages` step

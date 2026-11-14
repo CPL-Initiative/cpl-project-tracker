@@ -904,9 +904,9 @@ def pages_allowlist(text: str) -> tuple:
     covers everything under it."""
     pub, wh = set(), set()
     for line in text.splitlines():
-        m = re.match(r"^(publish|withhold) (\S+)$", line)
+        m = re.match(r"^(publish\??|withhold) (\S+)$", line)
         if m:
-            (pub if m.group(1) == "publish" else wh).add(m.group(2))
+            (wh if m.group(1) == "withhold" else pub).add(m.group(2))
     return sorted(pub), sorted(wh)
 
 
