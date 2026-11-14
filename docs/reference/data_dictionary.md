@@ -140,7 +140,7 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 - **Access and terms:** Public outline pages.
 - **Planned improvements:** The reread of the ten colleges read before S584; per-college parser status in `queue.json`.
 - **Confidence method:** Limited.
-- **Evidence in the repo:** `kb/_course_outcomes_read.py`, `kb/_course_outcomes_load.py`, `kb/migrations/2026-11-05_course_outcomes_kind.sql`.
+- **Evidence in the repo:** `kb/_course_outcomes_read.py`, `kb/_course_outcomes_load.py`, `kb/migrations/2026-11-05_course_outcomes_kind.sql`, `kb/course_outcomes/objectives_reread_plan.json`, `tests/course_outcomes_objectives_standing_test.py`.
 
 | Field | Type | Definition | Key / join |
 |---|---|---|---|

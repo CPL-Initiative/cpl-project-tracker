@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T23:53:59Z",
+ "written_at": "2026-11-14T00:10:46Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -164,11 +164,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15832,
-  "gap": 6503,
+  "passing": 15835,
+  "gap": 6500,
   "with_gap": 118,
   "cost_usd": 1327.28,
-  "passed_at_read": 15142,
+  "passed_at_read": 15146,
   "cost_receipts": 117,
   "slo_waiting": 9,
   "scouted": 11,
@@ -182,8 +182,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15832,
-  "gap": 6503
+  "passing": 15835,
+  "gap": 6500
  },
  "census_live": {
   "basis": "live",
@@ -1039,13 +1039,13 @@
    "harvested": true,
    "slug": "cerro_coso_community",
    "programs": 80,
-   "passing": 27,
-   "gap": 53,
+   "passing": 30,
+   "gap": 50,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 9,
     "places_none": 13,
-    "unknown_without_live": 25
+    "unknown_without_live": 22
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -1073,7 +1073,7 @@
    "read_at": "2026-10-17T15:51:20Z",
    "read_kind": "capture",
    "cost_usd": 4.87,
-   "passed_at_read": 19,
+   "passed_at_read": 23,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -1088,7 +1088,7 @@
    "failed_checks": {
     "coverage": 17,
     "invented": 4,
-    "arithmetic": 38,
+    "arithmetic": 33,
     "repeated": 0,
     "outcomes": 11
    },
@@ -1098,9 +1098,9 @@
    "read_seconds": 33.6,
    "run": "39046789844",
    "levers": {
-    "reconcile_steps": 14,
     "reader_page_assignment": 13,
-    "ge_units_steps": 11,
+    "reconcile_steps": 12,
+    "ge_units_steps": 10,
     "reader_page_search": 9,
     "program_course_file_check": 6
    },
@@ -15419,7 +15419,9 @@
     "evidence": [
      "kb/_course_outcomes_read.py",
      "kb/_course_outcomes_load.py",
-     "kb/migrations/2026-11-05_course_outcomes_kind.sql"
+     "kb/migrations/2026-11-05_course_outcomes_kind.sql",
+     "kb/course_outcomes/objectives_reread_plan.json",
+     "tests/course_outcomes_objectives_standing_test.py"
     ],
     "evidence_cited": [],
     "repo_verifiable": true,
