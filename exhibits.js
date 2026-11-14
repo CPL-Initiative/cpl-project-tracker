@@ -5315,11 +5315,21 @@
   function settledKey() { return Object.keys(state.reviewSettled).sort().join("\n"); }
   function rereadReview() {
     if (!state.data) return Promise.resolve();
-    var before = settledKey();
+    var before = settledKey(), was = shown()[state.cur], at = was && was.raw;
     return reconcileReview(state.data).then(function () {
       // A title settled or reopened on this return moves in or out of Students waiting: read the counts again.
       if (settledKey() !== before) return loadStudents();
-    }).then(render);
+    }).then(function () {
+      /* The reviewer stays on the card they were on, its Teach draft intact (the reread can reorder the queue, and
+         loadStudents starts it at the top). When that card has left the queue, nothing typed for it carries over. */
+      if (at != null) {
+        var list = shown(), k = -1;
+        for (var i = 0; i < list.length; i++) if (list[i].raw === at) { k = i; break; }
+        if (k >= 0) state.cur = k;
+        else { state.cur = Math.min(state.cur, Math.max(0, list.length - 1)); resetCard(); }
+      }
+      render();
+    });
   }
   /* #exhibits/<route> opens one place, read once per visit (the Commons row's counts link here, the way
      they linked into the retired CER tab): held = Review on all held, conflict = Review on Conflict with

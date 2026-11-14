@@ -162,6 +162,24 @@ const P = "_UNCLASSIFIED::";
     visible(t.w, true); await settle();
     check("on another COBI tab a return to the browser tab reads nothing", t.reads.length === readsBefore);
 
+    // The reviewer stays on their card across a reread (second reader on #3285): loadStudents starts the queue at the
+    // top, so without this the view jumped to card 1 with Teach open and card 3's draft under it.
+    const live = {};
+    t = load({ saved: live });
+    await t.M.boot(); await settle();
+    const S = t.M._state;
+    S.cur = 2; S.teach = true; S.teachDraft = "my words for this card";
+    const mine = t.M._shown()[2].raw, other = t.M._shown()[0].raw;
+    live[P + other] = "Saved Elsewhere";
+    visible(t.w, true); await settle();
+    check("a title settled elsewhere keeps the reviewer on the card they were on",
+      shownRaws(t).indexOf(other) < 0 && t.M._shown()[S.cur] && t.M._shown()[S.cur].raw === mine);
+    check("and their Teach draft stays open with what they typed", S.teach === true && S.teachDraft === "my words for this card");
+    live[P + mine] = "Saved Elsewhere Too";
+    visible(t.w, true); await settle();
+    check("when their own card is settled elsewhere it leaves the queue and its draft goes with it",
+      shownRaws(t).indexOf(mine) < 0 && S.teach === false && S.teachDraft === "");
+
     // A card decided on this page stays decided when a later read finds its title cleared: Back reopens it, not a read.
     t = load({ saved: {} });
     await t.M.boot(); await settle();

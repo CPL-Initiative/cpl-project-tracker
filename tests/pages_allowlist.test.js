@@ -237,12 +237,16 @@ const broad = patternWh.filter((w) => w.split("/").some((s) => s.includes("*") &
 check("G no withhold pattern is a bare wildcard or a bare page type (*.js, *.html, *.json ...)", broad.length === 0, broad.join(", "));
 const OVERLAP_OK = {
   "kb/*_out": "kb/csr_out/latest.json and kb/cer_procedures_out/latest.json are served by their own lines",
-  "kb/*_dryrun": "the Exhibits tab reads kb/cred_rename_dryrun/alias_map.json and collisions.json, served by their own lines (S650)",
   "kb/status/mid_outcomes_compare_*": "the compares committed before S649 stay published by their own lines",
 };
 const hidesServed = L.withhold.filter((w) => !OVERLAP_OK[w] && must.some((p) => matches(p, w)));
 check("G no withhold line matches a path the served-path assertion names (outside OVERLAP_OK)", hidesServed.length === 0, hidesServed.join(", "));
-const overlaps = patternWh.filter((w) => [...published].some((f) => matches(f, w)) && !OVERLAP_OK[w]);
+// A pattern listed here may overlap only the files it names, so a later publish line inside it still fails G.
+const OVERLAP_FILES = {
+  "kb/*_dryrun": ["kb/cred_rename_dryrun/alias_map.json", "kb/cred_rename_dryrun/collisions.json"],  // the Exhibits tab's two reads (S650)
+};
+const overlaps = patternWh.filter((w) => !OVERLAP_OK[w]
+  && [...published].some((f) => matches(f, w) && (OVERLAP_FILES[w] || []).indexOf(f) < 0));
 check("G a withhold pattern overlaps a published file only where OVERLAP_OK says why", overlaps.length === 0, overlaps.join(", "));
 const deadPatterns = patternWh.filter((w) => !tracked.some((f) => matches(f, w)) && !staged.some(([, p]) => matches(sample(p), w)));
 check("G every withhold pattern matches a tracked file or a staged path", deadPatterns.length === 0, deadPatterns.join(", "));
