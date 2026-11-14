@@ -277,12 +277,67 @@ def reconcile_live(filed: dict, live: dict) -> list:
     return out
 
 
+def live_section(r: dict, live_rows: list, export: dict, read_at: str) -> list:
+    """The summary's live reconcile: the read's totals beside the files', the colleges that differ, and what
+    each change's records are on the live table, as far as an aggregate read can say."""
+    live = {x["college"]: x for x in live_rows}
+    filed = {x["college"]: x for x in r["per_college"] if x["records"]}
+    diff = reconcile_live(filed, live)
+    lt = {k: sum(int(x.get(k) or 0) for x in live_rows)
+          for k in ("live_rows", "live_passing", "active_rows", "active_passing", "s651_flips_live_passing")}
+    t = r["totals"]
+    flips = [(x["college"], cn) for x in r["per_college"] for cn in x["rule4_pass_to_fail"]]
+    active = [f for f in flips if ((export.get(f) or {}).get("STATUS") or "").strip() == "Active"]
+    same = {c for c in filed if c in live and filed[c]["records"] == int(live[c].get("live_rows") or 0)}
+
+    def split(key):
+        n = sum(len(filed[c][key]) for c in filed)
+        return n, sum(len(filed[c][key]) for c in filed if c in same)
+    pdiff = [d for d in diff if d["before"] != d["live_passing"]]
+    out = ["", "### Live reconcile (%s)" % read_at, "",
+           "**Live:** %d rows, %d passing; Active %d rows, %d passing. **Files:** %d records, %d passing, so "
+           "%d filed records are not live and the files count %d more passing."
+           % (lt["live_rows"], lt["live_passing"], lt["active_rows"], lt["active_passing"], t["records"], t["before"],
+              t["records"] - lt["live_rows"], t["before"] - lt["live_passing"])
+           + " **%d of %d colleges differ** (%d in the passing count). The ten largest differences:"
+           % (len(diff), len(set(filed) | set(live)), len(pdiff)), "",
+           "| College | Filed | Live rows | Filed passing | Live passing |", "|---|---:|---:|---:|---:|"]
+    for d in sorted(diff, key=lambda d: (-(abs(d["records"] - d["live_rows"]) + abs(d["before"] - d["live_passing"])),
+                                         d["college"]))[:10]:
+        out.append("| %s | %d | %d | %d | %d |" % (d["college"], d["records"], d["live_rows"], d["before"],
+                                                   d["live_passing"]))
+    c1, c1s = split("rule1_candidates")
+    c4, c4s = split("rule4_held")
+    out += ["",
+            "- **Change 4's five flips:** %d of 5 pass live today (the read's own count); %d are Active in the June "
+            "program export. Against the table: live passing %d to %d, Active passing %d to %d."
+            % (lt["s651_flips_live_passing"], len(active), lt["live_passing"],
+               lt["live_passing"] - lt["s651_flips_live_passing"], lt["active_passing"],
+               lt["active_passing"] - min(len(active), lt["s651_flips_live_passing"])),
+            "- **Change 4's %d held and change 1's %d candidates** fail on file. The read is per college, so it "
+            "cannot say which are live rows. %d held and %d candidates sit at colleges whose filed and live row "
+            "counts agree; equal counts suggest, but do not prove, the same records." % (c4, c1, c4s, c1s),
+            "- **Change 3's %d programs** (2 at parked colleges) and change 2's %d have no row; the census that "
+            "named them read the live Active list. Change 3's would add %d to Active passing, once quoted."
+            % (t["rule3_candidates"], t["rule2_programs_unread"], t["rule3_candidates"])]
+    return out
+
+
+LIVE_ROWS = os.path.join(OUT_DIR, "live_reconcile_s651_rows.json")
+LIVE_READ_AT = "09:31Z 2026-11-14"
+
+
 def build() -> tuple[str, str]:
     census = json.load(open(CENSUS, encoding="utf-8"))
     reconcile = json.load(open(RECONCILE, encoding="utf-8"))
     export = read_export(census.get("programs_by_college", {}).keys())
     r = dry_run(read_filed(), census, export, reconcile)
-    return json.dumps(r, indent=1, ensure_ascii=False) + "\n", summary_md(r)
+    md = summary_md(r)
+    if os.path.exists(LIVE_ROWS):
+        with open(LIVE_ROWS, encoding="utf-8") as fh:
+            body = md.rstrip("\n").split("\n")
+            md = "\n".join(body[:-1] + live_section(r, json.load(fh), export, LIVE_READ_AT) + ["- " + body[-1]]) + "\n"
+    return json.dumps(r, indent=1, ensure_ascii=False) + "\n", md
 
 
 def main(argv=None) -> int:

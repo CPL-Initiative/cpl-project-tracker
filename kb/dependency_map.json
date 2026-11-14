@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 943,
+  "file_datasets": 944,
   "external_services": 195,
   "consumers": 588,
   "workflows": 72,
@@ -17221,6 +17221,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_passing_dryrun/live_reconcile_s651_rows.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_passing_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 326
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/program_requirements_passing_dryrun/passing_s651.json": {

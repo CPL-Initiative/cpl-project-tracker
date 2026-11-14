@@ -45,4 +45,25 @@ Change 1's candidates by college: Berkeley City College 2; College of the Desert
 | 11338 | fail | pass | fail |
 | 33542 | fail | pass | fail |
 
-Nothing is applied: the migration is drafted and not listed in `kb/migrations/.apply`.
+
+### Live reconcile (09:31Z 2026-11-14)
+
+**Live:** 18233 rows, 15834 passing; Active 16747 rows, 14596 passing. **Files:** 19137 records, 15838 passing, so 904 filed records are not live and the files count 4 more passing. **105 of 118 colleges differ** (10 in the passing count). The ten largest differences:
+
+| College | Filed | Live rows | Filed passing | Live passing |
+|---|---:|---:|---:|---:|
+| City College of San Francisco | 349 | 296 | 257 | 257 |
+| Santa Rosa Junior College | 268 | 222 | 191 | 191 |
+| Cosumnes River College | 217 | 182 | 146 | 146 |
+| American River College | 368 | 335 | 300 | 300 |
+| Southwestern College | 220 | 190 | 168 | 168 |
+| College of the Desert | 358 | 330 | 288 | 288 |
+| Fresno City College | 237 | 211 | 204 | 204 |
+| Mendocino College | 118 | 93 | 73 | 73 |
+| San Bernardino Valley College | 225 | 200 | 161 | 161 |
+| De Anza College | 221 | 236 | 205 | 214 |
+
+- **Change 4's five flips:** 5 of 5 pass live today (the read's own count); 5 are Active in the June program export. Against the table: live passing 15834 to 15829, Active passing 14596 to 14591.
+- **Change 4's 25 held and change 1's 45 candidates** fail on file. The read is per college, so it cannot say which are live rows. 0 held and 7 candidates sit at colleges whose filed and live row counts agree; equal counts suggest, but do not prove, the same records.
+- **Change 3's 91 programs** (2 at parked colleges) and change 2's 1668 have no row; the census that named them read the live Active list. Change 3's would add 91 to Active passing, once quoted.
+- Nothing is applied: the migration is drafted and not listed in `kb/migrations/.apply`.
