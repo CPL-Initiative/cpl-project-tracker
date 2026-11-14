@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T00:10:46Z",
+ "written_at": "2026-11-14T01:23:54Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -164,11 +164,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15835,
-  "gap": 6500,
+  "passing": 15836,
+  "gap": 6499,
   "with_gap": 118,
   "cost_usd": 1327.28,
-  "passed_at_read": 15146,
+  "passed_at_read": 15147,
   "cost_receipts": 117,
   "slo_waiting": 9,
   "scouted": 11,
@@ -182,8 +182,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15835,
-  "gap": 6500
+  "passing": 15836,
+  "gap": 6499
  },
  "census_live": {
   "basis": "live",
@@ -2571,13 +2571,13 @@
    "harvested": true,
    "slug": "cosumnes_river",
    "programs": 226,
-   "passing": 143,
-   "gap": 83,
+   "passing": 144,
+   "gap": 82,
    "causes": {
     "no_closed_list": 7,
     "page_not_found": 2,
     "places_none": 35,
-    "unknown_without_live": 39
+    "unknown_without_live": 38
    },
    "census_causes": {
     "coverage_fails": 8,
@@ -2605,7 +2605,7 @@
    "read_at": "2026-10-17T15:54:21Z",
    "read_kind": "capture",
    "cost_usd": 18.96,
-   "passed_at_read": 135,
+   "passed_at_read": 136,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -2628,7 +2628,7 @@
    "failed_checks": {
     "coverage": 43,
     "invented": 8,
-    "arithmetic": 67,
+    "arithmetic": 66,
     "repeated": 0,
     "outcomes": 8
    },
@@ -2640,7 +2640,7 @@
    "levers": {
     "reader_page_assignment": 35,
     "reconcile_steps": 22,
-    "ge_units_steps": 17,
+    "ge_units_steps": 16,
     "program_course_file_check": 7,
     "reader_page_search": 2
    },
