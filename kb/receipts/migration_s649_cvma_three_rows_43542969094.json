@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-14_s649_cvma_three_rows.sql",
+ "name": "s649_cvma_three_rows",
+ "version": "20261114015718",
+ "sha256": "285793864bd9502549f503fc49a8b28357ff5a038a4efd07508b247c00499a8d",
+ "run": "43542969094",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"changed\":[{\"op\":\"update\",\"row_before\":{\"field\":\"issuing_agency_additional_override\",\"value\":\"alifornia Veterinary Medical Association (CVMA)\",\"course_id\":\"_CREDENTIAL_REVIEW::Veterinary Assistance & Nursing: Emergency Procedures\",\"reviewed_at\":\"2026-07-09T00:37:39.286263+00:00\",\"validated_at\":null,\"validated_by\":null,\"reviewer_email\":\"map@rccd.edu\",\"reviewer_label\":\"a reviewer\"},\"value_after\":\"California Veterinary Medical Association (CVMA)\"},{\"op\":\"update\",\"row_before\":{\"field\":\"issuing_agency_additional_override\",\"value\":\"alifornia Veterinary Medical Association (CVMA)\",\"course_id\":\"_CREDENTIAL_REVIEW::Veterinary Equipment, Operation, Instrumentation and Safety\",\"reviewed_at\":\"2026-07-09T00:37:42.376764+00:00\",\"validated_at\":null,\"validated_by\":null,\"reviewer_email\":\"map@rccd.edu\",\"reviewer_label\":\"a reviewer\"},\"value_after\":\"California Veterinary Medical Association (CVMA)\"},{\"op\":\"delete\",\"row_before\":{\"field\":\"issuing_agency_additional_override\",\"value\":\"alifornia Veterinary Medical Association (CVMA)\",\"course_id\":\"_CREDENTIAL_REVIEW::Water Treatment Facilities\",\"reviewed_at\":\"2026-07-09T00:38:14.078346+00:00\",\"validated_at\":null,\"validated_by\":null,\"reviewer_email\":\"map@rccd.edu\",\"reviewer_label\":\"a reviewer\"}}]}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

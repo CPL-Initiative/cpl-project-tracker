@@ -1,0 +1,20 @@
+{
+  "_source": "docs/reference/design-principles.md, 'Checks before you ship' -> Plain words; issue #3107 (Sam, 2026-11-11). Starter list as written there; no check reads this file yet.",
+  "avoid_labels": [
+    "This visit",
+    "Action center",
+    "File it",
+    "Edit the record",
+    "Start something new from it",
+    "Submit",
+    "Process",
+    "Manage",
+    "Item",
+    "Entity",
+    "Click here"
+  ],
+  "avoid_kinds": [
+    "any acronym that isn't spelled out",
+    "role names the users don't hold"
+  ]
+}

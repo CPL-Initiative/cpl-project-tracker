@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-14_s649_busi_split_delete.sql
-name=s649_busi_split_delete
+file=kb/migrations/2026-11-14_s649_cvma_three_rows.sql
+name=s649_cvma_three_rows

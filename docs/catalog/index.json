@@ -15935,7 +15935,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 70,
+   "count": 71,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16699,6 +16699,22 @@
      "title": "Dependency map \u2014 dataset to consuming tabs, scripts, workflows and surfaces",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-11-11",
+     "governs": [],
+     "path": "docs/reference/design-principles.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "design",
+      "ui",
+      "presentation-rules",
+      "first-light"
+     ],
+     "title": "Design principles \u2014 every COBI screen (v3)",
+     "type": null,
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-09-27",
@@ -27272,5 +27288,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1470
+ "total": 1471
 }
