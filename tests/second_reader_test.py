@@ -123,6 +123,24 @@ with tempfile.TemporaryDirectory() as tmp:
     X._post = half
     rc_some = R.run("Test College", os.path.join(tmp, "out"), key="service-key", workers=1)
     check("a run where only some calls error exits 0", rc_some == 0 and len(calls) == 2)
+
+    # 4c. every call returns a reading but the scorer raises on each: the readings were made, so the run exits 0
+    #     and each row files its reading with the score error
+    X._post = fake_post
+    score_saved = X.score
+
+    def bad_score(*a, **k):
+        raise ValueError("unreadable reading")
+
+    X.score = bad_score
+    R.OUT = os.path.join(tmp, "second_out_score")
+    rc_score = R.run("Test College", os.path.join(tmp, "out"), key="service-key", workers=1)
+    X.score = score_saved
+    sdoc = json.load(open(os.path.join(R.OUT, "second_test.json"), encoding="utf-8"))
+    check("a run whose readings all came back but could not be scored exits 0", rc_score == 0)
+    check("each unscored row keeps its reading and names the score error",
+          len(sdoc["rows"]) == 2 and all(r["second"]["record"] and r["second"]["error"].startswith("score: ")
+                                         for r in sdoc["rows"]))
     R.COLLEGE_DIR, R.OUT = saved, out_saved
 
 # 5. the extractor's call carries provider and model only when given
