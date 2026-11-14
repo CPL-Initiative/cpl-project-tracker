@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T10:52:07Z",
+ "written_at": "2026-11-14T17:56:51Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -167,12 +167,12 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15840,
-  "gap": 6495,
+  "passing": 15841,
+  "gap": 6494,
   "with_gap": 118,
-  "cost_usd": 1327.28,
-  "passed_at_read": 15151,
-  "cost_receipts": 117,
+  "cost_usd": 1313.43,
+  "passed_at_read": 14954,
+  "cost_receipts": 116,
   "slo_waiting": 9,
   "scouted": 11,
   "scout_barrier": 1,
@@ -185,8 +185,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15840,
-  "gap": 6495
+  "passing": 15841,
+  "gap": 6494
  },
  "census_live": {
   "basis": "live",
@@ -3170,13 +3170,13 @@
    "harvested": true,
    "slug": "diablo_valley",
    "programs": 267,
-   "passing": 197,
-   "gap": 70,
+   "passing": 198,
+   "gap": 69,
    "causes": {
     "no_closed_list": 23,
     "page_not_found": 30,
     "places_none": 1,
-    "unknown_without_live": 16
+    "unknown_without_live": 15
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -3202,8 +3202,8 @@
    "objectives_printed": null,
    "read_at": "2026-11-13T06:35:26Z",
    "read_kind": "capture",
-   "cost_usd": 13.85,
-   "passed_at_read": 197,
+   "cost_usd": null,
+   "passed_at_read": 198,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -3226,8 +3226,8 @@
    "extracted": 214,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
-    "invented": 4,
+    "coverage": 5,
+    "invented": 3,
     "arithmetic": 12,
     "repeated": 0,
     "outcomes": 0
@@ -3239,11 +3239,11 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1567.3,
-   "run": "43379378196",
+   "run": "43609976980",
    "levers": {
     "reader_page_search": 30,
     "program_course_file_check": 23,
-    "reconcile_steps": 10,
+    "reconcile_steps": 9,
     "ge_units_steps": 5,
     "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
