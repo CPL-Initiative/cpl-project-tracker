@@ -328,6 +328,10 @@ jobs:
       # nothing over a record; run 43384599013 filed 121 stubs in a database outage. Pure stdlib.
       - name: Program requirements extraction halts on an outage (503, 401)
         run: python3 tests/program_requirements_extract_halt_test.py
+      # S653: a fragment a catalog includes (Skyline's programs/_program-headers/) is never a page; the measure
+      # over the committed captures' URLs, none of them a claimed page. Pure stdlib.
+      - name: Program requirements fragment paths are no pages
+        run: python3 tests/program_requirements_fragment_path_test.py
       # A wave (S644): several colleges in one dispatch. The plan refuses two reads on one host, a
       # ninth college and a limit above $40; the price gate; each verify verdict; the table's sums.
       # Python with PyYAML for the workflow's shape; same non-required check.

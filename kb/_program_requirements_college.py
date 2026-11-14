@@ -102,7 +102,13 @@ PROGRAM_PATH = re.compile(
 NOT_PROGRAM_PATH = re.compile(
     r"course-?descriptions?|/courses?/|coursesaz|/archive|/previous|/policies|/policy|"
     r"/services|/student-services|/admission|/calendar|/faculty|/staff|/search|/pdf/|"
-    r"\.pdf$|/general-information|/administration(?=/|$)|/glossary|/index\.html?$|/addend", re.I)
+    r"\.pdf$|/general-information|/administration(?=/|$)|/glossary|/index\.html?$|/addend|"
+    # A fragment a catalog includes into its pages, never a page of its own: a folder whose name starts with an
+    # underscore and names headers, includes or partials (Skyline's programs/_program-headers/english.xml tied
+    # English A.A. 05825 with english-aa.php, and the lookup filed it not_matched; S653). The other underscore
+    # folders the committed captures name (_data, _documents, _pdf-books, _resources, _web-items) hold catalog
+    # PDFs and feeds pages are read from, and stay (tests/program_requirements_fragment_path_test.py).
+    r"/_[^/]*(?:header|include|partial|fragment|snippet)s?(?=/)", re.I)
 
 
 # ── the college's programs, from the state's files ─────────────────────────
