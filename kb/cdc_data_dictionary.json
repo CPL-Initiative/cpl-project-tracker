@@ -419,7 +419,7 @@
         "Program pathway maps",
         "Publishes maps"
       ],
-      "definition": "Whether the college publishes program maps (each program's courses, term by term): yes, none found when looked for, or not looked for yet.",
+      "definition": "Whether the college publishes program maps (each program's courses, term by term): yes, none found when looked for, or not looked for yet. A college that publishes maps that COBI has not yet committed counts as published, not yet committed.",
       "system": "ppm",
       "comis_element": "",
       "class": "public",
