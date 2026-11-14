@@ -62,7 +62,8 @@ def pages_of(sources: list[dict], capture: dict) -> list[dict]:
 
 def college_census(sources: list[dict], capture: dict) -> dict:
     """One college's self-test (ncl_self_test: recall and the three false measures) and, for a Coursedog capture,
-    the catalog list's own self-test (ncl_list_test)."""
+    the catalog list's own self-test (ncl_list_test, measured; this slice files no not_listed), and the
+    conversion test (conversion())."""
     platform = capture.get("platform")
     ncl = sum(1 for s in sources if s.get("method") == "no_closed_list")
     if platform == "pdf" or "pdf" in capture:
@@ -71,12 +72,39 @@ def college_census(sources: list[dict], capture: dict) -> dict:
                  "closed_list": [] if s.get("method") == "no_closed_list" else [{}]} for s in sources]
     own = {s["control_number"]: C.page_stem(s["source"]["url"]) for s in sources
            if (s.get("source") or {}).get("url") and s.get("method") in FOUND_METHODS}
-    pages = C.ncl_pages(pages_of(sources, capture), capture.get("college"))
+    pages = C.ncl_pages(pages_of(sources, capture), capture.get("college"), capture.get("catalog_year"))
     test = C.ncl_self_test(programs, pages, own, C.ncl_named(sources))
+    test["conversion"] = conversion(programs, pages, own, C.ncl_named(sources, award=True))
     listed = C.ncl_listed_names(capture.get("coursedog")) if platform == "coursedog" else None
     test["catalog_list"] = (C.ncl_list_test(programs, pages, own, [C.ncl_page(e) for e in listed])
                             if listed is not None else None)
     return dict({"platform": platform, "route": "site", "ncl": ncl}, **test)
+
+
+def conversion(programs: list[dict], pages: list[dict], own: dict[str, str], named: set[str]) -> dict:
+    """The second reader's real-use test (#3300, round two): every third closed-list program whose page was read,
+    and whose page the closed-list search's own label says names its title and award (`named`, the ground truth),
+    becomes a program with no list, its page left unclaimed, and is looked up beside the rest. A found on its own
+    page is right; a found anywhere else is wrong. A filed page the label does not name is no ground truth:
+    Antelope Valley filed five A.S. and A.A. programs from their certificates' pages, and the lookup found
+    each one's own degree page."""
+    keys = {k for pg in pages for k in pg["keys"]}
+    cns = sorted(cn for cn, stem in own.items() if stem in keys and cn in named)
+    turned = set(cns[::3])
+    progs = [dict(p, closed_list=[]) if p["control_number"] in turned else p for p in programs]
+    claimed = C.ncl_claims({cn: st for cn, st in own.items() if cn not in turned}, pages)
+    right, wrong = 0, []
+    for p in progs:
+        if p["control_number"] not in turned:
+            continue
+        a = C.ncl_answer(p, pages, claimed, progs)
+        if a["result"] == "found":
+            if C.page_stem(a["page"]["url"]) == own[p["control_number"]] or own[p["control_number"]] in \
+                    next((pg["keys"] for pg in pages if C.page_stem(a["page"]["url"]) in pg["keys"]), set()):
+                right += 1
+            else:
+                wrong.append({"control_number": p["control_number"], "title": p.get("title"), "page": a["page"]["url"]})
+    return {"converted": len(turned), "found_right": right, "found_wrong": len(wrong), "wrong": wrong[:10]}
 
 
 def census(base: str = C.COLLEGE_DIR) -> dict:
@@ -101,6 +129,8 @@ def census(base: str = C.COLLEGE_DIR) -> dict:
                           "false_off_own": sum(c["false_off_own"] for c in site),
                           "false_no_claims": sum(c["false_no_claims"] for c in site),
                           "false_no_claims_at_searched": sum(c["false_no_claims"] for c in site if c["searches"]),
+                          "conversion": {k: sum(c["conversion"][k] for c in site)
+                                         for k in ("converted", "found_right", "found_wrong")},
                           "catalog_lists_filing_not_listed": sorted(k for k, c in colleges.items()
                                                                     if (c.get("catalog_list") or {}).get("files_not_listed")),
                           "colleges_searched": sum(1 for c in site if c["searches"]),

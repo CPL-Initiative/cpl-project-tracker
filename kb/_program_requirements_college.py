@@ -1038,17 +1038,17 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
 # the scorer and the status builders count the program as before (slice B changes that).
 #
 # A program with no list has no courses to break a tie, so nothing is guessed. A page matches when it is a
-# program page, prints the program's award (an award the state's file leaves unnamed matches only a page
-# printing no other award), names every title word in one of its readings (heading, title, address) with
-# the numbers, roman numerals and option letters the same, and gives at least NCL_OWN of its own words to
-# the title once award, code and unit decorations are set aside. The answer is found only when one page
+# program page (no landing, department, index or archived page), prints the program's award (an award the
+# state's file leaves unnamed matches only a page printing no other award), and one of its readings (heading,
+# title, address) is the program's whole title, word for word both ways, numbers, roman numerals and option
+# letters the same, once award, code and unit decorations are set aside (the #3300 review, round three). The answer is found only when one page
 # matches, no closed-list program took it, and no other program matches it at all. Before any of that, the
 # capture tests the matcher on its own closed-list programs (ncl_self_test): each is looked up as if it had
 # no list, and a college where fewer than NCL_FLOOR come back to their own page, or any lands on another
 # program's page, files not_searched. The second reader's measure of the first rule, every word both ways,
 # found 63% of the closed-list programs statewide and none at Cerritos or Riverside City (S652).
 NCL_LOOKUP_ENV = "NCL_CATALOG_LOOKUP"   # "0" (or off, false, no) runs a capture as before S652
-NCL_OWN = 0.75                          # the share of a reading's own words the title must name
+NCL_OWN = 1.0                           # a reading's words and the title's words are one set (round three)
 NCL_FLOOR = 0.8                         # the self-test's recall below which a college is not looked up
 NCL_MIN_TESTED = 10                     # fewer closed-list programs on read pages than this: no test, no lookup
 NCL_LIST_FLOOR = 0.95                   # the catalog list's own recall below which nothing is filed not_listed
@@ -1065,7 +1065,7 @@ NCL_SLUG_AWARD = [("coa", re.compile(r"-ca/?$"))]
 # a line that is not all capitals: "ENGLISH AS A SECOND LANGUAGE" names no award.
 NCL_ADT = [re.compile(r"associate (?:in|of) (?:arts|science)(?: degree)? for transfer|\bfor transfer\b|"
                       r"\btransfer degree\b", re.I),
-           re.compile(r"\bA\.?\s?[AS]\.?\s?-\s?T\b|\bA[AS]T\b")]
+           re.compile(r"\bA\.?\s?[AS]\.?\s?-\s?T\b|\bA[AS]T\b|\bA\.\s?[AS]\.\s?T\b\.?|\bADT\b")]
 NCL_KIND = [("bs", re.compile(r"\bbachelor", re.I)),
             ("noncredit", re.compile(r"\bnon-?credit\b|certificate of (?:completion|competency)", re.I)),
             ("coa", re.compile(r"certificate of achievement|\bcert\.?\s*(?:of\s+)?achievement", re.I)),
@@ -1094,11 +1094,11 @@ NCL_DECOR_I = re.compile(
     r"associate (?:in|of) (?:arts|science)(?: degree)?(?: for transfer)?(?: degree)?|"
     r"certificate of (?:achievement|accomplishment|completion|competency|proficiency|specialization|career preparation)|"
     r"\bcert\.?\s*(?:of\s+)?achievement|\bfor transfer\b|\btransfer degree\b|\bnon-?credit\b|"
-    r"\ba\.\s?[as]\.(?:\s?-\s?t\b)?|\bb\.\s?s\.|"
+    r"\ba\.\s?[as]\.(?:\s?-?\s?t\b\.?)?|\bb\.\s?s\.|"
     r"#\s*\d+|\b\d+(?:\.\d+)?(?:\s*(?:-|–|to)\s*\d+(?:\.\d+)?)?\s*(?:semester\s+|quarter\s+)?units?\b(?:\s+or\s+(?:more|greater))?|"
-    r"\s[-–|]\s[^-–|]*\bcollege\b[^-–|]*$|\b(?:degrees?|certificates?|majors?|programs?)\b|"
+    r"\s[-–|]\s[^-–|]*\bcollege\b[^-–|]*$|\b(?:degree|certificate|majors?|program)\b|"
     r"\bcal[\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge(?:[\s-]breadth)?\b|\(?\bformerly\b[^,)]*\)?", re.I)
-NCL_DECOR_CAPS = re.compile(r"\b[A-Z]{1,4}\d{2,}[A-Z]?\b|\bA\.?\s?[AS]\.?(?:\s?-\s?T)?(?![\w.])|\bA[AS]T\b|\bADT\b|"
+NCL_DECOR_CAPS = re.compile(r"\b[A-Z]{1,4}\d{2,}[A-Z]?\b|\bA\.?\s?[AS]\.?(?:\s?-?\s?T\.?)?(?![\w.])|\bA[AS]T\b|\bADT\b|"
                             r"\bCOA\b|\bCA\b|\bB\.?\s?S\.?(?![\w.])")
 NCL_STOP = set(P.STOP) | {"opt", "concentration", "emphasis"}
 ROMAN = re.compile(r"^(?:i|ii|iii|iv|v|vi|vii|viii|ix|x)$")
@@ -1185,16 +1185,16 @@ NCL_SEGMENT = re.compile(r"\s+[-–|]\s+|\s*[:,()]\s*")
 
 
 def strip_college(text: str, college_words: frozenset) -> str:
-    """A reading with the college's own name set aside where it stands as a segment of its own, at the start or
-    the end (San Diego Mesa: "Veterinary Technology - Mesa, A.S."), never a word inside the program's name
-    ("Test Accounting" at a Test College keeps "Test")."""
+    """A reading with the college's full name set aside where it stands as a segment of its own, at the start
+    or the end ("Accounting - San Diego Mesa College, A.S."); a part of the name never is ("Accounting - Test,
+    A.S." at Test College keeps "Test", round three)."""
     if not college_words:
         return text
     segs = [x for x in NCL_SEGMENT.split(text) if x.strip()]
 
     def campus(seg):
         w = ncl_words(seg)[0]
-        return bool(w) and set(w) <= college_words
+        return bool(w) and set(w) == college_words
 
     def bare(seg):           # a decoration alone ("A.S."), with no word or number of its own
         return ncl_words(seg) == ((), ())
@@ -1254,17 +1254,54 @@ def ncl_page(pg: dict, college_words: frozenset = frozenset()) -> dict:
             "ge": ge_pattern_page(pg) and not any(w for w, _ in readings)}
 
 
-def ncl_pages(pages: list[dict], college: str | None = None) -> list[dict]:
+# A landing page lists programs and is none of them (round three of the #3300 review): its heading names a
+# plural kind of award ("Accounting Degrees and Certificates"), it is the parent of another page the capture read
+# (programsaz/accounting/ above accounting/accounting-degree/), or it prints no award and links to two or more of
+# the program pages read (an areas-of-study or department page). An archived or past catalog's copy is refused too.
+LANDING_HEADING = re.compile(r"\b(?:degrees|certificates|programs)\b", re.I)
+ARCHIVED = re.compile(r"archiv|\bprevious\b|past[\s_-]catalog", re.I)
+YEAR_SPAN = re.compile(r"(?<!\d)(20\d\d)\s*[-–_]\s*(?:20)?\d\d(?!\d)")
+
+
+def ncl_past_year(text: str, catalog_year: str | None) -> bool:
+    """Whether text names catalog years and every one is earlier than the capture's own."""
+    m = re.match(r"\s*(20\d\d)", catalog_year or "")
+    years = [int(y) for y in YEAR_SPAN.findall(text or "")]
+    return bool(m and years and max(years) < int(m.group(1)))
+
+
+def ncl_pages(pages: list[dict], college: str | None = None, catalog_year: str | None = None) -> list[dict]:
     """Each distinct page once (ncl_page), by its key; of one page's two addresses, the one that prints a
-    heading. The college's name (less "College" and "Community") is what strip_college() sets aside."""
-    college_words = frozenset(set(ncl_words(college)[0]) - {"college", "community"})
+    heading. The college's full name is what strip_college() sets aside. A landing page and an archived or
+    past catalog's copy are marked no program page (LANDING_HEADING, ARCHIVED, ncl_past_year)."""
+    college_words = frozenset(ncl_words(college)[0])
     feats: dict[str, dict] = {}
     for pg in pages:
         f = ncl_page(pg, college_words)
         prev = feats.get(f["key"])
         if prev is None or (not (prev["pg"].get("h1") or prev["pg"].get("title")) and (pg.get("h1") or pg.get("title"))):
             feats[f["key"]] = f
-    return list(feats.values())
+    out = list(feats.values())
+    paths = {_path_stem(f["pg"].get("url")) for f in out}
+    stems = {k for f in out for k in f["keys"]}
+    for f in out:
+        pg, path = f["pg"], _path_stem(f["pg"].get("url"))
+        heading = (pg.get("h1") or "").strip() or TITLE_SPLIT.split(pg.get("title") or "")[0]
+        links = {page_stem(l.get("href")) for l in ((pg.get("got") or {}).get("links") or []) if isinstance(l, dict)}
+        why = None
+        if LANDING_HEADING.search(heading):
+            why = "landing: its heading names a plural kind of award"
+        elif path and any(q != path and q.startswith(path + "/") for q in paths):
+            why = "landing: the parent of another page read"
+        elif not f["kinds"] and len((links & stems) - f["keys"]) >= 2:
+            why = "landing: no award printed, and it links to program pages read"
+        elif ARCHIVED.search(path) or ARCHIVED.search(heading):
+            why = "archived"
+        elif ncl_past_year(urllib.parse.unquote(pg.get("url") or "") + " " + heading, catalog_year):
+            why = "a past catalog year"
+        if why:
+            f["program_page"], f["refused"] = False, why
+    return out
 
 
 def ncl_title_forms(title: str | None) -> list[tuple]:
@@ -1302,7 +1339,7 @@ def ncl_match(page: dict, program: dict) -> dict | None:
                 continue
             own = round(sum(1 for w in words if _named(w, t_words)) / len(words), 3)
             if own >= NCL_OWN and (best is None or own > best):
-                best = own
+                best = own      # NCL_OWN is 1.0: the reading names nothing the title does not
     if best is None:
         return None
     return {"award": award, "title_share": 1.0, "heading_share": best}
@@ -1360,12 +1397,17 @@ def ncl_answer(prog: dict, pages: list[dict], claimed: dict[str, list[str]], eve
     return {"result": "found", "page": ncl_page_ref(pg, m)}
 
 
-def ncl_named(sources: list[dict]) -> set[str]:
+def ncl_named(sources: list[dict], award: bool = False) -> set[str]:
     """The closed-list programs whose page the closed-list search's own label says names them: its title share
-    at least half (label_score). Skyline's Mathematics A.S.-T was filed from the Economics page at title share
-    0.0; no title matcher should come back to that page."""
-    return {s["control_number"] for s in sources
-            if ((s.get("source") or {}).get("label") or {}).get("title", 0) >= 0.5}
+    at least half (label_score), and with award=True its award too. Skyline's Mathematics A.S.-T was filed from
+    the Economics page at title share 0.0; Antelope Valley's Professional Bookkeeping A.S. from the certificate's
+    page (award 0); no title-and-award matcher should come back to either."""
+    out = set()
+    for s in sources:
+        label = (s.get("source") or {}).get("label") or {}
+        if label.get("title", 0) >= 0.5 and (not award or label.get("award") == 1):
+            out.add(s["control_number"])
+    return out
 
 
 def ncl_claims(own: dict[str, str], pages: list[dict]) -> dict[str, list[str]]:
@@ -1437,19 +1479,19 @@ def ncl_list_test(programs: list[dict], pages: list[dict], own: dict[str, str], 
 
 
 def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], listed: list[dict] | None = None,
-               named: set[str] | None = None, college: str | None = None) -> tuple[dict[str, dict], dict]:
+               named: set[str] | None = None, college: str | None = None,
+               catalog_year: str | None = None) -> tuple[dict[str, dict], dict]:
     """({control number: answer} for each no-closed-list program, the self-test). An answer is found (with
-    the page); not_matched with the reason (title_has_no_words for a title of decorations alone); not_searched
-    when the page self-test fails; or not_listed (basis absent_from_catalog_list) only where the page self-test
-    passes, the capture holds the catalog's own list (`listed`), and that list passes its own self-test
-    (ncl_list_test). own: {control number: page_stem()} of each closed-list program's page, which it claims
+    the page); not_matched with the reason (title_has_no_words for a title of decorations alone;
+    absent_from_catalog_list where the capture holds the catalog's own list, `listed`, and it lacks the program);
+    or not_searched when the page self-test fails. This slice files no not_listed (round three): the claim "not
+    listed in the catalog" waits for slice B, with its own gate; ncl_list_test is measured, not applied. own: {control number: page_stem()} of each closed-list program's page, which it claims
     first; named: the ones whose page names them by the search's own label (ncl_self_test)."""
-    feats = ncl_pages(pages, college)
+    feats = ncl_pages(pages, college, catalog_year)
     test = ncl_self_test(programs, feats, own, named)
     claimed = ncl_claims(own, feats)
     lists = [ncl_page(e) for e in listed] if listed is not None else None
     test["catalog_list"] = ncl_list_test(programs, feats, own, lists) if lists is not None else None
-    list_ok = bool(test["catalog_list"] and test["catalog_list"]["files_not_listed"])
     out: dict[str, dict] = {}
     for prog in programs:
         if prog.get("closed_list"):
@@ -1462,8 +1504,8 @@ def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], lis
                        "page, %d on another program's and %d off their own page (floor %.0f%% of at least %d, none false)"
                        % (test["hits"], test["tested"], test["false"], test["false_off_own"], NCL_FLOOR * 100,
                           NCL_MIN_TESTED)}
-        elif list_ok and not any(ncl_match(e, prog) for e in lists):
-            out[cn] = {"result": "not_listed", "basis": "absent_from_catalog_list"}
+        elif lists is not None and not any(ncl_match(e, prog) for e in lists):
+            out[cn] = {"result": "not_matched", "why": "absent_from_catalog_list"}
         else:
             out[cn] = ncl_answer(prog, feats, claimed, programs)
     return out, test
@@ -4964,7 +5006,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             own = {r["control_number"]: page_stem(r["source"]["url"]) for r in recs if r.get("source")}
             answers, test = ncl_lookup(programs, pages, own,
                                        ncl_listed_names(report.get("coursedog")) if platform == "coursedog" else None,
-                                       ncl_named(recs), college)
+                                       ncl_named(recs), college, reg.get("catalog_year"))
             for rec in recs:
                 ans = answers.get(rec["control_number"])
                 if ans is not None and rec["method"] == "no_closed_list":

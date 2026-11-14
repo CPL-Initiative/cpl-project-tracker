@@ -4948,15 +4948,17 @@ def lt_list(names):
 lt_ans, lt_test = C.ncl_lookup(lt_progs, lt_pages, lt_own, lt_list(LT + ["Accounting"]),
                                {"L%d" % i for i in range(10)})
 check(lt_test["searches"] and lt_test["catalog_list"]["files_not_listed"]
-      and lt_ans["N2"] == {"result": "not_listed", "basis": "absent_from_catalog_list"}
+      and lt_ans["N2"] == {"result": "not_matched", "why": "absent_from_catalog_list"}
       and lt_ans["N1"]["result"] == "not_matched" and lt_ans["N3"] == {"result": "not_matched", "why": "title_has_no_words"},
-      "with both self-tests passing, a program absent from the catalog's own list files not_listed; a listed one with "
-      "no page is not_matched; Cal-GETC, a title of decorations alone, is never looked up: %r" % lt_ans)
+      "a program absent from the catalog's own list files not_matched, absent_from_catalog_list (this slice files no "
+      "not_listed, round three); a listed one with no page is not_matched; Cal-GETC, a title of decorations alone, "
+      "is never looked up: %r" % lt_ans)
 lt_ans2, lt_test2 = C.ncl_lookup(lt_progs, lt_pages, lt_own, lt_list(LT[:7] + ["Accounting"]),
                                  {"L%d" % i for i in range(10)})
 check(not lt_test2["catalog_list"]["files_not_listed"] and lt_test2["catalog_list"]["recall"] == 0.7
-      and lt_ans2["N2"]["result"] == "not_matched",
-      "a catalog list that misses closed-list programs whose pages were read (Merced's 45) files no not_listed: %r"
+      and lt_ans2["N2"] == {"result": "not_matched", "why": "absent_from_catalog_list"}
+      and not any(a.get("result") == "not_listed" for a in list(lt_ans.values()) + list(lt_ans2.values())),
+      "the catalog list's own test is measured (Merced's 45 missed), and no answer is ever not_listed: %r"
       % lt_test2["catalog_list"])
 lt_ans3, lt_test3 = C.ncl_lookup(lt_progs, lt_pages[:9], lt_own, lt_list(LT + ["Accounting"]),
                                  {"L%d" % i for i in range(9)})
@@ -4986,8 +4988,12 @@ check(C.ncl_match(C.ncl_page({"url": "https://x.example.edu/p/q2/", "h1": "Manag
       "a title with a colon matches on the whole title: Hospitality: Management never takes a bare Management page")
 check(C.ncl_match(C.ncl_pages([{"url": "https://x.example.edu/p/q1/", "h1": "Test Accounting, A.S."}], "Test College")[0],
                   _sk_prog("1", "Accounting", "A.S. Degree")) is None
-      and C.strip_college("Mesa: Biology, A.S.", frozenset({"san", "diego", "mesa"})) == "Biology - A.S.",
-      "the college's name is set aside only as a segment of its own at a heading's start or end")
+      and C.ncl_match(C.ncl_pages([{"url": "https://x.example.edu/p/q3/", "h1": "Accounting - Test, A.S."}],
+                                  "Test College")[0], _sk_prog("1", "Accounting", "A.S. Degree")) is None
+      and C.strip_college("Accounting - San Diego Mesa College, A.S.",
+                          frozenset({"san", "diego", "mesa", "college"})) == "Accounting - A.S.",
+      "the college's full name alone is set aside, as a segment of its own at a heading's start or end; a part of "
+      "it (\"Test\" at Test College) never is")
 check(C.ncl_listed_names({"catalog": [{"code": "A", "name": "A"}], "errors": ["skip 50: HTTP 500"]}) is None,
       "a catalog list the read did not finish is no basis")
 # Acalog: every program is preview_program.php, told apart by poid; the print view is the same page.
@@ -5012,10 +5018,42 @@ for heading, title in (("Business Administration: General Business Concentration
                        ("ENGLISH AS A SECOND LANGUAGE", "English as a Second Language"),
                        ("Business Administration 2.0, A.S.-T", "Business Administration 2.0")):
     check(C.ncl_words(heading) == C.ncl_words(title), "%r reads as %r: %r" % (heading, title, C.ncl_words(heading)))
-mesa = C.ncl_pages([{"url": "https://sdccd.curriqunet.com/catalog/iq/17540/programs/17727", "group": "g1",
-                     "h1": "Veterinary Technology - Mesa, A.S."}], "San Diego Mesa College")
-check(C.ncl_match(mesa[0], _sk_prog("1", "Veterinary Technology", "A.S. Degree")) is not None,
-      "a heading's campus name (San Diego Mesa) is the college's, not the program's")
+# Round three of the #3300 review: a found needs the whole title both ways; landing, department, archived and
+# past-year pages are no program's page; the transfer forms ADT and A.S.T. read as the A.S.-T.
+check(C.ncl_match(C.ncl_page({"url": "https://x.example.edu/p/q4", "h1": "Computer Information Systems Security, A.S."}),
+                  _sk_prog("1", "Computer Information Systems", "A.S. Degree")) is None
+      and C.ncl_match(C.ncl_page({"url": "https://x.example.edu/p/q5", "h1": "Marketing Management, A.S."}),
+                      _sk_prog("2", "Marketing", "A.S. Degree")) is None
+      and C.ncl_match(C.ncl_page({"url": "https://x.example.edu/p/q6", "h1": "Marketing, A.S."}),
+                      _sk_prog("3", "Marketing", "A.S. Degree")) is not None,
+      "a page's heading must be the whole title both ways: Computer Information Systems Security is not Computer "
+      "Information Systems, Marketing Management is not Marketing")
+check(C.award_kinds_in("Sociology ADT CalGETC") == {"adt"} and C.award_kinds_in("Biology - A.S.T.") == {"adt"}
+      and C.ncl_words("Biology - A.S.T.") == C.ncl_words("Biology"),
+      "ADT and A.S.T. are the transfer degree, and read as decoration beside the title")
+MS = "https://catalog.mtsac.example.edu/programs/programsaz/"
+land = {f["pg"]["url"]: f for f in C.ncl_pages([
+    {"url": MS + "accounting/", "h1": "Accounting"},
+    {"url": MS + "accounting/accounting-degree/", "h1": "Accounting, A.S."},
+    {"url": MS + "nursing/", "h1": "Nursing Degrees and Certificates"},
+    {"url": "https://napa.example.edu/areas-of-study/ethnic-studies/", "h1": "Ethnic Studies",
+     "got": {"links": [{"href": "https://napa.example.edu/areas-of-study/ethnic-studies/ethnic-studies-aa/"},
+                       {"href": "https://napa.example.edu/areas-of-study/ethnic-studies/chicano-studies-aa/"}]}},
+    {"url": "https://napa.example.edu/areas-of-study/ethnic-studies/ethnic-studies-aa/", "h1": "Ethnic Studies, A.A."},
+    {"url": "https://napa.example.edu/areas-of-study/ethnic-studies/chicano-studies-aa/", "h1": "Chicano Studies, A.A."},
+    {"url": "https://x.example.edu/archive/biology-as/", "h1": "Biology, A.S."},
+    {"url": "https://x.example.edu/catalog/2024-2025/programs/chemistry-as/", "h1": "Chemistry, A.S."},
+    {"url": "https://x.example.edu/catalog/2026-2027/programs/physics-as/", "h1": "Physics, A.S."},
+], "Example College", "2026-2027")}
+check([u for u, f in land.items() if not f["program_page"]] == [
+      MS + "accounting/", MS + "nursing/", "https://napa.example.edu/areas-of-study/ethnic-studies/",
+      "https://x.example.edu/archive/biology-as/", "https://x.example.edu/catalog/2024-2025/programs/chemistry-as/"],
+      "landing pages (a parent of another page read, a plural heading, an areas-of-study page linking two program "
+      "pages read), an archived copy and a past catalog year are refused; the program pages stand: %r"
+      % {u: f.get("refused") for u, f in land.items()})
+check(C.ncl_match(land[MS + "accounting/accounting-degree/"], _sk_prog("1", "Accounting", "A.S. Degree")) is not None
+      and C.ncl_match(land[MS + "accounting/"], _sk_prog("1", "Accounting", "A.S. Degree")) is None,
+      "Accounting A.S. reads its degree page, never the department page above it")
 check(C.ncl_match(C.ncl_page({"url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-certificate/",
                               "h1": "Accounting"}), _sk_prog("1", "Accounting", "A.S. Degree")) is None,
       "an address that says certificate is no degree's page (Mt. San Antonio)")

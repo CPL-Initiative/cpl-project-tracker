@@ -64,6 +64,9 @@ check(sw["false"] == 0 and sw["false_off_own"] == 0,
       "no closed-list program in the committed captures is matched to another program's page, nor found anywhere "
       "when its own page is set aside (the #3300 review's stricter measure; Diablo Valley's transfer pages): %r"
       % [(k, c["false_matches"][:2]) for k, c in full["colleges"].items() if c.get("false") or c.get("false_off_own")][:3])
+check(sw["conversion"]["found_wrong"] == 0 and sw["conversion"]["converted"] > 1000,
+      "a third of the closed-list programs, turned into programs with no list and their pages unclaimed, are never "
+      "found on a wrong page (the second reader's real-use test): %r" % sw["conversion"])
 check(full["colleges"]["merced"]["catalog_list"]["files_not_listed"] is False,
       "Merced's catalog list misses closed-list programs whose pages were read, so it files no not_listed")
 check(sw["tested"] > 5000 and sw["recall"] is not None and sw["colleges_searched"] + sw["colleges_under_floor"]
