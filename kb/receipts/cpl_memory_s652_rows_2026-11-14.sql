@@ -40,7 +40,7 @@ where m.slug in
 group by m.slug, m.summary order by m.slug;
 
 -- ===========================================================================================================
--- STATEMENT 2 -- RUN by the conductor at 14:50Z 2026-11-14 (1 row inserted, 1 create log row) (1 row; summary 392 characters, measured by script). Sam's answers on Open Asks Sheet 197
+-- STATEMENT 2 -- RUN by the conductor at 14:42Z 2026-11-14 (1 row inserted, 1 create log row) (1 row; summary 392 characters, measured by script). Sam's answers on Open Asks Sheet 197
 -- (Complete pressed 14:38Z 2026-11-14), verified, his picker values quoted. Rollback by slug, as above. The conductor runs
 -- it as one execute_sql call and records RUN here.
 -- ===========================================================================================================
