@@ -483,6 +483,45 @@
       })
       .catch(function () { return {}; });
   }
+  // Live Honors equivalences (field=honors_of, S653): course_id = the Honors
+  // M-ID, value = its base. Returned as { base: {honors id: base id}, hop:
+  // {id: its live merge target} } for each base and each hop after it, so the
+  // worklist reads a base that merged into a third id at its chain end
+  // (kb/honors_of.py holds the same rule server-side). THIS RELIES ON THE LIVE
+  // RE-KEY: the browser resolves no alias map, so a live value naming a
+  // re-minted base would offer the pair here while Python holds it. It holds
+  // because supabase-rekey.yml moves honors_of values with merge_into values
+  // at every re-mint, and the rows migration refuses a value outside the live
+  // id set (docs/reference/honors_of_design.md). No honors_of row, no second read.
+  function fetchHonorsOf() {
+    var empty = { base: {}, hop: {} };
+    return fetchAllRows("/rest/v1/kb_curation?select=course_id,value&field=eq.honors_of&order=course_id.asc")
+      .then(function (arr) {
+        var base = {}, hop = {};
+        (arr || []).forEach(function (x) { if (x.value) base[x.course_id] = x.value; });
+        function step(ids, n) {
+          var todo = ids.filter(function (i, k) { return !(i in hop) && ids.indexOf(i) === k; });
+          if (!todo.length || n > 6) return Promise.resolve();
+          todo.forEach(function (i) { hop[i] = null; });
+          var reads = [];
+          for (var k = 0; k < todo.length; k += 80) {
+            var list = todo.slice(k, k + 80).map(function (i) { return '"' + String(i).replace(/"/g, '\\"') + '"'; }).join(",");
+            reads.push(fetchAllRows("/rest/v1/kb_curation?select=course_id,value&field=eq.merge_into&course_id=in.("
+              + encodeURIComponent(list) + ")"));
+          }
+          return Promise.all(reads).then(function (pages) {
+            var next = [];
+            pages.forEach(function (rows2) {
+              (rows2 || []).forEach(function (x) { if (x.value) { hop[x.course_id] = x.value; next.push(x.value); } });
+            });
+            return step(next, n + 1);
+          });
+        }
+        var bases = Object.keys(base).map(function (h) { return base[h]; });
+        return step(bases, 0).then(function () { return { base: base, hop: hop }; });
+      })
+      .catch(function () { return empty; });
+  }
   // Locked curated anchors (common_courses.json) are firewalled — the daily overlay
   // sync never overwrites them. A signed-in reviewer can still PROPOSE a discipline
   // correction, recorded in kb_curation under the `anchor_discipline_proposal` field.
@@ -1562,7 +1601,7 @@
         // title-firewalled — like the anchor it stands in for.
         if (/^UC-CUR-/.test(target)) { urow.kind = "Unified"; urow.id_system = "Unified"; }
         else if (/\sC\d{4}/.test(target)) { urow.kind = "Course"; urow.id_system = "CCN-ID"; }
-        else if (/\sM[0-9A-Z]{4}\b/.test(target)) { urow.kind = "Course"; urow.id_system = "M-ID"; }
+        else if (/\sM[0-9A-Z]{4}H?\b/.test(target)) { urow.kind = "Course"; urow.id_system = "M-ID"; }
         else { urow.kind = "Course"; urow.id_system = "C-ID"; }
       }
       var official = urow.id_system === "C-ID" || urow.id_system === "CCN-ID";
@@ -2524,8 +2563,8 @@
       var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:var(--surface-opaque);padding:18px 20px;font-size:.9rem;";
       var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;";
       var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;";
-      Promise.all([loadSuggestions(), fetchDismissals()]).then(function (res) {
-        var data = res[0], dismissed = res[1];
+      Promise.all([loadSuggestions(), fetchDismissals(), fetchHonorsOf()]).then(function (res) {
+        var data = res[0], dismissed = res[1], honorsOf = res[2] || { base: {}, hop: {} };
         var anchored = (data.groups || []).map(function (g) { g._kind = "anchored"; return g; });
         // Curated-anchor duplicates lane (2026-09-04): the May 2026 curated
         // common-course anchors — the locked, read-only rows — whose title and
@@ -2576,7 +2615,30 @@
         // liveMergePending covers members with no in-payload row (e.g. a
         // Stand-Alone folded this cycle) so a confirmed group can't re-offer.
         var mergedAway = function (id) { return (byId[id] && byId[id]._mergedAway) || !!liveMergePending[id]; };
-        function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
+        // An Honors M-ID never joins its base (`honors_of`, S653): when both sit in
+        // one group the Honors member leaves it, so the pair is never offered and
+        // the rest of the group still can be. Pairwise, so a third id merging into
+        // the base changes nothing here (a group-signature dismissal re-offers).
+        // The base is read along its merge chain (this session's merges, then the
+        // live overlay's), so a base merged into a third id still holds the pair.
+        function honorsChain(b) {
+          var out = [b], seen = {}, i = b;
+          seen[b] = 1;
+          for (var n = 0; n < 20; n++) {
+            var t = liveMergePending[i] || (honorsOf.hop || {})[i];
+            if (!t || seen[t]) break;
+            seen[t] = 1; out.push(t); i = t;
+          }
+          return out;
+        }
+        function liveMembers(g) {
+          var live = g.members.filter(function (m) { return !mergedAway(m.id); });
+          var ids = {}; live.forEach(function (m) { ids[m.id] = 1; });
+          return live.filter(function (m) {
+            var b = (honorsOf.base || {})[m.id];
+            return !(b && honorsChain(b).some(function (x) { return x !== m.id && ids[x]; }));
+          });
+        }
         // ── CCR filter coupling (DECOUPLED — Sam, S72 followup item 1) ───────
         // The worklist used to mirror the main CCR table's filters (discipline,
         // subject, source, credit, …) behind a "Match the CCR table filters"

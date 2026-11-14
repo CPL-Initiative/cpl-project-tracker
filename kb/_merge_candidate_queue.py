@@ -135,10 +135,29 @@ def pick_survivor(ms):
     return win, basis
 
 
-def group_of(members, rows, arts, lane, why, source=None, survivor=None):
+def honors_pairs():
+    """{Honors M-ID: [base, base's merge-chain end]} from the overlay's honors_of (kb/honors_of.py, S653)."""
+    sys.path.insert(0, HERE)
+    import honors_of as ho
+    try:
+        with open(os.path.join(HERE, "coci_curation.json"), encoding="utf-8") as fh:
+            cur = (json.load(fh) or {}).get("curations", {})
+    except (OSError, ValueError):
+        return {}
+    if not any(isinstance(v, dict) and v.get(ho.FIELD) for v in cur.values()):
+        return {}
+    return ho.honors_map(cur, live=ho.load_live_ids(HERE), merge_end=True)
+
+
+def group_of(members, rows, arts, lane, why, source=None, survivor=None, hmap=None):
     ms = [member(i, rows, arts) for i in members]
     live = [m for m in ms if m["in_catalog"]]
     flags = []
+    if hmap:
+        sys.path.insert(0, HERE)
+        import honors_of as ho
+        if ho.holds_pair([m["id"] for m in ms], hmap):
+            flags.append("an Honors course and its base (honors_of): two courses, never one")
     bands = {m["band"] for m in live if m["band"]}
     if len(bands) > 1:
         flags.append("bands cross (credit 1xxx vs noncredit 9xxx) — not mergeable on a title")
@@ -158,13 +177,14 @@ def group_of(members, rows, arts, lane, why, source=None, survivor=None):
             "articulations_total": sum(m["articulations"] for m in live)}
 
 
-def build(discipline, rows, arts):
+def build(discipline, rows, arts, hmap=None):
+    """hmap: the Honors pairs (honors_pairs()); a group holding one is flagged and never proposable."""
     out, seen = [], set()
     for g in SEEDED:
         if discipline and g["discipline"] != discipline:
             continue
         out.append(group_of(g["members"], rows, arts, g.get("lane", "seeded"), g["why"],
-                            g["source"], g.get("survivor")))
+                            g["source"], g.get("survivor"), hmap))
         seen.update(g["members"])
     by_title = defaultdict(list)
     for i, r in rows.items():
@@ -175,7 +195,7 @@ def build(discipline, rows, arts):
         if len(ids) < 2 or not t or any(i in seen for i in ids):
             continue
         out.append(group_of(sorted(ids), rows, arts, "same_title",
-                            "identical titles once normalized"))
+                            "identical titles once normalized", hmap=hmap))
     # Seeded first (a human asked for those), then surfaced, then by how much is at stake.
     out.sort(key=lambda g: ({"seeded": 0, "surfaced": 1}.get(g["lane"], 2),
                             -g["colleges_total"], -g["articulations_total"]))
@@ -222,7 +242,7 @@ def main():
     args = ap.parse_args()
     today = date.today().isoformat()
     rows, arts = corpus()
-    groups = build(args.discipline, rows, arts)
+    groups = build(args.discipline, rows, arts, honors_pairs())
     out = args.out or os.path.join(OUT_DIR, today)
     os.makedirs(out, exist_ok=True)
     doc = {"_status": f"QUEUE {today} — candidates for a faculty reviewer. NOTHING APPLIED.",
