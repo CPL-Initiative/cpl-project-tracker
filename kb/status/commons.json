@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T13:47:28Z",
+ "written_at": "2026-11-14T14:35:06Z",
  "rows": [
   {
    "key": "requirements",
@@ -118,16 +118,8 @@
    ],
    "issues": [
     {
-     "n": 198,
-     "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 160, the classifier's title has a course code left in 36, a merge would join two issuers 2)",
-     "carry": "unsure",
-     "open": "#exhibits/held",
-     "error": null
-    },
-    {
-     "n": 374,
-     "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+     "n": 499,
+     "words": "credentials with no Common SUBJ (470 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
      "open": "#exhibits/list/nosubj",
@@ -166,7 +158,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-13T23:58:21Z",
+    "at": "2026-11-14T14:34:56Z",
     "every_hours": 24
    },
    "facts": {
@@ -178,14 +170,14 @@
     "confirmed": 1435,
     "records": 3185,
     "records_stamped": 2415,
-    "saved_at": "2026-11-12T16:21:46Z",
+    "saved_at": "2026-11-14T14:34:56Z",
     "fold_at": "2026-11-13T23:58:21Z",
     "map_titles": 5247,
     "unclassified": 133,
     "left_map": 810,
     "below_80": 1117,
     "below_60": 235,
-    "no_subject": 374,
+    "no_subject": 499,
     "review_list": 12,
     "returned_unacknowledged": 0
    },
@@ -678,14 +670,6 @@
     "key": "unsure",
     "items": [
      {
-      "ref": "exhibit",
-      "title": "Common Exhibit Reference",
-      "n": 198,
-      "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 160, the classifier's title has a course code left in 36, a merge would join two issuers 2)",
-      "open": "#exhibits/held"
-     },
-     {
       "ref": "course",
       "title": "Common Course Reference",
       "n": 4,
@@ -766,8 +750,8 @@
    {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
-    "n": 374,
-    "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "n": 499,
+    "words": "credentials with no Common SUBJ (470 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    },
@@ -801,14 +785,25 @@
    "procedures": [
     {
      "name": "classifier",
-     "placed": 945,
+     "placed": 950,
      "untouched": 869,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 0,
+     "left": 5,
      "looked": 57
+    },
+    {
+     "name": "brand-family",
+     "placed": 244,
+     "untouched": 109,
+     "kept": 0,
+     "renamed": 2,
+     "moved": 0,
+     "by_procedure": 5,
+     "left": 128,
+     "looked": 2
     },
     {
      "name": "course-identity",
@@ -820,17 +815,6 @@
      "by_procedure": 0,
      "left": 0,
      "looked": 25
-    },
-    {
-     "name": "brand-family",
-     "placed": 116,
-     "untouched": 109,
-     "kept": 0,
-     "renamed": 2,
-     "moved": 0,
-     "by_procedure": 5,
-     "left": 0,
-     "looked": 2
     },
     {
      "name": "high-school-rop",
@@ -889,13 +873,13 @@
     }
    ],
    "total": {
-    "placed": 1320,
+    "placed": 1453,
     "untouched": 1188,
     "kept": 23,
     "renamed": 85,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 133,
     "looked": 108
    }
   },
