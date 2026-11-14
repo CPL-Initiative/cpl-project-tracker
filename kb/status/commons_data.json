@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T10:52:07Z",
+ "written_at": "2026-11-14T18:25:52Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -170,9 +170,9 @@
   "passing": 15840,
   "gap": 6495,
   "with_gap": 118,
-  "cost_usd": 1327.28,
-  "passed_at_read": 15151,
-  "cost_receipts": 117,
+  "cost_usd": 1343.32,
+  "passed_at_read": 15332,
+  "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
   "scout_barrier": 1,
@@ -4008,7 +4008,7 @@
    "objectives_printed": null,
    "read_at": "2026-11-13T17:24:31Z",
    "read_kind": "capture",
-   "cost_usd": null,
+   "cost_usd": 16.04,
    "passed_at_read": 181,
    "slo_queue": null,
    "scout": {
