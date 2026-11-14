@@ -6,7 +6,7 @@
   "edge_functions": 15,
   "file_datasets": 940,
   "external_services": 195,
-  "consumers": 588,
+  "consumers": 589,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -5862,6 +5862,13 @@
      "direction": "read",
      "how": "literal",
      "line": 133
+    },
+    {
+     "id": "script:kb/_prefix_alias_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
     }
    ],
    "producers": [
@@ -17422,6 +17429,13 @@
   "file:kb/program_requirements_reconcile.json": {
    "consumers": [
     {
+     "id": "script:kb/_prefix_alias_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 71
+    },
+    {
      "id": "script:kb/_program_requirements_reconcile.py",
      "kind": "script",
      "direction": "read",
@@ -17882,6 +17896,13 @@
      "direction": "read",
      "how": "literal",
      "line": 45
+    },
+    {
+     "id": "script:kb/_prefix_alias_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 73
     }
    ],
    "served": true,
@@ -22522,6 +22543,13 @@
      "direction": "read",
      "how": "literal",
      "line": 668
+    },
+    {
+     "id": "script:kb/_prefix_alias_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
     }
    ],
    "served": false,

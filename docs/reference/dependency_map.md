@@ -280,7 +280,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `CPL_Data.js` | `CPL_DATA` | `excel_to_dashboard.py` | tabs: `annual-report`, `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `raci` · modules: `generate_reports.js`, `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` |
 | `cip_crosswalk_data.js` | `CIP_CROSSWALK` | `kb/_build_cip_crosswalk.py` | tabs: `cip-crosswalk` · modules: `kb/build_cip_status_counts.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_noncredit_cip_categories.py`, `kb/_classify_noncredit_programs.py`, `kb/_emit_regional_opps_data.py` |
 | `cobi_admin_surface.js` | `COBI_ADMIN_SURFACE` | `kb/_build_cobi_admin_surface.py` | tabs: `admin` · modules: `a11y.config.js` · pages: `CPL_Dashboard.html` |
-| `coci_lookup_data.js` | `CPL_COCI_LOOKUP` | `kb/_build_coci_lookup.py` | tabs: `coci-lookup`, `college-briefing`, `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_apply_cid_claim_holds.py`, `kb/_build_coci_lookup.py`, `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_csr_trail.py` |
+| `coci_lookup_data.js` | `CPL_COCI_LOOKUP` | `kb/_build_coci_lookup.py` | tabs: `coci-lookup`, `college-briefing`, `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_apply_cid_claim_holds.py`, `kb/_build_coci_lookup.py`, `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_csr_trail.py`, `kb/_prefix_alias_census.py` |
 | `coci_lookup_desc_A.js` | `CPL_COCI_DESC` | not stated in header | none found |
 | `coci_lookup_desc_B.js` | `CPL_COCI_DESC` | not stated in header | none found |
 | `coci_lookup_desc_C.js` | `CPL_COCI_DESC` | not stated in header | none found |
@@ -796,7 +796,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot/sequences/sources/mtsac_gps_s0401.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/smc_program_219.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
-| `kb/program_requirements_reconcile.json` | scripts: `kb/_program_requirements_reconcile.py` | — |
+| `kb/program_requirements_reconcile.json` | scripts: `kb/_prefix_alias_census.py`, `kb/_program_requirements_reconcile.py` | — |
 | `kb/program_requirements_wave` | none found | committed by: `program-requirements-wave.yml` |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
@@ -815,7 +815,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/asccc_area_map.json` | scripts: `kb/_apply_asccc_areas.py` | — |
 | `kb/reference/authority_subject_codes.json` | scripts: `kb/_seed_authority_codes.py` | scripts: `kb/_seed_authority_codes.py` |
 | `kb/reference/california_occupational_licenses.json` | scripts: `kb/_build_it_ai_credential_catalog.py` | — |
-| `kb/reference/cb_course_basic_fall2025.csv` | scripts: `chatbox/build_program_courses.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_program_course_graph.py` | — |
+| `kb/reference/cb_course_basic_fall2025.csv` | scripts: `chatbox/build_program_courses.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_program_course_graph.py`, `kb/_prefix_alias_census.py` | — |
 | `kb/reference/ccc_coll_dist_2025.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/reference/ccc_colleges_ceo_2026.json` | scripts: `kb/_build_college_identity_crosswalk.py`, `kb/_program_source_census.py` | — |
 | `kb/reference/ccc_ge_exam_credit.json` | scripts: `excel_to_dashboard.py` | — |
@@ -1007,7 +1007,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
 | `raci.js` | pages: `CPL_Dashboard.html` | — |
 | `read*.json` | scripts: `scripts/next_slo_colleges.py` | — |
-| `read_*.json` | scripts: `kb/_build_commons_data_status.py`, `kb/_build_commons_status.py` | — |
+| `read_*.json` | scripts: `kb/_build_commons_data_status.py`, `kb/_build_commons_status.py`, `kb/_prefix_alias_census.py` | — |
 | `read_*_p*of*.json` | scripts: `kb/_course_outcomes_load.py` | — |
 | `reflections/build_reflections_summary.py` | workflows: `weekly-reflections-summary.yml` | — |
 | `reflections/summary.json` | scripts: `reflections/build_reflections_summary.py` | committed by: `weekly-reflections-summary.yml` |
@@ -1481,4 +1481,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 940 file
-datasets · 195 external services · 588 consumers · 72 workflows · 41 tabs.
+datasets · 195 external services · 589 consumers · 72 workflows · 41 tabs.
