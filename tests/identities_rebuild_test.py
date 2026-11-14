@@ -138,6 +138,16 @@ check("refresh keeps the re-key stamp when the title still names the course",
 check("a refresh that changes the course moves the stamp to _superseded_rekeyed_from",
       "_identities_rekeyed_from" not in new["FIRE M1004"]
       and new["FIRE M1004"].get("_superseded_rekeyed_from") == "FIRE M0998")
+both = dict(identities, **{
+    "FIRE M1004": dict(identities["FIRE M1004"], _superseded_rekeyed_from="FIRE M0900"),
+    "FIRE M1005": dict(identities["FIRE M1005"], _superseded_rekeyed_from="FIRE M0901")})
+nb = ib.apply_plan(both, ib.compute_plan(both, records, cat, sg, mem))
+check("an entry with both stamps keeps its superseded stamp when the title still names the course",
+      nb["FIRE M1005"].get("_superseded_rekeyed_from") == "FIRE M0901"
+      and nb["FIRE M1005"].get("_identities_rekeyed_from") == "FIRE M0997")
+check("an entry with both stamps keeps the earlier superseded stamp beside the new one",
+      nb["FIRE M1004"].get("_superseded_rekeyed_from") == ["FIRE M0900", "FIRE M0998"]
+      and "_identities_rekeyed_from" not in nb["FIRE M1004"])
 check("every rebuilt entry carries _identities_rebuilt_at; untouched ones do not",
       all(new[k].get("_identities_rebuilt_at") == "2026-11-14T00:00:00Z"
           for k in list(plan["fill"]) + list(plan["refresh"]))
@@ -203,6 +213,15 @@ with tempfile.TemporaryDirectory() as td:
         json.dump(dict(pj, fill=pj["fill"][:-1]), f)
     r = run("--apply", "--expect-plan", tampered)
     check("--apply aborts when the plan differs from the one named", r.returncode != 0 and unchanged())
+    # The same keys, one entry's content moved since the dry run: a new college in FIRE M1001's membership.
+    mem_path = os.path.join(td, "coci_minted_memberships.json")
+    mem_bytes = open(mem_path, "rb").read()
+    dump("coci_minted_memberships.json", {"memberships": dict(mem, **{"FIRE M1001": mem["FIRE M1001"] + [{"college": "Nu College"}]})})
+    r = run("--apply", "--expect-plan", plan_path)
+    check("--apply aborts naming an entry whose content moved since the dry run, writing nothing",
+          r.returncode != 0 and "content" in r.stderr and "FIRE M1001" in r.stderr and unchanged())
+    with open(mem_path, "wb") as f:
+        f.write(mem_bytes)
     r = run("--apply", "--expect-plan", plan_path)
     doc = json.load(open(art_path, encoding="utf-8"))
     receipt_path = os.path.join(out, "plan", "apply_receipt.json")
@@ -253,8 +272,15 @@ with tempfile.TemporaryDirectory() as td:
           and open(art_path, "rb").read() == moved)
 
 # ── the plan comparison itself ───────────────────────────────────────────────
-pj_like = {"fill": sorted(plan["fill"]), "refresh": sorted(plan["refresh"]), "orphan": list(plan["orphan"])}
+pj_like = {"fill": sorted(plan["fill"]), "refresh": sorted(plan["refresh"]), "orphan": list(plan["orphan"]),
+           "entry_hashes": ib.entry_hashes(plan)}
 check("plan_drift is empty for the reviewed plan", ib.plan_drift(plan, pj_like) == {})
+moved_plan = copy.deepcopy(plan)
+moved_plan["refresh"]["FIRE M1002"]["colleges_offering"] = ["Alpha College", "Nu College"]
+check("plan_drift names an entry whose offering moved, with the same key sets",
+      ib.plan_drift(moved_plan, pj_like) == {"content": ["FIRE M1002"]})
+check("plan_drift refuses a plan with no entry hashes",
+      "content" in ib.plan_drift(plan, {k: v for k, v in pj_like.items() if k != "entry_hashes"}))
 check("plan_drift names a fill set that differs",
       ib.plan_drift(plan, dict(pj_like, fill=pj_like["fill"][:-1])) == {"fill": ["FIRE M1006"]})
 check("plan_drift names a refresh set that differs",
@@ -287,6 +313,94 @@ with tempfile.TemporaryDirectory() as td:
     check("a failed gate stops the apply: nothing written, no receipt",
           refused and open(art_path, "rb").read() == before
           and not os.path.exists(os.path.join(td, "apply_receipt.json")))
+
+# ── an interrupted apply or undo is settled by the next run ──────────────────
+class Boom(OSError):
+    pass
+
+
+def fixture_kb(td):
+    for name, obj in (("coci_articulations.json", {"identities": identities, "articulations": records}),
+                      ("coci_minted_courses.json", {"courses": cat}), ("coci_minted_singletons.json", {"courses": sg}),
+                      ("coci_minted_memberships.json", {"memberships": mem}),
+                      ("coci_curation.json", {"curations": {"FIRE M1001": {"merge_into": "FIRE 130 X"}}}),
+                      (os.path.join("reference", "coci_courses.json"), {"courses": {"FIRE 130 X": {}}})):
+        p = os.path.join(td, name)
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, "w", encoding="utf-8") as f:
+            json.dump(obj, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+    env = dict(os.environ, IDENTITIES_REBUILD_KB=td, IDENTITIES_REBUILD_OUT=os.path.join(td, "out"))
+    script = os.path.join(ROOT, "kb", "_identities_rebuild.py")
+    run = lambda *a: subprocess.run([sys.executable, script, *a], env=env, capture_output=True, text=True)
+    run("--out", os.path.join(td, "out", "p"))
+    return os.path.join(td, "coci_articulations.json"), os.path.join(td, "out", "p", "plan.json"), run
+
+
+def inproc(fn_name, art_path, plan_path, fail):
+    """Run do_apply or do_undo in-process with one write made to fail; True when it raised."""
+    real = getattr(ib, fail[0])
+    calls = {"n": 0}
+
+    def flaky(*a, **kw):
+        calls["n"] += 1
+        if calls["n"] == fail[1]:
+            raise Boom("injected write failure")
+        return real(*a, **kw)
+    setattr(ib, fail[0], flaky)
+    try:
+        if fn_name == "apply":
+            ident = json.load(open(art_path, encoding="utf-8"))["identities"]
+            p = ib.compute_plan(ident, records, cat, sg, mem)
+            ib.do_apply(argparse.Namespace(expect_plan=plan_path, drop_orphans=False, ruling=None),
+                        json.load(open(art_path, encoding="utf-8")), art_path, ident, records, cat, sg, mem, p)
+        else:
+            ib.do_undo(os.path.join(os.path.dirname(plan_path), "apply_receipt.json"), art_path)
+        return False
+    except Boom:
+        return True
+    finally:
+        setattr(ib, fail[0], real)
+
+
+state = lambda plan_path: json.load(open(os.path.join(os.path.dirname(plan_path), "apply_receipt.json")))["state"]
+
+with tempfile.TemporaryDirectory() as td:
+    art_path, plan_path, run = fixture_kb(td)
+    original = open(art_path, "rb").read()
+    raised = inproc("apply", art_path, plan_path, ("_write_map", 1))
+    check("a failed map write leaves the map untouched and the receipt pending",
+          raised and open(art_path, "rb").read() == original and state(plan_path) == "pending_apply")
+    r = run("--undo", os.path.join(os.path.dirname(plan_path), "apply_receipt.json"))
+    check("then --undo settles it: nothing to undo, the map untouched, the receipt abandoned",
+          r.returncode == 0 and "never reached the map" in r.stdout and open(art_path, "rb").read() == original
+          and state(plan_path) == "abandoned")
+    inproc("apply", art_path, plan_path, ("_write_map", 1))
+    r = run("--apply", "--expect-plan", plan_path)
+    check("after another failed map write, the next --apply settles the receipt and applies",
+          r.returncode == 0 and "abandoned" in r.stdout and state(plan_path) == "applied"
+          and open(art_path, "rb").read() != original)
+    r = run("--undo", os.path.join(os.path.dirname(plan_path), "apply_receipt.json"))
+    check("and that apply undoes byte for byte", r.returncode == 0 and open(art_path, "rb").read() == original)
+
+with tempfile.TemporaryDirectory() as td:
+    art_path, plan_path, run = fixture_kb(td)
+    original = open(art_path, "rb").read()
+    receipt_path = os.path.join(os.path.dirname(plan_path), "apply_receipt.json")
+    raised = inproc("apply", art_path, plan_path, ("_write_receipt", 2))
+    applied = open(art_path, "rb").read()
+    check("a failed mark after the map write leaves the map applied and the receipt pending",
+          raised and applied != original and state(plan_path) == "pending_apply")
+    r = run("--apply", "--expect-plan", plan_path)
+    check("then --apply settles the receipt as applied and refuses a second apply",
+          r.returncode != 0 and "never twice" in r.stderr and state(plan_path) == "applied"
+          and open(art_path, "rb").read() == applied)
+    raised = inproc("undo", art_path, plan_path, ("_write_map", 1))
+    check("a failed map write in --undo leaves the map applied and the receipt pending its undo",
+          raised and open(art_path, "rb").read() == applied and state(plan_path) == "pending_undo")
+    r = run("--undo", receipt_path)
+    check("then --undo settles it and undoes byte for byte",
+          r.returncode == 0 and open(art_path, "rb").read() == original and state(plan_path) == "undone")
 
 # ── the export calls the shared rule ─────────────────────────────────────────
 src = open(os.path.join(ROOT, "excel_to_dashboard.py"), encoding="utf-8").read()

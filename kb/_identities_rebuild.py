@@ -55,6 +55,7 @@ Usage (from repo root):
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -203,7 +204,8 @@ def compute_plan(identities, records, cat, sg, mem):
                                if k not in art_set and (v or {}).get("identity_system") != "M-ID")
     return {"fill": fill, "refresh": refresh, "refresh_why": why, "same": same, "keep_cid": keep_cid,
             "cid_no_entry": cid_no_entry, "null_key": null_key, "no_record": no_record,
-            "orphan": orphan, "cid_unarticulated": cid_unarticulated,
+            "orphan": orphan, "orphan_entries": {k: identities[k] for k in orphan},
+            "cid_unarticulated": cid_unarticulated,
             "entries_before": len(identities), "articulated_ids": len(art_ids)}
 
 
@@ -216,11 +218,17 @@ def apply_plan(identities, plan, drop_orphans=False, now=None):
     for k, v in identities.items():
         if k in plan["refresh"]:
             e = dict(plan["refresh"][k])
+            superseded = v.get(SUPERSEDED_STAMP)
             if REKEY_STAMP in v:
-                substance = title_differs_in_substance(v.get("title"), e.get("title"))
-                e[SUPERSEDED_STAMP if substance else REKEY_STAMP] = v[REKEY_STAMP]
-            elif SUPERSEDED_STAMP in v:
-                e[SUPERSEDED_STAMP] = v[SUPERSEDED_STAMP]
+                if title_differs_in_substance(v.get("title"), e.get("title")):
+                    # The entry no longer describes the course it was re-keyed from;
+                    # an earlier superseded stamp is kept beside this one.
+                    prior = superseded if isinstance(superseded, list) else ([superseded] if superseded else [])
+                    superseded = prior + [v[REKEY_STAMP]] if prior else v[REKEY_STAMP]
+                else:
+                    e[REKEY_STAMP] = v[REKEY_STAMP]
+            if superseded:
+                e[SUPERSEDED_STAMP] = superseded
             if now:
                 e[REBUILT_STAMP] = now
             out[k] = e
@@ -362,10 +370,16 @@ def _export_rows(odir):
     it = ws.iter_rows(values_only=True)
     head = list(next(it))
     ia, ip = head.index("Adopted colleges"), head.index("Adoptable colleges")
+    # Keyed by (kind, id), never by position. The export writes its rows in
+    # catalog order (minted, then singletons, then clusters) and each row's
+    # lists come from that id alone, so nothing the rebuild changes moves a row.
     out = {}
-    for n, row in enumerate(it):
-        sp = lambda v: {x for x in str(v or "").split("; ") if x}
-        out[(row[0], row[1], n)] = (sp(row[ia]), sp(row[ip]))
+    sp = lambda v: {x for x in str(v or "").split("; ") if x}
+    for row in it:
+        key = (row[0], row[1])
+        if key in out:
+            raise RuntimeError(f"export row {key} appears twice; a stable key needs it once")
+        out[key] = (sp(row[ia]), sp(row[ip]))
     return out
 
 
@@ -447,7 +461,8 @@ def write_receipt(plan, view, figures, rows, orphan_rows, identities, out, today
            "fills_over_merged": fill_over, "public_figures": figures, "rows": rows,
            "orphan_rows": orphan_rows,
            "fill": sorted(plan["fill"]), "refresh": {k: plan["refresh_why"][k] for k in sorted(plan["refresh"])},
-           "orphan": plan["orphan"], "cid_no_entry": plan["cid_no_entry"], "null_key": plan["null_key"],
+           "orphan": plan["orphan"], "entry_hashes": dict(sorted(entry_hashes(plan).items())),
+           "cid_no_entry": plan["cid_no_entry"], "null_key": plan["null_key"],
            "no_record": plan["no_record"], "merge_targets": {t: view[t] for t in sorted(reached)}}
     _atomic_dump(os.path.join(out, "plan.json"), doc, True)
     wl = [{"identity": k, "entry_title": identities[k].get("title"),
@@ -498,6 +513,9 @@ def write_receipt(plan, view, figures, rows, orphan_rows, identities, out, today
           rowline("export rows (exports/unified_courses.xlsx)", (rows or {}).get("export")),
           "- a row loses potential colleges when a member's earning colleges join its adopters, or when a "
           "refreshed entry's stale offering gives way to the membership",
+          "- export rows are matched by kind and id, never by position: the export writes them in catalog order "
+          "and builds each row's lists from that id alone, so the rebuild cannot move a row, and no export row "
+          "can lose a college to its adopters (only a refreshed offering removes one)",
           ("- the held orphan entries: %s in-browser rows show %s potential colleges from entries that describe "
            "other courses; %s of those rows carry no articulation at all"
            % (f"{orphan_rows['rows']:,}", f"{orphan_rows['potential_colleges']:,}",
@@ -521,6 +539,9 @@ def write_receipt(plan, view, figures, rows, orphan_rows, identities, out, today
           "   refreshes, keeps the orphans, and writes `apply_receipt.json` here with every key's before-value.",
           "   It aborts when the fill, refresh or orphan sets differ from this plan.",
           "2. Commit kb/coci_articulations.json and the receipt in one cron window; the daily run rebuilds the lists.",
+          "   It also aborts when an entry's content moved since this plan (plan.json carries a hash of each).",
+          "   The receipt is written pending, then the map, then marked applied; a run interrupted between",
+          "   them is settled by the next --apply or --undo from the map's own bytes.",
           "3. Undo: `python3 kb/_identities_rebuild.py --undo <this dir>/apply_receipt.json`, or revert the commit.",
           "4. `--drop-orphans --ruling \"<who, when: what>\"` also drops the orphans, after this worklist.", ""]
     with open(os.path.join(out, "report.md"), "w", encoding="utf-8") as f:
@@ -531,14 +552,98 @@ def write_receipt(plan, view, figures, rows, orphan_rows, identities, out, today
 # ── apply and undo ───────────────────────────────────────────────────────────
 
 def plan_drift(plan, expected):
-    """{set name: sample of differing keys} where the recomputed fill, refresh or
-    orphan key set differs from the reviewed plan.json. Empty means apply."""
+    """{what: sample of keys} where the recomputed plan differs from the reviewed
+    plan.json: a fill, refresh or orphan key set, or ("content") an entry whose
+    hash moved since the dry run (a title, an offering, an over_merged flag).
+    Empty means apply."""
     out = {}
     for name in ("fill", "refresh", "orphan"):
         mine, theirs = set(plan[name]), set(expected.get(name) or [])
         if mine != theirs:
             out[name] = sorted(mine ^ theirs)[:5]
+    want = expected.get("entry_hashes")
+    if want is None:
+        out["content"] = ["the plan carries no entry_hashes; re-run the dry run"]
+        return out
+    have = entry_hashes(plan)
+    moved = sorted(k for k in set(have) & set(want) if have[k] != want[k])
+    if moved:
+        out["content"] = moved[:5] + ([f"... {len(moved)} in all"] if len(moved) > 5 else [])
     return out
+
+
+def _hash(entry):
+    return hashlib.sha256(json.dumps(entry, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:16]
+
+
+def entry_hashes(plan):
+    """A hash of every entry the plan would write (fills, refreshes) or could drop (orphans)."""
+    out = {k: _hash(e) for k, e in plan["fill"].items()}
+    out.update({k: _hash(e) for k, e in plan["refresh"].items()})
+    out.update({k: _hash(e) for k, e in plan.get("orphan_entries", {}).items()})
+    return out
+
+
+# The receipt moves through pending_apply -> applied -> pending_undo -> undone
+# (or pending_apply -> abandoned). It names the map's sha256 before and after,
+# so an interrupted run is settled by the map itself: a pending step whose map
+# still has its starting bytes never landed, one whose map has its target bytes
+# landed and only the mark was lost.
+
+def _sha(b):
+    return hashlib.sha256(b).hexdigest()
+
+
+def _map_bytes(art, trailing):
+    return (json.dumps(art, indent=2, ensure_ascii=False) + ("\n" if trailing else "")).encode("utf-8")
+
+
+def _write_map(path, data):
+    """Temp-sibling + rename. The one map write (a test makes it fail)."""
+    tmp = path + ".tmp"
+    with open(tmp, "wb") as f:
+        f.write(data)
+    os.replace(tmp, path)
+
+
+def _write_receipt(path, receipt):
+    _atomic_dump(path, receipt, True)
+
+
+def settle_receipt(path, art_path):
+    """Read the receipt at `path`, finish or clear an interrupted step by the
+    map's bytes, and return it (None when there is none). Aborts when a pending
+    step's map has neither its starting nor its target bytes."""
+    if not os.path.exists(path):
+        return None
+    receipt = json.load(open(path, encoding="utf-8"))
+    state = receipt.get("state") or ("undone" if receipt.get("_undone_at") else "applied")
+    if state not in ("pending_apply", "pending_undo"):
+        receipt["state"] = state
+        return receipt
+    cur = _sha(open(art_path, "rb").read())
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if state == "pending_apply":
+        if cur == receipt["map_sha_before"]:
+            receipt.update(state="abandoned", _abandoned_at=now,
+                           _status=f"ABANDONED {now}: the apply never reached the map")
+            print("settled: an interrupted apply never reached the map; its receipt is marked abandoned")
+        elif cur == receipt["map_sha_after"]:
+            receipt.update(state="applied", _status=f"APPLIED {receipt['applied_at']} (mark resumed {now})")
+            print("settled: an interrupted apply had written the map; its receipt is marked applied")
+        else:
+            sys.exit(f"ABORT: {path} is pending and the map matches neither its starting nor its target bytes.")
+    else:
+        if cur == receipt["undo_sha_from"]:
+            receipt.update(state="applied", _status=f"APPLIED {receipt['applied_at']} (an undo never landed)")
+            print("settled: an interrupted undo never reached the map; its receipt is marked applied again")
+        elif cur == receipt["undo_sha_to"]:
+            receipt.update(state="undone", _undone_at=now, _status=f"UNDONE {now} (mark resumed)")
+            print("settled: an interrupted undo had restored the map; its receipt is marked undone")
+        else:
+            sys.exit(f"ABORT: {path} is pending an undo and the map matches neither its applied nor its starting bytes.")
+    _write_receipt(path, receipt)
+    return receipt
 
 
 def do_apply(args, art, art_path, identities, records, cat, sg, mem, plan):
@@ -547,14 +652,16 @@ def do_apply(args, art, art_path, identities, records, cat, sg, mem, plan):
     if args.drop_orphans and not (args.ruling or "").strip():
         sys.exit("ABORT: --drop-orphans needs --ruling \"<who, when: what>\" (a drop is a delete).")
     expected = json.load(open(args.expect_plan, encoding="utf-8"))
+    # The receipt first: an interrupted run is settled before anything else is
+    # judged, and an apply not undone refuses a second one (which would overwrite
+    # the receipt that undoes the first), even when the map was put back by hand.
+    receipt_path = os.path.join(os.path.dirname(os.path.abspath(args.expect_plan)), "apply_receipt.json")
+    prior = settle_receipt(receipt_path, art_path)
+    if prior and prior["state"] == "applied":
+        sys.exit(f"ABORT: {receipt_path} records an apply not undone; never twice.")
     drift = plan_drift(plan, expected)
     if drift:
         sys.exit(f"ABORT: the plan moved since {args.expect_plan}: {drift} — re-run the dry run.")
-    # Reached when the map was put back by hand (a revert of the map alone): the
-    # plan matches again, and a second apply would overwrite the receipt that undoes the first.
-    receipt_path = os.path.join(os.path.dirname(os.path.abspath(args.expect_plan)), "apply_receipt.json")
-    if os.path.exists(receipt_path) and not json.load(open(receipt_path)).get("_undone_at"):
-        sys.exit(f"ABORT: {receipt_path} records an apply not undone; never twice.")
     now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     new_ident = apply_plan(identities, plan, drop_orphans=args.drop_orphans, now=now)
     gates = apply_gates(identities, new_ident, records, cat, sg, mem)
@@ -575,12 +682,18 @@ def do_apply(args, art, art_path, identities, records, cat, sg, mem, plan):
            "orphans_dropped": len(plan["orphan"]) if args.drop_orphans else 0}
     if args.ruling:
         era["ruling"] = args.ruling.strip()
-    _atomic_dump(receipt_path, {"_status": f"APPLIED {now}", "_generated_by": GENERATED_BY, "_rule": RULE,
-                                "applied_at": now, "era": era, "key_order_before": list(identities),
-                                "entries": entries}, True)
+    before_bytes = open(art_path, "rb").read()
     art["identities"] = new_ident
     art.setdefault(ERA, []).append(era)
-    _atomic_dump(art_path, art, _trailing_nl(art_path))
+    after_bytes = _map_bytes(art, _trailing_nl(art_path))
+    receipt = {"_status": f"PENDING {now}: written before the map; settled by the next run if interrupted",
+               "_generated_by": GENERATED_BY, "_rule": RULE, "state": "pending_apply",
+               "applied_at": now, "era": era, "map_sha_before": _sha(before_bytes),
+               "map_sha_after": _sha(after_bytes), "key_order_before": list(identities), "entries": entries}
+    _write_receipt(receipt_path, receipt)        # 1. pending: names both map states
+    _write_map(art_path, after_bytes)            # 2. the map
+    receipt.update(state="applied", _status=f"APPLIED {now}")
+    _write_receipt(receipt_path, receipt)        # 3. applied
     print(f"APPLIED: fill {len(plan['fill']):,} · refresh {len(plan['refresh']):,} · orphans "
           f"{'dropped' if args.drop_orphans else 'kept'} {len(plan['orphan']):,} · receipt {receipt_path}")
     return 0
@@ -605,10 +718,19 @@ def undo_map(identities, receipt):
     return out
 
 
-def do_undo(path, art, art_path):
-    receipt = json.load(open(path, encoding="utf-8"))
-    if receipt.get("_undone_at"):
+def do_undo(path, art_path):
+    if not os.path.exists(path):
+        sys.exit(f"ABORT: no receipt at {path}.")
+    before_state = json.load(open(path, encoding="utf-8")).get("state")
+    receipt = settle_receipt(path, art_path)
+    if receipt["state"] == "abandoned":
+        print("nothing to undo: the apply never reached the map")
+        return 0
+    if receipt["state"] == "undone":
+        if before_state == "pending_undo":
+            return 0  # settle_receipt finished the interrupted undo
         sys.exit("ABORT: this receipt is already undone.")
+    art = json.load(open(art_path, encoding="utf-8"))
     try:
         restored = undo_map(art.get("identities") or {}, receipt)
     except ValueError as err:
@@ -619,9 +741,16 @@ def do_undo(path, art, art_path):
         art[ERA] = era
     else:
         art.pop(ERA, None)
-    _atomic_dump(art_path, art, _trailing_nl(art_path))
-    receipt["_undone_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-    _atomic_dump(path, receipt, True)
+    # The rest of the file may have moved since the apply (the daily run re-points
+    # titles in the records), so the undo names its own two map states.
+    data = _map_bytes(art, _trailing_nl(art_path))
+    receipt.update(state="pending_undo", _status="PENDING UNDO: settled by the next run if interrupted",
+                   undo_sha_from=_sha(open(art_path, "rb").read()), undo_sha_to=_sha(data))
+    _write_receipt(path, receipt)                # 1. pending undo
+    _write_map(art_path, data)                   # 2. the map
+    now = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    receipt.update(state="undone", _undone_at=now, _status=f"UNDONE {now}")
+    _write_receipt(path, receipt)                # 3. undone
     print(f"UNDONE: {len(receipt['entries']):,} keys restored from {path}")
     return 0
 
@@ -643,7 +772,7 @@ def main():
     art_path = os.path.join(KB, "coci_articulations.json")
     art = _load("coci_articulations.json")
     if args.undo:
-        return do_undo(args.undo, art, art_path)
+        return do_undo(args.undo, art_path)
     identities = art.get("identities") or {}
     records = art.get("articulations") or []
     cat = _load("coci_minted_courses.json")["courses"]
