@@ -9448,10 +9448,14 @@ def export_unified_courses():
                 continue
             oid = m.get("ccn") or m.get("cid")
             tgt = row_by_id.get(oid) if oid else None
-            if (tgt is not None and _hpairs
-                    and _honors_of.would_join(sid, oid, merge_into, _hpairs)):
-                continue  # honors_of: the stand-alone stays apart from its partner
-            if tgt is not None and tgt.get("id_system") in ("C-ID", "CCN-ID"):
+            # honors_of: a fold that would join an Honors pair is refused, and the
+            # stand-alone falls through to the evidence lane like any match that
+            # could not auto-fold (#3313's review record, minor 2), so a person
+            # still sees its evidence. The CCR worklist still drops an Honors
+            # member from any group that holds its base (liveMembers).
+            refused = (tgt is not None and bool(_hpairs)
+                       and _honors_of.would_join(sid, oid, merge_into, _hpairs))
+            if not refused and tgt is not None and tgt.get("id_system") in ("C-ID", "CCN-ID"):
                 merge_into[sid] = oid
                 merge_members.setdefault(oid, []).append(sid)
                 tgt["sfold"] = tgt.get("sfold", 0) + 1
@@ -9521,14 +9525,15 @@ def export_unified_courses():
     # honors_of: after every fold, no pair may end under one id. would_join is
     # complete by construction, so this never fires; when it does, a fold was
     # added without the guard. The test suite and --check (or
-    # HONORS_OF_STRICT=1) fail the run; the daily run prints a named warning.
+    # HONORS_OF_STRICT=1) fail the run; the daily run puts the count on its
+    # Summary table (HONORS_PAIRS_JOINED) and a warning on the run page.
+    _hleft = []
     if _hpairs:
         _hleft = _honors_of.check_apart(
             merge_into, _hpairs,
             strict=os.environ.get("HONORS_OF_STRICT") == "1" or "--check" in sys.argv)
-        if _hleft:
-            print(f"  honors_of: WARNING honors-pair-joined: {len(_hleft)} pair(s) fold together after the "
-                  "in-memory folds: " + ", ".join(f"{h}/{b}" for h, b in _hleft[:5]))
+    for _line in _honors_of.report_joined(_hleft):
+        print(_line)
 
     # ---- per-course CPL impact: Eligible units + Students -------------------
     # Roll the CER's per-credential eligible-credit + student totals up to each

@@ -441,12 +441,17 @@
     (arr || []).forEach(function (r) { if (r && !r.reviewer_email && r.reviewer_label) r.reviewer_email = r.reviewer_label; });
     return arr;
   }
-  function fetchAllRows(query) {
+  // strict: a page that fails rejects instead of reading as empty, for a read whose
+  // absence must not look like "no rows" (the Honors holds, fetchHonorsOf).
+  function fetchAllRows(query, strict) {
     var PAGE = 1000, st = { W: curationWho() };
     function page(start, acc) {
       return curationFetch(SUPABASE_URL + query, { "apikey": SUPABASE_ANON, "Range-Unit": "items",
                    "Range": start + "-" + (start + PAGE - 1) }, st)
-        .then(function (r) { return r.ok ? r.json() : []; })
+        .then(function (r) {
+          if (!r.ok && strict) throw new Error("read failed: " + r.status);
+          return r.ok ? r.json() : [];
+        })
         .then(function (batch) {
           acc = acc.concat(batch);
           return batch.length < PAGE ? acc : page(start + PAGE, acc);
@@ -493,9 +498,13 @@
   // because supabase-rekey.yml moves honors_of values with merge_into values
   // at every re-mint, and the rows migration refuses a value outside the live
   // id set (docs/reference/honors_of_design.md). No honors_of row, no second read.
+  // It FAILS CLOSED (COBIx's read of #3313): a failed read of the rows or of a hop
+  // page returns { failed: true }, and the worklist then offers no merge at all,
+  // since any group might hold a pair it cannot see; a reviewer's merge from it
+  // would be a person's merge that wins under Rule 10.
   function fetchHonorsOf() {
-    var empty = { base: {}, hop: {} };
-    return fetchAllRows("/rest/v1/kb_curation?select=course_id,value&field=eq.honors_of&order=course_id.asc")
+    var failed = { base: {}, hop: {}, failed: true };
+    return fetchAllRows("/rest/v1/kb_curation?select=course_id,value&field=eq.honors_of&order=course_id.asc", true)
       .then(function (arr) {
         var base = {}, hop = {};
         (arr || []).forEach(function (x) { if (x.value) base[x.course_id] = x.value; });
@@ -507,7 +516,7 @@
           for (var k = 0; k < todo.length; k += 80) {
             var list = todo.slice(k, k + 80).map(function (i) { return '"' + String(i).replace(/"/g, '\\"') + '"'; }).join(",");
             reads.push(fetchAllRows("/rest/v1/kb_curation?select=course_id,value&field=eq.merge_into&course_id=in.("
-              + encodeURIComponent(list) + ")"));
+              + encodeURIComponent(list) + ")", true));
           }
           return Promise.all(reads).then(function (pages) {
             var next = [];
@@ -520,7 +529,7 @@
         var bases = Object.keys(base).map(function (h) { return base[h]; });
         return step(bases, 0).then(function () { return { base: base, hop: hop }; });
       })
-      .catch(function () { return empty; });
+      .catch(function () { return failed; });
   }
   // Locked curated anchors (common_courses.json) are firewalled — the daily overlay
   // sync never overwrites them. A signed-in reviewer can still PROPOSE a discipline
@@ -2565,6 +2574,12 @@
       var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;";
       Promise.all([loadSuggestions(), fetchDismissals(), fetchHonorsOf()]).then(function (res) {
         var data = res[0], dismissed = res[1], honorsOf = res[2] || { base: {}, hop: {} };
+        if (honorsOf.failed) {
+          // Fail closed: without the Honors pairs the worklist cannot vouch for any group.
+          alert("The Honors pairs could not be read, so the worklist offers no merge until they load. "
+            + "Try Suggested merges again in a moment.");
+          return;
+        }
         var anchored = (data.groups || []).map(function (g) { g._kind = "anchored"; return g; });
         // Curated-anchor duplicates lane (2026-09-04): the May 2026 curated
         // common-course anchors — the locked, read-only rows — whose title and
