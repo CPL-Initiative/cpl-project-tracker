@@ -57,10 +57,13 @@ name: cpl-chat deploy
 #
 # SHARED CODE (S643): docket-process and library-publish-now import
 # ../_shared/group_queue.mjs, the one check of the daily-dashboard concurrency group's
-# queue. The CLI bundles a relative import into the function it deploys, so deploying
-# either one ships the shared file with it; the step below records its bytes too. A
-# folder whose name starts with "_" is never deployed as a function of its own, so
-# _shared is not on the list. A change to the shared file needs both functions deployed.
+# queue. program-requirements-extract imports ../_shared/service_caller.mjs, the check
+# that its caller holds the service key. The CLI bundles a relative import into the
+# function it deploys, so deploying a function ships the shared files it imports; the
+# step below records their bytes too. A folder whose name starts with "_" is never
+# deployed as a function of its own, so _shared is not on the list. A change to a shared
+# file needs every function that imports it deployed. tests/shared_imports_named.test.js
+# fails when a function imports a _shared file this comment does not name.
 
 on:
   workflow_dispatch:

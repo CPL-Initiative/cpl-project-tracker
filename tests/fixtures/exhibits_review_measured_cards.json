@@ -1,0 +1,300 @@
+{
+ "_about": "The four held cards the #3160 review measured, pinned here so tests/exhibits_related_actions.test.js never reads them from the live kb/exhibits_review.json, whose held list empties as reviewers rule (S643, S649).",
+ "sources": {
+  "Firefighter Recruit Academy Certificate": "92be7e59:kb/exhibits_review.json (the last commit holding it; ruled 2026-11-12)",
+  "the other three": "fab3e109:kb/exhibits_review.json (ruled 2026-11-13)"
+ },
+ "held": [
+  {
+   "raw": "Firefighter Recruit Academy Certificate",
+   "step": "Proposed",
+   "why": "the classifier is unsure (0.70)",
+   "colleges": [
+    1
+   ],
+   "title": "Firefighter 1",
+   "issuer": "California State Fire Training (SFT)",
+   "from": "the statewide exhibit in use (11 local titles, at 19 colleges)",
+   "proposal_source": "in_use_statewide",
+   "ids": [
+    "MAPICA-FRAC-1-001"
+   ],
+   "art": [
+    1
+   ],
+   "could": [
+    16,
+    20,
+    47,
+    59,
+    63,
+    66,
+    74,
+    91,
+    94
+   ],
+   "basis": "M-ID FIRE M1219",
+   "same": true,
+   "courses_key": "FIRE M1219",
+   "confidence": 0.7,
+   "alternates": [
+    "Firefighter 1 Academy"
+   ],
+   "in_use": {
+    "title": "Firefighter 1",
+    "locals": 11,
+    "adopted": 19
+   },
+   "course_title_set_aside": {
+    "title": "Firefighter Academy",
+    "basis": "M-ID FIRE M1219",
+    "why": "industry certification, not credit by exam"
+   },
+   "aligned_id": "FIRE M1219",
+   "course": "FIRE 1500",
+   "course_college": "American River College",
+   "under": [
+    "Fire Fighter 1 (FF1) Certification",
+    "Fire Fighter 1 Certification (CFSTES)",
+    "Fire Fighter I",
+    "Fire Protection Organization 1 or 1A Certification",
+    "Firefigher 1 and HAZMAT Tech-Specialist-Incident Cmdr or HAZWOPER",
+    "Firefighter 1 Academy",
+    "Firefighter 1 Certificate",
+    "Firefighter 1 Certification",
+    "Firefighter 1 Certification ",
+    "Firefighter 1 or Firefighter 1A Certification",
+    "Firefighter Certificate 1 A"
+   ],
+   "under_count": 11,
+   "exists": true
+  },
+  {
+   "raw": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 1",
+   "step": "Proposed",
+   "why": "the classifier is unsure (0.75)",
+   "colleges": [
+    0
+   ],
+   "title": "Carpenters Apprenticeship — Carpenter",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "from": "the statewide exhibit in use (1 local title, at 2 colleges)",
+   "proposal_source": "in_use_statewide",
+   "ids": [
+    "MAPICA-NCCT5-1-001"
+   ],
+   "art": [
+    0
+   ],
+   "could": [],
+   "basis": "",
+   "same": false,
+   "local_courses": [
+    [
+     0,
+     "CARPT 107",
+     "Rigging",
+     1.5,
+     "CCC000527863",
+     "1.5 hours in Rigging",
+     "This course familiarizes apprentices with the equipment and the procedures to safely rig and hoist various loads on the job-site. Topics include tying knots, splicing rope, calculating loads, hand signals for cranes, and inspecting rigging hardware. This course is the equivalent of course number 019 for the Carpenter's Training Center of Northern California…"
+    ],
+    [
+     0,
+     "CARPT 110",
+     "Foundations and Floors",
+     1.5,
+     "CCC000606785",
+     "1.5 hours in Foundations and Floors",
+     "This course covers layout, forming, framing, joist, sub-flooring, and foundation construction. This course is the equivalent of course number 004 for the Carpenter's Training Center of Northern California (CTCNC)."
+    ],
+    [
+     0,
+     "CARPT 112",
+     "Structural Framing",
+     1.5,
+     "CCC000602881",
+     "1.5 hours in Structural Framing",
+     "This course covers basic framing systems and layout of walls, ceilings, and stairwells with wood as well as metal and alternative \"green\" materials such as manufactured panels. This course is the equivalent of course number 006 for the Carpenter's Training Center of Northern California (CTCNC)."
+    ],
+    [
+     0,
+     "CARPT 114",
+     "Form Detailing, Construction & Erection",
+     1.5,
+     "CCC000612735",
+     "1.5 hours in Concrete Formwork Certification",
+     "This course covers planning and building of form work, construction and erection of various concrete forms, and construction materials and methods. It also explores new types of building materials such as recycled and alternative materials. This course is the equivalent of course number 007 for the Carpenter's Training Center of Northern California (CTCNC)."
+    ]
+   ],
+   "confidence": 0.75,
+   "in_use": {
+    "title": "Carpenters Apprenticeship — Carpenter",
+    "locals": 1,
+    "adopted": 2
+   },
+   "name_source": {
+    "url": "",
+    "level": "partial"
+   },
+   "under": [
+    "Carpentry Apprenticeship"
+   ],
+   "under_count": 1,
+   "exists": true
+  },
+  {
+   "raw": "NorCal Valley Sheet Metal Apprenticeship Journeyperson",
+   "step": "Proposed",
+   "why": "the classifier is unsure (0.72)",
+   "colleges": [
+    0
+   ],
+   "title": "SMART Sheet Metal Apprenticeship — Journeyperson",
+   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "from": "the classifier",
+   "proposal_source": "classifier",
+   "ids": [
+    "MAPICA-NVSM4-1-001"
+   ],
+   "art": [
+    0
+   ],
+   "could": [
+    1,
+    2,
+    8,
+    13,
+    16,
+    20,
+    21
+   ],
+   "basis": "M-ID WELD M1137",
+   "same": true,
+   "courses_key": "WELD M1137",
+   "local_courses": [
+    [
+     0,
+     "SHME 150",
+     "Sheet Metal Welding I",
+     3.5,
+     "CCC000638551",
+     "3.5 hours in Sheet Metal Welding I",
+     "This course covers oxyacetylene cutting, shielded metal arc (SMAW) and gas tungsten arc (GTAW) welding processes typically used in the sheet metal industry. Topics include welding safety procedures and maintenance techniques."
+    ],
+    [
+     0,
+     "SHME 151",
+     "Sheet Metal Welding II",
+     3.5,
+     "CCC000638552",
+     "3.5 hours in Sheet Metal Welding II",
+     "This course covers advanced shielded metal arc (SMAW) and gas tungsten arc (GTAW) welding processes typically used in the sheet metal industry. Topics include welding safety procedures and maintenance techniques."
+    ],
+    [
+     0,
+     "WEXP 298",
+     "Work Experience in (Subject)",
+     0.5,
+     "CCC000623848",
+     "0.5 hours in Work Experience in (Subject)",
+     "This course provides students with opportunities to develop marketable skills in preparation for employment in their major field of study or advancement within their career. It is designed for students interested in work experience and/or internships in associate degree level or certificate occupational programs. Course content includes understanding the…"
+    ]
+   ],
+   "confidence": 0.72,
+   "needs_official_name": true,
+   "course_title_set_aside": {
+    "title": "Applied Aircraft Welding and Sheet Metal Structures",
+    "basis": "M-ID WELD M1137",
+    "why": "industry certification, not credit by exam"
+   },
+   "aligned_id": "WELD M1137",
+   "course": "SHME 150",
+   "course_college": "American River College",
+   "ambiguous": [
+    "HVAC M1055",
+    "WELD M1137"
+   ]
+  },
+  {
+   "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1",
+   "step": "Proposed",
+   "why": "the classifier is unsure (0.60)",
+   "colleges": [
+    0
+   ],
+   "title": "UA Refrigeration Service Technician Apprenticeship — Level 1",
+   "issuer": "United Association (UA)",
+   "from": "the classifier",
+   "proposal_source": "classifier",
+   "ids": [
+    "MAPICA-PPUR-1-001"
+   ],
+   "art": [
+    0
+   ],
+   "could": [
+    9
+   ],
+   "basis": "M-ID HVAC M1073",
+   "same": true,
+   "courses_key": "HVAC M1073",
+   "local_courses": [
+    [
+     0,
+     "PLUMB 120",
+     "Gas Welding and Brazing",
+     2,
+     "CCC000651682",
+     "2 hours in Gas Welding and Brazing",
+     "This course introduces the Plumber and Pipefitter Apprentice to welding techniques and principles of Oxygen/Acetylene burning, brazing, soldering, and welding."
+    ],
+    [
+     0,
+     "PLUMB 161",
+     "HVACR Start, Test, and Balance",
+     4,
+     "CCC000651689",
+     "4 hours in HVACR Start, Test, and Balance",
+     "This course introduces the Plumber and Pipefitter Apprentice to the knowledge of start, test, and balance practices for Heating, Ventilation, Air Conditioning, and Refrigeration (HVACR) systems and equipment."
+    ],
+    [
+     0,
+     "PLUMB 162",
+     "Refrigeration and Customer Service",
+     6,
+     "CCC000651690",
+     "6 hours in Refrigeration and Customer Service",
+     "This course introduces the Plumber and Pipefitter Apprentice to basic refrigeration, EPA certification, safety, and customer service."
+    ],
+    [
+     0,
+     "PLUMB 180",
+     "Supermarket Refrigeration",
+     4,
+     "CCC000651692",
+     "4 hours in Supermarket Refrigeration",
+     "This course introduces the Plumber and Pipefitter Apprentice to the fundamentals of oil return and oil separators, electric and hot gas exhaust, multi-stage compressor systems, and pump down systems."
+    ]
+   ],
+   "confidence": 0.6,
+   "needs_official_name": true,
+   "course_title_set_aside": {
+    "title": "Mechanical Refrigeration Theory",
+    "basis": "M-ID HVAC M1073",
+    "why": "industry certification, not credit by exam"
+   },
+   "aligned_id": "HVAC M1073",
+   "course": "HVACR 110",
+   "course_college": "American River College",
+   "ambiguous": [
+    "HVAC M1069",
+    "HVAC M1070",
+    "HVAC M1072",
+    "HVAC M1073",
+    "HVAC M1111",
+    "HVAC M1125"
+   ]
+  }
+ ]
+}

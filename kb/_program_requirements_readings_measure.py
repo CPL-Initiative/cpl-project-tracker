@@ -541,6 +541,8 @@ def reconcile_run_review(plan: dict, branch: dict, main: dict, run: str, keep: d
             ok = ge == fig and set(row["fields"]) <= {"ge_units"}
             row["decision"] = "keep" if ok else "restore"
             row["why"] = ("an apply row: ge_units takes the plan's figure, nothing else moves" if ok else
+                          "an apply row the run did not fill: its requirements are unchanged and only its score or "
+                          "run moved (the run's trace says why the rule held it)" if not row["fields"] else
                           "an apply row whose run changed more than ge_units: %s" % ", ".join(row["fields"]))
         elif cn in keep:
             row["decision"], row["why"] = "keep", keep[cn]

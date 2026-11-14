@@ -38,6 +38,10 @@ APPLY_SIDE = {
     "kb/_cred_rename_dryrun.py": "previews a plan before any snapshot exists",
 }
 SKIP_DIRS = {".git", "node_modules", "__pycache__", ".venv", "venv"}
+# Worker sessions check out whole copies of the repo under .claude/worktrees/; each holds its own kb/, so a scan
+# that walked them would report every reader file again. Skip that one path, never all of .claude: a copy under
+# .claude/hooks is a real copy.
+SKIP_PATHS = {".claude/worktrees"}
 results = []
 
 
@@ -48,7 +52,9 @@ def check(name, cond, detail=""):
 
 def files(ext, root=ROOT):
     for dirpath, dirnames, filenames in os.walk(root):
-        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
+        here = os.path.relpath(dirpath, root).replace("\\", "/")
+        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS
+                       and (d if here == "." else f"{here}/{d}") not in SKIP_PATHS]
         for fn in filenames:
             if fn.endswith(ext):
                 p = os.path.join(dirpath, fn)
@@ -110,6 +116,20 @@ for rel, body in PLANTS.items():
         check(f"a planted second snapshot reader is caught ({rel})", got == [rel], got)
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
+
+# A worker worktree under .claude/worktrees/ is skipped; a copy anywhere else under .claude/ is still caught.
+tmp = tempfile.mkdtemp(prefix="cred-title-worktree-")
+try:
+    body = PLANTS["kb/_planted_one.py"]
+    for rel in (".claude/worktrees/agent-x/kb/_planted_one.py", ".claude/hooks/_planted_one.py"):
+        os.makedirs(os.path.dirname(os.path.join(tmp, rel)), exist_ok=True)
+        with open(os.path.join(tmp, rel), "w", encoding="utf-8") as f:
+            f.write(body)
+    got = scan(tmp)[0]
+    check("the scan skips a reader copy under .claude/worktrees/", ".claude/worktrees/agent-x/kb/_planted_one.py" not in got, got)
+    check("the scan still catches a reader copy under .claude/hooks/", got == [".claude/hooks/_planted_one.py"], got)
+finally:
+    shutil.rmtree(tmp, ignore_errors=True)
 
 js = []
 for rel, path in files(".js"):

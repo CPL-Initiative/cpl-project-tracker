@@ -15,10 +15,13 @@
 // Still to come (the page's own "Coming next" section): AI workers, integrations per college, the College view
 // (internal only), the JST funnel, and the per-college reads of PPM, descriptions, MIS and COE.
 //
-// What it reads, one committed file the site already serves (it WRITES NOTHING):
+// What it reads, committed files the site already serves (it WRITES NOTHING):
 //   kb/status/commons_data.json   built by kb/_build_commons_data_status.py from the identity crosswalk, the harvest's
 //                                 committed per-college files (through the gap census's own functions), the SLO
 //                                 queue, the source scouts and any committed spot-check receipt.
+//   kb/status/commons_data_programs/<slug>.json   the same builder's per-college list of the programs still to pass,
+//                                 each with its cause, lever and catalog page (S649); read only when that college's row
+//                                 or panel opens, so a cause opens its programs at .../college/<slug>/cause/<key>.
 // A figure the file marks TBA reads TBA, with its reason; nothing here is estimated or carried from the mock.
 //
 // Loaded by commons.js when the address names it (#commons/data, #commons/data/<filter>, the platform filter at
@@ -108,7 +111,7 @@
     fresh: { word: "Collected within a week", test: function (c, M) { return ageOf(c, M) === "fresh"; } },
     recent: { word: "Collected within a month", test: function (c, M) { return ageOf(c, M) === "recent"; } },
     stale: { word: "Collected more than a month ago", test: function (c, M) { return ageOf(c, M) === "stale"; } },
-    gaps: { word: "Programs still to pass", test: function (c) { return c.harvested && c.gap > 0; } },
+    gaps: { word: "Programs still to pass", test: function (c) { return c.harvested && prOf(c).gap > 0; } },
     slo: { word: "SLO read waiting", test: function (c) { return !!c.slo_queue; } },
     scouted: { word: "Scouted for a wave", test: function (c) { return !!c.scout; } },
     noncredit: { word: "Continuing education", test: function (c) { return c.kind === "continuing_education"; } },
@@ -148,7 +151,7 @@
     var obj = function (v) { return v && typeof v === "object" && !Array.isArray(v) ? v : {}; };
     return { colleges: colleges, statewide: data.statewide || {}, rule: data.rule || {}, tba: data.tba || {},
       sources: data.sources || {}, written: data.written_at || "", fields: data.fields || {},
-      live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis) };
+      live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis), census_live: obj(data.census_live) };
   }
   function listFor(M, filter) {
     var f = FILTERS[filter] || FILTERS.all;
@@ -227,12 +230,12 @@
       activeTile(M, conf),
       overallTile(M, conf),
       /* It counts programs, so the card stays plain; the word inside it opens the colleges that hold them. */
-      { v: fmt(S.gap), l: "Programs still to pass", open: n("gaps") ? { f: "gaps", word: "Their " + plural(n("gaps"), "college", "colleges") + ", most first" } : null,
-        d: "Of the " + fmt(S.programs) + " programs listed in the committed captures, those that do not yet pass the machine checks." },
+      censusTile(M, n),
       /* Without the builder's thresholds every capture would read stale, so the card reads TBA with its reason. */
       freshWords(M) ? { l: "Collection freshness", parts: [["fresh", n("fresh"), "fresh"], ["recent", n("recent"), "recent"], ["stale", n("stale"), "stale"]], d: freshWords(M) }
         : { v: "TBA", l: "Collection freshness", d: "The file gives no freshness thresholds (rule.age_days), so no capture's age is read.", tba: true },
       ny && n("reread") ? { f: "reread", v: fmt(n("reread")), l: "Needs a " + yearWords(ny) + " re-read", d: "Collected, but the committed capture read an earlier catalog year." } : null,
+      slosTile(M),
       { f: "slo", v: fmt(n("slo")), l: "SLO read waiting", d: "Colleges whose public pages print no SLOs, or whose SLO read is held or waiting on a reader." },
       { f: "scouted", v: fmt(n("scouted")), l: "Scouted for a wave", d: "Colleges whose catalog host was checked ahead of a collection wave, " + fmt(S.scout_barrier) + " with an access barrier. Not a completeness score." },
       cp == null ? { v: "TBA", l: "Read cost per passing program", d: "No committed read receipt carries a cost yet.", tba: true }
@@ -243,6 +246,18 @@
   /* Active programs with a passing record, of the Active programs: the live table's completeness count, basis live,
      with its confidence beside it (Sam's direction on #3229: a completeness count with its confidence level beside it). A figure
      summed over every college stays plain. */
+  /* Programs still to pass, on the gap census's live base where it holds the colleges (review of #3261, round 2): the
+     figure equals the census's gap, and each college's causes sum to its share. */
+  function censusTile(M, n) {
+    var CL = M.census_live || {}, S0 = M.statewide;
+    var open = n("gaps") ? { f: "gaps", word: "Their " + plural(n("gaps"), "college", "colleges") + ", most first" } : null;
+    if (CL.basis === "live" && CL.colleges)
+      return { v: fmt(CL.gap), l: "Programs still to pass", open: open,
+        d: "Of the " + fmt(CL.programs) + " Active programs in the gap census's live read (" + CL.at + "), those without a passing record; each college's causes sum to its figure." +
+          (CL.colleges < S0.harvested ? " " + plural(S0.harvested - CL.colleges, "college reads", "colleges read") + " from the committed captures." : "") };
+    return { v: fmt(S0.gap), l: "Programs still to pass", open: open,
+      d: "Of the " + fmt(S0.programs) + " programs listed in the committed captures, those that do not yet pass the machine checks." };
+  }
   function activeTile(M, conf) {
     var st = (M.live || {}).statewide || {}, pr = st.programs || {}, rc = st.records || {};
     if (!liveRead(M)) return { v: "TBA", l: "Active programs complete", d: liveReason(M), tba: true };
@@ -272,6 +287,15 @@
     return { rows: rows, need: need.length, connected: need.filter(function (r) { return r.status === "connected"; }).length,
       unverified: rows.filter(function (r) { return r.status === "unverified"; }).length };
   }
+  /* Colleges whose course SLOs the live read holds (Sam, in session, S649: "need a link to show the colleges with
+     collected slos"). It opens their view. */
+  function slosTile(M) {
+    var R = slosRows(M);
+    if (!liveRead(M)) return { v: "TBA", l: "Colleges with collected SLOs", d: liveReason(M), tba: true };
+    var so = R.filter(function (r) { return r.slo; }).length, ob = R.filter(function (r) { return r.obj; }).length;
+    return { view: "slos", v: fmt(so) + " of " + fmt(M.colleges.length), l: "Colleges with collected SLOs", basis: liveWords(M),
+      d: "Colleges whose course SLOs the " + liveWords(M) + " holds; " + plural(ob, "college holds", "colleges hold") + " objectives too. Opens them." };
+  }
   function apiTile(M) {
     var a = apiCount(M);
     if (!a.rows.length) return { v: "TBA", l: "APIs connected", d: M.tba.apis || "The API checklist is not in the file yet.", tba: true };
@@ -283,8 +307,10 @@
   var COLUMNS = [
     { k: "name", label: "College", d0: 1, val: function (c) { return c.name; } },
     { k: "overall", label: "Overall", d0: 1, val: function (c) { var o = overallOf(VIEW.M, c); return o ? o.value : -1; } },
-    { k: "pr", label: "Program requirements", d0: 1, val: function (c) { return c.harvested ? pct(c.passing, c.programs) || 0 : -1; } },
-    { k: "gap", label: "Still to pass", d0: -1, val: function (c) { return c.harvested ? c.gap : -1; } },
+    /* Sam, in session, S649: "add an slo/objective progress bar to the top row". Sorts on the SLO share. */
+    { k: "out", label: "SLOs and objectives", d0: 1, val: function (c) { var o = outcomeShares(VIEW.M, c); return o ? o.slo : -1; } },
+    { k: "pr", label: "Program requirements", d0: 1, val: function (c) { var P = prOf(c); return c.harvested ? pct(P.passing, P.programs) || 0 : -1; } },
+    { k: "gap", label: "Still to pass", d0: -1, val: function (c) { return c.harvested ? prOf(c).gap : -1; } },
     { k: "read", label: "Last read", d0: -1, val: function (c) { return c.read_at ? new Date(c.read_at).getTime() : 0; } },
     { k: "cost", label: "Read cost per passing program", d0: -1, val: function (c) { var v = costPer(c); return v == null ? -1 : v; } },
     { k: "conf", label: "Confidence", d0: -1, val: function (c) { return LEVEL_RANK[level(c)] || 0; } }
@@ -293,13 +319,35 @@
 
   var PW = { min: 300, max: 900, start: 480, step: 20 };   // the panel's width in px (Sam, 1:52 AM PT: 300 to 900; double-click resets)
   /* sort null means the default, resolved when the list draws (defaultSort); a person's own sort lasts the visit. */
-  var S = { view: "", filter: "all", platform: "", district: "", sort: null, q: "", open: null, panel: null, pw: PW.start };
+  var S = { view: "", filter: "all", platform: "", district: "", sort: null, q: "", open: null, panel: null, cause: null, pane: null, pw: PW.start };
   /* The list opens lowest completeness first (#3229; the commons lane's NEXT): the overall bar where the live read
      holds one, else program requirements passing. "auto" marks the default, so the words above the list say so and
      a heading's first click starts a person's own sort. */
+  /* Courses with SLOs, and with objectives, of the courses on the college's Active programs: the live read's counts. */
+  /* A college whose course outlines print no objectives (the builder's objectives_printed false: every committed read
+     is on an outline system that prints none, and none was found) says so in words, never a missing figure (S649). */
+  var NO_OBJ_SHORT = "Objectives: its course outlines print none";
+  var NO_OBJ = "This college's course outlines print no objectives, so there are none to collect; the SLOs are read from the same outlines.";
+  /* The SLO word says what is there: "not read yet" when the live read holds no SLO or objective course. */
+  function sloWord(M, c) {
+    var lo = ((liveOf(M, c) || {}).outcomes) || {};
+    return lo.slo_courses || lo.objective_courses ? "Course SLOs and objectives collected" : "Course SLOs and objectives: not read yet";
+  }
+  function outcomeShares(M, c) {
+    var lv = M ? liveOf(M, c) : null, lo = (lv && lv.outcomes) || {}, lc = (lv && lv.program_courses) || {};
+    if (!lv || !lc.active_courses) return null;
+    return { slo: Math.min(1, (lo.slo_courses_on_active || 0) / lc.active_courses), obj: Math.min(1, (lo.objective_courses_on_active || 0) / lc.active_courses),
+      sloN: lo.slo_courses_on_active || 0, objN: lo.objective_courses_on_active || 0, den: lc.active_courses };
+  }
   function defaultSort(M) { return liveRead(M) ? { k: "overall", d: 1, auto: true } : { k: "pr", d: 1, auto: true }; }
   /* The three views beside the college list (slice 3; the districts S648), each at its own address. */
-  var VIEWS = { districts: "Colleges by district", dictionary: "The data dictionary", apis: "The API checklist" };
+  var VIEWS = { districts: "Colleges by district", slos: "Colleges with collected SLOs", dictionary: "The data dictionary", apis: "The API checklist" };
+  /* What a link opens in the side panel (Sam, in session, S649: "all links should open to the sidebar instead on new
+     tab ... give the option to go to new tab from the sidebar"). Each is a word in the address after the college (or
+     after a view): one that names an item takes it as the next word, a safe word (a control number, a key, a slug),
+     never a URL, since the arrival splits the address on "/". */
+  var PANES = { catalog: 0, scout: 0, capture: 0, run: 0, pathways: 0, slos: 0, plos: 0, program: 1, source: 1, entry: 1 };
+  function paneRoute(p) { return p ? "/" + p.k + (PANES[p.k] && p.a ? "/" + p.a : "") : ""; }
   function listRoute(filter, platform, district) {
     return (filter && filter !== "all" ? "/" + filter : "") + (platform ? "/platform/" + platform : "") + (district ? "/district/" + district : "");
   }
@@ -309,23 +357,40 @@
     var c = slug ? M.colleges.filter(function (x) { return x.district && districtSlug(x.district) === slug; })[0] : null;
     return c ? c.district : "";
   }
+  function viewTail() {
+    var vc = VIEW.M && S.panel != null ? byId(VIEW.M, S.panel) : null;
+    return (vc ? "/college/" + slugOf(vc) : "") + (S.pane ? paneRoute(S.pane) : "");
+  }
   function address() {
-    if (S.view) return "commons/data/" + S.view;
+    /* A college opened from a view keeps the view under it (review of #3261): .../<view>/college/<slug>/<pane>. */
+    if (S.view) return "commons/data/" + S.view + viewTail();
     var a = "commons/data" + listRoute(S.filter, S.platform, S.district);
     var c = VIEW.M ? byId(VIEW.M, S.panel) : null;
-    return c ? a + "/college/" + slugOf(c) : a;
+    if (!c) return a + (S.pane ? paneRoute(S.pane) : "");
+    return a + "/college/" + slugOf(c) + (S.pane ? paneRoute(S.pane) : S.cause && causesOf(c)[S.cause] ? "/cause/" + S.cause : "");
   }
   /* What the address after #commons/data names: a view (dictionary, apis), or the list's filter, then its catalog
-     platform (platform/<key>), then a college (college/<slug>), each optional. */
+     platform (platform/<key>), then a college (college/<slug>), then one of its causes (cause/<key>, the panel opened
+     at that cause's programs, S649), or what one of its links opens (a word of PANES, S649), each optional. A view
+     (districts, slos, dictionary, apis) takes a pane that needs no college (source/<key>, entry/<slug>). */
   function parseRoute(route) {
-    var p = String(route || "").split("/").filter(Boolean), out = { view: "", filter: "all", platform: "", college: "", district: "" };
-    if (VIEWS[p[0]]) { out.view = p[0]; return out; }
-    var i = p[0] === "college" || p[0] === "platform" || p[0] === "district" ? 0 : 1;
-    if (i) out.filter = p[0] || "all";
-    for (; i < p.length; i += 2) {
-      if (p[i] === "platform") out.platform = p[i + 1] || "";
-      else if (p[i] === "college") out.college = p[i + 1] || "";
-      else if (p[i] === "district") out.district = p[i + 1] || "";
+    var p = String(route || "").split("/").filter(Boolean), out = { view: "", filter: "all", platform: "", college: "", district: "", cause: "", pane: null };
+    var i = 0;
+    /* Own keys only: an inherited name (constructor, toString) is no view, pane or filter (COBIx on #3261). */
+    if (p[0] && own(VIEWS, p[0])) { out.view = p[0]; i = 1; }
+    else if (!(p[0] === "college" || p[0] === "platform" || p[0] === "district" || (p[0] && own(PANES, p[0])))) { out.filter = p[0] || "all"; i = 1; }
+    while (i < p.length) {
+      var w = p[i];
+      if (own(PANES, w)) { out.pane = { k: w, a: PANES[w] ? p[i + 1] || "" : "" }; i += PANES[w] ? 2 : 1; continue; }
+      /* A word the address does not know (toString, a typo) is dropped, and the address repaired. */
+      if (!(w === "college" || w === "cause" || (!out.view && (w === "platform" || w === "district")))) { out.junk = true; i += 1; continue; }
+      if (p[i] === "college") out.college = p[i + 1] || "";
+      else if (!out.view) {
+        if (p[i] === "platform") out.platform = p[i + 1] || "";
+        else if (p[i] === "district") out.district = p[i + 1] || "";
+        else if (p[i] === "cause") out.cause = p[i + 1] || "";
+      }
+      i += 2;
     }
     return out;
   }
@@ -375,9 +440,9 @@
   function row(M, c, now) {
     var pr = el("td", { "data-label": "Program requirements" });
     if (c.harvested) {
-      var v = pct(c.passing, c.programs);
+      var P0 = prOf(c), v = pct(P0.passing, P0.programs);
       pr.appendChild(el("span", { cls: "cdd-pr" }, [meter(v || 0), el("span", { cls: "cdd-n", text: (v == null ? "None listed" : Math.round(v * 100) + "%") }),
-        el("span", { cls: "cdd-of", text: fmt(c.passing) + " of " + fmt(c.programs) + " listed programs" })]));
+        el("span", { cls: "cdd-of", text: fmt(P0.passing) + " of " + fmt(P0.programs) + " " + prWords(P0) })]));
     } else pr.appendChild(el("span", { cls: "cdd-unread", text: "Not collected yet" }));
     var a = age(c.read_at, M.rule, now);
     var read = el("td", { "data-label": "Last read" }, c.read_at ? [day(c.read_at), el("span", { cls: "cdd-age", text: ", " + a }),
@@ -396,8 +461,14 @@
     var ovCell = el("td", { "data-label": "Overall", cls: ov ? null : "cdd-quiet" }, ov
       ? [el("span", { cls: "cdd-pr" }, [meter(ov.value), el("span", { cls: "cdd-n", text: pc(ov.value) }), el("span", { cls: "cdd-of", text: cap(liveWords(M)) })])]
       : [liveRead(M) ? "Not in the live read" : "TBA"]);
-    return el("tr", { "data-college": c.name, "data-id": String(c.id), cls: open ? "cdd-open" : null }, [name, ovCell, pr,
-      el("td", { "data-label": "Still to pass", cls: "cdd-num", text: c.harvested ? fmt(c.gap) : "" }),
+    var os = outcomeShares(M, c);
+    var outCell = el("td", { "data-label": "SLOs and objectives", cls: os ? "cdd-outs" : "cdd-quiet" }, os
+      ? [el("span", { cls: "cdd-pr" }, [meter(os.slo), el("span", { cls: "cdd-n", text: pc(os.slo) }), el("span", { cls: "cdd-of", text: "SLOs" })]),
+        c.objectives_printed === false && !os.objN ? el("span", { cls: "cdd-of", "data-noobj": "true", text: NO_OBJ_SHORT })
+          : el("span", { cls: "cdd-pr" }, [meter(os.obj), el("span", { cls: "cdd-n", text: pc(os.obj) }), el("span", { cls: "cdd-of", text: "Objectives" })])]
+      : [liveRead(M) ? "Not in the live read" : "TBA"]);
+    return el("tr", { "data-college": c.name, "data-id": String(c.id), cls: open ? "cdd-open" : null }, [name, ovCell, outCell, pr,
+      el("td", { "data-label": "Still to pass", cls: "cdd-num", text: c.harvested ? fmt(prOf(c).gap) : "" }),
       read,
       el("td", { "data-label": "Read cost per passing program", cls: "cdd-num", text: cp == null ? "" : "$" + cp.toFixed(3) }),
       el("td", { "data-label": "Confidence", cls: c.confidence ? "" : "cdd-quiet" }, c.confidence
@@ -414,6 +485,26 @@
   /* The panel's groups; "Collected" was "Harvested" (Sam, Nov 13, #3229). */
   var GROUPS = ["Collected", "Connected"];
   var CHECK_WORDS = { coverage: "coverage", invented: "a course invented", arithmetic: "units arithmetic", repeated: "a course repeated", outcomes: "outcomes" };
+  /* The cause table, its lists and the asks read the gap census's own counts (census_causes: its live read where it
+     holds the college, else the committed files, as census_basis says), so a cause's list equals its count (review of
+     #3261). A row without them (an older file) falls back to the committed causes. */
+  /* The program requirements figures on one base (review of #3261, round 2; d-data-collection-two-bases-s648): where
+     the gap census's live read holds the college, Active programs, passing now and still to pass all come from it, so
+     the causes sum to the figure above them; elsewhere the capture's own figures, each labeled with its base. */
+  function own(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+  function prOf(c) {
+    if (c && c.census_programs != null && c.census_gap != null)
+      return { programs: c.census_programs, passing: c.census_passing, gap: c.census_gap, live: true, at: (c.census_basis || {}).at || "" };
+    return { programs: c ? c.programs : null, passing: c ? c.passing : null, gap: c ? c.gap : null, live: false, at: "" };
+  }
+  function prWords(P) { return P.live ? "Active programs, gap census live read" + (P.at ? " " + P.at.slice(0, 10) : "") : "listed programs, committed captures"; }
+  function causesOf(c) { return (c && (c.census_causes || c.causes)) || {}; }
+  function leversOf(c) { return (c && (c.census_levers || c.levers)) || {}; }
+  function censusWords(c) {
+    var b = (c && c.census_basis) || {};
+    if (b.basis === "live") return "From the gap census's live read" + (b.at ? ", " + b.at.replace(/^(\d{4}-\d{2}-\d{2}).*$/, "$1") : "") + ": the programs still to pass at this college, by cause, the same counts its lists hold.";
+    return "From the committed files only: the gap census's live read does not hold this college, so these causes can differ from its counts.";
+  }
   function causeWord(M, k) { return ((M.rule || {}).causes || {})[k] || words(k); }
   function tbaOf(M, k) { return (M.tba || {})[k] || ""; }
   /* The scout file's name, from the builder's own source line (the page names no internal folder of its own). */
@@ -421,16 +512,21 @@
   function datasets(M, c) {
     var L = [];
     var pr = { key: "pr", group: "Collected", label: "Program requirements", held: !!c.harvested,
-      src: "kb/program_requirements_college/" + (c.slug || "<slug>") + "/ (capture and summary), causes through the gap census's committed-files functions" };
+      src: "" };
     if (c.harvested) {
-      var v = pct(c.passing, c.programs);
-      pr.num = c.passing; pr.den = c.programs; pr.value = v == null ? "None listed" : Math.round(v * 100) + "%";
-      pr.note = fmt(c.passing) + " of " + fmt(c.programs) + " listed programs pass the machine checks";
-      pr.lines = [["Listed by the capture", fmt(c.programs)], c.listed_closed != null ? ["With a closed course list", fmt(c.listed_closed)] : null,
-        c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null, c.extracted != null ? ["Records extracted (a reread can add some)", fmt(c.extracted)] : null,
-        ["Passing now", fmt(c.passing)], ["Still to pass", fmt(c.gap)]].filter(Boolean);
-      pr.causes = Object.keys(c.causes || {}).sort(function (a, b) { return c.causes[b] - c.causes[a] || a.localeCompare(b); })
-        .map(function (k) { return [causeWord(M, k), c.causes[k]]; });
+      var P = prOf(c), v = pct(P.passing, P.programs);
+      pr.src = P.live ? "the gap census's live read (kb/status/harvest_gap_census.json, " + P.at + ") for Active programs, passing now, still to pass and each cause; kb/program_requirements_college/" + c.slug + "/ for the capture's own figures"
+        : "kb/program_requirements_college/" + (c.slug || "<slug>") + "/ (capture and summary) for every figure; causes through the gap census's committed-files functions";
+      pr.num = P.passing; pr.den = P.programs; pr.value = v == null ? "None listed" : Math.round(v * 100) + "%";
+      pr.note = fmt(P.passing) + " of " + fmt(P.programs) + " " + prWords(P) + ", pass the machine checks";
+      /* The figures above the causes share the causes' base; the capture's own counts follow under their own label. */
+      pr.lines = (P.live ? [["Active programs (gap census live read)", fmt(P.programs)], ["Passing now (gap census live read)", fmt(P.passing)], ["Still to pass (gap census live read)", fmt(P.gap)]]
+        : [["Passing now (committed captures)", fmt(P.passing)], ["Still to pass (committed captures)", fmt(P.gap)]])
+        .concat([["Listed by the capture (Active, Teachout and Approved)", fmt(c.programs)], c.listed_closed != null ? ["With a closed course list (the capture)", fmt(c.listed_closed)] : null,
+        c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null, c.extracted != null ? ["Records extracted (the capture; a reread can add some)", fmt(c.extracted)] : null].filter(Boolean));
+      var CC = causesOf(c);
+      pr.causes = Object.keys(CC).sort(function (a, b) { return CC[b] - CC[a] || a.localeCompare(b); })
+        .map(function (k) { return [causeWord(M, k), CC[k], k]; });
       /* Records failing each machine check, from the capture's committed summary (failed_checks); a record can fail
          more than one, so these do not sum to the programs still to pass. Only the checks that failed any. */
       var fc = c.failed_checks || {}, fk = Object.keys(fc).filter(function (k) { return fc[k] > 0; }).sort(function (a, b) { return fc[b] - fc[a] || a.localeCompare(b); });
@@ -476,6 +572,8 @@
       d.src = (d.src ? d.src + "; " : "") + "live: " + liveSrc(M, "outcomes") + "; " + liveSrc(M, "program_courses");
     }
     if (lv) liveCourses(slo, lo.slo_courses_on_active, lo.slo_courses, lo.slo_loaded_at, "SLOs");
+    /* A figure opens what it counts (S649): the college's SLO and objective courses, in the panel. */
+    if (slo.held) slo.word = [lo.slo_courses || lo.objective_courses ? "The SLO and objective courses collected for " + c.name : "SLOs and objectives for " + c.name + ": not read yet", { k: "slos" }];
     L.push(slo);
     var plo = { key: "plo", group: "Collected", label: "Program PLOs", tba: gone || tbaOf(M, "plo") };
     if (lv) {
@@ -487,9 +585,12 @@
         plo.liveNote = fmt(lr.active_with_plos) + " of " + fmt(lp.active) + " Active programs carry PLOs in their record";
       }
     }
+    if (plo.held) plo.word = ["The program PLOs collected for " + c.name, { k: "plos" }];
     L.push(plo);
     var obj = { key: "obj", group: "Collected", label: "Course objectives", tba: gone || tbaOf(M, "objectives") };
     if (lv) { obj.tba = ""; liveCourses(obj, lo.objective_courses_on_active, lo.objective_courses, lo.objective_loaded_at, "objectives"); }
+    if (c.objectives_printed === false && !lo.objective_courses) { obj.held = true; obj.num = null; obj.den = null; obj.tba = ""; obj.state = "None printed"; obj.note = NO_OBJ; }
+    if (obj.held) obj.word = [lo.slo_courses || lo.objective_courses ? "The SLO and objective courses collected for " + c.name : "SLOs and objectives for " + c.name + ": not read yet", { k: "slos" }];
     L.push(obj);
 
     var cat = { key: "cat", group: "Collected", label: "Catalog source", held: !!(c.platform || c.scout || lv), tba: lv ? "" : gone || tbaOf(M, "catalog_registry"),
@@ -499,13 +600,13 @@
     cat.parts = [];
     if (c.platform || c.catalog_year) cat.parts.push({ key: "capture", title: "What the capture read",
       lines: [c.platform ? ["Catalog platform", platformWord(c.platform)] : null, c.catalog_year ? ["Catalog year", c.catalog_year] : null].filter(Boolean),
-      link: c.catalog_url || null, linkWord: "The catalog the capture read", stamp: c.read_at ? { at: c.read_at, kind: "read" } : null });
+      pane: isHttp(c.catalog_url) ? { k: "catalog" } : null, linkWord: "The catalog the capture read", stamp: c.read_at ? { at: c.read_at, kind: "read" } : null });
     if (c.scout) {
       var sc = c.scout;
       cat.parts.push({ key: "scout", title: "What the source scout found",
         lines: [sc.platform ? ["Catalog platform", platformWord(sc.platform)] : null, sc.catalog_year ? ["Catalog year", sc.catalog_year] : null,
           ["Recommends", words(sc.recommendation) + (sc.challenge && sc.challenge !== "none" ? "; " + words(sc.challenge) : "; no access barrier")]].filter(Boolean),
-        link: sc.catalog_url || null, linkWord: "The catalog the scout found", stamp: sc.checked_at ? { at: sc.checked_at, kind: "scouted" } : null });
+        pane: isHttp(sc.catalog_url) ? { k: "scout" } : null, linkWord: "The catalog the scout found", stamp: sc.checked_at ? { at: sc.checked_at, kind: "scouted" } : null });
       if (c.platform && ((sc.platform && sc.platform !== c.platform) || (sc.catalog_year && c.catalog_year && sc.catalog_year !== c.catalog_year)))
         cat.differ = "The scout found a different " + [sc.platform && sc.platform !== c.platform ? "platform" : null,
           sc.catalog_year && c.catalog_year && sc.catalog_year !== c.catalog_year ? "catalog year" : null].filter(Boolean).join(" and ") + " than the capture read.";
@@ -527,8 +628,9 @@
      queue, and what the spot-check found. */
   function gaps(M, c) {
     var G = [];
-    Object.keys(c.causes || {}).sort(function (a, b) { return c.causes[b] - c.causes[a] || a.localeCompare(b); }).forEach(function (k) {
-      G.push(causeWord(M, k).replace(/^./, function (x) { return x.toUpperCase(); }) + ": " + fmt(c.causes[k]) + " program" + (c.causes[k] === 1 ? "" : "s"));
+    var CC = causesOf(c);
+    Object.keys(CC).sort(function (a, b) { return CC[b] - CC[a] || a.localeCompare(b); }).forEach(function (k) {
+      G.push(causeWord(M, k).replace(/^./, function (x) { return x.toUpperCase(); }) + ": " + fmt(CC[k]) + " program" + (CC[k] === 1 ? "" : "s"));
     });
     if (c.scout && ((c.scout.challenge && c.scout.challenge !== "none") || c.scout.recommendation === "blocked"))
       G.push("Source scout: " + words(c.scout.challenge && c.scout.challenge !== "none" ? c.scout.challenge : c.scout.recommendation) + " (recommends " + words(c.scout.recommendation) + ")");
@@ -543,9 +645,10 @@
      COBIx makes of five records per college (the contract on #3111, kb/spot_checks/README.md) where none is filed. */
   function asks(M, c) {
     var A = [], LW = (M.rule || {}).levers || {};
-    Object.keys(c.levers || {}).forEach(function (k) {
+    var LV0 = leversOf(c);
+    Object.keys(LV0).forEach(function (k) {
       var w = LW[k] || {};
-      A.push({ text: (w.what || words(k)).replace(/^./, function (x) { return x.toUpperCase(); }), detail: fmt(c.levers[k]) + " program" + (c.levers[k] === 1 ? "" : "s") + (w.kind ? ", " + w.kind : ""), owner: null });
+      A.push({ text: (w.what || words(k)).replace(/^./, function (x) { return x.toUpperCase(); }), detail: fmt(LV0[k]) + " program" + (LV0[k] === 1 ? "" : "s") + (w.kind ? ", " + w.kind : ""), owner: null });
     });
     if (c.harvested && !c.spot_check) A.push({ text: "Team-internal: COBIx spot-checks five records against the catalog", detail: "the spot-check contract on #3111", owner: "COBIx" });
     return A;
@@ -562,26 +665,114 @@
       return [el("dt", { text: l[0] }), el("dd", { cls: FIGURE.test(String(l[1] == null ? "" : l[1]).trim()) ? "cdd-ddn" : null, text: l[1] })];
     })));
   }
-  /* A link out of COBI: http(s) only, a new tab, no opener; anything else is plain text (S648). */
-  function outLink(href, word) {
-    var ok = /^https?:\/\//i.test(String(href || ""));
-    return ok ? el("a", { href: String(href), target: "_blank", rel: "noopener noreferrer", text: word + " (opens in a new tab)" }) : el("span", { text: word });
+  /* Every link on the page opens its content in the side panel (Sam, in session, S649, reversing #3257's links that
+     opened a new tab); the panel carries one control, "Open in a new tab", for the same place. A word here is a button
+     naming its pane; cid is the college it belongs to, or null for a view's own source. */
+  function paneWord(word, pane, cid, cls) {
+    var b = el("button", { type: "button", cls: "cmn-word cdd-paneword" + (cls ? " " + cls : ""), "data-pane": pane.k + (pane.a ? "/" + pane.a : ""), text: word });
+    b.addEventListener("click", function () { openPane(cid, pane, b); });
+    return b;
   }
-  /* A repo path ("kb/x/", "kb/y.json (note)") as its GitHub page, the rest of the words kept as text. */
-  function repoLink(s) {
-    var m = /^((?:kb|docs|scripts|tests)\/[^\s<>*]*)(.*)$/.exec(String(s || ""));
-    if (!m) return el("span", { text: String(s || "") });
-    var path = m[1], href = GITHUB_REPO + (/\/$/.test(path) ? "tree/main/" : "blob/main/") + path;
-    return el("span", null, [el("a", { href: href, target: "_blank", rel: "noopener noreferrer", text: path + " (opens in a new tab)" }), m[2]]);
-  }
-  function runLink(run) {
-    return /^\d+$/.test(String(run || "")) ? outLink(GITHUB_REPO.replace(/\/$/, "") + "/actions/runs/" + run, "The paid read's Actions run") : null;
-  }
-  /* Still to pass, by cause: a small table, most programs first (S648; it was one long sentence). */
-  function causeTable(d) {
-    return el("table", { cls: "cdd-causes", "data-causes": "true" }, [el("caption", { text: "Still to pass, by cause" }),
+  function isHttp(u) { return /^https?:\/\//i.test(String(u || "")); }
+  function repoHref(path) { return GITHUB_REPO + (/\/$/.test(path) ? "tree/main/" : "blob/main/") + path; }
+  function repoPath(s) { var m = /^((?:kb|docs|scripts|tests)\/[^\s<>*]*)(.*)$/.exec(String(s || "")); return m ? { path: m[1], rest: m[2] } : null; }
+  function actionsHref(run) { return /^\d+$/.test(String(run || "")) ? GITHUB_REPO.replace(/\/$/, "") + "/actions/runs/" + run : null; }
+  function pathwaysHref(c) { return "#cpl-pathways/college/" + encodeURIComponent(c.name); }
+  /* Still to pass, by cause: a small table, most programs first (S648; it was one long sentence). Each cause is the
+     word that opens its programs (S649, Sam on #3229: "make sure any card that has what looks like a link opens up to
+     something"): in the opened row it opens the side panel at that cause; in the panel it shows or hides the list
+     below the table. The panel's cause is in the address, #commons/data/college/<slug>/cause/<key>. */
+  function causeTable(d, c, inPanel) {
+    var rows = d.causes.map(function (x) {
+      var k = x[2], on = !!inPanel && S.cause === k;
+      var w = c && k ? el("button", { type: "button", cls: "cmn-word cdd-cause", "data-cause": k, text: cap(x[0]) }) : null;
+      if (w && inPanel) { w.setAttribute("aria-expanded", on ? "true" : "false"); w.setAttribute("aria-controls", "cdd-cprogs"); }
+      if (w) w.addEventListener("click", function () { if (inPanel) pickCause(c, on ? null : k, k); else openPanel(c.id, '[data-expand="' + c.id + '"]', k); });
+      return el("tr", { cls: on ? "cdd-on" : null }, [el("th", { scope: "row" }, [w || cap(x[0])]), el("td", { cls: "cdd-num", text: fmt(x[1]) })]);
+    });
+    var t = el("table", { cls: "cdd-causes", "data-causes": "true" }, [el("caption", { text: "Still to pass, by cause" }),
       el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Cause" }), el("th", { scope: "col", cls: "cdd-num", text: "Programs" })])]),
-      el("tbody", null, d.causes.map(function (x) { return el("tr", null, [el("th", { scope: "row", text: cap(x[0]) }), el("td", { cls: "cdd-num", text: fmt(x[1]) })]); }))]);
+      el("tbody", null, rows)]);
+    if (!c) return t;
+    var note = el("p", { cls: "cdd-of", text: inPanel ? "A cause shows its programs below it; a program opens what we hold about it and the page the capture matched to it, where there is one."
+      : "A cause opens its programs in the side panel." });
+    return el("div", { cls: "cdd-causebox" }, [t, el("p", { cls: "cdd-of", "data-census-basis": ((c.census_basis || {}).basis || "committed files only"), text: censusWords(c) }), note,
+      inPanel && S.cause && causesOf(c)[S.cause] ? causePrograms(c, S.cause) : null]);
+  }
+
+  /* ── each cause's programs (S649; COBIx's item 1 on #3229) ──
+     The builder writes one small file per college (kb/status/commons_data_programs/<slug>.json, named in the row's
+     programs_file); the page reads a college's file only when its row or its panel opens, once a visit. */
+  var PROGS = {};
+  function loadPrograms(c) {
+    if (!c || !c.programs_file || (PROGS[c.programs_file] && PROGS[c.programs_file].state !== "error")) return;   // an error retries (COBIx on #3261)
+    var key = c.programs_file;
+    PROGS[key] = { state: "loading" };
+    var p;
+    try { p = fetch(key, { cache: "no-store" }); } catch (e) { p = Promise.reject(e); }
+    Promise.resolve(p).then(function (r) {
+      if (!r || !r.ok) throw new Error(key + " answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(function (j) { PROGS[key] = { state: "ok", rows: (j && Array.isArray(j.programs)) ? j.programs : [] }; },
+      function () { PROGS[key] = { state: "error" }; })
+      .then(function () { redrawFor(c); });
+  }
+  /* A list that arrives after its college opened draws in place; the focus stays on the word it was on. */
+  function redrawFor(c) {
+    if (!VIEW.root || !VIEW.M || !onData()) return;
+    var a = document.activeElement, sel = null;
+    if (a && a.getAttribute) {
+      if (a.getAttribute("data-cause")) sel = '[data-cause="' + a.getAttribute("data-cause") + '"]';
+      else if (a.getAttribute("data-expand")) sel = '[data-expand="' + a.getAttribute("data-expand") + '"]';
+      else if (a.id) sel = "#" + a.id;
+      if (sel && VIEW.panel && VIEW.panel.contains(a)) sel = "#cdd-panel " + sel;
+    }
+    if (String(S.panel) === String(c.id)) drawPanel();
+    else if (String(S.open) === String(c.id) && VIEW.drawBody) VIEW.drawBody();
+    else return;
+    var b = sel && VIEW.root.querySelector(sel);
+    if (b && b.focus) b.focus();
+  }
+  /* What the committed files hold about a college's outcomes (the builder's <slug>.outcomes.json): PLO text per
+     program, SLO and objective courses by subject. Read only when its pane opens. */
+  var OUTS = {};
+  function loadOutcomes(c) {
+    if (!c || !c.outcomes_file || (OUTS[c.outcomes_file] && OUTS[c.outcomes_file].state !== "error")) return;
+    var key = c.outcomes_file;
+    OUTS[key] = { state: "loading" };
+    var p;
+    try { p = fetch(key, { cache: "no-store" }); } catch (e) { p = Promise.reject(e); }
+    Promise.resolve(p).then(function (r) {
+      if (!r || !r.ok) throw new Error(key + " answered " + (r ? r.status : "nothing"));
+      return r.json();
+    }).then(function (j) { OUTS[key] = { state: "ok", d: j || {} }; }, function () { OUTS[key] = { state: "error" }; })
+      .then(function () { if (String(S.panel) === String(c.id) && S.pane) redrawFor(c); });
+  }
+  function pickCause(c, k, from) {
+    S.cause = k; S.pane = null;
+    drawPanel();
+    setAddress();
+    var b = VIEW.panel && (VIEW.panel.querySelector('[data-cause="' + (from || k || "") + '"]') || VIEW.panel.querySelector("#cdd-panel-h"));
+    if (b && b.focus) b.focus();
+  }
+  function causePrograms(c, k) {
+    var M = VIEW.M, n = causesOf(c)[k] || 0, LW = (M.rule || {}).levers || {};
+    var head = el("h4", { id: "cdd-cprogs-h", text: cap(causeWord(M, k)) + ": " + plural(n, "program", "programs") });
+    var P = c.programs_file ? PROGS[c.programs_file] : null, body;
+    if (!c.programs_file) body = el("p", { cls: "cdd-of", text: "The committed files hold no program list for this college." });
+    else if (!P || P.state === "loading") body = el("p", { cls: "cdd-of", role: "status", text: "Reading the programs." });
+    else if (P.state === "error") body = el("p", { cls: "cdd-state", text: "The program list could not be read (" + c.programs_file + "). The count above stands." });
+    else {
+      var rows = P.rows.filter(function (r) { return r.cause === k; });
+      body = rows.length ? el("ul", { cls: "cdd-progs" }, rows.map(function (r) {
+        var t = r.title || ("Program " + r.cn);
+        var lw = LW[r.lever] || {};
+        return el("li", { "data-cn": r.cn }, [r.url ? paneWord(t, { k: "program", a: r.cn }, c.id) : el("span", { cls: "cdd-ptitle", text: t }),
+          el("span", { cls: "cdd-of", text: [r.award, "control number " + r.cn, r.url ? null : "no catalog page found"].filter(Boolean).join("; ") }),
+          lw.what ? el("span", { cls: "cdd-of", text: "What would move it: " + lw.what + (lw.kind ? " (" + lw.kind + ")" : "") }) : null]);
+      })) : el("p", { cls: "cdd-of", text: "The program list holds none for this cause; the list and the count were built on different days." });
+    }
+    return el("section", { cls: "cdd-cprogs", id: "cdd-cprogs", "aria-labelledby": "cdd-cprogs-h", "data-cause-programs": k }, [head, body]);
   }
   function bar(d) {
     var v = pct(d.num, d.den);
@@ -599,10 +790,10 @@
   }
   function tba(reason) { return el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), reason || ""]); }
   /* A dataset read from more than one source: each part's lines, link and stamp together, and the disagreement. */
-  function parts(d, now) {
+  function parts(d, now, c) {
     var out = (d.parts || []).map(function (p) {
       return el("div", { cls: "cdd-part", "data-part": p.key }, [el("p", { cls: "cdd-partname", text: p.title }), dl(p.lines),
-        p.link && /^https?:\/\//i.test(p.link) ? el("p", { cls: "cdd-of" }, [outLink(p.link, p.linkWord)]) : null, stampLine(p.stamp, now)]);
+        p.pane && c ? el("p", { cls: "cdd-of" }, [paneWord(p.linkWord, p.pane, c.id)]) : null, stampLine(p.stamp, now)]);
     });
     if (d.differ) out.push(el("p", { cls: "cdd-state", "data-differ": "true", text: d.differ }));
     return out;
@@ -616,13 +807,13 @@
         d.den != null ? bar(d) : d.basis && d.tba ? tba(d.tba) : null, d.state ? el("p", { cls: "cdd-state", text: d.state }) : null,
         d.state && d.note ? el("p", { cls: "cdd-of", text: d.note }) : null,
         d.lines && d.lines.length ? dl(d.lines) : null,
-        d.causes && d.causes.length ? causeTable(d) : null, d.fails ? d.fails : null]
-        .concat(!d.parts && (d.stamp || d.liveStamp === undefined) ? [stampLine(d.stamp, now)] : [], liveBits(d, now), d.parts ? parts(d, now) : []));
+        d.causes && d.causes.length ? causeTable(d, c, false) : null, d.fails ? d.fails : null]
+        .concat(!d.parts && (d.stamp || d.liveStamp === undefined) ? [stampLine(d.stamp, now)] : [], liveBits(d, now), d.parts ? parts(d, now, c) : [], d.word ? [el("p", { cls: "cdd-of cdd-dsword" }, [paneWord(d.word[0], d.word[1], c.id)])] : []));
     });
     /* The row leads with the confidence level, then completeness (the overall bar), then each dataset (Sam, Nov 13,
        #3229 comment 6857124403, point 3). */
     var ov = overallOf(M, c);
-    if (ov) cards.unshift(el("section", { cls: "cdd-card", "data-ds": "overall", "aria-label": "Overall" }, overallBits(M, ov)));
+    if (ov) cards.unshift(el("section", { cls: "cdd-card", "data-ds": "overall", "aria-label": "Overall" }, overallBits(M, ov, false, c)));
     if (c.spot_check || c.confidence) {
       var sp = c.spot_check;
       cards.unshift(el("section", { cls: "cdd-card", "data-ds": "confidence", "aria-label": "Confidence" }, [el("h4", { text: "Confidence" }),
@@ -643,10 +834,10 @@
     var G = gaps(M, c);
     var openP = el("button", { type: "button", cls: "cmn-word", "data-panel-open": String(c.id), text: "Open " + c.name + " in the side panel" });
     openP.addEventListener("click", function () { openPanel(c.id, '[data-panel-open="' + c.id + '"]'); });
-    /* The college's sources, each opening its page in a new tab: the catalog the capture read, the capture's committed
-       folder, the paid read's run (S648: a source label that looks like a link opens what it names). */
-    var srcs = [c.catalog_url && /^https?:\/\//i.test(c.catalog_url) ? outLink(c.catalog_url, "The catalog") : null,
-      c.slug && c.harvested ? repoLink("kb/program_requirements_college/" + c.slug + "/") : null, runLink(c.run)].filter(Boolean);
+    /* The college's sources, each opening in the side panel (S649): the catalog the capture read, what the capture
+       holds, the paid read, and the college's CPL Pathways view in COBI (Sam, in session: "Need a link to the colleges
+       CPL Pathways cobi page"). */
+    var srcs = sourceWords(c);
     var box = el("div", { cls: "cdd-more-in" }, [
       srcs.length ? el("p", { cls: "cdd-srcrow", "data-sources": "true" }, [el("span", { cls: "cdd-partname", text: "Sources:" })].concat(srcs)) : null,
       cards.length ? el("div", { cls: "cdd-ds" }, cards) : el("p", { cls: "cdd-of", text: "Not collected yet: no committed file holds a dataset for this college." }),
@@ -656,22 +847,210 @@
     ]);
     return el("tr", { cls: "cdd-more", id: "cdd-more-" + c.id, "data-more": String(c.id) }, [el("td", { colspan: String(COLUMNS.length) }, [box])]);
   }
-  /* A college's overall bar and its four parts, with its basis and date in words (never beside a committed figure). */
-  function overallBits(M, ov, noHead) {
+  function sourceWords(c) {
+    return [isHttp(c.catalog_url) ? paneWord("The catalog", { k: "catalog" }, c.id) : null,
+      c.harvested ? paneWord("What the capture holds", { k: "capture" }, c.id) : null,
+      actionsHref(c.run) ? paneWord("The paid read", { k: "run" }, c.id) : null,
+      paneWord("CPL Pathways", { k: "pathways" }, c.id)].filter(Boolean);
+  }
+  /* A college's overall bar and its four parts, with its basis and date in words (never beside a committed figure).
+     The SLO and PLO parts open what is collected, in the panel (Sam, in session, S649). */
+  function overallBits(M, ov, noHead, c) {
     var p = ov.parts || {};
     return [noHead ? null : el("h4", { text: "Overall" }),
       el("span", { cls: "cdd-pr" }, [meter(ov.value), el("span", { cls: "cdd-n", text: pc(ov.value) }),
         el("span", { cls: "cdd-of", text: "Catalog source, program requirements and outcomes (SLOs and PLOs averaged), averaged" })]),
       dl([["Catalog source", pc(p.catalog)], ["Program requirements passing", pc(p.requirements)], ["Course SLOs", pc(p.slos)], ["Program PLOs", pc(p.plos)]]),
+      c ? el("p", { cls: "cdd-of cdd-dsword" }, [paneWord(sloWord(M, c), { k: "slos" }, c.id), paneWord("Program PLOs collected", { k: "plos" }, c.id)]) : null,
       el("p", { cls: "cdd-basis", text: cap(liveWords(M)) }),
       keptWords(M) ? el("p", { cls: "cdd-of", "data-kept": "true", text: keptWords(M) }) : null].filter(Boolean);
   }
   function cap(s) { s = String(s || ""); return s.charAt(0).toUpperCase() + s.slice(1); }
   function toggleRow(id) {
     S.open = String(S.open) === String(id) ? null : id;
+    if (S.open != null && VIEW.M) loadPrograms(byId(VIEW.M, S.open));
     if (VIEW.drawBody) VIEW.drawBody();
     var w = VIEW.root && VIEW.root.querySelector('[data-expand="' + id + '"]');
     if (w && w.focus) w.focus();
+  }
+
+  /* ── what each word opens in the side panel (S649) ──
+     For an outside site (most college catalogs refuse to be shown inside another page) the panel shows what we hold
+     about it: its title, its address in words, when it was read; "Open in a new tab" goes to the site. For a COBI
+     place the panel shows its content, and "Open in a new tab" opens the same address. Never a blank frame. */
+  var SOURCE_KEYS = ["census", "slo_queue", "scout", "spot", "universe"];
+  function sourceOf(M, c, k) {
+    var S0 = M.sources || {}, sp = c && c.spot_check, rp;
+    if (k === "census") rp = repoPath(S0.census);
+    else if (k === "slo_queue") rp = c && c.slo_queue ? repoPath(S0.slo_queue) : null;
+    else if (k === "scout") rp = c && c.scout ? repoPath(scoutFile(M, c)) : null;
+    else if (k === "spot") rp = sp && sp.file ? repoPath(sp.file) : null;
+    else if (k === "universe") rp = repoPath(S0.universe);
+    else if (k === "dictionary") rp = repoPath(String((M.dictionary || {}).source || "docs/reference/data_dictionary.md").split("#")[0]);
+    else if (k === "apis") rp = repoPath(String((M.apis || {}).source || "docs/reference/data_dictionary.md").split("#")[0]);
+    if (!rp) return null;
+    var W = { census: ["The gap census", "The script that gives every program still to pass one cause and one lever, read through its committed-files functions."],
+      slo_queue: ["The SLO read queue", "The colleges whose course SLO read is held, has nothing to read, or waits on a parser, with why."],
+      scout: ["The source scout's file", "What the source scout found at the college's catalog host ahead of a collection wave."],
+      spot: ["The spot-check receipt", "COBIx's check of five records against the catalog" + (sp && sp.pr ? ", filed on pull request " + sp.pr : "") + "."],
+      universe: ["The college identity crosswalk", "Every college and continuing-education campus, by district: the page's universe."],
+      dictionary: ["The data dictionary", "The doc the dictionary view is parsed from: every dataset, its owner, how we get it and what would improve it."],
+      apis: ["The API checklist", "The checklist section of the data dictionary: each API, whether a connection is needed, its status and evidence."] }[k];
+    return { word: W[0], about: W[1], path: rp.path };
+  }
+  function PANE_OK(M, c, p) {
+    if (!p || !own(PANES, p.k)) return false;
+    if (p.k === "source") return !!sourceOf(M, c, p.a);
+    if (p.k === "entry") return !c && ((M.dictionary || {}).datasets || []).some(function (x) { return x.link && slugOf({ name: x.name }) === p.a; });
+    if (!c) return false;
+    if (p.k === "catalog") return isHttp(c.catalog_url);
+    if (p.k === "scout") return !!(c.scout && isHttp(c.scout.catalog_url));
+    if (p.k === "capture") return !!c.harvested;
+    if (p.k === "run") return !!actionsHref(c.run);
+    if (p.k === "program") return !!(c.programs_file && p.a);
+    return true;   // pathways, slos, plos
+  }
+  function paneView(M, c, p) {
+    var LW = (M.rule || {}).levers || {};
+    var outside = "A college's site usually refuses to be shown inside another page, so this panel shows what we hold about it.";
+    if (p.k === "source" || p.k === "entry") {
+      var src = p.k === "source" ? sourceOf(M, c, p.a) : null, ent = null;
+      if (p.k === "entry") ent = ((M.dictionary || {}).datasets || []).filter(function (x) { return slugOf({ name: x.name }) === p.a; })[0];
+      /* The entry's own words, as the builder parsed them; a source says in words what its file is. Neither sends a
+         reader to a code, data or markdown file on GitHub (review of #3261); the new tab opens this same pane. */
+      if (ent) return { title: "The " + ent.name + " entry", basis: "From the data dictionary, as the builder parsed it.",
+        kids: [el("dl", { cls: "cdd-dl" }, [el("dt", { text: "Stage" }), el("dd", { text: ent.stage || "TBA" }), el("dt", { text: "Owner or steward" }), docText("dd", ent.owner || "TBA"),
+          el("dt", { text: "How we get it today" }), docText("dd", ent.procedure_today || "TBA"), el("dt", { text: "Planned improvement" }), docText("dd", ent.planned_improvement || "TBA")])] };
+      if (!src) return { title: "Not found", kids: [el("p", { cls: "cdd-state", text: "This source is not in the file." })] };
+      return { title: src.word, basis: "A file the team keeps in the repository.",
+        kids: [el("p", { cls: "cdd-of", text: src.about }), dl([["The file", src.path]])] };
+    }
+    if (p.k === "catalog") return { title: "The catalog the capture read", tab: c.catalog_url, basis: outside,
+      kids: [dl([["Address", c.catalog_url], c.platform ? ["Catalog platform", platformWord(c.platform)] : null, c.catalog_year ? ["Catalog year", c.catalog_year] : null,
+        ["Read", c.read_at ? when(c.read_at) : "Not yet"]].filter(Boolean))] };
+    if (p.k === "scout") { var sc = c.scout; return { title: "The catalog the scout found", tab: sc.catalog_url, basis: outside,
+      kids: [dl([["Address", sc.catalog_url], sc.platform ? ["Catalog platform", platformWord(sc.platform)] : null, sc.catalog_year ? ["Catalog year", sc.catalog_year] : null,
+        ["Recommends", words(sc.recommendation)], ["Scouted", sc.checked_at ? when(sc.checked_at) : "Not yet"]].filter(Boolean))] }; }
+    if (p.k === "run") { var cp = costPer(c); return { title: "The paid read", tab: actionsHref(c.run), basis: "The GitHub Actions run that read this college's programs; the new tab opens its log.",
+      kids: [dl([["Run", String(c.run)], ["Read", c.read_at ? when(c.read_at) : "Not yet"], c.cost_usd != null ? ["Cost of the read", "$" + Number(c.cost_usd).toFixed(2)] : null,
+        cp == null ? null : ["Per passing program", "$" + cp.toFixed(3)], c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null,
+        c.extracted != null ? ["Records extracted", fmt(c.extracted)] : null, c.read_seconds != null ? ["Page-finding time", minutes(c.read_seconds)] : null].filter(Boolean))] }; }
+    if (p.k === "pathways") { var ph = pathwaysHref(c);
+      return { title: "CPL Pathways", tab: ph, basis: "A view in COBI.",
+        kids: [el("p", { cls: "cdd-of", text: "CPL Pathways shows " + c.name + "'s programs, its pathways and the credit for prior learning a student could use toward them." }),
+          el("p", null, [el("a", { href: ph, "data-goto-pathways": "true", text: "Go to " + c.name + " in CPL Pathways" })])] }; }
+    if (p.k === "capture") {
+      var d = datasets(M, c)[0];
+      return { title: "What the capture holds", basis: "From the committed files: the college's capture, its records and the gap census.",
+        kids: [dl((d.lines || []).concat([c.platform ? ["Catalog platform", platformWord(c.platform)] : null, c.catalog_year ? ["Catalog year", c.catalog_year] : null,
+          ["Read", c.read_at ? when(c.read_at) : "Not yet"]].filter(Boolean))),
+          d.causes && d.causes.length ? causeTable(d, c, true) : el("p", { cls: "cdd-of", text: "Every program the capture listed passes." })] };
+    }
+    if (p.k === "program") {
+      var P = c.programs_file ? PROGS[c.programs_file] : null, r = P && P.state === "ok" ? P.rows.filter(function (x) { return x.cn === p.a; })[0] : null;
+      if (!r) return { title: "Program " + p.a, kids: [el("p", { cls: P && P.state === "ok" ? "cdd-state" : P && P.state === "error" ? "cdd-state" : "cdd-of", role: "status", "data-program-state": P ? P.state : "none",
+        text: !c.programs_file ? "The committed files hold no program list for this college."
+          : !P || P.state === "loading" ? "Reading the program."
+          : P.state === "error" ? "The program list could not be read (" + c.programs_file + "), so this program cannot be shown. The counts beside its cause stand."
+          : (c.census_basis || {}).basis === "live" ? "The gap census's live read does not list program " + p.a + " as still to pass at " + c.name + "."
+          : "The program list holds no program " + p.a + "." })] };
+      var lw = LW[r.lever] || {};
+      /* The capture matched this page to the program; a match can be wrong (review of #3261: one program opened
+         another's page), so the pane says matched, never that the page is the program's. */
+      return { title: r.title || "Program " + r.cn, tab: isHttp(r.url) ? r.url : null, basis: outside,
+        kids: [dl([["Award", r.award || "TBA"], ["Control number", r.cn], ["Still to pass because", cap(causeWord(M, r.cause))],
+          lw.what ? ["What would move it", cap(lw.what) + (lw.kind ? " (" + lw.kind + ")" : "")] : null, ["The page the capture matched", r.url || "No catalog page found"]].filter(Boolean)),
+          r.url ? el("p", { cls: "cdd-of", text: "The capture matched this page to the program by its title and award. A match can be wrong; the new tab shows the page itself." }) : null].filter(Boolean) };
+    }
+    if (p.k === "slos" || p.k === "plos") return outcomesPane(M, c, p.k);
+    return { title: "Not found", kids: [] };
+  }
+  function outcomesPane(M, c, k) {
+    var lv = liveOf(M, c), lo = (lv && lv.outcomes) || {}, lc = (lv && lv.program_courses) || {}, lr = (lv && lv.records) || {}, lp = (lv && lv.programs) || {};
+    var O = c.outcomes_file ? OUTS[c.outcomes_file] : null, kids = [];
+    var wait = !c.outcomes_file ? el("p", { cls: "cdd-of", text: "The committed files hold no " + (k === "slos" ? "course outline read" : "program record with PLOs") + " for this college." })
+      : !O || O.state === "loading" ? el("p", { cls: "cdd-of", role: "status", text: "Reading what is collected." })
+      : O.state === "error" ? el("p", { cls: "cdd-state", text: "The outcomes file could not be read (" + c.outcomes_file + "). The live counts above stand." }) : null;
+    if (k === "slos") {
+      kids.push(el("h3", { text: "From the " + liveWords(M) }));
+      kids.push(lv ? dl([["Courses with SLOs on Active programs", fmt(lo.slo_courses_on_active) + " of " + fmt(lc.active_courses)], ["Courses with SLOs, in all", fmt(lo.slo_courses)],
+        ["SLOs loaded", lo.slo_loaded_at ? when(lo.slo_loaded_at) : "Not yet"], ["Courses with objectives on Active programs", fmt(lo.objective_courses_on_active) + " of " + fmt(lc.active_courses)],
+        ["Courses with objectives, in all", fmt(lo.objective_courses)], ["Objectives loaded", lo.objective_loaded_at ? when(lo.objective_loaded_at) : "Not yet"]])
+        : tba(liveRead(M) ? "The live read holds no counts for this college." : liveReason(M)));
+      if (c.objectives_printed === false && !lo.objective_courses) kids.push(el("p", { cls: "cdd-of", "data-noobj": "true", text: NO_OBJ }));
+      if (lv && !lo.slo_courses && !lo.objective_courses) kids.push(el("p", { cls: "cdd-state", text: "Not read yet: the SLO read has not reached " + c.name + (c.slo_queue ? " (SLO read " + c.slo_queue.state + (c.slo_queue.why ? ": " + c.slo_queue.why : "") + ")" : "") + "." }));
+      kids.push(el("h3", { text: "By subject, from the committed course outline reads" }));
+      var cs = O && O.state === "ok" ? (O.d.courses || {}) : null;
+      if (wait) kids.push(wait);
+      else if (!cs || !(cs.by_subject || []).length) kids.push(el("p", { cls: "cdd-of", text: "No committed course outline read names this college yet." }));
+      else {
+        kids.push(el("p", { cls: "cdd-of", text: fmt(cs.slo_courses) + " courses with SLOs and " + fmt(cs.objective_courses) + " with objectives, read " + (cs.read_at ? when(cs.read_at) : "on a date the file does not give") + ". Counts only; the outcomes' own words live in the course outline reads." }));
+        kids.push(el("p", { cls: "cdd-of", "data-subject-note": "true", text: "A district-wide outline counts once for each college that names it, and a course counts here whether or not it sits on an Active program, so this total can differ from the live figure above." }));
+        kids.push(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "SLO and objective courses by subject", tabindex: "0" }, [el("table", { cls: "cdd-causes cdd-subj" }, [
+          el("caption", { text: "Courses by subject" }),
+          el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Subject" }), el("th", { scope: "col", cls: "cdd-num", text: "With SLOs" }), el("th", { scope: "col", cls: "cdd-num", text: "With objectives" })])]),
+          el("tbody", null, cs.by_subject.map(function (r) { return el("tr", null, [el("th", { scope: "row", text: r.subject }), el("td", { cls: "cdd-num", text: fmt(r.slo_courses) }), el("td", { cls: "cdd-num", text: fmt(r.objective_courses) })]); }))])]));
+      }
+      var vw = el("button", { type: "button", cls: "cmn-word", "data-view": "slos", text: "Every college with collected SLOs" });
+      vw.addEventListener("click", function () { S.panel = null; S.pane = null; go("slos"); });
+      kids.push(el("p", { cls: "cdd-of" }, [vw]));
+      return { title: "Course SLOs and objectives", basis: "A view in COBI, from the live read and the committed course outline reads.", kids: kids };
+    }
+    kids.push(el("h3", { text: "From the " + liveWords(M) }));
+    kids.push(lv ? dl([["Active programs whose record carries PLOs", fmt(lr.active_with_plos) + " of " + fmt(lp.active)]])
+      : tba(liveRead(M) ? "The live read holds no counts for this college." : liveReason(M)));
+    kids.push(el("h3", { text: "Each program's PLOs, from the committed records" }));
+    var pl = O && O.state === "ok" ? (O.d.programs || []) : null;
+    if (wait) kids.push(wait);
+    else if (!pl || !pl.length) kids.push(el("p", { cls: "cdd-of", text: "No committed record carries PLOs for this college." }));
+    else {
+      kids.push(el("p", { cls: "cdd-of", text: plural(pl.length, "program carries", "programs carry") + " PLOs in its filed record, in the record's own words. A program's name shows them." }));
+      if (lv && lr.active_with_plos != null && lr.active_with_plos !== pl.length)
+        kids.push(el("p", { cls: "cdd-of", "data-plo-gap": "true", text: fmt(lr.active_with_plos) + " Active programs carry PLOs in the live table; the committed records hold the words for " + fmt(pl.length) + " programs. The rest were loaded from reads whose records are not committed here, or are not Active." }));
+      kids.push(el("div", { cls: "cdd-plos" }, pl.map(function (r) {
+        return el("details", { cls: "cdd-plo", "data-cn": r.cn }, [el("summary", { text: (r.title || "Program " + r.cn) + (r.award ? ", " + r.award : "") + " (" + plural(r.outcomes.length, "PLO", "PLOs") + ")" }),
+          el("ol", null, r.outcomes.map(function (o) { return el("li", { text: o }); }))]);
+      })));
+    }
+    return { title: "Program PLOs", basis: "A view in COBI, from the live read and the committed program records.", kids: kids };
+  }
+
+  /* ── Colleges with collected SLOs (S649; Sam, in session: "need a link to show the colleges with collected slos").
+     From the live read: each college whose course SLOs or objectives it holds. ── */
+  function slosRows(M) {
+    var out = [];
+    M.colleges.forEach(function (c) {
+      var lv = liveOf(M, c), lo = (lv && lv.outcomes) || {};
+      if (!lv || !(lo.slo_courses || lo.objective_courses)) return;
+      out.push({ c: c, slo: lo.slo_courses || 0, sloA: lo.slo_courses_on_active || 0, obj: lo.objective_courses || 0, objA: lo.objective_courses_on_active || 0,
+        den: ((lv.program_courses || {}).active_courses) || 0, at: lo.slo_loaded_at || lo.objective_loaded_at || null, objAt: lo.objective_loaded_at || null });
+    });
+    return out.sort(function (a, b) { return b.slo - a.slo || a.c.name.localeCompare(b.c.name); });
+  }
+  function slosView(M) {
+    var sec = el("section", { cls: "cdd-view", id: "cdd-slos", "aria-labelledby": "cdd-h" });
+    if (!liveRead(M)) { sec.appendChild(tba(liveReason(M))); return sec; }
+    var R = slosRows(M), so = R.filter(function (r) { return r.slo; }).length, ob = R.filter(function (r) { return r.obj; }).length;
+    var np = R.filter(function (r) { return r.c.objectives_printed === false && !r.obj; }).length;
+    sec.appendChild(el("p", { cls: "cdd-sortline", id: "cdd-slos-sum", text: plural(so, "college holds", "colleges hold") + " course SLOs and " + plural(ob, "college holds", "colleges hold") + " objectives, " + liveWords(M) +
+      (np ? "; the course outlines of " + plural(np, "college", "colleges") + " print no objectives" : "") +
+      ". The other " + plural(M.colleges.length - R.length, "college has", "colleges have") + " not been read yet. Most SLO courses first; a college's name opens what is collected for it." }));
+    var body = el("tbody", null, R.map(function (r) {
+      var w = el("button", { type: "button", cls: "cmn-word cdd-name", "data-slos-college": slugOf(r.c), text: r.c.name });
+      w.addEventListener("click", function () { openPane(r.c.id, { k: "slos" }, w); });
+      return el("tr", { "data-slos-row": r.c.name }, [el("th", { scope: "row", "data-label": "College" }, [w, el("span", { cls: "cdd-dist", text: r.c.district || "" })]),
+        el("td", { "data-label": "Courses with SLOs", cls: "cdd-num", text: fmt(r.slo) }),
+        el("td", { "data-label": "On Active programs" }, [el("span", { cls: "cdd-pr" }, [meter(r.den ? Math.min(1, r.sloA / r.den) : 0), el("span", { cls: "cdd-n", text: r.den ? pc(Math.min(1, r.sloA / r.den)) : "" }), el("span", { cls: "cdd-of", text: fmt(r.sloA) + " of " + fmt(r.den) + " courses" })])]),
+        r.c.objectives_printed === false && !r.obj ? el("td", { "data-label": "Courses with objectives", cls: "cdd-of", "data-noobj": "true", text: "Outlines print none" })
+          : el("td", { "data-label": "Courses with objectives", cls: "cdd-num", text: fmt(r.obj) }),
+        el("td", { "data-label": "Loaded" }, [r.at ? day(r.at) : el("span", { cls: "cdd-quiet", text: "Not yet" }), r.objAt && r.objAt !== r.at ? el("span", { cls: "cdd-of", text: "Objectives " + day(r.objAt) }) : null])]);
+    }));
+    var table = el("table", { cls: "cdd-table", id: "cdd-slos-table" }, [
+      el("caption", { cls: "cdd-sr", text: "Each college with collected SLOs or objectives: its courses with SLOs, the share on Active programs, its courses with objectives, and when they were loaded" }),
+      el("colgroup", null, [el("col", { cls: "cdd-c-sname" }), el("col", { cls: "cdd-c-sn" }), el("col", { cls: "cdd-c-sact" }), el("col", { cls: "cdd-c-sn" }), el("col", { cls: "cdd-c-sat" })]),
+      el("thead", null, [el("tr", null, ["College", "Courses with SLOs", "On Active programs", "Courses with objectives", "Loaded"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), body]);
+    sec.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": VIEWS.slos, tabindex: "0" }, [table]));
+    return sec;
   }
 
   /* ── the side panel: the same college beside the list (the Funding Follow-up Dashboard's drawer: its heading takes
@@ -684,7 +1063,7 @@
     /* Confidence first, then completeness, as in the opened row (Sam, Nov 13, #3229). */
     out.push(section("Confidence", c.confidence ? [el("p", { cls: "cdd-state", text: cap(c.confidence.level) }), el("p", { cls: "cdd-of", text: c.confidence.why })]
       : [tba("Not collected yet: confidence starts with the first collection.")]));
-    out.push(section("Overall", ov ? overallBits(M, ov, true)
+    out.push(section("Overall", ov ? overallBits(M, ov, true, c)
       : [tba(liveRead(M) ? "The live read holds no counts for this college." : liveReason(M) + (tbaOf(M, "overall") ? " " + tbaOf(M, "overall") : ""))]));
     GROUPS.forEach(function (g) {
       var ds = datasets(M, c).filter(function (d) { return d.group === g; });
@@ -695,13 +1074,14 @@
         if (d.state && d.note) kids.push(el("p", { cls: "cdd-of", text: d.note }));
         if (d.den == null && d.tba) kids.push(tba(d.tba));
         if (d.lines && d.lines.length) kids.push(dl(d.lines));
-        if (d.causes && d.causes.length) kids.push(causeTable(d));
+        if (d.causes && d.causes.length) kids.push(causeTable(d, c, true));
         if (d.fails) kids.push(d.fails);
         (d.later || []).forEach(function (x) { kids.push(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: x[0] + ": " + x[1] + ". " }), x[2]])); });
         /* The committed lines' stamp sits under them, before the live block and its own stamp. */
         if (!d.parts && (d.stamp || (d.held && d.liveStamp === undefined))) kids.push(stampLine(d.stamp, now));
         kids = kids.concat(liveBits(d, now));
-        if (d.parts) kids = kids.concat(parts(d, now));
+        if (d.parts) kids = kids.concat(parts(d, now, c));
+        if (d.word) kids.push(el("p", { cls: "cdd-of cdd-dsword" }, [paneWord(d.word[0], d.word[1], c.id)]));
         if (d.src && d.held) kids.push(el("p", { cls: "cdd-src", text: "Source: " + d.src }));
         return el("div", { cls: "cdd-pds", "data-ds": d.key }, kids);
       })));
@@ -729,12 +1109,10 @@
         c.run ? ["Actions run of the paid read", String(c.run)] : null,
         c.read_seconds != null ? ["Page-finding time (the capture, before the paid read)", minutes(c.read_seconds)] : null].filter(Boolean))]));
     }
-    var src = [c.slug ? "kb/program_requirements_college/" + c.slug + "/" : null, M.sources.census || null, c.slo_queue ? M.sources.slo_queue : null,
-      c.scout ? scoutFile(M, c) : null, sp ? sp.file + (sp.pr ? " (pull request " + sp.pr + ")" : "") : null,
-      sp && sp.settled_later ? "a later settlement beside the receipt (kb/spot_checks/README.md)" : null, M.sources.universe || null].filter(Boolean);
-    out.push(section("Sources", [el("ul", { cls: "cdd-srcs" }, src.map(function (s) { return el("li", null, [repoLink(s)]); })
-      .concat([c.catalog_url && /^https?:\/\//i.test(c.catalog_url) ? el("li", null, [outLink(c.catalog_url, "The catalog the capture read")]) : null,
-        runLink(c.run) ? el("li", null, [runLink(c.run)]) : null].filter(Boolean)))]));
+    /* Each source opens in this panel (S649); the capture's folder is what the capture holds, never a GitHub page. */
+    var src = sourceWords(c).concat(SOURCE_KEYS.filter(function (k) { return sourceOf(M, c, k); }).map(function (k) { return paneWord(sourceOf(M, c, k).word, { k: "source", a: k }, c.id); }));
+    if (sp && sp.settled_later) src.push(el("span", { text: "A later settlement beside the spot-check receipt" }));
+    out.push(section("Sources", [el("ul", { cls: "cdd-srcs" }, src.map(function (s) { return el("li", null, [s]); }))]));
     return out;
   }
   /* A dialog that says aria-modal makes the rest of the page inert while it is open (COBIx on PR 3231): every sibling
@@ -763,7 +1141,7 @@
   /* Leaving the data view by any path (another tab, #commons, #commons/ase, browser Back from an open panel) releases
      the page: commons.js draws another view into the root without telling this module. */
   function onData() { return /^#?commons\/data(\/|$)/.test(String(location.hash || "")); }
-  function leave() { if (!onData()) { S.panel = null; releaseInert(); } }
+  function leave() { if (!onData()) { S.panel = null; S.cause = null; S.pane = null; releaseInert(); } }
   window.addEventListener("cpl-tab-activated", leave);
   window.addEventListener("hashchange", leave);
   function panelShell() {
@@ -777,7 +1155,7 @@
     if (!box || !M) return;
     var c = byId(M, S.panel);
     box.textContent = "";
-    if (!c) { box.setAttribute("hidden", ""); releaseInert(); return; }
+    if (!c && !S.pane) { box.setAttribute("hidden", ""); releaseInert(); return; }
     box.removeAttribute("hidden");
     holdInert(box);
     document.removeEventListener("keydown", onDocKey, true);
@@ -788,11 +1166,25 @@
     wireGrip(grip, box);
     var close = el("button", { type: "button", cls: "cmn-word", id: "cdd-panel-close", text: "Close" });
     close.addEventListener("click", function () { closePanel(); });
-    var head = el("div", { cls: "cdd-panel-top" }, [el("div", null, [el("h2", { id: "cdd-panel-h", tabindex: "-1", text: c.name }),
-      el("p", { cls: "cdd-of", text: (c.district || "") + (c.kind === "continuing_education" ? "; a continuing-education campus" : "") })]), close]);
-    var inner = el("div", { cls: "cdd-panel-in" }, [head, el("p", { cls: "cdd-src" }, ["From the committed files, built " + (day(M.written) || "on a date the file does not give") + ".",
-      el("span", { cls: "cdd-gripnote", text: " Drag the edge or use the arrow keys on it to change the width; double-click it to reset." })])]
-      .concat(panelBody(M, c, now || VIEW.now)));
+    var pv = S.pane ? paneView(M, c, S.pane) : null;
+    var head = el("div", { cls: "cdd-panel-top" }, [el("div", null, [el("h2", { id: "cdd-panel-h", tabindex: "-1", text: pv ? pv.title : c.name }),
+      el("p", { cls: "cdd-of", text: pv ? (c ? c.name : TITLE) : (c.district || "") + (c.kind === "continuing_education" ? "; a continuing-education campus" : "") })]), close]);
+    var top = [head];
+    if (pv) {
+      /* One control to the same place in a new tab, for the bigger view; back to the college where there is one. */
+      var acts = [];
+      if (c) {
+        var back = el("button", { type: "button", cls: "cmn-word", id: "cdd-pane-back", text: "Back to " + c.name });
+        back.addEventListener("click", function () { S.pane = null; drawPanel(); setAddress(); var h = VIEW.panel.querySelector("#cdd-panel-h"); if (h && h.focus) h.focus(); });
+        acts.push(back);
+      }
+      var nt = pv.tab || ("#" + address());
+      acts.push(el("a", { cls: "cdd-newtab", href: nt, target: "_blank", rel: "noopener noreferrer", "data-newtab": "true", text: "Open in a new tab" }));
+      top.push(el("p", { cls: "cdd-paneacts" }, acts));
+    }
+    var inner = el("div", { cls: "cdd-panel-in" }, top.concat([el("p", { cls: "cdd-src" }, [pv ? pv.basis || "" : "From the committed files, built " + (day(M.written) || "on a date the file does not give") + ".",
+      el("span", { cls: "cdd-gripnote", text: " Drag the edge or use the arrow keys on it to change the width; double-click it to reset." })])])
+      .concat(pv ? pv.kids : panelBody(M, c, now || VIEW.now)));
     box.appendChild(grip);
     box.appendChild(inner);
   }
@@ -843,8 +1235,23 @@
     try { if (window.history && history.replaceState && location.hash !== h) history.replaceState(null, "", h); } catch (e) { /* the view still draws */ }
     if (VIEW.noted) VIEW.noted(String(location.hash || ""));
   }
-  function openPanel(id, from) {
-    S.panel = id; VIEW.from = from || null;
+  /* A word's pane: the college's panel showing what the word names (or a view's source with no college). */
+  function openPane(cid, pane, fromEl) {
+    /* A word inside the panel keeps the word that opened the panel as the place the focus returns to on Close. */
+    var inside = fromEl && VIEW.panel && VIEW.panel.contains(fromEl) && String(S.panel) === String(cid);
+    if (!inside) { VIEW.from = null; VIEW.fromEl = fromEl || null; }
+    S.panel = cid; S.pane = pane; S.cause = null;
+    var c = VIEW.M ? byId(VIEW.M, cid) : null;
+    if (c && (pane.k === "program" || pane.k === "capture")) loadPrograms(c);
+    if (c && (pane.k === "slos" || pane.k === "plos")) loadOutcomes(c);
+    drawPanel();
+    setAddress();
+    var h = VIEW.panel && VIEW.panel.querySelector("#cdd-panel-h");
+    if (h && h.focus) h.focus();
+  }
+  function openPanel(id, from, cause) {
+    S.panel = id; VIEW.from = from || null; VIEW.fromEl = null; S.cause = cause || null; S.pane = null;
+    if (VIEW.M) loadPrograms(byId(VIEW.M, id));
     drawPanel();
     setAddress();
     var h = VIEW.panel && VIEW.panel.querySelector("#cdd-panel-h");
@@ -852,23 +1259,36 @@
   }
   function closePanel() {
     var id = S.panel;
-    S.panel = null;
+    var fromEl = VIEW.fromEl && VIEW.root && VIEW.root.contains(VIEW.fromEl) && !(VIEW.panel && VIEW.panel.contains(VIEW.fromEl)) ? VIEW.fromEl : null;
+    S.panel = null; S.cause = null; S.pane = null;
     drawPanel();
     setAddress();
-    var back = (VIEW.from && VIEW.root && VIEW.root.querySelector(VIEW.from)) || (VIEW.root && VIEW.root.querySelector('[data-expand="' + id + '"]'));
-    VIEW.from = null;
+    var vc0 = VIEW.M ? byId(VIEW.M, id) : null;
+    var back = fromEl || (VIEW.from && VIEW.root && VIEW.root.querySelector(VIEW.from)) || (VIEW.root && VIEW.root.querySelector('[data-expand="' + id + '"]'))
+      || (vc0 && VIEW.root && VIEW.root.querySelector('[data-slos-college="' + slugOf(vc0) + '"]'));
+    VIEW.from = null; VIEW.fromEl = null;
     if (back && back.focus) back.focus();
   }
 
-  var VIEW = { root: null, M: null, noted: null, now: null, panel: null, from: null, drawBody: null };
+  var VIEW = { root: null, M: null, noted: null, now: null, panel: null, from: null, fromEl: null, drawBody: null };
   function render(root, M, route, now) {
     releaseInert();   // a redraw (a new address, a figure, another view) starts with the whole page live
     VIEW.root = root; VIEW.M = M; VIEW.now = now || VIEW.now || new Date();
     ensureCss();
-    var R = parseRoute(route), pcol = R.view ? null : bySlug(M, R.college);
+    var R = parseRoute(route), pcol = bySlug(M, R.college);
     S.view = R.view;
     S.panel = pcol ? pcol.id : null;
-    var rf = FILTER_ALIAS[R.filter] || R.filter, f = FILTERS[rf] ? rf : "all";
+    S.cause = pcol && R.cause && causesOf(pcol)[R.cause] ? R.cause : null;
+    if (pcol) loadPrograms(pcol);
+    /* An address naming a cause the college does not hold opens the college alone, and says so in the address. */
+    var fixCause = !!(pcol && R.cause && !S.cause);
+    /* A pane from the address: a college's needs its college; a view's own source needs none. */
+    S.pane = R.pane && (pcol ? PANE_OK(M, pcol, R.pane) : !R.college && PANE_OK(M, null, R.pane)) ? R.pane : null;
+    if (R.pane && !S.pane) fixCause = true;
+    if (pcol && S.pane && (S.pane.k === "slos" || S.pane.k === "plos")) loadOutcomes(pcol);
+    var rf = own(FILTER_ALIAS, R.filter) ? FILTER_ALIAS[R.filter] : R.filter, f = own(FILTERS, rf) ? rf : "all";
+    /* A filter word the page does not know is repaired in the address, never kept. */
+    var fixFilter = (!R.view && R.filter && R.filter !== "all" && f === "all") || !!R.junk;
     /* A card sets its own order (card: true) and the order lasts only while its card's list shows: on a filter change
        the default or a card's order gives way to the new card's, or to the default. A heading's order is the person's
        and stays for the visit. */
@@ -888,16 +1308,18 @@
       el("h2", { cls: "cmn-title", id: "cdd-h", text: S.view ? VIEWS[S.view] : TITLE }),
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
       el("p", { cls: "cmn-lede", text: S.view === "districts" ? "Each district's colleges together: how many are collected, how complete their collection is and how confident we are in it, from the same figures as the college list."
+        : S.view === "slos" ? "The colleges whose course SLOs or objectives the live read holds: how many courses, how many sit on Active programs, and when each was loaded."
         : S.view === "dictionary" ? "Every dataset College Data Collection tracks: who holds it, how we get it today, what would improve it, how far it has come, and the evidence for each claim."
         : S.view === "apis" ? "Each API the datasets would connect through: who holds it, whether a connection is needed, its status and the evidence for that status."
         : "Every college and continuing-education campus: what we have collected for it, how complete it is, how confident we are in it, and what is in the way." })
     ]));
     wrap.appendChild(viewNav());
     if (S.view) {
-      wrap.appendChild(S.view === "districts" ? districtsView(M) : S.view === "dictionary" ? dictionaryView(M) : apisView(M));
+      wrap.appendChild(S.view === "districts" ? districtsView(M) : S.view === "slos" ? slosView(M) : S.view === "dictionary" ? dictionaryView(M) : apisView(M));
       var vpage = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);
       root.appendChild(vpage);
-      drawPanel(VIEW.now);   // no college on a view: the panel stays hidden and the page live
+      drawPanel(VIEW.now);   // no college on a view: the panel stays hidden and the page live, unless a source is open
+      if (fixCause || fixFilter) setAddress();
       return vpage;
     }
     wrap.appendChild(el("p", { cls: "cdd-stamp", id: "cdd-stamp" }, [el("strong", { text: "From the committed files. " }),
@@ -959,8 +1381,8 @@
     var body = el("tbody");
     var head = el("tr");
     var table = el("table", { cls: "cdd-table", id: "cdd-colleges" }, [
-      el("caption", { cls: "cdd-sr", text: "Each college: its overall completeness (live read), its collected program requirements, programs still to pass, last read, read cost and confidence" }),
-      el("colgroup", null, [el("col", { cls: "cdd-c-name" }), el("col", { cls: "cdd-c-ov" }), el("col", { cls: "cdd-c-pr" }), el("col", { cls: "cdd-c-gap" }), el("col", { cls: "cdd-c-read" }), el("col", { cls: "cdd-c-cost" }), el("col", { cls: "cdd-c-conf" })]),
+      el("caption", { cls: "cdd-sr", text: "Each college: its overall completeness (live read), its courses with SLOs and with objectives (live read), its collected program requirements, programs still to pass, last read, read cost and confidence" }),
+      el("colgroup", null, [el("col", { cls: "cdd-c-name" }), el("col", { cls: "cdd-c-ov" }), el("col", { cls: "cdd-c-out" }), el("col", { cls: "cdd-c-pr" }), el("col", { cls: "cdd-c-gap" }), el("col", { cls: "cdd-c-read" }), el("col", { cls: "cdd-c-cost" }), el("col", { cls: "cdd-c-conf" })]),
       el("thead", null, [head]), body
     ]);
     function drawHead() {
@@ -1008,12 +1430,13 @@
     var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which goes inert while it is open
     root.appendChild(page);
     drawPanel(VIEW.now);
+    if (fixCause || fixFilter) setAddress();
     return page;
   }
 
   /* The three views of the dashboard, as words: the list, the dictionary, the checklist. */
   function viewNav() {
-    var items = [["", "The college list"], ["districts", VIEWS.districts], ["dictionary", VIEWS.dictionary], ["apis", VIEWS.apis]];
+    var items = [["", "The college list"], ["districts", VIEWS.districts], ["slos", VIEWS.slos], ["dictionary", VIEWS.dictionary], ["apis", VIEWS.apis]];
     return el("nav", { cls: "cdd-views", "aria-label": "College Data Collection views" }, items.map(function (it) {
       var on = (S.view || "") === it[0];
       var a = el("a", { href: "#commons/data" + (it[0] ? "/" + it[0] : ""), cls: "cdd-viewword", "data-goto": it[0] || "list", "aria-current": on ? "page" : null, text: it[1] });
@@ -1102,7 +1525,7 @@
     var groups = [];
     L.forEach(function (x) { if (groups.indexOf(x.group || "Other") < 0) groups.push(x.group || "Other"); });
     var src = String(D.source || "docs/reference/data_dictionary.md");
-    sec.appendChild(el("p", { cls: "cdd-src" }, ["Parsed from ", el("a", { href: GITHUB + src.split("#")[0], target: "_blank", rel: "noopener noreferrer", text: src + " (opens in a new tab)" }),
+    sec.appendChild(el("p", { cls: "cdd-src" }, ["Parsed from ", paneWord(src.split("#")[0], { k: "source", a: "dictionary" }, null),
       " by the College Data Collection builder: " + fmt(L.length) + " datasets in " + fmt(groups.length) + " groups, as the doc groups them."]));
     if (Array.isArray(D.errors) && D.errors.length) sec.appendChild(el("p", { cls: "cdd-state", text: "The builder could not read all of the doc: " + D.errors.join("; ") }));
     groups.forEach(function (g) {
@@ -1116,7 +1539,7 @@
           uv ? el("p", { cls: "cdd-unv", "data-unverified": "true", text: uv }) : null,
           el("dl", { cls: "cdd-dl" }, [el("dt", { text: "Stage" }), el("dd", { text: x.stage || "TBA" }), el("dt", { text: "Owner or steward" }), docText("dd", x.owner || "TBA"),
             el("dt", { text: "How we get it today" }), docText("dd", x.procedure_today || "TBA"), el("dt", { text: "Planned improvement" }), docText("dd", x.planned_improvement || "TBA")]),
-          x.link ? el("p", { cls: "cdd-of" }, [el("a", { href: GITHUB + x.link, target: "_blank", rel: "noopener noreferrer", text: "The entry in the data dictionary, on GitHub (opens in a new tab)" })]) : null
+          x.link ? el("p", { cls: "cdd-of" }, [paneWord("The entry in the data dictionary", { k: "entry", a: slugOf({ name: x.name }) }, null)]) : null
         ].concat(evidenceBits(x))));
       });
       sec.appendChild(gs);
@@ -1135,7 +1558,7 @@
     if (!a.rows.length) { sec.appendChild(tba("The API checklist is not in the file yet.")); return sec; }
     sec.appendChild(el("p", { cls: "cdd-stamp", id: "cdd-api-sum" }, [el("strong", { text: fmt(a.connected) + " of " + fmt(a.need) + " connected. " }),
       "Connected, of the APIs a connection is needed for. A status reads unverified when the repo holds no evidence for it beyond the doc family's citation; an unverified API never counts as connected. Parsed from ",
-      el("a", { href: GITHUB + String((M.apis || {}).source || "docs/reference/data_dictionary.md"), target: "_blank", rel: "noopener noreferrer", text: "the checklist in the data dictionary (opens in a new tab)" }), "."]));
+      paneWord("the checklist in the data dictionary", { k: "source", a: "apis" }, null), "."]));
     var NEED = { yes: "Needed", no: "Not needed", unknown: "Unknown" };
     var body = el("tbody", null, a.rows.map(function (r) {
       var st = apiStatus(r);
@@ -1228,9 +1651,8 @@
       ["AI workers per college", "Waits on a committed record of each worker and the colleges it serves; the district bots wait on the district profiles (#3198)."],
       /* Sam, Nov 13, 7:13 AM PT, on #3229: a long-term direction, recorded here and not built. */
       ["A signed-in Sierra where college staff may direct changes", "College staff could give directions for procedure and rule changes that improve the accuracy, completeness, connectivity and visibility of their college's collection. Waits on Sierra's sign-in and access controls; a long-term direction, not built in this slice."],
-      /* S648: the opened row's causes are a table; the programs behind each cause are not in the builder's file. */
-      ["Each cause's programs", "A cause in a college's row would open the programs it counts. Waits on the builder carrying each college's program list per cause; today the file carries the counts only."],
-      ["Curriculum view and pathway source links per college", "The live registry says whether each is held, never its address. Waits on the live read carrying the links themselves; the catalog the capture read already opens from the row."],
+      /* S649: each cause opens its programs, and each program its own catalog page; what remains is the registry's. */
+      ["Curriculum view and pathway source links per college", "The live registry says whether each is held, never its address. Waits on the live read carrying the links themselves; the catalog the capture read opens from the row, and each program still to pass opens its own catalog page from its cause."],
       ["The JST funnel",(tbaOf(M, "jst") || "Waits on an authorized-student feed.") + stage("JST authorizations")],
       ["SIS and curriculum system tiles", "Wait on the district profiles (#3198); a college's system stays unknown until its profile names it."],
       ["Program Pathways Mapper reads per college", (tbaOf(M, "ppm") || "Waits on a per-college read of the committed term maps.") + stage("Program Pathways Mapper (PPM)")],
@@ -1363,13 +1785,23 @@
     ".cdd-num { font-variant-numeric:tabular-nums; }",
     ".cdd-pr { display:grid; grid-template-columns:minmax(0, 1fr) auto; align-items:center; gap:2px 10px; }",
     ".cdd-pr .cdd-of { grid-column:1 / -1; }",
-    ".cdd-meter { display:block; height:8px; border-radius:999px; background:var(--cmn-track); overflow:hidden; }",
+    ".cdd-meter { display:block; height:8px; border-radius:999px; background:var(--cmn-track); overflow:hidden; box-sizing:border-box; border:1px solid var(--cmn-muted); }",
     ".cdd-meter i { display:block; height:100%; background:var(--cmn-accent); border-radius:999px; }",
     ".cdd-n { font-weight:700; font-variant-numeric:tabular-nums; color:var(--cmn-heading); }",
     ".cdd-unread { font-weight:600; color:var(--cmn-ask-label); }",
     ".cdd-age { color:var(--cmn-muted); }",
     ".cdd-quiet { color:var(--cmn-muted); }",
-    ".cdd-c-name { width:20%; } .cdd-c-ov { width:14%; } .cdd-c-pr { width:20%; } .cdd-c-gap { width:8%; } .cdd-c-read { width:12%; } .cdd-c-cost { width:11%; } .cdd-c-conf { width:15%; }",
+    ".cdd-c-name { width:16%; } .cdd-c-ov { width:12%; } .cdd-c-out { width:13%; } .cdd-c-pr { width:16%; } .cdd-c-gap { width:7%; } .cdd-c-read { width:11%; } .cdd-c-cost { width:10%; } .cdd-c-conf { width:15%; }",
+    /* Sam, in session, S649: "use the full width of the window"; prose keeps its measure (--cpl-measure). */
+    ".cmn-wrap.cdd { max-width:none; }",
+    "td.cdd-outs { } td.cdd-outs .cdd-pr + .cdd-pr { margin-top:4px; }",
+    ".cdd-c-sname { width:30%; } .cdd-c-sn { width:15%; } .cdd-c-sact { width:24%; } .cdd-c-sat { width:16%; }",
+    ".cdd-paneacts { display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center; margin:0; }",
+    ".cdd-paneacts a.cdd-newtab { color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; display:inline-flex; align-items:center; }",
+    ".cdd-panel h3 { margin:12px 0 4px; font-size:1rem; color:var(--cmn-heading); }",
+    ".cdd-plos { display:grid; gap:6px; } details.cdd-plo summary { cursor:pointer; min-height:24px; color:var(--cmn-ink); }",
+    "details.cdd-plo ol { margin:4px 0 6px; padding-left:22px; display:grid; gap:4px; font-size:.9rem; color:var(--cmn-ink-2); }",
+    ".cdd-dsword { margin-top:6px; display:flex; flex-wrap:wrap; gap:4px 16px; align-items:center; }",
     ".cdd-level { display:block; font-weight:700; color:var(--cmn-heading); }",
     ".cdd-notes { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:16px 20px; display:grid; gap:8px; }",
     ".cdd-notes ul { margin:0; padding-left:20px; display:grid; gap:4px; color:var(--cmn-ink-2); }",
@@ -1389,6 +1821,15 @@
     "table.cdd-causes th, table.cdd-causes td { text-align:left; vertical-align:top; padding:2px 0; border-bottom:1px solid var(--cmn-line-soft); font-weight:400; color:var(--cmn-ink); overflow-wrap:break-word; }",
     "table.cdd-causes thead th { color:var(--cmn-muted); font-size:.8rem; font-weight:700; }",
     "table.cdd-causes .cdd-num { text-align:right; padding-left:12px; width:1%; }",
+    /* Each cause's programs (S649): the cause word wraps like prose; the open one carries the pressed weight. */
+    "table.cdd-causes button.cdd-cause { min-height:24px; text-align:left; font-size:inherit; overflow-wrap:break-word; }",
+    "table.cdd-causes tr.cdd-on button.cdd-cause { text-decoration-thickness:3px; color:var(--cmn-heading); font-weight:700; }",
+    ".cdd-causebox > .cdd-of { margin:4px 0 0; font-size:.82rem; }",
+    ".cdd-cprogs { margin-top:10px; padding-top:8px; border-top:1px solid var(--cmn-line); min-width:0; }",
+    ".cdd-cprogs h4 { margin:0 0 6px; }",
+    "ul.cdd-progs { margin:0; padding-left:20px; display:grid; gap:8px; font-size:.9rem; color:var(--cmn-ink); }",
+    "ul.cdd-progs > li { min-width:0; overflow-wrap:anywhere; }",
+    "ul.cdd-progs > li > .cdd-of { display:block; font-size:.82rem; }",
     ".cdd-srcrow { margin:0; display:flex; flex-wrap:wrap; gap:2px 16px; font-size:.88rem; }",
     /* A link's text is a long path or address: it may break anywhere, or it widens the opened row past the list's box
        at phone width (the PR review, S648: 117 of 118 rows at 320 with break-word; 0 with anywhere). */
@@ -1486,6 +1927,6 @@
     boot: boot, render: render, model: model, listFor: listFor, tiles: tiles, address: address, pick: pick, load: load, age: age,
     datasets: datasets, gaps: gaps, asks: asks, apiCount: apiCount, parseRouteViews: VIEWS, go: go, slugOf: slugOf, parseRoute: parseRoute, openPanel: openPanel, closePanel: closePanel, PW: PW,
     FILE: FILE, FILTERS: FILTERS, COLUMNS: COLUMNS, CSS: CSS, _state: S,
-    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.district = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.pw = PW.start; }
+    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.district = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.cause = null; S.pane = null; S.pw = PW.start; PROGS = {}; OUTS = {}; }
   };
 })();
