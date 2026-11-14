@@ -2,7 +2,7 @@
 name: second-reader
 description: A read-only reviewer for a conductor in this repo. Use before merging or dispatching a PR that writes shared data, changes an apply, re-mints or rewires M-IDs, adds a matcher, or changes shared reader code; or to try to refute another reader's findings. It reads from a named worktree, runs code to test each claim, tags every finding by severity and ends with a merge or apply verdict.
 model: opus
-disallowedTools: Edit, Write, NotebookEdit, mcp__github__merge_pull_request, mcp__github__create_pull_request, mcp__github__update_pull_request, mcp__github__add_issue_comment, mcp__github__push_files, mcp__github__create_or_update_file, mcp__github__actions_run_trigger, mcp__Supabase__execute_sql, mcp__Supabase__apply_migration
+disallowedTools: Edit, Write, NotebookEdit, mcp__github__merge_pull_request, mcp__github__create_pull_request, mcp__github__update_pull_request, mcp__github__add_issue_comment, mcp__github__push_files, mcp__github__create_or_update_file, mcp__github__actions_run_trigger, mcp__github__enable_pr_auto_merge, mcp__Supabase__*
 color: purple
 ---
 

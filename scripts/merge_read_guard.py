@@ -30,25 +30,35 @@ page, and the stamp is keyed to the PR, so reading page 1 of a long thread still
 satisfies it. A stamp is keyed by `session_id`, which a subagent shares with the
 session that spawned it, so a reader agent's read counts for its conductor.
 
+EVERY REPOSITORY
+----------------
+It holds for a merge in any repository, the vault's included: a merge there
+reads its comments first too. The stamp is keyed by owner/repo and number.
+
 FAILS OPEN, VISIBLY
 -------------------
 A broken hook must not block every merge. Any error inside this script (bad
-input, an unwritable state directory, a bug) exits 0 with a `systemMessage`
-warning naming the error, and the merge goes ahead unchecked. Only the one
-deliberate refusal blocks.
+input, a bug) exits 0 with a `systemMessage` warning naming the error, and the
+merge goes ahead unchecked. The same holds when the guard cannot know whether a
+read happened: the state directory cannot be written, the last stamp attempt
+failed (a marker in the system temp directory records it), or the state file
+will not parse. A corrupt state file is replaced by the next stamp that writes,
+so it heals. Only the one deliberate refusal blocks.
 
 STATE
 -----
 `$CPL_HOOK_STATE_DIR` when set (tests), else `$CLAUDE_PROJECT_DIR/.claude/state/`
 (gitignored in this repo; in a three-repo cloud session that is
 `/home/user/.claude/state/`, outside every clone), else `~/.claude/state/`.
-Stamps older than a day are dropped on each write.
+Stamps older than a day are dropped on each write. A stamp up to 2 minutes in
+the future counts (clock skew between hook processes).
 
 Tests: tests/merge_read_guard_test.py
 """
 import json
 import os
 import sys
+import tempfile
 import time
 
 MERGE_TOOL = "mcp__github__merge_pull_request"
@@ -82,13 +92,30 @@ def key(payload, ti, number):
     return "%s|%s#%d" % (sess, repo, int(number))
 
 
+SKEW = 120                 # a stamp this far in the future still counts
+
+
+class Unknowable(Exception):
+    """The guard cannot tell whether a read happened; the merge goes ahead with a warning."""
+
+
+def failure_marker():
+    """Where a failed stamp is recorded: the system temp directory, which a broken
+    state directory does not take with it."""
+    tag = "".join(c if c.isalnum() else "_" for c in os.path.dirname(state_path()))[-80:]
+    return os.path.join(tempfile.gettempdir(), "cpl_merge_read_stamp_failed_" + tag)
+
+
 def load(path):
+    """The stamps. A missing file is an empty set; a corrupt one raises ValueError."""
     try:
         with open(path, encoding="utf-8") as fh:
             data = json.load(fh)
-        return data if isinstance(data, dict) else {}
     except FileNotFoundError:
         return {}
+    if not isinstance(data, dict):
+        raise ValueError("state file is not a JSON object")
+    return data
 
 
 def stamp(payload):
@@ -101,16 +128,46 @@ def stamp(payload):
     if number is None:
         return 0
     path = state_path()
-    data = load(path)
     t = now()
-    data = {k: v for k, v in data.items() if isinstance(v, (int, float)) and t - v < KEEP}
-    data[key(payload, ti, number)] = t
-    os.makedirs(os.path.dirname(path), exist_ok=True)
-    tmp = path + ".tmp"
-    with open(tmp, "w", encoding="utf-8") as fh:
-        json.dump(data, fh)
-    os.replace(tmp, path)
+    try:
+        try:
+            data = load(path)
+        except (ValueError, UnicodeDecodeError):
+            data = {}   # corrupt: this write replaces it, so the file heals
+        data = {k: v for k, v in data.items() if isinstance(v, (int, float)) and t - v < KEEP}
+        data[key(payload, ti, number)] = t
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        tmp = path + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
+            json.dump(data, fh)
+        os.replace(tmp, path)
+    except OSError as e:
+        try:
+            with open(failure_marker(), "w") as fh:
+                fh.write("%s %s\n" % (t, e))
+        except OSError:
+            pass   # the merge check also tests the directory, so it still fails open
+        print(json.dumps({"systemMessage": "merge-read guard could not record this read (%s); "
+                          "the next merge goes ahead unchecked." % e}))
+        return 0
+    try:
+        os.remove(failure_marker())
+    except OSError:
+        pass
     return 0
+
+
+def writable_state_dir():
+    """Measured, not inferred: os.access says yes to root almost everywhere."""
+    d = os.path.dirname(state_path())
+    try:
+        os.makedirs(d, exist_ok=True)
+        fd, probe = tempfile.mkstemp(dir=d, prefix=".probe")
+        os.close(fd)
+        os.remove(probe)
+        return True
+    except OSError:
+        return False
 
 
 def check_merge(payload):
@@ -118,14 +175,23 @@ def check_merge(payload):
     number = ti.get("pullNumber")
     if number is None:
         raise ValueError("merge call carries no pullNumber")
+    if os.path.exists(failure_marker()):
+        raise Unknowable("the last attempt to record a read failed")
+    if not writable_state_dir():
+        raise Unknowable("the state directory %s cannot be written" % os.path.dirname(state_path()))
+    try:
+        stamps = load(state_path())
+    except (ValueError, UnicodeDecodeError) as e:
+        raise Unknowable("the state file will not parse (%s)" % e)
     k = key(payload, ti, number)
-    seen = load(state_path()).get(k)
-    age = None if seen is None else now() - seen
-    if age is not None and 0 <= age <= MAX_AGE:
+    seen = stamps.get(k)
+    age = None if not isinstance(seen, (int, float)) else now() - seen
+    if age is not None and -SKEW <= age <= MAX_AGE:
         return 0
     where = "%s/%s#%s" % (ti.get("owner"), ti.get("repo"), number)
     when = ("never in this session" if age is None
-            else "%d minutes ago" % int(age // 60))
+            else "%d minutes ago" % int(age // 60) if age > 0
+            else "with a stamp %d seconds in the future" % int(-age))
     reason = ("Refused by the merge-read guard: read %s's comments to the last page "
               "(pull_request_read get_comments and get_reviews, or issue_read get_comments) "
               "before merging; this session last read them %s, and a read counts for 10 minutes."
@@ -149,6 +215,11 @@ def main():
             return stamp(payload)
         if event == "PreToolUse" and tool == MERGE_TOOL:
             return check_merge(payload)
+        return 0
+    except Unknowable as e:
+        print(json.dumps({"systemMessage":
+                          "merge-read guard cannot tell whether this PR's comments were read (%s); "
+                          "the merge goes ahead unchecked. Read them to the last page first." % e}))
         return 0
     except Exception as e:  # fail open, and say so
         print(json.dumps({"systemMessage":

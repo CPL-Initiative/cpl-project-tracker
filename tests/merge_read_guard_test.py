@@ -99,6 +99,34 @@ def main():
                        len(stamps) == 1 and list(stamps)[0].endswith("#2")))
 
     with tempfile.TemporaryDirectory() as st:
+        run(read(), st, T0 + 100)
+        rc, body = run(merge(), st, T0)
+        checks.append(("a stamp 100 seconds in the future counts (clock skew)", rc == 0 and body == {}))
+        rc, body = run(merge(), st, T0 - 200)
+        checks.append(("a stamp 300 seconds in the future does not", denied(body)))
+
+    # The second reader's repro on #3307: an unwritable state directory denied every merge.
+    rc, body = run(read(number=5), "/proc/nope", T0)
+    checks.append(("a stamp that cannot be written warns instead of failing silently",
+                   rc == 0 and "systemMessage" in body))
+    rc, body = run(merge(number=5), "/proc/nope", T0 + 60)
+    checks.append(("an unwritable state directory lets the merge through with a warning",
+                   rc == 0 and "systemMessage" in body and not denied(body)))
+
+    with tempfile.TemporaryDirectory() as st:
+        path = os.path.join(st, "merge_read_stamps.json")
+        open(path, "w").write("{truncated")
+        rc, body = run(merge(), st, T0)
+        checks.append(("a corrupt state file lets the merge through with a warning",
+                       rc == 0 and "systemMessage" in body and not denied(body)))
+        run(read(), st, T0)
+        rc, body = run(merge(), st, T0 + 60)
+        checks.append(("the next stamp replaces a corrupt state file, so it heals",
+                       rc == 0 and body == {} and isinstance(json.load(open(path)), dict)))
+        rc, body = run(merge(number=7), st, T0 + 60)
+        checks.append(("after healing, an unread PR is denied again", denied(body)))
+
+    with tempfile.TemporaryDirectory() as st:
         rc, body = run(None, st, T0, raw="{not json")
         checks.append(("unreadable hook input fails open with a visible warning",
                        rc == 0 and "systemMessage" in body and not denied(body)))

@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""The clock guard: a time a comment, PR or commit claims is "now" must match the clock.
+"""The clock guard: a published time may not run ahead of the clock, and a "now" claim may not be stale.
 
     python3 tests/clock_time_guard_test.py
 
 Drives scripts/clock_time_guard.py with fixture hook input and a pinned clock
-(CPL_HOOK_NOW). The catches are S652's real mistakes of 2026-11-14: "written
-13:05Z" posted at 12:59Z, and "RUN by the conductor at 14:50Z" at 14:42Z. The
-passes keep the rule narrow: a time within 3 minutes, a past event (`at about`,
-`merged`, `dispatched`, `pressed`, another day's date), a quotation, and text
-with no claim word. Pure stdlib, no network.
+(CPL_HOOK_NOW). The catches are S652's four real mistakes of 2026-11-14, every
+one ahead of the clock: 13:05Z at 12:59Z, 14:50Z at 14:42Z, 14:56Z at 14:54Z,
+15:44Z at 15:42Z. The passes are the false blocks a second reader found in the
+first version on #3307, read at a 15:00Z clock, plus the shell forms a commit
+message arrives in. Pure stdlib, no network.
 """
 import json
 import os
@@ -18,6 +18,8 @@ import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GUARD = os.path.join(ROOT, "scripts", "clock_time_guard.py")
+DAY = "2026-11-14T"
+AT15 = DAY + "15:00:00Z"
 
 
 def run(payload, now, raw=None):
@@ -36,8 +38,11 @@ def comment(text):
             "tool_input": {"owner": "o", "repo": "r", "issue_number": 1, "body": text}}
 
 
-def bash(cmd):
-    return {"hook_event_name": "PreToolUse", "tool_name": "Bash", "tool_input": {"command": cmd}}
+def bash(cmd, cwd=None):
+    p = {"hook_event_name": "PreToolUse", "tool_name": "Bash", "tool_input": {"command": cmd}}
+    if cwd:
+        p["cwd"] = cwd
+    return p
 
 
 def denied(body):
@@ -48,47 +53,51 @@ def reason(body):
     return (body.get("hookSpecificOutput") or {}).get("permissionDecisionReason", "")
 
 
-DAY = "2026-11-14T"
 CATCHES = [
-    ("S652: \"written 13:05Z\" posted at 12:59Z",
-     comment("## Sky (S652 SkyAvocet, conductor; written 13:05Z)\n\nThe review is folded."),
+    ("13:05Z written at 12:59Z", comment("## Sky (S652 SkyAvocet, conductor; written 13:05Z)"),
      DAY + "12:59:00Z", "13:05Z"),
-    ("S652: \"RUN by the conductor at 14:50Z\" at 14:42Z",
-     comment("The capture is RUN by the conductor at 14:50Z on main."),
+    ("14:50Z at 14:42Z", comment("The capture is RUN by the conductor at 14:50Z on main."),
      DAY + "14:42:00Z", "14:50Z"),
-    ("`date -u` read, 6 minutes off",
-     comment("## Sky (S652; `date -u` read 15:47Z)"), DAY + "15:41:00Z", "15:47Z"),
-    ("\"at writing\" with seconds, 5 minutes off",
-     comment("At writing 10:00:30Z the run is queued."), DAY + "10:05:31Z", "10:00:30Z"),
+    ("14:56Z at 14:54Z", comment("Merged #3301; COBIx told 14:56Z."), DAY + "14:54:00Z", "14:56Z"),
+    ("15:44Z at 15:42Z", comment("## Sky (S652; `date -u` read 15:44Z)"), DAY + "15:42:00Z", "15:44Z"),
+    ("a stale `written` claim, today's date", comment("2026-11-14, written 13:05Z"), AT15, "13:05Z"),
+    ("a stale `date -u` read claim", comment("## Sky (`date -u` read 14:40Z)"), AT15, "14:40Z"),
+    ("a stale `at writing,` claim with seconds", comment("At writing, 14:50:30Z the run is queued."),
+     AT15, "14:50:30Z"),
     ("a PR body on create_pull_request",
      {"hook_event_name": "PreToolUse", "tool_name": "mcp__github__create_pull_request",
-      "tool_input": {"title": "x", "body": "Opened; written 09:00Z."}}, DAY + "09:10:00Z", "09:00Z"),
+      "tool_input": {"title": "x", "body": "Opened 15:20Z."}}, AT15, "15:20Z"),
     ("a PR title on update_pull_request",
      {"hook_event_name": "PreToolUse", "tool_name": "mcp__github__update_pull_request",
-      "tool_input": {"pullNumber": 1, "title": "Status (read 09:00Z)"}}, DAY + "09:10:00Z", "09:00Z"),
-    ("a git commit message in a heredoc",
-     bash("git commit -m \"$(cat <<'EOF'\nReceipt; written 13:05Z\nEOF\n)\""), DAY + "12:59:00Z", "13:05Z"),
-    ("today's date before the time still counts",
-     comment("2026-11-14, written 13:05Z"), DAY + "12:59:00Z", "13:05Z"),
+      "tool_input": {"pullNumber": 1, "title": "Status 15:20Z"}}, AT15, "15:20Z"),
+    ("a double-quoted git commit -m message", bash('git commit -m "Receipt; applied 15:20Z"'), AT15, "15:20Z"),
+    ("a git commit message in a quoted heredoc",
+     bash("git add -A && git commit -m \"$(cat <<'EOF'\nReceipt 15:20Z\nEOF\n)\""), AT15, "15:20Z"),
+    ("a git commit -F - heredoc", bash("git commit -F - <<'EOF'\nReceipt 15:20Z\nEOF"), AT15, "15:20Z"),
+    ("a commit after cd on another line", bash("cd repo\ngit -C . commit -m 'Done 15:20Z'"), AT15, "15:20Z"),
 ]
 PASSES = [
-    ("a time within 3 minutes", comment("written 13:01Z"), DAY + "12:59:00Z"),
-    ("the clock's own minute", comment("RUN by the conductor at 14:42Z"), DAY + "14:42:40Z"),
-    ("across midnight, within 3 minutes", comment("written 23:59Z"), "2026-11-15T00:01:00Z"),
-    ("\"at about\" reports the past", comment("written at about 13:05Z"), DAY + "12:59:00Z"),
-    ("merged before the claim word", comment("#3296 merged, its review read 12:47Z"), DAY + "12:59:00Z"),
-    ("dispatched", comment("dispatched and read 11:00Z"), DAY + "12:59:00Z"),
-    ("pressed", comment("Sam pressed Fine; read 11:00Z"), DAY + "12:59:00Z"),
-    ("another day's date on the line", comment("2026-11-13, written 13:05Z"), DAY + "12:59:00Z"),
-    ("inside a quotation", comment("Today's mistake: \"written 13:05Z\" posted early."), DAY + "12:59:00Z"),
-    ("inside curly quotes", comment("the line “RUN by the conductor at 14:50Z”"), DAY + "14:42:00Z"),
-    ("inside a code span", comment("the form `written 13:05Z` is the house form"), DAY + "12:59:00Z"),
-    ("a time with no claim word", comment("The cron runs at 06:17Z and 09:17Z."), DAY + "12:59:00Z"),
-    ("a claim word with no time", comment("I read the thread to the last page."), DAY + "12:59:00Z"),
-    ("lower-case run is not the RUN marker", comment("the run at 06:17Z failed"), DAY + "12:59:00Z"),
-    ("a Bash command that does not commit", bash("echo 'written 13:05Z' > notes.txt"), DAY + "12:59:00Z"),
+    ("Receipt: RUN at 14:42Z by the conductor", comment("Receipt: RUN at 14:42Z by the conductor")),
+    ("The sweep RUN started at 13:40Z", comment("The sweep RUN started at 13:40Z")),
+    ("Receipt written 18:04Z on 2026-11-13", comment("Receipt written 18:04Z on 2026-11-13")),
+    ("a fenced code block", comment("Plan:\n```\nwritten 18:04Z\nnext 16:00Z\n```\nDone.")),
+    ("SQL in single quotes", comment("where created_at > '2026-11-14 15:30Z' and t < '16:00Z'")),
+    ("Read: 12:00Z (COBIx review)", comment("Read: 12:00Z (COBIx review)")),
+    ("already read 12:00Z", comment("already read 12:00Z")),
+    ("the next firing is 22:12 Pacific, 06:12Z", comment("the next firing is 22:12 Pacific, 06:12Z")),
+    ("a future time after `next`", comment("The next check-in is at 16:30Z.")),
+    ("a future time after `due`", comment("Review due 17:00Z.")),
+    ("a time less than 2 minutes ahead", comment("written 15:01Z")),
+    ("`by` as an actor does not exempt, `by` right before a time does", comment("Land it by 16:00Z.")),
+    ("a fresh `written` claim", comment("written 14:57Z")),
+    ("a past report with no claim", comment("The cron ran at 06:17Z and 09:17Z.")),
+    ("an inline code span", comment("the form `written 13:05Z` is the house form")),
+    ("a time more than 6 hours ahead (another day's report)", comment("Merged 22:10Z.")),
+    ("a Bash command that only greps for git commit", bash("grep -n 'git commit' notes.md 15:20Z")),
+    ("an unrelated heredoc that mentions git commit",
+     bash("cat > notes.md <<'EOF'\ngit commit -m 'x 15:20Z'\nEOF")),
     ("another tool", {"hook_event_name": "PreToolUse", "tool_name": "Write",
-                      "tool_input": {"content": "written 13:05Z"}}, DAY + "12:59:00Z"),
+                      "tool_input": {"content": "written 15:20Z"}}),
 ]
 
 
@@ -98,18 +107,22 @@ def main():
         rc, body = run(payload, now)
         r = reason(body)
         checks.append(("catches " + label, rc == 0 and denied(body)
-                       and found in r and now[11:16] + "Z" in r))
-    for label, payload, now in PASSES:
-        rc, body = run(payload, now)
+                       and found in r and now[11:16] + "Z" in r and "date -u" in r))
+    for label, payload in PASSES:
+        rc, body = run(payload, AT15)
         checks.append(("passes " + label, rc == 0 and body == {}))
 
     with tempfile.TemporaryDirectory() as tmp:
-        msg = os.path.join(tmp, "msg.txt")
-        open(msg, "w").write("Receipt\n\nwritten 13:05Z\n")
-        rc, body = run(bash("git commit -F %s" % msg), DAY + "12:59:00Z")
-        checks.append(("reads the message file a git commit -F names", denied(body)))
+        open(os.path.join(tmp, "msg.txt"), "w").write("Receipt\n\napplied 15:20Z\n")
+        rc, body = run(bash("git commit -F msg.txt", cwd=tmp), AT15)
+        checks.append(("reads a relative -F file from the command's working directory", denied(body)))
+        rc, body = run(bash("git commit -F %s" % os.path.join(tmp, "msg.txt")), AT15)
+        checks.append(("reads an absolute -F file", denied(body)))
+        rc, body = run(bash("git commit -F msg.txt"), AT15)
+        checks.append(("a relative -F file with no working directory is skipped with a warning",
+                       rc == 0 and "systemMessage" in body and not denied(body)))
 
-    rc, body = run(None, DAY + "12:59:00Z", raw="[not, json")
+    rc, body = run(None, AT15, raw="[not, json")
     checks.append(("unreadable hook input fails open with a visible warning",
                    rc == 0 and "systemMessage" in body and not denied(body)))
     rc, body = run(comment("written 13:05Z"), "not-a-time")

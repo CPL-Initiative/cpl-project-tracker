@@ -18,9 +18,12 @@ related:
 
 - `scripts/merge_read_guard.py` denies `merge_pull_request` unless this session read that PR's comments
   (`pull_request_read` `get_comments`, `get_review_comments` or `get_reviews`, or `issue_read` `get_comments`) in
-  the last 10 minutes; a PostToolUse half writes the stamp to `.claude/state/` under the session root.
-  `scripts/clock_time_guard.py` denies a comment, PR title or body, or `git commit` whose "now" time (`written`,
-  `read`, `RUN ... at`) is more than 3 minutes off the UTC clock. Both fail open with a visible warning.
+  the last 10 minutes, in any repository; a PostToolUse half writes the stamp to `.claude/state/` under the session
+  root. `scripts/clock_time_guard.py` denies a comment, PR title or body, or `git commit` message with a time 2
+  minutes or more ahead of the UTC clock (unless tied to another date or a future word such as `next` or `due`), or
+  a `written`, `` `date -u` read `` or `at writing` claim more than 5 minutes stale; code spans, fenced blocks and
+  SQL literals are never read. Both fail open with a visible warning, the merge guard also when its state cannot be
+  written or read.
 - The installer writes them under their own mark (`# cpl-lesson-hook`) on every `--apply`;
   `check_hooks_live.py` reports `merge-read guard` and `clock guard`, and `--fix` adds them to a live root with
   `--lessons-only`, which leaves the allow list, the guards and the meter alone. A new session gets them once

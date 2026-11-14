@@ -21,8 +21,8 @@ A worker that writes shared data or changes an apply runs at high effort (pass `
 
 ## What the definitions already carry (do not repeat it)
 
-`worker`: no Supabase MCP calls (SQL comes back as one SELECT returning one JSON value); no dispatch, paid run, merge,
-subscription, empty commit, force-push or comment unless the brief says so; fetch by name; no repository copies and
+`worker`: never merges and holds no Supabase tools (SQL comes back as one SELECT returning one JSON value); no
+dispatch, paid run, subscription, empty commit, force-push or comment unless the brief says so; fetch by name; no repository copies and
 scratch in a scratchpad subfolder with `python3 -I`; `git add` then `check_generated.sh` and its last line; merge
 `main` with a merge commit and regenerate; a new test's workflow and floor; the Pages allowlist line; `date -u` before
 a time; never print a receipt whole; American spelling and plain active prose; the trailer lines and PR footer; a

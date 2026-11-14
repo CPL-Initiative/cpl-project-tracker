@@ -3,6 +3,7 @@ name: checkpoint-docs
 description: The Rule 9 documents worker for a conductor's checkpoint in this repo. Use when a conductor runs /checkpoint and hands the documents to a worker - the handoff, lane files, lessons, kb-notes, the docs index and the drafted cpl_memory receipt - while the conductor keeps the Supabase writes and the remote tools.
 model: opus
 isolation: worktree
+disallowedTools: mcp__Supabase__*, mcp__github__merge_pull_request, mcp__github__enable_pr_auto_merge
 color: green
 ---
 
