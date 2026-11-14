@@ -109,6 +109,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import _authority_recode_dryrun as rec  # noqa: E402  (Allocator, parse_id, SUBJ4_RE, load_id_reservations)
 import alias_chain as ac  # noqa: E402  (the one chain: read, never restated)
+import curation_pointers  # noqa: E402  (the overlay's id-valued fields, re-keyed together)
 
 OUT_ROOT = os.environ.get("ETHS_REMINT_OUT") or os.path.join(HERE, "eths_remint_out")
 KB_DIR = os.environ.get("ETHS_REMINT_KB") or HERE     # a scratch copy for a rehearsal
@@ -316,8 +317,7 @@ def compute_plan(courses, singletons, memberships, curations, identities, reserv
     alloc = rec.Allocator(real - set(moves), reservations)
     order = sorted(moves)
     for cid in order:                                   # pass 1: keep the number
-        prefix, letter, band, tail, kind = rec.parse_id(cid)
-        want = f"{moves[cid]['route']} {letter}{band}{tail}"
+        want = rec.kept_number(cid, moves[cid]["route"])   # refuses an Honors id
         moves[cid]["new_id"], moves[cid]["how"] = None, None
         if alloc.free(want):
             alloc.taken.add(want)
@@ -408,10 +408,8 @@ def apply_plan(docs, plan):
         docs["articulations"]["identities"] = new
     cur = {}
     for k, v in docs["curation"]["curations"].items():
-        if isinstance(v, dict) and v.get("merge_into") in alias:
-            v = dict(v)
-            v["merge_into"] = alias[v["merge_into"]]
-            counts["pointers"] += 1
+        v, moved = curation_pointers.rekey_entry(v, alias)   # merge_into and honors_of values
+        counts["pointers"] += moved
         if k in alias:
             counts["curation_keys"] += 1
         cur[rk(k)] = v
