@@ -557,7 +557,7 @@ check(not re.search(r"^\s*schedule:", xwf, re.M) and "sources" not in xwf,
 # On a push, the guard compares the script with main's; the extraction and its setup wait on it.
 _guard = re.search(r"id: guard\n\s+if: github\.event_name == 'push'\n(?:.*\n)*?\s+if git diff --quiet FETCH_HEAD -- "
                    r"kb/_program_requirements_extract\.py; then\n\s+echo \"run=no\"", xwf)
-_extract = re.search(r"- name: Extract and score\n\s+if: steps\.guard\.outputs\.run != 'no'\n", xwf)
+_extract = re.search(r"- name: Extract and score\n\s+if: steps\.guard\.outputs\.run != 'no'(?: && [^\n]*)?\n", xwf)
 check(bool(_guard) and bool(_extract) and xwf.index("id: guard") < xwf.index("- name: Extract and score"),
       "a push whose extraction script matches main's makes no model calls (the guard runs first, "
       "and Extract and score waits on it); a dispatch always runs")
