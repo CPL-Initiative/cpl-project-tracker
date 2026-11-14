@@ -1385,7 +1385,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.cccco.edu` | tabs: `cip-crosswalk`, `college-briefing`, `cpl-pathways` · scripts: `kb/_csr_quarterly_probe.py` · `edgefn:cpl-news-harvest` |
 | `www.chaffey.edu` | tabs: `map-queue`, `map-users` |
 | `www.citruscollege.edu` | tabs: `map-queue`, `map-users` |
-| `www.cmccd.edu` | tabs: `map-queue`, `map-users` |
+| `www.cmccd.edu` | tabs: `map-queue`, `map-users` · scripts: `kb/_build_commons_data_status.py` |
 | `www.collegeofsanmateo.edu` | tabs: `map-queue`, `map-users` |
 | `www.compton.edu` | tabs: `map-queue`, `map-users` |
 | `www.contracosta.edu` | tabs: `map-queue`, `map-users` |
