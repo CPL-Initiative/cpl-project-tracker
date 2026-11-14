@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 648,
-  "moniker": "SkyTanager",
+  "session": 649,
+  "moniker": "SkyOriole",
   "run": "the conductor, with Sam in session",
   "decider": "Sam",
-  "handoff": "docs/session_649_handoff.md",
+  "handoff": "docs/session_650_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -57,13 +57,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-13T20:13:15Z",
+  "written_at": "2026-11-14T01:11:33Z",
   "project": "course",
   "next_step": {
-    "title": "Apply the two ready re-clustering cases",
-    "text": "Pull request 3245 is reduced to FIRE M1274 and the BUSI split, reviewed, and applied in one window clear of the daily runs under the re-mint playbook."
+    "title": "Rebuild the identities map for FIRE 130 X",
+    "text": "FIRE 130 X reads as expected on main after the merge of FIRE M1274 (51 members, 3 to 4 units). Its adopter and potential lists wait for the identities rebuild, whose dry-run plan waits on Sam for a commit the permission check refused."
   },
   "changes": [
+    {
+      "at": "2026-11-13T22:30:00Z",
+      "text": "FIRE 130 X on main carries 51 members, 3 to 4 units, 1,022.4 eligible credits and 58 students; FIRE M1274 is gone from the index."
+    },
     {
       "at": "2026-11-13T18:36:00Z",
       "text": "The re-clustering plan is drafted: two cases ready, four held for Sam, and the Honors counts measured. Nothing applied."

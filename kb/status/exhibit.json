@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 648,
-  "moniker": "SkyTanager",
+  "session": 649,
+  "moniker": "SkyOriole",
   "run": "the conductor, with Sam in session",
   "decider": "Sam",
-  "handoff": "docs/session_649_handoff.md",
+  "handoff": "docs/session_650_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -42,18 +42,27 @@
       "text": "22 cards, 17 still proposing department and course code; a course title reverses the November 12 ruling for them.",
       "if_no_reply": "The cards keep department and code.",
       "link": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
-      "link_text": "Open Sheet 194"
+      "link_text": "Open Sheet 194",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-13",
+        "words": "I changed those las positas exhibits in the exhibit commons and think we have a loop going where the reanalysis does know I just relied on them and then brings them back endlessly"
+      }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-13T20:13:15Z",
+  "written_at": "2026-11-14T01:11:33Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Merge the shared-title follow-up",
-    "text": "Pull request 3248 merges on a green test after COBIx's comments; the ASE bundle rename rides the next rename batch for Sam."
+    "title": "The rename batch, with the ASE bundle",
+    "text": "The rename to ASE Certificate Bundles: A6 or T6 + L3 rides the next rename batch for Sam's approval. A title cleared in another browser tab reopens its card only on reload; that is the next fix to the Review's live read."
   },
   "changes": [
+    {
+      "at": "2026-11-14T00:02:11Z",
+      "text": "The Exhibits Review reads the titles people saved in COBI, in the tab and in its nightly build, so a decided card leaves the queue and stays out. The held queue went from 168 to 0 after Sam saved the Las Positas titles."
+    },
     {
       "at": "2026-11-13T18:12:00Z",
       "text": "Issuers are named by an explicit tag list, an or between two tests is coded as written, a CompTIA title leaves out its exam series, and each proposal records how strong its name source is."

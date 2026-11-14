@@ -15,7 +15,7 @@ related:
 
 Workstream scratchpads. A dated section is appended at every checkpoint.
 
-94 document(s).
+95 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -62,7 +62,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [EACR — college scope, the CER fold, and the accessibility pass](../eacr_scope_lessons.md) | `eacr_scope_lessons.md` | 2026-08-16 | 2026-09-25 |
 | [Engineering Practices — Decisions & Lessons (dev infra, testing, design system)](../engineering_practices_lessons.md) | `engineering_practices_lessons.md` | 2026-06-04 |  |
 | [Excel → Supabase Migration — Workstream Lessons](../excel_to_supabase_lessons.md) | `excel_to_supabase_lessons.md` | 2026-05-28 |  |
-| [Exhibit canonicalization lessons — archive (2026-05-24 PR-B through Session 32, 2026-06-04)](../exhibit_canonicalization_lessons_archive.md) | `exhibit_canonicalization_lessons_archive.md` | 2026-10-18 | 2026-10-18 |
+| [Exhibit canonicalization lessons — archive (2026-05-24 PR-B through Session 32, 2026-06-04)](../exhibit_canonicalization_lessons_archive.md) | `exhibit_canonicalization_lessons_archive.md` | 2026-10-18 | 2026-11-14 |
 | [Exhibit Canonicalization — Decisions & Lessons (credential-identity layer)](../exhibit_canonicalization_lessons.md) | `exhibit_canonicalization_lessons.md` | 2026-05-24 |  |
 | [Fire & Emergency Services CPL eligibility — statewide vs local (StarEmber)](../fire_ems_eligibility_lessons.md) | `fire_ems_eligibility_lessons.md` | 2026-07-20 |  |
 | [First Light — daily plein air art, the theme spec, and the design sprint](../first_light_lessons.md) | `first_light_lessons.md` | 2026-06-12 | 2026-06-23 |
@@ -103,7 +103,8 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [Team phrase & site access — workstream lessons](../team_phrase_lessons.md) | `team_phrase_lessons.md` | 2026-08-12 | 2026-08-12 |
 | [Test suite speed — lessons](../test_suite_speed_lessons.md) | `test_suite_speed_lessons.md` | 2026-08-29 | 2026-10-30 |
 | [The checkpoint's UI pass — lessons](../ui_pass_lessons.md) | `ui_pass_lessons.md` | 2026-10-09 |  |
-| [The Commons — lessons](../commons_lessons.md) | `commons_lessons.md` | 2026-10-18 | 2026-11-13 |
+| [The Commons — lessons](../commons_lessons.md) | `commons_lessons.md` | 2026-10-18 | 2026-11-14 |
+| [The Commons — lessons archive (S433 and S437 onward)](../commons_lessons_archive.md) | `commons_lessons_archive.md` | 2026-11-14 | 2026-11-14 |
 | [The communications register and the writer module — lessons](../communications_lessons.md) | `communications_lessons.md` | 2026-10-24 |  |
 | [The Library and its filer — archived lessons (2026-10-06 to 2026-10-23)](../library_lessons_archive.md) | `library_lessons_archive.md` | 2026-11-03 |  |
 | [The Library and its filer — lessons](../library_lessons.md) | `library_lessons.md` | 2026-10-06 |  |
