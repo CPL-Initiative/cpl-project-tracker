@@ -237,6 +237,7 @@ const broad = patternWh.filter((w) => w.split("/").some((s) => s.includes("*") &
 check("G no withhold pattern is a bare wildcard or a bare page type (*.js, *.html, *.json ...)", broad.length === 0, broad.join(", "));
 const OVERLAP_OK = {
   "kb/*_out": "kb/csr_out/latest.json and kb/cer_procedures_out/latest.json are served by their own lines",
+  "kb/*_dryrun": "the Exhibits tab reads kb/cred_rename_dryrun/alias_map.json and collisions.json, served by their own lines (S650)",
   "kb/status/mid_outcomes_compare_*": "the compares committed before S649 stay published by their own lines",
 };
 const hidesServed = L.withhold.filter((w) => !OVERLAP_OK[w] && must.some((p) => matches(p, w)));
