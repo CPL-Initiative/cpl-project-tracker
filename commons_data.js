@@ -342,6 +342,29 @@
   function defaultSort(M) { return liveRead(M) ? { k: "overall", d: 1, auto: true } : { k: "pr", d: 1, auto: true }; }
   /* The three views beside the college list (slice 3; the districts S648), each at its own address. */
   var VIEWS = { districts: "Colleges by district", slos: "Colleges with collected SLOs", dictionary: "The data dictionary", apis: "The API checklist" };
+  /* Modules beside this file (#3310): each registers on window.CPL_CDC_EXT with its views (added to VIEWS, so each has
+     its own address), ledes, ready (it reads its own file), view, panel (sections on a college's panel) and statewide
+     (a card on the list's page). A module that fails to load leaves the page as it was. */
+  var EXT_FILES = [["commons_data_sharing.js", "CPL_CDC_SHARING"]];
+  function exts() { return Array.isArray(window.CPL_CDC_EXT) ? window.CPL_CDC_EXT.filter(Boolean) : []; }
+  function extHost() { return { go: go }; }
+  function loadExts() {
+    var T = window.CPL_TABS;
+    return Promise.all(EXT_FILES.map(function (f) {
+      return window[f[1]] || !(T && T.loadScript) ? null : new Promise(function (res) { T.loadScript(f[0], f[1], res); });
+    })).then(function () {
+      return Promise.all(exts().map(function (x) {
+        Object.keys(x.views || {}).forEach(function (k) { if (!own(VIEWS, k)) VIEWS[k] = x.views[k]; });
+        return x.ready ? Promise.resolve(x.ready(window.fetch)).catch(function () { return null; }) : null;
+      }));
+    }).catch(function () { return null; });
+  }
+  function extCall(name, args) {
+    return exts().reduce(function (out, x) {
+      if (typeof x[name] !== "function") return out;
+      try { var r = x[name].apply(x, args); return out.concat(r == null ? [] : r); } catch (e) { return out; }
+    }, []);
+  }
   /* What a link opens in the side panel (Sam, in session, S649: "all links should open to the sidebar instead on new
      tab ... give the option to go to new tab from the sidebar"). Each is a word in the address after the college (or
      after a view): one that names an item takes it as the next word, a safe word (a control number, a key, a slug),
@@ -1124,6 +1147,7 @@
     /* Each source opens in this panel (S649); the capture's folder is what the capture holds, never a GitHub page. */
     var src = sourceWords(c).concat(SOURCE_KEYS.filter(function (k) { return sourceOf(M, c, k); }).map(function (k) { return paneWord(sourceOf(M, c, k).word, { k: "source", a: k }, c.id); }));
     if (sp && sp.settled_later) src.push(el("span", { text: "A later settlement beside the spot-check receipt" }));
+    out = out.concat(extCall("panel", [M, c, extHost()]));
     out.push(section("Sources", [el("ul", { cls: "cdd-srcs" }, src.map(function (s) { return el("li", null, [s]); }))]));
     return out;
   }
@@ -1323,11 +1347,13 @@
         : S.view === "slos" ? "The colleges whose course SLOs or objectives the live read holds: how many courses, how many sit on Active programs, and when each was loaded."
         : S.view === "dictionary" ? "Every dataset College Data Collection tracks: who holds it, how we get it today, what would improve it, how far it has come, and the evidence for each claim."
         : S.view === "apis" ? "Each API the datasets would connect through: who holds it, whether a connection is needed, its status and the evidence for that status."
+        : S.view ? exts().map(function (x) { return (x.ledes || {})[S.view]; }).filter(Boolean)[0] || ""
         : "Every college and continuing-education campus: what we have collected for it, how complete it is, how confident we are in it, and what is in the way." })
     ]));
     wrap.appendChild(viewNav());
     if (S.view) {
-      wrap.appendChild(S.view === "districts" ? districtsView(M) : S.view === "slos" ? slosView(M) : S.view === "dictionary" ? dictionaryView(M) : apisView(M));
+      wrap.appendChild(S.view === "districts" ? districtsView(M) : S.view === "slos" ? slosView(M) : S.view === "dictionary" ? dictionaryView(M) : S.view === "apis" ? apisView(M)
+        : extCall("view", [S.view, M, extHost()])[0] || tba("This view could not be drawn."));
       var vpage = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);
       root.appendChild(vpage);
       drawPanel(VIEW.now);   // no college on a view: the panel stays hidden and the page live, unless a source is open
@@ -1437,6 +1463,7 @@
     drawHead(); drawBody();
     list.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "Colleges", tabindex: "0" }, [table]));
     wrap.appendChild(list);
+    extCall("statewide", [M, extHost()]).forEach(function (n) { wrap.appendChild(n); });
     wrap.appendChild(notes(M));
     wrap.appendChild(comingNext(M));
     var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which goes inert while it is open
@@ -1448,7 +1475,8 @@
 
   /* The three views of the dashboard, as words: the list, the dictionary, the checklist. */
   function viewNav() {
-    var items = [["", "The college list"], ["districts", VIEWS.districts], ["slos", VIEWS.slos], ["dictionary", VIEWS.dictionary], ["apis", VIEWS.apis]];
+    var items = [["", "The college list"], ["districts", VIEWS.districts], ["slos", VIEWS.slos], ["dictionary", VIEWS.dictionary], ["apis", VIEWS.apis]]
+      .concat(exts().reduce(function (a, x) { return a.concat(Object.keys(x.views || {}).map(function (k) { return [k, VIEWS[k] || x.views[k]]; })); }, []));
     return el("nav", { cls: "cdd-views", "aria-label": "College Data Collection views" }, items.map(function (it) {
       var on = (S.view || "") === it[0];
       var a = el("a", { href: "#commons/data" + (it[0] ? "/" + it[0] : ""), cls: "cdd-viewword", "data-goto": it[0] || "list", "aria-current": on ? "page" : null, text: it[1] });
@@ -1714,10 +1742,11 @@
   }
 
   function load() {
+    var ext = loadExts();
     return fetch(FILE, { cache: "no-store" }).then(function (r) {
       if (!r || !r.ok) throw new Error(FILE + " answered " + (r ? r.status : "nothing"));
       return r.json();
-    }).then(model);
+    }).then(function (d) { return ext.then(function () { return model(d); }); });
   }
   var cache = null;
   /* An address that names a college opens its panel; the panel's heading takes the focus, as a click would give it. */

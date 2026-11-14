@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 947,
+  "file_datasets": 950,
   "external_services": 195,
-  "consumers": 592,
+  "consumers": 593,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -7960,6 +7960,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:docs/reference/cdc_data_dictionary.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 33
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:docs/reference/conductor_mode.md": {
    "consumers": [
     {
@@ -11161,6 +11174,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/cdc_data_dictionary.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 31
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/cer_classified.json": {
@@ -19599,6 +19625,19 @@
      "direction": "write",
      "how": "literal",
      "line": 24
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/cdc_sharing.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 32
     }
    ],
    "served": true,
@@ -34649,6 +34688,7 @@
   "kb/*_dryrun",
   "kb/*_fold",
   "kb/*_out",
+  "kb/cdc_data_dictionary.json",
   "kb/cid_articulation_joins.json",
   "kb/coci_minted_courses.json",
   "kb/coci_minted_memberships.json",

@@ -450,6 +450,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
 | `docs/catalog/index.json` | tabs: `governance` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
+| `docs/reference/cdc_data_dictionary.md` | scripts: `kb/_build_cdc_sharing.py` | — |
 | `docs/reference/conductor_mode.md` | scripts: `kb/_docs_audit.py` | — |
 | `docs/reference/data_dictionary.md` | scripts: `kb/_build_commons_data_status.py` | — |
 | `docs/reference/data_sources.md` | scripts: `kb/_build_commons_data_status.py` | — |
@@ -640,6 +641,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/ccr_cpl_funnel.json` | scripts: `kb/_build_ccr_cpl.py` | — |
 | `kb/ccr_doubt.json` | scripts: `kb/_build_commons_status.py` | scripts: `kb/_ccr_seed_recheck_dryrun.py` · committed by: `daily-dashboard.yml` |
 | `kb/ccr_procedures.json` | scripts: `kb/_ccr_seed_recheck_dryrun.py` | — |
+| `kb/cdc_data_dictionary.json` | scripts: `kb/_build_cdc_sharing.py` | — |
 | `kb/cer_classified.json` | scripts: `kb/_cer_procedures.py` | scripts: `kb/_cer_procedures.py` · committed by: `cer-procedures.yml` |
 | `kb/cer_procedures.json` | tabs: `exhibits` · scripts: `kb/_build_commons_status.py`, `kb/_cer_procedures.py`, `scripts/build_exhibits_list_preview.py` | — |
 | `kb/cer_procedures_out/latest.json` | tabs: `credential-reference`, `exhibits` · scripts: `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `scripts/build_exhibits_list_preview.py` | committed by: `cer-procedures.yml` |
@@ -867,6 +869,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/spot_checks/*.check.json` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/spot_checks/README.md` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/statewide_exhibit_categories.json` | scripts: `excel_to_dashboard.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_seed_statewide_categories.py` | scripts: `kb/_seed_statewide_categories.py` |
+| `kb/status/cdc_sharing.json` | scripts: `kb/_build_cdc_sharing.py` | — |
 | `kb/status/commons.json` | tabs: `canonical-subj4`, `coci-lookup`, `cpl-pathways`, `cr-reference`, `exhibits`, `library`, `program-requirements` · scripts: `kb/_build_commons_status.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/status/commons_data.json` | tabs: `commons` · scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/status/commons_history.json` | scripts: `kb/_build_commons_status.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
@@ -1487,5 +1490,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 947 file
-datasets · 195 external services · 592 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 950 file
+datasets · 195 external services · 593 consumers · 72 workflows · 41 tabs.
