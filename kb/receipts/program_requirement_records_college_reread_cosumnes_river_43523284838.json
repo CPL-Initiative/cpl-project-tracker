@@ -1,0 +1,565 @@
+{
+ "college": "Cosumnes River College",
+ "reread_run": "43523284838",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "43521338550",
+ "at": "2026-11-13T22:59:02Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "04586",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "04633",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07302",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07315",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "07320",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11330",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11336",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "11348",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12741",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20147",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20193",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20204",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20227",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33053",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35072",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35097",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35336",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35350",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35354",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35358",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35359",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35360",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35361",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35362",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35363",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35364",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35367",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35374",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35408",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35412",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35742",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36447",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37285",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37842",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39131",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "39656"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Cosumnes River College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 43521338550;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 44,
+    "placed": 43,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SJS 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SJS 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 341",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 9 units from the following (Select three courses from at least two of the following areas)",
+      "rule": "choose_units",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "HIST 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 321",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 344",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 360",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 364",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 365",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 373",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 380",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 312",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 313",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 315",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 317",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 318",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS 319",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 324",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 325",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 328",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 332",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 335",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 336",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 343",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUM 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUM 331",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUM 332",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUM 339",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 332",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 334",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 360",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 344",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JOUR 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000E",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000H",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "ECON 310",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "SOC 302",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 308",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 9,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "activists",
+      "community organizers",
+      "political campaigners",
+      "human rights groups",
+      "religious organizations",
+      "international agencies",
+      "lobbyists",
+      "mediators",
+      "law",
+      "law enforcement",
+      "social work",
+      "clinical psychology",
+      "social science",
+      "politics",
+      "business",
+      "education",
+      "public policy"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Research how theoretical perspectives and critical theories on social justice inform the social, political, economic, historical, and cultural circumstances surrounding justice as they relate to race and ethnicity as well as other intersectional aspects of life in society.",
+      "Define and analyze power and oppression and their interrelationship to privilege to better understand how they operate at the individual, cultural, and institutional levels.",
+      "Explain how intersectional formations of social identity reflect social conditions and various levels of power and privilege impact social justice at the individual, cultural, and institutional levels.",
+      "Recognize the historical origins, similarities, and differences in struggles for social justice among different ethnic and racial groups in the United States and globally.",
+      "Assess artistic works that examine oppression, power, and justice as they relate to race and ethnicity.",
+      "Investigate social justice advocacy and activism to learn how to become equitably accountable to one's individual and group sense of positionality and place in the world in pursuit of social justice."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "A.A.-T. in Social Justice Studies: Race and Ethnicity",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=576",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047009824,
+   "program_title": "Social Justice Studies: Ethnic Studies",
+   "control_number": "39656"
+  }
+ ]
+}

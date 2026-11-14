@@ -2778,6 +2778,541 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPSAS-AELA35-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AELA35-1-001"
+      ],
+      "title": "AP English\nLanguage and\nComposition",
+      "unified_title": "AP English\nLanguage and\nComposition",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English\nLanguage and\nComposition"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Humanities (Letters)",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "23",
+      "top_codes": [
+        "112"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 113,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 114,
+      "credit_recs": [
+        {
+          "course": "ENGL C1000",
+          "credit": "3 hours in Academic Reading and Writing"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AELA35-1-001",
+          "title": "AP English\nLanguage and\nComposition",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AEL12-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AEL12-1-001"
+      ],
+      "title": "AP English\nLiterature",
+      "unified_title": "AP English\nLiterature",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English\nLiterature"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Humanities (Letters)",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "23",
+      "top_codes": [
+        "112"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 113,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 114,
+      "credit_recs": [
+        {
+          "course": "ENGL C1000",
+          "credit": "3 hours in Academic Reading and Writing"
+        },
+        {
+          "course": "ENGL C1002",
+          "credit": "3 hours in Introduction to Literature"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AEL12-1-001",
+          "title": "AP English\nLiterature",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 6.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 6.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AELA38-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AELA38-1-001"
+      ],
+      "title": "AP English\nLiterature and\nComposition",
+      "unified_title": "AP English\nLiterature and\nComposition",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English\nLiterature and\nComposition"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Humanities (Letters)",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "23",
+      "top_codes": [
+        "112"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 113,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 114,
+      "credit_recs": [
+        {
+          "course": "ENGL C1000",
+          "credit": "3 hours in Academic Reading and Writing"
+        },
+        {
+          "course": "ENGL C1002",
+          "credit": "3 hours in Introduction to Literature"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AELA38-1-001",
+          "title": "AP English\nLiterature and\nComposition",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 6.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 6.0
+    },
+    {
       "exhibit_id": "MAPCBEN-BCK-1-001|MAPCBES-CBEA-1-001",
       "exhibit_ids": [
         "MAPCBEN-BCK-1-001",
@@ -8572,6 +9107,178 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Fresno City College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AUH12-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUH12-1-001"
+      ],
+      "title": "AP US History",
+      "unified_title": "AP US History",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP US History"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Social Sciences",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "54",
+      "top_codes": [
+        "135"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 110,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 111,
+      "credit_recs": [
+        {
+          "course": "HIST C1001",
+          "credit": "3 hours in United States History to 1877"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AUH12-1-001",
+          "title": "AP US History",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
           0
         ]
       },
@@ -21939,6 +22646,521 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
+      "exhibit_id": "MAPSAS-APSO-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APSO-1-001"
+      ],
+      "title": "AP Pre-Calculus, Score of 3 or 4",
+      "unified_title": "AP Pre-Calculus, Score of 3 or 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Pre-Calculus, Score of 3 or 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Mathematics",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "27",
+      "top_codes": [
+        "120"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 108,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 109,
+      "credit_recs": [
+        {
+          "course": "MATH B1A",
+          "credit": "4 hours in Precalculus I"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-APSO-1-001",
+          "title": "AP Pre-Calculus, Score of 3 or 4",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-APSO1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APSO1-1-001"
+      ],
+      "title": "AP Pre-Calculus, Score of 5",
+      "unified_title": "AP Pre-Calculus, Score of 5",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Pre-Calculus, Score of 5"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Mathematics",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "27",
+      "top_codes": [
+        "120"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 108,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 109,
+      "credit_recs": [
+        {
+          "course": "MATH B1A",
+          "credit": "4 hours in Precalculus I"
+        },
+        {
+          "course": "MATH B1B",
+          "credit": "4 hours in Precalculus II"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-APSO1-1-001",
+          "title": "AP Pre-Calculus, Score of 5",
+          "units": 8.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 8.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AUGA10-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUGA10-1-001"
+      ],
+      "title": "AP US Government\nand Politics",
+      "unified_title": "AP US Government\nand Politics",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP US Government\nand Politics"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Social Sciences",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "45",
+      "top_codes": [
+        "360"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 108,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 109,
+      "credit_recs": [
+        {
+          "course": "POLS C1000",
+          "credit": "3 hours in American Government and Politics"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AUGA10-1-001",
+          "title": "AP US Government\nand Politics",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPCBEH-ITB2-1-001|MAPCXH-AMHS2-1-001|MAPCXH-BITB-1-001|MAPCXH-CHSB1-1-001|MAPCXH-SHSB2-1-001|MAPCXS-ITB1-1-001|MAPCxH-ITBH-1-001|MAPCxH-ITBH1-1-001|MAPCxH-RITB-1-001|MAPCxS-ITBB-1-001",
       "exhibit_ids": [
         "MAPCBEH-ITB2-1-001",
@@ -29920,6 +31142,173 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Columbia College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ACGA18-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACGA18-1-001"
+      ],
+      "title": "AP Comparative Government\nand Politics",
+      "unified_title": "AP Comparative Government\nand Politics",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Comparative Government\nand Politics"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Social Sciences",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "45",
+      "top_codes": [
+        "360"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 105,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 106,
+      "credit_recs": [
+        {
+          "course": "POLS B2",
+          "credit": "3 hours in Comparative Government"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ACGA18-1-001",
+          "title": "AP Comparative Government\nand Politics",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
           0
         ]
       },
@@ -55699,6 +57088,680 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPSAS-ASLA61-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA61-1-001"
+      ],
+      "title": "AP Spanish\nLanguage\nand Culture (Score of 4)",
+      "unified_title": "AP Spanish\nLanguage\nand Culture (Score of 4)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish\nLanguage\nand Culture (Score of 4)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "16",
+      "top_codes": [
+        "83"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "SPAN B1",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN B2",
+          "credit": "4 hours in Elementary Spanish II"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASLA61-1-001",
+          "title": "AP Spanish\nLanguage\nand Culture (Score of 4)",
+          "units": 8.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 8.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA63-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA63-1-001"
+      ],
+      "title": "AP Spanish\nLanguage\nand Culture (Score of 5)",
+      "unified_title": "AP Spanish\nLanguage\nand Culture (Score of 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish\nLanguage\nand Culture (Score of 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "16",
+      "top_codes": [
+        "83"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "SPAN B2",
+          "credit": "4 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN B3",
+          "credit": "4 hours in Intermediate Spanish I"
+        },
+        {
+          "course": "SPAN B35",
+          "credit": "4 hours in Spanish for Heritage Speakers I"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASLA63-1-001",
+          "title": "AP Spanish\nLanguage\nand Culture (Score of 5)",
+          "units": 12.0,
+          "lines": 3
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 12.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 3
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2
+        ]
+      },
+      "peer_units_median": 12.0,
+      "peer_units_max": 12.0,
+      "rec_units_total": 12.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA66-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA66-1-001"
+      ],
+      "title": "AP Spanish\nLiterature\nand Culture (Score of 4)",
+      "unified_title": "AP Spanish\nLiterature\nand Culture (Score of 4)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish\nLiterature\nand Culture (Score of 4)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "16",
+      "top_codes": [
+        "83"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "SPAN B1",
+          "credit": "4 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN B2",
+          "credit": "4 hours in Elementary Spanish II"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASLA66-1-001",
+          "title": "AP Spanish\nLiterature\nand Culture (Score of 4)",
+          "units": 8.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 8.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA68-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA68-1-001"
+      ],
+      "title": "AP Spanish\nLiterature\nand Culture (Score of 5)",
+      "unified_title": "AP Spanish\nLiterature\nand Culture (Score of 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish\nLiterature\nand Culture (Score of 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "16",
+      "top_codes": [
+        "83"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 100,
+      "credit_recs": [
+        {
+          "course": "SPAN B2",
+          "credit": "4 hours in Elementary Spanish II"
+        },
+        {
+          "course": "SPAN B3",
+          "credit": "4 hours in Intermediate Spanish I"
+        },
+        {
+          "course": "SPAN B35",
+          "credit": "4 hours in Spanish for Heritage Speakers I"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASLA68-1-001",
+          "title": "AP Spanish\nLiterature\nand Culture (Score of 5)",
+          "units": 12.0,
+          "lines": 3
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 12.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 3
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2
+        ]
+      },
+      "peer_units_median": 12.0,
+      "peer_units_max": 12.0,
+      "rec_units_total": 12.0
+    },
+    {
       "exhibit_id": "MAPICI-CS3-1-001|MAPICI-CSC1-1-001",
       "exhibit_ids": [
         "MAPICI-CS3-1-001",
@@ -63189,6 +65252,324 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 0.0,
       "peer_units_max": 0.0,
       "rec_units_total": 0.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA59-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA59-1-001"
+      ],
+      "title": "AP Spanish\nLanguage\nand Culture (Score of 3)",
+      "unified_title": "AP Spanish\nLanguage\nand Culture (Score of 3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish\nLanguage\nand Culture (Score of 3)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "16",
+      "top_codes": [
+        "83"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 97,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 98,
+      "credit_recs": [
+        {
+          "course": "SPAN B1",
+          "credit": "4 hours in Elementary Spanish I"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASLA59-1-001",
+          "title": "AP Spanish\nLanguage\nand Culture (Score of 3)",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA64-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA64-1-001"
+      ],
+      "title": "AP Spanish\nLiterature\nand Culture (Score of 3)",
+      "unified_title": "AP Spanish\nLiterature\nand Culture (Score of 3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish\nLiterature\nand Culture (Score of 3)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "16",
+      "top_codes": [
+        "83"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 97,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 98,
+      "credit_recs": [
+        {
+          "course": "SPAN B1",
+          "credit": "4 hours in Elementary Spanish I"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASLA64-1-001",
+          "title": "AP Spanish\nLiterature\nand Culture (Score of 3)",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
     },
     {
       "exhibit_id": "MAPCXS-C2IS-1-001",
@@ -73587,553 +75968,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 6.0
     },
     {
-      "exhibit_id": "MAPSAH-ACSP-1-001|MAPSAS-A-CS-1-001|MAPSAS-AACS-1-001|MAPSAS-ACP1-1-001|MAPSAS-ACS--1-001|MAPSAS-ACSP-1-001|MAPSAS-ACSP1-1-001|MAPSAS-ACSP10-1-001|MAPSAS-ACSP11-1-001|MAPSAS-ACSP12-1-001|MAPSAS-ACSP13-1-001|MAPSAS-ACSP14-1-001|MAPSAS-ACSP15-1-001|MAPSAS-ACSP16-1-001|MAPSAS-ACSP17-1-001|MAPSAS-ACSP18-1-001|MAPSAS-ACSP2-1-001|MAPSAS-ACSP3-1-001|MAPSAS-ACSP4-1-001|MAPSAS-ACSP5-1-001|MAPSAS-ACSP6-1-001|MAPSAS-ACSP7-1-001|MAPSAS-ACSP8-1-001|MAPSAS-ACSP9-1-001|MAPSAS-AECS-1-001",
-      "exhibit_ids": [
-        "MAPSAH-ACSP-1-001",
-        "MAPSAS-A-CS-1-001",
-        "MAPSAS-AACS-1-001",
-        "MAPSAS-ACP1-1-001",
-        "MAPSAS-ACS--1-001",
-        "MAPSAS-ACSP-1-001",
-        "MAPSAS-ACSP1-1-001",
-        "MAPSAS-ACSP10-1-001",
-        "MAPSAS-ACSP11-1-001",
-        "MAPSAS-ACSP12-1-001",
-        "MAPSAS-ACSP13-1-001",
-        "MAPSAS-ACSP14-1-001",
-        "MAPSAS-ACSP15-1-001",
-        "MAPSAS-ACSP16-1-001",
-        "MAPSAS-ACSP17-1-001",
-        "MAPSAS-ACSP18-1-001",
-        "MAPSAS-ACSP2-1-001",
-        "MAPSAS-ACSP3-1-001",
-        "MAPSAS-ACSP4-1-001",
-        "MAPSAS-ACSP5-1-001",
-        "MAPSAS-ACSP6-1-001",
-        "MAPSAS-ACSP7-1-001",
-        "MAPSAS-ACSP8-1-001",
-        "MAPSAS-ACSP9-1-001",
-        "MAPSAS-AECS-1-001"
-      ],
-      "title": "AP Computer Science Principles",
-      "unified_title": "AP Computer Science Principles",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.98,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP - Computer Science Principles",
-        "AP AP Computer Science Principles (Score of 4 or 5)",
-        "AP CS Principles",
-        "AP Computer Science - Principles",
-        "AP Computer Science Principles",
-        "AP Computer Science Principles (AB) -CIST 004B",
-        "AP Computer Science Principles (AB) -CIST 004B1",
-        "AP Computer Science Principles (CSU Semester Transfer Units)",
-        "AP Computer Science Principles (Score 4-5)",
-        "AP Computer Science Principles (Score of 3 or higher)",
-        "AP Computer Science Principles (Score of 3, 4 or 5)",
-        "AP Computer Science Principles (Score of 3-5)",
-        "AP Computer Science Principles - Score of 3 or higher",
-        "AP Computer Science Principles - Score of 3 or higher - HISTORICAL Type 2",
-        "AP Exam: Computer Science Principles",
-        "AP: Computer Science Principles"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Humanities (Letters)",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "11",
-      "top_codes": [
-        "115",
-        "30",
-        "32"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 20,
-      "adopter_names": [
-        "Cabrillo College",
-        "California State University Los Angeles",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of the Canyons",
-        "El Camino College",
-        "Foothill College",
-        "Hartnell College",
-        "Irvine Valley College",
-        "Las Positas College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Moreno Valley College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "Santa Ana College",
-        "West Valley College",
-        "Yuba College"
-      ],
-      "potential": 92,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cañada College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Imperial Valley College",
-        "Laney College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 112,
-      "credit_recs": [
-        {
-          "course": "CPL 1",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "COMM 8",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "CSU GE B4",
-          "credit": "3 hours in CSU GE B4 – Mathematics/Quantitative Reasoning"
-        },
-        {
-          "course": "RCCD GE-A 2",
-          "credit": "3 hours in Area 2: Mathematical Concepts and Quantitative Reasoning (3-4 units)"
-        },
-        {
-          "course": "CPL 1",
-          "credit": "5 hours in Elective Course Credits"
-        },
-        {
-          "course": "Local GE 2",
-          "credit": "3 hours in Math concepts"
-        },
-        {
-          "course": "Local GE 2",
-          "credit": "3 hours in 2. Mathematical Concepts and Quantitative Reasoning"
-        },
-        {
-          "course": "CSU Units",
-          "credit": "6 hours in CSU Semester Transfer Units"
-        },
-        {
-          "course": "CMPSCI 235",
-          "credit": "3 hours in C Programming"
-        },
-        {
-          "course": "Elective Units",
-          "credit": "4.5 hours in Foothill College Elective Units"
-        },
-        {
-          "course": "AP Credit CSP",
-          "credit": "6 hours in AP Computer Science Principles (Score of 3, 4 or 5)"
-        },
-        {
-          "course": "LACCD GE 2",
-          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
-        },
-        {
-          "course": "CS 190",
-          "credit": "4 hours in Programming in C++"
-        },
-        {
-          "course": "CSCI 7",
-          "credit": "4 hours in PROGRAMMING IN ADA"
-        },
-        {
-          "course": "Local GE Area 2",
-          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
-        },
-        {
-          "course": "Local GE Area G",
-          "credit": "3 hours in Mathematical Concepts & Quantitative Reasoning"
-        },
-        {
-          "course": "CS 110A",
-          "credit": "4 hours in Introduction to Programming and Computer Science"
-        },
-        {
-          "course": "COMSC 6",
-          "credit": "3 hours in Introduction to Computer Programming"
-        },
-        {
-          "course": "CPL 1",
-          "credit": "6 hours in Elective Course Credits"
-        },
-        {
-          "course": "CIST 004B",
-          "credit": "4 hours in Data Structures using Advanced C++"
-        },
-        {
-          "course": "CIST 004B1",
-          "credit": "4 hours in Data Structures using Advanced Java"
-        },
-        {
-          "course": "Local GE Area 2",
-          "credit": "3 units in Mathematical Concepts and Quantitative Reasoning"
-        },
-        {
-          "course": "Local GE AREA 2",
-          "credit": "3 hours in AREA 2: MATHEMATICAL CONCEPTS AND QUANTITATIVE REASONING"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPSAH-ACSP-1-001",
-          "title": "AP Computer Science Principles",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-A-CS-1-001",
-          "title": "AP - Computer Science Principles",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-AACS-1-001",
-          "title": "AP AP Computer Science Principles (Score of 4 or 5)",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACP1-1-001",
-          "title": "AP CS Principles",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACS--1-001",
-          "title": "AP Computer Science - Principles",
-          "units": 6.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPSAS-ACSP-1-001",
-          "title": "AP: Computer Science Principles",
-          "units": 8.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPSAS-ACSP1-1-001",
-          "title": "AP Computer Science Principles (CSU Semester Transfer Units)",
-          "units": 6.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP10-1-001",
-          "title": "AP Computer Science Principles",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP11-1-001",
-          "title": "AP Computer Science Principles - Score of 3 or higher",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP12-1-001",
-          "title": "AP Computer Science Principles - Score of 3 or higher - HISTORICAL Type 2",
-          "units": 6.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP13-1-001",
-          "title": "AP Computer Science Principles (AB) -CIST 004B",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP14-1-001",
-          "title": "AP Computer Science Principles (AB) -CIST 004B1",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP15-1-001",
-          "title": "AP Computer Science Principles",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP16-1-001",
-          "title": "AP Computer Science Principles",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP17-1-001",
-          "title": "AP Computer Science Principles",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP18-1-001",
-          "title": "AP Computer Science Principles",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP2-1-001",
-          "title": "AP Computer Science Principles",
-          "units": 0,
-          "lines": 0
-        },
-        {
-          "id": "MAPSAS-ACSP3-1-001",
-          "title": "AP Computer Science Principles (Score 4-5)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP4-1-001",
-          "title": "AP Computer Science Principles (Score of 3-5)",
-          "units": 4.5,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP5-1-001",
-          "title": "AP Computer Science Principles (Score of 3, 4 or 5)",
-          "units": 6.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP6-1-001",
-          "title": "AP Computer Science Principles (Score of 3 or higher)",
-          "units": 6.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPSAS-ACSP7-1-001",
-          "title": "AP Computer Science Principles",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP8-1-001",
-          "title": "AP Computer Science Principles",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-ACSP9-1-001",
-          "title": "AP Computer Science Principles",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPSAS-AECS-1-001",
-          "title": "AP Exam: Computer Science Principles",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Cabrillo College": 3.0,
-        "California State University Los Angeles": 3.0,
-        "City College of San Francisco": 4.0,
-        "Clovis Community College": 11.0,
-        "Coalinga College": 3.0,
-        "Coastline Community College": 6.0,
-        "College of the Canyons": 3.0,
-        "El Camino College": 4.0,
-        "Foothill College": 4.5,
-        "Hartnell College": 3.0,
-        "Irvine Valley College": 3.0,
-        "Las Positas College": 3.0,
-        "Los Angeles Pierce College": 18.0,
-        "Los Angeles Valley College": 3.0,
-        "Moreno Valley College": 3.0,
-        "Saddleback College": 3.0,
-        "San Bernardino Valley College": 4.0,
-        "Santa Ana College": 3.0,
-        "West Valley College": 8.0,
-        "Yuba College": 3.0
-      },
-      "adopter_lines": {
-        "Cabrillo College": 1,
-        "California State University Los Angeles": 1,
-        "City College of San Francisco": 1,
-        "Clovis Community College": 3,
-        "Coalinga College": 1,
-        "Coastline Community College": 1,
-        "College of the Canyons": 1,
-        "El Camino College": 1,
-        "Foothill College": 1,
-        "Hartnell College": 1,
-        "Irvine Valley College": 1,
-        "Las Positas College": 1,
-        "Los Angeles Pierce College": 4,
-        "Los Angeles Valley College": 1,
-        "Moreno Valley College": 1,
-        "Saddleback College": 1,
-        "San Bernardino Valley College": 1,
-        "Santa Ana College": 1,
-        "West Valley College": 2,
-        "Yuba College": 1
-      },
-      "adopter_rec_idx": {
-        "Cabrillo College": [
-          15
-        ],
-        "California State University Los Angeles": [
-          14
-        ],
-        "City College of San Francisco": [
-          16
-        ],
-        "Clovis Community College": [
-          1,
-          4,
-          5
-        ],
-        "Coalinga College": [
-          14
-        ],
-        "Coastline Community College": [
-          7
-        ],
-        "College of the Canyons": [
-          8
-        ],
-        "El Camino College": [
-          13
-        ],
-        "Foothill College": [
-          9
-        ],
-        "Hartnell College": [
-          0
-        ],
-        "Irvine Valley College": [
-          22
-        ],
-        "Las Positas College": [
-          21
-        ],
-        "Los Angeles Pierce College": [
-          0,
-          10,
-          11,
-          18
-        ],
-        "Los Angeles Valley College": [
-          2
-        ],
-        "Moreno Valley College": [
-          3
-        ],
-        "Saddleback College": [
-          0
-        ],
-        "San Bernardino Valley College": [
-          12
-        ],
-        "Santa Ana College": [
-          6
-        ],
-        "West Valley College": [
-          19,
-          20
-        ],
-        "Yuba College": [
-          17
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 18.0,
-      "rec_units_total": 86.5
-    },
-    {
       "exhibit_id": "MAPICI-COSA-1-001",
       "exhibit_ids": [
         "MAPICI-COSA-1-001"
@@ -80329,6 +82163,569 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAH-ACSP-1-001|MAPSAS-A-CS-1-001|MAPSAS-AACS-1-001|MAPSAS-ACP1-1-001|MAPSAS-ACS--1-001|MAPSAS-ACSP-1-001|MAPSAS-ACSP1-1-001|MAPSAS-ACSP10-1-001|MAPSAS-ACSP11-1-001|MAPSAS-ACSP12-1-001|MAPSAS-ACSP13-1-001|MAPSAS-ACSP14-1-001|MAPSAS-ACSP15-1-001|MAPSAS-ACSP16-1-001|MAPSAS-ACSP17-1-001|MAPSAS-ACSP18-1-001|MAPSAS-ACSP19-1-001|MAPSAS-ACSP2-1-001|MAPSAS-ACSP3-1-001|MAPSAS-ACSP4-1-001|MAPSAS-ACSP5-1-001|MAPSAS-ACSP6-1-001|MAPSAS-ACSP7-1-001|MAPSAS-ACSP8-1-001|MAPSAS-ACSP9-1-001|MAPSAS-AECS-1-001",
+      "exhibit_ids": [
+        "MAPSAH-ACSP-1-001",
+        "MAPSAS-A-CS-1-001",
+        "MAPSAS-AACS-1-001",
+        "MAPSAS-ACP1-1-001",
+        "MAPSAS-ACS--1-001",
+        "MAPSAS-ACSP-1-001",
+        "MAPSAS-ACSP1-1-001",
+        "MAPSAS-ACSP10-1-001",
+        "MAPSAS-ACSP11-1-001",
+        "MAPSAS-ACSP12-1-001",
+        "MAPSAS-ACSP13-1-001",
+        "MAPSAS-ACSP14-1-001",
+        "MAPSAS-ACSP15-1-001",
+        "MAPSAS-ACSP16-1-001",
+        "MAPSAS-ACSP17-1-001",
+        "MAPSAS-ACSP18-1-001",
+        "MAPSAS-ACSP19-1-001",
+        "MAPSAS-ACSP2-1-001",
+        "MAPSAS-ACSP3-1-001",
+        "MAPSAS-ACSP4-1-001",
+        "MAPSAS-ACSP5-1-001",
+        "MAPSAS-ACSP6-1-001",
+        "MAPSAS-ACSP7-1-001",
+        "MAPSAS-ACSP8-1-001",
+        "MAPSAS-ACSP9-1-001",
+        "MAPSAS-AECS-1-001"
+      ],
+      "title": "AP Computer Science Principles",
+      "unified_title": "AP Computer Science Principles",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.98,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP - Computer Science Principles",
+        "AP AP Computer Science Principles (Score of 4 or 5)",
+        "AP CS Principles",
+        "AP Computer Science - Principles",
+        "AP Computer Science Principles",
+        "AP Computer Science Principles (AB) -CIST 004B",
+        "AP Computer Science Principles (AB) -CIST 004B1",
+        "AP Computer Science Principles (CSU Semester Transfer Units)",
+        "AP Computer Science Principles (Score 4-5)",
+        "AP Computer Science Principles (Score of 3 or higher)",
+        "AP Computer Science Principles (Score of 3, 4 or 5)",
+        "AP Computer Science Principles (Score of 3-5)",
+        "AP Computer Science Principles - Score of 3 or higher",
+        "AP Computer Science Principles - Score of 3 or higher - HISTORICAL Type 2",
+        "AP Exam: Computer Science Principles",
+        "AP: Computer Science Principles"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Humanities (Letters)",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "115",
+        "30",
+        "32"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 21,
+      "adopter_names": [
+        "Bakersfield College",
+        "Cabrillo College",
+        "California State University Los Angeles",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of the Canyons",
+        "El Camino College",
+        "Foothill College",
+        "Hartnell College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "Moreno Valley College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "Santa Ana College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "potential": 91,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Laney College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 112,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "COMM 8",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "CSU GE B4",
+          "credit": "3 hours in CSU GE B4 – Mathematics/Quantitative Reasoning"
+        },
+        {
+          "course": "RCCD GE-A 2",
+          "credit": "3 hours in Area 2: Mathematical Concepts and Quantitative Reasoning (3-4 units)"
+        },
+        {
+          "course": "CPL 1",
+          "credit": "5 hours in Elective Course Credits"
+        },
+        {
+          "course": "Local GE 2",
+          "credit": "3 hours in Math concepts"
+        },
+        {
+          "course": "Local GE 2",
+          "credit": "3 hours in 2. Mathematical Concepts and Quantitative Reasoning"
+        },
+        {
+          "course": "CSU Units",
+          "credit": "6 hours in CSU Semester Transfer Units"
+        },
+        {
+          "course": "CMPSCI 235",
+          "credit": "3 hours in C Programming"
+        },
+        {
+          "course": "Elective Units",
+          "credit": "4.5 hours in Foothill College Elective Units"
+        },
+        {
+          "course": "AP Credit CSP",
+          "credit": "6 hours in AP Computer Science Principles (Score of 3, 4 or 5)"
+        },
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        },
+        {
+          "course": "CS 190",
+          "credit": "4 hours in Programming in C++"
+        },
+        {
+          "course": "CSCI 7",
+          "credit": "4 hours in PROGRAMMING IN ADA"
+        },
+        {
+          "course": "Local GE Area 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        },
+        {
+          "course": "Local GE Area G",
+          "credit": "3 hours in Mathematical Concepts & Quantitative Reasoning"
+        },
+        {
+          "course": "CS 110A",
+          "credit": "4 hours in Introduction to Programming and Computer Science"
+        },
+        {
+          "course": "COMSC 6",
+          "credit": "3 hours in Introduction to Computer Programming"
+        },
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        },
+        {
+          "course": "CIST 004B",
+          "credit": "4 hours in Data Structures using Advanced C++"
+        },
+        {
+          "course": "CIST 004B1",
+          "credit": "4 hours in Data Structures using Advanced Java"
+        },
+        {
+          "course": "Local GE Area 2",
+          "credit": "3 units in Mathematical Concepts and Quantitative Reasoning"
+        },
+        {
+          "course": "Local GE AREA 2",
+          "credit": "3 hours in AREA 2: MATHEMATICAL CONCEPTS AND QUANTITATIVE REASONING"
+        },
+        {
+          "course": "Local GE Area 2",
+          "credit": "3 hours in Mathematics or Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAH-ACSP-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-A-CS-1-001",
+          "title": "AP - Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-AACS-1-001",
+          "title": "AP AP Computer Science Principles (Score of 4 or 5)",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACP1-1-001",
+          "title": "AP CS Principles",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACS--1-001",
+          "title": "AP Computer Science - Principles",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPSAS-ACSP-1-001",
+          "title": "AP: Computer Science Principles",
+          "units": 8.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPSAS-ACSP1-1-001",
+          "title": "AP Computer Science Principles (CSU Semester Transfer Units)",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP10-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP11-1-001",
+          "title": "AP Computer Science Principles - Score of 3 or higher",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP12-1-001",
+          "title": "AP Computer Science Principles - Score of 3 or higher - HISTORICAL Type 2",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP13-1-001",
+          "title": "AP Computer Science Principles (AB) -CIST 004B",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP14-1-001",
+          "title": "AP Computer Science Principles (AB) -CIST 004B1",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP15-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP16-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP17-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP18-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP19-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP2-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 0,
+          "lines": 0
+        },
+        {
+          "id": "MAPSAS-ACSP3-1-001",
+          "title": "AP Computer Science Principles (Score 4-5)",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP4-1-001",
+          "title": "AP Computer Science Principles (Score of 3-5)",
+          "units": 4.5,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP5-1-001",
+          "title": "AP Computer Science Principles (Score of 3, 4 or 5)",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP6-1-001",
+          "title": "AP Computer Science Principles (Score of 3 or higher)",
+          "units": 6.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPSAS-ACSP7-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP8-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACSP9-1-001",
+          "title": "AP Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-AECS-1-001",
+          "title": "AP Exam: Computer Science Principles",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0,
+        "Cabrillo College": 3.0,
+        "California State University Los Angeles": 3.0,
+        "City College of San Francisco": 4.0,
+        "Clovis Community College": 11.0,
+        "Coalinga College": 3.0,
+        "Coastline Community College": 6.0,
+        "College of the Canyons": 3.0,
+        "El Camino College": 4.0,
+        "Foothill College": 4.5,
+        "Hartnell College": 3.0,
+        "Irvine Valley College": 3.0,
+        "Las Positas College": 3.0,
+        "Los Angeles Pierce College": 18.0,
+        "Los Angeles Valley College": 3.0,
+        "Moreno Valley College": 3.0,
+        "Saddleback College": 3.0,
+        "San Bernardino Valley College": 4.0,
+        "Santa Ana College": 3.0,
+        "West Valley College": 8.0,
+        "Yuba College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1,
+        "Cabrillo College": 1,
+        "California State University Los Angeles": 1,
+        "City College of San Francisco": 1,
+        "Clovis Community College": 3,
+        "Coalinga College": 1,
+        "Coastline Community College": 1,
+        "College of the Canyons": 1,
+        "El Camino College": 1,
+        "Foothill College": 1,
+        "Hartnell College": 1,
+        "Irvine Valley College": 1,
+        "Las Positas College": 1,
+        "Los Angeles Pierce College": 4,
+        "Los Angeles Valley College": 1,
+        "Moreno Valley College": 1,
+        "Saddleback College": 1,
+        "San Bernardino Valley College": 1,
+        "Santa Ana College": 1,
+        "West Valley College": 2,
+        "Yuba College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          23
+        ],
+        "Cabrillo College": [
+          15
+        ],
+        "California State University Los Angeles": [
+          14
+        ],
+        "City College of San Francisco": [
+          16
+        ],
+        "Clovis Community College": [
+          1,
+          4,
+          5
+        ],
+        "Coalinga College": [
+          14
+        ],
+        "Coastline Community College": [
+          7
+        ],
+        "College of the Canyons": [
+          8
+        ],
+        "El Camino College": [
+          13
+        ],
+        "Foothill College": [
+          9
+        ],
+        "Hartnell College": [
+          0
+        ],
+        "Irvine Valley College": [
+          22
+        ],
+        "Las Positas College": [
+          21
+        ],
+        "Los Angeles Pierce College": [
+          0,
+          10,
+          11,
+          18
+        ],
+        "Los Angeles Valley College": [
+          2
+        ],
+        "Moreno Valley College": [
+          3
+        ],
+        "Saddleback College": [
+          0
+        ],
+        "San Bernardino Valley College": [
+          12
+        ],
+        "Santa Ana College": [
+          6
+        ],
+        "West Valley College": [
+          19,
+          20
+        ],
+        "Yuba College": [
+          17
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 18.0,
+      "rec_units_total": 89.5
     },
     {
       "exhibit_id": "MAPICI-COC1-1-001|MAPICI-COCC-1-001",
@@ -135907,6 +138304,146 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AAAD2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AAAD2-1-001"
+      ],
+      "title": "AP Art and Design - Drawing",
+      "unified_title": "AP Art and Design - Drawing",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Art and Design - Drawing"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "50",
+      "top_codes": [
+        "71"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 73,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Redwoods",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 74,
+      "credit_recs": [
+        {
+          "course": "ART B2",
+          "credit": "3 hours in Drawing I"
+        },
+        {
+          "course": "ART B3",
+          "credit": "3 hours in Drawing II"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AAAD2-1-001",
+          "title": "AP Art and Design - Drawing",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 6.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 6.0
     },
     {
       "exhibit_id": "MAPICI-ACPV-1-001|MAPICS-P6-1-001",
@@ -221417,6 +223954,126 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPSAS-AAAD1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AAAD1-1-001"
+      ],
+      "title": "AP Art and Design - 3D Design",
+      "unified_title": "AP Art and Design - 3D Design",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Art and Design - 3D Design"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "50",
+      "top_codes": [
+        "70"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Chaffey College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Merced College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Taft College",
+        "Ventura College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "ART B5",
+          "credit": "3 hours in Three Dimensional Design"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AAAD1-1-001",
+          "title": "AP Art and Design - 3D Design",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPSAS-CEPO2-1-001|MAPSAS-CPOM10-1-001|MAPSAS-CPOM103-1-001|MAPSAS-CPOM105-1-001|MAPSAS-CPOM3-1-001|MAPSAS-CPOM4-1-001|MAPSAS-CPOM58-1-001|MAPSAS-CPOM77-1-001|MAPSAS-CPOM82-1-001|MAPSAS-CPOM91-1-001|MAPSAS-CPOM94-1-001",
       "exhibit_ids": [
         "MAPSAS-CEPO2-1-001",
@@ -250433,10 +253090,11 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0.0
     },
     {
-      "exhibit_id": "MAPSAS-AAAS-1-001|MAPSAS-AAAS1-1-001|MAPSAS-AAAS3-1-001|MAPSAS-AAAS4-1-001|MAPSAS-AAAS5-1-001|MAPSAS-AAAS6-1-001|MAPSAS-AAAS7-1-001|MAPSAS-AAAS8-1-001|MAPSAS-AAAS9-1-001",
+      "exhibit_id": "MAPSAS-AAAS-1-001|MAPSAS-AAAS1-1-001|MAPSAS-AAAS10-1-001|MAPSAS-AAAS3-1-001|MAPSAS-AAAS4-1-001|MAPSAS-AAAS5-1-001|MAPSAS-AAAS6-1-001|MAPSAS-AAAS7-1-001|MAPSAS-AAAS8-1-001|MAPSAS-AAAS9-1-001",
       "exhibit_ids": [
         "MAPSAS-AAAS-1-001",
         "MAPSAS-AAAS1-1-001",
+        "MAPSAS-AAAS10-1-001",
         "MAPSAS-AAAS3-1-001",
         "MAPSAS-AAAS4-1-001",
         "MAPSAS-AAAS5-1-001",
@@ -250466,8 +253124,9 @@ window.CPL_STATEWIDE = {
         "239"
       ],
       "collaborative_type": "Local",
-      "adopters": 9,
+      "adopters": 10,
       "adopter_names": [
+        "Bakersfield College",
         "California State University Los Angeles",
         "City College of San Francisco",
         "Coastline Community College",
@@ -250530,7 +253189,7 @@ window.CPL_STATEWIDE = {
         "Victor Valley College",
         "Woodland Community College"
       ],
-      "total_addressable": 58,
+      "total_addressable": 59,
       "credit_recs": [
         {
           "course": "GE 4",
@@ -250563,6 +253222,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "Local GE 4",
           "credit": "3 hours in Social and Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 6",
+          "credit": "3 hours in Ethnic Studies"
         }
       ],
       "authoritative_recs": [],
@@ -250575,6 +253238,12 @@ window.CPL_STATEWIDE = {
         },
         {
           "id": "MAPSAS-AAAS1-1-001",
+          "title": "AP African American Studies",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-AAAS10-1-001",
           "title": "AP African American Studies",
           "units": 3.0,
           "lines": 1
@@ -250623,6 +253292,7 @@ window.CPL_STATEWIDE = {
         }
       ],
       "adopter_units": {
+        "Bakersfield College": 3.0,
         "California State University Los Angeles": 3.0,
         "City College of San Francisco": 3.0,
         "Coastline Community College": 3.0,
@@ -250634,6 +253304,7 @@ window.CPL_STATEWIDE = {
         "Ohlone College": 3.0
       },
       "adopter_lines": {
+        "Bakersfield College": 1,
         "California State University Los Angeles": 1,
         "City College of San Francisco": 1,
         "Coastline Community College": 1,
@@ -250645,6 +253316,9 @@ window.CPL_STATEWIDE = {
         "Ohlone College": 1
       },
       "adopter_rec_idx": {
+        "Bakersfield College": [
+          8
+        ],
         "California State University Los Angeles": [
           5
         ],
@@ -250675,7 +253349,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 4.0,
-      "rec_units_total": 25.0
+      "rec_units_total": 28.0
     },
     {
       "exhibit_id": "MAPICI-SC1-1-001|MAPICI-SC2-1-001|MAPICI-SFHC-1-001|MAPICI-SMCA-1-001",
@@ -266331,6 +269005,110 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AAAD-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AAAD-1-001"
+      ],
+      "title": "AP Art and Design - 2D Design",
+      "unified_title": "AP Art and Design - 2D Design",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Art and Design - 2D Design"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "50",
+      "top_codes": [
+        "70"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 42,
+      "potential_names": [
+        "American River College",
+        "Antelope Valley College",
+        "Berkeley City College",
+        "Butte College",
+        "Coalinga College",
+        "College of the Redwoods",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Gavilan College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 43,
+      "credit_recs": [
+        {
+          "course": "ART B4",
+          "credit": "3 hours in Two Dimensional Design"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AAAD-1-001",
+          "title": "AP Art and Design - 2D Design",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
           0
         ]
       },
@@ -291063,7 +293841,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 1.0
     },
     {
-      "exhibit_id": "MAPSAH-AS2-1-001|MAPSAH-ASE-1-001|MAPSAS-A-S1-1-001|MAPSAS-A:S1-1-001|MAPSAS-AE-S2-1-001|MAPSAS-AES2-1-001|MAPSAS-AES4-1-001|MAPSAS-AES6-1-001|MAPSAS-AS(C-1-001|MAPSAS-AS(C1-1-001|MAPSAS-AS(O-1-001|MAPSAS-AS(O2-1-001|MAPSAS-AS-A2-1-001|MAPSAS-AS-S-1-001|MAPSAS-AS-S1-1-001|MAPSAS-AS-S2-1-001|MAPSAS-AS-S3-1-001|MAPSAS-AS-S4-1-001|MAPSAS-AS-S5-1-001|MAPSAS-AS-S6-1-001|MAPSAS-AS-S8-1-001|MAPSAS-AS1-1-001|MAPSAS-AS10-1-001|MAPSAS-AS12-1-001|MAPSAS-AS13-1-001|MAPSAS-AS14-1-001|MAPSAS-AS15-1-001|MAPSAS-AS16-1-001|MAPSAS-AS17-1-001|MAPSAS-AS18-1-001|MAPSAS-AS19-1-001|MAPSAS-AS2-1-001|MAPSAS-AS20-1-001|MAPSAS-AS22-1-001|MAPSAS-AS3-1-001|MAPSAS-AS4-1-001|MAPSAS-AS5-1-001|MAPSAS-AS6-1-001|MAPSAS-AS7-1-001|MAPSAS-A (O-1-001|MAPSAS-A 1-1-001",
+      "exhibit_id": "MAPSAH-AS2-1-001|MAPSAH-ASE-1-001|MAPSAS-A-S1-1-001|MAPSAS-A:S1-1-001|MAPSAS-AE-S2-1-001|MAPSAS-AES2-1-001|MAPSAS-AES4-1-001|MAPSAS-AES6-1-001|MAPSAS-AS(C-1-001|MAPSAS-AS(C1-1-001|MAPSAS-AS(O-1-001|MAPSAS-AS(O2-1-001|MAPSAS-AS-A2-1-001|MAPSAS-AS-S-1-001|MAPSAS-AS-S1-1-001|MAPSAS-AS-S2-1-001|MAPSAS-AS-S3-1-001|MAPSAS-AS-S4-1-001|MAPSAS-AS-S5-1-001|MAPSAS-AS-S6-1-001|MAPSAS-AS-S8-1-001|MAPSAS-AS1-1-001|MAPSAS-AS10-1-001|MAPSAS-AS12-1-001|MAPSAS-AS13-1-001|MAPSAS-AS14-1-001|MAPSAS-AS15-1-001|MAPSAS-AS16-1-001|MAPSAS-AS17-1-001|MAPSAS-AS18-1-001|MAPSAS-AS19-1-001|MAPSAS-AS2-1-001|MAPSAS-AS20-1-001|MAPSAS-AS22-1-001|MAPSAS-AS23-1-001|MAPSAS-AS3-1-001|MAPSAS-AS4-1-001|MAPSAS-AS5-1-001|MAPSAS-AS6-1-001|MAPSAS-AS7-1-001|MAPSAS-A (O-1-001|MAPSAS-A 1-1-001",
       "exhibit_ids": [
         "MAPSAH-AS2-1-001",
         "MAPSAH-ASE-1-001",
@@ -291099,6 +293877,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AS2-1-001",
         "MAPSAS-AS20-1-001",
         "MAPSAS-AS22-1-001",
+        "MAPSAS-AS23-1-001",
         "MAPSAS-AS3-1-001",
         "MAPSAS-AS4-1-001",
         "MAPSAS-AS5-1-001",
@@ -291383,6 +294162,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "STAT C1000",
           "credit": "4 units in Introduction to Statistics"
+        },
+        {
+          "course": "PSYC B5",
+          "credit": "4 hours in Elementary Statistics for the Behavioral and Social Sciences"
         }
       ],
       "authoritative_recs": [],
@@ -291592,6 +294375,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-AS23-1-001",
+          "title": "AP Statistics",
+          "units": 8.0,
+          "lines": 2
+        },
+        {
           "id": "MAPSAS-AS3-1-001",
           "title": "AP Statistics",
           "units": 3.0,
@@ -291638,7 +294427,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 11.0,
         "Barstow Community College": 7.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -291725,7 +294514,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 3,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -291819,7 +294608,9 @@ window.CPL_STATEWIDE = {
           9
         ],
         "Bakersfield College": [
-          9
+          1,
+          9,
+          26
         ],
         "Barstow Community College": [
           9,
@@ -292105,7 +294896,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 36.0,
-      "rec_units_total": 96.0
+      "rec_units_total": 100.0
     },
     {
       "exhibit_id": "MAPCBEH-ITB1-1-001|MAPCXN-V7&7-1-001|MAPCXS-B0-B-1-001",
@@ -298134,7 +300925,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 128.0
     },
     {
-      "exhibit_id": "MAPSAH-AHWW-1-001|MAPSAH-AWHE-1-001|MAPSAH-WHE-1-001|MAPSAS-A-WH-1-001|MAPSAS-A-WH1-1-001|MAPSAS-A:WH-1-001|MAPSAS-A:WH1-1-001|MAPSAS-A:WH2-1-001|MAPSAS-A:WH3-1-001|MAPSAS-AE-W-1-001|MAPSAS-AEWH-1-001|MAPSAS-AEWH1-1-001|MAPSAS-AEWH2-1-001|MAPSAS-AEWH4-1-001|MAPSAS-AH-M-1-001|MAPSAS-AH-W-1-001|MAPSAS-AHW1-1-001|MAPSAS-AHWH-1-001|MAPSAS-AH–W-1-001|MAPSAS-AH–W1-1-001|MAPSAS-AH–W2-1-001|MAPSAS-AH–W3-1-001|MAPSAS-AWH--1-001|MAPSAS-AWH-1-1-001|MAPSAS-AWH1-1-001|MAPSAS-AWH2-1-001|MAPSAS-AWH3-1-001|MAPSAS-AWH4-1-001|MAPSAS-AWH5-1-001|MAPSAS-AWH6-1-001|MAPSAS-AWH7-1-001|MAPSAS-AWH8-1-001|MAPSAS-AWHA-1-001|MAPSAS-AWHA1-1-001|MAPSAS-AWHM-1-001|MAPSAS-AWHM1-1-001|MAPSAS-AWHM10-1-001|MAPSAS-AWHM11-1-001|MAPSAS-AWHM12-1-001|MAPSAS-AWHM13-1-001|MAPSAS-AWHM14-1-001|MAPSAS-AWHM15-1-001|MAPSAS-AWHM16-1-001|MAPSAS-AWHM17-1-001|MAPSAS-AWHM18-1-001|MAPSAS-AWHM19-1-001|MAPSAS-AWHM2-1-001|MAPSAS-AWHM20-1-001|MAPSAS-AWHM21-1-001|MAPSAS-AWHM3-1-001|MAPSAS-AWHM4-1-001|MAPSAS-AWHM5-1-001|MAPSAS-AWHM6-1-001|MAPSAS-AWHM7-1-001|MAPSAS-AWHM8-1-001|MAPSAS-AWHM9-1-001",
+      "exhibit_id": "MAPSAH-AHWW-1-001|MAPSAH-AWHE-1-001|MAPSAH-WHE-1-001|MAPSAS-A-WH-1-001|MAPSAS-A-WH1-1-001|MAPSAS-A:WH-1-001|MAPSAS-A:WH1-1-001|MAPSAS-A:WH2-1-001|MAPSAS-A:WH3-1-001|MAPSAS-AE-W-1-001|MAPSAS-AEWH-1-001|MAPSAS-AEWH1-1-001|MAPSAS-AEWH2-1-001|MAPSAS-AEWH4-1-001|MAPSAS-AH-M-1-001|MAPSAS-AH-W-1-001|MAPSAS-AHW1-1-001|MAPSAS-AHWH-1-001|MAPSAS-AH–W-1-001|MAPSAS-AH–W1-1-001|MAPSAS-AH–W2-1-001|MAPSAS-AH–W3-1-001|MAPSAS-AWH--1-001|MAPSAS-AWH-1-1-001|MAPSAS-AWH1-1-001|MAPSAS-AWH2-1-001|MAPSAS-AWH3-1-001|MAPSAS-AWH4-1-001|MAPSAS-AWH5-1-001|MAPSAS-AWH6-1-001|MAPSAS-AWH7-1-001|MAPSAS-AWH8-1-001|MAPSAS-AWH9-1-001|MAPSAS-AWHA-1-001|MAPSAS-AWHA1-1-001|MAPSAS-AWHA3-1-001|MAPSAS-AWHM-1-001|MAPSAS-AWHM1-1-001|MAPSAS-AWHM10-1-001|MAPSAS-AWHM11-1-001|MAPSAS-AWHM12-1-001|MAPSAS-AWHM13-1-001|MAPSAS-AWHM14-1-001|MAPSAS-AWHM15-1-001|MAPSAS-AWHM16-1-001|MAPSAS-AWHM17-1-001|MAPSAS-AWHM18-1-001|MAPSAS-AWHM19-1-001|MAPSAS-AWHM2-1-001|MAPSAS-AWHM20-1-001|MAPSAS-AWHM21-1-001|MAPSAS-AWHM3-1-001|MAPSAS-AWHM4-1-001|MAPSAS-AWHM5-1-001|MAPSAS-AWHM6-1-001|MAPSAS-AWHM7-1-001|MAPSAS-AWHM8-1-001|MAPSAS-AWHM9-1-001",
       "exhibit_ids": [
         "MAPSAH-AHWW-1-001",
         "MAPSAH-AWHE-1-001",
@@ -298168,8 +300959,10 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AWH6-1-001",
         "MAPSAS-AWH7-1-001",
         "MAPSAS-AWH8-1-001",
+        "MAPSAS-AWH9-1-001",
         "MAPSAS-AWHA-1-001",
         "MAPSAS-AWHA1-1-001",
+        "MAPSAS-AWHA3-1-001",
         "MAPSAS-AWHM-1-001",
         "MAPSAS-AWHM1-1-001",
         "MAPSAS-AWHM10-1-001",
@@ -298583,6 +301376,14 @@ window.CPL_STATEWIDE = {
         {
           "course": "HIS 5A",
           "credit": "3 hours in World History A"
+        },
+        {
+          "course": "HIST B1",
+          "credit": "3 hours in World History to 1500"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
         }
       ],
       "authoritative_recs": [],
@@ -298780,6 +301581,12 @@ window.CPL_STATEWIDE = {
           "lines": 2
         },
         {
+          "id": "MAPSAS-AWH9-1-001",
+          "title": "AP World History",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AWHA-1-001",
           "title": "AP World History, Area 3B",
           "units": 3.0,
@@ -298787,6 +301594,12 @@ window.CPL_STATEWIDE = {
         },
         {
           "id": "MAPSAS-AWHA1-1-001",
+          "title": "AP World History, Area 4",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-AWHA3-1-001",
           "title": "AP World History, Area 4",
           "units": 3.0,
           "lines": 1
@@ -298928,7 +301741,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 9.0,
         "Barstow Community College": 9.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -299015,7 +301828,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 3,
         "Barstow Community College": 3,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -299109,7 +301922,9 @@ window.CPL_STATEWIDE = {
           20
         ],
         "Bakersfield College": [
-          20
+          20,
+          51,
+          52
         ],
         "Barstow Community College": [
           20,
@@ -299408,10 +302223,10 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 18.0,
-      "rec_units_total": 158.0
+      "rec_units_total": 164.0
     },
     {
-      "exhibit_id": "MAPSAA-ACA-1-001|MAPSAH-ACA1-1-001|MAPSAH-ACAE2-1-001|MAPSAH-ACBS-1-001|MAPSAS-A-CB1-1-001|MAPSAS-A:CA-1-001|MAPSAS-A:CB1-1-001|MAPSAS-ACA(-1-001|MAPSAS-ACA(1-1-001|MAPSAS-ACA(2-1-001|MAPSAS-ACA(3-1-001|MAPSAS-ACA(4-1-001|MAPSAS-ACA(5-1-001|MAPSAS-ACA--1-001|MAPSAS-ACA-1-1-001|MAPSAS-ACA-2-1-001|MAPSAS-ACA-3-1-001|MAPSAS-ACA1-1-001|MAPSAS-ACA10-1-001|MAPSAS-ACA11-1-001|MAPSAS-ACA12-1-001|MAPSAS-ACA13-1-001|MAPSAS-ACA14-1-001|MAPSAS-ACA15-1-001|MAPSAS-ACA16-1-001|MAPSAS-ACA17-1-001|MAPSAS-ACA18-1-001|MAPSAS-ACA2-1-001|MAPSAS-ACA3-1-001|MAPSAS-ACA4-1-001|MAPSAS-ACA5-1-001|MAPSAS-ACA6-1-001|MAPSAS-ACA8-1-001|MAPSAS-ACA9-1-001|MAPSAS-ACAA-1-001|MAPSAS-ACAO-1-001|MAPSAS-ACBA-1-001|MAPSAS-ACBA1-1-001|MAPSAS-ACBA2-1-001|MAPSAS-ACBA4-1-001|MAPSAS-ACBS-1-001|MAPSAS-ACBS1-1-001|MAPSAS-ACBS10-1-001|MAPSAS-ACBS11-1-001|MAPSAS-ACBS12-1-001|MAPSAS-ACBS13-1-001|MAPSAS-ACBS14-1-001|MAPSAS-ACBS15-1-001|MAPSAS-ACBS16-1-001|MAPSAS-ACBS2-1-001|MAPSAS-ACBS3-1-001|MAPSAS-ACBS4-1-001|MAPSAS-ACBS5-1-001|MAPSAS-ACBS6-1-001|MAPSAS-ACBS7-1-001|MAPSAS-ACBS8-1-001|MAPSAS-ACBS9-1-001|MAPSAS-ACBW-1-001|MAPSAS-AECA-1-001|MAPSAS-AECA1-1-001|MAPSAS-AECA2-1-001|MAPSAS-AECA3-1-001|MAPSAS-AECB2-1-001|MAPSAS-AM-C-1-001|MAPSAS-AM-C2-1-001|MAPSAS-AM-C3-1-001|MAPSAS-WAEC-1-001",
+      "exhibit_id": "MAPSAA-ACA-1-001|MAPSAH-ACA1-1-001|MAPSAH-ACAE2-1-001|MAPSAH-ACBS-1-001|MAPSAS-A-CB1-1-001|MAPSAS-A:CA-1-001|MAPSAS-A:CB1-1-001|MAPSAS-ACA(-1-001|MAPSAS-ACA(1-1-001|MAPSAS-ACA(2-1-001|MAPSAS-ACA(3-1-001|MAPSAS-ACA(4-1-001|MAPSAS-ACA(5-1-001|MAPSAS-ACA--1-001|MAPSAS-ACA-1-1-001|MAPSAS-ACA-2-1-001|MAPSAS-ACA-3-1-001|MAPSAS-ACA1-1-001|MAPSAS-ACA10-1-001|MAPSAS-ACA11-1-001|MAPSAS-ACA12-1-001|MAPSAS-ACA13-1-001|MAPSAS-ACA14-1-001|MAPSAS-ACA15-1-001|MAPSAS-ACA16-1-001|MAPSAS-ACA17-1-001|MAPSAS-ACA18-1-001|MAPSAS-ACA19-1-001|MAPSAS-ACA2-1-001|MAPSAS-ACA3-1-001|MAPSAS-ACA4-1-001|MAPSAS-ACA5-1-001|MAPSAS-ACA6-1-001|MAPSAS-ACA8-1-001|MAPSAS-ACA9-1-001|MAPSAS-ACAA-1-001|MAPSAS-ACAO-1-001|MAPSAS-ACBA-1-001|MAPSAS-ACBA1-1-001|MAPSAS-ACBA2-1-001|MAPSAS-ACBA4-1-001|MAPSAS-ACBS-1-001|MAPSAS-ACBS1-1-001|MAPSAS-ACBS10-1-001|MAPSAS-ACBS11-1-001|MAPSAS-ACBS12-1-001|MAPSAS-ACBS13-1-001|MAPSAS-ACBS14-1-001|MAPSAS-ACBS15-1-001|MAPSAS-ACBS16-1-001|MAPSAS-ACBS2-1-001|MAPSAS-ACBS3-1-001|MAPSAS-ACBS4-1-001|MAPSAS-ACBS5-1-001|MAPSAS-ACBS6-1-001|MAPSAS-ACBS7-1-001|MAPSAS-ACBS8-1-001|MAPSAS-ACBS9-1-001|MAPSAS-ACBW-1-001|MAPSAS-AECA-1-001|MAPSAS-AECA1-1-001|MAPSAS-AECA2-1-001|MAPSAS-AECA3-1-001|MAPSAS-AECB2-1-001|MAPSAS-AM-C-1-001|MAPSAS-AM-C2-1-001|MAPSAS-AM-C3-1-001|MAPSAS-WAEC-1-001",
       "exhibit_ids": [
         "MAPSAA-ACA-1-001",
         "MAPSAH-ACA1-1-001",
@@ -299440,6 +302255,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-ACA16-1-001",
         "MAPSAS-ACA17-1-001",
         "MAPSAS-ACA18-1-001",
+        "MAPSAS-ACA19-1-001",
         "MAPSAS-ACA2-1-001",
         "MAPSAS-ACA3-1-001",
         "MAPSAS-ACA4-1-001",
@@ -299843,6 +302659,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "MATH G180",
           "credit": "4 hours in Calculus 1"
+        },
+        {
+          "course": "MATH B6A",
+          "credit": "4 hours in Analytic Geometry/Calculus I"
         }
       ],
       "authoritative_recs": [],
@@ -300005,6 +302825,12 @@ window.CPL_STATEWIDE = {
         },
         {
           "id": "MAPSAS-ACA18-1-001",
+          "title": "AP Calculus AB",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-ACA19-1-001",
           "title": "AP Calculus AB",
           "units": 4.0,
           "lines": 1
@@ -300254,7 +303080,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 7.0,
         "Barstow Community College": 7.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -300341,7 +303167,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -300435,7 +303261,8 @@ window.CPL_STATEWIDE = {
           16
         ],
         "Bakersfield College": [
-          16
+          16,
+          43
         ],
         "Barstow Community College": [
           16,
@@ -300726,10 +303553,10 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 18.0,
-      "rec_units_total": 175.5
+      "rec_units_total": 179.5
     },
     {
-      "exhibit_id": "MAPSAH-AHE-1-001|MAPSAS-A-EH-1-001|MAPSAS-A-EH1-1-001|MAPSAS-A:EH-1-001|MAPSAS-A:EH1-1-001|MAPSAS-AEEH-1-001|MAPSAS-AEEH1-1-001|MAPSAS-AEH(-1-001|MAPSAS-AEH(1-1-001|MAPSAS-AEH(2-1-001|MAPSAS-AEH(3-1-001|MAPSAS-AEH-1-001|MAPSAS-AEH-2-1-001|MAPSAS-AEH-3-1-001|MAPSAS-AEH-4-1-001|MAPSAS-AEH-5-1-001|MAPSAS-AEH-6-1-001|MAPSAS-AEH-7-1-001|MAPSAS-AEH-8-1-001|MAPSAS-AEH1-1-001|MAPSAS-AEH10-1-001|MAPSAS-AEH11-1-001|MAPSAS-AEH12-1-001|MAPSAS-AEH13-1-001|MAPSAS-AEH14-1-001|MAPSAS-AEH15-1-001|MAPSAS-AEH16-1-001|MAPSAS-AEH17-1-001|MAPSAS-AEH18-1-001|MAPSAS-AEH2-1-001|MAPSAS-AEH3-1-001|MAPSAS-AEH4-1-001|MAPSAS-AEH5-1-001|MAPSAS-AEH6-1-001|MAPSAS-AEH9-1-001|MAPSAS-AH-E-1-001|MAPSAS-AH-E1-1-001|MAPSAS-AHE(-1-001|MAPSAS-AHE(1-1-001|MAPSAS-AHE-1-001|MAPSAS-AH–E-1-001",
+      "exhibit_id": "MAPSAH-AHE-1-001|MAPSAS-A-EH-1-001|MAPSAS-A-EH1-1-001|MAPSAS-A:EH-1-001|MAPSAS-A:EH1-1-001|MAPSAS-AEEH-1-001|MAPSAS-AEEH1-1-001|MAPSAS-AEH(-1-001|MAPSAS-AEH(1-1-001|MAPSAS-AEH(2-1-001|MAPSAS-AEH(3-1-001|MAPSAS-AEH-1-001|MAPSAS-AEH-2-1-001|MAPSAS-AEH-3-1-001|MAPSAS-AEH-4-1-001|MAPSAS-AEH-5-1-001|MAPSAS-AEH-6-1-001|MAPSAS-AEH-7-1-001|MAPSAS-AEH-8-1-001|MAPSAS-AEH1-1-001|MAPSAS-AEH10-1-001|MAPSAS-AEH11-1-001|MAPSAS-AEH12-1-001|MAPSAS-AEH13-1-001|MAPSAS-AEH14-1-001|MAPSAS-AEH15-1-001|MAPSAS-AEH16-1-001|MAPSAS-AEH17-1-001|MAPSAS-AEH18-1-001|MAPSAS-AEH19-1-001|MAPSAS-AEH2-1-001|MAPSAS-AEH3-1-001|MAPSAS-AEH4-1-001|MAPSAS-AEH5-1-001|MAPSAS-AEH6-1-001|MAPSAS-AEH9-1-001|MAPSAS-AH-E-1-001|MAPSAS-AH-E1-1-001|MAPSAS-AHE(-1-001|MAPSAS-AHE(1-1-001|MAPSAS-AHE-1-001|MAPSAS-AH–E-1-001",
       "exhibit_ids": [
         "MAPSAH-AHE-1-001",
         "MAPSAS-A-EH-1-001",
@@ -300760,6 +303587,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AEH16-1-001",
         "MAPSAS-AEH17-1-001",
         "MAPSAS-AEH18-1-001",
+        "MAPSAS-AEH19-1-001",
         "MAPSAS-AEH2-1-001",
         "MAPSAS-AEH3-1-001",
         "MAPSAS-AEH4-1-001",
@@ -301125,6 +303953,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "HIS 4A",
           "credit": "3 hours in Western Civilization A"
+        },
+        {
+          "course": "HIST B4B",
+          "credit": "3 hours in European Civilization- Post 1600"
         }
       ],
       "authoritative_recs": [],
@@ -301304,6 +304136,12 @@ window.CPL_STATEWIDE = {
           "lines": 2
         },
         {
+          "id": "MAPSAS-AEH19-1-001",
+          "title": "AP European History",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AEH2-1-001",
           "title": "AP European History",
           "units": 3.0,
@@ -301380,7 +304218,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 6.0,
         "Barstow Community College": 6.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -301466,7 +304304,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -301559,7 +304397,8 @@ window.CPL_STATEWIDE = {
           19
         ],
         "Bakersfield College": [
-          19
+          19,
+          46
         ],
         "Barstow Community College": [
           19,
@@ -301853,10 +304692,10 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 24.0,
-      "rec_units_total": 145.0
+      "rec_units_total": 148.0
     },
     {
-      "exhibit_id": "MAPSAH-IEH-1-001|MAPSAS-I:EH-1-001|MAPSAS-IE((-1-001|MAPSAS-IE((1-1-001|MAPSAS-IEEH-1-001|MAPSAS-IEEH1-1-001|MAPSAS-IEH(2-1-001|MAPSAS-IEH--1-001|MAPSAS-IEH1-1-001|MAPSAS-IEH10-1-001|MAPSAS-IEH11-1-001|MAPSAS-IEH12-1-001|MAPSAS-IEH13-1-001|MAPSAS-IEH14-1-001|MAPSAS-IEH15-1-001|MAPSAS-IEH16-1-001|MAPSAS-IEH17-1-001|MAPSAS-IEH2-1-001|MAPSAS-IEH3-1-001|MAPSAS-IEH4-1-001|MAPSAS-IEH5-1-001|MAPSAS-IEH6-1-001|MAPSAS-IEH7-1-001|MAPSAS-IEH8-1-001|MAPSAS-IEH9-1-001",
+      "exhibit_id": "MAPSAH-IEH-1-001|MAPSAS-I:EH-1-001|MAPSAS-IE((-1-001|MAPSAS-IE((1-1-001|MAPSAS-IEEH-1-001|MAPSAS-IEEH1-1-001|MAPSAS-IEH(2-1-001|MAPSAS-IEH--1-001|MAPSAS-IEH1-1-001|MAPSAS-IEH10-1-001|MAPSAS-IEH11-1-001|MAPSAS-IEH12-1-001|MAPSAS-IEH13-1-001|MAPSAS-IEH14-1-001|MAPSAS-IEH15-1-001|MAPSAS-IEH16-1-001|MAPSAS-IEH17-1-001|MAPSAS-IEH18-1-001|MAPSAS-IEH2-1-001|MAPSAS-IEH3-1-001|MAPSAS-IEH4-1-001|MAPSAS-IEH5-1-001|MAPSAS-IEH6-1-001|MAPSAS-IEH7-1-001|MAPSAS-IEH8-1-001|MAPSAS-IEH9-1-001",
       "exhibit_ids": [
         "MAPSAH-IEH-1-001",
         "MAPSAS-I:EH-1-001",
@@ -301875,6 +304714,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-IEH15-1-001",
         "MAPSAS-IEH16-1-001",
         "MAPSAS-IEH17-1-001",
+        "MAPSAS-IEH18-1-001",
         "MAPSAS-IEH2-1-001",
         "MAPSAS-IEH3-1-001",
         "MAPSAS-IEH4-1-001",
@@ -302122,6 +304962,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social & Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "6 hours in Social Sciences and Behavioral Sciences"
         }
       ],
       "authoritative_recs": [],
@@ -302229,6 +305073,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-IEH18-1-001",
+          "title": "IB Economics HL",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-IEH2-1-001",
           "title": "IB Economics HL (score 5-7): Cal-GETC Area 4",
           "units": 3.0,
@@ -302281,7 +305131,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 9.0,
         "Barstow Community College": 6.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -302367,7 +305217,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -302460,7 +305310,8 @@ window.CPL_STATEWIDE = {
           5
         ],
         "Bakersfield College": [
-          5
+          5,
+          21
         ],
         "Barstow Community College": [
           5,
@@ -302727,7 +305578,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 15.0,
-      "rec_units_total": 73.0
+      "rec_units_total": 79.0
     },
     {
       "exhibit_id": "MAPSAH-IH(R-1-001|MAPSAH-IH(R1-1-001|MAPSAS-I:HH-1-001|MAPSAS-I:HH1-1-001|MAPSAS-IEH(-1-001|MAPSAS-IEH(1-1-001|MAPSAS-IH(R-1-001|MAPSAS-IH(R1-1-001|MAPSAS-IH(R10-1-001|MAPSAS-IH(R2-1-001|MAPSAS-IH(R3-1-001|MAPSAS-IH(R4-1-001|MAPSAS-IH(R5-1-001|MAPSAS-IH(R6-1-001|MAPSAS-IH(R7-1-001|MAPSAS-IH(R8-1-001|MAPSAS-IH(R9-1-001|MAPSAS-IH-A-1-001|MAPSAS-IH-A1-1-001|MAPSAS-IH-A2-1-001|MAPSAS-IH-A3-1-001|MAPSAS-IH-A4-1-001|MAPSAS-IH-A5-1-001|MAPSAS-IH1-1-001|MAPSAS-IH2-1-001|MAPSAS-IHAR-1-001|MAPSAS-IHAR1-1-001|MAPSAS-IHAR2-1-001|MAPSAS-IHAR3-1-001|MAPSAS-IHAR4-1-001|MAPSAS-IHH(-1-001|MAPSAS-IHHA-1-001|MAPSAS-IHHA1-1-001",
@@ -308364,7 +311215,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 5.0
     },
     {
-      "exhibit_id": "MAPSAH-AELA1-1-001|MAPSAH-AELA3-1-001|MAPSAS-A-EL-1-001|MAPSAS-A-EL2-1-001|MAPSAS-A:EL1-1-001|MAPSAS-A:EL2-1-001|MAPSAS-AE-E-1-001|MAPSAS-AE-L1-1-001|MAPSAS-AE-L10-1-001|MAPSAS-AE-L13-1-001|MAPSAS-AE-L2-1-001|MAPSAS-AE-L4-1-001|MAPSAS-AE-L5-1-001|MAPSAS-AE-L9-1-001|MAPSAS-AEE--1-001|MAPSAS-AEEL-1-001|MAPSAS-AEL&-1-001|MAPSAS-AEL&1-1-001|MAPSAS-AEL&10-1-001|MAPSAS-AEL&11-1-001|MAPSAS-AEL&16-1-001|MAPSAS-AEL&3-1-001|MAPSAS-AEL&4-1-001|MAPSAS-AEL&9-1-001|MAPSAS-AEL(1-1-001|MAPSAS-AEL(2-1-001|MAPSAS-AEL2-1-001|MAPSAS-AEL4-1-001|MAPSAS-AEL6-1-001|MAPSAS-AEL9-1-001|MAPSAS-AELA-1-001|MAPSAS-AELA10-1-001|MAPSAS-AELA12-1-001|MAPSAS-AELA15-1-001|MAPSAS-AELA16-1-001|MAPSAS-AELA18-1-001|MAPSAS-AELA2-1-001|MAPSAS-AELA20-1-001|MAPSAS-AELA22-1-001|MAPSAS-AELA23-1-001|MAPSAS-AELA26-1-001|MAPSAS-AELA28-1-001|MAPSAS-AELA3-1-001|MAPSAS-AELA30-1-001|MAPSAS-AELA32-1-001|MAPSAS-AELA5-1-001|MAPSAS-AELA6-1-001|MAPSAS-AELA7-1-001|MAPSAS-AELC-1-001",
+      "exhibit_id": "MAPSAH-AELA1-1-001|MAPSAH-AELA3-1-001|MAPSAS-A-EL-1-001|MAPSAS-A-EL2-1-001|MAPSAS-A:EL1-1-001|MAPSAS-A:EL2-1-001|MAPSAS-AE-E-1-001|MAPSAS-AE-L1-1-001|MAPSAS-AE-L10-1-001|MAPSAS-AE-L13-1-001|MAPSAS-AE-L2-1-001|MAPSAS-AE-L4-1-001|MAPSAS-AE-L5-1-001|MAPSAS-AE-L9-1-001|MAPSAS-AEE--1-001|MAPSAS-AEEL-1-001|MAPSAS-AEL&-1-001|MAPSAS-AEL&1-1-001|MAPSAS-AEL&10-1-001|MAPSAS-AEL&11-1-001|MAPSAS-AEL&16-1-001|MAPSAS-AEL&3-1-001|MAPSAS-AEL&4-1-001|MAPSAS-AEL&9-1-001|MAPSAS-AEL(1-1-001|MAPSAS-AEL(2-1-001|MAPSAS-AEL11-1-001|MAPSAS-AEL2-1-001|MAPSAS-AEL4-1-001|MAPSAS-AEL6-1-001|MAPSAS-AEL9-1-001|MAPSAS-AELA-1-001|MAPSAS-AELA10-1-001|MAPSAS-AELA12-1-001|MAPSAS-AELA15-1-001|MAPSAS-AELA16-1-001|MAPSAS-AELA18-1-001|MAPSAS-AELA2-1-001|MAPSAS-AELA20-1-001|MAPSAS-AELA22-1-001|MAPSAS-AELA23-1-001|MAPSAS-AELA26-1-001|MAPSAS-AELA28-1-001|MAPSAS-AELA3-1-001|MAPSAS-AELA30-1-001|MAPSAS-AELA32-1-001|MAPSAS-AELA5-1-001|MAPSAS-AELA6-1-001|MAPSAS-AELA7-1-001|MAPSAS-AELC-1-001",
       "exhibit_ids": [
         "MAPSAH-AELA1-1-001",
         "MAPSAH-AELA3-1-001",
@@ -308392,6 +311243,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AEL&9-1-001",
         "MAPSAS-AEL(1-1-001",
         "MAPSAS-AEL(2-1-001",
+        "MAPSAS-AEL11-1-001",
         "MAPSAS-AEL2-1-001",
         "MAPSAS-AEL4-1-001",
         "MAPSAS-AEL6-1-001",
@@ -308854,6 +311706,12 @@ window.CPL_STATEWIDE = {
           "lines": 2
         },
         {
+          "id": "MAPSAS-AEL11-1-001",
+          "title": "AP English Language",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AEL2-1-001",
           "title": "AP English Language",
           "units": 6.0,
@@ -308996,7 +311854,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 6.0,
         "Barstow Community College": 7.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -309083,7 +311941,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -309177,7 +312035,8 @@ window.CPL_STATEWIDE = {
           9
         ],
         "Bakersfield College": [
-          9
+          9,
+          10
         ],
         "Barstow Community College": [
           9,
@@ -309469,7 +312328,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 96.0
     },
     {
-      "exhibit_id": "MAPSAH-AAH(-1-001|MAPSAH-AAH1-1-001|MAPSAH-AAHE1-1-001|MAPSAS-A-AH-1-001|MAPSAS-A:AH-1-001|MAPSAS-AAH(-1-001|MAPSAS-AAH(1-1-001|MAPSAS-AAH(2-1-001|MAPSAS-AAH(3-1-001|MAPSAS-AAH(4-1-001|MAPSAS-AAH(5-1-001|MAPSAS-AAH(7-1-001|MAPSAS-AAH-1-001|MAPSAS-AAH-2-1-001|MAPSAS-AAH-3-1-001|MAPSAS-AAH-4-1-001|MAPSAS-AAH1-1-001|MAPSAS-AAH10-1-001|MAPSAS-AAH12-1-001|MAPSAS-AAH13-1-001|MAPSAS-AAH15-1-001|MAPSAS-AAH16-1-001|MAPSAS-AAH17-1-001|MAPSAS-AAH18-1-001|MAPSAS-AAH19-1-001|MAPSAS-AAH2-1-001|MAPSAS-AAH20-1-001|MAPSAS-AAH21-1-001|MAPSAS-AAH22-1-001|MAPSAS-AAH23-1-001|MAPSAS-AAH24-1-001|MAPSAS-AAH25-1-001|MAPSAS-AAH3-1-001|MAPSAS-AAH4-1-001|MAPSAS-AAH7-1-001|MAPSAS-AAH8-1-001|MAPSAS-AAHA-1-001|MAPSAS-AAHA1-1-001|MAPSAS-AEAH-1-001|MAPSAS-AEAH2-1-001|MAPSAS-AEAH3-1-001|MAPSAS-AEAH4-1-001|MAPSAS-WAEA-1-001",
+      "exhibit_id": "MAPSAH-AAH(-1-001|MAPSAH-AAH1-1-001|MAPSAH-AAHE1-1-001|MAPSAS-A-AH-1-001|MAPSAS-A:AH-1-001|MAPSAS-AAH(-1-001|MAPSAS-AAH(1-1-001|MAPSAS-AAH(2-1-001|MAPSAS-AAH(3-1-001|MAPSAS-AAH(4-1-001|MAPSAS-AAH(5-1-001|MAPSAS-AAH(7-1-001|MAPSAS-AAH-1-001|MAPSAS-AAH-2-1-001|MAPSAS-AAH-3-1-001|MAPSAS-AAH-4-1-001|MAPSAS-AAH1-1-001|MAPSAS-AAH10-1-001|MAPSAS-AAH12-1-001|MAPSAS-AAH13-1-001|MAPSAS-AAH15-1-001|MAPSAS-AAH16-1-001|MAPSAS-AAH17-1-001|MAPSAS-AAH18-1-001|MAPSAS-AAH19-1-001|MAPSAS-AAH2-1-001|MAPSAS-AAH20-1-001|MAPSAS-AAH21-1-001|MAPSAS-AAH22-1-001|MAPSAS-AAH23-1-001|MAPSAS-AAH24-1-001|MAPSAS-AAH25-1-001|MAPSAS-AAH26-1-001|MAPSAS-AAH3-1-001|MAPSAS-AAH4-1-001|MAPSAS-AAH7-1-001|MAPSAS-AAH8-1-001|MAPSAS-AAHA-1-001|MAPSAS-AAHA1-1-001|MAPSAS-AEAH-1-001|MAPSAS-AEAH2-1-001|MAPSAS-AEAH3-1-001|MAPSAS-AEAH4-1-001|MAPSAS-WAEA-1-001",
       "exhibit_ids": [
         "MAPSAH-AAH(-1-001",
         "MAPSAH-AAH1-1-001",
@@ -309503,6 +312362,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AAH23-1-001",
         "MAPSAS-AAH24-1-001",
         "MAPSAS-AAH25-1-001",
+        "MAPSAS-AAH26-1-001",
         "MAPSAS-AAH3-1-001",
         "MAPSAS-AAH4-1-001",
         "MAPSAS-AAH7-1-001",
@@ -309846,6 +312706,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "ART G106",
           "credit": "3 hours in Survey of Art from Renaissance to Contemporary"
+        },
+        {
+          "course": "ART B36",
+          "credit": "3 hours in Survey of Western Art II"
         }
       ],
       "authoritative_recs": [],
@@ -310043,6 +312907,12 @@ window.CPL_STATEWIDE = {
           "lines": 2
         },
         {
+          "id": "MAPSAS-AAH26-1-001",
+          "title": "AP Art History",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AAH3-1-001",
           "title": "AP Art History",
           "units": 3.0,
@@ -310113,7 +312983,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 6.0,
         "Barstow Community College": 9.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -310200,7 +313070,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 3,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -310294,7 +313164,8 @@ window.CPL_STATEWIDE = {
           19
         ],
         "Bakersfield College": [
-          19
+          19,
+          41
         ],
         "Barstow Community College": [
           19,
@@ -310596,10 +313467,10 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 21.0,
-      "rec_units_total": 130.5
+      "rec_units_total": 133.5
     },
     {
-      "exhibit_id": "MAPSAH-AEM-1-001|MAPSAH-AME2-1-001|MAPSAS-A-M1-1-001|MAPSAS-A:M-1-001|MAPSAS-AE-M1-1-001|MAPSAS-AE-M2-1-001|MAPSAS-AE-M5-1-001|MAPSAS-AE-M7-1-001|MAPSAS-AE-M8-1-001|MAPSAS-AEM(-1-001|MAPSAS-AEM(1-1-001|MAPSAS-AEM1-1-001|MAPSAS-AEM3-1-001|MAPSAS-AEM5-1-001|MAPSAS-AM(O-1-001|MAPSAS-AM(O2-1-001|MAPSAS-AM-A-1-001|MAPSAS-AM-S-1-001|MAPSAS-AM10-1-001|MAPSAS-AM12-1-001|MAPSAS-AM14-1-001|MAPSAS-AM16-1-001|MAPSAS-AM19-1-001|MAPSAS-AM2-1-001|MAPSAS-AM21-1-001|MAPSAS-AM23-1-001|MAPSAS-AM25-1-001|MAPSAS-AM27-1-001|MAPSAS-AM29-1-001|MAPSAS-AM3-1-001|MAPSAS-AM31-1-001|MAPSAS-AM33-1-001|MAPSAS-AM5-1-001|MAPSAS-AM6-1-001|MAPSAS-AM7-1-001",
+      "exhibit_id": "MAPSAH-AEM-1-001|MAPSAH-AME2-1-001|MAPSAS-A-M1-1-001|MAPSAS-A:M-1-001|MAPSAS-AE-M1-1-001|MAPSAS-AE-M2-1-001|MAPSAS-AE-M5-1-001|MAPSAS-AE-M7-1-001|MAPSAS-AE-M8-1-001|MAPSAS-AEM(-1-001|MAPSAS-AEM(1-1-001|MAPSAS-AEM1-1-001|MAPSAS-AEM3-1-001|MAPSAS-AEM5-1-001|MAPSAS-AM(O-1-001|MAPSAS-AM(O2-1-001|MAPSAS-AM-A-1-001|MAPSAS-AM-S-1-001|MAPSAS-AM10-1-001|MAPSAS-AM12-1-001|MAPSAS-AM14-1-001|MAPSAS-AM16-1-001|MAPSAS-AM19-1-001|MAPSAS-AM2-1-001|MAPSAS-AM21-1-001|MAPSAS-AM23-1-001|MAPSAS-AM25-1-001|MAPSAS-AM27-1-001|MAPSAS-AM29-1-001|MAPSAS-AM3-1-001|MAPSAS-AM31-1-001|MAPSAS-AM33-1-001|MAPSAS-AM35-1-001|MAPSAS-AM5-1-001|MAPSAS-AM6-1-001|MAPSAS-AM7-1-001",
       "exhibit_ids": [
         "MAPSAH-AEM-1-001",
         "MAPSAH-AME2-1-001",
@@ -310633,6 +313504,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AM3-1-001",
         "MAPSAS-AM31-1-001",
         "MAPSAS-AM33-1-001",
+        "MAPSAS-AM35-1-001",
         "MAPSAS-AM5-1-001",
         "MAPSAS-AM6-1-001",
         "MAPSAS-AM7-1-001"
@@ -311108,6 +313980,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-AM35-1-001",
+          "title": "AP Macroeconomics",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AM5-1-001",
           "title": "AP Macroeconomics",
           "units": 3.0,
@@ -311130,7 +314008,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 6.0,
         "Barstow Community College": 6.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -311217,7 +314095,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -311311,7 +314189,8 @@ window.CPL_STATEWIDE = {
           11
         ],
         "Bakersfield College": [
-          11
+          11,
+          19
         ],
         "Barstow Community College": [
           11,
@@ -311594,7 +314473,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 87.0
     },
     {
-      "exhibit_id": "MAPSAH-AEM1-1-001|MAPSAH-AME1-1-001|MAPSAS-A-M-1-001|MAPSAS-A:M1-1-001|MAPSAS-AE-M-1-001|MAPSAS-AE-M3-1-001|MAPSAS-AE-M6-1-001|MAPSAS-AE-M9-1-001|MAPSAS-AEM(2-1-001|MAPSAS-AEM(3-1-001|MAPSAS-AEM-1-001|MAPSAS-AEM2-1-001|MAPSAS-AEM4-1-001|MAPSAS-AEM6-1-001|MAPSAS-AE–M-1-001|MAPSAS-AM(O1-1-001|MAPSAS-AM(O3-1-001|MAPSAS-AM-A1-1-001|MAPSAS-AM-S1-1-001|MAPSAS-AM1-1-001|MAPSAS-AM11-1-001|MAPSAS-AM13-1-001|MAPSAS-AM15-1-001|MAPSAS-AM17-1-001|MAPSAS-AM18-1-001|MAPSAS-AM20-1-001|MAPSAS-AM22-1-001|MAPSAS-AM24-1-001|MAPSAS-AM26-1-001|MAPSAS-AM28-1-001|MAPSAS-AM30-1-001|MAPSAS-AM32-1-001|MAPSAS-AM34-1-001|MAPSAS-AM4-1-001|MAPSAS-AM8-1-001|MAPSAS-AM9-1-001",
+      "exhibit_id": "MAPSAH-AEM1-1-001|MAPSAH-AME1-1-001|MAPSAS-A-M-1-001|MAPSAS-A:M1-1-001|MAPSAS-AE-M-1-001|MAPSAS-AE-M3-1-001|MAPSAS-AE-M6-1-001|MAPSAS-AE-M9-1-001|MAPSAS-AEM(2-1-001|MAPSAS-AEM(3-1-001|MAPSAS-AEM-1-001|MAPSAS-AEM2-1-001|MAPSAS-AEM4-1-001|MAPSAS-AEM6-1-001|MAPSAS-AE–M-1-001|MAPSAS-AM(O1-1-001|MAPSAS-AM(O3-1-001|MAPSAS-AM-A1-1-001|MAPSAS-AM-S1-1-001|MAPSAS-AM1-1-001|MAPSAS-AM11-1-001|MAPSAS-AM13-1-001|MAPSAS-AM15-1-001|MAPSAS-AM17-1-001|MAPSAS-AM18-1-001|MAPSAS-AM20-1-001|MAPSAS-AM22-1-001|MAPSAS-AM24-1-001|MAPSAS-AM26-1-001|MAPSAS-AM28-1-001|MAPSAS-AM30-1-001|MAPSAS-AM32-1-001|MAPSAS-AM34-1-001|MAPSAS-AM36-1-001|MAPSAS-AM4-1-001|MAPSAS-AM8-1-001|MAPSAS-AM9-1-001",
       "exhibit_ids": [
         "MAPSAH-AEM1-1-001",
         "MAPSAH-AME1-1-001",
@@ -311629,6 +314508,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AM30-1-001",
         "MAPSAS-AM32-1-001",
         "MAPSAS-AM34-1-001",
+        "MAPSAS-AM36-1-001",
         "MAPSAS-AM4-1-001",
         "MAPSAS-AM8-1-001",
         "MAPSAS-AM9-1-001"
@@ -312111,6 +314991,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-AM36-1-001",
+          "title": "AP Microeconomics",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AM4-1-001",
           "title": "AP Microeconomics",
           "units": 3.0,
@@ -312133,7 +315019,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 6.0,
         "Barstow Community College": 6.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -312220,7 +315106,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -312314,7 +315200,8 @@ window.CPL_STATEWIDE = {
           12
         ],
         "Bakersfield College": [
-          12
+          12,
+          19
         ],
         "Barstow Community College": [
           12,
@@ -313561,7 +316448,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 58.5
     },
     {
-      "exhibit_id": "MAPSAH-ACB1-1-001|MAPSAH-ACBE1-1-001|MAPSAP-AECA-1-001|MAPSAS-A-CB-1-001|MAPSAS-A:CB-1-001|MAPSAS-ACB(-1-001|MAPSAS-ACB(1-1-001|MAPSAS-ACB(2-1-001|MAPSAS-ACB(3-1-001|MAPSAS-ACB(4-1-001|MAPSAS-ACB(5-1-001|MAPSAS-ACB(6-1-001|MAPSAS-ACB(7-1-001|MAPSAS-ACB(8-1-001|MAPSAS-ACB--1-001|MAPSAS-ACB-1-1-001|MAPSAS-ACB-10-1-001|MAPSAS-ACB-11-1-001|MAPSAS-ACB-12-1-001|MAPSAS-ACB-2-1-001|MAPSAS-ACB-3-1-001|MAPSAS-ACB-4-1-001|MAPSAS-ACB-5-1-001|MAPSAS-ACB-6-1-001|MAPSAS-ACB-7-1-001|MAPSAS-ACB-8-1-001|MAPSAS-ACB-9-1-001|MAPSAS-ACB1-1-001|MAPSAS-ACB10-1-001|MAPSAS-ACB11-1-001|MAPSAS-ACB12-1-001|MAPSAS-ACB13-1-001|MAPSAS-ACB2-1-001|MAPSAS-ACB3-1-001|MAPSAS-ACB4-1-001|MAPSAS-ACB5-1-001|MAPSAS-ACB9-1-001|MAPSAS-ACBA3-1-001|MAPSAS-AECB-1-001|MAPSAS-AECB1-1-001|MAPSAS-AM-C1-1-001|MAPSAS-AM-C4-1-001|MAPSAS-WAEC1-1-001",
+      "exhibit_id": "MAPSAH-ACB1-1-001|MAPSAH-ACBE1-1-001|MAPSAP-AECA-1-001|MAPSAS-A-CB-1-001|MAPSAS-A:CB-1-001|MAPSAS-ACB(-1-001|MAPSAS-ACB(1-1-001|MAPSAS-ACB(2-1-001|MAPSAS-ACB(3-1-001|MAPSAS-ACB(4-1-001|MAPSAS-ACB(5-1-001|MAPSAS-ACB(6-1-001|MAPSAS-ACB(7-1-001|MAPSAS-ACB(8-1-001|MAPSAS-ACB--1-001|MAPSAS-ACB-1-1-001|MAPSAS-ACB-10-1-001|MAPSAS-ACB-11-1-001|MAPSAS-ACB-12-1-001|MAPSAS-ACB-2-1-001|MAPSAS-ACB-3-1-001|MAPSAS-ACB-4-1-001|MAPSAS-ACB-5-1-001|MAPSAS-ACB-6-1-001|MAPSAS-ACB-7-1-001|MAPSAS-ACB-8-1-001|MAPSAS-ACB-9-1-001|MAPSAS-ACB1-1-001|MAPSAS-ACB10-1-001|MAPSAS-ACB11-1-001|MAPSAS-ACB12-1-001|MAPSAS-ACB13-1-001|MAPSAS-ACB14-1-001|MAPSAS-ACB2-1-001|MAPSAS-ACB3-1-001|MAPSAS-ACB4-1-001|MAPSAS-ACB5-1-001|MAPSAS-ACB9-1-001|MAPSAS-ACBA3-1-001|MAPSAS-AECB-1-001|MAPSAS-AECB1-1-001|MAPSAS-AM-C1-1-001|MAPSAS-AM-C4-1-001|MAPSAS-WAEC1-1-001",
       "exhibit_ids": [
         "MAPSAH-ACB1-1-001",
         "MAPSAH-ACBE1-1-001",
@@ -313595,6 +316482,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-ACB11-1-001",
         "MAPSAS-ACB12-1-001",
         "MAPSAS-ACB13-1-001",
+        "MAPSAS-ACB14-1-001",
         "MAPSAS-ACB2-1-001",
         "MAPSAS-ACB3-1-001",
         "MAPSAS-ACB4-1-001",
@@ -313992,6 +316880,14 @@ window.CPL_STATEWIDE = {
         {
           "course": "MATH C2210",
           "credit": "5 hours in Calculus I: Early Transcendentals"
+        },
+        {
+          "course": "MATH B6A",
+          "credit": "4 hours in Analytic Geometry/Calculus I"
+        },
+        {
+          "course": "MATH B6B",
+          "credit": "4 hours in Analytic Geometry/Calculus II"
         }
       ],
       "authoritative_recs": [],
@@ -314189,6 +317085,12 @@ window.CPL_STATEWIDE = {
           "lines": 2
         },
         {
+          "id": "MAPSAS-ACB14-1-001",
+          "title": "AP Calculus BC",
+          "units": 8.0,
+          "lines": 2
+        },
+        {
           "id": "MAPSAS-ACB2-1-001",
           "title": "AP Calculus BC",
           "units": 5.0,
@@ -314259,7 +317161,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 11.0,
         "Barstow Community College": 11.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -314346,7 +317248,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 3,
         "Barstow Community College": 3,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -314440,7 +317342,9 @@ window.CPL_STATEWIDE = {
           19
         ],
         "Bakersfield College": [
-          19
+          19,
+          53,
+          54
         ],
         "Barstow Community College": [
           19,
@@ -314742,7 +317646,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 40.0,
-      "rec_units_total": 241.0
+      "rec_units_total": 249.0
     },
     {
       "exhibit_id": "MAPCXH-BVR-5-1-001|MAPCXH-E-HS-1-001|MAPCXH-FHSE-1-001|MAPCXH-FHSE1-1-001|MAPCXH-FU-F-1-001|MAPCXH-FU-F1-1-001|MAPCXH-FU-H-1-001|MAPCXH-L4L--1-001|MAPCXN-EMR-1-001",
@@ -315933,7 +318837,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPSAH-AB(1-1-001|MAPSAH-AB(11-1-001|MAPSAP-B1\tB-1-001|MAPSAS-A:B-1-001|MAPSAS-AB(O-1-001|MAPSAS-AB-1-001|MAPSAS-AB-S-1-001|MAPSAS-AB-S1-1-001|MAPSAS-AB1-1-001|MAPSAS-AB10-1-001|MAPSAS-AB11-1-001|MAPSAS-AB12-1-001|MAPSAS-AB13-1-001|MAPSAS-AB14-1-001|MAPSAS-AB15-1-001|MAPSAS-AB16-1-001|MAPSAS-AB17-1-001|MAPSAS-AB18-1-001|MAPSAS-AB19-1-001|MAPSAS-AB2-1-001|MAPSAS-AB20-1-001|MAPSAS-AB21-1-001|MAPSAS-AB22-1-001|MAPSAS-AB23-1-001|MAPSAS-AB24-1-001|MAPSAS-AB25-1-001|MAPSAS-AB26-1-001|MAPSAS-AB27-1-001|MAPSAS-AB3-1-001|MAPSAS-AB4-1-001|MAPSAS-AB5-1-001|MAPSAS-AB6-1-001|MAPSAS-AB8-1-001|MAPSAS-AB9-1-001|MAPSAS-AEB(-1-001|MAPSAS-AEB-1-001|MAPSAS-AEB1-1-001|MAPSAS-AEB2-1-001|MAPSAS-AEB3-1-001|MAPSAS-APE-2-1-001|MAPSAS-WAEB-1-001",
+      "exhibit_id": "MAPSAH-AB(1-1-001|MAPSAH-AB(11-1-001|MAPSAP-B1\tB-1-001|MAPSAS-A:B-1-001|MAPSAS-AB(O-1-001|MAPSAS-AB-1-001|MAPSAS-AB-S-1-001|MAPSAS-AB-S1-1-001|MAPSAS-AB1-1-001|MAPSAS-AB10-1-001|MAPSAS-AB11-1-001|MAPSAS-AB12-1-001|MAPSAS-AB13-1-001|MAPSAS-AB14-1-001|MAPSAS-AB15-1-001|MAPSAS-AB16-1-001|MAPSAS-AB17-1-001|MAPSAS-AB18-1-001|MAPSAS-AB19-1-001|MAPSAS-AB2-1-001|MAPSAS-AB20-1-001|MAPSAS-AB21-1-001|MAPSAS-AB22-1-001|MAPSAS-AB23-1-001|MAPSAS-AB24-1-001|MAPSAS-AB25-1-001|MAPSAS-AB26-1-001|MAPSAS-AB27-1-001|MAPSAS-AB28-1-001|MAPSAS-AB3-1-001|MAPSAS-AB4-1-001|MAPSAS-AB5-1-001|MAPSAS-AB6-1-001|MAPSAS-AB8-1-001|MAPSAS-AB9-1-001|MAPSAS-AEB(-1-001|MAPSAS-AEB-1-001|MAPSAS-AEB1-1-001|MAPSAS-AEB2-1-001|MAPSAS-AEB3-1-001|MAPSAS-APE-2-1-001|MAPSAS-WAEB-1-001",
       "exhibit_ids": [
         "MAPSAH-AB(1-1-001",
         "MAPSAH-AB(11-1-001",
@@ -315963,6 +318867,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AB25-1-001",
         "MAPSAS-AB26-1-001",
         "MAPSAS-AB27-1-001",
+        "MAPSAS-AB28-1-001",
         "MAPSAS-AB3-1-001",
         "MAPSAS-AB4-1-001",
         "MAPSAS-AB5-1-001",
@@ -316338,6 +319243,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "BIO 10",
           "credit": "4 hours in General Biology"
+        },
+        {
+          "course": "BIOL B11",
+          "credit": "4 hours in Concepts of Biology"
         }
       ],
       "authoritative_recs": [],
@@ -316511,6 +319420,12 @@ window.CPL_STATEWIDE = {
           "lines": 2
         },
         {
+          "id": "MAPSAS-AB28-1-001",
+          "title": "AP Biology",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AB3-1-001",
           "title": "AP Biology",
           "units": 4.0,
@@ -316593,7 +319508,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 4.0,
         "American River College": 4.0,
         "Antelope Valley College": 4.0,
-        "Bakersfield College": 4.0,
+        "Bakersfield College": 8.0,
         "Barstow Community College": 8.0,
         "Berkeley City College": 4.0,
         "Butte College": 4.0,
@@ -316680,7 +319595,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 2,
         "American River College": 2,
         "Antelope Valley College": 2,
-        "Bakersfield College": 2,
+        "Bakersfield College": 3,
         "Barstow Community College": 3,
         "Berkeley City College": 2,
         "Butte College": 2,
@@ -316778,7 +319693,8 @@ window.CPL_STATEWIDE = {
         ],
         "Bakersfield College": [
           22,
-          23
+          23,
+          50
         ],
         "Barstow Community College": [
           22,
@@ -317149,10 +320065,10 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 4.0,
       "peer_units_max": 26.0,
-      "rec_units_total": 172.0
+      "rec_units_total": 176.0
     },
     {
-      "exhibit_id": "MAPSAH-IBH-1-001|MAPSAI-IEBH-1-001|MAPSAS-I:BH-1-001|MAPSAS-IB(-1-001|MAPSAS-IBH(-1-001|MAPSAS-IBH(1-1-001|MAPSAS-IBH(2-1-001|MAPSAS-IBH-1-001|MAPSAS-IBH-2-1-001|MAPSAS-IBH1-1-001|MAPSAS-IBH10-1-001|MAPSAS-IBH11-1-001|MAPSAS-IBH12-1-001|MAPSAS-IBH13-1-001|MAPSAS-IBH14-1-001|MAPSAS-IBH15-1-001|MAPSAS-IBH2-1-001|MAPSAS-IBH3-1-001|MAPSAS-IBH4-1-001|MAPSAS-IBH5-1-001|MAPSAS-IBH6-1-001|MAPSAS-IBH7-1-001|MAPSAS-IBH8-1-001|MAPSAS-IBH9-1-001|MAPSAS-IEBH-1-001",
+      "exhibit_id": "MAPSAH-IBH-1-001|MAPSAI-IEBH-1-001|MAPSAS-I:BH-1-001|MAPSAS-IB(-1-001|MAPSAS-IBH(-1-001|MAPSAS-IBH(1-1-001|MAPSAS-IBH(2-1-001|MAPSAS-IBH-1-001|MAPSAS-IBH-2-1-001|MAPSAS-IBH1-1-001|MAPSAS-IBH10-1-001|MAPSAS-IBH11-1-001|MAPSAS-IBH12-1-001|MAPSAS-IBH13-1-001|MAPSAS-IBH14-1-001|MAPSAS-IBH15-1-001|MAPSAS-IBH16-1-001|MAPSAS-IBH2-1-001|MAPSAS-IBH3-1-001|MAPSAS-IBH4-1-001|MAPSAS-IBH5-1-001|MAPSAS-IBH6-1-001|MAPSAS-IBH7-1-001|MAPSAS-IBH8-1-001|MAPSAS-IBH9-1-001|MAPSAS-IEBH-1-001",
       "exhibit_ids": [
         "MAPSAH-IBH-1-001",
         "MAPSAI-IEBH-1-001",
@@ -317170,6 +320086,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-IBH13-1-001",
         "MAPSAS-IBH14-1-001",
         "MAPSAS-IBH15-1-001",
+        "MAPSAS-IBH16-1-001",
         "MAPSAS-IBH2-1-001",
         "MAPSAS-IBH3-1-001",
         "MAPSAS-IBH4-1-001",
@@ -317521,6 +320438,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-IBH16-1-001",
+          "title": "IB Biology HL",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-IBH2-1-001",
           "title": "IB Biology HL",
           "units": 3.0,
@@ -317579,7 +320502,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 9.0,
         "Barstow Community College": 6.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -317665,7 +320588,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -317758,7 +320681,8 @@ window.CPL_STATEWIDE = {
           5
         ],
         "Bakersfield College": [
-          5
+          5,
+          16
         ],
         "Barstow Community College": [
           5,
@@ -318028,7 +320952,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 79.0
     },
     {
-      "exhibit_id": "MAPSAH-IPH-1-001|MAPSAS-I:PH-1-001|MAPSAS-IEPH-1-001|MAPSAS-IP(-1-001|MAPSAS-IPH(-1-001|MAPSAS-IPH-1-001|MAPSAS-IPH-2-1-001|MAPSAS-IPH10-1-001|MAPSAS-IPH13-1-001|MAPSAS-IPH15-1-001|MAPSAS-IPH17-1-001|MAPSAS-IPH19-1-001|MAPSAS-IPH21-1-001|MAPSAS-IPH23-1-001|MAPSAS-IPH25-1-001|MAPSAS-IPH27-1-001|MAPSAS-IPH29-1-001|MAPSAS-IPH3-1-001|MAPSAS-IPH5-1-001|MAPSAS-IPH6-1-001|MAPSAS-IPH8-1-001",
+      "exhibit_id": "MAPSAH-IPH-1-001|MAPSAS-I:PH-1-001|MAPSAS-IEPH-1-001|MAPSAS-IP(-1-001|MAPSAS-IPH(-1-001|MAPSAS-IPH-1-001|MAPSAS-IPH-2-1-001|MAPSAS-IPH10-1-001|MAPSAS-IPH13-1-001|MAPSAS-IPH15-1-001|MAPSAS-IPH17-1-001|MAPSAS-IPH19-1-001|MAPSAS-IPH21-1-001|MAPSAS-IPH23-1-001|MAPSAS-IPH25-1-001|MAPSAS-IPH27-1-001|MAPSAS-IPH29-1-001|MAPSAS-IPH3-1-001|MAPSAS-IPH31-1-001|MAPSAS-IPH5-1-001|MAPSAS-IPH6-1-001|MAPSAS-IPH8-1-001",
       "exhibit_ids": [
         "MAPSAH-IPH-1-001",
         "MAPSAS-I:PH-1-001",
@@ -318048,6 +320972,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-IPH27-1-001",
         "MAPSAS-IPH29-1-001",
         "MAPSAS-IPH3-1-001",
+        "MAPSAS-IPH31-1-001",
         "MAPSAS-IPH5-1-001",
         "MAPSAS-IPH6-1-001",
         "MAPSAS-IPH8-1-001"
@@ -318385,6 +321310,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-IPH31-1-001",
+          "title": "IB Physics HL",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-IPH5-1-001",
           "title": "IB Physics HL (score 5-7): Cal-GETC Area 5A",
           "units": 3.0,
@@ -318407,7 +321338,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 9.0,
         "Barstow Community College": 3.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -318492,7 +321423,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 1,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -318584,7 +321515,8 @@ window.CPL_STATEWIDE = {
           5
         ],
         "Bakersfield College": [
-          5
+          5,
+          13
         ],
         "Barstow Community College": [
           5
@@ -318849,7 +321781,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 65.0
     },
     {
-      "exhibit_id": "MAPSAH-IPH1-1-001|MAPSAS-I:PH1-1-001|MAPSAS-IEPH1-1-001|MAPSAS-IP(1-1-001|MAPSAS-IPH(1-1-001|MAPSAS-IPH-3-1-001|MAPSAS-IPH1-1-001|MAPSAS-IPH11-1-001|MAPSAS-IPH14-1-001|MAPSAS-IPH16-1-001|MAPSAS-IPH18-1-001|MAPSAS-IPH2-1-001|MAPSAS-IPH20-1-001|MAPSAS-IPH22-1-001|MAPSAS-IPH24-1-001|MAPSAS-IPH26-1-001|MAPSAS-IPH28-1-001|MAPSAS-IPH30-1-001|MAPSAS-IPH4-1-001|MAPSAS-IPH7-1-001|MAPSAS-IPH9-1-001",
+      "exhibit_id": "MAPSAH-IPH1-1-001|MAPSAS-I:PH1-1-001|MAPSAS-IEPH1-1-001|MAPSAS-IP(1-1-001|MAPSAS-IPH(1-1-001|MAPSAS-IPH-3-1-001|MAPSAS-IPH1-1-001|MAPSAS-IPH11-1-001|MAPSAS-IPH14-1-001|MAPSAS-IPH16-1-001|MAPSAS-IPH18-1-001|MAPSAS-IPH2-1-001|MAPSAS-IPH20-1-001|MAPSAS-IPH22-1-001|MAPSAS-IPH24-1-001|MAPSAS-IPH26-1-001|MAPSAS-IPH28-1-001|MAPSAS-IPH30-1-001|MAPSAS-IPH32-1-001|MAPSAS-IPH4-1-001|MAPSAS-IPH7-1-001|MAPSAS-IPH9-1-001",
       "exhibit_ids": [
         "MAPSAH-IPH1-1-001",
         "MAPSAS-I:PH1-1-001",
@@ -318869,6 +321801,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-IPH26-1-001",
         "MAPSAS-IPH28-1-001",
         "MAPSAS-IPH30-1-001",
+        "MAPSAS-IPH32-1-001",
         "MAPSAS-IPH4-1-001",
         "MAPSAS-IPH7-1-001",
         "MAPSAS-IPH9-1-001"
@@ -319088,6 +322021,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social & Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
         }
       ],
       "authoritative_recs": [],
@@ -319201,6 +322138,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-IPH32-1-001",
+          "title": "IB Psychology HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-IPH4-1-001",
           "title": "IB Psychology HL",
           "units": 3.0,
@@ -319223,7 +322166,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 6.0,
         "Barstow Community College": 3.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -319308,7 +322251,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 1,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -319400,7 +322343,8 @@ window.CPL_STATEWIDE = {
           4
         ],
         "Bakersfield College": [
-          4
+          4,
+          17
         ],
         "Barstow Community College": [
           4
@@ -319661,10 +322605,10 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 9.0,
-      "rec_units_total": 55.0
+      "rec_units_total": 58.0
     },
     {
-      "exhibit_id": "MAPSAH-ITH-1-001|MAPSAS-I:TH-1-001|MAPSAS-IETH-1-001|MAPSAS-IT(-1-001|MAPSAS-ITH(-1-001|MAPSAS-ITH-1-001|MAPSAS-ITH1-1-001|MAPSAS-ITH10-1-001|MAPSAS-ITH11-1-001|MAPSAS-ITH12-1-001|MAPSAS-ITH13-1-001|MAPSAS-ITH14-1-001|MAPSAS-ITH2-1-001|MAPSAS-ITH3-1-001|MAPSAS-ITH4-1-001|MAPSAS-ITH5-1-001|MAPSAS-ITH6-1-001|MAPSAS-ITH7-1-001|MAPSAS-ITH8-1-001|MAPSAS-ITH9-1-001",
+      "exhibit_id": "MAPSAH-ITH-1-001|MAPSAS-I:TH-1-001|MAPSAS-IETH-1-001|MAPSAS-IT(-1-001|MAPSAS-ITH(-1-001|MAPSAS-ITH-1-001|MAPSAS-ITH1-1-001|MAPSAS-ITH10-1-001|MAPSAS-ITH11-1-001|MAPSAS-ITH12-1-001|MAPSAS-ITH13-1-001|MAPSAS-ITH14-1-001|MAPSAS-ITH15-1-001|MAPSAS-ITH2-1-001|MAPSAS-ITH3-1-001|MAPSAS-ITH4-1-001|MAPSAS-ITH5-1-001|MAPSAS-ITH6-1-001|MAPSAS-ITH7-1-001|MAPSAS-ITH8-1-001|MAPSAS-ITH9-1-001",
       "exhibit_ids": [
         "MAPSAH-ITH-1-001",
         "MAPSAS-I:TH-1-001",
@@ -319678,6 +322622,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-ITH12-1-001",
         "MAPSAS-ITH13-1-001",
         "MAPSAS-ITH14-1-001",
+        "MAPSAS-ITH15-1-001",
         "MAPSAS-ITH2-1-001",
         "MAPSAS-ITH3-1-001",
         "MAPSAS-ITH4-1-001",
@@ -319907,6 +322852,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "Local GE Area 3",
           "credit": "3 hours in Arts & Humanities"
+        },
+        {
+          "course": "THEA B20",
+          "credit": "3 hours in Introduction to Theatre"
         }
       ],
       "authoritative_recs": [],
@@ -319984,6 +322933,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-ITH15-1-001",
+          "title": "IB Theatre HL",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-ITH2-1-001",
           "title": "IB Theatre HL",
           "units": 3.0,
@@ -320036,7 +322991,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 6.0,
         "Barstow Community College": 3.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -320121,7 +323076,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 1,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -320213,7 +323168,8 @@ window.CPL_STATEWIDE = {
           5
         ],
         "Bakersfield College": [
-          5
+          5,
+          18
         ],
         "Barstow Community College": [
           5
@@ -320475,7 +323431,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 9.0,
-      "rec_units_total": 61.0
+      "rec_units_total": 64.0
     },
     {
       "exhibit_id": "MAPSAS-IELA4-1-001|MAPSAS-ILAL-1-001|MAPSAS-ILAL25-1-001|MAPSAS-ILAL27-1-001|MAPSAS-ILAL4-1-001|MAPSAS-ILAL8-1-001",
@@ -322651,7 +325607,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 1.0
     },
     {
-      "exhibit_id": "MAPSAH-AC1-1-001|MAPSAH-ACE-1-001|MAPSAS-A-C1-1-001|MAPSAS-A:C1-1-001|MAPSAS-AC(1-1-001|MAPSAS-AC(11-1-001|MAPSAS-AC(O-1-001|MAPSAS-AC(O1-1-001|MAPSAS-AC(O2-1-001|MAPSAS-AC(O3-1-001|MAPSAS-AC(O4-1-001|MAPSAS-AC-S-1-001|MAPSAS-AC-S1-1-001|MAPSAS-AC1-1-001|MAPSAS-AC12-1-001|MAPSAS-AC13-1-001|MAPSAS-AC14-1-001|MAPSAS-AC15-1-001|MAPSAS-AC16-1-001|MAPSAS-AC17-1-001|MAPSAS-AC18-1-001|MAPSAS-AC19-1-001|MAPSAS-AC2-1-001|MAPSAS-AC20-1-001|MAPSAS-AC21-1-001|MAPSAS-AC22-1-001|MAPSAS-AC23-1-001|MAPSAS-AC24-1-001|MAPSAS-AC3-1-001|MAPSAS-AC4-1-001|MAPSAS-AC5-1-001|MAPSAS-AC6-1-001|MAPSAS-AC7-1-001|MAPSAS-AC8-1-001|MAPSAS-AC9-1-001|MAPSAS-AE-C-1-001|MAPSAS-AEC1-1-001|MAPSAS-AECV-1-001",
+      "exhibit_id": "MAPSAH-AC1-1-001|MAPSAH-ACE-1-001|MAPSAS-A-C1-1-001|MAPSAS-A:C1-1-001|MAPSAS-AC(1-1-001|MAPSAS-AC(11-1-001|MAPSAS-AC(O-1-001|MAPSAS-AC(O1-1-001|MAPSAS-AC(O2-1-001|MAPSAS-AC(O3-1-001|MAPSAS-AC(O4-1-001|MAPSAS-AC-S-1-001|MAPSAS-AC-S1-1-001|MAPSAS-AC1-1-001|MAPSAS-AC12-1-001|MAPSAS-AC13-1-001|MAPSAS-AC14-1-001|MAPSAS-AC15-1-001|MAPSAS-AC16-1-001|MAPSAS-AC17-1-001|MAPSAS-AC18-1-001|MAPSAS-AC19-1-001|MAPSAS-AC2-1-001|MAPSAS-AC20-1-001|MAPSAS-AC21-1-001|MAPSAS-AC22-1-001|MAPSAS-AC23-1-001|MAPSAS-AC24-1-001|MAPSAS-AC25-1-001|MAPSAS-AC3-1-001|MAPSAS-AC4-1-001|MAPSAS-AC5-1-001|MAPSAS-AC6-1-001|MAPSAS-AC7-1-001|MAPSAS-AC8-1-001|MAPSAS-AC9-1-001|MAPSAS-AE-C-1-001|MAPSAS-AEC1-1-001|MAPSAS-AECV-1-001",
       "exhibit_ids": [
         "MAPSAH-AC1-1-001",
         "MAPSAH-ACE-1-001",
@@ -322681,6 +325637,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AC22-1-001",
         "MAPSAS-AC23-1-001",
         "MAPSAS-AC24-1-001",
+        "MAPSAS-AC25-1-001",
         "MAPSAS-AC3-1-001",
         "MAPSAS-AC4-1-001",
         "MAPSAS-AC5-1-001",
@@ -323027,6 +325984,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "CPL 1",
           "credit": "1 hour in Elective Course Credits"
+        },
+        {
+          "course": "CHEM B2A",
+          "credit": "4 hours in Introductory General Chemistry"
         }
       ],
       "authoritative_recs": [],
@@ -323200,6 +326161,12 @@ window.CPL_STATEWIDE = {
           "lines": 2
         },
         {
+          "id": "MAPSAS-AC25-1-001",
+          "title": "AP Chemistry",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AC3-1-001",
           "title": "AP Chemistry",
           "units": 3.0,
@@ -323264,7 +326231,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 4.0,
         "American River College": 4.0,
         "Antelope Valley College": 4.0,
-        "Bakersfield College": 4.0,
+        "Bakersfield College": 8.0,
         "Barstow Community College": 8.0,
         "Berkeley City College": 4.0,
         "Butte College": 4.0,
@@ -323351,7 +326318,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 2,
         "American River College": 2,
         "Antelope Valley College": 2,
-        "Bakersfield College": 2,
+        "Bakersfield College": 3,
         "Barstow Community College": 3,
         "Berkeley City College": 2,
         "Butte College": 2,
@@ -323449,7 +326416,8 @@ window.CPL_STATEWIDE = {
         ],
         "Bakersfield College": [
           14,
-          15
+          15,
+          44
         ],
         "Barstow Community College": [
           14,
@@ -323817,10 +326785,10 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 4.0,
       "peer_units_max": 26.0,
-      "rec_units_total": 180.0
+      "rec_units_total": 184.0
     },
     {
-      "exhibit_id": "MAPSAH-AGH-1-001|MAPSAS-A-HG-1-001|MAPSAS-A:HG-1-001|MAPSAS-AEHG-1-001|MAPSAS-AEHG1-1-001|MAPSAS-AHG(-1-001|MAPSAS-AHG(1-1-001|MAPSAS-AHG(2-1-001|MAPSAS-AHG-1-001|MAPSAS-AHG-2-1-001|MAPSAS-AHG1-1-001|MAPSAS-AHG10-1-001|MAPSAS-AHG11-1-001|MAPSAS-AHG12-1-001|MAPSAS-AHG13-1-001|MAPSAS-AHG14-1-001|MAPSAS-AHG15-1-001|MAPSAS-AHG16-1-001|MAPSAS-AHG17-1-001|MAPSAS-AHG18-1-001|MAPSAS-AHG19-1-001|MAPSAS-AHG2-1-001|MAPSAS-AHG20-1-001|MAPSAS-AHG21-1-001|MAPSAS-AHG22-1-001|MAPSAS-AHG3-1-001|MAPSAS-AHG4-1-001|MAPSAS-AHG5-1-001|MAPSAS-AHG6-1-001|MAPSAS-AHG7-1-001|MAPSAS-AHG8-1-001|MAPSAS-AHG9-1-001",
+      "exhibit_id": "MAPSAH-AGH-1-001|MAPSAS-A-HG-1-001|MAPSAS-A:HG-1-001|MAPSAS-AEHG-1-001|MAPSAS-AEHG1-1-001|MAPSAS-AHG(-1-001|MAPSAS-AHG(1-1-001|MAPSAS-AHG(2-1-001|MAPSAS-AHG-1-001|MAPSAS-AHG-2-1-001|MAPSAS-AHG1-1-001|MAPSAS-AHG10-1-001|MAPSAS-AHG11-1-001|MAPSAS-AHG12-1-001|MAPSAS-AHG13-1-001|MAPSAS-AHG14-1-001|MAPSAS-AHG15-1-001|MAPSAS-AHG16-1-001|MAPSAS-AHG17-1-001|MAPSAS-AHG18-1-001|MAPSAS-AHG19-1-001|MAPSAS-AHG2-1-001|MAPSAS-AHG20-1-001|MAPSAS-AHG21-1-001|MAPSAS-AHG22-1-001|MAPSAS-AHG23-1-001|MAPSAS-AHG3-1-001|MAPSAS-AHG4-1-001|MAPSAS-AHG5-1-001|MAPSAS-AHG6-1-001|MAPSAS-AHG7-1-001|MAPSAS-AHG8-1-001|MAPSAS-AHG9-1-001",
       "exhibit_ids": [
         "MAPSAH-AGH-1-001",
         "MAPSAS-A-HG-1-001",
@@ -323847,6 +326815,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AHG20-1-001",
         "MAPSAS-AHG21-1-001",
         "MAPSAS-AHG22-1-001",
+        "MAPSAS-AHG23-1-001",
         "MAPSAS-AHG3-1-001",
         "MAPSAS-AHG4-1-001",
         "MAPSAS-AHG5-1-001",
@@ -324116,6 +327085,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social & Behavioral Sciences"
+        },
+        {
+          "course": "GEOG B2",
+          "credit": "3 hours in Human Geography"
         }
       ],
       "authoritative_recs": [],
@@ -324271,6 +327244,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-AHG23-1-001",
+          "title": "AP Human Geography",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AHG3-1-001",
           "title": "AP Human Geography",
           "units": 3.0,
@@ -324317,7 +327296,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 6.0,
         "Barstow Community College": 6.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -324404,7 +327383,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -324498,7 +327477,8 @@ window.CPL_STATEWIDE = {
           11
         ],
         "Bakersfield College": [
-          11
+          11,
+          27
         ],
         "Barstow Community College": [
           11,
@@ -324777,10 +327757,10 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 24.0,
-      "rec_units_total": 94.5
+      "rec_units_total": 97.5
     },
     {
-      "exhibit_id": "MAPCXS-AP(O1-1-001|MAPSAH-AP4-1-001|MAPSAH-AP5-1-001|MAPSAH-APE1-1-001|MAPSAH-PC-I-1-001|MAPSAP-P1TP-1-001|MAPSAS-A-P3-1-001|MAPSAS-A:P-1-001|MAPSAS-AE-P4-1-001|MAPSAS-AEP3-1-001|MAPSAS-AEP5-1-001|MAPSAS-AP(C-1-001|MAPSAS-AP(C1-1-001|MAPSAS-AP(O3-1-001|MAPSAS-AP-1-001|MAPSAS-AP-A1-1-001|MAPSAS-AP-A3-1-001|MAPSAS-AP-S1-1-001|MAPSAS-AP10-1-001|MAPSAS-AP113-1-001|MAPSAS-AP13-1-001|MAPSAS-AP14-1-001|MAPSAS-AP17-1-001|MAPSAS-AP20-1-001|MAPSAS-AP211-1-001|MAPSAS-AP214-1-001|MAPSAS-AP216-1-001|MAPSAS-AP219-1-001|MAPSAS-AP221-1-001|MAPSAS-AP222-1-001|MAPSAS-AP225-1-001|MAPSAS-AP227-1-001|MAPSAS-AP229-1-001|MAPSAS-AP230-1-001|MAPSAS-AP233-1-001|MAPSAS-AP28-1-001|MAPSAS-AP3-1-001|MAPSAS-AP5-1-001|MAPSAS-AP6-1-001|MAPSAS-AP7-1-001|MAPSAS-AP8-1-001|MAPSAS-CGAD-1-001",
+      "exhibit_id": "MAPCXS-AP(O1-1-001|MAPSAH-AP4-1-001|MAPSAH-AP5-1-001|MAPSAH-APE1-1-001|MAPSAH-PC-I-1-001|MAPSAP-P1TP-1-001|MAPSAS-A-P3-1-001|MAPSAS-A:P-1-001|MAPSAS-AE-P4-1-001|MAPSAS-AEP3-1-001|MAPSAS-AEP5-1-001|MAPSAS-AP(C-1-001|MAPSAS-AP(C1-1-001|MAPSAS-AP(O3-1-001|MAPSAS-AP-1-001|MAPSAS-AP-A1-1-001|MAPSAS-AP-A3-1-001|MAPSAS-AP-S1-1-001|MAPSAS-AP10-1-001|MAPSAS-AP113-1-001|MAPSAS-AP13-1-001|MAPSAS-AP14-1-001|MAPSAS-AP17-1-001|MAPSAS-AP20-1-001|MAPSAS-AP211-1-001|MAPSAS-AP214-1-001|MAPSAS-AP216-1-001|MAPSAS-AP219-1-001|MAPSAS-AP221-1-001|MAPSAS-AP222-1-001|MAPSAS-AP225-1-001|MAPSAS-AP227-1-001|MAPSAS-AP229-1-001|MAPSAS-AP230-1-001|MAPSAS-AP233-1-001|MAPSAS-AP235-1-001|MAPSAS-AP28-1-001|MAPSAS-AP3-1-001|MAPSAS-AP5-1-001|MAPSAS-AP6-1-001|MAPSAS-AP7-1-001|MAPSAS-AP8-1-001|MAPSAS-CGAD-1-001",
       "exhibit_ids": [
         "MAPCXS-AP(O1-1-001",
         "MAPSAH-AP4-1-001",
@@ -324817,6 +327797,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AP229-1-001",
         "MAPSAS-AP230-1-001",
         "MAPSAS-AP233-1-001",
+        "MAPSAS-AP235-1-001",
         "MAPSAS-AP28-1-001",
         "MAPSAS-AP3-1-001",
         "MAPSAS-AP5-1-001",
@@ -325276,6 +328257,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-AP235-1-001",
+          "title": "AP Psychology",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AP28-1-001",
           "title": "AP Psychology",
           "units": 3.0,
@@ -325322,7 +328309,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 6.0,
         "Barstow Community College": 6.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -325409,7 +328396,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -325503,6 +328490,7 @@ window.CPL_STATEWIDE = {
           7
         ],
         "Bakersfield College": [
+          1,
           7
         ],
         "Barstow Community College": [
@@ -325792,7 +328780,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 59.0
     },
     {
-      "exhibit_id": "MAPSAH-AL1-1-001|MAPSAH-ALLO-1-001|MAPSAS-A-L-1-001|MAPSAS-A:L-1-001|MAPSAS-AL(O-1-001|MAPSAS-AL(O1-1-001|MAPSAS-AL-S-1-001|MAPSAS-AL-V-1-001|MAPSAS-AL-V1-1-001|MAPSAS-AL1-1-001|MAPSAS-AL10-1-001|MAPSAS-AL11-1-001|MAPSAS-AL12-1-001|MAPSAS-AL13-1-001|MAPSAS-AL14-1-001|MAPSAS-AL15-1-001|MAPSAS-AL16-1-001|MAPSAS-AL17-1-001|MAPSAS-AL18-1-001|MAPSAS-AL19-1-001|MAPSAS-AL2-1-001|MAPSAS-AL20-1-001|MAPSAS-AL21-1-001|MAPSAS-AL22-1-001|MAPSAS-AL23-1-001|MAPSAS-AL3-1-001|MAPSAS-AL4-1-001|MAPSAS-AL5-1-001|MAPSAS-AL6-1-001|MAPSAS-AL7-1-001|MAPSAS-AL8-1-001|MAPSAS-AL9-1-001|MAPSAS-ALV-1-001|MAPSAS-ALV-2-1-001|MAPSAS-ALV1-1-001",
+      "exhibit_id": "MAPSAH-AL1-1-001|MAPSAH-ALLO-1-001|MAPSAS-A-L-1-001|MAPSAS-A:L-1-001|MAPSAS-AL(O-1-001|MAPSAS-AL(O1-1-001|MAPSAS-AL-S-1-001|MAPSAS-AL-V-1-001|MAPSAS-AL-V1-1-001|MAPSAS-AL1-1-001|MAPSAS-AL10-1-001|MAPSAS-AL11-1-001|MAPSAS-AL12-1-001|MAPSAS-AL13-1-001|MAPSAS-AL14-1-001|MAPSAS-AL15-1-001|MAPSAS-AL16-1-001|MAPSAS-AL17-1-001|MAPSAS-AL18-1-001|MAPSAS-AL19-1-001|MAPSAS-AL2-1-001|MAPSAS-AL20-1-001|MAPSAS-AL21-1-001|MAPSAS-AL22-1-001|MAPSAS-AL23-1-001|MAPSAS-AL24-1-001|MAPSAS-AL3-1-001|MAPSAS-AL4-1-001|MAPSAS-AL5-1-001|MAPSAS-AL6-1-001|MAPSAS-AL7-1-001|MAPSAS-AL8-1-001|MAPSAS-AL9-1-001|MAPSAS-ALV-1-001|MAPSAS-ALV-2-1-001|MAPSAS-ALV1-1-001",
       "exhibit_ids": [
         "MAPSAH-AL1-1-001",
         "MAPSAH-ALLO-1-001",
@@ -325819,6 +328807,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AL21-1-001",
         "MAPSAS-AL22-1-001",
         "MAPSAS-AL23-1-001",
+        "MAPSAS-AL24-1-001",
         "MAPSAS-AL3-1-001",
         "MAPSAS-AL4-1-001",
         "MAPSAS-AL5-1-001",
@@ -326260,6 +329249,12 @@ window.CPL_STATEWIDE = {
           "lines": 2
         },
         {
+          "id": "MAPSAS-AL24-1-001",
+          "title": "AP Latin",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AL3-1-001",
           "title": "AP Latin",
           "units": 3.0,
@@ -326324,7 +329319,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 6.0,
         "Barstow Community College": 7.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -326410,7 +329405,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -326503,7 +329498,8 @@ window.CPL_STATEWIDE = {
           10
         ],
         "Bakersfield College": [
-          10
+          10,
+          16
         ],
         "Barstow Community College": [
           10,
@@ -327796,7 +330792,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 152.5
     },
     {
-      "exhibit_id": "MAPSAH-ICH-1-001|MAPSAS-I:CH-1-001|MAPSAS-IC(-1-001|MAPSAS-ICH(-1-001|MAPSAS-ICH-1-001|MAPSAS-ICH1-1-001|MAPSAS-ICH10-1-001|MAPSAS-ICH11-1-001|MAPSAS-ICH12-1-001|MAPSAS-ICH13-1-001|MAPSAS-ICH14-1-001|MAPSAS-ICH15-1-001|MAPSAS-ICH16-1-001|MAPSAS-ICH2-1-001|MAPSAS-ICH3-1-001|MAPSAS-ICH4-1-001|MAPSAS-ICH5-1-001|MAPSAS-ICH6-1-001|MAPSAS-ICH7-1-001|MAPSAS-ICH8-1-001|MAPSAS-ICH9-1-001|MAPSAS-IECH-1-001|MAPSAS-IECH1-1-001",
+      "exhibit_id": "MAPSAH-ICH-1-001|MAPSAS-I:CH-1-001|MAPSAS-IC(-1-001|MAPSAS-ICH(-1-001|MAPSAS-ICH-1-001|MAPSAS-ICH1-1-001|MAPSAS-ICH10-1-001|MAPSAS-ICH11-1-001|MAPSAS-ICH12-1-001|MAPSAS-ICH13-1-001|MAPSAS-ICH14-1-001|MAPSAS-ICH15-1-001|MAPSAS-ICH16-1-001|MAPSAS-ICH17-1-001|MAPSAS-ICH2-1-001|MAPSAS-ICH3-1-001|MAPSAS-ICH4-1-001|MAPSAS-ICH5-1-001|MAPSAS-ICH6-1-001|MAPSAS-ICH7-1-001|MAPSAS-ICH8-1-001|MAPSAS-ICH9-1-001|MAPSAS-IECH-1-001|MAPSAS-IECH1-1-001",
       "exhibit_ids": [
         "MAPSAH-ICH-1-001",
         "MAPSAS-I:CH-1-001",
@@ -327811,6 +330807,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-ICH14-1-001",
         "MAPSAS-ICH15-1-001",
         "MAPSAS-ICH16-1-001",
+        "MAPSAS-ICH17-1-001",
         "MAPSAS-ICH2-1-001",
         "MAPSAS-ICH3-1-001",
         "MAPSAS-ICH4-1-001",
@@ -328129,6 +331126,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-ICH17-1-001",
+          "title": "IB Chemistry HL",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-ICH2-1-001",
           "title": "IB Chemistry HL",
           "units": 3.0,
@@ -328193,7 +331196,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 9.0,
         "Barstow Community College": 6.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -328279,7 +331282,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 2,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -328372,7 +331375,8 @@ window.CPL_STATEWIDE = {
           5
         ],
         "Bakersfield College": [
-          5
+          5,
+          13
         ],
         "Barstow Community College": [
           5,
@@ -328640,7 +331644,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 65.0
     },
     {
-      "exhibit_id": "MAPSAH-IGH-1-001|MAPSAS-I:GH-1-001|MAPSAS-IEGH-1-001|MAPSAS-IEGH1-1-001|MAPSAS-IG(-1-001|MAPSAS-IGH(-1-001|MAPSAS-IGH-1-001|MAPSAS-IGH1-1-001|MAPSAS-IGH10-1-001|MAPSAS-IGH11-1-001|MAPSAS-IGH12-1-001|MAPSAS-IGH13-1-001|MAPSAS-IGH14-1-001|MAPSAS-IGH2-1-001|MAPSAS-IGH3-1-001|MAPSAS-IGH4-1-001|MAPSAS-IGH5-1-001|MAPSAS-IGH6-1-001|MAPSAS-IGH7-1-001|MAPSAS-IGH8-1-001|MAPSAS-IGH9-1-001",
+      "exhibit_id": "MAPSAH-IGH-1-001|MAPSAS-I:GH-1-001|MAPSAS-IEGH-1-001|MAPSAS-IEGH1-1-001|MAPSAS-IG(-1-001|MAPSAS-IGH(-1-001|MAPSAS-IGH-1-001|MAPSAS-IGH1-1-001|MAPSAS-IGH10-1-001|MAPSAS-IGH11-1-001|MAPSAS-IGH12-1-001|MAPSAS-IGH13-1-001|MAPSAS-IGH14-1-001|MAPSAS-IGH15-1-001|MAPSAS-IGH2-1-001|MAPSAS-IGH3-1-001|MAPSAS-IGH4-1-001|MAPSAS-IGH5-1-001|MAPSAS-IGH6-1-001|MAPSAS-IGH7-1-001|MAPSAS-IGH8-1-001|MAPSAS-IGH9-1-001",
       "exhibit_ids": [
         "MAPSAH-IGH-1-001",
         "MAPSAS-I:GH-1-001",
@@ -328655,6 +331659,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-IGH12-1-001",
         "MAPSAS-IGH13-1-001",
         "MAPSAS-IGH14-1-001",
+        "MAPSAS-IGH15-1-001",
         "MAPSAS-IGH2-1-001",
         "MAPSAS-IGH3-1-001",
         "MAPSAS-IGH4-1-001",
@@ -328880,6 +331885,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "Local GE Area 4",
           "credit": "3 hours in Social & Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "6 hours in Social Sciences and Behavioral Sciences"
         }
       ],
       "authoritative_recs": [],
@@ -328963,6 +331972,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-IGH15-1-001",
+          "title": "IB Geography HL",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-IGH2-1-001",
           "title": "IB Geography HL",
           "units": 3.0,
@@ -329015,7 +332030,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 9.0,
         "Barstow Community College": 3.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -329101,7 +332116,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 1,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -329194,7 +332209,8 @@ window.CPL_STATEWIDE = {
           5
         ],
         "Bakersfield College": [
-          5
+          5,
+          17
         ],
         "Barstow Community College": [
           5
@@ -329457,7 +332473,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 9.0,
-      "rec_units_total": 55.0
+      "rec_units_total": 61.0
     },
     {
       "exhibit_id": "MAPCXS-A0IA-1-001|MAPCXS-A2OA-1-001",
@@ -330389,7 +333405,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
-      "exhibit_id": "MAPSAH-AES-1-001|MAPSAS-A-ES-1-001|MAPSAS-A:ES-1-001|MAPSAS-AE-E1-1-001|MAPSAS-AEES-1-001|MAPSAS-AEES1-1-001|MAPSAS-AES(-1-001|MAPSAS-AES(1-1-001|MAPSAS-AES(2-1-001|MAPSAS-AES-1-001|MAPSAS-AES-2-1-001|MAPSAS-AES-3-1-001|MAPSAS-AES1-1-001|MAPSAS-AES10-1-001|MAPSAS-AES11-1-001|MAPSAS-AES14-1-001|MAPSAS-AES15-1-001|MAPSAS-AES16-1-001|MAPSAS-AES17-1-001|MAPSAS-AES18-1-001|MAPSAS-AES19-1-001|MAPSAS-AES20-1-001|MAPSAS-AES21-1-001|MAPSAS-AES22-1-001|MAPSAS-AES23-1-001|MAPSAS-AES24-1-001|MAPSAS-AES25-1-001|MAPSAS-AES26-1-001|MAPSAS-AES3-1-001|MAPSAS-AES7-1-001|MAPSAS-AES8-1-001|MAPSAS-AES9-1-001|MAPSAS-AESG-1-001|MAPSAS-AESG1-1-001",
+      "exhibit_id": "MAPSAH-AES-1-001|MAPSAS-A-ES-1-001|MAPSAS-A:ES-1-001|MAPSAS-AE-E1-1-001|MAPSAS-AEES-1-001|MAPSAS-AEES1-1-001|MAPSAS-AES(-1-001|MAPSAS-AES(1-1-001|MAPSAS-AES(2-1-001|MAPSAS-AES-1-001|MAPSAS-AES-2-1-001|MAPSAS-AES-3-1-001|MAPSAS-AES1-1-001|MAPSAS-AES10-1-001|MAPSAS-AES11-1-001|MAPSAS-AES14-1-001|MAPSAS-AES15-1-001|MAPSAS-AES16-1-001|MAPSAS-AES17-1-001|MAPSAS-AES18-1-001|MAPSAS-AES19-1-001|MAPSAS-AES20-1-001|MAPSAS-AES21-1-001|MAPSAS-AES22-1-001|MAPSAS-AES23-1-001|MAPSAS-AES24-1-001|MAPSAS-AES25-1-001|MAPSAS-AES26-1-001|MAPSAS-AES27-1-001|MAPSAS-AES3-1-001|MAPSAS-AES7-1-001|MAPSAS-AES8-1-001|MAPSAS-AES9-1-001|MAPSAS-AESG-1-001|MAPSAS-AESG1-1-001",
       "exhibit_ids": [
         "MAPSAH-AES-1-001",
         "MAPSAS-A-ES-1-001",
@@ -330419,6 +333435,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AES24-1-001",
         "MAPSAS-AES25-1-001",
         "MAPSAS-AES26-1-001",
+        "MAPSAS-AES27-1-001",
         "MAPSAS-AES3-1-001",
         "MAPSAS-AES7-1-001",
         "MAPSAS-AES8-1-001",
@@ -330913,6 +333930,12 @@ window.CPL_STATEWIDE = {
           "lines": 2
         },
         {
+          "id": "MAPSAS-AES27-1-001",
+          "title": "AP Environmental Science",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AES3-1-001",
           "title": "AP Environmental Science",
           "units": 4.0,
@@ -330953,7 +333976,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 4.0,
         "American River College": 4.0,
         "Antelope Valley College": 4.0,
-        "Bakersfield College": 4.0,
+        "Bakersfield College": 7.0,
         "Barstow Community College": 8.0,
         "Berkeley City College": 4.0,
         "Butte College": 4.0,
@@ -331040,7 +334063,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 2,
         "American River College": 2,
         "Antelope Valley College": 2,
-        "Bakersfield College": 2,
+        "Bakersfield College": 3,
         "Barstow Community College": 3,
         "Berkeley City College": 2,
         "Butte College": 2,
@@ -331138,7 +334161,8 @@ window.CPL_STATEWIDE = {
         ],
         "Bakersfield College": [
           13,
-          14
+          14,
+          19
         ],
         "Barstow Community College": [
           13,
@@ -343725,7 +346749,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 1.0
     },
     {
-      "exhibit_id": "MAPSAH-AP2A-1-001|MAPSAH-AP2P-1-001|MAPSAS-A-P2-1-001|MAPSAS-A:P2-1-001|MAPSAS-AE-P1-1-001|MAPSAS-AEP2-1-001|MAPSAS-AEP23-1-001|MAPSAS-AP2(-1-001|MAPSAS-AP2(1-1-001|MAPSAS-AP21-1-001|MAPSAS-AP210-1-001|MAPSAS-AP212-1-001|MAPSAS-AP218-1-001|MAPSAS-AP22-1-001|MAPSAS-AP223-1-001|MAPSAS-AP226-1-001|MAPSAS-AP24-1-001|MAPSAS-AP25-1-001|MAPSAS-AP29-1-001|MAPSAS-AP2A-1-001|MAPSAS-AP2A1-1-001|MAPSAS-AP2A10-1-001|MAPSAS-AP2A11-1-001|MAPSAS-AP2A12-1-001|MAPSAS-AP2A13-1-001|MAPSAS-AP2A14-1-001|MAPSAS-AP2A2-1-001|MAPSAS-AP2A3-1-001|MAPSAS-AP2A4-1-001|MAPSAS-AP2A5-1-001|MAPSAS-AP2A6-1-001|MAPSAS-AP2A7-1-001|MAPSAS-AP2A8-1-001|MAPSAS-AP2A9-1-001|MAPSAS-AP2M-1-001",
+      "exhibit_id": "MAPSAH-AP2A-1-001|MAPSAH-AP2P-1-001|MAPSAS-A-P2-1-001|MAPSAS-A:P2-1-001|MAPSAS-AE-P1-1-001|MAPSAS-AEP2-1-001|MAPSAS-AEP23-1-001|MAPSAS-AP2(-1-001|MAPSAS-AP2(1-1-001|MAPSAS-AP21-1-001|MAPSAS-AP210-1-001|MAPSAS-AP212-1-001|MAPSAS-AP218-1-001|MAPSAS-AP22-1-001|MAPSAS-AP223-1-001|MAPSAS-AP226-1-001|MAPSAS-AP234-1-001|MAPSAS-AP24-1-001|MAPSAS-AP25-1-001|MAPSAS-AP29-1-001|MAPSAS-AP2A-1-001|MAPSAS-AP2A1-1-001|MAPSAS-AP2A10-1-001|MAPSAS-AP2A11-1-001|MAPSAS-AP2A12-1-001|MAPSAS-AP2A13-1-001|MAPSAS-AP2A14-1-001|MAPSAS-AP2A2-1-001|MAPSAS-AP2A3-1-001|MAPSAS-AP2A4-1-001|MAPSAS-AP2A5-1-001|MAPSAS-AP2A6-1-001|MAPSAS-AP2A7-1-001|MAPSAS-AP2A8-1-001|MAPSAS-AP2A9-1-001|MAPSAS-AP2M-1-001",
       "exhibit_ids": [
         "MAPSAH-AP2A-1-001",
         "MAPSAH-AP2P-1-001",
@@ -343743,6 +346767,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AP22-1-001",
         "MAPSAS-AP223-1-001",
         "MAPSAS-AP226-1-001",
+        "MAPSAS-AP234-1-001",
         "MAPSAS-AP24-1-001",
         "MAPSAS-AP25-1-001",
         "MAPSAS-AP29-1-001",
@@ -344165,6 +347190,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-AP234-1-001",
+          "title": "AP Physics 2",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AP24-1-001",
           "title": "AP Physics 2 (Score of 3-5)",
           "units": 5.0,
@@ -344283,7 +347314,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 4.0,
         "American River College": 4.0,
         "Antelope Valley College": 4.0,
-        "Bakersfield College": 4.0,
+        "Bakersfield College": 8.0,
         "Barstow Community College": 8.0,
         "Berkeley City College": 4.0,
         "Butte College": 4.0,
@@ -344370,7 +347401,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 2,
         "American River College": 2,
         "Antelope Valley College": 2,
-        "Bakersfield College": 2,
+        "Bakersfield College": 3,
         "Barstow Community College": 3,
         "Berkeley City College": 2,
         "Butte College": 2,
@@ -344468,7 +347499,8 @@ window.CPL_STATEWIDE = {
         ],
         "Bakersfield College": [
           15,
-          16
+          16,
+          17
         ],
         "Barstow Community College": [
           15,
@@ -352499,7 +355531,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 276.5
     },
     {
-      "exhibit_id": "MAPSAH-AP1A-1-001|MAPSAH-AP1P-1-001|MAPSAS-A-P1-1-001|MAPSAS-A-P11-1-001|MAPSAS-A:P11-1-001|MAPSAS-AE-P-1-001|MAPSAS-AEP1-1-001|MAPSAS-AP1(-1-001|MAPSAS-AP1(1-1-001|MAPSAS-AP11-1-001|MAPSAS-AP110-1-001|MAPSAS-AP111-1-001|MAPSAS-AP114-1-001|MAPSAS-AP115-1-001|MAPSAS-AP116-1-001|MAPSAS-AP117-1-001|MAPSAS-AP118-1-001|MAPSAS-AP18-1-001|MAPSAS-AP1A-1-001|MAPSAS-AP1A1-1-001|MAPSAS-AP1A10-1-001|MAPSAS-AP1A11-1-001|MAPSAS-AP1A12-1-001|MAPSAS-AP1A13-1-001|MAPSAS-AP1A14-1-001|MAPSAS-AP1A15-1-001|MAPSAS-AP1A2-1-001|MAPSAS-AP1A3-1-001|MAPSAS-AP1A4-1-001|MAPSAS-AP1A5-1-001|MAPSAS-AP1A6-1-001|MAPSAS-AP1A7-1-001|MAPSAS-AP1A8-1-001|MAPSAS-AP1A9-1-001|MAPSAS-AP1S-1-001",
+      "exhibit_id": "MAPSAH-AP1A-1-001|MAPSAH-AP1P-1-001|MAPSAS-A-P1-1-001|MAPSAS-A-P11-1-001|MAPSAS-A:P11-1-001|MAPSAS-AE-P-1-001|MAPSAS-AEP1-1-001|MAPSAS-AP1(-1-001|MAPSAS-AP1(1-1-001|MAPSAS-AP11-1-001|MAPSAS-AP110-1-001|MAPSAS-AP111-1-001|MAPSAS-AP114-1-001|MAPSAS-AP115-1-001|MAPSAS-AP116-1-001|MAPSAS-AP117-1-001|MAPSAS-AP118-1-001|MAPSAS-AP119-1-001|MAPSAS-AP18-1-001|MAPSAS-AP1A-1-001|MAPSAS-AP1A1-1-001|MAPSAS-AP1A10-1-001|MAPSAS-AP1A11-1-001|MAPSAS-AP1A12-1-001|MAPSAS-AP1A13-1-001|MAPSAS-AP1A14-1-001|MAPSAS-AP1A15-1-001|MAPSAS-AP1A2-1-001|MAPSAS-AP1A3-1-001|MAPSAS-AP1A4-1-001|MAPSAS-AP1A5-1-001|MAPSAS-AP1A6-1-001|MAPSAS-AP1A7-1-001|MAPSAS-AP1A8-1-001|MAPSAS-AP1A9-1-001|MAPSAS-AP1S-1-001",
       "exhibit_ids": [
         "MAPSAH-AP1A-1-001",
         "MAPSAH-AP1P-1-001",
@@ -352518,6 +355550,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AP116-1-001",
         "MAPSAS-AP117-1-001",
         "MAPSAS-AP118-1-001",
+        "MAPSAS-AP119-1-001",
         "MAPSAS-AP18-1-001",
         "MAPSAS-AP1A-1-001",
         "MAPSAS-AP1A1-1-001",
@@ -352954,6 +355987,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-AP119-1-001",
+          "title": "AP Physics 1",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-AP18-1-001",
           "title": "AP Physics 1 (Score of 3-5)",
           "units": 5.0,
@@ -353066,7 +356105,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 4.0,
         "American River College": 4.0,
         "Antelope Valley College": 4.0,
-        "Bakersfield College": 4.0,
+        "Bakersfield College": 8.0,
         "Barstow Community College": 8.0,
         "Berkeley City College": 4.0,
         "Butte College": 4.0,
@@ -353153,7 +356192,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 2,
         "American River College": 2,
         "Antelope Valley College": 2,
-        "Bakersfield College": 2,
+        "Bakersfield College": 3,
         "Barstow Community College": 3,
         "Berkeley City College": 2,
         "Butte College": 2,
@@ -353251,7 +356290,8 @@ window.CPL_STATEWIDE = {
         ],
         "Bakersfield College": [
           12,
-          13
+          13,
+          17
         ],
         "Barstow Community College": [
           12,
@@ -364817,6 +367857,90 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 5.0,
       "peer_units_max": 5.0,
       "rec_units_total": 5.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AJLA21-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AJLA21-1-001"
+      ],
+      "title": "AP Japanese\nLanguage\nand Culture",
+      "unified_title": "AP Japanese\nLanguage\nand Culture",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Japanese\nLanguage\nand Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "16",
+      "top_codes": [
+        "86"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 22,
+      "potential_names": [
+        "Chabot College",
+        "City College of San Francisco",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Foothill College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Irvine Valley College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Pierce College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Palomar College",
+        "Pasadena City College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "Southwestern College"
+      ],
+      "total_addressable": 23,
+      "credit_recs": [
+        {
+          "course": "JAPN B2",
+          "credit": "4 hours in Japanese II"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AJLA21-1-001",
+          "title": "AP Japanese\nLanguage\nand Culture",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
     },
     {
       "exhibit_id": "MAPICI-AL-1-001|MAPICI-ASE(10-1-001|MAPICI-ASE(25-1-001|MAPICI-ASE(3-1-001|MAPICI-ASEL3-1-001|MAPICI-IFAL1-1-001",
@@ -425790,7 +428914,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 167.5
     },
     {
-      "exhibit_id": "MAPSAH-ILAL-1-001|MAPSAS-I:LA-1-001|MAPSAS-IEL(-1-001|MAPSAS-ILAL10-1-001|MAPSAS-ILAL12-1-001|MAPSAS-ILAL14-1-001|MAPSAS-ILAL16-1-001|MAPSAS-ILAL18-1-001|MAPSAS-ILAL2-1-001|MAPSAS-ILAL21-1-001|MAPSAS-ILAL23-1-001|MAPSAS-ILAL30-1-001|MAPSAS-ILAL32-1-001|MAPSAS-ILAL35-1-001|MAPSAS-ILAL36-1-001|MAPSAS-ILAL38-1-001|MAPSAS-ILAL6-1-001",
+      "exhibit_id": "MAPSAH-ILAL-1-001|MAPSAS-I:LA-1-001|MAPSAS-IEL(-1-001|MAPSAS-ILAL10-1-001|MAPSAS-ILAL12-1-001|MAPSAS-ILAL14-1-001|MAPSAS-ILAL16-1-001|MAPSAS-ILAL18-1-001|MAPSAS-ILAL2-1-001|MAPSAS-ILAL21-1-001|MAPSAS-ILAL23-1-001|MAPSAS-ILAL30-1-001|MAPSAS-ILAL32-1-001|MAPSAS-ILAL35-1-001|MAPSAS-ILAL36-1-001|MAPSAS-ILAL38-1-001|MAPSAS-ILAL43-1-001|MAPSAS-ILAL6-1-001",
       "exhibit_ids": [
         "MAPSAH-ILAL-1-001",
         "MAPSAS-I:LA-1-001",
@@ -425808,6 +428932,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-ILAL35-1-001",
         "MAPSAS-ILAL36-1-001",
         "MAPSAS-ILAL38-1-001",
+        "MAPSAS-ILAL43-1-001",
         "MAPSAS-ILAL6-1-001"
       ],
       "title": "IB Language A: Literature HL",
@@ -426094,6 +429219,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-ILAL43-1-001",
+          "title": "IB Language A Literature HL",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-ILAL6-1-001",
           "title": "IB Language A: Literature (any language) HL (score 5-7): Cal-GETC Area 3B",
           "units": 3.0,
@@ -426104,7 +429235,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 9.0,
         "Barstow Community College": 3.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -426190,7 +429321,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 1,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -426283,7 +429414,8 @@ window.CPL_STATEWIDE = {
           2
         ],
         "Bakersfield College": [
-          2
+          2,
+          12
         ],
         "Barstow Community College": [
           2
@@ -426545,7 +429677,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 55.0
     },
     {
-      "exhibit_id": "MAPSAH-ILAL1-1-001|MAPSAS-I:LA1-1-001|MAPSAS-IEL(1-1-001|MAPSAS-ILAL11-1-001|MAPSAS-ILAL13-1-001|MAPSAS-ILAL15-1-001|MAPSAS-ILAL17-1-001|MAPSAS-ILAL19-1-001|MAPSAS-ILAL20-1-001|MAPSAS-ILAL22-1-001|MAPSAS-ILAL24-1-001|MAPSAS-ILAL29-1-001|MAPSAS-ILAL3-1-001|MAPSAS-ILAL31-1-001|MAPSAS-ILAL33-1-001|MAPSAS-ILAL34-1-001|MAPSAS-ILAL37-1-001|MAPSAS-ILAL39-1-001|MAPSAS-ILAL7-1-001",
+      "exhibit_id": "MAPSAH-ILAL1-1-001|MAPSAS-I:LA1-1-001|MAPSAS-IEL(1-1-001|MAPSAS-ILAL11-1-001|MAPSAS-ILAL13-1-001|MAPSAS-ILAL15-1-001|MAPSAS-ILAL17-1-001|MAPSAS-ILAL19-1-001|MAPSAS-ILAL20-1-001|MAPSAS-ILAL22-1-001|MAPSAS-ILAL24-1-001|MAPSAS-ILAL29-1-001|MAPSAS-ILAL3-1-001|MAPSAS-ILAL31-1-001|MAPSAS-ILAL33-1-001|MAPSAS-ILAL34-1-001|MAPSAS-ILAL37-1-001|MAPSAS-ILAL39-1-001|MAPSAS-ILAL42-1-001|MAPSAS-ILAL7-1-001",
       "exhibit_ids": [
         "MAPSAH-ILAL1-1-001",
         "MAPSAS-I:LA1-1-001",
@@ -426565,6 +429697,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-ILAL34-1-001",
         "MAPSAS-ILAL37-1-001",
         "MAPSAS-ILAL39-1-001",
+        "MAPSAS-ILAL42-1-001",
         "MAPSAS-ILAL7-1-001"
       ],
       "title": "IB Language A: Language and Literature HL",
@@ -426866,6 +429999,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-ILAL42-1-001",
+          "title": "IB Language A Language and Literature HL",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-ILAL7-1-001",
           "title": "IB Language A: Language and Literature (any language) HL (score 5-7): Cal-GETC Area 3B",
           "units": 3.0,
@@ -426876,7 +430015,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 9.0,
         "Barstow Community College": 3.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -426962,7 +430101,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 1,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -427055,7 +430194,8 @@ window.CPL_STATEWIDE = {
           2
         ],
         "Bakersfield College": [
-          2
+          2,
+          12
         ],
         "Barstow Community College": [
           2
@@ -427317,7 +430457,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 55.0
     },
     {
-      "exhibit_id": "MAPSAH-IMH--1-001|MAPSAS-I:MA-1-001|MAPSAS-IM(A-1-001|MAPSAS-IMA&-1-001|MAPSAS-IMA&2-1-001|MAPSAS-IMAA-1-001|MAPSAS-IMAA10-1-001|MAPSAS-IMAA12-1-001|MAPSAS-IMAA15-1-001|MAPSAS-IMAA18-1-001|MAPSAS-IMAA2-1-001|MAPSAS-IMAA4-1-001|MAPSAS-IMAA6-1-001|MAPSAS-IMAA8-1-001|MAPSAS-IMHA-1-001|MAPSAS-IMHA2-1-001",
+      "exhibit_id": "MAPSAH-IMH--1-001|MAPSAS-I:MA-1-001|MAPSAS-IM(A-1-001|MAPSAS-IMA&-1-001|MAPSAS-IMA&2-1-001|MAPSAS-IMAA-1-001|MAPSAS-IMAA10-1-001|MAPSAS-IMAA12-1-001|MAPSAS-IMAA15-1-001|MAPSAS-IMAA18-1-001|MAPSAS-IMAA2-1-001|MAPSAS-IMAA20-1-001|MAPSAS-IMAA4-1-001|MAPSAS-IMAA6-1-001|MAPSAS-IMAA8-1-001|MAPSAS-IMHA-1-001|MAPSAS-IMHA2-1-001",
       "exhibit_ids": [
         "MAPSAH-IMH--1-001",
         "MAPSAS-I:MA-1-001",
@@ -427330,6 +430470,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-IMAA15-1-001",
         "MAPSAS-IMAA18-1-001",
         "MAPSAS-IMAA2-1-001",
+        "MAPSAS-IMAA20-1-001",
         "MAPSAS-IMAA4-1-001",
         "MAPSAS-IMAA6-1-001",
         "MAPSAS-IMAA8-1-001",
@@ -427504,6 +430645,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts & Quantitative Reasoning"
+        },
+        {
+          "course": "Local GE Area 2",
+          "credit": "6 hours in Mathematics or Quantitative Reasoning"
         }
       ],
       "authoritative_recs": [],
@@ -427575,6 +430720,12 @@ window.CPL_STATEWIDE = {
           "lines": 2
         },
         {
+          "id": "MAPSAS-IMAA20-1-001",
+          "title": "IB Mathematics: Analysis and Approaches HL",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-IMAA4-1-001",
           "title": "IB Mathematics: Analysis and Approaches HL",
           "units": 3.0,
@@ -427609,7 +430760,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 9.0,
         "Barstow Community College": 3.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -427694,7 +430845,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 1,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -427786,7 +430937,8 @@ window.CPL_STATEWIDE = {
           1
         ],
         "Bakersfield College": [
-          1
+          1,
+          13
         ],
         "Barstow Community College": [
           1
@@ -428042,10 +431194,10 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 15.0,
-      "rec_units_total": 43.0
+      "rec_units_total": 49.0
     },
     {
-      "exhibit_id": "MAPSAH-IMHA-1-001|MAPSAS-I:MA1-1-001|MAPSAS-IM(A1-1-001|MAPSAS-IMA&1-1-001|MAPSAS-IMAA1-1-001|MAPSAS-IMAA11-1-001|MAPSAS-IMAA13-1-001|MAPSAS-IMAA14-1-001|MAPSAS-IMAA16-1-001|MAPSAS-IMAA3-1-001|MAPSAS-IMAA5-1-001|MAPSAS-IMAA7-1-001|MAPSAS-IMAA9-1-001|MAPSAS-IMHA1-1-001|MAPSAS-IMHA3-1-001",
+      "exhibit_id": "MAPSAH-IMHA-1-001|MAPSAS-I:MA1-1-001|MAPSAS-IM(A1-1-001|MAPSAS-IMA&1-1-001|MAPSAS-IMAA1-1-001|MAPSAS-IMAA11-1-001|MAPSAS-IMAA13-1-001|MAPSAS-IMAA14-1-001|MAPSAS-IMAA16-1-001|MAPSAS-IMAA21-1-001|MAPSAS-IMAA3-1-001|MAPSAS-IMAA5-1-001|MAPSAS-IMAA7-1-001|MAPSAS-IMAA9-1-001|MAPSAS-IMHA1-1-001|MAPSAS-IMHA3-1-001",
       "exhibit_ids": [
         "MAPSAH-IMHA-1-001",
         "MAPSAS-I:MA1-1-001",
@@ -428056,6 +431208,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-IMAA13-1-001",
         "MAPSAS-IMAA14-1-001",
         "MAPSAS-IMAA16-1-001",
+        "MAPSAS-IMAA21-1-001",
         "MAPSAS-IMAA3-1-001",
         "MAPSAS-IMAA5-1-001",
         "MAPSAS-IMAA7-1-001",
@@ -428232,6 +431385,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "Local GE Area 2",
           "credit": "3 hours in Mathematical Concepts & Quantitative Reasoning"
+        },
+        {
+          "course": "Local GE Area 2",
+          "credit": "6 hours in Mathematics or Quantitative Reasoning"
         }
       ],
       "authoritative_recs": [],
@@ -428291,6 +431448,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPSAS-IMAA21-1-001",
+          "title": "IB Mathematics: Applications and Interpretations HL",
+          "units": 6.0,
+          "lines": 1
+        },
+        {
           "id": "MAPSAS-IMAA3-1-001",
           "title": "IB Mathematics: Applications and Interpretation HL (Score of 4 or higher)",
           "units": 6.0,
@@ -428331,7 +431494,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 3.0,
         "American River College": 3.0,
         "Antelope Valley College": 3.0,
-        "Bakersfield College": 3.0,
+        "Bakersfield College": 9.0,
         "Barstow Community College": 3.0,
         "Berkeley City College": 3.0,
         "Butte College": 3.0,
@@ -428416,7 +431579,7 @@ window.CPL_STATEWIDE = {
         "Allan Hancock College": 1,
         "American River College": 1,
         "Antelope Valley College": 1,
-        "Bakersfield College": 1,
+        "Bakersfield College": 2,
         "Barstow Community College": 1,
         "Berkeley City College": 1,
         "Butte College": 1,
@@ -428508,7 +431671,8 @@ window.CPL_STATEWIDE = {
           1
         ],
         "Bakersfield College": [
-          1
+          1,
+          13
         ],
         "Barstow Community College": [
           1
@@ -428763,7 +431927,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 9.0,
-      "rec_units_total": 40.0
+      "rec_units_total": 46.0
     },
     {
       "exhibit_id": "MAPSAS-ILAL1-1-001|MAPSAS-ILAL26-1-001|MAPSAS-ILAL28-1-001|MAPSAS-ILAL5-1-001|MAPSAS-ILAL9-1-001",
@@ -429948,6 +433112,99 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 8.0
     },
     {
+      "exhibit_id": "MAPSAS-IH(R11-1-001|MAPSAS-IH(R16-1-001|MAPSAS-IH(R17-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IH(R11-1-001",
+        "MAPSAS-IH(R16-1-001",
+        "MAPSAS-IH(R17-1-001"
+      ],
+      "title": "IB History (any region) HL, Area 4",
+      "unified_title": "IB History (any region) HL, Area 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB History (any region) HL, Area 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "54",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Bakersfield College",
+        "Hartnell College",
+        "Irvine Valley College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 3,
+      "credit_recs": [
+        {
+          "course": "Local GE AREA 4",
+          "credit": "3 hours in AREA 4: SOCIAL SCIENCES"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social & Behavioral Sciences"
+        },
+        {
+          "course": "Local GE Area 4",
+          "credit": "6 hours in Social Sciences and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-IH(R11-1-001",
+          "title": "IB History (any region) HL, Area 4",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-IH(R16-1-001",
+          "title": "IB History (any region) HL, Area 4",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPSAS-IH(R17-1-001",
+          "title": "IB History (any region) HL, Area 4",
+          "units": 6.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 6.0,
+        "Hartnell College": 3.0,
+        "Irvine Valley College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1,
+        "Hartnell College": 1,
+        "Irvine Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          2
+        ],
+        "Hartnell College": [
+          1
+        ],
+        "Irvine Valley College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 12.0
+    },
+    {
       "exhibit_id": "MAPSAS-AFL2-1-001|MAPSAS-AFL7-1-001",
       "exhibit_ids": [
         "MAPSAS-AFL2-1-001",
@@ -430654,13 +433911,13 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 8.0
     },
     {
-      "exhibit_id": "MAPSAS-IH(R11-1-001|MAPSAS-IH(R16-1-001",
+      "exhibit_id": "MAPSAS-IH(R15-1-001|MAPSAS-IH(R18-1-001",
       "exhibit_ids": [
-        "MAPSAS-IH(R11-1-001",
-        "MAPSAS-IH(R16-1-001"
+        "MAPSAS-IH(R15-1-001",
+        "MAPSAS-IH(R18-1-001"
       ],
-      "title": "IB History (any region) HL, Area 4",
-      "unified_title": "IB History (any region) HL, Area 4",
+      "title": "IB History (any region) HL, Area 3",
+      "unified_title": "IB History (any region) HL, Area 3",
       "is_classified": false,
       "issuing_agency": "",
       "training_agency": "",
@@ -430668,7 +433925,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "IB History (any region) HL, Area 4"
+        "IB History (any region) HL, Area 3"
       ],
       "cpl_type": "Standardized Assessment",
       "discipline": "Not Mapped",
@@ -430678,56 +433935,56 @@ window.CPL_STATEWIDE = {
       "collaborative_type": "Local",
       "adopters": 2,
       "adopter_names": [
-        "Hartnell College",
-        "Irvine Valley College"
+        "Bakersfield College",
+        "Hartnell College"
       ],
       "potential": 0,
       "potential_names": [],
       "total_addressable": 2,
       "credit_recs": [
         {
-          "course": "Local GE AREA 4",
-          "credit": "3 hours in AREA 4: SOCIAL SCIENCES"
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts & Humanities"
         },
         {
-          "course": "Local GE Area 4",
-          "credit": "3 hours in Social & Behavioral Sciences"
+          "course": "Local GE Area 3",
+          "credit": "6 hours in Arts and Humanities"
         }
       ],
       "authoritative_recs": [],
       "exhibit_records": [
         {
-          "id": "MAPSAS-IH(R11-1-001",
-          "title": "IB History (any region) HL, Area 4",
+          "id": "MAPSAS-IH(R15-1-001",
+          "title": "IB History (any region) HL, Area 3",
           "units": 3.0,
           "lines": 1
         },
         {
-          "id": "MAPSAS-IH(R16-1-001",
-          "title": "IB History (any region) HL, Area 4",
-          "units": 3.0,
+          "id": "MAPSAS-IH(R18-1-001",
+          "title": "IB History (any region) HL, Area 3",
+          "units": 6.0,
           "lines": 1
         }
       ],
       "adopter_units": {
-        "Hartnell College": 3.0,
-        "Irvine Valley College": 3.0
+        "Bakersfield College": 6.0,
+        "Hartnell College": 3.0
       },
       "adopter_lines": {
-        "Hartnell College": 1,
-        "Irvine Valley College": 1
+        "Bakersfield College": 1,
+        "Hartnell College": 1
       },
       "adopter_rec_idx": {
-        "Hartnell College": [
+        "Bakersfield College": [
           1
         ],
-        "Irvine Valley College": [
+        "Hartnell College": [
           0
         ]
       },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 6.0
+      "peer_units_median": 4.5,
+      "peer_units_max": 6.0,
+      "rec_units_total": 9.0
     },
     {
       "exhibit_id": "MAPCBES-H0C-1-001",
@@ -437268,65 +440525,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPSAS-IH(R15-1-001",
-      "exhibit_ids": [
-        "MAPSAS-IH(R15-1-001"
-      ],
-      "title": "IB History (any region) HL, Area 3",
-      "unified_title": "IB History (any region) HL, Area 3",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "IB History (any region) HL, Area 3"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "cip_sector": "54",
-      "top_codes": [],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Hartnell College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 1,
-      "credit_recs": [
-        {
-          "course": "Local GE Area 3",
-          "credit": "3 hours in Arts & Humanities"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPSAS-IH(R15-1-001",
-          "title": "IB History (any region) HL, Area 3",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Hartnell College": 3.0
-      },
-      "adopter_lines": {
-        "Hartnell College": 1
-      },
-      "adopter_rec_idx": {
-        "Hartnell College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
       "exhibit_id": "MAPSAS-ILAL40-1-001",
       "exhibit_ids": [
         "MAPSAS-ILAL40-1-001"
@@ -437437,6 +440635,2317 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Hartnell College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AAHA4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AAHA4-1-001"
+      ],
+      "title": "AP Art History, Area 3",
+      "unified_title": "AP Art History, Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Art History, Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "50",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AAHA4-1-001",
+          "title": "AP Art History, Area 3",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ABA5-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ABA5-1-001"
+      ],
+      "title": "AP Biology, Area 5",
+      "unified_title": "AP Biology, Area 5",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Biology, Area 5"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "26",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 5",
+          "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ABA5-1-001",
+          "title": "AP Biology, Area 5",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ACAA1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACAA1-1-001"
+      ],
+      "title": "AP Calculus AB, Area 2",
+      "unified_title": "AP Calculus AB, Area 2",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Calculus AB, Area 2"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "27",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 2",
+          "credit": "4 hours in Mathematics or Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ACAA1-1-001",
+          "title": "AP Calculus AB, Area 2",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ACBA5-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACBA5-1-001"
+      ],
+      "title": "AP Calculus BC, Area 2",
+      "unified_title": "AP Calculus BC, Area 2",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Calculus BC, Area 2"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "27",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 2",
+          "credit": "8 hours in Mathematics or Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ACBA5-1-001",
+          "title": "AP Calculus BC, Area 2",
+          "units": 8.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 8.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ACA51-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACA51-1-001"
+      ],
+      "title": "AP Chemistry, Area 5",
+      "unified_title": "AP Chemistry, Area 5",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Chemistry, Area 5"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "40",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 5",
+          "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ACA51-1-001",
+          "title": "AP Chemistry, Area 5",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ACLA22-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACLA22-1-001"
+      ],
+      "title": "AP Chinese Language\nand Culture",
+      "unified_title": "AP Chinese Language\nand Culture",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Chinese Language\nand Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "16",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ACLA22-1-001",
+          "title": "AP Chinese Language\nand Culture",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ACGA19-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACGA19-1-001"
+      ],
+      "title": "AP Comparative Government\nand Politics, Area 4",
+      "unified_title": "AP Comparative Government\nand Politics, Area 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Comparative Government\nand Politics, Area 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "45",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ACGA19-1-001",
+          "title": "AP Comparative Government\nand Politics, Area 4",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AELA34-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AELA34-1-001"
+      ],
+      "title": "AP English Language, Area 1A",
+      "unified_title": "AP English Language, Area 1A",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English Language, Area 1A"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "23",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 1A",
+          "credit": "3 hours in English Communication"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AELA34-1-001",
+          "title": "AP English Language, Area 1A",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AELA36-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AELA36-1-001"
+      ],
+      "title": "AP English\nLanguage and\nComposition, Area 1A",
+      "unified_title": "AP English\nLanguage and\nComposition, Area 1A",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English\nLanguage and\nComposition, Area 1A"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "23",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 1A",
+          "credit": "3 hours in English Communication"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AELA36-1-001",
+          "title": "AP English\nLanguage and\nComposition, Area 1A",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AELA37-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AELA37-1-001"
+      ],
+      "title": "AP English\nLiterature, Area 1A and Area 3",
+      "unified_title": "AP English\nLiterature, Area 1A and Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English\nLiterature, Area 1A and Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "23",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 1A",
+          "credit": "3 hours in English Communication"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AELA37-1-001",
+          "title": "AP English\nLiterature, Area 1A and Area 3",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 6.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 6.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AELA39-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AELA39-1-001"
+      ],
+      "title": "AP English\nLiterature and\nComposition, Area 1A and Area 3",
+      "unified_title": "AP English\nLiterature and\nComposition, Area 1A and Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English\nLiterature and\nComposition, Area 1A and Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "23",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 1A",
+          "credit": "3 hours in English Communication"
+        },
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AELA39-1-001",
+          "title": "AP English\nLiterature and\nComposition, Area 1A and Area 3",
+          "units": 6.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 6.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 6.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AEHA-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AEHA-1-001"
+      ],
+      "title": "AP European History, Area 3",
+      "unified_title": "AP European History, Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP European History, Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "54",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AEHA-1-001",
+          "title": "AP European History, Area 3",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AEHA1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AEHA1-1-001"
+      ],
+      "title": "AP European History, Area 4",
+      "unified_title": "AP European History, Area 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP European History, Area 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "54",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AEHA1-1-001",
+          "title": "AP European History, Area 4",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AFLA23-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AFLA23-1-001"
+      ],
+      "title": "AP French\nLanguage\nand Culture",
+      "unified_title": "AP French\nLanguage\nand Culture",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP French\nLanguage\nand Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "16",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AFLA23-1-001",
+          "title": "AP French\nLanguage\nand Culture",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AGLA17-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AGLA17-1-001"
+      ],
+      "title": "AP German\nLanguage\nand Culture",
+      "unified_title": "AP German\nLanguage\nand Culture",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP German\nLanguage\nand Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "16",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AGLA17-1-001",
+          "title": "AP German\nLanguage\nand Culture",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AHGA-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AHGA-1-001"
+      ],
+      "title": "AP Human Geography, Area 4",
+      "unified_title": "AP Human Geography, Area 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Human Geography, Area 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "45",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AHGA-1-001",
+          "title": "AP Human Geography, Area 4",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AILA18-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AILA18-1-001"
+      ],
+      "title": "AP Italian\nLanguage\nand Culture",
+      "unified_title": "AP Italian\nLanguage\nand Culture",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Italian\nLanguage\nand Culture"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "16",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AILA18-1-001",
+          "title": "AP Italian\nLanguage\nand Culture",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AJLA22-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AJLA22-1-001"
+      ],
+      "title": "AP Japanese\nLanguage\nand Culture, Area 3",
+      "unified_title": "AP Japanese\nLanguage\nand Culture, Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Japanese\nLanguage\nand Culture, Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "16",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "4 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AJLA22-1-001",
+          "title": "AP Japanese\nLanguage\nand Culture, Area 3",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AMA4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AMA4-1-001"
+      ],
+      "title": "AP Macroeconomics, Area 4",
+      "unified_title": "AP Macroeconomics, Area 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Macroeconomics, Area 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "45",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AMA4-1-001",
+          "title": "AP Macroeconomics, Area 4",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AMA41-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AMA41-1-001"
+      ],
+      "title": "AP Microeconomics, Area 4",
+      "unified_title": "AP Microeconomics, Area 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Microeconomics, Area 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "45",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AMA41-1-001",
+          "title": "AP Microeconomics, Area 4",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-APC(7-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APC(7-1-001"
+      ],
+      "title": "AP Physics C (Electricity/\nMagnetism)",
+      "unified_title": "AP Physics C (Electricity/\nMagnetism)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics C (Electricity/\nMagnetism)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "40",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 5",
+          "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-APC(7-1-001",
+          "title": "AP Physics C (Electricity/\nMagnetism)",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-APC(8-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APC(8-1-001"
+      ],
+      "title": "AP Physics C\n(Mechanics)",
+      "unified_title": "AP Physics C\n(Mechanics)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics C\n(Mechanics)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "40",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 5",
+          "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-APC(8-1-001",
+          "title": "AP Physics C\n(Mechanics)",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-APA2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APA2-1-001"
+      ],
+      "title": "AP Pre-Calculus, Area 2, Score of 3 or 4",
+      "unified_title": "AP Pre-Calculus, Area 2, Score of 3 or 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Pre-Calculus, Area 2, Score of 3 or 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "27",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 2",
+          "credit": "4 hours in Mathematics or Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-APA2-1-001",
+          "title": "AP Pre-Calculus, Area 2, Score of 3 or 4",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-APA21-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APA21-1-001"
+      ],
+      "title": "AP Pre-Calculus, Area 2, Score of 5",
+      "unified_title": "AP Pre-Calculus, Area 2, Score of 5",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Pre-Calculus, Area 2, Score of 5"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "27",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 2",
+          "credit": "8 hours in Mathematics or Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-APA21-1-001",
+          "title": "AP Pre-Calculus, Area 2, Score of 5",
+          "units": 8.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 8.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
+      "exhibit_id": "MAPSAS-APA4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APA4-1-001"
+      ],
+      "title": "AP Psychology, Area 4",
+      "unified_title": "AP Psychology, Area 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Psychology, Area 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "42",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-APA4-1-001",
+          "title": "AP Psychology, Area 4",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA60-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA60-1-001"
+      ],
+      "title": "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 3)",
+      "unified_title": "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 3)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "16",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "4 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASLA60-1-001",
+          "title": "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 3)",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA62-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA62-1-001"
+      ],
+      "title": "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 4-5)",
+      "unified_title": "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 4-5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 4-5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "16",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "8 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASLA62-1-001",
+          "title": "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 4-5)",
+          "units": 8.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 8.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA65-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA65-1-001"
+      ],
+      "title": "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 3)",
+      "unified_title": "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 3)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "16",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "4 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASLA65-1-001",
+          "title": "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 3)",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA67-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA67-1-001"
+      ],
+      "title": "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 4-5)",
+      "unified_title": "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 4-5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 4-5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "16",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "8 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASLA67-1-001",
+          "title": "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 4-5)",
+          "units": 8.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 8.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ASA23-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASA23-1-001"
+      ],
+      "title": "AP Statistics, Area 2",
+      "unified_title": "AP Statistics, Area 2",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Statistics, Area 2"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "27",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 2",
+          "credit": "4 hours in Mathematics or Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ASA23-1-001",
+          "title": "AP Statistics, Area 2",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 4.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AUGA11-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUGA11-1-001"
+      ],
+      "title": "AP US Government\nand Politics, Area 4",
+      "unified_title": "AP US Government\nand Politics, Area 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP US Government\nand Politics, Area 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "45",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AUGA11-1-001",
+          "title": "AP US Government\nand Politics, Area 4",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AUGA12-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUGA12-1-001"
+      ],
+      "title": "AP US Government\nand Politics, Area 8",
+      "unified_title": "AP US Government\nand Politics, Area 8",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP US Government\nand Politics, Area 8"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "45",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 8",
+          "credit": "3 hours in American (U.S.) Institutions"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AUGA12-1-001",
+          "title": "AP US Government\nand Politics, Area 8",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AUHA2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUHA2-1-001"
+      ],
+      "title": "AP US History, Area 3",
+      "unified_title": "AP US History, Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP US History, Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "54",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AUHA2-1-001",
+          "title": "AP US History, Area 3",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AUHA3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUHA3-1-001"
+      ],
+      "title": "AP US History, Area 4",
+      "unified_title": "AP US History, Area 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP US History, Area 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "54",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AUHA3-1-001",
+          "title": "AP US History, Area 4",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AUHA4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUHA4-1-001"
+      ],
+      "title": "AP US History, Area 8",
+      "unified_title": "AP US History, Area 8",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP US History, Area 8"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "54",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 8",
+          "credit": "3 hours in American (U.S.) Institutions"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AUHA4-1-001",
+          "title": "AP US History, Area 8",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AWHA2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AWHA2-1-001"
+      ],
+      "title": "AP World History, Area 3",
+      "unified_title": "AP World History, Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP World History, Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "54",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AWHA2-1-001",
+          "title": "AP World History, Area 3",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AWH-2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AWH-2-1-001"
+      ],
+      "title": "AP World History -\nModern, Area 3",
+      "unified_title": "AP World History -\nModern, Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP World History -\nModern, Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "54",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AWH-2-1-001",
+          "title": "AP World History -\nModern, Area 3",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-AWH-3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AWH-3-1-001"
+      ],
+      "title": "AP World History -\nModern, Area 4",
+      "unified_title": "AP World History -\nModern, Area 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP World History -\nModern, Area 4"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "54",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 4",
+          "credit": "3 hours in Social Sciences and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-AWH-3-1-001",
+          "title": "AP World History -\nModern, Area 4",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPSAS-ITHA-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ITHA-1-001"
+      ],
+      "title": "IB Theatre HL, Area 3",
+      "unified_title": "IB Theatre HL, Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Theatre HL, Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "cip_sector": "50",
+      "top_codes": [],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "Local GE Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPSAS-ITHA-1-001",
+          "title": "IB Theatre HL, Area 3",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
           0
         ]
       },
@@ -440514,7 +446023,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 9,
         "ccc_collaborative": 2,
         "industry_certs": 1473,
-        "pct": 9.2
+        "pct": 9.1
       },
       {
         "college": "Santiago Canyon College",
@@ -440541,7 +446050,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 20,
         "ccc_collaborative": 2,
         "industry_certs": 161,
-        "pct": 3.3
+        "pct": 3.2
       },
       {
         "college": "Los Angeles Pierce College",
@@ -440560,6 +446069,15 @@ window.CPL_STATEWIDE = {
         "ccc_collaborative": 133,
         "industry_certs": 214,
         "pct": 2.9
+      },
+      {
+        "college": "Bakersfield College",
+        "credit_recs": 480,
+        "exhibits": 255,
+        "disciplines": 15,
+        "ccc_collaborative": 116,
+        "industry_certs": 271,
+        "pct": 2.8
       },
       {
         "college": "Santa Ana College",
@@ -440589,15 +446107,6 @@ window.CPL_STATEWIDE = {
         "pct": 2.3
       },
       {
-        "college": "Bakersfield College",
-        "credit_recs": 376,
-        "exhibits": 165,
-        "disciplines": 10,
-        "ccc_collaborative": 116,
-        "industry_certs": 271,
-        "pct": 2.2
-      },
-      {
         "college": "San Diego Miramar College",
         "credit_recs": 352,
         "exhibits": 139,
@@ -440622,7 +446131,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 18,
         "ccc_collaborative": 11,
         "industry_certs": 95,
-        "pct": 1.9
+        "pct": 1.8
       },
       {
         "college": "City College of San Francisco",
@@ -440640,7 +446149,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 16,
         "ccc_collaborative": 13,
         "industry_certs": 118,
-        "pct": 1.7
+        "pct": 1.6
       },
       {
         "college": "Saddleback College",
@@ -440766,7 +446275,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 12,
         "ccc_collaborative": 3,
         "industry_certs": 6,
-        "pct": 1.0
+        "pct": 0.9
       },
       {
         "college": "Irvine Valley College",
@@ -441063,7 +446572,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 5,
         "ccc_collaborative": 13,
         "industry_certs": 15,
-        "pct": 0.6
+        "pct": 0.5
       },
       {
         "college": "Shasta College",
@@ -441072,7 +446581,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 11,
         "ccc_collaborative": 1,
         "industry_certs": 10,
-        "pct": 0.6
+        "pct": 0.5
       },
       {
         "college": "Ohlone College",
@@ -441438,12 +446947,12 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6907,
-        "exhibits": 2612,
-        "courses": 450,
+        "credit_recs": 6967,
+        "exhibits": 2670,
+        "courses": 451,
         "colleges": 89,
         "ccc_collaborative": 35,
-        "pct": 41.0
+        "pct": 41.1
       },
       {
         "discipline": "Engineering and Industrial Technologies",
@@ -441452,7 +446961,7 @@ window.CPL_STATEWIDE = {
         "courses": 1502,
         "colleges": 60,
         "ccc_collaborative": 595,
-        "pct": 21.3
+        "pct": 21.1
       },
       {
         "discipline": "Public and Protective Services",
@@ -441470,7 +446979,7 @@ window.CPL_STATEWIDE = {
         "courses": 43,
         "colleges": 82,
         "ccc_collaborative": 1,
-        "pct": 3.8
+        "pct": 3.7
       },
       {
         "discipline": "Business and Management",
@@ -441501,37 +447010,37 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Foreign Languages",
-        "credit_recs": 416,
-        "exhibits": 235,
-        "courses": 183,
+        "credit_recs": 429,
+        "exhibits": 242,
+        "courses": 186,
         "colleges": 44,
         "ccc_collaborative": 46,
         "pct": 2.5
       },
       {
         "discipline": "Fine and Applied Arts",
-        "credit_recs": 357,
-        "exhibits": 305,
-        "courses": 275,
-        "colleges": 46,
+        "credit_recs": 363,
+        "exhibits": 310,
+        "courses": 281,
+        "colleges": 47,
         "ccc_collaborative": 4,
         "pct": 2.1
       },
       {
         "discipline": "Social Sciences",
-        "credit_recs": 344,
-        "exhibits": 282,
-        "courses": 166,
+        "credit_recs": 352,
+        "exhibits": 290,
+        "courses": 170,
         "colleges": 41,
         "ccc_collaborative": 4,
-        "pct": 2.0
+        "pct": 2.1
       },
       {
         "discipline": "Mathematics",
-        "credit_recs": 248,
-        "exhibits": 205,
-        "courses": 110,
-        "colleges": 40,
+        "credit_recs": 256,
+        "exhibits": 210,
+        "courses": 115,
+        "colleges": 41,
         "ccc_collaborative": 0,
         "pct": 1.5
       },
@@ -441546,19 +447055,19 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Humanities (Letters)",
-        "credit_recs": 193,
-        "exhibits": 169,
+        "credit_recs": 199,
+        "exhibits": 173,
         "courses": 49,
-        "colleges": 34,
+        "colleges": 35,
         "ccc_collaborative": 0,
-        "pct": 1.1
+        "pct": 1.2
       },
       {
         "discipline": "Physical Sciences",
-        "credit_recs": 157,
-        "exhibits": 129,
-        "courses": 90,
-        "colleges": 30,
+        "credit_recs": 158,
+        "exhibits": 130,
+        "courses": 91,
+        "colleges": 31,
         "ccc_collaborative": 0,
         "pct": 0.9
       },
@@ -441582,10 +447091,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Biological Sciences",
-        "credit_recs": 97,
-        "exhibits": 85,
-        "courses": 63,
-        "colleges": 37,
+        "credit_recs": 98,
+        "exhibits": 86,
+        "courses": 64,
+        "colleges": 38,
         "ccc_collaborative": 0,
         "pct": 0.6
       },
@@ -441600,8 +447109,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Psychology",
-        "credit_recs": 61,
-        "exhibits": 56,
+        "credit_recs": 62,
+        "exhibits": 57,
         "courses": 16,
         "colleges": 38,
         "ccc_collaborative": 0,
@@ -441647,31 +447156,31 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 8057,
-        "exhibits": 3265,
+        "credit_recs": 8161,
+        "exhibits": 3355,
         "colleges": 87,
-        "pct": 47.8
+        "pct": 48.1
       },
       {
         "cpl_type": "Industry Certification",
         "credit_recs": 5748,
         "exhibits": 1477,
         "colleges": 84,
-        "pct": 34.1
+        "pct": 33.9
       },
       {
         "cpl_type": "Credit By Exam",
         "credit_recs": 2345,
         "exhibits": 1871,
         "colleges": 67,
-        "pct": 13.9
+        "pct": 13.8
       },
       {
         "cpl_type": "Portfolio Review",
         "credit_recs": 447,
         "exhibits": 372,
         "colleges": 34,
-        "pct": 2.7
+        "pct": 2.6
       },
       {
         "cpl_type": "Military",
@@ -441691,31 +447200,31 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 9530,
-        "exhibits": 4426,
+        "credit_recs": 9634,
+        "exhibits": 4516,
         "colleges": 94,
-        "pct": 56.5
+        "pct": 56.8
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
         "credit_recs": 3130,
         "exhibits": 580,
         "colleges": 48,
-        "pct": 18.6
+        "pct": 18.5
       },
       {
         "mode": "Industry training (I)",
         "credit_recs": 3125,
         "exhibits": 1278,
         "colleges": 80,
-        "pct": 18.5
+        "pct": 18.4
       },
       {
         "mode": "High school coursework (H)",
         "credit_recs": 413,
         "exhibits": 368,
         "colleges": 20,
-        "pct": 2.5
+        "pct": 2.4
       },
       {
         "mode": "Noncredit, community education, and contract education coursework (N)",
@@ -441763,8 +447272,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 14996,
-        "exhibits": 6838,
+        "credit_recs": 15100,
+        "exhibits": 6928,
         "colleges": 100,
         "disciplines": 23,
         "pct": 89.0
@@ -442189,8 +447698,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-13T23:57:23",
-  "total_credit_recs": 16854,
+  "generated_at": "2026-11-14T00:51:53",
+  "total_credit_recs": 16958,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

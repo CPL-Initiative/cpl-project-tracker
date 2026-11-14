@@ -1,0 +1,19 @@
+{"schema":1,"college":"Las Positas College","slug":"las_positas","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"cn":"38875","title":"Actors Conservatory","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"45027","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"44894","title":"Lesbian, Gay, Bisexual, Transgender, and Queer Studies","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"45080","title":"Achievement in Community College for ESL Students","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"09219","title":"Automotive Chassis","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"30408","title":"Biology: Allied Health","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"43734","title":"Career Exploration and Preparation","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"30354","title":"Occupational Safety and Health","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"42163","title":"Vocational ESL: Retail","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"36449","title":"Athletic Training/Sports Medicine","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/153/1853/1858"},
+{"cn":"18813","title":"Early Childhood Intervention","award":"A.A. Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1646"},
+{"cn":"09214","title":"Computer Science","award":"A.S. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/133/1620/1628"},
+{"cn":"09227","title":"Early Childhood Development","award":"A.A. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/134/1637/1643"},
+{"cn":"38886","title":"Electrical Engineering","award":"A.S. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/138/1686/1693"},
+{"cn":"36235","title":"Theater Arts","award":"A.A. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/178/2099/2106"},
+{"cn":"36351","title":"Graphic Design","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/143/1783/1789"},
+{"cn":"36341","title":"Liberal Arts & Sciences: Mathematics and Science","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://laspositas.curriqunet.com/catalog/iq/102/105/155/1872/1879"}
+]}

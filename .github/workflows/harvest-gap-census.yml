@@ -105,7 +105,8 @@ jobs:
           path: out
       # The Commons data dashboard's figures (#3215, commons_data.js at #commons/data): the committed files, the live
       # counts (key live, its own basis), the data dictionary and the API checklist. With no live file the builder
-      # keeps the previous block and records "not read". Fails soft, as the heading agreement does.
+      # keeps the previous block and records "not read". Fails soft, as the heading agreement does. --census hands it
+      # the census just written (basis live), so each college's cause lists and counts come from this run (#3261).
       - name: Commons data dashboard (committed files and the live counts; fails soft)
         env:
           ACCEPT_ACTIVE_SHIFT: ${{ inputs.accept_active_shift }}
@@ -115,9 +116,11 @@ jobs:
             shift_arg="--accept-active-shift"
             echo "::notice::accept_active_shift is set for this run: a read outside the Active band may be taken, and the block will say so"
           fi
-          if ! python3 kb/_build_commons_data_status.py --live out/commons_data_live.json $shift_arg; then
+          if ! python3 kb/_build_commons_data_status.py --live out/commons_data_live.json --census kb/status/harvest_gap_census.json $shift_arg; then
             echo "::warning::the Commons data dashboard did not regenerate; the census files without it"
             git checkout -- kb/status/commons_data.json 2>/dev/null || true
+            git checkout -- kb/status/commons_data_programs 2>/dev/null || true
+            git clean -fdq -- kb/status/commons_data_programs 2>/dev/null || true
           fi
       - name: Commit to the branch that ran it
         run: |
@@ -127,6 +130,8 @@ jobs:
           for f in kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md kb/status/commons_data.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
+          # Each cause's programs, one file per college (S649); -A files a college's file removed as well as written.
+          if [ -d kb/status/commons_data_programs ]; then git add -A kb/status/commons_data_programs; fi
           if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
           git commit -m "Harvest gap census (run ${{ github.run_id }})"
           for i in 1 2 3 4; do

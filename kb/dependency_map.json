@@ -2226,7 +2226,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 33,
+     "line": 36,
      "tabs": [
       "commons"
      ]
@@ -7938,7 +7938,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 193
+     "line": 225
     }
    ],
    "served": false,
@@ -7951,7 +7951,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 465
+     "line": 679
     }
    ],
    "served": false,
@@ -13886,7 +13886,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 115
+     "line": 144
     }
    ],
    "served": true,
@@ -16372,7 +16372,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 116
+     "line": 145
     }
    ],
    "served": false,
@@ -17099,19 +17099,6 @@
     }
    ],
    "served": false,
-   "main_committers": []
-  },
-  "file:kb/program_requirements_college/cerro_coso_community/calgetc_apply_plan.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_program_requirements_readings_measure.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 417
-    }
-   ],
-   "served": true,
    "main_committers": []
   },
   "file:kb/program_requirements_college/glendale_community/capture_reread.json": {
@@ -19356,7 +19343,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 117
+     "line": 146
     }
    ],
    "served": false,
@@ -19369,7 +19356,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 119
+     "line": 148
     }
    ],
    "served": true,
@@ -19457,7 +19444,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 32,
+     "line": 35,
      "tabs": [
       "commons"
      ]
@@ -19467,7 +19454,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 112
+     "line": 139
     }
    ],
    "served": true,
@@ -19539,6 +19526,13 @@
   },
   "file:kb/status/harvest_gap_census.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 140
+    },
     {
      "id": "script:kb/_harvest_gap_census.py",
      "kind": "script",
@@ -22421,7 +22415,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 397
+     "line": 431
     },
     {
      "id": "script:kb/_build_commons_status.py",

@@ -1265,6 +1265,10 @@ _rc = RM.restore_capture({"run": "1", "pdf": {"picks": [{"control_number": "9100
 check("restore: capture.json is main's but for the kept program's pick and fingerprint",
       _rc["run"] == "1" and _rc["found"] == 2 and [p["pages"] for p in _rc["pdf"]["picks"]] == [[11], [20]]
       and _rc["fingerprints"] == {"91001": "A", "91002": "b"})
+_rv_unfilled = RM.reconcile_run_review(_ap, dict(_rv_main, **{"91001": dict(_rv_main["91001"], extracted_run=777)}),
+                                       _rv_main, "777")
+check("run review: an apply row the run did not fill (no field moved) is restored with its own reason",
+      _rv_unfilled["restored"] == ["91001"] and "did not fill" in _rv_unfilled["records"][0]["why"])
 check("run review: a changed record kept by name carries the rule it was kept on",
       RM.reconcile_run_review(_ap, _rv_branch, _rv_main, "777", {"91005": "the page's sentence"})["kept"]
       == ["91001", "91005"])
@@ -1325,7 +1329,7 @@ with tempfile.TemporaryDirectory() as _td:
           and _again["record"]["program"]["ge_units"] == {"min": 34, "max": 34})
 
 # A floor for this block's checks (the second readers of #3244): deleting gate checks must fail the run.
-CG_FLOOR = 98
+CG_FLOOR = 99
 check("the statewide Cal-GETC block runs at least %d checks (%d)" % (CG_FLOOR, len(results) - _cg_first),
       len(results) - _cg_first >= CG_FLOOR)
 
@@ -1403,6 +1407,48 @@ check("Pierce: one figure alone sets nothing",
       R.reconcile(prc, "Cal-GETC (34 units)\nTotal 60", "Los Angeles Pierce College", "A.A. Degree", steps=ST)[1] == [])
 check("Pierce: a transfer degree is left alone",
       R.reconcile(prc, PRC, "Los Angeles Pierce College", "A.A- T Degree", steps=ST)[1] == [])
+
+# Cosumnes River's statewide Cal-GETC 34 (S649): the evidence quotes the page read (run 43519918667), and the
+# plan's three rows fill on the page's own words while the four overlap records stay with the rule.
+import _program_requirements_readings_measure as RM2  # noqa: E402
+_cr_conf = R.load_steps().get("Cosumnes River College") or {}
+_cr_ev = (R.calgetc_step(_cr_conf) or {}).get("evidence", "")
+check("Cosumnes River: the statewide step quotes pp.95-96 (minimums, no total) and each degree's Cal-GETC words",
+      "43519918667" in _cr_ev and "for a minimum of nine semester units" in _cr_ev and "no total" in _cr_ev
+      and all(w in _cr_ev for w in ("30566 (p.552)", "33072 (p.404)", "39656 (p.576)"))
+      and not any(s.get("field") == "ge_units" for s in _cr_conf.get("steps") or []))
+_cr_plan = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "cosumnes_river",
+                                       "calgetc_apply_plan.json")))
+check("Cosumnes River's apply plan: the statewide route fills 30566, 33072 and 39656, the rule holds four overlaps, "
+      "no restore, none passing to failing, and the run is the college's first reconcile",
+      _cr_plan["route"] == "statewide step" and _cr_plan["apply"] == ["30566", "33072", "39656"]
+      and _cr_plan["held"] == ["31055", "31995", "41992", "46419"] and _cr_plan["restore_before_reread"] == []
+      and _cr_plan["counts"]["pass_to_fail"] == 0 and _cr_plan["first_reconcile"] is True
+      and _cr_plan["page_read"]["run"] == "43519918667")
+_cr_rv = _cr_plan["run_review"]
+check("Cosumnes River's first reconcile (43521338550): only 39656 filled and is kept; the 14 rescored records restored; "
+      "none passing to failing",
+      _cr_rv["run"] == "43521338550" and _cr_rv["kept"] == ["39656"] and len(_cr_rv["restored"]) == 14
+      and "30566" in _cr_rv["restored"] and _cr_rv["pass_to_fail_kept"] == [] and _cr_rv["fail_to_pass_kept"] == ["39656"])
+_cr_moved = {m["control_number"]: m for m in _cr_rv["pages_moved_restored"]}
+check("Cosumnes River: the run's page moves go back to main's, 30566 to p.552 and 33072 to p.404, and 39656 kept its own",
+      _cr_moved["30566"]["main"][0] == 552 and _cr_moved["33072"]["main"][0] == 404 and _cr_rv["pages_moved_kept"] == []
+      and len(_cr_moved) == 58)
+# 30566's section shape from the read (p.552): a generic 'Degree Requirements' heading, ended by a sibling's heading.
+_cr_text = ("ADTs also require that students must earn a C or better.\nDegree Requirements\nPSYC C1000 Introduction "
+            "to Psychology 3\nTotal Units: 19\nThe Associate in Arts in Psychology for Transfer (AA-T) degree may be\n"
+            "obtained by completion of 60 transferable, semester units with a\nminimum 2.0 GPA, including (a) the "
+            "major or area of emphasis\ndescribed in the Required Program, and (b) the California General\nEducation "
+            "Transfer Curriculum (Cal-GETC) Requirement.\nCareer Information\nPSYC 312 Biological Psychology\n"
+            "General Education: Local GE L5; Cal-GETC Area 5B")
+_cr_rec = {"program": {"section_heading": "Degree Requirements", "ge_pattern": "Cal-GETC",
+                       "ge_units": {"min": None, "max": None}, "degree_total": {"min": 60, "max": 60},
+                       "total_units": {"min": 19, "max": 19}}, "blocks": []}
+_cr_sibs = [{"control_number": "35742", "title": "Fixture", "section_heading": "Career Information"}]
+_cr_why, _cr_read = R.calgetc_hold(_cr_rec, _cr_text, "A.A- T Degree", "Psychology", _cr_sibs, _cr_conf, "30566")
+check("Cosumnes River 30566: the section ends at the sibling's heading, before a course's 'Cal-GETC Area' line, and fills",
+      _cr_why is None and "(Cal-GETC) Requirement" in _cr_read["words"]
+      and R.calgetc_hold(_cr_rec, _cr_text, "A.A- T Degree", "Psychology", [], _cr_conf, "30566")[0] is not None)
 
 # Glendale's 2026-27 site read beside its 2025-2026 PDF's units (S646): where the page's own call priced the
 # read, a code the call does not price stays unpriced, and the note says so instead of naming the call.

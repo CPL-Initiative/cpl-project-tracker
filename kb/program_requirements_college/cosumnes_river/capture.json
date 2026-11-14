@@ -2618,6 +2618,7 @@
      579
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.977,
@@ -5294,5 +5295,11 @@
    }
   ]
  },
- "run": "39047009824"
+ "run": "39047009824",
+ "fingerprints": {
+  "39656": {
+   "sha256": "b2699cc208ed5c9a3c22b01ca85d54dc9b09c146b0dedaa1495e9a2a01dde427",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=576"
+  }
+ }
 }

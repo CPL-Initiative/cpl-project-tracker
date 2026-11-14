@@ -1,0 +1,15 @@
+{"schema":1,"college":"Lemoore College","slug":"lemoore","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"cn":"45651","title":"Agriculture Systems Fundamentals","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"20341","title":"Business: Bookkeeping","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"20342","title":"Business: Business Management","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"35663","title":"Introduction to Programming","award":"Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"35112","title":"Networking Fundamentals","award":"Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"15291","title":"Psychology","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"33017","title":"Studio Arts","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"45614","title":"Agriculture Systems Basics","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"46271","title":"Hydraulic and Pneumatic Systems Technician 1","award":"Noncredit program","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"40164","title":"LVN to Nursing Program","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
+{"cn":"46390","title":"Community Health Worker","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://westhillslemoore.elumenapp.com/catalog/26-27/program/community-health-worker-coa-spring-2026"},
+{"cn":"42593","title":"Information Technology","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://westhillslemoore.elumenapp.com/catalog/26-27/program/information-technology-aa-fall-2025"},
+{"cn":"19306","title":"Liberal Arts: Math & Science","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-math-and-science-aa-spring-2026"}
+]}
