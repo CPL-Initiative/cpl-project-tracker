@@ -153,13 +153,22 @@ def with_renumbers(programs: list[dict], renumbers: dict, aliases: dict | None =
     course_renumbers; Merced, S423). A listed course under a prefix the catalog prints
     otherwise (prefix_aliases) carries the catalog's prefix the same way: Glendale's program
     pages print TART 101 where its file lists THTR 101, and without it the capture handed 21
-    Theatre records the THTR course descriptions (S505). A renumber wins over an alias."""
+    Theatre records the THTR course descriptions (S505). A renumber wins over an alias.
+    Between the two, the course-id route (S653, kb/_course_id_route.py): a listed course
+    whose Program Course File id differs from its code carries that id, as Riverside City's
+    HIS 14 carries HIST 14, so the alias stays only as the fallback."""
+    import _course_id_route as CI
     back = [(P.norm_code(v), P.norm_code(k)) for k, v in (aliases or {}).items()]
-    for p in programs if (renumbers or back) else []:
+    for p in programs:
+        ids = CI.listed_ids(p["closed_list"])
+        by_code = {v: k for k, v in ids.items()}
         for c in p["closed_list"]:
             k = P.norm_code(c.get("code"))
             if k in renumbers:
                 c["printed"] = renumbers[k]
+                continue
+            if k in by_code:
+                c["printed"] = CI.spaced(by_code[k])
                 continue
             for listed, printed in back:
                 m = re.fullmatch(re.escape(listed) + r"(C?\d.*)", k)

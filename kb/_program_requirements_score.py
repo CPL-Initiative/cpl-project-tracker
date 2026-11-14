@@ -137,6 +137,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _program_requirements_pilot import norm_code  # noqa: E402
+import _course_id_route as CI  # noqa: E402
 
 TOL = 0.01
 
@@ -228,6 +229,34 @@ def _listed_key(code: str | None, listed: dict) -> str:
     if m and m.group(1) + m.group(2) in listed:
         return m.group(1) + m.group(2)
     return k
+
+
+def with_course_ids(record: dict, listed: dict, ids: dict | None) -> dict:
+    """The record with each code the list lacks named as the listed course whose Program
+    Course File id it is (S653, kb/_course_id_route.py): Riverside City's catalog prints
+    HIST 14, the list names that control number HIS 14 and the file's CrsId says HIST14.
+    ids maps a course id to its listed code (CI.listed_ids). It runs before the college's
+    prefix_aliases, which stay as the fallback; a code the list holds is never renamed.
+    A listed course the record already places under its own code is never named a second
+    time: Laney's page prints COMM C1004 beside COMM 20, the file's id for COMM 20's control
+    number is the common-course number, and renaming it would repeat COMM 20 in its block."""
+    if not ids:
+        return record
+    out = json.loads(json.dumps(record))
+    have = {k for k, _, _ in placed_codes(record) if k in listed}
+
+    def rename(entry: dict) -> None:
+        k = norm_code(entry.get("code"))
+        if k and k not in listed and ids.get(k) in listed and ids[k] not in have:
+            entry["code"], entry["printed_code"], entry["matched_by"] = ids[k], k, "course_id"
+
+    for b in out.get("blocks") or []:
+        for c in b.get("courses") or []:
+            rename(c)
+            for a in c.get("alternatives") or []:
+                if isinstance(a, dict):
+                    rename(a)
+    return out
 
 
 def with_prefix_aliases(record: dict, listed: dict, aliases: dict | None) -> dict:
@@ -949,16 +978,19 @@ def total_hours_printed(text: str, stated: tuple[float, float], labels: list, re
 
 
 def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,
-          aliases: dict | None = None, packed: bool = False) -> dict:
+          aliases: dict | None = None, packed: bool = False, course_ids: dict | None = None) -> dict:
     """The automatic bars. text is the catalog text the record was read
     from; without it a record that states no figure cannot pass. award is the
     state file's award, which names an associate degree for transfer. aliases is the
-    college's prefix_aliases (with_prefix_aliases)."""
+    college's prefix_aliases (with_prefix_aliases). course_ids maps a Program Course
+    File id to its listed code (with_course_ids); left None, it is read from the
+    closed list's own control numbers (CI.listed_ids), and it runs before the aliases."""
     listed = {}
     for c in closed:
         k = norm_code(c.get("code"))
         if k:
             listed[k] = _num(c.get("units"))
+    record = with_course_ids(record, listed, CI.listed_ids(closed) if course_ids is None else course_ids)
     record = with_prefix_aliases(record, listed, aliases)
     placed = [(listed_key(e.get("code"), listed, packed), e, b) for _, e, b in placed_codes(record)]
     placed_keys = {k for k, _, _ in placed}

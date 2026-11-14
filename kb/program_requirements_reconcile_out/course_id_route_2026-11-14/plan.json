@@ -1,0 +1,1460 @@
+{
+ "_what": "The course-id route's proof over the filed records (S653): which of slice C's prefix_aliases pairs it retires, its self-recall test, and the status change on every filed record. Read-only over committed files; no site contacted, nothing dispatched, no table written.",
+ "arithmetic_may_move": {
+  "Moreno Valley College": [
+   "30167"
+  ],
+  "Mt. San Antonio College": [
+   "18236"
+  ],
+  "Norco College": [
+   "30107"
+  ],
+  "Orange Coast College": [
+   "32189"
+  ]
+ },
+ "colleges": {
+  "American River College": {
+   "college_code": "231",
+   "pairs": [
+    {
+     "alias_matches": 12,
+     "file": "ET",
+     "filed_list_matches": 12,
+     "filed_list_missed": [],
+     "filed_list_missed_count": 0,
+     "filed_list_reproduced": 12,
+     "id_route_reproduces": 12,
+     "missed": [],
+     "missed_count": 0,
+     "printed": "BMET",
+     "verdict": "retire"
+    },
+    {
+     "alias_matches": 75,
+     "file": "HSER",
+     "filed_list_matches": 75,
+     "filed_list_missed": [],
+     "filed_list_missed_count": 0,
+     "filed_list_reproduced": 75,
+     "id_route_reproduces": 75,
+     "missed": [],
+     "missed_count": 0,
+     "printed": "SWCD",
+     "verdict": "retire"
+    }
+   ],
+   "slug": "american_river"
+  },
+  "Barstow Community College": {
+   "college_code": "911",
+   "pairs": [
+    {
+     "alias_matches": 18,
+     "file": "CHLD",
+     "filed_list_matches": 18,
+     "filed_list_missed": [],
+     "filed_list_missed_count": 0,
+     "filed_list_reproduced": 18,
+     "id_route_reproduces": 18,
+     "missed": [],
+     "missed_count": 0,
+     "printed": "CDEV",
+     "verdict": "retire"
+    },
+    {
+     "alias_matches": 5,
+     "file": "POLI",
+     "filed_list_matches": 5,
+     "filed_list_missed": [
+      [
+       "33066",
+       "POLS2",
+       "POLI2"
+      ],
+      [
+       "33066",
+       "POLS3",
+       "POLI3"
+      ],
+      [
+       "33066",
+       "POLS4",
+       "POLI4"
+      ],
+      [
+       "41251",
+       "POLS2",
+       "POLI2"
+      ],
+      [
+       "41251",
+       "POLS3",
+       "POLI3"
+      ]
+     ],
+     "filed_list_missed_count": 5,
+     "filed_list_reproduced": 0,
+     "id_route_reproduces": 0,
+     "missed": [
+      [
+       "33066",
+       "POLS2",
+       "POLI2"
+      ],
+      [
+       "33066",
+       "POLS3",
+       "POLI3"
+      ],
+      [
+       "33066",
+       "POLS4",
+       "POLI4"
+      ],
+      [
+       "41251",
+       "POLS2",
+       "POLI2"
+      ],
+      [
+       "41251",
+       "POLS3",
+       "POLI3"
+      ]
+     ],
+     "missed_count": 5,
+     "printed": "POLS",
+     "verdict": "keep"
+    }
+   ],
+   "slug": "barstow_community"
+  },
+  "City College of San Francisco": {
+   "college_code": "361",
+   "pairs": [
+    {
+     "alias_matches": 30,
+     "file": "CMST",
+     "filed_list_matches": 30,
+     "filed_list_missed": [],
+     "filed_list_missed_count": 0,
+     "filed_list_reproduced": 30,
+     "id_route_reproduces": 30,
+     "missed": [],
+     "missed_count": 0,
+     "printed": "COMM",
+     "verdict": "retire"
+    }
+   ],
+   "slug": "city_of_san_francisco"
+  },
+  "Crafton Hills College": {
+   "college_code": "981",
+   "pairs": [
+    {
+     "alias_matches": 13,
+     "file": "SOC",
+     "filed_list_matches": 27,
+     "filed_list_missed": [
+      [
+       "30555",
+       "SOCI105",
+       "SOC105"
+      ],
+      [
+       "30555",
+       "SOCI130",
+       "SOC130"
+      ],
+      [
+       "30555",
+       "SOCI145",
+       "SOC145"
+      ],
+      [
+       "30555",
+       "SOCI150",
+       "SOC150"
+      ],
+      [
+       "41675",
+       "SOCI105",
+       "SOC105"
+      ],
+      [
+       "41675",
+       "SOCI145",
+       "SOC145"
+      ],
+      [
+       "44736",
+       "SOCI105",
+       "SOC105"
+      ],
+      [
+       "45714",
+       "SOCI105",
+       "SOC105"
+      ]
+     ],
+     "filed_list_missed_count": 14,
+     "filed_list_reproduced": 13,
+     "id_route_reproduces": 13,
+     "missed": [],
+     "missed_count": 0,
+     "printed": "SOCI",
+     "verdict": "keep"
+    }
+   ],
+   "slug": "crafton_hills"
+  },
+  "Diablo Valley College": {
+   "college_code": "312",
+   "pairs": [
+    {
+     "alias_matches": 71,
+     "file": "BIOSC",
+     "filed_list_matches": 71,
+     "filed_list_missed": [],
+     "filed_list_missed_count": 0,
+     "filed_list_reproduced": 71,
+     "id_route_reproduces": 71,
+     "missed": [],
+     "missed_count": 0,
+     "printed": "BIOL",
+     "verdict": "retire"
+    }
+   ],
+   "slug": "diablo_valley"
+  },
+  "Irvine Valley College": {
+   "college_code": "892",
+   "pairs": [
+    {
+     "alias_matches": 13,
+     "file": "HUM",
+     "filed_list_matches": 16,
+     "filed_list_missed": [
+      [
+       "18363",
+       "FILM40",
+       "HUM40"
+      ],
+      [
+       "18363",
+       "FILM70",
+       "HUM70"
+      ],
+      [
+       "18363",
+       "FILM71",
+       "HUM71"
+      ],
+      [
+       "18363",
+       "FILM71H",
+       "HUM71H"
+      ],
+      [
+       "18363",
+       "FILM72",
+       "HUM72"
+      ],
+      [
+       "18363",
+       "FILM72H",
+       "HUM72H"
+      ],
+      [
+       "18363",
+       "FILM73",
+       "HUM73"
+      ],
+      [
+       "18363",
+       "FILM75",
+       "HUM75"
+      ]
+     ],
+     "filed_list_missed_count": 16,
+     "filed_list_reproduced": 0,
+     "id_route_reproduces": 0,
+     "missed": [
+      [
+       "18363",
+       "FILM70",
+       "HUM70"
+      ],
+      [
+       "18363",
+       "FILM71",
+       "HUM71"
+      ],
+      [
+       "18363",
+       "FILM71H",
+       "HUM71H"
+      ],
+      [
+       "18363",
+       "FILM72",
+       "HUM72"
+      ],
+      [
+       "18363",
+       "FILM72H",
+       "HUM72H"
+      ],
+      [
+       "18363",
+       "FILM73",
+       "HUM73"
+      ],
+      [
+       "18363",
+       "FILM75",
+       "HUM75"
+      ],
+      [
+       "38237",
+       "FILM70",
+       "HUM70"
+      ]
+     ],
+     "missed_count": 13,
+     "printed": "FILM",
+     "verdict": "keep"
+    }
+   ],
+   "slug": "irvine_valley"
+  },
+  "Los Medanos College": {
+   "college_code": "313",
+   "pairs": [
+    {
+     "alias_matches": 17,
+     "file": "COMSC",
+     "filed_list_matches": 34,
+     "filed_list_missed": [
+      [
+       "01530",
+       "CNT30",
+       "COMSC30"
+      ],
+      [
+       "01530",
+       "CNT31",
+       "COMSC31"
+      ],
+      [
+       "01536",
+       "CNT30",
+       "COMSC30"
+      ],
+      [
+       "01536",
+       "CNT31",
+       "COMSC31"
+      ],
+      [
+       "01536",
+       "CNT32",
+       "COMSC32"
+      ],
+      [
+       "21904",
+       "CNT30",
+       "COMSC30"
+      ],
+      [
+       "21904",
+       "CNT31",
+       "COMSC31"
+      ],
+      [
+       "30466",
+       "CNT30",
+       "COMSC30"
+      ]
+     ],
+     "filed_list_missed_count": 20,
+     "filed_list_reproduced": 14,
+     "id_route_reproduces": 14,
+     "missed": [
+      [
+       "30466",
+       "CNT91",
+       "COMSC91"
+      ],
+      [
+       "30469",
+       "CNT91",
+       "COMSC91"
+      ],
+      [
+       "30473",
+       "CNT91",
+       "COMSC91"
+      ]
+     ],
+     "missed_count": 3,
+     "printed": "CNT",
+     "verdict": "keep"
+    }
+   ],
+   "slug": "los_medanos"
+  },
+  "Merced College": {
+   "college_code": "531",
+   "pairs": [
+    {
+     "alias_matches": 10,
+     "file": "POLS",
+     "filed_list_matches": 11,
+     "filed_list_missed": [
+      [
+       "17928",
+       "POSC2",
+       "POLS2"
+      ],
+      [
+       "32642",
+       "POSC2",
+       "POLS2"
+      ],
+      [
+       "32642",
+       "POSC3",
+       "POLS3"
+      ],
+      [
+       "32642",
+       "POSC4",
+       "POLS4"
+      ],
+      [
+       "40266",
+       "POSC2",
+       "POLS2"
+      ],
+      [
+       "40266",
+       "POSC3",
+       "POLS3"
+      ],
+      [
+       "40266",
+       "POSC4",
+       "POLS4"
+      ],
+      [
+       "40266",
+       "POSC5",
+       "POLS5"
+      ]
+     ],
+     "filed_list_missed_count": 11,
+     "filed_list_reproduced": 0,
+     "id_route_reproduces": 0,
+     "missed": [
+      [
+       "17928",
+       "POSC2",
+       "POLS2"
+      ],
+      [
+       "32642",
+       "POSC2",
+       "POLS2"
+      ],
+      [
+       "32642",
+       "POSC3",
+       "POLS3"
+      ],
+      [
+       "32642",
+       "POSC4",
+       "POLS4"
+      ],
+      [
+       "40266",
+       "POSC2",
+       "POLS2"
+      ],
+      [
+       "40266",
+       "POSC3",
+       "POLS3"
+      ],
+      [
+       "40266",
+       "POSC4",
+       "POLS4"
+      ],
+      [
+       "40266",
+       "POSC5",
+       "POLS5"
+      ]
+     ],
+     "missed_count": 10,
+     "printed": "POSC",
+     "verdict": "keep"
+    },
+    {
+     "alias_matches": 16,
+     "file": "SOCI",
+     "filed_list_matches": 16,
+     "filed_list_missed": [
+      [
+       "03530",
+       "SOC3",
+       "SOCI3"
+      ],
+      [
+       "17928",
+       "SOC2",
+       "SOCI2"
+      ],
+      [
+       "17928",
+       "SOC3",
+       "SOCI3"
+      ],
+      [
+       "19370",
+       "SOC3",
+       "SOCI3"
+      ],
+      [
+       "33625",
+       "SOC2",
+       "SOCI2"
+      ],
+      [
+       "33625",
+       "SOC3",
+       "SOCI3"
+      ],
+      [
+       "33625",
+       "SOC4",
+       "SOCI4"
+      ],
+      [
+       "33625",
+       "SOC5",
+       "SOCI5"
+      ]
+     ],
+     "filed_list_missed_count": 16,
+     "filed_list_reproduced": 0,
+     "id_route_reproduces": 0,
+     "missed": [
+      [
+       "03530",
+       "SOC3",
+       "SOCI3"
+      ],
+      [
+       "17928",
+       "SOC2",
+       "SOCI2"
+      ],
+      [
+       "17928",
+       "SOC3",
+       "SOCI3"
+      ],
+      [
+       "19370",
+       "SOC3",
+       "SOCI3"
+      ],
+      [
+       "33625",
+       "SOC2",
+       "SOCI2"
+      ],
+      [
+       "33625",
+       "SOC3",
+       "SOCI3"
+      ],
+      [
+       "33625",
+       "SOC4",
+       "SOCI4"
+      ],
+      [
+       "33625",
+       "SOC5",
+       "SOCI5"
+      ]
+     ],
+     "missed_count": 16,
+     "printed": "SOC",
+     "verdict": "keep"
+    }
+   ],
+   "slug": "merced"
+  },
+  "Moreno Valley College": {
+   "college_code": "962",
+   "pairs": [
+    {
+     "alias_matches": 23,
+     "file": "HIS",
+     "filed_list_matches": 64,
+     "filed_list_missed": [
+      [
+       "30169",
+       "HIST1",
+       "HIS1"
+      ],
+      [
+       "30169",
+       "HIST14",
+       "HIS14"
+      ],
+      [
+       "30169",
+       "HIST15",
+       "HIS15"
+      ],
+      [
+       "30169",
+       "HIST25",
+       "HIS25"
+      ],
+      [
+       "30169",
+       "HIST26",
+       "HIS26"
+      ],
+      [
+       "30169",
+       "HIST31",
+       "HIS31"
+      ],
+      [
+       "30169",
+       "HIST32",
+       "HIS32"
+      ],
+      [
+       "30169",
+       "HIST34",
+       "HIS34"
+      ]
+     ],
+     "filed_list_missed_count": 39,
+     "filed_list_reproduced": 25,
+     "id_route_reproduces": 23,
+     "missed": [],
+     "missed_count": 0,
+     "printed": "HIST",
+     "verdict": "keep"
+    }
+   ],
+   "slug": "moreno_valley"
+  },
+  "Norco College": {
+   "college_code": "963",
+   "pairs": [
+    {
+     "alias_matches": 26,
+     "file": "HIS",
+     "filed_list_matches": 52,
+     "filed_list_missed": [
+      [
+       "30109",
+       "HIST1",
+       "HIS1"
+      ],
+      [
+       "30109",
+       "HIST14",
+       "HIS14"
+      ],
+      [
+       "30109",
+       "HIST25",
+       "HIS25"
+      ],
+      [
+       "30109",
+       "HIST26",
+       "HIS26"
+      ],
+      [
+       "30109",
+       "HIST31",
+       "HIS31"
+      ],
+      [
+       "30109",
+       "HIST34",
+       "HIS34"
+      ],
+      [
+       "30110",
+       "HIST14",
+       "HIS14"
+      ],
+      [
+       "30110",
+       "HIST31",
+       "HIS31"
+      ]
+     ],
+     "filed_list_missed_count": 26,
+     "filed_list_reproduced": 26,
+     "id_route_reproduces": 26,
+     "missed": [],
+     "missed_count": 0,
+     "printed": "HIST",
+     "verdict": "keep"
+    }
+   ],
+   "slug": "norco"
+  },
+  "Riverside City College": {
+   "college_code": "961",
+   "pairs": [
+    {
+     "alias_matches": 86,
+     "file": "HIS",
+     "filed_list_matches": 86,
+     "filed_list_missed": [],
+     "filed_list_missed_count": 0,
+     "filed_list_reproduced": 86,
+     "id_route_reproduces": 86,
+     "missed": [],
+     "missed_count": 0,
+     "printed": "HIST",
+     "verdict": "retire"
+    }
+   ],
+   "slug": "riverside_city"
+  },
+  "San Bernardino Valley College": {
+   "college_code": "982",
+   "pairs": [
+    {
+     "alias_matches": 15,
+     "file": "ANTHRO",
+     "filed_list_matches": 53,
+     "filed_list_missed": [
+      [
+       "11075",
+       "ANTH102",
+       "ANTHRO102"
+      ],
+      [
+       "11075",
+       "ANTH102H",
+       "ANTHRO102H"
+      ],
+      [
+       "18530",
+       "ANTH108",
+       "ANTHRO108"
+      ],
+      [
+       "18530",
+       "ANTH108H",
+       "ANTHRO108H"
+      ],
+      [
+       "18530",
+       "ANTH109",
+       "ANTHRO109"
+      ],
+      [
+       "18530",
+       "ANTH111",
+       "ANTHRO111"
+      ],
+      [
+       "18530",
+       "ANTH111H",
+       "ANTHRO111H"
+      ],
+      [
+       "18531",
+       "ANTH100",
+       "ANTHRO100"
+      ]
+     ],
+     "filed_list_missed_count": 53,
+     "filed_list_reproduced": 0,
+     "id_route_reproduces": 0,
+     "missed": [
+      [
+       "31823",
+       "ANTH125",
+       "ANTHRO125"
+      ],
+      [
+       "31886",
+       "ANTH102",
+       "ANTHRO102"
+      ],
+      [
+       "31886",
+       "ANTH102H",
+       "ANTHRO102H"
+      ],
+      [
+       "32309",
+       "ANTH102",
+       "ANTHRO102"
+      ],
+      [
+       "32309",
+       "ANTH102H",
+       "ANTHRO102H"
+      ],
+      [
+       "32595",
+       "ANTH102",
+       "ANTHRO102"
+      ],
+      [
+       "32595",
+       "ANTH102H",
+       "ANTHRO102H"
+      ],
+      [
+       "40833",
+       "ANTH102",
+       "ANTHRO102"
+      ]
+     ],
+     "missed_count": 15,
+     "printed": "ANTH",
+     "verdict": "keep"
+    },
+    {
+     "alias_matches": 3,
+     "file": "ART",
+     "filed_list_matches": 25,
+     "filed_list_missed": [
+      [
+       "04893",
+       "ARTH103",
+       "ART103"
+      ],
+      [
+       "04893",
+       "ARTH105",
+       "ART105"
+      ],
+      [
+       "04893",
+       "ARTH107",
+       "ART107"
+      ],
+      [
+       "04893",
+       "ARTH108",
+       "ART108"
+      ],
+      [
+       "04896",
+       "ARTH105",
+       "ART105"
+      ],
+      [
+       "04896",
+       "ARTH107",
+       "ART107"
+      ],
+      [
+       "04896",
+       "ARTH108",
+       "ART108"
+      ],
+      [
+       "12196",
+       "ARTH103",
+       "ART103"
+      ]
+     ],
+     "filed_list_missed_count": 25,
+     "filed_list_reproduced": 0,
+     "id_route_reproduces": 0,
+     "missed": [
+      [
+       "39404",
+       "ARTH105",
+       "ART105"
+      ],
+      [
+       "39404",
+       "ARTH107",
+       "ART107"
+      ],
+      [
+       "39404",
+       "ARTH108",
+       "ART108"
+      ]
+     ],
+     "missed_count": 3,
+     "printed": "ARTH",
+     "verdict": "keep"
+    }
+   ],
+   "slug": "san_bernardino_valley"
+  },
+  "Santiago Canyon College": {
+   "college_code": "873",
+   "pairs": [
+    {
+     "alias_matches": 17,
+     "file": "PBLC",
+     "filed_list_matches": 17,
+     "filed_list_missed": [],
+     "filed_list_missed_count": 0,
+     "filed_list_reproduced": 17,
+     "id_route_reproduces": 17,
+     "missed": [],
+     "missed_count": 0,
+     "printed": "PASV",
+     "verdict": "retire"
+    }
+   ],
+   "slug": "santiago_canyon"
+  }
+ },
+ "new_matches": {
+  "by_kind": {
+   "common_course": 1443,
+   "other": 60,
+   "prefix": 131
+  },
+  "counts": {
+   "consistent": 1634
+  },
+  "examples": {
+   "common_course": [
+    {
+     "college": "Allan Hancock College",
+     "listed": "MATH181",
+     "other_titles": [],
+     "printed": "MATHC2210",
+     "record": "05839"
+    },
+    {
+     "college": "Allan Hancock College",
+     "listed": "MATH182",
+     "other_titles": [],
+     "printed": "MATHC2220",
+     "record": "05839"
+    },
+    {
+     "college": "Allan Hancock College",
+     "listed": "MATH181",
+     "other_titles": [],
+     "printed": "MATHC2210",
+     "record": "05840"
+    },
+    {
+     "college": "Allan Hancock College",
+     "listed": "ENGL102",
+     "other_titles": [],
+     "printed": "ENGLC1002",
+     "record": "05870"
+    },
+    {
+     "college": "Allan Hancock College",
+     "listed": "ENGL102",
+     "other_titles": [],
+     "printed": "ENGLC1002",
+     "record": "05878"
+    },
+    {
+     "college": "Allan Hancock College",
+     "listed": "MATH181",
+     "other_titles": [],
+     "printed": "MATHC2210",
+     "record": "05881"
+    },
+    {
+     "college": "Allan Hancock College",
+     "listed": "MATH182",
+     "other_titles": [],
+     "printed": "MATHC2220",
+     "record": "05881"
+    },
+    {
+     "college": "Allan Hancock College",
+     "listed": "MATH181",
+     "other_titles": [],
+     "printed": "MATHC2210",
+     "record": "05883"
+    }
+   ],
+   "other": [
+    {
+     "college": "Antelope Valley College",
+     "listed": "PHIL130",
+     "other_titles": [],
+     "printed": "PHIL230",
+     "record": "33011"
+    },
+    {
+     "college": "Antelope Valley College",
+     "listed": "PHIL140",
+     "other_titles": [],
+     "printed": "PHIL240",
+     "record": "33011"
+    },
+    {
+     "college": "Cabrillo College",
+     "listed": "SPAN16",
+     "other_titles": [],
+     "printed": "SPAN3S",
+     "record": "06358"
+    },
+    {
+     "college": "Cabrillo College",
+     "listed": "SPAN16",
+     "other_titles": [],
+     "printed": "SPAN3S",
+     "record": "32201"
+    },
+    {
+     "college": "Cabrillo College",
+     "listed": "SPAN16",
+     "other_titles": [],
+     "printed": "SPAN3S",
+     "record": "32352"
+    },
+    {
+     "college": "Cabrillo College",
+     "listed": "SPAN16",
+     "other_titles": [],
+     "printed": "SPAN3S",
+     "record": "45306"
+    },
+    {
+     "college": "Cerritos College",
+     "listed": "COS102",
+     "other_titles": [],
+     "printed": "COS102E",
+     "record": "16308"
+    },
+    {
+     "college": "Cerritos College",
+     "listed": "COS103",
+     "other_titles": [],
+     "printed": "COS103E",
+     "record": "16308"
+    }
+   ],
+   "prefix": [
+    {
+     "college": "American River College",
+     "listed": "ENGWR301",
+     "other_titles": [],
+     "printed": "ENGL301",
+     "record": "12110"
+    },
+    {
+     "college": "American River College",
+     "listed": "LA300",
+     "other_titles": [],
+     "printed": "PLGL300",
+     "record": "17372"
+    },
+    {
+     "college": "American River College",
+     "listed": "LA350",
+     "other_titles": [],
+     "printed": "PLGL350",
+     "record": "17372"
+    },
+    {
+     "college": "American River College",
+     "listed": "ENGWR301",
+     "other_titles": [],
+     "printed": "ENGL301",
+     "record": "17937"
+    },
+    {
+     "college": "American River College",
+     "listed": "ENGWR481",
+     "other_titles": [],
+     "printed": "ENGL481",
+     "record": "17937"
+    },
+    {
+     "college": "American River College",
+     "listed": "ENGWR301",
+     "other_titles": [],
+     "printed": "ENGL301",
+     "record": "17939"
+    },
+    {
+     "college": "American River College",
+     "listed": "ENGWR481",
+     "other_titles": [],
+     "printed": "ENGL481",
+     "record": "17939"
+    },
+    {
+     "college": "American River College",
+     "listed": "ENGWR481",
+     "other_titles": [],
+     "printed": "ENGL481",
+     "record": "19335"
+    }
+   ]
+  },
+  "prefix_by_college": {
+   "American River College: ENGL for ENGWR": 9,
+   "American River College: PLGL for LA": 2,
+   "Cabrillo College: VAPA for MUS": 2,
+   "Cerritos College: EMLS for ESL": 1,
+   "Cerritos College: POLS for POL": 1,
+   "College of San Mateo: ADS for SOSC": 4,
+   "College of the Canyons: COMM for COMS": 5,
+   "Crafton Hills College: CDEV for CD": 3,
+   "Cuesta College: ARTH for ART": 4,
+   "Golden West College: BUSG for MGMTG": 6,
+   "Irvine Valley College: BIOL for BIO": 3,
+   "Irvine Valley College: SOCI for SOC": 6,
+   "Modesto Junior College: SWHS for HUMSR": 5,
+   "Moreno Valley College: MATH for MAT": 2,
+   "Mt. San Antonio College: ARTH for AHIS": 43,
+   "Norco College: MATH for MAT": 2,
+   "Reedley College: WLF for NR": 1,
+   "Riverside City College: MATH for MAT": 2,
+   "Sacramento City College: ENGL for ENGWR": 27,
+   "Ventura College: ARTHV for ARTV": 2,
+   "Yuba College: FTVE for MCOMM": 1
+  }
+ },
+ "rule": "a pair retires only when the id route reproduces every match the pair produced on the filed records",
+ "self_recall": {
+  "counts": {
+   "missed": 267,
+   "right": 385
+  },
+  "examples": {
+   "missed": [
+    {
+     "college": "Barstow Community College",
+     "id_route": null,
+     "listed": "POLI2",
+     "printed": "POLS2",
+     "record": "33066"
+    },
+    {
+     "college": "Barstow Community College",
+     "id_route": null,
+     "listed": "POLI3",
+     "printed": "POLS3",
+     "record": "33066"
+    },
+    {
+     "college": "Barstow Community College",
+     "id_route": null,
+     "listed": "POLI4",
+     "printed": "POLS4",
+     "record": "33066"
+    },
+    {
+     "college": "Barstow Community College",
+     "id_route": null,
+     "listed": "POLI2",
+     "printed": "POLS2",
+     "record": "41251"
+    },
+    {
+     "college": "Barstow Community College",
+     "id_route": null,
+     "listed": "POLI3",
+     "printed": "POLS3",
+     "record": "41251"
+    },
+    {
+     "college": "Glendale Community College",
+     "id_route": null,
+     "listed": "ENGLC1000",
+     "printed": "ENGL101",
+     "record": "02557"
+    },
+    {
+     "college": "Glendale Community College",
+     "id_route": null,
+     "listed": "THTR101",
+     "printed": "TART101",
+     "record": "11177"
+    },
+    {
+     "college": "Glendale Community College",
+     "id_route": null,
+     "listed": "THTR103",
+     "printed": "TART103",
+     "record": "11177"
+    },
+    {
+     "college": "Glendale Community College",
+     "id_route": null,
+     "listed": "THTR104",
+     "printed": "TART104",
+     "record": "11177"
+    },
+    {
+     "college": "Glendale Community College",
+     "id_route": null,
+     "listed": "THTR109",
+     "printed": "TART109",
+     "record": "11177"
+    },
+    {
+     "college": "Glendale Community College",
+     "id_route": null,
+     "listed": "THTR123",
+     "printed": "TART123",
+     "record": "11177"
+    },
+    {
+     "college": "Glendale Community College",
+     "id_route": null,
+     "listed": "THTR101",
+     "printed": "TART101",
+     "record": "18638"
+    }
+   ]
+  }
+ },
+ "status_change": {
+  "committed_list": {
+   "fail_to_pass": [
+    {
+     "college": "College of the Desert",
+     "record": "35461",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "College of the Desert",
+     "record": "36094",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "College of the Desert",
+     "record": "45210",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "De Anza College",
+     "record": "46313",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "Diablo Valley College",
+     "record": "37558",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "Glendale Community College",
+     "record": "19366",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "record": "17778",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    }
+   ]
+  },
+  "filed_list": {
+   "fail_to_pass": [
+    {
+     "college": "College of the Desert",
+     "record": "35461",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "College of the Desert",
+     "record": "36094",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "College of the Desert",
+     "record": "45210",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "De Anza College",
+     "record": "46313",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "Diablo Valley College",
+     "record": "37558",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "Glendale Community College",
+     "record": "19366",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "record": "17778",
+     "score_pass": [
+      false,
+      true
+     ],
+     "tab": [
+      false,
+      true
+     ]
+    }
+   ]
+  }
+ },
+ "summary": {
+  "arithmetic_may_move": 4,
+  "keep": 10,
+  "new_matches": {
+   "consistent": 1634
+  },
+  "new_matches_by_kind": {
+   "common_course": 1443,
+   "other": 60,
+   "prefix": 131
+  },
+  "pairs": 17,
+  "retire": 7,
+  "self_recall": {
+   "missed": 267,
+   "right": 385
+  },
+  "status_change": {
+   "committed_list": {
+    "fail_to_pass": 7
+   },
+   "filed_list": {
+    "fail_to_pass": 7
+   }
+  }
+ },
+ "unmatched_records": {
+  "no_rebuilt_closed_list": {},
+  "rebuilt_list_differs_from_filed_score": {
+   "Berkeley City College": 5,
+   "Crafton Hills College": 11,
+   "De Anza College": 23,
+   "Glendale Community College": 11,
+   "Irvine Valley College": 3,
+   "Los Angeles Trade Technical College": 6,
+   "Los Medanos College": 5,
+   "Merced College": 1,
+   "Moreno Valley College": 8,
+   "Norco College": 7,
+   "San Bernardino Valley College": 16,
+   "San Joaquin Delta College": 14
+  }
+ }
+}

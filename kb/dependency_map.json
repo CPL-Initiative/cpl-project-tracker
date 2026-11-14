@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 947,
+  "file_datasets": 948,
   "external_services": 195,
-  "consumers": 592,
+  "consumers": 593,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2237
+     "line": 2246
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2193
+     "line": 2202
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2130
+     "line": 2139
     }
    ],
    "main_committers": []
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1764
+     "line": 1773
     }
    ],
    "main_committers": []
@@ -8588,7 +8588,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6225
+     "line": 6234
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8608,7 +8608,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6275
+     "line": 6284
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -17301,7 +17301,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3081
+     "line": 3090
     }
    ],
    "served": true,
@@ -17314,7 +17314,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6659
+     "line": 6668
     }
    ],
    "served": true,
@@ -17503,6 +17503,13 @@
   },
   "file:kb/program_requirements_reconcile.json": {
    "consumers": [
+    {
+     "id": "script:kb/_course_id_route_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 58
+    },
     {
      "id": "script:kb/_prefix_alias_census.py",
      "kind": "script",
@@ -21050,7 +21057,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6475
+     "line": 6484
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21070,7 +21077,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5694
+     "line": 5703
     }
    ],
    "served": false,
@@ -21687,7 +21694,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6562
+     "line": 6571
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -24568,6 +24575,19 @@
    "main_committers": []
   },
   "file:tests/context_budget_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/course_id_route_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -28560,7 +28580,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6633
+     "line": 6642
     }
    ],
    "main_committers": []
@@ -28572,7 +28592,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6742
+     "line": 6751
     }
    ],
    "main_committers": []
@@ -33642,6 +33662,7 @@
     "tests/library_publish_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
+    "tests/course_id_route_test.py",
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_extract_halt_test.py",

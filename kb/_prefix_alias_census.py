@@ -139,14 +139,8 @@ def load_pcf(path: str = PCF) -> tuple[dict, dict, dict]:
 # Introduction to Poetry and "ENG303-26954" (American River), 6,332 of the four colleges' 6,599 Fall 2025 ids.
 # Normalized whole, it reads ENGL3042507 and never meets ENGL 304, so the counterexample rule could not see it
 # (S652 second reader). A number must stand before the hyphen: Southwestern's "NC-1001" is a subject and a number.
-MIS_ID_SUFFIX = re.compile(r"^([A-Z&][A-Z&\s]*\d+[A-Z]*)-\d{4,5}$")
-
-
-def mis_code(course_id: str) -> str:
-    """A MIS CB_COURSE_ID as the course code it names, the trailing record id set aside."""
-    s = (course_id or "").strip().upper()
-    m = MIS_ID_SUFFIX.match(s)
-    return norm_code(m.group(1) if m else s)
+# One reading, kept in kb/_course_id_route.py since S653, which reads the Program Course File's ids the same way.
+from _course_id_route import MIS_ID_SUFFIX, mis_code  # noqa: E402,F401
 
 
 def load_mis(path: str = MIS) -> dict:

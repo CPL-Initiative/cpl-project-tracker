@@ -29,9 +29,15 @@
     {
      "kind": "set",
      "field": "ge_units",
-     "value": {"min": 35, "max": 35},
+     "value": {
+      "min": 35,
+      "max": 35
+     },
      "awards": "transfer",
-     "only_with": ["ge_pattern", "degree_total"],
+     "only_with": [
+      "ge_pattern",
+      "degree_total"
+     ],
      "pattern": "Cal-?\\s?GETC",
      "source": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65",
      "source_words": "California General Education Transfer Curriculum (Cal-GETC) (35 Units)"
@@ -50,7 +56,7 @@
     "30566": {
      "page": 552,
      "words": "ADTs also require that students must earn a",
-     "evidence": "Psychology AA-T 30566: the capture of 2026-10-17 (capture.json pdf.picks, pages 552-554, named, coverage 0.8) opened on PDF p.552 '[page 552] ADTs also require that students must earn a “C” or better in all courses required for the major or area of emphasis.'; the reading's section heading 'Degree Requirements' and its Cal-GETC words '(b) the California General Education Transfer Curriculum (Cal-GETC) Requirement.' are on p.552 (college-page-read run 43519918667). Reconcile 43521338550's fresh capture took it to pp.467-470, a page naming 'History, Psychology or Sociology AA-T' as another degree."
+     "evidence": "Psychology AA-T 30566: the capture of 2026-10-17 (capture.json pdf.picks, pages 552-554, named, coverage 0.8) opened on PDF p.552 '[page 552] ADTs also require that students must earn a \u201cC\u201d or better in all courses required for the major or area of emphasis.'; the reading's section heading 'Degree Requirements' and its Cal-GETC words '(b) the California General Education Transfer Curriculum (Cal-GETC) Requirement.' are on p.552 (college-page-read run 43519918667). Reconcile 43521338550's fresh capture took it to pp.467-470, a page naming 'History, Psychology or Sociology AA-T' as another degree."
     },
     "33072": {
      "page": 404,
@@ -66,9 +72,16 @@
     {
      "kind": "set",
      "field": "ge_units",
-     "value": {"min": 34, "max": 34},
+     "value": {
+      "min": 34,
+      "max": 34
+     },
      "awards": "transfer",
-     "only_with": ["ge_pattern", "degree_total", "total_units"],
+     "only_with": [
+      "ge_pattern",
+      "degree_total",
+      "total_units"
+     ],
      "pattern": "Cal-?\\s?GETC",
      "source": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72",
      "source_words": "Cal-GETC General Education Certificate of Achievement requires 34 Units."
@@ -1171,14 +1184,14 @@
   },
   "Victor Valley College": {
    "tabs_with_prose": true,
-   "tabs_with_prose_why": "S639: four EMS certificates (38353, 38366, 38502, 38503) were read from the Overview alone, because its sentence names every course ('This certificate is for successful completion of EMS 82 Paramedic Cardiology and EMS 83 Paramedic Pharmacology') and so reached the share before the hidden tabs were looked at; the REQUIREMENTS tab prints 'EMS 82 Paramedic Cardiology 4.5 · EMS 83 Paramedic Pharmacology 3.5 · Total Units 8' (college-page-read 43136401325). The capture appends the tabs where the visible text prints no Total Units line and a tab names as many of the courses and prints one (kb/_program_requirements_pilot.py best_text). Measured on the capture of reconcile 43139057384: the four EMS certificates moved from innerText to innerText+tabs on the same pages, and no other program's chosen page or text field moved (20545 and 38852 lost their sources under the S449 page rules, not this flag; 42301 stayed). Their filed readings still lack the units: a re-extraction of the four reads the tab.",
-   "why":"S639 harvest side session (second session), 2026-11-12. Of Victor Valley's 177 filed records (168 loaded), 35 noncredit certificates (measure hours) fail arithmetic as incomplete: the program page prints the total and no hours beside any course. Career Success 42728, as the capture reads it (college-page-read 43134526902): 'Total Certificate Hours: 96.0 - 108.0 · Course List · Code · Title · Units · Required Courses · WKPR 011 Personal Growth, Development and Wellness 0.0 · WKPR 012 ... 0.0 · WKPR 014 ... 0.0 · Total Units 0'. The catalog prints each course's hours in its course description (the same read, catalog.vvc.edu/course-descriptions/<prefix>/ for thirteen prefixes): 'WKPR 011 Personal Growth, Development and Wellness (0.0 Units) ... Lecture Hours: 36.0'; 'COSM 0101 Cosmetology Fundamentals (0.0 Units) ... Lecture Hours: 171.0; Lab Hours: 108.0'. The course_hours step gives each listed course without hours the lecture plus lab hours its description prints (kb/program_requirements_units/victor_valley.json, 116 noncredit courses). The descriptions print one figure, and in 23 of the 35 the figures add to the top of the printed range exactly (WKPR 011, 012 and 014 at 36 each to 108 of 96.0 - 108.0; COSM 0100 54 and COSM 0101 279 to 333 of 296.0 - 333.0); no page prints a course's low end. In 22 of those 23 the printed low end is eight ninths of the top (96 of 108, 296 of 333, 28 of 31.5), a 16-week term against 18; the scorer reads them as meets_top (kb/_program_requirements_score.py hours_meets_top: hours records only, the ratio within 0.05, beside Sheet 120 card 1's narrow reading, which still governs units). The range and the course hours are the catalog's; that a range in that ratio is one total across term lengths is the session's reading (S639). Critical Care Paramedic 45880 (256.00 to 280.00, 0.914 of its top) is in no such ratio and stays unequal. Two more add to a total of one figure (ESL Level 3 42907 and ESL Level 5 43736, 'Total Certificate Hours: 216.0', 108 and 108). Nine add to neither (the EMC life-support set, CDL 42419, APE 44878, AHOM 42099): the catalog's figures disagree, and they stand as filed. Hairstylist Academy 43590 stays incomplete: COSM 0203 has no hours in the descriptions read, so 23, 2, 9 and 1 make the 35. Two credit certificates outside this entry's steps, Level III: Site Supervisor 07591 (39 of 39) and Applied Developmental Psychology 38779 (16-18 of 16-18), went live as new passes in reread 43145085368: main's current scorer rescored them, and neither record changed. A curator should look at 07591: its reader noted 'The block prints 6.0 for two courses, but the state file lists CHDV 144 and CHDV 145 at 2 units each, so two courses could total fewer than 6 units; reviewer may check.' No college-level awards gate: the step reads a record measured in hours only, so a credit certificate (37006, 38352: 'AUTO 82.0' printed without units, Sheet 85 card 4) is never touched.",
+   "tabs_with_prose_why": "S639: four EMS certificates (38353, 38366, 38502, 38503) were read from the Overview alone, because its sentence names every course ('This certificate is for successful completion of EMS 82 Paramedic Cardiology and EMS 83 Paramedic Pharmacology') and so reached the share before the hidden tabs were looked at; the REQUIREMENTS tab prints 'EMS 82 Paramedic Cardiology 4.5 \u00b7 EMS 83 Paramedic Pharmacology 3.5 \u00b7 Total Units 8' (college-page-read 43136401325). The capture appends the tabs where the visible text prints no Total Units line and a tab names as many of the courses and prints one (kb/_program_requirements_pilot.py best_text). Measured on the capture of reconcile 43139057384: the four EMS certificates moved from innerText to innerText+tabs on the same pages, and no other program's chosen page or text field moved (20545 and 38852 lost their sources under the S449 page rules, not this flag; 42301 stayed). Their filed readings still lack the units: a re-extraction of the four reads the tab.",
+   "why": "S639 harvest side session (second session), 2026-11-12. Of Victor Valley's 177 filed records (168 loaded), 35 noncredit certificates (measure hours) fail arithmetic as incomplete: the program page prints the total and no hours beside any course. Career Success 42728, as the capture reads it (college-page-read 43134526902): 'Total Certificate Hours: 96.0 - 108.0 \u00b7 Course List \u00b7 Code \u00b7 Title \u00b7 Units \u00b7 Required Courses \u00b7 WKPR 011 Personal Growth, Development and Wellness 0.0 \u00b7 WKPR 012 ... 0.0 \u00b7 WKPR 014 ... 0.0 \u00b7 Total Units 0'. The catalog prints each course's hours in its course description (the same read, catalog.vvc.edu/course-descriptions/<prefix>/ for thirteen prefixes): 'WKPR 011 Personal Growth, Development and Wellness (0.0 Units) ... Lecture Hours: 36.0'; 'COSM 0101 Cosmetology Fundamentals (0.0 Units) ... Lecture Hours: 171.0; Lab Hours: 108.0'. The course_hours step gives each listed course without hours the lecture plus lab hours its description prints (kb/program_requirements_units/victor_valley.json, 116 noncredit courses). The descriptions print one figure, and in 23 of the 35 the figures add to the top of the printed range exactly (WKPR 011, 012 and 014 at 36 each to 108 of 96.0 - 108.0; COSM 0100 54 and COSM 0101 279 to 333 of 296.0 - 333.0); no page prints a course's low end. In 22 of those 23 the printed low end is eight ninths of the top (96 of 108, 296 of 333, 28 of 31.5), a 16-week term against 18; the scorer reads them as meets_top (kb/_program_requirements_score.py hours_meets_top: hours records only, the ratio within 0.05, beside Sheet 120 card 1's narrow reading, which still governs units). The range and the course hours are the catalog's; that a range in that ratio is one total across term lengths is the session's reading (S639). Critical Care Paramedic 45880 (256.00 to 280.00, 0.914 of its top) is in no such ratio and stays unequal. Two more add to a total of one figure (ESL Level 3 42907 and ESL Level 5 43736, 'Total Certificate Hours: 216.0', 108 and 108). Nine add to neither (the EMC life-support set, CDL 42419, APE 44878, AHOM 42099): the catalog's figures disagree, and they stand as filed. Hairstylist Academy 43590 stays incomplete: COSM 0203 has no hours in the descriptions read, so 23, 2, 9 and 1 make the 35. Two credit certificates outside this entry's steps, Level III: Site Supervisor 07591 (39 of 39) and Applied Developmental Psychology 38779 (16-18 of 16-18), went live as new passes in reread 43145085368: main's current scorer rescored them, and neither record changed. A curator should look at 07591: its reader noted 'The block prints 6.0 for two courses, but the state file lists CHDV 144 and CHDV 145 at 2 units each, so two courses could total fewer than 6 units; reviewer may check.' No college-level awards gate: the step reads a record measured in hours only, so a credit certificate (37006, 38352: 'AUTO 82.0' printed without units, Sheet 85 card 4) is never touched.",
    "steps": [
     {
      "kind": "course_hours",
      "field": "units",
      "read": "college-page-read 43134526902 (kb/college_reads/victor_valley_noncredit_hours.json; kb/program_requirements_units/victor_valley.json)",
-     "source_words": "each noncredit course description's heading and hours line, lecture plus lab: 'WKPR 011 · Personal Growth, Development and Wellness · (0.0 Units) Lecture Hours: 36.0', 'COSM 0101 · Cosmetology Fundamentals · (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0'",
+     "source_words": "each noncredit course description's heading and hours line, lecture plus lab: 'WKPR 011 \u00b7 Personal Growth, Development and Wellness \u00b7 (0.0 Units) Lecture Hours: 36.0', 'COSM 0101 \u00b7 Cosmetology Fundamentals \u00b7 (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0'",
      "hours_file": "program_requirements_units/victor_valley.json"
     },
     {
@@ -1194,7 +1207,7 @@
      "read": "college-page-read 43136401325 (kb/college_reads/victor_valley_ge_and_ems_tabs.json) and 43137395720 (kb/college_reads/victor_valley_calgetc_total.json)",
      "source": "https://catalog.vvc.edu/degrees-certificates/calgetc/calgetc-ca/",
      "source_words": "the Cal-GETC Certificate of Achievement's REQUIREMENTS tab, area by area to 'Area 6 - Ethnic Studies 3.0 ... Total Units 34-42' (college-page-read 43137395720)",
-     "why": "S639: History AA-T 31788 and Communication Studies 2.0 AA-T 44287 name the 60 and Cal-GETC with no units for the pattern; each page prints 'To earn this degree complete the major coursework listed here with “C” grades or higher and the following graduation requirements: 60 CSU transferable units; the Cal-GETC pattern; and 2.0 minimum overall CSU GPA.' (read 43136401325). The catalog's own Cal-GETC pattern, as its certificate prints it, totals 34-42 (read 43137395720). Transfer degrees only, and only one whose reading holds the degree total (only_with degree_total): about 20 more Victor Valley transfer degrees print the same line and hold the major alone, and the figure would clear their 'major only' reading without being shown (S639 review). Set where the reading left the units empty."
+     "why": "S639: History AA-T 31788 and Communication Studies 2.0 AA-T 44287 name the 60 and Cal-GETC with no units for the pattern; each page prints 'To earn this degree complete the major coursework listed here with \u201cC\u201d grades or higher and the following graduation requirements: 60 CSU transferable units; the Cal-GETC pattern; and 2.0 minimum overall CSU GPA.' (read 43136401325). The catalog's own Cal-GETC pattern, as its certificate prints it, totals 34-42 (read 43137395720). Transfer degrees only, and only one whose reading holds the degree total (only_with degree_total): about 20 more Victor Valley transfer degrees print the same line and hold the major alone, and the figure would clear their 'major only' reading without being shown (S639 review). Set where the reading left the units empty."
     }
    ]
   },
@@ -1267,9 +1280,15 @@
     {
      "kind": "set",
      "field": "ge_units",
-     "value": {"min": 34, "max": 34},
+     "value": {
+      "min": 34,
+      "max": 34
+     },
      "awards": "transfer",
-     "only_with": ["ge_pattern", "degree_total"],
+     "only_with": [
+      "ge_pattern",
+      "degree_total"
+     ],
      "pattern": "Cal-?\\s?GETC",
      "source": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/psychology-aat/",
      "source_words": "Plus General Education Requirements (Cal-GETC) 34 (S648, d-calgetc-34-per-college-evidence-s648: Grossmont's transfer pages print their own Cal-GETC figure; Psychology AA-T 30978 and History AA-T 31814 quote it)"
@@ -1418,9 +1437,6 @@
    ]
   },
   "Santiago Canyon College": {
-   "prefix_aliases": {
-    "PASV": "PBLC"
-   },
    "prefix_aliases_cited": [
     {
      "printed": "PASV",
@@ -1439,7 +1455,14 @@
       "PASV 151 = PBLC 151, Ethics and Professionalism: The High Calling of Public Service",
       "PASV 152 = PBLC 152, Preparing for Supervision Public Sector"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 17 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     }
    ],
    "why": "S645, the conductor's design for #3201 (review of the S644 fix, 13 findings standing). Santiago Canyon's 2026-2027 catalog PDF prints 'Control Number: N' AFTER each program and opens the next program on the following line ('Control Number: 11856' / 'Biology, AS-T' / 'A.S. Degree for Transfer'). The reader cut each page from the number's line, so a window opened on the program printed next: COBIx's spot-check (#3194 comment 6841001207) found Biology AS 11856 holding the Biology AS-T, and Economics AA 11943 and Sociology AA 11947 passing while holding their AA-T's requirements. pdf_numbers_after names the reader setting for this catalog alone (kb/_program_requirements_college.py pdf_best): a program whose own number line prints takes the block that ends at that line, only when the block opens on the program's own title and award; anything else reads by the heading picker, refused only where another listed program's number closes the window. The reader's own count of the habit is a measurement filed in every PDF capture (capture.json pdf.numbers_after) and never switches the reading: a gated catalog whose count disagrees reads by the heading picker and files numbers_after_disagrees. Session decision for Sam to revise; reversible by deleting this entry.",
@@ -1454,10 +1477,6 @@
   },
   "American River College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BMET n, SWCD n where the state's Program Course File lists ET n, HSER n, the same number and title in every case kb/_prefix_alias_census.py could title (BMET for ET, 6 courses; SWCD for HSER, 7 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
-   "prefix_aliases": {
-    "BMET": "ET",
-    "SWCD": "HSER"
-   },
    "prefix_aliases_cited": [
     {
      "printed": "BMET",
@@ -1476,7 +1495,14 @@
       "BMET 261 = ET 261, Introduction to Biomedical Equipment Networking",
       "BMET 262 = ET 262, Introduction to Respiratory Therapy Ventilators"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 12 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     },
     {
      "printed": "SWCD",
@@ -1495,7 +1521,14 @@
       "SWCD 330 = HSER 330, Issues of Diverse Populations",
       "SWCD 340 = HSER 340, Introduction to Chemical Dependency"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 75 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     }
    ],
    "steps": []
@@ -1503,7 +1536,6 @@
   "Barstow Community College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints CDEV n, POLS n where the state's Program Course File lists CHLD n, POLI n, the same number and title in every case kb/_prefix_alias_census.py could title (CDEV for CHLD, 18 courses; POLS for POLI, 3 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
    "prefix_aliases": {
-    "CDEV": "CHLD",
     "POLS": "POLI"
    },
    "prefix_aliases_cited": [
@@ -1524,7 +1556,14 @@
       "CDEV 12A = CHLD 12A, Creative Activities for Early Childhood Education",
       "CDEV 14 = CHLD 14, Child Health, Safety, and Nutrition"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 18 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     },
     {
      "printed": "POLS",
@@ -1550,9 +1589,6 @@
   },
   "City College of San Francisco": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints COMM n where the state's Program Course File lists CMST n, the same number and title in every case kb/_prefix_alias_census.py could title (COMM for CMST, 5 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
-   "prefix_aliases": {
-    "COMM": "CMST"
-   },
    "prefix_aliases_cited": [
     {
      "printed": "COMM",
@@ -1571,7 +1607,14 @@
       "COMM 3 = CMST 3, Argumentation and Debate",
       "COMM 4 = CMST 4, Group Communication"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 30 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     }
    ],
    "steps": []
@@ -1606,9 +1649,6 @@
   },
   "Diablo Valley College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BIOL n where the state's Program Course File lists BIOSC n, the same number and title in every case kb/_prefix_alias_census.py could title (BIOL for BIOSC, 14 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
-   "prefix_aliases": {
-    "BIOL": "BIOSC"
-   },
    "prefix_aliases_cited": [
     {
      "printed": "BIOL",
@@ -1627,7 +1667,14 @@
       "BIOL 117 = BIOSC 117, Human Biology with Laboratory",
       "BIOL 119 = BIOSC 119, Fundamentals of Microbiology"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 71 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     }
    ],
    "steps": []
@@ -1719,9 +1766,6 @@
   },
   "Riverside City College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 25 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
-   "prefix_aliases": {
-    "HIST": "HIS"
-   },
    "prefix_aliases_cited": [
     {
      "printed": "HIST",
@@ -1740,7 +1784,14 @@
       "HIST 11 = HIS 11, Military History of the United States to 1900",
       "HIST 12 = HIS 12, Military History of the United States Since 1900"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 86 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     }
    ],
    "steps": []
