@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-14T10:57:28Z",
-  "session": 651,
-  "moniker": "SkyDunlin",
+  "written_at": "2026-11-14T15:31:10Z",
+  "session": 652,
+  "moniker": "SkyAvocet",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_652_handoff.md",
+  "handoff": "docs/session_653_handoff.md",
   "next_step": {
-    "title": "The one dry run's review, then one migration and one rescore",
-    "text": "The dry run for the four passing-function changes is posted for COBIx's review. Once he answers, one migration and one rescore follow, and Cosumnes River's seven held programs are decided by it. Lassen's five restored programs need a capture pinned to the catalog's own pages."
+    "title": "Slice A's merge, then the five colleges' prefix-alias rereads",
+    "text": "Slice A merges once the fresh Skyline capture is read and checked. Riverside City's display waits on COBIx's spot-check. Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley each get a record-by-record compare, a reread from their filed pages and a display, one college at a time. The reader fault that drops curriQunet pages sharing a title is fixed next."
   },
   "calls": [
     {
@@ -313,7 +313,24 @@
       "text": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way. Carried to Sheet 195 as card 5.",
       "if_no_reply": "Pull request 3250 stays unmerged and your Sheet 82 ruling stands.",
       "link": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
-      "link_text": "Open Sheet 194"
+      "link_text": "Open Sheet 194",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-14",
+        "words": "Close it, keep Sheet 82 (Open Asks Sheet 195, Complete pressed 01:18Z). Pull request 3250 is closed and the 76 overlap records stay as filed."
+      }
+    },
+    {
+      "title": "Count only the programs the catalog lists in the completeness base?",
+      "text": "Open Asks Sheet 197 card 4. Your catalog-first rule (relayed by COBIx on issue 3299) flags a program on COCI but not listed in the catalog and moves on. Slice B would make the completeness base the catalog-listed Active programs, with a chip on each COCI-only row, which moves a public figure. It waits on slice A's results and your go, under four guards: each not-listed records its basis; the headline shows both bases side by side; a chipped program with awards in the last three years says so on its chip; closed-list programs whose page was claimed or not found stay in Still to pass until the second look has run for their college.",
+      "if_no_reply": "The base stays every Active program; the lookup only records what it finds.",
+      "link": "https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd",
+      "link_text": "Open Sheet 197",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-14",
+        "words": "go, with the four guards (Open Asks Sheet 197 card 4, 14:38Z). Slice B is built after slice A merges and its second look has run per college, with both bases side by side on the headline."
+      }
     }
   ],
   "notes": {
@@ -321,24 +338,40 @@
   },
   "changes": [
     {
-      "at": "2026-11-14T10:48:00Z",
-      "text": "Lassen's display was rebuilt on main, so CPL Pathways and Sierra show its five programs read again."
+      "at": "2026-11-14T15:23:00Z",
+      "text": "Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley were reconciled again from their filed pages under the new prefix aliases, each on its own branch; nothing is written until each compare is read."
     },
     {
-      "at": "2026-11-14T10:46:00Z",
-      "text": "A change that rewrote the display's notes from the reconcile's words was withdrawn before Lassen's merge, because most notes it quoted were curator notes, not catalog words."
+      "at": "2026-11-14T15:21:00Z",
+      "text": "A fresh Skyline capture tests the narrowed catalog lookup: one page names at most one program, the whole title must match, and landing and archived pages are refused. Recall 81.1% with no false match."
     },
     {
-      "at": "2026-11-14T10:28:00Z",
-      "text": "The San Diego district's course objectives were loaded: 2,532 rows at City, Mesa and Miramar, the SLO rows unchanged."
+      "at": "2026-11-14T15:15:00Z",
+      "text": "Riverside City was read again from its filed pages under the new prefix aliases: 222 to 230 of 244 programs pass. The headline read at 14:22Z (14,597 of 20,282) predates these 8. The receipt keeps the rows as they were; the display waits on COBIx's spot-check."
     },
     {
-      "at": "2026-11-14T09:42:00Z",
-      "text": "Lassen: five transfer degrees were read again with the 34 Cal-GETC units its catalog prints on page 72; two now pass, Lassen 37 of 59. The receipt keeps the rows as they were."
+      "at": "2026-11-14T14:05:00Z",
+      "text": "Riverside City's programs were reconciled again under the new prefix aliases on a branch; nothing is written to the table until a record-by-record compare and COBIx's spot-check."
     },
     {
-      "at": "2026-11-14T09:35:47Z",
-      "text": "The dry run for the four passing-function changes was posted for review; nothing was applied."
+      "at": "2026-11-14T14:04:00Z",
+      "text": "Per-college prefix aliases were added for 13 colleges (17 pairs, Riverside City's HIST for HIS among them), each on at least three matching courses and no counterexample. On the filed records 15 programs newly pass the tab's rule; no table was written."
+    },
+    {
+      "at": "2026-11-14T13:59:00Z",
+      "text": "COBIx's review of the display design was folded in: a borrowed figure is shown as borrowed, and an absence reads that no figure was found in the college's catalog."
+    },
+    {
+      "at": "2026-11-14T13:40:00Z",
+      "text": "Skyline's free capture started, the first test of the catalog lookup for programs with no closed course list (draft pull request 3300); it changes no count."
+    },
+    {
+      "at": "2026-11-14T12:53:00Z",
+      "text": "The design for the display's gaps as structured fields was merged: figure, pattern, source and basis, never curator notes quoted as catalog words."
+    },
+    {
+      "at": "2026-11-14T12:45:00Z",
+      "text": "COBIx's statewide count of where the electives word guard's match sits: 31 records at most fall outside their program's section, and about 2 have no electives word anywhere in the record."
     }
   ],
   "headline": [
@@ -574,7 +607,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-14T06:12:00Z"
+    "at": "2026-11-15T06:12:00Z"
   },
   "harvest": {
     "day": "2026-11-14",

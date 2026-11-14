@@ -77,6 +77,14 @@ check(by["P5"]["replaced"] == "some" and by["P5"]["same_code_kept"] == 1 and by[
 check(by["P6"]["replaced"] == "none", "a retired course with no kept successor is none")
 check(by["P1"]["page"] == "never looked for" and by["P7"]["page"] == "looked" and by["P2"]["page"] == "no capture entry",
       "the capture's no_closed_list entry with no source is a page never looked for")
+# A capture since S652 files its title-and-award lookup beside the method (#3299 slice A): the tally says so.
+captures2 = dict(captures)
+captures2[("Alpha", "P3")] = {"method": "no_closed_list", "source": None,
+                              "catalog_lookup": {"result": "not_listed", "basis": "search_found_none"}}
+r2 = D.diagnose(members, export, mem, captures2)
+by2 = {p["control_number"]: p for p in r2["programs"]}
+check(by2["P3"]["page"] == "looked up: not_listed" and by2["P1"]["page"] == "never looked for",
+      "a no_closed_list entry carrying catalog_lookup reads as looked up, with its answer")
 
 check(by["P1"]["approved"] == "Jan 1 before 2010 (legacy placeholder)", "a Jan 1 date before 2010 is the placeholder")
 check(by["P7"]["approved"] == "2010-2019", "a Jan 1 date from 2010 on is an ordinary date")
