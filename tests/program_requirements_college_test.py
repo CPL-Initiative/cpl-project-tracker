@@ -4721,6 +4721,151 @@ check(_rwf.get("on", _rwf.get(True))["workflow_dispatch"]["inputs"]["sources_fro
       "a staged read downloads the earlier run's artifact, loads no page, prices at $40 before extracting, and its "
       "job ends with the failed-calls check: %r" % _rorder)
 
+# ── a program with no closed list, looked up by title and award (S652; #3299 slice A) ─────────
+# Sam's rule: one second look in the catalog for each COCI program we do not hold, and "nothing stops the
+# collection bus from rolling." Skyline's Accounting A.S. (05809) has no closed list in the Program Course File
+# and read "no closed list" beside its own page, catalog.skylinecollege.edu/current/programs/accounting-as.php,
+# which the reader never opened. The repository keeps no Skyline page text (a run's pages live in its artifact),
+# so these pages are built in the shape Skyline's custom_html catalog serves: one sitemap, each program page at
+# <slug>-<award>.php and again at .xml with no heading. Run through capture() itself (the S646 lesson).
+SK = "https://catalog.skylinecollege.edu/current/"
+SK_PAGES = {
+    "programs/accounting-as.php": ("Accounting", ""),
+    "programs/accounting-as.xml": ("", ""),
+    "programs/accounting-ca.php": ("Accounting", "ACTG 100 ACTG 121 ACTG 131"),
+    "programs/digital-media-aa.php": ("Digital Media", "DGME 100 DGME 105 DGME 110"),
+    "programs/graphic-design-as.php": ("Graphic Design", ""),
+    "programs/graphic-design.php": ("Graphic Design A.S.", ""),
+    "programs/paralegal.php": ("Paralegal", ""),
+    "programs/allied-health-science-as.php": ("Allied Health Science", ""),
+    "programs/allied-health-sciences-as.php": ("Allied Health Sciences", ""),
+}
+
+
+def _sk_prog(cn, title, award, codes=(), status="Active"):
+    return {"control_number": cn, "title": title, "award": award, "status": status, "top_code": None,
+            "shape": C.shape_of(award), "load_id": None,
+            "closed_list": [{"code": c, "title": c, "units": 3} for c in codes]}
+
+
+SK_PROGS = [
+    _sk_prog("05809", "Accounting", "A.S. Degree"),
+    _sk_prog("90001", "Accounting", "Certificate of Achievement", ("ACTG 100", "ACTG 121", "ACTG 131")),
+    _sk_prog("90002", "Business", "A.S. Degree"),
+    _sk_prog("90003", "Digital Media", "A.A. Degree", ("DGME 100", "DGME 105", "DGME 110")),
+    _sk_prog("90004", "Digital Media", "A.A. Degree", status="Active - Teachout Only"),
+    _sk_prog("90005", "Graphic Design", "A.S. Degree"),
+    _sk_prog("90006", "Paralegal", "A.S. Degree"),
+    _sk_prog("90007", "Paralegal", "Certificate of Achievement"),
+    _sk_prog("90008", "Allied Health Science", "A.S. Degree"),
+]
+
+
+def _sk_got(path):
+    h1, codes = SK_PAGES[path]
+    words = codes.split()
+    listed = [" ".join(words[i:i + 2]) for i in range(0, len(words), 2)]
+    body = "%s\nProgram Requirements\n%s" % (h1, "\n".join(c + " Course 3 units" for c in listed))
+    return {"final_url": SK + path, "url": SK + path, "title": h1, "h1": h1, "body": body, "content": body,
+            "status": 200, "access": "ok", "links": []}
+
+
+def run_sk_capture(lookup):
+    names = ("college_programs", "hand_filed", "host_registry_urls", "read_sitemap", "index_links", "COLLEGE_DIR")
+    saved_c = {n: getattr(C, n) for n in names}
+    saved_p = (P.fetch_registry, P.open_reader, P.load, P.locate_html)
+    saved_env = os.environ.get(C.NCL_LOOKUP_ENV), os.environ.get("CAPTURE_ROUTE")
+    with tempfile.TemporaryDirectory() as td:
+        C.college_programs = lambda college: json.loads(json.dumps(SK_PROGS))
+        C.hand_filed = lambda college: None
+        C.host_registry_urls = lambda start: [SK]
+        C.read_sitemap = lambda reader, start: {"url": SK + "sitemap.xml", "status": 200, "nested": [],
+                                                "pages": [SK + p for p in sorted(SK_PAGES)]}
+        C.index_links = lambda *a, **k: []
+        C.COLLEGE_DIR = os.path.join(td, "colleges")
+        P.fetch_registry = lambda college: {"catalog_url": SK, "catalog_platform": "custom_html",
+                                            "catalog_year": "2026-2027"}
+        P.open_reader = lambda delay: (_CapClose(), _CapClose(), _CapReader(delay))
+        P.load = lambda reader, u, cache, late=False: _sk_got(u[len(SK):])
+        P.locate_html = lambda *a, **k: {"best": None}
+        os.environ[C.NCL_LOOKUP_ENV] = lookup
+        os.environ.pop("CAPTURE_ROUTE", None)
+        out = os.path.join(td, "out")
+        try:
+            code = C.capture("Skyline College", out)
+            srcs = {f[:-5]: open(os.path.join(out, "sources", f)).read() for f in os.listdir(os.path.join(out, "sources"))}
+            rep = json.load(open(os.path.join(out, "capture.json")))
+            os.makedirs(os.path.join(out, "records"))
+            C.file_run("Skyline College", out, "1")
+            filed = json.load(open(os.path.join(C.COLLEGE_DIR, "skyline", "sources.json")))
+        finally:
+            for n, v in saved_c.items():
+                setattr(C, n, v)
+            P.fetch_registry, P.open_reader, P.load, P.locate_html = saved_p
+            for k, v in zip((C.NCL_LOOKUP_ENV, "CAPTURE_ROUTE"), saved_env):
+                if v is None:
+                    os.environ.pop(k, None)
+                else:
+                    os.environ[k] = v
+    return code, srcs, rep, filed
+
+
+sk_code, sk_src, sk_rep, sk_filed = run_sk_capture("1")
+sk = {cn: json.loads(t) for cn, t in sk_src.items()}
+lk = {cn: s.get("catalog_lookup") or {} for cn, s in sk.items()}
+check(sk_code == 0 and lk["05809"].get("result") == "found"
+      and lk["05809"]["page"]["url"] == SK + "programs/accounting-as.php" and lk["05809"]["page"]["award"] == "named",
+      "Skyline's Accounting A.S. (05809), no closed list, is found on its own page by title and award: %r" % lk["05809"])
+check(all(sk[cn]["method"] == "no_closed_list" and sk[cn]["source"] is None and sk[cn]["text"] == ""
+          for cn in ("05809", "90002", "90004", "90005", "90006", "90007", "90008")),
+      "a looked-up program keeps method no_closed_list, no source and no text: nothing extracts it, the census counts it as before")
+check(sk["90001"]["source"]["url"] == SK + "programs/accounting-ca.php" and sk["90003"]["method"] == "sitemap_page",
+      "the closed-list programs take their pages first")
+check(lk["90002"] == {"result": "not_listed", "basis": "search_found_none"},
+      "a no-closed-list program no page names files not_listed, on the search's basis: %r" % lk["90002"])
+check(lk["90004"].get("result") == "not_found" and "closed-list" in lk["90004"].get("why", ""),
+      "a no-closed-list program never takes a closed-list sibling's page: %r" % lk["90004"])
+check(lk["90005"].get("result") == "not_found" and lk["90005"]["why"].startswith("two pages name it"),
+      "two pages naming one program at its award is ambiguous, filed not_found with the reason: %r" % lk["90005"])
+check(lk["90006"].get("result") == "not_found" and lk["90007"].get("result") == "not_found"
+      and "as fully" in lk["90006"]["why"],
+      "a page that prints no award and names two programs (Paralegal A.S. and certificate) goes to neither: %r" % lk["90006"])
+check(lk["90008"].get("result") == "not_found" and "two pages" in lk["90008"]["why"],
+      "Allied Health Science beside an Allied Health Sciences page is ambiguous, never a guess: %r" % lk["90008"])
+check(not any(r["control_number"] == "05809" for r in (sk_rep["would_extract"].get("list") or []))
+      and sk_rep["catalog_lookup"]["found"] == 1 and sk_rep["catalog_lookup"]["searched"] == 7
+      and sk_rep["catalog_lookup"]["found_programs"][0]["url"] == SK + "programs/accounting-as.php"
+      and sk_rep["by_method"].get("no_closed_list") == 7,
+      "the account counts the lookup's pages for a price, and nothing found extracts in this slice: %r" % sk_rep["catalog_lookup"])
+check(next(e for e in sk_filed if e["control_number"] == "05809")["catalog_lookup"]["result"] == "found"
+      and "catalog_lookup" not in next(e for e in sk_filed if e["control_number"] == "90001"),
+      "the filed sources.json carries a no-closed-list program's answer, and nothing new on a closed-list entry")
+off_code, off_src, off_rep, off_filed = run_sk_capture("0")
+check(off_code == 0 and "catalog_lookup" not in off_rep and not any("catalog_lookup" in t for t in off_src.values()),
+      "NCL_CATALOG_LOOKUP=0 runs the capture as before S652")
+check(all(off_src[cn] == sk_src[cn] for cn in ("90001", "90003"))
+      and {k: v for k, v in sk_rep.items() if k not in ("catalog_lookup", "seconds", "started")}
+      == {k: v for k, v in off_rep.items() if k not in ("seconds", "started")},
+      "the lookup leaves every closed-list program's source and the rest of the account byte for byte as before")
+check(_rwf.get("on", _rwf.get(True))["workflow_dispatch"]["inputs"]["ncl_lookup"]["default"] == "1"
+      and _rsteps["Capture"]["env"]["NCL_CATALOG_LOOKUP"] == "${{ github.event.inputs.ncl_lookup || '1' }}",
+      "the college workflow's ncl_lookup input (default 1) sets the capture's NCL_CATALOG_LOOKUP")
+# The catalog's own list (a Coursedog search, kept since S423): a program it does not name rests on that list.
+cd_list_pages = C.ncl_listed_names({"catalog": [{"code": "ACCT-AS", "name": "Accounting - Associate in Science"}],
+                                    "errors": []})
+cd_ans = C.ncl_lookup([_sk_prog("1", "Accounting", "A.S. Degree"), _sk_prog("2", "Welding", "A.S. Degree")],
+                      [], set(), cd_list_pages)
+check(cd_ans["2"] == {"result": "not_listed", "basis": "absent_from_catalog_list"}
+      and cd_ans["1"]["result"] == "not_found" and "list names it" in cd_ans["1"]["why"],
+      "where the capture holds the catalog's own list, not_listed means absent from it; a listed program with no page "
+      "read is not_found: %r" % cd_ans)
+check(C.ncl_listed_names({"catalog": [{"code": "A", "name": "A"}], "errors": ["skip 50: HTTP 500"]}) is None,
+      "a catalog list the read did not finish is no basis")
+check(C.page_award_kinds({"url": SK + "programs/accounting-as.php"}) == {"as"}
+      and C.page_award_kinds({"url": SK + "programs/user-experience-design-ca.php"}) == {"coa"}
+      and C.slug_awards(SK + "programs/accounting-as.php") == set(),
+      "the lookup reads an award from an address with its extension set aside; SLUG_AWARD stays as it was")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
