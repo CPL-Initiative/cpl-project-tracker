@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T10:52:07Z",
+ "written_at": "2026-11-14T17:54:24Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -167,12 +167,12 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15840,
-  "gap": 6495,
+  "passing": 15843,
+  "gap": 6492,
   "with_gap": 118,
-  "cost_usd": 1327.28,
-  "passed_at_read": 15151,
-  "cost_receipts": 117,
+  "cost_usd": 1317.59,
+  "passed_at_read": 15017,
+  "cost_receipts": 116,
   "slo_waiting": 9,
   "scouted": 11,
   "scout_barrier": 1,
@@ -185,8 +185,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15840,
-  "gap": 6495
+  "passing": 15843,
+  "gap": 6492
  },
  "census_live": {
   "basis": "live",
@@ -5703,13 +5703,13 @@
    "harvested": true,
    "slug": "merced",
    "programs": 182,
-   "passing": 141,
-   "gap": 41,
+   "passing": 144,
+   "gap": 38,
    "causes": {
     "no_closed_list": 10,
     "page_not_found": 9,
     "places_none": 1,
-    "unknown_without_live": 21
+    "unknown_without_live": 18
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -5735,8 +5735,8 @@
    "objectives_printed": null,
    "read_at": "2026-10-19T10:44:44Z",
    "read_kind": "capture",
-   "cost_usd": 9.69,
-   "passed_at_read": 134,
+   "cost_usd": null,
+   "passed_at_read": 144,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -5749,9 +5749,9 @@
    "extracted": 163,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
-    "invented": 5,
-    "arithmetic": 25,
+    "coverage": 2,
+    "invented": 1,
+    "arithmetic": 18,
     "repeated": 0,
     "outcomes": 0
    },
@@ -5762,9 +5762,9 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1700.6,
-   "run": "39239492986",
+   "run": "43609965348",
    "levers": {
-    "reconcile_steps": 21,
+    "reconcile_steps": 18,
     "program_course_file_check": 10,
     "reader_page_search": 9,
     "reader_page_assignment": 1
