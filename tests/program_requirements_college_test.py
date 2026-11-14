@@ -943,6 +943,8 @@ check(sorted(e["id"] for e in bents) == [27919, 27923, 28225, 28226] and bacct["
       and sorted(e["id"] for e in bdist) == [27923, 28225, 28226] and bdrop == 1,
       "Butte's walk takes the entries under both views and reads each program once, the subject view's "
       "title first: %r %r" % ([e["id"] for e in bents], [e["id"] for e in bdist]))
+check([t for e in bdist for t in e.get("twin_ids") or []] == [27919],
+      "Butte's second listing of Automotive Technology is a twin, its id kept on the entry read")
 HIDE = json.dumps({"nodeConfig": {"excludeFromWebView": True}})
 
 check(C.cq_hidden({"text": " ", "config": HIDE}) and C.cq_hidden({"text": "Notes", "config": HIDE})
@@ -1074,6 +1076,76 @@ check([e["id"] for e in same] == [19915, 19951] and dropped == 1,
       "a program the index and its school both list is read once, from the first entry")
 check([e["id"] for e in C.cq_distinct([ENTRY, {"id": 5877, "text": "Accounting Basics for Small Business - Certificate of Completion - CC8009"}])[0]]
       == [5878, 5877], "Riverside City's entries, each titled once, are all kept")
+check(same[0].get("twin_ids") == [18990] and "twin_ids" not in same[1] and "twin_ids" not in BUS,
+      "the twin listing's id is kept on the entry read, not lost: %r" % [e.get("twin_ids") for e in same])
+# S653: the identity is the title and the award, and a pattern or kind the title
+# names keeps two programs apart (Riverside City titles its transfer degrees
+# "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)").
+SOC = "Sociology - Associate in Arts for Transfer (ADT) - AA696"
+for a, b in ((SOC, SOC + " (CalGETC)"), (SOC + " (IGETC)", SOC + " (CSU GE)"),
+             ("Child Development - Certificate of Completion", "Child Development - Noncredit Certificate of Completion"),
+             ("Welding - Certificate of Achievement - CA524", "Welding - Certificate of Achievement - CA524C")):
+    kept, gone = C.cq_distinct([{"id": 1, "text": a}, {"id": 2, "text": b}])
+    check([e["id"] for e in kept] == [1, 2] and gone == 0 and C.cq_identity({"text": a}) != C.cq_identity({"text": b}),
+          "two programs one marker apart are both read: %r / %r" % (a, b))
+check(C.cq_identity({"text": "AS Degree in Automotive Technology"})
+      == C.cq_identity({"text": "Automotive Technology (AS Degree)"})
+      and C.cq_identity({"text": SOC})[1] == "codes:AA696"
+      and C.cq_identity({"text": "Automotive Technology (AS Degree)"})[1] == "as degree",
+      "the award is the local codes, else the award words; Butte's two forms stay one identity")
+
+
+class CqPage:
+    def on(self, *a):
+        pass
+
+    def remove_listener(self, *a):
+        pass
+
+    def wait_for_timeout(self, *a):
+        pass
+
+
+class CqReader:
+    page = CqPage()
+
+    def load(self, url):
+        pass
+
+
+# The caller's walk: a program nested under an entry is read unless its id is
+# known or its identity is an entry's, and then its id joins that entry's twins.
+NEST = {
+    "page:19915": {"body": [{"navlist": [{"id": 30000}]}]},
+    "nav:30000": {"navs": [{"id": 18990, "text": BUS["text"]},                       # BUS's twin
+                           {"id": 19951, "text": "Accounting - A.S. Degree"},          # an entry, by id
+                           {"id": 19998, "text": BUS["text"] + " (CalGETC)"},          # a program of its own
+                           {"id": 19997, "text": "Accounting - A.S. Degree"}]},        # the entry's twin
+}
+
+
+def nest_json(reader, url, errors):
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    if "parentId" in q:
+        return NEST.get("nav:" + q["parentId"][0])
+    if "navigationtypeId" in q:
+        return {"navs": []}
+    return NEST.get("page:" + q["id"][0]) or {"body": []}
+
+
+saved = (C.cq_json, C.cq_catalog_id, C.cq_index)
+C.cq_json, C.cq_catalog_id = nest_json, (lambda heard: 718)
+C.cq_index = lambda get, catalog, root: ([dict(BUS), dict(ACC_AS, haschildbodynavs=False)], {"entries": 2})
+try:
+    nrep = {"college": "Chaffey College"}
+    npages = C.cq_pages(CqReader(), "https://chaffey.curriqunet.com/catalog/iq/19210", nrep)
+finally:
+    C.cq_json, C.cq_catalog_id, C.cq_index = saved
+check([p["node"] for p in npages] == [19915, 19951, 19998]
+      and nrep["curriqunet"]["twin_ids"] == {"19915": [18990], "19951": [19997]}
+      and npages[0].get("twin_ids") == [18990] and nrep["curriqunet"]["same_title_entries"] == 2,
+      "a nested program of its own is read, a nested twin is recorded on its entry: %r %r"
+      % ([p["node"] for p in npages], nrep["curriqunet"].get("twin_ids")))
 
 # ── the source a full college files keeps the pilot's shape ─────────────────
 reg = {"catalog_url": start, "catalog_year": "2026-2027", "catalog_platform": "courseleaf", "catalog_format": "html_per_program"}
