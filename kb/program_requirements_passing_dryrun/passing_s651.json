@@ -1,0 +1,1870 @@
+{
+ "dry_run": "S651 passing function, four changes, nothing applied",
+ "basis": {
+  "filed_records": "kb/program_requirements_college/*/records on main",
+  "census": "live, 2026-11-13 18:04Z",
+  "passing": "the tab's rule, counts_passing_on_tab over each filed record's flat checks"
+ },
+ "totals": {
+  "records": 19137,
+  "before": 15838,
+  "after": 15833,
+  "rule1_candidates": 45,
+  "rule2_programs_unread": 1668,
+  "rule3_candidates": 91,
+  "rule3_quoted": 0,
+  "rule3_by_pattern": {
+   "CSU-GE": 25,
+   "Cal-GETC": 36,
+   "Cal-GETC at a parked college": 2,
+   "IGETC": 28
+  },
+  "rule4_pass_to_fail": 5,
+  "rule4_held": 25
+ },
+ "rules": {
+  "1": {
+   "name": "noncredit Total Hours",
+   "coded": true,
+   "flips_from_files": 0,
+   "note": "fail-to-pass only; each candidate's flip is read on its captured text at the rescore"
+  },
+  "2": {
+   "name": "own-list rule",
+   "coded": false,
+   "note": "not coded: no record exists for a program with no closed list, and what a pass against a college's own course list checks is not written down"
+  },
+  "3": {
+   "name": "GE-pattern certificate rule",
+   "coded": true,
+   "note": "criteria 1-3 matched from the census and the export; a program counts only with criterion 4, quoted catalog words in the reconcile config"
+  },
+  "4": {
+   "name": "degree electives-fill guard",
+   "coded": true,
+   "note": "pass-to-fail where a filed pass rests on the program-total fill of a degree; held where the current fill would pass a failing degree record on a rescore"
+  }
+ },
+ "cosumnes_river_holds": {
+  "04602": {
+   "filed": "fail",
+   "current_function_rescore": "pass",
+   "after": "fail",
+   "award": "A.S. Degree"
+  },
+  "04607": {
+   "filed": "fail",
+   "current_function_rescore": "pass",
+   "after": "fail",
+   "award": "A.S. Degree"
+  },
+  "04614": {
+   "filed": "fail",
+   "current_function_rescore": "pass",
+   "after": "fail",
+   "award": "A.A. Degree"
+  },
+  "07305": {
+   "filed": "fail",
+   "current_function_rescore": "pass",
+   "after": "fail",
+   "award": "A.S. Degree"
+  },
+  "11319": {
+   "filed": "fail",
+   "current_function_rescore": "pass",
+   "after": "fail",
+   "award": "A.S. Degree"
+  },
+  "11338": {
+   "filed": "fail",
+   "current_function_rescore": "pass",
+   "after": "fail",
+   "award": "A.A. Degree"
+  },
+  "33542": {
+   "filed": "fail",
+   "current_function_rescore": "pass",
+   "after": "fail",
+   "award": "A.A- T Degree"
+  }
+ },
+ "per_college": [
+  {
+   "college": "Allan Hancock College",
+   "records": 156,
+   "before": 137,
+   "after": 137,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45033 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 46,
+   "movement": 0
+  },
+  {
+   "college": "American River College",
+   "records": 368,
+   "before": 300,
+   "after": 299,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "44845 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [
+    "04544"
+   ],
+   "rule4_held": [
+    "07206"
+   ],
+   "own_list_programs": 1,
+   "movement": -1
+  },
+  {
+   "college": "Antelope Valley College",
+   "records": 195,
+   "before": 157,
+   "after": 157,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 1,
+   "movement": 0
+  },
+  {
+   "college": "Bakersfield College",
+   "records": 231,
+   "before": 208,
+   "after": 208,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 8,
+   "movement": 0
+  },
+  {
+   "college": "Barstow Community College",
+   "records": 71,
+   "before": 54,
+   "after": 54,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Berkeley City College",
+   "records": 90,
+   "before": 48,
+   "after": 48,
+   "rule1_candidates": [
+    "37797",
+    "41869"
+   ],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 1,
+   "movement": 0
+  },
+  {
+   "college": "Butte College",
+   "records": 165,
+   "before": 138,
+   "after": 137,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [
+    "01329"
+   ],
+   "rule4_held": [],
+   "own_list_programs": 24,
+   "movement": -1
+  },
+  {
+   "college": "Cabrillo College",
+   "records": 271,
+   "before": 238,
+   "after": 238,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 9,
+   "movement": 0
+  },
+  {
+   "college": "Calbright College Credit",
+   "records": 12,
+   "before": 11,
+   "after": 11,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 1,
+   "movement": 0
+  },
+  {
+   "college": "Cañada College",
+   "records": 73,
+   "before": 62,
+   "after": 62,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "30527 CSU-GE",
+    "30528 IGETC",
+    "30529 IGETC",
+    "45326 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [
+    "30834",
+    "31856"
+   ],
+   "own_list_programs": 48,
+   "movement": 0
+  },
+  {
+   "college": "Cerritos College",
+   "records": 305,
+   "before": 276,
+   "after": 276,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45455 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 1,
+   "movement": 0
+  },
+  {
+   "college": "Cerro Coso Community College",
+   "records": 65,
+   "before": 30,
+   "after": 30,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 6,
+   "movement": 0
+  },
+  {
+   "college": "Chabot College",
+   "records": 233,
+   "before": 206,
+   "after": 206,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 4,
+   "movement": 0
+  },
+  {
+   "college": "Chaffey College",
+   "records": 193,
+   "before": 182,
+   "after": 182,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "30502 IGETC",
+    "30503 CSU-GE",
+    "45032 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Citrus College",
+   "records": 175,
+   "before": 147,
+   "after": 147,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 8,
+   "movement": 0
+  },
+  {
+   "college": "City College of San Francisco",
+   "records": 349,
+   "before": 257,
+   "after": 257,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "17941 CSU-GE",
+    "17942 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 44,
+   "movement": 0
+  },
+  {
+   "college": "Clovis Community College",
+   "records": 115,
+   "before": 69,
+   "after": 69,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "37034 CSU-GE",
+    "37310 IGETC",
+    "45219 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 5,
+   "movement": 0
+  },
+  {
+   "college": "Coalinga College",
+   "records": 55,
+   "before": 49,
+   "after": 49,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 2,
+   "movement": 0
+  },
+  {
+   "college": "Coastline Community College",
+   "records": 154,
+   "before": 124,
+   "after": 124,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 11,
+   "movement": 0
+  },
+  {
+   "college": "College of Alameda",
+   "records": 59,
+   "before": 35,
+   "after": 35,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 17,
+   "movement": 0
+  },
+  {
+   "college": "College of Marin",
+   "records": 89,
+   "before": 81,
+   "after": 81,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 61,
+   "movement": 0
+  },
+  {
+   "college": "College of San Mateo",
+   "records": 61,
+   "before": 53,
+   "after": 52,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45354 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [
+    "31224"
+   ],
+   "rule4_held": [
+    "35574"
+   ],
+   "own_list_programs": 33,
+   "movement": -1
+  },
+  {
+   "college": "College of the Canyons",
+   "records": 160,
+   "before": 109,
+   "after": 109,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 19,
+   "movement": 0
+  },
+  {
+   "college": "College of the Desert",
+   "records": 358,
+   "before": 288,
+   "after": 288,
+   "rule1_candidates": [
+    "43476"
+   ],
+   "rule3_candidates": [
+    "38982 CSU-GE",
+    "38984 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 4,
+   "movement": 0
+  },
+  {
+   "college": "College of the Redwoods",
+   "records": 73,
+   "before": 59,
+   "after": 59,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 3,
+   "movement": 0
+  },
+  {
+   "college": "College of the Sequoias",
+   "records": 125,
+   "before": 86,
+   "after": 86,
+   "rule1_candidates": [
+    "24184",
+    "24226",
+    "24256",
+    "37743"
+   ],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "College of the Siskiyous",
+   "records": 73,
+   "before": 66,
+   "after": 65,
+   "rule1_candidates": [
+    "37784"
+   ],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [
+    "10949"
+   ],
+   "rule4_held": [],
+   "own_list_programs": 3,
+   "movement": -1
+  },
+  {
+   "college": "Columbia College",
+   "records": 82,
+   "before": 78,
+   "after": 78,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45944 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Compton College",
+   "records": 81,
+   "before": 67,
+   "after": 67,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 1,
+   "movement": 0
+  },
+  {
+   "college": "Contra Costa College",
+   "records": 97,
+   "before": 59,
+   "after": 59,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 23,
+   "movement": 0
+  },
+  {
+   "college": "Copper Mountain College",
+   "records": 48,
+   "before": 36,
+   "after": 36,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 11,
+   "movement": 0
+  },
+  {
+   "college": "Cosumnes River College",
+   "records": 217,
+   "before": 146,
+   "after": 146,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [
+    "04602",
+    "04607",
+    "04614",
+    "07305",
+    "11319",
+    "11338",
+    "33542"
+   ],
+   "own_list_programs": 7,
+   "movement": 0
+  },
+  {
+   "college": "Crafton Hills College",
+   "records": 76,
+   "before": 55,
+   "after": 55,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18161 CSU-GE",
+    "18162 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 37,
+   "movement": 0
+  },
+  {
+   "college": "Cuesta College",
+   "records": 183,
+   "before": 167,
+   "after": 167,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18665 CSU-GE",
+    "18666 IGETC",
+    "45182 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 3,
+   "movement": 0
+  },
+  {
+   "college": "Cuyamaca College",
+   "records": 182,
+   "before": 146,
+   "after": 146,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Cypress College",
+   "records": 274,
+   "before": 252,
+   "after": 251,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [
+    "32097"
+   ],
+   "rule4_held": [
+    "03777",
+    "32134",
+    "37246"
+   ],
+   "own_list_programs": 0,
+   "movement": -1
+  },
+  {
+   "college": "De Anza College",
+   "records": 221,
+   "before": 205,
+   "after": 205,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 4,
+   "movement": 0
+  },
+  {
+   "college": "Diablo Valley College",
+   "records": 214,
+   "before": 197,
+   "after": 197,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 22,
+   "movement": 0
+  },
+  {
+   "college": "East Los Angeles College",
+   "records": 137,
+   "before": 103,
+   "after": 103,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "17962 CSU-GE",
+    "17963 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 85,
+   "movement": 0
+  },
+  {
+   "college": "El Camino College",
+   "records": 124,
+   "before": 89,
+   "after": 89,
+   "rule1_candidates": [
+    "44420",
+    "44465",
+    "44466",
+    "44467",
+    "44584"
+   ],
+   "rule3_candidates": [
+    "18807 CSU-GE",
+    "18808 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 52,
+   "movement": 0
+  },
+  {
+   "college": "Evergreen Valley College",
+   "records": 86,
+   "before": 59,
+   "after": 59,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Feather River College",
+   "records": 45,
+   "before": 37,
+   "after": 37,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 12,
+   "movement": 0
+  },
+  {
+   "college": "Folsom Lake College",
+   "records": 107,
+   "before": 87,
+   "after": 87,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [
+    "15368",
+    "38736",
+    "39574",
+    "42612"
+   ],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Foothill College",
+   "records": 185,
+   "before": 138,
+   "after": 138,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45361 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [
+    "06047"
+   ],
+   "own_list_programs": 18,
+   "movement": 0
+  },
+  {
+   "college": "Fresno City College",
+   "records": 237,
+   "before": 204,
+   "after": 204,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45362 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 14,
+   "movement": 0
+  },
+  {
+   "college": "Fullerton College",
+   "records": 313,
+   "before": 278,
+   "after": 278,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 6,
+   "movement": 0
+  },
+  {
+   "college": "Gavilan College",
+   "records": 106,
+   "before": 81,
+   "after": 81,
+   "rule1_candidates": [
+    "37812"
+   ],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 15,
+   "movement": 0
+  },
+  {
+   "college": "Glendale Community College",
+   "records": 242,
+   "before": 181,
+   "after": 181,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 48,
+   "movement": 0
+  },
+  {
+   "college": "Golden West College",
+   "records": 135,
+   "before": 107,
+   "after": 107,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 29,
+   "movement": 0
+  },
+  {
+   "college": "Grossmont College",
+   "records": 144,
+   "before": 124,
+   "after": 124,
+   "rule1_candidates": [
+    "43080",
+    "43081"
+   ],
+   "rule3_candidates": [
+    "45052 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 31,
+   "movement": 0
+  },
+  {
+   "college": "Hartnell College",
+   "records": 94,
+   "before": 83,
+   "after": 83,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 7,
+   "movement": 0
+  },
+  {
+   "college": "Imperial Valley College",
+   "records": 131,
+   "before": 115,
+   "after": 115,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18538 CSU-GE",
+    "18539 IGETC",
+    "45036 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 4,
+   "movement": 0
+  },
+  {
+   "college": "Irvine Valley College",
+   "records": 144,
+   "before": 130,
+   "after": 130,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18029 CSU-GE",
+    "18030 IGETC",
+    "44990 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 21,
+   "movement": 0
+  },
+  {
+   "college": "Lake Tahoe Community College",
+   "records": 78,
+   "before": 58,
+   "after": 58,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 4,
+   "movement": 0
+  },
+  {
+   "college": "Laney College",
+   "records": 150,
+   "before": 128,
+   "after": 128,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Las Positas College",
+   "records": 195,
+   "before": 181,
+   "after": 181,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45027 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 2,
+   "movement": 0
+  },
+  {
+   "college": "Lassen College",
+   "records": 64,
+   "before": 35,
+   "after": 35,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18331 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 3,
+   "movement": 0
+  },
+  {
+   "college": "Lemoore College",
+   "records": 73,
+   "before": 65,
+   "after": 65,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 7,
+   "movement": 0
+  },
+  {
+   "college": "Long Beach City College",
+   "records": 368,
+   "before": 319,
+   "after": 319,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 3,
+   "movement": 0
+  },
+  {
+   "college": "Los Angeles City College",
+   "records": 250,
+   "before": 221,
+   "after": 221,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 2,
+   "movement": 0
+  },
+  {
+   "college": "Los Angeles Harbor College",
+   "records": 118,
+   "before": 89,
+   "after": 89,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 3,
+   "movement": 0
+  },
+  {
+   "college": "Los Angeles Mission College",
+   "records": 128,
+   "before": 116,
+   "after": 116,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 12,
+   "movement": 0
+  },
+  {
+   "college": "Los Angeles Pierce College",
+   "records": 194,
+   "before": 163,
+   "after": 163,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 12,
+   "movement": 0
+  },
+  {
+   "college": "Los Angeles Southwest College",
+   "records": 94,
+   "before": 74,
+   "after": 74,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 39,
+   "movement": 0
+  },
+  {
+   "college": "Los Angeles Trade Technical College",
+   "records": 178,
+   "before": 143,
+   "after": 143,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 23,
+   "movement": 0
+  },
+  {
+   "college": "Los Angeles Valley College",
+   "records": 223,
+   "before": 202,
+   "after": 202,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45024 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 4,
+   "movement": 0
+  },
+  {
+   "college": "Los Medanos College",
+   "records": 83,
+   "before": 44,
+   "after": 44,
+   "rule1_candidates": [
+    "39829",
+    "39830"
+   ],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 6,
+   "movement": 0
+  },
+  {
+   "college": "Madera College",
+   "records": 106,
+   "before": 84,
+   "after": 84,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Mendocino College",
+   "records": 118,
+   "before": 73,
+   "after": 73,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 2,
+   "movement": 0
+  },
+  {
+   "college": "Merced College",
+   "records": 163,
+   "before": 141,
+   "after": 141,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "17878 CSU-GE",
+    "17879 IGETC",
+    "45026 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 7,
+   "movement": 0
+  },
+  {
+   "college": "Merritt College",
+   "records": 81,
+   "before": 71,
+   "after": 71,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 2,
+   "movement": 0
+  },
+  {
+   "college": "MiraCosta College",
+   "records": 142,
+   "before": 101,
+   "after": 101,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "30273 CSU-GE",
+    "30274 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 24,
+   "movement": 0
+  },
+  {
+   "college": "Mission College",
+   "records": 108,
+   "before": 91,
+   "after": 91,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45538 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 7,
+   "movement": 0
+  },
+  {
+   "college": "Modesto Junior College",
+   "records": 189,
+   "before": 160,
+   "after": 160,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 3,
+   "movement": 0
+  },
+  {
+   "college": "Monterey Peninsula College",
+   "records": 205,
+   "before": 185,
+   "after": 185,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45371 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Moorpark College",
+   "records": 144,
+   "before": 113,
+   "after": 113,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 4,
+   "movement": 0
+  },
+  {
+   "college": "Moreno Valley College",
+   "records": 140,
+   "before": 133,
+   "after": 133,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "30171 CSU-GE",
+    "30172 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 3,
+   "movement": 0
+  },
+  {
+   "college": "Mt. San Antonio College",
+   "records": 397,
+   "before": 360,
+   "after": 360,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "41412 CSU-GE",
+    "41413 IGETC",
+    "45046 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 38,
+   "movement": 0
+  },
+  {
+   "college": "Mt. San Jacinto College",
+   "records": 116,
+   "before": 97,
+   "after": 97,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 1,
+   "movement": 0
+  },
+  {
+   "college": "Napa Valley College",
+   "records": 98,
+   "before": 84,
+   "after": 84,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18382 CSU-GE",
+    "18383 IGETC",
+    "45286 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 13,
+   "movement": 0
+  },
+  {
+   "college": "Norco College",
+   "records": 148,
+   "before": 128,
+   "after": 128,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "30111 CSU-GE",
+    "30112 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 9,
+   "movement": 0
+  },
+  {
+   "college": "North Orange Continuing Education",
+   "records": 82,
+   "before": 77,
+   "after": 77,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 8,
+   "movement": 0
+  },
+  {
+   "college": "Ohlone College",
+   "records": 146,
+   "before": 126,
+   "after": 126,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45900 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 23,
+   "movement": 0
+  },
+  {
+   "college": "Orange Coast College",
+   "records": 274,
+   "before": 223,
+   "after": 223,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 25,
+   "movement": 0
+  },
+  {
+   "college": "Oxnard College",
+   "records": 120,
+   "before": 90,
+   "after": 90,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Palo Verde College",
+   "records": 66,
+   "before": 39,
+   "after": 39,
+   "rule1_candidates": [
+    "45471",
+    "45472",
+    "45473",
+    "46108"
+   ],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 1,
+   "movement": 0
+  },
+  {
+   "college": "Palomar College",
+   "records": 282,
+   "before": 265,
+   "after": 265,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18328 CSU-GE",
+    "45034 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 2,
+   "movement": 0
+  },
+  {
+   "college": "Pasadena City College",
+   "records": 297,
+   "before": 247,
+   "after": 247,
+   "rule1_candidates": [
+    "31101",
+    "33139",
+    "33413",
+    "33416",
+    "33418",
+    "33697",
+    "35858",
+    "35859",
+    "35861",
+    "35862",
+    "38204",
+    "41939",
+    "41953",
+    "41965",
+    "42195",
+    "42198",
+    "42199",
+    "44543",
+    "44896",
+    "44897",
+    "45887"
+   ],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 48,
+   "movement": 0
+  },
+  {
+   "college": "Porterville College",
+   "records": 82,
+   "before": 49,
+   "after": 49,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [
+    "06773"
+   ],
+   "own_list_programs": 2,
+   "movement": 0
+  },
+  {
+   "college": "Reedley College",
+   "records": 196,
+   "before": 177,
+   "after": 177,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45205 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 12,
+   "movement": 0
+  },
+  {
+   "college": "Rio Hondo College",
+   "records": 292,
+   "before": 276,
+   "after": 276,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45099 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 19,
+   "movement": 0
+  },
+  {
+   "college": "Riverside City College",
+   "records": 244,
+   "before": 222,
+   "after": 222,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18013 CSU-GE",
+    "18014 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 2,
+   "movement": 0
+  },
+  {
+   "college": "Sacramento City College",
+   "records": 204,
+   "before": 149,
+   "after": 149,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45204 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [
+    "04656",
+    "04688",
+    "07350",
+    "21418"
+   ],
+   "own_list_programs": 18,
+   "movement": 0
+  },
+  {
+   "college": "Saddleback College",
+   "records": 321,
+   "before": 274,
+   "after": 274,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 6,
+   "movement": 0
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "records": 225,
+   "before": 161,
+   "after": 161,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "38986 CSU-GE",
+    "38987 IGETC",
+    "45495 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 1,
+   "movement": 0
+  },
+  {
+   "college": "San Diego City College",
+   "records": 171,
+   "before": 163,
+   "after": 163,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "44738 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 9,
+   "movement": 0
+  },
+  {
+   "college": "San Diego College of Continuing Education",
+   "records": 109,
+   "before": 90,
+   "after": 90,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 24,
+   "movement": 0
+  },
+  {
+   "college": "San Diego Mesa College",
+   "records": 177,
+   "before": 173,
+   "after": 173,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "44739 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 11,
+   "movement": 0
+  },
+  {
+   "college": "San Diego Miramar College",
+   "records": 120,
+   "before": 117,
+   "after": 117,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18022 CSU-GE",
+    "44740 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 19,
+   "movement": 0
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "records": 203,
+   "before": 200,
+   "after": 200,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 17,
+   "movement": 0
+  },
+  {
+   "college": "San Jose City College",
+   "records": 84,
+   "before": 51,
+   "after": 51,
+   "rule1_candidates": [
+    "36929"
+   ],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 35,
+   "movement": 0
+  },
+  {
+   "college": "Santa Ana College",
+   "records": 347,
+   "before": 324,
+   "after": 324,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18115 CSU-GE",
+    "18116 IGETC",
+    "44846 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 7,
+   "movement": 0
+  },
+  {
+   "college": "Santa Barbara City College",
+   "records": 254,
+   "before": 220,
+   "after": 220,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "18380 CSU-GE",
+    "18381 IGETC",
+    "30730 IGETC",
+    "45037 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 26,
+   "movement": 0
+  },
+  {
+   "college": "Santa Monica College",
+   "records": 239,
+   "before": 184,
+   "after": 184,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "22828 CSU-GE",
+    "22829 IGETC",
+    "45094 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 13,
+   "movement": 0
+  },
+  {
+   "college": "Santa Rosa Junior College",
+   "records": 268,
+   "before": 191,
+   "after": 191,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 4,
+   "movement": 0
+  },
+  {
+   "college": "Santiago Canyon College",
+   "records": 222,
+   "before": 191,
+   "after": 191,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 30,
+   "movement": 0
+  },
+  {
+   "college": "Shasta College",
+   "records": 124,
+   "before": 62,
+   "after": 62,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 12,
+   "movement": 0
+  },
+  {
+   "college": "Sierra College",
+   "records": 111,
+   "before": 85,
+   "after": 85,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 65,
+   "movement": 0
+  },
+  {
+   "college": "Skyline College",
+   "records": 53,
+   "before": 40,
+   "after": 40,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "39214 CSU-GE",
+    "39215 IGETC",
+    "39243 IGETC",
+    "39972 IGETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 82,
+   "movement": 0
+  },
+  {
+   "college": "Solano Community College",
+   "records": 162,
+   "before": 119,
+   "after": 119,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "44989 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [
+    "38591"
+   ],
+   "own_list_programs": 5,
+   "movement": 0
+  },
+  {
+   "college": "Southwestern College",
+   "records": 220,
+   "before": 168,
+   "after": 168,
+   "rule1_candidates": [
+    "24181"
+   ],
+   "rule3_candidates": [
+    "45098 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 36,
+   "movement": 0
+  },
+  {
+   "college": "Taft College",
+   "records": 57,
+   "before": 36,
+   "after": 36,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 17,
+   "movement": 0
+  },
+  {
+   "college": "Ventura College",
+   "records": 173,
+   "before": 121,
+   "after": 121,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 6,
+   "movement": 0
+  },
+  {
+   "college": "Victor Valley College",
+   "records": 176,
+   "before": 140,
+   "after": 140,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 14,
+   "movement": 0
+  },
+  {
+   "college": "West Los Angeles College",
+   "records": 214,
+   "before": 177,
+   "after": 177,
+   "rule1_candidates": [],
+   "rule3_candidates": [],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 14,
+   "movement": 0
+  },
+  {
+   "college": "West Valley College",
+   "records": 134,
+   "before": 120,
+   "after": 120,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "45363 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 0,
+   "movement": 0
+  },
+  {
+   "college": "Woodland Community College",
+   "records": 65,
+   "before": 62,
+   "after": 62,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "37114 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 3,
+   "movement": 0
+  },
+  {
+   "college": "Yuba College",
+   "records": 93,
+   "before": 76,
+   "after": 76,
+   "rule1_candidates": [],
+   "rule3_candidates": [
+    "40743 Cal-GETC"
+   ],
+   "rule3_quoted": [],
+   "rule4_pass_to_fail": [],
+   "rule4_held": [],
+   "own_list_programs": 9,
+   "movement": 0
+  }
+ ]
+}

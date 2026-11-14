@@ -409,7 +409,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cobi_refresh.js` | pages: `CPL_Dashboard.html` | — |
 | `coci_lookup.js` | pages: `CPL_Dashboard.html` | — |
 | `coci_lookup_desc_*.js` | tabs: `coci-lookup` · scripts: `kb/_audit_cid_claims.py`, `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_ccr_desc_signal.py` | — |
-| `coci_program_export_*.csv` | scripts: `chatbox/build_coci_offerings.py`, `kb/_harvest_no_closed_list_diagnosis.py` | — |
+| `coci_program_export_*.csv` | scripts: `chatbox/build_coci_offerings.py`, `kb/_harvest_no_closed_list_diagnosis.py`, `kb/_program_requirements_passing_dryrun.py` | — |
 | `coci_program_export_<date>.csv` | scripts: `kb/_build_baccalaureate_pathways.py`, `kb/_build_coci_programs.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_program_course_graph.py`, `kb/_classify_noncredit_programs.py`, `tmc/_build_college_adts.py` | — |
 | `college_activity.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `college_activity_template.html` | scripts: `excel_to_dashboard.py`, `kb/_test_light_theme.py` | committed by: `daily-dashboard.yml` |
@@ -786,6 +786,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_college/glendale_community/capture_reread.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_college/glendale_community/tab_owners.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
+| `kb/program_requirements_passing_dryrun/live_reconcile_s651_rows.json` | scripts: `kb/_program_requirements_passing_dryrun.py` | — |
+| `kb/program_requirements_passing_dryrun/passing_s651.json` | scripts: `kb/_program_requirements_passing_dryrun.py` | — |
+| `kb/program_requirements_passing_dryrun/passing_s651.md` | scripts: `kb/_program_requirements_passing_dryrun.py` | — |
 | `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py`, `kb/_program_requirements_dated_reads.py` | committed by: `program-requirements-dated-reads.yml` |
 | `kb/program_requirements_pilot/map_cr_by_course.sql` | none found | committed by: `program-requirements-dated-reads.yml` |
 | `kb/program_requirements_pilot/records/*.json` | scripts: `kb/_build_commons_status.py` | — |
@@ -796,7 +799,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot/sequences/sources/mtsac_gps_s0401.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/smc_program_219.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
-| `kb/program_requirements_reconcile.json` | scripts: `kb/_program_requirements_reconcile.py` | — |
+| `kb/program_requirements_reconcile.json` | scripts: `kb/_program_requirements_passing_dryrun.py`, `kb/_program_requirements_reconcile.py` | — |
 | `kb/program_requirements_wave` | none found | committed by: `program-requirements-wave.yml` |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
@@ -870,7 +873,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/course.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/cr.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/exhibit.json` | scripts: `kb/_build_commons_status.py` | — |
-| `kb/status/harvest_gap_census.json` | scripts: `kb/_build_commons_data_status.py`, `kb/_harvest_gap_census.py`, `kb/_harvest_no_closed_list_diagnosis.py` | committed by: `harvest-gap-census.yml` |
+| `kb/status/harvest_gap_census.json` | scripts: `kb/_build_commons_data_status.py`, `kb/_harvest_gap_census.py`, `kb/_harvest_no_closed_list_diagnosis.py`, `kb/_program_requirements_passing_dryrun.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/harvest_gap_census.md` | scripts: `kb/_harvest_gap_census.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/harvest_heading_agreement.json` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
 | `kb/status/harvest_heading_agreement.md` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
@@ -1194,6 +1197,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_display_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_extract_halt_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_heading_agreement_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_passing_s651_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pdf_numbers_after_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_reconcile_test.py` | workflows: `js-tests.yml` | — |
@@ -1480,5 +1484,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 940 file
-datasets · 195 external services · 587 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 944 file
+datasets · 195 external services · 588 consumers · 72 workflows · 41 tabs.
