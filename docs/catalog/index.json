@@ -16288,7 +16288,7 @@
      ],
      "title": "MAP Custom Reports (3 new) / ITPI automation \u2014 lane state",
      "type": null,
-     "updated": "2026-09-10"
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-08-28",
@@ -16471,7 +16471,7 @@
      ],
      "title": "Sierra retrieval + corpus \u2014 lane state",
      "type": null,
-     "updated": "2026-11-12"
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-10-08",
@@ -16993,8 +16993,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 612,
+   "count": 613,
    "docs": [
+    {
+     "created": "2026-11-14",
+     "governs": [],
+     "n": 652,
+     "path": "docs/session_652_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 652 handoff (from SkyDunlin, S651)",
+     "type": null,
+     "updated": "2026-11-14"
+    },
     {
      "created": "2026-11-14",
      "governs": [],
@@ -27335,5 +27349,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1474
+ "total": 1475
 }
