@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-103 document(s).
+104 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -81,6 +81,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Program requirements harvest lessons — archive 2 (S360-S371)](../program_requirements_harvest_lessons_archive_2.md) | `program_requirements_harvest_lessons_archive_2.md` | 2026-10-15 | 2026-10-15 |
 | [Program requirements harvest lessons — archive 3 (S399-S415)](../program_requirements_harvest_lessons_archive_3.md) | `program_requirements_harvest_lessons_archive_3.md` | 2026-10-22 | 2026-10-30 |
 | [Program requirements harvest lessons — archive 4 (S419 onward)](../program_requirements_harvest_lessons_archive_4.md) | `program_requirements_harvest_lessons_archive_4.md` | 2026-11-08 | 2026-11-12 |
+| [Program requirements harvest lessons — archive 5 (S637 onward)](../program_requirements_harvest_lessons_archive_5.md) | `program_requirements_harvest_lessons_archive_5.md` | 2026-11-14 | 2026-11-14 |
 | [Program requirements harvest — side-session handoff (S639, second session)](../harvest_side_handoff_s639.md) | `harvest_side_handoff_s639.md` | 2026-11-12 |  |
 | [Program requirements harvest — wave 3 diagnoses (S639 side session)](../harvest_wave3_diagnoses_s639.md) | `harvest_wave3_diagnoses_s639.md` | 2026-11-12 |  |
 | [Program requirements harvest — why 1,604 active programs have no closed list (S644)](../harvest_no_closed_list_diagnosis_s644.md) | `harvest_no_closed_list_diagnosis_s644.md` | 2026-11-13 |  |
