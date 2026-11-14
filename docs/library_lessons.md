@@ -1164,3 +1164,6 @@ From the *One queue check* bullet: Open (#3227's review):
   `x.js?v=<hash>`; the starter and a public page are read from Pages, so the first card-published piece carried the
   stamp into the repo and `library_pages.test.js` failed on `main`. `unstamp` in `apply_edits.mjs` and
   `library_publish.py`. That test also lets MAP's two office addresses stand as help links (`OFFICE_ADDRESSES`).
+
+From the *Veteran map and the Fact Sheet* bullet, when the Fact Sheet's logo was settled (#3342), these phrases moved
+here verbatim: "(`sierra/cpl-initiative-logo-navy-480.png`, `sierra/cpl-initiative-logo-480.png`; 225,221 to 166,896 bytes)"; "and no public comment names the vault path"; "(no generator writes it)"; "its `--cplh-*` roles map onto `factsheet.css` `:root`;".

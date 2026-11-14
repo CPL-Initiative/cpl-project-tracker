@@ -156,13 +156,15 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   header's lengths, never `24px`.
 - **The Veteran map and the Fact Sheet carry the public header (S653b).** The Veteran map (S651, #3294 `f0339e38`): built
   in `build_selfcontained.py`, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one column; since #3333
-  it embeds the 480px logos (`sierra/cpl-initiative-logo-navy-480.png`, `sierra/cpl-initiative-logo-480.png`; 225,221 to
-  166,896 bytes) and no public comment names the vault path. Guard `tests/veteran_map_public_header.test.js`. The Fact Sheet
-  (#3333 `908d9b8d`, read live 19:51Z 2026-11-14): in `fact-sheet/index.html` (no generator writes it), between the skip
-  link and the masthead; its `--cplh-*` roles map onto `factsheet.css` `:root`; the masthead is a `div`, so the page has one
-  banner; the header never prints; nothing frames the page, so it has no embed case. Guard `tests/factsheet_public_header.test.js`.
-  **DECIDED:** the Fact Sheet's header carries no logo (Sam, in session S653b, 2026-11-14: "Don't need the ccc logo added
-  to the top of fact sheet. Leave masthead in."; `sam-fact-sheet-no-header-logo-2026-11-14`; #3342); the test pins it.
+  it embeds the 480px logos. Guard `tests/veteran_map_public_header.test.js`. The Fact Sheet (#3333 `908d9b8d`, read live
+  19:51Z 2026-11-14): in `fact-sheet/index.html`, between the skip link and the masthead; the masthead is a `div`, so the
+  page has one banner; the header never prints; nothing frames the page, so it has no embed case. Guard
+  `tests/factsheet_public_header.test.js`.
+  **DECIDED:** the Fact Sheet shows one logo, the CPL Initiative's, in the header; the masthead's California Community
+  Colleges-only logo is out, and paper gets a print-only CPL Initiative copy (Sam, in session S653b, 2026-11-14: "Don't
+  need the ccc logo added to the top of fact sheet. Leave masthead in." then "Confusion by me on masthead vs header. I
+  just want the ccc Cpl back in and the ccc only logo out"; then "Picture 2: CPL logo only";
+  `sam-fact-sheet-no-header-logo-2026-11-14`; #3342). The test pins it.
   **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own "CPL Fact Sheet" link opens a
   second copy; that test checks the links against the Veteran map's copy, not the vault's header; a theme choice
   on a public page sets `cpl_theme` for the whole github.io origin, COBI included (the existing design). The records as they

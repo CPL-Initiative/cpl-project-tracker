@@ -7400,7 +7400,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 968
+     "line": 981
     },
     {
      "id": "page:funding-model/index.html",
@@ -8687,7 +8687,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 970
+     "line": 983
     },
     {
      "id": "script:tools/source_cpl_stories.mjs",
@@ -8719,7 +8719,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 971
+     "line": 984
     }
    ],
    "served": true,
@@ -8732,7 +8732,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 969
+     "line": 982
     }
    ],
    "served": true,
@@ -8745,7 +8745,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 975
+     "line": 988
     }
    ],
    "served": true,
@@ -8758,7 +8758,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 976
+     "line": 989
     }
    ],
    "served": true,
@@ -8849,7 +8849,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 973
+     "line": 986
     },
     {
      "id": "script:fact-sheet/_build_statewide_recs.py",
@@ -8923,7 +8923,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 974
+     "line": 987
     }
    ],
    "served": true,
@@ -21611,7 +21611,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 972
+     "line": 985
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
@@ -23460,7 +23460,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 987
+     "line": 1000
     },
     {
      "id": "page:funding-model/index.html",
