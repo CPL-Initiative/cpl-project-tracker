@@ -498,6 +498,17 @@ def college_records(pilot_keys: set) -> list[tuple]:
 
 
 # ── the figure: the mock-up's plan(), ported ────────────────────────────────────
+def tag_course_id(courses: dict, score: dict | None) -> dict:
+    """Each display course the scorer met to its listed code by the Program Course File id names that route
+    ("matched_by": "course_id", "listed_as": the listed code), from coverage.course_id on the filed score, so
+    the matches nothing on file confirms can be picked out later (S653 review of #3312)."""
+    for m in ((score or {}).get("coverage") or {}).get("course_id") or []:
+        for code, e in courses.items():
+            if ck(code) == ck(m.get("printed")):
+                e["matched_by"], e["listed_as"] = "course_id", m.get("listed")
+    return courses
+
+
 def courses_of(block):
     return block.get("courses") or []
 
@@ -940,6 +951,7 @@ def build() -> dict:
                     if consider:
                         entry["consider"] = consider
                     courses[x["code"]] = entry
+        tag_course_id(courses, filed.get("score"))
 
         def has(c):
             e = courses.get(c["code"]) or {}
