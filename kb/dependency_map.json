@@ -498,7 +498,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 423
+     "line": 407
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -825,7 +825,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 447
+     "line": 431
     }
    ],
    "main_committers": []
@@ -7945,7 +7945,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 247
+     "line": 248
     }
    ],
    "served": false,
@@ -7958,7 +7958,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 738
+     "line": 749
     }
    ],
    "served": false,
@@ -13984,7 +13984,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 661
+     "line": 645
     }
    ],
    "served": false,
@@ -22479,7 +22479,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 462
+     "line": 463
     },
     {
      "id": "script:kb/_build_commons_status.py",
