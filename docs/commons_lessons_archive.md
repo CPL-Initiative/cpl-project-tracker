@@ -257,3 +257,118 @@ FCSH, HLTH, ITIS, OSHA) are discipline drift outside this run, recorded in #2270
   `kb/status/`. The CER tab's host object must lend a section pattern with its class names, a count control that opens
   its own lists, and call-card helpers (or none, with `callRecords` returning null and `callAnswered` reading the
   sheet's store); the collapse pattern Sam asked for belongs in step 3's Commons row component.
+
+## S417 SkyManzanita (2026-10-18): the Commons tab, on Sam's word (step 3 before step 2)
+
+- **The mock-up's figures reproduce from the committed files alone.** Every number the mock-up showed, measured
+  against live tables at 16:35Z, came back from a committed file: the harvest's record files and
+  `coci_programs_data.js` give the Program Requirements pair; `kb/exhibit_audit/latest.json` carries "left MAP" (the
+  raw export is gitignored for PII); the auditor's `latest.json`, the CR worklist's `_stats` and the SUBJ4 seed carry
+  the rest. So the builder needs no key and runs in the daily workflow after the steps that write those files.
+- **A figure's stamp is the file's own field, never the clock.** The auditor's `_generated_at`, the fold report's
+  `_generated_at`, the seed's `_synced_at`, a receipt's `at` (hyphens in its time part: `17-37-29Z`, normalized). The
+  CR worklist carries no stamp, so its "last changed" comes from git, which a shallow checkout cannot answer; the
+  builder writes null there and the row reads *Could not be read*.
+- **A cohort's stamp is the reviewer's `@bot` suffix, never the day:** 2026-07-07 holds 258 person stamps beside the
+  158 preseed ones. Splitting by day would have misread the Exhibit pair.
+- **"No words on the cards" is the prose, not the labels.** Sam waved the definitions and the where-it-stands
+  narrative; a known issue still needs its words and its owner to mean anything, and the test behind a count stays as
+  a chip. The lane keeps the definitions for the cards each Progress view will carry.
+- **A screenshot of the served monolith waits for the load event.** The container's proxy fails every outbound
+  request, so `domcontentloaded` plus a selector wait timed out while `load` plus a function wait rendered the tab in
+  two seconds; the a11y sweep's own server does the same.
+
+## S423 SkyLaurel (2026-10-19): the four run logs
+
+- **The tab was already wired for them.** `kb/_build_commons_status.py` sets each row's `status_file` when the file
+  exists and `commons.js` reads it, so step 2 was content and a checkpoint line, no code. Each log's next step is its
+  lane's NEXT, written in plain words because the validator refuses markdown and glyphs.
+- **Stamp only what moved.** A run log that a checkpoint restamps without work behind it reads fresh and says nothing;
+  step 12 refreshes the logs this run touched and leaves the others to age into *stale*, which is the true state.
+
+
+## S425 SkyMadrone (2026-10-19): the first per-reference Progress view, Subjects (#2260)
+
+- **The host contract held for a second host in sixty lines.** `canonical_subj4.js` lends a `section()` on a
+  `<details>` with its own classes (`cs-sec`, remembered in `localStorage`), a `goControl()` whose targets are the
+  table's filters, the SUBJ check or a section of the view, and call helpers that answer nothing (a call is answered
+  on its sheet). The module needed one addition, an optional `more(x)` word per part for the card's procedure; the
+  first host's 417 checks stayed as they were, and a shared CSS rule split into two so the first host's regex still
+  matched its own line.
+- **A check must know every sharing by design or it over-reports.** The tab's SUBJ check listed six ruled sharings
+  as collisions (the five agriculture family codes both umbrellas declare, the FTVE fan-in) beside the one real one,
+  and the dash would have said seven. The scanner's CS2 knew the fan-in; the tab's check knew only the alias file.
+  Both exceptions now come from the entries themselves (`umbrella_codes`, `fan_in_with`), as
+  `methodology-subj4-consumer-semantics` says every consumer must.
+- **The pick's reviewer is the code row's.** The sync and the overlay took the latest row across fields, so a note
+  a cohort wrote in July overwrote the person who picked the code in May on eleven entries, and the Commons row read
+  "111 by a person, 11 by a session cohort" of 122 picks a person made. A field's provenance stays with the field.
+- **A pattern written for the common case silently dropped a third of the file.** The C-ID descriptor regex had no
+  room for the " X" suffix (172 of 495 descriptors, 17 of 65 subjects), so the chips never saw ADS, the three
+  agriculture families, WELD or FIRE. Count the file's rows against the index's rows before trusting either.
+- **`hidden` loses to `display:flex`.** The toolbar stayed on screen under Progress until a `[hidden] { display:none }`
+  rule outranked the toolbar's own display; the served page showed it, jsdom could not.
+- **The deep link behind a count is the hash's second segment.** `#canonical-subj4/pre_seeded` opens the tab (tabs.js
+  routes the first segment) and the tab applies the second as a filter, a view or the check; the Commons builder
+  writes the same addresses into its `open` fields, so both dashes point at one list.
+
+## S427 SkyMadrona (2026-10-19): Sheet 99's rulings 1, 2, 3 and 5 applied; the sitting for 4 built
+
+- **A ruling names a record; the store may count another.** Sheet 99 card 3 named AUTB M1006 (Supervision and
+  Management in Agriculture) as Agricultural Business's one identity, and the seed's count of one came from AUTB M1071
+  (Import Body Customizing), whose record carries that discipline while M1006's record said Auto Body. Both carry Sam's
+  own 2026-07-13 discipline row, three seconds apart. The ruling moved the record it named; the other is a card, never a
+  silent correction (Rule 8), and the Reference view says one row sits off its code, which is true.
+- **The tab's shared-by-design rule had to learn the ruled shape before the re-key.** AGAB is declared by two umbrellas
+  and is now Agricultural Business's own; the old rule (every owner an umbrella, none canonical) would have replaced the
+  one collision it closed with a false one. Two disciplines canonical on one code stays the collision.
+- **A known issue with nothing in it is not an issue.** The Commons row's collisions issue at zero failed the no-bare-zero
+  rule; the builder drops it and `facts.shared` keeps the measure. The test finds the issue by its words, never by position.
+- **"No finding names" needs its two corroborators spelled out.** The scan names every unconfirmed pick (cs7) and the
+  aligned ones (cs4_aligned); read literally, the confirm procedure would have confirmed four of thirteen. The procedure
+  says which rules corroborate and which hold.
+- **Parallel Bash calls share one shell and one working directory.** A `cd` in one call moved the other mid-command: a
+  tracker `checkout -B` ran in the vault and reset its branch to main (recovered from the pushed remote). Use `git -C` and
+  absolute paths, and never two `cd`s in one turn.
+- **A merged claude/* branch is deleted, and the stale tracking ref makes `--force-with-lease` refuse.** Fetch the ref or
+  drop it, then push plain.
+- **A ruling that changes a human's own row changes it under his email, with the ruling as its time.** Sam answered
+  Sheet 101 at 22:38Z (autobody): AUTB M1071's discipline row is his 2026-07-13 row, so the write is a guarded UPDATE
+  pinned to the before-values (value, email, `reviewed_at`), keeps `map@rccd.edu`, sets `reviewed_at` to the reply's
+  stamp so the daily sync takes it, and names the sheet's store as its source. The receipt's header carries the
+  before-images and the rollback; the session's own JSON receipt carries the identity file and overlay before/after.
+  A cohort note that said the identity waits on his card is updated in the same file, so no store keeps the old state.
+
+## S435 SkyToyon (2026-10-20): the 110 strays, sorted by whether the answer can be checked
+
+- **A stray splits two ways.** 9 of the 110 codes (12 identities) already carry a discipline, Foreign Languages. Their
+  answer is a code, which the umbrella's 2026-06-09 model gives: one code per language, FL plus two letters where no
+  authority code exists. The other 101 carry none and are the curator's (Sam, 2026-09-08).
+- **A stray has no prefix-mates, so the blank worklist's signal is empty for it.** `kb/_csr_stray_triage.py` reads the
+  colleges' own signal instead: for each member course, the discipline that college's other identities on the same
+  local subject carry. 15 codes pass 85% of at least 10 votes. The titles agree on 8 (79 identities) and disagree on
+  3 (SGNG's sign-making reads Work Experience, CMPE's drone course Computer Information Systems, RTVF's radio course
+  Film); 4 are a single course each. A vote that passes the gate still needs the second signal.
+- **The re-key went on a card.** S432's apply of the same shape was held by the session's permission check, and one
+  window can carry the forestry stragglers, the twelve FL re-keys and the eight blanks together. Open Asks Sheet 106,
+  cards 1 to 3; the FL dry run (`kb/_fl_stray_remint.py`) passes every gate.
+
+## S436 SkyTanbark (2026-10-20): the Exhibit Progress view, the third host
+
+- **One definition, two readers.** The view reads its headline pair from the Exhibit row of `kb/status/commons.json`
+  instead of recomputing it in the browser, so the Commons row and the view cannot disagree. The builder carries the
+  auditor's tallies the cards need (`map_titles`, `unclassified`, `left_map`, `below_80`, `below_60`); the 2 MB audit
+  and the 1.9 MB title map stay out of the browser.
+- **A host with its own state lends it through an api.** The Exhibit tab is a closed IIFE of 5,700 lines; the
+  definitions live in `exhibit_progress.js`, and the tab hands over its procedures report, its three worklists and its
+  lane switch. The worklists load late, so a card that needs them reads *Could not be read (still loading)* until the
+  tab re-renders, never a zero.
+- **The third host needed no change to the module.** The contract held: a spec, a context, a host lending
+  `section()` and `goControl()`.
+- **A draft PR runs no CI here.** `get_check_runs` read zero runs on #2285 until it was marked ready; never park in draft.
+- **`npm test` does not finish inside a 10-minute sandbox call**, even in four background shards. CI's sharded `test`
+  check is the gate; locally, run the changed tests and the ones that pin the view.
+- **A gap-fill must not take a slot SkyView still draws.** SkyView's layout is hand-built and keeps points under ids
+  an earlier re-mint vacated, so the first Sheet 107 apply drew six ids twice and the lints job failed. The allocator
+  in the three Sheet 107 scripts now treats `er.ever_minted_ids()` and `er.skyview_ids()` as taken, and the window
+  was re-applied from the pre-apply files: no reused slot, no duplicate.
