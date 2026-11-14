@@ -33,8 +33,8 @@ already done by S650. The Supabase connector was up all session.
    33542) follow it.
 3. **Allan Hancock on #3284** (draft): the 12-page trial is due 2026-11-15 (`index=kb/course_outline_index/index_43566318943.json`,
    `slugs=allan_hancock`, `trial=12`), on the same branch; the helper said `trial; host hancockcollege unproven: 12 pages first`.
-4. **#3283** (sdccd objectives, loaded): open, merging on green at writing. If still open, read its comments, poll
-   `test` on its head, merge. Then the next objectives host, sac, writing `.load` by hand once every slice is filed.
+4. **The next objectives host, sac** (`objectives_reread_plan.json`): #3283 (sdccd, 2,532 objective rows) merged as
+   `9c6d425c` at 11:03Z on a green `test`. Write `.load` by hand once every slice is filed.
 5. **Lassen's five restored records** (31132, 33263, 33729, 33730, 42300): a capture pinned to `main`'s pages, then the
    same `set` step; and a per-record hold in the `set` step (31297's hold lives in the plan today).
 6. **The display's gaps as structured fields** (`d-display-rule-withdrawn-structured-fields-s651`): a design, with a
@@ -96,13 +96,12 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 | #3291 (Lassen) | merged `8d6be618` (about 10:46Z, green `test` on `814aed46`); display run 43586782908 | First things 5 |
 | #3294 (Veteran map header) | merged `f0339e38` (about 10:10Z) | library lane's minor NEXT |
 | #3293 `claude/passing-dry-run-s651` | draft, head `cb60a1b0`, awaits COBIx | First things 2 |
-| #3283 (sdccd objectives) | ready, open, merging on green at writing | First things 4 |
+| #3283 (sdccd objectives) | merged `9c6d425c` | none |
 | #3284 (Allan Hancock) | draft, index landed | First things 3 (due 2026-11-15) |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
 | samueltlee/CPLBrain#787 `claude/determined-mayer-7bl2ta` | draft: this session's note (`0045274`) | merge on green |
 
-Worktrees: all removed except the sdccd worker's (`.claude/worktrees/agent-a552ac7316dddcdea`, #3283), which the
-conductor removes at its merge. Workers do not survive the session; brief a fresh worker per branch from its diff and
+Worktrees: all removed. Workers do not survive the session; brief a fresh worker per branch from its diff and
 this ledger.
 
 ## What shipped (S651)
