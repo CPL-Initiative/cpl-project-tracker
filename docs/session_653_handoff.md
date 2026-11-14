@@ -180,7 +180,8 @@ a clean-up worklist item worked in the ordinary way.
 **Sam, in session, about 14:51Z 2026-11-14, verbatim:** *"we will be adjusting and deleting and refolding and reminting
 MIDs for quite a while as we figure out the best way to do it almost through trial and error"*
 and, a minute later: *"think of MIDs as low stakes attempts to get our course clusters as close to right as we can with the expectation that we will do lots of adjusting along the way"*
-(`sam-mids-are-ours-trial-and-error-2026-11-14`). The conductor's reading, for Sam to correct: a change to the M-ID
+(`sam-mids-are-ours-trial-and-error-2026-11-14`). And at about 14:56Z: *"the thing that probably makes them not low stakes to you is all the ways mids are wired to dependencies that have to be rewired when changes are made. that probs takes a lot of compute (which is not low stakes on the compute side) but still low stakes on the end user side provided that all the rewiring along the way is done correctly"*
+(`sam-mid-care-goes-into-the-rewiring-2026-11-14`). The conductor's reading, for Sam to correct: the choice is low stakes and the care goes into the rewiring, so a reader on an M-ID change checks its dependents (the alias chain, the identities map, the dependency map's consumers), not the choice; a change to the M-ID
 staging layer (a merge, a split, a re-mint under the playbook, removing a row a bot saved) is the conductor's to decide
 and carry out under a receipt that undoes it, with no card first; a row a person saved still wins (Rule 10); the
 result shows on the Commons, and that is where he reacts.
