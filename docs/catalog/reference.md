@@ -74,7 +74,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Data-write rollback — undoing a bulk write to a shared Supabase table](../reference/data_write_rollback.md) | — | `data_write_rollback.md` | 2026-08-30 |  |
 | [Dependency map — dataset to consuming tabs, scripts, workflows and surfaces](../reference/dependency_map.md) | — | `dependency_map.md` | 2026-08-30 |  |
 | [Design principles — every COBI screen (v3)](../reference/design-principles.md) | — | `design-principles.md` | 2026-11-11 | 2026-11-14 |
-| [Doctrine provenance — the incidents behind CLAUDE.md's rules](../reference/doctrine_provenance.md) | — | `doctrine_provenance.md` | 2026-09-27 | 2026-09-27 |
+| [Doctrine provenance — the incidents behind CLAUDE.md's rules](../reference/doctrine_provenance.md) | — | `doctrine_provenance.md` | 2026-09-27 | 2026-11-14 |
 | [Engineering & UI practices (CLAUDE.md offload)](../reference/engineering_ui_practices.md) | — | `engineering_ui_practices.md` | 2026-08-28 | 2026-09-10 |
 | [Finished workstreams — archived §11 rows](../reference/finished_workstreams.md) | — | `finished_workstreams.md` | 2026-08-15 | 2026-08-15 |
 | [Funding vocabulary: Sam's rulings in his words (CLAUDE.md offload)](../reference/funding_vocabulary.md) | — | `funding_vocabulary.md` | 2026-10-21 | 2026-10-21 |
