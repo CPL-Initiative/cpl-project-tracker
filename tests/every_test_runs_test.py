@@ -13,7 +13,9 @@ scheduled map-custom-report-load.yml), which js-tests.yml now runs too.
 THE RULE this file enforces, for each file directly under tests/. Only a GATING STEP counts: a step of a workflow
 with a `pull_request` trigger (a push to main runs after the merge; a schedule or dispatch later still), in a job and
 step with no `continue-on-error` and no `if: false`. Within a gating step, a line that swallows its status after the
-test (`|| true`, `|| echo ...`) does not count.
+test (`|| true`, `|| :`, `|| exit 0`, `|| echo ...`) does not count; `|| exit <nonzero>` and `|| false` still fail
+the step and count. A test followed by `&&` on its line does not count (neither `-e` nor the collector's ERR trap
+sees it fail), and no line counts in a step that runs `set +e` without sourcing the collector first.
   * a `*.test.js` runs when a gating step runs `node tests/run.js` and run.js still discovers `.test.js` files;
   * any other `.py` or `.js` file runs when a gating step's line names it as `python3 tests/<file>` or
     `node tests/<file>` (comments do not count), or a shell script such a line runs names it the same way;
@@ -52,8 +54,15 @@ UNRUN = {
 RUN_LINE = re.compile(r"\b(?:python3?|node)\s+(?:-\S+\s+)*tests/([\w.\-]+\.(?:py|js))\b")
 SCRIPT_LINE = re.compile(r"\b(scripts/[\w.\-]+\.sh)\b")
 RUN_BY = re.compile(r"^run by tests/([\w.\-]+)$")
-# A line whose status is swallowed after the test runs (`|| true`, `|| :`, `|| echo ...`) can never go red.
+# A line whose status is swallowed after the test runs (`|| true`, `|| :`, `|| exit 0`, `|| echo ...`) can never go
+# red. `|| exit <nonzero>` and `|| false` still fail the step, so they count (the second reader on #3337).
 SWALLOWED = re.compile(r"\|\|")
+STILL_FAILS = re.compile(r"\|\|\s*(?:exit\s+0*[1-9]\d*|false)\s*;?\s*$")
+# A test on the left of `&&` hides its status: bash runs neither the ERR trap nor `-e` for a command that is not the
+# last of an `&&` list, so a red test there ends nothing and is collected by nothing (the second reader on #3337).
+AND_AFTER = re.compile(r"&&")
+SET_PLUS_E = re.compile(r"^\s*set\s+\+e\b")
+COLLECTOR = "source scripts/test_group.sh"
 NEVER = {False, "false", "${{ false }}", "${{false}}"}
 
 
@@ -68,12 +77,26 @@ def code_lines(text):
     return out
 
 
+def swallowed(rest):
+    """True when the text after a test on its line keeps the line from failing: an `||` that is not
+    `|| exit <nonzero>` or `|| false`, or an `&&` (the test is then not the list's last command)."""
+    if AND_AFTER.search(rest):
+        return True
+    return bool(SWALLOWED.search(rest)) and not STILL_FAILS.search(rest)
+
+
 def runnable(text):
-    """The code lines of a run block or script that can fail: a line that swallows its status does not count."""
+    """The code lines of a run block or script that can fail. A line that swallows its status does not count, and
+    neither does any line of a block that turns `-e` off (`set +e`) without the collector, which records each red
+    command itself."""
+    lines = code_lines(text)
+    code = [l.strip() for l in lines if l.strip()]
+    if any(SET_PLUS_E.match(l) for l in code) and (not code or code[0] != COLLECTOR):
+        return []
     out = []
-    for line in code_lines(text):
+    for line in lines:
         m = RUN_LINE.search(line) or SCRIPT_LINE.search(line)
-        if m and SWALLOWED.search(line[m.end():]):
+        if m and swallowed(line[m.end():]):
             continue
         out.append(line)
     return out
@@ -180,7 +203,7 @@ def ungrouped(texts):
         named = [n for l in lines for n in RUN_LINE.findall(l)]
         if len(named) < 2:
             continue
-        if lines[0] != "source scripts/test_group.sh" or lines[-1] != "test_group_end":
+        if lines[0] != COLLECTOR or lines[-1] != "test_group_end":
             bad.append(named[0])
     return bad
 
@@ -261,6 +284,20 @@ check("fail-first: an `if: false` step does not count",
       named_unrun(workflow(PR, "      - if: false\n        run: python3 tests/" + FAKE + "\n")))
 check("fail-first: a test line ending `|| true` does not count (COBIx #3332, 2)",
       named_unrun(workflow(PR, "      - run: python3 tests/" + FAKE + " || true\n")))
+check("fail-first: a test on the left of `&&` does not count (the second reader on #3337)",
+      named_unrun(workflow(PR, "      - run: python3 tests/" + FAKE + " && echo done\n")))
+check("fail-first: a step that runs `set +e` without the collector does not count (the second reader on #3337)",
+      named_unrun(workflow(PR, "      - run: |\n          set +e\n          python3 tests/" + FAKE + "\n"
+                                  "          echo done\n")))
+check("control: `set +e` inside a step that sources the collector first still counts",
+      not named_unrun(workflow(PR, "      - run: |\n          source scripts/test_group.sh\n          set +e\n"
+                                      "          python3 tests/" + FAKE + "\n          test_group_end\n")))
+for tail in (" || exit 1", " || false", " || exit 2;"):
+    check(f"control: a test line ending `{tail.strip()}` still fails the step, so it counts",
+          not named_unrun(workflow(PR, "      - run: python3 tests/" + FAKE + tail + "\n")))
+for tail in (" || :", " || exit 0", " || echo skipped"):
+    check(f"fail-first: a test line ending `{tail.strip()}` does not count",
+          named_unrun(workflow(PR, "      - run: python3 tests/" + FAKE + tail + "\n")))
 check("control: a script a gating step runs counts the tests it names",
       not named_unrun(workflow(PR, "      - run: bash scripts/zz.sh\n"), ZZ_SH))
 check("fail-first: a script run with `|| true` does not count the tests it names",

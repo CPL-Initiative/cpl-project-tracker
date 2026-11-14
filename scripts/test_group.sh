@@ -6,6 +6,10 @@
 # `test_group_end` names every one of them and exits 1. tests/every_test_runs_test.py fails a pull-request step
 # that names two or more tests without both lines.
 #
+# Write one test per line, with nothing after it. The ERR trap does not fire for a command on the left of `&&`, so
+# `python3 tests/a_test.py && echo ok` hides a red test here as it does from `bash -e`; the guard does not count it.
+# Nor does it count `|| true`, `|| :` or `|| exit 0`; `|| exit 1` and `|| false` still fail the step and count.
+#
 #   run: |
 #     source scripts/test_group.sh
 #     python3 tests/a_test.py
