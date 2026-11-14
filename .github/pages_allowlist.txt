@@ -479,6 +479,7 @@ publish kb/_program_source_procedure_v1.py
 publish kb/_publish_college_briefing.py
 publish kb/_reclustering_s648_apply.py
 publish kb/_reclustering_s648_dryrun.py
+publish kb/_reclustering_s649.py
 publish kb/_rekey_crnc_mirrors.py
 publish kb/_rekey_kb_curation_supabase.py
 publish kb/_rekey_promotions.py

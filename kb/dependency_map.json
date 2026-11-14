@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 938,
+  "file_datasets": 937,
   "external_services": 195,
-  "consumers": 585,
+  "consumers": 586,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -11951,6 +11951,13 @@
      "line": 333
     },
     {
+     "id": "script:kb/_reclustering_s649.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 172
+    },
+    {
      "id": "script:kb/_remint_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -17637,32 +17644,13 @@
      "direction": "write",
      "how": "literal",
      "line": 1262
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
-  "file:kb/reclustering_s648_out/2026-11-13/plan.md": {
-   "consumers": [
+    },
     {
-     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "id": "script:kb/_reclustering_s649.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1267
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
-  "file:kb/reclustering_s648_out/2026-11-13/post_apply_simulated.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_reclustering_s648_dryrun.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 1045
+     "line": 309
     }
    ],
    "served": false,
@@ -25432,6 +25420,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/pages_allowlist.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/partner_crosswalk_test.py": {
    "consumers": [
     {
@@ -26699,6 +26700,13 @@
      "line": 370
     },
     {
+     "id": "script:kb/_reclustering_s649.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 201
+    },
+    {
      "id": "script:kb/_subjects_list_recode.py",
      "kind": "script",
      "direction": "read",
@@ -26917,6 +26925,13 @@
      "direction": "read",
      "how": "literal",
      "line": 356
+    },
+    {
+     "id": "script:kb/_reclustering_s649.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 217
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -33204,6 +33219,7 @@
    "scripts": [
     "tests/run.js",
     "tests/governance_docs_panel.test.js",
+    "tests/pages_allowlist.test.js",
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/refresh_button_no_secret_test.py",
@@ -34206,7 +34222,6 @@
   }
  },
  "not_served": [
-  "*.bak",
   "*.xlsx",
   ".github",
   "archive",
@@ -34230,9 +34245,9 @@
   "kb/promotions.json",
   "kb/receipts",
   "kb/reference/*.xlsx",
+  "kb/reference/coci_program_*.csv",
   "kb/reference/cos_certifications.json",
   "kb/reference/moc_crosswalk.json",
-  "kb/row_audit/*.full.json",
   "kb/row_audit/*.md",
   "kb/status/harvest_heading_agreement.json",
   "kb/status/harvest_heading_agreement.md",
