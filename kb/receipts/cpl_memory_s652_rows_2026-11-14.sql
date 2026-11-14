@@ -108,3 +108,32 @@ select m.slug, length(m.summary) as summary_chars, count(l.id) filter (where l.a
 from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
 where m.slug in ('d-huma-m10oi-into-m1110-s652','riverside-city-rescored-prefix-aliases-s652')
 group by m.slug, m.summary order by m.slug;
+
+-- ===========================================================================================================
+-- STATEMENTS 3, 5, 6 and 7, AS THEY STAND IN THE TABLE (read back by the conductor at 15:48Z 2026-11-14, on COBIx's
+-- review of #3295: the blocks above recorded these as RUN with no SQL). Replaying this insert rebuilds the five rows;
+-- each ran with a log insert of action 'create' selected by its slug. STATEMENT 1's log insert and verify ran with
+--   where m.author = 'SkyAvocet (S652)' and m.event_date = date '2026-11-14'
+--     and (m.slug like '%-s652' or m.slug in ('sam-identities-apply-and-drop-2026-11-14','sam-catalog-first-collection-2026-11-14'))
+-- in place of the slug list printed in STATEMENT 1.
+-- ROLLBACK, the full slug set of this file (21 rows):
+--   sam-identities-apply-and-drop-2026-11-14, sam-catalog-first-collection-2026-11-14, d-catalog-first-slice-order-s652,
+--   d-ncl-lookup-not-listed-needs-catalog-list-s652, d-prefix-alias-evidence-rule-s652, d-lassen-stale-note-known-defect-s652,
+--   d-sheet-pickers-are-buttons-s652, electives-fill-outside-section-census-s652, identities-map-applied-and-dropped-s652,
+--   p-merged-before-reading-pr-comment-s652, p-worker-delete-refused-surface-to-sam-s652,
+--   p-new-matcher-needs-self-recall-test-s652, p-mis-codes-carry-record-id-suffix-s652, sam-sheet-197-answers-2026-11-14,
+--   sam-conductor-picks-a-lane-2026-11-14, sam-mids-are-ours-trial-and-error-2026-11-14, d-math-m1044-stays-no-one-asked-s652,
+--   sam-mid-care-goes-into-the-rewiring-2026-11-14, sam-ccn-structures-gold-standard-2026-11-14,
+--   d-huma-m10oi-into-m1110-s652, riverside-city-rescored-prefix-aliases-s652
+-- ===========================================================================================================
+insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('sam-conductor-picks-a-lane-2026-11-14','decision','Sam: pick a lane and go; show examples; he reacts to results','Sam, in session S652, about 14:45Z 2026-11-14, on Sheet 197''s asks: "language is obtuse. would be more effective to show examples of each ask." "stop being so cautious and pick a lane and go with it. I will see the results on the commons and if there is a problem, I can address it based on the reality I''m seeing rather than vague choices." "Conductor can conduct!"',array['governance-team-enablement','decision-sheets','conductor','decision'],'verified','Sam, in session S652 (verbatim)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14'),
+('d-math-m1044-stays-no-one-asked-s652','decision','MATH M1044 stays apart from M1036; no one is asked','The S652 conductor first sent the MATH M1044 question to San Diego City College, and Sam reversed it in session (2026-11-14): "why are we asking anyone anything about a MID course, which is our own construct (synthetic)". MATH M1044 stays apart from M1036 and no one is asked. An M-ID question never goes to a college; the exhibit''s likely mis-filed articulation is a clean-up worklist item.',array['commons','honors','decision'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14'),
+('sam-mids-are-ours-trial-and-error-2026-11-14','decision','Sam: an M-ID is our own construct; expect trial and error','Sam, in session S652, about 14:50Z 2026-11-14: "why are we asking anyone anything about a MID course, which is our own construct (synthetic)... they have no idea that MIDs even exist"; "we will be adjusting and deleting and refolding and reminting MIDs for quite a while as we figure out the best way to do it almost through trial and error". M-ID staging changes are the conductor''s, by receipt.',array['commons','mid-lifecycle','conductor','decision'],'verified','Sam, in session S652 (verbatim)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14'),
+('sam-mid-care-goes-into-the-rewiring-2026-11-14','decision','Sam: an M-ID change is low stakes if its rewiring is done correctly','Sam, in session S652, about 14:53Z 2026-11-14: "the thing that probably makes them not low stakes to you is all the ways mids are wired to dependencies that have to be rewired when changes are made... still low stakes on the end user side provided that all the rewiring along the way is done correctly". The M-ID choice is low stakes; the care and the review go into rewiring its dependents.',array['commons','mid-lifecycle','conductor','decision'],'verified','Sam, in session S652 (verbatim)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14'),
+('sam-ccn-structures-gold-standard-2026-11-14','decision','Sam: CCN structures are our gold standard','Sam, in session S652, about 14:58Z 2026-11-14, after asking whether the Honors CCNs are distinct records (ENGL C1000 and ENGL C1000H): "CCN structures should be our gold standard". The conductor''s reading: where the common course numbering system settles a structural question (Honors as a suffixed sibling record, embedded support, numbering), an M-ID follows it.',array['commons','mid-lifecycle','honors','decision'],'verified','Sam, in session S652 (verbatim)','Sam Lee',now(),'SkyAvocet (S652)',date '2026-11-14')
+on conflict (slug) do nothing;
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'SkyAvocet (S652)', 'create', 'S652, Sam in session (2026-11-14)', to_jsonb(m)
+from public.cpl_memory m where m.slug in ('sam-conductor-picks-a-lane-2026-11-14','d-math-m1044-stays-no-one-asked-s652','sam-mids-are-ours-trial-and-error-2026-11-14','sam-mid-care-goes-into-the-rewiring-2026-11-14','sam-ccn-structures-gold-standard-2026-11-14')
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
