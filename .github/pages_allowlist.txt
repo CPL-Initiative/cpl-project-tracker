@@ -54,7 +54,9 @@ withhold kb/course_crosswalk.json
 withhold kb/discipline_inference.json
 withhold kb/promotions.json
 # Re-mint, fold, dry-run and apply output (alias maps, collisions). kb/csr_out/latest.json and
-# kb/cer_procedures_out/latest.json are published by their own lines below.
+# kb/cer_procedures_out/latest.json are published by their own lines below, and so are the credential rename
+# dry run's alias_map.json and collisions.json, which the Exhibits tab reads (S650; their reviewer address is
+# already public in kb/credential_review_overlay.json).
 withhold kb/*_apply
 withhold kb/*_dryrun
 withhold kb/*_fold
@@ -271,6 +273,8 @@ publish kb/course_outline_census
 publish kb/course_outline_index
 publish kb/cpl_ai
 publish kb/cr_reference_worklist.json
+publish kb/cred_rename_dryrun/alias_map.json
+publish kb/cred_rename_dryrun/collisions.json
 publish kb/cred_rename_plans
 publish kb/credential_merges.json
 publish kb/credential_review_overlay.json

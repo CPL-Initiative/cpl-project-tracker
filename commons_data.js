@@ -600,7 +600,7 @@
     cat.parts = [];
     if (c.platform || c.catalog_year) cat.parts.push({ key: "capture", title: "What the capture read",
       lines: [c.platform ? ["Catalog platform", platformWord(c.platform)] : null, c.catalog_year ? ["Catalog year", c.catalog_year] : null].filter(Boolean),
-      pane: isHttp(c.catalog_url) ? { k: "catalog" } : null, linkWord: "The catalog the capture read", stamp: c.read_at ? { at: c.read_at, kind: "read" } : null });
+      pane: isHttp(c.catalog_url) ? { k: "catalog" } : null, linkWord: isHttp(c.capture_root) && c.capture_root !== c.catalog_url ? "The college's catalog" : "The catalog the capture read", stamp: c.read_at ? { at: c.read_at, kind: "read" } : null });
     if (c.scout) {
       var sc = c.scout;
       cat.parts.push({ key: "scout", title: "What the source scout found",
@@ -925,9 +925,21 @@
       return { title: src.word, basis: "A file the team keeps in the repository.",
         kids: [el("p", { cls: "cdd-of", text: src.about }), dl([["The file", src.path]])] };
     }
-    if (p.k === "catalog") return { title: "The catalog the capture read", tab: c.catalog_url, basis: outside,
-      kids: [dl([["Address", c.catalog_url], c.platform ? ["Catalog platform", platformWord(c.platform)] : null, c.catalog_year ? ["Catalog year", c.catalog_year] : null,
-        ["Read", c.read_at ? when(c.read_at) : "Not yet"]].filter(Boolean))] };
+    if (p.k === "catalog") {
+      /* The displayed link and the capture root are two fields (S650, COBIx on #3229): where they differ, the panel
+         names the file the capture read, and each check's result reads in the builder's words ("unreachable from
+         here" for the checker's own egress, never a dead link). */
+      var split = isHttp(c.capture_root) && c.capture_root !== c.catalog_url;
+      var chk = {};
+      (c.catalog_checks || []).forEach(function (k) { chk[k.url] = k; });
+      var said = function (u) { var k = chk[u]; return k ? "; " + k.result + " when checked " + when(k.checked_at) : ""; };
+      return { title: split ? "The college's catalog" : "The catalog the capture read", tab: c.catalog_url, basis: outside,
+        kids: [dl([["Address", c.catalog_url + said(c.catalog_url)],
+          split ? ["The file the capture read", c.capture_root + said(c.capture_root)] : null,
+          isHttp(c.catalog_now) && c.catalog_now !== c.capture_root ? ["The catalog file the page links to now", c.catalog_now + said(c.catalog_now)] : null,
+          c.platform ? ["Catalog platform", platformWord(c.platform)] : null, c.catalog_year ? ["Catalog year", c.catalog_year] : null,
+          ["Read", c.read_at ? when(c.read_at) : "Not yet"]].filter(Boolean))] };
+    }
     if (p.k === "scout") { var sc = c.scout; return { title: "The catalog the scout found", tab: sc.catalog_url, basis: outside,
       kids: [dl([["Address", sc.catalog_url], sc.platform ? ["Catalog platform", platformWord(sc.platform)] : null, sc.catalog_year ? ["Catalog year", sc.catalog_year] : null,
         ["Recommends", words(sc.recommendation)], ["Scouted", sc.checked_at ? when(sc.checked_at) : "Not yet"]].filter(Boolean))] }; }

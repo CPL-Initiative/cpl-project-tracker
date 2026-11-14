@@ -180,7 +180,7 @@
   var state = {
     data: null, error: null, filter: "", cur: 0,
     students: null, studentsWord: "", total: null,
-    done: {}, reviewReadErr: "", reviewReading: false, reviewSettled: {}, note: "", courses: null, coursesErr: false, drafts: {}, teachDraft: "",
+    done: {}, decidedHere: {}, reviewReadErr: "", reviewReading: false, reviewSettled: {}, note: "", courses: null, coursesErr: false, drafts: {}, teachDraft: "",
     // Back (Sam, 2026-10-31): the cards decided or skipped this visit, newest last, as {raw, saved}.
     history: [], bulkAsk: false, bulkBusy: false,
     teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false,
@@ -393,7 +393,8 @@
      A conflict card is a saved title by definition, so it leaves only for a save later than the file (a re-pick
      sends its own reviewed_at). Until the read answers the queue shows no card; a failed read leaves the file's
      cards, says so, and turns off every control that saves a title (one could overwrite a save it cannot see).
-     Read on load and again on each return to the tab, one read at a time. A conflict card exists only because of a
+     Read on load, on each return to the tab and each time the browser tab comes back into view, one read at a time;
+     a clear one of those reads finds reopens a card an earlier read settled. A conflict card exists only because of a
      saved title, so for it no row, or an empty one, is the decision (a clear); for every other step no row means
      open. A read that does not answer within REVIEW_TIMEOUT_MS fails like any other, and a later return starts a
      fresh one; an answer that arrives after that is dropped. */
@@ -443,9 +444,21 @@
       held.forEach(function (h) {
         var r = row[h.raw], v = r ? String(r.value || "").trim() : "";
         var settled = h.step === CONFLICT ? (!v || (Date.parse(r.reviewed_at || "") || 0) > built) : !!v;
-        if (!settled) return;
+        if (!settled) {
+          /* Each read rebuilds what the reads settled (COBIx on #3260): a title an earlier read settled and someone
+             has since cleared, in another browser tab or session, reopens its card without a reload. A card decided
+             on this page stays decided; Back is how this page reopens one. */
+          if (state.reviewSettled[h.raw] && !state.decidedHere[h.raw]) {
+            delete state.reviewSettled[h.raw]; delete state.done[h.raw];
+            if ("_fileSaved" in h) { h.saved = h._fileSaved; delete h._fileSaved; }
+          }
+          return;
+        }
         state.done[h.raw] = true; state.reviewSettled[h.raw] = true;
-        if (v) h.saved = v;  // shown as saved, never the stale proposal (COBIx, #3260)
+        if (v && h.saved !== v) {  // shown as saved, never the stale proposal (COBIx, #3260)
+          if (!("_fileSaved" in h)) h._fileSaved = h.saved;
+          h.saved = v;
+        }
       });
     }).catch(function (e) { if (gen === reviewGen) state.reviewReadErr = String(e && e.message || e); })
       .then(function () {
@@ -1662,7 +1675,7 @@
   function decided(h, note, saved) {
     state.history.push({ raw: h.raw, saved: saved == null ? null : saved });
     h.saved = saved || h.saved;
-    state.done[h.raw] = true;
+    state.done[h.raw] = true; state.decidedHere[h.raw] = true;
     delete state.drafts[h.raw];
     state.teachDraft = "";
     state.note = note;
@@ -1730,7 +1743,7 @@
     if (!last) return;
     var h = state.data.held.filter(function (x) { return x.raw === last.raw; })[0];
     if (!h) { render(); return; }
-    delete state.done[h.raw];
+    delete state.done[h.raw]; delete state.decidedHere[h.raw];
     if (last.saved) h.saved = last.saved;
     var list = shown();
     if (list.indexOf(h) < 0) { state.filter = ""; list = shown(); }
@@ -1832,7 +1845,7 @@
       items.forEach(function (it) {
         state.history.push({ raw: it.raw, saved: it.title });
         it.h.saved = it.title;
-        state.done[it.raw] = true;
+        state.done[it.raw] = true; state.decidedHere[it.raw] = true;
         delete state.drafts[it.raw];
       });
       state.bulkBusy = false; state.cur = 0;
@@ -5293,15 +5306,30 @@
     state.rb.ask = false; state.rel.all = null; state.rel.act = null; state.rel.folded = {};
     if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
-    // The saved titles are read again each visit, so a title saved in another tab or session leaves the queue (#3223).
-    if (state.data) {
-      var before = Object.keys(state.reviewSettled).length;
-      reconcileReview(state.data).then(function () {
-        // A title settled on this return leaves Students waiting too: read the counts again.
-        if (Object.keys(state.reviewSettled).length > before) return loadStudents();
-      }).then(render);
-    }
+    rereadReview();
     render();
+  }
+  /* The saved titles are read again each visit and each time this browser tab comes back into view, so a title saved
+     in another tab or session leaves the queue and one cleared there comes back (#3223, COBIx on #3260). */
+  var onTab = false;
+  function settledKey() { return Object.keys(state.reviewSettled).sort().join("\n"); }
+  function rereadReview() {
+    if (!state.data) return Promise.resolve();
+    var before = settledKey(), was = shown()[state.cur], at = was && was.raw;
+    return reconcileReview(state.data).then(function () {
+      // A title settled or reopened on this return moves in or out of Students waiting: read the counts again.
+      if (settledKey() !== before) return loadStudents();
+    }).then(function () {
+      /* The reviewer stays on the card they were on, its Teach draft intact (the reread can reorder the queue, and
+         loadStudents starts it at the top). When that card has left the queue, nothing typed for it carries over. */
+      if (at != null) {
+        var list = shown(), k = -1;
+        for (var i = 0; i < list.length; i++) if (list[i].raw === at) { k = i; break; }
+        if (k >= 0) state.cur = k;
+        else { state.cur = Math.min(state.cur, Math.max(0, list.length - 1)); resetCard(); }
+      }
+      render();
+    });
   }
   /* #exhibits/<route> opens one place, read once per visit (the Commons row's counts link here, the way
      they linked into the retired CER tab): held = Review on all held, conflict = Review on Conflict with
@@ -5344,8 +5372,14 @@
     booted = true;
     routeFromHash();
     render();
+    onTab = true;
     window.addEventListener("cpl-tab-activated", function (e) {
-      if (e && e.detail && e.detail.tab === "exhibits") newVisit();
+      onTab = !!(e && e.detail && e.detail.tab === "exhibits");
+      if (onTab) newVisit();
+    });
+    // Back in view from another browser tab or window: read the saves again; the view and its filter stay.
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden && onTab) rereadReview();
     });
     window.addEventListener("cpl-session-changed", function () {
       loadStudents().then(render);
