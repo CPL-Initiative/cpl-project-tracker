@@ -29,10 +29,11 @@ conductor reached its context line): run them first, below.
    `5dfe4f10`, all four rows stamped 18:44:02Z; the conductor's live read at 18:49:43Z: both `honors_of` rows under
    `honors-s653@bot`, both base titles under `honors-s652@bot`, `kb_curation` 40,711 to 40,713 rows). The next daily run
    folds it. Merge #3329 (a receipt head has no checks: push its next real change, never an empty commit).
-3. **Gate and merge the ready PRs** on a green `test`, reading each PR's comments in the same batch: #3324 (it conflicted
-   with `main` after #3312; a worker was merging `main` in); #3316 (COBIx's fourth map count going in), then #3323, then
-   #3326; #3328; #3327, then #3330 (both failed `lints`, the same worker fixing them; retarget #3330 to `main`); #3325.
-   #3322 is merged (`dc76b1bf`).
+3. **Merge the wave** (after the step 12 stamps under *A full checkpoint* below). For each PR: read its thread to the
+   last page, merge `main` in, and merge on a green `test` on the current head, in this order: #3324, #3328, #3325,
+   #3316 then #3323 then #3326, #3329, #3327 then #3330. **#3330 waits on COBIx's BLOCKING finding (19:05Z): xAI usage
+   prices at zero, so the hard stop never trips;** fix it, and check whether #3327's ceiling has the same fault. Heads
+   and threads in the ledger below. #3309, #3311, #3314, #3313, #3312 and #3322 are merged.
 4. **After #3324:** one free Riverside City capture off `main` to confirm the GE page owner; then curriQunet colleges may
    capture again. Until then they rescore from filed pages only.
 5. **COBIx's spot-checks (#3299, comment 6881825340, and Riverside City's 32938, 42719, 43897, 44155, 44469):** then merge
@@ -89,20 +90,26 @@ Copied from `docs/reference/conductor_mode.md`, *Settings (Sam, 2026-11-11)*; Sa
   college per run, on the estimate, for program-requirements extraction, and a separate $40 per college for SLOs, PLOs
   and course objectives. The limit is per run and never a remaining pot. Paid runs go through the conductor.
 
-## Ledger (PR, branch, head, state) at writing (read from GitHub 18:47Z)
+## Ledger (PR, branch, head, state) at 19:08Z, as reported
 
-| PR | Branch, head | State | Next |
+Read by the conductor's gate agent at 19:08Z 2026-11-14, not re-read by the worker that wrote this file. A worker
+clearing blockers was still pushing then and its last report had not arrived, so read each head again first.
+
+| PR | Branch, head | State at 19:08Z | Next |
 |---|---|---|---|
-| #3309, #3311, #3314, #3313, #3312, #3322 | merged `c7343406`, `8b6caff8`, `99b64239`, `1ef02a84`, `b00fca4f`, `dc76b1bf` | merged | none |
-| #3324 | `claude/ge-pattern-page-claim-s653` `9a23c75d` | ready, waits on `test` | First things 3, 4 |
-| #3316 / #3323 / #3326 | `claude/cdc-three-college-cards-s653` `c60761f9` / `cdc-data-dictionary-s653` `8f335f74` / `cdc-integration-view-s653` `90866f9f` | ready / draft / draft, stacked in that order | First things 3 |
-| #3327 / #3330 | `claude/extraction-gate-always-s653` `5b53d902` / `second-reader-gate-s653` `d57f7261` (on #3327) | ready / draft | retarget #3330 after #3327 |
-| #3328 | `claude/header-fragment-not-a-page-s653` `7fcca2b3` | ready | First things 3 |
-| #3325 | `claude/honors-field-minors-s653` `3512698f` | ready | First things 3 |
-| #3329 | `claude/honors-of-step1-s653` `5dfe4f10` (receipt) | draft, applied | First things 2 |
+| #3309, #3311, #3314, #3313, #3312, #3322 | merged `c7343406`, `8b6caff8`, `99b64239`, `1ef02a84`, `b00fca4f`, `dc76b1bf` | merged; Honors step 1 applied and confirmed | none |
+| #3324 | `claude/ge-pattern-page-claim-s653` `fe96080e` | `main` merged in; `test` not yet reported; COBIx 18:56Z, not blocking: cache the owner per page, time it first | First things 3, then 4 |
+| #3328 | `claude/header-fragment-not-a-page-s653` `7fcca2b3` | `test` green; conflicts with `main` | First things 3 |
+| #3325 | `claude/honors-field-minors-s653` `3512698f` | `test` pending; COBIx verified, nothing new | First things 3 |
+| #3316 | `claude/cdc-three-college-cards-s653` `c60761f9` | `test` green on that head; conflicts with `main`; COBIx's fourth map count not yet pushed | First things 3 |
+| #3323 / #3326 | `claude/cdc-data-dictionary-s653` `8f335f74` / `claude/cdc-integration-view-s653` `90866f9f` | drafts; conflict with `main`; merge after #3316 | First things 3 |
+| #3329 | `claude/honors-of-step1-s653` `5dfe4f10` (the bot's receipt commit) | needs the header change before it can merge; step 1 itself is applied | First things 3 |
+| #3327 | `claude/extraction-gate-always-s653` `e7d6dffc` | `test` not yet reported; COBIx 19:01Z, not blocking: the pilot gate skips the run-attempt check and the hard stop overshoots | First things 3 |
+| #3330 | `claude/second-reader-gate-s653` `e2e137e1` (based on #3327's branch) | draft; **COBIx 19:05Z, BLOCKING: xAI usage prices at zero, so the hard stop never trips** | fix, then merge after #3327 |
 | #3315 | `claude/honors-of-rows-s653` `4b4f2e4b` | draft | First things 6 |
 | #3317 to #3321 | Merced `6bc790c0`, Moreno Valley `2a0ab100`, Norco `91d3495e`, San Bernardino Valley `34082b5a`, Diablo Valley `5b62da61` (`claude/<college>-prefix-rescore-filed-s652`) | drafts, live data written | First things 5 |
 | #3305 | `claude/riverside-city-prefix-rescore-filed-s652` `3d70e952` | draft | First things 5 |
+| #3331 | `claude/checkpoint-s653` | this checkpoint | merge on a green `test` |
 | #3293, #3284, #2894 | | untouched (#3284 is the second session's) | |
 
 Side branches to leave for GitHub or delete later: `claude/skyline-ncl-capture-s653` (`e7a06e9c`),

@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 949,
+  "file_datasets": 950,
   "external_services": 195,
   "consumers": 594,
   "workflows": 72,
@@ -7993,7 +7993,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 749
+     "line": 758
     }
    ],
    "served": false,
@@ -22678,7 +22678,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 463
+     "line": 472
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -24551,6 +24551,19 @@
    "main_committers": []
   },
   "file:tests/college_short_names_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/commons_cost_read_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -33748,6 +33761,7 @@
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
     "tests/commons_data_status_build_test.py",
+    "tests/commons_cost_read_test.py",
     "tests/commons_data_live_test.py",
     "kb/_build_commons_status.py",
     "tests/apply_concurrency_test.py",

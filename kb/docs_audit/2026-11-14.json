@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1496,
-    "bytes": 15749362,
+    "bytes": 15750546,
     "over_budget": 3,
     "handoff_max": 654,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 160,
-        "bytes": 5053100,
+        "bytes": 5053172,
         "over": 1
       },
       "index": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 615,
-        "bytes": 4405990,
+        "bytes": 4407102,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 76
     },
     "vault": {
-      "files": 27964,
-      "bytes": 4945312486,
-      "heavy_bytes": 3607859432,
+      "files": 27965,
+      "bytes": 4945316771,
+      "heavy_bytes": 3607861450,
       "heavy_share": 0.73,
       "ignore_filters": [
         "agent-a888d62f419ec6f25/kb/receipts",
@@ -161,13 +161,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 174397,
+        "bytes": 174469,
         "limit": 150000,
         "lane": "other",
-        "over_by": 24397,
+        "over_by": 24469,
         "ratio": 1.16
       },
-      "message": "174,397 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "message": "174,469 B is 1.2× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -301,10 +301,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 12831984,
+        "bytes": 12834002,
         "kind": "dir"
       },
-      "message": "directory totals 12,831,984 B inside the vault"
+      "message": "directory totals 12,834,002 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
