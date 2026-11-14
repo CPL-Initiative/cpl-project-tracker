@@ -1364,6 +1364,9 @@ def ncl_listed_names(info: dict | None) -> list[dict] | None:
             for e in info["catalog"]]
 
 
+NCL_NO_PAGE = "no page read names it by title and award"
+
+
 def ncl_shared_by_awards(page: dict, a: dict, b: dict) -> bool:
     """A page that prints two programs' different awards (Riverside City's "... Associate of Science Degree and
     Certificate of Achievement"): kept apart under the reason page_shared_by_awards, for a later slice."""
@@ -1379,7 +1382,7 @@ def ncl_answer(prog: dict, pages: list[dict], claimed: dict[str, list[str]], eve
         return {"result": "not_matched", "why": "title_has_no_words"}
     hits = [(pg, m) for pg in pages for m in [ncl_match(pg, prog)] if m]
     if not hits:
-        return {"result": "not_matched", "why": "no page read names it by title and award"}
+        return {"result": "not_matched", "why": NCL_NO_PAGE}
     if len(hits) > 1:
         return {"result": "not_matched", "why": "two pages name it: " + ", ".join(
             sorted(pg["pg"].get("url") or "" for pg, _ in hits)[:4])}
@@ -1483,8 +1486,9 @@ def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], lis
                catalog_year: str | None = None) -> tuple[dict[str, dict], dict]:
     """({control number: answer} for each no-closed-list program, the self-test). An answer is found (with
     the page); not_matched with the reason (title_has_no_words for a title of decorations alone;
-    absent_from_catalog_list where the capture holds the catalog's own list, `listed`, and it lacks the program);
-    or not_searched when the page self-test fails. This slice files no not_listed (round three): the claim "not
+    absent_from_catalog_list where no page read names the program, the capture holds the catalog's own list,
+    `listed`, that list passes its own test, and it lacks the program); or not_searched when the page self-test
+    fails. This slice files no not_listed (round three): the claim "not
     listed in the catalog" waits for slice B, with its own gate; ncl_list_test is measured, not applied. own: {control number: page_stem()} of each closed-list program's page, which it claims
     first; named: the ones whose page names them by the search's own label (ncl_self_test)."""
     feats = ncl_pages(pages, college, catalog_year)
@@ -1492,6 +1496,7 @@ def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], lis
     claimed = ncl_claims(own, feats)
     lists = [ncl_page(e) for e in listed] if listed is not None else None
     test["catalog_list"] = ncl_list_test(programs, feats, own, lists) if lists is not None else None
+    list_ok = bool(test["catalog_list"] and test["catalog_list"]["files_not_listed"])
     out: dict[str, dict] = {}
     for prog in programs:
         if prog.get("closed_list"):
@@ -1504,10 +1509,16 @@ def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], lis
                        "page, %d on another program's and %d off their own page (floor %.0f%% of at least %d, none false)"
                        % (test["hits"], test["tested"], test["false"], test["false_off_own"], NCL_FLOOR * 100,
                           NCL_MIN_TESTED)}
-        elif lists is not None and not any(ncl_match(e, prog) for e in lists):
-            out[cn] = {"result": "not_matched", "why": "absent_from_catalog_list"}
         else:
-            out[cn] = ncl_answer(prog, feats, claimed, programs)
+            # The pages read are the catalog; the list is only its index (COBIx on #3300). The page search runs
+            # first, and absent_from_catalog_list replaces its reason only when it found no page at all and the
+            # list passed its own test (ncl_list_test): Glendale's list missed 8 closed-list programs whose pages
+            # were read, Hartnell's 12, Merced's 45.
+            ans = ncl_answer(prog, feats, claimed, programs)
+            if (ans["result"] == "not_matched" and ans["why"] == NCL_NO_PAGE and list_ok
+                    and not any(ncl_match(e, prog) for e in lists)):
+                ans = {"result": "not_matched", "why": "absent_from_catalog_list"}
+            out[cn] = ans
     return out, test
 
 

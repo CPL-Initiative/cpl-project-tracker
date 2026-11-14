@@ -4956,15 +4956,25 @@ check(lt_test["searches"] and lt_test["catalog_list"]["files_not_listed"]
 lt_ans2, lt_test2 = C.ncl_lookup(lt_progs, lt_pages, lt_own, lt_list(LT[:7] + ["Accounting"]),
                                  {"L%d" % i for i in range(10)})
 check(not lt_test2["catalog_list"]["files_not_listed"] and lt_test2["catalog_list"]["recall"] == 0.7
-      and lt_ans2["N2"] == {"result": "not_matched", "why": "absent_from_catalog_list"}
+      and lt_ans2["N2"] == {"result": "not_matched", "why": "no page read names it by title and award"}
       and not any(a.get("result") == "not_listed" for a in list(lt_ans.values()) + list(lt_ans2.values())),
-      "the catalog list's own test is measured (Merced's 45 missed), and no answer is ever not_listed: %r"
+      "a list that fails its own test (Merced's 45 missed) gives no reason: the page search's own stands, and no "
+      "answer is ever not_listed: %r"
       % lt_test2["catalog_list"])
 lt_ans3, lt_test3 = C.ncl_lookup(lt_progs, lt_pages[:9], lt_own, lt_list(LT + ["Accounting"]),
                                  {"L%d" % i for i in range(9)})
 check(lt_test3["tested"] == 9 and lt_test3["hits"] == 9 and not lt_test3["searches"]
       and lt_ans3["N2"]["result"] == "not_searched",
       "fewer than NCL_MIN_TESTED (10) closed-list programs tested is no test: 9 of 9 does not open the lookup")
+# The pages read are the catalog; the list is only its index (COBIx on #3300): a program the list lacks but a
+# read page names is found, even where the list passes its own test.
+lt_ans4, lt_test4 = C.ncl_lookup(lt_progs, lt_pages + [{"url": "https://c.edu/programs/welding/req",
+                                                        "h1": "Welding - Associate in Science"}],
+                                 lt_own, lt_list(LT + ["Accounting"]), {"L%d" % i for i in range(10)})
+check(lt_test4["catalog_list"]["files_not_listed"] and lt_ans4["N2"]["result"] == "found"
+      and lt_ans4["N2"]["page"]["url"] == "https://c.edu/programs/welding/req",
+      "a program the catalog's list lacks is found on a read page that names it; the page search comes first: %r"
+      % lt_ans4["N2"])
 cd_ans, _ = C.ncl_lookup([_sk_prog("1", "Accounting", "A.S. Degree"), _sk_prog("2", "Welding", "A.S. Degree")],
                          [], {}, lt_list(["Accounting"]))
 check(cd_ans["1"]["result"] == "not_searched" and cd_ans["2"]["result"] == "not_searched",
