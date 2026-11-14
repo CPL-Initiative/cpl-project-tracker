@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-13
+updated: 2026-11-14
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -127,8 +127,7 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 - **One queue check (S643, #3184 `1ee58637`):** `docket-process` and `library-publish-now` import
   `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged. **RULED: Sam said deploy both** (13:11Z 2026-11-13, [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4).
   **DEPLOYED (S648, from `main`, `cpl-chat-deploy.yml` `confirm=DEPLOY`, each with its smoke, *as reported*):**
-  `docket-process` run 43469609500, then `library-publish-now` run 43469887510, both success. Open (#3227's review):
-  a comment in `cpl-chat-deploy.yml` names only `group_queue.mjs`.
+  `docket-process` run 43469609500, then `library-publish-now` run 43469887510, both success. The SHARED CODE comment in `cpl-chat-deploy.yml` already named both shared files (S653b): closed, no change.
 - **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),
   saved in `cpl_library_pictures`, placed by the drafter through a marker (`pictures.mjs`), checked on the card (Cover
   or crop, Leave it out; `regen.pictures_checked_by`), and written to `library/<slug>/img/` by `library_publish.py`. A
@@ -144,31 +143,29 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   `kb/receipts`; Leave it out on a published picture opens a request that replaces the public copy (the file stays
   served until the piece's next publish); a replace-at-once draft with pictures shows the box and a publish step (the
   run skips it every pass); the box's line counts the pictures kept (`fresh.length`), not found.
-- **A draft read off Pages drops its version stamps (2026-11-11, #3097):** Pages serves local scripts as
-  `x.js?v=<hash>`; the starter and a public page are read from Pages, so the first card-published piece carried the
-  stamp into the repo and `library_pages.test.js` failed on `main`. `unstamp` in `apply_edits.mjs` and
-  `library_publish.py`. That test also lets MAP's two office addresses stand as help links (`OFFICE_ADDRESSES`).
+- **A draft read off Pages drops its version stamps** (#3097; `unstamp`): lessons, *Moved from the lane (S653b)*.
 - **The box says what it did beside its field (Sam, 2026-11-11, #3097):** *"the text showing they uploaded is below
   the window of view and I thought nothing happened when I first clicked"*. The line shows inside the card's box under
   the document field; a file added twice says so and saves its words and pictures once.
-- **Create is one form** (Sam, 2026-11-06: *"it opens up a secondary view and process after clicking start. need to
-  simplify and clean this up"*): a new piece's working title and your name sit in the panel, the rest of the old brief
-  folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No
-  second form. The kind the instructions name first wins (his noncredit visual had read as a Document). A new piece
-  drafts on its card with Draft it now (2026-11-10, above).
+- **Create is one form** (Sam, 2026-11-06): lessons, *Moved from the lane (S653b)*.
 - DSP Credit Starting Points, Version 3 in public (S641, #3151): lessons, *Moved from the lane (S646)*.
 - **Public targets have a 25px floor (S641, #3151).** Eight targets at exactly `min-height:24px` measured 23.9 at 90% and
   133% browser zoom: the shared header's Links, Light and Dark, and five Request Adopt links. The floor sits in the vault
   sources (public header, the agency visual, tabs; CPLBrain `0e4b1091`), and seven other public pages, `library/index.html`
   and `library/adopt/` took the header's lengths. Guard `tests/public_target_floor.test.js`. A new public page takes the
   header's lengths, never `24px`.
-- **The Veteran map carries the public header (S651, #3294 merged `f0339e38` about 10:10Z 2026-11-14).** Built in
-  `build_selfcontained.py` (logos as data URIs, the header's 25px lengths), hidden under `?embed=1` (absent from the
-  accessibility tree and the tab order), so COBI's Military Partnerships iframe stays one column; `npm run a11y` passes
-  light, dark and embed; a second reader served it and found nothing broken. Guard `tests/veteran_map_public_header.test.js`.
-  **NEXT (minor):** the two embedded logos are 1115px copies (480px copies would cut about 55 KB); a public HTML comment
-  names the vault path; a theme choice on the public map sets `cpl_theme` for the whole github.io origin, COBI included
-  (the existing design). The Fact Sheet still has no header. The record as it stood: lessons, *Moved from the lane (S651 checkpoint)*.
+- **The Veteran map and the Fact Sheet carry the public header (S653b).** The Veteran map (S651, #3294 `f0339e38`): built
+  in `build_selfcontained.py`, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one column; since #3333
+  it embeds the 480px logos (`sierra/cpl-initiative-logo-navy-480.png`, `sierra/cpl-initiative-logo-480.png`; 225,221 to
+  166,896 bytes) and no public comment names the vault path. Guard `tests/veteran_map_public_header.test.js`. The Fact Sheet
+  (#3333 `908d9b8d`, read live 19:51Z 2026-11-14): in `fact-sheet/index.html` (no generator writes it), between the skip
+  link and the masthead; its `--cplh-*` roles map onto `factsheet.css` `:root`; the masthead is a `div`, so the page has one
+  banner; the header never prints; nothing frames the page, so it has no embed case. Guard `tests/factsheet_public_header.test.js`.
+  **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own "CPL Fact Sheet" link opens a
+  second copy; that test checks the links against the Veteran map's copy, not the vault's header; the header's logo lockup
+  sits above the masthead's own California Community Colleges logo (told to Sam in session; no change made); a theme choice
+  on a public page sets `cpl_theme` for the whole github.io origin, COBI included (the existing design). The records as they
+  stood: lessons, *Moved from the lane (S651 checkpoint)* and *(S653b)*.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the

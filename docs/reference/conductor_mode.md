@@ -193,6 +193,21 @@ at the top of each piece of work so Sam can change the dial before it runs.
   (Honors step 1, #3329) so it could land; `pr-gate` before each merge; two sessions from one opening line agreeing one
   writer per file by message before either wrote (`d-two-sessions-one-writer-s653`).
 
+## What went wrong in S653b, and what worked
+
+- A PR that conflicts with `main` starts no `pull_request` run: `get_check_runs` reads 0 and the state is `dirty`. Merge
+  `main` into it first (`p-dirty-pr-starts-no-ci-s653b`).
+- Every PR that adds a test or a workflow rebuilds the dependency map, so each merge put the other open PRs in conflict:
+  five PRs cost four extra merges of `main`. Merge in sequence and bring only the next one up to `main`
+  (`p-dependency-map-conflicts-serial-merges-s653b`).
+- `list_events` on a busy session returned about 40,000 tokens of subagent events and thinking signatures. Ask for few
+  events, or read the saved file by script (`p-list-events-floods-context-s653b`).
+- Worked: one `send_message` before any write settled the split with the older session in a minute
+  (`d-two-sessions-one-writer-s653`); briefs as scratchpad files kept workflow arguments and completion notices small; a
+  clean-up stage at the end of each task freed its checkout, so the disk never held more than three; reading each PR's
+  thread in the same step as its check runs caught COBIx's reviews on #3332 and #3334 before the merge. The second
+  session's subscription notice for each new PR costs about 3,000 tokens.
+
 ## What went wrong in S652, and what worked
 
 - The 12:12Z firing of 2026-11-14 (SkyAvocet) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 10:55Z) and `main` at the S651 checkpoint (`5278e928`) were the one-writer check, and this PR declared the queue at 12:19Z.

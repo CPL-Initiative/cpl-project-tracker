@@ -21,7 +21,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 |---|---|---|---|---|
 | [$50k / ESS 25-82 tab — lane state](../reference/lanes/ess-25-82-tab.md) | lanes | `ess-25-82-tab.md` | 2026-08-28 | 2026-08-28 |
 | [Admin tab / the side menu as data — lane state](../reference/lanes/admin-tab-side-menu.md) | lanes | `admin-tab-side-menu.md` | 2026-08-28 | 2026-11-12 |
-| [Annual Workplan Goals / adding, moving and counting sub-activities — lane state](../reference/lanes/workplan-annual-goals.md) | lanes | `workplan-annual-goals.md` | 2026-10-12 | 2026-10-20 |
+| [Annual Workplan Goals / adding, moving and counting sub-activities — lane state](../reference/lanes/workplan-annual-goals.md) | lanes | `workplan-annual-goals.md` | 2026-10-12 | 2026-11-14 |
 | [CER procedures and the simpler CER tab — lane state](../reference/lanes/cer-procedures.md) | lanes | `cer-procedures.md` | 2026-10-18 | 2026-11-14 |
 | [COBI dark mode / the one theme control — lane state](../reference/lanes/cobi-dark-mode.md) | lanes | `cobi-dark-mode.md` | 2026-09-08 | 2026-10-24 |
 | [College & district identity — lane state](../reference/lanes/college-district-identity.md) | lanes | `college-district-identity.md` | 2026-08-28 | 2026-11-10 |
@@ -36,11 +36,11 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [EACR — Exhibit & CR Adoption — lane state](../reference/lanes/eacr-exhibit-cr-adoption.md) | lanes | `eacr-exhibit-cr-adoption.md` | 2026-08-28 | 2026-11-13 |
 | [ESL packaging (the first fold) — lane state](../reference/lanes/esl-packaging.md) | lanes | `esl-packaging.md` | 2026-08-28 | 2026-09-27 |
 | [Excel→Supabase Phase 2-4 — lane state](../reference/lanes/excel-to-supabase.md) | lanes | `excel-to-supabase.md` | 2026-08-28 | 2026-08-28 |
-| [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-11-13 |
+| [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-11-14 |
 | [GR register / CO policy & regulation review — lane state](../reference/lanes/gr-register.md) | lanes | `gr-register.md` | 2026-08-28 | 2026-08-30 |
 | [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-11-12 |
 | [Letters, Memos & Reports / the communications register — lane state](../reference/lanes/communications.md) | lanes | `communications.md` | 2026-10-23 | 2026-10-24 |
-| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-13 |
+| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-14 |
 | [Local course ↔ CR alignment — lane state](../reference/lanes/local-course-cr-alignment.md) | lanes | `local-course-cr-alignment.md` | 2026-08-28 | 2026-11-07 |
 | [MAP Custom Reports (3 new) / ITPI automation — lane state](../reference/lanes/map-custom-reports.md) | lanes | `map-custom-reports.md` | 2026-08-28 | 2026-11-14 |
 | [MAP Users / student contact — lane state](../reference/lanes/map-users-student-contact.md) | lanes | `map-users-student-contact.md` | 2026-08-28 | 2026-08-28 |

@@ -9,6 +9,35 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are SkyWhimbrel (Session 654)
 
+## Addendum from the second session (S653b): read this with "The second session (S653b) and what it holds"
+
+Written 20:40Z 2026-11-14 (`date -u`) on `claude/s653b-lanes-and-receipt`, a light document set (three lanes, their
+lessons, `conductor_mode`, this block and a memory receipt), not a checkpoint. What changed since that section:
+
+- **This checkpoint (#3331) is merged:** S653b merged it at 19:32Z (`b3ebfe40`) on a green `test`, as the S653 conductor
+  asked at its 19:30Z sign-off.
+- **Merged by S653b**, each squash on a green `test` after reading its thread and a second reader: #3333 `908d9b8d` (the
+  Fact Sheet's public header, the Veteran map's 480px logos), #3332 `3edf55f0` (33 tests that ran in no workflow; four
+  red ones repaired), #3334 `ed94bc1e` (nine jobs in eight workflows into `live-counts`), #3335 `d640b01d` (no code reads
+  `workplan_goals.current`), #3337 `fe1c4f0e` (COBIx's five findings on #3332 and #3334). Vault: samueltlee/CPLBrain#790
+  `b207578b` (the CPL Commons wiki page). Daily run 43636875045 published `9f76a96b` at 20:27Z after #3335.
+- **Item 4's drop, step 2:** pushed to `kb/migrations/.apply` at 20:37Z on `claude/workplan-drop-current-s653b`; its run,
+  receipt and read-back are in that PR; rollback `kb/migrations/2026-11-14_s653b_workplan_goals_drop_current_rollback.sql`.
+- **The environment move's proofs:** each moved job is proved by its next scheduled run on `main` succeeding; the first
+  is `first-light-apply.yml` at :37 each hour. Read the latest runs of the nine jobs on `main` before group 2. Until the
+  PENDING list in `tests/service_key_environment_test.py` is empty, a key rotation updates both copies.
+- **Item 5:** S653b pushes Allan Hancock's trial and the sac objectives read for UTC 2026-11-15 at about 00:10Z; a
+  firing checks those branches' runs for the UTC day before pushing another.
+- **Item 6 is done:** review three of #3315 (nine agents, head `4b4f2e4b`):
+  https://github.com/CPL-Initiative/cpl-project-tracker/pull/3315#issuecomment-6882899324. Step 2 may not apply; the
+  lump and sequence classes failed a third round, so per the S652 rule their design is replaced, not patched again.
+- **Open on [Open Asks Sheet 198](https://claude.ai/artifact/4C48Gufarc7L11b34Gu6Hy) card 10 (current):** three model
+  callers with no per-run dollar limit (`cer-classify`, `cpl-news-harvest`, `cpl-chat`); the governance lane holds it.
+- **The three lanes are current** (`library`, `governance-team-enablement`, `workplan-annual-goals`); their NEXT lines
+  replace item 3 of *Open work*. `csm-workspace` was not touched by either session; its NEXT stands in its lane file.
+- **Memory:** `kb/receipts/cpl_memory_s653b_rows_2026-11-14.sql` (nine rows, NOT RUN when written; the S653b conductor
+  runs it and marks it).
+
 From SkyGodwit, S653, conductor mode: Sam opened it at 17:01Z 2026-11-14 with the S653 opening line (web,
 https://claude.ai/code/session_01Rvwe2XbKJNroFNaUH2pMyQ). This is S653's **full checkpoint** (shared data was written: five
 rereads of `program_requirement_records` and Honors step 1 in `kb_curation`; lanes changed state), written from 18:50Z
