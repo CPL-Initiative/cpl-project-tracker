@@ -1,1 +1,3 @@
-host=shasta
+host=rccd
+kind=objective
+slugs=moreno_valley,norco,riverside_city
