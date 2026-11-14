@@ -19,7 +19,11 @@ WHAT IT DOES.
      each pair apart the way the delete did: the two runs' members files must agree, and every other difference is
      listed.
   3. Re-measures the pairs on the live-equivalent members file and plans each: the honors_of row, the proposed H id,
-     member counts by named measure, and every collision or hold.
+     member counts by named measure, and every collision or hold. A row needs two signals: the matcher and the
+     second derivation (kb/_honors_pairs_second.py) both find the pair. A base or Honors id holding more than one
+     course is held (lump_reasons), leads included.
+  4. --check, on the apply day after the last daily run: re-measures all of it on the checkout's payload and refuses
+     unless the step-2 rows' digest is the plan's, and refuses a checkout without origin/main's head.
 
 THE MEASURES, NAMED (COBIx's review of #3304, item 3). "local courses" = rows in unified_courses_members.js under the
 id (HUMA M1110 63 to 62 in S652's simulation); "folded identities" = the `members` field of the id's row in
@@ -227,31 +231,108 @@ def honors_titles(w, i):
                    if s648.is_honors(m["title"], m["code"])[0] == "honors"} - {""})
 
 
-# Words that name no course of their own: a fold check reads past them ("Introduction to Astronomy Laboratory" is
-# "Astronomy Laboratory").
-FOLD_FILLER = {"introduction", "intro", "introductory", "principles", "fundamentals"}
+# Words that name no course of their own: a title check reads past them ("Introduction to Astronomy Laboratory" is
+# "Astronomy Laboratory"; "General Chemistry" is "Chemistry").
+FOLD_FILLER = {"introduction", "intro", "introductory", "principles", "fundamentals", "general"}
 
 
-def _fold_words(title):
-    t = re.split(r"\bformerly\b", title or "", maxsplit=1)[0]
-    return {w for w in t.split() if len(w) > 1 and w not in s648.STOP and w not in FOLD_FILLER
-            and not (re.search(r"\d", w) and re.search(r"[a-z]", w))}   # a course code (240h) is not a word
+def _title_words(title):
+    t = re.split(r"\bformerly\b", s648.strip_honors(title or ""), maxsplit=1)[0]
+    t = re.sub(r"\bu s\b|\bus\b", "united states", " " + t + " ")
+    return [w for w in t.split() if len(w) > 1 and w not in s648.STOP and w not in FOLD_FILLER
+            and not (re.search(r"\d", w) and re.search(r"[a-z]", w))   # a course code (240h) is not a word
+            and w not in s648.ROMAN and not w.isdigit()]                 # sequence marks are compared apart
+
+
+def _word_names(a, b):
+    """One title word names another: equal, or the shorter, three letters or more, begins the longer (Hist,
+    History). No looser spelling: a same-first-letter subsequence reads Phil as Physical."""
+    if a == b:
+        return True
+    s, l = (a, b) if len(a) <= len(b) else (b, a)
+    return len(s) >= 3 and l.startswith(s)
+
+
+def one_course(x, y):
+    """Two titles name one course: the same sequence marks (seq_tokens: I and II, A and B, to 1750 and since), and every
+    word of each, past fillers, named in the other. Fails closed: a different word makes two courses."""
+    if s648.seq_tokens(x) != s648.seq_tokens(y):
+        return False
+    wx, wy = _title_words(x), _title_words(y)
+    if not wx or not wy:
+        return wx == wy
+    return all(any(_word_names(a, b) for b in wy) for a in wx) and all(any(_word_names(b, a) for a in wx) for b in wy)
 
 
 def same_course(titles_a, titles_b):
-    """The two ids' Honors titles name one course: every word of each title, past fillers, is in a title of the other
-    id, spelled out or abbreviated. A shared stem is not enough: "Survey of Music History and Literature, Greek
-    Antiquity to 1750" and "... 1750 to the Present" share five words and are parts I and II (#3315's review, item 9)."""
-    def agree(x, y):
-        wx, wy = _fold_words(x), _fold_words(y)
-        return bool(wx) and bool(wy) and all(any(s648._abbreviates(a, b) for b in wy) for a in wx) \
-            and all(any(s648._abbreviates(b, a) for a in wx) for b in wy)
-    return bool(titles_a) and bool(titles_b) and all(any(agree(a, b) for b in titles_b) for a in titles_a) \
-        and all(any(agree(a, b) for a in titles_a) for b in titles_b)
+    """Two ids' Honors titles name one course: each title of each names one of the other's (one_course)."""
+    return bool(titles_a) and bool(titles_b) and all(any(one_course(a, b) for b in titles_b) for a in titles_a) \
+        and all(any(one_course(a, b) for a in titles_a) for b in titles_b)
 
 
-def plan_pairs(w, rows, out_dir, live_cur):
-    pairs = pairs_of(rows)
+def near(x, y):
+    """Looser than one_course, for reading a base's members: the stems mostly agree (title_agree 0.5) or one_course,
+    and always the same sequence marks. Catalog variants of one course read as one ("Comparative World Religions",
+    "World Religions"); parts and periods never do."""
+    if s648.seq_tokens(x) != s648.seq_tokens(y):
+        return False
+    return s648.title_agree(s648.strip_honors(x), s648.strip_honors(y)) >= 0.5 or one_course(x, y) \
+        or (min(len(_title_words(x)), len(_title_words(y))) >= 2 and s648.abbrev_agree(x, y) >= 1.0)
+
+
+def title_clusters(titles):
+    """Group titles into courses, most common title first: a title joins the first group whose every title it is near
+    (complete linkage), else starts its own. A chain of near titles ("Introduction to Fiction", "Fiction", "Fiction
+    Writing") never joins two courses through a middle title. Returns [(local courses, [titles by count])]."""
+    cnt = Counter(s648.strip_honors(t) for t in titles)
+    groups = []
+    for t in sorted(cnt, key=lambda x: (-cnt[x], x)):
+        for g in groups:
+            if all(near(t, u) for u in g):
+                g.append(t)
+                break
+        else:
+            groups.append([t])
+    return sorted(((sum(cnt[t] for t in g), g) for g in groups), key=lambda x: (-x[0], x[1]))
+
+
+SIBLING_AGREE = 0.4   # two titles this close whose sequence marks differ are parts of one subject
+
+
+def lump_reasons(w, h, b):
+    """Why the base, or the Honors id, holds more than one course (#3315's review: an H id would claim an equivalence
+    its members do not have). Empty when each holds one course. Measure: local courses in unified_courses_members.js.
+    A base is a lump when its titles fall into two groups of two or more local courses each, or two of its titles
+    name one subject in different parts or periods (I and II; to 1820 and since). An Honors id is a lump when its
+    Honors titles fall into two groups."""
+    base = [m["title"] for m in (w.members.get(b) or []) if s648.is_honors(m["title"], m["code"])[0] != "honors"]
+    hon = [m["title"] for m in (w.members.get(h) or []) if s648.is_honors(m["title"], m["code"])[0] == "honors"]
+    out = []
+    groups = title_clusters(base)
+    big = [g for g in groups if g[0] >= 2]
+    if len(big) >= 2:
+        out.append(f"the base holds more than one course: {len(big)} of two or more local courses each, "
+                   + "; ".join(f"{g[1][0]} ({g[0]})" for g in big[:4]))
+    distinct = sorted({s648.strip_honors(t) for t in base})
+    for i, x in enumerate(distinct):
+        sib = next((y for y in distinct[i + 1:] if s648.seq_tokens(x) != s648.seq_tokens(y)
+                    and s648.title_agree(x, y) >= SIBLING_AGREE), None)
+        if sib:
+            out.append(f"the base holds two parts or periods of one subject: {x}; {sib}")
+            break
+    hg = title_clusters(hon)
+    if len(hg) >= 2:
+        out.append("the Honors id holds two Honors courses: " + "; ".join(g[1][0] for g in hg[:3]))
+    return out
+
+
+def plan_pairs(w, rows, out_dir, live_cur, second):
+    """Every pair either derivation finds, planned. second: kb/_honors_pairs_second.derive on the same members. A pair
+    gets a row only where both find it (two signals); a pair one alone finds is held and says which."""
+    first = pairs_of(rows)
+    pairs = Counter(first)
+    for k in second:
+        pairs.setdefault(k, 0)
     folded = folded_identities(out_dir)
     index = set(cmp.load_index(out_dir))
     live_ids = index | set(w.members) | set(w.cat) | set(w.sg)
@@ -314,6 +395,9 @@ def plan_pairs(w, rows, out_dir, live_cur):
                "base": {"local_courses": bc["local_courses"], "colleges": bc["colleges"],
                         "folded_identities": folded.get(b)},
                "proposed_h_id": ho.honors_id_for(b) if bs == "M-ID" else None,
+               "found_by": sorted((["the matcher"] if (h, b) in first else [])
+                                  + (["the second derivation"] if (h, b) in second else [])),
+               "second_by": sorted(second.get((h, b)) or []),
                "holds": [], "notes": []}
         if alias_chain.resolve_id(h, pmaps) != h or alias_chain.resolve_id(b, pmaps) != b:
             rec["holds"].append("an id moves under a pending alias map")
@@ -323,10 +407,23 @@ def plan_pairs(w, rows, out_dir, live_cur):
                 rec["notes"].append("CCN already holds this pair as base and H record")
             out.append(rec)
             continue
-        # Item 5: a row's key and value are live ids today; the migration repeats the test against its named set.
+        # A row's key and value are live ids in the payload the plan reads; on the apply day --check re-measures the
+        # whole plan on the day's payload (the SQL itself cannot see the live id set).
         for i in (h, b):
             if i not in live_ids:
                 raise SystemExit(f"ABORT: {i} (pair {h} with {b}) is not in the live id set")
+        # Two signals or hold (the conductor, after #3315's review): the matcher and the second derivation must both
+        # find the pair.
+        if (h, b) not in first:
+            rec["holds"].append("found by the second derivation alone (by " + " and ".join(rec["second_by"])
+                                + "): the matcher holds it out")
+        elif (h, b) not in second:
+            rec["holds"].append("found by the matcher alone: the second derivation does not find it")
+        # A base, or an Honors id, holding more than one course (#3315's review): the H id would claim an equivalence
+        # its members do not have, and a later split moves no honors_of value. Leads and followers alike, until the
+        # base is split. An official base (C-ID, CCN) is one record by its body's definition and is not read this way.
+        if bs == "M-ID":
+            rec["holds"].extend(lump_reasons(w, h, b))
         if not pure:
             rec["holds"].append(f"the Honors course shares its M-ID with {hc['local_courses'] - hc['honors_courses'] - hc['program_courses']} "
                                 "non-Honors course(s): a split comes before any row")
@@ -405,6 +502,14 @@ def plan_pairs(w, rows, out_dir, live_cur):
         else:
             rec["action"] = "row only (official base)"
         out.append(rec)
+    # A follower folds into its lead's H id: when the lead is held, no H id is minted, and the follower holds too.
+    act = {(p["honors_id"], p["base_id"]): p for p in out}
+    for p in out:
+        if p.get("fold_lead") and p["action"] != "held":
+            lead = act.get((p["fold_lead"], p["base_id"]))
+            if not lead or lead["action"] != "row and mint":
+                p["holds"].append(f"the lead {p['fold_lead']} is held, so no H id is minted for this base")
+                p["action"] = "held"
     mints = Counter(p["proposed_h_id"] for p in out if p["action"] == "row and mint")
     dup = [k for k, v in mints.items() if v > 1]
     if dup:
@@ -420,6 +525,9 @@ def summarize(plan, live_cur=None):
     s = {"pairs": len(plan), "by_action": dict(Counter(p["action"].split(":")[0] for p in plan).most_common()),
          "by_systems": dict(Counter(f"{p['honors_system']} Honors, {p['base_system']} base" for p in plan).most_common()),
          "holds_by_reason": {}}
+    s["by_signals"] = dict(Counter(" and ".join(p["found_by"]) for p in plan).most_common())
+    s["by_signals_m_id_honors"] = dict(Counter(" and ".join(p["found_by"]) for p in plan
+                                               if p["honors_system"] == "M-ID").most_common())
     reasons = Counter()
     for p in plan:
         for h in p["holds"]:
@@ -466,18 +574,30 @@ def write_md(doc, path):
                  f"{len(v['differ'])} differ" + (": " + ", ".join(f"`{k}`" for k in v["differ"][:6]) if v["differ"] else "") + ".")
     rc = doc.get("recall") or {}
     if rc:
-        L += ["", "## The matcher's recall", "",
-              f"`kb/_honors_matcher_recall.py` derives the pairs a second way and sets them against `measure_honors`, "
-              f"on the live-equivalent members file ({rc['measure']}): right {rc['right']}, wrong {rc['wrong']}, "
-              f"missed {rc['missed']} of {rc['code_path_m_id_pairs']} code-path pairs with an M-ID Honors side. "
-              f"Before this branch's fix, on the committed members file: 508 pairs, right 507, wrong 1, missed 14. "
-              "Labeled and held out: " + ("; ".join(f"`{a}` with `{b}` ({why})" for a, b, why in rc["not_misses"]) or "none")
-              + "."]
+        lab = rc["labels"]
+        L += ["", "## Two signals, and the self-recall measures", "",
+              "A pair gets a row only where two derivations that share no code both find it: the matcher "
+              "(`kb/_reclustering_s648_dryrun.py` `measure_honors`) and the second derivation "
+              "(`kb/_honors_pairs_second.py`, from course numbers and titles directly). A pair one alone finds is "
+              "held and says which. `kb/_honors_matcher_recall.py` measures each against hand labels "
+              f"({lab['real']} real pairs, {lab['not_real']} not real; {rc['measure']}):", ""]
+        for k, name in (("matcher", "the matcher"), ("second", "the second derivation"), ("both", "both (the rows)")):
+            r = rc[k]
+            L.append(f"- {name}: {r['pairs']} pairs; right {r['right']}, wrong {r['wrong']}, missed {r['missed']}, "
+                     f"held out {r['held_out']}; {r['unlabeled_found']} found carry no label"
+                     + (f"; missed {', '.join('`' + a + '` with `' + b + '`' for a, b in r['missed_pairs'])}"
+                        if r["missed_pairs"] else ""))
+        L += [f"- the course-title test (`one_course`), {len(rc['titles']['pairs'])} labeled title pairs: right "
+              f"{rc['titles']['right']}, wrong {rc['titles']['wrong']} ("
+              + "; ".join(f"{x['a']} / {x['b']}" for x in rc["titles"]["pairs"] if not x["pass"]) + ")",
+              f"- the lump test (`lump_reasons`), {len(rc['lumps']['bases'])} labeled bases: right "
+              f"{rc['lumps']['right']}, wrong {rc['lumps']['wrong']}"]
     pm = s.get("person_merges_into_a_planned_id") or {}
     L += ["", "## The plan", "",
           f"- pairs: {s['pairs']}",
           f"- by action: {s['by_action']}",
           f"- by systems: {s['by_systems']}",
+          f"- by signals (a row needs both): {s['by_signals']}; M-ID Honors side only: {s['by_signals_m_id_honors']}",
           f"- rows to write (no hold): {s['rows_to_write']}, of which mints (base plus H): {s['mints']}, "
           f"folds after the mint: {s['folds_after_the_mint']}; step 1 writes "
           f"{sum(1 for p in doc['pairs'] if p['action'].startswith('row') and p['honors_id'] in STEP1_IDS)} of them "
@@ -553,21 +673,22 @@ def write_rows_sql(doc, write=True):
     s1 = ", ".join(q(i) for i in STEP1_IDS)
     head = [
         "-- DRAFT, NOT IN kb/migrations/.apply. Step 2 of the Honors build (S653): the honors_of rows for every pair the",
-        f"-- plan writes ({len(rows)} rows; {plan_rel}, written {doc['written']}). Design: docs/reference/honors_of_design.md.",
-        "-- Ruling: Sam, Sheet 197 card 3 (14:37Z 2026-11-14): \"Build the field first, then the rows\"; \"Rows for all 508",
-        "-- pairs\". The plan holds what it cannot write without a person's call; held pairs get no row (plan.md lists them).",
+        f"-- plan writes ({len(rows)} rows; {plan_rel}, written {doc['written']}).",
+        "-- Design: docs/reference/honors_of_design.md. Ruling: Sam, Sheet 197 card 3 (14:37Z 2026-11-14): \"Build the field",
+        "-- first, then the rows\"; \"Rows for all 508 pairs\". A pair gets a row only where two derivations that share no",
+        "-- code both find it and nothing holds it; held pairs get no row (plan.md lists them by reason).",
         "-- Written by kb/_honors_of_s653_dryrun.py --sql-only from the committed plan. Lands after step 1",
-        "-- (2026-11-14_s653_honors_of_field.sql) and after the conductor's live reads re-measure the plan.",
+        "-- (2026-11-14_s653_honors_of_field.sql). ON THE APPLY DAY, after the last daily run, merge origin/main and run",
+        "-- `python3 kb/_honors_of_s653_dryrun.py --check`: it re-measures the pairs and classes on the day's payload and",
+        "-- refuses unless they give these rows exactly. That is where liveness is checked; this statement reads only",
+        "-- kb_curation and cannot see the live id set.",
         f"-- Insert-only under its own cohort, {COHORT_ROWS}, ON CONFLICT DO NOTHING (Rule 10). One plain statement: the",
         "-- insert hangs on one guard CTE, and a failed guard raises, so nothing is written. The guard refuses when:",
         f"--   * step 1's two honors_of rows ({COHORT}) are not both present, or any other honors_of row exists;",
-        "--   * a planned value or key is outside the named set: each named id was a live id (the payload index, members,",
-        "--     minted and stand-alone records) when the plan was drawn, and the dry run aborts on any that is not;",
-        "--   * any named id carries a merge_into row: an id merged away is no longer a live identity, and its row would be",
-        "--     stale. The CCR resolves no alias map, so a stale value would offer a pair Python holds (#3315, item 14);",
+        "--   * any id a row names carries a merge_into row: it was merged away after the plan;",
         "--   * a pair's two ids already end under one id through merge_into rows (counted, and by a person apart). A",
         "--     person's merge of a third course into either side does not refuse: it agrees with the pair standing apart",
-        "--     (#3315's review, item 1; 45 such rows today);",
+        "--     (#3315's review, item 1; 45 such rows when the plan was drawn);",
         "--   * what it inserts differs from the plan in count or digest.",
         f"-- The result is a count and an md5 ({digest}) over the inserted rows, course_id>value joined by | in C order, so",
         "-- the runner's receipt (scripts/supabase_migrate.py keeps the first 4,000 characters) holds the whole record and",
@@ -581,11 +702,7 @@ def write_rows_sql(doc, write=True):
     {vals}
 ),
 named (id) as (
-  values {", ".join(f"({q(i)})" for i in ids)}
-),
-stale as (
-  select count(*) as n from planned p
-  where p.course_id not in (select id from named) or p.value not in (select id from named)
+  select course_id from planned union select value from planned
 ),
 step1 as (
   select count(*) as n from public.kb_curation s
@@ -614,9 +731,9 @@ joined as (
   group by h.honors_id
 ),
 guard as (
-  select (select n from stale) = 0 and (select n from step1) = 2 and (select n from other_honors) = 0
+  select (select n from step1) = 2 and (select n from other_honors) = 0
      and (select n from moved) = 0 and (select count(*) from joined) = 0 as ok,
-     (select n from stale) as stale_rows, (select n from step1) as step1_rows,
+     (select n from step1) as step1_rows,
      (select n from other_honors) as other_honors_rows, (select n from moved) as merged_ids,
      (select count(*) from joined) as joined_pairs, (select count(*) from joined where by_person) as person_joined
 ),
@@ -635,7 +752,7 @@ digest as (
 )
 select case when g.ok and d.n = {len(rows)} and d.md5 = '{digest}'
             then jsonb_build_object('inserted', d.n, 'md5', d.md5, 'cohort', '{COHORT_ROWS}')
-            else ('refused by the guard: stale rows ' || g.stale_rows || ', step 1 rows ' || g.step1_rows
+            else ('refused by the guard: step 1 rows ' || g.step1_rows
                   || ', other honors_of rows ' || g.other_honors_rows || ', named ids merged away ' || g.merged_ids
                   || ', pairs already joined ' || g.joined_pairs || ' (by a person ' || g.person_joined
                   || '), inserted ' || d.n || ' of {len(rows)} with digest ' || d.md5)::int::text::jsonb
@@ -650,19 +767,29 @@ from guard g cross join digest d;
         "-- DRAFT. Rollback for 2026-11-14_s653_honors_of_rows.sql: the step-2 cohort's rows go, keyed on the cohort",
         f"-- ({COHORT_ROWS}) and the field, never on ids, so it finds every row after a mint re-keys them (#3315's",
         "-- review, item 2). Step 1's rows are another cohort and stay (their own rollback removes them, and refuses while",
-        "-- any row of this cohort stands). A row a person re-saved carries the person's reviewer and is never touched.",
-        "-- The result is the count and an md5 over the deleted rows (course_id>value, | joined, C order); before a mint it",
-        f"-- equals the forward digest ({digest}).",
-        "with removed as (",
+        "-- any row of this cohort stands). A row a person re-saved carries the person's reviewer and is never touched; a",
+        "-- row a person validated (the Verify control stamps every row of a course) stays, counted as kept_for_a_person.",
+        "-- The result is the count and an md5 over the deleted rows (course_id>value, | joined, C order). They equal the",
+        f"-- forward result ({len(rows)}, {digest}) only before a mint and while no person has re-saved or validated a",
+        "-- row; a difference names rows a person now owns or a mint moved.",
+        "with kept as (",
+        "  select count(*) as n from public.kb_curation k",
+        f"  where k.reviewer_email = '{COHORT_ROWS}' and k.field = 'honors_of'",
+        "    and not (k.validated_by is null or k.validated_by like '%@bot')",
+        "),",
+        "removed as (",
         "  delete from public.kb_curation k",
         f"  where k.reviewer_email = '{COHORT_ROWS}' and k.field = 'honors_of'",
+        "    and (k.validated_by is null or k.validated_by like '%@bot')",
         "  returning k.course_id, k.value",
         ")",
-        "select jsonb_build_object('deleted', count(*), 'md5',",
+        "select jsonb_build_object('deleted', count(*), 'kept_for_a_person', (select n from kept), 'md5',",
         "       md5(coalesce(string_agg(r.course_id || '>' || r.value, '|' order by r.course_id collate \"C\"), ''))) as undone",
         "from removed r;",
-        f"-- Read back: expect 0 rows under {COHORT_ROWS}.",
+        f"-- Read back: expect 0 rows under {COHORT_ROWS}, apart from any a person validated.",
         ""])
+
+
     if not write:
         return sql, rb
     for path, text in ((ROWS_SQL, sql), (ROWS_RB, rb)):
@@ -671,18 +798,12 @@ from guard g cross join digest d;
     return len(rows)
 
 
-def live_id_set(root=ROOT):
-    """The live id set: the payload's index and members, the minted courses and the stand-alones."""
-    members, _ = cmp.load_members(root)
-    return (set(cmp.load_index(root)) | set(members)
-            | set(jload(os.path.join(HERE, "coci_minted_courses.json"))["courses"])
-            | set(jload(os.path.join(HERE, "coci_minted_singletons.json"))["courses"]))
-
-
-def check_plan(doc, root=ROOT, sql_only=False):
-    """Refuse a stale plan: the committed SQL must be what the plan writes, every planned id must be live in the
-    committed payload, and no alias map may have landed after the plan (a re-mint would leave its values stale).
-    Run in full before the rows apply; CI runs the SQL half (--check-sql), since the payload moves daily."""
+def check_plan(doc, root=ROOT, sql_only=False, fresh=True, overlay=None):
+    """Refuse a stale plan, on the apply day after the last daily run: the checkout must contain origin/main's head;
+    the committed SQL must be what the plan writes; no alias map may have landed after the plan; and the pairs and
+    classes, re-measured from the checkout's payload, must give the plan's step-2 rows (the digest). This is where
+    liveness is checked: the SQL cannot see the live id set. CI runs the SQL half alone (--check-sql), since the
+    payload moves daily. root, fresh and overlay are for the tests."""
     problems = []
     sql, rb = write_rows_sql(doc, write=False)
     for path, text in ((ROWS_SQL, sql), (ROWS_RB, rb)):
@@ -698,15 +819,48 @@ def check_plan(doc, root=ROOT, sql_only=False):
     if doc.get("alias_era") != alias_chain.ALIAS_MAPS[-1]:
         problems.append(f"an alias map landed after the plan ({doc.get('alias_era')} -> {alias_chain.ALIAS_MAPS[-1]}): "
                         "redraw it")
-    live = live_id_set(root)
-    gone = sorted({i for p in doc["pairs"] if p["action"].startswith("row") for i in (p["honors_id"], p["base_id"])}
-                  - live)
-    if gone:
-        problems.append(f"{len(gone)} planned ids are not live in the committed payload: {gone[:8]}")
+    if fresh:
+        problems += freshness_problems(root)
+    # The re-measure (#3315's review): the pairs and classes, recomputed from the checkout's payload and overlay,
+    # must give the reviewed plan's step-2 rows exactly. A pair the daily re-cluster dissolved, a base re-minted, an
+    # id merged away or a new hold all change the digest.
+    cur = jload(overlay or os.path.join(HERE, "coci_curation.json"))["curations"]
+    stale_overlay = [r["course_id"] for r in S652_DELETED
+                     if (cur.get(r["course_id"]) or {}).get(r["field"]) == r["value"]]
+    if stale_overlay:
+        problems.append(f"the checkout's overlay still carries the rows #3304 deleted ({', '.join(stale_overlay)}): "
+                        "it predates the delete's sync; wait for the next daily run and merge origin/main")
+    else:
+        import _honors_pairs_second as second
+        w = Shim(root)
+        _, _, rows, _ = s648.measure_honors(w)
+        redrawn = {"pairs": plan_pairs(w, rows, root, cur, second.derive(w.members))}
+        now = step2_rows(redrawn)
+        if rows_md5(now) != doc.get("rows_md5"):
+            was = set(step2_rows(doc))
+            problems.append(f"the re-measure on the checkout's payload gives {len(now)} step-2 rows, digest "
+                            f"{rows_md5(now)}, not the plan's {doc['step2_rows']} ({doc['rows_md5']}): added "
+                            f"{sorted(set(now) - was)[:6]}, gone {sorted(was - set(now))[:6]}; redraw the plan")
     if problems:
         raise SystemExit("STALE: " + "; ".join(problems))
-    print(f"plan current: {doc['step2_rows']} step-2 rows, digest {doc['rows_md5']}, era {doc['alias_era']}")
+    print(f"plan current: re-measured on the checkout's payload, {doc['step2_rows']} step-2 rows, digest "
+          f"{doc['rows_md5']}, era {doc['alias_era']}")
     return 0
+
+
+def freshness_problems(root=ROOT):
+    """The checkout must contain origin/main's head (the daily run commits the payload there, never to this branch)."""
+    try:
+        head = subprocess.run(["git", "-C", root, "ls-remote", "origin", "refs/heads/main"], capture_output=True,
+                              text=True, timeout=60).stdout.split()
+        if not head:
+            return ["could not read origin/main's head (git ls-remote): run --check where origin is reachable"]
+        ok = subprocess.run(["git", "-C", root, "merge-base", "--is-ancestor", head[0], "HEAD"],
+                            capture_output=True).returncode == 0
+    except (OSError, subprocess.SubprocessError) as e:
+        return [f"could not test the checkout's freshness: {e}"]
+    return [] if ok else [f"the checkout does not contain origin/main's head {head[0][:8]}: fetch and merge "
+                          "origin/main, then run --check again"]
 
 
 def main():
@@ -716,8 +870,8 @@ def main():
     ap.add_argument("--sql-only", action="store_true",
                     help="draft step 2's migration and rollback from the committed plan.json; no export")
     ap.add_argument("--check", action="store_true",
-                    help="refuse unless the committed SQL is what the plan writes, every row's ids are live in the "
-                         "committed payload, and no alias map landed after the plan")
+                    help="the apply-day check, after the last daily run: refuse unless the checkout contains "
+                         "origin/main, the SQL is the plan's, and a re-measure on the day's payload gives its rows")
     ap.add_argument("--check-sql", action="store_true", help="the SQL half of --check alone (CI)")
     ap.add_argument("--reuse", action="store_true", help="reuse the exports already in --tmp")
     a = ap.parse_args()
@@ -746,12 +900,14 @@ def main():
            "how": "kb/_reclustering_s648_dryrun.measure_honors on each members file; a pair is an (Honors identity, "
                   "base identity) whose Honors course and base course at one college sit in different identities"}
     live_cur = overlay_live(jload(os.path.join(HERE, "coci_curation.json")))["curations"]
-    plan = plan_pairs(wl, rows_l, outs["live"], live_cur)
+    import _honors_pairs_second as second
+    plan = plan_pairs(wl, rows_l, outs["live"], live_cur, second.derive(wl.members))
     import _honors_matcher_recall as recall
-    rc = recall.measure(wl.members)
-    if rc["wrong"] or rc["must_find_missing"] or not all(f["pass"] for f in rc["fixtures"]):
-        raise SystemExit("ABORT: the matcher's recall test fails: " + json.dumps({k: rc[k] for k in (
-            "wrong_pairs", "must_find_missing")}))
+    rc = recall.measure(wl.members, outs["live"])
+    if rc["both"]["wrong"] or not all(f["pass"] for f in rc["fixtures"]) or rc["lumps"]["wrong"]:
+        raise SystemExit("ABORT: a self-recall measure fails: " + json.dumps({
+            "both_wrong": rc["both"]["wrong_pairs"], "lumps_wrong": rc["lumps"]["wrong"],
+            "fixtures": [f["name"] for f in rc["fixtures"] if not f["pass"]]}))
     doc = {"_about": "Dry run of the honors_of rows and base-plus-H mints. Nothing applied. Design: "
                      "docs/reference/honors_of_design.md.",
            "written": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "date": a.date,

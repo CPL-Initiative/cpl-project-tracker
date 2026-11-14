@@ -173,7 +173,8 @@ from guard g;
 -- and stamp, and otherwise raises and changes nothing. A title restamped since (S653 step 1 moves both to
 -- honors-s652@bot: run 2026-11-14_s653_honors_of_field_rollback.sql first) or edited by a person refuses the whole
 -- rollback, so the Keep as-is rows are never deleted while a title stays unrestored (#3315's review, item 3). The
--- delete keys on the cohort and the field, never on ids: an Honors mint re-keys HUMA M10ME's row to HUMA M1110H.
+-- delete keys on the cohort and the field, never on ids: an Honors mint re-keys HUMA M10ME's row to HUMA M1110H. A
+-- row a person has validated stays, and the result counts it (kept_for_a_person).
 with expected (course_id, value_before, value_after) as (
   values
     {back}
@@ -186,6 +187,8 @@ guard as (
           where t.value = e.value_after and t.reviewer_email = {q(BOT)}
             and t.reviewed_at::timestamptz = {q(STAMP)}::timestamptz) = 2 as ok,
          (select count(*) from target t where t.reviewer_email <> {q(BOT)}) as restamped,
+         (select count(*) from public.kb_curation c where c.reviewer_email = {q(COHORT)}
+          and c.field = 'merge_dismissed' and not (c.validated_by is null or c.validated_by like '%@bot')) as kept,
          (select count(*) from target) as title_rows
 ),
 restored as (
@@ -200,11 +203,14 @@ removed as (
   delete from public.kb_curation k
   using guard g
   where g.ok and k.reviewer_email = {q(COHORT)} and k.field = 'merge_dismissed'
+    and (k.validated_by is null or k.validated_by like '%@bot')
   returning jsonb_build_object('op', 'delete', 'row', to_jsonb(k)) as image
 )
-select case when g.ok and (select count(*) from restored) = 2 and (select count(*) from removed) = {len(INSERTS)}
-            then (select coalesce(jsonb_agg(x.image), '[]'::jsonb)
-                  from (select image from restored union all select image from removed) x)
+select case when g.ok and (select count(*) from restored) = 2
+                 and (select count(*) from removed) + g.kept = {len(INSERTS)}
+            then jsonb_build_object('kept_for_a_person', g.kept, 'changed',
+                   (select coalesce(jsonb_agg(x.image), '[]'::jsonb)
+                    from (select image from restored union all select image from removed) x))
             else ('refused by the guard: ' || g.title_rows || ' title rows, ' || g.restamped
                   || ' under another reviewer, and both must hold the follow-up value under the June stamp')::int::text::jsonb
        end as undone

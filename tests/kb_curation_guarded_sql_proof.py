@@ -272,7 +272,7 @@ if os.path.exists(os.path.join(ROOT, ROWS_FWD)):
         },
         # Each must refuse when the file itself is edited: the guard re-reads its own planned rows.
         "sql_refusals": {
-            "a planned value is outside the named live set": (f"('{_h0}', '{_b0}')", f"('{_h0}', 'ZZZZ M1997')"),
+            "a planned row was edited after the plan (the count and digest)": (f"('{_h0}', '{_b0}')", f"('{_h0}', 'ZZZZ M1997')"),
         },
     })
 
@@ -372,7 +372,7 @@ def sequences(db, results):
     c3, _, e3 = psql(db, "insert into kb_curation (course_id, field, value, reviewer_email) values " + fold_sql + ";",
                      ok_fail=True) if folds else (0, "", "")
     moved = count("field = 'honors_of' and course_id like '% M____H'")
-    results.append((name + "the re-key and the follower merges hit no key", c == 0 and c3 == 0 and moved > 300,
+    results.append((name + "the re-key and the follower merges hit no key", c == 0 and c3 == 0 and moved == len(mints),
                     (e or e3)[:200] or moved))
     # 6. The step-2 rollback still finds every row after the re-key: none of its cohort is left.
     c, out, e = run("step2_rb")
@@ -391,6 +391,26 @@ def sequences(db, results):
     results.append((name + "the S652 follow-ups rollback then runs and restores both titles",
                     c == 0 and count("field = 'merge_dismissed'") == 0
                     and all(t[1].endswith("(Honors)") for t in titles()), e[:200] or titles()))
+    # 9. A person's Verify stamps every row of a course, honors_of included (#3315's review): each rollback keeps the
+    #    row a person validated and counts it; the rest of its cohort goes.
+    seed(db, FIELD_ROWS + PERSON_MERGES)
+    run("step1")
+    run("step2")
+    h0 = PLANNED[0][0]
+    psql(db, "update kb_curation set validated_at = now(), validated_by = 'someone@college.edu' "
+             f"where course_id in ('{h0}', 'HUMA M10ME');")
+    c, out, e = run("step2_rb")
+    res = json.loads(out.splitlines()[-1]) if c == 0 and out else {}
+    results.append((name + "the step-2 rollback keeps a row a person verified and counts it",
+                    c == 0 and res.get("kept_for_a_person") == 1 and res.get("deleted") == len(PLANNED) - 1
+                    and count(f"course_id = '{h0}' and field = 'honors_of'") == 1, (e or out)[:300]))
+    psql(db, f"delete from kb_curation where course_id = '{h0}' and field = 'honors_of';")  # a person removes it
+    c, out, e = run("step1_rb")
+    res = json.loads(out.splitlines()[-1]) if c == 0 and out else {}
+    results.append((name + "the step-1 rollback keeps a row a person verified and counts it",
+                    c == 0 and res.get("kept_for_a_person") == 1
+                    and count("course_id = 'HUMA M10ME' and field = 'honors_of'") == 1
+                    and count("course_id = 'LIBR M10CJ' and field = 'honors_of'") == 0, (e or out)[:300]))
 
 
 def main():

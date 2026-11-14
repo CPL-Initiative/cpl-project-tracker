@@ -1,44 +1,60 @@
-// The Honors pair matcher's self-recall test (S653).
+// Self-recall for the Honors rows plan (S653): two derivations of the pairs, the course-title test and the lump test,
+// each against hand labels in both directions (kb/_honors_matcher_recall.py).
 //
-// WHY. The readers of #3313 found Honors courses with an M-ID Honors side that the matcher in
-// kb/_reclustering_s648_dryrun.py (measure_honors, find_base) never paired: abbreviated base titles ("Hist Of
-// Arch 2"), the HNRS spelling, the CHEM H206 number form. They got no honors_of row and no hold. The same matcher
-// paired Glendale MATH 103H with Calculus II by title. The S648 fixtures pinned the precision gates only. This test
-// pins recall: kb/_honors_matcher_recall.py derives the pairs a second way, sharing none of the matcher's helpers,
-// and reports right, wrong and missed on the committed members file, with hand labels for the candidates.
+// WHY. #3315's second review: the first recall test shared the matcher's blind spot (a space before Fullerton's
+// college letter, "PHIL 225 F"), and its "right" was the matcher's pairs less a wrong list, so it could never fall.
+// Now right, wrong and missed come from labeled pairs only; the plan writes a row only where the matcher and a second
+// derivation that shares none of its code both find the pair; and the title and lump tests that hold a fold or a
+// lumped base carry their own labels.
 //
-// Measured 2026-11-14 on the members file: before the fix 508 pairs, right 507, wrong 1, missed 14; after it 521
-// pairs, right 521, wrong 0, missed 0 (one uncertain candidate, Mt. SAC COUN 7H, labeled and held out by the
-// title gate). The ten row fixtures and three HNRS titles fail on the old matcher.
+// Measured 2026-11-14 on the live-equivalent members file: matcher right 29, wrong 0, missed 2; second derivation right
+// 31, wrong 1 (MATH 211 with MATH 221, which the matcher holds out); titles right 22, wrong 2; lumps right 18, wrong 0.
 //
 // Run from repo root: `npm test` (or `node tests/honors_matcher_recall.test.js`).
+const fs = require("fs");
 const path = require("path");
 const { spawnSync } = require("child_process");
 
 const ROOT = path.join(__dirname, "..");
 const results = [];
 const check = (name, ok, why) => results.push([name, !!ok, why]);
+const key = (p) => p[0] + " / " + p[1];
 
 const r = spawnSync("python3", ["kb/_honors_matcher_recall.py", "--json"], { cwd: ROOT, encoding: "utf8" });
 let res = {};
 try { res = JSON.parse(r.stdout); } catch (e) { res = { error: (r.stderr || r.stdout || "").slice(-400) }; }
-check("(1) the recall measure runs", r.status === 0 && !res.error, res.error || "exit " + r.status);
+check("(1) the measures run", r.status === 0 && !res.error, res.error || "exit " + r.status);
 
 const fx = res.fixtures || [];
-check("(2) thirteen fixtures", fx.length === 13, fx.length + " fixtures");
+check("(2) sixteen fixtures, the space before the college letter among them", fx.length === 16
+  && fx.some((f) => /PHIL 225HF/.test(f.name)), fx.length + " fixtures");
 fx.forEach((f) => check("(3) " + f.name, f.pass, "expected " + f.expected + ", got " + f.got));
 
-check("(4) every pair the readers named as missed is found", (res.must_find_missing || []).length === 0,
-  JSON.stringify(res.must_find_missing));
-check("(5) no pair labeled wrong is made", res.wrong === 0, JSON.stringify(res.wrong_pairs));
-// A ceiling, not zero: the members file is rebuilt daily, and one new course may wait for a label. More than two
-// unlabeled misses means the matcher lost recall.
-check("(6) at most two code-path pairs with an M-ID Honors side are missed", res.missed <= 2,
-  res.missed + " missed: " + JSON.stringify(res.missed_pairs));
-check("(7) the matcher finds at least 98% of the code-path pairs with an M-ID Honors side",
-  res.code_path_m_id_pairs > 0 && (res.code_path_m_id_pairs - res.missed) / res.code_path_m_id_pairs >= 0.98,
-  (res.code_path_m_id_pairs - res.missed) + " of " + res.code_path_m_id_pairs);
-check("(8) every count names its measure", /unified_courses_members\.js/.test(res.measure || ""), res.measure);
+const m = res.matcher || {}, s = res.second || {}, both = res.both || {};
+check("(4) right is counted from labels, never from a found set", m.right <= res.labels.real && s.right <= res.labels.real
+  && m.right + m.missed === res.labels.real && s.right + s.missed === res.labels.real);
+check("(5) the rows' set (both derivations) makes no labeled-wrong pair", both.wrong === 0, JSON.stringify(both.wrong_pairs));
+const knownMiss = new Set(["HUMA M10ME / HUMA M1110", "LIBR M10CJ / LIBR M1040", "COUN M10UB / BUSI M1381",
+  "PHS 103 / SOCI M10AA"]);
+// HUMA M10ME and LIBR M10CJ sit merged in the committed payload until the daily run syncs #3304's delete.
+check("(6) the matcher misses only the labeled pairs it is known to miss", (m.missed_pairs || []).every((p) => knownMiss.has(key(p))),
+  JSON.stringify(m.missed_pairs));
+check("(7) the second derivation's one labeled-wrong pair is the one the matcher holds out (MATH 211 / MATH 221)",
+  (s.wrong_pairs || []).every((p) => key(p) === "MATH 211 / MATH 221"), JSON.stringify(s.wrong_pairs));
+const src = fs.readFileSync(path.join(ROOT, "kb/_honors_pairs_second.py"), "utf8");
+check("(8) the second derivation shares no code with the matcher: no import of it, no call into it",
+  !/import\s+_reclustering_s648_dryrun|from\s+_reclustering_s648_dryrun|(code_key|find_base|honors_code_base|is_honors)\(|s648\./.test(src));
+
+const t = res.titles || {};
+const tWrong = (t.pairs || []).filter((x) => !x.pass).map((x) => x.a + " / " + x.b).sort();
+check("(9) the course-title test: the two known wrong answers and no other", t.right >= 22
+  && JSON.stringify(tWrong) === JSON.stringify(["English Composition / College Composition", "Hist of the Americas / Histology of the Americas"]),
+  JSON.stringify(tWrong));
+check("(10) the course-title test keeps one-character marks: I and II, A and B, 1 and 2 differ", (t.pairs || [])
+  .filter((x) => /Calculus (1|I)$|Chemistry A|Language 1|French 2/.test(x.a + "|" + x.b)).every((x) => x.pass));
+const l = res.lumps || {};
+check("(11) the lump test: every labeled base right", l.wrong === 0 && l.right >= 18, l.right + " right, " + l.wrong + " wrong");
+check("(12) every count names its measure", /unified_courses_members\.js/.test(res.measure || ""), res.measure);
 
 const bad = results.filter((x) => !x[1]);
 results.forEach(([n, ok, why]) => console.log((ok ? "  ok  " : "  FAIL ") + n + (ok ? "" : "\n        " + why)));

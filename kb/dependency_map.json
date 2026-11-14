@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 948,
+  "file_datasets": 949,
   "external_services": 195,
   "consumers": 594,
   "workflows": 72,
@@ -7738,7 +7738,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 689
+     "line": 735
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -11352,7 +11352,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 379
+     "line": 425
     },
     {
      "id": "script:kb/_title_consolidation_dryrun.py",
@@ -11673,7 +11673,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 374
+     "line": 420
     },
     {
      "id": "script:kb/_remint_apply_articulations.py",
@@ -11961,28 +11961,28 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 278
+     "line": 284
     },
     {
      "id": "script:kb/_honors_followups_s652.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 287
+     "line": 293
     },
     {
      "id": "script:kb/_honors_of_s653_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 105
+     "line": 109
     },
     {
      "id": "script:kb/_honors_of_s653_dryrun.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 118
+     "line": 122
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -12101,7 +12101,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 371
+     "line": 417
     },
     {
      "id": "script:kb/_reclustering_s649.py",
@@ -12440,7 +12440,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 176
+     "line": 180
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -12580,7 +12580,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 368
+     "line": 414
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -13019,7 +13019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 370
+     "line": 416
     },
     {
      "id": "script:kb/_rekey_crnc_mirrors.py",
@@ -13318,7 +13318,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 177
+     "line": 181
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -13458,7 +13458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 369
+     "line": 415
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -14927,7 +14927,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 375
+     "line": 421
     },
     {
      "id": "script:kb/_rekey_crnc_mirrors.py",
@@ -15100,7 +15100,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 792
+     "line": 838
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -15387,7 +15387,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 505
+     "line": 551
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -16608,7 +16608,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 373
+     "line": 379
     }
    ],
    "served": false,
@@ -16621,7 +16621,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 376
+     "line": 382
     }
    ],
    "served": false,
@@ -17762,14 +17762,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 283
+     "line": 364
     },
     {
      "id": "script:kb/_reclustering_s648_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 373
+     "line": 419
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -17912,7 +17912,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1300
+     "line": 1346
     },
     {
      "id": "script:kb/_reclustering_s649.py",
@@ -17932,7 +17932,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1078
+     "line": 1124
     }
    ],
    "served": false,
@@ -18273,7 +18273,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 376
+     "line": 422
     }
    ],
    "served": true,
@@ -18345,7 +18345,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 378
+     "line": 424
     },
     {
      "id": "script:kb/_row_audit.py",
@@ -18552,7 +18552,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 333
+     "line": 379
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -25410,6 +25410,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/honors_of_rows_check_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/honors_of_test.py": {
    "consumers": [
     {
@@ -26938,14 +26951,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 334
+     "line": 340
     },
     {
      "id": "script:kb/_honors_of_s653_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 60
+     "line": 64
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27040,7 +27053,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 65
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27134,14 +27147,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 336
+     "line": 342
     },
     {
      "id": "script:kb/_honors_of_s653_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 60
+     "line": 64
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27225,7 +27238,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 65
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27396,7 +27409,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 65
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27515,14 +27528,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 335
+     "line": 341
     },
     {
      "id": "script:kb/_honors_of_s653_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 60
+     "line": 64
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27624,14 +27637,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 308
+     "line": 314
     },
     {
      "id": "script:kb/_honors_of_s653_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 66
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -33928,6 +33941,7 @@
     "tests/next_slo_colleges_test.py",
     "tests/browser_install_single_source_test.py",
     "tests/honors_of_test.py",
+    "tests/honors_of_rows_check_test.py",
     "kb/credential_aliases.py",
     "tests/credential_title_resolver_test.py",
     "tests/credential_title_resolver_single_source_test.py",

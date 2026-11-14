@@ -1161,6 +1161,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/harvest_gap_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/harvest_ncl_lookup_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/harvest_no_closed_list_diagnosis_test.py` | workflows: `js-tests.yml` | — |
+| `tests/honors_of_rows_check_test.py` | workflows: `js-tests.yml` | — |
 | `tests/honors_of_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ib_official_titles_test.py` | workflows: `js-tests.yml` | — |
 | `tests/identities_rebuild_test.py` | workflows: `js-tests.yml` | — |
@@ -1488,5 +1489,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 948 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 949 file
 datasets · 195 external services · 594 consumers · 72 workflows · 41 tabs.

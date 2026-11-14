@@ -164,10 +164,57 @@ def _abbreviates(s, l):
     return all(ch in it for ch in s)
 
 
+ROMAN_VALUE = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7, "viii": 8}
+ROMAN = set(ROMAN_VALUE)
+PERIOD_WORDS = (r"prehistor\w*|ancient|antiquity|middle ages|medieval|gothic|renaissance|baroque|rococo|"
+                r"enlightenment|reformation|modern|present|contemporary")
+
+
+def seq_tokens(title):
+    """The marks that tell one course of a sequence from the next: a roman numeral (Intro Chem I I reads as II), a
+    number of one or two digits, a letter A to F ending the title, and a period's direction ("to 1750" beside "1750 to
+    the Present", "(1895-1950)"). Two titles that differ here name different courses however many words they share
+    (#3315's review: Calculus I and II, Chemistry A and B, Music History to 1750 and since)."""
+    t = HONORS_WORD.sub(" ", title or "").lower()
+    out = set()
+    for m in re.finditer(r"\b(?:to|until|through|thru|before)\s+(\d{3,4})\b", t):
+        out.add("to " + m.group(1))
+    for m in re.finditer(r"\b(?:since|after|from)\s+(\d{3,4})\b", t):
+        out.add("since " + m.group(1))
+    for m in re.finditer(r"\b(\d{3,4})\s*(?:to|-|–)\s*(?:the\s+)?present\b", t):
+        out.add("since " + m.group(1))
+    for m in re.finditer(r"\b(\d{4})\s*[-–]\s*(\d{4})\b", t):
+        out.add(f"{m.group(1)}-{m.group(2)}")
+    for m in re.finditer(r"(?<!introduction )(?<!intro )(?<!guide )\b(?:to|through|thru)\s+(?:the\s+)?("
+                         + PERIOD_WORDS + r")", t):
+        out.add("to " + m.group(1)[:6])      # Prehistory to the Middle Ages beside the Middle Ages to the Renaissance
+    words = _words(t)
+    joined = []
+    for w in words:                       # "I I" is how one catalog spells II
+        if w == "i" and joined and joined[-1] in ("i", "ii"):
+            joined[-1] += "i"
+        else:
+            joined.append(w)
+    marks = set()
+    for k, w in enumerate(joined):
+        if w in ROMAN:
+            marks.add(str(ROMAN_VALUE[w]))
+        elif re.fullmatch(r"\d{1,2}", w):
+            marks.add(str(int(w)))
+        elif k == len(joined) - 1 and w in ("a", "b"):
+            marks.add(str(ord(w) - 96))      # Chemistry A, B: the first and second of a pair
+    # A title with no mark is the first of its sequence: "Elementary French" is "Elementary French I" and never
+    # "Elementary French 2".
+    return frozenset(out | (marks or {"1"}))
+
+
 def abbrev_agree(a, b):
     """The share of the shorter title's words that the other title spells out or abbreviates. A catalog often
     shortens the base title ("Hist Of Arch 2" beside "History of Architecture 2 Honors"), which the stem overlap reads
-    as a different course. Used only beside a code match at one college, never alone."""
+    as a different course. Used only beside a code match at one college, never alone. Titles whose sequence marks
+    differ (seq_tokens) never agree."""
+    if seq_tokens(a) != seq_tokens(b):
+        return 0.0
     wa = [w for w in _words(HONORS_WORD.sub(" ", a or "")) if w not in STOP and len(w) > 1]
     wb = [w for w in _words(HONORS_WORD.sub(" ", b or "")) if w not in STOP and len(w) > 1]
     if not wa or not wb:
@@ -219,12 +266,11 @@ def honors_code_base(code):
 
 
 def code_key(code):
-    """A code compared across one college's own spellings: 'ECON 001' and 'ECON 1' are one course."""
-    c = " ".join((code or "").split()).upper()
-    if " " not in c:
-        return c
-    subj, num = c.rsplit(" ", 1)
-    return subj.replace(" ", "") + " " + (re.sub(r"^0+(?=\d)", "", num))
+    """A code compared across one college's own spellings, every space dropped: 'ECON 001' and 'ECON 1' are one
+    course, and so are Fullerton's 'PHIL 225 F' and the 'PHIL 225F' an Honors code 'PHIL 225HF' names (#3315's review:
+    the space before the college letter hid HUMA M1084's second base), and Glendale's 'POL S103' and 'POLS 103'."""
+    c = re.sub(r"\s+", "", (code or "").upper())
+    return re.sub(r"(?<=[A-Z])0+(?=\d)", "", c)
 
 
 def find_base(row, college_rows, drop=()):
