@@ -1,4 +1,4 @@
--- NOT YET RUN. Prepared by the S649 documents worker; the conductor runs it through the Supabase MCP and marks it RUN here.
+-- RUN 2026-11-14 at about 01:20Z by the S649 conductor (14 rows inserted, 14 logged, longest summary 393; the log append ran with a slug pattern for the -s649 rows).
 -- cpl_memory rows for SkyOriole (S649), conductor mode, 2026-11-13 to 14: 14 rows (10 decisions and 2 pitfalls by the
 -- conductor, status proposed, for Sam to revise on Open Asks Sheet 195 card 1; Sam's two statements, status verified,
 -- verified_by him, source naming him and how the words reached the session).

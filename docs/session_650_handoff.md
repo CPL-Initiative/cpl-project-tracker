@@ -40,7 +40,7 @@ numbered handoff and sends its ledger to the conductor before sign-off.
 
 Then Rule 8's `cpl_memory` query, the three-repo check, the highest-numbered handoff, `list_sessions` if you have it,
 `df -h /`, `git worktree list`, and the issues COBIx opened or commented on today, checked against this list. Read the
-replies on Open Asks Sheet 195 (link: the conductor fills it at publish; `CLAUDE.md` §11 points at it) before acting on
+replies on [Open Asks Sheet 195](https://claude.ai/artifact/WqSfUB7wrQdxpX1ShbYRhX) before acting on
 anything it names. Before any merge, read COBIx from the last comment (`perPage` 1 from the last page); never `get`
 #3111 or #3110.
 
@@ -144,7 +144,7 @@ College Data Collection, verbatim in the vault braindump (`sam-data-collection-s
 
 ## Waits for Sam
 
-Open Asks Sheet 195 (`SHEET_ID` `2026-11-14-open-asks-195`; link filled at publish) replaces Sheet 194
+Open Asks Sheet 195 (`SHEET_ID` `2026-11-14-open-asks-195`; https://claude.ai/artifact/WqSfUB7wrQdxpX1ShbYRhX, Version 1 published 01:15Z 2026-11-14, `replies` empty at publish) replaces Sheet 194
 (https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq), which held no reply at 22:25Z. **Card 1** the S649 decisions to
 revise; Sheet 194's Las Positas card is closed there, answered by his own saves on 2026-11-13. **2** re-clustering:
 Honors' reach and the four held cases. **3** *Needs your word*: delete the title-matching bot's BUSI M10XW row.
@@ -176,7 +176,7 @@ sections to `docs/commons_lessons_archive.md`, `docs/program_requirements_harves
 `docs/exhibit_canonicalization_lessons_archive.md`); `conductor_mode.md`'s S649 lessons; the run logs
 `program-requirements` (headline 20,282 active, 14,594 complete, 118 colleges; the harvest row; `next_run_at`
 06:12Z), `exhibit`, `course`; the index; the memory receipt (not run by the worker). **Skipped, with reason:** the
-`CLAUDE.md` sheet pointer (the conductor sets it to Sheet 195 at publish, byte-neutral); the pipeline view (no
+`CLAUDE.md` sheet pointer (set to Sheet 195, byte-neutral); the pipeline view (no
 roadmap row or auditor count moved); `kb/README.md` and `README.md` (no structure change); a new KB note (nothing
 crossed the bar).
 
