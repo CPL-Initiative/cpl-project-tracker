@@ -43,86 +43,13 @@ The section *S430 SkyLupine (2026-10-20)* moved verbatim to [`commons_lessons_ar
 
 The section *S419 SkyCottonwood (2026-10-18)* moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md).
 
-## S417 SkyManzanita (2026-10-18): the Commons tab, on Sam's word (step 3 before step 2)
+## S417: moved to the archive (S652 checkpoint compaction)
 
-- **The mock-up's figures reproduce from the committed files alone.** Every number the mock-up showed, measured
-  against live tables at 16:35Z, came back from a committed file: the harvest's record files and
-  `coci_programs_data.js` give the Program Requirements pair; `kb/exhibit_audit/latest.json` carries "left MAP" (the
-  raw export is gitignored for PII); the auditor's `latest.json`, the CR worklist's `_stats` and the SUBJ4 seed carry
-  the rest. So the builder needs no key and runs in the daily workflow after the steps that write those files.
-- **A figure's stamp is the file's own field, never the clock.** The auditor's `_generated_at`, the fold report's
-  `_generated_at`, the seed's `_synced_at`, a receipt's `at` (hyphens in its time part: `17-37-29Z`, normalized). The
-  CR worklist carries no stamp, so its "last changed" comes from git, which a shallow checkout cannot answer; the
-  builder writes null there and the row reads *Could not be read*.
-- **A cohort's stamp is the reviewer's `@bot` suffix, never the day:** 2026-07-07 holds 258 person stamps beside the
-  158 preseed ones. Splitting by day would have misread the Exhibit pair.
-- **"No words on the cards" is the prose, not the labels.** Sam waved the definitions and the where-it-stands
-  narrative; a known issue still needs its words and its owner to mean anything, and the test behind a count stays as
-  a chip. The lane keeps the definitions for the cards each Progress view will carry.
-- **A screenshot of the served monolith waits for the load event.** The container's proxy fails every outbound
-  request, so `domcontentloaded` plus a selector wait timed out while `load` plus a function wait rendered the tab in
-  two seconds; the a11y sweep's own server does the same.
+The section *S417 SkyManzanita (2026-10-18)* moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md).
 
-## S423 SkyLaurel (2026-10-19): the four run logs
+## S423, S425 and S427: moved to the archive (S652 checkpoint compaction)
 
-- **The tab was already wired for them.** `kb/_build_commons_status.py` sets each row's `status_file` when the file
-  exists and `commons.js` reads it, so step 2 was content and a checkpoint line, no code. Each log's next step is its
-  lane's NEXT, written in plain words because the validator refuses markdown and glyphs.
-- **Stamp only what moved.** A run log that a checkpoint restamps without work behind it reads fresh and says nothing;
-  step 12 refreshes the logs this run touched and leaves the others to age into *stale*, which is the true state.
-
-
-## S425 SkyMadrone (2026-10-19): the first per-reference Progress view, Subjects (#2260)
-
-- **The host contract held for a second host in sixty lines.** `canonical_subj4.js` lends a `section()` on a
-  `<details>` with its own classes (`cs-sec`, remembered in `localStorage`), a `goControl()` whose targets are the
-  table's filters, the SUBJ check or a section of the view, and call helpers that answer nothing (a call is answered
-  on its sheet). The module needed one addition, an optional `more(x)` word per part for the card's procedure; the
-  first host's 417 checks stayed as they were, and a shared CSS rule split into two so the first host's regex still
-  matched its own line.
-- **A check must know every sharing by design or it over-reports.** The tab's SUBJ check listed six ruled sharings
-  as collisions (the five agriculture family codes both umbrellas declare, the FTVE fan-in) beside the one real one,
-  and the dash would have said seven. The scanner's CS2 knew the fan-in; the tab's check knew only the alias file.
-  Both exceptions now come from the entries themselves (`umbrella_codes`, `fan_in_with`), as
-  `methodology-subj4-consumer-semantics` says every consumer must.
-- **The pick's reviewer is the code row's.** The sync and the overlay took the latest row across fields, so a note
-  a cohort wrote in July overwrote the person who picked the code in May on eleven entries, and the Commons row read
-  "111 by a person, 11 by a session cohort" of 122 picks a person made. A field's provenance stays with the field.
-- **A pattern written for the common case silently dropped a third of the file.** The C-ID descriptor regex had no
-  room for the " X" suffix (172 of 495 descriptors, 17 of 65 subjects), so the chips never saw ADS, the three
-  agriculture families, WELD or FIRE. Count the file's rows against the index's rows before trusting either.
-- **`hidden` loses to `display:flex`.** The toolbar stayed on screen under Progress until a `[hidden] { display:none }`
-  rule outranked the toolbar's own display; the served page showed it, jsdom could not.
-- **The deep link behind a count is the hash's second segment.** `#canonical-subj4/pre_seeded` opens the tab (tabs.js
-  routes the first segment) and the tab applies the second as a filter, a view or the check; the Commons builder
-  writes the same addresses into its `open` fields, so both dashes point at one list.
-
-## S427 SkyMadrona (2026-10-19): Sheet 99's rulings 1, 2, 3 and 5 applied; the sitting for 4 built
-
-- **A ruling names a record; the store may count another.** Sheet 99 card 3 named AUTB M1006 (Supervision and
-  Management in Agriculture) as Agricultural Business's one identity, and the seed's count of one came from AUTB M1071
-  (Import Body Customizing), whose record carries that discipline while M1006's record said Auto Body. Both carry Sam's
-  own 2026-07-13 discipline row, three seconds apart. The ruling moved the record it named; the other is a card, never a
-  silent correction (Rule 8), and the Reference view says one row sits off its code, which is true.
-- **The tab's shared-by-design rule had to learn the ruled shape before the re-key.** AGAB is declared by two umbrellas
-  and is now Agricultural Business's own; the old rule (every owner an umbrella, none canonical) would have replaced the
-  one collision it closed with a false one. Two disciplines canonical on one code stays the collision.
-- **A known issue with nothing in it is not an issue.** The Commons row's collisions issue at zero failed the no-bare-zero
-  rule; the builder drops it and `facts.shared` keeps the measure. The test finds the issue by its words, never by position.
-- **"No finding names" needs its two corroborators spelled out.** The scan names every unconfirmed pick (cs7) and the
-  aligned ones (cs4_aligned); read literally, the confirm procedure would have confirmed four of thirteen. The procedure
-  says which rules corroborate and which hold.
-- **Parallel Bash calls share one shell and one working directory.** A `cd` in one call moved the other mid-command: a
-  tracker `checkout -B` ran in the vault and reset its branch to main (recovered from the pushed remote). Use `git -C` and
-  absolute paths, and never two `cd`s in one turn.
-- **A merged claude/* branch is deleted, and the stale tracking ref makes `--force-with-lease` refuse.** Fetch the ref or
-  drop it, then push plain.
-- **A ruling that changes a human's own row changes it under his email, with the ruling as its time.** Sam answered
-  Sheet 101 at 22:38Z (autobody): AUTB M1071's discipline row is his 2026-07-13 row, so the write is a guarded UPDATE
-  pinned to the before-values (value, email, `reviewed_at`), keeps `map@rccd.edu`, sets `reviewed_at` to the reply's
-  stamp so the daily sync takes it, and names the sheet's store as its source. The receipt's header carries the
-  before-images and the rollback; the session's own JSON receipt carries the identity file and overlay before/after.
-  A cohort note that said the identity waits on his card is updated in the same file, so no store keeps the old state.
+The sections *S423 SkyLaurel*, *S425 SkyMadrone* and *S427 SkyMadrona* (2026-10-19) moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md).
 
 ## S435 SkyToyon (2026-10-20): the 110 strays, sorted by whether the answer can be checked
 
@@ -847,3 +774,20 @@ Verbatim from the re-clustering paragraph of `docs/reference/lanes/commons.md`, 
 **APPLIED and merged, card 3 (DECIDED `d-busi-split-delete-only-s649`, `d-busi-split-delete-applied-s649`):** one guarded DELETE of the bot row BUSI M10XW merge_into BUSI M1228, run 43542044321; receipt `kb/receipts/migration_s649_busi_split_delete_43542044321.json` (the row whole; the rollback re-inserts it); the record: lessons, *Moved from the lane (S650 checkpoint)*.
 
 From the *Catalog links (built S650)* paragraph, verbatim: each committed check reads in words through `link_check_result`, where a 500 from Pingora with an empty body reads "unreachable from here" and only a 404 or 410 reads "not found". `a11y.config.js` already covered `#commons/data`; S650 added the SLOs view and the split catalog pane. The default sort is built. S650 looked at it signed out on the deployed site (118 rows, the default sort, Copper Mountain's pane; the deploy carried #3286 at 06:58:58Z).
+
+## S652 (SkyAvocet, the conductor, 2026-11-14): the identities map applied, then its 625 held entries dropped
+
+- **Sam's answer came in two steps.** He pressed Complete on Sheet 196 at 11:52Z with "Go" typed into both of card 4's pickers, then said in session that the pickers had shown him no options: *"196 said pick but there was not indication I could find of what I was supposed to pick--no options to choose from"*. The conductor put the two choices to him in plain words, and he answered *"1. apply 2 drop"* (about 13:07Z). A sheet's choices are printed as buttons on the card from now on (`d-sheet-pickers-are-buttons-s652`).
+- **The apply (#3298 `feeeeef2`).** 651 fills and 578 refreshes took the map from 2,290 to 2,941 entries, with the 625 held entries untouched; a re-measure on `main` `5278e928` equaled the 2026-11-14b plan byte for byte. Three reviewers (the undo; the consumers after the daily run; the test change and side files) found nothing blocking. `tests/identities_rekey_test.py` now accepts the re-key stamp under `_superseded_rekeyed_from` (16 entries).
+- **The drop (#3302 `bd549c5f`).** A worker's run of the drop command was refused by the permission check. The conductor told Sam and asked whether to run the one command itself; he said *"drop"* (about 13:19Z), and the conductor ran it at 13:19:30Z (`p-worker-delete-refused-surface-to-sam-s652`). 2,941 to 2,316 entries. The receipt holds each dropped entry whole; the undo is two steps, the drop's receipt first, then the 14b receipt, proved on scratch copies. The reader found no articulation record naming any of the 625; 618 are alias-chain sources whose successor keeps its own entry; a sample of 15 all describe another course.
+- **What the drop moved.** 371 in-browser rows lost 2,327 potential colleges (331 left with no lists); 625 export rows lost 2,692; no adopter changed. After the daily run (43600934967, `b806c7ff`) the public adoption page's could-adopt counts fell for Fire Inspector 1 (2 to 0), CNA Certification (3 to 0), Fire Officer Journeyperson (28 to 24), California State Fire Officer (29 to 25) and Professional Fire Service Experience (13 to 10); the Fact Sheet's Fire Technology sector went 45 to 44 and Could adopt 114 to 115 (the conductor's read of `fact_sheet_metrics.json` at 14:21Z: `statewide_exhibits.could_adopt_total` 115).
+- **What the reviewers left for later** (the lane's NEXT 6): `title_differs_in_substance` treats "&" and "and", "/" and a dropped numeral as a different title; the header field `identities_with_articulations` still says 2,319; a merge member with no articulation record gets no entry, so 29 dropped ids lost a few colleges that offer the current course (113 of 2,692 names); the drop report's rows section measures the apply without the drop; two Python tests fail on `main` with no workflow running them.
+- **One daily-run dispatch after two stacked data PRs** rebuilt every list once.
+
+## Moved from the lane (S652 checkpoint)
+
+Verbatim from `docs/reference/lanes/commons.md`, replaced by the S652 state (the identities map applied and dropped; the reviewers' follow-ups in NEXT). The one marker word is lowercased so the sheet builder does not read history as an open ask.
+
+**IN PROGRESS: M-ID re-clustering by outcomes, Step 1 (S642, issue #2962; #3165; revised #3182; case 2, #3245 `c09ef2b3`; the BUSI split, #3274 `a7af46ee`).** The paragraph as it stood: `docs/commons_lessons.md`, *Moved from the lane (S649 checkpoint)* and *(S649 final refresh)*. Report `kb/status/mid_outcomes_compare_2026-11-12.md`; plans `kb/reclustering_s648_out/2026-11-13/`, `kb/reclustering_s649_out/2026-11-14/`. **RULED (Sam, Sheet 186 card 6):** all six cases as recommended. **DECIDED (Sam, Sheet 191 card 1; `sam-honors-own-mid-2026-11-13`):** an Honors course gets its own M-ID, with a declared equivalence to its base. **RULED (Sam, Open Asks Sheet 195, Complete pressed 01:18Z 2026-11-14, his own call; `sam-sheet-195-answers-2026-11-14`):** card 3 *"Remove the row"*; card 2 *"Take every recommendation"*: Honors reaches M-IDs only; AJ 160, MUS 130 and REAL M1038 with M1040 stay as they are (kept, no write); MATH M1044 into M1036 waits until the MAP team settles the refrigeration lab articulation. **APPLIED:** case 2 (S648) and card 3 (S649): lessons, *Moved from the lane (S652)*. **Card 2's Honors step is stopped, nothing written (DECIDED `d-honors-mint-stopped-s649`, `d-honors-mids-stopped-for-design-s649`).** needs sam (a), *Needs your word*: HUMA M1110's and LIBR M1040's Honors courses already have their own records, HUMA M10ME and LIBR M10CJ, which `automerge-v1@bot` folded in on 2026-06-12; separating them deletes those two bot rows, which his answer did not cover ([Open Asks Sheet 196](https://claude.ai/artifact/9JJAP1MKrRgKGUdrxFo7yA) card 2). needs sam (b), the Honors design choices (Sheet 196 card 3): (i) the numbering of a new Honors M-ID (its base's number plus H, or the next free number in its bucket); (ii) a one-way or two-way equivalence; (iii) the `honors_of` field, which `kb/_apply_curation.py` does not fold yet; (iv) equivalence rows for the 508 pairs already apart; (v) who is asked about MATH M1044 (San Diego City College's credit-by-exam exhibit MAPCBES-CBES-1-001, *Basic Refrigeration & AC Lab*), which waits on the MAP team. IDST M1120's two Glendale courses take a true mint once (i) to (iii) are settled. **APPLIED (S652, #3298, Sam's "Go", Sheet 196 card 4 q1, 11:52Z 2026-11-14):** `kb/_identities_rebuild.py` (#3272) wrote the identities map's 651 fills and 578 refreshes (2,290 entries to 2,941), re-measured on `main` equal to the plan `kb/identities_rebuild_out/2026-11-14b/plan.json` (every count, all 1,854 entry hashes). Receipt `kb/identities_rebuild_out/2026-11-14b/apply_receipt.json`. **DROPPED (S652, Sam in session, 2026-11-14: "1. apply 2 drop", then "drop"; Sheet 196 card 4 q2):** the 625 held entries (2,941 to 2,316); receipt `kb/identities_rebuild_out/2026-11-14-drop/apply_receipt.json`. Undo in order, each by `python3 kb/_identities_rebuild.py --undo <receipt>`: the drop's receipt first, then the 14b receipt. The daily run rebuilds the lists (FIRE 130 X takes FIRE M1274's). **NEXT:** (1) the Honors design and its two sheet cards (above); (2) FIRE 130 X's row-audit card, still unchecked (on `main`: 51 members, units 3-4, eligible credits 1,022.4, students 58, FIRE M1274 gone); (3) price the model pass: a statewide read is outside the $40 limits, so the price goes to Sam first; (4) a potential-CPL column, from an aggregate the runner can read; (5) the Leadership outlines: Merced (for AGAB M1002) and Canyons inside the SLO $40, and a read-only committed export of the ACE Leadership and Supervision rows of `map_college_cr_unit`; (6) follow-ups from #3298, not fixed: `title_differs_in_substance` reads "&" vs "and", "/" and a dropped numeral "I" as new titles, so 16 same-course entries carry `_superseded_rekeyed_from` (AUTO M1198, BUSI M1024, 14 more; metadata, unread); the map's header field `identities_with_articulations` still says 2,319 (no code reads it).
+
+**Catalog links (COBIx's correction on #3229, 23:35Z 2026-11-13; built S650):** only Copper Mountain's link is broken. The builder's `CATALOG_LINKS` splits the displayed link (`catalog_url`, https://www.cmccd.edu/academic-catalogs/) from the capture root (`capture_root`, the 09.03.26 PDF the capture read, now 404) and names the file the page links to now (`catalog_now`, the 10.26.26 PDF). The registry's `catalog_url`, which the readers use, still names the 09.03.26 PDF: moving it is a live write, at Copper Mountain's next capture. The no-objectives list is derived from `OBJECTIVES_BY_SYSTEM` (every system whose `printed` is not True), never restated. Guards `tests/commons_data_catalog_link.test.js`, `tests/commons_data_status_build_test.py` (15b, 15c). How a check reads, its a11y and deploy check: lessons, *Moved from the lane (S652)*.

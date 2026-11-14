@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 649,
-  "moniker": "SkyOriole",
-  "run": "the conductor, with Sam in session",
+  "session": 652,
+  "moniker": "SkyAvocet",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_650_handoff.md",
+  "handoff": "docs/session_653_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -45,25 +45,66 @@
       "text": "676 of the 680 Honors courses that share an identity with their base sit under official C-ID or CCN ids. M-IDs only makes 3 new M-IDs; official ids too makes 136. AJ 160, MUS 130, REAL M1038 with M1040 and MATH M1044 are held for your word.",
       "if_no_reply": "Case 2 (FIRE M1274 into FIRE 130 X) is applied; the held cases and the Honors split wait.",
       "link": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
-      "link_text": "Open Sheet 194"
+      "link_text": "Open Sheet 194",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-14",
+        "words": "Take every recommendation (Open Asks Sheet 195 card 2, Complete pressed 01:18Z): Honors reaches M-IDs only; AJ 160, MUS 130 and REAL M1038 with M1040 stay; MATH M1044 waits on the MAP team."
+      }
     },
     {
       "title": "Remove one row a bot saved, so the BUSI M1228 split is clean",
       "text": "A title-matching bot's row keeps Santa Ana BUS 115 inside BUSI M1228. Splitting around it leaves M1228 carrying that course's title and counts; removing the row returns the course to BUSI M10XW. The receipt keeps the row.",
       "if_no_reply": "The BUSI split waits and the row stays.",
       "link": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
-      "link_text": "Open Sheet 194"
+      "link_text": "Open Sheet 194",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-14",
+        "words": "Remove the row (Open Asks Sheet 195 card 3). Applied in S649 with a receipt that keeps the row."
+      }
+    },
+    {
+      "title": "Apply the identities map rebuild, and drop the 625 held entries?",
+      "text": "Open Asks Sheet 196 card 4: the rebuild fills 651 entries and refreshes 578, and 625 entries no articulation record names were held for a second question.",
+      "if_no_reply": "The map keeps its 2,290 entries and FIRE 130 X keeps FIRE M1274's lists.",
+      "link": "https://claude.ai/artifact/9JJAP1MKrRgKGUdrxFo7yA",
+      "link_text": "Open Sheet 196",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-14",
+        "words": "\"Go\" on Sheet 196 card 4 (11:52Z), then in session: \"1. apply 2 drop\" and \"drop\". Applied (2,290 to 2,941) and the 625 dropped (2,941 to 2,316); each step has an undo receipt."
+      }
+    },
+    {
+      "title": "The Honors design choices and the two bot rows",
+      "text": "Open Asks Sheet 197 cards 2 and 3 (carried from Sheet 196): whether to delete the bot rows HUMA M10ME and LIBR M10CJ, and five design choices for a new Honors M-ID (its numbering, one-way or two-way equivalence, the honors_of field, equivalence rows for the 508 pairs already apart, and who is asked about MATH M1044).",
+      "if_no_reply": "No Honors M-ID is minted and the two rows stay.",
+      "link": "https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd",
+      "link_text": "Open Sheet 197"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-14T01:11:33Z",
+  "written_at": "2026-11-14T14:32:17Z",
   "project": "course",
   "next_step": {
-    "title": "Rebuild the identities map for FIRE 130 X",
-    "text": "FIRE 130 X reads as expected on main after the merge of FIRE M1274 (51 members, 3 to 4 units). Its adopter and potential lists wait for the identities rebuild, whose dry-run plan waits on Sam for a commit the permission check refused."
+    "title": "The Honors design, then the identities map's follow-ups",
+    "text": "The identities map is applied and its 625 held entries are dropped. Next: the Honors design choices wait on Sam; FIRE 130 X's row-audit card is still unchecked; the map's title comparison, its header count and two failing tests are follow-ups from the review."
   },
   "changes": [
+    {
+      "at": "2026-11-14T13:49:00Z",
+      "text": "The daily run rebuilt the adoption lists from the new map: the statewide could-adopt count reads 115 (was 114), and five fire and nursing credentials show fewer colleges that could adopt them."
+    },
+    {
+      "at": "2026-11-14T13:40:00Z",
+      "text": "The 625 held identities entries were dropped on Sam's word, 2,941 to 2,316; no articulation record names any of them. The receipt keeps each entry whole."
+    },
+    {
+      "at": "2026-11-14T13:20:00Z",
+      "text": "The identities map rebuild was applied on Sam's go: 651 fills and 578 refreshes, 2,290 to 2,941 entries, equal to the plan. FIRE 130 X takes FIRE M1274's lists."
+    },
     {
       "at": "2026-11-13T22:30:00Z",
       "text": "FIRE 130 X on main carries 51 members, 3 to 4 units, 1,022.4 eligible credits and 58 students; FIRE M1274 is gone from the index."
@@ -75,14 +116,6 @@
     {
       "at": "2026-11-12T21:05:44Z",
       "text": "Re-clustering Step 1 revised on COBIx's four points: one district is one voice, two exhibit reach columns, cases chosen by reach, a subject code check, and a stop when a live read returns no rows. 678 confirmed, 760 proposed splits, 71 merge candidates, 348 with too little text. Pull request 3182 merged."
-    },
-    {
-      "at": "2026-11-12T14:50:00Z",
-      "text": "Re-clustering Step 1 reads 1,857 M-IDs with outcomes text on two or more members: 557 confirmed, 760 proposed splits, 221 merge candidates, 319 with too little text. A report only; pull request 3165 merged."
-    },
-    {
-      "at": "2026-11-10T20:03:00Z",
-      "text": "Every remaining discipline's seed cards that descriptions and TOP both confirm are stamped, on Sam's ruling all (Open Asks Sheet 180 card 1): 584 cards in 26 disciplines, plus 10 Kinesiology cards that qualified since the first apply. Each discipline has its own receipt and reverses alone. Pull request 3084 merged."
     }
   ]
 }

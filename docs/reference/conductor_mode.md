@@ -151,6 +151,11 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - The sheet's type-ahead pickers showed Sam no options (Sheet 196 card 4: he typed "Go" twice). A picker's choices are buttons printed on the card.
 - A worker's delete was refused by the permission check; the conductor surfaced it to Sam, who was in session, and ran the one command itself on his word. The refusal went to a person and was never worked around.
 - A second reader's self-recall test (look up each program whose page is already held as if it were unknown) measured a new matcher at 63% before it ran on any college. Ask for that test in the brief of any new lookup.
+- Times written from memory were wrong twice: a note on #3299 said 13:05Z where GitHub stamped 12:59Z, and the conductor's messages put Sam's words at 13:15Z where the clock read 13:07Z. Run `date -u` before writing any time, and take a comment's time from its GitHub stamp.
+- A stray `inspect.py` in the shared scratchpad shadowed the standard library in a worker's run. Workers run scripts with `python3 -I`, from a subfolder of their own.
+- `git ls-remote` with several patterns dropped a branch line three times. Ask for one ref per call.
+- The Agent tool's worktree isolation failed once, when the shell's directory had reset to `/home/user`. `cd` into the checkout before spawning a worker with a worktree.
+- Worked: check runs read on the current head each time a PR was marked ready and merged right after; second readers who rebuilt the evidence from independent sources (seven for the prefix aliases, which removed Los Rios's ENGL for ENGWR); one daily-run dispatch after two stacked data PRs, so every list rebuilt once.
 
 ## What went wrong in S651, and what worked
 
