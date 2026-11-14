@@ -274,8 +274,18 @@ def price_main(args) -> int:
     cpp, cpp_from = cost_per_program(load_records(os.path.join(C.COLLEGE_DIR, slug)))
     pages = pages_share(capture)
     extract = parse_extract(args.extract)
-    got = price(((capture.get("would_extract") or {}).get("programs")) or 0, cpp, parse_limit(args.limit_usd),
-                extract, pages)
+    # A fresh capture (the college workflow's step=read, S653) is priced the same, and its pages are reported but
+    # never gate it: the whole-capture proof is for a restaged artifact (sources_from), and a fresh read extracted
+    # without it before the price ran on every extraction.
+    gate_pages = str(getattr(args, "pages_gate", "1")).strip() != "0"
+    would = capture.get("would_extract") or {}
+    # A read dispatched with force= extracts those programs again though their pages are unchanged, beyond the
+    # capture's would_extract: each forced number not already on that list is priced too (an upper bound).
+    listed = {str(x.get("control_number")) for x in would.get("list") or []}
+    forced = C.forced(os.path.join(C.COLLEGE_DIR, slug), getattr(args, "force", "") or "") - listed
+    got = price((would.get("programs") or 0) + len(forced), cpp, parse_limit(args.limit_usd),
+                extract, pages if gate_pages else None)
+    got["forced_priced"] = len(forced)
     got.update(cost_per_program_from=cpp_from, pages=pages)
     refused = None
     try:
@@ -286,7 +296,11 @@ def price_main(args) -> int:
     C._write(os.path.join(args.out, "wave_price.json"), got)
     os.makedirs(os.path.dirname(os.path.abspath(args.write)), exist_ok=True)
     C._write(args.write, provisional_row(args.college, slug, args.run, got))
-    print("%s: %s" % (args.college, got["why"]))
+    print("%s: estimate $%.2f for %d programs at $%.4f each with the %.2f margin; %s"
+          % (args.college, got["price_usd"], got["would_extract"], got["cost_per_program"], got["margin"], got["why"]))
+    if extract and not got["go"] and not got["within_limit"]:
+        print("::error::%s: the estimate $%.2f is over the $%.0f limit; nothing is extracted"
+              % (args.college, got["price_usd"], got["limit_usd"]))
     _output("go", "true" if got["go"] else "false")
     if refused:
         print("::error::%s: %s" % (args.college, refused))
@@ -607,6 +621,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--college", default="")
     ap.add_argument("--extract", default="0")
     ap.add_argument("--limit-usd", default="40")
+    ap.add_argument("--pages-gate", default="1", help="price: 0 reports a partial capture without holding it")
+    ap.add_argument("--force", default="", help="price: the read's force=, whose programs extract again")
     ap.add_argument("--wave", default="")
     ap.add_argument("--ref", default=os.environ.get("GITHUB_REF_NAME", ""))
     ap.add_argument("--out", default="out")

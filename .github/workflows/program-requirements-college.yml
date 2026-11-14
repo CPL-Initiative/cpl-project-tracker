@@ -183,15 +183,6 @@ jobs:
         run: >-
           python3 kb/_program_requirements_college.py stage --college "$COLLEGE" --from staged --out out
           --sources-run "$SOURCES_FROM"
-      - name: Price the extraction ($40 a college a run, Sam's standing go)
-        id: price
-        if: env.SOURCES_FROM != ''
-        env:
-          ATTEMPT: ${{ github.run_attempt }}
-          EXTRACT_ASKED: ${{ env.EXTRACT == 'true' && '1' || '0' }}
-        run: >-
-          python3 kb/_program_requirements_wave.py price --college "$COLLEGE" --out out --extract "$EXTRACT_ASKED"
-          --limit-usd 40 --attempt "$ATTEMPT" --write out/price_row.json
       - name: Capture
         if: env.SOURCES_FROM == ''
         env:
@@ -203,14 +194,29 @@ jobs:
           # A push carries no input, so the lookup is on there too; ncl_lookup=0 runs one college as before S652.
           NCL_CATALOG_LOOKUP: ${{ github.event.inputs.ncl_lookup || '1' }}
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit "$LIMIT"
+      # Every extraction is priced before any model call, fresh or restaged ($40 a college a run on the estimate,
+      # Sam's standing go; S653): over the limit, nothing is extracted. extract=0 prints the estimate and pays
+      # nothing. A fresh capture's pages are reported and never hold it (--pages-gate 0); a restaged one must be
+      # whole. tests/program_requirements_extraction_gate_test.py fails a workflow whose extraction can run
+      # without this step.
+      - name: Price the extraction ($40 a college a run, Sam's standing go)
+        id: price
+        env:
+          ATTEMPT: ${{ github.run_attempt }}
+          EXTRACT_ASKED: ${{ env.EXTRACT == 'true' && '1' || '0' }}
+          PAGES_GATE: ${{ env.SOURCES_FROM != '' && '1' || '0' }}
+          FORCE: ${{ github.event.inputs.force || '' }}
+        run: >-
+          python3 kb/_program_requirements_wave.py price --college "$COLLEGE" --out out --extract "$EXTRACT_ASKED"
+          --limit-usd 40 --attempt "$ATTEMPT" --pages-gate "$PAGES_GATE" --force "$FORCE" --write out/price_row.json
       - name: Extract and score
-        if: env.EXTRACT == 'true' && (env.SOURCES_FROM == '' || steps.price.outputs.go == 'true')
+        if: env.EXTRACT == 'true' && steps.price.outputs.go == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           FORCE: ${{ github.event.inputs.force || '' }}
-          # The hard stop on a staged read: the run's actual cost is summed as calls come back, and at $40 no
-          # further program is sent.
-          CEILING: ${{ github.event.inputs.sources_from != '' && '40' || '' }}
+          # The hard stop on every extraction: the run's actual cost is summed as calls come back, and at $40
+          # no further program is sent.
+          CEILING: '40'
         run: >-
           python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6
           --force "$FORCE" --ceiling-usd "$CEILING"

@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 948,
+  "file_datasets": 949,
   "external_services": 195,
   "consumers": 593,
   "workflows": 72,
@@ -8595,7 +8595,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 356
+     "line": 370
     }
    ],
    "served": false,
@@ -8615,7 +8615,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 370
+     "line": 384
     }
    ],
    "served": false,
@@ -21085,7 +21085,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 350
+     "line": 364
     }
    ],
    "served": false,
@@ -21722,7 +21722,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 364
+     "line": 378
     }
    ],
    "served": false,
@@ -25904,6 +25904,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_extract_halt_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_extraction_gate_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -33687,6 +33700,7 @@
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_wave_test.py",
+    "tests/program_requirements_extraction_gate_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/harvest_ncl_lookup_census_test.py",
