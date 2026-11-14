@@ -29,7 +29,7 @@ governance items and the identities rebuild; it writes no numbered handoff (its 
    (the seven rows of statement 2 in `kb/receipts/cpl_memory_s649_final_rows_2026-11-14.sql`, the positions on #3237,
    #3229 and #3111, and the `kb/credentials.json` edit taken as inside card 4). The builder demands (a) and (b) from
    the commons lane's markers. Publish under a fresh `SHEET_ID`; then move `CLAUDE.md`'s pointer (byte-neutral).
-2. **Run statement 2 of** `kb/receipts/cpl_memory_s649_final_rows_2026-11-14.sql` (NOT YET RUN), then mark it RUN.
+2. **The memory receipt** `kb/receipts/cpl_memory_s649_final_rows_2026-11-14.sql`: both statements are RUN (statement 2 at 03:07Z 2026-11-14, 7 rows); nothing to run.
 3. **#3265** (`claude/slo-objectives-rccd`, head `68a5c8b7`): merge on a green `test` if the conductor did not (open
    at 03:05Z). Its load is done.
 4. **Los Medanos, Monterey Peninsula, Los Angeles Valley:** work their rules first (Sam, below).
@@ -133,7 +133,7 @@ Workers do not survive the session; brief a fresh worker per branch from its dif
   its ids; read it with a script that prints scalars only).
 - `cpl_memory`: the checkpoint's 14 rows (`kb/receipts/cpl_memory_s649_rows_2026-11-14.sql`, RUN); Sam's three rows of
   statement 1 of `kb/receipts/cpl_memory_s649_final_rows_2026-11-14.sql` (RUN about 01:22Z and 02:58Z); its statement
-  2 is NOT YET RUN. Undo by slug.
+  2 is RUN (03:07Z 2026-11-14, 7 rows). Undo by slug.
 - No `kb_curation` write beyond the BUSI delete; no model spend.
 
 ## Decisions to honor
@@ -200,7 +200,7 @@ Sheet 196.
 Touched: the docs audit; this handoff; the lanes `program-requirements-harvest`, `commons`, `cer-procedures` (each
 under 20,000 bytes, retired text moved verbatim to `docs/program_requirements_harvest_lessons.md`,
 `docs/commons_lessons.md` and `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S649 final refresh)*);
-`conductor_mode.md`'s S649 lessons; the index rebuild; the memory receipt (statement 1 RUN, statement 2 NOT YET RUN).
+`conductor_mode.md`'s S649 lessons; the index rebuild; the memory receipt (both statements RUN).
 **Skipped, with reason:** the run logs under `kb/status/` (step 12: the headline and harvest rows need Supabase reads
 this refresh did not make; the next checkpoint refreshes them, and #3265 rebuilt `commons_data.json`); the vault note
 and the wiki `log.md` line (the documents worker cannot write to `CPLBrain`; the conductor holds the text); the

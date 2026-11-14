@@ -1,7 +1,7 @@
 -- cpl_memory rows for SkyOriole (S649), the final refresh, 2026-11-14. Two statements, clearly separated.
 -- Every summary at most 400 characters (the table's check), measured by script when this file was written:
 --   statement 1 (RUN): 374, 246, 269; the longest is 374.
---   statement 2 (NOT YET RUN): 355, 348, 350, 297, 351, 315, 276; the longest is 355.
+--   statement 2 (RUN 03:07Z 2026-11-14): 355, 348, 350, 297, 351, 315, 276; the longest is 355.
 -- Each statement: INSERT ... ON CONFLICT (slug) DO NOTHING (a replay is harmless), then the cpl_memory_log append, then the verify.
 -- ROLLBACK (by slug; never by author), for either statement's slugs:
 --   delete from cpl_memory_log where memory_id in (select id from cpl_memory where slug in (<the slugs>));
@@ -31,7 +31,7 @@ where m.slug in
 group by m.slug, m.summary order by m.slug;
 
 -- ===========================================================================================================
--- STATEMENT 2 -- NOT YET RUN. The conductor's decisions and one pitfall since the checkpoint (status proposed,
+-- STATEMENT 2 -- RUN 03:07Z 2026-11-14 by the S649 conductor (7 inserted, 7 logged, longest 355; tag re-clustering as the table spells it; the log append stored slug and summary). The conductor's decisions and one pitfall since the checkpoint (status proposed,
 -- for Sam to revise on the next sheet's card 1). Run through the Supabase MCP, then mark this header RUN with the time.
 -- ===========================================================================================================
 insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
