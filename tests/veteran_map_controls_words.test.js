@@ -34,7 +34,15 @@ check(".btn is a cobalt word", /color:\s*var\(--cobalt\)/.test(b), b.trim());
 check(".btn is underlined at rest", /text-decoration:\s*underline/.test(b), b.trim());
 check(".btn has no pill radius", !/border-radius/.test(b), b.trim());
 const mh = /min-height:\s*(\d+)px/.exec(b);
-check(".btn keeps the 24px target", mh && +mh[1] >= 24, mh ? mh[0] : "no min-height");
+// A public page's controls take the public header's 25px floor, never exactly 24: a 24px box
+// measures 23.98 at 90% and 133% browser zoom (S641, tests/public_target_floor.test.js).
+check(".btn keeps the 25px public target floor", mh && +mh[1] >= 25, mh ? mh[0] : "no min-height");
+const lb = /min-height:\s*(\d+)px/.exec(rule(".linkbtn"));
+check(".linkbtn keeps the 25px public target floor", lb && +lb[1] >= 25, lb ? lb[0] : "no min-height");
+// The directory's "CPL page" link painted 21px tall beside its 44px row (S650 UI pass): it fills the row now.
+const da = rule(".dir a");
+const dm = /min-height:\s*(\d+)px/.exec(da);
+check(".dir a (the CPL page link) fills its 44px row", dm && +dm[1] >= 44 && /display:\s*inline-flex/.test(da), da.trim());
 const on = rule('.btn[aria-pressed="true"]');
 check("the pick is marked by weight", /font-weight:\s*700/.test(on), on.trim());
 check("the pick paints no fill", !/background/.test(on), on.trim());
