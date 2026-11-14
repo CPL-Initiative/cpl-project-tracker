@@ -223,10 +223,11 @@
      78
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 76] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog ADST C111X Addic Ɵon Studies Field Experience Seminar ................................"
+    "opens": "[page 76] CERRO COSO COMMUNITY COLLEGE | 2026-2027 Catalog ADST C111X AddicƟon Studies Field Experience Seminar ................................."
    },
    {
     "control_number": "30793",
@@ -273,6 +274,7 @@
      121
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.75,
@@ -425,6 +427,7 @@
      118
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -520,6 +523,7 @@
      118
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -581,6 +585,7 @@
      111
     ],
     "named": true,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -1659,5 +1664,27 @@
    }
   ]
  },
- "run": "39046789844"
+ "run": "39046789844",
+ "fingerprints": {
+  "30766": {
+   "sha256": "1d4be858c03dcbcca99bfca68500592d97098c6cda4db3bd1e3af549f500e1cd",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=76"
+  },
+  "31540": {
+   "sha256": "b12e1ed32abd6b57c51cda8df9d92c065aeef459c54e949a758c22133eef2030",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=120"
+  },
+  "38665": {
+   "sha256": "fac221232dba2442f6e6c015ce2de6f00641eeb2493f9d721747a4c740b14858",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=117"
+  },
+  "40868": {
+   "sha256": "df9f0af8e31a332db39d0731bf22534136d9b7f305bebfb3171b5fe4e0942210",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=118"
+  },
+  "43206": {
+   "sha256": "1f7526245f8bc130beef94562197d4236367107f3315c02018ff135c9c278c05",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=111"
+  }
+ }
 }

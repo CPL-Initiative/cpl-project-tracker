@@ -407,14 +407,302 @@ def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str |
             "colleges": colleges}
 
 
+def _span_words(v) -> str:
+    lo, hi = R._lo_hi(v)
+    return "none" if lo is None else ("%g" % lo if lo == hi else "%g-%g" % (lo, hi))
+
+
+def calgetc_apply_plan_path(college: str) -> str:
+    from _program_requirements_college import slug_of
+    return os.path.join(HERE, "program_requirements_college", slug_of(college), "calgetc_apply_plan.json")
+
+
+def calgetc_apply_plan(records: list[dict], college: str, commit: str | None = None, date: str | None = None,
+                       steps: dict | None = None) -> dict:
+    """One college's Cal-GETC apply as a dry run on its filed records, before its reconcile run is dispatched
+    (S649, after Grossmont's #3252): each record the college's Cal-GETC route reaches, with its ge_units and its
+    passing (passes_live) before and after. The route is the college's own ge_units set step where its config
+    carries one (every record the step's awards and only_with admit, simulated by simulate_ge as if its
+    pattern matched), else its statewide_cal_getc step (the record gates of cal_getc_34_plan; its page gates run
+    in the reconcile run, so a fill here is an upper bound). A row is held, never applied, where the fill would
+    turn a passing record failing, or where a set step's figure puts the sum past 60 at both ends (overlap): a
+    set step checks no standing while draft #3250 is unmerged, and Grossmont 46141, the same shape, was kept as
+    main files it (#3252). A held row the set step still fills in the run is restored from main before the
+    reread (restore_before_reread)."""
+    steps = R.load_steps() if steps is None else steps
+    conf = steps.get(college) or {}
+    mine = [f for f in records if f["college"] == college]
+    own = [st for st in conf.get("steps") or [] if st.get("kind") == "set" and st.get("field") == "ge_units"]
+    rows = []
+    if own:
+        route = "college set step"
+        cands = [(f, st) for f in sorted(mine, key=lambda x: x["control_number"]) for st in own[:1]]
+    elif R.calgetc_step(conf) is not None:
+        route = "statewide step"
+        plan = cal_getc_34_plan(mine, steps=steps).get("colleges", {}).get(college, [])
+        by_cn = {f["control_number"]: f for f in mine}
+        cands = [(by_cn[r["control_number"]], dict(step_of=r)) for r in plan]
+    else:
+        return {"college": college, "route": None, "why": "the college's config carries no Cal-GETC step",
+                "rows": [], "apply": [], "restore_before_reread": [], "held": []}
+    for f, st in cands:
+        prog = f["record"].get("program") or {}
+        before = S.passes_live(f["score"])
+        if route == "statewide step":
+            pr = st["step_of"]
+            sim = {"field": "ge_units", "value": dict(R.CAL_GETC_UNITS), "awards": "transfer",
+                   "only_with": ["ge_pattern", "degree_total"]}
+            fills = bool(pr.get("fills"))
+            held = None if fills else (pr.get("held") or "the statewide rule holds it: %s" % pr.get("standing"))
+        else:
+            sim = st
+            fills, held = True, None
+        what, after = simulate_ge(f, sim)
+        if after is None:
+            continue
+        fig = sim["value"]
+        maj = R._lo_hi(prog.get("total_units"))
+        el = [R._lo_hi(prog.get(k)) for k in ("open_elective_units", "degree_elective_units")]
+        total = R._lo_hi(prog.get("degree_total"))
+        sums = None
+        if maj[0] is not None:
+            sums = [maj[0] + fig["min"] + sum(e[0] for e in el if e[0] is not None),
+                    maj[1] + fig["max"] + sum(e[1] for e in el if e[1] is not None)]
+        if held is None and before and not after:
+            held = "a passing record would fail"
+        if held is None and route == "college set step" and sums and total[0] is not None \
+                and sums[0] > total[1] and sums[1] > total[1]:
+            held = ("overlap: the major plus the printed %g runs past the degree total of %g; a set step checks no "
+                    "standing while #3250 is unmerged, so the record stays as main files it (Grossmont 46141, #3252)"
+                    % (fig["min"], total[0]))
+        row = {"control_number": f["control_number"], "title": f.get("title"), "award": f.get("award"),
+               "ge_units_before": prog.get("ge_units"),
+               "ge_units_after": prog.get("ge_units") if (held or not fills) else dict(fig),
+               "passes_before": before, "passes_after": after if (fills and not held) else before,
+               "passes_with_fill": after, "verdict_with_fill": what, "sum_with_fill": sums,
+               "degree_total": total[0]}
+        if held:
+            row["held"] = held
+        rows.append(row)
+    apply_ = [r["control_number"] for r in rows if "held" not in r]
+    held = [r["control_number"] for r in rows if "held" in r]
+    return {"college": college, "route": route,
+            "step": own[0] if own else R.calgetc_step(conf),
+            "measured_on": {"commit": commit, "date": date,
+                            "records": "kb/program_requirements_college/<slug>/records/",
+                            "tool": "python3 kb/_program_requirements_readings_measure.py --calgetc-apply '%s'" % college,
+                            "kind": "a dry run on the filed records; the reconcile run reads the pages"},
+            "counts": {"rows": len(rows), "apply": len(apply_), "held": len(held),
+                       "fail_to_pass": sum(1 for r in rows if "held" not in r and r["passes_after"]
+                                           and not r["passes_before"]),
+                       "pass_to_fail": sum(1 for r in rows if r["passes_before"] and not r["passes_after"]),
+                       "held_would_pass": sum(1 for r in rows if "held" in r and r["passes_with_fill"]
+                                              and not r["passes_before"])},
+            # A college whose filed records carry no reconciled notes has never had a reconcile run: the run
+            # dispatched for this apply also runs every other reconcile rule and rescores every record (no
+            # kept-passing guard), so its whole filing is reviewed against main (run_review) before the reread.
+            "first_reconcile": not any(f.get("reconciled") for f in mine),
+            "apply": apply_, "held": held,
+            "restore_before_reread": held if route == "college set step" else [],
+            "rows": rows}
+
+
+def _prog_diff(a: dict, b: dict) -> list[str]:
+    pa, pb = (a.get("program") or {}), (b.get("program") or {})
+    out = sorted(k for k in set(pa) | set(pb) if pa.get(k) != pb.get(k))
+    return out + (["blocks"] if a.get("blocks") != b.get("blocks") else [])
+
+
+def reconcile_run_review(plan: dict, branch: dict, main: dict, run: str, keep: dict | None = None) -> dict:
+    """The whole filing of a reconcile run against main, record by record (S649, the review of #3259: a college's
+    first reconcile runs every rule and rescores every record with no kept-passing guard). branch and main map a
+    control number to its filed file. A changed record is kept only as an apply row taking the plan's figure and
+    not passing less, or where keep names it with a rule the page text shows; every other changed record is
+    restored from main whole, so its extracted_run reverts and the reread does not post it."""
+    keep = keep or {}
+    fig = (plan.get("step") or {}).get("value") if plan.get("route") == "college set step" else dict(R.CAL_GETC_UNITS)
+    rows = []
+    for cn in sorted(set(branch) | set(main)):
+        b, m = branch.get(cn), main.get(cn)
+        if b == m:
+            continue
+        row = {"control_number": cn, "extracted_run": (b or {}).get("extracted_run"),
+               "passes_main": S.passes_live((m or {}).get("score")) if m else None,
+               "passes_run": S.passes_live((b or {}).get("score")) if b else None,
+               "fields": _prog_diff((m or {}).get("record") or {}, (b or {}).get("record") or {}) if b and m else [],
+               "notes": [{k: n.get(k) for k in ("field", "was", "now", "words")}
+                         for n in (b or {}).get("reconciled") or []]}
+        ge = (((b or {}).get("record") or {}).get("program") or {}).get("ge_units")
+        if not b or not m:
+            row["decision"], row["why"] = "restore", "present on one side only"
+        elif row["passes_main"] and not row["passes_run"]:
+            row["decision"], row["why"] = "restore", "a passing record would fail"
+        elif cn in plan.get("apply") or []:
+            ok = ge == fig and set(row["fields"]) <= {"ge_units"}
+            row["decision"] = "keep" if ok else "restore"
+            row["why"] = ("an apply row: ge_units takes the plan's figure, nothing else moves" if ok else
+                          "an apply row whose run changed more than ge_units: %s" % ", ".join(row["fields"]))
+        elif cn in keep:
+            row["decision"], row["why"] = "keep", keep[cn]
+        else:
+            row["decision"] = "restore"
+            row["why"] = ("held in the plan: %s" % next((r["held"] for r in plan.get("rows") or []
+                                                           if r["control_number"] == cn and r.get("held")), "")
+                          if cn in (plan.get("held") or []) else
+                          "not an apply row: the first reconcile's other rules or rescore, kept as main files it")
+        rows.append(row)
+    # What the run itself scored, beside the dry run's figures: the run rescored on the fresh page, so a hold's cost
+    # and an apply row's passing read from it (the dry run keeps a filed program verdict the rescore can change).
+    return {"run": run, "changed": len(rows),
+            "kept": [r["control_number"] for r in rows if r["decision"] == "keep"],
+            "restored": [r["control_number"] for r in rows if r["decision"] == "restore"],
+            "fail_to_pass_kept": [r["control_number"] for r in rows if r["decision"] == "keep"
+                                  and r["passes_run"] and not r["passes_main"]],
+            "held_would_pass": [r["control_number"] for r in rows if r["control_number"] in (plan.get("held") or [])
+                                and r["passes_run"] and not r["passes_main"]],
+            "pass_to_fail_kept": [r["control_number"] for r in rows if r["decision"] == "keep"
+                                  and r["passes_main"] and not r["passes_run"]],
+            "records": rows}
+
+
+def _pages(entry) -> list | None:
+    return ((entry or {}).get("source") or {}).get("pages")
+
+
+def restore_sources(main: list, run: list, kept: list) -> tuple[list, list]:
+    """main's sources.json with the kept programs' entries from the run (in main's order, a kept program main
+    lacks appended), and every program whose pages the run moved: {control_number, main, run}."""
+    by_run = {e.get("control_number"): e for e in run}
+    by_main = {e.get("control_number"): e for e in main}
+    out = [by_run[e["control_number"]] if e.get("control_number") in kept and e.get("control_number") in by_run
+           else e for e in main]
+    out += [by_run[cn] for cn in kept if cn in by_run and cn not in by_main]
+    moved = [{"control_number": cn, "main": _pages(by_main.get(cn)), "run": _pages(by_run.get(cn))}
+             for cn in sorted(set(by_main) | set(by_run)) if _pages(by_main.get(cn)) != _pages(by_run.get(cn))]
+    return out, moved
+
+
+def restore_capture(main: dict, run: dict, kept: list) -> dict:
+    """main's capture.json with the run's slice for each kept program: its pick (pdf.picks), its fingerprint, and
+    its would_extract entry; every other field stays main's."""
+    out = json.loads(json.dumps(main))
+    kept = set(kept)
+
+    def splice(m_list, r_list):
+        r_by = {e.get("control_number"): e for e in r_list or [] if isinstance(e, dict)}
+        res = [r_by.get(e.get("control_number"), e) if isinstance(e, dict) and e.get("control_number") in kept
+               else e for e in m_list or []]
+        have = {e.get("control_number") for e in res if isinstance(e, dict)}
+        return res + [r_by[cn] for cn in sorted(kept) if cn in r_by and cn not in have]
+
+    if isinstance(out.get("pdf"), dict) and isinstance(run.get("pdf"), dict):
+        out["pdf"]["picks"] = splice(out["pdf"].get("picks"), run["pdf"].get("picks"))
+    if isinstance(out.get("would_extract"), dict) and isinstance(run.get("would_extract"), dict):
+        out["would_extract"]["list"] = splice(out["would_extract"].get("list"), run["would_extract"].get("list"))
+    if isinstance(run.get("fingerprints"), dict):
+        fp = out.setdefault("fingerprints", {})
+        for cn in sorted(kept):
+            if cn in run["fingerprints"]:
+                fp[cn] = run["fingerprints"][cn]
+    return out
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--json", action="store_true", help="print the measure as JSON, every key named")
     ap.add_argument("--calgetc-plan", action="store_true",
                     help="write the statewide Cal-GETC 34 plan (%s), a one-time measure, and print its counts"
                          % os.path.relpath(CAL_GETC_PLAN, HERE))
+    ap.add_argument("--calgetc-apply", metavar="COLLEGE",
+                    help="write one college's Cal-GETC apply plan (kb/program_requirements_college/<slug>/"
+                         "calgetc_apply_plan.json), a dry run on its filed records, and print its rows")
+    ap.add_argument("--calgetc-review", metavar="COLLEGE",
+                    help="after the college's reconcile run is filed: review every record against --against, write "
+                         "run_review into its apply plan, and with --restore put back main's file for each restored")
+    ap.add_argument("--run", help="--calgetc-review: the reconcile run id")
+    ap.add_argument("--against", default="origin/main", help="--calgetc-review: the ref the filing is read against")
+    ap.add_argument("--keep", action="append", default=[], metavar="CN=WHY",
+                    help="--calgetc-review: keep a changed record that is no apply row, with the rule the page shows")
+    ap.add_argument("--restore", action="store_true", help="--calgetc-review: write main's file for each restored")
     args = ap.parse_args(argv)
+    if args.calgetc_review:
+        import subprocess
+        path = calgetc_apply_plan_path(args.calgetc_review)
+        college_dir = os.path.dirname(path)
+        top = os.path.relpath(college_dir, os.path.dirname(HERE))
+
+        def at_ref(name):
+            return subprocess.run(["git", "-C", HERE, "show", "%s:%s/%s" % (args.against, top, name)],
+                                  capture_output=True, check=True).stdout
+
+        plan = json.load(open(path))
+        names = subprocess.run(["git", "-C", HERE, "ls-tree", "--full-tree", "--name-only",
+                                "%s:%s/records" % (args.against, top)], capture_output=True, text=True,
+                               check=True).stdout.split()
+        main_raw = {n[:-5]: at_ref("records/" + n) for n in names if n.endswith(".json")}
+        here = os.path.join(college_dir, "records")
+        prior = plan.get("run_review") or {}
+        if prior.get("run") == args.run and prior.get("records_restored"):
+            # The records were restored by an earlier --restore of this run: their review stands as filed.
+            review = prior
+        else:
+            branch = {n[:-5]: json.load(open(os.path.join(here, n))) for n in os.listdir(here) if n.endswith(".json")}
+            main = {cn: json.loads(raw) for cn, raw in main_raw.items()}
+            keep = dict(k.split("=", 1) for k in args.keep)
+            review = reconcile_run_review(plan, branch, main, args.run, keep)
+            for r in review["records"]:
+                print("%s %-7s main %s run %s  %s  %s" % (r["control_number"], r["decision"], r["passes_main"],
+                                                        r["passes_run"], ",".join(r["fields"]), r["why"][:90]))
+        if args.restore:
+            for cn in review["restored"] if not review.get("records_restored") else []:
+                target = os.path.join(here, cn + ".json")
+                if cn in main_raw:
+                    open(target, "wb").write(main_raw[cn])
+                elif os.path.exists(target):
+                    os.remove(target)
+            review["records_restored"] = True
+            # The run's fresh capture lands too (sources.json, capture.json): every program it picked anew is
+            # main's again except the kept ones, so a later run never reads a page this run picked for a record
+            # it did not keep (COBIx on #3259: Cerro Coso 30793 to p.181, 10976 to p.79).
+            files = {n: json.loads(at_ref(n)) for n in ("sources.json", "capture.json", "summary.json")}
+            mine = {n: json.load(open(os.path.join(college_dir, n))) for n in ("sources.json", "capture.json")}
+            sources, moved = restore_sources(files["sources.json"], mine["sources.json"], review["kept"])
+            capture = restore_capture(files["capture.json"], mine["capture.json"], review["kept"])
+            with open(os.path.join(college_dir, "sources.json"), "w") as fh:
+                fh.write(json.dumps(sources, indent=1, ensure_ascii=False) + "\n")
+            with open(os.path.join(college_dir, "capture.json"), "w") as fh:
+                fh.write(json.dumps(capture, indent=1, ensure_ascii=False) + "\n")
+            from _program_requirements_college import summarize
+            recs = [json.load(open(os.path.join(here, n))) for n in sorted(os.listdir(here)) if n.endswith(".json")]
+            summary = dict(files["summary.json"], **{k: v for k, v in summarize(recs, {}).items()
+                                                     if k in ("extracted", "errors", "passed_machine_checks", "failed")})
+            with open(os.path.join(college_dir, "summary.json"), "w") as fh:
+                fh.write(json.dumps(summary, indent=1, ensure_ascii=False) + "\n")
+            review["pages_moved_restored"] = [m for m in moved if m["control_number"] not in review["kept"]]
+            review["pages_moved_kept"] = [m for m in moved if m["control_number"] in review["kept"]]
+            review["files"] = ("sources.json and capture.json are %s's but for the kept programs' entries; "
+                               "summary.json is %s's with its counts taken again from the records"
+                               % (args.against, args.against))
+        plan["run_review"] = review
+        with open(path, "w") as fh:
+            fh.write(json.dumps(plan, indent=1) + "\n")
+        print(json.dumps({k: review.get(k) for k in ("run", "changed", "kept", "restored")}))
+        if review.get("pages_moved_restored") is not None:
+            print("pages moved by the run, restored: %s" % ", ".join(
+                "%s %s->%s" % (m["control_number"], m["main"], m["run"]) for m in review["pages_moved_restored"]))
+        return 0
     records = list(filed_records())
+    if args.calgetc_apply:
+        plan = calgetc_apply_plan(records, args.calgetc_apply, *_git_head())
+        with open(calgetc_apply_plan_path(args.calgetc_apply), "w") as fh:
+            fh.write(json.dumps(plan, indent=1) + "\n")
+        print(json.dumps(plan["counts"]))
+        for r in plan["rows"]:
+            print("%s %-36s ge %s -> %s  passes %s -> %s%s" % (
+                r["control_number"], (r["title"] or "")[:36], _span_words(r["ge_units_before"]),
+                _span_words(r["ge_units_after"]), r["passes_before"], r["passes_after"],
+                ("  HELD: " + r["held"][:80]) if r.get("held") else ""))
+        return 0
     if args.calgetc_plan:
         plan = cal_getc_34_plan(records, *_git_head())
         with open(CAL_GETC_PLAN, "w") as fh:
