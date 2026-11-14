@@ -2,20 +2,20 @@
  "schema": 1,
  "_about": "Credentials with no Common SUBJ after the subject fill (kb/_exhibit_subject_fill.py), each with why, and a suggested subject from its title words where one exists. A suggestion is never a decision: title words were wrong on ASE MIL7 (Sam, 2026-11-11). The Commons' Exhibit card counts `no_subject`.",
  "rule": "A credential with no Common SUBJ takes the subject of the courses colleges credit for it (over half of them, several colleges first, then one), else its issuer family's; title words, TOP and CIP never decide; a family or certification link that names another subject holds it for a person; a subject already on the title always wins.",
- "written_at": "2026-11-13T15:48:02Z",
+ "written_at": "2026-11-14T14:34:58Z",
  "mode": "preview",
  "live_read": true,
  "by_rung": {
   "courses, several colleges": 0,
-  "courses, one college": 11,
+  "courses, one college": 131,
   "issuer family": 0
  },
  "written": 0,
- "not_yet_written": 11,
- "no_subject": 374,
- "left": 363,
- "left_exhibits": 429,
- "suggested": 71,
+ "not_yet_written": 131,
+ "no_subject": 499,
+ "left": 368,
+ "left_exhibits": 470,
+ "suggested": 70,
  "not_held": [
   "Theater Arts"
  ],
@@ -101,18 +101,6 @@
    "exhibits": []
   },
   {
-   "title": "Adobe InDesign 1",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
-   "title": "Adobe Photoshop 1",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
    "title": "Adobe Photoshop Basics",
    "why": "no signal",
    "issuer": "California Community Colleges",
@@ -173,6 +161,223 @@
    ]
   },
   {
+   "title": "Apprenticeship  Chassis Lab",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ITEF3-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Aerial Work Platform Initial",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF7-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Asphalt Paving Techniques",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF11-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Blueprint Reading Orientation, Basic",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF12-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Boatworks 101 Yacht Craftsmanship Lab",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Boatworks 101 Yacht Electrical Systems",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF2-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Boatworks 101 Yacht Propulsion Systems",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF1-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Chassis",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ITEF2-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Concrete Techniques",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF10-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Confined Space Awareness",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF13-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Electrical",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ITEF6-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Electrical Lab",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ITEF7-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Emissions",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ITEF4-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Emissions Lab",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ITEF5-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Engines Lab",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ITEF-1-001",
+    "MAPICA-ITEF1-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship First Aid, CPR and AED",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF14-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Flagging Certification",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF15-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Forklift Orientation Initial",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF3-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Fundamentals of Construction",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF4-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Hazardous Waste Removal Initial",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF5-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship OSHA 10 Hour",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF17-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship OSHA 30 Hour",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF18-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Rigging and Signaling",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF8-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Safety Certification",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF6-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Skid Steer Loader Orientation Initial",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF9-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Traffic Control",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF16-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Traffic Control Technician",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": [
+    "MAPICA-ATEF19-1-001"
+   ]
+  },
+  {
    "title": "Apprenticeship Work Experience",
    "why": "no signal",
    "issuer": "California Community Colleges",
@@ -180,14 +385,6 @@
     "MAPPRA-AWE-1-001"
    ],
    "suggested": "WEXP",
-   "suggested_from": "title words (a suggestion, never a decision)"
-  },
-  {
-   "title": "Arboriculture/Urban Forestry",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": [],
-   "suggested": "ENVR",
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
@@ -311,12 +508,6 @@
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
-   "title": "CPR for Healthcare Providers",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
    "title": "California Building Code Certification",
    "why": "no signal",
    "issuer": "International Code Council (ICC)",
@@ -351,6 +542,18 @@
    "exhibits": [
     "MAPPRI-AP-1-001"
    ]
+  },
+  {
+   "title": "Carpenters Apprenticeship — Hardwood Floor Layer Level 2",
+   "why": "courses split",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "exhibits": [
+    "MAPICA-NCCT42-1-001"
+   ],
+   "votes": {
+    "WEXP": 1,
+    "CNST": 1
+   }
   },
   {
    "title": "Carpentry: General Certificate of Achievement",
@@ -419,12 +622,6 @@
    "exhibits": [
     "MAPICI-CNA(-1-001"
    ]
-  },
-  {
-   "title": "Chamber Choir",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
   },
   {
    "title": "Class Piano — Beginning 2",
@@ -1152,12 +1349,6 @@
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
-   "title": "Greenhouse, Nursery, and Garden Center Management",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
    "title": "HVAC - Heating and Control Systems",
    "why": "no signal",
    "issuer": "California Community Colleges",
@@ -1254,6 +1445,8 @@
     "MAPSAS-ILAL33-1-001",
     "MAPSAS-ILAL34-1-001",
     "MAPSAS-ILAL37-1-001",
+    "MAPSAS-ILAL39-1-001",
+    "MAPSAS-ILAL42-1-001",
     "MAPSAS-ILAL7-1-001"
    ]
   },
@@ -1289,6 +1482,8 @@
     "MAPSAS-ILAL32-1-001",
     "MAPSAS-ILAL35-1-001",
     "MAPSAS-ILAL36-1-001",
+    "MAPSAS-ILAL38-1-001",
+    "MAPSAS-ILAL43-1-001",
     "MAPSAS-ILAL6-1-001"
    ]
   },
@@ -1322,11 +1517,14 @@
     "MAPSAS-IMAA10-1-001",
     "MAPSAS-IMAA12-1-001",
     "MAPSAS-IMAA15-1-001",
+    "MAPSAS-IMAA18-1-001",
     "MAPSAS-IMAA2-1-001",
+    "MAPSAS-IMAA20-1-001",
     "MAPSAS-IMAA4-1-001",
     "MAPSAS-IMAA6-1-001",
     "MAPSAS-IMAA8-1-001",
-    "MAPSAS-IMHA-1-001"
+    "MAPSAS-IMHA-1-001",
+    "MAPSAS-IMHA2-1-001"
    ],
    "suggested": "MATH",
    "suggested_from": "title words (a suggestion, never a decision)"
@@ -1345,11 +1543,13 @@
     "MAPSAS-IMAA13-1-001",
     "MAPSAS-IMAA14-1-001",
     "MAPSAS-IMAA16-1-001",
+    "MAPSAS-IMAA21-1-001",
     "MAPSAS-IMAA3-1-001",
     "MAPSAS-IMAA5-1-001",
     "MAPSAS-IMAA7-1-001",
     "MAPSAS-IMAA9-1-001",
-    "MAPSAS-IMHA1-1-001"
+    "MAPSAS-IMHA1-1-001",
+    "MAPSAS-IMHA3-1-001"
    ],
    "suggested": "MATH",
    "suggested_from": "title words (a suggestion, never a decision)"
@@ -1989,9 +2189,16 @@
   },
   {
    "title": "Journal of Arts and Literature",
-   "why": "no signal",
+   "why": "courses split",
    "issuer": "California Community Colleges",
-   "exhibits": []
+   "exhibits": [
+    "MAPPRA-E1P-1-001",
+    "MAPPRA-J1P-1-001"
+   ],
+   "votes": {
+    "ENGL": 1,
+    "COMM": 1
+   }
   },
   {
    "title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
@@ -2021,18 +2228,6 @@
    "exhibits": [
     "MAPPRA-H6-1-001"
    ]
-  },
-  {
-   "title": "Landscape Irrigation Systems",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
-   "title": "Landscape and Turfgrass Management",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
   },
   {
    "title": "Landscaping with Edibles",
@@ -2143,6 +2338,7 @@
    "why": "no signal",
    "issuer": "California Community Colleges",
    "exhibits": [
+    "MAPCXN-NFA6-1-001",
     "MAPCXS-PA6-1-001"
    ]
   },
@@ -2339,42 +2535,6 @@
    }
   },
   {
-   "title": "Paramedic Clinical Occupational Work Experience",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
-   "title": "Paramedic Field Internship",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
-   "title": "Paramedic Laboratory 1",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
-   "title": "Paramedic Laboratory 2",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
-   "title": "Paramedic Theory 1",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
-   "title": "Paramedic Theory 2",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
    "title": "Personal Training",
    "why": "courses split",
    "issuer": "California Community Colleges",
@@ -2404,12 +2564,6 @@
    ],
    "suggested": "PHMT",
    "suggested_from": "title words (a suggestion, never a decision)"
-  },
-  {
-   "title": "Philharmonic Orchestra",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
   },
   {
    "title": "Photography (PHOT 5 — local)",
@@ -2450,18 +2604,6 @@
    "exhibits": [
     "MAPPRS-P6-1-001"
    ]
-  },
-  {
-   "title": "Pilates 1",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
-   "title": "Police Patrol Operations",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
   },
   {
    "title": "Portrait Photography",
@@ -2762,18 +2904,6 @@
    ]
   },
   {
-   "title": "Swim Fitness 1",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
-   "title": "Swimming 1",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
    "title": "Teacher Training Practicum",
    "why": "no signal",
    "issuer": "California Community Colleges",
@@ -3008,12 +3138,6 @@
    ]
   },
   {
-   "title": "Vocal Jazz Ensemble",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
    "title": "Wall Forming",
    "why": "no signal",
    "issuer": "California Community Colleges",
@@ -3062,12 +3186,6 @@
    ]
   },
   {
-   "title": "Weight Training 1",
-   "why": "no signal",
-   "issuer": "California Community Colleges",
-   "exhibits": []
-  },
-  {
    "title": "Wildland Fire Technology",
    "why": "no signal",
    "issuer": "California Community Colleges",
@@ -3093,18 +3211,6 @@
    "exhibits": [
     "MAPCXA-SW&H-1-001"
    ]
-  },
-  {
-   "title": "Yoga 1",
-   "why": "no signal",
-   "issuer": "",
-   "exhibits": []
-  },
-  {
-   "title": "Zumba 1",
-   "why": "no signal",
-   "issuer": "",
-   "exhibits": []
   }
  ]
 }

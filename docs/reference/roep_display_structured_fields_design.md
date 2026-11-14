@@ -16,6 +16,7 @@ This is a design only (S652, the lane's NEXT 3). Nothing here changes a builder,
 display row. It answers the decision `d-display-rule-withdrawn-structured-fields-s651`: the display states a figure
 from fields that a step or a curator wrote. It never quotes `reconciled[].words` and never edits a reader's note.
 Revision 2 takes in the second reader's findings on #3296.
+Reviewed by COBIx on #3296 (comment 6877408834, 2026-11-14); revision 3 folds in his four findings and his answers.
 
 ## What the code does today
 
@@ -96,7 +97,7 @@ reads only these fields.
 | step `note` | the curator's account; never displayed | curator |
 | step `source_words` | unchanged for `course_units`, `course_hours`, `or_units` and `and_units`; on a `set` step it splits into `quote` and `note`, and the reconcile reads `note` there | curator |
 | `reconciled[].evidence` | the step's fields plus `step` (`<college>/<field>/<index>`) and `config_sha` | the reconcile at write; a backfill once for filed notes |
-| `reconciled[].evidence` on a `fill` | `quote` = the regex match; `quote_checked.how = "reconcile match"`, `text_ref` = the record's `extracted_run` and `source_sha` | the reconcile; the match is page text by construction |
+| `reconciled[].evidence` on a `fill` | `quote` = the regex match when it holds the figure, else the sentence of the page text that holds both the match and the figure, else null; `quote_checked.how = "reconcile match"`, `text_ref` = the record's `extracted_run` and `source_sha` | the reconcile; the match is page text by construction |
 | `display.figures[]` | `{field, pattern_label, figure, qualifier, basis, text, source}`; omitted when empty | the builder |
 | `display.superseded_notes[]` | `{text, fields, by}`, the note verbatim; omitted when empty | the builder |
 | gap `superseded_for` | field names, on a reader's note that stays in `gaps` | the builder |
@@ -112,6 +113,13 @@ checks it.
 null `document`. Its statement names the basis and no page, link or quote. The backfill matches its notes by college,
 field and value, never by link, and lists every note it cannot match (today the 28 rows at two colleges).
 
+**A `fill` quote holds its figure.** The reconcile reads a fill's figure from the match's `min` group (line 911), so
+every `fill` pattern captures the units. Measured at `bd549c5f`: 11 `fill` steps at five colleges, all 11 with a
+`min` group; 214 filed fill notes at Cabrillo, Cerritos and Orange Coast, and all 214 matches contain the figure.
+Lassen's step is a `set` (pattern `Cal-?\s?GETC`, which matches "Cal-GETC" and no figure), so its statement quotes the
+curator's checked `quote`, never the match. The rule still binds a future fill: where the match does not hold the
+figure, the evidence quotes the sentence that does, or carries no quotation.
+
 A range over two patterns (Monterey Peninsula's 24-34; Los Angeles Valley's 27-34; Pierce's 21-34) becomes two
 steps, each with one `pattern_label` and one figure.
 
@@ -126,10 +134,17 @@ Education Certificate of Achievement requires 34 Units."* The statement links to
 | `printed`, quote checked | "{label}: {pattern_label}, {figure}, as the {catalog_year} catalog prints it on page {printed_page}: "{quote}"" + link |
 | `printed`, quote unchecked or null | "{label}: {pattern_label}, {figure}, printed in the {catalog_year} catalog, page {printed_page}" + link |
 | `printed`, no `document` | "{label}: {pattern_label}, {figure}, printed in this college's catalog" |
-| `fill` | "{label}: {pattern_label}, {figure}, printed on this program's page: "{quote}"" |
+| `fill`, quote holds the figure | "{label}: {pattern_label}, {figure}, printed on this program's page: "{quote}"" |
+| `fill`, null quote | "{label}: {pattern_label}, {figure}, printed on this program's page" |
 | `summed` | "{label}: {pattern_label}, {figure}, the sum of the areas the catalog prints on page {printed_page} ({parts}); the catalog prints no total" |
-| `statewide` | "{label}: Cal-GETC, 34 units, the statewide figure; this catalog names Cal-GETC and prints no figure for it" |
-| `borrowed` | "{label}: {pattern_label}, {figure}, as {document.college}'s catalog prints it; this college's catalog prints none" + link |
+| `statewide` | "{label}: Cal-GETC, 34 units, the statewide figure; this catalog names Cal-GETC, and no figure for it was found in this college's catalog" |
+| `borrowed` | "{label}: {pattern_label}, {figure}, as {document.college}'s catalog prints it; no figure was found in this college's catalog" + link |
+
+**Absence is worded by what was read.** `quote_checked` verifies a positive quote only, and nothing in the evidence
+model records a checked read of a college's own page for a missing figure. So the `statewide` and `borrowed`
+statements say "no figure was found in this college's catalog" and never "prints none". That wording also keeps a
+college from reading the statement as a fault. A later step may record a checked read of the college's own page; only
+then may a template state what the catalog prints.
 
 No statement names a run, a session, a sheet card or a decision id. **`words`, `note` and `source_words` are not
 displayed.** The display is public (CPL Pathways and Sierra), and that text carries internal markers. COBI's harvest
@@ -153,16 +168,22 @@ panel in `program_requirements.js` read `figures`, `superseded_notes` and `super
 1. **Fails** when a field is held with evidence and a note that names it as not printed sits in `gaps` without that
    field in `superseded_for`.
 2. **Fails** when a statement quotes text whose `quote_checked` is null, whose `text_ref` points at an excluded
-   source, or whose quote matches the internal-marker pattern (`run \d{8,}`, `S\d{3}`, `Sheet \d+`, `d-...-s\d+`).
-   A `fill` quote passes on `how = "reconcile match"` with a `text_ref`.
+   source, or whose quote matches the internal-marker pattern (`run \d{8,}`, `\bS\d{3}\b`, `Sheet \d+`, `d-...-s\d+`).
+   The word boundaries keep catalog course codes (`CS101`, `CIS100`, `ENGS200`) from failing a build, and a session
+   marker preceded by a subject code and a space (`ENGL S101`) does not count. A `fill` quote passes on
+   `how = "reconcile match"` with a `text_ref`, and fails when it does not contain its statement's figure.
 3. **Catches a regex miss with labels.** On a row with evidence, every `CANDIDATE` note the regexes do not match goes
    to `kb/status/roep_display_note_review.json`. A curator labels each note once in
    `kb/program_requirements_note_labels.json`, keyed by college, control number and the note's md5, as
    `supersedes: [fields]` or `stands`. The builder reads the label before the regex. A college's display apply waits
-   until its unlabeled count is zero. The baseline is 506 notes on 408 rows (`5278e928`).
+   until its unlabeled count is zero. The baseline is 506 notes on 408 rows (`5278e928`). A reread or re-extraction
+   changes a note's md5, so its label no longer applies and the note returns to unlabeled. The review file lists such
+   a note with "label orphaned by note change" and the orphaned label beside it, so the curator relabels with the old
+   judgment in view.
 4. **Flags, never fails,** where the field is the reader's own figure. It writes
-   `kb/status/roep_display_contradictions.json`. The baseline is pinned at **125 rows at 13 colleges** (commit
-   `5278e928`, `NOT_PRINTED_GE_UNITS`), and a build that raises it fails the test.
+   `kb/status/roep_display_contradictions.json`. The pin starts at **125 rows at 13 colleges** (commit
+   `5278e928`, `NOT_PRINTED_GE_UNITS`). The test fails when a build's count differs from the pin in either direction:
+   a rise is a regression, and a fall requires the same PR to lower the pin, so a later return to the old count fails.
 
 ## 4. Migration
 
@@ -173,7 +194,7 @@ No step needs a paid reread. Each step is one PR.
 | 1 | Lassen's one `set` step gains `pattern_label`, `basis`, `qualifier`, `document` (printed page 70, PDF 72), `quote`, `note`; its regex `pattern` is untouched | none | `git revert` |
 | 2 | The reconcile copies evidence onto notes; a repo-only backfill attaches it to filed notes (by link, or by college, field and value without one) and lists the misses | none | `git revert` |
 | 3 | Builder: `figures`, `superseded_notes`, `superseded_for`, the guard, the labels; page code; a local build; a second reader on the receipt diff | none until applied | `git revert` |
-| 4 | Lassen's notes labeled; its quote checked by a person or run 43570566375's artifact; display apply for Lassen only (59 rows; first 30947, 31015, 31037, 31379, 32083) | **writes `program_requirement_records.display`** | restore each row from that apply receipt's `before` map (`rollback.reapply`, build by row) |
+| 4 | Lassen's notes labeled; its quote checked by a person or run 43570566375's artifact; COBIx's spot-check; display apply for Lassen only (59 rows; first 30947, 31015, 31037, 31379, 32083) | **writes `program_requirement_records.display`** | restore each row from that apply receipt's `before` map (`rollback.reapply`, build by row) |
 | 5 | Derive the other 25 colleges' step fields: `url` and `pdf_page` from `source`; `summed` from "SUMMED FROM THE AREAS"; `borrowed` where the host is another college's; qualifiers from the value's shape | none | `git revert` |
 | 6 | Per college: quotes checked or moved to `note`, `parts` for the three summed colleges, two-pattern ranges split, notes labeled | none | `git revert` |
 | 7 | The whole-build apply after Lassen is confirmed (`d-display-first-run-one-college-s645`) | **writes `program_requirement_records.display`** (all rows) | restore each row from that apply's `before` map |
@@ -198,17 +219,22 @@ All tests go in `tests/roep_display_test.py`, each on a fixture under `tests/fix
 | A pruned sentence loses its figure | "Cal-GETC is named but no GE unit figure is printed; major total 18 from 'Required Core Courses: 18 units'." | every note appears byte-equal in `gaps` or `superseded_notes`; the multiset of numbers is unchanged |
 | A regex miss | the three missed notes of the sample | each lands in the review file until labeled, then follows its label |
 | Unchanged rows | a row with no evidence | the display equals the `a83667f9fa0d` fixture except `build`, with no `figures` or `superseded_notes` key |
-| The flagged class grows | the committed contradictions file | a count above 125 fails |
+| A course code read as a marker | a checked quote holding "CS101", "CIS100", "ENGS200" and "ENGL S101" | the build passes |
+| A fill quote without its figure | a `fill` step whose match is "Cal-GETC" and whose figure is 34 | the evidence quotes the sentence holding 34, or carries no quote; a bare "Cal-GETC" quote fails the guard |
+| A borrowed or statewide statement claims an absence | Redwoods' borrowed step; a `statewide` step | the statement reads "no figure was found in this college's catalog" and contains neither "prints none" nor "prints no figure" |
+| The flagged class moves | the committed contradictions file | a count above the pin fails; a count below it fails until the pin is lowered |
+| A label orphaned by a reread | a labeled note whose text changes | the note returns to unlabeled and the review file says "label orphaned by note change" beside the old label |
 | `pattern` stays a regex | Lassen's step after step 1 | the reconcile fills the same five records as run 43581021827 |
 
 ## 6. Open questions
 
-1. **Borrowed sources** (Monterey Peninsula's Cal-GETC page cited at seven colleges). Recommendation: re-base each
-   one as `statewide` once its config quotes the college's own words showing no figure
-   (`d-calgetc-34-per-college-evidence-s648`), and show `borrowed` until then. COBIx's call.
-2. **Superseded notes on the public page.** Recommendation: fold them on CPL Pathways and leave them out of Sierra.
-3. **Who labels the 506 notes and checks quotes.** Recommendation: the curator, college by college before each apply,
-   with COBIx spot-checking the first college.
-4. **A structured "not printed" from the reader.** Recommendation: add `program.unprinted: [field]` at the next
+1. **Borrowed sources** (Monterey Peninsula's Cal-GETC page cited at seven colleges). DECIDED by COBIx, 2026-11-14:
+   show `borrowed` until a college's own words show it prints no figure, then re-base the step as `statewide`
+   (`d-calgetc-34-per-college-evidence-s648`). Both statements word the absence by what was read ("no figure was
+   found in this college's catalog") until a step records a checked read of the college's own page.
+2. **Superseded notes on the public page.** Agreed by COBIx: fold them on CPL Pathways and leave them out of Sierra.
+3. **Who labels the 506 notes and checks quotes.** The curator, college by college before each apply. COBIx
+   spot-checks the first college, Lassen, before its step 4 apply.
+4. **A structured "not printed" from the reader.** Agreed by COBIx: add `program.unprinted: [field]` at the next
    extraction schema change, never as its own paid reread.
-5. **Other fields** (degree total, major total, electives). Recommendation: after GE, with the same labels file.
+5. **Other fields** (degree total, major total, electives). Agreed by COBIx: after GE, with the same labels file.

@@ -486,6 +486,57 @@
    "hints": "24da735236",
    "asked": "2026-10-31"
   },
+  "AP Art and Design - 2D Design": {
+   "raw_title": "AP Art and Design - 2D Design",
+   "unified_title": "AP 2-D Art and Design",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-14"
+  },
+  "AP Art and Design - 3D Design": {
+   "raw_title": "AP Art and Design - 3D Design",
+   "unified_title": "AP 3-D Art and Design",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-14"
+  },
+  "AP Art and Design - Drawing": {
+   "raw_title": "AP Art and Design - Drawing",
+   "unified_title": "AP Drawing",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 5d"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-14"
+  },
   "AP Art: Studio 2D Design": {
    "raw_title": "AP Art: Studio 2D Design",
    "unified_title": "AP 2-D Art and Design",
@@ -5628,6 +5679,42 @@
    "_notes": "Joined the house family as written. It duplicates AP U.S. History, so a curator could merge the two.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "AP Word History Modern, Area 3": {
+   "raw_title": "AP Word History Modern, Area 3",
+   "unified_title": "AP World History: Modern",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.93,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 5d",
+    "Rule 1"
+   ],
+   "_notes": "Typo 'Word' read as 'World'; the area suffix is stripped.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-14"
+  },
+  "AP Word History Modern, Area 4": {
+   "raw_title": "AP Word History Modern, Area 4",
+   "unified_title": "AP World History: Modern",
+   "issuing_agency": "College Board",
+   "training_agency": null,
+   "confidence_title": 0.93,
+   "confidence_issuer": 0.98,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 5d",
+    "Rule 1"
+   ],
+   "_notes": "Typo 'Word' read as 'World'; the area suffix is stripped.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-14"
   },
   "AP World History Exam": {
    "raw_title": "AP World History Exam",

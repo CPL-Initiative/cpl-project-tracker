@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 943,
+  "file_datasets": 942,
   "external_services": 195,
-  "consumers": 589,
+  "consumers": 590,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2113
+     "line": 2133
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2069
+     "line": 2089
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2006
+     "line": 2026
     }
    ],
    "main_committers": []
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1640
+     "line": 1660
     }
    ],
    "main_committers": []
@@ -5862,6 +5862,13 @@
      "direction": "read",
      "how": "literal",
      "line": 133
+    },
+    {
+     "id": "script:kb/_prefix_alias_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
     }
    ],
    "producers": [
@@ -8581,7 +8588,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6101
+     "line": 6121
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8601,7 +8608,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6151
+     "line": 6171
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -16489,19 +16496,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:kb/identities_rebuild_out/2026-11-14/orphan_worklist.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_identities_rebuild.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 473
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
   "file:kb/identities_rekey_out/2026-09-05/dead_worklist.json": {
    "consumers": [
     {
@@ -17232,7 +17226,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 2957
+     "line": 2977
     }
    ],
    "served": true,
@@ -17245,7 +17239,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6535
+     "line": 6555
     }
    ],
    "served": true,
@@ -17434,6 +17428,13 @@
   },
   "file:kb/program_requirements_reconcile.json": {
    "consumers": [
+    {
+     "id": "script:kb/_prefix_alias_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 71
+    },
     {
      "id": "script:kb/_program_requirements_reconcile.py",
      "kind": "script",
@@ -17895,6 +17896,13 @@
      "direction": "read",
      "how": "literal",
      "line": 45
+    },
+    {
+     "id": "script:kb/_prefix_alias_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 73
     }
    ],
    "served": true,
@@ -20954,7 +20962,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6351
+     "line": 6371
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20974,7 +20982,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5570
+     "line": 5590
     }
    ],
    "served": false,
@@ -21591,7 +21599,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6438
+     "line": 6458
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -22555,6 +22563,13 @@
      "direction": "read",
      "how": "literal",
      "line": 668
+    },
+    {
+     "id": "script:kb/_prefix_alias_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
     }
    ],
    "served": false,
@@ -28347,7 +28362,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6509
+     "line": 6529
     }
    ],
    "main_committers": []
@@ -28359,7 +28374,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6618
+     "line": 6638
     }
    ],
    "main_committers": []

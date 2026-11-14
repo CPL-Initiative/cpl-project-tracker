@@ -6,7 +6,7 @@
   "order": "steps run in order: a clear runs before the fills that depend on it",
   "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE); 'noncredit': a noncredit program by the state file's award (S644: the no-colon hours total's flag, San Bernardino Valley and Coalinga)",
   "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without names a field that must be empty, only_with one that must be set (Los Angeles City, S639: a heading's 'Minimum of 60' is a floor only where the record holds that total; Victor Valley's Cal-GETC, only_with degree_total). A set of electives_fill_words files the catalog's own sentence that electives fill the total, where the page never prints the word elective (Grossmont, East Los Angeles, S644): the scorer's electives guard reads it, and only where the text prints it",
-  "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed)",
+  "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed). prefix_aliases_cited names each pair's evidence and source where a census wrote it (S652, kb/_prefix_alias_census.py: at least three courses of the same number and title at that college, and no number naming two different courses)",
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
   "course_units": "a course the record lists without units takes the units the page's own course data names (the vendor call the page made as it loaded, kept by the reader as the source's course_units): never a course the reading gave units, and the note names the call",
   "course_hours": "a course a record measured in hours lists without hours takes the top of the hours the page's own course data names (the course_units call's lecture plus lab hours, kept by the reader as the source's course_hours; the tab's noncredit total sums the tops): only in an hours record, never a course the reading gave a figure, and the note names the call. A catalog that prints each course's hours only in its course descriptions carries them in hours_file, a committed map beside the read that printed them (Victor Valley, S639), and the note names that read",
@@ -440,6 +440,50 @@
    ]
   },
   "Merced College": {
+   "prefix_aliases": {
+    "POSC": "POLS",
+    "SOC": "SOCI"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "POSC",
+     "file": "POLS",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 4 courses of the same number and title (mis_course_record; 4 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 4,
+     "same_control": 4,
+     "catalog_sources": [
+      "mis_course_record"
+     ],
+     "examples": [
+      "POSC 2 = POLS 2, Introduction to Comparative Government and Politics",
+      "POSC 3 = POLS 3, Introduction to International Relations",
+      "POSC 4 = POLS 4, Introduction to Political Theory and Thought"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    },
+    {
+     "printed": "SOC",
+     "file": "SOCI",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 5 courses of the same number and title (mis_course_record; 5 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 5,
+     "same_control": 5,
+     "catalog_sources": [
+      "mis_course_record"
+     ],
+     "examples": [
+      "SOC 2 = SOCI 2, Contemporary Social Problems",
+      "SOC 3 = SOCI 3, Marriage and the Family",
+      "SOC 4 = SOCI 4, Introduction to Gender"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
    "why": "S423 SkyLaurel, 2026-10-19. Merced's capture (run 39115547722) left five agriculture-mechanics programs unread at coverage 0.08-0.18: Diesel Equipment Technology A.S. 03485 and certificate 19495, Mechanized Agriculture Technology A.S. 07710 and certificate 19496, Compact Power Equipment 16653. Their Requisites pages (college-page-read 39229076688, catalog.mccd.edu 2026-27) print MECH12, MECH22A ... MECH51 and AGMA-20 where the state's file (coci_program_courses, read 2026-10-19) lists AGMA 2, AGMA 11 ... AGMA 21 and AGMA 20: the same title and units for each course, the numbers not derivable from each other. Fable, asked once, advised an explicit cited map over a general title rule (a title match is weaker evidence than a prefix swap) and holding out the noncredit Agriculture Systems certificate 44160, whose page prints AGT-701 to AGT-705 at 0 credits where the file lists AGAT 51 to AGAT 55 at 2-3 units: the units disagree, so it stays unread and the disagreement is the college's to settle in COCI. Second read (college-page-read 39234806863), the own pages of the ten programs that lost every page to a sibling: Equine Science and Management (07708, 19493) prints ANSC, AGBS and MECH31 for the file's AGAS, AGAB and AGMA 1; Landscape Horticulture 20802, which the catalog now calls Environmental Horticulture (01350.CN), prints LAND for AGEH; Drone Technology 38831 prints CPSC-17 and CPSC-18 for DRON 10 and DRON 11; each pair the same title and units. Not renumbered: Small Business Entrepreneurship (03473, 19498), HVAC Technician 19505 and Engineering 44678 print revised, shorter lists than the file keeps; Child Development A.A. 03515's Requisites tab prints no courses; Biological Science A.S. 03469 and International Studies A.A. 17943 are not in the catalog's list. Those stay unread, the disagreement the college's.",
    "steps": [],
    "course_renumbers": {
@@ -832,6 +876,30 @@
    ]
   },
   "Los Medanos College": {
+   "prefix_aliases": {
+    "CNT": "COMSC"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "CNT",
+     "file": "COMSC",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: four courses of the same number and title and the same control numbers; no title exists on file for CNT 91, and the college is parked, so the pair is config only.",
+     "evidence": 4,
+     "same_control": 4,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "CNT 10 = COMSC 10, Computer Network Fundamentals",
+      "CNT 11 = COMSC 11, Systems and Network Administration",
+      "CNT 12 = COMSC 12, Introduction to Information Systems Security"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
    "why": "S600 SkyWhirlpool, 2026-11-07: about 19 of Los Medanos's transfer-degree records failed arithmetic because the record names the 60-unit degree and the Cal-GETC pattern with no units for it. Every transfer page prints 'Completion of California General Education Transfer Curriculum (Cal-GETC)' and no figure (college page read 42376216539: Sociology AA-T 30849, Biology AS-T 35128). Its local A.A. and A.S. pages name no GE units or electives (Accounting A.S. 01528, Fine Arts A.A. 01546), so no step reads them until LMC's GE page is read.",
    "awards": "transfer",
    "steps": [
@@ -1278,6 +1346,50 @@
    ]
   },
   "San Bernardino Valley College": {
+   "prefix_aliases": {
+    "ANTH": "ANTHRO",
+    "ARTH": "ART"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "ANTH",
+     "file": "ANTHRO",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: successor courses on new control numbers, matched on title (ANTH 102, 102H and 125 for the file's ANTHRO 102, 102H and 125), confirmed by C-ID articulations (ANTH 102 and 125; the second reader on #3301).",
+     "evidence": 3,
+     "same_control": 0,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "ANTH 102 = ANTHRO 102, Cultural Anthropology",
+      "ANTH 102H = ANTHRO 102H, Cultural Anthropology - Honors",
+      "ANTH 125 = ANTHRO 125, Language and Culture"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    },
+    {
+     "printed": "ARTH",
+     "file": "ART",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: successor courses on new control numbers, matched on title (ARTH 105, 107 and 108 for the file's ART 105, 107 and 108), confirmed by C-ID articulations (ARTH 105 and 107; the second reader on #3301). Record 39404 (Studio Arts AA-T) passes on this pair alone.",
+     "evidence": 3,
+     "same_control": 0,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "ARTH 105 = ART 105, History of Modern Art",
+      "ARTH 107 = ART 107, Art History: Africa, Oceania and the Americas",
+      "ARTH 108 = ART 108, Art of Mexico and Mesoamerica"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
    "why": "S644, the harvest's NEXT 5 (a noncredit total printed 'Total Hours N-M' with no colon). San Bernardino Valley's noncredit certificates print the course list with a UNITS column of 0 and the line 'Total Hours 48-54' (each reading's notes: Job Readiness Skills 35699 'Total Hours 48-54', Workforce Literacy Skills 35700 'Total Hours 194-297', Office Technology Fundamentals 36070 'Total Hours 108'; 'The course list prints 0 in a UNITS column beside each course ... The page prints no per-course hours'). The step names the scorer's no-colon reading for this catalog alone (program.hours_total_printed), which then asks the page for positive evidence in the record's own section (total_hours_printed, kb/_program_requirements_score.py): one total after the last listed course, both ends the record's, each course's row an explicit 0 or N/A and no other number, no other hours figure. Measured on the filed records by kb/_program_requirements_readings_measure.py: 19 noncredit records fail as incomplete with a total and no course figure, and each reading quotes the no-colon total and a UNITS column of 0; none passes today, so none can fail. Free page read to confirm the table before the reconcile run: the diagnosis's plan san_bernardino_valley_noncredit_hours (docs/harvest_wave3_diagnoses_s639.md). Session decision for Sam to revise (d-hours-total-no-colon-s644), beside the S422 total-only reading; reversible by deleting this entry.",
    "awards": "noncredit",
    "steps": [
@@ -1306,6 +1418,30 @@
    ]
   },
   "Santiago Canyon College": {
+   "prefix_aliases": {
+    "PASV": "PBLC"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "PASV",
+     "file": "PBLC",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 9 courses of the same number and title (mis_course_record; 9 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 9,
+     "same_control": 9,
+     "catalog_sources": [
+      "mis_course_record"
+     ],
+     "examples": [
+      "PASV 150 = PBLC 150, Introduction to Public Administration",
+      "PASV 151 = PBLC 151, Ethics and Professionalism: The High Calling of Public Service",
+      "PASV 152 = PBLC 152, Preparing for Supervision Public Sector"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
    "why": "S645, the conductor's design for #3201 (review of the S644 fix, 13 findings standing). Santiago Canyon's 2026-2027 catalog PDF prints 'Control Number: N' AFTER each program and opens the next program on the following line ('Control Number: 11856' / 'Biology, AS-T' / 'A.S. Degree for Transfer'). The reader cut each page from the number's line, so a window opened on the program printed next: COBIx's spot-check (#3194 comment 6841001207) found Biology AS 11856 holding the Biology AS-T, and Economics AA 11943 and Sociology AA 11947 passing while holding their AA-T's requirements. pdf_numbers_after names the reader setting for this catalog alone (kb/_program_requirements_college.py pdf_best): a program whose own number line prints takes the block that ends at that line, only when the block opens on the program's own title and award; anything else reads by the heading picker, refused only where another listed program's number closes the window. The reader's own count of the habit is a measurement filed in every PDF capture (capture.json pdf.numbers_after) and never switches the reading: a gated catalog whose count disagrees reads by the heading picker and files numbers_after_disagrees. Session decision for Sam to revise; reversible by deleting this entry.",
    "pdf_numbers_after": true,
    "pdf_numbers_after_votes": {
@@ -1314,6 +1450,299 @@
     "counted_by": "pdf_numbers_after over the full 2026-2027 catalog PDF (374 pages, pypdf), in the capture of run 43360377086 on claude/harvest-santiago-canyon-proof-s645 (capture_preview.json pdf.numbers_after)",
     "earlier_count": "29 after, 0 before over the 114 distinct pick openings of the capture on claude/harvest-santiago-canyon-s644@1ab5e293"
    },
+   "steps": []
+  },
+  "American River College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BMET n, SWCD n where the state's Program Course File lists ET n, HSER n, the same number and title in every case kb/_prefix_alias_census.py could title (BMET for ET, 6 courses; SWCD for HSER, 7 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "BMET": "ET",
+    "SWCD": "HSER"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "BMET",
+     "file": "ET",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 6 courses of the same number and title (program_course_file_crsid; 6 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 6,
+     "same_control": 6,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "BMET 260 = ET 260, Introduction to Medical Ultrasound Equipment",
+      "BMET 261 = ET 261, Introduction to Biomedical Equipment Networking",
+      "BMET 262 = ET 262, Introduction to Respiratory Therapy Ventilators"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    },
+    {
+     "printed": "SWCD",
+     "file": "HSER",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 7 courses of the same number and title (program_course_file_crsid; 7 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 7,
+     "same_control": 7,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "SWCD 310 = HSER 310, Ethical Issues and Client's Rights",
+      "SWCD 330 = HSER 330, Issues of Diverse Populations",
+      "SWCD 340 = HSER 340, Introduction to Chemical Dependency"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "Barstow Community College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints CDEV n, POLS n where the state's Program Course File lists CHLD n, POLI n, the same number and title in every case kb/_prefix_alias_census.py could title (CDEV for CHLD, 18 courses; POLS for POLI, 3 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "CDEV": "CHLD",
+    "POLS": "POLI"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "CDEV",
+     "file": "CHLD",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 18 courses of the same number and title (program_course_file_crsid; 18 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 18,
+     "same_control": 18,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "CDEV 11A = CHLD 11A, Principles and Practices in Early Childhood Education",
+      "CDEV 12A = CHLD 12A, Creative Activities for Early Childhood Education",
+      "CDEV 14 = CHLD 14, Child Health, Safety, and Nutrition"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    },
+    {
+     "printed": "POLS",
+     "file": "POLI",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 3 courses of the same number and title (coci_course_list; 3 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 3,
+     "same_control": 3,
+     "catalog_sources": [
+      "coci_course_list"
+     ],
+     "examples": [
+      "POLS 2 = POLI 2, Comparative Government",
+      "POLS 3 = POLI 3, Introduction to International Relations",
+      "POLS 4 = POLI 4, Introduction to Political Theory and Thought"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "City College of San Francisco": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints COMM n where the state's Program Course File lists CMST n, the same number and title in every case kb/_prefix_alias_census.py could title (COMM for CMST, 5 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "COMM": "CMST"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "COMM",
+     "file": "CMST",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 5 courses of the same number and title (coci_course_list; 5 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 5,
+     "same_control": 5,
+     "catalog_sources": [
+      "coci_course_list"
+     ],
+     "examples": [
+      "COMM 20 = CMST 20, Interpersonal Communication",
+      "COMM 3 = CMST 3, Argumentation and Debate",
+      "COMM 4 = CMST 4, Group Communication"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "Crafton Hills College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints SOCI n where the state's Program Course File lists SOC n, the same number and title in every case kb/_prefix_alias_census.py could title (SOCI for SOC, 4 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "SOCI": "SOC"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "SOCI",
+     "file": "SOC",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 4 courses of the same number and title (program_course_file_crsid; 4 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 4,
+     "same_control": 4,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "SOCI 106 = SOC 106, Introduction to Women's Studies Through an Ethnic Studies Lens",
+      "SOCI 132 = SOC 132, Identity and Ideology: Intro to Chicano/a & Latino/a Studies",
+      "SOCI 141 = SOC 141, Race, Ethnicity and Diversity"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "Diablo Valley College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BIOL n where the state's Program Course File lists BIOSC n, the same number and title in every case kb/_prefix_alias_census.py could title (BIOL for BIOSC, 14 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "BIOL": "BIOSC"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "BIOL",
+     "file": "BIOSC",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 14 courses of the same number and title (program_course_file_crsid; 14 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 14,
+     "same_control": 14,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "BIOL 116 = BIOSC 116, Human Biology",
+      "BIOL 117 = BIOSC 117, Human Biology with Laboratory",
+      "BIOL 119 = BIOSC 119, Fundamentals of Microbiology"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "Irvine Valley College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints FILM n where the state's Program Course File lists HUM n, the same number and title in every case kb/_prefix_alias_census.py could title (FILM for HUM, 7 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "FILM": "HUM"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "FILM",
+     "file": "HUM",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 7 courses of the same number and title (coci_course_list, mis_course_record; 4 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 7,
+     "same_control": 4,
+     "catalog_sources": [
+      "coci_course_list",
+      "mis_course_record"
+     ],
+     "examples": [
+      "FILM 70 = HUM 70, HISTORY OF FILM",
+      "FILM 71 = HUM 71, INTRODUCTION TO FILM",
+      "FILM 71H = HUM 71H, INTRODUCTION TO FILM HONORS"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "Moreno Valley College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 12 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "HIST": "HIS"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "HIST",
+     "file": "HIS",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 12 courses of the same number and title (course_outline; 12 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 12,
+     "same_control": 12,
+     "catalog_sources": [
+      "course_outline"
+     ],
+     "examples": [
+      "HIST 16 = HIS 16, African History to 1800",
+      "HIST 17 = HIS 17, African History from 1800 to Present",
+      "HIST 18 = HIS 18, Modern European History"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "Norco College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 15 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "HIST": "HIS"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "HIST",
+     "file": "HIS",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 15 courses of the same number and title (course_outline; 15 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 15,
+     "same_control": 15,
+     "catalog_sources": [
+      "course_outline"
+     ],
+     "examples": [
+      "HIST 1 = HIS 1, World History to 1500",
+      "HIST 15 = HIS 15, African American History II",
+      "HIST 16 = HIS 16, African History to 1800"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "Riverside City College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 25 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "HIST": "HIS"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "HIST",
+     "file": "HIS",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 25 courses of the same number and title (coci_course_list; 25 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 25,
+     "same_control": 25,
+     "catalog_sources": [
+      "coci_course_list"
+     ],
+     "examples": [
+      "HIST 1 = HIS 1, World History to 1500",
+      "HIST 11 = HIS 11, Military History of the United States to 1900",
+      "HIST 12 = HIS 12, Military History of the United States Since 1900"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
    "steps": []
   }
  }

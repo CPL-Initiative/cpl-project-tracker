@@ -1,2230 +1,1099 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-13T15:48:00Z",
- "_queue_count": 198,
+ "_generated_at": "2026-11-14T14:34:54Z",
+ "_queue_count": 133,
  "_counts": {
-  "staged": 162,
-  "needs_you": 198,
+  "staged": 133,
+  "needs_you": 0,
   "not_yet_asked": 0
  },
  "_residual": [],
  "staged": {
-  "Apprenticeship Training Evidence for ACL 115": {
-   "title": "Apprenticeship (ACL 115)",
-   "issuer": "",
+  "AP Art History, ARTH C1100": {
+   "title": "AP Art History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Art History, ARTH C1200": {
+   "title": "AP Art History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Art History, Area 3": {
+   "title": "AP Art History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Art and Design - 2D Design": {
+   "title": "AP 2-D Art and Design",
+   "issuer": "College Board",
    "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. 'Apprenticeship Training Evidence for' is mechanism phrasing and was stripped. The ACL 115 course title could not be resolved without the Las Positas COCI lookup, so the code-form fallback is used. The sponsoring apprenticeship committee (issuer) is unknown and left null for a person to resolve.",
+   "confidence": 0.95,
+   "note": "",
    "procedure": "classifier",
    "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
+    "brand-family",
+    "Rule 5d"
    ]
   },
-  "Apprenticeship Training Evidence for APAG 1": {
-   "title": "Apprenticeship (APAG 1)",
-   "issuer": "",
+  "AP Art and Design - 3D Design": {
+   "title": "AP 3-D Art and Design",
+   "issuer": "College Board",
    "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. The Las Positas APAG course title is unresolved, so the code-form fallback is used pending a COCI lookup. The apprenticeship sponsor (issuer) is unknown and left null.",
+   "confidence": 0.95,
+   "note": "",
    "procedure": "classifier",
    "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
+    "brand-family",
+    "Rule 5d"
    ]
   },
-  "Apprenticeship Training Evidence for APAG 1L": {
-   "title": "Apprenticeship (APAG 1L)",
-   "issuer": "",
+  "AP Art and Design - Drawing": {
+   "title": "AP Drawing",
+   "issuer": "College Board",
    "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. The lab course APAG 1L is kept distinct from the lecture APAG 1. The course title is unresolved pending a COCI lookup, and the sponsor is unknown.",
+   "confidence": 0.95,
+   "note": "",
    "procedure": "classifier",
    "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
+    "brand-family",
+    "Rule 5d"
    ]
   },
-  "Apprenticeship Training Evidence for APAG 2": {
-   "title": "Apprenticeship (APAG 2)",
-   "issuer": "",
+  "AP Biology, Area 5": {
+   "title": "AP Biology",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Calculus AB, Area 2": {
+   "title": "AP Calculus AB",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Calculus AB, Score of 3": {
+   "title": "AP Calculus AB",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Calculus AB, Score of 4-5": {
+   "title": "AP Calculus AB",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Calculus BC - Score of 3-4": {
+   "title": "AP Calculus BC",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Calculus BC - Score of 5": {
+   "title": "AP Calculus BC",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Calculus BC, Area 2": {
+   "title": "AP Calculus BC",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Calculus BC, Score of 3": {
+   "title": "AP Calculus BC",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Calculus BC, Score of 4-5": {
+   "title": "AP Calculus BC",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Calculus BC/AB Subscore, Score of 3": {
+   "title": "AP Calculus AB",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Calculus BC/AB Subscore, Score of 3-4": {
+   "title": "AP Calculus AB",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Chemistry, Area 5": {
+   "title": "AP Chemistry",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Chinese Language\nand Culture": {
+   "title": "AP Chinese Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Chinese Language and Culture - Score of 3": {
+   "title": "AP Chinese Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Chinese Language and Culture - Score of 4-5": {
+   "title": "AP Chinese Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Comparative Government\nand Politics": {
+   "title": "AP Comparative Government and Politics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Comparative Government\nand Politics, Area 4": {
+   "title": "AP Comparative Government and Politics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Computer Science AB - Score of 3": {
+   "title": "AP Computer Science AB",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Computer Science AB - Score of 4-5": {
+   "title": "AP Computer Science AB",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Economics - Macroeconomics - Score of 3": {
+   "title": "AP Macroeconomics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Economics - Macroeconomics - Score of 4-5": {
+   "title": "AP Macroeconomics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Economics - Microeconomics - Score of 3": {
+   "title": "AP Microeconomics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Economics - Microeconomics - Score of 4-5": {
+   "title": "AP Microeconomics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP English\nLanguage and\nComposition": {
+   "title": "AP English Language and Composition",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP English\nLanguage and\nComposition, Area 1A": {
+   "title": "AP English Language and Composition",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP English\nLiterature": {
+   "title": "AP English Literature and Composition",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP English\nLiterature and\nComposition": {
+   "title": "AP English Literature and Composition",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP English\nLiterature and\nComposition, Area 1A and Area 3": {
+   "title": "AP English Literature and Composition",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP English\nLiterature, Area 1A and Area 3": {
+   "title": "AP English Literature and Composition",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP English Language, Area 1A": {
+   "title": "AP English Language and Composition",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP English Literature and Composition,\nDoes not meet 1B Critical Thinking requirement for transfer.": {
+   "title": "AP English Literature and Composition",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP European History, Area 3": {
+   "title": "AP European History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP European History, Area 4": {
+   "title": "AP European History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP French\nLanguage\nand Culture": {
+   "title": "AP French Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP French Language and Culture - Score of 3": {
+   "title": "AP French Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP French Language and Culture - Score of 4": {
+   "title": "AP French Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP French Language and Culture - Score of 5": {
+   "title": "AP French Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP German\nLanguage\nand Culture": {
+   "title": "AP German Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP History - European - HIST 10": {
+   "title": "AP European History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP History - European - HIST 11": {
+   "title": "AP European History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP History - U.S. - HIST C1001": {
+   "title": "AP United States History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP History - U.S. - HIST C1002": {
+   "title": "AP United States History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP History - World - HIST 1": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP History - World - HIST 2": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Human Geography, Area 4": {
+   "title": "AP Human Geography",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Italian\nLanguage\nand Culture": {
+   "title": "AP Italian Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Japanese\nLanguage\nand Culture": {
+   "title": "AP Japanese Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Japanese\nLanguage\nand Culture, Area 3": {
+   "title": "AP Japanese Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Japanese Language and Culture - Score of 3": {
+   "title": "AP Japanese Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Japanese Language and Culture - Score of 4": {
+   "title": "AP Japanese Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Japanese Language and Culture - Score of 5": {
+   "title": "AP Japanese Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Macroeconomics, Area 4": {
+   "title": "AP Macroeconomics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Microeconomics, Area 4": {
+   "title": "AP Microeconomics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Physics 1 – Algebra Based": {
+   "title": "AP Physics 1: Algebra-Based",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Physics 2 – Algebra Based": {
+   "title": "AP Physics 2: Algebra-Based",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Physics C\n(Mechanics)": {
+   "title": "AP Physics C: Mechanics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Physics C (Electricity/\nMagnetism)": {
+   "title": "AP Physics C: Electricity and Magnetism",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Physics C: electricity/magnetism": {
+   "title": "AP Physics C: Electricity and Magnetism",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Physics C: mechanics": {
+   "title": "AP Physics C: Mechanics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Pre-Calculus, Area 2, Score of 3 or 4": {
+   "title": "AP Precalculus",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Pre-Calculus, Area 2, Score of 5": {
+   "title": "AP Precalculus",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Pre-Calculus, Score of 3 or 4": {
+   "title": "AP Precalculus",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Pre-Calculus, Score of 5": {
+   "title": "AP Precalculus",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Psychology, Area 4": {
+   "title": "AP Psychology",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish\nLanguage\nand Culture (Score of 3)": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish\nLanguage\nand Culture (Score of 4)": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish\nLanguage\nand Culture (Score of 5)": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 3)": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 4-5)": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish\nLiterature\nand Culture (Score of 3)": {
+   "title": "AP Spanish Literature and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish\nLiterature\nand Culture (Score of 4)": {
+   "title": "AP Spanish Literature and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish\nLiterature\nand Culture (Score of 5)": {
+   "title": "AP Spanish Literature and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 3)": {
+   "title": "AP Spanish Literature and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 4-5)": {
+   "title": "AP Spanish Literature and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish Language and Culture - Score of 4": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish Language and Culture - Score of 5": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish Language and Culture, SPA 1": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish Language and Culture, SPA 1S": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Spanish Language and Culture, SPA 1X and Elective": {
+   "title": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Statistics - ECON 10": {
+   "title": "AP Statistics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Statistics - HLTH 10": {
+   "title": "AP Statistics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Statistics - MGT 10": {
+   "title": "AP Statistics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Statistics - PSYC 10": {
+   "title": "AP Statistics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Statistics - STAT C1000": {
+   "title": "AP Statistics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Statistics, Area 2": {
+   "title": "AP Statistics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP U.S. Government and Politics\nDoes not meet US 3; meets US 2 only.": {
+   "title": "AP United States Government and Politics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP US Government\nand Politics": {
+   "title": "AP United States Government and Politics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP US Government\nand Politics, Area 4": {
+   "title": "AP United States Government and Politics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP US Government\nand Politics, Area 8": {
+   "title": "AP United States Government and Politics",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP US History": {
+   "title": "AP United States History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP US History, Area 3": {
+   "title": "AP United States History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP US History, Area 4": {
+   "title": "AP United States History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP US History, Area 8": {
+   "title": "AP United States History",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP Word History Modern, Area 3": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
    "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
+   "confidence": 0.93,
+   "note": "Typo 'Word' read as 'World'; the area suffix is stripped.",
    "procedure": "classifier",
    "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APAG 2L": {
-   "title": "Apprenticeship (APAG 2L)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APAG 3": {
-   "title": "Apprenticeship (APAG 3)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APAG 3L": {
-   "title": "Apprenticeship (APAG 3L)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APAG 4": {
-   "title": "Apprenticeship (APAG 4)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APAG 4L": {
-   "title": "Apprenticeship (APAG 4L)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 100": {
-   "title": "Apprenticeship (APCL 100)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. APCL may be Las Positas's floor-covering (carpet/linoleum) apprenticeship series, but this is unverified, so the code-form fallback is used. The sponsor (likely a floor-covering apprenticeship committee) is unconfirmed and left null.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 101": {
-   "title": "Apprenticeship (APCL 101)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 102": {
-   "title": "Apprenticeship (APCL 102)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 103": {
-   "title": "Apprenticeship (APCL 103)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 104": {
-   "title": "Apprenticeship (APCL 104)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 105": {
-   "title": "Apprenticeship (APCL 105)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 106": {
-   "title": "Apprenticeship (APCL 106)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code, so the code-only lookup applies. The Las Positas COCI title for APCL 106 could not be checked, so the title falls back to the <Discipline> (<code>) form. The sponsoring apprenticeship committee (possibly a Northern CA trade JATC such as CTCNC) is unverified, so the issuer is left open for review.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 107": {
-   "title": "Apprenticeship (APCL 107)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APCL 107 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 108": {
-   "title": "Apprenticeship (APCL 108)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APCL 108 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 109": {
-   "title": "Apprenticeship (APCL 109)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APCL 109 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 110": {
-   "title": "Apprenticeship (APCL 110)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APCL 110 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 111": {
-   "title": "Apprenticeship (APCL 111)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APCL 111 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 112": {
-   "title": "Apprenticeship (APCL 112)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APCL 112 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 113": {
-   "title": "Apprenticeship (APCL 113)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APCL 113 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 114": {
-   "title": "Apprenticeship (APCL 114)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APCL 114 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APCL 116": {
-   "title": "Apprenticeship (APCL 116)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APCL 116 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APMT 51": {
-   "title": "Apprenticeship (APMT 51)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APMT 51 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APMT 52": {
-   "title": "Apprenticeship (APMT 52)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APMT 52 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "Apprenticeship Training Evidence for APMT 53": {
-   "title": "Apprenticeship (APMT 53)",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "Title is a course code; the Las Positas COCI title for APMT 53 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
-  "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I": {
-   "title": "Modern Dance Techniques 1",
-   "issuer": "CHAMPS High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (DANCETQ 141 at Los Angeles Pierce College) names it, M-ID DANC M1222; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II": {
-   "title": "Modern Dance Techniques 2",
-   "issuer": "CHAMPS High School",
-   "via": "school",
-   "confidence": 1.0,
-   "note": "Sheet 147 card 2: the aligned course (DANCETQ 142 at Los Angeles Pierce College) names it, M-ID DANC M1251; the school issues it.",
-   "procedure": "high-school-rop",
-   "rests_on": [
-    "high-school-rop"
-   ]
-  },
-  "Industry Training Evidence for AJ 50": {
-   "title": "Introduction to Administration of Justice",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Course-coded exhibit (IC type). Las Positas AJ 50 is believed to be Intro to Administration of Justice (C-ID AJ 110); verify. The issuer could instead be the training body, such as POST.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
+    "brand-family",
+    "Rule 5d",
     "Rule 1"
    ]
   },
-  "Industry Training Evidence for AJ 66": {
-   "title": "Administration of Justice (AJ 66)",
-   "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+  "AP Word History Modern, Area 4": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
    "via": "classifier",
-   "confidence": 0.35,
-   "note": "The title is code-only. The Las Positas COCI title for AJ 66 was not available, so it falls back to the discipline plus code; a reviewer should swap in the course title. POST as issuer is a guess, because industry training for an AJ course is typically POST-certified.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AJ 68": {
-   "title": "Administration of Justice (AJ 68)",
-   "issuer": "California Commission on Peace Officer Standards and Training (POST)",
-   "via": "classifier",
-   "confidence": 0.35,
-   "note": "The title is code-only. The Las Positas COCI title for AJ 68 was not available, so it falls back to the discipline plus code. Do not reuse CCSF's ADMJ 68 title, because the lookup is college-scoped. POST as issuer is a guess.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO A1": {
-   "title": "Engine Repair (ASE A1)",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO A1 is titled for ASE A1, since its course codes mirror ASE test codes. Verify the COCI course title agrees with the test (the AUTO P1 caution); if it does not, use the course title with California Community Colleges as issuer.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO A2": {
-   "title": "Automatic Transmission/Transaxle (ASE A2)",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO A2 aligns with ASE A2. Verify the course title agrees with the test, per the AUTO P1 caution.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO A3": {
-   "title": "Manual Drive Train and Axles (ASE A3)",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO A3 aligns with ASE A3. Verify the course title agrees with the test.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO A4": {
-   "title": "Suspension and Steering (ASE A4)",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO A4 aligns with ASE A4. Verify the course title agrees with the test.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO A5": {
-   "title": "Brakes (ASE A5)",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO A5 aligns with ASE A5. Verify the course title agrees with the test.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO A6": {
-   "title": "Electrical/Electronic Systems (ASE A6)",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO A6 aligns with ASE A6. Verify the course title agrees with the test.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO A7": {
-   "title": "Heating and Air Conditioning (ASE A7)",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO A7 aligns with ASE A7. Verify the course title agrees with the test.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO A8": {
-   "title": "Engine Performance (ASE A8)",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO A8 aligns with ASE A8. Verify the course title agrees with the test.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO A9": {
-   "title": "Light Vehicle Diesel Engines (ASE A9)",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO A9 aligns with ASE A9. Verify the course title agrees with the test.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO INT": {
-   "title": "Automotive Technology (AUTO INT)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.3,
-   "note": "The title is code-only and maps to no ASE test. The Las Positas COCI title for AUTO INT is unknown; it may be an internship or an introduction course. This falls back to the discipline plus code and needs the course title looked up.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO INTL": {
-   "title": "Automotive Technology (AUTO INTL)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.3,
-   "note": "The title is code-only and maps to no ASE test. The Las Positas COCI title for AUTO INTL is unknown, so this falls back to the discipline plus code and needs the course title looked up.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO L1": {
-   "title": "Engine Performance Specialist (ASE L1) Advanced",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO L1 aligns with ASE L1. Verify the course title agrees with the test.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO L3": {
-   "title": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Assumes Las Positas AUTO L3 aligns with ASE L3. Verify the course title agrees with the test.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "issuer-issues-the-card",
-    "mechanism-collapses",
-    "Rule 9"
-   ]
-  },
-  "Industry Training Evidence for AUTO SDR": {
-   "title": "Automotive Specified Diagnostic and Repair",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.55,
-   "note": "Course-coded IC exhibit: 'Industry Training Evidence' is mechanism phrasing. AUTO SDR is read as Las Positas's Specified Diagnostic and Repair course and joined to the existing house title; the course title was not verified in COCI. The issuer could be BAR, since this is industry training evidence, so review.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses"
-   ]
-  },
-  "Industry Training Evidence for AUTO SMOG": {
-   "title": "Smog Inspector - Level 1 Training",
-   "issuer": "California Bureau of Automotive Repair (BAR)",
-   "via": "classifier",
-   "confidence": 0.55,
-   "note": "AUTO SMOG is read as BAR smog-inspector training and joined to the house BAR family. The Las Positas course title is unverified, so this needs a COCI check.",
+   "confidence": 0.93,
+   "note": "Typo 'Word' read as 'World'; the area suffix is stripped.",
    "procedure": "classifier",
    "rests_on": [
     "brand-family",
-    "course-identity",
-    "Rule 5c"
-   ]
-  },
-  "Industry Training Evidence for CNT 52": {
-   "title": "Networking Fundamentals",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "Las Positas CNT 52 is believed to be Networking Fundamentals (Network+ prep), so it is joined to the house title. Verify in COCI.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "join-when-likely-one"
-   ]
-  },
-  "Industry Training Evidence for FST 1": {
-   "title": "Principles of Emergency Services",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.55,
-   "note": "FST 1 is presumed to align with C-ID FIRE 100, Principles of Emergency Services; verify against Las Positas COCI. The issuer follows course-identity because the external training is unnamed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
+    "Rule 5d",
     "Rule 1"
    ]
   },
-  "Industry Training Evidence for KIN YO1": {
-   "title": "Yoga 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.55,
-   "note": "KIN YO1 is read as Yoga 1 and joins the existing house title. The underlying industry training (e.g. a yoga teacher certification) is unnamed, so the issuer follows course-identity.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "brand-family",
-    "arabic-level-numerals",
-    "Rule 5c"
-   ]
-  },
-  "Industry Training Evidence for KIN ZUM1": {
-   "title": "Zumba 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "KIN ZUM1 is read as Zumba 1 and joins the existing house title, which has no issuer. The issuer follows course-identity; a Zumba instructor license could argue for Zumba Fitness instead.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "brand-family",
-    "arabic-level-numerals",
-    "Rule 5c"
-   ]
-  },
-  "Ironworkers Union Apprenticeship Level 1": {
-   "title": "Ironworker Apprenticeship — Level 1",
-   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Ironworker apprenticeship at American River College. Level 1 cannot be mapped to the house Structural/Reinforcing Period shape without knowing whether a level means a period or a year. The issuer is the house Iron Workers family pending the DAS JATC sponsor (likely the Northern California Ironworkers JATC).",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "arabic-level-numerals"
-   ]
-  },
-  "Ironworkers Union Apprenticeship Level 3": {
-   "title": "Ironworker Apprenticeship — Level 3",
-   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Ironworker apprenticeship at American River College. Level 3 cannot be mapped to the house Period shape without knowing whether a level means a period or a year. The issuer is the house Iron Workers family pending the DAS JATC sponsor.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "arabic-level-numerals"
-   ]
-  },
-  "Ironworkers Union Journeyperson": {
-   "title": "Ironworker Apprenticeship — Journeyperson",
-   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Title follows the house Ironworker Apprenticeship shape. The issuer is the house ironworker family's issuer; the regional ironworker JATC that the Division of Apprenticeship Standards names for American River College is unverified.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "Rule 6"
-   ]
-  },
-  "Ironworkers UnionApprenticeship Level 2": {
-   "title": "Ironworker Apprenticeship — Level 2",
-   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Fixed the missing space in the raw title. The title does not say whether Level 2 is the Structural or the Reinforcing track, so it was not folded into a house Period family. The DAS-named JATC issuer is unverified.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "arabic-level-numerals"
-   ]
-  },
-  "Noncredit Course for ARHS 6": {
-   "title": "Museum & Gallery Techniques",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "The cx hint was set aside because it leaves mechanism and code noise in the title. The catalog hint was taken: Las Positas ARHS 6 is matched to the house family Museum & Gallery Techniques. Verify this against the COCI course title.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses"
-   ]
-  },
-  "Noncredit Course for AUTO A1": {
-   "title": "Engine Repair (ASE A1)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "This is a noncredit course coded for ASE test A1, so it folds under the certification name in the ASE-paren form. Confirm that the Las Positas course title agrees with A1, since AUTO P1 is a known mismatch. The issuer is CCC because this is the college's own exam.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "course-identity",
-    "Rule 5h"
-   ]
-  },
-  "Noncredit Course for AUTO A2": {
-   "title": "Automatic Transmission/Transaxle (ASE A2)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Course code taken to name ASE A2. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "course-identity",
-    "Rule 5h"
-   ]
-  },
-  "Noncredit Course for AUTO A3": {
-   "title": "Manual Drive Train and Axles (ASE A3)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Course code taken to name ASE A3. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "course-identity",
-    "Rule 5h"
-   ]
-  },
-  "Noncredit Course for AUTO A4": {
-   "title": "Suspension and Steering (ASE A4)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Course code taken to name ASE A4. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "course-identity",
-    "Rule 5h"
-   ]
-  },
-  "Noncredit Course for AUTO A5": {
-   "title": "Brakes (ASE A5)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Course code taken to name ASE A5. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "course-identity",
-    "Rule 5h"
-   ]
-  },
-  "Noncredit Course for AUTO A6": {
-   "title": "Electrical/Electronic Systems (ASE A6)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Course code taken to name ASE A6. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "course-identity",
-    "Rule 5h"
-   ]
-  },
-  "Noncredit Course for AUTO A7": {
-   "title": "Heating and Air Conditioning (ASE A7)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Course code taken to name ASE A7. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "course-identity",
-    "Rule 5h"
-   ]
-  },
-  "Noncredit Course for AUTO A8": {
-   "title": "Engine Performance (ASE A8)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Course code taken to name ASE A8. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "course-identity",
-    "Rule 5h"
-   ]
-  },
-  "Noncredit Course for AUTO A9": {
-   "title": "Light Vehicle Diesel Engines (ASE A9)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Course code taken to name ASE A9. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "course-identity",
-    "Rule 5h"
-   ]
-  },
-  "Noncredit Course for AUTO INT": {
-   "title": "Automotive Technology (AUTO INT)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "AUTO INT names no ASE test and its course title is unknown, so the title falls back to the discipline plus local code form. Look up the Las Positas COCI title for AUTO INT.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c"
-   ]
-  },
-  "Noncredit Course for AUTO INTL": {
-   "title": "Automotive Technology (AUTO INTL)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.4,
-   "note": "AUTO INTL names no ASE test and its course title is unknown, so the title falls back to the discipline plus local code form. Look up the Las Positas COCI title for AUTO INTL.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c"
-   ]
-  },
-  "Noncredit Course for AUTO L1": {
-   "title": "Engine Performance Specialist (ASE L1) Advanced",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Course code taken to name ASE L1; 'Advanced' is kept in place as part of ASE's official name. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
-   "procedure": "classifier",
-   "rests_on": [
-    "ase-paren",
-    "course-identity",
-    "Rule 5h"
-   ]
-  },
-  "Noncredit Course for AUTO L3": {
-   "title": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "The cx hint kept the mechanism phrase, so it was set aside. AUTO L3 likely mirrors the ASE L3 hybrid/EV course, but the Las Positas COCI title is unverified and a course code names a test only when the course title agrees, so this needs review. The college issues its own exam, so the issuer is CCC.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "ase-paren",
-    "mechanism-collapses",
-    "Rule 5c"
-   ]
-  },
-  "Noncredit Course for AUTO SDR": {
-   "title": "Automotive Specified Diagnostic and Repair",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "SDR read as Specified Diagnostic and Repair, joining the existing house family. The COCI title is unverified.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "brand-family",
-    "Rule 5c"
-   ]
-  },
-  "Noncredit Course for AUTO SMOG": {
-   "title": "Smog Check Inspector Training",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "This is a local smog course exam and is kept apart from the BAR license (Rule 8c). The exact Las Positas course title is unknown, so the title is a best guess for review.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "mechanism-collapses",
-    "Rule 5c"
-   ]
-  },
-  "Noncredit Course for KIN PL1": {
-   "title": "Pilates 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "KIN PL1 was read as Pilates level 1 and joined to the house family Pilates 1. The course title is inferred from the code and should be verified against COCI.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "join-when-likely-one"
-   ]
-  },
-  "Noncredit Course for KIN SW1": {
-   "title": "Swimming 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "KIN SW1 was read as Swimming level 1 and joined to the house family Swimming 1. The course title is inferred from the code and should be verified against COCI.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "join-when-likely-one"
-   ]
-  },
-  "Noncredit Course for KIN SWF1": {
-   "title": "Swim Fitness 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "KIN SWF1 was read as Swim Fitness level 1 and joined to the house family Swim Fitness 1. The course title is inferred from the code and should be verified against COCI.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "join-when-likely-one"
-   ]
-  },
-  "Noncredit Course for KIN YO1": {
-   "title": "Yoga 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "KIN YO1 was read as Yoga level 1 and joined to the house family Yoga 1. The course title is inferred from the code and should be verified against COCI.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "join-when-likely-one"
-   ]
-  },
-  "Noncredit Course for MUS 16": {
-   "title": "Philharmonic Orchestra",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Noncredit mirror of Las Positas MUS 16. Took the catalog hint 'Philharmonic Orchestra' over the cx hint, which kept the mechanism phrase and the course code.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "mechanism-collapses",
-    "Rule 5c"
-   ]
-  },
-  "Noncredit Course for MUS 45": {
-   "title": "Chamber Choir",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Noncredit mirror of Las Positas MUS 45. Took the catalog course title 'Chamber Choir' and set aside the cx hint.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "mechanism-collapses",
-    "Rule 5c"
-   ]
-  },
-  "Noncredit Course for MUS 46": {
-   "title": "Vocal Jazz Ensemble",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Noncredit mirror of Las Positas MUS 46. Took the catalog course title 'Vocal Jazz Ensemble' and set aside the cx hint.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "mechanism-collapses",
-    "Rule 5c"
-   ]
-  },
-  "Noncredit Course for NKIN WT1": {
-   "title": "Weight Training 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.45,
-   "note": "No catalog match was found for NKIN WT1. Reading it as noncredit kinesiology weight training and joining the 'Weight Training 1' family is a guess; verify the course title in COCI.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "Rule 9"
-   ]
-  },
-  "Nor Cal Carpenters Training Acoustical Apprenticeship Year 1": {
-   "title": "Carpenters Apprenticeship — Acoustical Installer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.72,
-   "note": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later. The issuer is the Northern CA committee, the discriminator against the joint-issuer family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Acoustical Apprenticeship Year 2": {
-   "title": "Carpenters Apprenticeship — Acoustical Installer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.72,
-   "note": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Acoustical Apprenticeship Year 3": {
-   "title": "Carpenters Apprenticeship — Acoustical Installer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.72,
-   "note": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Acoustical Apprenticeship Year 4": {
-   "title": "Carpenters Apprenticeship — Acoustical Installer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.72,
-   "note": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Acoustical Journeyperson": {
-   "title": "Carpenters Apprenticeship — Acoustical Installer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.65,
-   "note": "The journeyperson completion is folded into the Northern CA trade family, since no Northern journeyperson family exists. It may warrant its own title, as the Southern CA journeyman certificates have.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one"
-   ]
-  },
-  "Nor Cal Carpenters Training Carpenter Apprenticeship Year 1": {
-   "title": "Carpenters Apprenticeship — Carpenter",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Carpenter Apprenticeship Year 2": {
-   "title": "Carpenters Apprenticeship — Carpenter",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Carpenter Apprenticeship Year 3": {
-   "title": "Carpenters Apprenticeship — Carpenter",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Carpenter Apprenticeship Year 4": {
-   "title": "Carpenters Apprenticeship — Carpenter",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Carpenter Journeyperson": {
-   "title": "Carpenters Apprenticeship — Carpenter",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.65,
-   "note": "The journeyperson completion is folded into the CTCNC Carpenter family, since no Northern journeyperson family exists. It may warrant its own title.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one"
-   ]
-  },
-  "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 1": {
-   "title": "Carpenters Apprenticeship — Drywall/Lather",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.72,
-   "note": "The year is folded into the Drywall/Lather trade family; the Northern CA issuer discriminates it from the joint-issuer family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 2": {
-   "title": "Carpenters Apprenticeship — Drywall/Lather",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Year 2 folded into the house Drywall/Lather apprenticeship family, which carries no per-year split. The house family's issuer is the joint NorCal/SoCal pair; this row uses CTCNC because the title names Nor Cal.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 3": {
-   "title": "Carpenters Apprenticeship — Drywall/Lather",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Year 3 folded into the house Drywall/Lather apprenticeship family, which carries no per-year split. The issuer is CTCNC because the title names Nor Cal.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 4": {
-   "title": "Carpenters Apprenticeship — Drywall/Lather",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Year 4 folded into the house Drywall/Lather apprenticeship family, which carries no per-year split. The issuer is CTCNC because the title names Nor Cal.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Drywall/Lather Journeyperson": {
-   "title": "Carpenters Apprenticeship — Drywall/Lather",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.78,
-   "note": "The journeyperson completion was joined with the Drywall/Lather apprenticeship family. Faculty may later split completion from in-progress years.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 1": {
-   "title": "Carpenters Apprenticeship — Hardwood Floor Layer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Level 1 folded into the house Hardwood Floor Layer apprenticeship family, which carries no per-level split.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 2": {
-   "title": "Carpenters Apprenticeship — Hardwood Floor Layer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Level 2 folded into the house Hardwood Floor Layer apprenticeship family, which carries no per-level split.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 3": {
-   "title": "Carpenters Apprenticeship — Hardwood Floor Layer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Level 3 folded into the house Hardwood Floor Layer apprenticeship family, which carries no per-level split.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Hardwood Floor Layer Journeyperson": {
-   "title": "Carpenters Apprenticeship — Hardwood Floor Layer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.78,
-   "note": "The journeyperson completion was joined with the Hardwood Floor Layer apprenticeship family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 1": {
-   "title": "Carpenters Apprenticeship — Insulator",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Insulation Installer maps to the house Insulator apprenticeship family. Year 1 was folded in, since the family has no per-year split.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 2": {
-   "title": "Carpenters Apprenticeship — Insulator",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Insulation Installer maps to the house Insulator apprenticeship family. Year 2 was folded in.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Insulation Installer Journeyperson": {
-   "title": "Carpenters Apprenticeship — Insulator",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.78,
-   "note": "The journeyperson completion was joined with the Insulator apprenticeship family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 1": {
-   "title": "Carpenters Apprenticeship — Cabinetmaker",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.78,
-   "note": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 1 was folded in, since the family has no per-year split.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 2": {
-   "title": "Carpenters Apprenticeship — Cabinetmaker",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.78,
-   "note": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 2 was folded in.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 3": {
-   "title": "Carpenters Apprenticeship — Cabinetmaker",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.78,
-   "note": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 3 was folded in.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 4": {
-   "title": "Carpenters Apprenticeship — Cabinetmaker",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.78,
-   "note": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 4 was folded in.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Millwright Apprenticeship Year 1": {
-   "title": "Carpenters Apprenticeship — Millwright",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Millwright Apprenticeship Year 2": {
-   "title": "Carpenters Apprenticeship — Millwright",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Millwright Apprenticeship Year 3": {
-   "title": "Carpenters Apprenticeship — Millwright",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Millwright Apprenticeship Year 4": {
-   "title": "Carpenters Apprenticeship — Millwright",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Office Modular System Installer Apprenticeship Year 1": {
-   "title": "Carpenters Apprenticeship — Modular Installer",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Office Modular System Installer maps to the house CTCNC Modular Installer family, with the year level folded in.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 1": {
-   "title": "Carpenters Apprenticeship — Pile Driver",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.82,
-   "note": "The year level folds into the house CTCNC Pile Driver apprenticeship family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 2": {
-   "title": "Carpenters Apprenticeship — Pile Driver",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.82,
-   "note": "The year level folds into the house CTCNC Pile Driver apprenticeship family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 3": {
-   "title": "Carpenters Apprenticeship — Pile Driver",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.82,
-   "note": "The year level folds into the house CTCNC Pile Driver apprenticeship family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 4": {
-   "title": "Carpenters Apprenticeship — Pile Driver",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.82,
-   "note": "The year level folds into the house CTCNC Pile Driver apprenticeship family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 1": {
-   "title": "Carpenters Apprenticeship — Scaffold Erector",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.82,
-   "note": "The year level folds into the house CTCNC Scaffold Erector apprenticeship family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 2": {
-   "title": "Carpenters Apprenticeship — Scaffold Erector",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.82,
-   "note": "The year level folds into the house CTCNC Scaffold Erector apprenticeship family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 3",
-    "Rule 6"
-   ]
-  },
-  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 3": {
-   "title": "Carpenters Apprenticeship — Scaffold Erector",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.78,
-   "note": "Joins the CTCNC house family. That family carries no year levels, so Year 3 folds in; faculty may split the years later. CTCNC both trains and issues.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 4": {
-   "title": "Carpenters Apprenticeship — Scaffold Erector",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.78,
-   "note": "Joins the CTCNC house family. That family carries no year levels, so Year 4 folds in; faculty may split the years later.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 3"
-   ]
-  },
-  "Nor Cal Carpenters Training Scaffold Erector Journeyperson": {
-   "title": "Carpenters Apprenticeship — Scaffold Erector",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "Journeyperson completion folds into the CTCNC Scaffold Erector apprenticeship family, which has no separate journey-level title; review whether journeyperson status deserves its own title.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "brand-family",
-    "join-when-likely-one"
-   ]
-  },
-  "Nor Cal Carpenters Training Shingler Journeyperson": {
-   "title": "Carpenters Apprenticeship — Shingler",
-   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Journeyperson completion folds into the CTCNC Shingler apprenticeship house family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "brand-family",
-    "join-when-likely-one"
-   ]
-  },
-  "NorCal Valley Sheet Metal Apprenticeship Journeyperson": {
-   "title": "SMART Sheet Metal Apprenticeship — Journeyperson",
-   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-   "via": "classifier",
-   "confidence": 0.72,
-   "note": "New journey-level title on the SMART sheet metal house shape. The NorCal Valley program is treated as the local JATC trainer; its exact DAS sponsor name needs verification.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "brand-family",
-    "Rule 7"
-   ],
-   "trainer": "Northern California Valley Sheet Metal JATC"
-  },
-  "NorCal Valley Sheet Metal Apprenticeship Level 1": {
-   "title": "SMART Sheet Metal Apprenticeship — Year 1",
-   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-   "via": "classifier",
-   "confidence": 0.72,
-   "note": "Level 1 is read as apprenticeship Year 1 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "Northern California Valley Sheet Metal JATC"
-  },
-  "NorCal Valley Sheet Metal Apprenticeship Level 2": {
-   "title": "SMART Sheet Metal Apprenticeship — Year 2",
-   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-   "via": "classifier",
-   "confidence": 0.72,
-   "note": "Level 2 is read as apprenticeship Year 2 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "Northern California Valley Sheet Metal JATC"
-  },
-  "NorCal Valley Sheet Metal Apprenticeship Level 3": {
-   "title": "SMART Sheet Metal Apprenticeship — Year 3",
-   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-   "via": "classifier",
-   "confidence": 0.72,
-   "note": "Level 3 is read as apprenticeship Year 3 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "Northern California Valley Sheet Metal JATC"
-  },
-  "NorCal Valley Sheet Metal Apprenticeship Level 4": {
-   "title": "SMART Sheet Metal Apprenticeship — Year 4",
-   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-   "via": "classifier",
-   "confidence": 0.72,
-   "note": "Level 4 is read as apprenticeship Year 4 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "Northern California Valley Sheet Metal JATC"
-  },
-  "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 1": {
-   "title": "SMART Sheet Metal Service Technician Apprenticeship — Year 1",
-   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-   "via": "classifier",
-   "confidence": 0.68,
-   "note": "Service Technician is a distinct trade from building-trades sheet metal, so it gets its own title on the SMART house shape (Rule 4). Level is read as Year.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "Rule 4",
-    "Rule 7"
-   ],
-   "trainer": "Northern California Valley Sheet Metal JATC"
-  },
-  "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 2": {
-   "title": "SMART Sheet Metal Service Technician Apprenticeship — Year 2",
-   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-   "via": "classifier",
-   "confidence": 0.68,
-   "note": "Service Technician is a distinct trade, so it gets its own title on the SMART house shape. Level is read as Year.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "Rule 4",
-    "Rule 7"
-   ],
-   "trainer": "Northern California Valley Sheet Metal JATC"
-  },
-  "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 3": {
-   "title": "SMART Sheet Metal Service Technician Apprenticeship — Year 3",
-   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-   "via": "classifier",
-   "confidence": 0.68,
-   "note": "Service Technician is a distinct trade, so it gets its own title on the SMART house shape. Level is read as Year.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "Rule 4",
-    "Rule 7"
-   ],
-   "trainer": "Northern California Valley Sheet Metal JATC"
-  },
-  "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 4": {
-   "title": "SMART Sheet Metal Service Technician Apprenticeship — Year 4",
-   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-   "via": "classifier",
-   "confidence": 0.68,
-   "note": "Service Technician is a distinct trade, so it gets its own title on the SMART house shape. Level is read as Year.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "Rule 4",
-    "Rule 7"
-   ],
-   "trainer": "Northern California Valley Sheet Metal JATC"
-  },
-  "NorCal Valley Sheet Metal Service Technician Journeyperson": {
-   "title": "SMART Sheet Metal Service Technician Apprenticeship — Journeyperson",
-   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-   "via": "classifier",
-   "confidence": 0.68,
-   "note": "New journey-level title for the Service Technician trade on the SMART house shape; the trainer name needs verification.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "Rule 4",
-    "Rule 7"
-   ],
-   "trainer": "Northern California Valley Sheet Metal JATC"
-  },
-  "Plumbers Pipefitters Apprenticeship Level 1": {
-   "title": "UA Plumbers and Pipefitters Apprenticeship — Level 1",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "No local is named, so this does not join the UA Local 342 course-coded family. American River College suggests a Sacramento-area UA local, but the trainer is left open for review.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "Rule 4",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Apprenticeship Level 2": {
-   "title": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Named on the house UA/IBEW apprenticeship shape. American River College suggests the Sacramento UA local (likely Local 447), but the title names no local or JATC. The issuer is the UA parent body; the local JATC sponsor needs verification against DAS.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "Rule 5h",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Apprenticeship Level 3": {
-   "title": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Same series as Level 2. The issuer is the UA parent; the local JATC sponsor at American River College is not named and needs DAS verification.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Apprenticeship Level 4": {
-   "title": "UA Plumbers/Pipefitters Apprenticeship — Level 4",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Same series as Level 2. The issuer is the UA parent; the local JATC sponsor is not named and needs DAS verification.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Journeyperson": {
-   "title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Journeyperson completion, named on the IBEW Journeyperson house shape. The journey card may be issued by DAS or the local JATC rather than the UA; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1": {
-   "title": "UA Refrigeration Service Technician Apprenticeship — Level 1",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "The refrigeration service technician track is kept apart from the plumber/pipefitter track because it is a different scope (Rule 4). The UA local is not named; verify the sponsor.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 2": {
-   "title": "UA Refrigeration Service Technician Apprenticeship — Level 2",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Same series as Level 1. The UA local sponsor is not named; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 3": {
-   "title": "UA Refrigeration Service Technician Apprenticeship — Level 3",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Same series as Level 1. The UA local sponsor is not named; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 4": {
-   "title": "UA Refrigeration Service Technician Apprenticeship — Level 4",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Same series as Level 1. The UA local sponsor is not named; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Refrigeration Service Technician Journeyperson": {
-   "title": "UA Refrigeration Service Technician Apprenticeship — Journeyperson",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Journeyperson completion of the refrigeration track. The journey card may be issued by DAS or the JATC; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 1": {
-   "title": "UA Steamfitter Apprenticeship — Level 1",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "The steamfitter track is split from the plumber/pipefitter and refrigeration tracks. The UA local sponsor is not named; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 2": {
-   "title": "UA Steamfitter Apprenticeship — Level 2",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Same series as Steamfitter Level 1. The UA local sponsor is not named; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 3": {
-   "title": "UA Steamfitter Apprenticeship — Level 3",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Same series as Steamfitter Level 1. The UA local sponsor is not named; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 4": {
-   "title": "UA Steamfitter Apprenticeship — Level 4",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Same series as Steamfitter Level 1. The UA local sponsor is not named; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Steamfitter Journeyperson": {
-   "title": "UA Steamfitter Apprenticeship — Journeyperson",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Journeyperson completion of the steamfitter track. The journey card may be issued by DAS or the JATC; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Welder Apprenticeship Level 1": {
-   "title": "UA Welder Apprenticeship — Level 1",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "This is the UA welder apprenticeship track, not an AWS welder qualification, so it is not joined to the AWS families. The UA local sponsor is not named; verify.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 4",
-    "arabic-level-numerals",
-    "issuer-issues-the-card",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Welder Apprenticeship Level 2": {
-   "title": "Plumbers and Pipefitters Welder Apprenticeship — Level 2",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Union welder apprenticeship stage kept distinct per level (IBEW Year-N house shape). Issuer is inferred as the UA plumbers/pipefitters union; the DAS-registered local JAC near American River College is unconfirmed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "arabic-level-numerals",
-    "Rule 6",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Welder Apprenticeship Level 3": {
-   "title": "Plumbers and Pipefitters Welder Apprenticeship — Level 3",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Union welder apprenticeship stage kept distinct per level. Issuer is inferred as the UA; the local JAC is unconfirmed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "arabic-level-numerals",
-    "Rule 6",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Welder Apprenticeship Level 4": {
-   "title": "Plumbers and Pipefitters Welder Apprenticeship — Level 4",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Union welder apprenticeship stage kept distinct per level. Issuer is inferred as the UA; the local JAC is unconfirmed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "arabic-level-numerals",
-    "Rule 6",
-    "Rule 7"
-   ]
-  },
-  "Plumbers Pipefitters Union Welder Journeyperson": {
-   "title": "Plumbers and Pipefitters Welder Apprenticeship — Journeyperson",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.6,
-   "note": "Journeyperson completion follows the IBEW '— Journeyperson' house shape. Issuer is inferred as the UA; the local JAC is unconfirmed.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "Rule 6",
-    "Rule 7"
-   ]
-  },
-  "Portfolio Evidence for ENG 19A": {
-   "title": "Journal of Arts and Literature",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "Catalog hint 'Journal of Arts and Literature A' was joined to the existing family without the section letter. ENG 19A is likely cross-listed with JAMS 19A, so both rows take this title.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "join-when-likely-one"
-   ]
-  },
-  "Portfolio Evidence for JAMS 19A": {
-   "title": "Journal of Arts and Literature",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "Cross-listed with ENG 19A. The trailing 'A' in the catalog hint was dropped to join the existing family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "join-when-likely-one"
-   ]
-  },
-  "Portfolio Evidence for MUS 27": {
-   "title": "Teaching Intermediate Piano",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Portfolio exhibit for Las Positas MUS 27. Took the catalog hint (the college course title), which matches the existing CCC family. Set aside the cx hint, which kept method and code residue ('Evidence for'). Verify the course title against COCI.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses"
-   ]
-  },
-  "Portfolio Evidence for MUS 35": {
-   "title": "Introduction to Music Technology",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Portfolio exhibit for Las Positas MUS 35. Took the catalog hint (the course title) and set aside the cx strip residue. Verify the course title against COCI.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses"
-   ]
-  },
-  "Portfolio Evidence for PHTO 72": {
-   "title": "Introduction to Photojournalism",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.8,
-   "note": "Portfolio exhibit for Las Positas PHTO 72. Took the catalog hint (the course title) and set aside the cx strip residue. Verify the course title against COCI.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "mechanism-collapses"
-   ]
-  },
-  "Sacramento Electrical Training Center Apprenticeship Level 1": {
-   "title": "IBEW Electrician Apprenticeship — Year 1",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "Sacramento Electrical Training Center is the IBEW Local 340/NECA JATC. Mapped Level N to the house IBEW Year N family; the training center is the trainer. Confirm the level-to-year equivalence.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "Sacramento Electrical Training Center"
-  },
-  "Sacramento Electrical Training Center Apprenticeship Level 2": {
-   "title": "IBEW Electrician Apprenticeship — Year 2",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 2 to IBEW Year 2; confirm the level-to-year equivalence.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "Sacramento Electrical Training Center"
-  },
-  "Sacramento Electrical Training Center Apprenticeship Level 3": {
-   "title": "IBEW Electrician Apprenticeship — Year 3",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 3 to IBEW Year 3; confirm the level-to-year equivalence.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "Sacramento Electrical Training Center"
-  },
-  "Sacramento Electrical Training Center Apprenticeship Level 4": {
-   "title": "IBEW Electrician Apprenticeship — Year 4",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 4 to IBEW Year 4; confirm the level-to-year equivalence.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "Sacramento Electrical Training Center"
-  },
-  "Sacramento Electrical Training Center Apprenticeship Level 5": {
-   "title": "IBEW Electrician Apprenticeship — Year 5",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 5 to IBEW Year 5; confirm the level-to-year equivalence.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "Sacramento Electrical Training Center"
-  },
-  "Sacramento Electrical Training Center Journeyperson": {
-   "title": "IBEW Electrician Apprenticeship — Journeyperson",
-   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "Journeyperson completion of the IBEW Local 340 JATC program (Sacramento Electrical Training Center), joined to the house IBEW journeyperson family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "Sacramento Electrical Training Center"
+  "AP World History -\nModern, Area 3": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP World History -\nModern, Area 4": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "AP World History, Area 3": {
+   "title": "AP World History: Modern",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "ap",
+   "note": "College Board's official AP exam name, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP Biology 1 or 3": {
+   "title": "CLEP Biology",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP History, United States I, Area 3B": {
+   "title": "CLEP History of the United States 1",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP History, United States I, Area 4": {
+   "title": "CLEP History of the United States 1",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP History, United States I, Area 7": {
+   "title": "CLEP History of the United States 1",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP History, United States II, Area 3B": {
+   "title": "CLEP History of the United States 2",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP History, United States II, Area 4": {
+   "title": "CLEP History of the United States 2",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP History, United States II, Area 7": {
+   "title": "CLEP History of the United States 2",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP Western Civilization I, Area 3B": {
+   "title": "CLEP Western Civilization 1",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP Western Civilization I, Area 4": {
+   "title": "CLEP Western Civilization 1",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP Western Civilization II, Area 3B": {
+   "title": "CLEP Western Civilization 2",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "CLEP Western Civilization II, Area 4": {
+   "title": "CLEP Western Civilization 2",
+   "issuer": "College Board",
+   "confidence": 0.95,
+   "via": "clep",
+   "note": "College Board's CLEP exam name, levels folded in, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB English Language A - Language and Literature HL": {
+   "title": "IB Language A: Language and Literature HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB English Language A - Literature HL": {
+   "title": "IB Language A: Literature HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB History (any region) HL - Area 3": {
+   "title": "IB History HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB History (any region) HL - Area 4": {
+   "title": "IB History HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB History (any region) HL, Area 3": {
+   "title": "IB History HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB History (any region) HL, Area 3B": {
+   "title": "IB History HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB History (any region) HL, Area 4": {
+   "title": "IB History HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Language A - Language and Literature (any language, except English) HL": {
+   "title": "IB Language A: Language and Literature HL (Non-English)",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Language A - Language and Literature HL": {
+   "title": "IB Language A: Language and Literature HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Language A - Literature (any language, except English) HL": {
+   "title": "IB Language A: Literature HL (Non-English)",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Language A - Literature HL": {
+   "title": "IB Language A: Literature HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Language A: Language and Literature HL (any language, except English)": {
+   "title": "IB Language A: Language and Literature HL (Non-English)",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Language A: Literature HL (any language, except English)": {
+   "title": "IB Language A: Literature HL (Non-English)",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Mathematics: Analysis & Approaches HL": {
+   "title": "IB Mathematics: Analysis and Approaches HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Mathematics: Analysis and Approaches HL, Score of 6 or higher": {
+   "title": "IB Mathematics: Analysis and Approaches HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Mathematics: Applications & Interpretation HL": {
+   "title": "IB Mathematics: Applications and Interpretation HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Mathematics: Applications and Interpretation": {
+   "title": "IB Mathematics: Applications and Interpretation HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
+  },
+  "IB Theatre HL, Area 3": {
+   "title": "IB Theatre HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "confidence": 0.95,
+   "via": "ib",
+   "note": "IB's own Diploma Programme subject and level, read from the title.",
+   "procedure": "brand-family"
   }
  }
 }
