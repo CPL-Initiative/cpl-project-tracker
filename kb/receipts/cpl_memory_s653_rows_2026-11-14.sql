@@ -1,6 +1,6 @@
 -- cpl_memory rows for SkyGodwit (S653), the checkpoint, 2026-11-14. Drafted by the checkpoint-docs worker; the conductor runs them.
 -- Every summary at most 400 characters (the table's check), measured by script when this file was written:
---   STATEMENT 1: 313, 373, 384, 396, 387, 383, 283, 335, 370, 365, 378, 324, 271, 273, 219, 252, 269, 206, 322, 157, 215, 180, 128; the longest is 396. STATEMENT 2: 390.
+--   STATEMENT 1: 313, 373, 384, 396, 387, 383, 283, 335, 370, 365, 378, 324, 271, 273, 219, 252, 269, 206, 322, 166, 215, 180, 128; the longest is 396. STATEMENT 2: 390.
 -- INSERT ... ON CONFLICT (slug) DO NOTHING (a replay is harmless), then the cpl_memory_log append, then the verify.
 -- ROLLBACK (by slug; never by author):
 --   delete from cpl_memory_log where memory_id in (select id from cpl_memory where slug in (<the slugs>));
@@ -9,7 +9,7 @@
 -- No row is superseded. cq-distinct-not-the-riverside-fault-s653 corrects the S652 lane line, which held no cpl_memory row.
 
 -- ===========================================================================================================
--- STATEMENT 1 -- NOT YET RUN. 23 rows: Sam's one statement (verified, verbatim) and the S653 conductor's decisions,
+-- STATEMENT 1 -- RUN by the conductor at 18:55:13Z 2026-11-14, in one execute_sql call with STATEMENT 2 (24 rows inserted in all, 24 create log rows, longest summary 396; verify read back 24 rows by author SkyGodwit (S653)). 23 rows: Sam's one statement (verified, verbatim) and the S653 conductor's decisions,
 -- facts and pitfalls (status proposed). The conductor runs it as one execute_sql call and records RUN here.
 -- ===========================================================================================================
 insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
@@ -32,7 +32,7 @@ insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,v
 ('p-diagnosis-flipped-three-times-s653','pitfall','A diagnosis flipped three times before the code was instrumented','S652 blamed cq_distinct for Riverside City''s missing pages; S653 cleared it, blamed it again from one capture''s counts, then cleared it with a capture on instrumented code (#3311). The fault was the S646 claim rule (#3324). Instrument the code and run it before fixing.',array['program-requirements-harvest','conductor','pitfall'],'proposed','S653 checkpoint; docs/session_654_handoff.md and the lane files',null,null,'SkyGodwit (S653)',date '2026-11-14'),
 ('p-reviewers-missed-the-capture-path-s653','pitfall','Five readers checked the scorer; none ran the page finder','S653, #3312: five readers checked scoring and none ran the page finder; COBIx found the capture-path gap. Name each code path in the review brief. A restaged run loads no page, so it proves the scorer only.',array['program-requirements-harvest','conductor','review','pitfall'],'proposed','S653 checkpoint; docs/session_654_handoff.md and the lane files',null,null,'SkyGodwit (S653)',date '2026-11-14'),
 ('p-snapshot-test-pins-the-rule-s653','pitfall','A test took its rule''s own output as the truth','S653: #3324''s GE_ALLOWED pinned the claim rule''s own output, and #3315''s recall script counted the matcher''s pairs minus a wrong list as right, sharing the matcher''s parser. Expected answers are written by hand or by an independent derivation. Note: docs/kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md.',array['program-requirements-harvest','commons','testing','pitfall'],'proposed','S653 checkpoint; docs/session_654_handoff.md and the lane files',null,null,'SkyGodwit (S653)',date '2026-11-14'),
-('p-sources-from-wants-the-capture-run-s653','pitfall','sources_from takes the capture run, not the reconcile run','S653: a reread was given the day''s reconcile run as sources_from; it takes the run that captured the pages (Moreno Valley 38111056537). The guard refused it.',array['program-requirements-harvest','reconcile','pitfall'],'proposed','S653 checkpoint; docs/session_654_handoff.md and the lane files',null,null,'SkyGodwit (S653)',date '2026-11-14'),
+('p-sources-from-wants-the-capture-run-s653','pitfall','sources_from takes the capture run, not the reconcile run','S653: a reconcile check was given the day''s reconcile run as sources_from; it takes the run that captured the pages (Moreno Valley 38111056537). The guard refused it.',array['program-requirements-harvest','reconcile','pitfall'],'proposed','S653 checkpoint; docs/session_654_handoff.md and the lane files',null,null,'SkyGodwit (S653)',date '2026-11-14'),
 ('p-subscription-notices-cost-context-s653','pitfall','PR subscription notices cost about 8,000 tokens each','S653: each PR subscription notice cost about 8,000 tokens, and workers'' PRs subscribed the session; context went 16% to 73% in 100 minutes. Unsubscribe from a worker''s PR at once and gate it at a scheduled check-in.',array['conductor','context','pitfall'],'proposed','S653 checkpoint; docs/session_654_handoff.md and the lane files',null,null,'SkyGodwit (S653)',date '2026-11-14'),
 ('p-at-mention-in-worker-comment-s653','pitfall','A worker''s comment @-mentioned COBIx by name, not login','S653: a worker''s PR comment opened "@COBIx", which is not his login (cobi-cto); it was edited out. A bare @name notifies whoever holds that login; write COBIx''s name without the @.',array['conductor','github','pitfall'],'proposed','S653 checkpoint; docs/session_654_handoff.md and the lane files',null,null,'SkyGodwit (S653)',date '2026-11-14'),
 ('p-worker-not-resumable-after-worktree-removed-s653','pitfall','A worker cannot resume once its checkout is removed','S653: a worker could not be resumed after its worktree was removed. Remove a checkout only when its worker is finished for good.',array['conductor','worktree','pitfall'],'proposed','S653 checkpoint; docs/session_654_handoff.md and the lane files',null,null,'SkyGodwit (S653)',date '2026-11-14')
@@ -49,7 +49,7 @@ where m.slug in
 group by m.slug, m.summary order by m.slug;
 
 -- ===========================================================================================================
--- STATEMENT 2 -- NOT YET RUN. 1 row, d-honors-step1-applied-s653. Step 1 is CONFIRMED landed (the conductor's live read at 18:49:43Z:
+-- STATEMENT 2 -- RUN by the conductor at 18:55:13Z 2026-11-14, with STATEMENT 1 (see above). 1 row, d-honors-step1-applied-s653. Step 1 is CONFIRMED landed (the conductor's live read at 18:49:43Z:
 -- the four rows stamped 18:44:02Z, kb_curation 40,711 to 40,713 rows), so it may run with STATEMENT 1 or after it.
 -- ===========================================================================================================
 insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values

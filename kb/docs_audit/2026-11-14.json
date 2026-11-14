@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1496,
-    "bytes": 15748627,
+    "bytes": 15749362,
     "over_budget": 3,
     "handoff_max": 654,
     "always_loaded_files": 1,
@@ -31,7 +31,7 @@
       },
       "index": {
         "files": 1,
-        "bytes": 10917,
+        "bytes": 10919,
         "over": 0
       },
       "lessons": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 615,
-        "bytes": 4405257,
+        "bytes": 4405990,
         "over": 0
       }
     },
@@ -62,8 +62,8 @@
     },
     "vault": {
       "files": 27964,
-      "bytes": 4945311484,
-      "heavy_bytes": 3607859165,
+      "bytes": 4945312486,
+      "heavy_bytes": 3607859432,
       "heavy_share": 0.73,
       "ignore_filters": [
         "agent-a888d62f419ec6f25/kb/receipts",
@@ -201,10 +201,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2426339444,
+        "bytes": 2426339711,
         "kind": "dir"
       },
-      "message": "directory totals 2,426,339,444 B inside the vault"
+      "message": "directory totals 2,426,339,711 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -7,14 +7,14 @@ kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
 ---
 
-# You are SkyPlover (Session 654)
+# You are SkyWhimbrel (Session 654)
 
 From SkyGodwit, S653, conductor mode: Sam opened it at 17:01Z 2026-11-14 with the S653 opening line (web,
 https://claude.ai/code/session_01Rvwe2XbKJNroFNaUH2pMyQ). This is S653's **full checkpoint** (shared data was written: five
 rereads of `program_requirement_records` and Honors step 1 in `kb_curation`; lanes changed state), written from 18:50Z
 (`date -u`) on `claude/checkpoint-s653` over `main` at `b00fca4f`. A second session ran beside this one from 18:33Z (below).
-A fact marked *as reported* was not re-read by the worker that wrote this file. The headline pair and harvest row in
-`kb/status/program-requirements.json` come from the conductor's Supabase reads in a follow-up commit.
+A fact marked *as reported* was not re-read by the worker that wrote this file. **Step 12's stamps were not run** (the
+conductor reached its context line): run them first, below.
 
 ## First things, in order
 
@@ -196,8 +196,14 @@ Touched: the docs audit and `--apply`; this handoff; the lanes `program-requirem
 20,000 bytes; retired text moved verbatim to the lessons docs, *Moved from the lane (S653 checkpoint)*); both lessons
 docs' S653 sections; the KB note `methodology-a-test-must-not-take-its-rule-as-the-truth`; `conductor_mode.md` (S653
 lessons, Start and Checkpoint); `docs/reference/stack_scouting.md` (new); the index rebuild; the run logs
-`kb/status/program-requirements.json` and `course.json` (the headline pair and harvest row follow from the conductor's
-reads); the memory receipt (drafted; the conductor runs it). **Skipped:** the pipeline view (no roadmap row, auditor count
+`kb/status/program-requirements.json` and `course.json` (session fields and changes only); the memory receipt
+`kb/receipts/cpl_memory_s653_rows_2026-11-14.sql` (24 rows; RUN by the conductor at 18:55:13Z in one
+`execute_sql` call, verify read back 24 rows with 24 create log rows). **Skipped, step 12's stamps:** the conductor neared its context line and ran none of them, so run
+these three first, through the Supabase MCP and `get_trigger`: (1) the query `python3 scripts/queue_status.py
+--headline-sql` prints, then `python3 scripts/queue_status.py --stamp --next-run <next_run_at> --headline <active>
+<complete> <colleges>`, with `next_run_at` from `get_trigger` on `trig_01L8K64ZKYb5eALdT4HW6NAV`; (2) the query
+`python3 scripts/queue_status.py --harvest-sql` prints, then `python3 scripts/queue_status.py --harvest '<the row as
+JSON>'`; (3) commit `kb/status/program-requirements.json` on a `claude/*` branch and merge on a green `test`. **Also skipped:** the pipeline view (no roadmap row, auditor count
 or re-mint moved); `kb/README.md` and `README.md` (no KB structure or user-facing surface changed beyond lane detail); the
 §11 rows (no lane changed live, in progress or parked; only the standing-sheet line moved to Sheet 198). The vault work
 (the session note, the wiki touch, Sheet 198's builder cards) is samueltlee/CPLBrain#791
@@ -210,4 +216,4 @@ At writing the conductor held no PR subscription (all dropped) and one artifact 
 the watch and any scheduled check-in at sign-off. The second session keeps its own check-in for about 00:10Z 2026-11-15
 (item 5 of its ledger above). Workers and their checkouts do not survive the session: brief a fresh worker per open branch.
 
-Greetings, you are SkyPlover (Session 654), see SkyGodwit's handoff — `docs/session_654_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_654_handoff.md) — let's keep rolling with our queue.
+Greetings, you are SkyWhimbrel (Session 654), see SkyGodwit's handoff — `docs/session_654_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_654_handoff.md) — let's keep rolling with our queue.
