@@ -3630,6 +3630,48 @@ ge_given = C.assign([calgetc, speech], [ge_page])
 check((ge_given["45068"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CALGETC")
       and ge_given["02588"]["best"] is None and ge_given["02588"]["lost"] == [],
       "a program never files the pattern's page as one it lost: %r" % {k: v["lost"] for k, v in ge_given.items()})
+check(not C.ge_page_names_program(ge_page, speech) and not C.ge_page_names_program(ge_page, calgetc),
+      "the Cal-GETC page names no program once the pattern is set aside (S646 holds)")
+
+# A page that names a program beside the pattern is that program's page (S653). Riverside City heads its transfer
+# degrees "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)"; under S646's rule each lost its own
+# page (capture 43619958385: 36 page_claimed, 4 not_found). Read on the committed capture (run 38108461470): every
+# filed page, its heading as filed and its listed codes printed, and the five degrees the conductor checked.
+def _printed(code):
+    m = re.match(r"^([A-Z]+?)(C\d{4}H?)$", code) or re.match(r"^([A-Z]+)(\d.*)$", code)
+    return "%s %s" % m.groups() if m else code
+
+
+with open(os.path.join(ROOT, "kb", "program_requirements_college", "riverside_city", "sources.json")) as _fh:
+    rcc_src = [s for s in json.load(_fh) if (s.get("source") or {}).get("url")]
+rcc_pages, rcc_seen = [], set()
+for s in rcc_src:
+    if s["source"]["url"] in rcc_seen:
+        continue
+    rcc_seen.add(s["source"]["url"])
+    body = s["source"]["h1"] + "\n" + "\n".join(_printed(c) + " Course" for c in s["codes_found"]) + "\nTotal 18 units"
+    rcc_pages.append(page(s["source"]["url"], s["source"]["h1"], body))
+rcc_own = {"30581": "/6053", "32658": "/6040", "32813": "/Anthro_ADT", "30578": "/5928", "31561": "/5960"}
+rcc_progs = [{"control_number": s["control_number"], "title": s["title"], "award": s["award"],
+              "closed_list": [{"code": _printed(c)} for c in s["codes_found"]]}
+             for s in rcc_src if s["control_number"] in rcc_own]
+check(len(rcc_progs) == 5 and all(C.ge_pattern_page(next(p for p in rcc_pages if p["url"].endswith(rcc_own[g["control_number"]])))
+                                  for g in rcc_progs),
+      "each of the five degrees' own pages names a general education pattern")
+rcc_given = C.assign(rcc_progs, rcc_pages)
+check(all((rcc_given[cn]["best"] or {}).get("url", "").endswith(tail) for cn, tail in rcc_own.items()),
+      "the five degrees claim their own pages: %r" % {cn: (v["best"] or {}).get("url", "")[-12:] for cn, v in rcc_given.items()})
+_names = C.ge_page_names_program
+C.ge_page_names_program = lambda pg, program: False      # S646's rule as it stood
+rcc_before = C.assign(rcc_progs, rcc_pages)
+C.ge_page_names_program = _names
+check(not any((rcc_before[cn]["best"] or {}).get("url", "").endswith(tail) for cn, tail in rcc_own.items()),
+      "under S646's rule as it stood, none of the five reads its own page")
+check(not C.ge_page_names_program({"h1": "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)"},
+                                  {"title": "Sociology"})
+      and C.ge_page_names_program({"h1": "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)"},
+                                  {"title": "Psychology"}),
+      "a degree's page names its own program, never a sibling's")
 
 # Two different current programs never share one page's list on a title tie alone (the S646 conductor's
 # ruling). Glendale's titles nest, and each pair tied on the longer title's page (capture 43366669415's

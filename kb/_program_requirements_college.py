@@ -565,6 +565,17 @@ def ge_pattern_page(pg: dict) -> bool:
     return any(ge_pattern(x) for x in (pg.get("code"), pg.get("h1"), pg.get("title"), path))
 
 
+def ge_page_names_program(pg: dict, program: dict) -> bool:
+    """Whether a general education pattern's page heads itself with the program, the pattern's words set
+    aside: its heading names every word of the program's title (heading_match). Riverside City heads each
+    transfer degree's own page with the degree and the pattern it follows, "Sociology - Associate in Arts
+    for Transfer (ADT) - AA696 (CalGETC)", and under the S646 rule each of those degrees lost its own page
+    (36 page_claimed in capture 43619958385). A pattern's own page ("Cal-GETC - Certificate of Achievement",
+    Glendale's) names no program once the pattern is set aside, and stays no other program's list."""
+    head = pg.get("h1") or TITLE_SPLIT.split(pg.get("title") or "")[0]
+    return heading_match({"h1": GE_PATTERN.sub(" ", head or "") or " "}, program)[0] >= 1.0
+
+
 def candidates(program: dict, pages: list[dict]) -> list[dict]:
     """Every page naming at least ACCEPT_SHARE of the program's listed courses,
     best first: the page naming its award, then the larger share of its title,
@@ -585,8 +596,9 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
             continue
         # A general education pattern's page lists courses in every discipline, so it names
         # most of many programs' lists; it is the list of a program only when the program is
-        # that pattern (ge_pattern(), S646).
-        if ge_pattern_page(pg) and not ge_pattern(program.get("title")):
+        # that pattern (ge_pattern(), S646), or when its heading names the program beside the
+        # pattern (ge_page_names_program(), S653: Riverside City's transfer degrees).
+        if ge_pattern_page(pg) and not ge_pattern(program.get("title")) and not ge_page_names_program(pg, program):
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
