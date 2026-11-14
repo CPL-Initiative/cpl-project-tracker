@@ -5,11 +5,11 @@ name: Deploy Pages (lean)
 # on every push). Repo Settings → Pages → Source MUST be set to "GitHub Actions"
 # for this to be the active deployer.
 #
-# What it publishes: the whole repo MINUS internal-only data the browser never
-# fetches (~200MB of kb/ staging + provenance + dry-run alias maps + build
-# inputs). The served-file ASSERTION below fails the build loudly if a known
-# browser-served path is ever missing from _site, so an over-aggressive exclude
-# can never silently ship a broken site.
+# What it publishes: only the paths marked "publish" in .github/pages_allowlist.txt
+# (Sam on #3104, 2026-11-11: "yes to all recommendations"; the allowlist since S649).
+# A new file or folder stays off the public site until it is given a line there, and
+# tests/pages_allowlist.test.js fails until it is. The served-file ASSERTION below
+# fails the build loudly if a known browser-served path is ever missing from _site.
 #
 # Triggers (all three are load-bearing):
 #   • push to main      — human merges / PR merges (they use a real token → DO fire)
@@ -68,54 +68,30 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          # Export only COMMITTED files (git archive omits .git, node_modules, and
-          # everything gitignored — e.g. *.full.json, CustomReport_latest.json).
-          git archive --format=tar HEAD | tar -x -C _site
-          # Drop internal-only paths the browser never fetches (verified by the
-          # served-path audit — docs/pages_lean_deploy_scope.md). The served-file
-          # ASSERTION step below fails the build if any of these removed a served
-          # asset, so an over-aggressive prune can never silently ship a broken site.
-          # prototype/ IS served (2026-07-09): the versioned prototype gallery is
-          # the design-lock surface Sam reviews in the browser (172K, static).
-          rm -rf _site/docs _site/tests _site/tools _site/archive \
-                 _site/chatbox _site/funding _site/reflections _site/nudges _site/news \
-                 _site/scripts _site/.github _site/tmc/source_data
-          rm -f  _site/*.xlsx _site/*.bak
-          # Big kb/ staging + curated anchors + lexicons — generator INPUTS, baked
-          # into the served unified_courses_*.js, never fetched live.
-          rm -f  _site/kb/coci_minted_courses.json _site/kb/coci_minted_memberships.json \
-                 _site/kb/coci_minted_singletons.json _site/kb/cid_articulation_joins.json \
-                 _site/kb/promotions.json _site/kb/coci_unified_courses.json \
-                 _site/kb/common_courses.json _site/kb/course_crosswalk.json \
-                 _site/kb/discipline_inference.json
-          rm -f  _site/kb/reference/*.xlsx
-          # COS Certification Finder registry — tracker-internal per the
-          # CareerOneStop terms (kb/_sync_cos_certifications.py header); the
-          # browser fetches only the derived kb/cos_matches.json overlay.
-          # Same for the MOC crosswalk registry (~9MB, no browser consumer yet).
-          rm -f  _site/kb/reference/cos_certifications.json \
-                 _site/kb/reference/moc_crosswalk.json
-          # Audit provenance — only the slim latest.json summaries are served.
-          rm -f  _site/kb/row_audit/*.md _site/kb/row_audit/*.full.json _site/kb/exhibit_audit/*.md
-          # Re-mint / fold / dry-run / apply output dirs (alias maps, collisions) — never served.
-          # One file under them IS served: the Subjects tab reads the daily scan, kb/csr_out/latest.json
-          # (its Progress page read "Could not be read" while the whole directory was pruned, S574).
-          # So is last night's procedures report, kb/cer_procedures_out/latest.json: Exhibits, the CER tab and the
-          # Exhibits progress read it, and it 404'd while pruned (COBIx #2921, S604). Its summary is already public in the repo.
-          for d in _site/kb/*_out; do
-            if [ "$d" = "_site/kb/csr_out" ]; then find "$d" -mindepth 1 -maxdepth 1 ! -name latest.json -exec rm -rf {} +;
-            elif [ "$d" = "_site/kb/cer_procedures_out" ]; then find "$d" -mindepth 1 -maxdepth 1 ! -name latest.json -exec rm -rf {} +;
-            else rm -rf "$d"; fi
-          done
-          rm -rf _site/kb/*_dryrun _site/kb/*_apply _site/kb/subj4_* _site/kb/*_fold
-          # Data-write receipts (Rule 10 a2): the rollback record, read in the repo, never by a
-          # page. 2.0 GB of the 2.9 GB site on 2026-11-10, when the deploy's sync began timing out
-          # (COBIx on #3077: the artifact was 1.6 GB, over Pages' 1 GB published-site limit).
-          rm -rf _site/kb/receipts
-          # The harvest's heading-agreement snapshot (335 KB) and COBIx's scout files: read in the repo,
-          # never by a tab (S645, review of #3201). tests/pages_size_guard.test.js holds the list.
-          rm -rf _site/kb/harvest_scouting
-          rm -f  _site/kb/status/harvest_heading_agreement.json _site/kb/status/harvest_heading_agreement.md
+          # Export only COMMITTED files, and of those only the paths the allowlist marks
+          # "publish" (.github/pages_allowlist.txt; Sam on #3104: "yes to all
+          # recommendations"). A path not on the list is never published: a new folder
+          # stays off the public site until someone gives it a line, and
+          # tests/pages_allowlist.test.js fails until they do. The reasons each withheld
+          # path stays internal (kb/ staging and receipts, re-mint output, audit
+          # provenance, the CareerOneStop registry, docs/tests/tools ...) are in
+          # docs/pages_lean_deploy_scope.md. git archive omits .git, node_modules and
+          # everything gitignored, as before.
+          mapfile -t publish < <(awk '$1 == "publish" { print $2 }' .github/pages_allowlist.txt)
+          if [ "${#publish[@]}" -lt 100 ]; then
+            echo "::error::.github/pages_allowlist.txt names only ${#publish[@]} publish paths (expected hundreds); not deploying."
+            exit 1
+          fi
+          # Fail loudly, naming every one, if an allowlisted path is not in the commit
+          # (a rename or a deletion that left its line behind).
+          git ls-tree -r --name-only HEAD > /tmp/tracked.txt
+          missing=$(printf '%s\n' "${publish[@]}" | awk 'NR == FNR { n = split($0, a, "/"); p = ""; for (i = 1; i <= n; i++) { p = (i == 1 ? a[1] : p "/" a[i]); have[p] = 1 }; next } !($0 in have)' /tmp/tracked.txt -)
+          if [ -n "$missing" ]; then
+            while IFS= read -r m; do echo "::error::allowlisted path is not in the commit: $m"; done <<< "$missing"
+            echo "Fix .github/pages_allowlist.txt (remove or rename the line) — not deploying."
+            exit 1
+          fi
+          git --literal-pathspecs archive --format=tar HEAD -- "${publish[@]}" | tar -x -C _site
           # GitHub Pages must skip Jekyll for a static site (the repo also ships a
           # root .nojekyll; this is belt + braces).
           touch _site/.nojekyll
@@ -125,7 +101,7 @@ jobs:
           # site is noticed before it fails.
           mb=$(du -sm _site | cut -f1)
           if [ "$mb" -gt 1000 ]; then
-            echo "::error::_site is ${mb} MB, over GitHub Pages' 1 GB limit. Prune what the browser never fetches (du -sh _site/* | sort -h)."
+            echo "::error::_site is ${mb} MB, over GitHub Pages' 1 GB limit. Withhold what the browser never fetches in .github/pages_allowlist.txt (du -sh _site/* | sort -h)."
             exit 1
           elif [ "$mb" -gt 800 ]; then
             echo "::warning::_site is ${mb} MB, nearing GitHub Pages' 1 GB limit. du -sh _site/* | sort -h names the largest paths."

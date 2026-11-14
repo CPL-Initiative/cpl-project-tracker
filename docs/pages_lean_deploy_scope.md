@@ -33,10 +33,15 @@ merging `pages.yml` is zero-risk. Once flipped, `pages.yml` is the deployer.
 
 ## How `pages.yml` works
 
-- **`git archive HEAD | tar -x`** into `_site` — exports only committed files (no
-  `.git`, `node_modules`, or gitignored junk like `*.full.json`).
-- **`rm`** the internal-only paths (default-INCLUDE, explicit-remove — so a *new*
-  served file is never accidentally dropped). Removed: `docs/ tests/
+- **The allowlist (S649, #3104).** Sam on #3104: *"yes to all recommendations"*.
+  `pages.yml` exports from the commit only the paths marked `publish` in
+  `.github/pages_allowlist.txt` (`git --literal-pathspecs archive HEAD -- <paths>`),
+  and fails, naming each, if a listed path is not in the commit. A new file or
+  folder stays off the site until it gets a line, and `tests/pages_allowlist.test.js`
+  fails until it does. The `withhold` lines record the internal paths below; they
+  are the old prune's patterns, and the deploy never reads them.
+- **Before S649** the deploy exported every committed file and then ran `rm` on
+  the internal-only paths (default-include, explicit-remove). Withheld: `docs/ tests/
   tools/ archive/ chatbox/ funding/ reflections/ nudges/ news/ scripts/ .github/
   tmc/source_data/`, root `*.xlsx`/`*.bak`, `kb/reference/*.xlsx`, the big
   `kb/coci_minted_*.json` / `kb/cid_articulation_joins.json` staging + curated
@@ -44,8 +49,8 @@ merging `pages.yml` is zero-risk. Once flipped, `pages.yml` is the deployer.
   the audit `*.md`/`*.full.json` (only `latest.json` is served), and the
   `kb/*_out` / `*_dryrun` / `*_apply` / `subj4_*` / `*_fold` re-mint output dirs.
 - **Served-path ASSERTION** — fails the build loudly if any known browser-served
-  path is missing from `_site`, so an over-aggressive prune can never silently
-  ship a broken site. This is the real safety net behind the exclude list.
+  path is missing from `_site`, so a missing publish line can never silently
+  ship a broken site; the allowlist test checks the same list at PR time.
 - **`actions/upload-pages-artifact` + `actions/deploy-pages`**.
 
 ## Trigger model (all three load-bearing)
@@ -72,7 +77,10 @@ committed files: **0 served files dropped**.
 
 ## Rollback
 
-Flip Settings → Pages → Source back to "Deploy from a branch" (main / root). The
+The allowlist: `git revert` its squash commit on `main`. That restores the export-then-prune
+step, and the next `pages.yml` run (the revert's own push) redeploys the old way.
+
+The whole custom deploy: flip Settings → Pages → Source back to "Deploy from a branch" (main / root). The
 `.nojekyll` keeps that path fast. `pages.yml` then no-ops (its `deploy-pages` step
 needs the Actions source).
 

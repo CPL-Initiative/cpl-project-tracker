@@ -18,7 +18,8 @@ check("it links back to the Common Subjects Reference", /href="\.\.\/index\.html
 check("no raw hex outside :root, and no emoji", !/#[0-9a-fA-F]{3,6}\b/.test(PAGE.replace(/:root \{[\s\S]*?\}/, "").replace(/href="[^"]*"/g, ""))
   && !/[\u{1F300}-\u{1FAFF}☀-➿]/u.test(PAGE));
 const PG = fs.readFileSync(".github/workflows/pages.yml", "utf8");
-check("prototype/ ships with the site (the deploy prunes docs/, never prototype/)", !/rm -rf[^\n]*_site\/prototype/.test(PG));
+check("prototype/ ships with the site (the Pages allowlist publishes prototype/)",
+  /^publish prototype$/m.test(fs.readFileSync(".github/pages_allowlist.txt", "utf8")) && !/rm -rf[^\n]*_site\/prototype/.test(PG));
 let pass = 0;
 results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); if (ok) pass++; });
 console.log("\n" + pass + "/" + results.length + " passed");

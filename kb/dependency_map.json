@@ -4981,7 +4981,7 @@
      "line": 53
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:CustomReport_*.json": {
@@ -5083,7 +5083,7 @@
      "line": 36
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:a11y.config.js": {
@@ -5313,7 +5313,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:chatbox/build_program_courses.py": {
@@ -5326,7 +5326,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:chatbox/college_geo.json": {
@@ -5353,7 +5353,7 @@
      "line": 32
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:chatbox/college_landing_pages.json": {
@@ -5386,7 +5386,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": [
     "workflow:cpl-landing-pages.yml"
    ]
@@ -5401,7 +5401,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:chatbox/preflight_bgca.sh": {
@@ -5414,7 +5414,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:chatbox/scrape_landing_pages.py": {
@@ -5427,7 +5427,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:chatbox/smoke_test.sh": {
@@ -5447,7 +5447,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:chatbox/sync_chatbox_exhibits.py": {
@@ -5460,7 +5460,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:chatbox/sync_coci_offerings.py": {
@@ -5473,7 +5473,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:chatbox/sync_program_courses.py": {
@@ -5486,7 +5486,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:cip_crosswalk.js": {
@@ -8986,7 +8986,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:funding/_build_funding_performance.py": {
@@ -8999,7 +8999,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:funding/nc_credential_crosswalk.json": {
@@ -9012,7 +9012,7 @@
      "line": 702
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:funding/nc_outcome_feasibility/2026-10-22/nc_courses.json": {
@@ -9025,7 +9025,7 @@
      "line": 84
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:funding/nc_outcome_feasibility/2026-10-22/nc_shares.json": {
@@ -9038,7 +9038,7 @@
      "line": 83
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:funding/nc_outcome_feasibility/2026-10-22/summary.json": {
@@ -9051,7 +9051,7 @@
      "line": 136
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:funding_model_payload.js": {
@@ -10895,7 +10895,7 @@
      "line": 165
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/anchor_rekey_out/<date>/alias_map.json": {
@@ -10934,7 +10934,7 @@
      "line": 651
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/authority_recode_out/2026-09-03/fl_classification.json": {
@@ -10947,7 +10947,7 @@
      "line": 646
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/authority_recode_out/2026-09-03/seed_edits.json": {
@@ -10967,7 +10967,7 @@
      "line": 115
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/authority_recode_out/<date>/alias_map.json": {
@@ -11286,7 +11286,7 @@
      "line": 169
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/cid_claim_audit.json": {
@@ -12935,7 +12935,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": [
     "workflow:overmerge-apply.yml",
     "workflow:phase-1e-apply.yml"
@@ -13388,7 +13388,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": [
     "workflow:overmerge-apply.yml",
     "workflow:phase-1e-apply.yml"
@@ -13519,7 +13519,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": [
     "workflow:overmerge-apply.yml",
     "workflow:phase-1e-apply.yml"
@@ -13703,7 +13703,7 @@
      "line": 68
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/common_courses_era.json": {
@@ -13852,7 +13852,7 @@
      "line": 69
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/course_outcomes": {
@@ -14125,7 +14125,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -14163,7 +14163,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -14176,7 +14176,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -14258,7 +14258,7 @@
      "line": 158
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/credential_merges_out/2026-11-01/ib_fold_receipt.json": {
@@ -14271,7 +14271,7 @@
      "line": 153
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/credential_merges_out/2026-11-01/ib_kb_curation_update_receipt.json": {
@@ -14284,7 +14284,7 @@
      "line": 161
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/credential_review_overlay.json": {
@@ -14727,7 +14727,7 @@
      "line": 69
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/csr_out/confirm": {
@@ -14795,7 +14795,7 @@
      "line": 88
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/csr_out/stray_triage.md": {
@@ -14808,7 +14808,7 @@
      "line": 105
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/csr_procedures.json": {
@@ -15334,7 +15334,7 @@
      "line": 1333
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/docket/cases.json": {
@@ -15403,7 +15403,7 @@
      "line": 366
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/esl_fold_spotcheck/<date>/worklist.json": {
@@ -15436,7 +15436,7 @@
      "line": 254
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/esl_package_out/2026-07-15/esl_package_report.md": {
@@ -15449,7 +15449,7 @@
      "line": 377
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/esl_package_out/2026-08-24/esl_actionable.json": {
@@ -15469,7 +15469,7 @@
      "line": 94
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/esl_package_out/2026-08-24/esl_apply_plan.json": {
@@ -15489,7 +15489,7 @@
      "line": 238
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/esl_package_out/<date>/esl_actionable.json": {
@@ -15819,7 +15819,7 @@
      "line": 237
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/exhibits_adoption.json": {
@@ -16388,7 +16388,7 @@
      "line": 208
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/identities_rekey_out/2026-09-05/dead_worklist.md": {
@@ -16401,7 +16401,7 @@
      "line": 223
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/insert.sql": {
@@ -16568,7 +16568,7 @@
      "line": 240
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/kin_pe_pass2_out/2026-06-12/hs_title_fold.json": {
@@ -16581,7 +16581,7 @@
      "line": 128
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/kin_pe_pass2_out/2026-06-12/hs_title_fold.md": {
@@ -16601,7 +16601,7 @@
      "line": 125
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/kin_pe_pass2_out/2026-06-12/supabase_hs_ops.json": {
@@ -16614,7 +16614,7 @@
      "line": 151
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/kin_pe_pass2_out/2026-06-12/supabase_merge_ops.json": {
@@ -16634,7 +16634,7 @@
      "line": 275
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/kin_pe_pass2_out/<date>/alias_map.json": {
@@ -16689,7 +16689,7 @@
      "line": 192
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/nc_learning_partners.json": {
@@ -16825,7 +16825,7 @@
      "line": 19
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/orphan_parent_worklist.json": {
@@ -16892,7 +16892,7 @@
      "line": 1311
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/overmerge_out/2026-05-29/review_hold.json": {
@@ -16905,7 +16905,7 @@
      "line": 1261
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/overmerge_title_discipline.json": {
@@ -16997,7 +16997,7 @@
      "line": 256
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/prefix_fold_out/<date>/alias_map.json": {
@@ -17551,7 +17551,7 @@
      "line": 73
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/receipts": {
@@ -17639,7 +17639,7 @@
      "line": 1262
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/reclustering_s648_out/2026-11-13/plan.md": {
@@ -17652,7 +17652,7 @@
      "line": 1267
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/reclustering_s648_out/2026-11-13/post_apply_simulated.json": {
@@ -17665,7 +17665,7 @@
      "line": 1045
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/reclustering_s648_out/<date>/post_read.json": {
@@ -18159,7 +18159,7 @@
      "line": 68
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/reference/coci_course_list.xlsx": {
@@ -18319,7 +18319,7 @@
      "line": 71
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/reference/coci_courses.json": {
@@ -18804,7 +18804,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": [
     "workflow:moc-crosswalk-sync.yml"
    ]
@@ -19188,7 +19188,7 @@
      "line": 38
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/remint_blast_worklist.json": {
@@ -19599,7 +19599,7 @@
      "line": 65
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/status/harvest_no_closed_list.json": {
@@ -19768,7 +19768,7 @@
      "line": 68
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/subj4_dryrun": {
@@ -19799,7 +19799,7 @@
      "line": 79
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/subj4_dryrun/blocked.json": {
@@ -19812,7 +19812,7 @@
      "line": 622
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/subj4_dryrun/report.md": {
@@ -19825,7 +19825,7 @@
      "line": 68
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/subj4_fold_out/<date>/alias_map.json": {
@@ -19878,7 +19878,7 @@
      "line": 349
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/subjects_list_recode_out/<date>/alias_map.json": {
@@ -20067,7 +20067,7 @@
      "line": 81
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/trail_crew_out/2026-07-10/staged_fixes.json": {
@@ -20080,7 +20080,7 @@
      "line": 116
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/trail_crew_out/2026-07-10/trail_report.md": {
@@ -20093,7 +20093,7 @@
      "line": 137
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/twin_merge_out/<date>-postfold/alias_map.json": {
@@ -20132,7 +20132,7 @@
      "line": 393
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/uc_cur_zseq.json": {
@@ -20295,7 +20295,7 @@
      "line": 60
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/unclassified_preseed.json": {
@@ -20766,7 +20766,7 @@
      "line": 331
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/zband_retire_out/2026-09-03/duplicates.json": {
@@ -20779,7 +20779,7 @@
      "line": 335
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/zband_retire_out/2026-09-03/materialized.json": {
@@ -20799,7 +20799,7 @@
      "line": 377
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:kb/zband_retire_out/<date>/alias_map.json": {
@@ -21482,7 +21482,7 @@
      "line": 39
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:our_process.js": {
@@ -22451,7 +22451,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:reflections/summary.json": {
@@ -22470,7 +22470,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": [
     "workflow:weekly-reflections-summary.yml"
    ]
@@ -22722,7 +22722,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/cpl_funding.js": {
@@ -22748,7 +22748,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/daily_gate.sh": {
@@ -22761,7 +22761,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/fetch_gallery_thumbs.py": {
@@ -22774,7 +22774,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/fetch_sierra_art.py": {
@@ -22787,7 +22787,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/funding_video_figures.js": {
@@ -22813,7 +22813,7 @@
      "line": 50
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/install_browser.sh": {
@@ -22924,7 +22924,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/k10_disclosure_check.py": {
@@ -22937,7 +22937,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/draft.html": {
@@ -22957,7 +22957,7 @@
      "line": 111
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/library": {
@@ -22983,7 +22983,7 @@
      "line": 34
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/panel.html": {
@@ -22996,7 +22996,7 @@
      "line": 35
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/library_publish.py": {
@@ -23009,7 +23009,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/publish_skyview_desc_shards.sh": {
@@ -23029,7 +23029,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/stamp_asset_versions.py": {
@@ -23042,7 +23042,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/supabase_migrate.py": {
@@ -23055,7 +23055,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:scripts/tab_review_sheet/fs/capture.json": {
@@ -23750,7 +23750,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/admin_live_banner_control.test.js": {
@@ -23763,7 +23763,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/adopt_align_build_test.py": {
@@ -23776,7 +23776,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/adopt_page_build_test.py": {
@@ -23789,7 +23789,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/alias_chain_single_source_test.py": {
@@ -23802,7 +23802,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/american_spelling_test.py": {
@@ -23815,7 +23815,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/anchor_rekey_dryrun_test.py": {
@@ -23828,7 +23828,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ap_official_titles_test.py": {
@@ -23841,7 +23841,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/apply_concurrency_test.py": {
@@ -23854,7 +23854,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/athl_four_remint_test.py": {
@@ -23867,7 +23867,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/authority_recode_apply_test.py": {
@@ -23880,7 +23880,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/bash_read_guard_test.py": {
@@ -23893,7 +23893,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/browser_install_single_source_test.py": {
@@ -23906,7 +23906,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/budget_section_first_light_test.py": {
@@ -23919,7 +23919,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ccr_cpl_payload_test.py": {
@@ -23932,7 +23932,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ccr_cpl_universe_members_test.py": {
@@ -23945,7 +23945,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ccr_cpl_universe_test.py": {
@@ -23958,7 +23958,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ccr_doubt_test.py": {
@@ -23971,7 +23971,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ccr_level_layout_test.py": {
@@ -23984,7 +23984,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ccr_seed_confirm_test.py": {
@@ -23997,7 +23997,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ccr_seed_recheck_dryrun_test.py": {
@@ -24010,7 +24010,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ccr_sky_payload_test.py": {
@@ -24023,7 +24023,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ccr_universe_members_test.py": {
@@ -24036,7 +24036,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ccr_universe_orbits_test.py": {
@@ -24049,7 +24049,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/cer_classifier_rules_size_test.py": {
@@ -24062,7 +24062,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/cer_decision_apply_retry_test.py": {
@@ -24075,7 +24075,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/cer_decision_apply_test.py": {
@@ -24088,7 +24088,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/cer_procedures_test.py": {
@@ -24101,7 +24101,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/cert_naming_test.py": {
@@ -24114,7 +24114,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/chatbox_exhibits_sync_test.py": {
@@ -24127,7 +24127,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/chatbox_ghost_delete_test.py": {
@@ -24140,7 +24140,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/cid_claim_audit_test.py": {
@@ -24153,7 +24153,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/clep_official_titles_test.py": {
@@ -24166,7 +24166,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/cobi_live_banner.test.js": {
@@ -24179,7 +24179,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/coci_offerings_sync_chunk_test.py": {
@@ -24192,7 +24192,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/coci_program_cip_test.py": {
@@ -24205,7 +24205,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/college_briefing_publish_suppression_test.py": {
@@ -24225,7 +24225,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/college_contacts_harvest_runner_test.py": {
@@ -24238,7 +24238,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/college_contacts_harvest_sql_test.py": {
@@ -24251,7 +24251,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/college_page_read_test.py": {
@@ -24264,7 +24264,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/college_short_names_apply_test.py": {
@@ -24277,7 +24277,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/commons_data_live_test.py": {
@@ -24290,7 +24290,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/commons_data_status_build_test.py": {
@@ -24303,7 +24303,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/commons_status_build_test.py": {
@@ -24316,7 +24316,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/context_budget_test.py": {
@@ -24329,7 +24329,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/course_outcomes_load_test.py": {
@@ -24342,7 +24342,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/course_outcomes_objectives_standing_test.py": {
@@ -24355,7 +24355,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/course_outcomes_read_test.py": {
@@ -24368,7 +24368,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/course_outline_census_test.py": {
@@ -24381,7 +24381,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/course_outline_index_test.py": {
@@ -24394,7 +24394,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/course_outline_registry_fill_test.py": {
@@ -24407,7 +24407,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/course_title_cleanup_apply_test.py": {
@@ -24420,7 +24420,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/course_title_mojibake_test.py": {
@@ -24433,7 +24433,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/cred_rename_fold_issuer_test.py": {
@@ -24446,7 +24446,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/credential_catalog_sync_test.py": {
@@ -24459,7 +24459,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/credential_catalog_widening_test.py": {
@@ -24472,7 +24472,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/credential_family_apply_test.py": {
@@ -24485,7 +24485,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/credential_family_fold_contact_test.py": {
@@ -24498,7 +24498,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/credential_family_test.py": {
@@ -24511,7 +24511,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/credential_reference_statewide_basis_test.py": {
@@ -24524,7 +24524,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/credential_review_sites_test.py": {
@@ -24537,7 +24537,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/credential_review_stale_issuer_test.py": {
@@ -24550,7 +24550,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/credential_title_resolver_single_source_test.py": {
@@ -24563,7 +24563,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/credential_title_resolver_test.py": {
@@ -24576,7 +24576,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/csr_confirm_authority_test.py": {
@@ -24589,7 +24589,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/csr_procedures_test.py": {
@@ -24602,7 +24602,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/csr_quarterly_probe_test.py": {
@@ -24615,7 +24615,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/csr_trail_rules_test.py": {
@@ -24628,7 +24628,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ctdl_exchange_seed_test.py": {
@@ -24641,7 +24641,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/custom_report_payload_test.py": {
@@ -24654,7 +24654,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/custom_report_response_test.py": {
@@ -24667,7 +24667,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/daily_scrape_fails_loudly_test.py": {
@@ -24680,7 +24680,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/dependency_map_test.py": {
@@ -24693,7 +24693,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/discipline_blanks_worklist_test.py": {
@@ -24706,7 +24706,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/discipline_edge_fill_test.py": {
@@ -24719,7 +24719,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/docket_rulings_test.py": {
@@ -24732,7 +24732,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/docs_audit_test.py": {
@@ -24745,7 +24745,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/docs_index_build_test.py": {
@@ -24758,7 +24758,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/doctrine_lookup_test.py": {
@@ -24771,7 +24771,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/eacr_matrix_payload_test.py": {
@@ -24784,7 +24784,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/emptied_title_guard_test.py": {
@@ -24797,7 +24797,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/esl_fold_spotcheck_test.py": {
@@ -24810,7 +24810,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/esl_monthly_pass_test.py": {
@@ -24823,7 +24823,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/esl_reader_and_ladder_test.py": {
@@ -24836,7 +24836,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/esl_relevel_bands_test.py": {
@@ -24849,7 +24849,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/esl_sheet_apply_test.py": {
@@ -24862,7 +24862,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/eths_remint_test.py": {
@@ -24875,7 +24875,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/exhibit_reanalysis_jev_test.py": {
@@ -24888,7 +24888,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/exhibit_slo_neighbors_build_test.py": {
@@ -24901,7 +24901,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/exhibit_subject_fill_test.py": {
@@ -24914,7 +24914,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/exhibits_review_build_test.py": {
@@ -24927,7 +24927,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/exhibits_sweep_build_test.py": {
@@ -24940,7 +24940,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/fold_issuer_resolution_test.py": {
@@ -24953,7 +24953,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/fold_issuer_single_source_test.py": {
@@ -24966,7 +24966,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/fold_unclassified_test.py": {
@@ -24979,7 +24979,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/funding_career_import_test.py": {
@@ -24992,7 +24992,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/funding_name_resolver_test.py": {
@@ -25005,7 +25005,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/funding_nc_counts_test.py": {
@@ -25018,7 +25018,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/funding_origination_test.py": {
@@ -25031,7 +25031,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/glyph_sweep_test.py": {
@@ -25044,7 +25044,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/governance_docs_panel.test.js": {
@@ -25057,7 +25057,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/harvest_gap_census_test.py": {
@@ -25070,7 +25070,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/harvest_no_closed_list_diagnosis_test.py": {
@@ -25083,7 +25083,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ib_official_titles_test.py": {
@@ -25096,7 +25096,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/identities_rekey_test.py": {
@@ -25109,7 +25109,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/install_prompt_guards_test.py": {
@@ -25122,7 +25122,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/jev_adjudicate_test.py": {
@@ -25135,7 +25135,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/jev_agri_families_test.py": {
@@ -25148,7 +25148,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/jev_battery_test.py": {
@@ -25161,7 +25161,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/jev_harvest_test.py": {
@@ -25174,7 +25174,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/js_suite_gate_test.py": {
@@ -25187,7 +25187,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/k10_disclosure_check_test.py": {
@@ -25207,7 +25207,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/kpi_history_no_gaps_test.py": {
@@ -25220,7 +25220,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/kpi_history_write_test.py": {
@@ -25233,7 +25233,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/legacy_anchor_duplicates_test.py": {
@@ -25246,7 +25246,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/library_file_test.py": {
@@ -25259,7 +25259,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/library_publish_test.py": {
@@ -25272,7 +25272,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/map_custom_report_sync_test.py": {
@@ -25292,7 +25292,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/map_key_sketch_one_pull_test.py": {
@@ -25312,7 +25312,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/memory_audit_test.py": {
@@ -25325,7 +25325,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/merge_candidate_queue_test.py": {
@@ -25338,7 +25338,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/merge_chain_flatten_test.py": {
@@ -25351,7 +25351,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/mid_outcomes_compare_test.py": {
@@ -25364,7 +25364,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/mid_short_code_gate_test.py": {
@@ -25377,7 +25377,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/mq_title5_rename_test.py": {
@@ -25390,7 +25390,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/next_slo_colleges_test.py": {
@@ -25403,7 +25403,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/occupation_matcher_stemming_test.py": {
@@ -25416,7 +25416,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/orphan_parent_worklist_test.py": {
@@ -25429,7 +25429,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/partner_crosswalk_test.py": {
@@ -25442,7 +25442,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/prefix_fold_apply_test.py": {
@@ -25455,7 +25455,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/prefix_fold_dryrun_test.py": {
@@ -25468,7 +25468,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/probe_lifecycle_checks_test.py": {
@@ -25481,7 +25481,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_courses_build_test.py": {
@@ -25494,7 +25494,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_map_parse_test.py": {
@@ -25507,7 +25507,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_record_verdicts_sql_test.py": {
@@ -25520,7 +25520,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_requirements_college_test.py": {
@@ -25533,7 +25533,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_requirements_dated_reads_test.py": {
@@ -25546,7 +25546,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_requirements_display_apply_test.py": {
@@ -25559,7 +25559,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_requirements_extract_halt_test.py": {
@@ -25572,7 +25572,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_requirements_heading_agreement_test.py": {
@@ -25585,7 +25585,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_requirements_pdf_numbers_after_test.py": {
@@ -25598,7 +25598,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_requirements_pilot_test.py": {
@@ -25611,7 +25611,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_requirements_reconcile_test.py": {
@@ -25624,7 +25624,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_requirements_wave_test.py": {
@@ -25637,7 +25637,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_source_addenda_read_test.py": {
@@ -25650,7 +25650,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/program_source_census_test.py": {
@@ -25663,7 +25663,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/queue_status_test.py": {
@@ -25676,7 +25676,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/refresh_button_no_secret_test.py": {
@@ -25689,7 +25689,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/rekey_crnc_mirrors_test.py": {
@@ -25702,7 +25702,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/rekey_kb_curation_chain_test.py": {
@@ -25715,7 +25715,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/remint_blast_radius_test.py": {
@@ -25728,7 +25728,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/roep_display_test.py": {
@@ -25741,7 +25741,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/run.js": {
@@ -25754,7 +25754,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/second_reader_test.py": {
@@ -25767,7 +25767,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/sheet181_ruled_renames_test.py": {
@@ -25780,7 +25780,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/skyview_built_from_source_test.py": {
@@ -25793,7 +25793,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/statewide_cid_hold_test.py": {
@@ -25806,7 +25806,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/statewide_kpi_test.py": {
@@ -25819,7 +25819,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/statewide_recs_test.py": {
@@ -25832,7 +25832,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/stop_hook_git_check_test.py": {
@@ -25845,7 +25845,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/supabase_function_grants_test.py": {
@@ -25858,7 +25858,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/supabase_migrate_test.py": {
@@ -25871,7 +25871,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/supabase_sql_guard_test.py": {
@@ -25884,7 +25884,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/supabase_table_grants_test.py": {
@@ -25897,7 +25897,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/title_in_use_test.py": {
@@ -25910,7 +25910,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/top_code_lookup_code4_test.py": {
@@ -25923,7 +25923,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/uc_cur_promote_test.py": {
@@ -25936,7 +25936,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/ui_pass_test.py": {
@@ -25949,7 +25949,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/umbrella_codes_are_declared_test.py": {
@@ -25962,7 +25962,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/unified_units_range_test.py": {
@@ -25975,7 +25975,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/video_context_test.py": {
@@ -25988,7 +25988,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/vision_2030_first_light_test.py": {
@@ -26001,7 +26001,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/workflow_failure_watch_test.py": {
@@ -26014,7 +26014,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tests/zband_retire_apply_test.py": {
@@ -26027,7 +26027,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:thumbs-more.json": {
@@ -26237,7 +26237,7 @@
      "how": "commit"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tools/first_light_gallery/california.json": {
@@ -26250,7 +26250,7 @@
      "line": 119
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tools/first_light_gallery/index.json": {
@@ -26261,7 +26261,7 @@
      "how": "commit"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tools/first_light_gallery/thumbs": {
@@ -26291,7 +26291,7 @@
      "how": "commit"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tools/first_light_verify.json": {
@@ -26302,7 +26302,7 @@
      "how": "commit"
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tools/source_cpl_stories.mjs": {
@@ -26315,7 +26315,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:tools/source_first_light_art.mjs": {
@@ -26328,7 +26328,7 @@
      "line": 0
     }
    ],
-   "served": true,
+   "served": false,
    "main_committers": []
   },
   "file:top_code_lookup_code4_<date>_s288.json": {
@@ -34206,16 +34206,45 @@
   }
  },
  "not_served": [
+  "*.bak",
   "*.xlsx",
+  ".github",
+  "archive",
+  "chatbox",
   "docs",
+  "funding",
+  "kb/*_apply",
   "kb/*_dryrun",
+  "kb/*_fold",
+  "kb/*_out",
+  "kb/cid_articulation_joins.json",
   "kb/coci_minted_courses.json",
+  "kb/coci_minted_memberships.json",
+  "kb/coci_minted_singletons.json",
+  "kb/coci_unified_courses.json",
+  "kb/common_courses.json",
+  "kb/course_crosswalk.json",
+  "kb/discipline_inference.json",
+  "kb/exhibit_audit/*.md",
   "kb/harvest_scouting",
+  "kb/promotions.json",
   "kb/receipts",
   "kb/reference/*.xlsx",
   "kb/reference/cos_certifications.json",
+  "kb/reference/moc_crosswalk.json",
+  "kb/row_audit/*.full.json",
   "kb/row_audit/*.md",
-  "kb/status/harvest_heading_agreement.json"
+  "kb/status/harvest_heading_agreement.json",
+  "kb/status/harvest_heading_agreement.md",
+  "kb/status/mid_outcomes_compare_*",
+  "kb/subj4_*",
+  "news",
+  "nudges",
+  "reflections",
+  "scripts",
+  "tests",
+  "tmc/source_data",
+  "tools"
  ],
  "stale_risk": [
   "cpl_pathways_ccr_data.js rebuilt by kb/_build_cpl_pathway_ccr.py under daily-dashboard.yml but not in its commit list",
