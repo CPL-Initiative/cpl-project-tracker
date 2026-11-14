@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T03:00:13Z",
+ "written_at": "2026-11-14T06:42:02Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -138,6 +138,9 @@
   "platform": "shareable",
   "catalog_year": "shareable",
   "catalog_url": "shareable",
+  "capture_root": "shareable",
+  "catalog_now": "shareable",
+  "catalog_checks": "internal",
   "read_seconds": "internal",
   "run": "internal",
   "levers": "internal"
@@ -259,6 +262,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+   "capture_root": "https://hancockcollege.curriqunet.com/catalog/iq/28553",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 6807.4,
    "run": "38843474519",
    "levers": {
@@ -341,6 +347,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+   "capture_root": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 514.7,
    "run": "43212067552",
    "levers": {
@@ -416,6 +425,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+   "capture_root": "https://avc.elumenapp.com/catalog/2026-27/welcome",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 816.2,
    "run": "38979725726",
    "levers": {
@@ -497,6 +509,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+   "capture_root": "https://bakersfield.elumenapp.com/catalog/2026-2027-Catalog/about-bc",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1182.0,
    "run": "38414480070",
    "levers": {
@@ -568,6 +583,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
+   "capture_root": "https://www.barstow.edu/sites/default/files/media/pdf_document/2026/2627-Catalog-20260722.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 26.7,
    "run": "39006332820",
    "levers": {
@@ -643,6 +661,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://bcc.curriqunet.com/catalog/view//iq/40258",
+   "capture_root": "https://bcc.curriqunet.com/catalog/view//iq/40258",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2013.2,
    "run": "43141644775",
    "levers": {
@@ -719,6 +740,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://butte.curriqunet.com/Catalog//iq/25371",
+   "capture_root": "https://butte.curriqunet.com/Catalog//iq/25371",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 5488.0,
    "run": "42985449223",
    "levers": {
@@ -795,6 +819,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "capture_root": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1528.4,
    "run": "38670925488",
    "levers": {
@@ -864,6 +891,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf",
+   "capture_root": "https://www.calbright.edu/wp-content/uploads/2026/09/Final-Calbright-College-Academic-Catalog-2026-2027-September-18-2026.docx.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 13.2,
    "run": "39006334571",
    "levers": {
@@ -937,6 +967,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.canadacollege.edu/current/",
+   "capture_root": "https://catalog.canadacollege.edu/current/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 56.5,
    "run": "39202270482",
    "levers": {
@@ -1018,6 +1051,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://cerritos-public.courseleaf.com/",
+   "capture_root": "https://cerritos-public.courseleaf.com/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1767.0,
    "run": "38656800189",
    "levers": {
@@ -1095,6 +1131,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+   "capture_root": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 33.6,
    "run": "39046789844",
    "levers": {
@@ -1168,6 +1207,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/6077",
+   "capture_root": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/6077",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 5559.5,
    "run": "38843479215",
    "levers": {
@@ -1247,6 +1289,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://chaffey.curriqunet.com/catalog/iq/18783",
+   "capture_root": "https://chaffey.curriqunet.com/catalog/iq/18783",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2804.7,
    "run": "38242003226",
    "levers": {
@@ -1323,6 +1368,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.citruscollege.edu/",
+   "capture_root": "https://catalog.citruscollege.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1804.6,
    "run": "39726639865",
    "levers": {
@@ -1409,6 +1457,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.ccsf.edu/catalog",
+   "capture_root": "https://www.ccsf.edu/catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 318.4,
    "run": "39056434592",
    "levers": {
@@ -1486,6 +1537,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
+   "capture_root": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 39.5,
    "run": "39006155986",
    "levers": {
@@ -1567,6 +1621,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://coalingacollege.edu/catalog/2026-2027/",
+   "capture_root": "https://coalingacollege.edu/catalog/2026-2027/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 366.4,
    "run": "43355010411",
    "levers": {
@@ -1644,6 +1701,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.cccd.edu/coastline/",
+   "capture_root": "https://catalog.cccd.edu/coastline/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1236.9,
    "run": "38445051060",
    "levers": {
@@ -1719,6 +1779,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://coa.curriqunet.com/catalog/iq/47367",
+   "capture_root": "https://coa.curriqunet.com/catalog/iq/47367",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 955.4,
    "run": "42892493763",
    "levers": {
@@ -1796,6 +1859,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://marin.elumenapp.com/catalog/current/home",
+   "capture_root": "https://marin.elumenapp.com/catalog/current/home",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1050.8,
    "run": "38984695817",
    "levers": {
@@ -1869,6 +1935,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.collegeofsanmateo.edu/current/",
+   "capture_root": "https://catalog.collegeofsanmateo.edu/current/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1399.5,
    "run": "39914644770",
    "levers": {
@@ -1953,6 +2022,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf",
+   "capture_root": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 94.6,
    "run": "39006378829",
    "levers": {
@@ -2038,6 +2110,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.collegeofthedesert.edu/",
+   "capture_root": "https://catalog.collegeofthedesert.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 494.7,
    "run": "43421133593",
    "levers": {
@@ -2116,6 +2191,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
+   "capture_root": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 642.8,
    "run": "43018781168",
    "levers": {
@@ -2189,6 +2267,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.cos.edu/",
+   "capture_root": "https://catalog.cos.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 879.9,
    "run": "38748848139",
    "levers": {
@@ -2262,6 +2343,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/2026-27cataloghomepage",
+   "capture_root": "https://siskiyous.elumenapp.com/catalog/cos26-27catalog/2026-27cataloghomepage",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1310.5,
    "run": "42354853403",
    "levers": {
@@ -2332,6 +2416,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/admissions/getting-started",
+   "capture_root": "https://gocolumbia.elumenapp.com/catalog/2026-2027-Catalog/admissions/getting-started",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 433.5,
    "run": "42471133430",
    "levers": {
@@ -2405,6 +2492,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf",
+   "capture_root": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 34.1,
    "run": "39006336111",
    "levers": {
@@ -2481,6 +2571,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://ccc.elumenapp.com/catalog/ccc-2026-27/home",
+   "capture_root": "https://ccc.elumenapp.com/catalog/ccc-2026-27/home",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 785.0,
    "run": "38979730323",
    "levers": {
@@ -2551,7 +2644,32 @@
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
-   "catalog_url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
+   "catalog_url": "https://www.cmccd.edu/academic-catalogs/",
+   "capture_root": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
+   "catalog_now": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
+   "catalog_checks": [
+    {
+     "url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
+     "status": 404,
+     "checked_at": "2026-11-13T23:35:00Z",
+     "by": "COBIx, #3229 comment 6867640358",
+     "result": "not found"
+    },
+    {
+     "url": "https://www.cmccd.edu/academic-catalogs/",
+     "status": 200,
+     "checked_at": "2026-11-13T23:35:00Z",
+     "by": "COBIx, #3229 comment 6867640358",
+     "result": "answered"
+    },
+    {
+     "url": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
+     "status": 200,
+     "checked_at": "2026-11-13T23:35:00Z",
+     "by": "COBIx, #3229 comment 6867640358",
+     "result": "answered"
+    }
+   ],
    "read_seconds": 28.8,
    "run": "39035222722",
    "levers": {
@@ -2635,6 +2753,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.crc.losrios.edu/catalog",
+   "capture_root": "https://www.crc.losrios.edu/catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 171.3,
    "run": "39047009824",
    "levers": {
@@ -2708,6 +2829,9 @@
    "platform": "smartcatalog",
    "catalog_year": "2026-2027",
    "catalog_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
+   "capture_root": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1229.3,
    "run": "39116269641",
    "levers": {
@@ -2784,6 +2908,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://cuesta.curriqunet.com/catalog/iq/29951",
+   "capture_root": "https://cuesta.curriqunet.com/catalog/iq/29951",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 4604.7,
    "run": "39063368678",
    "levers": {
@@ -2858,6 +2985,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.gcccd.edu/cuyamaca/",
+   "capture_root": "https://catalog.gcccd.edu/cuyamaca/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1827.5,
    "run": "38748833332",
    "levers": {
@@ -2931,6 +3061,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.nocccd.edu/cypress-college/",
+   "capture_root": "https://catalog.nocccd.edu/cypress-college/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1911.6,
    "run": "39853370754",
    "levers": {
@@ -3012,6 +3145,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://deanza.elumenapp.com/catalog/2026-2027/home",
+   "capture_root": "https://deanza.elumenapp.com/catalog/2026-2027/home",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2213.4,
    "run": "43072075772",
    "levers": {
@@ -3099,6 +3235,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/generalinformation",
+   "capture_root": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/generalinformation",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1567.3,
    "run": "43379378196",
    "levers": {
@@ -3189,6 +3328,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.elac.edu/academic-resources/catalog",
+   "capture_root": "https://www.elac.edu/academic-resources/catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 120.7,
    "run": "43357061643",
    "levers": {
@@ -3265,6 +3407,9 @@
    "platform": "acalog",
    "catalog_year": "2026-2027",
    "catalog_url": "http://catalog.elcamino.edu/",
+   "capture_root": "http://catalog.elcamino.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1453.5,
    "run": "38631686677",
    "levers": {
@@ -3338,6 +3483,9 @@
    "platform": "courseleaf",
    "catalog_year": "2025-2026",
    "catalog_url": "https://catalog.evc.edu/",
+   "capture_root": "https://catalog.evc.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 725.5,
    "run": "38748875071",
    "levers": {
@@ -3411,6 +3559,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://frc.curriqunet.com/Catalog/iq/1452",
+   "capture_root": "https://frc.curriqunet.com/Catalog/iq/1452",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1366.4,
    "run": "38935127435",
    "levers": {
@@ -3483,6 +3634,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://flc.losrios.edu/2026-2027-official-catalog",
+   "capture_root": "https://flc.losrios.edu/2026-2027-official-catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 85.9,
    "run": "39046850071",
    "levers": {
@@ -3560,6 +3714,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.foothill.edu/",
+   "capture_root": "https://catalog.foothill.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 664.2,
    "run": "39726637264",
    "levers": {
@@ -3644,6 +3801,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
+   "capture_root": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2202.7,
    "run": "38563582873",
    "levers": {
@@ -3721,6 +3881,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.nocccd.edu/fullerton-college/",
+   "capture_root": "https://catalog.nocccd.edu/fullerton-college/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2078.3,
    "run": "38675136988",
    "levers": {
@@ -3797,6 +3960,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://gavilan.curriqunet.com/catalog/alias/2026-2027catalog",
+   "capture_root": "https://gavilan.curriqunet.com/catalog/alias/2026-2027catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 898.3,
    "run": "38948144064",
    "levers": {
@@ -3873,6 +4039,9 @@
    "platform": "coursedog",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.glendale.edu/",
+   "capture_root": "https://catalog.glendale.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 8812.6,
    "run": "43497305929",
    "levers": {
@@ -3951,6 +4120,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.cccd.edu/golden-west/",
+   "capture_root": "https://catalog.cccd.edu/golden-west/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1025.2,
    "run": "39688079435",
    "levers": {
@@ -4042,6 +4214,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.gcccd.edu/grossmont/",
+   "capture_root": "https://catalog.gcccd.edu/grossmont/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 788.3,
    "run": "43482160320",
    "levers": {
@@ -4120,6 +4295,9 @@
    "platform": "coursedog",
    "catalog_year": "2026-2027",
    "catalog_url": "https://hartnell.catalog.prod.coursedog.com/",
+   "capture_root": "https://hartnell.catalog.prod.coursedog.com/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 920.3,
    "run": "40314109801",
    "levers": {
@@ -4196,6 +4374,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://imperial.curriqunet.com/catalog/iq/8512/8586",
+   "capture_root": "https://imperial.curriqunet.com/catalog/iq/8512/8586",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 839.9,
    "run": "39691376155",
    "levers": {
@@ -4268,6 +4449,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://irvine.curriqunet.com/Catalog/iq/48953",
+   "capture_root": "https://irvine.curriqunet.com/Catalog/iq/48953",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 4520.7,
    "run": "39539599944",
    "levers": {
@@ -4341,6 +4525,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog",
+   "capture_root": "https://ltcc.elumenapp.com/catalog/2026-2027/about-this-catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 770.2,
    "run": "38984692790",
    "levers": {
@@ -4409,6 +4596,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://lan.curriqunet.com/catalog/view/iq/44232",
+   "capture_root": "https://lan.curriqunet.com/catalog/view/iq/44232",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1549.8,
    "run": "38935141023",
    "levers": {
@@ -4485,6 +4675,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://laspositas.curriqunet.com/catalog/iq/881",
+   "capture_root": "https://laspositas.curriqunet.com/catalog/iq/881",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2650.7,
    "run": "42892238131",
    "levers": {
@@ -4561,6 +4754,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf",
+   "capture_root": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 30.3,
    "run": "39006337658",
    "levers": {
@@ -4637,6 +4833,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/Welcome",
+   "capture_root": "https://westhillslemoore.elumenapp.com/catalog/26-27/Welcome",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 341.0,
    "run": "38979392604",
    "levers": {
@@ -4715,6 +4914,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://lbcc-public.courseleaf.com/",
+   "capture_root": "https://lbcc-public.courseleaf.com/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 10701.5,
    "run": "39891611701",
    "levers": {
@@ -4792,6 +4994,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
+   "capture_root": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 116.0,
    "run": "43212072618",
    "levers": {
@@ -4869,6 +5074,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf",
+   "capture_root": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 63.9,
    "run": "39006381839",
    "levers": {
@@ -4944,6 +5152,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.lamc.edu/academics/calendar-schedules/schedules-catalog",
+   "capture_root": "https://www.lamc.edu/academics/calendar-schedules/schedules-catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 59.5,
    "run": "39054675770",
    "levers": {
@@ -5023,6 +5234,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+   "capture_root": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 165.8,
    "run": "43355018296",
    "levers": {
@@ -5101,6 +5315,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf",
+   "capture_root": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 62.0,
    "run": "39061735776",
    "levers": {
@@ -5177,6 +5394,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.lattc.edu/academic-resources/catalog",
+   "capture_root": "https://www.lattc.edu/academic-resources/catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 145.2,
    "run": "39115770293",
    "levers": {
@@ -5241,6 +5461,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
+   "capture_root": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 137.5,
    "run": "41188677929",
    "levers": {
@@ -5302,6 +5525,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://lmc.elumenapp.com/catalog/26-27/art",
+   "capture_root": "https://lmc.elumenapp.com/catalog/26-27/art",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 836.2,
    "run": "42376691800",
    "levers": {
@@ -5372,6 +5598,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover",
+   "capture_root": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 925.4,
    "run": "38935148408",
    "levers": {
@@ -5449,6 +5678,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf",
+   "capture_root": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 29.7,
    "run": "39006339282",
    "levers": {
@@ -5526,6 +5758,9 @@
    "platform": "coursedog",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.mccd.edu/",
+   "capture_root": "https://catalog.mccd.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1700.6,
    "run": "39239492986",
    "levers": {
@@ -5593,6 +5828,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://mc.curriqunet.com/catalog/iq/46097",
+   "capture_root": "https://mc.curriqunet.com/catalog/iq/46097",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 3791.3,
    "run": "38935152199",
    "levers": {
@@ -5665,6 +5903,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.miracosta.edu/",
+   "capture_root": "https://catalog.miracosta.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1735.1,
    "run": "39746427354",
    "levers": {
@@ -5743,6 +5984,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://mission.elumenapp.com/catalog/24-25/cataloghome",
+   "capture_root": "https://mission.elumenapp.com/catalog/24-25/cataloghome",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 798.0,
    "run": "39000023893",
    "levers": {
@@ -5820,6 +6064,9 @@
    "platform": "elumen",
    "catalog_year": "2026-2027",
    "catalog_url": "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge",
+   "capture_root": "https://mjc.elumenapp.com/catalog/2026-2027/mjc-ge",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 897.7,
    "run": "38477845911",
    "levers": {
@@ -5884,6 +6131,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.mpc.edu/",
+   "capture_root": "https://catalog.mpc.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1588.3,
    "run": "42195216637",
    "levers": {
@@ -5956,6 +6206,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.vcccd.edu/moorpark/",
+   "capture_root": "https://catalog.vcccd.edu/moorpark/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1448.3,
    "run": "39600815599",
    "levers": {
@@ -6032,6 +6285,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4710",
+   "capture_root": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4710",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1237.7,
    "run": "38111056537",
    "levers": {
@@ -6109,6 +6365,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.mtsac.edu/",
+   "capture_root": "https://catalog.mtsac.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2866.0,
    "run": "39891607837",
    "levers": {
@@ -6181,6 +6440,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.msjc.edu/",
+   "capture_root": "https://catalog.msjc.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1079.1,
    "run": "42212319155",
    "levers": {
@@ -6255,6 +6517,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.napavalley.edu/",
+   "capture_root": "https://catalog.napavalley.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 872.2,
    "run": "38748853261",
    "levers": {
@@ -6333,6 +6598,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5358",
+   "capture_root": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5358",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1379.7,
    "run": "38113150250",
    "levers": {
@@ -6406,6 +6674,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.nocccd.edu/noce/",
+   "capture_root": "https://catalog.nocccd.edu/noce/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 663.9,
    "run": "43342034608",
    "levers": {
@@ -6482,6 +6753,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
+   "capture_root": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 54.1,
    "run": "39063337090",
    "levers": {
@@ -6563,6 +6837,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.cccd.edu/orange-coast/",
+   "capture_root": "https://catalog.cccd.edu/orange-coast/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2317.4,
    "run": "43136182950",
    "levers": {
@@ -6637,6 +6914,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.vcccd.edu/oxnard/",
+   "capture_root": "https://catalog.vcccd.edu/oxnard/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1299.0,
    "run": "39612119359",
    "levers": {
@@ -6713,6 +6993,9 @@
    "platform": "acalog",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.paloverde.edu/",
+   "capture_root": "https://catalog.paloverde.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 527.3,
    "run": "39852997888",
    "levers": {
@@ -6786,6 +7069,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://palomar.curriqunet.com/catalog/alias/college/iq/Cover",
+   "capture_root": "https://palomar.curriqunet.com/catalog/alias/college/iq/Cover",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 3170.1,
    "run": "42371822077",
    "levers": {
@@ -6862,6 +7148,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://curriculum.pasadena.edu/",
+   "capture_root": "https://curriculum.pasadena.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1981.2,
    "run": "39758679671",
    "levers": {
@@ -6941,6 +7230,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+   "capture_root": "https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 31.9,
    "run": "39046786897",
    "levers": {
@@ -7018,6 +7310,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100",
+   "capture_root": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1422.2,
    "run": "39616074283",
    "levers": {
@@ -7095,6 +7390,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22177",
+   "capture_root": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22177",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 7535.4,
    "run": "43154073220",
    "levers": {
@@ -7170,6 +7468,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111",
+   "capture_root": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2130.5,
    "run": "38108461470",
    "levers": {
@@ -7245,6 +7546,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://scc.losrios.edu/2026-2027-official-catalog",
+   "capture_root": "https://scc.losrios.edu/2026-2027-official-catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 209.5,
    "run": "39047070975",
    "levers": {
@@ -7320,6 +7624,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://saddleback.curriqunet.com/catalog/iq/45443",
+   "capture_root": "https://saddleback.curriqunet.com/catalog/iq/45443",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 8038.2,
    "run": "38843470509",
    "levers": {
@@ -7409,6 +7716,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.valleycollege.edu/",
+   "capture_root": "https://catalog.valleycollege.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1514.5,
    "run": "43355003065",
    "levers": {
@@ -7487,6 +7797,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489",
+   "capture_root": "https://sdccd.curriqunet.com/catalog/alias/city26-27/iq/15489",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 5466.0,
    "run": "38347787891",
    "levers": {
@@ -7557,6 +7870,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf",
+   "capture_root": "https://www.sdccd.edu/docs/ISPT/instsrv/Catalogs/MetaFiles/2026_2027/CECatalog2026-2027.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 33.9,
    "run": "39035224783",
    "levers": {
@@ -7631,6 +7947,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/mesa26-27",
+   "capture_root": "https://sdccd.curriqunet.com/catalog/alias/mesa26-27",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 5055.4,
    "run": "38322747831",
    "levers": {
@@ -7703,6 +8022,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://sdccd.curriqunet.com/catalog/alias/miramar26-27",
+   "capture_root": "https://sdccd.curriqunet.com/catalog/alias/miramar26-27",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 4118.8,
    "run": "38355780721",
    "levers": {
@@ -7776,6 +8098,9 @@
    "platform": "acalog",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.deltacollege.edu/",
+   "capture_root": "https://catalog.deltacollege.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1379.8,
    "run": "40523400149",
    "levers": {
@@ -7862,6 +8187,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.sjcc.edu/",
+   "capture_root": "https://catalog.sjcc.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1134.0,
    "run": "43357106423",
    "levers": {
@@ -7940,6 +8268,9 @@
    "platform": "curriqunet",
    "catalog_year": "2026-2027",
    "catalog_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/36562",
+   "capture_root": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/36562",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 7227.4,
    "run": "38843461766",
    "levers": {
@@ -8017,6 +8348,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.sbcc.edu/",
+   "capture_root": "https://catalog.sbcc.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1851.4,
    "run": "39782741424",
    "levers": {
@@ -8096,6 +8430,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.smc.edu/current/index.php",
+   "capture_root": "https://catalog.smc.edu/current/index.php",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 220.6,
    "run": "39567439681",
    "levers": {
@@ -8185,6 +8522,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
+   "capture_root": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 337.2,
    "run": "39037637820",
    "levers": {
@@ -8272,6 +8612,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+   "capture_root": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 63.2,
    "run": "43387912036",
    "levers": {
@@ -8350,6 +8693,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
+   "capture_root": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 104.6,
    "run": "39006384701",
    "levers": {
@@ -8435,6 +8781,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.sierracollege.edu/",
+   "capture_root": "https://catalog.sierracollege.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 293.1,
    "run": "39993005180",
    "levers": {
@@ -8518,6 +8867,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.skylinecollege.edu/current/",
+   "capture_root": "https://catalog.skylinecollege.edu/current/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2422.4,
    "run": "39035209486",
    "levers": {
@@ -8604,6 +8956,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
+   "capture_root": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 131.2,
    "run": "43355021555",
    "levers": {
@@ -8688,6 +9043,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.swccd.edu/",
+   "capture_root": "https://catalog.swccd.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 2152.6,
    "run": "38563578596",
    "levers": {
@@ -8767,6 +9125,9 @@
    "platform": "smartcatalog",
    "catalog_year": "2026-2027",
    "catalog_url": "https://taftcollege.smartcatalogiq.com/2026-2027/2026-2027-catalog",
+   "capture_root": "https://taftcollege.smartcatalogiq.com/2026-2027/2026-2027-catalog",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 904.2,
    "run": "39259699774",
    "levers": {
@@ -8845,6 +9206,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.vcccd.edu/ventura/",
+   "capture_root": "https://catalog.vcccd.edu/ventura/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1598.6,
    "run": "39622549965",
    "levers": {
@@ -8924,6 +9288,9 @@
    "platform": "courseleaf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://catalog.vvc.edu/",
+   "capture_root": "https://catalog.vvc.edu/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 1670.7,
    "run": "43215222441",
    "levers": {
@@ -9002,6 +9369,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+   "capture_root": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 93.6,
    "run": "39536207109",
    "levers": {
@@ -9080,6 +9450,9 @@
    "platform": "custom_html",
    "catalog_year": "2026-2027",
    "catalog_url": "https://www.westvalley.edu/catalog/",
+   "capture_root": "https://www.westvalley.edu/catalog/",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 807.6,
    "run": "43142245126",
    "levers": {
@@ -9151,6 +9524,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf",
+   "capture_root": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 21.0,
    "run": "39006340803",
    "levers": {
@@ -9224,6 +9600,9 @@
    "platform": "pdf",
    "catalog_year": "2026-2027",
    "catalog_url": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf",
+   "capture_root": "https://yc.yccd.edu/wp-content/uploads/2026/08/Yuba-College-Catalog-26.pdf",
+   "catalog_now": null,
+   "catalog_checks": null,
    "read_seconds": 177.9,
    "run": "39006517642",
    "levers": {

@@ -1242,7 +1242,8 @@ async function seedCommonsData(page, theme) {
 async function seedCommonsDataView(page, theme, view) {
   await page.evaluate((v) => { const h = "commons/data/" + v; if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, view);
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
-  await page.waitForSelector(view === "dictionary" ? "#commons-root #cdd-dict" : view === "districts" ? "#commons-root #cdd-districts" : "#commons-root #cdd-apis", { state: "attached", timeout: 60000 });
+  await page.waitForSelector(view === "dictionary" ? "#commons-root #cdd-dict" : view === "districts" ? "#commons-root #cdd-districts"
+    : view === "slos" ? "#commons-root #cdd-slos" : "#commons-root #cdd-apis", { state: "attached", timeout: 60000 });
   await page.evaluate(() => {
     try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
@@ -1256,6 +1257,8 @@ async function seedCommonsDataView(page, theme, view) {
 async function seedCommonsDataOpen(page, theme, what) {
   // The reduced-motion and keyboard passes open the file bare, so the panel's address is set here too.
   if (what === "panel") await page.evaluate(() => { const h = "commons/data/college/san-jose-city-college"; if (location.hash.replace(/^#/, "") !== h) location.hash = h; });
+  // S650: Copper Mountain's catalog pane, the one college whose displayed link is split from its capture root.
+  if (what === "catalog") await page.evaluate(() => { const h = "commons/data/college/copper-mountain-college/catalog"; if (location.hash.replace(/^#/, "") !== h) location.hash = h; });
   await seedCommonsData(page, theme);
   if (what === "row") {
     await page.evaluate(() => {
@@ -3843,6 +3846,32 @@ module.exports = {
     routes: [{ hash: "commons/data/districts", name: "data-districts-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "districts"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* S650: the views and panes added since (#3261, this PR): Colleges with collected SLOs, and the catalog pane whose
+     displayed link is split from the capture root (Copper Mountain). */
+  "commons-data-slos": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, colleges with collected SLOs",
+    routes: [{ hash: "commons/data/slos", name: "data-slos" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "slos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-slos-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, colleges with collected SLOs, dark",
+    routes: [{ hash: "commons/data/slos", name: "data-slos-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "dark", "slos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-catalog": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, a catalog pane with its link split from the capture root",
+    routes: [{ hash: "commons/data/college/copper-mountain-college/catalog", name: "data-catalog" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataOpen(page, "light", "catalog"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "commons-data-apis-dark": {
