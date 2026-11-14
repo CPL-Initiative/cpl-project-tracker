@@ -71,36 +71,34 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
     28.0,
     28.0
    ],
    "stated": [
-    28.0,
-    28.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     62.0,
-     62.0
+     28.0,
+     28.0
     ],
     "stated": [
-     60.0,
-     60.0
+     28.0,
+     28.0
     ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [],
-    "overlap": true
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -119,21 +117,13 @@
   },
   "careers": {
    "count": 7,
-   "not_verbatim": [
-    "Social and Human Services Assistant",
-    "Residential counselor",
-    "Substance Abuse and Behavioral Disorder Counselors",
-    "Eligibility Worker",
-    "Community outreach worker",
-    "Social worker",
-    "Therapist"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -154,8 +144,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": 34,
-    "max": 34
+    "min": null,
+    "max": null
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -384,20 +374,5 @@
    "Certificate of Achievement section (18 units, includes ES 1, ANTH 1, ANTH 1L) was not recorded; it is a different award."
   ]
  },
- "extracted_run": 43581021827,
- "reconciled": [
-  {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
-  }
- ],
- "read_run": "39006337658"
+ "extracted_run": "39006337658"
 }

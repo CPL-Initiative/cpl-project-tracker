@@ -80,20 +80,17 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    54.0,
-    54.0
+    20.0,
+    20.0
    ],
    "stated": [
     60.0,
     60.0
    ],
    "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
+   "ge": null,
    "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
    ],
    "major": {
     "pass": true,
@@ -153,8 +150,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": 34,
-    "max": 34
+    "min": null,
+    "max": null
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -295,20 +292,5 @@
    "The Business Administration for Transfer section printed above on the same page was ignored."
   ]
  },
- "extracted_run": 43581021827,
- "reconciled": [
-  {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
-  }
- ],
- "read_run": "39006337658"
+ "extracted_run": "39006337658"
 }

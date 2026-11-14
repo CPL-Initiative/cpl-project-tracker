@@ -347,5 +347,743 @@
    "degree_total": 60.0
   }
  ],
- "hand_holds": "31297 was moved from apply to held by hand on the conductor's decision (S651, 2026-11-14): the set step holds no record by name, so a rerun of --calgetc-apply applies it again; repeat this edit after one (tests/program_requirements_lassen_calgetc.test.js fails until it is). 33388 is kept out by the step's only_with total_units and never reaches the plan"
+ "hand_holds": "31297 was moved from apply to held by hand on the conductor's decision (S651, 2026-11-14): the set step holds no record by name, so a rerun of --calgetc-apply applies it again; repeat this edit after one (tests/program_requirements_lassen_calgetc.test.js fails until it is). 33388 is kept out by the step's only_with total_units and never reaches the plan",
+ "run_review": {
+  "run": "43581021827",
+  "changed": 17,
+  "kept": [
+   "30947",
+   "31015",
+   "31037",
+   "31379",
+   "32083"
+  ],
+  "restored": [
+   "12201",
+   "18848",
+   "21602",
+   "31132",
+   "31297",
+   "33263",
+   "33322",
+   "33729",
+   "33730",
+   "35106",
+   "41912",
+   "42300"
+  ],
+  "fail_to_pass_kept": [
+   "30947",
+   "32083"
+  ],
+  "held_would_pass": [
+   "41912"
+  ],
+  "pass_to_fail_kept": [],
+  "records": [
+   {
+    "control_number": "12201",
+    "extracted_run": 43581021827,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "the run read it from other pages ([100, 101], main [99, 100, 101])"
+   },
+   {
+    "control_number": "18848",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "21602",
+    "extracted_run": 43581021827,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "the run read it from other pages ([100, 101], main [99, 100, 101])"
+   },
+   {
+    "control_number": "30947",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "31015",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "31037",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "31132",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "restore",
+    "why": "the run read it from other pages ([52, 53], main [53])"
+   },
+   {
+    "control_number": "31297",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "restore",
+    "why": "held in the plan: held by the conductor (S651): the legacy number of 42300's '2.0' section, read from the same section; it waits until someone shows it is a live program distinct from 42300"
+   },
+   {
+    "control_number": "31379",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "32083",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "33263",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "restore",
+    "why": "the run read it from other pages ([57, 58], main [58])"
+   },
+   {
+    "control_number": "33322",
+    "extracted_run": 43581021827,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "the run read it from other pages ([55, 56], main [54, 55, 56])"
+   },
+   {
+    "control_number": "33729",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "restore",
+    "why": "the run read it from other pages ([47, 48, 49, 50], main [49, 50, 51])"
+   },
+   {
+    "control_number": "33730",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "restore",
+    "why": "the run read it from other pages ([47, 48, 49, 50], main [48, 49, 50, 51])"
+   },
+   {
+    "control_number": "35106",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "restore",
+    "why": "held in the plan: overlap: the major plus the printed 34 runs past the degree total of 60; a set step checks no standing while #3250 is unmerged, so the record stays as main files it (Grossmont 46141, #3252)"
+   },
+   {
+    "control_number": "41912",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "restore",
+    "why": "held in the plan: overlap: the major plus the printed 34 runs past the degree total of 60; a set step checks no standing while #3250 is unmerged, so the record stays as main files it (Grossmont 46141, #3252)"
+   },
+   {
+    "control_number": "42300",
+    "extracted_run": 43581021827,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+     }
+    ],
+    "decision": "restore",
+    "why": "the run read it from other pages ([57, 58, 59, 60], main [58, 59, 60])"
+   }
+  ],
+  "pins": {},
+  "records_restored": true,
+  "pages_moved_restored": [
+   {
+    "control_number": "02121",
+    "main": [
+     49,
+     50
+    ],
+    "run": [
+     47,
+     48,
+     49,
+     50
+    ]
+   },
+   {
+    "control_number": "12201",
+    "main": [
+     99,
+     100,
+     101
+    ],
+    "run": [
+     100,
+     101
+    ]
+   },
+   {
+    "control_number": "17742",
+    "main": [
+     69,
+     70,
+     71
+    ],
+    "run": [
+     67,
+     68,
+     69,
+     70
+    ]
+   },
+   {
+    "control_number": "18754",
+    "main": [
+     93,
+     94
+    ],
+    "run": [
+     95,
+     96,
+     97,
+     98
+    ]
+   },
+   {
+    "control_number": "18756",
+    "main": [
+     48,
+     49,
+     50
+    ],
+    "run": [
+     47,
+     48,
+     49,
+     50
+    ]
+   },
+   {
+    "control_number": "19321",
+    "main": [
+     90
+    ],
+    "run": [
+     89,
+     90
+    ]
+   },
+   {
+    "control_number": "19377",
+    "main": [
+     69,
+     70,
+     71
+    ],
+    "run": [
+     67,
+     68,
+     69,
+     70
+    ]
+   },
+   {
+    "control_number": "21595",
+    "main": [
+     49,
+     50
+    ],
+    "run": [
+     47,
+     48,
+     49,
+     50
+    ]
+   },
+   {
+    "control_number": "21602",
+    "main": [
+     99,
+     100,
+     101
+    ],
+    "run": [
+     100,
+     101
+    ]
+   },
+   {
+    "control_number": "31132",
+    "main": [
+     53
+    ],
+    "run": [
+     52,
+     53
+    ]
+   },
+   {
+    "control_number": "31178",
+    "main": [
+     53
+    ],
+    "run": [
+     52,
+     53
+    ]
+   },
+   {
+    "control_number": "31297",
+    "main": [
+     58,
+     59,
+     60
+    ],
+    "run": [
+     57,
+     58,
+     59,
+     60
+    ]
+   },
+   {
+    "control_number": "31407",
+    "main": null,
+    "run": [
+     115,
+     116,
+     117
+    ]
+   },
+   {
+    "control_number": "31411",
+    "main": null,
+    "run": [
+     115,
+     116,
+     117
+    ]
+   },
+   {
+    "control_number": "33263",
+    "main": [
+     58
+    ],
+    "run": [
+     57,
+     58
+    ]
+   },
+   {
+    "control_number": "33322",
+    "main": [
+     54,
+     55,
+     56
+    ],
+    "run": [
+     55,
+     56
+    ]
+   },
+   {
+    "control_number": "33388",
+    "main": [
+     90
+    ],
+    "run": [
+     89,
+     90
+    ]
+   },
+   {
+    "control_number": "33729",
+    "main": [
+     49,
+     50,
+     51
+    ],
+    "run": [
+     47,
+     48,
+     49,
+     50
+    ]
+   },
+   {
+    "control_number": "33730",
+    "main": [
+     48,
+     49,
+     50,
+     51
+    ],
+    "run": [
+     47,
+     48,
+     49,
+     50
+    ]
+   },
+   {
+    "control_number": "37760",
+    "main": [
+     59
+    ],
+    "run": [
+     57,
+     58,
+     59
+    ]
+   },
+   {
+    "control_number": "40731",
+    "main": [
+     69,
+     70,
+     71
+    ],
+    "run": [
+     67,
+     68,
+     69,
+     70
+    ]
+   },
+   {
+    "control_number": "41739",
+    "main": [
+     65
+    ],
+    "run": [
+     64,
+     65
+    ]
+   },
+   {
+    "control_number": "42300",
+    "main": [
+     58,
+     59,
+     60
+    ],
+    "run": [
+     57,
+     58,
+     59,
+     60
+    ]
+   },
+   {
+    "control_number": "42798",
+    "main": [
+     85
+    ],
+    "run": [
+     84,
+     85
+    ]
+   },
+   {
+    "control_number": "42929",
+    "main": [
+     65
+    ],
+    "run": [
+     64,
+     65
+    ]
+   },
+   {
+    "control_number": "43471",
+    "main": [
+     68,
+     69,
+     70,
+     71
+    ],
+    "run": [
+     67,
+     68,
+     69,
+     70
+    ]
+   },
+   {
+    "control_number": "45524",
+    "main": [
+     45,
+     46
+    ],
+    "run": [
+     46
+    ]
+   },
+   {
+    "control_number": "45525",
+    "main": [
+     45,
+     46
+    ],
+    "run": [
+     46
+    ]
+   }
+  ],
+  "pages_moved_kept": [],
+  "files": "sources.json and capture.json are origin/main's but for the kept programs' entries; summary.json is origin/main's with its counts taken again from the records"
+ }
 }

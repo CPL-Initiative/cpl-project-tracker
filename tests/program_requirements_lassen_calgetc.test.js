@@ -146,9 +146,11 @@ block("(5) a rebuilt plan", () => {
   check("(5) the rebuilt plan never reaches 33388: the config keeps it out", !got.rows.includes("33388"));
   check("(5) the rebuilt plan still holds the overlap pair (35106, 41912)",
     JSON.stringify(got.held) === JSON.stringify(["35106", "41912"]));
-  check("(5) the rebuilt plan applies the ten and 31297 alone, so 31297 is the one hand hold",
-    JSON.stringify(got.apply) === JSON.stringify(TEN.concat("31297").sort()) && got.pass_to_fail === 0,
-    JSON.stringify(got.apply));
+  // A record a reread already filed at 34 leaves the rebuild ("field already set"), so the rebuild applies a
+  // subset of the ten, plus 31297, whose ge_units the hold keeps empty.
+  check("(5) the rebuilt plan applies only from the ten, and 31297, so 31297 is the one hand hold",
+    got.apply.every((cn) => TEN.includes(cn) || cn === "31297") && got.apply.includes("31297")
+    && got.pass_to_fail === 0, JSON.stringify(got.apply));
   const plan = JSON.parse(fs.readFileSync(path.join(ROOT, "kb", "program_requirements_college", "lassen",
     "calgetc_apply_plan.json"), "utf8"));
   check("(5) the committed plan carries that hand hold: a rebuild committed without it fails here",

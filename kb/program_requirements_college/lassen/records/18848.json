@@ -62,34 +62,35 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     20.0,
     21.0
    ],
    "stated": [
-    60.0,
-    60.0
+    20.0,
+    20.0
    ],
-   "against": "degree",
-   "ge": null,
+   "against": "program",
    "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    "the blocks sum to 20.0-21.0; the catalog states 20.0-20.0"
    ],
-   "major": {
-    "pass": true,
-    "status": "equal",
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
     "computed": [
      20.0,
      21.0
     ],
     "stated": [
-     20.0,
-     20.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": [],
-    "meets": true
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    ]
    }
   },
   "repeated": {
@@ -226,6 +227,5 @@
    "Outcome 4 is printed as '4 Demonstrate...' without a period after the number; number removed."
   ]
  },
- "extracted_run": 43581021827,
- "read_run": "39006337658"
+ "extracted_run": "39006337658"
 }

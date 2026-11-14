@@ -25,23 +25,19 @@
    "AGR9"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47",
-   "title": "Associate in Science in Agriculture Science and",
-   "h1": "Associate in Science in Agriculture Science and",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    47,
-    48,
     49,
     50
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "eb2fa57a9a6710fb"
+   "extractor": "pypdf"
   },
   "listed": 17,
-  "text_chars": 11345
+  "text_chars": 4264
  },
  {
   "control_number": "02133",
@@ -64,19 +60,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=87",
-   "title": "Associate in Science Degree in Vocational Nursing",
-   "h1": "Associate in Science Degree in Vocational Nursing",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     87
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "b6365a2480d1b768"
+   "extractor": "pypdf"
   },
   "listed": 10,
-  "text_chars": 2819
+  "text_chars": 2925
  },
  {
   "control_number": "02134",
@@ -115,20 +109,18 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
-   "title": "Associate in Arts Degree in Administration of Justice",
-   "h1": "Associate in Arts Degree in Administration of Justice",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     45,
     46
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "ea69dec2c35b17e6"
+   "extractor": "pypdf"
   },
   "listed": 26,
-  "text_chars": 6445
+  "text_chars": 7222
  },
  {
   "control_number": "07168",
@@ -193,8 +185,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
-   "title": "Associate in Science in Welding Technology",
-   "h1": "Associate in Science in Welding Technology",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -202,12 +194,10 @@
     100,
     101
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "1624e71d0fd60192"
+   "extractor": "pypdf"
   },
   "listed": 17,
-  "text_chars": 9024
+  "text_chars": 9161
  },
  {
   "control_number": "09316",
@@ -229,20 +219,18 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=61",
-   "title": "Receiving an A.A. in Child Development also meets the requirement to teach in a National Head Start Program.",
-   "h1": "Receiving an A.A. in Child Development also meets the requirement to teach in a National Head Start Program.",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     61,
     62
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "2dda2a3e72b603de"
+   "extractor": "pypdf"
   },
   "listed": 13,
-  "text_chars": 4662
+  "text_chars": 5569
  },
  {
   "control_number": "09319",
@@ -278,21 +266,20 @@
    "WT51"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=100",
-   "title": "Certificate of Achievement: Welding Technology - Two Year",
-   "h1": "Certificate of Achievement: Welding Technology - Two Year",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    99,
     100,
     101
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "179ddba33d6f11b5"
+   "extractor": "pypdf"
   },
   "listed": 12,
-  "text_chars": 5097
+  "text_chars": 9161
  },
  {
   "control_number": "17742",
@@ -300,7 +287,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.985,
+  "coverage": 0.97,
   "codes_found": [
    "BUS25",
    "BUS27",
@@ -330,7 +317,6 @@
    "FS65A",
    "FS65B",
    "FS65C",
-   "FS7",
    "FS70",
    "FS70A",
    "FS70B",
@@ -369,23 +355,20 @@
    "FS9821"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67",
-   "title": "Associate in Science in Fire Technology",
-   "h1": "Associate in Science in Fire Technology",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    67,
-    68,
     69,
-    70
+    70,
+    71
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "789cd1ad6f8c964d"
+   "extractor": "pypdf"
   },
   "listed": 71,
-  "text_chars": 13313
+  "text_chars": 10519
  },
  {
   "control_number": "18331",
@@ -435,20 +418,18 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81",
-   "title": "Associate in Arts Degree General",
-   "h1": "Associate in Arts Degree General",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81,
     82
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "f506e98cefbe9136"
+   "extractor": "pypdf"
   },
   "listed": 25,
-  "text_chars": 6387
+  "text_chars": 6600
  },
  {
   "control_number": "18752",
@@ -486,20 +467,18 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81",
-   "title": "Associate in Arts Degree University",
-   "h1": "Associate in Arts Degree University",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81,
     82
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "e1fb84e12c1b88fb"
+   "extractor": "pypdf"
   },
   "listed": 25,
-  "text_chars": 6467
+  "text_chars": 6600
  },
  {
   "control_number": "18753",
@@ -538,17 +517,15 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93",
-   "title": "",
-   "h1": "",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93,
     94
    ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "e230717d6dcf1a22"
+   "extractor": "pypdf"
   },
   "listed": 27,
   "text_chars": 6270
@@ -559,18 +536,27 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.63,
+  "coverage": 0.963,
   "codes_found": [
+   "AGR2",
+   "AJ10",
    "AJ12",
+   "AJ20",
    "ANTH2",
    "CD31",
    "ECON10",
    "ECON11",
    "ES1",
+   "GEOG2",
+   "HIST14",
+   "HIST15",
    "HIST16",
    "HIST17",
+   "HUM1",
+   "HUM2",
    "POLSC1000",
    "PSYC18",
+   "PSYC33",
    "PSYC5",
    "PSYC6",
    "PSYCC1000",
@@ -580,23 +566,19 @@
    "SOC4"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=95",
-   "title": "Upon completion of the Associate in Arts Degree in Social Science University Studies, Associate in Arts Degree in Social",
-   "h1": "Upon completion of the Associate in Arts Degree in Social Science University Studies, Associate in Arts Degree in Social",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    95,
-    96,
-    97,
-    98
+    93,
+    94
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "1feb3f7f34134ad4"
+   "extractor": "pypdf"
   },
   "listed": 27,
-  "text_chars": 10625
+  "text_chars": 6270
  },
  {
   "control_number": "18756",
@@ -615,23 +597,20 @@
    "AGR41"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47",
-   "title": "The Associate in Arts University Studies: Emphasis in Agriculture Science provides students with an opportunity to build",
-   "h1": "The Associate in Arts University Studies: Emphasis in Agriculture Science provides students with an opportunity to build",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    47,
     48,
     49,
     50
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "3b8ae1aaf517fea6"
+   "extractor": "pypdf"
   },
   "listed": 7,
-  "text_chars": 9602
+  "text_chars": 7469
  },
  {
   "control_number": "18758",
@@ -656,19 +635,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=79",
-   "title": "Associate in Arts Degree University",
-   "h1": "Associate in Arts Degree University",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "40b9e196f2906eb8"
+   "extractor": "pypdf"
   },
   "listed": 12,
-  "text_chars": 3067
+  "text_chars": 3193
  },
  {
   "control_number": "18848",
@@ -688,19 +665,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=51",
-   "title": "Associate in Arts Degree University",
-   "h1": "Associate in Arts Degree University",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     51
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "1a278c585034b86f"
+   "extractor": "pypdf"
   },
   "listed": 7,
-  "text_chars": 3103
+  "text_chars": 3236
  },
  {
   "control_number": "19321",
@@ -739,21 +714,18 @@
    "PEAC9D"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=89",
-   "title": "Associate in Arts Degree University Studies:",
-   "h1": "Associate in Arts Degree University Studies:",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=90",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    89,
     90
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "445ed31a61079c66"
+   "extractor": "pypdf"
   },
   "listed": 28,
-  "text_chars": 7375
+  "text_chars": 3898
  },
  {
   "control_number": "19375",
@@ -772,19 +744,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=62",
-   "title": "Certificate of Achievement Child Development",
-   "h1": "Certificate of Achievement Child Development",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     62
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "57e329c332e7457e"
+   "extractor": "pypdf"
   },
   "listed": 7,
-  "text_chars": 1041
+  "text_chars": 1681
  },
  {
   "control_number": "19376",
@@ -866,23 +836,20 @@
    "FS9821"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67",
-   "title": "CERTIFICATE OF ACHIEVEMENT",
-   "h1": "CERTIFICATE OF ACHIEVEMENT",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    67,
-    68,
     69,
-    70
+    70,
+    71
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "5275dd34635548c3"
+   "extractor": "pypdf"
   },
   "listed": 60,
-  "text_chars": 13272
+  "text_chars": 10519
  },
  {
   "control_number": "21595",
@@ -908,23 +875,19 @@
    "AGR9"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47",
-   "title": "CERTIFICATE OF ACHIEVEMENT",
-   "h1": "CERTIFICATE OF ACHIEVEMENT",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    47,
-    48,
     49,
     50
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "53bc095c9220fb97"
+   "extractor": "pypdf"
   },
   "listed": 14,
-  "text_chars": 11278
+  "text_chars": 4264
  },
  {
   "control_number": "21598",
@@ -964,21 +927,20 @@
    "WT51"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=100",
-   "title": "Certificate of Achievement: Welding Technology - Two Year",
-   "h1": "Certificate of Achievement: Welding Technology - Two Year",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    99,
     100,
     101
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "179ddba33d6f11b5"
+   "extractor": "pypdf"
   },
   "listed": 17,
-  "text_chars": 5097
+  "text_chars": 9161
  },
  {
   "control_number": "21605",
@@ -1029,20 +991,18 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
-   "title": "Certificate of Achievement: Administration of Justice",
-   "h1": "Certificate of Achievement: Administration of Justice",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     45,
     46
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "019d3e71f1c15ee3"
+   "extractor": "pypdf"
   },
   "listed": 26,
-  "text_chars": 4947
+  "text_chars": 7222
  },
  {
   "control_number": "30947",
@@ -1170,21 +1130,18 @@
    "ART7"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=52",
-   "title": "Associate in Arts in Studio Art for Transfer",
-   "h1": "Associate in Arts in Studio Art for Transfer",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    52,
     53
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "b82ce8298f563db0"
+   "extractor": "pypdf"
   },
   "listed": 10,
-  "text_chars": 4362
+  "text_chars": 1576
  },
  {
   "control_number": "31178",
@@ -1204,21 +1161,18 @@
    "ART7"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=52",
-   "title": "history and studio art in order to transfer to a California State University.",
-   "h1": "history and studio art in order to transfer to a California State University.",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    52,
     53
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "fcf8eedb00a0d7c7"
+   "extractor": "pypdf"
   },
   "listed": 10,
-  "text_chars": 4178
+  "text_chars": 1576
  },
  {
   "control_number": "31297",
@@ -1238,23 +1192,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57",
-   "title": "Business Administration for Transfer 2.0",
-   "h1": "Business Administration for Transfer 2.0",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    57,
     58,
     59,
     60
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "8b8c162bcdab51a3"
+   "extractor": "pypdf"
   },
   "listed": 9,
-  "text_chars": 12140
+  "text_chars": 8462
  },
  {
   "control_number": "31379",
@@ -1293,70 +1244,24 @@
   "title": "Graphic Design",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "ART19A",
-   "ART19B",
-   "ART19C",
-   "ART19D",
-   "ART1A",
-   "ART1B",
-   "ART2",
-   "ART23",
-   "ART3",
-   "ART49"
-  ],
-  "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=115",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    115,
-    116,
-    117
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "76d93ef5e4475113"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "31411",
   "title": "Graphic Design",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.545,
-  "codes_found": [
-   "ART19A",
-   "ART1A",
-   "ART2",
-   "ART23",
-   "ART49",
-   "ART8"
-  ],
-  "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=115",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    115,
-    116,
-    117
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "76d93ef5e4475113"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "32083",
@@ -1406,21 +1311,18 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57",
-   "title": "Economics for Transfer",
-   "h1": "Economics for Transfer",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    57,
     58
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "ede29766a85790f9"
+   "extractor": "pypdf"
   },
   "listed": 5,
-  "text_chars": 6526
+  "text_chars": 3407
  },
  {
   "control_number": "33322",
@@ -1439,21 +1341,20 @@
    "AT80"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=55",
-   "title": "Certificate of Achievement Engine Repair",
-   "h1": "Certificate of Achievement Engine Repair",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    54,
     55,
     56
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "c5ae5f74bf8232c6"
+   "extractor": "pypdf"
   },
   "listed": 7,
-  "text_chars": 4209
+  "text_chars": 7720
  },
  {
   "control_number": "33323",
@@ -1474,8 +1375,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54",
-   "title": "",
-   "h1": "",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1483,9 +1384,7 @@
     55,
     56
    ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "235732502f0be9e0"
+   "extractor": "pypdf"
   },
   "listed": 8,
   "text_chars": 7720
@@ -1517,21 +1416,18 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=89",
-   "title": "The AA-T in Kinesiology is designed to provide students with a strong foundation for the study of the human body and bod",
-   "h1": "The AA-T in Kinesiology is designed to provide students with a strong foundation for the study of the human body and bod",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=90",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    89,
     90
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "dde80d5ba18c8b44"
+   "extractor": "pypdf"
   },
   "listed": 18,
-  "text_chars": 7297
+  "text_chars": 3898
  },
  {
   "control_number": "33661",
@@ -1558,8 +1454,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54",
-   "title": "Associate in Science in Automotive",
-   "h1": "Associate in Science in Automotive",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1567,12 +1463,10 @@
     55,
     56
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "55d63a01ad67f394"
+   "extractor": "pypdf"
   },
   "listed": 14,
-  "text_chars": 7582
+  "text_chars": 7720
  },
  {
   "control_number": "33729",
@@ -1594,23 +1488,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47",
-   "title": "Animal Science for Transfer",
-   "h1": "Animal Science for Transfer",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    47,
-    48,
     49,
-    50
+    50,
+    51
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "c45a0241963e4511"
+   "extractor": "pypdf"
   },
   "listed": 10,
-  "text_chars": 11512
+  "text_chars": 7502
  },
  {
   "control_number": "33730",
@@ -1633,23 +1524,21 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47",
-   "title": "Agriculture Business for Transfer",
-   "h1": "Agriculture Business for Transfer",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    47,
     48,
     49,
-    50
+    50,
+    51
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "9242e6e3ad5df442"
+   "extractor": "pypdf"
   },
   "listed": 11,
-  "text_chars": 10232
+  "text_chars": 10707
  },
  {
   "control_number": "35106",
@@ -1672,19 +1561,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=88",
-   "title": "Associate in Science in Nutrition and Dietetics for Transfer",
-   "h1": "Associate in Science in Nutrition and Dietetics for Transfer",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     88
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "ef91789cc12055ed"
+   "extractor": "pypdf"
   },
   "listed": 10,
-  "text_chars": 3243
+  "text_chars": 3385
  },
  {
   "control_number": "35216",
@@ -1724,20 +1611,18 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=75",
-   "title": "Certificate of Achievement",
-   "h1": "Certificate of Achievement",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     75,
     76
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "b97eaecd90773f9c"
+   "extractor": "pypdf"
   },
   "listed": 3,
-  "text_chars": 4171
+  "text_chars": 4297
  },
  {
   "control_number": "36681",
@@ -1752,19 +1637,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=56",
-   "title": "Certificate of Completion in Automotive Chassis and Maintenance",
-   "h1": "Certificate of Completion in Automotive Chassis and Maintenance",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     56
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "7f42bb63892d30f6"
+   "extractor": "pypdf"
   },
   "listed": 2,
-  "text_chars": 738
+  "text_chars": 1618
  },
  {
   "control_number": "37760",
@@ -1781,22 +1664,18 @@
    "BUS27"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57",
-   "title": "CERTIFICATE OF ACHIEVEMENT",
-   "h1": "CERTIFICATE OF ACHIEVEMENT",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=59",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    57,
-    58,
     59
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "f5d8d2cd8d463222"
+   "extractor": "pypdf"
   },
   "listed": 5,
-  "text_chars": 9067
+  "text_chars": 1919
  },
  {
   "control_number": "40089",
@@ -1814,19 +1693,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=74",
-   "title": "Certificate of achievement in Geographic Information Systems",
-   "h1": "Certificate of achievement in Geographic Information Systems",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     74
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "45b578b7c58bca07"
+   "extractor": "pypdf"
   },
   "listed": 5,
-  "text_chars": 4214
+  "text_chars": 4379
  },
  {
   "control_number": "40583",
@@ -1861,23 +1738,20 @@
    "FS9821"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67",
-   "title": "CERTIFICATE OF ACHIEVEMENT",
-   "h1": "CERTIFICATE OF ACHIEVEMENT",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    67,
-    68,
     69,
-    70
+    70,
+    71
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "45e0d1970db5fd5e"
+   "extractor": "pypdf"
   },
   "listed": 11,
-  "text_chars": 13225
+  "text_chars": 10519
  },
  {
   "control_number": "41739",
@@ -1894,21 +1768,18 @@
    "CIS90"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=64",
-   "title": "CERTIFICATE OF ACHIEVEMENT",
-   "h1": "CERTIFICATE OF ACHIEVEMENT",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=65",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    64,
     65
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "caf301f28953ef0f"
+   "extractor": "pypdf"
   },
   "listed": 5,
-  "text_chars": 6946
+  "text_chars": 2944
  },
  {
   "control_number": "41912",
@@ -1943,8 +1814,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=96",
-   "title": "Associate in Arts Degree in Social Work and Human Services for Transfer",
-   "h1": "Associate in Arts Degree in Social Work and Human Services for Transfer",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1952,12 +1823,10 @@
     97,
     98
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "219eaef92c62973e"
+   "extractor": "pypdf"
   },
   "listed": 22,
-  "text_chars": 7748
+  "text_chars": 9806
  },
  {
   "control_number": "42300",
@@ -1978,23 +1847,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57",
-   "title": "Business Administration for Transfer 2.0",
-   "h1": "Business Administration for Transfer 2.0",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    57,
     58,
     59,
     60
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "8b8c162bcdab51a3"
+   "extractor": "pypdf"
   },
   "listed": 9,
-  "text_chars": 12140
+  "text_chars": 8462
  },
  {
   "control_number": "42798",
@@ -2028,21 +1894,18 @@
    "SOC1"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=84",
-   "title": "Associate in Science Degree in Registered Nursing",
-   "h1": "Associate in Science Degree in Registered Nursing",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    84,
     85
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "8637346a3f135eed"
+   "extractor": "pypdf"
   },
   "listed": 22,
-  "text_chars": 5918
+  "text_chars": 2714
  },
  {
   "control_number": "42929",
@@ -2064,21 +1927,18 @@
    "CIS91"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=64",
-   "title": "Associate in Science in Computer",
-   "h1": "Associate in Science in Computer",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=65",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    64,
     65
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "8b3357afb9756a35"
+   "extractor": "pypdf"
   },
   "listed": 10,
-  "text_chars": 7002
+  "text_chars": 2944
  },
  {
   "control_number": "43471",
@@ -2099,23 +1959,21 @@
    "FS81"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67",
-   "title": "The Cal Fire Academy Certificate of Achievement is designed to provide the skills and knowledge needed for the entry-lev",
-   "h1": "The Cal Fire Academy Certificate of Achievement is designed to provide the skills and knowledge needed for the entry-lev",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=68",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    67,
     68,
     69,
-    70
+    70,
+    71
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "1da5909cea9706cd"
+   "extractor": "pypdf"
   },
   "listed": 9,
-  "text_chars": 12761
+  "text_chars": 14352
  },
  {
   "control_number": "43543",
@@ -2141,19 +1999,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=71",
-   "title": "CERTIFICATE OF ACHIEVEMENT",
-   "h1": "CERTIFICATE OF ACHIEVEMENT",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     71
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "7d37fcb44f35b688"
+   "extractor": "pypdf"
   },
   "listed": 13,
-  "text_chars": 3819
+  "text_chars": 3990
  },
  {
   "control_number": "43544",
@@ -2179,19 +2035,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=71",
-   "title": "Associate in Science in Forestry",
-   "h1": "Associate in Science in Forestry",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     71
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "0365566d77ac3854"
+   "extractor": "pypdf"
   },
   "listed": 13,
-  "text_chars": 3865
+  "text_chars": 3990
  },
  {
   "control_number": "43571",
@@ -2213,19 +2067,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=60",
-   "title": "CERTIFICATE OF ACHIEVEMENT",
-   "h1": "CERTIFICATE OF ACHIEVEMENT",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     60
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "f705675a0721734d"
+   "extractor": "pypdf"
   },
   "listed": 11,
-  "text_chars": 2994
+  "text_chars": 3132
  },
  {
   "control_number": "43938",
@@ -2249,17 +2101,15 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=127",
-   "title": "",
-   "h1": "",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     127,
     128
    ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "248f17ccbe2e4472"
+   "extractor": "pypdf"
   },
   "listed": 11,
   "text_chars": 13400
@@ -2278,19 +2128,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=63",
-   "title": "CERTIFICATE OF COMPLETION",
-   "h1": "CERTIFICATE OF COMPLETION",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     63
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "0ea9ea057a514105"
+   "extractor": "pypdf"
   },
   "listed": 3,
-  "text_chars": 1524
+  "text_chars": 1659
  },
  {
   "control_number": "44457",
@@ -2319,8 +2167,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
-   "title": "Associate in Science Degree in Registered Nursing Advanced Placement",
-   "h1": "Associate in Science Degree in Registered Nursing Advanced Placement",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2329,12 +2177,10 @@
     87,
     88
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "4c159861cc4c33fd"
+   "extractor": "pypdf"
   },
   "listed": 16,
-  "text_chars": 10067
+  "text_chars": 11585
  },
  {
   "control_number": "44495",
@@ -2349,16 +2195,14 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=107",
-   "title": "",
-   "h1": "",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     107
    ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "dfc090703c5fc639"
+   "extractor": "pypdf"
   },
   "listed": 2,
   "text_chars": 4638
@@ -2404,20 +2248,18 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=97",
-   "title": "Upon completion of the Certificate of Achievement in Social Work and Human Services the student will be able to:",
-   "h1": "Upon completion of the Certificate of Achievement in Social Work and Human Services the student will be able to:",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     97,
     98
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "629c99be892b86e3"
+   "extractor": "pypdf"
   },
   "listed": 18,
-  "text_chars": 5227
+  "text_chars": 6170
  },
  {
   "control_number": "45344",
@@ -2444,19 +2286,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=82",
-   "title": "Certificate of Achievement: Biology/Chemistry",
-   "h1": "Certificate of Achievement: Biology/Chemistry",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     82
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "460fa95994ab2a90"
+   "extractor": "pypdf"
   },
   "listed": 14,
-  "text_chars": 2794
+  "text_chars": 2904
  },
  {
   "control_number": "45346",
@@ -2493,19 +2333,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=82",
-   "title": "Certificate of Achievement Natural Science",
-   "h1": "Certificate of Achievement Natural Science",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     82
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "584cf60d325e1f40"
+   "extractor": "pypdf"
   },
   "listed": 24,
-  "text_chars": 1992
+  "text_chars": 2904
  },
  {
   "control_number": "45524",
@@ -2523,20 +2361,19 @@
    "AJ8"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=46",
-   "title": "Certificate of Achievement: Administration of Justice – Law Enforcement",
-   "h1": "Certificate of Achievement: Administration of Justice – Law Enforcement",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    45,
     46
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "fea8bf1a69e5816c"
+   "extractor": "pypdf"
   },
   "listed": 6,
-  "text_chars": 1396
+  "text_chars": 7222
  },
  {
   "control_number": "45525",
@@ -2552,20 +2389,19 @@
    "AJ9"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=46",
-   "title": "Certificate of Achievement: Administration of Justice – Corrections",
-   "h1": "Certificate of Achievement: Administration of Justice – Corrections",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    45,
     46
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "76caa2aa7845dbcd"
+   "extractor": "pypdf"
   },
   "listed": 4,
-  "text_chars": 2701
+  "text_chars": 7222
  },
  {
   "control_number": "45611",
@@ -2604,20 +2440,18 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93",
-   "title": "Social Science Certificate of Achievement",
-   "h1": "Social Science Certificate of Achievement",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93,
     94
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "321c009224bca137"
+   "extractor": "pypdf"
   },
   "listed": 27,
-  "text_chars": 5960
+  "text_chars": 6270
  },
  {
   "control_number": "45924",
@@ -2635,8 +2469,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
-   "title": "",
-   "h1": "",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2645,9 +2479,7 @@
     87,
     88
    ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "6c748b187d7dafe6"
+   "extractor": "pypdf"
   },
   "listed": 5,
   "text_chars": 11585
@@ -2675,19 +2507,17 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=79",
-   "title": "CERTIFICATE OF ACHIEVEMENT",
-   "h1": "CERTIFICATE OF ACHIEVEMENT",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "9f1bbc111022e0a1"
+   "extractor": "pypdf"
   },
   "listed": 12,
-  "text_chars": 2997
+  "text_chars": 3193
  },
  {
   "control_number": "45927",
@@ -2706,8 +2536,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
-   "title": "",
-   "h1": "",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2716,9 +2546,7 @@
     87,
     88
    ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "6c748b187d7dafe6"
+   "extractor": "pypdf"
   },
   "listed": 6,
   "text_chars": 11585
@@ -2746,16 +2574,14 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=66",
-   "title": "",
-   "h1": "",
+   "title": null,
+   "h1": null,
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     66
    ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "97197928a471981a"
+   "extractor": "pypdf"
   },
   "listed": 14,
   "text_chars": 2873
