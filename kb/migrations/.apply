@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-14_s649_cvma_three_rows.sql
-name=s649_cvma_three_rows
+file=kb/migrations/2026-11-14_s652_honors_two_row_delete.sql
+name=s652_honors_two_row_delete
