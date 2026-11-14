@@ -8,7 +8,7 @@
 -- No row is superseded.
 
 -- ===========================================================================================================
--- STATEMENT 1 -- NOT YET RUN. The S651 conductor's decisions, one pitfall and one fact (status proposed, for Sam to
+-- STATEMENT 1 -- RUN about 10:57Z 2026-11-14 by the S651 conductor (8 rows, 8 creates, longest summary 398). The S651 conductor's decisions, one pitfall and one fact (status proposed, for Sam to
 -- revise on the next sheet's card 1). The conductor runs it as one execute_sql call and records RUN here.
 -- ===========================================================================================================
 insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values

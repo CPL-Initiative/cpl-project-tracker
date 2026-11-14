@@ -201,8 +201,8 @@ lessons docs, *Moved from the lane (S651 checkpoint)*); the harvest lessons' S65
 receipt; the vault note. **Skipped, with reason:** the pipeline view (no M-ID stage, auditor count or re-mint moved);
 `kb/README.md` and `README.md` (no structure or user-facing surface beyond lane detail; the Veteran map's header is in
 the library lane); `CLAUDE.md`'s §11 rows (no lane changed state); a KB note (the two lessons are recorded in
-`conductor_mode.md` and the harvest lessons). Step 12's headline and harvest rows: see the run log's own `written_at`
-and `headline` (refreshed only when the conductor's reads arrived). Wiki candidates (`/wiki-ingest`): the August 2026
+`conductor_mode.md` and the harvest lessons). Step 12 was refreshed from the conductor's reads at 10:57Z: 14,597 of 20,282 active programs pass, at 118 colleges (S650's was 14,596); the harvest row is in the run log (refreshed at 10:57Z).
+Wiki candidates (`/wiki-ingest`): the August 2026
 drop in transcribed units is one college, Pierce.
 
 ## Let go

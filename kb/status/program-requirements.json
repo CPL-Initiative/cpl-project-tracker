@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-14T10:54:31Z",
+  "written_at": "2026-11-14T10:57:28Z",
   "session": 651,
   "moniker": "SkyDunlin",
   "run": "the CPL Queue routine",
@@ -567,7 +567,7 @@
     {
       "day": "2026-11-14",
       "active": 20282,
-      "complete": 14596,
+      "complete": 14597,
       "colleges": 118
     }
   ],
