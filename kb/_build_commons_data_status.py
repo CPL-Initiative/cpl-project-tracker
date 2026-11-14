@@ -176,6 +176,7 @@ CATALOG_LINKS = {
 }
 
 # Every field a college row carries, flagged for the College view (a later slice draws only "shareable").
+# catalog_url here is the displayed link; the capture root (capture_root) is the registry's catalog_url field.
 FIELDS = {
     "id": "shareable", "name": "shareable", "district": "shareable", "kind": "shareable",
     "harvested": "shareable", "programs": "shareable", "passing": "shareable", "gap": "shareable",
@@ -428,13 +429,13 @@ def subject_of(key: str) -> str:
 
 
 def _no_objectives_systems() -> tuple:
-    """The outline systems whose course outlines are not known to print objectives, read from the SLO reader's own
-    OBJECTIVES_BY_SYSTEM (kb/_course_outcomes_read.py, #3263), the one source: every system whose "printed" is not
-    True ("template" for eLumen, where each college's catalog template decides and the trial pages printed none). A
-    college read only on such a system that holds no objective course reads "the outlines print none", never a
-    missing figure. Never restated here (S650)."""
+    """The outline systems whose course outlines are not known to print objectives, read from OBJECTIVES_BY_SYSTEM in
+    kb/_objectives_by_system.py, the one source the SLO reader imports too (S650, COBIx on #3286): every system whose
+    "printed" is not True ("template" for eLumen, where each college's catalog template decides and the trial pages
+    printed none). A college read only on such a system that holds no objective course reads "the outlines print
+    none", never a missing figure. Never restated here."""
     here = os.path.dirname(os.path.abspath(__file__))
-    spec = importlib.util.spec_from_file_location("course_outcomes_read", os.path.join(here, "_course_outcomes_read.py"))
+    spec = importlib.util.spec_from_file_location("objectives_by_system", os.path.join(here, "_objectives_by_system.py"))
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return tuple(sorted(k for k, v in mod.OBJECTIVES_BY_SYSTEM.items() if (v or {}).get("printed") is not True))
@@ -648,8 +649,18 @@ def link_check_result(chk: dict) -> str:
 def catalog_links(slug: str, capture_url) -> dict:
     """The catalog link the page displays, split from the capture root the readers use (S650). The capture root stays
     the capture's own catalog_url, the address it read; a college in CATALOG_LINKS shows its display link instead, the
-    file its catalog page links to now, and the checks behind the split, each with its result in words."""
+    file its catalog page links to now, and the checks behind the split, each with its result in words.
+
+    An entry holds only while the capture still names the file its checks found missing (COBIx on #3286): once a
+    recapture moves the capture root, the builder stops with a plain message, so a stale hand-entered line never
+    outlives the problem it fixed."""
     o = CATALOG_LINKS.get(slug) or {}
+    if o:
+        missing = {c.get("url") for c in o.get("checks") or [] if link_check_result(c) == "not found"}
+        if capture_url not in missing:
+            raise SystemExit("The catalog link override for %s in CATALOG_LINKS (kb/_build_commons_data_status.py) is "
+                             "stale: the capture now reads %s, which is not the file its checks found missing. Remove "
+                             "the entry, then rerun the builder." % (slug, capture_url))
     return {"catalog_url": o.get("display") or capture_url, "capture_root": capture_url,
             "catalog_now": o.get("current_file"),
             "catalog_checks": [dict(c, result=link_check_result(c)) for c in o.get("checks") or []] or None}
