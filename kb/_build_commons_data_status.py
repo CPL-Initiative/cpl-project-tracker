@@ -301,6 +301,15 @@ class Resolver:
         return self.by.get(norm(name))
 
 
+def filed_cost(summary: dict) -> float | None:
+    """What the college's filed records cost to read. summarize() in _program_requirements_college.py writes
+    cost_usd_filed (every filed record's cost, whichever run paid it) beside cost_usd_run (this run's spend,
+    0.0 on a free rescore); a summary written before S647 carries cost_usd alone, the run that filed every
+    record. A free rescore must never zero a college's cost or drop it from the totals (S653)."""
+    v = summary.get("cost_usd_filed")
+    return v if isinstance(v, (int, float)) else summary.get("cost_usd")
+
+
 def harvest(root: str):
     """Per harvested college, from the committed files through the census's own functions."""
     sys.path.insert(0, os.path.join(root, "kb"))
@@ -329,7 +338,7 @@ def harvest(root: str):
         out[slug] = {
             "name": name, "programs": programs, "passing": programs - gap, "gap": gap, "causes": causes,
             "read_at": acct.get("started"), "read_kind": "capture" if cap else ("capture_preview" if prev else None),
-            "cost_usd": summary.get("cost_usd"), "passed_at_read": summary.get("passed_machine_checks"),
+            "cost_usd": filed_cost(summary), "passed_at_read": summary.get("passed_machine_checks"),
             "listed_closed": summary.get("with_closed_list"), "found": summary.get("found"),
             "extracted": summary.get("extracted"), "errors": summary.get("errors"),
             "failed_checks": summary.get("failed"), "platform": acct.get("platform"),
