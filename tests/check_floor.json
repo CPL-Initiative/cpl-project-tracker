@@ -409,6 +409,7 @@
     "reclustering_s649.test.js": 11,
     "shared_imports_named.test.js": 11,
     "pages_allowlist.test.js": 33,
-    "veteran_map_controls_words.test.js": 12
+    "veteran_map_controls_words.test.js": 12,
+    "veteran_map_public_header.test.js": 23
   }
 }
