@@ -145,7 +145,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
 
 ## What went wrong in S651, and what worked
 
-- The 09:12Z firing of 2026-11-14 (SkyDunlin) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 08:26Z) and `main` at the S650 checkpoint were the one-writer check, and this PR declared the queue at 09:20Z.
+- The 09:12Z firing of 2026-11-14 (SkyDunlin) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 08:26Z) and `main` at the S650 checkpoint were the one-writer check, and this PR declared the queue at 09:14Z.
+- A second reader before the capture cleared Lassen's ten and found the holds lived only in a plan a rebuild erases; the worker moved one into the config before the reconcile ran. The review then kept five of the ten, and two passed: a dry run's count is an upper bound until the review's `fail_to_pass_kept` is read.
+- A read-only reader settled a question three sessions had left as "not checked" (the August drop: one college) in under a minute, from three commits of one file. Ask a reader before carrying an unknown forward.
+- A per-college live read (118 rows) cost about 8,000 tokens to relay to a worker as a file. Have the worker's SQL return one JSON value, and save it with a script.
 
 ## What went wrong in S650, and what worked
 
