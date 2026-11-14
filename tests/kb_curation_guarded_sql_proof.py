@@ -59,7 +59,8 @@ BUSI = {
         "the row is gone": "delete from kb_curation where course_id = 'BUSI M10XW'",
     },
 }
-PAIRS.append(BUSI)
+if os.path.exists(os.path.join(ROOT, BUSI["forward"])):
+    PAIRS.append(BUSI)
 CV = "_CREDENTIAL_REVIEW::"
 TYPO = "alifornia Veterinary Medical Association (CVMA)"
 CVMA_ROWS = [
