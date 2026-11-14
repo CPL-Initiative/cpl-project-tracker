@@ -1,271 +1,2216 @@
 {
   "folded": [
     {
-      "raw": "Credit by Exam-- CFPL ABT 133",
-      "assigned": "Facility Management for Food Safety",
+      "raw": "Apprenticeship Training Evidence for ACL 115",
+      "assigned": "Apprenticeship OSHA 30 Hour",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:10:18.936021+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 1",
+      "assigned": "Apprenticeship Engines Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:13:13.545655+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 1L",
+      "assigned": "Apprenticeship Engines Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:14:41.728161+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 2",
+      "assigned": "Apprenticeship Chassis",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:15:26.122101+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 2L",
+      "assigned": "Apprenticeship  Chassis Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:15:32.362392+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 3",
+      "assigned": "Apprenticeship Emissions",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:16:02.910568+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 3L",
+      "assigned": "Apprenticeship Emissions Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:16:08.992549+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 4",
+      "assigned": "Apprenticeship Electrical",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:16:42.580611+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 4L",
+      "assigned": "Apprenticeship Electrical Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:16:48.721832+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 100",
+      "assigned": "Apprenticeship Forklift Orientation Initial",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:17:25.546926+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 101",
+      "assigned": "Apprenticeship Fundamentals of Construction",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:17:55.602226+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 102",
+      "assigned": "Apprenticeship Hazardous Waste Removal Initial",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:18:17.795376+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 103",
+      "assigned": "Apprenticeship Safety Certification",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:18:42.082447+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 104",
+      "assigned": "Apprenticeship Aerial Work Platform Initial",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:18:58.384495+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 105",
+      "assigned": "Apprenticeship Rigging and Signaling",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:07.720129+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 106",
+      "assigned": "Apprenticeship Skid Steer Loader Orientation Initial",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:15.023832+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 107",
+      "assigned": "Apprenticeship Concrete Techniques",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:23.685562+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 108",
+      "assigned": "Apprenticeship Asphalt Paving Techniques",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:30.940256+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 109",
+      "assigned": "Apprenticeship Blueprint Reading Orientation, Basic",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:43.394209+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 110",
+      "assigned": "Apprenticeship Confined Space Awareness",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:52.728274+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 111",
+      "assigned": "Apprenticeship First Aid, CPR and AED",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:01.563202+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 112",
+      "assigned": "Apprenticeship Flagging Certification",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:08.302811+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 113",
+      "assigned": "Apprenticeship Traffic Control",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:15.351915+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 114",
+      "assigned": "Apprenticeship OSHA 10 Hour",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:25.474586+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 116",
+      "assigned": "Apprenticeship Traffic Control Technician",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:36.482529+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APMT 51",
+      "assigned": "Apprenticeship Boatworks 101 Yacht Electrical Systems",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:49.105788+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APMT 52",
+      "assigned": "Apprenticeship Boatworks 101 Yacht Propulsion Systems",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:58.204432+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APMT 53",
+      "assigned": "Apprenticeship Boatworks 101 Yacht Craftsmanship Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:21:06.05328+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for CNT 7285",
+      "assigned": "CompTIA Cloud+",
+      "issuer": "CompTIA",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:21:36.517944+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for EMS 10",
+      "assigned": "Paramedic Theory 1",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:35:03.722245+00:00"
+      "reviewed_at": "2026-11-13T20:22:07.565207+00:00"
     },
     {
-      "raw": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I",
-      "assigned": "Modern Dance Techniques 1",
-      "issuer": "CHAMPS High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:35:15.409179+00:00"
-    },
-    {
-      "raw": "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II",
-      "assigned": "Modern Dance Techniques 2",
-      "issuer": "CHAMPS High School",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:35:17.272537+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AJ 50",
-      "assigned": "Introduction to Administration of Justice",
+      "raw": "Industry Training Evidence for EMS 11",
+      "assigned": "Paramedic Theory 2",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:36:44.884129+00:00"
+      "reviewed_at": "2026-11-13T20:22:21.095433+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AJ 54",
-      "assigned": "Investigative Report Writing",
+      "raw": "Industry Training Evidence for EMS 12",
+      "assigned": "Paramedic Laboratory 1",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:37:18.901059+00:00"
+      "reviewed_at": "2026-11-13T20:22:35.510859+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AJ 60",
-      "assigned": "Concepts of Criminal Law",
+      "raw": "Industry Training Evidence for EMS 13",
+      "assigned": "Paramedic Laboratory 2",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:38:53.24418+00:00"
+      "reviewed_at": "2026-11-13T20:22:47.118086+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AJ 61",
-      "assigned": "Legal Aspects of Evidence",
+      "raw": "Industry Training Evidence for EMS 16",
+      "assigned": "Paramedic Clinical Occupational Work Experience",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:39:08.713508+00:00"
+      "reviewed_at": "2026-11-13T20:22:54.880437+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AJ 63",
-      "assigned": "Criminal Investigation",
+      "raw": "Industry Training Evidence for EMS 17",
+      "assigned": "Paramedic Field Internship",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:39:45.360909+00:00"
+      "reviewed_at": "2026-11-13T20:23:23.384368+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AJ 64",
-      "assigned": "Police Patrol Operations",
+      "raw": "Industry Training Evidence for EMS 20",
+      "assigned": "Emergency Medical Technician",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:40:49.902805+00:00"
+      "reviewed_at": "2026-11-13T20:23:34.139681+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AJ 66",
-      "assigned": "Juvenile Procedures",
-      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:41:49.096282+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AJ 68",
-      "assigned": "Police Ethics and Leadership",
-      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:42:35.798856+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AUTO A1",
-      "assigned": "ASE A1 — Engine Repair",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:43:01.418391+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AUTO A2",
-      "assigned": "ASE A2 — Automatic Transmission/Transaxle",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:43:10.436127+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AUTO A3",
-      "assigned": "ASE A3 — Manual Drive Train and Axles",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:43:12.775948+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AUTO A4",
-      "assigned": "ASE A4 — Suspension and Steering",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:43:14.62365+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AUTO A5",
-      "assigned": "ASE A5 — Brakes",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:43:15.977676+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AUTO A6",
-      "assigned": "ASE A6 — Electrical/Electronic Systems",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:43:17.680346+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AUTO A7",
-      "assigned": "ASE A7 — Heating and Air Conditioning",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:43:22.014049+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AUTO A8",
-      "assigned": "ASE A8 — Engine Performance",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:43:24.127773+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AUTO A9",
-      "assigned": "ASE A9 — Light Vehicle Diesel Engines",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:43:27.738911+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for AUTO INT",
-      "assigned": "Introduction to Automotive Technology",
+      "raw": "Industry Training Evidence for EMS 30",
+      "assigned": "Emergency Medical Responder",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:44:15.628762+00:00"
+      "reviewed_at": "2026-11-13T20:23:44.592149+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AUTO INTL",
-      "assigned": "Introduction to Automotive Technology",
+      "raw": "Industry Training Evidence for EMS 70",
+      "assigned": "CPR for Healthcare Providers",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:44:26.353672+00:00"
+      "reviewed_at": "2026-11-13T20:23:52.284015+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AUTO L1",
-      "assigned": "ASE L1 — Advanced Engine Performance Specialist",
+      "raw": "Industry Training Evidence for FST 1",
+      "assigned": "Fire Protection Organization",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:24:12.374478+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for GDDM 53",
+      "assigned": "Adobe Photoshop 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:24:46.627161+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for GDDM 54",
+      "assigned": "Adobe Illustrator 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:24:55.805283+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for GDDM 64",
+      "assigned": "Adobe InDesign 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:25:05.72311+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for HORT 55",
+      "assigned": "Greenhouse, Nursery, and Garden Center Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:25:20.899829+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for HORT 56",
+      "assigned": "Arboriculture/Urban Forestry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:25:29.417143+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for HORT 57",
+      "assigned": "Landscape and Turfgrass Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:26:01.286067+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for HORT 59",
+      "assigned": "Landscape Design",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:26:13.516682+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for HORT 60",
+      "assigned": "Landscape Irrigation Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:26:23.720391+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for KIN 6",
+      "assigned": "Personal Trainer",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:26:37.387755+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for KIN YO1",
+      "assigned": "Yoga 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:26:45.045567+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for KIN ZUM1",
+      "assigned": "Zumba 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:26:46.708598+00:00"
+    },
+    {
+      "raw": "Ironworkers Union Apprenticeship Level 1",
+      "assigned": "Ironworker Apprenticeship — Level 1",
+      "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:00.525783+00:00"
+    },
+    {
+      "raw": "Ironworkers Union Apprenticeship Level 3",
+      "assigned": "Ironworker Apprenticeship — Level 3",
+      "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:01.887979+00:00"
+    },
+    {
+      "raw": "Ironworkers Union Journeyperson",
+      "assigned": "Ironworker Apprenticeship — Journeyperson",
+      "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:03.091828+00:00"
+    },
+    {
+      "raw": "Ironworkers UnionApprenticeship Level 2",
+      "assigned": "Ironworker Apprenticeship — Level 2",
+      "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:04.261808+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ARHS 6",
+      "assigned": "Museum & Gallery Techniques",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:10.164892+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A1",
+      "assigned": "Engine Repair (ASE A1)",
       "issuer": "National Institute for Automotive Service Excellence (ASE)",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:45:05.438463+00:00"
+      "reviewed_at": "2026-11-13T20:27:16.242213+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AUTO L3",
-      "assigned": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
+      "raw": "Noncredit Course for AUTO A2",
+      "assigned": "Automatic Transmission/Transaxle (ASE A2)",
       "issuer": "National Institute for Automotive Service Excellence (ASE)",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:45:14.223091+00:00"
+      "reviewed_at": "2026-11-13T20:27:18.141115+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AUTO SDR",
+      "raw": "Noncredit Course for AUTO A3",
+      "assigned": "Manual Drive Train and Axles (ASE A3)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:19.404942+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A4",
+      "assigned": "Suspension and Steering (ASE A4)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:20.52957+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A5",
+      "assigned": "Brakes (ASE A5)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:21.99386+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A6",
+      "assigned": "Electrical/Electronic Systems (ASE A6)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:23.36725+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A7",
+      "assigned": "Heating and Air Conditioning (ASE A7)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:24.243527+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A8",
+      "assigned": "Engine Performance (ASE A8)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:25.290928+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A9",
+      "assigned": "Light Vehicle Diesel Engines (ASE A9)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:26.122556+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO INT",
+      "assigned": "Automotive Technology (AUTO INT)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:28.395423+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO INTL",
+      "assigned": "Automotive Technology (AUTO INTL)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:29.867155+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO L1",
+      "assigned": "Engine Performance Specialist (ASE L1) Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:32.636028+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO L3",
+      "assigned": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:35.238533+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO SDR",
       "assigned": "Automotive Specified Diagnostic and Repair",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:45:19.305781+00:00"
+      "reviewed_at": "2026-11-13T20:27:37.104046+00:00"
     },
     {
-      "raw": "Industry Training Evidence for AUTO SMOG",
-      "assigned": "Smog Inspector - Level 1 Training",
-      "issuer": "California Bureau of Automotive Repair (BAR)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:45:24.324605+00:00"
-    },
-    {
-      "raw": "Industry Training Evidence for BUSN 65",
-      "assigned": "Federal Income Tax Accounting",
+      "raw": "Noncredit Course for AUTO SMOG",
+      "assigned": "Smog Check Inspector Training",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:45:44.565728+00:00"
+      "reviewed_at": "2026-11-13T20:27:38.815905+00:00"
     },
     {
-      "raw": "Industry Training Evidence for CIS 66",
-      "assigned": "Introduction to Computer Networking",
+      "raw": "Noncredit Course for ESL 220A",
+      "assigned": "Intermediate Grammar for Reading and Writing",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:47:22.144057+00:00"
+      "reviewed_at": "2026-11-13T20:27:43.57009+00:00"
     },
     {
-      "raw": "Industry Training Evidence for CNT 52",
-      "assigned": "Introduction to Computer Networking",
+      "raw": "Noncredit Course for ESL 220B",
+      "assigned": "High-Intermediate Grammar for Reading and Writing",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:47:52.212376+00:00"
+      "reviewed_at": "2026-11-13T20:27:45.246856+00:00"
     },
     {
-      "raw": "Industry Training Evidence for CNT 68",
-      "assigned": "Introduction to Digital Forensics",
+      "raw": "Noncredit Course for ESL 221A",
+      "assigned": "Intermediate Reading and Writing",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:48:50.386223+00:00"
+      "reviewed_at": "2026-11-13T20:27:46.744372+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 221B",
+      "assigned": "High-Intermediate Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:49.304682+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 230A",
+      "assigned": "Beginning Grammar for Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:51.918525+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 230B",
+      "assigned": "High-Beginning Grammar for Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:56.653506+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 231A",
+      "assigned": "Beginning Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:00.374762+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 231B",
+      "assigned": "High-Beginning Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:02.425914+00:00"
+    },
+    {
+      "raw": "Noncredit Course for KIN PL1",
+      "assigned": "Pilates 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:04.242135+00:00"
+    },
+    {
+      "raw": "Noncredit Course for KIN SW1",
+      "assigned": "Swimming 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:05.421298+00:00"
+    },
+    {
+      "raw": "Noncredit Course for KIN SWF1",
+      "assigned": "Swim Fitness 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:06.240793+00:00"
+    },
+    {
+      "raw": "Noncredit Course for KIN YO1",
+      "assigned": "Yoga 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:07.443642+00:00"
+    },
+    {
+      "raw": "Noncredit Course for MUS 16",
+      "assigned": "Philharmonic Orchestra",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:08.478126+00:00"
+    },
+    {
+      "raw": "Noncredit Course for MUS 45",
+      "assigned": "Chamber Choir",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:09.631939+00:00"
+    },
+    {
+      "raw": "Noncredit Course for MUS 46",
+      "assigned": "Vocal Jazz Ensemble",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:10.508924+00:00"
+    },
+    {
+      "raw": "Noncredit Course for NKIN WT1",
+      "assigned": "Weight Training 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:12.041908+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Acoustical Installer Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:15.319562+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Acoustical Installer Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:31.914391+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Acoustical Installer Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:37.421504+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Acoustical Installer Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:44.315958+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Acoustical Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Acoustical Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:29:10.206957+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Carpenter Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:29:37.741622+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Carpenter Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:29:42.87888+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Carpenter Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:29:47.39163+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Carpenter Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:29:51.842183+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Carpenter Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Carpenter Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:05.937331+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Drywall/Lather Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:17.246056+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Drywall/Lather Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:22.664485+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Drywall/Lather Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:27.360289+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Drywall/Lather Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:32.596326+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Drywall/Lather Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Drywall/Lather Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:41.093676+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 1",
+      "assigned": "Carpenters Apprenticeship — Hardwood Floor Layer Level 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:55.471251+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 2",
+      "assigned": "Carpenters Apprenticeship — Hardwood Floor Layer Level 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:31:00.606809+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 3",
+      "assigned": "Carpenters Apprenticeship — Hardwood Floor Layer Level 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:31:06.283172+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Hardwood Floor Layer Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Hardwood Floor Layer Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:31:19.653106+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Insulation Installer Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:31:53.132565+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Insulation Installer Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:31:59.697745+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Insulation Installer Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Insulation Installer Year Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:12.483552+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:29.734454+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:36.262594+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:41.409983+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:46.481183+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Millwright Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Millwright Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:55.641115+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Millwright Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Millwright Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:00.702754+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Millwright Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Millwright Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:06.609698+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Millwright Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Millwright Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:11.88376+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Office Modular System Installer Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Modular System Installer Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:32.684198+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Pile Driver Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:38.301263+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Pile Driver Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:43.192581+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Pile Driver Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:48.007111+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Pile Driver Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:52.597605+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:09.340098+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:15.091155+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:19.424561+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:24.000783+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Scaffold Erector Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:31.449965+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Shingler Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Shingler Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:40.736919+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Apprenticeship Journeyperson",
+      "assigned": "Sheet Metal Apprenticeship — Journeyperson",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:35:45.510258+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Apprenticeship Level 1",
+      "assigned": "Sheet Metal Apprenticeship — Year 1",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:35:52.201167+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Apprenticeship Level 2",
+      "assigned": "Sheet Metal Apprenticeship — Year 2",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:35:56.843648+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Apprenticeship Level 3",
+      "assigned": "Sheet Metal Apprenticeship — Year 3",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:03.099415+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Apprenticeship Level 4",
+      "assigned": "Sheet Metal Apprenticeship — Year 4",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:07.037959+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 1",
+      "assigned": "Sheet Metal Service Technician Apprenticeship — Year 1",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:15.148582+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 2",
+      "assigned": "Sheet Metal Service Technician Apprenticeship — Year 2",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:19.24765+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 3",
+      "assigned": "Sheet Metal Service Technician Apprenticeship — Year 3",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:23.290273+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 4",
+      "assigned": "Sheet Metal Service Technician Apprenticeship — Year 4",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:26.959162+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Service Technician Journeyperson",
+      "assigned": "Sheet Metal Service Technician Apprenticeship — Journeyperson",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:40.425887+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Apprenticeship Level 1",
+      "assigned": "UA Plumbers and Pipefitters Apprenticeship — Level 1",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:26.807626+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Apprenticeship Level 2",
+      "assigned": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:29.067192+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Apprenticeship Level 3",
+      "assigned": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:30.223968+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Apprenticeship Level 4",
+      "assigned": "UA Plumbers/Pipefitters Apprenticeship — Level 4",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:30.858913+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Journeyperson",
+      "assigned": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:33.414062+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1",
+      "assigned": "UA Refrigeration Service Technician Apprenticeship — Level 1",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:35.367378+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 2",
+      "assigned": "UA Refrigeration Service Technician Apprenticeship — Level 2",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:37.436444+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 3",
+      "assigned": "UA Refrigeration Service Technician Apprenticeship — Level 3",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:38.605469+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 4",
+      "assigned": "UA Refrigeration Service Technician Apprenticeship — Level 4",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:39.238472+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Journeyperson",
+      "assigned": "UA Refrigeration Service Technician Apprenticeship — Journeyperson",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:40.495701+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 1",
+      "assigned": "UA Steamfitter Apprenticeship — Level 1",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:43.407785+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 2",
+      "assigned": "UA Steamfitter Apprenticeship — Level 2",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:44.38702+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 3",
+      "assigned": "UA Steamfitter Apprenticeship — Level 3",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:45.00343+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 4",
+      "assigned": "UA Steamfitter Apprenticeship — Level 4",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:45.609123+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Steamfitter Journeyperson",
+      "assigned": "UA Steamfitter Apprenticeship — Journeyperson",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:46.46484+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Welder Apprenticeship Level 1",
+      "assigned": "UA Welder Apprenticeship — Level 1",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:48.068379+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Welder Apprenticeship Level 2",
+      "assigned": "Plumbers and Pipefitters Welder Apprenticeship — Level 2",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:49.925346+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Welder Apprenticeship Level 3",
+      "assigned": "Plumbers and Pipefitters Welder Apprenticeship — Level 3",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:51.244574+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Welder Apprenticeship Level 4",
+      "assigned": "Plumbers and Pipefitters Welder Apprenticeship — Level 4",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:51.981582+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Welder Journeyperson",
+      "assigned": "Plumbers and Pipefitters Welder Apprenticeship — Journeyperson",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:52.977907+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for ENG 19A",
+      "assigned": "Journal of Arts and Literature",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:03.608096+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for JAMS 19A",
+      "assigned": "Journal of Arts and Literature",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:29.102313+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for MUS 27",
+      "assigned": "Teaching Intermediate Piano",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:31.69401+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for MUS 35",
+      "assigned": "Introduction to Music Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:33.381673+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for PHTO 72",
+      "assigned": "Introduction to Photojournalism",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:34.703156+00:00"
+    },
+    {
+      "raw": "Sacramento Electrical Training Center Apprenticeship Level 1",
+      "assigned": "IBEW Electrician Apprenticeship — Year 1",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:37.320091+00:00"
+    },
+    {
+      "raw": "Sacramento Electrical Training Center Apprenticeship Level 2",
+      "assigned": "IBEW Electrician Apprenticeship — Year 2",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:38.6159+00:00"
+    },
+    {
+      "raw": "Sacramento Electrical Training Center Apprenticeship Level 3",
+      "assigned": "IBEW Electrician Apprenticeship — Year 3",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:39.371939+00:00"
+    },
+    {
+      "raw": "Sacramento Electrical Training Center Apprenticeship Level 4",
+      "assigned": "IBEW Electrician Apprenticeship — Year 4",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:40.338133+00:00"
+    },
+    {
+      "raw": "Sacramento Electrical Training Center Apprenticeship Level 5",
+      "assigned": "IBEW Electrician Apprenticeship — Year 5",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:41.254958+00:00"
+    },
+    {
+      "raw": "Sacramento Electrical Training Center Journeyperson",
+      "assigned": "IBEW Electrician Apprenticeship — Journeyperson",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:43:42.707346+00:00"
     }
   ],
   "superseded": [],
-  "revised": [],
+  "revised": [
+    {
+      "raw": "Credit By Exam- CFPL ABT 135",
+      "assigned": "Introduction to Food Microbiology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:07:26.44+00:00",
+      "spellings": [
+        "Credit By Exam- CFPL ABT 135"
+      ],
+      "disagreeing": [
+        "Credit By Exam- CFPL ABT 135"
+      ],
+      "displaced": [
+        "Agricultural Business and Technology"
+      ],
+      "supersedes": "Agricultural Business and Technology"
+    },
+    {
+      "raw": "Credit by Exam-- CFPL ABT 132",
+      "assigned": "Food Safety Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:07:28.736+00:00",
+      "spellings": [
+        "Credit by Exam-- CFPL ABT 132"
+      ],
+      "disagreeing": [
+        "Credit by Exam-- CFPL ABT 132"
+      ],
+      "displaced": [
+        "Agricultural Business and Technology"
+      ],
+      "supersedes": "Agricultural Business and Technology"
+    },
+    {
+      "raw": "French 1-Elementary French 1st Quarter",
+      "assigned": "Elementary French 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:07:13.112+00:00",
+      "spellings": [
+        "French 1-Elementary French 1st Quarter"
+      ],
+      "disagreeing": [
+        "French 1-Elementary French 1st Quarter"
+      ],
+      "displaced": [
+        "Elementary French I"
+      ],
+      "supersedes": "Elementary French I"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO INT",
+      "assigned": "Introduction to Automotive Service",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:08:21.074+00:00",
+      "spellings": [
+        "Industry Training Evidence for AUTO INT"
+      ],
+      "disagreeing": [
+        "Industry Training Evidence for AUTO INT"
+      ],
+      "displaced": [
+        "Introduction to Automotive Technology"
+      ],
+      "supersedes": "Introduction to Automotive Technology"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO INTL",
+      "assigned": "Introduction to Automotive Service",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:08:21.074+00:00",
+      "spellings": [
+        "Industry Training Evidence for AUTO INTL"
+      ],
+      "disagreeing": [
+        "Industry Training Evidence for AUTO INTL"
+      ],
+      "displaced": [
+        "Introduction to Automotive Technology"
+      ],
+      "supersedes": "Introduction to Automotive Technology"
+    }
+  ],
   "credential_moved": [],
-  "credential_retired": [],
+  "credential_retired": [
+    {
+      "title": "Agricultural Business and Technology",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-11",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-11T01:17:26.041469+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Food Safety Management",
+        "Introduction to Food Microbiology"
+      ]
+    },
+    {
+      "title": "Elementary French I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-11",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Elementary French 1"
+      ]
+    }
+  ],
   "held": [],
   "credential_added": [
     {
-      "raw": "Credit by Exam-- CFPL ABT 133",
-      "assigned": "Facility Management for Food Safety",
-      "issuer": "California Community Colleges",
+      "raw": "Apprenticeship Training Evidence for ACL 115",
+      "assigned": "Apprenticeship OSHA 30 Hour",
+      "issuer": "",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:35:03.722245+00:00"
+      "reviewed_at": "2026-11-13T20:10:18.936021+00:00"
     },
     {
-      "raw": "Industry Training Evidence for CNT 68",
-      "assigned": "Introduction to Digital Forensics",
+      "raw": "Apprenticeship Training Evidence for APAG 1",
+      "assigned": "Apprenticeship Engines Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:13:13.545655+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 2",
+      "assigned": "Apprenticeship Chassis",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:15:26.122101+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 2L",
+      "assigned": "Apprenticeship  Chassis Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:15:32.362392+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 3",
+      "assigned": "Apprenticeship Emissions",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:16:02.910568+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 3L",
+      "assigned": "Apprenticeship Emissions Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:16:08.992549+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 4",
+      "assigned": "Apprenticeship Electrical",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:16:42.580611+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APAG 4L",
+      "assigned": "Apprenticeship Electrical Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:16:48.721832+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 100",
+      "assigned": "Apprenticeship Forklift Orientation Initial",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:17:25.546926+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 101",
+      "assigned": "Apprenticeship Fundamentals of Construction",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:17:55.602226+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 102",
+      "assigned": "Apprenticeship Hazardous Waste Removal Initial",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:18:17.795376+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 103",
+      "assigned": "Apprenticeship Safety Certification",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:18:42.082447+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 104",
+      "assigned": "Apprenticeship Aerial Work Platform Initial",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:18:58.384495+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 105",
+      "assigned": "Apprenticeship Rigging and Signaling",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:07.720129+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 106",
+      "assigned": "Apprenticeship Skid Steer Loader Orientation Initial",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:15.023832+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 107",
+      "assigned": "Apprenticeship Concrete Techniques",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:23.685562+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 108",
+      "assigned": "Apprenticeship Asphalt Paving Techniques",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:30.940256+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 109",
+      "assigned": "Apprenticeship Blueprint Reading Orientation, Basic",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:43.394209+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 110",
+      "assigned": "Apprenticeship Confined Space Awareness",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:19:52.728274+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 111",
+      "assigned": "Apprenticeship First Aid, CPR and AED",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:01.563202+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 112",
+      "assigned": "Apprenticeship Flagging Certification",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:08.302811+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 113",
+      "assigned": "Apprenticeship Traffic Control",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:15.351915+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 114",
+      "assigned": "Apprenticeship OSHA 10 Hour",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:25.474586+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APCL 116",
+      "assigned": "Apprenticeship Traffic Control Technician",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:36.482529+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APMT 51",
+      "assigned": "Apprenticeship Boatworks 101 Yacht Electrical Systems",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:49.105788+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APMT 52",
+      "assigned": "Apprenticeship Boatworks 101 Yacht Propulsion Systems",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:20:58.204432+00:00"
+    },
+    {
+      "raw": "Apprenticeship Training Evidence for APMT 53",
+      "assigned": "Apprenticeship Boatworks 101 Yacht Craftsmanship Lab",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:21:06.05328+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for GDDM 54",
+      "assigned": "Adobe Illustrator 1",
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:48:50.386223+00:00"
+      "reviewed_at": "2026-11-13T20:24:55.805283+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for KIN 6",
+      "assigned": "Personal Trainer",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:26:37.387755+00:00"
+    },
+    {
+      "raw": "Ironworkers Union Apprenticeship Level 1",
+      "assigned": "Ironworker Apprenticeship — Level 1",
+      "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:00.525783+00:00"
+    },
+    {
+      "raw": "Ironworkers Union Apprenticeship Level 3",
+      "assigned": "Ironworker Apprenticeship — Level 3",
+      "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:01.887979+00:00"
+    },
+    {
+      "raw": "Ironworkers Union Journeyperson",
+      "assigned": "Ironworker Apprenticeship — Journeyperson",
+      "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:03.091828+00:00"
+    },
+    {
+      "raw": "Ironworkers UnionApprenticeship Level 2",
+      "assigned": "Ironworker Apprenticeship — Level 2",
+      "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:04.261808+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A1",
+      "assigned": "Engine Repair (ASE A1)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:16.242213+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A2",
+      "assigned": "Automatic Transmission/Transaxle (ASE A2)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:18.141115+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A3",
+      "assigned": "Manual Drive Train and Axles (ASE A3)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:19.404942+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A4",
+      "assigned": "Suspension and Steering (ASE A4)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:20.52957+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A5",
+      "assigned": "Brakes (ASE A5)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:21.99386+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A6",
+      "assigned": "Electrical/Electronic Systems (ASE A6)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:23.36725+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A7",
+      "assigned": "Heating and Air Conditioning (ASE A7)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:24.243527+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A8",
+      "assigned": "Engine Performance (ASE A8)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:25.290928+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO A9",
+      "assigned": "Light Vehicle Diesel Engines (ASE A9)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:26.122556+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO INT",
+      "assigned": "Automotive Technology (AUTO INT)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:28.395423+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO INTL",
+      "assigned": "Automotive Technology (AUTO INTL)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:29.867155+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO L1",
+      "assigned": "Engine Performance Specialist (ASE L1) Advanced",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:32.636028+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO L3",
+      "assigned": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:35.238533+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO SMOG",
+      "assigned": "Smog Check Inspector Training",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:38.815905+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 220A",
+      "assigned": "Intermediate Grammar for Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:43.57009+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 221A",
+      "assigned": "Intermediate Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:46.744372+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 230A",
+      "assigned": "Beginning Grammar for Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:27:51.918525+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Acoustical Installer Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:15.319562+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Acoustical Installer Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:31.914391+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Acoustical Installer Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:37.421504+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Acoustical Installer Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:28:44.315958+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Acoustical Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Acoustical Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:29:10.206957+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Carpenter Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:29:37.741622+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Carpenter Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:29:42.87888+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Carpenter Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:29:47.39163+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Carpenter Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:29:51.842183+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Carpenter Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Carpenter Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:05.937331+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Drywall/Lather Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:17.246056+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Drywall/Lather Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:22.664485+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Drywall/Lather Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:27.360289+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Drywall/Lather Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:32.596326+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Drywall/Lather Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Drywall/Lather Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:41.093676+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 1",
+      "assigned": "Carpenters Apprenticeship — Hardwood Floor Layer Level 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:30:55.471251+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 2",
+      "assigned": "Carpenters Apprenticeship — Hardwood Floor Layer Level 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:31:00.606809+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 3",
+      "assigned": "Carpenters Apprenticeship — Hardwood Floor Layer Level 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:31:06.283172+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Hardwood Floor Layer Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Hardwood Floor Layer Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:31:19.653106+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Insulation Installer Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:31:53.132565+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Insulation Installer Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:31:59.697745+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Insulation Installer Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Insulation Installer Year Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:12.483552+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:29.734454+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:36.262594+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:41.409983+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:46.481183+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Millwright Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Millwright Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:32:55.641115+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Millwright Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Millwright Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:00.702754+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Millwright Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Millwright Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:06.609698+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Millwright Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Millwright Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:11.88376+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Office Modular System Installer Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Modular System Installer Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:32.684198+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Pile Driver Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:38.301263+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Pile Driver Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:43.192581+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Pile Driver Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:48.007111+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Pile Driver Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:33:52.597605+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 1",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector Year 1",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:09.340098+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 2",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector Year 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:15.091155+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 3",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector Year 3",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:19.424561+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 4",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector Year 4",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:24.000783+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Scaffold Erector Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Scaffold Erector Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:31.449965+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Shingler Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Shingler Journeyperson",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:34:40.736919+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Apprenticeship Journeyperson",
+      "assigned": "Sheet Metal Apprenticeship — Journeyperson",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:35:45.510258+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Apprenticeship Level 1",
+      "assigned": "Sheet Metal Apprenticeship — Year 1",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:35:52.201167+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Apprenticeship Level 2",
+      "assigned": "Sheet Metal Apprenticeship — Year 2",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:35:56.843648+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Apprenticeship Level 3",
+      "assigned": "Sheet Metal Apprenticeship — Year 3",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:03.099415+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Apprenticeship Level 4",
+      "assigned": "Sheet Metal Apprenticeship — Year 4",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:07.037959+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 1",
+      "assigned": "Sheet Metal Service Technician Apprenticeship — Year 1",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:15.148582+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 2",
+      "assigned": "Sheet Metal Service Technician Apprenticeship — Year 2",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:19.24765+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 3",
+      "assigned": "Sheet Metal Service Technician Apprenticeship — Year 3",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:23.290273+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 4",
+      "assigned": "Sheet Metal Service Technician Apprenticeship — Year 4",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:26.959162+00:00"
+    },
+    {
+      "raw": "NorCal Valley Sheet Metal Service Technician Journeyperson",
+      "assigned": "Sheet Metal Service Technician Apprenticeship — Journeyperson",
+      "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:36:40.425887+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Apprenticeship Level 1",
+      "assigned": "UA Plumbers and Pipefitters Apprenticeship — Level 1",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:26.807626+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Apprenticeship Level 2",
+      "assigned": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:29.067192+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Apprenticeship Level 3",
+      "assigned": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:30.223968+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Apprenticeship Level 4",
+      "assigned": "UA Plumbers/Pipefitters Apprenticeship — Level 4",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:30.858913+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Journeyperson",
+      "assigned": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:33.414062+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1",
+      "assigned": "UA Refrigeration Service Technician Apprenticeship — Level 1",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:35.367378+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 2",
+      "assigned": "UA Refrigeration Service Technician Apprenticeship — Level 2",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:37.436444+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 3",
+      "assigned": "UA Refrigeration Service Technician Apprenticeship — Level 3",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:38.605469+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 4",
+      "assigned": "UA Refrigeration Service Technician Apprenticeship — Level 4",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:39.238472+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Refrigeration Service Technician Journeyperson",
+      "assigned": "UA Refrigeration Service Technician Apprenticeship — Journeyperson",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:40.495701+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 1",
+      "assigned": "UA Steamfitter Apprenticeship — Level 1",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:43.407785+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 2",
+      "assigned": "UA Steamfitter Apprenticeship — Level 2",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:44.38702+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 3",
+      "assigned": "UA Steamfitter Apprenticeship — Level 3",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:45.00343+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 4",
+      "assigned": "UA Steamfitter Apprenticeship — Level 4",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:45.609123+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Steamfitter Journeyperson",
+      "assigned": "UA Steamfitter Apprenticeship — Journeyperson",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:46.46484+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Welder Apprenticeship Level 1",
+      "assigned": "UA Welder Apprenticeship — Level 1",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:48.068379+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Welder Apprenticeship Level 2",
+      "assigned": "Plumbers and Pipefitters Welder Apprenticeship — Level 2",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:49.925346+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Welder Apprenticeship Level 3",
+      "assigned": "Plumbers and Pipefitters Welder Apprenticeship — Level 3",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:51.244574+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Welder Apprenticeship Level 4",
+      "assigned": "Plumbers and Pipefitters Welder Apprenticeship — Level 4",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:51.981582+00:00"
+    },
+    {
+      "raw": "Plumbers Pipefitters Union Welder Journeyperson",
+      "assigned": "Plumbers and Pipefitters Welder Apprenticeship — Journeyperson",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:42:52.977907+00:00"
+    },
+    {
+      "raw": "Credit By Exam- CFPL ABT 135",
+      "assigned": "Introduction to Food Microbiology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:07:26.44+00:00",
+      "spellings": [
+        "Credit By Exam- CFPL ABT 135"
+      ],
+      "disagreeing": [
+        "Credit By Exam- CFPL ABT 135"
+      ],
+      "displaced": [
+        "Agricultural Business and Technology"
+      ],
+      "supersedes": "Agricultural Business and Technology"
+    },
+    {
+      "raw": "Credit by Exam-- CFPL ABT 132",
+      "assigned": "Food Safety Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T20:07:28.736+00:00",
+      "spellings": [
+        "Credit by Exam-- CFPL ABT 132"
+      ],
+      "disagreeing": [
+        "Credit by Exam-- CFPL ABT 132"
+      ],
+      "displaced": [
+        "Agricultural Business and Technology"
+      ],
+      "supersedes": "Agricultural Business and Technology"
     }
   ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [
     {
-      "title": "Modern Dance Techniques 1",
-      "issuer": "CHAMPS High School",
-      "raw": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I",
+      "title": "Emergency Medical Technician",
+      "issuer": "California Community Colleges",
+      "raw": "Industry Training Evidence for EMS 20",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:35:15.409179+00:00"
+      "reviewed_at": "2026-11-13T20:23:34.139681+00:00"
     },
     {
-      "title": "Modern Dance Techniques 2",
-      "issuer": "CHAMPS High School",
-      "raw": "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II",
+      "title": "Zumba 1",
+      "issuer": "California Community Colleges",
+      "raw": "Industry Training Evidence for KIN ZUM1",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:35:17.272537+00:00"
-    },
-    {
-      "title": "Juvenile Procedures",
-      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
-      "raw": "Industry Training Evidence for AJ 66",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:41:49.096282+00:00"
-    },
-    {
-      "title": "Police Ethics and Leadership",
-      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
-      "raw": "Industry Training Evidence for AJ 68",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-13T12:42:35.798856+00:00"
+      "reviewed_at": "2026-11-13T20:26:46.708598+00:00"
     }
   ],
   "credential_pruned": [],
   "articulations_repointed": 0,
   "title_anchors_stamped": 0,
-  "audit_pruned": 30,
-  "unified_titles_count": 5756
+  "audit_pruned": 168,
+  "unified_titles_count": 5924
 }

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-13T16:59:37Z",
+ "generated_at": "2026-11-14T00:01:43Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -53,63 +53,63 @@
   }
  ],
  "counts": {
-  "ase": 0,
-  "numerals": 1,
+  "ase": 1,
+  "numerals": 0,
   "language": 0,
   "course-code": 0,
   "level": 0,
-  "fold": 4
+  "fold": 5
  },
- "local_titles": 7,
+ "local_titles": 6,
  "cards": [
   {
-   "current": "Elementary French I",
-   "proposed": "Elementary French 1",
+   "current": "Engine Performance Specialist (ASE L1) Advanced",
+   "proposed": "Advanced Engine Performance Specialist (ASE L1)",
    "rules": [
-    "numerals"
+    "ase"
    ],
    "why": [
-    "Roman numerals become Arabic"
+    "the course is L1, named for the ASE test; the certification's name leads, its code in parentheses"
    ],
    "locals": [
     {
-     "raw": "French 1-Elementary French 1st Quarter",
+     "raw": "Noncredit Course for AUTO L1",
      "colleges": [
-      "De Anza College"
+      "Las Positas College"
      ],
-     "course": "",
-     "credit": "5 hours in Elementary French (First Quarter)"
+     "course": "AUTO L1",
+     "credit": "5 units in AUTO L1 Advanced Engine Performance"
     }
    ],
-   "id": "47c90f286f99",
+   "id": "778524bd1d55",
    "issuer": "California Community Colleges",
-   "proposed_exists": true,
-   "proposed_locals": 6,
-   "proposed_issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
    "current_locals": 1,
    "moves_all": true
   },
   {
-   "current": "Agricultural Business and Technology",
-   "proposed": "Introduction to Food Microbiology",
+   "current": "Apprenticeship Engines Lab",
+   "proposed": "AAG Service",
    "rules": [
     "fold"
    ],
    "why": [
-    "“Agricultural Business and Technology” holds different courses at Hartnell College; this one is “Introduction to Food Microbiology”"
+    "“Apprenticeship Engines Lab” holds different courses at Las Positas College; this one is “AAG Service”"
    ],
    "locals": [
     {
-     "raw": "Credit By Exam- CFPL ABT 135",
+     "raw": "Apprenticeship Training Evidence for APAG 1",
      "colleges": [
-      "Hartnell College"
+      "Las Positas College"
      ],
-     "course": "ABT 135",
-     "credit": "1.5 hours in Introduction to Food Microbiology"
+     "course": "APAG 1",
+     "credit": "4 units in APAG 1 AAG Service"
     }
    ],
-   "id": "ac293bc9e949",
-   "issuer": "California Community Colleges",
+   "id": "fbf7c33bbc0f",
+   "issuer": "",
    "proposed_exists": false,
    "proposed_locals": 0,
    "proposed_issuer": "",
@@ -117,26 +117,26 @@
    "moves_all": false
   },
   {
-   "current": "Agricultural Business and Technology",
-   "proposed": "Food Safety Management",
+   "current": "Apprenticeship Engines Lab",
+   "proposed": "AAG Service Laboratory",
    "rules": [
     "fold"
    ],
    "why": [
-    "“Agricultural Business and Technology” holds different courses at Hartnell College; this one is “Food Safety Management”"
+    "“Apprenticeship Engines Lab” holds different courses at Las Positas College; this one is “AAG Service Laboratory”"
    ],
    "locals": [
     {
-     "raw": "Credit by Exam-- CFPL ABT 132",
+     "raw": "Apprenticeship Training Evidence for APAG 1L",
      "colleges": [
-      "Hartnell College"
+      "Las Positas College"
      ],
-     "course": "ABT 132",
-     "credit": "1.5 hours in Food Safety Management"
+     "course": "APAG 1L",
+     "credit": "2 units in APAG 1L AAG Service Laboratory"
     }
    ],
-   "id": "8100a6573c4e",
-   "issuer": "California Community Colleges",
+   "id": "f182e9b10536",
+   "issuer": "",
    "proposed_exists": false,
    "proposed_locals": 0,
    "proposed_issuer": "",
@@ -144,14 +144,13 @@
    "moves_all": false
   },
   {
-   "current": "Introduction to Automotive Technology",
-   "proposed": "Automotive Service and Introduction",
+   "current": "Introduction to Automotive Service",
+   "proposed": "Automotive Service and Introduction Lecture",
    "rules": [
     "fold"
    ],
    "why": [
-    "“Introduction to Automotive Technology” holds different courses at Las Positas College; this one is “Automotive Service and Introduction Lecture”, a credential already",
-    "“Introduction to Automotive Technology” holds different courses at Las Positas College; this one is “Automotive Service and Introduction Hands-On Lab”, a credential already"
+    "“Introduction to Automotive Service” holds different courses at Las Positas College; this one is “Automotive Service and Introduction Lecture”"
    ],
    "locals": [
     {
@@ -161,7 +160,26 @@
      ],
      "course": "AUTO INT",
      "credit": "2 units in AUTO INT Automotive Service and Introduction Lecture"
-    },
+    }
+   ],
+   "id": "c8a8ca9f4663",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 3,
+   "moves_all": false
+  },
+  {
+   "current": "Introduction to Automotive Service",
+   "proposed": "Automotive Service and Introduction Hands-On Lab",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Introduction to Automotive Service” holds different courses at Las Positas College; this one is “Automotive Service and Introduction Hands-On Lab”"
+   ],
+   "locals": [
     {
      "raw": "Industry Training Evidence for AUTO INTL",
      "colleges": [
@@ -171,48 +189,40 @@
      "credit": "2 units in AUTO INTL Automotive Service and Introduction Hands-On Lab"
     }
    ],
-   "id": "52d207f24531",
+   "id": "0e53f48178b2",
    "issuer": "California Community Colleges",
-   "proposed_exists": true,
-   "proposed_locals": 2,
-   "proposed_issuer": "California Community Colleges",
-   "current_locals": 10,
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 3,
    "moves_all": false
   },
   {
-   "current": "Introduction to Computer Networking",
-   "proposed": "Networking Fundamentals",
+   "current": "Personal Trainer",
+   "proposed": "Personal Training",
    "rules": [
     "fold"
    ],
    "why": [
-    "“Introduction to Computer Networking” holds different courses at Las Positas College; this one is “Networking Fundamentals”"
+    "“Personal Trainer” and “Personal Training” differ only in spelling; “Personal Training” has 3 local titles"
    ],
    "locals": [
     {
-     "raw": "Industry Training Evidence for CIS 66",
+     "raw": "Industry Training Evidence for KIN 6",
      "colleges": [
       "Las Positas College"
      ],
-     "course": "CIS 66",
-     "credit": "3 units in CIS 66/CNT 52 Networking Fundamentals"
-    },
-    {
-     "raw": "Industry Training Evidence for CNT 52",
-     "colleges": [
-      "Las Positas College"
-     ],
-     "course": "CNT 52",
-     "credit": "3 units in CNT 52/CIS 66 Networking Fundamentals"
+     "course": "KIN 6",
+     "credit": "3.5 units in KIN 6 Personal Trainer"
     }
    ],
-   "id": "f6aa500ab48c",
+   "id": "6abb08f110f3",
    "issuer": "California Community Colleges",
    "proposed_exists": true,
    "proposed_locals": 3,
    "proposed_issuer": "California Community Colleges",
-   "current_locals": 4,
-   "moves_all": false
+   "current_locals": 1,
+   "moves_all": true
   }
  ]
 }
