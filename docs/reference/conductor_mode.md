@@ -138,6 +138,8 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - His unplanned statements are captured verbatim (the vault's braindump skill, on-the-fly mode) and he is told in one
   line. Replies to him are a few lines, active voice, stated positively.
 
+- **M-IDs are ours (Sam, in session S652, 2026-11-14, verbatim):** "why are we asking anyone anything about a MID course, which is our own construct (synthetic). what makes this MID so important that we would bother someone at SDCCD about it--they have no idea that MIDs even exist" and "we will be adjusting and deleting and refolding and reminting MIDs for quite a while as we figure out the best way to do it almost through trial and error" (`sam-mids-are-ours-trial-and-error-2026-11-14`). An M-ID question never goes to a college. A change to the M-ID staging layer is the conductor's to decide and carry out under a receipt that undoes it; a row a person saved still wins (Rule 10); Sam reacts to the result on the Commons.
+
 ## Checkpoint and sign-off
 
 - At the warning line (110,000 tokens left) say the number to Sam; run `/checkpoint` by Rule 9's commit count. A

@@ -28,7 +28,7 @@ the UTC day were S650's; the contacts harvest is Sundays.
    2026-11-14); carry out what remains.** Card 1 *"fine"*; card 2 *"delete"* (First things 4); card 3: *"Base number plus H
    (MATH M1036H)"*, *"Two-way: either satisfies the other"*, *"Build the field first, then the rows"*, *"Rows for all 508
    pairs"*, *"I name who in the note"* with the note empty (the conductor decided MATH M1044:
-   `d-math-m1044-via-csm-workspace-s652`); card 4 *"go"*, with the four guards (First things 9). Sheet 196 is superseded.
+   `d-math-m1044-stays-no-one-asked-s652`: it stays apart from M1036 and no one is asked, on Sam's word that an M-ID is our own construct); card 4 *"go"*, with the four guards (First things 9). Sheet 196 is superseded.
    **No ask is open on any sheet.** The next sheet (198) is a record of decisions, each card with one real example
    before and after and where on the Commons to see it.
 2. **Slice A on draft #3300** (`claude/ncl-catalog-lookup-s652`): Skyline's free capture (run 43600982846) filed
@@ -170,6 +170,20 @@ per branch from its diff and this ledger, and remove a worktree whose branch is 
 
 ## Decisions to honor
 
+**Sam, in session, about 14:49Z 2026-11-14, on the conductor's first use of pick-a-lane (it had sent the MATH M1044
+question to San Diego City College), verbatim:** *"why are we asking anyone anything about a MID course, which is our
+own construct (synthetic). what makes this MID so important that we would bother someone at SDCCD about it--they have no
+idea that MIDs even exist"*. The decision was reversed at once (`d-math-m1044-stays-no-one-asked-s652`). The rule it
+leaves: an M-ID question never goes to a college; what a college can answer is its own articulation in MAP, and that is
+a clean-up worklist item worked in the ordinary way.
+
+**Sam, in session, about 14:51Z 2026-11-14, verbatim:** *"we will be adjusting and deleting and refolding and reminting
+MIDs for quite a while as we figure out the best way to do it almost through trial and error"*
+(`sam-mids-are-ours-trial-and-error-2026-11-14`). The conductor's reading, for Sam to correct: a change to the M-ID
+staging layer (a merge, a split, a re-mint under the playbook, removing a row a bot saved) is the conductor's to decide
+and carry out under a receipt that undoes it, with no card first; a row a person saved still wins (Rule 10); the
+result shows on the Commons, and that is where he reacts.
+
 **Sam's, in session S652 (about 14:45Z 2026-11-14; `sam-conductor-picks-a-lane-2026-11-14`), on Sheet 197's asks:**
 *"on 197 asks, my honest read is that I don't really understand the asks the way they are written--language is obtuse.
 would be more effective to show examples of each ask. I just tried to go with your recommendation since any choice seems
@@ -183,7 +197,7 @@ dealing with and I want you to lean into making the least fuzzy choice among fuz
 The rule: a choice among near-equal options is the conductor's to make, carry out and record, never an ask; the
 `CLAUDE.md` hold list stands; an ask that remains shows a worked example on real rows (today, and under each choice);
 a decision card shows one real before and after and where on the Commons to see it (`conductor_mode.md`, *Recording
-and Sam*). Applied at once: `d-math-m1044-via-csm-workspace-s652`.
+and Sam*). Applied at once: `d-math-m1044-stays-no-one-asked-s652`: it stays apart from M1036 and no one is asked, on Sam's word that an M-ID is our own construct.
 
 **Sam's, on Open Asks Sheet 197 (his own calls, 14:35Z to 14:38Z 2026-11-14; `sam-sheet-197-answers-2026-11-14`):**
 card 1 *"fine"*; card 2 *"delete"*; card 3 *"Base number plus H (MATH M1036H)"*, *"Two-way: either satisfies the other"*,
@@ -238,7 +252,7 @@ file.
    district profile; COBIx's three Glendale follow-ups; Desert 10195's stored hold; the reading-procedure check; the PDF
    headings; the free GE page reads; the district phase 0 builder; the wave sample, De Anza, Redwoods); objectives
    laspositas, Coastline, Golden West after sac.
-2. **`commons`:** the Honors build as Sam ruled it (the `honors_of` field, the 508 pairs' rows, base-plus-H mints; MATH M1044 as a CSM Workspace follow-up to San Diego City College); FIRE 130 X's row-audit card; price the model pass; a
+2. **`commons`:** the Honors build as Sam ruled it (the `honors_of` field, the 508 pairs' rows, base-plus-H mints; MATH M1044 stays apart and no one is asked; exhibit MAPCBES-CBES-1-001's likely mis-filed articulation goes on the clean-up worklist); FIRE 130 X's row-audit card; price the model pass; a
    potential-CPL column; the Leadership outlines; the #3298 and #3302 follow-ups (`title_differs_in_substance` and the 16
    `_superseded_rekeyed_from` entries; the header's 2,319; a merge member with no articulation record gets no entry;
    the drop report's rows section; `standards_2_ruled_renames_test.py` and `ccc_metric_test.py` failing on `main` with

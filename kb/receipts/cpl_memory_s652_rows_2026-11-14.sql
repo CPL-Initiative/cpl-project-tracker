@@ -73,17 +73,13 @@ where m.slug in ('sam-conductor-picks-a-lane-2026-11-14')
 group by m.slug, m.summary order by m.slug;
 
 -- ===========================================================================================================
--- STATEMENT 4 -- NOT YET RUN (1 row; summary 377 characters, measured by script). The conductor's decision in place of the last
--- open ask (status proposed, for Sam to revise on Sheet 198 card 1). The conductor runs it as one execute_sql call and records RUN here.
+-- STATEMENT 4 -- WITHDRAWN, never run. It proposed `d-math-m1044-via-csm-workspace-s652` (the MATH M1044 question to San
+-- Diego City College through the CSM Workspace); Sam reversed that in session before it ran. STATEMENT 5 replaces it.
 -- ===========================================================================================================
-insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
-('d-math-m1044-via-csm-workspace-s652','decision','MATH M1044''s question goes to San Diego City via the CSM Workspace','The S652 conductor, under Sam''s pick-a-lane ruling (sam-conductor-picks-a-lane-2026-11-14), in place of an ask: who is asked about MATH M1044 (San Diego City College''s credit-by-exam exhibit MAPCBES-CBES-1-001) is settled. The question goes to San Diego City College as a CSM Workspace follow-up for that college; MATH M1044 into M1036 stays as it is until the college answers.',array['commons','csm-workspace','honors','decision'],'proposed','S652 checkpoint; docs/session_653_handoff.md and the lane files',null,null,'SkyAvocet (S652)',date '2026-11-14')
-on conflict (slug) do nothing;
-insert into public.cpl_memory_log (memory_id, actor, action, note, after)
-select id, 'SkyAvocet (S652)', 'create', 'S652 checkpoint, MATH M1044 decided (2026-11-14)', to_jsonb(m)
-from public.cpl_memory m where m.slug in ('d-math-m1044-via-csm-workspace-s652')
-  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
-select m.slug, length(m.summary) as summary_chars, count(l.id) filter (where l.action = 'create') as creates
-from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
-where m.slug in ('d-math-m1044-via-csm-workspace-s652')
-group by m.slug, m.summary order by m.slug;
+
+-- ===========================================================================================================
+-- STATEMENT 5 -- RUN by the conductor at 14:51Z 2026-11-14 (2 rows inserted, 2 create log rows; summaries 396 and 391).
+-- Sam's in-session ruling on M-IDs (verified, verbatim) and the reversed MATH M1044 decision (proposed).
+-- Slugs: sam-mids-are-ours-trial-and-error-2026-11-14, d-math-m1044-stays-no-one-asked-s652. Rollback by slug, as above.
+-- The insert ran in the shape of STATEMENT 2, with the log insert and the verify selected by these two slugs.
+-- ===========================================================================================================
