@@ -22,13 +22,12 @@
    "VT298"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=622",
-   "title": "CRC's Veterinary Technology Associate of Science Degree program",
-   "h1": "CRC's Veterinary Technology Associate of Science Degree program",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=623",
+   "title": "A.S. in Veterinary Technology",
+   "h1": "A.S. in Veterinary Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    622,
     623,
     624
    ],
@@ -38,11 +37,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8c111e8e53438ef5"
+   }
   },
   "listed": 13,
-  "text_chars": 12441
+  "text_chars": 9546
  },
  {
   "control_number": "04586",
@@ -67,14 +65,12 @@
    "PLTS310"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=132",
-   "title": "A.S.-T. in Agriculture Business",
-   "h1": "A.S.-T. in Agriculture Business",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=134",
+   "title": "The Agriculture Business Associate in Science (A.S.) degree may be",
+   "h1": "The Agriculture Business Associate in Science (A.S.) degree may be",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    132,
-    133,
     134,
     135
    ],
@@ -84,11 +80,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8d420c1f7ce07ef9"
+   }
   },
   "listed": 13,
-  "text_chars": 13261
+  "text_chars": 5885
  },
  {
   "control_number": "04589",
@@ -110,16 +105,16 @@
    "CMT310"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=151",
-   "title": "A.S. in Architecture",
-   "h1": "A.S. in Architecture",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=152",
+   "title": "built environment.",
+   "h1": "built environment.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    151,
     152,
     153,
-    154
+    154,
+    155
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -127,11 +122,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "ba46f3ecc38aa5a4"
+   }
   },
   "listed": 10,
-  "text_chars": 14506
+  "text_chars": 16000
  },
  {
   "control_number": "04593",
@@ -174,8 +168,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "f3f1388d8c1a642c"
+   }
   },
   "listed": 16,
   "text_chars": 16000
@@ -222,8 +215,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "31440519d682ba2d"
+   }
   },
   "listed": 15,
   "text_chars": 13292
@@ -254,13 +246,12 @@
    "MKT49523085"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=473",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
    "title": "A.A. in Marketing",
    "h1": "A.A. in Marketing",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    473,
     474,
     475,
     476
@@ -271,11 +262,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "eac188314b88b17b"
+   }
   },
   "listed": 16,
-  "text_chars": 10934
+  "text_chars": 10662
  },
  {
   "control_number": "04597",
@@ -321,8 +311,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "e5a3a75e26197514"
+   }
   },
   "listed": 23,
   "text_chars": 16000
@@ -367,8 +356,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "c2b8eaeb6dd4112e"
+   }
   },
   "listed": 13,
   "text_chars": 14690
@@ -412,8 +400,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "3381c9ce9a068073"
+   }
   },
   "listed": 15,
   "text_chars": 5535
@@ -455,8 +442,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "cdc27321e873d9c0"
+   }
   },
   "listed": 12,
   "text_chars": 16000
@@ -496,8 +482,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "6e70aa0cd1f39856"
+   }
   },
   "listed": 17,
   "text_chars": 4723
@@ -535,8 +520,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "e5f848e4bf9b0497"
+   }
   },
   "listed": 7,
   "text_chars": 16000
@@ -564,13 +548,12 @@
    "PHYS310"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=277",
-   "title": "A.S. in Construction Management",
-   "h1": "A.S. in Construction Management",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=278",
+   "title": "methods and procedures (instructor option)",
+   "h1": "methods and procedures (instructor option)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    277,
     278,
     279,
     280
@@ -581,11 +564,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "e80bbb980d74de7c"
+   }
   },
   "listed": 13,
-  "text_chars": 11847
+  "text_chars": 11028
  },
  {
   "control_number": "04614",
@@ -638,8 +620,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "0629d1d3e4f1fdff"
+   }
   },
   "listed": 31,
   "text_chars": 14475
@@ -650,7 +631,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.714,
+  "coverage": 0.667,
   "codes_found": [
    "MUFHL310",
    "MUFHL311",
@@ -663,35 +644,32 @@
    "MUFHL415",
    "MUIVI321",
    "MUIVI340",
-   "MUIVI341",
    "MUIVI351",
    "MUIVI371",
    "MUIVI410"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=498",
-   "title": "A.A.-T. in Music",
-   "h1": "A.A.-T. in Music",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=500",
+   "title": "A.A. in Music, General",
+   "h1": "A.A. in Music, General",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    498,
-    499,
     500,
-    501
+    501,
+    502,
+    503
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "opens_on_list": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "7cd3626a8c34b7e9"
+   }
   },
   "listed": 21,
-  "text_chars": 12970
+  "text_chars": 12799
  },
  {
   "control_number": "04616",
@@ -741,8 +719,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "86a8b72286021042"
+   }
   },
   "listed": 39,
   "text_chars": 8299
@@ -785,8 +762,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "213dc8aa18b7e8b3"
+   }
   },
   "listed": 11,
   "text_chars": 15111
@@ -830,8 +806,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5e48fdba8e29fa02"
+   }
   },
   "listed": 12,
   "text_chars": 16000
@@ -870,8 +845,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "83b08cea5383c01e"
+   }
   },
   "listed": 10,
   "text_chars": 3734
@@ -906,16 +880,16 @@
    "ECE430"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=299",
-   "title": "The Early Childhood Education A.A. degrees and certificates offer",
-   "h1": "The Early Childhood Education A.A. degrees and certificates offer",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=301",
+   "title": "Note to Transfer Students:",
+   "h1": "Note to Transfer Students:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    299,
-    300,
     301,
-    302
+    302,
+    303,
+    304
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -923,8 +897,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "23d0b62ca85dc010"
+   }
   },
   "listed": 20,
   "text_chars": 16000
@@ -965,8 +938,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "88523b51edc26169"
+   }
   },
   "listed": 12,
   "text_chars": 3782
@@ -1029,8 +1001,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "2ded113bf8ed5192"
+   }
   },
   "listed": 20,
   "text_chars": 16000
@@ -1071,16 +1042,16 @@
    "TA300"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=424",
-   "title": "CRC offers an A.A. Degree in Interdisciplinary Studies, Humanities.",
-   "h1": "CRC offers an A.A. Degree in Interdisciplinary Studies, Humanities.",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=426",
+   "title": "university to pursue a bachelor’s degree in this major, it is critical",
+   "h1": "university to pursue a bachelor’s degree in this major, it is critical",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    424,
-    425,
     426,
-    427
+    427,
+    428,
+    429
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -1088,11 +1059,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4324b0a3f2786db7"
+   }
   },
   "listed": 26,
-  "text_chars": 12627
+  "text_chars": 14114
  },
  {
   "control_number": "07087",
@@ -1121,8 +1091,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=220",
-   "title": "A.A. in Business, Small Business",
-   "h1": "A.A. in Business, Small Business",
+   "title": "Course Code Course Title Units",
+   "h1": "Course Code Course Title Units",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1132,16 +1102,15 @@
     223
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "39efd3e42d79a62d"
+   }
   },
   "listed": 16,
-  "text_chars": 14644
+  "text_chars": 16000
  },
  {
   "control_number": "07088",
@@ -1182,13 +1151,12 @@
     417
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "270fe3aae79c89a6"
+   }
   },
   "listed": 17,
   "text_chars": 16000
@@ -1240,8 +1208,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "ef4b5c6bc256e8bf"
+   }
   },
   "listed": 20,
   "text_chars": 13445
@@ -1284,8 +1251,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "1985188d67500ace"
+   }
   },
   "listed": 12,
   "text_chars": 10724
@@ -1336,8 +1302,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "3286664f3f69cfe7"
+   }
   },
   "listed": 23,
   "text_chars": 4368
@@ -1390,8 +1355,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "465e5f6cc5451ee8"
+   }
   },
   "listed": 22,
   "text_chars": 16000
@@ -1420,16 +1384,16 @@
    "RTVF376"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=554",
-   "title": "A.A. in Radio Production",
-   "h1": "A.A. in Radio Production",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=555",
+   "title": "Degree Requirements",
+   "h1": "Degree Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    554,
     555,
     556,
-    557
+    557,
+    558
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -1437,11 +1401,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8c77a6fbb9d03b08"
+   }
   },
   "listed": 14,
-  "text_chars": 14020
+  "text_chars": 16000
  },
  {
   "control_number": "07294",
@@ -1473,13 +1436,12 @@
    "RTVF380"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=620",
-   "title": "A.A. in Television Production",
-   "h1": "A.A. in Television Production",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=621",
+   "title": "preparation. The courses that CRC requires for an Associate’s",
+   "h1": "preparation. The courses that CRC requires for an Associate’s",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    620,
     621,
     622
    ],
@@ -1489,11 +1451,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "13fc966f848ed4f5"
+   }
   },
   "listed": 22,
-  "text_chars": 10100
+  "text_chars": 8769
  },
  {
   "control_number": "07300",
@@ -1525,8 +1486,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "0c56aefe3fe39b16"
+   }
   },
   "listed": 6,
   "text_chars": 1796
@@ -1570,8 +1530,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "f01844d5ffa1ceaa"
+   }
   },
   "listed": 20,
   "text_chars": 8434
@@ -1616,8 +1575,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a648f62d66179184"
+   }
   },
   "listed": 13,
   "text_chars": 16000
@@ -1670,8 +1628,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "90840ebf2cf41639"
+   }
   },
   "listed": 21,
   "text_chars": 16000
@@ -1709,8 +1666,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "9b562331002d2ea4"
+   }
   },
   "listed": 6,
   "text_chars": 16000
@@ -1721,8 +1677,9 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.545,
+  "coverage": 1.0,
   "codes_found": [
+   "DEAF310",
    "ECE300",
    "ECE312",
    "ECE314",
@@ -1734,28 +1691,36 @@
    "ECE356",
    "ECE402",
    "ECE415",
-   "ECE430"
+   "ECE430",
+   "ENGLC1000",
+   "FCS324",
+   "HUM300",
+   "MATH300",
+   "PHIL310",
+   "PHOTO420",
+   "PSYC371",
+   "SPAN401",
+   "VIET401"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=299",
-   "title": "Early Childhood Education - Master Teacher Certificate",
-   "h1": "Early Childhood Education - Master Teacher Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=303",
+   "title": "Certificates of Achievement",
+   "h1": "Certificates of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    299,
-    300,
-    301,
-    302
+    303,
+    304,
+    305,
+    306
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "84e94cec2423bf09"
+   }
   },
   "listed": 22,
   "text_chars": 16000
@@ -1795,8 +1760,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4dc59a9f277d818d"
+   }
   },
   "listed": 8,
   "text_chars": 16000
@@ -1821,16 +1785,16 @@
    "NUTRI300"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=281",
-   "title": "Cooking and Supervision Certificate, which are embedded within",
-   "h1": "Cooking and Supervision Certificate, which are embedded within",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=282",
+   "title": "Culinary Services Certificate, the Cooking and Supervision",
+   "h1": "Culinary Services Certificate, the Cooking and Supervision",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    281,
     282,
     283,
-    284
+    284,
+    285
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -1838,11 +1802,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "1202b0cac74c1a4f"
+   }
   },
   "listed": 10,
-  "text_chars": 12072
+  "text_chars": 15551
  },
  {
   "control_number": "07320",
@@ -1874,8 +1837,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5e771379e8bc510e"
+   }
   },
   "listed": 9,
   "text_chars": 7858
@@ -1950,8 +1912,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5e64505e926118e0"
+   }
   },
   "listed": 43,
   "text_chars": 15809
@@ -1988,8 +1949,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "827f19725d99d7cb"
+   }
   },
   "listed": 5,
   "text_chars": 14819
@@ -2027,8 +1987,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "92ae6d6c221bf00a"
+   }
   },
   "listed": 7,
   "text_chars": 10830
@@ -2072,8 +2031,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "f01844d5ffa1ceaa"
+   }
   },
   "listed": 21,
   "text_chars": 8434
@@ -2111,8 +2069,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "fac28b9bbbc2eb5f"
+   }
   },
   "listed": 8,
   "text_chars": 6988
@@ -2156,8 +2113,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "ea7d2409e89bca27"
+   }
   },
   "listed": 13,
   "text_chars": 15253
@@ -2206,8 +2162,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5c3375f7ed9e0843"
+   }
   },
   "listed": 17,
   "text_chars": 15141
@@ -2256,8 +2211,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "465e5f6cc5451ee8"
+   }
   },
   "listed": 20,
   "text_chars": 16000
@@ -2305,8 +2259,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5e2199a2fe1f2fe1"
+   }
   },
   "listed": 19,
   "text_chars": 16000
@@ -2347,8 +2300,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "57d7244ddd7b9490"
+   }
   },
   "listed": 9,
   "text_chars": 15053
@@ -2392,13 +2344,12 @@
    "TA306"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=424",
-   "title": "A.A. in American Studies",
-   "h1": "A.A. in American Studies",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425",
+   "title": "based on their interests",
+   "h1": "based on their interests",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    424,
     425,
     426,
     427
@@ -2409,11 +2360,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "44d3aab8e8bd42c4"
+   }
   },
   "listed": 30,
-  "text_chars": 12413
+  "text_chars": 11644
  },
  {
   "control_number": "11347",
@@ -2452,8 +2402,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "3a860f54399bb754"
+   }
   },
   "listed": 14,
   "text_chars": 11644
@@ -2501,8 +2450,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "27e44e4b1f95fdfe"
+   }
   },
   "listed": 17,
   "text_chars": 14217
@@ -2545,8 +2493,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "c28d652ba752f60e"
+   }
   },
   "listed": 11,
   "text_chars": 13272
@@ -2557,8 +2504,9 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.613,
+  "coverage": 1.0,
   "codes_found": [
+   "DEAF310",
    "ECE300",
    "ECE307",
    "ECE312",
@@ -2570,6 +2518,7 @@
    "ECE330",
    "ECE342",
    "ECE343",
+   "ECE350",
    "ECE356",
    "ECE361",
    "ECE365",
@@ -2577,28 +2526,37 @@
    "ECE404",
    "ECE415",
    "ECE424",
-   "ECE430"
+   "ECE430",
+   "ENGLC1000",
+   "FCS324",
+   "HUM300",
+   "MATH300",
+   "MATH310",
+   "PHIL310",
+   "PHOTO420",
+   "PSYC371",
+   "SPAN401",
+   "VIET401"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=299",
-   "title": "Early Childhood Education - Master Teacher Certificate",
-   "h1": "Early Childhood Education - Master Teacher Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=303",
+   "title": "Certificates of Achievement",
+   "h1": "Certificates of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    299,
-    300,
-    301,
-    302
+    303,
+    304,
+    305,
+    306
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "84e94cec2423bf09"
+   }
   },
   "listed": 31,
   "text_chars": 16000
@@ -2641,8 +2599,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "0f922b6b950b000a"
+   }
   },
   "listed": 12,
   "text_chars": 14448
@@ -2681,16 +2638,16 @@
    "SGVT315"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=238",
-   "title": "A.A. in Communication, Organizational",
-   "h1": "A.A. in Communication, Organizational",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=239",
+   "title": "in the following areas:",
+   "h1": "in the following areas:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    238,
     239,
     240,
-    241
+    241,
+    242
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -2698,11 +2655,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a97b4c10d0a39f18"
+   }
   },
   "listed": 13,
-  "text_chars": 14756
+  "text_chars": 16000
  },
  {
   "control_number": "12725",
@@ -2743,8 +2699,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "756ff49fcb984c0b"
+   }
   },
   "listed": 12,
   "text_chars": 14922
@@ -2785,8 +2740,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "d3150d30c19cbd97"
+   }
   },
   "listed": 9,
   "text_chars": 14875
@@ -2825,8 +2779,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "ecf00c0b5a5f7c40"
+   }
   },
   "listed": 10,
   "text_chars": 3641
@@ -2869,8 +2822,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "171447e67e05673e"
+   }
   },
   "listed": 14,
   "text_chars": 2769
@@ -2913,8 +2865,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a764acf0c41ac96c"
+   }
   },
   "listed": 11,
   "text_chars": 15924
@@ -2953,8 +2904,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "1a95b34e38ce79d2"
+   }
   },
   "listed": 7,
   "text_chars": 12745
@@ -3011,8 +2961,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "95797605b31edb58"
+   }
   },
   "listed": 25,
   "text_chars": 16000
@@ -3037,16 +2986,16 @@
    "PHYS431"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=232",
-   "title": "A.S. in Chemistry",
-   "h1": "A.S. in Chemistry",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=233",
+   "title": "students conduct hands-on chemical experimentation in a modern,",
+   "h1": "students conduct hands-on chemical experimentation in a modern,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    232,
     233,
     234,
-    235
+    235,
+    236
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -3054,11 +3003,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5f4bb1225aeed714"
+   }
   },
   "listed": 10,
-  "text_chars": 12264
+  "text_chars": 15835
  },
  {
   "control_number": "12791",
@@ -3079,16 +3027,16 @@
    "PHYS431"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=539",
-   "title": "A.S.-T. in Physics",
-   "h1": "A.S.-T. in Physics",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=542",
+   "title": "A.S. in Physics",
+   "h1": "A.S. in Physics",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    539,
-    540,
-    541,
-    542
+    542,
+    543,
+    544,
+    545
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -3096,11 +3044,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8c3da07f54fc797e"
+   }
   },
   "listed": 9,
-  "text_chars": 13780
+  "text_chars": 13728
  },
  {
   "control_number": "12792",
@@ -3137,8 +3084,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "1df65ce44bc1cce8"
+   }
   },
   "listed": 8,
   "text_chars": 15189
@@ -3181,8 +3127,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "47988c88a89cc794"
+   }
   },
   "listed": 12,
   "text_chars": 9903
@@ -3239,8 +3184,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a29dd40ab1db5945"
+   }
   },
   "listed": 26,
   "text_chars": 13092
@@ -3282,8 +3226,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "abd17031a57cfbec"
+   }
   },
   "listed": 10,
   "text_chars": 16000
@@ -3330,8 +3273,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "6e887ee2b544a50a"
+   }
   },
   "listed": 16,
   "text_chars": 14813
@@ -3384,8 +3326,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "7e2d53d06f035093"
+   }
   },
   "listed": 9,
   "text_chars": 15030
@@ -3423,16 +3364,16 @@
    "RTVF368"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=360",
-   "title": "A.A. in Film & Media Studies",
-   "h1": "A.A. in Film & Media Studies",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=361",
+   "title": "for an Associate’s degree in this major may be different from the",
+   "h1": "for an Associate’s degree in this major may be different from the",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    360,
     361,
     362,
-    363
+    363,
+    364
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -3440,11 +3381,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "07480ef615a629d7"
+   }
   },
   "listed": 11,
-  "text_chars": 14947
+  "text_chars": 16000
  },
  {
   "control_number": "15249",
@@ -3504,8 +3444,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "cad040cebd115324"
+   }
   },
   "listed": 37,
   "text_chars": 16000
@@ -3548,8 +3487,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "c2ccd3204f30f9cf"
+   }
   },
   "listed": 11,
   "text_chars": 15740
@@ -3581,16 +3519,16 @@
    "WELD110"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=412",
-   "title": "A.S. in General Agriculture",
-   "h1": "A.S. in General Agriculture",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=413",
+   "title": "coursework and facilitate the successful transition of agriculture",
+   "h1": "coursework and facilitate the successful transition of agriculture",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    412,
     413,
     414,
-    415
+    415,
+    416
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -3598,11 +3536,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "fade5b2099a71cf1"
+   }
   },
   "listed": 17,
-  "text_chars": 14313
+  "text_chars": 16000
  },
  {
   "control_number": "15314",
@@ -3635,8 +3572,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "76ac1857a809d6a2"
+   }
   },
   "listed": 6,
   "text_chars": 8489
@@ -3676,8 +3612,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "550d66522d93e2d5"
+   }
   },
   "listed": 12,
   "text_chars": 4308
@@ -3688,43 +3623,8 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.956,
+  "coverage": 0.649,
   "codes_found": [
-   "ARCH332",
-   "ART300",
-   "ART302",
-   "ART304",
-   "ART305",
-   "ART312",
-   "ART320",
-   "ART323",
-   "ART324",
-   "ART327",
-   "ART328",
-   "ART361",
-   "ART370",
-   "ART372",
-   "ART430",
-   "ARTH300",
-   "ARTH309",
-   "ARTH311",
-   "ARTH312",
-   "ARTH324",
-   "ARTH328",
-   "ARTH332",
-   "ARTH333",
-   "DEAF310",
-   "DEAF312",
-   "DEAF314",
-   "DEAF316",
-   "ENGCW400",
-   "ENGCW410",
-   "ENGLT303",
-   "ENGLT310",
-   "ENGLT311",
-   "ENGLT320",
-   "ENGLT321",
-   "ENGLT330",
    "ENGLT340",
    "ENGLT341",
    "ENGLT343",
@@ -3801,28 +3701,27 @@
    "VIET412"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=464",
-   "title": "A.A. in Liberal Arts - Arts and Humanities",
-   "h1": "A.A. in Liberal Arts - Arts and Humanities",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=465",
+   "title": "Course",
+   "h1": "Course",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    464,
     465,
     466,
-    467
+    467,
+    468
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "acd1db60db0905be"
+   }
   },
   "listed": 114,
-  "text_chars": 13992
+  "text_chars": 14761
  },
  {
   "control_number": "17869",
@@ -3846,8 +3745,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=466",
-   "title": "A.A. in Liberal Arts - Communication and",
-   "h1": "A.A. in Liberal Arts - Communication and",
+   "title": "Course",
+   "h1": "Course",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3859,11 +3758,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "e03071037e67b052"
+   }
   },
   "listed": 13,
-  "text_chars": 3053
+  "text_chars": 4486
  },
  {
   "control_number": "17870",
@@ -3943,8 +3841,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "1913cc1d2e7f6e3d"
+   }
   },
   "listed": 79,
   "text_chars": 3160
@@ -4034,8 +3931,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4a8f56bd9e516692"
+   }
   },
   "listed": 65,
   "text_chars": 6380
@@ -4077,8 +3973,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8144d150543cf1cd"
+   }
   },
   "listed": 12,
   "text_chars": 7586
@@ -4104,16 +3999,16 @@
    "PHARM420"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=521",
-   "title": "A.S. in Pharmacy Technology",
-   "h1": "A.S. in Pharmacy Technology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=522",
+   "title": "perform a wide variety of pharmacy related tasks under the direct",
+   "h1": "perform a wide variety of pharmacy related tasks under the direct",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    521,
     522,
     523,
-    524
+    524,
+    525
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -4121,11 +4016,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "dcef672c40e36900"
+   }
   },
   "listed": 11,
-  "text_chars": 13932
+  "text_chars": 16000
  },
  {
   "control_number": "19013",
@@ -4178,8 +4072,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "01793aa159f7c8f3"
+   }
   },
   "listed": 27,
   "text_chars": 15889
@@ -4219,16 +4112,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=143",
-   "title": "A.S. in Anthropology",
-   "h1": "A.S. in Anthropology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=144",
+   "title": "planning to transfer to a four-year school with a major in",
+   "h1": "planning to transfer to a four-year school with a major in",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    143,
     144,
     145,
-    146
+    146,
+    147
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -4236,11 +4129,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "756c64d6e98471bc"
+   }
   },
   "listed": 27,
-  "text_chars": 13461
+  "text_chars": 15843
  },
  {
   "control_number": "20147",
@@ -4264,27 +4156,25 @@
    "VT152"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=622",
-   "title": "Veterinary Technology Certificate",
-   "h1": "Veterinary Technology Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=623",
+   "title": "Associate Degree",
+   "h1": "Associate Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    622,
     623,
     624
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "47aaac99bfe14b7f"
+   }
   },
   "listed": 12,
-  "text_chars": 9861
+  "text_chars": 9564
  },
  {
   "control_number": "20153",
@@ -4309,28 +4199,27 @@
    "PLTS332"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=412",
-   "title": "Horticulture, Sustainable Landscape Technology Certificate",
-   "h1": "Horticulture, Sustainable Landscape Technology Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=414",
+   "title": "A.S. in Horticulture, Sustainable",
+   "h1": "A.S. in Horticulture, Sustainable",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    412,
-    413,
     414,
-    415
+    415,
+    416,
+    417
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "336195d71ef30a4b"
+   }
   },
   "listed": 13,
-  "text_chars": 14538
+  "text_chars": 16000
  },
  {
   "control_number": "20178",
@@ -4356,8 +4245,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=134",
-   "title": "Certificate of Achievement",
-   "h1": "Certificate of Achievement",
+   "title": "Agriculture Business Certificate",
+   "h1": "Agriculture Business Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4370,11 +4259,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "7b639251ff0b1729"
+   }
   },
   "listed": 13,
-  "text_chars": 4812
+  "text_chars": 4784
  },
  {
   "control_number": "20182",
@@ -4412,8 +4300,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "622cba2b92078ace"
+   }
   },
   "listed": 9,
   "text_chars": 16000
@@ -4460,8 +4347,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "7ef80a9db3abff21"
+   }
   },
   "listed": 16,
   "text_chars": 16000
@@ -4486,28 +4372,27 @@
    "MKT300"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=218",
-   "title": "Small Business Management/Entrepreneurship Certificate",
-   "h1": "Small Business Management/Entrepreneurship Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=220",
+   "title": "Course Code Course Title Units",
+   "h1": "Course Code Course Title Units",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    218,
-    219,
     220,
-    221
+    221,
+    222,
+    223
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "fad8fbd35b7333d9"
+   }
   },
   "listed": 10,
-  "text_chars": 13822
+  "text_chars": 16000
  },
  {
   "control_number": "20197",
@@ -4544,8 +4429,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "3abe98f9977f6bd0"
+   }
   },
   "listed": 9,
   "text_chars": 16000
@@ -4572,8 +4456,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=298",
-   "title": "Certificate of Achievement",
-   "h1": "Certificate of Achievement",
+   "title": "Digital Media Certificate",
+   "h1": "Digital Media Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4585,11 +4469,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8fc8691d19b73892"
+   }
   },
   "listed": 11,
-  "text_chars": 2180
+  "text_chars": 2152
  },
  {
   "control_number": "20204",
@@ -4622,8 +4505,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "76ac1857a809d6a2"
+   }
   },
   "listed": 6,
   "text_chars": 8489
@@ -4653,26 +4535,26 @@
    "AMT340"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-   "title": "Automotive Mechanics Technology Certificate",
-   "h1": "Automotive Mechanics Technology Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=190",
+   "title": "Certificate Requirements",
+   "h1": "Certificate Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    179,
-    180
+    190,
+    191,
+    192
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "90cbe5b1dd043f14"
+   }
   },
   "listed": 17,
-  "text_chars": 6680
+  "text_chars": 12496
  },
  {
   "control_number": "20215",
@@ -4709,8 +4591,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "375c74fa0316e39f"
+   }
   },
   "listed": 9,
   "text_chars": 10702
@@ -4747,8 +4628,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5835aa18c6114653"
+   }
   },
   "listed": 7,
   "text_chars": 13457
@@ -4772,28 +4652,26 @@
    "CMT313"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=277",
-   "title": "Construction Management Technology Certificate",
-   "h1": "Construction Management Technology Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=278",
+   "title": "methods and procedures (instructor option)",
+   "h1": "methods and procedures (instructor option)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    277,
     278,
     279,
     280
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "bb692cf1de1be85b"
+   }
   },
   "listed": 9,
-  "text_chars": 12054
+  "text_chars": 11028
  },
  {
   "control_number": "20222",
@@ -4818,28 +4696,27 @@
    "CMT310"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=212",
-   "title": "Building Inspection Technology Certificate",
-   "h1": "Building Inspection Technology Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=214",
+   "title": "Student Learning Outcomes",
+   "h1": "Student Learning Outcomes",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    212,
-    213,
     214,
-    215
+    215,
+    216,
+    217
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "79498bb154cef142"
+   }
   },
   "listed": 13,
-  "text_chars": 13925
+  "text_chars": 14968
  },
  {
   "control_number": "20224",
@@ -4879,8 +4756,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "698916d9dfd00959"
+   }
   },
   "listed": 11,
   "text_chars": 15317
@@ -4923,8 +4799,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "ce0b77115e393af9"
+   }
   },
   "listed": 12,
   "text_chars": 11695
@@ -4946,28 +4821,24 @@
    "FT320"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=367",
-   "title": "Certificate",
-   "h1": "Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=366",
+   "title": "• PSLO #5: Differentiate between fire detection and fire",
+   "h1": "• PSLO #5: Differentiate between fire detection and fire",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    367,
-    368,
-    369,
-    370
+    366
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "70e7c5728eb97a12"
+   }
   },
   "listed": 7,
-  "text_chars": 14850
+  "text_chars": 4272
  },
  {
   "control_number": "20367",
@@ -5007,8 +4878,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4a47ade604f9ce04"
+   }
   },
   "listed": 11,
   "text_chars": 12169
@@ -5038,8 +4908,7 @@
    "pages": [
     124,
     125,
-    126,
-    127
+    126
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -5047,11 +4916,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "10b35d56a4a4ffaf"
+   }
   },
   "listed": 8,
-  "text_chars": 15914
+  "text_chars": 11973
  },
  {
   "control_number": "30426",
@@ -5092,8 +4960,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "53e051fe6186d670"
+   }
   },
   "listed": 13,
   "text_chars": 14354
@@ -5161,28 +5028,27 @@
    "SONOG255"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=291",
-   "title": "Diagnostic Medical Sonography Certificate",
-   "h1": "Diagnostic Medical Sonography Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=292",
+   "title": "According to the American Registry for Diagnostic Medical",
+   "h1": "According to the American Registry for Diagnostic Medical",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    291,
     292,
     293,
-    294
+    294,
+    295
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "64cc28402943049d"
+   }
   },
   "listed": 13,
-  "text_chars": 14032
+  "text_chars": 16000
  },
  {
   "control_number": "30576",
@@ -5207,16 +5073,16 @@
    "SONOG255"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=291",
-   "title": "A.S. in Diagnostic Medical Sonography",
-   "h1": "A.S. in Diagnostic Medical Sonography",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=292",
+   "title": "According to the American Registry for Diagnostic Medical",
+   "h1": "According to the American Registry for Diagnostic Medical",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    291,
     292,
     293,
-    294
+    294,
+    295
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -5224,11 +5090,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "544e35378e206b4d"
+   }
   },
   "listed": 13,
-  "text_chars": 14071
+  "text_chars": 16000
  },
  {
   "control_number": "30720",
@@ -5270,8 +5135,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "201b361c17ce0902"
+   }
   },
   "listed": 19,
   "text_chars": 2799
@@ -5295,13 +5159,12 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=589",
-   "title": "A.A.-T. in Sociology",
-   "h1": "A.A.-T. in Sociology",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=590",
+   "title": "sociological phenomena; assess the significance of important social",
+   "h1": "sociological phenomena; assess the significance of important social",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    589,
     590,
     591,
     592
@@ -5312,11 +5175,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4f6d473c5e8890cd"
+   }
   },
   "listed": 9,
-  "text_chars": 14188
+  "text_chars": 13366
  },
  {
   "control_number": "30852",
@@ -5356,8 +5218,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8a9c485fb8e0d68d"
+   }
   },
   "listed": 11,
   "text_chars": 15001
@@ -5394,13 +5255,12 @@
    "RTVF498"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=363",
-   "title": "A.A. in Film / Digital Cinema Production",
-   "h1": "A.A. in Film / Digital Cinema Production",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=364",
+   "title": "narrative, documentary and experimental styles. This option can",
+   "h1": "narrative, documentary and experimental styles. This option can",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    363,
     364
    ],
    "extractor": "pypdf",
@@ -5409,11 +5269,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "08556e644a14fb64"
+   }
   },
   "listed": 22,
-  "text_chars": 5327
+  "text_chars": 4537
  },
  {
   "control_number": "31054",
@@ -5445,8 +5304,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "44685aec0bda8df7"
+   }
   },
   "listed": 5,
   "text_chars": 7780
@@ -5467,14 +5325,16 @@
    "PHYS431"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=433",
-   "title": "as the Biology, Geography, Geology, Math, or Physics AS-T rather",
-   "h1": "as the Biology, Geography, Geology, Math, or Physics AS-T rather",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=540",
+   "title": "(2) Obtainment of a minimum grade point average of 2.0.",
+   "h1": "(2) Obtainment of a minimum grade point average of 2.0.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    433,
-    434
+    540,
+    541,
+    542,
+    543
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -5482,11 +5342,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "acdc07d5191c6568"
+   }
   },
   "listed": 6,
-  "text_chars": 5827
+  "text_chars": 16000
  },
  {
   "control_number": "31311",
@@ -5513,8 +5372,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "35878ec08ad5f669"
+   }
   },
   "listed": 1,
   "text_chars": 4790
@@ -5573,8 +5431,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "dab009fd81783daf"
+   }
   },
   "listed": 15,
   "text_chars": 16000
@@ -5617,8 +5474,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "1a290300240115d2"
+   }
   },
   "listed": 11,
   "text_chars": 14425
@@ -5660,8 +5516,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "120d64bf54a8d107"
+   }
   },
   "listed": 10,
   "text_chars": 16000
@@ -5684,16 +5539,16 @@
    "ECE430"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=299",
-   "title": "Associate Degrees for Transfer",
-   "h1": "Associate Degrees for Transfer",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=300",
+   "title": "Degree Requirements",
+   "h1": "Degree Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    299,
     300,
     301,
-    302
+    302,
+    303
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -5701,8 +5556,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "cc6900e6f282ab9d"
+   }
   },
   "listed": 8,
   "text_chars": 16000
@@ -5751,8 +5605,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "341f9a4c8bba4f13"
+   }
   },
   "listed": 17,
   "text_chars": 16000
@@ -5789,13 +5642,12 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=141",
-   "title": "Associate Degrees for Transfer",
-   "h1": "Associate Degrees for Transfer",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=142",
+   "title": "Anthropologists aim to study our species from a biological",
+   "h1": "Anthropologists aim to study our species from a biological",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    141,
     142
    ],
    "extractor": "pypdf",
@@ -5804,11 +5656,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5f09cf8b88f105ba"
+   }
   },
   "listed": 22,
-  "text_chars": 5822
+  "text_chars": 4273
  },
  {
   "control_number": "31931",
@@ -5834,8 +5685,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=165",
-   "title": "Associate Degrees for Transfer",
-   "h1": "Associate Degrees for Transfer",
+   "title": "A.A.-T. in Art History",
+   "h1": "A.A.-T. in Art History",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5850,8 +5701,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5c2e92a379131ebd"
+   }
   },
   "listed": 13,
   "text_chars": 16000
@@ -5908,16 +5758,16 @@
    "TMACT331"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=441",
-   "title": "transfer to degree programs in Physical Education and Kinesiology.",
-   "h1": "transfer to degree programs in Physical Education and Kinesiology.",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=442",
+   "title": "A.A.-T. in Kinesiology",
+   "h1": "A.A.-T. in Kinesiology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    441,
     442,
     443,
-    444
+    444,
+    445
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -5925,11 +5775,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "6f0045b2ac2c027d"
+   }
   },
   "listed": 44,
-  "text_chars": 11901
+  "text_chars": 15256
  },
  {
   "control_number": "31994",
@@ -5962,8 +5811,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=382",
-   "title": "Associate Degrees for Transfer",
-   "h1": "Associate Degrees for Transfer",
+   "title": "A.A.-T. in Geography",
+   "h1": "A.A.-T. in Geography",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5978,8 +5827,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "b2407b17d155a321"
+   }
   },
   "listed": 20,
   "text_chars": 16000
@@ -6026,8 +5874,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4d082da45530903c"
+   }
   },
   "listed": 16,
   "text_chars": 11986
@@ -6075,8 +5922,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "f5ff525f81f97b9d"
+   }
   },
   "listed": 16,
   "text_chars": 16000
@@ -6120,8 +5966,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "518739c967758eb6"
+   }
   },
   "listed": 13,
   "text_chars": 15046
@@ -6165,8 +6010,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "9b32e7538ac6174f"
+   }
   },
   "listed": 13,
   "text_chars": 15030
@@ -6190,8 +6034,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=393",
-   "title": "Associate Degrees for Transfer",
-   "h1": "Associate Degrees for Transfer",
+   "title": "A.S.-T. in Geology",
+   "h1": "A.S.-T. in Geology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6206,11 +6050,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "05a23ecbfdf2c118"
+   }
   },
   "listed": 8,
-  "text_chars": 15221
+  "text_chars": 15189
  },
  {
   "control_number": "33053",
@@ -6218,7 +6061,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.786,
   "codes_found": [
    "ENGCW400",
    "ENGCW410",
@@ -6233,44 +6076,35 @@
    "ENGLT320",
    "ENGLT321",
    "ENGLT330",
-   "ENGLT335",
    "ENGLT336",
    "ENGLT340",
    "ENGLT341",
    "ENGLT343",
    "ENGLT345",
    "ENGLT360",
-   "ENGLT365",
    "ENGLT370",
    "ENGLT402",
-   "ENGWR301",
-   "JOUR300",
-   "SPAN426",
-   "SPAN427",
-   "TA300"
+   "ENGWR301"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=333",
-   "title": "A.A.-T. in English",
-   "h1": "A.A.-T. in English",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=335",
+   "title": "Associate’s degree in this major may be different from the",
+   "h1": "Associate’s degree in this major may be different from the",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    333,
-    334,
     335
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "2d904524688b4d8e"
+   }
   },
   "listed": 28,
-  "text_chars": 11348
+  "text_chars": 3841
  },
  {
   "control_number": "33072",
@@ -6377,8 +6211,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=171",
-   "title": "Certificate of Achievement",
-   "h1": "Certificate of Achievement",
+   "title": "Fine Art Photography Certificate",
+   "h1": "Fine Art Photography Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6390,11 +6224,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "c94e1801b4602b88"
+   }
   },
   "listed": 16,
-  "text_chars": 2961
+  "text_chars": 2933
  },
  {
   "control_number": "33537",
@@ -6428,16 +6261,16 @@
    "MUP424"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=498",
-   "title": "Associate Degrees for Transfer",
-   "h1": "Associate Degrees for Transfer",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=499",
+   "title": "Degree Requirements",
+   "h1": "Degree Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    498,
     499,
     500,
-    501
+    501,
+    502
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -6445,11 +6278,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "1418b338c7d5d362"
+   }
   },
   "listed": 22,
-  "text_chars": 12645
+  "text_chars": 13791
  },
  {
   "control_number": "33542",
@@ -6491,8 +6323,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "c2ccd3204f30f9cf"
+   }
   },
   "listed": 13,
   "text_chars": 15740
@@ -6539,8 +6370,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "1761b6a0f911305f"
+   }
   },
   "listed": 16,
   "text_chars": 11677
@@ -6566,13 +6396,12 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=132",
-   "title": "Associate Degrees for Transfer",
-   "h1": "Associate Degrees for Transfer",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=133",
+   "title": "Degree Requirements",
+   "h1": "Degree Requirements",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    132,
     133,
     134,
     135
@@ -6583,11 +6412,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "f8bd1b4460040369"
+   }
   },
   "listed": 11,
-  "text_chars": 13293
+  "text_chars": 11822
  },
  {
   "control_number": "35072",
@@ -6621,8 +6449,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "03add8c395970e2a"
+   }
   },
   "listed": 8,
   "text_chars": 3808
@@ -6666,8 +6493,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "7ba4f21f65d74124"
+   }
   },
   "listed": 15,
   "text_chars": 7296
@@ -6702,8 +6528,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=516",
-   "title": "for transfer to a didactic program in dietetics or a four-year degree",
-   "h1": "for transfer to a didactic program in dietetics or a four-year degree",
+   "title": "A.S.-T. in Nutrition and Dietetics",
+   "h1": "A.S.-T. in Nutrition and Dietetics",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6718,11 +6544,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "aff5cf22eb809356"
+   }
   },
   "listed": 19,
-  "text_chars": 15206
+  "text_chars": 15076
  },
  {
   "control_number": "35175",
@@ -6743,14 +6568,12 @@
    "CISS321"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=246",
-   "title": "The Business Information Technology Associate in Science (A.S.) degree",
-   "h1": "The Business Information Technology Associate in Science (A.S.) degree",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
+   "title": "A.S. in Information Technology Associate",
+   "h1": "A.S. in Information Technology Associate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    246,
-    247,
     248
    ],
    "extractor": "pypdf",
@@ -6759,11 +6582,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "b8e79aae4aa626cd"
+   }
   },
   "listed": 9,
-  "text_chars": 12272
+  "text_chars": 4126
  },
  {
   "control_number": "35303",
@@ -6801,8 +6623,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "7d9c1e85d5f52639"
+   }
   },
   "listed": 9,
   "text_chars": 16000
@@ -6839,8 +6660,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8b70fa3b0772a170"
+   }
   },
   "listed": 8,
   "text_chars": 4411
@@ -6889,8 +6709,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "b9da943a4778a6fc"
+   }
   },
   "listed": 7,
   "text_chars": 11684
@@ -6923,8 +6742,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a09662dc9957667f"
+   }
   },
   "listed": 4,
   "text_chars": 4030
@@ -6957,8 +6775,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "d24d76b9db0aa9ed"
+   }
   },
   "listed": 3,
   "text_chars": 7566
@@ -6991,8 +6808,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a09662dc9957667f"
+   }
   },
   "listed": 4,
   "text_chars": 4030
@@ -7024,8 +6840,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a09662dc9957667f"
+   }
   },
   "listed": 3,
   "text_chars": 4030
@@ -7058,8 +6873,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a09662dc9957667f"
+   }
   },
   "listed": 4,
   "text_chars": 4030
@@ -7092,8 +6906,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a09662dc9957667f"
+   }
   },
   "listed": 4,
   "text_chars": 4030
@@ -7125,8 +6938,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a09662dc9957667f"
+   }
   },
   "listed": 3,
   "text_chars": 4030
@@ -7161,8 +6973,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "d0ec8e37689eb96f"
+   }
   },
   "listed": 5,
   "text_chars": 6800
@@ -7196,8 +7007,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "3a0951e6f2b92712"
+   }
   },
   "listed": 4,
   "text_chars": 7316
@@ -7242,8 +7052,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "d141efcbe8b8fa6b"
+   }
   },
   "listed": 4,
   "text_chars": 2794
@@ -7278,8 +7087,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "022d5cc42fb24415"
+   }
   },
   "listed": 5,
   "text_chars": 6577
@@ -7311,8 +7119,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a09662dc9957667f"
+   }
   },
   "listed": 3,
   "text_chars": 4030
@@ -7350,8 +7157,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5d22f0617de8cbca"
+   }
   },
   "listed": 6,
   "text_chars": 13143
@@ -7400,8 +7206,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "f6f0d087ed129f92"
+   }
   },
   "listed": 5,
   "text_chars": 12112
@@ -7435,8 +7240,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "0a1adf4cb4c63ace"
+   }
   },
   "listed": 6,
   "text_chars": 4889
@@ -7470,8 +7274,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "f01844d5ffa1ceaa"
+   }
   },
   "listed": 5,
   "text_chars": 8434
@@ -7506,8 +7309,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "cd8586dad748a51c"
+   }
   },
   "listed": 5,
   "text_chars": 7153
@@ -7535,27 +7337,27 @@
    "AMT383"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179",
-   "title": "Automotive Mechanics Technology (Ford ASSET) Certificate",
-   "h1": "Automotive Mechanics Technology (Ford ASSET) Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=191",
+   "title": "• Automatic Transmissions",
+   "h1": "• Automatic Transmissions",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    179,
-    180,
-    181
+    191,
+    192,
+    193,
+    194
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "55a6299a6174bb55"
+   }
   },
   "listed": 13,
-  "text_chars": 10667
+  "text_chars": 15349
  },
  {
   "control_number": "35411",
@@ -7597,8 +7399,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "68536f6e96c79d58"
+   }
   },
   "listed": 13,
   "text_chars": 14684
@@ -7626,26 +7427,27 @@
    "AMT383"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=180",
-   "title": "Course",
-   "h1": "Course",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=191",
+   "title": "• Automatic Transmissions",
+   "h1": "• Automatic Transmissions",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    180,
-    181
+    191,
+    192,
+    193,
+    194
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "2f8e5cc9c1b95763"
+   }
   },
   "listed": 13,
-  "text_chars": 8755
+  "text_chars": 15349
  },
  {
   "control_number": "35413",
@@ -7668,16 +7470,16 @@
    "RTVF370"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=554",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=555",
    "title": "Radio Production Certificate",
    "h1": "Radio Production Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    554,
     555,
     556,
-    557
+    557,
+    558
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -7685,11 +7487,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a698e88e6848077c"
+   }
   },
   "listed": 11,
-  "text_chars": 13994
+  "text_chars": 14352
  },
  {
   "control_number": "35414",
@@ -7710,13 +7511,12 @@
    "RTVF376"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=620",
-   "title": "Television Production Certificate",
-   "h1": "Television Production Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=621",
+   "title": "preparation. The courses that CRC requires for an Associate’s",
+   "h1": "preparation. The courses that CRC requires for an Associate’s",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    620,
     621,
     622
    ],
@@ -7726,11 +7526,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "d8642d418ca49840"
+   }
   },
   "listed": 10,
-  "text_chars": 10069
+  "text_chars": 8769
  },
  {
   "control_number": "35552",
@@ -7767,8 +7566,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "658b254ac4261679"
+   }
   },
   "listed": 9,
   "text_chars": 12002
@@ -7805,8 +7603,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "33ed684916d2584f"
+   }
   },
   "listed": 5,
   "text_chars": 16000
@@ -7848,8 +7645,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8e44838994f998c2"
+   }
   },
   "listed": 10,
   "text_chars": 14744
@@ -7894,8 +7690,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4af55bac4b3991dc"
+   }
   },
   "listed": 15,
   "text_chars": 7396
@@ -7906,10 +7701,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.5,
   "codes_found": [
    "AH120",
-   "AH124",
    "AH311"
   ],
   "source": {
@@ -7928,8 +7722,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "49bab525a15d2a8c"
+   }
   },
   "listed": 4,
   "text_chars": 8123
@@ -7967,8 +7760,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "270fe3aae79c89a6"
+   }
   },
   "listed": 6,
   "text_chars": 16000
@@ -7992,13 +7784,12 @@
    "MKT49523085"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=473",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474",
    "title": "Marketing Certificate",
    "h1": "Marketing Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    473,
     474,
     475,
     476
@@ -8009,11 +7800,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "2e76bfe77e1032e3"
+   }
   },
   "listed": 9,
-  "text_chars": 10915
+  "text_chars": 8135
  },
  {
   "control_number": "35900",
@@ -8053,8 +7843,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "015a3feb579065d6"
+   }
   },
   "listed": 11,
   "text_chars": 15686
@@ -8097,8 +7886,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "079101b2379b5433"
+   }
   },
   "listed": 11,
   "text_chars": 16000
@@ -8134,8 +7922,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8b70fa3b0772a170"
+   }
   },
   "listed": 7,
   "text_chars": 4411
@@ -8177,8 +7964,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "2f740a72e921caec"
+   }
   },
   "listed": 10,
   "text_chars": 14325
@@ -8230,8 +8016,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "0662b38aff5dd776"
+   }
   },
   "listed": 21,
   "text_chars": 16000
@@ -8269,8 +8054,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4707732994c90355"
+   }
   },
   "listed": 6,
   "text_chars": 15011
@@ -8306,8 +8090,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "26d2b2b751ae7c9d"
+   }
   },
   "listed": 4,
   "text_chars": 16000
@@ -8343,8 +8126,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "2b61da313c978b7a"
+   }
   },
   "listed": 6,
   "text_chars": 6399
@@ -8386,8 +8168,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "efb8537e437d09cd"
+   }
   },
   "listed": 12,
   "text_chars": 7229
@@ -8422,8 +8203,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "5e771379e8bc510e"
+   }
   },
   "listed": 5,
   "text_chars": 7858
@@ -8471,8 +8251,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "34b9d298b51214f8"
+   }
   },
   "listed": 17,
   "text_chars": 16000
@@ -8504,8 +8283,7 @@
    "pages": [
     257,
     258,
-    259,
-    260
+    259
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -8513,11 +8291,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4726ce80bf4797ac"
+   }
   },
   "listed": 9,
-  "text_chars": 14281
+  "text_chars": 11162
  },
  {
   "control_number": "38017",
@@ -8525,48 +8302,43 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.842,
+  "coverage": 0.632,
   "codes_found": [
+   "MUFHL300",
    "MUFHL310",
    "MUFHL311",
    "MUFHL400",
    "MUFHL404",
    "MUFHL412",
    "MUFHL414",
-   "MUIVI321",
-   "MUIVI351",
-   "MUIVI371",
-   "MUIVI410",
    "MUP310",
-   "MUP321",
    "MUP330",
    "MUP357",
    "MUP360",
-   "MUSM370"
+   "MUSM498"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=498",
-   "title": "Entrepreneurial Arts: Independent Music Instructor Certificate",
-   "h1": "Entrepreneurial Arts: Independent Music Instructor Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=502",
+   "title": "Course",
+   "h1": "Course",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    498,
-    499,
-    500,
-    501
+    502,
+    503,
+    504,
+    505
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "81ac4ba82dc4f84a"
+   }
   },
   "listed": 19,
-  "text_chars": 12928
+  "text_chars": 14446
  },
  {
   "control_number": "38021",
@@ -8608,8 +8380,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8cb23e44070d98aa"
+   }
   },
   "listed": 16,
   "text_chars": 7691
@@ -8633,26 +8404,27 @@
    "FT304"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=365",
-   "title": "A.S. in Fire Prevention",
-   "h1": "A.S. in Fire Prevention",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=213",
+   "title": "Course",
+   "h1": "Course",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    365,
-    366
+    213,
+    214,
+    215,
+    216
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "f7766b0684ba07f4"
+   }
   },
   "listed": 9,
-  "text_chars": 6843
+  "text_chars": 16000
  },
  {
   "control_number": "38381",
@@ -8681,8 +8453,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4ef15e9af9bb73f3"
+   }
   },
   "listed": 3,
   "text_chars": 3798
@@ -8704,8 +8475,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=605",
-   "title": "Certificate of Achievement",
-   "h1": "Certificate of Achievement",
+   "title": "Theatre for Young Audiences Certificate",
+   "h1": "Theatre for Young Audiences Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8717,11 +8488,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "3296c9761d99ad9e"
+   }
   },
   "listed": 6,
-  "text_chars": 3362
+  "text_chars": 3334
  },
  {
   "control_number": "38750",
@@ -8762,8 +8532,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "01654ae2ba671e73"
+   }
   },
   "listed": 16,
   "text_chars": 5342
@@ -8781,16 +8550,14 @@
    "BUS350"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=218",
-   "title": "Business, Office Assistant Certificate",
-   "h1": "Business, Office Assistant Certificate",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=282",
+   "title": "Certificate, and the Small Business Management/Entrepreneurship",
+   "h1": "Certificate, and the Small Business Management/Entrepreneurship",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    218,
-    219,
-    220,
-    221
+    282,
+    283
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -8798,11 +8565,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "9559819fe10cc8f2"
+   }
   },
   "listed": 3,
-  "text_chars": 13892
+  "text_chars": 7770
  },
  {
   "control_number": "39139",
@@ -8823,8 +8589,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=564",
-   "title": "Real Estate Broker Certificate",
-   "h1": "Real Estate Broker Certificate",
+   "title": "Real Estate Salesperson Certificate",
+   "h1": "Real Estate Salesperson Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -8839,8 +8605,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "3abe98f9977f6bd0"
+   }
   },
   "listed": 9,
   "text_chars": 16000
@@ -8885,8 +8650,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "0c6ada7a38cddf3f"
+   }
   },
   "listed": 13,
   "text_chars": 14238
@@ -8922,8 +8686,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a2e7c48b0877e653"
+   }
   },
   "listed": 7,
   "text_chars": 2366
@@ -8955,8 +8718,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "ff9fed77be5156f0"
+   }
   },
   "listed": 3,
   "text_chars": 2932
@@ -8995,8 +8757,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=247",
-   "title": "A.S. in Cybersecurity and Information",
-   "h1": "A.S. in Cybersecurity and Information",
+   "title": "• Design, write, test, and debug computer programs in a",
+   "h1": "• Design, write, test, and debug computer programs in a",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9010,11 +8772,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "025e1a83fda2c53e"
+   }
   },
   "listed": 11,
-  "text_chars": 12273
+  "text_chars": 12512
  },
  {
   "control_number": "39606",
@@ -9044,8 +8805,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "d1f49351fca673db"
+   }
   },
   "listed": 4,
   "text_chars": 3391
@@ -9132,7 +8892,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.938,
   "codes_found": [
    "ANTH336",
    "ARTH312",
@@ -9147,33 +8907,29 @@
    "SJS310",
    "SOC300",
    "SOC302",
-   "SOC341",
    "STATC1000E",
    "STATC1000H"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=575",
-   "title": "A.A.-T. in Social Justice Studies: Women, Gender and LGBTQ",
-   "h1": "A.A.-T. in Social Justice Studies: Women, Gender and LGBTQ",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=578",
+   "title": "Course Code Course Title Units",
+   "h1": "Course Code Course Title Units",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    575,
-    576,
-    577,
-    578
+    578,
+    579
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "52715ce2bd2a569b"
+   }
   },
   "listed": 16,
-  "text_chars": 14507
+  "text_chars": 8467
  },
  {
   "control_number": "40365",
@@ -9206,8 +8962,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "18543c807bae8b23"
+   }
   },
   "listed": 7,
   "text_chars": 7157
@@ -9253,8 +9008,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "88523b51edc26169"
+   }
   },
   "listed": 17,
   "text_chars": 3782
@@ -9276,16 +9030,15 @@
    "PHARM420"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=521",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=523",
    "title": "Pharmacy Technician Certificate",
    "h1": "Pharmacy Technician Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    521,
-    522,
     523,
-    524
+    524,
+    525
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -9293,11 +9046,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "f6b759d57ab2808e"
+   }
   },
   "listed": 7,
-  "text_chars": 13903
+  "text_chars": 11567
  },
  {
   "control_number": "41712",
@@ -9331,8 +9083,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "7939b4f31ac6b9c7"
+   }
   },
   "listed": 7,
   "text_chars": 7692
@@ -9360,16 +9111,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=218",
-   "title": "Associate Degrees for Transfer",
-   "h1": "Associate Degrees for Transfer",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=219",
+   "title": "be guaranteed admission to the CSU system with junior status and",
+   "h1": "be guaranteed admission to the CSU system with junior status and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    218,
     219,
     220,
-    221
+    221,
+    222
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -9377,11 +9128,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "b7f2e36c7c15c0af"
+   }
   },
   "listed": 13,
-  "text_chars": 13652
+  "text_chars": 16000
  },
  {
   "control_number": "42403",
@@ -9401,8 +9151,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=367",
-   "title": "Certificate of Achievement",
-   "h1": "Certificate of Achievement",
+   "title": "Wildland Fire Technology Certificate",
+   "h1": "Wildland Fire Technology Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9414,11 +9164,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "8eeb7395ac650d01"
+   }
   },
   "listed": 7,
-  "text_chars": 3586
+  "text_chars": 3558
  },
  {
   "control_number": "42792",
@@ -9460,8 +9209,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "201b361c17ce0902"
+   }
   },
   "listed": 16,
   "text_chars": 2799
@@ -9507,8 +9255,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "b3e844f968614212"
+   }
   },
   "listed": 14,
   "text_chars": 14214
@@ -9544,8 +9291,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "bb51e819f638a607"
+   }
   },
   "listed": 5,
   "text_chars": 9847
@@ -9804,8 +9550,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "874595e6a834265c"
+   }
   },
   "listed": 237,
   "text_chars": 7243
@@ -9827,13 +9572,12 @@
    "SURG122"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=599",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=600",
    "title": "A.S. in Surgical Technology",
    "h1": "A.S. in Surgical Technology",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    599,
     600,
     601
    ],
@@ -9843,11 +9587,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "0c7d5ebc6753324a"
+   }
   },
   "listed": 7,
-  "text_chars": 8201
+  "text_chars": 7937
  },
  {
   "control_number": "45615",
@@ -9864,8 +9607,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=503",
-   "title": "Certificate",
-   "h1": "Certificate",
+   "title": "Music Theory Certificate",
+   "h1": "Music Theory Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -9877,11 +9620,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "d5fa1176d01fbd7a"
+   }
   },
   "listed": 4,
-  "text_chars": 815
+  "text_chars": 802
  },
  {
   "control_number": "45820",
@@ -9932,8 +9674,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "b46f6af681318c3e"
+   }
   },
   "listed": 22,
   "text_chars": 15769
@@ -9957,16 +9698,16 @@
    "COMM325"
   ],
   "source": {
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=223",
-   "title": "Business Information Professional I certificate and Business",
-   "h1": "Business Information Professional I certificate and Business",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=225",
+   "title": "The Business Information Professional II (BIP II) Certificate will",
+   "h1": "The Business Information Professional II (BIP II) Certificate will",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    223,
-    224,
     225,
-    226
+    226,
+    227,
+    228
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -9974,11 +9715,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "c7b6e8ed7d45eed9"
+   }
   },
   "listed": 9,
-  "text_chars": 15025
+  "text_chars": 14391
  },
  {
   "control_number": "46092",
@@ -10004,8 +9744,8 @@
   ],
   "source": {
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=445",
-   "title": "Certificate of Achievement",
-   "h1": "Certificate of Achievement",
+   "title": "Sport Management Certificate",
+   "h1": "Sport Management Certificate",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -10017,11 +9757,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "6a6673d493c56435"
+   }
   },
   "listed": 13,
-  "text_chars": 3053
+  "text_chars": 3025
  },
  {
   "control_number": "46139",
@@ -10072,8 +9811,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "a5ec5ac24ffcc2e7"
+   }
   },
   "listed": 25,
   "text_chars": 6663
@@ -10120,8 +9858,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   },
-   "text_sha": "4d082da45530903c"
+   }
   },
   "listed": 16,
   "text_chars": 11986

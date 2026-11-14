@@ -201,10 +201,11 @@
  },
  "first_reconcile_note": "No Cosumnes River record carries reconciled notes: the reconcile dispatched for this apply is also the college's first reconcile and rescore, and reconcile_filed rescores every record whose page it reads again with no kept-passing guard. After it is filed, run --calgetc-review 'Cosumnes River College' --run RUN --against origin/main --restore: the three apply rows are kept where ge_units alone changed to 34, every other changed record goes back to main whole, and summary.json is recounted before the reread.",
  "run_review": {
-  "run": "43521338550",
+  "run": "43567824391",
   "changed": 15,
   "kept": [
-   "39656"
+   "30566",
+   "33072"
   ],
   "restored": [
    "04602",
@@ -216,21 +217,21 @@
    "11319",
    "11338",
    "12260",
-   "30566",
    "31055",
    "33542",
    "35410",
    "38017"
   ],
   "fail_to_pass_kept": [
-   "39656"
+   "30566",
+   "33072"
   ],
   "held_would_pass": [],
   "pass_to_fail_kept": [],
   "records": [
    {
     "control_number": "04602",
-    "extracted_run": 43521338550,
+    "extracted_run": 43567824391,
     "passes_main": false,
     "passes_run": true,
     "fields": [],
@@ -240,7 +241,7 @@
    },
    {
     "control_number": "04607",
-    "extracted_run": 43521338550,
+    "extracted_run": 43567824391,
     "passes_main": false,
     "passes_run": true,
     "fields": [],
@@ -250,7 +251,7 @@
    },
    {
     "control_number": "04614",
-    "extracted_run": 43521338550,
+    "extracted_run": 43567824391,
     "passes_main": false,
     "passes_run": true,
     "fields": [],
@@ -260,7 +261,7 @@
    },
    {
     "control_number": "07305",
-    "extracted_run": 43521338550,
+    "extracted_run": 43567824391,
     "passes_main": false,
     "passes_run": true,
     "fields": [],
@@ -270,27 +271,27 @@
    },
    {
     "control_number": "07314",
-    "extracted_run": 43521338550,
+    "extracted_run": 43567824391,
     "passes_main": true,
     "passes_run": true,
     "fields": [],
     "notes": [],
     "decision": "restore",
-    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    "why": "the run read it from other pages ([299, 300, 301, 302], main [303, 304, 305, 306])"
    },
    {
     "control_number": "07319",
-    "extracted_run": 43521338550,
+    "extracted_run": 43567824391,
     "passes_main": true,
     "passes_run": true,
     "fields": [],
     "notes": [],
     "decision": "restore",
-    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    "why": "the run read it from other pages ([281, 282, 283, 284], main [282, 283, 284, 285])"
    },
    {
     "control_number": "11319",
-    "extracted_run": 43521338550,
+    "extracted_run": 43567824391,
     "passes_main": false,
     "passes_run": true,
     "fields": [],
@@ -300,7 +301,7 @@
    },
    {
     "control_number": "11338",
-    "extracted_run": 43521338550,
+    "extracted_run": 43567824391,
     "passes_main": false,
     "passes_run": true,
     "fields": [],
@@ -310,67 +311,17 @@
    },
    {
     "control_number": "12260",
-    "extracted_run": 43521338550,
+    "extracted_run": 43567824391,
     "passes_main": true,
     "passes_run": true,
     "fields": [],
     "notes": [],
     "decision": "restore",
-    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    "why": "the run read it from other pages ([299, 300, 301, 302], main [303, 304, 305, 306])"
    },
    {
     "control_number": "30566",
-    "extracted_run": 43521338550,
-    "passes_main": false,
-    "passes_run": false,
-    "fields": [],
-    "notes": [],
-    "decision": "restore",
-    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace: 'cal-getc 30566 held: the section does not name Cal-GETC', read on pp.467-470, not its own p.552)"
-   },
-   {
-    "control_number": "31055",
-    "extracted_run": 43521338550,
-    "passes_main": false,
-    "passes_run": false,
-    "fields": [],
-    "notes": [],
-    "decision": "restore",
-    "why": "held in the plan: the statewide rule holds it: overlap"
-   },
-   {
-    "control_number": "33542",
-    "extracted_run": 43521338550,
-    "passes_main": false,
-    "passes_run": true,
-    "fields": [],
-    "notes": [],
-    "decision": "restore",
-    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
-   },
-   {
-    "control_number": "35410",
-    "extracted_run": 43521338550,
-    "passes_main": true,
-    "passes_run": true,
-    "fields": [],
-    "notes": [],
-    "decision": "restore",
-    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
-   },
-   {
-    "control_number": "38017",
-    "extracted_run": 43521338550,
-    "passes_main": false,
-    "passes_run": false,
-    "fields": [],
-    "notes": [],
-    "decision": "restore",
-    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
-   },
-   {
-    "control_number": "39656",
-    "extracted_run": 43521338550,
+    "extracted_run": 43567824391,
     "passes_main": false,
     "passes_run": true,
     "fields": [
@@ -387,18 +338,88 @@
        "min": 34,
        "max": 34
       },
-      "words": "Curriculum (Cal-GETC) requirements. (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13)"
+      "words": "Education Transfer Curriculum (Cal-GETC) Requirement. (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13)"
      }
     ],
     "decision": "keep",
     "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "31055",
+    "extracted_run": 43567824391,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "held in the plan: the statewide rule holds it: overlap"
+   },
+   {
+    "control_number": "33072",
+    "extracted_run": 43567824391,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [
+     "ge_units"
+    ],
+    "notes": [
+     {
+      "field": "ge_units",
+      "was": {
+       "min": null,
+       "max": null
+      },
+      "now": {
+       "min": 34,
+       "max": 34
+      },
+      "words": "Curriculum (Cal-GETC) pattern; students must also earn a grade of (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13)"
+     }
+    ],
+    "decision": "keep",
+    "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+   },
+   {
+    "control_number": "33542",
+    "extracted_run": 43567824391,
+    "passes_main": false,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+   },
+   {
+    "control_number": "35410",
+    "extracted_run": 43567824391,
+    "passes_main": true,
+    "passes_run": true,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "the run read it from other pages ([179, 180, 181], main [191, 192, 193, 194])"
+   },
+   {
+    "control_number": "38017",
+    "extracted_run": 43567824391,
+    "passes_main": false,
+    "passes_run": false,
+    "fields": [],
+    "notes": [],
+    "decision": "restore",
+    "why": "the run read it from other pages ([498, 499, 500, 501], main [502, 503, 504, 505])"
    }
   ],
-  "filing_commit": "21c0d67e",
-  "log_line": "reconcile: 1 filed records changed, 14 rescored, 11 had no fresh page (11 of them on another page)",
-  "trace": "cal-getc 39656 filled: the statewide 34; cal-getc 30566 held: the section does not name Cal-GETC; 33072 no line (its fresh page moved, so the run did not read it); cal-getc 31055, 31995, 46419 held: the section does not name Cal-GETC; 41992 no line",
-  "first_reconcile_note": "Run 43521338550 is Cosumnes River's first reconcile and rescore. Only 39656 shows the fill in the run's trace, changed in ge_units alone, and is kept. 30566 and 33072 do not fill in this run: the fresh capture picked other pages for both (30566 pp.467-470, a page that names 'History, Psychology or Sociology AA-T' as another degree; 33072 pp.94-96, the Cal-GETC pattern page), so 30566's section read there names no Cal-GETC and 33072 was held as moved; both stay as main files them and wait for a capture that picks their own pages (552, 404). The 14 rescored records go back to main whole, 7 of them fail-to-pass by the rescore alone (04602, 04607, 04614, 07305, 11319, 11338, 33542), left for a rescore apply of their own. The capture's moved picks (58 programs) are not kept: --calgetc-review --restore put sources.json and capture.json back to main's but for 39656's entries. summary.json recounted from the records: 136 pass (main 135), 66 fail on arithmetic (main 67).",
-  "reread": "Reread 43523284838 replaced 39656 alone, its before-values in kb/receipts/program_requirement_records_college_reread_cosumnes_river_43523284838.json (ge_units empty, extracted_run 39047009824). The display build is 6e5081a4b3a0, rebuilt after main (#3259's Cerro Coso build 98e783806131) merged in; it carries both colleges.",
+  "pins": {
+   "30566": {
+    "page": 552,
+    "bound": true
+   },
+   "33072": {
+    "page": 404,
+    "bound": true
+   }
+  },
   "records_restored": true,
   "pages_moved_restored": [
    {
@@ -830,20 +851,6 @@
     ]
    },
    {
-    "control_number": "30566",
-    "main": [
-     552,
-     553,
-     554
-    ],
-    "run": [
-     467,
-     468,
-     469,
-     470
-    ]
-   },
-   {
     "control_number": "30575",
     "main": [
      292,
@@ -959,20 +966,6 @@
      333,
      334,
      335
-    ]
-   },
-   {
-    "control_number": "33072",
-    "main": [
-     404,
-     405,
-     406,
-     407
-    ],
-    "run": [
-     94,
-     95,
-     96
     ]
    },
    {
@@ -1256,5 +1249,1018 @@
   },
   "review": "python3 kb/_program_requirements_readings_measure.py --calgetc-review 'Cosumnes River College' --run RUN --against origin/main --restore: prints each pin's page and bound; keeps an apply row only where ge_units alone moved to 34 on main's pages; restores a held row, a refused pin's row and a moved row whole; the review of 43521338550 moves to earlier_run_reviews.",
   "not_in_this_run": "The seven rows run 43521338550 rescored to passing (04602, 04607, 04614, 07305, 11319, 11338, 33542) are out (the conductor, S650, on the second reader's finding): the program-total electives fill reads their degree-level electives_fill_degree as filling the major total, and its guard takes any 'elective' in the text, so 11338 (6 of 24 units) and 04614 (ten codes missing) pass on figures the catalog does not print. They wait on the one dry run (d-one-rescore-for-three-rules-s649; the lane's NEXT)."
- }
+ },
+ "earlier_run_reviews": [
+  {
+   "run": "43521338550",
+   "changed": 15,
+   "kept": [
+    "39656"
+   ],
+   "restored": [
+    "04602",
+    "04607",
+    "04614",
+    "07305",
+    "07314",
+    "07319",
+    "11319",
+    "11338",
+    "12260",
+    "30566",
+    "31055",
+    "33542",
+    "35410",
+    "38017"
+   ],
+   "fail_to_pass_kept": [
+    "39656"
+   ],
+   "held_would_pass": [],
+   "pass_to_fail_kept": [],
+   "records": [
+    {
+     "control_number": "04602",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "04607",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "04614",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "07305",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "07314",
+     "extracted_run": 43521338550,
+     "passes_main": true,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "07319",
+     "extracted_run": 43521338550,
+     "passes_main": true,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "11319",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "11338",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "12260",
+     "extracted_run": 43521338550,
+     "passes_main": true,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "30566",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": false,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace: 'cal-getc 30566 held: the section does not name Cal-GETC', read on pp.467-470, not its own p.552)"
+    },
+    {
+     "control_number": "31055",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": false,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "held in the plan: the statewide rule holds it: overlap"
+    },
+    {
+     "control_number": "33542",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "35410",
+     "extracted_run": 43521338550,
+     "passes_main": true,
+     "passes_run": true,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "38017",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": false,
+     "fields": [],
+     "notes": [],
+     "decision": "restore",
+     "why": "not an apply row: the first reconcile's other rules or rescore, kept as main files it"
+    },
+    {
+     "control_number": "39656",
+     "extracted_run": 43521338550,
+     "passes_main": false,
+     "passes_run": true,
+     "fields": [
+      "ge_units"
+     ],
+     "notes": [
+      {
+       "field": "ge_units",
+       "was": {
+        "min": null,
+        "max": null
+       },
+       "now": {
+        "min": 34,
+        "max": 34
+       },
+       "words": "Curriculum (Cal-GETC) requirements. (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13)"
+      }
+     ],
+     "decision": "keep",
+     "why": "an apply row: ge_units takes the plan's figure, nothing else moves"
+    }
+   ],
+   "filing_commit": "21c0d67e",
+   "log_line": "reconcile: 1 filed records changed, 14 rescored, 11 had no fresh page (11 of them on another page)",
+   "trace": "cal-getc 39656 filled: the statewide 34; cal-getc 30566 held: the section does not name Cal-GETC; 33072 no line (its fresh page moved, so the run did not read it); cal-getc 31055, 31995, 46419 held: the section does not name Cal-GETC; 41992 no line",
+   "first_reconcile_note": "Run 43521338550 is Cosumnes River's first reconcile and rescore. Only 39656 shows the fill in the run's trace, changed in ge_units alone, and is kept. 30566 and 33072 do not fill in this run: the fresh capture picked other pages for both (30566 pp.467-470, a page that names 'History, Psychology or Sociology AA-T' as another degree; 33072 pp.94-96, the Cal-GETC pattern page), so 30566's section read there names no Cal-GETC and 33072 was held as moved; both stay as main files them and wait for a capture that picks their own pages (552, 404). The 14 rescored records go back to main whole, 7 of them fail-to-pass by the rescore alone (04602, 04607, 04614, 07305, 11319, 11338, 33542), left for a rescore apply of their own. The capture's moved picks (58 programs) are not kept: --calgetc-review --restore put sources.json and capture.json back to main's but for 39656's entries. summary.json recounted from the records: 136 pass (main 135), 66 fail on arithmetic (main 67).",
+   "reread": "Reread 43523284838 replaced 39656 alone, its before-values in kb/receipts/program_requirement_records_college_reread_cosumnes_river_43523284838.json (ge_units empty, extracted_run 39047009824). The display build is 6e5081a4b3a0, rebuilt after main (#3259's Cerro Coso build 98e783806131) merged in; it carries both colleges.",
+   "records_restored": true,
+   "pages_moved_restored": [
+    {
+     "control_number": "04584",
+     "main": [
+      623,
+      624
+     ],
+     "run": [
+      622,
+      623,
+      624
+     ]
+    },
+    {
+     "control_number": "04586",
+     "main": [
+      134,
+      135
+     ],
+     "run": [
+      132,
+      133,
+      134,
+      135
+     ]
+    },
+    {
+     "control_number": "04589",
+     "main": [
+      152,
+      153,
+      154,
+      155
+     ],
+     "run": [
+      151,
+      152,
+      153,
+      154
+     ]
+    },
+    {
+     "control_number": "04596",
+     "main": [
+      474,
+      475,
+      476
+     ],
+     "run": [
+      473,
+      474,
+      475,
+      476
+     ]
+    },
+    {
+     "control_number": "04611",
+     "main": [
+      278,
+      279,
+      280
+     ],
+     "run": [
+      277,
+      278,
+      279,
+      280
+     ]
+    },
+    {
+     "control_number": "04615",
+     "main": [
+      500,
+      501,
+      502,
+      503
+     ],
+     "run": [
+      498,
+      499,
+      500,
+      501
+     ]
+    },
+    {
+     "control_number": "04635",
+     "main": [
+      301,
+      302,
+      303,
+      304
+     ],
+     "run": [
+      299,
+      300,
+      301,
+      302
+     ]
+    },
+    {
+     "control_number": "04648",
+     "main": [
+      426,
+      427,
+      428,
+      429
+     ],
+     "run": [
+      424,
+      425,
+      426,
+      427
+     ]
+    },
+    {
+     "control_number": "07292",
+     "main": [
+      555,
+      556,
+      557,
+      558
+     ],
+     "run": [
+      554,
+      555,
+      556,
+      557
+     ]
+    },
+    {
+     "control_number": "07294",
+     "main": [
+      621,
+      622
+     ],
+     "run": [
+      620,
+      621,
+      622
+     ]
+    },
+    {
+     "control_number": "07314",
+     "main": [
+      303,
+      304,
+      305,
+      306
+     ],
+     "run": [
+      299,
+      300,
+      301,
+      302
+     ]
+    },
+    {
+     "control_number": "07319",
+     "main": [
+      282,
+      283,
+      284,
+      285
+     ],
+     "run": [
+      281,
+      282,
+      283,
+      284
+     ]
+    },
+    {
+     "control_number": "11346",
+     "main": [
+      425,
+      426,
+      427
+     ],
+     "run": [
+      424,
+      425,
+      426,
+      427
+     ]
+    },
+    {
+     "control_number": "12260",
+     "main": [
+      303,
+      304,
+      305,
+      306
+     ],
+     "run": [
+      299,
+      300,
+      301,
+      302
+     ]
+    },
+    {
+     "control_number": "12667",
+     "main": [
+      239,
+      240,
+      241,
+      242
+     ],
+     "run": [
+      238,
+      239,
+      240,
+      241
+     ]
+    },
+    {
+     "control_number": "12790",
+     "main": [
+      233,
+      234,
+      235,
+      236
+     ],
+     "run": [
+      232,
+      233,
+      234,
+      235
+     ]
+    },
+    {
+     "control_number": "12791",
+     "main": [
+      542,
+      543,
+      544,
+      545
+     ],
+     "run": [
+      539,
+      540,
+      541,
+      542
+     ]
+    },
+    {
+     "control_number": "15246",
+     "main": [
+      361,
+      362,
+      363,
+      364
+     ],
+     "run": [
+      360,
+      361,
+      362,
+      363
+     ]
+    },
+    {
+     "control_number": "15306",
+     "main": [
+      413,
+      414,
+      415,
+      416
+     ],
+     "run": [
+      412,
+      413,
+      414,
+      415
+     ]
+    },
+    {
+     "control_number": "17868",
+     "main": [
+      465,
+      466,
+      467,
+      468
+     ],
+     "run": [
+      464,
+      465,
+      466,
+      467
+     ]
+    },
+    {
+     "control_number": "18902",
+     "main": [
+      522,
+      523,
+      524,
+      525
+     ],
+     "run": [
+      521,
+      522,
+      523,
+      524
+     ]
+    },
+    {
+     "control_number": "19854",
+     "main": [
+      144,
+      145,
+      146,
+      147
+     ],
+     "run": [
+      143,
+      144,
+      145,
+      146
+     ]
+    },
+    {
+     "control_number": "20147",
+     "main": [
+      623,
+      624
+     ],
+     "run": [
+      622,
+      623,
+      624
+     ]
+    },
+    {
+     "control_number": "20153",
+     "main": [
+      414,
+      415,
+      416,
+      417
+     ],
+     "run": [
+      412,
+      413,
+      414,
+      415
+     ]
+    },
+    {
+     "control_number": "20193",
+     "main": [
+      220,
+      221,
+      222,
+      223
+     ],
+     "run": [
+      218,
+      219,
+      220,
+      221
+     ]
+    },
+    {
+     "control_number": "20206",
+     "main": [
+      190,
+      191,
+      192
+     ],
+     "run": [
+      179,
+      180
+     ]
+    },
+    {
+     "control_number": "20220",
+     "main": [
+      278,
+      279,
+      280
+     ],
+     "run": [
+      277,
+      278,
+      279,
+      280
+     ]
+    },
+    {
+     "control_number": "20222",
+     "main": [
+      214,
+      215,
+      216,
+      217
+     ],
+     "run": [
+      212,
+      213,
+      214,
+      215
+     ]
+    },
+    {
+     "control_number": "20227",
+     "main": [
+      366
+     ],
+     "run": [
+      367,
+      368,
+      369,
+      370
+     ]
+    },
+    {
+     "control_number": "22953",
+     "main": [
+      124,
+      125,
+      126
+     ],
+     "run": [
+      124,
+      125,
+      126,
+      127
+     ]
+    },
+    {
+     "control_number": "30566",
+     "main": [
+      552,
+      553,
+      554
+     ],
+     "run": [
+      467,
+      468,
+      469,
+      470
+     ]
+    },
+    {
+     "control_number": "30575",
+     "main": [
+      292,
+      293,
+      294,
+      295
+     ],
+     "run": [
+      291,
+      292,
+      293,
+      294
+     ]
+    },
+    {
+     "control_number": "30576",
+     "main": [
+      292,
+      293,
+      294,
+      295
+     ],
+     "run": [
+      291,
+      292,
+      293,
+      294
+     ]
+    },
+    {
+     "control_number": "30722",
+     "main": [
+      590,
+      591,
+      592
+     ],
+     "run": [
+      589,
+      590,
+      591,
+      592
+     ]
+    },
+    {
+     "control_number": "31053",
+     "main": [
+      364
+     ],
+     "run": [
+      363,
+      364
+     ]
+    },
+    {
+     "control_number": "31055",
+     "main": [
+      540,
+      541,
+      542,
+      543
+     ],
+     "run": [
+      433,
+      434
+     ]
+    },
+    {
+     "control_number": "31913",
+     "main": [
+      300,
+      301,
+      302,
+      303
+     ],
+     "run": [
+      299,
+      300,
+      301,
+      302
+     ]
+    },
+    {
+     "control_number": "31916",
+     "main": [
+      142
+     ],
+     "run": [
+      141,
+      142
+     ]
+    },
+    {
+     "control_number": "31993",
+     "main": [
+      442,
+      443,
+      444,
+      445
+     ],
+     "run": [
+      441,
+      442,
+      443,
+      444
+     ]
+    },
+    {
+     "control_number": "33053",
+     "main": [
+      335
+     ],
+     "run": [
+      333,
+      334,
+      335
+     ]
+    },
+    {
+     "control_number": "33072",
+     "main": [
+      404,
+      405,
+      406,
+      407
+     ],
+     "run": [
+      94,
+      95,
+      96
+     ]
+    },
+    {
+     "control_number": "33537",
+     "main": [
+      499,
+      500,
+      501,
+      502
+     ],
+     "run": [
+      498,
+      499,
+      500,
+      501
+     ]
+    },
+    {
+     "control_number": "33931",
+     "main": [
+      133,
+      134,
+      135
+     ],
+     "run": [
+      132,
+      133,
+      134,
+      135
+     ]
+    },
+    {
+     "control_number": "35175",
+     "main": [
+      248
+     ],
+     "run": [
+      246,
+      247,
+      248
+     ]
+    },
+    {
+     "control_number": "35410",
+     "main": [
+      191,
+      192,
+      193,
+      194
+     ],
+     "run": [
+      179,
+      180,
+      181
+     ]
+    },
+    {
+     "control_number": "35412",
+     "main": [
+      191,
+      192,
+      193,
+      194
+     ],
+     "run": [
+      180,
+      181
+     ]
+    },
+    {
+     "control_number": "35413",
+     "main": [
+      555,
+      556,
+      557,
+      558
+     ],
+     "run": [
+      554,
+      555,
+      556,
+      557
+     ]
+    },
+    {
+     "control_number": "35414",
+     "main": [
+      621,
+      622
+     ],
+     "run": [
+      620,
+      621,
+      622
+     ]
+    },
+    {
+     "control_number": "35899",
+     "main": [
+      474,
+      475,
+      476
+     ],
+     "run": [
+      473,
+      474,
+      475,
+      476
+     ]
+    },
+    {
+     "control_number": "37891",
+     "main": [
+      257,
+      258,
+      259
+     ],
+     "run": [
+      257,
+      258,
+      259,
+      260
+     ]
+    },
+    {
+     "control_number": "38017",
+     "main": [
+      502,
+      503,
+      504,
+      505
+     ],
+     "run": [
+      498,
+      499,
+      500,
+      501
+     ]
+    },
+    {
+     "control_number": "38024",
+     "main": [
+      213,
+      214,
+      215,
+      216
+     ],
+     "run": [
+      365,
+      366
+     ]
+    },
+    {
+     "control_number": "39131",
+     "main": [
+      282,
+      283
+     ],
+     "run": [
+      218,
+      219,
+      220,
+      221
+     ]
+    },
+    {
+     "control_number": "39679",
+     "main": [
+      578,
+      579
+     ],
+     "run": [
+      575,
+      576,
+      577,
+      578
+     ]
+    },
+    {
+     "control_number": "40921",
+     "main": [
+      523,
+      524,
+      525
+     ],
+     "run": [
+      521,
+      522,
+      523,
+      524
+     ]
+    },
+    {
+     "control_number": "41992",
+     "main": [
+      219,
+      220,
+      221,
+      222
+     ],
+     "run": [
+      218,
+      219,
+      220,
+      221
+     ]
+    },
+    {
+     "control_number": "45317",
+     "main": [
+      600,
+      601
+     ],
+     "run": [
+      599,
+      600,
+      601
+     ]
+    },
+    {
+     "control_number": "45827",
+     "main": [
+      225,
+      226,
+      227,
+      228
+     ],
+     "run": [
+      223,
+      224,
+      225,
+      226
+     ]
+    }
+   ],
+   "pages_moved_kept": [],
+   "files": "sources.json and capture.json are origin/main's but for the kept programs' entries; summary.json is origin/main's with its counts taken again from the records"
+  }
+ ]
 }

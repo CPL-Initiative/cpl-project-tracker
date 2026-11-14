@@ -5,19 +5,16 @@
  "found": 217,
  "extracted": 217,
  "errors": 0,
- "passed_machine_checks": 141,
+ "passed_machine_checks": 138,
  "failed": {
   "coverage": 43,
   "invented": 8,
-  "arithmetic": 57,
+  "arithmetic": 64,
   "repeated": 0,
-  "outcomes": 14
+  "outcomes": 8
  },
- "cost_usd_run": 0.0,
- "cost_usd_filed": 18.96,
+ "cost_usd": 18.96,
  "cost_per_program": 0.0874,
- "extract_calls": null,
- "extract_failed": [],
  "not_found": [
   {
    "control_number": "14419",
@@ -26,19 +23,17 @@
    "near_miss": {
     "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=442",
     "coverage": 0.42
-   },
-   "status": "Active"
+   }
   },
   {
    "control_number": "39444",
    "title": "Honors",
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=377",
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=378",
     "coverage": 0.333
-   },
-   "status": "Active"
+   }
   }
  ],
- "run": "43567824391"
+ "run": "39047009824"
 }

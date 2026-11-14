@@ -73,8 +73,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     6.0,
     6.0
@@ -84,10 +84,8 @@
     24.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    18.0,
-    18.0
+   "why": [
+    "the blocks sum to 6.0-6.0; the catalog states 24.0-24.0"
    ]
   },
   "repeated": {
@@ -115,7 +113,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -275,6 +273,5 @@
    "The same Student Learning Outcomes list and Career Information are printed identically for the Art - Studio Art degree; recorded here from the Art - Design section. Trailing 'SLO #n' labels were omitted as list labels."
   ]
  },
- "extracted_run": 43567824391,
- "read_run": "39047009824"
+ "extracted_run": "39047009824"
 }

@@ -71,8 +71,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     27.0,
     27.0
@@ -82,10 +82,8 @@
     32.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    4.0,
-    5.0
+   "why": [
+    "the blocks sum to 27.0-27.0; the catalog states 31.0-32.0"
    ]
   },
   "repeated": {
@@ -113,7 +111,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -276,6 +274,5 @@
    "Career Information list appears truncated: it ends 'Applications Software Specialist; Business Operations Manager;' and runs directly into the A.S. in Web Developer heading."
   ]
  },
- "extracted_run": 43567824391,
- "read_run": "39047009824"
+ "extracted_run": "39047009824"
 }

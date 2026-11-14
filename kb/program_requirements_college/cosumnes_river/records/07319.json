@@ -102,27 +102,21 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "Work effectively as a team member."
-   ],
-   "why": [
-    "not in the catalog text as printed: Work effectively as a team member."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [
-    "food service management"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -353,6 +347,5 @@
    "Career Information names no specific job title; 'food service management' is taken from the program description ('a career in food service management')."
   ]
  },
- "extracted_run": 43567824391,
- "read_run": "39047009824"
+ "extracted_run": "39047009824"
 }

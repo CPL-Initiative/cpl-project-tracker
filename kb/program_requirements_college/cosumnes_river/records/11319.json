@@ -79,8 +79,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     14.0,
     14.0
@@ -90,10 +90,8 @@
     18.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    4.0,
-    4.0
+   "why": [
+    "the blocks sum to 14.0-14.0; the catalog states 18.0-18.0"
    ]
   },
   "repeated": {
@@ -121,7 +119,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -646,6 +644,5 @@
    "CHEM 306 is titled 'Introduction to Organic and Biological Chemistry' in the catalog vs 'Introduction to Chemistry' in the state file."
   ]
  },
- "extracted_run": 43567824391,
- "read_run": "39047009824"
+ "extracted_run": "39047009824"
 }
