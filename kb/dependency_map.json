@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 940,
+  "file_datasets": 938,
   "external_services": 195,
-  "consumers": 586,
+  "consumers": 587,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -8505,7 +8505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 360
+     "line": 368
     }
    ],
    "producers": [
@@ -11527,14 +11527,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 331
+     "line": 339
     },
     {
      "id": "script:kb/_identities_rebuild.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 333
+     "line": 341
     },
     {
      "id": "script:kb/_identities_rekey_dryrun.py",
@@ -11899,7 +11899,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 665
+     "line": 794
     },
     {
      "id": "script:kb/_infer_disciplines.py",
@@ -11977,6 +11977,13 @@
      "direction": "read",
      "how": "literal",
      "line": 333
+    },
+    {
+     "id": "script:kb/_reclustering_s649.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 172
     },
     {
      "id": "script:kb/_remint_dryrun.py",
@@ -12315,7 +12322,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 649
+     "line": 778
     },
     {
      "id": "script:kb/_identities_rekey_dryrun.py",
@@ -12796,7 +12803,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 656
+     "line": 785
     },
     {
      "id": "script:kb/_infer_disciplines.py",
@@ -13172,7 +13179,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 650
+     "line": 779
     },
     {
      "id": "script:kb/_identities_rekey_dryrun.py",
@@ -16434,7 +16441,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 458
+     "line": 473
     }
    ],
    "served": true,
@@ -17699,32 +17706,13 @@
      "direction": "write",
      "how": "literal",
      "line": 1262
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:kb/reclustering_s648_out/2026-11-13/plan.md": {
-   "consumers": [
+    },
     {
-     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "id": "script:kb/_reclustering_s649.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1267
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:kb/reclustering_s648_out/2026-11-13/post_apply_simulated.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_reclustering_s648_dryrun.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 1045
+     "line": 309
     }
    ],
    "served": true,
@@ -18398,7 +18386,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 666
+     "line": 795
     },
     {
      "id": "script:kb/_identities_rekey_dryrun.py",
@@ -26624,7 +26612,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 351
+     "line": 359
     },
     {
      "id": "script:kb/_merge_candidate_queue.py",
@@ -26786,6 +26774,13 @@
      "direction": "read",
      "how": "literal",
      "line": 370
+    },
+    {
+     "id": "script:kb/_reclustering_s649.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 201
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -27006,6 +27001,13 @@
      "direction": "read",
      "how": "literal",
      "line": 356
+    },
+    {
+     "id": "script:kb/_reclustering_s649.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 217
     },
     {
      "id": "script:kb/_subjects_list_recode.py",

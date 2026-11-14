@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-14_s649_busi_split_delete.sql",
+ "name": "s649_busi_split_delete",
+ "version": "20261114014942",
+ "sha256": "aeab235cc426912ab149d23a86be5edba8be11943cca85e4d7019e38a3858551",
+ "run": "43542044321",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"deleted\":[{\"field\":\"merge_into\",\"value\":\"BUSI M1228\",\"course_id\":\"BUSI M10XW\",\"reviewed_at\":\"2026-06-13T17:47:56.243497+00:00\",\"validated_at\":null,\"validated_by\":null,\"reviewer_email\":\"automerge-titlelane-v1@bot\",\"reviewer_label\":\"automerge-titlelane-v1@bot\"}]}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

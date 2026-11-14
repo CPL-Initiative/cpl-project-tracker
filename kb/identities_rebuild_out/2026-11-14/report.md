@@ -25,6 +25,7 @@ Rule: the 1b entry rule (kb/_remint_apply_articulations.py) on the current catal
 - in-browser rows (unified_courses_data.js): 513 of 16,386 change; gain adopters 381, lose adopters 0, gain potential 342, lose potential 95 (every lost college became an adopter 15; a college left a stale offering 80)
 - export rows (exports/unified_courses.xlsx): 817 of 75,724 change; gain adopters 651, lose adopters 0, gain potential 384, lose potential 101 (every lost college became an adopter 0; a college left a stale offering 101)
 - a row loses potential colleges when a member's earning colleges join its adopters, or when a refreshed entry's stale offering gives way to the membership
+- export rows are matched by kind and id, never by position: the export writes them in catalog order and builds each row's lists from that id alone, so the rebuild cannot move a row, and no export row can lose a college to its adopters (only a refreshed offering removes one)
 - the held orphan entries: 371 in-browser rows show 2,327 potential colleges from entries that describe other courses; 331 of those rows carry no articulation at all
 
 ## Merge targets
@@ -73,5 +74,8 @@ Rule: the 1b entry rule (kb/_remint_apply_articulations.py) on the current catal
    refreshes, keeps the orphans, and writes `apply_receipt.json` here with every key's before-value.
    It aborts when the fill, refresh or orphan sets differ from this plan.
 2. Commit kb/coci_articulations.json and the receipt in one cron window; the daily run rebuilds the lists.
+   It also aborts when an entry's content moved since this plan (plan.json carries a hash of each).
+   The receipt is written pending, then the map, then marked applied; a run interrupted between
+   them is settled by the next --apply or --undo from the map's own bytes.
 3. Undo: `python3 kb/_identities_rebuild.py --undo <this dir>/apply_receipt.json`, or revert the commit.
 4. `--drop-orphans --ruling "<who, when: what>"` also drops the orphans, after this worklist.
