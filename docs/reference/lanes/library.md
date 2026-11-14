@@ -162,7 +162,7 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   link and the masthead; its `--cplh-*` roles map onto `factsheet.css` `:root`; the masthead is a `div`, so the page has one
   banner; the header never prints; nothing frames the page, so it has no embed case. Guard `tests/factsheet_public_header.test.js`.
   **DECIDED:** the Fact Sheet's header carries no logo (Sam, in session S653b, 2026-11-14: "Don't need the ccc logo added
-  to the top of fact sheet. Leave masthead in."; `sam-fact-sheet-no-header-logo-2026-11-14`; #PRNUM); the test pins it.
+  to the top of fact sheet. Leave masthead in."; `sam-fact-sheet-no-header-logo-2026-11-14`; #3342); the test pins it.
   **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own "CPL Fact Sheet" link opens a
   second copy; that test checks the links against the Veteran map's copy, not the vault's header; a theme choice
   on a public page sets `cpl_theme` for the whole github.io origin, COBI included (the existing design). The records as they
