@@ -349,10 +349,39 @@ def call_in_parts(src: dict, key: str, body: dict, first: dict | None = None,
     return out
 
 
+def charge(cost_usd, usage) -> float:
+    """What one call counts toward the hard stop: the college workflow's call_charge (an unpriced call
+    with usage counts at the dearest model's price)."""
+    import _program_requirements_college as C
+    return C.call_charge(cost_usd, usage)
+
+
+def price_main(args) -> int:
+    """The estimate before any call (S653): the programs that would be sent x the default rate per program
+    x the margin (kb/_program_requirements_wave.py's price()), against Sam's $40 limit a run. Writes go=
+    for the workflow's extraction step; calls nothing and needs no key."""
+    import _program_requirements_wave as W
+    n = len([s for s in load_sources(args.only) if (s.get("coverage") or 0) >= MIN_COVERAGE])
+    got = W.price(n, W.DEFAULT_COST_PER_PROGRAM, W.parse_limit(args.limit_usd), True)
+    print("pilot extraction: estimate $%.2f for %d programs at $%.4f each with the %.2f margin; %s"
+          % (got["price_usd"], n, got["cost_per_program"], got["margin"], got["why"]), flush=True)
+    if not got["within_limit"]:
+        print("::error::the estimate $%.2f is over the $%.0f limit; nothing is sent" % (got["price_usd"], got["limit_usd"]))
+    W._output("go", "true" if got["go"] else "false")
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--only", default="", help="programs whose college, number or file name contains this (comma-separated: any)")
+    ap.add_argument("--price", action="store_true",
+                    help="price what would be sent against --limit-usd, write go= for the workflow, and call nothing")
+    ap.add_argument("--limit-usd", default="40")
+    ap.add_argument("--ceiling-usd", default="", help="the hard stop: no further program is sent once the run's "
+                    "cost reaches it")
     args = ap.parse_args(argv)
+    if args.price:
+        return price_main(args)
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key:
         print("SUPABASE_SERVICE_KEY is not set; the Edge Function takes only the service key.")
@@ -360,7 +389,13 @@ def main(argv: list[str] | None = None) -> int:
     sources = [s for s in load_sources(args.only) if (s.get("coverage") or 0) >= MIN_COVERAGE]
     print("program requirements pilot, extraction: %d programs, writes nothing" % len(sources), flush=True)
     rows = []
+    ceiling = float(args.ceiling_usd) if str(args.ceiling_usd or "").strip() else None
+    spent = 0.0
     for src in sources:
+        if ceiling is not None and spent >= ceiling:
+            print("::warning::the run's cost $%.2f reached the $%.2f hard stop; %d programs not sent"
+                  % (spent, ceiling, len(sources) - len(rows)), flush=True)
+            break
         t0 = time.time()
         got = call(src, key)
         h = halt_of(got)
@@ -381,6 +416,7 @@ def main(argv: list[str] | None = None) -> int:
                "ms": got.get("ms"), "seconds": round(time.time() - t0, 1), "parts": got.get("parts"),
                "error": got.get("error"), "score": sc, "record": rec}
         rows.append(row)
+        spent += charge(row["cost_usd"], row["usage"])
         print("%-26s %-6s %-20s %s cov %-5s inv %-2s arith %-10s out %-7s $%s  %s" % (
             src["college"][:26], src["control_number"], src["shape"],
             "PASS" if sc and sc["pass"] else "fail",

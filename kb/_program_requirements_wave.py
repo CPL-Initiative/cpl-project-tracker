@@ -237,15 +237,20 @@ def pages_share(capture: dict | None) -> dict:
             "why": ("%d of %d pages answered" % (answered, listed)) if share < PAGES_FLOOR else None}
 
 
-def price(would: int, cpp: float, limit: float, extract: bool, pages: dict | None = None) -> dict:
+def price(would: int, cpp: float, limit: float, extract: bool, pages: dict | None = None,
+          nothing_goes: bool = False) -> dict:
     """The estimate and the gate. Extraction goes only when asked, on a whole capture, with
-    something to send, and at a price within the limit."""
+    something to send, and at a price within the limit. nothing_goes (a fresh college read, S653):
+    with nothing new to send the extraction still goes, free, and refiles the records, sources and
+    capture as a read did before every extraction was priced (moved pages' addresses, catalog years)."""
     est = round(would * cpp * PRICE_MARGIN, 2)
     within = est <= limit + 1e-9
     if not extract:
         go, why = False, "extract 0: capture and price only"
     elif pages and pages.get("partial"):
         go, why = False, "partial capture: " + (pages.get("why") or "")
+    elif would <= 0 and nothing_goes:
+        go, why = True, "nothing new to read: the extraction refiles the read and sends no model call"
     elif would <= 0:
         go, why = False, "nothing to extract"
     elif not within:
@@ -274,22 +279,25 @@ def price_main(args) -> int:
     cpp, cpp_from = cost_per_program(load_records(os.path.join(C.COLLEGE_DIR, slug)))
     pages = pages_share(capture)
     extract = parse_extract(args.extract)
-    # A fresh capture (the college workflow's step=read, S653) is priced the same, and its pages are reported but
+    # A fresh capture (the college workflow's step=read, S653) is priced the same. Its pages are reported but
     # never gate it: the whole-capture proof is for a restaged artifact (sources_from), and a fresh read extracted
-    # without it before the price ran on every extraction.
-    gate_pages = str(getattr(args, "pages_gate", "1")).strip() != "0"
+    # without it before the price ran on every extraction. With nothing new to read it still goes, free.
+    fresh = str(getattr(args, "fresh", "0")).strip() == "1"
     would = capture.get("would_extract") or {}
     # A read dispatched with force= extracts those programs again though their pages are unchanged, beyond the
     # capture's would_extract: each forced number not already on that list is priced too (an upper bound).
     listed = {str(x.get("control_number")) for x in would.get("list") or []}
     forced = C.forced(os.path.join(C.COLLEGE_DIR, slug), getattr(args, "force", "") or "") - listed
     got = price((would.get("programs") or 0) + len(forced), cpp, parse_limit(args.limit_usd),
-                extract, pages if gate_pages else None)
+                extract, None if fresh else pages, nothing_goes=fresh)
     got["forced_priced"] = len(forced)
     got.update(cost_per_program_from=cpp_from, pages=pages)
     refused = None
     try:
-        check_attempt(extract, args.attempt)
+        # Only a run that would send something is held to one attempt: a re-run that sends nothing pays
+        # nothing, and refusing it would lose its capture's filing (S653 review).
+        if got["would_extract"] > 0:
+            check_attempt(extract, args.attempt)
     except Refused as exc:
         refused = str(exc)
         got.update(go=False, why=refused, rerun=True)
@@ -621,7 +629,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--college", default="")
     ap.add_argument("--extract", default="0")
     ap.add_argument("--limit-usd", default="40")
-    ap.add_argument("--pages-gate", default="1", help="price: 0 reports a partial capture without holding it")
+    ap.add_argument("--fresh", default="0", help="price: 1 for a fresh college read: its pages never hold it, "
+                    "and with nothing new to read it goes, free")
     ap.add_argument("--force", default="", help="price: the read's force=, whose programs extract again")
     ap.add_argument("--wave", default="")
     ap.add_argument("--ref", default=os.environ.get("GITHUB_REF_NAME", ""))

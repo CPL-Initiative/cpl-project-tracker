@@ -5622,8 +5622,17 @@ def forced(folder: str, tokens: str) -> set[str]:
     for t in (x.strip() for x in (tokens or "").split(",")):
         if t.lower() == "incomplete":
             for path in glob.glob(os.path.join(folder, "records", "*.json")):
-                with open(path) as fh:
-                    r = json.load(fh)
+                # A record that does not read is named and passed over, so a free capture's price step never
+                # stops on it (S653 review).
+                try:
+                    with open(path) as fh:
+                        r = json.load(fh)
+                except (OSError, ValueError) as exc:
+                    print("::warning::force=incomplete passes over %s: it does not read (%s)" % (path, exc))
+                    continue
+                if not isinstance(r, dict):
+                    print("::warning::force=incomplete passes over %s: it is no record" % path)
+                    continue
                 sc = r.get("score") or {}
                 if (sc.get("arithmetic") or {}).get("status") == "incomplete" and not places_none(sc):
                     out.add(r.get("control_number") or os.path.splitext(os.path.basename(path))[0])

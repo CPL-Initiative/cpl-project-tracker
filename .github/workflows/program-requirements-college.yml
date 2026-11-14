@@ -196,19 +196,20 @@ jobs:
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit "$LIMIT"
       # Every extraction is priced before any model call, fresh or restaged ($40 a college a run on the estimate,
       # Sam's standing go; S653): over the limit, nothing is extracted. extract=0 prints the estimate and pays
-      # nothing. A fresh capture's pages are reported and never hold it (--pages-gate 0); a restaged one must be
-      # whole. tests/program_requirements_extraction_gate_test.py fails a workflow whose extraction can run
-      # without this step.
+      # nothing. A fresh capture's pages are reported and never hold it, and a fresh read with nothing new to read
+      # still goes, free, to refile its records (--fresh 1); a restaged one must be whole. A re-run attempt is
+      # refused only when it would send something. tests/program_requirements_extraction_gate_test.py fails a
+      # workflow whose extraction can run without this step.
       - name: Price the extraction ($40 a college a run, Sam's standing go)
         id: price
         env:
           ATTEMPT: ${{ github.run_attempt }}
           EXTRACT_ASKED: ${{ env.EXTRACT == 'true' && '1' || '0' }}
-          PAGES_GATE: ${{ env.SOURCES_FROM != '' && '1' || '0' }}
+          FRESH: ${{ env.SOURCES_FROM == '' && '1' || '0' }}
           FORCE: ${{ github.event.inputs.force || '' }}
         run: >-
           python3 kb/_program_requirements_wave.py price --college "$COLLEGE" --out out --extract "$EXTRACT_ASKED"
-          --limit-usd 40 --attempt "$ATTEMPT" --pages-gate "$PAGES_GATE" --force "$FORCE" --write out/price_row.json
+          --limit-usd 40 --attempt "$ATTEMPT" --fresh "$FRESH" --force "$FORCE" --write out/price_row.json
       - name: Extract and score
         if: env.EXTRACT == 'true' && steps.price.outputs.go == 'true'
         env:
