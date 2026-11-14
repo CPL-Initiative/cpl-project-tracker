@@ -60,19 +60,56 @@ def main():
                        "to the last page" in reason and "never in this session" in reason))
 
         run(read(), st, T0)
-        rc, body = run(merge(), st, T0 + 9 * 60)
-        checks.append(("a merge 9 minutes after get_comments is allowed (no output, exit 0)",
+        rc, body = run(merge(), st, T0 + 2 * 60 + 50)
+        checks.append(("a merge 2 minutes 50 after get_comments is allowed (no output, exit 0)",
                        rc == 0 and body == {}))
         rc, body = run(merge(owner="CPL-Initiative"), st, T0 + 60)
         checks.append(("owner case does not matter", rc == 0 and body == {}))
-        rc, body = run(merge(), st, T0 + 11 * 60)
+        rc, body = run(merge(), st, T0 + 4 * 60)
         reason = (body.get("hookSpecificOutput") or {}).get("permissionDecisionReason", "")
-        checks.append(("a stale stamp (11 minutes) is denied and says how old it is",
-                       denied(body) and "11 minutes ago" in reason))
+        checks.append(("a 4-minute-old stamp is refused and says how old it is (COBIx on #3307)",
+                       denied(body) and "4 minutes ago" in reason and "3 minutes" in reason))
         rc, body = run(merge(number=3297), st, T0 + 60)
         checks.append(("a read of another PR does not open this one", denied(body)))
         rc, body = run(merge(session="s2"), st, T0 + 60)
         checks.append(("a read in another session does not count", denied(body)))
+
+    # Auto-merge and `gh` merges skip the read, so they are refused even right after one.
+    with tempfile.TemporaryDirectory() as st:
+        run(read(), st, T0)
+        auto = {"hook_event_name": "PreToolUse", "session_id": "s1",
+                "tool_name": "mcp__github__enable_pr_auto_merge",
+                "tool_input": {"owner": "cpl-initiative", "repo": "cpl-project-tracker", "pullNumber": 3296}}
+        rc, body = run(auto, st, T0 + 10)
+        reason = (body.get("hookSpecificOutput") or {}).get("permissionDecisionReason", "")
+        checks.append(("enable_pr_auto_merge is refused even right after a read",
+                       rc == 0 and denied(body) and "merge_pull_request" in reason))
+
+        def bash(cmd):
+            return {"hook_event_name": "PreToolUse", "session_id": "s1", "tool_name": "Bash",
+                    "tool_input": {"command": cmd}}
+        for cmd in ("gh pr merge 3296 --squash", "cd x && gh pr merge 3296 --auto",
+                    "GH_TOKEN=x gh api -X PUT repos/o/r/pulls/3296/merge"):
+            rc, body = run(bash(cmd), st, T0 + 10)
+            checks.append(("Bash `%s` is refused" % cmd, rc == 0 and denied(body)))
+        for cmd in ("gh search prs merge", "grep -n 'gh pr merge' notes.md", "gh pr view 3296",
+                    "git merge --no-edit origin/main"):
+            rc, body = run(bash(cmd), st, T0 + 10)
+            checks.append(("Bash `%s` passes" % cmd, rc == 0 and body == {}))
+        rc, body = run(None, st, T0, raw=json.dumps({"hook_event_name": "PreToolUse", "tool_name": "Bash",
+                                                      "tool_input": {"command": ["not", "a", "string"]}}))
+        checks.append(("a Bash input the guard cannot read fails open", rc == 0 and not denied(body)))
+
+    # The failure marker is keyed by session: one session's failed stamp opens only its own merges.
+    with tempfile.TemporaryDirectory() as st:
+        os.makedirs(os.path.join(st, "merge_read_stamps.json.tmp"))   # the write fails, the dir stays writable
+        rc, body = run(read(session="s1"), st, T0)
+        checks.append(("a failed stamp warns", "systemMessage" in body))
+        rc, body = run(merge(session="s1"), st, T0 + 30)
+        checks.append(("that session's merge fails open with a warning",
+                       "systemMessage" in body and not denied(body)))
+        rc, body = run(merge(session="s2"), st, T0 + 30)
+        checks.append(("another session's unread merge is still refused", denied(body)))
 
     for method, tool in (("get_review_comments", "mcp__github__pull_request_read"),
                          ("get_reviews", "mcp__github__pull_request_read"),

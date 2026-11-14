@@ -209,7 +209,8 @@ METER = ("*", "kb/_context_budget.py", "--hook")
 # count the installer test pins. Each fails open with a visible warning.
 LESSON_MARK = "# cpl-lesson-hook"
 LESSONS = [
-    ("PreToolUse", "mcp__github__merge_pull_request", "scripts/merge_read_guard.py"),
+    ("PreToolUse", "mcp__github__merge_pull_request|mcp__github__enable_pr_auto_merge|Bash",
+     "scripts/merge_read_guard.py"),
     ("PostToolUse", "mcp__github__issue_read|mcp__github__pull_request_read",
      "scripts/merge_read_guard.py"),
     ("PreToolUse", "mcp__github__add_issue_comment|mcp__github__update_issue_comment|"

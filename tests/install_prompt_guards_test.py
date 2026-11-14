@@ -188,8 +188,11 @@ def main():
         checks.append(("a full install writes the three lesson-hook blocks with absolute paths",
                        len(lesson_cmds) == 3
                        and all(os.path.join(ROOT, "scripts") in c for _, _, c in lesson_cmds)))
-        checks.append(("the merge guard matches the merge tool and its stamp matches both read tools",
-                       ("PreToolUse", "mcp__github__merge_pull_request") in [(e, m) for e, m, _ in lesson_cmds]
+        checks.append(("the merge guard matches the merge, auto-merge and Bash tools, and its stamp both read tools",
+                       any(e == "PreToolUse" and "merge_read_guard.py" in c and all(
+                           t in m.split("|") for t in ("mcp__github__merge_pull_request",
+                                                       "mcp__github__enable_pr_auto_merge", "Bash"))
+                           for e, m, c in lesson_cmds)
                        and any(e == "PostToolUse" and "issue_read" in m and "pull_request_read" in m
                                for e, m, _ in lesson_cmds)))
         checks.append(("the clock guard matches the comment, PR and Bash tools",

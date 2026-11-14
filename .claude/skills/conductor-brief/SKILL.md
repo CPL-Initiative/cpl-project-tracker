@@ -58,4 +58,4 @@ lanes under 20,000 bytes, the lane tests, summaries at most 400 characters.
 - Run `date -u` if the brief states a time.
 - Check the brief names the branch, the base, the report cap and the session link.
 - Read the PR's comments to the last page before briefing a fix or a merge: the merge-read guard refuses a merge
-  without a read in the last 10 minutes.
+  without a read in the last 3 minutes, so read and merge in one step, and it refuses auto-merge and `gh` merges.

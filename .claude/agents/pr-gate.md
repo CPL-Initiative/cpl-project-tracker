@@ -20,15 +20,17 @@ return five lines. You read; you never merge, comment, push or dispatch.
    (it carries the description, not the comments). Report the state as GitHub names it: clean, unstable, blocked,
    dirty, behind or unknown. If the `get` head sha differs from the check runs' sha, say so in the advice.
 4. Compare the newest comment or review time with the head push, read as the earliest `started_at` among the head's
-   check runs (CI starts within a minute of a push). A comment newer than the head
-   commit from anyone other than the PR's author is a reviewer comment the conductor has not answered in code.
+   check runs (CI starts within a minute of a push), and with the conductor's last read when the prompt gives its
+   time. A comment from anyone other than the PR's author that is newer than the head commit, or newer than that
+   read, is a reviewer comment the conductor has not answered. This is the check the merge-read guard cannot make:
+   its stamp records when the thread was read, not what it held.
 
 ## Output, exactly five lines
 
 ```
 test: <success|failure|pending|absent> on <short sha>
 head: <full head sha>
-last comment: <author> at <ISO time>; reviewer comment newer than head: <yes|no>
+last comment: <author> at <ISO time>; reviewer comment newer than head or read: <yes|no>
 mergeable: <state>
 advice: <one line: merge, wait for test, read the comment first, fix the failure, or merge main>
 ```

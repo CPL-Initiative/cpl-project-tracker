@@ -88,7 +88,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
   tries to refute each finding. Its findings are fixed forward unless one breaks the undo. A file landing in
   `kb/migrations/.apply` applies at once on merge (Rule 10 c); a new function also needs the Rule 10 (b2) revoke.
 - Two hooks enforce two lessons (`docs/reference/approval_prompt_hooks.md`, 2026-11-14): `merge_read_guard.py`
-  refuses `merge_pull_request` unless this session read that PR's comments in the last 10 minutes, and
+  refuses `merge_pull_request` unless this session read that PR's comments in the last 3 minutes (read and merge in
+  one step; a review posted between the two still passes, and `pr-gate` step 4 is what sees it) and always refuses
+  `enable_pr_auto_merge` and a `gh` merge, and
   `clock_time_guard.py` refuses a comment, PR or commit with a time 2 minutes or more ahead of the clock (every wrong
   time in S652 ran ahead), or a `written` claim more than 5 minutes stale. Both fail open with a warning; `python3 scripts/check_hooks_live.py` reports each `yes` or `NO`.
 - A PR that makes something the first writer to a shared table, or gives a read-only surface writes, waits until

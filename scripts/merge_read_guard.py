@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Refuse a merge unless this session read that PR's comments in the last 10 minutes.
+"""Refuse a merge unless this session read that PR's comments in the last 3 minutes.
 
     <hook-json-on-stdin> python3 scripts/merge_read_guard.py
 
@@ -11,8 +11,15 @@ One script, two hook events, told apart by `hook_event_name`:
   state file.
 
   PreToolUse on mcp__github__merge_pull_request: allow (say nothing) when a stamp
-  for that PR in this session is at most 10 minutes old; otherwise deny, with one
-  sentence telling the session to read the PR's comments to the last page first.
+  for that PR in this session is at most 3 minutes old, so the read and the merge
+  sit in the same step; otherwise deny, with one sentence telling the session to
+  read the PR's comments to the last page first.
+
+  PreToolUse on mcp__github__enable_pr_auto_merge, and on a Bash `gh pr merge` or
+  `gh api .../merge`: deny always. Auto-merge lands later with no read at all
+  (with no required check it merges at once; `CLAUDE.md` and conductor_mode say
+  never use it), and this environment allows `gh` only for search. Both refusals
+  say to merge with merge_pull_request after reading the thread (COBIx on #3307).
 
 WHY THIS EXISTS
 ---------------
@@ -30,6 +37,11 @@ page, and the stamp is keyed to the PR, so reading page 1 of a long thread still
 satisfies it. A stamp is keyed by `session_id`, which a subagent shares with the
 session that spawned it, so a reader agent's read counts for its conductor.
 
+The stamp records WHEN the thread was read, not what it held. A review posted
+after the read and before the merge passes; the 3-minute window narrows that gap
+and does not close it. `pr-gate` step 4 (is a reviewer comment newer than the
+head commit, or newer than the read) is the check that sees it.
+
 EVERY REPOSITORY
 ----------------
 It holds for a merge in any repository, the vault's included: a merge there
@@ -43,7 +55,13 @@ merge goes ahead unchecked. The same holds when the guard cannot know whether a
 read happened: the state directory cannot be written, the last stamp attempt
 failed (a marker in the system temp directory records it), or the state file
 will not parse. A corrupt state file is replaced by the next stamp that writes,
-so it heals. Only the one deliberate refusal blocks.
+so it heals. Only the deliberate refusals block.
+
+The failure marker is keyed by state directory AND session, so one session's
+failed stamp lets only that session's merges through, until one of its stamps
+succeeds. A shared state directory (`/home/user/.claude/state/` in a cloud
+session) that cannot be written still lets every session's merges through, with
+the warning: that is the fail-open choice, made on purpose.
 
 STATE
 -----
@@ -66,7 +84,8 @@ READ_TOOLS = {
     "mcp__github__issue_read": {"get_comments"},
     "mcp__github__pull_request_read": {"get_comments", "get_review_comments", "get_reviews"},
 }
-MAX_AGE = 10 * 60          # seconds a read stays fresh
+MAX_AGE = 3 * 60           # seconds a read stays fresh: the read and the merge in one step
+AUTO_MERGE_TOOL = "mcp__github__enable_pr_auto_merge"
 KEEP = 24 * 3600           # stamps older than this are pruned
 STATE_NAME = "merge_read_stamps.json"
 
@@ -99,10 +118,11 @@ class Unknowable(Exception):
     """The guard cannot tell whether a read happened; the merge goes ahead with a warning."""
 
 
-def failure_marker():
+def failure_marker(payload):
     """Where a failed stamp is recorded: the system temp directory, which a broken
-    state directory does not take with it."""
-    tag = "".join(c if c.isalnum() else "_" for c in os.path.dirname(state_path()))[-80:]
+    state directory does not take with it. Keyed by state directory and session."""
+    raw = os.path.dirname(state_path()) + "|" + str(payload.get("session_id") or "unknown")
+    tag = "".join(c if c.isalnum() else "_" for c in raw)[-120:]
     return os.path.join(tempfile.gettempdir(), "cpl_merge_read_stamp_failed_" + tag)
 
 
@@ -143,7 +163,7 @@ def stamp(payload):
         os.replace(tmp, path)
     except OSError as e:
         try:
-            with open(failure_marker(), "w") as fh:
+            with open(failure_marker(payload), "w") as fh:
                 fh.write("%s %s\n" % (t, e))
         except OSError:
             pass   # the merge check also tests the directory, so it still fails open
@@ -151,7 +171,7 @@ def stamp(payload):
                           "the next merge goes ahead unchecked." % e}))
         return 0
     try:
-        os.remove(failure_marker())
+        os.remove(failure_marker(payload))
     except OSError:
         pass
     return 0
@@ -175,7 +195,7 @@ def check_merge(payload):
     number = ti.get("pullNumber")
     if number is None:
         raise ValueError("merge call carries no pullNumber")
-    if os.path.exists(failure_marker()):
+    if os.path.exists(failure_marker(payload)):
         raise Unknowable("the last attempt to record a read failed")
     if not writable_state_dir():
         raise Unknowable("the state directory %s cannot be written" % os.path.dirname(state_path()))
@@ -194,7 +214,7 @@ def check_merge(payload):
             else "with a stamp %d seconds in the future" % int(-age))
     reason = ("Refused by the merge-read guard: read %s's comments to the last page "
               "(pull_request_read get_comments and get_reviews, or issue_read get_comments) "
-              "before merging; this session last read them %s, and a read counts for 10 minutes."
+              "before merging; this session last read them %s, and a read counts for 3 minutes, so read and merge in one step."
               % (where, when))
     print(json.dumps({"hookSpecificOutput": {
         "hookEventName": "PreToolUse",
@@ -202,6 +222,37 @@ def check_merge(payload):
         "permissionDecisionReason": reason,
     }}))
     return 0
+
+
+OTHER_PATH = ("Merge with merge_pull_request after reading the PR's comments to the last page; "
+              "auto-merge and `gh` merges skip that read.")
+
+
+def deny(reason):
+    print(json.dumps({"hookSpecificOutput": {
+        "hookEventName": "PreToolUse",
+        "permissionDecision": "deny",
+        "permissionDecisionReason": reason,
+    }}))
+    return 0
+
+
+def gh_merge(command):
+    """True when a simple command in the Bash line is `gh pr merge` or a `gh api` call on a merge endpoint."""
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from clock_time_guard import shell_commands   # one shell reader for both hooks
+    for words, _ in shell_commands(command):
+        k = 0
+        while k < len(words) and "=" in words[k] and not words[k].startswith("-"):
+            k += 1
+        if k >= len(words) or os.path.basename(words[k]) != "gh":
+            continue
+        rest = words[k + 1:]
+        if rest[:2] == ["pr", "merge"]:
+            return True
+        if rest[:1] == ["api"] and any(w.rstrip("/").endswith("/merge") for w in rest[1:]):
+            return True
+    return False
 
 
 def main():
@@ -213,6 +264,13 @@ def main():
         tool = payload.get("tool_name")
         if event == "PostToolUse" and tool in READ_TOOLS:
             return stamp(payload)
+        if event == "PreToolUse" and tool == AUTO_MERGE_TOOL:
+            return deny("Refused by the merge-read guard: auto-merge is never used here (with no "
+                        "required check it merges at once, with no read at all). " + OTHER_PATH)
+        if event == "PreToolUse" and tool == "Bash" \
+                and gh_merge(str((payload.get("tool_input") or {}).get("command") or "")):
+            return deny("Refused by the merge-read guard: this environment allows `gh` for search "
+                        "only, and a `gh` merge skips the read. " + OTHER_PATH)
         if event == "PreToolUse" and tool == MERGE_TOOL:
             return check_merge(payload)
         return 0
