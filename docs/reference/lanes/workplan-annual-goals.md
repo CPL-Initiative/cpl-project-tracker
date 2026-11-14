@@ -121,8 +121,8 @@ The paste that deletes the 12 extra rows and adds the unique index is
     `activity_summaries.js` and `_row_current_years` still read it as a fallback until then).
 0e. ✅ The two drafted descriptions landed through the runner (read back 21:07Z); the tab shows all 34 after the
     next build. A row Sam empties later shows in `--brief` again; draft it the same way.
-0d. ✅ **Reports print the tab's Current per year (S649).** `apply_project_current` stamps `kpi_current_<year>`
-    from each Annual Goals row; the reports pair it with that year's goal. Guards: `tests/workplan_reports_year_pair*`.
+0d. ✅ **Reports print two Currents (S649):** year cells `kpi_current_<year>` (as Annual Goals), Current column and
+    prompt `kpi_current_summary` (as Activities); `apply_project_current`. Tests `workplan_reports_year_pair*`.
 0b. ✅ **Move stays reviewer-only (Sam, Open Asks Sheet 73 card 1, *Keep it reviewer-only*, 2026-10-13 11:45:21Z).** His later, direct answer stands over Sheet 72 card 4's *phrase* (03:50Z); read from the sheet store by S381 (`cpl_memory` `sam-sheet-73-card-1-keep-reviewer-only-2026-10-13`). Nothing to build; the function and the control stay as they went live.
 1. **The first Refresh Sam runs:** read the posted rows (`item_updates` where `item_type = 'activity'` and `raw` names `activity_summaries.js`) and his edits (`raw.edited`, `raw.draft`). What he changes in a draft is the prompt's next revision.
 2. **The first Move a reviewer makes:** read its `workplan_id_moves` row (before-values and counts) and the guard's verdict; the undo is in `kb/supabase_workplan_move.sql`'s header.

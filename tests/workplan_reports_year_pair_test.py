@@ -77,13 +77,13 @@ def proj(pid, kpi_metric=""):
 
 # 1.5 has no ladder row and no Current anywhere but kpi_metric (2025-26 fallback).
 projects = [proj("3.9", "9,999"), proj("2.2", "6"), proj("9.9"), proj("3.1", "43,630"),
-            proj("3.2", "96,449"), proj("1.5", "17")]
+            proj("3.2", "96,449"), proj("1.5", "17"), proj("5.0", "")]
 _activities, _wg, annual_goals = e.build_workplan_goals_from_supabase(ROWS, [], projects, None)
 kpis = {"cumulative_students": {"value": "48,142"}, "transcripted_units": {"value": "101,000"}}
 history = [{"date": "2026-06-30", "students": 45000}, {"date": "2026-11-13", "students": 48000}]
 e.apply_live_workplan_current(annual_goals, kpis, {"scraped_at": "2026-11-14T06:00:00Z"},
                               history=history, fy="2026-27")
-e.apply_project_current(projects, annual_goals)
+e.apply_project_current(projects, annual_goals, fy_now="2026-27")
 P = {p["id"]: p for p in projects}
 
 
@@ -120,6 +120,24 @@ check("3.1 (live): a stale cur_2027_28 does not print; the year is blank", cur("
 check("3.1 (live): years still ahead are blank", cur("3.1", "2829") == "" and cur("3.1", "2930") == "")
 check("3.2 (live): a closed year with no kpi_history entry is blank, not its cur_2025_26",
       cur("3.2", "2526") == "" and cur("3.2", "2627") == "101,000")
+
+# ── the summary Current: the Activities tab's figure (_summary_current) ──
+def summ(pid):
+    return P[pid]["kpi_current_summary"]
+
+
+check("2.2: only cur_2025_26 set -> the summary Current is that figure (6), as the tab's summary reads",
+      summ("2.2") == "6")
+check("3.9: the summary reads the latest year set (2027-28, a stored 0), as the tab's summary does",
+      summ("3.9") == "0")
+check("9.9: the summary reads the STRETCH-row fallback (7)", summ("9.9") == "7")
+check("3.1 (live): the summary is the live figure", summ("3.1") == "48,142")
+check("5.0: no Current anywhere -> the summary and every year are blank",
+      summ("5.0") == "" and all(cur("5.0", s) == "" for s in e._LADDER_SUFFIXES))
+check("the summary agrees with _summary_current for every manual row that set a Current",
+      all(e.fmt_number(e._summary_current(r, "2026-27")) == summ(r["id"])
+          for r in annual_goals if r.get("current_source") != "live" and r.get("current_latest")))
+check("_empty_ladder carries a blank kpi_current_summary", e._empty_ladder().get("kpi_current_summary") == "")
 
 # ── the fiscal year the reports print beside ──
 check("current_workplan_year() is a ladder label the reports parse ('2026-27')",

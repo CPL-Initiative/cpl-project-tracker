@@ -182,6 +182,14 @@
   function yearPair(p, s, fy) {
     return (yearCurrent(p, s, fy) || '—') + '/' + (yearGoal(p, s) || '—');
   }
+  // The summary Current (the 'Current' column): the figure the Activities tab's
+  // summary names beside this year's goal, worked out by the generator
+  // (kpi_current_summary: the live value, else the latest year a Current was
+  // set). kpi_metric stands in only when the file carries no kpi_current_* key.
+  function summaryCurrent(p, fy) {
+    if (Object.prototype.hasOwnProperty.call(p, 'kpi_current_summary')) return String(p.kpi_current_summary || '');
+    return hasYearCurrents(p) ? yearCurrent(p, fy, fy) : (p.kpi_metric || '');
+  }
   // '2030 Goal: 400,000  Stretch: 40,000' — the 2029-30 goal and the 2029-30 stretch.
   function goalSubtitle(p) {
     var g = yearGoal(p, '2930');
@@ -525,7 +533,7 @@
           }));
         }
         // 2030 goal subtitle + the annual goals ladder
-        var cur = yearCurrent(p, FY, FY) || '—';
+        var cur = summaryCurrent(p, FY) || '—';
         var subtitle = goalSubtitle(p);
         if (subtitle) {
           children.push(new D.Paragraph({
@@ -665,7 +673,7 @@
             makeCell(statusIcon(p.status), { width: 1600, align: D.AlignmentType.CENTER, fill: fill, color: sColor, size: 17, bold: true }),
             makeCell(yearGoal(p, '2930') || '—', { width: 1400, align: D.AlignmentType.CENTER, fill: fill, size: 18 }),
             makeCell(yearPair(p, FY, FY), { width: 1800, align: D.AlignmentType.CENTER, fill: fill, size: 18 }),
-            makeCell(yearCurrent(p, FY, FY) || '—', { width: 1400, align: D.AlignmentType.CENTER, fill: fill, color: sColor, bold: true, size: 18 }),
+            makeCell(summaryCurrent(p, FY) || '—', { width: 1400, align: D.AlignmentType.CENTER, fill: fill, color: sColor, bold: true, size: 18 }),
           ],
         }));
         rowIdx++;
@@ -958,6 +966,7 @@
     fySuffix: fySuffix,
     goalSubtitle: goalSubtitle,
     yearPair: yearPair,
+    summaryCurrent: summaryCurrent,
     _selectedPids: selectedPids,
   };
   if (typeof window !== 'undefined') window.CPL_MASTER_REPORT = api;

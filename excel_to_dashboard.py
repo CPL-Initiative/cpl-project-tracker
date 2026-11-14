@@ -1097,6 +1097,7 @@ def _empty_ladder():
     for prefix in ("kpi_goal_", "kpi_stretch_", "kpi_current_"):
         for suffix in _LADDER_SUFFIXES:
             d[prefix + suffix] = ""
+    d["kpi_current_summary"] = ""
     return d
 
 
@@ -11500,7 +11501,7 @@ def apply_live_workplan_current(annual_goals, kpis, live_data=None, history=None
     print(f"  Annual Workplan: {n_live} sub-activities synced to live KPI values")
 
 
-def apply_project_current(projects, annual_goals):
+def apply_project_current(projects, annual_goals, fy_now=None):
     """Stamp each project's kpi_current_<year> with exactly the Current the
     Annual Goals tab shows for that row and year (S649), so the printed reports
     name the same figure. One rule, the tab's, worked out here only:
@@ -11511,17 +11512,30 @@ def apply_project_current(projects, annual_goals):
       * any other row reads its own current_years (_row_current_years: the GOAL
         row, falling back to STRETCH; kpi_metric under 2025-26 only when no year
         carries a value), and a 0 is blank, as the tab prints it.
+    kpi_current_summary is the second figure: the Current the Activities tab's
+    summary names beside this year's goal (_summary_current: the live value for a
+    live row, else the latest year a Current was set, since a cumulative count
+    reads against this year's target). The reports print it in their Current
+    column and the prompt, labeled without a year.
     Every project has an annual_goals row (the table iterates `projects`), so
     nothing else derives a Current. Must run after apply_live_workplan_current.
     Mutates `projects` in place."""
     if not projects or not annual_goals:
         return
     by_id = {p.get("id"): p for p in projects}
+    this_fy = fy_now or current_workplan_year()
     for row in annual_goals:
         p = by_id.get(row.get("id"))
         if p is None:
             continue
         live = row.get("current_source") == "live"
+        if live:
+            p["kpi_current_summary"] = str(row.get("current_live_display") or "")
+        elif row.get("current_latest"):
+            # A set Current, a stored 0 included, prints as the summary does.
+            p["kpi_current_summary"] = fmt_number(_summary_current(row, this_fy))
+        else:
+            p["kpi_current_summary"] = ""
         fy = row.get("current_fy")
         hist = row.get("current_history") or {}
         years = row.get("current_years") or {}

@@ -97,6 +97,14 @@ function yearCurrent(p, s, fy) {
 function yearPair(p, s, fy) {
   return `${yearCurrent(p, s, fy) || "—"}/${yearGoal(p, s) || "—"}`;
 }
+// The summary Current (the "Current" column, KPI Current): the figure the
+// Activities tab's summary names beside this year's goal, worked out by the
+// generator (kpi_current_summary: the live value, else the latest year a Current
+// was set). kpi_metric stands in only when the file carries no kpi_current_* key.
+function summaryCurrent(p, fy) {
+  if (Object.prototype.hasOwnProperty.call(p, "kpi_current_summary")) return String(p.kpi_current_summary || "");
+  return hasYearCurrents(p) ? yearCurrent(p, fy, fy) : (p.kpi_metric || "");
+}
 // "2030 Goal: 400,000  Stretch: 40,000" — the 2029-30 goal and the 2029-30 stretch.
 function goalSubtitle(p) {
   const g = yearGoal(p, "2930");
@@ -557,7 +565,7 @@ async function generateMasterReport() {
       const colW = Math.floor(CONTENT_W / 4);
       const lastColW = CONTENT_W - colW * 3;
       // 2030 Goal/Stretch + cumulative annual goals table
-      const cur = yearCurrent(p, FY, FY) || "\u2014";
+      const cur = summaryCurrent(p, FY) || "\u2014";
       const subtitle = goalSubtitle(p);
       if (subtitle) {
         children.push(new Paragraph({
@@ -728,7 +736,7 @@ async function generateMasterReport() {
           makeCell(statusIcon(p.status), { width: 1600, align: AlignmentType.CENTER, fill, color: sColor, size: 17, bold: true }),
           makeCell(yearGoal(p, "2930") || "\u2014", { width: 1400, align: AlignmentType.CENTER, fill, size: 18 }),
           makeCell(yearPair(p, FY, FY), { width: 1800, align: AlignmentType.CENTER, fill, size: 18 }),
-          makeCell(yearCurrent(p, FY, FY) || "\u2014", { width: 1400, align: AlignmentType.CENTER, fill, color: sColor, bold: true, size: 18 }),
+          makeCell(summaryCurrent(p, FY) || "\u2014", { width: 1400, align: AlignmentType.CENTER, fill, color: sColor, bold: true, size: 18 }),
         ],
       }));
       rowIdx++;
@@ -834,7 +842,7 @@ async function generateMiniReport(p) {
     ["Progress", `${p.pct || 0}%`, sColor],
     ["Lead", p.lead || "N/A", "333333"],
     ["Budget", `${p.budget || "N/A"} (${p.budget_source || ""})`, "333333"],
-    ["KPI Current", yearCurrent(p, FY, FY) ? `${yearCurrent(p, FY, FY)} ${p.kpi_unit || ""}` : "N/A", NAVY],
+    ["KPI Current", summaryCurrent(p, FY) ? `${summaryCurrent(p, FY)} ${p.kpi_unit || ""}` : "\u2014", NAVY],
     ...(p.count_note ? [["How it is counted", p.count_note, "333333"]] : []),
     ["2030 Goal", yearGoal(p, "2930") || "N/A", NAVY],
     ["2030 Stretch", p.kpi_stretch_2930 || "N/A", GOLD],

@@ -451,9 +451,8 @@
     // This fiscal year's goal, stretch and current for one sub-activity (S649).
     // The year is CPL_DATA.workplan_fy ('2026-27', written by the daily build from
     // current_workplan_year()), else July 1 to June 30 from today, clamped to the
-    // ladder's 2025-26 .. 2029-30. Current is kpi_current_<year>, the Annual
-    // Goals tab's figure; kpi_metric stands in only when the data file carries no
-    // kpi_current_* key at all (written before the generator added them).
+    // ladder's 2025-26 .. 2029-30. kpi_metric stands in for the Current only when
+    // the data file carries no kpi_current_* key at all.
     function fiscalYearPair(p, label, today) {
         var m = /^20(\d\d)-(\d\d)$/.exec(String(label || ''));
         var sfx;
@@ -465,11 +464,18 @@
             start = Math.max(2025, Math.min(2029, start));
             sfx = String(start).slice(2) + String(start + 1).slice(2);
         }
-        var cur = p['kpi_current_' + sfx];
-        var hasKeys = ['2526', '2627', '2728', '2829', '2930'].some(function (s) {
-            return Object.prototype.hasOwnProperty.call(p, 'kpi_current_' + s);
-        });
-        if ((cur == null || cur === '') && !hasKeys) cur = p.kpi_metric || '';
+        // Current is the Activities tab's summary figure (kpi_current_summary: the
+        // live value, else the latest year a Current was set), which may be an
+        // earlier year's; the prompt labels it "latest recorded", never this year's.
+        var cur;
+        if (Object.prototype.hasOwnProperty.call(p, 'kpi_current_summary')) {
+            cur = p.kpi_current_summary;
+        } else {
+            var hasKeys = ['2526', '2627', '2728', '2829', '2930'].some(function (s) {
+                return Object.prototype.hasOwnProperty.call(p, 'kpi_current_' + s);
+            });
+            cur = hasKeys ? p['kpi_current_' + sfx] : p.kpi_metric;
+        }
         if (cur == null) cur = '';
         var goal = p['kpi_goal_' + sfx]
             || (sfx === '2526' ? p.kpi_target_2026 : sfx === '2930' ? p.kpi_target_2030 : '') || '';
@@ -493,7 +499,7 @@
                 + '  KPI: ' + (p.kpi_unit || 'N/A') + '\n'
                 + (p.count_note ? '  How it is counted: ' + p.count_note + '\n' : '')
                 + '  Goal ' + fy.year + ': ' + (fy.goal || 'N/A') + ' | Stretch: ' + (fy.stretch || 'N/A')
-                + ' | Current ' + fy.year + ': ' + (fy.current || 'N/A') + '\n'
+                + ' | Current (latest recorded): ' + (fy.current || 'N/A') + '\n'
                 + '  Latest Update: ' + (p.update || 'N/A') + (p.update && p.update_date ? ' (' + p.update_date + ')' : '') + '\n'
                 + '  Milestones: ' + (p.milestones || 'N/A') + '\n'
                 + '  Workplan Notes: ' + (p.workplan_notes || 'N/A') + '\n'
