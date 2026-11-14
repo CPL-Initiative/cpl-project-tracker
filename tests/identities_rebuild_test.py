@@ -216,9 +216,77 @@ with tempfile.TemporaryDirectory() as td:
           and set(rc["entries"]) == {"FIRE M1001", "FIRE M1003", "FIRE M1006", "FIRE M1002", "FIRE M1004", "FIRE M1005"})
     check("--check passes after the apply", run("--check").returncode == 0)
     check("a second --apply on the same plan is refused", run("--apply", "--expect-plan", plan_path).returncode != 0)
+    applied = open(art_path, "rb").read()
+    receipt_bytes = open(receipt_path, "rb").read()
+    # The map put back by hand (a revert of the map alone): the plan matches again,
+    # so only the receipt check stands between a second apply and the receipt that undoes the first.
+    with open(art_path, "wb") as f:
+        f.write(original)
+    r = run("--apply", "--expect-plan", plan_path)
+    check("with the map put back by hand, a second apply is refused by the receipt and writes nothing",
+          r.returncode != 0 and "never twice" in r.stderr and unchanged()
+          and open(receipt_path, "rb").read() == receipt_bytes)
+    with open(art_path, "wb") as f:
+        f.write(applied)
     r = run("--undo", receipt_path)
     check("--undo restores the map byte for byte", r.returncode == 0 and unchanged())
     check("a second --undo is refused", run("--undo", receipt_path).returncode != 0 and unchanged())
+
+    # Undo refuses a map that moved since the apply, cleanly, writing nothing.
+    r = run("--apply", "--expect-plan", plan_path)
+    check("after an undo the plan applies again", r.returncode == 0)
+    def edit_map(fn):
+        doc = json.load(open(art_path, encoding="utf-8"))
+        fn(doc["identities"])
+        with open(art_path, "w", encoding="utf-8") as f:
+            json.dump(doc, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+        return open(art_path, "rb").read()
+    moved = edit_map(lambda m: m["FIRE M1002"].update(colleges_offering=["Edited College"]))
+    r = run("--undo", receipt_path)
+    check("--undo refuses when a rebuilt entry changed since the apply, writing nothing",
+          r.returncode != 0 and "changed since the apply" in r.stderr and open(art_path, "rb").read() == moved)
+    moved = edit_map(lambda m: m.pop("MATH 110"))
+    r = run("--undo", receipt_path)
+    check("--undo refuses when a key was deleted since the apply: a clean abort naming it, no traceback",
+          r.returncode != 0 and "MATH 110" in r.stderr and "Traceback" not in r.stderr
+          and open(art_path, "rb").read() == moved)
+
+# ── the plan comparison itself ───────────────────────────────────────────────
+pj_like = {"fill": sorted(plan["fill"]), "refresh": sorted(plan["refresh"]), "orphan": list(plan["orphan"])}
+check("plan_drift is empty for the reviewed plan", ib.plan_drift(plan, pj_like) == {})
+check("plan_drift names a fill set that differs",
+      ib.plan_drift(plan, dict(pj_like, fill=pj_like["fill"][:-1])) == {"fill": ["FIRE M1006"]})
+check("plan_drift names a refresh set that differs",
+      set(ib.plan_drift(plan, dict(pj_like, refresh=["FIRE M1002"]))) == {"refresh"})
+check("plan_drift names an orphan set that differs",
+      ib.plan_drift(plan, dict(pj_like, orphan=[])) == {"orphan": ["OLD M1009"]})
+
+# ── do_apply honors a failed gate ────────────────────────────────────────────
+import argparse  # noqa: E402
+with tempfile.TemporaryDirectory() as td:
+    art_path = os.path.join(td, "coci_articulations.json")
+    with open(art_path, "w", encoding="utf-8") as f:
+        json.dump({"identities": identities, "articulations": records}, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+    before = open(art_path, "rb").read()
+    plan_path = os.path.join(td, "plan.json")
+    with open(plan_path, "w", encoding="utf-8") as f:
+        json.dump(pj_like, f)
+    args = argparse.Namespace(expect_plan=plan_path, drop_orphans=False, ruling=None)
+    real_gates = ib.apply_gates
+    ib.apply_gates = lambda *a: {"G0 a gate that fails": False}
+    try:
+        try:
+            ib.do_apply(args, json.load(open(art_path)), art_path, identities, records, cat, sg, mem, plan)
+            refused = False
+        except SystemExit as e:
+            refused = e.code not in (0, None)
+    finally:
+        ib.apply_gates = real_gates
+    check("a failed gate stops the apply: nothing written, no receipt",
+          refused and open(art_path, "rb").read() == before
+          and not os.path.exists(os.path.join(td, "apply_receipt.json")))
 
 # ── the export calls the shared rule ─────────────────────────────────────────
 src = open(os.path.join(ROOT, "excel_to_dashboard.py"), encoding="utf-8").read()

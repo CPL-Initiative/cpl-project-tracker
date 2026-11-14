@@ -530,17 +530,28 @@ def write_receipt(plan, view, figures, rows, orphan_rows, identities, out, today
 
 # ── apply and undo ───────────────────────────────────────────────────────────
 
+def plan_drift(plan, expected):
+    """{set name: sample of differing keys} where the recomputed fill, refresh or
+    orphan key set differs from the reviewed plan.json. Empty means apply."""
+    out = {}
+    for name in ("fill", "refresh", "orphan"):
+        mine, theirs = set(plan[name]), set(expected.get(name) or [])
+        if mine != theirs:
+            out[name] = sorted(mine ^ theirs)[:5]
+    return out
+
+
 def do_apply(args, art, art_path, identities, records, cat, sg, mem, plan):
     if not args.expect_plan:
         sys.exit("ABORT: --apply needs --expect-plan <plan.json> from the dry run.")
     if args.drop_orphans and not (args.ruling or "").strip():
         sys.exit("ABORT: --drop-orphans needs --ruling \"<who, when: what>\" (a drop is a delete).")
     expected = json.load(open(args.expect_plan, encoding="utf-8"))
-    drift = {name: sorted(set(mine) ^ set(expected.get(name) or []))[:5]
-             for name, mine in (("fill", plan["fill"]), ("refresh", plan["refresh"]), ("orphan", plan["orphan"]))
-             if set(mine) != set(expected.get(name) or [])}
+    drift = plan_drift(plan, expected)
     if drift:
         sys.exit(f"ABORT: the plan moved since {args.expect_plan}: {drift} — re-run the dry run.")
+    # Reached when the map was put back by hand (a revert of the map alone): the
+    # plan matches again, and a second apply would overwrite the receipt that undoes the first.
     receipt_path = os.path.join(os.path.dirname(os.path.abspath(args.expect_plan)), "apply_receipt.json")
     if os.path.exists(receipt_path) and not json.load(open(receipt_path)).get("_undone_at"):
         sys.exit(f"ABORT: {receipt_path} records an apply not undone; never twice.")
@@ -579,6 +590,9 @@ def undo_map(identities, receipt):
     """Pure. The identities map the receipt's apply started from; raises
     ValueError when a key changed since the apply (the undo would discard it)."""
     entries = receipt["entries"]
+    gone = [k for k in receipt["key_order_before"] if k not in entries and k not in identities]
+    if gone:
+        raise ValueError(f"keys deleted since the apply: {gone[:5]}")
     for k, e in entries.items():
         if identities.get(k) != e["after"]:
             raise ValueError(f"{k} changed since the apply")
