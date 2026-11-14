@@ -25099,6 +25099,13 @@
   "file:tests/custom_report_payload_test.py": {
    "consumers": [
     {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:map-custom-report-load.yml",
      "kind": "workflow",
      "direction": "run",
@@ -34386,6 +34393,7 @@
     "tests/custom_report_duplicate_view_test.py",
     "tests/mojibake_repair_test.py",
     "tests/powershell_ascii_test.py",
+    "tests/custom_report_payload_test.py",
     "tests/partner_crosswalk_test.py"
    ],
    "adds": [],

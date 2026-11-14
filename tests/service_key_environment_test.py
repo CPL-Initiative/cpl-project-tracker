@@ -12,11 +12,18 @@ The list lives here, in this file, so the test and the plan cannot drift apart; 
 PENDING and adds the environment line (one PR per group: the governance lane's NEXT (1)). When PENDING is empty the
 repository copy can go, which is Sam's setting.
 
+KEY ROTATION MEANS TWO COPIES UNTIL PENDING IS EMPTY (COBIx on #3334). The jobs in `live-counts` read the
+environment's copy of SUPABASE_SERVICE_KEY and the jobs on PENDING read the repository copy. Whoever rotates the
+Supabase service key updates both secrets. Updating one leaves half the workflows failing auth while the other half
+keeps working, which reads like a code bug and is not one. The census prints this as one line on every run while
+PENDING holds a job.
+
 Three more checks keep the list honest:
   * a PENDING entry that names no job reading the key, or a job that already declares the environment, fails (the
     list only ever shrinks to what is true);
   * a job in `live-counts` whose workflow can run off `main` fails: the environment refuses a job on any other ref,
-    so a `pull_request` trigger, or a `push` not limited to `branches: [main]`, would stop that run;
+    so a `pull_request` or `pull_request_target` trigger, or a `push` not limited to `branches: [main]`, would stop
+    that run (`schedule`, `workflow_dispatch` and `workflow_run` run on the default branch and pass);
   * the census runs against a few made-up workflows first, so a census that finds nothing cannot pass.
 
 Needs PyYAML (installed by the step that runs it in .github/workflows/js-tests.yml).
@@ -97,8 +104,10 @@ def off_main_triggers(doc):
     """The triggers that can start a run on a ref other than main."""
     out = []
     for name, spec in triggers(doc).items():
-        if name in ("schedule", "workflow_dispatch"):
-            continue  # a schedule runs on the default branch; a dispatch names its ref (checked by run history)
+        if name in ("schedule", "workflow_dispatch", "workflow_run"):
+            # a schedule and a workflow_run run on the default branch; a dispatch names its ref (checked by run
+            # history). COBIx on #3334: a workflow_run group would otherwise fail the census for no reason.
+            continue
         if name == "push":
             spec = spec or {}
             branches = spec.get("branches")
@@ -189,6 +198,16 @@ jobs:
     runs-on: ubuntu-latest
     steps: [{run: true}]
 """
+FIXTURE_MOVED_TEMPLATE = """
+on: %s
+jobs:
+  a:
+    environment: live-counts
+    runs-on: ubuntu-latest
+    steps:
+      - env: {K: "${{ secrets.SUPABASE_SERVICE_KEY }}"}
+        run: true
+"""
 FIXTURE_COMMENT_ONLY = """
 on: {workflow_dispatch: {}}
 jobs:
@@ -217,6 +236,15 @@ def self_test():
     f, _, _ = census({"x.yml": FIXTURE_MOVED_OK}, {("x.yml", "a"): ("2", "a reason")})
     if not (len(f) == 1 and "still on PENDING" in f[0]):
         problems.append("a moved job left on PENDING was not found: %r" % f)
+    f, moved, _ = census({"x.yml": FIXTURE_MOVED_TEMPLATE % "{workflow_run: {workflows: [Daily], types: [completed]}}"},
+                         {})
+    if f or moved != [("x.yml", "a")]:
+        problems.append("an environment job on a workflow_run trigger (it runs on the default branch) failed: %r" % f)
+    for on, want in (("{pull_request_target: {}}", "pull_request_target"), ("{push: {}}", "push None"),
+                     ("{push: {branches: [main, 'claude/**']}}", "push ['main', 'claude/**']")):
+        f, _, _ = census({"x.yml": FIXTURE_MOVED_TEMPLATE % on}, {})
+        if not (len(f) == 1 and f[0].endswith("can run off main: " + want)):
+            problems.append("an environment job on %s was not flagged: %r" % (on, f))
     f, _, _ = census({"x.yml": FIXTURE_COMMENT_ONLY}, {("x.yml", "a"): ("2", "a reason")})
     if not (len(f) == 1 and "reads no service key" in f[0]):
         problems.append("a stale PENDING entry (the key named only in a comment) was not found: %r" % f)
@@ -224,6 +252,12 @@ def self_test():
     if not (len(f) == 1 and "needs a group" in f[0]):
         problems.append("a PENDING entry without a known group and a reason was not found: %r" % f)
     return problems
+
+
+def rotation_warning(in_env, pending):
+    return ("KEY ROTATION: %d jobs in %s read the environment's SUPABASE_SERVICE_KEY and %d on PENDING read the "
+            "repository copy; whoever rotates the Supabase service key updates both secrets, or half the "
+            "workflows fail auth while the rest keep working." % (in_env, ENVIRONMENT, pending))
 
 
 def main():
@@ -236,6 +270,8 @@ def main():
     workflows = {os.path.basename(p): open(p, encoding="utf-8").read()
                  for p in sorted(glob.glob(os.path.join(WORKFLOWS, "*.yml")))}
     findings, moved, seen = census(workflows, PENDING)
+    if PENDING:
+        print(rotation_warning(len(moved), len(seen)))
     if findings:
         print("FAIL: %d finding(s)" % len(findings))
         for f in findings:
