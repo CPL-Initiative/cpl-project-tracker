@@ -423,6 +423,13 @@ _src = open(os.path.join(ROOT, "kb", "_build_commons_data_status.py"), encoding=
 check("(15b) the no-objectives list is derived from OBJECTIVES_BY_SYSTEM, the one source",
       set(B.NO_OBJECTIVES_SYSTEMS) == {k for k, v in _R.OBJECTIVES_BY_SYSTEM.items() if v.get("printed") is not True}
       and "OBJECTIVES_BY_SYSTEM" in _src and not re.search(r"NO_OBJECTIVES_SYSTEMS\s*=\s*[(\[{]", _src), B.NO_OBJECTIVES_SYSTEMS)
+# (15b) COBIx on #3286: the table lives in kb/_objectives_by_system.py; the reader imports it, and neither the reader
+# nor the builder holds a literal copy or imports the other.
+_rsrc = open(os.path.join(ROOT, "kb", "_course_outcomes_read.py"), encoding="utf-8").read()
+check("(15b) OBJECTIVES_BY_SYSTEM has one home, which the reader and the builder both read",
+      "_objectives_by_system.py" in _rsrc and "_objectives_by_system.py" in _src
+      and not re.search(r"OBJECTIVES_BY_SYSTEM\s*=\s*\{", _rsrc) and not re.search(r"OBJECTIVES_BY_SYSTEM\s*=\s*\{", _src)
+      and "_course_outcomes_read.py\"" not in _src)
 # (15c) S650, COBIx on #3229: the displayed catalog link splits from the capture root, and a check reads in words.
 check("(15c) a 500 from Pingora with an empty body reads unreachable from here, never not found; a 404 reads not found",
       B.link_check_result({"status": 500, "server": "Pingora", "body_bytes": 0}) == "unreachable from here"
@@ -432,13 +439,24 @@ check("(15c) a 500 from Pingora with an empty body reads unreachable from here, 
       and B.link_check_result({"status": 403}) == "the site refused the request"
       and B.link_check_result({"status": 404}) == "not found" and B.link_check_result({"status": 200}) == "answered"
       and B.link_check_result({}) == "not checked")
+_OLD = "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf"
+_NEW = "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf"
 _one = B.catalog_links("no_such_college", "https://catalog.example.edu/")
-_two = B.catalog_links("copper_mountain", "https://captured.example.edu/old.pdf")
+_two = B.catalog_links("copper_mountain", _OLD)
 check("(15c) the capture root stays what the capture read; a listed college displays its catalog page",
       _one == {"catalog_url": "https://catalog.example.edu/", "capture_root": "https://catalog.example.edu/", "catalog_now": None, "catalog_checks": None}
-      and _two["capture_root"] == "https://captured.example.edu/old.pdf" and _two["catalog_url"] == B.CATALOG_LINKS["copper_mountain"]["display"]
+      and _two["capture_root"] == _OLD and _two["catalog_url"] == B.CATALOG_LINKS["copper_mountain"]["display"]
       and all(k.get("result") for k in _two["catalog_checks"])
       and all(k in B.FIELDS for k in ("capture_root", "catalog_now", "catalog_checks")), _two)
+# (15d) COBIx on #3286: the override expires. After a recapture names the 10.26.26 PDF, the builder stops with a plain
+# message to remove the stale entry, never keeping the hand-entered link and checks.
+_stop = None
+try:
+    B.catalog_links("copper_mountain", _NEW)
+except SystemExit as e:
+    _stop = str(e)
+check("(15d) a recaptured college's override stops the builder with a plain message naming the entry to remove",
+      _stop is not None and "copper_mountain" in _stop and "stale" in _stop and "Remove the entry" in _stop, _stop)
 oc = [c for c in C if c.get("outcomes_file")]
 bad15 = []
 for c in oc:
