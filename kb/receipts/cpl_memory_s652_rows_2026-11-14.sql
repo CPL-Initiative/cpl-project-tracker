@@ -83,3 +83,11 @@ group by m.slug, m.summary order by m.slug;
 -- Slugs: sam-mids-are-ours-trial-and-error-2026-11-14, d-math-m1044-stays-no-one-asked-s652. Rollback by slug, as above.
 -- The insert ran in the shape of STATEMENT 2, with the log insert and the verify selected by these two slugs.
 -- ===========================================================================================================
+
+-- ===========================================================================================================
+-- STATEMENT 6 -- RUN by the conductor at 14:55Z 2026-11-14: sam-mid-care-goes-into-the-rewiring-2026-11-14.
+-- ===========================================================================================================
+
+-- ===========================================================================================================
+-- STATEMENT 7 -- RUN by the conductor at 14:57Z 2026-11-14: sam-ccn-structures-gold-standard-2026-11-14.
+-- ===========================================================================================================
