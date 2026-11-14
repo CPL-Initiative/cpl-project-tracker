@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     9.0,
     9.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -145,5 +155,6 @@
    "The stated total of 9 units falls below the 12-unit award band named in the program record (8S/12Q to fewer than 16S/24Q); a reviewer may want to confirm the award type."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43603042173,
+ "read_run": "38082999076"
 }

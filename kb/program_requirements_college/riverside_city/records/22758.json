@@ -52,6 +52,7 @@
     "HIS7"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -77,6 +78,7 @@
     25.0,
     25.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -92,6 +94,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -307,5 +317,6 @@
    "The page header also repeats a heading with codes AS603/AS603B/AS603C/CE603, possibly an older version of the program."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43603042173,
+ "read_run": "38082999076"
 }

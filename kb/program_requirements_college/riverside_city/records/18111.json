@@ -22,34 +22,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 295,
+   "placed": 309,
    "listed": 313,
-   "share": 0.942,
+   "share": 0.987,
    "missing": [
     "AHS1",
     "AHS2",
-    "HIS1",
-    "HIS14",
-    "HIS15",
-    "HIS2",
-    "HIS25",
-    "HIS26",
-    "HIS28",
-    "HIS29",
-    "HIS2H",
-    "HIS31",
-    "HIS32",
-    "HIS34",
-    "HIS35",
-    "HIS44",
     "HIS6",
     "HIS7"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 28,
+   "count": 14,
    "codes": [
     "ARE36",
     "ARTH4",
@@ -63,20 +50,6 @@
     "ENGL41",
     "ENGL48",
     "ENGL9",
-    "HIST1",
-    "HIST14",
-    "HIST15",
-    "HIST2",
-    "HIST25",
-    "HIST26",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
-    "HIST31",
-    "HIST32",
-    "HIST34",
-    "HIST35",
-    "HIST44",
     "HISTC1001",
     "HISTC1002"
    ],
@@ -93,20 +66,6 @@
     "ENGL41",
     "ENGL48",
     "ENGL9",
-    "HIST1",
-    "HIST14",
-    "HIST15",
-    "HIST2",
-    "HIST25",
-    "HIST26",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
-    "HIST31",
-    "HIST32",
-    "HIST34",
-    "HIST35",
-    "HIST44",
     "HISTC1001",
     "HISTC1002"
    ],
@@ -123,6 +82,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
     "'Applicable Studio Courses Include:' chooses units but names no minimum"
    ]
@@ -145,6 +105,12 @@
    "count": 5,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -2533,5 +2499,6 @@
    "Read in 2 parts, because one reply could not hold the whole record."
   ]
  },
- "extracted_run": "38108461470"
+ "extracted_run": 43603042173,
+ "read_run": "38108461470"
 }

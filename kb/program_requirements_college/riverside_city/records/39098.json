@@ -51,6 +51,7 @@
     "ADM68B"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -82,6 +83,7 @@
     37.0,
     37.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -97,6 +99,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -341,5 +351,6 @@
    "The text begins with a fragment of a preceding heading ('nt - AS950/AS950C/CE950'), apparently from another listing; only the combined degree/certificate section was read."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43603042173,
+ "read_run": "38082999076"
 }

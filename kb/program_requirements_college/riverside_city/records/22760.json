@@ -51,6 +51,7 @@
     "KIN44"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -82,6 +83,7 @@
     24.0,
     25.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -97,6 +99,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -236,5 +246,6 @@
    "Several courses are marked '( Historical )' in the catalog (KIN-4, KIN-14, KIN-16, KIN-35, KIN-45); reviewer may check currency for 2026-2027."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43603042173,
+ "read_run": "38082999076"
 }

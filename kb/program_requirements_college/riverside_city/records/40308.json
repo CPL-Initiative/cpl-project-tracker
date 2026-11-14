@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     216.0,
     216.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -152,5 +162,6 @@
    "Outcomes are copied as printed; the source text shows words run together (e.g., 'outliningthe', 'andtest', 'afeasible', 'accountingpractices', 'evaluatefinance'), likely lost line breaks from extraction. Reviewer may want to confirm against the page."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43603042173,
+ "read_run": "38082999076"
 }

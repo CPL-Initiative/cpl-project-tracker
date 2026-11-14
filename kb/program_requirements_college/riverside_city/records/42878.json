@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -74,6 +75,7 @@
     30.0,
     31.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -89,6 +91,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -257,5 +267,6 @@
    "BUS-10H (Honors Introduction to Business) is recorded as the honors twin of BUS-10; it is not in the closed list. Both BUS-10 and BUS-10H are marked '( Historical )' in the catalog, which a reviewer may want to check."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43603042173,
+ "read_run": "38082999076"
 }

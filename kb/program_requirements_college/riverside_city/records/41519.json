@@ -51,6 +51,7 @@
     "MAT1A"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -74,6 +75,7 @@
     43.0,
     43.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -89,6 +91,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -335,5 +348,6 @@
    "The degree follows IGETC Plan C for general education. Program Learning Outcomes are printed for this degree."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43603042173,
+ "read_run": "38082999076"
 }

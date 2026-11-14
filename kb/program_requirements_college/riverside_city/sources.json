@@ -36,7 +36,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: general business concentration - associate of science degree and certificate of achievement - as524/as524c/ce524",
+    "section_fit": 0.571
    }
   },
   "listed": 21,
@@ -79,7 +82,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: accounting concentration - associate of science degree and certificate of achievement - as523/as523c/ce523",
+    "section_fit": 0.571
    }
   },
   "listed": 21,
@@ -116,7 +122,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -157,7 +166,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: management concentration - associate of science degree and certificate of achievement - as521/as521c/ce521",
+    "section_fit": 0.571
    }
   },
   "listed": 19,
@@ -194,7 +206,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: marketing concentration - associate of science degree and certificate of achievement - as525/as525c/ce525",
+    "section_fit": 0.571
    }
   },
   "listed": 15,
@@ -234,7 +249,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: real estate concentration - associate of science degree and certificate of achievement - as527/as527c/ce527",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
@@ -271,7 +289,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "executive office management - associate of science degree and certificate of achievement - as639/as639c/ce639",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
@@ -310,7 +331,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer programming - associate of science degree and certificate of achievement - as728/as728c/ce728",
+    "section_fit": 0.4
    }
   },
   "listed": 19,
@@ -341,7 +365,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "hvac residential technology - associate of science degree and certificate of achievement - as947/as947c/ce947",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -369,7 +396,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive powertrain specialist - associate of science degree and certificate of achievement - as990/as990c/ce990",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -399,7 +429,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive collision repair - associate of science degree and certificate of achievement - as1117/as1117c/ce1117",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -435,7 +468,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "welding technology - associate of science degree and certificate of achievement - as/ce606",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
@@ -466,7 +502,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "photography - associate of science degree and certificate of achievement - as592/as592c/ce592",
+    "section_fit": 0.25
    }
   },
   "listed": 9,
@@ -494,7 +533,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "vocational nursing - associate of science degree and certificate of achievement - as588/as588c/ce588",
+    "section_fit": 0.4
    }
   },
   "listed": 6,
@@ -541,7 +583,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "early childhood education - associate of science degree and certificate of achievement - as544/as544c/ce544",
+    "section_fit": 0.5
    }
   },
   "listed": 25,
@@ -576,7 +621,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administration of justice - associate of science degree and certificate of achievement - as504/as504c/ce504",
+    "section_fit": 0.4
    }
   },
   "listed": 13,
@@ -604,7 +652,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "culinary arts - associate of science degree and certificate of achievement - as2000/as2000c/ce2000",
+    "section_fit": 0.4
    }
   },
   "listed": 6,
@@ -634,7 +685,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cosmetology concepts - associate of science degree and certificate of achievement - as960/as960c/ce960",
+    "section_fit": 0.2
    }
   },
   "listed": 8,
@@ -661,7 +715,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive electrical and electronics specialist - associate of science degree and certificate of achievement - as991/as991c/ce991",
+    "section_fit": 0.571
    }
   },
   "listed": 5,
@@ -691,7 +748,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive trim and upholstery - associate of science degree and certificate of achievement - as516/as516c/ce516",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -720,7 +780,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "sign language interpreting - associate of science degree and certificate of achievement - as505/as505c/ce505",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -765,7 +828,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "paralegal studies - associate of science degree - as591/as591c",
+    "section_fit": 0.5
    }
   },
   "listed": 23,
@@ -800,7 +866,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -844,7 +913,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "film, television and video production specialist - associate of science degree and certificate of achievement - as641/as641c/ce641",
+    "section_fit": 0.625
    }
   },
   "listed": 23,
@@ -873,7 +945,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "exercise, sport & wellness - fitness professions - associate of science degree and certificate of achievement - as595/as595c/ce595",
+    "section_fit": 0.625
    }
   },
   "listed": 8,
@@ -901,7 +976,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -930,7 +1008,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -965,7 +1046,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "early childhood intervention assistant - associate of science degree and certificate of achievement - as601/as601c/ce601",
+    "section_fit": 0.571
    }
   },
   "listed": 13,
@@ -1002,7 +1086,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "education paraprofessional - associate of science degree and certificate of achievement - as2001/as2001c/ce2001",
+    "section_fit": 0.4
    }
   },
   "listed": 17,
@@ -1039,7 +1126,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: human resources concentration - associate of science degree and certificate of achievement - as623/as623c/ce623",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
@@ -1116,7 +1206,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "administration and information systems - associate of arts degree - aa494/aa494c",
+    "section_fit": 0.6
    }
   },
   "listed": 33,
@@ -1242,7 +1335,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "communication, media and languages - associate of arts degree - aa495/aa495c",
+    "section_fit": 0.6
    }
   },
   "listed": 104,
@@ -1483,7 +1579,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "fine and applied arts - associate of arts - aa496/aa496c",
+    "section_fit": 0.6
    }
   },
   "listed": 221,
@@ -1495,7 +1594,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.942,
+  "coverage": 0.987,
   "codes_found": [
    "ANT7",
    "ANT8",
@@ -1663,6 +1762,20 @@
    "FTV12",
    "FTV65",
    "GAM2",
+   "HIS1",
+   "HIS14",
+   "HIS15",
+   "HIS2",
+   "HIS25",
+   "HIS26",
+   "HIS28",
+   "HIS29",
+   "HIS2H",
+   "HIS31",
+   "HIS32",
+   "HIS34",
+   "HIS35",
+   "HIS44",
    "HISTC1001H",
    "HISTC1002H",
    "HUM10",
@@ -1800,7 +1913,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "humanities, philosophy and arts - associate of arts - aa497/aa497c",
+    "section_fit": 0.6
    }
   },
   "listed": 313,
@@ -1932,7 +2048,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "kinesiology, health and wellness - associate of arts - aa498/aa498c",
+    "section_fit": 0.6
    }
   },
   "listed": 110,
@@ -1944,7 +2063,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.937,
+  "coverage": 0.968,
   "codes_found": [
    "ADJ1",
    "ADJ1H",
@@ -2017,6 +2136,10 @@
    "GEG6",
    "GUI47",
    "GUI48",
+   "HIS1",
+   "HIS2",
+   "HIS2H",
+   "HIS35",
    "HISTC1001H",
    "HISTC1002H",
    "HMS13",
@@ -2072,7 +2195,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "social and behavioral studies - associate of arts - aa499/aa499c",
+    "section_fit": 0.6
    }
   },
   "listed": 126,
@@ -2199,7 +2325,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 110,
@@ -2242,7 +2371,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: general business concentration - associate of science degree and certificate of achievement - as524/as524c/ce524",
+    "section_fit": 0.571
    }
   },
   "listed": 21,
@@ -2285,7 +2417,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: accounting concentration - associate of science degree and certificate of achievement - as523/as523c/ce523",
+    "section_fit": 0.571
    }
   },
   "listed": 22,
@@ -2309,7 +2444,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: human resources concentration - associate of science degree and certificate of achievement - as623/as623c/ce623",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -2349,7 +2487,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: management concentration - associate of science degree and certificate of achievement - as521/as521c/ce521",
+    "section_fit": 0.571
    }
   },
   "listed": 19,
@@ -2386,7 +2527,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: marketing concentration - associate of science degree and certificate of achievement - as525/as525c/ce525",
+    "section_fit": 0.571
    }
   },
   "listed": 15,
@@ -2426,7 +2570,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: real estate concentration - associate of science degree and certificate of achievement - as527/as527c/ce527",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
@@ -2462,7 +2609,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "executive office management - associate of science degree and certificate of achievement - as639/as639c/ce639",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
@@ -2506,7 +2656,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "film, television and video production specialist - associate of science degree and certificate of achievement - as641/as641c/ce641",
+    "section_fit": 0.625
    }
   },
   "listed": 23,
@@ -2547,7 +2700,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer programming - associate of science degree and certificate of achievement - as728/as728c/ce728",
+    "section_fit": 0.4
    }
   },
   "listed": 21,
@@ -2584,7 +2740,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "education paraprofessional - associate of science degree and certificate of achievement - as2001/as2001c/ce2001",
+    "section_fit": 0.4
    }
   },
   "listed": 17,
@@ -2612,7 +2771,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "exercise, sport & wellness - fitness professions - associate of science degree and certificate of achievement - as595/as595c/ce595",
+    "section_fit": 0.625
    }
   },
   "listed": 7,
@@ -2641,7 +2803,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -2670,7 +2835,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "sign language interpreting - associate of science degree and certificate of achievement - as505/as505c/ce505",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -2701,7 +2869,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hvac residential technology - associate of science degree and certificate of achievement - as947/as947c/ce947",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -2728,7 +2899,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive electrical and electronics specialist - associate of science degree and certificate of achievement - as991/as991c/ce991",
+    "section_fit": 0.571
    }
   },
   "listed": 5,
@@ -2756,7 +2930,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive powertrain specialist - associate of science degree and certificate of achievement - as990/as990c/ce990",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -2786,7 +2963,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive collision repair - associate of science degree and certificate of achievement - as1117/as1117c/ce1117",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -2815,7 +2995,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive trim and upholstery - associate of science degree and certificate of achievement - as516/as516c/ce516",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -2851,7 +3034,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding technology - associate of science degree and certificate of achievement - as/ce606",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
@@ -2883,7 +3069,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography - associate of science degree and certificate of achievement - as592/as592c/ce592",
+    "section_fit": 0.25
    }
   },
   "listed": 10,
@@ -2911,7 +3100,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2939,7 +3131,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "vocational nursing - associate of science degree and certificate of achievement - as588/as588c/ce588",
+    "section_fit": 0.4
    }
   },
   "listed": 6,
@@ -2986,7 +3181,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood education - associate of science degree and certificate of achievement - as544/as544c/ce544",
+    "section_fit": 0.5
    }
   },
   "listed": 25,
@@ -3022,7 +3220,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early childhood intervention assistant - associate of science degree and certificate of achievement - as601/as601c/ce601",
+    "section_fit": 0.571
    }
   },
   "listed": 14,
@@ -3050,7 +3251,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary arts - associate of science degree and certificate of achievement - as2000/as2000c/ce2000",
+    "section_fit": 0.4
    }
   },
   "listed": 6,
@@ -3085,7 +3289,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administration of justice - associate of science degree and certificate of achievement - as504/as504c/ce504",
+    "section_fit": 0.4
    }
   },
   "listed": 13,
@@ -3115,7 +3322,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cosmetology concepts - certificate of achievement - ce960",
+    "section_fit": 0.333
    }
   },
   "listed": 8,
@@ -3150,7 +3360,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -3187,7 +3400,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -3198,77 +3414,24 @@
   "title": "Communication Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.857,
-  "codes_found": [
-   "COMM11",
-   "COMM12",
-   "COMM13",
-   "COMM2",
-   "COMM3",
-   "COMM6",
-   "COMM7",
-   "COMM9",
-   "COMM9H",
-   "COMMC1000",
-   "COMMC1000H",
-   "JOU7"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5928",
-   "title": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)",
-   "h1": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 2642
+  "text_chars": 0
  },
  {
   "control_number": "30581",
   "title": "Sociology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.955,
-  "codes_found": [
-   "ADJ1",
-   "ADJ1H",
-   "ANT2",
-   "ANT2H",
-   "ETS1",
-   "PSYC50",
-   "PSYC8",
-   "SOC1",
-   "SOC10",
-   "SOC10H",
-   "SOC12",
-   "SOC15",
-   "SOC1H",
-   "SOC2",
-   "SOC20",
-   "SOC21",
-   "SOC25",
-   "SOC3",
-   "SOC50",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6053",
-   "title": "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)",
-   "h1": "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 22,
-  "text_chars": 3864
+  "text_chars": 0
  },
  {
   "control_number": "31163",
@@ -3276,7 +3439,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.745,
+  "coverage": 0.941,
   "codes_found": [
    "ASL22",
    "ECONC2002H",
@@ -3293,6 +3456,16 @@
    "ETS7",
    "ETS8",
    "FTV12",
+   "HIS11",
+   "HIS12",
+   "HIS14",
+   "HIS15",
+   "HIS26",
+   "HIS28",
+   "HIS29",
+   "HIS31",
+   "HIS34",
+   "HIS44",
    "HISTC1001H",
    "HISTC1002H",
    "HUM11",
@@ -3324,7 +3497,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american studies - associate of arts - aa492/aa492c",
+    "section_fit": 0.5
    }
   },
   "listed": 51,
@@ -3335,32 +3511,12 @@
   "title": "Theatre Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "THE25",
-   "THE3",
-   "THE32",
-   "THE33",
-   "THE41",
-   "THE44",
-   "THE46",
-   "THE48",
-   "THE5",
-   "THE9"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6062",
-   "title": "Theatre Arts - Associate in Arts for Transfer (ADT) - AA748 (CalGETC)",
-   "h1": "Theatre Arts - Associate in Arts for Transfer (ADT) - AA748 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 2746
+  "text_chars": 0
  },
  {
   "control_number": "31218",
@@ -3368,29 +3524,28 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.5,
   "codes_found": [
-   "EAR19",
    "EAR20",
    "EAR24",
-   "EAR25",
-   "EAR26",
    "EAR28",
-   "EAR30",
    "EAR42"
   ],
   "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5950",
-   "title": "Early Childhood Education - Associate in Arts for Transfer (ADT) - AS530 (CalGETC)",
-   "h1": "Early Childhood Education - Associate in Arts for Transfer (ADT) - AS530 (CalGETC)",
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5953",
+   "title": "Early Childhood Education Assistant Teacher - Locally Approved Certificate - CE795",
+   "h1": "Early Childhood Education Assistant Teacher - Locally Approved Certificate - CE795",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 1.0
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
-  "text_chars": 3026
+  "text_chars": 1135
  },
  {
   "control_number": "31301",
@@ -3432,7 +3587,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music - associate of arts degree - aa680/aa680c",
+    "section_fit": 0.333
    }
   },
   "listed": 24,
@@ -3443,93 +3601,24 @@
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.958,
-  "codes_found": [
-   "ADJ1",
-   "ADJ19",
-   "ADJ1H",
-   "ADJ2",
-   "ADJ20",
-   "ADJ24",
-   "ADJ27",
-   "ADJ28",
-   "ADJ3",
-   "ADJ31",
-   "ADJ3H",
-   "ADJ4",
-   "ADJ5",
-   "ADJ9",
-   "ADJ9H",
-   "PHO27",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "SOC1",
-   "SOC1H",
-   "SOC20",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Admin_Justice_ADT",
-   "title": "Administration of Justice - Associate in Science for Transfer (ADT) - AS643 (CalGETC)",
-   "h1": "Administration of Justice - Associate in Science for Transfer (ADT) - AS643 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 24,
-  "text_chars": 3848
+  "text_chars": 0
  },
  {
   "control_number": "31561",
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ENGL10",
-   "ENGL11",
-   "ENGL12",
-   "ENGL14",
-   "ENGL15",
-   "ENGL17A",
-   "ENGL18",
-   "ENGL20",
-   "ENGL23",
-   "ENGL24",
-   "ENGL25",
-   "ENGL30",
-   "ENGL34",
-   "ENGL38A",
-   "ENGL40",
-   "ENGL41",
-   "ENGL44",
-   "ENGL45",
-   "ENGL6",
-   "ENGL7",
-   "ENGL8",
-   "ENGL9",
-   "ENGLC1003",
-   "ENGLC1003H",
-   "HUM23",
-   "HUM8"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5960",
-   "title": "English - Associate in Arts for Transfer (ADT) - AAA649 (IGETC)",
-   "h1": "English - Associate in Arts for Transfer (ADT) - AAA649 (IGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 26,
-  "text_chars": 4212
+  "text_chars": 0
  },
  {
   "control_number": "31766",
@@ -3576,7 +3665,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphic design and printing - associate of science degree and certificate of achievement - as653/as653c/ce653",
+    "section_fit": 0.5
    }
   },
   "listed": 29,
@@ -3624,7 +3716,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "graphic design and printing - associate of science degree and certificate of achievement - as653/as653c/ce653",
+    "section_fit": 0.5
    }
   },
   "listed": 26,
@@ -3635,34 +3730,12 @@
   "title": "Journalism",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ADM1",
-   "COMM3",
-   "ENGLC1003",
-   "ENGLC1003H",
-   "JOU1",
-   "JOU150",
-   "JOU2",
-   "JOU20A",
-   "JOU20B",
-   "JOU7",
-   "PHO12",
-   "PHO20"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6008",
-   "title": "Journalism - Associate in Arts for Transfer (ADT) - AA671 (CalGETC)",
-   "h1": "Journalism - Associate in Arts for Transfer (ADT) - AA671 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 2675
+  "text_chars": 0
  },
  {
   "control_number": "31892",
@@ -3699,7 +3772,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "entrepreneurship - associate of science degree and certificate of achievement - as531/as531c/ce531",
+    "section_fit": 0.25
    }
   },
   "listed": 20,
@@ -3740,7 +3816,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurship - associate of science degree and certificate of achievement - as531/as531c/ce531",
+    "section_fit": 0.25
    }
   },
   "listed": 20,
@@ -3751,454 +3830,151 @@
   "title": "Music",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MUS101",
-   "MUS19",
-   "MUS29",
-   "MUS3",
-   "MUS31",
-   "MUS32A",
-   "MUS32B",
-   "MUS32C",
-   "MUS35",
-   "MUS4",
-   "MUS5",
-   "MUS50",
-   "MUS55",
-   "MUS57",
-   "MUS58",
-   "MUS6",
-   "MUS67",
-   "MUS69",
-   "MUS70",
-   "MUS71",
-   "MUS75",
-   "MUS80",
-   "MUS83",
-   "MUS87",
-   "MUS95",
-   "MUSP44",
-   "MUSP84"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6019",
-   "title": "Music - Associate in Arts for Transfer (ADT) - AA705 (CalGETC)",
-   "h1": "Music - Associate in Arts for Transfer (ADT) - AA705 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 27,
-  "text_chars": 3958
+  "text_chars": 0
  },
  {
   "control_number": "32174",
   "title": "Spanish",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "SPA1",
-   "SPA11",
-   "SPA12",
-   "SPA2",
-   "SPA3",
-   "SPA4",
-   "SPA8"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6054",
-   "title": "Spanish - Associate in Arts for Transfer (ADT) - AA708 (CalGETC)",
-   "h1": "Spanish - Associate in Arts for Transfer (ADT) - AA708 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 3322
+  "text_chars": 0
  },
  {
   "control_number": "32597",
   "title": "Computer Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.833,
-  "codes_found": [
-   "CIS11",
-   "CIS17A",
-   "CIS7",
-   "CSC11",
-   "CSC17A",
-   "CSC5",
-   "CSC7",
-   "MATHC2210H",
-   "PHY4A",
-   "PHY4B"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5931",
-   "title": "Computer Science - Associate in Science for Transfer (ADT) - AS650 (CalGETC)",
-   "h1": "Computer Science - Associate in Science for Transfer (ADT) - AS650 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 2754
+  "text_chars": 0
  },
  {
   "control_number": "32658",
   "title": "Psychology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.929,
-  "codes_found": [
-   "PSYC10",
-   "PSYC11",
-   "PSYC2",
-   "PSYC33",
-   "PSYC35",
-   "PSYC35H",
-   "PSYC50",
-   "PSYC8",
-   "PSYC9",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6040",
-   "title": "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)",
-   "h1": "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 2480
+  "text_chars": 0
  },
  {
   "control_number": "32692",
   "title": "Mathematics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.75,
-  "codes_found": [
-   "CSC5",
-   "MATH1C",
-   "MATH2",
-   "MATH3",
-   "MATHC2210H",
-   "PHY4A"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014",
-   "title": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)",
-   "h1": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 2023
+  "text_chars": 0
  },
  {
   "control_number": "32745",
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.714,
-  "codes_found": [
-   "MATH1C",
-   "PHY4A",
-   "PHY4B",
-   "PHY4C",
-   "PHY4D"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034",
-   "title": "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)",
-   "h1": "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 2197
+  "text_chars": 0
  },
  {
   "control_number": "32813",
   "title": "Anthropology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.952,
-  "codes_found": [
-   "ANT1",
-   "ANT10",
-   "ANT16",
-   "ANT1H",
-   "ANT1L",
-   "ANT2",
-   "ANT2H",
-   "ANT3",
-   "ANT4",
-   "ANT5",
-   "ANT6",
-   "ANT7",
-   "ANT8",
-   "GEG1",
-   "GEG1H",
-   "GEG2",
-   "PSYC50",
-   "SOC50",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Anthro_ADT",
-   "title": "Anthropology - Associate in Arts for Transfer (ADT) - AA618 (CalGETC)",
-   "h1": "Anthropology - Associate in Arts for Transfer (ADT) - AA618 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 21,
-  "text_chars": 3594
+  "text_chars": 0
  },
  {
   "control_number": "32912",
   "title": "Art History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.929,
-  "codes_found": [
-   "ART15",
-   "ART17",
-   "ART18",
-   "ART20",
-   "ART23",
-   "ART26",
-   "ART30A",
-   "ART36A",
-   "ART40A",
-   "ARTH10",
-   "ARTH12",
-   "ARTH13",
-   "ARTH14",
-   "ARTH15",
-   "ARTH16",
-   "ARTH17",
-   "ARTH3",
-   "ARTH5",
-   "ARTH7",
-   "ARTH8",
-   "ARTH9",
-   "ARTHC1100H",
-   "ARTHC1200H",
-   "PHO20",
-   "PHO8",
-   "PHO9"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5886",
-   "title": "Art History - Associate in Arts for Transfer (ADT) - AA743(CalGETC)",
-   "h1": "Art History - Associate in Arts for Transfer (ADT) - AA743(CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 28,
-  "text_chars": 4333
+  "text_chars": 0
  },
  {
   "control_number": "32938",
   "title": "Philosophy",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.846,
-  "codes_found": [
-   "ETS13",
-   "ETS2",
-   "HUM10",
-   "HUM10H",
-   "HUM18",
-   "HUM35",
-   "HUM4",
-   "HUM4H",
-   "HUM5",
-   "HUM5H",
-   "PHI10",
-   "PHI10H",
-   "PHI11",
-   "PHI12",
-   "PHI14",
-   "PHI18",
-   "PHI19",
-   "PHI32",
-   "PHI33",
-   "PHI34",
-   "PHI35",
-   "PHI36"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6031",
-   "title": "Philosophy - Associate in Arts for Transfer (ADT) - AA717 (CalGETC)",
-   "h1": "Philosophy - Associate in Arts for Transfer (ADT) - AA717 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 26,
-  "text_chars": 3988
+  "text_chars": 0
  },
  {
   "control_number": "33021",
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.895,
-  "codes_found": [
-   "ART15",
-   "ART17",
-   "ART18",
-   "ART20",
-   "ART22",
-   "ART23",
-   "ART24",
-   "ART26",
-   "ART30A",
-   "ART36A",
-   "ART40A",
-   "ART44A",
-   "ARTH12",
-   "ARTH5",
-   "ARTHC1100H",
-   "ARTHC1200H",
-   "PHO8"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6057",
-   "title": "Studio Arts - Associate in Arts for Transfer (ADT) - AA694 (CalGETC)",
-   "h1": "Studio Arts - Associate in Arts for Transfer (ADT) - AA694 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 3203
+  "text_chars": 0
  },
  {
   "control_number": "33218",
   "title": "Geography",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "ANT2",
-   "ANT2H",
-   "GEG1",
-   "GEG1H",
-   "GEG1L",
-   "GEG2",
-   "GEG3",
-   "GEG30A",
-   "GEG4",
-   "GEG5",
-   "GEG6",
-   "GEG7",
-   "GEG8",
-   "GEO1",
-   "PHS5"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5984",
-   "title": "Geography - Associate in Arts for Transfer (ADT) - AA759 (CalGETC)",
-   "h1": "Geography - Associate in Arts for Transfer (ADT) - AA759 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 3609
+  "text_chars": 0
  },
  {
   "control_number": "33229",
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.789,
-  "codes_found": [
-   "ACC1A",
-   "ACC1B",
-   "BUS24",
-   "ECON10",
-   "ECON5",
-   "ECON6",
-   "ECON9",
-   "ECON9H",
-   "ECONC2001H",
-   "ECONC2002H",
-   "MATH5",
-   "MATHC2210H",
-   "POLS6",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5955",
-   "title": "Economics - Associate in Arts for Transfer (ADT) - AA757 (CalGETC)",
-   "h1": "Economics - Associate in Arts for Transfer (ADT) - AA757 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 3242
+  "text_chars": 0
  },
  {
   "control_number": "33230",
   "title": "History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -4210,82 +3986,24 @@
   "title": "Business Administration",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.733,
-  "codes_found": [
-   "ACC1A",
-   "ACC1B",
-   "BUS10",
-   "BUS10H",
-   "BUS18A",
-   "BUS24",
-   "ECONC2001H",
-   "ECONC2002H",
-   "MATH5",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910",
-   "title": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)",
-   "h1": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 2863
+  "text_chars": 0
  },
  {
   "control_number": "33964",
   "title": "Political Science",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.9,
-  "codes_found": [
-   "ECON6",
-   "ECONC2002H",
-   "ETS21",
-   "ETS23",
-   "GEG2",
-   "HISTC1001H",
-   "POLS11",
-   "POLS13",
-   "POLS17",
-   "POLS2",
-   "POLS21",
-   "POLS23",
-   "POLS2H",
-   "POLS4",
-   "POLS4H",
-   "POLS5",
-   "POLS6",
-   "POLS8",
-   "POLSC1000",
-   "POLSC1000H",
-   "PSYC50",
-   "PSYC8",
-   "SOC2",
-   "SOC3",
-   "SOC50",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6038",
-   "title": "Political Science - Associate in Arts for Transfer (ADT) - AA755 (CalGETC)",
-   "h1": "Political Science - Associate in Arts for Transfer (ADT) - AA755 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 30,
-  "text_chars": 4391
+  "text_chars": 0
  },
  {
   "control_number": "35152",
@@ -4310,7 +4028,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information worker - certificate of achievement - ce522",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -4338,7 +4059,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "java programming - certificate of achievement - ce742",
+    "section_fit": 0.667
    }
   },
   "listed": 6,
@@ -4365,7 +4089,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "c++ programming - certificate of achievement - ce741",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -4395,7 +4122,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "information security and cyber defense - certificate of achievement - ce740",
+    "section_fit": 0.8
    }
   },
   "listed": 8,
@@ -4449,7 +4179,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "musical theatre - certificate of achievement - ce895",
+    "section_fit": 0.667
    }
   },
   "listed": 20,
@@ -4477,7 +4210,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "education, human development and special needs - associate of arts degree - aa881c",
+    "section_fit": 0.833
    }
   },
   "listed": 6,
@@ -4488,46 +4224,12 @@
   "title": "Child and Adolescent Development",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.96,
-  "codes_found": [
-   "ANT2",
-   "ANT2H",
-   "BIO1",
-   "BIO1H",
-   "BIO35",
-   "EAR19",
-   "EAR20",
-   "EAR24",
-   "EAR25",
-   "EAR28",
-   "EAR30",
-   "EAR33",
-   "EAR34",
-   "EAR42",
-   "PSYC9",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "SOC1",
-   "SOC10",
-   "SOC10H",
-   "SOC12",
-   "SOC1H",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5923",
-   "title": "Child and Adolescent Development - Associate in Arts for Transfer (ADT) - AA886 (CalGETC)",
-   "h1": "Child and Adolescent Development - Associate in Arts for Transfer (ADT) - AA886 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 25,
-  "text_chars": 3873
+  "text_chars": 0
  },
  {
   "control_number": "37474",
@@ -4546,46 +4248,12 @@
   "title": "Elementary Teacher Education: Integrated Programs",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.889,
-  "codes_found": [
-   "ARTH6",
-   "ARTH6H",
-   "BIO1",
-   "BIO1H",
-   "CHE10",
-   "COMMC1000",
-   "COMMC1000H",
-   "EAR20",
-   "EAR42",
-   "ENGL30",
-   "ENGLC1000",
-   "ENGLC1000H",
-   "ENGLC1003",
-   "ENGLC1003H",
-   "GEG2",
-   "GEG3",
-   "GEO4",
-   "HISTC1001H",
-   "MATH26",
-   "MUS19",
-   "PHY10",
-   "POLSC1000",
-   "POLSC1000H",
-   "THE3"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5855",
-   "title": "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer (ADT) - AA1106 (CalGETC)",
-   "h1": "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer (ADT) - AA1106 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 27,
-  "text_chars": 4636
+  "text_chars": 0
  },
  {
   "control_number": "37826",
@@ -4608,7 +4276,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "noncredit",
+    "section_line": "business skills boot camp - certificate of completion - cc8005",
+    "section_fit": 0.4
    }
   },
   "listed": 5,
@@ -4631,7 +4302,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cisco networking - certificate of achievement - ce1083",
+    "section_fit": 0.667
    }
   },
   "listed": 1,
@@ -4656,7 +4330,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "gig: the solopreneurs adventure - certificate of completion - cc8004",
+    "section_fit": 0.75
    }
   },
   "listed": 3,
@@ -4667,35 +4344,12 @@
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.929,
-  "codes_found": [
-   "BIO50A",
-   "BIO50B",
-   "BIO55",
-   "CHE1A",
-   "CHE1AH",
-   "CHE1B",
-   "CHE1BH",
-   "KIN35",
-   "KIN4",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6028",
-   "title": "Nutrition and Dietetics - Associate in Science for Transfer (ADT) - AS908 (CalGETC)",
-   "h1": "Nutrition and Dietetics - Associate in Science for Transfer (ADT) - AS908 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 3736
+  "text_chars": 0
  },
  {
   "control_number": "38203",
@@ -4716,7 +4370,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "introduction to python programming - certificate of completion - cc8003",
+    "section_fit": 0.75
    }
   },
   "listed": 3,
@@ -4743,7 +4400,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "baking & pastry arts - associate of science degree and certificate of achievement - as909/as909c/ce909",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -4770,7 +4430,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "it technician pathway: it systems support and sales - certificate of achievement - ce905",
+    "section_fit": 0.857
    }
   },
   "listed": 5,
@@ -4817,7 +4480,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "registered nursing - associate of science degree - as921/as921c",
+    "section_fit": 0.5
    }
   },
   "listed": 25,
@@ -4842,7 +4508,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "technical theatre - certificate of achievement - ce914",
+    "section_fit": 0.667
    }
   },
   "listed": 3,
@@ -4869,7 +4538,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "business skills - mosprep: microsoft office specialist - certificate of completion - cc8001",
+    "section_fit": 0.857
    }
   },
   "listed": 5,
@@ -4894,7 +4566,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "information systems: cyber skills - certificate of completion - cc8002",
+    "section_fit": 0.8
    }
   },
   "listed": 3,
@@ -4922,7 +4597,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "coding prep - certificate of completion - cc8010",
+    "section_fit": 0.667
    }
   },
   "listed": 6,
@@ -4947,7 +4625,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "piano performance - certificate of achievement - ce925",
+    "section_fit": 0.667
    }
   },
   "listed": 3,
@@ -4978,7 +4659,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "jazz performance - certificate of achievement - ce926",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -5010,7 +4694,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music performance - certificate of achievement - ce927",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
@@ -5037,7 +4724,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music technology - certificate of achievement - ce928",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -5048,30 +4738,12 @@
   "title": "Geology",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.8,
-  "codes_found": [
-   "CHE1A",
-   "CHE1AH",
-   "CHE1B",
-   "CHE1BH",
-   "GEO1",
-   "GEO1B",
-   "GEO1L",
-   "MATHC2210H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5985",
-   "title": "Geology - Associate in Science for Transfer (ADT) - AS942 (CalGETC)",
-   "h1": "Geology - Associate in Science for Transfer (ADT) - AS942 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 3423
+  "text_chars": 0
  },
  {
   "control_number": "38838",
@@ -5097,7 +4769,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "chemistry - associate in science for transfer (adt) - as769",
+    "section_fit": 0.333
    }
   },
   "listed": 11,
@@ -5121,7 +4796,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "college career readiness and student educational planning - certificate of completion - cc8020",
+    "section_fit": 0.857
    }
   },
   "listed": 2,
@@ -5145,7 +4823,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "manicuring concepts - certificate of achievement - ce1093",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -5175,7 +4856,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cosmetology concepts - certificate of achievement - ce960",
+    "section_fit": 0.667
    }
   },
   "listed": 8,
@@ -5205,7 +4889,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "barbering concepts - certificate of achievement - ce959",
+    "section_fit": 0.667
    }
   },
   "listed": 8,
@@ -5230,7 +4917,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "accounting basics for small business - certificate of completion - cc8009",
+    "section_fit": 0.8
    }
   },
   "listed": 3,
@@ -5256,7 +4946,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "math skills for the professional baker - certificate of competency - cc8026",
+    "section_fit": 0.8
    }
   },
   "listed": 4,
@@ -5282,7 +4975,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "emerging leaders - certificate of completion - cc8013",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -5320,7 +5016,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "workplace essentials - certificate of completion - cc8017",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -5344,7 +5043,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "college student success - certificate of completion - cc8021",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -5375,7 +5077,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "beginning american college english - certificate of competency - cc8054",
+    "section_fit": 0.8
    }
   },
   "listed": 9,
@@ -5404,7 +5109,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "advanced american college english - certificate of competency - cc8056",
+    "section_fit": 0.8
    }
   },
   "listed": 7,
@@ -5434,7 +5142,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "food service career & certification preparation - certificate of competency - cc8025",
+    "section_fit": 0.833
    }
   },
   "listed": 8,
@@ -5458,7 +5169,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5486,7 +5200,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "enterprise communication - certificate of completion - cc8014",
+    "section_fit": 0.667
    }
   },
   "listed": 6,
@@ -5511,7 +5228,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "customer relations - certificate of completion - cc8012",
+    "section_fit": 0.667
    }
   },
   "listed": 3,
@@ -5536,7 +5256,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "ase undercar specialist - certificate of completion - cc8024",
+    "section_fit": 0.75
    }
   },
   "listed": 3,
@@ -5562,7 +5285,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "ase engine performance and electric specialist - certificate of completion - cc8022",
+    "section_fit": 0.833
    }
   },
   "listed": 4,
@@ -5588,7 +5314,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "ase powertrain specialist - certificate of completion - cc8023",
+    "section_fit": 0.75
    }
   },
   "listed": 4,
@@ -5614,7 +5343,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "corrections - certificate of achievement - ce943",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -5643,7 +5375,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building automation control - certificate of achievement - ce944",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -5669,7 +5404,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "residential installation - certificate of achievement - ce948",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -5727,7 +5465,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hvac commercial technology - associate of science degree and certificate of achievement - as946/as946c/ce946",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -5757,7 +5498,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive refinishing and paint - associate of science degree and certificate of achievement - as955/as955c/ce955",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -5785,7 +5529,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive hybrid and electrical vehicle - associate of science degree and certificate of achievement - as954/as954c/ce954",
+    "section_fit": 0.571
    }
   },
   "listed": 6,
@@ -5813,7 +5560,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic graphic communication - certificate of achievement - ce949",
+    "section_fit": 0.75
    }
   },
   "listed": 6,
@@ -5839,7 +5589,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic graphic design - certificate of achievement - ce939",
+    "section_fit": 0.75
    }
   },
   "listed": 4,
@@ -5866,7 +5619,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electronic publishing and design - certificate of achievement - ce951",
+    "section_fit": 0.75
    }
   },
   "listed": 5,
@@ -5895,7 +5651,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "motion graphics and 3d animation - certificate of achievement - ce952",
+    "section_fit": 0.8
    }
   },
   "listed": 7,
@@ -5927,7 +5686,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "information technology - certificate of achievement - ce958",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -5953,7 +5715,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "esthetician concepts - certificate of achievement - ce961",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -5979,7 +5744,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hairstyling concepts - certificate of achievement - ce1092",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -6016,7 +5784,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphic design and digital media - associate of science degree and certificate of achievement - as950/as950c/ce950",
+    "section_fit": 0.571
    }
   },
   "listed": 16,
@@ -6046,7 +5817,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "hvac commercial technology - associate of science degree and certificate of achievement - as946/as946c/ce946",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -6073,7 +5847,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "amazon web services (aws) cloud computing - certificate of achievement - ce957",
+    "section_fit": 0.714
    }
   },
   "listed": 5,
@@ -6101,7 +5878,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: global business specialized area - certificate of achievement - ce1110",
+    "section_fit": 0.833
    }
   },
   "listed": 6,
@@ -6134,7 +5914,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "web master - web designer - certificate of achievement - ce1114",
+    "section_fit": 0.75
    }
   },
   "listed": 11,
@@ -6171,7 +5954,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "web master - web developer - certificate of achievement - ce1115",
+    "section_fit": 0.75
    }
   },
   "listed": 15,
@@ -6210,7 +5996,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "baking & pastry arts - associate of science degree and certificate of achievement - as909/as909c/ce909",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -6249,7 +6038,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "graphic design and digital media - associate of science degree and certificate of achievement - as950/as950c/ce950",
+    "section_fit": 0.571
    }
   },
   "listed": 17,
@@ -6277,7 +6069,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive hybrid and electrical vehicle - associate of science degree and certificate of achievement - as954/as954c/ce954",
+    "section_fit": 0.571
    }
   },
   "listed": 6,
@@ -6307,7 +6102,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive refinishing and paint - associate of science degree and certificate of achievement - as955/as955c/ce955",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
@@ -6334,7 +6132,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "social media for business - certificate of completion - cc8011",
+    "section_fit": 0.75
    }
   },
   "listed": 5,
@@ -6367,7 +6168,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cyber defense - associate of science degree - as969/as969c",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -6404,7 +6208,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "successful career transitions - certificate of competency - cc8038",
+    "section_fit": 0.75
    }
   },
   "listed": 3,
@@ -6431,7 +6238,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "entrepreneurial foundations (non-credit) - certificate of completion - cc8036",
+    "section_fit": 0.8
    }
   },
   "listed": 5,
@@ -6456,7 +6266,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "business information worker essential preparation: workplace decision making and time management - certificate of completion - cc8030",
+    "section_fit": 0.909
    }
   },
   "listed": 3,
@@ -6480,7 +6293,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "business information worker essential preparation: workplace communication - certificate of completion - cc8029",
+    "section_fit": 0.875
    }
   },
   "listed": 2,
@@ -6506,7 +6322,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "entrepreneurial essentials (non-credit) - certificate of completion - cc8035",
+    "section_fit": 0.8
    }
   },
   "listed": 4,
@@ -6530,7 +6349,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english and reading support - certificate of competency - cc8032",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -6554,7 +6376,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "introduction to basic computer and it careers for esl students - certificate of competency - cc8034",
+    "section_fit": 0.875
    }
   },
   "listed": 2,
@@ -6590,7 +6415,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data quick start - certificate of achievement - ce992",
+    "section_fit": 0.75
    }
   },
   "listed": 4,
@@ -6622,7 +6450,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "animation - certificate of achievement - ce973",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -6649,7 +6480,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive engine performance specialist - associate of science degree and certificate of achievement - as974/as974c/ce974",
+    "section_fit": 0.571
    }
   },
   "listed": 5,
@@ -6676,7 +6510,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive engine performance specialist - associate of science degree and certificate of achievement - as974/as974c/ce974",
+    "section_fit": 0.571
    }
   },
   "listed": 5,
@@ -6703,7 +6540,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive undercar specialist - associate of science degree and certificate of achievement - as975/as975c/ce975",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -6730,7 +6570,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive undercar specialist - associate of science degree and certificate of achievement - as975/as975c/ce975",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -6758,7 +6601,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurship and the team - certificate of achievement - ce979",
+    "section_fit": 0.667
    }
   },
   "listed": 6,
@@ -6784,7 +6630,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurial essentials - certificate of achievement - ce977",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -6811,7 +6660,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurial foundations - certificate of achievement - ce978",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -6851,7 +6703,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "entrepreneurship and the team (non-credit) - certificate of completion - cc8037",
+    "section_fit": 0.8
    }
   },
   "listed": 6,
@@ -6878,7 +6733,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "investigative technician - certificate of achievement - ce980",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -6889,39 +6747,12 @@
   "title": "Film, Television, and Electronic Media",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "FST1",
-   "FST1H",
-   "FST2",
-   "FST3",
-   "FST4",
-   "FST5",
-   "FTV12",
-   "FTV38A",
-   "FTV41",
-   "FTV42",
-   "FTV44A",
-   "FTV48",
-   "FTV64A",
-   "FTV65",
-   "FTV71A",
-   "FTV72",
-   "FTV79"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5979",
-   "title": "Film, Television, and Electronic Media - Associate in Science for Transfer (ADT) - AS994 (CalGETC)",
-   "h1": "Film, Television, and Electronic Media - Associate in Science for Transfer (ADT) - AS994 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 3654
+  "text_chars": 0
  },
  {
   "control_number": "40866",
@@ -6944,7 +6775,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pipe welding, (smaw, gmaw) - certificate of achievement - ce982",
+    "section_fit": 0.4
    }
   },
   "listed": 5,
@@ -6971,7 +6805,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic television production - certificate of achievement - ce996",
+    "section_fit": 0.75
    }
   },
   "listed": 5,
@@ -7002,7 +6839,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "visual communications - illustration - certificate of achievement - ce997",
+    "section_fit": 0.75
    }
   },
   "listed": 10,
@@ -7013,34 +6853,12 @@
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.8,
-  "codes_found": [
-   "ACC1A",
-   "ACC1B",
-   "BUS10",
-   "BUS10H",
-   "BUS18A",
-   "BUS24",
-   "ECONC2001H",
-   "ECONC2002H",
-   "MATH5",
-   "MATHC2210H",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910",
-   "title": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)",
-   "h1": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 2863
+  "text_chars": 0
  },
  {
   "control_number": "41388",
@@ -7062,7 +6880,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical secretary - certificate of achievement - ce1029",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -7086,7 +6907,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "remote work productivity essentials - certificate of completion - cc8041",
+    "section_fit": 0.8
    }
   },
   "listed": 2,
@@ -7115,7 +6939,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "sustainability in economics and society - associate of arts degree - aa1034c",
+    "section_fit": 0.75
    }
   },
   "listed": 8,
@@ -7152,7 +6979,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "sustainability in science and technology - associate of science degree - as1035c",
+    "section_fit": 0.75
    }
   },
   "listed": 16,
@@ -7182,7 +7012,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: marketing specialized area - certificate of achievement - ce1113",
+    "section_fit": 0.833
    }
   },
   "listed": 8,
@@ -7218,7 +7051,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: global business concentration - associate of science degree and certificate of achievement - as1118/as1118c/ce1118",
+    "section_fit": 0.571
    }
   },
   "listed": 14,
@@ -7254,7 +7090,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration: global business concentration - associate of science degree and certificate of achievement - as1118/as1118c/ce1118",
+    "section_fit": 0.571
    }
   },
   "listed": 14,
@@ -7280,7 +7119,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "graphic design and promotional printing entrepreneur - certificate of completion - cc8042",
+    "section_fit": 0.833
    }
   },
   "listed": 4,
@@ -7306,7 +7148,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "global industry (non-credit) - certificate of completion - cc8040",
+    "section_fit": 0.8
    }
   },
   "listed": 4,
@@ -7331,7 +7176,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "foundational culinary arts - certificate of achievement - ce1028",
+    "section_fit": 0.75
    }
   },
   "listed": 3,
@@ -7358,7 +7206,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "crime scene photography essentials - certificate of achievement - ce1026",
+    "section_fit": 0.8
    }
   },
   "listed": 5,
@@ -7384,7 +7235,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photojournalism essentials - certificate of achievement - ce1030",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -7409,7 +7263,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "professional photography essentials - certificate of achievement - ce1031",
+    "section_fit": 0.75
    }
   },
   "listed": 3,
@@ -7435,7 +7292,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "special event photography essentials - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -7466,7 +7326,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurial photography - associate of science degree and certificate of achievement - as1037/as1037c/ce1037",
+    "section_fit": 0.4
    }
   },
   "listed": 9,
@@ -7497,7 +7360,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "entrepreneurial photography - associate of science degree and certificate of achievement - as1037/as1037c/ce1037",
+    "section_fit": 0.4
    }
   },
   "listed": 9,
@@ -7508,168 +7374,36 @@
   "title": "Law, Public Policy, and Society",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.902,
-  "codes_found": [
-   "ADJ1",
-   "ADJ1H",
-   "ADJ2",
-   "ADJ20",
-   "ADJ3",
-   "ADJ3H",
-   "ADJ4",
-   "ADJ5",
-   "ADJ8",
-   "ADJ9",
-   "ADJ9H",
-   "ANT2",
-   "ANT2H",
-   "BUS18A",
-   "COMM12",
-   "COMM2",
-   "COMM3",
-   "COMM6",
-   "COMMC1000",
-   "COMMC1000H",
-   "ECONC2001H",
-   "ECONC2002H",
-   "ENGLC1000",
-   "ENGLC1000H",
-   "ENGLC1003",
-   "ENGLC1003H",
-   "ETS1",
-   "GEG2",
-   "GUI48",
-   "HISTC1001H",
-   "HISTC1002H",
-   "PHI12",
-   "POLS2",
-   "POLS2H",
-   "POLS4",
-   "POLS4H",
-   "POLS5",
-   "POLSC1000",
-   "POLSC1000H",
-   "SOC10",
-   "SOC10H",
-   "SOC2",
-   "SOC20",
-   "SOC25",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6010",
-   "title": "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - AA1008 (CalGETC)",
-   "h1": "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - AA1008 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 51,
-  "text_chars": 6000
+  "text_chars": 0
  },
  {
   "control_number": "41749",
   "title": "Social Justice Studies: General",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.837,
-  "codes_found": [
-   "ANT4",
-   "COMM13",
-   "ECON9",
-   "ECON9H",
-   "ENGL18",
-   "ENGL20",
-   "ENGL24",
-   "ENGL34",
-   "ETS1",
-   "ETS13",
-   "ETS14",
-   "ETS15",
-   "ETS2",
-   "ETS21",
-   "ETS23",
-   "ETS27",
-   "ETS29",
-   "ETS3",
-   "ETS44",
-   "ETS7",
-   "ETS8",
-   "HUM16",
-   "HUM9",
-   "PHI14",
-   "PHI34",
-   "POLS21",
-   "POLS23",
-   "SOC10",
-   "SOC10H",
-   "SOC15",
-   "SOC2",
-   "SOC25",
-   "SOC3",
-   "SOC50",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6050",
-   "title": "Social Justice Studies: General - Associate in Arts for Transfer (ADT) - AA1004 (CalGETC)",
-   "h1": "Social Justice Studies: General - Associate in Arts for Transfer (ADT) - AA1004 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 43,
-  "text_chars": 5638
+  "text_chars": 0
  },
  {
   "control_number": "41757",
   "title": "Social Justice Studies: Gender Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.87,
-  "codes_found": [
-   "ARTH7",
-   "COMM13",
-   "ECON9",
-   "ECON9H",
-   "ENGL34",
-   "ETS1",
-   "ETS21",
-   "ETS23",
-   "ETS7",
-   "ETS8",
-   "PHI34",
-   "POLS21",
-   "POLS23",
-   "SOC10",
-   "SOC10H",
-   "SOC15",
-   "SOC25",
-   "SOC50",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6051",
-   "title": "Social Justice Studies: Gender Studies - Associate in Arts for Transfer (ADT) - AA1006 (CalGETC)",
-   "h1": "Social Justice Studies: Gender Studies - Associate in Arts for Transfer (ADT) - AA1006 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 23,
-  "text_chars": 4897
+  "text_chars": 0
  },
  {
   "control_number": "41962",
@@ -7706,7 +7440,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "crime scene investigation - certificate of achievement - ce1041",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -7732,7 +7469,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -7764,7 +7504,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "acting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -7776,7 +7519,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.842,
+  "coverage": 1.0,
   "codes_found": [
    "ETS1",
    "ETS13",
@@ -7790,6 +7533,9 @@
    "ETS8",
    "GUI47",
    "GUI48",
+   "HIS14",
+   "HIS15",
+   "HIS44",
    "PHI14",
    "POLS14",
    "POLS21",
@@ -7802,7 +7548,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "community action and leadership academy - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -7849,7 +7598,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "audio and music technology - associate of arts degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -7889,7 +7641,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data analytics - certificate of achievement - ce1009",
+    "section_fit": 0.667
    }
   },
   "listed": 20,
@@ -7931,7 +7686,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "data science - associate of science degree - as1011/as1011c",
+    "section_fit": 0.5
    }
   },
   "listed": 22,
@@ -7960,7 +7718,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: general business specialized area - certificate of achievement - ce1109",
+    "section_fit": 0.833
    }
   },
   "listed": 7,
@@ -7996,7 +7757,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cyberpreneurship - associate of science degree and certificate of achievement - as1048/as1048c/ce1048",
+    "section_fit": 0.25
    }
   },
   "listed": 14,
@@ -8007,35 +7771,12 @@
   "title": "Communication Studies 2.0",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMM11",
-   "COMM12",
-   "COMM13",
-   "COMM2",
-   "COMM20",
-   "COMM3",
-   "COMM6",
-   "COMM7",
-   "COMM9",
-   "COMM9H",
-   "COMMC1000",
-   "COMMC1000H",
-   "JOU7"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5928",
-   "title": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)",
-   "h1": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 2642
+  "text_chars": 0
  },
  {
   "control_number": "43020",
@@ -8060,7 +7801,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: management specialized area- certificate of achievement - ce1112",
+    "section_fit": 0.833
    }
   },
   "listed": 7,
@@ -8097,7 +7841,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cyberpreneurship - associate of science degree and certificate of achievement - as1048/as1048c/ce1048",
+    "section_fit": 0.25
    }
   },
   "listed": 15,
@@ -8108,37 +7855,12 @@
   "title": "Social Justice Studies: Asian American Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.833,
-  "codes_found": [
-   "ARTH12",
-   "ENGL24",
-   "ETS1",
-   "ETS23",
-   "ETS40",
-   "ETS44",
-   "ETS7",
-   "PHI36",
-   "POLS23",
-   "SOC10",
-   "SOC10H",
-   "SOC15",
-   "SOC25",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6256",
-   "title": "Social Justice Studies: Asian American Studies - Associate of Arts for Transfer (ADT) - AA1072 (CalGETC)",
-   "h1": "Social Justice Studies: Asian American Studies - Associate of Arts for Transfer (ADT) - AA1072 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 18,
-  "text_chars": 4318
+  "text_chars": 0
  },
  {
   "control_number": "43888",
@@ -8159,7 +7881,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -8170,76 +7895,24 @@
   "title": "Social Justice: LGBTQ Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.833,
-  "codes_found": [
-   "BIO16",
-   "COMM13",
-   "ETS1",
-   "ETS13",
-   "ETS40",
-   "ETS7",
-   "ETS8",
-   "PHI14",
-   "PHI34",
-   "PSYC11",
-   "SOC15",
-   "SOC21",
-   "SOC25",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6253",
-   "title": "Social Justice: LGBTQ Studies - Associate in Arts for Transfer (ADT) - AA1080 (CalGETC)",
-   "h1": "Social Justice: LGBTQ Studies - Associate in Arts for Transfer (ADT) - AA1080 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 18,
-  "text_chars": 4387
+  "text_chars": 0
  },
  {
   "control_number": "43897",
   "title": "Social Justice: African American Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.773,
-  "codes_found": [
-   "ARTH9",
-   "ENGL20",
-   "ETS1",
-   "ETS13",
-   "ETS14",
-   "ETS15",
-   "ETS3",
-   "ETS40",
-   "ETS7",
-   "ETS8",
-   "PHI14",
-   "SOC10",
-   "SOC10H",
-   "SOC15",
-   "SOC25",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6255",
-   "title": "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074 (CalGETC)",
-   "h1": "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 22,
-  "text_chars": 4701
+  "text_chars": 0
  },
  {
   "control_number": "44001",
@@ -8330,57 +8003,12 @@
   "title": "Social Justice Studies: Ethnic Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.729,
-  "codes_found": [
-   "ANT4",
-   "ARTH12",
-   "ARTH9",
-   "ENGL18",
-   "ENGL20",
-   "ENGL24",
-   "ETS1",
-   "ETS13",
-   "ETS14",
-   "ETS15",
-   "ETS2",
-   "ETS21",
-   "ETS23",
-   "ETS27",
-   "ETS28",
-   "ETS29",
-   "ETS3",
-   "ETS40",
-   "ETS44",
-   "ETS7",
-   "ETS8",
-   "MUS89",
-   "MUS89H",
-   "PHI14",
-   "PHI19",
-   "POLS20",
-   "POLS21",
-   "POLS23",
-   "SOC10",
-   "SOC10H",
-   "SOC15",
-   "SOC25",
-   "SPA12",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5856",
-   "title": "Social Justice Studies: Ethnic Studies - Associate Degree for Transfer (ADT) - AA1078 (CalGETC)",
-   "h1": "Social Justice Studies: Ethnic Studies - Associate Degree for Transfer (ADT) - AA1078 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 48,
-  "text_chars": 6801
+  "text_chars": 0
  },
  {
   "control_number": "44156",
@@ -8449,7 +8077,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cisco networking - certificate of achievement - ce1083",
+    "section_fit": 0.667
    }
   },
   "listed": 3,
@@ -8473,7 +8104,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cosmetology instructor training - certificate of achievement - ce1084",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -8484,75 +8118,24 @@
   "title": "Social Justice Studies: Chicano Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.762,
-  "codes_found": [
-   "ARTH13",
-   "ARTH14",
-   "ETS1",
-   "ETS2",
-   "ETS21",
-   "ETS40",
-   "ETS7",
-   "POLS20",
-   "POLS21",
-   "SOC10",
-   "SOC10H",
-   "SOC15",
-   "SOC25",
-   "SPA12",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5876",
-   "title": "Social Justice Studies: Chicano Studies - Associate in Arts for Transfer (ADT) - AA1076 (CalGETC)",
-   "h1": "Social Justice Studies: Chicano Studies - Associate in Arts for Transfer (ADT) - AA1076 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 21,
-  "text_chars": 4746
+  "text_chars": 0
  },
  {
   "control_number": "44469",
   "title": "Social Justice: Native American and Indigenous Studies",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.714,
-  "codes_found": [
-   "ANT4",
-   "ENGL18",
-   "ETS1",
-   "ETS23",
-   "ETS27",
-   "ETS28",
-   "ETS29",
-   "ETS40",
-   "ETS7",
-   "PHI19",
-   "POLS23",
-   "SOC15",
-   "SOC25",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6118/5869",
-   "title": "Social Justice: Native American and Indigenous Studies - Associate in Arts for Transfer (ADT) - AA1082 (CalGETC)",
-   "h1": "Social Justice: Native American and Indigenous Studies - Associate in Arts for Transfer (ADT) - AA1082 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 21,
-  "text_chars": 5222
+  "text_chars": 0
  },
  {
   "control_number": "44816",
@@ -8574,7 +8157,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "data quick start non-credit - certificate of completion - cc8053",
+    "section_fit": 0.833
    }
   },
   "listed": 4,
@@ -8585,39 +8171,12 @@
   "title": "Public Health",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.895,
-  "codes_found": [
-   "BIO1",
-   "BIO1H",
-   "BIO35",
-   "BIO50A",
-   "BIO50B",
-   "BIO55",
-   "CHE1A",
-   "CHE1AH",
-   "KIN36",
-   "KIN38",
-   "KIN4",
-   "PSYCC1000",
-   "PSYCC1000H",
-   "PUB1",
-   "SOC1",
-   "STATC1000",
-   "STATC1000H"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5872",
-   "title": "Public Health - Associate in Arts for Transfer (ADT) - AS1101 (CalGETC)",
-   "h1": "Public Health - Associate in Arts for Transfer (ADT) - AS1101 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 4341
+  "text_chars": 0
  },
  {
   "control_number": "44868",
@@ -8642,7 +8201,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphic art and visual storytelling - certificate of achievement - ce1102",
+    "section_fit": 0.8
    }
   },
   "listed": 7,
@@ -8670,7 +8232,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "packaging design and printing - certificate of achievement - ce1103",
+    "section_fit": 0.75
    }
   },
   "listed": 6,
@@ -8699,7 +8264,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "barbering concepts - associate of science degree and certificate of achievement - as959/as959c/ce959",
+    "section_fit": 0.4
    }
   },
   "listed": 8,
@@ -8729,7 +8297,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cosmetology concepts - associate of science degree and certificate of achievement - as960/as960c/ce960",
+    "section_fit": 0.4
    }
   },
   "listed": 8,
@@ -8755,7 +8326,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "esthetician concepts - associate of science degree and certificate of achievement - as1094/as1094c/ce1094",
+    "section_fit": 0.4
    }
   },
   "listed": 4,
@@ -8783,7 +8357,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "income tax preparer - certificate of achievement - ce1121",
+    "section_fit": 0.75
    }
   },
   "listed": 6,
@@ -8814,7 +8391,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "intermediate american college english - certificate of competency- cc8055",
+    "section_fit": 0.8
    }
   },
   "listed": 9,
@@ -8838,7 +8418,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "medical terminology for english language learners - certificate of completion - cc8057",
+    "section_fit": 0.833
    }
   },
   "listed": 2,
@@ -8850,7 +8433,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.865,
+  "coverage": 0.982,
   "codes_found": [
    "ANT2",
    "ANT2H",
@@ -8901,6 +8484,19 @@
    "GEG1H",
    "GEG2",
    "GEG3",
+   "HIS1",
+   "HIS16",
+   "HIS17",
+   "HIS18",
+   "HIS19",
+   "HIS2",
+   "HIS25",
+   "HIS2H",
+   "HIS32",
+   "HIS33",
+   "HIS35",
+   "HIS60",
+   "HIS61",
    "HUM10",
    "HUM10H",
    "HUM35",
@@ -8956,7 +8552,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "global studies - certificate of achievement - ce1119",
+    "section_fit": 0.667
    }
   },
   "listed": 111,
@@ -8988,7 +8587,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "acting - associate of arts degree and certificate of achievement - aa1050/aa1050c/ce1050",
+    "section_fit": 0.25
    }
   },
   "listed": 10,
@@ -9030,7 +8632,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "musical theatre - associate of arts degree and certificate of achievement - aa915/aa915c/ce915",
+    "section_fit": 0.4
    }
   },
   "listed": 20,
@@ -9057,7 +8662,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "design agency production - certificate of achievement - ce1120",
+    "section_fit": 0.75
    }
   },
   "listed": 5,
@@ -9086,7 +8694,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced collision repair - associate of science degree and certificate of achievement - as1122/as1122c/ce1122",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -9115,7 +8726,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "advanced collision repair - associate of science degree and certificate of achievement - as1122/as1122c/ce1122",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -9144,7 +8758,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business administration: human resources specialized area- certificate of achievement - ce1111",
+    "section_fit": 0.857
    }
   },
   "listed": 7,
@@ -9155,61 +8772,23 @@
   "title": "Mathematics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.778,
-  "codes_found": [
-   "CIS5",
-   "CSC5",
-   "MATH1C",
-   "MATH2",
-   "MATH3",
-   "MATHC2210H",
-   "PHY4A"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014",
-   "title": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)",
-   "h1": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 2023
+  "text_chars": 0
  },
  {
   "control_number": "46317",
   "title": "Physics 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.846,
-  "codes_found": [
-   "CIS30A",
-   "CIS5",
-   "CSC5",
-   "MATH1C",
-   "MATH2",
-   "MATH3",
-   "MATHC2210H",
-   "PHY4A",
-   "PHY4B",
-   "PHY4C",
-   "PHY4D"
-  ],
-  "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034",
-   "title": "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)",
-   "h1": "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 2197
+  "text_chars": 0
  }
 ]

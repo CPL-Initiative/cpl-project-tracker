@@ -51,6 +51,7 @@
     "ACC62"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -74,6 +75,7 @@
     24.0,
     24.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -89,6 +91,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -289,5 +299,6 @@
    "CAT-31 is titled 'Business Communication Fundamentals' in the catalog vs 'Business Communications Fundamentals' in the closed list."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43603042173,
+ "read_run": "38082999076"
 }

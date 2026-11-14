@@ -44,29 +44,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 38,
+   "placed": 48,
    "listed": 51,
-   "share": 0.745,
+   "share": 0.941,
    "missing": [
     "ECO7",
-    "HIS11",
-    "HIS12",
-    "HIS14",
-    "HIS15",
-    "HIS26",
-    "HIS28",
-    "HIS29",
-    "HIS31",
-    "HIS34",
-    "HIS44",
     "HIS6",
     "HIS7"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 20,
+   "count": 10,
    "codes": [
     "ECONC2002",
     "ENGL14",
@@ -76,16 +67,6 @@
     "ETS15",
     "ETS28",
     "ETS29",
-    "HIST11",
-    "HIST12",
-    "HIST14",
-    "HIST15",
-    "HIST26",
-    "HIST28",
-    "HIST29",
-    "HIST31",
-    "HIST34",
-    "HIST44",
     "HISTC1001",
     "HISTC1002"
    ],
@@ -98,16 +79,6 @@
     "ETS15",
     "ETS28",
     "ETS29",
-    "HIST11",
-    "HIST12",
-    "HIST14",
-    "HIST15",
-    "HIST26",
-    "HIST28",
-    "HIST29",
-    "HIST31",
-    "HIST34",
-    "HIST44",
     "HISTC1001",
     "HISTC1002"
    ],
@@ -124,6 +95,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -139,6 +111,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -860,5 +843,6 @@
    "Note says not all courses are offered at all three district colleges."
   ]
  },
- "extracted_run": "38095615434"
+ "extracted_run": 43603042173,
+ "read_run": "38095615434"
 }

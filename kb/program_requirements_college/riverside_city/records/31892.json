@@ -51,6 +51,7 @@
     "ACC62"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -67,15 +68,16 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    21.0,
-    21.0
+    42.0,
+    42.0
    ],
    "stated": [
     24.0,
     24.0
    ],
+   "against": "program",
    "why": [
-    "the blocks sum to 21.0-21.0; the catalog states 24.0-24.0"
+    "the blocks sum to 42.0-42.0; the catalog states 24.0-24.0"
    ]
   },
   "repeated": {
@@ -91,6 +93,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -341,5 +354,6 @@
    "The degree text mentions general education requirements but names no specific GE pattern."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43603042173,
+ "read_run": "38082999076"
 }
