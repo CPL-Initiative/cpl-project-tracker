@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-584 document(s).
+585 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -96,6 +96,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A figure is only wrong relative to the payload it names](../kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A figure tagged to two owners is claimed twice](../kb-notes/methodology-a-figure-tagged-to-two-owners-is-claimed-twice.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [A file generated for a public page carries past the table's read gate](../kb-notes/methodology-a-published-file-carries-past-the-tables-read-gate.md) | methodology | published | 2026-10-11 | 2026-10-11 |
+| [A fill must check the units it fills, not the word that licenses it](../kb-notes/methodology-a-fill-must-check-what-it-fills.md) | methodology | published | 2026-11-14 | 2026-11-14 |
 | [A fill that does not flip needs ink that does not flip either](../kb-notes/methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either.md) | methodology | published | 2026-09-09 | 2026-10-11 |
 | [A filter must be able to see what you are about to declare missing](../kb-notes/methodology-a-filter-must-be-able-to-see-what-you-declare-missing.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A filter needs a field — prose is not a facet](../kb-notes/methodology-a-filter-needs-a-field.md) | methodology | published | 2026-08-18 |  |

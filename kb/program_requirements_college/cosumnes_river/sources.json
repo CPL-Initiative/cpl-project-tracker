@@ -4999,7 +4999,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "21f62c75f95e1d1f"
   },
   "listed": 10,
   "text_chars": 12465
@@ -6177,7 +6178,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "f3cf33553b34b7a8cbc76a6e18d71501f92be6822d7fbb598cc5bcabe4c9ccfc"
-   }
+   },
+   "text_sha": "190fef0c058c903d"
   },
   "listed": 45,
   "text_chars": 15885
