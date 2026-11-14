@@ -173,6 +173,53 @@ def main():
         checks.append(("that repair leaves the allow list and the guards exactly as found",
                        after["permissions"]["allow"] == allow_before
                        and after["hooks"]["PreToolUse"] == pre_before))
+    # The S652 lesson hooks (issue #3306): the merge-read guard (both halves) and
+    # the clock guard. A full install writes them; --lessons-only adds them to a
+    # live root without touching the allow list, the guards or the meter; the
+    # checker reports each one and --fix repairs a root that lacks them.
+    with tempfile.TemporaryDirectory() as tmp:
+        subprocess.run([sys.executable, INSTALLER, tmp, "--apply"], capture_output=True)
+        written = os.path.join(tmp, ".claude", "settings.json")
+        cfg = json.load(open(written))
+        lesson_cmds = [(ev, b.get("matcher"), h.get("command") or "")
+                       for ev in ("PreToolUse", "PostToolUse")
+                       for b in cfg["hooks"].get(ev) or [] for h in b.get("hooks") or []
+                       if ipg.LESSON_MARK in (h.get("command") or "")]
+        checks.append(("a full install writes the three lesson-hook blocks with absolute paths",
+                       len(lesson_cmds) == 3
+                       and all(os.path.join(ROOT, "scripts") in c for _, _, c in lesson_cmds)))
+        checks.append(("the merge guard matches the merge tool and its stamp matches both read tools",
+                       ("PreToolUse", "mcp__github__merge_pull_request") in [(e, m) for e, m, _ in lesson_cmds]
+                       and any(e == "PostToolUse" and "issue_read" in m and "pull_request_read" in m
+                               for e, m, _ in lesson_cmds)))
+        checks.append(("the clock guard matches the comment, PR and Bash tools",
+                       any("clock_time_guard.py" in c and all(t in m for t in (
+                           "add_issue_comment", "create_pull_request", "update_pull_request", "Bash"))
+                           for _, m, c in lesson_cmds)))
+        out = subprocess.run([sys.executable, checker, "--root", tmp], capture_output=True, text=True)
+        checks.append(("the checker reports both lesson hooks live",
+                       "merge-read guard: yes" in out.stdout and "clock guard: yes" in out.stdout))
+        for ev in ("PreToolUse", "PostToolUse"):
+            cfg["hooks"][ev] = [b for b in cfg["hooks"][ev] if not ipg.ours_lesson(b)]
+        json.dump(cfg, open(written, "w"))
+        before = json.load(open(written))
+        out = subprocess.run([sys.executable, checker, "--root", tmp], capture_output=True, text=True)
+        checks.append(("without them the checker says NO for each",
+                       "merge-read guard: NO" in out.stdout and "clock guard: NO" in out.stdout))
+        out = subprocess.run([sys.executable, checker, "--root", tmp, "--fix"], capture_output=True, text=True)
+        after = json.load(open(written))
+        strip = lambda bl: [b for b in bl if not ipg.ours_lesson(b)]
+        checks.append(("checker --fix installs them and reports yes",
+                       out.returncode == 0 and "FIXED" in out.stdout
+                       and "merge-read guard: yes" in out.stdout and "clock guard: yes" in out.stdout))
+        checks.append(("that repair leaves the allow list, the guards and the meter exactly as found",
+                       after["permissions"] == before["permissions"]
+                       and strip(after["hooks"]["PreToolUse"]) == before["hooks"]["PreToolUse"]
+                       and strip(after["hooks"]["PostToolUse"]) == before["hooks"]["PostToolUse"]))
+        subprocess.run([sys.executable, INSTALLER, tmp, "--apply", "--lessons-only"], capture_output=True)
+        again = json.load(open(written))
+        checks.append(("--lessons-only twice replaces its own blocks instead of duplicating them",
+                       again == after))
     # The repo's SessionStart hook (which runs patch_stop_hook.py) never loads in a
     # three-repo session, so --fix, the first command of every session, applies it.
     src = open(checker, encoding="utf-8").read()

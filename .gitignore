@@ -14,6 +14,8 @@ reflections_out/
 
 # Claude Code background-agent worktrees (transient, harness-managed)
 .claude/worktrees/
+# Hook state (the merge-read guard's stamps; scripts/merge_read_guard.py)
+.claude/state/
 
 # Node deps for the jsdom render tests — dev-only, never committed.
 # No trailing slash: a worktree's node_modules is often a symlink, which git sees

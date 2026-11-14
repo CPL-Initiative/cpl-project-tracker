@@ -2,7 +2,7 @@
 title: "Approval-prompt guards — why the allowlist never worked, and where the hooks must live"
 date: 2026-09-19
 session: 278 (SkyWarden)
-updated: 2026-11-13
+updated: 2026-11-14
 tags: [reference, hooks, permissions, settings, tooling]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -13,6 +13,19 @@ related:
 ---
 
 # The approval-prompt storm
+
+## 2026-11-14 (S652, SkyAvocet): two lesson hooks that only refuse (#3306)
+
+- `scripts/merge_read_guard.py` denies `merge_pull_request` unless this session read that PR's comments
+  (`pull_request_read` `get_comments`, `get_review_comments` or `get_reviews`, or `issue_read` `get_comments`) in
+  the last 10 minutes; a PostToolUse half writes the stamp to `.claude/state/` under the session root.
+  `scripts/clock_time_guard.py` denies a comment, PR title or body, or `git commit` whose "now" time (`written`,
+  `read`, `RUN ... at`) is more than 3 minutes off the UTC clock. Both fail open with a visible warning.
+- The installer writes them under their own mark (`# cpl-lesson-hook`) on every `--apply`;
+  `check_hooks_live.py` reports `merge-read guard` and `clock guard`, and `--fix` adds them to a live root with
+  `--lessons-only`, which leaves the allow list, the guards and the meter alone. A new session gets them once
+  the setup script's dated comment line changes and the snapshot rebuilds.
+- Tests: `tests/merge_read_guard_test.py`, `tests/clock_time_guard_test.py`, `tests/install_prompt_guards_test.py`.
 
 ## 2026-11-13 (S645, SkyFinch): an SQL prompt on an allowed tool, and a refused push
 

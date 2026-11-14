@@ -6,6 +6,7 @@
     python3 scripts/install_prompt_guards.py --user --apply    # LOCAL machine: persists
     python3 scripts/install_prompt_guards.py /some/root --apply
     python3 scripts/install_prompt_guards.py --apply --meter-only  # the meter alone
+    python3 scripts/install_prompt_guards.py --apply --lessons-only  # the lesson hooks alone
 
 ⚠️ WHICH TARGET SURVIVES WHAT:
   --user  ~/.claude/settings.json. On a LOCAL machine this is ordinary
@@ -201,6 +202,42 @@ MARK = "# cpl-prompt-guard"          # so a re-run replaces instead of duplicati
 # ── the context meter: PostToolUse on every tool (Rule 9a) ─────────────────
 METER = ("*", "kb/_context_budget.py", "--hook")
 
+# ── lesson hooks: two S652 lessons that recurred in writing (issue #3306) ──
+# They only refuse, never grant, so `--lessons-only` (and `check_hooks_live.py
+# --fix` on a root whose guards are live) installs them without touching the
+# allow list or the guards. Their own mark keeps them apart from GUARDS, whose
+# count the installer test pins. Each fails open with a visible warning.
+LESSON_MARK = "# cpl-lesson-hook"
+LESSONS = [
+    ("PreToolUse", "mcp__github__merge_pull_request", "scripts/merge_read_guard.py"),
+    ("PostToolUse", "mcp__github__issue_read|mcp__github__pull_request_read",
+     "scripts/merge_read_guard.py"),
+    ("PreToolUse", "mcp__github__add_issue_comment|mcp__github__update_issue_comment|"
+     "mcp__github__create_pull_request|mcp__github__update_pull_request|Bash",
+     "scripts/clock_time_guard.py"),
+]
+
+
+def lesson_blocks(event):
+    return [{"matcher": m, "hooks": [{"type": "command", "command": 'python3 "%s"  %s'
+                                      % (os.path.join(REPO, rel), LESSON_MARK)}]}
+            for ev, m, rel in LESSONS if ev == event]
+
+
+def ours_lesson(block):
+    """True for a lesson-hook block this script wrote."""
+    return any(LESSON_MARK in (h.get("command") or "") for h in (block.get("hooks") or []))
+
+
+def install_lessons(hooks):
+    for event in ("PreToolUse", "PostToolUse"):
+        cur = hooks.setdefault(event, [])
+        kept = [b for b in cur if not ours_lesson(b)]
+        hooks[event] = kept + lesson_blocks(event)
+    print("lesson hooks:      %d block(s) (%s)" % (len(LESSONS), LESSON_MARK))
+    for ev, m, rel in LESSONS:
+        print("   %-11s %-22s -> %s" % (ev, m[:22] + ("..." if len(m) > 22 else ""), rel))
+
 
 def blocks():
     out = []
@@ -259,12 +296,14 @@ def target_root():
 def main():
     apply = "--apply" in sys.argv
     meter_only = "--meter-only" in sys.argv
+    lessons_only = "--lessons-only" in sys.argv
     root = target_root()
     path = os.path.join(root, ".claude", "settings.json")
 
     missing = [r for _, r in GUARDS if not os.path.exists(os.path.join(REPO, r))]
     if not os.path.exists(os.path.join(REPO, METER[1])):
         missing.append(METER[1])
+    missing += sorted({rel for _, _, rel in LESSONS if not os.path.exists(os.path.join(REPO, rel))})
     if missing:
         print("refusing: guard script(s) missing from this repo: %s" % ", ".join(missing))
         return 1
@@ -281,7 +320,10 @@ def main():
     print("session root:  %s" % root)
     print("settings file: %s%s" % (path, "" if os.path.exists(path) else "  (will be created)"))
     print()
-    if meter_only:
+    if lessons_only:
+        print("permissions.allow, guards, meter: untouched (--lessons-only)")
+        install_lessons(hooks)
+    elif meter_only:
         print("permissions.allow: untouched (--meter-only)")
         print("PreToolUse:        untouched (--meter-only)")
     else:
@@ -303,13 +345,16 @@ def main():
         for matcher, rel in GUARDS:
             print("   %-34s -> %s" % (matcher, rel))
 
-    post = hooks.setdefault("PostToolUse", [])
-    post_kept = [b for b in post if not ours(b)]
-    hooks["PostToolUse"] = post_kept + [meter_block()]
-    print("PostToolUse:       keeping %d existing block(s), replacing %d of ours, adding 1"
-          % (len(post_kept), len(post) - len(post_kept)))
-    print("   %-34s -> %s %s" % (METER[0], METER[1], METER[2]))
-    if not meter_only:
+    if not lessons_only:
+        post = hooks.setdefault("PostToolUse", [])
+        post_kept = [b for b in post if not ours(b)]
+        hooks["PostToolUse"] = post_kept + [meter_block()]
+        print("PostToolUse:       keeping %d existing block(s), replacing %d of ours, adding 1"
+              % (len(post_kept), len(post) - len(post_kept)))
+        print("   %-34s -> %s %s" % (METER[0], METER[1], METER[2]))
+    if not meter_only and not lessons_only:
+        install_lessons(hooks)
+    if not meter_only and not lessons_only:
         print()
         print("⚠️  execute_sql is BOTH an allow rule and a hook: the rule stops the prompt")
         print("    (a hook allow alone did not, measured 2026-09-20) and the hook's deny")

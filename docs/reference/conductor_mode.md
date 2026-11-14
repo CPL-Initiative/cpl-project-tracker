@@ -70,6 +70,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
   scripts/check_generated.sh`, read its last line, then commit; when `main` moves under an open PR, merge `main` (a
   merge commit) and regenerate generated files with their tools; a PR that changes a builder of a committed file runs
   the builder (`docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md`).
+- The agent definitions in `.claude/agents/` carry the limits above, the trailer and footer and a report cap, so a
+  brief no longer repeats them: `worker` (Opus), `second-reader` (read-only, severity tags, a verdict),
+  `checkpoint-docs` (Rule 9's documents) and `pr-gate` (Haiku; five lines on one PR). The `conductor-brief` skill
+  holds the brief's shape and the review rules.
 - **SQL a worker sends:** the conductor runs a SELECT as sent, kept narrow (aggregates, never `select *`; `kb_curation`
   paged by Range). A write runs only in Rule 10's shape and only from a plan the conductor has read.
 
@@ -83,6 +87,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
   `kb/migrations/.apply`) gets a review of at most 9 agents: independent readers by dimension, then a second reader who
   tries to refute each finding. Its findings are fixed forward unless one breaks the undo. A file landing in
   `kb/migrations/.apply` applies at once on merge (Rule 10 c); a new function also needs the Rule 10 (b2) revoke.
+- Two hooks enforce two lessons (`docs/reference/approval_prompt_hooks.md`, 2026-11-14): `merge_read_guard.py`
+  refuses `merge_pull_request` unless this session read that PR's comments in the last 10 minutes, and
+  `clock_time_guard.py` refuses a comment, PR or commit whose "now" time is more than 3 minutes off the clock. Both
+  fail open with a warning; `python3 scripts/check_hooks_live.py` reports each `yes` or `NO`.
 - A PR that makes something the first writer to a shared table, or gives a read-only surface writes, waits until
   `kb/governance_surface_map.json` maps it and the student-detail disclosure ADR is checked (Rule 10 a3).
 
@@ -142,6 +150,12 @@ at the top of each piece of work so Sam can change the dial before it runs.
   the handoff, then gives the one opening line (`CLAUDE.md`, *Sign off*).
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
+
+## What went wrong in S652, and what worked
+
+- Two written lessons recurred the same day (a merge before reading the review on #3296; five times written from
+  memory, each 2 to 10 minutes off), so each became a hook that refuses the act, and the forty lines every brief
+  repeated became agent definitions and the `conductor-brief` skill (#3306).
 
 ## What went wrong in S651, and what worked
 

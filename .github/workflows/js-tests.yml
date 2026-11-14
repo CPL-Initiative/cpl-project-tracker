@@ -654,6 +654,14 @@ jobs:
       # hook's own allow does not stop the prompt; the rule does.
       - name: Prompt-guard installer (the execute_sql rule never ships without its hook)
         run: python3 tests/install_prompt_guards_test.py
+      # The S652 lesson hooks (#3306). Each refuses one recurring mistake (a merge
+      # before reading the PR's comments; a "now" time written from memory) and
+      # fails open with a warning, so a broken hook never blocks every merge.
+      # Pure stdlib, no network; the clock is pinned by CPL_HOOK_NOW.
+      - name: Merge-read guard (a merge waits until the PR's comments were read)
+        run: python3 tests/merge_read_guard_test.py
+      - name: Clock guard (a published "now" time must match the clock)
+        run: python3 tests/clock_time_guard_test.py
       # The Jev magic half (S281). Guards the ways an AI adjudication pass fails
       # while LOOKING like it worked: a skeptic shown the verdict rubber-stamps
       # it, a refuted proposal reaching the plan, a noul probability read as a

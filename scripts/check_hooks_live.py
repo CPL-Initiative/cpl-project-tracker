@@ -47,6 +47,11 @@ SETTINGS = os.path.join(REPO, ".claude", "settings.json")
 MARK = "# cpl-prompt-guard"      # what install_prompt_guards.py stamps on its blocks
 SQL_TOOL = "mcp__Supabase__execute_sql"
 METER = "_context_budget.py"         # Rule 9a's context meter, a PostToolUse block
+# The S652 lesson hooks (issue #3306): they only refuse, so --fix installs them
+# on a live root with `--lessons-only`, leaving the allow list and guards alone.
+LESSON_MARK = "# cpl-lesson-hook"
+MERGE_READ = "merge_read_guard.py"
+CLOCK = "clock_time_guard.py"
 
 
 def root_report(root_dir=None):
@@ -77,8 +82,19 @@ def root_report(root_dir=None):
     meter = any(MARK in (h.get("command") or "") and METER in (h.get("command") or "")
                 for b in post for h in (b.get("hooks") or []))
     allow = (cfg.get("permissions") or {}).get("allow") or []
+
+    def lesson(blocks, script):
+        return any(LESSON_MARK in (h.get("command") or "") and script in (h.get("command") or "")
+                   for b in blocks for h in (b.get("hooks") or []))
     return {"path": path, "present": True, "hooked": hooked, "meter": meter,
-            "allow_n": len(allow), "sql_rule": SQL_TOOL in allow}
+            "allow_n": len(allow), "sql_rule": SQL_TOOL in allow,
+            # The merge-read guard needs both halves: the stamp after a read, the check before a merge.
+            "merge_read": lesson(pre, MERGE_READ) and lesson(post, MERGE_READ),
+            "clock": lesson(pre, CLOCK)}
+
+
+def lessons_live(root):
+    return bool(root.get("merge_read") and root.get("clock"))
 
 
 def project_roots():
@@ -134,6 +150,16 @@ def main():
             print((run.stdout + run.stderr).strip()[-600:])
         root = root_report(root_dir)
         fixed = True
+    if fix and healthy(root) and not lessons_live(root):
+        cmd = [sys.executable, os.path.join(REPO, "scripts", "install_prompt_guards.py"),
+               root_dir or os.path.dirname(REPO), "--apply", "--lessons-only"]
+        run = subprocess.run(cmd, capture_output=True, text=True)
+        print("FIXED —         installed the merge-read and clock guards at the root (exit %d): %s"
+              % (run.returncode, " ".join(cmd[1:])))
+        if run.returncode != 0:
+            print((run.stdout + run.stderr).strip()[-600:])
+        root = root_report(root_dir)
+        fixed = True
     print("session root:   %s" % root["path"])
     if root.get("error"):
         print("ROOT BROKEN:    will not parse (%s)" % root["error"])
@@ -143,6 +169,11 @@ def main():
               % (", ".join(root["hooked"]), root["allow_n"],
                  "yes" if root["sql_rule"] else "NO",
                  "yes" if root.get("meter") else "NO"))
+        print("                merge-read guard: %s · clock guard: %s"
+              % ("yes" if root.get("merge_read") else "NO", "yes" if root.get("clock") else "NO"))
+        if not lessons_live(root):
+            print("                A lesson hook is missing (a snapshot built before #3306's hooks):")
+            print("                --fix installs it here (it only refuses; it grants nothing).")
         if not root.get("meter"):
             print("                The context meter (Rule 9a) is not installed here, so no")
             print("                warning will come: --fix installs it (it grants nothing);")
