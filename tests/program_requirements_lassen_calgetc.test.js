@@ -14,8 +14,9 @@
 // fixture page, and its six area figures add to the 34 it prints; (3) the step, run by the reconcile itself,
 // fills 34 only on a transfer degree that names Cal-GETC, its pattern and its degree total, and leaves a
 // record with a figure, a local degree and a record without a degree total alone; (4) the committed apply plan
-// applies the ten records that fail on arithmetic alone, holds the two overlap records for restore, and turns
-// no passing record failing.
+// applies only the ten records that fail on arithmetic alone, holds the two overlap records and the conductor's
+// two (31297, 42300's legacy number; 33388, the electives-fill false-pass class) for restore, and turns no
+// passing record failing.
 //
 // Run from repo root: `npm test` (or `node tests/program_requirements_lassen_calgetc.test.js`).
 const fs = require("fs");
@@ -108,9 +109,19 @@ block("(4) the apply plan", () => {
     TEN.every((cn) => plan.apply.includes(cn))
     && plan.rows.filter((r) => TEN.includes(r.control_number))
       .every((r) => JSON.stringify(r.ge_units_after) === JSON.stringify({ min: 34, max: 34 }) && r.passes_after));
-  check("(4) the two overlap records (35106, 41912) are held and restored before the reread",
-    JSON.stringify(plan.held) === JSON.stringify(["35106", "41912"])
-    && JSON.stringify(plan.restore_before_reread) === JSON.stringify(["35106", "41912"]));
+  const HELD = ["31297", "33388", "35106", "41912"];
+  check("(4) only the ten are applied",
+    JSON.stringify(plan.apply) === JSON.stringify(TEN) && plan.counts.apply === 10);
+  check("(4) the two overlap records (35106, 41912) and the conductor's two (31297, 33388) are held and restored "
+    + "before the reread",
+    JSON.stringify(plan.held) === JSON.stringify(HELD)
+    && JSON.stringify(plan.restore_before_reread) === JSON.stringify(HELD)
+    && plan.rows.filter((r) => HELD.includes(r.control_number))
+      .every((r) => r.held && JSON.stringify(r.ge_units_after) === JSON.stringify(r.ge_units_before)));
+  check("(4) 31297 waits as 42300's legacy number; 33388 is the electives-fill false-pass class",
+    /legacy number of 42300/.test((plan.rows.find((r) => r.control_number === "31297") || {}).held || "")
+    && /electives fill/.test((plan.rows.find((r) => r.control_number === "33388") || {}).held || "")
+    && /by hand on the conductor's decision/.test(plan.hand_holds || ""));
   check("(4) no passing record turns failing", plan.counts.pass_to_fail === 0);
   check("(4) Lassen's first reconcile: the run's whole filing is compared with main", plan.first_reconcile === true);
 });

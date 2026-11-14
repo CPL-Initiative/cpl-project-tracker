@@ -26,11 +26,11 @@
  },
  "counts": {
   "rows": 14,
-  "apply": 12,
-  "held": 2,
-  "fail_to_pass": 12,
+  "apply": 10,
+  "held": 4,
+  "fail_to_pass": 10,
   "pass_to_fail": 0,
-  "held_would_pass": 2
+  "held_would_pass": 4
  },
  "first_reconcile": true,
  "apply": [
@@ -38,20 +38,22 @@
   "31015",
   "31037",
   "31132",
-  "31297",
   "31379",
   "32083",
   "33263",
-  "33388",
   "33729",
   "33730",
   "42300"
  ],
  "held": [
+  "31297",
+  "33388",
   "35106",
   "41912"
  ],
  "restore_before_reread": [
+  "31297",
+  "33388",
   "35106",
   "41912"
  ],
@@ -153,18 +155,19 @@
     "max": null
    },
    "ge_units_after": {
-    "min": 34,
-    "max": 34
+    "min": null,
+    "max": null
    },
    "passes_before": false,
-   "passes_after": true,
+   "passes_after": false,
    "passes_with_fill": true,
    "verdict_with_fill": "equal ()",
    "sum_with_fill": [
     58.0,
     58.0
    ],
-   "degree_total": 60.0
+   "degree_total": 60.0,
+   "held": "held by the conductor (S651): the legacy number of 42300's '2.0' section, read from the same section; it waits until someone shows it is a live program distinct from 42300"
   },
   {
    "control_number": "31379",
@@ -241,15 +244,16 @@
     "max": null
    },
    "ge_units_after": {
-    "min": 34,
-    "max": 34
+    "min": null,
+    "max": null
    },
    "passes_before": false,
-   "passes_after": true,
+   "passes_after": false,
    "passes_with_fill": true,
    "verdict_with_fill": "equal ()",
    "sum_with_fill": null,
-   "degree_total": 60.0
+   "degree_total": 60.0,
+   "held": "held by the conductor (S651): no printed major total, so the computed 22 passes only on the electives fill, the false-pass class of S650 (methodology-a-fill-must-check-what-it-fills)"
   },
   {
    "control_number": "33729",
@@ -363,5 +367,6 @@
    ],
    "degree_total": 60.0
   }
- ]
+ ],
+ "hand_holds": "31297 and 33388 were moved from apply to held by hand on the conductor's decision (S651, 2026-11-14); a rerun of --calgetc-apply drops them, so repeat this edit after one"
 }
