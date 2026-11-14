@@ -1027,8 +1027,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=44",
-   "title": null,
-   "h1": null,
+   "title": "of Justice for Transfer",
+   "h1": "of Justice for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1036,10 +1036,12 @@
     45,
     46
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "00a3aeabec4b8089"
   },
   "listed": 12,
-  "text_chars": 11269
+  "text_chars": 11085
  },
  {
   "control_number": "31015",
@@ -1060,18 +1062,20 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=61",
-   "title": null,
-   "h1": null,
+   "title": "The Associate in Science Degree in Early Childhood Education for Transfer is designed to provide the lower",
+   "h1": "The Associate in Science Degree in Early Childhood Education for Transfer is designed to provide the lower",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     61,
     62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "62e83d339d5297d4"
   },
   "listed": 8,
-  "text_chars": 5569
+  "text_chars": 5322
  },
  {
   "control_number": "31037",
@@ -1092,17 +1096,19 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts in Sociology for Transfer",
+   "h1": "Associate in Arts in Sociology for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     98
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "eeb231b29183868c"
   },
   "listed": 8,
-  "text_chars": 3651
+  "text_chars": 3523
  },
  {
   "control_number": "31132",
@@ -1219,17 +1225,19 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=77",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts in History for Transfer",
+   "h1": "Associate in Arts in History for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c86f522f44ea35c6"
   },
   "listed": 7,
-  "text_chars": 3112
+  "text_chars": 2987
  },
  {
   "control_number": "31407",
@@ -1272,8 +1280,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts in Psychology for Transfer",
+   "h1": "Associate in Arts in Psychology for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1281,10 +1289,12 @@
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7a7337640d36b183"
   },
   "listed": 7,
-  "text_chars": 9546
+  "text_chars": 9419
  },
  {
   "control_number": "33263",

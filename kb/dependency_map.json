@@ -1346,6 +1346,13 @@
      "line": 39
     },
     {
+     "id": "script:veteran-sprint-map/build_selfcontained.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 190
+    },
+    {
      "id": "worker:cloudflare-worker-proxy.js",
      "kind": "worker",
      "direction": "read",
@@ -1617,6 +1624,13 @@
      "line": 39
     },
     {
+     "id": "script:veteran-sprint-map/build_selfcontained.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 194
+    },
+    {
      "id": "worker:cloudflare-worker-proxy.js",
      "kind": "worker",
      "direction": "read",
@@ -1716,6 +1730,13 @@
      "tabs": [
       "sierra-training"
      ]
+    },
+    {
+     "id": "script:veteran-sprint-map/build_selfcontained.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 195
     }
    ],
    "main_committers": []
@@ -3471,6 +3492,13 @@
      "direction": "read",
      "how": "url",
      "line": 41
+    },
+    {
+     "id": "script:veteran-sprint-map/build_selfcontained.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 181
     }
    ],
    "main_committers": []
@@ -4443,7 +4471,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 350
+     "line": 483
     }
    ],
    "main_committers": []
@@ -27271,14 +27299,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 651
+     "line": 784
     },
     {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 651
+     "line": 784
     }
    ],
    "served": true,
