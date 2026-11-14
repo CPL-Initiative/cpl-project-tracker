@@ -146,6 +146,15 @@ at the top of each piece of work so Sam can change the dial before it runs.
 ## What went wrong in S650, and what worked
 
 - The 06:12Z firing of 2026-11-14 (SkyPlover) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs and `main` since handoff 650 were the one-writer check, and this PR declared the queue at 06:20Z.
+- Reusing one finished worker's worktree for four tasks in turn held the disk at four worktrees; it fell to 4.7 GB free with four. Removing a merged worktree needs `git worktree unlock` first.
+- A second reader on a shared-data plan, before the free capture, found a false-pass class the worker's plan would have loaded (the degree electives fill; `p-degree-electives-fill-false-pass-s650`). Put the second reader before the capture, not after the load.
+- COBIx and the second reader found the same fault on #3285 independently (a browser-tab return put the reviewer on card 1 with the Teach draft open); it was fixed before the merge.
+- Relaying a 10-row draft table through the conductor's context cost about 15,000 tokens. A worker's SELECT returns scalars and lengths only.
+- Merging one dependency-map PR at a time, with a `main` merge on the next, worked five times with no red `main`.
+- Background `sleep` timers were the only wait (no `send_later`); one timer per wait, one batch of calls per wake.
+- The conductor used `gh api` once for check runs, against the rule. MCP `get_check_runs` with `perPage` 1 is the way.
+- A worker copied #3265's Claude-Session trailer into #3283's first commit; it was left, since a push would start a second reader. A brief names the session's own trailer.
+- Worked: the checkpoint's documents went to one worker while the conductor kept the Supabase reads and the memory receipt's run.
 
 ## What went wrong in S649, and what worked
 

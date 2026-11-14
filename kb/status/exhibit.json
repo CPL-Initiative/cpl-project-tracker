@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 649,
-  "moniker": "SkyOriole",
-  "run": "the conductor, with Sam in session",
+  "session": 650,
+  "moniker": "SkyPlover",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_650_handoff.md",
+  "handoff": "docs/session_651_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -52,64 +52,16 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-14T01:11:33Z",
+  "written_at": "2026-11-14T07:34:25Z",
   "project": "exhibit",
   "next_step": {
     "title": "The rename batch, with the ASE bundle",
-    "text": "The rename to ASE Certificate Bundles: A6 or T6 + L3 rides the next rename batch for Sam's approval. A title cleared in another browser tab reopens its card only on reload; that is the next fix to the Review's live read."
+    "text": "The rename to ASE Certificate Bundles: A6 or T6 + L3 rides the next rename batch for Sam's approval, with the CompTIA series aliases wired into the credential aliases after it."
   },
   "changes": [
     {
-      "at": "2026-11-14T00:02:11Z",
-      "text": "The Exhibits Review reads the titles people saved in COBI, in the tab and in its nightly build, so a decided card leaves the queue and stays out. The held queue went from 168 to 0 after Sam saved the Las Positas titles."
-    },
-    {
-      "at": "2026-11-13T18:12:00Z",
-      "text": "Issuers are named by an explicit tag list, an or between two tests is coded as written, a CompTIA title leaves out its exam series, and each proposal records how strong its name source is."
-    },
-    {
-      "at": "2026-11-12T21:16:02Z",
-      "text": "Returned credential titles are now an acknowledged list. The three credit by exam titles that June saves brought back are on it, a title not on it raises a warning, and the Review view lists the renamed titles at its own address. Review list 12, unacknowledged 0. Pull request 3179 merged."
-    },
-    {
-      "at": "2026-11-12T14:49:43Z",
-      "text": "A ghost delete now holds when a case-only successor is absent, and its plan refuses a before-row under the disclosure floor of 10. Pull request 3166 merged."
-    },
-    {
-      "at": "2026-11-12T14:30:21Z",
-      "text": "The Review card names the statewide or most used title of its own issuer, and the side panel changes the related titles that need it to a chosen title, through the rename batch's own rows. Pull request 3160 merged."
-    },
-    {
-      "at": "2026-11-12T13:46:59Z",
-      "text": "Sierra's 230 ghost rows were deleted on Sam's word, delete; the live table holds 2,719 rows, the reference's own count. The receipt in kb/receipts holds the undo."
-    },
-    {
-      "at": "2026-11-12T12:50:23Z",
-      "text": "Course details opens a Review card's aligned course in the side panel. Pull request 3157 merged."
-    },
-    {
-      "at": "2026-11-12T07:47:00Z",
-      "text": "Stored credential titles resolve when they are read, through the applied renames, and retired names became search aliases. The pull request that re-pointed saved values at apply time was closed."
-    },
-    {
-      "at": "2026-11-12T06:30:30Z",
-      "text": "ASE plan phase 3 applied: five title assignments, read back five."
-    },
-    {
-      "at": "2026-11-12T05:48:04Z",
-      "text": "The second standards plan applied: seven more ASE titles renamed to their standards form, L1, A2, A6, L3, A9, A3 and A4. Sam's seven approval rows the apply carried out were removed, each kept in the receipt, and twelve subject rows followed the titles. The receipt's undo runs before the first plan's."
-    },
-    {
-      "at": "2026-11-12T05:14:55Z",
-      "text": "The first standards plan applied: three titles renamed to Brakes (ASE A5 standards), Heating and Air Conditioning (ASE A7 standards) and Engine Performance (ASE A8 standards), and one merged into the A8 title. Sam's seven approval rows the apply carried out were removed, each kept in the receipt, and six subject rows followed the titles. The receipt's undo puts every value back."
-    },
-    {
-      "at": "2026-11-12T01:28:47Z",
-      "text": "Two more titles carry the ASE Certificate Bundles family as members any one of whose tests qualifies: ASE C1 or G1 and ASE Certification (any A1 to A8). 25 family tags are live under credential-family-s638@bot; the family apply's rollback undoes them."
-    },
-    {
-      "at": "2026-11-12T00:54:43Z",
-      "text": "Sheet 181's ruled renames applied: 22 bundle titles now read ASE Certificate Bundles: A4 + A5 and the like, and two pairs merged into one title each. Sam's 47 fold rows stayed on the old titles, 25 rows moved to the new ones, and one bot family tag on a merged twin was removed. The receipt's undo puts every value back."
+      "at": "2026-11-14T06:50:00Z",
+      "text": "A title cleared in another browser tab or session now reopens its card without a reload, and the two dry-run files the Related panel reads are published, so its folds work on the deployed site."
     }
   ]
 }

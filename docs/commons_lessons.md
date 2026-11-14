@@ -35,24 +35,9 @@ The CR Progress view, the C-ID site, Sheet 108 and the decision lock (S437), the
 
 Verbatim in [`commons_lessons_archive.md`](commons_lessons_archive.md).
 
-## S430 SkyLupine (2026-10-20): the AGRI sitting, Sheet 103's 44 re-keyed, the nine MQ names renamed
+## S430: moved to the archive (S650 compaction)
 
-**Ruling 4 (sitting).** Jev read the 404 AGRI identities twice (runs 39352507898, 39353307914; 0 errors). Each run's
-artifact sits on a blob host the sandbox refuses, so the sitting is read from the job logs; the first log printed the
-word `plain` for any non-zero noul (a probability), fixed in #2268 with a test that fails on the old line. The runs
-agree on 397 of 404; 56 passed a both-runs 0.9 gate; Sam confirmed 44 on Sheet 103 (forestry and wine appreciation held
-back, since Forestry/Natural Resources is its own MQ discipline). `kb/_agri_family_remint.py` re-keyed them in one
-window (#2270): every gate passed, the receipt in ALIAS_MAPS, kb_curation by `supabase-rekey.yml` after merge.
-
-**Ruling 6 (rename).** Sam's reply was *"Rename as the handbook spells them"*, so the nine names took `index_name`
-verbatim, parentheticals included (#2269). Text replacement of whole JSON strings kept the large identity files
-byte-stable outside the changed values; the old spellings go to `renamed` in `kb/discipline_aliases.json`, which the
-inference passes resolve and the CSR's chips never read (a chip would have shown the broken names).
-
-**Lessons.** A gate measured on self-agreement across two runs is the only calibration a new Jev question has; set it
-before the ruling and say so. A generated worklist that reads a nightly payload shows a transient false state after a
-source rename; commit what CI checks and dispatch the daily run after merge. Fold-verify's 7 `re_key` (CNSC, COMP,
-FCSH, HLTH, ITIS, OSHA) are discipline drift outside this run, recorded in #2270.
+The section *S430 SkyLupine (2026-10-20)* moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md).
 
 ## S419 SkyCottonwood (2026-10-18): step 1, the shared Progress module (#2237)
 
@@ -871,3 +856,13 @@ Verbatim from `docs/reference/lanes/commons.md`, replaced by the S649 final stat
 - **LIVE: College Data Collection (the Commons data dashboard) at `#commons/data`, four views (S647, #3215; slice 1 #3222, slice 2 #3231 `3c161841`, the data #3232 `d87d21db`, slice 3 #3236 `1b630eeb`).** Sam's words for each slice: `docs/commons_lessons.md`, *Moved from the lane (S648)*. `commons_data.js` draws `kb/status/commons_data.json` (`kb/_build_commons_data_status.py`, rebuilt by the census workflow, fail-soft). The four views: the dashboard (figures that open their colleges, the overall bar's statewide tile opening the list lowest first, the API tile: 1 of 15 connected, 2 unverified and not counted); the list with a platform filter and the overall column, each college's row expanding, and its side panel (a dialog: everything outside it inert while open, released whenever the address leaves `#commons/data`) at `#commons/data[/<filter>]/college/<slug>`, carrying the overall bar's four parts and the live counts per college (Active, Teachout and Approved apart; records and passing; SLO, objective and PLO counts; the registry as held or not held), each labeled "live read, <date>"; the dictionary `#commons/data/dictionary` (the `dictionary` key, 19 datasets; #3220 landed as `docs/reference/data_dictionary.md`); the API checklist `#commons/data/apis`. Confidence comes from COBIx's receipts under `kb/spot_checks/`, with his two `confidence()` edge cases. Guard `tests/commons_data.test.js`.
 - The daily run (dispatched 02:33Z, `bb25d373` at 02:40Z): BUSI M10XW is in `unified_courses_standalone.js` and the index, gone from `unified_courses_data.js`; BUSI M1228's `members` there went 10 to 9 (the export's member rows 24 to 23; both one member leaving).
 - Suggested merges (about 7,300 written daily, none acted on since Sep 27): carry or retire, asked in chat 2026-11-04 (recommended: retire).
+
+## Moved from the lane (S650 checkpoint)
+
+Verbatim from `docs/reference/lanes/commons.md`, replaced by a short line when Open Asks Sheet 196 carried the Honors and identities cards (S650). The one marker word is lowercased so the sheet builder does not read history as an open ask.
+
+- **APPLIED and merged, card 3 (DECIDED `d-busi-split-delete-only-s649`, `d-busi-split-delete-applied-s649`):** one guarded DELETE of the bot row BUSI M10XW merge_into BUSI M1228 (`automerge-titlelane-v1@bot`, 2026-06-13T17:47:56.243497+00), `kb/migrations/2026-11-14_s649_busi_split_delete.sql`, `supabase-migrate.yml` run 43542044321; the receipt `kb/receipts/migration_s649_busi_split_delete_43542044321.json` holds the row whole and the rollback file re-inserts it; nothing inserted. The conductor's live reads: before, the row present and unvalidated, no person's row naming either id, no pointer into BUSI M10XW; after, 0 rows. The daily run `bb25d373` (02:40Z) moved BUSI M10XW to `unified_courses_standalone.js`; BUSI M1228 lost one member.
+- **S648 (#3229; #3257 `f2883f87`):** figures no longer break one digit a line; cards in columns; *Colleges by district* (`#commons/data/districts`, a district at `district/<slug>`). The list is a table when its box is 760px or wider. Guards `tests/commons_data_controls.test.js`; `scripts/commons_data_values_check.js` by hand.
+- **S649 (#3261 `58d46cc4`): each cause opens its programs, and Sam's asks 1 to 5** (`sam-data-collection-six-asks-2026-11-13`): full width, an *SLOs and objectives* column, links open in the side panel, CPL Pathways per college, `#commons/data/slos`, each cause opens its programs from the live gap census. The paragraph as it stood: `docs/commons_lessons.md`, *Moved from the lane (S649 final refresh)*. Guards `tests/commons_data_status_build_test.py`, `tests/commons_data_controls.test.js`.
+- **DECIDED (`d-data-collection-two-bases-s648`):** every College Data Collection card names its base; the captures count Active, Teachout and Approved (22,335 = 20,282 + 630 + 1,423), passing and completeness count Active. Sam's 9:18 AM PT note (*"college collection changes don't seem to have hit cobi yet"*, relayed by COBIx) came before #3243 merged at 17:55Z.
+- **DECIDED (`d-course-key-normalized-s648`):** a course is one college and code key (uppercased, spaces and hyphens removed), and an SLO matches on that key, in the harvest row and the data dashboard alike. Read live 17:33Z 2026-11-13: the raw code gave 89,192 courses and 12,815 with SLOs, the key 88,736 and 13,293.
