@@ -741,7 +741,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/governance_register.json` | tabs: `governance` | — |
 | `kb/hand_filed_catalogs` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/harvest_scouting/scout-*.json` | scripts: `kb/_build_commons_data_status.py` | — |
-| `kb/identities_rebuild_out/2026-11-14/orphan_worklist.json` | scripts: `kb/_identities_rebuild.py` | — |
+| `kb/identities_rebuild_out/2026-11-14b/apply_receipt.json` | scripts: `kb/_identities_rebuild.py` | — |
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.json` | scripts: `kb/_identities_rekey_dryrun.py` | — |
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.md` | none found | scripts: `kb/_identities_rekey_dryrun.py` |
 | `kb/insert.sql` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
