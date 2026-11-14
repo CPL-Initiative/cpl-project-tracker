@@ -34475,6 +34475,7 @@
   "kb/row_audit/*.md",
   "kb/status/harvest_heading_agreement.json",
   "kb/status/harvest_heading_agreement.md",
+  "kb/status/harvest_ncl_lookup_census.json",
   "kb/status/mid_outcomes_compare_*",
   "kb/subj4_*",
   "kb/supabase_*.sql",
