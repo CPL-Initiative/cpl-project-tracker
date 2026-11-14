@@ -414,6 +414,31 @@ nob = sorted(c["name"] for c in C if c.get("objectives_printed") is False)
 check("(15) ⭐ the colleges whose committed reads are all on an outline system that prints no objectives, and hold none, are flagged",
       all(k in B.FIELDS for k in ("outcomes_file", "outline_system", "objectives_printed"))
       and all(set(c["outline_system"] or []) <= set(B.NO_OBJECTIVES_SYSTEMS) for c in C if c.get("objectives_printed") is False), nob)
+# (15b) S650: the no-objectives list is the SLO reader's OBJECTIVES_BY_SYSTEM, read and never restated: every system
+# whose "printed" is not True, and no literal list left in the builder to drift from it.
+_rs = importlib.util.spec_from_file_location("course_outcomes_read_t", os.path.join(ROOT, "kb", "_course_outcomes_read.py"))
+_R = importlib.util.module_from_spec(_rs)
+_rs.loader.exec_module(_R)
+_src = open(os.path.join(ROOT, "kb", "_build_commons_data_status.py"), encoding="utf-8").read()
+check("(15b) the no-objectives list is derived from OBJECTIVES_BY_SYSTEM, the one source",
+      set(B.NO_OBJECTIVES_SYSTEMS) == {k for k, v in _R.OBJECTIVES_BY_SYSTEM.items() if v.get("printed") is not True}
+      and "OBJECTIVES_BY_SYSTEM" in _src and not re.search(r"NO_OBJECTIVES_SYSTEMS\s*=\s*[(\[{]", _src), B.NO_OBJECTIVES_SYSTEMS)
+# (15c) S650, COBIx on #3229: the displayed catalog link splits from the capture root, and a check reads in words.
+check("(15c) a 500 from Pingora with an empty body reads unreachable from here, never not found; a 404 reads not found",
+      B.link_check_result({"status": 500, "server": "Pingora", "body_bytes": 0}) == "unreachable from here"
+      and B.link_check_result({"status": 500, "server": "pingora"}) == "unreachable from here"
+      and B.link_check_result({"status": 500, "server": "Pingora", "body_bytes": 812}) == "the site answered with a server error"
+      and B.link_check_result({"status": 500, "server": "nginx"}) == "the site answered with a server error"
+      and B.link_check_result({"status": 403}) == "the site refused the request"
+      and B.link_check_result({"status": 404}) == "not found" and B.link_check_result({"status": 200}) == "answered"
+      and B.link_check_result({}) == "not checked")
+_one = B.catalog_links("no_such_college", "https://catalog.example.edu/")
+_two = B.catalog_links("copper_mountain", "https://captured.example.edu/old.pdf")
+check("(15c) the capture root stays what the capture read; a listed college displays its catalog page",
+      _one == {"catalog_url": "https://catalog.example.edu/", "capture_root": "https://catalog.example.edu/", "catalog_now": None, "catalog_checks": None}
+      and _two["capture_root"] == "https://captured.example.edu/old.pdf" and _two["catalog_url"] == B.CATALOG_LINKS["copper_mountain"]["display"]
+      and all(k.get("result") for k in _two["catalog_checks"])
+      and all(k in B.FIELDS for k in ("capture_root", "catalog_now", "catalog_checks")), _two)
 oc = [c for c in C if c.get("outcomes_file")]
 bad15 = []
 for c in oc:
