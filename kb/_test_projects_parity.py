@@ -34,7 +34,9 @@ import excel_to_dashboard as e2d  # noqa: E402
 # Fields where a NULL-in-Supabase but text-in-Excel divergence is expected
 # (fork #1: "Ongoing" end_dates → NULL). Reported, not failed.
 KNOWN_DATE_FORK_FIELDS = {"end", "start", "update_date"}
-LADDER_PREFIXES = ("kpi_goal_", "kpi_stretch_")
+# kpi_current_<year> (S649) is stamped from the Annual Goals rows, which
+# read_projects() (Excel) never carries: a ladder divergence, not a failure.
+LADDER_PREFIXES = ("kpi_goal_", "kpi_stretch_", "kpi_current_")
 
 
 def main() -> int:

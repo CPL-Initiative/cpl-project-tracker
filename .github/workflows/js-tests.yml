@@ -764,6 +764,16 @@ jobs:
       # python, no network.
       - name: Identities map re-key guard (kb/_identities_rekey_dryrun.py)
         run: python3 tests/identities_rekey_test.py
+      # Identities map rebuild (S649) — the export's rollup builds a row's
+      # adopter and potential lists from identities[member], so an articulated
+      # member with no entry never reaches its merge target (FIRE M1274 into
+      # FIRE 130 X). Guards the fill, the refresh from the membership, the
+      # C-ID/CCN passthrough, the held orphans, each apply gate, the plan
+      # check, the receipt and its byte-for-byte undo, all on a fixture and
+      # through the generator's own articulation_rollup (imports the
+      # generator, so it needs the openpyxl installed above). No network.
+      - name: Identities map rebuild guard (kb/_identities_rebuild.py)
+        run: python3 tests/identities_rebuild_test.py
       # SkyView's CPL payload (Session 238) — the join the CPL face and the
       # articulations light stand on. Guards that the join reaches exactly the
       # points carrying `ar`, that the coverage line's two numbers share one
@@ -959,6 +969,13 @@ jobs:
       - name: Credential reference statewide flag (the Fact Sheet's set)
         run: |
           python3 tests/credential_reference_statewide_basis_test.py
+      # The printed reports name each year's own Current (S649): the generator
+      # exports kpi_current_<year> from the GOAL row's cur_* columns, a live row's
+      # from the live KPI and kpi_history. Imports the generator (openpyxl,
+      # installed at the top). Same non-required check.
+      - name: Workplan reports year pair (excel_to_dashboard.py)
+        run: |
+          python3 tests/workplan_reports_year_pair_test.py
       # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
       # repo already decided about the files I am about to touch?", replacing
       # recall across 299 KB notes. It shipped with two silent-omission bugs

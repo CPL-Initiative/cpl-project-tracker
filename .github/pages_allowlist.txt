@@ -414,6 +414,7 @@ publish kb/_harvest_no_closed_list_diagnosis.py
 publish kb/_hs_title_fold.py
 publish kb/_ib_fold_apply.py
 publish kb/_ib_official_titles.py
+publish kb/_identities_rebuild.py
 publish kb/_identities_rekey_dryrun.py
 publish kb/_identity_daily_check.py
 publish kb/_infer_disciplines.py

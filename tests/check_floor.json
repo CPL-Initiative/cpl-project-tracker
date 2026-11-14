@@ -403,6 +403,7 @@
     "service_caller_check.test.js": 30,
     "district_profiles.test.js": 10,
     "reclustering_honors.test.js": 39,
+    "workplan_reports_year_pair.test.js": 79,
     "reclustering_s649.test.js": 11,
     "shared_imports_named.test.js": 11,
     "pages_allowlist.test.js": 33

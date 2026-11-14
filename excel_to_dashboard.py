@@ -1089,10 +1089,15 @@ _LADDER_SUFFIXES = ("2526", "2627", "2728", "2829", "2930")
 
 
 def _empty_ladder():
+    # kpi_current_<year> (S649): each year's own Current, so the reports print
+    # the pair of the year they name (Sam's ruling,
+    # `sam-annual-goals-every-year-editable-2026-10-19`). Blank here; filled by
+    # apply_project_current from the Annual Goals row, the tab's one rule.
     d = {}
-    for prefix in ("kpi_goal_", "kpi_stretch_"):
+    for prefix in ("kpi_goal_", "kpi_stretch_", "kpi_current_"):
         for suffix in _LADDER_SUFFIXES:
             d[prefix + suffix] = ""
+    d["kpi_current_summary"] = ""
     return d
 
 
@@ -5320,7 +5325,7 @@ def _fmt_int(n):
     return f"{n:,}"
 
 
-def _statewide_could_adopt_by_sector():
+def _statewide_could_adopt_by_sector(art=None):
     """Per program-area count of colleges that already teach an aligned local
     course but have NOT yet adopted (articulated) the statewide credit
     recommendation — the adoption-leverage "untapped adoption" signal. Distinct
@@ -5330,17 +5335,19 @@ def _statewide_could_adopt_by_sector():
     kb/statewide_exhibit_categories.json (matched on the unified credential
     title). M-ID leverage only (mirrors _build_statewide_prescriptive; C-ID
     leverage deferred), over_merged withheld. Returns ({sector: n}, n_total) or
-    ({}, 0) when inputs are absent."""
+    ({}, 0) when inputs are absent. ``art`` replaces the committed
+    coci_articulations.json (kb/_identities_rebuild.py measures a planned map)."""
     art_path = os.path.join(SCRIPT_DIR, "kb", "coci_articulations.json")
     cats = _load_statewide_categories()
-    if not (cats and os.path.exists(art_path)):
+    if not (cats and (art is not None or os.path.exists(art_path))):
         return {}, 0
-    try:
-        with open(art_path, encoding="utf-8") as f:
-            art = json.load(f)
-    except Exception as e:
-        print(f"  could-adopt: failed to load coci_articulations.json ({e})")
-        return {}, 0
+    if art is None:
+        try:
+            with open(art_path, encoding="utf-8") as f:
+                art = json.load(f)
+        except Exception as e:
+            print(f"  could-adopt: failed to load coci_articulations.json ({e})")
+            return {}, 0
     titles = cats.get("titles", {}) or {}
     ids = art.get("identities", {}) or {}
     from collections import defaultdict
@@ -6936,7 +6943,7 @@ def _write_cpl_by_discipline_json(odir):
     return len(roll)
 
 
-def _build_statewide_prescriptive():
+def _build_statewide_prescriptive(art_doc=None):
     """Per-credential prescriptive adoption layer for the EACR "Credential view".
 
     Returns ``unified_title -> {colleges:[{college, courses:[{subject,number,
@@ -6969,14 +6976,17 @@ def _build_statewide_prescriptive():
 
     Verified + measured by kb/_verify_prescriptive_join.py (the in-session test;
     the full regen isn't testable here since the raw CustomReport isn't present).
+    ``art_doc`` replaces the committed coci_articulations.json
+    (kb/_identities_rebuild.py measures a planned identities map).
     """
     art_path = os.path.join(SCRIPT_DIR, "kb", "coci_articulations.json")
     mem_path = os.path.join(SCRIPT_DIR, "kb", "coci_minted_memberships.json")
-    if not (os.path.exists(art_path) and os.path.exists(mem_path)):
+    if not ((art_doc is not None or os.path.exists(art_path)) and os.path.exists(mem_path)):
         return None
     try:
-        with open(art_path, encoding="utf-8") as f:
-            art_doc = json.load(f)
+        if art_doc is None:
+            with open(art_path, encoding="utf-8") as f:
+                art_doc = json.load(f)
         with open(mem_path, encoding="utf-8") as f:
             mem_doc = json.load(f)
     except Exception as e:
@@ -8377,6 +8387,23 @@ def _cid_claim_holds():
     return out
 
 
+def articulation_rollup(art_ident, earned, mids):
+    """(adopted, potential) college name lists rolled up across member ids.
+    adopted = colleges that earned >=1 articulation; potential = offering minus
+    adopted. Empty unless at least one member carries an identities entry
+    (kb/coci_articulations.json): a member with no entry contributes nothing,
+    which is why kb/_identities_rebuild.py keeps every articulated id's entry.
+    Top-level so that builder and its test call this rule, not a copy."""
+    off, ad, any_art = set(), set(), False
+    for m in mids:
+        ident = art_ident.get(m)
+        if ident:
+            any_art = True
+            off |= set(ident.get("colleges_offering", []))
+            ad |= set(earned.get(m, set()))
+    return (sorted(ad), sorted(off - ad)) if any_art else ([], [])
+
+
 def export_unified_courses():
     """Build the Unified Courses tab data (window.CPL_UNIFIED_COURSES in
     unified_courses_data.js) + the full xlsx export, from the kb/coci_*.json
@@ -8575,17 +8602,7 @@ def export_unified_courses():
         return col_idx[name]
 
     def rollup(mids):
-        """(adopted, potential) college name lists rolled up across member M-IDs.
-        adopted = colleges that earned >=1 articulation; potential = offering minus
-        adopted. Empty unless at least one member actually carries an articulation."""
-        off, ad, any_art = set(), set(), False
-        for m in mids:
-            ident = art_ident.get(m)
-            if ident:
-                any_art = True
-                off |= set(ident.get("colleges_offering", []))
-                ad |= set(earned.get(m, set()))
-        return (sorted(ad), sorted(off - ad)) if any_art else ([], [])
+        return articulation_rollup(art_ident, earned, mids)
 
     def flags_of(v, cid, use_spread=True):
         sp = v.get("subject_spread", 1) or 1
@@ -11496,6 +11513,58 @@ def apply_live_workplan_current(annual_goals, kpis, live_data=None, history=None
     print(f"  Annual Workplan: {n_live} sub-activities synced to live KPI values")
 
 
+def apply_project_current(projects, annual_goals, fy_now=None):
+    """Stamp each project's kpi_current_<year> with exactly the Current the
+    Annual Goals tab shows for that row and year (S649), so the printed reports
+    name the same figure. One rule, the tab's, worked out here only:
+      * a live row (current_source 'live', set by apply_live_workplan_current)
+        reads this fiscal year from the live KPI and each closed year from its
+        kpi_history year-end; every other year is blank (its cur_* is not the
+        store);
+      * any other row reads its own current_years (_row_current_years: the GOAL
+        row, falling back to STRETCH; kpi_metric under 2025-26 only when no year
+        carries a value), and a 0 is blank, as the tab prints it.
+    kpi_current_summary is the second figure: the Current the Activities tab's
+    summary names beside this year's goal (_summary_current: the live value for a
+    live row, else the latest year a Current was set, since a cumulative count
+    reads against this year's target). The reports print it in their Current
+    column and the prompt, labeled without a year.
+    Every project has an annual_goals row (the table iterates `projects`), so
+    nothing else derives a Current. Must run after apply_live_workplan_current.
+    Mutates `projects` in place."""
+    if not projects or not annual_goals:
+        return
+    by_id = {p.get("id"): p for p in projects}
+    this_fy = fy_now or current_workplan_year()
+    for row in annual_goals:
+        p = by_id.get(row.get("id"))
+        if p is None:
+            continue
+        live = row.get("current_source") == "live"
+        if live:
+            p["kpi_current_summary"] = str(row.get("current_live_display") or "")
+        elif row.get("current_latest"):
+            # A set Current, a stored 0 included, prints as the summary does.
+            p["kpi_current_summary"] = fmt_number(_summary_current(row, this_fy))
+        else:
+            p["kpi_current_summary"] = ""
+        fy = row.get("current_fy")
+        hist = row.get("current_history") or {}
+        years = row.get("current_years") or {}
+        for label in WORKPLAN_YEARS:
+            key = "kpi_current_" + label[2:4] + label[5:7]
+            if live:
+                if label == fy:
+                    p[key] = str(row.get("current_live_display") or "")
+                elif hist.get(label):
+                    p[key] = fmt_number(hist[label])
+                else:
+                    p[key] = ""
+            else:
+                v = years.get(label)
+                p[key] = fmt_number(v) if v else ""
+
+
 def apply_live_activity_current(activity_kpis, annual_goals, kpis, live_data=None):
     """Wire the Activity Metrics sub-activity card's big number ('metric') to the
     SAME authoritative Current the Annual Workplan tab shows (Session 86), so the
@@ -12885,6 +12954,9 @@ def main():
     # the Annual Workplan table == the headline card by construction. Unmapped
     # sub-activities keep their manual Current. Must run after both merges.
     apply_live_workplan_current(annual_goals, kpis, live_data, history=_read_kpi_history())
+    # S649: the tab's per-year Current onto projects[].kpi_current_<year>, which
+    # the printed reports read (generate_reports.js, master_report.js).
+    apply_project_current(projects, annual_goals)
 
     # Session 86 — wire the Activity Metrics sub-activity cards' big number to the
     # same authoritative Current (live headline KPI for the PID_TO_KPI_KEY-mapped
@@ -12921,6 +12993,9 @@ def main():
     data = {
         "last_updated": now,
         "data_as_of":   now,
+        # The fiscal year the workplan is in ('2026-27'): the reports print this
+        # year's goal, stretch and current beside each sub-activity (S649).
+        "workplan_fy":  current_workplan_year(),
         "kpis":         kpis,
         "activity_kpis": activity_kpis,
         "update_log":   update_log,
