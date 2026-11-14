@@ -115,8 +115,7 @@ HONORS_ROWS = [
     ("LIBR M10CS", "merge_into", "LIBR M1040", AM, AM_AT),
     ("LIBR M10CR", "merge_into", "LIBR M1040", AM, AM_AT),
     ("LIBR M1040", "unified_title", "Media & Information Literacy (Honors)", AM, AM_AT),
-    ("HUMA M1110", "unified_title", "World Religions (Honors)", "trailcrew-ccr3-s112@bot",
-     "2026-07-12T21:17:48.970211+00:00"),
+    ("HUMA M1110", "unified_title", "World Religions (Honors)", AM, AM_AT),
     ("HUMA M1110", "discipline", "Religious Studies", "trailcrew-ccr3-s112@bot", "2026-07-12T21:17:48.970211+00:00"),
     ("BUSI M1228", "discipline", "Business", "someone@college.edu", "2026-10-01T00:00:00+00:00"),
 ]
@@ -153,6 +152,36 @@ HONORS = {
 }
 if os.path.exists(os.path.join(ROOT, HONORS["forward"])):
     PAIRS.append(HONORS)
+# S652 follow-ups: on the post-delete state, the bases' two Honors titles lose "(Honors)" (value alone) and two Keep
+# as-is rows hold the pairs apart (cohort honors-s652@bot).
+FOLLOWUP_ROWS = [r for r in HONORS_ROWS if r[0] not in ("HUMA M10ME", "LIBR M10CJ")]
+FOLLOWUPS = {
+    "name": "honors follow-ups", "forward": "kb/migrations/2026-11-14_s652_honors_followups.sql",
+    "rollback": "kb/migrations/2026-11-14_s652_honors_followups_rollback.sql",
+    "rows": FOLLOWUP_ROWS,
+    "changed_keys": [("HUMA M1110", "unified_title"), ("LIBR M1040", "unified_title"),
+                     ("HUMA M10ME", "merge_dismissed"), ("LIBR M1040", "merge_dismissed")],
+    "refusals": {
+        "a base title was changed since": "update kb_curation set value = 'World Religions' "
+                                          "where course_id = 'HUMA M1110' and field = 'unified_title'",
+        "a base title's reviewer differs": "update kb_curation set reviewer_email = 'someone@college.edu' "
+                                           "where course_id = 'LIBR M1040' and field = 'unified_title'",
+        "a base title was re-saved since": "update kb_curation set reviewed_at = now() "
+                                           "where course_id = 'LIBR M1040' and field = 'unified_title'",
+        "a person validated a base title": "update kb_curation set validated_at = now(), validated_by = 'someone' "
+                                           "where course_id = 'HUMA M1110' and field = 'unified_title'",
+        "a base title is gone": "delete from kb_curation where course_id = 'HUMA M1110' and field = 'unified_title'",
+        "the delete has not landed": "insert into kb_curation (course_id, field, value, reviewer_email, reviewed_at) "
+                                     "values ('LIBR M10CJ', 'merge_into', 'LIBR M1040', '" + AM + "', '" + AM_AT + "')",
+        "a dismissal slot is taken": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                     "values ('LIBR M1040', 'merge_dismissed', 'LIBR M1040|LIBR M10CS', "
+                                     "'somebody@bot')",
+        "a person saved a row on a base": "update kb_curation set reviewer_email = 'someone@college.edu' "
+                                          "where course_id = 'HUMA M1110' and field = 'discipline'",
+    },
+}
+if os.path.exists(os.path.join(ROOT, FOLLOWUPS["forward"])):
+    PAIRS.append(FOLLOWUPS)
 
 
 def code_only(sql):
