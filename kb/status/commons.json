@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T00:59:43Z",
+ "written_at": "2026-11-14T02:40:28Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14595,
+     "n": 14596,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 2867,
+     "n": 2866,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -68,8 +68,8 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 14595,
-    "failing": 2867,
+    "complete": 14596,
+    "failing": 2866,
     "unread": 2820,
     "records": 19129,
     "colleges": 118,
@@ -100,7 +100,7 @@
     {
      "n": 2894,
      "of": 5924,
-     "words": "titles carry a review stamp (1,435 a person's, 1,459 a cohort's); 2,872 credentials, 2,416 of 3,186 records stamped",
+     "words": "titles carry a review stamp (1,435 a person's, 1,459 a cohort's); 2,872 credentials, 2,415 of 3,185 records stamped",
      "open": "#exhibits/list"
     },
     {
@@ -176,8 +176,8 @@
     "cohort": 1459,
     "credentials": 2872,
     "confirmed": 1435,
-    "records": 3186,
-    "records_stamped": 2416,
+    "records": 3185,
+    "records_stamped": 2415,
     "saved_at": "2026-11-12T16:21:46Z",
     "fold_at": "2026-11-13T23:58:21Z",
     "map_titles": 5247,
@@ -274,7 +274,7 @@
    "procedures": [
     {
      "n": 16388,
-     "words": "identities and 33,417 stand-alone courses on the canvas (the 2026-11-06 layout); 33,421 stand-alone in today's build",
+     "words": "identities and 33,417 stand-alone courses on the canvas (the 2026-11-06 layout); 33,422 stand-alone in today's build",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
      "error": null
     },
@@ -287,7 +287,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-14T00:58:43+00:00",
+    "at": "2026-11-14T02:39:25+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -499,7 +499,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-14T00:56:32Z",
+    "at": "2026-11-14T02:37:01Z",
     "every_hours": 24
    },
    "facts": {
@@ -750,7 +750,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2867,
+    "n": 2866,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -1057,7 +1057,7 @@
    "project": "program-requirements",
    "n": 1,
    "title": "Merge or close pull request 3250, which would reverse Sheet 82 card 2",
-   "teaches": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way.",
+   "teaches": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way. Carried to Sheet 195 as card 5.",
    "open": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
    "todo_id": null,
    "stop": "It ends when you answer the sheet."
@@ -1068,16 +1068,6 @@
    "n": 1,
    "title": "Three saved issuer rows read alifornia Veterinary Medical Association",
    "teaches": "A person saved three rows on July 9; two drop the C of California and one sits on Water Treatment Facilities.",
-   "open": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
-   "todo_id": null,
-   "stop": "It ends when you answer the sheet."
-  },
-  {
-   "kind": "decision",
-   "project": "exhibit",
-   "n": 1,
-   "title": "Las Positas Industry Training Evidence cards: department and code, or course title",
-   "teaches": "22 cards, 17 still proposing department and course code; a course title reverses the November 12 ruling for them.",
    "open": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
    "todo_id": null,
    "stop": "It ends when you answer the sheet."
