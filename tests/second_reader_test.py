@@ -141,6 +141,25 @@ with tempfile.TemporaryDirectory() as tmp:
     check("each unscored row keeps its reading and names the score error",
           len(sdoc["rows"]) == 2 and all(r["second"]["record"] and r["second"]["error"].startswith("score: ")
                                          for r in sdoc["rows"]))
+
+    # 4d. a run that reads nothing exits nonzero: the capture found no page, so every chosen record is skipped.
+    #     The one legitimate empty run, a college with no failing record, exits 0.
+    empty_cap = os.path.join(tmp, "empty_capture")
+    os.makedirs(os.path.join(empty_cap, "sources"))
+    posted = []
+    X._post = lambda body, key: posted.append(body) or fake_post(body, key)
+    R.OUT = os.path.join(tmp, "second_out_empty")
+    rc_empty = R.run("Test College", empty_cap, key="service-key", workers=1)
+    edoc = json.load(open(os.path.join(R.OUT, "second_test.json"), encoding="utf-8"))
+    check("a run that reads nothing (every record skipped, no page) exits nonzero", rc_empty != 0)
+    check("the empty run still writes its file, naming what it skipped",
+          edoc["read"] == 0 and len(edoc["skipped_no_page"]) == 2 and not posted)
+    clean = os.path.join(tmp, "clean")
+    os.makedirs(os.path.join(clean, "test", "records"))
+    json.dump(passing, open(os.path.join(clean, "test", "records", "00001.json"), "w"))
+    R.COLLEGE_DIR, R.OUT = clean, os.path.join(tmp, "second_out_clean")
+    rc_clean = R.run("Test College", os.path.join(tmp, "out"), key="service-key", workers=1)
+    check("a college with no failing record has nothing to read and exits 0", rc_clean == 0 and not posted)
     R.COLLEGE_DIR, R.OUT = saved, out_saved
 
 # 5. the extractor's call carries provider and model only when given
