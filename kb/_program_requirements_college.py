@@ -1293,9 +1293,11 @@ def ncl_co_award(page: dict, a: dict, b: dict) -> bool:
 
 
 def ncl_page_ref(page: dict, m: dict) -> dict:
+    """The page an answer names, compact (no page text): its heading and title as printed, the awards it
+    prints (page_award_kinds), and how the title matched."""
     pg = page["pg"]
-    return {"url": pg.get("url"), "title": pg.get("title"), "h1": pg.get("h1"), "award": m["award"],
-            "title_share": m["title_share"], "heading_share": m["heading_share"]}
+    return {"url": pg.get("url"), "title": pg.get("title"), "h1": pg.get("h1"), "awards": sorted(page["kinds"]),
+            "award": m["award"], "title_share": m["title_share"], "heading_share": m["heading_share"]}
 
 
 def ncl_listed_names(info: dict | None) -> list[dict] | None:
@@ -1417,17 +1419,35 @@ def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], lis
 
 
 def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict) -> dict:
-    """The capture's account of the lookup: the self-test, how many it searched and found, and the pages
-    found, so a paid read of them can be priced before it is asked for."""
+    """The capture's account of the lookup: the self-test, how many it searched and found, the pages found
+    (so a paid read of them can be priced before it is asked for), and every looked-up program's answer in
+    short: a found one's page heading and the awards it prints, any other's reason or basis. A capture-only
+    run files this account alone (capture_preview.json), and a run's artifact cannot be read from a session,
+    so the branch has to carry enough to judge each answer (S652)."""
     by: dict[str, int] = {}
     for a in answers.values():
         by[a["result"]] = by.get(a["result"], 0) + 1
     found = [{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
-              "status": r.get("status"), "url": answers[r["control_number"]]["page"]["url"]}
+              "status": r.get("status"), "url": answers[r["control_number"]]["page"]["url"],
+              "h1": answers[r["control_number"]]["page"].get("h1"),
+              "page_title": answers[r["control_number"]]["page"].get("title"),
+              "awards": answers[r["control_number"]]["page"].get("awards")}
              for r in recs if (answers.get(r["control_number"]) or {}).get("result") == "found"]
+    others = []
+    for r in recs:
+        a = answers.get(r["control_number"])
+        if a is None or a["result"] == "found":
+            continue
+        row = {"control_number": r["control_number"], "title": r["title"], "award": r["award"],
+               "status": r.get("status"), "result": a["result"]}
+        row.update({k: a[k] for k in ("why", "basis") if k in a})
+        if a.get("page"):
+            row.update(url=a["page"]["url"], h1=a["page"].get("h1"), awards=a["page"].get("awards"))
+        others.append(row)
     return {"self_test": test, "programs": len(answers), "by_result": by, "found": by.get("found", 0),
             "found_active": sum(1 for f in found if f["status"] == "Active"),
-            "found_pages": len({page_stem(f["url"]) for f in found}), "found_programs": found}
+            "found_pages": len({page_stem(f["url"]) for f in found}), "found_programs": found,
+            "other_programs": others}
 
 
 REFUSED = "refused"                 # a gated PDF block refused (decision 16): filed as no read page

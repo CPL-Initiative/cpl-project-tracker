@@ -4885,6 +4885,19 @@ check(not any(r["control_number"] in NCL_CNS for r in (sk_rep["would_extract"].g
 check(next(e for e in sk_filed if e["control_number"] == "05809")["catalog_lookup"]["result"] == "found"
       and "catalog_lookup" not in next(e for e in sk_filed if e["control_number"] == "90001"),
       "the filed sources.json carries a no-closed-list program's answer, and nothing new on a closed-list entry")
+acct = sk_rep["catalog_lookup"]
+acct_found = {f["control_number"]: f for f in acct["found_programs"]}
+acct_other = {o["control_number"]: o for o in acct["other_programs"]}
+check(acct_found["05809"]["h1"] == "Accounting" and acct_found["05809"]["awards"] == ["as"]
+      and lk["05809"]["page"]["awards"] == ["as"]
+      and acct_other["90002"] == {"control_number": "90002", "title": "Business", "award": "A.S. Degree",
+                                  "status": "Active", "result": "not_matched",
+                                  "why": "no page read names it by title and award"}
+      and acct_other["90004"]["url"] == SK + "programs/digital-media-aa.php"
+      and set(acct_found) | set(acct_other) == set(NCL_CNS)
+      and "text" not in json.dumps(acct) and acct["self_test"]["recall"] == round(6 / 7, 3),
+      "the filed account carries each looked-up program's answer in short (a found page's heading and printed "
+      "awards, any other's reason) and the self-test, and no page text: %r" % acct_other.get("90002"))
 off_code, off_src, off_rep, off_filed = run_sk_capture("0")
 check(off_code == 0 and "catalog_lookup" not in off_rep and not any("catalog_lookup" in t for t in off_src.values()),
       "NCL_CATALOG_LOOKUP=0 runs the capture as before S652")
