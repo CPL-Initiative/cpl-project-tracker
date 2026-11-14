@@ -121,11 +121,59 @@ finally:
         os.environ["SUPABASE_SERVICE_KEY"] = _key
 check(len(_sent) == 3, "the pilot extraction stops at its $40 hard stop: %d calls sent at $15 each" % len(_sent))
 
+# The second reader (second-reader.yml): its price is free, and its hard stop is checked before each call with
+# the spend added after it (S653). Five records at $15 a call, one worker: three calls, and no fourth.
+import _second_reader as SR  # noqa: E402
+_recs = [{"control_number": str(n), "college": "Nowhere", "title": "T%d" % n, "score": {"pass": False}}
+         for n in range(5)]
+_src = {"text": "x", "closed_list": [], "award": "A.A. Degree"}
+_saved = (SR.failing_records, SR.source_for, SR.OUT, XP.call, XP.cost)
+_sent2 = []
+with tempfile.TemporaryDirectory() as _tmp:
+    SR.failing_records = lambda slug: list(_recs)
+    SR.source_for = lambda capture_dir, record: dict(_src)
+    SR.OUT = _tmp
+    _gh = os.environ.pop("GITHUB_OUTPUT", None)
+    check(SR.main(["--college", "Nowhere Test College", "--price", "--limit-usd", "40"]) == 0,
+          "the second reader prices its records without a key or a call")
+    if _gh is not None:
+        os.environ["GITHUB_OUTPUT"] = _gh
+    XP.call = lambda src, key, **kw: _sent2.append(1) or {"record": None, "model": "m", "usage": None}
+    XP.cost = lambda model, usage: 15.0
+    try:
+        SR.run("Nowhere Test College", "cap", None, False, "test-not-a-key", None, 1, 40.0)
+    finally:
+        SR.failing_records, SR.source_for, SR.OUT, XP.call, XP.cost = _saved
+check(len(_sent2) == 3, "the second reader stops at its $40 hard stop: %d calls sent at $15 each" % len(_sent2))
+
 # ── the workflows ────────────────────────────────────────────────────────────
-# Every step that calls a paid extraction: the college script's extract step, or the pilot extraction
-# script run without --price.
-EXTRACT = re.compile(r"_program_requirements_college\.py\s+extract\b|"
-                     r"python3?\s+\S*_program_requirements_extract\.py(?![^\n]*--price)")
+# Every command that calls the model Edge Function: the college script's extract step, the pilot extraction
+# script and the second reader (kb/_second_reader.py), each paid unless that one command carries --price
+# (or --dry-run). A step's run text is cut into its commands first (line continuations joined, ${{ }}
+# expressions set aside, then split at newlines, ;, &&, || and |), so a --price later on the same line, in
+# another command, never frees a paid one.
+# A command that runs the script (python, any flags, then its path), never one that only names it (git diff).
+PAID = re.compile(r"\bpython3?(?:\s+-\S+)*\s+\S*(?:_program_requirements_college\.py\s+extract\b|"
+                  r"_program_requirements_extract\.py|_second_reader\.py)")
+FREE = re.compile(r"(?<!\S)--(?:price|dry-run)(?!\S)")
+
+
+def commands(run_text):
+    t = re.sub(r"\$\{\{.*?\}\}", " EXPR ", str(run_text or "").replace("\\\n", " "), flags=re.S)
+    return [c.strip() for c in re.split(r"\n|;|&&|\|\||\|", t) if c.strip()]
+
+
+def paid_commands(run_text):
+    return [c for c in commands(run_text) if PAID.search(c) and not FREE.search(c)]
+
+
+check(paid_commands('python3 kb/_program_requirements_extract.py --only "$ONLY" && echo --price') != [],
+      "a paid call followed by --price in another command on the same line stays paid")
+check(paid_commands("python3 kb/_second_reader.py --college x --capture out \\\n  --price --limit-usd 40") == [],
+      "a price command split over continued lines is free")
+check(paid_commands("python3 kb/_second_reader.py --college x --dry-run") == [], "a dry run is free")
+check(len(paid_commands("python3 kb/_second_reader.py --college x --priced")) == 1, "--priced is no --price")
+
 checked = 0
 wf_dir = os.path.join(ROOT, ".github", "workflows")
 for name in sorted(os.listdir(wf_dir)):
@@ -136,7 +184,8 @@ for name in sorted(os.listdir(wf_dir)):
     for job_id, job in (wf.get("jobs") or {}).items():
         steps = job.get("steps") or []
         for i, st in enumerate(steps):
-            if not EXTRACT.search(str(st.get("run") or "")):
+            paid = paid_commands(st.get("run"))
+            if not paid:
                 continue
             checked += 1
             where = "%s, job %s, step %r" % (name, job_id, st.get("name"))
@@ -152,17 +201,17 @@ for name in sorted(os.listdir(wf_dir)):
             if price_steps:
                 ps = steps[price_steps[0]]
                 prun = str(ps.get("run") or "")
-                check(("_program_requirements_wave.py price" in prun or re.search(r"_program_requirements_extract\.py.*--price", prun))
-                      and "--limit-usd" in prun, "%s: the price step prices against a limit" % where)
+                check(any(("_program_requirements_wave.py price" in c or FREE.search(c)) and "--limit-usd" in c
+                          for c in commands(prun)), "%s: the price step prices against a limit" % where)
                 check(not ps.get("if"), "%s: the price step runs on every path (no if: on it)" % where)
-            run = str(st.get("run") or "")
-            check("--ceiling-usd" in run, "%s passes the hard stop" % where)
+            run = " ".join(paid)
+            check(all("--ceiling-usd" in c for c in paid), "%s passes the hard stop on every paid command" % where)
             ceiling = re.search(r"--ceiling-usd\s+\"?\$\{?([A-Z_]+)", run)
             env = {**(wf.get("env") or {}), **(job.get("env") or {}), **(st.get("env") or {})}
             val = str(env.get(ceiling.group(1), "")) if ceiling else ""
             check(bool(ceiling) and val.strip() != "" and "''" not in val,
                   "%s: the hard stop is never empty (%s=%r)" % (where, ceiling.group(1) if ceiling else "?", val))
-check(checked >= 3, "the college, wave and pilot extraction workflows' steps were found (%d)" % checked)
+check(checked >= 4, "the college, wave, pilot extraction and second reader workflows' steps were found (%d)" % checked)
 
 print("\n%d failed" % len(FAILS) if FAILS else "\nall passed")
 sys.exit(1 if FAILS else 0)

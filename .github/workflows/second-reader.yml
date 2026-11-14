@@ -57,11 +57,22 @@ jobs:
         env:
           CENSUS_DELAY_MS: '4000'
         run: python3 kb/_program_requirements_college.py capture --college "${{ inputs.college }}" --out out --limit 0
+      # Every paid read is priced before any call ($40 a run on the estimate, Sam's standing go; S653): over
+      # the limit, nothing is sent. Free, and it needs no key. tests/program_requirements_extraction_gate_test.py
+      # fails a workflow whose paid call can run without its price step's go or its hard stop.
+      - name: Price the second reading ($40 a run, Sam's standing go)
+        id: price
+        run: |
+          python3 kb/_second_reader.py --college "${{ inputs.college }}" --capture out --price --limit-usd 40 \
+            ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }}
       - name: The second reader over the failing records (suggests, writes nothing)
+        if: steps.price.outputs.go == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          # The hard stop: the run's cost is summed as calls come back, and at $40 no further record is sent.
+          CEILING: '40'
         run: |
-          python3 kb/_second_reader.py --college "${{ inputs.college }}" --capture out \
+          python3 kb/_second_reader.py --college "${{ inputs.college }}" --capture out --ceiling-usd "$CEILING" \
             ${{ inputs.limit && format('--limit {0}', inputs.limit) || '' }} \
             ${{ inputs.model && format('--model {0}', inputs.model) || '' }}
       - name: Upload the comparison

@@ -138,7 +138,24 @@ def row_for(record, src, got, second_score):
             "posture": POSTURE, "page_chars": len(src.get("text") or "") if src else 0}
 
 
-def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=None, workers=4):
+def price_main(college, capture_dir=None, limit=None, limit_usd="40") -> int:
+    """The estimate before any call (S653): the records with a page in hand x the default rate per program x
+    the margin (kb/_program_requirements_wave.py's price()), against Sam's $40 limit a run. Writes go= for the
+    workflow's second-reader step; calls nothing and needs no key."""
+    import _program_requirements_wave as W
+    every = failing_records(slug_of(college))
+    records = every[:limit] if limit else every
+    n = sum(1 for r in records if source_for(capture_dir, r))
+    got = W.price(n, W.DEFAULT_COST_PER_PROGRAM, W.parse_limit(limit_usd), True)
+    print("second reader, %s: estimate $%.2f for %d records at $%.4f each with the %.2f margin; %s"
+          % (college, got["price_usd"], n, got["cost_per_program"], got["margin"], got["why"]), flush=True)
+    if not got["within_limit"]:
+        print("::error::the estimate $%.2f is over the $%.0f limit; nothing is sent" % (got["price_usd"], got["limit_usd"]))
+    W._output("go", "true" if got["go"] else "false")
+    return 0
+
+
+def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=None, workers=4, ceiling=None):
     import _program_requirements_extract as X
     import _program_requirements_reconcile as R
     slug = slug_of(college)
@@ -158,9 +175,23 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
         print("SUPABASE_SERVICE_KEY is not set; the Edge Function takes only the service key.", file=sys.stderr)
         return 2
 
+    # The hard stop (S653): checked before each call, the call's charge added after it comes back
+    # (call_charge: an unpriced call with usage counts at the dearest model's price). The calls in flight
+    # finish, so a run passes the ceiling by at most `workers` calls.
+    import threading
+    import _program_requirements_college as C
+    spend = {"usd": 0.0, "stopped": 0}
+    lock = threading.Lock()
+
     def one(pair):
         rec, src = pair
+        with lock:
+            if ceiling is not None and spend["usd"] >= ceiling:
+                spend["stopped"] += 1
+                return None
         got = X.call(src, key, provider=PROVIDER, model=model)
+        with lock:
+            spend["usd"] += C.call_charge(X.cost(got.get("model"), got.get("usage")), got.get("usage"))
         second = got.get("record") if isinstance(got.get("record"), dict) else None
         sc = None
         if second:
@@ -178,7 +209,10 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
 
     from concurrent.futures import ThreadPoolExecutor
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        rows = list(pool.map(one, readable))
+        rows = [r for r in pool.map(one, readable) if r is not None]
+    if spend["stopped"]:
+        print("::warning::the run's cost $%.2f reached the $%.2f hard stop; %d record(s) not sent"
+              % (spend["usd"], ceiling, spend["stopped"]), flush=True)
     counts = {}
     for r in rows:
         v = r["comparison"]["verdict"]
@@ -223,7 +257,7 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
     return 0
 
 
-def main():
+def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--college", required=True, help="the college, as program_source_registry names it")
     ap.add_argument("--capture", help="the runner's capture dir (out/), whose sources/<cn>.json carry the page text")
@@ -231,9 +265,17 @@ def main():
     ap.add_argument("--model", help="the second reader's model id, in place of the function's XAI_MODEL")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--dry-run", action="store_true", help="print the plan; call nothing")
-    a = ap.parse_args()
+    ap.add_argument("--price", action="store_true",
+                    help="price what would be sent against --limit-usd, write go= for the workflow, and call nothing")
+    ap.add_argument("--limit-usd", default="40")
+    ap.add_argument("--ceiling-usd", default="", help="the hard stop: no further record is sent once the run's "
+                    "cost reaches it")
+    a = ap.parse_args(argv)
+    if a.price:
+        return price_main(a.college, a.capture, a.limit, a.limit_usd)
+    ceiling = float(a.ceiling_usd) if str(a.ceiling_usd or "").strip() else None
     return run(a.college, a.capture, a.limit, a.dry_run, (os.environ.get("SUPABASE_SERVICE_KEY") or "").strip(),
-               a.model, a.workers)
+               a.model, a.workers, ceiling)
 
 
 if __name__ == "__main__":
