@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 940,
+  "file_datasets": 947,
   "external_services": 195,
-  "consumers": 589,
+  "consumers": 592,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1707
+     "line": 2278
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1663
+     "line": 2234
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1600
+     "line": 2171
     }
    ],
    "main_committers": []
@@ -1019,7 +1019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 25
+     "line": 26
     }
    ],
    "main_committers": []
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1234
+     "line": 1764
     }
    ],
    "main_committers": []
@@ -4687,14 +4687,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 263
+     "line": 302
     },
     {
      "id": "script:scripts/install_prompt_guards.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 263
+     "line": 302
     }
    ],
    "served": false,
@@ -8588,7 +8588,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5679
+     "line": 6266
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8608,7 +8608,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5729
+     "line": 6316
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -11578,6 +11578,13 @@
      "line": 98
     },
     {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 405
+    },
+    {
      "id": "script:kb/_ib_fold_apply.py",
      "kind": "script",
      "direction": "read",
@@ -11941,6 +11948,34 @@
      "direction": "read",
      "how": "literal",
      "line": 445
+    },
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 260
+    },
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 269
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 309
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 312
     },
     {
      "id": "script:kb/_hs_title_fold.py",
@@ -12371,6 +12406,13 @@
      "direction": "read",
      "how": "literal",
      "line": 33
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 406
     },
     {
      "id": "script:kb/_hs_title_fold.py",
@@ -13228,6 +13270,13 @@
      "direction": "read",
      "how": "literal",
      "line": 35
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 407
     },
     {
      "id": "script:kb/_hs_title_fold.py",
@@ -16496,6 +16545,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/honors_delete_s652_out/2026-11-14/followups_plan.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 355
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/honors_delete_s652_out/2026-11-14/followups_plan.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 358
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/identities_rekey_out/2026-09-05/dead_worklist.json": {
    "consumers": [
     {
@@ -17226,7 +17301,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 2551
+     "line": 3122
     }
    ],
    "served": true,
@@ -17239,7 +17314,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6110
+     "line": 6700
     }
    ],
    "served": true,
@@ -17753,6 +17828,19 @@
    "main_committers": [
     "workflow:library-publish.yml"
    ]
+  },
+  "file:kb/receipts/migration_s652_honors_two_row_delete_43607926526.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:kb/reclustering_s648_out/2026-11-13/honors_worklist.json": {
    "consumers": [
@@ -19722,6 +19810,26 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/status/harvest_ncl_lookup_census.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_harvest_ncl_lookup_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 32
+    },
+    {
+     "id": "script:kb/_harvest_ncl_lookup_census.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 32
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/status/harvest_no_closed_list.json": {
    "consumers": [
     {
@@ -20942,7 +21050,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5929
+     "line": 6516
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20962,7 +21070,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5148
+     "line": 5735
     }
    ],
    "served": false,
@@ -21579,7 +21687,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6016
+     "line": 6603
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -24296,6 +24404,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/clock_time_guard_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/cobi_live_banner.test.js": {
    "consumers": [
     {
@@ -25200,6 +25321,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/harvest_ncl_lookup_census_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/harvest_no_closed_list_diagnosis_test.py": {
    "consumers": [
     {
@@ -25482,6 +25616,19 @@
    "main_committers": []
   },
   "file:tests/merge_chain_flatten_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/merge_read_guard_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -26582,6 +26729,13 @@
      "line": 31
     },
     {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 283
+    },
+    {
      "id": "script:kb/_mid_outcomes_compare.py",
      "kind": "script",
      "direction": "read",
@@ -26704,6 +26858,20 @@
      "line": 108
     },
     {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 316
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 281
+    },
+    {
      "id": "script:kb/_identities_rebuild.py",
      "kind": "script",
      "direction": "read",
@@ -26783,6 +26951,13 @@
      "direction": "write",
      "how": "literal",
      "line": 10299
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 282
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -26865,6 +27040,20 @@
      "line": 114
     },
     {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 318
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 281
+    },
+    {
      "id": "script:kb/_mid_outcomes_compare.py",
      "kind": "script",
      "direction": "read",
@@ -26933,6 +27122,13 @@
      "direction": "read",
      "how": "literal",
      "line": 865
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 282
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -27092,6 +27288,13 @@
      "line": 117
     },
     {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 282
+    },
+    {
      "id": "script:kb/_mid_outcomes_compare.py",
      "kind": "script",
      "direction": "read",
@@ -27197,6 +27400,20 @@
      "line": 115
     },
     {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 317
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 281
+    },
+    {
      "id": "script:kb/_merge_candidate_queue.py",
      "kind": "script",
      "direction": "read",
@@ -27283,6 +27500,20 @@
      "direction": "read",
      "how": "literal",
      "line": 140
+    },
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 290
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 283
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -28329,7 +28560,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6084
+     "line": 6674
     }
    ],
    "main_committers": []
@@ -28341,7 +28572,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6193
+     "line": 6783
     }
    ],
    "main_committers": []
@@ -33417,6 +33648,7 @@
     "tests/program_requirements_wave_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
+    "tests/harvest_ncl_lookup_census_test.py",
     "tests/program_requirements_dated_reads_test.py",
     "tests/program_requirements_heading_agreement_test.py",
     "tests/program_requirements_pdf_numbers_after_test.py",
@@ -33475,6 +33707,8 @@
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",
+    "tests/merge_read_guard_test.py",
+    "tests/clock_time_guard_test.py",
     "tests/jev_adjudicate_test.py",
     "tests/exhibit_reanalysis_jev_test.py",
     "tests/jev_battery_test.py",
@@ -34441,6 +34675,7 @@
   "kb/row_audit/*.md",
   "kb/status/harvest_heading_agreement.json",
   "kb/status/harvest_heading_agreement.md",
+  "kb/status/harvest_ncl_lookup_census.json",
   "kb/status/mid_outcomes_compare_*",
   "kb/subj4_*",
   "kb/supabase_*.sql",

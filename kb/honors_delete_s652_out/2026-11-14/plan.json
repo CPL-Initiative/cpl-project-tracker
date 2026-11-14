@@ -1,0 +1,648 @@
+{
+ "_about": "Honors S652 dry-run plan: delete the two automerge-v1 rows HUMA M10ME and LIBR M10CJ merge_into their bases. Written by kb/_honors_two_row_delete_s652.py --plan; nothing applied.",
+ "date": "2026-11-14",
+ "ruling": {
+  "where": "Open Asks Sheet 197 card 2",
+  "title": "Delete two bot rows so two Honors courses stand apart",
+  "said": "delete",
+  "button": "Delete both rows",
+  "at": "2026-11-14T14:35Z",
+  "by": "his own call",
+  "background": "sam-honors-own-mid-2026-11-13 (Sheet 191 card 1)"
+ },
+ "rows_before": [
+  {
+   "course_id": "HUMA M10ME",
+   "field": "merge_into",
+   "value": "HUMA M1110",
+   "reviewer_email": "automerge-v1@bot",
+   "reviewed_at": "2026-06-12T22:47:01.69179+00:00",
+   "validated_at": null,
+   "validated_by": null
+  },
+  {
+   "course_id": "LIBR M10CJ",
+   "field": "merge_into",
+   "value": "LIBR M1040",
+   "reviewer_email": "automerge-v1@bot",
+   "reviewed_at": "2026-06-12T22:47:01.69179+00:00",
+   "validated_at": null,
+   "validated_by": null
+  }
+ ],
+ "rows_after": null,
+ "inserts": [],
+ "why_no_insert": "each Honors course's own record already exists as a stand-alone record in kb/coci_minted_singletons.json; with the bot's row gone nothing folds it, nothing points into it and no CN: row re-homes it, so the export emits it as its own row.",
+ "courses": {
+  "HUMA M10ME": {
+   "college": "MiraCosta College",
+   "code": "RELG 101H",
+   "title": "World Religions (Honors)",
+   "control_number": "CCC000588084",
+   "base": {
+    "code": "RELG 101",
+    "control_number": "CCC000545257",
+    "own_leaf": "PHIL M1116"
+   }
+  },
+  "LIBR M10CJ": {
+   "college": "MiraCosta College",
+   "code": "LIBR 201H",
+   "title": "Media & Information Literacy (Honors)",
+   "control_number": "CCC000572223",
+   "base": {
+    "code": "LIBR 201",
+    "control_number": "CCC000354460",
+    "own_leaf": "LIBR M10CS"
+   }
+  }
+ },
+ "overlay": {
+  "synced": "2026-11-14T13:44:21Z",
+  "entries_naming_the_ids": {
+   "HUMA M10ME": {
+    "merge_into": "HUMA M1110",
+    "reviewed_by": "automerge-v1@bot",
+    "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+   },
+   "HUMA M1110": {
+    "discipline": "Religious Studies",
+    "reviewed_by": "trailcrew-ccr3-s112@bot",
+    "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
+    "unified_title": "World Religions (Honors)"
+   },
+   "LIBR M1040": {
+    "unified_title": "Media & Information Literacy (Honors)",
+    "reviewed_by": "automerge-v1@bot",
+    "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+   },
+   "LIBR M10CJ": {
+    "merge_into": "LIBR M1040",
+    "reviewed_by": "automerge-v1@bot",
+    "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+   },
+   "LIBR M10CR": {
+    "merge_into": "LIBR M1040",
+    "reviewed_by": "automerge-v1@bot",
+    "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+   },
+   "LIBR M10CS": {
+    "merge_into": "LIBR M1040",
+    "reviewed_by": "automerge-v1@bot",
+    "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+   },
+   "PHIL M1094": {
+    "merge_into": "HUMA M1110",
+    "reviewed_by": "automerge-titlelane-v1@bot",
+    "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
+    "unified_title": "Introduction to the World Religions"
+   },
+   "PHIL M10GO": {
+    "merge_into": "HUMA M1110",
+    "reviewed_by": "automerge-titlelane-v1@bot",
+    "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+   },
+   "PHIL M10GW": {
+    "merge_into": "HUMA M1110",
+    "reviewed_by": "automerge-titlelane-v1@bot",
+    "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+   },
+   "PHIL M10HH": {
+    "merge_into": "HUMA M1110",
+    "reviewed_by": "automerge-titlelane-v1@bot",
+    "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+   },
+   "PHIL M10HV": {
+    "merge_into": "HUMA M1110",
+    "reviewed_by": "automerge-titlelane-v1@bot",
+    "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+   },
+   "PHIL M10ID": {
+    "merge_into": "HUMA M1110",
+    "reviewed_by": "automerge-v1@bot",
+    "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+   },
+   "PHIL M1105": {
+    "merge_into": "HUMA M1110",
+    "reviewed_by": "automerge-titlelane-v1@bot",
+    "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+   },
+   "PHIL M1116": {
+    "merge_into": "HUMA M1110",
+    "reviewed_by": "automerge-v1@bot",
+    "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+   }
+  },
+  "person_entries": [],
+  "pointers_into_leaves": [],
+  "cn_rows": []
+ },
+ "alias_chain": {
+  "newest_applied_map": "kb/anchor_rekey_out/2026-11-08/alias_map.json",
+  "pending_maps": [],
+  "resolved": {
+   "HUMA M10ME": {
+    "through_every_map": "HUMA M10ME",
+    "hops": [],
+    "through_pending": "HUMA M10ME"
+   },
+   "LIBR M10CJ": {
+    "through_every_map": "LIBR M10CJ",
+    "hops": [],
+    "through_pending": "LIBR M10CJ"
+   },
+   "HUMA M1110": {
+    "through_every_map": "HUMA M1110",
+    "hops": [],
+    "through_pending": "HUMA M1110"
+   },
+   "LIBR M1040": {
+    "through_every_map": "LIBR M1040",
+    "hops": [],
+    "through_pending": "LIBR M1040"
+   }
+  },
+  "maps_renaming_one_of_them": [],
+  "effect": "none: no map renames any of the four ids, no map is pending, and a delete re-keys nothing; supabase-rekey.yml has no row left to carry for the two leaves"
+ },
+ "identities_map": {
+  "before": {
+   "missing_entries": 0
+  },
+  "identities_entries": 2316,
+  "articulation_records": 4591,
+  "records_on_the_four_ids": {
+   "HUMA M10ME": 0,
+   "LIBR M10CJ": 0,
+   "HUMA M1110": 0,
+   "LIBR M1040": 0
+  },
+  "entries_on_the_four_ids": {
+   "HUMA M10ME": false,
+   "LIBR M10CJ": false,
+   "HUMA M1110": false,
+   "LIBR M1040": false
+  },
+  "catalog": {
+   "HUMA M10ME": "stand-alone record",
+   "LIBR M10CJ": "stand-alone record",
+   "HUMA M1110": "minted course",
+   "LIBR M1040": "minted course"
+  },
+  "after": {
+   "missing_entries": 0
+  },
+  "follow_up_rebuild_fills": 0,
+  "why": "None of the four ids carries an articulation record, so none needs an identities entry and the rollup's adopter and potential lists stay empty on all four; a later rebuild has nothing to fill for them."
+ },
+ "simulated": {
+  "what": "simulated, not applied: export_unified_courses() through its UC_KB_DIR / UC_OUT_DIR seam on kb/ and on a symlink copy of kb/ whose overlay lacks the two entries, in the same session",
+  "files": {
+   "unified_courses_index.js": {
+    "keys_before": 49804,
+    "keys_after": 49806,
+    "changed": [
+     "HUMA M10ME",
+     "HUMA M1110",
+     "LIBR M10CJ"
+    ]
+   },
+   "unified_courses_data.js": {
+    "keys_before": 16395,
+    "keys_after": 16395,
+    "changed": [
+     "committed_curation",
+     "rows/HUMA M1110",
+     "rows/LIBR M1040"
+    ]
+   },
+   "unified_courses_standalone.js": {
+    "keys_before": 33422,
+    "keys_after": 33424,
+    "changed": [
+     "rows/HUMA M10ME",
+     "rows/LIBR M10CJ"
+    ]
+   },
+   "unified_courses_members.js": {
+    "keys_before": 49563,
+    "keys_after": 49565,
+    "changed": [
+     "members/HUMA M10ME",
+     "members/HUMA M1110",
+     "members/LIBR M1040",
+     "members/LIBR M10CJ"
+    ]
+   },
+   "unified_courses_details.js": {
+    "keys_before": 46262,
+    "keys_after": 46264,
+    "changed": [
+     "HUMA M10ME",
+     "LIBR M1040",
+     "LIBR M10CJ"
+    ]
+   },
+   "unified_courses_member_desc.js": {
+    "keys_before": 46232,
+    "keys_after": 46234,
+    "changed": [
+     "desc/HUMA M10ME",
+     "desc/HUMA M1110",
+     "desc/LIBR M1040",
+     "desc/LIBR M10CJ"
+    ]
+   },
+   "unified_courses_suggestions.js": {
+    "keys_before": 14,
+    "keys_after": 14,
+    "changed": [
+     "count",
+     "groups"
+    ]
+   },
+   "unified_courses_aligned.js": {
+    "keys_before": 1,
+    "keys_after": 1,
+    "changed": []
+   }
+  },
+  "ids": {
+   "HUMA M10ME": {
+    "index": {
+     "before": null,
+     "after": [
+      "HUMA M10ME",
+      "World Religions (Honors)",
+      "RELG",
+      "Stand-Alone",
+      3.0
+     ]
+    },
+    "row": {
+     "before": null,
+     "after": {
+      "kind": "Stand-Alone",
+      "title": "World Religions (Honors)",
+      "disc": "Humanities",
+      "dsrc": "top_division",
+      "units": 3.0,
+      "top": "1510.00",
+      "subj": [
+       "RELG"
+      ],
+      "members": 1,
+      "auto_n": null,
+      "adopted": [],
+      "potential": []
+     }
+    },
+    "members": {
+     "before": {
+      "members": 0,
+      "colleges": 0,
+      "units": [],
+      "rows": []
+     },
+     "after": {
+      "members": 1,
+      "colleges": 1,
+      "units": [
+       3
+      ],
+      "rows": [
+       [
+        "MiraCosta College",
+        "RELG 101H",
+        "World Religions (Honors)",
+        3,
+        "CCC000588084"
+       ]
+      ]
+     }
+    }
+   },
+   "LIBR M10CJ": {
+    "index": {
+     "before": null,
+     "after": [
+      "LIBR M10CJ",
+      "Media & Information Literacy (Honors)",
+      "LIBR",
+      "Stand-Alone",
+      3.0
+     ]
+    },
+    "row": {
+     "before": null,
+     "after": {
+      "kind": "Stand-Alone",
+      "title": "Media & Information Literacy (Honors)",
+      "disc": "Library Science",
+      "dsrc": null,
+      "units": 3.0,
+      "top": "1601.00",
+      "subj": [
+       "LIBR"
+      ],
+      "members": 1,
+      "auto_n": null,
+      "adopted": [],
+      "potential": []
+     }
+    },
+    "members": {
+     "before": {
+      "members": 0,
+      "colleges": 0,
+      "units": [],
+      "rows": []
+     },
+     "after": {
+      "members": 1,
+      "colleges": 1,
+      "units": [
+       3
+      ],
+      "rows": [
+       [
+        "MiraCosta College",
+        "LIBR 201H",
+        "Media & Information Literacy (Honors)",
+        3,
+        "CCC000572223"
+       ]
+      ]
+     }
+    }
+   },
+   "HUMA M1110": {
+    "index": {
+     "before": [
+      "HUMA M1110",
+      "World Religions (Honors)",
+      "HUMAN;PHIL;RELG",
+      "Course",
+      3.0
+     ],
+     "after": [
+      "HUMA M1110",
+      "World Religions (Honors)",
+      "HUMAN;PHIL",
+      "Course",
+      3.0
+     ]
+    },
+    "row": {
+     "before": {
+      "kind": "Course",
+      "title": "World Religions (Honors)",
+      "disc": "Religious Studies",
+      "dsrc": null,
+      "units": 3.0,
+      "top": "1509.00",
+      "subj": [
+       "HUMAN",
+       "PHIL",
+       "RELG"
+      ],
+      "members": 11,
+      "auto_n": 10,
+      "adopted": [],
+      "potential": []
+     },
+     "after": {
+      "kind": "Course",
+      "title": "World Religions (Honors)",
+      "disc": "Religious Studies",
+      "dsrc": null,
+      "units": 3.0,
+      "top": "1509.00",
+      "subj": [
+       "HUMAN",
+       "PHIL"
+      ],
+      "members": 10,
+      "auto_n": 9,
+      "adopted": [],
+      "potential": []
+     }
+    },
+    "members": {
+     "before": {
+      "members": 63,
+      "colleges": 59,
+      "units": [
+       0,
+       3,
+       4
+      ],
+      "rows": null
+     },
+     "after": {
+      "members": 62,
+      "colleges": 59,
+      "units": [
+       0,
+       3,
+       4
+      ],
+      "rows": null
+     }
+    }
+   },
+   "LIBR M1040": {
+    "index": {
+     "before": [
+      "LIBR M1040",
+      "Media & Information Literacy (Honors)",
+      "LIBR",
+      "Course",
+      3.0
+     ],
+     "after": [
+      "LIBR M1040",
+      "Media & Information Literacy (Honors)",
+      "LIBR",
+      "Course",
+      3.0
+     ]
+    },
+    "row": {
+     "before": {
+      "kind": "Course",
+      "title": "Media & Information Literacy (Honors)",
+      "disc": "Library Science",
+      "dsrc": null,
+      "units": 3.0,
+      "top": "1601.00",
+      "subj": [
+       "LIBR"
+      ],
+      "members": 4,
+      "auto_n": 3,
+      "adopted": [],
+      "potential": []
+     },
+     "after": {
+      "kind": "Course",
+      "title": "Media & Information Literacy (Honors)",
+      "disc": "Library Science",
+      "dsrc": null,
+      "units": 3.0,
+      "top": null,
+      "subj": [
+       "LIBR"
+      ],
+      "members": 3,
+      "auto_n": 2,
+      "adopted": [],
+      "potential": []
+     }
+    },
+    "members": {
+     "before": {
+      "members": 3,
+      "colleges": 2,
+      "units": [
+       3
+      ],
+      "rows": [
+       [
+        "MiraCosta College",
+        "LIBR 201H",
+        "Media & Information Literacy (Honors)",
+        3,
+        "CCC000572223"
+       ],
+       [
+        "Cerro Coso Community College",
+        "LIBR C111",
+        "Information and Media Literacy",
+        3,
+        "CCC000607926"
+       ],
+       [
+        "MiraCosta College",
+        "LIBR 201",
+        "Media & Information Literacy",
+        3,
+        "CCC000354460"
+       ]
+      ]
+     },
+     "after": {
+      "members": 2,
+      "colleges": 2,
+      "units": [
+       3
+      ],
+      "rows": [
+       [
+        "Cerro Coso Community College",
+        "LIBR C111",
+        "Information and Media Literacy",
+        3,
+        "CCC000607926"
+       ],
+       [
+        "MiraCosta College",
+        "LIBR 201",
+        "Media & Information Literacy",
+        3,
+        "CCC000354460"
+       ]
+      ]
+     }
+    }
+   }
+  },
+  "member_rows": {
+   "before": 134485,
+   "after": 134485
+  },
+  "suggestion_groups": {
+   "before": 2619,
+   "after": 2620,
+   "gone": [
+    [
+     "HUMA M1110",
+     "HUMA M10OI"
+    ]
+   ],
+   "new": [
+    [
+     "LIBR M1040",
+     "LIBR M10CJ"
+    ],
+    [
+     "HUMA M1110",
+     "HUMA M10ME",
+     "HUMA M10OI"
+    ]
+   ]
+  }
+ },
+ "not_covered": [
+  "The base titles keep '(Honors)': HUMA M1110's unified_title 'World Religions (Honors)' (trailcrew-ccr3-s112 bot) and LIBR M1040's 'Media & Information Literacy (Honors)' (the same June auto-merge cohort). Changing either is an UPDATE or DELETE of a saved row that card 2 does not name.",
+  "HUMA M10ME returns with a discipline inferred from its TOP division (Humanities, dconf 0.4), shown with the inferred mark and held out of the SUBJ4 fold; its base HUMA M1110 carries Religious Studies from a curated row.",
+  "The two ids are the records' existing ids (HUMA M10ME, LIBR M10CJ), not the base-plus-H numbers card 3 rules for a new Honors M-ID; whether card 3 renames them is the Honors design's call.",
+  "The nightly suggested-merge worklist proposes each pair again (LIBR M1040 with LIBR M10CJ, score 0.84; HUMA M1110 with HUMA M10ME and HUMA M10OI, 0.527). No procedure acts on it; a curator's merge would fold them back until honors_of exists."
+ ],
+ "migration": {
+  "forward": "kb/migrations/2026-11-14_s652_honors_two_row_delete.sql",
+  "rollback": "kb/migrations/2026-11-14_s652_honors_two_row_delete_rollback.sql",
+  "apply_lines": "file=kb/migrations/2026-11-14_s652_honors_two_row_delete.sql\nname=s652_honors_two_row_delete",
+  "receipt": "kb/receipts/migration_s652_honors_two_row_delete_<run>.json"
+ },
+ "selects": [
+  {
+   "n": "a",
+   "what": "the two bot rows as they stand, whole",
+   "expect": "two rows: HUMA M10ME merge_into HUMA M1110 and LIBR M10CJ merge_into LIBR M1040, automerge-v1@bot, 2026-06-12 22:47:01.69179+00, validated_at and validated_by null, reviewer_label automerge-v1@bot",
+   "if_different": "a row changed or is gone: hold; the guard would refuse anyway",
+   "sql": "select coalesce(jsonb_agg(to_jsonb(k) order by k.course_id), '[]'::jsonb) from public.kb_curation k where (k.course_id, k.field) in (('HUMA M10ME', 'merge_into'), ('LIBR M10CJ', 'merge_into'));"
+  },
+  {
+   "n": "b",
+   "what": "every other row on the four ids or naming them, by any reviewer: whole rows on the ids, pointer counts into them by reviewer, every person-saved row naming them, CN: rows on the four MiraCosta courses",
+   "expect": {
+    "on_ids": "HUMA M1110 discipline (Religious Studies) and unified_title (World Religions (Honors)); LIBR M1040 unified_title (Media & Information Literacy (Honors)); all @bot (the overlay: trailcrew-ccr3-s112 and automerge-v1)",
+    "pointers_in": "HUMA M1110 9 and LIBR M1040 3 merge_into rows, all @bot (each count includes the Honors row); none into HUMA M10ME or LIBR M10CJ",
+    "person_rows": [],
+    "cn_rows": []
+   },
+   "if_different": "a person's row: read it; the guard's person count is finalized from this read. A pointer into a leaf or a CN: row: the course would follow it; hold and read it",
+   "sql": "select jsonb_build_object('on_ids', (select coalesce(jsonb_agg(jsonb_build_object('course_id', k.course_id, 'field', k.field, 'value', k.value, 'reviewer_email', k.reviewer_email, 'reviewed_at', k.reviewed_at, 'validated_at', k.validated_at, 'validated_by', k.validated_by) order by k.course_id, k.field), '[]'::jsonb) from public.kb_curation k where k.course_id in ('HUMA M10ME', 'LIBR M10CJ', 'HUMA M1110', 'LIBR M1040') and (k.course_id, k.field) not in (('HUMA M10ME', 'merge_into'), ('LIBR M10CJ', 'merge_into'))), 'pointers_in', (select coalesce(jsonb_object_agg(x.v || ' / ' || x.who, x.n), '{}'::jsonb) from (select k.value as v, case when k.reviewer_email like '%@bot' then k.reviewer_email else 'a person' end as who, count(*) as n from public.kb_curation k where k.field = 'merge_into' and k.value in ('HUMA M10ME', 'LIBR M10CJ', 'HUMA M1110', 'LIBR M1040') group by 1, 2) x), 'person_rows', (select coalesce(jsonb_agg(jsonb_build_object('course_id', k.course_id, 'field', k.field, 'value', k.value, 'reviewer_email', k.reviewer_email, 'reviewed_at', k.reviewed_at) order by k.reviewed_at), '[]'::jsonb) from public.kb_curation k where k.reviewer_email not like '%@bot' and (k.course_id in ('HUMA M10ME', 'LIBR M10CJ', 'HUMA M1110', 'LIBR M1040') or k.value like '%HUMA M10ME%' or k.value like '%LIBR M10CJ%' or k.value like '%HUMA M1110%' or k.value like '%LIBR M1040%')), 'cn_rows', (select coalesce(jsonb_agg(to_jsonb(k) order by k.course_id), '[]'::jsonb) from public.kb_curation k where k.course_id in ('CN:CCC000588084', 'CN:CCC000572223', 'CN:CCC000545257', 'CN:CCC000354460')));"
+  },
+  {
+   "n": "c",
+   "what": "pending unified_title_merge_confirm rows touching the four ids (Rule 10's cross-check)",
+   "expect": {
+    "n": 0,
+    "rows": []
+   },
+   "if_different": "a pending merge confirm names one of them: hold and read it",
+   "sql": "select jsonb_build_object('n', count(*), 'rows', coalesce(jsonb_agg(jsonb_build_object('course_id', k.course_id, 'value', k.value, 'reviewer', case when k.reviewer_email like '%@bot' then k.reviewer_email else 'a person' end, 'reviewed_at', k.reviewed_at)), '[]'::jsonb)) from public.kb_curation k where k.field = 'unified_title_merge_confirm' and (k.course_id like '%HUMA M10ME%' or k.value like '%HUMA M10ME%' or k.course_id like '%LIBR M10CJ%' or k.value like '%LIBR M10CJ%' or k.course_id like '%HUMA M1110%' or k.value like '%HUMA M1110%' or k.course_id like '%LIBR M1040%' or k.value like '%LIBR M1040%');"
+  },
+  {
+   "n": "d",
+   "what": "the table's shape: columns, the conflict key, triggers, and foreign keys into it (the BUSI plan's read 5, widened: a delete trigger or a cascading key would write more than two rows)",
+   "expect": {
+    "columns": "course_id, field, value, reviewer_email, reviewed_at (default now()), reviewer_label (generated always, never inserted), validated_at, validated_by",
+    "unique": "a unique index on (course_id, field)",
+    "triggers": [],
+    "fks_in": []
+   },
+   "if_different": "a column the rollback does not name: add it to the rollback; a trigger or a foreign key: read what it writes before the apply",
+   "sql": "select jsonb_build_object('columns', (select jsonb_agg(jsonb_build_object('name', c.column_name, 'type', c.data_type, 'default', c.column_default, 'generated', c.is_generated) order by c.ordinal_position) from information_schema.columns c where c.table_schema = 'public' and c.table_name = 'kb_curation'), 'indexes', (select jsonb_agg(i.indexdef) from pg_indexes i where i.schemaname = 'public' and i.tablename = 'kb_curation'), 'triggers', (select coalesce(jsonb_agg(pg_get_triggerdef(t.oid)), '[]'::jsonb) from pg_trigger t where t.tgrelid = 'public.kb_curation'::regclass and not t.tgisinternal), 'fks_in', (select coalesce(jsonb_agg(conname), '[]'::jsonb) from pg_constraint where confrelid = 'public.kb_curation'::regclass and contype = 'f'));"
+  },
+  {
+   "n": "post",
+   "what": "after the apply: the two keys are gone",
+   "expect": 0,
+   "if_different": "the delete did not land; read the receipt's response",
+   "sql": "select to_jsonb(count(*)) from public.kb_curation where (course_id, field) in (('HUMA M10ME', 'merge_into'), ('LIBR M10CJ', 'merge_into'));"
+  }
+ ]
+}

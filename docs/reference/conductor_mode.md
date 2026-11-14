@@ -70,6 +70,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
   scripts/check_generated.sh`, read its last line, then commit; when `main` moves under an open PR, merge `main` (a
   merge commit) and regenerate generated files with their tools; a PR that changes a builder of a committed file runs
   the builder (`docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md`).
+- The agent definitions in `.claude/agents/` carry the limits above, the trailer and footer and a report cap, so a
+  brief no longer repeats them: `worker` (Opus), `second-reader` (read-only, severity tags, a verdict),
+  `checkpoint-docs` (Rule 9's documents) and `pr-gate` (Haiku; five lines on one PR). The `conductor-brief` skill
+  holds the brief's shape and the review rules.
 - **SQL a worker sends:** the conductor runs a SELECT as sent, kept narrow (aggregates, never `select *`; `kb_curation`
   paged by Range). A write runs only in Rule 10's shape and only from a plan the conductor has read.
 
@@ -83,6 +87,12 @@ at the top of each piece of work so Sam can change the dial before it runs.
   `kb/migrations/.apply`) gets a review of at most 9 agents: independent readers by dimension, then a second reader who
   tries to refute each finding. Its findings are fixed forward unless one breaks the undo. A file landing in
   `kb/migrations/.apply` applies at once on merge (Rule 10 c); a new function also needs the Rule 10 (b2) revoke.
+- Two hooks enforce two lessons (`docs/reference/approval_prompt_hooks.md`, 2026-11-14): `merge_read_guard.py`
+  refuses `merge_pull_request` unless this session read that PR's comments in the last 3 minutes (read and merge in
+  one step; a review posted between the two still passes, and `pr-gate` step 4 is what sees it) and always refuses
+  `enable_pr_auto_merge` and a `gh` merge, and
+  `clock_time_guard.py` refuses a comment, PR or commit with a time 2 minutes or more ahead of the clock (every wrong
+  time in S652 ran ahead), or a `written` claim more than 5 minutes stale. Both fail open with a warning; `python3 scripts/check_hooks_live.py` reports each `yes` or `NO`.
 - A PR that makes something the first writer to a shared table, or gives a read-only surface writes, waits until
   `kb/governance_surface_map.json` maps it and the student-detail disclosure ADR is checked (Rule 10 a3).
 
@@ -123,14 +133,22 @@ at the top of each piece of work so Sam can change the dial before it runs.
   asks. Sam, in session S639, 2026-11-11, verbatim: "Remember on the Decision Sheet that I want your decisions on it,
   not asking me for mine. I am pushing decision to you as conductor and informed by help from cobix, your force
   multiplier:)" (`sam-sheet-carries-conductor-decisions-2026-11-11`). Each card reads Decided, Evidence, and Carried out
-  with how to reverse it; its chips are Fine, Change it and Revisit later. An outward send, a go-live or anything else
+  with how to reverse it, and shows one real example before and after with where on the Commons to see it; its chips are Fine, Change it and Revisit later. An outward send, a go-live or anything else
   that needs Sam is a card carrying a labeled block above its replies — "Yours to do", "Needs your word" or "Yours to
   rule" — with numbered steps, a link wherever one exists, and replies that name the act, never a status chip (Sam,
   2026-11-13: "change the button to be clearer an include specific instructions and links for me"); and an unanswered
   card holds only its own item. First built as Open Asks Sheet
   181 (https://claude.ai/artifact/M3YaDrpkT7HhH8rYRnvkjx).
+- **Pick a lane (Sam, in session S652, about 14:45Z 2026-11-14; `cpl_memory` `sam-conductor-picks-a-lane-2026-11-14`).**
+  On Sheet 197's asks: "would be more effective to show examples of each ask." "stop being so cautious and pick a lane
+  and go with it. I will see the results on the commons and if there is a problem, I can address it based on the
+  reality I'm seeing rather than vague choices." "Conductor can conduct!" A choice among near-equal options is the
+  conductor's to make, carry out and record; it never becomes an ask. The `CLAUDE.md` hold list stands. An ask that
+  remains on it shows a worked example on real rows: the row today, and the row under each choice.
 - His unplanned statements are captured verbatim (the vault's braindump skill, on-the-fly mode) and he is told in one
   line. Replies to him are a few lines, active voice, stated positively.
+
+- **M-IDs are ours (Sam, in session S652, 2026-11-14, verbatim):** "why are we asking anyone anything about a MID course, which is our own construct (synthetic). what makes this MID so important that we would bother someone at SDCCD about it--they have no idea that MIDs even exist" and "we will be adjusting and deleting and refolding and reminting MIDs for quite a while as we figure out the best way to do it almost through trial and error" and "think of MIDs as low stakes attempts to get our course clusters as close to right as we can with the expectation that we will do lots of adjusting along the way" (`sam-mids-are-ours-trial-and-error-2026-11-14`). And, about 14:53Z: "the thing that probably makes them not low stakes to you is all the ways mids are wired to dependencies that have to be rewired when changes are made. that probs takes a lot of compute (which is not low stakes on the compute side) but still low stakes on the end user side provided that all the rewiring along the way is done correctly" (`sam-mid-care-goes-into-the-rewiring-2026-11-14`). So the choice is low stakes and the care goes into the rewiring: every M-ID change runs its dependents (the alias chain, the identities map, the dependency map's consumers) and proves them, and that is what a reader checks. An M-ID question never goes to a college. A change to the M-ID staging layer is the conductor's to decide and carry out under a receipt that undoes it; a row a person saved still wins (Rule 10); Sam reacts to the result on the Commons.
 
 ## Checkpoint and sign-off
 
@@ -142,6 +160,27 @@ at the top of each piece of work so Sam can change the dial before it runs.
   the handoff, then gives the one opening line (`CLAUDE.md`, *Sign off*).
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
+
+## What went wrong in S652, and what worked
+
+- The 12:12Z firing of 2026-11-14 (SkyAvocet) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 10:55Z) and `main` at the S651 checkpoint (`5278e928`) were the one-writer check, and this PR declared the queue at 12:19Z.
+
+- The conductor merged the display design (#3296) twelve minutes after COBIx posted four findings on its thread, without reading them; they became a follow-up. Read the PR's own comments in the same batch of calls as the check runs, every time (S642's lesson again).
+- The sheet's type-ahead pickers showed Sam no options (Sheet 196 card 4: he typed "Go" twice). A picker's choices are buttons printed on the card.
+- A worker's delete was refused by the permission check; the conductor surfaced it to Sam, who was in session, and ran the one command itself on his word. The refusal went to a person and was never worked around.
+- A second reader's self-recall test (look up each program whose page is already held as if it were unknown) measured a new matcher at 63% before it ran on any college. Ask for that test in the brief of any new lookup.
+- Times written from memory were wrong twice: a note on #3299 said 13:05Z where GitHub stamped 12:59Z, and the conductor's messages put Sam's words at 13:15Z where the clock read 13:07Z. Run `date -u` before writing any time, and take a comment's time from its GitHub stamp.
+- A stray `inspect.py` in the shared scratchpad shadowed the standard library in a worker's run. Workers run scripts with `python3 -I`, from a subfolder of their own.
+- `git ls-remote` with several patterns dropped a branch line three times. Ask for one ref per call.
+- The Agent tool's worktree isolation failed once, when the shell's directory had reset to `/home/user`. `cd` into the checkout before spawning a worker with a worktree.
+- Worked: check runs read on the current head each time a PR was marked ready and merged right after; second readers who rebuilt the evidence from independent sources (seven for the prefix aliases, which removed Los Rios's ENGL for ENGWR); one daily-run dispatch after two stacked data PRs, so every list rebuilt once.
+- A reader's findings on slice A stopped being a new class at round three; the conductor merged the residue fix without a fourth round because nothing consumes the field yet. COBIx's one finding was a design point three code readers missed (the order of evidence: pages before the catalog list). Ask him for design, the readers for code.
+- The checkpoint's lane compaction dropped a link a test reads (`objectives_reread_plan`), and the lints job failed. After compacting a lane, run the Python tests that read lanes and status files before the push.
+- The conductor wrote times from memory five times this session, each wrong by 2 to 10 minutes. Every time written comes from `date -u` in the same command.
+- A config change proved on a fresh capture measured the reader, not the change: Riverside City's fresh capture lost 191 pages to `cq_distinct`. Prove a config change on the filed pages (`sources_from`).
+- Two written lessons recurred the same day (the unread review on #3296; times written from memory, every one ahead
+  of the clock), so each became a hook that refuses the act, and the forty lines every brief repeated became agent
+  definitions and the `conductor-brief` skill (#3306, #3307).
 
 ## What went wrong in S651, and what worked
 

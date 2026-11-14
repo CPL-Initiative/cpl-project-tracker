@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run the S649 guarded kb_curation migrations against a throwaway Postgres: each guard refuses, each rollback restores.
+"""Run the S649 and S652 guarded kb_curation migrations against a throwaway Postgres: each guard refuses, each rollback restores.
 
 WHY. A guarded write to `kb_curation` (Sam's rows always win, CLAUDE.md Rule 10) is only as good as its guard, and a
 guard read on paper can still match the wrong row or none. This runs the committed files themselves, as the runner
@@ -104,6 +104,84 @@ CVMA = {
 }
 if os.path.exists(os.path.join(ROOT, CVMA["forward"])):
     PAIRS.append(CVMA)
+# S652: Sam's Sheet 197 card 2 ("delete") removes the June auto-merge's two Honors rows. The planned state carries the
+# rows around them that must survive: the bases' title and discipline rows, the other pointers into each base under
+# the same reviewer and stamp, and an unrelated person's row.
+AM, AM_AT = "automerge-v1" + "@bot", "2026-06-12T22:47:01.69179+00:00"
+HONORS_ROWS = [
+    ("HUMA M10ME", "merge_into", "HUMA M1110", AM, AM_AT),
+    ("LIBR M10CJ", "merge_into", "LIBR M1040", AM, AM_AT),
+    ("PHIL M1116", "merge_into", "HUMA M1110", AM, AM_AT),
+    ("LIBR M10CS", "merge_into", "LIBR M1040", AM, AM_AT),
+    ("LIBR M10CR", "merge_into", "LIBR M1040", AM, AM_AT),
+    ("LIBR M1040", "unified_title", "Media & Information Literacy (Honors)", AM, AM_AT),
+    ("HUMA M1110", "unified_title", "World Religions (Honors)", AM, AM_AT),
+    ("HUMA M1110", "discipline", "Religious Studies", "trailcrew-ccr3-s112@bot", "2026-07-12T21:17:48.970211+00:00"),
+    ("BUSI M1228", "discipline", "Business", "someone@college.edu", "2026-10-01T00:00:00+00:00"),
+]
+HONORS = {
+    "name": "honors", "forward": "kb/migrations/2026-11-14_s652_honors_two_row_delete.sql",
+    "rollback": "kb/migrations/2026-11-14_s652_honors_two_row_delete_rollback.sql",
+    "rows": HONORS_ROWS, "changed_keys": [("HUMA M10ME", "merge_into"), ("LIBR M10CJ", "merge_into")],
+    "refusals": {
+        "one row's value differs": "update kb_curation set value = 'HUMA M1111' where course_id = 'HUMA M10ME'",
+        "one row's reviewer differs": "update kb_curation set reviewer_email = 'someone@college.edu' "
+                                      "where course_id = 'LIBR M10CJ'",
+        "one row was re-saved since": "update kb_curation set reviewed_at = now() where course_id = 'HUMA M10ME'",
+        "a person validated one row": "update kb_curation set validated_at = now(), validated_by = 'someone' "
+                                      "where course_id = 'LIBR M10CJ'",
+        "one row names a validator without a stamp": "update kb_curation set validated_by = 'someone' "
+                                                     "where course_id = 'HUMA M10ME'",
+        "one row is gone": "delete from kb_curation where course_id = 'LIBR M10CJ'",
+        "a person saved a row on a base": "update kb_curation set reviewer_email = 'someone@college.edu' "
+                                          "where course_id = 'HUMA M1110' and field = 'discipline'",
+        "a person saved a row on a leaf": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                          "values ('LIBR M10CJ', 'description', 'x', 'someone@college.edu')",
+        "a person merged a course into a base": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                                "values ('LIBR M10ZZ', 'merge_into', 'LIBR M1040', "
+                                                "'someone@college.edu')",
+        "a person's Keep as-is names a leaf": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                              "values ('UC:y', 'merge_dismissed', 'HUMA M10ME|HUMA M1110', "
+                                              "'someone@college.edu')",
+        "a bot points into a leaf": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                    "values ('HUMA M10ZZ', 'merge_into', 'HUMA M10ME', 'somebody@bot')",
+        "a CN: row re-homes an Honors course": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                               "values ('CN:CCC000572223', 'merge_into', 'LIBR M1040', "
+                                               "'somebody@bot')",
+    },
+}
+if os.path.exists(os.path.join(ROOT, HONORS["forward"])):
+    PAIRS.append(HONORS)
+# S652 follow-ups: on the post-delete state, the bases' two Honors titles lose "(Honors)" (value alone) and two Keep
+# as-is rows hold the pairs apart (cohort honors-s652@bot).
+FOLLOWUP_ROWS = [r for r in HONORS_ROWS if r[0] not in ("HUMA M10ME", "LIBR M10CJ")]
+FOLLOWUPS = {
+    "name": "honors follow-ups", "forward": "kb/migrations/2026-11-14_s652_honors_followups.sql",
+    "rollback": "kb/migrations/2026-11-14_s652_honors_followups_rollback.sql",
+    "rows": FOLLOWUP_ROWS,
+    "changed_keys": [("HUMA M1110", "unified_title"), ("LIBR M1040", "unified_title"),
+                     ("HUMA M10ME", "merge_dismissed"), ("LIBR M1040", "merge_dismissed")],
+    "refusals": {
+        "a base title was changed since": "update kb_curation set value = 'World Religions' "
+                                          "where course_id = 'HUMA M1110' and field = 'unified_title'",
+        "a base title's reviewer differs": "update kb_curation set reviewer_email = 'someone@college.edu' "
+                                           "where course_id = 'LIBR M1040' and field = 'unified_title'",
+        "a base title was re-saved since": "update kb_curation set reviewed_at = now() "
+                                           "where course_id = 'LIBR M1040' and field = 'unified_title'",
+        "a person validated a base title": "update kb_curation set validated_at = now(), validated_by = 'someone' "
+                                           "where course_id = 'HUMA M1110' and field = 'unified_title'",
+        "a base title is gone": "delete from kb_curation where course_id = 'HUMA M1110' and field = 'unified_title'",
+        "the delete has not landed": "insert into kb_curation (course_id, field, value, reviewer_email, reviewed_at) "
+                                     "values ('LIBR M10CJ', 'merge_into', 'LIBR M1040', '" + AM + "', '" + AM_AT + "')",
+        "a dismissal slot is taken": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                     "values ('LIBR M1040', 'merge_dismissed', 'LIBR M1040|LIBR M10CS', "
+                                     "'somebody@bot')",
+        "a person saved a row on a base": "update kb_curation set reviewer_email = 'someone@college.edu' "
+                                          "where course_id = 'HUMA M1110' and field = 'discipline'",
+    },
+}
+if os.path.exists(os.path.join(ROOT, FOLLOWUPS["forward"])):
+    PAIRS.append(FOLLOWUPS)
 
 
 def code_only(sql):
