@@ -16469,14 +16469,14 @@
    "served": false,
    "main_committers": []
   },
-  "file:kb/identities_rebuild_out/2026-11-14/orphan_worklist.json": {
+  "file:kb/identities_rebuild_out/2026-11-14b/apply_receipt.json": {
    "consumers": [
     {
      "id": "script:kb/_identities_rebuild.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 473
+     "line": 658
     }
    ],
    "served": false,

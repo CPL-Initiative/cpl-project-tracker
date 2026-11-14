@@ -874,3 +874,11 @@ Verbatim from `docs/reference/lanes/commons.md`, moved to make room for S651's s
 **LIVE: the CPL Commons first view (S552, #2697).** `commons.js` draws the locked mock as the tab's first view. The record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S624, 2026-11-10)*.
 
 **The opened page, one renderer (S556 to S559).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws the opened page for every reference. The record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S624, 2026-11-10)*.
+
+## Moved from the lane (S652)
+
+Verbatim from the re-clustering paragraph of `docs/reference/lanes/commons.md`, moved to make room for the identities apply (S652).
+
+**APPLIED (S648):** case 2, FIRE M1274 merge_into FIRE 130 X (run 43493272194; undo `kb/migrations/2026-11-13_s648_reclustering_cohort_rollback.sql`).
+
+**APPLIED and merged, card 3 (DECIDED `d-busi-split-delete-only-s649`, `d-busi-split-delete-applied-s649`):** one guarded DELETE of the bot row BUSI M10XW merge_into BUSI M1228, run 43542044321; receipt `kb/receipts/migration_s649_busi_split_delete_43542044321.json` (the row whole; the rollback re-inserts it); the record: lessons, *Moved from the lane (S650 checkpoint)*.
