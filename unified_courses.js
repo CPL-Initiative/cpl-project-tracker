@@ -496,8 +496,10 @@
   // RE-KEY: the browser resolves no alias map, so a live value naming a
   // re-minted base would offer the pair here while Python holds it. It holds
   // because supabase-rekey.yml moves honors_of values with merge_into values
-  // at every re-mint, and the rows migration refuses a value outside the live
-  // id set (docs/reference/honors_of_design.md). No honors_of row, no second read.
+  // at every re-mint, and because the rows are written only after the dry run's
+  // --check re-measures the plan on the day's payload (docs/reference/
+  // honors_of_design.md); the SQL itself cannot see the live id set. No
+  // honors_of row, no second read.
   // It FAILS CLOSED (COBIx's read of #3313): a failed read of the rows or of a hop
   // page returns { failed: true }, and the worklist then offers no merge at all,
   // since any group might hold a pair it cannot see; a reviewer's merge from it
