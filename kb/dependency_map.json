@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 945,
+  "file_datasets": 947,
   "external_services": 195,
   "consumers": 592,
   "workflows": 72,
@@ -1019,7 +1019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 25
+     "line": 26
     }
    ],
    "main_committers": []
@@ -4687,14 +4687,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 263
+     "line": 302
     },
     {
      "id": "script:scripts/install_prompt_guards.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 263
+     "line": 302
     }
    ],
    "served": false,
@@ -24404,6 +24404,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/clock_time_guard_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/cobi_live_banner.test.js": {
    "consumers": [
     {
@@ -25603,6 +25616,19 @@
    "main_committers": []
   },
   "file:tests/merge_chain_flatten_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/merge_read_guard_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -33681,6 +33707,8 @@
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",
+    "tests/merge_read_guard_test.py",
+    "tests/clock_time_guard_test.py",
     "tests/jev_adjudicate_test.py",
     "tests/exhibit_reanalysis_jev_test.py",
     "tests/jev_battery_test.py",

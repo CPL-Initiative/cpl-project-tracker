@@ -1089,6 +1089,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/chatbox_ghost_delete_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cid_claim_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/clep_official_titles_test.py` | workflows: `js-tests.yml` | — |
+| `tests/clock_time_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cobi_live_banner.test.js` | workflows: `js-tests.yml` | — |
 | `tests/coci_offerings_sync_chunk_test.py` | workflows: `js-tests.yml` | — |
 | `tests/coci_program_cip_test.py` | workflows: `js-tests.yml` | — |
@@ -1180,6 +1181,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/memory_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/merge_candidate_queue_test.py` | workflows: `js-tests.yml` | — |
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
+| `tests/merge_read_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mid_outcomes_compare_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mid_short_code_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mq_title5_rename_test.py` | workflows: `js-tests.yml` | — |
@@ -1485,5 +1487,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 945 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 947 file
 datasets · 195 external services · 592 consumers · 72 workflows · 41 tabs.

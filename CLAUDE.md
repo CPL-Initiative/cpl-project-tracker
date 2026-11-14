@@ -42,10 +42,10 @@ behind these rules) · cobix_pr_loop ·
 industry-credential watch) · `lanes/`.
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
-`description` rather than by a pointer: **consult-doctrine** (what this repo has
-already decided about the files you are reading), **exhibit-canonicalization**
+`description`, not by a pointer: **consult-doctrine** (what this repo
+already decided about files you read), **exhibit-canonicalization**
 (freehand MAP exhibit titles into unified credential names), **video-context**
-(a screen recording read locally) and
+(a screen recording read locally), **conductor-brief** (agent briefs) and
 **obsidian-markdown**. Named here because a store nobody names is a store
 nobody finds; `unreferenced_offload` flags any that stop being.
 

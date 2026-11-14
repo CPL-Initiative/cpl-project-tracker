@@ -70,6 +70,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
   scripts/check_generated.sh`, read its last line, then commit; when `main` moves under an open PR, merge `main` (a
   merge commit) and regenerate generated files with their tools; a PR that changes a builder of a committed file runs
   the builder (`docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md`).
+- The agent definitions in `.claude/agents/` carry the limits above, the trailer and footer and a report cap, so a
+  brief no longer repeats them: `worker` (Opus), `second-reader` (read-only, severity tags, a verdict),
+  `checkpoint-docs` (Rule 9's documents) and `pr-gate` (Haiku; five lines on one PR). The `conductor-brief` skill
+  holds the brief's shape and the review rules.
 - **SQL a worker sends:** the conductor runs a SELECT as sent, kept narrow (aggregates, never `select *`; `kb_curation`
   paged by Range). A write runs only in Rule 10's shape and only from a plan the conductor has read.
 
@@ -83,6 +87,12 @@ at the top of each piece of work so Sam can change the dial before it runs.
   `kb/migrations/.apply`) gets a review of at most 9 agents: independent readers by dimension, then a second reader who
   tries to refute each finding. Its findings are fixed forward unless one breaks the undo. A file landing in
   `kb/migrations/.apply` applies at once on merge (Rule 10 c); a new function also needs the Rule 10 (b2) revoke.
+- Two hooks enforce two lessons (`docs/reference/approval_prompt_hooks.md`, 2026-11-14): `merge_read_guard.py`
+  refuses `merge_pull_request` unless this session read that PR's comments in the last 3 minutes (read and merge in
+  one step; a review posted between the two still passes, and `pr-gate` step 4 is what sees it) and always refuses
+  `enable_pr_auto_merge` and a `gh` merge, and
+  `clock_time_guard.py` refuses a comment, PR or commit with a time 2 minutes or more ahead of the clock (every wrong
+  time in S652 ran ahead), or a `written` claim more than 5 minutes stale. Both fail open with a warning; `python3 scripts/check_hooks_live.py` reports each `yes` or `NO`.
 - A PR that makes something the first writer to a shared table, or gives a read-only surface writes, waits until
   `kb/governance_surface_map.json` maps it and the student-detail disclosure ADR is checked (Rule 10 a3).
 
@@ -168,6 +178,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - The checkpoint's lane compaction dropped a link a test reads (`objectives_reread_plan`), and the lints job failed. After compacting a lane, run the Python tests that read lanes and status files before the push.
 - The conductor wrote times from memory five times this session, each wrong by 2 to 10 minutes. Every time written comes from `date -u` in the same command.
 - A config change proved on a fresh capture measured the reader, not the change: Riverside City's fresh capture lost 191 pages to `cq_distinct`. Prove a config change on the filed pages (`sources_from`).
+- Two written lessons recurred the same day (the unread review on #3296; times written from memory, every one ahead
+  of the clock), so each became a hook that refuses the act, and the forty lines every brief repeated became agent
+  definitions and the `conductor-brief` skill (#3306, #3307).
 
 ## What went wrong in S651, and what worked
 
