@@ -710,10 +710,12 @@ def remap_curation(aliases, dry_run):
         val = dict(val) if isinstance(val, dict) else val
         # Re-point a merge_into that targets a split old_mid.
         if isinstance(val, dict):
-            mi = val.get("merge_into")
-            if mi in plurality and plurality[mi]:
-                val["merge_into"] = plurality[mi]
-                mi_repointed += 1
+            # merge_into and honors_of values (kb/curation_pointers.py)
+            if HERE not in sys.path:
+                sys.path.insert(0, HERE)
+            import curation_pointers
+            val, moved = curation_pointers.rekey_entry(val, plurality)
+            mi_repointed += moved
         # Re-key the entry itself if it's keyed by a split old_mid.
         if old_key in plurality and plurality[old_key]:
             new_cur[plurality[old_key]] = val

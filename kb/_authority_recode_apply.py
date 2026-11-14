@@ -234,10 +234,9 @@ def apply_plan(docs, plan, edits, now):
         nk = alias.get(k, k)
         if nk != k:
             stats["curation_keys"] += 1
-        if isinstance(ent, dict) and ent.get("merge_into") in alias:
-            ent = dict(ent)
-            ent["merge_into"] = alias[ent["merge_into"]]
-            stats["curation_pointers"] += 1
+        import curation_pointers   # merge_into and honors_of values (kb/curation_pointers.py)
+        ent, moved = curation_pointers.rekey_entry(ent, alias)
+        stats["curation_pointers"] += moved
         new_cur[nk] = ent
     cur_doc["curations"] = dict(sorted(new_cur.items()))
     cur_doc["count"] = len(new_cur)

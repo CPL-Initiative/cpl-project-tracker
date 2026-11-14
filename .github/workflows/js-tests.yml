@@ -1312,6 +1312,11 @@ jobs:
       # `playwright install` itself fails here, so the next fix lands in scripts/install_browser.sh alone.
       - name: Browser install has one source
         run: python3 tests/browser_install_single_source_test.py
+      # The honors_of field (S653): an Honors M-ID and its base never fold together and are never offered for merge,
+      # an H id passes every M-ID shape check, and the fold is byte-identical while no row carries the field.
+      # Pure-stdlib python. Design: docs/reference/honors_of_design.md.
+      - name: Honors equivalence field (fold hold, pairwise worklist hold, H id shape, byte-identical fold)
+        run: python3 tests/honors_of_test.py
       # A stored credential title resolves at read time through the applied renames (S641, #3148): the one resolver,
       # its table for the browser (kb/credential_title_moves.json, stale when a snapshot lands unbuilt), and the
       # guard against a second copy. Pure-stdlib python.
