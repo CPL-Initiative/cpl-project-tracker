@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T23:19:42Z",
+ "written_at": "2026-11-13T23:53:59Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -120,6 +120,9 @@
   "census_causes": "internal",
   "census_levers": "internal",
   "census_basis": "internal",
+  "census_programs": "shareable",
+  "census_passing": "shareable",
+  "census_gap": "shareable",
   "objectives_printed": "shareable",
   "cost_usd": "internal",
   "passed_at_read": "internal",
@@ -181,6 +184,14 @@
   "universe": 22335,
   "passing": 15832,
   "gap": 6503
+ },
+ "census_live": {
+  "basis": "live",
+  "at": "2026-11-13 18:04Z",
+  "colleges": 118,
+  "programs": 20282,
+  "passing": 14531,
+  "gap": 5751
  },
  "unmatched": [],
  "colleges": [
@@ -257,7 +268,10 @@
     "reader_page_assignment": 3,
     "scorer_noncredit_hours": 2,
     "ge_units_steps": 1
-   }
+   },
+   "census_programs": 223,
+   "census_gap": 89,
+   "census_passing": 134
   },
   {
    "id": 18,
@@ -334,7 +348,10 @@
     "reconcile_steps": 22,
     "ge_units_steps": 13,
     "program_course_file_check": 3
-   }
+   },
+   "census_programs": 363,
+   "census_gap": 67,
+   "census_passing": 296
   },
   {
    "id": 19,
@@ -408,7 +425,10 @@
     "program_course_file_check": 2,
     "reader_page_search": 2,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 83,
+   "census_gap": 22,
+   "census_passing": 61
   },
   {
    "id": 20,
@@ -485,7 +505,10 @@
     "program_course_file_check": 8,
     "reader_page_assignment": 2,
     "scorer_noncredit_hours": 2
-   }
+   },
+   "census_programs": 244,
+   "census_gap": 39,
+   "census_passing": 205
   },
   {
    "id": 10,
@@ -551,7 +574,10 @@
     "reader_page_assignment": 15,
     "reader_page_search": 5,
     "reconcile_steps": 2
-   }
+   },
+   "census_programs": 66,
+   "census_gap": 18,
+   "census_passing": 48
   },
   {
    "id": 21,
@@ -626,7 +652,10 @@
     "program_course_file_check": 2,
     "scorer_noncredit_hours": 2,
     "reader_page_assignment": 1
-   }
+   },
+   "census_programs": 74,
+   "census_gap": 43,
+   "census_passing": 31
   },
   {
    "id": 22,
@@ -697,7 +726,10 @@
     "program_course_file_check": 24,
     "reader_page_search": 3,
     "reader_page_assignment": 1
-   }
+   },
+   "census_programs": 192,
+   "census_gap": 54,
+   "census_passing": 138
   },
   {
    "id": 23,
@@ -771,7 +803,10 @@
     "reader_page_search": 10,
     "reader_page_assignment": 3,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 283,
+   "census_gap": 48,
+   "census_passing": 235
   },
   {
    "id": 24,
@@ -835,7 +870,10 @@
     "reader_page_search": 7,
     "program_course_file_check": 1,
     "reader_page_assignment": 1
-   }
+   },
+   "census_programs": 12,
+   "census_gap": 3,
+   "census_passing": 9
   },
   {
    "id": 25,
@@ -906,7 +944,10 @@
     "reconcile_steps": 8,
     "reader_page_assignment": 3,
     "reader_page_search": 2
-   }
+   },
+   "census_programs": 126,
+   "census_gap": 65,
+   "census_passing": 61
   },
   {
    "id": 26,
@@ -985,7 +1026,10 @@
     "program_course_file_check": 4,
     "reader_page_assignment": 3,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 287,
+   "census_gap": 41,
+   "census_passing": 246
   },
   {
    "id": 27,
@@ -1059,7 +1103,10 @@
     "ge_units_steps": 11,
     "reader_page_search": 9,
     "program_course_file_check": 6
-   }
+   },
+   "census_programs": 78,
+   "census_gap": 51,
+   "census_passing": 27
   },
   {
    "id": 28,
@@ -1129,7 +1176,10 @@
     "program_course_file_check": 4,
     "reader_page_assignment": 2,
     "ge_units_steps": 1
-   }
+   },
+   "census_programs": 203,
+   "census_gap": 27,
+   "census_passing": 176
   },
   {
    "id": 9,
@@ -1204,7 +1254,10 @@
     "reader_page_search": 6,
     "program_course_file_check": 3,
     "reader_page_assignment": 2
-   }
+   },
+   "census_programs": 201,
+   "census_gap": 20,
+   "census_passing": 181
   },
   {
    "id": 29,
@@ -1278,7 +1331,10 @@
     "program_course_file_check": 8,
     "reader_page_assignment": 6,
     "ge_units_steps": 3
-   }
+   },
+   "census_programs": 193,
+   "census_gap": 46,
+   "census_passing": 147
   },
   {
    "id": 30,
@@ -1362,7 +1418,10 @@
     "reader_page_search": 22,
     "ge_units_steps": 2,
     "scorer_noncredit_hours": 2
-   }
+   },
+   "census_programs": 414,
+   "census_gap": 157,
+   "census_passing": 257
   },
   {
    "id": 31,
@@ -1434,7 +1493,10 @@
     "reader_page_assignment": 15,
     "program_course_file_check": 8,
     "reader_page_search": 6
-   }
+   },
+   "census_programs": 124,
+   "census_gap": 57,
+   "census_passing": 67
   },
   {
    "id": 113,
@@ -1512,7 +1574,10 @@
     "program_course_file_check": 6,
     "reconcile_steps": 5,
     "reader_page_assignment": 1
-   }
+   },
+   "census_programs": 58,
+   "census_gap": 12,
+   "census_passing": 46
   },
   {
    "id": 32,
@@ -1587,7 +1652,10 @@
     "reconcile_steps": 11,
     "reader_page_search": 5,
     "scorer_noncredit_hours": 5
-   }
+   },
+   "census_programs": 138,
+   "census_gap": 34,
+   "census_passing": 104
   },
   {
    "id": 33,
@@ -1659,7 +1727,10 @@
     "reader_page_search": 9,
     "ge_units_steps": 6,
     "scorer_noncredit_hours": 5
-   }
+   },
+   "census_programs": 83,
+   "census_gap": 48,
+   "census_passing": 35
   },
   {
    "id": 34,
@@ -1732,7 +1803,10 @@
     "reconcile_steps": 6,
     "reader_page_search": 5,
     "ge_units_steps": 2
-   }
+   },
+   "census_programs": 152,
+   "census_gap": 72,
+   "census_passing": 80
   },
   {
    "id": 35,
@@ -1802,7 +1876,10 @@
     "reader_page_assignment": 5,
     "reader_page_search": 3,
     "reconcile_steps": 3
-   }
+   },
+   "census_programs": 98,
+   "census_gap": 45,
+   "census_passing": 53
   },
   {
    "id": 36,
@@ -1884,7 +1961,10 @@
     "program_course_file_check": 19,
     "reader_page_assignment": 12,
     "ge_units_steps": 1
-   }
+   },
+   "census_programs": 279,
+   "census_gap": 170,
+   "census_passing": 109
   },
   {
    "id": 11,
@@ -1967,7 +2047,10 @@
     "reader_page_search": 7,
     "ge_units_steps": 1,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 206,
+   "census_gap": 54,
+   "census_passing": 152
   },
   {
    "id": 37,
@@ -2041,7 +2124,10 @@
     "program_course_file_check": 3,
     "reader_page_search": 3,
     "ge_units_steps": 2
-   }
+   },
+   "census_programs": 76,
+   "census_gap": 18,
+   "census_passing": 58
   },
   {
    "id": 38,
@@ -2110,7 +2196,10 @@
     "reader_page_search": 12,
     "reader_page_assignment": 7,
     "scorer_noncredit_hours": 4
-   }
+   },
+   "census_programs": 137,
+   "census_gap": 51,
+   "census_passing": 86
   },
   {
    "id": 39,
@@ -2181,7 +2270,10 @@
     "program_course_file_check": 3,
     "reconcile_steps": 3,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 78,
+   "census_gap": 13,
+   "census_passing": 65
   },
   {
    "id": 40,
@@ -2245,7 +2337,10 @@
    "levers": {
     "reconcile_steps": 4,
     "program_course_file_check": 1
-   }
+   },
+   "census_programs": 82,
+   "census_gap": 5,
+   "census_passing": 77
   },
   {
    "id": 41,
@@ -2317,7 +2412,10 @@
     "reconcile_steps": 6,
     "reader_page_search": 5,
     "program_course_file_check": 1
-   }
+   },
+   "census_programs": 86,
+   "census_gap": 20,
+   "census_passing": 66
   },
   {
    "id": 42,
@@ -2390,7 +2488,10 @@
     "program_course_file_check": 26,
     "reader_page_assignment": 9,
     "reader_page_search": 8
-   }
+   },
+   "census_programs": 109,
+   "census_gap": 56,
+   "census_passing": 53
   },
   {
    "id": 12,
@@ -2457,7 +2558,10 @@
     "program_course_file_check": 11,
     "reconcile_steps": 10,
     "reader_page_assignment": 2
-   }
+   },
+   "census_programs": 58,
+   "census_gap": 23,
+   "census_passing": 35
   },
   {
    "id": 43,
@@ -2539,7 +2643,10 @@
     "ge_units_steps": 17,
     "program_course_file_check": 7,
     "reader_page_search": 2
-   }
+   },
+   "census_programs": 216,
+   "census_gap": 76,
+   "census_passing": 140
   },
   {
    "id": 7,
@@ -2607,7 +2714,10 @@
     "program_course_file_check": 39,
     "reconcile_steps": 21,
     "reader_page_search": 3
-   }
+   },
+   "census_programs": 107,
+   "census_gap": 58,
+   "census_passing": 49
   },
   {
    "id": 44,
@@ -2682,7 +2792,10 @@
     "program_course_file_check": 8,
     "reader_page_assignment": 2,
     "ge_units_steps": 1
-   }
+   },
+   "census_programs": 200,
+   "census_gap": 37,
+   "census_passing": 163
   },
   {
    "id": 45,
@@ -2752,7 +2865,10 @@
     "reader_page_search": 4,
     "reader_page_assignment": 3,
     "ge_units_steps": 1
-   }
+   },
+   "census_programs": 179,
+   "census_gap": 37,
+   "census_passing": 142
   },
   {
    "id": 46,
@@ -2823,7 +2939,10 @@
     "reader_page_assignment": 6,
     "ge_units_steps": 2,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 254,
+   "census_gap": 18,
+   "census_passing": 236
   },
   {
    "id": 47,
@@ -2902,7 +3021,10 @@
     "scorer_noncredit_hours": 2,
     "ge_units_steps": 1,
     "reader_page_search": 1
-   }
+   },
+   "census_programs": 115,
+   "census_gap": 16,
+   "census_passing": 99
   },
   {
    "id": 48,
@@ -2986,7 +3108,10 @@
     "ge_units_steps": 5,
     "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 260,
+   "census_gap": 63,
+   "census_passing": 197
   },
   {
    "id": 49,
@@ -3072,7 +3197,10 @@
     "reader_page_search": 10,
     "reader_page_assignment": 4,
     "ge_units_steps": 3
-   }
+   },
+   "census_programs": 227,
+   "census_gap": 128,
+   "census_passing": 99
   },
   {
    "id": 50,
@@ -3145,7 +3273,10 @@
     "reader_page_search": 11,
     "reader_page_assignment": 7,
     "scorer_noncredit_hours": 5
-   }
+   },
+   "census_programs": 187,
+   "census_gap": 98,
+   "census_passing": 89
   },
   {
    "id": 51,
@@ -3214,7 +3345,10 @@
     "reader_page_assignment": 12,
     "reader_page_search": 6,
     "program_course_file_check": 1
-   }
+   },
+   "census_programs": 69,
+   "census_gap": 16,
+   "census_passing": 53
   },
   {
    "id": 52,
@@ -3284,7 +3418,10 @@
     "reconcile_steps": 7,
     "reader_page_search": 4,
     "reader_page_assignment": 1
-   }
+   },
+   "census_programs": 52,
+   "census_gap": 21,
+   "census_passing": 31
   },
   {
    "id": 53,
@@ -3353,7 +3490,10 @@
     "ge_units_steps": 5,
     "reader_page_assignment": 3,
     "reader_page_search": 1
-   }
+   },
+   "census_programs": 104,
+   "census_gap": 21,
+   "census_passing": 83
   },
   {
    "id": 54,
@@ -3429,7 +3569,10 @@
     "ge_units_steps": 7,
     "reader_page_search": 5,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 194,
+   "census_gap": 67,
+   "census_passing": 127
   },
   {
    "id": 55,
@@ -3509,7 +3652,10 @@
     "reader_page_search": 14,
     "reconcile_steps": 6,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 266,
+   "census_gap": 62,
+   "census_passing": 204
   },
   {
    "id": 56,
@@ -3583,7 +3729,10 @@
     "program_course_file_check": 6,
     "ge_units_steps": 4,
     "reader_page_assignment": 2
-   }
+   },
+   "census_programs": 331,
+   "census_gap": 54,
+   "census_passing": 277
   },
   {
    "id": 57,
@@ -3656,7 +3805,10 @@
     "reader_page_search": 14,
     "reader_page_assignment": 5,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 133,
+   "census_gap": 54,
+   "census_passing": 79
   },
   {
    "id": 58,
@@ -3729,7 +3881,10 @@
     "reader_page_search": 24,
     "scorer_noncredit_hours": 2,
     "paid_read": 1
-   }
+   },
+   "census_programs": 296,
+   "census_gap": 183,
+   "census_passing": 113
   },
   {
    "id": 59,
@@ -3804,7 +3959,10 @@
     "reader_page_search": 17,
     "reader_page_assignment": 6,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 175,
+   "census_gap": 72,
+   "census_passing": 103
   },
   {
    "id": 60,
@@ -3894,7 +4052,10 @@
     "scorer_noncredit_hours": 2,
     "ge_units_steps": 1,
     "paid_read": 1
-   }
+   },
+   "census_programs": 185,
+   "census_gap": 62,
+   "census_passing": 123
   },
   {
    "id": 61,
@@ -3967,7 +4128,10 @@
     "reconcile_steps": 7,
     "ge_units_steps": 2,
     "scorer_noncredit_hours": 2
-   }
+   },
+   "census_programs": 108,
+   "census_gap": 29,
+   "census_passing": 79
   },
   {
    "id": 62,
@@ -4039,7 +4203,10 @@
     "reconcile_steps": 10,
     "program_course_file_check": 7,
     "reader_page_assignment": 6
-   }
+   },
+   "census_programs": 134,
+   "census_gap": 29,
+   "census_passing": 105
   },
   {
    "id": 63,
@@ -4107,7 +4274,10 @@
     "program_course_file_check": 25,
     "reconcile_steps": 14,
     "reader_page_search": 2
-   }
+   },
+   "census_programs": 166,
+   "census_gap": 40,
+   "census_passing": 126
   },
   {
    "id": 64,
@@ -4178,7 +4348,10 @@
     "reconcile_steps": 7,
     "reader_page_search": 5,
     "program_course_file_check": 4
-   }
+   },
+   "census_programs": 87,
+   "census_gap": 29,
+   "census_passing": 58
   },
   {
    "id": 65,
@@ -4242,7 +4415,10 @@
     "reader_page_search": 25,
     "reconcile_steps": 16,
     "scorer_noncredit_hours": 6
-   }
+   },
+   "census_programs": 174,
+   "census_gap": 47,
+   "census_passing": 127
   },
   {
    "id": 66,
@@ -4317,7 +4493,10 @@
     "reconcile_steps": 4,
     "program_course_file_check": 3,
     "reader_page_assignment": 2
-   }
+   },
+   "census_programs": 153,
+   "census_gap": 17,
+   "census_passing": 136
   },
   {
    "id": 67,
@@ -4390,7 +4569,10 @@
     "program_course_file_check": 5,
     "reader_page_assignment": 5,
     "reconcile_steps": 5
-   }
+   },
+   "census_programs": 34,
+   "census_gap": 22,
+   "census_passing": 12
   },
   {
    "id": 114,
@@ -4462,7 +4644,10 @@
     "program_course_file_check": 8,
     "reader_page_assignment": 5,
     "reconcile_steps": 3
-   }
+   },
+   "census_programs": 74,
+   "census_gap": 13,
+   "census_passing": 61
   },
   {
    "id": 68,
@@ -4537,7 +4722,10 @@
     "reader_page_assignment": 19,
     "reader_page_search": 17,
     "program_course_file_check": 6
-   }
+   },
+   "census_programs": 304,
+   "census_gap": 28,
+   "census_passing": 276
   },
   {
    "id": 69,
@@ -4613,7 +4801,10 @@
     "scorer_noncredit_hours": 4,
     "program_course_file_check": 2,
     "ge_units_steps": 1
-   }
+   },
+   "census_programs": 248,
+   "census_gap": 27,
+   "census_passing": 221
   },
   {
    "id": 70,
@@ -4685,7 +4876,10 @@
     "reader_page_assignment": 11,
     "program_course_file_check": 3,
     "reader_page_search": 3
-   }
+   },
+   "census_programs": 121,
+   "census_gap": 35,
+   "census_passing": 86
   },
   {
    "id": 71,
@@ -4757,7 +4951,10 @@
     "reader_page_search": 12,
     "reconcile_steps": 9,
     "reader_page_assignment": 3
-   }
+   },
+   "census_programs": 148,
+   "census_gap": 34,
+   "census_passing": 114
   },
   {
    "id": 72,
@@ -4835,7 +5032,10 @@
     "paid_read": 2,
     "ge_units_steps": 1,
     "reader_page_search": 1
-   }
+   },
+   "census_programs": 201,
+   "census_gap": 43,
+   "census_passing": 158
   },
   {
    "id": 73,
@@ -4909,7 +5109,10 @@
     "reconcile_steps": 8,
     "ge_units_steps": 2,
     "reader_page_search": 2
-   }
+   },
+   "census_programs": 132,
+   "census_gap": 60,
+   "census_passing": 72
   },
   {
    "id": 74,
@@ -4981,7 +5184,10 @@
     "program_course_file_check": 23,
     "reader_page_assignment": 11,
     "reader_page_search": 10
-   }
+   },
+   "census_programs": 210,
+   "census_gap": 68,
+   "census_passing": 142
   },
   {
    "id": 75,
@@ -5039,7 +5245,10 @@
    "run": "41188677929",
    "levers": {
     "unpark": 35
-   }
+   },
+   "census_programs": 206,
+   "census_gap": 20,
+   "census_passing": 186
   },
   {
    "id": 76,
@@ -5097,7 +5306,10 @@
    "run": "42376691800",
    "levers": {
     "unpark": 59
-   }
+   },
+   "census_programs": 103,
+   "census_gap": 59,
+   "census_passing": 44
   },
   {
    "id": 77,
@@ -5167,7 +5379,10 @@
     "reader_page_assignment": 8,
     "reader_page_search": 5,
     "ge_units_steps": 1
-   }
+   },
+   "census_programs": 111,
+   "census_gap": 27,
+   "census_passing": 84
   },
   {
    "id": 78,
@@ -5243,7 +5458,10 @@
     "reader_page_search": 5,
     "program_course_file_check": 2,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 115,
+   "census_gap": 43,
+   "census_passing": 72
   },
   {
    "id": 79,
@@ -5315,7 +5533,10 @@
     "program_course_file_check": 10,
     "reader_page_search": 9,
     "reader_page_assignment": 1
-   }
+   },
+   "census_programs": 165,
+   "census_gap": 37,
+   "census_passing": 128
   },
   {
    "id": 80,
@@ -5377,7 +5598,10 @@
    "levers": {
     "reconcile_steps": 10,
     "program_course_file_check": 2
-   }
+   },
+   "census_programs": 82,
+   "census_gap": 12,
+   "census_passing": 70
   },
   {
    "id": 81,
@@ -5448,7 +5672,10 @@
     "reconcile_steps": 24,
     "reader_page_search": 19,
     "reader_page_assignment": 17
-   }
+   },
+   "census_programs": 145,
+   "census_gap": 61,
+   "census_passing": 84
   },
   {
    "id": 82,
@@ -5524,7 +5751,10 @@
     "reader_page_search": 5,
     "ge_units_steps": 3,
     "reader_page_assignment": 3
-   }
+   },
+   "census_programs": 96,
+   "census_gap": 25,
+   "census_passing": 71
   },
   {
    "id": 83,
@@ -5597,7 +5827,10 @@
     "reader_page_search": 7,
     "reader_page_assignment": 4,
     "program_course_file_check": 3
-   }
+   },
+   "census_programs": 192,
+   "census_gap": 32,
+   "census_passing": 160
   },
   {
    "id": 84,
@@ -5655,7 +5888,10 @@
    "run": "42195216637",
    "levers": {
     "unpark": 21
-   }
+   },
+   "census_programs": 205,
+   "census_gap": 22,
+   "census_passing": 183
   },
   {
    "id": 85,
@@ -5727,7 +5963,10 @@
     "reader_page_assignment": 9,
     "program_course_file_check": 6,
     "reader_page_search": 1
-   }
+   },
+   "census_programs": 142,
+   "census_gap": 35,
+   "census_passing": 107
   },
   {
    "id": 3,
@@ -5799,7 +6038,10 @@
     "reconcile_steps": 7,
     "program_course_file_check": 5,
     "reader_page_search": 4
-   }
+   },
+   "census_programs": 149,
+   "census_gap": 17,
+   "census_passing": 132
   },
   {
    "id": 86,
@@ -5874,7 +6116,10 @@
     "reader_page_search": 31,
     "reconcile_steps": 24,
     "reader_page_assignment": 13
-   }
+   },
+   "census_programs": 384,
+   "census_gap": 91,
+   "census_passing": 293
   },
   {
    "id": 6,
@@ -5943,7 +6188,10 @@
     "program_course_file_check": 22,
     "reconcile_steps": 16,
     "reader_page_assignment": 3
-   }
+   },
+   "census_programs": 134,
+   "census_gap": 40,
+   "census_passing": 94
   },
   {
    "id": 87,
@@ -6014,7 +6262,10 @@
     "reader_page_search": 13,
     "reconcile_steps": 10,
     "reader_page_assignment": 4
-   }
+   },
+   "census_programs": 123,
+   "census_gap": 43,
+   "census_passing": 80
   },
   {
    "id": 1,
@@ -6089,7 +6340,10 @@
     "program_course_file_check": 11,
     "reader_page_search": 2,
     "reader_page_assignment": 1
-   }
+   },
+   "census_programs": 161,
+   "census_gap": 33,
+   "census_passing": 128
   },
   {
    "id": 121,
@@ -6159,7 +6413,10 @@
     "program_course_file_check": 8,
     "reader_page_assignment": 4,
     "reconcile_steps": 1
-   }
+   },
+   "census_programs": 107,
+   "census_gap": 32,
+   "census_passing": 75
   },
   {
    "id": 88,
@@ -6233,7 +6490,10 @@
     "reader_page_assignment": 12,
     "reconcile_steps": 5,
     "ge_units_steps": 3
-   }
+   },
+   "census_programs": 202,
+   "census_gap": 76,
+   "census_passing": 126
   },
   {
    "id": 89,
@@ -6312,7 +6572,10 @@
     "reader_page_assignment": 15,
     "ge_units_steps": 12,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 317,
+   "census_gap": 101,
+   "census_passing": 216
   },
   {
    "id": 90,
@@ -6381,7 +6644,10 @@
     "reader_page_search": 12,
     "reader_page_assignment": 2,
     "program_course_file_check": 1
-   }
+   },
+   "census_programs": 85,
+   "census_gap": 23,
+   "census_passing": 62
   },
   {
    "id": 13,
@@ -6454,7 +6720,10 @@
     "scorer_noncredit_hours": 4,
     "reader_page_search": 2,
     "program_course_file_check": 1
-   }
+   },
+   "census_programs": 62,
+   "census_gap": 28,
+   "census_passing": 34
   },
   {
    "id": 15,
@@ -6524,7 +6793,10 @@
     "reconcile_steps": 16,
     "program_course_file_check": 11,
     "reader_page_assignment": 1
-   }
+   },
+   "census_programs": 247,
+   "census_gap": 27,
+   "census_passing": 220
   },
   {
    "id": 91,
@@ -6599,7 +6871,10 @@
     "reconcile_steps": 18,
     "reader_page_assignment": 4,
     "ge_units_steps": 2
-   }
+   },
+   "census_programs": 357,
+   "census_gap": 116,
+   "census_passing": 241
   },
   {
    "id": 92,
@@ -6675,7 +6950,10 @@
     "reader_page_search": 3,
     "ge_units_steps": 2,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 74,
+   "census_gap": 32,
+   "census_passing": 42
   },
   {
    "id": 93,
@@ -6748,7 +7026,10 @@
     "reader_page_search": 4,
     "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 211,
+   "census_gap": 36,
+   "census_passing": 175
   },
   {
    "id": 94,
@@ -6822,7 +7103,10 @@
     "reader_page_search": 9,
     "reader_page_assignment": 4,
     "ge_units_steps": 1
-   }
+   },
+   "census_programs": 321,
+   "census_gap": 45,
+   "census_passing": 276
   },
   {
    "id": 2,
@@ -6892,7 +7176,10 @@
     "reconcile_steps": 22,
     "reader_page_search": 18,
     "program_course_file_check": 6
-   }
+   },
+   "census_programs": 205,
+   "census_gap": 38,
+   "census_passing": 167
   },
   {
    "id": 95,
@@ -6966,7 +7253,10 @@
     "reconcile_steps": 19,
     "ge_units_steps": 14,
     "reader_page_search": 3
-   }
+   },
+   "census_programs": 221,
+   "census_gap": 74,
+   "census_passing": 147
   },
   {
    "id": 16,
@@ -7038,7 +7328,10 @@
     "program_course_file_check": 14,
     "reader_page_assignment": 10,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 259,
+   "census_gap": 57,
+   "census_passing": 202
   },
   {
    "id": 8,
@@ -7126,7 +7419,10 @@
     "paid_read": 4,
     "program_course_file_check": 4,
     "reader_page_search": 3
-   }
+   },
+   "census_programs": 203,
+   "census_gap": 62,
+   "census_passing": 141
   },
   {
    "id": 96,
@@ -7198,7 +7494,10 @@
     "program_course_file_check": 12,
     "reader_page_assignment": 4,
     "reconcile_steps": 4
-   }
+   },
+   "census_programs": 186,
+   "census_gap": 25,
+   "census_passing": 161
   },
   {
    "id": 119,
@@ -7264,7 +7563,10 @@
     "program_course_file_check": 24,
     "reader_page_assignment": 19,
     "reader_page_search": 11
-   }
+   },
+   "census_programs": 138,
+   "census_gap": 51,
+   "census_passing": 87
   },
   {
    "id": 97,
@@ -7336,7 +7638,10 @@
     "reader_page_search": 7,
     "reader_page_assignment": 2,
     "reconcile_steps": 2
-   }
+   },
+   "census_programs": 179,
+   "census_gap": 17,
+   "census_passing": 162
   },
   {
    "id": 98,
@@ -7404,7 +7709,10 @@
     "program_course_file_check": 22,
     "reader_page_search": 4,
     "reconcile_steps": 3
-   }
+   },
+   "census_programs": 124,
+   "census_gap": 26,
+   "census_passing": 98
   },
   {
    "id": 99,
@@ -7475,7 +7783,10 @@
     "program_course_file_check": 18,
     "reconcile_steps": 2,
     "reader_page_assignment": 1
-   }
+   },
+   "census_programs": 245,
+   "census_gap": 50,
+   "census_passing": 195
   },
   {
    "id": 100,
@@ -7559,7 +7870,10 @@
     "reader_page_assignment": 7,
     "reader_page_search": 6,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 93,
+   "census_gap": 58,
+   "census_passing": 35
   },
   {
    "id": 101,
@@ -7634,7 +7948,10 @@
     "program_course_file_check": 11,
     "ge_units_steps": 1,
     "paid_read": 1
-   }
+   },
+   "census_programs": 368,
+   "census_gap": 44,
+   "census_passing": 324
   },
   {
    "id": 102,
@@ -7708,7 +8025,10 @@
     "reconcile_steps": 25,
     "reader_page_assignment": 7,
     "scorer_noncredit_hours": 2
-   }
+   },
+   "census_programs": 294,
+   "census_gap": 87,
+   "census_passing": 207
   },
   {
    "id": 103,
@@ -7784,7 +8104,10 @@
     "reader_page_assignment": 13,
     "paid_read": 1,
     "reader_page_search": 1
-   }
+   },
+   "census_programs": 254,
+   "census_gap": 72,
+   "census_passing": 182
   },
   {
    "id": 104,
@@ -7870,7 +8193,10 @@
     "paid_read": 6,
     "reader_page_search": 6,
     "program_course_file_check": 4
-   }
+   },
+   "census_programs": 280,
+   "census_gap": 89,
+   "census_passing": 191
   },
   {
    "id": 105,
@@ -7954,7 +8280,10 @@
     "reader_page_search": 8,
     "scorer_noncredit_hours": 8,
     "reader_page_assignment": 6
-   }
+   },
+   "census_programs": 241,
+   "census_gap": 66,
+   "census_passing": 175
   },
   {
    "id": 106,
@@ -8029,7 +8358,10 @@
     "program_course_file_check": 13,
     "reader_page_search": 13,
     "ge_units_steps": 1
-   }
+   },
+   "census_programs": 138,
+   "census_gap": 78,
+   "census_passing": 60
   },
   {
    "id": 107,
@@ -8111,7 +8443,10 @@
     "reconcile_steps": 14,
     "reader_page_assignment": 9,
     "ge_units_steps": 3
-   }
+   },
+   "census_programs": 190,
+   "census_gap": 105,
+   "census_passing": 85
   },
   {
    "id": 108,
@@ -8190,7 +8525,10 @@
     "reader_page_assignment": 11,
     "reader_page_search": 5,
     "reconcile_steps": 2
-   }
+   },
+   "census_programs": 122,
+   "census_gap": 94,
+   "census_passing": 28
   },
   {
    "id": 109,
@@ -8274,7 +8612,10 @@
     "ge_units_steps": 8,
     "program_course_file_check": 8,
     "reader_page_search": 1
-   }
+   },
+   "census_programs": 154,
+   "census_gap": 39,
+   "census_passing": 115
   },
   {
    "id": 110,
@@ -8355,7 +8696,10 @@
     "reconcile_steps": 21,
     "reader_page_search": 13,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 251,
+   "census_gap": 93,
+   "census_passing": 158
   },
   {
    "id": 111,
@@ -8432,7 +8776,10 @@
     "reader_page_assignment": 2,
     "ge_units_steps": 1,
     "paid_read": 1
-   }
+   },
+   "census_programs": 77,
+   "census_gap": 41,
+   "census_passing": 36
   },
   {
    "id": 112,
@@ -8507,7 +8854,10 @@
     "reader_page_search": 5,
     "reader_page_assignment": 3,
     "scorer_noncredit_hours": 1
-   }
+   },
+   "census_programs": 177,
+   "census_gap": 58,
+   "census_passing": 119
   },
   {
    "id": 14,
@@ -8583,7 +8933,10 @@
     "scorer_noncredit_hours": 11,
     "reader_page_assignment": 8,
     "ge_units_steps": 2
-   }
+   },
+   "census_programs": 197,
+   "census_gap": 68,
+   "census_passing": 129
   },
   {
    "id": 115,
@@ -8657,7 +9010,10 @@
     "reader_page_assignment": 15,
     "reader_page_search": 14,
     "scorer_noncredit_hours": 5
-   }
+   },
+   "census_programs": 233,
+   "census_gap": 60,
+   "census_passing": 173
   },
   {
    "id": 116,
@@ -8732,7 +9088,10 @@
     "ge_units_steps": 4,
     "paid_read": 3,
     "program_course_file_check": 3
-   }
+   },
+   "census_programs": 139,
+   "census_gap": 22,
+   "census_passing": 117
   },
   {
    "id": 117,
@@ -8798,7 +9157,10 @@
     "program_course_file_check": 4,
     "reconcile_steps": 2,
     "reader_page_assignment": 1
-   }
+   },
+   "census_programs": 69,
+   "census_gap": 7,
+   "census_passing": 62
   },
   {
    "id": 118,
@@ -8869,7 +9231,10 @@
     "program_course_file_check": 10,
     "reader_page_assignment": 4,
     "reader_page_search": 1
-   }
+   },
+   "census_programs": 99,
+   "census_gap": 25,
+   "census_passing": 74
   }
  ],
  "live": {

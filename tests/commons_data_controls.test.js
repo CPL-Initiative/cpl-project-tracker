@@ -423,6 +423,65 @@ function audit(x, where, bad, seen) {
     check("sources: a source pane says what its file is, and its new tab opens the same pane, never a file on GitHub",
       dvt && /^#commons\/data\/dictionary\/source\/dictionary$/.test(dvt.getAttribute("href")) && !dv.d.querySelector('#cdd-panel a[href*="github.com"]'), dvt && dvt.getAttribute("href"));
   }
+  /* Review of #3261, round 2: one base per card. Where the live census holds a college, Still to pass is the census's
+     count and the causes sum to it, in the list and in the opened row; the statewide card equals the census's gap. */
+  {
+    const onLive = DATA.colleges.filter((c) => c.harvested && c.census_programs != null);
+    const offSum = onLive.filter((c) => Object.values(c.census_causes || {}).reduce((a, b) => a + b, 0) !== c.census_gap).map((c) => c.name);
+    const cen = JSON.parse(fs.readFileSync("kb/status/harvest_gap_census.json", "utf8"));
+    check("bases 1 ⭐: for every college on the live basis, its causes sum to its Still to pass", onLive.length > 0 && !offSum.length, offSum.slice(0, 5));
+    const b1 = load("#commons/data");
+    await b1.M.boot(); await settle();
+    const tileT = txt(b1.d.querySelector('.cdd-tiles [data-tile="Programs still to pass"]'));
+    check("bases 2 ⭐: the statewide Programs still to pass card equals the census's gap, and names its base",
+      cen.basis !== "live" || (new RegExp("^" + Number(cen.gap).toLocaleString("en-US") + "(?![0-9,])").test(tileT) && /gap census's live read/.test(tileT)), tileT.slice(0, 160));
+    const offRow = [];
+    onLive.forEach((c) => {
+      const td = b1.d.querySelector('#cdd-colleges tr[data-id="' + c.id + '"] td[data-label="Still to pass"]');
+      if (!td || txt(td) !== Number(c.census_gap).toLocaleString("en-US")) offRow.push(c.name + ": " + (td && txt(td)) + " vs " + c.census_gap);
+    });
+    check("bases 3: the list's Still to pass column reads the census's count where it holds the college", !offRow.length, offRow.slice(0, 5));
+    const sk = onLive[0];
+    b1.d.querySelector('[data-expand="' + sk.id + '"]').click(); await settle();
+    const card = txt(b1.d.querySelector("#cdd-more-" + sk.id + ' [data-ds="pr"]'));
+    check("bases 4 ⭐: the opened card's Still to pass names the live base and equals the causes' sum; the capture's own figures keep their label",
+      new RegExp("Still to pass \\(gap census live read\\)\\s*" + Number(sk.census_gap).toLocaleString("en-US")).test(card) && /Listed by the capture/.test(card), card.slice(0, 300));
+    const pk = load("#commons/data/college/" + b1.D.slugOf(sk) + "/program/00000");
+    await pk.M.boot(); await settle();
+    check("bases 5: a program the live list does not hold says the live read does not list it as still to pass",
+      /live read does not list program 00000 as still to pass/.test(txt(pk.d.querySelector("#cdd-panel"))));
+    /* COBIx on #3261: inherited names are no view, pane or filter, and the address is repaired. */
+    const pc = load("#commons/data/constructor");
+    await pc.M.boot(); await settle();
+    const pc2 = load("#commons/data/college/" + b1.D.slugOf(sk) + "/toString");
+    await pc2.M.boot(); await settle();
+    check("guards 1 ⭐: #commons/data/constructor opens the list and repairs the address; college/<slug>/toString opens the college alone",
+      pc.w.location.hash === "#commons/data" && !!pc.d.querySelector("#cdd-colleges") && pc2.w.location.hash === "#commons/data/college/" + b1.D.slugOf(sk)
+      && !/Not found/.test(txt(pc2.d.querySelector("#cdd-panel-h"))), [pc.w.location.hash, pc2.w.location.hash]);
+    /* A failed program read retries when the college opens again. */
+    let fails = 1;
+    const rt = load("#commons/data", FIX);
+    const realFetch = rt.w.fetch;
+    rt.w.fetch = function (u) { if (String(u).indexOf(SIDE) === 0 && fails-- > 0) return Promise.resolve({ ok: false, status: 503, json: () => Promise.reject(new Error("503")) }); return realFetch(u); };
+    await rt.M.boot(); await settle();
+    rt.D.openPanel(9001, null, "places_none"); await settle();
+    const first = /could not be read/.test(txt(rt.d.querySelector("#cdd-panel")));
+    rt.D.closePanel(); await settle();
+    rt.D.openPanel(9001, null, "places_none"); await settle();
+    check("guards 2 ⭐: a program list that failed to load is read again when its college opens again",
+      first && rt.d.querySelectorAll("#cdd-panel ul.cdd-progs > li").length === 11, first);
+    /* "print none" never hides a live objective count. */
+    const ob = JSON.parse(JSON.stringify(FIX));
+    ob.colleges[0].objectives_printed = false;
+    ob.overall = { state: "read", basis: "live", read_at: "2026-11-13T17:58:51Z", colleges: {} };
+    ob.live = { basis: "live", state: "read", read_at: "2026-11-13T17:58:51Z", colleges: { "9001": { programs: { active: 10 }, records: {}, program_courses: { active_courses: 100 },
+      outcomes: { slo_courses: 50, slo_courses_on_active: 40, objective_courses: 9, objective_courses_on_active: 7 } } } };
+    const oo = load("#commons/data", ob);
+    await oo.M.boot(); await settle();
+    const cell = oo.d.querySelector('#cdd-colleges tr[data-id="9001"] td[data-label="SLOs and objectives"]');
+    check("guards 3: a college flagged as printing no objectives still shows its live objective meter when the live count is above 0",
+      cell && cell.querySelectorAll(".cdd-pr").length === 2 && !cell.querySelector("[data-noobj]"), cell && txt(cell));
+  }
   check("controls ⭐: every element styled as a control is a button with a handler or a link with a destination", seen.n > 200 && !bad.length, bad.slice(0, 8).concat(["walked " + seen.n]));
 
   /* (2) the computed rule, since jsdom has no layout. */

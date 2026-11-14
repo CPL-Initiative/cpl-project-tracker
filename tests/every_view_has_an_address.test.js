@@ -80,7 +80,7 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   // #commons/data/apis: the view reads them first from the arrival and names them in its report; the catalog platform
   // filter lives in the address too (platform/<key>). The round trips are in tests/commons_data.test.js (10).
   check("(E) ⭐ commons/data/dictionary and commons/data/apis open from their arrival and report themselves",
-    /dictionary: "The data dictionary", apis: "The API checklist"/.test(DATAJS) && /if \(VIEWS\[p\[0\]\]\) \{ out\.view = p\[0\]/.test(DATAJS) && /if \(S\.view\) return "commons\/data\/" \+ S\.view/.test(DATAJS));
+    /dictionary: "The data dictionary", apis: "The API checklist"/.test(DATAJS) && /if \(p\[0\] && own\(VIEWS, p\[0\]\)\) \{ out\.view = p\[0\]/.test(DATAJS) && /if \(S\.view\) return "commons\/data\/" \+ S\.view/.test(DATAJS));
   // S648: the district roll-up is a view of its own (#commons/data/districts), and a district's colleges open at
   // #commons/data/district/<slug>; the round trips are in tests/commons_data_controls.test.js (districts 2, 3).
   check("(E) ⭐ commons/data/districts opens from its arrival, and a district's colleges carry it in the address",
@@ -89,7 +89,7 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   // address of its own (.../college/<slug>/<pane>[/<key>], or a view's source at <view>/source/<key>); the round trips
   // are in tests/commons_data_controls.test.js (panes).
   check("(E) commons/data/slos and every pane of the side panel carry their address",
-    /slos: "Colleges with collected SLOs"/.test(DATAJS) && /function paneRoute\(p\)/.test(DATAJS) && /if \(w in PANES\) \{ out\.pane =/.test(DATAJS));
+    /slos: "Colleges with collected SLOs"/.test(DATAJS) && /function paneRoute\(p\)/.test(DATAJS) && /if \(own\(PANES, w\)\) \{ out\.pane =/.test(DATAJS));
   check("(E) commons/data carries its catalog platform in the address", /"\/platform\/" \+ platform/.test(DATAJS) && /p\[i\] === "platform"/.test(DATAJS));
   const files = fs.readdirSync(".").filter((f) => /\.js$/.test(f) && f !== "cpl_session.js");
   files.forEach(function (f) {

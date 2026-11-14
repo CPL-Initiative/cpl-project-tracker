@@ -111,7 +111,7 @@
     fresh: { word: "Collected within a week", test: function (c, M) { return ageOf(c, M) === "fresh"; } },
     recent: { word: "Collected within a month", test: function (c, M) { return ageOf(c, M) === "recent"; } },
     stale: { word: "Collected more than a month ago", test: function (c, M) { return ageOf(c, M) === "stale"; } },
-    gaps: { word: "Programs still to pass", test: function (c) { return c.harvested && c.gap > 0; } },
+    gaps: { word: "Programs still to pass", test: function (c) { return c.harvested && prOf(c).gap > 0; } },
     slo: { word: "SLO read waiting", test: function (c) { return !!c.slo_queue; } },
     scouted: { word: "Scouted for a wave", test: function (c) { return !!c.scout; } },
     noncredit: { word: "Continuing education", test: function (c) { return c.kind === "continuing_education"; } },
@@ -151,7 +151,7 @@
     var obj = function (v) { return v && typeof v === "object" && !Array.isArray(v) ? v : {}; };
     return { colleges: colleges, statewide: data.statewide || {}, rule: data.rule || {}, tba: data.tba || {},
       sources: data.sources || {}, written: data.written_at || "", fields: data.fields || {},
-      live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis) };
+      live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis), census_live: obj(data.census_live) };
   }
   function listFor(M, filter) {
     var f = FILTERS[filter] || FILTERS.all;
@@ -230,8 +230,7 @@
       activeTile(M, conf),
       overallTile(M, conf),
       /* It counts programs, so the card stays plain; the word inside it opens the colleges that hold them. */
-      { v: fmt(S.gap), l: "Programs still to pass", open: n("gaps") ? { f: "gaps", word: "Their " + plural(n("gaps"), "college", "colleges") + ", most first" } : null,
-        d: "Of the " + fmt(S.programs) + " programs listed in the committed captures, those that do not yet pass the machine checks." },
+      censusTile(M, n),
       /* Without the builder's thresholds every capture would read stale, so the card reads TBA with its reason. */
       freshWords(M) ? { l: "Collection freshness", parts: [["fresh", n("fresh"), "fresh"], ["recent", n("recent"), "recent"], ["stale", n("stale"), "stale"]], d: freshWords(M) }
         : { v: "TBA", l: "Collection freshness", d: "The file gives no freshness thresholds (rule.age_days), so no capture's age is read.", tba: true },
@@ -247,6 +246,18 @@
   /* Active programs with a passing record, of the Active programs: the live table's completeness count, basis live,
      with its confidence beside it (Sam's direction on #3229: a completeness count with its confidence level beside it). A figure
      summed over every college stays plain. */
+  /* Programs still to pass, on the gap census's live base where it holds the colleges (review of #3261, round 2): the
+     figure equals the census's gap, and each college's causes sum to its share. */
+  function censusTile(M, n) {
+    var CL = M.census_live || {}, S0 = M.statewide;
+    var open = n("gaps") ? { f: "gaps", word: "Their " + plural(n("gaps"), "college", "colleges") + ", most first" } : null;
+    if (CL.basis === "live" && CL.colleges)
+      return { v: fmt(CL.gap), l: "Programs still to pass", open: open,
+        d: "Of the " + fmt(CL.programs) + " Active programs in the gap census's live read (" + CL.at + "), those without a passing record; each college's causes sum to its figure." +
+          (CL.colleges < S0.harvested ? " " + plural(S0.harvested - CL.colleges, "college reads", "colleges read") + " from the committed captures." : "") };
+    return { v: fmt(S0.gap), l: "Programs still to pass", open: open,
+      d: "Of the " + fmt(S0.programs) + " programs listed in the committed captures, those that do not yet pass the machine checks." };
+  }
   function activeTile(M, conf) {
     var st = (M.live || {}).statewide || {}, pr = st.programs || {}, rc = st.records || {};
     if (!liveRead(M)) return { v: "TBA", l: "Active programs complete", d: liveReason(M), tba: true };
@@ -298,8 +309,8 @@
     { k: "overall", label: "Overall", d0: 1, val: function (c) { var o = overallOf(VIEW.M, c); return o ? o.value : -1; } },
     /* Sam, in session, S649: "add an slo/objective progress bar to the top row". Sorts on the SLO share. */
     { k: "out", label: "SLOs and objectives", d0: 1, val: function (c) { var o = outcomeShares(VIEW.M, c); return o ? o.slo : -1; } },
-    { k: "pr", label: "Program requirements", d0: 1, val: function (c) { return c.harvested ? pct(c.passing, c.programs) || 0 : -1; } },
-    { k: "gap", label: "Still to pass", d0: -1, val: function (c) { return c.harvested ? c.gap : -1; } },
+    { k: "pr", label: "Program requirements", d0: 1, val: function (c) { var P = prOf(c); return c.harvested ? pct(P.passing, P.programs) || 0 : -1; } },
+    { k: "gap", label: "Still to pass", d0: -1, val: function (c) { return c.harvested ? prOf(c).gap : -1; } },
     { k: "read", label: "Last read", d0: -1, val: function (c) { return c.read_at ? new Date(c.read_at).getTime() : 0; } },
     { k: "cost", label: "Read cost per passing program", d0: -1, val: function (c) { var v = costPer(c); return v == null ? -1 : v; } },
     { k: "conf", label: "Confidence", d0: -1, val: function (c) { return LEVEL_RANK[level(c)] || 0; } }
@@ -365,11 +376,14 @@
   function parseRoute(route) {
     var p = String(route || "").split("/").filter(Boolean), out = { view: "", filter: "all", platform: "", college: "", district: "", cause: "", pane: null };
     var i = 0;
-    if (VIEWS[p[0]]) { out.view = p[0]; i = 1; }
-    else if (!(p[0] === "college" || p[0] === "platform" || p[0] === "district" || p[0] in PANES)) { out.filter = p[0] || "all"; i = 1; }
+    /* Own keys only: an inherited name (constructor, toString) is no view, pane or filter (COBIx on #3261). */
+    if (p[0] && own(VIEWS, p[0])) { out.view = p[0]; i = 1; }
+    else if (!(p[0] === "college" || p[0] === "platform" || p[0] === "district" || (p[0] && own(PANES, p[0])))) { out.filter = p[0] || "all"; i = 1; }
     while (i < p.length) {
       var w = p[i];
-      if (w in PANES) { out.pane = { k: w, a: PANES[w] ? p[i + 1] || "" : "" }; i += PANES[w] ? 2 : 1; continue; }
+      if (own(PANES, w)) { out.pane = { k: w, a: PANES[w] ? p[i + 1] || "" : "" }; i += PANES[w] ? 2 : 1; continue; }
+      /* A word the address does not know (toString, a typo) is dropped, and the address repaired. */
+      if (!(w === "college" || w === "cause" || (!out.view && (w === "platform" || w === "district")))) { out.junk = true; i += 1; continue; }
       if (p[i] === "college") out.college = p[i + 1] || "";
       else if (!out.view) {
         if (p[i] === "platform") out.platform = p[i + 1] || "";
@@ -426,9 +440,9 @@
   function row(M, c, now) {
     var pr = el("td", { "data-label": "Program requirements" });
     if (c.harvested) {
-      var v = pct(c.passing, c.programs);
+      var P0 = prOf(c), v = pct(P0.passing, P0.programs);
       pr.appendChild(el("span", { cls: "cdd-pr" }, [meter(v || 0), el("span", { cls: "cdd-n", text: (v == null ? "None listed" : Math.round(v * 100) + "%") }),
-        el("span", { cls: "cdd-of", text: fmt(c.passing) + " of " + fmt(c.programs) + " listed programs" })]));
+        el("span", { cls: "cdd-of", text: fmt(P0.passing) + " of " + fmt(P0.programs) + " " + prWords(P0) })]));
     } else pr.appendChild(el("span", { cls: "cdd-unread", text: "Not collected yet" }));
     var a = age(c.read_at, M.rule, now);
     var read = el("td", { "data-label": "Last read" }, c.read_at ? [day(c.read_at), el("span", { cls: "cdd-age", text: ", " + a }),
@@ -450,11 +464,11 @@
     var os = outcomeShares(M, c);
     var outCell = el("td", { "data-label": "SLOs and objectives", cls: os ? "cdd-outs" : "cdd-quiet" }, os
       ? [el("span", { cls: "cdd-pr" }, [meter(os.slo), el("span", { cls: "cdd-n", text: pc(os.slo) }), el("span", { cls: "cdd-of", text: "SLOs" })]),
-        c.objectives_printed === false ? el("span", { cls: "cdd-of", "data-noobj": "true", text: NO_OBJ_SHORT })
+        c.objectives_printed === false && !os.objN ? el("span", { cls: "cdd-of", "data-noobj": "true", text: NO_OBJ_SHORT })
           : el("span", { cls: "cdd-pr" }, [meter(os.obj), el("span", { cls: "cdd-n", text: pc(os.obj) }), el("span", { cls: "cdd-of", text: "Objectives" })])]
       : [liveRead(M) ? "Not in the live read" : "TBA"]);
     return el("tr", { "data-college": c.name, "data-id": String(c.id), cls: open ? "cdd-open" : null }, [name, ovCell, outCell, pr,
-      el("td", { "data-label": "Still to pass", cls: "cdd-num", text: c.harvested ? fmt(c.gap) : "" }),
+      el("td", { "data-label": "Still to pass", cls: "cdd-num", text: c.harvested ? fmt(prOf(c).gap) : "" }),
       read,
       el("td", { "data-label": "Read cost per passing program", cls: "cdd-num", text: cp == null ? "" : "$" + cp.toFixed(3) }),
       el("td", { "data-label": "Confidence", cls: c.confidence ? "" : "cdd-quiet" }, c.confidence
@@ -474,6 +488,16 @@
   /* The cause table, its lists and the asks read the gap census's own counts (census_causes: its live read where it
      holds the college, else the committed files, as census_basis says), so a cause's list equals its count (review of
      #3261). A row without them (an older file) falls back to the committed causes. */
+  /* The program requirements figures on one base (review of #3261, round 2; d-data-collection-two-bases-s648): where
+     the gap census's live read holds the college, Active programs, passing now and still to pass all come from it, so
+     the causes sum to the figure above them; elsewhere the capture's own figures, each labeled with its base. */
+  function own(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+  function prOf(c) {
+    if (c && c.census_programs != null && c.census_gap != null)
+      return { programs: c.census_programs, passing: c.census_passing, gap: c.census_gap, live: true, at: (c.census_basis || {}).at || "" };
+    return { programs: c ? c.programs : null, passing: c ? c.passing : null, gap: c ? c.gap : null, live: false, at: "" };
+  }
+  function prWords(P) { return P.live ? "Active programs, gap census live read" + (P.at ? " " + P.at.slice(0, 10) : "") : "listed programs, committed captures"; }
   function causesOf(c) { return (c && (c.census_causes || c.causes)) || {}; }
   function leversOf(c) { return (c && (c.census_levers || c.levers)) || {}; }
   function censusWords(c) {
@@ -488,14 +512,18 @@
   function datasets(M, c) {
     var L = [];
     var pr = { key: "pr", group: "Collected", label: "Program requirements", held: !!c.harvested,
-      src: "kb/program_requirements_college/" + (c.slug || "<slug>") + "/ (capture and summary), causes through the gap census's committed-files functions" };
+      src: "" };
     if (c.harvested) {
-      var v = pct(c.passing, c.programs);
-      pr.num = c.passing; pr.den = c.programs; pr.value = v == null ? "None listed" : Math.round(v * 100) + "%";
-      pr.note = fmt(c.passing) + " of " + fmt(c.programs) + " listed programs pass the machine checks";
-      pr.lines = [["Listed by the capture", fmt(c.programs)], c.listed_closed != null ? ["With a closed course list", fmt(c.listed_closed)] : null,
-        c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null, c.extracted != null ? ["Records extracted (a reread can add some)", fmt(c.extracted)] : null,
-        ["Passing now", fmt(c.passing)], ["Still to pass", fmt(c.gap)]].filter(Boolean);
+      var P = prOf(c), v = pct(P.passing, P.programs);
+      pr.src = P.live ? "the gap census's live read (kb/status/harvest_gap_census.json, " + P.at + ") for Active programs, passing now, still to pass and each cause; kb/program_requirements_college/" + c.slug + "/ for the capture's own figures"
+        : "kb/program_requirements_college/" + (c.slug || "<slug>") + "/ (capture and summary) for every figure; causes through the gap census's committed-files functions";
+      pr.num = P.passing; pr.den = P.programs; pr.value = v == null ? "None listed" : Math.round(v * 100) + "%";
+      pr.note = fmt(P.passing) + " of " + fmt(P.programs) + " " + prWords(P) + ", pass the machine checks";
+      /* The figures above the causes share the causes' base; the capture's own counts follow under their own label. */
+      pr.lines = (P.live ? [["Active programs (gap census live read)", fmt(P.programs)], ["Passing now (gap census live read)", fmt(P.passing)], ["Still to pass (gap census live read)", fmt(P.gap)]]
+        : [["Passing now (committed captures)", fmt(P.passing)], ["Still to pass (committed captures)", fmt(P.gap)]])
+        .concat([["Listed by the capture (Active, Teachout and Approved)", fmt(c.programs)], c.listed_closed != null ? ["With a closed course list (the capture)", fmt(c.listed_closed)] : null,
+        c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null, c.extracted != null ? ["Records extracted (the capture; a reread can add some)", fmt(c.extracted)] : null].filter(Boolean));
       var CC = causesOf(c);
       pr.causes = Object.keys(CC).sort(function (a, b) { return CC[b] - CC[a] || a.localeCompare(b); })
         .map(function (k) { return [causeWord(M, k), CC[k], k]; });
@@ -561,7 +589,7 @@
     L.push(plo);
     var obj = { key: "obj", group: "Collected", label: "Course objectives", tba: gone || tbaOf(M, "objectives") };
     if (lv) { obj.tba = ""; liveCourses(obj, lo.objective_courses_on_active, lo.objective_courses, lo.objective_loaded_at, "objectives"); }
-    if (c.objectives_printed === false) { obj.held = true; obj.num = null; obj.den = null; obj.tba = ""; obj.state = "None printed"; obj.note = NO_OBJ; }
+    if (c.objectives_printed === false && !lo.objective_courses) { obj.held = true; obj.num = null; obj.den = null; obj.tba = ""; obj.state = "None printed"; obj.note = NO_OBJ; }
     if (obj.held) obj.word = [lo.slo_courses || lo.objective_courses ? "The SLO and objective courses collected for " + c.name : "SLOs and objectives for " + c.name + ": not read yet", { k: "slos" }];
     L.push(obj);
 
@@ -677,7 +705,7 @@
      programs_file); the page reads a college's file only when its row or its panel opens, once a visit. */
   var PROGS = {};
   function loadPrograms(c) {
-    if (!c || !c.programs_file || PROGS[c.programs_file]) return;
+    if (!c || !c.programs_file || (PROGS[c.programs_file] && PROGS[c.programs_file].state !== "error")) return;   // an error retries (COBIx on #3261)
     var key = c.programs_file;
     PROGS[key] = { state: "loading" };
     var p;
@@ -709,7 +737,7 @@
      program, SLO and objective courses by subject. Read only when its pane opens. */
   var OUTS = {};
   function loadOutcomes(c) {
-    if (!c || !c.outcomes_file || OUTS[c.outcomes_file]) return;
+    if (!c || !c.outcomes_file || (OUTS[c.outcomes_file] && OUTS[c.outcomes_file].state !== "error")) return;
     var key = c.outcomes_file;
     OUTS[key] = { state: "loading" };
     var p;
@@ -871,7 +899,7 @@
     return { word: W[0], about: W[1], path: rp.path };
   }
   function PANE_OK(M, c, p) {
-    if (!p || !(p.k in PANES)) return false;
+    if (!p || !own(PANES, p.k)) return false;
     if (p.k === "source") return !!sourceOf(M, c, p.a);
     if (p.k === "entry") return !c && ((M.dictionary || {}).datasets || []).some(function (x) { return x.link && slugOf({ name: x.name }) === p.a; });
     if (!c) return false;
@@ -924,6 +952,7 @@
         text: !c.programs_file ? "The committed files hold no program list for this college."
           : !P || P.state === "loading" ? "Reading the program."
           : P.state === "error" ? "The program list could not be read (" + c.programs_file + "), so this program cannot be shown. The counts beside its cause stand."
+          : (c.census_basis || {}).basis === "live" ? "The gap census's live read does not list program " + p.a + " as still to pass at " + c.name + "."
           : "The program list holds no program " + p.a + "." })] };
       var lw = LW[r.lever] || {};
       /* The capture matched this page to the program; a match can be wrong (review of #3261: one program opened
@@ -948,7 +977,7 @@
         ["SLOs loaded", lo.slo_loaded_at ? when(lo.slo_loaded_at) : "Not yet"], ["Courses with objectives on Active programs", fmt(lo.objective_courses_on_active) + " of " + fmt(lc.active_courses)],
         ["Courses with objectives, in all", fmt(lo.objective_courses)], ["Objectives loaded", lo.objective_loaded_at ? when(lo.objective_loaded_at) : "Not yet"]])
         : tba(liveRead(M) ? "The live read holds no counts for this college." : liveReason(M)));
-      if (c.objectives_printed === false) kids.push(el("p", { cls: "cdd-of", "data-noobj": "true", text: NO_OBJ }));
+      if (c.objectives_printed === false && !lo.objective_courses) kids.push(el("p", { cls: "cdd-of", "data-noobj": "true", text: NO_OBJ }));
       if (lv && !lo.slo_courses && !lo.objective_courses) kids.push(el("p", { cls: "cdd-state", text: "Not read yet: the SLO read has not reached " + c.name + (c.slo_queue ? " (SLO read " + c.slo_queue.state + (c.slo_queue.why ? ": " + c.slo_queue.why : "") + ")" : "") + "." }));
       kids.push(el("h3", { text: "By subject, from the committed course outline reads" }));
       var cs = O && O.state === "ok" ? (O.d.courses || {}) : null;
@@ -1002,7 +1031,7 @@
     var sec = el("section", { cls: "cdd-view", id: "cdd-slos", "aria-labelledby": "cdd-h" });
     if (!liveRead(M)) { sec.appendChild(tba(liveReason(M))); return sec; }
     var R = slosRows(M), so = R.filter(function (r) { return r.slo; }).length, ob = R.filter(function (r) { return r.obj; }).length;
-    var np = R.filter(function (r) { return r.c.objectives_printed === false; }).length;
+    var np = R.filter(function (r) { return r.c.objectives_printed === false && !r.obj; }).length;
     sec.appendChild(el("p", { cls: "cdd-sortline", id: "cdd-slos-sum", text: plural(so, "college holds", "colleges hold") + " course SLOs and " + plural(ob, "college holds", "colleges hold") + " objectives, " + liveWords(M) +
       (np ? "; the course outlines of " + plural(np, "college", "colleges") + " print no objectives" : "") +
       ". The other " + plural(M.colleges.length - R.length, "college has", "colleges have") + " not been read yet. Most SLO courses first; a college's name opens what is collected for it." }));
@@ -1012,7 +1041,7 @@
       return el("tr", { "data-slos-row": r.c.name }, [el("th", { scope: "row", "data-label": "College" }, [w, el("span", { cls: "cdd-dist", text: r.c.district || "" })]),
         el("td", { "data-label": "Courses with SLOs", cls: "cdd-num", text: fmt(r.slo) }),
         el("td", { "data-label": "On Active programs" }, [el("span", { cls: "cdd-pr" }, [meter(r.den ? Math.min(1, r.sloA / r.den) : 0), el("span", { cls: "cdd-n", text: r.den ? pc(Math.min(1, r.sloA / r.den)) : "" }), el("span", { cls: "cdd-of", text: fmt(r.sloA) + " of " + fmt(r.den) + " courses" })])]),
-        r.c.objectives_printed === false ? el("td", { "data-label": "Courses with objectives", cls: "cdd-of", "data-noobj": "true", text: "Outlines print none" })
+        r.c.objectives_printed === false && !r.obj ? el("td", { "data-label": "Courses with objectives", cls: "cdd-of", "data-noobj": "true", text: "Outlines print none" })
           : el("td", { "data-label": "Courses with objectives", cls: "cdd-num", text: fmt(r.obj) }),
         el("td", { "data-label": "Loaded" }, [r.at ? day(r.at) : el("span", { cls: "cdd-quiet", text: "Not yet" }), r.objAt && r.objAt !== r.at ? el("span", { cls: "cdd-of", text: "Objectives " + day(r.objAt) }) : null])]);
     }));
@@ -1257,7 +1286,9 @@
     S.pane = R.pane && (pcol ? PANE_OK(M, pcol, R.pane) : !R.college && PANE_OK(M, null, R.pane)) ? R.pane : null;
     if (R.pane && !S.pane) fixCause = true;
     if (pcol && S.pane && (S.pane.k === "slos" || S.pane.k === "plos")) loadOutcomes(pcol);
-    var rf = FILTER_ALIAS[R.filter] || R.filter, f = FILTERS[rf] ? rf : "all";
+    var rf = own(FILTER_ALIAS, R.filter) ? FILTER_ALIAS[R.filter] : R.filter, f = own(FILTERS, rf) ? rf : "all";
+    /* A filter word the page does not know is repaired in the address, never kept. */
+    var fixFilter = (!R.view && R.filter && R.filter !== "all" && f === "all") || !!R.junk;
     /* A card sets its own order (card: true) and the order lasts only while its card's list shows: on a filter change
        the default or a card's order gives way to the new card's, or to the default. A heading's order is the person's
        and stays for the visit. */
@@ -1288,7 +1319,7 @@
       var vpage = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);
       root.appendChild(vpage);
       drawPanel(VIEW.now);   // no college on a view: the panel stays hidden and the page live, unless a source is open
-      if (fixCause) setAddress();
+      if (fixCause || fixFilter) setAddress();
       return vpage;
     }
     wrap.appendChild(el("p", { cls: "cdd-stamp", id: "cdd-stamp" }, [el("strong", { text: "From the committed files. " }),
@@ -1399,7 +1430,7 @@
     var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which goes inert while it is open
     root.appendChild(page);
     drawPanel(VIEW.now);
-    if (fixCause) setAddress();
+    if (fixCause || fixFilter) setAddress();
     return page;
   }
 

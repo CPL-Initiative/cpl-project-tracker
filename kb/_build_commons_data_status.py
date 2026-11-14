@@ -160,6 +160,7 @@ FIELDS = {
     "harvested": "shareable", "programs": "shareable", "passing": "shareable", "gap": "shareable",
     "read_at": "shareable", "read_kind": "internal", "slug": "internal", "causes": "internal", "programs_file": "internal", "outcomes_file": "internal", "outline_system": "internal",
     "census_causes": "internal", "census_levers": "internal", "census_basis": "internal",
+    "census_programs": "shareable", "census_passing": "shareable", "census_gap": "shareable",
     "objectives_printed": "shareable",
     "cost_usd": "internal", "passed_at_read": "internal", "slo_queue": "internal", "scout": "internal",
     "spot_check": "internal", "confidence": "shareable",
@@ -1006,6 +1007,22 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
     if previous is None:
         previous = _maybe(os.path.join(root, OUT)) or {}
     live = live_block(live_path, previous.get("live"), len(entities), accept_active_shift)
+    # One base per card (d-data-collection-two-bases-s648; review of #3261): where the live census holds a college, its
+    # Active programs come from the live read and its still-to-pass from the census, so the causes sum to the figure
+    # above them; passing is the difference. Elsewhere these stay null and the page shows the capture's own figures.
+    lcol = live.get("colleges") or {}
+    for c in colleges:
+        b = c.get("census_basis") or {}
+        act = ((lcol.get(str(c["id"])) or {}).get("programs") or {}).get("active")
+        cg = sum((c.get("census_causes") or {}).values()) if c.get("census_causes") is not None else None
+        ok = b.get("basis") == "live" and act is not None and cg is not None and cg <= act
+        c["census_programs"] = act if ok else None
+        c["census_gap"] = cg if ok else None
+        c["census_passing"] = act - cg if ok else None
+    on = [c for c in colleges if c.get("census_programs") is not None]
+    census_card = {"basis": "live" if on else None, "at": (on[0]["census_basis"] or {}).get("at") if on else None,
+                   "colleges": len(on), "programs": sum(c["census_programs"] for c in on),
+                   "passing": sum(c["census_passing"] for c in on), "gap": sum(c["census_gap"] for c in on)}
     dictionary, apis = parse_dictionary(root)
     tba = dict(TBA if not spot else {k: v for k, v in TBA.items() if k != "confidence"}, **outcome_reasons(outcome_hosts(root)))
     if live.get("state") == "read":
@@ -1019,6 +1036,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "tba": tba,
         "statewide": statewide,
         "census_check": {"universe": census["universe"], "passing": census["passing"], "gap": census["gap"]},
+        "census_live": census_card,
         "unmatched": unmatched,
         "colleges": colleges,
         "live": live,

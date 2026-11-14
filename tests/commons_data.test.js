@@ -243,7 +243,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     JSON.stringify(cards(m1)) === JSON.stringify(["confidence", "pr", "cat", "cost"]) && !/TBA|PLO|Course objectives|Pathways Mapper/.test(txt(m1)), cards(m1));
   const pr1 = txt(m1.querySelector('[data-ds="pr"]'));
   check("row 4: program requirements read listed, closed list, found, extracted, passing and by cause, with its bar",
-    /80 of 100 listed programs/.test(pr1) && /With a closed course list\s*95/.test(pr1) && /Programs whose page the capture found\s*90/.test(pr1) && /Records extracted \(a reread can add some\)\s*88/.test(pr1)
+    /80 of 100 listed programs/.test(pr1) && /With a closed course list \(the capture\)\s*95/.test(pr1) && /Programs whose page the capture found\s*90/.test(pr1) && /Records extracted \(the capture; a reread can add some\)\s*88/.test(pr1)
     && /^No closed list in the Program Course File\s*20$/.test(txt(m1.querySelector('[data-ds="pr"] table.cdd-causes tbody tr'))) && m1.querySelector('[data-ds="pr"] .cdd-meter i').style.width === "80%");
   check("row 5: the stamp is Pacific time with its age cue from the file", /Updated .* PT \(read\), fresh/.test(pr1));
   check("row 6: the catalog read's platform and year, the spot-check and its reason, the cost",
@@ -494,7 +494,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("live 1 ⭐: Active, Teachout and Approved are shown apart, from the live read",
     /Active programs\s*100/.test(psec("pr")) && /Teachout programs \(apart from Active\)\s*3/.test(psec("pr")) && /Approved programs \(apart from Active\)\s*4/.test(psec("pr"))
     && /Program records on file\s*96/.test(psec("pr")) && /Active programs with a passing record\s*80/.test(psec("pr")) && /From the live read, Nov 13, 2026/.test(psec("pr")) && !/Teachout and Approved programs: TBA/.test(psec("pr")));
-  check("live 2: the committed figure keeps its own label beside the live lines", /80 of 100 listed programs pass the machine checks/.test(psec("pr")));
+  check("live 2: the committed figure keeps its own label beside the live lines", /80 of 100 listed programs, committed captures, pass the machine checks/.test(psec("pr")));
   check("live 3 ⭐: SLOs and PLOs read from the live counts with their basis; the TBA lines are gone",
     /300 of 400 courses on Active programs have SLOs/.test(psec("slo")) && /75%/.test(psec("slo")) && /Live read, Nov 13, 2026/.test(psec("slo")) && !/SLO reason/.test(psec("slo"))
     && /50 of 100 Active programs carry PLOs/.test(psec("plo")) && !/PLO reason/.test(psec("plo")) && /0 of 400 courses on Active programs have objectives/.test(psec("obj")));
