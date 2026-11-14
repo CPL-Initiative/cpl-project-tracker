@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-14_s652_honors_two_row_delete.sql
-name=s652_honors_two_row_delete
+file=kb/migrations/2026-11-14_s652_honors_followups.sql
+name=s652_honors_followups
