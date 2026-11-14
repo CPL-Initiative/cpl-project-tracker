@@ -115,16 +115,20 @@ The paste that deletes the 12 extra rows and adds the unique index is
 
 **NEXT:**
 0a. ✅ **The S426 migration is in the ledger:** `workplan_goals_current_by_year_2026_10_19_s426`, version `20261019202932` (read S653b).
-0c. **Drop `current`, in two steps (DECIDED, the S653b conductor; `d-workplan-drop-current-two-steps-s653b`): readers
+0c. ✅ **Drop `current`, in two steps (DECIDED, the S653b conductor; `d-workplan-drop-current-two-steps-s653b`): readers
     first, then the drop through `kb/migrations/.apply`.** It loses no data: live reads at 18:41Z and 20:36Z 2026-11-14
     show 72 rows, `current` non-null in one (id 3, value 2) and equal to `cur_2025_26` in all 72. ✅ **Step 1 (#3335
     `d640b01d`):** no code reads or writes `workplan_goals.current` (the loader's select in `kb/_load_workplan_goals.py`,
     `activity_summaries.js`, `_row_current_years` in `excel_to_dashboard.py`); guard
     `tests/workplan_goals_current_column_guard_test.py`; `kb/_test_workplan_current_hybrid.py` runs in CI and pins that
     the legacy column is ignored; daily run 43636875045 published `9f76a96b` (20:27Z) and `kb/workplan_goals_snapshot.json`
-    carries no `current` key. **Step 2 pushed 20:37Z 2026-11-14 on `claude/workplan-drop-current-s653b`; its run, receipt
-    and read-back are in that PR.** The migration `kb/migrations/2026-11-14_s653b_workplan_goals_drop_current.sql` refuses
-    unless that equality holds and returns the before-values as its receipt; the rollback is
+    carries no `current` key. ✅ **Step 2 applied:** read first at 20:36Z (the
+    published snapshot had no `current` key, the live `activity_summaries.js` selected none, 0 rows differed), pushed to
+    `kb/migrations/.apply` at 20:37Z on `claude/workplan-drop-current-s653b` (#3339, merges on a green `test`);
+    `supabase-migrate.yml` run 43638452928 applied it, ledger `20261114204116`, receipt
+    `kb/receipts/migration_s653b_workplan_goals_drop_current_43638452928.json` (status 201, `before`
+    `[{"id": 3, "current": 2}]`). Read back 20:46Z: the column is gone, 72 rows, 19 columns, id 3 holds `cur_2025_26` = 2.
+    The migration `kb/migrations/2026-11-14_s653b_workplan_goals_drop_current.sql` refused unless the equality held; undo:
     `kb/migrations/2026-11-14_s653b_workplan_goals_drop_current_rollback.sql`.
 0e. ✅ The two drafted descriptions landed through the runner (read back 21:07Z); the tab shows all 34 after the
     next build. A row Sam empties later shows in `--brief` again; draft it the same way.
