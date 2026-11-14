@@ -97,6 +97,10 @@ on:
         description: "display: apply only this college's statements, as the receipt names it (empty = the whole build). Not the college input, whose default would scope every display (S645)"
         required: false
         default: ""
+      ncl_lookup:
+        description: "read: 1 = look up each program with no closed list in the catalog's pages by title and award, free, filed beside its no_closed_list method (S652, #3299 slice A); 0 = the capture as before"
+        required: false
+        default: "1"
   push:
     branches: ['claude/**']
     paths:
@@ -196,6 +200,8 @@ jobs:
           # The run's force, so a free capture's would_extract.forced_unbound names what a forced read
           # would leave unbound (S645, decision 15); the capture reads it and writes nothing else from it.
           FORCE: ${{ github.event.inputs.force || '' }}
+          # A push carries no input, so the lookup is on there too; ncl_lookup=0 runs one college as before S652.
+          NCL_CATALOG_LOOKUP: ${{ github.event.inputs.ncl_lookup || '1' }}
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit "$LIMIT"
       - name: Extract and score
         if: env.EXTRACT == 'true' && (env.SOURCES_FROM == '' || steps.price.outputs.go == 'true')

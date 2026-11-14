@@ -1,0 +1,388 @@
+{
+ "what": "simulated, not applied: export_unified_courses() through its UC_KB_DIR / UC_OUT_DIR seam on kb/ and on a symlink copy of kb/ whose overlay lacks the two entries, in the same session",
+ "files": {
+  "unified_courses_index.js": {
+   "keys_before": 49804,
+   "keys_after": 49806,
+   "changed": [
+    "HUMA M10ME",
+    "HUMA M1110",
+    "LIBR M10CJ"
+   ]
+  },
+  "unified_courses_data.js": {
+   "keys_before": 16395,
+   "keys_after": 16395,
+   "changed": [
+    "committed_curation",
+    "rows/HUMA M1110",
+    "rows/LIBR M1040"
+   ]
+  },
+  "unified_courses_standalone.js": {
+   "keys_before": 33422,
+   "keys_after": 33424,
+   "changed": [
+    "rows/HUMA M10ME",
+    "rows/LIBR M10CJ"
+   ]
+  },
+  "unified_courses_members.js": {
+   "keys_before": 49563,
+   "keys_after": 49565,
+   "changed": [
+    "members/HUMA M10ME",
+    "members/HUMA M1110",
+    "members/LIBR M1040",
+    "members/LIBR M10CJ"
+   ]
+  },
+  "unified_courses_details.js": {
+   "keys_before": 46262,
+   "keys_after": 46264,
+   "changed": [
+    "HUMA M10ME",
+    "LIBR M1040",
+    "LIBR M10CJ"
+   ]
+  },
+  "unified_courses_member_desc.js": {
+   "keys_before": 46232,
+   "keys_after": 46234,
+   "changed": [
+    "desc/HUMA M10ME",
+    "desc/HUMA M1110",
+    "desc/LIBR M1040",
+    "desc/LIBR M10CJ"
+   ]
+  },
+  "unified_courses_suggestions.js": {
+   "keys_before": 14,
+   "keys_after": 14,
+   "changed": [
+    "count",
+    "groups"
+   ]
+  },
+  "unified_courses_aligned.js": {
+   "keys_before": 1,
+   "keys_after": 1,
+   "changed": []
+  }
+ },
+ "ids": {
+  "HUMA M10ME": {
+   "index": {
+    "before": null,
+    "after": [
+     "HUMA M10ME",
+     "World Religions (Honors)",
+     "RELG",
+     "Stand-Alone",
+     3.0
+    ]
+   },
+   "row": {
+    "before": null,
+    "after": {
+     "kind": "Stand-Alone",
+     "title": "World Religions (Honors)",
+     "disc": "Humanities",
+     "dsrc": "top_division",
+     "units": 3.0,
+     "top": "1510.00",
+     "subj": [
+      "RELG"
+     ],
+     "members": 1,
+     "auto_n": null,
+     "adopted": [],
+     "potential": []
+    }
+   },
+   "members": {
+    "before": {
+     "members": 0,
+     "colleges": 0,
+     "units": [],
+     "rows": []
+    },
+    "after": {
+     "members": 1,
+     "colleges": 1,
+     "units": [
+      3
+     ],
+     "rows": [
+      [
+       "MiraCosta College",
+       "RELG 101H",
+       "World Religions (Honors)",
+       3,
+       "CCC000588084"
+      ]
+     ]
+    }
+   }
+  },
+  "LIBR M10CJ": {
+   "index": {
+    "before": null,
+    "after": [
+     "LIBR M10CJ",
+     "Media & Information Literacy (Honors)",
+     "LIBR",
+     "Stand-Alone",
+     3.0
+    ]
+   },
+   "row": {
+    "before": null,
+    "after": {
+     "kind": "Stand-Alone",
+     "title": "Media & Information Literacy (Honors)",
+     "disc": "Library Science",
+     "dsrc": null,
+     "units": 3.0,
+     "top": "1601.00",
+     "subj": [
+      "LIBR"
+     ],
+     "members": 1,
+     "auto_n": null,
+     "adopted": [],
+     "potential": []
+    }
+   },
+   "members": {
+    "before": {
+     "members": 0,
+     "colleges": 0,
+     "units": [],
+     "rows": []
+    },
+    "after": {
+     "members": 1,
+     "colleges": 1,
+     "units": [
+      3
+     ],
+     "rows": [
+      [
+       "MiraCosta College",
+       "LIBR 201H",
+       "Media & Information Literacy (Honors)",
+       3,
+       "CCC000572223"
+      ]
+     ]
+    }
+   }
+  },
+  "HUMA M1110": {
+   "index": {
+    "before": [
+     "HUMA M1110",
+     "World Religions (Honors)",
+     "HUMAN;PHIL;RELG",
+     "Course",
+     3.0
+    ],
+    "after": [
+     "HUMA M1110",
+     "World Religions (Honors)",
+     "HUMAN;PHIL",
+     "Course",
+     3.0
+    ]
+   },
+   "row": {
+    "before": {
+     "kind": "Course",
+     "title": "World Religions (Honors)",
+     "disc": "Religious Studies",
+     "dsrc": null,
+     "units": 3.0,
+     "top": "1509.00",
+     "subj": [
+      "HUMAN",
+      "PHIL",
+      "RELG"
+     ],
+     "members": 11,
+     "auto_n": 10,
+     "adopted": [],
+     "potential": []
+    },
+    "after": {
+     "kind": "Course",
+     "title": "World Religions (Honors)",
+     "disc": "Religious Studies",
+     "dsrc": null,
+     "units": 3.0,
+     "top": "1509.00",
+     "subj": [
+      "HUMAN",
+      "PHIL"
+     ],
+     "members": 10,
+     "auto_n": 9,
+     "adopted": [],
+     "potential": []
+    }
+   },
+   "members": {
+    "before": {
+     "members": 63,
+     "colleges": 59,
+     "units": [
+      0,
+      3,
+      4
+     ],
+     "rows": null
+    },
+    "after": {
+     "members": 62,
+     "colleges": 59,
+     "units": [
+      0,
+      3,
+      4
+     ],
+     "rows": null
+    }
+   }
+  },
+  "LIBR M1040": {
+   "index": {
+    "before": [
+     "LIBR M1040",
+     "Media & Information Literacy (Honors)",
+     "LIBR",
+     "Course",
+     3.0
+    ],
+    "after": [
+     "LIBR M1040",
+     "Media & Information Literacy (Honors)",
+     "LIBR",
+     "Course",
+     3.0
+    ]
+   },
+   "row": {
+    "before": {
+     "kind": "Course",
+     "title": "Media & Information Literacy (Honors)",
+     "disc": "Library Science",
+     "dsrc": null,
+     "units": 3.0,
+     "top": "1601.00",
+     "subj": [
+      "LIBR"
+     ],
+     "members": 4,
+     "auto_n": 3,
+     "adopted": [],
+     "potential": []
+    },
+    "after": {
+     "kind": "Course",
+     "title": "Media & Information Literacy (Honors)",
+     "disc": "Library Science",
+     "dsrc": null,
+     "units": 3.0,
+     "top": null,
+     "subj": [
+      "LIBR"
+     ],
+     "members": 3,
+     "auto_n": 2,
+     "adopted": [],
+     "potential": []
+    }
+   },
+   "members": {
+    "before": {
+     "members": 3,
+     "colleges": 2,
+     "units": [
+      3
+     ],
+     "rows": [
+      [
+       "MiraCosta College",
+       "LIBR 201H",
+       "Media & Information Literacy (Honors)",
+       3,
+       "CCC000572223"
+      ],
+      [
+       "Cerro Coso Community College",
+       "LIBR C111",
+       "Information and Media Literacy",
+       3,
+       "CCC000607926"
+      ],
+      [
+       "MiraCosta College",
+       "LIBR 201",
+       "Media & Information Literacy",
+       3,
+       "CCC000354460"
+      ]
+     ]
+    },
+    "after": {
+     "members": 2,
+     "colleges": 2,
+     "units": [
+      3
+     ],
+     "rows": [
+      [
+       "Cerro Coso Community College",
+       "LIBR C111",
+       "Information and Media Literacy",
+       3,
+       "CCC000607926"
+      ],
+      [
+       "MiraCosta College",
+       "LIBR 201",
+       "Media & Information Literacy",
+       3,
+       "CCC000354460"
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "member_rows": {
+  "before": 134485,
+  "after": 134485
+ },
+ "suggestion_groups": {
+  "before": 2619,
+  "after": 2620,
+  "gone": [
+   [
+    "HUMA M1110",
+    "HUMA M10OI"
+   ]
+  ],
+  "new": [
+   [
+    "LIBR M1040",
+    "LIBR M10CJ"
+   ],
+   [
+    "HUMA M1110",
+    "HUMA M10ME",
+    "HUMA M10OI"
+   ]
+  ]
+ }
+}
