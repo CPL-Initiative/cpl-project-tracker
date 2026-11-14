@@ -875,6 +875,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/harvest_gap_census.md` | scripts: `kb/_harvest_gap_census.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/harvest_heading_agreement.json` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
 | `kb/status/harvest_heading_agreement.md` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
+| `kb/status/harvest_ncl_lookup_census.json` | scripts: `kb/_harvest_ncl_lookup_census.py` | scripts: `kb/_harvest_ncl_lookup_census.py` |
 | `kb/status/harvest_no_closed_list.json` | scripts: `kb/_harvest_no_closed_list_diagnosis.py` | — |
 | `kb/status/mid_outcomes_compare_*.json` | none found | committed by: `mid-outcomes-compare.yml` |
 | `kb/status/mid_outcomes_compare_*.md` | none found | committed by: `mid-outcomes-compare.yml` |
@@ -1155,6 +1156,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/glyph_sweep_test.py` | workflows: `js-tests.yml` | — |
 | `tests/governance_docs_panel.test.js` | workflows: `js-tests.yml` | — |
 | `tests/harvest_gap_census_test.py` | workflows: `js-tests.yml` | — |
+| `tests/harvest_ncl_lookup_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/harvest_no_closed_list_diagnosis_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ib_official_titles_test.py` | workflows: `js-tests.yml` | — |
 | `tests/identities_rebuild_test.py` | workflows: `js-tests.yml` | — |
@@ -1481,5 +1483,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 941 file
-datasets · 195 external services · 588 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 943 file
+datasets · 195 external services · 589 consumers · 72 workflows · 41 tabs.

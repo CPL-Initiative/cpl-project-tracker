@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 941,
+  "file_datasets": 943,
   "external_services": 195,
-  "consumers": 588,
+  "consumers": 589,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1900
+     "line": 2113
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1856
+     "line": 2069
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1793
+     "line": 2006
     }
    ],
    "main_committers": []
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1427
+     "line": 1640
     }
    ],
    "main_committers": []
@@ -8581,7 +8581,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5893
+     "line": 6101
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8601,7 +8601,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5943
+     "line": 6151
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -17232,7 +17232,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 2744
+     "line": 2957
     }
    ],
    "served": true,
@@ -17245,7 +17245,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6327
+     "line": 6535
     }
    ],
    "served": true,
@@ -19714,6 +19714,26 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/status/harvest_ncl_lookup_census.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_harvest_ncl_lookup_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 32
+    },
+    {
+     "id": "script:kb/_harvest_ncl_lookup_census.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 32
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/status/harvest_no_closed_list.json": {
    "consumers": [
     {
@@ -20934,7 +20954,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6143
+     "line": 6351
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20954,7 +20974,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5362
+     "line": 5570
     }
    ],
    "served": false,
@@ -21571,7 +21591,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6230
+     "line": 6438
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -25185,6 +25205,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/harvest_ncl_lookup_census_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/harvest_no_closed_list_diagnosis_test.py": {
    "consumers": [
     {
@@ -28314,7 +28347,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6301
+     "line": 6509
     }
    ],
    "main_committers": []
@@ -28326,7 +28359,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6410
+     "line": 6618
     }
    ],
    "main_committers": []
@@ -33402,6 +33435,7 @@
     "tests/program_requirements_wave_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
+    "tests/harvest_ncl_lookup_census_test.py",
     "tests/program_requirements_dated_reads_test.py",
     "tests/program_requirements_heading_agreement_test.py",
     "tests/program_requirements_pdf_numbers_after_test.py",
