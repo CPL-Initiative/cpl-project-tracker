@@ -143,6 +143,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
 
+## What went wrong in S651, and what worked
+
+- The 09:12Z firing of 2026-11-14 (SkyDunlin) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 08:26Z) and `main` at the S650 checkpoint were the one-writer check, and this PR declared the queue at 09:20Z.
+
 ## What went wrong in S650, and what worked
 
 - The 06:12Z firing of 2026-11-14 (SkyPlover) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs and `main` since handoff 650 were the one-writer check, and this PR declared the queue at 06:20Z.
