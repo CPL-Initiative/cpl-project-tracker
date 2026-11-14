@@ -10,13 +10,14 @@ Runner minutes only, no model call. The plan, with each step's exact trigger lin
 **Order, one host at a time, most exhibit articulations first:**
 
 Done: `rccd` (Norco, Moreno Valley, Riverside City; 533): read 43532407553, load 43546799435, 2,536 objective rows
-(640, 754, 1,142), receipt `kb/receipts/course_outcomes_rccd_43546799435.json`.
+(640, 754, 1,142), receipt `kb/receipts/course_outcomes_rccd_43546799435.json`. `sdccd` (City, Mesa, Miramar; 319):
+read 43566273142, load 43585473767, 2,532 objective rows (698, 1,151, 683), receipt
+`kb/receipts/course_outcomes_sdccd_43585473767.json`.
 
-1. `sdccd`: Miramar, City, Mesa (319). 4 parts.
-2. `sac`: Santa Ana (216). 4 parts.
-3. `laspositas`: Las Positas (174). 3 parts.
-4. `cccd`: Coastline (123). 2 parts.
-5. `cccd`: Golden West (88), after Coastline is loaded (same host).
+1. `sac`: Santa Ana (216). 4 parts.
+2. `laspositas`: Las Positas (174). 3 parts.
+3. `cccd`: Coastline (123). 2 parts.
+4. `cccd`: Golden West (88), after Coastline is loaded (same host).
 
 **The dispatch.** Both workflows start on a push, never `workflow_dispatch`. Branch `claude/slo-objectives-<host>` off
 `main`; write `kb/course_outcomes/.run` with the step's `read` lines; push; open a draft PR. When every slice is filed
