@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-74 document(s).
+75 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -88,6 +88,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Sam's rulings — one place to look up what he has ruled, in his words](../reference/sam_rulings.md) | — | `sam_rulings.md` | 2026-11-14 | 2026-11-14 |
 | [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-11-12 |
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
+| [Stack scouting: one line per tool trial](../reference/stack_scouting.md) | — | `stack_scouting.md` | 2026-11-14 | 2026-11-14 |
 | [The canonical credential model: issuer on the title, assessor on the local exhibit](../reference/canonical_credential_model.md) | — | `canonical_credential_model.md` | 2026-11-11 | 2026-11-11 |
 | [The industry-credential watch agent](../reference/credential_watch_agent.md) | — | `credential_watch_agent.md` | 2026-09-30 | 2026-11-14 |
 | [The Library filer — every piece files itself to Drive](../reference/library_filer.md) | — | `library_filer.md` | 2026-10-06 | 2026-10-08 |
