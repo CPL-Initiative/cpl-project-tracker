@@ -53,15 +53,16 @@ things landed or moved. Where this addendum and a line below disagree, the adden
   (`worker`, `second-reader`, `checkpoint-docs`, `pr-gate`) and the `conductor-brief` skill. The merge-read guard
   refuses `merge_pull_request` unless this session read that PR's comments in the last 3 minutes, and always refuses
   auto-merge and a command-line merge; the clock guard refuses a written time that is ahead of the clock. Both fail
-  open with a warning. A reader and COBIx each reviewed it and every finding is in. At writing it is in CI after its
-  last sync: **if it is still open, read its thread and merge it on a green `test`**. After it merges, **Sam changes the
+  open with a warning. A reader and COBIx each reviewed it and every finding is in. **Merged as `67e9e8af`** (the
+  conductor's read of the clock: 16:47Z). One follow-up from COBIx's last note on its thread: also refuse a `gh api graphql`
+  call whose words contain `mergePullRequest` or `AutoMerge`, and look inside a `bash -c` wrapper. **Sam changes the
   dated comment line on the environment's setup script at claude.ai/code** so the snapshot rebuilds and cloud sessions
   load the hooks; `python3 scripts/check_hooks_live.py` reports them. Use the agent definitions for briefs from then
   on. Later trials, one each: Serena on the reader file; a session cost report at a checkpoint.
 - **Sam's last words on scouting** (in session, about 15:50Z): "Hoping Cobix can sniff out other repos that might be
   helpful as we build out the stack". The conductor's four tests for a candidate are on #3306.
-- **Worktrees on disk at writing:** `agent-a308250014c9995ad` (#3300, merged: remove), `agent-a871597cc45dacfc5`
-  (#3304, merged: remove), `agent-a4b15728cd738abd5` (#3307). A new session has none of them.
+- **Worktrees:** all removed at sign-off. A new session has none; brief a fresh worker per open branch (#3305, #3293,
+  #3284, the five colleges' rescore branches) with the `worker` agent definition.
 
 ## First things, in order
 
