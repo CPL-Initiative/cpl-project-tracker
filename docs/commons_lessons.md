@@ -39,46 +39,9 @@ Verbatim in [`commons_lessons_archive.md`](commons_lessons_archive.md).
 
 The section *S430 SkyLupine (2026-10-20)* moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md).
 
-## S419 SkyCottonwood (2026-10-18): step 1, the shared Progress module (#2237)
+## S419: moved to the archive (S652 compaction)
 
-- **What moved, what stayed.** `commons_progress.js` owns the renderer (run status, headline pair and bar, whole
-  measure, milestone line, parts grid, side column), `readStatus()`, the milestone arithmetic, `partView()`,
-  `wholeFacts()`, `since()`, the status words, the time words and the Progress CSS. `program_requirements.js` kept its
-  definitions (`MILESTONES`, `PARTS`, `WHOLE`, `TO`, `SOURCE`), its live reads and `progressContext()`, gained a
-  declarative `HEADLINE` and a `PROGRESS` spec (its words), and delegates `viewProgress()`. The host lends `section()`,
-  `goControl()` and its call-card helpers through one object, so a count opens the tab's own list and the sections
-  remember like their neighbors'.
-- **The guard was the first host's own suite, unchanged in what it asserts.** The 417 checks of
-  `tests/program_requirements.test.js` passed with the module loaded first; the harness loads the module before the
-  tab's script, three CSS regexes read the module's source, and the status path moved. The class names kept their
-  `prh-pg-` prefix on purpose: a rename changes nothing a reader sees and would have loosened the guard (SkyView keeps
-  its `ccr_atlas_*` paths the same way). `tests/commons_progress.test.js` (30 checks, floored by hand) guards only what
-  a shared module can get wrong: a second host's classes substituted into a style of its own, a spec with no whole
-  measure drawing no band, a failed read saying so in both headline numbers, `readStatus` refusing a file with no
-  `written_at`, the host tab drawing its other views when the module's lazy load fails, the boot order in both HTMLs.
-- **A shared module fails soft or it fails the tab.** `CPL_TABS.loadScript` calls back on error as on load, so a 404 on
-  the module would have reached `program_requirements.js` with the global undefined and killed the tab at load. A
-  nine-line stub answers every helper safely and draws one line on the Progress view; the other four views read as
-  usual.
-- **CSS with the host's classes substituted, one style per host set.** The module's CSS names the host's section
-  pattern (`prh-sec`, `prh-sec-b`, `prh-sec-t`, `prh-sec-label`) and its quiet text as `%name%` marks, filled from
-  `h.classes` at injection under `cpg-css-<sec>`; with the defaults the injected CSS is byte-identical to the host's
-  former block. A second host passes its own names and gets its own style.
-- **One status file per project.** `kb/queue_status.json` became `kb/status/program-requirements.json` with a `project`
-  field; `scripts/queue_status.py --project` names another project's file; checkpoint step 12, the a11y seed comment,
-  the lane files and the dependency map followed (a seed records the read `commons_progress.js` makes on the host's
-  behalf, which the literal scan no longer sees). The deploy-time asset manifest covers every root-level `.js`, so the
-  new module is cache-busted without a change.
-- **The one-writer carve-out worked across three sessions.** Sam told S417 at 19:08Z: *"Commons looks good. Just make
-  sure I can collapse each and we have a collapse all button."* S417 took the mock-up file and artifact (version 4,
-  #2239), S418 closed its competing record PR unmerged and named the branch to lift from, and this session recorded
-  the ruling in the lane, section 11 and the status file with the time corrected (19:08Z, not 17:31Z) and the one
-  memory row cited (`sam-approves-commons-mockup-collapse-2026-10-18`). Read the queued messages before writing.
-- **Next, step 2.** Each reference's Progress view drawn from the module, in the ruled order (Exhibit on the CER tab,
-  then Course, CR, Subjects), each with its definition of complete on a card for Sam and a status file under
-  `kb/status/`. The CER tab's host object must lend a section pattern with its class names, a count control that opens
-  its own lists, and call-card helpers (or none, with `callRecords` returning null and `callAnswered` reading the
-  sheet's store); the collapse pattern Sam asked for belongs in step 3's Commons row component.
+The section *S419 SkyCottonwood (2026-10-18)* moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md).
 
 ## S417 SkyManzanita (2026-10-18): the Commons tab, on Sam's word (step 3 before step 2)
 
@@ -874,3 +837,13 @@ Verbatim from `docs/reference/lanes/commons.md`, moved to make room for S651's s
 **LIVE: the CPL Commons first view (S552, #2697).** `commons.js` draws the locked mock as the tab's first view. The record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S624, 2026-11-10)*.
 
 **The opened page, one renderer (S556 to S559).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws the opened page for every reference. The record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S624, 2026-11-10)*.
+
+## Moved from the lane (S652)
+
+Verbatim from the re-clustering paragraph of `docs/reference/lanes/commons.md`, moved to make room for the identities apply (S652).
+
+**APPLIED (S648):** case 2, FIRE M1274 merge_into FIRE 130 X (run 43493272194; undo `kb/migrations/2026-11-13_s648_reclustering_cohort_rollback.sql`).
+
+**APPLIED and merged, card 3 (DECIDED `d-busi-split-delete-only-s649`, `d-busi-split-delete-applied-s649`):** one guarded DELETE of the bot row BUSI M10XW merge_into BUSI M1228, run 43542044321; receipt `kb/receipts/migration_s649_busi_split_delete_43542044321.json` (the row whole; the rollback re-inserts it); the record: lessons, *Moved from the lane (S650 checkpoint)*.
+
+From the *Catalog links (built S650)* paragraph, verbatim: each committed check reads in words through `link_check_result`, where a 500 from Pingora with an empty body reads "unreachable from here" and only a 404 or 410 reads "not found". `a11y.config.js` already covered `#commons/data`; S650 added the SLOs view and the split catalog pane. The default sort is built. S650 looked at it signed out on the deployed site (118 rows, the default sort, Copper Mountain's pane; the deploy carried #3286 at 06:58:58Z).
