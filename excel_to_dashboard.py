@@ -5325,7 +5325,7 @@ def _fmt_int(n):
     return f"{n:,}"
 
 
-def _statewide_could_adopt_by_sector():
+def _statewide_could_adopt_by_sector(art=None):
     """Per program-area count of colleges that already teach an aligned local
     course but have NOT yet adopted (articulated) the statewide credit
     recommendation — the adoption-leverage "untapped adoption" signal. Distinct
@@ -5335,17 +5335,19 @@ def _statewide_could_adopt_by_sector():
     kb/statewide_exhibit_categories.json (matched on the unified credential
     title). M-ID leverage only (mirrors _build_statewide_prescriptive; C-ID
     leverage deferred), over_merged withheld. Returns ({sector: n}, n_total) or
-    ({}, 0) when inputs are absent."""
+    ({}, 0) when inputs are absent. ``art`` replaces the committed
+    coci_articulations.json (kb/_identities_rebuild.py measures a planned map)."""
     art_path = os.path.join(SCRIPT_DIR, "kb", "coci_articulations.json")
     cats = _load_statewide_categories()
-    if not (cats and os.path.exists(art_path)):
+    if not (cats and (art is not None or os.path.exists(art_path))):
         return {}, 0
-    try:
-        with open(art_path, encoding="utf-8") as f:
-            art = json.load(f)
-    except Exception as e:
-        print(f"  could-adopt: failed to load coci_articulations.json ({e})")
-        return {}, 0
+    if art is None:
+        try:
+            with open(art_path, encoding="utf-8") as f:
+                art = json.load(f)
+        except Exception as e:
+            print(f"  could-adopt: failed to load coci_articulations.json ({e})")
+            return {}, 0
     titles = cats.get("titles", {}) or {}
     ids = art.get("identities", {}) or {}
     from collections import defaultdict
@@ -6941,7 +6943,7 @@ def _write_cpl_by_discipline_json(odir):
     return len(roll)
 
 
-def _build_statewide_prescriptive():
+def _build_statewide_prescriptive(art_doc=None):
     """Per-credential prescriptive adoption layer for the EACR "Credential view".
 
     Returns ``unified_title -> {colleges:[{college, courses:[{subject,number,
@@ -6974,14 +6976,17 @@ def _build_statewide_prescriptive():
 
     Verified + measured by kb/_verify_prescriptive_join.py (the in-session test;
     the full regen isn't testable here since the raw CustomReport isn't present).
+    ``art_doc`` replaces the committed coci_articulations.json
+    (kb/_identities_rebuild.py measures a planned identities map).
     """
     art_path = os.path.join(SCRIPT_DIR, "kb", "coci_articulations.json")
     mem_path = os.path.join(SCRIPT_DIR, "kb", "coci_minted_memberships.json")
-    if not (os.path.exists(art_path) and os.path.exists(mem_path)):
+    if not ((art_doc is not None or os.path.exists(art_path)) and os.path.exists(mem_path)):
         return None
     try:
-        with open(art_path, encoding="utf-8") as f:
-            art_doc = json.load(f)
+        if art_doc is None:
+            with open(art_path, encoding="utf-8") as f:
+                art_doc = json.load(f)
         with open(mem_path, encoding="utf-8") as f:
             mem_doc = json.load(f)
     except Exception as e:
@@ -8382,6 +8387,23 @@ def _cid_claim_holds():
     return out
 
 
+def articulation_rollup(art_ident, earned, mids):
+    """(adopted, potential) college name lists rolled up across member ids.
+    adopted = colleges that earned >=1 articulation; potential = offering minus
+    adopted. Empty unless at least one member carries an identities entry
+    (kb/coci_articulations.json): a member with no entry contributes nothing,
+    which is why kb/_identities_rebuild.py keeps every articulated id's entry.
+    Top-level so that builder and its test call this rule, not a copy."""
+    off, ad, any_art = set(), set(), False
+    for m in mids:
+        ident = art_ident.get(m)
+        if ident:
+            any_art = True
+            off |= set(ident.get("colleges_offering", []))
+            ad |= set(earned.get(m, set()))
+    return (sorted(ad), sorted(off - ad)) if any_art else ([], [])
+
+
 def export_unified_courses():
     """Build the Unified Courses tab data (window.CPL_UNIFIED_COURSES in
     unified_courses_data.js) + the full xlsx export, from the kb/coci_*.json
@@ -8580,17 +8602,7 @@ def export_unified_courses():
         return col_idx[name]
 
     def rollup(mids):
-        """(adopted, potential) college name lists rolled up across member M-IDs.
-        adopted = colleges that earned >=1 articulation; potential = offering minus
-        adopted. Empty unless at least one member actually carries an articulation."""
-        off, ad, any_art = set(), set(), False
-        for m in mids:
-            ident = art_ident.get(m)
-            if ident:
-                any_art = True
-                off |= set(ident.get("colleges_offering", []))
-                ad |= set(earned.get(m, set()))
-        return (sorted(ad), sorted(off - ad)) if any_art else ([], [])
+        return articulation_rollup(art_ident, earned, mids)
 
     def flags_of(v, cid, use_spread=True):
         sp = v.get("subject_spread", 1) or 1

@@ -1,0 +1,92 @@
+{
+ "what": "simulated, not applied: export_unified_courses() run through its UC_KB_DIR / UC_OUT_DIR seam on kb/ with the BUSI row removed from a copy of the overlay (kb/_reclustering_s649.py --overlay), beside the same run on the untouched kb/ in the same session",
+ "ids": {
+  "BUSI M1228": {
+   "unified_courses_index.js": {
+    "before": [
+     "BUSI M1228",
+     "International Documentation and Supply Chain Management",
+     "BUS;MGMT;MKT;WARE",
+     "Course",
+     3.0
+    ],
+    "after": [
+     "BUSI M1228",
+     "International Documentation and Supply Chain Management",
+     "BUS;MGMT;MKT;WARE",
+     "Course",
+     3.0
+    ]
+   },
+   "unified_courses_members.js": {
+    "before": {
+     "members": 24,
+     "units": [
+      0,
+      1,
+      3
+     ]
+    },
+    "after": {
+     "members": 23,
+     "units": [
+      0,
+      1,
+      3
+     ],
+     "rows": null
+    }
+   }
+  },
+  "BUSI M10XW": {
+   "unified_courses_index.js": {
+    "before": null,
+    "after": [
+     "BUSI M10XW",
+     "Global Supply Chain and Logistics",
+     "BUS",
+     "Stand-Alone",
+     3.0
+    ]
+   },
+   "unified_courses_members.js": {
+    "before": {
+     "members": 0,
+     "units": []
+    },
+    "after": {
+     "members": 1,
+     "units": [
+      3
+     ],
+     "rows": [
+      [
+       "Santa Ana College",
+       "BUS 115",
+       "Global Supply Chain and Logistics",
+       3,
+       "CCC000609492"
+      ]
+     ]
+    }
+   }
+  }
+ },
+ "unified_courses_index.js": {
+  "ids_before": 49803,
+  "ids_after": 49804,
+  "changed_ids": [
+   "BUSI M10XW"
+  ]
+ },
+ "unified_courses_members.js": {
+  "ids_before": 49560,
+  "ids_after": 49561,
+  "changed_ids": [
+   "BUSI M10XW",
+   "BUSI M1228"
+  ],
+  "member_rows_before": 134485,
+  "member_rows_after": 134485
+ }
+}
