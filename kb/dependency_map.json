@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2278
+     "line": 2297
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2234
+     "line": 2253
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2171
+     "line": 2190
     }
    ],
    "main_committers": []
@@ -2765,7 +2765,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1251
+     "line": 1260
     }
    ],
    "main_committers": []
@@ -2880,7 +2880,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1253
+     "line": 1262
     }
    ],
    "main_committers": []
@@ -2892,7 +2892,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1254
+     "line": 1263
     }
    ],
    "main_committers": []
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1764
+     "line": 1783
     }
    ],
    "main_committers": []
@@ -3132,7 +3132,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1252
+     "line": 1261
     }
    ],
    "main_committers": []
@@ -8588,7 +8588,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6266
+     "line": 6285
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8608,7 +8608,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6316
+     "line": 6335
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -17357,7 +17357,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3122
+     "line": 3141
     }
    ],
    "served": true,
@@ -17370,7 +17370,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6700
+     "line": 6719
     }
    ],
    "served": true,
@@ -17559,6 +17559,13 @@
   },
   "file:kb/program_requirements_reconcile.json": {
    "consumers": [
+    {
+     "id": "script:kb/_course_id_route_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 58
+    },
     {
      "id": "script:kb/_prefix_alias_census.py",
      "kind": "script",
@@ -21113,7 +21120,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6516
+     "line": 6535
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21133,7 +21140,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5735
+     "line": 5754
     }
    ],
    "served": false,
@@ -21750,7 +21757,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6603
+     "line": 6622
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -24631,6 +24638,19 @@
    "main_committers": []
   },
   "file:tests/context_budget_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/course_id_route_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -28698,7 +28718,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6674
+     "line": 6693
     }
    ],
    "main_committers": []
@@ -28710,7 +28730,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6783
+     "line": 6802
     }
    ],
    "main_committers": []
@@ -29399,7 +29419,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 439
+     "line": 448
     }
    ],
    "main_committers": []
@@ -29428,7 +29448,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 445
+     "line": 454
     }
    ],
    "main_committers": []
@@ -32160,7 +32180,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 462
+     "line": 471
     },
     {
      "id": "script:kb/_program_source_census.py",
@@ -33780,6 +33800,7 @@
     "tests/library_publish_test.py",
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
+    "tests/course_id_route_test.py",
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_extract_halt_test.py",

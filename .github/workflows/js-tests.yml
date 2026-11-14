@@ -314,6 +314,12 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Program requirements pilot (course codes, page finder, scorer)
         run: python3 tests/program_requirements_pilot_test.py
+      # The course-id route (S653): the scorer meets a printed code by the Program Course File's
+      # own id for the listed course, before the prefix aliases. Rebuilds the proof that each
+      # retired alias pair's matches are reproduced, and the self-recall test with its floor,
+      # from committed files (openpyxl, installed at the top of this job; about 35 s).
+      - name: Course-id route (suffix reading, self-recall, retired alias pairs)
+        run: python3 tests/course_id_route_test.py
       # The reconcile steps' award filters and Cañada's Cal-GETC step (S421): a transfer-only
       # step leaves a local degree alone though its captured page spans the sibling section.
       - name: Program requirements reconcile (award filters, the Cal-GETC step)
