@@ -153,26 +153,45 @@ def with_renumbers(programs: list[dict], renumbers: dict, aliases: dict | None =
     course_renumbers; Merced, S423). A listed course under a prefix the catalog prints
     otherwise (prefix_aliases) carries the catalog's prefix the same way: Glendale's program
     pages print TART 101 where its file lists THTR 101, and without it the capture handed 21
-    Theatre records the THTR course descriptions (S505). A renumber wins over an alias."""
+    Theatre records the THTR course descriptions (S505). A renumber wins over an alias.
+    The course-id route (S653, kb/_course_id_route.py): a listed course whose Program Course
+    File id differs from its code carries that id, as Riverside City's HIS 14 carries HIST 14.
+    A listed course both a kept alias and its id reach carries both forms: the alias's
+    as "printed", the id as "printed_also", and every reader counts each (P.printed_forms;
+    S653 review: a college with a kept SPCH for COMM alias whose COMM 20 carries the id
+    COMM C1004 prints SPCH 20, and a capture looking only for the id lost the page)."""
+    import _course_id_route as CI
     back = [(P.norm_code(v), P.norm_code(k)) for k, v in (aliases or {}).items()]
-    for p in programs if (renumbers or back) else []:
+    for p in programs:
+        ids = CI.listed_ids(p["closed_list"])
+        by_code = {v: k for k, v in ids.items()}
         for c in p["closed_list"]:
             k = P.norm_code(c.get("code"))
             if k in renumbers:
                 c["printed"] = renumbers[k]
                 continue
+            forms = []
             for listed, printed in back:
                 m = re.fullmatch(re.escape(listed) + r"(C?\d.*)", k)
                 if m:
-                    c["printed"] = "%s %s" % (printed, m.group(1))
+                    forms.append("%s %s" % (printed, m.group(1)))
                     break
+            if k in by_code:
+                forms.append(CI.spaced(by_code[k]))
+            seen = []
+            for f in forms:
+                if P.norm_code(f) not in {P.norm_code(x) for x in seen} and P.norm_code(f) != k:
+                    seen.append(f)
+            if seen:
+                c["printed"] = seen[0]
+            if seen[1:]:
+                c["printed_also"] = seen[1:]
     return programs
 
 
 def net_hits(courses: list[dict], codes: set) -> int:
-    """How many listed courses the page's code tokens name, a renumbered one by either code."""
-    return sum(1 for c in courses if P.norm_code(c.get("code") or "") in codes
-               or (c.get("printed") and P.norm_code(c["printed"]) in codes))
+    """How many listed courses the page's code tokens name, a renumbered one by any of its codes."""
+    return sum(1 for c in courses if any(P.norm_code(f) in codes for f in [c.get("code") or ""] + P.printed_forms(c)))
 
 
 # San Jose City's rows in the state's file store a course code under its subject's name:

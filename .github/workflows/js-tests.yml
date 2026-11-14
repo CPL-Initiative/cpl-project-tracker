@@ -314,6 +314,12 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Program requirements pilot (course codes, page finder, scorer)
         run: python3 tests/program_requirements_pilot_test.py
+      # The course-id route (S653): the scorer meets a printed code by the Program Course File's
+      # own id for the listed course, before the prefix aliases. Rebuilds the proof that each
+      # retired alias pair's matches are reproduced, and the self-recall test with its floor,
+      # from committed files (openpyxl, installed at the top of this job; about 35 s).
+      - name: Course-id route (suffix reading, self-recall, retired alias pairs)
+        run: python3 tests/course_id_route_test.py
       # The reconcile steps' award filters and Cañada's Cal-GETC step (S421): a transfer-only
       # step leaves a local degree alone though its captured page spans the sibling section.
       - name: Program requirements reconcile (award filters, the Cal-GETC step)
@@ -538,6 +544,9 @@ jobs:
       # statewide figures are the college rows' sums, and an unread college is null, never zero.
       - name: Commons data dashboard builder
         run: python3 tests/commons_data_status_build_test.py
+      # Its cost read (S653): a college's cost is what its filed records cost, so a free rescore never drops it.
+      - name: Commons data dashboard cost read
+        run: python3 tests/commons_cost_read_test.py
       # Its live counts (S647, COBIx's conditions on #3222): counts only, the service key alone, fail soft, over a
       # fixture; no network. PyYAML for the census workflow's shape.
       - name: Commons data dashboard live counts
