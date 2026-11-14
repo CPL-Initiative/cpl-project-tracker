@@ -551,7 +551,9 @@ def heading_names_program(page: dict, program: dict) -> bool:
 # certificate kept it and 16 others (Speech/Communication A.A., Social Science A.A., Spanish
 # A.A.-T among them) filed it as a page they lost. A pattern's page is never another program's list.
 GE_PATTERN = re.compile(r"\bcal[\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge\b|\bcsu[\s-]general[\s-]education\b|"
-                        r"\bgeneral[\s-]education[\s-](?:breadth|pattern)", re.I)
+                        r"\bgeneral[\s-]education[\s-](?:breadth|pattern)|"
+                        # the patterns under their long names (Crafton Hills, Victor Valley; S653)
+                        r"\b(?:california|intersegmental)[\s-]general[\s-]education[\s-]transfer[\s-]curriculum\b", re.I)
 
 
 def ge_pattern(text: str | None) -> bool:
@@ -565,21 +567,47 @@ def ge_pattern_page(pg: dict) -> bool:
     return any(ge_pattern(x) for x in (pg.get("code"), pg.get("h1"), pg.get("title"), path))
 
 
-def ge_page_names_program(pg: dict, program: dict) -> bool:
-    """Whether a general education pattern's page heads itself with the program, the pattern's words set
-    aside: its heading names every word of the program's title (heading_match). Riverside City heads each
-    transfer degree's own page with the degree and the pattern it follows, "Sociology - Associate in Arts
-    for Transfer (ADT) - AA696 (CalGETC)", and under the S646 rule each of those degrees lost its own page
-    (36 page_claimed in capture 43619958385). A pattern's own page ("Cal-GETC - Certificate of Achievement",
-    Glendale's) names no program once the pattern is set aside, and stays no other program's list."""
-    head = pg.get("h1") or TITLE_SPLIT.split(pg.get("title") or "")[0]
-    return heading_match({"h1": GE_PATTERN.sub(" ", head or "") or " "}, program)[0] >= 1.0
+def ge_page_names_program(pg: dict, program: dict, titles: list | None = None) -> bool:
+    """Whether a general education pattern's page heads itself with this program, the pattern's words set
+    aside (S653). Riverside City heads each transfer degree's own page with the degree and the pattern it
+    follows, "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)", and under the S646 rule each
+    of those degrees lost its own page (36 page_claimed in capture 43619958385). Three tests, all needed:
+    the heading's award, when it prints one, is the program's (a transfer degree's page is never its local
+    A.S.'s: Moreno Valley's Administration of Justice A.S. took MAS643, the A.S.-T's page, in the second
+    reader's run); the heading names every word of the program's title (ncl_words, decorations and the
+    pattern set aside); and no other listed program's title (titles) names more of the heading's words, a
+    tie refusing ("History" on "Art History AA-T", "American Studies" on "Social Justice: African American
+    Studies"). A pattern's own page ("Cal-GETC - Certificate of Achievement", Glendale's) names no program
+    once the pattern is set aside, and stays no other program's list."""
+    head = GE_PATTERN.sub(" ", pg.get("h1") or TITLE_SPLIT.split(pg.get("title") or "")[0] or "")
+    kind = P.award_kind(program.get("award"))
+    kinds = award_kinds_in(head)
+    for cls in [c for c in kinds if c in NCL_CLASS]:
+        if kind not in NCL_CLASS[cls]:
+            return False
+    kinds = {k for k in kinds if k not in NCL_CLASS}
+    if kinds and kind not in kinds:
+        return False
+    words = set(ncl_words(head)[0])
+    own = ncl_words(program.get("title"))[0]
+    if not words or not own or not all(_named(w, words) for w in own):
+        return False
+
+    def reach(title_words):
+        return sum(1 for h in words if _named(h, title_words))
+    mine = reach(own)
+    for t in titles or []:
+        tw = ncl_words(t)[0]
+        if tw and set(tw) != set(own) and all(_named(w, words) for w in tw) and reach(tw) >= mine:
+            return False
+    return True
 
 
-def candidates(program: dict, pages: list[dict]) -> list[dict]:
+def candidates(program: dict, pages: list[dict], titles: list | None = None) -> list[dict]:
     """Every page naming at least ACCEPT_SHARE of the program's listed courses,
     best first: the page naming its award, then the larger share of its title,
-    then the higher coverage."""
+    then the higher coverage. titles is every listed program's title at the college
+    (assign() passes it), so a pattern's page goes to the program it names most fully."""
     courses = program["closed_list"]
     if not courses:
         return []
@@ -598,7 +626,8 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
         # most of many programs' lists; it is the list of a program only when the program is
         # that pattern (ge_pattern(), S646), or when its heading names the program beside the
         # pattern (ge_page_names_program(), S653: Riverside City's transfer degrees).
-        if ge_pattern_page(pg) and not ge_pattern(program.get("title")) and not ge_page_names_program(pg, program):
+        if ge_pattern_page(pg) and not ge_pattern(program.get("title")) \
+                and not ge_page_names_program(pg, program, titles):
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
@@ -985,7 +1014,8 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     one with none left is read from no page, and says which page went to whom
     (method page_claimed), so a sibling's requirements never stand in for its own.
     Returns {control number: {"best": candidate or None, "claimed_by": [...]}}."""
-    ranked = {p["control_number"]: candidates(p, pages) for p in programs if p["closed_list"]}
+    titles = [p.get("title") for p in programs]
+    ranked = {p["control_number"]: candidates(p, pages, titles) for p in programs if p["closed_list"]}
     # A Coursedog tab that prints another listed program's title is no candidate for this one
     # (tab_names_another, S647); a page holding several programs is left to page_winners().
     plain = {p["control_number"]: _plain(p.get("title")) for p in programs}

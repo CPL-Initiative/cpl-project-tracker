@@ -3662,16 +3662,92 @@ rcc_given = C.assign(rcc_progs, rcc_pages)
 check(all((rcc_given[cn]["best"] or {}).get("url", "").endswith(tail) for cn, tail in rcc_own.items()),
       "the five degrees claim their own pages: %r" % {cn: (v["best"] or {}).get("url", "")[-12:] for cn, v in rcc_given.items()})
 _names = C.ge_page_names_program
-C.ge_page_names_program = lambda pg, program: False      # S646's rule as it stood
+C.ge_page_names_program = lambda pg, program, titles=None: False      # S646's rule as it stood
 rcc_before = C.assign(rcc_progs, rcc_pages)
 C.ge_page_names_program = _names
 check(not any((rcc_before[cn]["best"] or {}).get("url", "").endswith(tail) for cn, tail in rcc_own.items()),
       "under S646's rule as it stood, none of the five reads its own page")
 check(not C.ge_page_names_program({"h1": "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)"},
-                                  {"title": "Sociology"})
+                                  {"title": "Sociology", "award": "A.A- T Degree"})
       and C.ge_page_names_program({"h1": "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)"},
-                                  {"title": "Psychology"}),
+                                  {"title": "Psychology", "award": "A.A- T Degree"}),
       "a degree's page names its own program, never a sibling's")
+
+# The second reader's findings on #3324 (S653). A transfer degree's page is never its local sibling's: Moreno Valley's
+# Administration of Justice A.S. (30150) and A.S.-T (37196) share a title, and the A.S. took MAS643, the A.S.-T's page.
+mv_head = "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)"
+mv_titles = ["Administration of Justice", "Administration of Justice", "Art History", "History"]
+check(not C.ge_page_names_program({"h1": mv_head}, {"title": "Administration of Justice", "award": "A.S. Degree"}, mv_titles)
+      and C.ge_page_names_program({"h1": mv_head}, {"title": "Administration of Justice", "award": "A.S. T Degree"}, mv_titles),
+      "a page that says it is a transfer degree is a candidate for the transfer award only (30150 and 37196)")
+check(not C.ge_page_names_program({"h1": "Music - Associate in Arts (CalGETC)"}, {"title": "Music", "award": "A.A- T Degree"})
+      and C.ge_page_names_program({"h1": "Music - Associate in Arts (CalGETC)"}, {"title": "Music", "award": "A.A. Degree"}),
+      "a page that names a local award is that award's only")
+# A longer title the college lists takes the heading: "History" never reads "Art History", and a tie refuses.
+ah = {"h1": "Art History - Associate in Arts for Transfer (ADT) - MAA743 (Cal-GETC)"}
+check(not C.ge_page_names_program(ah, {"title": "History", "award": "A.A- T Degree"}, mv_titles)
+      and C.ge_page_names_program(ah, {"title": "Art History", "award": "A.A- T Degree"}, mv_titles),
+      "the Art History page is Art History's, never History's, where the college lists both")
+sj = {"h1": "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074 (CalGETC)"}
+check(not C.ge_page_names_program(sj, {"title": "American Studies", "award": "A.A- T Degree"},
+                                  ["American Studies", "Social Justice: African American Studies"]),
+      "American Studies never reads a Social Justice page that names more of the heading")
+check(C.ge_pattern("California General Education Transfer Curriculum")
+      and C.ge_pattern("Intersegmental General Education Transfer Curriculum"),
+      "the patterns under their long names (Crafton Hills, Victor Valley) are patterns")
+mv_rs = [s for s in json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "moreno_valley", "sources.json")))
+         if (s.get("source") or {}).get("url")]
+mv_pages = {}
+for s in mv_rs:
+    mv_pages.setdefault(s["source"]["url"], (s["source"]["h1"], set()))[1].update(s["codes_found"])
+mv_pages = [page(u, h, h + "\n" + "\n".join(_printed(c) + " Course" for c in sorted(cs)) + "\nTotal 18 units")
+            for u, (h, cs) in mv_pages.items()]
+mv_given = C.assign([{"control_number": s["control_number"], "title": s["title"], "award": s["award"],
+                      "closed_list": [{"code": _printed(c)} for c in s["codes_found"]]} for s in mv_rs], mv_pages)
+check("MAS643" not in ((mv_given["30150"]["best"] or {}).get("heading") or "")
+      and "MAS643" in ((mv_given["37196"]["best"] or {}).get("heading") or ""),
+      "on Moreno Valley's filed pages the A.S.-T keeps MAS643 and the A.S. never takes it: %r"
+      % {k: (mv_given[k]["best"] or {}).get("heading", "")[-26:] for k in ("30150", "37196")})
+
+# Self-recall over every college's filed sources (S653): each filed claim on a pattern's page, which S646's rule
+# refused whole. The new rule allows exactly these, each the program's own page; every other such claim stays
+# refused (a pattern's own page another program claimed, Moreno Valley's 30150 on MAS643, and five LA Trade-Tech PDF
+# windows whose cut headings name too little). A refiled capture that moves a claim updates this list.
+GE_ALLOWED = {"los_angeles_pierce": ["02809", "02820", "02821", "02831"],
+              "los_angeles_trade_technical": ["32905", "32948", "38883", "38966", "39216"],
+              "los_angeles_valley": ["32117", "32368", "32850", "32854", "36004"],
+              "moreno_valley": ["30584", "31220", "32142", "32156", "32265", "32266", "32638", "32639", "32660", "32941",
+                                "32946", "33240", "33953", "37196", "37440", "37533", "41635", "41670", "42794", "42828",
+                                "43792", "43882", "43884", "45447", "46200", "46236", "46532"],
+              "norco": ["30585", "33952", "35853", "37232", "44961", "44986"],
+              "riverside_city": ["30578", "30581", "31175", "31218", "31456", "31561", "31801", "32075", "32174", "32597",
+                                 "32658", "32692", "32745", "32813", "32912", "32938", "33021", "33218", "33229", "33829",
+                                 "33964", "37464", "37483", "38109", "38790", "40831", "41364", "41736", "41749", "41757",
+                                 "42892", "43695", "43896", "43897", "44155", "44363", "44469", "44865", "46237", "46317"]}
+ge_allow, ge_refuse, ge_cross = set(), set(), []
+for _path in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "sources.json"))):
+    _slug = _path.split(os.sep)[-2]
+    _src = [s for s in json.load(open(_path)) if isinstance(s, dict)]
+    _titles = [s.get("title") for s in _src]
+    _ge = {s["source"]["url"]: s["source"] for s in _src if (s.get("source") or {}).get("url")
+           and C.ge_pattern_page(s["source"])}
+    for s in _src:
+        if C.ge_pattern(s.get("title")):
+            continue
+        _prog = {"title": s.get("title"), "award": s.get("award")}
+        _own = s.get("source") or {}
+        if _own.get("url") and C.ge_pattern_page(_own):     # the claim, read on the page as it filed it
+            (ge_allow if C.ge_page_names_program(_own, _prog, _titles) else ge_refuse).add((_slug, s["control_number"]))
+        for _u, _pg in _ge.items():
+            if _u != _own.get("url") and C.ge_page_names_program(_pg, _prog, _titles):
+                ge_cross.append((_slug, s["control_number"], _pg.get("h1")))
+ge_expected = {(k, cn) for k, v in GE_ALLOWED.items() for cn in v}
+check(ge_allow == ge_expected and len(ge_allow) == 87,
+      "the filed claims on a pattern's page the rule allows are the 87 expected: extra %s, missing %s"
+      % (sorted(ge_allow - ge_expected)[:5], sorted(ge_expected - ge_allow)[:5]))
+check(len(ge_refuse) == 53 and ("moreno_valley", "30150") in ge_refuse,
+      "and 53 stay refused, Moreno Valley's 30150 on MAS643 among them (%d)" % len(ge_refuse))
+check(ge_cross == [], "no filed pattern page is allowed to a program other than the one that filed it: %r" % ge_cross[:4])
 
 # Two different current programs never share one page's list on a title tie alone (the S646 conductor's
 # ruling). Glendale's titles nest, and each pair tied on the longer title's page (capture 43366669415's
