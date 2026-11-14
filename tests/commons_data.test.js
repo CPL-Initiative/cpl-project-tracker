@@ -272,7 +272,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     word(2).closest("[inert]") && x.d.querySelector("#cdd-q").closest("[inert]") && !P.closest("[inert]") && x.d.querySelectorAll("[inert]").length >= 1);
   check("panel 2 ⭐: the address names the college, and the view reports it", x.w.location.hash === "#commons/data/college/alpha-college" && reported(x) === "commons/data/college/alpha-college");
   const sec = (k) => txt(P.querySelector('[data-ds="' + k + '"]'));
-  [["plo", "PLO reason."], ["obj", "Objectives reason."], ["ppm", "PPM reason."], ["desc", "Descriptions reason."], ["cpl", "CPL reason."], ["mis", "MIS reason."], ["coe", "COE reason."], ["slo", "SLO reason."]].forEach(function (t) {
+  [["plo", "PLO reason."], ["obj", "Objectives reason."], ["desc", "Descriptions reason."], ["cpl", "CPL reason."], ["mis", "MIS reason."], ["coe", "COE reason."], ["slo", "SLO reason."]].forEach(function (t) {
     check("panel TBA ⭐: " + t[0] + " reads TBA with the builder's reason, no number", sec(t[0]).indexOf("TBA. " + t[1]) >= 0 && !/\d+%/.test(sec(t[0])));
   });
   check("panel 3: the overall bar reads TBA with its reason; Teachout and Approved too", /Overall\s*TBA\. The live read has not run yet\. Catalog source, SLOs and PLOs are live tables\./.test(txt(P)) && /Teachout and Approved programs: TBA\. The live read has not run yet\./.test(sec("pr")));
@@ -500,8 +500,9 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     && /50 of 100 Active programs carry PLOs/.test(psec("plo")) && !/PLO reason/.test(psec("plo")) && /0 of 400 courses on Active programs have objectives/.test(psec("obj")));
   const reg = P1.querySelector('[data-ds="cat"] [data-part="registry"]');
   check("live 4 ⭐: the registry checks are words, held or not, never 'checked'",
-    reg && /Catalog link\s*held/.test(txt(reg)) && /Curriculum view\s*not held/.test(txt(reg)) && /Pathway source\s*none found when looked for/.test(txt(reg)) && !/checked/i.test(txt(reg)) && !/Registry reason/.test(psec("cat")));
-  check("live 5: the rest keep their committed-file reasons", /TBA\. PPM reason\./.test(psec("ppm")) && /TBA\. MIS reason\./.test(psec("mis")) && /TBA\. COE reason\./.test(psec("coe")));
+    reg && /Catalog link\s*held/.test(txt(reg)) && /Curriculum view\s*not held/.test(txt(reg)) && !/Pathway source/.test(txt(reg)) && !/checked/i.test(txt(reg)) && !/Registry reason/.test(psec("cat")));
+  check("cards hook (#3310): without commons_data_cards.js loaded the panel still draws, with no card of the module's", !P1.querySelector("[data-card]") && !!P1.querySelector('[data-ds="cat"]'));
+  check("live 5: the rest keep their committed-file reasons; the pathway source has its own card (#3310), no PPM dataset row", !P1.querySelector('[data-ds="ppm"]') && /TBA\. MIS reason\./.test(psec("mis")) && /TBA\. COE reason\./.test(psec("coe")));
   check("live 6: the live sources are named", /live: coci_college_programs; program_requirement_records/.test(psec("pr")) && /live: course_outcomes/.test(psec("slo")));
   // the view changes while the panel is open: nothing stays inert
   const hd = s1.d.createElement("header"); hd.id = "site-head2"; s1.d.body.insertBefore(hd, s1.d.body.firstChild);

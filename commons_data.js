@@ -151,7 +151,8 @@
     var obj = function (v) { return v && typeof v === "object" && !Array.isArray(v) ? v : {}; };
     return { colleges: colleges, statewide: data.statewide || {}, rule: data.rule || {}, tba: data.tba || {},
       sources: data.sources || {}, written: data.written_at || "", fields: data.fields || {},
-      live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis), census_live: obj(data.census_live) };
+      live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis), census_live: obj(data.census_live),
+      collection: obj(data.collection) };   // the college cards' statewide facts (#3310)
   }
   function listFor(M, filter) {
     var f = FILTERS[filter] || FILTERS.all;
@@ -194,7 +195,6 @@
   function pc(v) { return v == null ? "" : Math.round(v * 100) + "%"; }
   /* A registry boolean in words: the registry records a link only when one is seen, so the word is "held". */
   function heldWord(v) { return v ? "held" : "not held"; }
-  function pathwayWord(g) { return g.sequence_source ? "held" : g.sequence_checked ? "none found when looked for" : "not looked for yet"; }
 
   /* ── slice 3: the catalog platform each harvested college's capture read (shareable), a filter of words ── */
   function platformsOf(M, filter) {
@@ -613,11 +613,10 @@
     }
     if (lv) cat.parts.push({ key: "registry", title: "What the program source registry holds (" + liveWords(M) + ")",
       lines: lg.row === false ? [["Registry row", "No registry row for this college"]]
-        : [["Catalog link", heldWord(lg.catalog_link)], ["Curriculum view", heldWord(lg.course_outline_link)], ["Pathway source", pathwayWord(lg)]],
+        : [["Catalog link", heldWord(lg.catalog_link)], ["Curriculum view", heldWord(lg.course_outline_link)]],   // the pathway source: its own card (#3310)
       stamp: { at: M.live.read_at, kind: "live read" } });
     if (lv) cat.src = (cat.src ? cat.src + "; " : "") + "live: " + liveSrc(M, "registry");
     L.push(cat);
-    L.push({ key: "ppm", group: "Collected", label: "Program Pathways Mapper (PPM)", tba: tbaOf(M, "ppm") });
     L.push({ key: "desc", group: "Connected", label: "Course descriptions", tba: tbaOf(M, "descriptions") });
     L.push({ key: "cpl", group: "Connected", label: "CPL and MAP", tba: tbaOf(M, "cpl") });
     L.push({ key: "mis", group: "Connected", label: "COMIS and MIS", tba: tbaOf(M, "mis") });
@@ -1069,6 +1068,23 @@
      the focus on open, Escape closes it and the focus returns to the word that opened it); a dialog, so Tab stays
      inside it while it is open. Its width lasts the visit; nothing is stored. ── */
   function section(h, kids) { return el("section", { cls: "cdd-psec" }, [el("h3", { text: h })].concat(kids)); }
+  /* The panel's further cards, each module its own file (#3310: How it's collected, Program pathway maps, Data
+     sources in commons_data_cards.js). A module loads the first time a panel draws, then the panel draws again; it
+     gets this module's helpers, so the look, the dates and the words stay one. Add a module with one row here. */
+  var CARD_MODULES = [["commons_data_cards.js", "CPL_COMMONS_DATA_CARDS"]];
+  function moreCards(M, c) {
+    var H = { el: el, section: section, dl: dl, when: when, day: day, fmt: fmt, liveOf: liveOf, liveRead: liveRead, liveWords: liveWords,
+      platformWord: platformWord, paneWord: paneWord };
+    return [].concat.apply([], CARD_MODULES.map(function (m) {
+      var mod = window[m[1]];
+      if (mod && mod.sections) { try { return mod.sections(M, c, H) || []; } catch (e) { return []; } }
+      if (window.CPL_TABS && window.CPL_TABS.loadScript && !moreCards[m[0]]) {
+        moreCards[m[0]] = true;
+        window.CPL_TABS.loadScript(m[0], m[1], function () { if (window[m[1]] && S.panel != null && VIEW.panel && !S.pane) drawPanel(); });
+      }
+      return [];
+    }));
+  }
   function panelBody(M, c, now) {
     var sp = c.spot_check, out = [];
     var ov = overallOf(M, c);
@@ -1098,6 +1114,7 @@
         return el("div", { cls: "cdd-pds", "data-ds": d.key }, kids);
       })));
     });
+    out = out.concat(moreCards(M, c));
     /* Dates: when the collection was read, spot-checked and scouted. Whether a person confirmed a record is never a
        headline (Sam, Nov 13, #3229: "downfocus on whether something has been reviewed"): the load time and the
        person-confirmed count sit in one quiet team-internal line under the dates. */
