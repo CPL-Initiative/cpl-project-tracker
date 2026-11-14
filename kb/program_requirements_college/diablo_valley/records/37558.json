@@ -46,30 +46,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 15,
    "listed": 16,
-   "share": 0.75,
+   "share": 0.938,
    "missing": [
-    "BIOSC130",
-    "BIOSC131",
-    "BIOSC170",
     "ECON221"
    ],
    "unexplained": [
-    "BIOSC130",
-    "BIOSC131",
-    "BIOSC170",
     "ECON221"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 8,
+   "count": 5,
    "codes": [
-    "BIOL130",
-    "BIOL131",
-    "BIOL170",
     "BIOL171",
     "BUS240",
     "ECONC2001",
@@ -419,5 +410,6 @@
    "Program learning outcomes are printed for the program as a whole; recorded for this award."
   ]
  },
- "extracted_run": "43353452924"
+ "extracted_run": 43609976980,
+ "read_run": "43353452924"
 }

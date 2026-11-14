@@ -46,13 +46,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 22,
    "listed": 26,
-   "share": 0.769,
+   "share": 0.846,
    "missing": [
     "ARTDM136",
-    "BIOSC126",
-    "BIOSC170",
     "FTVE160",
     "FTVE165",
     "GEOL120"
@@ -64,15 +62,9 @@
    "pass": false
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "BIOL126",
-    "BIOL170"
-   ],
-   "flagged": [
-    "BIOL126",
-    "BIOL170"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -418,5 +410,6 @@
    "Outcomes copied as printed, including the wording 'explain the how data acquired by drone...'."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43609976980,
+ "read_run": "43379378196"
 }
