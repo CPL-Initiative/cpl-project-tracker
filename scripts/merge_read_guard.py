@@ -15,11 +15,14 @@ One script, two hook events, told apart by `hook_event_name`:
   sit in the same step; otherwise deny, with one sentence telling the session to
   read the PR's comments to the last page first.
 
-  PreToolUse on mcp__github__enable_pr_auto_merge, and on a Bash `gh pr merge` or
-  `gh api .../merge`: deny always. Auto-merge lands later with no read at all
-  (with no required check it merges at once; `CLAUDE.md` and conductor_mode say
-  never use it), and this environment allows `gh` only for search. Both refusals
-  say to merge with merge_pull_request after reading the thread (COBIx on #3307).
+  PreToolUse on mcp__github__enable_pr_auto_merge, and on a Bash `gh pr merge`,
+  `gh api .../merge`, or `gh api graphql` in a line that names `mergePullRequest` or
+  an auto-merge mutation (`enablePullRequestAutoMerge`): deny always. The Bash check
+  also reads the string a `bash -c`, `sh -c` or `eval` wrapper runs. Auto-merge
+  lands later with no read at all (with no required check it merges at once;
+  `CLAUDE.md` and conductor_mode say never use it), and this environment allows
+  `gh` only for search. Both refusals say to merge with merge_pull_request after
+  reading the thread (COBIx on #3307).
 
 WHY THIS EXISTS
 ---------------
@@ -237,20 +240,68 @@ def deny(reason):
     return 0
 
 
-def gh_merge(command):
-    """True when a simple command in the Bash line is `gh pr merge` or a `gh api` call on a merge endpoint."""
+SHELLS = {"bash", "sh", "zsh", "dash", "ksh"}
+PREFIXES = {"env", "command", "exec", "sudo", "nohup", "time"}
+GRAPHQL_MERGE_WORDS = ("mergepullrequest", "automerge")
+MAX_DEPTH = 4              # wrappers inside wrappers, as deep as the guard looks
+
+
+def _program(words):
+    """Skip VAR=value assignments and plain prefixes (`env`, `sudo` ...); return the
+    index of the program word, or len(words)."""
+    k = 0
+    while k < len(words):
+        w = words[k]
+        if "=" in w and not w.startswith("-"):
+            k += 1
+        elif os.path.basename(w) in PREFIXES:
+            k += 1
+            while k < len(words) and words[k].startswith("-"):
+                k += 1
+        else:
+            break
+    return k
+
+
+def _wrapped(words, k):
+    """The command string a `bash -c STR`, `sh -lc STR` or `eval ARGS` hands to a
+    shell, or None. Quote removal is already done, so STR is plain text."""
+    prog = os.path.basename(words[k])
+    rest = words[k + 1:]
+    if prog == "eval":
+        return " ".join(rest) or None
+    if prog in SHELLS:
+        for i, w in enumerate(rest):
+            if w.startswith("-") and not w.startswith("--") and "c" in w[1:]:
+                return rest[i + 1] if i + 1 < len(rest) else None
+    return None
+
+
+def gh_merge(command, depth=0):
+    """True when a simple command in the Bash line, or in a `bash -c` / `sh -c` /
+    `eval` string inside it, is `gh pr merge`, a `gh api` call on a merge endpoint,
+    or a `gh api graphql` call in a line that names `mergePullRequest` or an
+    auto-merge mutation (COBIx on #3307, comment 6880706352)."""
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from clock_time_guard import shell_commands   # one shell reader for both hooks
     for words, _ in shell_commands(command):
-        k = 0
-        while k < len(words) and "=" in words[k] and not words[k].startswith("-"):
-            k += 1
-        if k >= len(words) or os.path.basename(words[k]) != "gh":
+        k = _program(words)
+        if k >= len(words):
+            continue
+        inner = _wrapped(words, k)
+        if inner is not None and depth < MAX_DEPTH and gh_merge(inner, depth + 1):
+            return True
+        if os.path.basename(words[k]) != "gh":
             continue
         rest = words[k + 1:]
         if rest[:2] == ["pr", "merge"]:
             return True
         if rest[:1] == ["api"] and any(w.rstrip("/").endswith("/merge") for w in rest[1:]):
+            return True
+        # The mutation may sit in a variable set earlier in the line, so the whole
+        # line is read: a graphql call beside the word is refused.
+        if rest[:1] == ["api"] and "graphql" in rest[1:] \
+                and any(m in command.lower() for m in GRAPHQL_MERGE_WORDS):
             return True
     return False
 
