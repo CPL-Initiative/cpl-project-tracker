@@ -155,8 +155,7 @@ def compute_plan(courses, singletons, curations, seed, picks, reservations, vaca
     order = sorted(moves)
     returned = []
     for cid in order:                                           # pass 1: keep the number
-        _, letter, band, tail, _ = rec.parse_id(cid)
-        want = f"{moves[cid]['route']} {letter}{band}{tail}"
+        want = rec.kept_number(cid, moves[cid]['route'])   # refuses an Honors id
         moves[cid]["new_id"] = moves[cid]["how"] = None
         home = (want in moves[cid]["own"] and want not in alloc.taken
                 and want not in (real - set(moves)) and want not in drawn)
