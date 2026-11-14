@@ -142,5 +142,4 @@ and a DECIDED line in the `csm-workspace` lane):
   The address `#csm-workspace` and its views stay the same, so saved links keep working.
 - The activity log, templates and follow-up dates already belong to an activity (Sam, Nov 2), so the next activity
   (MAP onboarding, activity cards) is a new view, not a new tab.
-- Nothing is renamed until Sky stages the change in its own revertible PR. Malone does not need to preview it (Sam,
-  2026-11-11: "no need for malone's preview of rename").
+- Nothing is renamed until Sky stages the change in its own revertible PR.
