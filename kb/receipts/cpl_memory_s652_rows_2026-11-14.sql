@@ -93,7 +93,7 @@ group by m.slug, m.summary order by m.slug;
 -- ===========================================================================================================
 
 -- ===========================================================================================================
--- STATEMENT 8 -- NOT YET RUN (2 rows; summaries 354 and 367 characters, measured by script). The conductor's
+-- STATEMENT 8 -- RUN by the conductor at 15:37Z 2026-11-14 (2 rows; 21 S652 rows in the table in all) (2 rows; summaries 354 and 367 characters, measured by script). The conductor's
 -- HUMA M10OI decision and the Riverside City rescore fact (status proposed). One execute_sql call; record RUN here.
 -- ===========================================================================================================
 insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
