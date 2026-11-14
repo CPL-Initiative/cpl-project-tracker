@@ -44,25 +44,22 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 25,
+   "placed": 26,
    "listed": 29,
-   "share": 0.862,
+   "share": 0.897,
    "missing": [
     "ECO7",
-    "HIS2",
     "HIS6",
     "HIS7"
    ],
-   "unexplained": [
-    "HIS2"
-   ],
-   "pass": false
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "ECONC2002",
-    "HIST2",
     "HISTC1001",
     "HISTC1002"
    ],
@@ -71,7 +68,7 @@
     "HISTC1001",
     "HISTC1002"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -84,6 +81,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -100,7 +98,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -374,5 +383,6 @@
    "Total of 18.00 units is the major total; the degree requires 60 CSU-transferable units including Cal-GETC."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }
