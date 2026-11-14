@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T10:40:44Z",
+ "written_at": "2026-11-14T10:52:07Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -167,11 +167,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15838,
-  "gap": 6497,
+  "passing": 15840,
+  "gap": 6495,
   "with_gap": 118,
   "cost_usd": 1327.28,
-  "passed_at_read": 15149,
+  "passed_at_read": 15151,
   "cost_receipts": 117,
   "slo_waiting": 9,
   "scouted": 11,
@@ -185,8 +185,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15838,
-  "gap": 6497
+  "passing": 15840,
+  "gap": 6495
  },
  "census_live": {
   "basis": "live",
@@ -4699,13 +4699,13 @@
    "harvested": true,
    "slug": "lassen",
    "programs": 78,
-   "passing": 35,
-   "gap": 43,
+   "passing": 37,
+   "gap": 41,
    "causes": {
     "no_closed_list": 5,
     "page_not_found": 9,
     "places_none": 5,
-    "unknown_without_live": 24
+    "unknown_without_live": 22
    },
    "census_causes": {
     "no_closed_list": 4,
@@ -4732,7 +4732,7 @@
    "read_at": "2026-10-17T05:28:43Z",
    "read_kind": "capture",
    "cost_usd": 4.54,
-   "passed_at_read": 35,
+   "passed_at_read": 37,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4747,7 +4747,7 @@
    "failed_checks": {
     "coverage": 5,
     "invented": 0,
-    "arithmetic": 29,
+    "arithmetic": 27,
     "repeated": 0,
     "outcomes": 0
    },
@@ -4760,11 +4760,11 @@
    "read_seconds": 30.3,
    "run": "39006337658",
    "levers": {
-    "ge_units_steps": 19,
+    "ge_units_steps": 14,
     "reader_page_search": 9,
+    "reconcile_steps": 8,
     "program_course_file_check": 5,
-    "reader_page_assignment": 5,
-    "reconcile_steps": 5
+    "reader_page_assignment": 5
    },
    "census_programs": 34,
    "census_gap": 22,
