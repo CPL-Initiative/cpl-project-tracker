@@ -70,34 +70,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     24.0,
     24.0
    ],
    "stated": [
-    60.0,
-    60.0
+    24.0,
+    24.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     24.0,
-     24.0
+     59.0,
+     59.0
     ],
     "stated": [
-     24.0,
-     24.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     35.0,
+     35.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     1.0,
+     1.0
+    ]
    }
   },
   "repeated": {
@@ -122,7 +128,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -143,8 +149,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 35,
+    "max": 35
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -298,5 +304,20 @@
    "Description mentions fields of study (fine arts, design fields, art education, art therapy, professional art school) as studies students may continue in, not as careers; careers left empty."
   ]
  },
- "extracted_run": "39046789844"
+ "extracted_run": 43520153161,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 35,
+    "max": 35
+   },
+   "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
+  }
+ ],
+ "read_run": "39046789844"
 }

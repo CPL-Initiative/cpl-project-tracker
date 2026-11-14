@@ -498,7 +498,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 399
+     "line": 423
     },
     {
      "id": "script:kb/_program_requirements_college.py",
@@ -825,7 +825,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 423
+     "line": 447
     }
    ],
    "main_committers": []
@@ -13921,7 +13921,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 624
+     "line": 661
     }
    ],
    "served": false,
@@ -14748,7 +14748,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 907
+     "line": 920
     }
    ],
    "served": false,
@@ -15344,7 +15344,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1052
+     "line": 1065
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -15839,7 +15839,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 197
+     "line": 201
     },
     {
      "id": "script:kb/_build_adopt_page.py",
@@ -16142,7 +16142,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 997
+     "line": 1010
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -17099,19 +17099,6 @@
     }
    ],
    "served": false,
-   "main_committers": []
-  },
-  "file:kb/program_requirements_college/cosumnes_river/calgetc_apply_plan.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_program_requirements_readings_measure.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 417
-    }
-   ],
-   "served": true,
    "main_committers": []
   },
   "file:kb/program_requirements_college/glendale_community/capture_reread.json": {
@@ -18658,7 +18645,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 198
+     "line": 202
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -19480,7 +19467,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 754
+     "line": 767
     }
    ],
    "producers": [
@@ -21032,7 +21019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 196
+     "line": 200
     },
     {
      "id": "script:kb/_build_adopt_page.py",
@@ -22441,7 +22428,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 82
     }
    ],
    "served": false,
@@ -24339,6 +24326,19 @@
    "main_committers": []
   },
   "file:tests/course_outcomes_load_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/course_outcomes_objectives_standing_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -27478,7 +27478,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 34
+     "line": 40
     }
    ],
    "main_committers": []
@@ -28982,7 +28982,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 94
+     "line": 95
     },
     {
      "id": "script:kb/_build_exhibit_slo_neighbors.py",
@@ -33368,6 +33368,7 @@
     "tests/course_outcomes_read_test.py",
     "tests/exhibit_subject_fill_test.py",
     "tests/course_outcomes_load_test.py",
+    "tests/course_outcomes_objectives_standing_test.py",
     "tests/next_slo_colleges_test.py",
     "tests/browser_install_single_source_test.py",
     "kb/credential_aliases.py",

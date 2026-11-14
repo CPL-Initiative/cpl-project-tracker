@@ -67,8 +67,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     19.0,
     20.0
@@ -78,24 +78,29 @@
     19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 19.0-20.0; the catalog states 19.0-19.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
-    "pass": false,
-    "status": "incomplete",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     19.0,
-     20.0
+     54.0,
+     55.0
     ],
     "stated": [
      60.0,
      60.0
     ],
     "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    "ge": [
+     35.0,
+     35.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     5.0,
+     6.0
     ]
    }
   },
@@ -121,7 +126,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -142,8 +147,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 35,
+    "max": 35
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -293,5 +298,20 @@
    "The Spanish AA-T section that follows was ignored, including its listing of SOCI C210/ETHN C210 and SOCI C1000."
   ]
  },
- "extracted_run": "39046789844"
+ "extracted_run": 43520153161,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 35,
+    "max": 35
+   },
+   "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
+  }
+ ],
+ "read_run": "39046789844"
 }

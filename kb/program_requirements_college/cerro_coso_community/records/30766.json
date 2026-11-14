@@ -80,20 +80,26 @@
     "the blocks sum to 18.0-18.0; the catalog states 18.0-19.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "incomplete",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     18.0,
-     18.0
+     53.0,
+     53.0
     ],
     "stated": [
      60.0,
      60.0
     ],
     "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    "ge": [
+     35.0,
+     35.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     7.0,
+     7.0
     ]
    }
   },
@@ -140,8 +146,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 35,
+    "max": 35
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -304,5 +310,20 @@
    "State file lists both ADMJ C230 (3 units) and ADMJC 230 (4 units); catalog shows ADMJ C230 at 3 units."
   ]
  },
- "extracted_run": "39046789844"
+ "extracted_run": 43520153161,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 35,
+    "max": 35
+   },
+   "words": "Cal-GETC (https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65: California General Education Transfer Curriculum (Cal-GETC) (35 Units))"
+  }
+ ],
+ "read_run": "39046789844"
 }

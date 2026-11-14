@@ -312,11 +312,15 @@ is his standing preference there too.
    weekly (the night before Monday) with this line, unless Sam keeps it daily. A night with no change ends at the
    instruction's step 6: no commit, no PR. It never writes MAP, the CER's files or curation rows, or a schedule.
 
-11. **The course SLO read** (Sam, 2026-11-01: *"yes to SLO hints and the nightly harvest"*; `cpl_memory`
-   `sam-slo-hints-and-nightly-harvest-2026-11-01`). **Armed: yes.** **And course objectives** (Sam, 2026-11-02): until the
-   reader stores them, building that is this step's first item, in the order the program requirements lane gives (*Course
-   objectives too*). Each course's student learning outcomes, as its
-   public outline or catalog page prints them, go into `course_outcomes` (nine colleges, loaded 2026-10-13 and 10-14),
+11. **The course SLO and objectives read** (Sam, 2026-11-01: *"yes to SLO hints and the nightly harvest"*; `cpl_memory`
+   `sam-slo-hints-and-nightly-harvest-2026-11-01`). **Armed: yes.** **Objectives are collected with every SLO read**
+   (Sam, 2026-11-02 and 2026-11-13: *"add objectives to the collection list of data from cors. they should be collected
+   when slos are collected"*): the reader files both in one pass, `kind` `slo` and `objective`, and records per outline
+   system whether its page prints objectives (`OBJECTIVES_BY_SYSTEM`; eLumen's catalog pages mostly print none). The
+   colleges read before the reader took objectives are read once more, in the order of
+   [`objectives_reread_plan.json`](../../kb/course_outcomes/objectives_reread_plan.json), counted as this step's full read
+   for the day, loaded with `kind=objective`. Each course's student learning outcomes and course objectives, as its
+   public outline or catalog page prints them, go into `course_outcomes`,
    the colleges that articulate the most exhibits first. The step drives the existing push-started workflows
    (`course-outline-index.yml`, `course-outcomes-read.yml`, `course-outcomes-load.yml`); none gains a schedule.
    **It costs runner minutes only:** the read loads pages and calls no model, so the $40 extraction go (the program
@@ -327,7 +331,8 @@ is his standing preference there too.
    - **First, what is in flight.** Read the open `claude/slo-<slug>` PRs and their runs (`actions_list`
      `list_workflow_runs` on the three workflows, by branch). On each branch, after a pull of what the runner committed
      back, run `python3 scripts/next_slo_colleges.py --all` and act on the college's state.
-     **load** (every slice filed complete): write `kb/course_outcomes/.load` as printed (`host=<folder>`) and push.
+     **load** (every slice filed complete): write `kb/course_outcomes/.load` as printed (`host=<folder>`; an objectives
+     reread adds `kind=objective`) and push.
      The load inserts only blocks the table lacks, in about two minutes, and commits
      `kb/receipts/course_outcomes_<host>_<run>.json`: every inserted id and the delete that rolls them back (Rule 10).
      Merge on a passing `test` once the receipt is on the branch. **reading**: a slice is running or failed; one that

@@ -686,10 +686,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   }
+   },
+   "text_sha": "28f51831f5b127dc"
   },
   "listed": 14,
-  "text_chars": 15706
+  "text_chars": 15674
  },
  {
   "control_number": "30793",
@@ -853,10 +854,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   }
+   },
+   "text_sha": "1f6add29ec2ba6d1"
   },
   "listed": 12,
-  "text_chars": 8449
+  "text_chars": 8441
  },
  {
   "control_number": "31855",
@@ -1356,10 +1358,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   }
+   },
+   "text_sha": "04cd59967ffb7342"
   },
   "listed": 10,
-  "text_chars": 8784
+  "text_chars": 8775
  },
  {
   "control_number": "38666",
@@ -1667,10 +1670,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   }
+   },
+   "text_sha": "3ad8fad1a0369767"
   },
   "listed": 15,
-  "text_chars": 4873
+  "text_chars": 4870
  },
  {
   "control_number": "40922",
@@ -1882,10 +1886,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   }
+   },
+   "text_sha": "9ac05cab0b07221a"
   },
   "listed": 13,
-  "text_chars": 4713
+  "text_chars": 4707
  },
  {
   "control_number": "43663",
