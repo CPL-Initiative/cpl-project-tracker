@@ -638,6 +638,8 @@ file.
 - **Controls are underlined words (Sam, 2026-10-09).** No border and no fill,
   underlined at rest, 24px tall, a `<button>` where it acts; each view converts
   at its UI pass. Spec: [`reference-ui-design-system`](docs/kb-notes/reference-ui-design-system.md).
+- **A screen leads with the job; a tool is built to scale (Sam and Malone, 2026-11-11).** Rules and ship
+  checks: [`design-principles`](docs/reference/design-principles.md).
 - **American spelling, always** — rendered UI text first. Word list and the
   code-safety caveat are in **Naming & terminology** below.
 

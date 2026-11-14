@@ -693,6 +693,7 @@ _ALL = [
     "- **PROSE RUNS THE FULL WIDTH.** `--cpl-measure`.",
     "- **CONTROLS ARE UNDERLINED WORDS.** no border and no fill.",
     "- **A FIGURE CARD OPENS WHAT IT COUNTS.**",
+    "- **A SCREEN LEADS WITH THE JOB; A TOOL IS BUILT TO SCALE.**",
 ]
 _e = _claude_presentation(_ALL)
 check("presentation doctrine: silent when every rule is stated",
