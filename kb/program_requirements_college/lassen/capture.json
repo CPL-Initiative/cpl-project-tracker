@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 78,
  "with_closed_list": 73,
- "started": "2026-10-17T05:28:43Z",
+ "started": "2026-11-14T09:35:11Z",
  "pdf": {
   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf",
   "access": "ok",
@@ -13,47 +13,936 @@
   "bytes": 28641951,
   "pages_total": 175,
   "error": null,
-  "chars_total": 749758,
-  "pypdf_accepted": 64,
+  "chars_total": 749737,
+  "pypdf_accepted": 66,
   "sample": [
    "p53: ' \\nwww.lassencollege.edu                                     Lassen Community College 2026-2027 Page 51 \\n \\nAssociate in Arts in Studio Arts for Transfer  \\nTotal units for the Associate in Arts Degree with a minimum grade point average of 2.0'",
    "p106: ' \\nwww.lassencollege.edu                                     Lassen Community College 2026-2027 Page 104 \\n \\nCOUNSELING & GUIDANCE  \\nCG 150 - College Success Skills Workshop Series \\n0.0 unit \\n48 hours lecture (R) \\nBy attending success skills '"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
+  "picks": [
+   {
+    "control_number": "02121",
+    "pages": [
+     47,
+     48,
+     49,
+     50
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 47] Associate in Science in Agriculture Science and Technology CERTIFICATE OF ACHIEVEMENT Agriculture Science and Technology Agriculture is a vital component of our local, state, and national economies an"
+   },
+   {
+    "control_number": "02133",
+    "pages": [
+     87
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] Associate in Science Degree in Vocational Nursing Vocational Nursing Program The Program is accredited by the California State Board of Vocational Nursing and Psychiatric Technicians. The individuals who suc"
+   },
+   {
+    "control_number": "02134",
+    "pages": [
+     45,
+     46
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 45] Associate in Arts Degree in Administration of Justice Total Units for the Associate in Arts Degree: 60 units Total Core Units: 27 units Required Core Courses: 18 units Course No Course Title Units AJ 9 AJ"
+   },
+   {
+    "control_number": "09308",
+    "pages": [
+     99,
+     100,
+     101
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 99] Associate in Science in Welding Technology CERTIFICATES OF ACHIEVEMENT Welding Technology Two-Year Plan Welding Technology One-Year Plan CERTIFICATE OF ACCOMPLISHMENT Welding Technology The Welding "
+   },
+   {
+    "control_number": "09316",
+    "pages": [
+     61,
+     62
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.692,
+    "opens": "[page 61] Receiving an A.A. in Child Development also meets the requirement to teach in a National Head Start Program. As a Child Development major you will: • Study effective principle and practices of child developme"
+   },
+   {
+    "control_number": "12201",
+    "pages": [
+     100,
+     101
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] Certificate of Achievement: Welding Technology - Two Year Total Units for the Two-Year Certificate of Achievement: 44 Units Required Core Courses: 29 Units Course No Course Title Units IT 22 Operations Mai"
+   },
+   {
+    "control_number": "17742",
+    "pages": [
+     67,
+     68,
+     69,
+     70
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.985,
+    "opens": "[page 67] Associate in Science in Fire Technology CERTIFICATE OF ACHIEVEMENT Fire Technology CERTIFICATE OF ACHIEVEMENT Basic Wildland Firefighter Cal Fire Academy The Associate in Science Degree in Fire T"
+   },
+   {
+    "control_number": "18751",
+    "pages": [
+     81,
+     82
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Associate in Arts Degree General Studies: Emphasis in Natural Science Certificate of Achievement Natural Science Certificate of Achievement Biology/Chemistry Certificate of Achievement The Natura"
+   },
+   {
+    "control_number": "18752",
+    "pages": [
+     81,
+     82
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 81] Associate in Arts Degree University Studies: Emphasis in Natural Science Associate in Arts Degree General Studies: Emphasis in Natural Science Certificate of Achievement Natural Science Certificat"
+   },
+   {
+    "control_number": "18753",
+    "pages": [
+     93,
+     94
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.963,
+    "opens": "[page 93] www.lassencollege.edu Lassen Community College 2026-2027 Page 91 Social Sciences DEGREES Associate in Arts Degree University Studies: Emphasis in Social Sciences As"
+   },
+   {
+    "control_number": "18754",
+    "pages": [
+     95,
+     96,
+     97,
+     98
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.63,
+    "opens": "[page 95] Upon completion of the Associate in Arts Degree in Social Science University Studies, Associate in Arts Degree in Social Science General Studies, and the Certificate of Achievement in Social Science: Emphasis "
+   },
+   {
+    "control_number": "18756",
+    "pages": [
+     47,
+     48,
+     49,
+     50
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] The Associate in Arts University Studies: Emphasis in Agriculture Science provides students with an opportunity to build a broad foundation of knowledge and skills in core agriculture areas including plants, s"
+   },
+   {
+    "control_number": "18758",
+    "pages": [
+     79
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] Associate in Arts Degree University Studies: Emphasis in Humanities CERTIFICATE OF ACHIEVEMENT Humanities These courses emphasize the study of cultural, literary, humanistic activities and artistic expres"
+   },
+   {
+    "control_number": "18848",
+    "pages": [
+     51
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 51] Associate in Arts Degree University Studies: Emphasis in Allied Health AA Degree University Studies: Emphasis in Allied Health The emphasis in Allied Health is designed to provide the lower division ma"
+   },
+   {
+    "control_number": "19321",
+    "pages": [
+     89,
+     90
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.964,
+    "opens": "[page 89] Associate in Arts Degree University Studies: Emphasis in Physical Education The AA-T in Kinesiology is designed to provide students with a strong foundation for the study of the human body and body mechanics"
+   },
+   {
+    "control_number": "19375",
+    "pages": [
+     62
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 62] Certificate of Achievement Child Development Total Units for the Certificate of Achievement: 18 Units Required Core Courses: 18 Units Course No Course Title Units CD 12 Child, Family and Community 3.0 CD 1"
+   },
+   {
+    "control_number": "19377",
+    "pages": [
+     67,
+     68,
+     69,
+     70
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.983,
+    "opens": "[page 67] CERTIFICATE OF ACHIEVEMENT Fire Technology CERTIFICATE OF ACHIEVEMENT Basic Wildland Firefighter Cal Fire Academy The Associate in Science Degree in Fire Technology is designed to provide students"
+   },
+   {
+    "control_number": "21595",
+    "pages": [
+     47,
+     48,
+     49,
+     50
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] CERTIFICATE OF ACHIEVEMENT Agriculture Science and Technology Agriculture is a vital component of our local, state, and national economies and offers many exciting employment opportunities. LCC’s Agriculture"
+   },
+   {
+    "control_number": "21602",
+    "pages": [
+     100,
+     101
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.941,
+    "opens": "[page 100] Certificate of Achievement: Welding Technology - Two Year Total Units for the Two-Year Certificate of Achievement: 44 Units Required Core Courses: 29 Units Course No Course Title Units IT 22 Operations Mai"
+   },
+   {
+    "control_number": "21606",
+    "pages": [
+     45,
+     46
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 45] Certificate of Achievement: Administration of Justice Total Units for the Certificate of Achievement: 27 Units Required Core Courses: 18 Units Course No Course Title Units AJ 9 AJ 12 Introduction to Corre"
+   },
+   {
+    "control_number": "30947",
+    "pages": [
+     44,
+     45,
+     46
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] of Justice for Transfer Associate in Arts in Administration of Justice CERTIFICATE OF ACHIEVEMENT Administration of Justice Administration of Justice – Law Enforcement Administration of Justice – C"
+   },
+   {
+    "control_number": "31015",
+    "pages": [
+     61,
+     62
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] The Associate in Science Degree in Early Childhood Education for Transfer is designed to provide the lower division major courses to transfer to a California State University and earn a Bachelor’s degree in Ch"
+   },
+   {
+    "control_number": "31037",
+    "pages": [
+     98
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] Associate in Arts in Sociology for Transfer The Associate in Arts Degree for Transfer in Sociology is designed to provide students with a strong foundation for the study of society and social behavior. Th"
+   },
+   {
+    "control_number": "31132",
+    "pages": [
+     52,
+     53
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 52] Associate in Arts in Studio Art for Transfer The Associate in Arts Degree in Studio Art for Transfer is designed to provide students with strong foundations for the study of art history and studio art in "
+   },
+   {
+    "control_number": "31178",
+    "pages": [
+     52,
+     53
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.8,
+    "opens": "[page 52] history and studio art in order to transfer to a California State University. Lassen’s art curriculum offers introductory and intermediate level courses in painting, watercolor, computer art, drawing, sculptu"
+   },
+   {
+    "control_number": "31297",
+    "pages": [
+     57,
+     58,
+     59,
+     60
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.889,
+    "opens": "[page 57] Business Administration for Transfer 2.0 The Associate in Science Degree in Business Administration for Transfer is designed to provide students with the common core of lower division courses required by most"
+   },
+   {
+    "control_number": "31379",
+    "pages": [
+     77
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Associate in Arts in History for Transfer The Associates in Arts Degree in History is designed to provide students with a strong foundation for the study of the historical past in order to transfer to a "
+   },
+   {
+    "control_number": "31407",
+    "pages": [
+     115,
+     116,
+     117
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.667,
+    "opens": "[page 115] www.lassencollege.edu Lassen Community College 2026-2027 Page 113 CSU/UC General Education Area 5 Cal-GETC Area 5B C-ID ANTH 110 Recommended Preparation: ENGL105 "
+   },
+   {
+    "control_number": "31411",
+    "pages": [
+     115,
+     116,
+     117
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.545,
+    "opens": "[page 115] www.lassencollege.edu Lassen Community College 2026-2027 Page 113 CSU/UC General Education Area 5 Cal-GETC Area 5B C-ID ANTH 110 Recommended Preparation: ENGL105 "
+   },
+   {
+    "control_number": "32083",
+    "pages": [
+     92,
+     93,
+     94
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 92] Associate in Arts in Psychology for Transfer The Associate in Arts Degree in Psychology for Transfer is designed to provide students with a strong foundation for the study of Psychology in order to transfe"
+   },
+   {
+    "control_number": "33263",
+    "pages": [
+     57,
+     58
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] Economics for Transfer The Associate in Arts in Economics for Transfer is designed to provide students with the common core of lower division courses required by most universities to transfer and pursue a bac"
+   },
+   {
+    "control_number": "33322",
+    "pages": [
+     55,
+     56
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 55] Certificate of Achievement Engine Repair Total Units for the Certificate of Achievement: Engine Repair: 20 Units Required Core Courses: 20 Units Course No Course Title Units Course No Course Title Units "
+   },
+   {
+    "control_number": "33323",
+    "pages": [
+     54,
+     55,
+     56
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 1.0,
+    "opens": "[page 54] www.lassencollege.edu Lassen Community College 2026-2027 Page 52 Automotive Technology DEGREE Associate in Science in Automotive Technology CERTIFICATES OF ACHIEVE"
+   },
+   {
+    "control_number": "33388",
+    "pages": [
+     89,
+     90
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 89] The AA-T in Kinesiology is designed to provide students with a strong foundation for the study of the human body and body mechanics in preparation for transfer to a California State University. It is an excell"
+   },
+   {
+    "control_number": "33661",
+    "pages": [
+     54,
+     55,
+     56
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 54] Associate in Science in Automotive Technology CERTIFICATES OF ACHIEVEMENT Advanced Mechanics Engine Repair CERTIFICATES OF ACCOMPLISHMENT Basic Mechanics Electrical CERTIFICATE OF COMPLETION Automotiv"
+   },
+   {
+    "control_number": "33729",
+    "pages": [
+     47,
+     48,
+     49,
+     50
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] Animal Science for Transfer Associate in Science in Agriculture Business for Transfer Associate in Arts University Studies: Emphasis in Agriculture Sciences Associate in Science in Agriculture Science"
+   },
+   {
+    "control_number": "33730",
+    "pages": [
+     47,
+     48,
+     49,
+     50
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 47] Agriculture Business for Transfer The Associate in Science in Agriculture Business for Transfer degree is designed to provide students with the common core of lower division courses required by most universit"
+   },
+   {
+    "control_number": "35106",
+    "pages": [
+     88
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 88] Associate in Science in Nutrition and Dietetics for Transfer The AS-T in Nutrition and Dietetics for transfer is designed to prepare the student for transfer into a Bachelor program at a California State "
+   },
+   {
+    "control_number": "36554",
+    "pages": [
+     75,
+     76
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 75] Certificate of Achievement Medical Assisting Certificate of Accomplishment Administrative Medical Assisting Clinical Medical Assisting Lassen College offers coursework that leads to eligibility fo"
+   },
+   {
+    "control_number": "36681",
+    "pages": [
+     56
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 56] Certificate of Completion in Automotive Chassis and Maintenance Total Hours for the Certificate of Completion in Automotive Chassis and Maintenance: 102 Hours Course No Course Title Hours AT 150 Automot"
+   },
+   {
+    "control_number": "37760",
+    "pages": [
+     57,
+     58,
+     59
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] CERTIFICATE OF ACHIEVEMENT Small Business Management Business Administration for Transfer 2.0 The Associate in Science Degree in Business Administration for Transfer is designed to provide students wit"
+   },
+   {
+    "control_number": "40089",
+    "pages": [
+     74
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 74] Certificate of achievement in Geographic Information Systems A Geographic Information System (GIS) is a combination of hardware, software, data, people, and protocols, and is primarily used for the acqui"
+   },
+   {
+    "control_number": "40731",
+    "pages": [
+     67,
+     68,
+     69,
+     70
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] CERTIFICATE OF ACHIEVEMENT Basic Wildland Firefighter Cal Fire Academy The Associate in Science Degree in Fire Technology is designed to provide students with updated skills and knowledge necessary to"
+   },
+   {
+    "control_number": "41739",
+    "pages": [
+     64,
+     65
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] CERTIFICATE OF ACHIEVEMENT Computer Support Specialist Computer Information Systems (CIS) as a discipline focuses on practical applications of technology to support organizations. This area includes"
+   },
+   {
+    "control_number": "41912",
+    "pages": [
+     96,
+     97,
+     98
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 96] Associate in Arts Degree in Social Work and Human Services for Transfer Total Units for the Associate in Arts Degree with a minimum grade point average of 2.0: 60 Units Total Core Courses minimum grade 2.0: 2"
+   },
+   {
+    "control_number": "42300",
+    "pages": [
+     57,
+     58,
+     59,
+     60
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 57] Business Administration for Transfer 2.0 The Associate in Science Degree in Business Administration for Transfer is designed to provide students with the common core of lower division courses required by most"
+   },
+   {
+    "control_number": "42798",
+    "pages": [
+     84,
+     85
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] Associate in Science Degree in Registered Nursing Registered Nursing Program The Program is accredited by the California State Board of Registered Nursing. The individuals who successfully complete the Progr"
+   },
+   {
+    "control_number": "42929",
+    "pages": [
+     64,
+     65
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 64] Associate in Science in Computer Information Systems CERTIFICATE OF ACHIEVEMENT Computer Support Specialist Computer Information Systems (CIS) as a discipline focuses on practical applications of "
+   },
+   {
+    "control_number": "43471",
+    "pages": [
+     67,
+     68,
+     69,
+     70
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 67] The Cal Fire Academy Certificate of Achievement is designed to provide the skills and knowledge needed for the entry-level firefighter to perform his/her duties safely, effectively and competently. Those that"
+   },
+   {
+    "control_number": "43543",
+    "pages": [
+     71
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] CERTIFICATE OF ACHIEVEMENT Forestry Management The Forestry Management Associate of Science degree and the Certificate of Achievement will increase the opportunity for students to learn strategies"
+   },
+   {
+    "control_number": "43544",
+    "pages": [
+     71
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 71] Associate in Science in Forestry Management CERTIFICATE OF ACHIEVEMENT Forestry Management The Forestry Management Associate of Science degree and the Certificate of Achievement will increase the"
+   },
+   {
+    "control_number": "43571",
+    "pages": [
+     60
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.818,
+    "opens": "[page 60] CERTIFICATE OF ACHIEVEMENT Student Success Preparation CERTIFICATE OF COMPLETION High School Equivalency Certificate of Completion The purpose of the Certificate of Completion in High School Equivalenc"
+   },
+   {
+    "control_number": "43938",
+    "pages": [
+     127,
+     128
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] www.lassencollege.edu Lassen Community College 2026-2027 Page 125 Occupational Health and Safety, Patient Information and Assessment and Radiographic Imaging. This fo"
+   },
+   {
+    "control_number": "44266",
+    "pages": [
+     63
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 63] CERTIFICATE OF COMPLETION Commercial Driver's Training The Commercial Driver's Training Certificate of Completion is designed for the student to obtain the skills and knowledge necessary to obtain a Califo"
+   },
+   {
+    "control_number": "44457",
+    "pages": [
+     85,
+     86,
+     87,
+     88
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] Associate in Science Degree in Registered Nursing Advanced Placement Required Prerequisite Courses: 19 Units Course No Course Title Units BIOL 20 Microbiology with Lab 5.0 BIOL 21 Human Anatomy with Lab 4"
+   },
+   {
+    "control_number": "44495",
+    "pages": [
+     107
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 107] www.lassencollege.edu Lassen Community College 2026-2027 Page 105 HEALTH OCCUPATIONS HO-150 – Nurse Assistant 0.0 Units 50 Hours Lecture This course will provide"
+   },
+   {
+    "control_number": "45318",
+    "pages": [
+     97,
+     98
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 97] Upon completion of the Certificate of Achievement in Social Work and Human Services the student will be able to: 1. Develop awareness of human services programs including agencies and occupational opportunitie"
+   },
+   {
+    "control_number": "45344",
+    "pages": [
+     82
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] Certificate of Achievement: Biology/Chemistry Total Units for the Certificate of Achievement: 16-18 units Required Core Courses: Select a minimum of 16 units from the following: BIOL 32 General Biology 3"
+   },
+   {
+    "control_number": "45346",
+    "pages": [
+     82
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 82] Certificate of Achievement Natural Science Total Units Required for Certificate of Achievement: 16-18 units Select a minimum of 16 units from the following courses in area of emphasis: Course No Course Title"
+   },
+   {
+    "control_number": "45524",
+    "pages": [
+     46
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 46] Certificate of Achievement: Administration of Justice – Law Enforcement Total Units for the Certificate of Achievement: 21.5 Required Core Courses 21.5 units: Course No Course Title Units AJ 35 Investigativ"
+   },
+   {
+    "control_number": "45525",
+    "pages": [
+     46
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 46] Certificate of Achievement: Administration of Justice – Corrections Total Units for the Certificate of Achievement: 16.5 units Required Core Courses 16.5 Units: Course No Course Title Units AJ 52B PC 832 F"
+   },
+   {
+    "control_number": "45611",
+    "pages": [
+     93,
+     94
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.963,
+    "opens": "[page 93] Social Science Certificate of Achievement The Associate in Arts Degree in University Studies, Social Sciences emphasis is designed to provide students with a strong foundation for the study of humanity "
+   },
+   {
+    "control_number": "45924",
+    "pages": [
+     85,
+     86,
+     87,
+     88
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] www.lassencollege.edu Lassen Community College 2026-2027 Page 83 Associate in Science Degree in Registered Nursing Required Prerequisite Courses: 19 Units Course No Co"
+   },
+   {
+    "control_number": "45926",
+    "pages": [
+     79
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 79] CERTIFICATE OF ACHIEVEMENT Humanities These courses emphasize the study of cultural, literary, humanistic activities and artistic expression of human beings. With careful planning, the Humanities emphasis "
+   },
+   {
+    "control_number": "45927",
+    "pages": [
+     85,
+     86,
+     87,
+     88
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] www.lassencollege.edu Lassen Community College 2026-2027 Page 83 Associate in Science Degree in Registered Nursing Required Prerequisite Courses: 19 Units Course No Co"
+   },
+   {
+    "control_number": "46345",
+    "pages": [
+     66
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": false,
+    "coverage": 0.857,
+    "opens": "[page 66] www.lassencollege.edu Lassen Community College 2026-2027 Page 64 Education DEGREE Associate in Arts in Elementary Teacher Education for Transfer The teaching workforc"
+   }
+  ],
+  "unproven": []
  },
  "loads": 1,
- "seconds": 30.3,
- "found": 64,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 50.4,
+ "found": 66,
  "by_method": {
   "no_closed_list": 5,
-  "not_found": 9,
-  "pdf_pages": 64
+  "not_found": 7,
+  "pdf_pages": 66
  },
  "shared_pages": {
-  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49": [
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47": [
    "02121",
+   "18756",
    "21595",
-   "33729"
+   "33729",
+   "33730"
   ],
   "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45": [
    "02134",
-   "21606",
-   "45524",
-   "45525"
-  ],
-  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99": [
-   "09308",
-   "12201",
-   "21602"
+   "21606"
   ],
   "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=61": [
    "09316",
    "31015"
   ],
-  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69": [
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=100": [
+   "12201",
+   "21602"
+  ],
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67": [
    "17742",
    "19377",
-   "40731"
+   "40731",
+   "43471"
   ],
   "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81": [
    "18751",
@@ -61,52 +950,54 @@
   ],
   "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93": [
    "18753",
-   "18754",
    "45611"
-  ],
-  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48": [
-   "18756",
-   "33730"
   ],
   "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=79": [
    "18758",
    "45926"
   ],
-  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=90": [
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=89": [
    "19321",
    "33388"
   ],
-  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53": [
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=52": [
    "31132",
    "31178"
   ],
-  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58": [
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57": [
    "31297",
    "33263",
+   "37760",
    "42300"
   ],
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=115": [
+   "31407",
+   "31411"
+  ],
   "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54": [
-   "33322",
    "33323",
    "33661"
   ],
-  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=65": [
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=64": [
    "41739",
    "42929"
-  ],
-  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85": [
-   "42798",
-   "44457",
-   "45924",
-   "45927"
   ],
   "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=71": [
    "43543",
    "43544"
   ],
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85": [
+   "44457",
+   "45924",
+   "45927"
+  ],
   "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=82": [
    "45344",
    "45346"
+  ],
+  "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=46": [
+   "45524",
+   "45525"
   ]
  },
  "not_found": [
@@ -117,7 +1008,8 @@
    "near_miss": {
     "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
     "coverage": 0.421
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "09299",
@@ -126,7 +1018,8 @@
    "near_miss": {
     "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=59",
     "coverage": 0.211
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "09319",
@@ -135,16 +1028,18 @@
    "near_miss": {
     "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
     "coverage": 0.267
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "19376",
    "title": "Human Services",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
-    "coverage": 0.267
-   }
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=97",
+    "coverage": 0.2
+   },
+   "status": "Active"
   },
   {
    "control_number": "21605",
@@ -153,31 +1048,15 @@
    "near_miss": {
     "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=144",
     "coverage": 0.267
-   }
-  },
-  {
-   "control_number": "31407",
-   "title": "Graphic Design",
-   "award": "A.S. Degree",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
-    "coverage": 0.333
-   }
-  },
-  {
-   "control_number": "31411",
-   "title": "Graphic Design",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "near_miss": {
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=117",
-    "coverage": 0.364
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40583",
    "title": "IT Support Professional",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "45100",
@@ -186,661 +1065,548 @@
    "near_miss": {
     "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81",
     "coverage": 0.369
-   }
+   },
+   "status": "Approved"
   }
  ],
  "page_claimed": [],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 1,
-  "0.8-1.0": 15,
+  "0.5-0.8": 4,
+  "0.8-1.0": 14,
   "1.0": 48
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 64,
+  "against": "kb/program_requirements_college/lassen",
+  "kept": 38,
+  "kept_moved": 0,
+  "programs": 14,
   "list": [
-   {
-    "control_number": "02121",
-    "title": "Agriculture Science and Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02133",
-    "title": "Vocational Nursing",
-    "award": "A.S. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "02134",
-    "title": "Administration of Justice",
-    "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09308",
-    "title": "Welding Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "09316",
-    "title": "Child Development",
-    "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=61",
-    "coverage": 0.692,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12201",
-    "title": "Welding Technology - 1 Year",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "17742",
     "title": "Fire Technology",
     "award": "A.S. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
-    "coverage": 0.97,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18751",
-    "title": "General Studies Natural Science",
-    "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18752",
-    "title": "University Studies Natural Science",
-    "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18753",
-    "title": "General Studies Social Science",
-    "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93",
-    "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67",
+    "coverage": 0.985,
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
+    "was_coverage": 0.97,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "18754",
     "title": "University Studies Social Science",
     "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93",
-    "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=95",
+    "coverage": 0.63,
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93",
+    "was_coverage": 0.963,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "18756",
     "title": "University Studies Agriculture Science",
     "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18758",
-    "title": "University Studies Humanities",
-    "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18848",
-    "title": "University Studies Allied Health",
-    "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=51",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "19321",
     "title": "University Studies Physical Education",
     "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=90",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=89",
     "coverage": 0.964,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19375",
-    "title": "Child Development",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=62",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19377",
-    "title": "Fire Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
-    "coverage": 0.983,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21595",
-    "title": "Agriculture Science and  Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21602",
-    "title": "Welding Technology-Two Year",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "21606",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30947",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=44",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31015",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=61",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31037",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=98",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=90",
+    "was_coverage": 0.964,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31132",
     "title": "Studio Arts",
     "award": "A.A- T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=52",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31178",
     "title": "Art History",
     "award": "A.A- T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=52",
     "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
+    "was_coverage": 0.8,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31297",
     "title": "Business Administration",
     "award": "A.S. T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57",
     "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+    "was_coverage": 0.889,
+    "was_method": "pdf_pages"
    },
    {
-    "control_number": "31379",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=77",
-    "coverage": 1.0,
+    "control_number": "31407",
+    "title": "Graphic Design",
+    "award": "A.S. Degree",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=115",
+    "coverage": 0.667,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
-    "control_number": "32083",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=92",
-    "coverage": 0.857,
+    "control_number": "31411",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=115",
+    "coverage": 0.545,
     "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "33263",
     "title": "Economics",
     "award": "A.A- T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33322",
-    "title": "Engine Repair",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33323",
-    "title": "Advance Mechanics",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "33388",
     "title": "Kinesiology",
     "award": "A.A- T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=90",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=89",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33661",
-    "title": "Automotive Technology",
-    "award": "A.S. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=90",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "33729",
     "title": "Agriculture Animal Science",
     "award": "A.S. T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "33730",
     "title": "Agriculture Business",
     "award": "A.S. T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35106",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=88",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36554",
-    "title": "Medical Assisting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=75",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36681",
-    "title": "Automotive Chassis and Maintenance",
-    "award": "Noncredit program",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=56",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37760",
-    "title": "Small Business Management",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40089",
-    "title": "Geographic Information Systems",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=74",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40731",
-    "title": "Basic Wildland Firefighter",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41739",
-    "title": "Computer Support Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41912",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42300",
     "title": "Business Administration 2.0",
     "award": "A.S. T Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "02121",
+    "title": "Agriculture Science and Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47",
+    "coverage": 0.941,
+    "was_coverage": 0.941
+   },
+   {
+    "control_number": "12201",
+    "title": "Welding Technology - 1 Year",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=100",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "19377",
+    "title": "Fire Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67",
+    "coverage": 0.983,
+    "was_coverage": 0.983
+   },
+   {
+    "control_number": "21595",
+    "title": "Agriculture Science and  Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "21602",
+    "title": "Welding Technology-Two Year",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=100",
+    "coverage": 0.941,
+    "was_coverage": 0.941
+   },
+   {
+    "control_number": "33322",
+    "title": "Engine Repair",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=55",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37760",
+    "title": "Small Business Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40731",
+    "title": "Basic Wildland Firefighter",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41739",
+    "title": "Computer Support Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=64",
+    "coverage": 1.0,
+    "was_coverage": 1.0
    },
    {
     "control_number": "42798",
     "title": "Registered Nursing",
     "award": "A.S. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=84",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 1.0
    },
    {
     "control_number": "42929",
     "title": "Computer Information Systems",
     "award": "A.S. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=65",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=64",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 1.0
    },
    {
     "control_number": "43471",
     "title": "Cal Fire Academy",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=68",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43543",
-    "title": "Forestry Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43544",
-    "title": "Forestry Management",
-    "award": "A.S. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=71",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43571",
-    "title": "Student Success Preparation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=60",
-    "coverage": 0.818,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43938",
-    "title": "Registered Dental Assisting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=127",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44266",
-    "title": "Commercial Driver's Training",
-    "award": "Noncredit program",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=63",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44457",
-    "title": "Advanced Placement Registered Nursing",
-    "award": "A.S. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44495",
-    "title": "Nursing Assistant",
-    "award": "Noncredit program",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=107",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45318",
-    "title": "Social Work and Human Services",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45344",
-    "title": "Biology/Chemistry",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45346",
-    "title": "Natural Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=82",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 1.0
    },
    {
     "control_number": "45524",
     "title": "Administration of Justice - Law Enforcement",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=46",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 1.0
    },
    {
     "control_number": "45525",
     "title": "Administration of Justice - Corrections",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45",
+    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=46",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45611",
-    "title": "Social Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93",
-    "coverage": 0.963,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45924",
-    "title": "Registered Nursing Prerequisite",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45926",
-    "title": "Humanities",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=79",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45927",
-    "title": "Registered Nursing Advanced Placement Prerequisite",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46345",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A. Degree",
-    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=66",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_coverage": 1.0
    }
-  ]
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39006337658"
+ "fingerprints": {
+  "02121": {
+   "sha256": "9326900f47f7fd27fc04a2ef24d97cbc3a8f7ada245e91da33d1939d71cb9d6c",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47"
+  },
+  "02133": {
+   "sha256": "90b2c74c733732111ebccc01228d353d6903de274394846b3025424afa29cc38",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=87"
+  },
+  "02134": {
+   "sha256": "4a09dad3d8a888eb73153227c31293b38cf97b0409fd50038a10a747ff1d8d82",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45"
+  },
+  "09308": {
+   "sha256": "1b370c3f5d2e5dcea216ae6d7b8039c1b027352b950db345e399f02f50b7ab83",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99"
+  },
+  "09316": {
+   "sha256": "0a3e97d695381756faaecb424d40912d1bb5565603f3bb6e4c25d24c37863cf6",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=61"
+  },
+  "12201": {
+   "sha256": "72f30a34befce2089a60f14f0553a17028ccb188f33ab51100024e0f5df8649a",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=100"
+  },
+  "17742": {
+   "sha256": "427241f85ec80af57db27b8033d485e1e106fd44c8e80d51c4a009a3a19bb10d",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67"
+  },
+  "18751": {
+   "sha256": "602a43d159357c794bb1ba4f8264442b6cbee5922a554b2ac4577f6c232e4d12",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81"
+  },
+  "18752": {
+   "sha256": "0d879b34b2bfee98796dc1ae80fc51daf43e791652bfb8b26dbd5b5d1dc9c6b8",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=81"
+  },
+  "18753": {
+   "sha256": "86fe1f752a0fb45a15d6857a66593d2bfcc31381172cc50f66eef9c52bac31a5",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93"
+  },
+  "18754": {
+   "sha256": "e1305b7ee22a39add8ca7055010fe41f63bfe72d8bb8e4515669de7e99372776",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=95"
+  },
+  "18756": {
+   "sha256": "eaf09a65fad190cecdd461610a3c992e11dfb9f0b1e7bfbb47df49e45ab7f4b8",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47"
+  },
+  "18758": {
+   "sha256": "5e8e7806eff885f0445309825bf10f257a4333f087c21cb85f17984cb512c367",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=79"
+  },
+  "18848": {
+   "sha256": "f6b49ec169fd086f24830446389e72bc5712eeee25afc782826b2db980e7ba3e",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=51"
+  },
+  "19321": {
+   "sha256": "1eb096abd503d7d9a753704fe7651fd331a2fa47ad9e8f3f5f318cb14f0943d4",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=89"
+  },
+  "19375": {
+   "sha256": "020db23aa1287ec8b1ddaec573e4392868ae10bc1344a8bc8cb50f02fd0a2c69",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=62"
+  },
+  "19377": {
+   "sha256": "3dcf31c53abf9f81e3934f357c2cc711586877bc89ed67ecc85e14a3709b8a2f",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67"
+  },
+  "21595": {
+   "sha256": "d124404b4706ea83deb6a0d52ade50e0691c6aa52049013e65c48f3e964d8282",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47"
+  },
+  "21602": {
+   "sha256": "72f30a34befce2089a60f14f0553a17028ccb188f33ab51100024e0f5df8649a",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=100"
+  },
+  "21606": {
+   "sha256": "a8347a4d08bb6fd406880e87e6ef902830929389ec99f3f1d768b1af475fb6f0",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=45"
+  },
+  "30947": {
+   "sha256": "b7ed5fb742c587d97b60f7ab0bcc40e1fd87814e8e0cf98e3e3455fa7627e7ee",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=44"
+  },
+  "31015": {
+   "sha256": "dd6097265fb6fc519df4a090ec55a05845bc41f08ad78a5d8a25935d9317aa33",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=61"
+  },
+  "31037": {
+   "sha256": "eb513bb28125f554c1fd79de96b50ad45b460208ace4cd1d040d5acf2f5680cb",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=98"
+  },
+  "31132": {
+   "sha256": "cafdd9a7d6af0c0ccb7466c0395313644568363c33380fe7559c5690be184c3e",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=52"
+  },
+  "31178": {
+   "sha256": "03fa27824b9ba1ca751abb7ca5cdafd2439dbb2a7142529cc70141bbce00e70e",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=52"
+  },
+  "31297": {
+   "sha256": "dba4eb247fd9419127362be61a4dbfddcbbfdcbddd995096e8cea930ea95ec4e",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57"
+  },
+  "31379": {
+   "sha256": "c36f5b0491dfb96d4133d42e3a6b8f5755cb3b5d2f8541bd4594edfc54ee0d98",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=77"
+  },
+  "31407": {
+   "sha256": "da78ae00c432c400803b238b815e80cc86afcd96a2844ce8a1a206270c8cf127",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=115"
+  },
+  "31411": {
+   "sha256": "da78ae00c432c400803b238b815e80cc86afcd96a2844ce8a1a206270c8cf127",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=115"
+  },
+  "32083": {
+   "sha256": "01fbd993a7dc690cfae704eb5602fab526df6aa5362a529d02c517351f81037b",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=92"
+  },
+  "33263": {
+   "sha256": "7077374745f552cc851f9c4db47526317b6e3c03814b67c842d23725ed3fc975",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57"
+  },
+  "33322": {
+   "sha256": "9937a2a0c7dc08b781c4785e278210892fe6ef42b1b18dfea545e3e10cf1ff7a",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=55"
+  },
+  "33323": {
+   "sha256": "19ba4a8bdc714d47dc5c1a14ccaeb09b4d865e51581b70ce41029e3d4b36fce2",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54"
+  },
+  "33388": {
+   "sha256": "d0b6483464b51e7c969436f6a6e4524de6782da0c2517bab68d3f61949896a72",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=89"
+  },
+  "33661": {
+   "sha256": "15e3757020ae0b71759a4a15ead3f2c946b798d1a3be49f4836c5ab0e9cc71eb",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54"
+  },
+  "33729": {
+   "sha256": "5368f5fe27d3262e7173d4311f436e8064e905a0aa243d8a59b3bbb2cc69edd6",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47"
+  },
+  "33730": {
+   "sha256": "d913192d9a0bef81d2d1c548809a72d9757e2ab9cb62f00090951c1aed68e2ca",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=47"
+  },
+  "35106": {
+   "sha256": "ec23c847e03c597eea94eff022150ecf236c0228efe9c80336e26f659f4dc185",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=88"
+  },
+  "36554": {
+   "sha256": "1280d0241a3cabbe3af540cd8f4c26f52fd1fb2cf79f3a83f0749bf394b8a477",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=75"
+  },
+  "36681": {
+   "sha256": "9043644e606ed1c3f8329eec5ca1f57a0b4aed1b59c2416b3cebf863efc6d674",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=56"
+  },
+  "37760": {
+   "sha256": "b47e64eaedbff9dd7f289e08978aa2095560c64bed0d7ec99d8c908c7244cbff",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57"
+  },
+  "40089": {
+   "sha256": "a9384d57b8e5fc8673b77f6a1aeb9ba4dc9fbd96d8d1a73c207fb9dbd8e88346",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=74"
+  },
+  "40731": {
+   "sha256": "f1efa126c6d0da1e5745992c9457dfbf85532061810c5fdfcc60874cfa86238f",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67"
+  },
+  "41739": {
+   "sha256": "e592a87b91618031c4091fa273e4a8219f2baff2d2e59bc988b9d4343d801a04",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=64"
+  },
+  "41912": {
+   "sha256": "ac308a3e9f550fd3f850354ac092ac5c92ee2f6422e2c8e88dccdb10f5e983ed",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=96"
+  },
+  "42300": {
+   "sha256": "dba4eb247fd9419127362be61a4dbfddcbbfdcbddd995096e8cea930ea95ec4e",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=57"
+  },
+  "42798": {
+   "sha256": "729d9c0ba64fec72be7f348f97592b8bd9822581ed986dc3a60a86570c84b2f5",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=84"
+  },
+  "42929": {
+   "sha256": "c01fc82936f15395c8dc2a01d044dff72b7f991b158bc637af40bf3c9e28246b",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=64"
+  },
+  "43471": {
+   "sha256": "2228762c3922fdeceddc811301b62e7d6115f4ac371b8592dc562f0349b09422",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=67"
+  },
+  "43543": {
+   "sha256": "c89f1d0a85cc08ec7201c697df6d38e810b0a1a4a1517de02632d722b75889b6",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=71"
+  },
+  "43544": {
+   "sha256": "bee732a26d23e49cfefe8641905c104bedc24e5ad79fe30329ec0dc8af4470b2",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=71"
+  },
+  "43571": {
+   "sha256": "e5aed663f02c0426ab3bb270232da857b19f9d04bcb10bac456e5729619e6712",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=60"
+  },
+  "43938": {
+   "sha256": "3905faf16c60b1090f875105fb4c378ae7dff3c8f98a1807965eb49eaeae0af2",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=127"
+  },
+  "44266": {
+   "sha256": "adb2228a7ba89d4ae5ba8e6ee62d4a187b2fa8071dd6287390fbe22b4029ca87",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=63"
+  },
+  "44457": {
+   "sha256": "c16c06ba6b54ca881d8c369b6053fa54ba1f51461427dc97e68f302c13a267c4",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85"
+  },
+  "44495": {
+   "sha256": "8968ec4e9e49c95cf3a63482071ca2194134c96396f9ccea8ba38d7c10a628a9",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=107"
+  },
+  "45318": {
+   "sha256": "a0a2071e79740820ee8c33a1bbf700c9e912a462558923a8edb708e59ddef125",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=97"
+  },
+  "45344": {
+   "sha256": "128386260c3c95ced49c190f3d25421703fb8ee8686aa00a8967d680801d8eb3",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=82"
+  },
+  "45346": {
+   "sha256": "b0fdc7474ce923082265837533c18d246a7dd830bc167cc1c56aaf7170ea31ba",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=82"
+  },
+  "45524": {
+   "sha256": "ed7343d3207470ba338d3cb1697cea719ae104293fe9820625e96d879f63c8bd",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=46"
+  },
+  "45525": {
+   "sha256": "493f68f048bf2cafe5f7ef58e5e99d2b696070884e9b6e919caf19e02fedda57",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=46"
+  },
+  "45611": {
+   "sha256": "63d95de34cbb9d5b85b8dcc0a58b83ba472a8979a6bf3f75d7d45caa4efcc86d",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=93"
+  },
+  "45924": {
+   "sha256": "ac30271196a4265025bb12fa0ac0fbf17f3b4a2fa21d6fadda30861c5aa705a6",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85"
+  },
+  "45926": {
+   "sha256": "b3b61dd8dc4b0f9c330428377668fd20bb296e0f96710209b8085a051ce2e5a8",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=79"
+  },
+  "45927": {
+   "sha256": "ac30271196a4265025bb12fa0ac0fbf17f3b4a2fa21d6fadda30861c5aa705a6",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=85"
+  },
+  "46345": {
+   "sha256": "df337c7d3cc9e5571bf830d12bf26ec13db935029fa9f96f4592d015fb12994a",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=66"
+  }
+ },
+ "run": "43581021827"
 }

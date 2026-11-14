@@ -70,17 +70,20 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    24.0,
-    24.0
+    58.0,
+    58.0
    ],
    "stated": [
     60.0,
     60.0
    ],
    "against": "degree",
-   "ge": null,
+   "ge": [
+    34.0,
+    34.0
+   ],
    "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    "the record says electives fill the degree total, but the catalog text names no electives"
    ],
    "major": {
     "pass": true,
@@ -140,8 +143,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -284,5 +287,20 @@
    "The Program Student Learning Outcomes are printed for the Associate in Arts in Studio Art for Transfer."
   ]
  },
- "extracted_run": "39006337658"
+ "extracted_run": 43581021827,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Cal-GETC (https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72: Cal-GETC General Education Certificate of Achievement requires 34 Units.)"
+  }
+ ],
+ "read_run": "39006337658"
 }

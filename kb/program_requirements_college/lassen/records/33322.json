@@ -90,8 +90,12 @@
   },
   "careers": {
    "count": 5,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "Parts Person",
+    "Service manager",
+    "Fleet Repair"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -205,5 +209,6 @@
    "Careers are taken from the Automotive Technology program description's 'Career Options' list, which is shared by all awards on the page rather than specific to this certificate."
   ]
  },
- "extracted_run": "39006337658"
+ "extracted_run": 43581021827,
+ "read_run": "39006337658"
 }
