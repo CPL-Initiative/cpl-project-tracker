@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 944,
+  "file_datasets": 947,
   "external_services": 195,
-  "consumers": 590,
+  "consumers": 592,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -11578,6 +11578,13 @@
      "line": 98
     },
     {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 405
+    },
+    {
      "id": "script:kb/_ib_fold_apply.py",
      "kind": "script",
      "direction": "read",
@@ -11941,6 +11948,34 @@
      "direction": "read",
      "how": "literal",
      "line": 445
+    },
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 260
+    },
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 269
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 309
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 312
     },
     {
      "id": "script:kb/_hs_title_fold.py",
@@ -12371,6 +12406,13 @@
      "direction": "read",
      "how": "literal",
      "line": 33
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 406
     },
     {
      "id": "script:kb/_hs_title_fold.py",
@@ -13228,6 +13270,13 @@
      "direction": "read",
      "how": "literal",
      "line": 35
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 407
     },
     {
      "id": "script:kb/_hs_title_fold.py",
@@ -16496,6 +16545,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/honors_delete_s652_out/2026-11-14/followups_plan.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 355
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/honors_delete_s652_out/2026-11-14/followups_plan.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 358
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/identities_rekey_out/2026-09-05/dead_worklist.json": {
    "consumers": [
     {
@@ -17753,6 +17828,19 @@
    "main_committers": [
     "workflow:library-publish.yml"
    ]
+  },
+  "file:kb/receipts/migration_s652_honors_two_row_delete_43607926526.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:kb/reclustering_s648_out/2026-11-13/honors_worklist.json": {
    "consumers": [
@@ -26641,6 +26729,13 @@
      "line": 31
     },
     {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 283
+    },
+    {
      "id": "script:kb/_mid_outcomes_compare.py",
      "kind": "script",
      "direction": "read",
@@ -26763,6 +26858,20 @@
      "line": 108
     },
     {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 316
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 281
+    },
+    {
      "id": "script:kb/_identities_rebuild.py",
      "kind": "script",
      "direction": "read",
@@ -26842,6 +26951,13 @@
      "direction": "write",
      "how": "literal",
      "line": 10299
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 282
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -26924,6 +27040,20 @@
      "line": 114
     },
     {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 318
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 281
+    },
+    {
      "id": "script:kb/_mid_outcomes_compare.py",
      "kind": "script",
      "direction": "read",
@@ -26992,6 +27122,13 @@
      "direction": "read",
      "how": "literal",
      "line": 865
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 282
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -27151,6 +27288,13 @@
      "line": 117
     },
     {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 282
+    },
+    {
      "id": "script:kb/_mid_outcomes_compare.py",
      "kind": "script",
      "direction": "read",
@@ -27256,6 +27400,20 @@
      "line": 115
     },
     {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 317
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 281
+    },
+    {
      "id": "script:kb/_merge_candidate_queue.py",
      "kind": "script",
      "direction": "read",
@@ -27342,6 +27500,20 @@
      "direction": "read",
      "how": "literal",
      "line": 140
+    },
+    {
+     "id": "script:kb/_honors_followups_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 290
+    },
+    {
+     "id": "script:kb/_honors_two_row_delete_s652.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 283
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
