@@ -19,7 +19,8 @@
   "held": 4,
   "fail_to_pass": 3,
   "pass_to_fail": 0,
-  "held_would_pass": 4
+  "held_would_pass": 4,
+  "landed": 1
  },
  "first_reconcile": true,
  "apply": [
@@ -325,7 +326,7 @@
     "fields": [],
     "notes": [],
     "decision": "restore",
-    "why": "an apply row whose run changed more than ge_units: "
+    "why": "an apply row the run did not fill: its requirements are unchanged and only its score or run moved (the run's trace: 'cal-getc 30566 held: the section does not name Cal-GETC', read on pp.467-470, not its own p.552)"
    },
    {
     "control_number": "31055",
@@ -396,7 +397,7 @@
   "filing_commit": "21c0d67e",
   "log_line": "reconcile: 1 filed records changed, 14 rescored, 11 had no fresh page (11 of them on another page)",
   "trace": "cal-getc 39656 filled: the statewide 34; cal-getc 30566 held: the section does not name Cal-GETC; 33072 no line (its fresh page moved, so the run did not read it); cal-getc 31055, 31995, 46419 held: the section does not name Cal-GETC; 41992 no line",
-  "first_reconcile_note": "Run 43521338550 is Cosumnes River's first reconcile and rescore. Only 39656 shows the fill in the run's trace, changed in ge_units alone, and is kept. 30566 and 33072 do not fill in this run: the fresh capture picked other pages for both (30566 pp.467-470, a page that names 'History, Psychology or Sociology AA-T' as another degree; 33072 pp.94-96, the Cal-GETC pattern page), so 30566's section read there names no Cal-GETC and 33072 was held as moved; both stay as main files them and wait for a capture that picks their own pages (552, 404). The 14 rescored records go back to main whole, 7 of them fail-to-pass by the rescore alone (04602, 04607, 04614, 07305, 11319, 11338, 33542), left for a rescore apply of their own. The capture's moved picks stay in capture.json and sources.json as the run filed them. summary.json recounted from the records: 136 pass (main 135), 66 fail on arithmetic (main 67).",
+  "first_reconcile_note": "Run 43521338550 is Cosumnes River's first reconcile and rescore. Only 39656 shows the fill in the run's trace, changed in ge_units alone, and is kept. 30566 and 33072 do not fill in this run: the fresh capture picked other pages for both (30566 pp.467-470, a page that names 'History, Psychology or Sociology AA-T' as another degree; 33072 pp.94-96, the Cal-GETC pattern page), so 30566's section read there names no Cal-GETC and 33072 was held as moved; both stay as main files them and wait for a capture that picks their own pages (552, 404). The 14 rescored records go back to main whole, 7 of them fail-to-pass by the rescore alone (04602, 04607, 04614, 07305, 11319, 11338, 33542), left for a rescore apply of their own. The capture's moved picks (58 programs) are not kept: --calgetc-review --restore put sources.json and capture.json back to main's but for 39656's entries. summary.json recounted from the records: 136 pass (main 135), 66 fail on arithmetic (main 67).",
   "reread": "Reread 43523284838 replaced 39656 alone, its before-values in kb/receipts/program_requirement_records_college_reread_cosumnes_river_43523284838.json (ge_units empty, extracted_run 39047009824). The display build is 6e5081a4b3a0, rebuilt after main (#3259's Cerro Coso build 98e783806131) merged in; it carries both colleges.",
   "records_restored": true,
   "pages_moved_restored": [
@@ -1213,5 +1214,6 @@
  "waiting": {
   "own_pages": "30566 and 33072 wait for a capture that picks their own pages (552 and 404): reconcile 43521338550's capture picked 30566 pp.467-470 and 33072 pp.94-96, so neither filled; both stand as main files them.",
   "rescore_apply": "Seven records would pass on the rescore alone (04602, 04607, 04614, 07305, 11319, 11338, 33542; reconcile 43521338550): restored from main here, for a separate apply."
- }
+ },
+ "apply_note": "apply and counts are the dry run's intent, measured before the run. What was filed is run_review.kept (counts.landed); 30566 and 33072 are in waiting.own_pages, and a later run reads waiting, never apply, for what is still to be filed."
 }

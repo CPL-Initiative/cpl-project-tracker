@@ -1265,6 +1265,10 @@ _rc = RM.restore_capture({"run": "1", "pdf": {"picks": [{"control_number": "9100
 check("restore: capture.json is main's but for the kept program's pick and fingerprint",
       _rc["run"] == "1" and _rc["found"] == 2 and [p["pages"] for p in _rc["pdf"]["picks"]] == [[11], [20]]
       and _rc["fingerprints"] == {"91001": "A", "91002": "b"})
+_rv_unfilled = RM.reconcile_run_review(_ap, dict(_rv_main, **{"91001": dict(_rv_main["91001"], extracted_run=777)}),
+                                       _rv_main, "777")
+check("run review: an apply row the run did not fill (no field moved) is restored with its own reason",
+      _rv_unfilled["restored"] == ["91001"] and "did not fill" in _rv_unfilled["records"][0]["why"])
 check("run review: a changed record kept by name carries the rule it was kept on",
       RM.reconcile_run_review(_ap, _rv_branch, _rv_main, "777", {"91005": "the page's sentence"})["kept"]
       == ["91001", "91005"])
@@ -1325,7 +1329,7 @@ with tempfile.TemporaryDirectory() as _td:
           and _again["record"]["program"]["ge_units"] == {"min": 34, "max": 34})
 
 # A floor for this block's checks (the second readers of #3244): deleting gate checks must fail the run.
-CG_FLOOR = 98
+CG_FLOOR = 99
 check("the statewide Cal-GETC block runs at least %d checks (%d)" % (CG_FLOOR, len(results) - _cg_first),
       len(results) - _cg_first >= CG_FLOOR)
 
