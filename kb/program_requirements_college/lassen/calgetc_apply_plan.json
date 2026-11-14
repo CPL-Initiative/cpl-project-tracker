@@ -11,26 +11,27 @@
   "awards": "transfer",
   "only_with": [
    "ge_pattern",
-   "degree_total"
+   "degree_total",
+   "total_units"
   ],
   "pattern": "Cal-?\\s?GETC",
   "source": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72",
   "source_words": "Cal-GETC General Education Certificate of Achievement requires 34 Units."
  },
  "measured_on": {
-  "commit": "11aef4e81e02b39ba0e522c4c10128a8585d90e3",
-  "date": "2026-11-14T09:21:35+00:00",
+  "commit": "712d04a19a7f9534265ef323a3dc7f6814feac35",
+  "date": "2026-11-14T09:26:07+00:00",
   "records": "kb/program_requirements_college/<slug>/records/",
   "tool": "python3 kb/_program_requirements_readings_measure.py --calgetc-apply 'Lassen College'",
   "kind": "a dry run on the filed records; the reconcile run reads the pages"
  },
  "counts": {
-  "rows": 14,
+  "rows": 13,
   "apply": 10,
-  "held": 4,
+  "held": 3,
   "fail_to_pass": 10,
   "pass_to_fail": 0,
-  "held_would_pass": 4
+  "held_would_pass": 3
  },
  "first_reconcile": true,
  "apply": [
@@ -47,13 +48,11 @@
  ],
  "held": [
   "31297",
-  "33388",
   "35106",
   "41912"
  ],
  "restore_before_reread": [
   "31297",
-  "33388",
   "35106",
   "41912"
  ],
@@ -236,26 +235,6 @@
    "degree_total": 60.0
   },
   {
-   "control_number": "33388",
-   "title": "Kinesiology",
-   "award": "A.A- T Degree",
-   "ge_units_before": {
-    "min": null,
-    "max": null
-   },
-   "ge_units_after": {
-    "min": null,
-    "max": null
-   },
-   "passes_before": false,
-   "passes_after": false,
-   "passes_with_fill": true,
-   "verdict_with_fill": "equal ()",
-   "sum_with_fill": null,
-   "degree_total": 60.0,
-   "held": "held by the conductor (S651): no printed major total, so the computed 22 passes only on the electives fill, the false-pass class of S650 (methodology-a-fill-must-check-what-it-fills)"
-  },
-  {
    "control_number": "33729",
    "title": "Agriculture Animal Science",
    "award": "A.S. T Degree",
@@ -368,5 +347,5 @@
    "degree_total": 60.0
   }
  ],
- "hand_holds": "31297 and 33388 were moved from apply to held by hand on the conductor's decision (S651, 2026-11-14); a rerun of --calgetc-apply drops them, so repeat this edit after one"
+ "hand_holds": "31297 was moved from apply to held by hand on the conductor's decision (S651, 2026-11-14): the set step holds no record by name, so a rerun of --calgetc-apply applies it again; repeat this edit after one (tests/program_requirements_lassen_calgetc.test.js fails until it is). 33388 is kept out by the step's only_with total_units and never reaches the plan"
 }

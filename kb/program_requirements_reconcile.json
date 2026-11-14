@@ -61,14 +61,14 @@
    "pdf_pages_why": "S650: the two transfer degrees the statewide 34 waits on (calgetc_apply_plan.json waiting.own_pages) are read from their own pages, named here with the words the filed capture opened on, never found by a pattern over the catalog's text. A pin binds only while the hand-filed file (sha256 pinned in kb/hand_filed_catalogs) prints the words and every title word on that page; otherwise the program gets no fresh text, its filed record stands, and the capture says why. Reversible by deleting this entry."
   },
   "Lassen College": {
-   "why": "S651, d-calgetc-34-per-college-evidence-s648. Lassen's catalog prints its own Cal-GETC figure: the pattern page (2026-2027 catalog, PDF p.72, printed p.70), headed 'California General Education Transfer Curriculum (Cal-GETC) Certification', prints 'Cal-GETC General Education Certificate of Achievement requires 34 Units.' and the six areas it counts (Area 1 '9 units', Area 2 '3 units', Area 3 '6 units', Area 4 '6 units', Area 5 '7 units', Area 6 '3 units', 34 in all), read by college-page-read run 43570566375 (plan kb/college_reads/lassen_cal_getc_page.json) from the catalog every Lassen record was extracted from (capture run 39006337658). The transfer degrees name Cal-GETC with no units read. A catalog printing its own figure takes a set step, so a transfer degree naming Cal-GETC with no units read takes 34 from that page, only where the record names its pattern and degree total. Reversible by deleting this entry.",
+   "why": "S651, d-calgetc-34-per-college-evidence-s648. Lassen's catalog prints its own Cal-GETC figure: the pattern page (2026-2027 catalog, PDF p.72, printed p.70), headed 'California General Education Transfer Curriculum (Cal-GETC) Certification', prints 'Cal-GETC General Education Certificate of Achievement requires 34 Units.' and the six areas it counts (Area 1 '9 units', Area 2 '3 units', Area 3 '6 units', Area 4 '6 units', Area 5 '7 units', Area 6 '3 units', 34 in all), read by college-page-read run 43570566375 (plan kb/college_reads/lassen_cal_getc_page.json) from the catalog every Lassen record was extracted from (capture run 39006337658). The transfer degrees name Cal-GETC with no units read. A catalog printing its own figure takes a set step, so a transfer degree naming Cal-GETC with no units read takes 34 from that page, only where the record names its pattern, its degree total and its major's printed total (S651, the conductor: without a printed major total the 34 would pass a record on the electives fill alone, the S650 false-pass class; Kinesiology 33388 so stays empty). The set step holds no record by name: 31297 (42300's legacy number), 35106 and 41912 (overlap) are restored from main after each reconcile run by --calgetc-review, from the apply plan. Reversible by deleting this entry.",
    "steps": [
     {
      "kind": "set",
      "field": "ge_units",
      "value": {"min": 34, "max": 34},
      "awards": "transfer",
-     "only_with": ["ge_pattern", "degree_total"],
+     "only_with": ["ge_pattern", "degree_total", "total_units"],
      "pattern": "Cal-?\\s?GETC",
      "source": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72",
      "source_words": "Cal-GETC General Education Certificate of Achievement requires 34 Units."
