@@ -1226,6 +1226,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/video_context_test.py` | workflows: `js-tests.yml` | — |
 | `tests/vision_2030_first_light_test.py` | workflows: `js-tests.yml` | — |
 | `tests/workflow_failure_watch_test.py` | workflows: `js-tests.yml` | — |
+| `tests/workplan_reports_year_pair_test.py` | workflows: `js-tests.yml` | — |
 | `tests/zband_retire_apply_test.py` | workflows: `js-tests.yml` | — |
 | `thumbs-more.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `tmc/tmc_or_groups.json` | scripts: `tmc/_parse_tmc_pdfs.py` | — |
@@ -1478,5 +1479,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 938 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 939 file
 datasets · 195 external services · 587 consumers · 72 workflows · 41 tabs.

@@ -61,6 +61,57 @@ const updateLog = DATA.update_log || {};
 // are already folded into projects[].update upstream; this map lets the master
 // report also surface ACTIVITY-level updates under each Activity heading.
 const liveUpdates = DATA.live_updates || {};
+// ── Annual goal ladder (S649) ──
+// Each year prints its own pair: that year's Current over that year's Goal
+// (kpi_current_<year>, stamped by excel_to_dashboard.py from the project's
+// Annual Goals row by the tab's own rule). The fiscal year is DATA.workplan_fy
+// ("2026-27"), else July 1 to June 30 from today.
+const LADDER_YEARS = ["2526", "2627", "2728", "2829", "2930"];
+function fySuffix(label, today) {
+  const m = /^20(\d\d)-(\d\d)$/.exec(String(label || ""));
+  if (m) return m[1] + m[2];
+  const d = today || new Date();
+  let start = d.getMonth() >= 6 ? d.getFullYear() : d.getFullYear() - 1;
+  start = Math.max(2025, Math.min(2029, start));
+  return String(start).slice(2) + String(start + 1).slice(2);
+}
+function yearLabel(s) { return s.slice(0, 2) + "-" + s.slice(2); }
+function yearGoal(p, s) {
+  const v = p["kpi_goal_" + s];
+  if (v) return v;
+  if (s === "2526") return p.kpi_target_2026 || "";
+  if (s === "2930") return p.kpi_target_2030 || "";
+  return "";
+}
+// kpi_metric stands in for this year's Current only in a data file written
+// before the generator carried kpi_current_* at all; once the keys exist, a
+// blank year prints the dash, as the Annual Goals tab shows it.
+function hasYearCurrents(p) {
+  return LADDER_YEARS.some(s => Object.prototype.hasOwnProperty.call(p, "kpi_current_" + s));
+}
+function yearCurrent(p, s, fy) {
+  const v = p["kpi_current_" + s];
+  if (v != null && v !== "") return String(v);
+  return s === fy && !hasYearCurrents(p) ? (p.kpi_metric || "") : "";
+}
+function yearPair(p, s, fy) {
+  return `${yearCurrent(p, s, fy) || "—"}/${yearGoal(p, s) || "—"}`;
+}
+// The summary Current (the "Current" column, KPI Current): the figure the
+// Activities tab's summary names beside this year's goal, worked out by the
+// generator (kpi_current_summary: the live value, else the latest year a Current
+// was set). kpi_metric stands in only when the file carries no kpi_current_* key.
+function summaryCurrent(p, fy) {
+  if (Object.prototype.hasOwnProperty.call(p, "kpi_current_summary")) return String(p.kpi_current_summary || "");
+  return hasYearCurrents(p) ? yearCurrent(p, fy, fy) : (p.kpi_metric || "");
+}
+// "2030 Goal: 400,000  Stretch: 40,000" — the 2029-30 goal and the 2029-30 stretch.
+function goalSubtitle(p) {
+  const g = yearGoal(p, "2930");
+  const s = p.kpi_stretch_2930 || "";
+  return g ? `2030 Goal: ${g}` + (s ? `  Stretch: ${s}` : "") : "";
+}
+const FY = fySuffix(DATA.workplan_fy);
 const now = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
 const reportDate = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long" });
 
@@ -511,31 +562,22 @@ async function generateMasterReport() {
         );
       }
 
-      // Goals row: 2030 Goal | 25-26 Goal | 25-26 Stretch | Actual
       const colW = Math.floor(CONTENT_W / 4);
       const lastColW = CONTENT_W - colW * 3;
       // 2030 Goal/Stretch + cumulative annual goals table
-      const cur = p.kpi_metric || "\u2014";
-      const g2930 = p.kpi_goal_2930 || p.kpi_target_2030 || "";
-      const s2930 = p.kpi_stretch_2829 || "";
-      const goalSubtitle = g2930 ? `2030 Goal: ${g2930}` + (s2930 ? `  Stretch: ${s2930}` : "") : "";
-      if (goalSubtitle) {
+      const cur = summaryCurrent(p, FY) || "\u2014";
+      const subtitle = goalSubtitle(p);
+      if (subtitle) {
         children.push(new Paragraph({
           spacing: { before: 60, after: 40 },
-          children: [new TextRun({ text: goalSubtitle, font: FONT, size: 18, color: "666666", italics: true })],
+          children: [new TextRun({ text: subtitle, font: FONT, size: 18, color: "666666", italics: true })],
         }));
       }
       const yrColW = Math.floor(CONTENT_W / 6);
       const yrLastW = CONTENT_W - yrColW * 5;
-      const yrHeaders = ["25-26", "26-27", "27-28", "28-29", "29-30", "Current"];
-      const yrGoals = [
-        p.kpi_goal_2526 || p.kpi_target_2026 || "\u2014",
-        p.kpi_goal_2627 || "\u2014",
-        p.kpi_goal_2728 || "\u2014",
-        p.kpi_goal_2829 || "\u2014",
-        g2930 || "\u2014",
-        cur,
-      ];
+      const yrHeaders = [...LADDER_YEARS.map(yearLabel), "Current"];
+      // Each year's own Current over its own Goal; the last cell is this year's Current.
+      const yrCells = [...LADDER_YEARS.map(s => yearPair(p, s, FY)), cur];
       children.push(
         new Table({
           width: { size: CONTENT_W, type: WidthType.DXA },
@@ -547,8 +589,8 @@ async function generateMasterReport() {
               ),
             }),
             new TableRow({
-              children: yrGoals.map((v, i) =>
-                makeCell(i < 5 ? `${cur}/${v}` : cur, {
+              children: yrCells.map((v, i) =>
+                makeCell(v, {
                   bold: true,
                   width: i < 5 ? yrColW : yrLastW,
                   align: AlignmentType.CENTER,
@@ -669,7 +711,7 @@ async function generateMasterReport() {
       makeCell("Sub-Activity", { bold: true, color: "FFFFFF", fill: NAVY, width: 3600, size: 18 }),
       makeCell("Status", { bold: true, color: "FFFFFF", fill: NAVY, width: 1600, align: AlignmentType.CENTER, size: 18 }),
       makeCell("2030 Goal", { bold: true, color: "FFFFFF", fill: NAVY, width: 1400, align: AlignmentType.CENTER, size: 18 }),
-      makeCell("25-26", { bold: true, color: "FFFFFF", fill: NAVY, width: 1800, align: AlignmentType.CENTER, size: 18 }),
+      makeCell(yearLabel(FY), { bold: true, color: "FFFFFF", fill: NAVY, width: 1800, align: AlignmentType.CENTER, size: 18 }),
       makeCell("Current", { bold: true, color: "FFFFFF", fill: NAVY, width: 1400, align: AlignmentType.CENTER, size: 18 }),
     ],
   });
@@ -692,9 +734,9 @@ async function generateMasterReport() {
         children: [
           makeCell(`${p.id} ${p.name}`, { width: 3600, fill, size: 18 }),
           makeCell(statusIcon(p.status), { width: 1600, align: AlignmentType.CENTER, fill, color: sColor, size: 17, bold: true }),
-          makeCell(p.kpi_goal_2930 || p.kpi_target_2030 || "\u2014", { width: 1400, align: AlignmentType.CENTER, fill, size: 18 }),
-          makeCell(`${p.kpi_metric || "\u2014"}/${p.kpi_goal_2526 || p.kpi_target_2026 || "\u2014"}`, { width: 1800, align: AlignmentType.CENTER, fill, size: 18 }),
-          makeCell(p.kpi_metric || "\u2014", { width: 1400, align: AlignmentType.CENTER, fill, color: sColor, bold: true, size: 18 }),
+          makeCell(yearGoal(p, "2930") || "\u2014", { width: 1400, align: AlignmentType.CENTER, fill, size: 18 }),
+          makeCell(yearPair(p, FY, FY), { width: 1800, align: AlignmentType.CENTER, fill, size: 18 }),
+          makeCell(summaryCurrent(p, FY) || "\u2014", { width: 1400, align: AlignmentType.CENTER, fill, color: sColor, bold: true, size: 18 }),
         ],
       }));
       rowIdx++;
@@ -800,15 +842,11 @@ async function generateMiniReport(p) {
     ["Progress", `${p.pct || 0}%`, sColor],
     ["Lead", p.lead || "N/A", "333333"],
     ["Budget", `${p.budget || "N/A"} (${p.budget_source || ""})`, "333333"],
-    ["KPI Current", p.kpi_metric ? `${p.kpi_metric} ${p.kpi_unit || ""}` : "N/A", NAVY],
+    ["KPI Current", summaryCurrent(p, FY) ? `${summaryCurrent(p, FY)} ${p.kpi_unit || ""}` : "\u2014", NAVY],
     ...(p.count_note ? [["How it is counted", p.count_note, "333333"]] : []),
-    ["2030 Goal", p.kpi_goal_2930 || p.kpi_target_2030 || "N/A", NAVY],
-    ["2030 Stretch", p.kpi_stretch_2829 || "N/A", GOLD],
-    ["25-26", `${p.kpi_metric || "\u2014"}/${p.kpi_goal_2526 || p.kpi_target_2026 || "\u2014"}`, "333333"],
-    ["26-27", `${p.kpi_metric || "\u2014"}/${p.kpi_goal_2627 || "\u2014"}`, "333333"],
-    ["27-28", `${p.kpi_metric || "\u2014"}/${p.kpi_goal_2728 || "\u2014"}`, "333333"],
-    ["28-29", `${p.kpi_metric || "\u2014"}/${p.kpi_goal_2829 || "\u2014"}`, "333333"],
-    ["29-30", `${p.kpi_metric || "\u2014"}/${p.kpi_goal_2930 || p.kpi_target_2030 || "\u2014"}`, "333333"],
+    ["2030 Goal", yearGoal(p, "2930") || "N/A", NAVY],
+    ["2030 Stretch", p.kpi_stretch_2930 || "N/A", GOLD],
+    ...LADDER_YEARS.map(s => [yearLabel(s), yearPair(p, s, FY), "333333"]),
   ];
 
   children.push(

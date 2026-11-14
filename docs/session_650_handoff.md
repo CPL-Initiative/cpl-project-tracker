@@ -30,8 +30,7 @@ governance items and the identities rebuild; it writes no numbered handoff (its 
    #3229 and #3111, and the `kb/credentials.json` edit taken as inside card 4). The builder demands (a) and (b) from
    the commons lane's markers. Publish under a fresh `SHEET_ID`; then move `CLAUDE.md`'s pointer (byte-neutral).
 2. **The memory receipt** `kb/receipts/cpl_memory_s649_final_rows_2026-11-14.sql`: both statements are RUN (statement 2 at 03:07Z 2026-11-14, 7 rows); nothing to run.
-3. **#3265** (`claude/slo-objectives-rccd`, head `68a5c8b7`): merge on a green `test` if the conductor did not (open
-   at 03:05Z). Its load is done.
+3. **#3265 is merged** (`7d1c3770`, 03:18Z 2026-11-14, on a green `test`): the Riverside district's objectives are on `main`; nothing to do. Next host: sdccd.
 4. **Los Medanos, Monterey Peninsula, Los Angeles Valley:** work their rules first (Sam, below).
 5. **The one dry run** for the three passing-function changes (noncredit Total Hours; the own-list rule; the
    GE-pattern certificate rule), by college, posted on #3111 before any rescore; one migration, one rescore.
@@ -98,7 +97,7 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 
 | PR or branch | State | Next |
 |---|---|---|
-| #3265 `claude/slo-objectives-rccd` | open, head `68a5c8b7`; the load ran | merge on green `test` |
+| #3265 `claude/slo-objectives-rccd` | merged `7d1c3770`, 03:18Z | none |
 | this refresh, `claude/checkpoint-s649-final` | open | merge on green |
 | #3268, #3278 (side session) | open | its own gates |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
