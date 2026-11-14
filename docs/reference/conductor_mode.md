@@ -149,6 +149,11 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A second reader before the capture cleared Lassen's ten and found the holds lived only in a plan a rebuild erases; the worker moved one into the config before the reconcile ran. The review then kept five of the ten, and two passed: a dry run's count is an upper bound until the review's `fail_to_pass_kept` is read.
 - A read-only reader settled a question three sessions had left as "not checked" (the August drop: one college) in under a minute, from three commits of one file. Ask a reader before carrying an unknown forward.
 - A per-college live read (118 rows) cost about 8,000 tokens to relay to a worker as a file. Have the worker's SQL return one JSON value, and save it with a script.
+- A display rule built into a college PR was withdrawn before the merge (`7f0f1b91`): it quoted `reconciled[].words` as "the catalog's words" across 724 rows at 26 colleges, and a second reader found only 225 led clean. `words` holds curator notes, not catalog quotations. A rule that rewrites free text across colleges gets its second reader before it is built into a college PR, and goes out as its own design item (`d-display-rule-withdrawn-structured-fields-s651`).
+- Disclosing a borderline pass on the PR (Lassen 32083, a word match on the next program's page) let COBIx rule on it at once ("leave it as loaded"), and turned the pitfall into a count he asked for before the rule changes.
+- The outcomes helper never prints **load** for an objectives reread: the earlier SLO receipt makes the colleges read as done. Write `.load` by hand (`host=`, `kind=objective`) once every slice is filed.
+- `list_workflow_runs` and `get_workflow_run` on a run whose head is a squash merge return the whole squash message (about 9,000 tokens each, twice this session). Find a run's state from the branch's "Applied record" commit or a live read instead.
+- A relayed count can differ from a dry run's (noncredit Total Hours: COBIx's relay 118, the dry run 45). Post both on the thread and let the rescore decide on captured text; do not reconcile them by assumption.
 
 ## What went wrong in S650, and what worked
 
