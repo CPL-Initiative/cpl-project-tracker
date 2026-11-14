@@ -638,7 +638,11 @@ def link_check_result(chk: dict) -> str:
         return "not found"
     if isinstance(st, int) and 200 <= st < 400:
         return "answered"
-    return "answered %s" % st if st is not None else "not checked"
+    if isinstance(st, int) and st >= 500:
+        return "the site answered with a server error"
+    if isinstance(st, int):
+        return "the site refused the request"
+    return "not checked"
 
 
 def catalog_links(slug: str, capture_url) -> dict:

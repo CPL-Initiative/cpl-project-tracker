@@ -427,8 +427,9 @@ check("(15b) the no-objectives list is derived from OBJECTIVES_BY_SYSTEM, the on
 check("(15c) a 500 from Pingora with an empty body reads unreachable from here, never not found; a 404 reads not found",
       B.link_check_result({"status": 500, "server": "Pingora", "body_bytes": 0}) == "unreachable from here"
       and B.link_check_result({"status": 500, "server": "pingora"}) == "unreachable from here"
-      and B.link_check_result({"status": 500, "server": "Pingora", "body_bytes": 812}) == "answered 500"
-      and B.link_check_result({"status": 500, "server": "nginx"}) == "answered 500"
+      and B.link_check_result({"status": 500, "server": "Pingora", "body_bytes": 812}) == "the site answered with a server error"
+      and B.link_check_result({"status": 500, "server": "nginx"}) == "the site answered with a server error"
+      and B.link_check_result({"status": 403}) == "the site refused the request"
       and B.link_check_result({"status": 404}) == "not found" and B.link_check_result({"status": 200}) == "answered"
       and B.link_check_result({}) == "not checked")
 _one = B.catalog_links("no_such_college", "https://catalog.example.edu/")
