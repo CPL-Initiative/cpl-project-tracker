@@ -544,6 +544,13 @@ def reconcile_run_review(plan: dict, branch: dict, main: dict, run: str, keep: d
                           "an apply row the run did not fill: its requirements are unchanged and only its score or "
                           "run moved (the run's trace says why the rule held it)" if not row["fields"] else
                           "an apply row whose run changed more than ge_units: %s" % ", ".join(row["fields"]))
+        elif cn in (plan.get("rescore_apply") or []):
+            # A rescore-only row the plan names (S650, Cosumnes River's seven): kept only where the run moved its
+            # score alone, on the page main reads it from, and it turns to passing.
+            ok = not row["fields"] and not row["notes"] and row["passes_run"] and not row["passes_main"]
+            row["decision"] = "keep" if ok else "restore"
+            row["why"] = ("a rescore-only row: its requirements as main files them, the score alone turns it to passing"
+                          if ok else "a rescore-only row the run did not turn to passing on its score alone")
         elif cn in keep:
             row["decision"], row["why"] = "keep", keep[cn]
         else:
@@ -685,6 +692,9 @@ def main(argv=None) -> int:
             review["files"] = ("sources.json and capture.json are %s's but for the kept programs' entries; "
                                "summary.json is %s's with its counts taken again from the records"
                                % (args.against, args.against))
+        if prior and prior.get("run") != review.get("run"):
+            # A later run's review keeps the earlier one beside it (S650: Cosumnes River's second reconcile).
+            plan["earlier_run_reviews"] = (plan.get("earlier_run_reviews") or []) + [prior]
         plan["run_review"] = review
         with open(path, "w") as fh:
             fh.write(json.dumps(plan, indent=1) + "\n")

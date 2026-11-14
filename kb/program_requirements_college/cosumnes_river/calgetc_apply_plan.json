@@ -1215,5 +1215,278 @@
   "own_pages": "30566 and 33072 wait for a capture that picks their own pages (552 and 404): reconcile 43521338550's capture picked 30566 pp.467-470 and 33072 pp.94-96, so neither filled; both stand as main files them.",
   "rescore_apply": "Seven records would pass on the rescore alone (04602, 04607, 04614, 07305, 11319, 11338, 33542; reconcile 43521338550): restored from main here, for a separate apply."
  },
- "apply_note": "apply and counts are the dry run's intent, measured before the run. What was filed is run_review.kept (counts.landed); 30566 and 33072 are in waiting.own_pages, and a later run reads waiting, never apply, for what is still to be filed."
+ "apply_note": "apply and counts are the dry run's intent, measured before the run. What was filed is run_review.kept (counts.landed); 30566 and 33072 are in waiting.own_pages, and a later run reads waiting, never apply, for what is still to be filed.",
+ "rescore_apply": [
+  "04602",
+  "04607",
+  "04614",
+  "07305",
+  "11319",
+  "11338",
+  "33542"
+ ],
+ "next_run": {
+  "what": "S650: Cosumnes River's second reconcile, one plan for 30566, 33072 and the seven rescore-only rows, compared with main before the run and again record by record after it.",
+  "measured_on": {
+   "commit": "00911067c9162b8fd32635c5db479e4f07c982ea",
+   "date": "2026-11-14",
+   "against": "the filed records on main, and run 43521338550's filing (commit 21c0d67e on #3262's branch), the only filing that scored the seven on today's scorer"
+  },
+  "apply": [
+   "30566",
+   "33072"
+  ],
+  "apply_why": "each read from its own page (kb/program_requirements_reconcile.json, Cosumnes River's pdf_pages: 30566 p.552, 33072 p.404), where the statewide 34 fills ge_units and nothing else (the dry run of #3262 and the S650 fixture test); both turn to passing (rows above: passes_with_fill true).",
+  "rescore_apply": [
+   {
+    "control_number": "04602",
+    "title": "Management Information Systems",
+    "award": "A.S. Degree",
+    "source_url": "crc-catalog-26-27.pdf#page=249",
+    "total_units": {
+     "min": 31,
+     "max": 32
+    },
+    "electives_fill_degree": true,
+    "computed": [
+     27.0,
+     27.0
+    ],
+    "main": {
+     "status": "unequal",
+     "why": [
+      "the blocks sum to 27.0-27.0; the catalog states 31.0-32.0"
+     ]
+    },
+    "run_43521338550": {
+     "status": "equal",
+     "fill": [
+      4.0,
+      5.0
+     ]
+    },
+    "coverage_pass": true,
+    "invented_pass": true,
+    "requirements_changed": false,
+    "pages_moved": false
+   },
+   {
+    "control_number": "04607",
+    "title": "Automotive Mechanics Technology",
+    "award": "A.S. Degree",
+    "source_url": "crc-catalog-26-27.pdf#page=180",
+    "total_units": {
+     "min": 43,
+     "max": 43
+    },
+    "electives_fill_degree": true,
+    "computed": [
+     29.0,
+     29.0
+    ],
+    "main": {
+     "status": "unequal",
+     "why": [
+      "the blocks sum to 29.0-29.0; the catalog states 43.0-43.0"
+     ]
+    },
+    "run_43521338550": {
+     "status": "equal",
+     "fill": [
+      14.0,
+      14.0
+     ]
+    },
+    "coverage_pass": true,
+    "invented_pass": true,
+    "requirements_changed": false,
+    "pages_moved": false
+   },
+   {
+    "control_number": "04614",
+    "title": "Art - Studio Art",
+    "award": "A.A. Degree",
+    "source_url": "crc-catalog-26-27.pdf#page=170",
+    "total_units": {
+     "min": 39,
+     "max": 39
+    },
+    "electives_fill_degree": true,
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "main": {
+     "status": "unequal",
+     "why": [
+      "the blocks sum to 18.0-18.0; the catalog states 39.0-39.0"
+     ]
+    },
+    "run_43521338550": {
+     "status": "equal",
+     "fill": [
+      21.0,
+      21.0
+     ]
+    },
+    "coverage_pass": true,
+    "invented_pass": true,
+    "requirements_changed": false,
+    "pages_moved": false
+   },
+   {
+    "control_number": "07305",
+    "title": "Building Inspection Technology",
+    "award": "A.S. Degree",
+    "source_url": "crc-catalog-26-27.pdf#page=213",
+    "total_units": {
+     "min": 39,
+     "max": 39
+    },
+    "electives_fill_degree": true,
+    "computed": [
+     33.0,
+     33.0
+    ],
+    "main": {
+     "status": "unequal",
+     "why": [
+      "the blocks sum to 33.0-33.0; the catalog states 39.0-39.0"
+     ]
+    },
+    "run_43521338550": {
+     "status": "equal",
+     "fill": [
+      6.0,
+      6.0
+     ]
+    },
+    "coverage_pass": true,
+    "invented_pass": true,
+    "requirements_changed": false,
+    "pages_moved": false
+   },
+   {
+    "control_number": "11319",
+    "title": "Science, General",
+    "award": "A.S. Degree",
+    "source_url": "crc-catalog-26-27.pdf#page=206",
+    "total_units": {
+     "min": 18,
+     "max": 18
+    },
+    "electives_fill_degree": true,
+    "computed": [
+     14.0,
+     14.0
+    ],
+    "main": {
+     "status": "unequal",
+     "why": [
+      "the blocks sum to 14.0-14.0; the catalog states 18.0-18.0"
+     ]
+    },
+    "run_43521338550": {
+     "status": "equal",
+     "fill": [
+      4.0,
+      4.0
+     ]
+    },
+    "coverage_pass": true,
+    "invented_pass": true,
+    "requirements_changed": false,
+    "pages_moved": false
+   },
+   {
+    "control_number": "11338",
+    "title": "Art - Design",
+    "award": "A.A. Degree",
+    "source_url": "crc-catalog-26-27.pdf#page=169",
+    "total_units": {
+     "min": 24,
+     "max": 24
+    },
+    "electives_fill_degree": true,
+    "computed": [
+     6.0,
+     6.0
+    ],
+    "main": {
+     "status": "unequal",
+     "why": [
+      "the blocks sum to 6.0-6.0; the catalog states 24.0-24.0"
+     ]
+    },
+    "run_43521338550": {
+     "status": "equal",
+     "fill": [
+      18.0,
+      18.0
+     ]
+    },
+    "coverage_pass": true,
+    "invented_pass": true,
+    "requirements_changed": false,
+    "pages_moved": false
+   },
+   {
+    "control_number": "33542",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "source_url": "crc-catalog-26-27.pdf#page=593",
+    "total_units": {
+     "min": 19,
+     "max": 19
+    },
+    "electives_fill_degree": true,
+    "computed": [
+     11.0,
+     19.0
+    ],
+    "main": {
+     "status": "unequal",
+     "why": [
+      "the blocks sum to 11.0-19.0; the catalog states 19.0-19.0"
+     ]
+    },
+    "run_43521338550": {
+     "status": "equal",
+     "fill": [
+      0.0,
+      8.0
+     ]
+    },
+    "coverage_pass": true,
+    "invented_pass": true,
+    "requirements_changed": false,
+    "pages_moved": false
+   }
+  ],
+  "rescore_apply_why": "Each record's requirements and page are main's; today's scorer (kb/_program_requirements_score.py, the program check's electives fill: electives_fill_degree on a record with no degree total and a page naming electives) reads the arithmetic as equal with the fill named, where the October score read it unequal. Coverage and invented already pass. None waits on the three passing-function changes (d-one-rescore-for-three-rules-s649): none is noncredit, none is a GE-pattern completion certificate, and each has a closed list the state's file names, so the own-list rule does not reach it. public.program_record_machine_pass reads checks.arithmetic 'equal' as passing today.",
+  "expect": {
+   "kept": [
+    "30566",
+    "33072",
+    "04602",
+    "04607",
+    "04614",
+    "07305",
+    "11319",
+    "11338",
+    "33542"
+   ],
+   "fail_to_pass": 9,
+   "pass_to_fail": 0,
+   "unchanged": "39656 (main already holds 34)",
+   "held_overlaps_restored": [
+    "31055",
+    "31995",
+    "41992",
+    "46419"
+   ],
+   "restored": "every other changed record, and every page the run moves but the two pinned"
+  },
+  "review": "python3 kb/_program_requirements_readings_measure.py --calgetc-review 'Cosumnes River College' --run RUN --against origin/main --restore: keeps an apply row only where ge_units alone moved to 34, a rescore_apply row only where nothing in its record moved and it turns to passing, restores the rest whole; the review of 43521338550 moves to earlier_run_reviews."
+ }
 }

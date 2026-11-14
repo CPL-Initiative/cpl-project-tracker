@@ -3328,6 +3328,35 @@ def heading_above(txt: str, start: int, conf: dict | None, courses: list[dict]) 
     return s
 
 
+# ── A program's own page, named by its college's reconcile entry (S650) ──────────────────────────────
+# Cosumnes River's capture of 2026-10-17 read Psychology AA-T 30566 from PDF p.552 and History AA-T
+# 33072 from p.404, the pages the reading and the Cal-GETC evidence quote. Reconcile 43521338550's fresh
+# capture of the same hand-filed file (its sha256 pinned) took 30566 to pp.467-470, a page naming
+# "History, Psychology or Sociology AA-T" as another degree, and 33072 to pp.94-96, the Cal-GETC pattern
+# page, so neither took the statewide 34 (calgetc_apply_plan.json, waiting.own_pages). A regex over free
+# catalog text is what failed three review rounds (p-gate-free-text-reading-per-college-s644), so the
+# page is named per program in the college's entry (pdf_pages), with the words the filed capture opened
+# on there, and it binds only while the file prints those words on that page and every title word.
+def pdf_pinned_heading(pages: list[str], program: dict, pin: dict | None) -> tuple[dict | None, str | None]:
+    """(the heading pdf_best reads the program from, or None; why a pin was refused, or None). pin is the
+    college's pdf_pages entry for the program: its PDF page (1-based) and the words the program's text opens
+    on there. The window opens at the start of the line carrying the words, read as the page prints them
+    with any run of white space between them; a page missing the words or a title word binds nothing."""
+    if not pin:
+        return None, None
+    i = int(pin.get("page") or 0) - 1
+    words = (pin.get("words") or "").split()
+    if not (0 <= i < len(pages)) or not words:
+        return None, "the pinned page is not in the file"
+    m = re.search(r"\s+".join(re.escape(w) for w in words), pages[i] or "")
+    if not m:
+        return None, "the quoted words are not on PDF page %d" % (i + 1)
+    pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in P.title_tokens(program.get("title") or "")]
+    if not pats or not _titled(pages[i], pats):
+        return None, "PDF page %d does not print every title word" % (i + 1)
+    return {"page": i, "at": pages[i].rfind("\n", 0, m.start()) + 1, "pinned": True}, None
+
+
 # ── A catalog that prints the control number AFTER its program (S644; rebuilt S645) ───────────────
 # Santiago Canyon's 2026-2027 PDF closes each program with "Control Number: N" and opens the next
 # program on the following line ("Control Number: 11856" / "Biology, AS-T" / "A.S. Degree for
@@ -4147,6 +4176,18 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
         report["pdf"]["numbers_after_suspected"] = {
             "votes": votes, "why": "the catalog's number lines look printed after each program, and no reconcile "
                                    "entry says so: read by the heading picker, for a person to check"}
+    # A program's own page named by the college's entry (pdf_pages, S650), bound only on the page's own words.
+    pins, pinned = (steps.get(college) or {}).get("pdf_pages") or {}, {}
+    for prog in listed:
+        pin = pins.get(prog["control_number"])
+        if pin:
+            head, why = pdf_pinned_heading(pages, prog, pin)
+            pinned[prog["control_number"]] = head
+            report["pdf"].setdefault("pinned", {})[prog["control_number"]] = (
+                {"page": pin.get("page"), "bound": True} if head else {"page": pin.get("page"), "bound": False, "why": why})
+            if not head:
+                print("::warning::%s %s: the reconcile entry's pdf_pages pin is refused (%s); read by the picker"
+                      % (college, prog["control_number"], why), flush=True)
     coded = pdf_code_assign(programs, pages)
     if coded is not None:
         report["pdf"]["code_headings"] = {"codes": len({h["code"] for h in pdf_code_headings(pages)}),
@@ -4166,12 +4207,13 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
     for prog in programs:
         if not prog["closed_list"]:
             rec = source_record(college, prog, reg, None, "no_closed_list")
-        elif coded is not None and not coded.get(prog["control_number"]):
+        elif coded is not None and not coded.get(prog["control_number"]) and not pinned.get(prog["control_number"]):
             rec = source_record(college, prog, reg, None, "not_found")
             rec["near_miss"] = {"why": "the catalog heads each program with its code, and no heading names this one"}
         else:
             best = pdf_best(start, pages, prog, prog["closed_list"], extractor,
-                            (coded or {}).get(prog["control_number"]), above, numbers_after=ctx or False)
+                            pinned.get(prog["control_number"]) or (coded or {}).get(prog["control_number"]), above,
+                            numbers_after=ctx or False)
             # A gated program the after path did not bind (pdf_best's after_unbound; none at all when the
             # picker found no window): a passing filed record stays on file unless the run forces it.
             unbound = ({"refused": (best or {}).get("refused"), "why": (best or {}).get("after_unbound") or "no_window",
@@ -4214,6 +4256,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                      "coverage": round(best["coverage"], 3), "opens": re.sub(r"\s+", " ", best["text"][:220]),
                      **({"opens_on_list": True} if best["opens_on_list"] else {}),
                      **({"bound": best["bound"]} if best.get("bound") else {}),
+                     **({"pinned": True} if pinned.get(prog["control_number"]) else {}),
                      # A uniform catalog's block bound by its number line alone, naming no program: a note for
                      # the conductor, with what was judged (decision 13); it refuses nothing.
                      **({"after_unnamed": True, "judged": best.get("judged")} if best.get("after_unnamed") else {}),
