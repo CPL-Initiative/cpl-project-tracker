@@ -107,13 +107,14 @@ Status only, never an agreement's text. A status the repo does not record reads 
 | Agreement | Parties | Status | Covers | Note |
 |---|---|---|---|---|
 | MAP data access | The Chancellor's Office CPL Initiative and MAP (RCCD / InfoTech) | exists | The nightly MAP custom-report API pull and the gated tables it loads. | Named as existing in the conductor's reply on #3310 (2026-11-14). The agreement itself is not recorded in the repo. |
-| Chancellor's Office data lake and dataset APIs | The Chancellor's Office research and data staff | might be needed | API access to the Chancellor's Office datasets and data lakes. | Sam will ask for access (#3310). Not recorded as asked. |
+| Chancellor's Office data lake and dataset APIs | The Chancellor's Office research and data staff | might be needed | API access to the Chancellor's Office datasets and data lakes. | The CPL Initiative will ask for access (#3310). Not recorded as asked. |
 | COMIS program awards by control number | The Chancellor's Office institutional research and MIS | might be needed | Program award counts by control number and award type, as aggregates. | The drafted request is not in this repo or the vault; its status is not recorded. |
 | COMIS student-level files | The Chancellor's Office institutional research and MIS | might be needed | The MAP-to-MIS student match that would count students with CPL statewide. | Falls under the student-detail disclosure ADR (docs/reference/data_sources.md, MIS). |
 | COMIS course basic file | The Chancellor's Office MIS unit | not recorded | The Fall 2025 CB course file the team was supplied. | The terms it was supplied under are not recorded in the repo. |
 | JST authorizations through CCCStart | The Chancellor's Office, its General Counsel and the CCC Technology Center | pending | Ordering the authorized students' Joint Services Transcripts and loading them to MAP per college. | Waits on the General Counsel's procedural OK; no data-sharing agreement, since the student's CCCApply authorization governs (docs/reference/data_sources.md). |
 | DIR-DAS apprenticeship MOU | The Chancellor's Office and DIR-DAS | exists | Matching apprentice records with CCC records for research and aggregate reports. | A revision extending disclosure to designated agents and districts is pending review (docs/reference/data_sources.md). |
 | Program Pathways Mapper access | The Foundation for California Community Colleges | might be needed | An export or API for the program maps colleges publish. | A note asking for access was drafted on 2026-10-17; not recorded as sent. |
+| College and district system access | Each college or district, with MAP | might be needed | Reading a college's student information system or curriculum system through its API. | Per college; none is recorded in the repo. |
 | Outside partners reading the Commons | WestEd, Credential Engine and other partners | might be needed | Partners reading Commons data beyond what is public. | Public elements need none; anything beyond them would. Not recorded as asked. |
 
 ## Systems
@@ -132,3 +133,22 @@ Status only, never an agreement's text. A status the repo does not record reads 
 | The COMIS Data Mart | The Chancellor's Office MIS unit | Public aggregates at datamart.cccco.edu. |
 | Centers of Excellence labor market data | The Centers of Excellence | Regional occupation demand; COBI holds a hand export (kb/reference/coe_occupation_demand_2024_2029.json). |
 | C-ID | ASCCC (the C-ID system) | Course descriptors and the courses approved against them (kb/reference/cid_articulations.json). |
+
+## Integrations
+
+From `kb/cdc_integrations.json` (#3310 item 5): each integration CDC uses or would use, its status, what it would replace, its owner by
+role and the agreement it needs. The view is `#commons/data/integrations`. 4 live; 0 in progress; 4 proposed; 1 not started.
+
+| Integration | Scope | Status | Would replace | Owner | Agreement | Evidence | Note |
+|---|---|---|---|---|---|---|---|
+| MAP custom-report API | statewide | live | Hand-saved MAP exports and the master workbook's copies of them. | MAP (RCCD / InfoTech) | MAP data access (exists) | `scripts/daily_build.sh`, `.github/workflows/daily-dashboard.yml`, `.github/workflows/map-custom-report-load.yml`, `kb/_sync_map_custom_reports.py` | The daily build pulls the custom reports with the MAP API key; student-grain rows stay on the runner or in reviewer-only tables and reach the page only as counts. |
+| COCI course and program catalog | statewide | live | Reading each college's course and program lists from its catalog alone. | Chancellor's Office curriculum (COCI) | none | `.github/workflows/coci-offerings-sync.yml`, `kb/reference/coci_course_list.xlsx` | Built from committed COCI extracts into coci_college_programs and the other coci tables. The extract is a saved snapshot; a scheduled export through the Chancellor's Office dataset APIs is the proposed step. |
+| C-ID approved courses | statewide | live | Matching a college's courses to C-ID descriptors by hand. | C-ID (ASCCC) | none | `kb/_ingest_cid_articulations.py`, `kb/reference/cid_articulations.json` | A c-id.net extract a curator supplies, normalized by the ingest script; no scheduled read. |
+| COMIS Data Mart (public) | statewide | live | Asking for each college's program-course lists. | Chancellor's Office MIS unit | none | `.github/workflows/program-course-fetch.yml`, `kb/_fetch_program_course_files.py` | The public Program Course File, fetched on the runner; the weekly schedule is commented out until a dispatch confirms it. |
+| Chancellor's Office data lake and dataset APIs | statewide | proposed | Saved snapshots: the July COCI copy and the one Fall 2025 COMIS course file. | Chancellor's Office research and data | Chancellor's Office data lake and dataset APIs (might be needed) | `docs/reference/data_dictionary.md::Common Cloud` | The CPL Initiative will ask for API access (#3310). |
+| COMIS program awards by control number | statewide | proposed | Nothing today: CDC holds no program award counts. | Chancellor's Office institutional research | COMIS program awards by control number (might be needed) | none in the repo | The drafted request is not in this repo or the vault, so its link is not recorded. |
+| CCCStart JST authorizations | statewide | proposed | JST parsing, the Credit for Being You import, manual entry and batch upload into MAP. | Chancellor's Office General Counsel and the CCC Technology Center | JST authorizations through CCCStart (pending) | `docs/reference/data_dictionary.md::### JST authorizations` | Student records land in MAP, never COBI; COBI would show connection status and counts. |
+| Student information system (SIS) APIs | per college | not started | Not recorded per college. The district profiles (#3198) name each college's SIS first. | The college or its district | College and district system access (might be needed) | none in the repo | Banner, Colleague and PeopleSoft districts would connect through the Common Cloud lakes or their own APIs. |
+| Curriculum system APIs | per college | proposed | Reading course outlines page by page, and the sign-in walls in front of outlines, SLOs and objectives. | MAP (RCCD / InfoTech) | College and district system access (might be needed) | `docs/reference/data_dictionary.md::Curriculum system APIs` | MAP may already connect some colleges' curriculum systems (eLumen, CurricUNET, Courseleaf CIM and others); the repo records none, so each college reads none known until MAP confirms which. |
+
+Each college's rows default to: Student information system (SIS) APIs, none known; Curriculum system APIs, none known.

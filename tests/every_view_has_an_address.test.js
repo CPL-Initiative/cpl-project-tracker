@@ -97,6 +97,11 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   const SHARE = fs.readFileSync("commons_data_sharing.js", "utf8");
   check("(E) ⭐ commons/data/sharing (and any module's view) joins VIEWS, so it opens from its arrival and reports itself",
     /if \(!own\(VIEWS, k\)\) VIEWS\[k\] = x\.views\[k\]/.test(DATAJS) && /views: \{ sharing: TITLE \}/.test(SHARE));
+  // #3310 item 5: the statewide integration view, #commons/data/integrations, by the same hook; the round trip is in
+  // tests/commons_data_integrations.test.js (4).
+  const INTEG = fs.readFileSync("commons_data_integrations.js", "utf8");
+  check("(E) ⭐ commons/data/integrations joins VIEWS through the module hook, so it opens from its arrival",
+    /views: \{ integrations: TITLE \}/.test(INTEG) && /"commons_data_integrations\.js", "CPL_CDC_INTEGRATIONS"/.test(DATAJS));
   const files = fs.readdirSync(".").filter((f) => /\.js$/.test(f) && f !== "cpl_session.js");
   files.forEach(function (f) {
     const s = fs.readFileSync(f, "utf8");

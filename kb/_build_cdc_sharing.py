@@ -13,6 +13,15 @@ This builder reads that file alone, checks it, and writes two things from it:
                                      full view at #commons/data/sharing;
   docs/reference/cdc_data_dictionary.md   the same definitions as a doc.
 
+It also reads the integrations registry, kb/cdc_integrations.json (#3310 item 5): each integration's status, what it
+would replace, its owner by role and the agreement it needs (a key into the dictionary's agreements). It checks every
+agreement key and every piece of evidence (a path that exists; path::text must also contain the text) and writes
+
+  kb/status/cdc_integrations.json    read by commons_data_integrations.js: the view at #commons/data/integrations and
+                                     each college's rows (per_college), for the Data sources card;
+
+and an Integrations section at the end of the doc.
+
 Both are deterministic (no clock), so --check compares them byte for byte. tests/commons_data_sharing.test.js runs
 --check and fails when the page shows a field the file does not define, or the file defines one no view shows.
 
@@ -31,6 +40,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCE = "kb/cdc_data_dictionary.json"
 OUT_JSON = "kb/status/cdc_sharing.json"
 OUT_MD = "docs/reference/cdc_data_dictionary.md"
+REGISTRY = "kb/cdc_integrations.json"
+OUT_INTEGRATIONS = "kb/status/cdc_integrations.json"
+INTEGRATION_STATUS = ("live", "in progress", "proposed", "not started")
+SCOPES = ("statewide", "per_college")
 
 CLASSES = ("public", "aggregate", "agreement", "held")
 AGREEMENT_STATUS = ("exists", "pending", "might be needed", "not needed", "not recorded")
@@ -104,6 +117,89 @@ def problems(d: dict) -> list[str]:
             if not a.get(f):
                 out.append("agreement %s has no %s" % (a.get("id"), f))
     return out
+
+
+def load_registry(root: str) -> dict | None:
+    path = os.path.join(root, REGISTRY)
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def evidence_ok(root: str, item: str) -> bool:
+    """A path that exists; path::text must also contain the text."""
+    rel, _, text = item.partition("::")
+    path = os.path.join(root, rel)
+    if not os.path.isfile(path):
+        return os.path.isdir(path) and not text
+    if not text:
+        return True
+    with open(path, encoding="utf-8", errors="replace") as f:
+        return text in f.read()
+
+
+def registry_problems(r: dict, d: dict, root: str) -> list[str]:
+    out: list[str] = []
+    if tuple((r.get("statuses") or {}).keys()) != INTEGRATION_STATUS:
+        out.append("integration statuses must be exactly %s, in that order" % ", ".join(INTEGRATION_STATUS))
+    roles = r.get("roles") or {}
+    agreements = {a.get("id") for a in d.get("agreements") or []}
+    seen: set[str] = set()
+    for x in r.get("integrations") or []:
+        i = x.get("id") or "?"
+        if i in seen:
+            out.append("integration %s is listed twice" % i)
+        seen.add(i)
+        for f in ("name", "status", "scope", "replaces", "owner"):
+            if not x.get(f):
+                out.append("integration %s has no %s" % (i, f))
+        if x.get("status") not in INTEGRATION_STATUS:
+            out.append("integration %s has status %r; use one of %s" % (i, x.get("status"), ", ".join(INTEGRATION_STATUS)))
+        if x.get("scope") not in SCOPES:
+            out.append("integration %s has scope %r; use statewide or per_college" % (i, x.get("scope")))
+        if x.get("owner") not in roles:
+            out.append("integration %s names owner %r, which roles does not define" % (i, x.get("owner")))
+        if x.get("agreement") and x["agreement"] not in agreements:
+            out.append("integration %s names agreement %r, which %s does not list" % (i, x["agreement"], SOURCE))
+        for e in x.get("evidence") or []:
+            if not evidence_ok(root, e):
+                out.append("integration %s cites evidence %r, which the repo does not hold" % (i, e))
+        if x.get("status") in ("live", "in progress") and not x.get("evidence"):
+            out.append("integration %s is %s with no evidence in the repo" % (i, x.get("status")))
+    per = r.get("per_college") or {}
+    ids = {x.get("id") for x in r.get("integrations") or [] if x.get("scope") == "per_college"}
+    for slug, rows in [("default", per.get("default") or [])] + list((per.get("colleges") or {}).items()):
+        for row in rows:
+            if row.get("integration") not in ids:
+                out.append("per-college row %s names %r, which is no per-college integration" % (slug, row.get("integration")))
+            if not row.get("state"):
+                out.append("per-college row %s for %s has no state" % (slug, row.get("integration")))
+    if {row.get("integration") for row in per.get("default") or []} != ids:
+        out.append("per_college needs one default row for each per-college integration")
+    return out
+
+
+def build_integrations(r: dict, d: dict) -> dict:
+    roles = r["roles"]
+    agreements = {a["id"]: a for a in d["agreements"]}
+    rows = []
+    for x in r["integrations"]:
+        a = agreements.get(x.get("agreement") or "")
+        rows.append(dict(x, owner_role=roles[x["owner"]], agreement_name=a["name"] if a else "",
+                         agreement_status=a["status"] if a else "", evidence=list(x.get("evidence") or [])))
+    return {
+        "schema": 1,
+        "source": REGISTRY,
+        "builder": "kb/_build_cdc_sharing.py",
+        "doc": OUT_MD,
+        "updated": r.get("updated") or "",
+        "statuses": r["statuses"],
+        "roles": roles,
+        "integrations": rows,
+        "per_college": r["per_college"],
+        "counts": {s: sum(1 for x in rows if x["status"] == s) for s in INTEGRATION_STATUS},
+    }
 
 
 def build(d: dict) -> dict:
@@ -208,6 +304,23 @@ def markdown(b: dict) -> str:
     return "\n".join(L) + "\n"
 
 
+def integrations_markdown(g: dict) -> str:
+    L = ["", "## Integrations", "",
+         "From `%s` (#3310 item 5): each integration CDC uses or would use, its status, what it would replace, its owner by" % REGISTRY,
+         "role and the agreement it needs. The view is `#commons/data/integrations`. %s." % "; ".join(
+             "%d %s" % (g["counts"][s], s) for s in INTEGRATION_STATUS), "",
+         "| Integration | Scope | Status | Would replace | Owner | Agreement | Evidence | Note |", "|---|---|---|---|---|---|---|---|"]
+    for x in g["integrations"]:
+        L.append("| %s | %s | %s | %s | %s | %s | %s | %s |" % (
+            cell(x["name"]), "per college" if x["scope"] == "per_college" else "statewide", x["status"], cell(x["replaces"]),
+            cell(x["owner_role"]), cell(x["agreement_name"] + " (" + x["agreement_status"] + ")") if x["agreement_name"] else "none",
+            ", ".join("`%s`" % cell(e) for e in x["evidence"]) or "none in the repo", cell(x.get("note"))))
+    names = {x["id"]: x["name"] for x in g["integrations"]}
+    L += ["", "Each college's rows default to: " + "; ".join(
+        "%s, %s" % (names[row["integration"]], row["state"]) for row in g["per_college"]["default"]) + "."]
+    return "\n".join(L) + "\n"
+
+
 def dumps(b: dict) -> str:
     return json.dumps(b, indent=1, ensure_ascii=False) + "\n"
 
@@ -218,13 +331,18 @@ def main(argv=None) -> int:
     ap.add_argument("--root", default=ROOT)
     a = ap.parse_args(argv)
     d = load_source(a.root)
-    bad = problems(d)
+    reg = load_registry(a.root)
+    bad = problems(d) + (registry_problems(reg, d, a.root) if reg is not None else [])
     if bad:
         for p in bad:
             print("cdc sharing: %s" % p, file=sys.stderr)
         return 1
     b = build(d)
     want = {OUT_JSON: dumps(b), OUT_MD: markdown(b)}
+    g = build_integrations(reg, d) if reg is not None else None
+    if g is not None:
+        want[OUT_INTEGRATIONS] = dumps(g)
+        want[OUT_MD] += integrations_markdown(g)
     stale = []
     for rel, text in want.items():
         path = os.path.join(a.root, rel)
@@ -239,9 +357,11 @@ def main(argv=None) -> int:
         print("cdc sharing: stale %s; run python3 kb/_build_cdc_sharing.py" % ", ".join(stale), file=sys.stderr)
         return 1
     n = b["counts"]["elements"]
-    print("cdc sharing: %d fields (%s), %d held and not shown, %d join keys, %d agreements%s" % (
+    print("cdc sharing: %d fields (%s), %d held and not shown, %d join keys, %d agreements%s%s" % (
         len(b["elements"]), ", ".join("%s %d" % (k, n[k]) for k in CLASSES), len(b["held_not_shown"]),
-        len(b["join_keys"]), len(b["agreements"]), " (current)" if a.check else ""))
+        len(b["join_keys"]), len(b["agreements"]),
+        "; %d integrations (%s)" % (len(g["integrations"]), ", ".join("%s %d" % (s, g["counts"][s]) for s in INTEGRATION_STATUS)) if g else "",
+        " (current)" if a.check else ""))
     return 0
 
 

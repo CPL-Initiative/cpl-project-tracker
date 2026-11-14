@@ -345,14 +345,15 @@
   /* Modules beside this file (#3310): each registers on window.CPL_CDC_EXT with its views (added to VIEWS, so each has
      its own address), ledes, ready (it reads its own file), view, panel (sections on a college's panel) and statewide
      (a card on the list's page). A module that fails to load leaves the page as it was. */
-  var EXT_FILES = [["commons_data_sharing.js", "CPL_CDC_SHARING"]];
+  var EXT_FILES = [["commons_data_sharing.js", "CPL_CDC_SHARING"], ["commons_data_integrations.js", "CPL_CDC_INTEGRATIONS"]];
   function exts() { return Array.isArray(window.CPL_CDC_EXT) ? window.CPL_CDC_EXT.filter(Boolean) : []; }
   function extHost() { return { go: go }; }
   function loadExts() {
     var T = window.CPL_TABS;
-    return Promise.all(EXT_FILES.map(function (f) {
-      return window[f[1]] || !(T && T.loadScript) ? null : new Promise(function (res) { T.loadScript(f[0], f[1], res); });
-    })).then(function () {
+    /* One after another, so the views' menu keeps the order EXT_FILES gives. */
+    return EXT_FILES.reduce(function (p, f) {
+      return p.then(function () { return window[f[1]] || !(T && T.loadScript) ? null : new Promise(function (res) { T.loadScript(f[0], f[1], res); }); });
+    }, Promise.resolve()).then(function () {
       return Promise.all(exts().map(function (x) {
         Object.keys(x.views || {}).forEach(function (k) { if (!own(VIEWS, k)) VIEWS[k] = x.views[k]; });
         return x.ready ? Promise.resolve(x.ready(window.fetch)).catch(function () { return null; }) : null;

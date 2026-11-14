@@ -642,6 +642,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/ccr_doubt.json` | scripts: `kb/_build_commons_status.py` | scripts: `kb/_ccr_seed_recheck_dryrun.py` · committed by: `daily-dashboard.yml` |
 | `kb/ccr_procedures.json` | scripts: `kb/_ccr_seed_recheck_dryrun.py` | — |
 | `kb/cdc_data_dictionary.json` | scripts: `kb/_build_cdc_sharing.py` | — |
+| `kb/cdc_integrations.json` | scripts: `kb/_build_cdc_sharing.py` | — |
 | `kb/cer_classified.json` | scripts: `kb/_cer_procedures.py` | scripts: `kb/_cer_procedures.py` · committed by: `cer-procedures.yml` |
 | `kb/cer_procedures.json` | tabs: `exhibits` · scripts: `kb/_build_commons_status.py`, `kb/_cer_procedures.py`, `scripts/build_exhibits_list_preview.py` | — |
 | `kb/cer_procedures_out/latest.json` | tabs: `credential-reference`, `exhibits` · scripts: `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `scripts/build_exhibits_list_preview.py` | committed by: `cer-procedures.yml` |
@@ -869,6 +870,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/spot_checks/*.check.json` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/spot_checks/README.md` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/statewide_exhibit_categories.json` | scripts: `excel_to_dashboard.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_seed_statewide_categories.py` | scripts: `kb/_seed_statewide_categories.py` |
+| `kb/status/cdc_integrations.json` | scripts: `kb/_build_cdc_sharing.py` | — |
 | `kb/status/cdc_sharing.json` | scripts: `kb/_build_cdc_sharing.py` | — |
 | `kb/status/commons.json` | tabs: `canonical-subj4`, `coci-lookup`, `cpl-pathways`, `cr-reference`, `exhibits`, `library`, `program-requirements` · scripts: `kb/_build_commons_status.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/status/commons_data.json` | tabs: `commons` · scripts: `kb/_build_commons_data_status.py` | — |
@@ -1490,5 +1492,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 950 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 952 file
 datasets · 195 external services · 593 consumers · 72 workflows · 41 tabs.

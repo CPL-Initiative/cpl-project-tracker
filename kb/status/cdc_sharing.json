@@ -808,7 +808,7 @@
    "parties": "The Chancellor's Office research and data staff",
    "status": "might be needed",
    "covers": "API access to the Chancellor's Office datasets and data lakes.",
-   "note": "Sam will ask for access (#3310). Not recorded as asked."
+   "note": "The CPL Initiative will ask for access (#3310). Not recorded as asked."
   },
   {
    "id": "comis_awards",
@@ -859,6 +859,14 @@
    "note": "A note asking for access was drafted on 2026-10-17; not recorded as sent."
   },
   {
+   "id": "college_systems",
+   "name": "College and district system access",
+   "parties": "Each college or district, with MAP",
+   "status": "might be needed",
+   "covers": "Reading a college's student information system or curriculum system through its API.",
+   "note": "Per college; none is recorded in the repo."
+  },
+  {
    "id": "outside_partners",
    "name": "Outside partners reading the Commons",
    "parties": "WestEd, Credential Engine and other partners",
@@ -896,7 +904,7 @@
   "agreements": {
    "exists": 2,
    "pending": 1,
-   "might be needed": 5,
+   "might be needed": 6,
    "not needed": 0,
    "not recorded": 1
   }

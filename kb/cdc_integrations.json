@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "about": "Hand-kept registry of the integrations College Data Collection (CDC) uses or would use (#3310 item 5): each with its status, what it would replace, its owner by role and the agreement it needs (a key into the agreements of kb/cdc_data_dictionary.json). kb/_build_cdc_sharing.py builds kb/status/cdc_integrations.json from it; commons_data_integrations.js draws the statewide view at #commons/data/integrations and exposes each college's rows for the Data sources card. People appear by role only. A status moves only with a record in the repo (a workflow, a script, a request) named in evidence.",
+  "updated": "2026-11-14",
+  "statuses": {
+    "live": "In use today, by the path named in its evidence.",
+    "in progress": "Being built or connected now.",
+    "proposed": "Asked for or planned, and not built.",
+    "not started": "Would help; nothing is asked for or built yet."
+  },
+  "roles": {
+    "map": "MAP (RCCD / InfoTech)",
+    "cpl_initiative": "The CPL Initiative's MAP team",
+    "co_research_data": "Chancellor's Office research and data",
+    "co_ir": "Chancellor's Office institutional research",
+    "co_mis": "Chancellor's Office MIS unit",
+    "co_curriculum": "Chancellor's Office curriculum (COCI)",
+    "co_counsel_techcenter": "Chancellor's Office General Counsel and the CCC Technology Center",
+    "cid": "C-ID (ASCCC)",
+    "college": "The college or its district"
+  },
+  "integrations": [
+    { "id": "map_custom_report_api", "name": "MAP custom-report API", "scope": "statewide", "status": "live", "cadence": "Nightly",
+      "replaces": "Hand-saved MAP exports and the master workbook's copies of them.", "owner": "map", "agreement": "map",
+      "evidence": ["scripts/daily_build.sh", ".github/workflows/daily-dashboard.yml", ".github/workflows/map-custom-report-load.yml", "kb/_sync_map_custom_reports.py"],
+      "note": "The daily build pulls the custom reports with the MAP API key; student-grain rows stay on the runner or in reviewer-only tables and reach the page only as counts." },
+    { "id": "coci", "name": "COCI course and program catalog", "scope": "statewide", "status": "live", "cadence": "On each new extract",
+      "replaces": "Reading each college's course and program lists from its catalog alone.", "owner": "co_curriculum", "agreement": "",
+      "evidence": [".github/workflows/coci-offerings-sync.yml", "kb/reference/coci_course_list.xlsx"],
+      "note": "Built from committed COCI extracts into coci_college_programs and the other coci tables. The extract is a saved snapshot; a scheduled export through the Chancellor's Office dataset APIs is the proposed step." },
+    { "id": "cid", "name": "C-ID approved courses", "scope": "statewide", "status": "live", "cadence": "On each new extract",
+      "replaces": "Matching a college's courses to C-ID descriptors by hand.", "owner": "cid", "agreement": "",
+      "evidence": ["kb/_ingest_cid_articulations.py", "kb/reference/cid_articulations.json"],
+      "note": "A c-id.net extract a curator supplies, normalized by the ingest script; no scheduled read." },
+    { "id": "comis_datamart", "name": "COMIS Data Mart (public)", "scope": "statewide", "status": "live", "cadence": "On dispatch",
+      "replaces": "Asking for each college's program-course lists.", "owner": "co_mis", "agreement": "",
+      "evidence": [".github/workflows/program-course-fetch.yml", "kb/_fetch_program_course_files.py"],
+      "note": "The public Program Course File, fetched on the runner; the weekly schedule is commented out until a dispatch confirms it." },
+    { "id": "co_data_lake", "name": "Chancellor's Office data lake and dataset APIs", "scope": "statewide", "status": "proposed", "cadence": "",
+      "replaces": "Saved snapshots: the July COCI copy and the one Fall 2025 COMIS course file.", "owner": "co_research_data", "agreement": "co_data_lake",
+      "evidence": ["docs/reference/data_dictionary.md::Common Cloud"],
+      "note": "The CPL Initiative will ask for API access (#3310)." },
+    { "id": "comis_awards", "name": "COMIS program awards by control number", "scope": "statewide", "status": "proposed", "cadence": "",
+      "replaces": "Nothing today: CDC holds no program award counts.", "owner": "co_ir", "agreement": "comis_awards",
+      "evidence": [],
+      "request": "",
+      "note": "The drafted request is not in this repo or the vault, so its link is not recorded." },
+    { "id": "cccstart_jst", "name": "CCCStart JST authorizations", "scope": "statewide", "status": "proposed", "cadence": "",
+      "replaces": "JST parsing, the Credit for Being You import, manual entry and batch upload into MAP.", "owner": "co_counsel_techcenter", "agreement": "jst",
+      "evidence": ["docs/reference/data_dictionary.md::### JST authorizations"],
+      "note": "Student records land in MAP, never COBI; COBI would show connection status and counts." },
+    { "id": "sis_api", "name": "Student information system (SIS) APIs", "scope": "per_college", "status": "not started", "cadence": "",
+      "replaces": "Not recorded per college. The district profiles (#3198) name each college's SIS first.", "owner": "college", "agreement": "college_systems",
+      "evidence": [],
+      "note": "Banner, Colleague and PeopleSoft districts would connect through the Common Cloud lakes or their own APIs." },
+    { "id": "curriculum_system_api", "name": "Curriculum system APIs", "scope": "per_college", "status": "proposed", "cadence": "",
+      "replaces": "Reading course outlines page by page, and the sign-in walls in front of outlines, SLOs and objectives.", "owner": "map", "agreement": "college_systems",
+      "evidence": ["docs/reference/data_dictionary.md::Curriculum system APIs"],
+      "note": "MAP may already connect some colleges' curriculum systems (eLumen, CurricUNET, Courseleaf CIM and others); the repo records none, so each college reads none known until MAP confirms which." }
+  ],
+  "per_college": {
+    "default": [
+      { "integration": "sis_api", "state": "none known", "note": "No SIS connection is recorded for this college." },
+      { "integration": "curriculum_system_api", "state": "none known", "note": "Not recorded; MAP confirms which colleges it connects." }
+    ],
+    "colleges": {}
+  }
+}
