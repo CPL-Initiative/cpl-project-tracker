@@ -183,6 +183,75 @@ FOLLOWUPS = {
 if os.path.exists(os.path.join(ROOT, FOLLOWUPS["forward"])):
     PAIRS.append(FOLLOWUPS)
 
+# S653, step 1 of the Honors build (a draft, not in .apply): on the post-follow-up state, the two retitled base rows
+# are restamped honors-s652@bot and the first two honors_of rows land (cohort honors-s653@bot).
+HS = "honors-s652" + "@bot"
+FIELD_ROWS = [r for r in FOLLOWUP_ROWS if r[1] != "unified_title"] + [
+    ("LIBR M1040", "unified_title", "Media & Information Literacy", AM, AM_AT),
+    ("HUMA M1110", "unified_title", "World Religions", AM, AM_AT),
+    ("HUMA M10ME", "merge_dismissed", "HUMA M10ME|HUMA M10OI|HUMA M1110", HS, "2026-11-14T15:21:04.075029+00:00"),
+    ("LIBR M1040", "merge_dismissed", "LIBR M1040|LIBR M10CJ", HS, "2026-11-14T15:21:04.075029+00:00"),
+]
+FIELD = {
+    "name": "honors_of field", "forward": "kb/migrations/2026-11-14_s653_honors_of_field.sql",
+    "rollback": "kb/migrations/2026-11-14_s653_honors_of_field_rollback.sql",
+    "rows": FIELD_ROWS,
+    "changed_keys": [("HUMA M1110", "unified_title"), ("LIBR M1040", "unified_title"),
+                     ("HUMA M10ME", "honors_of"), ("LIBR M10CJ", "honors_of")],
+    "refusals": {
+        "a base title was changed since": "update kb_curation set value = 'World Religion' "
+                                          "where course_id = 'HUMA M1110' and field = 'unified_title'",
+        "a base title was re-saved since": "update kb_curation set reviewed_at = now() "
+                                           "where course_id = 'LIBR M1040' and field = 'unified_title'",
+        "a person validated a base title": "update kb_curation set validated_at = now(), validated_by = 'someone' "
+                                           "where course_id = 'HUMA M1110' and field = 'unified_title'",
+        "an honors_of row already exists": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                           "values ('MATH M10ZZ', 'honors_of', 'MATH M1036', 'somebody@bot')",
+        "the delete was undone": "insert into kb_curation (course_id, field, value, reviewer_email, reviewed_at) "
+                                 "values ('HUMA M10ME', 'merge_into', 'HUMA M1110', '" + AM + "', '" + AM_AT + "')",
+        "a person saved a row on a base": "update kb_curation set reviewer_email = 'someone@college.edu' "
+                                          "where course_id = 'HUMA M1110' and field = 'discipline'",
+        "a person merged a course into a base": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                                "values ('LIBR M10ZZ', 'merge_into', 'LIBR M1040', "
+                                                "'someone@college.edu')",
+    },
+}
+if os.path.exists(os.path.join(ROOT, FIELD["forward"])):
+    PAIRS.append(FIELD)
+
+# S653, step 2 (a draft): the honors_of rows for every pair the plan writes, insert-only, on the state step 1 leaves.
+ROWS_FWD = "kb/migrations/2026-11-14_s653_honors_of_rows.sql"
+if os.path.exists(os.path.join(ROOT, ROWS_FWD)):
+    import re as _re
+    _src = open(os.path.join(ROOT, ROWS_FWD), encoding="utf-8").read()
+    _planned = _re.search(r"planned \(course_id, value\) as \(\s*values\s*(.*?)\n\),", _src, _re.S).group(1)
+    _keys = [(h, "honors_of") for h, _ in _re.findall(r"\('([^']+)', '([^']+)'\)", _planned)]
+    STEP1 = [r for r in FIELD_ROWS if r[1] != "unified_title"] + [
+        ("LIBR M1040", "unified_title", "Media & Information Literacy", HS, "2026-11-14T18:00:00+00:00"),
+        ("HUMA M1110", "unified_title", "World Religions", HS, "2026-11-14T18:00:00+00:00"),
+        ("HUMA M10ME", "honors_of", "HUMA M1110", "honors-s653" + "@bot", "2026-11-14T18:00:00+00:00"),
+        ("LIBR M10CJ", "honors_of", "LIBR M1040", "honors-s653" + "@bot", "2026-11-14T18:00:00+00:00"),
+    ]
+    _h0, _b0 = _keys[0][0], _re.findall(r"\('([^']+)', '([^']+)'\)", _planned)[0][1]
+    PAIRS.append({
+        "name": "honors_of rows", "forward": ROWS_FWD,
+        "rollback": "kb/migrations/2026-11-14_s653_honors_of_rows_rollback.sql",
+        "rows": STEP1, "changed_keys": _keys,
+        "refusals": {
+            "step 1 has not landed": "delete from kb_curation where field = 'honors_of'",
+            "another honors_of row exists": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                            "values ('MATH M10ZZ', 'honors_of', 'MATH M1036', 'somebody@bot')",
+            "a named id carries a merge": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                          f"values ('{_h0}', 'merge_into', '{_b0}', 'somebody@bot')",
+            "a person merged a course into a base": "insert into kb_curation (course_id, field, value, reviewer_email) "
+                                                    f"values ('ZZZZ M1999', 'merge_into', '{_b0}', "
+                                                    "'someone@college.edu')",
+            "a person's Keep as-is names an Honors id": "insert into kb_curation (course_id, field, value, "
+                                                        f"reviewer_email) values ('UC:z', 'merge_dismissed', "
+                                                        f"'{_b0}|{_h0}', 'someone@college.edu')",
+        },
+    })
+
 
 def code_only(sql):
     return "\n".join(l for l in sql.splitlines() if not l.lstrip().startswith("--"))

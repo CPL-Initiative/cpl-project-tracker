@@ -22,7 +22,7 @@ pair's old key is another pair's new key) is applied in `order_pairs` order —
 the pair vacating the shared key first — and that key is excluded from the
 verify, since rows legitimately sit on it afterwards (2026-09-03).
   1. self-keyed rows:  course_id  old → new
-  2. merge_into ptrs:  value      old → new   (field = 'merge_into')
+  2. id pointers:      value      old → new   (field in POINTER_FIELDS: merge_into, honors_of)
 
 Alias map format (the *_dryrun.py / *_apply.py receipt):
   { "aliases": { "<old_id>": { "new_id": "<new>", ... }, ... } }
@@ -46,6 +46,10 @@ import urllib.request
 URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 ENDPOINT = f"{URL}/rest/v1/kb_curation"
+# The fields whose VALUE is an id and moves with a re-key. honors_of (S653) names an Honors M-ID's base
+# (docs/reference/honors_of_design.md); merge_dismissed is a "|"-joined group signature and is not re-keyed here.
+POINTER_FIELDS = ("merge_into", "honors_of")
+POINTER_FILTER = "field=in.(" + ",".join(POINTER_FIELDS) + ")"
 
 
 def load_alias(path):
@@ -149,8 +153,8 @@ def main():
         # 1. self-keyed rows: course_id old → new
         _req("PATCH", f"course_id=eq.{o}", {"course_id": new})
         n_self += 1
-        # 2. merge_into pointers: value old → new
-        _req("PATCH", f"field=eq.merge_into&value=eq.{o}", {"value": new})
+        # 2. id-valued pointers: value old → new (merge_into, and honors_of since S653)
+        _req("PATCH", f"{POINTER_FILTER}&value=eq.{o}", {"value": new})
         n_ptr += 1
         if i % 500 == 0:
             print(f"  … {i}/{len(pairs)}")
@@ -179,7 +183,7 @@ def _count_old_keys(old_keys, chunk=200):
     for i in range(0, len(old_keys), chunk):
         part = old_keys[i:i + chunk]
         keys += _count("course_id=" + _in_list(part))
-        ptrs += _count("field=eq.merge_into&value=" + _in_list(part))
+        ptrs += _count(POINTER_FILTER + "&value=" + _in_list(part))
     return keys, ptrs
 
 

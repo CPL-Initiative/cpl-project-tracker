@@ -27,6 +27,8 @@ import urllib.request
 from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
 OUT = os.path.join(HERE, "coci_curation.json")
 URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 KEY = os.environ.get("SUPABASE_SERVICE_KEY")
@@ -45,8 +47,13 @@ KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 # `merge_note` is a curator annotation captured at merge time on the surviving
 # target (e.g. "Complete both parts for full credit" on a course minted from
 # segmented A/B / 1-2 members); the generator emits it as the row's `note`.
+# `honors_of` (S653) sits on an Honors M-ID and names its base; the equivalence
+# runs both ways and the base's partner is derived (kb/honors_of.py), never
+# stored twice. It holds the pair apart pairwise: `fold_rows` cuts a bot merge
+# that would join the two, and a person's merge wins (Rule 10). Design:
+# docs/reference/honors_of_design.md.
 FIELDS = {"discipline", "merge_into", "unified_title", "description",
-          "cross_listed_disciplines", "merge_dismissed", "merge_note"}
+          "cross_listed_disciplines", "merge_dismissed", "merge_note", "honors_of"}
 
 
 def _fetch_json(req, attempts=4):
@@ -92,11 +99,10 @@ def fetch_rows():
         start += page
 
 
-def main():
-    if not KEY:
-        sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
-    rows = fetch_rows()
-
+def fold_rows(rows):
+    """kb_curation rows -> (curations, skipped, honors): the overlay's `curations` map, the count of rows whose
+    field is not folded, and the Honors holds ({} when no row carries honors_of, so the overlay is byte-identical
+    to the fold before the field existed)."""
     curations = {}
     skipped = 0
     for row in rows:
@@ -120,7 +126,54 @@ def main():
             if row.get("validated_at"):
                 entry["validated_at"] = row.get("validated_at")
                 entry["validated_by"] = row.get("validated_by")
+    return curations, skipped, hold_honors_pairs(curations, rows)
 
+
+def hold_honors_pairs(curations, rows):
+    """Apply `honors_of` to the folded overlay, in place. A bot's merge_into that would join an Honors id and its
+    base (directly, through a chain, or through a third id both land on) leaves the overlay and is reported under
+    `held`; a person's merge stands and that pair's honors_of is set aside, reported under `set_aside`."""
+    import honors_of as ho
+    hmap = ho.honors_map(curations)
+    if not hmap:
+        return {}
+    merge_into = {cid: v["merge_into"] for cid, v in curations.items() if v.get("merge_into")}
+    merge_by = {r["course_id"]: r.get("reviewer_email") for r in rows
+                if (r.get("field") or "").strip() == "merge_into" and r.get("value")}
+    _, held, person_wins = ho.hold_merges(merge_into, hmap, merge_by)
+    for h in held:
+        src = h["merge_source"]
+        curations[src].pop("merge_into", None)
+        if not any(k in FIELDS for k in curations[src]):
+            del curations[src]
+    for p in person_wins:
+        hid = p["honors_id"]
+        if hid in curations:
+            curations[hid].pop(ho.FIELD, None)
+            if not any(k in FIELDS for k in curations[hid]):
+                del curations[hid]
+    return {"held": held, "set_aside": person_wins}
+
+
+def main():
+    if not KEY:
+        sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
+    rows = fetch_rows()
+    curations, skipped, honors = fold_rows(rows)
+    out = overlay_doc(curations, honors, datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+    with open(OUT, "w", encoding="utf-8") as f:
+        f.write(serialize(out))
+    print(f"wrote {OUT}: {len(curations)} curated course_ids "
+          f"({len(rows)} rows from Supabase, {skipped} non-overlay fields skipped)")
+    print("Review the diff, then commit kb/coci_curation.json.")
+
+
+def serialize(doc):
+    return json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
+
+
+def overlay_doc(curations, honors, synced_at):
+    """The overlay document kb/coci_curation.json holds."""
     out = {
         "_about": ("Human curation overlay for the COCI staging KB. Git-canonical and "
                    "reviewable. Synced from the Supabase kb_curation table by "
@@ -129,16 +182,16 @@ def main():
                    "Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated "
                    "common_courses.json / course_crosswalk.json."),
         "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-        "_synced_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "_synced_at": synced_at,
         "count": len(curations),
         "curations": dict(sorted(curations.items())),
     }
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-    print(f"wrote {OUT}: {len(curations)} curated course_ids "
-          f"({len(rows)} rows from Supabase, {skipped} non-overlay fields skipped)")
-    print("Review the diff, then commit kb/coci_curation.json.")
+    # Present only when a hold or a set-aside happened: otherwise the field leaves the overlay as it was.
+    if honors.get("held"):
+        out["_honors_held"] = honors["held"]
+    if honors.get("set_aside"):
+        out["_honors_set_aside"] = honors["set_aside"]
+    return out
 
 
 if __name__ == "__main__":

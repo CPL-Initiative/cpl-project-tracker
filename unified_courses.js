@@ -483,6 +483,18 @@
       })
       .catch(function () { return {}; });
   }
+  // Live Honors equivalences (field=honors_of, S653): course_id = the Honors
+  // M-ID, value = its base. Returned as {honors id: base id}; the worklist reads
+  // it to keep each pair apart (kb/honors_of.py holds the same rule server-side).
+  function fetchHonorsOf() {
+    return fetchAllRows("/rest/v1/kb_curation?select=course_id,value&field=eq.honors_of&order=course_id.asc")
+      .then(function (arr) {
+        var m = {};
+        arr.forEach(function (x) { if (x.value) m[x.course_id] = x.value; });
+        return m;
+      })
+      .catch(function () { return {}; });
+  }
   // Locked curated anchors (common_courses.json) are firewalled — the daily overlay
   // sync never overwrites them. A signed-in reviewer can still PROPOSE a discipline
   // correction, recorded in kb_curation under the `anchor_discipline_proposal` field.
@@ -1562,7 +1574,7 @@
         // title-firewalled — like the anchor it stands in for.
         if (/^UC-CUR-/.test(target)) { urow.kind = "Unified"; urow.id_system = "Unified"; }
         else if (/\sC\d{4}/.test(target)) { urow.kind = "Course"; urow.id_system = "CCN-ID"; }
-        else if (/\sM[0-9A-Z]{4}\b/.test(target)) { urow.kind = "Course"; urow.id_system = "M-ID"; }
+        else if (/\sM[0-9A-Z]{4}H?\b/.test(target)) { urow.kind = "Course"; urow.id_system = "M-ID"; }
         else { urow.kind = "Course"; urow.id_system = "C-ID"; }
       }
       var official = urow.id_system === "C-ID" || urow.id_system === "CCN-ID";
@@ -2524,8 +2536,8 @@
       var boxCss = "flex:1;min-width:0;display:flex;flex-direction:column;overflow:auto;background:var(--surface-opaque);padding:18px 20px;font-size:.9rem;";
       var goCss = "padding:7px 14px;border:none;border-radius:6px;background:var(--cobalt);color:var(--on-accent);font-weight:600;cursor:pointer;";
       var skipCss = "padding:7px 14px;border:1px solid #cbd5e1;border-radius:6px;background:var(--surface-opaque);cursor:pointer;";
-      Promise.all([loadSuggestions(), fetchDismissals()]).then(function (res) {
-        var data = res[0], dismissed = res[1];
+      Promise.all([loadSuggestions(), fetchDismissals(), fetchHonorsOf()]).then(function (res) {
+        var data = res[0], dismissed = res[1], honorsOf = res[2] || {};
         var anchored = (data.groups || []).map(function (g) { g._kind = "anchored"; return g; });
         // Curated-anchor duplicates lane (2026-09-04): the May 2026 curated
         // common-course anchors — the locked, read-only rows — whose title and
@@ -2576,7 +2588,15 @@
         // liveMergePending covers members with no in-payload row (e.g. a
         // Stand-Alone folded this cycle) so a confirmed group can't re-offer.
         var mergedAway = function (id) { return (byId[id] && byId[id]._mergedAway) || !!liveMergePending[id]; };
-        function liveMembers(g) { return g.members.filter(function (m) { return !mergedAway(m.id); }); }
+        // An Honors M-ID never joins its base (`honors_of`, S653): when both sit in
+        // one group the Honors member leaves it, so the pair is never offered and
+        // the rest of the group still can be. Pairwise, so a third id merging into
+        // the base changes nothing here (a group-signature dismissal re-offers).
+        function liveMembers(g) {
+          var live = g.members.filter(function (m) { return !mergedAway(m.id); });
+          var ids = {}; live.forEach(function (m) { ids[m.id] = 1; });
+          return live.filter(function (m) { var b = honorsOf[m.id]; return !(b && ids[b]); });
+        }
         // ── CCR filter coupling (DECOUPLED — Sam, S72 followup item 1) ───────
         // The worklist used to mirror the main CCR table's filters (discipline,
         // subject, source, credit, …) behind a "Match the CCR table filters"

@@ -15970,7 +15970,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 73,
+   "count": 74,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16809,6 +16809,23 @@
      "title": "Funding vocabulary: Sam's rulings in his words (CLAUDE.md offload)",
      "type": null,
      "updated": "2026-10-21"
+    },
+    {
+     "created": "2026-11-14",
+     "governs": [],
+     "path": "docs/reference/honors_of_design.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "m-id",
+      "honors",
+      "curation-safety",
+      "rule-7",
+      "rule-10"
+     ],
+     "title": "Honors M-IDs and the honors_of field (design)",
+     "type": null,
+     "updated": ""
     },
     {
      "created": "2026-07-10",
@@ -27395,5 +27412,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1478
+ "total": 1479
 }

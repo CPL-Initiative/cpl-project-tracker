@@ -87,6 +87,10 @@ OFFICIAL = {"CCN-ID", "C-ID"}
 BAND_RE = re.compile(r"^[A-Z]{2,4} M(\d)")
 HONORS_RE = re.compile(r"\s*[-–—:,]+\s*(Honors)$", re.I)
 
+sys.path.insert(0, SD)
+from honors_of import honors_map, without_honors_pairs  # noqa: E402  (the one rule, kb/honors_of.py)
+HONORS = {}
+
 
 def load_payload():
     p = os.path.join(ROOT, "unified_courses_suggestions.js")
@@ -103,6 +107,8 @@ def load_overlay():
     merged = {}        # course_id -> target (existing merge_into rows)
     titles = {}        # course_id -> curator unified_title
     dismissed = set()  # Keep-as-is signatures
+    global HONORS
+    HONORS = honors_map(cur)  # {Honors M-ID: base}: the pair is never planned (S653)
     for cid, v in cur.items():
         if not isinstance(v, dict):
             continue
@@ -163,6 +169,11 @@ def main():
             mem = [m for m in (g.get("members") or [])
                    if m.get("id") not in merged
                    and not (m["id"] in seen_ids or seen_ids.add(m["id"]))]
+            # An Honors M-ID leaves a group that holds its base (honors_of, pairwise).
+            keep = set(without_honors_pairs([m["id"] for m in mem], HONORS))
+            if len(keep) < len(mem):
+                buckets[f"{lane}: Honors member held apart from its base"] += 1
+                mem = [m for m in mem if m["id"] in keep]
             if len(mem) < 2:
                 buckets[f"{lane}: already consumed (<2 live members)"] += 1
                 continue

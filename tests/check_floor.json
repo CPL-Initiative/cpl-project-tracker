@@ -348,6 +348,7 @@
     "uc_filter_bar_cleanup.test.js": 8,
     "uc_fixed_layout.test.js": 8,
     "uc_flag_chips.test.js": 7,
+    "uc_honors_of_worklist.test.js": 7,
     "uc_impact_columns.test.js": 14,
     "uc_keep_asis.test.js": 12,
     "uc_kinship_gate.test.js": 29,

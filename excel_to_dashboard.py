@@ -8302,7 +8302,7 @@ def legacy_anchor_duplicate_groups(cc, cat, sg, merge_into, rows, disc_of=None, 
         # system from the id shape, the way applyMergeLocal does client-side.
         if re.search(r"\sC\d{4}", i):
             k = "CCN-ID"
-        elif re.search(r"\sM[0-9A-Z]{4}\b", i):
+        elif re.search(r"\sM[0-9A-Z]{4}H?\b", i):   # H: an Honors M-ID (kb/honors_of.py)
             k = "M-ID"
         else:
             k = "C-ID"
@@ -8492,8 +8492,10 @@ def export_unified_courses():
         c = curation.get(cid)
         if not c:
             return None
+        # `honors_of` (S653) is the same kind of record: a bot-written
+        # equivalence on the Honors id, not a review of the row.
         return c if any(k for k in c if k not in (
-            "merge_dismissed", "reviewed_by", "reviewed_at",
+            "merge_dismissed", "honors_of", "reviewed_by", "reviewed_at",
             "validated_at", "validated_by")) else None
 
     def reviewed_by_of(cid):
@@ -8528,6 +8530,15 @@ def export_unified_courses():
         _t = _c.get("merge_into")
         if _t:
             merge_into[_cid] = _t
+    # An Honors M-ID and its base (`honors_of`, S653) never fold together: a
+    # merge that would join them is cut here, pairwise, before chains flatten.
+    # kb/_apply_curation.py already resolved a person's merge (Rule 10) when it
+    # wrote the overlay, so any join left here is cut. No-op without the field.
+    import honors_of as _honors_of
+    merge_into, _honors_held, _ = _honors_of.hold_merges(
+        merge_into, _honors_of.honors_map(curation))
+    if _honors_held:
+        print(f"  honors_of: {len(_honors_held)} merge(s) held apart from their base")
     # Chains are flattened BEFORE the member lists are built — see
     # flatten_merge_chains(). Building merge_members from the raw one-hop map is
     # what let a mid-chain identity render as its own row while also being
