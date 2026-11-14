@@ -343,6 +343,9 @@ jobs:
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)
         run: python3 tests/harvest_no_closed_list_diagnosis_test.py
+      # The no-closed-list lookup's self-test on the committed captures (#3299 slice A): none false. Pure stdlib.
+      - name: Harvest no-closed-list lookup census (recall and false matches)
+        run: python3 tests/harvest_ncl_lookup_census_test.py
       - name: Program requirements dated reads (the SQL's aggregate in Python, verify first)
         run: python3 tests/program_requirements_dated_reads_test.py
       # A record's heading against its program, and a PDF that prints the number after (S644):

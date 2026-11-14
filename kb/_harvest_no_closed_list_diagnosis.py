@@ -174,7 +174,11 @@ def diagnose(members: list, export: dict, mem: list, captures: dict | None = Non
         e = export.get((college, cn)) or {}
         reason, extra = classify(codes.get(college), cn, rows_by_cn, active_codes)
         cap = (captures or {}).get((college, cn))
+        # A capture since S652 looks a no-closed-list program up by title and award and files the answer
+        # beside the method (catalog_lookup: found, not_listed or not_found); an older one never looked.
+        lookup = (cap or {}).get("catalog_lookup") or {}
         looked = "no capture entry" if cap is None else (
+            "looked up: " + str(lookup.get("result")) if lookup else
             "never looked for" if cap.get("method") == "no_closed_list" and not cap.get("source") else "looked")
         p = {"college": college, "control_number": cn, "title": e.get("TITLE", ""), "reason": reason,
              "award": award_kind(e.get("AWARD")), "approved": approval_band(e.get("APPROVED DATE")),
