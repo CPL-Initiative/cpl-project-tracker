@@ -9448,14 +9448,10 @@ def export_unified_courses():
                 continue
             oid = m.get("ccn") or m.get("cid")
             tgt = row_by_id.get(oid) if oid else None
-            # honors_of: a fold that would join an Honors pair is refused, and the
-            # stand-alone falls through to the evidence lane like any match that
-            # could not auto-fold (#3313's review record, minor 2), so a person
-            # still sees its evidence. The CCR worklist still drops an Honors
-            # member from any group that holds its base (liveMembers).
-            refused = (tgt is not None and bool(_hpairs)
-                       and _honors_of.would_join(sid, oid, merge_into, _hpairs))
-            if not refused and tgt is not None and tgt.get("id_system") in ("C-ID", "CCN-ID"):
+            if (tgt is not None and _hpairs
+                    and _honors_of.would_join(sid, oid, merge_into, _hpairs)):
+                continue  # honors_of: the stand-alone stays apart from its partner
+            if tgt is not None and tgt.get("id_system") in ("C-ID", "CCN-ID"):
                 merge_into[sid] = oid
                 merge_members.setdefault(oid, []).append(sid)
                 tgt["sfold"] = tgt.get("sfold", 0) + 1

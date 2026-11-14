@@ -379,22 +379,25 @@ with tempfile.TemporaryDirectory() as td:
     loud = ho.report_joined([("H M1001H", "H M1001")], env={"GITHUB_ENV": envf})
     written = open(envf, encoding="utf-8").read().splitlines()
 check("health: no joined pair writes 0 and prints nothing", quiet == [] and written[0] == "HONORS_PAIRS_JOINED=0")
-check("health: a joined pair writes its count and a ::warning line",
-      written[1] == "HONORS_PAIRS_JOINED=1" and any(x.startswith("::warning title=Honors pair joined::") for x in loud)
-      and any("honors-pair-joined" in x for x in loud))
+check("health: a joined pair writes its count and one named build-log line, no second annotation",
+      written[1] == "HONORS_PAIRS_JOINED=1" and len(loud) == 1 and "honors-pair-joined" in loud[0]
+      and not loud[0].startswith("::"))
 check("health: outside Actions nothing is written", ho.report_joined([("A", "B")], env={}) and True)
 _wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
-check("health: the daily Summary step writes the count into its table",
-      "| Honors pairs joined | ${HONORS_PAIRS_JOINED:-not reported} |" in _wf)
+check("health: the daily Summary step writes the count into its table and one ::warning when non-zero",
+      "| Honors pairs joined | ${HONORS_PAIRS_JOINED:-not reported} |" in _wf
+      and _wf.count("::warning title=Honors pair joined::") == 1)
 _gen = open(os.path.join(ROOT, "excel_to_dashboard.py"), encoding="utf-8").read()
 check("health: the generator reports the count after check_apart, strict runs still fail",
       "_honors_of.report_joined(_hleft)" in _gen and 'os.environ.get("HONORS_OF_STRICT") == "1" or "--check" in sys.argv'
       in _gen)
-# A stand-alone R4 refuses falls through to the evidence lane (#3313's review record, minor 2).
+# A stand-alone R4 refuses stays out of the evidence lane (#3315/#3325 review, reader 5): sent to the lane, it sat in
+# a group whose first member is the official target, and the CCR worklist, which sees only stored merges, offered the
+# Honors id beside a base folded there in memory; a curator's confirm would be a person's merge that wins.
 _r4 = _gen[_gen.index("# ---- R4: singleton evidence folds"):_gen.index("# ---- C-ID articulation routing")]
-check("R4: a refused fold falls through to the evidence lane, never a bare continue",
-      "refused = (" in _r4 and "if not refused and tgt is not None" in _r4 and "_sg_lane.append((sid, sv, m))" in _r4
-      and "continue  # honors_of" not in _r4)
+check("R4: a refused fold skips the stand-alone (a bare continue), so the evidence lane never offers the pair",
+      "_honors_of.would_join(sid, oid, merge_into, _hpairs)):\n                continue  # honors_of" in _r4
+      and "if not refused" not in _r4)
 
 failed = [n for n, ok in results if not ok]
 for n, ok in results:

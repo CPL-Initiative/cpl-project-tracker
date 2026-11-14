@@ -301,9 +301,9 @@ def check_apart(merge_into, pairs, strict=False):
 
 def report_joined(left, env=None):
     """Put the joined-pair count where the daily run reports its health (COBIx's read of #3313, item 3): the count
-    goes to $GITHUB_ENV as HONORS_PAIRS_JOINED, which daily-dashboard.yml's Summary step writes into its table, and a
-    non-zero count returns a `::warning` annotation line for the run page. Outside Actions it writes nothing.
-    Returns the lines to print."""
+    goes to $GITHUB_ENV as HONORS_PAIRS_JOINED, which daily-dashboard.yml's Summary step writes into its table and
+    turns into one `::warning` annotation when non-zero. Outside Actions it writes nothing. Returns the build-log
+    lines to print."""
     env = os.environ if env is None else env
     n = len(left or [])
     path = env.get("GITHUB_ENV")
@@ -313,6 +313,4 @@ def report_joined(left, env=None):
     if not n:
         return []
     names = ", ".join(f"{h}/{b}" for h, b in left[:5])
-    return [f"  honors_of: WARNING honors-pair-joined: {n} pair(s) fold together after the in-memory folds: {names}",
-            f"::warning title=Honors pair joined::{n} Honors pair(s) fold together after the in-memory folds "
-            f"(honors-pair-joined): {names}"]
+    return [f"  honors_of: WARNING honors-pair-joined: {n} pair(s) fold together after the in-memory folds: {names}"]
