@@ -156,16 +156,21 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   header's lengths, never `24px`.
 - **The Veteran map and the Fact Sheet carry the public header (S653b).** The Veteran map (S651, #3294 `f0339e38`): built
   in `build_selfcontained.py`, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one column; since #3333
-  it embeds the 480px logos (`sierra/cpl-initiative-logo-navy-480.png`, `sierra/cpl-initiative-logo-480.png`; 225,221 to
-  166,896 bytes) and no public comment names the vault path. Guard `tests/veteran_map_public_header.test.js`. The Fact Sheet
-  (#3333 `908d9b8d`, read live 19:51Z 2026-11-14): in `fact-sheet/index.html` (no generator writes it), between the skip
-  link and the masthead; its `--cplh-*` roles map onto `factsheet.css` `:root`; the masthead is a `div`, so the page has one
-  banner; the header never prints; nothing frames the page, so it has no embed case. Guard `tests/factsheet_public_header.test.js`.
+  it embeds the 480px logos. Guard `tests/veteran_map_public_header.test.js`. The Fact Sheet (#3333 `908d9b8d`, read live
+  19:51Z 2026-11-14): in `fact-sheet/index.html`, between the skip link and the masthead; the masthead is a `div`, so the
+  page has one banner; nothing frames the page, so it has no embed case. Guard `tests/factsheet_public_header.test.js`.
+  **DECIDED:** the Fact Sheet shows one logo, the CPL Initiative's, in the header; the masthead's California Community
+  Colleges-only logo is out (Sam, in session S653b, 2026-11-14: "Don't need the ccc logo added to the top of fact
+  sheet. Leave masthead in." then "Confusion by me on masthead vs header. I just want the ccc Cpl back in and the ccc
+  only logo out"; then "Picture 2: CPL logo only"; `sam-fact-sheet-no-header-logo-2026-11-14`; #3342).
+  **DECIDED:** the header carries the page's controls, moved whole (same ids): map.rccd.edu, the snapshot chip, Collapse
+  all, Print or save; the masthead is the title. On paper the header prints its logo, the map link and the chip (Sam,
+  S653b, 2026-11-14: "2 is right. Can you move all the buttons and map website link and update chip all into the header
+  to clean up the title?"; `sam-fact-sheet-controls-into-header-2026-11-14`; #3342).
   **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own "CPL Fact Sheet" link opens a
-  second copy; that test checks the links against the Veteran map's copy, not the vault's header; the header's logo lockup
-  sits above the masthead's own California Community Colleges logo (told to Sam in session; no change made); a theme choice
-  on a public page sets `cpl_theme` for the whole github.io origin, COBI included (the existing design). The records as they
-  stood: lessons, *Moved from the lane (S651 checkpoint)* and *(S653b)*.
+  second copy; that test checks the links against the Veteran map's copy, not the vault's header; a theme choice
+  on a public page sets `cpl_theme` for the whole github.io origin, COBI included (the existing design). Records: lessons,
+  *Moved from the lane (S651 checkpoint)* and *(S653b)*.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the
@@ -199,9 +204,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 ✅ **① One card per project and ② the one panel are built (S509, #2538).** Their records moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S650 checkpoint)*.
 
-✅ **③ Remediation in the browser is built (S509):** a dropped .pptx or .docx read here by `library_remediate.js` over the vendored `jszip.min.js`, *Fixed for you* and *Needs you*, *Remediate and download*, and *Draft from the picture* through `alt-text-draft`. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S517)*.
-
-✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.
+✅ **③ Remediation in the browser (S509) and ④ ⑤ the contrast checks (S510, S511) are built.** Their summaries moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S653b, T9)*.
 
 
 ✅ **⑥ to ⑰ are built** (S512 to S576: Word headers and text boxes, PDFs, workbooks, charts, drafting first, slide titles and scripts, every draft applied, Finish remediation, last modified first and the draft's version named). Their records moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S577)*.

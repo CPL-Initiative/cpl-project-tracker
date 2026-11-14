@@ -35,7 +35,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
    what it is, Sam, 2026-10-26), and Light and Dark on the cpl_theme contract. A copy of the shared
    public header; two departures for this page: its --cplh-* roles map onto the Fact Sheet's First
    Light tokens on factsheet.css's :root (so its dark is the page's dark), and its row is the
-   page's measure (--maxw and the 22px gutter), so the logo lines up with the masthead below it. It never prints. The logos are the tracker's
+   page's measure (--maxw and the 22px gutter), so the logo lines up with the masthead below it. On the Fact Sheet the page's controls sit in it, and factsheet.css prints its logo, the map link and the chip. The logos are the tracker's
    480px copies in ../sierra/. tests/factsheet_public_header.test.js holds it. */
 .cplh{position:relative;z-index:50;background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:var(--font-body);font-size:.95rem;line-height:1.4}
 .cplh-in{position:relative;max-width:var(--maxw);margin:0 auto;padding-block:.6rem;padding-left:max(22px,env(safe-area-inset-left,0px));padding-right:max(22px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem}
@@ -69,6 +69,29 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
       <img class="cplh-light" src="../sierra/cpl-initiative-logo-navy-480.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
       <img class="cplh-dark" src="../sierra/cpl-initiative-logo-480.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
     </a>
+    <!-- The page's controls, moved whole from the masthead (Sam, S653b, 2026-11-14: "Can you move all
+         the buttons and map website link and update chip all into the header"): the same elements,
+         ids and classes, so factsheet.js, factsheet_edit.js and factsheet_word.js find them here.
+         On paper the header keeps its logo, the map link and the chip (factsheet.css). -->
+    <div class="cplh-page" role="group" aria-label="Fact sheet tools">
+      <a href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu</a><span data-bind="as_of_label" hidden>live systemwide data</span>
+      <span id="live-chip" class="live-chip" role="status" aria-live="polite" title="Headline progress figures are pulled live from the MAP CPL Dashboard each time this page loads.">
+        <span class="dot" aria-hidden="true"></span><span id="live-chip-text">Live data</span>
+      </span>
+      <button class="btn" id="btn-collapse-all" type="button" title="Collapse or expand all sections">Collapse all</button>
+      <!-- Curate: shipped HIDDEN and revealed by factsheet_edit.js only for a signed-in
+           reviewer (or ?curate=1). Hidden in the MARKUP, not just by script, so the public
+           never sees a flash of it. This is presentation, not security — the real gate is
+           RLS is_allowed_reviewer() on factsheet_overrides. -->
+      <button class="btn" id="btn-curate" type="button" hidden aria-pressed="false" title="Sign in to edit this fact sheet">✎ Curate</button>
+      <details class="save-menu">
+        <summary class="btn">Print or save</summary>
+        <div class="save-menu-list">
+          <button class="btn" id="btn-print" type="button" title="Print or save this fact sheet as a PDF">Print / Save PDF</button>
+          <button class="btn" id="btn-word" type="button" title="Download this fact sheet as a Word document">Save as Word</button>
+        </div>
+      </details>
+    </div>
     <div class="cplh-end">
       <nav class="cplh-links" aria-label="CPL pages">
         <button type="button" class="cplh-word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Links</button>
@@ -145,32 +168,11 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
 <!-- ── Masthead ──────────────────────────────────────────────────────────── -->
 <div class="masthead">
   <div class="wrap">
-    <img class="logo" src="./img/ccc-logo.png" alt="California Community Colleges logo">
+    <!-- The masthead is the title alone (Sam, S653b, 2026-11-14: "2 is right. Can you move all the
+         buttons and map website link and update chip all into the header to clean up the title?").
+         The map link, the snapshot chip, Collapse all and Print or save sit in the header above. -->
     <div class="mh-text">
       <h1>Credit for Prior Learning (CPL) Initiative Fact Sheet</h1>
-      <div class="sub"><a href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu</a><span data-bind="as_of_label" hidden>live systemwide data</span></div>
-      <!-- The tools sit under the title (Sam, 2026-10-30: one header row, no bar
-           above it). Ask Sierra is the chip in the window's lower right
-           (../sierra/sidebar.js), as on the other public pages; Save as Word
-           joined Print / Save PDF in one Print or save menu. -->
-      <div class="mh-tools no-print" role="group" aria-label="Fact sheet tools">
-        <span id="live-chip" class="live-chip" role="status" aria-live="polite" title="Headline progress figures are pulled live from the MAP CPL Dashboard each time this page loads.">
-          <span class="dot" aria-hidden="true"></span><span id="live-chip-text">Live data</span>
-        </span>
-        <button class="btn" id="btn-collapse-all" type="button" title="Collapse or expand all sections">Collapse all</button>
-        <!-- Curate: shipped HIDDEN and revealed by factsheet_edit.js only for a signed-in
-             reviewer (or ?curate=1). Hidden in the MARKUP, not just by script, so the public
-             never sees a flash of it. This is presentation, not security — the real gate is
-             RLS is_allowed_reviewer() on factsheet_overrides. -->
-        <button class="btn" id="btn-curate" type="button" hidden aria-pressed="false" title="Sign in to edit this fact sheet">✎ Curate</button>
-        <details class="save-menu">
-          <summary class="btn">Print or save</summary>
-          <div class="save-menu-list">
-            <button class="btn" id="btn-print" type="button" title="Print or save this fact sheet as a PDF">Print / Save PDF</button>
-            <button class="btn" id="btn-word" type="button" title="Download this fact sheet as a Word document">Save as Word</button>
-          </div>
-        </details>
-      </div>
     </div>
   </div>
 </div>

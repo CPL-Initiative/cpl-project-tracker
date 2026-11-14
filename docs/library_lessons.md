@@ -1164,3 +1164,14 @@ From the *One queue check* bullet: Open (#3227's review):
   `x.js?v=<hash>`; the starter and a public page are read from Pages, so the first card-published piece carried the
   stamp into the repo and `library_pages.test.js` failed on `main`. `unstamp` in `apply_edits.mjs` and
   `library_publish.py`. That test also lets MAP's two office addresses stand as help links (`OFFICE_ADDRESSES`).
+
+From the *Veteran map and the Fact Sheet* bullet, when the Fact Sheet's logo was settled (#3342), these phrases moved
+here verbatim: "(`sierra/cpl-initiative-logo-navy-480.png`, `sierra/cpl-initiative-logo-480.png`; 225,221 to 166,896 bytes)"; "and no public comment names the vault path"; "(no generator writes it)"; "its `--cplh-*` roles map onto `factsheet.css` `:root`;".
+
+## Moved from the lane (S653b, T9)
+
+Moved verbatim from `docs/reference/lanes/library.md` on 2026-11-14 to keep the lane under 20,000 bytes.
+
+✅ **③ Remediation in the browser is built (S509):** a dropped .pptx or .docx read here by `library_remediate.js` over the vendored `jszip.min.js`, *Fixed for you* and *Needs you*, *Remediate and download*, and *Draft from the picture* through `alt-text-draft`. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S517)*.
+
+✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.

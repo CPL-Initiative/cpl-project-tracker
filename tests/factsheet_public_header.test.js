@@ -56,6 +56,48 @@ check("the public header is the page's one banner", hdr && hdr.getAttribute("rol
   && banners[0] === hdr, banners.map((b) => b.className).join(","));
 check("the masthead keeps its class and its title, as a div", doc.querySelector("div.masthead h1")
   && /Fact Sheet/.test(doc.querySelector("div.masthead h1").textContent), "no div.masthead h1");
+// One logo on the page, the CPL Initiative's, in the header (Sam, in session S653b, 2026-11-14:
+// "Don't need the ccc logo added to the top of fact sheet. Leave masthead in." then "Confusion by
+// me on masthead vs header. I just want the ccc Cpl back in and the ccc only logo out", and, shown
+// three pictures, "Picture 2: CPL logo only"; cpl_memory sam-fact-sheet-no-header-logo-2026-11-14).
+// The masthead holds no image and nothing loads the California Community Colleges-only logo.
+//
+// Then the masthead became the title alone (Sam, in session S653b, 2026-11-14, after picking
+// Picture 2: "2 is right. Can you move all the buttons and map website link and update chip all
+// into the header to clean up the title?"; cpl_memory sam-fact-sheet-controls-into-header-2026-11-14).
+// The map link, the snapshot chip, Collapse all and Print or save moved whole into the header,
+// between the logo and Links: the same elements and ids, so the page's scripts still find them.
+// The header prints its logo, the map link and the chip on this page, so the masthead needs no
+// print-only logo and paper shows one logo, the CPL Initiative's.
+const mh = doc.querySelector("div.masthead");
+const mhKids = mh ? [...mh.querySelectorAll("*")].map((e) => e.tagName.toLowerCase()) : [];
+check("the masthead holds the title and nothing else: no image, link, button or chip",
+  mh && mh.querySelectorAll("img, a, button, summary, details, #live-chip, [data-bind]").length === 0
+  && mhKids.filter((t) => t === "h1").length === 1 && mh.textContent.trim() === mh.querySelector("h1").textContent.trim(),
+  mhKids.join(","));
+const page = doc.querySelector("header.cplh .cplh-in > .cplh-page");
+const inHdr = (sel) => !!(page && page.querySelector(sel)) && doc.querySelectorAll(sel).length === 1;
+check("the map link sits in the header's page group, its first item",
+  page && page.firstElementChild && page.firstElementChild.tagName === "A"
+  && page.firstElementChild.getAttribute("href") === "https://map.rccd.edu"
+  && page.firstElementChild.textContent.trim() === "map.rccd.edu", "map link");
+check("the snapshot chip sits in the header, the same element", inHdr("#live-chip.live-chip[role=status]") && inHdr("#live-chip-text"), "chip");
+check("Collapse all sits in the header, the same button", inHdr("button.btn#btn-collapse-all")
+  && doc.getElementById("btn-collapse-all").textContent.trim() === "Collapse all", "collapse");
+check("Print or save sits in the header, its menu whole", inHdr("details.save-menu") && inHdr("#btn-print") && inHdr("#btn-word")
+  && /Print or save/.test(page.querySelector("details.save-menu > summary").textContent), "print");
+check("the hidden Curate button and the as-of label moved with them", inHdr("#btn-curate[hidden]")
+  && page.querySelector('[data-bind="as_of_label"]') === doc.querySelector('[data-bind="as_of_label"]'), "curate");
+const order = page ? [...doc.querySelector("header.cplh .cplh-in").children].map((e) => e.className) : [];
+check("the bar runs logo, the page group, then Links and Theme", order.join(" ") === "cplh-logo cplh-page cplh-end", order.join(" "));
+check("the page group is a named group", page && page.getAttribute("role") === "group" && !!page.getAttribute("aria-label"), "");
+const pcss = (css.match(/@media print \{([\s\S]*)/) || [, ""])[1];
+check("on paper the header prints its logo, the map link and the chip, and hides the controls",
+  /header\.cplh \{ display: block;/.test(pcss)
+  && /header\.cplh \.cplh-end, header\.cplh \.btn, header\.cplh \.save-menu \{ display: none !important; \}/.test(pcss)
+  && /header\.cplh \.cplh-logo img\.cplh-light \{ display: block !important; \}/.test(pcss)
+  && !/logo-print/.test(html + css), "print override");
+check("nothing on the page loads the California Community Colleges-only logo", !/ccc-logo/.test(html) && !/ccc-logo/.test(css), "ccc-logo still referenced");
 const logo = hdr && hdr.querySelector("a.cplh-logo");
 check("the logo links to the Chancellor's Office CPL page", logo && logo.getAttribute("href") === CO_CPL, logo && logo.getAttribute("href"));
 
@@ -98,7 +140,8 @@ check("the header's ground, ink, link and line follow the page's dark", ["--surf
   .every((t) => new RegExp(t + "\\s*:").test(darkBlock)), "dark block");
 const mins = [...hcss.matchAll(/min-(?:height|width):\s*([\d.]+)px/g)].map((m) => +m[1]);
 check("the header's controls keep the 25px public floor", mins.length >= 3 && mins.every((n) => n >= 25), mins.join(","));
-check("the header never prints", /@media print\{\.cplh\{display:none\}\}/.test(hcss), "no print rule");
+// The shared copy keeps its rule; factsheet.css's header.cplh outranks it for this page alone.
+check("the shared copy keeps its print rule, which factsheet.css overrides here", /@media print\{\.cplh\{display:none\}\}/.test(hcss), "no print rule");
 
 // ── Running the header's script: the theme words set data-theme and cpl_theme ──
 {

@@ -58,8 +58,6 @@
   --hunter-edge:  rgba(44,96,26,.25);
   --mustard-tint: rgba(139,104,0,.10);     /* the stale chip */
   --mustard-edge: rgba(139,104,0,.30);
-  --logo-plate:   transparent;             /* the CCC logo is drawn on white */
-  --logo-pad:     0;
   --radius: 12px;
   --radius-sm: 8px;
   --shadow: 0 1px 3px rgba(28,28,26,.08), 0 8px 24px rgba(28,28,26,.06);
@@ -97,7 +95,6 @@
     --bar-bg: rgba(30,30,28,.92);
     --hunter-tint: rgba(137,166,127,.12); --hunter-edge: rgba(137,166,127,.35);
     --mustard-tint: rgba(227,179,65,.10); --mustard-edge: rgba(227,179,65,.35);
-    --logo-plate: #FFFFFF; --logo-pad: 6px 10px;
     color-scheme: dark;
   }
 }
@@ -140,12 +137,23 @@ a:hover { text-decoration-thickness: 2px; }
 
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
 
-/* ── The tools under the title (screen only) ───────────────────────────
-   Sam, 2026-10-30: the sticky bar above the masthead is gone; its tools sit in
-   one row under the title. Ask Sierra is the chip in the lower right
-   (../sierra/sidebar.js), and Save as Word joined Print / Save PDF in the
-   Print or save menu. */
-.mh-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 10px; }
+/* ── The page's controls, in the public header ─────────────────────────
+   Sam, S653b, 2026-11-14: "Can you move all the buttons and map website link and
+   update chip all into the header to clean up the title?" The header's row runs:
+   the logo; this group (map.rccd.edu, the snapshot chip, Collapse all, Print or
+   save); then Links and Theme. Its words take the header's 25px lengths and link
+   role. Ask Sierra stays the chip in the lower right (../sierra/sidebar.js). */
+.cplh-page { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.1rem; }
+.cplh-page > a { display: inline-flex; align-items: center; min-height: 25px; font-weight: 600; text-underline-offset: 3px; }
+.cplh-page .btn { min-height: 25px; min-width: 25px; color: var(--cplh-link); }
+.cplh-page .live-chip { min-height: 25px; box-sizing: border-box; }
+/* At desktop the row holds all three parts once its measure grows by 110px (the logo then
+   sits 55px outside the title's edge); narrower, it wraps Links and Theme to a second row. */
+@media (min-width: 1060px) { header.cplh .cplh-in { max-width: calc(var(--maxw) + 110px); } }
+@media (max-width: 560px) {
+  /* Three rows at phone width: the logo; the page's controls; Links and Theme. */
+  .cplh-page { flex-basis: 100%; }
+}
 .save-menu { position: relative; }
 .save-menu > summary { list-style: none; }
 .save-menu > summary::-webkit-details-marker { display: none; }
@@ -241,10 +249,10 @@ a:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; border-
 /* ── Masthead ──────────────────────────────────────────────────────────── */
 .masthead { background: var(--surface); border-bottom: 4px solid var(--mustard-fill); }
 .masthead .wrap { padding-top: 26px; padding-bottom: 24px; display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
-.masthead img.logo { height: 58px; width: auto; background: var(--logo-plate); padding: var(--logo-pad); border-radius: var(--radius-sm); box-sizing: content-box; }
+/* The masthead is the title alone: the header above carries the CPL Initiative's logo
+   ("Picture 2: CPL logo only") and the page's controls (Sam, S653b, 2026-11-14). */
 .masthead .mh-text { min-width: 240px; flex: 1; }
 .masthead h1 { margin: 4px 0 2px; font-size: 1.9rem; line-height: 1.15; color: var(--seal-blue-text); }
-.masthead .sub { color: var(--muted); font-size: 1rem; }
 
 /* ── Section + headings ────────────────────────────────────────────────── */
 main { padding: 8px 0 60px; }
@@ -447,7 +455,7 @@ figure figcaption { font-size: .85rem; color: var(--muted); padding: 8px 14px; b
    A link in a line of text is held to the line's height (15-18px here), under
    the 24px floor. Vertical padding on an inline box enlarges what a press can
    land on without moving the line: the padding does not enter the line box. */
-.mh-text .sub a, .note a, figure figcaption a, h3.h-sub a { padding-block: 5px; }
+.note a, figure figcaption a, h3.h-sub a { padding-block: 5px; }
 
 /* ── TOC ───────────────────────────────────────────────────────────────── */
 .toc { columns: 2; column-gap: 28px; font-size: .94rem; }
@@ -497,6 +505,17 @@ footer.foot strong { color: var(--ink); }
   .masthead { border-bottom-width: 3px; }
   .masthead .wrap { padding: 6px 0 10px; }
   .masthead h1 { font-size: 18pt; }
+  /* The header prints on this page alone (the shared rule hides it): its logo, the map
+     link and the snapshot chip, one source for each. Links, Theme, Collapse all, Curate and
+     Print or save stay on screen. The light lockup prints whatever the screen theme. */
+  header.cplh { display: block; background: none; border-bottom: 0; }
+  header.cplh .cplh-in { max-width: none; padding: 0 0 4px; }
+  header.cplh .cplh-end, header.cplh .btn, header.cplh .save-menu { display: none !important; }
+  header.cplh .cplh-logo img { height: 40px; }
+  header.cplh .cplh-logo img.cplh-light { display: block !important; }
+  header.cplh .cplh-logo img.cplh-dark { display: none !important; }
+  header.cplh .live-chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  header.cplh .live-chip .dot { animation: none; }
   /* Let long sections (KPIs, Statewide, Funding, Teams) flow across pages rather
      than getting shoved whole to the next page with a big blank gap. The atomic
      cards below keep break-inside:avoid; heading-cohesion is protected separately. */
