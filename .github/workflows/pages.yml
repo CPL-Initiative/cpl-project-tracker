@@ -176,6 +176,13 @@ jobs:
             "_site/library/index.html"
             "_site/cpl-opportunity/index.html"
             "_site/veteran-sprint-map/ca_cpl_map_selfcontained.html"
+            # Loaded by a served page: the budget curator (comms.js embeds it), the PDF
+            # reader the Library uses (library.js), the privacy page, and SkyView.
+            "_site/budget-support/web/curator.html"
+            "_site/vendor/pdfjs/pdf.min.mjs"
+            "_site/vendor/pdfjs/pdf.worker.min.mjs"
+            "_site/privacy.html"
+            "_site/prototype/skyview.html"
             "_site/kb/liftoff_plan.json"
             "_site/kb/project_lifecycle.json"
             "_site/kb/coci_articulations.json"

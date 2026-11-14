@@ -45,6 +45,41 @@ check("the served pages and scripts include kb/ files (" + served.filter((f) => 
   served.some((f) => f.startsWith("kb/")));
 const reach = served.filter((f) => fs.readFileSync(f, "utf8").indexOf("kb/receipts") >= 0);
 check("no served page or script reaches kb/receipts (" + served.length + " files)", served.length > 100 && reach.length === 0, reach.join(", "));
+// No served page or script loads a withheld internal path (#3104 follow-up, #3280 review): a fetch(, an import, or a
+// src= / href= whose string resolves under a withheld folder, names a cpl_memory seed, or ends in .py or .sql. Only
+// those shapes count: comments and message text that mention such a path (college_briefing.js, csm_workspace.js,
+// first_light_tab.js) are not loads. A load of one of these would 404 on the site, so it means the path needs a
+// publish line, or the page needs another source.
+const WITHHELD_ROOTS = ["kb/contacts_harvest", "kb/college_identity", "kb/docs_audit", "kb/memory_audit", "kb/migrations", "map", ".claude"];
+function loadTargets(src) {
+  const out = [];
+  const shapes = [
+    /\bfetch\(\s*(["'`])([^"'`]*)\1/g,
+    /\bimport\(\s*(["'`])([^"'`]*)\1/g,
+    /\bimport\s[^;"'`]*?\bfrom\s*(["'])([^"']*)\1/g,
+    /^\s*import\s*(["'])([^"']*)\1/gm,
+    /\b(?:src|href)\s*=\s*(["'`])([^"'`]*)\1/g,
+  ];
+  shapes.forEach((re) => { for (const m of src.matchAll(re)) out.push(m[2]); });
+  return out;
+}
+function withheldTarget(t) {
+  if (/^([a-z]+:|\/\/|#)/i.test(t)) return false;           // another site, mailto:, data:, an in-page anchor
+  let p = t.split(/[?#]/)[0].replace(/^\//, "");
+  while (/^\.\.?\//.test(p)) p = p.replace(/^\.\.?\//, "");
+  return WITHHELD_ROOTS.some((r) => p === r || p.startsWith(r + "/")) || /^kb\/cpl_memory_[^/]*seed[^/]*\.json$/.test(p)
+    || /\.(py|sql)$/.test(p);
+}
+const loads = [];
+served.forEach((f) => loadTargets(fs.readFileSync(f, "utf8")).filter(withheldTarget).forEach((t) => loads.push(f + ": " + t)));
+check("no served page or script fetches, imports or links a withheld internal path or a .py/.sql file", loads.length === 0, loads.slice(0, 10).join("; "));
+const planted = 'fetch("kb/migrations/2026-11-12_first_light_marks.sql").then(r => r.text());\n<a href="../map/sync_map_users.py">x</a>\n'
+  + 'import { a } from "./kb/docs_audit/x.js";\nvar s = { src: 1 }; el.src = "kb/contacts_harvest/1/a.json";\n';
+const mentions = '// kb/migrations/2026-11-02_csm_log.sql\nvar MIGRATION = "kb/migrations/2026-11-12_first_light_marks.sql";\n'
+  + 'msg("Re-run kb/_build_college_identity_crosswalk.py"); fetch("kb/csr_out/latest.json"); a.href = "https://github.com/x/y/blob/main/kb/a.py";\n';
+check("the load guard catches a planted fetch, href, import and src, and passes plain mentions",
+  loadTargets(planted).filter(withheldTarget).length === 4 && loadTargets(mentions).filter(withheldTarget).length === 0,
+  JSON.stringify(loadTargets(planted)) + " / " + JSON.stringify(loadTargets(mentions).filter(withheldTarget)));
 // The harvest's internal files no tab reads (S645, review of #3201): withheld, and no served code names them.
 // A tab that comes to read one moves its line to publish and takes it off this list in the same change.
 const HARVEST_INTERNAL = ["kb/harvest_scouting", "kb/status/harvest_heading_agreement.json", "kb/status/harvest_heading_agreement.md"];

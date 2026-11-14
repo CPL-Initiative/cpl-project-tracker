@@ -85,8 +85,10 @@ withhold kb/status/mid_outcomes_compare_*
 # Staff contact harvest: named college officials with email and phone (a new run folder per harvest).
 withhold kb/contacts_harvest
 withhold kb/contacts_harvest_seeds.json
-# Agent and scanner configuration, and a recording transcript.
+# Agent, git and scanner configuration, and a recording transcript.
 withhold .claude
+withhold .gitattributes
+withhold .gitignore
 withhold .gitleaks.toml
 withhold .gitleaksignore
 withhold .video-context
@@ -108,8 +110,6 @@ withhold kb/*.py
 withhold statewide
 
 # ── publish ────────────────────────────────────────────────────────────────────────────────────
-publish .gitattributes
-publish .gitignore
 publish .nojekyll
 publish CPL_Dashboard.html
 publish CPL_Data.js
