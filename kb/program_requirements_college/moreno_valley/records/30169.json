@@ -22,23 +22,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 289,
+   "placed": 296,
    "listed": 296,
-   "share": 0.976,
-   "missing": [
-    "HIS2",
-    "HIS28",
-    "HIS29",
-    "HIS2H",
-    "HIS44",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 34,
+   "count": 27,
    "codes": [
     "ARE36",
     "ARTH11",
@@ -61,14 +66,7 @@
     "ENGL41",
     "ENGL48",
     "ENGL7",
-    "HIST2",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
     "HIST35",
-    "HIST44",
-    "HISTC1001",
-    "HISTC1002",
     "HUM10H",
     "HUM23",
     "HUM4H",
@@ -97,14 +95,7 @@
     "ENGL41",
     "ENGL48",
     "ENGL7",
-    "HIST2",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
     "HIST35",
-    "HIST44",
-    "HISTC1001",
-    "HISTC1002",
     "HUM10H",
     "HUM23",
     "HUM4H",
@@ -124,6 +115,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
     "'Applicable Studio Courses Include' chooses units but names no minimum",
     "'Applicable Studio Courses Include:' chooses units but names no minimum"
@@ -147,6 +139,12 @@
    "count": 5,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -2505,5 +2503,6 @@
    "Reviewer: part 2 names blocks part 1 does not: 'Applicable Studio Courses Include:' (kept beside 'Applicable Studio Courses Include')"
   ]
  },
- "extracted_run": "38111056537"
+ "extracted_run": 43624923945,
+ "read_run": "38111056537"
 }

@@ -44,32 +44,38 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 29,
+   "placed": 31,
    "listed": 31,
-   "share": 0.935,
-   "missing": [
-    "ECO7",
-    "ECO8"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
     "BUS10H",
     "CAT3",
     "CIS3",
-    "ECONC2001",
-    "ECONC2002",
     "POLS8"
    ],
    "flagged": [
     "BUS10H",
     "CAT3",
     "CIS3",
-    "ECONC2001",
-    "ECONC2002",
     "POLS8"
    ],
    "pass": true
@@ -85,6 +91,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -100,6 +107,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -490,5 +508,6 @@
    "Outcomes copied verbatim, including apparent typos ('theme and by which economic grow this achieved')."
   ]
  },
- "extracted_run": "38095617505"
+ "extracted_run": 43624923945,
+ "read_run": "38095617505"
 }

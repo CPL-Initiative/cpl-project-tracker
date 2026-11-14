@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     44.5,
     44.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -467,5 +480,6 @@
    "Total 44.50 is the major total printed by the catalog; general education is referred to only generally ('general education and other graduation requirements as described in the college catalog'), so no GE pattern is named."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43624923945,
+ "read_run": "38085493318"
 }

@@ -44,31 +44,37 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 7,
    "listed": 7,
-   "share": 0.714,
-   "missing": [
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
     "CIS5",
     "MATH2",
-    "MATH3",
-    "MATHC2210",
-    "MATHC2220"
+    "MATH3"
    ],
    "flagged": [
     "CIS5",
     "MATH2",
-    "MATH3",
-    "MATHC2210",
-    "MATHC2220"
+    "MATH3"
    ],
    "pass": true
   },
@@ -83,6 +89,7 @@
     39.0,
     39.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -98,6 +105,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -218,5 +236,6 @@
    "Program title in the catalog is 'Physics 2.0'; degree requires 60 CSU-transferable units including Cal-GETC; the 39-unit total is the major only."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43624923945,
+ "read_run": "38085493318"
 }

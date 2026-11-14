@@ -5,16 +5,19 @@
  "found": 140,
  "extracted": 140,
  "errors": 0,
- "passed_machine_checks": 132,
+ "passed_machine_checks": 134,
  "failed": {
-  "coverage": 2,
-  "invented": 2,
-  "arithmetic": 6,
+  "coverage": 1,
+  "invented": 0,
+  "arithmetic": 5,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 9.6,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 9.6,
  "cost_per_program": 0.0686,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "37393",
@@ -37,5 +40,5 @@
    "award": "A.S. Degree"
   }
  ],
- "run": "38111056537"
+ "run": "43624923945"
 }

@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -72,6 +73,7 @@
     17.0,
     20.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -87,6 +89,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -463,5 +473,6 @@
    "Program total printed as 'Total : 17.00- 20.00'."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43624923945,
+ "read_run": "38085493318"
 }

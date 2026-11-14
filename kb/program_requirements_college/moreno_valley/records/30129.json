@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     22.0,
     22.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -231,5 +241,6 @@
    "EDU-1 and EAR-20 are marked '( Historical )' in the catalog listing; reviewer may want to confirm they remain current for 2026-2027."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43624923945,
+ "read_run": "38085493318"
 }

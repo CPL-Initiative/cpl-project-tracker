@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     16.0,
     20.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 20.0-20.0; the catalog states 16.0-20.0"
    ]
@@ -85,6 +87,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": false
  },
@@ -188,5 +198,6 @@
    "Codes are recorded as printed with hyphens (MUS-3 etc.); they correspond to closed-list MUS 3, MUS 4, MUS 5, MUS 70, MUS 87."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43624923945,
+ "read_run": "38085493318"
 }

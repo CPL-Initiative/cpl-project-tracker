@@ -51,7 +51,8 @@
     "ADJB1B"
    ],
    "unexplained": [],
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
    "count": 0,
@@ -64,6 +65,7 @@
    "status": "unstated",
    "computed": null,
    "stated": null,
+   "against": null,
    "why": [
     "the catalog prints no total, no hours and no units"
    ]
@@ -82,7 +84,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": true
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
  },
  "record": {
   "program": {
@@ -110,5 +123,6 @@
    "A reviewer should check the source page for the Intensive Academy's own section and its requirements, including ADJ B1B."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43624923945,
+ "read_run": "38085493318"
 }

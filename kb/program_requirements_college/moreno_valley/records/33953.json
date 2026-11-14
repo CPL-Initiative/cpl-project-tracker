@@ -44,24 +44,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 9,
-   "share": 0.889,
-   "missing": [
-    "MAT1A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "CHE1BH",
-    "MATHC2210"
+    "CHE1BH"
    ],
    "flagged": [
-    "CHE1BH",
-    "MATHC2210"
+    "CHE1BH"
    ],
    "pass": true
   },
@@ -76,6 +80,7 @@
     32.0,
     32.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,6 +96,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -206,5 +222,6 @@
    "Total of 32 units is stated in the catalog ('Units: 32.00' and 'Total : 32.00'); the 60-unit figure is the degree total."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43624923945,
+ "read_run": "38085493318"
 }

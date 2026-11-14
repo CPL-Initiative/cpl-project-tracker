@@ -44,43 +44,45 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 120,
+   "placed": 130,
    "listed": 130,
-   "share": 0.923,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "HIS2",
-    "HIS28",
-    "HIS29",
-    "HIS2H",
-    "HIS31",
-    "HIS44",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 22,
+   "count": 12,
    "codes": [
     "ADJ14",
     "ADJ22",
     "ADJ25",
     "EAR40",
     "EAR47",
-    "ECONC2001",
-    "ECONC2002",
-    "HIST2",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
-    "HIST31",
     "HIST35",
-    "HIST44",
-    "HISTC1001",
-    "HISTC1002",
     "HMS14",
     "POLS2H",
     "POLS3",
@@ -94,17 +96,7 @@
     "ADJ25",
     "EAR40",
     "EAR47",
-    "ECONC2001",
-    "ECONC2002",
-    "HIST2",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
-    "HIST31",
     "HIST35",
-    "HIST44",
-    "HISTC1001",
-    "HISTC1002",
     "HMS14",
     "POLS2H",
     "POLS3",
@@ -125,6 +117,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -140,6 +133,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -1203,5 +1207,6 @@
    "General education requirements are referenced generally ('as described in the college catalog'); no specific GE pattern named."
   ]
  },
- "extracted_run": "38095617505"
+ "extracted_run": 43624923945,
+ "read_run": "38095617505"
 }
