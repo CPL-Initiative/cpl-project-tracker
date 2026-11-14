@@ -80,16 +80,17 @@
     },
     {
      "catalog_prefix": "CNET",
-     "counterexamples": [],
-     "evidence": [
+     "counterexamples": [
       {
        "catalog": "CNET 107",
-       "catalog_source": "mis_course_record",
-       "catalog_title": "Networking Essentials 2",
+       "catalog_source": "coci_course_list",
+       "catalog_title": "CNET 107",
        "control": null,
        "file": "EL 107",
        "file_title": "Networking Essentials 2"
-      },
+      }
+     ],
+     "evidence": [
       {
        "catalog": "CNET 119",
        "catalog_source": "coci_course_list",
@@ -101,7 +102,7 @@
      ],
      "evidence_numbers": 2,
      "file_prefix": "EL",
-     "reason": "fewer_than_3",
+     "reason": "counterexample",
      "records_affected": [],
      "same_control_title_differs": 0,
      "untitled": 0
@@ -114,6 +115,52 @@
    "coincidences": 3,
    "college_code": "231",
    "held": [
+    {
+     "catalog_prefix": "ENGL",
+     "counterexamples": [
+      {
+       "catalog": "ENGL 299",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "ExperimentalOfferingEngl-Lab",
+       "control": null,
+       "file": "ENGWR 299",
+       "file_title": "Experimental Offering in English - Writing"
+      }
+     ],
+     "evidence": [
+      {
+       "catalog": "ENGL 301",
+       "catalog_source": "program_course_file_crsid",
+       "catalog_title": "College Composition and Literature",
+       "control": "CCC000272566",
+       "file": "ENGWR 301",
+       "file_title": "College Composition and Literature"
+      },
+      {
+       "catalog": "ENGL 481",
+       "catalog_source": "program_course_file_crsid",
+       "catalog_title": "Honors College Composition and Literature",
+       "control": "CCC000336029",
+       "file": "ENGWR 481",
+       "file_title": "Honors College Composition and Literature"
+      },
+      {
+       "catalog": "ENGL 95",
+       "catalog_source": "program_course_file_crsid",
+       "catalog_title": "Beginning Writing Across the Curriculum (WAC)",
+       "control": "CCC000633124",
+       "file": "ENGWR 95",
+       "file_title": "Beginning Writing Across the Curriculum (WAC)"
+      }
+     ],
+     "evidence_numbers": 3,
+     "file_prefix": "ENGWR",
+     "reason": "counterexample",
+     "records_affected": [],
+     "same_control_title_differs": 0,
+     "second_reader": "Los Rios's ENGL takes in literature as well as writing (COCI lists Sacramento City ENGL 494 Topics in Literature), and numbers clash across the old prefixes (ENGLT 303 Short Story against ENGWR 303 Argumentative Writing; ENGRD and ENGWR 110; American River 299, 495 and 499). The census first missed it because MIS writes these ids with a record id after the number (ENGL304-2507).",
+     "untitled": 0
+    },
     {
      "catalog_prefix": "PLGL",
      "counterexamples": [],
@@ -144,43 +191,6 @@
     }
    ],
    "pairs": [
-    {
-     "catalog_prefix": "ENGL",
-     "counterexamples": [],
-     "evidence": [
-      {
-       "catalog": "ENGL 301",
-       "catalog_source": "program_course_file_crsid",
-       "catalog_title": "College Composition and Literature",
-       "control": "CCC000272566",
-       "file": "ENGWR 301",
-       "file_title": "College Composition and Literature"
-      },
-      {
-       "catalog": "ENGL 481",
-       "catalog_source": "program_course_file_crsid",
-       "catalog_title": "Honors College Composition and Literature",
-       "control": "CCC000336029",
-       "file": "ENGWR 481",
-       "file_title": "Honors College Composition and Literature"
-      },
-      {
-       "catalog": "ENGL 95",
-       "catalog_source": "program_course_file_crsid",
-       "catalog_title": "Beginning Writing Across the Curriculum (WAC)",
-       "control": "CCC000633124",
-       "file": "ENGWR 95",
-       "file_title": "Beginning Writing Across the Curriculum (WAC)"
-      }
-     ],
-     "evidence_numbers": 3,
-     "file_prefix": "ENGWR",
-     "reason": "same number and title, 3 courses",
-     "records_affected": [],
-     "same_control_title_differs": [],
-     "untitled": [],
-     "verdict": "propose"
-    },
     {
      "catalog_prefix": "BMET",
      "counterexamples": [],
@@ -681,39 +691,9 @@
    "slug": "barstow_community"
   },
   "Berkeley City College": {
-   "coincidences": 0,
+   "coincidences": 1,
    "college_code": "345",
-   "held": [
-    {
-     "catalog_prefix": "EDUC",
-     "counterexamples": [
-      {
-       "catalog": "EDUC 1",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Intro to the Field / Education",
-       "control": null,
-       "file": "MATH 1",
-       "file_title": "Pre-Calculus"
-      }
-     ],
-     "evidence": [
-      {
-       "catalog": "EDUC 18",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Mathematical Concepts for Teachers",
-       "control": null,
-       "file": "MATH 18",
-       "file_title": "Mathematical Concepts for Teachers"
-      }
-     ],
-     "evidence_numbers": 1,
-     "file_prefix": "MATH",
-     "reason": "counterexample",
-     "records_affected": [],
-     "same_control_title_differs": 0,
-     "untitled": 0
-    }
-   ],
+   "held": [],
    "pairs": [],
    "slug": "berkeley_city"
   },
@@ -1102,7 +1082,7 @@
      "counterexamples": [
       {
        "catalog": "SPAN 2",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "program_course_file_crsid",
        "catalog_title": "HIGH-BEGINNING SPANISH",
        "control": null,
        "file": "ART 2",
@@ -1110,7 +1090,7 @@
       },
       {
        "catalog": "SPAN 3",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "program_course_file_crsid",
        "catalog_title": "INTERMEDIATE SPANISH",
        "control": null,
        "file": "ART 3",
@@ -1126,7 +1106,7 @@
       },
       {
        "catalog": "SPAN 1",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "program_course_file_crsid",
        "catalog_title": "BEGINNING SPANISH",
        "control": null,
        "file": "ART 1",
@@ -1170,7 +1150,7 @@
       },
       {
        "catalog": "CRIM 4",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Principles & Procedures of the Justice S SYSTEM",
        "control": null,
        "file": "PHIL 4",
@@ -1287,7 +1267,7 @@
      "counterexamples": [
       {
        "catalog": "PNPA 100",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Foundations of Public Administ",
        "control": null,
        "file": "MGMT 100",
@@ -1907,14 +1887,31 @@
    "held": [
     {
      "catalog_prefix": "ENGL",
-     "counterexamples": [],
+     "counterexamples": [
+      {
+       "catalog": "ENGL 330",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "African American Lit",
+       "control": null,
+       "file": "ENGWR 330",
+       "file_title": "Writing for Publication"
+      },
+      {
+       "catalog": "ENGL 341",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "World Literature II",
+       "control": null,
+       "file": "ENGWR 341",
+       "file_title": "Introduction to Technical and Professional Writing"
+      }
+     ],
      "evidence": [],
      "evidence_numbers": 4,
      "file_prefix": "ENGWR",
-     "reason": "no_catalog_title",
+     "reason": "counterexample",
      "records_affected": [],
      "same_control_title_differs": 0,
-     "untitled": 4
+     "untitled": 2
     },
     {
      "catalog_prefix": "MUP",
@@ -2593,63 +2590,39 @@
      "catalog_prefix": "AHIS",
      "counterexamples": [
       {
-       "catalog": "AHIS 102A",
-       "catalog_source": "mis_course_record",
-       "catalog_title": "History West Art: Prehist-Gothic",
-       "control": null,
-       "file": "ART 102A",
-       "file_title": "History Western of Art - Prehistoric to Gothic"
-      },
-      {
-       "catalog": "AHIS 102AH",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Honors History of Western Art: Prehistoric to Gothic",
-       "control": null,
-       "file": "ART 102AH",
-       "file_title": "Honors History of Western Art Prehistoric through Gothic"
-      },
-      {
-       "catalog": "AHIS 102B",
-       "catalog_source": "mis_course_record",
-       "catalog_title": "Hist West: Proren to 19 Cent Hist West:proren-19 Cent",
-       "control": null,
-       "file": "ART 102B",
-       "file_title": "History of Western Art - Proto-Renaissance to 19th Century"
-      },
-      {
-       "catalog": "AHIS 210",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "History of Islamic Art and Visual Culture",
-       "control": null,
-       "file": "ART 210",
-       "file_title": "Drawing Fundamentals II"
-      }
-     ],
-     "evidence": [
-      {
        "catalog": "AHIS 101",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Art and Visual Culture: A Global Perspective",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Art/Visual Culture: Global Perspective",
        "control": null,
        "file": "ART 101",
        "file_title": "Art and Visual Culture: A Global Perspective"
       },
       {
        "catalog": "AHIS 102C",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "History of Western Art - 19th Century to Contemporary Times",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Hist West Art 19 Cent-Contmpry",
        "control": null,
        "file": "ART 102C",
        "file_title": "History of Western Art - 19th Century to Contemporary Times"
       },
       {
        "catalog": "AHIS 205A",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "History of Asian Art Ã¢â‚¬â€œ India and Southeast Asia",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Hist of Asian Art/India Se/Asia",
        "control": null,
        "file": "ART 205A",
        "file_title": "History of Asian Art - India and Southeast Asia"
       },
+      {
+       "catalog": "AHIS 207",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Art Hist Mex/Central/S America",
+       "control": null,
+       "file": "ART 207",
+       "file_title": "Art History of Mexico and Central and South America"
+      }
+     ],
+     "evidence": [
       {
        "catalog": "AHIS 205B",
        "catalog_source": "coci_course_list",
@@ -2657,6 +2630,22 @@
        "control": null,
        "file": "ART 205B",
        "file_title": "History of Asian Art - China, Korea, and Japan"
+      },
+      {
+       "catalog": "AHIS 208",
+       "catalog_source": "coci_course_list",
+       "catalog_title": "History of American Art",
+       "control": null,
+       "file": "ART 208",
+       "file_title": "History of American Art"
+      },
+      {
+       "catalog": "AHIS 209",
+       "catalog_source": "coci_course_list",
+       "catalog_title": "History of African Art",
+       "control": null,
+       "file": "ART 209",
+       "file_title": "History of African Art"
       }
      ],
      "evidence_numbers": 7,
@@ -2811,7 +2800,7 @@
      "counterexamples": [
       {
        "catalog": "CIS 100F",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intro to Personal Computers",
        "control": null,
        "file": "CISG 100F",
@@ -2827,7 +2816,7 @@
       },
       {
        "catalog": "CIS 102F",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intro to Open Source Software",
        "control": null,
        "file": "CISG 102F",
@@ -2855,30 +2844,9 @@
    "slug": "fullerton"
   },
   "Gavilan College": {
-   "coincidences": 7,
+   "coincidences": 8,
    "college_code": "441",
-   "held": [
-    {
-     "catalog_prefix": "MCTV",
-     "counterexamples": [],
-     "evidence": [
-      {
-       "catalog": "MCTV 16",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "History and Culture of Television, Film and New Media",
-       "control": null,
-       "file": "FTVE 16",
-       "file_title": "History and Culture of Television, Film and New Media"
-      }
-     ],
-     "evidence_numbers": 1,
-     "file_prefix": "FTVE",
-     "reason": "fewer_than_3",
-     "records_affected": [],
-     "same_control_title_differs": 0,
-     "untitled": 0
-    }
-   ],
+   "held": [],
    "pairs": [],
    "slug": "gavilan"
   },
@@ -2952,7 +2920,7 @@
       },
       {
        "catalog": "HIST 102",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "World History 1500 to Present",
        "control": null,
        "file": "ECON 102",
@@ -3001,6 +2969,14 @@
        "control": null,
        "file": "PSYCH 114",
        "file_title": "PSYCH OF HUMAN COMMUNICATION"
+      },
+      {
+       "catalog": "PSYC 200",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Research Methods for Psych",
+       "control": null,
+       "file": "PSYCH 200",
+       "file_title": "Research Methods for Psychology"
       }
      ],
      "evidence": [
@@ -3061,7 +3037,7 @@
       },
       {
        "catalog": "MUSG 108",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Hist & Apprec Musical Thea",
        "control": null,
        "file": "ARTG 108",
@@ -3213,7 +3189,7 @@
      "counterexamples": [
       {
        "catalog": "THEAG 115",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Theater Practicum 1 - Performa",
        "control": null,
        "file": "DANCG 115",
@@ -3221,7 +3197,7 @@
       },
       {
        "catalog": "THEAG 119",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Improv for Theater, Film, TV",
        "control": null,
        "file": "DANCG 119",
@@ -3229,7 +3205,7 @@
       },
       {
        "catalog": "THEAG 135",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Classical Play Perform 1",
        "control": null,
        "file": "DANCG 135",
@@ -3273,7 +3249,7 @@
       },
       {
        "catalog": "GLSTG 101",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intro to Global Studies",
        "control": null,
        "file": "KING 101",
@@ -3976,7 +3952,7 @@
       },
       {
        "catalog": "ANTHR 4",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Linguistic Anthropology",
        "control": null,
        "file": "GEOL 4",
@@ -4092,7 +4068,7 @@
       },
       {
        "catalog": "LING 3H",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Honors Intro World Languages",
        "control": null,
        "file": "GEOL 3H",
@@ -4108,7 +4084,7 @@
       },
       {
        "catalog": "LING 3",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Introduction to World Language",
        "control": null,
        "file": "GEOL 3",
@@ -4136,7 +4112,7 @@
       },
       {
        "catalog": "PHIL 1H",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Honors Phil LGBTQIA+ Studies",
        "control": null,
        "file": "GEOL 1H",
@@ -4152,7 +4128,7 @@
       },
       {
        "catalog": "PHIL 10",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intro to Feminist Philosophy",
        "control": null,
        "file": "GEOL 10",
@@ -4424,7 +4400,7 @@
       },
       {
        "catalog": "PHIL 10",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intro to Feminist Philosophy",
        "control": null,
        "file": "POLSC 10",
@@ -4432,7 +4408,7 @@
       },
       {
        "catalog": "PHIL 3",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intro Issues Phil,Psych&Relign",
        "control": null,
        "file": "POLSC 3",
@@ -4488,7 +4464,7 @@
       },
       {
        "catalog": "PHIL 1H",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Honors Phil LGBTQIA+ Studies",
        "control": null,
        "file": "SOCSC 1H",
@@ -4603,7 +4579,7 @@
      "counterexamples": [
       {
        "catalog": "ASIAN 1",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Asian American Hist",
        "control": null,
        "file": "ECON 1",
@@ -4742,7 +4718,7 @@
       },
       {
        "catalog": "LABRST 4",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Labor In America",
        "control": null,
        "file": "ASL 4",
@@ -4815,7 +4791,7 @@
      "counterexamples": [
       {
        "catalog": "HEALTH 11",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Prin Healthful Livng",
        "control": null,
        "file": "SOC 11",
@@ -4823,7 +4799,7 @@
       },
       {
        "catalog": "HEALTH 2",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Health & Fitness",
        "control": null,
        "file": "SOC 2",
@@ -6073,7 +6049,7 @@
      "counterexamples": [
       {
        "catalog": "FASHA 110",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "program_course_file_crsid",
        "catalog_title": "Applied Textiles & Dsgn",
        "control": null,
        "file": "MKTGA 110",
@@ -6081,7 +6057,7 @@
       },
       {
        "catalog": "FASHA 100",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "program_course_file_crsid",
        "catalog_title": "Begin Clothing Tech",
        "control": null,
        "file": "MKTGA 100",
@@ -6170,7 +6146,7 @@
       },
       {
        "catalog": "HEDR 101",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "program_course_file_crsid",
        "catalog_title": "HEALTH AND SOCIETY",
        "control": null,
        "file": "PHYSR 101",
@@ -6178,7 +6154,7 @@
       },
       {
        "catalog": "HEDR 102",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Fitness/Nutr/Mental Wellness",
        "control": null,
        "file": "PHYSR 102",
@@ -6258,7 +6234,7 @@
      "counterexamples": [
       {
        "catalog": "ACCT 1A",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "FINANCIAL ACCOUNTING",
        "control": null,
        "file": "ECON 1A",
@@ -6274,7 +6250,7 @@
       },
       {
        "catalog": "ACCT 1B",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "MANAGERIAL ACCOUNTING",
        "control": null,
        "file": "ECON 1B",
@@ -6344,7 +6320,7 @@
      "counterexamples": [
       {
        "catalog": "WLF 11",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "WILDLAND FIRE SCHOOL-FUNDAMENTALS (FORMERLY NR 97)",
        "control": null,
        "file": "NR 11",
@@ -6421,7 +6397,7 @@
       },
       {
        "catalog": "ART 120",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "program_course_file_crsid",
        "catalog_title": "Two Dimensional Design",
        "control": null,
        "file": "ANIM 120",
@@ -6593,6 +6569,14 @@
      "catalog_prefix": "ETS",
      "counterexamples": [
       {
+       "catalog": "ETS 28",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Native American History to 1871 Contact Period",
+       "control": null,
+       "file": "HIS 28",
+       "file_title": "Native American History to 1871"
+      },
+      {
        "catalog": "ETS 1",
        "catalog_source": "coci_course_list",
        "catalog_title": "Introduction to Ethnic Studies",
@@ -6633,14 +6617,6 @@
        "control": null,
        "file": "HIS 15",
        "file_title": "African American History II"
-      },
-      {
-       "catalog": "ETS 28",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Native American History to 1871",
-       "control": null,
-       "file": "HIS 28",
-       "file_title": "Native American History to 1871"
       },
       {
        "catalog": "ETS 29",
@@ -6925,33 +6901,33 @@
      "counterexamples": [
       {
        "catalog": "ATC 300",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Basic Air Traffic Control Part 1",
-       "control": null,
+       "catalog_source": "mis_course_record",
+       "catalog_title": "ATC 300 Basic Air Traffic Cont",
+       "control": "CCC000516825",
        "file": "ATCAD 300",
        "file_title": "Basic Terminal Procedures"
       },
       {
        "catalog": "ATC 301",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Basic Air Traffic Control Part 2",
-       "control": null,
+       "catalog_source": "mis_course_record",
+       "catalog_title": "ATC 301 Basic Air Traffic Cont",
+       "control": "CCC000516779",
        "file": "ATCAD 301",
        "file_title": "Advanced Terminal Procedures"
       },
       {
        "catalog": "ATC 302",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Basic Air Traffic Control Part 3",
-       "control": null,
+       "catalog_source": "mis_course_record",
+       "catalog_title": "ATC 302 Basic Air Traffic Cont",
+       "control": "CCC000516780",
        "file": "ATCAD 302",
        "file_title": "Basic En Route Procedures"
       },
       {
        "catalog": "ATC 303",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Basic Air Traffic Control Part 4",
-       "control": null,
+       "catalog_source": "mis_course_record",
+       "catalog_title": "ATC 303 Basic Air Traffic Cont",
+       "control": "CCC000516781",
        "file": "ATCAD 303",
        "file_title": "Advanced En Route Procedures"
       }
@@ -6965,94 +6941,17 @@
      "untitled": 0
     },
     {
-     "catalog_prefix": "SPAN",
-     "counterexamples": [
-      {
-       "catalog": "SPAN 401",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Elementary Spanish I",
-       "control": null,
-       "file": "GREEK 401",
-       "file_title": "Elementary Modern Standard Greek"
-      },
-      {
-       "catalog": "SPAN 402",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Elementary Spanish",
-       "control": null,
-       "file": "GREEK 402",
-       "file_title": "Elementary Greek"
-      }
-     ],
-     "evidence": [],
-     "evidence_numbers": 2,
-     "file_prefix": "GREEK",
-     "reason": "counterexample",
-     "records_affected": [],
-     "same_control_title_differs": 0,
-     "untitled": 0
-    },
-    {
-     "catalog_prefix": "SPAN",
-     "counterexamples": [
-      {
-       "catalog": "SPAN 401",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Elementary Spanish I",
-       "control": null,
-       "file": "ITAL 401",
-       "file_title": "Elementary Italian"
-      },
-      {
-       "catalog": "SPAN 402",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Elementary Spanish",
-       "control": null,
-       "file": "ITAL 402",
-       "file_title": "Elementary Italian"
-      }
-     ],
-     "evidence": [],
-     "evidence_numbers": 2,
-     "file_prefix": "ITAL",
-     "reason": "counterexample",
-     "records_affected": [],
-     "same_control_title_differs": 0,
-     "untitled": 0
-    },
-    {
-     "catalog_prefix": "SPAN",
-     "counterexamples": [
-      {
-       "catalog": "SPAN 401",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Elementary Spanish I",
-       "control": null,
-       "file": "PRSIAN 401",
-       "file_title": "Elementary Persian"
-      },
-      {
-       "catalog": "SPAN 402",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Elementary Spanish",
-       "control": null,
-       "file": "PRSIAN 402",
-       "file_title": "Elementary Persian"
-      }
-     ],
-     "evidence": [],
-     "evidence_numbers": 2,
-     "file_prefix": "PRSIAN",
-     "reason": "counterexample",
-     "records_affected": [],
-     "same_control_title_differs": 0,
-     "untitled": 0
-    }
-   ],
-   "pairs": [
-    {
      "catalog_prefix": "ENGL",
-     "counterexamples": [],
+     "counterexamples": [
+      {
+       "catalog": "ENGL 303",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Intro Short Story",
+       "control": null,
+       "file": "ENGWR 303",
+       "file_title": "Argumentative Writing and Critical Thinking Through Literature"
+      }
+     ],
      "evidence": [
       {
        "catalog": "ENGL 301",
@@ -7089,13 +6988,98 @@
      ],
      "evidence_numbers": 4,
      "file_prefix": "ENGWR",
-     "reason": "same number and title, 4 courses",
+     "reason": "counterexample",
      "records_affected": [],
-     "same_control_title_differs": [],
-     "untitled": [],
-     "verdict": "propose"
+     "same_control_title_differs": 0,
+     "second_reader": "Los Rios's ENGL takes in literature as well as writing (COCI lists Sacramento City ENGL 494 Topics in Literature), and numbers clash across the old prefixes (ENGLT 303 Short Story against ENGWR 303 Argumentative Writing; ENGRD and ENGWR 110; American River 299, 495 and 499). The census first missed it because MIS writes these ids with a record id after the number (ENGL304-2507).",
+     "untitled": 0
+    },
+    {
+     "catalog_prefix": "SPAN",
+     "counterexamples": [
+      {
+       "catalog": "SPAN 401",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Elementary Spanish",
+       "control": null,
+       "file": "GREEK 401",
+       "file_title": "Elementary Modern Standard Greek"
+      },
+      {
+       "catalog": "SPAN 402",
+       "catalog_source": "coci_course_list",
+       "catalog_title": "Elementary Spanish",
+       "control": null,
+       "file": "GREEK 402",
+       "file_title": "Elementary Greek"
+      }
+     ],
+     "evidence": [],
+     "evidence_numbers": 2,
+     "file_prefix": "GREEK",
+     "reason": "counterexample",
+     "records_affected": [],
+     "same_control_title_differs": 0,
+     "untitled": 0
+    },
+    {
+     "catalog_prefix": "SPAN",
+     "counterexamples": [
+      {
+       "catalog": "SPAN 401",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Elementary Spanish",
+       "control": null,
+       "file": "ITAL 401",
+       "file_title": "Elementary Italian"
+      },
+      {
+       "catalog": "SPAN 402",
+       "catalog_source": "coci_course_list",
+       "catalog_title": "Elementary Spanish",
+       "control": null,
+       "file": "ITAL 402",
+       "file_title": "Elementary Italian"
+      }
+     ],
+     "evidence": [],
+     "evidence_numbers": 2,
+     "file_prefix": "ITAL",
+     "reason": "counterexample",
+     "records_affected": [],
+     "same_control_title_differs": 0,
+     "untitled": 0
+    },
+    {
+     "catalog_prefix": "SPAN",
+     "counterexamples": [
+      {
+       "catalog": "SPAN 401",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Elementary Spanish",
+       "control": null,
+       "file": "PRSIAN 401",
+       "file_title": "Elementary Persian"
+      },
+      {
+       "catalog": "SPAN 402",
+       "catalog_source": "coci_course_list",
+       "catalog_title": "Elementary Spanish",
+       "control": null,
+       "file": "PRSIAN 402",
+       "file_title": "Elementary Persian"
+      }
+     ],
+     "evidence": [],
+     "evidence_numbers": 2,
+     "file_prefix": "PRSIAN",
+     "reason": "counterexample",
+     "records_affected": [],
+     "same_control_title_differs": 0,
+     "untitled": 0
     }
    ],
+   "pairs": [],
    "slug": "sacramento_city"
   },
   "San Bernardino Valley College": {
@@ -7421,7 +7405,7 @@
       },
       {
        "catalog": "FREN 4",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Inter Fren II",
        "control": null,
        "file": "CHIN 4",
@@ -7477,7 +7461,7 @@
      "counterexamples": [
       {
        "catalog": "SL 1",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Elementary ASL I",
        "control": null,
        "file": "CHIN 1",
@@ -7485,7 +7469,7 @@
       },
       {
        "catalog": "SL 3",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intermediate ASL I",
        "control": null,
        "file": "CHIN 3",
@@ -7493,7 +7477,7 @@
       },
       {
        "catalog": "SL 4",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intermediate ASL II",
        "control": null,
        "file": "CHIN 4",
@@ -7501,7 +7485,7 @@
       },
       {
        "catalog": "SL 2",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Elementary ASL II",
        "control": null,
        "file": "CHIN 2",
@@ -7573,7 +7557,7 @@
       },
       {
        "catalog": "FREN 4",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Inter Fren II",
        "control": null,
        "file": "GERM 4",
@@ -7609,7 +7593,7 @@
      "counterexamples": [
       {
        "catalog": "SL 3",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intermediate ASL I",
        "control": null,
        "file": "GERM 3",
@@ -7617,7 +7601,7 @@
       },
       {
        "catalog": "SL 4",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intermediate ASL II",
        "control": null,
        "file": "GERM 4",
@@ -7625,7 +7609,7 @@
       },
       {
        "catalog": "SL 1",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Elementary ASL I",
        "control": null,
        "file": "GERM 1",
@@ -7633,7 +7617,7 @@
       },
       {
        "catalog": "SL 2",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Elementary ASL II",
        "control": null,
        "file": "GERM 2",
@@ -7705,7 +7689,7 @@
       },
       {
        "catalog": "FREN 4",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Inter Fren II",
        "control": null,
        "file": "ITAL 4",
@@ -7741,7 +7725,7 @@
      "counterexamples": [
       {
        "catalog": "SL 3",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intermediate ASL I",
        "control": null,
        "file": "ITAL 3",
@@ -7749,7 +7733,7 @@
       },
       {
        "catalog": "SL 4",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intermediate ASL II",
        "control": null,
        "file": "ITAL 4",
@@ -7757,7 +7741,7 @@
       },
       {
        "catalog": "SL 1",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Elementary ASL I",
        "control": null,
        "file": "ITAL 1",
@@ -7765,7 +7749,7 @@
       },
       {
        "catalog": "SL 2",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Elementary ASL II",
        "control": null,
        "file": "ITAL 2",
@@ -7826,7 +7810,16 @@
     },
     {
      "catalog_prefix": "PSYC",
-     "counterexamples": [],
+     "counterexamples": [
+      {
+       "catalog": "PSYC 2",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Intro To Psych Stats",
+       "control": null,
+       "file": "PSYCH 2",
+       "file_title": "Statistical Methods For Psychology & Social Science"
+      }
+     ],
      "evidence": [
       {
        "catalog": "PSYC 6",
@@ -7847,7 +7840,7 @@
      ],
      "evidence_numbers": 2,
      "file_prefix": "PSYCH",
-     "reason": "fewer_than_3",
+     "reason": "counterexample",
      "records_affected": [],
      "same_control_title_differs": 0,
      "untitled": 0
@@ -8124,23 +8117,31 @@
      "catalog_prefix": "POLS",
      "counterexamples": [
       {
-       "catalog": "POLS 130",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Intro International Relations",
-       "control": null,
-       "file": "PLSC 130",
-       "file_title": "International Relations"
-      }
-     ],
-     "evidence": [
-      {
        "catalog": "POLS 115",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Introduction to Comparative Government and Politics",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Intro to Comparative Govt/Poli",
        "control": null,
        "file": "PLSC 115",
        "file_title": "Introduction to Comparative Government and Politics"
       },
+      {
+       "catalog": "POLS 130",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Intro International Relations",
+       "control": null,
+       "file": "PLSC 130",
+       "file_title": "International Relations"
+      },
+      {
+       "catalog": "POLS 310",
+       "catalog_source": "mis_course_record",
+       "catalog_title": "Calif State & Local Govt",
+       "control": null,
+       "file": "PLSC 310",
+       "file_title": "California State and Local Government"
+      }
+     ],
+     "evidence": [
       {
        "catalog": "POLS 210",
        "catalog_source": "coci_course_list",
@@ -8156,14 +8157,6 @@
        "control": null,
        "file": "PLSC 280",
        "file_title": "Introduction to Political Philosophy"
-      },
-      {
-       "catalog": "POLS 310",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "California State and Local Government",
-       "control": null,
-       "file": "PLSC 310",
-       "file_title": "California State and Local Government"
       }
      ],
      "evidence_numbers": 5,
@@ -8182,28 +8175,17 @@
    "college_code": "281",
    "held": [
     {
-     "catalog_prefix": "SOCI",
-     "counterexamples": [],
-     "evidence": [],
-     "evidence_numbers": 5,
-     "file_prefix": "SOC",
-     "reason": "no_catalog_title",
-     "records_affected": [
-      "08337",
-      "19450",
-      "30678",
-      "35213",
-      "42041",
-      "43144"
-     ],
-     "same_control_title_differs": 0,
-     "untitled": 5
-    }
-   ],
-   "pairs": [
-    {
      "catalog_prefix": "ADVM",
-     "counterexamples": [],
+     "counterexamples": [
+      {
+       "catalog": "ADVM 132",
+       "catalog_source": "coci_course_list",
+       "catalog_title": "Principles of Mechanical Power Systems",
+       "control": null,
+       "file": "MT 132",
+       "file_title": "Principles of Fluid Power Systems"
+      }
+     ],
      "evidence": [
       {
        "catalog": "ADVM 130",
@@ -8212,14 +8194,6 @@
        "control": null,
        "file": "MT 130",
        "file_title": "Principles of Mechanical Power Systems"
-      },
-      {
-       "catalog": "ADVM 132",
-       "catalog_source": "mis_course_record",
-       "catalog_title": "Principles of Fluid Power Systems",
-       "control": null,
-       "file": "MT 132",
-       "file_title": "Principles of Fluid Power Systems"
       },
       {
        "catalog": "ADVM 140",
@@ -8240,13 +8214,31 @@
      ],
      "evidence_numbers": 4,
      "file_prefix": "MT",
-     "reason": "same number and title, 4 courses",
+     "reason": "counterexample",
      "records_affected": [],
-     "same_control_title_differs": [],
-     "untitled": [],
-     "verdict": "propose"
+     "same_control_title_differs": 0,
+     "untitled": 0
+    },
+    {
+     "catalog_prefix": "SOCI",
+     "counterexamples": [],
+     "evidence": [],
+     "evidence_numbers": 5,
+     "file_prefix": "SOC",
+     "reason": "no_catalog_title",
+     "records_affected": [
+      "08337",
+      "19450",
+      "30678",
+      "35213",
+      "42041",
+      "43144"
+     ],
+     "same_control_title_differs": 0,
+     "untitled": 5
     }
    ],
+   "pairs": [],
    "slug": "solano_community"
   },
   "Southwestern College": {
@@ -8324,7 +8316,7 @@
      "counterexamples": [
       {
        "catalog": "ETH 101",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Introduction to Chicana/O Studies",
        "control": null,
        "file": "FREN 101",
@@ -8340,7 +8332,7 @@
       },
       {
        "catalog": "ETH 103",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Asians in America",
        "control": null,
        "file": "FREN 103",
@@ -8412,7 +8404,7 @@
      "counterexamples": [
       {
        "catalog": "ETH 101",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Introduction to Chicana/O Studies",
        "control": null,
        "file": "SPAN 101",
@@ -8428,7 +8420,7 @@
       },
       {
        "catalog": "ETH 103",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Asians in America",
        "control": null,
        "file": "SPAN 103",
@@ -8590,7 +8582,7 @@
      "counterexamples": [
       {
        "catalog": "EARTH 1",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "program_course_file_crsid",
        "catalog_title": "EARTH SCIENCE",
        "control": null,
        "file": "FRENCH 1",
@@ -8598,7 +8590,7 @@
       },
       {
        "catalog": "EARTH 2",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "program_course_file_crsid",
        "catalog_title": "EARTH SCIENCE LABORATORY",
        "control": null,
        "file": "FRENCH 2",
@@ -8618,7 +8610,7 @@
      "counterexamples": [
       {
        "catalog": "SOC 1",
-       "catalog_source": "coci_course_list",
+       "catalog_source": "mis_course_record",
        "catalog_title": "Intro To Sociology",
        "control": null,
        "file": "FRENCH 1",
@@ -8646,30 +8638,9 @@
    "slug": "west_los_angeles"
   },
   "West Valley College": {
-   "coincidences": 0,
+   "coincidences": 1,
    "college_code": "493",
-   "held": [
-    {
-     "catalog_prefix": "ETHN",
-     "counterexamples": [],
-     "evidence": [
-      {
-       "catalog": "ETHN 1",
-       "catalog_source": "coci_course_list",
-       "catalog_title": "Introduction to Ethnic and Social Justice Studies",
-       "control": null,
-       "file": "SJST 1",
-       "file_title": "Introduction to Ethnic and Social Justice Studies"
-      }
-     ],
-     "evidence_numbers": 1,
-     "file_prefix": "SJST",
-     "reason": "fewer_than_3",
-     "records_affected": [],
-     "same_control_title_differs": 0,
-     "untitled": 0
-    }
-   ],
+   "held": [],
    "pairs": [],
    "slug": "west_valley"
   },
@@ -8917,17 +8888,6 @@
     },
     {
      "kind": "passing_record_renamed",
-     "record": "12110",
-     "renamed": [
-      [
-       "ENGL301",
-       "ENGWR301",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
      "record": "15519",
      "renamed": [
       [
@@ -8948,49 +8908,6 @@
       [
        "SWCD342",
        "HSER342",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "17937",
-     "renamed": [
-      [
-       "ENGL301",
-       "ENGWR301",
-       3
-      ],
-      [
-       "ENGL481",
-       "ENGWR481",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "17939",
-     "renamed": [
-      [
-       "ENGL301",
-       "ENGWR301",
-       3
-      ],
-      [
-       "ENGL481",
-       "ENGWR481",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "19335",
-     "renamed": [
-      [
-       "ENGL481",
-       "ENGWR481",
        3
       ]
      ]
@@ -9208,33 +9125,6 @@
        "BMET263",
        "ET263",
        1
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "42546",
-     "renamed": [
-      [
-       "ENGL95",
-       "ENGWR95",
-       0.5
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "44154",
-     "renamed": [
-      [
-       "ENGL301",
-       "ENGWR301",
-       3
-      ],
-      [
-       "ENGL481",
-       "ENGWR481",
-       3
       ]
      ]
     },
@@ -11506,221 +11396,6 @@
    "tab_after": 229,
    "tab_before": 222
   },
-  "Sacramento City College": {
-   "arithmetic_may_move": [],
-   "coverage_fails_after": 25,
-   "coverage_fails_before": 25,
-   "coverage_newly_pass": [],
-   "live_coverage_fails": 3,
-   "live_coverage_newly_pass": [],
-   "live_newly_pass_tab": [],
-   "newly_pass": [],
-   "other_direction": [
-    {
-     "kind": "passing_record_renamed",
-     "record": "04691",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "12283",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "12284",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "14415",
-     "renamed": [
-      [
-       "ENGL384",
-       "ENGWR384",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "14646",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "23002",
-     "renamed": [
-      [
-       "ENGL384",
-       "ENGWR384",
-       3
-      ],
-      [
-       "ENGL330",
-       "ENGWR330",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "30659",
-     "renamed": [
-      [
-       "ENGL384",
-       "ENGWR384",
-       3
-      ],
-      [
-       "ENGL384",
-       "ENGWR384",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "32430",
-     "renamed": [
-      [
-       "ENGL384",
-       "ENGWR384",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "33804",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "39526",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ],
-      [
-       "ENGL301",
-       "ENGWR301",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "39527",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ],
-      [
-       "ENGL301",
-       "ENGWR301",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "40348",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "41265",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "41435",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "42984",
-     "renamed": [
-      [
-       "ENGL384",
-       "ENGWR384",
-       3
-      ]
-     ]
-    },
-    {
-     "kind": "passing_record_renamed",
-     "record": "44608",
-     "renamed": [
-      [
-       "ENGL488",
-       "ENGWR488",
-       4
-      ]
-     ]
-    }
-   ],
-   "pass_after": 149,
-   "pass_before": 149,
-   "reconstruction_mismatch": 0,
-   "records": 204,
-   "renamed_without_units": [],
-   "tab_after": 149,
-   "tab_before": 149
-  },
   "San Bernardino Valley College": {
    "arithmetic_may_move": [],
    "coverage_fails_after": 27,
@@ -11979,51 +11654,6 @@
    "renamed_without_units": [],
    "tab_after": 191,
    "tab_before": 191
-  },
-  "Solano Community College": {
-   "arithmetic_may_move": [],
-   "coverage_fails_after": 25,
-   "coverage_fails_before": 25,
-   "coverage_newly_pass": [],
-   "live_coverage_fails": 6,
-   "live_coverage_newly_pass": [],
-   "live_newly_pass_tab": [],
-   "newly_pass": [],
-   "other_direction": [
-    {
-     "kind": "passing_record_renamed",
-     "record": "38231",
-     "renamed": [
-      [
-       "ADVM130",
-       "MT130",
-       3
-      ],
-      [
-       "ADVM132",
-       "MT132",
-       3
-      ],
-      [
-       "ADVM140",
-       "MT140",
-       3
-      ],
-      [
-       "ADVM142",
-       "MT142",
-       3
-      ]
-     ]
-    }
-   ],
-   "pass_after": 97,
-   "pass_before": 97,
-   "reconstruction_mismatch": 0,
-   "records": 162,
-   "renamed_without_units": [],
-   "tab_after": 119,
-   "tab_before": 119
   }
  },
  "existing": {
@@ -12090,20 +11720,46 @@
     "verdict": "hold"
    },
    "COMM": {
-    "counterexamples": [],
-    "evidence": 7,
+    "counterexamples": [
+     {
+      "catalog": "COMM 14",
+      "catalog_source": "mis_course_record",
+      "catalog_title": "Statistical Analysis for Comm",
+      "control": null,
+      "file": "COMST 14",
+      "file_title": "Statistical Analysis for Communication"
+     },
+     {
+      "catalog": "COMM 4",
+      "catalog_source": "mis_course_record",
+      "catalog_title": "Intro Human Communication",
+      "control": null,
+      "file": "COMST 4",
+      "file_title": "Introduction to Human Communication"
+     }
+    ],
+    "evidence": 5,
     "file_prefix": "COM ST",
-    "reason": "same number and title, 7 courses",
+    "reason": "counterexample",
     "untitled": 0,
-    "verdict": "propose"
+    "verdict": "hold"
    },
    "ENGL": {
-    "counterexamples": [],
+    "counterexamples": [
+     {
+      "catalog": "ENGL 62A",
+      "catalog_source": "mis_course_record",
+      "catalog_title": "Race/Ethnicity in Literature",
+      "control": null,
+      "file": "ENG 62A",
+      "file_title": "Race and Ethnicity in Literature"
+     }
+    ],
     "evidence": 7,
     "file_prefix": "ENG",
-    "reason": "same number and title, 7 courses",
+    "reason": "counterexample",
     "untitled": 0,
-    "verdict": "propose"
+    "verdict": "hold"
    }
   }
  },

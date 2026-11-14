@@ -79,6 +79,14 @@ OUT_DIR = os.path.join(HERE, "program_requirements_reconcile_out", "prefix_alias
 OUT = os.path.join(OUT_DIR, "plan.json")
 TAG = "S652"
 UNITS: dict = {}   # slug -> {listed code: the course list's units}, filled by build() for the measurement
+
+# Pairs a second reader of #3301 held (S652, 2026-11-14), (college, catalog prefix, file prefix) -> why.
+_LOS_RIOS_ENGL = ("Los Rios's ENGL takes in literature as well as writing (COCI lists Sacramento City ENGL 494 "
+                  "Topics in Literature), and numbers clash across the old prefixes (ENGLT 303 Short Story against "
+                  "ENGWR 303 Argumentative Writing; ENGRD and ENGWR 110; American River 299, 495 and 499). The census "
+                  "first missed it because MIS writes these ids with a record id after the number (ENGL304-2507).")
+SECOND_READER_HOLDS = {("American River College", "ENGL", "ENGWR"): _LOS_RIOS_ENGL,
+                       ("Sacramento City College", "ENGL", "ENGWR"): _LOS_RIOS_ENGL}
 MIN_EVIDENCE = 3
 
 # The scorer's own split of a normalized code (with_prefix_aliases): the letters, then the number from its first digit.
@@ -127,11 +135,25 @@ def load_pcf(path: str = PCF) -> tuple[dict, dict, dict]:
     return titles, programs, courses
 
 
+# A MIS course id the college writes with its own record id after the course number: Los Rios's "ENGL304-2507"
+# Introduction to Poetry and "ENG303-26954" (American River), 6,332 of the four colleges' 6,599 Fall 2025 ids.
+# Normalized whole, it reads ENGL3042507 and never meets ENGL 304, so the counterexample rule could not see it
+# (S652 second reader). A number must stand before the hyphen: Southwestern's "NC-1001" is a subject and a number.
+MIS_ID_SUFFIX = re.compile(r"^([A-Z&][A-Z&\s]*\d+[A-Z]*)-\d{4,5}$")
+
+
+def mis_code(course_id: str) -> str:
+    """A MIS CB_COURSE_ID as the course code it names, the trailing record id set aside."""
+    s = (course_id or "").strip().upper()
+    m = MIS_ID_SUFFIX.match(s)
+    return norm_code(m.group(1) if m else s)
+
+
 def load_mis(path: str = MIS) -> dict:
     out = collections.defaultdict(lambda: collections.defaultdict(set))
     with open(path, encoding="utf-8-sig") as fh:
         for r in csv.DictReader(fh):
-            k = norm_code((r.get("CB_COURSE_ID") or "").strip())
+            k = mis_code(r.get("CB_COURSE_ID"))
             if k and (r.get("CB_TITLE") or "").strip():
                 out[r["CB_COLLEGE_ID"].strip()][k].add((r["CB_CONTROL_NUMBER"].strip(), " ".join(r["CB_TITLE"].split())))
     return out
@@ -215,28 +237,34 @@ def decide(pair: tuple[str, str], evidence: set, file_titles, catalog_titles, nu
 
     def row(n, ft, ct):
         fk, ck = {title_key(t) for _, t, _ in ft}, {title_key(t) for _, t, _ in ct}
-        shared = sorted({c for c, _, _ in ft if c} & {c for c, _, _ in ct if c})
+        fc = {c for c, _, _ in ft if c}
+        shared = sorted(fc & {c for c, _, _ in ct if c})
         best = sorted(fk & ck)
+        # A course the printed code names under another title and another control number is a different course
+        # (Sacramento City's ATC 300 is both CCC000516825 Basic Terminal Procedures, the file's ATCAD 300, and
+        # CCC000653071 Basic Air Traffic Control Part 1): a counterexample even where a same-titled one also exists.
+        other = sorted((t, s) for c, t, s in ct if title_key(t) not in fk and not (c and c in fc))
         pick = lambda side, keys: sorted(t for _, t, _ in side if not keys or title_key(t) in keys)[0]
-        return ({"file": "%s %s" % (F, n), "catalog": "%s %s" % (C, n),
-                 "file_title": pick(ft, best), "catalog_title": pick(ct, best),
-                 "catalog_source": sorted({s for _, t, s in ct if not best or title_key(t) in best})[0],
-                 "control": shared[0] if shared else None}, bool(best), bool(shared))
+        r = {"file": "%s %s" % (F, n), "catalog": "%s %s" % (C, n), "file_title": pick(ft, best),
+             "catalog_title": other[0][0] if other else pick(ct, best),
+             "catalog_source": other[0][1] if other else sorted({s for _, t, s in ct if not best or title_key(t) in best})[0],
+             "control": shared[0] if shared else None}
+        return r, bool(best), bool(other)
 
     for n in sorted(evidence):
         ft, ct = file_titles(F + n), catalog_titles(C + n)
         if not ft or not ct:
             untitled.append({"n": n, "file_title": bool(ft), "catalog_title": bool(ct)})
             continue
-        r, same_title, same_control = row(n, ft, ct)
+        r, same_title, conflict = row(n, ft, ct)
         # Different titles under one control number are one course whose title a source shortens
         # (Los Angeles Valley's MIS record "Bsc Mach Shp Thry&Pr" for TM 27): neither evidence nor a counterexample.
-        (matched if same_title else abbreviated if same_control else counter).append(r)
+        (counter if conflict else matched if same_title else abbreviated).append(r)
     for n in sorted(numbers - evidence):
         ft, ct = file_titles(F + n), catalog_titles(C + n)
         if ft and ct:
-            r, same_title, same_control = row(n, ft, ct)
-            if not same_title and not same_control:
+            r, same_title, conflict = row(n, ft, ct)
+            if conflict:
                 counter.append(r)
     out = {"file_prefix": F, "catalog_prefix": C, "evidence": matched, "counterexamples": counter,
            "untitled": untitled, "same_control_title_differs": abbreviated, "evidence_numbers": len(evidence)}
@@ -400,6 +428,13 @@ def build() -> dict:
             v = decide((F, C), nums, file_titles, catalog_titles, names.get(F, set()) & names.get(C, set()))
             v["records_affected"] = sorted(records_by_pair[(F, C)])
             verdicts.append(v)
+        # A second reader's hold, by name, with its reason: the pair stays held whatever the rule finds.
+        for v in verdicts:
+            note = SECOND_READER_HOLDS.get((college, v["catalog_prefix"], v["file_prefix"]))
+            if note:
+                v["second_reader"] = note
+                if v["verdict"] == "propose":
+                    v.update(verdict="hold", reason="second_reader")
         # One printed prefix maps to one file prefix: two proposals for the same C hold both.
         by_c = collections.Counter(v["catalog_prefix"] for v in verdicts if v["verdict"] == "propose")
         for v in verdicts:
@@ -434,7 +469,9 @@ def build() -> dict:
                                              "records_affected")}
                          | {"evidence": v["evidence"][:4], "counterexamples": v["counterexamples"][:4],
                             "untitled": len(v["untitled"]), "same_control_title_differs":
-                            len(v["same_control_title_differs"])} for v in listed_held]}
+                            len(v["same_control_title_differs"])}
+                         | ({"second_reader": v["second_reader"]} if v.get("second_reader") else {})
+                         for v in listed_held]}
 
     for kind in sorted(held_rule):
         plan["held_by_rule"][kind] = {"records_codes": sum(held_rule[kind].values()),

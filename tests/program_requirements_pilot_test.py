@@ -2083,6 +2083,21 @@ same_ctl = lambda code: {("CCC1", _CAT.get(code, "Med Soc"), "mis_course_record"
 check(PA.decide(("SOC", "SOCI"), {"2", "5", "6"}, lambda c: {("CCC1", _FILE[c], "closed_list")} if c in _FILE else set(),
                 same_ctl, {"2", "5", "6", "120"})["verdict"] == "propose",
       "one control number under two titles is one course, never a counterexample")
+# Sacramento City's ATC 300 names two courses: the file's ATCAD 300 (one control number, the same title) and a new
+# Basic Air Traffic Control Part 1 (another control number). A same-titled match never hides the second course.
+two = lambda code: ({("CCC1", "Basic Terminal Procedures", "mis_course_record"),
+                     ("CCC9", "ATC 300 Basic Air Traffic Cont", "mis_course_record")} if code == "ATC300"
+                    else {("CCC%s" % code[-1], "Course %s" % code[-1], "mis_course_record")} if code.startswith("ATC") else set())
+one = lambda code: ({("CCC1", "Basic Terminal Procedures", "closed_list")} if code == "ATCAD300"
+                    else {("CCC%s" % code[-1], "Course %s" % code[-1], "closed_list")} if code.startswith("ATCAD") else set())
+atc = PA.decide(("ATCAD", "ATC"), {"300", "301", "302"}, one, two, {"300", "301", "302"})
+check(atc["reason"] == "counterexample" and atc["counterexamples"][0]["catalog_title"] == "ATC 300 Basic Air Traffic Cont",
+      "a printed code naming a second course under another control number is a counterexample: %s" % atc["reason"])
+# MIS writes Los Rios's ids with a record id after the number (ENGL304-2507, ENG303-26954): the course is ENGL 304,
+# so the counterexample rule sees it. A subject and a number alone (Southwestern's NC-1001) stay as written.
+check(PA.mis_code("ENGL304-2507") == "ENGL304" and PA.mis_code("ENG303-26954  ") == "ENG303"
+      and PA.mis_code("NC-1001") == "NC1001" and PA.mis_code("PSYC-C1000") == "PSYCC1000",
+      "a MIS record id after the course number is set aside, and nothing else")
 check(PA.decide(("HIS", "HIST"), {"14", "15", "44"}, _ft, lambda c: set(), {"14"})["reason"] == "no_catalog_title",
       "no catalog title in committed files holds the pair: numbers alone never make one")
 check(PA.near_miss("KPEA105A", ["KPEA105"]) == [("suffix_letter", "KPEA105")]

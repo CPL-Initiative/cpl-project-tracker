@@ -6,7 +6,7 @@
   "order": "steps run in order: a clear runs before the fills that depend on it",
   "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE); 'noncredit': a noncredit program by the state file's award (S644: the no-colon hours total's flag, San Bernardino Valley and Coalinga)",
   "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without names a field that must be empty, only_with one that must be set (Los Angeles City, S639: a heading's 'Minimum of 60' is a floor only where the record holds that total; Victor Valley's Cal-GETC, only_with degree_total). A set of electives_fill_words files the catalog's own sentence that electives fill the total, where the page never prints the word elective (Grossmont, East Los Angeles, S644): the scorer's electives guard reads it, and only where the text prints it",
-  "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed). prefix_aliases_cited names each pair's evidence where a census wrote it (S652, kb/_prefix_alias_census.py: at least three courses of the same number and title at that college, and no number naming two different courses)",
+  "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed). prefix_aliases_cited names each pair's evidence and source where a census wrote it (S652, kb/_prefix_alias_census.py: at least three courses of the same number and title at that college, and no number naming two different courses)",
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
   "course_units": "a course the record lists without units takes the units the page's own course data names (the vendor call the page made as it loaded, kept by the reader as the source's course_units): never a course the reading gave units, and the note names the call",
   "course_hours": "a course a record measured in hours lists without hours takes the top of the hours the page's own course data names (the course_units call's lecture plus lab hours, kept by the reader as the source's course_hours; the tab's noncredit total sums the tops): only in an hours record, never a course the reading gave a figure, and the note names the call. A catalog that prints each course's hours only in its course descriptions carries them in hours_file, a committed map beside the read that printed them (Victor Valley, S639), and the note names that read",
@@ -451,6 +451,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 4 courses of the same number and title (mis_course_record; 4 on the same control number), and no number naming two different courses at the college.",
      "evidence": 4,
      "same_control": 4,
      "catalog_sources": [
@@ -469,6 +470,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 5 courses of the same number and title (mis_course_record; 5 on the same control number), and no number naming two different courses at the college.",
      "evidence": 5,
      "same_control": 5,
      "catalog_sources": [
@@ -884,6 +886,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: four courses of the same number and title and the same control numbers; no title exists on file for CNT 91, and the college is parked, so the pair is config only.",
      "evidence": 4,
      "same_control": 4,
      "catalog_sources": [
@@ -1354,6 +1357,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: successor courses on new control numbers, matched on title (ANTH 102, 102H and 125 for the file's ANTHRO 102, 102H and 125), confirmed by C-ID articulations (ANTH 102 and 125; the second reader on #3301).",
      "evidence": 3,
      "same_control": 0,
      "catalog_sources": [
@@ -1372,6 +1376,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: successor courses on new control numbers, matched on title (ARTH 105, 107 and 108 for the file's ART 105, 107 and 108), confirmed by C-ID articulations (ARTH 105 and 107; the second reader on #3301). Record 39404 (Studio Arts AA-T) passes on this pair alone.",
      "evidence": 3,
      "same_control": 0,
      "catalog_sources": [
@@ -1423,6 +1428,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 9 courses of the same number and title (mis_course_record; 9 on the same control number), and no number naming two different courses at the college.",
      "evidence": 9,
      "same_control": 9,
      "catalog_sources": [
@@ -1447,10 +1453,9 @@
    "steps": []
   },
   "American River College": {
-   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BMET n, ENGL n, SWCD n where the state's Program Course File lists ET n, ENGWR n, HSER n, the same number and title in every case kb/_prefix_alias_census.py could title (BMET for ET, 6 courses; ENGL for ENGWR, 3 courses; SWCD for HSER, 7 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BMET n, SWCD n where the state's Program Course File lists ET n, HSER n, the same number and title in every case kb/_prefix_alias_census.py could title (BMET for ET, 6 courses; SWCD for HSER, 7 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
    "prefix_aliases": {
     "BMET": "ET",
-    "ENGL": "ENGWR",
     "SWCD": "HSER"
    },
    "prefix_aliases_cited": [
@@ -1460,6 +1465,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 6 courses of the same number and title (program_course_file_crsid; 6 on the same control number), and no number naming two different courses at the college.",
      "evidence": 6,
      "same_control": 6,
      "catalog_sources": [
@@ -1473,29 +1479,12 @@
      "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
     },
     {
-     "printed": "ENGL",
-     "file": "ENGWR",
-     "session": "S652",
-     "issue": "#3299 slice C",
-     "date": "2026-11-14",
-     "evidence": 3,
-     "same_control": 3,
-     "catalog_sources": [
-      "program_course_file_crsid"
-     ],
-     "examples": [
-      "ENGL 301 = ENGWR 301, College Composition and Literature",
-      "ENGL 481 = ENGWR 481, Honors College Composition and Literature",
-      "ENGL 95 = ENGWR 95, Beginning Writing Across the Curriculum (WAC)"
-     ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
-    },
-    {
      "printed": "SWCD",
      "file": "HSER",
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 7 courses of the same number and title (program_course_file_crsid; 7 on the same control number), and no number naming two different courses at the college.",
      "evidence": 7,
      "same_control": 7,
      "catalog_sources": [
@@ -1524,6 +1513,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 18 courses of the same number and title (program_course_file_crsid; 18 on the same control number), and no number naming two different courses at the college.",
      "evidence": 18,
      "same_control": 18,
      "catalog_sources": [
@@ -1542,6 +1532,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 3 courses of the same number and title (coci_course_list; 3 on the same control number), and no number naming two different courses at the college.",
      "evidence": 3,
      "same_control": 3,
      "catalog_sources": [
@@ -1569,6 +1560,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 5 courses of the same number and title (coci_course_list; 5 on the same control number), and no number naming two different courses at the college.",
      "evidence": 5,
      "same_control": 5,
      "catalog_sources": [
@@ -1596,6 +1588,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 4 courses of the same number and title (program_course_file_crsid; 4 on the same control number), and no number naming two different courses at the college.",
      "evidence": 4,
      "same_control": 4,
      "catalog_sources": [
@@ -1623,6 +1616,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 14 courses of the same number and title (program_course_file_crsid; 14 on the same control number), and no number naming two different courses at the college.",
      "evidence": 14,
      "same_control": 14,
      "catalog_sources": [
@@ -1650,6 +1644,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 7 courses of the same number and title (coci_course_list, mis_course_record; 4 on the same control number), and no number naming two different courses at the college.",
      "evidence": 7,
      "same_control": 4,
      "catalog_sources": [
@@ -1678,6 +1673,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 12 courses of the same number and title (course_outline; 12 on the same control number), and no number naming two different courses at the college.",
      "evidence": 12,
      "same_control": 12,
      "catalog_sources": [
@@ -1705,6 +1701,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 15 courses of the same number and title (course_outline; 15 on the same control number), and no number naming two different courses at the college.",
      "evidence": 15,
      "same_control": 15,
      "catalog_sources": [
@@ -1732,6 +1729,7 @@
      "session": "S652",
      "issue": "#3299 slice C",
      "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 25 courses of the same number and title (coci_course_list; 25 on the same control number), and no number naming two different courses at the college.",
      "evidence": 25,
      "same_control": 25,
      "catalog_sources": [
@@ -1741,61 +1739,6 @@
       "HIST 1 = HIS 1, World History to 1500",
       "HIST 11 = HIS 11, Military History of the United States to 1900",
       "HIST 12 = HIS 12, Military History of the United States Since 1900"
-     ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
-    }
-   ],
-   "steps": []
-  },
-  "Sacramento City College": {
-   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints ENGL n where the state's Program Course File lists ENGWR n, the same number and title in every case kb/_prefix_alias_census.py could title (ENGL for ENGWR, 4 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
-   "prefix_aliases": {
-    "ENGL": "ENGWR"
-   },
-   "prefix_aliases_cited": [
-    {
-     "printed": "ENGL",
-     "file": "ENGWR",
-     "session": "S652",
-     "issue": "#3299 slice C",
-     "date": "2026-11-14",
-     "evidence": 4,
-     "same_control": 4,
-     "catalog_sources": [
-      "program_course_file_crsid"
-     ],
-     "examples": [
-      "ENGL 301 = ENGWR 301, College Composition and Lit",
-      "ENGL 330 = ENGWR 330, Writing for Publication",
-      "ENGL 384 = ENGWR 384, Mass Media and Society"
-     ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
-    }
-   ],
-   "steps": []
-  },
-  "Solano Community College": {
-   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints ADVM n where the state's Program Course File lists MT n, the same number and title in every case kb/_prefix_alias_census.py could title (ADVM for MT, 4 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
-   "prefix_aliases": {
-    "ADVM": "MT"
-   },
-   "prefix_aliases_cited": [
-    {
-     "printed": "ADVM",
-     "file": "MT",
-     "session": "S652",
-     "issue": "#3299 slice C",
-     "date": "2026-11-14",
-     "evidence": 4,
-     "same_control": 0,
-     "catalog_sources": [
-      "coci_course_list",
-      "mis_course_record"
-     ],
-     "examples": [
-      "ADVM 130 = MT 130, Principles of Mechanical Power Systems",
-      "ADVM 132 = MT 132, Principles of Fluid Power Systems",
-      "ADVM 140 = MT 140, Principles of Industrial Electrical Systems"
      ],
      "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
     }
