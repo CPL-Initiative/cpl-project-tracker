@@ -405,6 +405,7 @@ publish kb/status/commons_data_programs
 publish kb/status/commons_history.json
 publish kb/status/course.json
 publish kb/status/cr.json
+publish kb/status/electives_fill_section_census_2026-11-14.json
 publish kb/status/exhibit.json
 publish kb/status/harvest_gap_census.json
 publish kb/status/harvest_gap_census.md

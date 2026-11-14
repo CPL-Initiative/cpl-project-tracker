@@ -1,6 +1,6 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-11-14T02:36:49.480Z",
+ "_as_of": "2026-11-14T13:44:11.100Z",
  "credit_recommendations": {
   "total": "16,958",
   "ccc": "1,522",
@@ -45,7 +45,7 @@
     "exhibits": 18,
     "credit_recs": 303,
     "adoptions": 356,
-    "could_adopt": 45
+    "could_adopt": 44
    },
    {
     "sector": "Computer Information Systems",
@@ -108,7 +108,7 @@
     "exhibits": 1,
     "credit_recs": 34,
     "adoptions": 42,
-    "could_adopt": 40
+    "could_adopt": 49
    },
    {
     "sector": "Other Statewide",
@@ -118,7 +118,7 @@
     "could_adopt": 0
    }
   ],
-  "could_adopt_total": 114,
+  "could_adopt_total": 115,
   "in_progress": [
    "HVAC — faculty currently meeting"
   ]

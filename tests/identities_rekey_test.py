@@ -147,8 +147,15 @@ for _d in sorted(os.listdir(os.path.join(ROOT, "kb/identities_rekey_out"))):
     _since = str(_r.get("_generated_at") or _d)[:10]
     _later = ac.load_maps([m for m in ac.ALIAS_MAPS
                            if (lambda x: bool(x) and x.group(1) > _since)(re.search(r"(\d{4}-\d{2}-\d{2})", m))])
+    # The identities rebuild (kb/_identities_rebuild.py, applied S652) refreshes
+    # an entry from the catalog; when the new title differs in substance it
+    # moves the re-key stamp to _superseded_rekeyed_from (16 of the 2026-09-05
+    # re-keys), so the old key is still recorded on the entry, under that name.
+    def _stamped(e, g):
+        sup = e.get("_superseded_rekeyed_from")
+        return e.get(idr.STAMP) == g or sup == g or (isinstance(sup, list) and g in sup)
     check("applied receipt %s: every re-keyed entry sits on its new id, stamped" % _d,
-          all(ident.get(ac.resolve_id(n, _later), {}).get(idr.STAMP) == g for g, n in _rekeys.items()))
+          all(_stamped(ident.get(ac.resolve_id(n, _later), {}), g) for g, n in _rekeys.items()))
     check("applied receipt %s: no dropped or old key survives" % _d,
           not [g for g in list(_rekeys) + _drops if g in ident])
     check("applied receipt %s: the ruling is recorded on the file" % _d,
