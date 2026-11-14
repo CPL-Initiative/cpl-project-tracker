@@ -1,7 +1,7 @@
 ---
 title: "Doctrine provenance — the incidents behind CLAUDE.md's rules"
 created: 2026-09-27
-updated: 2026-09-27
+updated: 2026-11-14
 tags: [reference, doctrine]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -21,6 +21,9 @@ as `CLAUDE.md` carried them on 2026-09-27, with that version's line numbers.
 
 When you move more text out of `CLAUDE.md`, add it here the same way: under the
 rule's name, verbatim, dated. The rule itself stays in `CLAUDE.md`.
+
+Sam's rulings themselves, one dated row each in his words with a link to the
+rule each governs: [`sam_rulings`](sam_rulings.md) (`docs/reference/sam_rulings.md`).
 
 ## What belongs in this file
 
