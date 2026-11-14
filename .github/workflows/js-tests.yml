@@ -579,6 +579,10 @@ jobs:
         run: |
           pip install --quiet pyyaml
           python3 tests/apply_concurrency_test.py
+      # Every job that reads the service key declares the main-only `live-counts` environment or is on the test's
+      # PENDING list with its group and a reason (S653b, governance lane NEXT 1). PyYAML, installed by the step above.
+      - name: Service-key readers run in the live-counts environment or are listed
+        run: python3 tests/service_key_environment_test.py
       # The Docket (#2963 step 2): the cases file carries no email and names its register row, and the
       # ruling reader acts only on an open case's offered choice.
       - name: Docket cases and the ruling reader
@@ -998,6 +1002,16 @@ jobs:
       - name: Workplan reports year pair (excel_to_dashboard.py)
         run: |
           python3 tests/workplan_reports_year_pair_test.py
+      # workplan_goals.current stops being read (S653b): the per-year cur_* columns
+      # replaced it, and a second step drops it, after which a select naming it
+      # answers 400. The guard fails any reader or writer of the table that names the
+      # old column again; the hybrid test (run nowhere before S653b) pins that
+      # _row_current_years ignores it. Both import the generator (openpyxl, installed
+      # at the top). Same non-required check.
+      - name: workplan_goals.current is never read (guard + Current hybrid)
+        run: |
+          python3 tests/workplan_goals_current_column_guard_test.py
+          python3 kb/_test_workplan_current_hybrid.py
       # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
       # repo already decided about the files I am about to touch?", replacing
       # recall across 299 KB notes. It shipped with two silent-omission bugs

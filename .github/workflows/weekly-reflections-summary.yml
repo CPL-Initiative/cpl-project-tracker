@@ -8,6 +8,7 @@ permissions:
   contents: write          # lets the commit step push (avoids the 403 we hit on CPLBrain)
 jobs:
   summary:
+    environment: live-counts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

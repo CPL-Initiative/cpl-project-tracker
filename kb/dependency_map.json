@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 983,
+  "file_datasets": 986,
   "external_services": 195,
   "consumers": 594,
   "workflows": 72,
@@ -6406,7 +6406,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13340
+     "line": 13338
     }
    ],
    "served": true,
@@ -7028,7 +7028,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13674
+     "line": 13672
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -7872,7 +7872,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13281
+     "line": 13279
     }
    ],
    "served": true,
@@ -8442,7 +8442,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13337
+     "line": 13335
     }
    ],
    "served": true,
@@ -9143,7 +9143,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13898
+     "line": 13896
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -9189,7 +9189,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13918
+     "line": 13916
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -10880,6 +10880,19 @@
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_test_workplan_current_hybrid.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -22616,7 +22629,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 65
+     "line": 66
     }
    ],
    "served": false,
@@ -23680,7 +23693,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13109
+     "line": 13107
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -23845,7 +23858,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13339
+     "line": 13337
     }
    ],
    "served": true,
@@ -23868,14 +23881,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13139
+     "line": 13137
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13139
+     "line": 13137
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -26450,6 +26463,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/service_key_environment_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/sheet181_ruled_renames_test.py": {
    "consumers": [
     {
@@ -26802,6 +26828,19 @@
    "main_committers": []
   },
   "file:tests/workplan_description_drafts_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/workplan_goals_current_column_guard_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -27188,7 +27227,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13341
+     "line": 13339
     }
    ],
    "served": true,
@@ -30715,7 +30754,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 58
+     "line": 59
     }
    ],
    "main_committers": []
@@ -30747,7 +30786,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 73
+     "line": 74
     }
    ],
    "main_committers": []
@@ -33063,14 +33102,14 @@
      "kind": "script",
      "direction": "read",
      "how": "via kb/_load_workplan_goals.py",
-     "line": 99
+     "line": 101
     },
     {
      "id": "script:kb/_load_workplan_goals.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 99
+     "line": 101
     },
     {
      "id": "script:kb/_seed_workplan_goals.py",
@@ -33133,14 +33172,14 @@
      "kind": "script",
      "direction": "read",
      "how": "via kb/_load_workplan_goals.py",
-     "line": 86
+     "line": 88
     },
     {
      "id": "script:kb/_load_workplan_goals.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 86
+     "line": 88
     },
     {
      "id": "script:kb/_seed_workplan_goals.py",
@@ -34201,6 +34240,7 @@
     "tests/commons_data_live_test.py",
     "kb/_build_commons_status.py",
     "tests/apply_concurrency_test.py",
+    "tests/service_key_environment_test.py",
     "tests/docket_rulings_test.py",
     "tests/exhibits_review_build_test.py",
     "tests/title_in_use_test.py",
@@ -34264,6 +34304,8 @@
     "tests/kpi_history_write_test.py",
     "tests/credential_reference_statewide_basis_test.py",
     "tests/workplan_reports_year_pair_test.py",
+    "tests/workplan_goals_current_column_guard_test.py",
+    "kb/_test_workplan_current_hybrid.py",
     "tests/doctrine_lookup_test.py",
     "tests/context_budget_test.py",
     "tests/merge_chain_flatten_test.py",

@@ -58,6 +58,7 @@ concurrency:
 
 jobs:
   run:
+    environment: live-counts
     runs-on: ubuntu-latest
     timeout-minutes: 90
     permissions:
