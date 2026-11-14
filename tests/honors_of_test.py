@@ -100,7 +100,7 @@ check("worklist: an unrelated group is unchanged", ho.without_honors_pairs(["A M
 check("worklist: no honors_of, no change", ho.without_honors_pairs(group, {}) == group)
 src_amw = open(os.path.join(KB, "_auto_merge_worklist.py"), encoding="utf-8").read()
 check("auto-merge worklist reads honors_of through kb/honors_of.py",
-      "from honors_of import honors_map, without_honors_pairs" in src_amw and "without_honors_pairs([m[\"id\"]" in src_amw)
+      "from honors_of import honors_map, load_live_ids, without_honors_pairs" in src_amw and "without_honors_pairs([m[\"id\"]" in src_amw)
 
 # 3. A person's merge wins.
 cur, _, honors = ac.fold_rows([
@@ -165,6 +165,135 @@ check("byte-identical: no honors key appears without the field", "_honors" not i
 # 6. The live re-key moves honors_of with merge_into.
 check("re-key: honors_of is an id pointer", rk.POINTER_FIELDS == ("merge_into", "honors_of")
       and rk.POINTER_FILTER == "field=in.(merge_into,honors_of)")
+
+# ── COBIx's review of #3313 ─────────────────────────────────────────────────────────────────────────────────────
+# Item 1: an honors_of row never restamps the entry a person saved.
+cur, _, _ = ac.fold_rows([
+    row("ENGL M1261", "unified_title", "Introduction to Shakespeare", "person@example.org", "2026-10-01T00:00:00+00:00"),
+    row("ENGL M1261", "honors_of", "ENGL M1260", HON, "2026-11-15T00:00:00+00:00"),
+], live={"ENGL M1260", "ENGL M1261"})
+check("stamp: a later honors_of row leaves the person's reviewer and time",
+      cur["ENGL M1261"]["reviewed_by"] == "person@example.org"
+      and cur["ENGL M1261"]["reviewed_at"] == "2026-10-01T00:00:00+00:00"
+      and cur["ENGL M1261"]["honors_of"] == "ENGL M1260")
+cur, _, _ = ac.fold_rows([row("ENGL M1999", "honors_of", "ENGL M1998", HON)], live={"ENGL M1998"})
+check("stamp: an entry holding only honors_of carries no reviewer", "reviewed_by" not in cur["ENGL M1999"])
+
+# Item 2: the base resolves through the alias chain (a dead base only) and, for the worklists, to its merge end.
+MAPS = [{"MATH M1036": "MATH M1050"}]   # a re-mint after the field was born
+cur, _, honors = ac.fold_rows([
+    row("MATH M1036H", "honors_of", "MATH M1036", HON),
+    row("MATH M1036H", "merge_into", "MATH M1050"),
+], live={"MATH M1050"}, maps=MAPS)
+check("re-mint: a base the re-mint moved still holds the pair (the bot merge into the new base is cut)",
+      "merge_into" not in cur.get("MATH M1036H", {}) and len(honors["held"]) == 1)
+check("re-mint: a live base is never resolved again (no telescoping through an older slot)",
+      ho.honors_map({"X M1001H": {"honors_of": "MATH M1036"}}, live={"MATH M1036"}, maps=MAPS)
+      == {"X M1001H": "MATH M1036"})
+check("re-mint: the maps read are those after the field's baseline (none today)",
+      ho.pending_alias_maps() == [] and ho.FIELD_BASELINE.endswith("2026-11-08/alias_map.json"))
+merged_base = {"MATH M1036H": {"honors_of": "MATH M1036"}, "MATH M1036": {"merge_into": "MATH M1050"}}
+hm_end = ho.honors_map(merged_base, merge_end=True)
+check("merged base: the worklists read the base at its merge end",
+      hm_end == {"MATH M1036H": ["MATH M1036", "MATH M1050"]})
+check("merged base: the pair with the third id is never offered",
+      ho.without_honors_pairs(["MATH M1036H", "MATH M1050"], hm_end) == ["MATH M1050"])
+src_amw = open(os.path.join(KB, "_auto_merge_worklist.py"), encoding="utf-8").read()
+check("merged base: the auto-merge worklist reads the merge end and the live set",
+      "merge_end=True" in src_amw and "load_live_ids(SD)" in src_amw)
+
+# Item 3: both paths walked to the meeting point; the first bot edge is cut before a person's merge wins.
+kept, held, pw = ho.hold_merges({"H M1001H": "X M1001", "X M1001": "H M1001"}, {"H M1001H": "H M1001"},
+                                {"H M1001H": "person@example.org", "X M1001": "automerge-v1@bot"})
+check("case C: a person's H->X stands, the bot's X->B is cut, the pair holds",
+      kept == {"H M1001H": "X M1001"} and [h["merge_source"] for h in held] == ["X M1001"] and not pw)
+cur, _, honors = ac.fold_rows([
+    row("H M1001H", "honors_of", "H M1001", HON),
+    row("H M1001H", "merge_into", "X M1001", "person@example.org", "2026-10-01T00:00:00+00:00"),
+    row("X M1001", "merge_into", "H M1001"),
+], live={"H M1001", "X M1001"})
+check("case C through the fold: honors_of kept, the bot edge leaves the overlay",
+      cur["H M1001H"].get("honors_of") == "H M1001" and "X M1001" not in cur and not honors.get("set_aside"))
+kept, held, pw = ho.hold_merges({"H M1001H": "X M1001", "X M1001": "H M1001"}, {"H M1001H": "H M1001"},
+                                {"H M1001H": "person@example.org", "X M1001": "someone@example.org"})
+check("case C, both people: the merges stand and the honors_of is set aside", kept["X M1001"] == "H M1001" and pw)
+kept, held, pw = ho.hold_merges({"H M1001H": "X M1001", "X M1001": "T M1001", "H M1001": "T M1001"},
+                                {"H M1001H": "H M1001"}, {"H M1001H": "person@example.org"})
+check("meeting at a third id: the first bot edge on either side is cut",
+      [h["merge_source"] for h in held] == ["X M1001"] and kept["H M1001"] == "T M1001")
+
+# Item 4: the generator's later in-memory folds ask before each write (Phase B, R4, routing x2).
+pends = ho.partner_ends({"MATH M1036H": "MATH M1036"})
+mems = [{"id": "MATH M1036H"}, {"id": "MATH M1036"}, {"id": "MATH M1040"}]
+kept_rows = ho.phase_b_members(mems, "MATH 110", {}, pends, {"MATH M1036H"})
+check("Phase B: a pair sharing the official id's group: the base folds, the Honors id stays its own row",
+      [m["id"] for m in kept_rows] == ["MATH M1036", "MATH M1040"])
+check("Phase B: an Honors id whose base IS the official id stays out",
+      ho.phase_b_members([{"id": "ENGL M1999"}], "ENGL 100", {}, ho.partner_ends({"ENGL M1999": "ENGL 100"}),
+                         {"ENGL M1999"}) == [])
+check("R4: a stand-alone whose partner already ends at the official row does not fold",
+      ho.would_join("ENGL M10AAH", "ENGL 100", {"ENGL M10AA": "ENGL 100"}, ho.partner_ends({"ENGL M10AAH": "ENGL M10AA"})))
+check("routing: a stand-alone whose partner is the descriptor row does not fold",
+      ho.would_join("ENGL M10ABH", "ENGL 110", {}, ho.partner_ends({"ENGL M10ABH": "ENGL 110"})))
+check("routing: an M-ID base whose Honors partner already folded there does not fold",
+      ho.would_join("ENGL M1040", "ENGL 110", {"ENGL M1040H": "ENGL 110"}, ho.partner_ends({"ENGL M1040H": "ENGL M1040"})))
+check("routing: an unrelated id folds as before", not ho.would_join("ENGL M1041", "ENGL 110", {}, pends))
+gen_src = open(os.path.join(ROOT, "excel_to_dashboard.py"), encoding="utf-8").read()
+check("generator: Phase B filters its members through phase_b_members",
+      "_honors_of.phase_b_members(mems, oid, merge_into, _hpends, set(_hmap))" in gen_src)
+check("generator: R4 and both routing folds ask would_join before writing",
+      gen_src.count("_honors_of.would_join(") == 3)
+check("generator: every pair is checked again after the folds", "_honors_of.joined_pairs(merge_into, _hmap)" in gen_src)
+check("generator: the overlay map is alias-resolved against the live set",
+      "_honors_of.honors_map(curation, live=set(cat) | set(sg))" in gen_src)
+
+# Item 5: the merge candidate queue never proposes a pair.
+import _merge_candidate_queue as mq  # noqa: E402
+qrows = {"MATH M1036": {"title": "Calculus I", "disc": "Mathematics", "members": 30},
+         "MATH M1036H": {"title": "Calculus I", "disc": "Mathematics", "members": 3}}
+qg = [g for g in mq.build(None, qrows, {}, {"MATH M1036H": "MATH M1036"}) if g["lane"] == "same_title"]
+check("queue: a same-title pair that is an Honors pair is flagged and never proposable",
+      len(qg) == 1 and not qg[0]["proposable"] and any("honors_of" in f for f in qg[0]["flags"]))
+qg0 = [g for g in mq.build(None, qrows, {}) if g["lane"] == "same_title"]
+check("queue: without the field the same group is proposable as before", qg0 and qg0[0]["proposable"])
+
+# Item 6: one pointer re-key for every live overlay re-keyer; the allocator refuses an H id.
+import curation_pointers as cp  # noqa: E402
+e, n = cp.rekey_entry({"honors_of": "ETHS M1001", "merge_into": "ETHS M1001", "x": 1}, {"ETHS M1001": "ETHN M1001"})
+check("pointers: one call moves merge_into and honors_of", e == {"honors_of": "ETHN M1001", "merge_into": "ETHN M1001",
+                                                                 "x": 1} and n == 2)
+src0 = {"merge_into": "A M1001"}
+e, n = cp.rekey_entry(src0, {"B M1001": "C M1001"})
+check("pointers: nothing named, the same entry back", e is src0 and n == 0)
+check("pointers: the live re-key reads the same list", rk.POINTER_FIELDS is cp.POINTER_FIELDS)
+import _zband_retire_dryrun as zd  # noqa: E402
+_, _, cur2, _ = zd.rekey_state({}, {}, {"ETHS M1001H": {"honors_of": "ETHS M1001"}, "X M1001": {"merge_into": "ETHS M1001"}},
+                               {}, {"ETHS M1001": "ETHN M1001"})
+check("pointers: a shared overlay re-keyer moves honors_of with merge_into",
+      cur2["ETHS M1001H"]["honors_of"] == "ETHN M1001" and cur2["X M1001"]["merge_into"] == "ETHN M1001")
+for f in ("_eths_remint.py", "_uc_cur_promote.py", "_zband_retire_dryrun.py", "_prefix_fold_apply.py",
+          "_authority_recode_apply.py", "_zband_retire_apply.py", "_overmerge_apply.py", "_subj4_apply.py"):
+    check(f"pointers: {f} re-keys through curation_pointers.rekey_entry",
+          "curation_pointers.rekey_entry(" in open(os.path.join(KB, f), encoding="utf-8").read())
+import _authority_recode_dryrun as rec  # noqa: E402
+try:
+    rec.Allocator(set(), {}).place("ETHS M1001H", "ETHN")
+    refused = False
+except ValueError:
+    refused = True
+check("allocator: place refuses an Honors id (no 'ETHN NoneNoneNone')", refused)
+try:
+    rec.kept_number("ETHS M1001H", "ETHN")
+    refused = False
+except ValueError:
+    refused = True
+check("allocator: kept_number refuses an Honors id", refused)
+check("allocator: a numbered id keeps its number as before", rec.kept_number("ETHS M1001", "ETHN") == "ETHN M1001"
+      and rec.Allocator(set(), {}).place("ETHS M1001", "ETHN")[0] == "ETHN M1001")
+for f in ("_agab_one_remint.py", "_agri_family_remint.py", "_athl_four_remint.py", "_blank_stray_remint.py",
+          "_fl_stray_remint.py", "_forestry_wine_remint.py", "_subjects_list_recode.py", "_eths_remint.py"):
+    check(f"allocator: {f} takes its kept number through rec.kept_number",
+          "rec.kept_number(cid," in open(os.path.join(KB, f), encoding="utf-8").read())
 
 failed = [n for n, ok in results if not ok]
 for n, ok in results:

@@ -37,7 +37,7 @@ function page(groups, rows) {
 </body></html>`;
 }
 
-async function open(groups, rows, honorsRows) {
+async function open(groups, rows, honorsRows, mergeRows) {
   const dom = new JSDOM(page(groups, rows), { runScripts: "dangerously", url: "https://example.org/" });
   const { window } = dom;
   window.sessionStorage.setItem("cpl_sb", JSON.stringify({
@@ -47,7 +47,12 @@ async function open(groups, rows, honorsRows) {
   window.fetch = (url, opts) => {
     const u = String(url);
     const method = (opts && opts.method) || "GET";
-    const body = u.indexOf("field=eq.honors_of") >= 0 ? honorsRows : [];
+    let body = u.indexOf("field=eq.honors_of") >= 0 ? honorsRows : [];
+    if (u.indexOf("field=eq.merge_into&course_id=in.") >= 0) {
+      const asked = decodeURIComponent(u);
+      body = (mergeRows || []).filter((x) => asked.indexOf('"' + x.course_id + '"') >= 0);
+      reads.push(u);
+    }
     return Promise.resolve({ ok: true, status: method === "GET" ? 200 : 201, json: () => Promise.resolve(body) });
   };
   window.alert = () => {};
@@ -69,6 +74,7 @@ const pairOnly = { sig: "religions2", n: 2, score: 0.9, members: [
   mem("HUMA M1110", "World Religions"), mem("HUMA M1110H", "World Religions (Honors)")] };
 const ceramics = { sig: "ceramics", n: 2, score: 0.9, members: [mem("ARTS M1001", "Ceramics"), mem("ARTS M1002", "Ceramics I")] };
 const honors = [{ course_id: "HUMA M1110H", value: "HUMA M1110" }];
+const reads = [];
 
 (async function main() {
   // 1. Three members, the pair among them: offered without the Honors id.
@@ -87,10 +93,23 @@ const honors = [{ course_id: "HUMA M1110H", value: "HUMA M1110" }];
     && r.panel.textContent.indexOf("ARTS M1001") >= 0
     && r.panel.textContent.indexOf("HUMA M1110H") < 0);
 
-  // 3. No honors_of row: every group shows as before.
+  // 3. No honors_of row: every group shows as before, and no merge read is made.
+  reads.length = 0;
   r = await open([pairOnly, ceramics], rows, []);
   check("without the field the pair's group shows as before",
     /1 of 2/.test(r.doc.body.textContent) && r.panel.textContent.indexOf("HUMA M1110H") >= 0);
+  check("without the field no merge_into read is made", reads.length === 0);
+
+  // 4. The base merged into a third id (live overlay HUMA M1110 -> HUMA M1999, then M1999 -> HUMA M2000):
+  //    a group of the Honors id and the chain's end is not offered (COBIx's review of #3313, item 2).
+  const rows4 = rows.concat([mkRow("HUMA M2000", "World Religions")]);
+  const pairEnd = { sig: "religions3", n: 2, score: 0.9, members: [
+    mem("HUMA M1110H", "World Religions (Honors)"), mem("HUMA M2000", "World Religions")] };
+  r = await open([pairEnd, ceramics], rows4, honors,
+    [{ course_id: "HUMA M1110", value: "HUMA M1999" }, { course_id: "HUMA M1999", value: "HUMA M2000" }]);
+  check("a base merged away (two hops): the Honors id and the chain's end are not offered together",
+    /2 of 2/.test(r.doc.body.textContent) && r.panel.textContent.indexOf("HUMA M1110H") < 0);
+  check("the chain is read hop by hop from the live overlay", reads.length >= 2);
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

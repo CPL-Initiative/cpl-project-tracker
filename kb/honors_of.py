@@ -24,12 +24,26 @@ A C-ID or CCN record is never re-keyed and never takes a minted H (C-ID has no H
 C1000H beside ENGL C1000). The M-ID shape with its optional H is `M_ID_RE`; every parser that reads an M-ID's shape
 accepts the H (the list: docs/reference/honors_of_design.md, *Id parsers*).
 
-Pure stdlib, no I/O: every reader imports these functions, none copies them.
+RESOLVING THE BASE (COBIx's review of #3313). A stored base can go stale two ways, and both are resolved here, once:
+  * a re-mint moves it. Every re-keyer moves honors_of values with merge_into values (kb/curation_pointers.py, and
+    kb/_rekey_kb_curation_supabase.py live), so a LIVE value is current by construction and stays as stored. A value
+    that is not live is resolved through kb/alias_chain.py (imported, never copied), through the maps applied after
+    FIELD_BASELINE only: the field was born after that map, so no older map can name its values, and resolving a
+    current value again through an old map is the slot-reuse telescoping alias_chain.py warns against.
+  * a merge moves it (the base merged into a third id). The worklists read the base at its merge-chain end too.
+`hold_merges` takes the alias-resolved map and walks the merge chains itself.
+
+Pure stdlib. `load_live_ids` is the one function that reads a file; everything else is a pure function, and every
+reader imports these functions, none copies them.
 """
+import json
+import os
 import re
 
 FIELD = "honors_of"
 SUFFIX = "H"
+# The newest applied re-mint when the field was born (2026-11-14). Only maps after it can move an honors_of value.
+FIELD_BASELINE = "kb/anchor_rekey_out/2026-11-08/alias_map.json"
 
 # An M-ID (or a retired Z id): SUBJ, a space, M or Z, the band digit, three more characters, then the optional H
 # that marks an Honors M-ID. Four characters after the letter is a base; five ending in H is its Honors id. A
@@ -72,13 +86,60 @@ def honors_id_for(base_id):
     return base_id + SUFFIX
 
 
-def honors_map(curations):
-    """{honors id: base id} from the overlay's `honors_of` entries (kb/coci_curation.json `curations`)."""
-    out = {}
-    for cid, v in (curations or {}).items():
-        if isinstance(v, dict) and v.get(FIELD):
-            out[cid] = v[FIELD]
+def pending_alias_maps():
+    """The alias maps applied after the field was born, loaded in chronological order (kb/alias_chain.py)."""
+    import alias_chain
+    pending, _ = alias_chain.pending_maps(None, baseline_through=FIELD_BASELINE)
+    return alias_chain.load_maps(pending)
+
+
+def load_live_ids(kb_dir):
+    """The live M-ID set a stored base is checked against: the minted courses and the stand-alones."""
+    out = set()
+    for name in ("coci_minted_courses.json", "coci_minted_singletons.json"):
+        try:
+            with open(os.path.join(kb_dir, name), encoding="utf-8") as f:
+                out |= set((json.load(f) or {}).get("courses", {}))
+        except (IOError, ValueError):
+            pass
     return out
+
+
+def _merge_map(curations):
+    return {cid: v["merge_into"] for cid, v in (curations or {}).items()
+            if isinstance(v, dict) and v.get("merge_into")}
+
+
+def resolve_base(base, live=None, maps=None):
+    """A stored base at the current era: as stored when live (or when no live set is given), else through the maps
+    after FIELD_BASELINE (one lookup per map, in order: alias_chain.resolve)."""
+    if not maps or live is None or base in live:
+        return base
+    import alias_chain
+    return alias_chain.resolve_id(base, maps)
+
+
+def honors_map(curations, live=None, maps=None, merge_end=False):
+    """{honors id: base id} from the overlay's `honors_of` entries (kb/coci_curation.json `curations`).
+
+    live: the live id set; a stored base outside it resolves through the alias maps after FIELD_BASELINE (`maps`,
+    loaded when not given). merge_end: also read the base at its merge-chain end over the overlay's merges, and
+    return {honors id: [stored base, chain end]} for the worklists (without_honors_pairs reads either). Empty when no
+    entry carries the field, with no file read."""
+    raw = {cid: v[FIELD] for cid, v in (curations or {}).items() if isinstance(v, dict) and v.get(FIELD)}
+    if not raw:
+        return {}
+    if live is not None and maps is None:
+        maps = pending_alias_maps()
+    out = {h: resolve_base(b, live, maps) for h, b in raw.items()}
+    if not merge_end:
+        return out
+    mi = _merge_map(curations)
+    ends = {}
+    for h, b in out.items():
+        e = _end(mi, b)
+        ends[h] = sorted({b, e} - {h}) or [b]
+    return ends
 
 
 def partners(hmap):
@@ -114,21 +175,28 @@ def hold_merges(merge_into, hmap, merge_by=None):
     merge_by = merge_by or {}
     for h in sorted(hmap):
         b = hmap[h]
+        if isinstance(b, (list, tuple)):
+            b = b[0]
         if h == b or _end(kept, h) != _end(kept, b):
             continue
-        # The pair would fold together. Cut the Honors id's own merge first, else the base's own: each is the first
-        # hop of its side, so cutting it leaves that side standing and every other merge (a third id into the base,
-        # the base into its target) in place. A person's merge is never cut.
+        # The pair would fold together. Walk both sides to the point where their paths meet; the edges before it are
+        # the ones that join them. Cut the first bot edge, the Honors side's first, then the base side's: cutting it
+        # leaves every merge past the meeting point and every other id's merge in place. A person's edge is never
+        # cut; the pair's honors_of is set aside only when every joining edge is a person's (Rule 10).
+        hp, bp = _path(kept, h), _path(kept, b)
+        on_b = set(bp)
+        meet = next(i for i in hp if i in on_b)
+        joining = hp[:hp.index(meet)] + bp[:bp.index(meet)]
         cut = None
-        for edge in (h, b):
-            if edge in kept and is_bot(merge_by.get(edge, "@bot")):
+        for edge in joining:
+            if is_bot(merge_by.get(edge, "@bot")):
                 trial = dict(kept)
                 trial.pop(edge)
                 if _end(trial, h) != _end(trial, b):
                     cut = edge
                     break
         if cut is None:
-            edge = h if h in kept else b
+            edge = joining[0] if joining else (h if h in kept else b)
             person_wins.append({"honors_id": h, "base_id": b, "merge_source": edge, "merge_into": kept.get(edge),
                                 "reviewer": merge_by.get(edge),
                                 "why": "a person's merge joins the pair: it stands (Rule 10)"})
@@ -138,15 +206,75 @@ def hold_merges(merge_into, hmap, merge_by=None):
     return kept, held, person_wins
 
 
+def _path(merge_into, i):
+    """i, then each id its merges reach, to the chain's end (a cycle stops at the repeat)."""
+    out = [i]
+    while i in merge_into and merge_into[i] not in out:
+        i = merge_into[i]
+        out.append(i)
+    return out
+
+
+def _bases(v):
+    return set(v) if isinstance(v, (list, tuple, set)) else {v}
+
+
 def without_honors_pairs(ids, hmap):
     """A worklist group's member ids with every Honors id whose base sits in the same group removed. The rest of the
-    group may still be offered; the pair never is. Unchanged when hmap is empty or no pair is present."""
+    group may still be offered; the pair never is. hmap values may be one base or a list (honors_map(merge_end=True):
+    the stored base and its merge-chain end). Unchanged when hmap is empty or no pair is present."""
     if not hmap:
         return list(ids)
     present = set(ids)
-    return [i for i in ids if hmap.get(i) not in present]
+    return [i for i in ids if not (i in hmap and _bases(hmap[i]) & (present - {i}))]
 
 
 def holds_pair(ids, hmap):
     present = set(ids)
-    return any(hmap.get(i) in present for i in present)
+    return any(i in hmap and _bases(hmap[i]) & (present - {i}) for i in present)
+
+
+def partner_ends(hmap):
+    """Each id's partners, both ways, from an alias-resolved hmap: {id: set of partner ids}."""
+    out = {}
+    for h, b in hmap.items():
+        for bb in _bases(b):
+            out.setdefault(h, set()).add(bb)
+            out.setdefault(bb, set()).add(h)
+    return out
+
+
+def phase_b_members(mems, oid, merge_into, pends, honors_ids):
+    """Phase B's member rows for official id `oid`, less any whose fold into it would join a partner pair. Bases are
+    taken before Honors ids (`honors_ids`, the hmap's keys), so where a pair shares the group the Honors id is the
+    one left standing; the kept rows keep their order."""
+    trial = dict(merge_into)
+    ordered = sorted(range(len(mems)), key=lambda k: mems[k]["id"] in honors_ids)
+    keep = set()
+    for k in ordered:
+        i = mems[k]["id"]
+        if would_join(i, oid, trial, pends):
+            continue
+        trial[i] = oid
+        keep.add(k)
+    return [m for k, m in enumerate(mems) if k in keep]
+
+
+def joined_pairs(merge_into, hmap):
+    """[(honors id, base)] that end under one id in this merge map."""
+    out = []
+    for h, b in sorted(hmap.items()):
+        for bb in sorted(_bases(b)):
+            if h != bb and _end(merge_into, h) == _end(merge_into, bb):
+                out.append((h, bb))
+    return out
+
+
+def would_join(src, target, merge_into, pends):
+    """True when folding src into target would put src and one of its partners under one id: the partner is the
+    target, or already ends where the target ends. The generator's in-memory folds (Phase B, R4, routing) ask this
+    before each write, because they also consume and synthesize rows and a later cut could not restore them."""
+    if src not in pends:
+        return False
+    t_end = _end(merge_into, target)
+    return any(p == target or _end(merge_into, p) == t_end for p in pends[src])

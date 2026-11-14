@@ -88,7 +88,7 @@ BAND_RE = re.compile(r"^[A-Z]{2,4} M(\d)")
 HONORS_RE = re.compile(r"\s*[-–—:,]+\s*(Honors)$", re.I)
 
 sys.path.insert(0, SD)
-from honors_of import honors_map, without_honors_pairs  # noqa: E402  (the one rule, kb/honors_of.py)
+from honors_of import honors_map, load_live_ids, without_honors_pairs  # noqa: E402  (the one rule, kb/honors_of.py)
 HONORS = {}
 
 
@@ -108,7 +108,10 @@ def load_overlay():
     titles = {}        # course_id -> curator unified_title
     dismissed = set()  # Keep-as-is signatures
     global HONORS
-    HONORS = honors_map(cur)  # {Honors M-ID: base}: the pair is never planned (S653)
+    # {Honors M-ID: [base, base's merge-chain end]}: the pair is never planned (S653). A base that is not live
+    # resolves through kb/alias_chain.py; one merged into a third id is read at its end too.
+    HONORS = honors_map(cur, live=load_live_ids(SD), merge_end=True) if any(
+        isinstance(v, dict) and v.get("honors_of") for v in cur.values()) else {}
     for cid, v in cur.items():
         if not isinstance(v, dict):
             continue

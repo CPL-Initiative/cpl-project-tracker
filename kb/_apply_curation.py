@@ -99,7 +99,7 @@ def fetch_rows():
         start += page
 
 
-def fold_rows(rows):
+def fold_rows(rows, live=None, maps=None):
     """kb_curation rows -> (curations, skipped, honors): the overlay's `curations` map, the count of rows whose
     field is not folded, and the Honors holds ({} when no row carries honors_of, so the overlay is byte-identical
     to the fold before the field existed)."""
@@ -113,6 +113,10 @@ def fold_rows(rows):
         cid = row["course_id"]
         entry = curations.setdefault(cid, {})
         entry[field] = row.get("value")
+        # An honors_of row is a bot's equivalence, never a review of the entry: it must not restamp a
+        # person's save as the bot's (Rule 10; COBIx's review of #3313). It leaves the ledger alone.
+        if field == "honors_of":
+            continue
         # latest reviewer/timestamp wins for the course_id
         if row.get("reviewed_at", "") >= entry.get("reviewed_at", ""):
             entry["reviewed_by"] = row.get("reviewer_email")
@@ -126,17 +130,21 @@ def fold_rows(rows):
             if row.get("validated_at"):
                 entry["validated_at"] = row.get("validated_at")
                 entry["validated_by"] = row.get("validated_by")
-    return curations, skipped, hold_honors_pairs(curations, rows)
+    return curations, skipped, hold_honors_pairs(curations, rows, live, maps)
 
 
-def hold_honors_pairs(curations, rows):
+def hold_honors_pairs(curations, rows, live=None, maps=None):
     """Apply `honors_of` to the folded overlay, in place. A bot's merge_into that would join an Honors id and its
     base (directly, through a chain, or through a third id both land on) leaves the overlay and is reported under
-    `held`; a person's merge stands and that pair's honors_of is set aside, reported under `set_aside`."""
+    `held`; a person's merge stands and that pair's honors_of is set aside, reported under `set_aside`. A stored base
+    that is not live resolves through kb/alias_chain.py first (honors_of.resolve_base); `live` defaults to the
+    minted courses and stand-alones in kb/, read only when some entry carries the field."""
     import honors_of as ho
-    hmap = ho.honors_map(curations)
-    if not hmap:
+    if not any(isinstance(v, dict) and v.get(ho.FIELD) for v in curations.values()):
         return {}
+    if live is None:
+        live = ho.load_live_ids(HERE)
+    hmap = ho.honors_map(curations, live=live, maps=maps)
     merge_into = {cid: v["merge_into"] for cid, v in curations.items() if v.get("merge_into")}
     merge_by = {r["course_id"]: r.get("reviewer_email") for r in rows
                 if (r.get("field") or "").strip() == "merge_into" and r.get("value")}

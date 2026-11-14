@@ -377,6 +377,15 @@ def load_id_reservations():
     return mod.load_id_reservations()
 
 
+def kept_number(cid, new_prefix):
+    """The id `cid` takes under `new_prefix` when it keeps its number. Refuses an id this scheme does not number
+    (an Honors M-ID, base plus H: it moves with its base, kb/honors_of.py), rather than write '<prefix> NoneNoneNone'."""
+    _, letter, band, tail, kind = parse_id(cid)
+    if not kind:
+        raise ValueError(f"refusing to re-mint {cid!r}: not a numbered M-ID (an Honors id moves with its base)")
+    return f"{new_prefix} {letter}{band}{tail}"
+
+
 class Allocator:
     """Keep the number when the new key is free; gap-fill otherwise."""
 
@@ -391,6 +400,12 @@ class Allocator:
 
     def place(self, old_id, new_prefix, prefer_keep=True, reason=""):
         prefix, letter, band, tail, kind = parse_id(old_id)
+        if not kind:
+            # An id this scheme does not number: an Honors M-ID (base plus H, kb/honors_of.py) takes its new id from
+            # its base's move, never a number of its own. Writing "<prefix> NoneNoneNone" into an alias map was the
+            # failure COBIx's review of #3313 reproduced.
+            raise ValueError(f"Allocator.place refuses {old_id!r}: not a corroborated, stand-alone or Z id "
+                             "(an Honors id moves with its base)")
         candidate = f"{new_prefix} {letter}{band}{tail}"
         if prefer_keep and self.free(candidate):
             self.taken.add(candidate)

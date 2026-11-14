@@ -8534,9 +8534,15 @@ def export_unified_courses():
     # merge that would join them is cut here, pairwise, before chains flatten.
     # kb/_apply_curation.py already resolved a person's merge (Rule 10) when it
     # wrote the overlay, so any join left here is cut. No-op without the field.
+    # A stored base outside the live set resolves through kb/alias_chain.py
+    # (honors_of.resolve_base). The later in-memory folds (Phase B, R4,
+    # routing) ask `would_join` before each write: they also consume rows, so a
+    # cut after them could not restore what they removed.
     import honors_of as _honors_of
-    merge_into, _honors_held, _ = _honors_of.hold_merges(
-        merge_into, _honors_of.honors_map(curation))
+    _hmap = _honors_of.honors_map(curation, live=set(cat) | set(sg)) if any(
+        isinstance(_c, dict) and _c.get("honors_of") for _c in curation.values()) else {}
+    _hpends = _honors_of.partner_ends(_hmap)
+    merge_into, _honors_held, _ = _honors_of.hold_merges(merge_into, _hmap)
     if _honors_held:
         print(f"  honors_of: {len(_honors_held)} merge(s) held apart from their base")
     # Chains are flattened BEFORE the member lists are built — see
@@ -9321,6 +9327,11 @@ def export_unified_courses():
         consumed, synthesized, folds = set(), [], 0
         for oid, g in groups.items():
             mems = g["members"]
+            if _hpends:
+                # honors_of: a member whose partner is the official id, sits in
+                # this group, or already ends there stays its own row. Bases
+                # fold first, so the Honors side is the one left standing.
+                mems = _honors_of.phase_b_members(mems, oid, merge_into, _hpends, set(_hmap))
             anchor = anchor_by_id.get(oid)
             if not anchor and len(mems) < 2:
                 continue
@@ -9437,6 +9448,9 @@ def export_unified_courses():
                 continue
             oid = m.get("ccn") or m.get("cid")
             tgt = row_by_id.get(oid) if oid else None
+            if (tgt is not None and _hpends
+                    and _honors_of.would_join(sid, oid, merge_into, _hpends)):
+                continue  # honors_of: the stand-alone stays apart from its partner
             if tgt is not None and tgt.get("id_system") in ("C-ID", "CCN-ID"):
                 merge_into[sid] = oid
                 merge_members.setdefault(oid, []).append(sid)
@@ -9470,6 +9484,9 @@ def export_unified_courses():
                 if not cn or cn not in _routed_live or sid in merge_into:
                     continue
                 tgt = row_by_id.get(ROUTE.get(cn))
+                if (tgt is not None and _hpends
+                        and _honors_of.would_join(sid, tgt["id"], merge_into, _hpends)):
+                    continue  # honors_of: the stand-alone stays apart from its partner
                 if tgt is not None and tgt.get("id_system") == "C-ID":
                     merge_into[sid] = tgt["id"]
                     merge_members.setdefault(tgt["id"], []).append(sid)
@@ -9486,6 +9503,9 @@ def export_unified_courses():
                     continue  # entangled rows just shrink; curation owns them
                 targets = {ROUTE[c] for c in cns if c in ROUTE}
                 tgt = row_by_id.get(next(iter(targets))) if len(targets) == 1 else None
+                if (tgt is not None and _hpends
+                        and _honors_of.would_join(mid, tgt["id"], merge_into, _hpends)):
+                    continue  # honors_of: the M-ID stays apart from its partner
                 if tgt is not None and tgt.get("id_system") == "C-ID":
                     merge_into[mid] = tgt["id"]
                     merge_members.setdefault(tgt["id"], []).append(mid)
@@ -9497,6 +9517,14 @@ def export_unified_courses():
             print(f"  Unified Courses: C-ID articulation routing — {len(_routed_live)} "
                   f"members display under their descriptor rows; {_r_mids} fully-routed "
                   f"M-IDs + {_r_single} stand-alones folded (rfold)")
+
+    # honors_of: after every fold, no pair may end under one id. Reported, so a
+    # fold added later without the guard shows in the run's log.
+    if _hpends:
+        _hleft = _honors_of.joined_pairs(merge_into, _hmap)
+        if _hleft:
+            print(f"  honors_of: WARNING {len(_hleft)} pair(s) fold together after the in-memory folds: "
+                  + ", ".join(f"{h}/{b}" for h, b in _hleft[:5]))
 
     # ---- per-course CPL impact: Eligible units + Students -------------------
     # Roll the CER's per-credential eligible-credit + student totals up to each

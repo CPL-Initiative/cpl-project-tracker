@@ -46,9 +46,10 @@ import urllib.request
 URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 ENDPOINT = f"{URL}/rest/v1/kb_curation"
-# The fields whose VALUE is an id and moves with a re-key. honors_of (S653) names an Honors M-ID's base
-# (docs/reference/honors_of_design.md); merge_dismissed is a "|"-joined group signature and is not re-keyed here.
-POINTER_FIELDS = ("merge_into", "honors_of")
+# The fields whose VALUE is an id and moves with a re-key: the one list, kb/curation_pointers.py (merge_into, and
+# honors_of since S653). merge_dismissed is a "|"-joined group signature and is not re-keyed here.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from curation_pointers import POINTER_FIELDS  # noqa: E402
 POINTER_FILTER = "field=in.(" + ",".join(POINTER_FIELDS) + ")"
 
 

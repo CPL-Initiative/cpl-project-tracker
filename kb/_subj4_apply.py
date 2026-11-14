@@ -260,10 +260,9 @@ def main():
         if nk != k:
             moved_cur_keys += 1
         ent = dict(ent)
-        mi = ent.get("merge_into")
-        if mi in moves:
-            ent["merge_into"] = moves[mi]
-            moved_cur_vals += 1
+        import curation_pointers   # merge_into and honors_of values (kb/curation_pointers.py)
+        ent, moved = curation_pointers.rekey_entry(ent, moves)
+        moved_cur_vals += moved
         new_cur[nk] = ent
     cur_doc["curations"] = dict(sorted(new_cur.items()))
     cur_doc["count"] = len(new_cur)
