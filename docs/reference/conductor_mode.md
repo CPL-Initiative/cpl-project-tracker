@@ -151,6 +151,11 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - Merging two PRs in a row without re-running the second on the new `main` worked only because both had merged `main` minutes before; `main` went red for an unrelated reason (the live-data test above).
 - Each worker PR's subscription notice still cost about 4,000 tokens (seven PRs). Context: 47% at 2 h 10 m with four workers.
 - Worked: reviewers serving a worker's worktree read-only instead of copying; a second reader on every PR found a real fault after round one each time; COBIx's thread read by a low-effort reader agent (one tally for five PRs); workers answering COBIx themselves; one `send_later` per wait; a declared side session (SkyOriole-B) taking the untouched lanes, writing no numbered handoff and sending its ledger to the conductor.
+- After the first checkpoint: merging two PRs back to back left a generated status file stale twice (`kb/status/commons_data.json` after #3262, and again on #3265 once its new read files landed; `p-back-to-back-merges-stale-status-s649`). A PR that adds inputs to a builder rebuilds its output, and the second of two merges re-runs its tests on the new `main` before it merges.
+- The conductor printed a load receipt's 2,536 rollback ids into its own context (S641's lesson again). Read a receipt with a script that prints scalars only.
+- A summary over 400 characters failed the memory table's check on a row the conductor wrote by hand. Length-check every row by script, the conductor's own included.
+- Container restarts (about 02:40Z and 02:53Z) stopped workers mid-wait. A run on GitHub finishes without them: read the branch, then resume the worker by message (its worktree survived).
+- Worked: Sam's sheet answers arriving through the artifact's comment wake within a minute of Complete; a worker proving each migration against a throwaway Postgres; the conductor's live reads before and after every write; the side session's message naming the stale file and its cause.
 
 ## What went wrong in S648, and what worked
 
