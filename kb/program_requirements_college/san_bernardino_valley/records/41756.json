@@ -45,12 +45,10 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 16,
    "listed": 23,
-   "share": 0.609,
+   "share": 0.696,
    "missing": [
-    "ANTHRO102",
-    "ANTHRO102H",
     "CD111",
     "CD126",
     "CD138",
@@ -60,8 +58,6 @@
     "SOC141H"
    ],
    "unexplained": [
-    "ANTHRO102",
-    "ANTHRO102H",
     "CD111",
     "CD126",
     "CD138",
@@ -74,10 +70,8 @@
    "pass": false
   },
   "invented": {
-   "count": 9,
+   "count": 7,
    "codes": [
-    "ANTH102",
-    "ANTH102H",
     "CDEV111",
     "CDEV126",
     "CDEV138",
@@ -367,5 +361,6 @@
    "Program learning outcomes come from the page's outcomes tab for this AA-T."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43609973859,
+ "read_run": "38748858322"
 }
