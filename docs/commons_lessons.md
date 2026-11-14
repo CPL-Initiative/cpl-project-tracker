@@ -866,3 +866,11 @@ Verbatim from `docs/reference/lanes/commons.md`, replaced by a short line when O
 - **S649 (#3261 `58d46cc4`): each cause opens its programs, and Sam's asks 1 to 5** (`sam-data-collection-six-asks-2026-11-13`): full width, an *SLOs and objectives* column, links open in the side panel, CPL Pathways per college, `#commons/data/slos`, each cause opens its programs from the live gap census. The paragraph as it stood: `docs/commons_lessons.md`, *Moved from the lane (S649 final refresh)*. Guards `tests/commons_data_status_build_test.py`, `tests/commons_data_controls.test.js`.
 - **DECIDED (`d-data-collection-two-bases-s648`):** every College Data Collection card names its base; the captures count Active, Teachout and Approved (22,335 = 20,282 + 630 + 1,423), passing and completeness count Active. Sam's 9:18 AM PT note (*"college collection changes don't seem to have hit cobi yet"*, relayed by COBIx) came before #3243 merged at 17:55Z.
 - **DECIDED (`d-course-key-normalized-s648`):** a course is one college and code key (uppercased, spaces and hyphens removed), and an SLO matches on that key, in the harvest row and the data dashboard alike. Read live 17:33Z 2026-11-13: the raw code gave 89,192 courses and 12,815 with SLOs, the key 88,736 and 13,293.
+
+## Moved from the lane (S651 checkpoint)
+
+Verbatim from `docs/reference/lanes/commons.md`, moved to make room for S651's strategic-plan decision.
+
+**LIVE: the CPL Commons first view (S552, #2697).** `commons.js` draws the locked mock as the tab's first view. The record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S624, 2026-11-10)*.
+
+**The opened page, one renderer (S556 to S559).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws the opened page for every reference. The record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S624, 2026-11-10)*.
