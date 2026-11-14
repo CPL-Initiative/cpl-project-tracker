@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     36.0,
     37.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -227,5 +237,6 @@
    "Catalog prints codes with hyphens (e.g., CIS-35, ART-40A); these match closed-list entries CIS35, ART40A, etc., so none are marked as catalog additions."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }
