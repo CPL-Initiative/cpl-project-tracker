@@ -1,0 +1,948 @@
+{
+  "folded": [
+    {
+      "raw": "AP Art History, ARTH C1100",
+      "assigned": "AP Art History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Art History, ARTH C1200",
+      "assigned": "AP Art History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Art History, Area 3",
+      "assigned": "AP Art History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Art and Design - 2D Design",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Art and Design - 3D Design",
+      "assigned": "AP 3-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Art and Design - Drawing",
+      "assigned": "AP Drawing",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Biology, Area 5",
+      "assigned": "AP Biology",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Calculus AB, Area 2",
+      "assigned": "AP Calculus AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Calculus AB, Score of 3",
+      "assigned": "AP Calculus AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Calculus AB, Score of 4-5",
+      "assigned": "AP Calculus AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Calculus BC - Score of 3-4",
+      "assigned": "AP Calculus BC",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Calculus BC - Score of 5",
+      "assigned": "AP Calculus BC",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Calculus BC, Area 2",
+      "assigned": "AP Calculus BC",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Calculus BC, Score of 3",
+      "assigned": "AP Calculus BC",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Calculus BC, Score of 4-5",
+      "assigned": "AP Calculus BC",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Calculus BC/AB Subscore, Score of 3",
+      "assigned": "AP Calculus AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Calculus BC/AB Subscore, Score of 3-4",
+      "assigned": "AP Calculus AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Chemistry, Area 5",
+      "assigned": "AP Chemistry",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Chinese Language\nand Culture",
+      "assigned": "AP Chinese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Chinese Language and Culture - Score of 3",
+      "assigned": "AP Chinese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Chinese Language and Culture - Score of 4-5",
+      "assigned": "AP Chinese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Comparative Government\nand Politics",
+      "assigned": "AP Comparative Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Comparative Government\nand Politics, Area 4",
+      "assigned": "AP Comparative Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Computer Science AB - Score of 3",
+      "assigned": "AP Computer Science AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Computer Science AB - Score of 4-5",
+      "assigned": "AP Computer Science AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Economics - Macroeconomics - Score of 3",
+      "assigned": "AP Macroeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Economics - Macroeconomics - Score of 4-5",
+      "assigned": "AP Macroeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Economics - Microeconomics - Score of 3",
+      "assigned": "AP Microeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Economics - Microeconomics - Score of 4-5",
+      "assigned": "AP Microeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP English\nLanguage and\nComposition",
+      "assigned": "AP English Language and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP English\nLanguage and\nComposition, Area 1A",
+      "assigned": "AP English Language and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP English\nLiterature",
+      "assigned": "AP English Literature and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP English\nLiterature and\nComposition",
+      "assigned": "AP English Literature and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP English\nLiterature and\nComposition, Area 1A and Area 3",
+      "assigned": "AP English Literature and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP English\nLiterature, Area 1A and Area 3",
+      "assigned": "AP English Literature and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP English Language, Area 1A",
+      "assigned": "AP English Language and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP English Literature and Composition,\nDoes not meet 1B Critical Thinking requirement for transfer.",
+      "assigned": "AP English Literature and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP European History, Area 3",
+      "assigned": "AP European History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP European History, Area 4",
+      "assigned": "AP European History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP French\nLanguage\nand Culture",
+      "assigned": "AP French Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP French Language and Culture - Score of 3",
+      "assigned": "AP French Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP French Language and Culture - Score of 4",
+      "assigned": "AP French Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP French Language and Culture - Score of 5",
+      "assigned": "AP French Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP German\nLanguage\nand Culture",
+      "assigned": "AP German Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP History - European - HIST 10",
+      "assigned": "AP European History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP History - European - HIST 11",
+      "assigned": "AP European History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP History - U.S. - HIST C1001",
+      "assigned": "AP United States History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP History - U.S. - HIST C1002",
+      "assigned": "AP United States History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP History - World - HIST 1",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP History - World - HIST 2",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Human Geography, Area 4",
+      "assigned": "AP Human Geography",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Italian\nLanguage\nand Culture",
+      "assigned": "AP Italian Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Japanese\nLanguage\nand Culture",
+      "assigned": "AP Japanese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Japanese\nLanguage\nand Culture, Area 3",
+      "assigned": "AP Japanese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Japanese Language and Culture - Score of 3",
+      "assigned": "AP Japanese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Japanese Language and Culture - Score of 4",
+      "assigned": "AP Japanese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Japanese Language and Culture - Score of 5",
+      "assigned": "AP Japanese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Macroeconomics, Area 4",
+      "assigned": "AP Macroeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Microeconomics, Area 4",
+      "assigned": "AP Microeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Physics 1 – Algebra Based",
+      "assigned": "AP Physics 1: Algebra-Based",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Physics 2 – Algebra Based",
+      "assigned": "AP Physics 2: Algebra-Based",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Physics C\n(Mechanics)",
+      "assigned": "AP Physics C: Mechanics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Physics C (Electricity/\nMagnetism)",
+      "assigned": "AP Physics C: Electricity and Magnetism",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Physics C: electricity/magnetism",
+      "assigned": "AP Physics C: Electricity and Magnetism",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Physics C: mechanics",
+      "assigned": "AP Physics C: Mechanics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Pre-Calculus, Area 2, Score of 3 or 4",
+      "assigned": "AP Precalculus",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Pre-Calculus, Area 2, Score of 5",
+      "assigned": "AP Precalculus",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Pre-Calculus, Score of 3 or 4",
+      "assigned": "AP Precalculus",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Pre-Calculus, Score of 5",
+      "assigned": "AP Precalculus",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Psychology, Area 4",
+      "assigned": "AP Psychology",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish\nLanguage\nand Culture (Score of 3)",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish\nLanguage\nand Culture (Score of 4)",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish\nLanguage\nand Culture (Score of 5)",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 3)",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 4-5)",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish\nLiterature\nand Culture (Score of 3)",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish\nLiterature\nand Culture (Score of 4)",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish\nLiterature\nand Culture (Score of 5)",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 3)",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 4-5)",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish Language and Culture - Score of 4",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish Language and Culture - Score of 5",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish Language and Culture, SPA 1",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish Language and Culture, SPA 1S",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Spanish Language and Culture, SPA 1X and Elective",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Statistics - ECON 10",
+      "assigned": "AP Statistics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Statistics - HLTH 10",
+      "assigned": "AP Statistics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Statistics - MGT 10",
+      "assigned": "AP Statistics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Statistics - PSYC 10",
+      "assigned": "AP Statistics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Statistics - STAT C1000",
+      "assigned": "AP Statistics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Statistics, Area 2",
+      "assigned": "AP Statistics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP U.S. Government and Politics\nDoes not meet US 3; meets US 2 only.",
+      "assigned": "AP United States Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP US Government\nand Politics",
+      "assigned": "AP United States Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP US Government\nand Politics, Area 4",
+      "assigned": "AP United States Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP US Government\nand Politics, Area 8",
+      "assigned": "AP United States Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP US History",
+      "assigned": "AP United States History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP US History, Area 3",
+      "assigned": "AP United States History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP US History, Area 4",
+      "assigned": "AP United States History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP US History, Area 8",
+      "assigned": "AP United States History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Word History Modern, Area 3",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP Word History Modern, Area 4",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP World History -\nModern, Area 3",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP World History -\nModern, Area 4",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "AP World History, Area 3",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP Biology 1 or 3",
+      "assigned": "CLEP Biology",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP History, United States I, Area 3B",
+      "assigned": "CLEP History of the United States 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP History, United States I, Area 4",
+      "assigned": "CLEP History of the United States 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP History, United States I, Area 7",
+      "assigned": "CLEP History of the United States 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP History, United States II, Area 3B",
+      "assigned": "CLEP History of the United States 2",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP History, United States II, Area 4",
+      "assigned": "CLEP History of the United States 2",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP History, United States II, Area 7",
+      "assigned": "CLEP History of the United States 2",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP Western Civilization I, Area 3B",
+      "assigned": "CLEP Western Civilization 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP Western Civilization I, Area 4",
+      "assigned": "CLEP Western Civilization 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP Western Civilization II, Area 3B",
+      "assigned": "CLEP Western Civilization 2",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "CLEP Western Civilization II, Area 4",
+      "assigned": "CLEP Western Civilization 2",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB English Language A - Language and Literature HL",
+      "assigned": "IB Language A: Language and Literature HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB English Language A - Literature HL",
+      "assigned": "IB Language A: Literature HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB History (any region) HL - Area 3",
+      "assigned": "IB History HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB History (any region) HL - Area 4",
+      "assigned": "IB History HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB History (any region) HL, Area 3",
+      "assigned": "IB History HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB History (any region) HL, Area 3B",
+      "assigned": "IB History HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB History (any region) HL, Area 4",
+      "assigned": "IB History HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Language A - Language and Literature (any language, except English) HL",
+      "assigned": "IB Language A: Language and Literature HL (Non-English)",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Language A - Language and Literature HL",
+      "assigned": "IB Language A: Language and Literature HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Language A - Literature (any language, except English) HL",
+      "assigned": "IB Language A: Literature HL (Non-English)",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Language A - Literature HL",
+      "assigned": "IB Language A: Literature HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Language A: Language and Literature HL (any language, except English)",
+      "assigned": "IB Language A: Language and Literature HL (Non-English)",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Language A: Literature HL (any language, except English)",
+      "assigned": "IB Language A: Literature HL (Non-English)",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Mathematics: Analysis & Approaches HL",
+      "assigned": "IB Mathematics: Analysis and Approaches HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Mathematics: Analysis and Approaches HL, Score of 6 or higher",
+      "assigned": "IB Mathematics: Analysis and Approaches HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Mathematics: Applications & Interpretation HL",
+      "assigned": "IB Mathematics: Applications and Interpretation HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Mathematics: Applications and Interpretation",
+      "assigned": "IB Mathematics: Applications and Interpretation HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    },
+    {
+      "raw": "IB Theatre HL, Area 3",
+      "assigned": "IB Theatre HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-14T14:34:57.156843+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 133,
+  "unified_titles_count": 6057
+}

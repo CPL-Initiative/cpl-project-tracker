@@ -4033,6 +4033,13 @@ window.CPL_FUNDING_PERF = {
     "pa": 17,
     "p3": 11
    },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
    "Industry Certification | Military | Standardized Assessment": {
     "pe": null,
     "pe_suppressed": true,
@@ -4042,8 +4049,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1819,
-    "pa": 1818,
+    "pe": 1818,
+    "pa": 1817,
     "p3": 15
    },
    "Military | Standardized Assessment": {
@@ -4427,8 +4434,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 1217
   },
   "Industry Certification | Military": {
-   "pe": 60,
-   "pa": 59,
+   "pe": 61,
+   "pa": 60,
    "p3": 34
   },
   "Industry Certification | Military | Portfolio Review": {
@@ -4477,8 +4484,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 31125,
-   "pa": 28075,
+   "pe": 31124,
+   "pa": 28074,
    "p3": 2690
   },
   "Military | Other": {
