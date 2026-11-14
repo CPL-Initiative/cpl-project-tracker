@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 941,
+  "file_datasets": 940,
   "external_services": 195,
   "consumers": 588,
   "workflows": 72,
@@ -16484,19 +16484,6 @@
      "direction": "read",
      "how": "literal",
      "line": 146
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
-  "file:kb/identities_rebuild_out/2026-11-14b/apply_receipt.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_identities_rebuild.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 658
     }
    ],
    "served": false,
