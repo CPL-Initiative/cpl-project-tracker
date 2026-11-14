@@ -200,6 +200,14 @@ Library, SkyView and two data files load; `CLAUDE.md`, `kb/contacts_harvest_seed
 root generator script return 404. A guard fails if a served page ever loads a withheld path. A new `kb/` script is
 withheld by pattern and needs no line.
 
+**What the side session did NOT refresh (it closed at the context emergency line, 04:17Z):** it ran no `/checkpoint` of
+its own. After the conductor's 03:31Z checkpoint it wrote only this section, the lane lines inside its own PRs
+(governance, workplan-annual-goals), five memory rows and a vault note. Not refreshed for #3268, #3278, #3280 and #3281:
+the docs audit files, `docs/INDEX.md`'s handoff entry, the To-Do feed, the pipeline view, the READMEs, the lessons
+docs, KB notes, the wiki, and the open-asks sheet (the identities ask is on no sheet yet). The commons lane has no
+DECIDED line for the identities rebuild beyond the conductor's 02:40Z line; the library and public-split lanes do not
+yet name the allowlist.
+
 **Let go by the side session (04:09Z):** every PR subscription was dropped as it was created; its last check-in fires
 only to merge this note's PR; no artifact watch. Vault note: CPLBrain#785.
 
