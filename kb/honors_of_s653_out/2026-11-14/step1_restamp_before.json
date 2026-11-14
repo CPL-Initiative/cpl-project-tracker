@@ -1,0 +1,9 @@
+{
+ "_about": "Before-values of the two kb_curation rows that S653 step 1 (kb/migrations/2026-11-14_s653_honors_of_field.sql) restamps from automerge-v1@bot to honors-s652@bot (Rule 10 (a2): a guarded UPDATE's before-values are committed). Read from the S652 follow-ups receipt, which left each title's value changed and its reviewer and stamp as they were. The step-1 guard refuses unless each row still reads exactly this; the step-1 rollback restores exactly this. tests/kb_curation_guarded_sql_proof.py checks both files against this one.",
+ "source": "kb/receipts/migration_s652_honors_followups_43609201868.json (response.changed, op update: row_before with value_after)",
+ "written": "2026-11-14T18:05:50Z",
+ "rows": [
+  {"course_id": "HUMA M1110", "field": "unified_title", "value": "World Religions", "reviewer_email": "automerge-v1@bot", "reviewed_at": "2026-06-12T22:47:01.69179+00:00", "validated_at": null, "validated_by": null},
+  {"course_id": "LIBR M1040", "field": "unified_title", "value": "Media & Information Literacy", "reviewer_email": "automerge-v1@bot", "reviewed_at": "2026-06-12T22:47:01.69179+00:00", "validated_at": null, "validated_by": null}
+ ]
+}
