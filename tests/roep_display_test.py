@@ -251,6 +251,50 @@ gd = deg_gaps({"status": "incomplete", "against": "degree", "computed": [30, 30]
 check(any(g["kind"] == "Check not met" and g["text"].startswith("The catalog prints 64-68 units for the degree") for g in gd),
       "gaps: a degree total the check could not add to says why (got %s)" % gd)
 
+# 2f. A figure the reconcile filled supersedes the reader's note that it was not printed (S651, COBIx on #3291:
+# Lassen 30947 and 32083 showed ge_units 34 beside "Cal-GETC pattern named with no units printed"). The failure
+# this guards: a display that contradicts its own record, and the catalog's quoted words missing from it.
+SRC72 = "https://x.edu/catalog.pdf#page=72"
+def rc_gaps(reconciled, ge=None, notes=None, pattern="Cal-GETC"):
+    fd = {"record": {"program": {"ge_pattern": pattern, "degree_total": {"min": 60, "max": 60},
+                                 "ge_units": ge or {"min": None, "max": None}},
+                     "blocks": [], "notes": notes if notes is not None else [
+                         "Cal-GETC pattern named with no units printed; remaining units are electives.",
+                         "The 'As a major you will' list was not recorded as outcomes.",
+                         "Students can double-count required courses and courses for General Education."]},
+          "score": {"arithmetic": {"status": "equal", "against": "degree", "computed": [60, 60]}}}
+    if reconciled is not None:
+        fd["reconciled"] = reconciled
+    return [g["text"] for g in b.gaps_for("X College", "elumen", "A.S.-T Degree", "units", fd, None, {"min": None},
+                                          None, lambda code: None) if g["kind"] == "Reader's note"]
+SET34 = [{"field": "ge_units", "was": {"min": None, "max": None}, "now": {"min": 34, "max": 34},
+          "words": "Cal-GETC (%s: Cal-GETC General Education Certificate of Achievement requires 34 Units.)" % SRC72}]
+gr = rc_gaps(SET34, ge={"min": 34, "max": 34})
+check(gr[:1] == ["Cal-GETC 34 units, from the catalog's p.72: 'Cal-GETC General Education Certificate of "
+                 "Achievement requires 34 Units.' (%s)." % SRC72],
+      "gaps: a set step's figure leads, with the catalog's page, quoted words and source link (got %s)" % gr[:1])
+check(not any("no units printed" in t for t in gr) and gr[1] == "Remaining units are electives." and len(gr) == 4,
+      "gaps: the clause saying the figure was not printed is superseded; the rest of that note and the other "
+      "two notes stay (got %s)" % gr)
+check(b._prune("degree_total 60 from the header. No Cal-GETC unit figure is printed.",
+               b._absent(b.SUPERSEDES["ge_units"] + "|Cal-GETC")) == "degree_total 60 from the header.",
+      "gaps: a kept sentence stays as written, a field name in lower case included")
+check(any("double-count" in t for t in gr),
+      "gaps: a note naming general education without saying a figure is absent stays (got %s)" % gr)
+check(rc_gaps(None) == rc_gaps([]) and len(rc_gaps(None)) == 3 and "no units printed" in rc_gaps(None)[0],
+      "gaps: a record without reconciled notes shows its reader's notes unchanged")
+check(rc_gaps(SET34) == rc_gaps(None),
+      "gaps: a reconciled figure the record no longer holds supersedes nothing")
+gs34 = rc_gaps([{"field": "ge_units", "was": {"min": None, "max": None}, "now": {"min": 34, "max": 34},
+                 "words": "Curriculum (Cal-GETC) requirements. (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, "
+                          "2026-11-13)"}], ge={"min": 34, "max": 34})
+check(gs34[0] == "Cal-GETC 34 units, the statewide figure (Sam, Sheet 187 card 5), where the catalog prints none.",
+      "gaps: the statewide figure names itself and its ruling (got %s)" % gs34[:1])
+gf = rc_gaps([{"field": "ge_units", "was": None, "now": {"min": 24, "max": 24},
+               "words": "Cabrillo College General Education\n24"}], ge={"min": 24, "max": 24}, pattern="Local GE")
+check(gf[0] == "Local GE 24 units, from the catalog's words: 'Cabrillo College General Education 24'.",
+      "gaps: a fill step's figure quotes the page's own words (got %s)" % gf[:1])
+
 # 2d. A receipt never names a word the Supabase connector holds, even when a record's text
 # does (Long Beach City 37305, 2026-10-11: a careers note says "a reviewer may choose to drop
 # it", and the guard refused the whole build). The failures this guard: a stalling word in the
