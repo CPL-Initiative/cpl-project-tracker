@@ -86,7 +86,8 @@ def sql_text():
 -- With it gone, Santa Ana College BUS 115 (CCC000609492) returns to its own record {LEAF}; nothing is inserted.
 -- One plain statement: the delete runs only when the guard holds, and a failed guard raises, so nothing is written.
 -- The guard: exactly one row at ({r['course_id']}, {r['field']}), with this value, reviewer and reviewed_at, never
--- validated by a person; and no row by a reviewer outside @bot, in {', '.join(GUARD_FIELDS)}, whose course_id or
+-- validated by a person (validated_at and validated_by null, as the rollback re-inserts them); and no row by a
+-- reviewer outside @bot, in {', '.join(GUARD_FIELDS)}, whose course_id or
 -- value names {LEAF} or {SURVIVOR}. RETURNING puts the whole deleted row (to_jsonb) into the runner's receipt
 -- (kb/receipts/migration_s649_busi_split_delete_<run>.json, its `response`), so a session that did not do the write
 -- can put it back. Rollback: {ROLLBACK}.
@@ -107,7 +108,8 @@ guard as (
           where t.value = {q(r['value'])}
             and t.reviewer_email = {q(r['reviewer_email'])}
             and t.reviewed_at::timestamptz = {q(r['reviewed_at'])}::timestamptz
-            and t.validated_at is null) = 1
+            and t.validated_at is null
+            and t.validated_by is null) = 1
      and (select n from person) = 0 as ok,
      (select count(*) from target) as target_rows,
      (select n from person) as person_rows
@@ -431,7 +433,7 @@ def write_md(plan, path):
          "Management*, all saved 2026-06-13 17:47Z. The other eight pointers and the title stay; the title is "
          "Santa Ana BUS 114's, which stays.", "",
          "**The guard** (one statement, `" + MIGRATION + "`): exactly one row at (BUSI M10XW, merge_into) with this "
-         "value, reviewer and reviewed_at and no person's validation; and no row by a reviewer outside `@bot` in "
+         "value, reviewer and reviewed_at and no person's validation (validated_at and validated_by null, as the rollback re-inserts them); and no row by a reviewer outside `@bot` in "
          "merge_into, unified_title_merge_confirm or merge_dismissed naming BUSI M10XW or BUSI M1228. A failed "
          "guard raises, so the statement writes nothing. The deleted row comes back whole (`to_jsonb`) in the "
          "receipt's `response`.", "",
@@ -453,8 +455,8 @@ def write_md(plan, path):
                      + (f"; member rows {r['member_rows_before']:,} to {r['member_rows_after']:,}"
                         if "member_rows_before" in r else "") + ".")
         L.append("- Committed files the nightly changes: `kb/coci_curation.json` (BUSI M10XW's entry goes), then "
-                 "the `unified_courses_*.js` export. Not rebuilt nightly, so they keep BUS 115 under BUSI M1228 "
-                 "until their own builders run: `coci_lookup_data.js` (`kb/_build_coci_lookup.py`).")
+                 "the `unified_courses_*.js` export. No file outside the nightly set needs a rebuild: "
+                 "`coci_lookup_data.js` already keys CCC000609492 (BUS 115) to its own record BUSI M10XW.")
     else:
         L.append("- (not simulated yet: run the export simulation and `--compare`)")
     L += ["", "**Pre-apply reads (aggregates or exact keys; the conductor runs them):**", ""]

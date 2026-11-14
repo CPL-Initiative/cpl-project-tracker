@@ -6,7 +6,8 @@
 -- With it gone, Santa Ana College BUS 115 (CCC000609492) returns to its own record BUSI M10XW; nothing is inserted.
 -- One plain statement: the delete runs only when the guard holds, and a failed guard raises, so nothing is written.
 -- The guard: exactly one row at (BUSI M10XW, merge_into), with this value, reviewer and reviewed_at, never
--- validated by a person; and no row by a reviewer outside @bot, in merge_into, unified_title_merge_confirm, merge_dismissed, whose course_id or
+-- validated by a person (validated_at and validated_by null, as the rollback re-inserts them); and no row by a
+-- reviewer outside @bot, in merge_into, unified_title_merge_confirm, merge_dismissed, whose course_id or
 -- value names BUSI M10XW or BUSI M1228. RETURNING puts the whole deleted row (to_jsonb) into the runner's receipt
 -- (kb/receipts/migration_s649_busi_split_delete_<run>.json, its `response`), so a session that did not do the write
 -- can put it back. Rollback: kb/migrations/2026-11-14_s649_busi_split_delete_rollback.sql.
@@ -27,7 +28,8 @@ guard as (
           where t.value = 'BUSI M1228'
             and t.reviewer_email = 'automerge-titlelane-v1@bot'
             and t.reviewed_at::timestamptz = '2026-06-13T17:47:56.243497+00:00'::timestamptz
-            and t.validated_at is null) = 1
+            and t.validated_at is null
+            and t.validated_by is null) = 1
      and (select n from person) = 0 as ok,
      (select count(*) from target) as target_rows,
      (select n from person) as person_rows

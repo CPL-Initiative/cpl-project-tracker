@@ -39,7 +39,7 @@ check("(4) the delete hangs on the guard and names the exact key",
 check("(5) the guard matches the value, the bot reviewer and the saved stamp, and no person's validation",
   /t\.value = 'BUSI M1228'/.test(fwd) && /t\.reviewer_email = 'automerge-titlelane-v1@bot'/.test(fwd)
   && /t\.reviewed_at::timestamptz = '2026-06-13T17:47:56\.243497\+00:00'::timestamptz/.test(fwd)
-  && /t\.validated_at is null/.test(fwd) && /\(select count\(\*\) from target\) = 1/.test(fwd));
+  && /t\.validated_at is null\s+and t\.validated_by is null\) = 1/.test(fwd) && /\(select count\(\*\) from target\) = 1/.test(fwd));
 check("(6) the guard refuses on a person's merge, confirm or Keep as-is naming either id",
   /reviewer_email not like '%@bot'/.test(fwd)
   && /'merge_into', 'unified_title_merge_confirm', 'merge_dismissed'/.test(fwd)

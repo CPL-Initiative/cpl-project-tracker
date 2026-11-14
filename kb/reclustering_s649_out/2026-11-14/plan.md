@@ -19,7 +19,7 @@ Inserted under `reclustering-s649@bot`: nothing. BUS 115's own leaf is BUSI M10X
 
 The overlay rows naming either id are all the bot's: nine `merge_into` pointers into BUSI M1228 (this one among them) and BUSI M1228's `unified_title` *International Documentation and Supply Chain Management*, all saved 2026-06-13 17:47Z. The other eight pointers and the title stay; the title is Santa Ana BUS 114's, which stays.
 
-**The guard** (one statement, `kb/migrations/2026-11-14_s649_busi_split_delete.sql`): exactly one row at (BUSI M10XW, merge_into) with this value, reviewer and reviewed_at and no person's validation; and no row by a reviewer outside `@bot` in merge_into, unified_title_merge_confirm or merge_dismissed naming BUSI M10XW or BUSI M1228. A failed guard raises, so the statement writes nothing. The deleted row comes back whole (`to_jsonb`) in the receipt's `response`.
+**The guard** (one statement, `kb/migrations/2026-11-14_s649_busi_split_delete.sql`): exactly one row at (BUSI M10XW, merge_into) with this value, reviewer and reviewed_at and no person's validation (validated_at and validated_by null, as the rollback re-inserts them); and no row by a reviewer outside `@bot` in merge_into, unified_title_merge_confirm or merge_dismissed naming BUSI M10XW or BUSI M1228. A failed guard raises, so the statement writes nothing. The deleted row comes back whole (`to_jsonb`) in the receipt's `response`.
 
 **The rollback** (`kb/migrations/2026-11-14_s649_busi_split_delete_rollback.sql`): re-inserts the row with its reviewer and reviewed_at, `on conflict do nothing` so a row saved in the slot since wins.
 
@@ -31,7 +31,7 @@ From `post_apply_simulated.json`, simulated, not applied: export_unified_courses
 - `BUSI M10XW`: members 0 to 1, units [] to [3]; index row null to ["BUSI M10XW", "Global Supply Chain and Logistics", "BUS", "Stand-Alone", 3.0].
 - `unified_courses_index.js`: ids 49,803 to 49,804; ids whose entry changed: BUSI M10XW.
 - `unified_courses_members.js`: ids 49,560 to 49,561; ids whose entry changed: BUSI M10XW, BUSI M1228; member rows 134,485 to 134,485.
-- Committed files the nightly changes: `kb/coci_curation.json` (BUSI M10XW's entry goes), then the `unified_courses_*.js` export. Not rebuilt nightly, so they keep BUS 115 under BUSI M1228 until their own builders run: `coci_lookup_data.js` (`kb/_build_coci_lookup.py`).
+- Committed files the nightly changes: `kb/coci_curation.json` (BUSI M10XW's entry goes), then the `unified_courses_*.js` export. No file outside the nightly set needs a rebuild: `coci_lookup_data.js` already keys CCC000609492 (BUS 115) to its own record BUSI M10XW.
 
 **Pre-apply reads (aggregates or exact keys; the conductor runs them):**
 
