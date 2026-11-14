@@ -9,7 +9,8 @@
 -- revise on the sheet); the split itself is S653's row d-two-sessions-one-writer-s653.
 
 -- ===========================================================================================================
--- STATEMENT 1 -- NOT RUN. The S653b conductor runs it as one execute_sql call and records RUN here.
+-- STATEMENT 1 -- RUN by the S653b conductor at 20:55Z 2026-11-14, as one execute_sql call: 10 rows inserted, 10
+-- create log rows, longest summary 387 (the verify returned its rows as one JSON value in place of a row set).
 -- ===========================================================================================================
 insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
 ('d-workplan-drop-current-two-steps-s653b','decision','workplan_goals.current goes in two steps: readers, then the drop','The S653b conductor: readers first (#3335 d640b01d: no code reads or writes the column), then the drop via kb/migrations/.apply. Applied: run 43638452928, ledger 20261114204116, receipt before [{id 3, current 2}]; read back 20:46Z: column gone, 72 rows, 19 columns, id 3 cur_2025_26 = 2. No data lost (current equaled cur_2025_26 in all 72). Undo: the _rollback.sql beside the migration.',array['workplan-annual-goals','migration','decision'],'proposed','S653b documents; docs/session_654_handoff.md addendum and the lane files',null,null,'SkyGodwit side session (S653b)',date '2026-11-14'),
