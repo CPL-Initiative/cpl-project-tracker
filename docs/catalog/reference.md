@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-74 document(s).
+75 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -79,6 +79,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Engineering & UI practices (CLAUDE.md offload)](../reference/engineering_ui_practices.md) | — | `engineering_ui_practices.md` | 2026-08-28 | 2026-09-10 |
 | [Finished workstreams — archived §11 rows](../reference/finished_workstreams.md) | — | `finished_workstreams.md` | 2026-08-15 | 2026-08-15 |
 | [Funding vocabulary: Sam's rulings in his words (CLAUDE.md offload)](../reference/funding_vocabulary.md) | — | `funding_vocabulary.md` | 2026-10-21 | 2026-10-21 |
+| [Honors M-IDs and the honors_of field (design)](../reference/honors_of_design.md) | — | `honors_of_design.md` | 2026-11-14 |  |
 | [Knowledge Base & Unified Courses Curation — Build Status (CLAUDE.md offload)](../reference/kb_build_status.md) | — | `kb_build_status.md` | 2026-07-10 |  |
 | [M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway (CLAUDE.md offload)](../reference/mid_lifecycle.md) | — | `mid_lifecycle.md` | 2026-07-10 |  |
 | [Model spend — what calls a model, on which key, and how to measure it](../reference/model_spend.md) | — | `model_spend.md` | 2026-10-27 | 2026-10-27 |
