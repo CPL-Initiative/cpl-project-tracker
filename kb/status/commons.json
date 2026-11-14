@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T19:53:00Z",
+ "written_at": "2026-11-14T00:02:07Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14534,
+     "n": 14592,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 2948,
+     "n": 2870,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 2800,
+     "n": 2820,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -68,12 +68,12 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 14534,
-    "failing": 2948,
-    "unread": 2800,
-    "records": 19155,
+    "complete": 14592,
+    "failing": 2870,
+    "unread": 2820,
+    "records": 19129,
     "colleges": 118,
-    "outside_active": 1673,
+    "outside_active": 1667,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -98,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2726,
-     "of": 5756,
-     "words": "titles carry a review stamp (1,266 a person's, 1,460 a cohort's); 2,751 credentials, 2,293 of 3,063 records stamped",
+     "n": 2894,
+     "of": 5924,
+     "words": "titles carry a review stamp (1,435 a person's, 1,459 a cohort's); 2,872 credentials, 2,416 of 3,186 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1266,
-     "of": 5756,
+     "n": 1435,
+     "of": 5924,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -166,22 +166,22 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-13T16:56:14Z",
+    "at": "2026-11-13T23:58:21Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5756,
-    "stamped": 2726,
-    "person": 1266,
-    "cohort": 1460,
-    "credentials": 2751,
-    "confirmed": 1266,
-    "records": 3063,
-    "records_stamped": 2293,
+    "titles": 5924,
+    "stamped": 2894,
+    "person": 1435,
+    "cohort": 1459,
+    "credentials": 2872,
+    "confirmed": 1435,
+    "records": 3186,
+    "records_stamped": 2416,
     "saved_at": "2026-11-12T16:21:46Z",
-    "fold_at": "2026-11-13T16:56:14Z",
-    "map_titles": 5114,
-    "unclassified": 168,
+    "fold_at": "2026-11-13T23:58:21Z",
+    "map_titles": 5190,
+    "unclassified": 76,
     "left_map": 810,
     "below_80": 1117,
     "below_60": 235,
@@ -287,7 +287,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-13T19:51:58+00:00",
+    "at": "2026-11-14T00:01:02+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -499,7 +499,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-13T19:49:51Z",
+    "at": "2026-11-14",
     "every_hours": 24
    },
    "facts": {
@@ -512,7 +512,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-13",
+    "scanned_at": "2026-11-14",
     "procedures_on": 6
    },
    "sources": [
@@ -750,7 +750,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2948,
+    "n": 2870,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -758,7 +758,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2800,
+    "n": 2820,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -787,7 +787,7 @@
     "kind": "not_shrinking",
     "n": 5750,
     "was": 5750,
-    "since": "2026-11-06",
+    "since": "2026-11-07",
     "words": "blank descriptions",
     "owner": "the colleges' COCI entries",
     "open": "#coci-lookup/list/nodesc"
@@ -813,13 +813,13 @@
     {
      "name": "course-identity",
      "placed": 192,
-     "untouched": 168,
+     "untouched": 167,
      "kept": 0,
-     "renamed": 24,
+     "renamed": 25,
      "moved": 0,
      "by_procedure": 0,
      "left": 0,
-     "looked": 24
+     "looked": 25
     },
     {
      "name": "brand-family",
@@ -890,13 +890,13 @@
    ],
    "total": {
     "placed": 1320,
-    "untouched": 1189,
+    "untouched": 1188,
     "kept": 23,
-    "renamed": 84,
+    "renamed": 85,
     "moved": 0,
     "by_procedure": 24,
     "left": 0,
-    "looked": 107
+    "looked": 108
    }
   },
   {
@@ -996,56 +996,61 @@
  "batches": [
   {
    "kind": "another-look",
-   "n": 5,
-   "of": 5,
+   "n": 6,
+   "of": 6,
    "open": "#exhibits/another-look/batch",
-   "title": "Another look at 5 exhibit titles",
+   "title": "Another look at 6 exhibit titles",
    "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
    "stop": "The batch ends when its cards are decided.",
    "rules": [
-    "fold",
-    "numerals"
+    "ase",
+    "fold"
    ],
    "cards": [
     {
-     "id": "47c90f286f99",
-     "current": "Elementary French I",
+     "id": "778524bd1d55",
+     "current": "Engine Performance Specialist (ASE L1) Advanced",
      "keys": [
-      "_UNCLASSIFIED::French 1-Elementary French 1st Quarter"
+      "_UNCLASSIFIED::Noncredit Course for AUTO L1"
      ]
     },
     {
-     "id": "ac293bc9e949",
-     "current": "Agricultural Business and Technology",
+     "id": "fbf7c33bbc0f",
+     "current": "Apprenticeship Engines Lab",
      "keys": [
-      "_UNCLASSIFIED::Credit By Exam- CFPL ABT 135"
+      "_UNCLASSIFIED::Apprenticeship Training Evidence for APAG 1"
      ]
     },
     {
-     "id": "8100a6573c4e",
-     "current": "Agricultural Business and Technology",
+     "id": "f182e9b10536",
+     "current": "Apprenticeship Engines Lab",
      "keys": [
-      "_UNCLASSIFIED::Credit by Exam-- CFPL ABT 132"
+      "_UNCLASSIFIED::Apprenticeship Training Evidence for APAG 1L"
      ]
     },
     {
-     "id": "52d207f24531",
-     "current": "Introduction to Automotive Technology",
+     "id": "c8a8ca9f4663",
+     "current": "Introduction to Automotive Service",
      "keys": [
-      "_UNCLASSIFIED::Industry Training Evidence for AUTO INT",
+      "_UNCLASSIFIED::Industry Training Evidence for AUTO INT"
+     ]
+    },
+    {
+     "id": "0e53f48178b2",
+     "current": "Introduction to Automotive Service",
+     "keys": [
       "_UNCLASSIFIED::Industry Training Evidence for AUTO INTL"
      ]
     },
     {
-     "id": "f6aa500ab48c",
-     "current": "Introduction to Computer Networking",
+     "id": "6abb08f110f3",
+     "current": "Personal Trainer",
      "keys": [
-      "_UNCLASSIFIED::Industry Training Evidence for CIS 66",
-      "_UNCLASSIFIED::Industry Training Evidence for CNT 52"
+      "_UNCLASSIFIED::Industry Training Evidence for KIN 6"
      ]
     }
    ],
-   "at": "2026-11-13T16:59:37Z"
+   "at": "2026-11-14T00:01:43Z"
   },
   {
    "kind": "decision",
@@ -1088,6 +1093,16 @@
    "stop": "It ends when you answer the sheet."
   },
   {
+   "kind": "decision",
+   "project": "course",
+   "n": 1,
+   "title": "Remove one row a bot saved, so the BUSI M1228 split is clean",
+   "teaches": "A title-matching bot's row keeps Santa Ana BUS 115 inside BUSI M1228. Splitting around it leaves M1228 carrying that course's title and counts; removing the row returns the course to BUSI M10XW. The receipt keeps the row.",
+   "open": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
+   "todo_id": null,
+   "stop": "It ends when you answer the sheet."
+  },
+  {
    "kind": "job",
    "ref": "course",
    "n": 4,
@@ -1100,55 +1115,60 @@
  ],
  "next_batch": {
   "kind": "another-look",
-  "n": 5,
-  "of": 5,
+  "n": 6,
+  "of": 6,
   "open": "#exhibits/another-look/batch",
-  "title": "Another look at 5 exhibit titles",
+  "title": "Another look at 6 exhibit titles",
   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
   "stop": "The batch ends when its cards are decided.",
   "rules": [
-   "fold",
-   "numerals"
+   "ase",
+   "fold"
   ],
   "cards": [
    {
-    "id": "47c90f286f99",
-    "current": "Elementary French I",
+    "id": "778524bd1d55",
+    "current": "Engine Performance Specialist (ASE L1) Advanced",
     "keys": [
-     "_UNCLASSIFIED::French 1-Elementary French 1st Quarter"
+     "_UNCLASSIFIED::Noncredit Course for AUTO L1"
     ]
    },
    {
-    "id": "ac293bc9e949",
-    "current": "Agricultural Business and Technology",
+    "id": "fbf7c33bbc0f",
+    "current": "Apprenticeship Engines Lab",
     "keys": [
-     "_UNCLASSIFIED::Credit By Exam- CFPL ABT 135"
+     "_UNCLASSIFIED::Apprenticeship Training Evidence for APAG 1"
     ]
    },
    {
-    "id": "8100a6573c4e",
-    "current": "Agricultural Business and Technology",
+    "id": "f182e9b10536",
+    "current": "Apprenticeship Engines Lab",
     "keys": [
-     "_UNCLASSIFIED::Credit by Exam-- CFPL ABT 132"
+     "_UNCLASSIFIED::Apprenticeship Training Evidence for APAG 1L"
     ]
    },
    {
-    "id": "52d207f24531",
-    "current": "Introduction to Automotive Technology",
+    "id": "c8a8ca9f4663",
+    "current": "Introduction to Automotive Service",
     "keys": [
-     "_UNCLASSIFIED::Industry Training Evidence for AUTO INT",
+     "_UNCLASSIFIED::Industry Training Evidence for AUTO INT"
+    ]
+   },
+   {
+    "id": "0e53f48178b2",
+    "current": "Introduction to Automotive Service",
+    "keys": [
      "_UNCLASSIFIED::Industry Training Evidence for AUTO INTL"
     ]
    },
    {
-    "id": "f6aa500ab48c",
-    "current": "Introduction to Computer Networking",
+    "id": "6abb08f110f3",
+    "current": "Personal Trainer",
     "keys": [
-     "_UNCLASSIFIED::Industry Training Evidence for CIS 66",
-     "_UNCLASSIFIED::Industry Training Evidence for CNT 52"
+     "_UNCLASSIFIED::Industry Training Evidence for KIN 6"
     ]
    }
   ],
-  "at": "2026-11-13T16:59:37Z"
+  "at": "2026-11-14T00:01:43Z"
  }
 }

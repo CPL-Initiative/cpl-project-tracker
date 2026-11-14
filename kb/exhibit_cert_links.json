@@ -1,11 +1,11 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-13T19:50:54+00:00",
+ "_reference_generated_at": "2026-11-13T23:59:32+00:00",
  "counts": {
   "certs_linked": 238,
-  "titles_linked": 275,
-  "holds": 264,
+  "titles_linked": 286,
+  "holds": 275,
   "bundles": 49,
   "aligned": 11,
   "codes_not_in_catalog": [
@@ -2531,8 +2531,22 @@
     "ITC4233"
    ]
   },
+  "Automatic Transmission/Transaxle (ASE A2)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4233"
+   ]
+  },
   "Brakes (ASE A5 standards)": {
    "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4236"
+   ]
+  },
+  "Brakes (ASE A5)": {
+   "relation": "holds",
    "rule": "all",
    "certs": [
     "ITC4236"
@@ -3009,6 +3023,13 @@
     "ITC1086"
    ]
   },
+  "Electrical/Electronic Systems (ASE A6)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4237"
+   ]
+  },
   "Emergency Medical Technician (EMT) Certification": {
    "relation": "holds",
    "rule": "all",
@@ -3021,6 +3042,27 @@
    "rule": "all",
    "certs": [
     "ITC4239"
+   ]
+  },
+  "Engine Performance (ASE A8)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4239"
+   ]
+  },
+  "Engine Performance Specialist (ASE L1) Advanced": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4229"
+   ]
+  },
+  "Engine Repair (ASE A1)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4232"
    ]
   },
   "FAA Certified Flight Instructor — Instrument (CFII)": {
@@ -3102,6 +3144,13 @@
   },
   "Heating and Air Conditioning (ASE A7 standards)": {
    "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4238"
+   ]
+  },
+  "Heating and Air Conditioning (ASE A7)": {
+   "relation": "holds",
    "rule": "all",
    "certs": [
     "ITC4238"
@@ -3296,6 +3345,13 @@
     "ITC4247"
    ]
   },
+  "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4247"
+   ]
+  },
   "Light Vehicle Diesel Engines (ASE A9 standards)": {
    "relation": "aligned",
    "rule": "all",
@@ -3303,8 +3359,22 @@
     "ITC4240"
    ]
   },
+  "Light Vehicle Diesel Engines (ASE A9)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4240"
+   ]
+  },
   "Manual Drive Train and Axles (ASE A3 standards)": {
    "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4234"
+   ]
+  },
+  "Manual Drive Train and Axles (ASE A3)": {
+   "relation": "holds",
    "rule": "all",
    "certs": [
     "ITC4234"
@@ -3656,6 +3726,13 @@
   },
   "Suspension and Steering (ASE A4 standards)": {
    "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4235"
+   ]
+  },
+  "Suspension and Steering (ASE A4)": {
+   "relation": "holds",
    "rule": "all",
    "certs": [
     "ITC4235"
