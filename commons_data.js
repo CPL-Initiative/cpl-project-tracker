@@ -122,8 +122,11 @@
     /* Program pathway maps (#3310, COBIx's review of #3316): the colleges whose term-by-term maps are committed, and
        the colleges by mapState, so the statewide line's counts each open what they count. */
     maps: { word: "Program maps held", test: function (c) { return ((c.collection || {}).maps || {}).held > 0; } },
+    /* Held by mapState (the mapper's member list or a registry map source) with no map committed yet, so the four
+       counts on the statewide line add up to every college (COBIx, 18:26Z on #3316). */
+    maps_published: { word: "Program maps: published, not yet committed", test: function (c, M) { return mapState(M || VIEW.M, c) === "held" && !(((c.collection || {}).maps || {}).held > 0); } },
     maps_none: { word: "Program maps: none found when looked for", test: function (c, M) { return mapState(M || VIEW.M, c) === "none"; } },
-    maps_unknown: { word: "Program maps: not known", test: function (c, M) { return mapState(M || VIEW.M, c) === "unknown"; } }
+    maps_unknown: { word: "Program maps: not looked for yet", test: function (c, M) { return mapState(M || VIEW.M, c) === "unknown"; } }
   };
   /* A college's program-maps state, the one rule the statewide line and the Program pathway maps card share (the card
      reads it through its helpers): held when the mapper member list names the college, the registry holds a map source
@@ -1697,8 +1700,9 @@
   /* What the mock shows beyond these views, each in one line with what it waits on: the builder's own reason where
      the file holds one, and the dictionary's stage where the doc names the dataset. No empty panel. */
   /* The statewide program-maps line (COBIx's review of #3316): the committed maps (collection.maps.held), then the
-     colleges none found when looked for and not known, each count the word that opens the colleges it counts. A zero
-     count is plain text, since its list would be empty. */
+     colleges that publish maps not yet committed, none found when looked for, and not looked for yet. The four college
+     counts add up to every college, and each count is the word that opens the colleges it counts. A zero count is
+     plain text, since its list would be empty. The words match the Program pathway maps card. */
   function mapsLine(M) {
     var held = ((M.collection || {}).maps || {}).held || 0;
     function n(f) { return listFor(M, f).length; }
@@ -1710,8 +1714,9 @@
     }
     return el("span", { "data-maps-line": "true" }, [
       word("maps", fmt(held) + " term-by-term " + (held === 1 ? "map" : "maps") + " committed, at " + plural(n("maps"), "college", "colleges")),
+      "; ", word("maps_published", plural(n("maps_published"), "college", "colleges") + " publish maps not yet committed"),
       "; ", word("maps_none", plural(n("maps_none"), "college", "colleges") + " none found when looked for"),
-      "; ", word("maps_unknown", plural(n("maps_unknown"), "college", "colleges") + " not known"),
+      "; ", word("maps_unknown", plural(n("maps_unknown"), "college", "colleges") + " not looked for yet"),
       ". Each college's Program pathway maps card says where and on what platform."]);
   }
   function comingNext(M) {

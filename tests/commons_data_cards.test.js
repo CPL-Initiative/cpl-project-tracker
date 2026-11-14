@@ -191,11 +191,20 @@ async function panel(slug) { const x = load("#commons/data/college/" + slug, DAT
   const ml = s.d.querySelector("[data-maps-line]");
   const heldMaps = (DATA.collection.maps || {}).held;
   check("maps line ⭐: the statewide line gives the committed maps' count, and none found and not known beside it, never TBA",
-    ml && new RegExp("^" + heldMaps + " term-by-term maps? committed").test(txt(ml)) && /none found when looked for/.test(txt(ml)) && /not known/.test(txt(ml)) && !/TBA|Waits on/.test(txt(ml.parentNode)), txt(ml));
+    ml && new RegExp("^" + heldMaps + " term-by-term maps? committed").test(txt(ml)) && /none found when looked for/.test(txt(ml)) && /not looked for yet/.test(txt(ml)) && !/not known/.test(txt(ml)) && !/TBA|Waits on/.test(txt(ml.parentNode)), txt(ml));
   const D = s.w.CPL_COMMONS_DATA, MM = D.model(DATA);
   const noneU = D.listFor(MM, "maps_none"), unk = D.listFor(MM, "maps_unknown");
   check("maps line: none found and not known never overlap, and a college with committed maps is in neither",
     noneU.every((c) => unk.indexOf(c) < 0) && D.listFor(MM, "maps").every((c) => c.collection.maps.held > 0 && noneU.indexOf(c) < 0 && unk.indexOf(c) < 0));
+  const pubU = D.listFor(MM, "maps_published"), heldU = D.listFor(MM, "maps");
+  check("maps line ⭐: the four counts (committed, published not yet committed, none found, not looked for yet) add up to every college, none counted twice",
+    heldU.length + pubU.length + noneU.length + unk.length === MM.colleges.length
+      && new Set(heldU.concat(pubU, noneU, unk)).size === MM.colleges.length,
+    [heldU.length, pubU.length, noneU.length, unk.length, MM.colleges.length].join(" + "));
+  check("maps line: a college that publishes maps not yet committed has no committed map",
+    pubU.every((c) => !((c.collection || {}).maps || {}).held));
+  check("maps line ⭐: the line uses the card's words (publish maps not yet committed; not looked for yet)",
+    /publish maps not yet committed/.test(txt(ml)) && /not looked for yet/.test(txt(ml)), txt(ml));
   const mw = ml && ml.querySelector('button[data-filter="maps"]');
   if (mw) mw.click();
   await settle();

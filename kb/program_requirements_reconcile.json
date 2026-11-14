@@ -1418,9 +1418,6 @@
    ]
   },
   "Santiago Canyon College": {
-   "prefix_aliases": {
-    "PASV": "PBLC"
-   },
    "prefix_aliases_cited": [
     {
      "printed": "PASV",
@@ -1439,7 +1436,14 @@
       "PASV 151 = PBLC 151, Ethics and Professionalism: The High Calling of Public Service",
       "PASV 152 = PBLC 152, Preparing for Supervision Public Sector"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 17 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     }
    ],
    "why": "S645, the conductor's design for #3201 (review of the S644 fix, 13 findings standing). Santiago Canyon's 2026-2027 catalog PDF prints 'Control Number: N' AFTER each program and opens the next program on the following line ('Control Number: 11856' / 'Biology, AS-T' / 'A.S. Degree for Transfer'). The reader cut each page from the number's line, so a window opened on the program printed next: COBIx's spot-check (#3194 comment 6841001207) found Biology AS 11856 holding the Biology AS-T, and Economics AA 11943 and Sociology AA 11947 passing while holding their AA-T's requirements. pdf_numbers_after names the reader setting for this catalog alone (kb/_program_requirements_college.py pdf_best): a program whose own number line prints takes the block that ends at that line, only when the block opens on the program's own title and award; anything else reads by the heading picker, refused only where another listed program's number closes the window. The reader's own count of the habit is a measurement filed in every PDF capture (capture.json pdf.numbers_after) and never switches the reading: a gated catalog whose count disagrees reads by the heading picker and files numbers_after_disagrees. Session decision for Sam to revise; reversible by deleting this entry.",
@@ -1454,10 +1458,6 @@
   },
   "American River College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BMET n, SWCD n where the state's Program Course File lists ET n, HSER n, the same number and title in every case kb/_prefix_alias_census.py could title (BMET for ET, 6 courses; SWCD for HSER, 7 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
-   "prefix_aliases": {
-    "BMET": "ET",
-    "SWCD": "HSER"
-   },
    "prefix_aliases_cited": [
     {
      "printed": "BMET",
@@ -1476,7 +1476,14 @@
       "BMET 261 = ET 261, Introduction to Biomedical Equipment Networking",
       "BMET 262 = ET 262, Introduction to Respiratory Therapy Ventilators"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 12 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     },
     {
      "printed": "SWCD",
@@ -1495,7 +1502,14 @@
       "SWCD 330 = HSER 330, Issues of Diverse Populations",
       "SWCD 340 = HSER 340, Introduction to Chemical Dependency"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 75 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     }
    ],
    "steps": []
@@ -1503,7 +1517,6 @@
   "Barstow Community College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints CDEV n, POLS n where the state's Program Course File lists CHLD n, POLI n, the same number and title in every case kb/_prefix_alias_census.py could title (CDEV for CHLD, 18 courses; POLS for POLI, 3 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
    "prefix_aliases": {
-    "CDEV": "CHLD",
     "POLS": "POLI"
    },
    "prefix_aliases_cited": [
@@ -1524,7 +1537,14 @@
       "CDEV 12A = CHLD 12A, Creative Activities for Early Childhood Education",
       "CDEV 14 = CHLD 14, Child Health, Safety, and Nutrition"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 18 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     },
     {
      "printed": "POLS",
@@ -1550,9 +1570,6 @@
   },
   "City College of San Francisco": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints COMM n where the state's Program Course File lists CMST n, the same number and title in every case kb/_prefix_alias_census.py could title (COMM for CMST, 5 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
-   "prefix_aliases": {
-    "COMM": "CMST"
-   },
    "prefix_aliases_cited": [
     {
      "printed": "COMM",
@@ -1571,7 +1588,14 @@
       "COMM 3 = CMST 3, Argumentation and Debate",
       "COMM 4 = CMST 4, Group Communication"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 30 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     }
    ],
    "steps": []
@@ -1606,9 +1630,6 @@
   },
   "Diablo Valley College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BIOL n where the state's Program Course File lists BIOSC n, the same number and title in every case kb/_prefix_alias_census.py could title (BIOL for BIOSC, 14 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
-   "prefix_aliases": {
-    "BIOL": "BIOSC"
-   },
    "prefix_aliases_cited": [
     {
      "printed": "BIOL",
@@ -1627,7 +1648,14 @@
       "BIOL 117 = BIOSC 117, Human Biology with Laboratory",
       "BIOL 119 = BIOSC 119, Fundamentals of Microbiology"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 71 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     }
    ],
    "steps": []
@@ -1719,9 +1747,6 @@
   },
   "Riverside City College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 25 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
-   "prefix_aliases": {
-    "HIST": "HIS"
-   },
    "prefix_aliases_cited": [
     {
      "printed": "HIST",
@@ -1740,7 +1765,14 @@
       "HIST 11 = HIS 11, Military History of the United States to 1900",
       "HIST 12 = HIS 12, Military History of the United States Since 1900"
      ],
-     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 86 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
     }
    ],
    "steps": []
