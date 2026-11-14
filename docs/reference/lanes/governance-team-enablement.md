@@ -36,7 +36,7 @@ related:
 
 ⚠️ **RISK (COBIx on #3334; `key-rotation-two-copies-until-pending-empty-s653b`):** until PENDING is empty, rotating the Supabase service key means updating both copies, the environment's and the repository's; one alone fails half the workflows.
 
-**DECIDED (the S653b conductor; `d-key-readers-environment-groups-s653b`):** one environment, `live-counts` as it stands; a workflow moves only when every run of it is on `main` (its triggers, its last 30 runs, no playbook dispatching it on a branch). **NEXT:** (1) group 2 (14 jobs, dispatch-only applies plus `docket-process`; `credential-catalog-sync` needs its checkout comment changed); (2) `daily-dashboard.yml` in its own PR, after group 1 has run on its schedules; (3) the branch-run files (12), once they dispatch on `main` with a data-branch input or split a keyed job gated on `refs/heads/main` (#3232's shape). **Yours to do (Sam), only when PENDING is empty:** remove the repository copy of `SUPABASE_SERVICE_KEY` (a card then, never before). (4) From #3227's review (S648), outside that PR: the post-deploy `{}` calls to `program-requirements-extract` wait on a key the session does not hold (COBIx asked on #3227).
+**DECIDED (the S653b conductor; `d-key-readers-environment-groups-s653b`):** one environment, `live-counts` as it stands; a workflow moves only when every run of it is on `main` (its triggers, its last 30 runs, no playbook dispatching it on a branch). **NEXT:** (1) group 2 (14 jobs, dispatch-only applies plus `docket-process`; `credential-catalog-sync` needs its checkout comment changed); (2) `daily-dashboard.yml` in its own PR, after group 1 has run on its schedules; (3) the branch-run files (12), once they dispatch on `main` with a data-branch input or split a keyed job gated on `refs/heads/main` (#3232's shape). **Yours to do (Sam), only when PENDING is empty:** remove the repository copy of `SUPABASE_SERVICE_KEY` (a card then, never before). Sam, in session S653b, 2026-11-14 (`sam-fact-sheet-no-header-logo-2026-11-14`): "Guide me when the service key needs to go". So when `tests/service_key_environment_test.py`'s PENDING list is empty, the session gives him a *Yours to do* card with numbered steps and the link https://github.com/CPL-Initiative/cpl-project-tracker/settings/secrets/actions (Repository secrets, `SUPABASE_SERVICE_KEY`, Delete), then reads one scheduled run of a moved workflow. (4) From #3227's review (S648), outside that PR: the post-deploy `{}` calls to `program-requirements-extract` wait on a key the session does not hold (COBIx asked on #3227).
 
 **DECIDED (the S653b conductor; `d-test-counts-only-on-pull-request-s653b`; #3332 `3edf55f0`, #3337 `fe1c4f0e`):** a test counts as run only when a workflow with a `pull_request` trigger names it in a step that can fail. A step or job with `continue-on-error`, an `if: false`, a line ending `|| true`, `|| :` or `|| exit 0`, a test on the left of `&&`, or `set +e` without the collector does not count; grouped steps go through `scripts/test_group.sh`, which names every failed test and exits 1. Guard `tests/every_test_runs_test.py` (31 self-checks). The census found 33 Python files under `tests/` that ran in no workflow; four were red on `main` and were repaired, none retired (`standards_2_ruled_renames_test.py`, `ccc_metric_test.py`, `custom_report_duplicate_view_test.py`, `powershell_ascii_test.py`); `custom_report_payload_test.py` joined `js-tests.yml`. Three stay on the exception list: `lattc_worklist_page_test.py` (Chromium), `kb_curation_guarded_sql_proof.py` (Postgres), `statewide_catalog_build_test.py` (runs from `tests/sierra_statewide_catalog.test.js`). The record: [`governance_lessons`](../../governance_lessons.md), *Moved from the lane (S653b)*.
 
@@ -76,19 +76,7 @@ from a credential. With none, the server sees an anonymous visitor and cannot
 tell a team member from anyone else. Any surface asked for both gets the same
 answer: name the trade, do not pretend it is absent.
 
-⚠️ **THE BANNER HAS TWO SWITCHES AND FLIPPING ONE LOOKS LIKE ENOUGH (2026-09-09).**
-Sam: *"I already forgot to set this session to public when opening it! I just set
-it to public but I don't see the banner on COBI."* Nothing was broken. The
-claude.ai **visibility** toggle decides whether the link WORKS; the
-`cobi_live_session` row decides whether the banner SHOWS, and they know nothing
-about each other. Measured at the time: the row was `active: true` but pointing
-at `session_01PmWf…` — a **previous** session — with `expires_at` six hours in
-the past, so the banner correctly rendered nothing. It had never been switched
-off; it aged out. ⭐ **The Admin control already says exactly this** ("Now: not
-showing *(the link expired)*"), so the gap was never the UI but that an author
-who does not open Admin was never told their banner stopped. The 2/4/8-hour
-expiry is the right default for a disclosure — a session link should not outlive
-the session — so the fix was a notice to its author, never a longer life.
+**The banner's two switches (2026-09-09)** moved verbatim to [`governance_lessons`](../../governance_lessons.md), *Moved from the lane (S653b)*; the notice that fixed it is the next line.
 
 ✅ **BUILT 2026-09-10 (#1537): the expired-banner notice to its author**, and its lesson (failing closed and failing silently are separable): moved verbatim to [`governance_lessons`](../../governance_lessons.md), *Moved from the lane (S653b)*.
 

@@ -9,8 +9,8 @@
 //
 // The failure modes this guards: an edit that drops the header or one of its links; a second
 // banner (the masthead was a <header> and is now a <div>, so the public header is the page's one
-// banner); a raw hex or a control under the 25px public floor; a logo loaded from another host or
-// at the 1115px size; the header printing on paper; the theme words failing to set cpl_theme; and
+// banner); a raw hex or a control under the 25px public floor; a logo returning to the header
+// (Sam, 2026-11-14: the masthead's logo is the page's one logo); the header printing on paper; the theme words failing to set cpl_theme; and
 // this copy drifting from the veteran map's and from the vault's header.html, its one source
 // (the vault check runs only when the vault sits beside the tracker; CI prints NOT RUN).
 //
@@ -56,20 +56,15 @@ check("the public header is the page's one banner", hdr && hdr.getAttribute("rol
   && banners[0] === hdr, banners.map((b) => b.className).join(","));
 check("the masthead keeps its class and its title, as a div", doc.querySelector("div.masthead h1")
   && /Fact Sheet/.test(doc.querySelector("div.masthead h1").textContent), "no div.masthead h1");
-const logo = hdr && hdr.querySelector("a.cplh-logo");
-check("the logo links to the Chancellor's Office CPL page", logo && logo.getAttribute("href") === CO_CPL, logo && logo.getAttribute("href"));
-
-function pngWidth(file) {
-  const b = fs.readFileSync(file);
-  return b.slice(1, 4).toString() === "PNG" ? b.readUInt32BE(16) : -1;
-}
-const imgs = hdr ? [...hdr.querySelectorAll(".cplh-logo img")] : [];
-const srcs = imgs.map((i) => i.getAttribute("src") || "");
-check("the light and dark logos load from the tracker's sierra/ folder, nothing from another host",
-  imgs.length === 2 && srcs.every((s) => /^\.\.\/sierra\/[\w-]+\.png$/.test(s)) && imgs.every((i) => i.getAttribute("alt")), srcs.join(" | "));
-check("both logos exist at 480px (the 1115px copies cost about 55 KB more)",
-  srcs.length === 2 && srcs.every((s) => { const f = path.join(ROOT, "fact-sheet", s); return fs.existsSync(f) && pngWidth(f) === 480; }),
-  srcs.map((s) => { const f = path.join(ROOT, "fact-sheet", s); return fs.existsSync(f) ? pngWidth(f) : "missing"; }).join(","));
+// The header carries no logo. Sam, in session S653b, 2026-11-14, told the new lockup sat above the
+// masthead's own California Community Colleges logo: "Don't need the ccc logo added to the top of
+// fact sheet. Leave masthead in." This pin records that ruling and supersedes the logo pin #3333 set.
+const imgs = hdr ? [...hdr.querySelectorAll("img")] : [];
+check("the header holds no img (Sam, 2026-11-14: no logo above the masthead)", hdr && imgs.length === 0,
+  imgs.map((i) => i.getAttribute("src")).join(" | "));
+const logoLinks = hdr ? [...hdr.querySelectorAll("a.cplh-logo, a[href='" + CO_CPL + "']")] : [];
+check("the header holds no logo link", hdr && logoLinks.length === 0 && !/cplh-logo/.test(block), logoLinks.length + " logo link(s)");
+check("the masthead keeps its own logo", doc.querySelector("div.masthead img.logo[src='./img/ccc-logo.png']"), "masthead logo missing");
 
 const anchors = hdr ? [...hdr.querySelectorAll(".cplh-nav a")] : [];
 for (const [word, href] of Object.entries(LINKS)) {

@@ -324,3 +324,20 @@ spent believing the feature did not exist.
 **Scheduled sessions (Sam, 2026-10-04, S329).** Sam asked for sessions that keep the queue moving without his pasting each opening line, on his terms: go with the recommendation more often (*"about 80% of the time I go with your recommendation"*), up to six sessions, effort decided on the fly with Fable as an advisor. The permission check refused a session-started chain twice, so Sam created a routine himself (`CPL queue — scheduled session`, daily 8:07 Pacific). What its sessions do: [`scheduled_sessions`](../scheduled_sessions.md). Sam set its four repositories and Opus 5.5 in the form (21:40Z); an agent may edit only a routine it created, so its settings stay his. Sam chose an overnight schedule on 2026-10-14 (S393): hourly from 10:12 PM to 6:12 AM Pacific, the sessions back to back; the platform refused the edit from a session, so he sets it in the form. **Set (Sam, 2026-10-16 17:56Z, Open Asks Sheet 85 card 1):** the routine runs at twelve past each hour from 10:12 PM to 6:12 AM Pacific (`CRON_TZ=America/Los_Angeles 12 22,23,0,1,2,3,4,5,6 * * *`, verified by `get_trigger`; first run 2026-10-17 05:12Z). He set it with the schedule menu's **Custom** entry, above Hourly; a session's own edit is refused for a routine made in the form.
 
 **Landed (#3266, S649):** the resolver one-copy test skips `.claude/worktrees/` alone; `kb/_second_reader.py` exits 1 when every call errors (database or function down, or "XAI_API_KEY not set") and its workflow still uploads the file; `tests/shared_imports_named.test.js` holds the SHARED CODE comment; the Pages guard reads the Pages allowlist.
+
+The DR-26 banner's two switches, the 2026-09-09 record, moved here verbatim on 2026-11-14 to make room in the lane; its fix (#1537) is the lane's next line.
+
+⚠️ **THE BANNER HAS TWO SWITCHES AND FLIPPING ONE LOOKS LIKE ENOUGH (2026-09-09).**
+Sam: *"I already forgot to set this session to public when opening it! I just set
+it to public but I don't see the banner on COBI."* Nothing was broken. The
+claude.ai **visibility** toggle decides whether the link WORKS; the
+`cobi_live_session` row decides whether the banner SHOWS, and they know nothing
+about each other. Measured at the time: the row was `active: true` but pointing
+at `session_01PmWf…` — a **previous** session — with `expires_at` six hours in
+the past, so the banner correctly rendered nothing. It had never been switched
+off; it aged out. ⭐ **The Admin control already says exactly this** ("Now: not
+showing *(the link expired)*"), so the gap was never the UI but that an author
+who does not open Admin was never told their banner stopped. The 2/4/8-hour
+expiry is the right default for a disclosure — a session link should not outlive
+the session — so the fix was a notice to its author, never a longer life.
+

@@ -161,9 +161,10 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   (#3333 `908d9b8d`, read live 19:51Z 2026-11-14): in `fact-sheet/index.html` (no generator writes it), between the skip
   link and the masthead; its `--cplh-*` roles map onto `factsheet.css` `:root`; the masthead is a `div`, so the page has one
   banner; the header never prints; nothing frames the page, so it has no embed case. Guard `tests/factsheet_public_header.test.js`.
+  **DECIDED:** the Fact Sheet's header carries no logo (Sam, in session S653b, 2026-11-14: "Don't need the ccc logo added
+  to the top of fact sheet. Leave masthead in."; `sam-fact-sheet-no-header-logo-2026-11-14`; #PRNUM); the test pins it.
   **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own "CPL Fact Sheet" link opens a
-  second copy; that test checks the links against the Veteran map's copy, not the vault's header; the header's logo lockup
-  sits above the masthead's own California Community Colleges logo (told to Sam in session; no change made); a theme choice
+  second copy; that test checks the links against the Veteran map's copy, not the vault's header; a theme choice
   on a public page sets `cpl_theme` for the whole github.io origin, COBI included (the existing design). The records as they
   stood: lessons, *Moved from the lane (S651 checkpoint)* and *(S653b)*.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
