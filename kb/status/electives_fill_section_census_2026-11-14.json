@@ -1,0 +1,620 @@
+{
+ "census": "electives fill passes by where the guard's word can sit (S652, for COBIx on #3111)",
+ "source": "committed files only: filed records and capture sources; no catalog text",
+ "records": 19137,
+ "passing_on_tab": 15840,
+ "fill_passes": 749,
+ "fill_passes_by_path": {
+  "degree": 62,
+  "major_plus_degree": 681,
+  "program_fill": 6
+ },
+ "inside_evidenced": 314,
+ "inside_evidenced_block_heading_only": 69,
+ "own_window": 356,
+ "outside_candidate": 31,
+ "outside_candidate_pdf": 31,
+ "outside_candidate_html": 0,
+ "outside_candidate_reader_paraphrase": 29,
+ "span_unknown": 48,
+ "span_unknown_why": {
+  "another program starts on the record's first page": 9,
+  "record read from another window than the capture's": 39
+ },
+ "gated_no_shortfall": {
+  "inside_evidenced": 88,
+  "outside_candidate": 4,
+  "own_window": 102,
+  "span_unknown": 8
+ },
+ "by_college": [
+  {
+   "college": "College of the Desert",
+   "outside_candidate": 23,
+   "span_unknown": 10,
+   "own_window": 4,
+   "inside_evidenced": 9
+  },
+  {
+   "college": "Ca\u00f1ada College",
+   "outside_candidate": 5,
+   "span_unknown": 2,
+   "own_window": 2,
+   "inside_evidenced": 0
+  },
+  {
+   "college": "Lassen College",
+   "outside_candidate": 2,
+   "span_unknown": 0,
+   "own_window": 0,
+   "inside_evidenced": 0
+  },
+  {
+   "college": "American River College",
+   "outside_candidate": 1,
+   "span_unknown": 0,
+   "own_window": 0,
+   "inside_evidenced": 0
+  }
+ ],
+ "outside_candidates": [
+  {
+   "college": "American River College",
+   "control_number": "04544",
+   "award": "A.A. Degree",
+   "path": "program_fill",
+   "fill": [
+    3.0,
+    3.0
+   ],
+   "route": "pdf",
+   "pages": [
+    941,
+    944
+   ],
+   "section_ends_page": 942,
+   "neighbor": "07224",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "Ca\u00f1ada College",
+   "control_number": "16816",
+   "award": "A.A. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    18.0,
+    18.0
+   ],
+   "route": "pdf",
+   "pages": [
+    166,
+    169
+   ],
+   "section_ends_page": 167,
+   "neighbor": "14443",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "Ca\u00f1ada College",
+   "control_number": "30385",
+   "award": "A.A. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    37.0,
+    37.0
+   ],
+   "route": "pdf",
+   "pages": [
+    141,
+    143
+   ],
+   "section_ends_page": 142,
+   "neighbor": "32514",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "Ca\u00f1ada College",
+   "control_number": "30427",
+   "award": "A.S. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    30.0,
+    30.0
+   ],
+   "route": "pdf",
+   "pages": [
+    170,
+    173
+   ],
+   "section_ends_page": 172,
+   "neighbor": "32716",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "Ca\u00f1ada College",
+   "control_number": "35834",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    6.0,
+    7.0
+   ],
+   "route": "pdf",
+   "pages": [
+    173,
+    176
+   ],
+   "section_ends_page": 174,
+   "neighbor": "31069",
+   "reader_paraphrase": false
+  },
+  {
+   "college": "Ca\u00f1ada College",
+   "control_number": "43514",
+   "award": "A.S. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    31.0,
+    31.0
+   ],
+   "route": "pdf",
+   "pages": [
+    147,
+    150
+   ],
+   "section_ends_page": 148,
+   "neighbor": "43965",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "04337",
+   "award": "A.S. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    4.0,
+    5.0
+   ],
+   "route": "pdf",
+   "pages": [
+    95,
+    98
+   ],
+   "section_ends_page": 96,
+   "neighbor": "04338",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "04373",
+   "award": "A.A. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    6.0,
+    8.0
+   ],
+   "route": "pdf",
+   "pages": [
+    244,
+    245
+   ],
+   "section_ends_page": 245,
+   "neighbor": "30553",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "17880",
+   "award": "A.A. Degree",
+   "path": "degree",
+   "fill": [
+    8.0,
+    19.0
+   ],
+   "route": "pdf",
+   "pages": [
+    157,
+    159
+   ],
+   "section_ends_page": 158,
+   "neighbor": "17883",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "17882",
+   "award": "A.A. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    8.0,
+    19.0
+   ],
+   "route": "pdf",
+   "pages": [
+    161,
+    164
+   ],
+   "section_ends_page": 163,
+   "neighbor": "44854",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "17883",
+   "award": "A.A. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    8.0,
+    19.0
+   ],
+   "route": "pdf",
+   "pages": [
+    158,
+    161
+   ],
+   "section_ends_page": 159,
+   "neighbor": "18189",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "18189",
+   "award": "A.A. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    8.0,
+    19.0
+   ],
+   "route": "pdf",
+   "pages": [
+    159,
+    162
+   ],
+   "section_ends_page": 161,
+   "neighbor": "17882",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "30552",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    6.0,
+    8.0
+   ],
+   "route": "pdf",
+   "pages": [
+    244,
+    245
+   ],
+   "section_ends_page": 245,
+   "neighbor": "30553",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "31789",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    2.0,
+    5.0
+   ],
+   "route": "pdf",
+   "pages": [
+    202,
+    205
+   ],
+   "section_ends_page": 203,
+   "neighbor": "36448",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "32369",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    7.0,
+    8.0
+   ],
+   "route": "pdf",
+   "pages": [
+    244,
+    245
+   ],
+   "section_ends_page": 245,
+   "neighbor": "30553",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "32380",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    8.0,
+    8.0
+   ],
+   "route": "pdf",
+   "pages": [
+    242,
+    245
+   ],
+   "section_ends_page": 244,
+   "neighbor": "04373",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "33438",
+   "award": "A.S. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    0.0,
+    1.0
+   ],
+   "route": "pdf",
+   "pages": [
+    198,
+    201
+   ],
+   "section_ends_page": 199,
+   "neighbor": "36122",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "35428",
+   "award": "A.S. T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    7.0,
+    8.0
+   ],
+   "route": "pdf",
+   "pages": [
+    213,
+    214
+   ],
+   "section_ends_page": 214,
+   "neighbor": "32392",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "35447",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    5.0,
+    5.0
+   ],
+   "route": "pdf",
+   "pages": [
+    242,
+    244
+   ],
+   "section_ends_page": 244,
+   "neighbor": "04373",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "35476",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    3.0,
+    5.0
+   ],
+   "route": "pdf",
+   "pages": [
+    151,
+    153
+   ],
+   "section_ends_page": 152,
+   "neighbor": "30546",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "36513",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    2.0,
+    5.0
+   ],
+   "route": "pdf",
+   "pages": [
+    194,
+    195
+   ],
+   "section_ends_page": 195,
+   "neighbor": "42347",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "44731",
+   "award": "A.A. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    8.0,
+    19.0
+   ],
+   "route": "pdf",
+   "pages": [
+    157,
+    159
+   ],
+   "section_ends_page": 158,
+   "neighbor": "17883",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "44732",
+   "award": "A.A. Degree",
+   "path": "degree",
+   "fill": [
+    8.0,
+    19.0
+   ],
+   "route": "pdf",
+   "pages": [
+    158,
+    161
+   ],
+   "section_ends_page": 159,
+   "neighbor": "18189",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "44734",
+   "award": "A.A. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    8.0,
+    19.0
+   ],
+   "route": "pdf",
+   "pages": [
+    161,
+    164
+   ],
+   "section_ends_page": 163,
+   "neighbor": "44854",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "44735",
+   "award": "A.S. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    0.0,
+    1.0
+   ],
+   "route": "pdf",
+   "pages": [
+    198,
+    201
+   ],
+   "section_ends_page": 199,
+   "neighbor": "36122",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "45301",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    7.0,
+    8.0
+   ],
+   "route": "pdf",
+   "pages": [
+    244,
+    245
+   ],
+   "section_ends_page": 245,
+   "neighbor": "30553",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "45302",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    8.0,
+    8.0
+   ],
+   "route": "pdf",
+   "pages": [
+    242,
+    245
+   ],
+   "section_ends_page": 244,
+   "neighbor": "04373",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "45565",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    2.0,
+    5.0
+   ],
+   "route": "pdf",
+   "pages": [
+    202,
+    205
+   ],
+   "section_ends_page": 203,
+   "neighbor": "36448",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "45709",
+   "award": "A.S. Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    4.0,
+    5.0
+   ],
+   "route": "pdf",
+   "pages": [
+    95,
+    98
+   ],
+   "section_ends_page": 96,
+   "neighbor": "04338",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "Lassen College",
+   "control_number": "30947",
+   "award": "A.S. T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    8.0,
+    8.0
+   ],
+   "route": "pdf",
+   "pages": [
+    44,
+    46
+   ],
+   "section_ends_page": 45,
+   "neighbor": "02134",
+   "reader_paraphrase": true
+  },
+  {
+   "college": "Lassen College",
+   "control_number": "32083",
+   "award": "A.A- T Degree",
+   "path": "major_plus_degree",
+   "fill": [
+    8.0,
+    8.0
+   ],
+   "route": "pdf",
+   "pages": [
+    92,
+    94
+   ],
+   "section_ends_page": 93,
+   "neighbor": "18753",
+   "reader_paraphrase": false
+  }
+ ]
+}

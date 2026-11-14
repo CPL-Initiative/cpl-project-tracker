@@ -187,6 +187,7 @@
     "eacr_handout.test.js": 14,
     "eacr_matrix.test.js": 114,
     "eacr_scope.test.js": 44,
+    "electives_fill_section_census.test.js": 17,
     "exhibits_related_actions.test.js": 71,
     "title_in_use_parity.test.js": 56,
     "issuer_tags.test.js": 12,
