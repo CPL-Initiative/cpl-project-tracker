@@ -1,0 +1,1350 @@
+{
+ "college": "Skyline College",
+ "catalog_url": "https://catalog.skylinecollege.edu/current/",
+ "platform": "custom_html",
+ "catalog_year": "2026-2027",
+ "programs": 144,
+ "with_closed_list": 58,
+ "started": "2026-11-14T14:56:32Z",
+ "scope": "/current/",
+ "sitemap": {
+  "url": "https://catalog.skylinecollege.edu/sitemap.xml",
+  "status": 200,
+  "listed": 48034,
+  "nested": 0,
+  "program_pages": 474,
+  "refused": null,
+  "errors": null,
+  "failed": null
+ },
+ "listing_failed": 0,
+ "pages_read": 424,
+ "pages_listed": 479,
+ "pages_answered": 424,
+ "child_pages": 5,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 28,
+   "hits": 27,
+   "recall": 0.964,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 10,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 86,
+  "by_result": {
+   "found": 49,
+   "not_matched": 37
+  },
+  "found": 49,
+  "found_active": 49,
+  "found_pages": 49,
+  "found_programs": [
+   {
+    "control_number": "05809",
+    "title": "Accounting",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/accounting-as.php",
+    "h1": " Accounting Associate in Science Degree Program",
+    "page_title": "Accounting AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "05811",
+    "title": "Computer Information Specialist",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/computer-information-specialist-as.php",
+    "h1": "",
+    "page_title": "Computer Information Specialist AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "05817",
+    "title": "Automotive Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-technology-as.php",
+    "h1": " Automotive Technology Associate in Science Degree Program",
+    "page_title": "Automotive Technology AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "05819",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/art-aa.php",
+    "h1": " Art Associate in Arts Degree Program",
+    "page_title": "Art AA Degree Program",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "05820",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/music-aa.php",
+    "h1": " Music Associate in Arts Degree Program",
+    "page_title": "Music AA Degree Program",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "05821",
+    "title": "Respiratory Therapy",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/respiratory-therapy-as.php",
+    "h1": "",
+    "page_title": "Respiratory Therapy AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "05830",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/psychology-aa.php",
+    "h1": " Psychology Associate in Arts Degree Program",
+    "page_title": "Psychology AA Degree Program",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "05836",
+    "title": "Cosmetology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/cosmetology-as.php",
+    "h1": " Cosmetology Associate in Science Degree Program",
+    "page_title": "Cosmetology AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "07634",
+    "title": "Natural Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/natural-science-as.php",
+    "h1": " Natural Science Associate in Science Degree Program",
+    "page_title": "Natural Science AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "07636",
+    "title": "Biotechnology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/biotechnology-as.php",
+    "h1": " Biotechnology Associate in Science Degree Program",
+    "page_title": "Biotechnology AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "07637",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/business-administration-as.php",
+    "h1": "",
+    "page_title": "Business Administration AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "07649",
+    "title": "Business Information Systems",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/business-information-systems-as.php",
+    "h1": "",
+    "page_title": "Business Information Systems AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "07650",
+    "title": "Office Information Systems",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/office-information-systems-as.php",
+    "h1": "",
+    "page_title": "Office Information Systems AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "07651",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/spanish-aa.php",
+    "h1": " Spanish Associate in Arts Degree Program",
+    "page_title": "Spanish AA Degree Program",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "07652",
+    "title": "Surgical Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/surgical-technology-as.php",
+    "h1": " Surgical Technology Associate in Science Degree Program",
+    "page_title": "Surgical Technology Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "07653",
+    "title": "Allied Health Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/allied-health-science-as.php",
+    "h1": " Allied Health Science Associate in Science Degree Program",
+    "page_title": "Allied Health Science AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "07654",
+    "title": "Early Childhood Education",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/early-childhood-education-as.php",
+    "h1": " Early Childhood Education Associate in Science Degree Program",
+    "page_title": "Early Childhood Education AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "07656",
+    "title": "Paralegal: Legal Assistant",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/paralegal-legal-assistant-aa.php",
+    "h1": " Paralegal, Legal Assistant Associate in Arts Degree Program",
+    "page_title": "Paralegal, Legal Assistant AA Degree Program",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "07704",
+    "title": "Automotive Technician",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-technician-as.php",
+    "h1": " Automotive Technician Associate in Science Degree Program",
+    "page_title": "Automotive Technician AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "10527",
+    "title": "Automotive Drive Train Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-drive-train-technology-ca.php",
+    "h1": " Automotive Drive Train Technology Certificate of Achievement",
+    "page_title": "Automotive Drive Train Technology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "10542",
+    "title": "General Merchandising",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/general-merchandising-as.php",
+    "h1": "",
+    "page_title": "General Merchandising AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "10543",
+    "title": "Image Consulting",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/image-consulting-as.php",
+    "h1": "",
+    "page_title": "Image Consulting AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "14281",
+    "title": "Physical Education",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/physical-education-aa.php",
+    "h1": " Physical Education Associate in Arts Degree Program",
+    "page_title": "Physical Education AA Degree Program",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "16217",
+    "title": "Automotive Electricity/Electronics",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-electricity-electronics-ca.php",
+    "h1": " Automotive Electricity/Electronics Certificate of Achievement",
+    "page_title": "Automotive Electricity/Electronics Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "16263",
+    "title": "Journalism",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/journalism-aa.php",
+    "h1": " Journalism Associate in Arts Degree Program",
+    "page_title": "Journalism AA Degree Program",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "16712",
+    "title": "Network Engineering",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/network-engineering-as.php",
+    "h1": " Network Engineering Associate in Science Degree Program",
+    "page_title": "Network Engineering AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "21484",
+    "title": "Accounting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/accounting-ca.php",
+    "h1": " Accounting Certificate of Achievement",
+    "page_title": "Accounting Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21485",
+    "title": "Business Administration",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/business-administration-ca.php",
+    "h1": " Business Administration Certificate of Achievement",
+    "page_title": "Business Administration Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21489",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/administrative-assistant-ca.php",
+    "h1": "",
+    "page_title": "Administrative Assistant Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21490",
+    "title": "Computer Information Specialist",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/computer-information-specialist-ca.php",
+    "h1": "",
+    "page_title": "Computer Information Specialist Certificate",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21491",
+    "title": "Office Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/office-assistant-ca.php",
+    "h1": " Office Assistant Certificate of Achievement",
+    "page_title": "Office Assistant Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21494",
+    "title": "Journalism",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/journalism-ca.php",
+    "h1": " Journalism Certificate of Achievement",
+    "page_title": "Journalism Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21496",
+    "title": "Business Information Systems",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/business-information-systems-ca.php",
+    "h1": "",
+    "page_title": "Business Information Systems Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21497",
+    "title": "Office Information Systems",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/office-information-systems-ca.php",
+    "h1": "",
+    "page_title": "Office Information Systems Certificate",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21498",
+    "title": "Network Engineering",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/network-engineering-ca.php",
+    "h1": " Network Engineering Certificate of Achievement",
+    "page_title": "Network Engineering Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21503",
+    "title": "Image Consulting",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/image-consulting-ca.php",
+    "h1": "",
+    "page_title": "Image Consulting Certificate",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21505",
+    "title": "General Merchandising",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/general-merchandising-ca.php",
+    "h1": "",
+    "page_title": "General Merchandising Certificate",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21507",
+    "title": "Paralegal: Legal Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/paralegal-legal-assistant-ca.php",
+    "h1": " Paralegal, Legal Assistant Certificate of Achievement",
+    "page_title": "Paralegal, Legal Assistant Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21509",
+    "title": "Cosmetology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/cosmetology-ca.php",
+    "h1": " Cosmetology Certificate of Achievement",
+    "page_title": "Cosmetology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "22985",
+    "title": "Asian Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/asian-studies-aa.php",
+    "h1": "",
+    "page_title": "Asian Studies: Language, Commerce, and Culture AA Degree Program",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "22986",
+    "title": "Asian Studies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/asian-studies-ca.php",
+    "h1": "",
+    "page_title": "Asian Studies Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "22987",
+    "title": "Chinese Studies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/chinese-studies-ca.php",
+    "h1": "",
+    "page_title": "Chinese Studies Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "30563",
+    "title": "Massage Therapy",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/massage-therapy-ca.php",
+    "h1": "",
+    "page_title": "Massage Therapy Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "32963",
+    "title": "Solar Installation",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/solar-installation-ca.php",
+    "h1": "",
+    "page_title": "Solar Installation Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "33043",
+    "title": "Solar Technology and Business",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/solar-technology-and-business-as.php",
+    "h1": "",
+    "page_title": "Solar Technology and Business AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "33122",
+    "title": "Energy Efficiency",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/energy-efficiency-as.php",
+    "h1": "",
+    "page_title": "Energy Efficiency AS Degree Program",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "39214",
+    "title": "University Transfer - Option 1: California State University General Education",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/university-transfer-option-1-california-state-university-general-education-ca.php",
+    "h1": "",
+    "page_title": "University Transfer - Option 1: California State University General Education Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "39215",
+    "title": "University Transfer - Option 2 Intersegmental General Education Transfer Curriculum for CSU (IGETC.CSU)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/university-transfer-option-2-intersegmental-general-education-transfer-curriculum-for-csu-igetc-csu-ca.php",
+    "h1": "",
+    "page_title": "University Transfer - Option 2: Intersegmental General Education Transfer Curriculum for CSU (IGETC/CSU) Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "39972",
+    "title": "University Transfer - Option 3: Intersegmental General Education Transfer Curriculum for UC (IGETC/UC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "url": "https://catalog.skylinecollege.edu/current/programs/university-transfer-option-3-intersegmental-general-education-transfer-curriculum-for-uc-igetc-uc-ca.php",
+    "h1": "",
+    "page_title": "University Transfer - Option 3: Intersegmental General Education Transfer Curriculum for UC (IGETC/UC) Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   }
+  ],
+  "other_programs": [
+   {
+    "control_number": "05816",
+    "title": "Telecommunications & Wireless Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "05825",
+    "title": "English",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "two pages name it: https://catalog.skylinecollege.edu/current/programs/_program-headers/english.xml, https://catalog.skylinecollege.edu/current/programs/english-aa.php"
+   },
+   {
+    "control_number": "05828",
+    "title": "Mathematics",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "05832",
+    "title": "Administration of Justice",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "07638",
+    "title": "General Supervision",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "07640",
+    "title": "Marketing",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "07641",
+    "title": "Office Assistant",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "07643",
+    "title": "Administrative Assistant",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "07692",
+    "title": "Cosmetician/Esthetician",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "10525",
+    "title": "Automotive Chassis Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "10526",
+    "title": "Automotive Engines Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "two pages name it: https://catalog.skylinecollege.edu/current/programs/automotive-engine-performance-technology-ca.php, https://catalog.skylinecollege.edu/current/programs/automotive-engines-technology-ca.php"
+   },
+   {
+    "control_number": "10528",
+    "title": "Automotive Engine Performance Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "two pages name it: https://catalog.skylinecollege.edu/current/programs/automotive-advanced-engine-performance-technology-ca.php, https://catalog.skylinecollege.edu/current/programs/automotive-engine-performance-technology-ca.php"
+   },
+   {
+    "control_number": "10529",
+    "title": "Automotive Advanced Engine Performance Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "its page went to closed-list 32337 (Asian Engine Performance Technology)",
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-advanced-engine-performance-technology-ca.php",
+    "h1": " Automotive Advanced Engine Performance Technology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "10546",
+    "title": "Dance",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "its page went to closed-list 46296 (Musical Theater)",
+    "url": "https://catalog.skylinecollege.edu/current/programs/dance-aa.php",
+    "h1": " Dance Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "12274",
+    "title": "Retail Management (WAFC)",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "12297",
+    "title": "Automotive Technology Apprenticeship",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "16796",
+    "title": "International Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18608",
+    "title": "Interdisciplinary Studies (Opt I): Arts & Humanities",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18609",
+    "title": "Interdisciplinary Studies (Opt I): Letters & Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18610",
+    "title": "Interdisciplinary Studies (Opt I): Organizational Structures",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18611",
+    "title": "Interdisciplinary Studies (Opt I): Social & Natural Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18612",
+    "title": "Interdisciplinary Studies (Opt II,III,IV): Arts & Humanities",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18613",
+    "title": "Interdisciplinary Studies (Opt II,III,IV): Letters & Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18614",
+    "title": "Interdisciplinary Studies (Opt II,III,IV): Organ. Structures",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18615",
+    "title": "Interdisc Studies (Opt II,III,IV): Social & Natural Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18682",
+    "title": "Interdisc. Studies (Opt I): Social & Behavioral Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18683",
+    "title": "Inter. Studies (Opt II,III,IV): Social & Behavioral Sciences",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18827",
+    "title": "Interdisciplinary Studies (Opt 1): Health & Physical Educ",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "21486",
+    "title": "Retail Management [WAFC]",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "21488",
+    "title": "Marketing",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "21499",
+    "title": "Telecommunications & Wireless Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "21500",
+    "title": "Respiratory Therapy",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "21506",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "two pages name it: https://catalog.skylinecollege.edu/current/programs/early-childhood-education-ca.php, https://catalog.skylinecollege.edu/current/programs/early-childhood-special-education-ca.php"
+   },
+   {
+    "control_number": "21508",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "22988",
+    "title": "Child Development : Special Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "36257",
+    "title": "Anesthesia Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "the page names 36255 (Anesthesia Technology)",
+    "url": "https://catalog.skylinecollege.edu/current/programs/_program-headers/anesthesia-technology.xml",
+    "h1": "",
+    "awards": []
+   },
+   {
+    "control_number": "39243",
+    "title": "University Transfer - Option 4: IGETC for STEM (CSU)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   }
+  ]
+ },
+ "loads": 494,
+ "seconds": 2561.3,
+ "found": 50,
+ "by_method": {
+  "link_search": 7,
+  "no_closed_list": 86,
+  "not_found": 4,
+  "page_claimed": 4,
+  "sitemap_page": 43
+ },
+ "shared_pages": {
+  "https://catalog.skylinecollege.edu/current/programs/business-management-as.php": [
+   "32964",
+   "45267"
+  ],
+  "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php": [
+   "36344",
+   "45804"
+  ],
+  "https://catalog.skylinecollege.edu/current/programs/communication-studies-for-transfer-2-0-aa-t.php": [
+   "39394",
+   "44453"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "32962",
+   "title": "Residential Energy Efficiency",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/residential-energy-efficiency-ca.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1277,
+     "content": 9199,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33044",
+   "title": "Entrepreneurship and Small Business Management in Energy Systems Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/entrepreneurship-and-small-business-management-in-energy-systems-technology-as.php",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1360,
+     "content": 9333,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36255",
+   "title": "Anesthesia Technology",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-technology-as.php",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 8982,
+     "content": 27911,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "46509",
+   "title": "Human Resources Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Approved"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "31587",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.skylinecollege.edu/current/programs/computer-science-for-transfer-as-t.php"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "32479",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://catalog.skylinecollege.edu/current/programs/index.xml",
+    "https://catalog.skylinecollege.edu/current/_compare.new.programs.php"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "39658",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://catalog.skylinecollege.edu/current/programs/biology-for-transfer-as-t.php"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "45668",
+   "title": "Civil Engineering",
+   "award": "A.S. Degree",
+   "pages": [
+    "https://catalog.skylinecollege.edu/current/programs/electrical-engineering-as.php",
+    "https://catalog.skylinecollege.edu/current/programs/electrical-engineering-as.xml",
+    "https://catalog.skylinecollege.edu/current/programs/index.xml",
+    "https://catalog.skylinecollege.edu/current/_compare.new.programs.php"
+   ],
+   "status": "Approved"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 11,
+  "0.8-1.0": 17,
+  "1.0": 22
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/skyline",
+  "kept": 48,
+  "kept_moved": 0,
+  "programs": 2,
+  "list": [
+   {
+    "control_number": "32774",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.skylinecollege.edu/current/programs/administration-of-justice-for-transfer-as-t.php",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "page_claimed"
+   },
+   {
+    "control_number": "45600",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.skylinecollege.edu/current/programs-overview/associatestable.php",
+    "coverage": 0.941,
+    "was_url": "https://catalog.skylinecollege.edu/current/programs-overview/associatestable.php",
+    "was_coverage": 0.882,
+    "was_method": "link_search"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "30882": {
+   "sha256": "4e2ad80c6d4d5c3a281839f765cb7b0e9fe5e72b0c1297db890710a7de5b6cbb",
+   "url": "https://catalog.skylinecollege.edu/current/programs/economics-for-transfer-aa-t.xml"
+  },
+  "31013": {
+   "sha256": "8b49373cb86b50c597e8aac03b3e6445fbaa2d2fe2dadcde7cfe1b9781f2ffe9",
+   "url": "https://catalog.skylinecollege.edu/current/programs/psychology-for-transfer-aa-t.php"
+  },
+  "31978": {
+   "sha256": "ffcd94d7a3c5778cfd516a2009932495c3e6431f92300b4c66819c45cccf88c8",
+   "url": "https://catalog.skylinecollege.edu/current/programs/entrepreneurship-and-small-business-management-ca.php"
+  },
+  "32293": {
+   "sha256": "9c764f58e98ab972f84ed0c21cc4d50780a3308670f60568b64ad17c33683548",
+   "url": "https://catalog.skylinecollege.edu/current/programs/geology-for-transfer-as-t.php"
+  },
+  "32337": {
+   "sha256": "44e740ca9695b56318c37c21183d5ac74843c335aa4ce893a9066af757ff675a",
+   "url": "https://catalog.skylinecollege.edu/current/programs/automotive-advanced-engine-performance-technology-ca.php"
+  },
+  "32746": {
+   "sha256": "c4a79143ea798c4ffe725bb8ea8955616d321be267860a9b415972c947cf0098",
+   "url": "https://catalog.skylinecollege.edu/current/programs/history-for-transfer-aa-t.php"
+  },
+  "32774": {
+   "sha256": "2a97d882184025e5f2ef1d8b475757e8277e41a786cb8930e91f3348233a0adc",
+   "url": "https://catalog.skylinecollege.edu/current/programs/administration-of-justice-for-transfer-as-t.php"
+  },
+  "32964": {
+   "sha256": "f680bf66570513f97bb3dd718913e9bf79708e4b4f0e7942e6aa7a0f832bf5cc",
+   "url": "https://catalog.skylinecollege.edu/current/programs/business-management-as.php"
+  },
+  "33399": {
+   "sha256": "8e54326c3535d845203bf4b2f8a9bbabc0ec0b9b1ba5a80f0d925d15d83c668c",
+   "url": "https://catalog.skylinecollege.edu/current/programs/studio-arts-for-transfer-aa-t.php"
+  },
+  "35353": {
+   "sha256": "a52948aacb8a53fd6adaa7b5fcb3ec2588c900ce73b573b461524fe5e152b5ab",
+   "url": "https://catalog.skylinecollege.edu/current/programs/electrical-engineering-as.php"
+  },
+  "35773": {
+   "sha256": "19c2e7315aa232997d716864f25c94ca525a5fbde5b9802a3c40b0004ea59273",
+   "url": "https://catalog.skylinecollege.edu/current/programs/biotechnology-manufacturing-assistant-ca.php"
+  },
+  "36256": {
+   "sha256": "1a152a8505ee5d55ec59bb71b7d92f0d6df1e68b26844fc0d342679cdb668da9",
+   "url": "https://catalog.skylinecollege.edu/current/programs/biotechnology-manufacturing-technician-as.php"
+  },
+  "36303": {
+   "sha256": "74ad44befceb99fb8ea179d672606c50f45962557a3e986061e979fc5193e591",
+   "url": "https://catalog.skylinecollege.edu/current/programs/biotechnology-manufacturing-technician-ca.php"
+  },
+  "36344": {
+   "sha256": "688ffb39d3c2d15c02e622cf10c2dc3c808190a90decb50c1a98477a0c8031b6",
+   "url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php"
+  },
+  "37135": {
+   "sha256": "a27ad6bda8039fbce7db3f5a92291a476bfdfd818df8b54353362fb5eb95b078",
+   "url": "https://catalog.skylinecollege.edu/current/programs/geography-for-transfer-aa-t.php"
+  },
+  "37144": {
+   "sha256": "f2a88ff0d58dcc1020f18e5ae09647facb23de4a3b0f774252282492c099d9e2",
+   "url": "https://catalog.skylinecollege.edu/current/programs/social-justice-studies-for-transfer-aa-t.php"
+  },
+  "37236": {
+   "sha256": "f0e5fda9c5058d6930935c43af12f000d83e2bbe29f495cde5e81a37b21f00fb",
+   "url": "https://catalog.skylinecollege.edu/current/programs/journalism-for-transfer-aa-t.php"
+  },
+  "37237": {
+   "sha256": "3e40736dd5f889cd90596725b4942013b9a4b86fa02db084b8213e7a05bac6a6",
+   "url": "https://catalog.skylinecollege.edu/current/programs/economics-for-transfer-aa-t.php"
+  },
+  "38299": {
+   "sha256": "adfb75ce44738508769aa1e7275112f98a69b5789c05794370b72852849e669b",
+   "url": "https://catalog.skylinecollege.edu/current/programs/proficiency-in-american-culture-and-english-pace-ca.php"
+  },
+  "39380": {
+   "sha256": "5def1183e11e690c666b3a8ed13b55aea48ca4106103c564ebff48d3ec96ab94",
+   "url": "https://catalog.skylinecollege.edu/current/programs/anthropology-for-transfer-aa-t.php"
+  },
+  "39394": {
+   "sha256": "a75bbac8e86793abe4c95976f5a811bc3689a3f707d873031ae1e7c2587c5fdf",
+   "url": "https://catalog.skylinecollege.edu/current/programs/communication-studies-for-transfer-2-0-aa-t.php"
+  },
+  "39660": {
+   "sha256": "e9c6affe868eb44eb441ded9d2ae0cf713778a061d66f9501660f2f83d66d7cc",
+   "url": "https://catalog.skylinecollege.edu/current/programs/biology-for-transfer-as-t.php"
+  },
+  "41387": {
+   "sha256": "edb1dbb191ca6825fc7f0f53d1571dfee63241792be9c50bd235a31546419104",
+   "url": "https://catalog.skylinecollege.edu/current/programs/user-experience-design-ca.php"
+  },
+  "41692": {
+   "sha256": "0884e4b8205c7eeabaca8690ba3bc40b011b94263bcd77b11312b6032b1503e6",
+   "url": "https://catalog.skylinecollege.edu/current/programs/hospitality-management-for-transfer-as-t.php"
+  },
+  "41889": {
+   "sha256": "0a3ed692af5b9a7a1231a986c1911ddc42427b81945f4b26a1548e46731b3d2a",
+   "url": "https://catalog.skylinecollege.edu/current/programs/business-administration-for-transfer-degree-2-0-as-t.php"
+  },
+  "42252": {
+   "sha256": "5294f7bdbe5764aa162b631c61a35bfc554e1b59b7f57eff466b63bab73596bf",
+   "url": "https://catalog.skylinecollege.edu/current/programs/sociology-for-transfer-aa-t.php"
+  },
+  "42371": {
+   "sha256": "7eb84d4f6e944122af4fa38f843a0da95895c92567b2920cf80518908d923937",
+   "url": "https://catalog.skylinecollege.edu/current/programs/barbering-ca.php"
+  },
+  "42823": {
+   "sha256": "2f3881771042614d3c4fe7fa66eb75f88eb397d0c405435b3975bae11d9a6435",
+   "url": "https://catalog.skylinecollege.edu/current/programs/barbering-as.php"
+  },
+  "44453": {
+   "sha256": "2cad97e521326b31d6cd893eda0af5322729fc6492845bacd5b1fe4461801e38",
+   "url": "https://catalog.skylinecollege.edu/current/programs/communication-studies-for-transfer-2-0-aa-t.php"
+  },
+  "44546": {
+   "sha256": "ab3e44809394eefbfde7169777d56072a37a55c7201a7f698398818798f75cf6",
+   "url": "https://catalog.skylinecollege.edu/current/programs/data-science-ca.php"
+  },
+  "44778": {
+   "sha256": "67c9424df2c0862ae3403f6738a0c1d3b0d634ff899a59d0266759a58af9bcda",
+   "url": "https://catalog.skylinecollege.edu/current/programs/art-history-for-transfer-aa-t.php"
+  },
+  "44779": {
+   "sha256": "b4c9949c4f0ff4666172902b3927ee5ee09cc5650473ae642da29fb76d72a980",
+   "url": "https://catalog.skylinecollege.edu/current/programs/computer-science-for-transfer-as-t.php"
+  },
+  "44780": {
+   "sha256": "50e33a754efebc76c7344ddae9f437336f33ed58ea21bd98fb9822f26ea5132d",
+   "url": "https://catalog.skylinecollege.edu/current/programs/english-for-transfer-aa-t.php"
+  },
+  "44783": {
+   "sha256": "47bd526ead3acad966fb2ecb228037e8b18bf0bc5808e8cd07c56412742bd025",
+   "url": "https://catalog.skylinecollege.edu/current/programs/law-public-policy-and-society-aa-t.php"
+  },
+  "44784": {
+   "sha256": "1240215d9d741a7ac046c45e1f649ee495bae7c5954261d3571401a0658086a4",
+   "url": "https://catalog.skylinecollege.edu/current/programs/political-science-for-transfer-aa-t.php"
+  },
+  "44785": {
+   "sha256": "5f392fa78779cf19815a73be0fb0e3c5f903cca4bc4fa9743b90b892d43915c6",
+   "url": "https://catalog.skylinecollege.edu/current/programs/philosophy-for-transfer-aa-t.php"
+  },
+  "44866": {
+   "sha256": "04ff126d7bc4dbafead7271b5010f1909c2ebd2fde71231778a5eaa1d5cf05ab",
+   "url": "https://catalog.skylinecollege.edu/current/programs/global-studies-for-transfer-aa-t.php"
+  },
+  "44934": {
+   "sha256": "3fa1ec0bf14d9443ae4bcd212cd8f2de2b1a2dbb2fe73bd0009c6ae382891cab",
+   "url": "https://catalog.skylinecollege.edu/current/programs/integrative-health-and-wellness-ca.php"
+  },
+  "44935": {
+   "sha256": "6d7f67022e3d583f760b4cdc3277f489006dade279ac99de60513c1b4df05dd7",
+   "url": "https://catalog.skylinecollege.edu/current/programs/sports-medicine-integrative-therapies-rehabilitation-ca.php"
+  },
+  "45183": {
+   "sha256": "7c62dbade7b88c12b145c2627578f630b28f25b8373f32b11b36451c463179ba",
+   "url": "https://catalog.skylinecollege.edu/current/programs/music-for-transfer-aa-t.php"
+  },
+  "45267": {
+   "sha256": "0b25832e397cbe64495d094a51588107e2d2f8b00bc8aca08fdfbd7f849d558e",
+   "url": "https://catalog.skylinecollege.edu/current/programs/business-management-as.php"
+  },
+  "45384": {
+   "sha256": "1fb1bc1bd650a2e7820679f684e3b50a9ec8e96a11912d8c34ba7d19ea63d25a",
+   "url": "https://catalog.skylinecollege.edu/current/programs/kinesiology-for-transfer-aa-t.php"
+  },
+  "45573": {
+   "sha256": "3a159a5128114a2cdc042c7eb3ce73f930a683591db8641ed80f826cc227e857",
+   "url": "https://catalog.skylinecollege.edu/current/programs/integrative-health-and-wellness-ca.xml"
+  },
+  "45600": {
+   "sha256": "0bd96ab35b62eb21243140cb44b7f9d33b79e115a6beb8280c1adfb8ca434155",
+   "url": "https://catalog.skylinecollege.edu/current/programs-overview/associatestable.php"
+  },
+  "45696": {
+   "sha256": "799b1880366f65e7f76f9eb28821b43ef7f5b468ad8f11f0ed20c04b9b4ed712",
+   "url": "https://catalog.skylinecollege.edu/current/programs/data-science-ca.xml"
+  },
+  "45697": {
+   "sha256": "94fd5e564031544d78bf3139fc8952b7f7be7a0153c18ad4a92e2203a49108d8",
+   "url": "https://catalog.skylinecollege.edu/current/programs/electrical-engineering-as.xml"
+  },
+  "45698": {
+   "sha256": "0f120ac8ed2ccc2b033f5f0331ebcc0ee1bfddc3ce948c4e55c16ec31dd426e8",
+   "url": "https://catalog.skylinecollege.edu/current/programs/index.xml"
+  },
+  "45699": {
+   "sha256": "a99befe5b967c57cf4deba1c7e3fa28aa26f6a3435706ddeee9bc9f091b4ef56",
+   "url": "https://catalog.skylinecollege.edu/current/_compare.new.programs.php"
+  },
+  "45804": {
+   "sha256": "a8b24f86236d34e50f476b6afe751e34a474c69640a51c923ec729bfef586753",
+   "url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php"
+  },
+  "46296": {
+   "sha256": "febd60b1c05503b745025d58c68fdb17af233fdd4619701e537d3d84ada7c3a9",
+   "url": "https://catalog.skylinecollege.edu/current/programs/dance-aa.php"
+  }
+ },
+ "run": "43607267460"
+}

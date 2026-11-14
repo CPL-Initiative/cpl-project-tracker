@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 940,
+  "file_datasets": 942,
   "external_services": 195,
-  "consumers": 589,
+  "consumers": 590,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1707
+     "line": 2237
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1663
+     "line": 2193
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1600
+     "line": 2130
     }
    ],
    "main_committers": []
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1234
+     "line": 1764
     }
    ],
    "main_committers": []
@@ -8588,7 +8588,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5679
+     "line": 6225
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8608,7 +8608,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5729
+     "line": 6275
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -17226,7 +17226,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 2551
+     "line": 3081
     }
    ],
    "served": true,
@@ -17239,7 +17239,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6110
+     "line": 6659
     }
    ],
    "served": true,
@@ -19722,6 +19722,26 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/status/harvest_ncl_lookup_census.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_harvest_ncl_lookup_census.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 32
+    },
+    {
+     "id": "script:kb/_harvest_ncl_lookup_census.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 32
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/status/harvest_no_closed_list.json": {
    "consumers": [
     {
@@ -20942,7 +20962,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5929
+     "line": 6475
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20962,7 +20982,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5148
+     "line": 5694
     }
    ],
    "served": false,
@@ -21579,7 +21599,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6016
+     "line": 6562
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -25200,6 +25220,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/harvest_ncl_lookup_census_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/harvest_no_closed_list_diagnosis_test.py": {
    "consumers": [
     {
@@ -28329,7 +28362,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6084
+     "line": 6633
     }
    ],
    "main_committers": []
@@ -28341,7 +28374,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6193
+     "line": 6742
     }
    ],
    "main_committers": []
@@ -33417,6 +33450,7 @@
     "tests/program_requirements_wave_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
+    "tests/harvest_ncl_lookup_census_test.py",
     "tests/program_requirements_dated_reads_test.py",
     "tests/program_requirements_heading_agreement_test.py",
     "tests/program_requirements_pdf_numbers_after_test.py",
@@ -34441,6 +34475,7 @@
   "kb/row_audit/*.md",
   "kb/status/harvest_heading_agreement.json",
   "kb/status/harvest_heading_agreement.md",
+  "kb/status/harvest_ncl_lookup_census.json",
   "kb/status/mid_outcomes_compare_*",
   "kb/subj4_*",
   "kb/supabase_*.sql",
