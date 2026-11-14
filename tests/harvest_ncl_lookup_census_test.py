@@ -49,15 +49,23 @@ check(r["route"] == "site" and r["ncl"] == 1, "a site capture is tested and its 
 check(r["tested"] == 9 and r["hits"] == 8 and r["false"] == 0 and r["recall"] == round(8 / 9, 3),
       "a program whose page the search's own label does not name (Mathematics on Economics) is not tested; one whose "
       "heading carries other words (Nursing) is a miss; numbered and roman siblings each find their own: %r" % r)
-check(r["searches"] is (8 / 9 >= C.NCL_FLOOR), "a college at the floor or above is looked up")
+check(r["false_off_own"] == 0 and r["searches"] is False,
+      "nine tested is under the minimum of ten, so the college is not looked up whatever its recall: %r" % r)
+r10 = N.college_census(sources + [src("12", "Geology", "A.S. Degree", B + "geology-as/")], cap)
+check(r10["tested"] == 10 and r10["hits"] == 9 and r10["searches"] is True,
+      "ten tested at 90%% with no false match opens the lookup: %r" % r10)
 r_pdf = N.college_census(sources, {"college": "X", "platform": "pdf"})
 check(r_pdf["route"].startswith("pdf") and "tested" not in r_pdf, "a PDF capture is not looked up in this slice")
 
 # The committed captures: the census runs on every one, and no program lands on another program's page.
 full = N.census()
 sw = full["statewide"]
-check(sw["false"] == 0, "no closed-list program in the committed captures is matched to another program's page: %r"
-      % [(k, c["false_matches"][:2]) for k, c in full["colleges"].items() if c.get("false")][:3])
+check(sw["false"] == 0 and sw["false_off_own"] == 0,
+      "no closed-list program in the committed captures is matched to another program's page, nor found anywhere "
+      "when its own page is set aside (the #3300 review's stricter measure; Diablo Valley's transfer pages): %r"
+      % [(k, c["false_matches"][:2]) for k, c in full["colleges"].items() if c.get("false") or c.get("false_off_own")][:3])
+check(full["colleges"]["merced"]["catalog_list"]["files_not_listed"] is False,
+      "Merced's catalog list misses closed-list programs whose pages were read, so it files no not_listed")
 check(sw["tested"] > 5000 and sw["recall"] is not None and sw["colleges_searched"] + sw["colleges_under_floor"]
       == sw["site_route"], "the census reads the committed captures whole: %r" % sw)
 

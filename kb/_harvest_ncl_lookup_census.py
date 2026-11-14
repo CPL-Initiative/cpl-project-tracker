@@ -61,7 +61,8 @@ def pages_of(sources: list[dict], capture: dict) -> list[dict]:
 
 
 def college_census(sources: list[dict], capture: dict) -> dict:
-    """One college's self-test: {platform, route, tested, hits, recall, false, false_matches, searches, ncl}."""
+    """One college's self-test (ncl_self_test: recall and the three false measures) and, for a Coursedog capture,
+    the catalog list's own self-test (ncl_list_test)."""
     platform = capture.get("platform")
     ncl = sum(1 for s in sources if s.get("method") == "no_closed_list")
     if platform == "pdf" or "pdf" in capture:
@@ -70,8 +71,11 @@ def college_census(sources: list[dict], capture: dict) -> dict:
                  "closed_list": [] if s.get("method") == "no_closed_list" else [{}]} for s in sources]
     own = {s["control_number"]: C.page_stem(s["source"]["url"]) for s in sources
            if (s.get("source") or {}).get("url") and s.get("method") in FOUND_METHODS}
-    test = C.ncl_self_test(programs, C.ncl_pages(pages_of(sources, capture), capture.get("college")), own,
-                           C.ncl_named(sources))
+    pages = C.ncl_pages(pages_of(sources, capture), capture.get("college"))
+    test = C.ncl_self_test(programs, pages, own, C.ncl_named(sources))
+    listed = C.ncl_listed_names(capture.get("coursedog")) if platform == "coursedog" else None
+    test["catalog_list"] = (C.ncl_list_test(programs, pages, own, [C.ncl_page(e) for e in listed])
+                            if listed is not None else None)
     return dict({"platform": platform, "route": "site", "ncl": ncl}, **test)
 
 
@@ -94,6 +98,11 @@ def census(base: str = C.COLLEGE_DIR) -> dict:
             "statewide": {"colleges": len(colleges), "site_route": len(site), "tested": tested, "hits": hits,
                           "recall": round(hits / tested, 3) if tested else None,
                           "false": sum(c["false"] for c in site),
+                          "false_off_own": sum(c["false_off_own"] for c in site),
+                          "false_no_claims": sum(c["false_no_claims"] for c in site),
+                          "false_no_claims_at_searched": sum(c["false_no_claims"] for c in site if c["searches"]),
+                          "catalog_lists_filing_not_listed": sorted(k for k, c in colleges.items()
+                                                                    if (c.get("catalog_list") or {}).get("files_not_listed")),
                           "colleges_searched": sum(1 for c in site if c["searches"]),
                           "colleges_under_floor": sum(1 for c in site if not c["searches"]),
                           "ncl_searched": sum(c["ncl"] for c in site if c["searches"]),
@@ -109,8 +118,9 @@ def main(argv: list[str] | None = None) -> int:
     print(json.dumps(r["statewide"]))
     for slug, c in sorted(r["colleges"].items(), key=lambda kv: (kv[1].get("recall") is None, kv[1].get("recall") or 0)):
         if c["route"] == "site":
-            print("%-34s %-12s recall %5s (%3d of %3d)  false %d  %s  ncl %d" % (
-                slug, c["platform"], c["recall"], c["hits"], c["tested"], c["false"],
+            print("%-34s %-12s recall %5s (%3d of %3d)  false %d/%d/%d  %s  ncl %d" % (
+                slug, c["platform"], c["recall"], c["hits"], c["tested"], c["false"], c["false_off_own"],
+                c["false_no_claims"],
                 "searched" if c["searches"] else "NOT SEARCHED", c["ncl"]))
     if a.write:
         os.makedirs(os.path.dirname(OUT), exist_ok=True)

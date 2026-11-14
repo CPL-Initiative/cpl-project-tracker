@@ -1,13 +1,17 @@
 {
  "colleges": {
   "allan_hancock": {
+   "catalog_list": null,
    "college": "Allan Hancock College",
    "false": 0,
    "false_matches": [],
-   "hits": 127,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 130,
    "ncl": 47,
+   "no_claims_matches": [],
    "platform": "curriqunet",
-   "recall": 0.894,
+   "recall": 0.915,
    "route": "site",
    "searches": true,
    "shared": 10,
@@ -20,11 +24,156 @@
    "route": "pdf (not looked up in this slice)"
   },
   "antelope_valley": {
+   "catalog_list": null,
    "college": "Antelope Valley College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 25,
+   "false_off_own": 0,
    "hits": 106,
    "ncl": 2,
+   "no_claims_matches": [
+    {
+     "award": "A.S. Degree",
+     "control_number": "02139",
+     "h1": "General Business AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/general-business-as-fall-2026",
+     "title": "General Business"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "02145",
+     "h1": "Computer Applications AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/computer-applications-as-fall-2026",
+     "title": "Computer Applications"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "02149",
+     "h1": "Electronics Technology AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/electronics-technology-as-fall-2026",
+     "title": "Electronics Technology"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "02153",
+     "h1": "General Aircraft Maintenance AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/general-aircraft-maintenance-as-fall-2026",
+     "title": "General Aircraft Maintenance"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "02155",
+     "h1": "Welding AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/welding-as-fall-2026",
+     "title": "Welding"
+    },
+    {
+     "award": "A.A. Degree",
+     "control_number": "02160",
+     "h1": "Commercial Photography AA",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/commercial-photography-aa-fall-2026",
+     "title": "Commercial Photography"
+    },
+    {
+     "award": "A.A. Degree",
+     "control_number": "02184",
+     "h1": "Instructional Aide AA",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/instructional-aide-aa-fall-2026",
+     "title": "Instructional Aide"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "02185",
+     "h1": "Fire Technology AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/fire-technology-as-fall-2026",
+     "title": "Fire Technology"
+    },
+    {
+     "award": "A.A. Degree",
+     "control_number": "07242",
+     "h1": "School-Aged Child Care AA",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/school-aged-child-care-aa-fall-2026",
+     "title": "School-Aged Child Care"
+    },
+    {
+     "award": "A.A. Degree",
+     "control_number": "07246",
+     "h1": "Video Design and Production AA",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/video-design-and-production-aa-fall-2026",
+     "title": "Video Design and Production"
+    },
+    {
+     "award": "A.A. Degree",
+     "control_number": "07247",
+     "h1": "Interactive Media-Web Design AA",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/interactive-media-web-design-aa-fall-2026",
+     "title": "Interactive Media-Web Design"
+    },
+    {
+     "award": "A.A. Degree",
+     "control_number": "07248",
+     "h1": "Deaf Studies: American Sign Language AA",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-american-sign-language-aa-fall-2026",
+     "title": "Deaf Studies: American Sign Language"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "10234",
+     "h1": "Refrigeration Specialist AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/refrigeration-specialist-as-fall-2026",
+     "title": "Refrigeration Specialist"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "10237",
+     "h1": "Automotive Refinishing Specialist AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/automotive-refinishing-specialist-as-fall-2026",
+     "title": "Automotive Refinishing Specialist"
+    },
+    {
+     "award": "A.A. Degree",
+     "control_number": "10241",
+     "h1": "Graphic Design AA",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/graphic-design-aa-fall-2026",
+     "title": "Graphic Design"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "11647",
+     "h1": "Aircraft Airframe AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-airframe-as-fall-2026",
+     "title": "Aircraft Airframe"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "11648",
+     "h1": "Aircraft Powerplant AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/aircraft-powerplant-as-fall-2026",
+     "title": "Aircraft Powerplant"
+    },
+    {
+     "award": "A.A. Degree",
+     "control_number": "12137",
+     "h1": "Deaf Studies: Interpreter Training AA",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/deaf-studies-interpreter-training-aa-fall-2026",
+     "title": "Deaf Studies: Interpreter Training"
+    },
+    {
+     "award": "A.A. Degree",
+     "control_number": "12161",
+     "h1": "Computer Animation AA",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/computer-animation-aa-fall-2026",
+     "title": "Computer Animation"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "14414",
+     "h1": "Electrical Technology AS",
+     "page": "https://avc.elumenapp.com/catalog/2026-27/program/electrical-technology-as-fall-2026",
+     "title": "Electrical Technology"
+    }
+   ],
    "platform": "elumen",
    "recall": 0.567,
    "route": "site",
@@ -33,13 +182,17 @@
    "tested": 187
   },
   "bakersfield": {
+   "catalog_list": null,
    "college": "Bakersfield College",
    "false": 0,
    "false_matches": [],
-   "hits": 210,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 209,
    "ncl": 8,
+   "no_claims_matches": [],
    "platform": "elumen",
-   "recall": 0.946,
+   "recall": 0.941,
    "route": "site",
    "searches": true,
    "shared": 6,
@@ -52,11 +205,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "berkeley_city": {
+   "catalog_list": null,
    "college": "Berkeley City College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 63,
    "ncl": 2,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.969,
    "route": "site",
@@ -65,11 +222,15 @@
    "tested": 65
   },
   "butte": {
+   "catalog_list": null,
    "college": "Butte College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 155,
    "ncl": 24,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.987,
    "route": "site",
@@ -84,11 +245,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "cabrillo": {
+   "catalog_list": null,
    "college": "Cabrillo College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 252,
    "ncl": 10,
+   "no_claims_matches": [],
    "platform": "elumen",
    "recall": 0.984,
    "route": "site",
@@ -103,13 +268,25 @@
    "route": "pdf (not looked up in this slice)"
   },
   "cerritos": {
+   "catalog_list": null,
    "college": "Cerritos College",
    "false": 0,
    "false_matches": [],
-   "hits": 199,
+   "false_no_claims": 1,
+   "false_off_own": 0,
+   "hits": 146,
    "ncl": 4,
+   "no_claims_matches": [
+    {
+     "award": "A.S. Degree",
+     "control_number": "02215",
+     "h1": "",
+     "page": "https://cerritos-public.courseleaf.com/degrees-certificates-courses/degrees-certificates-programs-majors/computer-information-science-data-science-as/",
+     "title": "Computer and Information Sciences: Computer Science"
+    }
+   ],
    "platform": "courseleaf",
-   "recall": 0.757,
+   "recall": 0.555,
    "route": "site",
    "searches": false,
    "shared": 5,
@@ -122,11 +299,30 @@
    "route": "pdf (not looked up in this slice)"
   },
   "chabot": {
+   "catalog_list": null,
    "college": "Chabot College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 2,
+   "false_off_own": 0,
    "hits": 214,
    "ncl": 4,
+   "no_claims_matches": [
+    {
+     "award": "Noncredit program",
+     "control_number": "39042",
+     "h1": "Preparation for Statistics and Liberal Arts Math - Certificate of Competency (noncredit)",
+     "page": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4083/6065",
+     "title": "Preparation for Statistics and Liberal Arts Math"
+    },
+    {
+     "award": "Noncredit program",
+     "control_number": "44058",
+     "h1": "ESL Composition - Certificate of Competency (noncredit)",
+     "page": "https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/4083/6013",
+     "title": "ESL Composition"
+    }
+   ],
    "platform": "curriqunet",
    "recall": 0.934,
    "route": "site",
@@ -135,24 +331,32 @@
    "tested": 229
   },
   "chaffey": {
+   "catalog_list": null,
    "college": "Chaffey College",
    "false": 0,
    "false_matches": [],
-   "hits": 177,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 179,
    "ncl": 3,
+   "no_claims_matches": [],
    "platform": "curriqunet",
-   "recall": 0.932,
+   "recall": 0.942,
    "route": "site",
    "searches": true,
    "shared": 2,
    "tested": 190
   },
   "citrus": {
+   "catalog_list": null,
    "college": "Citrus College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 151,
    "ncl": 8,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.878,
    "route": "site",
@@ -173,11 +377,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "coalinga": {
+   "catalog_list": null,
    "college": "Coalinga College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 42,
    "ncl": 6,
+   "no_claims_matches": [],
    "platform": "custom_html",
    "recall": 0.764,
    "route": "site",
@@ -186,11 +394,30 @@
    "tested": 55
   },
   "coastline_community": {
+   "catalog_list": null,
    "college": "Coastline Community College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 2,
+   "false_off_own": 0,
    "hits": 120,
    "ncl": 16,
+   "no_claims_matches": [
+    {
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "control_number": "20356",
+     "h1": "",
+     "page": "https://catalog.cccd.edu/coastline/pathways/business-operations-management/management/management-certificate-achievement/",
+     "title": "Management"
+    },
+    {
+     "award": "A.A- T Degree",
+     "control_number": "43057",
+     "h1": "",
+     "page": "https://catalog.cccd.edu/coastline/pathways/behavior-culture-society/communication-studies/communication-studies-2-aat/",
+     "title": "Communications Studies 2.0"
+    }
+   ],
    "platform": "courseleaf",
    "recall": 0.87,
    "route": "site",
@@ -199,11 +426,15 @@
    "tested": 138
   },
   "college_of_alameda": {
+   "catalog_list": null,
    "college": "College of Alameda",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 53,
    "ncl": 17,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.964,
    "route": "site",
@@ -212,11 +443,15 @@
    "tested": 55
   },
   "college_of_marin": {
+   "catalog_list": null,
    "college": "College of Marin",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 24,
    "ncl": 61,
+   "no_claims_matches": [],
    "platform": "elumen",
    "recall": 0.276,
    "route": "site",
@@ -225,11 +460,15 @@
    "tested": 87
   },
   "college_of_san_mateo": {
+   "catalog_list": null,
    "college": "College of San Mateo",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 44,
    "ncl": 34,
+   "no_claims_matches": [],
    "platform": "custom_html",
    "recall": 0.917,
    "route": "site",
@@ -250,11 +489,44 @@
    "route": "pdf (not looked up in this slice)"
   },
   "college_of_the_redwoods": {
+   "catalog_list": null,
    "college": "College of the Redwoods",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 4,
+   "false_off_own": 0,
    "hits": 46,
    "ncl": 3,
+   "no_claims_matches": [
+    {
+     "award": "A.S. Degree",
+     "control_number": "01816",
+     "h1": "Automotive Technology",
+     "page": "https://redwoods.elumenapp.com/catalog/2026-2027/program/automotive-technology-fall-2024",
+     "title": "Automotive Technology"
+    },
+    {
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "control_number": "22666",
+     "h1": "Advanced Automotive Technology, CA",
+     "page": "https://redwoods.elumenapp.com/catalog/2026-2027/program/advanced-automotive-technology-ca-fall-2024",
+     "title": "Advanced Automotive Technology"
+    },
+    {
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "control_number": "42895",
+     "h1": "Aquaculture Technology, CA",
+     "page": "https://redwoods.elumenapp.com/catalog/2026-2027/program/aquaculture-technology-ca-fall-2023",
+     "title": "Aquaculture Technology"
+    },
+    {
+     "award": "Certificate of Achievement requiring 60+S/90+Q units",
+     "control_number": "45557",
+     "h1": "Psychiatric Technician, CA",
+     "page": "https://redwoods.elumenapp.com/catalog/2026-2027/program/psychiatric-technician-ca-fall-2026",
+     "title": "Psychiatric Technician"
+    }
+   ],
    "platform": "elumen",
    "recall": 0.667,
    "route": "site",
@@ -263,11 +535,15 @@
    "tested": 69
   },
   "college_of_the_sequoias": {
+   "catalog_list": null,
    "college": "College of the Sequoias",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 117,
    "ncl": 0,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.992,
    "route": "site",
@@ -276,24 +552,32 @@
    "tested": 118
   },
   "college_of_the_siskiyous": {
+   "catalog_list": null,
    "college": "College of the Siskiyous",
    "false": 0,
    "false_matches": [],
-   "hits": 59,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 63,
    "ncl": 3,
+   "no_claims_matches": [],
    "platform": "elumen",
-   "recall": 0.855,
+   "recall": 0.913,
    "route": "site",
    "searches": true,
    "shared": 4,
    "tested": 69
   },
   "columbia": {
+   "catalog_list": null,
    "college": "Columbia College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 80,
    "ncl": 1,
+   "no_claims_matches": [],
    "platform": "elumen",
    "recall": 0.976,
    "route": "site",
@@ -308,13 +592,25 @@
    "route": "pdf (not looked up in this slice)"
   },
   "contra_costa": {
+   "catalog_list": null,
    "college": "Contra Costa College",
    "false": 0,
    "false_matches": [],
-   "hits": 48,
+   "false_no_claims": 1,
+   "false_off_own": 0,
+   "hits": 49,
    "ncl": 26,
+   "no_claims_matches": [
+    {
+     "award": "A.S. T Degree",
+     "control_number": "32924",
+     "h1": "Mathematics",
+     "page": "https://ccc.elumenapp.com/catalog/ccc-2026-27/program/mathematics-fall-2026",
+     "title": "Mathematics"
+    }
+   ],
    "platform": "elumen",
-   "recall": 0.5,
+   "recall": 0.51,
    "route": "site",
    "searches": false,
    "shared": 0,
@@ -333,24 +629,32 @@
    "route": "pdf (not looked up in this slice)"
   },
   "crafton_hills": {
+   "catalog_list": null,
    "college": "Crafton Hills College",
    "false": 0,
    "false_matches": [],
-   "hits": 60,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 58,
    "ncl": 39,
+   "no_claims_matches": [],
    "platform": "smartcatalog",
-   "recall": 0.938,
+   "recall": 0.906,
    "route": "site",
    "searches": true,
    "shared": 10,
    "tested": 64
   },
   "cuesta": {
+   "catalog_list": null,
    "college": "Cuesta College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 166,
    "ncl": 8,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.965,
    "route": "site",
@@ -359,11 +663,15 @@
    "tested": 172
   },
   "cuyamaca": {
+   "catalog_list": null,
    "college": "Cuyamaca College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 78,
    "ncl": 0,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.951,
    "route": "site",
@@ -372,11 +680,37 @@
    "tested": 82
   },
   "cypress": {
+   "catalog_list": null,
    "college": "Cypress College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 3,
+   "false_off_own": 0,
    "hits": 235,
    "ncl": 0,
+   "no_claims_matches": [
+    {
+     "award": "A.S. Degree",
+     "control_number": "03767",
+     "h1": "Computer Information Systems",
+     "page": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-information-systems/",
+     "title": "Computer Information Systems"
+    },
+    {
+     "award": "A.S. T Degree",
+     "control_number": "37219",
+     "h1": "2D Animation Certificate",
+     "page": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/media-arts-design/associate-in-science-in-film-television-and-electronic-media-for-transfer-degree/",
+     "title": "Film, Television, and Electronic Media"
+    },
+    {
+     "award": "A.S. T Degree",
+     "control_number": "39923",
+     "h1": "Computer Science",
+     "page": "https://catalog.nocccd.edu/cypress-college/degrees-certificates/computer-science/",
+     "title": "Computer Science"
+    }
+   ],
    "platform": "courseleaf",
    "recall": 0.914,
    "route": "site",
@@ -385,11 +719,15 @@
    "tested": 257
   },
   "de_anza": {
+   "catalog_list": null,
    "college": "De Anza College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 166,
    "ncl": 5,
+   "no_claims_matches": [],
    "platform": "elumen",
    "recall": 0.735,
    "route": "site",
@@ -398,13 +736,17 @@
    "tested": 226
   },
   "diablo_valley": {
+   "catalog_list": null,
    "college": "Diablo Valley College",
    "false": 0,
    "false_matches": [],
-   "hits": 181,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 189,
    "ncl": 23,
+   "no_claims_matches": [],
    "platform": "elumen",
-   "recall": 0.892,
+   "recall": 0.931,
    "route": "site",
    "searches": true,
    "shared": 10,
@@ -417,11 +759,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "el_camino": {
+   "catalog_list": null,
    "college": "El Camino College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 97,
    "ncl": 54,
+   "no_claims_matches": [],
    "platform": "acalog",
    "recall": 0.951,
    "route": "site",
@@ -430,11 +776,15 @@
    "tested": 102
   },
   "evergreen_valley": {
+   "catalog_list": null,
    "college": "Evergreen Valley College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 67,
    "ncl": 1,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.905,
    "route": "site",
@@ -443,11 +793,15 @@
    "tested": 74
   },
   "feather_river": {
+   "catalog_list": null,
    "college": "Feather River College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 38,
    "ncl": 13,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.905,
    "route": "site",
@@ -462,11 +816,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "foothill": {
+   "catalog_list": null,
    "college": "Foothill College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 42,
    "ncl": 19,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.636,
    "route": "site",
@@ -475,11 +833,15 @@
    "tested": 66
   },
   "fresno_city": {
+   "catalog_list": null,
    "college": "Fresno City College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 136,
    "ncl": 15,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.855,
    "route": "site",
@@ -488,11 +850,23 @@
    "tested": 159
   },
   "fullerton": {
+   "catalog_list": null,
    "college": "Fullerton College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 1,
+   "false_off_own": 0,
    "hits": 283,
    "ncl": 6,
+   "no_claims_matches": [
+    {
+     "award": "A.S. Degree",
+     "control_number": "46095",
+     "h1": "Artificial Intelligence in Business Certificate",
+     "page": "https://catalog.nocccd.edu/fullerton-college/degrees-certificates/business/artificial-intelligence-in-business-certificate-degree/",
+     "title": "Artificial Intelligence in Business"
+    }
+   ],
    "platform": "courseleaf",
    "recall": 0.946,
    "route": "site",
@@ -501,24 +875,46 @@
    "tested": 299
   },
   "gavilan": {
+   "catalog_list": null,
    "college": "Gavilan College",
    "false": 0,
    "false_matches": [],
-   "hits": 81,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 80,
    "ncl": 15,
+   "no_claims_matches": [],
    "platform": "curriqunet",
-   "recall": 0.88,
+   "recall": 0.87,
    "route": "site",
    "searches": true,
    "shared": 11,
    "tested": 92
   },
   "glendale_community": {
+   "catalog_list": {
+    "files_not_listed": true,
+    "missed": [
+     "02557",
+     "12570",
+     "24274",
+     "24356",
+     "30814",
+     "31597",
+     "32267"
+    ],
+    "on_list": 235,
+    "recall": 0.971,
+    "tested": 242
+   },
    "college": "Glendale Community College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 225,
    "ncl": 50,
+   "no_claims_matches": [],
    "platform": "coursedog",
    "recall": 0.949,
    "route": "site",
@@ -527,11 +923,30 @@
    "tested": 237
   },
   "golden_west": {
+   "catalog_list": null,
    "college": "Golden West College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 2,
+   "false_off_own": 0,
    "hits": 111,
    "ncl": 29,
+   "no_claims_matches": [
+    {
+     "award": "A.A. Degree",
+     "control_number": "03923",
+     "h1": "",
+     "page": "https://catalog.cccd.edu/golden-west/pathways/career-education/digital-arts/",
+     "title": "Digital Arts"
+    },
+    {
+     "award": "A.A. Degree",
+     "control_number": "11415",
+     "h1": "",
+     "page": "https://catalog.cccd.edu/golden-west/pathways/business/accounting/",
+     "title": "Accounting"
+    }
+   ],
    "platform": "courseleaf",
    "recall": 0.925,
    "route": "site",
@@ -540,24 +955,50 @@
    "tested": 120
   },
   "grossmont": {
+   "catalog_list": null,
    "college": "Grossmont College",
    "false": 0,
    "false_matches": [],
-   "hits": 65,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 64,
    "ncl": 33,
+   "no_claims_matches": [],
    "platform": "courseleaf",
-   "recall": 0.823,
+   "recall": 0.81,
    "route": "site",
    "searches": true,
    "shared": 63,
    "tested": 79
   },
   "hartnell": {
+   "catalog_list": {
+    "files_not_listed": false,
+    "missed": [
+     "11803",
+     "15426",
+     "21424",
+     "31146",
+     "32529",
+     "35065",
+     "35458",
+     "37130",
+     "41922",
+     "42385",
+     "43066"
+    ],
+    "on_list": 82,
+    "recall": 0.882,
+    "tested": 93
+   },
    "college": "Hartnell College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 77,
    "ncl": 7,
+   "no_claims_matches": [],
    "platform": "coursedog",
    "recall": 0.875,
    "route": "site",
@@ -566,50 +1007,74 @@
    "tested": 88
   },
   "imperial_valley": {
+   "catalog_list": null,
    "college": "Imperial Valley College",
    "false": 0,
    "false_matches": [],
-   "hits": 64,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 60,
    "ncl": 7,
+   "no_claims_matches": [],
    "platform": "curriqunet",
-   "recall": 0.525,
+   "recall": 0.492,
    "route": "site",
    "searches": false,
    "shared": 4,
    "tested": 122
   },
   "irvine_valley": {
+   "catalog_list": null,
    "college": "Irvine Valley College",
    "false": 0,
    "false_matches": [],
-   "hits": 122,
+   "false_no_claims": 1,
+   "false_off_own": 0,
+   "hits": 126,
    "ncl": 25,
+   "no_claims_matches": [
+    {
+     "award": "A.A- T Degree",
+     "control_number": "45862",
+     "h1": "Studio Art - AA-T",
+     "page": "https://irvine.curriqunet.com/Catalog/iq/48959/49233/49241/51065",
+     "title": "Studio Art"
+    }
+   ],
    "platform": "curriqunet",
-   "recall": 0.91,
+   "recall": 0.94,
    "route": "site",
    "searches": true,
    "shared": 10,
    "tested": 134
   },
   "lake_tahoe_community": {
+   "catalog_list": null,
    "college": "Lake Tahoe Community College",
    "false": 0,
    "false_matches": [],
-   "hits": 52,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 53,
    "ncl": 4,
+   "no_claims_matches": [],
    "platform": "elumen",
-   "recall": 0.667,
+   "recall": 0.679,
    "route": "site",
    "searches": false,
    "shared": 0,
    "tested": 78
   },
   "laney": {
+   "catalog_list": null,
    "college": "Laney College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 137,
    "ncl": 0,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.938,
    "route": "site",
@@ -618,11 +1083,15 @@
    "tested": 146
   },
   "las_positas": {
+   "catalog_list": null,
    "college": "Las Positas College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 178,
    "ncl": 3,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.922,
    "route": "site",
@@ -637,11 +1106,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "lemoore": {
+   "catalog_list": null,
    "college": "Lemoore College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 55,
    "ncl": 8,
+   "no_claims_matches": [],
    "platform": "elumen",
    "recall": 0.932,
    "route": "site",
@@ -650,11 +1123,51 @@
    "tested": 59
   },
   "long_beach_city": {
+   "catalog_list": null,
    "college": "Long Beach City College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 5,
+   "false_off_own": 0,
    "hits": 296,
    "ncl": 6,
+   "no_claims_matches": [
+    {
+     "award": "A.S. Degree",
+     "control_number": "02695",
+     "h1": "Mathematics",
+     "page": "https://lbcc-public.courseleaf.com//degrees-certificates/mathematics/",
+     "title": "Mathematics"
+    },
+    {
+     "award": "A.S. T Degree",
+     "control_number": "35539",
+     "h1": "Film, Television & Electronic Media",
+     "page": "https://lbcc-public.courseleaf.com//degrees-certificates/film-television-electronic-media/",
+     "title": "Film, Television, and Electronic Media"
+    },
+    {
+     "award": "A.S. T Degree",
+     "control_number": "35540",
+     "h1": "Nutrition and Dietetics",
+     "page": "https://lbcc-public.courseleaf.com//degrees-certificates/nutrition-dietetics/",
+     "title": "Nutrition and Dietetics"
+    },
+    {
+     "award": "Noncredit program",
+     "control_number": "39377",
+     "h1": "Foundations in Academic Research - Certificate of Competency",
+     "page": "https://lbcc-public.courseleaf.com//noncredit/programs-of-study/library-technician/foundations-academic-research-certificate-competency/",
+     "title": "Foundations in Academic Research"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "43438",
+     "h1": "Industrial Design",
+     "page": "https://lbcc-public.courseleaf.com//degrees-certificates/industrial-design/",
+     "title": "Industrial Design"
+    }
+   ],
    "platform": "courseleaf",
    "recall": 0.897,
    "route": "site",
@@ -705,24 +1218,32 @@
    "route": "pdf (not looked up in this slice)"
   },
   "los_medanos": {
+   "catalog_list": null,
    "college": "Los Medanos College",
    "false": 0,
    "false_matches": [],
-   "hits": 75,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 72,
    "ncl": 6,
+   "no_claims_matches": [],
    "platform": "elumen",
-   "recall": 0.915,
+   "recall": 0.878,
    "route": "site",
    "searches": true,
    "shared": 0,
    "tested": 82
   },
   "madera": {
+   "catalog_list": null,
    "college": "Madera College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 1,
    "ncl": 0,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.012,
    "route": "site",
@@ -737,24 +1258,59 @@
    "route": "pdf (not looked up in this slice)"
   },
   "merced": {
+   "catalog_list": {
+    "files_not_listed": false,
+    "missed": [
+     "10438",
+     "10439",
+     "19368",
+     "19370",
+     "19373",
+     "19491",
+     "19492",
+     "19494",
+     "19497",
+     "19502",
+     "19503",
+     "19654",
+     "20801",
+     "20802",
+     "20804",
+     "20806",
+     "20813",
+     "20814",
+     "20815",
+     "20817"
+    ],
+    "on_list": 118,
+    "recall": 0.724,
+    "tested": 163
+   },
    "college": "Merced College",
    "false": 0,
    "false_matches": [],
-   "hits": 104,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 106,
    "ncl": 10,
+   "no_claims_matches": [],
    "platform": "coursedog",
-   "recall": 0.667,
+   "recall": 0.679,
    "route": "site",
    "searches": false,
    "shared": 6,
    "tested": 156
   },
   "merritt": {
+   "catalog_list": null,
    "college": "Merritt College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 37,
    "ncl": 2,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.457,
    "route": "site",
@@ -763,11 +1319,15 @@
    "tested": 81
   },
   "miracosta": {
+   "catalog_list": null,
    "college": "MiraCosta College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 0,
    "ncl": 26,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.0,
    "route": "site",
@@ -776,11 +1336,44 @@
    "tested": 14
   },
   "mission": {
+   "catalog_list": null,
    "college": "Mission College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 4,
+   "false_off_own": 0,
    "hits": 87,
    "ncl": 11,
+   "no_claims_matches": [
+    {
+     "award": "A.S. Degree",
+     "control_number": "06305",
+     "h1": "Graphic Design AS",
+     "page": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-as-2026fa",
+     "title": "Graphic Design"
+    },
+    {
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "control_number": "22045",
+     "h1": "Graphic Design CA",
+     "page": "https://mission.elumenapp.com/catalog/24-25/program/graphic-design-ca-2026fa",
+     "title": "Graphic Design"
+    },
+    {
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "control_number": "41324",
+     "h1": "Culinary Arts CA",
+     "page": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-ca-2026fa",
+     "title": "Culinary Arts"
+    },
+    {
+     "award": "A.S. Degree",
+     "control_number": "41325",
+     "h1": "Culinary Arts AS",
+     "page": "https://mission.elumenapp.com/catalog/24-25/program/culinary-arts-as-2026fa",
+     "title": "Culinary Arts"
+    }
+   ],
    "platform": "elumen",
    "recall": 0.853,
    "route": "site",
@@ -789,11 +1382,15 @@
    "tested": 102
   },
   "modesto_junior": {
+   "catalog_list": null,
    "college": "Modesto Junior College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 145,
    "ncl": 3,
+   "no_claims_matches": [],
    "platform": "elumen",
    "recall": 0.78,
    "route": "site",
@@ -802,11 +1399,23 @@
    "tested": 186
   },
   "monterey_peninsula": {
+   "catalog_list": null,
    "college": "Monterey Peninsula College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 1,
+   "false_off_own": 0,
    "hits": 195,
    "ncl": 1,
+   "no_claims_matches": [
+    {
+     "award": "A.S. Degree",
+     "control_number": "36656",
+     "h1": "",
+     "page": "https://catalog.mpc.edu/programs-study/chemistry/chemistry-as/",
+     "title": "Chemistry"
+    }
+   ],
    "platform": "courseleaf",
    "recall": 0.965,
    "route": "site",
@@ -815,11 +1424,23 @@
    "tested": 202
   },
   "moorpark": {
+   "catalog_list": null,
    "college": "Moorpark College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 1,
+   "false_off_own": 0,
    "hits": 120,
    "ncl": 6,
+   "no_claims_matches": [
+    {
+     "award": "A.S. Degree",
+     "control_number": "46473",
+     "h1": "",
+     "page": "https://catalog.vcccd.edu/moorpark/programs-courses/design/",
+     "title": "Design"
+    }
+   ],
    "platform": "courseleaf",
    "recall": 0.968,
    "route": "site",
@@ -828,11 +1449,15 @@
    "tested": 124
   },
   "moreno_valley": {
+   "catalog_list": null,
    "college": "Moreno Valley College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 66,
    "ncl": 5,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.767,
    "route": "site",
@@ -841,11 +1466,15 @@
    "tested": 86
   },
   "mt_san_antonio": {
+   "catalog_list": null,
    "college": "Mt. San Antonio College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 246,
    "ncl": 41,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.724,
    "route": "site",
@@ -854,24 +1483,40 @@
    "tested": 340
   },
   "mt_san_jacinto": {
+   "catalog_list": null,
    "college": "Mt. San Jacinto College",
    "false": 0,
    "false_matches": [],
-   "hits": 97,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 99,
    "ncl": 22,
+   "no_claims_matches": [],
    "platform": "courseleaf",
-   "recall": 0.915,
+   "recall": 0.934,
    "route": "site",
    "searches": true,
    "shared": 8,
    "tested": 106
   },
   "napa_valley": {
+   "catalog_list": null,
    "college": "Napa Valley College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 1,
+   "false_off_own": 0,
    "hits": 81,
    "ncl": 16,
+   "no_claims_matches": [
+    {
+     "award": "A.S. Degree",
+     "control_number": "03695",
+     "h1": "NURSING",
+     "page": "https://catalog.napavalley.edu//areas-of-study/nursing/",
+     "title": "Nursing"
+    }
+   ],
    "platform": "courseleaf",
    "recall": 0.91,
    "route": "site",
@@ -880,11 +1525,15 @@
    "tested": 89
   },
   "norco": {
+   "catalog_list": null,
    "college": "Norco College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 36,
    "ncl": 11,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.5,
    "route": "site",
@@ -893,11 +1542,15 @@
    "tested": 72
   },
   "north_orange_continuing_education": {
+   "catalog_list": null,
    "college": "North Orange Continuing Education",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 67,
    "ncl": 8,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.87,
    "route": "site",
@@ -912,24 +1565,32 @@
    "route": "pdf (not looked up in this slice)"
   },
   "orange_coast": {
+   "catalog_list": null,
    "college": "Orange Coast College",
    "false": 0,
    "false_matches": [],
-   "hits": 241,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 234,
    "ncl": 27,
+   "no_claims_matches": [],
    "platform": "courseleaf",
-   "recall": 0.949,
+   "recall": 0.921,
    "route": "site",
    "searches": true,
    "shared": 16,
    "tested": 254
   },
   "oxnard": {
+   "catalog_list": null,
    "college": "Oxnard College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 107,
    "ncl": 1,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.991,
    "route": "site",
@@ -938,11 +1599,15 @@
    "tested": 108
   },
   "palo_verde": {
+   "catalog_list": null,
    "college": "Palo Verde College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 46,
    "ncl": 1,
+   "no_claims_matches": [],
    "platform": "acalog",
    "recall": 0.754,
    "route": "site",
@@ -951,26 +1616,34 @@
    "tested": 61
   },
   "palomar": {
+   "catalog_list": null,
    "college": "Palomar College",
    "false": 0,
    "false_matches": [],
-   "hits": 99,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 102,
    "ncl": 11,
+   "no_claims_matches": [],
    "platform": "curriqunet",
-   "recall": 0.762,
+   "recall": 0.785,
    "route": "site",
    "searches": false,
    "shared": 150,
    "tested": 130
   },
   "pasadena_city": {
+   "catalog_list": null,
    "college": "Pasadena City College",
    "false": 0,
    "false_matches": [],
-   "hits": 111,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 109,
    "ncl": 49,
+   "no_claims_matches": [],
    "platform": "courseleaf",
-   "recall": 0.949,
+   "recall": 0.932,
    "route": "site",
    "searches": true,
    "shared": 179,
@@ -983,11 +1656,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "reedley": {
+   "catalog_list": null,
    "college": "Reedley College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 170,
    "ncl": 13,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.934,
    "route": "site",
@@ -996,11 +1673,30 @@
    "tested": 182
   },
   "rio_hondo": {
+   "catalog_list": null,
    "college": "Rio Hondo College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 2,
+   "false_off_own": 0,
    "hits": 223,
    "ncl": 20,
+   "no_claims_matches": [
+    {
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "control_number": "19811",
+     "h1": "AUTOMOTIVE/GENERAL SERVICE TECHNICIAN - Certificate of Achievement",
+     "page": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24167",
+     "title": "General Automotive Service"
+    },
+    {
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "control_number": "37759",
+     "h1": "COMPUTER INFORMATION TECHNOLOGY/ENTRY NETWORK TECHNICIAN - Certificate of Achievement",
+     "page": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24215",
+     "title": "Computer Information Technology: Network Technician"
+    }
+   ],
    "platform": "curriqunet",
    "recall": 0.796,
    "route": "site",
@@ -1009,11 +1705,15 @@
    "tested": 280
   },
   "riverside_city": {
+   "catalog_list": null,
    "college": "Riverside City College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 138,
    "ncl": 6,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.986,
    "route": "site",
@@ -1028,11 +1728,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "saddleback": {
+   "catalog_list": null,
    "college": "Saddleback College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 260,
    "ncl": 14,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.864,
    "route": "site",
@@ -1041,11 +1745,23 @@
    "tested": 301
   },
   "san_bernardino_valley": {
+   "catalog_list": null,
    "college": "San Bernardino Valley College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 1,
+   "false_off_own": 0,
    "hits": 141,
    "ncl": 4,
+   "no_claims_matches": [
+    {
+     "award": "A.A. Degree",
+     "control_number": "04927",
+     "h1": "Child Development",
+     "page": "https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/",
+     "title": "Child Development"
+    }
+   ],
    "platform": "courseleaf",
    "recall": 0.801,
    "route": "site",
@@ -1054,11 +1770,15 @@
    "tested": 176
   },
   "san_diego_city": {
+   "catalog_list": null,
    "college": "San Diego City College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 151,
    "ncl": 12,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.95,
    "route": "site",
@@ -1067,11 +1787,15 @@
    "tested": 159
   },
   "san_diego_mesa": {
+   "catalog_list": null,
    "college": "San Diego Mesa College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 152,
    "ncl": 18,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.95,
    "route": "site",
@@ -1080,11 +1804,15 @@
    "tested": 160
   },
   "san_diego_miramar": {
+   "catalog_list": null,
    "college": "San Diego Miramar College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 107,
    "ncl": 22,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.93,
    "route": "site",
@@ -1099,11 +1827,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "san_joaquin_delta": {
+   "catalog_list": null,
    "college": "San Joaquin Delta College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 188,
    "ncl": 18,
+   "no_claims_matches": [],
    "platform": "acalog",
    "recall": 0.94,
    "route": "site",
@@ -1112,11 +1844,15 @@
    "tested": 200
   },
   "san_jose_city": {
+   "catalog_list": null,
    "college": "San Jose City College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 51,
    "ncl": 35,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.671,
    "route": "site",
@@ -1125,11 +1861,15 @@
    "tested": 76
   },
   "santa_ana": {
+   "catalog_list": null,
    "college": "Santa Ana College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 269,
    "ncl": 11,
+   "no_claims_matches": [],
    "platform": "curriqunet",
    "recall": 0.801,
    "route": "site",
@@ -1138,13 +1878,17 @@
    "tested": 336
   },
   "santa_barbara_city": {
+   "catalog_list": null,
    "college": "Santa Barbara City College",
    "false": 0,
    "false_matches": [],
-   "hits": 223,
+   "false_no_claims": 0,
+   "false_off_own": 0,
+   "hits": 222,
    "ncl": 32,
+   "no_claims_matches": [],
    "platform": "courseleaf",
-   "recall": 0.933,
+   "recall": 0.929,
    "route": "site",
    "searches": true,
    "shared": 10,
@@ -1175,11 +1919,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "sierra": {
+   "catalog_list": null,
    "college": "Sierra College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 0,
    "ncl": 65,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.0,
    "route": "site",
@@ -1188,11 +1936,15 @@
    "tested": 19
   },
   "skyline": {
+   "catalog_list": null,
    "college": "Skyline College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 24,
    "ncl": 86,
+   "no_claims_matches": [],
    "platform": "custom_html",
    "recall": 0.96,
    "route": "site",
@@ -1207,11 +1959,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "southwestern": {
+   "catalog_list": null,
    "college": "Southwestern College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 151,
    "ncl": 39,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.803,
    "route": "site",
@@ -1220,11 +1976,15 @@
    "tested": 188
   },
   "taft": {
+   "catalog_list": null,
    "college": "Taft College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 45,
    "ncl": 17,
+   "no_claims_matches": [],
    "platform": "smartcatalog",
    "recall": 0.804,
    "route": "site",
@@ -1233,11 +1993,15 @@
    "tested": 56
   },
   "ventura": {
+   "catalog_list": null,
    "college": "Ventura College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 155,
    "ncl": 6,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.975,
    "route": "site",
@@ -1246,11 +2010,15 @@
    "tested": 159
   },
   "victor_valley": {
+   "catalog_list": null,
    "college": "Victor Valley College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 149,
    "ncl": 18,
+   "no_claims_matches": [],
    "platform": "courseleaf",
    "recall": 0.892,
    "route": "site",
@@ -1265,11 +2033,15 @@
    "route": "pdf (not looked up in this slice)"
   },
   "west_valley": {
+   "catalog_list": null,
    "college": "West Valley College",
    "false": 0,
    "false_matches": [],
+   "false_no_claims": 0,
+   "false_off_own": 0,
    "hits": 125,
    "ncl": 3,
+   "no_claims_matches": [],
    "platform": "custom_html",
    "recall": 0.962,
    "route": "site",
@@ -1291,17 +2063,23 @@
   }
  },
  "floor": 0.8,
- "min_tested": 5,
+ "min_tested": 10,
  "own_share": 0.75,
  "statewide": {
+  "catalog_lists_filing_not_listed": [
+   "glendale_community"
+  ],
   "colleges": 118,
   "colleges_searched": 60,
   "colleges_under_floor": 23,
   "false": 0,
-  "hits": 9982,
+  "false_no_claims": 57,
+  "false_no_claims_at_searched": 24,
+  "false_off_own": 0,
+  "hits": 9937,
   "ncl_not_searched": 906,
   "ncl_searched": 978,
-  "recall": 0.853,
+  "recall": 0.849,
   "site_route": 83,
   "tested": 11702
  }

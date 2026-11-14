@@ -4740,6 +4740,10 @@ SK_PAGES = {
     "programs/economics-aa.php": ("Economics", "ECON 100 ECON 110 ECON 120"),
     "programs/history-aa.php": ("History", "HIST 100 HIST 110 HIST 120"),
     "programs/nursing-as.php": ("Nursing", "NURS 100 NURS 110 NURS 120"),
+    "programs/geology-as.php": ("Geology", "GEOL 100 GEOL 110 GEOL 120"),
+    "programs/philosophy-aa.php": ("Philosophy", "PHIL 100 PHIL 110 PHIL 120"),
+    "programs/sociology-aa.php": ("Sociology", "SOCI 100 SOCI 110 SOCI 120"),
+    "programs/astronomy-as.php": ("Astronomy", "ASTR 100 ASTR 110 ASTR 120"),
     "programs/graphic-design-as.php": ("Graphic Design", ""),
     "programs/graphic-design.php": ("Graphic Design A.S.", ""),
     "programs/paralegal.php": ("Paralegal", ""),
@@ -4774,6 +4778,10 @@ SK_PROGS = [
     _sk_prog("90012", "Economics", "A.A. Degree", ("ECON 100", "ECON 110", "ECON 120")),
     _sk_prog("90013", "History", "A.A. Degree", ("HIST 100", "HIST 110", "HIST 120")),
     _sk_prog("90014", "Nursing", "A.S. Degree", ("NURS 100", "NURS 110", "NURS 120")),
+    _sk_prog("90015", "Geology", "A.S. Degree", ("GEOL 100", "GEOL 110", "GEOL 120")),
+    _sk_prog("90016", "Philosophy", "A.A. Degree", ("PHIL 100", "PHIL 110", "PHIL 120")),
+    _sk_prog("90017", "Sociology", "A.A. Degree", ("SOCI 100", "SOCI 110", "SOCI 120")),
+    _sk_prog("90018", "Astronomy", "A.S. Degree", ("ASTR 100", "ASTR 110", "ASTR 120")),
     _sk_prog("90020", "Welding Technology 1", "Certificate of Achievement"),
     _sk_prog("90021", "Welding Technology 2", "Certificate of Achievement"),
     _sk_prog("90022", "Bookkeeping Option A", "Certificate of Achievement"),
@@ -4840,9 +4848,10 @@ sk = {cn: json.loads(t) for cn, t in sk_src.items()}
 lk = {cn: s.get("catalog_lookup") or {} for cn, s in sk.items()}
 NCL_CNS = [p["control_number"] for p in SK_PROGS if not p["closed_list"]]
 st = sk_rep["catalog_lookup"]["self_test"]
-check(sk_code == 0 and st["searches"] and st["tested"] == 7 and st["hits"] == 6 and st["false"] == 0,
-      "the capture tests its matcher on its own closed-list programs first (6 of 7 back to their page, none "
-      "elsewhere), and looks up only when that clears the floor: %r" % st)
+check(sk_code == 0 and st["searches"] and st["tested"] == 11 and st["hits"] == 10 and st["false"] == 0
+      and st["false_off_own"] == 0,
+      "the capture tests its matcher on its own closed-list programs first (10 of 11 back to their page, none "
+      "elsewhere, none found off its own page), and looks up only when that clears the floor: %r" % st)
 check(lk["05809"].get("result") == "found"
       and lk["05809"]["page"]["url"] == SK + "programs/accounting-as.php" and lk["05809"]["page"]["award"] == "named",
       "Skyline's Accounting A.S. (05809), no closed list, is found on its own page by title and award: %r" % lk["05809"])
@@ -4859,7 +4868,7 @@ check(lk["90004"].get("result") == "not_matched" and "closed-list 90003" in lk["
 check(lk["90005"].get("result") == "not_matched" and lk["90005"]["why"].startswith("two pages name it"),
       "two pages naming one program is ambiguous, filed not_matched with the reason: %r" % lk["90005"])
 check(lk["90006"].get("result") == "not_matched" and lk["90007"].get("result") == "not_matched"
-      and "too" in lk["90006"]["why"],
+      and lk["90006"]["why"].startswith("the page names"),
       "a page that prints no award and names two programs (Paralegal A.S. and certificate) goes to neither: %r" % lk["90006"])
 check(lk["90008"].get("result") == "not_matched" and "two pages" in lk["90008"]["why"],
       "Allied Health Science beside an Allied Health Sciences page is ambiguous, never a guess: %r" % lk["90008"])
@@ -4895,7 +4904,7 @@ check(acct_found["05809"]["h1"] == "Accounting" and acct_found["05809"]["awards"
                                   "why": "no page read names it by title and award"}
       and acct_other["90004"]["url"] == SK + "programs/digital-media-aa.php"
       and set(acct_found) | set(acct_other) == set(NCL_CNS)
-      and "text" not in json.dumps(acct) and acct["self_test"]["recall"] == round(6 / 7, 3),
+      and "text" not in json.dumps(acct) and acct["self_test"]["recall"] == round(10 / 11, 3),
       "the filed account carries each looked-up program's answer in short (a found page's heading and printed "
       "awards, any other's reason) and the self-test, and no page text: %r" % acct_other.get("90002"))
 off_code, off_src, off_rep, off_filed = run_sk_capture("0")
@@ -4919,14 +4928,66 @@ check(_rwf.get("on", _rwf.get(True))["workflow_dispatch"]["inputs"]["ncl_lookup"
       and _rsteps["Capture"]["env"]["NCL_CATALOG_LOOKUP"] == "${{ github.event.inputs.ncl_lookup || '1' }}",
       "the college workflow's ncl_lookup input (default 1) sets the capture's NCL_CATALOG_LOOKUP")
 # The catalog's own list (a Coursedog search, kept since S423): not_listed rests on it alone.
-cd_list_pages = C.ncl_listed_names({"catalog": [{"code": "ACCT-AS", "name": "Accounting - Associate in Science"}],
-                                    "errors": []})
+# not_listed is gated twice (the #3300 review, DECIDED): the page self-test passes, and the catalog's own list
+# names at least NCL_LIST_FLOOR of the closed-list programs whose pages were read. A title that strips to no words
+# ("Cal-GETC") is never looked up.
+LT = ["Biology", "Chemistry", "Physics", "History", "Economics", "Geography", "Philosophy", "Sociology",
+      "Psychology", "Astronomy"]
+lt_progs = [_sk_prog("L%d" % i, t, "A.S. Degree", ("X%d 1" % i,)) for i, t in enumerate(LT)] + [
+    _sk_prog("N1", "Accounting", "A.S. Degree"), _sk_prog("N2", "Welding", "A.S. Degree"),
+    _sk_prog("N3", "Cal-GETC", "Certificate of Achievement")]
+lt_pages = [{"url": "https://c.edu/programs/%s/req" % t.lower(), "h1": "%s - Associate in Science" % t} for t in LT]
+lt_own = {"L%d" % i: C.page_stem(pg["url"]) for i, pg in enumerate(lt_pages)}
+
+
+def lt_list(names):
+    return C.ncl_listed_names({"catalog": [{"code": "%s-AS" % n[:4].upper(), "name": "%s - Associate in Science" % n}
+                                           for n in names], "errors": []})
+
+
+lt_ans, lt_test = C.ncl_lookup(lt_progs, lt_pages, lt_own, lt_list(LT + ["Accounting"]),
+                               {"L%d" % i for i in range(10)})
+check(lt_test["searches"] and lt_test["catalog_list"]["files_not_listed"]
+      and lt_ans["N2"] == {"result": "not_listed", "basis": "absent_from_catalog_list"}
+      and lt_ans["N1"]["result"] == "not_matched" and lt_ans["N3"] == {"result": "not_matched", "why": "title_has_no_words"},
+      "with both self-tests passing, a program absent from the catalog's own list files not_listed; a listed one with "
+      "no page is not_matched; Cal-GETC, a title of decorations alone, is never looked up: %r" % lt_ans)
+lt_ans2, lt_test2 = C.ncl_lookup(lt_progs, lt_pages, lt_own, lt_list(LT[:7] + ["Accounting"]),
+                                 {"L%d" % i for i in range(10)})
+check(not lt_test2["catalog_list"]["files_not_listed"] and lt_test2["catalog_list"]["recall"] == 0.7
+      and lt_ans2["N2"]["result"] == "not_matched",
+      "a catalog list that misses closed-list programs whose pages were read (Merced's 45) files no not_listed: %r"
+      % lt_test2["catalog_list"])
+lt_ans3, lt_test3 = C.ncl_lookup(lt_progs, lt_pages[:9], lt_own, lt_list(LT + ["Accounting"]),
+                                 {"L%d" % i for i in range(9)})
+check(lt_test3["tested"] == 9 and lt_test3["hits"] == 9 and not lt_test3["searches"]
+      and lt_ans3["N2"]["result"] == "not_searched",
+      "fewer than NCL_MIN_TESTED (10) closed-list programs tested is no test: 9 of 9 does not open the lookup")
 cd_ans, _ = C.ncl_lookup([_sk_prog("1", "Accounting", "A.S. Degree"), _sk_prog("2", "Welding", "A.S. Degree")],
-                         [], {}, cd_list_pages)
-check(cd_ans["2"] == {"result": "not_listed", "basis": "absent_from_catalog_list"}
-      and cd_ans["1"]["result"] == "not_searched",
-      "where the capture holds the catalog's own list, not_listed means absent from it; a listed program the "
-      "matcher cannot yet search is not_searched: %r" % cd_ans)
+                         [], {}, lt_list(["Accounting"]))
+check(cd_ans["1"]["result"] == "not_searched" and cd_ans["2"]["result"] == "not_searched",
+      "a college whose page self-test cannot run files not_searched, never not_listed: %r" % cd_ans)
+# A transfer degree's page names no A.S. beside it (Diablo Valley's 01512 and 30218, the #3300 review).
+ece = C.ncl_page({"url": "https://dvc.example.edu/programs/ece/", "h1": "A.S. in Early Childhood Education for Transfer"})
+check(ece["kinds"] == {"adt"} and C.ncl_match(ece, _sk_prog("1", "Early Childhood Education", "A.S. Degree")) is None
+      and C.award_kinds_in("Biology for Transfer, Associate in Science") == {"adt"}
+      and C.ncl_match(ece, _sk_prog("2", "Early Childhood Education", "A.S. T Degree")) is not None,
+      "a transfer heading is the A.S.-T alone: a local A.S. never reads its page")
+rcc = C.ncl_page({"url": "https://rccd.example.edu/catalog/iq/5852/6117/5911", "group": "codes:AS523",
+                  "h1": "Business Administration: Accounting Concentration - Associate of Science Degree and Certificate "
+                        "of Achievement - AS523/AS523C/CE523"})
+rcc_as = _sk_prog("A1", "Business Administration: Accounting Concentration", "A.S. Degree")
+rcc_coa = _sk_prog("C1", "Business Administration: Accounting Concentration", "Certificate of Achievement", ("ACCT 1",))
+rcc_ans = C.ncl_answer(rcc_as, [rcc], {k: ["C1"] for k in rcc["keys"]}, [rcc_as, rcc_coa])
+check(rcc_ans["result"] == "not_matched" and rcc_ans["why"].startswith("page_shared_by_awards"),
+      "a page printing two awards, taken by one, is never given to the other: page_shared_by_awards: %r" % rcc_ans)
+check(C.ncl_match(C.ncl_page({"url": "https://x.example.edu/p/q2/", "h1": "Management, A.S."}),
+                  _sk_prog("1", "Hospitality: Management", "A.S. Degree")) is None,
+      "a title with a colon matches on the whole title: Hospitality: Management never takes a bare Management page")
+check(C.ncl_match(C.ncl_pages([{"url": "https://x.example.edu/p/q1/", "h1": "Test Accounting, A.S."}], "Test College")[0],
+                  _sk_prog("1", "Accounting", "A.S. Degree")) is None
+      and C.strip_college("Mesa: Biology, A.S.", frozenset({"san", "diego", "mesa"})) == "Biology - A.S.",
+      "the college's name is set aside only as a segment of its own at a heading's start or end")
 check(C.ncl_listed_names({"catalog": [{"code": "A", "name": "A"}], "errors": ["skip 50: HTTP 500"]}) is None,
       "a catalog list the read did not finish is no basis")
 # Acalog: every program is preview_program.php, told apart by poid; the print view is the same page.
