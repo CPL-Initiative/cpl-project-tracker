@@ -715,93 +715,9 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     if verdict == "fix":
         g.append({"kind": "Fixed by a rerun", "owner": "procedure", "where": proc,
                   "text": "A person's reading found a misread; the fix went into the procedure, and the rerun's record is the one shown."})
-    # A figure the reconcile filled supersedes the reader's note that it was not printed (S651, COBIx on #3291):
-    # the reconcile's own words and source lead, and the reader's note on that field is left out.
-    filled = reconciled_fills(filed)
-    for f in filled:
-        g.append({"kind": "Reader's note", "owner": "procedure", "where": proc, "text": f["text"]})
     for n in rec.get("notes") or []:
-        for f in filled:
-            n = f["prune"](n)
-        if n:
-            g.append({"kind": "Reader's note", "owner": "procedure", "where": proc, "text": n})
+        g.append({"kind": "Reader's note", "owner": "procedure", "where": proc, "text": n})
     return g
-
-
-# The fields whose reconciled figure supersedes a reader's note, each with the words a note uses to name the field.
-# A clause of a note (a sentence, or a part of one between semicolons) is stale when it names the field and says
-# its figure is absent: "no GE unit figure is printed", "without printed GE units", "ge_units is null". Only that
-# clause leaves the note; the rest of the note stays as the reader wrote it. ge_units also answers to the record's
-# own pattern name (its ge_pattern, e.g. Cal-GETC), read from the record, not listed here.
-SUPERSEDES = {"ge_units": r"\bGE\b|general\s+education"}
-_FIG = r"\b(?:units?|figure|total)\b"
-_SENTENCE = re.compile(r"(?<=[.!?])\s+(?=[A-Z'\"])|(?<=[.!?]['\"])\s+(?=[A-Z'\"])")
-
-
-def _absent(names: str):
-    """The words saying the named field's figure is absent: 'no GE unit figure', 'Cal-GETC pattern named with
-    no units printed', 'without printed GE units', 'GE units are not printed', 'ge_units ... left null'."""
-    n = "(?:%s)" % names
-    return re.compile(r"\b(?:no|without)\s+(?:printed\s+)?%s[^.;]{0,20}?%s" % (n, _FIG)
-                      + r"|%s[^.;]{0,30}?\b(?:no|without)\b[^.;]{0,20}?%s" % (n, _FIG)
-                      + r"|%s[^.;]{0,15}?%s[^.;]{0,15}?\bnot\s+printed" % (n, _FIG)
-                      + r"|\bge_units\b[^.;]{0,40}?\b(?:null|empty)\b", re.I)
-
-
-def _prune(note: str, absent) -> str:
-    """note without its clauses (sentences, or their parts between semicolons) that say the field's figure is
-    absent (absent); '' when none is left."""
-    if not absent.search(note):
-        return note
-    kept = []
-    for sent in _SENTENCE.split(note):
-        clauses = re.split(r";\s*", sent)
-        parts = [c for c in clauses if not absent.search(c)]
-        if parts:
-            t = "; ".join(parts).strip()
-            if not re.search(r"[.!?]['\")]?$", t):
-                t += "."
-            # A sentence that lost its opening clause starts with a capital; one that kept it stays as written.
-            kept.append(t if parts[0] is clauses[0] else t[:1].upper() + t[1:])
-    return " ".join(kept)
-
-
-_WITH_SOURCE = re.compile(r"(?s)^(.*) \((https?://\S+): (.*)\)$")
-
-
-def reconciled_fills(filed: dict) -> list:
-    """Each figure a reconcile filled where the reading left it empty and the record still holds it, as the
-    display states it ({"field", "text", "prune"}): the figure, then the catalog's quoted words and their source
-    (a set step), the page's own words (a fill step), or the statewide figure (statewide_cal_getc)."""
-    from _program_requirements_reconcile import CAL_GETC_SOURCE
-    prog = (filed.get("record") or {}).get("program") or {}
-    out = []
-    for n in filed.get("reconciled") or []:
-        field = n.get("field")
-        if field not in SUPERSEDES:
-            continue
-        was, now = n.get("was"), n.get("now")
-        if not (isinstance(now, dict) and now.get("min") is not None and prog.get(field) == now):
-            continue
-        if isinstance(was, dict) and (was.get("min") is not None or was.get("max") is not None):
-            continue
-        if was not in (None, {}) and not isinstance(was, dict):
-            continue
-        pattern = prog.get("ge_pattern") if field == "ge_units" else None
-        label = "%s %s" % (pattern or "General education", amount(now["min"], now.get("max"), "units"))
-        words = re.sub(r"\s+", " ", n.get("words") or "").strip()
-        m = _WITH_SOURCE.match(words)
-        if CAL_GETC_SOURCE in words:
-            text = "%s, the statewide figure (Sam, Sheet 187 card 5), where the catalog prints none." % label
-        elif m:
-            page = re.search(r"#page=(\d+)", m.group(2))
-            text = "%s, from the catalog%s: '%s' (%s)." % (label, "'s p.%s" % page.group(1) if page else "",
-                                                          m.group(3), m.group(2))
-        else:
-            text = "%s, from the catalog's words: '%s'." % (label, words)
-        absent = _absent(SUPERSEDES[field] + (r"|" + re.escape(pattern) if pattern else ""))
-        out.append({"field": field, "text": text, "prune": lambda note, absent=absent: _prune(note, absent)})
-    return out
 
 
 def units_differ(arith: dict, total: dict) -> dict | None:
