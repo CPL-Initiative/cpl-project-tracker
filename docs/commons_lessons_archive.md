@@ -197,3 +197,22 @@ change; 3, 4 and 6 are data windows and follow). The six cards left the vault bu
   (#2274) still owns the unattended quarterly read.
 - **A coverage check passes for a card whose lane carries no marker yet**: CPLBrain#404 went green against a tracker
   main without NEEDS SAM 8. Merge the lane PR first anyway, so the record never shows a sheet asking what no lane asks.
+
+## S430 SkyLupine (2026-10-20): the AGRI sitting, Sheet 103's 44 re-keyed, the nine MQ names renamed
+
+**Ruling 4 (sitting).** Jev read the 404 AGRI identities twice (runs 39352507898, 39353307914; 0 errors). Each run's
+artifact sits on a blob host the sandbox refuses, so the sitting is read from the job logs; the first log printed the
+word `plain` for any non-zero noul (a probability), fixed in #2268 with a test that fails on the old line. The runs
+agree on 397 of 404; 56 passed a both-runs 0.9 gate; Sam confirmed 44 on Sheet 103 (forestry and wine appreciation held
+back, since Forestry/Natural Resources is its own MQ discipline). `kb/_agri_family_remint.py` re-keyed them in one
+window (#2270): every gate passed, the receipt in ALIAS_MAPS, kb_curation by `supabase-rekey.yml` after merge.
+
+**Ruling 6 (rename).** Sam's reply was *"Rename as the handbook spells them"*, so the nine names took `index_name`
+verbatim, parentheticals included (#2269). Text replacement of whole JSON strings kept the large identity files
+byte-stable outside the changed values; the old spellings go to `renamed` in `kb/discipline_aliases.json`, which the
+inference passes resolve and the CSR's chips never read (a chip would have shown the broken names).
+
+**Lessons.** A gate measured on self-agreement across two runs is the only calibration a new Jev question has; set it
+before the ruling and say so. A generated worklist that reads a nightly payload shows a transient false state after a
+source rename; commit what CI checks and dispatch the daily run after merge. Fold-verify's 7 `re_key` (CNSC, COMP,
+FCSH, HLTH, ITIS, OSHA) are discipline drift outside this run, recorded in #2270.
