@@ -44,30 +44,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 23,
    "listed": 23,
-   "share": 0.913,
-   "missing": [
-    "HIS34",
-    "HIS38"
-   ],
-   "unexplained": [
-    "HIS34",
-    "HIS38"
-   ],
-   "pass": false
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "HIST34",
-    "HIST38",
     "SOC48"
    ],
    "flagged": [
     "SOC48"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -80,6 +73,7 @@
     18.0,
     19.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -96,7 +90,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -339,5 +344,6 @@
    "The catalog states one Program Learning Outcomes list for this ADT; recorded as printed."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

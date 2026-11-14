@@ -44,39 +44,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 37,
+   "placed": 43,
    "listed": 43,
-   "share": 0.86,
-   "missing": [
-    "HIS14",
-    "HIS15",
-    "HIS28",
-    "HIS31",
-    "HIS34",
-    "HIS44"
-   ],
-   "unexplained": [
-    "HIS14",
-    "HIS15",
-    "HIS28",
-    "HIS31",
-    "HIS34",
-    "HIS44"
-   ],
-   "pass": false
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 4,
    "codes": [
     "ENGL25",
     "ETS28",
-    "HIST14",
-    "HIST15",
-    "HIST28",
     "HIST29",
-    "HIST31",
-    "HIST34",
-    "HIST44",
     "SOC48"
    ],
    "flagged": [
@@ -85,7 +66,7 @@
     "HIST29",
     "SOC48"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -98,6 +79,7 @@
     18.0,
     19.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 12.0-13.0; the catalog states 18.0-19.0"
    ]
@@ -115,6 +97,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -498,5 +491,6 @@
    "Degree requires 60 CSU-transferable units with Cal-GETC and minimum 2.0 GPA; major courses need a grade of C or better (or P)."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }
