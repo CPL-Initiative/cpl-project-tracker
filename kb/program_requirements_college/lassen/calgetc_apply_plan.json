@@ -1,0 +1,367 @@
+{
+ "college": "Lassen College",
+ "route": "college set step",
+ "step": {
+  "kind": "set",
+  "field": "ge_units",
+  "value": {
+   "min": 34,
+   "max": 34
+  },
+  "awards": "transfer",
+  "only_with": [
+   "ge_pattern",
+   "degree_total"
+  ],
+  "pattern": "Cal-?\\s?GETC",
+  "source": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72",
+  "source_words": "Cal-GETC General Education Certificate of Achievement requires 34 Units."
+ },
+ "measured_on": {
+  "commit": "11aef4e81e02b39ba0e522c4c10128a8585d90e3",
+  "date": "2026-11-14T09:21:35+00:00",
+  "records": "kb/program_requirements_college/<slug>/records/",
+  "tool": "python3 kb/_program_requirements_readings_measure.py --calgetc-apply 'Lassen College'",
+  "kind": "a dry run on the filed records; the reconcile run reads the pages"
+ },
+ "counts": {
+  "rows": 14,
+  "apply": 12,
+  "held": 2,
+  "fail_to_pass": 12,
+  "pass_to_fail": 0,
+  "held_would_pass": 2
+ },
+ "first_reconcile": true,
+ "apply": [
+  "30947",
+  "31015",
+  "31037",
+  "31132",
+  "31297",
+  "31379",
+  "32083",
+  "33263",
+  "33388",
+  "33729",
+  "33730",
+  "42300"
+ ],
+ "held": [
+  "35106",
+  "41912"
+ ],
+ "restore_before_reread": [
+  "35106",
+  "41912"
+ ],
+ "rows": [
+  {
+   "control_number": "30947",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    52.0,
+    52.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "31015",
+   "title": "Early Childhood Education",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    58.0,
+    58.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "31037",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    52.0,
+    52.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "31132",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    58.0,
+    58.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "31297",
+   "title": "Business Administration",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    58.0,
+    58.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "31379",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    52.0,
+    52.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "32083",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    52.0,
+    52.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "33263",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    54.0,
+    54.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "33388",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": null,
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "33729",
+   "title": "Agriculture Animal Science",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    53.0,
+    54.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "33730",
+   "title": "Agriculture Business",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    55.0,
+    58.0
+   ],
+   "degree_total": 60.0
+  },
+  {
+   "control_number": "35106",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    61.0,
+    62.0
+   ],
+   "degree_total": 60.0,
+   "held": "overlap: the major plus the printed 34 runs past the degree total of 60; a set step checks no standing while #3250 is unmerged, so the record stays as main files it (Grossmont 46141, #3252)"
+  },
+  {
+   "control_number": "41912",
+   "title": "Social Work and Human Services",
+   "award": "A.A- T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": null,
+    "max": null
+   },
+   "passes_before": false,
+   "passes_after": false,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal (overlap)",
+   "sum_with_fill": [
+    62.0,
+    62.0
+   ],
+   "degree_total": 60.0,
+   "held": "overlap: the major plus the printed 34 runs past the degree total of 60; a set step checks no standing while #3250 is unmerged, so the record stays as main files it (Grossmont 46141, #3252)"
+  },
+  {
+   "control_number": "42300",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "ge_units_before": {
+    "min": null,
+    "max": null
+   },
+   "ge_units_after": {
+    "min": 34,
+    "max": 34
+   },
+   "passes_before": false,
+   "passes_after": true,
+   "passes_with_fill": true,
+   "verdict_with_fill": "equal ()",
+   "sum_with_fill": [
+    58.0,
+    58.0
+   ],
+   "degree_total": 60.0
+  }
+ ]
+}
