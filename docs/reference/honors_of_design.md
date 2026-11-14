@@ -29,7 +29,7 @@ The commons lane carries the state (`docs/reference/lanes/commons.md`, NEXT item
 
 `honors_of` is a `kb_curation` row: `course_id` is the Honors M-ID, `field` is `honors_of`, `value` is its base's id.
 It is stored once, on the Honors side. The base's Honors partner is derived (`kb/honors_of.py` `partners`,
-`partner_ends`), never stored a second time, so the two cannot disagree. The equivalence is two-way: either course
+`pair_list`), never stored a second time, so the two cannot disagree. The equivalence is two-way: either course
 satisfies the other.
 
 `kb/_apply_curation.py` folds it into `kb/coci_curation.json` beside the other fields (`FIELDS`). **An `honors_of` row
@@ -46,9 +46,16 @@ Verified. The value may name an M-ID, a C-ID or a CCN record; the key is always 
   imported, through the maps applied after `FIELD_BASELINE` only (the newest map when the field was born, 2026-11-08).
   No older map can name a value the field holds, and resolving a current value again through an older map is the
   slot-reuse telescoping the chain's docstring forbids. Today no map is pending, so resolution changes nothing.
+  **A live value is never moved, even when a later map names it.** That is safe only while every re-keyer moves
+  `honors_of` with the key it points at: then a later map naming a live value means its slot was reused by another
+  row. A re-keyer that skips the field breaks this; the note sits beside `FIELD_BASELINE`.
 - *A merge moves it* (the base merged into a third id). The worklists read the base at its merge-chain end too
   (`honors_map(merge_end=True)`; in the CCR, `fetchHonorsOf` reads the base's live `merge_into` hops and `liveMembers`
   walks them with this session's merges).
+- **The CCR relies on the live re-key.** The browser resolves no alias map, so a live value naming a re-minted base
+  would offer the pair in the worklist while Python holds it. It holds because `supabase-rekey.yml` moves `honors_of`
+  values at every re-mint, and because the rows migration must refuse a value outside the live id set (*Before the
+  rows apply*, item 14).
 
 **The hold is pairwise and comes from the field.** A merge that would join an Honors id and its base, directly,
 through a chain, or through a third id both land on, is cut (`hold_merges`). It walks both sides to the point where
@@ -104,7 +111,8 @@ Every parser that reads an M-ID's shape, and what it does with `MATH M1036H`. "C
 ### Re-keyers
 
 Twenty places in `kb/` re-key the overlay's `merge_into` values. The eight a future re-mint can still run call
-`kb/curation_pointers.py` `rekey_entry`, which moves `merge_into` and `honors_of` together: `_eths_remint.py`
+`kb/curation_pointers.py` `rekey_entry`, which moves `merge_into` and `honors_of` together and counts an entry once
+however many of its fields moved, so each receipt's counter still means entries re-pointed: `_eths_remint.py`
 `apply_plan` (shared by the seven re-mints built on it), `_uc_cur_promote.py`, `_zband_retire_dryrun.py` `rekey_state`,
 `_prefix_fold_apply.py`, `_authority_recode_apply.py`, `_zband_retire_apply.py`, `_overmerge_apply.py`
 (`overmerge-apply.yml`) and `_subj4_apply.py` (`phase-1e-apply.yml`). The live re-key
@@ -127,12 +135,17 @@ must do.
 2. **`excel_to_dashboard.py` `export_unified_courses`** (the generator, daily). (a) The overlay's merge map passes
    through `hold_merges` before chains flatten, with the base resolved against the minted and stand-alone ids. (b)
    `substantive_curation` treats `honors_of` like `merge_dismissed`. (c) The id-system regex takes the `H`. (d) The
-   later in-memory folds ask before each write: Phase B filters its group's members through `phase_b_members` (the
-   base folds, the Honors id stays its own row), and R4 and both routing folds skip a member when `would_join` says a
-   partner is the target or already ends there. They consume and synthesize rows, so a cut after them could not
-   restore what they removed. (e) After every fold, `joined_pairs` checks again and prints a warning naming any pair a
-   later fold without the guard joins. All done; with no row carrying the field the output is byte-identical to
-   `main` apart from timestamps.
+   later in-memory folds ask before each write. `would_join` is a trial over **every** pair (`pair_list`, computed
+   once from the hmap): it makes the proposed write in the merge map, refuses it when any pair that was apart before
+   ends under one id after, and undoes the write. A point check on the folding id's own partners missed a fold of a
+   third id that one side had already merged into (round 2's blocker), so it was replaced. Phase B tries its group's
+   members one by one through the same test, bases before Honors ids and then by id, so the result never depends on
+   member order; R4 and both routing folds skip a member the test refuses. They consume and synthesize rows, so a cut
+   after them could not restore what they removed. (e) After every fold, `check_apart` asserts no pair ends under one
+   id. The trial is complete by construction, so it never fires; under the test suite and `--check`
+   (`HONORS_OF_STRICT=1`) it fails the run, and the daily run prints the named warning `honors-pair-joined`. Proof: a
+   property test over 400 random merge maps (1,467 writes, 58 refused) finds no accepted write that joins a pair.
+   With no row carrying the field the output is byte-identical to `main` apart from timestamps.
 3. **`unified_courses.js`** (the CCR worklist and `applyMergeLocal`). `fetchHonorsOf` reads the live rows and each
    base's live merge hops; `liveMembers` drops an Honors member whose base, or any id along the base's chain, sits in
    the same group. No `honors_of` row, no second read. Done. Proof: `tests/uc_honors_of_worklist.test.js`.
@@ -219,6 +232,21 @@ finding below stands after a refuter reproduced it, and each must be met before 
 12. **The person-saved entries.** Three of the plan's keys carry a person's stamp today (ENGL M1261, FTVE M1003,
     HIST M1165). Item 1 of #3313 keeps their stamps; the redrawn plan reads them per field, live.
 13. **Re-measure on the day's fold** and redraw the SQL from the new plan; run the live reads in the plan before step 1.
+14. **The rows migration refuses an `honors_of` value outside the live id set** (round 2): the CCR resolves no alias
+    map, so a stale value written from a pre-mint payload would offer the pair there while Python holds it.
+
+## Before the mints
+
+1. **A base's move carries its H id** (round 2). The move-selection engines drop an H id before it reaches the
+   allocator: `kb/_prefix_fold_dryrun.py` `classify` counts it under `skip_offscheme_id`,
+   `kb/_authority_recode_dryrun.py` skips it (`if not kind: continue`, about line 457), and
+   `kb/_subjects_list_recode.py` skips it at line 138 and in its orphans list. A base can then move and leave its
+   Honors id under the old prefix, while `rekey_entry` moves the `honors_of` value, so the H id no longer equals base
+   plus H. Before any mint lands, each selector derives `<new base>H` from the base's move into the same alias map
+   (`kb/honors_of.py` `base_of_id`, `honors_id_for`) and prints a named report line, `honors-id-left-behind`, for any H
+   id whose base moves without it; a test runs a prefix fold with an H row. Today no H id is live, so nothing is
+   dropped yet.
+2. **The rollback and fan-in items above** (2, 5 and 6) are settled before the mint's alias map is drafted.
 
 ## Steps, in order
 
