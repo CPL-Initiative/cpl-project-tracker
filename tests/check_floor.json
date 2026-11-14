@@ -398,9 +398,10 @@
     "library_qualify_draft.test.js": 39,
     "group_queue.test.js": 36,
     "public_library.test.js": 121,
-    "pages_size_guard.test.js": 4,
+    "pages_size_guard.test.js": 12,
     "service_caller_check.test.js": 30,
     "district_profiles.test.js": 10,
-    "reclustering_honors.test.js": 39
+    "reclustering_honors.test.js": 39,
+    "shared_imports_named.test.js": 10
   }
 }

@@ -105,6 +105,26 @@ with tempfile.TemporaryDirectory() as tmp:
     check("the same requirements read as agree", cmp["verdict"] == "agree" and cmp["same_requirements"])
     check("no second reading has its own verdict", R.compare(failing, None, None)["verdict"] == "no_second_reading")
 
+    # 4b. a run where every call errors exits nonzero (the database down is no clean second read);
+    #     a run where only some calls error exits 0
+    R.COLLEGE_DIR, R.OUT = tmp, os.path.join(tmp, "second_out_err")
+    X._post = lambda body, key: {"record": None, "error": "HTTP 503: the database is unavailable"}
+    rc_all = R.run("Test College", os.path.join(tmp, "out"), key="service-key", workers=1)
+    check("a run whose every call errors exits nonzero", rc_all != 0)
+    check("the all-error run still writes its file", os.path.isfile(os.path.join(R.OUT, "second_test.json")))
+    json.dump(dict(failing, control_number="00003"), open(os.path.join(rec_dir, "00003.json"), "w"))
+    json.dump(dict(same, control_number="00003"), open(os.path.join(cap, "00003.json"), "w"))
+    calls = []
+
+    def half(body, key):
+        calls.append(1)
+        return fake_post(body, key) if len(calls) == 1 else {"record": None, "error": "HTTP 500"}
+
+    X._post = half
+    rc_some = R.run("Test College", os.path.join(tmp, "out"), key="service-key", workers=1)
+    check("a run where only some calls error exits 0", rc_some == 0 and len(calls) == 2)
+    R.COLLEGE_DIR, R.OUT = saved, out_saved
+
 # 5. the extractor's call carries provider and model only when given
 captured = []
 X._post = lambda body, key: (captured.append(body) or {"record": None, "error": "x"})

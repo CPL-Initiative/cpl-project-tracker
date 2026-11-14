@@ -200,6 +200,11 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
               open(path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print("wrote %s: %d read, %d skipped (no page), %d error(s); verdicts %s"
           % (os.path.relpath(path, os.path.dirname(HERE)), len(rows), len(skipped), errors, json.dumps(counts)))
+    if rows and errors == len(rows):
+        # Every call errored (the database or the function down). The file stays written as the record, but the
+        # run made no second reading, and exit 0 would report it as a clean one.
+        print("every one of the %d call(s) errored: no second reading was made" % len(rows), file=sys.stderr)
+        return 1
     return 0
 
 
