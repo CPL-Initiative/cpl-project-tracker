@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T10:52:07Z",
+ "written_at": "2026-11-14T17:55:44Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -167,12 +167,12 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15840,
-  "gap": 6495,
+  "passing": 15842,
+  "gap": 6493,
   "with_gap": 118,
-  "cost_usd": 1327.28,
-  "passed_at_read": 15151,
-  "cost_receipts": 117,
+  "cost_usd": 1317.16,
+  "passed_at_read": 15025,
+  "cost_receipts": 116,
   "slo_waiting": 9,
   "scouted": 11,
   "scout_barrier": 1,
@@ -185,8 +185,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15840,
-  "gap": 6495
+  "passing": 15842,
+  "gap": 6493
  },
  "census_live": {
   "basis": "live",
@@ -6540,13 +6540,13 @@
    "harvested": true,
    "slug": "norco",
    "programs": 161,
-   "passing": 128,
-   "gap": 33,
+   "passing": 130,
+   "gap": 31,
    "causes": {
     "no_closed_list": 11,
     "page_not_found": 2,
     "places_none": 1,
-    "unknown_without_live": 19
+    "unknown_without_live": 17
    },
    "census_causes": {
     "course_added": 1,
@@ -6575,8 +6575,8 @@
    "objectives_printed": null,
    "read_at": "2026-10-11T04:56:59Z",
    "read_kind": "capture",
-   "cost_usd": 10.12,
-   "passed_at_read": 126,
+   "cost_usd": null,
+   "passed_at_read": 130,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6589,9 +6589,9 @@
    "extracted": 148,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
-    "invented": 4,
-    "arithmetic": 20,
+    "coverage": 2,
+    "invented": 2,
+    "arithmetic": 17,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6602,9 +6602,9 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1379.7,
-   "run": "38113150250",
+   "run": "43609971090",
    "levers": {
-    "reconcile_steps": 19,
+    "reconcile_steps": 17,
     "program_course_file_check": 11,
     "reader_page_search": 2,
     "reader_page_assignment": 1
