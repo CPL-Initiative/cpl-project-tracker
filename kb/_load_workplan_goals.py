@@ -67,17 +67,19 @@ def _fetch_supabase() -> tuple[list[dict], list[dict]]:
     PR-A added the `kind` column + the workplan_activity_associations table;
     both are fetched here so the snapshot carries the full picture.
     """
-    # The select degrades gracefully, column generation by column generation: a
-    # select naming a column the migration has not landed yet 400s, so the richest
-    # shape is tried first (same defensive pattern as is_primary below).
+    # The select degrades gracefully: a select naming a column the table does not
+    # hold 400s, so the richest shape is tried first (same defensive pattern as
+    # is_primary below).
     #   cur_2025_26 .. cur_2029_30  the per-year Current (S426, 2026-10-19:
     #                               kb/supabase_workplan_goals_current_by_year.sql)
-    #   current                     the one-column Current it replaces (Session 85)
-    # Once a column lands, the snapshot carries it on the next regen.
+    # The one-column `current` they replaced is never selected (S653b): it is
+    # dropped by kb/migrations/2026-11-14_s653b_workplan_goals_drop_current.sql,
+    # and a select naming it would 400 after the drop.
+    # tests/workplan_goals_current_column_guard_test.py fails a select that names it.
     _base = "activity_id,name,description,row_type,kind,yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total"
     _shapes = [
-        _base + ",current,cur_2025_26,cur_2026_27,cur_2027_28,cur_2028_29,cur_2029_30",
-        _base + ",current",
+        _base + ",cur_2025_26,cur_2026_27,cur_2027_28,cur_2028_29,cur_2029_30",
+        _base,
         "activity_id,name,row_type,kind,yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,total",
     ]
     rows = None

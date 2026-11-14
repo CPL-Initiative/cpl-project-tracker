@@ -61,7 +61,7 @@ def _goal_pair(aid, name, kind, desc=""):
     for rt in ("GOAL", "STRETCH"):
         r = dict(base)
         r.update({"activity_id": aid, "name": name, "row_type": rt,
-                  "kind": kind, "description": desc, "current": None})
+                  "kind": kind, "description": desc, "cur_2025_26": None})
         rows.append(r)
     return rows
 

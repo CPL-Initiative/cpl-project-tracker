@@ -32,7 +32,7 @@ def pair(aid, name, kind, vals):
     out = []
     for rt in ("GOAL", "STRETCH"):
         r = dict(zip(YK, vals)); r.update({"activity_id": aid, "name": name, "row_type": rt,
-                  "kind": kind, "description": "", "current": None})
+                  "kind": kind, "description": "", "cur_2025_26": None})
         out.append(r)
     return out
 rows = []
