@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1492,
-    "bytes": 15668088,
+    "bytes": 15675038,
     "over_budget": 3,
     "handoff_max": 653,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 158,
-        "bytes": 4992376,
+        "bytes": 4993615,
         "over": 1
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2798023,
+        "bytes": 2799315,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 554210,
+        "bytes": 554484,
         "over": 2
       },
       "handoff": {
         "files": 614,
-        "bytes": 4384526,
+        "bytes": 4388671,
         "over": 0
       }
     },
@@ -61,315 +61,315 @@
       "vault_heavy_path": 304
     },
     "vault": {
-      "files": 112288,
-      "bytes": 19811149883,
-      "heavy_bytes": 14449602448,
+      "files": 112347,
+      "bytes": 19794167801,
+      "heavy_bytes": 14431081255,
       "heavy_share": 0.729,
       "ignore_filters": [
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/receipts",
         "cpl-project-tracker/kb/receipts",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/receipts",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/receipts",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/receipts",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/program_requirements_college",
-        "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/program_requirements_college",
         "cpl-project-tracker/kb/program_requirements_college",
+        "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/program_requirements_college",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/program_requirements_college",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/program_requirements_college",
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/regional_cpl_out",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/regional_cpl_out",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/regional_cpl_out",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/regional_cpl_out",
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/reference",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/reference",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/reference",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/cip_fitcheck",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/cip_fitcheck",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/cip_fitcheck",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/unclassified_fold",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/unclassified_fold",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/unclassified_fold",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/unclassified_fold",
         "cpl-project-tracker/prototype/landing_page_video",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/landing_page_video",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/landing_page_video",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/landing_page_video",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/landing_page_video",
         "cpl-project-tracker/kb/cpl_ai",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/cpl_ai",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/cpl_ai",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/cpl_ai",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/cpl_ai",
         "cpl-project-tracker/library",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/library",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/library",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/library",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/library",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/tmc",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/tmc",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/tmc",
-        "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/tests",
-        "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/tests",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/tests",
         "cpl-project-tracker/tests",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/tests",
+        "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/tests",
+        "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/tests",
         "cpl-project-tracker/kb/status/commons_data_programs",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/status/commons_data_programs",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/status/commons_data_programs",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/status/commons_data_programs",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/status/commons_data_programs",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/unified_courses_member_desc.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/unified_courses_member_desc.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/unified_courses_member_desc.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/coci_minted_singletons.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/coci_minted_singletons.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/coci_minted_singletons.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/coci_minted_courses.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/coci_minted_courses.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/coci_minted_courses.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/coci_minted_courses.json",
         "cpl-project-tracker/unified_courses_details.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/unified_courses_details.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/unified_courses_details.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/unified_courses_details.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/unified_courses_details.js",
         "cpl-project-tracker/kb/subj4_fold_out/2026-06-12/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/subj4_fold_out/2026-06-12/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/subj4_fold_out/2026-06-12/alias_map.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/subj4_fold_out/2026-06-12/alias_map.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/subj4_fold_out/2026-06-12/alias_map.json",
         "cpl-project-tracker/kb/subj4_dryrun/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/subj4_dryrun/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/subj4_dryrun/alias_map.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/subj4_dryrun/alias_map.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/subj4_dryrun/alias_map.json",
         "cpl-project-tracker/kb/subj4_apply/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/subj4_apply/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/subj4_apply/alias_map.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/subj4_apply/alias_map.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/subj4_apply/alias_map.json",
         "cpl-project-tracker/kb/coci_minted_memberships.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/coci_minted_memberships.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/coci_minted_memberships.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/coci_minted_memberships.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/coci_minted_memberships.json",
         "cpl-project-tracker/coci_lookup_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_data.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_data.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_data.js",
         "cpl-project-tracker/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
         "cpl-project-tracker/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
         "cpl-project-tracker/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
         "cpl-project-tracker/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/unified_courses_standalone.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/unified_courses_standalone.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/unified_courses_standalone.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/subj4_dryrun/collisions.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/subj4_dryrun/collisions.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/unified_courses_members.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/unified_courses_members.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/unified_courses_members.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/unified_courses_members.js",
         "cpl-project-tracker/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
         "cpl-project-tracker/statewide_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/statewide_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/statewide_data.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/statewide_data.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/statewide_data.js",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/row_audit/latest.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/row_audit/latest.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/row_audit/latest.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/row_audit/latest.json",
         "cpl-project-tracker/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
         "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/unified_courses_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/unified_courses_data.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/unified_courses_data.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/unified_courses_data.js",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/remint_dryrun/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/remint_dryrun/alias_map.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/remint_dryrun/alias_map.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/remint_dryrun/alias_map.json",
         "cpl-project-tracker/kb/cid_articulation_joins.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/cid_articulation_joins.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/cid_articulation_joins.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/cid_articulation_joins.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/cid_articulation_joins.json",
         "cpl-project-tracker/coci_lookup_desc_A.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_desc_A.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_A.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_A.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_A.js",
         "cpl-project-tracker/tmc_college_courses.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/tmc_college_courses.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/tmc_college_courses.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/tmc_college_courses.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/tmc_college_courses.js",
         "cpl-project-tracker/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
         "cpl-project-tracker/kb/coci_articulations.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/coci_articulations.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/coci_articulations.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/coci_articulations.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/coci_articulations.json",
         "cpl-project-tracker/prototype/ccr_universe.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/ccr_universe.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/ccr_universe.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/ccr_universe.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/ccr_universe.json",
         "cpl-project-tracker/coci_lookup_desc_C.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_desc_C.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_C.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_C.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_C.js",
         "cpl-project-tracker/coci_lookup_desc_E.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_desc_E.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_E.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_E.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_E.js",
         "cpl-project-tracker/exports/unified_courses.xlsx",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/exports/unified_courses.xlsx",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/exports/unified_courses.xlsx",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/exports/unified_courses.xlsx",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/exports/unified_courses.xlsx",
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/plan.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/automerge_out/2026-06-13-titlelane/plan.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/automerge_out/2026-06-13-titlelane/plan.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/automerge_out/2026-06-13-titlelane/plan.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/automerge_out/2026-06-13-titlelane/plan.json",
         "cpl-project-tracker/kb/it_ai_credential_catalog.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/it_ai_credential_catalog.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/it_ai_credential_catalog.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/it_ai_credential_catalog.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/it_ai_credential_catalog.json",
         "cpl-project-tracker/kb/coci_curation.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/coci_curation.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/coci_curation.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/coci_curation.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/coci_curation.json",
         "cpl-project-tracker/coci_lookup_desc_M.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_desc_M.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_M.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_M.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_M.js",
         "cpl-project-tracker/kb/status/mid_outcomes_compare_2026-11-12.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/status/mid_outcomes_compare_2026-11-12.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/status/mid_outcomes_compare_2026-11-12.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/status/mid_outcomes_compare_2026-11-12.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/status/mid_outcomes_compare_2026-11-12.json",
         "cpl-project-tracker/coci_lookup_desc_P.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_desc_P.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_P.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_P.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_P.js",
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "cpl-project-tracker/tools/first_light_candidates.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/tools/first_light_candidates.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/tools/first_light_candidates.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/tools/first_light_candidates.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/tools/first_light_candidates.json",
         "cpl-project-tracker/prototype/ccr_universe_members.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/ccr_universe_members.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/ccr_universe_members.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/ccr_universe_members.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/ccr_universe_members.json",
         "cpl-project-tracker/unified_courses_index.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/unified_courses_index.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/unified_courses_index.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/unified_courses_index.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/unified_courses_index.js",
         "cpl-project-tracker/credential_reference_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/credential_reference_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/credential_reference_data.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/credential_reference_data.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/credential_reference_data.js",
         "cpl-project-tracker/unified_courses_suggestions.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/unified_courses_suggestions.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/unified_courses_suggestions.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/unified_courses_suggestions.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/unified_courses_suggestions.js",
         "cpl-project-tracker/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/regional_cpl_opportunity_bay.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/regional_cpl_opportunity_bay.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/regional_cpl_opportunity_bay.js",
         "cpl-project-tracker/regional_cpl_opportunity_la.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/regional_cpl_opportunity_la.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/regional_cpl_opportunity_la.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/regional_cpl_opportunity_la.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/regional_cpl_opportunity_la.js",
         "cpl-project-tracker/coci_lookup_desc_B.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_desc_B.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_B.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_B.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_B.js",
         "cpl-project-tracker/coci_lookup_desc_H.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_desc_H.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_H.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_H.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_H.js",
         "cpl-project-tracker/coci_lookup_desc_D.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_desc_D.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_D.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_D.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_D.js",
         "cpl-project-tracker/prototype/noncredit_video/narration.mp3",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/noncredit_video/narration.mp3",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/noncredit_video/narration.mp3",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/noncredit_video/narration.mp3",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/noncredit_video/narration.mp3",
         "cpl-project-tracker/kb/remint_out/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/remint_out/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/remint_out/alias_map.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/remint_out/alias_map.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/remint_out/alias_map.json",
         "cpl-project-tracker/coci_programs_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_programs_data.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_programs_data.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_programs_data.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_programs_data.js",
         "cpl-project-tracker/kb/exhibit_audit/latest.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/exhibit_audit/latest.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/exhibit_audit/latest.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/exhibit_audit/latest.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/exhibit_audit/latest.json",
         "cpl-project-tracker/kb/cr_reference_worklist.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/cr_reference_worklist.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/cr_reference_worklist.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/cr_reference_worklist.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/cr_reference_worklist.json",
         "cpl-project-tracker/kb/unified_titles.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/unified_titles.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/unified_titles.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/unified_titles.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/unified_titles.json",
         "cpl-project-tracker/coci_lookup_desc_F.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_desc_F.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_F.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_F.js",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_F.js",
         "cpl-project-tracker/prototype/funding_video/narration_s1.mp3",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/prototype/funding_video/narration_s1.mp3",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/prototype/funding_video/narration_s1.mp3",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/narration_s1.mp3",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/narration_s1.mp3",
         "cpl-project-tracker/kb/authority_recode_out/2026-09-03/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/kb/authority_recode_out/2026-09-03/alias_map.json",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/kb/authority_recode_out/2026-09-03/alias_map.json",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/kb/authority_recode_out/2026-09-03/alias_map.json",
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/kb/authority_recode_out/2026-09-03/alias_map.json",
         "cpl-project-tracker/coci_lookup_desc_K.js",
         "cpl-project-tracker/.claude/worktrees/agent-a871597cc45dacfc5/coci_lookup_desc_K.js",
         "cpl-project-tracker/.claude/worktrees/agent-a308250014c9995ad/coci_lookup_desc_K.js",
-        "cpl-project-tracker/.claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_K.js"
+        "cpl-project-tracker/.claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_K.js"
       ]
     }
   },
@@ -389,13 +389,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 172760,
+        "bytes": 173999,
         "limit": 150000,
         "lane": "other",
-        "over_by": 22760,
-        "ratio": 1.15
+        "over_by": 23999,
+        "ratio": 1.16
       },
-      "message": "172,760 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "message": "173,999 B is 1.2× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -427,82 +427,82 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/receipts",
+      "path": "kb/receipts",
       "detail": {
-        "bytes": 2445123592,
+        "bytes": 2426319394,
         "kind": "dir"
       },
-      "message": "directory totals 2,445,123,592 B inside the vault"
+      "message": "directory totals 2,426,319,394 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "kb/receipts",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/receipts",
       "detail": {
-        "bytes": 2426310730,
+        "bytes": 2426319394,
         "kind": "dir"
       },
-      "message": "directory totals 2,426,310,730 B inside the vault"
+      "message": "directory totals 2,426,319,394 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/receipts",
       "detail": {
-        "bytes": 2426292085,
+        "bytes": 2426319394,
         "kind": "dir"
       },
-      "message": "directory totals 2,426,292,085 B inside the vault"
+      "message": "directory totals 2,426,319,394 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": ".claude/worktrees/agent-a308250014c9995ad/kb/receipts",
       "detail": {
-        "bytes": 2426291078,
+        "bytes": 2426316577,
         "kind": "dir"
       },
-      "message": "directory totals 2,426,291,078 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/program_requirements_college",
-      "detail": {
-        "bytes": 152122275,
-        "kind": "dir"
-      },
-      "message": "directory totals 152,122,275 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": ".claude/worktrees/agent-a308250014c9995ad/kb/program_requirements_college",
-      "detail": {
-        "bytes": 152054011,
-        "kind": "dir"
-      },
-      "message": "directory totals 152,054,011 B inside the vault"
+      "message": "directory totals 2,426,316,577 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 152025099,
+        "bytes": 152071869,
         "kind": "dir"
       },
-      "message": "directory totals 152,025,099 B inside the vault"
+      "message": "directory totals 152,071,869 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": ".claude/worktrees/agent-a308250014c9995ad/kb/program_requirements_college",
+      "detail": {
+        "bytes": 152071869,
+        "kind": "dir"
+      },
+      "message": "directory totals 152,071,869 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/program_requirements_college",
+      "detail": {
+        "bytes": 152071869,
+        "kind": "dir"
+      },
+      "message": "directory totals 152,071,869 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/program_requirements_college",
       "detail": {
-        "bytes": 152025099,
+        "bytes": 152071869,
         "kind": "dir"
       },
-      "message": "directory totals 152,025,099 B inside the vault"
+      "message": "directory totals 152,071,869 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -527,7 +527,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/regional_cpl_out",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/regional_cpl_out",
       "detail": {
         "bytes": 92716700,
         "kind": "dir"
@@ -537,7 +537,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/regional_cpl_out",
+      "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/regional_cpl_out",
       "detail": {
         "bytes": 92716700,
         "kind": "dir"
@@ -567,7 +567,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/reference",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/reference",
       "detail": {
         "bytes": 84452674,
         "kind": "dir"
@@ -577,7 +577,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/reference",
+      "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/reference",
       "detail": {
         "bytes": 84452674,
         "kind": "dir"
@@ -607,7 +607,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a871597cc45dacfc5/cip_fitcheck",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/cip_fitcheck",
       "detail": {
         "bytes": 51991148,
         "kind": "dir"
@@ -617,7 +617,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/cip_fitcheck",
+      "path": ".claude/worktrees/agent-a871597cc45dacfc5/cip_fitcheck",
       "detail": {
         "bytes": 51991148,
         "kind": "dir"
@@ -647,7 +647,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/unclassified_fold",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/unclassified_fold",
       "detail": {
         "bytes": 47819142,
         "kind": "dir"
@@ -657,7 +657,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/unclassified_fold",
+      "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/unclassified_fold",
       "detail": {
         "bytes": 47819142,
         "kind": "dir"
@@ -687,7 +687,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a871597cc45dacfc5/prototype/landing_page_video",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/landing_page_video",
       "detail": {
         "bytes": 26846596,
         "kind": "dir"
@@ -697,7 +697,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/landing_page_video",
+      "path": ".claude/worktrees/agent-a871597cc45dacfc5/prototype/landing_page_video",
       "detail": {
         "bytes": 26846596,
         "kind": "dir"
@@ -727,7 +727,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/cpl_ai",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/cpl_ai",
       "detail": {
         "bytes": 23921731,
         "kind": "dir"
@@ -737,7 +737,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/cpl_ai",
+      "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/cpl_ai",
       "detail": {
         "bytes": 23921731,
         "kind": "dir"
@@ -767,7 +767,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a871597cc45dacfc5/library",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/library",
       "detail": {
         "bytes": 20326582,
         "kind": "dir"
@@ -777,7 +777,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/library",
+      "path": ".claude/worktrees/agent-a871597cc45dacfc5/library",
       "detail": {
         "bytes": 20326582,
         "kind": "dir"
@@ -807,6 +807,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/tmc",
+      "detail": {
+        "bytes": 14868311,
+        "kind": "dir"
+      },
+      "message": "directory totals 14,868,311 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": ".claude/worktrees/agent-a871597cc45dacfc5/tmc",
       "detail": {
         "bytes": 14868311,
@@ -817,12 +827,32 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/tmc",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/tests",
       "detail": {
-        "bytes": 14868311,
+        "bytes": 12785312,
         "kind": "dir"
       },
-      "message": "directory totals 14,868,311 B inside the vault"
+      "message": "directory totals 12,785,312 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tests",
+      "detail": {
+        "bytes": 12763177,
+        "kind": "dir"
+      },
+      "message": "directory totals 12,763,177 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": ".claude/worktrees/agent-a871597cc45dacfc5/tests",
+      "detail": {
+        "bytes": 12763177,
+        "kind": "dir"
+      },
+      "message": "directory totals 12,763,177 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -833,36 +863,6 @@
         "kind": "dir"
       },
       "message": "directory totals 12,743,882 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": ".claude/worktrees/agent-a871597cc45dacfc5/tests",
-      "detail": {
-        "bytes": 12729905,
-        "kind": "dir"
-      },
-      "message": "directory totals 12,729,905 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "tests",
-      "detail": {
-        "bytes": 12710610,
-        "kind": "dir"
-      },
-      "message": "directory totals 12,710,610 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/tests",
-      "detail": {
-        "bytes": 12710610,
-        "kind": "dir"
-      },
-      "message": "directory totals 12,710,610 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -887,7 +887,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/status/commons_data_programs",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/status/commons_data_programs",
       "detail": {
         "bytes": 10128020,
         "kind": "dir"
@@ -897,7 +897,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/status/commons_data_programs",
+      "path": ".claude/worktrees/agent-a871597cc45dacfc5/kb/status/commons_data_programs",
       "detail": {
         "bytes": 10128020,
         "kind": "dir"
@@ -937,7 +937,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/unified_courses_member_desc.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/unified_courses_member_desc.js",
       "detail": {
         "bytes": 47883492,
         "kind": "file"
@@ -977,7 +977,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/coci_minted_singletons.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/coci_minted_singletons.json",
       "detail": {
         "bytes": 37143411,
         "kind": "file"
@@ -1017,7 +1017,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/coci_minted_courses.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/coci_minted_courses.json",
       "detail": {
         "bytes": 35184277,
         "kind": "file"
@@ -1057,7 +1057,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/unified_courses_details.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/unified_courses_details.js",
       "detail": {
         "bytes": 21821521,
         "kind": "file"
@@ -1097,7 +1097,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/subj4_fold_out/2026-06-12/alias_map.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/subj4_fold_out/2026-06-12/alias_map.json",
       "detail": {
         "bytes": 21616218,
         "kind": "file"
@@ -1137,7 +1137,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/subj4_dryrun/alias_map.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/subj4_dryrun/alias_map.json",
       "detail": {
         "bytes": 21616130,
         "kind": "file"
@@ -1177,7 +1177,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/subj4_apply/alias_map.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/subj4_apply/alias_map.json",
       "detail": {
         "bytes": 19689335,
         "kind": "file"
@@ -1217,7 +1217,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/coci_minted_memberships.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/coci_minted_memberships.json",
       "detail": {
         "bytes": 17743649,
         "kind": "file"
@@ -1257,7 +1257,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_data.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_data.js",
       "detail": {
         "bytes": 17358026,
         "kind": "file"
@@ -1297,7 +1297,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
       "detail": {
         "bytes": 16149357,
         "kind": "file"
@@ -1337,7 +1337,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
       "detail": {
         "bytes": 15865434,
         "kind": "file"
@@ -1377,7 +1377,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
       "detail": {
         "bytes": 15851035,
         "kind": "file"
@@ -1417,7 +1417,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
       "detail": {
         "bytes": 15146138,
         "kind": "file"
@@ -1457,7 +1457,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
       "detail": {
         "bytes": 15054609,
         "kind": "file"
@@ -1497,7 +1497,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/unified_courses_standalone.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/unified_courses_standalone.js",
       "detail": {
         "bytes": 14836211,
         "kind": "file"
@@ -1537,7 +1537,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/subj4_dryrun/collisions.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/subj4_dryrun/collisions.json",
       "detail": {
         "bytes": 14572839,
         "kind": "file"
@@ -1577,7 +1577,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/unified_courses_members.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/unified_courses_members.js",
       "detail": {
         "bytes": 14341149,
         "kind": "file"
@@ -1617,7 +1617,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
       "detail": {
         "bytes": 14148729,
         "kind": "file"
@@ -1657,7 +1657,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/statewide_data.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/statewide_data.js",
       "detail": {
         "bytes": 12860180,
         "kind": "file"
@@ -1697,7 +1697,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
       "detail": {
         "bytes": 10757052,
         "kind": "file"
@@ -1737,7 +1737,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
       "detail": {
         "bytes": 10598480,
         "kind": "file"
@@ -1777,7 +1777,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
       "detail": {
         "bytes": 10563038,
         "kind": "file"
@@ -1817,7 +1817,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
       "detail": {
         "bytes": 10558231,
         "kind": "file"
@@ -1857,7 +1857,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
       "detail": {
         "bytes": 10492818,
         "kind": "file"
@@ -1897,7 +1897,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/row_audit/latest.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/row_audit/latest.json",
       "detail": {
         "bytes": 10407347,
         "kind": "file"
@@ -1937,7 +1937,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
       "detail": {
         "bytes": 10273174,
         "kind": "file"
@@ -1977,7 +1977,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/unified_courses_data.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/unified_courses_data.js",
       "detail": {
         "bytes": 10147022,
         "kind": "file"
@@ -2017,7 +2017,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/remint_dryrun/alias_map.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/remint_dryrun/alias_map.json",
       "detail": {
         "bytes": 9371742,
         "kind": "file"
@@ -2057,7 +2057,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/cid_articulation_joins.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/cid_articulation_joins.json",
       "detail": {
         "bytes": 8593791,
         "kind": "file"
@@ -2097,7 +2097,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_A.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_A.js",
       "detail": {
         "bytes": 8209035,
         "kind": "file"
@@ -2137,7 +2137,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/tmc_college_courses.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/tmc_college_courses.js",
       "detail": {
         "bytes": 8035276,
         "kind": "file"
@@ -2177,7 +2177,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
       "detail": {
         "bytes": 7844532,
         "kind": "file"
@@ -2217,7 +2217,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/coci_articulations.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/coci_articulations.json",
       "detail": {
         "bytes": 7625028,
         "kind": "file"
@@ -2257,7 +2257,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/ccr_universe.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/ccr_universe.json",
       "detail": {
         "bytes": 7503903,
         "kind": "file"
@@ -2297,7 +2297,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_C.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_C.js",
       "detail": {
         "bytes": 7019178,
         "kind": "file"
@@ -2337,7 +2337,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_E.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_E.js",
       "detail": {
         "bytes": 6738457,
         "kind": "file"
@@ -2377,7 +2377,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/exports/unified_courses.xlsx",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/exports/unified_courses.xlsx",
       "detail": {
         "bytes": 6718235,
         "kind": "file"
@@ -2417,7 +2417,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/automerge_out/2026-06-13-titlelane/plan.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/automerge_out/2026-06-13-titlelane/plan.json",
       "detail": {
         "bytes": 6713055,
         "kind": "file"
@@ -2457,7 +2457,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/it_ai_credential_catalog.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/it_ai_credential_catalog.json",
       "detail": {
         "bytes": 5461456,
         "kind": "file"
@@ -2497,7 +2497,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/coci_curation.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/coci_curation.json",
       "detail": {
         "bytes": 5334113,
         "kind": "file"
@@ -2537,7 +2537,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_M.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_M.js",
       "detail": {
         "bytes": 4951655,
         "kind": "file"
@@ -2577,7 +2577,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/status/mid_outcomes_compare_2026-11-12.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/status/mid_outcomes_compare_2026-11-12.json",
       "detail": {
         "bytes": 4715906,
         "kind": "file"
@@ -2617,7 +2617,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_P.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_P.js",
       "detail": {
         "bytes": 4616887,
         "kind": "file"
@@ -2657,7 +2657,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
       "detail": {
         "bytes": 4454134,
         "kind": "file"
@@ -2697,7 +2697,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/tools/first_light_candidates.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/tools/first_light_candidates.json",
       "detail": {
         "bytes": 4088562,
         "kind": "file"
@@ -2737,7 +2737,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/ccr_universe_members.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/ccr_universe_members.json",
       "detail": {
         "bytes": 3849833,
         "kind": "file"
@@ -2777,7 +2777,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/unified_courses_index.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/unified_courses_index.js",
       "detail": {
         "bytes": 3725842,
         "kind": "file"
@@ -2817,7 +2817,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/credential_reference_data.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/credential_reference_data.js",
       "detail": {
         "bytes": 3631076,
         "kind": "file"
@@ -2857,7 +2857,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/unified_courses_suggestions.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/unified_courses_suggestions.js",
       "detail": {
         "bytes": 3478066,
         "kind": "file"
@@ -2897,7 +2897,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/regional_cpl_opportunity_bay.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/regional_cpl_opportunity_bay.js",
       "detail": {
         "bytes": 3443439,
         "kind": "file"
@@ -2937,7 +2937,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/regional_cpl_opportunity_la.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/regional_cpl_opportunity_la.js",
       "detail": {
         "bytes": 3039468,
         "kind": "file"
@@ -2977,7 +2977,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_B.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_B.js",
       "detail": {
         "bytes": 2915411,
         "kind": "file"
@@ -3017,7 +3017,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_H.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_H.js",
       "detail": {
         "bytes": 2799319,
         "kind": "file"
@@ -3057,7 +3057,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_D.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_D.js",
       "detail": {
         "bytes": 2626394,
         "kind": "file"
@@ -3097,7 +3097,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/noncredit_video/narration.mp3",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/noncredit_video/narration.mp3",
       "detail": {
         "bytes": 2565477,
         "kind": "file"
@@ -3137,7 +3137,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/remint_out/alias_map.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/remint_out/alias_map.json",
       "detail": {
         "bytes": 2501051,
         "kind": "file"
@@ -3177,7 +3177,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_programs_data.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_programs_data.js",
       "detail": {
         "bytes": 2442036,
         "kind": "file"
@@ -3217,7 +3217,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/exhibit_audit/latest.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/exhibit_audit/latest.json",
       "detail": {
         "bytes": 2404354,
         "kind": "file"
@@ -3257,7 +3257,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/cr_reference_worklist.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/cr_reference_worklist.json",
       "detail": {
         "bytes": 2357697,
         "kind": "file"
@@ -3297,7 +3297,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/unified_titles.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/unified_titles.json",
       "detail": {
         "bytes": 2325532,
         "kind": "file"
@@ -3337,7 +3337,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_F.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_F.js",
       "detail": {
         "bytes": 2322891,
         "kind": "file"
@@ -3377,7 +3377,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/prototype/funding_video/narration_s1.mp3",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/prototype/funding_video/narration_s1.mp3",
       "detail": {
         "bytes": 2242124,
         "kind": "file"
@@ -3417,7 +3417,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/kb/authority_recode_out/2026-09-03/alias_map.json",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/kb/authority_recode_out/2026-09-03/alias_map.json",
       "detail": {
         "bytes": 2162802,
         "kind": "file"
@@ -3457,7 +3457,7 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-aef967aa254e37687/coci_lookup_desc_K.js",
+      "path": ".claude/worktrees/agent-a4b15728cd738abd5/coci_lookup_desc_K.js",
       "detail": {
         "bytes": 2038305,
         "kind": "file"

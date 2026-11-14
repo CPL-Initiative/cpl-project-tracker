@@ -22,6 +22,48 @@ re-analysis, the Library's same four rows. Sam pressed Complete on Sheet 196 at 
 both pickers; cards 2 and 3 blank). The dashboard run, the UI pass, the credential harvest and step 11's two runs for
 the UTC day were S650's; the contacts harvest is Sundays.
 
+## Closing addendum (the conductor, `date -u` read 16:32Z 2026-11-14): read this before First things
+
+The checkpoint below was written at about 15:35Z and merged as #3295 (`0e50e935`). Sam stayed in session and four more
+things landed or moved. Where this addendum and a line below disagree, the addendum is current.
+
+- **Slice A is merged: #3300, `7e248b76`.** COBIx confirmed both his fixes on the thread. The lookup runs in every
+  capture from `main` now (`ncl_lookup` default 1). Its branch is gone, so the Skyline capture dispatched on `5e1657c3`
+  at about 15:21Z had nowhere to commit: **dispatch a fresh free Skyline capture from a new branch off `main`**
+  (`college=Skyline College`, `step=read`, `extract=0`, `limit=0`, `ncl_lookup=1`), read `capture_preview.json` by
+  script, and check each `found` by heading and award. The last filed preview (run 43607267460, the round-two code):
+  49 `found` on 49 distinct pages, 37 `not_matched` (30 no page names it, 4 two pages, 2 the page went to a closed-list
+  program, 1 another program's page), 05809 on `programs/accounting-as.php`. The merged code is stricter, so expect
+  the same or fewer. First things 3 below is done except for that capture.
+- **The Honors migrations are merged: #3304, `d1b79a7c`** (both were already applied). COBIx's review on that thread
+  leaves three items, in this order: (1) **a pairwise hold, Honors id to base, before HUMA M10OI merges into M1110**:
+  today's dismissal rows key on a group signature (`HUMA M10ME|HUMA M10OI|HUMA M1110`), and once M10OI merges the
+  signature changes and the Honors pair is offered again; check whether the worklist takes a pairwise hold, else carry
+  it in the `honors_of` field; (2) the two retitled rows still read `automerge-v1@bot`, 2026-06-12, and only the
+  receipt shows S652 changed them: the `honors_of` migration restamps both under `honors-s652@bot` with a rollback keyed
+  on the new stamp; (3) two member counts are in use: the members file (HUMA M1110 63 to 62, LIBR M1040 3 to 2) and the
+  index (11 to 10, 4 to 3): name the measure beside each figure, and compare tonight's fold with
+  `kb/honors_delete_s652_out/2026-11-14/post_apply_simulated.json` like with like. First things 6 below is done except
+  for these and the Honors build.
+- **Riverside City's PR #3305 stays open on purpose** (head `3d70e952`, synced with `main` at `0e50e935`): its merge
+  publishes the display, so it waits on COBIx's spot-check of 32938, 42719, 43897, 44155, 44469 (asked on #3299). Sync
+  it with `main` again, then merge and run `step=display`.
+- **Conductor tooling, #3307** (`claude/conductor-hooks-and-agents-s652`; Sam, in session, about 15:40Z: "excellent! go
+  for it as well as with your additions:)"; issue #3306): two hooks, four agent definitions in `.claude/agents/`
+  (`worker`, `second-reader`, `checkpoint-docs`, `pr-gate`) and the `conductor-brief` skill. The merge-read guard
+  refuses `merge_pull_request` unless this session read that PR's comments in the last 3 minutes, and always refuses
+  auto-merge and a command-line merge; the clock guard refuses a written time that is ahead of the clock. Both fail
+  open with a warning. A reader and COBIx each reviewed it and every finding is in. **Merged as `67e9e8af`** (the
+  conductor's read of the clock: 16:47Z). One follow-up from COBIx's last note on its thread: also refuse a `gh api graphql`
+  call whose words contain `mergePullRequest` or `AutoMerge`, and look inside a `bash -c` wrapper. **Sam changes the
+  dated comment line on the environment's setup script at claude.ai/code** so the snapshot rebuilds and cloud sessions
+  load the hooks; `python3 scripts/check_hooks_live.py` reports them. Use the agent definitions for briefs from then
+  on. Later trials, one each: Serena on the reader file; a session cost report at a checkpoint.
+- **Sam's last words on scouting** (in session, about 15:50Z): "Hoping Cobix can sniff out other repos that might be
+  helpful as we build out the stack". The conductor's four tests for a candidate are on #3306.
+- **Worktrees:** all removed at sign-off. A new session has none; brief a fresh worker per open branch (#3305, #3293,
+  #3284, the five colleges' rescore branches) with the `worker` agent definition.
+
 ## First things, in order
 
 1. **No sheet ask is open.** [Open Asks Sheet 197](https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd) is answered in full (Complete pressed 14:38Z 2026-11-14; card 1
