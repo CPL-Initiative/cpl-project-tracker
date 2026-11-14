@@ -1,0 +1,24 @@
+{
+ "_readme": "S649 (worker for SkyOriole). The statewide Cal-GETC 34 runs at Cosumnes River only on quoted evidence that its catalog names Cal-GETC and prints no figure (d-calgetc-34-per-college-evidence-s648). The committed evidence is the filed reading of 45203, not the page's own words, and the session container cannot reach the hand-filed copy (GitHub attachments answer 403 to the sandbox) or crc.losrios.edu. This read prints the Cal-GETC pattern pages of the hand-filed 2026-27 catalog (kb/hand_filed_catalogs/cosumnes_river.json; PDF pp.95-96, the pages 45203 was filed from), so the session can quote whether the page prints a Cal-GETC unit total. One load of the hand-filed copy, no model call.",
+ "college": "Cosumnes River College",
+ "questions": {
+  "ge_units": "Whether Cosumnes River's Cal-GETC pattern page prints a total unit figure for Cal-GETC, and its words."
+ },
+ "keywords": [
+  "Cal-GETC",
+  "General Education Transfer Curriculum",
+  "[Uu]nits"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://github.com/user-attachments/files/33599449/crc-catalog-26-27.pdf"
+  }
+ ],
+ "pdf_span": [
+  95,
+  96
+ ]
+}
