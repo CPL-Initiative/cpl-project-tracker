@@ -9,6 +9,13 @@
 -- A row whose id no longer exists is skipped. The column comes back at the end of the table, with no comment;
 -- RLS is row-level, so the table's policies cover it as they did. Nothing in the code reads it after step 1,
 -- so restoring it changes no page.
+--
+-- APPLIED: the forward file ran once, through kb/migrations/.apply on claude/workplan-drop-current-s653b, run
+-- 43638452928, ledger version 20261114204116 (2026-11-14, UTC). Its receipt is
+-- kb/receipts/migration_s653b_workplan_goals_drop_current_43638452928.json; its `before` reads
+-- [{"id": 3, "current": 2}], the same one row as the VALUES list below, so this file restores it as written.
+-- Read back live by the S653b conductor after the run: the column is absent, 72 rows, 19 columns, id 3 still
+-- holds cur_2025_26 = 2. The forward file is left byte for byte as it ran (the receipt's sha256 names it).
 
 alter table public.workplan_goals add column if not exists "current" numeric;
 
