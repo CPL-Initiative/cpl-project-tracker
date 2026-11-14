@@ -18,8 +18,11 @@ related:
 
 - `scripts/merge_read_guard.py` denies `merge_pull_request` unless this session read that PR's comments
   (`pull_request_read` `get_comments`, `get_review_comments` or `get_reviews`, or `issue_read` `get_comments`) in
-  the last 3 minutes, in any repository, and always denies `enable_pr_auto_merge`, `gh pr merge` and a `gh api`
-  merge (COBIx on #3307); a PostToolUse half writes the stamp to `.claude/state/` under the session
+  the last 3 minutes, in any repository, and always denies `enable_pr_auto_merge`, `gh pr merge`, a `gh api`
+  merge, and `gh api graphql` in a line that names `mergePullRequest` or `AutoMerge` in any case (COBIx on
+  #3307). It reads the string a `bash -c`, `sh -c` or `eval` wrapper runs, four wrappers deep, and steps past
+  `env` and `sudo`; a search for the word (`gh api search/code -f q=mergePullRequest`) and a read-only graphql
+  query pass. A PostToolUse half writes the stamp to `.claude/state/` under the session
   root. `scripts/clock_time_guard.py` denies a comment, PR title or body, or `git commit` message with a time 2
   minutes or more ahead of the UTC clock (unless tied to another date or a future word such as `next` or `due`), or
   a `written`, `` `date -u` read `` or `at writing` claim more than 5 minutes stale; code spans, fenced blocks and
