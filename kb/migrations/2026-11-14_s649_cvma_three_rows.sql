@@ -8,17 +8,32 @@
 -- All three in field issuing_agency_additional_override. The two updates change the value alone: reviewer_email and
 -- reviewed_at stay the person's, so the row still reads as their save (a fold's issuer rules read that stamp).
 -- One plain statement: the writes hang on one guard CTE, and a failed guard raises, so nothing is written. The guard:
--- exactly these three rows in that field, each holding the misspelled value, each saved by a reviewer outside @bot,
--- each with the reviewed_at the committed overlay mirrors (kb/credential_review_overlay.json, synced 2026-11-14T00:56Z;
+-- exactly these three rows in that field, each holding the misspelled value, each saved by the reviewer the rollback
+-- restores (outside @bot, the same address on all three), never validated (validated_at and validated_by null, as the
+-- rollback re-inserts them), each with the reviewed_at the committed overlay mirrors (kb/credential_review_overlay.json, synced 2026-11-14T00:56Z;
 -- read live by the S649 conductor at 01:22Z), so a row re-saved since refuses. The result is each row's before-image
 -- (to_jsonb), which the runner writes to kb/receipts/migration_s649_cvma_three_rows_<run>.json, its `response`.
--- Rollback: kb/migrations/2026-11-14_s649_cvma_three_rows_rollback.sql.
+-- Rollback: kb/migrations/2026-11-14_s649_cvma_three_rows_rollback.sql (then revert the PR's kb/credentials.json edit).
+--
+-- The same PR edits the three downstream copies in kb/credentials.json (the two veterinary curator records take the
+-- right spelling; the CVMA record under Water Treatment Facilities goes), since the nightly only fills or appends.
+-- After the apply, in order:
+--   1. The conductor's post-apply read (below): two rows with the right spelling, the Water Treatment row gone.
+--   2. The PR merges on a green test, never before step 1: merged first, the nightly would re-append the misspelled
+--      Water Treatment record from the live row.
+--   3. One daily-dashboard.yml dispatch: kb/_apply_credential_review.py syncs kb/credential_review_overlay.json
+--      (the right spelling, no Water Treatment additional issuer), appends nothing, reports no stale issuer, and the
+--      export rebuilds credential_reference_data.js from the corrected records.
+--   4. Read the published credential_reference_data.js: no "alifornia Veterinary", and Water Treatment Facilities
+--      carries SWRCB alone.
 
-with expected (course_id, reviewed_at) as (
+with expected (course_id, reviewer_email, reviewed_at) as (
   values
-    ('_CREDENTIAL_REVIEW::Veterinary Assistance & Nursing: Emergency Procedures', '2026-07-09T00:37:39.286263+00:00'),
-    ('_CREDENTIAL_REVIEW::Veterinary Equipment, Operation, Instrumentation and Safety', '2026-07-09T00:37:42.376764+00:00'),
-    ('_CREDENTIAL_REVIEW::Water Treatment Facilities', '2026-07-09T00:38:14.078346+00:00')
+    ('_CREDENTIAL_REVIEW::Veterinary Assistance & Nursing: Emergency Procedures', 'map@rccd.edu',
+     '2026-07-09T00:37:39.286263+00:00'),
+    ('_CREDENTIAL_REVIEW::Veterinary Equipment, Operation, Instrumentation and Safety', 'map@rccd.edu',
+     '2026-07-09T00:37:42.376764+00:00'),
+    ('_CREDENTIAL_REVIEW::Water Treatment Facilities', 'map@rccd.edu', '2026-07-09T00:38:14.078346+00:00')
 ),
 target as (
   select k.* from public.kb_curation k
@@ -30,7 +45,10 @@ guard as (
      and (select count(*) from target t join expected e on e.course_id = t.course_id
           where t.value = 'alifornia Veterinary Medical Association (CVMA)'
             and t.reviewer_email not like '%@bot'
-            and t.reviewed_at::timestamptz = e.reviewed_at::timestamptz) = 3 as ok,
+            and t.reviewer_email = e.reviewer_email
+            and t.reviewed_at::timestamptz = e.reviewed_at::timestamptz
+            and t.validated_at is null
+            and t.validated_by is null) = 3 as ok,
      (select count(*) from target) as target_rows
 ),
 fixed as (
@@ -52,7 +70,7 @@ gone as (
 select case when g.ok and (select count(*) from fixed) = 2 and (select count(*) from gone) = 1
             then (select jsonb_agg(x.image) from (select image from fixed union all select image from gone) x)
             else ('refused by the guard: target rows ' || g.target_rows
-                  || ', or a row differs from the plan (value, a bot reviewer, or re-saved since)')::int::text::jsonb
+                  || ', or a row differs from the plan (value, reviewer, validation, or re-saved since)')::int::text::jsonb
        end as changed
 from guard g;
 

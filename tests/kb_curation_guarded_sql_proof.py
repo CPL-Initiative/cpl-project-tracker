@@ -51,6 +51,8 @@ BUSI = {
                                       "where course_id = 'BUSI M10XW'",
         "a person validated the merge": "update kb_curation set validated_at = now(), validated_by = 'someone' "
                                         "where course_id = 'BUSI M10XW'",
+        "the row names a validator without a stamp": "update kb_curation set validated_by = 'someone' "
+                                                     "where course_id = 'BUSI M10XW'",
         "a person's merge into BUSI M1228": "insert into kb_curation (course_id, field, value, reviewer_email) "
                                             "values ('BUSI M10ZZ', 'merge_into', 'BUSI M1228', 'someone@college.edu')",
         "a person's Keep as-is naming BUSI M10XW": "insert into kb_curation (course_id, field, value, reviewer_email) "
@@ -90,6 +92,14 @@ CVMA = {
         "a row was re-saved since": "update kb_curation set reviewed_at = now() where course_id like "
                                     "'%Water Treatment Facilities' and field = 'issuing_agency_additional_override'",
         "a row is gone": "delete from kb_curation where course_id like '%Instrumentation and Safety'",
+        "a person validated a row": "update kb_curation set validated_at = now(), validated_by = 'someone' where "
+                                    "course_id like '%Emergency Procedures' and field = "
+                                    "'issuing_agency_additional_override'",
+        "a row names a validator without a stamp": "update kb_curation set validated_by = 'someone' where course_id "
+                                                   "like '%Water Treatment Facilities' and field = "
+                                                   "'issuing_agency_additional_override'",
+        "a row was saved by another person": "update kb_curation set reviewer_email = 'another.person@college.edu' "
+                                             "where course_id like '%Instrumentation and Safety'",
     },
 }
 if os.path.exists(os.path.join(ROOT, CVMA["forward"])):

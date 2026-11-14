@@ -38,9 +38,14 @@ check("(2) it writes one UPDATE and one DELETE, both on the guard",
 check("(3) the guard wants exactly the three rows, the misspelled value, a reviewer outside @bot and the saved stamps",
   /\(select count\(\*\) from target\) = 3/.test(fwd) && fwd.includes("t.value = " + TYPO)
   && /t\.reviewer_email not like '%@bot'/.test(fwd)
-  && /t\.reviewed_at::timestamptz = e\.reviewed_at::timestamptz\) = 3/.test(fwd)
+  && /t\.reviewer_email = e\.reviewer_email/.test(fwd)
+  && /t\.reviewed_at::timestamptz = e\.reviewed_at::timestamptz\s+and t\.validated_at is null\s+and t\.validated_by is null\) = 3/.test(fwd)
   && fwd.includes("'2026-07-09T00:37:39.286263+00:00'") && fwd.includes("'2026-07-09T00:37:42.376764+00:00'")
   && fwd.includes("'2026-07-09T00:38:14.078346+00:00'"));
+const exp = fwd.slice(fwd.indexOf("with expected"), fwd.indexOf("target as"));
+const rbAddr = (rb.match(/'([^'\s@]+@[^'\s@]+\.[a-z]+)'/) || [])[1];
+check("(3b) the guard pins, on all three rows, the reviewer the rollback re-inserts",
+  rbAddr && count(exp, new RegExp("'" + rbAddr.replace(/[.]/g, "\\.") + "'", "g")) === 3, "rollback address " + rbAddr);
 check("(4) the field is issuing_agency_additional_override everywhere it is named",
   count(fwd, /field = '([a-z_]+)'/g) === count(fwd, /field = 'issuing_agency_additional_override'/g));
 check("(5) the update sets the value alone, to the right spelling, on the two veterinary rows only",
@@ -62,6 +67,20 @@ check("(9) the rollback restores the two values only where the corrected value s
 check("(10) the rollback re-inserts the Water Treatment row under the person's address, not a cohort",
   /values \('_CREDENTIAL_REVIEW::Water Treatment Facilities', 'issuing_agency_additional_override',\s+'alifornia Veterinary Medical Association \(CVMA\)', '[^'@]+@[^'@]+', '2026-07-09T00:38:14\.078346\+00:00'\)/.test(rb)
   && !/@bot'/.test(rb));
+
+// The downstream copies: kb/credentials.json carries the corrected records in the same PR (the nightly only fills or
+// appends, so it would never take the misspelling out).
+const cr = JSON.parse(fs.readFileSync(path.join(ROOT, "kb/credentials.json"), "utf8"));
+const typo = [];
+Object.entries(cr).forEach(([t, recs]) => (Array.isArray(recs) ? recs : []).forEach((r) => {
+  if (/(^|[^C])alifornia Veterinary/.test(JSON.stringify(r))) typo.push(t);  // the C dropped, not "California"
+}));
+check("(11) no record in kb/credentials.json carries the misspelling", typo.length === 0, typo.join("; "));
+check("(12) Water Treatment Facilities carries no CVMA issuer",
+  !(cr["Water Treatment Facilities"] || []).some((r) => /Veterinary Medical Association|CVMA/.test(r.issuing_agency || "")));
+["Veterinary Assistance & Nursing: Emergency Procedures", "Veterinary Equipment, Operation, Instrumentation and Safety"]
+  .forEach((t) => check("(13) " + t + " carries the right spelling once",
+    (cr[t] || []).filter((r) => r.issuing_agency === "California Veterinary Medical Association (CVMA)").length === 1));
 
 const failed = results.filter((r) => !r[1]);
 results.forEach(([name, ok, why]) =>
