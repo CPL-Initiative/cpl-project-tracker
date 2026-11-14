@@ -214,309 +214,9 @@ the tab gives a curator a place to work it.
 PR-B, PR-D, the Cred-Ref PR-1 through PR-5b series and Sessions 8 through 32 moved verbatim to
 [`exhibit_canonicalization_lessons_archive.md`](exhibit_canonicalization_lessons_archive.md) on 2026-10-18.
 
-## 2026-07-07 — the stuck triage session: token-expiry root cause + the fold grows a supersede lane
+## 2026-07-07 — the stuck triage session: moved to the archive (S649 compaction)
 
-Sam assigned all 5 open triage items (AUTO 600/601/602 Completion, Automotive,
-Inspection Portfolio Spring 2026 #1) and "the tab stopped working." Two distinct
-problems, both fixed:
-
-### Learning 1 — the tab "stopped working" because CER never refreshed the token
-The 10 Supabase writes landed fine at 14:05 UTC; the breakage came AFTER. CER had
-the exact pre-Session-77 raci.js bug (`docs/kb-notes/methodology-refresh-token-before-write.md`):
-`getSession()` keeps an expired session alive whenever a `refresh_token` exists,
-but no write path ever renewed the access token — so ~1h after the magic-link
-sign-in every save 401'd silently into a dead "retry" (and the worklist "clear"
-link literally no-opped on `!r.ok`), while the auth widget still showed ✓ signed-in.
-Adversarially verified with an end-to-end jsdom repro (a 4-lane hypothesis workflow;
-the tab-plumbing / generator-bake / Pages-artifact lanes were all exonerated with
-receipts). Fix: the raci trio ported (`refreshToken` + single-flight `ensureFresh()`
-+ 401/403 session-drop via `withFreshSession()` on all 5 write fns), init `.catch`
-retry card, and `tests/cer_token_refresh.test.js` (18 assertions) guards it.
-SINGLE-FLIGHT matters here: the worklist saves title+issuer in a `Promise.all`,
-and two parallel refresh-token exchanges can kill a GoTrue session outright.
-
-### Learning 2 — whitespace twins: the queue listed titles the KB "already had"
-All 5 triaged raws were ALREADY classified — 4 under trailing-space twin
-spellings (`'AUTO 600 Completion '`) that the Phase-3 batch had machine-classified
-to fallback non-credentials (`AUTO 600 — Long Beach City College Auto Course`,
-`Automotive (Generic)`), while the 2026-05-24 audit listed the TRIMMED spellings
-as unclassified. The June fold only matched exact keys, so twins were invisible.
-`kb/_fold_unclassified.py` now handles this as a class:
-- **SUPERSEDE lane** — a curator assignment beats an UNREVIEWED MACHINE draft
-  (reviewed_by empty + classified_by ≠ curator sentinel), across every
-  whitespace-twin spelling (`.strip()` match). Human-reviewed entries still CONFLICT.
-- **STALE lane** — an overlay assignment older than a curator KB decision (the 5
-  strategy-2 renames from June) reports but never gates; V1 stays meaningful.
-- **Ripple auto-resolution** — superseded raws' `coci_articulations.json` rows are
-  re-pointed in the same apply (methodology strategy 3 made mechanical for the one
-  unambiguous case); clean-lane ripples still block for the human call.
-- Orphaned machine credential records prune; a machine target record with a null
-  issuer gains the assignment's issuer (stamped curator).
-Applied 2026-07-07: 11 supersedes (Sam's 5 + 6 June twin stragglers), 8
-articulation rows re-pointed, 7 orphan records pruned, queue → 0. Receipts:
-`kb/unclassified_fold/2026-07-07/`.
-
-### Learning 3 — the pipeline was open-loop; now it closes itself
-The fold was a manual PR-3 nobody ran since 2026-06-03, and NOTHING refreshed
-`kb/exhibit_audit/latest.json` (the auditor was in no workflow — frozen at
-2026-05-24, which is exactly why already-classified titles sat in the worklist).
-Daily cron now runs `_fold_unclassified.py --apply-if-safe` (V-gates pass → fold;
-conflicts/blocking ripples → report + wait for the manual path) AND
-`kb/_audit_exhibits.py` after it, so triage → fold → fresh queue is a same-day
-loop. The CER worklist shows OPEN counts ("✓ N awaiting fold" when done), a
-queue-clear state, and the fold explainer. Pages deploy now asserts all 4
-CER-fetched paths; tabs.js loadScript no longer wedges on a once-failed script.
-
-### Cx naming procedure + issuing agency (Sam's calls, now Rule 5c in the skill)
-Single-course Cx/portfolio exhibits → the course-content title (`Automotive
-Lubrication Service`), code-only courses → `<Discipline> (<CODE>)`
-(`Mathematics (MATH 095)`); batch Cx → the program-area umbrella; mechanism never
-in the title; **issuing agency = `California Community Colleges`** (plural —
-the 4 singular records from today's saves were normalized in KB + Supabase).
-
-### State / next
-- Authority-anchoring strategy (CareerOneStop certifications bulk file + CA
-  License Finder + O*NET SOC codes + Credential Engine reconciliation):
-  `docs/kb-notes/reference-authority-anchored-credential-naming.md` — decisions
-  on Sam (COS API account, CE partnership status, attribution placement).
-- Carryover stands: CPL-type-duplicate detector, 3 audience views, the ~50
-  NEW-credential long tail.
-
-### 2026-07-07 (continued) — the CareerOneStop authority lane BUILT
-Sam: "Build the CareerOneStop and we'll factor in our Credential Engine
-integration afterward" (the MAP↔CE partnership will CTDL-tag all MAP CPL data;
-those tags canonicalize against CE later — the `cos_cert_id` anchors minted now
-become the join keys). Shipped: `kb/_sync_cos_certifications.py` +
-`cos-authority-sync.yml` (runner-as-proxy, probe-first, monthly cron),
-`kb/_match_cos_authority.py` (join ladder with the fixture-caught precision
-guards: token-subset containment NOT substring — 'firefighter i' is a substring
-of 'firefighter ii'; a LEVEL GUARD; `+`→`plus` folding so CompTIA A+ never
-degenerates to the stopword 'a'; ≥2-token containment floor), the CER ✓/≈ COS
-chips + required USDOL/DEED attribution, `tests/cer_cos_badge.test.js` (11).
-Also: today's fresh audit surfaced **481 new unclassified titles** the frozen
-snapshot had hidden — the authority vocabulary is what makes that backlog
-tractable. Next: probe run → header-map confirm → apply → triage with Rule 5c.
-
-### 2026-07-07 (continued 2) — Rule 5c identity integration, Phases 1+2 SHIPPED
-Sam's refinement: Cx titles anchor to C-ID/CCN titles when they exist, M-ID
-titles later once that layer is declared stable. Precedence codified (CCN >
-C-ID > M-ID-when-stable > local course content — mirrors CCR identifier
-precedence). Measured first: **0/481 queue items have articulation rows**, so
-the join parses the LOCAL COURSE CODE from the raw title →
-`kb/_suggest_unclassified.py` (COCI (SUBJ,NUM) join with the membership-hazard
-guards: unanimous-identity requirement, remainder-title overlap check,
-exam-brand (AP/IB/CLEP) exclusions incl. the "(BIOSCI 100)" target-course
-parenthetical trap) → `kb/unclassified_suggestions.json` → 💡 one-click fill
-chips in the worklist (curator always confirms; `tests/cer_wl_suggestions.test.js`,
-12). First real run: 28/481 direct suggestions (5 C-ID incl. ADM JUS 003 →
-AJ 124 "Legal Aspects of Evidence", 23 modal-course); the COS tier joins the
-same chips once the registry syncs. Phase 2: the fold stamps `title_anchor`
-{system, id} on entries whose assigned title matches a CCN/C-ID suggestion —
-the hook that makes the M-ID phase-in + future re-key ripples mechanical.
-Phase 3 = flip `--with-mids` when Sam declares M-IDs stable.
-
-### 2026-07-07 (continued 3) — SkyAnchor: COS authority LIVE end-to-end + triage QA + the AP art fold
-
-Sam's credentials landed (GitHub-secret gotcha: the Name box takes ONLY
-`COS_USER_ID` — no `=`, no value) → probe validated auth same-hour. **Probe
-findings that changed code before the first apply (#676):** the API embeds
-acronyms IN the name ("50001 Certified Professional - 50001 CP", no Acronym
-field) → `split_name_acronym()` in BOTH lanes (level/digit suffixes exempt);
-pagination hardened (advance by actual batch, stop at RecordCount, bail on
-non-advancing startRecord) since the API is now the PRIMARY lane (bulk 403s
-runners). Verified by the committed no-network harness
-`kb/_verify_cos_sync_lanes.py` (23 checks, mocked api_get). **Apply: 6,490
-certifications** (the `0` keyword enumerated nearly the whole registry;
-empty-keyword pass fail-softed as designed) → **match ladder: 83 matches**
-(44 exact · 8 acronym · 31 contains), 22 ambiguous reported, 2 issuer fills
-possible; receipts `kb/cos_match_out/2026-07-07/`. **Serving gap found+fixed
-(#677):** runner pushes don't fire push workflows, so `pages.yml` gained
-`workflow_run: cos-authority-sync`, the `kb/cos_matches.json` served-path
-assert, and the registry prune (tracker-internal per the COS terms).
-
-**Triage QA (Sam's 33-title day, all fixes Sam-approved, applied in Supabase):**
-the handoff's watch-items fired exactly as predicted — 3 ASE assignments had
-invented new shapes with 3 org spellings → retargeted to the EXISTING
-`ASE <code> — <content>` house family (the KB's 60+-record family beats
-COS-verbatim for consistency; issuer `National Institute for Automotive
-Service Excellence (ASE)`); 4 AP art assignments pointed at RETIRED College
-Board names → retargeted to current (`AP 2-D/3-D Art and Design`, `AP
-Drawing`); 1 double-space title (the whitespace-twin hazard); apprenticeship
-→ the existing `Carpenters Apprenticeship — Acoustical Installer` family
-(never CCC issuer); portfolio Cx issuer → CCC per Rule 5c (ICC issues
-nothing). **Lesson: when an existing family exists, retarget to it verbatim —
-consistency with the house family outranks authority-verbatim naming; the COS
-chip still lands via the contains tier.**
-
-**AP art fold APPLIED** (`kb/_merge_credentials.py`, 5 decisions appended to
-`kb/credential_merges.json`): the 5 stale `AP Art and Design: *` colon
-variants → the 3 College Board-current canonicals. 18 raws + 20 articulations
-re-pointed, 9 AP art families → 4 (incl. AP Art History), credentials 1,969 →
-1,964, all V-gates green, receipt `kb/credential_merges_out/2026-07-07/`.
-
-**Next:** Sam continues the ~448-title queue (existing-family-first!); the
-lane choice after = military COOL/MOC crosswalk (recommended — the COS
-registry already carries ASE MIL1–8 as join points) vs CA License Finder;
-`--apply-issuers` dry-run (2 fills) still a deliberate manual step.
-
-### 2026-07-07 (continued 4) — the COOL/MOC crosswalk lane: registry LIVE, bridge proven
-
-Sam: "Let's wire in the COOL/MOC crosswalk too." **Measure-first finding that
-set the design:** the CER's military exhibit layer is tiny (25 raws / 16
-JST-course families, ZERO occupation codes) — so the lane is the **veteran
-PATHWAY bridge**, not an exhibit matcher: MOC → O*NET-SOC → certifications →
-CER `cos_cert_id` anchors → colleges with articulations.
-
-Built as `kb/_sync_moc_crosswalk.py` + `moc-crosswalk-sync.yml` (the COS
-architecture verbatim; same secrets; monthly cron day-5). **Three probe
-rounds pinned the contract** (#679/#680/#681): ① the O*NET crosswalks page
-auto-yields `dl_files/2019/military_crosswalk.zip` → `milx0724` (40,077
-change-history rows); ② O*NET-SOC codes ride in NUMBERED columns `ONET1..4`
-(+ legacy `SOC1..4`), `-` is the null sentinel — a single-column HEADER_MAP
-can't see them (and probe prints must NEVER truncate: round 1's 8-column
-header print hid exactly the column that mattered); ③ the four guessed
-CareerOneStop MOC endpoints don't exist (404), but **the cert finder takes a
-dotted O*NET code as its KEYWORD** — `49-3023.00` → 75 certs, first hit an
-auto-tech certification. **Bridge proven end-to-end.** Apply committed
-`kb/reference/moc_crosswalk.json`: **33,874 MOC records, 17,916 (52%) with
-O*NET mappings**; spot: Army 68W Combat Medic → 29-2043.00 (Paramedics) ✓.
-Registry tracker-internal (pages.yml prune, the COS precedent).
-
-**Caveat for the bridge phase:** MOC codes are REUSED across eras (Army 91B =
-"Medical Specialist" historically, vehicle mechanic today) and the v1
-aggregation unions all eras' SOCs per (branch, code). Refine with the
-STATUS/SDATE/EDATE fields (+ the archive's Read Me.pdf branch-letter
-vocabulary — 20 SVC codes, not 5) when building `moc_cos_bridge.json`.
-
-**Next concrete step:** the bridge artifact — batch the ~distinct ONET codes
-through the cert-finder keyword leg on a runner (one-shot), join returned
-cert Ids to the COS registry, emit `kb/moc_cos_bridge.json`
-(MOC → [cos_cert_id]) → wire the consumer (Sierra's veteran turn / a CER
-military-pathway chip).
-
-### 2026-07-07 (continued 5) — SkySeed: the brand-family PRE-SEED, 158 of the 451-row queue in one pass
-
-Sam, looking at the triage list: "it would be helpful to have a procedure that
-pre-seeds the common exhibit titles and issuing agencies — all the APs should
-be an easy win, right?" Measured first: the 451-row queue is **38 AP + 125
-CLEP = 163 College Board exams (36%)** — and BOTH house families already exist
-(49 AP + 42 CLEP unified titles), so the whole pass is retarget-to-existing-
-family (the Session-101 doctrine), zero new credentials minted.
-
-Built `kb/_preseed_unclassified.py`: cleanup (score bands, policy notes
-`(after FA15)`/`(prior F11)`, the `(BIOSCI 101)`/`(MATH-100)` local-course
-parenthetical trap, footnote stars/brackets, nbsp/newline/tab collapse) →
-normalized match key (stopwords of/the/to dropped; US≡U.S.≡United States;
-2-D≡2D; intro≡introductory≡introduction; abbrevs civ/princ./devel./lit/trig/
-macroecon; `Level 2`≡`Level II`≡the lowercase-`ll` typo; glued footnote digits
-`German1`) → a match LADDER (exact → alias → insert-"Language" for CLEP
-language shorthands → era-subtitle truncation after the roman numeral, e.g.
-"…II: 1648 to Present"). **Twin hazard found in hand-review:** exact-tier rows
-anchored one twin ("CLEP Spanish with Writing Level II") while key-tier rows
-picked the other — fixed by boosting twin-pick weight with the run's own
-exact hits, so every same-exam raw converges on one target (passed-over twins
-receipted). NEVER-INVENT is structural: only existing families can be targets;
-residuals report as `ambiguous` (3 "Levels 1 and 2 — Complete both" spans) or
-`no_match` (2 "Level III" rows with no house family) for Sam.
-
-**Applied to Supabase via MCP** (`kb_curation` `_UNCLASSIFIED::` rows,
-reviewer `preseed-v1@bot` — the automerge-v1@bot cohort pattern; on-conflict
-DO NOTHING so a curator row always wins). Verified byte-perfect: md5 of
-`course_id→value` over the live 158 title rows == the committed plan
-(`kb/preseed_out/2026-07-07/plan.json`) — which caught + cleaned a real
-hazard: a terminal round-trip DROPPED a non-breaking space in two French
-Language raws, minting 4 garbage rows keyed to misspelled raws (deleted;
-**lesson: never round-trip raw titles through a terminal display — generate
-SQL from the JSON receipt and checksum the DB against the receipt after**).
-Committed no-network harness `kb/_verify_preseed_rules.py` (43 checks — run
-after ANY rule edit). Worklist shows 158/451 assigned immediately; the daily
-cron folds them tomorrow (Sam's review window: ✕ un-assign anything wrong
-before 06:17 UTC).
-
-### State / next
-- Sam's queue: 451 → ~288 truly-manual rows (mostly high-school articulation
-  course-as-exhibit rows, contractor licenses C-##, CA state certs — the next
-  pre-seed candidates are NOT obvious brand families; per-row judgment).
-- 5 residuals from this pass for Sam: 3× "CLEP <lang> (Levels 1 and 2) —
-  Complete both" (spans two house credentials) + CLEP French/German Level III
-  (no house family — new credential or fold into Level II? Sam's call).
-- Pre-existing twin families surfaced by the receipts (fold candidates, NOT
-  urgent): AP U.S./United States Government and Politics + History; AP
-  Physics 1 / AP Physics 1: Algebra-Based; CLEP Precalculus / Pre-Calculus;
-  CLEP Spanish with Writing {I,II} / {Level I,Level II}.
-- MOC→COS bridge (`kb/moc_cos_bridge.json`) still the queued build; then
-  `--apply-issuers` dry-run + the 22 ambiguous COS matches.
-
-### 2026-07-07 (continued 6) — Session 103 (Bruh SkyWay): STAGED pre-seed lanes + the triage toggle + issuer authority sources
-
-Sam's evening asks, all shipped: *"look at what I've recently saved … do more
-pre-seeding … For pre-seeded items, leave them ready to save but not yet
-saved … shouldn't we have a toggle [for] just the ones needing to be triaged?
-… speed all the credit by exam still in the hopper — preseed the titles using
-your judgment and the issuing agency CCC."*
-
-**Queue math at build time:** 451 queue rows; ~181 live-assigned (Sam hand-
-triaged ~90 more today on top of the 158 Session-102 pre-seeds — he was saving
-WHILE this session ran); **163 STAGED** by the new lanes; ~107 residual.
-
-**What shipped:**
-
-1. **Staged lanes in `kb/_preseed_unclassified.py` (`--stage`)** → the
-   committed `kb/unclassified_preseed.json`. Zero Supabase writes — proposal ≠
-   assignment (Rule 5e in the skill). Lanes: `cx` (31 — mechanism + course
-   code stripped, issuer CCC per Rule 5c), `hs` (73 — high-school/ROP
-   articulation rows; school names / IS-codes / section + Honors riders
-   stripped; same-code variants converge, existing family outranks the modal
-   pick, converged rows capped at 0.65), `journeyman` (13 — Sam's verbatim
-   "Journeyman Certificate- Apprenticeship Carpentry, <trade>" family +
-   `Southwest Carpenter And Affiliated Trade J.A.T.C.`), `carpenters` (10 —
-   Cabrillo bare trades → "Carpenters Apprenticeship — <Trade>" + CTCNC),
-   `ironworker` (16 — Locals 416/433 period ladders, issuer blank per Sam's
-   IW-* precedent), `nccer` (13 — NCCER naming verbatim, issuer `NCCER`),
-   `single` (7 authored judgment rows incl. the COCI-resolved code-only Cx:
-   WATER 140 → "Water Distribution Operator I", ART 125B → "Intermediate
-   Drawing", both College of the Canyons).
-2. **Worklist toggle + prefill (`credential_reference.js`)** — "Needs triage
-   (N) / All (M)" chips (default hides saved rows); staged rows prefill both
-   inputs with an ⚡ badge (lane + confidence + note); a confirm-gated
-   **"💾 Save all pre-filled shown"** bulk button reads the VISIBLE inputs
-   (what-you-see-is-what-saves — a hand-edit wins over the staged value). A
-   live assignment always beats a stale preseed; missing file = soft no-op.
-   Tests: `tests/cer_worklist_preseed.test.js` (29); harness grown to
-   `kb/_verify_preseed_rules.py` (73).
-3. **Issuer authority sources noted for future exhibits** (Sam supplied the
-   links; both 403-block the sandbox — WebSearch-verified instead):
-   **DIR DAS** occupation detail `results_aigdetail.asp?varOccId=2180`
-   (Carpenter) → the SW-JATC + CTCNC program names; **NCCER**
-   nccer.org/assessments. Card: `docs/kb-notes/reference-issuing-agency-
-   authority-sources.md`; skill gained Rule 5e + an "Authority sources"
-   section (CSLB queued for the C-## contractor rows).
-
-**Methodology hardening (the Session-102 lesson, applied harder):** all live
-assignment VALUES used for family matching were fetched via the MCP and
-**verified per-row against server-side md5 pairs** — the concat-checksum
-mismatched because Sam was actively saving between queries (row-count drift,
-not corruption), and the pair-wise check isolated the 2 genuinely
-transit-corrupted rows (the nbsp CLEP French Language Level 1/2 raws), which
-were dropped from matching but kept in the assigned set. Never trust a
-terminal round-trip; verify keys AND values independently of row order.
-
-**QA flags for Sam (surfaced, not touched — curator rows win):**
-- `THEATER 280 - Musical Theater Workshop` carries issuer *"Sustainable
-  Materials Management and Zero Waste in Business"* — a copy-paste slip from
-  the SMM row saved seconds later; should presumably be CCC.
-- `SMM 4, Sustainable Materials Management and Zero Waste in Business` has
-  issuer == its own title (SMM 2 got CCC) — worth a second look.
-- `kb/unified_titles.json` holds **3 mojibake families** — `Generic Credit by
-  Exam â€” Saddleback College / San Diego City College / San Diego Mesa
-  College` (UTF-8 em-dash read as cp1252 somewhere in an earlier fold) —
-  merge/rename candidates for a cleanup pass.
-
-**Residual shape (~107):** C-## CSLB contractor licenses (lane ready once Sam
-picks the family shape), IC-* rows (unknown "Industry Certification" issuer),
-fire/IFSAC/ProBoard certs, welding course-content rows, the 5 known CLEP
-residuals, one-off state certs. All still listed in the staged file's
-`_residual` for hand-triage.
+The token-expiry root cause and the fold's supersede lane moved verbatim to [`exhibit_canonicalization_lessons_archive.md`](exhibit_canonicalization_lessons_archive.md) on 2026-11-14.
 
 ## 2026-07-07 (continued 7) — Session 104, Bruh SkyTime: the statewide-catalog pass — 97 of the last 100 staged, college chips, multi-issuer, live-Sam batch
 
@@ -1568,3 +1268,29 @@ Moved verbatim from `docs/reference/lanes/cer-procedures.md` on 2026-11-12 (the 
 - Sam's two rulings set the classifier's next step: a proposal prefers a title already in use, and an industry
   certification takes its official name, since its several credit recommendations fit no one course title.
 
+
+## Moved from the lane (S649 checkpoint)
+
+Verbatim from `docs/reference/lanes/cer-procedures.md`; the lane keeps a summary and the DECIDED lines.
+
+- **The Exhibits fixes of #3223 and #3228 (S647, #3233 `d2d51532`, on Sam's in-session ask about 14:35Z: *"and the fixes to the commons exhibits cobix commented on"*).** Another look stops returning Sam's *(ASE X standards)* titles and the rename batch its decided rows. Review's panel shows Course details above Related titles, the local course title first (a noncredit or thin COCI description marked a lead, #3219), from `local_courses`; source ids open their MAP summary there. **DECIDED** `d-exhibits-course-title-gate-s647`: a proposal left with a course code takes the credential the course names (`named_credential`) only on the `ic` path, and the course title (`leftover_code_proposal`) only for credit by exam and noncredit. A rename-batch row reads *Renames on approval* until saved; a skip on a row with no proposal saves `cert_rename_kept` naming the title; a failed read of saved decisions says so. **Declined:** the apply and rebuild failing loudly in `daily-dashboard.yml` and `cer-procedures.yml` (it changes how the daily run fails).
+
+- **A decided Review card stays decided (S649 worker, #3223, #3260; Sam 2026-11-13, 1:38 PM PT: *"I changed those las positas exhibits in the exhibit commons and think we have a loop going where the reanalysis does know I just relied on them and then brings them back endlessly"*).** The tab: `reconcileReview` in `exhibits.js` reads `kb_curation` on load and on each return to the tab (anon, `field=eq.unified_title_assignment` with `reviewed_at`, `_UNCLASSIFIED::<raw MAP title>`, 40 titles a request, Range-paged, one read at a time). A card with a non-empty assignment leaves the open queue; a clear deletes the row, so the card returns. A conflict card exists only because of a saved title, so for it no row or an empty one is the decision (a clear), and a save later than the file is too. The Names, Aligned course, Saved not folded and Students waiting figures count settled cards where they belong. Until the read answers the queue reads *Reading the saved titles* and offers no card; a read with no answer in 20 seconds, or a title the browser cannot encode, fails like any other read, and a return to the tab reads again. A failed read leaves the file's cards, Review and the Queue say so in words, and Change to Proposed Title, Keep Current Title and Accept all are off with the reason (a save could replace one the tab cannot see). The builder: **DECIDED** `d-exhibits-review-live-assignments-s649`: `kb/_build_exhibits_review.py --live` reads the live assignment set with the public anon key the tab ships (`cpl_session.js`; anon selects `course_id, field, value, reviewed_at` under `kb_curation_read`, `kb/migrations/2026-11-09_kb_curation_hide_reviewer_email.sql`), by the tab's rule, Range-paged and checked against a `count=exact` total, and the live set replaces the overlay. `daily_build.sh`'s Review step and `cer-procedures.yml`'s pass `--live` and no secret (the conductor's call on COBIx's least-privilege note, #3260), since the nightly run syncs no overlay; without `--live`, or with no network, the overlay decides. The anon key parses from any declaration and quote style in `cpl_session.js`. The file stamps `sources.assignments` (`live` or `overlay`, when, and `decided`: the held titles it left out because a title is saved). The guard compares content, since the sync leaves `_synced_at` alone when nothing changed: with no live read, the builder exits 3 and leaves the Review file when a title the committed file left out as decided would come back as a card; both callers read exit 3 as that refusal. The daily passes `--overlay-fresh` (step 3 synced the overlay in the same run, so a refusal there could only be wrong) and skips the guard; `cer-procedures.yml` and local builds keep it. Ship code only and let the run rebuild. Tests: `tests/exhibits_review_reconcile.test.js`, `tests/exhibits_review_build_test.py`.
+
+- **The #3223 and #3228 follow-ups (S648, #3241).** COBIx's recommendations of 16:41Z 2026-11-13 (6859080666, 6859081196; no words of Sam quoted), taken by the S648 conductor. **DECIDED** `d-named-credential-issuer-tag-or-half-s648`: a title counts as named by a course only when it carries one of its issuer's tags as whole tokens (`kb/reference/issuer_tags.json`), every word of a one- or two-word name, or half the words of a longer one (`issuer_named`); CNT 7285 holds; EMS 20 (NREMT and EMSA both carry its title) and two APCL cards return to the classifier. A title several issuers carry names none without its acronym. A new issuer needs its tags (`tests/issuer_tags.test.js`). **DECIDED** `d-or-between-tests-coded-as-written-s648`: an "or" between two tests in a bundle is coded as written, *ASE Certificate Bundles: A6 or T6 + L3*, its own mix; the tests inside an "or" sort and fold; a mix that is only a choice (*C1 or G1*) stays any one test, and an "or" in a comma list (*A4, A5 or A6*) goes to a person (`test_mix.family_read`). **DECIDED** `d-comptia-series-is-alias-s648`: a CompTIA title never carries its exam series, a search alias (`cert_naming.series_aside`; a course title is never stripped). The card shows it in words from Review's `series_aliases`; wiring it into `kb/credential_aliases.py` is open. **DECIDED** `d-official-name-source-confidence-s648`: no person signs off before a title is proposed; a Review record whose title is an official name or in use carries `name_source` (`strong`, the catalog holds the issuer's own page; `partial`, a sibling exhibit carries it; `limited`, anything else or nothing), shown as a word beside the proposal and never holding it back. **DECIDED** `d-comptia-after-ase-s648`: CompTIA's batch follows ASE's, ahead of AWS and NCCER. The Oct 31 fold of *Industry for CNT 7285* (Sam) is *CompTIA Cloud+*, the card's proposal. Sheet 192's cards 5 and 6 are carried by these decisions as the Decided card 1 of [Sheet 194](https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq) (COBIx is also raising the exam-series question with Sam). **Follow-up #3248, merged** (`2e5bcfc9`): the shared-title count reads only issuers with tags or an industry type; *NFPA <number>* is a standard; CPP, FPC and the NFPA 1670 title name their issuer again. **Answered by Sam's own saves (Sheet 194 card 5, Sheet 192 card 4 carried; closed on Sheet 195 card 1):** he saved the Las Positas *Industry Training Evidence* titles on 2026-11-13 and the Review queue is empty (`kb/exhibits_review.json`, 0 held, 00:02Z 2026-11-14). **NEEDS SAM (Sheet 195 card 4, carried from Sheet 194 card 4):** three human `kb_curation` rows (map@rccd.edu, 2026-07-09, field `issuing_agency_additional_override`) carry *alifornia Veterinary Medical Association (CVMA)* on Veterinary Assistance & Nursing: Emergency Procedures; Veterinary Equipment, Operation, Instrumentation and Safety; and Water Treatment Facilities. Not changed: a person's rows. **NEXT:** the rename to *ASE Certificate Bundles: A6 or T6 + L3* rides the next rename batch for Sam's approval there, never applied by a session; the all-family view is the next Exhibits slice.
+
+## 2026-11-14 (S649 SkyOriole, the conductor): a decided card stays decided
+
+- **The loop Sam named.** He saved the Las Positas titles in the Exhibits Review on 2026-11-13 and the cards came back,
+  because the tab and its builder read only the committed overlay, which the nightly run never synced. Both now read the
+  saved `unified_title_assignment` rows from COBI (#3260). The daily run of 23:53Z took the held queue from 168 to 0.
+- **Least privilege for a build step.** The builder reads with the public anon key the tab already ships, never the
+  service key, so the build and the tab read the same rows under the same policy. A lint that asserted "no network call"
+  was restated to the true contract (one anon read, only under `--live`, no key, no write) rather than deleted.
+- **A refusal beats a silent regression.** Without a live read, the builder exits 3 when a title the committed file
+  left out as decided would come back as a card; the daily run, which syncs the overlay in the same run, passes
+  `--overlay-fresh` and skips that guard.
+- **A test that asserts a non-empty live queue fails the day the queue is worked.** `main` went red at 00:02Z when
+  Sam's saves emptied it (the S643 lesson a second time). #3269 pinned the test to a measured fixture; the other 26 tests
+  reading the file pass on an empty queue (`p-test-reads-live-review-file-s649`).
+- **Open:** a title cleared in another browser tab reopens only on reload (COBIx, #3260).
