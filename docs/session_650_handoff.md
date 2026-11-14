@@ -27,16 +27,18 @@ numbered handoff and sends its ledger to the conductor before sign-off.
 1. **The objectives reread** (#3265, draft, `claude/slo-objectives-rccd`): the Riverside district read was on the
    runner at writing. Read the loader's `--dry` and a live count before `.load` (host=rccd, kind=objective) is pushed;
    then sdccd, sac, laspositas, Coastline, Golden West, one host at a time (`d-objectives-reread-order-s649`).
-2. **Cosumnes River's display:** the step dispatched on `main` at 01:07Z for build `6e5081a4b3a0`; confirm its applied
-   record. Then the seven records that pass on the rescore alone (04602, 04607, 04614, 07305, 11319, 11338, 33542), as
+2. **Sam's Sheet 195 answers** (below): a worker is preparing cards 2 to 4 as two draft PRs,
+   `claude/reclustering-busi-honors-s649` and `claude/cvma-three-rows-s649`; nothing is applied. Each applies under
+   Rule 10 with its receipt and undo.
+3. **Cosumnes River:** its display applied (run 43538586107, record `99229a48`). Then the seven records that pass on the rescore alone (04602, 04607, 04614, 07305, 11319, 11338, 33542), as
    their own plan, compared with main first.
-3. **College Data Collection follow-ups:** COBIx's answer on #3229 (comment 6866973526) for the four dead catalog
+4. **College Data Collection follow-ups:** COBIx's answer on #3229 (comment 6866973526) for the four dead catalog
    links (Copper Mountain, Cosumnes River, El Camino, Citrus); the builder's eLumen constant to `OBJECTIVES_BY_SYSTEM`;
    `#commons/data` into `a11y.config.js`; MIS course matches and COE regional demand.
-4. **Exhibits Review:** a title cleared in another browser tab reopens only on reload (COBIx's open point on #3260).
-5. **The `cpl_memory` receipt** `kb/receipts/cpl_memory_s649_rows_2026-11-14.sql`: confirm it is marked RUN; if not,
+5. **Exhibits Review:** a title cleared in another browser tab reopens only on reload (COBIx's open point on #3260).
+6. **The `cpl_memory` receipt** `kb/receipts/cpl_memory_s649_rows_2026-11-14.sql`: confirm it is marked RUN; if not,
    run it.
-6. **The side session's ledger:** read what SkyOriole-B sent; #3267 and #3268 merge on its own gates.
+7. **The side session's ledger:** read what SkyOriole-B sent; #3267 and #3268 merge on its own gates.
 
 Then Rule 8's `cpl_memory` query, the three-repo check, the highest-numbered handoff, `list_sessions` if you have it,
 `df -h /`, `git worktree list`, and the issues COBIx opened or commented on today, checked against this list. Read the
@@ -46,10 +48,10 @@ anything it names. Before any merge, read COBIx from the last comment (`perPage`
 
 ## If you are the scheduled session (the CPL Queue routine)
 
-**Safe unattended, in this order,** each under Rule 10 and its playbook: *First things* 1, 2, 3 (only what has a
-committed source), 4, 5; the display go of 2026-10-10 stands for every college, and a merge that publishes waits on
-COBIx's spot-check. **Never run by a session without his word:** anything on Sheet 195 cards 2 to 5 (the BUSI row
-delete included); #3250; the four held re-clustering cases; the CVMA rows (a person's rows); anything on the
+**Safe unattended, in this order,** each under Rule 10 and its playbook: *First things* 1, 2 (Sam answered those
+cards), 3, 4 (only what has a committed source), 5, 6; the display go of 2026-10-10 stands for every college, and a merge that publishes waits on
+COBIx's spot-check. **Never run by a session without his word:** anything beyond what his Sheet 195 answers say;
+anything on the
 `CLAUDE.md` hold list. #2894 is his.
 
 ## You are the conductor
@@ -94,7 +96,8 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 | #3265 `claude/slo-objectives-rccd` | draft; the Riverside read on the runner | dry run and live count, then `.load` |
 | this checkpoint, `claude/checkpoint-s649` | open | merge on green |
 | #3267, #3268 (side session SkyOriole-B) | open | its own gates |
-| #3250 `claude/harvest-set-step-standing-s648` | draft, Sam's | Sheet 195 card 5 |
+| #3250 `claude/harvest-set-step-standing-s648` | closed 01:21Z (Sam, Sheet 195 card 5) | none |
+| `claude/reclustering-busi-honors-s649`, `claude/cvma-three-rows-s649` | drafts being prepared | Rule 10 applies |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
 | merged: #3260 `dc4ba840` (23:53Z), #3263 `ac8dfb2f` and #3259 `bab40263` (00:10Z), #3269 `88e96c5f` (00:50Z), #3266 `be0a7319`, #3261 `58d46cc4` and #3262 `32bd5742` (01:06Z) | merged on green | none |
 
@@ -150,6 +153,12 @@ revise; Sheet 194's Las Positas card is closed there, answered by his own saves 
 Honors' reach and the four held cases. **3** *Needs your word*: delete the title-matching bot's BUSI M10XW row.
 **4** the three CVMA rows. **5** draft #3250 (merge or close). #3217 stays parked.
 
+**Sam answered Sheet 195 at 01:18Z 2026-11-14 (Complete pressed;** `cpl_memory` `sam-sheet-195-answers-2026-11-14`):
+card 1 as proposed; card 2 *Take every recommendation* (Honors: M-IDs only; keep AJ 160, MUS 130 and REAL; MATH
+M1044 after the MAP team settles it); card 3 *Remove the row* (BUSI M10XW); card 4 *Fix both, remove the Water
+Treatment row*; card 5 *Close it, keep Sheet 82* (#3250 closed 01:21Z). Nothing applied yet; the lanes' NEEDS SAM
+markers leave in the PRs that carry the answers out.
+
 ## Open work, in order (from the lanes' NEXT lines)
 
 1. **`program-requirements-harvest`:** (4) the objectives reread (First things 1); (1) COBIx's three Glendale
@@ -175,7 +184,10 @@ under 20,000 bytes) and `program-requirements-harvest`; the lessons docs (each l
 sections to `docs/commons_lessons_archive.md`, `docs/program_requirements_harvest_lessons_archive_5.md` and
 `docs/exhibit_canonicalization_lessons_archive.md`); `conductor_mode.md`'s S649 lessons; the run logs
 `program-requirements` (headline 20,282 active, 14,594 complete, 118 colleges; the harvest row; `next_run_at`
-06:12Z), `exhibit`, `course`; the index; the memory receipt (not run by the worker). **Skipped, with reason:** the
+06:12Z), `exhibit`, `course`; the index; the memory receipt (RUN by the conductor); the vault (CPLBrain#783,
+merged `c9acf1e2`: the session note, the braindump, Sheet 195's source, the wiki touch). After the checkpoint,
+`kb/status/commons_data.json` was rebuilt on this branch: #3261 built it before #3262 merged, so `main`'s lint read it
+stale by one program (15,835 to 15,836 passing). **Skipped, with reason:** the
 `CLAUDE.md` sheet pointer (set to Sheet 195, byte-neutral); the pipeline view (no
 roadmap row or auditor count moved); `kb/README.md` and `README.md` (no structure change); a new KB note (nothing
 crossed the bar).
@@ -184,5 +196,9 @@ crossed the bar).
 
 Every PR subscription was dropped as it was created; the artifact watch on Sheet 194 and the one on Sheet 195 are the
 conductor's to drop at sign-off.
+
+## Lesson after the checkpoint
+
+Merging #3262 right after #3261 without rebuilding #3261's status file left `kb/status/commons_data.json` stale on `main` (check 14 of `tests/commons_data_status_build_test.py`). When two merges both feed a generated file, rebuild it on the newer `main` before the second merge, or run its `--check` there.
 
 Greetings, you are SkyPlover (Session 650), see SkyOriole's handoff — `docs/session_650_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_650_handoff.md) — let's keep rolling with our queue.
