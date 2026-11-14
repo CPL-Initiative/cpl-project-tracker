@@ -1,0 +1,9 @@
+{"schema":1,"college":"Woodland Community College","slug":"woodland_community","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"cn":"10993","title":"Arts and Humanities","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"37114","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"19237","title":"Natural Sciences","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"10997","title":"Social and Behavioral Sciences","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
+{"cn":"32345","title":"Mathematics","award":"A.S. T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=81"},
+{"cn":"35370","title":"Anthropology","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=108"},
+{"cn":"19224","title":"Early Childhood Education","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=142"}
+]}

@@ -90,11 +90,11 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 
 - **Group:** Harvested
 - **Stage:** Scheduled
-- **Purpose:** Course student learning outcomes as printed, for outcomes-first matching of CPL and courses.
+- **Purpose:** Course student learning outcomes as printed, for outcomes-first matching of CPL and courses. Collected from each course outline of record (COR) in the same read as the course objectives below (Sam, 2026-11-13: *"they should be collected when slos are collected"*).
 - **Owner / steward:** The college (SLO coordinator, curriculum office). Systems: eLumen, CurriQunet/Meta, Coursedog and others.
 - **Grain:** One row per college, course, source page and outcome block. A course is one college and code key, the code uppercased with its spaces and hyphens removed ("ANTH C141" and "ANTHC 141" are one course; an empty key is none), and an SLO matches a course on that key. The harvest row (`scripts/queue_status.py`) and the Commons data dashboard (`kb/_commons_data_live.py`) both count this way (`d-course-key-normalized-s648`).
-- **Refresh:** The nightly SLO read (step 11 of the scheduled sessions), colleges picked by `scripts/next_slo_colleges.py`; `kb/course_outcomes/queue.json` skips the none, held and parser colleges.
-- **How we procure or connect today:** The course-outline reader writes `kb/course_outcomes/<slug>/read_<run>_pNofM.json`, and `course_outcomes_load()` loads it (insert-only, service role).
+- **Refresh:** The nightly SLO and objectives read (step 11 of the scheduled sessions), colleges picked by `scripts/next_slo_colleges.py`; `kb/course_outcomes/queue.json` skips the none, held and parser colleges.
+- **How we procure or connect today:** The course-outline reader writes `kb/course_outcomes/<slug>/read_<run>_pNofM.json` with the SLOs and the objectives of each page (`collects`: `slo`, `objective`), and `course_outcomes_load()` loads it (insert-only, service role).
 - **Access and terms:** Public outline pages only; a system behind a sign-in is a college ask.
 - **Planned improvements:** Parser fixes for the parser colleges; feed derived descriptions (#3219); spot-check outcomes against the outline.
 - **Confidence method:** Limited until a person spot-checks outcomes; a machine read with fingerprints.
@@ -131,16 +131,16 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 ### Course objectives
 
 - **Group:** Harvested
-- **Stage:** Connected
-- **Purpose:** Course objectives from the course outline (COR), the second input to outcomes matching and derived descriptions.
+- **Stage:** Scheduled
+- **Purpose:** Course objectives from the course outline (COR), the second input to outcomes matching and derived descriptions. A standing part of every SLO read (Sam, 2026-11-13: *"add objectives to the collection list of data from cors. they should be collected when slos are collected"*).
 - **Owner / steward:** The college (curriculum office).
-- **Grain:** Per course outline block.
-- **Refresh:** After a college's SLO read lands.
-- **How we procure or connect today:** The course-outline reader; `kb/_course_outcomes_load.py` adds them with kind `objective`.
+- **Grain:** One row per college, course, source page and objectives block, as Course SLOs.
+- **Refresh:** In the same read as the college's SLOs (step 11 of the scheduled sessions). The colleges read before the reader took objectives (S584) are read once more in the order of `kb/course_outcomes/objectives_reread_plan.json`.
+- **How we procure or connect today:** The course-outline reader files them beside the SLOs on every read path (`parse_page`); `kb/_course_outcomes_load.py` adds them with kind `objective` (`--kind objective` for the reread). Which outline systems print them: `OBJECTIVES_BY_SYSTEM` in `kb/_course_outcomes_read.py` (curriQunet and the Coast district's CourseLeaf outline do; most eLumen catalog pages do not).
 - **Access and terms:** Public outline pages.
-- **Planned improvements:** Read objectives in the same pass as SLOs; per-college parser status in `queue.json`.
+- **Planned improvements:** The reread of the ten colleges read before S584; per-college parser status in `queue.json`.
 - **Confidence method:** Limited.
-- **Evidence in the repo:** `kb/_course_outcomes_load.py`, `kb/migrations/2026-11-05_course_outcomes_kind.sql`.
+- **Evidence in the repo:** `kb/_course_outcomes_read.py`, `kb/_course_outcomes_load.py`, `kb/migrations/2026-11-05_course_outcomes_kind.sql`, `kb/course_outcomes/objectives_reread_plan.json`, `tests/course_outcomes_objectives_standing_test.py`.
 
 | Field | Type | Definition | Key / join |
 |---|---|---|---|
