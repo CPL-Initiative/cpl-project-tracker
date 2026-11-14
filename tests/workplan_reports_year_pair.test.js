@@ -78,6 +78,16 @@ const P24 = {
   kpi_metric: "55", kpi_unit: "",
   kpi_goal_2526: "10", kpi_goal_2627: "20", kpi_goal_2728: "30", kpi_goal_2829: "40", kpi_goal_2930: "50",
 };
+// 3.1: a live row as the build stamps it: this year's Current is the live KPI
+// (48,142); kpi_metric still holds the stale card figure (43,630).
+const P31 = {
+  id: "3.1", name: "Students Served",
+  activity: "Activity 3: Students Served", status: "On Track", pct: 50, desc: "",
+  lead: "", update: "", update_date: "", budget: "", budget_source: "",
+  kpi_metric: "43,630", kpi_unit: "students",
+  kpi_goal_2526: "40,000", kpi_goal_2627: "90,000", kpi_goal_2728: "200,000", kpi_goal_2829: "300,000", kpi_goal_2930: "380,000",
+  kpi_current_2526: "45,000", kpi_current_2627: "47,000", kpi_current_2728: "48,142", kpi_current_2829: "", kpi_current_2930: "",
+};
 const DATA = {
   last_updated: "November 14, 2026",
   workplan_fy: "2027-28",
@@ -88,7 +98,7 @@ const DATA = {
     { activity_id: "Activity 2", activity_name: "Activity 2: Faculty Workgroups & Credit Recommendations", kpis: [] },
     { activity_id: "Activity 3", activity_name: "Activity 3: Students Served", kpis: [] },
   ],
-  projects: [P21, P24, P39],
+  projects: [P21, P24, P31, P39],
 };
 
 // What the report must say, and what it said before (or would say if it read
@@ -192,6 +202,18 @@ const WRONG = ["Stretch: 22,000", "9,999/", "288/600", "288/400", "1,900/3,000",
     prompt.indexOf("Goal 27-28: 30 | Stretch: N/A | Current 27-28: 55") >= 0);
   check("prompt: no other year's pair is sent as this year's",
     prompt.indexOf("Goal 25-26") < 0 && prompt.indexOf("Goal 26-27") < 0);
+  // One Current per row: the KPI line names what is counted and carries no figure.
+  function block(id) {
+    const parts = prompt.split("\n- **");
+    return parts.filter(function (b) { return b.indexOf(id + " ") === 0 || b.indexOf("- **" + id + " ") >= 0; })[0] || "";
+  }
+  const b21 = block("2.1"), b31 = block("3.1");
+  check("prompt: 2.1 (blank this year) carries no stale kpi_metric figure (288)",
+    b21.length > 0 && b21.indexOf("288") < 0);
+  check("prompt: 3.1 (live) carries the live Current and not the stale card figure",
+    b31.indexOf("Current 27-28: 48,142") >= 0 && b31.indexOf("43,630") < 0);
+  check("prompt: 3.1 carries exactly one Current figure",
+    (b31.match(/48,142/g) || []).length === 1 && b31.indexOf("KPI: students") >= 0);
   check("fiscalYearPair: with no workplan_fy, today's fiscal year (Nov 2026 -> 26-27)",
     RG.fiscalYearPair(P39, "", new Date(2026, 10, 14)).year === "26-27");
 

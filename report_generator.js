@@ -488,7 +488,9 @@
             return '- **' + p.id + ' ' + p.name + '** (' + p.activity + ')\n'
                 + '  Status: ' + p.status + ' | ' + p.pct + '% complete\n'
                 + '  Description: ' + p.desc + '\n'
-                + '  KPI: ' + (p.kpi_metric || 'N/A') + ' ' + (p.kpi_unit || '') + '\n'
+                // The KPI line names what is counted; its figure is the year line's
+                // Current alone (S649), so the prompt never carries two Currents.
+                + '  KPI: ' + (p.kpi_unit || 'N/A') + '\n'
                 + (p.count_note ? '  How it is counted: ' + p.count_note + '\n' : '')
                 + '  Goal ' + fy.year + ': ' + (fy.goal || 'N/A') + ' | Stretch: ' + (fy.stretch || 'N/A')
                 + ' | Current ' + fy.year + ': ' + (fy.current || 'N/A') + '\n'
