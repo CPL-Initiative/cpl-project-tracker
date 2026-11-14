@@ -1,7 +1,9 @@
 -- Rollback for 2026-11-14_s653b_workplan_goals_drop_current.sql: adds `current` back to public.workplan_goals as
 -- numeric and restores every value the forward run recorded.
--- The forward run's receipt (kb/receipts/migration_s653b_workplan_goals_drop_current_<run>.json, `response`)
--- holds `before`, every row's id and `current` where it was not null. The VALUES list below is what the
+-- The before-values sit in the forward run's receipt: kb/receipts/migration_<name>_<run>.json, where <name> is
+-- the name in kb/migrations/.apply and <run> the GitHub run id, or the version stamp when there is none
+-- (scripts/supabase_migrate.py names it so). Its `response` key holds the API's response body; inside it,
+-- `before` lists every row's id and `current` where it was not null. The VALUES list below is what the
 -- S653b conductor measured live at 18:40Z to 18:46Z 2026-11-14: one row, id 3, value 2. Before running this,
 -- replace the list with the receipt's `before` when the two differ; the receipt wins.
 -- A row whose id no longer exists is skipped. The column comes back at the end of the table, with no comment;

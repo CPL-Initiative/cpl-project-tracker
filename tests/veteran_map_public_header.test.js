@@ -53,6 +53,11 @@ const imgs = hdr ? [...hdr.querySelectorAll(".cplh-logo img")] : [];
 check("the light and dark logos are embedded, loading nothing from another host",
   imgs.length === 2 && imgs.every((i) => /^data:image\/png;base64,/.test(i.getAttribute("src")) && i.getAttribute("alt")),
   imgs.map((i) => (i.getAttribute("src") || "").slice(0, 30)).join(" | "));
+// S653b: the 480px copies, not the 1115px ones (about 58 KB lighter), and no vault path in the public page.
+const widths = imgs.map((i) => { const b = Buffer.from((i.getAttribute("src") || "").replace(/^data:image\/png;base64,/, ""), "base64");
+  return b.slice(1, 4).toString() === "PNG" ? b.readUInt32BE(16) : -1; });
+check("both embedded logos are the 480px copies", widths.length === 2 && widths.every((w) => w === 480), widths.join(","));
+check("the public page names no vault path", !/CPLBrain|COG-second-brain/.test(html), "a comment names the vault");
 const anchors = hdr ? [...hdr.querySelectorAll(".cplh-nav a")] : [];
 for (const [word, href] of Object.entries(LINKS)) {
   const a = anchors.find((x) => x.textContent.trim() === word);

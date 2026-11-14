@@ -141,10 +141,13 @@ FONTS = "\n".join(
 # build and CI's --check need no vault. Three departures, each for this page: the header's
 # tokens alias the map's First Light tokens (so its dark is the map's dark), its row is the
 # map's 1320px measure, and it is hidden under ?embed=1, where COBI's Military Partnerships
-# frame shows the map bare. The logos are the tracker's copies in sierra/, embedded as data
-# URIs, so the page still loads nothing from the internet. tests/veteran_map_public_header.test.js
+# frame shows the map bare. The logos are the tracker's 480px copies in sierra/ (the vault's
+# logo-navy.png and logo-white.png, committed as cpl-initiative-logo-navy-480.png and
+# cpl-initiative-logo-480.png so the build needs neither the vault nor an image library),
+# embedded as data URIs, so the page still loads nothing from the internet. The block's
+# opening comment names no vault path: the page is public. tests/veteran_map_public_header.test.js
 # holds the links, the embed and (with the vault beside the tracker) the copy against its source.
-PUBLIC_HEADER = r"""<!-- cpl-public-header:start (copied by veteran-sprint-map/build_selfcontained.py from CPLBrain/04-projects/cpl-initiative/public-header/header.html) -->
+PUBLIC_HEADER = r"""<!-- cpl-public-header:start -->
 <style>
 .cplh{--cplh-bg:var(--surface);--cplh-line:var(--border);--cplh-fg:var(--body);--cplh-muted:var(--muted);--cplh-link:var(--cobalt);--cplh-strong:var(--ink)}
 .cplh{position:relative;z-index:50;background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:var(--font);font-size:.95rem;line-height:1.4}
@@ -262,8 +265,8 @@ def png(name):
     with open(os.path.join(HERE, "..", "sierra", name), "rb") as f:
         return "data:image/png;base64," + base64.b64encode(f.read()).decode("ascii")
 
-PUBLIC_HEADER = (PUBLIC_HEADER.replace("__LOGO_NAVY__", png("cpl-initiative-logo-navy.png"))
-                 .replace("__LOGO_WHITE__", png("cpl-initiative-logo.png")))
+PUBLIC_HEADER = (PUBLIC_HEADER.replace("__LOGO_NAVY__", png("cpl-initiative-logo-navy-480.png"))
+                 .replace("__LOGO_WHITE__", png("cpl-initiative-logo-480.png")))
 
 
 HTML = r"""<!DOCTYPE html>

@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 952,
+  "file_datasets": 985,
   "external_services": 195,
   "consumers": 594,
   "workflows": 72,
@@ -1350,7 +1350,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 190
+     "line": 193
     },
     {
      "id": "worker:cloudflare-worker-proxy.js",
@@ -1628,7 +1628,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 194
+     "line": 197
     },
     {
      "id": "worker:cloudflare-worker-proxy.js",
@@ -1736,7 +1736,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 195
+     "line": 198
     }
    ],
    "main_committers": []
@@ -3498,7 +3498,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 181
+     "line": 184
     }
    ],
    "main_committers": []
@@ -4471,7 +4471,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 483
+     "line": 486
     }
    ],
    "main_committers": []
@@ -7400,7 +7400,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 864
+     "line": 978
     },
     {
      "id": "page:funding-model/index.html",
@@ -8687,7 +8687,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 866
+     "line": 980
     },
     {
      "id": "script:tools/source_cpl_stories.mjs",
@@ -8719,7 +8719,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 867
+     "line": 981
     }
    ],
    "served": true,
@@ -8732,7 +8732,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 865
+     "line": 979
     }
    ],
    "served": true,
@@ -8745,7 +8745,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 871
+     "line": 985
     }
    ],
    "served": true,
@@ -8758,7 +8758,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 872
+     "line": 986
     }
    ],
    "served": true,
@@ -8849,7 +8849,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 869
+     "line": 983
     },
     {
      "id": "script:fact-sheet/_build_statewide_recs.py",
@@ -8923,7 +8923,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 870
+     "line": 984
     }
    ],
    "served": true,
@@ -21611,7 +21611,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 868
+     "line": 982
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
@@ -23460,7 +23460,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 883
+     "line": 997
     },
     {
      "id": "page:funding-model/index.html",
@@ -24114,6 +24114,45 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/annual_goals_activity_grouping_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/annual_goals_contrast_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/annual_goals_reflect_all_projects_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/ap_official_titles_test.py": {
    "consumers": [
     {
@@ -24153,7 +24192,33 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/authority_codes_seed_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/authority_recode_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/authority_recode_dryrun_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24192,7 +24257,33 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/budget_ledger_structure_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/budget_section_first_light_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/ccc_metric_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24758,7 +24849,33 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/cpl_pathway_membership_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/cred_rename_fold_issuer_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/cred_rename_row_move_receipt_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24954,6 +25071,19 @@
    "main_committers": []
   },
   "file:tests/ctdl_exchange_seed_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/custom_report_duplicate_view_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -25200,6 +25330,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/every_test_runs_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/exhibit_reanalysis_checks_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/exhibit_reanalysis_jev_test.py": {
    "consumers": [
     {
@@ -25317,6 +25473,58 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/funding_config_edit_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/funding_consolidated_measures_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/funding_cpl_types_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/funding_cr_backlog_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/funding_name_resolver_test.py": {
    "consumers": [
     {
@@ -25344,6 +25552,19 @@
    "main_committers": []
   },
   "file:tests/funding_origination_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/funding_portal_applied_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -25754,6 +25975,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/mojibake_repair_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/mq_title5_rename_test.py": {
    "consumers": [
     {
@@ -25832,6 +26066,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/powershell_ascii_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/prefix_fold_apply_test.py": {
    "consumers": [
     {
@@ -25859,6 +26106,19 @@
    "main_committers": []
   },
   "file:tests/probe_lifecycle_checks_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_course_graph_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -25950,6 +26210,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_extract_halt_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_extract_schema_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -26131,6 +26404,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/row_audit_subject_outlier_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/row_audit_top_source_score_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/run.js": {
    "consumers": [
     {
@@ -26183,6 +26482,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/standards_2_ruled_renames_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/standards_ruled_renames_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/statewide_cid_hold_test.py": {
    "consumers": [
     {
@@ -26223,6 +26548,19 @@
    "main_committers": []
   },
   "file:tests/stop_hook_git_check_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/subjects_list_recode_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -26313,7 +26651,33 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/top_gate_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/uc_cur_promote_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/uc_cur_zscheme_dryrun_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -26365,6 +26729,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/veteran_jst_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/veteran_sprint_jst_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/video_context_test.py": {
    "consumers": [
     {
@@ -26404,6 +26794,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/workplan_charts_zero_ladder_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/workplan_description_drafts_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/workplan_goals_current_column_guard_test.py": {
    "consumers": [
     {
@@ -26431,6 +26847,19 @@
    "main_committers": []
   },
   "file:tests/zband_retire_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/zband_retire_dryrun_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -27665,14 +28094,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 784
+     "line": 787
     },
     {
      "id": "script:veteran-sprint-map/build_selfcontained.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 784
+     "line": 787
     }
    ],
    "served": true,
@@ -33910,6 +34339,39 @@
     "kb/credential_aliases.py",
     "tests/credential_title_resolver_test.py",
     "tests/credential_title_resolver_single_source_test.py",
+    "tests/every_test_runs_test.py",
+    "tests/annual_goals_activity_grouping_test.py",
+    "tests/annual_goals_contrast_test.py",
+    "tests/annual_goals_reflect_all_projects_test.py",
+    "tests/workplan_charts_zero_ladder_test.py",
+    "tests/workplan_description_drafts_test.py",
+    "tests/budget_ledger_structure_test.py",
+    "tests/ccc_metric_test.py",
+    "tests/funding_config_edit_apply_test.py",
+    "tests/funding_consolidated_measures_test.py",
+    "tests/funding_cpl_types_test.py",
+    "tests/funding_cr_backlog_test.py",
+    "tests/funding_portal_applied_test.py",
+    "tests/standards_ruled_renames_test.py",
+    "tests/standards_2_ruled_renames_test.py",
+    "tests/cred_rename_row_move_receipt_test.py",
+    "tests/exhibit_reanalysis_checks_test.py",
+    "tests/authority_codes_seed_test.py",
+    "tests/authority_recode_dryrun_test.py",
+    "tests/zband_retire_dryrun_test.py",
+    "tests/uc_cur_zscheme_dryrun_test.py",
+    "tests/subjects_list_recode_test.py",
+    "tests/top_gate_test.py",
+    "tests/row_audit_subject_outlier_test.py",
+    "tests/row_audit_top_source_score_test.py",
+    "tests/cpl_pathway_membership_test.py",
+    "tests/program_course_graph_test.py",
+    "tests/program_requirements_extract_schema_test.py",
+    "tests/veteran_jst_test.py",
+    "tests/veteran_sprint_jst_test.py",
+    "tests/custom_report_duplicate_view_test.py",
+    "tests/mojibake_repair_test.py",
+    "tests/powershell_ascii_test.py",
     "tests/partner_crosswalk_test.py"
    ],
    "adds": [],
