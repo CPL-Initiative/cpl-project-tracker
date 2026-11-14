@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 985,
+  "file_datasets": 986,
   "external_services": 195,
   "consumers": 594,
   "workflows": 72,
@@ -22629,7 +22629,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 65
+     "line": 66
     }
    ],
    "served": false,
@@ -26444,6 +26444,19 @@
    "main_committers": []
   },
   "file:tests/second_reader_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/service_key_environment_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30734,7 +30747,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 58
+     "line": 59
     }
    ],
    "main_committers": []
@@ -30766,7 +30779,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 73
+     "line": 74
     }
    ],
    "main_committers": []
@@ -34220,6 +34233,7 @@
     "tests/commons_data_live_test.py",
     "kb/_build_commons_status.py",
     "tests/apply_concurrency_test.py",
+    "tests/service_key_environment_test.py",
     "tests/docket_rulings_test.py",
     "tests/exhibits_review_build_test.py",
     "tests/title_in_use_test.py",
