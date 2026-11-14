@@ -3651,7 +3651,8 @@ for s in rcc_src:
     rcc_seen.add(s["source"]["url"])
     body = s["source"]["h1"] + "\n" + "\n".join(_printed(c) + " Course" for c in s["codes_found"]) + "\nTotal 18 units"
     rcc_pages.append(page(s["source"]["url"], s["source"]["h1"], body))
-rcc_own = {"30581": "/6053", "32658": "/6040", "32813": "/Anthro_ADT", "30578": "/5928", "31561": "/5960"}
+# Communication Studies 2.0 (42892) owns /5928; the plain 30578 filed it wrongly (second reader, #3324).
+rcc_own = {"30581": "/6053", "32658": "/6040", "32813": "/Anthro_ADT", "42892": "/5928", "31561": "/5960"}
 rcc_progs = [{"control_number": s["control_number"], "title": s["title"], "award": s["award"],
               "closed_list": [{"code": _printed(c)} for c in s["codes_found"]]}
              for s in rcc_src if s["control_number"] in rcc_own]
@@ -3673,28 +3674,119 @@ check(not C.ge_page_names_program({"h1": "Psychology for Transfer - Associate in
                                   {"title": "Psychology", "award": "A.A- T Degree"}),
       "a degree's page names its own program, never a sibling's")
 
-# The second reader's findings on #3324 (S653). A transfer degree's page is never its local sibling's: Moreno Valley's
-# Administration of Justice A.S. (30150) and A.S.-T (37196) share a title, and the A.S. took MAS643, the A.S.-T's page.
-mv_head = "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)"
-mv_titles = ["Administration of Justice", "Administration of Justice", "Art History", "History"]
-check(not C.ge_page_names_program({"h1": mv_head}, {"title": "Administration of Justice", "award": "A.S. Degree"}, mv_titles)
-      and C.ge_page_names_program({"h1": mv_head}, {"title": "Administration of Justice", "award": "A.S. T Degree"}, mv_titles),
-      "a page that says it is a transfer degree is a candidate for the transfer award only (30150 and 37196)")
-check(not C.ge_page_names_program({"h1": "Music - Associate in Arts (CalGETC)"}, {"title": "Music", "award": "A.A- T Degree"})
-      and C.ge_page_names_program({"h1": "Music - Associate in Arts (CalGETC)"}, {"title": "Music", "award": "A.A. Degree"}),
-      "a page that names a local award is that award's only")
-# A longer title the college lists takes the heading: "History" never reads "Art History", and a tie refuses.
-ah = {"h1": "Art History - Associate in Arts for Transfer (ADT) - MAA743 (Cal-GETC)"}
-check(not C.ge_page_names_program(ah, {"title": "History", "award": "A.A- T Degree"}, mv_titles)
-      and C.ge_page_names_program(ah, {"title": "Art History", "award": "A.A- T Degree"}, mv_titles),
-      "the Art History page is Art History's, never History's, where the college lists both")
-sj = {"h1": "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074 (CalGETC)"}
-check(not C.ge_page_names_program(sj, {"title": "American Studies", "award": "A.A- T Degree"},
-                                  ["American Studies", "Social Justice: African American Studies"]),
-      "American Studies never reads a Social Justice page that names more of the heading")
+# The second reader's findings on #3324 (S653): ge_page_owner() gives a pattern's page to the one listed program
+# every component its heading prints agrees with (title words, award, version), or to none.
+def _gp(*rows):
+    return [{"control_number": cn, "title": t, "award": a} for cn, t, a in rows]
+
+
+mv_list = _gp(("30150", "Administration of Justice", "A.S. Degree"),
+              ("30151", "Administration of Justice", "Certificate of Achievement requiring 16S/24Q"),
+              ("37196", "Administration of Justice", "A.S. T Degree"),
+              ("37533", "Art History", "A.A- T Degree"), ("33240", "History", "A.A- T Degree"),
+              ("43792", "Physics", "A.S. T Degree"))
+mv_head = {"h1": "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)"}
+check((C.ge_page_owner(mv_head, mv_list) or {}).get("control_number") == "37196",
+      "award: a page that says it is a transfer degree goes to the A.S.-T, never the A.S. (30150) or the certificate")
+check((C.ge_page_owner({"h1": "Music - Associate in Arts (CalGETC)"},
+                       _gp(("1", "Music", "A.A- T Degree"), ("2", "Music", "A.A. Degree"))) or {}).get("control_number") == "2",
+      "award: a page that names a local award goes to that award")
+check((C.ge_page_owner({"h1": "Art History - Associate in Arts for Transfer (ADT) - MAA743 (Cal-GETC)"}, mv_list) or {})
+      .get("control_number") == "37533", "title: the Art History page is Art History's, never History's")
+check((C.ge_page_owner({"h1": "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074 (CalGETC)"},
+                       _gp(("31163", "American Studies", "A.A- T Degree"),
+                           ("43897", "Social Justice: African American Studies", "A.A- T Degree"))) or {})
+      .get("control_number") == "43897",
+      "title: the Social Justice page goes to the listed title naming more of it, never American Studies")
+cs = _gp(("30578", "Communication Studies", "A.A- T Degree"), ("42892", "Communication Studies 2.0", "A.A- T Degree"))
+check((C.ge_page_owner({"h1": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)"}, cs) or {})
+      .get("control_number") == "42892"
+      and (C.ge_page_owner({"h1": "Communication Studies - Associate in Arts for Transfer (ADT) - AA600 (CalGETC)"}, cs) or {})
+      .get("control_number") == "30578",
+      "version: a 2.0 heading goes to the 2.0 program, a heading with none to the sibling with none")
+check((C.ge_page_owner({"h1": "Physics 2.0 - Associate in Science for Transfer (ADT) - MAS1108 (Cal-GETC)"}, mv_list) or {})
+      .get("control_number") == "43792",
+      "version: Moreno Valley's one Physics, listed with no version, keeps its 2.0 page")
+check((C.ge_page_owner({"h1": "Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24"},
+                       _gp(("32948", "Kinesiology", "A.A- T Degree"))) or {}).get("control_number") == "32948",
+      "version: a PDF window's unit counts are no version")
 check(C.ge_pattern("California General Education Transfer Curriculum")
-      and C.ge_pattern("Intersegmental General Education Transfer Curriculum"),
-      "the patterns under their long names (Crafton Hills, Victor Valley) are patterns")
+      and C.ge_pattern("Intersegmental General Education Transfer Curriculum")
+      and C.ge_pattern("Intersegmental GE Transfer Curriculum")
+      and C.ge_pattern("California State University General Education"),
+      "the patterns under their long names (Crafton Hills, Victor Valley, Taft, Skyline) are patterns")
+
+# HAND-CHECKED. Every filed pattern page that more than one listed program could own (programs whose title
+# words the heading names), with its owner written from the heading's own text: the award code or words (AA-T,
+# AS-T, "for Transfer", AS, AA), the version ("2.0") and the full title. Read from the headings, not from the rule
+# or the filed claim (the filed claim is wrong for Riverside City's four 2.0 pages and Moreno Valley's MAS643).
+# 24 pages: 13 award sibling sets, 4 version sibling sets, 7 longer-title sets (Art History, Social Justice).
+GE_OWNERS = {
+    # award siblings: the heading prints AS or AA, a degree, never the certificate of the same title
+    ("los_angeles_pierce", "Equine Science AS P002809C"): "02809",
+    ("los_angeles_pierce", "Administrative Professional AA P002820C"): "02820",
+    ("los_angeles_pierce", "Legal Office Procedures AA P002821C"): "02821",
+    ("los_angeles_pierce", "Numerical Control Programming AS P002831C"): "02831",
+    # award siblings: the heading prints AA-T or AS-T, the transfer degree
+    ("los_angeles_trade_technical", "English T032905G AA-T"): "32905",
+    ("los_angeles_valley", "Geography AA-T V032850G"): "32850",
+    ("los_angeles_valley", "Geology AS-T V036004H"): "36004",
+    ("moreno_valley", "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643"): "37196",
+    ("moreno_valley", "Early Childhood Education - Associate in Science for Transfer (ADT) - MAS530"): "31220",
+    ("norco", "Administration of Justice - Associate in Science for Transfer (ADT) - NAS643"): "35853",
+    ("riverside_city", "Early Childhood Education - Associate in Arts for Transfer (ADT) - AS530"): "31218",
+    ("riverside_city", "Administration of Justice - Associate in Science for Transfer (ADT) - AS643"): "31456",
+    ("riverside_city", "Music - Associate in Arts for Transfer (ADT) - AA705"): "32075",
+    # version siblings: the heading prints 2.0
+    ("riverside_city", "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059"): "42892",
+    ("riverside_city", "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107"): "46237",
+    ("riverside_city", "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108"): "46317",
+    ("riverside_city", "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002"): "41364",
+    # longer titles: the heading's full title, never History or American Studies
+    ("los_angeles_valley", "Art History AA-T V032117G"): "32117",
+    ("moreno_valley", "Art History - Associate in Arts for Transfer (ADT) - MAA743"): "37533",
+    ("norco", "Art History - Associate in Arts for Transfer (ADT) - NAA743"): "37232",
+    ("riverside_city", "Art History - Associate in Arts for Transfer (ADT) - AA743"): "32912",
+    ("riverside_city", "Social Justice Studies: Asian American Studies - Associate of Arts for Transfer (ADT) - AA1072"): "43695",
+    ("riverside_city", "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074"): "43897",
+    ("riverside_city", "Social Justice: Native American and Indigenous Studies - Associate in Arts for Transfer (ADT)"): "44469",
+}
+ge_seen, ge_two, ge_allow, ge_refuse = {}, [], set(), set()
+for _path in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "sources.json"))):
+    _slug = _path.split(os.sep)[-2]
+    _src = [s for s in json.load(open(_path)) if isinstance(s, dict)]
+    _progs = _gp(*[(s["control_number"], s.get("title"), s.get("award")) for s in _src])
+    _pages = {}
+    for s in _src:
+        _own = s.get("source") or {}
+        if _own.get("url") and C.ge_pattern_page(_own):
+            _pages.setdefault(_own["url"], _own)
+            if not C.ge_pattern(s.get("title")):
+                _p = next(p for p in _progs if p["control_number"] == s["control_number"])
+                (ge_allow if C.ge_page_names_program(_own, _p, _progs) else ge_refuse).add((_slug, s["control_number"]))
+    for _u, _pg in _pages.items():
+        _owners = [p["control_number"] for p in _progs if not C.ge_pattern(p["title"])
+                   and C.ge_page_names_program(_pg, p, _progs)]
+        if len(_owners) > 1:
+            ge_two.append((_slug, _u, _owners))
+        _head = _pg.get("h1") or _pg.get("title") or ""
+        for (_k, _start), _cn in GE_OWNERS.items():
+            if _k == _slug and _head.replace("\xa0", " ").startswith(_start):
+                ge_seen[(_k, _start)] = _owners
+check(ge_two == [], "no filed pattern page is allowed to two programs: %r" % ge_two[:3])
+check(len(ge_seen) == len(GE_OWNERS) == 24,
+      "every hand-checked sibling page is among the filed pages (%d of %d)" % (len(ge_seen), len(GE_OWNERS)))
+check(all(ge_seen.get(k) == [cn] for k, cn in GE_OWNERS.items()),
+      "each hand-checked sibling page goes to the owner its heading names: %r"
+      % [(k[0], k[1][:30], ge_seen.get(k), cn) for k, cn in GE_OWNERS.items() if ge_seen.get(k) != [cn]][:4])
+# Measured, not hand-checked: the filed claims on a pattern's page S646's rule refused whole (140), as the rule
+# reads them now. Moreno Valley's 30150 on MAS643 and Riverside City's 30578, 32692, 32745 and 33829 on their 2.0
+# siblings' pages are refused; so are five LA Trade-Tech PDF windows whose cut headings name too little.
+check(len(ge_allow) == 83 and len(ge_refuse) == 57,
+      "83 filed claims on a pattern's page allowed, 57 refused (%d, %d)" % (len(ge_allow), len(ge_refuse)))
+check({("moreno_valley", "30150"), ("riverside_city", "30578"), ("riverside_city", "32692"),
+       ("riverside_city", "32745"), ("riverside_city", "33829")} <= ge_refuse,
+      "the five wrong filed claims (30150 and the four 2.0 pages' plain siblings) are refused")
 mv_rs = [s for s in json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "moreno_valley", "sources.json")))
          if (s.get("source") or {}).get("url")]
 mv_pages = {}
@@ -3708,46 +3800,6 @@ check("MAS643" not in ((mv_given["30150"]["best"] or {}).get("heading") or "")
       and "MAS643" in ((mv_given["37196"]["best"] or {}).get("heading") or ""),
       "on Moreno Valley's filed pages the A.S.-T keeps MAS643 and the A.S. never takes it: %r"
       % {k: (mv_given[k]["best"] or {}).get("heading", "")[-26:] for k in ("30150", "37196")})
-
-# Self-recall over every college's filed sources (S653): each filed claim on a pattern's page, which S646's rule
-# refused whole. The new rule allows exactly these, each the program's own page; every other such claim stays
-# refused (a pattern's own page another program claimed, Moreno Valley's 30150 on MAS643, and five LA Trade-Tech PDF
-# windows whose cut headings name too little). A refiled capture that moves a claim updates this list.
-GE_ALLOWED = {"los_angeles_pierce": ["02809", "02820", "02821", "02831"],
-              "los_angeles_trade_technical": ["32905", "32948", "38883", "38966", "39216"],
-              "los_angeles_valley": ["32117", "32368", "32850", "32854", "36004"],
-              "moreno_valley": ["30584", "31220", "32142", "32156", "32265", "32266", "32638", "32639", "32660", "32941",
-                                "32946", "33240", "33953", "37196", "37440", "37533", "41635", "41670", "42794", "42828",
-                                "43792", "43882", "43884", "45447", "46200", "46236", "46532"],
-              "norco": ["30585", "33952", "35853", "37232", "44961", "44986"],
-              "riverside_city": ["30578", "30581", "31175", "31218", "31456", "31561", "31801", "32075", "32174", "32597",
-                                 "32658", "32692", "32745", "32813", "32912", "32938", "33021", "33218", "33229", "33829",
-                                 "33964", "37464", "37483", "38109", "38790", "40831", "41364", "41736", "41749", "41757",
-                                 "42892", "43695", "43896", "43897", "44155", "44363", "44469", "44865", "46237", "46317"]}
-ge_allow, ge_refuse, ge_cross = set(), set(), []
-for _path in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "sources.json"))):
-    _slug = _path.split(os.sep)[-2]
-    _src = [s for s in json.load(open(_path)) if isinstance(s, dict)]
-    _titles = [s.get("title") for s in _src]
-    _ge = {s["source"]["url"]: s["source"] for s in _src if (s.get("source") or {}).get("url")
-           and C.ge_pattern_page(s["source"])}
-    for s in _src:
-        if C.ge_pattern(s.get("title")):
-            continue
-        _prog = {"title": s.get("title"), "award": s.get("award")}
-        _own = s.get("source") or {}
-        if _own.get("url") and C.ge_pattern_page(_own):     # the claim, read on the page as it filed it
-            (ge_allow if C.ge_page_names_program(_own, _prog, _titles) else ge_refuse).add((_slug, s["control_number"]))
-        for _u, _pg in _ge.items():
-            if _u != _own.get("url") and C.ge_page_names_program(_pg, _prog, _titles):
-                ge_cross.append((_slug, s["control_number"], _pg.get("h1")))
-ge_expected = {(k, cn) for k, v in GE_ALLOWED.items() for cn in v}
-check(ge_allow == ge_expected and len(ge_allow) == 87,
-      "the filed claims on a pattern's page the rule allows are the 87 expected: extra %s, missing %s"
-      % (sorted(ge_allow - ge_expected)[:5], sorted(ge_expected - ge_allow)[:5]))
-check(len(ge_refuse) == 53 and ("moreno_valley", "30150") in ge_refuse,
-      "and 53 stay refused, Moreno Valley's 30150 on MAS643 among them (%d)" % len(ge_refuse))
-check(ge_cross == [], "no filed pattern page is allowed to a program other than the one that filed it: %r" % ge_cross[:4])
 
 # Two different current programs never share one page's list on a title tie alone (the S646 conductor's
 # ruling). Glendale's titles nest, and each pair tied on the longer title's page (capture 43366669415's

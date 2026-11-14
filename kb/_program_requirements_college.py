@@ -553,7 +553,10 @@ def heading_names_program(page: dict, program: dict) -> bool:
 GE_PATTERN = re.compile(r"\bcal[\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge\b|\bcsu[\s-]general[\s-]education\b|"
                         r"\bgeneral[\s-]education[\s-](?:breadth|pattern)|"
                         # the patterns under their long names (Crafton Hills, Victor Valley; S653)
-                        r"\b(?:california|intersegmental)[\s-]general[\s-]education[\s-]transfer[\s-]curriculum\b", re.I)
+                        r"\b(?:california|intersegmental)[\s-](?:general[\s-]education|ge)[\s-]transfer[\s-]curriculum\b|"
+                        # Taft's "Intersegmental GE Transfer Curriculum", Skyline's "California State University
+                        # General Education" (S653)
+                        r"\bcalifornia[\s-]state[\s-]university[\s-]general[\s-]education\b", re.I)
 
 
 def ge_pattern(text: str | None) -> bool:
@@ -567,47 +570,76 @@ def ge_pattern_page(pg: dict) -> bool:
     return any(ge_pattern(x) for x in (pg.get("code"), pg.get("h1"), pg.get("title"), path))
 
 
-def ge_page_names_program(pg: dict, program: dict, titles: list | None = None) -> bool:
-    """Whether a general education pattern's page heads itself with this program, the pattern's words set
-    aside (S653). Riverside City heads each transfer degree's own page with the degree and the pattern it
-    follows, "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)", and under the S646 rule each
-    of those degrees lost its own page (36 page_claimed in capture 43619958385). Three tests, all needed:
-    the heading's award, when it prints one, is the program's (a transfer degree's page is never its local
-    A.S.'s: Moreno Valley's Administration of Justice A.S. took MAS643, the A.S.-T's page, in the second
-    reader's run); the heading names every word of the program's title (ncl_words, decorations and the
-    pattern set aside); and no other listed program's title (titles) names more of the heading's words, a
-    tie refusing ("History" on "Art History AA-T", "American Studies" on "Social Justice: African American
-    Studies"). A pattern's own page ("Cal-GETC - Certificate of Achievement", Glendale's) names no program
-    once the pattern is set aside, and stays no other program's list."""
+def _version(ident) -> frozenset:
+    """The version a title or heading prints (ncl_words' identity: "2.0" reads v20), never its other numbers:
+    a PDF window's heading carries unit counts ("Kinesiology T032948G AA-T Cal-GETC 21-24")."""
+    return frozenset(x for x in ident if re.fullmatch(r"v\d+", x))
+
+
+def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
+    """The one listed program a general education pattern's page belongs to, or None (S653). Riverside City
+    heads each transfer degree's own page with the degree and the pattern it follows, "Sociology - Associate
+    in Arts for Transfer (ADT) - AA696 (CalGETC)", and under the S646 rule each lost its own page (36
+    page_claimed in capture 43619958385). The pattern's words set aside, every component the heading prints
+    must agree with the program, each one comparison here:
+      title    the heading names every word of the program's title (ncl_words), and the program whose title
+               names the most of the heading's words owns it ("Art History AA-T" is never History's);
+      award    a heading that names an award takes that award only (Moreno Valley's MAS643, the A.S.-T's
+               page, is never its Administration of Justice A.S.'s);
+      version  a heading printing a version (2.0) never takes a program carrying another, and goes to the
+               sibling carrying its own where one is listed; a heading printing none goes to the sibling
+               carrying none where one is listed (Riverside City's Communication Studies and Communication
+               Studies 2.0). Only the version is compared: a PDF window's unit counts are not one.
+    More than one program left, or none, owns nothing. A pattern's own page ("Cal-GETC - Certificate of
+    Achievement", Glendale's, the S646 case) names no program once the pattern is set aside."""
     head = GE_PATTERN.sub(" ", pg.get("h1") or TITLE_SPLIT.split(pg.get("title") or "")[0] or "")
-    kind = P.award_kind(program.get("award"))
+    words, ident = ncl_words(head)
+    words, version = set(words), _version(ident)
+    if not words:
+        return None
     kinds = award_kinds_in(head)
-    for cls in [c for c in kinds if c in NCL_CLASS]:
-        if kind not in NCL_CLASS[cls]:
-            return False
+    classes = [c for c in kinds if c in NCL_CLASS]
     kinds = {k for k in kinds if k not in NCL_CLASS}
-    if kinds and kind not in kinds:
+
+    def award_agrees(p):
+        kind = P.award_kind(p.get("award"))
+        return all(kind in NCL_CLASS[c] for c in classes) and (not kinds or kind in kinds)
+    fits = []
+    for p in programs:
+        tw, tid = ncl_words(p.get("title"))
+        v = _version(tid)
+        if tw and all(_named(w, words) for w in tw) and award_agrees(p) and (not v or not version or v == version):
+            fits.append((p, tw, v))
+    # The version decides between siblings: the one printing the heading's version, else the one printing
+    # none. A program the state lists with no version keeps a "2.0" page no sibling carries (Moreno Valley's
+    # one Physics, 43792, on MAS1108).
+    if any(v == version for _, _, v in fits):
+        fits = [f for f in fits if f[2] == version]
+    if not fits:
+        return None
+    reach = {id(p): sum(1 for h in words if _named(h, tw)) for p, tw, _ in fits}
+    top = max(reach.values())
+    best = [p for p, _, _ in fits if reach[id(p)] == top]
+    return best[0] if len(best) == 1 else None
+
+
+def ge_page_names_program(pg: dict, program: dict, programs: list | None = None) -> bool:
+    """Whether a general education pattern's page belongs to this program among the college's listed
+    programs (ge_page_owner); programs left None weighs the program alone."""
+    owner = ge_page_owner(pg, programs if programs is not None else [program])
+    if owner is None:
         return False
-    words = set(ncl_words(head)[0])
-    own = ncl_words(program.get("title"))[0]
-    if not words or not own or not all(_named(w, words) for w in own):
-        return False
-
-    def reach(title_words):
-        return sum(1 for h in words if _named(h, title_words))
-    mine = reach(own)
-    for t in titles or []:
-        tw = ncl_words(t)[0]
-        if tw and set(tw) != set(own) and all(_named(w, words) for w in tw) and reach(tw) >= mine:
-            return False
-    return True
+    if owner is program:
+        return True
+    cn = program.get("control_number")
+    return cn is not None and owner.get("control_number") == cn
 
 
-def candidates(program: dict, pages: list[dict], titles: list | None = None) -> list[dict]:
+def candidates(program: dict, pages: list[dict], programs: list | None = None) -> list[dict]:
     """Every page naming at least ACCEPT_SHARE of the program's listed courses,
     best first: the page naming its award, then the larger share of its title,
-    then the higher coverage. titles is every listed program's title at the college
-    (assign() passes it), so a pattern's page goes to the program it names most fully."""
+    then the higher coverage. programs is every listed program at the college (assign()
+    passes it), so a pattern's page goes to the one program it belongs to (ge_page_owner)."""
     courses = program["closed_list"]
     if not courses:
         return []
@@ -627,7 +659,7 @@ def candidates(program: dict, pages: list[dict], titles: list | None = None) -> 
         # that pattern (ge_pattern(), S646), or when its heading names the program beside the
         # pattern (ge_page_names_program(), S653: Riverside City's transfer degrees).
         if ge_pattern_page(pg) and not ge_pattern(program.get("title")) \
-                and not ge_page_names_program(pg, program, titles):
+                and not ge_page_names_program(pg, program, programs):
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
@@ -1014,8 +1046,7 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     one with none left is read from no page, and says which page went to whom
     (method page_claimed), so a sibling's requirements never stand in for its own.
     Returns {control number: {"best": candidate or None, "claimed_by": [...]}}."""
-    titles = [p.get("title") for p in programs]
-    ranked = {p["control_number"]: candidates(p, pages, titles) for p in programs if p["closed_list"]}
+    ranked = {p["control_number"]: candidates(p, pages, programs) for p in programs if p["closed_list"]}
     # A Coursedog tab that prints another listed program's title is no candidate for this one
     # (tab_names_another, S647); a page holding several programs is left to page_winners().
     plain = {p["control_number"]: _plain(p.get("title")) for p in programs}
