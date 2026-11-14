@@ -3751,49 +3751,34 @@ module.exports = {
     routes: [{ hash: "commons/data/college/san-jose-city-college", name: "data-panel" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataOpen(page, "light", "panel"),
-    /* The panel is a dialog: Tab stays inside it, and Escape closes it and returns the focus to the list. */
+    /* The panel is a non-modal dialog (#3310): the page beside it stays live. A real click on the list behind it
+       works with the panel open (main had it inert, so the click landed on nothing), and Escape closes it and returns
+       the focus to the list. jsdom cannot see what a click lands on; this pass can. */
     keyboard: async (page) => {
       const out = [];
-      /* At 390 the width edge is display:none, so Tab on the last control must wrap to Close (#3231 review). */
-      await page.setViewportSize({ width: 390, height: 844 });
+      await page.setViewportSize({ width: 1440, height: 900 });
       await page.waitForTimeout(150);
-      const narrow = await page.evaluate(() => {
-        const P = document.getElementById("cdd-panel");
-        const f = Array.from(P.querySelectorAll('a[href], button:not([disabled])'));
-        f[f.length - 1].focus();
-        return f.length;
-      });
-      await page.keyboard.press("Tab");
-      const wrapped390 = await page.evaluate(() => document.activeElement && document.activeElement.id);
-      await page.keyboard.press("Shift+Tab");
-      const back390 = await page.evaluate(() => !!document.activeElement && document.getElementById("cdd-panel").contains(document.activeElement) && document.activeElement.id !== "cdd-panel-close");
-      out.push({ name: "at 390, Tab wraps past the hidden width edge to Close, and Shift+Tab wraps back", ok: wrapped390 === "cdd-panel-close" && back390, detail: narrow + " drawn controls; Tab lands on " + wrapped390 });
-      await page.setViewportSize({ width: 1024, height: 900 });
-      await page.waitForTimeout(150);
-      /* The list behind an open panel is inert: a real click on a college word there opens nothing. */
-      const box = await page.evaluate(() => {
-        const w = document.querySelector("#cdd-colleges [data-expand]");
+      const pt = (sel) => page.evaluate((q) => {
+        const w = Array.from(document.querySelectorAll(q)).find((e) => !e.closest("#cdd-panel") && !/San Jose City/.test(e.textContent));
         w.scrollIntoView({ block: "center" });
-        const r = w.getBoundingClientRect();
-        return { x: r.left + 4, y: r.top + r.height / 2 };
-      });
-      await page.mouse.click(box.x, box.y);
-      const behind = await page.evaluate(() => ({ opened: !!document.querySelector("#cdd-colleges tr.cdd-more"), panel: !document.getElementById("cdd-panel").hasAttribute("hidden"),
-        inert: !!document.querySelector("#cdd-colleges [data-expand]").closest("[inert]") }));
-      out.push({ name: "a college word behind the open panel cannot be activated", ok: !behind.opened && behind.panel && behind.inert, detail: JSON.stringify(behind) });
-      const inside = await page.evaluate(() => {
-        const P = document.getElementById("cdd-panel");
-        const f = Array.from(P.querySelectorAll('a[href], button:not([disabled]), input, [tabindex="0"]'));
-        f[f.length - 1].focus();
-        return { n: f.length, last: document.activeElement === f[f.length - 1] };
-      });
-      await page.keyboard.press("Tab");
-      const wrapped = await page.evaluate(() => document.getElementById("cdd-panel").contains(document.activeElement));
-      out.push({ name: "Tab stays inside the side panel", ok: inside.last && wrapped, detail: inside.n + " controls; after Tab on the last, the focus is " + (wrapped ? "inside" : "outside") });
+        const r = w.getBoundingClientRect(), x = r.left + 4, y = r.top + r.height / 2, hit = document.elementFromPoint(x, y);
+        return { x: x, y: y, name: w.textContent, lands: !!hit && (hit === w || w.contains(hit)) };
+      }, sel);
+      const w = await pt("#cdd-colleges [data-expand]");
+      await page.mouse.click(w.x, w.y);
+      await page.waitForTimeout(200);
+      const swapped = await page.evaluate(() => ({ open: !document.getElementById("cdd-panel").hasAttribute("hidden"), h: document.getElementById("cdd-panel-h").textContent,
+        hash: location.hash, inert: document.querySelectorAll("[inert]").length }));
+      out.push({ name: "with the panel open, a real click on a college word in the list replaces the panel's college", ok: w.lands && swapped.open && swapped.h === w.name && swapped.inert === 0 && /\/college\//.test(swapped.hash),
+        detail: JSON.stringify({ lands: w.lands, word: w.name, now: swapped }) });
+      const s = await pt('button.cdd-sort[data-sort="name"]');
+      await page.mouse.click(s.x, s.y);
+      await page.waitForTimeout(200);
+      const sorted = await page.evaluate(() => /^Sorted by college, A to Z/.test(document.getElementById("cdd-sortline").textContent) && !document.getElementById("cdd-panel").hasAttribute("hidden"));
+      out.push({ name: "with the panel open, a real click on a column heading sorts the list", ok: s.lands && sorted, detail: "lands " + s.lands + ", sorted " + sorted });
       await page.keyboard.press("Escape");
-      const closed = await page.evaluate(() => ({ hidden: document.getElementById("cdd-panel").hasAttribute("hidden"), back: !!(document.activeElement && document.activeElement.closest("#cdd-colleges")),
-        inert: document.querySelectorAll("[inert]").length }));
-      out.push({ name: "Escape closes the side panel, returns the focus to the list and releases inert", ok: closed.hidden && closed.back && closed.inert === 0, detail: JSON.stringify(closed) });
+      const closed = await page.evaluate(() => ({ hidden: document.getElementById("cdd-panel").hasAttribute("hidden"), back: !!(document.activeElement && document.activeElement.closest("#cdd-colleges")) }));
+      out.push({ name: "Escape closes the side panel and returns the focus to the list", ok: closed.hidden && closed.back, detail: JSON.stringify(closed) });
       return out;
     },
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],

@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-14_s652_honors_two_row_delete.sql",
+ "name": "s652_honors_two_row_delete",
+ "version": "20261114150533",
+ "sha256": "33543510a52e4abe817a227bc3b6f9d8d1c7fc812bad502c3ad8ffdec726f335",
+ "run": "43607926526",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"deleted\":[{\"field\":\"merge_into\",\"value\":\"HUMA M1110\",\"course_id\":\"HUMA M10ME\",\"reviewed_at\":\"2026-06-12T22:47:01.69179+00:00\",\"validated_at\":null,\"validated_by\":null,\"reviewer_email\":\"automerge-v1@bot\",\"reviewer_label\":\"automerge-v1@bot\"},{\"field\":\"merge_into\",\"value\":\"LIBR M1040\",\"course_id\":\"LIBR M10CJ\",\"reviewed_at\":\"2026-06-12T22:47:01.69179+00:00\",\"validated_at\":null,\"validated_by\":null,\"reviewer_email\":\"automerge-v1@bot\",\"reviewer_label\":\"automerge-v1@bot\"}]}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
