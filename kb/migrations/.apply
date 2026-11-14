@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-13_s648_reclustering_cohort.sql
-name=s648_reclustering_cohort
+file=kb/migrations/2026-11-14_s649_busi_split_delete.sql
+name=s649_busi_split_delete
