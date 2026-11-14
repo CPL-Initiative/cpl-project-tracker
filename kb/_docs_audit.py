@@ -910,6 +910,8 @@ PRESENTATION_DOCTRINE = {
     "controls are underlined words": (r"underlined words", r"no border and no fill"),
     # Sam, 2026-11-05: "this should be a rule for all visuals".
     "a figure card opens what it counts": (r"opens what it counts",),
+    # Sam, 2026-11-11 (#3107): design principles v3.
+    "a screen leads with the job": (r"leads with the job", r"built to scale"),
 }
 
 
