@@ -8569,7 +8569,7 @@
      "line": 0
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": []
   },
   "file:fact-sheet/_build_statewide_recs.py": {
@@ -8582,7 +8582,7 @@
      "line": 0
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": []
   },
   "file:fact-sheet/cpl_stories.js": {
@@ -21676,7 +21676,7 @@
      "line": 0
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": []
   },
   "file:prototype/ccr_atlas_data.json": {
@@ -22027,7 +22027,7 @@
      "line": 0
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": []
   },
   "file:prototype/funding_video/.dur": {
@@ -27247,7 +27247,7 @@
      "line": 0
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": []
   },
   "file:veteran-sprint-map/ca_cpl_map_selfcontained.html": {
@@ -34337,8 +34337,6 @@
   "archive",
   "chatbox",
   "docs",
-  "documents/*.py",
-  "fact-sheet/*.py",
   "funding",
   "kb/*.py",
   "kb/*_apply",
@@ -34377,24 +34375,12 @@
   "map",
   "news",
   "nudges",
-  "partners/ctdl-exchange/seed/tools/*.py",
-  "presentations/*.py",
-  "presentations/cac_2026-08/*.py",
-  "prototype/*.py",
-  "prototype/funding_video/*.py",
-  "prototype/globe/*.py",
-  "prototype/ironworker_video/*.py",
-  "prototype/mockup_harness/*.py",
-  "prototype/noncredit_video/*.py",
-  "raci/*.py",
   "reflections",
   "scripts",
   "statewide",
   "tests",
-  "tmc/*.py",
   "tmc/source_data",
-  "tools",
-  "veteran-sprint-map/*.py"
+  "tools"
  ],
  "stale_risk": [
   "cpl_pathways_ccr_data.js rebuilt by kb/_build_cpl_pathway_ccr.py under daily-dashboard.yml but not in its commit list",
