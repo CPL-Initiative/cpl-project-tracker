@@ -1,0 +1,170 @@
+{
+ "_about": "Honors S652 follow-ups dry run: two title updates and two dismissal inserts (cohort honors-s652@bot). Written by kb/_honors_followups_s652.py --plan; nothing applied.",
+ "date": "2026-11-14",
+ "delete_receipt": "kb/receipts/migration_s652_honors_two_row_delete_43607926526.json",
+ "updates": [
+  {
+   "course_id": "HUMA M1110",
+   "field": "unified_title",
+   "before": "World Religions (Honors)",
+   "after": "World Religions"
+  },
+  {
+   "course_id": "LIBR M1040",
+   "field": "unified_title",
+   "before": "Media & Information Literacy (Honors)",
+   "after": "Media & Information Literacy"
+  }
+ ],
+ "inserts": [
+  {
+   "course_id": "HUMA M10ME",
+   "field": "merge_dismissed",
+   "value": "HUMA M10ME|HUMA M10OI|HUMA M1110"
+  },
+  {
+   "course_id": "LIBR M1040",
+   "field": "merge_dismissed",
+   "value": "LIBR M1040|LIBR M10CJ"
+  }
+ ],
+ "cohort": "honors-s652@bot",
+ "no_title_row_for_the_honors_records": "The export builds a stand-alone row's title from its catalog record and the worklist replays a curated title only on a merge target, so a unified_title row on HUMA M10ME or LIBR M10CJ would be inert; the CCN form waits for an export change or card 3's Honors build.",
+ "migration": {
+  "forward": "kb/migrations/2026-11-14_s652_honors_followups.sql",
+  "rollback": "kb/migrations/2026-11-14_s652_honors_followups_rollback.sql",
+  "apply_lines": "file=kb/migrations/2026-11-14_s652_honors_followups.sql\nname=s652_honors_followups"
+ },
+ "select_before": "select jsonb_build_object('title_rows', (select coalesce(jsonb_agg(to_jsonb(k) order by k.course_id), '[]'::jsonb) from public.kb_curation k where k.field = 'unified_title' and k.course_id in ('HUMA M1110', 'LIBR M1040')), 'rows_on_honors_records', (select coalesce(jsonb_agg(to_jsonb(k) order by k.course_id, k.field), '[]'::jsonb) from public.kb_curation k where k.course_id in ('HUMA M10ME', 'LIBR M10CJ')), 'insert_slots_taken', (select count(*) from public.kb_curation k where (k.course_id, k.field) in (('HUMA M10ME', 'merge_dismissed'), ('LIBR M1040', 'merge_dismissed'))), 'dismissals_naming_the_ids', (select coalesce(jsonb_agg(jsonb_build_object('course_id', k.course_id, 'value', k.value, 'reviewer', case when k.reviewer_email like '%@bot' then k.reviewer_email else 'a person' end)), '[]'::jsonb) from public.kb_curation k where k.field = 'merge_dismissed' and (k.value like '%HUMA M10ME%' or k.value like '%LIBR M10CJ%' or k.value like '%HUMA M1110%' or k.value like '%LIBR M1040%')), 'person_rows', (select count(*) from public.kb_curation p where p.reviewer_email not like '%@bot' and (p.course_id in ('HUMA M10ME', 'LIBR M10CJ', 'HUMA M1110', 'LIBR M1040') or (p.field in ('merge_into', 'unified_title_merge_confirm', 'merge_dismissed') and (p.value like '%HUMA M10ME%' or p.value like '%LIBR M10CJ%' or p.value like '%HUMA M1110%' or p.value like '%LIBR M1040%')))));",
+ "simulated": {
+  "after_delete": {
+   "ids": {
+    "HUMA M10ME": {
+     "kind": "Stand-Alone",
+     "title": "World Religions (Honors)",
+     "index_title": "World Religions (Honors)",
+     "reviewed": false,
+     "members": 1
+    },
+    "LIBR M10CJ": {
+     "kind": "Stand-Alone",
+     "title": "Media & Information Literacy (Honors)",
+     "index_title": "Media & Information Literacy (Honors)",
+     "reviewed": false,
+     "members": 1
+    },
+    "HUMA M1110": {
+     "kind": "Course",
+     "title": "World Religions (Honors)",
+     "index_title": "World Religions (Honors)",
+     "reviewed": true,
+     "members": 10
+    },
+    "LIBR M1040": {
+     "kind": "Course",
+     "title": "Media & Information Literacy (Honors)",
+     "index_title": "Media & Information Literacy (Honors)",
+     "reviewed": false,
+     "members": 3
+    }
+   },
+   "groups": [
+    {
+     "lane": "groups",
+     "sig_words": "inform literacy media",
+     "score": 0.84,
+     "members": [
+      "LIBR M1040",
+      "LIBR M10CJ"
+     ],
+     "live_signature": "LIBR M1040|LIBR M10CJ",
+     "pairs_an_honors_record_with_its_base": true,
+     "held_by_a_dismissal": false,
+     "offered": true
+    },
+    {
+     "lane": "groups",
+     "sig_words": "religion world",
+     "score": 0.527,
+     "members": [
+      "HUMA M1110",
+      "HUMA M10ME",
+      "HUMA M10OI"
+     ],
+     "live_signature": "HUMA M10ME|HUMA M10OI|HUMA M1110",
+     "pairs_an_honors_record_with_its_base": true,
+     "held_by_a_dismissal": false,
+     "offered": true
+    }
+   ]
+  },
+  "after_followups": {
+   "ids": {
+    "HUMA M10ME": {
+     "kind": "Stand-Alone",
+     "title": "World Religions (Honors)",
+     "index_title": "World Religions (Honors)",
+     "reviewed": false,
+     "members": 1
+    },
+    "LIBR M10CJ": {
+     "kind": "Stand-Alone",
+     "title": "Media & Information Literacy (Honors)",
+     "index_title": "Media & Information Literacy (Honors)",
+     "reviewed": false,
+     "members": 1
+    },
+    "HUMA M1110": {
+     "kind": "Course",
+     "title": "World Religions",
+     "index_title": "World Religions",
+     "reviewed": true,
+     "members": 10
+    },
+    "LIBR M1040": {
+     "kind": "Course",
+     "title": "Media & Information Literacy",
+     "index_title": "Media & Information Literacy",
+     "reviewed": false,
+     "members": 3
+    }
+   },
+   "groups": [
+    {
+     "lane": "groups",
+     "sig_words": "inform literacy media",
+     "score": 0.84,
+     "members": [
+      "LIBR M1040",
+      "LIBR M10CJ"
+     ],
+     "live_signature": "LIBR M1040|LIBR M10CJ",
+     "pairs_an_honors_record_with_its_base": true,
+     "held_by_a_dismissal": true,
+     "offered": false
+    },
+    {
+     "lane": "groups",
+     "sig_words": "religion world",
+     "score": 0.527,
+     "members": [
+      "HUMA M1110",
+      "HUMA M10ME",
+      "HUMA M10OI"
+     ],
+     "live_signature": "HUMA M10ME|HUMA M10OI|HUMA M1110",
+     "pairs_an_honors_record_with_its_base": true,
+     "held_by_a_dismissal": true,
+     "offered": false
+    }
+   ]
+  }
+ },
+ "checks": {
+  "the post-delete payload offers both pairs": true,
+  "every pairing group is held after": true,
+  "every dismissal is a pairing group's signature": true,
+  "the bases read their new titles": true,
+  "the Honors records stay stand-alone": true
+ }
+}

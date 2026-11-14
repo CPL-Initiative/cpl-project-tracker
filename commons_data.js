@@ -320,8 +320,8 @@
   var PW = { min: 300, max: 900, start: 480, step: 20 };   // the panel's width in px (Sam, 1:52 AM PT: 300 to 900; double-click resets)
   /* sort null means the default, resolved when the list draws (defaultSort); a person's own sort lasts the visit. */
   var S = { view: "", filter: "all", platform: "", district: "", sort: null, q: "", open: null, panel: null, cause: null, pane: null, pw: PW.start };
-  /* The list opens lowest completeness first (#3229; the commons lane's NEXT): the overall bar where the live read
-     holds one, else program requirements passing. "auto" marks the default, so the words above the list say so and
+  /* The list opens highest completeness first (Sam, 2026-11-14, #3310: "Opening the dashboard should show progress
+     first"): the overall bar where the live read holds one, else program requirements passing. A sort is never stored. "auto" marks the default, so the words above the list say so and
      a heading's first click starts a person's own sort. */
   /* Courses with SLOs, and with objectives, of the courses on the college's Active programs: the live read's counts. */
   /* A college whose course outlines print no objectives (the builder's objectives_printed false: every committed read
@@ -339,7 +339,7 @@
     return { slo: Math.min(1, (lo.slo_courses_on_active || 0) / lc.active_courses), obj: Math.min(1, (lo.objective_courses_on_active || 0) / lc.active_courses),
       sloN: lo.slo_courses_on_active || 0, objN: lo.objective_courses_on_active || 0, den: lc.active_courses };
   }
-  function defaultSort(M) { return liveRead(M) ? { k: "overall", d: 1, auto: true } : { k: "pr", d: 1, auto: true }; }
+  function defaultSort(M) { return liveRead(M) ? { k: "overall", d: -1, auto: true } : { k: "pr", d: -1, auto: true }; }
   /* The three views beside the college list (slice 3; the districts S648), each at its own address. */
   var VIEWS = { districts: "Colleges by district", slos: "Colleges with collected SLOs", dictionary: "The data dictionary", apis: "The API checklist" };
   /* What a link opens in the side panel (Sam, in session, S649: "all links should open to the sidebar instead on new
@@ -395,16 +395,16 @@
     return out;
   }
 
-  /* The list's order in words: the default says what "lowest completeness" reads from and where the colleges with no
+  /* The list's order in words: the default says what "highest completeness" reads from and where the colleges with no
      value go; a person's own order says it lasts the visit. */
   function sortWords(M) {
     var s = S.sort || defaultSort(M);
     var col = COLUMNS.filter(function (c) { return c.k === s.k; })[0] || COLUMNS[0];
-    if (s.auto && s.k === "overall") return "Sorted lowest overall completeness first (" + liveWords(M) + "); a college the live read does not hold comes last. A column heading sorts another way for this visit.";
-    if (s.auto) return "Sorted lowest program requirements passing first, colleges not collected yet at the top. A column heading sorts another way for this visit.";
+    if (s.auto && s.k === "overall") return "Sorted highest overall completeness first (" + liveWords(M) + "); a college the live read does not hold comes last. A column heading sorts another way for this visit.";
+    if (s.auto) return "Sorted highest program requirements passing first, colleges not collected yet at the bottom. A column heading sorts another way for this visit.";
     var by = "Sorted by " + col.label.toLowerCase() + ", " + (col.k === "name" ? SORT_WORDS[String(s.d)].name : SORT_WORDS[String(s.d)].other);
-    if (s.card) return by + ", as its card opens the list" + noValueWords(col, s.d) + ". Show all colleges returns to lowest completeness first.";
-    return by + ", for this visit" + noValueWords(col, s.d) + ". A new visit opens lowest completeness first.";
+    if (s.card) return by + ", as its card opens the list" + noValueWords(col, s.d) + ". Show all colleges returns to highest completeness first.";
+    return by + ", for this visit" + noValueWords(col, s.d) + ". A new visit opens highest completeness first.";
   }
   /* Where the colleges with no value for the column go, as sorted() places them: the overall bar's always last; every
      other column's missing value sorts as the lowest. */
@@ -454,7 +454,9 @@
     var open = String(S.open) === String(c.id);
     var word = el("button", { type: "button", cls: "cmn-word cdd-name", "data-expand": String(c.id), "aria-expanded": open ? "true" : "false",
       "aria-controls": "cdd-more-" + c.id, text: c.name });
-    word.addEventListener("click", function () { toggleRow(c.id); });
+    /* With the panel open, a college's word replaces the panel's contents with that college (#3310); otherwise it
+       opens the row in place. */
+    word.addEventListener("click", function () { if (S.panel != null && VIEW.panel && !VIEW.panel.hasAttribute("hidden")) openPanel(c.id, '[data-expand="' + c.id + '"]'); else toggleRow(c.id); });
     var name = el("th", { scope: "row", "data-label": "College" }, [word, el("span", { cls: "cdd-dist", text: c.district || "" }),
       flags.length ? el("span", { cls: "cdd-flags", text: flags.join("; ") }) : null]);
     var ov = overallOf(M, c);
@@ -1066,8 +1068,8 @@
   }
 
   /* ── the side panel: the same college beside the list (the Funding Follow-up Dashboard's drawer: its heading takes
-     the focus on open, Escape closes it and the focus returns to the word that opened it); a dialog, so Tab stays
-     inside it while it is open. Its width lasts the visit; nothing is stored. ── */
+     the focus on open, Escape closes it and the focus returns to the word that opened it); a non-modal dialog, so the
+     page beside it stays live (#3310). Its width lasts the visit; nothing is stored. ── */
   function section(h, kids) { return el("section", { cls: "cdd-psec" }, [el("h3", { text: h })].concat(kids)); }
   function panelBody(M, c, now) {
     var sp = c.spot_check, out = [];
@@ -1127,22 +1129,12 @@
     out.push(section("Sources", [el("ul", { cls: "cdd-srcs" }, src.map(function (s) { return el("li", null, [s]); }))]));
     return out;
   }
-  /* A dialog that says aria-modal makes the rest of the page inert while it is open (COBIx on PR 3231): every sibling
-     on the way from the panel up to the body, the list and the site's header and menu among them, so a word behind
-     the panel cannot be clicked or reached. Only the attributes set here are removed again. */
-  var INERT = [];
-  function holdInert(box) {
-    releaseInert();
-    for (var n = box; n && n.parentNode && n !== document.body; n = n.parentNode) {
-      Array.prototype.forEach.call(n.parentNode.children, function (sib) {
-        if (sib === n || sib.hasAttribute("inert") || /^(SCRIPT|STYLE|LINK)$/.test(sib.tagName)) return;
-        sib.setAttribute("inert", ""); INERT.push(sib);
-      });
-    }
-  }
-  /* Idempotent: removes only what holdInert set, and the document's Escape with it. */
-  function releaseInert() {
-    INERT.forEach(function (x) { x.removeAttribute("inert"); }); INERT = [];
+  /* The panel is a non-modal dialog (Sam, 2026-11-14, #3310: a click on the main page did nothing until he closed
+     the panel). It was aria-modal and set inert on every sibling up to the body (COBIx on PR 3231), so the list, the
+     figures and the site's menu took no click while it was open. Now the page stays live beside it: a figure applies
+     its filter, a heading sorts, a college's word replaces the panel's contents, and Tab moves on out of the panel.
+     Escape still closes it wherever the focus is. Idempotent: removes the document's Escape. */
+  function releasePage() {
     document.removeEventListener("keydown", onDocKey, true);
   }
   /* Escape closes the panel wherever the focus is, a click on its plain text included (the focus is then the body). */
@@ -1153,12 +1145,11 @@
   /* Leaving the data view by any path (another tab, #commons, #commons/ase, browser Back from an open panel) releases
      the page: commons.js draws another view into the root without telling this module. */
   function onData() { return /^#?commons\/data(\/|$)/.test(String(location.hash || "")); }
-  function leave() { if (!onData()) { S.panel = null; S.cause = null; S.pane = null; releaseInert(); } }
+  function leave() { if (!onData()) { S.panel = null; S.cause = null; S.pane = null; releasePage(); } }
   window.addEventListener("cpl-tab-activated", leave);
   window.addEventListener("hashchange", leave);
   function panelShell() {
-    var box = el("aside", { cls: "cdd-panel", id: "cdd-panel", role: "dialog", "aria-modal": "true", "aria-labelledby": "cdd-panel-h", hidden: "" });
-    box.addEventListener("keydown", function (e) { trap(e, box); });
+    var box = el("aside", { cls: "cdd-panel", id: "cdd-panel", role: "dialog", "aria-labelledby": "cdd-panel-h", hidden: "" });
     VIEW.panel = box;
     return box;
   }
@@ -1167,9 +1158,8 @@
     if (!box || !M) return;
     var c = byId(M, S.panel);
     box.textContent = "";
-    if (!c && !S.pane) { box.setAttribute("hidden", ""); releaseInert(); return; }
+    if (!c && !S.pane) { box.setAttribute("hidden", ""); releasePage(); return; }
     box.removeAttribute("hidden");
-    holdInert(box);
     document.removeEventListener("keydown", onDocKey, true);
     document.addEventListener("keydown", onDocKey, true);
     box.style.setProperty("--cdd-pw", S.pw + "px");
@@ -1227,21 +1217,6 @@
       e.preventDefault();
     });
   }
-  function focusables(box) {
-    /* Only what is drawn: the width edge is display:none under 560px, and a control with no box takes no focus. */
-    return Array.prototype.filter.call(box.querySelectorAll('a[href], button:not([disabled]), input, [tabindex="0"]'), function (x) {
-      if (x.closest("[hidden]")) return false;
-      try { return window.getComputedStyle(x).display !== "none"; } catch (e) { return true; }
-    });
-  }
-  function trap(e, box) {
-    if (e.key !== "Tab") return;   // Escape is the document's (onDocKey)
-    var f = focusables(box);
-    if (!f.length) return;
-    var first = f[0], last = f[f.length - 1], a = document.activeElement;
-    if (e.shiftKey && (a === first || !box.contains(a) || a === box.querySelector("#cdd-panel-h"))) { e.preventDefault(); last.focus(); }
-    else if (!e.shiftKey && (a === last || !box.contains(a))) { e.preventDefault(); first.focus(); }
-  }
   function setAddress() {
     var h = "#" + address();
     try { if (window.history && history.replaceState && location.hash !== h) history.replaceState(null, "", h); } catch (e) { /* the view still draws */ }
@@ -1284,7 +1259,7 @@
 
   var VIEW = { root: null, M: null, noted: null, now: null, panel: null, from: null, fromEl: null, drawBody: null };
   function render(root, M, route, now) {
-    releaseInert();   // a redraw (a new address, a figure, another view) starts with the whole page live
+    releasePage();   // a redraw (a new address, a figure, another view) starts with no panel Escape until the panel draws
     VIEW.root = root; VIEW.M = M; VIEW.now = now || VIEW.now || new Date();
     ensureCss();
     var R = parseRoute(route), pcol = bySlug(M, R.college);
@@ -1439,7 +1414,7 @@
     wrap.appendChild(list);
     wrap.appendChild(notes(M));
     wrap.appendChild(comingNext(M));
-    var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which goes inert while it is open
+    var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which stays live while it is open (#3310)
     root.appendChild(page);
     drawPanel(VIEW.now);
     if (fixCause || fixFilter) setAddress();
