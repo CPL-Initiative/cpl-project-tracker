@@ -99,16 +99,34 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "explain the scientific method and its application to the fundamental concepts of physics including mechanics, electricity and magnetism, thermodynamics, mechanical and electromagnetic waves, optics and modern physics.",
+    "solve conceptual, numeric and symbolic problems in physics (specifically the fields of mechanics, electricity and magnetism, thermodynamics, mechanical and electromagnetic waves, optics and modern physics) using mathematics through calculus.",
+    "demonstrate the proper use of basic laboratory devices including metersticks, balances, digital multimeters, and oscilloscopes.",
+    "apply mathematical concepts including single and multivariable calculus, vector calculus, and basic differential equations in order to model physical systems and solve physical problems.",
+    "create graphical representations of data and analyze those graphs to determine the results of laboratory activities.",
+    "write a clear, coherent and thorough lab report."
+   ],
+   "why": [
+    "not in the catalog text as printed: explain the scientific method and its application to the fundamental concepts of",
+    "not in the catalog text as printed: solve conceptual, numeric and symbolic problems in physics (specifically the fie",
+    "not in the catalog text as printed: demonstrate the proper use of basic laboratory devices including metersticks, ba",
+    "not in the catalog text as printed: apply mathematical concepts including single and multivariable calculus, vector ",
+    "not in the catalog text as printed: create graphical representations of data and analyze those graphs to determine t",
+    "not in the catalog text as printed: write a clear, coherent and thorough lab report."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "research",
+    "computer programming",
+    "teaching"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "read"
@@ -218,5 +236,6 @@
    "The A.S. in General Science and A.S. in Physics sections that follow were not used."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 43567824391,
+ "read_run": "39047009824"
 }

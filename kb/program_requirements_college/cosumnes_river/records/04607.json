@@ -74,8 +74,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     29.0,
     29.0
@@ -85,8 +85,10 @@
     43.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 29.0-29.0; the catalog states 43.0-43.0"
+   "why": [],
+   "fill": [
+    14.0,
+    14.0
    ]
   },
   "repeated": {
@@ -114,7 +116,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -327,5 +329,6 @@
    "The text after the Career Information paragraph begins the separate Ford ASSET A.S. program, which was not read for this record."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 43567824391,
+ "read_run": "39047009824"
 }

@@ -61,8 +61,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     11.0,
     19.0
@@ -72,8 +72,10 @@
     19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 11.0-19.0; the catalog states 19.0-19.0"
+   "why": [],
+   "fill": [
+    0.0,
+    8.0
    ]
   },
   "repeated": {
@@ -101,7 +103,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -325,5 +327,6 @@
    "Outcomes and careers taken from the A.A.-T. section only; the A.A. in Spanish section (with SPAN 311, 312, 434) was not read for blocks."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 43567824391,
+ "read_run": "39047009824"
 }

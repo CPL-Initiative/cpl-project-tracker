@@ -93,16 +93,31 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Students will develop increased artistry and technical mastery with which to attract a more diverse teaching clientele and acquire a knowledge of partner organizations on the local, state, and national levels.",
+    "Students will be proficient in contemporary technologies for the purposes of research, composition, listening, performance, recording, archiving, and cross-discipline collaboration.",
+    "Students will acquire necessary independent contractor business skills for their careers as an independent music teacher and develop a mastery of using social media for recruitment and retention purposes."
+   ],
+   "why": [
+    "not in the catalog text as printed: Students will develop increased artistry and technical mastery with which to att",
+    "not in the catalog text as printed: Students will be proficient in contemporary technologies for the purposes of res",
+    "not in the catalog text as printed: Students will acquire necessary independent contractor business skills for their"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 6,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "independent private music instructor",
+    "charter school music instructor",
+    "after school program music instructor",
+    "children's day care and/or pre school music instructor",
+    "private tutor",
+    "music school proprietor"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
@@ -292,5 +307,6 @@
   ],
   "notes": []
  },
- "extracted_run": "39047009824"
+ "extracted_run": 43567824391,
+ "read_run": "39047009824"
 }
