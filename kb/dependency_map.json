@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 938,
+  "file_datasets": 941,
   "external_services": 195,
-  "consumers": 585,
+  "consumers": 586,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -11516,6 +11516,20 @@
      "line": 109
     },
     {
+     "id": "script:kb/_identities_rebuild.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 307
+    },
+    {
+     "id": "script:kb/_identities_rebuild.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 308
+    },
+    {
      "id": "script:kb/_identities_rekey_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -11872,6 +11886,13 @@
      "direction": "write",
      "how": "literal",
      "line": 147
+    },
+    {
+     "id": "script:kb/_identities_rebuild.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 324
     },
     {
      "id": "script:kb/_infer_disciplines.py",
@@ -12281,6 +12302,13 @@
      "direction": "read",
      "how": "literal",
      "line": 52
+    },
+    {
+     "id": "script:kb/_identities_rebuild.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 311
     },
     {
      "id": "script:kb/_identities_rekey_dryrun.py",
@@ -12757,6 +12785,13 @@
      "line": 34
     },
     {
+     "id": "script:kb/_identities_rebuild.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 318
+    },
+    {
      "id": "script:kb/_infer_disciplines.py",
      "kind": "script",
      "direction": "read",
@@ -13124,6 +13159,13 @@
      "direction": "read",
      "how": "literal",
      "line": 52
+    },
+    {
+     "id": "script:kb/_identities_rebuild.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 312
     },
     {
      "id": "script:kb/_identities_rekey_dryrun.py",
@@ -16378,6 +16420,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/identities_rebuild_out/2026-11-14/orphan_worklist.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_identities_rebuild.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 264
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/identities_rekey_out/2026-09-05/dead_worklist.json": {
    "consumers": [
     {
@@ -18343,6 +18398,13 @@
      "direction": "read",
      "how": "literal",
      "line": 4297
+    },
+    {
+     "id": "script:kb/_identities_rebuild.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 325
     },
     {
      "id": "script:kb/_identities_rekey_dryrun.py",
@@ -25093,6 +25155,19 @@
    "main_committers": []
   },
   "file:tests/ib_official_titles_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/identities_rebuild_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -33308,6 +33383,7 @@
     "tests/uc_cur_promote_test.py",
     "tests/occupation_matcher_stemming_test.py",
     "tests/identities_rekey_test.py",
+    "tests/identities_rebuild_test.py",
     "tests/ccr_cpl_payload_test.py",
     "tests/ccr_cpl_universe_test.py",
     "tests/ccr_cpl_universe_members_test.py",

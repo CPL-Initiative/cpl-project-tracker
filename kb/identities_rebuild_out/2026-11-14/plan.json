@@ -1,0 +1,3824 @@
+{
+  "_status": "DRY-RUN 2026-11-14 — nothing applied",
+  "_generated_by": "kb/_identities_rebuild.py",
+  "_rule": "every articulated live M-ID gets the entry the 1b rule derives from the current catalog (kb/_remint_apply_articulations.py); C-ID/CCN entries pass through; M-ID entries no record names are held for a ruling",
+  "counts": {
+    "articulated_ids": 2319,
+    "entries_before": 2290,
+    "fill": 651,
+    "refresh": 578,
+    "same": 915,
+    "keep_cid": 172,
+    "orphan_held": 625,
+    "cid_unarticulated_kept": 0,
+    "no_record": 3,
+    "entries_after_apply": 2941,
+    "entries_after_apply_with_drop": 2316,
+    "merge_targets_with_articulated_members": 453,
+    "merge_targets_reached_by_a_member_without_entry": 153,
+    "merge_targets_whose_lists_change": 192
+  },
+  "refresh_why": {
+    "metadata only": 276,
+    "title differs (the entry describes another course)": 264,
+    "offering differs from the membership": 38
+  },
+  "over_merged_flips": 19,
+  "fill": [
+    "AGRI M1018",
+    "AGRI M1020",
+    "ANTH M1102",
+    "ARAB M1005",
+    "ARAB M1010",
+    "ARCH M1009",
+    "ARCH M1034",
+    "ARCH M1063",
+    "ARCH M1066",
+    "ARCH M10CY",
+    "ARCH M10LH",
+    "ARCH M10LL",
+    "ARCH M10LP",
+    "ARCH M10MQ",
+    "ARCH M10MS",
+    "ARCH M10MV",
+    "ARCH M10NK",
+    "ARCH M1107",
+    "ARCH M1139",
+    "ARTH M10AI",
+    "ARTH M10CV",
+    "ARTS M1351",
+    "ASTR M1004",
+    "ASTR M1038",
+    "ASTR M1041",
+    "ASTR M10CQ",
+    "ASTR M10CR",
+    "AUTB M10BU",
+    "AUTB M10CR",
+    "AUTB M10CT",
+    "AUTB M10DL",
+    "AUTB M10EG",
+    "AUTB M10FN",
+    "AUTB M10FZ",
+    "AUTO M1014",
+    "AUTO M1028",
+    "AUTO M1029",
+    "AUTO M1031",
+    "AUTO M1041",
+    "AUTO M1051",
+    "AUTO M1064",
+    "AUTO M1072",
+    "AUTO M1073",
+    "AUTO M1075",
+    "AUTO M1077",
+    "AUTO M1088",
+    "AUTO M1094",
+    "AUTO M1097",
+    "AUTO M10AE",
+    "AUTO M10BG",
+    "AUTO M10GB",
+    "AUTO M10GS",
+    "AUTO M10HM",
+    "AUTO M10HW",
+    "AUTO M10IH",
+    "AUTO M10MB",
+    "AUTO M10NA",
+    "AUTO M10NE",
+    "AUTO M10NG",
+    "AUTO M10NL",
+    "AUTO M10NU",
+    "AUTO M10NX",
+    "AUTO M10OA",
+    "AUTO M10OE",
+    "AUTO M10OG",
+    "AUTO M10OK",
+    "AUTO M10QF",
+    "AUTO M10SA",
+    "AUTO M10SP",
+    "AUTO M10SV",
+    "AUTO M10VH",
+    "AUTO M10VL",
+    "AUTO M10WA",
+    "AUTO M10WE",
+    "AUTO M10WK",
+    "AUTO M10WR",
+    "AUTO M10XG",
+    "AUTO M10YA",
+    "AUTO M10YF",
+    "AUTO M10YG",
+    "AUTO M10YU",
+    "AUTO M10ZD",
+    "AUTO M1103",
+    "AUTO M1104",
+    "AUTO M1106",
+    "AUTO M1111",
+    "AUTO M1113",
+    "AUTO M1117",
+    "AUTO M1119",
+    "AUTO M1120",
+    "AUTO M1130",
+    "AUTO M1131",
+    "AUTO M1145",
+    "AUTO M1149",
+    "AUTO M1166",
+    "AUTO M1172",
+    "AUTO M1175",
+    "AUTO M1180",
+    "AUTO M1182",
+    "AUTO M1183",
+    "AUTO M1184",
+    "AUTO M1185",
+    "AUTO M1186",
+    "AUTO M1187",
+    "AUTO M1194",
+    "AUTO M11AA",
+    "AUTO M11AP",
+    "AUTO M11BG",
+    "AUTO M11CM",
+    "AUTO M11CZ",
+    "AUTO M11DI",
+    "AUTO M11DL",
+    "AUTO M11EC",
+    "AUTO M11EO",
+    "AUTO M11EW",
+    "AUTO M11GM",
+    "AUTO M11GN",
+    "AUTO M11HF",
+    "AUTO M11HG",
+    "AUTO M11HR",
+    "AUTO M11HT",
+    "AUTO M11IA",
+    "AUTO M11IM",
+    "AUTO M11IS",
+    "AUTO M11IU",
+    "AUTO M11JP",
+    "AUTO M11KR",
+    "AUTO M11KZ",
+    "AUTO M11LG",
+    "AUTO M11LH",
+    "AUTO M11LJ",
+    "AUTO M11MM",
+    "AUTO M11NT",
+    "AUTO M11OH",
+    "AUTO M1201",
+    "AUTO M1211",
+    "AUTO M1213",
+    "AUTO M1215",
+    "AUTO M1217",
+    "AUTO M90DI",
+    "AUTO M90DQ",
+    "AUTO M90EM",
+    "AUTO M90EN",
+    "AVIA M10CB",
+    "AVIA M10DY",
+    "AVIA M10DZ",
+    "AVIA M10ED",
+    "AVIA M10EE",
+    "AVIA M10JF",
+    "AVIA M10MR",
+    "AVIA M10MS",
+    "AVIA M10MT",
+    "AVIA M10NN",
+    "AVIA M10NO",
+    "AVIA M10OZ",
+    "AVIA M10PA",
+    "AVIA M10PD",
+    "AVIA M10PH",
+    "AVIA M10PQ",
+    "AVIA M10PT",
+    "BIOL M1033",
+    "BIOL M1089",
+    "BIOL M1092",
+    "BIOL M1094",
+    "BIOL M10GX",
+    "BIOL M10KF",
+    "BIOL M10PO",
+    "BIOL M1105",
+    "BIOL M1106",
+    "BIOL M1113",
+    "BIOL M1145",
+    "BIOL M1195",
+    "BIOL M11AR",
+    "BIOL M1238",
+    "BIOL M1254",
+    "BSOT M1070",
+    "BUSI M11EL",
+    "BUSI M1403",
+    "CARP M10EA",
+    "CDEV M1091",
+    "CHEM M1054",
+    "CHEM M1057",
+    "CHEM M1060",
+    "CHEM M1065",
+    "CHEM M1075",
+    "CHEM M10EH",
+    "CHEM M10FD",
+    "CHIN M1012",
+    "CHIN M1014",
+    "CHIN M1025",
+    "CHIN M1045",
+    "CNST M1025",
+    "CNST M1042",
+    "CNST M1070",
+    "CNST M1072",
+    "CNST M1079",
+    "CNST M1093",
+    "CNST M10AH",
+    "CNST M10AL",
+    "CNST M10BA",
+    "CNST M10BD",
+    "CNST M10BE",
+    "CNST M10BG",
+    "CNST M10BH",
+    "CNST M10BQ",
+    "CNST M10BR",
+    "CNST M10BU",
+    "CNST M10BV",
+    "CNST M10CA",
+    "CNST M10CJ",
+    "CNST M10CL",
+    "CNST M10CO",
+    "CNST M10CS",
+    "CNST M10CT",
+    "CNST M10DK",
+    "CNST M10DL",
+    "CNST M10DQ",
+    "CNST M10DR",
+    "CNST M10EL",
+    "CNST M10EQ",
+    "CNST M10ET",
+    "CNST M10EW",
+    "CNST M10EX",
+    "CNST M10FG",
+    "CNST M10FH",
+    "CNST M10FJ",
+    "CNST M10FK",
+    "CNST M10FM",
+    "CNST M10FO",
+    "CNST M10GP",
+    "CNST M10GW",
+    "CNST M10GX",
+    "CNST M10GZ",
+    "CNST M10HA",
+    "CNST M10IB",
+    "CNST M10ID",
+    "CNST M10IE",
+    "CNST M10IF",
+    "CNST M10IG",
+    "CNST M10IQ",
+    "CNST M10IY",
+    "CNST M10JD",
+    "CNST M10JF",
+    "CNST M10JT",
+    "CNST M10JV",
+    "CNST M10KE",
+    "CNST M10KF",
+    "CNST M10KJ",
+    "CNST M10KK",
+    "CNST M10KN",
+    "CNST M10MA",
+    "CNST M10NA",
+    "CNST M10NC",
+    "CNST M10ND",
+    "CNST M10NE",
+    "CNST M10NF",
+    "CNST M10NN",
+    "CNST M10NQ",
+    "CNST M10OM",
+    "CNST M10PB",
+    "CNST M10PD",
+    "CNST M10PI",
+    "CNST M10PJ",
+    "CNST M10PK",
+    "CNST M10PN",
+    "CNST M10PY",
+    "CNST M10QT",
+    "CNST M10QV",
+    "CNST M10QZ",
+    "CNST M10RA",
+    "CNST M10RB",
+    "CNST M10RE",
+    "CNST M10RM",
+    "CNST M10RN",
+    "CNST M10RO",
+    "CNST M10RV",
+    "CNST M10RW",
+    "CNST M10RX",
+    "CNST M10RZ",
+    "CNST M10SI",
+    "CNST M10SJ",
+    "CNST M1137",
+    "COMM M1037",
+    "COMP M1009",
+    "COSM M1023",
+    "COSM M1059",
+    "COSM M10AJ",
+    "COSM M10AK",
+    "COSM M10AL",
+    "COSM M10AP",
+    "COSM M10AS",
+    "COSM M10AU",
+    "COSM M10AX",
+    "COSM M10AY",
+    "COSM M10AZ",
+    "COSM M10BC",
+    "COSM M10BD",
+    "COSM M10BG",
+    "COSM M10BI",
+    "COSM M10BJ",
+    "COSM M10BK",
+    "COSM M10BL",
+    "COSM M10BN",
+    "COSM M10BP",
+    "COSM M10BR",
+    "COSM M10ER",
+    "COSM M10JJ",
+    "COSM M10LF",
+    "COSM M10LH",
+    "COUN M1038",
+    "COUN M1042",
+    "COUN M10TV",
+    "COUN M10UP",
+    "CRIM M1145",
+    "CRIM M11DW",
+    "CRIM M11PE",
+    "CRIM M1296",
+    "CULN M1009",
+    "CULN M1042",
+    "CULN M10CR",
+    "CULN M10FT",
+    "CULN M10YD",
+    "CULN M1129",
+    "DANC M10ED",
+    "DANC M1131",
+    "DANC M1132",
+    "DANC M11IQ",
+    "DANC M11KG",
+    "DANC M11LH",
+    "DANC M11NB",
+    "DANC M11RG",
+    "DANC M11RI",
+    "DANC M1222",
+    "DANC M1341",
+    "DANC M1344",
+    "DENT M1060",
+    "DENT M1081",
+    "DENT M10GJ",
+    "DENT M1103",
+    "DIES M1021",
+    "DRAF M10CT",
+    "ECON M1034",
+    "ECON M1036",
+    "EDUC M1018",
+    "EDUC M1035",
+    "EDUC M1049",
+    "ELEC M1017",
+    "ELEC M1047",
+    "ELET M1002",
+    "ELET M10CR",
+    "ELET M10CS",
+    "ELET M10DJ",
+    "ELET M10EG",
+    "ELET M10FX",
+    "EMST M1019",
+    "EMST M1049",
+    "ENGL M1175",
+    "ENGR M1017",
+    "ENGR M1036",
+    "ENGR M1047",
+    "ENGR M10CS",
+    "ETHS M10DO",
+    "ETHS M1204",
+    "FASH M1016",
+    "FASH M1023",
+    "FASH M1074",
+    "FASH M10EF",
+    "FIRE M1011",
+    "FIRE M1014",
+    "FIRE M1022",
+    "FIRE M1024",
+    "FIRE M1039",
+    "FIRE M1055",
+    "FIRE M1057",
+    "FIRE M1096",
+    "FIRE M1097",
+    "FIRE M10BL",
+    "FIRE M10DH",
+    "FIRE M10DS",
+    "FIRE M10EF",
+    "FIRE M10EK",
+    "FIRE M10FA",
+    "FIRE M10FO",
+    "FIRE M10FP",
+    "FIRE M10FV",
+    "FIRE M10JZ",
+    "FIRE M10KN",
+    "FIRE M10LJ",
+    "FIRE M10LR",
+    "FIRE M10LW",
+    "FIRE M10LX",
+    "FIRE M10WG",
+    "FIRE M10YK",
+    "FIRE M10YN",
+    "FIRE M1111",
+    "FIRE M1113",
+    "FIRE M1122",
+    "FIRE M1125",
+    "FIRE M1126",
+    "FIRE M1130",
+    "FIRE M1131",
+    "FIRE M1136",
+    "FIRE M1170",
+    "FIRE M11BE",
+    "FIRE M11GQ",
+    "FIRE M11GR",
+    "FIRE M11HW",
+    "FIRE M11IV",
+    "FIRE M11JD",
+    "FIRE M11NB",
+    "FIRE M11PJ",
+    "FIRE M1213",
+    "FIRE M1235",
+    "FIRE M1249",
+    "FIRE M1253",
+    "FIRE M1255",
+    "FIRE M1263",
+    "FIRE M1268",
+    "FIRE M1274",
+    "FIRE M1275",
+    "FIRE M1285",
+    "FIRE M1295",
+    "FIRE M1297",
+    "FIRE M1303",
+    "FIRE M1309",
+    "FIRE M1310",
+    "FIRE M1311",
+    "FIRE M1316",
+    "FIRE M1325",
+    "FIRE M1332",
+    "FIRE M1335",
+    "FIRE M1347",
+    "FIRE M1348",
+    "FIRE M1349",
+    "FIRE M1350",
+    "FIRE M1368",
+    "FIRE M1373",
+    "FIRE M1378",
+    "FIRE M1379",
+    "FIRE M1389",
+    "FMED M10TG",
+    "FREN M1036",
+    "FREN M1045",
+    "FTVE M1082",
+    "GEOG M1014",
+    "GEOG M1042",
+    "GEOG M1049",
+    "GEOG M1057",
+    "GEOG M1066",
+    "GEOG M1068",
+    "GEOG M1087",
+    "GERM M1015",
+    "GERM M1022",
+    "HIST M1014",
+    "HIST M1015",
+    "HIST M1018",
+    "HIST M1022",
+    "HIST M1044",
+    "HIST M10DY",
+    "HIST M10FJ",
+    "HIST M10GV",
+    "HIST M10JA",
+    "HIST M10WI",
+    "HIST M1141",
+    "HIST M1142",
+    "HIST M1143",
+    "HIST M1144",
+    "HIST M1145",
+    "HLTH M1083",
+    "HLTH M1118",
+    "HLTH M90JK",
+    "HMDT M1003",
+    "HMDT M1010",
+    "HMDT M1011",
+    "HORT M1012",
+    "HORT M1013",
+    "HORT M1036",
+    "HORT M1039",
+    "HORT M1060",
+    "HORT M10DL",
+    "HORT M10HO",
+    "HORT M10JQ",
+    "HORT M10PI",
+    "HVAC M1074",
+    "HVAC M10TE",
+    "INDT M1016",
+    "INDT M10HU",
+    "INDT M10IE",
+    "INDT M10IF",
+    "INDT M10JN",
+    "INDT M10UB",
+    "INDT M10UC",
+    "INDT M10XA",
+    "INDT M10XH",
+    "INDT M10ZF",
+    "INDT M10ZH",
+    "ITAL M1019",
+    "ITAL M1022",
+    "ITAL M1024",
+    "ITAL M1032",
+    "ITAL M10AT",
+    "ITIS M1057",
+    "ITIS M1160",
+    "ITIS M11OD",
+    "ITIS M11QX",
+    "ITIS M1244",
+    "ITIS M12BQ",
+    "ITIS M12DA",
+    "ITIS M1453",
+    "JAPN M1018",
+    "JOUR M1019",
+    "KINE M13YR",
+    "MACH M1008",
+    "MACH M1022",
+    "MACH M1041",
+    "MACH M1044",
+    "MACH M1048",
+    "MACH M10GM",
+    "MACH M10GY",
+    "MACH M10KW",
+    "MATH M1036",
+    "MATH M1044",
+    "MATH M1080",
+    "MATH M10ND",
+    "MATH M10NM",
+    "MATH M10OO",
+    "MATH M1123",
+    "MATH M1165",
+    "MATH M1172",
+    "MATH M1174",
+    "MATH M1183",
+    "MATH M1189",
+    "MATH M1266",
+    "MATH M1287",
+    "MATH M1291",
+    "MATH M1295",
+    "MATH M1306",
+    "MGMT M1027",
+    "MULT M1048",
+    "MULT M10MN",
+    "MUSI M1084",
+    "MUSI M10MY",
+    "MUSI M1126",
+    "MUSI M11PZ",
+    "MUSI M11QA",
+    "MUSI M11QB",
+    "MUSI M1203",
+    "MUSI M1240",
+    "MUSI M1279",
+    "MUSI M1341",
+    "MUSI M1355",
+    "MUSI M1395",
+    "MUSI M1398",
+    "MUSI M1427",
+    "MUSI M1430",
+    "MUSI M1451",
+    "MUSI M1454",
+    "MUSI M1491",
+    "NUTR M10CO",
+    "NUTR M10DA",
+    "OSHA M10BC",
+    "OSHA M10BO",
+    "PHIL M1087",
+    "PHOT M1036",
+    "PHOT M1041",
+    "PHOT M10FE",
+    "PHOT M10GY",
+    "PHOT M10LH",
+    "PHOT M1113",
+    "PHYS M1012",
+    "PHYS M1013",
+    "PHYS M1030",
+    "PHYS M1031",
+    "PHYS M1045",
+    "PHYS M1050",
+    "PHYS M1054",
+    "PHYS M1058",
+    "POLS M1034",
+    "POLS M1035",
+    "POLS M10BC",
+    "PORT M1003",
+    "RADT M1046",
+    "READ M1012",
+    "READ M10BP",
+    "REAL M1011",
+    "REAL M1019",
+    "REAL M1039",
+    "REAL M10BN",
+    "REAL M10BQ",
+    "REAL M10BS",
+    "REAL M10BX",
+    "REAL M10CK",
+    "SOCS M1037",
+    "SOCS M10AD",
+    "SPAN M1002",
+    "SPAN M1036",
+    "SPAN M1048",
+    "SPAN M1068",
+    "SPAN M1074",
+    "SPAN M1075",
+    "SPAN M1085",
+    "SPAN M1090",
+    "SPAN M1092",
+    "SPAN M1093",
+    "SPAN M10AE",
+    "SPAN M10AJ",
+    "SPAN M10AK",
+    "SPAN M10DI",
+    "SPAN M10JT",
+    "STMF M1019",
+    "THTR M1091",
+    "THTR M10BN",
+    "THTR M11FV",
+    "THTR M1265",
+    "THTR M1269",
+    "THTR M1280",
+    "WELD M1012",
+    "WELD M1015",
+    "WELD M1024",
+    "WELD M1033",
+    "WELD M1038",
+    "WELD M1049",
+    "WELD M1053",
+    "WELD M1068",
+    "WELD M1073",
+    "WELD M1076",
+    "WELD M1091",
+    "WELD M10AN",
+    "WELD M10AS",
+    "WELD M10BO",
+    "WELD M10DI",
+    "WELD M10GG",
+    "WELD M10GI",
+    "WELD M10GW",
+    "WELD M10HA",
+    "WELD M10IK",
+    "WELD M10IN",
+    "WELD M10IS",
+    "WELD M10IT",
+    "WELD M10JB",
+    "WELD M10LA",
+    "WELD M10NJ",
+    "WELD M10NL",
+    "WELD M10NO",
+    "WELD M10QR",
+    "WELD M10SG",
+    "WELD M10YH",
+    "WELD M1106",
+    "WELD M1107",
+    "WELD M1109",
+    "WELD M9002"
+  ],
+  "refresh": [
+    "AGMA M10EH",
+    "AGPS M10FG",
+    "AGRI M10CQ",
+    "AGRI M10WU",
+    "ARCH M1005",
+    "ARCH M1039",
+    "ARCH M1072",
+    "ARCH M10IC",
+    "ARTS M1093",
+    "ARTS M10PY",
+    "ARTS M1116",
+    "ARTS M1135",
+    "ARTS M1354",
+    "ARTS M1367",
+    "ARTS M1468",
+    "ARTS M1482",
+    "ARTS M1507",
+    "AUTO M1001",
+    "AUTO M1011",
+    "AUTO M1015",
+    "AUTO M1024",
+    "AUTO M1025",
+    "AUTO M1033",
+    "AUTO M1034",
+    "AUTO M1036",
+    "AUTO M1040",
+    "AUTO M1042",
+    "AUTO M1046",
+    "AUTO M1054",
+    "AUTO M1060",
+    "AUTO M1063",
+    "AUTO M1065",
+    "AUTO M1066",
+    "AUTO M1074",
+    "AUTO M1089",
+    "AUTO M1091",
+    "AUTO M1099",
+    "AUTO M10GO",
+    "AUTO M10GP",
+    "AUTO M10IS",
+    "AUTO M10PI",
+    "AUTO M10QE",
+    "AUTO M10VY",
+    "AUTO M1101",
+    "AUTO M1107",
+    "AUTO M1112",
+    "AUTO M1116",
+    "AUTO M1118",
+    "AUTO M1122",
+    "AUTO M1124",
+    "AUTO M1132",
+    "AUTO M1138",
+    "AUTO M1144",
+    "AUTO M1146",
+    "AUTO M1190",
+    "AUTO M1198",
+    "AUTO M11IG",
+    "AVIA M1010",
+    "AVIA M1044",
+    "AVIA M10AY",
+    "AVIA M10AZ",
+    "AVIA M10KV",
+    "AVIA M10KW",
+    "AVIA M10LA",
+    "AVIA M10LB",
+    "AVIA M10NZ",
+    "AVIA M10QG",
+    "AVIA M10QH",
+    "BIOL M1097",
+    "BIOL M10CR",
+    "BSOT M1027",
+    "BSOT M1037",
+    "BSOT M1075",
+    "BSOT M1134",
+    "BSOT M1171",
+    "BSOT M1175",
+    "BUSI M1024",
+    "BUSI M1054",
+    "BUSI M1063",
+    "BUSI M1082",
+    "BUSI M1088",
+    "BUSI M10DF",
+    "BUSI M10MH",
+    "BUSI M10NJ",
+    "BUSI M1137",
+    "BUSI M1177",
+    "BUSI M11AG",
+    "BUSI M11LJ",
+    "BUSI M11NY",
+    "BUSI M11OB",
+    "BUSI M1227",
+    "BUSI M1368",
+    "BUSI M1410",
+    "BUSI M1415",
+    "BUSI M9067",
+    "CARP M1001",
+    "CARP M1002",
+    "CARP M1003",
+    "CARP M1004",
+    "CARP M1005",
+    "CARP M1007",
+    "CARP M1009",
+    "CARP M1015",
+    "CARP M1017",
+    "CARP M1018",
+    "CARP M1019",
+    "CARP M1020",
+    "CARP M1021",
+    "CARP M1022",
+    "CARP M1025",
+    "CARP M1026",
+    "CARP M1027",
+    "CARP M1028",
+    "CARP M1030",
+    "CARP M1031",
+    "CARP M1032",
+    "CARP M1034",
+    "CARP M1038",
+    "CARP M1039",
+    "CARP M1040",
+    "CARP M1041",
+    "CARP M1042",
+    "CARP M1044",
+    "CARP M1045",
+    "CARP M1046",
+    "CARP M1047",
+    "CARP M1048",
+    "CARP M1049",
+    "CARP M1050",
+    "CARP M1053",
+    "CARP M1054",
+    "CARP M1055",
+    "CARP M1056",
+    "CARP M1057",
+    "CARP M1060",
+    "CARP M1061",
+    "CARP M10AH",
+    "CARP M10AN",
+    "CARP M10AP",
+    "CARP M10AQ",
+    "CARP M10AX",
+    "CARP M10DF",
+    "CARP M10DX",
+    "CARP M10EM",
+    "CDEV M1185",
+    "CHIN M1004",
+    "CHIN M1013",
+    "CHIN M1015",
+    "CNST M1008",
+    "CNST M1009",
+    "CNST M1059",
+    "CNST M1089",
+    "CNST M10AY",
+    "CNST M10CN",
+    "CNST M10PE",
+    "CNST M10PF",
+    "CNST M10QK",
+    "CNST M1138",
+    "COMP M1094",
+    "COMP M10HH",
+    "COMP M10RS",
+    "COSM M10AT",
+    "COUN M10CU",
+    "COUN M10EH",
+    "COUN M10OC",
+    "COUN M10TD",
+    "COUN M10UE",
+    "COUN M1122",
+    "COUN M1126",
+    "COUN M1133",
+    "CRIM M1043",
+    "CRIM M1046",
+    "CRIM M10GN",
+    "CRIM M10GP",
+    "CRIM M1135",
+    "CRIM M1182",
+    "CRIM M1281",
+    "CULN M1039",
+    "CULN M10GS",
+    "CULN M10LV",
+    "CULN M10LY",
+    "CULN M10WK",
+    "DANC M1251",
+    "DENT M1025",
+    "DENT M10EQ",
+    "DENT M10HK",
+    "DIES M1007",
+    "DIES M1011",
+    "DIES M1020",
+    "DIES M10CY",
+    "DRAF M1001",
+    "DRAF M1023",
+    "DRAF M1029",
+    "DRAF M1030",
+    "DRAF M10FE",
+    "DRAF M10HW",
+    "DRAF M10HX",
+    "DRAF M10IQ",
+    "DRAF M10IY",
+    "DRAF M10KT",
+    "ELEC M1001",
+    "ELEC M1006",
+    "ELEC M1040",
+    "ELEC M1045",
+    "ELEC M10FS",
+    "ELEC M10FT",
+    "ELET M1067",
+    "ELET M10DQ",
+    "ELET M10FN",
+    "ELET M10JO",
+    "ELET M10OD",
+    "EMST M1022",
+    "EMST M1053",
+    "EMST M1055",
+    "EMST M1058",
+    "EMST M1070",
+    "EMST M1071",
+    "EMST M1073",
+    "EMST M10HO",
+    "EMST M10IC",
+    "EMST M10IT",
+    "EMST M10IU",
+    "EMST M10IW",
+    "EMST M10JP",
+    "EMST M10LQ",
+    "EMST M10OT",
+    "ENGT M10RV",
+    "ENVS M1029",
+    "ENVS M1030",
+    "ENVS M1045",
+    "ENVS M1073",
+    "ENVS M1075",
+    "FCSH M10DF",
+    "FDNT M10BC",
+    "FIRE M1006",
+    "FIRE M1012",
+    "FIRE M1013",
+    "FIRE M1026",
+    "FIRE M1029",
+    "FIRE M1040",
+    "FIRE M1041",
+    "FIRE M1047",
+    "FIRE M1095",
+    "FIRE M1099",
+    "FIRE M10AN",
+    "FIRE M10BH",
+    "FIRE M10CW",
+    "FIRE M10KD",
+    "FIRE M10KY",
+    "FIRE M10KZ",
+    "FIRE M10LG",
+    "FIRE M10UE",
+    "FIRE M1101",
+    "FIRE M1103",
+    "FIRE M1106",
+    "FIRE M1107",
+    "FIRE M1109",
+    "FIRE M1110",
+    "FIRE M1119",
+    "FIRE M1120",
+    "FIRE M1133",
+    "FIRE M1134",
+    "FIRE M1173",
+    "FIRE M1179",
+    "FIRE M11BR",
+    "FIRE M11GF",
+    "FIRE M11JW",
+    "FIRE M11JX",
+    "FIRE M1308",
+    "FIRE M1315",
+    "FLHE M1001",
+    "FLHM M10AF",
+    "FLPE M1001",
+    "FREN M1014",
+    "FREN M1016",
+    "FREN M1035",
+    "FTVE M10LM",
+    "GFCD M10FY",
+    "GFCD M1300",
+    "HLTH M1011",
+    "HLTH M1033",
+    "HLTH M1081",
+    "HLTH M1084",
+    "HLTH M10GE",
+    "HLTH M10IH",
+    "HLTH M10KL",
+    "HLTH M10WI",
+    "HLTH M10WL",
+    "HLTH M1152",
+    "HMDT M1005",
+    "HMDT M1008",
+    "HMDT M1009",
+    "HORT M10GZ",
+    "HUMA M1057",
+    "HUMA M1088",
+    "IDST M10LZ",
+    "INDT M1007",
+    "INDT M1008",
+    "INDT M1009",
+    "INDT M1010",
+    "INDT M1011",
+    "INDT M1012",
+    "INDT M1013",
+    "INDT M1015",
+    "INDT M1027",
+    "INDT M1030",
+    "INDT M1031",
+    "INDT M1032",
+    "INDT M1033",
+    "INDT M1034",
+    "INDT M1040",
+    "INDT M1042",
+    "INDT M1043",
+    "INDT M1044",
+    "INDT M1045",
+    "INDT M1055",
+    "INDT M1062",
+    "INDT M1064",
+    "INDT M1066",
+    "INDT M1071",
+    "INDT M1085",
+    "INDT M1089",
+    "INDT M1090",
+    "INDT M1094",
+    "INDT M10AM",
+    "INDT M10AV",
+    "INDT M10AW",
+    "INDT M10AX",
+    "INDT M10CB",
+    "INDT M10CY",
+    "INDT M10CZ",
+    "INDT M10DA",
+    "INDT M10DB",
+    "INDT M10DR",
+    "INDT M10DS",
+    "INDT M10DX",
+    "INDT M10DY",
+    "INDT M10FH",
+    "INDT M10FX",
+    "INDT M10GB",
+    "INDT M10GK",
+    "INDT M10GL",
+    "INDT M10GM",
+    "INDT M10GO",
+    "INDT M10GU",
+    "INDT M10HD",
+    "INDT M10HE",
+    "INDT M10HH",
+    "INDT M10IY",
+    "INDT M10JH",
+    "INDT M10JS",
+    "INDT M10JY",
+    "INDT M10KL",
+    "INDT M10MD",
+    "INDT M10NE",
+    "INDT M10NF",
+    "INDT M10NL",
+    "INDT M10OD",
+    "INDT M10OW",
+    "INDT M10PZ",
+    "INDT M10QA",
+    "INDT M10SC",
+    "INDT M10SD",
+    "INDT M10SX",
+    "INDT M10TB",
+    "INDT M10TW",
+    "INDT M10UA",
+    "INDT M10UG",
+    "INDT M10UT",
+    "INDT M10UW",
+    "INDT M10UX",
+    "INDT M10WO",
+    "INDT M10WP",
+    "INDT M10WR",
+    "INDT M10XN",
+    "INDT M10YF",
+    "INDT M1105",
+    "INDT M1107",
+    "INDT M1111",
+    "INTD M1002",
+    "INTD M1003",
+    "INTD M1010",
+    "INTD M10BE",
+    "INTD M10CO",
+    "INTD M10EB",
+    "INTD M10EX",
+    "INTD M10FJ",
+    "INTD M10GG",
+    "ITAL M1006",
+    "ITIS M1014",
+    "ITIS M1025",
+    "ITIS M1044",
+    "ITIS M1054",
+    "ITIS M1093",
+    "ITIS M10AC",
+    "ITIS M10FS",
+    "ITIS M1145",
+    "ITIS M1161",
+    "ITIS M1162",
+    "ITIS M1182",
+    "ITIS M1183",
+    "ITIS M1184",
+    "ITIS M1188",
+    "ITIS M1190",
+    "ITIS M11CF",
+    "ITIS M11HZ",
+    "ITIS M11IV",
+    "ITIS M11IW",
+    "ITIS M11IX",
+    "ITIS M11LA",
+    "ITIS M11MF",
+    "ITIS M11QQ",
+    "ITIS M11WN",
+    "ITIS M1204",
+    "ITIS M1208",
+    "ITIS M1240",
+    "ITIS M1241",
+    "ITIS M12AE",
+    "ITIS M12BU",
+    "ITIS M12CY",
+    "ITIS M12ED",
+    "ITIS M12JO",
+    "ITIS M1310",
+    "ITIS M1351",
+    "ITIS M1355",
+    "ITIS M1369",
+    "ITIS M1379",
+    "ITIS M1415",
+    "ITIS M1416",
+    "ITIS M1419",
+    "ITIS M1429",
+    "ITIS M1477",
+    "ITIS M1486",
+    "ITIS M90AC",
+    "JAPN M1017",
+    "JAPN M10BB",
+    "JAPN M10BC",
+    "KINE M1013",
+    "KINE M1154",
+    "KINE M11CA",
+    "KINE M11QM",
+    "KINE M11SF",
+    "KINE M1202",
+    "KINE M1287",
+    "KINE M12BA",
+    "KINE M12FI",
+    "KINE M12GT",
+    "KINE M12ZG",
+    "KINE M1362",
+    "KINE M1363",
+    "KINE M13FH",
+    "KINE M13FT",
+    "KINE M13IM",
+    "KINE M1455",
+    "KINE M1501",
+    "KINE M1526",
+    "KINE M1580",
+    "KINE M1606",
+    "KINE M1607",
+    "KINE M1879",
+    "KINE M1885",
+    "KINE M1894",
+    "KINE M2008",
+    "MACH M1014",
+    "MACH M1081",
+    "MACH M10CV",
+    "MACH M10CZ",
+    "MACH M10DA",
+    "MACH M10DB",
+    "MACH M10DL",
+    "MACH M10DM",
+    "MACH M10FL",
+    "MACH M10JD",
+    "MACH M10JL",
+    "MANU M1031",
+    "MANU M1035",
+    "MANU M10JF",
+    "MATH M1142",
+    "MATH M1162",
+    "MATH M1217",
+    "MGMT M1017",
+    "MUSI M1144",
+    "MUSI M11QX",
+    "MUSI M11QY",
+    "MUSI M1263",
+    "MUSI M12DZ",
+    "MUSI M12EM",
+    "MUSI M12HC",
+    "MUSI M12LZ",
+    "MUSI M1338",
+    "MUSI M1344",
+    "MUSI M1347",
+    "MUSI M1350",
+    "MUSI M1353",
+    "MUSI M1391",
+    "MUSI M1397",
+    "MUSI M1429",
+    "MUSI M1453",
+    "MUSI M1498",
+    "MUSI M1499",
+    "MUSI M9019",
+    "MUSI M9020",
+    "MUSI M9044",
+    "NRSR M10DA",
+    "NRSR M10DB",
+    "NRSR M10HK",
+    "NRSR M10HL",
+    "NRSR M10HM",
+    "NRSR M10HN",
+    "NRSR M10QT",
+    "NRSR M10QU",
+    "NRSR M10RC",
+    "NRSR M1116",
+    "NRSR M1120",
+    "NRSR M1128",
+    "NRSR M1136",
+    "NRSR M1180",
+    "NRSR M1183",
+    "NRSR M11BS",
+    "NRSR M11BT",
+    "NUTR M10BK",
+    "NUTR M10DG",
+    "PHMT M10BP",
+    "PHMT M10BT",
+    "PHOT M1119",
+    "PHOT M9009",
+    "PHOT M9010",
+    "PHOT M9011",
+    "PHYS M1014",
+    "PHYS M1043",
+    "PHYS M1056",
+    "PHYS M1057",
+    "PUBS M10AC",
+    "PUBS M10BG",
+    "PUBS M10CE",
+    "PUBS M10CR",
+    "PUBS M10MX",
+    "PUBS M10MY",
+    "PUBS M10MZ",
+    "PUBS M10PL",
+    "REAL M1012",
+    "REAL M1014",
+    "REAL M1032",
+    "REAL M1040",
+    "SLNA M1017",
+    "SLNA M1018",
+    "SLNA M1024",
+    "SLNA M1029",
+    "SOCS M10HI",
+    "SOCS M10HQ",
+    "SPAN M1001",
+    "SPAN M1003",
+    "SPAN M1004",
+    "SPAN M1049",
+    "SPAN M1070",
+    "SPAN M1086",
+    "SPAN M1096",
+    "THTR M1287",
+    "TOUR M10AB",
+    "TOUR M10AC",
+    "TRNS M1001",
+    "TRNS M10CL",
+    "WELD M1026",
+    "WELD M1061",
+    "WELD M1065",
+    "WELD M1086",
+    "WELD M1088",
+    "WELD M1092",
+    "WELD M1097",
+    "WELD M10CA",
+    "WELD M10CR",
+    "WELD M10FP",
+    "WELD M10FQ",
+    "WELD M10UF",
+    "WELD M10UI",
+    "WELD M10UM",
+    "WELD M10WF",
+    "WELD M10WT"
+  ],
+  "no_record": [
+    "AG-AB 108 108",
+    "AG-PS 128 128 L",
+    "NULL"
+  ],
+  "merge_targets": {
+    "ARAB M1008": {
+      "members_articulated": [
+        "ARAB M1010"
+      ],
+      "members_without_entry_before": [
+        "ARAB M1010"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        1,
+        0
+      ]
+    },
+    "ARCH M1147": {
+      "members_articulated": [
+        "ARCH M10LH"
+      ],
+      "members_without_entry_before": [
+        "ARCH M10LH"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "ARCH M1174": {
+      "members_articulated": [
+        "ARCH M10MV"
+      ],
+      "members_without_entry_before": [
+        "ARCH M10MV"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "ARTH M1521": {
+      "members_articulated": [
+        "ARTH M10AI"
+      ],
+      "members_without_entry_before": [
+        "ARTH M10AI"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "ARTS M1382": {
+      "members_articulated": [
+        "PHOT M1113"
+      ],
+      "members_without_entry_before": [
+        "PHOT M1113"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        9
+      ]
+    },
+    "ASTR M1002": {
+      "members_articulated": [
+        "ASTR M1041"
+      ],
+      "members_without_entry_before": [
+        "ASTR M1041"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        14
+      ]
+    },
+    "AUTB M1011": {
+      "members_articulated": [
+        "AUTB M10CT"
+      ],
+      "members_without_entry_before": [
+        "AUTB M10CT"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTB M1038": {
+      "members_articulated": [
+        "INDT M10JN"
+      ],
+      "members_without_entry_before": [
+        "INDT M10JN"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTB M1048": {
+      "members_articulated": [
+        "AUTB M10AB",
+        "AUTB M10DL"
+      ],
+      "members_without_entry_before": [
+        "AUTB M10DL"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTB M1060": {
+      "members_articulated": [
+        "AUTB M10BU"
+      ],
+      "members_without_entry_before": [
+        "AUTB M10BU"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1001": {
+      "members_articulated": [
+        "AUTO M1211"
+      ],
+      "members_without_entry_before": [
+        "AUTO M1211"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        4,
+        2
+      ]
+    },
+    "AUTO M1049": {
+      "members_articulated": [
+        "AUTO M1041",
+        "AUTO M10IS"
+      ],
+      "members_without_entry_before": [
+        "AUTO M1041"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        2,
+        1
+      ]
+    },
+    "AUTO M1053": {
+      "members_articulated": [
+        "AUTO M11AP"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11AP"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        2,
+        2
+      ]
+    },
+    "AUTO M1060": {
+      "members_articulated": [
+        "AUTO M11NT"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11NT"
+      ],
+      "adopted": [
+        1,
+        1
+      ],
+      "potential": [
+        1,
+        0
+      ]
+    },
+    "AUTO M1061": {
+      "members_articulated": [
+        "AUTO M10NU",
+        "AUTO M10NX",
+        "AUTO M10OA"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10NU",
+        "AUTO M10NX",
+        "AUTO M10OA"
+      ],
+      "adopted": [
+        0,
+        3
+      ],
+      "potential": [
+        6,
+        6
+      ]
+    },
+    "AUTO M1066": {
+      "members_articulated": [
+        "AUTO M10NG"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10NG"
+      ],
+      "adopted": [
+        3,
+        4
+      ],
+      "potential": [
+        1,
+        8
+      ]
+    },
+    "AUTO M1076": {
+      "members_articulated": [
+        "AUTO M10OE"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10OE"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1090": {
+      "members_articulated": [
+        "AUTO M11HF"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11HF"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1093": {
+      "members_articulated": [
+        "AUTO M1094"
+      ],
+      "members_without_entry_before": [
+        "AUTO M1094"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        1
+      ]
+    },
+    "AUTO M1101": {
+      "members_articulated": [
+        "AUTO M11EC",
+        "AVIA M10PK",
+        "INDT M10GO"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11EC"
+      ],
+      "adopted": [
+        2,
+        3
+      ],
+      "potential": [
+        13,
+        0
+      ]
+    },
+    "AUTO M1111": {
+      "members_articulated": [
+        "AUTO M11DL"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11DL"
+      ],
+      "adopted": [
+        0,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1139": {
+      "members_articulated": [
+        "AUTO M10SS",
+        "AUTO M11HR",
+        "AUTO M11HT"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11HR",
+        "AUTO M11HT"
+      ],
+      "adopted": [
+        1,
+        3
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1166": {
+      "members_articulated": [
+        "AUTO M10BG"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10BG"
+      ],
+      "adopted": [
+        0,
+        2
+      ],
+      "potential": [
+        2,
+        2
+      ]
+    },
+    "AUTO M1170": {
+      "members_articulated": [
+        "AUTO M11GM"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11GM"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1175": {
+      "members_articulated": [
+        "AUTO M10ZD",
+        "AUTO M1137",
+        "AUTO M11HI"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10ZD"
+      ],
+      "adopted": [
+        4,
+        6
+      ],
+      "potential": [
+        1,
+        1
+      ]
+    },
+    "AUTO M1177": {
+      "members_articulated": [
+        "AUTO M11IA"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11IA"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1200": {
+      "members_articulated": [
+        "AUTO M1187",
+        "AUTO M11LG"
+      ],
+      "members_without_entry_before": [
+        "AUTO M1187",
+        "AUTO M11LG"
+      ],
+      "adopted": [
+        0,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1208": {
+      "members_articulated": [
+        "AUTO M1182"
+      ],
+      "members_without_entry_before": [
+        "AUTO M1182"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        1,
+        3
+      ]
+    },
+    "AUTO M1216": {
+      "members_articulated": [
+        "AUTO M1134",
+        "AUTO M1217",
+        "AUTO M1219"
+      ],
+      "members_without_entry_before": [
+        "AUTO M1217"
+      ],
+      "adopted": [
+        3,
+        7
+      ],
+      "potential": [
+        3,
+        4
+      ]
+    },
+    "AUTO M1232": {
+      "members_articulated": [
+        "AUTO M11EO"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11EO"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1241": {
+      "members_articulated": [
+        "AUTO M11LH"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11LH"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1242": {
+      "members_articulated": [
+        "AUTO M10GB"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10GB"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        1,
+        1
+      ]
+    },
+    "AUTO M1248": {
+      "members_articulated": [
+        "AUTO M10IH"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10IH"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1261": {
+      "members_articulated": [
+        "ELET M10EG"
+      ],
+      "members_without_entry_before": [
+        "ELET M10EG"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        1,
+        1
+      ]
+    },
+    "AUTO M1262": {
+      "members_articulated": [
+        "AUTO M10NA"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10NA"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1265": {
+      "members_articulated": [
+        "AUTO M10OK"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10OK"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1272": {
+      "members_articulated": [
+        "AUTO M10QE",
+        "AUTO M10QF"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10QF"
+      ],
+      "adopted": [
+        1,
+        1
+      ],
+      "potential": [
+        1,
+        0
+      ]
+    },
+    "AUTO M1279": {
+      "members_articulated": [
+        "AUTO M10SA"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10SA"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1293": {
+      "members_articulated": [
+        "AUTO M11BG"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11BG"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        1,
+        0
+      ]
+    },
+    "AUTO M1300": {
+      "members_articulated": [
+        "AUTO M11CM"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11CM"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1308": {
+      "members_articulated": [
+        "AUTO M11HG"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11HG"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1314": {
+      "members_articulated": [
+        "AVIA M10OZ"
+      ],
+      "members_without_entry_before": [
+        "AVIA M10OZ"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1315": {
+      "members_articulated": [
+        "AUTO M11CZ"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11CZ"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AUTO M1319": {
+      "members_articulated": [
+        "AUTO M11MM"
+      ],
+      "members_without_entry_before": [
+        "AUTO M11MM"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AVIA M1067": {
+      "members_articulated": [
+        "AVIA M10DW",
+        "AVIA M10GG",
+        "INDT M10ZF"
+      ],
+      "members_without_entry_before": [
+        "INDT M10ZF"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AVIA M1069": {
+      "members_articulated": [
+        "AVIA M10DS",
+        "AVIA M10DZ",
+        "AVIA M10EA",
+        "INDT M10HU"
+      ],
+      "members_without_entry_before": [
+        "AVIA M10DZ",
+        "INDT M10HU"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AVIA M1072": {
+      "members_articulated": [
+        "AVIA M10EW",
+        "AVIA M10PQ"
+      ],
+      "members_without_entry_before": [
+        "AVIA M10PQ"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "AVIA M1084": {
+      "members_articulated": [
+        "AVIA M10DU",
+        "AVIA M10FG",
+        "INDT M10UC"
+      ],
+      "members_without_entry_before": [
+        "INDT M10UC"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "BUSI M1385": {
+      "members_articulated": [
+        "BUSI M11EL"
+      ],
+      "members_without_entry_before": [
+        "BUSI M11EL"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "BUSI M1401": {
+      "members_articulated": [
+        "MGMT M1027"
+      ],
+      "members_without_entry_before": [
+        "MGMT M1027"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        6
+      ]
+    },
+    "CARP M1028": {
+      "members_articulated": [
+        "CNST M10GW"
+      ],
+      "members_without_entry_before": [
+        "CNST M10GW"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        3,
+        3
+      ]
+    },
+    "CARP M1042": {
+      "members_articulated": [
+        "CARP M10DF",
+        "CNST M1059",
+        "CNST M10JF"
+      ],
+      "members_without_entry_before": [
+        "CNST M10JF"
+      ],
+      "adopted": [
+        2,
+        3
+      ],
+      "potential": [
+        2,
+        1
+      ]
+    },
+    "CARP M1059": {
+      "members_articulated": [
+        "CNST M1093"
+      ],
+      "members_without_entry_before": [
+        "CNST M1093"
+      ],
+      "adopted": [
+        0,
+        3
+      ],
+      "potential": [
+        0,
+        5
+      ]
+    },
+    "CARP M1063": {
+      "members_articulated": [
+        "CNST M10SI"
+      ],
+      "members_without_entry_before": [
+        "CNST M10SI"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CARP M1071": {
+      "members_articulated": [
+        "CNST M10JV"
+      ],
+      "members_without_entry_before": [
+        "CNST M10JV"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CBIT M1013": {
+      "members_articulated": [
+        "ARCH M10NK"
+      ],
+      "members_without_entry_before": [
+        "ARCH M10NK"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNSM M1031": {
+      "members_articulated": [
+        "CNST M10IY"
+      ],
+      "members_without_entry_before": [
+        "CNST M10IY"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNST M1025": {
+      "members_articulated": [
+        "CNST M10PI"
+      ],
+      "members_without_entry_before": [
+        "CNST M10PI"
+      ],
+      "adopted": [
+        0,
+        2
+      ],
+      "potential": [
+        1,
+        9
+      ]
+    },
+    "CNST M1072": {
+      "members_articulated": [
+        "CARP M1005",
+        "CARP M1034",
+        "CNST M10GP"
+      ],
+      "members_without_entry_before": [
+        "CNST M10GP"
+      ],
+      "adopted": [
+        2,
+        3
+      ],
+      "potential": [
+        4,
+        4
+      ]
+    },
+    "CNST M1079": {
+      "members_articulated": [
+        "WELD M10YH"
+      ],
+      "members_without_entry_before": [
+        "WELD M10YH"
+      ],
+      "adopted": [
+        0,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNST M1097": {
+      "members_articulated": [
+        "CNST M10AH",
+        "CNST M10AJ"
+      ],
+      "members_without_entry_before": [
+        "CNST M10AH"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNST M1098": {
+      "members_articulated": [
+        "CNST M10AL"
+      ],
+      "members_without_entry_before": [
+        "CNST M10AL"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNST M1105": {
+      "members_articulated": [
+        "CNST M10BG"
+      ],
+      "members_without_entry_before": [
+        "CNST M10BG"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNST M1107": {
+      "members_articulated": [
+        "CNST M10BQ",
+        "CNST M10BV",
+        "CNST M10DQ",
+        "CNST M10GX",
+        "CNST M10GZ",
+        "CNST M10HA"
+      ],
+      "members_without_entry_before": [
+        "CNST M10BQ",
+        "CNST M10BV",
+        "CNST M10DQ",
+        "CNST M10GX",
+        "CNST M10GZ",
+        "CNST M10HA"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNST M1111": {
+      "members_articulated": [
+        "CNST M10DK",
+        "CNST M10NN"
+      ],
+      "members_without_entry_before": [
+        "CNST M10DK",
+        "CNST M10NN"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNST M1114": {
+      "members_articulated": [
+        "CNST M10EL",
+        "CNST M10FJ"
+      ],
+      "members_without_entry_before": [
+        "CNST M10EL",
+        "CNST M10FJ"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNST M1116": {
+      "members_articulated": [
+        "CNST M10KJ",
+        "CNST M10KK"
+      ],
+      "members_without_entry_before": [
+        "CNST M10KJ",
+        "CNST M10KK"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNST M1124": {
+      "members_articulated": [
+        "CNST M10CJ",
+        "CNST M10NQ"
+      ],
+      "members_without_entry_before": [
+        "CNST M10CJ",
+        "CNST M10NQ"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CNST M1127": {
+      "members_articulated": [
+        "CNST M10OM"
+      ],
+      "members_without_entry_before": [
+        "CNST M10OM"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1004": {
+      "members_articulated": [
+        "COSM M10AX"
+      ],
+      "members_without_entry_before": [
+        "COSM M10AX"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1030": {
+      "members_articulated": [
+        "COSM M10AY"
+      ],
+      "members_without_entry_before": [
+        "COSM M10AY"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1068": {
+      "members_articulated": [
+        "COSM M10AJ"
+      ],
+      "members_without_entry_before": [
+        "COSM M10AJ"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1069": {
+      "members_articulated": [
+        "COSM M10LF"
+      ],
+      "members_without_entry_before": [
+        "COSM M10LF"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1070": {
+      "members_articulated": [
+        "COSM M10AK"
+      ],
+      "members_without_entry_before": [
+        "COSM M10AK"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        1,
+        0
+      ]
+    },
+    "COSM M1072": {
+      "members_articulated": [
+        "COSM M10AS"
+      ],
+      "members_without_entry_before": [
+        "COSM M10AS"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1075": {
+      "members_articulated": [
+        "COSM M10LH"
+      ],
+      "members_without_entry_before": [
+        "COSM M10LH"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1085": {
+      "members_articulated": [
+        "COSM M10BN"
+      ],
+      "members_without_entry_before": [
+        "COSM M10BN"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1086": {
+      "members_articulated": [
+        "COSM M10BP",
+        "COSM M10JJ"
+      ],
+      "members_without_entry_before": [
+        "COSM M10BP",
+        "COSM M10JJ"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1096": {
+      "members_articulated": [
+        "COSM M10ER"
+      ],
+      "members_without_entry_before": [
+        "COSM M10ER"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        1,
+        0
+      ]
+    },
+    "COSM M1101": {
+      "members_articulated": [
+        "COSM M10AZ",
+        "COSM M10BG"
+      ],
+      "members_without_entry_before": [
+        "COSM M10AZ",
+        "COSM M10BG"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1102": {
+      "members_articulated": [
+        "COSM M10AL"
+      ],
+      "members_without_entry_before": [
+        "COSM M10AL"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COSM M1105": {
+      "members_articulated": [
+        "COSM M10AP"
+      ],
+      "members_without_entry_before": [
+        "COSM M10AP"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "COUN M1205": {
+      "members_articulated": [
+        "COUN M10TV",
+        "COUN M10TW"
+      ],
+      "members_without_entry_before": [
+        "COUN M10TV"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "CRIM M1150": {
+      "members_articulated": [
+        "CRIM M1145"
+      ],
+      "members_without_entry_before": [
+        "CRIM M1145"
+      ],
+      "adopted": [
+        0,
+        2
+      ],
+      "potential": [
+        0,
+        11
+      ]
+    },
+    "CRIM M1302": {
+      "members_articulated": [
+        "CRIM M11BL",
+        "CRIM M11DW"
+      ],
+      "members_without_entry_before": [
+        "CRIM M11DW"
+      ],
+      "adopted": [
+        2,
+        3
+      ],
+      "potential": [
+        1,
+        1
+      ]
+    },
+    "CULN M1183": {
+      "members_articulated": [
+        "CULN M10FT"
+      ],
+      "members_without_entry_before": [
+        "CULN M10FT"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "DANC M1006": {
+      "members_articulated": [
+        "DANC M1132"
+      ],
+      "members_without_entry_before": [
+        "DANC M1132"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        9
+      ]
+    },
+    "DANC M1068": {
+      "members_articulated": [
+        "DANC M1341"
+      ],
+      "members_without_entry_before": [
+        "DANC M1341"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        15,
+        16
+      ]
+    },
+    "DANC M1442": {
+      "members_articulated": [
+        "DANC M11KG"
+      ],
+      "members_without_entry_before": [
+        "DANC M11KG"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "DANC M1445": {
+      "members_articulated": [
+        "DANC M11RG"
+      ],
+      "members_without_entry_before": [
+        "DANC M11RG"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "DANC M1446": {
+      "members_articulated": [
+        "DANC M10ED"
+      ],
+      "members_without_entry_before": [
+        "DANC M10ED"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "DANC M1450": {
+      "members_articulated": [
+        "DANC M11RI"
+      ],
+      "members_without_entry_before": [
+        "DANC M11RI"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "DIES M1021": {
+      "members_articulated": [
+        "AUTO M1184"
+      ],
+      "members_without_entry_before": [
+        "AUTO M1184"
+      ],
+      "adopted": [
+        0,
+        2
+      ],
+      "potential": [
+        0,
+        2
+      ]
+    },
+    "DIES M1027": {
+      "members_articulated": [
+        "AUTO M10NL",
+        "AUTO M10SP",
+        "AUTO M10SQ"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10NL",
+        "AUTO M10SP"
+      ],
+      "adopted": [
+        1,
+        3
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "DRAF M1055": {
+      "members_articulated": [
+        "ENGR M1017"
+      ],
+      "members_without_entry_before": [
+        "ENGR M1017"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "ELCT M1002": {
+      "members_articulated": [
+        "ELET M10CR"
+      ],
+      "members_without_entry_before": [
+        "ELET M10CR"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "ELCT M1010": {
+      "members_articulated": [
+        "ELET M10DJ"
+      ],
+      "members_without_entry_before": [
+        "ELET M10DJ"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "ELEC M1047": {
+      "members_articulated": [
+        "CNST M10IF",
+        "ELEC M1039"
+      ],
+      "members_without_entry_before": [
+        "CNST M10IF"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        0,
+        2
+      ]
+    },
+    "ENGL M1175": {
+      "members_articulated": [
+        "READ M10BP"
+      ],
+      "members_without_entry_before": [
+        "READ M10BP"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        1
+      ]
+    },
+    "FIRE 130 X": {
+      "members_articulated": [
+        "FIRE M1274"
+      ],
+      "members_without_entry_before": [
+        "FIRE M1274"
+      ],
+      "adopted": [
+        5,
+        16
+      ],
+      "potential": [
+        6,
+        32
+      ]
+    },
+    "FIRE M1011": {
+      "members_articulated": [
+        "FIRE M1378"
+      ],
+      "members_without_entry_before": [
+        "FIRE M1378"
+      ],
+      "adopted": [
+        0,
+        3
+      ],
+      "potential": [
+        0,
+        11
+      ]
+    },
+    "FIRE M1034": {
+      "members_articulated": [
+        "FIRE M1057",
+        "FIRE M10DN",
+        "FIRE M10FO",
+        "FIRE M10FP",
+        "FIRE M10FT"
+      ],
+      "members_without_entry_before": [
+        "FIRE M1057",
+        "FIRE M10FO",
+        "FIRE M10FP"
+      ],
+      "adopted": [
+        2,
+        7
+      ],
+      "potential": [
+        10,
+        10
+      ]
+    },
+    "FIRE M1125": {
+      "members_articulated": [
+        "FIRE M10LJ"
+      ],
+      "members_without_entry_before": [
+        "FIRE M10LJ"
+      ],
+      "adopted": [
+        0,
+        3
+      ],
+      "potential": [
+        0,
+        4
+      ]
+    },
+    "FIRE M1133": {
+      "members_articulated": [
+        "FIRE M11HW"
+      ],
+      "members_without_entry_before": [
+        "FIRE M11HW"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        2,
+        1
+      ]
+    },
+    "FIRE M1135": {
+      "members_articulated": [
+        "FIRE M10LR",
+        "FIRE M10LU",
+        "FIRE M10LW",
+        "FIRE M10LX",
+        "FIRE M1134"
+      ],
+      "members_without_entry_before": [
+        "FIRE M10LR",
+        "FIRE M10LW",
+        "FIRE M10LX"
+      ],
+      "adopted": [
+        4,
+        7
+      ],
+      "potential": [
+        8,
+        10
+      ]
+    },
+    "FIRE M1237": {
+      "members_articulated": [
+        "FIRE M10VS",
+        "FIRE M1235"
+      ],
+      "members_without_entry_before": [
+        "FIRE M1235"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        0,
+        8
+      ]
+    },
+    "FIRE M1239": {
+      "members_articulated": [
+        "FIRE M1039"
+      ],
+      "members_without_entry_before": [
+        "FIRE M1039"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        2
+      ]
+    },
+    "FIRE M1255": {
+      "members_articulated": [
+        "FIRE M1254",
+        "FIRE M1295"
+      ],
+      "members_without_entry_before": [
+        "FIRE M1295"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        1,
+        18
+      ]
+    },
+    "FIRE M1332": {
+      "members_articulated": [
+        "FIRE M11IV",
+        "FIRE M1334"
+      ],
+      "members_without_entry_before": [
+        "FIRE M11IV"
+      ],
+      "adopted": [
+        1,
+        3
+      ],
+      "potential": [
+        2,
+        9
+      ]
+    },
+    "FIRE M1390": {
+      "members_articulated": [
+        "FIRE M1389"
+      ],
+      "members_without_entry_before": [
+        "FIRE M1389"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        8
+      ]
+    },
+    "FIRE M1408": {
+      "members_articulated": [
+        "FIRE M10FA"
+      ],
+      "members_without_entry_before": [
+        "FIRE M10FA"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "FIRE M1409": {
+      "members_articulated": [
+        "FIRE M10FV"
+      ],
+      "members_without_entry_before": [
+        "FIRE M10FV"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "FIRE M1417": {
+      "members_articulated": [
+        "FIRE M11BE"
+      ],
+      "members_without_entry_before": [
+        "FIRE M11BE"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "FIRE M1456": {
+      "members_articulated": [
+        "FIRE M10YK"
+      ],
+      "members_without_entry_before": [
+        "FIRE M10YK"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "FIRE M1468": {
+      "members_articulated": [
+        "FIRE M11GR"
+      ],
+      "members_without_entry_before": [
+        "FIRE M11GR"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "HORT M1033": {
+      "members_articulated": [
+        "DRAF M1038",
+        "HORT M10HO"
+      ],
+      "members_without_entry_before": [
+        "HORT M10HO"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        2,
+        2
+      ]
+    },
+    "HVAC M1058": {
+      "members_articulated": [
+        "HVAC M10TE"
+      ],
+      "members_without_entry_before": [
+        "HVAC M10TE"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "HVAC M1110": {
+      "members_articulated": [
+        "AUTO M10GS"
+      ],
+      "members_without_entry_before": [
+        "AUTO M10GS"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "INDT M1129": {
+      "members_articulated": [
+        "AVIA M10EX",
+        "AVIA M10JB",
+        "AVIA M10NZ",
+        "INDT M10GM",
+        "INDT M10SD",
+        "INDT M10ZH"
+      ],
+      "members_without_entry_before": [
+        "INDT M10ZH"
+      ],
+      "adopted": [
+        2,
+        3
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "INDT M1138": {
+      "members_articulated": [
+        "CNST M10JT"
+      ],
+      "members_without_entry_before": [
+        "CNST M10JT"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "ITIS M1050": {
+      "members_articulated": [
+        "ITIS M1057",
+        "ITIS M12BU",
+        "ITIS M1416"
+      ],
+      "members_without_entry_before": [
+        "ITIS M1057"
+      ],
+      "adopted": [
+        3,
+        3
+      ],
+      "potential": [
+        8,
+        12
+      ]
+    },
+    "ITIS M1184": {
+      "members_articulated": [
+        "ITIS M12DA"
+      ],
+      "members_without_entry_before": [
+        "ITIS M12DA"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        2,
+        2
+      ]
+    },
+    "KINE M1304": {
+      "members_articulated": [
+        "KINE M13YR"
+      ],
+      "members_without_entry_before": [
+        "KINE M13YR"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "MACH M1074": {
+      "members_articulated": [
+        "MACH M10GM"
+      ],
+      "members_without_entry_before": [
+        "MACH M10GM"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "MACH M1079": {
+      "members_articulated": [
+        "MACH M10KW"
+      ],
+      "members_without_entry_before": [
+        "MACH M10KW"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "MANU M1069": {
+      "members_articulated": [
+        "MACH M10GY"
+      ],
+      "members_without_entry_before": [
+        "MACH M10GY"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "MUSI M1584": {
+      "members_articulated": [
+        "MUSI M10MY"
+      ],
+      "members_without_entry_before": [
+        "MUSI M10MY"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "NUTR M1040": {
+      "members_articulated": [
+        "NUTR M10DA"
+      ],
+      "members_without_entry_before": [
+        "NUTR M10DA"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "OSHA M1013": {
+      "members_articulated": [
+        "OSHA M10BC",
+        "OSHA M10BO"
+      ],
+      "members_without_entry_before": [
+        "OSHA M10BC",
+        "OSHA M10BO"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "PHOT M1134": {
+      "members_articulated": [
+        "PHOT M10FE"
+      ],
+      "members_without_entry_before": [
+        "PHOT M10FE"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "REAL M1012": {
+      "members_articulated": [
+        "REAL M1011",
+        "REAL M10BS",
+        "REAL M10BX"
+      ],
+      "members_without_entry_before": [
+        "REAL M1011",
+        "REAL M10BS",
+        "REAL M10BX"
+      ],
+      "adopted": [
+        9,
+        9
+      ],
+      "potential": [
+        18,
+        35
+      ]
+    },
+    "REAL M1013": {
+      "members_articulated": [
+        "REAL M10BQ"
+      ],
+      "members_without_entry_before": [
+        "REAL M10BQ"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        12,
+        11
+      ]
+    },
+    "REAL M1045": {
+      "members_articulated": [
+        "REAL M10BN"
+      ],
+      "members_without_entry_before": [
+        "REAL M10BN"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "SPAN 100": {
+      "members_articulated": [
+        "SPAN M1001",
+        "SPAN M1036",
+        "SPAN M1068",
+        "SPAN M1074"
+      ],
+      "members_without_entry_before": [
+        "SPAN M1036",
+        "SPAN M1068",
+        "SPAN M1074"
+      ],
+      "adopted": [
+        14,
+        19
+      ],
+      "potential": [
+        40,
+        91
+      ]
+    },
+    "SPAN 110": {
+      "members_articulated": [
+        "SPAN M1003",
+        "SPAN M1048",
+        "SPAN M1070",
+        "SPAN M1075"
+      ],
+      "members_without_entry_before": [
+        "SPAN M1048",
+        "SPAN M1075"
+      ],
+      "adopted": [
+        11,
+        14
+      ],
+      "potential": [
+        65,
+        80
+      ]
+    },
+    "SPAN 220": {
+      "members_articulated": [
+        "SPAN M1085",
+        "SPAN M1092"
+      ],
+      "members_without_entry_before": [
+        "SPAN M1085",
+        "SPAN M1092"
+      ],
+      "adopted": [
+        1,
+        3
+      ],
+      "potential": [
+        38,
+        60
+      ]
+    },
+    "SPAN M1042": {
+      "members_articulated": [
+        "SPAN M10AJ",
+        "SPAN M10AK"
+      ],
+      "members_without_entry_before": [
+        "SPAN M10AJ",
+        "SPAN M10AK"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "WELD M1022": {
+      "members_articulated": [
+        "CNST M10CN",
+        "CNST M10PE",
+        "WELD M10SG"
+      ],
+      "members_without_entry_before": [
+        "WELD M10SG"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        20,
+        20
+      ]
+    },
+    "WELD M1041": {
+      "members_articulated": [
+        "WELD M1038"
+      ],
+      "members_without_entry_before": [
+        "WELD M1038"
+      ],
+      "adopted": [
+        0,
+        2
+      ],
+      "potential": [
+        0,
+        1
+      ]
+    },
+    "WELD M1049": {
+      "members_articulated": [
+        "WELD M10JB"
+      ],
+      "members_without_entry_before": [
+        "WELD M10JB"
+      ],
+      "adopted": [
+        0,
+        2
+      ],
+      "potential": [
+        0,
+        8
+      ]
+    },
+    "WELD M1054": {
+      "members_articulated": [
+        "WELD M1053"
+      ],
+      "members_without_entry_before": [
+        "WELD M1053"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        3
+      ]
+    },
+    "WELD M1060": {
+      "members_articulated": [
+        "WELD M10HA"
+      ],
+      "members_without_entry_before": [
+        "WELD M10HA"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        2,
+        2
+      ]
+    },
+    "WELD M1073": {
+      "members_articulated": [
+        "WELD M10NO"
+      ],
+      "members_without_entry_before": [
+        "WELD M10NO"
+      ],
+      "adopted": [
+        0,
+        3
+      ],
+      "potential": [
+        0,
+        17
+      ]
+    },
+    "WELD M1074": {
+      "members_articulated": [
+        "WELD M10NL"
+      ],
+      "members_without_entry_before": [
+        "WELD M10NL"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "WELD M1106": {
+      "members_articulated": [
+        "WELD M1107"
+      ],
+      "members_without_entry_before": [
+        "WELD M1107"
+      ],
+      "adopted": [
+        0,
+        2
+      ],
+      "potential": [
+        0,
+        1
+      ]
+    },
+    "WELD M1120": {
+      "members_articulated": [
+        "WELD M1076"
+      ],
+      "members_without_entry_before": [
+        "WELD M1076"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        1
+      ]
+    },
+    "WELD M1131": {
+      "members_articulated": [
+        "CNST M10NE"
+      ],
+      "members_without_entry_before": [
+        "CNST M10NE"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "WELD M1140": {
+      "members_articulated": [
+        "WELD M10GG"
+      ],
+      "members_without_entry_before": [
+        "WELD M10GG"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "WELD M1143": {
+      "members_articulated": [
+        "WELD M10GW"
+      ],
+      "members_without_entry_before": [
+        "WELD M10GW"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "WELD M1150": {
+      "members_articulated": [
+        "WELD M10IS",
+        "WELD M10IT"
+      ],
+      "members_without_entry_before": [
+        "WELD M10IS",
+        "WELD M10IT"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "WELD M1165": {
+      "members_articulated": [
+        "CNST M10ND",
+        "CNST M10NF"
+      ],
+      "members_without_entry_before": [
+        "CNST M10ND",
+        "CNST M10NF"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "WWKC M1003": {
+      "members_articulated": [
+        "CNST M10BU"
+      ],
+      "members_without_entry_before": [
+        "CNST M10BU"
+      ],
+      "adopted": [
+        0,
+        1
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    },
+    "WWKC M1006": {
+      "members_articulated": [
+        "CNST M10QV",
+        "WWKC M10BR"
+      ],
+      "members_without_entry_before": [
+        "CNST M10QV"
+      ],
+      "adopted": [
+        1,
+        2
+      ],
+      "potential": [
+        0,
+        0
+      ]
+    }
+  }
+}
