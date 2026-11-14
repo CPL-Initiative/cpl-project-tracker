@@ -21,89 +21,931 @@
     }
   },
   "systems": {
-    "identity": { "name": "CDC's college identity crosswalk", "holder": "The CPL Initiative (MAP team)", "note": "kb/college_identity/<date>/crosswalk.json: each college's name, district, MAP college id and MIS college code." },
-    "catalog": { "name": "The college's published catalog", "holder": "The college", "note": "Read from the public catalog pages by COBI's program-requirements capture (kb/program_requirements_college/<slug>/)." },
-    "coci": { "name": "COCI, the Chancellor's Office Curriculum Inventory", "holder": "The Chancellor's Office", "note": "Each college's approved programs and courses, by control number; COBI reads them from coci_college_programs and coci_program_courses." },
-    "outlines": { "name": "Course outlines of record", "holder": "The college (its curriculum system's public view)", "note": "SLOs and objectives read from the outlines a college publishes; loaded to course_outcomes." },
-    "cobi": { "name": "COBI's own reads and checks", "holder": "The CPL Initiative (MAP team and COBI)", "note": "What COBI records about its own work: read dates, machine checks, costs, scouting and spot-checks." },
-    "registry": { "name": "COBI's program source registry", "holder": "The CPL Initiative (MAP team and COBI)", "note": "program_source_registry: whether a catalog link, a curriculum view and a pathway source are held for the college." },
-    "ppm": { "name": "Program Pathways Mapper (PPM)", "holder": "The Foundation for California Community Colleges", "note": "Program maps colleges publish." },
-    "map": { "name": "MAP, the Mapping Articulated Pathways platform", "holder": "MAP (RCCD / InfoTech)", "note": "The system of record for CPL; COBI reads it through the MAP custom-report API." },
-    "comis": { "name": "COMIS, the Chancellor's Office Management Information Systems data", "holder": "The Chancellor's Office MIS unit", "note": "What each district reports each term; COBI holds one Fall 2025 course basic (CB) file (kb/reference/cb_course_basic_fall2025.csv)." },
-    "datamart": { "name": "The COMIS Data Mart", "holder": "The Chancellor's Office MIS unit", "note": "Public aggregates at datamart.cccco.edu." },
-    "coe": { "name": "Centers of Excellence labor market data", "holder": "The Centers of Excellence", "note": "Regional occupation demand; COBI holds a hand export (kb/reference/coe_occupation_demand_2024_2029.json)." },
-    "cid": { "name": "C-ID", "holder": "ASCCC (the C-ID system)", "note": "Course descriptors and the courses approved against them (kb/reference/cid_articulations.json)." }
+    "identity": {
+      "name": "CDC's college identity crosswalk",
+      "holder": "The CPL Initiative (MAP team)",
+      "note": "kb/college_identity/<date>/crosswalk.json: each college's name, district, MAP college id and MIS college code."
+    },
+    "catalog": {
+      "name": "The college's published catalog",
+      "holder": "The college",
+      "note": "Read from the public catalog pages by COBI's program-requirements capture (kb/program_requirements_college/<slug>/)."
+    },
+    "coci": {
+      "name": "COCI, the Chancellor's Office Curriculum Inventory",
+      "holder": "The Chancellor's Office",
+      "note": "Each college's approved programs and courses, by control number; COBI reads them from coci_college_programs and coci_program_courses."
+    },
+    "outlines": {
+      "name": "Course outlines of record",
+      "holder": "The college (its curriculum system's public view)",
+      "note": "SLOs and objectives read from the outlines a college publishes; loaded to course_outcomes."
+    },
+    "cobi": {
+      "name": "COBI's own reads and checks",
+      "holder": "The CPL Initiative (MAP team and COBI)",
+      "note": "What COBI records about its own work: read dates, machine checks, costs, scouting and spot-checks."
+    },
+    "registry": {
+      "name": "COBI's program source registry",
+      "holder": "The CPL Initiative (MAP team and COBI)",
+      "note": "program_source_registry: whether a catalog link, a curriculum view and a pathway source are held for the college."
+    },
+    "ppm": {
+      "name": "Program Pathways Mapper (PPM)",
+      "holder": "The Foundation for California Community Colleges",
+      "note": "Program maps colleges publish."
+    },
+    "map": {
+      "name": "MAP, the Mapping Articulated Pathways platform",
+      "holder": "MAP (RCCD / InfoTech)",
+      "note": "The system of record for CPL; COBI reads it through the MAP custom-report API."
+    },
+    "comis": {
+      "name": "COMIS, the Chancellor's Office Management Information Systems data",
+      "holder": "The Chancellor's Office MIS unit",
+      "note": "What each district reports each term; COBI holds one Fall 2025 course basic (CB) file (kb/reference/cb_course_basic_fall2025.csv)."
+    },
+    "datamart": {
+      "name": "The COMIS Data Mart",
+      "holder": "The Chancellor's Office MIS unit",
+      "note": "Public aggregates at datamart.cccco.edu."
+    },
+    "coe": {
+      "name": "Centers of Excellence labor market data",
+      "holder": "The Centers of Excellence",
+      "note": "Regional occupation demand; COBI holds a hand export (kb/reference/coe_occupation_demand_2024_2029.json)."
+    },
+    "cid": {
+      "name": "C-ID",
+      "holder": "ASCCC (the C-ID system)",
+      "note": "Course descriptors and the courses approved against them (kb/reference/cid_articulations.json)."
+    },
+    "college_systems": {
+      "name": "The college's own systems",
+      "holder": "The college or its district",
+      "note": "Its student information system (SIS) and the curriculum system that holds its course outlines."
+    }
   },
   "elements": [
-    { "id": "college", "name": "College", "labels": ["College"], "definition": "The college's name and its district.", "system": "identity", "comis_element": "", "class": "public", "join_key": "mis_college_code" },
-    { "id": "overall", "name": "Overall completeness", "labels": ["Overall"], "definition": "The share of the college's collection complete across program requirements, the catalog source, SLOs and PLOs, from the live read.", "system": "cobi", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "confidence", "name": "Confidence", "labels": ["Confidence"], "definition": "How far COBI trusts the collection: strong, partial or limited, from its machine checks and any spot-check.", "system": "cobi", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "program_requirements", "name": "Program requirements", "labels": ["Program requirements"], "definition": "Each program's required, list-choice and elective courses, read from the college's published catalog.", "system": "catalog", "comis_element": "", "class": "public", "join_key": "program_control_number" },
-    { "id": "active_programs", "name": "Active programs", "labels": ["Active programs", "Active programs (gap census live read)"], "definition": "Programs COCI lists as Active for the college, counted by control number.", "system": "coci", "comis_element": "", "class": "public", "join_key": "program_control_number" },
-    { "id": "teachout_programs", "name": "Teachout programs", "labels": ["Teachout programs (apart from Active)"], "definition": "Programs COCI lists as Active - Teachout Only, apart from the Active count.", "system": "coci", "comis_element": "", "class": "public", "join_key": "program_control_number" },
-    { "id": "approved_programs", "name": "Approved programs", "labels": ["Approved programs (apart from Active)"], "definition": "Programs COCI lists as Approved and not yet Active, apart from the Active count.", "system": "coci", "comis_element": "", "class": "public", "join_key": "program_control_number" },
-    { "id": "passing", "name": "Programs passing", "labels": ["Program requirements passing", "Passing now (gap census live read)", "Passing now (committed captures)", "Active programs with a passing record"], "definition": "Programs whose collected requirements pass the Program Requirements tab's machine checks (coverage, no invented course, units that add up).", "system": "cobi", "comis_element": "", "class": "public", "join_key": "program_control_number" },
-    { "id": "still_to_pass", "name": "Programs still to pass", "labels": ["Still to pass", "Still to pass (gap census live read)", "Still to pass (committed captures)"], "definition": "Programs whose collected requirements do not pass yet, each with its cause.", "system": "cobi", "comis_element": "", "class": "public", "join_key": "program_control_number" },
-    { "id": "listed_by_capture", "name": "Programs the capture listed", "labels": ["Listed by the capture (Active, Teachout and Approved)"], "definition": "Programs the catalog capture set out to read: Active, Teachout and Approved.", "system": "cobi", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "closed_list", "name": "Programs with a closed course list", "labels": ["With a closed course list (the capture)"], "definition": "Programs whose catalog page names every course a student may take.", "system": "catalog", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "pages_found", "name": "Program pages found", "labels": ["Programs whose page the capture found"], "definition": "Programs whose catalog page the capture found.", "system": "catalog", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "records_extracted", "name": "Records extracted", "labels": ["Records extracted (the capture; a reread can add some)"], "definition": "Program records the capture extracted from the catalog pages it found.", "system": "cobi", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "program_records", "name": "Program records on file", "labels": ["Program records on file"], "definition": "Program requirement records COBI holds for the college in the live table.", "system": "cobi", "comis_element": "", "class": "public", "join_key": "program_control_number" },
-    { "id": "machine_checks", "name": "Records failing each machine check", "labels": ["Coverage", "A course invented", "Units arithmetic", "A course repeated", "Outcomes"], "definition": "Extracted records that fail each machine check, as the capture read them; a record can fail more than one.", "system": "cobi", "comis_element": "", "class": "held", "join_key": "" },
-    { "id": "courses_on_active", "name": "Courses on Active programs", "labels": ["Courses on Active programs"], "definition": "Distinct courses COCI places on the college's Active programs.", "system": "coci", "comis_element": "", "class": "public", "join_key": "course_control_number" },
-    { "id": "course_slos", "name": "Course SLOs", "labels": ["Course SLOs", "SLOs and objectives"], "definition": "Courses on Active programs whose outline of record states student learning outcomes (the list column shows SLOs and objectives together).", "system": "outlines", "comis_element": "", "class": "public", "join_key": "course_control_number" },
-    { "id": "course_objectives", "name": "Course objectives", "labels": ["Course objectives"], "definition": "Courses on Active programs whose outline of record states objectives.", "system": "outlines", "comis_element": "", "class": "public", "join_key": "course_control_number" },
-    { "id": "program_plos", "name": "Program PLOs", "labels": ["Program PLOs"], "definition": "Active programs whose record carries program learning outcomes from the catalog.", "system": "catalog", "comis_element": "", "class": "public", "join_key": "program_control_number" },
-    { "id": "catalog_source", "name": "Catalog source", "labels": ["Catalog source"], "definition": "Where the college's catalog is published and how COBI reads it.", "system": "catalog", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "catalog_platform", "name": "Catalog platform", "labels": ["Catalog platform"], "definition": "The software that publishes the catalog (for example CourseLeaf, Acalog or eLumen).", "system": "catalog", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "catalog_year", "name": "Catalog year", "labels": ["Catalog year"], "definition": "The catalog year the capture or the scout read.", "system": "catalog", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "catalog_link", "name": "Catalog link held", "labels": ["Catalog link"], "definition": "Whether the program source registry holds a link to the college's catalog.", "system": "registry", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "curriculum_view", "name": "Curriculum view held", "labels": ["Curriculum view"], "definition": "Whether the registry holds a link to the public view of the college's curriculum system, where the outlines are.", "system": "registry", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "pathway_source", "name": "Pathway source", "labels": ["Pathway source"], "definition": "Whether the registry records a source for program sequences: Program Pathways Mapper or a program map page.", "system": "registry", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "scout_recommends", "name": "Source scout's recommendation", "labels": ["Recommends"], "definition": "What COBI's source scout recommends for the next read, and any access barrier it met.", "system": "cobi", "comis_element": "", "class": "held", "join_key": "" },
-    { "id": "ppm", "name": "Program Pathways Mapper (PPM)", "labels": ["Program Pathways Mapper (PPM)"], "definition": "The program maps the college publishes on the Program Pathways Mapper: each program's courses, term by term.", "system": "ppm", "comis_element": "", "class": "public", "join_key": "program_control_number" },
-    { "id": "course_descriptions", "name": "Course descriptions", "labels": ["Course descriptions"], "definition": "Each course's catalog description, from COCI and the outlines.", "system": "coci", "comis_element": "", "class": "public", "join_key": "course_control_number" },
-    { "id": "cpl_map", "name": "CPL and MAP", "labels": ["CPL and MAP"], "definition": "The CPL articulations the college has adopted in MAP and the students' CPL counts. COBI publishes counts only, never a student's row.", "system": "map", "comis_element": "", "class": "aggregate", "join_key": "course_and_college" },
-    { "id": "comis_mis", "name": "COMIS and MIS", "labels": ["COMIS and MIS"], "definition": "The course basic (CB) records the college reports to the Chancellor's Office each term; COBI uses course elements only.", "system": "comis", "comis_element": "CB file (the CB_ columns of kb/reference/cb_course_basic_fall2025.csv)", "class": "agreement", "join_key": "course_control_number" },
-    { "id": "coe", "name": "COE labor market (regional)", "labels": ["COE labor market (regional)"], "definition": "Occupation demand in the college's region, from the Centers of Excellence.", "system": "coe", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "last_read", "name": "Last read", "labels": ["Last read"], "definition": "When COBI last read the college's catalog for program requirements.", "system": "cobi", "comis_element": "", "class": "public", "join_key": "" },
-    { "id": "last_spot_checked", "name": "Last spot-checked", "labels": ["Last spot-checked"], "definition": "When COBIx last compared five records with the catalog by hand.", "system": "cobi", "comis_element": "", "class": "held", "join_key": "" },
-    { "id": "last_scouted", "name": "Last scouted", "labels": ["Last scouted"], "definition": "When COBI's source scout last checked the catalog.", "system": "cobi", "comis_element": "", "class": "held", "join_key": "" },
-    { "id": "read_cost", "name": "Read cost", "labels": ["Cost of the last read", "Per passing program at read time", "Read cost per passing program"], "definition": "What the last paid read cost, in all and per passing program.", "system": "cobi", "comis_element": "", "class": "held", "join_key": "" },
-    { "id": "actions_run", "name": "Actions run", "labels": ["Actions run of the paid read"], "definition": "The GitHub Actions run of the paid read.", "system": "cobi", "comis_element": "", "class": "held", "join_key": "" },
-    { "id": "page_finding_time", "name": "Page-finding time", "labels": ["Page-finding time (the capture, before the paid read)"], "definition": "How long the capture took to find the program pages, before the paid read.", "system": "cobi", "comis_element": "", "class": "held", "join_key": "" },
-    { "id": "gaps", "name": "Known gaps and barriers", "labels": ["Known gaps and barriers"], "definition": "What stands in the way: each cause of programs still to pass, a scout's access barrier, the SLO queue and spot-check differences.", "system": "cobi", "comis_element": "", "class": "held", "join_key": "" },
-    { "id": "team_asks", "name": "Team asks", "labels": ["Team asks"], "definition": "Work for the MAP team and COBIx; nothing in it asks the college to act.", "system": "cobi", "comis_element": "", "class": "held", "join_key": "" },
-    { "id": "sources", "name": "Sources", "labels": ["Sources"], "definition": "The catalog, files and reads behind the college's figures.", "system": "cobi", "comis_element": "", "class": "public", "join_key": "" }
+    {
+      "id": "college",
+      "name": "College",
+      "labels": [
+        "College"
+      ],
+      "definition": "The college's name and its district.",
+      "system": "identity",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "mis_college_code"
+    },
+    {
+      "id": "overall",
+      "name": "Overall completeness",
+      "labels": [
+        "Overall"
+      ],
+      "definition": "The share of the college's collection complete across program requirements, the catalog source, SLOs and PLOs, from the live read.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "confidence",
+      "name": "Confidence",
+      "labels": [
+        "Confidence"
+      ],
+      "definition": "How far COBI trusts the collection: strong, partial or limited, from its machine checks and any spot-check.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "program_requirements",
+      "name": "Program requirements",
+      "labels": [
+        "Program requirements"
+      ],
+      "definition": "Each program's required, list-choice and elective courses, read from the college's published catalog.",
+      "system": "catalog",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "active_programs",
+      "name": "Active programs",
+      "labels": [
+        "Active programs",
+        "Active programs (gap census live read)"
+      ],
+      "definition": "Programs COCI lists as Active for the college, counted by control number.",
+      "system": "coci",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "teachout_programs",
+      "name": "Teachout programs",
+      "labels": [
+        "Teachout programs (apart from Active)"
+      ],
+      "definition": "Programs COCI lists as Active - Teachout Only, apart from the Active count.",
+      "system": "coci",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "approved_programs",
+      "name": "Approved programs",
+      "labels": [
+        "Approved programs (apart from Active)"
+      ],
+      "definition": "Programs COCI lists as Approved and not yet Active, apart from the Active count.",
+      "system": "coci",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "passing",
+      "name": "Programs passing",
+      "labels": [
+        "Program requirements passing",
+        "Passing now (gap census live read)",
+        "Passing now (committed captures)",
+        "Active programs with a passing record"
+      ],
+      "definition": "Programs whose collected requirements pass the Program Requirements tab's machine checks (coverage, no invented course, units that add up).",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "still_to_pass",
+      "name": "Programs still to pass",
+      "labels": [
+        "Still to pass",
+        "Still to pass (gap census live read)",
+        "Still to pass (committed captures)"
+      ],
+      "definition": "Programs whose collected requirements do not pass yet, each with its cause.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "listed_by_capture",
+      "name": "Programs the capture listed",
+      "labels": [
+        "Listed by the capture (Active, Teachout and Approved)"
+      ],
+      "definition": "Programs the catalog capture set out to read: Active, Teachout and Approved.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "closed_list",
+      "name": "Programs with a closed course list",
+      "labels": [
+        "With a closed course list (the capture)"
+      ],
+      "definition": "Programs whose catalog page names every course a student may take.",
+      "system": "catalog",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "pages_found",
+      "name": "Program pages found",
+      "labels": [
+        "Programs whose page the capture found"
+      ],
+      "definition": "Programs whose catalog page the capture found.",
+      "system": "catalog",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "records_extracted",
+      "name": "Records extracted",
+      "labels": [
+        "Records extracted (the capture; a reread can add some)"
+      ],
+      "definition": "Program records the capture extracted from the catalog pages it found.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "program_records",
+      "name": "Program records on file",
+      "labels": [
+        "Program records on file"
+      ],
+      "definition": "Program requirement records COBI holds for the college in the live table.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "machine_checks",
+      "name": "Records failing each machine check",
+      "labels": [
+        "Coverage",
+        "A course invented",
+        "Units arithmetic",
+        "A course repeated",
+        "Outcomes"
+      ],
+      "definition": "Extracted records that fail each machine check, as the capture read them; a record can fail more than one.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "held",
+      "join_key": ""
+    },
+    {
+      "id": "courses_on_active",
+      "name": "Courses on Active programs",
+      "labels": [
+        "Courses on Active programs"
+      ],
+      "definition": "Distinct courses COCI places on the college's Active programs.",
+      "system": "coci",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "course_control_number"
+    },
+    {
+      "id": "course_slos",
+      "name": "Course SLOs",
+      "labels": [
+        "Course SLOs",
+        "SLOs and objectives",
+        "Course SLOs and objectives"
+      ],
+      "definition": "Courses on Active programs whose outline of record states student learning outcomes (the list column shows SLOs and objectives together).",
+      "system": "outlines",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "course_control_number"
+    },
+    {
+      "id": "course_objectives",
+      "name": "Course objectives",
+      "labels": [
+        "Course objectives"
+      ],
+      "definition": "Courses on Active programs whose outline of record states objectives.",
+      "system": "outlines",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "course_control_number"
+    },
+    {
+      "id": "program_plos",
+      "name": "Program PLOs",
+      "labels": [
+        "Program PLOs"
+      ],
+      "definition": "Active programs whose record carries program learning outcomes from the catalog.",
+      "system": "catalog",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "catalog_source",
+      "name": "Catalog source",
+      "labels": [
+        "Catalog source"
+      ],
+      "definition": "Where the college's catalog is published and how COBI reads it.",
+      "system": "catalog",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "catalog_platform",
+      "name": "Catalog platform",
+      "labels": [
+        "Catalog platform"
+      ],
+      "definition": "The software that publishes the catalog (for example CourseLeaf, Acalog or eLumen).",
+      "system": "catalog",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "catalog_year",
+      "name": "Catalog year",
+      "labels": [
+        "Catalog year"
+      ],
+      "definition": "The catalog year the capture or the scout read.",
+      "system": "catalog",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "catalog_link",
+      "name": "Catalog link held",
+      "labels": [
+        "Catalog link"
+      ],
+      "definition": "Whether the program source registry holds a link to the college's catalog.",
+      "system": "registry",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "curriculum_view",
+      "name": "Curriculum view held",
+      "labels": [
+        "Curriculum view"
+      ],
+      "definition": "Whether the registry holds a link to the public view of the college's curriculum system, where the outlines are.",
+      "system": "registry",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "pathway_source",
+      "name": "Map source in the registry",
+      "labels": [
+        "Program source registry"
+      ],
+      "definition": "Whether COBI's program source registry holds a source for the college's program maps, or its reader looked and found none.",
+      "system": "registry",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "scout_recommends",
+      "name": "Source scout's recommendation",
+      "labels": [
+        "Recommends"
+      ],
+      "definition": "What COBI's source scout recommends for the next read, and any access barrier it met.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "held",
+      "join_key": ""
+    },
+    {
+      "id": "ppm",
+      "name": "Program pathway maps",
+      "labels": [
+        "Program pathway maps",
+        "Publishes maps"
+      ],
+      "definition": "Whether the college publishes program maps (each program's courses, term by term): yes, none found when looked for, or not looked for yet.",
+      "system": "ppm",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "ppm_member",
+      "name": "Program Pathways Mapper member list",
+      "labels": [
+        "Program Pathways Mapper member list"
+      ],
+      "definition": "Whether the mapper's public member list names the college, and at what host.",
+      "system": "ppm",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "map_where",
+      "name": "Where the maps are published",
+      "labels": [
+        "Where"
+      ],
+      "definition": "The host that publishes the college's maps, where a file records it.",
+      "system": "ppm",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "map_platform",
+      "name": "Map platform",
+      "labels": [
+        "Platform"
+      ],
+      "definition": "The software that publishes the maps (for example Program Pathways Mapper), where a file records it.",
+      "system": "ppm",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "maps_held",
+      "name": "Maps we hold",
+      "labels": [
+        "Maps we hold"
+      ],
+      "definition": "The college's term-by-term program maps committed to the repo.",
+      "system": "ppm",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "maps_against_active",
+      "name": "Maps against Active programs",
+      "labels": [
+        "Against Active programs"
+      ],
+      "definition": "How many committed maps name a program in the college's program records, beside its Active programs.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "program_control_number"
+    },
+    {
+      "id": "course_descriptions",
+      "name": "Course descriptions",
+      "labels": [
+        "Course descriptions"
+      ],
+      "definition": "Each course's catalog description, from COCI and the outlines.",
+      "system": "coci",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "course_control_number"
+    },
+    {
+      "id": "cpl_map",
+      "name": "CPL and MAP",
+      "labels": [
+        "CPL and MAP"
+      ],
+      "definition": "The CPL articulations the college has adopted in MAP and the students' CPL counts. COBI publishes counts only, never a student's row.",
+      "system": "map",
+      "comis_element": "",
+      "class": "aggregate",
+      "join_key": "course_and_college"
+    },
+    {
+      "id": "comis_mis",
+      "name": "COMIS and MIS",
+      "labels": [
+        "COMIS and MIS"
+      ],
+      "definition": "The course basic (CB) records the college reports to the Chancellor's Office each term; COBI uses course elements only.",
+      "system": "comis",
+      "comis_element": "CB file (the CB_ columns of kb/reference/cb_course_basic_fall2025.csv)",
+      "class": "agreement",
+      "join_key": "course_control_number"
+    },
+    {
+      "id": "coe",
+      "name": "COE labor market (regional)",
+      "labels": [
+        "COE labor market (regional)"
+      ],
+      "definition": "Occupation demand in the college's region, from the Centers of Excellence.",
+      "system": "coe",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "last_read",
+      "name": "Last read",
+      "labels": [
+        "Last read"
+      ],
+      "definition": "When COBI last read the college's catalog for program requirements.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "last_spot_checked",
+      "name": "Last spot-checked",
+      "labels": [
+        "Last spot-checked"
+      ],
+      "definition": "When COBIx last compared five records with the catalog by hand.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "held",
+      "join_key": ""
+    },
+    {
+      "id": "last_scouted",
+      "name": "Last scouted",
+      "labels": [
+        "Last scouted"
+      ],
+      "definition": "When COBI's source scout last checked the catalog.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "held",
+      "join_key": ""
+    },
+    {
+      "id": "read_cost",
+      "name": "Read cost",
+      "labels": [
+        "Cost of the last read",
+        "Per passing program at read time",
+        "Read cost per passing program",
+        "Cost"
+      ],
+      "definition": "What the last paid read cost, in all and per passing program.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "held",
+      "join_key": ""
+    },
+    {
+      "id": "actions_run",
+      "name": "Actions run",
+      "labels": [
+        "Actions run of the paid read"
+      ],
+      "definition": "The GitHub Actions run of the paid read.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "held",
+      "join_key": ""
+    },
+    {
+      "id": "page_finding_time",
+      "name": "Page-finding time",
+      "labels": [
+        "Page-finding time (the capture, before the paid read)"
+      ],
+      "definition": "How long the capture took to find the program pages, before the paid read.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "held",
+      "join_key": ""
+    },
+    {
+      "id": "gaps",
+      "name": "Known gaps and barriers",
+      "labels": [
+        "Known gaps and barriers"
+      ],
+      "definition": "What stands in the way: each cause of programs still to pass, a scout's access barrier, the SLO queue and spot-check differences.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "held",
+      "join_key": ""
+    },
+    {
+      "id": "team_asks",
+      "name": "Team asks",
+      "labels": [
+        "Team asks"
+      ],
+      "definition": "Work for the MAP team and COBIx; nothing in it asks the college to act.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "held",
+      "join_key": ""
+    },
+    {
+      "id": "sources",
+      "name": "Sources",
+      "labels": [
+        "Sources"
+      ],
+      "definition": "The catalog, files and reads behind the college's figures.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "collection_method",
+      "name": "How it's collected",
+      "labels": [
+        "How it's collected",
+        "Who or what",
+        "Workflow",
+        "Last run"
+      ],
+      "definition": "For each lane (catalog source, program requirements, SLOs and objectives, PLOs): the reader, workflow or scout that collected it, its run and when it last ran.",
+      "system": "cobi",
+      "comis_element": "",
+      "class": "held",
+      "join_key": ""
+    },
+    {
+      "id": "data_sources",
+      "name": "Data sources",
+      "labels": [
+        "Data sources"
+      ],
+      "definition": "The systems behind the college's data, and how COBI reads each: directly, through an export, or not yet.",
+      "system": "college_systems",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "sis_system",
+      "name": "Student information system (SIS)",
+      "labels": [
+        "Student information system (SIS)"
+      ],
+      "definition": "The college's SIS (for example Banner, Colleague or PeopleSoft), where a file names it; otherwise not known.",
+      "system": "college_systems",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "curriculum_system",
+      "name": "Curriculum system",
+      "labels": [
+        "Curriculum system (course outlines)"
+      ],
+      "definition": "The system that holds the college's course outlines (for example eLumen, CurricUNET or Courseleaf CIM), and how COBI reads it.",
+      "system": "college_systems",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "course_control_number"
+    },
+    {
+      "id": "maps_source",
+      "name": "Program maps as a source",
+      "labels": [
+        "Program maps"
+      ],
+      "definition": "Where the college's program maps come from, and whether COBI reads them.",
+      "system": "ppm",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    },
+    {
+      "id": "coci_source",
+      "name": "COCI as a source",
+      "labels": [
+        "COCI (the Chancellor's Office Curriculum Inventory)"
+      ],
+      "definition": "How COBI reads COCI for the college: through the committed course and program extracts.",
+      "system": "coci",
+      "comis_element": "",
+      "class": "public",
+      "join_key": "course_control_number"
+    },
+    {
+      "id": "integration",
+      "name": "SIS and curriculum system integration",
+      "labels": [
+        "SIS and curriculum system integration"
+      ],
+      "definition": "Whether MAP connects to the college's SIS or curriculum system, as the MAP team records it; none known until it does.",
+      "system": "map",
+      "comis_element": "",
+      "class": "public",
+      "join_key": ""
+    }
   ],
   "held_not_shown": [
-    { "id": "map_articulation_status", "name": "MAP articulation Status (the approval stage)", "definition": "The stage of MAP's approval cascade an articulation row sits at, for example Initiator or Implementation. Workflow state inside MAP; an outside reader would take it for a college's public position.", "system": "map", "class": "held", "where": "stg_map_student_credit.status, loaded by kb/_sync_map_custom_reports.py", "outside_share": "Left out." },
-    { "id": "staff_role_contacts", "name": "Staff role contacts", "definition": "Each college's contacts by MAP role (Primary Contact, VPAA, VPSS, CEO, CPL Coordinator, CPL Counselor, Articulation Officer, Faculty Lead, Lead Initiator, Academic Senate President, School Certifying Official): a name and an email per role. Staff contacts, not audit-log ids.", "system": "map", "class": "held", "where": "map_college_contacts, loaded by map/sync_map_users.py (View_CollegeContacts_APIDataset); never written to disk or committed", "outside_share": "Left out of any outside share by default." },
-    { "id": "map_college_users", "name": "MAP college users and roles", "definition": "Each MAP user at a college: first and last name, email, username, role, disciplines, status and last update.", "system": "map", "class": "held", "where": "map_college_users, loaded by map/sync_map_users.py (View_CollegeUsersRoles_APIDataset); never written to disk or committed", "outside_share": "Left out of any outside share by default." },
-    { "id": "landing_page_contacts", "name": "Landing page contacts", "definition": "The contacts each college's MAP landing page lists, mirrored to match funding requesters.", "system": "map", "class": "held", "where": "map_landing_contacts, loaded by map/sync_landing_contacts.py; never written to disk or committed", "outside_share": "Left out of any outside share by default." },
-    { "id": "map_student_rows", "name": "Pseudonymous per-student CPL rows", "definition": "MAP's per-student credit rows, keyed by a surrogate number derived inside the pull from MAP's salt-hashed student id; no name, date of birth or real id is fetched.", "system": "map", "class": "held", "where": "map_student_credit (reviewers only) and stg_map_student_credit (service role only), loaded by kb/_sync_map_custom_reports.py; the daily pull's rows stay on the runner for the run alone", "outside_share": "Never shared; the reviewer-only base of the student-detail disclosure ADR." },
-    { "id": "map_student_counts", "name": "MAP student counts", "definition": "Distinct students with CPL per college or per exhibit, reduced from the per-student rows before anything is committed or shown.", "system": "map", "class": "aggregate", "where": "funding/_build_funding_performance.py and the published aggregates of the student-detail ADR", "outside_share": "Counts only, suppressed below 10 distinct students under the student-detail disclosure ADR." }
+    {
+      "id": "map_articulation_status",
+      "name": "MAP articulation Status (the approval stage)",
+      "definition": "The stage of MAP's approval cascade an articulation row sits at, for example Initiator or Implementation. Workflow state inside MAP; an outside reader would take it for a college's public position.",
+      "system": "map",
+      "class": "held",
+      "where": "stg_map_student_credit.status, loaded by kb/_sync_map_custom_reports.py",
+      "outside_share": "Left out."
+    },
+    {
+      "id": "staff_role_contacts",
+      "name": "Staff role contacts",
+      "definition": "Each college's contacts by MAP role (Primary Contact, VPAA, VPSS, CEO, CPL Coordinator, CPL Counselor, Articulation Officer, Faculty Lead, Lead Initiator, Academic Senate President, School Certifying Official): a name and an email per role. Staff contacts, not audit-log ids.",
+      "system": "map",
+      "class": "held",
+      "where": "map_college_contacts, loaded by map/sync_map_users.py (View_CollegeContacts_APIDataset); never written to disk or committed",
+      "outside_share": "Left out of any outside share by default."
+    },
+    {
+      "id": "map_college_users",
+      "name": "MAP college users and roles",
+      "definition": "Each MAP user at a college: first and last name, email, username, role, disciplines, status and last update.",
+      "system": "map",
+      "class": "held",
+      "where": "map_college_users, loaded by map/sync_map_users.py (View_CollegeUsersRoles_APIDataset); never written to disk or committed",
+      "outside_share": "Left out of any outside share by default."
+    },
+    {
+      "id": "landing_page_contacts",
+      "name": "Landing page contacts",
+      "definition": "The contacts each college's MAP landing page lists, mirrored to match funding requesters.",
+      "system": "map",
+      "class": "held",
+      "where": "map_landing_contacts, loaded by map/sync_landing_contacts.py; never written to disk or committed",
+      "outside_share": "Left out of any outside share by default."
+    },
+    {
+      "id": "map_student_rows",
+      "name": "Pseudonymous per-student CPL rows",
+      "definition": "MAP's per-student credit rows, keyed by a surrogate number derived inside the pull from MAP's salt-hashed student id; no name, date of birth or real id is fetched.",
+      "system": "map",
+      "class": "held",
+      "where": "map_student_credit (reviewers only) and stg_map_student_credit (service role only), loaded by kb/_sync_map_custom_reports.py; the daily pull's rows stay on the runner for the run alone",
+      "outside_share": "Never shared; the reviewer-only base of the student-detail disclosure ADR."
+    },
+    {
+      "id": "map_student_counts",
+      "name": "MAP student counts",
+      "definition": "Distinct students with CPL per college or per exhibit, reduced from the per-student rows before anything is committed or shown.",
+      "system": "map",
+      "class": "aggregate",
+      "where": "funding/_build_funding_performance.py and the published aggregates of the student-detail ADR",
+      "outside_share": "Counts only, suppressed below 10 distinct students under the student-detail disclosure ADR."
+    }
   ],
   "join_keys": [
-    { "id": "program_control_number", "name": "Program control number", "definition": "COCI's number for an approved program. It joins the public program record (catalog, COCI, program maps) to program awards reported to COMIS.", "public_side": "The program's catalog record, its COCI record and its program map", "other_side": "Program awards in COMIS, counted by control number", "other_class": "agreement", "comis_element": "", "comis_note": "The issue names SP04; the repo's own reference files do not record the SP element ids, so the id is left empty." },
-    { "id": "award_type", "name": "Award type", "definition": "The kind of award a program leads to (an associate degree, a certificate and so on). It sorts program awards on both sides of the control-number join.", "public_side": "The program's COCI record", "other_side": "Program awards in COMIS", "other_class": "agreement", "comis_element": "", "comis_note": "The issue names SP02; the repo's own reference files do not record the SP element ids, so the id is left empty." },
-    { "id": "course_control_number", "name": "Course control number", "definition": "COCI's number for an approved course. It joins the public course record (catalog, COCI, the outline) to the course basic record in COMIS.", "public_side": "The course's catalog entry, its COCI record and its outline of record", "other_side": "The COMIS course basic (CB) record", "other_class": "agreement", "comis_element": "CB_CONTROL_NUMBER", "comis_note": "The column name in kb/reference/cb_course_basic_fall2025.csv; the element number is not in the repo." },
-    { "id": "top_code", "name": "TOP code", "definition": "The Taxonomy of Programs code a college assigns to a course or program. Faculty-entered and unreliable, so COBI uses it to corroborate or filter, never to decide identity.", "public_side": "The course's and the program's COCI record", "other_side": "The COMIS course basic record", "other_class": "agreement", "comis_element": "CB_TOP_CODE", "comis_note": "The column name in kb/reference/cb_course_basic_fall2025.csv; the element number is not in the repo." },
-    { "id": "mis_college_code", "name": "MIS college code", "definition": "The three-character code COMIS uses for a college (Appendix A of the MIS Data Element Dictionary). It joins CDC's college to every COMIS file and Data Mart figure.", "public_side": "CDC's college identity crosswalk", "other_side": "COMIS files and the Data Mart's aggregates", "other_class": "aggregate", "comis_element": "CB_COLLEGE_ID", "comis_note": "The column name in kb/reference/cb_course_basic_fall2025.csv; the codes are in kb/reference/mis_district_college_codes.json." },
-    { "id": "course_and_college", "name": "Course and college", "definition": "A college's local course, named by the college and its course. It joins a CPL articulation in MAP to the aggregate CPL counts for that course.", "public_side": "The college's course in its catalog and COCI", "other_side": "MAP's CPL articulations and the aggregate CPL counts", "other_class": "aggregate", "comis_element": "", "comis_note": "" },
-    { "id": "cid_number", "name": "C-ID number", "definition": "The C-ID descriptor a course is approved against. It joins a college's course to the common descriptor and to MAP's articulation rows, which carry the same number.", "public_side": "C-ID's approved courses", "other_side": "MAP's articulation rows (CID Number)", "other_class": "aggregate", "comis_element": "", "comis_note": "" }
+    {
+      "id": "program_control_number",
+      "name": "Program control number",
+      "definition": "COCI's number for an approved program. It joins the public program record (catalog, COCI, program maps) to program awards reported to COMIS.",
+      "public_side": "The program's catalog record, its COCI record and its program map",
+      "other_side": "Program awards in COMIS, counted by control number",
+      "other_class": "agreement",
+      "comis_element": "",
+      "comis_note": "The issue names SP04; the repo's own reference files do not record the SP element ids, so the id is left empty."
+    },
+    {
+      "id": "award_type",
+      "name": "Award type",
+      "definition": "The kind of award a program leads to (an associate degree, a certificate and so on). It sorts program awards on both sides of the control-number join.",
+      "public_side": "The program's COCI record",
+      "other_side": "Program awards in COMIS",
+      "other_class": "agreement",
+      "comis_element": "",
+      "comis_note": "The issue names SP02; the repo's own reference files do not record the SP element ids, so the id is left empty."
+    },
+    {
+      "id": "course_control_number",
+      "name": "Course control number",
+      "definition": "COCI's number for an approved course. It joins the public course record (catalog, COCI, the outline) to the course basic record in COMIS.",
+      "public_side": "The course's catalog entry, its COCI record and its outline of record",
+      "other_side": "The COMIS course basic (CB) record",
+      "other_class": "agreement",
+      "comis_element": "CB_CONTROL_NUMBER",
+      "comis_note": "The column name in kb/reference/cb_course_basic_fall2025.csv; the element number is not in the repo."
+    },
+    {
+      "id": "top_code",
+      "name": "TOP code",
+      "definition": "The Taxonomy of Programs code a college assigns to a course or program. Faculty-entered and unreliable, so COBI uses it to corroborate or filter, never to decide identity.",
+      "public_side": "The course's and the program's COCI record",
+      "other_side": "The COMIS course basic record",
+      "other_class": "agreement",
+      "comis_element": "CB_TOP_CODE",
+      "comis_note": "The column name in kb/reference/cb_course_basic_fall2025.csv; the element number is not in the repo."
+    },
+    {
+      "id": "mis_college_code",
+      "name": "MIS college code",
+      "definition": "The three-character code COMIS uses for a college (Appendix A of the MIS Data Element Dictionary). It joins CDC's college to every COMIS file and Data Mart figure.",
+      "public_side": "CDC's college identity crosswalk",
+      "other_side": "COMIS files and the Data Mart's aggregates",
+      "other_class": "aggregate",
+      "comis_element": "CB_COLLEGE_ID",
+      "comis_note": "The column name in kb/reference/cb_course_basic_fall2025.csv; the codes are in kb/reference/mis_district_college_codes.json."
+    },
+    {
+      "id": "course_and_college",
+      "name": "Course and college",
+      "definition": "A college's local course, named by the college and its course. It joins a CPL articulation in MAP to the aggregate CPL counts for that course.",
+      "public_side": "The college's course in its catalog and COCI",
+      "other_side": "MAP's CPL articulations and the aggregate CPL counts",
+      "other_class": "aggregate",
+      "comis_element": "",
+      "comis_note": ""
+    },
+    {
+      "id": "cid_number",
+      "name": "C-ID number",
+      "definition": "The C-ID descriptor a course is approved against. It joins a college's course to the common descriptor and to MAP's articulation rows, which carry the same number.",
+      "public_side": "C-ID's approved courses",
+      "other_side": "MAP's articulation rows (CID Number)",
+      "other_class": "aggregate",
+      "comis_element": "",
+      "comis_note": ""
+    }
   ],
   "agreements": [
-    { "id": "map", "name": "MAP data access", "parties": "The Chancellor's Office CPL Initiative and MAP (RCCD / InfoTech)", "status": "exists", "covers": "The nightly MAP custom-report API pull and the gated tables it loads.", "note": "Named as existing in the conductor's reply on #3310 (2026-11-14). The agreement itself is not recorded in the repo." },
-    { "id": "co_data_lake", "name": "Chancellor's Office data lake and dataset APIs", "parties": "The Chancellor's Office research and data staff", "status": "might be needed", "covers": "API access to the Chancellor's Office datasets and data lakes.", "note": "The CPL Initiative will ask for access (#3310). Not recorded as asked." },
-    { "id": "comis_awards", "name": "COMIS program awards by control number", "parties": "The Chancellor's Office institutional research and MIS", "status": "might be needed", "covers": "Program award counts by control number and award type, as aggregates.", "note": "The drafted request is not in this repo or the vault; its status is not recorded." },
-    { "id": "comis_student", "name": "COMIS student-level files", "parties": "The Chancellor's Office institutional research and MIS", "status": "might be needed", "covers": "The MAP-to-MIS student match that would count students with CPL statewide.", "note": "Falls under the student-detail disclosure ADR (docs/reference/data_sources.md, MIS)." },
-    { "id": "comis_course_file", "name": "COMIS course basic file", "parties": "The Chancellor's Office MIS unit", "status": "not recorded", "covers": "The Fall 2025 CB course file the team was supplied.", "note": "The terms it was supplied under are not recorded in the repo." },
-    { "id": "jst", "name": "JST authorizations through CCCStart", "parties": "The Chancellor's Office, its General Counsel and the CCC Technology Center", "status": "pending", "covers": "Ordering the authorized students' Joint Services Transcripts and loading them to MAP per college.", "note": "Waits on the General Counsel's procedural OK; no data-sharing agreement, since the student's CCCApply authorization governs (docs/reference/data_sources.md)." },
-    { "id": "das", "name": "DIR-DAS apprenticeship MOU", "parties": "The Chancellor's Office and DIR-DAS", "status": "exists", "covers": "Matching apprentice records with CCC records for research and aggregate reports.", "note": "A revision extending disclosure to designated agents and districts is pending review (docs/reference/data_sources.md)." },
-    { "id": "ppm", "name": "Program Pathways Mapper access", "parties": "The Foundation for California Community Colleges", "status": "might be needed", "covers": "An export or API for the program maps colleges publish.", "note": "A note asking for access was drafted on 2026-10-17; not recorded as sent." },
-    { "id": "college_systems", "name": "College and district system access", "parties": "Each college or district, with MAP", "status": "might be needed", "covers": "Reading a college's student information system or curriculum system through its API.", "note": "Per college; none is recorded in the repo." },
-    { "id": "outside_partners", "name": "Outside partners reading the Commons", "parties": "WestEd, Credential Engine and other partners", "status": "might be needed", "covers": "Partners reading Commons data beyond what is public.", "note": "Public elements need none; anything beyond them would. Not recorded as asked." }
+    {
+      "id": "map",
+      "name": "MAP data access",
+      "parties": "The Chancellor's Office CPL Initiative and MAP (RCCD / InfoTech)",
+      "status": "exists",
+      "covers": "The nightly MAP custom-report API pull and the gated tables it loads.",
+      "note": "Named as existing in the conductor's reply on #3310 (2026-11-14). The agreement itself is not recorded in the repo."
+    },
+    {
+      "id": "co_data_lake",
+      "name": "Chancellor's Office data lake and dataset APIs",
+      "parties": "The Chancellor's Office research and data staff",
+      "status": "might be needed",
+      "covers": "API access to the Chancellor's Office datasets and data lakes.",
+      "note": "The CPL Initiative will ask for access (#3310). Not recorded as asked."
+    },
+    {
+      "id": "comis_awards",
+      "name": "COMIS program awards by control number",
+      "parties": "The Chancellor's Office institutional research and MIS",
+      "status": "might be needed",
+      "covers": "Program award counts by control number and award type, as aggregates.",
+      "note": "The drafted request is not in this repo or the vault; its status is not recorded."
+    },
+    {
+      "id": "comis_student",
+      "name": "COMIS student-level files",
+      "parties": "The Chancellor's Office institutional research and MIS",
+      "status": "might be needed",
+      "covers": "The MAP-to-MIS student match that would count students with CPL statewide.",
+      "note": "Falls under the student-detail disclosure ADR (docs/reference/data_sources.md, MIS)."
+    },
+    {
+      "id": "comis_course_file",
+      "name": "COMIS course basic file",
+      "parties": "The Chancellor's Office MIS unit",
+      "status": "not recorded",
+      "covers": "The Fall 2025 CB course file the team was supplied.",
+      "note": "The terms it was supplied under are not recorded in the repo."
+    },
+    {
+      "id": "jst",
+      "name": "JST authorizations through CCCStart",
+      "parties": "The Chancellor's Office, its General Counsel and the CCC Technology Center",
+      "status": "pending",
+      "covers": "Ordering the authorized students' Joint Services Transcripts and loading them to MAP per college.",
+      "note": "Waits on the General Counsel's procedural OK; no data-sharing agreement, since the student's CCCApply authorization governs (docs/reference/data_sources.md)."
+    },
+    {
+      "id": "das",
+      "name": "DIR-DAS apprenticeship MOU",
+      "parties": "The Chancellor's Office and DIR-DAS",
+      "status": "exists",
+      "covers": "Matching apprentice records with CCC records for research and aggregate reports.",
+      "note": "A revision extending disclosure to designated agents and districts is pending review (docs/reference/data_sources.md)."
+    },
+    {
+      "id": "ppm",
+      "name": "Program Pathways Mapper access",
+      "parties": "The Foundation for California Community Colleges",
+      "status": "might be needed",
+      "covers": "An export or API for the program maps colleges publish.",
+      "note": "A note asking for access was drafted on 2026-10-17; not recorded as sent."
+    },
+    {
+      "id": "college_systems",
+      "name": "College and district system access",
+      "parties": "Each college or district, with MAP",
+      "status": "might be needed",
+      "covers": "Reading a college's student information system or curriculum system through its API.",
+      "note": "Per college; none is recorded in the repo."
+    },
+    {
+      "id": "outside_partners",
+      "name": "Outside partners reading the Commons",
+      "parties": "WestEd, Credential Engine and other partners",
+      "status": "might be needed",
+      "covers": "Partners reading Commons data beyond what is public.",
+      "note": "Public elements need none; anything beyond them would. Not recorded as asked."
+    }
   ],
-  "containers": ["Collected", "Connected", "Dates", "Cost and run"]
+  "containers": [
+    "Collected",
+    "Connected",
+    "Dates",
+    "Cost and run"
+  ]
 }

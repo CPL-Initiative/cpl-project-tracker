@@ -28,6 +28,9 @@ function txt(el) { return (el && el.textContent || "").replace(/\s+/g, " ").trim
 
 const SRC = fs.readFileSync("commons_data.js", "utf8");
 const EXT = fs.readFileSync("commons_data_sharing.js", "utf8");
+// The panel's card modules (#3310: How it's collected, Program pathway maps, Data sources) draw labeled lines too, so
+// they load here as the tab loads them, and their labels are held to the same rule.
+const CARDS = fs.readFileSync("commons_data_cards.js", "utf8");
 const HAND = JSON.parse(fs.readFileSync("kb/cdc_data_dictionary.json", "utf8"));
 const BUILT = JSON.parse(fs.readFileSync("kb/status/cdc_sharing.json", "utf8"));
 const REAL = JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8"));
@@ -63,6 +66,7 @@ function dom(hash, files) {
   w.scrollTo = function () {};
   w.eval(EXT);
   w.eval(SRC);
+  w.eval(CARDS);
   return { w, doc: w.document, root: w.document.getElementById("root"), calls };
 }
 function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new Promise((r) => w.setTimeout(r, 0))); }
@@ -92,7 +96,7 @@ const CONTAINERS = new Set(HAND.containers || []);
     panels++;
     if (p.querySelector('[data-cdc-ext="sharing"]')) cards++;
     const outside = (n) => !n.closest("[data-cdc-ext]");
-    p.querySelectorAll(".cdd-pds > h4").forEach((n) => outside(n) && seen(txt(n), c.name + "'s panel, a dataset"));
+    p.querySelectorAll(".cdd-pds > h4, .cdc-card h4").forEach((n) => outside(n) && seen(txt(n), c.name + "'s panel, a dataset or a card's part"));
     p.querySelectorAll("section.cdd-psec > h3").forEach((n) => outside(n) && seen(txt(n), c.name + "'s panel, a section"));
     p.querySelectorAll("dt").forEach((n) => outside(n) && seen(txt(n), c.name + "'s panel, a labeled line"));
   }

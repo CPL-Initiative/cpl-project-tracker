@@ -27,6 +27,7 @@ function txt(el) { return (el && el.textContent || "").replace(/\s+/g, " ").trim
 const SRC = fs.readFileSync("commons_data.js", "utf8");
 const SHARE = fs.readFileSync("commons_data_sharing.js", "utf8");
 const EXT = fs.readFileSync("commons_data_integrations.js", "utf8");
+const CARDS = fs.readFileSync("commons_data_cards.js", "utf8");
 const REG = JSON.parse(fs.readFileSync("kb/cdc_integrations.json", "utf8"));
 const DICT = JSON.parse(fs.readFileSync("kb/cdc_data_dictionary.json", "utf8"));
 const BUILT = JSON.parse(fs.readFileSync("kb/status/cdc_integrations.json", "utf8"));
@@ -71,6 +72,7 @@ function dom(hash, files) {
   w.eval(SHARE);
   w.eval(EXT);
   w.eval(SRC);
+  w.eval(CARDS);
   return { w, root: w.document.getElementById("root"), calls };
 }
 function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new Promise((r) => w.setTimeout(r, 0))); }
@@ -112,6 +114,19 @@ function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new
   const r1 = I.forCollege("test-college");
   check("(5) a college the registry names reads its own rows instead", r1.length === 1 && r1[0].state === "connected" && r1[0].name === "Curriculum system APIs");
   delete I._state.data.per_college.colleges["test-college"];
+
+  // (5) the Data sources card's integration line reads these rows (forCollege), one per system.
+  const slug = D.slugOf(any);
+  D.render(V.root, D.model(REAL), "college/" + slug, new Date());
+  const line = () => V.root.querySelector('#cdd-panel [data-card="sources"] [data-lane="integration"]');
+  check("(5) ⭐ the Data sources card's integration line reads the registry's rows: none known, one row per system",
+    line() && txt(line().querySelector(".cdd-state")) === "None known" && line().querySelectorAll("li[data-integration]").length === 2 &&
+    /Student information system \(SIS\) APIs: none known/.test(txt(line())) && /Curriculum system APIs: none known/.test(txt(line())), txt(line()));
+  I._state.data.per_college.colleges[slug] = [{ integration: "curriculum_system_api", state: "connected", note: "confirmed by MAP" }];
+  D.render(V.root, D.model(REAL), "college/" + slug, new Date());
+  check("(5) a row the registry holds for the college shows on its line, by system",
+    line() && line().querySelector(".cdd-state").getAttribute("data-state") === "registry" && /Curriculum system APIs: connected/.test(txt(line().querySelector(".cdd-state"))));
+  delete I._state.data.per_college.colleges[slug];
 
   // (6) a missing file.
   const X = dom("#commons/data/integrations", { "kb/status/commons_data.json": REAL, "kb/status/cdc_sharing.json": SHARING });

@@ -30,7 +30,7 @@ and the view at `#commons/data/sharing`. The datasets themselves, their owners a
 
 ## The fields the page shows
 
-40 fields: 29 public; 1 aggregate, not pii; 1 needs an agreement; 9 held, not published.
+52 fields: 40 public; 1 aggregate, not pii; 1 needs an agreement; 10 held, not published.
 
 | Field | Definition | System | COMIS element | Class | Join key | Shown as |
 |---|---|---|---|---|---|---|
@@ -50,7 +50,7 @@ and the view at `#commons/data/sharing`. The datasets themselves, their owners a
 | Program records on file | Program requirement records COBI holds for the college in the live table. | COBI's own reads and checks | none | Public | Program control number | Program records on file |
 | Records failing each machine check | Extracted records that fail each machine check, as the capture read them; a record can fail more than one. | COBI's own reads and checks | none | Held, not published | none | Coverage; A course invented; Units arithmetic; A course repeated; Outcomes |
 | Courses on Active programs | Distinct courses COCI places on the college's Active programs. | COCI, the Chancellor's Office Curriculum Inventory | none | Public | Course control number | Courses on Active programs |
-| Course SLOs | Courses on Active programs whose outline of record states student learning outcomes (the list column shows SLOs and objectives together). | Course outlines of record | none | Public | Course control number | Course SLOs; SLOs and objectives |
+| Course SLOs | Courses on Active programs whose outline of record states student learning outcomes (the list column shows SLOs and objectives together). | Course outlines of record | none | Public | Course control number | Course SLOs; SLOs and objectives; Course SLOs and objectives |
 | Course objectives | Courses on Active programs whose outline of record states objectives. | Course outlines of record | none | Public | Course control number | Course objectives |
 | Program PLOs | Active programs whose record carries program learning outcomes from the catalog. | The college's published catalog | none | Public | Program control number | Program PLOs |
 | Catalog source | Where the college's catalog is published and how COBI reads it. | The college's published catalog | none | Public | none | Catalog source |
@@ -58,9 +58,14 @@ and the view at `#commons/data/sharing`. The datasets themselves, their owners a
 | Catalog year | The catalog year the capture or the scout read. | The college's published catalog | none | Public | none | Catalog year |
 | Catalog link held | Whether the program source registry holds a link to the college's catalog. | COBI's program source registry | none | Public | none | Catalog link |
 | Curriculum view held | Whether the registry holds a link to the public view of the college's curriculum system, where the outlines are. | COBI's program source registry | none | Public | none | Curriculum view |
-| Pathway source | Whether the registry records a source for program sequences: Program Pathways Mapper or a program map page. | COBI's program source registry | none | Public | none | Pathway source |
+| Map source in the registry | Whether COBI's program source registry holds a source for the college's program maps, or its reader looked and found none. | COBI's program source registry | none | Public | none | Program source registry |
 | Source scout's recommendation | What COBI's source scout recommends for the next read, and any access barrier it met. | COBI's own reads and checks | none | Held, not published | none | Recommends |
-| Program Pathways Mapper (PPM) | The program maps the college publishes on the Program Pathways Mapper: each program's courses, term by term. | Program Pathways Mapper (PPM) | none | Public | Program control number | Program Pathways Mapper (PPM) |
+| Program pathway maps | Whether the college publishes program maps (each program's courses, term by term): yes, none found when looked for, or not looked for yet. | Program Pathways Mapper (PPM) | none | Public | Program control number | Program pathway maps; Publishes maps |
+| Program Pathways Mapper member list | Whether the mapper's public member list names the college, and at what host. | Program Pathways Mapper (PPM) | none | Public | none | Program Pathways Mapper member list |
+| Where the maps are published | The host that publishes the college's maps, where a file records it. | Program Pathways Mapper (PPM) | none | Public | none | Where |
+| Map platform | The software that publishes the maps (for example Program Pathways Mapper), where a file records it. | Program Pathways Mapper (PPM) | none | Public | none | Platform |
+| Maps we hold | The college's term-by-term program maps committed to the repo. | Program Pathways Mapper (PPM) | none | Public | Program control number | Maps we hold |
+| Maps against Active programs | How many committed maps name a program in the college's program records, beside its Active programs. | COBI's own reads and checks | none | Public | Program control number | Against Active programs |
 | Course descriptions | Each course's catalog description, from COCI and the outlines. | COCI, the Chancellor's Office Curriculum Inventory | none | Public | Course control number | Course descriptions |
 | CPL and MAP | The CPL articulations the college has adopted in MAP and the students' CPL counts. COBI publishes counts only, never a student's row. | MAP, the Mapping Articulated Pathways platform | none | Aggregate, not PII | Course and college | CPL and MAP |
 | COMIS and MIS | The course basic (CB) records the college reports to the Chancellor's Office each term; COBI uses course elements only. | COMIS, the Chancellor's Office Management Information Systems data | CB file (the CB_ columns of kb/reference/cb_course_basic_fall2025.csv) | Needs an agreement | Course control number | COMIS and MIS |
@@ -68,12 +73,19 @@ and the view at `#commons/data/sharing`. The datasets themselves, their owners a
 | Last read | When COBI last read the college's catalog for program requirements. | COBI's own reads and checks | none | Public | none | Last read |
 | Last spot-checked | When COBIx last compared five records with the catalog by hand. | COBI's own reads and checks | none | Held, not published | none | Last spot-checked |
 | Last scouted | When COBI's source scout last checked the catalog. | COBI's own reads and checks | none | Held, not published | none | Last scouted |
-| Read cost | What the last paid read cost, in all and per passing program. | COBI's own reads and checks | none | Held, not published | none | Cost of the last read; Per passing program at read time; Read cost per passing program |
+| Read cost | What the last paid read cost, in all and per passing program. | COBI's own reads and checks | none | Held, not published | none | Cost of the last read; Per passing program at read time; Read cost per passing program; Cost |
 | Actions run | The GitHub Actions run of the paid read. | COBI's own reads and checks | none | Held, not published | none | Actions run of the paid read |
 | Page-finding time | How long the capture took to find the program pages, before the paid read. | COBI's own reads and checks | none | Held, not published | none | Page-finding time (the capture, before the paid read) |
 | Known gaps and barriers | What stands in the way: each cause of programs still to pass, a scout's access barrier, the SLO queue and spot-check differences. | COBI's own reads and checks | none | Held, not published | none | Known gaps and barriers |
 | Team asks | Work for the MAP team and COBIx; nothing in it asks the college to act. | COBI's own reads and checks | none | Held, not published | none | Team asks |
 | Sources | The catalog, files and reads behind the college's figures. | COBI's own reads and checks | none | Public | none | Sources |
+| How it's collected | For each lane (catalog source, program requirements, SLOs and objectives, PLOs): the reader, workflow or scout that collected it, its run and when it last ran. | COBI's own reads and checks | none | Held, not published | none | How it's collected; Who or what; Workflow; Last run |
+| Data sources | The systems behind the college's data, and how COBI reads each: directly, through an export, or not yet. | The college's own systems | none | Public | none | Data sources |
+| Student information system (SIS) | The college's SIS (for example Banner, Colleague or PeopleSoft), where a file names it; otherwise not known. | The college's own systems | none | Public | none | Student information system (SIS) |
+| Curriculum system | The system that holds the college's course outlines (for example eLumen, CurricUNET or Courseleaf CIM), and how COBI reads it. | The college's own systems | none | Public | Course control number | Curriculum system (course outlines) |
+| Program maps as a source | Where the college's program maps come from, and whether COBI reads them. | Program Pathways Mapper (PPM) | none | Public | none | Program maps |
+| COCI as a source | How COBI reads COCI for the college: through the committed course and program extracts. | COCI, the Chancellor's Office Curriculum Inventory | none | Public | Course control number | COCI (the Chancellor's Office Curriculum Inventory) |
+| SIS and curriculum system integration | Whether MAP connects to the college's SIS or curriculum system, as the MAP team records it; none known until it does. | MAP, the Mapping Articulated Pathways platform | none | Public | none | SIS and curriculum system integration |
 
 ## Held and not shown
 
@@ -133,6 +145,7 @@ Status only, never an agreement's text. A status the repo does not record reads 
 | The COMIS Data Mart | The Chancellor's Office MIS unit | Public aggregates at datamart.cccco.edu. |
 | Centers of Excellence labor market data | The Centers of Excellence | Regional occupation demand; COBI holds a hand export (kb/reference/coe_occupation_demand_2024_2029.json). |
 | C-ID | ASCCC (the C-ID system) | Course descriptors and the courses approved against them (kb/reference/cid_articulations.json). |
+| The college's own systems | The college or its district | Its student information system (SIS) and the curriculum system that holds its course outlines. |
 
 ## Integrations
 

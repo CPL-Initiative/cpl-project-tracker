@@ -82,6 +82,11 @@
    "name": "C-ID",
    "holder": "ASCCC (the C-ID system)",
    "note": "Course descriptors and the courses approved against them (kb/reference/cid_articulations.json)."
+  },
+  "college_systems": {
+   "name": "The college's own systems",
+   "holder": "The college or its district",
+   "note": "Its student information system (SIS) and the curriculum system that holds its course outlines."
   }
  },
  "elements": [
@@ -324,7 +329,8 @@
    "name": "Course SLOs",
    "labels": [
     "Course SLOs",
-    "SLOs and objectives"
+    "SLOs and objectives",
+    "Course SLOs and objectives"
    ],
    "definition": "Courses on Active programs whose outline of record states student learning outcomes (the list column shows SLOs and objectives together).",
    "system": "outlines",
@@ -434,11 +440,11 @@
   },
   {
    "id": "pathway_source",
-   "name": "Pathway source",
+   "name": "Map source in the registry",
    "labels": [
-    "Pathway source"
+    "Program source registry"
    ],
-   "definition": "Whether the registry records a source for program sequences: Program Pathways Mapper or a program map page.",
+   "definition": "Whether COBI's program source registry holds a source for the college's program maps, or its reader looked and found none.",
    "system": "registry",
    "system_name": "COBI's program source registry",
    "comis_element": "",
@@ -462,13 +468,84 @@
   },
   {
    "id": "ppm",
-   "name": "Program Pathways Mapper (PPM)",
+   "name": "Program pathway maps",
    "labels": [
-    "Program Pathways Mapper (PPM)"
+    "Program pathway maps",
+    "Publishes maps"
    ],
-   "definition": "The program maps the college publishes on the Program Pathways Mapper: each program's courses, term by term.",
+   "definition": "Whether the college publishes program maps (each program's courses, term by term): yes, none found when looked for, or not looked for yet.",
    "system": "ppm",
    "system_name": "Program Pathways Mapper (PPM)",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "program_control_number",
+   "join_key_name": "Program control number"
+  },
+  {
+   "id": "ppm_member",
+   "name": "Program Pathways Mapper member list",
+   "labels": [
+    "Program Pathways Mapper member list"
+   ],
+   "definition": "Whether the mapper's public member list names the college, and at what host.",
+   "system": "ppm",
+   "system_name": "Program Pathways Mapper (PPM)",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "",
+   "join_key_name": ""
+  },
+  {
+   "id": "map_where",
+   "name": "Where the maps are published",
+   "labels": [
+    "Where"
+   ],
+   "definition": "The host that publishes the college's maps, where a file records it.",
+   "system": "ppm",
+   "system_name": "Program Pathways Mapper (PPM)",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "",
+   "join_key_name": ""
+  },
+  {
+   "id": "map_platform",
+   "name": "Map platform",
+   "labels": [
+    "Platform"
+   ],
+   "definition": "The software that publishes the maps (for example Program Pathways Mapper), where a file records it.",
+   "system": "ppm",
+   "system_name": "Program Pathways Mapper (PPM)",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "",
+   "join_key_name": ""
+  },
+  {
+   "id": "maps_held",
+   "name": "Maps we hold",
+   "labels": [
+    "Maps we hold"
+   ],
+   "definition": "The college's term-by-term program maps committed to the repo.",
+   "system": "ppm",
+   "system_name": "Program Pathways Mapper (PPM)",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "program_control_number",
+   "join_key_name": "Program control number"
+  },
+  {
+   "id": "maps_against_active",
+   "name": "Maps against Active programs",
+   "labels": [
+    "Against Active programs"
+   ],
+   "definition": "How many committed maps name a program in the college's program records, beside its Active programs.",
+   "system": "cobi",
+   "system_name": "COBI's own reads and checks",
    "comis_element": "",
    "class": "public",
    "join_key": "program_control_number",
@@ -578,7 +655,8 @@
    "labels": [
     "Cost of the last read",
     "Per passing program at read time",
-    "Read cost per passing program"
+    "Read cost per passing program",
+    "Cost"
    ],
    "definition": "What the last paid read cost, in all and per passing program.",
    "system": "cobi",
@@ -653,6 +731,107 @@
    "definition": "The catalog, files and reads behind the college's figures.",
    "system": "cobi",
    "system_name": "COBI's own reads and checks",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "",
+   "join_key_name": ""
+  },
+  {
+   "id": "collection_method",
+   "name": "How it's collected",
+   "labels": [
+    "How it's collected",
+    "Who or what",
+    "Workflow",
+    "Last run"
+   ],
+   "definition": "For each lane (catalog source, program requirements, SLOs and objectives, PLOs): the reader, workflow or scout that collected it, its run and when it last ran.",
+   "system": "cobi",
+   "system_name": "COBI's own reads and checks",
+   "comis_element": "",
+   "class": "held",
+   "join_key": "",
+   "join_key_name": ""
+  },
+  {
+   "id": "data_sources",
+   "name": "Data sources",
+   "labels": [
+    "Data sources"
+   ],
+   "definition": "The systems behind the college's data, and how COBI reads each: directly, through an export, or not yet.",
+   "system": "college_systems",
+   "system_name": "The college's own systems",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "",
+   "join_key_name": ""
+  },
+  {
+   "id": "sis_system",
+   "name": "Student information system (SIS)",
+   "labels": [
+    "Student information system (SIS)"
+   ],
+   "definition": "The college's SIS (for example Banner, Colleague or PeopleSoft), where a file names it; otherwise not known.",
+   "system": "college_systems",
+   "system_name": "The college's own systems",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "",
+   "join_key_name": ""
+  },
+  {
+   "id": "curriculum_system",
+   "name": "Curriculum system",
+   "labels": [
+    "Curriculum system (course outlines)"
+   ],
+   "definition": "The system that holds the college's course outlines (for example eLumen, CurricUNET or Courseleaf CIM), and how COBI reads it.",
+   "system": "college_systems",
+   "system_name": "The college's own systems",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "course_control_number",
+   "join_key_name": "Course control number"
+  },
+  {
+   "id": "maps_source",
+   "name": "Program maps as a source",
+   "labels": [
+    "Program maps"
+   ],
+   "definition": "Where the college's program maps come from, and whether COBI reads them.",
+   "system": "ppm",
+   "system_name": "Program Pathways Mapper (PPM)",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "",
+   "join_key_name": ""
+  },
+  {
+   "id": "coci_source",
+   "name": "COCI as a source",
+   "labels": [
+    "COCI (the Chancellor's Office Curriculum Inventory)"
+   ],
+   "definition": "How COBI reads COCI for the college: through the committed course and program extracts.",
+   "system": "coci",
+   "system_name": "COCI, the Chancellor's Office Curriculum Inventory",
+   "comis_element": "",
+   "class": "public",
+   "join_key": "course_control_number",
+   "join_key_name": "Course control number"
+  },
+  {
+   "id": "integration",
+   "name": "SIS and curriculum system integration",
+   "labels": [
+    "SIS and curriculum system integration"
+   ],
+   "definition": "Whether MAP connects to the college's SIS or curriculum system, as the MAP team records it; none known until it does.",
+   "system": "map",
+   "system_name": "MAP, the Mapping Articulated Pathways platform",
    "comis_element": "",
    "class": "public",
    "join_key": "",
@@ -890,10 +1069,10 @@
  ],
  "counts": {
   "elements": {
-   "public": 29,
+   "public": 40,
    "aggregate": 1,
    "agreement": 1,
-   "held": 9
+   "held": 10
   },
   "held_not_shown": {
    "public": 0,
