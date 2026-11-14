@@ -4186,7 +4186,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             report["pdf"].setdefault("pinned", {})[prog["control_number"]] = (
                 {"page": pin.get("page"), "bound": True} if head else {"page": pin.get("page"), "bound": False, "why": why})
             if not head:
-                print("::warning::%s %s: the reconcile entry's pdf_pages pin is refused (%s); read by the picker"
+                print("::warning::%s %s: the reconcile entry's pdf_pages pin is refused (%s); no page is read for it"
                       % (college, prog["control_number"], why), flush=True)
     coded = pdf_code_assign(programs, pages)
     if coded is not None:
@@ -4207,6 +4207,12 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
     for prog in programs:
         if not prog["closed_list"]:
             rec = source_record(college, prog, reg, None, "no_closed_list")
+        elif prog["control_number"] in pinned and not pinned[prog["control_number"]]:
+            # A refused pin (S650, finding A): the picker's page is the one the pin exists to refuse, so the program
+            # gets no fresh text, and the reconcile and the reread leave its filed record as it stands.
+            rec = source_record(college, prog, reg, None, "not_found")
+            rec["near_miss"] = {"why": "the reconcile entry's pdf_pages pin is refused: %s"
+                                       % report["pdf"]["pinned"][prog["control_number"]]["why"]}
         elif coded is not None and not coded.get(prog["control_number"]) and not pinned.get(prog["control_number"]):
             rec = source_record(college, prog, reg, None, "not_found")
             rec["near_miss"] = {"why": "the catalog heads each program with its code, and no heading names this one"}

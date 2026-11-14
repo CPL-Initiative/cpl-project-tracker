@@ -1532,27 +1532,6 @@ def _cr_capture_run(pages):
         _shutil.rmtree(tmp)
 
 
-print("The review's rescore-only rows (S650)")
-_sc = lambda st: {"coverage": {"pass": True}, "invented": {"pass": True}, "arithmetic": {"status": st}}
-_rec = lambda tot: {"program": {"total_units": {"min": tot, "max": tot}}, "blocks": []}
-_main = {cn: {"record": _rec(24), "score": _sc("unequal"), "extracted_run": "1"} for cn in ("A", "B", "C", "D")}
-_branch = {"A": dict(_main["A"], score=_sc("equal"), extracted_run="2"),
-           "B": dict(_main["B"], record=_rec(18), score=_sc("equal"), extracted_run="2"),
-           "C": dict(_main["C"], score=_sc("incomplete"), extracted_run="2"),
-           "D": dict(_main["D"], score=_sc("equal"), extracted_run="2")}
-_rv = RM2.reconcile_run_review({"route": "statewide step", "apply": [], "rescore_apply": ["A", "B", "C"]},
-                               _branch, _main, "2")
-check("a rescore-only row is kept only where its record is main's and the score alone turns it to passing; "
-      "a row the plan does not name is restored",
-      _rv["kept"] == ["A"] and _rv["restored"] == ["B", "C", "D"] and _rv["fail_to_pass_kept"] == ["A"])
-check("Cosumnes River's next run names the two pinned rows and the seven rescore-only rows, each measured unchanged",
-      _cr_plan.get("rescore_apply") == ["04602", "04607", "04614", "07305", "11319", "11338", "33542"]
-      and _cr_plan["next_run"]["apply"] == ["30566", "33072"]
-      and all(r["main"]["status"] == "unequal" and r["run_43521338550"]["status"] == "equal"
-              and r["requirements_changed"] is False and r["pages_moved"] is False
-              for r in _cr_plan["next_run"]["rescore_apply"])
-      and not set(_cr_plan["rescore_apply"]) & set(_cr_plan["held"] + _cr_plan["apply"]))
-
 _rep, _srcs = _cr_capture_run(_fx_pages)
 check("capture_pdf: both programs are read from their own pages, the picks marked pinned",
       _srcs["30566"]["source"]["pages"][0] == 552 and _srcs["33072"]["source"]["pages"][0] == 404
@@ -1561,10 +1540,61 @@ check("capture_pdf: both programs are read from their own pages, the picks marke
 _moved = list(_fx_pages)
 _moved[551] = _moved[551].replace("ADTs also require", "Transfer degrees require")
 _rep2, _srcs2 = _cr_capture_run(_moved)
-check("capture_pdf: a page that no longer prints the words leaves the program to the picker, and the capture says why",
-      _srcs2["30566"]["source"]["pages"][0] == 467 and _srcs2["33072"]["source"]["pages"][0] == 404
+check("capture_pdf: a refused pin gives its program no fresh text (never the picker's p.467), and the capture says why",
+      _srcs2["30566"]["method"] == "not_found" and not _srcs2["30566"].get("text")
+      and "pin is refused" in _srcs2["30566"]["near_miss"]["why"]
+      and _srcs2["33072"]["source"]["pages"][0] == 404
       and _rep2["pdf"]["pinned"]["30566"] == {"page": 552, "bound": False,
                                               "why": "the quoted words are not on PDF page 552"})
+
+# The review of the run, on the fixture's captures (S650, the second reader's findings A, B1, B2).
+print("Cosumnes River's review: only the two pinned rows, on main's pages (S650)")
+_rv_main = {cn: as_read(os.path.join(_CR_DIR, "records", cn + ".json")) for cn in ("30566", "33072", "31055")}
+_rv_branch = {}
+for _cn in ("30566", "33072"):
+    _f = _rv_main[_cn]
+    _txt = _srcs[_cn]["text"]
+    _new, _notes = R.reconcile(_f["record"], _txt, _CR, _f["award"], title=_f["title"],
+                               siblings=[x for x in _cr_family if x["control_number"] != _cn],
+                               control_number=_cn, steps=R.load_steps())
+    _rv_branch[_cn] = dict(_f, record=_new, reconciled=_notes, extracted_run="9")
+_f31 = _rv_main["31055"]
+_rv_branch["31055"] = dict(_f31, record=dict(_f31["record"], program=dict(_f31["record"]["program"],
+                                                                           ge_units={"min": 34, "max": 34})),
+                           extracted_run="9")
+_own = {cn: _srcs[cn]["source"]["pages"] for cn in ("30566", "33072")}
+_pg = {cn: {"main": p, "run": p} for cn, p in _own.items()}
+_pg["31055"] = {"main": [1], "run": [1]}
+_pins_ok = _rep["pdf"]["pinned"]
+_rv = RM2.reconcile_run_review(_cr_plan, _rv_branch, _rv_main, "9", None, _pg, _pins_ok)
+check("both pinned rows are kept on main's pages, and the held overlap 31055 is restored",
+      _rv["kept"] == ["30566", "33072"] and _rv["restored"] == ["31055"] and _rv["fail_to_pass_kept"] == []
+      and _rv["pass_to_fail_kept"] == [])
+_pg_moved = dict(_pg, **{"30566": {"main": _own["30566"], "run": [467]}})
+_rv_b1 = RM2.reconcile_run_review(_cr_plan, _rv_branch, _rv_main, "9", None, _pg_moved, _pins_ok)
+check("B1: a row the fresh capture moved is restored though only ge_units changed",
+      _rv_b1["kept"] == ["33072"] and "30566" in _rv_b1["restored"]
+      and "other pages" in next(r["why"] for r in _rv_b1["records"] if r["control_number"] == "30566"))
+_rv_a = RM2.reconcile_run_review(_cr_plan, _rv_branch, _rv_main, "9", None, _pg, _rep2["pdf"]["pinned"])
+check("A: a pinned program whose pin was refused is restored",
+      _rv_a["kept"] == ["33072"] and "30566" in _rv_a["restored"]
+      and "pin was refused" in next(r["why"] for r in _rv_a["records"] if r["control_number"] == "30566"))
+_plan_b2 = dict(_cr_plan, held=_cr_plan["held"] + ["30566"])
+_rv_b2 = RM2.reconcile_run_review(_plan_b2, _rv_branch, _rv_main, "9", {"31055": "a keep naming a held row"}, _pg,
+                                  _pins_ok)
+check("B2: a row on the held list is restored though the apply list or a keep names it",
+      _rv_b2["kept"] == ["33072"] and set(_rv_b2["restored"]) == {"30566", "31055"})
+_plan_noheld = {k: v for k, v in _cr_plan.items() if k != "held"}
+_rv_nh = RM2.reconcile_run_review(_plan_noheld, _rv_branch, _rv_main, "9", None, _pg, _pins_ok)
+check("B2: with no held list the review runs, and 31055 (no apply row, no keep) is still restored",
+      _rv_nh["kept"] == ["30566", "33072"] and _rv_nh["restored"] == ["31055"])
+check("Cosumnes River's next run names the two pinned rows alone; the seven rescore-only rows are out and wait",
+      _cr_plan["next_run"]["apply"] == ["30566", "33072"] and "rescore_apply" not in _cr_plan
+      and "rescore_apply" not in _cr_plan["next_run"] and _cr_plan["next_run"]["expect"]["kept"] == ["30566", "33072"]
+      and _cr_plan["next_run"]["expect"]["pins"] == {"30566": {"page": 552, "bound": True},
+                                                      "33072": {"page": 404, "bound": True}}
+      and all(cn in _cr_plan["next_run"]["not_in_this_run"]
+              for cn in ("04602", "04607", "04614", "07305", "11319", "11338", "33542")))
 
 # Glendale's 2026-27 site read beside its 2025-2026 PDF's units (S646): where the page's own call priced the
 # read, a code the call does not price stays unpriced, and the note says so instead of naming the call.
