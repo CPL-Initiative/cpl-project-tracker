@@ -6,7 +6,9 @@
 Drives scripts/merge_read_guard.py with fixture hook input, as Claude Code would:
 a PostToolUse read writes the stamp, a PreToolUse merge reads it. Pins allow,
 block, a stale stamp, a stamp for another PR or another session, a read method
-that does not count, and that a broken hook fails open with a visible warning.
+that does not count, that a broken hook fails open with a visible warning, and
+that a `gh` merge by graphql mutation or inside a `bash -c` / `sh -c` / `eval`
+wrapper is refused.
 The failure it guards: S652 merged #3296 twelve minutes after a review posted,
 unread. Pure stdlib, no network; the clock is pinned with CPL_HOOK_NOW.
 """
@@ -92,8 +94,23 @@ def main():
                     "GH_TOKEN=x gh api -X PUT repos/o/r/pulls/3296/merge"):
             rc, body = run(bash(cmd), st, T0 + 10)
             checks.append(("Bash `%s` is refused" % cmd, rc == 0 and denied(body)))
+        # COBIx on #3307 (comment 6880706352): a graphql mutation and a shell wrapper got past.
+        for cmd in ("gh api graphql -f query='mutation { mergePullRequest(input: {pullRequestId: \"x\"}) { clientMutationId } }'",
+                    "gh api graphql -f query='mutation { enablePullRequestAutoMerge(input: {pullRequestId: \"x\"}) { clientMutationId } }'",
+                    "Q='mutation { MERGEPULLREQUEST(input: {}) { clientMutationId } }'; gh api graphql -f query=\"$Q\"",
+                    "bash -c \"gh pr merge 12 --squash\"",
+                    "sh -c 'gh pr merge 12'",
+                    "bash -lc 'cd x && gh pr merge 12'",
+                    "eval gh pr merge 12",
+                    "env GH_TOKEN=x gh pr merge 12",
+                    "bash -c \"sh -c 'gh api -X PUT repos/o/r/pulls/12/merge'\""):
+            rc, body = run(bash(cmd), st, T0 + 10)
+            checks.append(("Bash `%s` is refused" % cmd, rc == 0 and denied(body)))
         for cmd in ("gh search prs merge", "grep -n 'gh pr merge' notes.md", "gh pr view 3296",
-                    "git merge --no-edit origin/main"):
+                    "git merge --no-edit origin/main", "git merge origin/main",
+                    "gh api -X GET search/code -f q=mergePullRequest",
+                    "gh api graphql -f query='query { repository(owner: \"o\", name: \"r\") { pullRequest(number: 12) { mergeable } } }'",
+                    "bash -c 'gh pr view 12'", "echo mergePullRequest", "sh -c 'git merge origin/main'"):
             rc, body = run(bash(cmd), st, T0 + 10)
             checks.append(("Bash `%s` passes" % cmd, rc == 0 and body == {}))
         rc, body = run(None, st, T0, raw=json.dumps({"hook_event_name": "PreToolUse", "tool_name": "Bash",
