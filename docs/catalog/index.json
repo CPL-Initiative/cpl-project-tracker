@@ -15935,7 +15935,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 71,
+   "count": 72,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16845,6 +16845,21 @@
      "title": "Pipeline Reference \u2014 architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-11-14",
+     "governs": [],
+     "path": "docs/reference/sam_rulings.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "rulings",
+      "governance-team-enablement",
+      "decide-and-record"
+     ],
+     "title": "Sam's rulings \u2014 one place to look up what he has ruled, in his words",
+     "type": null,
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-10-04",
@@ -27288,5 +27303,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1471
+ "total": 1472
 }
