@@ -103,11 +103,8 @@
     40.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 35.0-41.0; the catalog states 35.0-40.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -615,5 +612,6 @@
    "Total 35.0-40.0 is the major total; no degree total or GE units are printed."
   ]
  },
- "extracted_run": "39056434592"
+ "extracted_run": 43693267535,
+ "read_run": "39056434592"
 }

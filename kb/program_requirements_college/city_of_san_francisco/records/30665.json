@@ -46,25 +46,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 24,
    "listed": 24,
-   "share": 0.958,
-   "missing": [
-    "ENGL1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1003",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "BIO11",
-    "ENGLC1003"
+    "BIO11"
    ],
    "flagged": [
-    "BIO11",
-    "ENGLC1003"
+    "BIO11"
    ],
    "pass": true
   },
@@ -379,5 +382,6 @@
    "BIO 11 and ENGL C1003 are in the catalog section but not in the closed list; ENGL C1003 likely replaces ENGL 1B."
   ]
  },
- "extracted_run": "39056434592"
+ "extracted_run": 43693267535,
+ "read_run": "39056434592"
 }

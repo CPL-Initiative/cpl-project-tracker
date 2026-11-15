@@ -46,9 +46,9 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 95,
+   "placed": 96,
    "listed": 126,
-   "share": 0.754,
+   "share": 0.762,
    "missing": [
     "DANC119D",
     "DANC129D",
@@ -79,15 +79,21 @@
     "PEA69",
     "PEA81",
     "PEA85",
-    "PEA88",
-    "STAT1000E"
+    "PEA88"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "STATC1000E",
+     "listed": "STAT1000E",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 8,
    "codes": [
     "CHEM101A",
     "CHEM32",
@@ -96,8 +102,7 @@
     "PE211A",
     "PE211B",
     "PE212A",
-    "PE215B",
-    "STATC1000E"
+    "PE215B"
    ],
    "flagged": [
     "CHEM101A",
@@ -107,15 +112,13 @@
     "PE211A",
     "PE211B",
     "PE212A",
-    "PE215B",
-    "STATC1000E"
+    "PE215B"
    ],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
-   "meets": true,
    "computed": [
     20.0,
     29.0
@@ -126,7 +129,7 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -1081,5 +1084,6 @@
    "The summary mentions 'coaching and professional careers in kinesiology' as course work topics; no careers recorded."
   ]
  },
- "extracted_run": "39056434592"
+ "extracted_run": 43693267535,
+ "read_run": "39056434592"
 }

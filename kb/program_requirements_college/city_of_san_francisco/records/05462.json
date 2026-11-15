@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "CMST4"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM4",
+     "listed": "CMST4",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "COMM4"
-   ],
-   "flagged": [
-    "COMM4"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -307,5 +308,6 @@
    "Section spans pages 320-321; the following Engineering and Environmental Science sections were not read."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

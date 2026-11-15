@@ -72,8 +72,7 @@
     19.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -201,5 +200,6 @@
    "Note that the certificate's TOP-code range (16 to fewer than 30 units) is consistent with either 16 or 19 units."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

@@ -46,34 +46,39 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 16,
    "listed": 16,
-   "share": 0.875,
-   "missing": [
-    "ECON1",
-    "ECON3"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON1",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
     "CHEM101A",
     "CHEM101B",
     "CHEM212A",
-    "CHEM40",
-    "ECONC2001",
-    "ECONC2002"
+    "CHEM40"
    ],
    "flagged": [
     "CHEM101A",
     "CHEM101B",
     "CHEM212A",
-    "CHEM40",
-    "ECONC2001",
-    "ECONC2002"
+    "CHEM40"
    ],
    "pass": true
   },
@@ -89,8 +94,7 @@
     33.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -356,5 +360,6 @@
    "The page text above this section (VOCN courses, BIO 134 3.5-4 choice) belongs to a preceding certificate and was not used."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }
