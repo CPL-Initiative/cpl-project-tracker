@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1003,
+  "file_datasets": 1004,
   "external_services": 195,
   "consumers": 601,
   "workflows": 72,
@@ -17490,7 +17490,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6914
+     "line": 7065
     }
    ],
    "served": true,
@@ -21327,7 +21327,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6730
+     "line": 6864
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -26653,6 +26653,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/reconcile_reader_gaps_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/reconcile_window_fill_test.py": {
    "consumers": [
     {
@@ -29477,7 +29490,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6888
+     "line": 7039
     }
    ],
    "main_committers": []
@@ -29489,7 +29502,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6997
+     "line": 7148
     }
    ],
    "main_committers": []
@@ -34567,6 +34580,7 @@
     "tests/course_id_route_test.py",
     "tests/reconcile_window_fill_test.py",
     "tests/program_requirements_reconcile_test.py",
+    "tests/reconcile_reader_gaps_test.py",
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_fragment_path_test.py",
