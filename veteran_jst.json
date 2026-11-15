@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-14T20:24:13.013831+00:00",
+  "scraped_at": "2026-11-15T06:18:55.590313+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
@@ -130,15 +130,15 @@
       "jst": 432,
       "star": false
     },
-    "Modesto Junior College": {
-      "vets": 223,
-      "jst": 154,
-      "star": false
-    },
     "Santa Ana College": {
       "vets": 392,
       "jst": 394,
       "star": true
+    },
+    "Modesto Junior College": {
+      "vets": 223,
+      "jst": 154,
+      "star": false
     },
     "Mt. San Jacinto College": {
       "vets": 639,
