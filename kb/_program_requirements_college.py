@@ -6643,11 +6643,26 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
             continue
         family.append({"control_number": f.get("control_number"), "title": f.get("title"),
                        "section_heading": ((f.get("record") or {}).get("program") or {}).get("section_heading")})
+    # (a) The filed capture's holds (S658). The staged capture recomputes would_extract against a sources.json
+    # that already names this capture's page, so held_worse_window and held_no_gain come back empty; the
+    # filed capture's lists are the decision, and a held record is never reconciled from the held page
+    # (American River 07206, p-degree-electives-fill-false-pass-s650). The lists are put back on the run's
+    # capture so file_run files them.
+    held = filed_holds(keep_from)
+    restore_holds(out_dir, keep_from)
+    # (b) Every record this run leaves as filed, so file_run keeps the sources.json entry it was read from.
+    kept: list[str] = []
     for path in sorted(glob.glob(os.path.join(keep_from, "records", "*.json"))):
         with open(path) as fh:
             filed = json.load(fh)
         src = sources.get(filed.get("control_number"))
         rec = filed.get("record")
+        if filed.get("control_number") in held:
+            print("%-6s held by the filed capture (%s): kept as filed"
+                  % (filed["control_number"], held[filed["control_number"]]), flush=True)
+            kept.append(filed["control_number"])
+            _write(os.path.join(out_dir, "records", os.path.basename(path)), filed)
+            continue
         if src and filed.get("source_url") and (src.get("source") or {}).get("url") \
                 and (src.get("source") or {}).get("url") != filed.get("source_url") \
                 and not own_heading_kept(src, filed):
@@ -6679,8 +6694,10 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                         notes = notes + [old]
                 filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
                              extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,
-                             score=S.score(new, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
-                                           R.prefix_aliases(college), R.packed_codes(college)))
+                             score=keep_rescored_marker(filed.get("control_number"), filed.get("score"),
+                                                        S.score(new, src["closed_list"], src["text"],
+                                                                filed.get("award") or src.get("award"),
+                                                                R.prefix_aliases(college), R.packed_codes(college))))
                 changed.append(filed["control_number"])
                 a = filed["score"]["arithmetic"]
                 print("%-6s reconciled %s; arith %s" % (filed["control_number"],
@@ -6692,16 +6709,81 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 # (LA City and Pierce, rereads 39018310349 and 39018312320: 0 replaced).
                 fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
                                 R.prefix_aliases(college), R.packed_codes(college))
+                fresh = keep_rescored_marker(filed.get("control_number"), filed.get("score"), fresh)
                 if fresh != filed.get("score"):
                     filed = dict(filed, score=fresh, read_run=filed.get("extracted_run"),
                                  extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id)
                     rescored += 1
+                else:
+                    kept.append(filed["control_number"])
         elif not src:
             unread += 1
+        if filed.get("extracted_run") != (int(run_id) if str(run_id or "").isdigit() else run_id):
+            if filed["control_number"] not in kept:
+                kept.append(filed["control_number"])
         _write(os.path.join(out_dir, "records", os.path.basename(path)), filed)
-    print("reconcile: %d filed records changed, %d rescored, %d had no fresh page (%d of them on another page)"
-          % (len(changed), rescored, unread, moved), flush=True)
+    _write(os.path.join(out_dir, RECONCILE_KEPT), {"run": run_id, "programs": sorted(set(kept))})
+    print("reconcile: %d filed records changed, %d rescored, %d had no fresh page (%d of them on another page), "
+          "%d held by the filed capture" % (len(changed), rescored, unread, moved, len(held)), flush=True)
     return 0
+
+
+RECONCILE_KEPT = "reconcile_kept.json"
+HOLD_KEYS = ("held_worse_window", "held_no_gain")
+
+
+def filed_holds(keep_from: str) -> dict[str, str]:
+    """{control_number: hold list} from the filed capture's would_extract (S658, gap a)."""
+    try:
+        with open(os.path.join(keep_from, "capture.json")) as fh:
+            we = json.load(fh).get("would_extract") or {}
+    except (OSError, ValueError):
+        return {}
+    if not isinstance(we, dict):
+        return {}
+    return {e["control_number"]: k for k in HOLD_KEYS for e in we.get(k) or [] if e.get("control_number")}
+
+
+def restore_holds(out_dir: str, keep_from: str) -> None:
+    """Put the filed capture's hold lists back on the run's capture.json, so the filing keeps them (gap a)."""
+    try:
+        with open(os.path.join(keep_from, "capture.json")) as fh:
+            fwe = json.load(fh).get("would_extract") or {}
+        with open(os.path.join(out_dir, "capture.json")) as fh:
+            cap = json.load(fh)
+    except (OSError, ValueError):
+        return
+    we = cap.get("would_extract")
+    if not isinstance(fwe, dict) or not isinstance(we, dict):
+        return
+    held = {e.get("control_number") for k in HOLD_KEYS for e in fwe.get(k) or []}
+    if not held:
+        return
+    for k in HOLD_KEYS:
+        we[k] = fwe.get(k) or []
+    if isinstance(we.get("list"), list):
+        we["list"] = [e for e in we["list"] if e.get("control_number") not in held]
+    _write(os.path.join(out_dir, "capture.json"), cap)
+
+
+def keep_rescored_marker(cn, filed_score: dict | None, fresh: dict) -> dict:
+    """The arithmetic.rescored marker a ruling's rescore wrote (Sheet 120 card 1, Sheets 81, 82, 144) survives a
+    reconcile (S658, gap c). Equal but for the marker: the filed score, whole. The fresh arithmetic still passing:
+    the marker carried onto it. The fresh arithmetic failing where the marked one passed: the filed score is kept,
+    with a warning, since the scorer does not apply the ruling and a fail would undo it."""
+    fa = ((filed_score or {}).get("arithmetic") or {})
+    if not fa.get("rescored") or not isinstance(fresh, dict):
+        return fresh
+    na = fresh.get("arithmetic") or {}
+    if dict(fresh, arithmetic=dict(na, rescored=fa["rescored"])) == filed_score:
+        return filed_score
+    if na.get("pass"):
+        return dict(fresh, arithmetic=dict(na, rescored=fa["rescored"]))
+    if fa.get("pass"):
+        print("::warning::%s: the fresh arithmetic fails where the ruling's rescore (%s) passed; the filed score is "
+              "kept" % (cn, fa["rescored"]), flush=True)
+        return filed_score
+    return fresh
 
 
 def held_summary(dest: str, prior: dict) -> dict:
@@ -6825,6 +6907,12 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     for path in glob.glob(os.path.join(out_dir, "kept_unbound_*.json")):
         with open(path) as fh:
             kept_unbound.update(json.load(fh).get("programs") or [])
+    # A reconcile's records left as filed keep the entry they were read from (S658, gap b; Santiago Canyon's 18).
+    try:
+        with open(os.path.join(out_dir, RECONCILE_KEPT)) as fh:
+            kept_unbound.update(json.load(fh).get("programs") or [])
+    except (OSError, ValueError):
+        pass
     prev: dict = {}
     if (not_sent or kept_unbound) and os.path.isfile(os.path.join(dest, "sources.json")):
         with open(os.path.join(dest, "sources.json")) as fh:
