@@ -1,6 +1,6 @@
 {
  "_about": "Dry run of the honors_of rows and base-plus-H mints. Nothing applied. Design: docs/reference/honors_of_design.md.",
- "written": "2026-11-15T03:59:45Z",
+ "written": "2026-11-15T04:15:33Z",
  "date": "2026-11-15",
  "cohort": "honors-s653@bot",
  "cohort_rows": "honors-rows-s653@bot",
@@ -361,8 +361,8 @@
    ]
   },
   "anchors": {
-   "labels": 22,
-   "right": 22,
+   "labels": 24,
+   "right": 24,
    "wrong": 0,
    "wrong_labels": [],
    "pairs": [
@@ -493,6 +493,20 @@
      "pass": true
     },
     {
+     "honors": "Victor Valley College CHEMH 206",
+     "base": "CHEM 206",
+     "expected": "anchor",
+     "got": "anchor",
+     "pass": true
+    },
+    {
+     "honors": "Glendale Community College ARTH 119",
+     "base": "ART 119",
+     "expected": null,
+     "got": null,
+     "pass": true
+    },
+    {
      "honors": "Glendale Community College ARTH 119",
      "base": "ART 119",
      "expected": null,
@@ -523,8 +537,8 @@
    ]
   },
   "cluster_fixtures": {
-   "labels": 10,
-   "right": 10,
+   "labels": 11,
+   "right": 11,
    "wrong": 0,
    "wrong_labels": [],
    "fixtures": [
@@ -637,6 +651,18 @@
      "pass": true
     },
     {
+     "name": "a split-candidate base: a row, no mint",
+     "expected": [
+      true,
+      false
+     ],
+     "got": [
+      true,
+      false
+     ],
+     "pass": true
+    },
+    {
      "name": "a clean pair: a row and a mint",
      "expected": [
       true,
@@ -651,6 +677,13 @@
    ]
   },
   "mutation": [
+   {
+    "clause": "subject_marker",
+    "caught": true,
+    "failing": [
+     "Glendale Community College ARTH 119 / ART 119: anchor"
+    ]
+   },
    {
     "clause": "same_college",
     "caught": true,
@@ -757,7 +790,6 @@
     "clause": "ccn",
     "caught": true,
     "failing": [
-     "an M-ID base holding a CCN-coded course: a row, no mint",
      "an official base holding a CCN-coded course: held (MATH 210's shape)"
     ]
    },
@@ -767,24 +799,31 @@
     "failing": [
      "another derivation names a second base: a row, no mint"
     ]
+   },
+   {
+    "clause": "split_candidate",
+    "caught": true,
+    "failing": [
+     "a split-candidate base: a row, no mint"
+    ]
    }
   ],
   "clusters": {
-   "labels": 20,
-   "right": 20,
+   "labels": 22,
+   "right": 22,
    "wrong": 0,
    "wrong_labels": [],
    "real": {
-    "labels": 10,
-    "right": 10,
+    "labels": 11,
+    "right": 11,
     "wrong": 0,
     "wrong_labels": [],
     "pairs": [
      {
       "honors_id": "LIBR M10CL",
       "base": "LIBR M1026",
-      "expected": "row and mint",
-      "got": "row and mint",
+      "expected": "row, mint held",
+      "got": "row, mint held",
       "pass": true
      },
      {
@@ -797,13 +836,20 @@
      {
       "honors_id": "HIST M1165",
       "base": "HIST M1191",
-      "expected": "row and mint",
-      "got": "row and mint",
+      "expected": "row, mint held",
+      "got": "row, mint held",
       "pass": true
      },
      {
       "honors_id": "HUMA M10LS",
       "base": "HUMA M1088",
+      "expected": "row, mint held",
+      "got": "row, mint held",
+      "pass": true
+     },
+     {
+      "honors_id": "BIOL M1091",
+      "base": "BIOL M1089",
       "expected": "row and mint",
       "got": "row and mint",
       "pass": true
@@ -853,8 +899,8 @@
     ]
    },
    "fixtures": {
-    "labels": 10,
-    "right": 10,
+    "labels": 11,
+    "right": 11,
     "wrong": 0,
     "wrong_labels": [],
     "fixtures": [
@@ -967,6 +1013,18 @@
       "pass": true
      },
      {
+      "name": "a split-candidate base: a row, no mint",
+      "expected": [
+       true,
+       false
+      ],
+      "got": [
+       true,
+       false
+      ],
+      "pass": true
+     },
+     {
       "name": "a clean pair: a row and a mint",
       "expected": [
        true,
@@ -995,11 +1053,11 @@
  "summary": {
   "pairs": 519,
   "by_action": {
-   "row and mint": 286,
+   "row, mint held": 179,
+   "row and mint": 129,
    "none": 97,
    "row only (official base)": 74,
-   "held": 40,
-   "row, mint held": 22
+   "held": 40
   },
   "by_systems": {
    "M-ID Honors, M-ID base": 340,
@@ -1035,6 +1093,7 @@
    "an anchor's base course sits in the Honors id itself": 1
   },
   "mint_held_by_reason": {
+   "the base is a split candidate": 176,
    "the base has 2 Honors M-IDs anchored into it": 12,
    "1 member course(s) of the Honors id are not the Honors course of an anchor": 7,
    "the base has 3 Honors M-IDs anchored into it": 3,
@@ -1042,12 +1101,13 @@
   },
   "pairs_held": 40,
   "rows_to_write": 382,
-  "mints": 286,
+  "mints": 129,
   "split_candidates": [
    "ACCT 110",
    "ACCT 120",
    "AG-PS 104 104",
    "AJ 120",
+   "ANTH M1006",
    "ANTH M1017",
    "ANTH M1042",
    "ANTH M1085",
@@ -1057,21 +1117,32 @@
    "ARCH M1059",
    "ARCH M1142",
    "ARTH 130",
+   "ARTH M1005",
+   "ARTH M1011",
    "ARTS 210",
    "ARTS M1006",
    "ARTS M1074",
+   "ARTS M1078",
    "ARTS M1129",
    "ARTS M1134",
+   "ARTS M1310",
+   "ARTS M1331",
    "ARTS M1411",
    "ARTS M1566",
    "ASTR M1002",
+   "ASTR M1017",
    "ASTR M1019",
+   "ASTR M1023",
+   "ASTR M1040",
+   "ASTR M1044",
+   "ASTR M1053",
    "BIOL 135 S",
    "BIOL 140",
    "BIOL 190",
    "BIOL M1049",
    "BIOL M1063",
    "BIOL M1067",
+   "BIOL M1105",
    "BIOL M1126",
    "BIOL M1127",
    "BIOL M1167",
@@ -1084,6 +1155,8 @@
    "BRDC M1011",
    "BRDC M1062",
    "BUS 120",
+   "BUSI M1361",
+   "BUSI M1381",
    "CDEV M1280",
    "CHEM 101",
    "CHEM 120 S",
@@ -1092,26 +1165,37 @@
    "CHIN M1058",
    "COMM 120",
    "COMM 140",
+   "COMM M1034",
+   "COMM M1067",
    "COMP 112",
    "COMP 132",
    "COMP M1085",
+   "COUN M1045",
    "COUN M1069",
    "COUN M1155",
+   "COUN M1159",
    "COUN M1188",
+   "DANC M1054",
    "DANC M1056",
+   "DANC M1208",
    "ECON M1007",
+   "ECON M1012",
    "ECON M1026",
    "ENGL 160",
    "ENGL 165",
    "ENGL 200",
    "ENGL M1034",
+   "ENGL M1063",
    "ENGL M1140",
+   "ENGL M1179",
+   "ENGL M1239",
    "ENGL M1258",
    "ENGL M1263",
    "ENGL M1290",
    "ENGL M1298",
    "ENGL M1336",
    "ENGL M1338",
+   "ENGL M1346",
    "ENGL M1348",
    "ENGL M1352",
    "ENGL M1353",
@@ -1124,26 +1208,43 @@
    "ENVS 100",
    "ENVS M1064",
    "ETHA M1002",
+   "ETHN M1019",
    "ETHN M1028",
+   "ETHN M1034",
+   "ETHS M1014",
+   "ETHS M1082",
    "ETHS M1085",
+   "ETHS M1098",
+   "ETHS M1104",
+   "ETHS M1150",
    "ETHS M1166",
+   "ETHS M1170",
+   "ETHS M1172",
    "ETHS M1256",
    "ETHS M1260",
    "ETHS M1285",
+   "FREN M1003",
+   "FREN M1006",
    "FREN M1014",
    "FREN M1035",
    "FREN M1036",
    "FTVE 105",
    "FTVE M1002",
+   "FTVE M1018",
+   "FTVE M1021",
+   "FTVE M1029",
    "FTVE M1046",
    "FTVE M1074",
    "FTVE M1081",
    "GEOG 110",
    "GEOG 140",
    "GEOL 100",
+   "GEOL M1022",
+   "GEOL M1056",
    "GLST 101",
    "GLST 102",
    "HIST 160",
+   "HIST M1095",
    "HIST M1096",
    "HIST M1101",
    "HIST M1107",
@@ -1153,22 +1254,37 @@
    "HIST M1129",
    "HIST M1172",
    "HIST M1178",
+   "HIST M1190",
+   "HIST M1191",
+   "HIST M1194",
    "HIST M1196",
    "HIST M1201",
    "HIST M1220",
    "HLTH M1079",
    "HLTH M1134",
+   "HUMA M1088",
    "HUMA M1110",
    "HUMA M1114",
    "HUMA M1125",
+   "HUMN M1004",
+   "IDST M1094",
    "IDST M1098",
+   "INFO M1003",
    "ITIS 130",
    "ITIS M1068",
+   "ITIS M1113",
+   "ITIS M1262",
    "JAPN M1003",
+   "JAPN M1006",
+   "JAPN M1015",
    "JAPN M1017",
+   "JAPN M1018",
    "JAPN M1032",
    "JOUR 100",
    "JOUR 160",
+   "KINE M1523",
+   "LATN M1001",
+   "LIBR M1026",
    "LIBR M1035",
    "LPPS 110",
    "MATH 130",
@@ -1177,22 +1293,30 @@
    "MATH M1123",
    "MUSI M1044",
    "MUSI M1237",
+   "MUSI M1522",
+   "NUTR M1018",
    "PH 100",
    "PHIL 110",
    "PHIL 120",
    "PHIL 130",
    "PHIL 140",
    "PHIL M1028",
+   "PHIL M1034",
    "PHOT M1096",
    "PHYS 105",
    "PHYS 205",
    "POLS 130",
    "POLS 140",
+   "POLS M1002",
+   "POLS M1020",
    "POLS M1027",
    "PSY 120",
    "PSY 130",
    "PSY 150",
    "PSY 180",
+   "PSYC M1042",
+   "PSYC M1061",
+   "PSYC M1087",
    "PUBS M1005",
    "SJS 110",
    "SJS 120",
@@ -1207,15 +1331,1124 @@
    "SOCS M1040",
    "SPAN 100",
    "SPAN 110",
+   "SPAN M1026",
    "THTR 111",
    "THTR 113",
    "THTR 114",
+   "THTR M1056",
    "THTR M1269"
   ],
   "person_merges_into_a_planned_id": {
    "measure": "overlay entries (kb/coci_curation.json, the live-equivalent fold) whose merge_into names an id of a planned row and whose reviewed_by is not a bot",
    "rows": 45,
    "joining_a_planned_pair": 0
+  },
+  "unanchored_honors_courses": {
+   "measure": "courses in an M-ID on unified_courses_members.js whose title carries an Honors word and that are the Honors course of no anchor",
+   "total": 123,
+   "honors_subject": 29,
+   "no_marker_in_the_code": 49,
+   "marker_but_no_base": 45,
+   "courses": [
+    {
+     "id": "ANTH M10DE",
+     "college": "Crafton Hills College",
+     "code": "ANTHRO 116H",
+     "title": "Biological Anthropology Laboratory Honor",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ARTH M1037",
+     "college": "Sacramento City College",
+     "code": "ARTH 484",
+     "title": "Ancient Art-Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ARTH M10BZ",
+     "college": "Fullerton College",
+     "code": "ARTH 165HF",
+     "title": "Honors Creative Arts - Art",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ARTH M10CZ",
+     "college": "Sacramento City College",
+     "code": "ARTH 486",
+     "title": "Medieval Art-Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ARTH M10DA",
+     "college": "Sacramento City College",
+     "code": "ARTH 488",
+     "title": "Modern Art--Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ARTH M10DB",
+     "college": "Sacramento City College",
+     "code": "ARTH 487",
+     "title": "Renaissance Art-Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ARTS M10YL",
+     "college": "Cerro Coso Community College",
+     "code": "ART C299H",
+     "title": "Honors Seminar in Arts",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ARTS M10YM",
+     "college": "Solano Community College",
+     "code": "ART 49",
+     "title": "Studio Arts Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "ARTS M1570",
+     "college": "El Camino College",
+     "code": "AHIS 102AH",
+     "title": "Honors History of Western Art: Prehistoric to Gothic",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ASTR M1034",
+     "college": "American River College",
+     "code": "ASTR 481",
+     "title": "Honors Astronomy: Stars, Galaxies, and Cosmology",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "ASTR M1048",
+     "college": "Solano Community College",
+     "code": "ASTR 49",
+     "title": "Astronomy Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "ASTR M10AM",
+     "college": "Los Angeles Southwest College",
+     "code": "ASTRON 1",
+     "title": "ELEMENTARY ASTRONOMY - HONORS",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "ASTR M10BC",
+     "college": "Orange Coast College",
+     "code": "ASTR A100M",
+     "title": "Introduction to Astronomy Laboratory Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "BIOL M10NH",
+     "college": "Foothill College",
+     "code": "BIOL 36AH",
+     "title": "HONORS EXPERIMENTAL RESEARCH IN BIOLOGY I",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "BIOL M10NI",
+     "college": "Foothill College",
+     "code": "BIOL 36BH",
+     "title": "HONORS EXPERIMENTAL RESEARCH IN BIOLOGY II",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "BIOL M10NJ",
+     "college": "Foothill College",
+     "code": "BIOL 36CH",
+     "title": "HONORS EXPERIMENTAL RESEARCH IN BIOLOGY III",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "BIOL M10OS",
+     "college": "Foothill College",
+     "code": "BIOL 054H",
+     "title": "HONORS INSTITUTE SEMINAR IN BIOLOGY",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "BIOL M10OZ",
+     "college": "Cerro Coso Community College",
+     "code": "BIOL C299H",
+     "title": "Honors Seminar in Biology",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "BIOL M10ZU",
+     "college": "Reedley College",
+     "code": "BIOL 10H",
+     "title": "Honors Introduction to Life Sciences Lecture",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "BIOL M10ZW",
+     "college": "Orange Coast College",
+     "code": "MRSC A100M",
+     "title": "Oceanography Lab Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "BIOL M1104",
+     "college": "American River College",
+     "code": "BIOL 482",
+     "title": "Honors Marine Biology",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "BIOL M1317",
+     "college": "Cosumnes River College",
+     "code": "BIOL 485",
+     "title": "Honors Seminar in Genetics",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "BUSI M10CE",
+     "college": "Fresno City College",
+     "code": "HONORS 1D",
+     "title": "Honors Business, Economics, and Accounting Colloquium: The Local Economy and Agribusiness",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "BUSI M10TU",
+     "college": "Solano Community College",
+     "code": "BUS 99",
+     "title": "Business Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "BUSI M10TY",
+     "college": "Cerro Coso Community College",
+     "code": "BUS C299H",
+     "title": "Honors Seminar in Business",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "CHEM M10AW",
+     "college": "Sacramento City College",
+     "code": "CHEM 484",
+     "title": "Advanced General Chemistry - Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "CHEM M10FM",
+     "college": "Cerro Coso Community College",
+     "code": "CHEM C299H",
+     "title": "Honors Seminar in Chemistry",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "COMM M10BZ",
+     "college": "Cosumnes River College",
+     "code": "COMM 480",
+     "title": "Honors Seminar: Political Campaign Communication",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "COMM M10HB",
+     "college": "Solano Community College",
+     "code": "COMM 49",
+     "title": "Speech Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "COMP M10LA",
+     "college": "Cerro Coso Community College",
+     "code": "CSCI C299H",
+     "title": "Honors Seminar in Computer Information Systems",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "COUN M10GW",
+     "college": "Skyline College",
+     "code": "COUN 652",
+     "title": "Honors Seminar - Applying to Competitive Universities",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "CRIM M10IL",
+     "college": "Cerro Coso Community College",
+     "code": "ADMJ C299H",
+     "title": "Honors Seminar in Administration of Justice",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ECON M1029",
+     "college": "Cosumnes River College",
+     "code": "POLS 482",
+     "title": "International Political Economy - Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "ECON M1039",
+     "college": "Foothill College",
+     "code": "ECON 054H",
+     "title": "HONORS INSTITUTE SEMINAR IN ECONOMICS",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ECON M1039",
+     "college": "Foothill College",
+     "code": "SOC 054H",
+     "title": "HONORS INSTITUTE SEMINAR IN SOCIOLOGY",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ENGL M1053",
+     "college": "American River College",
+     "code": "ENGLT 486",
+     "title": "Honors African American Literature",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "ENGL M10GO",
+     "college": "Cosumnes River College",
+     "code": "ENGLT 488",
+     "title": "Honors-Literature Adapted into Film",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "ENGL M10GU",
+     "college": "Santa Barbara City College",
+     "code": "ENG 292H",
+     "title": "Advanced Literary Analysis, Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ENGL M10KZ",
+     "college": "Southwestern College",
+     "code": "ENGL 115H",
+     "title": "Honors College Composition: Reading and Writing Analytically",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ENGL M10ZV",
+     "college": "Cerro Coso Community College",
+     "code": "ENGL C299H",
+     "title": "Honors Seminar in English and Foreign Languages",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ENGL M11AB",
+     "college": "Solano Community College",
+     "code": "ENGL 49",
+     "title": "English Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "ENGL M1415",
+     "college": "Victor Valley College",
+     "code": "ENGL 104H",
+     "title": "Honors Critical Thinking and Composition",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ETHS M1012",
+     "college": "Cerro Coso Community College",
+     "code": "HIST C132H",
+     "title": "History of the U.S. from 1877 to Present Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "FMS M10AE",
+     "college": "Cosumnes River College",
+     "code": "FMS 488",
+     "title": "Honors Seminar: Introduction to Critical Theory",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "FREN M10DF",
+     "college": "Solano Community College",
+     "code": "FREN 49",
+     "title": "French Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "FTVE M1078",
+     "college": "Folsom Lake College",
+     "code": "TAFILM 480",
+     "title": "Honors Introduction to Film",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "FTVE M10GY",
+     "college": "Cosumnes River College",
+     "code": "FMS 489",
+     "title": "Honors: Director's Cinema",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "FTVE M10NP",
+     "college": "Solano Community College",
+     "code": "FTV 99",
+     "title": "Telecommunications Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "GEOL M10HI",
+     "college": "Orange Coast College",
+     "code": "GEOL A105M",
+     "title": "General Geology Lab Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "GEOL M10HV",
+     "college": "Solano Community College",
+     "code": "GEOL 49",
+     "title": "Geology Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "HIST M10UM",
+     "college": "Cosumnes River College",
+     "code": "HIST 485",
+     "title": "Recent United States History - Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "HIST M1164",
+     "college": "Sacramento City College",
+     "code": "HIST 484",
+     "title": "History of the United States - Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "HIST M1164",
+     "college": "Sacramento City College",
+     "code": "HIST 483",
+     "title": "History of the United States - Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "HUMA M1050",
+     "college": "Madera College",
+     "code": "HONORS 1",
+     "title": "Honors Colloquium",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "HUMA M1050",
+     "college": "Reedley College",
+     "code": "HONORS 1",
+     "title": "Honors Colloquium",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "HUMA M1050",
+     "college": "Santa Barbara City College",
+     "code": "HNRS 100",
+     "title": "Honors Colloquium",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "HUMA M10BM",
+     "college": "Merced College",
+     "code": "HNRS 40A",
+     "title": "Honors Seminar: The 60's Experience",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "HUMA M10HB",
+     "college": "Clovis Community College",
+     "code": "HONORS 2A",
+     "title": "Honors Seminar: Communication or Critical Thinking",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "HUMA M10LV",
+     "college": "Mt. San Jacinto College",
+     "code": "HEP 201",
+     "title": "Honors Studies: Humanities",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "HUMA M10LW",
+     "college": "Orange Coast College",
+     "code": "HUM A101H",
+     "title": "Themes in Humanities Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "IDST M1030",
+     "college": "Clovis Community College",
+     "code": "HONORS 3A",
+     "title": "Honors Forum - Applied Sciences",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1030",
+     "college": "Madera College",
+     "code": "HONORS 3A",
+     "title": "Honors Forum--Applied Sciences",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1030",
+     "college": "Reedley College",
+     "code": "HONORS 3A",
+     "title": "Honors Forum-Applied Sciences",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1053",
+     "college": "Clovis Community College",
+     "code": "HONORS 3C",
+     "title": "Honors Forum - Natural and Biological Sciences",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1053",
+     "college": "Madera College",
+     "code": "HONORS 3C",
+     "title": "Honors Forum--Natural and Biological Sciences",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1053",
+     "college": "Reedley College",
+     "code": "HONORS 3C",
+     "title": "Honors Forum-Natural and Biological Sciences",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M10EU",
+     "college": "Fresno City College",
+     "code": "HONORS 1C",
+     "title": "Honors Humanities Colloquium: Humanities through the Ages",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M10IH",
+     "college": "Fresno City College",
+     "code": "HONORS 1A",
+     "title": "Honors Science Colloquium: Biological Science through Scholarly Research",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M10JK",
+     "college": "Cañada College",
+     "code": "CRER 110",
+     "title": "Honors Colloquium in Career and Personal Development: Transfer Essentials and Planning",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "IDST M10NC",
+     "college": "Fresno City College",
+     "code": "HONORS 1E",
+     "title": "Honors Social Science Colloquium: Contemporary Issues in Social Science",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M10NE",
+     "college": "Cabrillo College",
+     "code": "HONRS 2H",
+     "title": "Honors Colloquium II",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "IDST M10OM",
+     "college": "Saddleback College",
+     "code": "HON 12H",
+     "title": "HONORS CULTURE, SCIENCE, SOCIETY - THE POSTMODERN WORLD",
+     "honors_subject": true,
+     "marker": true
+    },
+    {
+     "id": "IDST M10ON",
+     "college": "Saddleback College",
+     "code": "HON 11H",
+     "title": "HONORS CULTURE, SCIENCE, SOCIETY - RENAISSANCE",
+     "honors_subject": true,
+     "marker": true
+    },
+    {
+     "id": "IDST M10SZ",
+     "college": "College of San Mateo",
+     "code": "IDST 101",
+     "title": "Humanities Honors Seminar I",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "IDST M10TA",
+     "college": "College of San Mateo",
+     "code": "IDST 103",
+     "title": "Humanities Honors Seminar II",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "IDST M10TB",
+     "college": "College of San Mateo",
+     "code": "IDST 102",
+     "title": "Sciences Honors Seminar I",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "IDST M10TC",
+     "college": "Skyline College",
+     "code": "IDST 106",
+     "title": "Honors Research Seminar II",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "IDST M10TD",
+     "college": "College of San Mateo",
+     "code": "IDST 104",
+     "title": "Sciences Honors Seminar II",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "IDST M1126",
+     "college": "Clovis Community College",
+     "code": "HONORS 3B",
+     "title": "Honors Forum - Humanities",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1126",
+     "college": "Madera College",
+     "code": "HONORS 3B",
+     "title": "Honors Forum--Humanities",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1126",
+     "college": "Reedley College",
+     "code": "HONORS 3B",
+     "title": "Honors Forum-Humanities",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1127",
+     "college": "Clovis Community College",
+     "code": "HONORS 3D",
+     "title": "Honors Forum - Social Sciences",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1127",
+     "college": "Madera College",
+     "code": "HONORS 3D",
+     "title": "Honors Forum--Social Sciences",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1127",
+     "college": "Reedley College",
+     "code": "HONORS 3D",
+     "title": "Honors Forum-Social Sciences",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1190",
+     "college": "Cabrillo College",
+     "code": "HONRS 1H",
+     "title": "Honors Colloquium I",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "IDST M1190",
+     "college": "Fresno City College",
+     "code": "HONORS 1F",
+     "title": "Honors Study Topic Colloquium",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "IDST M1195",
+     "college": "Saddleback College",
+     "code": "HON 13H",
+     "title": "HONORS CULTURE, SCIENCE, SOCIETY - POWER, RESISTANCE, EMPIRE",
+     "honors_subject": true,
+     "marker": true
+    },
+    {
+     "id": "IDST M1195",
+     "college": "Saddleback College",
+     "code": "HON 14H",
+     "title": "HONORS CULTURE, SCIENCE, SOCIETY - TRANSFORMATION OF EMPIRE",
+     "honors_subject": true,
+     "marker": true
+    },
+    {
+     "id": "ITIS M10BE",
+     "college": "Orange Coast College",
+     "code": "CIS A134H",
+     "title": "Excel 1 Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ITIS M10CT",
+     "college": "Orange Coast College",
+     "code": "CIS A234H",
+     "title": "Excel 2 Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "ITIS M11IG",
+     "college": "Solano Community College",
+     "code": "CIS 49",
+     "title": "Comp Prog Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "LIBR M1034",
+     "college": "Saddleback College",
+     "code": "LIB 2H",
+     "title": "HONORS ADVANCED INFORMATION COMPETENCY, ONLINE SEARCHING",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "MATH M10AF",
+     "college": "Orange Coast College",
+     "code": "MATH A182H",
+     "title": "Honors Calculus 1 & 2",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "MATH M10UJ",
+     "college": "Orange Coast College",
+     "code": "MATH A290H",
+     "title": "Introduction to Tensors and Calculus on Manifolds Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "MATH M11DP",
+     "college": "Cosumnes River College",
+     "code": "MATH 483",
+     "title": "Honors Seminar in Mathematics - Introduction to Mathematical Proof",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "MATH M11DQ",
+     "college": "Cerro Coso Community College",
+     "code": "MATH C299H",
+     "title": "Honors Seminar in Math",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "MATH M11DR",
+     "college": "Solano Community College",
+     "code": "MATH 49",
+     "title": "Mathematics Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "MATH M11DS",
+     "college": "Cosumnes River College",
+     "code": "MATH 484",
+     "title": "Honors Seminar in Mathematics - Topics in Number Theory",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "MATH M11DT",
+     "college": "American River College",
+     "code": "MATH 480",
+     "title": "Honors Seminar in Mathematics",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "MUSI M10BT",
+     "college": "Sacramento City College",
+     "code": "MUFHL 481",
+     "title": "Survey of Music History and Literature (Greek Antiquity to 1750) - Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "MUSI M10CE",
+     "college": "Sacramento City College",
+     "code": "MUFHL 482",
+     "title": "Survey of Music History and Literature (1750 to the present) - Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "MUSI M10QU",
+     "college": "Fullerton College",
+     "code": "MUS 196HF",
+     "title": "Honors Creative Arts - Music",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "MUSI M1373",
+     "college": "Los Angeles Pierce College",
+     "code": "MUSIC 299",
+     "title": "Music Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "MUSI M1373",
+     "college": "Solano Community College",
+     "code": "MUSC 49",
+     "title": "Music Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "NUTR M10BL",
+     "college": "American River College",
+     "code": "NUTRI 481",
+     "title": "Honors - Cultural Foods of the World",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "PHIL M10AQ",
+     "college": "Merced College",
+     "code": "HNRS 40B",
+     "title": "Honors Seminar: Native American Philosophy",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "PHIL M10BN",
+     "college": "Cosumnes River College",
+     "code": "PHIL 485",
+     "title": "Honors Seminar: Philosophy of the Martial Arts",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "PHIL M10CX",
+     "college": "Cosumnes River College",
+     "code": "PHIL 486",
+     "title": "Honors Seminar in Critical Thinking and Composition: Philosophy of Happiness",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "PHIL M10GD",
+     "college": "Merced College",
+     "code": "HNRS 40D",
+     "title": "Honors Seminar: The Philosophy of Sex and Love",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "PHIL M10GF",
+     "college": "Merced College",
+     "code": "HNRS 40C",
+     "title": "Honors Seminar: Philosophy and Rock Music",
+     "honors_subject": true,
+     "marker": false
+    },
+    {
+     "id": "PHSC M10FU",
+     "college": "Mt. San Jacinto College",
+     "code": "HEP 203",
+     "title": "Honors Studies: Science",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "POLS M10FR",
+     "college": "Solano Community College",
+     "code": "POLS 49",
+     "title": "Political Science Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "POLS M10FS",
+     "college": "Santa Barbara City College",
+     "code": "POLS 134H",
+     "title": "Political Violence, Honors",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "PSYC M10HZ",
+     "college": "Foothill College",
+     "code": "PSYC 054H",
+     "title": "HONORS INSTITUTE SEMINAR IN PSYCHOLOGY",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "PSYC M10IE",
+     "college": "Solano Community College",
+     "code": "PSYC 49",
+     "title": "Psychology Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "PUBS M10DJ",
+     "college": "Moreno Valley College",
+     "code": "FIT S21",
+     "title": "Public Safety Honor Guard Academy",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "SOCI M10BO",
+     "college": "Cañada College",
+     "code": "SOCI 325",
+     "title": "Honors Colloquium: Sociology of Human Personhood",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "SOCI M10ED",
+     "college": "Solano Community College",
+     "code": "SOC 49",
+     "title": "Sociology Honors",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "SOCS M10FK",
+     "college": "Saddleback College",
+     "code": "GSS 11H",
+     "title": "HONORS INTRODUCTION TO FEMINIST THEORY",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "SOCS M10GY",
+     "college": "Cerro Coso Community College",
+     "code": "SOSC C299H",
+     "title": "Honors Seminar in Social Science",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "SOCS M10GZ",
+     "college": "Mt. San Jacinto College",
+     "code": "HEP 202",
+     "title": "Honors Studies: Social Science",
+     "honors_subject": false,
+     "marker": false
+    },
+    {
+     "id": "SPAN M10JT",
+     "college": "Glendale Community College",
+     "code": "SPAN 124H",
+     "title": "Honors English Translations Of Hispanic Literature",
+     "honors_subject": false,
+     "marker": true
+    },
+    {
+     "id": "THTR M10RJ",
+     "college": "Fullerton College",
+     "code": "THEA 165HF",
+     "title": "Honors Creative Arts - Theatre",
+     "honors_subject": false,
+     "marker": true
+    }
+   ]
+  },
+  "honors_merge_candidates": {
+   "measure": "bases with two or more Honors M-IDs anchored into them (good anchors only)",
+   "bases": 26,
+   "ids": 55,
+   "by_base": {
+    "ACCT 110": [
+     "BUSI M10FD",
+     "BUSI M10FE"
+    ],
+    "ANTH M1101": [
+     "ANTH M1116",
+     "ANTH M1121"
+    ],
+    "ARTH 120": [
+     "ARTC M10AH",
+     "ARTS M10QA"
+    ],
+    "BIOL 140": [
+     "BIOL M1095",
+     "BIOL M1102"
+    ],
+    "BIOL 190": [
+     "BIOL M1095",
+     "BIOL M10OY",
+     "BIOL M1103"
+    ],
+    "CHEM 101": [
+     "CHEM M1016",
+     "PHSC M10CP"
+    ],
+    "CHEM 120 S": [
+     "CHEM M1052",
+     "CHEM M1053"
+    ],
+    "ECON M1026": [
+     "ECON M1029",
+     "ECON M10BX"
+    ],
+    "ENGL M1140": [
+     "ENGL M1433",
+     "ENGL M1441"
+    ],
+    "ENGL M1258": [
+     "ENGL M11BL",
+     "ENGL M11BM",
+     "ENGL M11BN"
+    ],
+    "ENGL M1263": [
+     "ENGL M1261",
+     "ENGL M1408"
+    ],
+    "ENGL M1353": [
+     "ENGL M11FE",
+     "ENGL M11FG"
+    ],
+    "ENVS 100": [
+     "ENVS M10LD",
+     "ENVS M10LF"
+    ],
+    "ETHA M1002": [
+     "ENGL M10DS",
+     "ETHS M10IR"
+    ],
+    "FTVE 105": [
+     "FTVE M1079",
+     "FTVE M10DA"
+    ],
+    "HIST C1001": [
+     "HIST M10UO",
+     "HIST M10UP"
+    ],
+    "HUMA M1110": [
+     "HUMA M10ME",
+     "PHIL M1124"
+    ],
+    "JOUR 100": [
+     "BRDC M1015",
+     "HUMA M10HG"
+    ],
+    "LIBR M1040": [
+     "LIBR M10CI",
+     "LIBR M10CJ"
+    ],
+    "MATH 151": [
+     "MATH M1038",
+     "MATH M11DN",
+     "MATH M11DO"
+    ],
+    "MATH 210": [
+     "MATH M10NA",
+     "MATH M1333"
+    ],
+    "PHIL 110": [
+     "PHIL M1043",
+     "PHIL M10DO"
+    ],
+    "POLS 140": [
+     "POLS M1059",
+     "POLS M1060"
+    ],
+    "SJS 120": [
+     "ETHS M10PH",
+     "PHIL M10FI"
+    ],
+    "SPAN 100": [
+     "SPAN M1045",
+     "SPAN M1073"
+    ],
+    "THTR 111": [
+     "THTR M10RT",
+     "THTR M1187"
+    ]
+   }
   }
  },
  "pairs": [
@@ -1458,11 +2691,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: ANT, SPA): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: ANT, SPA"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ANTH M1015",
@@ -1590,13 +2827,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 3 subjects: ANT, ETH, HIS): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 3 subjects: ANT, ETH, HIS"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ANTH M10EJ",
@@ -1632,14 +2872,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Los Angeles Pierce College, Sacramento City College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Los Angeles Pierce College, Sacramento City College"
+    "a college gives the base two course numbers: Los Angeles Pierce College, Sacramento City College",
+    "the base's courses carry 4 subjects: ADM, AJ, ANT, CJV"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ANTH M10EW",
@@ -1795,7 +3038,9 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
@@ -1803,7 +3048,7 @@
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, world prehistory (11); archaeology of the ancient world (3)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ANTH M1116",
@@ -1915,12 +3160,14 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 2 Honors M-IDs anchored into it: ANTH M1116, ANTH M1121"
+    "the base has 2 Honors M-IDs anchored into it: ANTH M1116, ANTH M1121",
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Citrus College): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Citrus College"
+    "a college gives the base two course numbers: Citrus College",
+    "the base's courses carry 2 subjects: ANT, REL"
    ],
    "report_lump": [],
    "person_merges_in": [
@@ -1963,13 +3210,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: ARA, ARB): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: ARA, ARB"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ARCH M10AK",
@@ -2005,13 +3255,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ARCH M10AP",
@@ -2207,14 +3459,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the sequence marks differ across the base and the Honors side): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: ARC, ARE"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ARCH M10JX",
@@ -2338,7 +3593,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Chaffey College, College of the Canyons, De Anza College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 6 subjects: AH, AHI, AHS, ARH"
    ],
    "report_lump": [],
    "action": "held"
@@ -2588,14 +3844,18 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: AHI, ART): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: AHI, ART"
+   ],
    "report_lump": [],
    "person_merges_in": [
     "ARTS M1076"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ARTH M1037",
@@ -2632,10 +3892,13 @@
    ],
    "holds": [],
    "no_mint": [
-    "1 member course(s) of the Honors id are not the Honors course of an anchor: Sacramento City College ARTH 484"
+    "1 member course(s) of the Honors id are not the Honors course of an anchor: Sacramento City College ARTH 484",
+    "the base is a split candidate (the base's courses carry 2 subjects: AH, ART): the mint waits for the split"
    ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: AH, ART"
+   ],
    "report_lump": [],
    "action": "row, mint held"
   },
@@ -2680,7 +3943,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Allan Hancock College, American River College, Antelope Valley College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 4 subjects: ART, NCA, OAD, OLD"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -2719,7 +3983,9 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the sequence marks differ across the base and the Honors side): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
@@ -2728,7 +3994,7 @@
    "report_lump": [
     "the base holds two parts or periods of one subject: history of art prehistory through middle ages; history of western art from the middle ages to the renaissance"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ARTS M10MX",
@@ -2804,17 +4070,20 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the sequence marks differ across the base and the Honors side): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: ART, MUS"
    ],
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, latin american art colonial to the present (3); music of latin america and the caribbean (3)",
     "the base holds two parts or periods of one subject: history of latin american art colonial through contemporary; latin america colonial contemporary art history"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ARTS M10NI",
@@ -2850,11 +4119,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: AH, ART): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: AH, ART"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ARTS M10NS",
@@ -2890,13 +4163,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: AHI, ART): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: AHI, ART"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ARTS M10PL",
@@ -2932,16 +4208,19 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Santa Ana College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Santa Ana College"
+    "a college gives the base two course numbers: Santa Ana College",
+    "the base's courses carry 4 subjects: ART, HUM, THE, VFP"
    ],
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, motion picture performance production (3); motion picture appreciation (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ARTS M10PX",
@@ -3025,7 +4304,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Chaffey College, College of the Canyons, De Anza College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 6 subjects: AH, AHI, AHS, ARH"
    ],
    "report_lump": [],
    "action": "held"
@@ -3071,7 +4351,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Cabrillo College, De Anza College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 5 subjects: AH, AHI, ARH, ART"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -3206,7 +4487,8 @@
    "notes": [],
    "split_candidate": [
     "the sequence marks differ across the base and the Honors side",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 2 subjects: AHS, ART"
    ],
    "report_lump": [
     "the Honors id holds two Honors courses: history of western art prehistoric through gothic; history of western art prehistoric ancient medieval"
@@ -3437,14 +4719,18 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: AST, GEO): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: AST, GEO"
+   ],
    "report_lump": [],
    "person_merges_in": [
     "ASTR M10CW"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ASTR M1048",
@@ -3481,10 +4767,13 @@
    ],
    "holds": [],
    "no_mint": [
-    "1 member course(s) of the Honors id are not the Honors course of an anchor: Solano Community College ASTR 49"
+    "1 member course(s) of the Honors id are not the Honors course of an anchor: Solano Community College ASTR 49",
+    "the base is a split candidate (the base's courses carry 3 subjects: AST, ESC, PHS): the mint waits for the split"
    ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: AST, ESC, PHS"
+   ],
    "report_lump": [],
    "action": "row, mint held"
   },
@@ -3531,14 +4820,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the Honors id holds more than one Honors title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 2 subjects: AST, ESC"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ASTR M10AC",
@@ -3654,11 +4946,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: A, AST, GEO): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: A, AST, GEO"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ASTR M10BZ",
@@ -3734,7 +5030,9 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
@@ -3742,7 +5040,7 @@
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, life in the universe (17); introduction to astrobiology (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "BIOL 190",
@@ -4011,7 +5309,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: BI, BIO"
    ],
    "report_lump": [],
    "action": "held"
@@ -4163,7 +5462,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Moorpark College"
+    "a college gives the base two course numbers: Moorpark College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: BIO, BTE"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -4209,7 +5510,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Moorpark College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: BIO, BTE"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -4288,7 +5590,9 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Santa Monica College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
@@ -4297,7 +5601,7 @@
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, fundamentals of molecular biology (9); cell and molecular biology research methods (2); introduction to molecular genetics (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "BIOL M10IW",
@@ -4333,14 +5637,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Irvine Valley College, Saddleback College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Irvine Valley College, Saddleback College"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "BIOL M10KY",
@@ -4376,13 +5682,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "BIOL M10LH",
@@ -4458,13 +5766,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Cerro Coso Community College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "a college gives the base two course numbers: Cerro Coso Community College"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "BIOL M10NT",
@@ -4787,7 +6097,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Berkeley City College, Cabrillo College, Cañada College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 4 subjects: BIO, BOT, BTN, ZOO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -4834,7 +6145,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Gavilan College, Monterey Peninsula College, Skyline College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: BI, BIO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -4873,14 +6185,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the sequence marks differ across the base and the Honors side): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "the sequence marks differ across the base and the Honors side"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "BIOL M10QZ",
@@ -4922,7 +6236,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Santa Ana College"
+    "a college gives the base two course numbers: Santa Ana College",
+    "the base's courses carry 2 subjects: BIO, VHL"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -4961,7 +6276,9 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
@@ -4969,7 +6286,7 @@
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, emerging infectious diseases (5); biology of infectious diseases (3)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "BIOL M10ZV",
@@ -5094,11 +6411,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: ANA, BIO, KIN): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: ANA, BIO, KIN"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "BIOL M1102",
@@ -5141,7 +6462,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: BI, BIO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -5188,7 +6510,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Gavilan College, Monterey Peninsula College, Skyline College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: BI, BIO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -5246,12 +6569,14 @@
    ],
    "holds": [],
    "no_mint": [
-    "1 member course(s) of the Honors id are not the Honors course of an anchor: American River College BIOL 482"
+    "1 member course(s) of the Honors id are not the Honors course of an anchor: American River College BIOL 482",
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Santa Barbara City College): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Santa Barbara City College"
+    "a college gives the base two course numbers: Santa Barbara City College",
+    "the base's courses carry 5 subjects: BIO, HSS, MRS, MST"
    ],
    "report_lump": [],
    "action": "row, mint held"
@@ -5290,11 +6615,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 8 subjects: ESC, GEO, HSS, MRS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 8 subjects: ESC, GEO, HSS, MRS"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "BIOL M1226",
@@ -5345,7 +6674,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: College of Alameda, College of Marin, East Los Angeles College"
+    "a college gives the base two course numbers: College of Alameda, College of Marin, East Los Angeles College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 14 subjects: ASH, BEH, BIO, HE"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -5441,7 +6772,8 @@
    ],
    "holds": [],
    "no_mint": [
-    "1 member course(s) of the Honors id are not the Honors course of an anchor: Cosumnes River College BIOL 485"
+    "1 member course(s) of the Honors id are not the Honors course of an anchor: Cosumnes River College BIOL 485",
+    "the base is a split candidate (the Honors id holds more than one Honors title group): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
@@ -5495,13 +6827,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Chabot College; the base's courses carry 2 subjects: BIO, MIC): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Chabot College"
+    "a college gives the base two course numbers: Chabot College",
+    "the base's courses carry 2 subjects: BIO, MIC"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "BRDC M1015",
@@ -5553,7 +6888,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: College of the Canyons, Cosumnes River College, East Los Angeles College"
+    "a college gives the base two course numbers: College of the Canyons, Cosumnes River College, East Los Angeles College",
+    "the base's courses carry 25 subjects: BCS, BRD, CIN, CMS"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -5621,7 +6957,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Cerritos College, El Camino College, Victor Valley College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 8 subjects: ACC, ACT, BA, BAD"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -5668,7 +7005,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: De Anza College, El Camino College, Foothill College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 9 subjects: ACC, ACT, BA, BAD"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -5715,7 +7053,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: De Anza College, El Camino College, Foothill College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 9 subjects: ACC, ACT, BA, BAD"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -5760,7 +7099,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Fullerton College"
+    "a college gives the base two course numbers: Fullerton College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 9 subjects: BA, BAD, BLA, BSN"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -5885,7 +7226,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Chabot College, Chaffey College, Cuesta College"
+    "a college gives the base two course numbers: Chabot College, Chaffey College, Cuesta College",
+    "the base's courses carry 20 subjects: ADJ, ADM, BUS, ETH"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -5946,13 +7288,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 3 subjects: CHI, CHL, HDE): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 3 subjects: CHI, CHL, HDE"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "CHEM 120 S",
@@ -6017,7 +7362,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Butte College, Cabrillo College, Cerritos College"
+    "a college gives the base two course numbers: Butte College, Cabrillo College, Cerritos College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: CH, CHE, CHM"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -6124,7 +7471,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Cañada College, Cerro Coso Community College, City College of San Francisco",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: CH, CHE, CHM"
    ],
    "report_lump": [],
    "action": "held"
@@ -6182,7 +7530,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Cañada College, Cerro Coso Community College, City College of San Francisco",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: CH, CHE, CHM"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -6228,7 +7577,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Cabrillo College, Cerro Coso Community College, Clovis Community College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: CH, CHE, CHM"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -7118,11 +8468,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: CMS, COM, GND): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: CMS, COM, GND"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "COMM M10AW",
@@ -7244,7 +8598,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Allan Hancock College, Citrus College, Fullerton College"
+    "a college gives the base two course numbers: Allan Hancock College, Citrus College, Fullerton College",
+    "the base's courses carry 9 subjects: ALC, CMS, CMU, COM"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -7299,7 +8654,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 2 subjects: CMS, COM"
    ],
    "report_lump": [
     "the Honors id holds two Honors courses: organizational communication; professional and organizational speaking"
@@ -7347,7 +8703,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Antelope Valley College, Cañada College, Citrus College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 18 subjects: CIS, CIT, CMP, COM"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -7393,7 +8750,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Cabrillo College, Cañada College, City College of San Francisco",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 10 subjects: CIS, CIT, CMP, COM"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -7438,7 +8796,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Clovis Community College, Coastline Community College, College of the Desert"
+    "a college gives the base two course numbers: Clovis Community College, Coastline Community College, College of the Desert",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 15 subjects: CIM, CIS, CIT, CNI"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -7557,13 +8917,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "COUN M10ME",
@@ -7599,14 +8961,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Reedley College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Reedley College"
+    "a college gives the base two course numbers: Reedley College",
+    "the base's courses carry 6 subjects: CNS, COU, GUI, PDE"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "COUN M10PX",
@@ -7642,13 +9007,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Porterville College; the base's courses carry 2 subjects: COU, INS): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Porterville College"
+    "a college gives the base two course numbers: Porterville College",
+    "the base's courses carry 2 subjects: COU, INS"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "COUN M10UB",
@@ -7683,11 +9051,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 7 subjects: AGB, BSA, BUS, COU): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 7 subjects: AGB, BSA, BUS, COU"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "COUN M10UC",
@@ -7724,7 +9096,9 @@
    ],
    "no_mint": [],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: COU, GUI"
+   ],
    "report_lump": [],
    "action": "held"
   },
@@ -7762,11 +9136,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: COU, EDU, GUI): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: COU, EDU, GUI"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "COUN M1144",
@@ -7905,7 +9283,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Cerritos College, Cerro Coso Community College, De Anza College"
+    "a college gives the base two course numbers: Cerritos College, Cerro Coso Community College, De Anza College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 17 subjects: ADJ, ADM, AJ, AOJ"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -7971,11 +9351,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 6 subjects: DA, DAN, DNC, KIN): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 6 subjects: DA, DAN, DNC, KIN"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "DANC M10JE",
@@ -8051,11 +9435,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: DAN, DNC): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: DAN, DNC"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "DANC M11SK",
@@ -8140,13 +9528,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Mt. San Jacinto College; the base's courses carry 6 subjects: DAN, DNC, DNT, HIS): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Mt. San Jacinto College"
+    "a college gives the base two course numbers: Mt. San Jacinto College",
+    "the base's courses carry 6 subjects: DAN, DNC, DNT, HIS"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ECON 201",
@@ -9025,12 +10416,14 @@
    "holds": [],
    "no_mint": [
     "1 member course(s) of the Honors id are not the Honors course of an anchor: Cosumnes River College POLS 482",
-    "the base has 2 Honors M-IDs anchored into it: ECON M1029, ECON M10BX"
+    "the base has 2 Honors M-IDs anchored into it: ECON M1029, ECON M10BX",
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Cerritos College, City College of San Francisco, Foothill College): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Cerritos College, City College of San Francisco, Foothill College"
+    "a college gives the base two course numbers: Cerritos College, City College of San Francisco, Foothill College",
+    "the base's courses carry 7 subjects: ECN, ECO, GEO, POL"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, international political economy (16); the global economy (6); women in the economy (3)"
@@ -9111,13 +10504,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Glendale Community College; the base's courses carry 2 subjects: ECO, HIS): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Glendale Community College"
+    "a college gives the base two course numbers: Glendale Community College",
+    "the base's courses carry 2 subjects: ECO, HIS"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ECON M10BI",
@@ -9153,11 +10549,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: ECN, ECO, ENV): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: ECN, ECO, ENV"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ECON M10BO",
@@ -9234,12 +10634,14 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 2 Honors M-IDs anchored into it: ECON M1029, ECON M10BX"
+    "the base has 2 Honors M-IDs anchored into it: ECON M1029, ECON M10BX",
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Cerritos College, City College of San Francisco, Foothill College): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Cerritos College, City College of San Francisco, Foothill College"
+    "a college gives the base two course numbers: Cerritos College, City College of San Francisco, Foothill College",
+    "the base's courses carry 7 subjects: ECN, ECO, GEO, POL"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, international political economy (16); the global economy (6); women in the economy (3)"
@@ -11577,13 +12979,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 3 subjects: ED, ENG, LIT): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 3 subjects: ED, ENG, LIT"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M1053",
@@ -11702,7 +13107,8 @@
     "the base holds more than one title group",
     "a college gives the base two course numbers: Citrus College, Laney College, Mission College",
     "the sequence marks differ across the base and the Honors side",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 10 subjects: AFR, BLA, BLS, CCS"
    ],
    "report_lump": [
     "the base holds more than one course: 5 of two or more local courses each, african american literature (71); black literature (8); american voices (3); african american literature 1730 1930 (2)",
@@ -11766,11 +13172,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: ENG, ETH, LIT): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: ENG, ETH, LIT"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M10BA",
@@ -11813,7 +13223,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Bakersfield College, College of San Mateo, De Anza College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: ELI, ENG, LIT"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -11859,7 +13270,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: College of San Mateo",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: ELI, ENG, LIT"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -11899,11 +13311,13 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 2 Honors M-IDs anchored into it: ENGL M10DS, ETHS M10IR"
+    "the base has 2 Honors M-IDs anchored into it: ENGL M10DS, ETHS M10IR",
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 5 subjects: AIS, CCS, ENG, ETH): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 5 subjects: AIS, CCS, ENG, ETH"
    ],
    "report_lump": [],
    "action": "row, mint held"
@@ -11942,13 +13356,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M10IR",
@@ -12064,13 +13480,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M10LQ",
@@ -12266,11 +13684,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: ELI, ENG, LIT): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: ELI, ENG, LIT"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M10US",
@@ -12353,7 +13775,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Butte College, Cabrillo College, Chaffey College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 7 subjects: AHS, ALC, CRW, ENG"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -12439,7 +13862,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Antelope Valley College, De Anza College, Fullerton College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 14 subjects: CIN, DRA, ELI, ENG"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -12519,12 +13943,15 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 3 Honors M-IDs anchored into it: ENGL M11BL, ENGL M11BM, ENGL M11BN"
+    "the base has 3 Honors M-IDs anchored into it: ENGL M11BL, ENGL M11BM, ENGL M11BN",
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: American River College, Chabot College, Irvine Valley College): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: American River College, Chabot College, Irvine Valley College"
+    "a college gives the base two course numbers: American River College, Chabot College, Irvine Valley College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 5 subjects: ABE, ELI, ENG, LIT"
    ],
    "report_lump": [
     "the base holds more than one course: 5 of two or more local courses each, fiction writing workshop (13); introduction to fiction (13); studies in fiction (4); modern fiction (3)"
@@ -12581,12 +14008,15 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 3 Honors M-IDs anchored into it: ENGL M11BL, ENGL M11BM, ENGL M11BN"
+    "the base has 3 Honors M-IDs anchored into it: ENGL M11BL, ENGL M11BM, ENGL M11BN",
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: American River College, Chabot College, Irvine Valley College): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: American River College, Chabot College, Irvine Valley College"
+    "a college gives the base two course numbers: American River College, Chabot College, Irvine Valley College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 5 subjects: ABE, ELI, ENG, LIT"
    ],
    "report_lump": [
     "the base holds more than one course: 5 of two or more local courses each, fiction writing workshop (13); introduction to fiction (13); studies in fiction (4); modern fiction (3)"
@@ -12643,12 +14073,15 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 3 Honors M-IDs anchored into it: ENGL M11BL, ENGL M11BM, ENGL M11BN"
+    "the base has 3 Honors M-IDs anchored into it: ENGL M11BL, ENGL M11BM, ENGL M11BN",
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: American River College, Chabot College, Irvine Valley College): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: American River College, Chabot College, Irvine Valley College"
+    "a college gives the base two course numbers: American River College, Chabot College, Irvine Valley College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 5 subjects: ABE, ELI, ENG, LIT"
    ],
    "report_lump": [
     "the base holds more than one course: 5 of two or more local courses each, fiction writing workshop (13); introduction to fiction (13); studies in fiction (4); modern fiction (3)"
@@ -12784,13 +14217,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M11EP",
@@ -12826,13 +14261,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M11EU",
@@ -12876,7 +14313,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: American River College, Berkeley City College, Butte College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: ENG, ETH, LIT"
    ],
    "report_lump": [],
    "action": "held"
@@ -12915,18 +14353,21 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Coastline Community College, Cypress College, Fullerton College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Coastline Community College, Cypress College, Fullerton College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 4 subjects: ENG, FEN, HSE, LIT"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, the short story (21); intermediate short story writing (2); short story writing ii (2)",
     "the base holds two parts or periods of one subject: intermediate short story writing; short story writing ii"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M11EY",
@@ -13002,11 +14443,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: CHI, ENG, LIT): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: CHI, ENG, LIT"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M11FC",
@@ -13042,11 +14487,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: ENG, LIT): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: ENG, LIT"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M11FD",
@@ -13082,13 +14531,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 3 subjects: COM, ENG, LIT): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 3 subjects: COM, ENG, LIT"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M11FE",
@@ -13125,11 +14577,13 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 2 Honors M-IDs anchored into it: ENGL M11FE, ENGL M11FG"
+    "the base has 2 Honors M-IDs anchored into it: ENGL M11FE, ENGL M11FG",
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 6 subjects: ELI, ENG, LIT, WMS): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 6 subjects: ELI, ENG, LIT, WMS"
    ],
    "report_lump": [],
    "action": "row, mint held"
@@ -13168,13 +14622,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: ENG, GWO): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: ENG, GWO"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M11FG",
@@ -13211,11 +14668,13 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 2 Honors M-IDs anchored into it: ENGL M11FE, ENGL M11FG"
+    "the base has 2 Honors M-IDs anchored into it: ENGL M11FE, ENGL M11FG",
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 6 subjects: ELI, ENG, LIT, WMS): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 6 subjects: ELI, ENG, LIT, WMS"
    ],
    "report_lump": [],
    "action": "row, mint held"
@@ -13254,13 +14713,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: ENG, LIT): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: ENG, LIT"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M1203",
@@ -13373,12 +14835,14 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 2 Honors M-IDs anchored into it: ENGL M1261, ENGL M1408"
+    "the base has 2 Honors M-IDs anchored into it: ENGL M1261, ENGL M1408",
+    "the base is a split candidate (the base holds more than one title group; the Honors id holds more than one Honors title group): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 3 subjects: ENG, FIL, LIT"
    ],
    "report_lump": [],
    "person_merges_in": [
@@ -13502,18 +14966,21 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Berkeley City College, City College of San Francisco, De Anza College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Berkeley City College, City College of San Francisco, De Anza College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 6 subjects: CRW, ELI, ENG, EWR"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, introduction to poetry (34); intermediate poetry writing (10); poetry writing ii (4)",
     "the base holds two parts or periods of one subject: creative writing introduction to poetry; poetry writing ii"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M1284",
@@ -13558,13 +15025,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: ENG, ETH): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: ENG, ETH"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M1285",
@@ -13698,7 +15168,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Bakersfield College, Long Beach City College",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 4 subjects: ELI, ENG, LIT, THE"
    ],
    "report_lump": [],
    "person_merges_in": [
@@ -13761,7 +15232,8 @@
     "the base holds more than one title group",
     "a college gives the base two course numbers: College of San Mateo",
     "the sequence marks differ across the base and the Honors side",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 3 subjects: ELI, ENG, LIT"
    ],
    "report_lump": [],
    "action": "held"
@@ -13827,7 +15299,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Fullerton College",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 7 subjects: ELI, ENG, FEN, HUM"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, the bible as literature (31); literature and religion of the bible (4); introduction to the bible (2)",
@@ -13870,10 +15343,13 @@
    ],
    "holds": [],
    "no_mint": [
-    "1 member course(s) of the Honors id are not the Honors course of an anchor: Victor Valley College ENGL 104H"
+    "1 member course(s) of the Honors id are not the Honors course of an anchor: Victor Valley College ENGL 104H",
+    "the base is a split candidate (the base's courses carry 2 subjects: ENG, PHI): the mint waits for the split"
    ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: ENG, PHI"
+   ],
    "report_lump": [],
    "action": "row, mint held"
   },
@@ -13947,7 +15423,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Pasadena City College, Southwestern College",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 5 subjects: ENG, HUM, LIT, PHI"
    ],
    "report_lump": [
     "the base holds more than one course: 4 of two or more local courses each, introduction to mythology (15); world mythology (12); classical mythology (7); mythology and literature (4)",
@@ -14007,7 +15484,8 @@
     "the base holds more than one title group",
     "a college gives the base two course numbers: El Camino College",
     "the sequence marks differ across the base and the Honors side",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 2 subjects: ENG, LIN"
    ],
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, introduction to linguistics a survey of language (4); introduction to language structure and use (3)",
@@ -14058,16 +15536,20 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Long Beach City College, Monterey Peninsula College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Long Beach City College, Monterey Peninsula College"
+    "a college gives the base two course numbers: Long Beach City College, Monterey Peninsula College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: ENG, LIT"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, introduction to the novel (14); novel writing i (4); the modern american novel (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENGL M1441",
@@ -14113,12 +15595,14 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 2 Honors M-IDs anchored into it: ENGL M1433, ENGL M1441"
+    "the base has 2 Honors M-IDs anchored into it: ENGL M1433, ENGL M1441",
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Pasadena City College, Southwestern College): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Pasadena City College, Southwestern College"
+    "a college gives the base two course numbers: Pasadena City College, Southwestern College",
+    "the base's courses carry 5 subjects: ENG, HUM, LIT, PHI"
    ],
    "report_lump": [
     "the base holds more than one course: 4 of two or more local courses each, introduction to mythology (15); world mythology (12); classical mythology (7); mythology and literature (4)"
@@ -14166,7 +15650,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Chabot College, Clovis Community College, De Anza College"
+    "a college gives the base two course numbers: Chabot College, Clovis Community College, De Anza College",
+    "the base's courses carry 19 subjects: AG, AGN, ARC, BIO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -14205,13 +15690,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 5 subjects: AGN, BIO, ENV, ESC): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 5 subjects: AGN, BIO, ENV, ESC"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ENVS M10LF",
@@ -14254,7 +15742,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Chabot College, Clovis Community College, De Anza College"
+    "a college gives the base two course numbers: Chabot College, Clovis Community College, De Anza College",
+    "the base's courses carry 19 subjects: AG, AGN, ARC, BIO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -14387,7 +15876,8 @@
    "notes": [],
    "split_candidate": [
     "the sequence marks differ across the base and the Honors side",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 2 subjects: ETH, HIS"
    ],
    "report_lump": [
     "the Honors id holds two Honors courses: african american history 1450 1877; chicano history to 1877; african american history to 1877"
@@ -14437,11 +15927,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: ETH, HIS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: ETH, HIS"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M1068",
@@ -14486,11 +15980,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: ETH, POL, PS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: ETH, POL, PS"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M1086",
@@ -14535,13 +16033,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: ETH, HIS): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: ETH, HIS"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M1097",
@@ -14586,11 +16087,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: ETH, LIT): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: ETH, LIT"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M10DF",
@@ -14666,13 +16171,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: AFR, ETH): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: AFR, ETH"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M10HG",
@@ -14708,15 +16216,18 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 8 subjects: CCS, CHS, CLS, ETH): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 8 subjects: CCS, CHS, CLS, ETH"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, la chicana and latina (6); survey of chicana latina women (4); la chicana in society (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M10IR",
@@ -14753,11 +16264,13 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 2 Honors M-IDs anchored into it: ENGL M10DS, ETHS M10IR"
+    "the base has 2 Honors M-IDs anchored into it: ENGL M10DS, ETHS M10IR",
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 5 subjects: AIS, CCS, ENG, ETH): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 5 subjects: AIS, CCS, ENG, ETH"
    ],
    "report_lump": [],
    "action": "row, mint held"
@@ -14836,11 +16349,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 7 subjects: CCS, CHI, CHS, ETH): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 7 subjects: CCS, CHI, CHS, ETH"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M10OD",
@@ -14876,11 +16393,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: ETH, SOC): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: ETH, SOC"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M10OE",
@@ -14916,11 +16437,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 4 subjects: CHS, CS, ETH, SOC): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 4 subjects: CHS, CS, ETH, SOC"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M10PH",
@@ -14963,7 +16488,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Cerritos College, Fullerton College, Grossmont College"
+    "a college gives the base two course numbers: Cerritos College, Fullerton College, Grossmont College",
+    "the base's courses carry 31 subjects: AFR, ASA, CCS, CHI"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -15042,16 +16568,19 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Mt. San Antonio College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Mt. San Antonio College"
+    "a college gives the base two course numbers: Mt. San Antonio College",
+    "the base's courses carry 3 subjects: ANT, ETH, HIS"
    ],
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, anthropology of race and racism (2); history of racism in the united states (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M1103",
@@ -15096,11 +16625,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: ETH, HIS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: ETH, HIS"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M1147",
@@ -15145,11 +16678,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 6 subjects: AAB, BLA, BLS, ES): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 6 subjects: AAB, BLA, BLS, ES"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M1177",
@@ -15203,18 +16740,22 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: De Anza College, Ohlone College, Riverside City College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: De Anza College, Ohlone College, Riverside City College",
-    "the Honors id holds more than one Honors title group"
+    "the sequence marks differ across the base and the Honors side",
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 12 subjects: CHL, CHS, ENG, ES"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, introduction to chicanx and latinx studies (15); chicanx latinx culture (11); chicanx latinx united states history (2)",
     "the Honors id holds two Honors courses: latinx chicanx literature; introduction to chicanx and latinx studies"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M1194",
@@ -15296,7 +16837,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Chaffey College, Citrus College, City College of San Francisco"
+    "a college gives the base two course numbers: Chaffey College, Citrus College, City College of San Francisco",
+    "the base's courses carry 15 subjects: AMS, BEH, CET, EGS"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -15344,11 +16886,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 9 subjects: AAS, API, ASA, ASI): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 9 subjects: AAS, API, ASA, ASI"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ETHS M1266",
@@ -15400,7 +16946,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 3 subjects: ETH, HIS, SOC"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, history of race ethnicity in the united states (6); history of race and ethnicity in america (2); issues of race and ethnicity in the united states (2)",
@@ -15451,17 +16998,20 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the Honors id holds more than one Honors title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 6 subjects: CHS, ENG, ES, ETH"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, introduction to chicana o x and latina o x studies (8); chicana o and latina o contemporary issues (3); latina o literature (3)",
     "the Honors id holds two Honors courses: chicana o and latina o contemporary issues; introduction to latina o x studies"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FA M10AA",
@@ -15497,16 +17047,20 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Chaffey College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Chaffey College"
+    "a college gives the base two course numbers: Chaffey College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 4 subjects: ART, FA, PHO, TA"
    ],
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, fine art photography (8); intro to fine arts and musical theater (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FDNT M10BE",
@@ -15542,11 +17096,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: FNC, NTR, NUT): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: FNC, NTR, NUT"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FLNG M11LR",
@@ -15631,11 +17189,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: FR, FRE, FRN): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: FR, FRE, FRN"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FREN M1053",
@@ -15680,11 +17242,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: FR, FRE, FRN): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: FR, FRE, FRN"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FREN M10AA",
@@ -15720,13 +17286,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Berkeley City College, Cerritos College, City College of San Francisco; the sequence marks differ across the base and the Honors side): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Berkeley City College, Cerritos College, City College of San Francisco"
+    "a college gives the base two course numbers: Berkeley City College, Cerritos College, City College of San Francisco",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 4 subjects: FR, FRC, FRE, FRN"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FREN M10AH",
@@ -15762,13 +17332,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Southwestern College; the base's courses carry 4 subjects: FR, FRC, FRE, FRN): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Southwestern College"
+    "a college gives the base two course numbers: Southwestern College",
+    "the base's courses carry 4 subjects: FR, FRC, FRE, FRN"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FREN M10AZ",
@@ -15804,13 +17377,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: West Valley College; the sequence marks differ across the base and the Honors side): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: West Valley College"
+    "a college gives the base two course numbers: West Valley College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: FR, FRE, FRN"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FTVE M1003",
@@ -15873,19 +17450,22 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: De Anza College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: De Anza College",
     "the sequence marks differ across the base and the Honors side",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 2 subjects: FIL, FTV"
    ],
    "report_lump": [],
    "person_merges_in": [
     "FTVE M1007"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FTVE M1019",
@@ -15930,11 +17510,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: FIL, HUM): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: FIL, HUM"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FTVE M1045",
@@ -15979,13 +17563,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: De Anza College; the base's courses carry 6 subjects: FIL, FMA, FS, FTV): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: De Anza College"
+    "a college gives the base two course numbers: De Anza College",
+    "the base's courses carry 6 subjects: FIL, FMA, FS, FTV"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FTVE M1078",
@@ -16040,11 +17627,13 @@
    ],
    "holds": [],
    "no_mint": [
-    "1 member course(s) of the Honors id are not the Honors course of an anchor: Folsom Lake College TAFILM 480"
+    "1 member course(s) of the Honors id are not the Honors course of an anchor: Folsom Lake College TAFILM 480",
+    "the base is a split candidate (a college gives the base two course numbers: College of the Desert, Sacramento City College; the base's courses carry 9 subjects: DFL, ENG, FIL, FTV): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: College of the Desert, Sacramento City College"
+    "a college gives the base two course numbers: College of the Desert, Sacramento City College",
+    "the base's courses carry 9 subjects: DFL, ENG, FIL, FTV"
    ],
    "report_lump": [],
    "action": "row, mint held"
@@ -16108,7 +17697,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: City College of San Francisco, Coalinga College, Cuesta College"
+    "a college gives the base two course numbers: City College of San Francisco, Coalinga College, Cuesta College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 22 subjects: AP, ART, CIN, ECO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -16154,7 +17745,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: City College of San Francisco, Coalinga College, Cuesta College"
+    "a college gives the base two course numbers: City College of San Francisco, Coalinga College, Cuesta College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 22 subjects: AP, ART, CIN, ECO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -16233,11 +17826,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: FIL, FTV): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: FIL, FTV"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FTVE M10EV",
@@ -16273,11 +17870,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: FIL, FTV): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: FIL, FTV"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FTVE M10HO",
@@ -16353,13 +17954,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Southwestern College; the base's courses carry 11 subjects: BCS, BRD, COM, DME): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Southwestern College"
+    "a college gives the base two course numbers: Southwestern College",
+    "the base's courses carry 11 subjects: BCS, BRD, COM, DME"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FTVE M10LJ",
@@ -16435,16 +18039,19 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Norco College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Norco College"
+    "a college gives the base two course numbers: Norco College",
+    "the base's courses carry 11 subjects: CIS, CS, DAI, DDP"
    ],
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, history of video games (9); business of games (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FTVM M10AS",
@@ -16520,16 +18127,19 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: College of the Canyons): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: College of the Canyons"
+    "a college gives the base two course numbers: College of the Canyons",
+    "the base's courses carry 11 subjects: BRD, CIN, COM, CRT"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, introduction to media aesthetics and cinematic arts (10); broadcasting television film aesthetics (3); documentary film aesthetics (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "FTVM M10AU",
@@ -16565,14 +18175,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Irvine Valley College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Irvine Valley College"
+    "a college gives the base two course numbers: Irvine Valley College",
+    "the base's courses carry 7 subjects: CIN, ENG, FIL, FMA"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "GEOG M10CM",
@@ -16613,7 +18226,8 @@
    ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: East Los Angeles College"
+    "a college gives the base two course numbers: East Los Angeles College",
+    "the base's courses carry 3 subjects: ENV, GEG, GEO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -16658,7 +18272,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Santa Barbara City College, West Los Angeles College"
+    "a college gives the base two course numbers: Santa Barbara City College, West Los Angeles College",
+    "the base's courses carry 6 subjects: ERS, ERT, GEG, GEO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -16703,7 +18318,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: West Los Angeles College"
+    "a college gives the base two course numbers: West Los Angeles College",
+    "the base's courses carry 4 subjects: ERT, ESC, GEL, GEO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -16742,11 +18358,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 5 subjects: ABE, EAR, GEO, HSS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 5 subjects: ABE, EAR, GEO, HSS"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "GFCD M10FI",
@@ -16782,11 +18402,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: ART, DES): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: ART, DES"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "GFCD M10FJ",
@@ -16822,11 +18446,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: ART, DES): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: ART, DES"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST 130",
@@ -17883,12 +19511,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: American River College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: American River College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 5 subjects: ETH, HIS, WGS, WMS"
    ],
    "report_lump": [
     "the base holds two parts or periods of one subject: history of american women; women in american history to 1877"
@@ -17897,7 +19528,7 @@
     "HIST M10FH",
     "HIST M10GM"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M10AV",
@@ -17933,7 +19564,9 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Orange Coast College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
@@ -17943,7 +19576,7 @@
    "report_lump": [
     "the base holds two parts or periods of one subject: history of the middle east since 1500; history of the middle east to 1500"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M10BI",
@@ -17986,7 +19619,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: College of the Desert, Glendale Community College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 4 subjects: ABE, HIS, HST, HUM"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -18025,18 +19659,21 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: City College of San Francisco, Riverside City College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: City College of San Francisco, Riverside City College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: HIS, MIL"
    ],
    "report_lump": [
     "the base holds more than one course: 4 of two or more local courses each, american military history (4); military history of the united states since 1900 (4); military history of the united states to 1900 (3); europe since 1900 (2)",
     "the base holds two parts or periods of one subject: military history of the united states since 1900; military history of the united states to 1900"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M10HW",
@@ -18112,14 +19749,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: El Camino College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: El Camino College"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M10KV",
@@ -18195,11 +19834,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: CHS, HIS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: CHS, HIS"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M10NK",
@@ -18275,7 +19918,9 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Cerritos College, El Camino College, Fullerton College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
@@ -18289,7 +19934,7 @@
    "person_merges_in": [
     "HIST M10AA"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M10NZ",
@@ -18325,7 +19970,9 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Fullerton College, MiraCosta College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
@@ -18339,7 +19986,7 @@
    "person_merges_in": [
     "HIST M10IK"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M10PT",
@@ -18375,13 +20022,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M10QP",
@@ -18537,16 +20186,19 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Cosumnes River College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Cosumnes River College"
+    "a college gives the base two course numbers: Cosumnes River College",
+    "the base's courses carry 3 subjects: ASA, HIS, POL"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, history of india (4); history of southeast asia (3); global studies central asia (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M10UL",
@@ -18582,13 +20234,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: CHI, HIS): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: CHI, HIS"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M10UN",
@@ -18760,16 +20415,19 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the sequence marks differ across the base and the Honors side): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 4 subjects: ASA, ETH, HIS, NAT"
    ],
    "report_lump": [
     "the base holds two parts or periods of one subject: american indian past and present; asian american experiences past to present"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M1130",
@@ -18823,13 +20481,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Citrus College; the base's courses carry 3 subjects: ETH, HIS, HST): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Citrus College"
+    "a college gives the base two course numbers: Citrus College",
+    "the base's courses carry 3 subjects: ETH, HIS, HST"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M1163",
@@ -18883,11 +20544,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: BIO, HIS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: BIO, HIS"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M1165",
@@ -18941,14 +20606,19 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the sequence marks differ across the base and the Honors side; the base's courses carry 2 subjects: GWO, HIS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: GWO, HIS"
+   ],
    "report_lump": [],
    "person_merges_in": [
     "HIST M10UQ"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M1197",
@@ -19050,7 +20720,9 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Mt. San Jacinto College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
@@ -19062,7 +20734,7 @@
     "the base holds two parts or periods of one subject: history of latin america since 1820; history of latin america to 1820",
     "the Honors id holds two Honors courses: history of latin america since 1820; history of latin america to 1820"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HIST M1231",
@@ -19107,20 +20779,23 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Diablo Valley College, Mt. San Antonio College, Sierra College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Diablo Valley College, Mt. San Antonio College, Sierra College",
     "the sequence marks differ across the base and the Honors side",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 2 subjects: ASA, HIS"
    ],
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, history of east asia (11); history of east asia to 1600 (2)",
     "the base holds two parts or periods of one subject: a survey of the history of east asia; history of east asia from 1600 present",
     "the Honors id holds two Honors courses: history of asia from pre history to early modern; history of early modern to modern asia"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HLTH M10AS",
@@ -19156,16 +20831,19 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Fullerton College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Fullerton College"
+    "a college gives the base two course numbers: Fullerton College",
+    "the base's courses carry 3 subjects: AH, ART, PHO"
    ],
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, history of western art proto renaissance to 19th century (3); 19th century painting (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HLTH M10RO",
@@ -19201,14 +20879,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Victor Valley College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Victor Valley College"
+    "a college gives the base two course numbers: Victor Valley College",
+    "the base's courses carry 2 subjects: HLT, HOC"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HLTH M10ZH",
@@ -19244,13 +20925,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Victor Valley College; the base's courses carry 9 subjects: HEA, HEE, HEL, HES): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Victor Valley College"
+    "a college gives the base two course numbers: Victor Valley College",
+    "the base's courses carry 9 subjects: HEA, HEE, HEL, HES"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HLTH M11BP",
@@ -19292,7 +20976,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Bakersfield College, City College of San Francisco, Moorpark College"
+    "a college gives the base two course numbers: Bakersfield College, City College of San Francisco, Moorpark College",
+    "the base's courses carry 20 subjects: BIO, HE, HEA, HED"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -19337,7 +21022,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: San Joaquin Delta College"
+    "a college gives the base two course numbers: San Joaquin Delta College",
+    "the base's courses carry 12 subjects: AGB, AGO, AGP, AGR"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -19499,7 +21185,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Berkeley City College, College of the Desert, Mission College"
+    "a college gives the base two course numbers: Berkeley City College, College of the Desert, Mission College",
+    "the base's courses carry 5 subjects: CMS, CMU, COM, SPC"
    ],
    "report_lump": [],
    "action": "held"
@@ -19547,13 +21234,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 3 subjects: ANT, HUM, SOC): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 3 subjects: ANT, HUM, SOC"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HUMA M1084",
@@ -19712,14 +21402,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Mission College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Mission College"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HUMA M10CM",
@@ -19882,7 +21574,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: College of the Canyons, Cosumnes River College, East Los Angeles College"
+    "a college gives the base two course numbers: College of the Canyons, Cosumnes River College, East Los Angeles College",
+    "the base's courses carry 25 subjects: BCS, BRD, CIN, CMS"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -19921,13 +21614,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: HUM, PHI): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: HUM, PHI"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HUMA M10HX",
@@ -20123,11 +21819,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: ELI, ENG, ETH): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: ELI, ENG, ETH"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HUMA M10KQ",
@@ -20243,11 +21943,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the sequence marks differ across the base and the Honors side; the base's courses carry 2 subjects: ENG, HUM): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: ENG, HUM"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HUMA M10LT",
@@ -20484,7 +22189,8 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base has 2 Honors M-IDs anchored into it: HUMA M10ME, PHIL M1124"
+    "the base has 2 Honors M-IDs anchored into it: HUMA M10ME, PHIL M1124",
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Cosumnes River College, Glendale Community College): the mint waits for the split"
    ],
    "notes": [
     "the honors_of row stands (step 1, applied 2026-11-14)",
@@ -20492,7 +22198,8 @@
    ],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Cosumnes River College, Glendale Community College"
+    "a college gives the base two course numbers: Cosumnes River College, Glendale Community College",
+    "the base's courses carry 8 subjects: HIS, HUM, LLS, PHI"
    ],
    "report_lump": [],
    "action": "row, mint held"
@@ -20587,7 +22294,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Bakersfield College, College of Marin, Crafton Hills College",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 7 subjects: CMS, CMU, COM, PHI"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -20635,11 +22343,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: COM, HUM, MDI): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: COM, HUM, MDI"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "HUMN M1003",
@@ -20684,11 +22396,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: HUM, MDI): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: HUM, MDI"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "IDST M10CL",
@@ -20804,11 +22520,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 5 subjects: COU, CRE, EDE, GUI): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 5 subjects: COU, CRE, EDE, GUI"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "IDST M10OJ",
@@ -20844,11 +22564,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 5 subjects: CNS, COU, CSL, GUI): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 5 subjects: CNS, COU, CSL, GUI"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "IDST M10RQ",
@@ -20884,16 +22608,19 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Chabot College, Golden West College, Solano Community College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Chabot College, Golden West College, Solano Community College"
+    "a college gives the base two course numbers: Chabot College, Golden West College, Solano Community College",
+    "the base's courses carry 9 subjects: CNS, COU, GUI, HDE"
    ],
    "report_lump": [
     "the base holds more than one course: 4 of two or more local courses each, university transfer planning (10); navigating the transfer process (6); college success funding your university transfer plan (2); preparing for college university transfer (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "IDST M10TE",
@@ -20984,7 +22711,8 @@
     "the base holds more than one title group",
     "a college gives the base two course numbers: Citrus College, Copper Mountain College, Glendale Community College",
     "the sequence marks differ across the base and the Honors side",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 15 subjects: A, ART, BI, BIO"
    ],
    "report_lump": [
     "the base holds more than one course: 5 of two or more local courses each, directed research seminar (11); undergraduate research experience (8); independent research in biology (2); introduction to independent research in physics (2)",
@@ -21067,11 +22795,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: INF, LIB): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: INF, LIB"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ITIS M10KP",
@@ -21107,15 +22839,18 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: De Anza College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: De Anza College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 7 subjects: CIS, CIT, COM, CPS"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ITIS M10SQ",
@@ -21151,11 +22886,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 4 subjects: AOM, CBO, CIS, COM): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 4 subjects: AOM, CBO, CIS, COM"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "ITIS M11LX",
@@ -21191,11 +22930,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: CIS, CIT): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: CIS, CIT"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "JAPN M10AD",
@@ -21231,13 +22974,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Cerritos College, Gavilan College, Laney College; the sequence marks differ across the base and the Honors side): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Cerritos College, Gavilan College, Laney College"
+    "a college gives the base two course numbers: Cerritos College, Gavilan College, Laney College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: JA, JAP, JPN"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "JAPN M10AK",
@@ -21273,11 +23020,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: JAP, JPN): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: JAP, JPN"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "JAPN M10AW",
@@ -21313,13 +23064,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 3 subjects: AFR, JA, JAP): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 3 subjects: AFR, JA, JAP"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "JAPN M10BG",
@@ -21355,13 +23109,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: West Valley College; the sequence marks differ across the base and the Honors side): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: West Valley College"
+    "a college gives the base two course numbers: West Valley College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: JA, JAP, JPN"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "JAPN M10BH",
@@ -21397,11 +23155,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: JA, JAP, JPN): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: JA, JAP, JPN"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "JAPN M10CP",
@@ -21437,11 +23199,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: JA, JAP): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: JA, JAP"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "KINE M13AD",
@@ -21477,11 +23243,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: EST, KIN): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: EST, KIN"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "LATN M10AD",
@@ -21517,13 +23287,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 6 subjects: CHI, FRC, GER, ITA): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 6 subjects: CHI, FRC, GER, ITA"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "LATN M10AG",
@@ -21559,11 +23332,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the sequence marks differ across the base and the Honors side): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the sequence marks differ across the base and the Honors side"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "LIBR M1034",
@@ -21658,13 +23435,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "LIBR M10BO",
@@ -21867,11 +23646,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: BIO, LIB, MAT): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: BIO, LIB, MAT"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "MATH 110",
@@ -22556,7 +24339,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Clovis Community College, De Anza College, Fullerton College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: MAT, MTH"
    ],
    "report_lump": [],
    "action": "held"
@@ -22602,7 +24386,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Fullerton College, Los Angeles Trade Technical College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: MAT, MTH"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -22641,14 +24426,17 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Chabot College, Coastline Community College, Orange Coast College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Chabot College, Coastline Community College, Orange Coast College"
+    "a college gives the base two course numbers: Chabot College, Coastline Community College, Orange Coast College",
+    "the base's courses carry 2 subjects: MAT, MTH"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "MATH M11CM",
@@ -22690,7 +24478,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Cabrillo College, Chabot College, Cypress College"
+    "a college gives the base two course numbers: Cabrillo College, Chabot College, Cypress College",
+    "the base's courses carry 6 subjects: BA, BUS, CHE, DS"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -22840,7 +24629,9 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Fullerton College",
-    "the Honors id holds more than one Honors title group"
+    "the sequence marks differ across the base and the Honors side",
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 2 subjects: MAT, MTH"
    ],
    "report_lump": [],
    "action": "held"
@@ -22895,7 +24686,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Clovis Community College, De Anza College, Fullerton College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: MAT, MTH"
    ],
    "report_lump": [],
    "action": "held"
@@ -22934,11 +24726,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the sequence marks differ across the base and the Honors side; the base's courses carry 6 subjects: BUS, IBU, INT, MGM): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 6 subjects: BUS, IBU, INT, MGM"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "MUSI M1040",
@@ -23223,14 +25020,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Berkeley City College, College of Alameda, Laney College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Berkeley City College, College of Alameda, Laney College"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "MUSI M11PS",
@@ -23404,13 +25203,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Foothill College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "a college gives the base two course numbers: Foothill College"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "MUSI M12CD",
@@ -23584,11 +25385,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: MUF, MUS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: MUF, MUS"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "NUTR M10CB",
@@ -23816,7 +25621,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Bakersfield College, Clovis Community College, College of the Desert"
+    "a college gives the base two course numbers: Bakersfield College, Clovis Community College, College of the Desert",
+    "the base's courses carry 4 subjects: PHI, PHL, PSY, RLS"
    ],
    "report_lump": [],
    "action": "held"
@@ -23954,7 +25760,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Bakersfield College, Clovis Community College, College of the Desert"
+    "a college gives the base two course numbers: Bakersfield College, Clovis Community College, College of the Desert",
+    "the base's courses carry 4 subjects: PHI, PHL, PSY, RLS"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -23999,7 +25806,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: American River College, Cosumnes River College, Cypress College"
+    "a college gives the base two course numbers: American River College, Cosumnes River College, Cypress College",
+    "the base's courses carry 8 subjects: BUS, DEH, HUM, PHI"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -24045,7 +25853,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Cerritos College, Fullerton College, Grossmont College"
+    "a college gives the base two course numbers: Cerritos College, Fullerton College, Grossmont College",
+    "the base's courses carry 31 subjects: AFR, ASA, CCS, CHI"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -24084,13 +25893,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: HUM, PHI): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: HUM, PHI"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "PHIL M10GA",
@@ -24126,11 +25938,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: HIS, PHI): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: HIS, PHI"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "PHIL M10GB",
@@ -24212,7 +26028,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: College of Alameda, East Los Angeles College, Sierra College"
+    "a college gives the base two course numbers: College of Alameda, East Los Angeles College, Sierra College",
+    "the base's courses carry 26 subjects: ANT, CHI, EGS, ENG"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -24287,7 +26104,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 3 subjects: HUM, PHI, REL"
    ],
    "report_lump": [
     "the Honors id holds two Honors courses: comparative world religions; introduction to asian religions"
@@ -24448,13 +26266,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Sierra College; the base's courses carry 8 subjects: AHI, AP, ARH, ART): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Sierra College"
+    "a college gives the base two course numbers: Sierra College",
+    "the base's courses carry 8 subjects: AHI, AP, ARH, ART"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "PHOT M10MV",
@@ -24496,7 +26317,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: El Camino College, Fullerton College, Las Positas College"
+    "a college gives the base two course numbers: El Camino College, Fullerton College, Las Positas College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 10 subjects: ART, DJR, FJO, J"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -24544,13 +26367,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Coastline Community College; the base's courses carry 3 subjects: ART, PHO, PHT): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Coastline Community College"
+    "a college gives the base two course numbers: Coastline Community College",
+    "the base's courses carry 3 subjects: ART, PHO, PHT"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "PHS 102",
@@ -24683,7 +26509,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: American River College, Pasadena City College",
-    "the Honors id holds more than one Honors title group"
+    "the Honors id holds more than one Honors title group",
+    "the base's courses carry 8 subjects: BIO, ERT, ESC, GEO"
    ],
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, introduction to oceanography (41); physical oceanography (4)",
@@ -24728,11 +26555,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: AST, ERT): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: AST, ERT"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "PHSC M10BO",
@@ -24817,7 +26648,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Butte College, Cabrillo College, Cerritos College"
+    "a college gives the base two course numbers: Butte College, Cabrillo College, Cerritos College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: CH, CHE, CHM"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -24856,11 +26689,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: AST, PHY): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: AST, PHY"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "PHYS M1015",
@@ -24900,7 +26737,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: College of the Canyons, College of the Desert, East Los Angeles College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: PH, PHY"
    ],
    "report_lump": [],
    "action": "held"
@@ -24946,7 +26784,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: College of the Canyons, College of the Desert, East Los Angeles College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: PH, PHY"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -24985,15 +26824,18 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: CHE, PHY): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: CHE, PHY"
    ],
    "report_lump": [
     "the base holds more than one course: 2 of two or more local courses each, everyday chemistry (4); physics for everyday use (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "PHYS M10FR",
@@ -25035,7 +26877,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Chabot College, Chaffey College, Compton College"
+    "a college gives the base two course numbers: Chabot College, Chaffey College, Compton College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 2 subjects: PH, PHY"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -25896,7 +27740,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Feather River College"
+    "a college gives the base two course numbers: Feather River College",
+    "the base's courses carry 5 subjects: PLS, POL, POS, PS"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -25942,7 +27787,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Solano Community College, Victor Valley College"
+    "a college gives the base two course numbers: Solano Community College, Victor Valley College",
+    "the base's courses carry 5 subjects: PLS, POL, POS, PS"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -25988,7 +27834,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Solano Community College, Victor Valley College"
+    "a college gives the base two course numbers: Solano Community College, Victor Valley College",
+    "the base's courses carry 5 subjects: PLS, POL, POS, PS"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -26027,13 +27874,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (a college gives the base two course numbers: Victor Valley College; the base's courses carry 5 subjects: BAD, PAD, PBL, POS): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "a college gives the base two course numbers: Victor Valley College"
+    "a college gives the base two course numbers: Victor Valley College",
+    "the base's courses carry 5 subjects: BAD, PAD, PBL, POS"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "POLS M10AU",
@@ -26109,11 +27959,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: POL, POS, PS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: POL, POS, PS"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "POLS M10CH",
@@ -26149,13 +28003,16 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; the base's courses carry 2 subjects: POL, POS): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: POL, POS"
    ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "PSY 110",
@@ -27033,7 +28890,9 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Citrus College, San Diego City College, San Diego Mesa College"
+    "a college gives the base two course numbers: Citrus College, San Diego City College, San Diego Mesa College",
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 7 subjects: BIO, LAW, POL, PSY"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -27072,11 +28931,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: PSY, SOC): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: PSY, SOC"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "PSYC M10DQ",
@@ -27118,7 +28981,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Santa Ana College, Santa Rosa Junior College"
+    "a college gives the base two course numbers: Santa Ana College, Santa Rosa Junior College",
+    "the base's courses carry 2 subjects: BIO, PSY"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -27197,11 +29061,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: CCS, ETH, PSY): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: CCS, ETH, PSY"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "PSYC M10FZ",
@@ -27243,7 +29111,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Bakersfield College, Clovis Community College, Cosumnes River College"
+    "a college gives the base two course numbers: Bakersfield College, Clovis Community College, Cosumnes River College",
+    "the base's courses carry 13 subjects: AH, ASH, CDE, CDF"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -27287,7 +29156,8 @@
    ],
    "notes": [],
    "split_candidate": [
-    "the base holds more than one title group"
+    "the base holds more than one title group",
+    "the base's courses carry 2 subjects: ADS, PSY"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -27375,11 +29245,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 3 subjects: GEN, PSY, WMS): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 3 subjects: GEN, PSY, WMS"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "SLNA M1022",
@@ -27442,17 +29316,20 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Berkeley City College, Palomar College, Skyline College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Berkeley City College, Palomar College, Skyline College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 8 subjects: AMS, ASL, DEA, DFS"
    ],
    "report_lump": [
     "the base holds two parts or periods of one subject: american sign language 1; american sign language i module b"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "SLNA M1023",
@@ -27506,17 +29383,20 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Berkeley City College, Palomar College, San Jose City College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Berkeley City College, Palomar College, San Jose City College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 8 subjects: AMS, ASL, DEA, DFS"
    ],
    "report_lump": [
     "the base holds two parts or periods of one subject: american sign language 2; american sign language ii module a"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "SLNA M1097",
@@ -27561,17 +29441,20 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: Berkeley City College, Palomar College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Berkeley City College, Palomar College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 8 subjects: AMS, ASL, DEA, DFS"
    ],
    "report_lump": [
     "the base holds two parts or periods of one subject: american sign language 3; american sign language iii module a"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "SOCI 110",
@@ -27858,7 +29741,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Golden West College, Santa Rosa Junior College"
+    "a college gives the base two course numbers: Golden West College, Santa Rosa Junior College",
+    "the base's courses carry 12 subjects: ANT, BEH, ENG, GEN"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -27986,16 +29870,19 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base holds more than one title group; a college gives the base two course numbers: De Anza College): the mint waits for the split"
+   ],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: De Anza College"
+    "a college gives the base two course numbers: De Anza College",
+    "the base's courses carry 2 subjects: ICS, POL"
    ],
    "report_lump": [
     "the base holds more than one course: 3 of two or more local courses each, grassroots democracy leadership and power (3); grassroots democracy race politics and the american promise (2); grassroots democracy social movements since the 1960s (2)"
    ],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "SOCS M1067",
@@ -28371,7 +30258,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Golden West College, Las Positas College, Los Angeles Southwest College"
+    "a college gives the base two course numbers: Golden West College, Las Positas College, Los Angeles Southwest College",
+    "the base's courses carry 14 subjects: ECO, GBS, GEO, GLB"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -28416,7 +30304,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Glendale Community College, Golden West College, Santa Barbara City College"
+    "a college gives the base two course numbers: Glendale Community College, Golden West College, Santa Barbara City College",
+    "the base's courses carry 15 subjects: ANT, ERT, GBS, GEO"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -28461,7 +30350,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Cerritos College, College of Alameda, College of the Desert"
+    "a college gives the base two course numbers: Cerritos College, College of Alameda, College of the Desert",
+    "the base's courses carry 19 subjects: AFR, ASA, CHI, CJ"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -28508,7 +30398,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Cañada College, Cerritos College, City College of San Francisco",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 4 subjects: HSO, NBA, SPA, SPN"
    ],
    "report_lump": [],
    "person_merges_in": [
@@ -28569,7 +30460,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Cañada College, Cerritos College, City College of San Francisco",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 3 subjects: HSO, SPA, SPN"
    ],
    "report_lump": [],
    "person_merges_in": [
@@ -28645,7 +30537,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Cañada College, Cerritos College, City College of San Francisco",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 4 subjects: HSO, NBA, SPA, SPN"
    ],
    "report_lump": [],
    "person_merges_in": [
@@ -28699,11 +30592,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: ENG, SPA): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: ENG, SPA"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "SPAN M10FX",
@@ -29313,11 +31210,15 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [],
+   "no_mint": [
+    "the base is a split candidate (the base's courses carry 2 subjects: TA, THE): the mint waits for the split"
+   ],
    "notes": [],
-   "split_candidate": [],
+   "split_candidate": [
+    "the base's courses carry 2 subjects: TA, THE"
+   ],
    "report_lump": [],
-   "action": "row and mint"
+   "action": "row, mint held"
   },
   {
    "honors_id": "THTR M10RT",
@@ -29360,7 +31261,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Citrus College, College of the Canyons, Fullerton College"
+    "a college gives the base two course numbers: Citrus College, College of the Canyons, Fullerton College",
+    "the base's courses carry 12 subjects: DRA, DRM, PA, TA"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -29455,7 +31357,8 @@
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Citrus College, College of the Canyons, Fullerton College"
+    "a college gives the base two course numbers: Citrus College, College of the Canyons, Fullerton College",
+    "the base's courses carry 12 subjects: DRA, DRM, PA, TA"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -29541,7 +31444,8 @@
    "split_candidate": [
     "the base holds more than one title group",
     "a college gives the base two course numbers: Antelope Valley College, Cypress College, Fullerton College",
-    "the sequence marks differ across the base and the Honors side"
+    "the sequence marks differ across the base and the Honors side",
+    "the base's courses carry 12 subjects: DRA, DRM, ENG, HIS"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -29698,5 +31602,5 @@
  ],
  "rows_md5": "29667c0741e7e7fafb509b4c2937e9db",
  "step2_rows": 380,
- "plan_md5": "be70e28c20be3775d0c564b13b96f8c2"
+ "plan_md5": "8240706b0d789142ba3134c1a216db80"
 }

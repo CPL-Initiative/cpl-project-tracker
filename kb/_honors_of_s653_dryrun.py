@@ -258,7 +258,7 @@ def lump_reasons(w, h, b):
 # Since the anchored rows (`d-honors-anchored-rows-s654`) these hold and release nothing: a base they flag is a
 # split candidate for the re-clustering lane (split_flags). The rows rest on anchors (kb/_honors_anchors.py).
 CCN_CODE = anchors_mod.CCN_CODE
-H_ID_SQL = r"^[A-Z]{1,6} [MZ][0-9][A-Z0-9]{3}H$"   # the mint's marker: a kb_curation row keyed on an H id
+H_ID_SQL = ho.H_ID_SQL   # the mint's marker: a kb_curation row keyed on an H id (one pattern, kb/honors_of.py)
 STRICT_STOP = {"and", "of", "the", "a", "an", "in", "for", "on"}
 PART_WORDS = {"one": "1", "two": "2", "three": "3", "four": "4", "first": "1", "second": "2", "third": "3"}
 
@@ -332,6 +332,8 @@ def sequence_marks(title):
     for word in ("early", "late", "later", "recent"):
         if re.search(r"\b" + word + r"\b", low):
             out.add("period " + word)
+    if out == {"1"} and not any(x in s648.ROMAN or re.fullmatch(r"\d{1,2}", x) for x in ws):
+        out.add("unmarked")      # an explicit I or 1 differs from no mark (#3315's fourth review)
     return frozenset(out)
 
 
@@ -349,7 +351,18 @@ def split_flags(w, h, b):
         out.append("the sequence marks differ across the base and the Honors side")
     if hon and not one_title_group([s648.strip_honors(anchors_mod.clean(m["title"])) for m in hon]):
         out.append("the Honors id holds more than one Honors title group")
+    fam = sorted({subject_family(m["code"]) for m in base} - {""})
+    if len(fam) > 1:
+        out.append(f"the base's courses carry {len(fam)} subjects: {', '.join(fam[:4])}")
     return out
+
+
+def subject_family(code):
+    """A code's subject read loosely: its letters before the number, the first three (ENGL, ENG and ENGLISH are one;
+    MATH, BIOL and LIB are three). A cross-listing (HIST 128 beside BIOL 128) reads as two, which only waits a mint."""
+    lead = re.split(r"\d", (code or "").upper(), maxsplit=1)[0]
+    lead = re.sub(r"\(.*?\)", "", lead)
+    return re.sub(r"[^A-Z]", "", lead)[:3]
 
 
 def plan_pairs(w, rows, out_dir, live_cur, second):
@@ -403,7 +416,8 @@ def plan_pairs(w, rows, out_dir, live_cur, second):
                             "action": f"none: the Honors side is a {hs} record, which stays as its body numbers it",
                             "anchors": [a for a in xa if a["base_id"] == b], "holds": [], "no_mint": [], "notes": []})
             continue
-        dec = anchors_mod.decide(x, xa, w.members, into, named_by.get(x, ()), lambda i: system(i) != "M-ID")
+        dec = anchors_mod.decide(x, xa, w.members, into, named_by.get(x, ()), lambda i: system(i) != "M-ID",
+                                 split_of=lambda bb, _x=x: split_flags(w, _x, bb))
         b = dec.get("base") or (dec["bases"] or [xa[0]["base_id"]])[0]
         bs = system(b)
         hon = sum(1 for m in (w.members.get(x) or []) if anchors_mod.honors_word(m["title"])
@@ -590,6 +604,21 @@ def write_md(doc, path):
         if p["action"] == "held":
             L.append(f"- `{p['honors_id']}` to `{p['base_id']}`: {p['holds'][0]}. "
                      + " | ".join(_anchor_line(a) for a in p["anchors"][:4]))
+    u, mc = s.get("unanchored_honors_courses") or {}, s.get("honors_merge_candidates") or {}
+    if u:
+        L += ["", "## Honors courses with no anchor (counted, out of reach by design)", "",
+              f"{u['total']} Honors-word courses ({u['measure']}): {u['honors_subject']} under an Honors-program subject "
+              "(HONORS, HNRS, HON: colloquia and topic seminars with no subject twin); "
+              f"{u['no_marker_in_the_code']} with no H in the code (a renumbered Honors course, or a title-only pair); "
+              f"{u['marker_but_no_base']} with an H but no base at the college. Each lists in `plan.json`.", ""]
+        for x in [c for c in u["courses"] if not c["honors_subject"]][:40]:
+            L.append(f"- `{x['id']}`: {x['college']} {x['code']} \"{x['title']}\"")
+    if mc:
+        L += ["", "## Honors-side merge candidates", "",
+              f"{mc['bases']} bases take two or more Honors M-IDs ({mc['ids']} ids): the rows stand, the mint waits, and "
+              "the Honors ids look like one Honors course split across ids.", ""]
+        for b, xs in list(mc["by_base"].items())[:60]:
+            L.append(f"- `{b}`: " + ", ".join(f"`{x}`" for x in xs))
     L += ["", "## Before the mints (step 4)", "",
           "- HLTH M10ZH mints HLTH M1134H beside C-ID PHS 102, which holds five courses and one Honors course "
           "(Cypress PHS 281HC). PHS 102 is a plain C-ID, not an Honors record, so counting it would hold a mint on a "
@@ -628,6 +657,41 @@ def step2_rows(doc):
 def rows_md5(rows):
     """The digest the migration computes over what it inserts: md5 of course_id>value joined by | in C order."""
     return hashlib.md5("|".join(f"{h}>{b}" for h, b in sorted(rows)).encode("utf-8")).hexdigest()
+
+
+def q2_lists(w, plan):
+    """COBIx's Q2 on #3315 (03:26Z), counted rather than lost. (1) Honors-word courses in an M-ID with no anchor, split
+    into those under an Honors-program subject (HONORS, HNRS, HON: colloquia and topic seminars with no subject twin)
+    and the rest (a renumbered Honors course, or a title-only pair), each out of the rule's reach by design. (2) Bases
+    with two or more Honors M-IDs anchored into them: the rows stand, the mint waits, and the Honors ids are merge
+    candidates on the Honors side."""
+    anchored = {(a["college"], a["honors_code"]) for p in plan for a in p.get("anchors") or []}
+    loose = []
+    for i, ms in sorted(w.members.items()):
+        if not w.id_system(i).startswith("M-ID"):
+            continue
+        for m in ms:
+            if anchors_mod.honors_word(m["title"]) and (m["college"], m["code"]) not in anchored:
+                hs = bool(re.match(r"^\s*(HONORS|HONR|HNRS|HNR|HON)\b", (m["code"] or "").upper()))
+                loose.append({"id": i, "college": m["college"], "code": m["code"], "title": anchors_mod.clean(m["title"]),
+                              "honors_subject": hs, "marker": bool(s648.honors_code_base(m["code"]))})
+    into = defaultdict(set)
+    for p in plan:
+        if p["honors_system"] == "M-ID":
+            for a in p.get("anchors") or []:
+                if a["kind"] == "anchor" and a["base_id"] != p["honors_id"]:
+                    into[a["base_id"]].add(p["honors_id"])
+    merge = {b: sorted(xs) for b, xs in sorted(into.items()) if len(xs) > 1}
+    return {"unanchored_honors_courses": {
+                "measure": "courses in an M-ID on unified_courses_members.js whose title carries an Honors word and "
+                           "that are the Honors course of no anchor",
+                "total": len(loose), "honors_subject": sum(1 for x in loose if x["honors_subject"]),
+                "no_marker_in_the_code": sum(1 for x in loose if not x["honors_subject"] and not x["marker"]),
+                "marker_but_no_base": sum(1 for x in loose if not x["honors_subject"] and x["marker"]),
+                "courses": loose},
+            "honors_merge_candidates": {
+                "measure": "bases with two or more Honors M-IDs anchored into them (good anchors only)",
+                "bases": len(merge), "ids": sum(len(v) for v in merge.values()), "by_base": merge}}
 
 
 def plan_md5(pairs):
@@ -963,6 +1027,7 @@ def main():
     doc["rows_md5"] = rows_md5(step2_rows(doc))
     doc["step2_rows"] = len(step2_rows(doc))
     doc["plan_md5"] = plan_md5(plan)
+    doc["summary"].update(q2_lists(w, plan))
     od = os.path.join(HERE, "honors_of_s653_out", date)
     os.makedirs(od, exist_ok=True)
     with open(os.path.join(od, "plan.json"), "w", encoding="utf-8") as f:

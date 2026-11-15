@@ -218,10 +218,14 @@ the rewiring (`sam-mids-are-ours-trial-and-error-2026-11-14`, `sam-mid-care-goes
   on the id, a CCN Honors record beside the base, an id mostly not Honors courses.
 - **A mint** (step 4, planned here) needs the row and: every member course anchored; exactly one Honors M-ID anchored
   into B; no CCN-coded course in B, whatever kind of base B is (an official base mints nothing, so there the clause
-  holds the row itself: MATH 210 holds MATH C2210 and C2210H); no second base named by another derivation.
-- **The cluster tests decide nothing.** One title group, two course numbers and the sequence marks stay as report
-  columns; a base they flag is a **split candidate** for the re-clustering lane. A row on an impure base is the base's
-  own impurity, and its anchors say where the row goes when the base is split.
+  holds the row itself: MATH 210 holds MATH C2210 and C2210H); no second base named by another derivation; and the
+  base is no split candidate (COBIx's Q1, `d-honors-no-mint-on-split-candidate-s654`): a mint names the Honors id
+  after a base that may itself be split or re-minted, and that rewiring is the costly part, so the row stands on its
+  anchors and the mint waits for the split.
+- **The cluster tests decide no row.** One title group, two course numbers, the sequence marks (an explicit I or 1
+  differs from no mark), the Honors side's title groups and the base's subjects (MATH, BIOL and LIB are three) flag a
+  base as a **split candidate** for the re-clustering lane, and the flag waits its mint only. A row on an impure base
+  is the base's own impurity, and its anchors say where the row goes when the base is split.
 - **Every row carries its anchors** (college, both codes, both titles) in `plan.json` and `plan.md`, and the class
   digest covers them.
 - **The apply-day re-measure and its receipt.** `--check` reads the newest plan folder (or `--date`), re-measures on
@@ -234,22 +238,28 @@ the rewiring (`sam-mids-are-ours-trial-and-error-2026-11-14`, `sam-mid-care-goes
   the header line never skips the gate.
 
 **The plan today** (committed `unified_courses_members.js`, generated 2026-11-14 20:25; local courses): 590 anchors on
-M-ID Honors courses and 3 doubtful. 519 pair records: 286 row and mint, 22 row with the mint held, 74 row only on an
-official base, 40 held, 97 none. Held by first reason: 27 anchors split, 8 an official base holding a CCN-coded
+M-ID Honors courses and 3 doubtful. 519 pair records: 129 row and mint, 179 row with the mint held (176 on a split
+candidate), 74 row only on an official base, 40 held, 97 none. Waiting the mint on split candidates moved 157 mints;
+the rows and their digest are unchanged. Held by first reason: 27 anchors split, 8 an official base holding a CCN-coded
 course, 3 doubtful anchors only, 1 beside a CCN Honors record, 1 an anchor's base inside the Honors id. 382 rows: step
-1 wrote 2, step 2 writes 380. 167 bases are split candidates.
+1 wrote 2, step 2 writes 380. 234 bases are split candidates. COBIx's Q2, counted: 123 Honors-word courses in an
+M-ID have no anchor (29 under an Honors-program subject, HONORS, HNRS or HON, all colloquia and topic seminars with
+no subject twin; 49 with no H in the code, a renumbered Honors course or a title-only pair; 45 with an H but no base at
+the college), each listed in `plan.json` and out of reach by design; 26 bases take two or more Honors M-IDs (55 ids),
+named in `plan.md` as Honors-side merge candidates, their rows standing and their mints waiting.
 
-**The cases the reviews named**, as the rule decides them: LIBR M10CL row and mint (Fullerton LIB 100HF beside LIB 100
-F); BIOL M1317 row, mint held (Cosumnes BIOL 485 has no H in its number, so it rides unanchored); HIST M1165 row and
-mint (three anchors, all into HIST M1191); HUMA M10LS row and mint (Irvine Valley HUM 1H beside HUM 1); MATH M10NA held
+**The cases the reviews named**, as the rule decides them: LIBR M10CL row, mint held (Fullerton LIB 100HF beside LIB
+100 F; the base carries three subjects); BIOL M1317 row, mint held (Cosumnes BIOL 485 has no H in its number, so it
+rides unanchored); HIST M1165 row, mint held (three anchors into HIST M1191, a split candidate on its sequence marks);
+HUMA M10LS row, mint held (Irvine Valley HUM 1H beside HUM 1, the same); BIOL M1091 row and mint (a clean base); MATH M10NA held
 (San Jose City's 071H meets 71 in MATH 210, which holds MATH C2210 and C2210H); MATH M1333 held on the same clause;
 ETHS M1266 held (anchors split over ETHS M1213 and ETHS M1218); PHYS M1015 held (a doubtful anchor only).
 
-**The self-recall measures** (`kb/_honors_matcher_recall.py`, by hand): 22 anchor labels, among them the ECON 101 H,
+**The self-recall measures** (`kb/_honors_matcher_recall.py`, by hand): 24 anchor labels, among them the ECON 101 H,
 LING 101 HC, MATH 1A H, (BIOL) 020H and F TV 2CWH shapes, an entity inside the Honors word, a part I beside a part II,
-a series letter H, a number pair with different titles and a code-only H as doubtful; 20 cluster labels (10
-self-contained, 10 on the ids the reviews named, each resolved through `kb/alias_chain.py` from a pinned `LABEL_ERA`,
-with one renamed-label case, and failing on an id that is gone). Dropping each of the 16 clauses of rules 1 to 3 in
+a series letter H, a number pair with different titles, a code-only H as doubtful, Victor Valley's CHEMH and an
+Honors-titled ARTH beside ART; 22 cluster labels (11 self-contained, 11 on the ids the reviews named, each resolved through `kb/alias_chain.py` from a pinned `LABEL_ERA`,
+with one renamed-label case, and failing on an id that is gone). Dropping each of the 18 clauses of rules 1 to 3 in
 turn fails a label. `tests/honors_matcher_recall.test.js` scores the cluster labels against the committed
 `plan.json`; the live re-score stays in `--plan`'s abort gate.
 

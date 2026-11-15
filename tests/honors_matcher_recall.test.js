@@ -12,7 +12,7 @@
 //
 // Measured 2026-11-15 on the committed members file (2026-11-14 20:25): matcher right 29, wrong 0, missed 2; second
 // derivation right 31, wrong 1 (MATH 211 with MATH 221, which the matcher holds out); titles right 22, wrong 2; the
-// anchors 22 right of 22; clusters 20 right of 20; 16 clauses, each caught; a renamed label resolves.
+// anchors 24 right of 24; clusters 22 right of 22; 18 clauses, each caught; a renamed label resolves.
 //
 // Run from repo root: `npm test` (or `node tests/honors_matcher_recall.test.js`).
 const fs = require("fs");
@@ -66,19 +66,19 @@ check("(10) the course-title test keeps one-character marks: I and II, A and B, 
 // cannot fail guards nothing).
 const an = res.anchors || {};
 check("(11) the anchor labels (rule 1), every one right: the space-before-H shapes, a part I beside a part II, a "
-  + "series letter H, a number pair with different titles", an.labels >= 22 && an.wrong === 0, JSON.stringify(an.wrong_labels));
+  + "series letter H, a number pair with different titles", an.labels >= 24 && an.wrong === 0, JSON.stringify(an.wrong_labels));
 const anTxt = JSON.stringify(an.pairs || []);
 check("(11b) the anchor labels include ECON 101 H, LING 101 HC and MATH 1A H", /ECON 101 H/.test(anTxt)
   && /LING 101 HC/.test(anTxt) && /MATH 1A H/.test(anTxt));
 const cl = res.clusters || {};
-check("(11c) the cluster labels (rules 2 and 3), every one right", cl.labels >= 20 && cl.wrong === 0,
+check("(11c) the cluster labels (rules 2 and 3), every one right", cl.labels >= 22 && cl.wrong === 0,
   JSON.stringify(cl.wrong_labels));
 const real = ((cl.real || {}).pairs || []).map((x) => x.honors_id);
 check("(11d) the cluster labels say what the rule does with each id four reviews named",
   ["LIBR M10CL", "BIOL M1317", "HIST M1165", "HUMA M10LS", "MATH M10NA", "MATH M1333"].every((i) => real.indexOf(i) >= 0),
   real.join(", "));
 const mut = res.mutation || [];
-check("(11e) each of the 16 clauses of rules 1 to 3, dropped, fails a label", mut.length === 16 && mut.every((m) => m.caught),
+check("(11e) each of the 18 clauses of rules 1 to 3, dropped, fails a label", mut.length === 18 && mut.every((m) => m.caught),
   JSON.stringify(mut.filter((m) => !m.caught).map((m) => m.clause)));
 const lr = res.label_resolution || [];
 check("(11g) a label a later alias map renamed resolves and passes; one renamed to nothing held fails",

@@ -71,13 +71,20 @@ check("(12) a base holding a CCN-coded course mints nothing, whatever its kind",
   pairs.filter((p) => p.no_mint.concat(p.holds).some((x) => /CCN-coded course/.test(x))).every((p) => p.action !== "row and mint"));
 
 // The cases four reviews named, as the anchored rule decides them (kb/_honors_matcher_recall.py CLUSTER_LABELS).
-check("(13) LIBR M10CL mints on its one anchor, Fullerton LIB 100HF beside LIB 100 F", act("LIBR M10CL", "LIBR M1026") === "row and mint"
-  && get("LIBR M10CL", "LIBR M1026").anchors.some((a) => a.honors_code === "LIB 100HF"));
+// COBIx's Q1 (d-honors-no-mint-on-split-candidate-s654): the row stands on its anchors; the mint waits while the base
+// is a split candidate, since a mint names the Honors id after a base the split may re-mint.
+check("(13) LIBR M10CL keeps its row on Fullerton LIB 100HF beside LIB 100 F, and its mint waits on the split candidate",
+  act("LIBR M10CL", "LIBR M1026") === "row, mint held"
+  && get("LIBR M10CL", "LIBR M1026").anchors.some((a) => a.honors_code === "LIB 100HF")
+  && get("LIBR M10CL", "LIBR M1026").no_mint.some((x) => /split candidate/.test(x)));
 check("(14) BIOL M1317's row stands and its mint waits on the unanchored Cosumnes BIOL 485",
   act("BIOL M1317", "BIOL M1318") === "row, mint held"
   && get("BIOL M1317", "BIOL M1318").no_mint.some((x) => /BIOL 485/.test(x)));
-check("(15) HIST M1165 and HUMA M10LS mint on their anchors", act("HIST M1165", "HIST M1191") === "row and mint"
-  && act("HUMA M10LS", "HUMA M1088") === "row and mint");
+check("(15) HIST M1165 and HUMA M10LS keep their rows, and their mints wait on the split candidate",
+  [["HIST M1165", "HIST M1191"], ["HUMA M10LS", "HUMA M1088"]].every(([h, b]) => act(h, b) === "row, mint held"
+    && get(h, b).no_mint.some((x) => /split candidate/.test(x))));
+check("(15b) no mint sits on a split candidate, and a clean one-course base still mints (BIOL M1091 on BIOL M1089)",
+  mints.every((p) => !(p.split_candidate || []).length) && act("BIOL M1091", "BIOL M1089") === "row and mint");
 check("(16) MATH M10NA anchors once the padding zero drops (071H beside 71) and holds on MATH 210's CCN course",
   act("MATH M10NA", "MATH 210") === "held" && get("MATH M10NA", "MATH 210").anchors.some((a) => /071H/.test(a.honors_code))
   && get("MATH M10NA", "MATH 210").holds.some((x) => /CCN-coded course/.test(x)));
@@ -127,14 +134,21 @@ check("(29) the step-2 rollback keys on cohort and field, keeps a validated row,
   /k\.reviewer_email = 'honors-rows-s653@bot' and k\.field = 'honors_of'/.test(rb) && !/course_id in/.test(rb)
   && /'kept_for_a_person'/.test(rb) && /\(select n from minted\) = 0 as ok/.test(rb) && /::int::text::jsonb/.test(rb));
 const rb1 = code(read("kb/migrations/2026-11-14_s653_honors_of_field_rollback.sql"));
+const hid = (read("kb/honors_of.py").match(/^H_ID_SQL = r"([^"]+)"/m) || [])[1];
+check("(29b) one H-id pattern: kb/honors_of.py's H_ID_SQL sits verbatim in the rows SQL, its rollback and the step-1 rollback",
+  !!hid && [fwdAll, read("kb/migrations/2026-11-14_s653_honors_of_rows_rollback.sql"),
+    read("kb/migrations/2026-11-14_s653_honors_of_field_rollback.sql")].every((t) => t.indexOf("'" + hid + "'") >= 0), hid);
+check("(29c) COBIx's Q2 is counted in the plan: Honors courses with no anchor, and Honors-side merge candidates",
+  (plan.summary.unanchored_honors_courses || {}).total > 0 && (plan.summary.honors_merge_candidates || {}).bases > 0
+  && /## Honors courses with no anchor/.test(read(DIR + "plan.md")) && /## Honors-side merge candidates/.test(read(DIR + "plan.md")));
 check("(30) the step-1 rollback counts only removable step-2 rows and reads the mint's marker",
   /\(select n from step2\) = 0/.test(rb1) && /\(select n from minted\) = 0/.test(rb1));
 
 // The self-recall measures, recorded in the plan.
 const rc = plan.recall || {};
-check("(31) anchor and cluster labels: every one right", rc.anchors && rc.anchors.wrong === 0 && rc.anchors.labels >= 22
-  && rc.clusters && rc.clusters.wrong === 0 && rc.clusters.labels >= 20, JSON.stringify({ a: rc.anchors && rc.anchors.wrong, c: rc.clusters && rc.clusters.wrong }));
-check("(32) every clause of rules 1 to 3, dropped, fails a label", (rc.mutation || []).length === 16
+check("(31) anchor and cluster labels: every one right", rc.anchors && rc.anchors.wrong === 0 && rc.anchors.labels >= 24
+  && rc.clusters && rc.clusters.wrong === 0 && rc.clusters.labels >= 22, JSON.stringify({ a: rc.anchors && rc.anchors.wrong, c: rc.clusters && rc.clusters.wrong }));
+check("(32) every clause of rules 1 to 3, dropped, fails a label", (rc.mutation || []).length === 18
   && rc.mutation.every((m) => m.caught), JSON.stringify((rc.mutation || []).filter((m) => !m.caught)));
 check("(33) the plan names its measures", /unified_courses_members\.js/.test(read(DIR + "plan.md"))
   && /unified_courses_members\.js/.test((plan.summary.anchors || {}).measure || "") && /kb\/coci_curation\.json/.test(pm.measure || ""));

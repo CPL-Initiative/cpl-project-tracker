@@ -131,6 +131,12 @@ ANCHOR_LABELS = [
      None),
     (("Foothill College", "LINC 073H", "ADOBE ILLUSTRATOR OVERVIEW"),
      ("Foothill College", "LINC 73", "ADOBE PHOTOSHOP OVERVIEW"), (), None),
+    # An H ending the subject is a marker only for Victor Valley's CHEMH; ARTH beside ART stays two subjects even
+    # under an Honors word (COBIx on #3315, 03:26Z).
+    (("Victor Valley College", "CHEMH 206", "HONORS INTRODUCTION TO CHEMISTRY II: ORGANIC CHEMISTRY"),
+     ("Victor Valley College", "CHEM 206", "Intro Chem I I: Organic Chem"), (), "anchor"),
+    (("Glendale Community College", "ARTH 119", "Honors Contemporary Art"),
+     ("Glendale Community College", "ART 119", "Contemporary Art"), (), None),
     # False: an H ending the subject with no Honors word is one course under two subjects (Glendale ART and ARTH).
     (("Glendale Community College", "ARTH 119", "Contemporary Art"),
      ("Glendale Community College", "ART 119", "CONTEMPORARY ART"), (), None),
@@ -157,7 +163,8 @@ CLUSTER_FIXTURES = [
         "ENGL Z9012": [_r("A", "ENGL 1A", "Composition"), _r("B", "ENGL 5", "Creative Writing Workshop")]},
      "ENGL Z9011", (), False, False),
     ("an unanchored member rides along: a row, no mint", {
-        "HIST Z9021": [_r("A", "HIST 1H", "Honors United States History"), _r("C", "HIST 99", "Honors Seminar in History")],
+        "HIST Z9021": [_r("A", "HIST 1H", "Honors United States History"),
+                       _r("C", "HIST 99", "Honors United States History")],
         "HIST Z9022": [_r("A", "HIST 1", "United States History")]},
      "HIST Z9021", (), True, False),
     ("two Honors ids anchored into one base: a row, no mint", {
@@ -186,6 +193,10 @@ CLUSTER_FIXTURES = [
                        _r("C", "IDST 41", "Applied Research Experience"), _r("D", "IDST 42", "Research Seminar")],
         "IDST Z9092": [_r("A", "IDST 2", "Research Methods")]},
      "IDST Z9091", (), False, False),
+    ("a split-candidate base: a row, no mint", {
+        "ARTS Z9101": [_r("A", "ART 3H", "Honors Art History")],
+        "ARTS Z9102": [_r("A", "ART 3", "Art History"), _r("B", "ART 50", "Studio Painting")]},
+     "ARTS Z9101", (), True, False),
     ("a clean pair: a row and a mint", {
         "ARTS Z9071": [_r("A", "ART 2H", "Honors Modern Art")], "ARTS Z9072": [_r("A", "ART 2", "Modern Art")]},
      "ARTS Z9071", (), True, True),
@@ -196,14 +207,23 @@ CLUSTER_FIXTURES = [
 CLUSTER_LABELS = [
     # Fullerton LIB 100HF anchors to LIB 100 F; the base's other "Introduction to Research" courses (Cuesta MATH 290,
     # San Diego City BIOL 161) are the base's own impurity, and the anchor says where the row goes at a split.
-    ("LIBR M10CL", "LIBR M1026", "row and mint", ""),
+    # The row stands; the mint waits because LIBR M1026 is a split candidate (three subjects: LIB, MATH, BIOL), and a
+    # mint would name the Honors id after a base the split may re-mint (COBIx's Q1, d-honors-no-mint-on-split-candidate).
+    ("LIBR M10CL", "LIBR M1026", "row, mint held", "split candidate"),
     # Mission BIO 017H anchors to BIO 17; Cosumnes BIOL 485 "Honors Seminar in Genetics" has no H in its number, so it
     # rides along unanchored and the mint waits.
     ("BIOL M1317", "BIOL M1318", "row, mint held", "not the Honors course of an anchor"),
     # Citrus HIST 160H, Fullerton HIST 270HF and Mt. San Jacinto HIST 115H all anchor into HIST M1191.
-    ("HIST M1165", "HIST M1191", "row and mint", ""),
+    # HIST M1191 holds "Women in United States History I" beside one-term surveys (II sits in HIST M1170): a split
+    # candidate on the sequence marks, so the row stands and the mint waits.
+    ("HIST M1165", "HIST M1191", "row, mint held", "split candidate"),
     # Irvine Valley HUM 1H anchors to HUM 1.
-    ("HUMA M10LS", "HUMA M1088", "row and mint", ""),
+    # HUMA M1088 holds "Introduction to Humanities I" beside one-term courses (II sits in HUMA M1087): row, mint waits.
+    ("HUMA M10LS", "HUMA M1088", "row, mint held", "split candidate"),
+    # A clean one-course base still mints: "Fundamentals of Biology" at eight colleges, one title and one number per
+    # college, and its four Honors twins (Compton 100H, El Camino 10H, Santa Ana 109H, Santiago Canyon 109H), read by
+    # hand. (ANTH M1006 waits: Oxnard files its course as SPAN R236, a second subject, so the base is a candidate.)
+    ("BIOL M1091", "BIOL M1089", "row and mint", ""),
     # San Jose City "Mathematics (MATH) 071H" anchors to "Mathematics (MATH) 71" once the padding zero drops (the
     # anchors review); MATH 210 holds MATH C2210 and C2210H, so the row holds on the CCN clause.
     ("MATH M10NA", "MATH 210", "held", "CCN-coded course"),
@@ -356,8 +376,11 @@ def cluster_fixtures_score(drop=()):
         for a in an:
             if a["kind"] == "anchor" and a["base_id"] != a["honors_id"]:
                 into.setdefault(a["base_id"], set()).add(a["honors_id"])
+        import types
+        import _honors_of_s653_dryrun as dr
+        w = types.SimpleNamespace(members=members)
         dec = A.decide(x, [a for a in an if a["honors_id"] == x], members, into, other,
-                       lambda i: not ho.is_m_id(i), drop)
+                       lambda i: not ho.is_m_id(i), drop, split_of=lambda b, _x=x: dr.split_flags(w, _x, b))
         ok = (dec["row"], dec["mint"]) == (want_row, want_mint)
         out.append({"name": name, "expected": [want_row, want_mint], "got": [dec["row"], dec["mint"]], "pass": ok})
     return {"labels": len(out), "right": sum(x["pass"] for x in out), "wrong": sum(not x["pass"] for x in out),

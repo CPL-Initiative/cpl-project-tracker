@@ -10987,7 +10987,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 367
+     "line": 390
     },
     {
      "id": "script:kb/alias_chain.py",
@@ -11995,7 +11995,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 442
+     "line": 465
     },
     {
      "id": "script:kb/_honors_of_s653_dryrun.py",
@@ -12747,7 +12747,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 103
+     "line": 106
     }
    ],
    "producers": [
@@ -13618,7 +13618,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 103
+     "line": 106
     }
    ],
    "producers": [
@@ -17802,7 +17802,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 364
+     "line": 377
     },
     {
      "id": "script:kb/_reclustering_s648_dryrun.py",
@@ -27708,7 +27708,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 658
+     "line": 722
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27792,7 +27792,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 658
+     "line": 722
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27963,7 +27963,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 658
+     "line": 722
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",

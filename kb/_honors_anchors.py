@@ -35,10 +35,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import _reclustering_s648_dryrun as s648  # noqa: E402
 
-CLAUSES_1 = ("same_college", "exact_number", "honors_marker", "second_signal", "doubtful", "series_letter",
+CLAUSES_1 = ("subject_marker", "same_college", "exact_number", "honors_marker", "second_signal", "doubtful", "series_letter",
              "base_not_honors", "unescape")
 CLAUSES_2 = ("split", "doubtful_holds", "base_outside", "mostly_honors")
-CLAUSES_3 = ("all_members_anchored", "one_honors_per_base", "ccn", "multi_base")
+CLAUSES_3 = ("all_members_anchored", "one_honors_per_base", "ccn", "multi_base", "split_candidate")
 CCN_CODE = re.compile(r"^[A-Z]+\s*C\d{4}[A-Z]*$")
 
 
@@ -83,8 +83,22 @@ def series_letter(code, college_keys):
 
 def subject_untouched(code, base_code):
     """The marker sat in the number, not the subject: the two codes' letters before the first digit agree."""
-    lead = lambda c: re.sub(r"\s+", "", re.split(r"\d", (c or "").upper(), maxsplit=1)[0])  # noqa: E731
+    # The subject is what comes before the number, an H joined to the number counting as the number's (CHEM H206).
+    lead = lambda c: re.sub(r"\s+", "", re.split(r"H?\d", (c or "").upper(), maxsplit=1)[0])  # noqa: E731
     return lead(code) == lead(base_code)
+
+
+def honors_subject(code):
+    """The subject carries the H as an Honors marker the college uses on other subjects too: today only Victor Valley's
+    form (CHEMH 206). An H-ending subject that names a discipline of its own (ARTH, PSYCH, MATH, ENGLISH, HEALTH) is
+    not one."""
+    subj = re.split(r"\s+", (code or "").upper().strip(), maxsplit=1)[0]
+    return subj in HONORS_SUBJECTS
+
+
+# Subjects whose trailing H is the Honors marker, read by hand from unified_courses_members.js (2026-11-15): Victor
+# Valley's CHEMH, BIOLH and their kin. Every other H-ending subject names a discipline.
+HONORS_SUBJECTS = frozenset({"CHEMH"})
 
 
 def anchor_kind(hrow, brow, college_keys=frozenset(), drop=()):
@@ -97,6 +111,11 @@ def anchor_kind(hrow, brow, college_keys=frozenset(), drop=()):
     if "honors_marker" in drop:
         hb = hb or hrow["code"]
     if not hb or number_key(hb, drop) != number_key(brow["code"], drop):
+        return None
+    if "subject_marker" not in drop and not subject_untouched(hrow["code"], hb) and not honors_subject(hrow["code"]):
+        # An H that ends the subject is a marker only where the subject is the base's plus H (Victor Valley's CHEMH
+        # 206 beside CHEM 206); ARTH beside ART, PSYCH beside PSYC, MATH beside MAT are two subjects, Honors word or
+        # not (COBIx on #3315, 03:26Z).
         return None
     if "base_not_honors" not in drop and honors_word(brow["title"], drop):
         return None
@@ -151,9 +170,11 @@ def anchors(members, drop=()):
     return out
 
 
-def decide(x, xa, members, anchored_into, other_bases, is_official, drop=()):
+def decide(x, xa, members, anchored_into, other_bases, is_official, drop=(), split_of=None):
     """Rules 2 and 3 for one Honors M-ID x. xa: its anchors (anchor and doubtful). anchored_into: base -> the set of
     Honors M-IDs with an anchor into it. other_bases: bases another derivation names for x. is_official(base).
+    split_of(base): the cluster tests' flags on the base (kb/_honors_of_s653_dryrun.py split_flags); a flagged base
+    is a split candidate, and its mint waits (COBIx's Q1, `d-honors-no-mint-on-split-candidate-s654`).
     Returns {"base": B or None, "row": bool, "mint": bool, "holds": [...], "no_mint": [...]}."""
     good = [a for a in xa if a["kind"] == "anchor"]
     doubt = [a for a in xa if a["kind"] == "doubtful"]
@@ -201,6 +222,12 @@ def decide(x, xa, members, anchored_into, other_bases, is_official, drop=()):
     extra = sorted(set(other_bases) - {b})
     if extra and "multi_base" not in drop:
         res["no_mint"].append("another derivation names a second base: " + ", ".join(extra[:3]))
+    flags = (split_of(b) if split_of else []) if not is_official(b) else []
+    if flags and "split_candidate" not in drop:
+        # The row stands on its anchors. The mint names the Honors id after a base that may itself be split or
+        # re-minted, and that rewiring is the costly part, so the mint waits for the split (COBIx's Q1 on #3315).
+        res["no_mint"].append("the base is a split candidate (" + "; ".join(flags[:2]) + "): the mint waits for the "
+                              "split")
     if is_official(b):
         res["no_mint"].append("an official base: C-ID and CCN number their own records, so no H id is minted")
     res["mint"] = not res["no_mint"]

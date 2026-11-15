@@ -1,6 +1,6 @@
 -- DRAFT, NOT IN kb/migrations/.apply. Step 2 of the Honors build: the honors_of rows for every pair the plan
--- writes (380 rows; kb/honors_of_s653_out/2026-11-15/plan.json, written 2026-11-15T03:59:45Z; rows md5 29667c0741e7e7fafb509b4c2937e9db, class md5
--- be70e28c20be3775d0c564b13b96f8c2).
+-- writes (380 rows; kb/honors_of_s653_out/2026-11-15/plan.json, written 2026-11-15T04:15:33Z; rows md5 29667c0741e7e7fafb509b4c2937e9db, class md5
+-- 8240706b0d789142ba3134c1a216db80).
 -- Design: docs/reference/honors_of_design.md. Ruling: Sam, Sheet 197 card 3 (14:37Z 2026-11-14): "Build the field
 -- first, then the rows"; "Rows for all 508 pairs". ANCHORED ROWS (S654, d-honors-anchored-rows-s654, after
 -- #3315's fourth review): a row rests on same-college course pairs, an Honors course and its base course with
