@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-14T18:50:31Z",
+  "written_at": "2026-11-15T01:50:13Z",
   "session": 653,
   "moniker": "SkyGodwit",
   "run": "Sam's session",
@@ -614,6 +614,12 @@
       "active": 20282,
       "complete": 14597,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-15",
+      "active": 20282,
+      "complete": 14614,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -622,7 +628,7 @@
     "at": "2026-11-15T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-14",
+    "day": "2026-11-15",
     "gaps": 3203,
     "parts": {
       "links": {
