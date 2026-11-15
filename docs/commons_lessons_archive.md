@@ -501,3 +501,145 @@ style (a dashed box, muted centered text) since it shipped; the module now clear
 **RULED (Sam, Open Asks Sheet 108 card 5, 13:24Z 2026-10-20, his own call: keep; `cpl_memory`
 `sam-sheet-108-rulings-2026-10-20`).** The CR Progress view stays as built: complete = a wording a rule places or a
 curator decides, and the tab opens on its worklist.
+
+## Moved from the lessons doc (S654 checkpoint compaction)
+
+Verbatim from `docs/commons_lessons.md`.
+
+### S559 SkyAndromeda, 2026-11-03: the Common Course Reference takes the opened page, the last of them
+
+- **Read the Commons' row, never recount.** The Course page reads `kb/status/commons.json`'s `course` row and its run
+  log, as Exhibits' tiles do, so the S490 to-do (every tab agreeing with the Commons summary) holds by construction
+  here. The three questions needed counts the row lacked, so the builder writes the auditor's six tag counts into
+  `facts.tags` rather than the page fetching the 10 MB `kb/row_audit/latest.json`.
+- **The auditor counts a tag once a card** (checked: the per-card set counter equals `stats.tag_counts`), so *cards free
+  of a tag* = total less the tag's count is a sound row over the one denominator.
+- **commons_page.js's links fall under 24px** in a row (`a` gets no min-height, its buttons do): a host whose rows link out
+  (here SkyView, an external page) adds `a { display:inline-block; min-height:24px }` under its prefix. A host with no
+  h2 above the page skips h1 to h3; COCI Lookup's header is a span, so the view adds its own h2.
+
+### Sheet 160 answered (S563 SkyBode, 2026-11-03)
+
+Sam answered card 1 *keep* at 12:44Z with a note, the whole sheet reviewed: *"We should count a common course reference even
+when a person has not confirmed it. The personal confirmation is an attribute we can give the reference when it occurs and we
+can then count confirmed CCRs, until which time we can use the CCRs to crosswalk local titles as best they can--even knowing
+they may need more work, folding with other courses or CCRs, or reminting. We will use them for what we can, and in the
+process of using them, reveal opportunities and gaps and misalignments to correct and then confirm when confidence is high
+enough. Hopefully, in the process of using imperfect CCRs, we can add lessons, rules, principles that will sharpen and
+strengthen our AI routines designed to create and manage the CCRs and all our common references."* The Course page keeps
+the auditor's *ready* as complete; the lane's NEXT is a confirmed count beside it.
+
+### The confirmed count (S564 SkyHoag, 2026-11-03)
+
+Built Sheet 160's attribute: *Confirmed by a person in SkyView*, 812 of the auditor's 27,581 cards (#2726). Three things
+learned on the way. The auditor's cards are not identities: an M-ID that is also a merge target is scored twice (kinds
+`C` and `X`), so the count is taken in cards to share the page's one denominator (542 identities). SkyView's explicit
+Verify (`validated_at`, Sam's 2026-06-10 *"it shouldn't change to Verified until I verify it"*) has never been pressed,
+so the count reads person-made saves instead (a title, a discipline, a cross-listing, a merge). And
+`kb/coci_curation.json` keeps one reviewer a card, the latest, so a cohort save after a person's hides the person: the
+count is a floor until the overlay keeps a reviewer a field.
+
+**On all five (S565, 2026-11-03).** Sam: *"yes to both, build them for all four"*, answering whether a course placed into
+a card confirms that card too, and whether the other references should count the same attribute. Each row now carries
+`confirmed_pair()` as its second pair, over the first pair's denominator, with the share also complete: Programs 32 checked
+by a person (28 complete); Exhibits 1,173 titles a person stamped (complete is the stamp, so no share); Courses 957 cards
+(a person's save keyed on the card, 812, or placing a course into it, 145 more; 152 ready); CR 97 wordings a curator's
+decision names (all settled); Subjects 122 MQ disciplines a person confirmed (all settled). CPL Pathways' Confirm writes
+only to `program_requirement_records`, so the committed records undercount (20 against 32 live); `kb/_sync_program_checked.py`
+commits the checked list daily, college, number and day, never the address. Each Progress page draws it as one line under
+its bar (`progress.confirmed`), the Commons card as one line under its figure. The lesson: S564 and S565 built the first
+version at the same hour because a scheduled firing is not in `list_sessions`; read `main`'s commits before starting a
+queue item, not only at session start.
+
+### S573 SkyNeedle, 2026-11-04: the path, the order, the queue and the confidence count (Sam's session)
+
+- **The path mock** (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9, v8; source `CPLBrain/04-projects/cpl-initiative/commons-path-mock/`):
+  six steps every reference shares, the CPL Commons view and the Common Subjects view, in Malone's look (Sam: *"Use the
+  new UI format rather than first light on this and all commons views"*, now the CLAUDE.md presentation rule).
+- **Sam's additions, in order** (verbatim in the vault braindump `braindump-2026-11-04-1415-commons-path-one-look.md`):
+  where to start (Subjects then Courses, Exhibits then Credit Recommendations, Programs last); teach the daily check
+  (Teach a rule, try it switched off, turn it on, watch what a person changes); who carries the work (the routines carry
+  the volume, a person is asked only for one of four reasons); the daily check's wish list of data sources, which became
+  the register `docs/reference/data_sources.md` with its four steps and a `CLAUDE.md` line.
+- **Built:** the one queue (#2766) and the confidence count (#2767) on the CPL Commons tab; the daily dashboard was
+  dispatched at 16:57Z so the status file carries both.
+- **The confidence lesson:** a first comparison read 71 of the 94 person-touched exhibit titles as changed; every one was
+  a family a person renamed or merged. The count now separates kept, renamed with its family, and moved; the KB note
+  `methodology-a-renamed-family-is-not-a-correction` holds the rule.
+- **`kb_curation` forgets:** its primary key is (course_id, field), so a person's save replaces a procedure's row. The
+  receipts are the only record of what a procedure wrote; a confidence measure for another reference needs receipts in
+  the same row shape (only the CER saves and the Subjects confirm have them today).
+
+### S604 SkySculptor (2026-11-08): the first view opens on one batch
+
+- **Reuse the queue a mock redraws.** COBIx's mock drew Keep, Change and Park cards inside the Commons; Another look in
+  Exhibits already had the six cards and their saves. *Start* opens a capped batch there (`#exhibits/another-look/batch`)
+  instead of a second card screen.
+- **A capped headline must open a capped batch.** The first version capped the count at six and opened the whole queue;
+  COBIx caught it. The batch is fixed for the visit, has no bulk acceptance, and ends on a stop screen.
+- **A nightly file is stale after the first save.** Exhibits now reconciles the sweep with `kb_curation` saves written
+  since its `generated_at`; a fold onto another title does not count as a decision.
+- **Keep the house rules over a mock's look.** Underlined-word controls, no arrows, and figures from files: the mock's
+  filled buttons, arrows and example times were illustration (COBIx agreed on #2921).
+- **A palette lives in two places.** `commons_look.js` mirrors `commons.js`'s tokens and `commons_look.test.js` pins them;
+  a new token goes in both.
+
+### 2026-11-08 — S611 SkyTadpole: the Exhibits Queue and the panel trail
+
+- **A lens is a set of entry points, counted from the set it opens.** The Queue (#2933) holds no list of its own. Each
+  entry reads the count from the same eligibility set its word opens: Review's `stepCount`, the List engine's own
+  `filterCounts` (exposed for this, so the Queue never restates a filter), and the capped batch counted without fixing
+  it. A headline that counts a different set than the one it opens is the failure COBIx named on #2921.
+- **An unread count shows no number.** The List's `uncounted` filters (the outcomes match, CPL-AI, titles that have left
+  MAP) have no count until their file loads; the Queue says so in words rather than print a 0.
+- **Lane prose cannot say the lens's name.** The open-asks builder reads `NEEDS SAM` case-insensitively in every lane
+  file, so a lane line naming the lens *Needs Sam* broke `check_generated.sh` as an uncovered ask. The lane says *the
+  calls for Sam*; the rendered UI keeps the ruled word.
+- **`all:unset` wins a tie.** A width rule for the lens words lost to the later `button.exh-w { all:unset }` at equal
+  specificity, so the a11y run still measured "All" at 17.8px; `button.exh-w.exh-qw` fixed it. Same in the panel trail:
+  an inline link is 16px tall until it is `inline-block` with a 24px minimum.
+- **One shared change, every List.** The trail (#2934) is a spec field on the shared engine, so the four Commons Lists
+  with a panel got it from one renderer and one test.
+
+### S612 SkySunflower (2026-11-08): the anchor re-key applied; the CCR's seed disciplines get two second signals
+
+**The anchor re-key (Sheet 171 card 4, #2938).** `kb/_anchor_rekey_apply.py` moved 20 curated anchor keys in
+`kb/common_courses.json` and 21 crosswalk pointers. 15 kept their number, 5 took the lowest never-used number on DIES or
+PARA, and the three HOSP keys stay with the curator. Two lessons:
+
+- **A pending map that names an anchor key may have moved another record.** The S611 dry run read AUTD M10FX and FY as
+  re-keys the 2026-11-05 recode had decided. The 2026-09-04 prefix fold had put two HVAC singletons on the ids the
+  Z-band retirement gave the diesel anchors the day before; the recode moved the singletons. Following the map would
+  have merged Diesel Engines with an HVAC course. The apply's gate (no new key may be a live record) caught it; the dry
+  run now calls a re-key onto a live id a collision.
+- **An era stamp cannot sit inside a flat id-to-record file.** `excel_to_dashboard.py` walks every entry of the
+  anchor, so `_rekeyed_through` lives in `kb/common_courses_era.json` and the dry run reads it from there.
+
+**The CCR's seed disciplines (Commons ruling 4; Sheets 173 and 174; #2940).** The auditor's largest person item is
+14,523 cards whose discipline is the Phase B seed. Two candidate checks fail as second signals: the subject map (the
+seed was itself a subject-code heuristic) and the CSR's local subject variants (tallied from these same cards). TOP
+corroborates under its standing rule: of 12,504 uncurated cards, it agrees on 4,100. Sam asked, on Sheet 173, for
+course descriptions, SLOs and objectives instead or alongside. Descriptions cover 8,286 cards against TOP's 5,768; SLOs
+reach thirteen colleges. `kb/_ccr_desc_signal.py` (stdlib TF-IDF, trained only on curator and subject-map placements)
+is right 88% of the time held out at a clear margin and confuses a discipline with its parent (Business, Accounting).
+With TOP outvoting a lone differing description: 1,964 confirmed by both, 1,823 for a curator; Kinesiology 627 and 8.
+The curator-ruled seed cards are a poor accuracy test: curators set a discipline mostly to change one, so that sample
+is nearly all changes. Sheet 174 asks whether to confirm Kinesiology's 627.
+
+**CI (COBIx #2927 item 2, #2939).** Loading `cpl_funding.js` costs 13ms; a funding render cost 5.7s, a third of it
+jsdom's `window` getter hit from `base()`. One cached reference halves every funding test. The remaining cost is the
+model recomputing `priorities()` per college.
+
+### S614 SkyMilkomeda (2026-11-09): Discipline in doubt, a ruling that teaches the procedure
+
+- **Read the verdict function before naming a set.** I first listed Kinesiology's eight TOP-disagree cards as the
+  re-check's "8 for a curator". `combine()` sends a card to a curator only when the description differs; the TOP-only
+  cards are `unsettled`. Sam ruled on the wrong list for a minute. Recompute a named count from the code that made it.
+- **A ruling and its reason are two writes, reason first.** The reason row carries the signals the person saw, so a
+  session writing the rule later reads what the ruling answered, not today's file. The discipline goes through the
+  List's one write (`ccSave`), so no second discipline path exists.
+- **A standing ruling shapes the queue even when a person asks to see more.** The job shows the TOP-only cards Sam asked
+  for; the Commons queue counts only the description's, because TOP waits on no one (2026-11-04). The guard
+  `commons_jobs_filtered` (5) caught the first draft.
+- **A loader's own throw must reach its catch.** `.then(ok, fail)` does not catch a throw inside `ok`; the jobs test
+  failed on an unhandled rejection until the doubt read used `.then(ok).catch(fail)`.

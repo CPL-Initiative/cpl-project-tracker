@@ -294,3 +294,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## INDEX update history moved at the S653 checkpoint (2026-11-14)
 
 - 2026-11-13 (S647 SkyPipit, the afternoon, Sam in session): four merges (#3231, #3233, #3232, #3236); the Commons data dashboard complete at `#commons/data` with four views and its first live read; the Exhibits fixes of #3223 and #3228; the `live-counts` environment; Open Asks Sheet 192; handoff 648 refreshed.
+
+## INDEX update history moved at the S654 checkpoint (2026-11-15)
+
+- 2026-11-13 (S648 SkyTanager, conductor, Sam in session; written while the session continued): eight merges (#3227, #3242, #3240, #3243, #3241, #3246, #3244, #3247); College Data Collection on Sam's #3229 words; Cal-GETC 34 by per-college evidence; the issuer tag list; Open Asks Sheet 193; handoff 649.
