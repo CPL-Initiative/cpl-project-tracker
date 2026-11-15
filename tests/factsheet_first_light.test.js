@@ -34,9 +34,11 @@ function block(src, prelude) {
 }
 
 // ── type ──
-check("the four faces are Sierra's self-hosted files, and each exists",
+check("the five faces are Sierra's self-hosted files, and each exists",
   [...code.matchAll(/url\('\.\.\/sierra\/fonts\/([\w.-]+)'\)/g)].map((m) => m[1])
-    .filter((f) => fs.existsSync(path.join(ROOT, "sierra/fonts", f))).length === 4);
+    .filter((f) => fs.existsSync(path.join(ROOT, "sierra/fonts", f))).length === 5);
+check("the italic runs draw a real italic face, not a slanted copy of the upright",
+  /font-style:\s*italic;\s*font-weight:\s*400;[^}]*source-sans-3-latin-400-italic\.woff2/.test(code));
 check("no font is fetched from another host", !/fonts\.googleapis|fonts\.gstatic|https?:\/\//.test(code));
 check("the screen's body face is Source Sans 3", /--font-body:\s*'Source Sans 3'/.test(code));
 check("the display face is Playfair Display", /--font-display:\s*'Playfair Display'/.test(code));
