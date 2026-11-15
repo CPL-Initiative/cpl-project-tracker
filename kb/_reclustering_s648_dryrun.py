@@ -249,8 +249,10 @@ def is_honors(title, code, drop=()):
 def honors_code_base(code):
     """The base course's code: the honors code with its H marker removed, or None when the code carries none.
     'ENGL 1AH' -> 'ENGL 1A'; 'ACCT 102HF' -> 'ACCT 102F'; 'CHEMH 206' -> 'CHEM 206'; 'CHEM H206' -> 'CHEM 206';
-    'HIST 484' -> None."""
+    'HIST 484' -> None. A space before the marker is the same marker (#3315's third review, finding 4): 'ECON 101 H'
+    -> 'ECON 101'; 'LING 101 HC' -> 'LING 101C'; 'PHIL 225 HF' -> 'PHIL 225F'; 'MATH 1A H' -> 'MATH 1A'."""
     c = " ".join((code or "").split()).upper()
+    c = re.sub(r"(?<=\d) (H[A-Z]?)$|(?<=\d[A-Z]) (H)$", lambda m: m.group(1) or m.group(2), c)
     if " " not in c:
         return None
     subj, num = c.rsplit(" ", 1)
@@ -339,7 +341,13 @@ CONTROLS = [
                                                  "pool": [{"college": "D", "code": "ECON 1", "title": "Principles of Macroeconomics"},
                                                           {"college": "D", "code": "ECON C2002", "title": "Principles of Macroeconomics"}]},
      "ECON 1"),
-    ("a title base when the code carries no H", {"row": {"college": "S", "code": "HIST 484", "title": "History of the United States - Honors"},
+    ("a space before the H marker, Cypress LING 101 HC to LING 101 C",
+     {"row": {"college": "C", "code": "LING 101 HC", "title": "Honors Introduction to Language"},
+      "pool": [{"college": "C", "code": "LING 101 C", "title": "Introduction to Language"}]}, "LING 101 C"),
+    ("a space before a lone H, Compton ECON 101 H to ECON 101",
+     {"row": {"college": "K", "code": "ECON 101 H", "title": "Honors Principles of Economics: Macroeconomics"},
+      "pool": [{"college": "K", "code": "ECON 101", "title": "Principles of Economics: Macroeconomics"}]}, "ECON 101"),
+    ("a title base when the code carries no H",{"row": {"college": "S", "code": "HIST 484", "title": "History of the United States - Honors"},
                                                  "pool": [{"college": "S", "code": "HIST 410", "title": "History of the United States"}]},
      "HIST 410"),
 ]

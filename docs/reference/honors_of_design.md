@@ -168,7 +168,9 @@ must do.
     a person's stamp as confirmed, which item 1 now protects). A display of the Honors partner is not built.
 13. **SkyView**, `prototype/ccr_universe.json` and `prototype/ccr_universe_members.json` (a hand-built layout), and its
     builders. An H mint re-keys the Honors id's point by exact token (`rekey_skyview`) and treats SkyView's drawn ids
-    as taken (`skyview_ids`).
+    as taken (`skyview_ids`). **`prototype/ccr_remint_blast.json`** (the re-mint blast-radius view, id-keyed) names 9
+    of the 267 Honors ids the first plan would mint; the mint re-keys its entries in the same land (#3315's third
+    review).
 14. **The row auditor, `kb/_row_audit.py`.** `M_ID_RE` takes the `H`. Done. A rule for an Honors id without
     `honors_of`, or an `honors_of` whose base is gone, is recommended with the mints.
 15. **The claim audit, `kb/_audit_cid_claims.py`.** Skips an all-digit Honors M-ID. Done.
@@ -193,71 +195,86 @@ M-ID pair is held; and the matcher gets a self-recall test before the rows are r
 ## Before the rows apply
 
 The second PR (#3315, `claude/honors-of-rows-s653`) holds the dry run (`kb/_honors_of_s653_dryrun.py`), its plan
-(`kb/honors_of_s653_out/2026-11-14/`), the second derivation (`kb/_honors_pairs_second.py`), the self-recall measures
-(`kb/_honors_matcher_recall.py`) and the step-2 migration and rollback, none in `kb/migrations/.apply`. Step 1 is its
-own PR (`claude/honors-of-step1-s653`). Two reviews read the step-2 plan. The second found the lump and matcher
-classes recurring, so step 2 was redesigned rather than patched (the conductor, S653):
+(`kb/honors_of_s653_out/2026-11-15/`), the second derivation (`kb/_honors_pairs_second.py`), the self-recall measures
+(`kb/_honors_matcher_recall.py`) and the step-2 migration and rollback, none in `kb/migrations/.apply`. Step 1 is
+applied (#3329, 2026-11-14 18:44Z). Three reviews read the step-2 plan. The third (nine agents, 19:20Z) found the lump
+and sequence classes leaking for a third round, so the S654 conductor replaced the design rather than patching it
+(`d-honors-narrow-positive-rule-s654`):
 
-- **Two signals or hold.** A pair gets a row only where two derivations that share no code both find it: the
-  matcher (`kb/_reclustering_s648_dryrun.py` `measure_honors`) and the second derivation, built from course numbers
-  and titles directly (a number match drops every space and one H beside a number; a title match strikes the Honors
-  word and needs the title to be unique at the college). A pair one alone finds is held and says which.
-- **A base or an Honors id that holds more than one course is held, leads included** (`lump_reasons`): its titles fall
-  into two groups of two or more local courses each (complete linkage, so a middle title never chains two courses), or
-  two titles name one subject in different parts or periods (I and II, A and B, to 1820 and since, Prehistory to the
-  Middle Ages and the Middle Ages to the Renaissance), or the Honors id's titles fall into two groups. The H id would
-  claim an equivalence its members do not have, and a later split moves no `honors_of` value. Held until the base is
-  split; `plan.md` lists each with its member titles. An official base (C-ID, CCN) is one record by its body's
-  definition and is not read this way.
-- **The apply-day re-measure.** `--check`, run after the last daily run on a checkout that contains `origin/main`'s
-  head, recomputes the pairs and classes from the checkout's payload and refuses unless the step-2 rows' digest is the
-  reviewed plan's. That is where liveness is checked. The SQL reads only `kb_curation` and cannot see the live id set;
-  its former `stale` guard compared two constants and is gone. CI runs the SQL half (`--check-sql`) and
-  `tests/honors_of_rows_check_test.py` (a dissolved pair, a pre-delete overlay and a checkout without origin refuse).
+- **The narrow rule.** A pair gets a row and a mint only when all four tests pass, and held is the default until the
+  base is split: (a) the second derivation finds the pair by number, and the matcher finds it too; (b) the base holds
+  one title group (every distinct title names one course with every other; `+` and `#` count, so C, C++ and C# are
+  three; `with` counts, so Astronomy Lab and Astronomy with Lab are two); (c) no college gives the base two course
+  numbers (the number without its subject, so a cross-listing such as HIST 128 and BIOL 128 is one); (d) the sequence
+  marks of every raw title on both sides agree, read before `strip_honors`, so De Anza's "(1895-1950)" survives; an end
+  letter C to F, "Part Two", early, late and recent count as marks. An official base is one record by its body's
+  definition, so (b) and (c) read only an M-ID base and (d) reads the base courses the pair names. `lump_reasons`
+  stays in the plan as the `report_lump` column and decides nothing.
+- **Held outright as well.** The 17 bases review three named in findings 1 and 2 (`REVIEW3_BASES`; the four tests
+  hold all 17 on their own); two or more Honors ids on one official base whose Honors titles name different courses,
+  and finding 5's seven ids by name (THTR M11MI is held only by name); a base holding a CCN-coded course, by Sam's
+  gold-standard ruling (finding 6: ASTR M1014 holds Skyline ASTR C1001L).
+- **The apply-day re-measure and its receipt.** `--check`, run after the last daily run on a checkout that contains
+  `origin/main`'s head, reads the newest plan folder (or `--date`), recomputes the pairs and classes from the
+  checkout's payload, and refuses unless both digests are the plan's: the rows md5 and a class md5 over every pair's
+  action, H id and fold. On a pass it writes `check_receipt.json` beside the plan: origin/main's head, both digests,
+  the rows SQL's sha256 and the sha256 of each payload file it read. The rows SQL names the receipt in its header
+  (`-- requires-check-receipt:`), and `scripts/supabase_migrate.py` refuses such a file unless the committed receipt
+  names its sha256 and the checkout's payload as it stands, so a daily run or a merge of `main` after the check
+  refuses the apply. CI runs the SQL half (`--check-sql`), `tests/honors_of_rows_check_test.py` and
+  `tests/supabase_migrate_test.py`.
 
-**The plan today** (identity pairs on the live-equivalent `unified_courses_members.js`, local courses; the union of
-both derivations): 553 pairs. The matcher finds 527, the second derivation 553, both 527; 26 are found by the second
-alone (2 with an M-ID Honors side, both held; 24 with an official Honors side, class none). Classes: 267 row and mint,
-78 row only on an official base, 4 row with a fold after the mint, 88 none, 116 held. Held by first reason: 45 a base
-that holds more than one course, 23 an Honors id that holds two Honors courses, 13 a base that holds two parts or
-periods, 26 multi-base, 7 beside a CCN Honors record, 2 found by the second derivation alone. 349 rows: step 1 writes
-2, step 2 writes 347 (digest `7d733405d750a50bb359e1bea7665ed7`).
+**The plan today** (identity pairs on the committed `unified_courses_members.js`, generated 2026-11-14 20:25, which
+carries #3304's delete and step 1; local courses; the union of both derivations): 553 pairs. Classes: 196 row and
+mint, 50 row only on an official base, 1 row with a fold after the mint (LIBR M10CJ into LIBR M1040H, which LIBR M10CI takes), 88
+none, 218 held. Of the 370 M-ID Honors pairs on an M-ID base that both derivations find, the four tests pass on 217;
+by test (a pair can fail several): (a) 7, (b) 125, (c) 89, (d) 35. Held by first reason: 119 (b), 23 (c), 10 (d),
+9 (a), 23 two Honors ids on one official base, 7 named by the review, 19 multi-base, 4 beside a CCN Honors record,
+2 a base holding a CCN-coded course, 2 found by the second derivation alone. 247 rows: step 1 wrote LIBR M10CJ's,
+step 2 writes 246 (rows md5 `5e438594518f1fe0ac7dd8f559199c2c`, class md5 `d926338769084d779f0426f846868207`). HUMA
+M10ME's step-1 row stands, and the narrow rule now holds that pair (HUMA M1110 carries 13 distinct base titles), so no HUMA
+M1110H mints; the row only holds the two apart.
 
-**The self-recall measures** (hand labels in `kb/_honors_matcher_recall.py`, both directions; right is never a found
-set less a wrong list). On the live-equivalent file: the matcher right 29, wrong 0, missed 2 (COUN M10UB, whose
-"Honors Leadership" reads as an honors-program course, and PHS 103, an untitled base); the second derivation right 31,
-wrong 1 (MATH 211 with MATH 221, by title, which the matcher holds out); the rows' set right 29, wrong 0. The
-course-title test (`one_course`), 24 labeled title pairs: right 22, wrong 2 (English Composition and College
-Composition read as two courses, failing closed; Hist and Histology read as one). The lump test, 18 labeled bases:
-right 18, wrong 0. `tests/honors_matcher_recall.test.js` pins each.
+**The self-recall measures** (hand labels in `kb/_honors_matcher_recall.py`, both directions). The matcher right 29,
+wrong 0, missed 2 (COUN M10UB and PHS 103); the second derivation right 31, wrong 1 (MATH 211 with MATH 221, which the
+matcher holds out); the rows' set right 29, wrong 0. The course-title test, 24 pairs: right 22, wrong 2. The narrow
+rule, scored without the named lists so it can fail: 24 positives that must hold (the 17 named bases, the six
+title-only rows, two read by hand), right 24, wrong 0; 24 plain one-course bases that must pair, right 20, wrong 4,
+each an over-hold that fails closed (ARCH M1059 by (b) and (d), "Early Design" read as a period; ETHA M1002 by (b),
+"Forms of Literature: American Indian Literature"; FREN M1036 and FTVE M1046 by (c), a college's second number for
+one course). `tests/honors_matcher_recall.test.js` pins each.
+
+**The undo, last in, first out.** Step 2's rollback keys on its cohort and the field, keeps a row a person validated
+(`kept_for_a_person`), and refuses while any `kb_curation` row is keyed on an H id: the step-4 mint's marker. The
+step-1 rollback counts only removable step-2 rows, so one Verify on a step-2 row blocks neither it nor the S652
+rollback after it (finding 7), and it reads the same marker. The Postgres proof runs every case with no hand delete.
 
 The first review's findings, as met in the redesign:
 
-1. **The person guard holds only a join.** The insert walks both sides' merge chains and refuses on a join, counting a
-   person's apart, and refuses any id a row names that carries a `merge_into` row. A person's merge of a third course
-   into either side proceeds; the proof seeds the plan's 28 such rows today (45 when the first plan was drawn) and the
-   insert passes.
-2. **Each rollback keys on its cohort and the field.** Step 2 writes under `honors-rows-s653@bot`. The proof inserts
-   both steps, re-keys every minted Honors id, rolls back, and leaves zero rows. **Neither rollback deletes a row a
-   person validated** (the Verify control stamps every row of a course): it stays and the result counts it as
-   `kept_for_a_person`.
-3. **The receipt.** Step 2 returns a count and an md5 checked against the plan. The rollback's count and digest equal
-   the forward ones only before a mint and while no person has re-saved or validated a row.
+1. **The person guard holds only a join.** The insert refuses any id a row names that carries a `merge_into` row,
+   which covers every join of a pair, so the chain walk and its `joined` CTE, which could never fire, are gone. A
+   person's merge of a third course into either side proceeds; the proof seeds the overlay's 10 such rows today.
+2. **Each rollback keys on its cohort and the field.** **Neither rollback deletes a row a person validated.**
+3. **The receipt.** Step 2 returns a count and an md5 checked against the plan.
 4. **The S652 follow-ups rollback refuses a partial restore** (step 1's PR).
 5. **Liveness**: the apply-day re-measure above.
 6. **Fan-in: the mint is one to one.** The lead takes the H id; each follower keeps its own row and merges into the H
    id after the mint, its own change. A follower whose lead is held holds too.
-7. **Classification**: the four multi-base pairs, ASTR M1010 and HIST M10UO hold; HUMA M1084 (Fullerton's PHIL 225HF
-   beside "PHIL 225 F") now holds as multi-base after `code_key` drops every space.
-8. **Recall**: the measures above; `HNRS`, `CHEM H206`, abbreviated base titles and Fullerton's spaced codes are found.
-9. **The field minors and COBIx's two**: #3325 (the R4 fall-through was taken out after review).
-10. **Re-measured** on the day's fold, 2026-11-14.
+7. **Classification**: multi-base pairs hold; HUMA M1084 holds as multi-base. `honors_code_base` now reads a space
+   before the H marker (ECON 101 H, LING 101 HC, PHIL 225 HF, MATH 1A H; finding 4).
+8. **Recall**: the measures above.
+9. **The field minors and COBIx's two**: #3325.
+10. **Re-measured** on the committed payload, 2026-11-15.
 
-**Still open before step 2 applies:** a third reader on this redesign; step 1 applied; the next daily run, which syncs
-#3304's delete into the committed overlay; then merge `origin/main` and run `--check`, which must pass unchanged. The
-mints carry two gates of their own (*Before the mints*): a C-ID record holding Honors twins of a base (PHIL 100 beside
-HUMA M1110, PHS 102 beside HLTH M1134), and a lead on a base the lump test passes but a reader doubts.
+Rule 10 (a): the insert refuses when a pending `unified_title_merge_confirm` names any id a row names. A
+`merge_dismissed` (Keep as-is) naming both ids of a pair agrees with the pair standing apart; the plan notes it and
+holds nothing.
 
+**Still open before step 2 applies:** a review of the replaced design; the conductor's live read of pending
+`unified_title_merge_confirm` rows on the named ids; then, after the last daily run, merge `origin/main`, run `--check`
+and commit its receipt with the `.apply` line. The mints carry two gates of their own (*Before the mints*): a C-ID
+record holding Honors twins of a base (PHIL 100 beside HUMA M1110, PHS 102 beside HLTH M1134), and a lead on a base a
+reader doubts.
 
 ## Before the mints
 
@@ -283,10 +300,13 @@ Each step lands only after the one before it, under its own receipt, and each ha
    and LIBR M10CJ. Its own PR (`claude/honors-of-step1-s653`), judged safe by five readers of #3315.
 2. **The rows**, after every item above.
 3. **HUMA M10OI into HUMA M1110** (`d-huma-m10oi-into-m1110-s652`) and LIBR M10CJ's stale minted entry, each its own
-   small change after step 1, when the pairwise hold already stands.4. **The mints** (a re-mint under `docs/coursecontrolnumber_remint.md`): one alias map from each unheld Honors M-ID to
+   small change after step 1, when the pairwise hold already stands.
+4. **The mints** (a re-mint under `docs/coursecontrolnumber_remint.md`): one alias map from each unheld Honors M-ID to
    its base plus H, dry run first, then one atomic land (minted records, memberships, promotions, identities map, crnc
-   mirrors, SkyView, the overlay, `ALIAS_MAPS`, and the live re-key). Undo: the playbook's rollback, with the fan-in
-   and rollback-keying items above settled first.
+   mirrors, SkyView, `prototype/ccr_remint_blast.json`, the overlay, `ALIAS_MAPS`, and the live re-key). The live
+   re-key moves every field of an Honors id to its H id, `honors_of` included; a `kb_curation` row keyed on an H id is
+   the mint's marker, which the step-1 and step-2 rollbacks read and refuse on. Undo: the playbook's rollback first
+   (it moves the rows back off the H ids), then the step-2 rollback.
 5. **The four follower merges** (ENGL M11FG, ETHS M10IR, LIBR M10CJ, PHSC M10BO, each into its lead's H id), after
    the mint, its own change.
 6. **The held pairs**, one class at a time.

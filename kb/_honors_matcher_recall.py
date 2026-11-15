@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Self-recall for the Honors rows plan (S653): each derivation of the pairs, the course-title test and the lump test,
-measured against hand labels in both directions.
+"""Self-recall for the Honors rows plan (S653, S654): each derivation of the pairs, the course-title test and the narrow
+rule, measured against hand labels in both directions.
 
 WHY. The S652 review rule: a matcher ships only after it runs against records whose answer is already held, and
 reports its right and wrong counts (.claude/skills/conductor-brief/SKILL.md). #3315's second review found the first
@@ -14,8 +14,12 @@ WHAT IS MEASURED, and how each count is defined.
     labeled-real pairs it does not find; held out = labeled-not-real pairs it does not find. Unlabeled pairs are counted
     apart, never as right. The plan writes a row only where both find a pair.
   * The course-title test (kb/_honors_of_s653_dryrun.py one_course), on labeled title pairs: right and wrong.
-  * The lump test (lump_reasons), on labeled bases: right and wrong.
-Every label was read by hand from the course rows on 2026-11-14, most by #3313's and #3315's readers.
+  * The narrow rule (kb/_honors_of_s653_dryrun.py narrow_reasons, without the plan's named lists), on labeled pairs:
+    positives that must hold (every base #3315's third review named in findings 1 and 2, the six one-signal rows, two
+    more read by hand) and negatives that must pair (plain one-course bases). Right and wrong on each side. It
+    replaces the lump test, whose 12 positives were lumps the rule already caught, so it scored 18 of 18 while the
+    review's lumps minted (finding 3).
+Every label was read by hand from the course rows, on 2026-11-14 (most by #3313's and #3315's readers) and 2026-11-15.
 
 Run: python3 kb/_honors_matcher_recall.py [--json]
 """
@@ -84,14 +88,36 @@ TITLE_LABELS = [
     ("History of Art: Prehistory through Middle Ages", "History of Western Art from the Middle Ages to the Renaissance",
      False),
 ]
-# (base, Honors id): True when the base, or the Honors id, holds more than one course.
-LUMP_LABELS = {
-    ("ENGL M1258", "ENGL M11BL"): True, ("MUSI M1002", "MUSI M10BT"): True, ("ECON M1026", "ECON M1029"): True,
-    ("CHEM M1044", "PHYS M10EV"): True, ("ENGL M1298", "ENGL M1282"): True, ("HIST M1096", "HIST M10HN"): True,
-    ("HIST M1107", "HIST M10NY"): True, ("HIST M1196", "HIST M10AV"): True, ("THTR M1269", "ARTS M10PL"): True,
-    ("HIST M1201", "HIST M1200"): True, ("ARTS M1566", "ARTS M10LJ"): True, ("ARTS M1074", "ARTS M10NC"): True,
-    ("HUMA M1110", "HUMA M10ME"): False, ("ENGL M1353", "ENGL M11FE"): False, ("ASTR M1014", "ASTR M10BC"): False,
-    ("LIBR M1040", "LIBR M10CI"): False, ("ANTH M1006", "ANTH M1005"): False, ("ETHA M1002", "ENGL M10DS"): False,
+# The narrow rule (kb/_honors_of_s653_dryrun.py narrow_reasons, S654), scored without the plan's named lists so it can
+# fail. Written by hand on 2026-11-15 from the course rows; never from the rule's output, and no label shares its
+# parser (p-snapshot-test-pins-the-rule-s653). (Honors id, base) -> True when the pair must hold, False when it is a
+# plain one-course base and an Honors twin that must pair.
+NARROW_LABELS = {
+    # Must hold. #3315's third review, finding 1 (a base holding two or more courses): MUSIC 015A and 015B at four
+    # colleges with Ohlone guitar and piano; Mission HUM 16, 18 and 24; De Anza Advanced C, C++ and C#; and the rest.
+    ("MUSI M11AP", "MUSI M1044"): True, ("HUMA M10BZ", "HUMA M1114"): True, ("ITIS M10KP", "ITIS M1068"): True,
+    ("BIOL M10QW", "BIOL M1262"): True, ("HIST M10UM", "HIST M1183"): True, ("BIOL M10IW", "BIOL M1049"): True,
+    ("ENGL M11FD", "ENGL M1348"): True, ("MATH M10PL", "MATH M1123"): True, ("PHIL M10FS", "HUMA M1125"): True,
+    ("ETHS M10EL", "ETHS M1256"): True, ("ASTR M1049", "ASTR M1019"): True,
+    # Finding 2 (a sequence): De Anza's History of Cinema (1895-1950) and (1950-Present); 001A and 001B under one
+    # title; Foothill MUS 002A, 002B, 002C.
+    ("FTVE M1003", "FTVE M1002"): True, ("FREN M10AA", "FREN M1035"): True, ("FREN M10AZ", "FREN M1014"): True,
+    ("JAPN M10AD", "JAPN M1017"): True, ("JAPN M10BG", "JAPN M1032"): True, ("MUSI M1236", "MUSI M1237"): True,
+    # The review's minor finding: rows on one signal, the title route (second_by holds no number).
+    ("ARTH M10DA", "ARTH 150"): True, ("ASTR M10BC", "ASTR M1014"): True, ("BIOL M10ZW", "GEOL M1054"): True,
+    ("GEOL M10HI", "GEOL 100 L"): True, ("NUTR M10BL", "NUTR M1014"): True,
+    # Read by hand on 2026-11-15: Mt. SAC's six Continuing Elementary languages in one id; Taft's Mexican-American
+    # Culture and History beside Black History in the American Context.
+    ("LATN M10AD", "CHIN M1058"): True, ("ETHS M1086", "ETHS M1085"): True,
+    # Must pair: plain one-course bases, read by hand on 2026-11-15 (every member's title and code).
+    ("ANTH M1005", "ANTH M1006"): False, ("ANTH M10IG", "ANTH M10IF"): False, ("ARCH M10JH", "ARCH M1059"): False,
+    ("ARCH M10BL", "ARCH M10BK"): False, ("ARTS M10NI", "ARTS M1078"): False, ("PHSC M10BM", "ASTR M1017"): False,
+    ("ASTR M1039", "ASTR M1044"): False, ("BIOL M10LH", "BIOL M1065"): False, ("BIOL M10NW", "BIOL M1092"): False,
+    ("BIOL M10OB", "BIOL M10OI"): False, ("BIOL M10ZV", "BIOL M11BA"): False, ("BUSI M10TV", "BUSI M10UK"): False,
+    ("COUN M10BM", "COUN M1004"): False, ("DANC M11SK", "DANC M11SN"): False, ("ECON M10AX", "ECON M10AY"): False,
+    ("ENGL M10LQ", "ENGL M10LR"): False, ("ENGL M10UR", "ENGL M1179"): False, ("HUMA M10KI", "ENGL M1239"): False,
+    ("ENGL M10US", "ENGL M1417"): False, ("ENGL M10DS", "ETHA M1002"): False, ("ETHS M1103", "ETHS M1104"): False,
+    ("FREN M10AH", "FREN M1036"): False, ("FTVE M1045", "FTVE M1046"): False, ("FTVE M10LJ", "FTVE M10LK"): False,
 }
 # Self-contained rows for the matcher's find_base, so its answer is pinned whatever the day's file holds.
 FIXTURES = [
@@ -116,6 +142,19 @@ FIXTURES = [
     ("a space inside the subject, Glendale POL S103H beside POLS 103",
      ("Glendale Community College", "POL S103H", "Honors American Political Institutions"),
      [("Glendale Community College", "POLS 103", "American Political Institutions")], "POLS 103"),
+    # A space before the H marker (#3315's third review, finding 4): honors_code_base joins it to the number. The
+    # base titles are abbreviated, so only the code route finds them (the title route needs the exact title).
+    ("a space before a lone H, Compton ECON 101 H",
+     ("Compton College", "ECON 101 H", "Honors Principles of Economics: Macroeconomics"),
+     [("Compton College", "ECON 101", "Prin of Econ: Macroeconomics")], "ECON 101"),
+    ("a space before the H and the college letter, Cypress LING 101 HC",
+     ("Cypress College", "LING 101 HC", "Honors Introduction to Language"),
+     [("Cypress College", "LING 101 C", "Intro to Language")], "LING 101 C"),
+    ("a space before the H and the college letter, Fullerton PHIL 225 HF",
+     ("Fullerton College", "PHIL 225 HF", "Honors American Religious Experience"),
+     [("Fullerton College", "PHIL 225 F", "Amer Religious Experience")], "PHIL 225 F"),
+    ("a space before the H after a letter, MATH 1A H",
+     ("A", "MATH 1A H", "Honors Calculus I"), [("A", "MATH 1A", "Calc I")], "MATH 1A"),
     ("the code base wins over a title twin, Glendale MATH 103H",
      ("Glendale Community College", "MATH 103H", "Honors Calculus and Analytic Geometry"),
      [("Glendale Community College", "MATH 103", "CALC/ANAL GEOM"),
@@ -126,6 +165,10 @@ FIXTURES = [
      ("Mt. San Antonio College", "COUN 7H", "Planning for Transfer Success - Honors"),
      [("Mt. San Antonio College", "COUN 7", "Introduction to the Transfer Process")], None),
 ]
+# honors_code_base, read directly: the Honors code and the base code it names (None: the code carries no marker).
+CODE_BASES = [("ECON 101 H", "ECON 101"), ("LING 101 HC", "LING 101C"), ("PHIL 225 HF", "PHIL 225F"),
+              ("MATH 1A H", "MATH 1A"), ("ENGL 1AH", "ENGL 1A"), ("CHEM H206", "CHEM 206"), ("HIST 484", None),
+              ("ART 10 A", None)]
 SEQUENCE_NEGATIVES = [("Calculus I Honors", "Calculus II"), ("Physics 1", "Physics 2"), ("Chemistry A", "Chemistry B"),
                       ("US History to 1877", "US History since 1877")]
 
@@ -166,6 +209,9 @@ def fixtures():
                               [{"college": c, "code": k, "title": t} for c, k, t in pool])
         got = b["code"] if b else None
         res.append({"name": name, "expected": want, "got": got, "pass": got == want})
+    for code, want in CODE_BASES:
+        got = s648.honors_code_base(code)
+        res.append({"name": f"the base code of {code}", "expected": want, "got": got, "pass": got == want})
     for a, b in SEQUENCE_NEGATIVES:
         v = s648.abbrev_agree(a, b)
         res.append({"name": f"a sequence never abbreviates: {a} / {b}", "expected": 0.0, "got": v, "pass": v == 0.0})
@@ -184,14 +230,31 @@ def titles_score():
     return {"right": sum(x["pass"] for x in out), "wrong": sum(not x["pass"] for x in out), "pairs": out}
 
 
-def lumps_score(members_dir):
+def narrow_score(members_dir):
+    """The narrow rule against NARROW_LABELS: got = narrow_reasons names a test that fails. The plan's named lists
+    (REVIEW3_BASES, REVIEW3_ROW_ONLY) are not read, so a positive the four tests miss counts wrong."""
     import _honors_of_s653_dryrun as dr
+    import _honors_pairs_second as second
+    import _reclustering_s648_dryrun as s648
     w = dr.Shim(members_dir)
+    _, _, rows, _ = s648.measure_honors(w)
+    sec = second.derive(w.members)
     out = []
-    for (b, h), want in sorted(LUMP_LABELS.items()):
-        got = bool(dr.lump_reasons(w, h, b))
-        out.append({"base": b, "honors_id": h, "expected": want, "got": got, "pass": got == want})
-    return {"right": sum(x["pass"] for x in out), "wrong": sum(not x["pass"] for x in out), "bases": out}
+    for (h, b), want in sorted(NARROW_LABELS.items()):
+        bs = "M-ID" if s648.World.id_system(w, b).startswith("M-ID") else "official"
+        want_rows = {(r["college"], r["base_code"]) for r in rows if r.get("identity") == h
+                     and r.get("base_identity") == b}
+        base_rows = [m for m in (w.members.get(b) or []) if (m["college"], m["code"]) in want_rows]
+        why = dr.narrow_reasons(w, h, b, bs, sorted(sec.get((h, b)) or []), base_rows)
+        out.append({"honors_id": h, "base": b, "expected_hold": want, "holds": bool(why),
+                    "why": [x[:3] for x in why], "pass": bool(why) == want})
+    side = {}
+    for name, want in (("positives", True), ("negatives", False)):
+        xs = [x for x in out if x["expected_hold"] is want]
+        side[name] = {"labels": len(xs), "right": sum(x["pass"] for x in xs), "wrong": sum(not x["pass"] for x in xs),
+                      "wrong_pairs": [x["honors_id"] + " / " + x["base"] + " " + "".join(x["why"]) for x in xs
+                                      if not x["pass"]]}
+    return dict(side, pairs=out)
 
 
 def measure(members, members_dir=None):
@@ -210,7 +273,7 @@ def measure(members, members_dir=None):
         "fixtures": fixtures(), "titles": titles_score(),
     }
     if members_dir:
-        res["lumps"] = lumps_score(members_dir)
+        res["narrow"] = narrow_score(members_dir)
     return res
 
 
@@ -226,8 +289,13 @@ def main():
         r = res[k]
         print(f"{k}: {r['pairs']} pairs; right {r['right']}, wrong {r['wrong']}, missed {r['missed']}, held out "
               f"{r['held_out']}, unlabeled {r['unlabeled_found']}")
-    print(f"titles: right {res['titles']['right']}, wrong {res['titles']['wrong']}; lumps: right "
-          f"{res['lumps']['right']}, wrong {res['lumps']['wrong']}")
+    n = res["narrow"]
+    print(f"titles: right {res['titles']['right']}, wrong {res['titles']['wrong']}; narrow rule: must hold "
+          f"{n['positives']['labels']}, right {n['positives']['right']}, wrong {n['positives']['wrong']}; must pair "
+          f"{n['negatives']['labels']}, right {n['negatives']['right']}, wrong {n['negatives']['wrong']}")
+    for side in ("positives", "negatives"):
+        for x in n[side]["wrong_pairs"]:
+            print(f"  wrong ({side}): {x}")
     for f in res["fixtures"]:
         if not f["pass"]:
             print("  FAIL " + f["name"])

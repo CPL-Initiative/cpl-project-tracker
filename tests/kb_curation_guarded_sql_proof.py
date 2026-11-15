@@ -221,8 +221,12 @@ if os.path.exists(os.path.join(ROOT, FIELD["forward"])):
 
 # S653, step 2 (a draft): the honors_of rows for every pair the plan writes, insert-only under its own cohort, on the
 # state step 1 leaves. Redrawn for #3315's review: the person guard holds a pair only where a merge joins it, so the
-# 45 person merges into planned ids today must PASS; the result is a count and a digest; the rollback keys on the
+# overlay's person merges into planned ids today must PASS; the result is a count and a digest; the rollback keys on the
 # cohort and the field.
+_OUT = os.path.join(ROOT, "kb", "honors_of_s653_out")
+_DATED = sorted(n for n in (os.listdir(_OUT) if os.path.isdir(_OUT) else [])
+                if os.path.exists(os.path.join(_OUT, n, "plan.json")))
+PLAN_DIR = os.path.join(_OUT, _DATED[-1]) if _DATED else None   # the newest plan, as --check reads it
 ROWS_FWD = "kb/migrations/2026-11-14_s653_honors_of_rows.sql"
 ROWS_RB = "kb/migrations/2026-11-14_s653_honors_of_rows_rollback.sql"
 STEP1_COHORT, ROWS_COHORT = "honors-s653" + "@bot", "honors-rows-s653" + "@bot"
@@ -269,6 +273,12 @@ if os.path.exists(os.path.join(ROOT, ROWS_FWD)):
                 "insert into kb_curation (course_id, field, value, reviewer_email) values "
                 f"('{_h0}', 'merge_into', 'ZZZZ M1998', 'someone@college.edu'), "
                 f"('ZZZZ M1998', 'merge_into', '{_b0}', 'somebody@bot')",
+            "a curator's pending unified_title_merge_confirm names a planned id (Rule 10 a)":
+                "insert into kb_curation (course_id, field, value, reviewer_email) "
+                f"values ('{_h1}', 'unified_title_merge_confirm', 'ZZZZ M1996', 'someone@college.edu')",
+            "a row is keyed on an H id (the step-4 mint has landed)":
+                "insert into kb_curation (course_id, field, value, reviewer_email) "
+                "values ('ZZZZ M1995H', 'honors_of', 'ZZZZ M1995', 'somebody@bot')",
         },
         # Each must refuse when the file itself is edited: the guard re-reads its own planned rows.
         "sql_refusals": {
@@ -308,7 +318,7 @@ def sequences(db, results):
     sql = {k: open(os.path.join(ROOT, v), encoding="utf-8").read() for k, v in {
         "s652_rb": FOLLOWUPS["rollback"], "step1": FIELD["forward"], "step1_rb": FIELD["rollback"],
         "step2": ROWS_FWD, "step2_rb": ROWS_RB}.items()}
-    plan = json.load(open(os.path.join(ROOT, "kb", "honors_of_s653_out", "2026-11-14", "plan.json"), encoding="utf-8"))
+    plan = json.load(open(os.path.join(PLAN_DIR, "plan.json"), encoding="utf-8"))
     before_file = json.load(open(os.path.join(ROOT, "kb", "honors_of_s653_out", "2026-11-14",
                                               "step1_restamp_before.json"), encoding="utf-8"))["rows"]
     name = "honors sequence: "

@@ -11,29 +11,32 @@ Design and the step order: docs/reference/honors_of_design.md.
 
 WHAT IT DOES.
   1. Reproduces the pair count with the code that found it: `measure_honors` in kb/_reclustering_s648_dryrun.py
-     (imported, never copied), on the committed members file.
-  2. Simulates the generator (export_unified_courses through its UC_KB_DIR / UC_OUT_DIR seam) twice on today's kb:
-     (live) the overlay as it stands live since #3304's delete (the two automerge-v1@bot rows folding HUMA M10ME and
-     LIBR M10CJ removed; the committed overlay was synced at 13:44Z, before the 15:07Z delete), and (field) the
-     committed overlay with the two rows still in it plus an honors_of on each Honors record. The field must hold
-     each pair apart the way the delete did: the two runs' members files must agree, and every other difference is
-     listed.
-  3. Re-measures the pairs on the live-equivalent members file and plans each: the honors_of row, the proposed H id,
-     member counts by named measure, and every collision or hold. A row needs two signals: the matcher and the
-     second derivation (kb/_honors_pairs_second.py) both find the pair. A base or Honors id holding more than one
-     course is held (lump_reasons), leads included.
-  4. --check, on the apply day after the last daily run: re-measures all of it on the checkout's payload and refuses
-     unless the step-2 rows' digest is the plan's, and refuses a checkout without origin/main's head.
+     (imported, never copied), on the committed members file. Since the 2026-11-14 20:27Z daily run the committed
+     payload carries #3304's delete and step 1's two rows, so the plan reads it as it stands (S654); the two
+     simulated exports that stood in for the delete before it synced are retired.
+  2. Plans each pair: the honors_of row, the proposed H id, member counts by named measure, and every hold. THE
+     NARROW RULE (S654, `d-honors-narrow-positive-rule-s654`; #3315's third review): a pair gets a row and a mint only
+     when (a) the second derivation (kb/_honors_pairs_second.py) finds it by number, the matcher finding it too; (b)
+     the base holds one title group; (c) no college gives the base two course numbers; (d) the sequence marks of
+     every raw title on both sides agree, read before strip_honors. Held is the default: everything else waits until
+     its base is split. Held outright as well: the bases review three named, two Honors ids with different courses
+     on one official base, a base holding a CCN-coded course. lump_reasons stays as a report column only.
+  3. --check, on the apply day after the last daily run: re-measures all of it on the checkout's payload, refuses
+     unless the step-2 rows' digest and the plan's class digest are the plan's, and refuses a checkout without
+     origin/main's head. On a pass it writes check_receipt.json beside the plan: the head, both digests, the SQL's
+     sha256 and the payload's. scripts/supabase_migrate.py refuses the rows SQL without a matching receipt.
 
 THE MEASURES, NAMED (COBIx's review of #3304, item 3). "local courses" = rows in unified_courses_members.js under the
 id (HUMA M1110 63 to 62 in S652's simulation); "folded identities" = the `members` field of the id's row in
 unified_courses_data.js or unified_courses_standalone.js (HUMA M1110 11 to 10).
 
 Run (from repo root):
-  python3 kb/_honors_of_s653_dryrun.py --tmp <empty scratch dir>   # writes kb/honors_of_s653_out/<date>/
-  python3 kb/_honors_of_s653_dryrun.py --sql-only                   # drafts step 2's SQL from that plan.json
+  python3 kb/_honors_of_s653_dryrun.py --plan        # writes kb/honors_of_s653_out/<today>/ and step 2's SQL
+  python3 kb/_honors_of_s653_dryrun.py --sql-only    # redrafts step 2's SQL from the newest plan.json
+  python3 kb/_honors_of_s653_dryrun.py --check       # the apply-day check on the newest plan (or --date)
 """
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -61,11 +64,6 @@ S652_DELETED = [
 ]
 # Decided and not yet done: its own step, after the field (d-huma-m10oi-into-m1110-s652).
 DECIDED_MERGES = {"HUMA M10OI": "HUMA M1110"}
-FILES = ("unified_courses_index.js", "unified_courses_data.js", "unified_courses_standalone.js",
-         "unified_courses_members.js", "unified_courses_details.js", "unified_courses_member_desc.js",
-         "unified_courses_suggestions.js")
-_EXPORT = ("import sys, os; sys.path.insert(0, {root!r}); os.chdir({root!r}); "
-           "import excel_to_dashboard as e; e.export_unified_courses()")
 
 
 def jload(path):
@@ -81,13 +79,17 @@ def js_payload(path):
     return json.JSONDecoder().raw_decode(s, i)[0]
 
 
-# ── 2. The two simulations ──────────────────────────────────────────────────────────────────────────────────────
+# ── The overlay ─────────────────────────────────────────────────────────────────────────────────────────────────
 
 def overlay_live(doc):
-    """The overlay as kb/_apply_curation.py writes it after #3304's delete: each leaf entry held only the merge."""
+    """The overlay as kb/_apply_curation.py writes it after #3304's delete. Since the 2026-11-14 20:27Z daily run
+    the committed overlay is that already (the two leaf entries hold honors_of, never the merge); a copy that still
+    carries the deleted merges has them taken out, each entry holding only the merge."""
     cur = doc["curations"]
     for r in S652_DELETED:
         e = cur.get(r["course_id"]) or {}
+        if e.get(r["field"]) is None:
+            continue
         if (e.get(r["field"]), e.get("reviewed_by")) != (r["value"], r["reviewer_email"]):
             raise SystemExit(f"ABORT: the overlay's {r['course_id']} entry is not the deleted row: {e}")
         if {k for k in e if k not in (r["field"], "reviewed_by", "reviewed_at")}:
@@ -95,79 +97,6 @@ def overlay_live(doc):
         del cur[r["course_id"]]
     doc["count"] = len(cur)
     return doc
-
-
-def overlay_field(doc):
-    """The committed overlay with the two bot merges still in it, plus honors_of on each Honors record."""
-    cur = doc["curations"]
-    for r in S652_DELETED:
-        cur[r["course_id"]]["honors_of"] = r["value"]
-    return doc
-
-
-def run_exports(tmp):
-    committed = jload(os.path.join(HERE, "coci_curation.json"))
-    runs = {"live": overlay_live(json.loads(json.dumps(committed))),
-            "field": overlay_field(json.loads(json.dumps(committed)))}
-    procs, outs = [], {}
-    for name, doc in runs.items():
-        farm, out = os.path.join(tmp, "kb_" + name), os.path.join(tmp, "out_" + name)
-        for d in (farm, out):
-            if os.path.exists(d):
-                raise SystemExit(f"ABORT: {d} exists; pass an empty --tmp")
-            os.makedirs(d)
-        for n in os.listdir(HERE):
-            if n != "coci_curation.json":
-                os.symlink(os.path.join(HERE, n), os.path.join(farm, n))
-        with open(os.path.join(farm, "coci_curation.json"), "w", encoding="utf-8") as f:
-            json.dump(doc, f, indent=1, ensure_ascii=False)
-        env = dict(os.environ, UC_KB_DIR=farm, UC_OUT_DIR=out)
-        procs.append(subprocess.Popen([sys.executable, "-B", "-c", _EXPORT.format(root=ROOT)], env=env,
-                                      stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, text=True))
-        outs[name] = out
-    for p in procs:
-        _, err = p.communicate()
-        if p.returncode:
-            raise SystemExit("export failed: " + (err or "")[-400:])
-    return outs
-
-
-def keyed(d):
-    if isinstance(d, list):
-        return {r[0]: r for r in d}
-    out = {}
-    for k, v in d.items():
-        if k == "generated_at":
-            continue
-        if isinstance(v, list) and v and isinstance(v[0], dict) and "id" in v[0]:
-            for r in v:
-                out[f"{k}/{r['id']}"] = r
-        elif isinstance(v, dict) and k in ("members", "desc"):
-            for kk, vv in v.items():
-                out[f"{k}/{kk}"] = vv
-        else:
-            out[k] = v
-    return out
-
-
-def compare_runs(outs):
-    res = {"what": "simulated, not applied: export_unified_courses() on kb/ with two overlays, in one session. "
-                   "live = the overlay since #3304's delete; field = the two bot merges kept, honors_of added.",
-           "files": {}}
-    for name in FILES:
-        a = keyed(js_payload(os.path.join(outs["live"], name)))
-        b = keyed(js_payload(os.path.join(outs["field"], name)))
-        changed = sorted(k for k in set(a) | set(b) if a.get(k) != b.get(k))
-        detail = {}
-        for k in changed[:6]:
-            va, vb = a.get(k), b.get(k)
-            if isinstance(va, dict) and isinstance(vb, dict):   # a map or a row: only the keys that differ
-                detail[k] = {kk: {"live": va.get(kk), "field": vb.get(kk)} for kk in sorted(set(va) | set(vb))
-                             if va.get(kk) != vb.get(kk)}
-            else:
-                detail[k] = {"live": va, "field": vb}
-        res["files"][name] = {"keys_live": len(a), "keys_field": len(b), "differ": changed, "detail": detail}
-    return res
 
 
 # ── 3. The plan ─────────────────────────────────────────────────────────────────────────────────────────────────
@@ -326,6 +255,123 @@ def lump_reasons(w, h, b):
     return out
 
 
+# ── The narrow rule (S654) ──────────────────────────────────────────────────────────────────────────────────────
+# #3315's third review: the lump test and the sequence test leaked for a third round, so they no longer decide. A
+# pair gets a row and a mint only when all four tests below pass; held is the default (`d-honors-narrow-positive-
+# rule-s654`). Each test reads the members file (local courses) and fails closed.
+
+# The bases review three named in findings 1 and 2, held outright until each is split (MUSIC 015A and 015B in one id,
+# HUM 16, 18 and 24 in one id, Advanced C, C++ and C# in one id, a dashed period lost, a sequence under one title).
+REVIEW3_BASES = ("ASTR M1019", "BIOL M1049", "BIOL M1262", "ENGL M1348", "ETHS M1256", "FREN M1014", "FREN M1035",
+                 "FTVE M1002", "HIST M1183", "HUMA M1114", "HUMA M1125", "ITIS M1068", "JAPN M1017", "JAPN M1032",
+                 "MATH M1123", "MUSI M1044", "MUSI M1237")
+# Finding 5's Honors ids: two ids with different parts on one official base, or a pair that is not Honors and base.
+REVIEW3_ROW_ONLY = ("BIOL M1103", "BIOL M10OY", "BUSI M10FD", "BUSI M10FE", "MATH M11DN", "MATH M11DO", "THTR M11MI")
+# A CCN-coded local course (Skyline ASTR C1001L): the CCN record is the gold standard (Sam, 2026-11-14).
+CCN_CODE = re.compile(r"^[A-Z]+\s*C\d{4}[A-Z]*$")
+H_ID_SQL = r"^[A-Z]{1,6} [MZ][0-9][A-Z0-9]{3}H$"   # the mint's marker: a kb_curation row keyed on an H id
+STRICT_STOP = {"and", "of", "the", "a", "an", "in", "for", "on"}
+PART_WORDS = {"one": "1", "two": "2", "three": "3", "four": "4", "first": "1", "second": "2", "third": "3"}
+
+
+def strict_words(title):
+    """A title's words for the one-group test: lower case, '&' read as 'and', 'U.S.' as 'united states', '+' and '#'
+    kept (C, C++ and C# are three courses), 'with' kept (Astronomy Lab beside Astronomy with Lab is two), sequence
+    marks dropped (they are compared apart, in sequence_marks), a trailing s dropped from a word of four letters or
+    more."""
+    t = s648.HONORS_WORD.sub(" ", title or "").lower().replace("&", " and ")
+    t = re.sub(r"\bu\.?\s?s\.?(?=\s|$)", " united states ", t)
+    ws = [x for x in re.findall(r"[a-z0-9][a-z0-9+#]*", t)
+          if x not in STRICT_STOP and x not in s648.ROMAN and not re.fullmatch(r"\d{1,2}", x)]
+    if ws and len(ws[-1]) == 1:
+        ws = ws[:-1]
+    return [x.rstrip("s") if len(x) > 3 else x for x in ws]
+
+
+def _strict_names(a, b):
+    if a == b:
+        return True
+    s, l = (a, b) if len(a) <= len(b) else (b, a)
+    return len(s) >= 3 and l.startswith(s) and not re.search(r"[+#]", l)
+
+
+def strict_one(x, y):
+    """Two titles name one course: every word of each, equal or a prefix of three letters or more, in the other."""
+    wx, wy = strict_words(x), strict_words(y)
+    if not wx or not wy:
+        return wx == wy
+    return all(any(_strict_names(a, b) for b in wy) for a in wx) and all(any(_strict_names(b, a) for a in wx) for b in wy)
+
+
+def one_title_group(titles):
+    """(b): every distinct title names one course with every other (complete linkage: no middle title chains two)."""
+    ts = sorted(set(titles))
+    return bool(ts) and all(strict_one(a, b) for i, a in enumerate(ts) for b in ts[i + 1:])
+
+
+def course_number(code):
+    """The number part of a local code, subject and spaces dropped, leading zeros dropped: 'HIST 128' and 'BIOL 128'
+    (one course cross-listed) are one number; 'MUSIC 015A' and 'MUSIC 015B' are two; 'F TV 002A' is '2A'."""
+    c = re.sub(r"\s+", "", (code or "").upper())
+    m = re.search(r"\d[0-9A-Z]*$", c)
+    return re.sub(r"^0+(?=\d)", "", m.group(0) if m else c)
+
+
+def two_numbers(rows):
+    """(c): the colleges that give these rows two course numbers or more."""
+    by = defaultdict(set)
+    for r in rows:
+        by[r["college"]].add(course_number(r["code"]))
+    return sorted(c for c, v in by.items() if len(v) > 1)
+
+
+def sequence_marks(title):
+    """(d): the marks that tell one course of a sequence from the next, read from the raw title before strip_honors
+    (a dashed period, "(1895-1950)", survives): seq_tokens, plus an end letter C to F, "Part One" or "Part 2", and the
+    words early, late, later and recent."""
+    raw = title or ""
+    out = set(s648.seq_tokens(raw))
+    low = s648.HONORS_WORD.sub(" ", raw).lower()
+    ws = re.findall(r"[a-z0-9]+", low)
+    if ws and len(ws[-1]) == 1 and ws[-1] in "cdef":
+        out.discard("1")
+        out.add("letter " + ws[-1])
+    for m in re.finditer(r"\bpart\s+(one|two|three|four|first|second|third|\d|iv|i{1,3})\b", low):
+        out.discard("1")
+        out.add("part " + PART_WORDS.get(m.group(1), str(s648.ROMAN_VALUE.get(m.group(1), m.group(1)))))
+    for word in ("early", "late", "later", "recent"):
+        if re.search(r"\b" + word + r"\b", low):
+            out.add("period " + word)
+    return frozenset(out)
+
+
+def narrow_reasons(w, h, b, base_system, second_by, base_rows=None):
+    """Why the narrow rule holds the pair (empty: a row, and a mint on an M-ID base). base_rows: for an official base,
+    the base courses the pair names (an official record holds many colleges' courses by its body's definition, so
+    (b) and (c) read only an M-ID base). The labels in kb/_honors_matcher_recall.py score this function."""
+    out = []
+    if "number" not in (second_by or ()):
+        out.append("(a) the second derivation does not find the pair by number"
+                   + (" (by title alone)" if second_by else ""))
+    hon = [m for m in (w.members.get(h) or []) if s648.is_honors(m["title"], m["code"])[0] == "honors"]
+    if base_system == "M-ID":
+        base = [m for m in (w.members.get(b) or []) if s648.is_honors(m["title"], m["code"])[0] != "honors"]
+        if not one_title_group([m["title"] for m in base]):
+            ts = sorted({" ".join(m["title"].split()) for m in base})
+            out.append(f"(b) the base holds more than one title group: {'; '.join(ts[:4])}"
+                       + (f" and {len(ts) - 4} more" if len(ts) > 4 else ""))
+        tn = two_numbers(base)
+        if tn:
+            out.append(f"(c) a college gives the base two course numbers: {', '.join(tn[:3])}")
+    else:
+        base = base_rows or []
+    marks = {sequence_marks(m["title"]) for m in base + hon}
+    if len(marks) > 1:
+        out.append("(d) the sequence marks differ across the base and the Honors side: "
+                   + "; ".join(sorted(", ".join(sorted(x)) for x in marks)[:4]))
+    return out
+
+
 def plan_pairs(w, rows, out_dir, live_cur, second):
     """Every pair either derivation finds, planned. second: kb/_honors_pairs_second.derive on the same members. A pair
     gets a row only where both find it (two signals); a pair one alone finds is held and says which."""
@@ -361,6 +407,18 @@ def plan_pairs(w, rows, out_dir, live_cur, second):
 
     def h_order(b):
         return sorted(honors_of_base[b], key=lambda i: (-len(w.members.get(i) or []), i))
+    # Finding 5: an official base that takes two or more M-ID Honors ids holds each unless their Honors titles name
+    # one course (two-way rows would make part I and part II equivalent through one base).
+    official_takers = defaultdict(set)
+    for (h, b) in pairs:
+        if s648.World.id_system(w, h).startswith("M-ID") and not s648.World.id_system(w, b).startswith("M-ID"):
+            official_takers[b].add(h)
+
+    def takers_one_course(b):
+        ts = [honors_titles(w, i) for i in sorted(official_takers[b])]
+        raw = {sequence_marks(m["title"]) for i in official_takers[b] for m in (w.members.get(i) or [])
+               if s648.is_honors(m["title"], m["code"])[0] == "honors"}
+        return len(raw) <= 1 and all(same_course(ts[0], t) for t in ts[1:])
     promotions = jload(os.path.join(HERE, "promotions.json"))["promotions"]
     merge_into = {k: v["merge_into"] for k, v in live_cur.items() if isinstance(v, dict) and v.get("merge_into")}
     pending, _ = alias_chain.pending_maps(None, baseline_through=alias_chain.ALIAS_MAPS[-1])
@@ -419,11 +477,32 @@ def plan_pairs(w, rows, out_dir, live_cur, second):
                                 + "): the matcher holds it out")
         elif (h, b) not in second:
             rec["holds"].append("found by the matcher alone: the second derivation does not find it")
-        # A base, or an Honors id, holding more than one course (#3315's review): the H id would claim an equivalence
-        # its members do not have, and a later split moves no honors_of value. Leads and followers alike, until the
-        # base is split. An official base (C-ID, CCN) is one record by its body's definition and is not read this way.
+        # The narrow rule (S654): a row and a mint only where all four tests pass; held is the default, leads and
+        # followers alike, until the base is split. lump_reasons stays as a report column and decides nothing.
+        base_rows = None
+        if bs != "M-ID":
+            want = {(r["college"], r["base_code"]) for r in honors_rows[(h, b)]}
+            base_rows = [m for m in (w.members.get(b) or []) if (m["college"], m["code"]) in want]
+        rec["narrow"] = narrow_reasons(w, h, b, bs, rec["second_by"], base_rows)
+        rec["holds"].extend(rec["narrow"])
         if bs == "M-ID":
-            rec["holds"].extend(lump_reasons(w, h, b))
+            rec["report_lump"] = lump_reasons(w, h, b)
+        if b in REVIEW3_BASES:
+            rec["holds"].append("named in #3315's third review (findings 1 and 2): held until the base is split")
+        if h in REVIEW3_ROW_ONLY:
+            rec["holds"].append("named in #3315's third review (finding 5): two Honors ids with different parts, or "
+                                "a pair that is not Honors and base, on one official base")
+        if bs != "M-ID" and len(official_takers[b]) > 1 and not takers_one_course(b):
+            rec["holds"].append(f"the official base {b} takes {len(official_takers[b])} Honors ids whose Honors "
+                                f"titles name different courses: {', '.join(sorted(official_takers[b]))}")
+        ccn = sorted({m["code"] for m in (w.members.get(b) or []) if CCN_CODE.match(" ".join(m["code"].split()))})
+        if bs == "M-ID" and ccn:
+            rec["holds"].append(f"the base holds a CCN-coded course ({', '.join(ccn[:3])}): the CCN record is the "
+                                "gold standard, and the course belongs under it before any mint")
+        md = sorted(k for k, v in live_cur.items() if isinstance(v, dict) and v.get("merge_dismissed")
+                    and {h, b} <= set(str(v["merge_dismissed"]).split("|")))
+        if md:
+            rec["notes"].append(f"a Keep as-is ({', '.join(md)}) names both ids: it agrees with the pair standing apart")
         if not pure:
             rec["holds"].append(f"the Honors course shares its M-ID with {hc['local_courses'] - hc['honors_courses'] - hc['program_courses']} "
                                 "non-Honors course(s): a split comes before any row")
@@ -473,8 +552,11 @@ def plan_pairs(w, rows, out_dir, live_cur, second):
                 rec["holds"].append("a person's merge joins the Honors id and its base: Rule 10, the person's row wins")
             else:
                 rec["holds"].append("a bot's merge joins the Honors id and its base")
-        if (live_cur.get(h) or {}).get("honors_of"):
-            rec["holds"].append(f"the Honors id already carries honors_of {live_cur[h]['honors_of']}")
+        have = (live_cur.get(h) or {}).get("honors_of")
+        if have and (h not in STEP1_IDS or have != b):
+            rec["holds"].append(f"the Honors id already carries honors_of {have}")
+        elif have:
+            rec["notes"].append("step 1's row stands (applied 2026-11-14, honors-s653@bot); step 2 writes no row here")
         for i, side in ((h, "Honors id"), (b, "base")):
             p = person(i)
             if p:
@@ -554,24 +636,30 @@ def summarize(plan, live_cur=None):
 
 
 def write_md(doc, path):
-    s, c, rep = doc["summary"], doc["simulation"], doc["reproduction"]
-    L = ["# The Honors pairs: `honors_of` rows and base-plus-H mints, dry run (S653)", "",
+    s, rep = doc["summary"], doc["reproduction"]
+    nr = doc.get("narrow") or {}
+    L = ["# The Honors pairs: `honors_of` rows and base-plus-H mints, dry run (S653, redrawn S654)", "",
          f"Written by `kb/_honors_of_s653_dryrun.py` at {doc['written']}. Nothing was applied. Design: "
          "`docs/reference/honors_of_design.md`. Every pair, with its counts and holds, is in `plan.json` beside this file.", "",
          "## The count, reproduced", "",
          f"`measure_honors` (kb/_reclustering_s648_dryrun.py), on the committed members file (generated "
          f"{rep['committed']['members_generated_at']}): **{rep['committed']['pairs']} pairs** "
-         f"({rep['committed']['course_rows']} Honors courses apart from their base). On the live-equivalent fold "
-         f"(the overlay without the two rows #3304 deleted): **{rep['live']['pairs']} pairs**; the difference is "
-         + (", ".join(f"`{a}` with `{b}`" for a, b in rep["live_only"]) or "none")
-         + (" (gone: " + ", ".join(f"`{a}` with `{b}`" for a, b in rep["committed_only"]) + ")" if rep["committed_only"] else "")
-         + ".", "",
-         "## The field holds the pair apart, simulated", "",
-         "Two exports of today's kb: *live* (the overlay as it stands since #3304's delete) and *field* (the two "
-         "`automerge-v1@bot` merges kept, `honors_of` added on HUMA M10ME and LIBR M10CJ). Differences by file:", ""]
-    for f, v in c["files"].items():
-        L.append(f"- `{f}`: {v['keys_live']:,} keys live, {v['keys_field']:,} with the field; "
-                 f"{len(v['differ'])} differ" + (": " + ", ".join(f"`{k}`" for k in v["differ"][:6]) if v["differ"] else "") + ".")
+         f"({rep['committed']['course_rows']} Honors courses apart from their base). The committed payload carries "
+         "#3304's delete and step 1's two rows since the 2026-11-14 20:27Z daily run, so the plan reads it as it "
+         "stands, the same payload `--check` re-measures.", "",
+         "## The narrow rule", "",
+         "A pair gets a row and a mint only when all four tests pass; held is the default, until the base is split "
+         "(`d-honors-narrow-positive-rule-s654`, after #3315's third review). (a) The second derivation finds the "
+         "pair by number, and the matcher finds it too. (b) The base holds one title group. (c) No college gives the "
+         "base two course numbers. (d) The sequence marks of every raw title on both sides agree, read before "
+         "`strip_honors`. An official base (C-ID, CCN) is one record by its body's definition, so (b) and (c) read "
+         "only an M-ID base, and (d) reads the base courses the pair names. Held outright as well: the 17 bases "
+         "review three named in findings 1 and 2, two Honors ids with different courses on one official base "
+         "(finding 5), and a base holding a CCN-coded course (finding 6).", "",
+         f"- the M-ID Honors pairs on an M-ID base that both derivations find: {nr.get('both_found', '?')}; the four "
+         f"tests pass on {nr.get('pass', '?')}; by test (a pair can fail several): {nr.get('fails', {})}",
+         f"- the review's named bases held: {nr.get('named_held', '?')} of {len(REVIEW3_BASES)}, "
+         f"{nr.get('named_held_by_rule', '?')} by the four tests alone"]
     rc = doc.get("recall") or {}
     if rc:
         lab = rc["labels"]
@@ -590,8 +678,13 @@ def write_md(doc, path):
         L += [f"- the course-title test (`one_course`), {len(rc['titles']['pairs'])} labeled title pairs: right "
               f"{rc['titles']['right']}, wrong {rc['titles']['wrong']} ("
               + "; ".join(f"{x['a']} / {x['b']}" for x in rc["titles"]["pairs"] if not x["pass"]) + ")",
-              f"- the lump test (`lump_reasons`), {len(rc['lumps']['bases'])} labeled bases: right "
-              f"{rc['lumps']['right']}, wrong {rc['lumps']['wrong']}"]
+              "- the narrow rule (`narrow_reasons`, without the named lists), against hand labels from review three's "
+              f"findings 1 and 2 and plain one-course bases: must hold {rc['narrow']['positives']['labels']}, right "
+              f"{rc['narrow']['positives']['right']}, wrong {rc['narrow']['positives']['wrong']}"
+              + (f" ({', '.join(rc['narrow']['positives']['wrong_pairs'])})" if rc['narrow']['positives']['wrong'] else "")
+              + f"; must pair {rc['narrow']['negatives']['labels']}, right {rc['narrow']['negatives']['right']}, wrong "
+              f"{rc['narrow']['negatives']['wrong']}"
+              + (f" ({', '.join(rc['narrow']['negatives']['wrong_pairs'])})" if rc['narrow']['negatives']['wrong'] else "")]
     pm = s.get("person_merges_into_a_planned_id") or {}
     L += ["", "## The plan", "",
           f"- pairs: {s['pairs']}",
@@ -607,7 +700,9 @@ def write_md(doc, path):
           (f"- person merges into a planned id ({pm['measure']}): {pm['rows']}; pairs a person's merge joins: "
            f"{pm['joining_a_planned_pair']}. Only a join holds a pair (Rule 10); the rest proceed." if pm else ""),
           f"- the rows' digest: md5 `{doc.get('rows_md5')}` over the step-2 rows, `course_id>value` joined by `|` in "
-          "C order; the migration refuses unless what it inserts has the same digest", "",
+          "C order; the migration refuses unless what it inserts has the same digest",
+          f"- the plan's class digest: md5 `{doc.get('plan_md5')}` over every pair's `honors_id>base_id>action>proposed "
+          "H id>fold_into`, so a mint or fold class that goes stale refuses `--check` too", "",
           "**The fan-in order.** One H id per base (decision 3). The Honors M-ID with the most local courses takes "
           "it at the mint, by a one-to-one alias map. Each other single-base Honors M-ID on that base keeps its own "
           "`honors_of` row under its own id and merges into the H id after the mint, its own change. The mint never "
@@ -635,9 +730,11 @@ def write_md(doc, path):
                      f"{p['base']['folded_identities']} folded identities); proposed `{p['proposed_h_id']}`; "
                      f"courses {p['courses'][:2]}")
     L += ["", "## What a person does", "",
-          "Nothing here is applied. The conductor runs the live reads in the design (`docs/reference/honors_of_design.md`, "
-          "*Live reads*) before any migration; the migrations under `kb/migrations/2026-11-14_s653_honors_of_*` are "
-          "drafted and not listed in `kb/migrations/.apply`.", ""]
+          "Nothing here is applied. The rows migration (`kb/migrations/2026-11-14_s653_honors_of_rows.sql`) is "
+          "drafted and not listed in `kb/migrations/.apply`. On the apply day, after the last daily run: merge "
+          "`origin/main`, run `python3 kb/_honors_of_s653_dryrun.py --check` (it reads the newest plan folder), and "
+          "commit the `check_receipt.json` it writes with the `.apply` line. The runner refuses the file without a "
+          "receipt whose SQL and payload digests match the checkout.", ""]
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(L))
 
@@ -659,45 +756,86 @@ def step2_rows(doc):
 
 def rows_md5(rows):
     """The digest the migration computes over what it inserts: md5 of course_id>value joined by | in C order."""
-    import hashlib
     return hashlib.md5("|".join(f"{h}>{b}" for h, b in sorted(rows)).encode("utf-8")).hexdigest()
+
+
+def plan_md5(pairs):
+    """The class digest (#3315's third review: the rows digest covers pairs only, so a mint or fold class could go stale
+    unseen): md5 over every pair's honors_id>base_id>action>proposed H id>fold_into, joined by | in C order."""
+    keys = sorted(f"{p['honors_id']}>{p['base_id']}>{p['action']}>{p.get('proposed_h_id') or ''}>"
+                  f"{p.get('fold_into') or ''}" for p in pairs)
+    return hashlib.md5("|".join(keys).encode("utf-8")).hexdigest()
+
+
+def plan_dir(date=None):
+    """The plan folder: --date's, or the newest dated folder holding a plan.json (never today's date: a check run the
+    day after the plan reads the plan it was drawn as; #3315's third review, finding 8)."""
+    base = os.path.join(HERE, "honors_of_s653_out")
+    if date:
+        return os.path.join(base, date)
+    dated = sorted(n for n in os.listdir(base) if re.fullmatch(r"\d{4}-\d{2}-\d{2}", n)
+                   and os.path.exists(os.path.join(base, n, "plan.json")))
+    if not dated:
+        raise SystemExit(f"no plan folder under {os.path.relpath(base, ROOT)}: run --plan")
+    return os.path.join(base, dated[-1])
+
+
+# What the plan reads: the receipt names each file's sha256, and the runner refuses when one has moved since.
+PAYLOAD = ("unified_courses_members.js", "unified_courses_member_desc.js", "unified_courses_index.js",
+           "unified_courses_data.js", "unified_courses_standalone.js", "kb/coci_curation.json",
+           "kb/coci_minted_courses.json", "kb/coci_minted_singletons.json", "kb/promotions.json", "kb/alias_chain.py")
+RECEIPT = "check_receipt.json"
+
+
+def sha256_of(path):
+    with open(path, "rb") as f:
+        return hashlib.sha256(f.read()).hexdigest()
 
 
 def write_rows_sql(doc, write=True):
     """Step 2's migration and rollback, drafted from plan.json: one insert-only statement under one guard."""
     rows = step2_rows(doc)
-    ids = sorted({i for r in rows for i in r})
     digest = rows_md5(rows)
     plan_rel = f"kb/honors_of_s653_out/{doc['date']}/plan.json"
+    receipt_rel = f"kb/honors_of_s653_out/{doc['date']}/{RECEIPT}"
+    pm = (doc.get("summary") or {}).get("person_merges_into_a_planned_id") or {}
     vals = ",\n    ".join(f"({q(h)}, {q(b)})" for h, b in rows)
     s1 = ", ".join(q(i) for i in STEP1_IDS)
     head = [
-        "-- DRAFT, NOT IN kb/migrations/.apply. Step 2 of the Honors build (S653): the honors_of rows for every pair the",
-        f"-- plan writes ({len(rows)} rows; {plan_rel}, written {doc['written']}).",
+        "-- DRAFT, NOT IN kb/migrations/.apply. Step 2 of the Honors build: the honors_of rows for every pair the plan",
+        f"-- writes ({len(rows)} rows; {plan_rel}, written {doc['written']}; rows md5 {digest}, class md5",
+        f"-- {doc.get('plan_md5')}).",
         "-- Design: docs/reference/honors_of_design.md. Ruling: Sam, Sheet 197 card 3 (14:37Z 2026-11-14): \"Build the field",
-        "-- first, then the rows\"; \"Rows for all 508 pairs\". A pair gets a row only where two derivations that share no",
-        "-- code both find it and nothing holds it; held pairs get no row (plan.md lists them by reason).",
-        "-- Written by kb/_honors_of_s653_dryrun.py --sql-only from the committed plan. Lands after step 1",
-        "-- (2026-11-14_s653_honors_of_field.sql). ON THE APPLY DAY, after the last daily run, merge origin/main and run",
-        "-- `python3 kb/_honors_of_s653_dryrun.py --check`: it re-measures the pairs and classes on the day's payload and",
-        "-- refuses unless they give these rows exactly. That is where liveness is checked; this statement reads only",
-        "-- kb_curation and cannot see the live id set.",
+        "-- first, then the rows\"; \"Rows for all 508 pairs\". THE NARROW RULE (S654, d-honors-narrow-positive-rule-s654,",
+        "-- after #3315's third review): a pair gets a row only where the second derivation finds it by number and the",
+        "-- matcher finds it too, the base holds one title group, no college gives the base two course numbers, and the",
+        "-- raw sequence marks agree; held is the default, and held pairs get no row (plan.md lists them by reason).",
+        "-- Written by kb/_honors_of_s653_dryrun.py from the committed plan. Lands after step 1 (applied 2026-11-14).",
+        "-- ON THE APPLY DAY, after the last daily run, merge origin/main and run",
+        "-- `python3 kb/_honors_of_s653_dryrun.py --check` (it reads the newest plan folder): it re-measures the pairs and",
+        "-- classes on the day's payload, refuses unless they give these rows and classes exactly, and writes the receipt",
+        "-- named on the next line. scripts/supabase_migrate.py refuses this file unless that receipt exists and names",
+        "-- this file's sha256 and the checkout's payload digests. That is where liveness is checked; this statement",
+        "-- reads only kb_curation and cannot see the live id set.",
+        f"-- requires-check-receipt: {receipt_rel}",
         f"-- Insert-only under its own cohort, {COHORT_ROWS}, ON CONFLICT DO NOTHING (Rule 10). One plain statement: the",
         "-- insert hangs on one guard CTE, and a failed guard raises, so nothing is written. The guard refuses when:",
         f"--   * step 1's two honors_of rows ({COHORT}) are not both present, or any other honors_of row exists;",
-        "--   * any id a row names carries a merge_into row: it was merged away after the plan;",
-        "--   * a pair's two ids already end under one id through merge_into rows (counted, and by a person apart). A",
-        "--     person's merge of a third course into either side does not refuse: it agrees with the pair standing apart",
-        "--     (#3315's review, item 1; 45 such rows when the plan was drawn);",
+        "--   * any id a row names carries a merge_into row: it was merged away, or merged into its partner, after the",
+        "--     plan (this covers every join of a pair, so no chain walk is needed). A person's merge of a third course",
+        "--     into either side does not refuse: it agrees with the pair standing apart (#3315's first review, item 1;",
+        f"--     {pm.get('rows', '?')} such rows when this plan was drawn, the overlay's count);",
+        "--   * a unified_title_merge_confirm row names any id a row names: a curator's pending merge (Rule 10 a);",
+        "--   * a kb_curation row is keyed on an H id: the step-4 mint has landed;",
         "--   * what it inserts differs from the plan in count or digest.",
         f"-- The result is a count and an md5 ({digest}) over the inserted rows, course_id>value joined by | in C order, so",
         "-- the runner's receipt (scripts/supabase_migrate.py keeps the first 4,000 characters) holds the whole record and",
         "-- checks against plan.json. No row image is returned: the insert-only cohort rolls back by its reviewer_email.",
-        "-- Rollback: 2026-11-14_s653_honors_of_rows_rollback.sql, keyed on the cohort and the field, never on ids, so it",
-        "-- finds every row after a mint re-keys them.",
+        "-- Rollback: 2026-11-14_s653_honors_of_rows_rollback.sql, keyed on the cohort and the field, never on ids; it",
+        "-- refuses after the step-4 mint until the mint's own rollback has run.",
         "",
     ]
-    body = f"""with recursive planned (course_id, value) as (
+    body = f"""with planned (course_id, value) as (
   values
     {vals}
 ),
@@ -715,27 +853,20 @@ other_honors as (
 moved as (
   select count(*) as n from public.kb_curation m where m.field = 'merge_into' and m.course_id in (select id from named)
 ),
-walk (honors_id, side, id, person, depth) as (
-  select p.course_id, 'h', p.course_id, false, 0 from planned p
-  union all
-  select p.course_id, 'b', p.value, false, 0 from planned p
-  union all
-  select w.honors_id, w.side, m.value, w.person or m.reviewer_email not like '%@bot', w.depth + 1
-  from walk w join public.kb_curation m on m.course_id = w.id and m.field = 'merge_into'
-  where w.depth < 40
+confirm as (
+  select count(*) as n from public.kb_curation c
+  where c.field = 'unified_title_merge_confirm'
+    and (c.course_id in (select id from named) or c.value in (select id from named))
 ),
-joined as (
-  select h.honors_id, bool_or(h.person or b.person) as by_person
-  from walk h join walk b on b.honors_id = h.honors_id and b.side = 'b' and b.id = h.id
-  where h.side = 'h'
-  group by h.honors_id
+minted as (
+  select count(*) as n from public.kb_curation h where h.course_id ~ '{H_ID_SQL}'
 ),
 guard as (
-  select (select n from step1) = 2 and (select n from other_honors) = 0
-     and (select n from moved) = 0 and (select count(*) from joined) = 0 as ok,
-     (select n from step1) as step1_rows,
-     (select n from other_honors) as other_honors_rows, (select n from moved) as merged_ids,
-     (select count(*) from joined) as joined_pairs, (select count(*) from joined where by_person) as person_joined
+  select (select n from step1) = 2 and (select n from other_honors) = 0 and (select n from moved) = 0
+     and (select n from confirm) = 0 and (select n from minted) = 0 as ok,
+     (select n from step1) as step1_rows, (select n from other_honors) as other_honors_rows,
+     (select n from moved) as merged_ids, (select n from confirm) as pending_confirms,
+     (select n from minted) as h_id_rows
 ),
 added as (
   insert into public.kb_curation as k (course_id, field, value, reviewer_email)
@@ -753,9 +884,9 @@ digest as (
 select case when g.ok and d.n = {len(rows)} and d.md5 = '{digest}'
             then jsonb_build_object('inserted', d.n, 'md5', d.md5, 'cohort', '{COHORT_ROWS}')
             else ('refused by the guard: step 1 rows ' || g.step1_rows
-                  || ', other honors_of rows ' || g.other_honors_rows || ', named ids merged away ' || g.merged_ids
-                  || ', pairs already joined ' || g.joined_pairs || ' (by a person ' || g.person_joined
-                  || '), inserted ' || d.n || ' of {len(rows)} with digest ' || d.md5)::int::text::jsonb
+                  || ', other honors_of rows ' || g.other_honors_rows || ', named ids merged ' || g.merged_ids
+                  || ', pending merge confirms ' || g.pending_confirms || ', rows keyed on an H id ' || g.h_id_rows
+                  || ', inserted ' || d.n || ' of {len(rows)} with digest ' || d.md5)::int::text::jsonb
        end as changed
 from guard g cross join digest d;
 
@@ -765,31 +896,44 @@ from guard g cross join digest d;
     sql = "\n".join(head) + body
     rb = "\n".join([
         "-- DRAFT. Rollback for 2026-11-14_s653_honors_of_rows.sql: the step-2 cohort's rows go, keyed on the cohort",
-        f"-- ({COHORT_ROWS}) and the field, never on ids, so it finds every row after a mint re-keys them (#3315's",
-        "-- review, item 2). Step 1's rows are another cohort and stay (their own rollback removes them, and refuses while",
-        "-- any row of this cohort stands). A row a person re-saved carries the person's reviewer and is never touched; a",
-        "-- row a person validated (the Verify control stamps every row of a course) stays, counted as kept_for_a_person.",
+        f"-- ({COHORT_ROWS}) and the field, never on ids (#3315's first review, item 2). One plain statement on one",
+        "-- guard, which raises and changes nothing while any kb_curation row is keyed on an H id: the step-4 mint has",
+        "-- landed, and a minted H id would lose its honors_of row while its pair hold stands on the field (COBIx on",
+        "-- #3315, 18:15Z and 18:47Z). Run the mint's own rollback first; then this. Step 1's rows are another cohort and",
+        "-- stay (their own rollback removes them, and refuses while a removable row of this cohort stands). A row a",
+        "-- person re-saved carries the person's reviewer and is never touched; a row a person validated (the Verify",
+        "-- control stamps every row of a course) stays, counted as kept_for_a_person, and blocks no other rollback.",
         "-- The result is the count and an md5 over the deleted rows (course_id>value, | joined, C order). They equal the",
-        f"-- forward result ({len(rows)}, {digest}) only before a mint and while no person has re-saved or validated a",
-        "-- row; a difference names rows a person now owns or a mint moved.",
-        "with kept as (",
+        f"-- forward result ({len(rows)}, {digest}) while no person has re-saved or validated a row; a difference names",
+        "-- rows a person now owns.",
+        "with minted as (",
+        f"  select count(*) as n from public.kb_curation h where h.course_id ~ '{H_ID_SQL}'",
+        "),",
+        "kept as (",
         "  select count(*) as n from public.kb_curation k",
         f"  where k.reviewer_email = '{COHORT_ROWS}' and k.field = 'honors_of'",
         "    and not (k.validated_by is null or k.validated_by like '%@bot')",
         "),",
+        "guard as (",
+        "  select (select n from minted) = 0 as ok, (select n from minted) as h_id_rows",
+        "),",
         "removed as (",
         "  delete from public.kb_curation k",
-        f"  where k.reviewer_email = '{COHORT_ROWS}' and k.field = 'honors_of'",
+        "  using guard g",
+        f"  where g.ok and k.reviewer_email = '{COHORT_ROWS}' and k.field = 'honors_of'",
         "    and (k.validated_by is null or k.validated_by like '%@bot')",
         "  returning k.course_id, k.value",
         ")",
-        "select jsonb_build_object('deleted', count(*), 'kept_for_a_person', (select n from kept), 'md5',",
-        "       md5(coalesce(string_agg(r.course_id || '>' || r.value, '|' order by r.course_id collate \"C\"), ''))) as undone",
-        "from removed r;",
+        "select case when g.ok",
+        "            then (select jsonb_build_object('deleted', count(*), 'kept_for_a_person', (select n from kept), 'md5',",
+        "                    md5(coalesce(string_agg(r.course_id || '>' || r.value, '|' order by r.course_id collate \"C\"),",
+        "                                 ''))) from removed r)",
+        "            else ('refused by the guard: ' || g.h_id_rows || ' kb_curation rows are keyed on an H id, so the step-4'",
+        "                  || ' mint has landed; run its rollback first')::int::text::jsonb",
+        "       end as undone",
+        "from guard g;",
         f"-- Read back: expect 0 rows under {COHORT_ROWS}, apart from any a person validated.",
         ""])
-
-
     if not write:
         return sql, rb
     for path, text in ((ROWS_SQL, sql), (ROWS_RB, rb)):
@@ -798,12 +942,13 @@ from guard g cross join digest d;
     return len(rows)
 
 
-def check_plan(doc, root=ROOT, sql_only=False, fresh=True, overlay=None):
+def check_plan(doc, root=ROOT, sql_only=False, fresh=True, overlay=None, receipt=True):
     """Refuse a stale plan, on the apply day after the last daily run: the checkout must contain origin/main's head;
     the committed SQL must be what the plan writes; no alias map may have landed after the plan; and the pairs and
-    classes, re-measured from the checkout's payload, must give the plan's step-2 rows (the digest). This is where
-    liveness is checked: the SQL cannot see the live id set. CI runs the SQL half alone (--check-sql), since the
-    payload moves daily. root, fresh and overlay are for the tests."""
+    classes, re-measured from the checkout's payload, must give the plan's step-2 rows and classes (both digests).
+    This is where liveness is checked: the SQL cannot see the live id set. On a pass it writes check_receipt.json beside
+    the plan, which scripts/supabase_migrate.py requires (COBIx on #3315, 18:47Z). CI runs the SQL half alone
+    (--check-sql), since the payload moves daily. root, fresh, overlay and receipt are for the tests."""
     problems = []
     sql, rb = write_rows_sql(doc, write=False)
     for path, text in ((ROWS_SQL, sql), (ROWS_RB, rb)):
@@ -811,19 +956,23 @@ def check_plan(doc, root=ROOT, sql_only=False, fresh=True, overlay=None):
             problems.append(f"{os.path.relpath(path, ROOT)} differs from what the plan writes (run --sql-only)")
     if rows_md5(step2_rows(doc)) != doc.get("rows_md5"):
         problems.append("plan.json's rows_md5 is not the digest of its rows")
+    if plan_md5(doc["pairs"]) != doc.get("plan_md5"):
+        problems.append("plan.json's plan_md5 is not the digest of its classes")
     if sql_only:
         if problems:
             raise SystemExit("STALE: " + "; ".join(problems))
-        print(f"SQL current: {doc['step2_rows']} step-2 rows, digest {doc['rows_md5']}")
+        print(f"SQL current: {doc['step2_rows']} step-2 rows, digest {doc['rows_md5']}, classes {doc['plan_md5']}")
         return 0
     if doc.get("alias_era") != alias_chain.ALIAS_MAPS[-1]:
         problems.append(f"an alias map landed after the plan ({doc.get('alias_era')} -> {alias_chain.ALIAS_MAPS[-1]}): "
                         "redraw it")
+    head = None
     if fresh:
-        problems += freshness_problems(root)
+        fp, head = freshness(root)
+        problems += fp
     # The re-measure (#3315's review): the pairs and classes, recomputed from the checkout's payload and overlay,
-    # must give the reviewed plan's step-2 rows exactly. A pair the daily re-cluster dissolved, a base re-minted, an
-    # id merged away or a new hold all change the digest.
+    # must give the reviewed plan's step-2 rows and classes exactly. A pair the daily re-cluster dissolved, a base
+    # re-minted, an id merged away or a new hold all change a digest.
     cur = jload(overlay or os.path.join(HERE, "coci_curation.json"))["curations"]
     stale_overlay = [r["course_id"] for r in S652_DELETED
                      if (cur.get(r["course_id"]) or {}).get(r["field"]) == r["value"]]
@@ -834,100 +983,138 @@ def check_plan(doc, root=ROOT, sql_only=False, fresh=True, overlay=None):
         import _honors_pairs_second as second
         w = Shim(root)
         _, _, rows, _ = s648.measure_honors(w)
-        redrawn = {"pairs": plan_pairs(w, rows, root, cur, second.derive(w.members))}
-        now = step2_rows(redrawn)
+        redrawn = plan_pairs(w, rows, root, cur, second.derive(w.members))
+        now = step2_rows({"pairs": redrawn})
         if rows_md5(now) != doc.get("rows_md5"):
             was = set(step2_rows(doc))
             problems.append(f"the re-measure on the checkout's payload gives {len(now)} step-2 rows, digest "
                             f"{rows_md5(now)}, not the plan's {doc['step2_rows']} ({doc['rows_md5']}): added "
                             f"{sorted(set(now) - was)[:6]}, gone {sorted(was - set(now))[:6]}; redraw the plan")
+        elif plan_md5(redrawn) != doc.get("plan_md5"):
+            was = {(p["honors_id"], p["base_id"]): p["action"] for p in doc["pairs"]}
+            moved = sorted(f"{p['honors_id']} with {p['base_id']}: {was.get((p['honors_id'], p['base_id']))} -> "
+                           f"{p['action']}" for p in redrawn
+                           if was.get((p["honors_id"], p["base_id"])) != p["action"])
+            problems.append(f"the re-measure gives the plan's rows but not its classes (class md5 {plan_md5(redrawn)}, "
+                            f"not {doc['plan_md5']}): {moved[:6]}; redraw the plan")
     if problems:
         raise SystemExit("STALE: " + "; ".join(problems))
+    out = {"what": "kb/_honors_of_s653_dryrun.py --check passed: the plan re-measured on this checkout's payload",
+           "written": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+           "plan": f"kb/honors_of_s653_out/{doc['date']}/plan.json", "rows_md5": doc["rows_md5"],
+           "plan_md5": doc["plan_md5"], "step2_rows": doc["step2_rows"], "origin_main_head": head,
+           "sql": os.path.relpath(ROWS_SQL, ROOT), "sql_sha256": sha256_of(ROWS_SQL),
+           "payload": {p: sha256_of(os.path.join(root, p)) for p in PAYLOAD}}
+    if receipt:
+        path = os.path.join(HERE, "honors_of_s653_out", doc["date"], RECEIPT)
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(out, f, indent=1)
+            f.write("\n")
+        print(f"wrote {os.path.relpath(path, ROOT)}: commit it with the .apply line")
     print(f"plan current: re-measured on the checkout's payload, {doc['step2_rows']} step-2 rows, digest "
-          f"{doc['rows_md5']}, era {doc['alias_era']}")
-    return 0
+          f"{doc['rows_md5']}, classes {doc['plan_md5']}, era {doc['alias_era']}")
+    return out
 
 
-def freshness_problems(root=ROOT):
-    """The checkout must contain origin/main's head (the daily run commits the payload there, never to this branch)."""
+def freshness(root=ROOT):
+    """([problems], origin/main's head): the checkout must contain origin/main's head (the daily run commits the
+    payload there, never to this branch)."""
     try:
         head = subprocess.run(["git", "-C", root, "ls-remote", "origin", "refs/heads/main"], capture_output=True,
                               text=True, timeout=60).stdout.split()
         if not head:
-            return ["could not read origin/main's head (git ls-remote): run --check where origin is reachable"]
+            return ["could not read origin/main's head (git ls-remote): run --check where origin is reachable"], None
         ok = subprocess.run(["git", "-C", root, "merge-base", "--is-ancestor", head[0], "HEAD"],
                             capture_output=True).returncode == 0
     except (OSError, subprocess.SubprocessError) as e:
-        return [f"could not test the checkout's freshness: {e}"]
-    return [] if ok else [f"the checkout does not contain origin/main's head {head[0][:8]}: fetch and merge "
-                          "origin/main, then run --check again"]
+        return [f"could not test the checkout's freshness: {e}"], None
+    return ([] if ok else [f"the checkout does not contain origin/main's head {head[0][:8]}: fetch and merge "
+                           "origin/main, then run --check again"]), head[0]
+
+
+def freshness_problems(root=ROOT):
+    return freshness(root)[0]
+
+
+def narrow_summary(plan):
+    """The narrow rule's own counts, over the M-ID Honors pairs on an M-ID base that both derivations find."""
+    both = [p for p in plan if p["honors_system"] == "M-ID" and p["base_system"] == "M-ID" and len(p["found_by"]) == 2]
+    fails = Counter(x[:3] for p in both for x in p.get("narrow") or [])
+    named = [p for p in plan if p["base_id"] in REVIEW3_BASES]
+    return {"measure": "M-ID Honors pairs on an M-ID base that both derivations find (identity pairs on "
+                       "unified_courses_members.js); a test fails when narrow_reasons names it",
+            "both_found": len(both), "pass": sum(1 for p in both if not p.get("narrow")),
+            "fails": dict(sorted(fails.items())),
+            "named_bases_in_plan": len({p["base_id"] for p in named}),
+            "named_held": len({p["base_id"] for p in named if p["action"] == "held"}),
+            "named_held_by_rule": len({p["base_id"] for p in named if p.get("narrow")})}
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tmp", help="an empty scratch dir for the two simulated exports")
-    ap.add_argument("--date", default=datetime.now(timezone.utc).strftime("%Y-%m-%d"))
+    ap.add_argument("--plan", action="store_true", help="draw the plan on the committed payload, and its SQL")
+    ap.add_argument("--date", help="the plan folder's date (default: the newest; --plan writes today's)")
     ap.add_argument("--sql-only", action="store_true",
-                    help="draft step 2's migration and rollback from the committed plan.json; no export")
+                    help="draft step 2's migration and rollback from the plan.json; no re-measure")
     ap.add_argument("--check", action="store_true",
                     help="the apply-day check, after the last daily run: refuse unless the checkout contains "
-                         "origin/main, the SQL is the plan's, and a re-measure on the day's payload gives its rows")
+                         "origin/main, the SQL is the plan's, and a re-measure on the day's payload gives its rows "
+                         "and classes; on a pass, write check_receipt.json")
     ap.add_argument("--check-sql", action="store_true", help="the SQL half of --check alone (CI)")
-    ap.add_argument("--reuse", action="store_true", help="reuse the exports already in --tmp")
     a = ap.parse_args()
     if a.sql_only or a.check or a.check_sql:
-        doc = jload(os.path.join(HERE, "honors_of_s653_out", a.date, "plan.json"))
+        doc = jload(os.path.join(plan_dir(a.date), "plan.json"))
         if a.check or a.check_sql:
-            return check_plan(doc, sql_only=a.check_sql)
+            check_plan(doc, sql_only=a.check_sql)
+            return 0
         print(f"drafted {write_rows_sql(doc)} rows: {os.path.relpath(ROWS_SQL, ROOT)}, {os.path.relpath(ROWS_RB, ROOT)}")
-        return
-    if not a.tmp:
-        raise SystemExit("pass --tmp <empty scratch dir>")
-    if a.reuse:
-        outs = {n: os.path.join(a.tmp, "out_" + n) for n in ("live", "field")}
-    else:
-        outs = run_exports(a.tmp)
-    sim = compare_runs(outs)
-
-    wc = Shim(ROOT)
-    _, _, rows_c, _ = s648.measure_honors(wc)
-    wl = Shim(outs["live"])
-    summ_l, _, rows_l, _ = s648.measure_honors(wl)
-    pc, pl = pairs_of(rows_c), pairs_of(rows_l)
-    rep = {"committed": {"members_generated_at": wc.generated_at, "pairs": len(pc), "course_rows": sum(pc.values())},
-           "live": {"members_generated_at": wl.generated_at, "pairs": len(pl), "course_rows": sum(pl.values())},
-           "live_only": sorted(set(pl) - set(pc)), "committed_only": sorted(set(pc) - set(pl)),
-           "how": "kb/_reclustering_s648_dryrun.measure_honors on each members file; a pair is an (Honors identity, "
-                  "base identity) whose Honors course and base course at one college sit in different identities"}
-    live_cur = overlay_live(jload(os.path.join(HERE, "coci_curation.json")))["curations"]
+        return 0
+    if not a.plan:
+        raise SystemExit("pass --plan, --sql-only, --check or --check-sql")
+    date = a.date or datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    w = Shim(ROOT)
+    _, _, rows, _ = s648.measure_honors(w)
+    pc = pairs_of(rows)
+    rep = {"committed": {"members_generated_at": w.generated_at, "pairs": len(pc), "course_rows": sum(pc.values())},
+           "how": "kb/_reclustering_s648_dryrun.measure_honors on the committed members file; a pair is an (Honors "
+                  "identity, base identity) whose Honors course and base course at one college sit in different "
+                  "identities"}
+    cur = jload(os.path.join(HERE, "coci_curation.json"))["curations"]
+    if any((cur.get(r["course_id"]) or {}).get(r["field"]) == r["value"] for r in S652_DELETED):
+        raise SystemExit("ABORT: the committed overlay predates #3304's delete; the plan reads the payload as it stands")
     import _honors_pairs_second as second
-    plan = plan_pairs(wl, rows_l, outs["live"], live_cur, second.derive(wl.members))
+    plan = plan_pairs(w, rows, ROOT, cur, second.derive(w.members))
     import _honors_matcher_recall as recall
-    rc = recall.measure(wl.members, outs["live"])
-    if rc["both"]["wrong"] or not all(f["pass"] for f in rc["fixtures"]) or rc["lumps"]["wrong"]:
+    rc = recall.measure(w.members, ROOT)
+    if rc["both"]["wrong"] or not all(f["pass"] for f in rc["fixtures"]):
         raise SystemExit("ABORT: a self-recall measure fails: " + json.dumps({
-            "both_wrong": rc["both"]["wrong_pairs"], "lumps_wrong": rc["lumps"]["wrong"],
-            "fixtures": [f["name"] for f in rc["fixtures"] if not f["pass"]]}))
+            "both_wrong": rc["both"]["wrong_pairs"], "fixtures": [f["name"] for f in rc["fixtures"] if not f["pass"]]}))
+    held_named = {p["base_id"] for p in plan if p["base_id"] in REVIEW3_BASES and p["action"] != "held"}
+    if held_named:
+        raise SystemExit(f"ABORT: a base #3315's third review named is not held: {sorted(held_named)}")
     doc = {"_about": "Dry run of the honors_of rows and base-plus-H mints. Nothing applied. Design: "
                      "docs/reference/honors_of_design.md.",
-           "written": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "date": a.date,
+           "written": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "date": date,
            "cohort": COHORT, "cohort_rows": COHORT_ROWS, "alias_era": alias_chain.ALIAS_MAPS[-1],
-           "reproduction": rep, "simulation": sim,
+           "reproduction": rep, "narrow": narrow_summary(plan),
            "recall": {k: v for k, v in rc.items() if k != "fixtures"},
-           "summary": summarize(plan, live_cur), "pairs": plan}
+           "summary": summarize(plan, cur), "pairs": plan}
     doc["rows_md5"] = rows_md5(step2_rows(doc))
     doc["step2_rows"] = len(step2_rows(doc))
-    od = os.path.join(HERE, "honors_of_s653_out", a.date)
+    doc["plan_md5"] = plan_md5(plan)
+    od = os.path.join(HERE, "honors_of_s653_out", date)
     os.makedirs(od, exist_ok=True)
     with open(os.path.join(od, "plan.json"), "w", encoding="utf-8") as f:
         json.dump(doc, f, indent=1, ensure_ascii=False)
         f.write("\n")
     write_md(doc, os.path.join(od, "plan.md"))
     write_rows_sql(doc)
-    print(json.dumps({"reproduction": {k: rep[k] for k in ("committed", "live", "live_only", "committed_only")},
-                      "summary": doc["summary"],
-                      "simulation": {f: len(v["differ"]) for f, v in sim["files"].items()}}, indent=1))
+    print(json.dumps({"reproduction": rep["committed"], "narrow": doc["narrow"], "summary": {
+        k: doc["summary"][k] for k in ("pairs", "by_action", "rows_to_write", "mints", "folds_after_the_mint",
+                                       "pairs_held", "held_pairs_by_first_reason")},
+        "step2_rows": doc["step2_rows"], "rows_md5": doc["rows_md5"], "plan_md5": doc["plan_md5"]}, indent=1))
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

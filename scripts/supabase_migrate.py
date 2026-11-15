@@ -17,6 +17,8 @@ The trigger is kb/migrations/.apply, two lines and an optional third:
 `project` names one of PROJECTS below and nothing else: the budget project's
 apply_migration prompt timed out twice on 2026-11-07 (S603, COBIx item 10), and
 Rule 10 (c) sends a timed-out migration here.
+A file whose header names `-- requires-check-receipt: <path>` runs only beside a committed receipt that names
+its sha256 and the payload it was checked on (check_receipt).
 The workflow (supabase-migrate.yml) runs the apply job in the GitHub environment
 "database": with Sam as its required reviewer each apply waits for his approval;
 with no protection rule it runs at once. The file is the receipt of what ran;
@@ -71,6 +73,40 @@ def check_trigger(t: dict, exists=os.path.exists) -> str | None:
     return None
 
 
+RECEIPT_LINE = re.compile(r"^-- requires-check-receipt: (\S+)\s*$", re.M)
+
+
+def check_receipt(sql: str, root: str = ROOT) -> str | None:
+    """Why a file that names a check receipt may not run, or None. A migration whose header carries
+    `-- requires-check-receipt: <path>` runs only when that receipt exists, names this file's sha256, and names the
+    sha256 of each payload file as the checkout holds it now: the check it records was run on this payload (COBIx on
+    #3315, 2026-11-14 18:47Z; the Honors rows, kb/_honors_of_s653_dryrun.py --check). A file without the line is not
+    read this way."""
+    m = RECEIPT_LINE.search(sql or "")
+    if not m:
+        return None
+    rel = m.group(1)
+    if ".." in rel or rel.startswith("/") or not rel.endswith(".json"):
+        return "the receipt path must be a .json inside the repo, got %r" % rel
+    path = os.path.join(root, rel)
+    if not os.path.exists(path):
+        return "the file requires its check receipt, and %s is not committed: run the check and commit it" % rel
+    try:
+        rec = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError) as e:
+        return "the check receipt %s does not read: %s" % (rel, e)
+    if rec.get("sql_sha256") != hashlib.sha256(sql.encode()).hexdigest():
+        return "the check receipt %s was written for another version of this file: run the check again" % rel
+    payload = rec.get("payload") or {}
+    if not payload:
+        return "the check receipt %s names no payload" % rel
+    for p, digest in sorted(payload.items()):
+        f = os.path.join(root, p)
+        if ".." in p or not os.path.exists(f) or hashlib.sha256(open(f, "rb").read()).hexdigest() != digest:
+            return "%s has moved since the check receipt %s was written: run the check again" % (p, rel)
+    return None
+
+
 def project_ref(t: dict) -> str:
     """The project ref a checked trigger names."""
     return PROJECTS[t.get("project", "work-plan")]
@@ -106,7 +142,11 @@ def main(argv=None) -> int:
         print("refused: " + why)
         return 2
     sql = open(os.path.join(ROOT, t["file"]), encoding="utf-8").read()
-    version = time.strftime("%Y%m%d%H%M%S", time.gmtime())
+    why = check_receipt(sql)
+    if why:
+        print("refused: " + why)
+        return 2
+    version =time.strftime("%Y%m%d%H%M%S", time.gmtime())
     receipt = {"what": "supabase-migrate: one committed SQL file applied through the Management API",
                "file": t["file"], "name": t["name"], "version": version,
                "sha256": hashlib.sha256(sql.encode()).hexdigest(), "run": os.environ.get("GITHUB_RUN_ID"),

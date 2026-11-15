@@ -53,6 +53,45 @@ check(led.startswith("insert into supabase_migrations.schema_migrations (version
       and "on conflict (version) do nothing" in led,
       "the ledger row carries the version, the name and the file as its one statement, dollar-quoted")
 
+# A file that names a check receipt runs only beside a receipt for this file and this payload (COBIx on #3315,
+# 2026-11-14 18:47Z: "have --check write a small receipt ... and have the runner refuse the .apply line unless a
+# receipt for the current head exists"). The Honors rows migration names one; every other file is untouched.
+import hashlib  # noqa: E402
+import json  # noqa: E402
+import tempfile  # noqa: E402
+
+check(M.check_receipt("insert into t values (1);", "/nonexistent") is None,
+      "a file that names no check receipt is not read for one")
+with tempfile.TemporaryDirectory() as td:
+    os.makedirs(os.path.join(td, "kb", "out"))
+    pay = os.path.join(td, "kb", "payload.json")
+    open(pay, "w").write('{"a": 1}')
+    body = "-- requires-check-receipt: kb/out/check_receipt.json\ninsert into t values (1);\n"
+    rp = os.path.join(td, "kb", "out", "check_receipt.json")
+    check(M.check_receipt(body, td) and "not committed" in M.check_receipt(body, td),
+          "a file that names a receipt is refused while the receipt is missing")
+
+    def write(sql_text, payload_text):
+        json.dump({"sql_sha256": hashlib.sha256(sql_text.encode()).hexdigest(),
+                   "payload": {"kb/payload.json": hashlib.sha256(payload_text.encode()).hexdigest()}},
+                  open(rp, "w"))
+    write(body, '{"a": 1}')
+    check(M.check_receipt(body, td) is None, "a receipt naming this file and this payload lets it run")
+    write(body + "-- edited\n", '{"a": 1}')
+    check(M.check_receipt(body, td) and "another version" in M.check_receipt(body, td),
+          "a receipt written for another version of the file is refused")
+    write(body, '{"a": 2}')
+    check(M.check_receipt(body, td) and "has moved" in M.check_receipt(body, td),
+          "a receipt whose payload has moved since (a daily run, a merge of main) is refused")
+    json.dump({"sql_sha256": hashlib.sha256(body.encode()).hexdigest()}, open(rp, "w"))
+    check(M.check_receipt(body, td) and "names no payload" in M.check_receipt(body, td),
+          "a receipt that names no payload is refused")
+    check(M.check_receipt(body.replace("kb/out/", "../"), td), "a receipt path that climbs out is refused")
+rows_sql = os.path.join(ROOT, "kb", "migrations", "2026-11-14_s653_honors_of_rows.sql")
+if os.path.exists(rows_sql):
+    check(M.RECEIPT_LINE.search(open(rows_sql, encoding="utf-8").read()),
+          "the Honors rows migration names its check receipt")
+
 if failures:
     print("FAIL: %d" % len(failures))
     sys.exit(1)

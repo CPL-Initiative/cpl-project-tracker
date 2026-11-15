@@ -1,62 +1,60 @@
--- DRAFT, NOT IN kb/migrations/.apply. Step 2 of the Honors build (S653): the honors_of rows for every pair the
--- plan writes (347 rows; kb/honors_of_s653_out/2026-11-14/plan.json, written 2026-11-14T18:40:04Z).
+-- DRAFT, NOT IN kb/migrations/.apply. Step 2 of the Honors build: the honors_of rows for every pair the plan
+-- writes (246 rows; kb/honors_of_s653_out/2026-11-15/plan.json, written 2026-11-15T02:26:09Z; rows md5 5e438594518f1fe0ac7dd8f559199c2c, class md5
+-- d926338769084d779f0426f846868207).
 -- Design: docs/reference/honors_of_design.md. Ruling: Sam, Sheet 197 card 3 (14:37Z 2026-11-14): "Build the field
--- first, then the rows"; "Rows for all 508 pairs". A pair gets a row only where two derivations that share no
--- code both find it and nothing holds it; held pairs get no row (plan.md lists them by reason).
--- Written by kb/_honors_of_s653_dryrun.py --sql-only from the committed plan. Lands after step 1
--- (2026-11-14_s653_honors_of_field.sql). ON THE APPLY DAY, after the last daily run, merge origin/main and run
--- `python3 kb/_honors_of_s653_dryrun.py --check`: it re-measures the pairs and classes on the day's payload and
--- refuses unless they give these rows exactly. That is where liveness is checked; this statement reads only
--- kb_curation and cannot see the live id set.
+-- first, then the rows"; "Rows for all 508 pairs". THE NARROW RULE (S654, d-honors-narrow-positive-rule-s654,
+-- after #3315's third review): a pair gets a row only where the second derivation finds it by number and the
+-- matcher finds it too, the base holds one title group, no college gives the base two course numbers, and the
+-- raw sequence marks agree; held is the default, and held pairs get no row (plan.md lists them by reason).
+-- Written by kb/_honors_of_s653_dryrun.py from the committed plan. Lands after step 1 (applied 2026-11-14).
+-- ON THE APPLY DAY, after the last daily run, merge origin/main and run
+-- `python3 kb/_honors_of_s653_dryrun.py --check` (it reads the newest plan folder): it re-measures the pairs and
+-- classes on the day's payload, refuses unless they give these rows and classes exactly, and writes the receipt
+-- named on the next line. scripts/supabase_migrate.py refuses this file unless that receipt exists and names
+-- this file's sha256 and the checkout's payload digests. That is where liveness is checked; this statement
+-- reads only kb_curation and cannot see the live id set.
+-- requires-check-receipt: kb/honors_of_s653_out/2026-11-15/check_receipt.json
 -- Insert-only under its own cohort, honors-rows-s653@bot, ON CONFLICT DO NOTHING (Rule 10). One plain statement: the
 -- insert hangs on one guard CTE, and a failed guard raises, so nothing is written. The guard refuses when:
 --   * step 1's two honors_of rows (honors-s653@bot) are not both present, or any other honors_of row exists;
---   * any id a row names carries a merge_into row: it was merged away after the plan;
---   * a pair's two ids already end under one id through merge_into rows (counted, and by a person apart). A
---     person's merge of a third course into either side does not refuse: it agrees with the pair standing apart
---     (#3315's review, item 1; 45 such rows when the plan was drawn);
+--   * any id a row names carries a merge_into row: it was merged away, or merged into its partner, after the
+--     plan (this covers every join of a pair, so no chain walk is needed). A person's merge of a third course
+--     into either side does not refuse: it agrees with the pair standing apart (#3315's first review, item 1;
+--     10 such rows when this plan was drawn, the overlay's count);
+--   * a unified_title_merge_confirm row names any id a row names: a curator's pending merge (Rule 10 a);
+--   * a kb_curation row is keyed on an H id: the step-4 mint has landed;
 --   * what it inserts differs from the plan in count or digest.
--- The result is a count and an md5 (7d733405d750a50bb359e1bea7665ed7) over the inserted rows, course_id>value joined by | in C order, so
+-- The result is a count and an md5 (5e438594518f1fe0ac7dd8f559199c2c) over the inserted rows, course_id>value joined by | in C order, so
 -- the runner's receipt (scripts/supabase_migrate.py keeps the first 4,000 characters) holds the whole record and
 -- checks against plan.json. No row image is returned: the insert-only cohort rolls back by its reviewer_email.
--- Rollback: 2026-11-14_s653_honors_of_rows_rollback.sql, keyed on the cohort and the field, never on ids, so it
--- finds every row after a mint re-keys them.
-with recursive planned (course_id, value) as (
+-- Rollback: 2026-11-14_s653_honors_of_rows_rollback.sql, keyed on the cohort and the field, never on ids; it
+-- refuses after the step-4 mint until the mint's own rollback has run.
+with planned (course_id, value) as (
   values
     ('ANTH M1005', 'ANTH M1006'),
     ('ANTH M10AK', 'ANTH M10AL'),
-    ('ANTH M10BN', 'ANTH M1017'),
-    ('ANTH M10EJ', 'ANTH M1042'),
     ('ANTH M10EW', 'ANTH M1122'),
     ('ANTH M10IG', 'ANTH M10IF'),
     ('ANTH M10IM', 'ANTH M1131'),
-    ('ANTH M1121', 'ANTH M1101'),
-    ('ARAB M10AQ', 'ARAB M1015'),
-    ('ARCH M10AK', 'ARCH M1142'),
     ('ARCH M10AP', 'ARCH M10AN'),
     ('ARCH M10BL', 'ARCH M10BK'),
     ('ARCH M10BP', 'ARCH M10BD'),
     ('ARCH M10CE', 'ARCH M10CF'),
-    ('ARCH M10JH', 'ARCH M1059'),
     ('ARCH M10JX', 'ARCH M1065'),
     ('ARCH M10KJ', 'ARCH M1066'),
     ('ARTH M1006', 'ARTH M1005'),
     ('ARTH M1037', 'ARTH M1011'),
-    ('ARTH M10DA', 'ARTH 150'),
     ('ARTS M10KT', 'ARTS 210'),
     ('ARTS M10MX', 'ARTS M10MY'),
     ('ARTS M10NI', 'ARTS M1078'),
-    ('ARTS M10NS', 'ARTS M1134'),
     ('ARTS M10PX', 'ARTS M10PY'),
     ('ARTS M10QM', 'ARTH 130'),
     ('ARTS M10UM', 'ARTS M10UN'),
     ('ARTS M10UU', 'ARTS M10UV'),
     ('ASTR M1039', 'ASTR M1044'),
     ('ASTR M1048', 'ASTR M1053'),
-    ('ASTR M1049', 'ASTR M1019'),
     ('ASTR M10AC', 'PHSC M1003'),
     ('ASTR M10AU', 'ASTR M10AT'),
-    ('ASTR M10BC', 'ASTR M1014'),
     ('ASTR M10BE', 'ASTR M1023'),
     ('ASTR M10BZ', 'ASTR M1028'),
     ('BIOL M1091', 'BIOL M1089'),
@@ -65,10 +63,7 @@ with recursive planned (course_id, value) as (
     ('BIOL M10GV', 'BIOT 150 X'),
     ('BIOL M10GW', 'BIOT 220 X'),
     ('BIOL M10HU', 'BIOL M10HV'),
-    ('BIOL M10IW', 'BIOL M1049'),
-    ('BIOL M10KY', 'BIOL M1063'),
     ('BIOL M10LH', 'BIOL M1065'),
-    ('BIOL M10LZ', 'BIOL M1067'),
     ('BIOL M10NT', 'BIOL M1087'),
     ('BIOL M10NU', 'BIOL M1088'),
     ('BIOL M10NW', 'BIOL M1092'),
@@ -77,33 +72,21 @@ with recursive planned (course_id, value) as (
     ('BIOL M10OU', 'BIOL M1119'),
     ('BIOL M10OV', 'BIOL M10QB'),
     ('BIOL M10OX', 'BIOL 135 S'),
-    ('BIOL M10OY', 'BIOL 190'),
-    ('BIOL M10QW', 'BIOL M1262'),
     ('BIOL M10QZ', 'BIOT 101 B X'),
     ('BIOL M10ZV', 'BIOL M11BA'),
-    ('BIOL M10ZW', 'GEOL M1054'),
     ('BIOL M10ZX', 'BIOL M11BJ'),
     ('BIOL M1101', 'BIOL M1105'),
     ('BIOL M1102', 'BIOL 140'),
-    ('BIOL M1103', 'BIOL 190'),
-    ('BIOL M1104', 'BIOL M1126'),
     ('BIOL M11AA', 'GEOL M1056'),
     ('BIOL M1226', 'PSY 130'),
-    ('BIOL M1320', 'BIOL M1254'),
-    ('BRDC M1015', 'JOUR 100'),
+    ('BIOL M1317', 'BIOL M1318'),
     ('BUSI M1061', 'ACCT 120'),
-    ('BUSI M10FD', 'ACCT 110'),
-    ('BUSI M10FE', 'ACCT 110'),
     ('BUSI M10SK', 'BUS 120'),
     ('BUSI M10SS', 'BUSI M1172'),
     ('BUSI M10TV', 'BUSI M10UK'),
     ('BUSI M11LQ', 'LPPS 110'),
-    ('CDEV M11GJ', 'CDEV M1280'),
-    ('CHEM M1016', 'CHEM 101'),
     ('CHEM M1033', 'CHEM M10DH'),
-    ('CHEM M1053', 'CHEM 120 S'),
     ('CHEM M10FL', 'CHEM 160 S'),
-    ('COMM M1035', 'COMM M1034'),
     ('COMM M10AW', 'COMM M10AX'),
     ('COMM M10CE', 'COMM M10CF'),
     ('COMM M10DK', 'COMM 140'),
@@ -112,9 +95,6 @@ with recursive planned (course_id, value) as (
     ('COMP M10QS', 'ITIS 130'),
     ('COUN M10BK', 'COUN M10BL'),
     ('COUN M10BM', 'COUN M1004'),
-    ('COUN M10KU', 'COUN M1188'),
-    ('COUN M10ME', 'COUN M1069'),
-    ('COUN M10PX', 'IDST M1098'),
     ('COUN M10UD', 'COUN M1159'),
     ('CRIM M1066', 'CRIM M1068'),
     ('CRIM M11DJ', 'AJ 120'),
@@ -122,20 +102,14 @@ with recursive planned (course_id, value) as (
     ('DANC M10JE', 'DANC M10JF'),
     ('DANC M11GZ', 'DANC M1208'),
     ('DANC M11SK', 'DANC M11SN'),
-    ('DANC M1460', 'DANC M1056'),
     ('ECON M10AX', 'ECON M10AY'),
-    ('ECON M10BC', 'ECON M1007'),
     ('ECON M10BI', 'ECON M1012'),
     ('ECON M10BO', 'ECON M1022'),
-    ('ENGL M1033', 'ENGL M1034'),
     ('ENGL M1061', 'ENGL M1063'),
     ('ENGL M10BA', 'ENGL 160'),
     ('ENGL M10BB', 'ENGL 165'),
-    ('ENGL M10DS', 'ETHA M1002'),
-    ('ENGL M10IB', 'ENGL M1393'),
     ('ENGL M10IR', 'ENGL M10IS'),
     ('ENGL M10JI', 'ENGL M10JJ'),
-    ('ENGL M10JX', 'ENGL M1395'),
     ('ENGL M10LQ', 'ENGL M10LR'),
     ('ENGL M10MG', 'ENGL M10MH'),
     ('ENGL M10MT', 'ENGL M10MS'),
@@ -148,36 +122,20 @@ with recursive planned (course_id, value) as (
     ('ENGL M11AV', 'HUMA M10KJ'),
     ('ENGL M11CF', 'ENGL M11CG'),
     ('ENGL M11CL', 'ENGL M11CH'),
-    ('ENGL M11EE', 'ENGL M1438'),
-    ('ENGL M11EP', 'ENGL M1436'),
     ('ENGL M11EY', 'ENGL M11HC'),
     ('ENGL M11FB', 'ETHN M1034'),
     ('ENGL M11FC', 'ENGL M1346'),
-    ('ENGL M11FD', 'ENGL M1348'),
-    ('ENGL M11FE', 'ENGL M1353'),
-    ('ENGL M11FF', 'ENGL M1352'),
-    ('ENGL M11FG', 'ENGL M1353'),
-    ('ENGL M11FK', 'ENGL M1375'),
     ('ENGL M1203', 'ENGL M1206'),
-    ('ENGL M1261', 'ENGL M1263'),
-    ('ENGL M1284', 'ENGL M1338'),
     ('ENGL M1415', 'PHIL M1034'),
-    ('ENVS M10LD', 'ENVS 100'),
-    ('ENVS M10LE', 'ENVS M1064'),
-    ('ENVS M10LF', 'ENVS 100'),
     ('ENVS M10NA', 'ENVS M10NB'),
     ('ETHS M1013', 'ETHS M1014'),
     ('ETHS M1068', 'POLS M1002'),
-    ('ETHS M1086', 'ETHS M1085'),
     ('ETHS M1097', 'ETHS M1098'),
     ('ETHS M10DF', 'ETHS M10DG'),
-    ('ETHS M10EL', 'ETHS M1256'),
-    ('ETHS M10IR', 'ETHA M1002'),
     ('ETHS M10MD', 'ETHS M10ME'),
     ('ETHS M10NO', 'ETHN M1019'),
     ('ETHS M10OD', 'ETHS M1170'),
     ('ETHS M10OE', 'ETHS M1172'),
-    ('ETHS M10PH', 'SJS 120'),
     ('ETHS M10SH', 'ETHS M10SI'),
     ('ETHS M1103', 'ETHS M1104'),
     ('ETHS M1147', 'ETHS M1150'),
@@ -188,60 +146,37 @@ with recursive planned (course_id, value) as (
     ('FLNG M11LR', 'SLNA M10AM'),
     ('FREN M1050', 'FREN M1003'),
     ('FREN M1053', 'FREN M1006'),
-    ('FREN M10AA', 'FREN M1035'),
-    ('FREN M10AH', 'FREN M1036'),
-    ('FREN M10AZ', 'FREN M1014'),
-    ('FTVE M1003', 'FTVE M1002'),
     ('FTVE M1019', 'FTVE M1018'),
-    ('FTVE M1045', 'FTVE M1046'),
-    ('FTVE M1078', 'FTVE M1081'),
-    ('FTVE M1079', 'FTVE 105'),
-    ('FTVE M10DA', 'FTVE 105'),
     ('FTVE M10DK', 'FTVE M10DJ'),
     ('FTVE M10DX', 'FTVE M1021'),
     ('FTVE M10EV', 'FTVE M1029'),
     ('FTVE M10HO', 'FTVE M10HR'),
-    ('FTVE M10LA', 'BRDC M1011'),
     ('FTVE M10LJ', 'FTVE M10LK'),
     ('FTVM M10AS', 'FTVM M10AF'),
-    ('FTVM M10AU', 'FTVE M1074'),
     ('GEOG M10CM', 'GEOG 140'),
     ('GEOG M10FA', 'GEOG 110'),
     ('GEOL M1041', 'GEOL 100'),
     ('GEOL M10EU', 'GEOL M1022'),
-    ('GEOL M10HI', 'GEOL 100 L'),
     ('GFCD M10FI', 'ARTS M1310'),
     ('GFCD M10FJ', 'ARTS M1331'),
-    ('HIST M10BI', 'HIST 160'),
     ('HIST M10HW', 'HIST M10HX'),
-    ('HIST M10KJ', 'HIST M1220'),
     ('HIST M10KV', 'HIST M10LD'),
     ('HIST M10MO', 'HIST M1095'),
     ('HIST M10NK', 'HIST M10NL'),
-    ('HIST M10PT', 'HIST M1126'),
     ('HIST M10QP', 'HIST M10QQ'),
     ('HIST M10TA', 'HIST M10TB'),
     ('HIST M10TI', 'HIST M1156'),
-    ('HIST M10UL', 'HIST M1178'),
-    ('HIST M10UM', 'HIST M1183'),
     ('HIST M10UN', 'HIST M10VY'),
-    ('HIST M1130', 'HIST M1129'),
     ('HIST M1163', 'HIST M1190'),
     ('HIST M1165', 'HIST M1191'),
-    ('HLTH M10RO', 'HLTH M1079'),
-    ('HLTH M10ZH', 'HLTH M1134'),
     ('HLTH M11BP', 'PH 100'),
     ('HORT M10MA', 'AG-PS 104 104'),
     ('HUMA M1018', 'HUMA M1019'),
     ('HUMA M1027', 'HUMA M1029'),
-    ('HUMA M1055', 'ANTH M1085'),
     ('HUMA M10BC', 'HUMA M10BD'),
-    ('HUMA M10BZ', 'HUMA M1114'),
     ('HUMA M10CM', 'HUMA M10CN'),
     ('HUMA M10CS', 'HUMA M10CT'),
     ('HUMA M10DQ', 'HUMA M10DS'),
-    ('HUMA M10HG', 'JOUR 100'),
-    ('HUMA M10HQ', 'PHIL M1028'),
     ('HUMA M10HX', 'HUMA M10HY'),
     ('HUMA M10ID', 'HUMA M10IF'),
     ('HUMA M10IJ', 'HUMA M10II'),
@@ -266,29 +201,20 @@ with recursive planned (course_id, value) as (
     ('IDST M10TE', 'IDST M10WV'),
     ('INFO M10AB', 'INFO M1002'),
     ('INFO M10AC', 'INFO M1003'),
-    ('ITIS M10KP', 'ITIS M1068'),
     ('ITIS M10SQ', 'ITIS M1113'),
     ('ITIS M11LX', 'ITIS M1262'),
-    ('JAPN M10AD', 'JAPN M1017'),
     ('JAPN M10AK', 'JAPN M1018'),
-    ('JAPN M10AW', 'JAPN M1003'),
-    ('JAPN M10BG', 'JAPN M1032'),
     ('JAPN M10BH', 'JAPN M1006'),
     ('JAPN M10CP', 'JAPN M1015'),
     ('KINE M13AD', 'KINE M1523'),
-    ('LATN M10AD', 'CHIN M1058'),
     ('LATN M10AG', 'LATN M1001'),
-    ('LIBR M10AR', 'LIBR M1035'),
     ('LIBR M10BO', 'LIBR M1009'),
     ('LIBR M10CI', 'LIBR M1040'),
     ('LIBR M10CK', 'LIBR M10CX'),
     ('LIBR M10CL', 'LIBR M1026'),
     ('MATH M10NA', 'MATH 210'),
     ('MATH M10NC', 'MATH 230'),
-    ('MATH M10PL', 'MATH M1123'),
     ('MATH M11CM', 'MATH 130'),
-    ('MATH M11DN', 'MATH 151'),
-    ('MATH M11DO', 'MATH 151'),
     ('MATH M1333', 'MATH 210'),
     ('MRKT M10BN', 'BUSI M1361'),
     ('MUSI M1040', 'MUSI M1043'),
@@ -297,45 +223,31 @@ with recursive planned (course_id, value) as (
     ('MUSI M10MH', 'MUSI M1582'),
     ('MUSI M10MN', 'MUSI M10MO'),
     ('MUSI M10PH', 'MUSI M10PI'),
-    ('MUSI M11AP', 'MUSI M1044'),
     ('MUSI M11PS', 'MUSI M1252'),
     ('MUSI M11QG', 'MUSI M1254'),
     ('MUSI M11XO', 'MUSI M1334'),
-    ('MUSI M1236', 'MUSI M1237'),
     ('MUSI M12CD', 'MUSI M1488'),
     ('MUSI M12CE', 'MUSI M1518'),
     ('MUSI M1589', 'MUSI M1072'),
     ('MUSI M1634', 'MUSI M1522'),
-    ('NUTR M10BL', 'NUTR M1014'),
     ('NUTR M10CB', 'NUTR M10CC'),
     ('PHIL M10AW', 'PHIL 130'),
     ('PHIL M10DI', 'PHIL 140'),
-    ('PHIL M10DO', 'PHIL 110'),
     ('PHIL M10EW', 'PHIL 120'),
-    ('PHIL M10FI', 'SJS 120'),
-    ('PHIL M10FS', 'HUMA M1125'),
     ('PHIL M10GA', 'HIST M1194'),
     ('PHIL M10GB', 'PHIL M1090'),
     ('PHIL M10GC', 'SJS 130'),
     ('PHOT M10DT', 'PHOT M10DU'),
     ('PHOT M10HE', 'PHOT M10HF'),
     ('PHOT M10IH', 'PHOT M1055'),
-    ('PHOT M10MS', 'ARTS M1411'),
     ('PHOT M10MV', 'JOUR 160'),
-    ('PHOT M1137', 'PHOT M1096'),
     ('PHSC M10BM', 'ASTR M1017'),
-    ('PHSC M10BO', 'ASTR M1014'),
-    ('PHSC M10CP', 'CHEM 101'),
     ('PHSC M10FT', 'ASTR M1040'),
     ('PHYS M10DH', 'PHYS 105'),
     ('PHYS M10FR', 'PHYS 205'),
     ('POLS M1033', 'POLS 130'),
-    ('POLS M1059', 'POLS 140'),
-    ('POLS M1060', 'POLS 140'),
-    ('POLS M10AH', 'PUBS M1005'),
     ('POLS M10AU', 'POLS M10AV'),
     ('POLS M10BY', 'POLS M1020'),
-    ('POLS M10CH', 'POLS M1027'),
     ('PSYC M10DA', 'SOCI 125'),
     ('PSYC M10DB', 'PSYC M1042'),
     ('PSYC M10DQ', 'PSY 150'),
@@ -359,17 +271,12 @@ with recursive planned (course_id, value) as (
     ('SOCS M10GA', 'GLST 101'),
     ('SOCS M10GB', 'GLST 102'),
     ('SOCS M10GW', 'SJS 110'),
-    ('SPAN M1045', 'SPAN 100'),
     ('SPAN M1046', 'SPAN 110'),
-    ('SPAN M1073', 'SPAN 100'),
     ('SPAN M10DH', 'SPAN M1026'),
     ('SPAN M10FX', 'SPAN M10FY'),
     ('THTR M10PG', 'THTR M1056'),
-    ('THTR M10RT', 'THTR 111'),
     ('THTR M10YI', 'THTR M10YJ'),
-    ('THTR M1187', 'THTR 111'),
-    ('THTR M11CE', 'THTR M11CF'),
-    ('THTR M11MI', 'THTR 113')
+    ('THTR M11CE', 'THTR M11CF')
 ),
 named (id) as (
   select course_id from planned union select value from planned
@@ -385,27 +292,20 @@ other_honors as (
 moved as (
   select count(*) as n from public.kb_curation m where m.field = 'merge_into' and m.course_id in (select id from named)
 ),
-walk (honors_id, side, id, person, depth) as (
-  select p.course_id, 'h', p.course_id, false, 0 from planned p
-  union all
-  select p.course_id, 'b', p.value, false, 0 from planned p
-  union all
-  select w.honors_id, w.side, m.value, w.person or m.reviewer_email not like '%@bot', w.depth + 1
-  from walk w join public.kb_curation m on m.course_id = w.id and m.field = 'merge_into'
-  where w.depth < 40
+confirm as (
+  select count(*) as n from public.kb_curation c
+  where c.field = 'unified_title_merge_confirm'
+    and (c.course_id in (select id from named) or c.value in (select id from named))
 ),
-joined as (
-  select h.honors_id, bool_or(h.person or b.person) as by_person
-  from walk h join walk b on b.honors_id = h.honors_id and b.side = 'b' and b.id = h.id
-  where h.side = 'h'
-  group by h.honors_id
+minted as (
+  select count(*) as n from public.kb_curation h where h.course_id ~ '^[A-Z]{1,6} [MZ][0-9][A-Z0-9]{3}H$'
 ),
 guard as (
-  select (select n from step1) = 2 and (select n from other_honors) = 0
-     and (select n from moved) = 0 and (select count(*) from joined) = 0 as ok,
-     (select n from step1) as step1_rows,
-     (select n from other_honors) as other_honors_rows, (select n from moved) as merged_ids,
-     (select count(*) from joined) as joined_pairs, (select count(*) from joined where by_person) as person_joined
+  select (select n from step1) = 2 and (select n from other_honors) = 0 and (select n from moved) = 0
+     and (select n from confirm) = 0 and (select n from minted) = 0 as ok,
+     (select n from step1) as step1_rows, (select n from other_honors) as other_honors_rows,
+     (select n from moved) as merged_ids, (select n from confirm) as pending_confirms,
+     (select n from minted) as h_id_rows
 ),
 added as (
   insert into public.kb_curation as k (course_id, field, value, reviewer_email)
@@ -420,14 +320,14 @@ digest as (
          md5(coalesce(string_agg(a.course_id || '>' || a.value, '|' order by a.course_id collate "C"), '')) as md5
   from added a
 )
-select case when g.ok and d.n = 347 and d.md5 = '7d733405d750a50bb359e1bea7665ed7'
+select case when g.ok and d.n = 246 and d.md5 = '5e438594518f1fe0ac7dd8f559199c2c'
             then jsonb_build_object('inserted', d.n, 'md5', d.md5, 'cohort', 'honors-rows-s653@bot')
             else ('refused by the guard: step 1 rows ' || g.step1_rows
-                  || ', other honors_of rows ' || g.other_honors_rows || ', named ids merged away ' || g.merged_ids
-                  || ', pairs already joined ' || g.joined_pairs || ' (by a person ' || g.person_joined
-                  || '), inserted ' || d.n || ' of 347 with digest ' || d.md5)::int::text::jsonb
+                  || ', other honors_of rows ' || g.other_honors_rows || ', named ids merged ' || g.merged_ids
+                  || ', pending merge confirms ' || g.pending_confirms || ', rows keyed on an H id ' || g.h_id_rows
+                  || ', inserted ' || d.n || ' of 246 with digest ' || d.md5)::int::text::jsonb
        end as changed
 from guard g cross join digest d;
 
--- Read back: expect 347 honors_of rows under honors-rows-s653@bot and 2 under honors-s653@bot.
+-- Read back: expect 246 honors_of rows under honors-rows-s653@bot and 2 under honors-s653@bot.
 --   select reviewer_email, count(*) from public.kb_curation where field = 'honors_of' group by 1;
