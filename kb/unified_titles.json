@@ -64922,5 +64922,1069 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-13T20:43:42.707346+00:00",
     "reviewed_by": "slee@cccco.edu"
+  },
+  "AP Art History, ARTH C1100": {
+    "unified_title": "AP Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Art History, ARTH C1200": {
+    "unified_title": "AP Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Art History, Area 3": {
+    "unified_title": "AP Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Art and Design - 2D Design": {
+    "unified_title": "AP 2-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Art and Design - 3D Design": {
+    "unified_title": "AP 3-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Art and Design - Drawing": {
+    "unified_title": "AP Drawing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Biology, Area 5": {
+    "unified_title": "AP Biology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus AB, Area 2": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus AB, Score of 3": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus AB, Score of 4-5": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus BC - Score of 3-4": {
+    "unified_title": "AP Calculus BC",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus BC - Score of 5": {
+    "unified_title": "AP Calculus BC",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus BC, Area 2": {
+    "unified_title": "AP Calculus BC",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus BC, Score of 3": {
+    "unified_title": "AP Calculus BC",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus BC, Score of 4-5": {
+    "unified_title": "AP Calculus BC",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus BC/AB Subscore, Score of 3": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus BC/AB Subscore, Score of 3-4": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Chemistry, Area 5": {
+    "unified_title": "AP Chemistry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Chinese Language\nand Culture": {
+    "unified_title": "AP Chinese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Chinese Language and Culture - Score of 3": {
+    "unified_title": "AP Chinese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Chinese Language and Culture - Score of 4-5": {
+    "unified_title": "AP Chinese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Comparative Government\nand Politics": {
+    "unified_title": "AP Comparative Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Comparative Government\nand Politics, Area 4": {
+    "unified_title": "AP Comparative Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Computer Science AB - Score of 3": {
+    "unified_title": "AP Computer Science AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Computer Science AB - Score of 4-5": {
+    "unified_title": "AP Computer Science AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Economics - Macroeconomics - Score of 3": {
+    "unified_title": "AP Macroeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Economics - Macroeconomics - Score of 4-5": {
+    "unified_title": "AP Macroeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Economics - Microeconomics - Score of 3": {
+    "unified_title": "AP Microeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Economics - Microeconomics - Score of 4-5": {
+    "unified_title": "AP Microeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP English\nLanguage and\nComposition": {
+    "unified_title": "AP English Language and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP English\nLanguage and\nComposition, Area 1A": {
+    "unified_title": "AP English Language and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP English\nLiterature": {
+    "unified_title": "AP English Literature and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP English\nLiterature and\nComposition": {
+    "unified_title": "AP English Literature and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP English\nLiterature and\nComposition, Area 1A and Area 3": {
+    "unified_title": "AP English Literature and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP English\nLiterature, Area 1A and Area 3": {
+    "unified_title": "AP English Literature and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP English Language, Area 1A": {
+    "unified_title": "AP English Language and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP English Literature and Composition,\nDoes not meet 1B Critical Thinking requirement for transfer.": {
+    "unified_title": "AP English Literature and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP European History, Area 3": {
+    "unified_title": "AP European History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP European History, Area 4": {
+    "unified_title": "AP European History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP French\nLanguage\nand Culture": {
+    "unified_title": "AP French Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP French Language and Culture - Score of 3": {
+    "unified_title": "AP French Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP French Language and Culture - Score of 4": {
+    "unified_title": "AP French Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP French Language and Culture - Score of 5": {
+    "unified_title": "AP French Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP German\nLanguage\nand Culture": {
+    "unified_title": "AP German Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP History - European - HIST 10": {
+    "unified_title": "AP European History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP History - European - HIST 11": {
+    "unified_title": "AP European History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP History - U.S. - HIST C1001": {
+    "unified_title": "AP United States History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP History - U.S. - HIST C1002": {
+    "unified_title": "AP United States History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP History - World - HIST 1": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP History - World - HIST 2": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Human Geography, Area 4": {
+    "unified_title": "AP Human Geography",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Italian\nLanguage\nand Culture": {
+    "unified_title": "AP Italian Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Japanese\nLanguage\nand Culture": {
+    "unified_title": "AP Japanese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Japanese\nLanguage\nand Culture, Area 3": {
+    "unified_title": "AP Japanese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Japanese Language and Culture - Score of 3": {
+    "unified_title": "AP Japanese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Japanese Language and Culture - Score of 4": {
+    "unified_title": "AP Japanese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Japanese Language and Culture - Score of 5": {
+    "unified_title": "AP Japanese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Macroeconomics, Area 4": {
+    "unified_title": "AP Macroeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Microeconomics, Area 4": {
+    "unified_title": "AP Microeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics 1 – Algebra Based": {
+    "unified_title": "AP Physics 1: Algebra-Based",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics 2 – Algebra Based": {
+    "unified_title": "AP Physics 2: Algebra-Based",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics C\n(Mechanics)": {
+    "unified_title": "AP Physics C: Mechanics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics C (Electricity/\nMagnetism)": {
+    "unified_title": "AP Physics C: Electricity and Magnetism",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics C: electricity/magnetism": {
+    "unified_title": "AP Physics C: Electricity and Magnetism",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics C: mechanics": {
+    "unified_title": "AP Physics C: Mechanics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Pre-Calculus, Area 2, Score of 3 or 4": {
+    "unified_title": "AP Precalculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Pre-Calculus, Area 2, Score of 5": {
+    "unified_title": "AP Precalculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Pre-Calculus, Score of 3 or 4": {
+    "unified_title": "AP Precalculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Pre-Calculus, Score of 5": {
+    "unified_title": "AP Precalculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Psychology, Area 4": {
+    "unified_title": "AP Psychology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish\nLanguage\nand Culture (Score of 3)": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish\nLanguage\nand Culture (Score of 4)": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish\nLanguage\nand Culture (Score of 5)": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 3)": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish\nLanguage\nand Culture, Area 3 (Score of 4-5)": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish\nLiterature\nand Culture (Score of 3)": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish\nLiterature\nand Culture (Score of 4)": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish\nLiterature\nand Culture (Score of 5)": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 3)": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish\nLiterature\nand Culture, Area 3 (Score of 4-5)": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish Language and Culture - Score of 4": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish Language and Culture - Score of 5": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish Language and Culture, SPA 1": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish Language and Culture, SPA 1S": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish Language and Culture, SPA 1X and Elective": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Statistics - ECON 10": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Statistics - HLTH 10": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Statistics - MGT 10": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Statistics - PSYC 10": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Statistics - STAT C1000": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Statistics, Area 2": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP U.S. Government and Politics\nDoes not meet US 3; meets US 2 only.": {
+    "unified_title": "AP United States Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP US Government\nand Politics": {
+    "unified_title": "AP United States Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP US Government\nand Politics, Area 4": {
+    "unified_title": "AP United States Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP US Government\nand Politics, Area 8": {
+    "unified_title": "AP United States Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP US History": {
+    "unified_title": "AP United States History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP US History, Area 3": {
+    "unified_title": "AP United States History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP US History, Area 4": {
+    "unified_title": "AP United States History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP US History, Area 8": {
+    "unified_title": "AP United States History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Word History Modern, Area 3": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Word History Modern, Area 4": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP World History -\nModern, Area 3": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP World History -\nModern, Area 4": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP World History, Area 3": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Biology 1 or 3": {
+    "unified_title": "CLEP Biology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP History, United States I, Area 3B": {
+    "unified_title": "CLEP History of the United States 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP History, United States I, Area 4": {
+    "unified_title": "CLEP History of the United States 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP History, United States I, Area 7": {
+    "unified_title": "CLEP History of the United States 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP History, United States II, Area 3B": {
+    "unified_title": "CLEP History of the United States 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP History, United States II, Area 4": {
+    "unified_title": "CLEP History of the United States 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP History, United States II, Area 7": {
+    "unified_title": "CLEP History of the United States 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Western Civilization I, Area 3B": {
+    "unified_title": "CLEP Western Civilization 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Western Civilization I, Area 4": {
+    "unified_title": "CLEP Western Civilization 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Western Civilization II, Area 3B": {
+    "unified_title": "CLEP Western Civilization 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Western Civilization II, Area 4": {
+    "unified_title": "CLEP Western Civilization 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB English Language A - Language and Literature HL": {
+    "unified_title": "IB Language A: Language and Literature HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB English Language A - Literature HL": {
+    "unified_title": "IB Language A: Literature HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB History (any region) HL - Area 3": {
+    "unified_title": "IB History HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB History (any region) HL - Area 4": {
+    "unified_title": "IB History HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB History (any region) HL, Area 3": {
+    "unified_title": "IB History HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB History (any region) HL, Area 3B": {
+    "unified_title": "IB History HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB History (any region) HL, Area 4": {
+    "unified_title": "IB History HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Language A - Language and Literature (any language, except English) HL": {
+    "unified_title": "IB Language A: Language and Literature HL (Non-English)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Language A - Language and Literature HL": {
+    "unified_title": "IB Language A: Language and Literature HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Language A - Literature (any language, except English) HL": {
+    "unified_title": "IB Language A: Literature HL (Non-English)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Language A - Literature HL": {
+    "unified_title": "IB Language A: Literature HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Language A: Language and Literature HL (any language, except English)": {
+    "unified_title": "IB Language A: Language and Literature HL (Non-English)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Language A: Literature HL (any language, except English)": {
+    "unified_title": "IB Language A: Literature HL (Non-English)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Mathematics: Analysis & Approaches HL": {
+    "unified_title": "IB Mathematics: Analysis and Approaches HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Mathematics: Analysis and Approaches HL, Score of 6 or higher": {
+    "unified_title": "IB Mathematics: Analysis and Approaches HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Mathematics: Applications & Interpretation HL": {
+    "unified_title": "IB Mathematics: Applications and Interpretation HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Mathematics: Applications and Interpretation": {
+    "unified_title": "IB Mathematics: Applications and Interpretation HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Theatre HL, Area 3": {
+    "unified_title": "IB Theatre HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-14",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
   }
 }

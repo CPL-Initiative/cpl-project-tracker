@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-14_s653_honors_of_field.sql
-name=s653_honors_of_field
+file=kb/migrations/2026-11-14_s653b_workplan_goals_drop_current.sql
+name=s653b_workplan_goals_drop_current

@@ -458,6 +458,10 @@ naming call, a design choice, a doctrine reading), ask Fable once through the
 Agent tool (`model: "fable"`), record the advice in the lane or the lessons doc,
 and decide. Fable advises; a call that is Sam's stays Sam's.
 
+**Tool trials.** A repo, library or service tried for the stack gets one line in
+[`reference/stack_scouting`](stack_scouting.md) (candidate, measured cost,
+result, kept or dropped); COBIx scans every other Monday (#3306).
+
 ## At the end
 
 Run `/checkpoint` as always: the handoff names the next moniker, and the next

@@ -142,7 +142,7 @@ foreach ($group in @($settings["hooks"]["PostToolUse"])) {
 }
 
 if ($already) {
-    Ok "already registered — nothing to change"
+    Ok "already registered -- nothing to change"
 } else {
     $settings["hooks"]["PostToolUse"] = @($settings["hooks"]["PostToolUse"]) + @(
         @{ matcher = "*"; hooks = @(@{ type = "command"; command = $command }) }
