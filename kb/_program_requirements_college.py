@@ -5661,16 +5661,22 @@ def forced(folder: str, tokens: str) -> set[str]:
 
 
 def call_charge(cost_usd, usage) -> float:
-    """What one call counts toward a ceiling (S644): its price, or, for a call that carries usage and
-    no price (a fallback model the table does not price), its usage at the most expensive model's
-    price, so an unpriced call never slips under the stop. A call with neither spent nothing the
-    function reported."""
+    """What one call counts toward a hard stop (S644; COBIx on #3330, S654), for the pilot, the college
+    workflow and the second reader alike:
+      a call whose usage carries tokens, in either shape (X.usage_tokens), counts its price, or, unpriced (a
+      model the table does not name, xAI's among them), its usage at the dearest rate in the table; it never
+      counts $0, and a price that comes to nothing counts the floor below;
+      a call that returns no usage (an HTTP error, a timeout, a gateway that cut the reply off) counts the flat
+      per-program floor (W.DEFAULT_COST_PER_PROGRAM), since the model may have been billed for it."""
     import _program_requirements_extract as X
-    if isinstance(cost_usd, (int, float)):
-        return float(cost_usd)
-    if usage:
-        return max((X.cost(m, usage) or 0.0) for m in X.PRICE) if X.PRICE else 0.0
-    return 0.0
+    import _program_requirements_wave as W
+    floor = float(W.DEFAULT_COST_PER_PROGRAM)
+    priced = float(cost_usd) if isinstance(cost_usd, (int, float)) and not isinstance(cost_usd, bool) else None
+    if not any(X.usage_tokens(usage)):
+        return max(priced or 0.0, floor)
+    if priced is None:
+        priced = X.dearest_cost(usage)
+    return priced if priced > 0 else floor
 
 
 REFUSED_METHODS = ("page_challenged",)

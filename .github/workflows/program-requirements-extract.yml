@@ -85,17 +85,20 @@ jobs:
       # Every extraction is priced before any call ($40 a run on the estimate, Sam's standing go; S653): over
       # the limit, nothing is sent. Free, and it needs no key. tests/program_requirements_extraction_gate_test.py
       # fails a workflow whose paid extraction can run without its price step's go or its hard stop.
+      # A re-run attempt that would send a program is refused, as in the college workflow: it pays again.
       - name: Price the extraction ($40 a run, Sam's standing go)
         id: price
         env:
           ONLY: ${{ github.event.inputs.only }}
-        run: python3 kb/_program_requirements_extract.py --only "$ONLY" --price --limit-usd 40
+          ATTEMPT: ${{ github.run_attempt }}
+        run: python3 kb/_program_requirements_extract.py --only "$ONLY" --price --limit-usd 40 --attempt "$ATTEMPT"
 
       - name: Extract and score
         if: steps.guard.outputs.run != 'no' && steps.price.outputs.go == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           ONLY: ${{ github.event.inputs.only }}
-          # The hard stop: the run's cost is summed as calls come back, and at $40 no further program is sent.
+          # The hard stop: no program is sent when the run's cost so far and the next program's estimate would
+          # pass $40. A call can cost more than its estimate, so the run can pass $40 by one call's overrun.
           CEILING: '40'
         run: python3 kb/_program_requirements_extract.py --only "$ONLY" --ceiling-usd "$CEILING"

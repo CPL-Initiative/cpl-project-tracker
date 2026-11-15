@@ -89,16 +89,45 @@ def load_sources(only: str = "") -> list[dict]:
     return out
 
 
+def _n(u: dict, *keys: str) -> float:
+    """The first of keys the usage carries as a number, else 0."""
+    for k in keys:
+        v = u.get(k)
+        if isinstance(v, (int, float)) and not isinstance(v, bool):
+            return v
+    return 0
+
+
+def usage_tokens(usage) -> tuple[float, float, float, float]:
+    """(input, output, cache read, cache write) tokens of a call's usage, in either shape the function passes
+    back: Anthropic's (input_tokens, output_tokens) or the OpenAI shape xAI answers in (prompt_tokens,
+    completion_tokens; COBIx on #3330, S654). A cached prompt token is counted at the input rate there, an
+    upper bound."""
+    u = usage if isinstance(usage, dict) else {}
+    return (_n(u, "input_tokens", "prompt_tokens"), _n(u, "output_tokens", "completion_tokens"),
+            _n(u, "cache_read_input_tokens"), _n(u, "cache_creation_input_tokens"))
+
+
 def cost(model: str | None, usage: dict | None) -> float | None:
-    """The call's price from its usage. A fallback model the table does not
-    price reads None rather than a wrong number."""
-    p, u = PRICE.get(model or ""), usage or {}
+    """The call's price from its usage, in either usage shape (usage_tokens). A fallback model the table does
+    not price reads None rather than a wrong number on its record; the hard stop prices it at the dearest rate
+    (call_charge in kb/_program_requirements_college.py)."""
+    p = PRICE.get(model or "")
     if not p:
         return None
-    return round((u.get("input_tokens", 0) * p["input"]
-                  + u.get("output_tokens", 0) * p["output"]
-                  + (u.get("cache_read_input_tokens") or 0) * p["cache_read"]
-                  + (u.get("cache_creation_input_tokens") or 0) * p["cache_write"]) / 1e6, 5)
+    inp, out, cr, cw = usage_tokens(usage)
+    return round((inp * p["input"] + out * p["output"] + cr * p["cache_read"] + cw * p["cache_write"]) / 1e6, 5)
+
+
+def dearest_cost(usage: dict | None) -> float:
+    """The usage at the dearest rate in the table, field by field: what an unpriced model's call counts toward
+    a hard stop."""
+    if not PRICE:
+        return 0.0
+    dear = {f: max(p[f] for p in PRICE.values()) for f in ("input", "output", "cache_read", "cache_write")}
+    inp, out, cr, cw = usage_tokens(usage)
+    return round((inp * dear["input"] + out * dear["output"] + cr * dear["cache_read"]
+                  + cw * dear["cache_write"]) / 1e6, 5)
 
 
 def call(src: dict, key: str, provider: str | None = None, model: str | None = None) -> dict:
@@ -350,16 +379,24 @@ def call_in_parts(src: dict, key: str, body: dict, first: dict | None = None,
 
 
 def charge(cost_usd, usage) -> float:
-    """What one call counts toward the hard stop: the college workflow's call_charge (an unpriced call
-    with usage counts at the dearest model's price)."""
+    """What one call counts toward the hard stop: the college workflow's call_charge (either usage shape; an
+    unpriced call counts at the dearest rate, and a call with no usage the per-program floor)."""
     import _program_requirements_college as C
     return C.call_charge(cost_usd, usage)
+
+
+def call_estimate() -> float:
+    """One program's share of the estimate the price step gates on: the default rate x the margin (W.price)."""
+    import _program_requirements_wave as W
+    return round(W.DEFAULT_COST_PER_PROGRAM * W.PRICE_MARGIN, 5)
 
 
 def price_main(args) -> int:
     """The estimate before any call (S653): the programs that would be sent x the default rate per program
     x the margin (kb/_program_requirements_wave.py's price()), against Sam's $40 limit a run. Writes go=
-    for the workflow's extraction step; calls nothing and needs no key."""
+    for the workflow's extraction step; calls nothing and needs no key. A re-run attempt that would send a
+    program is refused, as check_attempt refuses one in the college workflow: a re-run sends the same programs
+    and pays again (COBIx on #3327, S654)."""
     import _program_requirements_wave as W
     n = len([s for s in load_sources(args.only) if (s.get("coverage") or 0) >= MIN_COVERAGE])
     got = W.price(n, W.DEFAULT_COST_PER_PROGRAM, W.parse_limit(args.limit_usd), True)
@@ -367,7 +404,16 @@ def price_main(args) -> int:
           % (got["price_usd"], n, got["cost_per_program"], got["margin"], got["why"]), flush=True)
     if not got["within_limit"]:
         print("::error::the estimate $%.2f is over the $%.0f limit; nothing is sent" % (got["price_usd"], got["limit_usd"]))
-    W._output("go", "true" if got["go"] else "false")
+    refused = None
+    if n > 0:
+        try:
+            W.check_attempt(True, getattr(args, "attempt", "1"))
+        except W.Refused as exc:
+            refused = str(exc)
+    W._output("go", "true" if got["go"] and not refused else "false")
+    if refused:
+        print("::error::pilot extraction: %s" % refused, flush=True)
+        return 1
     return 0
 
 
@@ -377,8 +423,10 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--price", action="store_true",
                     help="price what would be sent against --limit-usd, write go= for the workflow, and call nothing")
     ap.add_argument("--limit-usd", default="40")
-    ap.add_argument("--ceiling-usd", default="", help="the hard stop: no further program is sent once the run's "
-                    "cost reaches it")
+    ap.add_argument("--ceiling-usd", default="", help="the hard stop: no program is sent once the run's cost "
+                    "and the next program's estimate would pass it")
+    ap.add_argument("--attempt", default="1", help="price: the workflow's run attempt; a re-run that would send "
+                    "a program is refused")
     args = ap.parse_args(argv)
     if args.price:
         return price_main(args)
@@ -390,11 +438,14 @@ def main(argv: list[str] | None = None) -> int:
     print("program requirements pilot, extraction: %d programs, writes nothing" % len(sources), flush=True)
     rows = []
     ceiling = float(args.ceiling_usd) if str(args.ceiling_usd or "").strip() else None
-    spent = 0.0
+    spent, est = 0.0, call_estimate()
     for src in sources:
-        if ceiling is not None and spent >= ceiling:
-            print("::warning::the run's cost $%.2f reached the $%.2f hard stop; %d programs not sent"
-                  % (spent, ceiling, len(sources) - len(rows)), flush=True)
+        # The hard stop (COBIx on #3327, S654): no program is sent when the run's cost so far and its estimate
+        # would pass the ceiling, so a run whose calls cost about their estimate stops at or under it. One call's
+        # actual cost can exceed its estimate, so a run can still pass the ceiling by that one call's overrun.
+        if ceiling is not None and spent + est > ceiling + 1e-9:
+            print("::warning::the run's cost $%.2f and the next program's estimate $%.2f would pass the $%.2f hard "
+                  "stop; %d programs not sent" % (spent, est, ceiling, len(sources) - len(rows)), flush=True)
             break
         t0 = time.time()
         got = call(src, key)

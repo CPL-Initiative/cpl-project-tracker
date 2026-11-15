@@ -536,8 +536,9 @@ finally:
 USAGE = {"input_tokens": 10000, "output_tokens": 2000}     # $0.08 at the priced model
 _m = next(iter(XT.PRICE))
 check(abs(XT.cost(_m, USAGE) - 0.08) < 1e-9 and C.call_charge(None, USAGE) == max(XT.cost(m, USAGE) for m in XT.PRICE)
-      and C.call_charge(0.02, USAGE) == 0.02 and C.call_charge(None, None) == 0.0,
-      "a call counts its price, or with usage and no price the most expensive model's price")
+      and C.call_charge(0.02, USAGE) == 0.02 and C.call_charge(None, None) == W.DEFAULT_COST_PER_PROGRAM,
+      "a call counts its price, or with usage and no price the most expensive model's price, or with no usage "
+      "the per-program floor (S654)")
 
 
 def _run_ceiling(ceiling, model):
@@ -642,7 +643,9 @@ try:
     XT.call, XT.score = _call, (lambda rec, *a, **k: score(True))
     os.environ["SUPABASE_SERVICE_KEY"] = "test"
     out1, srcs = _out("out1")
-    C.extract(out1, 0, 1, "81", 1, keep, None, 0.16)
+    # 01 and 03 cost $0.08 each; 02's errored call carries no usage and counts the $0.08 floor (S654), so the
+    # $0.24 ceiling holds back 04 and 05.
+    C.extract(out1, 0, 1, "81", 1, keep, None, 0.24)
     first = list(sent)
     C.file_run("Test College", out1, "81")
     filed_src = {x["control_number"]: x for x in json.load(open(os.path.join(keep, "sources.json")))}

@@ -2,14 +2,19 @@
 
 Sam's standing limit is $40 a college a run on the estimate (relayed by COBIx on #3111; conductor_mode,
 Settings). Until S653 the college workflow priced only a restaged read (sources_from), so a fresh step=read
-with extract=1 ran with neither the estimate gate nor the hard stop. This test holds two things:
+with extract=1 ran with neither the estimate gate nor the hard stop. This test holds three things:
 
 1. price() in kb/_program_requirements_wave.py: under the limit it goes, over it it stops with the figure, and
    extract=0 never goes but still prices.
 2. Every workflow step that calls a paid extraction (`_program_requirements_college.py extract`, or
    `_program_requirements_extract.py` without --price, the pilot's) is gated on a price step that runs
    before it unconditionally, by `steps.<price>.outputs.go == 'true'`, and passes a hard stop (--ceiling-usd)
-   that is never empty.
+   that is never empty, and takes its dispatch inputs through env:.
+3. The hard stop trips through the real usage price (S654; COBIx on #3330: xAI's OpenAI-shaped usage priced
+   $0, so the second reader's stop never tripped). Only the network call is stubbed. The pilot and the second
+   reader stop before a call when the cost so far and the next call's estimate would pass the ceiling, a call
+   with no usage counts the per-program floor, a pilot re-run that would send programs is refused, and a
+   second-reader --model the price table does not name needs a rate per record.
 
 Python with PyYAML (js-tests.yml installs it)."""
 import os
@@ -105,46 +110,163 @@ check(XP.main(["--price", "--limit-usd", "40"]) == 0 and _n > 0,
       "the pilot extraction prices its %d programs without a key or a call" % _n)
 if _gh is not None:
     os.environ["GITHUB_OUTPUT"] = _gh
-# The pilot extraction's hard stop: at $15 a call, the third call reaches $40 and no fourth is sent.
-_sent = []
-_call, _cost, _key = XP.call, XP.cost, os.environ.get("SUPABASE_SERVICE_KEY")
-XP.call = lambda src, key: _sent.append(src["control_number"]) or {"record": None, "model": "m", "usage": None}
-XP.cost = lambda model, usage: 15.0
-os.environ["SUPABASE_SERVICE_KEY"] = "test-not-a-key"
-try:
-    XP.main(["--ceiling-usd", "40"])
-finally:
-    XP.call, XP.cost = _call, _cost
-    if _key is None:
-        os.environ.pop("SUPABASE_SERVICE_KEY", None)
-    else:
-        os.environ["SUPABASE_SERVICE_KEY"] = _key
-check(len(_sent) == 3, "the pilot extraction stops at its $40 hard stop: %d calls sent at $15 each" % len(_sent))
-
-# The second reader (second-reader.yml): its price is free, and its hard stop is checked before each call with
-# the spend added after it (S653). Five records at $15 a call, one worker: three calls, and no fourth.
+# The second reader's price (second-reader.yml): free, it calls nothing.
 import _second_reader as SR  # noqa: E402
-_recs = [{"control_number": str(n), "college": "Nowhere", "title": "T%d" % n, "score": {"pass": False}}
-         for n in range(5)]
-_src = {"text": "x", "closed_list": [], "award": "A.A. Degree"}
-_saved = (SR.failing_records, SR.source_for, SR.OUT, XP.call, XP.cost)
-_sent2 = []
-with tempfile.TemporaryDirectory() as _tmp:
-    SR.failing_records = lambda slug: list(_recs)
-    SR.source_for = lambda capture_dir, record: dict(_src)
-    SR.OUT = _tmp
-    _gh = os.environ.pop("GITHUB_OUTPUT", None)
+_saved0 = (SR.failing_records, SR.source_for)
+SR.failing_records = lambda slug: [{"control_number": "1", "college": "Nowhere", "title": "T", "score": {"pass": False}}]
+SR.source_for = lambda capture_dir, record: {"text": "x", "closed_list": []}
+_gh = os.environ.pop("GITHUB_OUTPUT", None)
+try:
     check(SR.main(["--college", "Nowhere Test College", "--price", "--limit-usd", "40"]) == 0,
           "the second reader prices its records without a key or a call")
+finally:
+    SR.failing_records, SR.source_for = _saved0
     if _gh is not None:
         os.environ["GITHUB_OUTPUT"] = _gh
-    XP.call = lambda src, key, **kw: _sent2.append(1) or {"record": None, "model": "m", "usage": None}
-    XP.cost = lambda model, usage: 15.0
+
+# ── the hard stop through the real cost and call_charge (COBIx on #3330 and #3327, S654) ──────────
+# Only the network is stubbed (XP._post); the call, the usage's price (XP.cost), the charge (C.call_charge) and
+# the stop are the code's own. The expected figures are worked by hand from the price table, Opus 5.5 at $4 in
+# and $20 out per million tokens: xAI's usage of 200,000 prompt and 50,000 completion tokens is $0.80 + $1.00.
+import threading  # noqa: E402
+import time  # noqa: E402
+import _program_requirements_college as C  # noqa: E402
+_GROK = {"model": "grok-x", "usage": {"prompt_tokens": 200000, "completion_tokens": 50000}}
+check(XP.cost("claude-opus-5-5", {"prompt_tokens": 1_000_000, "completion_tokens": 100_000}) == 6.0
+      and XP.cost("claude-opus-5-5", {"input_tokens": 1_000_000, "output_tokens": 100_000}) == 6.0,
+      "a priced model's usage costs the same in xAI's shape (prompt/completion) as in Anthropic's")
+check(XP.cost("grok-x", _GROK["usage"]) is None and abs(C.call_charge(None, _GROK["usage"]) - 1.8) < 1e-9,
+      "an unpriced model's xAI-shaped usage reads None on its record and counts $1.80 toward the stop, never $0")
+check(C.call_charge(None, None) == W.DEFAULT_COST_PER_PROGRAM and C.call_charge(None, {}) == W.DEFAULT_COST_PER_PROGRAM
+      and C.call_charge(0.0, {"prompt_tokens": 0, "completion_tokens": 0}) == W.DEFAULT_COST_PER_PROGRAM,
+      "a call with no usage (an HTTP error, a timeout) counts the $%.2f per-program floor" % W.DEFAULT_COST_PER_PROGRAM)
+check(C.call_charge(0.0, {"prompt_tokens": 5}) > 0 and C.call_charge(0.02, {"input_tokens": 10}) == 0.02,
+      "a call whose usage carries tokens never counts $0; a positive price counts as given")
+
+
+def _net(answer, sent, pause=0.0):
+    """XP._post's stand-in: records each call and gives the same answer."""
+    lock = threading.Lock()
+
+    def post(body, key):
+        with lock:
+            sent.append(body.get("title"))
+        if pause:
+            time.sleep(pause)
+        return json.loads(json.dumps(answer))
+    return post
+
+
+def _pilot(answer, ceiling):
+    sent, saved, key = [], XP._post, os.environ.get("SUPABASE_SERVICE_KEY")
+    XP._post = _net(answer, sent)
+    os.environ["SUPABASE_SERVICE_KEY"] = "test-not-a-key"
     try:
-        SR.run("Nowhere Test College", "cap", None, False, "test-not-a-key", None, 1, 40.0)
+        XP.main(["--ceiling-usd", str(ceiling)])
     finally:
-        SR.failing_records, SR.source_for, SR.OUT, XP.call, XP.cost = _saved
-check(len(_sent2) == 3, "the second reader stops at its $40 hard stop: %d calls sent at $15 each" % len(_sent2))
+        XP._post = saved
+        if key is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = key
+    return len(sent)
+
+
+_EST = XP.call_estimate()
+check(abs(_EST - 0.10) < 1e-9, "one program's estimate is the $0.08 rate x the 1.25 margin, $0.10")
+# Calls that cost their estimate: $0.10 each (10,000 in, 3,000 out). Under a $0.25 stop two go ($0.20); a third
+# would make $0.30, so it is never sent. The check before the S654 fix (spent >= ceiling) sent three.
+_AT_EST = {"model": "claude-opus-5-5", "usage": {"input_tokens": 10000, "output_tokens": 3000}}
+_n2 = _pilot(_AT_EST, 0.25)
+check(_n2 == 2, "the pilot's calls at their estimate stop at or under the stop: %d sent of $0.10 each under $0.25" % _n2)
+# A call that costs more than its estimate ($15: 750,000 output tokens) passes the stop by that one call's overrun.
+_n3 = _pilot({"model": "claude-opus-5-5", "usage": {"output_tokens": 750000}}, 40)
+check(_n3 == 3 and 3 * 15.0 <= 40 + (15.0 - _EST) + 1e-9,
+      "a call dearer than its estimate passes $40 by at most that one call's overrun (%d calls, $%.2f)" % (_n3, 15.0 * _n3))
+# A call with no usage (a gateway timeout) counts the $0.08 floor: $0.08, $0.16, then $0.16 + $0.10 > $0.25.
+_n4 = _pilot({"error": "HTTP 504: gateway timeout", "http_status": 504}, 0.25)
+check(_n4 == 2, "the pilot counts a call with no usage at the floor, so the stop trips (%d sent)" % _n4)
+
+# The pilot's re-run check (COBIx on #3327 point 1): a re-run that would send a program is refused.
+_ghf = os.path.join(tempfile.mkdtemp(), "out.txt")
+_gh = os.environ.get("GITHUB_OUTPUT")
+os.environ["GITHUB_OUTPUT"] = _ghf
+
+
+def _go():
+    with open(_ghf) as fh:
+        lines = [x for x in fh.read().splitlines() if x.startswith("go=")]
+    open(_ghf, "w").close()
+    return lines[-1] if lines else None
+
+
+open(_ghf, "w").close()
+check(XP.main(["--price", "--limit-usd", "40", "--attempt", "2"]) == 1 and _go() == "go=false",
+      "attempt 2 of a pilot extraction that would send programs is refused and does not go")
+check(XP.main(["--price", "--limit-usd", "40", "--attempt", "1"]) == 0 and _go() == "go=true",
+      "attempt 1 prices and goes")
+check(XP.main(["--price", "--limit-usd", "40", "--attempt", "2", "--only", "no-such-program-zz"]) == 0,
+      "a re-run that would send nothing is never refused")
+_go()
+
+# The second reader, sending xAI's usage through the real price: the $1.00 stop trips after the first call.
+_recs = [{"control_number": str(n), "college": "Nowhere", "title": "T%d" % n, "score": {"pass": False}}
+         for n in range(20)]
+_src = {"text": "x", "closed_list": [], "award": "A.A. Degree", "title": "T", "college": "Nowhere"}
+_saved = (SR.failing_records, SR.source_for, SR.OUT, XP._post)
+
+
+def _second(answer, ceiling, workers, n=5, pause=0.0, model=None, rate=None):
+    sent = []
+    with tempfile.TemporaryDirectory() as tmp:
+        SR.failing_records = lambda slug: list(_recs[:n])
+        SR.source_for = lambda capture_dir, record: dict(_src, title=record["title"])
+        SR.OUT = tmp
+        XP._post = _net(answer, sent, pause)
+        try:
+            SR.run("Nowhere Test College", "cap", None, False, "test-not-a-key", model, workers, ceiling, rate)
+            with open(os.path.join(tmp, "second_nowhere_test.json")) as fh:
+                filed = json.load(fh)
+        finally:
+            SR.failing_records, SR.source_for, SR.OUT, XP._post = _saved
+    return sent, filed
+
+
+_s1, _f1 = _second(_GROK, 1.0, 1)
+check(len(_s1) == 1 and abs(_f1["charge_usd"] - 1.8) < 1e-9 and _f1["rows"][0]["second"]["cost_usd"] is None,
+      "the second reader on xAI's usage stops after its first call: %d sent, $%.2f counted toward the $1.00 stop"
+      % (len(_s1), _f1["charge_usd"]))
+# Four workers: the calls already in flight finish, so the overshoot is at most four calls.
+_s4, _f4 = _second(_GROK, 1.0, 4, n=10, pause=0.05)
+check(1 <= len(_s4) <= 4 and _f4["read"] == len(_s4),
+      "with four workers at most four calls go before the stop holds the rest (%d sent of 10)" % len(_s4))
+# No usage (a gateway cut the reply off): each call counts the $0.08 floor. Under $1.00, twelve go: after eleven
+# the run has counted $0.88 and $0.88 + $0.10 is within $1.00; after twelve, $0.96 + $0.10 is not.
+_s0, _f0 = _second({"error": "HTTP 504: gateway timeout", "http_status": 504}, 1.0, 1, n=20)
+check(len(_s0) == 12 and abs(_f0["charge_usd"] - 0.96) < 1e-9,
+      "the second reader counts a call with no usage at the floor: %d of 20 sent, $%.2f counted"
+      % (len(_s0), _f0["charge_usd"]))
+
+# The price under a model override: a model the table does not name is refused without a rate per record.
+SR.failing_records = lambda slug: list(_recs[:5])
+SR.source_for = lambda capture_dir, record: dict(_src)
+try:
+    check(SR.main(["--college", "Nowhere Test College", "--price", "--model", "grok-x"]) == 1 and _go() == "go=false",
+          "a --model the price table does not name is refused at the price step")
+    check(SR.main(["--college", "Nowhere Test College", "--price", "--model", "grok-x", "--rate-per-record", "0.5"]) == 0
+          and _go() == "go=true", "with a rate per record the override is priced at that rate")
+    check(SR.main(["--college", "Nowhere Test College", "--price", "--model", "grok-x", "--rate-per-record", "20"]) == 0
+          and _go() == "go=false", "five records at $20 with the margin ($125) are over the limit and do not go")
+    check(SR.main(["--college", "Nowhere Test College", "--price"]) == 0 and _go() == "go=true"
+          and SR.per_record_rate()[0] == W.DEFAULT_COST_PER_PROGRAM and "upper estimate" in SR.per_record_rate()[1],
+          "with no override the default rate stands and is named an upper estimate for the configured xAI model")
+finally:
+    SR.failing_records, SR.source_for = _saved[0], _saved[1]
+if _gh is None:
+    os.environ.pop("GITHUB_OUTPUT", None)
+else:
+    os.environ["GITHUB_OUTPUT"] = _gh
+
 
 # ── the workflows ────────────────────────────────────────────────────────────
 # Every command that calls the model Edge Function: the college script's extract step, the pilot extraction
@@ -204,6 +326,9 @@ for name in sorted(os.listdir(wf_dir)):
                 check(any(("_program_requirements_wave.py price" in c or FREE.search(c)) and "--limit-usd" in c
                           for c in commands(prun)), "%s: the price step prices against a limit" % where)
                 check(not ps.get("if"), "%s: the price step runs on every path (no if: on it)" % where)
+                # Dispatch inputs reach the shell through env:, never pasted into the run text (COBIx on #3330).
+                check("${{" not in prun and "${{" not in str(st.get("run") or ""),
+                      "%s: neither it nor its price step pastes an expression into its run text" % where)
             run = " ".join(paid)
             check(all("--ceiling-usd" in c for c in paid), "%s passes the hard stop on every paid command" % where)
             ceiling = re.search(r"--ceiling-usd\s+\"?\$\{?([A-Z_]+)", run)
