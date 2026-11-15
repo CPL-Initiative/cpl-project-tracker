@@ -215,3 +215,5 @@ what to do with it; long instructions go whole into `sources`, and every rebuild
 [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S520's side session)*.
 
 **The Chancellor's address** is on Pages with its film: lessons S531.
+
+**FILED (S661): the College Collections Plan** (Sam, in session: *"Make a Visual for the Moonshot plan and add it to the Library and call it 'College Collections Plan'"*): the #3111 v2 agreed final on one page at `library/college-collections-plan/` (source in the vault, `04-projects/cpl-initiative/college-collections-plan/`), record `college-collections-plan` (draft, seen by the team, not publicly listed; receipt `kb/receipts/library_college_collections_plan_s661_2026-11-15.sql`). The full College Collections ETA opens it in a new tab.
