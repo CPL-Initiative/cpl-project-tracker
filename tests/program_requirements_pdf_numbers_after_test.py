@@ -508,7 +508,7 @@ try:
     # The extraction keeps that passing record unless forced, and the filing keeps its source entry.
     import _program_requirements_extract as X
     calls = []
-    X.call = lambda src, key: calls.append(src["control_number"]) or {"error": "no model call in a test"}
+    X.call = lambda src, key, *a, **k: calls.append(src["control_number"]) or {"error": "no model call in a test"}
 
     def extract(force):
         out = tempfile.mkdtemp()
@@ -780,7 +780,7 @@ check(er and not er.get("named") and er.get("after_unbound") == "block_names_oth
 # passes, fails, absent}.
 import _program_requirements_extract as X  # noqa: E402
 saved_call = X.call
-X.call = lambda src, key: {"record": {"program": {"title": "new read"}}, "model": None, "usage": None}
+X.call = lambda src, key, *a, **k: {"record": {"program": {"title": "new read"}}, "model": None, "usage": None}
 os.environ.setdefault("SUPABASE_SERVICE_KEY", "test-only")
 BIO = [{"code": "BIOL 211"}, {"code": "CHEM 200A"}]
 BIO_TEXT = "Biology, AS\nBIOL 211 Cell Biology 4\nCHEM 200A General Chemistry 5\nControl Number: 11856\n"
@@ -858,7 +858,7 @@ check(matrix == 42 and not bad, "number-line route: an unbound or refused progra
 # End to end, capture_pdf -> extract -> file_run. The regression (round 4, finding 1): a block holding only
 # an unlisted program's heading ("Ballroom Dance Arts, AA") is filed refused, never pdf_pages with no text;
 # refused_passing names it; its filed record survives the run.
-X.call = lambda src, key: {"record": {"program": {"title": "new read"}}, "model": None, "usage": None}
+X.call = lambda src, key, *a, **k: {"record": {"program": {"title": "new read"}}, "model": None, "usage": None}
 
 
 def capture_extract_file(pages, gated, progs, course_of, filed):

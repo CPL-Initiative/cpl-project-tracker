@@ -82,7 +82,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Honors M-IDs and the honors_of field (design)](../reference/honors_of_design.md) | — | `honors_of_design.md` | 2026-11-14 |  |
 | [Knowledge Base & Unified Courses Curation — Build Status (CLAUDE.md offload)](../reference/kb_build_status.md) | — | `kb_build_status.md` | 2026-07-10 |  |
 | [M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway (CLAUDE.md offload)](../reference/mid_lifecycle.md) | — | `mid_lifecycle.md` | 2026-07-10 |  |
-| [Model spend — what calls a model, on which key, and how to measure it](../reference/model_spend.md) | — | `model_spend.md` | 2026-10-27 | 2026-10-27 |
+| [Model spend — what calls a model, on which key, and how to measure it](../reference/model_spend.md) | — | `model_spend.md` | 2026-10-27 | 2026-11-15 |
 | [Obsidian vault wiring (CLAUDE.md offload)](../reference/obsidian_vault_wiring.md) | — | `obsidian_vault_wiring.md` | 2026-08-28 | 2026-11-05 |
 | [Pipeline Reference — architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)](../reference/pipeline_reference.md) | — | `pipeline_reference.md` | 2026-07-10 |  |
 | [ROEP display gaps from structured fields — design](../reference/roep_display_structured_fields_design.md) | — | `roep_display_structured_fields_design.md` | 2026-11-14 | 2026-11-14 |

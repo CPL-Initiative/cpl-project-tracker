@@ -55,8 +55,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
+import _spend_meter as _M  # noqa: E402  (the one spend meter holds the standing limit, S655)
+
 MAX_COLLEGES = 8
-LIMIT_CEILING_USD = 40.0       # Sam's standing go, a college a run, on the estimate
+LIMIT_CEILING_USD = _M.STANDING_LIMIT_USD   # Sam's standing go, a college a run, on the estimate
                                # (cpl_memory sam-extraction-standing-go-40-per-college-2026-10-14)
 DEFAULT_COST_PER_PROGRAM = 0.08   # also the floor: a college's rate never prices below it
 PRICE_MARGIN = 1.25
@@ -237,15 +239,20 @@ def pages_share(capture: dict | None) -> dict:
             "why": ("%d of %d pages answered" % (answered, listed)) if share < PAGES_FLOOR else None}
 
 
-def price(would: int, cpp: float, limit: float, extract: bool, pages: dict | None = None) -> dict:
+def price(would: int, cpp: float, limit: float, extract: bool, pages: dict | None = None,
+          nothing_goes: bool = False) -> dict:
     """The estimate and the gate. Extraction goes only when asked, on a whole capture, with
-    something to send, and at a price within the limit."""
+    something to send, and at a price within the limit. nothing_goes (a fresh college read, S653):
+    with nothing new to send the extraction still goes, free, and refiles the records, sources and
+    capture as a read did before every extraction was priced (moved pages' addresses, catalog years)."""
     est = round(would * cpp * PRICE_MARGIN, 2)
     within = est <= limit + 1e-9
     if not extract:
         go, why = False, "extract 0: capture and price only"
     elif pages and pages.get("partial"):
         go, why = False, "partial capture: " + (pages.get("why") or "")
+    elif would <= 0 and nothing_goes:
+        go, why = True, "nothing new to read: the extraction refiles the read and sends no model call"
     elif would <= 0:
         go, why = False, "nothing to extract"
     elif not within:
@@ -274,19 +281,36 @@ def price_main(args) -> int:
     cpp, cpp_from = cost_per_program(load_records(os.path.join(C.COLLEGE_DIR, slug)))
     pages = pages_share(capture)
     extract = parse_extract(args.extract)
-    got = price(((capture.get("would_extract") or {}).get("programs")) or 0, cpp, parse_limit(args.limit_usd),
-                extract, pages)
+    # A fresh capture (the college workflow's step=read, S653) is priced the same. Its pages are reported but
+    # never gate it: the whole-capture proof is for a restaged artifact (sources_from), and a fresh read extracted
+    # without it before the price ran on every extraction. With nothing new to read it still goes, free.
+    fresh = str(getattr(args, "fresh", "0")).strip() == "1"
+    would = capture.get("would_extract") or {}
+    # A read dispatched with force= extracts those programs again though their pages are unchanged, beyond the
+    # capture's would_extract: each forced number not already on that list is priced too (an upper bound).
+    listed = {str(x.get("control_number")) for x in would.get("list") or []}
+    forced = C.forced(os.path.join(C.COLLEGE_DIR, slug), getattr(args, "force", "") or "") - listed
+    got = price((would.get("programs") or 0) + len(forced), cpp, parse_limit(args.limit_usd),
+                extract, None if fresh else pages, nothing_goes=fresh)
+    got["forced_priced"] = len(forced)
     got.update(cost_per_program_from=cpp_from, pages=pages)
     refused = None
     try:
-        check_attempt(extract, args.attempt)
+        # Only a run that would send something is held to one attempt: a re-run that sends nothing pays
+        # nothing, and refusing it would lose its capture's filing (S653 review).
+        if got["would_extract"] > 0:
+            check_attempt(extract, args.attempt)
     except Refused as exc:
         refused = str(exc)
         got.update(go=False, why=refused, rerun=True)
     C._write(os.path.join(args.out, "wave_price.json"), got)
     os.makedirs(os.path.dirname(os.path.abspath(args.write)), exist_ok=True)
     C._write(args.write, provisional_row(args.college, slug, args.run, got))
-    print("%s: %s" % (args.college, got["why"]))
+    print("%s: estimate $%.2f for %d programs at $%.4f each with the %.2f margin; %s"
+          % (args.college, got["price_usd"], got["would_extract"], got["cost_per_program"], got["margin"], got["why"]))
+    if extract and not got["go"] and not got["within_limit"]:
+        print("::error::%s: the estimate $%.2f is over the $%.0f limit; nothing is extracted"
+              % (args.college, got["price_usd"], got["limit_usd"]))
     _output("go", "true" if got["go"] else "false")
     if refused:
         print("::error::%s: %s" % (args.college, refused))
@@ -607,6 +631,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--college", default="")
     ap.add_argument("--extract", default="0")
     ap.add_argument("--limit-usd", default="40")
+    ap.add_argument("--fresh", default="0", help="price: 1 for a fresh college read: its pages never hold it, "
+                    "and with nothing new to read it goes, free")
+    ap.add_argument("--force", default="", help="price: the read's force=, whose programs extract again")
     ap.add_argument("--wave", default="")
     ap.add_argument("--ref", default=os.environ.get("GITHUB_REF_NAME", ""))
     ap.add_argument("--out", default="out")
