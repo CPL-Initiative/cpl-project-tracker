@@ -67,6 +67,19 @@ jobs:
         with:
           python-version: '3.x'
 
+      # The $40 gate (S655, card 10), first, before the deploy: cpl-chat returns no usage, so the stop is the run's
+      # worst case through the spend meter (kb/_model_run_gate.py): the smoke modes named on each side plus the two
+      # memory-briefing probes, each one model call of at most MAX_TOKENS out and a 100,000-token input allowance
+      # in, priced as Opus 4.8 ($5/$25, the dearest model that accepts her request), $0.7048 an answer. The A/B
+      # asks at most 56 answers ($39.47): 27 runs a side and the two probes. Every mode (blank modes=, 34 a side,
+      # 70 answers, $49.34) is over $40 and refused, so a full comparison is two dispatches, each naming its
+      # modes. Over $40 it exits 1 and no answer is asked; the probe step below, which runs always(), waits on it.
+      - name: Price the run ($40 gate)
+        id: price
+        env:
+          SMOKE_MODES: ${{ inputs.modes }}
+        run: python3 kb/_model_run_gate.py cpl-chat --script chatbox/smoke_test.sh --modes "$SMOKE_MODES" --passes 2 --extra 2
+
       - name: What we are about to compare
         run: |
           F=chatbox/supabase/functions/cpl-chat/index.ts
@@ -223,7 +236,7 @@ jobs:
         # `memory-briefing` is unknown, normalizes to null and takes the 1,000-
         # char conversational cap; on v58 it takes QUERY_CAP_BRIEFING. Sending a
         # long, self-identifying corpus shows which side is which.
-        if: always()
+        if: ${{ always() && steps.price.outcome == 'success' }}
         run: |
           ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM"
           # >1,000 characters of padding, then the real instruction LAST, so it

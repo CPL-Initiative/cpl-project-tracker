@@ -66,6 +66,15 @@ jobs:
         with:
           python-version: '3.x'
 
+      # The $40 gate (S655, card 10): cpl-chat returns no usage, so the stop is a worst case through the spend
+      # meter (kb/_model_run_gate.py): each answer is one model call of at most MAX_TOKENS out and a
+      # 100,000-token input allowance in, at the dearest rate. Over $40 the gate exits 1 before any answer. Two
+      # attempts are two answers.
+      # Its own step, ahead of the probe: a held run must never read as an outage (the probe's failure raises
+      # the issue below, which needs this step to have passed).
+      - name: Price the probe ($40 gate)
+        run: python3 kb/_model_run_gate.py cpl-chat --calls 2
+
       # TWO attempts, 60s apart, before declaring an outage. A single transient
       # 502 must not page anyone — an alert that cries wolf gets muted, and a
       # muted alert is the state we are already in.

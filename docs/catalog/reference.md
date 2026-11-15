@@ -82,7 +82,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Honors M-IDs and the honors_of field (design)](../reference/honors_of_design.md) | — | `honors_of_design.md` | 2026-11-14 |  |
 | [Knowledge Base & Unified Courses Curation — Build Status (CLAUDE.md offload)](../reference/kb_build_status.md) | — | `kb_build_status.md` | 2026-07-10 |  |
 | [M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway (CLAUDE.md offload)](../reference/mid_lifecycle.md) | — | `mid_lifecycle.md` | 2026-07-10 |  |
-| [Model spend — what calls a model, on which key, and how to measure it](../reference/model_spend.md) | — | `model_spend.md` | 2026-10-27 | 2026-10-27 |
+| [Model spend — what calls a model, on which key, and how to measure it](../reference/model_spend.md) | — | `model_spend.md` | 2026-10-27 | 2026-11-15 |
 | [Obsidian vault wiring (CLAUDE.md offload)](../reference/obsidian_vault_wiring.md) | — | `obsidian_vault_wiring.md` | 2026-08-28 | 2026-11-05 |
 | [Pipeline Reference — architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)](../reference/pipeline_reference.md) | — | `pipeline_reference.md` | 2026-07-10 |  |
 | [ROEP display gaps from structured fields — design](../reference/roep_display_structured_fields_design.md) | — | `roep_display_structured_fields_design.md` | 2026-11-14 | 2026-11-14 |
@@ -91,7 +91,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
 | [Stack scouting: one line per tool trial](../reference/stack_scouting.md) | — | `stack_scouting.md` | 2026-11-14 | 2026-11-14 |
 | [The canonical credential model: issuer on the title, assessor on the local exhibit](../reference/canonical_credential_model.md) | — | `canonical_credential_model.md` | 2026-11-11 | 2026-11-11 |
-| [The industry-credential watch agent](../reference/credential_watch_agent.md) | — | `credential_watch_agent.md` | 2026-09-30 | 2026-11-14 |
+| [The industry-credential watch agent](../reference/credential_watch_agent.md) | — | `credential_watch_agent.md` | 2026-09-30 | 2026-11-15 |
 | [The Library filer — every piece files itself to Drive](../reference/library_filer.md) | — | `library_filer.md` | 2026-10-06 | 2026-10-08 |
 | [The live-session banner — how a session announces itself, and the two things it cannot know](../reference/live_session_banner.md) | — | `live_session_banner.md` | 2026-09-10 | 2026-09-10 |
 | [Troubleshooting — dashboard, Pages, scrape, and the stop-hook false positives](../reference/troubleshooting.md) | — | `troubleshooting.md` | 2026-08-19 | 2026-08-19 |
