@@ -63,24 +63,13 @@ and the extraction gates; #3350 closed with a pointer) · #3344 `534a415c` (Sant
 Then Rule 8's `cpl_memory` query, the three-repo check, `list_sessions` if you have it (otherwise the open PRs and
 `main` since this handoff), `df -h /`, `git worktree list`, `python3 scripts/check_hooks_live.py`.
 
-## Conductor settings
+## Session settings
 
-Copied from `docs/reference/conductor_mode.md`, *Settings (Sam, 2026-11-11)*; Sam's latest change was 2026-11-11:
-
-- Conductor model: Fable 5.2 (`claude-fable-5-2`), working with COBIx (Sam, 2026-11-11, relayed by COBIx on #3110;
-  `cpl_memory` `sam-conductor-model-fable-5-2-2026-11-11`). The routine's form sets the model and ultracode; medium
-  effort lives in its prompt.
-- Ultracode on.
-- The conductor at medium effort.
-- Workers on Opus 5.5 (named in each Agent call, `model: opus`).
-- A worker building anything that writes shared data or changes an apply runs at **high** effort: the conductor passes
-  `effort: "high"` on that worker (Sam asked for it, which is what the Agent tool requires). Other workers run at the
-  default.
-- A review workflow uses **at most 9 agents in all**, readers and second readers together. Drop the second reader on
-  minor findings first.
-- **Cost limits** (relayed by COBIx on #3111, comment 6808460886; confirmed by the S639 relay ruling below): $40 per
-  college per run, on the estimate, for program-requirements extraction, and a separate $40 per college for SLOs, PLOs
-  and course objectives. The limit is per run and never a remaining pot. Paid runs go through the conductor.
+**Conductor mode is retired (Sam, 2026-11-15).** Work the queue yourself on Opus 5.5, as before 2026-11-11, at the
+effort you choose: no Fable conductor, no ultracode fan-out of workers
+([`scheduled_sessions`](reference/scheduled_sessions.md), *No conductor*). Sam halted the 10:12Z and 12:12Z firings of
+2026-11-15 over cost; #3356 and the branches they left are in the halted session's note, and nothing of theirs wrote
+shared data.
 
 ## Ledger (PR, head, state)
 

@@ -87,7 +87,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Pipeline Reference — architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)](../reference/pipeline_reference.md) | — | `pipeline_reference.md` | 2026-07-10 |  |
 | [ROEP display gaps from structured fields — design](../reference/roep_display_structured_fields_design.md) | — | `roep_display_structured_fields_design.md` | 2026-11-14 | 2026-11-14 |
 | [Sam's rulings — one place to look up what he has ruled, in his words](../reference/sam_rulings.md) | — | `sam_rulings.md` | 2026-11-14 | 2026-11-14 |
-| [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-11-12 |
+| [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-11-15 |
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
 | [Stack scouting: one line per tool trial](../reference/stack_scouting.md) | — | `stack_scouting.md` | 2026-11-14 | 2026-11-14 |
 | [The canonical credential model: issuer on the title, assessor on the local exhibit](../reference/canonical_credential_model.md) | — | `canonical_credential_model.md` | 2026-11-11 | 2026-11-11 |
