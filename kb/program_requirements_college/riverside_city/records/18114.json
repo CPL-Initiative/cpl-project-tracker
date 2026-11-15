@@ -44,37 +44,46 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 106,
+   "placed": 110,
    "listed": 110,
-   "share": 0.964,
-   "missing": [
-    "MAT11",
-    "MAT1A",
-    "MAT1B",
-    "MAT25"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATH11",
+     "listed": "MAT11",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATH25",
+     "listed": "MAT25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 3,
    "codes": [
     "CIS5",
     "HES1",
-    "MATH11",
-    "MATH25",
-    "MATHC2210",
-    "MATHC2220",
     "PSYC2H"
    ],
    "flagged": [
     "CIS5",
     "HES1",
-    "MATH11",
-    "MATH25",
-    "MATHC2210",
-    "MATHC2220",
     "PSYC2H"
    ],
    "pass": true
@@ -1335,6 +1344,6 @@
    "The page notes not all courses are offered at all three district colleges."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38095615434"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

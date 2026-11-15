@@ -44,34 +44,43 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 22,
    "listed": 27,
-   "share": 0.778,
+   "share": 0.815,
    "missing": [
     "EAR42",
     "GEG2",
     "GEG3",
     "HIS26",
-    "HIS6",
     "MATH26"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HIST1",
+     "listed": "HIS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "ART6",
     "ART6H",
-    "EDU1",
-    "HISTC1001"
+    "EDU1"
    ],
    "flagged": [
     "ART6",
     "ART6H",
-    "EDU1",
-    "HISTC1001"
+    "EDU1"
    ],
    "pass": true
   },
@@ -402,6 +411,6 @@
    "Codes recorded with hyphens as printed in the catalog."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 17,
-   "share": 0.941,
-   "missing": [
-    "ECON302"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON302",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ECONC2002"
-   ],
-   "flagged": [
-    "ECONC2002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -290,5 +291,6 @@
    "No careers are named in the visible section; the career list on page 434 belongs to the Cybersecurity degree."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

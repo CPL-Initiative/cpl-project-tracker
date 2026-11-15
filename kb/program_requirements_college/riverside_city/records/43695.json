@@ -50,6 +50,18 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HIST42",
+     "listed": "HIS42",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST44",
+     "listed": "HIS44",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -299,6 +311,6 @@
    "The page prints one Program Learning Outcomes list for this ADT; it is recorded as printed."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

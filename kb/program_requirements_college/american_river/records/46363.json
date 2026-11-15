@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 19,
    "listed": 19,
-   "share": 0.947,
-   "missing": [
-    "ARTH302"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ARTH302",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ARTHC1100"
-   ],
-   "flagged": [
-    "ARTHC1100"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -334,5 +335,6 @@
    "The 12-unit elective list continues across a repeated table header ('Course Code Course Title Units'); ARTNM 431 and ARTPH 305 were read as part of the same list."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

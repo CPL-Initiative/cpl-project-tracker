@@ -44,29 +44,34 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 219,
+   "placed": 221,
    "listed": 221,
-   "share": 0.991,
-   "missing": [
-    "AHS1",
-    "AHS2"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "AHS2",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
     "ARTH4",
-    "ARTHC1100",
-    "ARTHC1200",
     "THE46"
    ],
    "flagged": [
     "ARTH4",
-    "ARTHC1100",
-    "ARTHC1200",
     "THE46"
    ],
    "pass": true
@@ -1717,6 +1722,6 @@
    "The first program learning outcome is printed as written, including the apparent missing word ('skills (technique) one discipline')."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38095615434"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

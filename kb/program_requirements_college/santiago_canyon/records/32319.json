@@ -46,36 +46,47 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 13,
    "listed": 13,
-   "share": 0.615,
-   "missing": [
-    "PBLC150",
-    "PBLC152",
-    "PBLC86",
-    "PBLC87",
-    "PBLC88"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "PASV150",
+     "listed": "PBLC150",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "PASV152",
+     "listed": "PBLC152",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "PASV86",
+     "listed": "PBLC86",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "PASV87",
+     "listed": "PBLC87",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "PASV88",
+     "listed": "PBLC88",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 1,
    "codes": [
-    "PASV150",
-    "PASV152",
-    "PASV86",
-    "PASV87",
-    "PASV88",
     "PBLC51"
    ],
    "flagged": [
-    "PASV150",
-    "PASV152",
-    "PASV86",
-    "PASV87",
-    "PASV88",
     "PBLC51"
    ],
    "pass": true
@@ -318,7 +329,7 @@
    "Total units 21.0 is the program (major) total; no degree total or GE pattern is printed in this section."
   ]
  },
- "extracted_run": "43387912036",
+ "extracted_run": 43693830334,
  "source_sha": "189e3da1ff2acf85",
  "source_codes": [
   "BUS222",
@@ -330,5 +341,6 @@
   "PBLC70",
   "WATR140"
  ],
- "source_coverage": 0.615
+ "source_coverage": 0.615,
+ "read_run": "43387912036"
 }

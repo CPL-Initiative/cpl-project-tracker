@@ -46,25 +46,29 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 70,
+   "placed": 71,
    "listed": 72,
-   "share": 0.972,
+   "share": 0.986,
    "missing": [
-    "MATH225",
     "MATHC2210E"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "DATA100",
+     "listed": "MATH225",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "DATA100",
     "MATH180S"
    ],
    "flagged": [
-    "DATA100",
     "MATH180S"
    ],
    "pass": true
@@ -668,7 +672,7 @@
    "No program learning outcomes or careers are printed for this section."
   ]
  },
- "extracted_run": "43339249633",
+ "extracted_run": 43693830334,
  "source_sha": "8af404be9abe7864",
  "source_codes": [
   "ANTH101",
@@ -743,5 +747,6 @@
   "STATC1000H",
   "WATR155"
  ],
- "source_coverage": 0.986
+ "source_coverage": 0.986,
+ "read_run": "43339249633"
 }

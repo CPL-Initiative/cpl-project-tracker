@@ -44,43 +44,100 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 48,
+   "placed": 51,
    "listed": 51,
-   "share": 0.941,
-   "missing": [
-    "ECO7",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST11",
+     "listed": "HIS11",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST12",
+     "listed": "HIS12",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST14",
+     "listed": "HIS14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST15",
+     "listed": "HIS15",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST26",
+     "listed": "HIS26",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST28",
+     "listed": "HIS28",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST29",
+     "listed": "HIS29",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST31",
+     "listed": "HIS31",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST34",
+     "listed": "HIS34",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST44",
+     "listed": "HIS44",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 7,
    "codes": [
-    "ECONC2002",
     "ENGL14",
     "ENGL15",
     "ENGL25",
     "ETS14",
     "ETS15",
     "ETS28",
-    "ETS29",
-    "HISTC1001",
-    "HISTC1002"
+    "ETS29"
    ],
    "flagged": [
-    "ECONC2002",
     "ENGL14",
     "ENGL15",
     "ENGL25",
     "ETS14",
     "ETS15",
     "ETS28",
-    "ETS29",
-    "HISTC1001",
-    "HISTC1002"
+    "ETS29"
    ],
    "pass": true
   },
@@ -843,6 +900,6 @@
    "Note says not all courses are offered at all three district colleges."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38095615434"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

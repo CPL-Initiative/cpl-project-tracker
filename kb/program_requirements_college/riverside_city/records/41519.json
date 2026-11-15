@@ -44,24 +44,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "MAT1A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "MATHC2210"
-   ],
-   "flagged": [
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -348,6 +349,6 @@
    "The degree follows IGETC Plan C for general education. Program Learning Outcomes are printed for this degree."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

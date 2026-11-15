@@ -5,16 +5,19 @@
  "found": 71,
  "extracted": 71,
  "errors": 0,
- "passed_machine_checks": 51,
+ "passed_machine_checks": 54,
  "failed": {
   "coverage": 15,
   "invented": 0,
-  "arithmetic": 20,
+  "arithmetic": 17,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 4.68,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 4.68,
  "cost_per_program": 0.0659,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "04750",
@@ -62,5 +65,5 @@
    }
   }
  ],
- "run": "39006332820"
+ "run": "43691950026"
 }

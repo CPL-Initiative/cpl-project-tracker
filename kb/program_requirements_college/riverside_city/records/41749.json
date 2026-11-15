@@ -50,6 +50,38 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HIST14",
+     "listed": "HIS14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST15",
+     "listed": "HIS15",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST28",
+     "listed": "HIS28",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST31",
+     "listed": "HIS31",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST34",
+     "listed": "HIS34",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST44",
+     "listed": "HIS44",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -491,6 +523,6 @@
    "Degree requires 60 CSU-transferable units with Cal-GETC and minimum 2.0 GPA; major courses need a grade of C or better (or P)."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

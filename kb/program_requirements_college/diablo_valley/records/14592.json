@@ -46,30 +46,60 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 29,
    "listed": 29,
-   "share": 0.931,
-   "missing": [
-    "BIOSC101",
-    "BIOSC102"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL116",
+     "listed": "BIOSC116",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL117",
+     "listed": "BIOSC117",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL120",
+     "listed": "BIOSC120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL139",
+     "listed": "BIOSC139",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL140",
+     "listed": "BIOSC140",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIOSC102",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1001",
+     "listed": "BIOSC101",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
-    "BIOLC1000",
-    "BIOLC1001",
     "KINES240",
     "KINES246",
     "KNACT110B",
     "NUTRI120"
    ],
    "flagged": [
-    "BIOLC1000",
-    "BIOLC1001",
     "KINES240",
     "KINES246",
     "KNACT110B",
@@ -471,6 +501,6 @@
    "Titles printed for KINES252 ('Group Personal Training') and PH230 ('Advanced First Aid/EMR/CPR and Basic Life Support') differ slightly from the closed list titles."
   ]
  },
- "extracted_run": 43609976980,
- "read_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

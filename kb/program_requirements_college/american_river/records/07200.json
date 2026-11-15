@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 25,
+   "placed": 26,
    "listed": 26,
-   "share": 0.962,
-   "missing": [
-    "ECON302"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON302",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ECONC2002"
-   ],
-   "flagged": [
-    "ECONC2002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -364,7 +365,7 @@
    "Sections for A.A. in Retail Management, Marketing Essentials Certificate and Retail Management (WAFC) Certificate were ignored."
   ]
  },
- "extracted_run": "43212067552",
+ "extracted_run": 43693265189,
  "source_sha": "c88884072f56d0d3",
  "source_codes": [
   "ACCT101",
@@ -393,5 +394,6 @@
   "MKT312",
   "MKT314"
  ],
- "source_coverage": 0.962
+ "source_coverage": 0.962,
+ "read_run": "43212067552"
 }

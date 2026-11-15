@@ -52,6 +52,28 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL119",
+     "listed": "BIOSC119",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL130",
+     "listed": "BIOSC130",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL131",
+     "listed": "BIOSC131",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL146",
+     "listed": "BIOSC146",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -313,6 +335,6 @@
    "The text begins mid-sentence ('d to transfer.'), so part of the program description may be cut off; no careers are named in the visible text."
   ]
  },
- "extracted_run": 43609976980,
- "read_run": "43353452924"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

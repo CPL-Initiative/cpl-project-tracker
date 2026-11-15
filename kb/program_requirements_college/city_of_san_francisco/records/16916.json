@@ -46,28 +46,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 8,
    "listed": 8,
-   "share": 0.75,
-   "missing": [
-    "ECON1",
-    "ECON3"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON1",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "ACCT2",
-    "ECONC2001",
-    "ECONC2002"
+    "ACCT2"
    ],
    "flagged": [
-    "ACCT2",
-    "ECONC2001",
-    "ECONC2002"
+    "ACCT2"
    ],
    "pass": true
   },
@@ -252,5 +257,6 @@
    "The Certificate of Achievement section that follows was not used."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

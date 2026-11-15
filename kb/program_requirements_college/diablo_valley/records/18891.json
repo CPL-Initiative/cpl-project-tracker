@@ -52,6 +52,13 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL126",
+     "listed": "BIOSC126",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -252,6 +259,6 @@
    "The outcomes are from the Program Learning Outcomes list printed in this A.S. section."
   ]
  },
- "extracted_run": 43609976980,
- "read_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

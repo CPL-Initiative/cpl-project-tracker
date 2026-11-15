@@ -44,36 +44,69 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 122,
+   "placed": 126,
    "listed": 126,
-   "share": 0.968,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST1",
+     "listed": "HIS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2",
+     "listed": "HIS2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2H",
+     "listed": "HIS2H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST35",
+     "listed": "HIS35",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 20,
+   "count": 16,
    "codes": [
     "ADJ13",
     "ADJ14",
     "ADJ25",
     "EAR47",
-    "ECONC2001",
-    "ECONC2002",
     "HIST14",
     "HIST15",
     "HIST28",
     "HIST29",
     "HIST31",
     "HIST44",
-    "HISTC1001",
-    "HISTC1002",
     "HMS14",
     "POLS2H",
     "POLS3",
@@ -86,16 +119,12 @@
     "ADJ14",
     "ADJ25",
     "EAR47",
-    "ECONC2001",
-    "ECONC2002",
     "HIST14",
     "HIST15",
     "HIST28",
     "HIST29",
     "HIST31",
     "HIST44",
-    "HISTC1001",
-    "HISTC1002",
     "HMS14",
     "POLS2H",
     "POLS3",
@@ -1197,6 +1226,6 @@
    "The text begins mid-sentence ('n of academic disciplines...'); the start of the section introduction appears cut off."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38095615434"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

@@ -46,33 +46,40 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 24,
    "listed": 24,
-   "share": 0.833,
-   "missing": [
-    "CMST3",
-    "ECON1",
-    "ECON3",
-    "STAT1000E"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM3",
+     "listed": "CMST3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "STATC1000E",
+     "listed": "STAT1000E",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "COMM3",
-    "ECONC2001",
-    "ECONC2002",
-    "STATC1000E"
-   ],
-   "flagged": [
-    "COMM3",
-    "ECONC2001",
-    "ECONC2002",
-    "STATC1000E"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -392,5 +399,6 @@
    "Text after 'Total: 18.0-22.0' belongs to the Liberal Arts and Sciences Emphasis in Arts and Humanities AA and was ignored."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

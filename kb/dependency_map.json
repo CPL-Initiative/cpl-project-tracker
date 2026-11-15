@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1001,
+  "file_datasets": 1003,
   "external_services": 195,
-  "consumers": 600,
+  "consumers": 601,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -17693,6 +17693,13 @@
   "file:kb/program_requirements_reconcile.json": {
    "consumers": [
     {
+     "id": "script:kb/_course_id_rescore_estimate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
+    },
+    {
      "id": "script:kb/_course_id_route_census.py",
      "kind": "script",
      "direction": "read",
@@ -17715,6 +17722,26 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_reconcile_out/course_id_rescore_2026-11-15/estimate.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_id_rescore_estimate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 59
+    },
+    {
+     "id": "script:kb/_course_id_rescore_estimate.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 59
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/program_requirements_wave": {
@@ -26626,6 +26653,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/reconcile_window_fill_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/refresh_button_no_secret_test.py": {
    "consumers": [
     {
@@ -34525,6 +34565,7 @@
     "tests/program_source_census_test.py",
     "tests/program_requirements_pilot_test.py",
     "tests/course_id_route_test.py",
+    "tests/reconcile_window_fill_test.py",
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_extract_halt_test.py",
