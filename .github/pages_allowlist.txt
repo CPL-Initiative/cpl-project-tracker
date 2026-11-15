@@ -148,6 +148,7 @@ publish cloudflare-worker-proxy.js
 publish cobi_a11y.js
 publish cobi_admin_surface.js
 publish cobi_brand.js
+publish cobi_framed.js
 publish cobi_identity.js
 publish cobi_orgs.js
 publish cobi_refresh.js
