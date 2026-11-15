@@ -42,6 +42,9 @@
     skills: "kb/reference/industry_credential_skills.json" };
   var ST = { pr: null, refs: null, integ: null, skills: null };
   var PLAN_URL = "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3111#issuecomment-6808952144";
+  /* The College Collections Plan, the plan drawn as one page in the CPL Library (Sam, S661). It opens in a new tab:
+     it is a page of its own, wider than the side panel. */
+  var PLAN_PAGE = "library/college-collections-plan/";
   var BRIEF_URL = "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3360";
 
   /* ── constants the mock states, each with its source ── */
@@ -61,7 +64,7 @@
   var NEAR_COMPLETE = 0.9;
 
   var CHIP_TIPS = {
-    full: "Opens the full clock below, with more detail on each collection, plus the moonshot plan.",
+    full: "Opens the full clock, with more detail on each collection, plus the College Collections Plan.",
     p1: "Phase 1 is what COBI collects itself today from public college catalogs and course outlines: programs, course requirements, program learning outcomes, course SLOs and objectives, and credential skills. That work is how we build the Commons.",
     p2: "Phase 2 is connecting to partner data sources so Commons can use official, shared files instead of collecting everything college by college. None of these partner connections is fully in place yet.",
     p3: "Phase 3 is live connections to college and Chancellor's Office systems, so Commons can stay current and cut double work. None of these integrations is connected yet.",
@@ -699,9 +702,10 @@
     if (S.phase === "1") sec.appendChild(progress(B, M));
     sec.appendChild(datasets(B, S, P));
     sec.appendChild(levers(B, S, redraw));
-    sec.appendChild(el("section", { cls: "eta-sub", "aria-labelledby": "eta-plan-h" }, [el("h4", { id: "eta-plan-h", text: "Moonshot plan and brief" }),
-      el("p", { cls: "eta-p", text: "There is no single moonshot-plan document on main. The closest public source is the v2 agreed final on #3111. A Commons Plan view was decided and is not built yet; the link moves there once that view exists." }),
-      el("ul", { cls: "eta-links" }, [el("li", null, [el("a", { href: PLAN_URL, target: "_blank", rel: "noopener", text: "The moonshot plan, v2 agreed final (#3111, November 11, 2026)" })]),
+    sec.appendChild(el("section", { cls: "eta-sub", "aria-labelledby": "eta-plan-h" }, [el("h4", { id: "eta-plan-h", text: "The College Collections Plan" }),
+      el("p", { cls: "eta-p", text: "The plan behind this clock, on one page: what the Commons answers, its four parts, the top line, the three phases, the first slice and the scorecard." }),
+      el("ul", { cls: "eta-links" }, [el("li", null, [el("a", { href: PLAN_PAGE, target: "_blank", rel: "noopener", "data-eta-plan": "", text: "Open the College Collections Plan in a new tab" })]),
+        el("li", null, [el("a", { href: PLAN_URL, target: "_blank", rel: "noopener", text: "Its source, the v2 agreed final on #3111 (November 11, 2026)" })]),
         el("li", null, [el("a", { href: BRIEF_URL, target: "_blank", rel: "noopener", text: "The ETA clock brief (#3360, November 15, 2026)" })])])]));
     sec.appendChild(el("section", { cls: "eta-sub", "aria-labelledby": "eta-real-h" }, [el("h4", { id: "eta-real-h", text: "What is real, and what is not dated" }),
       el("p", { cls: "eta-p", text: "Real, from committed files: the Active programs complete and their daily series, the live read's SLO, objective and course counts, each college's counts, the references' counts, the integrations by status, and the credential skills by harvest day. The Soonest and Latest program dates are computed from that headline series." }),
