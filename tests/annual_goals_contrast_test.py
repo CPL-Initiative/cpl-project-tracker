@@ -43,7 +43,7 @@ def pair(aid, name, kind):
     for rt in ("GOAL", "STRETCH"):
         r = {k: 0 for k in YEAR_KEYS}
         r.update({"activity_id": aid, "name": name, "row_type": rt, "kind": kind,
-                  "description": "", "current": None})
+                  "description": "", "cur_2025_26": None})
         rows.append(r)
     return rows
 

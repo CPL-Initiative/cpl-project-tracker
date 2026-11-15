@@ -51,8 +51,9 @@ def wg(aid, rtype, yrs, curs=(None,) * 5, current=None):
 
 
 ROWS = [
-    # Manual: 2026-27 set; 2025-26 sits in the one-column `current` it replaced;
-    # 2027-28 holds a stored 0, which the tab prints blank.
+    # Manual: 2026-27 set; 2025-26 sits only in the one-column `current` the cur_*
+    # columns replaced, which nothing reads since S653b (the column is dropped in a
+    # second step); 2027-28 holds a stored 0, which the tab prints blank.
     wg("3.9", "GOAL", (0, 2, 4, 4, 4), curs=(None, 3, 0, None, None), current="1"),
     wg("3.9", "STRETCH", (0, 4, 8, 8, 8)),
     # Manual: last year set, this year blank -> this year blank, never last year's.
@@ -101,7 +102,8 @@ check("_build_wg_ladder derives no Current (the tab's rule is the one place)",
 
 # ── manual rows ──
 check("3.9: each year's Current is its own cur_<year> (2026-27 = 3)", cur("3.9", "2627") == "3")
-check("3.9: 2025-26 reads the one-column `current` it replaced", cur("3.9", "2526") == "1")
+check("3.9: the legacy one-column `current` is ignored; 2025-26 reads cur_2025_26 alone (blank) (S653b)",
+      cur("3.9", "2526") == "")
 check("3.9: a stored 0 is blank, as the tab prints it", cur("3.9", "2728") == "")
 check("3.9: a year with no Current is blank", cur("3.9", "2829") == "" and cur("3.9", "2930") == "")
 check("2.2: last year's Current stays under last year; this year is blank",

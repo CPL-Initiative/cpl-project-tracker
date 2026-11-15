@@ -232,13 +232,16 @@ check("the editor's controls are underlined words: no border, no fill, 24px tall
 check("resource titles reach 24px", /\.res a\.res-title \{[^}]*min-height: 24px/.test(CSS));
 check("team emails reach 24px", /\.person \.pe a \{[^}]*min-height: 24px/.test(CSS));
 check("links in running text get a 24px pressable box without moving the line",
-  /\.mh-text \.sub a, \.note a, figure figcaption a, h3\.h-sub a \{ padding-block: 5px; \}/.test(CSS));
+  /\.note a, figure figcaption a, h3\.h-sub a \{ padding-block: 5px; \}/.test(CSS));
+// The map link left the masthead for the header (Sam, S653b, 2026-11-14), where it is a 25px box.
+check("the header's map link is a 25px box",
+  /\.cplh-page > a \{ display: inline-flex; align-items: center; min-height: 25px;/.test(CSS));
 check("the Print or save menu lies flat on a phone instead of floating over the page",
   /@media \(max-width: 560px\) \{ \.save-menu-list \{ position: static;/.test(CSS));
 const GLYPH = /[\u{1F300}-\u{1FAFF}\u2190-\u21FF\u2300-\u23FF\u2600-\u27BF\u2B00-\u2BFF\u229E-\u22A1]/u;
 check("the toolbar's controls are words (the Curate pencil is one of the 26 Sam kept)",
-  [...d.querySelectorAll(".mh-tools button, .mh-tools summary")].filter((b) => b.id !== "btn-curate")
-    .every((b) => !GLYPH.test(b.textContent)) &&
+  [...d.querySelectorAll(".cplh-page button, .cplh-page summary")].filter((b) => b.id !== "btn-curate")
+    .every((b, i, all) => all.length >= 4 && !GLYPH.test(b.textContent)) &&
   /btn\.textContent = anyOpen \? 'Expand all' : 'Collapse all';/.test(JS));
 
 // ── (g) no phantom tokens (S352) ──
@@ -314,7 +317,7 @@ check("the program reads CPL Initiative, outside Sam's title",
     sel.split(",").map((s) => s.trim()).some((s) => /(^|[\s>+~])a([.:#\[]|$)|\.skip-link/.test(s) && OPT_OUT.indexOf(s) < 0));
   check("(i1) CSS: only the Contents list, resource titles and the skip link drop the underline" +
     (offenders.length ? " (also: " + offenders.map((r) => r[0]).join(" | ") + ")" : ""), offenders.length === 0);
-  const prose = [...d.querySelectorAll("main p a, main li a, main figcaption a, main .note a, main h3 a, .masthead .sub a, footer a")];
+  const prose = [...d.querySelectorAll("main p a, main li a, main figcaption a, main .note a, main h3 a, .cplh-page > a, footer a")];
   const optedOut = prose.filter((a) => a.matches(OPT_OUT.join(", ")));
   check("(i1) every link in running text (" + prose.length + ") keeps the underline: none wears an opt-out selector",
     prose.length >= 21 && optedOut.length === 0);
@@ -385,16 +388,19 @@ check("the program reads CPL Initiative, outside Sam's title",
 }
 
 //  (i4) ONE HEADER ROW (Sam, 2026-10-30). The sticky bar above the masthead is
-//       gone: the title carries "Fact Sheet", the tools sit under it in a named
-//       group, Save as Word lives in the Print or save menu beside Print / Save
-//       PDF, and Ask Sierra is the side bar's chip (no button of the page's own).
+//       gone: the title carries "Fact Sheet", Save as Word lives in the Print or
+//       save menu beside Print / Save PDF, and Ask Sierra is the side bar's chip
+//       (no button of the page's own). The tools then moved from under the title
+//       into the public header, a named group (Sam, S653b, 2026-11-14: "2 is
+//       right. Can you move all the buttons and map website link and update chip
+//       all into the header to clean up the title?").
 {
   check("(i4) no action bar above the masthead", !d.querySelector(".actionbar") && !d.querySelector(".ab-title"));
   check("(i4) the title names the fact sheet, with no eyebrow over it",
     /Credit for Prior Learning \(CPL\) Initiative Fact Sheet/.test(d.querySelector(".masthead h1").textContent) &&
     !d.querySelector(".masthead .eyebrow"));
-  const tools = d.querySelector(".masthead .mh-tools");
-  check("(i4) the tools sit under the title in a named group",
+  const tools = d.querySelector("header.cplh .cplh-page");
+  check("(i4) the tools sit in the header in a named group",
     !!tools && tools.getAttribute("role") === "group" && !!tools.getAttribute("aria-label") &&
     !!tools.querySelector("#live-chip") && !!tools.querySelector("#btn-collapse-all"));
   const menu = tools && tools.querySelector("details.save-menu");

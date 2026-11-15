@@ -52,7 +52,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
    per open branch from its PR diff and the ledger. `SendMessage` to a worker's name nudges it or gives it its next task.
 5. `git worktree list` and `df -h /home/user` before spawning. A locked worktree whose worker is not in `ListAgents`
    is dead: push any unpushed commits from it, then `git worktree unlock`, `git worktree remove --force`, `git worktree
-   prune`. Each checkout is 4.4 GB.
+   prune`. Each checkout is 4.4 to 4.7 GB. **Three checkouts at once is the ceiling** (S653: four filled the disk twice
+   in ten minutes); a read-only task (a review, a count) takes no worktree, and nobody writes a tar. Remove a checkout
+   only when its worker is finished for good: a worker cannot be resumed once its checkout is gone.
 6. `python3 kb/_context_budget.py`. Then read the COBIx threads #3110 and #3111 to their last comment, and every issue
    or PR COBIx touched today (search `commenter:cobi-cto updated:>=<today>`), and read them again at every wake. Before
    merging any PR, read its own comments to the last page: a reviewer's note on the PR thread is a finding.
@@ -160,6 +162,51 @@ at the top of each piece of work so Sam can change the dial before it runs.
   the handoff, then gives the one opening line (`CLAUDE.md`, *Sign off*).
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
+- A worker's PR subscribes the session when the worker opens it. **Unsubscribe from a worker's PR at once** and gate it
+  at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
+- A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
+  measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S653, and what worked
+
+- Four worker checkouts (4.7 GB each) filled the disk twice within ten minutes, and one worker pushed through the GitHub
+  API with `check_generated.sh` unrun. Three checkouts is the ceiling; a read-only task takes no worktree; never write a
+  tar (`p-disk-three-checkouts-s653`).
+- The Riverside City diagnosis flipped three times: `cq_distinct` blamed (S652), cleared, blamed again from one
+  capture's counts, then cleared by a capture on instrumented code (#3311). The fault was the S646 claim rule (#3324).
+  Instrument the code and run it before fixing (`p-diagnosis-flipped-three-times-s653`).
+- Five readers on #3312 checked scoring and none ran the page finder; COBIx found the capture-path gap. Name each code
+  path in the review brief, and remember a restaged run loads no page, so it proves the scorer only
+  (`p-reviewers-missed-the-capture-path-s653`).
+- Two tests took the rule's own output as truth (#3324's `GE_ALLOWED`; #3315's recall "right" was pairs minus a wrong
+  list). Expected answers come from a person or an independent derivation (`p-snapshot-test-pins-the-rule-s653`;
+  [note](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md)).
+- `sources_from` was given the day's reconcile run, not the run that captured the pages (Moreno Valley 38111056537); the
+  guard refused it (`p-sources-from-wants-the-capture-run-s653`).
+- Each PR subscription notice cost about 8,000 tokens, and workers' PRs subscribed the session: context went 16% to 73%
+  in 100 minutes. Unsubscribe from a worker's PR at once (`p-subscription-notices-cost-context-s653`).
+- A worker's comment opened "@COBIx", not his login (`cobi-cto`); it was edited out
+  (`p-at-mention-in-worker-comment-s653`).
+- A worker could not be resumed after its checkout was removed (`p-worker-not-resumable-after-worktree-removed-s653`).
+- Worked: one finding list per PR, with a refuter; replacing a design at the second recurrence of a finding class
+  (`would_join` to a trial check; the GE sibling rule; Honors step 2); splitting the safe part of a data write off
+  (Honors step 1, #3329) so it could land; `pr-gate` before each merge; two sessions from one opening line agreeing one
+  writer per file by message before either wrote (`d-two-sessions-one-writer-s653`).
+
+## What went wrong in S653b, and what worked
+
+- A PR that conflicts with `main` starts no `pull_request` run: `get_check_runs` reads 0 and the state is `dirty`. Merge
+  `main` into it first (`p-dirty-pr-starts-no-ci-s653b`).
+- Every PR that adds a test or a workflow rebuilds the dependency map, so each merge put the other open PRs in conflict:
+  five PRs cost four extra merges of `main`. Merge in sequence and bring only the next one up to `main`
+  (`p-dependency-map-conflicts-serial-merges-s653b`).
+- `list_events` on a busy session returned about 40,000 tokens of subagent events and thinking signatures. Ask for few
+  events, or read the saved file by script (`p-list-events-floods-context-s653b`).
+- Worked: one `send_message` before any write settled the split with the older session in a minute
+  (`d-two-sessions-one-writer-s653`); briefs as scratchpad files kept workflow arguments and completion notices small; a
+  clean-up stage at the end of each task freed its checkout, so the disk never held more than three; reading each PR's
+  thread in the same step as its check runs caught COBIx's reviews on #3332 and #3334 before the merge. The second
+  session's subscription notice for each new PR costs about 3,000 tokens.
 
 ## What went wrong in S652, and what worked
 
