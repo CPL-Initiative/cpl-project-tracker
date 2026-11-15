@@ -167,6 +167,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S655, and what worked
+
+- The 06:12Z firing of 2026-11-15 (SkyCurlew) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 04:20Z) and `main` at handoff 655's closing note (`e6e906ec`) were the one-writer check, the daily run was dispatched at 06:14Z, and this PR declared the queue at 06:16Z.
+
 ## What went wrong in S654, and what worked
 
 - The `worker` agent type always creates a worktree, so a fourth worker cannot be a `worker`. A general-purpose agent
