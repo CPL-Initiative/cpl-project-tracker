@@ -207,7 +207,11 @@
     var H = headlineSeries(pr), days = Object.keys(H).sort(), last = days[days.length - 1];
     if (!last) return null;
     var asOf = dnum(last), h = H[last], at = function (n) { var x = H[dstr(n)]; return x ? x.complete : null; };
-    var c7 = at(asOf - 7), c14 = at(asOf - 14);
+    /* A missed build day must not blank a pace (COBIx on #3371): each window ends on the closest earlier day that has a
+       count, and its pace divides by the days it really spans. */
+    var back = function (n) { for (var k = n; k >= n - 7; k--) { if (at(k) != null) return k; } return null; };
+    var d7 = back(asOf - 7), d14 = d7 == null ? null : back(d7 - 7);
+    var c7 = d7 == null ? null : at(d7), c14 = d14 == null ? null : at(d14);
     var live = (M && M.live) || {}, st = live.statewide || {}, oc = st.outcomes || {}, pc = st.program_courses || {};
     var universe = pc.active_courses || 0;
     var bySkill = skillsByDay(sk), bars = [];
@@ -218,6 +222,7 @@
     return {
       asOf: asOf, written: (pr && pr.written_at) || "", active: h.active, complete: h.complete, remaining: Math.max(0, h.active - h.complete),
       pace: { soonest: c7 == null ? null : h.complete - c7, latest: c7 == null || c14 == null ? null : c7 - c14 },
+      span: { soonest: d7 == null ? null : asOf - d7, latest: d14 == null ? null : d7 - d14 },
       slo: { have: oc.slo_courses_on_active || 0, universe: universe }, obj: { have: oc.objective_courses_on_active || 0, universe: universe },
       liveAt: live.read_at || "", bars: bars, colleges: collegeRows(M)
     };
@@ -233,6 +238,13 @@
         c: pc.active_courses || 0, sl: oc.slo_courses_on_active || 0, o: oc.objective_courses_on_active || 0,
         sn: q.state === "none" || q.state === "held", on: c.objectives_printed === false };
     }).filter(Boolean).sort(function (x, y) { return x.name.localeCompare(y.name); });
+  }
+  /* A window's pace in words: its count and its days, or why it cannot date (a fall reads apart from a gap). */
+  function paceWords(B, m) {
+    var n = B.pace[m], d = B.span[m];
+    if (n == null) return "a pace the headline series cannot date";
+    if (n <= 0) return "no net progress (" + fmt(n) + " in " + d + " days)";
+    return fmt(n) + " in " + d + " days";
   }
   function nearComplete(c) { if (c.a <= 0) return c.r <= 0; var f = c.p / c.a; return f >= NEAR_COMPLETE || (c.r <= 8 && f >= 0.85); }
 
@@ -275,7 +287,7 @@
   /* The Phase 1 date: the latest of programs, course SLOs and course objectives (a college dates its programs only). */
   function phase1(B, S, college) {
     var mode = S.mode, asOf = B.asOf, fxP = effects(S, "programs", asOf, false);
-    var dailyP = B.pace[mode] == null ? 0 : B.pace[mode] / 7;
+    var dailyP = B.pace[mode] == null ? 0 : B.pace[mode] / B.span[mode];
     if (college) dailyP = B.active > 0 ? dailyP * college.a / B.active : 0;
     var remP = college ? college.r : B.remaining;
     var parts = [{ id: "programs", name: "programs and requirements", est: false, now: finish(remP, dailyP, fxP, asOf), was: finish(remP, dailyP, [], asOf), fx: fxP }];
@@ -294,7 +306,7 @@
       return { day: max, setters: setters, est: setters.some(function (p) { return p.est; }) };
     }
     var now = latest("now"), was = latest("was");
-    return { parts: parts, day: now.day, setters: now.setters, est: now.est, moved: now.day != null && was.day != null && now.day !== was.day,
+    return { parts: parts, day: now.day, setters: now.setters, est: now.est, noProgress: B.pace[mode] != null && B.pace[mode] <= 0 && B.remaining > 0, moved: now.day != null && was.day != null && now.day !== was.day,
       late: lateHint(now.day, parts.reduce(function (a, p) { return a.concat(p.fx); }, [])) };
   }
 
@@ -402,7 +414,7 @@
   function headlineLabel(P, college) {
     if (college && college.r <= 0) return "Complete";
     if (college && nearComplete(college) && !P.moved) return pctWord(college.p, college.a) + ", " + leftWord(college.r);
-    if (P.day == null) return "pace not measured yet";
+    if (P.day == null) return P.noProgress ? "no net progress this week" : "pace not measured yet";
     var s = longDate(P.day) + (P.est ? " est." : "");
     return college ? "estimated " + s : s;
   }
@@ -428,7 +440,8 @@
       LEVERS.filter(function (l) { return l.phase === phase; }).forEach(function (l) {
         var b = chip(l.short, S.on[l.id], function () {
           S.assumptions = false;
-          if (S.on[l.id] && S.open === l.id) { S.on[l.id] = false; S.open = null; }
+          /* On turns off in one click, as in the Levers row (COBIx on #3371); a click that turns it on opens its popover. */
+          if (S.on[l.id]) { S.on[l.id] = false; if (S.open === l.id) S.open = null; }
           else { S.on[l.id] = true; S.open = l.id; }
           redraw(l.id);
         }, { "data-eta": l.id, "aria-expanded": S.open === l.id ? "true" : "false" });
@@ -506,10 +519,16 @@
       f.slo = stalledFactor(Math.max(0, B.slo.universe - B.slo.have), share); f.objectives = stalledFactor(Math.max(0, B.obj.universe - B.obj.have), share);
     });
     var fine = l.id === "unblockcatalogs" || l.id === "unblockoutlines";
+    /* An Unblock chip's factor cannot pass what unblocking every stalled part would give (COBIx on #3371). */
+    var all = function (list) { return list.reduce(function (a, x) { return a + x.share; }, 0); };
+    var cap = { programs: l.id === "unblockcatalogs" ? stalledFactor(CATALOG_GAP_CENSUS, all(CATALOG_BLOCK_PARTS)) : l.id === "unblockoutlines" ? 1 : PACE_CAP,
+      slo: l.id === "unblockoutlines" ? stalledFactor(Math.max(0, B.slo.universe - B.slo.have), all(OUTLINE_BLOCK_PARTS)) : l.id === "unblockcatalogs" ? 1 : PACE_CAP,
+      objectives: l.id === "unblockoutlines" ? stalledFactor(Math.max(0, B.obj.universe - B.obj.have), all(OUTLINE_BLOCK_PARTS)) : l.id === "unblockcatalogs" ? 1 : PACE_CAP };
     function slider(label, key, keys) {
-      var r = el("input", { type: "range", min: "1", max: "8", step: fine ? "0.01" : "0.1", value: String(f[key]), "data-factor": key, "aria-label": label });
+      if (cap[key] <= 1) return;
+      var r = el("input", { type: "range", min: "1", max: String(cap[key]), step: fine ? "0.01" : "0.1", value: String(f[key]), "data-factor": key, "aria-label": label });
       var lab = el("label", { cls: "eta-slider" }, [el("span", { text: label + " " + factorWord(f[key]) }), r]);
-      r.addEventListener("change", function () { keys.forEach(function (k) { f[k] = Number(r.value); }); redraw(l.id); });
+      r.addEventListener("change", function () { keys.forEach(function (k) { f[k] = Math.min(Number(r.value), cap[k]); }); redraw(l.id); });
       pop.appendChild(lab);
     }
     slider("Catalog programs", "programs", ["programs"]);
@@ -647,9 +666,9 @@
       sw.appendChild(chip(p[1], S.phase === p[0], function () { S.phase = p[0]; redraw("phase-" + p[0]); }, { "data-eta": "phase-" + p[0] }));
     });
     sec.appendChild(sw);
-    var pr = function (m) { return B.pace[m] == null ? "a pace the headline series cannot date" : fmt(B.pace[m]); };
+    var pr = function (m) { return paceWords(B, m); };
     sec.appendChild(el("p", { cls: "eta-callout" }, [el("strong", { text: "Projections, not partner commitments. " }), S.phase === "1"
-      ? "The Phase 1 date is the latest of programs and requirements, course SLOs, and course objectives. Programs are dated from the committed headline series (" + fmt(B.complete) + " of " + fmt(B.active) + " complete): Soonest uses the 7-day pace of " + pr("soonest") + ", Latest the 7 days before it (" + pr("latest") + "). Course SLOs and objectives have no day-by-day count, so their dates are estimates. Colleges and partners should not read a lever as a promise."
+      ? "The Phase 1 date is the latest of programs and requirements, course SLOs, and course objectives. Programs are dated from the committed headline series (" + fmt(B.complete) + " of " + fmt(B.active) + " complete): Soonest uses the latest week's pace (" + pr("soonest") + "), Latest the week before it (" + pr("latest") + "). Course SLOs and objectives have no day-by-day count, so their dates are estimates. Colleges and partners should not read a lever as a promise."
       : "Phase 2 and Phase 3 are dated only when a partner or college feed has a start date in the registry. None of those feeds is dated today, so this phase's completion is not dated."]));
     var grid = el("div", { cls: "eta-grid" });
     function cell(h, v, d, key) { grid.appendChild(el("div", { cls: "eta-cell", "data-cell": key }, [el("h4", { text: h }), el("p", { cls: "eta-v", text: v }), d ? el("p", { cls: "eta-note", text: d }) : null])); }
@@ -708,7 +727,7 @@
       var part = function (id) { return P.parts.filter(function (p) { return p.id === id; })[0]; };
       var est = function (id) { var p = part(id); return p && p.now.day != null ? "Est. " + longDate(p.now.day) + ". Not a measured pace." : "Pace not measured yet"; };
       var pp = ST.pr && ST.pr.harvest && ST.pr.harvest.parts || {}, plo = (pp.outcomes || {}).plo, cat = (pp.links || {}).catalog;
-      rows = [["Program requirements, Active", fmt(B.complete) + " of " + fmt(B.active), (B.pace.soonest == null ? "Not dated" : fmt(B.pace.soonest) + " in the 7 days through " + longDate(B.asOf)) + (B.pace.latest == null ? "" : "; " + fmt(B.pace.latest) + " in the 7 days before"), part("programs").now.day != null ? longDate(part("programs").now.day) + (part("programs").now.moved ? " (projected)" : "") : "Pace not measured yet"],
+      rows = [["Program requirements, Active", fmt(B.complete) + " of " + fmt(B.active), "Soonest: " + paceWords(B, "soonest") + " through " + longDate(B.asOf) + "; Latest: " + paceWords(B, "latest") + " before that", part("programs").now.day != null ? longDate(part("programs").now.day) + (part("programs").now.moved ? " (projected)" : "") : "Pace not measured yet"],
         ["Course SLOs on Active programs", fmt(B.slo.have) + " of " + fmt(B.slo.universe), "No day-by-day count. Est. about " + fmt(EST_DAILY[S.mode]) + " courses a night at the " + (S.mode === "soonest" ? "sooner" : "later") + " rate.", est("slo")],
         ["Course objectives on Active programs", fmt(B.obj.have) + " of " + fmt(B.obj.universe), "No day-by-day count; read in the same pass as SLOs.", est("objectives")],
         ["Program PLOs", plo ? fmt(plo[0]) + " of " + fmt(plo[1]) : "TBA", "Pace not measured yet", "Pace not measured yet"],
@@ -759,7 +778,7 @@
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Phase" }), el("p", { text: "Phase 1, current collection" })]),
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Soonest date" }), el("p", { text: lbl(P) })]),
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Latest date" }), el("p", { text: lbl(Q) })]),
-      el("div", { cls: "eta-cell" }, [el("h4", { text: "Pace" }), el("p", { text: B.pace.soonest == null ? "Not dated" : fmt(B.pace.soonest) + " programs newly complete in 7 days" }),
+      el("div", { cls: "eta-cell" }, [el("h4", { text: "Pace" }), el("p", { text: paceWords(B, "soonest") + " newly complete" }),
         el("a", { href: "#commons/data/" + VIEW_KEY, text: "Open the ETA clock" })])]);
   }
 

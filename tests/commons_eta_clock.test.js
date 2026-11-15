@@ -100,6 +100,15 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
   check("(2) ⭐ the Unblock catalogs factor is the gap over the gap less its stall: 5,751 / (5,751 - 705) = 1.14", E.stalledFactor(5751, 705) === 1.14 &&
     E.LEVERS.filter((l) => l.id === "unblockcatalogs")[0].factor.programs === 1.14);
 
+  // (2b) COBIx on #3371: a missed day and a falling week.
+  const PRgap = JSON.parse(JSON.stringify(PR)); PRgap.headline = PRgap.headline.filter((h) => h.day !== "2026-11-08");
+  const Bg = E.base(M, PRgap, SKILLS);
+  check("(2) ⭐ a missed build day does not blank a pace: the window ends on the closest earlier day and divides by its real span",
+    Bg.pace.soonest != null && Bg.span.soonest === 8 && Bg.pace.latest != null && E.phase1(Bg, E.freshState(), null).day != null);
+  const PRfall = JSON.parse(JSON.stringify(PR)); PRfall.headline.filter((h) => h.day === "2026-11-15")[0].complete = 13600;
+  const Bf = E.base(M, PRfall, SKILLS), Pf = E.phase1(Bf, E.freshState(), null);
+  check("(2) a week where the count fell reads no net progress, apart from a pace that cannot be dated", Bf.pace.soonest < 0 && Pf.noProgress);
+
   // (3) the view, its address, the preview.
   await D.boot(V.root, "eta");
   await flush(V.w);
@@ -123,7 +132,11 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
     q('[data-eta="coci"]').getAttribute("aria-pressed") === "true" && !!q('[data-eta-pop="coci"]') && /projection, not a partner commitment/.test(txt(q("[data-eta-projected]"))));
   q('[data-eta="coci"]').click();
   check("(4) clicking an open connection again turns it off", q('[data-eta="coci"]').getAttribute("aria-pressed") === "false" && !q('[data-eta-pop="coci"]') && !q("[data-eta-projected]"));
+  q('[data-eta="coci"]').click(); q('[data-eta="assumptions"]').click(); q('[data-eta="coci"]').click();
+  check("(4) ⭐ a lever that is on turns off in one click even when its popover is closed (COBIx on #3371)", q('[data-eta="coci"]').getAttribute("aria-pressed") === "false");
   q('[data-eta="unblockcatalogs"]').click();
+  const cr = q('[data-eta-pop="unblockcatalogs"] input[type=range]');
+  check("(4) the Unblock catalogs slider stops at the stalled share's own factor (1.14), never 8", cr && cr.getAttribute("max") === "1.14");
   const parts = [...q('[data-eta-pop="unblockcatalogs"]').querySelectorAll("input[type=checkbox]")];
   check("(4) Unblock catalogs carries its four stalled parts, all on", parts.length === 4 && parts.every((p) => p.checked));
   q('[data-eta="assumptions"]').click();
