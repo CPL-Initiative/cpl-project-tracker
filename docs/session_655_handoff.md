@@ -159,7 +159,9 @@ Touched: the docs audit (`kb/docs_audit/2026-11-15.*`) and `--apply`; this hando
 `program-requirements-harvest`, `commons` and `governance-team-enablement` (each under 20,000 bytes; retired text
 moved verbatim to the lessons docs, *Moved from the lane (S654 checkpoint)*); the three lessons docs' S654 sections;
 `conductor_mode.md` (S654 lessons); the index rebuild; the run logs `kb/status/program-requirements.json` and
-`course.json` (session fields and changes only); the memory receipt (NOT RUN when written; the conductor runs it).
+`course.json` (session fields and changes only); the memory receipt `kb/receipts/cpl_memory_s654_rows_2026-11-15.sql` (RUN by the conductor at about 04:42Z in one
+`execute_sql` call; the verify read back 20 rows, each with one create log row, longest summary 398;
+`ppm-three-not-cccs-sam-s654` is `proposed`, since Sam did not verify that the site was not read).
 Skipped: step 12's stamps (run at 01:50Z, #3343); the pipeline view (no roadmap row, auditor count or re-mint moved);
 `kb/README.md` and `README.md` (no KB structure or user-facing surface changed); the §11 rows (no lane changed live,
 in progress or parked); `stack_scouting.md` (no tool trial); KB notes (none crossed the bar); the vault (another
