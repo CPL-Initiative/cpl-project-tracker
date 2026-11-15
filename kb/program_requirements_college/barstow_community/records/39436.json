@@ -61,11 +61,23 @@
    "pass": true
   },
   "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    25.0
+   ],
+   "stated": [
+    23.0,
+    25.0
+   ],
+   "against": "program",
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     63.5,
+     65.0,
      72.0
     ],
     "stated": [
@@ -79,20 +91,7 @@
     ],
     "why": [],
     "overlap": true
-   },
-   "pass": true,
-   "status": "equal",
-   "computed": [
-    23.0,
-    25.0
-   ],
-   "stated": [
-    23.0,
-    25.0
-   ],
-   "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   }
   },
   "repeated": {
    "codes": [],
@@ -342,5 +341,6 @@
    "The sentence about a minimum of 18 units in the major is a general ADT rule, not this award's total."
   ]
  },
- "extracted_run": "39006332820"
+ "extracted_run": 43691950026,
+ "read_run": "39006332820"
 }
