@@ -803,6 +803,7 @@
   function redrawAll(fk, origin) {
     MOUNTS = MOUNTS.filter(function (m) { return m.root === origin || m.root.isConnected; });
     MOUNTS.forEach(function (m) { m.paint(); });
+    refreshTile();
     if (fk && origin) { var f = origin.querySelector('[data-eta="' + fk + '"]'); if (f && f.focus) f.focus(); }
   }
   function mount(root, paint) {
@@ -839,9 +840,25 @@
   function tiles(M) {
     if (!ST.pr) return [];
     var B = base(M, ST.pr, ST.skills); if (!B) return [];
-    var P = phase1(B, shared(), null);
-    return [{ v: P.day == null ? "TBA" : longDate(P.day) + (P.est ? " est." : ""), l: "College Collections ETA",
-      d: "Phase 1 at the " + (shared().mode === "soonest" ? "soonest" : "latest") + " pace; opens the full clock and the plan in the side panel. A projection, not a promise.", pane: { k: PANE_KEY } }];
+    TILE_B = B;
+    var T = tileWords(B);
+    return [{ v: T.v, l: "College Collections ETA", d: T.d, pane: { k: PANE_KEY } }];
+  }
+  /* The card's figure follows the picks (COBIx on #3373): every redraw rewrites it from the shared state. */
+  var TILE_B = null;
+  function tileWords(B) {
+    var S = shared(), P = phase1(B, S, null);
+    return { v: P.day == null ? "TBA" : longDate(P.day) + (P.est ? " est." : ""),
+      d: "Phase 1 at the " + (S.mode === "soonest" ? "soonest" : "latest") + " pace" + (P.moved ? ", projected with the chips that are on" : "") + "; opens the full clock and the plan in the side panel. A projection, not a promise." };
+  }
+  function refreshTile() {
+    if (!TILE_B || typeof document === "undefined") return;
+    var T = tileWords(TILE_B);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-pane-tile="' + PANE_KEY + '"]'), function (t) {
+      var v = t.querySelector(".cdd-v"), d = t.querySelector(".cdd-d");
+      if (v) v.textContent = T.v;
+      if (d) d.textContent = T.d;
+    });
   }
   /* The full clock in the side panel. */
   function clockPane(M) {

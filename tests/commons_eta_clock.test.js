@@ -125,6 +125,9 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
   V.root.querySelector('[data-eta-top] [data-eta="comis"]').click();
   check("(3) ⭐ the band and the panel share one set of picks: COMIS on in the band is on in the panel's levers",
     V.root.querySelector('#cdd-panel [data-eta="lever-comis"]').getAttribute("aria-pressed") === "true");
+  V.root.querySelector('[data-eta-top] [data-eta="eta-mode"]').click();
+  check("(3) the card's figure follows the picks (COBIx on #3373)", !/December 26, 2026/.test(txt(V.root.querySelector('[data-pane-tile="clock"]'))) && /latest pace, projected/.test(txt(V.root.querySelector('[data-pane-tile="clock"]'))));
+  V.root.querySelector('[data-eta-top] [data-eta="eta-mode"]').click();
   V.root.querySelector('[data-eta-top] [data-eta="comis"]').click();
   V.root.querySelector('#cdd-panel [data-eta="lever-comis"]').click();
   check("(3) a pick in the panel shows in the band too", V.root.querySelector('[data-eta-top] [data-eta="comis"]').getAttribute("aria-pressed") === "true");
@@ -139,8 +142,24 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
   FR.window.eval(fs.readFileSync("cobi_framed.js", "utf8"));
   const FN = new JSDOM("<!doctype html><html><head></head><body></body></html>", { url: "https://example.org/index.html#cpl-pathways", runScripts: "dangerously" });
   FN.window.eval(fs.readFileSync("cobi_framed.js", "utf8"));
-  check("(3) cobi_framed.js hides COBI's header and menu only when the page opens with ?framed=1",
-    FR.window.document.documentElement.classList.contains("cobi-framed") && !FN.window.document.documentElement.classList.contains("cobi-framed"));
+  check("(3) ⭐ ?framed=1 opened at the top does nothing: the header and menu stay, so a reader has a way out (COBIx on #3373)",
+    !FR.window.document.documentElement.classList.contains("cobi-framed") && !FN.window.document.documentElement.classList.contains("cobi-framed"));
+  // Inside a same-origin frame it hides them, routes a link to another tab to the page around it, and the session keeper only reads.
+  const { requestInterceptor } = require("jsdom");
+  const FRAME_HTML = '<!doctype html><html><head></head><body><a id="l" href="#commons/data/eta">x</a><a id="i" href="#cpl-pathways/college/y">y</a><script>' +
+    fs.readFileSync("cobi_framed.js", "utf8") + "</script></body></html>";
+  const PARENT = new JSDOM('<!doctype html><html><head></head><body><iframe id="f" src="https://example.org/index.html?framed=1#cpl-pathways/college/x"></iframe></body></html>',
+    { url: "https://example.org/index.html#commons/data", runScripts: "dangerously",
+      resources: { interceptors: [requestInterceptor(() => new Response(FRAME_HTML, { headers: { "Content-Type": "text/html" } }))] } });
+  await new Promise((r) => PARENT.window.document.getElementById("f").addEventListener("load", r));
+  const fw = PARENT.window.document.getElementById("f").contentWindow;
+  fw.document.getElementById("l").dispatchEvent(new fw.MouseEvent("click", { bubbles: true, cancelable: true }));
+  check("(3) ⭐ inside a same-origin frame ?framed=1 hides COBI's chrome, and a link to another tab opens in the page around the frame",
+    fw.document.documentElement.classList.contains("cobi-framed") && PARENT.window.location.hash === "#commons/data/eta");
+  fw.document.getElementById("i").dispatchEvent(new fw.MouseEvent("click", { bubbles: true, cancelable: true }));
+  check("(3) a link within the framed tab stays in the frame", PARENT.window.location.hash === "#commons/data/eta");
+  check("(3) ⭐ in a frame, the session keeper reads the session and never starts its refresh (COBIx on #3373)",
+    /function start\(\) \{\s*if \(framedInCobi\(\)\) \{ try \{ sync\(\); \}[^\n]*return; \}/.test(fs.readFileSync("cpl_session.js", "utf8")));
   check("(3) both HTMLs load cobi_framed.js", ["index.html", "CPL_Dashboard.html"].every((f) => /<script src="cobi_framed\.js"><\/script>/.test(fs.readFileSync(f, "utf8"))));
   D.render(V.root, M, "eta", new Date());
   const root = () => V.root.querySelector("[data-eta-view]");

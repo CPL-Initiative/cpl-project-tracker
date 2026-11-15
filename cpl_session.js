@@ -505,7 +505,14 @@
     ensureFresh();
   }
 
+  /* A COBI framed inside COBI (cobi_framed.js, ?framed=1 in a same-origin frame) only reads the session: the page around
+     it keeps the token fresh, so two keepers never race to rotate the same refresh token (COBIx on #3373). */
+  function framedInCobi() {
+    try { return window.self !== window.top && window.top.location.origin === location.origin && /[?&]framed=1(&|$)/.test(String(location.search || "")); }
+    catch (e) { return false; }
+  }
   function start() {
+    if (framedInCobi()) { try { sync(); } catch (e) { /* the frame reads what it can */ } return; }
     if (timer) return;
     tick();
     timer = setInterval(tick, TICK_MS);
