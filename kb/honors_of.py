@@ -53,6 +53,9 @@ FIELD_BASELINE = "kb/anchor_rekey_out/2026-11-08/alias_map.json"
 # that marks an Honors M-ID. Four characters after the letter is a base; five ending in H is its Honors id. A
 # stand-alone tail can end in H ("ABCD M10GH" is a base): the length, not the letter, decides.
 M_ID_RE = re.compile(r"^([A-Z]{1,6}) ([MZ])(\d)([A-Z0-9]{3})(H?)$")
+# The same shape with the H required, as a Postgres regex: the step-4 mint's marker that the step-1 and step-2
+# rollbacks and the rows insert read (COBIx on #3315: one pattern, so the SQL and the Python cannot drift apart).
+H_ID_SQL = r"^[A-Z]{1,6} [MZ][0-9][A-Z0-9]{3}H$"
 
 
 def is_bot(reviewer):
