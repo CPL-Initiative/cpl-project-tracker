@@ -33,11 +33,10 @@ Start with COBIx's latest brief on issue #3358, then this file.
 
 1. **#3365** (#3366 merged `fe1fb426`): if it is still open, read the thread's last page (COBIx), then merge on a green `test` on the
    current head, confirmed by `git log origin/main`.
-2. **For Sam or COBIx, not a session call** (`riverside-plain-2-0-siblings-kept-s659`): the four plain siblings' filed
-   records were read from their successors' pages, which S653 calls wrong, and `keep_no_read`
-   (`d-keep-passing-record-no-read-s647`) keeps them displayed. Meanwhile 99 plain/2.0 pairs statewide share one filed
-   page under `d-glendale-tab-control-number-s648`. Two conductor rulings disagree, so do not drop or share rows until
-   one of them answers.
+2. **Sam ruled (after this checkpoint, `d-both-versions-by-catalog-year-sam-2026-11-15`):** a program and its Cal-GETC 2.0
+   version are both kept, each with its catalog year (students keep catalog rights to the original). Build the
+   prior-catalog read the harvest lane's NEXT names: list the 99 plain/2.0 pairs by college, then Riverside City's
+   2025-2026 catalog first. The four plain siblings' current records stay on file until a prior-year read replaces them.
 3. **Honors step 2 apply: HELD for Sam** (Sheet 200 card 1). The steps are in handoff 656, *First things* 3.
 4. **Step 11** on a UTC day without its two runs: Allan Hancock's full read (#3284); Las Positas as objectives reread
    step 2; Coastline and Golden West; College of the Redwoods' trial. The $40-per-college limits stand.
