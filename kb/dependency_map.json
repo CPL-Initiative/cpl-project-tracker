@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 988,
+  "file_datasets": 989,
   "external_services": 195,
   "consumers": 594,
   "workflows": 72,
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2424
+     "line": 2435
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2380
+     "line": 2391
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2317
+     "line": 2328
     }
    ],
    "main_committers": []
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1910
+     "line": 1921
     }
    ],
    "main_committers": []
@@ -8588,7 +8588,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6412
+     "line": 6423
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8608,7 +8608,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6462
+     "line": 6473
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -17342,7 +17342,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3268
+     "line": 3279
     }
    ],
    "served": true,
@@ -17355,7 +17355,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6846
+     "line": 6857
     }
    ],
    "served": true,
@@ -21118,7 +21118,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6662
+     "line": 6673
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21138,7 +21138,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5881
+     "line": 5892
     }
    ],
    "served": false,
@@ -21755,7 +21755,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6749
+     "line": 6760
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -26262,6 +26262,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_fragment_path_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_requirements_heading_agreement_test.py": {
    "consumers": [
     {
@@ -29142,7 +29155,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6820
+     "line": 6831
     }
    ],
    "main_committers": []
@@ -29154,7 +29167,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6929
+     "line": 6940
     }
    ],
    "main_committers": []
@@ -34228,6 +34241,7 @@
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_extract_halt_test.py",
+    "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
