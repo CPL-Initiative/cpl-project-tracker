@@ -2,14 +2,14 @@
   "schema": 1,
   "project": "program-requirements",
   "written_at": "2026-11-15T01:50:13Z",
-  "session": 654,
-  "moniker": "SkyWhimbrel",
-  "run": "Sam's session",
+  "session": 655,
+  "moniker": "SkyCurlew",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_655_handoff.md",
+  "handoff": "docs/session_656_handoff.md",
   "next_step": {
-    "title": "Read the Riverside City capture, then the course-id rescore at six colleges",
-    "text": "A free Riverside City capture on the merged claim step confirms that each transfer degree claims its own GE page. Then six colleges rescore from their filed pages on the course-id route, and one display build publishes all six, one college first."
+    "title": "Publish the course-id rescore at six colleges, one college first",
+    "text": "The six rereads replaced 159 rows with receipts. One display build covers all six; after COBIx checks it, the display runs at Diablo Valley first, then everywhere, and the branch merges. Then the reconcile route's reader gaps are fixed."
   },
   "calls": [
     {
@@ -338,6 +338,26 @@
   },
   "changes": [
     {
+      "at": "2026-11-15T09:03:00Z",
+      "text": "Six colleges reread on the course-id route: 159 records replaced, each with its before-values in a receipt. Three programs move from failing to passing and none falls."
+    },
+    {
+      "at": "2026-11-15T08:00:00Z",
+      "text": "Santa Ana's course objectives loaded: 1,362 rows, with 1,366 SLO rows left as they were."
+    },
+    {
+      "at": "2026-11-15T07:48:00Z",
+      "text": "Every paid model caller now stops at 40 dollars a run through the one spend meter, which reached main with card 10."
+    },
+    {
+      "at": "2026-11-15T07:00:00Z",
+      "text": "The Riverside City capture was read: 240 of 268 programs on their own pages, and 35 of 41 transfer degrees claim their own page. Colleges on the same catalog system may capture again."
+    },
+    {
+      "at": "2026-11-15T06:36:00Z",
+      "text": "A district-format control number now settles which program owns a GE page."
+    },
+    {
       "at": "2026-11-15T03:21:00Z",
       "text": "Six colleges rescored under the prefix aliases merged as one wave. Statewide passing rose 15,840 to 15,856 of 22,335; one display build follows the course-id rescore."
     },
@@ -364,26 +384,6 @@
     {
       "at": "2026-11-14T15:23:00Z",
       "text": "Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley were reconciled again from their filed pages under the new prefix aliases, each on its own branch; nothing is written until each compare is read."
-    },
-    {
-      "at": "2026-11-14T15:21:00Z",
-      "text": "A fresh Skyline capture tests the narrowed catalog lookup: one page names at most one program, the whole title must match, and landing and archived pages are refused. Recall 81.1% with no false match."
-    },
-    {
-      "at": "2026-11-14T15:15:00Z",
-      "text": "Riverside City was read again from its filed pages under the new prefix aliases: 222 to 230 of 244 programs pass. The headline read at 14:22Z (14,597 of 20,282) predates these 8. The receipt keeps the rows as they were; the display waits on COBIx's spot-check."
-    },
-    {
-      "at": "2026-11-14T14:05:00Z",
-      "text": "Riverside City's programs were reconciled again under the new prefix aliases on a branch; nothing is written to the table until a record-by-record compare and COBIx's spot-check."
-    },
-    {
-      "at": "2026-11-14T14:04:00Z",
-      "text": "Per-college prefix aliases were added for 13 colleges (17 pairs, Riverside City's HIST for HIS among them), each on at least three matching courses and no counterexample. On the filed records 15 programs newly pass the tab's rule; no table was written."
-    },
-    {
-      "at": "2026-11-14T13:59:00Z",
-      "text": "COBIx's review of the display design was folded in: a borrowed figure is shown as borrowed, and an absence reads that no figure was found in the college's catalog."
     }
   ],
   "headline": [

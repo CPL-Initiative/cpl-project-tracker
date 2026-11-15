@@ -17089,8 +17089,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 616,
+   "count": 617,
    "docs": [
+    {
+     "created": "2026-11-15",
+     "governs": [],
+     "n": 656,
+     "path": "docs/session_656_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 656 handoff (from SkyCurlew, S655)",
+     "type": null,
+     "updated": "2026-11-15"
+    },
     {
      "created": "2026-11-15",
      "governs": [],
@@ -27487,5 +27501,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1484
+ "total": 1485
 }

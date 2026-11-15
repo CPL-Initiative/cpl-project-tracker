@@ -187,6 +187,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - Worked: a second reader before every live write (it found 07206 and the held pages); COBIx's finding read at the
   gate within the three-minute read (07:08Z finding, the merge held until it was fixed); finalizer workers; one timer
   per wait; context at 31% at 07:33Z.
+- The checkpoint-docs worker checked out the session branch in its own worktree while the main checkout held the same
+  branch, so the main checkout's index fell one commit behind and the stop hook reported uncommitted changes; the
+  conductor confirmed the index equaled its own last commit, reset and detached. Give the documents worker its own
+  branch name, or detach the main checkout first.
 
 ## What went wrong in S654, and what worked
 

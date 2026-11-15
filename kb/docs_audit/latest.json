@@ -10,33 +10,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 1498,
-    "bytes": 15860323,
-    "over_budget": 4,
-    "handoff_max": 655,
+    "files": 1499,
+    "bytes": 15887935,
+    "over_budget": 3,
+    "handoff_max": 656,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59984,
+    "always_loaded_bytes": 59992,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59984,
+        "bytes": 59992,
         "over": 0
       },
       "other": {
         "files": 161,
-        "bytes": 5123347,
+        "bytes": 5144934,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 10983,
+        "bytes": 11098,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2812916,
+        "bytes": 2809798,
         "over": 0
       },
       "kb_note": {
@@ -46,26 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 556113,
-        "over": 3
+        "bytes": 553626,
+        "over": 2
       },
       "handoff": {
-        "files": 616,
-        "bytes": 4426116,
+        "files": 617,
+        "bytes": 4437623,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 4,
-      "vault_heavy_path": 76,
-      "checkpoint_overdue": 1,
-      "handoff_drops_active_lane": 1
+      "oversized_doc": 3,
+      "vault_heavy_path": 76
     },
     "vault": {
-      "files": 28032,
-      "bytes": 4961731950,
-      "heavy_bytes": 3612679442,
+      "files": 28034,
+      "bytes": 4961769634,
+      "heavy_bytes": 3612689447,
       "heavy_share": 0.728,
       "ignore_filters": [
         "agent-a0da10547abafd6bb/kb/receipts",
@@ -189,19 +187,6 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 21494,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 1494,
-        "ratio": 1.07
-      },
-      "message": "21,494 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/governance-team-enablement.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
         "bytes": 25585,
         "limit": 20000,
         "lane": "roadmap_lane",
@@ -216,10 +201,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2429558585,
+        "bytes": 2429568590,
         "kind": "dir"
       },
-      "message": "directory totals 2,429,558,585 B inside the vault"
+      "message": "directory totals 2,429,568,590 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -970,29 +955,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_655_handoff.md",
-      "detail": {
-        "commits_since": 11,
-        "budget": 6,
-        "handoff": "session_655_handoff.md"
-      },
-      "message": "11 commit(s) have landed since `docs/session_655_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
-    },
-    {
-      "rule": "handoff_drops_active_lane",
-      "fixable": false,
-      "path": "docs/session_655_handoff.md",
-      "detail": {
-        "lanes": [
-          "sierra-page-redesign"
-        ],
-        "days": 7
-      },
-      "message": "`docs/session_655_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: sierra-page-redesign. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }
