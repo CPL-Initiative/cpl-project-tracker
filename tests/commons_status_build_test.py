@@ -79,6 +79,28 @@ check("Exhibits: credentials with no Common SUBJ is a routine count from the sub
       len(_ns) == 1 and isinstance(_ns[0]["n"], int) and _ns[0]["carry"] == "routine"
       and _ns[0]["n"] == json.load(open(os.path.join(ROOT, "kb", "exhibit_subject_out", "worklist.json")))["no_subject"],
       _ns)
+# The exhibit universe counts the titles MAP carries with no entry yet (S662): a procedure that classifies a backlog
+# title writes it already stamped, so a universe of the reference's keys alone grew by exactly the day's stamps.
+ex_ = [r for r in rows if r.get("key") == "exhibit"][0]
+_f = ex_.get("facts") or {}
+_audit = json.load(open(os.path.join(ROOT, "kb", "exhibit_audit", "latest.json"), encoding="utf-8"))["stats"]
+check("Exhibits: the universe is the reference's titles plus MAP's unclassified backlog, in both pairs",
+      _f.get("backlog") == (_audit.get("unclassified_in_map") or 0)
+      and ex_["pair"][0]["of"] == _f["titles"] + _f["backlog"] == ex_["pair"][1]["of"], (_f.get("titles"), _f.get("backlog"), ex_["pair"][0]["of"]))
+import re as _re
+_hist = json.load(open(os.path.join(ROOT, "kb", "status", "commons_history.json"), encoding="utf-8")).get("pairs", {})
+_bad = []
+for _d, _x in sorted(_hist.items()):
+    _md = os.path.join(ROOT, "kb", "exhibit_audit", _d + ".md")
+    if not _x.get("exhibit") or not os.path.exists(_md):
+        continue
+    _t = open(_md, encoding="utf-8").read()
+    _k = _re.search(r"\*\*(\d+)\*\* raw exhibit titles in KB", _t)
+    _m = _re.search(r"\*\*(\d+)\*\* raw titles in current MAP", _t)
+    # Titles never leave the reference, so a day's universe is at least that day's report: its titles plus its backlog.
+    if _k and _m and _x["exhibit"][1] < int(_k.group(1)) + int(_m.group(1)):
+        _bad.append(_d)
+check("Exhibits: every day of the pairs series counts at least that day's titles plus its unclassified backlog", not _bad, _bad)
 check("Exhibits: the card and its counts open the List; held titles and conflicts keep Review; the procedures open Rules, never the retired CER",
       _ex["links"][0]["href"] == "#exhibits/list" and all(p_["open"] == "#exhibits/list" for p_ in _ex["pair"])
       # S574: the titles that have left MAP open their own List filter, never the retired CER's whole list.

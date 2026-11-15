@@ -202,6 +202,12 @@ def row_exhibit(root):
     # The auditor's own tallies, for the tab's Progress view (S436): the titles MAP carries today,
     # the ones with no identity yet, and the classifier's title confidence below 0.80 and 0.60.
     stats = figure(lambda: load_json(root, "kb/exhibit_audit/latest.json")["stats"])
+    # The universe is every title in the reference plus the titles MAP carries with no entry yet (the auditor's
+    # unclassified backlog): a procedure that classifies a backlog title writes it already stamped, so a universe of
+    # the reference's keys alone grew by exactly the day's stamps and its remaining work could never fall
+    # (q-exhibit-universe-grows-with-stamps-s661; d-exhibit-universe-includes-map-backlog-s662).
+    backlog = (stats["n"] or {}).get("unclassified_in_map") or 0
+    universe = len(ut) + backlog
     bands = (stats["n"] or {}).get("title_confidence_bands") or {}
     below_60 = sum(bands.get(b, 0) for b in ("0.40-0.59", "<0.40")) if bands else None
     below_80 = below_60 + bands.get("0.60-0.79", 0) if bands else None
@@ -250,11 +256,13 @@ def row_exhibit(root):
         # conflicts keep the Review card, where Change to Proposed Title and Teach a rule live.
         "links": [{"href": tab + "/list", "text": "Open Exhibits"}],
         "status_file": "kb/status/exhibit.json" if exists(root, "kb/status/exhibit.json") else None,
-        "pair": [{"n": len(stamped), "of": len(ut),
-                  "words": "titles carry a review stamp (%s a person's, %s a cohort's); %s credentials, %s of %s records stamped"
-                           % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/list"},
+        "pair": [{"n": len(stamped), "of": universe,
+                  "words": "titles carry a review stamp (%s a person's, %s a cohort's)%s; %s credentials, %s of %s records stamped"
+                           % (fmt(person), fmt(cohort),
+                              ", counting %s titles MAP carries with no entry yet" % fmt(backlog) if backlog else "",
+                              fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/list"},
                  # A person's stamp is complete by definition here (complete is a review stamp), so no "of them" clause.
-                 confirmed_pair(person, len(ut), None, "", tab + "/list")],
+                 confirmed_pair(person, universe, None, "", tab + "/list")],
         "tests": ["curator-stamped", "procedure-settled", "confirmed by a person"],
         # An issue that reads zero has nothing in it and is left out; an unread one (null, its error) stays.
         # The fold's conflicts read 0 after the CER procedures run of 2026-11-01 14:34Z (dd95a03f).
@@ -298,7 +306,7 @@ def row_exhibit(root):
             {"words": "Counted from the nightly procedures run; the tab's Progress view also lists its own queues (another look, rules to turn on) and drops a title from them the moment a person decides it"},
         ],
         "machine": {"what": "the saving run and the fold", "at": max(stamps) if stamps else None, "every_hours": 24},
-        "facts": {"titles": len(ut), "stamped": len(stamped), "person": person, "cohort": cohort, "credentials": len(creds),
+        "facts": {"titles": len(ut), "backlog": backlog, "stamped": len(stamped), "person": person, "cohort": cohort, "credentials": len(creds),
                   "confirmed": person,
                   "records": len(records), "records_stamped": rec_stamped, "saved_at": saved_at, "fold_at": fold_at,
                   "map_titles": (stats["n"] or {}).get("map_titles_in_current_dataset"),

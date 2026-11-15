@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T15:01:36Z",
+ "written_at": "2026-11-15T23:47:55Z",
  "rows": [
   {
    "key": "requirements",
@@ -163,6 +163,7 @@
    },
    "facts": {
     "titles": 6057,
+    "backlog": 0,
     "stamped": 3027,
     "person": 1435,
     "cohort": 1592,
@@ -367,7 +368,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T20:24:41Z",
+    "at": "2026-11-14T10:50:41-08:00",
     "every_hours": null
    },
    "facts": {
