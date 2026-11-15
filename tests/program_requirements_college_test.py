@@ -3642,8 +3642,12 @@ def _printed(code):
     return "%s %s" % m.groups() if m else code
 
 
-with open(os.path.join(ROOT, "kb", "program_requirements_college", "riverside_city", "sources.json")) as _fh:
-    rcc_src = [s for s in json.load(_fh) if (s.get("source") or {}).get("url")]
+# The filed rows these checks read live in a committed fixture (S654; p-test-reads-live-review-file-s649), so a new
+# filing never moves them: tests/fixtures/ge_page_owner_assign_s654.json, measured 2026-11-15.
+with open(os.path.join(ROOT, "tests", "fixtures", "ge_page_owner_assign_s654.json")) as _fh:
+    GE_ASSIGN = {k: [{"control_number": cn, "title": t, "award": a, "source": {"url": u, "h1": h}, "codes_found": c}
+                     for cn, t, a, u, h, c in rows] for k, rows in json.load(_fh)["colleges"].items()}
+rcc_src = GE_ASSIGN["riverside_city"]
 rcc_pages, rcc_seen = [], set()
 for s in rcc_src:
     if s["source"]["url"] in rcc_seen:
@@ -3757,6 +3761,32 @@ check((C.ge_page_owner({"h1": "Development T038461G AA-T Cal-GETC 10 9-10 19-20"
                            _gp(("31018", "Business Administration", "A.S. T Degree"),
                                ("3", "Business Administration", "A.S. Degree"))) or {}).get("control_number") == "31018",
       "control: a heading printing its own program's control number still resolves, a cut window with no title too")
+# A heading with no title words, or a program with none, never lets the number settle the owner alone (COBIx
+# 6887933755, S654). The one empty-word shape kept is the award-led cut window: the control number, then the award
+# (LA Trade-Tech's T031018H and T039546G).
+check(C.ge_page_owner({"h1": "LACCD 92506 Cal-GETC"}, _gp(("92506", "Nursing", "A.S. Degree"))) is None
+      and C.ge_page_owner({"h1": "92506 Cal-GETC (34 units)"}, _gp(("92506", "Nursing", "A.S. Degree"))) is None,
+      "control: a heading with no title words that is no cut window names no program by its number")
+check(C.ge_page_owner({"h1": "Kinesiology T032948G AA-T Cal-GETC"}, _gp(("32948", "", "A.A- T Degree"))) is None
+      and C.ge_page_owner({"h1": "T032948G AA-T Cal-GETC"}, _gp(("32948", None, "A.A- T Degree"))) is None,
+      "control: a listed program with a blank title is never named by its number")
+check((C.ge_page_owner({"h1": "T031018H AS-T Cal-GETC 25 - 25"},
+                       _gp(("31018", "Early Childhood Education", "A.S. T Degree"))) or {}).get("control_number") == "31018"
+      and (C.ge_page_owner({"h1": "T039546G AAT Cal-GETC 18-19 - 18-19"},
+                           _gp(("39546", "Social Justice Studies - Gender Studies", "A.A- T Degree"))) or {})
+      .get("control_number") == "39546",
+      "control: LA Trade-Tech's award-led cut windows keep their owners")
+# A cut window that prints title words is held to the title check like any heading: 38461 is Child and Adolescent
+# Development. "Development" is its last word, so that window owns 38461. "Child Dev" names a word the title lacks
+# ("dev") and leaves "Adolescent" out, and "elopment" is no word of the title: each disagrees with the title both
+# ways, so neither owns 38461, as a ZIP code beside Kinesiology names no Nursing. Refused, the program falls to its
+# other pages; claimed, it would file a page the title check cannot tie to it.
+_cad = _gp(("38461", "Child and Adolescent Development", "A.A- T Degree"))
+check((C.ge_page_owner({"h1": "Development T038461G AA-T Cal-GETC 10 9-10 19-20"}, _cad) or {}).get("control_number")
+      == "38461"
+      and C.ge_page_owner({"h1": "Child Dev T038461G AA-T Cal-GETC 10 9-10 19-20"}, _cad) is None
+      and C.ge_page_owner({"h1": "elopment T038461G AA-T Cal-GETC 10 9-10 19-20"}, _cad) is None,
+      "control: of three cut windows on 38461, only the one whose words agree with the title owns it")
 check(C.ge_pattern("California General Education Transfer Curriculum")
       and C.ge_pattern("Intersegmental General Education Transfer Curriculum")
       and C.ge_pattern("Intersegmental GE Transfer Curriculum")
@@ -3875,8 +3905,7 @@ print("report: live filed claims on a pattern's page: %d allowed, %d refused (fi
 check({("moreno_valley", "30150"), ("riverside_city", "30578"), ("riverside_city", "32692"),
        ("riverside_city", "32745"), ("riverside_city", "33829")} <= ge_refuse,
       "the five wrong filed claims (30150 and the four 2.0 pages' plain siblings) are refused")
-mv_rs = [s for s in json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "moreno_valley", "sources.json")))
-         if (s.get("source") or {}).get("url")]
+mv_rs = GE_ASSIGN["moreno_valley"]
 mv_pages = {}
 for s in mv_rs:
     mv_pages.setdefault(s["source"]["url"], (s["source"]["h1"], set()))[1].update(s["codes_found"])

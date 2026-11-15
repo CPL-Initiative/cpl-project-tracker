@@ -105,8 +105,9 @@ PROGRAM_PATH = re.compile(
 # folders the committed captures name (_data, _documents, _pdf-books, _resources, _web-items) hold catalog
 # PDFs and feeds pages are read from, and stay (tests/program_requirements_fragment_path_test.py). No path reads
 # a fragment as a program page: program_candidates() and link_page_ok() through NOT_PROGRAM_PATH, ncl_page()
-# directly, a program code or not (S654).
-FRAGMENT_PATH = re.compile(r"/_[^/]*(?:header|include|partial|fragment|snippet)s?(?=/)", re.I)
+# directly, a program code or not (S654). The keyword may sit anywhere in the folder's name (_header-files,
+# _partials-v2, _includes_old; COBIx 6888023433, S654).
+FRAGMENT_PATH = re.compile(r"/_[^/]*(?:header|include|partial|fragment|snippet)[^/]*(?=/)", re.I)
 NOT_PROGRAM_PATH = re.compile(
     r"course-?descriptions?|/courses?/|coursesaz|/archive|/previous|/policies|/policy|"
     r"/services|/student-services|/admission|/calendar|/faculty|/staff|/search|/pdf/|"
@@ -661,10 +662,18 @@ def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
     if ctl:
         # A five-digit run names its program only when the program's title agrees with the heading's words at
         # least one way (COBIx on #3324, S654): a ZIP code or a five-digit course id that happens to be a listed
-        # program's control number never skips the title, award and version checks below. A cut window that
-        # prints no title word ("T031018H AS-T") disagrees with no title.
-        named = [p for p in programs if str(p.get("control_number") or "").lstrip("0").zfill(5) in ctl
-                 and _ge_title_one_way(ge_identity(p.get("title"))[0], words)]
+        # program's control number never skips the title, award and version checks below. A program with no title
+        # words is never named by its number. A heading with no title words is named only when it is an award-led
+        # cut window, the control number and then the award ("T031018H AS-T", LA Trade-Tech's PDF windows); any
+        # other ("LACCD 92506 Cal-GETC") refuses (COBIx 6887933755, S654).
+        cut = not words and _ge_cut_window(head)
+        named = []
+        for p in programs:
+            if str(p.get("control_number") or "").lstrip("0").zfill(5) not in ctl:
+                continue
+            tw = ge_identity(p.get("title"))[0]
+            if tw and (cut or (words and _ge_title_one_way(tw, words))):
+                named.append(p)
         if named:
             return named[0] if len(named) == 1 else None
     if not words:
@@ -685,6 +694,13 @@ def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
     if any(tn == nums for _, tn in fits):
         fits = [f for f in fits if f[1] == nums]
     return fits[0][0] if len(fits) == 1 else None
+
+
+def _ge_cut_window(head: str) -> bool:
+    """Whether a heading is an award-led cut window: nothing before its award but one control number
+    ("T031018H AS-T", "T039546G AAT"), the shape LA Trade-Tech's catalog PDF prints when a window cuts the title off."""
+    at = _award_start(head)
+    return at < len(head) and bool(GE_CONTROL.fullmatch(head[:at].strip(" -\u2013:,")))
 
 
 def _ge_title_one_way(title_words: frozenset, head_words: frozenset) -> bool:
