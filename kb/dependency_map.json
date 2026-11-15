@@ -2194,7 +2194,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4496,
+     "line": 4513,
      "tabs": [
       "unified-courses"
      ]
@@ -2257,7 +2257,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3684,
+     "line": 3701,
      "tabs": [
       "unified-courses"
      ]
@@ -6406,7 +6406,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13338
+     "line": 13339
     }
    ],
    "served": true,
@@ -7028,7 +7028,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13672
+     "line": 13673
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -7872,7 +7872,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13279
+     "line": 13280
     }
    ],
    "served": true,
@@ -8442,7 +8442,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13335
+     "line": 13336
     }
    ],
    "served": true,
@@ -8560,7 +8560,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10290
+     "line": 10291
     },
     {
      "id": "script:kb/_identities_rebuild.py",
@@ -9143,7 +9143,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13896
+     "line": 13897
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -9189,7 +9189,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13916
+     "line": 13917
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15115,7 +15115,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10220
+     "line": 10221
     },
     {
      "id": "script:kb/_alias_canon.py",
@@ -15222,7 +15222,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3360,
+     "line": 3377,
      "tabs": [
       "unified-courses"
      ]
@@ -15572,7 +15572,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 619,
+     "line": 630,
      "tabs": [
       "unified-courses"
      ]
@@ -19541,7 +19541,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 971,
+     "line": 982,
      "tabs": [
       "unified-courses"
      ]
@@ -20190,7 +20190,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9781
+     "line": 9782
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -23693,7 +23693,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13107
+     "line": 13108
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -23858,7 +23858,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13337
+     "line": 13338
     }
    ],
    "served": true,
@@ -23881,14 +23881,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13137
+     "line": 13138
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13137
+     "line": 13138
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -27227,7 +27227,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13339
+     "line": 13340
     }
    ],
    "served": true,
@@ -27251,7 +27251,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 933,
+     "line": 944,
      "tabs": [
       "unified-courses"
      ]
@@ -27482,7 +27482,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 901,
+     "line": 912,
      "tabs": [
       "unified-courses"
      ]
@@ -27492,14 +27492,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10342
+     "line": 10343
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10342
+     "line": 10343
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27541,7 +27541,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 881,
+     "line": 892,
      "tabs": [
       "unified-courses"
      ]
@@ -27551,14 +27551,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9693
+     "line": 9694
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9693
+     "line": 9694
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -27646,7 +27646,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1094,
+     "line": 1105,
      "tabs": [
       "unified-courses"
      ]
@@ -27656,14 +27656,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10426
+     "line": 10427
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10426
+     "line": 10427
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -27754,7 +27754,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 917,
+     "line": 928,
      "tabs": [
       "unified-courses"
      ]
@@ -27764,14 +27764,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10414
+     "line": 10415
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10414
+     "line": 10415
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -27894,7 +27894,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1217,
+     "line": 1228,
      "tabs": [
       "unified-courses"
      ]
@@ -27904,14 +27904,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10378
+     "line": 10379
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10378
+     "line": 10379
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -28010,7 +28010,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 949,
+     "line": 960,
      "tabs": [
       "unified-courses"
      ]
@@ -28020,14 +28020,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10222
+     "line": 10223
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10222
+     "line": 10223
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -31301,7 +31301,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 458,
+     "line": 463,
      "tabs": [
       "unified-courses"
      ]
@@ -31311,7 +31311,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 541,
+     "line": 552,
      "tabs": [
       "unified-courses"
      ]
@@ -32290,7 +32290,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 625,
+     "line": 636,
      "tabs": [
       "unified-courses"
      ]

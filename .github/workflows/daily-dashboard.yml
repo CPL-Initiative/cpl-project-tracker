@@ -482,6 +482,11 @@ jobs:
           echo "|------|--------|" >> "$GITHUB_STEP_SUMMARY"
           echo "| CustomReport | $CUSTOM_REPORT_STATUS |" >> "$GITHUB_STEP_SUMMARY"
           echo "| Live metrics | $LIVE_METRICS_STATUS |" >> "$GITHUB_STEP_SUMMARY"
+          # kb/honors_of.py report_joined: an Honors pair the in-memory folds joined (it should stay 0).
+          echo "| Honors pairs joined | ${HONORS_PAIRS_JOINED:-not reported} |" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${HONORS_PAIRS_JOINED:-0}" != "0" ]; then
+            echo "::warning title=Honors pair joined::$HONORS_PAIRS_JOINED Honors pair(s) fold together in today's build (honors-pair-joined); see the build log."
+          fi
           echo "| Dashboard URL | https://cpl-initiative.github.io/cpl-project-tracker/ |" >> "$GITHUB_STEP_SUMMARY"
 
       # Last step, after the push and the summary, so the dashboard still publishes on the

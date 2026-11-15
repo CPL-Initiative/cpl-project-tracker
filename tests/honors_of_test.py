@@ -313,7 +313,8 @@ check("generator: Phase B filters its members through phase_b_members",
 check("generator: R4 and both routing folds ask would_join before writing",
       gen_src.count("_honors_of.would_join(") == 3)
 check("generator: every pair is checked again after the folds, strict under --check or HONORS_OF_STRICT",
-      "_honors_of.check_apart(" in gen_src and "HONORS_OF_STRICT" in gen_src and "honors-pair-joined" in gen_src)
+      "_honors_of.check_apart(" in gen_src and "HONORS_OF_STRICT" in gen_src and "_honors_of.report_joined(" in gen_src
+      and "honors-pair-joined" in open(os.path.join(KB, "honors_of.py"), encoding="utf-8").read())
 check("generator: the overlay map is alias-resolved against the live set",
       "_honors_of.honors_map(curation, live=set(cat) | set(sg))" in gen_src)
 
@@ -364,6 +365,46 @@ for f in ("_agab_one_remint.py", "_agri_family_remint.py", "_athl_four_remint.py
           "_fl_stray_remint.py", "_forestry_wine_remint.py", "_subjects_list_recode.py", "_eths_remint.py"):
     check(f"allocator: {f} takes its kept number through rec.kept_number",
           "rec.kept_number(cid," in open(os.path.join(KB, f), encoding="utf-8").read())
+
+# A list-valued honors_of (the stored base and its chain end) holds every base, not the first alone (#3313's review
+# record, minor 1). Before the fix only "B M1001" was checked, so the bot merge into "T M1009" went through.
+kept, held, _ = ho.hold_merges({"B M1001H": "T M1009"}, {"B M1001H": ["B M1001", "T M1009"]},
+                               {"B M1001H": "automerge-v1@bot"})
+check("list value: the second base is held too", "B M1001H" not in kept and len(held) == 1
+      and held[0]["base_id"] == "T M1009")
+kept, held, _ = ho.hold_merges({"B M1001H": "Q M1003"}, {"B M1001H": ["B M1001", "T M1009"]},
+                               {"B M1001H": "automerge-v1@bot"})
+check("list value: a merge joining neither base stands", kept == {"B M1001H": "Q M1003"} and not held)
+
+# The daily run's health line (COBIx's read of #3313, item 3): the count reaches $GITHUB_ENV, a non-zero one adds a
+# ::warning annotation, and the Summary step writes the count into its table.
+import tempfile  # noqa: E402
+with tempfile.TemporaryDirectory() as td:
+    envf = os.path.join(td, "env")
+    open(envf, "w").close()
+    quiet = ho.report_joined([], env={"GITHUB_ENV": envf})
+    loud = ho.report_joined([("H M1001H", "H M1001")], env={"GITHUB_ENV": envf})
+    written = open(envf, encoding="utf-8").read().splitlines()
+check("health: no joined pair writes 0 and prints nothing", quiet == [] and written[0] == "HONORS_PAIRS_JOINED=0")
+check("health: a joined pair writes its count and one named build-log line, no second annotation",
+      written[1] == "HONORS_PAIRS_JOINED=1" and len(loud) == 1 and "honors-pair-joined" in loud[0]
+      and not loud[0].startswith("::"))
+check("health: outside Actions nothing is written", ho.report_joined([("A", "B")], env={}) and True)
+_wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
+check("health: the daily Summary step writes the count into its table and one ::warning when non-zero",
+      "| Honors pairs joined | ${HONORS_PAIRS_JOINED:-not reported} |" in _wf
+      and _wf.count("::warning title=Honors pair joined::") == 1)
+_gen = open(os.path.join(ROOT, "excel_to_dashboard.py"), encoding="utf-8").read()
+check("health: the generator reports the count after check_apart, strict runs still fail",
+      "_honors_of.report_joined(_hleft)" in _gen and 'os.environ.get("HONORS_OF_STRICT") == "1" or "--check" in sys.argv'
+      in _gen)
+# A stand-alone R4 refuses stays out of the evidence lane (#3315/#3325 review, reader 5): sent to the lane, it sat in
+# a group whose first member is the official target, and the CCR worklist, which sees only stored merges, offered the
+# Honors id beside a base folded there in memory; a curator's confirm would be a person's merge that wins.
+_r4 = _gen[_gen.index("# ---- R4: singleton evidence folds"):_gen.index("# ---- C-ID articulation routing")]
+check("R4: a refused fold skips the stand-alone (a bare continue), so the evidence lane never offers the pair",
+      "_honors_of.would_join(sid, oid, merge_into, _hpairs)):\n                continue  # honors_of" in _r4
+      and "if not refused" not in _r4)
 
 failed = [n for n, ok in results if not ok]
 for n, ok in results:

@@ -37,7 +37,7 @@ function page(groups, rows) {
 </body></html>`;
 }
 
-async function open(groups, rows, honorsRows, mergeRows) {
+async function open(groups, rows, honorsRows, mergeRows, fail) {
   const dom = new JSDOM(page(groups, rows), { runScripts: "dangerously", url: "https://example.org/" });
   const { window } = dom;
   window.sessionStorage.setItem("cpl_sb", JSON.stringify({
@@ -48,14 +48,19 @@ async function open(groups, rows, honorsRows, mergeRows) {
     const u = String(url);
     const method = (opts && opts.method) || "GET";
     let body = u.indexOf("field=eq.honors_of") >= 0 ? honorsRows : [];
+    if (u.indexOf("field=eq.honors_of") >= 0 && fail === "reject") return Promise.reject(new Error("offline"));
+    if (u.indexOf("field=eq.honors_of") >= 0 && fail === "status") {
+      return Promise.resolve({ ok: false, status: 503, json: () => Promise.resolve({}) });
+    }
     if (u.indexOf("field=eq.merge_into&course_id=in.") >= 0) {
+      if (fail === "hop") return Promise.resolve({ ok: false, status: 500, json: () => Promise.resolve({}) });
       const asked = decodeURIComponent(u);
       body = (mergeRows || []).filter((x) => asked.indexOf('"' + x.course_id + '"') >= 0);
       reads.push(u);
     }
     return Promise.resolve({ ok: true, status: method === "GET" ? 200 : 201, json: () => Promise.resolve(body) });
   };
-  window.alert = () => {};
+  window.alert = (m) => { alerts.push(String(m)); };
   let threw = false;
   try { window.eval(src); } catch (e) { threw = true; console.error("init threw:", e); }
   await sleep(120);
@@ -75,6 +80,7 @@ const pairOnly = { sig: "religions2", n: 2, score: 0.9, members: [
 const ceramics = { sig: "ceramics", n: 2, score: 0.9, members: [mem("ARTS M1001", "Ceramics"), mem("ARTS M1002", "Ceramics I")] };
 const honors = [{ course_id: "HUMA M1110H", value: "HUMA M1110" }];
 const reads = [];
+const alerts = [];
 
 (async function main() {
   // 1. Three members, the pair among them: offered without the Honors id.
@@ -110,6 +116,22 @@ const reads = [];
   check("a base merged away (two hops): the Honors id and the chain's end are not offered together",
     /2 of 2/.test(r.doc.body.textContent) && r.panel.textContent.indexOf("HUMA M1110H") < 0);
   check("the chain is read hop by hop from the live overlay", reads.length >= 2);
+
+  // 5. The read fails (COBIx's read of #3313): the worklist fails closed. A rejected fetch, a failed status on the
+  //    honors_of read and a failed hop page each give the notice and offer no group at all, the unrelated one
+  //    included, since without the rows any group might hold a pair.
+  for (const mode of ["reject", "status", "hop"]) {
+    alerts.length = 0;
+    r = await open([pairOnly, ceramics], rows, honors, [{ course_id: "HUMA M1110", value: "HUMA M1999" }], mode);
+    check("a failed read (" + mode + ") shows the plain-words notice",
+      alerts.some((a) => /Honors pairs could not be read/.test(a) && /no merge/.test(a)));
+    check("a failed read (" + mode + ") offers no group, the unrelated one included",
+      !/\d of 2/.test(r.doc.body.textContent) && !/\d of 2/.test(txt(r.panel)));
+  }
+  // 6. The read succeeds with no rows: no notice, every group offered (the fail-closed path is the error alone).
+  alerts.length = 0;
+  r = await open([pairOnly, ceramics], rows, []);
+  check("a read that succeeds with no rows gives no notice", !alerts.some((a) => /Honors pairs/.test(a)));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
