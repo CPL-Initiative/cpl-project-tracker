@@ -187,8 +187,12 @@ at the top of each piece of work so Sam can change the dial before it runs.
   conductor-brief skill requires; a second reader's recall run found it kept 230 of 314 right answers. Every brief that
   states a matching rule asks for recall counts on records whose answer is already held
   (`p-conductor-rule-without-self-recall-s654`).
+- COBIx posted a real fault on #3326 at 02:40Z; the conductor read the thread only at the merge gate, 86 minutes later,
+  after a second reader's wording fix had made it sharper. Read a PR's thread when its worker reports, not only at the
+  gate (`p-thread-unread-until-merge-s654`). The fix was a fifth data class, restricted (`d-cdc-restricted-class-s654`).
 - Honors step 2's design was replaced at the fourth round of one finding class (lump and sequence); rows now rest on
-  same-college anchors (`d-honors-anchored-rows-s654`).
+  same-college anchors (`d-honors-anchored-rows-s654`); COBIx's design read added "row yes, mint no" on a split-candidate
+  base (`d-honors-no-mint-on-split-candidate-s654`).
 - Worked: a merge finalizer worker whose only job is to bring one named PR up to `main` and rebuild generated files
   (about 3 minutes each, six times, no red `main`); fix workers never merged `main`. A second reader on every fix delta
   found real faults each time (#3328, the CDC fix, the gates). Reading each PR's last comment page in the same step as

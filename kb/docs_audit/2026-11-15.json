@@ -10,23 +10,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 1497,
-    "bytes": 15811657,
-    "over_budget": 4,
+    "files": 1498,
+    "bytes": 15848768,
+    "over_budget": 3,
     "handoff_max": 655,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60027,
+    "always_loaded_bytes": 59984,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60027,
-        "over": 1
+        "bytes": 59984,
+        "over": 0
       },
       "other": {
-        "files": 160,
-        "bytes": 5082595,
+        "files": 161,
+        "bytes": 5114362,
         "over": 1
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2808532,
+        "bytes": 2812916,
         "over": 0
       },
       "kb_note": {
@@ -46,24 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 554158,
+        "bytes": 553896,
         "over": 2
       },
       "handoff": {
         "files": 616,
-        "bytes": 4424498,
+        "bytes": 4425763,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 4,
       "kb_note_dialect": 1,
+      "oversized_doc": 3,
       "vault_heavy_path": 304
     },
     "vault": {
-      "files": 112582,
-      "bytes": 19814270229,
-      "heavy_bytes": 14448920988,
+      "files": 112596,
+      "bytes": 19814727969,
+      "heavy_bytes": 14449008055,
       "heavy_share": 0.729,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -375,19 +375,6 @@
   },
   "findings": [
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 60027,
-        "limit": 60000,
-        "lane": "always_loaded",
-        "over_by": 27,
-        "ratio": 1.0
-      },
-      "message": "60,027 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
-    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -402,13 +389,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 177599,
+        "bytes": 178230,
         "limit": 150000,
         "lane": "other",
-        "over_by": 27599,
-        "ratio": 1.18
+        "over_by": 28230,
+        "ratio": 1.19
       },
-      "message": "177,599 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "message": "178,230 B is 1.2× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -442,10 +429,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2429390758,
+        "bytes": 2429393455,
         "kind": "dir"
       },
-      "message": "directory totals 2,429,390,758 B inside the vault"
+      "message": "directory totals 2,429,393,455 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -852,30 +839,30 @@
       "fixable": false,
       "path": ".claude/worktrees/agent-a41d3b34890d7e438/tests",
       "detail": {
-        "bytes": 13067027,
+        "bytes": 13103040,
         "kind": "dir"
       },
-      "message": "directory totals 13,067,027 B inside the vault"
+      "message": "directory totals 13,103,040 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": ".claude/worktrees/agent-a9778d69155c3eb1d/tests",
       "detail": {
-        "bytes": 13066224,
+        "bytes": 13070249,
         "kind": "dir"
       },
-      "message": "directory totals 13,066,224 B inside the vault"
+      "message": "directory totals 13,070,249 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 13025343,
+        "bytes": 13069675,
         "kind": "dir"
       },
-      "message": "directory totals 13,025,343 B inside the vault"
+      "message": "directory totals 13,069,675 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

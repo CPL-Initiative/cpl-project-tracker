@@ -17,13 +17,17 @@ live read at 01:49Z); this checkpoint wrote the run logs' session fields only an
 
 ## First things, in order
 
-1. **Read Sam's replies on Sheet 199** (below), then **read COBIx** (login `cobi-cto`), from each thread's last page: #3315 (the anchored design asks him for a design
-   read, comment 6888525633), #3330, #3326, #3299.
-2. **Finish the merge queue** if anything is still open (the ledger below): #3326 (carries #3323; close #3323 with a
-   pointer), #3330 (carries #3327; close #3327 with a pointer), then #3315 after a short review of its anchors (plan
-   only). Each on a green `test` on the current head after reading its thread.
-3. **Honors step 2 apply:** `--check` after the 06:17Z daily run, the receipt, then the apply (Rule 10); then *Before
-   the mints*.
+1. **Read Sam's replies on Sheet 199** (below), then **read COBIx** (login `cobi-cto`) from each thread's last page:
+   #3330, #3346, #3315, #3299.
+2. **Finish the merge queue, in this order**, each on a green `test` on the current head after reading its thread:
+   (a) **#3330** (cost gates, carries #3327; `test` failed on `f11fe540` at 04:16Z and the finalizer was diagnosing at
+   04:30Z): if still open, finalize it against `main`, merge, close #3327 with a pointer. (b) **#3346** (harvest
+   follow-ups, head `b8c5abd7`; the second reader's fix is in, recall 589 of 589 district-format, 250 bare refused, 0
+   wrong, 0 claims moved; COBIx "nothing new"): merge `main`, rebuild the dependency map, merge. (c) **#3315** (the
+   Honors plan, head `9d065916`: 382 rows, digest `29667c07`, 129 mints, 157 rows with the mint held): merge `main`
+   keeping main's `kb/migrations/.apply` exactly, then merge (plan and drafted SQL only).
+3. **Honors step 2 apply, after the 06:17Z daily run:** one second reader on the regenerated plan, `--check` with its
+   receipt, the apply under Rule 10, a live count; then *Before the mints*.
 4. **Read the Riverside City capture** (free, dispatched on `main` about 02:59Z, `program-requirements-college.yml`,
    `step=read`, `extract=0`): compare with run 43619958385 (36 page_claimed, 4 not_found); the 36 transfer degrees
    should claim their own CalGETC pages. Then curriQunet colleges may capture again.
@@ -34,10 +38,9 @@ live read at 01:49Z); this checkpoint wrote the run logs' session fields only an
    The last two return no usage to their caller, so their stop is a worst-case bound from the function's own limits
    until a function deploy returns usage; at that deploy also set `maxRetries: 0` on `new Anthropic()` in the
    extraction function.
-7. **Harvest follow-ups, #3346** (`claude/harvest-followups-s654`, head `04314fcc` at 03:33Z): #3324's three minors and
-   COBIx's #3328 note. Its second reader found it BLOCKING at 03:38Z: the conductor's award-led-window rule kept 230 of
-   314 right answers. The rule is replaced (`d-control-number-district-format-s654`) and a self-recall fixture is
-   committed; merge only once it reports 314 of 314, after #3330 (same file; needs a finalize).
+7. **Card 10's PR also carries COBIx's two notes on #3330:** `run()` falls back to the default rate when
+   `per_record_rate` refuses (comment 6888116814); a test computing `M.worst_case` over the committed requests, so the
+   stated overshoot cannot drift (comment 6888534891).
 8. **Step 11:** read the two runs for 2026-11-15 (`python3 scripts/next_slo_colleges.py --all` on each branch: Allan
    Hancock's 12-page trial on #3284, commit 63a449b7; Santa Ana's objectives reread on #3344, commit 3ab3fef7); load
    when every slice is filed. Next hosts laspositas, Coastline, Golden West; College of the Redwoods' trial.
@@ -90,7 +93,7 @@ Copied from `docs/reference/conductor_mode.md`, *Settings (Sam, 2026-11-11)*; Sa
   college per run, on the estimate, for program-requirements extraction, and a separate $40 per college for SLOs, PLOs
   and course objectives. The limit is per run and never a remaining pot. Paid runs go through the conductor.
 
-## Ledger (PR, head, state), as of the conductor's 03:38Z ledger
+## Ledger (PR, head, state), as of the conductor's 04:30Z ledger (`main` `efadff5a`)
 
 | PR | Head | State | Next |
 |---|---|---|---|
@@ -101,22 +104,29 @@ Copied from `docs/reference/conductor_mode.md`, *Settings (Sam, 2026-11-11)*; Sa
 | #3328 | `d6ec2bed` | merged: a header fragment is never a program page | COBIx's note (First things 7) |
 | #3345 | `c7b80e95` | merged: six colleges rescored, one wave; #3305, #3317 to #3321 closed with pointers | course-id rescore (5) |
 | #3329 | `7e017287` | merged: Honors step 1 receipt; `.apply` equal to main's, migrate run 43671605511 skipped at its gate | none |
-| #3326 / #3323 | `claude/cdc-integration-view-s653` `20cb289e` | finalized at 03:33Z (`main` `7e017287`), `test` running | merge as one squash, close #3323 |
-| #3330 / #3327 | `claude/second-reader-gate-s653` `163ffeb4` | all 8 meter-review fixes in; waits the finalizer | read COBIx, merge, close #3327 |
-| #3315 | `claude/honors-of-rows-s653` `c04986a5` | draft; anchored design, `main` merged in, `.apply` equals main's; anchors review running at 03:33Z; nothing applied | First things 1 to 3 |
-| #3346 | `claude/harvest-followups-s654` `04314fcc` | second reader BLOCKING (03:38Z); worker fixing to 314 of 314 | First things 7 |
+| #3326 / #3323 | `efadff5a` | merged 04:30Z: CDC data dictionary and integration view, the restricted class; #3323 closed with a pointer | the builder's table check (commons lane) |
+| #3330 / #3327 | `claude/second-reader-gate-s653` `f11fe540` | `test` failed 04:16Z; finalizer diagnosing at 04:30Z | First things 2a |
+| #3346 | `claude/harvest-followups-s654` `b8c5abd7` | fix in: recall 589 of 589, 0 wrong; COBIx nothing new | First things 2b |
+| #3315 | `claude/honors-of-rows-s653` `9d065916` | ready plan: 382 rows, digest `29667c07`, 129 mints, 157 held; nothing applied | First things 2c, 3 |
 | #3344 | `claude/slo-objectives-sac` | draft; Santa Ana objectives reread pushed 02:09Z | First things 8 |
 | #3284 | `claude/slo-allan_hancock` | draft; Allan Hancock trial pushed 02:09Z | First things 8 |
 | #3293 | `cb60a1b0` | draft; keep | First things 9 |
 | #2894 | | Sam's | none |
-| this checkpoint | `claude/checkpoint-s654` | ready | merge on a green `test` |
+| #3347 | `claude/checkpoint-s654` | this checkpoint | merge on a green `test` |
+| samueltlee/CPLBrain#793 | `6f2622a9` | merged: session note, wiki touch, Sheet 199's builder (#791 closed with a pointer) | none |
+
+**Why #3326 waited at its gate.** Its `test` went green on `4ed11763` at 04:05Z, but COBIx's point 1 (comments
+6888070761 at 02:40Z and 6888592670 at 03:31Z) was open and real: the held-class sentence said anyone may read a held
+field on the public site, which covered student rows, staff contacts and articulation status. The fix added a fifth
+class, restricted (`d-cdc-restricted-class-s654`); COBIx cleared it at 04:15Z and it merged at 04:30Z. The thread went
+unread for 86 minutes (`p-thread-unread-until-merge-s654`).
 
 ## Decisions to honor (rows in `kb/receipts/cpl_memory_s654_rows_2026-11-15.sql`)
 
-`d-honors-anchored-rows-s654` (supersedes `d-honors-narrow-positive-rule-s654`), `d-cdc-held-means-not-shared-s654`
-(commons lane); `d-one-spend-meter-s654`, `d-rescore-wave-one-branch-s654`, `d-ge-control-number-needs-title-s654`,
+`d-honors-anchored-rows-s654` (supersedes `d-honors-narrow-positive-rule-s654`), `d-cdc-held-means-not-shared-s654`,
+`d-cdc-restricted-class-s654`, `d-honors-no-mint-on-split-candidate-s654` (COBIx's design read, adopted) (commons lane); `d-one-spend-meter-s654`, `d-rescore-wave-one-branch-s654`, `d-ge-control-number-needs-title-s654`,
 `d-control-number-district-format-s654`, `d-step11-runs-2026-11-15` (harvest lane; governance points to the meter); `d-merge-stack-tops-s654`
-(`conductor_mode`). Facts: `ppm-three-not-cccs-sam-s654` (Sam's Sheet 198 card 11 words; programmapper.org is outside
+(`conductor_mode`). Facts: `rescore-wave-passing-15856-s654` (statewide passing 15,840 to 15,856 of 22,335), `ppm-three-not-cccs-sam-s654` (Sam's Sheet 198 card 11 words; programmapper.org is outside
 the cloud session's network, so the site was not read), `cobix-3299-spot-check-13-of-14-s654`.
 
 ## Pitfalls learned
@@ -126,7 +136,8 @@ so tell long workers to push at each step (`p-api-522-kills-workers-s654`); keep
 files (`p-context-half-in-70-minutes-s654`); read `date -u` in the same command as any time you write
 (`p-conductor-times-from-memory-again-s654`); a stacked PR conflicts after its base squash-merges
 (`p-stack-squash-conflicts-s654`); a matching rule written into a brief needs the self-recall test like any matcher
-(`p-conductor-rule-without-self-recall-s654`: #3346's second reader caught 84 lost right answers before the merge).
+(`p-conductor-rule-without-self-recall-s654`: #3346's second reader caught 84 lost right answers before the merge); read
+a PR's thread when its worker reports, not only at the merge gate (`p-thread-unread-until-merge-s654`).
 
 ## Patterns that worked
 
@@ -139,8 +150,8 @@ A finalizer worker that only brings one named PR up to `main` and rebuilds gener
 `SHEET_ID` `2026-11-15-open-asks-199`; seven cards recording the conductor's decisions; its `replies` store was empty at
 publish; nothing waits on Sam). Read its replies first; an unanswered card holds only itself.
 [Sheet 198](https://claude.ai/artifact/4C48Gufarc7L11b34Gu6Hy) is superseded by it (answered in full 2026-11-14). The
-vault PR is samueltlee/CPLBrain#793 (the session note, the wiki touch, Sheet 199's builder; it also carries S653's
-unmerged #791).
+vault PR samueltlee/CPLBrain#793 is merged (`6f2622a9`: the session note, the wiki touch, Sheet 199's builder; it
+carried S653's #791, closed with a pointer).
 
 ## A full checkpoint: what it touched and what it skipped
 
