@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1499,
-    "bytes": 15890268,
+    "files": 1500,
+    "bytes": 15896654,
     "over_budget": 3,
-    "handoff_max": 656,
+    "handoff_max": 657,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59992,
     "superseded_files": 0,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 161,
-        "bytes": 5147332,
+        "bytes": 5147430,
         "over": 1
       },
       "index": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 553626,
+        "bytes": 554200,
         "over": 2
       },
       "handoff": {
-        "files": 617,
-        "bytes": 4437558,
+        "files": 618,
+        "bytes": 4443272,
         "over": 0
       }
     },
@@ -61,8 +61,8 @@
       "vault_heavy_path": 76
     },
     "vault": {
-      "files": 28033,
-      "bytes": 4961771948,
+      "files": 28034,
+      "bytes": 4961778650,
       "heavy_bytes": 3612689510,
       "heavy_share": 0.728,
       "ignore_filters": [
