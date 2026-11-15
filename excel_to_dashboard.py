@@ -10279,7 +10279,12 @@ def export_unified_courses():
                # What's already folded into git (kb/coci_curation.json at build
                # time) — the client diffs the live Supabase overlay against this
                # to count edits still awaiting the daily sync.
-               "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()},
+               # Only entries carrying a discipline or a merge_into: the client reads the discipline
+               # (pendingSyncCount) and the key's presence for a baked merge (replayLiveMerges); an
+               # honors_of-only or title-only entry would arrive as a null it never reads (#3315's
+               # fourth review). _curated rows always carry a non-null discipline, so the count holds.
+               "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()
+                                      if c.get("discipline") or c.get("merge_into")},
                # Descriptions already folded into git (kb/coci_curation.json) — the
                # client diffs the live description overlay against this to count
                # description edits still awaiting the daily sync.

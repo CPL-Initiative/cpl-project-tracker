@@ -88,37 +88,111 @@ TITLE_LABELS = [
     ("History of Art: Prehistory through Middle Ages", "History of Western Art from the Middle Ages to the Renaissance",
      False),
 ]
-# The narrow rule (kb/_honors_of_s653_dryrun.py narrow_reasons, S654), scored without the plan's named lists so it can
-# fail. Written by hand on 2026-11-15 from the course rows; never from the rule's output, and no label shares its
-# parser (p-snapshot-test-pins-the-rule-s653). (Honors id, base) -> True when the pair must hold, False when it is a
-# plain one-course base and an Honors twin that must pair.
-NARROW_LABELS = {
-    # Must hold. #3315's third review, finding 1 (a base holding two or more courses): MUSIC 015A and 015B at four
-    # colleges with Ohlone guitar and piano; Mission HUM 16, 18 and 24; De Anza Advanced C, C++ and C#; and the rest.
-    ("MUSI M11AP", "MUSI M1044"): True, ("HUMA M10BZ", "HUMA M1114"): True, ("ITIS M10KP", "ITIS M1068"): True,
-    ("BIOL M10QW", "BIOL M1262"): True, ("HIST M10UM", "HIST M1183"): True, ("BIOL M10IW", "BIOL M1049"): True,
-    ("ENGL M11FD", "ENGL M1348"): True, ("MATH M10PL", "MATH M1123"): True, ("PHIL M10FS", "HUMA M1125"): True,
-    ("ETHS M10EL", "ETHS M1256"): True, ("ASTR M1049", "ASTR M1019"): True,
-    # Finding 2 (a sequence): De Anza's History of Cinema (1895-1950) and (1950-Present); 001A and 001B under one
-    # title; Foothill MUS 002A, 002B, 002C.
-    ("FTVE M1003", "FTVE M1002"): True, ("FREN M10AA", "FREN M1035"): True, ("FREN M10AZ", "FREN M1014"): True,
-    ("JAPN M10AD", "JAPN M1017"): True, ("JAPN M10BG", "JAPN M1032"): True, ("MUSI M1236", "MUSI M1237"): True,
-    # The review's minor finding: rows on one signal, the title route (second_by holds no number).
-    ("ARTH M10DA", "ARTH 150"): True, ("ASTR M10BC", "ASTR M1014"): True, ("BIOL M10ZW", "GEOL M1054"): True,
-    ("GEOL M10HI", "GEOL 100 L"): True, ("NUTR M10BL", "NUTR M1014"): True,
-    # Read by hand on 2026-11-15: Mt. SAC's six Continuing Elementary languages in one id; Taft's Mexican-American
-    # Culture and History beside Black History in the American Context.
-    ("LATN M10AD", "CHIN M1058"): True, ("ETHS M1086", "ETHS M1085"): True,
-    # Must pair: plain one-course bases, read by hand on 2026-11-15 (every member's title and code).
-    ("ANTH M1005", "ANTH M1006"): False, ("ANTH M10IG", "ANTH M10IF"): False, ("ARCH M10JH", "ARCH M1059"): False,
-    ("ARCH M10BL", "ARCH M10BK"): False, ("ARTS M10NI", "ARTS M1078"): False, ("PHSC M10BM", "ASTR M1017"): False,
-    ("ASTR M1039", "ASTR M1044"): False, ("BIOL M10LH", "BIOL M1065"): False, ("BIOL M10NW", "BIOL M1092"): False,
-    ("BIOL M10OB", "BIOL M10OI"): False, ("BIOL M10ZV", "BIOL M11BA"): False, ("BUSI M10TV", "BUSI M10UK"): False,
-    ("COUN M10BM", "COUN M1004"): False, ("DANC M11SK", "DANC M11SN"): False, ("ECON M10AX", "ECON M10AY"): False,
-    ("ENGL M10LQ", "ENGL M10LR"): False, ("ENGL M10UR", "ENGL M1179"): False, ("HUMA M10KI", "ENGL M1239"): False,
-    ("ENGL M10US", "ENGL M1417"): False, ("ENGL M10DS", "ETHA M1002"): False, ("ETHS M1103", "ETHS M1104"): False,
-    ("FREN M10AH", "FREN M1036"): False, ("FTVE M1045", "FTVE M1046"): False, ("FTVE M10LJ", "FTVE M10LK"): False,
-}
+# The anchored rows (S654, kb/_honors_anchors.py), labeled by hand on 2026-11-15 at two levels; never from the rule's
+# output, and no label shares its parser (p-snapshot-test-pins-the-rule-s653).
+#
+# ANCHOR_LABELS, rule 1: (Honors row, base row, the college's other codes, expected kind). Rows are (college, code,
+# title). Expected: "anchor", "doubtful", or None.
+ANCHOR_LABELS = [
+    # True same-college Honors pairs, the space-before-H shapes among them.
+    (("Compton College", "ECON 101 H", "Honors Principles of Economics: Macroeconomics"),
+     ("Compton College", "ECON 101", "Principles of Economics: Macroeconomics"), (), "anchor"),
+    (("Cypress College", "LING 101 HC", "Honors Introduction to Language"),
+     ("Cypress College", "LING 101 C", "Introduction to Language"), (), "anchor"),
+    (("A", "MATH 1A H", "Honors Calculus I"), ("A", "MATH 1A", "Calculus I"), (), "anchor"),
+    (("Fullerton College", "PHIL 225HF", "Honors American Religious Experience"),
+     ("Fullerton College", "PHIL 225 F", "The American Religious Experience"), (), "anchor"),
+    (("Orange Coast College", "ARCH A296H", "History of Architecture 2 Honors"),
+     ("Orange Coast College", "ARCH A296", "Hist Of Arch 2"), (), "anchor"),
+    (("Victor Valley College", "CHEM H206", "HONORS INTRODUCTION TO CHEMISTRY II:  ORGANIC CHEMISTRY"),
+     ("Victor Valley College", "CHEM 206", "Intro Chem I I: Organic Chem"), (), "anchor"),
+    (("De Anza College", "ECON 001H", "Principles of Macroeconomics - HONORS"),
+     ("De Anza College", "ECON 1", "Principles of Macroeconomics"), (), "anchor"),
+    (("Glendale Community College", "HIST 101H", "Honors&nbsp;World&nbsp;History"),
+     ("Glendale Community College", "HIST 101", "World History"), (), "anchor"),
+    (("B", "MATH 5H", "Calculus"), ("B", "MATH 5", "Calculus"), (), "anchor"),
+    # False: a part I beside a part II, either way round.
+    (("A", "MATH 1AH", "Honors Calculus I"), ("A", "MATH 1B", "Calculus II"), (), None),
+    (("A", "MATH 1BH", "Honors Calculus II"), ("A", "MATH 1A", "Calculus I"), (), None),
+    # False: a series letter H with no Honors word (MUS 10A to 10G at the college).
+    (("C", "MUS 10H", "Piano"), ("C", "MUS 10", "Piano"), ("MUS 10A", "MUS 10B", "MUS 10C"), None),
+    # A number pair whose titles disagree: doubtful with an Honors word, not Honors at all without one.
+    (("A", "ENGL 1AH", "Honors Freshman Composition"), ("A", "ENGL 1A", "Creative Writing Workshop"), (), "doubtful"),
+    (("D", "AUTO 060H", "Advanced Drivability and Onboard Diagnostics"), ("D", "AUTO 060", "Engine Performance"), (),
+     None),
+    (("Foothill College", "LINC 073H", "ADOBE ILLUSTRATOR OVERVIEW"),
+     ("Foothill College", "LINC 73", "ADOBE PHOTOSHOP OVERVIEW"), (), None),
+    # False: an H ending the subject with no Honors word is one course under two subjects (Glendale ART and ARTH).
+    (("Glendale Community College", "ARTH 119", "Contemporary Art"),
+     ("Glendale Community College", "ART 119", "CONTEMPORARY ART"), (), None),
+    # False: two colleges; no Honors marker in the code; a base that is itself Honors.
+    (("A", "ENGL 1AH", "Honors Composition"), ("B", "ENGL 1A", "Composition"), (), None),
+    (("S", "HIST 17", "History of the United States - Honors"), ("S", "HIST 17", "History of the United States"), (),
+     None),
+    (("A", "ENGL 1AH", "Honors Composition"), ("A", "ENGL 1A", "Composition - Honors"), (), None),
+]
+
+# CLUSTER_FIXTURES, rules 2 and 3, self-contained: members, the Honors id, other bases another derivation names, and
+# the expected row and mint. Ids are synthetic Z ids.
+def _r(college, code, title):
+    return {"college": college, "code": code, "title": title}
+
+
+CLUSTER_FIXTURES = [
+    ("anchors in two bases hold the row", {
+        "ENGL Z9001": [_r("A", "ENGL 1AH", "Honors Composition"), _r("B", "ENGL 2H", "Honors Composition")],
+        "ENGL Z9002": [_r("A", "ENGL 1A", "Composition")], "ENGL Z9003": [_r("B", "ENGL 2", "Composition")]},
+     "ENGL Z9001", (), False, False),
+    ("a doubtful anchor holds the row beside a good one", {
+        "ENGL Z9011": [_r("A", "ENGL 1AH", "Honors Composition"), _r("B", "ENGL 5H", "Honors Poetry")],
+        "ENGL Z9012": [_r("A", "ENGL 1A", "Composition"), _r("B", "ENGL 5", "Creative Writing Workshop")]},
+     "ENGL Z9011", (), False, False),
+    ("an unanchored member rides along: a row, no mint", {
+        "HIST Z9021": [_r("A", "HIST 1H", "Honors United States History"), _r("C", "HIST 99", "Honors Seminar in History")],
+        "HIST Z9022": [_r("A", "HIST 1", "United States History")]},
+     "HIST Z9021", (), True, False),
+    ("two Honors ids anchored into one base: a row, no mint", {
+        "PSYC Z9031": [_r("A", "PSYC 1H", "Honors General Psychology")],
+        "PSYC Z9032": [_r("B", "PSYC 1H", "Honors General Psychology")],
+        "PSYC Z9033": [_r("A", "PSYC 1", "General Psychology"), _r("B", "PSYC 1", "General Psychology")]},
+     "PSYC Z9031", (), True, False),
+    ("an M-ID base holding a CCN-coded course: a row, no mint", {
+        "MATH Z9041": [_r("A", "MATH 1H", "Honors Calculus")],
+        "MATH Z9042": [_r("A", "MATH 1", "Calculus"), _r("B", "MATH C2210", "Calculus I")]},
+     "MATH Z9041", (), True, False),
+    ("an official base holding a CCN-coded course: held (MATH 210's shape)", {
+        "MATH Z9051": [_r("A", "MATH 1H", "Honors Calculus")],
+        "MATH 210": [_r("A", "MATH 1", "Calculus"), _r("B", "MATH C2210", "Calculus I")]},
+     "MATH Z9051", (), False, False),
+    ("another derivation names a second base: a row, no mint", {
+        "ARTS Z9061": [_r("A", "ART 1H", "Honors Art History")], "ARTS Z9062": [_r("A", "ART 1", "Art History")]},
+     "ARTS Z9061", ("ARTS Z9069",), True, False),
+    ("a clean pair: a row and a mint", {
+        "ARTS Z9071": [_r("A", "ART 2H", "Honors Modern Art")], "ARTS Z9072": [_r("A", "ART 2", "Modern Art")]},
+     "ARTS Z9071", (), True, True),
+]
+
+# CLUSTER_LABELS, real ids the four reviews named, with what the anchored rule does and why (read by hand from the
+# course rows on 2026-11-15). (Honors id, base, expected action, a phrase the reason carries.)
+CLUSTER_LABELS = [
+    # Fullerton LIB 100HF anchors to LIB 100 F; the base's other "Introduction to Research" courses (Cuesta MATH 290,
+    # San Diego City BIOL 161) are the base's own impurity, and the anchor says where the row goes at a split.
+    ("LIBR M10CL", "LIBR M1026", "row and mint", ""),
+    # Mission BIO 017H anchors to BIO 17; Cosumnes BIOL 485 "Honors Seminar in Genetics" has no H in its number, so it
+    # rides along unanchored and the mint waits.
+    ("BIOL M1317", "BIOL M1318", "row, mint held", "not the Honors course of an anchor"),
+    # Citrus HIST 160H, Fullerton HIST 270HF and Mt. San Jacinto HIST 115H all anchor into HIST M1191.
+    ("HIST M1165", "HIST M1191", "row and mint", ""),
+    # Irvine Valley HUM 1H anchors to HUM 1.
+    ("HUMA M10LS", "HUMA M1088", "row and mint", ""),
+    # San Jose City "Mathematics (MATH) 071H" has no MATH 071 at the college (only 071X, a support course): no anchor.
+    ("MATH M10NA", "MATH 210", "none: no anchor", ""),
+    # Antelope Valley MATH 150H and Saddleback MATH 3AH anchor into C-ID MATH 210, which holds MATH C2210 and C2210H.
+    ("MATH M1333", "MATH 210", "held", "CCN-coded course"),
+    # Step 1's two rows stand; each base takes a second Honors M-ID (PHIL M1124, LIBR M10CI), so neither mints.
+    ("HUMA M10ME", "HUMA M1110", "row, mint held", "Honors M-IDs anchored into it"),
+    ("LIBR M10CJ", "LIBR M1040", "row, mint held", "Honors M-IDs anchored into it"),
+]
 # Self-contained rows for the matcher's find_base, so its answer is pinned whatever the day's file holds.
 FIXTURES = [
     ("an abbreviated base title, Orange Coast ARCH A296H",
@@ -230,34 +304,72 @@ def titles_score():
     return {"right": sum(x["pass"] for x in out), "wrong": sum(not x["pass"] for x in out), "pairs": out}
 
 
-def narrow_score(members_dir):
-    """The narrow rule against NARROW_LABELS: got = narrow_reasons names a test that fails. The plan's named lists
-    (REVIEW3_BASES, REVIEW3_ROW_ONLY) are not read, so a positive the four tests miss counts wrong."""
-    import _honors_of_s653_dryrun as dr
-    import _honors_pairs_second as second
-    import _reclustering_s648_dryrun as s648
-    w = dr.Shim(members_dir)
-    _, _, rows, _ = s648.measure_honors(w)
-    sec = second.derive(w.members)
+def _row(t):
+    return {"college": t[0], "code": t[1], "title": t[2]}
+
+
+def anchors_score(drop=()):
+    import _honors_anchors as A
     out = []
-    for (h, b), want in sorted(NARROW_LABELS.items()):
-        bs = "M-ID" if s648.World.id_system(w, b).startswith("M-ID") else "official"
-        want_rows = {(r["college"], r["base_code"]) for r in rows if r.get("identity") == h
-                     and r.get("base_identity") == b}
-        base_rows = [m for m in (w.members.get(b) or []) if (m["college"], m["code"]) in want_rows]
-        why = dr.narrow_reasons(w, h, b, bs, sorted(sec.get((h, b)) or []), base_rows)
-        out.append({"honors_id": h, "base": b, "expected_hold": want, "holds": bool(why),
-                    "why": [x[:3] for x in why], "pass": bool(why) == want})
-    side = {}
-    for name, want in (("positives", True), ("negatives", False)):
-        xs = [x for x in out if x["expected_hold"] is want]
-        side[name] = {"labels": len(xs), "right": sum(x["pass"] for x in xs), "wrong": sum(not x["pass"] for x in xs),
-                      "wrong_pairs": [x["honors_id"] + " / " + x["base"] + " " + "".join(x["why"]) for x in xs
-                                      if not x["pass"]]}
-    return dict(side, pairs=out)
+    for h, b, keys, want in ANCHOR_LABELS:
+        import _reclustering_s648_dryrun as s648
+        ck = {s648.code_key(k) for k in keys} | {s648.code_key(h[1]), s648.code_key(b[1])}
+        got = A.anchor_kind(_row(h), _row(b), ck, drop)
+        out.append({"honors": f"{h[0]} {h[1]}", "base": b[1], "expected": want, "got": got, "pass": got == want})
+    return {"labels": len(out), "right": sum(x["pass"] for x in out), "wrong": sum(not x["pass"] for x in out),
+            "wrong_labels": [f"{x['honors']} / {x['base']}: {x['got']}" for x in out if not x["pass"]], "pairs": out}
 
 
-def measure(members, members_dir=None):
+def cluster_fixtures_score(drop=()):
+    import _honors_anchors as A
+    import honors_of as ho
+    out = []
+    for name, members, x, other, want_row, want_mint in CLUSTER_FIXTURES:
+        an = A.anchors(members, drop)
+        into = {}
+        for a in an:
+            if a["kind"] == "anchor" and a["base_id"] != a["honors_id"]:
+                into.setdefault(a["base_id"], set()).add(a["honors_id"])
+        dec = A.decide(x, [a for a in an if a["honors_id"] == x], members, into, other,
+                       lambda i: not ho.is_m_id(i), drop)
+        ok = (dec["row"], dec["mint"]) == (want_row, want_mint)
+        out.append({"name": name, "expected": [want_row, want_mint], "got": [dec["row"], dec["mint"]], "pass": ok})
+    return {"labels": len(out), "right": sum(x["pass"] for x in out), "wrong": sum(not x["pass"] for x in out),
+            "wrong_labels": [x["name"] for x in out if not x["pass"]], "fixtures": out}
+
+
+def clusters_score(plan):
+    """CLUSTER_LABELS against the plan. Each label id resolves through kb/alias_chain.py's pending maps (the plan's
+    own era) and fails when it is not in the plan's pairs: a label never passes with no rows behind it."""
+    import alias_chain
+    pending, _ = alias_chain.pending_maps(None, baseline_through=alias_chain.ALIAS_MAPS[-1])
+    pmaps = alias_chain.load_maps(pending)
+    by = {(p["honors_id"], p["base_id"]): p for p in plan}
+    out = []
+    for h, b, want, why in CLUSTER_LABELS:
+        rh, rb = alias_chain.resolve_id(h, pmaps), alias_chain.resolve_id(b, pmaps)
+        p = by.get((rh, rb))
+        got = p["action"] if p else "(no such pair: the label's ids are gone)"
+        reasons = " ".join((p or {}).get("holds", []) + (p or {}).get("no_mint", []))
+        ok = bool(p) and got.split(":")[0] == want.split(":")[0] and got.startswith(want) and why in reasons
+        out.append({"honors_id": rh, "base": rb, "expected": want, "got": got, "pass": ok})
+    return {"labels": len(out), "right": sum(x["pass"] for x in out), "wrong": sum(not x["pass"] for x in out),
+            "wrong_labels": [f"{x['honors_id']} / {x['base']}: {x['got']}" for x in out if not x["pass"]],
+            "pairs": out}
+
+
+def mutation():
+    """Drop each clause of rules 1 to 3 in turn: a label must fail for each, or the clause guards nothing."""
+    import _honors_anchors as A
+    res = []
+    for c in A.CLAUSES_1 + A.CLAUSES_2 + A.CLAUSES_3:
+        a, f = anchors_score((c,)), cluster_fixtures_score((c,))
+        res.append({"clause": c, "caught": bool(a["wrong"] or f["wrong"]),
+                    "failing": (a["wrong_labels"] + f["wrong_labels"])[:3]})
+    return res
+
+
+def measure(members, members_dir=None, plan=None):
     import _honors_pairs_second as second
     m, s = matcher_pairs(members), second.derive(members)
     both = set(m) & set(s)
@@ -272,8 +384,22 @@ def measure(members, members_dir=None):
         "matcher_only": sorted(map(list, set(m) - set(s))), "second_only": sorted(map(list, set(s) - set(m))),
         "fixtures": fixtures(), "titles": titles_score(),
     }
-    if members_dir:
-        res["narrow"] = narrow_score(members_dir)
+    res["anchors"] = anchors_score()
+    res["cluster_fixtures"] = cluster_fixtures_score()
+    res["mutation"] = mutation()
+    if plan is None and members_dir:
+        import _honors_of_s653_dryrun as dr
+        import _reclustering_s648_dryrun as s648
+        w = dr.Shim(members_dir)
+        _, _, rows, _ = s648.measure_honors(w)
+        cur = dr.jload(os.path.join(HERE, "coci_curation.json"))["curations"]
+        plan = dr.plan_pairs(w, rows, members_dir, cur, second.derive(w.members))
+    if plan is not None:
+        cl = clusters_score(plan)
+        fx = res["cluster_fixtures"]
+        res["clusters"] = {"labels": cl["labels"] + fx["labels"], "right": cl["right"] + fx["right"],
+                           "wrong": cl["wrong"] + fx["wrong"], "wrong_labels": cl["wrong_labels"] + fx["wrong_labels"],
+                           "real": cl, "fixtures": fx}
     return res
 
 
@@ -289,13 +415,14 @@ def main():
         r = res[k]
         print(f"{k}: {r['pairs']} pairs; right {r['right']}, wrong {r['wrong']}, missed {r['missed']}, held out "
               f"{r['held_out']}, unlabeled {r['unlabeled_found']}")
-    n = res["narrow"]
-    print(f"titles: right {res['titles']['right']}, wrong {res['titles']['wrong']}; narrow rule: must hold "
-          f"{n['positives']['labels']}, right {n['positives']['right']}, wrong {n['positives']['wrong']}; must pair "
-          f"{n['negatives']['labels']}, right {n['negatives']['right']}, wrong {n['negatives']['wrong']}")
-    for side in ("positives", "negatives"):
-        for x in n[side]["wrong_pairs"]:
-            print(f"  wrong ({side}): {x}")
+    a, c = res["anchors"], res["clusters"]
+    print(f"titles: right {res['titles']['right']}, wrong {res['titles']['wrong']}; anchors: {a['labels']} labels, "
+          f"right {a['right']}, wrong {a['wrong']}; clusters: {c['labels']} labels, right {c['right']}, wrong "
+          f"{c['wrong']}")
+    for x in a["wrong_labels"] + c["wrong_labels"]:
+        print("  wrong: " + x)
+    for m in res["mutation"]:
+        print(f"  mutation {m['clause']}: {'caught by ' + '; '.join(m['failing']) if m['caught'] else 'NOT CAUGHT'}")
     for f in res["fixtures"]:
         if not f["pass"]:
             print("  FAIL " + f["name"])

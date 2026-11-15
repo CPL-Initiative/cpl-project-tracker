@@ -14,13 +14,11 @@ WHAT IT DOES.
      (imported, never copied), on the committed members file. Since the 2026-11-14 20:27Z daily run the committed
      payload carries #3304's delete and step 1's two rows, so the plan reads it as it stands (S654); the two
      simulated exports that stood in for the delete before it synced are retired.
-  2. Plans each pair: the honors_of row, the proposed H id, member counts by named measure, and every hold. THE
-     NARROW RULE (S654, `d-honors-narrow-positive-rule-s654`; #3315's third review): a pair gets a row and a mint only
-     when (a) the second derivation (kb/_honors_pairs_second.py) finds it by number, the matcher finding it too; (b)
-     the base holds one title group; (c) no college gives the base two course numbers; (d) the sequence marks of
-     every raw title on both sides agree, read before strip_honors. Held is the default: everything else waits until
-     its base is split. Held outright as well: the bases review three named, two Honors ids with different courses
-     on one official base, a base holding a CCN-coded course. lump_reasons stays as a report column only.
+  2. Plans each Honors M-ID on its ANCHORS (S654, `d-honors-anchored-rows-s654`, after #3315's fourth review): the
+     same-college course pairs kb/_honors_anchors.py finds, its rules 1 to 3 deciding the row and the mint. Each row
+     carries its anchors, so a later split of either cluster can rewire it. The cluster tests (one title group, two
+     numbers, sequence marks, lump_reasons) decide nothing: a base they flag is a split candidate in the report. The
+     matcher and the second derivation stay as report signals and name a second base for the mint's clause.
   3. --check, on the apply day after the last daily run: re-measures all of it on the checkout's payload, refuses
      unless the step-2 rows' digest and the plan's class digest are the plan's, and refuses a checkout without
      origin/main's head. On a pass it writes check_receipt.json beside the plan: the head, both digests, the SQL's
@@ -53,6 +51,7 @@ import honors_of as ho  # noqa: E402
 import _reclustering_s648_dryrun as s648  # noqa: E402
 import _mid_outcomes_compare as cmp  # noqa: E402
 import alias_chain  # noqa: E402
+import _honors_anchors as anchors_mod  # noqa: E402
 
 COHORT = "honors-s653@bot"          # step 1: the first two honors_of rows (2026-11-14_s653_honors_of_field.sql)
 COHORT_ROWS = "honors-rows-s653@bot"  # step 2: its own cohort, so each rollback keys on cohort and field alone
@@ -255,20 +254,10 @@ def lump_reasons(w, h, b):
     return out
 
 
-# ── The narrow rule (S654) ──────────────────────────────────────────────────────────────────────────────────────
-# #3315's third review: the lump test and the sequence test leaked for a third round, so they no longer decide. A
-# pair gets a row and a mint only when all four tests below pass; held is the default (`d-honors-narrow-positive-
-# rule-s654`). Each test reads the members file (local courses) and fails closed.
-
-# The bases review three named in findings 1 and 2, held outright until each is split (MUSIC 015A and 015B in one id,
-# HUM 16, 18 and 24 in one id, Advanced C, C++ and C# in one id, a dashed period lost, a sequence under one title).
-REVIEW3_BASES = ("ASTR M1019", "BIOL M1049", "BIOL M1262", "ENGL M1348", "ETHS M1256", "FREN M1014", "FREN M1035",
-                 "FTVE M1002", "HIST M1183", "HUMA M1114", "HUMA M1125", "ITIS M1068", "JAPN M1017", "JAPN M1032",
-                 "MATH M1123", "MUSI M1044", "MUSI M1237")
-# Finding 5's Honors ids: two ids with different parts on one official base, or a pair that is not Honors and base.
-REVIEW3_ROW_ONLY = ("BIOL M1103", "BIOL M10OY", "BUSI M10FD", "BUSI M10FE", "MATH M11DN", "MATH M11DO", "THTR M11MI")
-# A CCN-coded local course (Skyline ASTR C1001L): the CCN record is the gold standard (Sam, 2026-11-14).
-CCN_CODE = re.compile(r"^[A-Z]+\s*C\d{4}[A-Z]*$")
+# ── The cluster tests, report columns only (S654) ─────────────────────────────────────────────────────────
+# Since the anchored rows (`d-honors-anchored-rows-s654`) these hold and release nothing: a base they flag is a
+# split candidate for the re-clustering lane (split_flags). The rows rest on anchors (kb/_honors_anchors.py).
+CCN_CODE = anchors_mod.CCN_CODE
 H_ID_SQL = r"^[A-Z]{1,6} [MZ][0-9][A-Z0-9]{3}H$"   # the mint's marker: a kb_curation row keyed on an H id
 STRICT_STOP = {"and", "of", "the", "a", "an", "in", "for", "on"}
 PART_WORDS = {"one": "1", "two": "2", "three": "3", "four": "4", "first": "1", "second": "2", "third": "3"}
@@ -279,7 +268,8 @@ def strict_words(title):
     kept (C, C++ and C# are three courses), 'with' kept (Astronomy Lab beside Astronomy with Lab is two), sequence
     marks dropped (they are compared apart, in sequence_marks), a trailing s dropped from a word of four letters or
     more."""
-    t = s648.HONORS_WORD.sub(" ", title or "").lower().replace("&", " and ")
+    t = re.split(r"\bformerly\b", anchors_mod.clean(title), maxsplit=1, flags=re.I)[0]
+    t = s648.HONORS_WORD.sub(" ", t).lower().replace("&", " and ")
     t = re.sub(r"\bu\.?\s?s\.?(?=\s|$)", " united states ", t)
     ws = [x for x in re.findall(r"[a-z0-9][a-z0-9+#]*", t)
           if x not in STRICT_STOP and x not in s648.ROMAN and not re.fullmatch(r"\d{1,2}", x)]
@@ -329,7 +319,7 @@ def sequence_marks(title):
     """(d): the marks that tell one course of a sequence from the next, read from the raw title before strip_honors
     (a dashed period, "(1895-1950)", survives): seq_tokens, plus an end letter C to F, "Part One" or "Part 2", and the
     words early, late, later and recent."""
-    raw = title or ""
+    raw = anchors_mod.clean(title)
     out = set(s648.seq_tokens(raw))
     low = s648.HONORS_WORD.sub(" ", raw).lower()
     ws = re.findall(r"[a-z0-9]+", low)
@@ -345,80 +335,32 @@ def sequence_marks(title):
     return frozenset(out)
 
 
-def narrow_reasons(w, h, b, base_system, second_by, base_rows=None):
-    """Why the narrow rule holds the pair (empty: a row, and a mint on an M-ID base). base_rows: for an official base,
-    the base courses the pair names (an official record holds many colleges' courses by its body's definition, so
-    (b) and (c) read only an M-ID base). The labels in kb/_honors_matcher_recall.py score this function."""
+def split_flags(w, h, b):
+    """The cluster tests, as report columns only (S654, anchored rows): a base or an Honors id they flag is a SPLIT
+    CANDIDATE for the re-clustering lane. They hold and release nothing."""
+    base = [m for m in (w.members.get(b) or []) if not anchors_mod.honors_word(m["title"])]
+    hon = [m for m in (w.members.get(h) or []) if anchors_mod.honors_word(m["title"])]
     out = []
-    if "number" not in (second_by or ()):
-        out.append("(a) the second derivation does not find the pair by number"
-                   + (" (by title alone)" if second_by else ""))
-    hon = [m for m in (w.members.get(h) or []) if s648.is_honors(m["title"], m["code"])[0] == "honors"]
-    if base_system == "M-ID":
-        base = [m for m in (w.members.get(b) or []) if s648.is_honors(m["title"], m["code"])[0] != "honors"]
-        if not one_title_group([m["title"] for m in base]):
-            ts = sorted({" ".join(m["title"].split()) for m in base})
-            out.append(f"(b) the base holds more than one title group: {'; '.join(ts[:4])}"
-                       + (f" and {len(ts) - 4} more" if len(ts) > 4 else ""))
-        tn = two_numbers(base)
-        if tn:
-            out.append(f"(c) a college gives the base two course numbers: {', '.join(tn[:3])}")
-    else:
-        base = base_rows or []
-    marks = {sequence_marks(m["title"]) for m in base + hon}
-    if len(marks) > 1:
-        out.append("(d) the sequence marks differ across the base and the Honors side: "
-                   + "; ".join(sorted(", ".join(sorted(x)) for x in marks)[:4]))
+    if base and not one_title_group([anchors_mod.clean(m["title"]) for m in base]):
+        out.append("the base holds more than one title group")
+    if two_numbers(base):
+        out.append("a college gives the base two course numbers: " + ", ".join(two_numbers(base)[:3]))
+    if len({sequence_marks(anchors_mod.clean(m["title"])) for m in base + hon}) > 1:
+        out.append("the sequence marks differ across the base and the Honors side")
+    if hon and not one_title_group([s648.strip_honors(anchors_mod.clean(m["title"])) for m in hon]):
+        out.append("the Honors id holds more than one Honors title group")
     return out
 
 
 def plan_pairs(w, rows, out_dir, live_cur, second):
-    """Every pair either derivation finds, planned. second: kb/_honors_pairs_second.derive on the same members. A pair
-    gets a row only where both find it (two signals); a pair one alone finds is held and says which."""
+    """The anchored plan (S654, `d-honors-anchored-rows-s654`): one record per Honors M-ID with an anchor, keyed on
+    its anchored base, plus every pair the matcher or the second derivation finds without an anchor (action none).
+    Rules 1 to 3 live in kb/_honors_anchors.py; the safety holds below (pending alias maps, merges slated or decided,
+    a person's join, an id already carrying another honors_of, a CCN Honors record beside the base) stay."""
     first = pairs_of(rows)
-    pairs = Counter(first)
-    for k in second:
-        pairs.setdefault(k, 0)
     folded = folded_identities(out_dir)
     index = set(cmp.load_index(out_dir))
     live_ids = index | set(w.members) | set(w.cat) | set(w.sg)
-    honors_rows = defaultdict(list)
-    for r in rows:
-        if r.get("base_identity") and r["base_identity"] != r["identity"]:
-            honors_rows[(r["identity"], r["base_identity"])].append(r)
-    bases_of = defaultdict(set)
-    for (h, b) in pairs:
-        bases_of[h].add(b)
-    # A base whose courses already pair with a CCN Honors record (ASTR C1001H beside ASTR M1012): CCN holds that
-    # Honors course, so an M-ID Honors pair on the same base waits for it (the #3313 review's addition).
-    ccn_h_partner = defaultdict(set)
-    for (h, b) in pairs:
-        if s648.World.id_system(w, h) == "CCN-ID" and h.endswith("H"):
-            ccn_h_partner[b].add(h)
-    # The Honors M-IDs whose courses name this base and no other share the base's one H id (decision 3). The first
-    # (most local courses, then id) takes it by a one-to-one alias map at the mint; each other one keeps its own
-    # honors_of row under its own id and folds by a merge into the minted H id, its own change after the mint. So the
-    # mint never moves two ids onto one key, and no (course_id, field) slot is ever written twice (#3315's review,
-    # item 5).
-    honors_of_base = defaultdict(set)
-    for (h, b) in pairs:
-        if s648.World.id_system(w, h).startswith("M-ID") and len(bases_of[h]) == 1:
-            honors_of_base[b].add(h)
-
-    def h_order(b):
-        return sorted(honors_of_base[b], key=lambda i: (-len(w.members.get(i) or []), i))
-    # Finding 5: an official base that takes two or more M-ID Honors ids holds each unless their Honors titles name
-    # one course (two-way rows would make part I and part II equivalent through one base).
-    official_takers = defaultdict(set)
-    for (h, b) in pairs:
-        if s648.World.id_system(w, h).startswith("M-ID") and not s648.World.id_system(w, b).startswith("M-ID"):
-            official_takers[b].add(h)
-
-    def takers_one_course(b):
-        ts = [honors_titles(w, i) for i in sorted(official_takers[b])]
-        raw = {sequence_marks(m["title"]) for i in official_takers[b] for m in (w.members.get(i) or [])
-               if s648.is_honors(m["title"], m["code"])[0] == "honors"}
-        return len(raw) <= 1 and all(same_course(ts[0], t) for t in ts[1:])
     promotions = jload(os.path.join(HERE, "promotions.json"))["promotions"]
     merge_into = {k: v["merge_into"] for k, v in live_cur.items() if isinstance(v, dict) and v.get("merge_into")}
     pending, _ = alias_chain.pending_maps(None, baseline_through=alias_chain.ALIAS_MAPS[-1])
@@ -428,170 +370,115 @@ def plan_pairs(w, rows, out_dir, live_cur, second):
         s = w.id_system(i)
         return "M-ID" if s.startswith("M-ID") else s
 
-    def composition(i):
-        ms = w.members.get(i) or []
-        kinds = Counter(s648.is_honors(m["title"], m["code"])[0] for m in ms)
-        return {"local_courses": len(ms), "honors_courses": kinds.get("honors", 0),
-                "program_courses": kinds.get("program", 0),
-                "colleges": len({m["college"] for m in ms})}
-
     def person(i):
-        e = live_cur.get(i) or {}
-        rb = e.get("reviewed_by")
+        rb = (live_cur.get(i) or {}).get("reviewed_by")
         return rb if rb and not ho.is_bot(rb) else None
 
-    out = []
-    for (h, b), n in sorted(pairs.items()):
-        hs, bs = system(h), system(b)
-        hc, bc = composition(h), composition(b)
-        pure = hc["local_courses"] > 0 and hc["honors_courses"] + hc["program_courses"] == hc["local_courses"]
-        rec = {"honors_id": h, "base_id": b, "honors_system": hs, "base_system": bs,
-               "course_pairs": n,
-               "courses": [[r["college"], r["code"], r["base_code"]] for r in honors_rows[(h, b)]][:4],
-               "honors": {"local_courses": hc["local_courses"], "honors_courses": hc["honors_courses"],
-                          "colleges": hc["colleges"], "folded_identities": folded.get(h)},
-               "base": {"local_courses": bc["local_courses"], "colleges": bc["colleges"],
-                        "folded_identities": folded.get(b)},
-               "proposed_h_id": ho.honors_id_for(b) if bs == "M-ID" else None,
-               "found_by": sorted((["the matcher"] if (h, b) in first else [])
-                                  + (["the second derivation"] if (h, b) in second else [])),
-               "second_by": sorted(second.get((h, b)) or []),
-               "holds": [], "notes": []}
-        if alias_chain.resolve_id(h, pmaps) != h or alias_chain.resolve_id(b, pmaps) != b:
-            rec["holds"].append("an id moves under a pending alias map")
+    an = anchors_mod.anchors(w.members)
+    by_x = defaultdict(list)
+    for a in an:
+        by_x[a["honors_id"]].append(a)
+    into = defaultdict(set)
+    for x, xa in by_x.items():
+        if system(x) == "M-ID":
+            for a in xa:
+                if a["kind"] == "anchor" and a["base_id"] != x:
+                    into[a["base_id"]].add(x)
+    named_by = defaultdict(set)
+    for (h, b) in set(first) | set(second):
+        named_by[h].add(b)
+    ccn_h_partner = defaultdict(set)
+    for (h, b) in set(first) | set(second):
+        if system(h) == "CCN-ID" and h.endswith("H"):
+            ccn_h_partner[b].add(h)
+
+    out, seen = [], set()
+    for x in sorted(by_x):
+        xa = sorted(by_x[x], key=lambda a: (a["base_id"], a["college"], a["honors_code"]))
+        hs = system(x)
         if hs != "M-ID":
-            rec["action"] = "none: the Honors side is a " + hs + " record, which stays as its body numbers it"
-            if hs == "CCN-ID" and h.endswith("H") and h[:-1] == b:
-                rec["notes"].append("CCN already holds this pair as base and H record")
-            out.append(rec)
+            for b in sorted({a["base_id"] for a in xa} - {x}):   # an official record holding both is one record
+                seen.add((x, b))
+                out.append({"honors_id": x, "base_id": b, "honors_system": hs, "base_system": system(b),
+                            "action": f"none: the Honors side is a {hs} record, which stays as its body numbers it",
+                            "anchors": [a for a in xa if a["base_id"] == b], "holds": [], "no_mint": [], "notes": []})
             continue
-        # A row's key and value are live ids in the payload the plan reads; on the apply day --check re-measures the
-        # whole plan on the day's payload (the SQL itself cannot see the live id set).
-        for i in (h, b):
+        dec = anchors_mod.decide(x, xa, w.members, into, named_by.get(x, ()), lambda i: system(i) != "M-ID")
+        b = dec.get("base") or (dec["bases"] or [xa[0]["base_id"]])[0]
+        bs = system(b)
+        hon = sum(1 for m in (w.members.get(x) or []) if anchors_mod.honors_word(m["title"])
+                  or any((m["college"], m["code"]) == (a["college"], a["honors_code"]) for a in xa))
+        rec = {"honors_id": x, "base_id": b, "honors_system": hs, "base_system": bs,
+               "anchors": [{k: a[k] for k in ("kind", "base_id", "college", "honors_code", "base_code",
+                                              "honors_title", "base_title")} for a in xa],
+               "anchor_bases": dec["bases"],
+               "honors": {"local_courses": len(w.members.get(x) or []), "honors_courses": hon,
+                          "folded_identities": folded.get(x)},
+               "base": {"local_courses": len(w.members.get(b) or []), "folded_identities": folded.get(b)},
+               "proposed_h_id": ho.honors_id_for(b) if bs == "M-ID" else None,
+               "found_by": sorted((["the matcher"] if (x, b) in first else [])
+                                  + (["the second derivation"] if (x, b) in second else [])),
+               "holds": list(dec["holds"]), "no_mint": list(dec["no_mint"]), "notes": [],
+               "split_candidate": split_flags(w, x, b), "report_lump": lump_reasons(w, x, b) if bs == "M-ID" else []}
+        for bb in dec["bases"]:
+            seen.add((x, bb))
+        seen.add((x, b))
+        if hon * 2 <= rec["honors"]["local_courses"]:
+            rec["holds"].append(f"the id is mostly not Honors courses ({hon} of {rec['honors']['local_courses']}): it "
+                                "is not an Honors M-ID, and a row would hold its other courses apart from the base")
+        for i in (x, b):
             if i not in live_ids:
-                raise SystemExit(f"ABORT: {i} (pair {h} with {b}) is not in the live id set")
-        # Two signals or hold (the conductor, after #3315's review): the matcher and the second derivation must both
-        # find the pair.
-        if (h, b) not in first:
-            rec["holds"].append("found by the second derivation alone (by " + " and ".join(rec["second_by"])
-                                + "): the matcher holds it out")
-        elif (h, b) not in second:
-            rec["holds"].append("found by the matcher alone: the second derivation does not find it")
-        # The narrow rule (S654): a row and a mint only where all four tests pass; held is the default, leads and
-        # followers alike, until the base is split. lump_reasons stays as a report column and decides nothing.
-        base_rows = None
-        if bs != "M-ID":
-            want = {(r["college"], r["base_code"]) for r in honors_rows[(h, b)]}
-            base_rows = [m for m in (w.members.get(b) or []) if (m["college"], m["code"]) in want]
-        rec["narrow"] = narrow_reasons(w, h, b, bs, rec["second_by"], base_rows)
-        rec["holds"].extend(rec["narrow"])
-        if bs == "M-ID":
-            rec["report_lump"] = lump_reasons(w, h, b)
-        if b in REVIEW3_BASES:
-            rec["holds"].append("named in #3315's third review (findings 1 and 2): held until the base is split")
-        if h in REVIEW3_ROW_ONLY:
-            rec["holds"].append("named in #3315's third review (finding 5): two Honors ids with different parts, or "
-                                "a pair that is not Honors and base, on one official base")
-        if bs != "M-ID" and len(official_takers[b]) > 1 and not takers_one_course(b):
-            rec["holds"].append(f"the official base {b} takes {len(official_takers[b])} Honors ids whose Honors "
-                                f"titles name different courses: {', '.join(sorted(official_takers[b]))}")
-        ccn = sorted({m["code"] for m in (w.members.get(b) or []) if CCN_CODE.match(" ".join(m["code"].split()))})
-        if bs == "M-ID" and ccn:
-            rec["holds"].append(f"the base holds a CCN-coded course ({', '.join(ccn[:3])}): the CCN record is the "
-                                "gold standard, and the course belongs under it before any mint")
-        md = sorted(k for k, v in live_cur.items() if isinstance(v, dict) and v.get("merge_dismissed")
-                    and {h, b} <= set(str(v["merge_dismissed"]).split("|")))
-        if md:
-            rec["notes"].append(f"a Keep as-is ({', '.join(md)}) names both ids: it agrees with the pair standing apart")
-        if not pure:
-            rec["holds"].append(f"the Honors course shares its M-ID with {hc['local_courses'] - hc['honors_courses'] - hc['program_courses']} "
-                                "non-Honors course(s): a split comes before any row")
-        if len(bases_of[h]) > 1:
-            rec["holds"].append(f"the Honors M-ID's courses name {len(bases_of[h])} base identities: "
-                                + ", ".join(sorted(bases_of[h])))
-        if ccn_h_partner.get(b):
-            rec["holds"].append(f"the CCN Honors record {', '.join(sorted(ccn_h_partner[b]))} already pairs with a "
-                                f"course in {b}: this M-ID's Honors courses belong beside it")
-        if bs == "M-ID":
-            hid = rec["proposed_h_id"]
-            if hid in live_ids and hid != h:
-                rec["holds"].append(f"the proposed id {hid} already exists")
-            if len(honors_of_base[b]) > 1 and h in honors_of_base[b] and h_order(b)[0] != h:
-                lead = h_order(b)[0]
-                rec["fold_into"] = hid
-                rec["fold_lead"] = lead
-                mine, theirs = honors_titles(w, h), honors_titles(w, lead)
-                rec["fold_titles"] = {"this": mine, "lead": theirs}
-                if not same_course(mine, theirs):
-                    rec["holds"].append(f"the fold would join distinct Honors courses: {lead} takes {hid}, and this "
-                                        "id's Honors titles name another course in a base that lumps several")
-                else:
-                    rec["notes"].append(f"the base has {len(honors_of_base[b])} single-base Honors M-IDs "
-                                        f"({', '.join(h_order(b))}): {lead} takes {hid} at the mint; this one keeps "
-                                        "its own honors_of row and merges into the H id after the mint, its own change")
-        elif bs == "CCN-ID":
-            if b + "H" in live_ids:
-                rec["holds"].append(f"the CCN record {b}H already holds Honors courses beside {b}: this M-ID's "
-                                    "courses belong beside it, a fold and not a row")
-            else:
-                rec["notes"].append("the base is a CCN record: honors_of names it; no H id is minted (CCN numbers its own)")
-        else:
-            rec["notes"].append("the base is a C-ID record: honors_of names it; no H id (C-ID has no H ids)")
-        for i, side in ((b, "base"), (h, "Honors id")):
+                raise SystemExit(f"ABORT: {i} (anchored {x} to {b}) is not in the live id set")
+            if alias_chain.resolve_id(i, pmaps) != i:
+                rec["holds"].append(f"{i} moves under a pending alias map")
+        for i, side in ((b, "base"), (x, "Honors id")):
             if i in merge_into:
                 rec["holds"].append(f"the {side} {i} is slated to merge into {merge_into[i]}")
             if i in DECIDED_MERGES:
                 rec["holds"].append(f"the {side} {i} is DECIDED to merge into {DECIDED_MERGES[i]}")
-        # Item 1: a person's saved row holds the pair only where the pair's honors_of would contradict it: a person's
-        # merge that puts the Honors id and its base under one id. A person's merge of a third course into either
-        # side, a title, a discipline or a Keep as-is agrees with the pair standing apart.
-        edges = joining_edges(merge_into, h, b)
+        edges = joining_edges(merge_into, x, b)
         if edges:
             by = sorted({live_cur[e].get("reviewed_by") or "?" for e in edges})
-            if any(not ho.is_bot(x) for x in by):
-                rec["holds"].append("a person's merge joins the Honors id and its base: Rule 10, the person's row wins")
-            else:
-                rec["holds"].append("a bot's merge joins the Honors id and its base")
-        have = (live_cur.get(h) or {}).get("honors_of")
-        if have and (h not in STEP1_IDS or have != b):
+            rec["holds"].append("a person's merge joins the Honors id and its base: Rule 10, the person's row wins"
+                                if any(not ho.is_bot(y) for y in by) else "a bot's merge joins the Honors id and its base")
+        have = (live_cur.get(x) or {}).get("honors_of")
+        if have and have != b:
             rec["holds"].append(f"the Honors id already carries honors_of {have}")
         elif have:
-            rec["notes"].append("step 1's row stands (applied 2026-11-14, honors-s653@bot); step 2 writes no row here")
-        for i, side in ((h, "Honors id"), (b, "base")):
-            p = person(i)
-            if p:
-                fields = sorted(k for k in (live_cur.get(i) or {}) if k not in ho_LEDGER)
-                rec["notes"].append(f"a person saved {', '.join(fields)} on the {side}: the row overrides nothing"
-                                    + (" and the mint carries it to the H id" if side == "Honors id" else ""))
-        pm = sorted(k for k, v in merge_into.items() if v in (h, b) and person(k))
+            rec["notes"].append("the honors_of row stands" + (" (step 1, applied 2026-11-14)" if x in STEP1_IDS else ""))
+        if ccn_h_partner.get(b):
+            rec["holds"].append(f"the CCN Honors record {', '.join(sorted(ccn_h_partner[b]))} already pairs with a "
+                                f"course in {b}: this M-ID's Honors courses belong beside it")
+        if bs == "CCN-ID" and b + "H" in live_ids:
+            rec["holds"].append(f"the CCN record {b}H already holds Honors courses beside {b}")
+        if rec["proposed_h_id"] and rec["proposed_h_id"] in live_ids and rec["proposed_h_id"] != x:
+            rec["no_mint"].append(f"the proposed id {rec['proposed_h_id']} already exists")
+        md = sorted(k for k, v in live_cur.items() if isinstance(v, dict) and v.get("merge_dismissed")
+                    and {x, b} <= set(str(v["merge_dismissed"]).split("|")))
+        if md:
+            rec["notes"].append(f"a Keep as-is ({', '.join(md)}) names both ids: it agrees with the pair standing apart")
+        pm = sorted(k for k, v in merge_into.items() if v in (x, b) and person(k))
         if pm:
-            rec["notes"].append(f"a person merged other courses into the pair's ids, and none joins the pair: {len(pm)}")
             rec["person_merges_in"] = pm
-        if len(bases_of[h]) > 1:
-            share = Counter({bb: pairs[(h, bb)] for bb in bases_of[h]})
-            top, n_top = share.most_common(1)[0]
-            rec["modal_base"] = {"id": top, "course_pairs": n_top, "of": sum(share.values())}
-        tg = ((promotions.get(h) or {}).get("official_targets") or {})
+        tg = ((promotions.get(x) or {}).get("official_targets") or {})
         if any(t.split(":", 1)[-1] == b for t in tg):
-            rec["notes"].append("kb/promotions.json names the base among the Honors id's official targets: held, then "
-                                "released by the generator's Phase B guard (#3313, decision 4)")
+            rec["notes"].append("kb/promotions.json names the base among the Honors id's official targets")
         if rec["holds"]:
             rec["action"] = "held"
-        elif bs == "M-ID" and rec.get("fold_into"):
-            rec["action"] = "row, fold after the mint"
-        elif bs == "M-ID":
+        elif bs != "M-ID":
+            rec["action"] = "row only (official base)"
+        elif not rec["no_mint"]:
             rec["action"] = "row and mint"
         else:
-            rec["action"] = "row only (official base)"
+            rec["action"] = "row, mint held"
         out.append(rec)
-    # A follower folds into its lead's H id: when the lead is held, no H id is minted, and the follower holds too.
-    act = {(p["honors_id"], p["base_id"]): p for p in out}
-    for p in out:
-        if p.get("fold_lead") and p["action"] != "held":
-            lead = act.get((p["fold_lead"], p["base_id"]))
-            if not lead or lead["action"] != "row and mint":
-                p["holds"].append(f"the lead {p['fold_lead']} is held, so no H id is minted for this base")
-                p["action"] = "held"
+    for (h, b) in sorted((set(first) | set(second)) - seen):
+        out.append({"honors_id": h, "base_id": b, "honors_system": system(h), "base_system": system(b),
+                    "action": "none: no anchor" if system(h) == "M-ID" else
+                    f"none: the Honors side is a {system(h)} record, which stays as its body numbers it",
+                    "anchors": [], "holds": [], "no_mint": [], "notes": [],
+                    "found_by": sorted((["the matcher"] if (h, b) in first else [])
+                                       + (["the second derivation"] if (h, b) in second else []))})
     mints = Counter(p["proposed_h_id"] for p in out if p["action"] == "row and mint")
     dup = [k for k, v in mints.items() if v > 1]
     if dup:
@@ -605,23 +492,23 @@ def hold_class(hold):
 
 def summarize(plan, live_cur=None):
     s = {"pairs": len(plan), "by_action": dict(Counter(p["action"].split(":")[0] for p in plan).most_common()),
-         "by_systems": dict(Counter(f"{p['honors_system']} Honors, {p['base_system']} base" for p in plan).most_common()),
-         "holds_by_reason": {}}
-    s["by_signals"] = dict(Counter(" and ".join(p["found_by"]) for p in plan).most_common())
-    s["by_signals_m_id_honors"] = dict(Counter(" and ".join(p["found_by"]) for p in plan
-                                               if p["honors_system"] == "M-ID").most_common())
-    reasons = Counter()
-    for p in plan:
-        for h in p["holds"]:
-            reasons[hold_class(h)] += 1
+         "by_systems": dict(Counter(f"{p['honors_system']} Honors, {p['base_system']} base" for p in plan).most_common())}
+    an = [a for p in plan if p["honors_system"] == "M-ID" for a in p.get("anchors") or []]
+    s["anchors"] = {"measure": "same-college course pairs (kb/_honors_anchors.py rule 1) on unified_courses_members.js "
+                               "whose Honors course sits in an M-ID, counted once per Honors course and base course",
+                    "anchor": sum(1 for a in an if a["kind"] == "anchor"),
+                    "doubtful": sum(1 for a in an if a["kind"] == "doubtful"),
+                    "on_rows": sum(len(p["anchors"]) for p in plan if p["action"].startswith("row"))}
+    reasons = Counter(hold_class(h) for p in plan for h in p["holds"])
     s["holds_by_reason"] = dict(reasons.most_common())
     s["held_pairs_by_first_reason"] = dict(Counter(hold_class(p["holds"][0]) for p in plan if p["holds"]).most_common())
-    s["notes_by_reason"] = dict(Counter(re.sub(r"[A-Z]{2,6} [A-Z]?\w*\d\w*", "<id>", n).split(":")[0]
-                                        for p in plan for n in p["notes"]).most_common())
-    s["pairs_held"] = sum(1 for p in plan if p["holds"])
+    s["mint_held_by_reason"] = dict(Counter(hold_class(h) for p in plan if p["action"] == "row, mint held"
+                                            for h in p["no_mint"]).most_common())
+    s["pairs_held"] = sum(1 for p in plan if p["action"] == "held")
     s["rows_to_write"] = sum(1 for p in plan if p["action"].startswith("row"))
     s["mints"] = sum(1 for p in plan if p["action"] == "row and mint")
-    s["folds_after_the_mint"] = sum(1 for p in plan if p["action"] == "row, fold after the mint")
+    s["split_candidates"] = sorted({p["base_id"] for p in plan if p["action"].startswith("row") and
+                                    p.get("split_candidate")})
     named = {i for p in plan if p["action"].startswith("row") for i in (p["honors_id"], p["base_id"])}
     if live_cur is not None:
         pm = [k for k, v in live_cur.items() if v.get("merge_into") in named and v.get("reviewed_by")
@@ -635,106 +522,85 @@ def summarize(plan, live_cur=None):
     return s
 
 
+def _anchor_line(a):
+    return (f"{a['college']}: {a['honors_code']} \"{a['honors_title']}\" beside {a['base_code']} "
+            f"\"{a['base_title']}\"" + ("" if a["kind"] == "anchor" else " (doubtful)"))
+
+
 def write_md(doc, path):
     s, rep = doc["summary"], doc["reproduction"]
-    nr = doc.get("narrow") or {}
-    L = ["# The Honors pairs: `honors_of` rows and base-plus-H mints, dry run (S653, redrawn S654)", "",
+    L = ["# The Honors pairs: `honors_of` rows on anchors, dry run (S653, redrawn S654)", "",
          f"Written by `kb/_honors_of_s653_dryrun.py` at {doc['written']}. Nothing was applied. Design: "
-         "`docs/reference/honors_of_design.md`. Every pair, with its counts and holds, is in `plan.json` beside this file.", "",
+         "`docs/reference/honors_of_design.md`. Every pair, with its anchors, counts and holds, is in `plan.json`.", "",
          "## The count, reproduced", "",
          f"`measure_honors` (kb/_reclustering_s648_dryrun.py), on the committed members file (generated "
          f"{rep['committed']['members_generated_at']}): **{rep['committed']['pairs']} pairs** "
-         f"({rep['committed']['course_rows']} Honors courses apart from their base). The committed payload carries "
-         "#3304's delete and step 1's two rows since the 2026-11-14 20:27Z daily run, so the plan reads it as it "
-         "stands, the same payload `--check` re-measures.", "",
-         "## The narrow rule", "",
-         "A pair gets a row and a mint only when all four tests pass; held is the default, until the base is split "
-         "(`d-honors-narrow-positive-rule-s654`, after #3315's third review). (a) The second derivation finds the "
-         "pair by number, and the matcher finds it too. (b) The base holds one title group. (c) No college gives the "
-         "base two course numbers. (d) The sequence marks of every raw title on both sides agree, read before "
-         "`strip_honors`. An official base (C-ID, CCN) is one record by its body's definition, so (b) and (c) read "
-         "only an M-ID base, and (d) reads the base courses the pair names. Held outright as well: the 17 bases "
-         "review three named in findings 1 and 2, two Honors ids with different courses on one official base "
-         "(finding 5), and a base holding a CCN-coded course (finding 6).", "",
-         f"- the M-ID Honors pairs on an M-ID base that both derivations find: {nr.get('both_found', '?')}; the four "
-         f"tests pass on {nr.get('pass', '?')}; by test (a pair can fail several): {nr.get('fails', {})}",
-         f"- the review's named bases held: {nr.get('named_held', '?')} of {len(REVIEW3_BASES)}, "
-         f"{nr.get('named_held_by_rule', '?')} by the four tests alone"]
+         f"({rep['committed']['course_rows']} Honors courses apart from their base). The plan reads the committed "
+         "payload as it stands, the same payload `--check` re-measures.", "",
+         "## Rows rest on anchors", "",
+         "An anchor is two courses at one college: an Honors course and the base course whose code names the same "
+         "subject and number once the Honors marker is struck, with a second signal at the course level (an Honors "
+         "word in the title, or equal titles). An Honors M-ID gets a row to its base when every anchor lands in that "
+         "base; anchors in two bases, or a doubtful anchor (an Honors number pair whose titles disagree), hold it. A "
+         "mint also needs every member course anchored, one Honors M-ID per base, no CCN-coded course in the base, "
+         "and no second base named by another derivation (`kb/_honors_anchors.py`; `d-honors-anchored-rows-s654`).", "",
+         "A row on an impure base is the base's own impurity, not this plan's fault. The anchors say where the row "
+         "goes when the base is split, so the re-clustering lane can rewire it mechanically.", "",
+         f"- anchors ({s['anchors']['measure']}): {s['anchors']['anchor']}, and {s['anchors']['doubtful']} doubtful; "
+         f"{s['anchors']['on_rows']} carry the rows",
+         f"- split candidates (bases of a row that a cluster test flags; report only): {len(s['split_candidates'])}"]
     rc = doc.get("recall") or {}
     if rc:
-        lab = rc["labels"]
-        L += ["", "## Two signals, and the self-recall measures", "",
-              "A pair gets a row only where two derivations that share no code both find it: the matcher "
-              "(`kb/_reclustering_s648_dryrun.py` `measure_honors`) and the second derivation "
-              "(`kb/_honors_pairs_second.py`, from course numbers and titles directly). A pair one alone finds is "
-              "held and says which. `kb/_honors_matcher_recall.py` measures each against hand labels "
-              f"({lab['real']} real pairs, {lab['not_real']} not real; {rc['measure']}):", ""]
-        for k, name in (("matcher", "the matcher"), ("second", "the second derivation"), ("both", "both (the rows)")):
+        L += ["", "## The self-recall measures", "",
+              f"Hand labels in `kb/_honors_matcher_recall.py` ({rc['measure']}):", ""]
+        for k, name in (("matcher", "the matcher"), ("second", "the second derivation")):
             r = rc[k]
             L.append(f"- {name}: {r['pairs']} pairs; right {r['right']}, wrong {r['wrong']}, missed {r['missed']}, "
-                     f"held out {r['held_out']}; {r['unlabeled_found']} found carry no label"
-                     + (f"; missed {', '.join('`' + a + '` with `' + b + '`' for a, b in r['missed_pairs'])}"
-                        if r["missed_pairs"] else ""))
-        L += [f"- the course-title test (`one_course`), {len(rc['titles']['pairs'])} labeled title pairs: right "
-              f"{rc['titles']['right']}, wrong {rc['titles']['wrong']} ("
-              + "; ".join(f"{x['a']} / {x['b']}" for x in rc["titles"]["pairs"] if not x["pass"]) + ")",
-              "- the narrow rule (`narrow_reasons`, without the named lists), against hand labels from review three's "
-              f"findings 1 and 2 and plain one-course bases: must hold {rc['narrow']['positives']['labels']}, right "
-              f"{rc['narrow']['positives']['right']}, wrong {rc['narrow']['positives']['wrong']}"
-              + (f" ({', '.join(rc['narrow']['positives']['wrong_pairs'])})" if rc['narrow']['positives']['wrong'] else "")
-              + f"; must pair {rc['narrow']['negatives']['labels']}, right {rc['narrow']['negatives']['right']}, wrong "
-              f"{rc['narrow']['negatives']['wrong']}"
-              + (f" ({', '.join(rc['narrow']['negatives']['wrong_pairs'])})" if rc['narrow']['negatives']['wrong'] else "")]
+                     f"held out {r['held_out']}")
+        a, c = rc["anchors"], rc["clusters"]
+        L += [f"- anchors (rule 1), {a['labels']} course pairs written by hand: right {a['right']}, wrong {a['wrong']}",
+              f"- clusters (rules 2 and 3), {c['labels']} Honors ids with an expected class: right {c['right']}, wrong "
+              f"{c['wrong']}",
+              f"- mutation: each of {len(rc['mutation'])} clauses dropped in turn; a label fails for "
+              f"{sum(1 for m in rc['mutation'] if m['caught'])}"
+              + "".join(f"; uncaught: {m['clause']}" for m in rc["mutation"] if not m["caught"])]
     pm = s.get("person_merges_into_a_planned_id") or {}
     L += ["", "## The plan", "",
           f"- pairs: {s['pairs']}",
           f"- by action: {s['by_action']}",
           f"- by systems: {s['by_systems']}",
-          f"- by signals (a row needs both): {s['by_signals']}; M-ID Honors side only: {s['by_signals_m_id_honors']}",
-          f"- rows to write (no hold): {s['rows_to_write']}, of which mints (base plus H): {s['mints']}, "
-          f"folds after the mint: {s['folds_after_the_mint']}; step 1 writes "
+          f"- rows to write: {s['rows_to_write']}, of which mints (base plus H): {s['mints']}; step 1 wrote "
           f"{sum(1 for p in doc['pairs'] if p['action'].startswith('row') and p['honors_id'] in STEP1_IDS)} of them "
-          f"and step 2 the rest",
-          f"- held pairs by first reason: {s['held_pairs_by_first_reason']}",
-          f"- holds by reason (a pair can carry several): {s['holds_by_reason']}",
+          "and step 2 writes the rest",
+          f"- held by first reason: {s['held_pairs_by_first_reason']}",
+          f"- rows whose mint is held, by reason: {s['mint_held_by_reason']}",
           (f"- person merges into a planned id ({pm['measure']}): {pm['rows']}; pairs a person's merge joins: "
-           f"{pm['joining_a_planned_pair']}. Only a join holds a pair (Rule 10); the rest proceed." if pm else ""),
+           f"{pm['joining_a_planned_pair']}" if pm else ""),
           f"- the rows' digest: md5 `{doc.get('rows_md5')}` over the step-2 rows, `course_id>value` joined by `|` in "
           "C order; the migration refuses unless what it inserts has the same digest",
-          f"- the plan's class digest: md5 `{doc.get('plan_md5')}` over every pair's `honors_id>base_id>action>proposed "
-          "H id>fold_into`, so a mint or fold class that goes stale refuses `--check` too", "",
-          "**The fan-in order.** One H id per base (decision 3). The Honors M-ID with the most local courses takes "
-          "it at the mint, by a one-to-one alias map. Each other single-base Honors M-ID on that base keeps its own "
-          "`honors_of` row under its own id and merges into the H id after the mint, its own change. The mint never "
-          "moves two ids onto one key, so no `(course_id, field)` slot is written twice. A follower whose Honors "
-          "titles name a different course from the lead's is held: the fold would join distinct courses.", "",
-          "Measures: *local courses* = rows in `unified_courses_members.js`; *folded identities* = the row's "
-          "`members` in `unified_courses_data.js` or `unified_courses_standalone.js`.", "",
-          "### Held pairs, by first reason", ""]
-    held = defaultdict(list)
+          f"- the plan's class digest: md5 `{doc.get('plan_md5')}` over every pair's class and its anchors, so a "
+          "class or an anchor that moves refuses `--check`", "",
+          "Measures: *local courses* = rows in `unified_courses_members.js`.", "",
+          "## Every row and its anchors", ""]
     for p in doc["pairs"]:
-        if p["holds"]:
-            held[hold_class(p["holds"][0])].append(p)
-    for k in sorted(held, key=lambda x: (-len(held[x]), x)):
-        L.append(f"- **{k}** ({len(held[k])}): " + ", ".join(f"`{p['honors_id']}` with `{p['base_id']}`" for p in held[k]))
-    L += ["", "### Two examples per class", ""]
-    by = defaultdict(list)
+        if p["action"].startswith("row"):
+            L.append(f"- `{p['honors_id']}` to `{p['base_id']}` ({p['action']}"
+                     + (f"; proposed `{p['proposed_h_id']}`" if p["action"] == "row and mint" else "")
+                     + (f"; split candidate: {'; '.join(p['split_candidate'])}" if p.get("split_candidate") else "")
+                     + "): " + " | ".join(_anchor_line(a) for a in p["anchors"]))
+    L += ["", "## Held, with the reason and the anchors", ""]
     for p in doc["pairs"]:
-        key = p["action"].split(":")[0] if not p["holds"] else "held: " + p["holds"][0].split(":")[0].split(" (")[0]
-        by[re.sub(r"[A-Z]{2,6} [A-Z]?\w*\d\w*", "<id>", key)].append(p)
-    for k in sorted(by):
-        L.append(f"- **{k}** ({len(by[k])}):")
-        for p in by[k][:2]:
-            L.append(f"  - `{p['honors_id']}` ({p['honors']['local_courses']} local courses, {p['honors']['folded_identities']} "
-                     f"folded identities) with base `{p['base_id']}` ({p['base']['local_courses']} local courses, "
-                     f"{p['base']['folded_identities']} folded identities); proposed `{p['proposed_h_id']}`; "
-                     f"courses {p['courses'][:2]}")
-    L += ["", "## What a person does", "",
+        if p["action"] == "held":
+            L.append(f"- `{p['honors_id']}` to `{p['base_id']}`: {p['holds'][0]}. "
+                     + " | ".join(_anchor_line(a) for a in p["anchors"][:4]))
+    L += ["", "## Split candidates for the re-clustering lane", "",
+          ", ".join(f"`{b}`" for b in s["split_candidates"]), "",
+          "## What a person does", "",
           "Nothing here is applied. The rows migration (`kb/migrations/2026-11-14_s653_honors_of_rows.sql`) is "
           "drafted and not listed in `kb/migrations/.apply`. On the apply day, after the last daily run: merge "
           "`origin/main`, run `python3 kb/_honors_of_s653_dryrun.py --check` (it reads the newest plan folder), and "
           "commit the `check_receipt.json` it writes with the `.apply` line. The runner refuses the file without a "
-          "receipt whose SQL and payload digests match the checkout.", ""]
+          "receipt whose SQL, payload and main head match.", ""]
     with open(path, "w", encoding="utf-8") as f:
         f.write("\n".join(L))
 
@@ -760,10 +626,13 @@ def rows_md5(rows):
 
 
 def plan_md5(pairs):
-    """The class digest (#3315's third review: the rows digest covers pairs only, so a mint or fold class could go stale
-    unseen): md5 over every pair's honors_id>base_id>action>proposed H id>fold_into, joined by | in C order."""
+    """The class digest (#3315's third and fourth reviews): md5 over every pair's honors_id>base_id>action>proposed H
+    id and each of its anchors (college, Honors code, base code, kind), joined by | in C order. A class or an anchor
+    that moves changes it."""
     keys = sorted(f"{p['honors_id']}>{p['base_id']}>{p['action']}>{p.get('proposed_h_id') or ''}>"
-                  f"{p.get('fold_into') or ''}" for p in pairs)
+                  + ";".join(sorted(f"{a['college']}/{a['honors_code']}/{a['base_code']}/{a['kind']}"
+                                    for a in p.get("anchors") or []))
+                  for p in pairs)
     return hashlib.md5("|".join(keys).encode("utf-8")).hexdigest()
 
 
@@ -806,10 +675,10 @@ def write_rows_sql(doc, write=True):
         f"-- writes ({len(rows)} rows; {plan_rel}, written {doc['written']}; rows md5 {digest}, class md5",
         f"-- {doc.get('plan_md5')}).",
         "-- Design: docs/reference/honors_of_design.md. Ruling: Sam, Sheet 197 card 3 (14:37Z 2026-11-14): \"Build the field",
-        "-- first, then the rows\"; \"Rows for all 508 pairs\". THE NARROW RULE (S654, d-honors-narrow-positive-rule-s654,",
-        "-- after #3315's third review): a pair gets a row only where the second derivation finds it by number and the",
-        "-- matcher finds it too, the base holds one title group, no college gives the base two course numbers, and the",
-        "-- raw sequence marks agree; held is the default, and held pairs get no row (plan.md lists them by reason).",
+        "-- first, then the rows\"; \"Rows for all 508 pairs\". ANCHORED ROWS (S654, d-honors-anchored-rows-s654, after",
+        "-- #3315's fourth review): a row rests on same-college course pairs, an Honors course and its base course with",
+        "-- one subject and number (kb/_honors_anchors.py); every anchor of the Honors M-ID must land in the one base.",
+        "-- plan.md lists every row's anchors, and the held pairs by reason.",
         "-- Written by kb/_honors_of_s653_dryrun.py from the committed plan. Lands after step 1 (applied 2026-11-14).",
         "-- ON THE APPLY DAY, after the last daily run, merge origin/main and run",
         "-- `python3 kb/_honors_of_s653_dryrun.py --check` (it reads the newest plan folder): it re-measures the pairs and",
@@ -1036,20 +905,6 @@ def freshness_problems(root=ROOT):
     return freshness(root)[0]
 
 
-def narrow_summary(plan):
-    """The narrow rule's own counts, over the M-ID Honors pairs on an M-ID base that both derivations find."""
-    both = [p for p in plan if p["honors_system"] == "M-ID" and p["base_system"] == "M-ID" and len(p["found_by"]) == 2]
-    fails = Counter(x[:3] for p in both for x in p.get("narrow") or [])
-    named = [p for p in plan if p["base_id"] in REVIEW3_BASES]
-    return {"measure": "M-ID Honors pairs on an M-ID base that both derivations find (identity pairs on "
-                       "unified_courses_members.js); a test fails when narrow_reasons names it",
-            "both_found": len(both), "pass": sum(1 for p in both if not p.get("narrow")),
-            "fails": dict(sorted(fails.items())),
-            "named_bases_in_plan": len({p["base_id"] for p in named}),
-            "named_held": len({p["base_id"] for p in named if p["action"] == "held"}),
-            "named_held_by_rule": len({p["base_id"] for p in named if p.get("narrow")})}
-
-
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--plan", action="store_true", help="draw the plan on the committed payload, and its SQL")
@@ -1085,18 +940,18 @@ def main():
     import _honors_pairs_second as second
     plan = plan_pairs(w, rows, ROOT, cur, second.derive(w.members))
     import _honors_matcher_recall as recall
-    rc = recall.measure(w.members, ROOT)
-    if rc["both"]["wrong"] or not all(f["pass"] for f in rc["fixtures"]):
+    rc = recall.measure(w.members, ROOT, plan)
+    if (rc["anchors"]["wrong"] or rc["clusters"]["wrong"] or not all(m["caught"] for m in rc["mutation"])
+            or not all(f["pass"] for f in rc["fixtures"])):
         raise SystemExit("ABORT: a self-recall measure fails: " + json.dumps({
-            "both_wrong": rc["both"]["wrong_pairs"], "fixtures": [f["name"] for f in rc["fixtures"] if not f["pass"]]}))
-    held_named = {p["base_id"] for p in plan if p["base_id"] in REVIEW3_BASES and p["action"] != "held"}
-    if held_named:
-        raise SystemExit(f"ABORT: a base #3315's third review named is not held: {sorted(held_named)}")
+            "anchors": rc["anchors"]["wrong_labels"], "clusters": rc["clusters"]["wrong_labels"],
+            "mutation": [m["clause"] for m in rc["mutation"] if not m["caught"]],
+            "fixtures": [f["name"] for f in rc["fixtures"] if not f["pass"]]}))
     doc = {"_about": "Dry run of the honors_of rows and base-plus-H mints. Nothing applied. Design: "
                      "docs/reference/honors_of_design.md.",
            "written": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "date": date,
            "cohort": COHORT, "cohort_rows": COHORT_ROWS, "alias_era": alias_chain.ALIAS_MAPS[-1],
-           "reproduction": rep, "narrow": narrow_summary(plan),
+           "reproduction": rep,
            "recall": {k: v for k, v in rc.items() if k != "fixtures"},
            "summary": summarize(plan, cur), "pairs": plan}
     doc["rows_md5"] = rows_md5(step2_rows(doc))
@@ -1109,9 +964,9 @@ def main():
         f.write("\n")
     write_md(doc, os.path.join(od, "plan.md"))
     write_rows_sql(doc)
-    print(json.dumps({"reproduction": rep["committed"], "narrow": doc["narrow"], "summary": {
-        k: doc["summary"][k] for k in ("pairs", "by_action", "rows_to_write", "mints", "folds_after_the_mint",
-                                       "pairs_held", "held_pairs_by_first_reason")},
+    print(json.dumps({"reproduction": rep["committed"], "summary": {
+        k: doc["summary"][k] for k in ("pairs", "by_action", "anchors", "rows_to_write", "mints", "pairs_held",
+                                       "held_pairs_by_first_reason", "mint_held_by_reason")},
         "step2_rows": doc["step2_rows"], "rows_md5": doc["rows_md5"], "plan_md5": doc["plan_md5"]}, indent=1))
     return 0
 
