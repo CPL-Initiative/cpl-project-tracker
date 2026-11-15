@@ -1240,10 +1240,11 @@ async function seedCommonsData(page, theme) {
 
 // The Commons data dashboard, slice 3 (#3215): the data dictionary or the API checklist, opened by its address.
 async function seedCommonsDataView(page, theme, view) {
-  await page.evaluate((v) => { const h = "commons/data/" + v; if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, view);
+  await page.evaluate((v) => { const h = "commons/data/" + (v === "pathways" ? "college/cerritos-college/pathways" : v); if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, view);
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
   await page.waitForSelector(view === "dictionary" ? "#commons-root #cdd-dict" : view === "districts" ? "#commons-root #cdd-districts"
-    : view === "slos" ? "#commons-root #cdd-slos" : view === "sharing" ? "#commons-root #cdc-sw-view" : view === "integrations" ? "#commons-root #cdc-in-view" : view === "eta" ? "#commons-root [data-eta-view]" : "#commons-root #cdd-apis", { state: "attached", timeout: 60000 });
+    : view === "slos" ? "#commons-root #cdd-slos" : view === "sharing" ? "#commons-root #cdc-sw-view" : view === "integrations" ? "#commons-root #cdc-in-view" : view === "eta" ? "#commons-root [data-eta-view]" : view === "clock" ? "#commons-root [data-eta-pane]"
+    : view === "pathways" ? "#commons-root iframe[data-pathways-frame]" : "#commons-root #cdd-apis", { state: "attached", timeout: 60000 });
   await page.evaluate(() => {
     try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
@@ -3865,6 +3866,23 @@ module.exports = {
     routes: [{ hash: "commons/data/eta", name: "data-eta-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "eta"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* S661: the full College Collections ETA in the side panel, and a college's CPL Pathways framed there. */
+  "commons-data-clock": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, the full ETA in the side panel",
+    routes: [{ hash: "commons/data/clock", name: "data-clock" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "clock"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-pathways": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, a college's CPL Pathways in the side panel",
+    routes: [{ hash: "commons/data/college/cerritos-college/pathways", name: "data-pathways" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "pathways"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* S648: the district roll-up, a fourth view of College Data Collection. */

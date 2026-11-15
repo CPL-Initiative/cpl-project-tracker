@@ -405,6 +405,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cip_status_counts.json` | tabs: `cip-crosswalk` | — |
 | `cobi_a11y.js` | pages: `CPL_Dashboard.html` | — |
 | `cobi_brand.js` | pages: `CPL_Dashboard.html` | — |
+| `cobi_framed.js` | pages: `CPL_Dashboard.html` | — |
 | `cobi_identity.js` | pages: `CPL_Dashboard.html` | — |
 | `cobi_orgs.js` | pages: `CPL_Dashboard.html` | — |
 | `cobi_refresh.js` | pages: `CPL_Dashboard.html` | — |
@@ -1545,5 +1546,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1005 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1006 file
 datasets · 195 external services · 603 consumers · 72 workflows · 41 tabs.

@@ -113,14 +113,71 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
   await D.boot(V.root, "eta");
   await flush(V.w);
   check("(3) ⭐ #commons/data/eta opens the clock from its arrival and reports its address", D.address() === "commons/data/eta" && !!V.root.querySelector("[data-eta-view]"));
-  const navs = [...V.root.querySelectorAll("nav.cdd-views a")].map((a) => a.getAttribute("data-goto"));
-  check("(3) the menu shows it only as the current page while it is a preview", navs.indexOf("eta") >= 0 && V.root.querySelector('nav.cdd-views a[data-goto="eta"]').getAttribute("aria-current") === "page");
+  check("(3) the menu carries the clock now that it is live (Sam, S661)", !!V.root.querySelector('nav.cdd-views a[data-goto="eta"]'));
   D.render(V.root, M, "", new Date());
-  check("(3) ⭐ on the college list the menu does not carry the preview", ![...V.root.querySelectorAll("nav.cdd-views a")].some((a) => a.getAttribute("data-goto") === "eta"));
+  check("(3) ⭐ the College Collections ETA band tops College Data Collection's list (Sam, S661)", txt(V.root.querySelector("[data-eta-top] #eta-band-h")) === "College Collections ETA" &&
+    V.root.querySelector("[data-eta-top]").compareDocumentPosition(V.root.querySelector("#cdd-stamp")) & 4);
+  const tile = V.root.querySelector('[data-pane-tile="clock"]');
+  check("(3) ⭐ a card among the figures carries the Phase 1 date and opens the full clock in the side panel", tile && /December 26, 2026/.test(txt(tile)));
+  tile.click();
+  check("(3) the side panel draws the full clock at its own address, with a new-tab link to the clock's page", D.address() === "commons/data/clock" && !!V.root.querySelector("#cdd-panel [data-eta-pane] #eta-full") &&
+    V.root.querySelector('#cdd-panel a[data-newtab]').getAttribute("href") === "#commons/data/eta");
+  V.root.querySelector('[data-eta-top] [data-eta="comis"]').click();
+  check("(3) ⭐ the band and the panel share one set of picks: COMIS on in the band is on in the panel's levers",
+    V.root.querySelector('#cdd-panel [data-eta="lever-comis"]').getAttribute("aria-pressed") === "true");
+  V.root.querySelector('[data-eta-top] [data-eta="eta-mode"]').click();
+  check("(3) the card's figure follows the picks (COBIx on #3373)", !/December 26, 2026/.test(txt(V.root.querySelector('[data-pane-tile="clock"]'))) && /latest pace, projected/.test(txt(V.root.querySelector('[data-pane-tile="clock"]'))));
+  V.root.querySelector('[data-eta-top] [data-eta="eta-mode"]').click();
+  V.root.querySelector('[data-eta-top] [data-eta="comis"]').click();
+  V.root.querySelector('#cdd-panel [data-eta="lever-comis"]').click();
+  check("(3) a pick in the panel shows in the band too", V.root.querySelector('[data-eta-top] [data-eta="comis"]').getAttribute("aria-pressed") === "true");
+  E._reset();
+  const pwb = V.root.querySelector('#cdd-colleges [data-pane="pathways"]');
+  check("(3) ⭐ every college row carries CPL Pathways (Sam, S661)", V.root.querySelectorAll('#cdd-colleges tbody tr[data-id] [data-pane="pathways"]').length === V.root.querySelectorAll("#cdd-colleges tbody tr[data-id]").length && pwb);
+  pwb.click();
+  const fr = V.root.querySelector("#cdd-panel iframe[data-pathways-frame]");
+  check("(3) ⭐ it opens the college's CPL Pathways framed in the side panel, with links to a new tab", fr && /\?framed=1#cpl-pathways\/college\//.test(fr.getAttribute("src")) && fr.getAttribute("title") &&
+    V.root.querySelector('#cdd-panel a[data-newtab]').getAttribute("href") === "#cpl-pathways/college/" + encodeURIComponent(B.colleges.length ? M.colleges.filter((c) => pwb.closest("tr").getAttribute("data-id") === String(c.id))[0].name : "") && /\/pathways$/.test(D.address()));
+  const FR = new JSDOM("<!doctype html><html><head></head><body></body></html>", { url: "https://example.org/index.html?framed=1#cpl-pathways", runScripts: "dangerously" });
+  FR.window.eval(fs.readFileSync("cobi_framed.js", "utf8"));
+  const FN = new JSDOM("<!doctype html><html><head></head><body></body></html>", { url: "https://example.org/index.html#cpl-pathways", runScripts: "dangerously" });
+  FN.window.eval(fs.readFileSync("cobi_framed.js", "utf8"));
+  check("(3) ⭐ ?framed=1 opened at the top does nothing: the header and menu stay, so a reader has a way out (COBIx on #3373)",
+    !FR.window.document.documentElement.classList.contains("cobi-framed") && !FN.window.document.documentElement.classList.contains("cobi-framed"));
+  // Inside a same-origin frame it hides them, routes a link to another tab to the page around it, and the session keeper only reads.
+  const { requestInterceptor } = require("jsdom");
+  const FRAME_HTML = '<!doctype html><html><head></head><body><a id="l" href="#commons/data/eta">x</a><a id="i" href="#cpl-pathways/college/y">y</a><script>' +
+    fs.readFileSync("cobi_framed.js", "utf8") + "</script></body></html>";
+  const PARENT = new JSDOM('<!doctype html><html><head></head><body><iframe id="f" src="https://example.org/index.html?framed=1#cpl-pathways/college/x"></iframe></body></html>',
+    { url: "https://example.org/index.html#commons/data", runScripts: "dangerously",
+      resources: { interceptors: [requestInterceptor(() => new Response(FRAME_HTML, { headers: { "Content-Type": "text/html" } }))] } });
+  await new Promise((r) => PARENT.window.document.getElementById("f").addEventListener("load", r));
+  const fw = PARENT.window.document.getElementById("f").contentWindow;
+  fw.document.getElementById("l").dispatchEvent(new fw.MouseEvent("click", { bubbles: true, cancelable: true }));
+  check("(3) ⭐ inside a same-origin frame ?framed=1 hides COBI's chrome, and a link to another tab opens in the page around the frame",
+    fw.document.documentElement.classList.contains("cobi-framed") && PARENT.window.location.hash === "#commons/data/eta");
+  fw.document.getElementById("i").dispatchEvent(new fw.MouseEvent("click", { bubbles: true, cancelable: true }));
+  check("(3) a link within the framed tab stays in the frame", PARENT.window.location.hash === "#commons/data/eta");
+  // COBIx's re-check on #3373: a tab in the frame calling ensureFresh() must hand the renewal to the outer page.
+  const SESSION_SRC = fs.readFileSync("cpl_session.js", "utf8");
+  const P2 = new JSDOM('<!doctype html><html><head></head><body><iframe id="f" src="https://example.org/index.html?framed=1#cpl-pathways"></iframe></body></html>',
+    { url: "https://example.org/index.html#commons/data", runScripts: "dangerously",
+      resources: { interceptors: [requestInterceptor(() => new Response("<!doctype html><html><head></head><body></body></html>", { headers: { "Content-Type": "text/html" } }))] } });
+  let outerCalls = 0, frameFetches = 0;
+  P2.window.CPL_SESSION = { ensureFresh: function () { outerCalls++; return Promise.resolve(null); } };
+  await new Promise((r) => P2.window.document.getElementById("f").addEventListener("load", r));
+  const f2 = P2.window.document.getElementById("f").contentWindow;
+  f2.fetch = function () { frameFetches++; return Promise.reject(new Error("no network")); };
+  f2.eval(SESSION_SRC);
+  await f2.CPL_SESSION.ensureFresh();
+  check("(3) ⭐ in a frame, ensureFresh() hands the renewal to the outer page and never exchanges a token itself (COBIx on #3373)",
+    outerCalls === 1 && frameFetches === 0);
+  check("(3) ⭐ in a frame, the session keeper reads the session and never starts its refresh (COBIx on #3373)",
+    /function start\(\) \{\s*if \(framedInCobi\(\)\) \{ try \{ sync\(\); \}[^\n]*return; \}/.test(fs.readFileSync("cpl_session.js", "utf8")));
+  check("(3) both HTMLs load cobi_framed.js", ["index.html", "CPL_Dashboard.html"].every((f) => /<script src="cobi_framed\.js"><\/script>/.test(fs.readFileSync(f, "utf8"))));
   D.render(V.root, M, "eta", new Date());
   const root = () => V.root.querySelector("[data-eta-view]");
-  check("(3) the page says it is a preview", /^Preview\./.test(txt(root().querySelector(".eta-preview"))));
-  check("(3) the heading and the big date", txt(root().querySelector("#eta-band-h")) === "ETA to Complete Phase 1 of the College Data Collection" &&
+  check("(3) the clock's own page: its heading and the big date", txt(root().querySelector("#eta-band-h")) === "College Collections ETA" &&
     txt(root().querySelector("[data-eta-date]")) === "December 26, 2026");
 
   // (4) Sam, in session, S661: the controls that move the date are chips; the words that open or reset stay words.

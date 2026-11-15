@@ -365,7 +365,10 @@
      "unlisted", so the address opens it and the menu does not show it. */
   var EXT_FILES = [["commons_data_sharing.js", "CPL_CDC_SHARING"], ["commons_data_integrations.js", "CPL_CDC_INTEGRATIONS"], ["commons_eta_clock.js", "CPL_COMMONS_ETA"]];
   function exts() { return Array.isArray(window.CPL_CDC_EXT) ? window.CPL_CDC_EXT.filter(Boolean) : []; }
-  function extHost() { return { go: go }; }
+  /* What a module may call: go to a view, and open a pane of its own in the side panel (the ETA clock's card, #3360). */
+  function extHost() { return { go: go, openPane: function (pane, fromEl) { openPane(null, pane, fromEl); } }; }
+  /* A module's own panes (x.panes): each a word of the address with no college, drawn by the module (#3360). */
+  function extPane(k) { var hit = null; exts().forEach(function (x) { if (!hit && x.panes && typeof x.panes[k] === "function") hit = x.panes[k]; }); return hit; }
   function loadExts() {
     var T = window.CPL_TABS;
     /* One after another, so the views' menu keeps the order EXT_FILES gives. */
@@ -374,6 +377,7 @@
     }, Promise.resolve()).then(function () {
       return Promise.all(exts().map(function (x) {
         Object.keys(x.views || {}).forEach(function (k) { if (!own(VIEWS, k)) VIEWS[k] = x.views[k]; });
+        Object.keys(x.panes || {}).forEach(function (k) { if (!own(PANES, k)) PANES[k] = 0; });
         return x.ready ? Promise.resolve(x.ready(window.fetch)).catch(function () { return null; }) : null;
       }));
     }).catch(function () { return null; });
@@ -499,7 +503,12 @@
     /* With the panel open, a college's word replaces the panel's contents with that college (#3310); otherwise it
        opens the row in place. */
     word.addEventListener("click", function () { if (S.panel != null && VIEW.panel && !VIEW.panel.hasAttribute("hidden")) openPanel(c.id, '[data-expand="' + c.id + '"]'); else toggleRow(c.id); });
-    var name = el("th", { scope: "row", "data-label": "College" }, [word, el("span", { cls: "cdd-dist", text: c.district || "" }),
+    /* Sam, in session, S661: every college row carries CPL Pathways, opening in the side panel: "such a perfect way to
+       visualize all the cdc and cpl commons data in use at a specific college for a specific program with specific
+       courses and embedded cpl and credential data--brings it all into perspective, the vision made real." */
+    var pw = paneWord("CPL Pathways", { k: "pathways" }, c.id, "cdd-rowpath");
+    pw.setAttribute("aria-label", "CPL Pathways for " + c.name);
+    var name = el("th", { scope: "row", "data-label": "College" }, [word, pw, el("span", { cls: "cdd-dist", text: c.district || "" }),
       flags.length ? el("span", { cls: "cdd-flags", text: flags.join("; ") }) : null]);
     var ov = overallOf(M, c);
     var ovCell = el("td", { "data-label": "Overall", cls: ov ? null : "cdd-quiet" }, ov
@@ -945,6 +954,7 @@
     if (!p || !own(PANES, p.k)) return false;
     if (p.k === "source") return !!sourceOf(M, c, p.a);
     if (p.k === "entry") return !c && ((M.dictionary || {}).datasets || []).some(function (x) { return x.link && slugOf({ name: x.name }) === p.a; });
+    if (extPane(p.k)) return !c;
     if (!c) return false;
     if (p.k === "catalog") return isHttp(c.catalog_url);
     if (p.k === "scout") return !!(c.scout && isHttp(c.scout.catalog_url));
@@ -954,6 +964,7 @@
     return true;   // pathways, slos, plos
   }
   function paneView(M, c, p) {
+    if (extPane(p.k)) { try { return extPane(p.k)(M, extHost()); } catch (e) { return { title: "Not drawn", kids: [tba("This pane could not be drawn.")] }; } }
     var LW = (M.rule || {}).levers || {};
     var outside = "A college's site usually refuses to be shown inside another page, so this panel shows what we hold about it.";
     if (p.k === "source" || p.k === "entry") {
@@ -991,9 +1002,12 @@
         cp == null ? null : ["Per passing program", "$" + cp.toFixed(3)], c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null,
         c.extracted != null ? ["Records extracted", fmt(c.extracted)] : null, c.read_seconds != null ? ["Page-finding time", minutes(c.read_seconds)] : null].filter(Boolean))] }; }
     if (p.k === "pathways") { var ph = pathwaysHref(c);
-      return { title: "CPL Pathways", tab: ph, basis: "A view in COBI.",
-        kids: [el("p", { cls: "cdd-of", text: "CPL Pathways shows " + c.name + "'s programs, its pathways and the credit for prior learning a student could use toward them." }),
-          el("p", null, [el("a", { href: ph, "data-goto-pathways": "true", text: "Go to " + c.name + " in CPL Pathways" })])] }; }
+      /* The panel frames the college's own CPL Pathways view, without COBI's header and menu (cobi_framed.js), so the
+         collection, the Commons and the college's credit for prior learning read together (Sam, S661). */
+      var src = (location.pathname || "index.html") + "?framed=1" + ph;
+      return { title: "CPL Pathways", tab: ph, basis: "A view in COBI, framed here. Open in a new tab gives CPL Pathways the whole window.",
+        kids: [el("p", { cls: "cdd-of", text: "CPL Pathways shows " + c.name + "'s programs, their courses, and the credit for prior learning and credentials a student could use toward them." }),
+          el("iframe", { cls: "cdd-pwframe", src: src, title: "CPL Pathways for " + c.name, loading: "lazy", "data-pathways-frame": "true" })] }; }
     if (p.k === "capture") {
       var d = datasets(M, c)[0];
       return { title: "What the capture holds", basis: "From the committed files: the college's capture, its records and the gap census.",
@@ -1379,6 +1393,8 @@
       if (fixCause || fixFilter) setAddress();
       return vpage;
     }
+    /* A module's band at the top of the list (the College Collections ETA, #3360). */
+    extCall("top", [M, extHost()]).forEach(function (n) { wrap.appendChild(n); });
     wrap.appendChild(el("p", { cls: "cdd-stamp", id: "cdd-stamp" }, [el("strong", { text: "From the committed files. " }),
       "Built " + (day(M.written) || "on a date the file does not give") + ". A program count here is the programs each college's capture listed; the Program Requirements tab counts the live Active programs. Dates are Pacific time.",
       el("span", { cls: "cdd-stamp-live", id: "cdd-stamp-live" }, [el("strong", { text: "From the live read. " }),
@@ -1386,7 +1402,7 @@
           : "The overall bar and the live counts read TBA. " + liveReason(M)])]));
 
     var grid = el("div", { cls: "cdd-tiles", role: "group", "aria-label": "Statewide figures" });
-    tiles(M).filter(Boolean).forEach(function (t) {
+    tiles(M).filter(Boolean).concat(extCall("tiles", [M, extHost()])).forEach(function (t) {
       var kids = [el("span", { cls: "cdd-v" + (t.v === "TBA" ? " cdd-tba" : ""), text: t.v }), el("span", { cls: "cdd-l", text: t.l }),
         t.conf ? el("span", { cls: "cdd-conf", text: t.conf }) : null, t.d ? el("span", { cls: "cdd-d", text: t.d }) : null];
       if (t.parts) {
@@ -1415,6 +1431,11 @@
         var b = el("button", { type: "button", cls: "cdd-tile cdd-open", "data-filter": t.f, "aria-pressed": S.filter === t.f ? "true" : "false" }, kids);
         b.addEventListener("click", function () { pick(t.f); });
         grid.appendChild(b);
+      } else if (t.pane) {
+        /* A card whose figure is a module's: it opens that module's pane in the side panel (#3360). */
+        var tp = el("button", { type: "button", cls: "cdd-tile cdd-open", "data-pane-tile": t.pane.k }, kids);
+        tp.addEventListener("click", function () { openPane(null, t.pane, tp); });
+        grid.appendChild(tp);
       } else if (t.view) {
         var v = el("button", { type: "button", cls: "cdd-tile cdd-open", "data-view": t.view }, kids);
         v.addEventListener("click", function () { go(t.view); });
@@ -1934,6 +1955,8 @@
     ".cdd-ask { color:var(--cmn-ink); }",
     ".cdd-more-act { margin:0; }",
     ".cdd-tbaline { margin:0; font-size:.88rem; color:var(--cmn-ink-2); }",
+    ".cdd-pwframe { width:100%; height:min(72vh, 900px); border:1px solid var(--cmn-line); border-radius:8px; background:var(--cmn-surface); }",
+    ".cdd-table th .cdd-rowpath { display:inline-block; margin-left:8px; font-size:.8rem; }",
     ".cdd-tbaline strong { color:var(--cmn-heading); }",
     /* slice 2: the side panel, the Funding Follow-up Dashboard's drawer in the Commons look. Opaque in both themes
        (--cmn-dialog; the dark --cmn-surface is glass), and above the site header (z-index 100 to 201), as a dialog is. */

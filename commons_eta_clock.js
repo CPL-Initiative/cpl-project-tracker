@@ -9,9 +9,10 @@
 // Show costs, Assumptions) and the full clock under it (the phase switcher, the dates, how far we have come, the
 // datasets of the phase, the levers, the moonshot plan and what is real and what is not dated).
 //
-// PREVIEW (S661): the clock opens at its own address, #commons/data/eta, and sits in no menu. Going live (the band at
-// the top of College Data Collection, the lite strip at the top of the CPL Commons tab) waits on Sam's go; flip
-// LISTED below and mount strip() in commons.js in that PR.
+// LIVE (Sam, S661: "add the 'College Collections ETA' widget to the College Data Collections tab and add a card to
+// the cdc tab to open the full ETA in sidebar"): the band tops the college list (hook "top"), a card among the figures
+// (hook "tiles") opens the full clock in the side panel (pane "clock", #commons/data/clock), and the clock keeps its own
+// page at #commons/data/eta. The three share one set of picks for the visit.
 //
 // What it reads, committed files the site already serves (it WRITES NOTHING):
 //   kb/status/program-requirements.json   the headline series: Active programs complete each day. The remaining work,
@@ -34,8 +35,9 @@
   "use strict";
 
   var VIEW_KEY = "eta";
-  var TITLE = "ETA clock";
-  var LISTED = false;   // preview: in no menu until Sam's go
+  var TITLE = "College Collections ETA";
+  var LISTED = true;   // live (Sam, S661): the band tops College Data Collection, its card opens the full clock in the side panel
+  var PANE_KEY = "clock";
   var FILES = { pr: "kb/status/program-requirements.json", refs: "kb/status/commons.json", integ: "kb/status/cdc_integrations.json",
     skills: "kb/reference/industry_credential_skills.json" };
   var ST = { pr: null, refs: null, integ: null, skills: null };
@@ -433,7 +435,8 @@
     var college = S.college ? B.colleges.filter(function (c) { return c.slug === S.college; })[0] || null : null;
     var P = phase1(B, S, college);
     var box = el("section", { cls: "eta-band", "aria-labelledby": "eta-band-h" });
-    box.appendChild(el("h3", { cls: "eta-head", id: "eta-band-h", text: "ETA to Complete Phase 1 of the College Data Collection" }));
+    box.appendChild(el("h3", { cls: "eta-head", id: "eta-band-h", text: "College Collections ETA" }));
+    box.appendChild(el("p", { cls: "eta-sub-h", text: "To complete Phase 1 of the College Data Collection" }));
     box.appendChild(picker(B, S, college, redraw));
     var date = el("span", { cls: "eta-date", "data-eta-date": "", text: headlineLabel(P, college) });
     var mode = pill(S.mode === "soonest" ? "Soonest" : "Latest", null, function () { S.mode = S.mode === "soonest" ? "latest" : "soonest"; redraw("eta-mode"); },
@@ -461,9 +464,12 @@
       return g;
     }
     row.appendChild(group("1", "P1")); row.appendChild(group("2", "P2")); row.appendChild(group("3", "P3"));
-    row.appendChild(withTip(chip("Detailed View and Plan", null, function () {
+    var fullBtn = chip("Detailed View and Plan", null, function () {
+      /* On the list, the full clock opens in the side panel; on the clock's own page, it is just below. */
+      if (BAND_HOST && BAND_HOST.openPane && !document.getElementById("eta-full")) { BAND_HOST.openPane({ k: PANE_KEY }, fullBtn); return; }
       var t = document.getElementById("eta-full"); if (t) { if (t.scrollIntoView) t.scrollIntoView({ block: "start" }); t.focus(); }
-    }, { "data-eta": "full" }), CHIP_TIPS.full));
+    }, { "data-eta": "full" });
+    row.appendChild(withTip(fullBtn, CHIP_TIPS.full));
     row.appendChild(withTip(chip("Assumptions", null, function () { S.open = null; S.assumptions = !S.assumptions; redraw("assumptions"); },
       { "data-eta": "assumptions", "aria-expanded": S.assumptions ? "true" : "false" }), CHIP_TIPS.assumptions));
     box.appendChild(row);
@@ -794,23 +800,76 @@
         el("a", { href: "#commons/data/" + VIEW_KEY, text: "Open the ETA clock" })])]);
   }
 
-  function view(key, M) {
-    if (key !== VIEW_KEY) return null;
-    ensureCss();
-    var root = el("div", { cls: "eta", "data-eta-view": "" });
-    if (!ST.pr) { root.appendChild(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), "The headline series (" + FILES.pr + ") could not be read, so the clock has no pace to date. Reload the tab to try again."])); return root; }
-    var B = base(M, ST.pr, ST.skills);
-    if (!B) { root.appendChild(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), "The headline series holds no day with a complete count."])); return root; }
-    var S = freshState();
-    function redraw(focusKey) {
-      root.textContent = "";
-      root.appendChild(el("p", { cls: "eta-preview", text: "Preview. This clock is not in the menu yet. Every date that moves when a connection is on is a projection, not a partner commitment." }));
-      root.appendChild(band(B, S, redraw));
-      root.appendChild(full(B, S, M, redraw));
-      if (focusKey) { var f = root.querySelector('[data-eta="' + focusKey + '"]'); if (f && f.focus) f.focus(); }
-    }
-    redraw();
+  /* One set of picks for the visit, shared by every place the clock is drawn (the band on the list, the full clock in
+     the side panel, the clock's own page): a chip turned on in one shows in the others. Nothing is stored. */
+  var SHARED = null, MOUNTS = [], BAND_HOST = null;
+  function shared() { return SHARED || (SHARED = freshState()); }
+  function redrawAll(fk, origin) {
+    MOUNTS = MOUNTS.filter(function (m) { return m.root === origin || m.root.isConnected; });
+    MOUNTS.forEach(function (m) { m.paint(); });
+    refreshTile();
+    if (fk && origin) { var f = origin.querySelector('[data-eta="' + fk + '"]'); if (f && f.focus) f.focus(); }
+  }
+  function mount(root, paint) {
+    var m = { root: root };
+    m.paint = function () { root.textContent = ""; paint(root, function (fk) { redrawAll(fk, root); }); };
+    MOUNTS.push(m); m.paint();
     return root;
+  }
+  function tbaRoot(root, M) {
+    if (!ST.pr) { root.appendChild(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), "The headline series (" + FILES.pr + ") could not be read, so the clock has no pace to date. Reload the tab to try again."])); return null; }
+    var B = base(M, ST.pr, ST.skills);
+    if (!B) root.appendChild(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), "The headline series holds no day with a complete count."]));
+    return B;
+  }
+  function view(key, M, host) {
+    if (key !== VIEW_KEY) return null;
+    ensureCss(); BAND_HOST = null;
+    var root = el("div", { cls: "eta", "data-eta-view": "" }), B = tbaRoot(root, M);
+    if (!B) return root;
+    return mount(root, function (r, redraw) {
+      r.appendChild(el("p", { cls: "eta-preview", text: "Every date that moves when a connection is on is a projection, not a partner commitment." }));
+      r.appendChild(band(B, shared(), redraw));
+      r.appendChild(full(B, shared(), M, redraw));
+    });
+  }
+  /* The band at the top of College Data Collection's list. */
+  function top(M, host) {
+    ensureCss(); BAND_HOST = host || null;
+    var root = el("div", { cls: "eta eta-top", "data-eta-top": "" }), B = tbaRoot(root, M);
+    if (!B) return root;
+    return mount(root, function (r, redraw) { r.appendChild(band(B, shared(), redraw)); });
+  }
+  /* The card among the list's figures: the Phase 1 date, opening the full clock in the side panel. */
+  function tiles(M) {
+    if (!ST.pr) return [];
+    var B = base(M, ST.pr, ST.skills); if (!B) return [];
+    TILE_B = B;
+    var T = tileWords(B);
+    return [{ v: T.v, l: "College Collections ETA", d: T.d, pane: { k: PANE_KEY } }];
+  }
+  /* The card's figure follows the picks (COBIx on #3373): every redraw rewrites it from the shared state. */
+  var TILE_B = null;
+  function tileWords(B) {
+    var S = shared(), P = phase1(B, S, null);
+    return { v: P.day == null ? "TBA" : longDate(P.day) + (P.est ? " est." : ""),
+      d: "Phase 1 at the " + (S.mode === "soonest" ? "soonest" : "latest") + " pace" + (P.moved ? ", projected with the chips that are on" : "") + "; opens the full clock and the plan in the side panel. A projection, not a promise." };
+  }
+  function refreshTile() {
+    if (!TILE_B || typeof document === "undefined") return;
+    var T = tileWords(TILE_B);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-pane-tile="' + PANE_KEY + '"]'), function (t) {
+      var v = t.querySelector(".cdd-v"), d = t.querySelector(".cdd-d");
+      if (v) v.textContent = T.v;
+      if (d) d.textContent = T.d;
+    });
+  }
+  /* The full clock in the side panel. */
+  function clockPane(M) {
+    ensureCss();
+    var root = el("div", { cls: "eta eta-inpanel", "data-eta-pane": "" }), B = tbaRoot(root, M);
+    if (B) mount(root, function (r, redraw) { r.appendChild(full(B, shared(), M, redraw)); });
+    return { title: TITLE, tab: "#commons/data/" + VIEW_KEY, basis: "The full clock: the phases, the dates, how far we have come, the datasets, the levers and the plan. Every moved date is a projection, not a partner commitment.", kids: [root] };
   }
 
   function ready(fetchFn) {
@@ -832,6 +891,9 @@
     ".eta-preview { margin:0; font-size:.86rem; color:var(--cmn-ink-2); }",
     ".eta-band { display:grid; gap:8px; justify-items:center; text-align:center; padding:12px 16px; background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; }",
     ".eta-head { margin:0; font-size:1rem; color:var(--cmn-heading); }",
+    ".eta-sub-h { margin:-6px 0 0; font-size:.78rem; color:var(--cmn-muted); }",
+    ".eta-top { margin:4px 0 12px; }",
+    ".eta-inpanel .eta-full { padding:0; border:0; }",
     ".eta-daterow { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; }",
     ".eta-date { font-family:var(--cmn-serif); font-size:clamp(1.5rem, 4vw, 2.2rem); color:var(--cmn-title); cursor:help; }",
     ".eta-chips { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:center; justify-content:center; width:100%; }",
@@ -922,12 +984,14 @@
     (document.head || document.body).appendChild(s);
   }
 
-  var ext = { views: {}, unlisted: {}, ledes: {}, ready: ready, view: view };
+  var ext = { views: {}, unlisted: {}, ledes: {}, ready: ready, view: view, top: top, tiles: tiles, panes: {} };
+  ext.panes[PANE_KEY] = clockPane;
   ext.views[VIEW_KEY] = TITLE;
   if (!LISTED) ext.unlisted[VIEW_KEY] = true;
   ext.ledes[VIEW_KEY] = "When Phase 1 of College Data Collection would be done at the current pace, and what turning on a connection would do to that date. Every moved date is a projection, not a partner commitment.";
   window.CPL_CDC_EXT = Array.isArray(window.CPL_CDC_EXT) ? window.CPL_CDC_EXT : [];
   window.CPL_CDC_EXT.push(ext);
   window.CPL_COMMONS_ETA = { VIEW_KEY: VIEW_KEY, LISTED: LISTED, FILES: FILES, LEVERS: LEVERS, ST: ST, CSS: CSS, base: base, phase1: phase1, finish: finish, freshState: freshState,
+    _reset: function () { SHARED = null; MOUNTS = []; },
     strip: function (M) { return ST.pr ? strip(base(M, ST.pr, ST.skills)) : null; }, ready: ready, view: view, nearComplete: nearComplete, stalledFactor: stalledFactor };
 })();
