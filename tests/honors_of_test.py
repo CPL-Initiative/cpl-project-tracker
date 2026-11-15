@@ -157,7 +157,14 @@ committed = json.loads(committed_text)
 rows = rows_from_overlay(committed)
 cur, _, honors = ac.fold_rows(rows)
 new_text = ac.serialize(ac.overlay_doc(cur, honors, committed["_synced_at"]))
-check("byte-identical: no committed row carries honors_of", not any(r["field"] == "honors_of" for r in rows))
+# Until Honors step 1 this check read "no committed row carries honors_of": the field changed nothing while no row
+# carried it. Step 1 applied two rows on 2026-11-14 (#3329, run 43627165705, d-honors-step1-applied-s653) and the
+# daily run 9f76a96b synced them into kb/coci_curation.json, so that premise is superseded and main went red on it
+# (S653b). The identity below now holds WITH rows present, which is the stronger claim. What stays pinned here is a
+# rule that no later apply can make stale: a row never names its own id as its base.
+honors_rows = [r for r in rows if r["field"] == "honors_of"]
+check("byte-identical: a committed honors_of row never names its own id as its base",
+      all(r["course_id"] != r["value"] for r in honors_rows))
 check("byte-identical: today's overlay, rebuilt as rows, folds back to the committed bytes",
       new_text == committed_text)
 check("byte-identical: no honors key appears without the field", "_honors" not in new_text)

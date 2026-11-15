@@ -179,3 +179,20 @@ Sam asked for four things on Annual Goals (move AI Apprenticeship CPL Tools unde
 - **A test that pins a removed cell lives in more than one file.** Three tests pinned the Total cell; one surfaced
   only in CI's shard 2. Grep every test for the selector being removed before the first push.
 
+## Moved from the lane (S653b)
+
+The readers of `workplan_goals.current` were removed (#3335) and the drop pushed, 2026-11-14; the lane's text as it stood moved here verbatim.
+
+From the S426 *Store* bullet: `current` stays unread; a later migration drops it.
+
+0a. **The migration run:** `supabase-migrate.yml` fires on the S426 push; read `supabase_migrations.schema_migrations`
+    for `workplan_goals_current_by_year_2026_10_19_s426` and the receipt the runner commits. Until it lands, the
+    loader's select falls back to the `current` shape and the page shows the old one-column value under 2025-26.
+0c. **Drop `current`** once a build has published with `cur_*` (one migration: `alter table ... drop column current`;
+    `activity_summaries.js` and `_row_current_years` still read it as a fallback until then).
+
+⚠️ **The move broke the workplan charts until #2063.** `render_workplan_charts_html` picks the military, workforce and apprentice series by name and the last match wins; 4.2.1 (no ladder, all zeros) sorted after the real apprentice rows, and dashboard run 585 died dividing by zero. #2063: a zero ladder names no series; `build_trajectory` guards a zero sum. Any move or add that changes sort order can change which row a name-matched series picks.
+
+✅ **#2080 merged (S382): the add dialog's Under list.** Sam added 4.7 EMS Corps (2026-10-13 18:18Z) and could not find Activity 4 beside 4.1-4.6: Under listed every Activity above every sub-activity. It now lists each Activity above its own sub-activities, offers a row added since the last rebuild as a parent (marked new; tabled, archived and D.* rows left out), and clears the box it checked for an old home when the home changes. 4.7 saved with Activity 4 as home and Activity 1 as a second link left from the default parent; dashboard run 590 drew it.
+
+✅ **PR B merged (#2054): the UI audit fixes.** Every editable value takes Tab and opens on Enter or Space, the field is named, Escape or Enter returns focus (a `done` guard closes each field once: Chrome's blur-on-removal threw on every Escape); the chip line opens its popover from the keyboard. Headers carry `scope`, each Activity is a `<tbody>` with a rowgroup `<th>`, names and Goal/Current/Stretch are row headers. The renderer prints classes and `workplan_goals.js` paints them (no raw hex). An empty description hides for a reader and reads **Add description** for an editor. The Add dialog's checkboxes are 24px tall (#2057).
