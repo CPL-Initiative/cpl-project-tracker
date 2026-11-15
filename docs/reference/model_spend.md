@@ -46,15 +46,17 @@ Sonnet 5, so a key whose chart shows no Sonnet 5 never pays for her.
 ## The $40 gate on every run
 
 Sam's standing limit is $40 a run on the estimate. One meter prices every paid call
-(`kb/_spend_meter.py`, which holds the limit as `STANDING_LIMIT_USD`). The extraction,
-the second reader and `cer-classify` price the run before any call and refuse it above
-$40, then hold every further call once the run's charges and the calls in flight would
-pass it. `cpl-news-harvest` and `cpl-chat` return no usage, so `kb/_model_run_gate.py`
-refuses their run before any call when its worst case passes $40, computed from each
-function's own limits in this repo: the harvest's 9 calls at the context window in,
-$36.36; Sierra at $0.56 an answer, from her 8,192-token output cap and a
-100,000-token input allowance, because her function caps no prompt total. The A/B's 70
-answers come to $39.47, so one more smoke mode would hold it. Lane state:
+(`kb/_spend_meter.py`, which holds the limit as `STANDING_LIMIT_USD`). The extraction and
+the second reader price the run before any call and refuse it above $40; `cer-classify`
+asks the longest run of titles that fits within $40 and leaves the rest for the next
+night. All three then hold every further call once the run's charges and the calls in
+flight would pass $40. `cpl-news-harvest` and `cpl-chat` return no usage, so
+`kb/_model_run_gate.py` refuses their run before any call when its worst case passes $40,
+computed from each function's own limits in this repo: the harvest's 9 calls at the
+context window in, at its Sonnet 4.6, $27.27; Sierra at $0.70 an answer, from her
+8,192-token output cap and a 100,000-token input allowance (her function caps no prompt
+total), priced as Opus 4.8, the dearest model that accepts her request. The A/B may ask 56
+answers, 27 runs a side, so a comparison of every mode is two dispatches. Lane state:
 [governance](lanes/governance-team-enablement.md).
 
 ## How to measure

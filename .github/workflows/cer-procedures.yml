@@ -79,11 +79,13 @@ jobs:
       - name: Install the catalog reader
         run: pip install "$(grep -i '^openpyxl==' requirements.txt)"
 
-      # The classifier's $40 gate (S655, card 10): before any call kb/_cer_procedures.py prices every chunk at the
-      # spend meter's worst case for its size (kb/_spend_meter.py) and asks nothing when the sum passes $40; during
-      # the run the meter reserves that worst case before each post, a retry included, and holds the rest once
-      # the run would pass $40. A reservation is the call's worst case, so calls in flight cannot carry the run
-      # past $40. A held classifier sets classifier_held, and the last step ends the job red.
+      # The classifier's $40 gate (S655, card 10): before any call kb/_cer_procedures.py prices each chunk at the
+      # spend meter's worst case for its size (kb/_spend_meter.py) and asks the longest run of titles from the
+      # front of the queue that fits within $40; the rest wait for the next night, the log (and this summary)
+      # says how many, and a warning marks the run, which stays green. During the run the meter reserves each
+      # post's true worst case, three attempts (the function's SDK client retries twice), a retry of ours
+      # included, so posts in flight cannot carry the run past $40. When not even one chunk fits, or the hard stop
+      # holds a post, classifier_held is set and the last step ends the job red.
       - name: Run the procedures
         id: procedures
         env:

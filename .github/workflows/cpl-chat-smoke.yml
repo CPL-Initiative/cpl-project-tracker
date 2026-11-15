@@ -44,5 +44,5 @@ jobs:
           # read still fail. The preview A/B runs the script directly and keeps failing.
           SMOKE_ANSWER_CHECKS: report
         run: |
-          python3 kb/_model_run_gate.py cpl-chat --script chatbox/smoke_test.sh
+          python3 kb/_model_run_gate.py cpl-chat --script chatbox/smoke_test.sh --modes "$SMOKE_MODES"
           bash chatbox/smoke_test.sh

@@ -119,7 +119,7 @@ import _spend_meter as M  # noqa: E402
 
 
 def _usd(inp, out):
-    return round((inp * 4 + out * 20) / 1e6, 5)
+    return round((inp * 5 + out * 25) / 1e6, 5)   # the dearest rate in the table: Opus 5, 4.8, 4.7 ($5/$25)
 
 
 def _worst(chars):
@@ -128,27 +128,27 @@ def _worst(chars):
 
 _PROBE = {"prompt_tokens": 20000, "completion_tokens": 3000, "total_tokens": 60000,
           "completion_tokens_details": {"reasoning_tokens": 37000}}
-check(abs(M.charge_for("grok-x", _PROBE) - _usd(20000, 40000)) < 1e-9 and abs(_usd(20000, 40000) - 0.88) < 1e-9,
-      "the reviewer's probe (20k prompt, 3k completion, 60k total, 37k reasoning) counts its larger reading, $0.88")
+check(abs(M.charge_for("grok-x", _PROBE) - _usd(20000, 40000)) < 1e-9 and abs(_usd(20000, 40000) - 1.10) < 1e-9,
+      "the reviewer's probe (20k prompt, 3k completion, 60k total, 37k reasoning) counts its larger reading, $1.10")
 # Each reading on its own, so deleting one fails a check: reasoning beside completion with no total, and a total
 # with no details (the S654 meter review).
 check(abs(M.charge_for("grok-x", {"prompt_tokens": 20000, "completion_tokens": 3000,
                                   "completion_tokens_details": {"reasoning_tokens": 37000}}) - _usd(20000, 40000)) < 1e-9,
-      "reasoning tokens with no total: the output is completion + reasoning, $0.88")
+      "reasoning tokens with no total: the output is completion + reasoning, $1.10")
 check(abs(M.charge_for("grok-x", {"prompt_tokens": 20000, "completion_tokens": 3000, "total_tokens": 60000})
-          - _usd(20000, 40000)) < 1e-9, "a total with no details: the output is total - prompt, $0.88")
+          - _usd(20000, 40000)) < 1e-9, "a total with no details: the output is total - prompt, $1.10")
 check(XP.cost("claude-opus-5-5", {"prompt_tokens": 1_000_000, "completion_tokens": 100_000}) == 6.0
       and XP.cost("claude-opus-5-5", {"input_tokens": 1_000_000, "output_tokens": 100_000}) == 6.0
       and XP.cost("grok-x", _PROBE) is None,
       "a listed model's usage costs the same in either shape; an unlisted model's record cost reads None")
-check(M.charge_for("claude-opus-5-5", {"input_tokens": 1000, "prompt_tokens": 5000}) == _usd(5000, 0),
+check(M.charge_for("claude-opus-5-5", {"input_tokens": 1000, "prompt_tokens": 5000}) == round(5000 * 4 / 1e6, 5),   # Opus 5.5's own $4
       "two readings of the input that differ count the larger")
 check(M.answer_charge({"error": "HTTP 429: slow down", "http_status": 429}, 5000) == 0.0
       and M.answer_charge({"error": "HTTP 401: key", "http_status": 401}, 5000) == 0.0
       and M.answer_charge({"error": "HTTP 503", "http_status": 503, "reason": "upstream_timeout"}, 5000) == 0.0,
       "an answer that never reached the model (429, 401, the caller check's 503) counts $0")
 check(M.answer_charge({"error": "HTTP 504: gateway timeout", "http_status": 504}, 5000) == _worst(5000)
-      and M.answer_charge({"error": "timed out"}, 5000) == _worst(5000) and abs(_worst(56000) - 1.024) < 1e-9,
+      and M.answer_charge({"error": "timed out"}, 5000) == _worst(5000) and abs(_worst(56000) - 1.28) < 1e-9,
       "a sent call that answered no usage counts its worst case ($%.2f for 5,000 characters), never a floor"
       % _worst(5000))
 _m = M.Meter(0.25, 0.10)
@@ -213,7 +213,7 @@ def _src(i, codes=3):
 
 _AT_EST = {"model": "claude-opus-5-5", "usage": {"input_tokens": 10000, "output_tokens": 3000}}   # $0.10
 _CHEAP = {"model": "claude-opus-5-5", "usage": {"input_tokens": 1000, "output_tokens": 300}}      # $0.01
-_GROK = {"model": "grok-x", "usage": {"prompt_tokens": 200000, "completion_tokens": 50000}}      # $1.80
+_GROK = {"model": "grok-x", "usage": {"prompt_tokens": 200000, "completion_tokens": 50000}}      # $2.25
 _TIMEOUT = {"error": "HTTP 504: gateway timeout", "http_status": 504}
 _saved_x = (XP._post, XP.load_sources, os.environ.get("SUPABASE_SERVICE_KEY"), os.environ.get("GITHUB_OUTPUT"))
 _ghf = os.path.join(tempfile.mkdtemp(), "out.txt")
@@ -278,8 +278,8 @@ try:
     _s15 = _pilot({"model": "claude-opus-5-5", "usage": {"output_tokens": 750000}}, 40)
     check(len(_s15) == 3, "a $15 call passes its $0.10 estimate, so the pilot passes $40 by one call's overrun "
           "(three calls, $45), the bound its step comment names")
-    _s0 = _pilot(_TIMEOUT, 1.0)
-    check(len(_s0) == 2, "the pilot counts a timed-out call at its worst case ($%.2f), so under $1.00 the stop holds "
+    _s0 = _pilot(_TIMEOUT, 2.0)
+    check(len(_s0) == 2, "the pilot counts a timed-out call at its worst case ($%.2f), so under $2.00 the stop holds "
           "the third (%d sent)" % (_worst(len(json.dumps(_s0[0]))), len(_s0)))
     XP.load_sources = lambda only="": [_src(i) for i in range(6)]
     check(XP.main(["--price", "--limit-usd", "40", "--attempt", "2"]) == 1 and _go() == "go=false",
@@ -377,12 +377,12 @@ try:
         return sent, filed
 
     _s1, _f1 = _second(_GROK, 1.0, 1)
-    check(len(_s1) == 1 and abs(_f1["charge_usd"] - 1.8) < 1e-9 and _f1["rows"][0]["second"]["cost_usd"] is None
-          and abs(_f1["rows"][0]["second"]["charge_usd"] - 1.8) < 1e-9,
+    check(len(_s1) == 1 and abs(_f1["charge_usd"] - 2.25) < 1e-9 and _f1["rows"][0]["second"]["cost_usd"] is None
+          and abs(_f1["rows"][0]["second"]["charge_usd"] - 2.25) < 1e-9,
           "the second reader on xAI's usage stops after its first call: %d sent, $%.2f counted, cost_usd null"
           % (len(_s1), _f1["charge_usd"]))
     _sp, _fp = _second({"model": "grok-x", "usage": _PROBE}, None, 1, n=1)
-    check(abs(_fp["rows"][0]["second"]["charge_usd"] - 0.88) < 1e-9, "the probe's row counts $0.88")
+    check(abs(_fp["rows"][0]["second"]["charge_usd"] - 1.10) < 1e-9, "the probe's row counts $1.10")
     _s4, _f4 = _second(_AT_EST, 0.25, 4, n=10, pause=0.05)
     check(len(_s4) == 2 and _f4["not_sent"] == 8 and _f4["_rc"] == 1,
           "with four workers under $0.25 the second reader sends exactly two (%d): the reservations in flight hold "
@@ -399,8 +399,8 @@ try:
     _s429, _f429 = _second({"error": "HTTP 429: rate limited", "http_status": 429}, 1.0, 1, n=5)
     check(len(_s429) == 5 and _f429["charge_usd"] == 0,
           "a pre-model 429 with no usage counts $0, so all five are sent and nothing is counted")
-    _st, _ft = _second(_TIMEOUT, 1.0, 1, n=5)
-    check(len(_st) == 2, "a timed-out call counts its worst case, so under $1.00 two are sent (%d)" % len(_st))
+    _st, _ft = _second(_TIMEOUT, 2.0, 1, n=5)
+    check(len(_st) == 2, "a timed-out call counts its worst case, so under $2.00 two are sent (%d)" % len(_st))
 
     # The second reader's price: the override, the rate, the limit and the re-run, each red when refused.
     SR.failing_records = lambda slug: list(_recs[:5])

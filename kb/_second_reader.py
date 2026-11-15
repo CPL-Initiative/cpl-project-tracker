@@ -224,8 +224,8 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
     # this one would pass the ceiling; from then on no record is sent. A call settles at its priced usage (xAI's
     # at the dearest rate, its larger reading), at its worst case when it was sent and answered no usage or raised,
     # and at $0 when it never reached the model. The run can pass the ceiling only by calls in flight costing
-    # more than their estimates: a call costs at most $1.25 (X.CALL_MAX_USD, M.worst_case over every committed
-    # request), $1.15 over a $0.10 estimate, so $4.60 with four workers, and $1.15 more for each further
+    # more than their estimates: a call costs at most $1.55 (X.CALL_MAX_USD, M.worst_case over every committed
+    # request), $1.45 over a $0.10 estimate, so $5.80 with four workers, and $1.45 more for each further
     # part of a read in parts in flight. A run the stop held ends red.
     import _program_requirements_wave as W
     import _spend_meter as M

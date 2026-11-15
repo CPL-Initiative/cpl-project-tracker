@@ -29,7 +29,14 @@ import threading
 STANDING_LIMIT_USD = 40.0
 
 # Dollars per million tokens, Claude Opus 5.5 (claude-api skill, cached 2026-09-25).
-PRICE = {"claude-opus-5-5": {"input": 4.00, "output": 20.00, "cache_read": 0.20, "cache_write": 5.00}}
+# Opus 5, 4.8 and 4.7 ($5/$25, the same skill table) are the dearest models that accept a request with thinking
+# turned off, the shape Sierra sends, so a secret pointing a function at one of them is priced (S655 second
+# reader on #3351); being the dearest rows, they also set dearest_rate() for every unlisted model. Sonnet 4.6 is
+# cpl-news-harvest's fixed model.
+_OPUS_5_RATE = {"input": 5.00, "output": 25.00, "cache_read": 0.50, "cache_write": 6.25}
+PRICE = {"claude-opus-5-5": {"input": 4.00, "output": 20.00, "cache_read": 0.20, "cache_write": 5.00},
+         "claude-opus-5": _OPUS_5_RATE, "claude-opus-4-8": _OPUS_5_RATE, "claude-opus-4-7": _OPUS_5_RATE,
+         "claude-sonnet-4-6": {"input": 3.00, "output": 15.00, "cache_read": 0.30, "cache_write": 3.75}}
 
 # A call's worst case, when it was sent and answered no usage. Every token is at least one character, so a request's
 # characters bound its input tokens; the Edge Function adds its system prompt and schema, which together are shorter
@@ -145,14 +152,16 @@ def reached_model(answer: dict) -> bool:
     return True
 
 
-def answer_charge(answer: dict, request_chars: int) -> float:
-    """What one sent call counts: its priced usage; $0 when it never reached the model; otherwise its worst case."""
+def answer_charge(answer: dict, request_chars: int, attempts: int = 1) -> float:
+    """What one sent call counts: its priced usage; $0 when it never reached the model; otherwise its worst case,
+    once for each attempt the function may make inside one post (an SDK client's own retries: attempts=3 for the
+    default maxRetries of 2)."""
     a = answer if isinstance(answer, dict) else {}
     if has_tokens(a.get("usage")):
         return charge_for(a.get("model"), a.get("usage"))
     if not reached_model(a):
         return 0.0
-    return worst_case(request_chars, a.get("model"))
+    return worst_case(request_chars, a.get("model")) * max(1, int(attempts))
 
 
 def request_chars(body) -> int:
@@ -217,7 +226,7 @@ class Meter:
                 "error": "the hard stop held this call: $%.2f charged and $%.2f in flight against $%.2f"
                          % (self.spent, self.in_flight, self.ceiling or 0)}
 
-    def call(self, send, chars: int, estimate=None) -> dict:
+    def call(self, send, chars: int, estimate=None, attempts: int = 1) -> dict:
         """One metered call: reserve, send() (which returns the function's answer), settle the answer's charge
         (answer_charge). An exception inside send() settles at the call's worst case and comes back as an error
         answer. A call the stop holds is never sent: {"stopped": True, "_sent": False, ...}. Every answer carries
@@ -225,19 +234,19 @@ class Meter:
         ticket = self.reserve(estimate)
         if ticket is None:
             return self.held()
-        return self.send_reserved(ticket, send, chars)
+        return self.send_reserved(ticket, send, chars, attempts)
 
-    def send_reserved(self, ticket, send, chars: int) -> dict:
+    def send_reserved(self, ticket, send, chars: int, attempts: int = 1) -> dict:
         """send() on a ticket already reserved (reserve_many), settled as call() settles it."""
         try:
             got = send()
             if not isinstance(got, dict):
                 got = {"error": "no answer", "record": None, "usage": None}
-            charge = answer_charge(got, chars)
+            charge = answer_charge(got, chars, attempts)
         except Exception as exc:
             got = {"record": None, "usage": None, "model": None,
                    "error": "exception: %s" % (str(exc).splitlines()[0][:200] if str(exc) else type(exc).__name__)}
-            charge = worst_case(chars)
+            charge = worst_case(chars) * max(1, int(attempts))
         self.settle(ticket, charge)
         return dict(got, _sent=True, _charge_usd=round(charge, 5))
 

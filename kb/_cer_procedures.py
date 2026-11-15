@@ -544,14 +544,17 @@ def post(body, key, timeout=200):
         return {"error": str(exc).splitlines()[0][:300]}
 
 
-# The $40 gate (S655, card 10; d-one-spend-meter-s654). Before any call the run prices every chunk it would send
-# at the spend meter's worst case for that request's size (M.worst_case: the request's characters and the
-# function's prompt as input tokens, the output cap doubled, at the dearest rate), and asks nothing when the sum
-# passes Sam's standing limit. During the run the meter reserves that same worst case before each post, a retry
-# included, and holds every later post once the charges and the reservations in flight would pass the limit. A
-# reservation is the call's worst case, so the calls in flight can never carry the run past the limit; the one
-# exception is a charge above the worst case, which the meter still counts in full.
+# The $40 gate (S655, card 10; d-one-spend-meter-s654). Before any call the run prices each chunk at the spend
+# meter's worst case for that request's size (M.worst_case: the request's characters and the function's prompt as
+# input tokens, the output cap doubled, at the dearest rate) and asks the longest run of chunks, in the queue's
+# order, whose sum stays within Sam's standing limit; the rest wait for the next night. During the run the meter
+# reserves before each post, a retry included, the true worst case of that post: three attempts, since the
+# function's `new Anthropic()` retries twice on its own (the SDK's default maxRetries), and an answer with no usage
+# settles at the same three. A reservation is the post's worst case, so the posts in flight can never carry the run
+# past the limit; the one exception is a charge above the worst case, which the meter still counts in full.
 import _spend_meter as M  # noqa: E402
+
+FUNCTION_ATTEMPTS = 3   # one call and the SDK's two retries inside cer-classify (index.ts, new Anthropic())
 
 
 def chunk_bodies(rows, rules, chunk=CHUNK):
@@ -560,13 +563,20 @@ def chunk_bodies(rows, rules, chunk=CHUNK):
 
 
 def price_classify(rows, rules, chunk=CHUNK, limit=None):
-    """The classifier's estimate before any call: each chunk's worst case summed (a retry is never priced in;
-    the hard stop reserves it when it happens). Returns {calls, estimate_usd, limit_usd, within_limit}."""
+    """The classifier's estimate before any call: each chunk's worst case (a retry is never priced in; the hard
+    stop reserves it when it happens). Returns {calls, estimate_usd, limit_usd, within_limit} for every chunk, and
+    fits (the longest run of chunks from the first whose sum stays within the limit), fit_usd and fit_rows."""
     limit = M.STANDING_LIMIT_USD if limit is None else float(limit)
     bodies = chunk_bodies(rows, rules, chunk)
-    est = round(sum(M.worst_case(M.request_chars(b)) for b in bodies), 2)
-    return {"calls": len(bodies), "estimate_usd": est, "limit_usd": limit,
-            "within_limit": M.within_limit(est, limit)}
+    each = [M.worst_case(M.request_chars(b)) for b in bodies]
+    fits, total = 0, 0.0
+    for usd in each:
+        if not M.within_limit(total + usd, limit):
+            break
+        fits, total = fits + 1, total + usd
+    est = round(sum(each), 2)
+    return {"calls": len(bodies), "estimate_usd": est, "limit_usd": limit, "within_limit": M.within_limit(est, limit),
+            "fits": fits, "fit_usd": round(total, 2), "fit_rows": sum(len(b["rows"]) for b in bodies[:fits])}
 
 
 def classify(rows, rules, key, chunk=CHUNK, workers=WORKERS, call=post, meter=None):
@@ -580,7 +590,8 @@ def classify(rows, rules, key, chunk=CHUNK, workers=WORKERS, call=post, meter=No
         got = {}
         chars = M.request_chars(body)
         for attempt in (1, 2):
-            got = meter.call(lambda: call(body, key), chars, estimate=M.worst_case(chars))
+            got = meter.call(lambda: call(body, key), chars, estimate=M.worst_case(chars) * FUNCTION_ATTEMPTS,
+                             attempts=FUNCTION_ATTEMPTS)
             if got.get("stopped") or not got.get("error"):
                 break
             time.sleep(5 * attempt)
@@ -605,27 +616,33 @@ def classify(rows, rules, key, chunk=CHUNK, workers=WORKERS, call=post, meter=No
 
 def ask_classifier(rows, rules, key, call=post, limit=None):
     """The classifier behind its $40 gate: (records by raw, calls, spend). The estimate (price_classify) is taken
-    before any call; above the limit nothing is sent and spend["refused"] says why. Otherwise classify() runs on a
-    meter whose ceiling is the limit; a post its hard stop held leaves its chunk unasked and spend["refused"] set."""
+    before any call, and the longest run of titles from the front of the queue whose chunks fit within the limit is
+    asked; the rest wait for the next night (spend["remaining"]), with a warning. When not even the first chunk
+    fits, nothing is sent and spend["refused"] says why. The chunks asked run on a meter whose ceiling is the
+    limit; a post its hard stop held leaves its chunk unasked and spend["refused"] set."""
     priced = price_classify(rows, rules, limit=limit)
-    spend = {"estimate_usd": priced["estimate_usd"], "limit_usd": priced["limit_usd"], "calls_priced": priced["calls"]}
-    print("classifier: estimate $%.2f for %d calls (each call's worst case) against the $%.0f limit"
-          % (priced["estimate_usd"], priced["calls"], priced["limit_usd"]), flush=True)
-    if not priced["within_limit"]:
-        spend["refused"] = ("the estimate $%.2f for %d calls is over the $%.0f limit; the classifier is asked "
-                            "nothing this run: dispatch with a smaller classify"
-                            % (priced["estimate_usd"], priced["calls"], priced["limit_usd"]))
+    ask = rows[:priced["fit_rows"]]
+    spend = {"estimate_usd": priced["fit_usd"], "limit_usd": priced["limit_usd"], "calls_priced": priced["fits"],
+             "asked": len(ask), "remaining": len(rows) - len(ask)}
+    print("classifier: %d of %d titles in %d of %d calls fit the $%.0f limit at each call's worst case ($%.2f; all "
+          "%d calls $%.2f)" % (len(ask), len(rows), priced["fits"], priced["calls"], priced["limit_usd"],
+                               priced["fit_usd"], priced["calls"], priced["estimate_usd"]), flush=True)
+    if not ask:
+        spend["refused"] = ("the first call's worst case is over the $%.0f limit; the classifier is asked nothing "
+                            "this run" % priced["limit_usd"])
         print("::error::classifier: " + spend["refused"], flush=True)
         return {}, [], spend
+    if spend["remaining"]:
+        print("::warning::classifier: asked %d titles; %d remain for the next night (the $%.0f limit)"
+              % (len(ask), spend["remaining"], priced["limit_usd"]), flush=True)
     meter = M.Meter(priced["limit_usd"])
-    got, calls = classify(rows, rules, key, call=call, meter=meter)
+    got, calls = classify(ask, rules, key, call=call, meter=meter)
     spend.update(meter.snapshot())
     if meter.stopped:
         spend["refused"] = ("the hard stop held %d posts at $%.2f charged against $%.0f"
                             % (meter.refused, meter.spent, priced["limit_usd"]))
         print("::error::classifier: " + spend["refused"], flush=True)
     return got, calls, spend
-
 
 def _spacing_key(t):
     return " ".join((t or "").replace("\xa0", " ").split())
@@ -941,9 +958,10 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
         stamp = (now or datetime.now(timezone.utc)).strftime("%Y-%m-%d")
         for raw, rec in got.items():
             records[raw] = dict(rec, rules=phash, hints=hints_key(hints.get(raw, [])), asked=stamp)
-        print("classifier: asked %d of %d needing an answer; %d answered; %d calls; $%.2f priced, $%.2f "
-              "counted by the meter" % (len(ask), len(need), len(got), len(calls), cost_usd(calls),
-                                        spend.get("charge_usd") or 0.0))
+        print("classifier: asked %d of %d needing an answer (%d left for the next night by the $40 limit); %d "
+              "answered; %d calls; $%.2f priced, $%.2f counted by the meter"
+              % (spend.get("asked", 0), len(need), spend.get("remaining", 0), len(got), len(calls), cost_usd(calls),
+                 spend.get("charge_usd") or 0.0))
 
     staged, by_proc = {}, {p["id"]: {"settled": 0, "held": 0, "sample": []} for p in procs}
     by_proc["classifier"] = {"settled": 0, "held": 0, "sample": []}

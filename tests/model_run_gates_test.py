@@ -3,10 +3,11 @@
 Sam's standing limit is $40 a run on the estimate (COBIx relaying him on #3111, comment 6808460886). Each caller
 here is checked the way it fails: an estimate or bound over $40 refuses the run before any model call (a stub
 that fails the test when it is called), and one just under it proceeds. Expected dollars come from the hand
-derivations written beside each check, at Claude Opus 5.5's list rates, the dearest in the meter's table:
-$4 per million input tokens and $20 per million output tokens. Also COBIx's two notes on #3330: a second
-reading with a refused rate stays refused (6888116814), and the stated most-a-call-costs figure is recomputed
-over every committed request so it cannot drift (6888534891).
+derivations written beside each check. The dearest rate in the meter's table is Claude Opus 5, 4.8 and 4.7's:
+$5 per million input tokens and $25 per million output tokens (the claude-api skill's models table); Sonnet 4.6,
+the news harvest's fixed model, is $3 and $15. Also COBIx's two notes on #3330: a second reading with a refused
+rate stays refused (6888116814), and the stated most-a-call-costs figure is recomputed over every committed
+request so it cannot drift (6888534891).
 """
 import glob
 import io
@@ -14,7 +15,6 @@ import json
 import math
 import os
 import re
-import shutil
 import subprocess
 import sys
 import tempfile
@@ -50,7 +50,7 @@ def near(a, b, tol=1e-6):
     return abs(float(a) - float(b)) <= tol
 
 
-IN, OUT = 4.00, 20.00   # Opus 5.5, $ per million tokens: the dearest rate in the meter's table
+IN, OUT = 5.00, 25.00   # Opus 5, 4.8, 4.7: $ per million tokens, the dearest rate in the meter's table
 
 
 def by_hand(input_tokens, output_tokens):
@@ -60,14 +60,18 @@ def by_hand(input_tokens, output_tokens):
 # ── the meter's bound and the one standing limit ─────────────────────────────
 check("the standing limit is $40, and the extraction's ceiling reads it",
       M.STANDING_LIMIT_USD == 40.0 and W.LIMIT_CEILING_USD == 40.0)
-# 100,000 in x $4/M = $0.40; 8,192 out x $20/M = $0.16384; together $0.56384.
-check("one call's bound: input and output at the dearest rate for an unknown model",
-      near(M.call_bound(100000, 8192), 0.56384), M.call_bound(100000, 8192))
-check("an unlisted model is priced at the dearest rate too",
-      near(M.call_bound(100000, 8192, "claude-sonnet-5"), 0.56384))
-# 70 calls x $0.56384 = $39.4688; 71 calls = $40.03264.
-check("a run's bound is calls x attempts x one call", near(M.run_bound(70, 100000, 8192), 39.4688)
-      and near(M.run_bound(35, 100000, 8192, attempts=2), 39.4688))
+# 100,000 in x $5/M = $0.50; 8,192 out x $25/M = $0.2048; together $0.7048.
+check("Opus 4.8, the dearest model that accepts Sierra's request, prices 100,000 in and 8,192 out at $0.7048",
+      M.PRICE["claude-opus-4-8"]["input"] == 5.00 and M.PRICE["claude-opus-4-8"]["output"] == 25.00
+      and near(M.call_bound(100000, 8192, "claude-opus-4-8"), 0.7048), M.call_bound(100000, 8192, "claude-opus-4-8"))
+check("its $5/$25 is the dearest rate in the table, so an unknown model prices the same",
+      M.dearest_rate()["input"] == 5.00 and M.dearest_rate()["output"] == 25.00
+      and near(M.call_bound(100000, 8192), 0.7048))
+# Opus 5.5's own rate stays $4/$20: 100,000 x $4/M + 8,192 x $20/M = $0.56384.
+check("a listed model keeps its own rate", near(M.call_bound(100000, 8192, "claude-opus-5-5"), 0.56384))
+# 56 calls x $0.7048 = $39.4688; 57 calls = $40.1736.
+check("a run's bound is calls x attempts x one call", near(M.run_bound(56, 100000, 8192), 39.4688)
+      and near(M.run_bound(28, 100000, 8192, attempts=2), 39.4688))
 check("at the limit is within it, a cent over is not", M.within_limit(40.0) and not M.within_limit(40.01))
 
 
@@ -76,14 +80,15 @@ NEWS = G.source("cpl-news-harvest")
 lim = G.news_limits(NEWS)
 # 25 manual requests + 80 candidates = 105 items, 12 a batch: ceil(105 / 12) = 9 calls, one attempt each.
 check("the harvest reads 9 calls from its own limits", lim["calls"] == 9 and lim["attempts"] == 1, lim)
-# Each call: the 1,000,000-token context window in ($4.00) and max_tokens 2,000 out ($0.04) = $4.04; 9 x = $36.36.
+# Each call at Sonnet 4.6: the 1,000,000-token context window in ($3.00) and max_tokens 2,000 out ($0.03) = $3.03;
+# 9 x $3.03 = $27.27.
 got = G.gate(lim, lim["calls"])
-check("the harvest's worst case is $36.36, within $40", near(got["bound_usd"], 36.36, 0.005) and got["go"], got)
-bigger = NEWS.replace("const MAX_NEW_CANDIDATES = 80;", "const MAX_NEW_CANDIDATES = 90;")
-# 25 + 90 = 115 items: ceil(115 / 12) = 10 calls x $4.04 = $40.40, over $40.
+check("the harvest's worst case is $27.27, within $40", near(got["bound_usd"], 27.27, 0.005) and got["go"], got)
+bigger = NEWS.replace("const MAX_NEW_CANDIDATES = 80;", "const MAX_NEW_CANDIDATES = 140;")
+# 25 + 140 = 165 items: ceil(165 / 12) = 14 calls x $3.03 = $42.42, over $40.
 lim2 = G.news_limits(bigger)
 got2 = G.gate(lim2, lim2["calls"])
-check("ten batches ($40.40) are refused", lim2["calls"] == 10 and near(got2["bound_usd"], 40.40, 0.005)
+check("fourteen batches ($42.42) are refused", lim2["calls"] == 14 and near(got2["bound_usd"], 42.42, 0.005)
       and not got2["go"], got2)
 try:
     G.news_limits(NEWS.replace("const ANALYZE_BATCH = 12;", "const ANALYZE_BATCH = BATCH;"))
@@ -100,8 +105,8 @@ except G.Unreadable:
 # ── cpl-chat: one call an answer ─────────────────────────────────────────────
 CHAT = G.source("cpl-chat")
 cl = G.chat_limits(CHAT)
-check("Sierra's limits: MAX_TOKENS 8,192 out, the 100,000-token allowance in, the dearest rate",
-      cl["output_tokens"] == 8192 and cl["input_tokens"] == 100000 and cl["model"] is None, cl)
+check("Sierra's limits: MAX_TOKENS 8,192 out, the 100,000-token allowance in, priced as Opus 4.8",
+      cl["output_tokens"] == 8192 and cl["input_tokens"] == 100000 and cl["model"] == "claude-opus-4-8", cl)
 try:
     G.chat_limits(CHAT.replace("fetch(\"https://api.anthropic.com/v1/messages\"", "client.messages.create(", 1)
                   + "\nconst client = new Anthropic();\n")
@@ -109,13 +114,22 @@ try:
 except G.Unreadable:
     check("an SDK client in Sierra's function refuses (its retries bill outside the bound)", True)
 # The committed scripts, counted by hand: 34 run lines in smoke_test.sh, 10 ask lines in preflight_bgca.sh.
-smoke_n = G.script_calls(os.path.join(ROOT, "chatbox", "smoke_test.sh"))
+SMOKE = os.path.join(ROOT, "chatbox", "smoke_test.sh")
+smoke_n = G.script_calls(SMOKE)
 check("the smoke suite asks 34 answers", smoke_n == 34, smoke_n)
 check("the preflight battery asks 10 answers", G.script_calls(os.path.join(ROOT, "chatbox", "preflight_bgca.sh")) == 10)
-# The A/B: 34 x 2 sides + 2 probes = 70 calls x $0.56384 = $39.4688, within $40.
-ab = G.gate(cl, smoke_n * 2 + 2)
-check("the A/B's worst case is $39.47, within $40", near(ab["bound_usd"], 39.47, 0.005) and ab["go"], ab)
-check("a 71st answer ($40.03) is refused", not G.gate(cl, 71)["go"])
+# Mode 7v has two runs (two lines label it 7v), so naming it asks two answers; "7c, 9" asks two.
+check("named modes count as smoke_test.sh selects them", G.script_calls(SMOKE, "7v") == 2
+      and G.script_calls(SMOKE, "7c, 9") == 2 and G.script_calls(SMOKE, "") == 34)
+# The A/B at every mode: 34 x 2 sides + 2 probes = 70 calls x $0.7048 = $49.336, over $40.
+check("the A/B at every mode ($49.34) is refused", not G.gate(cl, smoke_n * 2 + 2)["go"]
+      and near(G.gate(cl, 70)["bound_usd"], 49.34, 0.005))
+# The most it may ask: floor($40 / $0.7048) = 56 answers, $39.4688; 57 = $40.1736. 26 named modes with 7v among
+# them are 27 runs a side: 27 x 2 + 2 = 56.
+MODES_26 = "1,2,3,4,5,6,7,7c,7s,7l,7q,7t,7u,7v,7w,7x,7y,7z,8,9,10,11,13,14a,14b,15a"
+ab = G.gate(cl, G.script_calls(SMOKE, MODES_26) * 2 + 2)
+check("an A/B of 56 answers ($39.47) goes, and a 57th ($40.17) is refused",
+      ab["calls"] == 56 and near(ab["bound_usd"], 39.47, 0.005) and ab["go"] and not G.gate(cl, 57)["go"], ab)
 
 
 # ── the workflow steps themselves, run with a stub model call ────────────────
@@ -175,23 +189,23 @@ check("the harvest job checks out the repo before the gate",
 with tempfile.TemporaryDirectory() as tmp:
     b = mirror(tmp, news_text=bigger)
     rc, n, log = run_step(news_run, tmp, b, {"SVC": "service-key"})
-    check("over $40 the harvest's step ends red and never POSTs", rc != 0 and n == 0, (rc, n, log[-400:]))
+    check("over $40 ($42.42) the harvest's step ends red and never POSTs", rc != 0 and n == 0, (rc, n, log[-400:]))
 with tempfile.TemporaryDirectory() as tmp:
     b = mirror(tmp, news_text=NEWS)
     rc, n, log = run_step(news_run, tmp, b, {"SVC": "service-key"})
-    check("at $36.36 the harvest's step POSTs once", rc == 0 and n == 1, (rc, n, log[-400:]))
+    check("at $27.27 the harvest's step POSTs once", rc == 0 and n == 1, (rc, n, log[-400:]))
 
 smoke_steps, si = step(wf("cpl-chat-smoke.yml"), lambda s: "smoke_test.sh" in (s.get("run") or ""))
 smoke_run = smoke_steps[si]["run"]
-# The smoke workflow runs the suite once: 71 run lines x $0.56384 = $40.03 is refused, 70 ($39.47) proceeds.
+# The smoke workflow runs the suite once: 57 run lines x $0.7048 = $40.17 is refused, 56 ($39.47) proceeds.
 with tempfile.TemporaryDirectory() as tmp:
-    b = mirror(tmp, smoke_runs=71)
+    b = mirror(tmp, smoke_runs=57)
     rc, n, log = run_step(smoke_run, tmp, b)
-    check("a 71-answer smoke suite ($40.03) is refused before any answer", rc != 0 and n == 0, (rc, n, log[-400:]))
+    check("a 57-answer smoke suite ($40.17) is refused before any answer", rc != 0 and n == 0, (rc, n, log[-400:]))
 with tempfile.TemporaryDirectory() as tmp:
-    b = mirror(tmp, smoke_runs=70)
+    b = mirror(tmp, smoke_runs=56)
     rc, n, log = run_step(smoke_run, tmp, b)
-    check("a 70-answer smoke suite ($39.47) asks all 70", rc == 0 and n == 70, (rc, n, log[-400:]))
+    check("a 56-answer smoke suite ($39.47) asks all 56", rc == 0 and n == 56, (rc, n, log[-400:]))
 
 PAID = re.compile(r"smoke_test\.sh|preflight_bgca\.sh|health_check\.sh|functions/v1/cpl-chat|functions/v1/\$slug"
                   r"|functions/v1/cpl-news-harvest")
@@ -241,78 +255,104 @@ check("Ask Sierra posts once and its gate prices one",
       a_steps[ai]["run"].count("curl ") == 1 and "--calls 1" in a_steps[ai]["run"])
 ab_steps, _ = step(wf("cpl-chat-preview-ab.yml"), lambda s: s.get("id") == "price")
 probe = [s for s in ab_steps if "functions/v1/$slug" in (s.get("run") or "")][0]
-check("the A/B's gate prices both sides and the two probes",
-      "--passes 2 --extra 2" in ab_steps[[s.get("id") for s in ab_steps].index("price")]["run"]
+check("the A/B's gate prices the named modes on both sides and the two probes",
+      '--modes "$SMOKE_MODES" --passes 2 --extra 2' in ab_steps[[s.get("id") for s in ab_steps].index("price")]["run"]
       and probe["run"].count("for slug in cpl-chat cpl-chat-preview") == 1)
 
 
 # ── cer-classify: the estimate and the hard stop through the meter ───────────
+cp.time.sleep = lambda s: None
+# The standing rules exactly as run() builds them tonight (kb/_cer_procedures.py), and the nightly default of 400
+# titles waiting, shaped as classifier_row shapes them.
+_fam = {}
+for _t, _recs in json.load(open(cp.CREDENTIALS, encoding="utf-8")).items():
+    _fam[_t] = {(r.get("issuing_agency") or "").strip() for r in _recs if isinstance(r, dict)} - {""}
+RULES = cp.rules_text(cp.load_procedures(), open(cp.SKILL, encoding="utf-8").read(), _fam, budget=cp.RULES_BUDGET,
+                      prefer=[])
+QUEUE = [{"raw_title": "Queue title %03d" % i, "cpl_types": ["Industry Certification"],
+          "articulating_colleges_sample": ["A College", "B College", "C College"], "hints": []} for i in range(400)]
+# By hand: each chunk of 15 is one request; its worst case is (its characters + 40,000) x $5/M + 32,000 x $25/M
+# ($0.80). The titles asked are the longest run of chunks from the front whose sum stays within $40.
+_each = [by_hand(len(json.dumps({"rules": RULES, "rows": QUEUE[i:i + 15]})) + 40000, 32000)
+         for i in range(0, 400, 15)]
+_k, _sum = 0, 0.0
+while _k < len(_each) and _sum + _each[_k] <= 40.0:
+    _sum += _each[_k]
+    _k += 1
+FIT = 15 * _k
+check("by hand, 400 titles at today's %d-character rules: %d chunks of %d fit ($%.2f), the next would pass $40"
+      % (len(RULES), _k, len(_each), _sum), 0 < _k < len(_each) and _sum + _each[_k] > 40.0)
+asked_rows, leaked = [], []
+
+
+# The meter turns an exception inside a call into an error answer, so each stub also records what it was sent:
+# the checks read the record, not the exception.
+def prefix_only(body, key):
+    for r in body["rows"]:
+        if int(r["raw_title"][-3:]) >= FIT:
+            leaked.append(r["raw_title"])
+            raise AssertionError("a title past the $40 prefix was sent: %s" % r["raw_title"])
+    asked_rows.extend(r["raw_title"] for r in body["rows"])
+    return {"model": "claude-opus-5-5", "usage": {"input_tokens": 1000, "output_tokens": 100},
+            "records": [{"raw_title": r["raw_title"], "unified_title": "Queue Title"} for r in body["rows"]]}
+
+
+_log = io.StringIO()
+with contextlib.redirect_stdout(_log):
+    got, calls, spend = cp.ask_classifier(QUEUE, RULES, "key", call=prefix_only)
+check("the nightly 400 ask the %d that fit, never the whole batch, and the rest wait" % FIT,
+      not leaked and sorted(asked_rows) == ["Queue title %03d" % i for i in range(FIT)] and len(got) == FIT
+      and spend["asked"] == FIT and spend["remaining"] == 400 - FIT and not spend.get("refused"), spend)
+check("the run says how many were asked and how many remain, as a warning (the job stays green)",
+      "::warning::classifier: asked %d titles; %d remain for the next night" % (FIT, 400 - FIT) in _log.getvalue()
+      and "::error::" not in _log.getvalue())
+# Each answer's priced usage: 1,000 in x $4/M + 100 out x $20/M = $0.006 (Opus 5.5's own rate), for each call.
+check("the meter counts each answer's priced usage", near(spend.get("charge_usd"), 0.006 * _k, 1e-6), spend)
+
+
+called = []
+
+
 def refuse_call(body, key):
+    called.append(body)
     raise AssertionError("the classifier was called past its $40 gate")
 
 
-cp.time.sleep = lambda s: None
-row = [{"raw_title": "Floral Design", "cpl_types": [], "articulating_colleges_sample": [], "hints": []}]
-# One chunk: rules of 9,900,000 characters. M.worst_case counts the request's characters and 40,000 more as input
-# and 32,000 output tokens: (9,900,000 + the rest of the body + 40,000) x $4/M >= $39.76, + 32,000 x $20/M = $0.64,
-# so at least $40.40: over $40.
-rules_over = "x" * 9900000
-chars_over = len(json.dumps({"rules": rules_over, "rows": row}))
-check("the request is the rules and the row, under 200 characters more", chars_over - 9900000 < 200, chars_over)
-check("one chunk of 9.9M characters prices at $40.40 or more",
-      near(cp.price_classify(row, rules_over)["estimate_usd"], by_hand(chars_over + 40000, 32000), 0.006)
-      and by_hand(chars_over + 40000, 32000) >= 40.40)
-buf = io.StringIO()
-with contextlib.redirect_stdout(buf):
-    got, calls, spend = cp.ask_classifier(row, rules_over, "key", call=refuse_call)
-check("over $40 the classifier is asked nothing and says why", got == {} and calls == [] and "over the $40" in
-      spend.get("refused", ""), spend)
-
-# 9,700,000 characters: (9,700,000 + under 200 + 40,000) x $4/M < $38.97, + $0.64 < $39.61: within $40.
-rules_under = "x" * 9700000
-chars_under = len(json.dumps({"rules": rules_under, "rows": row}))
-sent = []
-
-
-def answer(body, key):
-    sent.append(len(body["rows"]))
-    return {"model": "claude-opus-5-5", "usage": {"input_tokens": 1000, "output_tokens": 100},
-            "records": [{"raw_title": r["raw_title"], "unified_title": "Floral Design"} for r in body["rows"]]}
-
-
+# Red only when not even one chunk fits: with a $1 limit the first chunk's worst case (over $1.50 by hand
+# above) does not fit, and nothing is sent.
 with contextlib.redirect_stdout(io.StringIO()):
-    got, calls, spend = cp.ask_classifier(row, rules_under, "key", call=answer)
-check("just under $40 ($39.61 at most) the classifier is asked once",
-      by_hand(chars_under + 40000, 32000) < 39.61 and sent == [1] and "Floral Design" in got
-      and not spend.get("refused"), spend)
-# The meter records the priced usage: 1,000 in x $4/M + 100 out x $20/M = $0.006.
-check("the meter counts the answer's priced usage", near(spend.get("charge_usd"), 0.006), spend)
-check("the report's cost is the meter's price", near(cp.cost_usd(calls), 0.01, 0.0051))
+    got, calls, spend = cp.ask_classifier(QUEUE[:15], RULES, "key", call=refuse_call, limit=1.0)
+check("when not even one chunk fits, nothing is sent and the run is held (red)",
+      _each[0] > 1.0 and not called and got == {} and calls == [] and "over the $1 limit" in spend.get("refused", ""), spend)
 
-# The hard stop: two chunks of one title each and rules of 4,000,000 characters. Each post reserves its worst case,
-# (4,000,000 + the body + 40,000) x $4/M + 32,000 x $20/M >= $16.80, so the estimate for two is $33.60 or more,
-# within $40. The first chunk's call and its retry both reach the gateway and fail with no usage: each settles at
-# its worst case, >= $33.60 together. The second chunk would reserve >= $16.80 more, >= $50.40: the stop holds it.
-two = [dict(row[0], raw_title="t%d" % i) for i in range(2)]
+# The hard stop reserves each post's true worst case, three attempts: cer-classify's `new Anthropic()` retries
+# twice on its own. Two chunks of 15 under rules of 100,000 characters: each request is under 104,000 characters,
+# so one attempt's worst case is at most (104,000 + 40,000) x $5/M + $0.80 = $1.52, and the two chunks' estimate,
+# at most $3.04, fits a $6 limit. A post reserves three attempts, at least (100,000 + 40,000) x $5/M x 3 + $2.40 =
+# $4.50, so the second reservation (at least $9.00 with the first) passes $6 and is held, and the first post's
+# failed answer with no usage settles at its three attempts, so its retry is held too.
+small = "x" * 100000
 tries = []
 
 
-def fail_twice(body, key):
+def fail_once(body, key):
     tries.append(body["rows"][0]["raw_title"])
-    if len(tries) <= 2:
+    if len(tries) == 1:
         return {"error": "HTTP 502: upstream", "http_status": 502}
     raise AssertionError("a post past the hard stop was sent")
 
 
+_chars = len(json.dumps({"rules": small, "rows": QUEUE[:15]}))
 with contextlib.redirect_stdout(io.StringIO()):
-    priced = cp.price_classify(two, "x" * 4000000, chunk=1)
-    meter = M.Meter(40.0)
-    got, calls = cp.classify(two, "x" * 4000000, "key", chunk=1, workers=1, call=fail_twice, meter=meter)
-check("two chunks of 4M characters price at $33.60 or more, within $40",
-      priced["calls"] == 2 and 33.6 <= priced["estimate_usd"] <= 40 and priced["within_limit"], priced)
-check("the hard stop holds the post that would pass $40, unsent",
-      meter.stopped and tries == ["t0", "t0"] and calls[1]["stopped"] and got == {}
-      and 33.6 <= meter.spent <= 40, (tries, meter.snapshot()))
+    got, calls, spend = cp.ask_classifier(QUEUE[:30], small, "key", call=fail_once, limit=6.0)
+check("two chunks of a 100,000-character rule fit a $6 limit at one attempt each",
+      _chars < 104000 and spend["calls_priced"] == 2 and spend["estimate_usd"] <= 3.04, spend)
+check("the stop reserves three attempts a post: one post is sent, the second chunk and the retry are held",
+      len(tries) == 1 and got == {} and spend.get("refused") and cp.FUNCTION_ATTEMPTS == 3, (tries, spend))
+check("a failed post with no usage settles at its three attempts",
+      near(spend.get("charge_usd"), 3 * by_hand(_chars + 40000, 32000), 1e-4)
+      or near(spend.get("charge_usd"), 3 * by_hand(len(json.dumps({"rules": small, "rows": QUEUE[15:30]})) + 40000,
+                                                   32000), 1e-4), spend)
 src = open(os.path.join(KB, "_cer_procedures.py"), encoding="utf-8").read()
 run_src = src[src.index("\ndef run("):src.index("\ndef try_procedure(")]
 check("run() asks the classifier only through its gate", "ask_classifier(" in run_src

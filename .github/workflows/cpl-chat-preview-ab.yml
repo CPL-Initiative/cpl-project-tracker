@@ -68,14 +68,17 @@ jobs:
           python-version: '3.x'
 
       # The $40 gate (S655, card 10), first, before the deploy: cpl-chat returns no usage, so the stop is the run's
-      # worst case through the spend meter (kb/_model_run_gate.py): the smoke suite's answers on each side plus the
-      # two memory-briefing probes, each one model call of at most MAX_TOKENS out and a 100,000-token input
-      # allowance in, at the dearest rate. 34 answers a side make 70 calls, $39.47. Over $40 it exits 1 and no
-      # answer is asked; the probe step below, which runs always(), waits on it too. Naming modes= lowers the
-      # real spend but not this bound, which counts every mode.
+      # worst case through the spend meter (kb/_model_run_gate.py): the smoke modes named on each side plus the two
+      # memory-briefing probes, each one model call of at most MAX_TOKENS out and a 100,000-token input allowance
+      # in, priced as Opus 4.8 ($5/$25, the dearest model that accepts her request), $0.7048 an answer. The A/B
+      # asks at most 56 answers ($39.47): 27 runs a side and the two probes. Every mode (blank modes=, 34 a side,
+      # 70 answers, $49.34) is over $40 and refused, so a full comparison is two dispatches, each naming its
+      # modes. Over $40 it exits 1 and no answer is asked; the probe step below, which runs always(), waits on it.
       - name: Price the run ($40 gate)
         id: price
-        run: python3 kb/_model_run_gate.py cpl-chat --script chatbox/smoke_test.sh --passes 2 --extra 2
+        env:
+          SMOKE_MODES: ${{ inputs.modes }}
+        run: python3 kb/_model_run_gate.py cpl-chat --script chatbox/smoke_test.sh --modes "$SMOKE_MODES" --passes 2 --extra 2
 
       - name: What we are about to compare
         run: |
