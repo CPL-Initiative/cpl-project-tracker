@@ -1,1 +1,3 @@
-host=shasta
+host=sac
+kind=objective
+slugs=santa_ana
