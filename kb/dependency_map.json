@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 996,
+  "file_datasets": 997,
   "external_services": 195,
   "consumers": 597,
   "workflows": 72,
@@ -8614,14 +8614,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6423
+     "line": 6436
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 356
+     "line": 378
     }
    ],
    "served": false,
@@ -8634,14 +8634,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6473
+     "line": 6512
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 370
+     "line": 392
     }
    ],
    "served": false,
@@ -17407,7 +17407,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6857
+     "line": 6896
     }
    ],
    "served": true,
@@ -21210,14 +21210,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6673
+     "line": 6712
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 350
+     "line": 372
     }
    ],
    "served": false,
@@ -21230,7 +21230,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5892
+     "line": 5888
     }
    ],
    "served": false,
@@ -21847,14 +21847,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6760
+     "line": 6474
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 364
+     "line": 386
     }
    ],
    "served": false,
@@ -26367,6 +26367,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_extraction_gate_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_requirements_fragment_path_test.py": {
    "consumers": [
     {
@@ -29260,7 +29273,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6831
+     "line": 6870
     }
    ],
    "main_committers": []
@@ -29272,7 +29285,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6940
+     "line": 6979
     }
    ],
    "main_committers": []
@@ -34348,6 +34361,7 @@
     "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
+    "tests/program_requirements_extraction_gate_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/harvest_ncl_lookup_census_test.py",

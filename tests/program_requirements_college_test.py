@@ -1265,7 +1265,8 @@ check(_env_lines(_commit) == [_env_line]
       and len(_msg) == 1 and "${{" not in _msg[0] and "${DISPLAY_COLLEGE:+ of $DISPLAY_COLLEGE}" in _msg[0]
       and "$GITHUB_RUN_ID" in _msg[0],
       "the applied record's commit message names a scoped run's college, by env, with no ${{ }} in the line")
-check(wf.count("contents: write") == 3 and wf.count('git push origin "HEAD:${{ github.ref_name }}"') == 3
+check(wf.count("contents: write") == 3
+      and wf.count('git push origin "HEAD:${{ github.ref_name }}"') + wf.count('git push origin "HEAD:$GITHUB_REF_NAME"') == 3
       and wf.count("git push") == 3,
       "each job writes only to the branch that ran it")
 

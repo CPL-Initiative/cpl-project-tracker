@@ -82,9 +82,27 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Extract and score
+      # Every extraction is priced before any call ($40 a run on the estimate, Sam's standing go; S653): over
+      # the limit, nothing is sent. Free, and it needs no key. tests/program_requirements_extraction_gate_test.py
+      # fails a workflow whose paid extraction can run without its price step's go or its hard stop.
+      # A re-run attempt that would send a program is refused, as in the college workflow: it pays again. A
+      # refusal ends the job red. A push the guard skips is priced not at all, like the extraction it would gate.
+      - name: Price the extraction ($40 a run, Sam's standing go)
+        id: price
         if: steps.guard.outputs.run != 'no'
+        env:
+          ONLY: ${{ github.event.inputs.only }}
+          ATTEMPT: ${{ github.run_attempt }}
+        run: python3 kb/_program_requirements_extract.py --only "$ONLY" --price --limit-usd 40 --attempt "$ATTEMPT"
+
+      - name: Extract and score
+        if: steps.guard.outputs.run != 'no' && steps.price.outputs.go == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           ONLY: ${{ github.event.inputs.only }}
-        run: python3 kb/_program_requirements_extract.py --only "$ONLY"
+          # The hard stop (kb/_spend_meter.py): no program is sent when the run's charges, the reservations in
+          # flight and the next program's estimate would pass $40. One program is read at a time and a call costs
+          # at most $1.12 (the largest committed request) against a $0.10 estimate, so the run can pass $40 by at
+          # most $1.02, and $1.02 a part for a read in parts. A run the stop held ends red.
+          CEILING: '40'
+        run: python3 kb/_program_requirements_extract.py --only "$ONLY" --ceiling-usd "$CEILING"
