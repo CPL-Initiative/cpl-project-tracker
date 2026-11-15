@@ -123,6 +123,10 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
   check("(3) the heading and the big date", txt(root().querySelector("#eta-band-h")) === "ETA to Complete Phase 1 of the College Data Collection" &&
     txt(root().querySelector("[data-eta-date]")) === "December 26, 2026");
 
+  // (4) Sam, in session, S661: the controls that move the date are chips; the words that open or reset stay words.
+  const pills = ["eta-mode", "tworeads", "costs", "college", "unblockcatalogs", "comis", "sis", "lever-coci"];
+  check("(4) ⭐ every control that moves the projected date is a chip (Sam, S661)", pills.every((k) => { const b = root().querySelector('[data-eta="' + k + '"]'); return b && b.classList.contains("eta-pill"); }));
+  check("(4) Detailed View and Plan, Assumptions, the phases and Clear levers stay words", ["full", "assumptions", "phase-1", "clear"].every((k) => { const b = root().querySelector('[data-eta="' + k + '"]'); return b && !b.classList.contains("eta-pill"); }));
   // (4) the controls.
   const q = (s) => root().querySelector(s);
   q('[data-eta="eta-mode"]').click();

@@ -27,7 +27,8 @@
 // from billing (COBIx: a cost feed without billing credentials in the repo comes later).
 //
 // Every moved date is a projection, not a partner commitment, and says so. Picks last the view's visit; nothing is
-// stored. Tokens only (the Commons --cmn roles and the CO palette below as --eta tokens), words for every control.
+// stored. Tokens only (the Commons --cmn roles and the CO palette below as --eta tokens). The controls that move the
+// projected date are chips, as the mock draws them (Sam, S661); a control that opens or resets something is a word.
 // Guard: tests/commons_eta_clock.test.js.
 (function () {
   "use strict";
@@ -306,7 +307,7 @@
       return { day: max, setters: setters, est: setters.some(function (p) { return p.est; }) };
     }
     var now = latest("now"), was = latest("was");
-    return { parts: parts, day: now.day, setters: now.setters, est: now.est, noProgress: B.pace[mode] != null && B.pace[mode] <= 0 && B.remaining > 0, moved: now.day != null && was.day != null && now.day !== was.day,
+    return { parts: parts, day: now.day, setters: now.setters, est: now.est, mode: mode, noProgress: B.pace[mode] != null && B.pace[mode] <= 0 && B.remaining > 0, moved: now.day != null && was.day != null && now.day !== was.day,
       late: lateHint(now.day, parts.reduce(function (a, p) { return a.concat(p.fx); }, [])) };
   }
 
@@ -397,6 +398,12 @@
     if (!/^(BUTTON|A|INPUT|SELECT)$/.test(node.tagName)) node.setAttribute("tabindex", "0");
     return el("span", { cls: "eta-tipwrap" + (wide ? " eta-wide" : "") }, [node, el("span", { cls: "eta-tip", id: id, role: "tooltip", text: text })]);
   }
+  /* A chip: a control that moves the projected date (Sam, in session, S661: "make the items Cobix designed as chips be
+     chips instead of link buttons. The aren't intended to open views but to change projected eta"). Words that open or
+     reset something stay the house's underlined words (chip). */
+  /* The pill is drawn on an inner face, so it can look small while the button keeps a 24px target (WCAG 2.2). */
+  function face(b) { var f = el("span", { cls: "eta-face" }); while (b.firstChild) f.appendChild(b.firstChild); b.appendChild(f); b.classList.add("eta-pill"); return b; }
+  function pill(label, pressed, onClick, extra) { return face(chip(label, pressed, onClick, extra)); }
   function chip(label, pressed, onClick, extra) {
     var b = el("button", { type: "button", cls: "eta-chip", "aria-pressed": pressed == null ? null : (pressed ? "true" : "false"), text: label });
     if (extra) for (var k in extra) if (extra[k] != null) b.setAttribute(k, extra[k]);
@@ -414,7 +421,7 @@
   function headlineLabel(P, college) {
     if (college && college.r <= 0) return "Complete";
     if (college && nearComplete(college) && !P.moved) return pctWord(college.p, college.a) + ", " + leftWord(college.r);
-    if (P.day == null) return P.noProgress ? "no net progress this week" : "pace not measured yet";
+    if (P.day == null) return P.noProgress ? (P.mode === "latest" ? "no net progress in the week before" : "no net progress this week") : "pace not measured yet";
     var s = longDate(P.day) + (P.est ? " est." : "");
     return college ? "estimated " + s : s;
   }
@@ -426,7 +433,7 @@
     box.appendChild(el("h3", { cls: "eta-head", id: "eta-band-h", text: "ETA to Complete Phase 1 of the College Data Collection" }));
     box.appendChild(picker(B, S, college, redraw));
     var date = el("span", { cls: "eta-date", "data-eta-date": "", text: headlineLabel(P, college) });
-    var mode = chip(S.mode === "soonest" ? "Soonest" : "Latest", null, function () { S.mode = S.mode === "soonest" ? "latest" : "soonest"; redraw("eta-mode"); },
+    var mode = pill(S.mode === "soonest" ? "Soonest" : "Latest", null, function () { S.mode = S.mode === "soonest" ? "latest" : "soonest"; redraw("eta-mode"); },
       { "data-eta": "eta-mode", "aria-label": S.mode === "soonest" ? "Soonest date. Click to see the latest date." : "Latest date. Click to see the soonest date." });
     mode.classList.add("eta-on");
     box.appendChild(el("div", { cls: "eta-daterow" }, [withTip(date, college && (college.r <= 0 || (nearComplete(college) && !P.moved)) ? collegeDateTip(college, S.mode) : dateTip(P, college), true), withTip(mode, paceTip(S.mode))]));
@@ -436,9 +443,9 @@
     var row = el("div", { cls: "eta-chips" });
     function group(phase, label) {
       var g = el("div", { cls: "eta-group", role: "group", "aria-label": "Phase " + phase + " connections" }, [withTip(el("span", { cls: "eta-plabel", text: label }), CHIP_TIPS["p" + phase])]);
-      if (phase === "1") g.appendChild(withTip(chip("2 reads/day", S.twoReads, function () { S.twoReads = !S.twoReads; redraw("tworeads"); }, { "data-eta": "tworeads" }), leverTip("tworeads", TWO_READS.factor, "now", B.asOf)));
+      if (phase === "1") g.appendChild(withTip(pill("2 reads/day", S.twoReads, function () { S.twoReads = !S.twoReads; redraw("tworeads"); }, { "data-eta": "tworeads" }), leverTip("tworeads", TWO_READS.factor, "now", B.asOf)));
       LEVERS.filter(function (l) { return l.phase === phase; }).forEach(function (l) {
-        var b = chip(l.short, S.on[l.id], function () {
+        var b = pill(l.short, S.on[l.id], function () {
           S.assumptions = false;
           /* On turns off in one click, as in the Levers row (COBIx on #3371); a click that turns it on opens its popover. */
           if (S.on[l.id]) { S.on[l.id] = false; if (S.open === l.id) S.open = null; }
@@ -447,7 +454,7 @@
         }, { "data-eta": l.id, "aria-expanded": S.open === l.id ? "true" : "false" });
         g.appendChild(withTip(b, leverTip(l.id, S.factors[l.id], S.start[l.id], B.asOf)));
       });
-      if (phase === "1") g.appendChild(withTip(chip("Show costs", S.costs, function () { S.costs = !S.costs; redraw("costs"); }, { "data-eta": "costs" }), COST_TIP));
+      if (phase === "1") g.appendChild(withTip(pill("Show costs", S.costs, function () { S.costs = !S.costs; redraw("costs"); }, { "data-eta": "costs" }), COST_TIP));
       return g;
     }
     row.appendChild(group("1", "P1")); row.appendChild(group("2", "P2")); row.appendChild(group("3", "P3"));
@@ -467,6 +474,7 @@
     var wrap = el("div", { cls: "eta-picker" });
     var btn = el("button", { type: "button", cls: "eta-chip eta-pick", "aria-haspopup": "listbox", "aria-expanded": S.picker ? "true" : "false", "data-eta": "college" },
       [el("span", { text: college ? college.name : "All colleges (statewide)" }), college && nearComplete(college) ? el("span", { cls: "eta-badge", text: pctWord(college.p, college.a) + ", " + leftWord(college.r) }) : null]);
+    face(btn);
     btn.addEventListener("click", function () { S.picker = !S.picker; redraw("college"); });
     wrap.appendChild(withTip(btn, CHIP_TIPS.college));
     if (!S.picker) return wrap;
@@ -495,7 +503,7 @@
       rows.forEach(function (c) { opt(c.slug, c.name, nearComplete(c) ? el("span", { cls: "eta-badge", text: pctWord(c.p, c.a) + ", " + leftWord(c.r) }) : el("span", { cls: "eta-muted", text: pctWord(c.p, c.a) })); });
     }
     q.addEventListener("input", function () { S.query = q.value; fill(); });
-    var nb = chip("Nearly complete (" + nearN + ")", S.near, function () { S.near = !S.near; nb.setAttribute("aria-pressed", S.near ? "true" : "false"); fill(); }, { "data-eta": "near" });
+    var nb = pill("Nearly complete (" + nearN + ")", S.near, function () { S.near = !S.near; nb.setAttribute("aria-pressed", S.near ? "true" : "false"); fill(); }, { "data-eta": "near" });
     fill();
     wrap.appendChild(el("div", { cls: "eta-pop eta-pickpop" }, [q, withTip(nb, CHIP_TIPS.nearly), list,
       el("p", { cls: "eta-note", text: "College program counts are from the live read of " + liveDay(B) + " and may lag the statewide headline." })]));
@@ -755,7 +763,7 @@
     var box = el("section", { cls: "eta-sub", "aria-labelledby": "eta-lv-h" }, [el("h4", { id: "eta-lv-h", text: "Levers" }),
       el("p", { cls: "eta-note", text: "The same connections as the chips above, sharing their on and off state. Dates that move are projections, not partner commitments." })]);
     var row = el("div", { cls: "eta-chips eta-left" });
-    LEVERS.forEach(function (l) { row.appendChild(chip(l.name, S.on[l.id], function () { S.on[l.id] = !S.on[l.id]; if (S.open === l.id) S.open = null; redraw("lever-" + l.id); }, { "data-eta": "lever-" + l.id })); });
+    LEVERS.forEach(function (l) { row.appendChild(pill(l.name, S.on[l.id], function () { S.on[l.id] = !S.on[l.id]; if (S.open === l.id) S.open = null; redraw("lever-" + l.id); }, { "data-eta": "lever-" + l.id })); });
     row.appendChild(chip("Clear levers", null, function () { var f = freshState(); S.on = f.on; S.factors = f.factors; S.start = f.start; S.twoReads = false; S.open = null; S.catalogParts = f.catalogParts; S.outlineParts = f.outlineParts; redraw("clear"); }, { "data-eta": "clear" }));
     box.appendChild(row);
     var active = LEVERS.filter(function (l) { return S.on[l.id]; });
@@ -822,13 +830,23 @@
     ".eta-head { margin:0; font-size:1rem; color:var(--cmn-heading); }",
     ".eta-daterow { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; }",
     ".eta-date { font-family:var(--cmn-serif); font-size:clamp(1.5rem, 4vw, 2.2rem); color:var(--cmn-title); cursor:help; }",
-    ".eta-chips { display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; justify-content:center; width:100%; }",
+    ".eta-chips { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:center; justify-content:center; width:100%; }",
     ".eta-chips.eta-left { justify-content:flex-start; }",
-    ".eta-group { display:flex; flex-wrap:wrap; gap:4px 8px; align-items:center; }",
-    ".eta-plabel { font-size:.82rem; color:var(--cmn-muted); cursor:help; }",
+    ".eta-band .eta-chips > .eta-tipwrap > .eta-chip:not(.eta-pill) { font-size:.74rem; color:var(--cmn-ink-2); }",
+    ".eta-group { display:flex; flex-wrap:wrap; gap:4px; align-items:center; }",
+    ".eta-plabel { font-size:.7rem; color:var(--cmn-muted); cursor:help; }",
     /* Controls are underlined words (Sam, 2026-10-09): no border, no fill at rest, 24px tall; on reads bold over a wash. */
     ".eta-chip { font:inherit; font-size:.86rem; min-height:24px; padding:0 4px; border:0; background:none; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; cursor:pointer; border-radius:4px; }",
     ".eta-chip[aria-pressed=\"true\"], .eta-chip.eta-on { font-weight:700; background:var(--eta-wash); color:var(--cmn-heading); }",
+    /* The chips that move the date: a bordered pill, as COBIx's mock draws them; on, the border takes the accent over a
+       wash and the word turns bold, so the state never rests on color alone. */
+    /* Small and quiet (Sam, S661: "Keep them quite small font so they don't grab the focus which should be the eta and
+       bar graph"): the mock's 11px type, a hairline border, the second ink; the date and the bars lead. */
+    ".eta-chip.eta-pill { text-decoration:none; padding:0; min-height:24px; border:0; background:none; display:inline-flex; align-items:center; }",
+    ".eta-face { display:inline-flex; align-items:center; gap:4px; padding:0 6px; line-height:16px; border:1px solid var(--cmn-line); border-radius:999px; color:var(--cmn-ink-2); font-size:.7rem; font-weight:400; }",
+    ".eta-pill:hover .eta-face { border-color:var(--cmn-accent); }",
+    ".eta-pill[aria-pressed=\"true\"], .eta-pill.eta-on { background:none; }",
+    ".eta-pill[aria-pressed=\"true\"] .eta-face, .eta-pill.eta-on .eta-face { border-color:var(--cmn-accent); background:var(--eta-wash); color:var(--cmn-heading); font-weight:600; }",
     ".eta-chip:focus-visible, .eta [tabindex]:focus-visible, .eta select:focus-visible, .eta input:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".eta-tipwrap { position:relative; display:inline-flex; }",
     ".eta-tip { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); margin-top:4px; z-index:6; width:min(280px, 80vw); padding:8px; background:var(--cmn-dialog); color:var(--cmn-ink-2); border:1px solid var(--cmn-line); border-radius:8px; font-size:.78rem; line-height:1.35; text-align:left; font-weight:400; }",
