@@ -5699,68 +5699,178 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/american_river",
-  "kept": 243,
+  "kept": 275,
   "kept_moved": 0,
-  "programs": 33,
+  "programs": 93,
   "list": [
    {
-    "control_number": "04514",
-    "title": "Horticulture",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=664",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=666",
-    "was_coverage": 0.962,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04544",
-    "title": "Theatre Arts: Acting",
+    "control_number": "04521",
+    "title": "Management",
     "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=941",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
     "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=945",
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "07200",
-    "title": "Marketing",
+    "control_number": "04522",
+    "title": "Advertising and Sales Promotion",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=744",
+    "coverage": 0.952,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=744",
+    "was_coverage": 0.952,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "04523",
+    "title": "Retail Management",
     "award": "A.A. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=745",
-    "coverage": 0.962,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
-    "was_coverage": 0.962,
+    "coverage": 0.929,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=745",
+    "was_coverage": 0.929,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "07231",
-    "title": "Chemical Dependency Studies",
+    "control_number": "04524",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=860",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=860",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "04526",
+    "title": "Journalism & Mass Communication",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "04528",
+    "title": "Deaf Culture and American Sign Language Studies",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=475",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=475",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "04540",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "04542",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=308",
+    "coverage": 0.932,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=308",
+    "was_coverage": 0.932,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "04551",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=808",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=808",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "04552",
+    "title": "Respiratory Care",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=909",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=909",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "04563",
+    "title": "Physical Science/Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=844",
+    "coverage": 0.66,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=844",
+    "was_coverage": 0.66,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "07223",
+    "title": "Commercial Music: Business",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=766",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=766",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "07224",
+    "title": "Theatre Arts: Technical Production",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=942",
+    "coverage": 0.967,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=942",
+    "was_coverage": 0.967,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "07228",
+    "title": "LVN to RN Career Mobility",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=805",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=805",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "07230",
+    "title": "Hospitality Management: Culinary Arts/Restaurant Management",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "07232",
+    "title": "Social Work",
     "award": "A.A. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
-    "coverage": 0.55,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=926",
-    "was_coverage": 0.55,
+    "coverage": 0.722,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
+    "was_coverage": 0.722,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "07234",
-    "title": "General Science",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=350",
-    "coverage": 0.983,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=101",
-    "was_coverage": 0.617,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11553",
-    "title": "Commercial Music: Recording",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=767",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771",
-    "was_coverage": 1.0,
+    "control_number": "11554",
+    "title": "Para Professional Interior Planning and Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=697",
+    "coverage": 0.96,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=697",
+    "was_coverage": 0.96,
     "was_method": "pdf_pages"
    },
    {
@@ -5769,481 +5879,9 @@
     "award": "A.A. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=632",
     "coverage": 0.8,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=637",
-    "was_coverage": 0.75,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=632",
+    "was_coverage": 0.8,
     "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12238",
-    "title": "CIS: Computer Networking Management",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=429",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=430",
-    "was_coverage": 0.862,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12686",
-    "title": "ASL-English Interpreter Preparation Program",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=343",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=345",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14255",
-    "title": "Commercial Music: Recording",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=764",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "16946",
-    "title": "Computer Information Security Essentials",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
-    "coverage": 0.5,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=434",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "17939",
-    "title": "Language Studies",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=690",
-    "coverage": 0.917,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=691",
-    "was_coverage": 0.917,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "18845",
-    "title": "Speech-Language Pathology Assistant Program",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=936",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20100",
-    "title": "Biotechnology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=385",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=382",
-    "was_coverage": 0.938,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20109",
-    "title": "Cybersecurity and Information Assurance",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
-    "coverage": 0.6,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=434",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20130",
-    "title": "Paramedic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=829",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=833",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20138",
-    "title": "Gerontology: Recreation",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=640",
-    "coverage": 0.778,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=635",
-    "was_coverage": 0.778,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30023",
-    "title": "Landscape Design Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=664",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=665",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30341",
-    "title": "POST Basic Law Enforcement Academy - Modular Format",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=895",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=899",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30595",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=852",
-    "coverage": 0.812,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=856",
-    "was_coverage": 0.812,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31031",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=540",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=541",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31299",
-    "title": "Dance",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=463",
-    "coverage": 0.692,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=88",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31434",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=652",
-    "coverage": 0.966,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=653",
-    "was_coverage": 0.931,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32643",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=940",
-    "coverage": 0.854,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
-    "was_coverage": 0.854,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32828",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=325",
-    "coverage": 0.975,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=309",
-    "was_coverage": 0.95,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33273",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=976",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=980",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35294",
-    "title": "Music Management and Promotion",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=766",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=770",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35934",
-    "title": "Film",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=952",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=957",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39057",
-    "title": "Acoustical Installer Apprenticeship",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=169",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39255",
-    "title": "Millwright Apprenticeship",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=193",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=166",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39448",
-    "title": "Refrigeration Service Technician Apprenticeship",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40110",
-    "title": "Carpenter Apprenticeship Level II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=155",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45960",
-    "title": "Hardwood Floor Layer Apprenticeship",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=158",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=183",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   }
-  ],
-  "held_worse_window": [
-   {
-    "control_number": "04542",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=308",
-    "coverage": 0.932,
-    "was_coverage": 0.977
-   },
-   {
-    "control_number": "14520",
-    "title": "Telecommunication Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
-    "coverage": 0.889,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "16820",
-    "title": "Paralegal Studies",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
-    "coverage": 0.652,
-    "was_coverage": 0.87
-   },
-   {
-    "control_number": "17372",
-    "title": "Law Office Clerical Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=412",
-    "coverage": 0.778,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "20104",
-    "title": "Entrepreneurship/Small Business Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
-    "coverage": 0.842,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "20139",
-    "title": "Gerontology: Advocacy and Social Policy",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
-    "coverage": 0.714,
-    "was_coverage": 0.81
-   },
-   {
-    "control_number": "20140",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
-    "coverage": 0.652,
-    "was_coverage": 0.87
-   },
-   {
-    "control_number": "35640",
-    "title": "Computer Applications for Small Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
-    "coverage": 0.75,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "37403",
-    "title": "ARTNM: Commercial Illustration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328",
-    "coverage": 0.833,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "38640",
-    "title": "Acoustical Installer Apprenticeship",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
-    "coverage": 0.941,
-    "was_coverage": 1.0
-   }
-  ],
-  "held_no_gain": [
-   {
-    "control_number": "04521",
-    "title": "Management",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "04522",
-    "title": "Advertising and Sales Promotion",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=744",
-    "coverage": 0.952,
-    "was_coverage": 0.952
-   },
-   {
-    "control_number": "04523",
-    "title": "Retail Management",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=745",
-    "coverage": 0.929,
-    "was_coverage": 0.929
-   },
-   {
-    "control_number": "04524",
-    "title": "Real Estate",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=860",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "04526",
-    "title": "Journalism & Mass Communication",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "04528",
-    "title": "Deaf Culture and American Sign Language Studies",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=475",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "04540",
-    "title": "Welding Technology",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "04551",
-    "title": "Registered Nursing",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=808",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "04552",
-    "title": "Respiratory Care",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=909",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "04563",
-    "title": "Physical Science/Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=844",
-    "coverage": 0.66,
-    "was_coverage": 0.66
-   },
-   {
-    "control_number": "07223",
-    "title": "Commercial Music: Business",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=766",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "07224",
-    "title": "Theatre Arts: Technical Production",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=942",
-    "coverage": 0.967,
-    "was_coverage": 0.967
-   },
-   {
-    "control_number": "07228",
-    "title": "LVN to RN Career Mobility",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=805",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "07230",
-    "title": "Hospitality Management: Culinary Arts/Restaurant Management",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "07232",
-    "title": "Social Work",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
-    "coverage": 0.722,
-    "was_coverage": 0.722
-   },
-   {
-    "control_number": "11554",
-    "title": "Para Professional Interior Planning and Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=697",
-    "coverage": 0.96,
-    "was_coverage": 0.96
    },
    {
     "control_number": "11994",
@@ -6251,7 +5889,9 @@
     "award": "A.S. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=829",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=829",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "12181",
@@ -6259,7 +5899,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
     "coverage": 0.929,
-    "was_coverage": 0.929
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
+    "was_coverage": 0.929,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "12207",
@@ -6267,7 +5909,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=747",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=747",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "12348",
@@ -6275,7 +5919,9 @@
     "award": "A.S. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=598",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=598",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "12377",
@@ -6283,7 +5929,9 @@
     "award": "A.S. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "12659",
@@ -6291,7 +5939,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "12675",
@@ -6299,7 +5949,9 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "13941",
@@ -6307,7 +5959,9 @@
     "award": "A.S. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=791",
     "coverage": 0.968,
-    "was_coverage": 0.968
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=791",
+    "was_coverage": 0.968,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "14256",
@@ -6315,7 +5969,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=769",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=769",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "14463",
@@ -6323,7 +5979,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=943",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=943",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "14464",
@@ -6331,7 +5989,9 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "14465",
@@ -6339,7 +5999,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "14466",
@@ -6347,7 +6009,19 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=952",
     "coverage": 0.944,
-    "was_coverage": 0.944
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=952",
+    "was_coverage": 0.944,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "14520",
+    "title": "Telecommunication Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
+    "coverage": 0.889,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
+    "was_coverage": 0.889,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "15325",
@@ -6355,7 +6029,9 @@
     "award": "A.S. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=433",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=433",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "15519",
@@ -6363,7 +6039,9 @@
     "award": "A.A. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=853",
     "coverage": 0.812,
-    "was_coverage": 0.812
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=853",
+    "was_coverage": 0.812,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "15613",
@@ -6371,7 +6049,9 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "15615",
@@ -6379,7 +6059,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "16747",
@@ -6387,7 +6069,29 @@
     "award": "A.A. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=768",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=768",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "16820",
+    "title": "Paralegal Studies",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
+    "coverage": 0.652,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
+    "was_coverage": 0.652,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "17372",
+    "title": "Law Office Clerical Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=412",
+    "coverage": 0.778,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=412",
+    "was_coverage": 0.778,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "19330",
@@ -6395,7 +6099,9 @@
     "award": "A.A. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846",
     "coverage": 0.733,
-    "was_coverage": 0.733
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846",
+    "was_coverage": 0.733,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "19335",
@@ -6403,7 +6109,9 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=603",
     "coverage": 0.842,
-    "was_coverage": 0.842
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=603",
+    "was_coverage": 0.842,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20099",
@@ -6411,7 +6119,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=790",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=790",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20102",
@@ -6419,7 +6129,9 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20103",
@@ -6427,7 +6139,19 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20104",
+    "title": "Entrepreneurship/Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
+    "coverage": 0.842,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
+    "was_coverage": 0.842,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20105",
@@ -6435,7 +6159,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=861",
     "coverage": 0.9,
-    "was_coverage": 0.9
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=861",
+    "was_coverage": 0.9,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20114",
@@ -6443,7 +6169,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=343",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=343",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20119",
@@ -6451,7 +6179,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=361",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=361",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20129",
@@ -6459,7 +6189,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=810",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=810",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20131",
@@ -6467,7 +6199,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20132",
@@ -6475,7 +6209,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20133",
@@ -6483,7 +6219,29 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20139",
+    "title": "Gerontology: Advocacy and Social Policy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
+    "coverage": 0.714,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
+    "was_coverage": 0.714,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "20140",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
+    "coverage": 0.652,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
+    "was_coverage": 0.652,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20141",
@@ -6491,7 +6249,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=924",
     "coverage": 0.944,
-    "was_coverage": 0.944
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=924",
+    "was_coverage": 0.944,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20142",
@@ -6499,7 +6259,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
     "coverage": 0.55,
-    "was_coverage": 0.55
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
+    "was_coverage": 0.55,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "20144",
@@ -6507,7 +6269,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=615",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=615",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "30352",
@@ -6515,7 +6279,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=818",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=818",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "30636",
@@ -6523,7 +6289,9 @@
     "award": "A.A- T Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=928",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=928",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "30823",
@@ -6531,7 +6299,9 @@
     "award": "A.S. T Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "30842",
@@ -6539,7 +6309,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=312",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=312",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31582",
@@ -6547,7 +6319,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32275",
@@ -6555,7 +6329,9 @@
     "award": "A.A- T Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=608",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=608",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32487",
@@ -6563,7 +6339,9 @@
     "award": "A.A- T Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706",
     "coverage": 0.906,
-    "was_coverage": 0.906
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706",
+    "was_coverage": 0.906,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32560",
@@ -6571,7 +6349,9 @@
     "award": "A.A- T Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32630",
@@ -6579,7 +6359,9 @@
     "award": "A.A- T Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=765",
     "coverage": 0.917,
-    "was_coverage": 0.917
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=765",
+    "was_coverage": 0.917,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35062",
@@ -6587,7 +6369,9 @@
     "award": "A.A- T Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=837",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=837",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35164",
@@ -6595,7 +6379,9 @@
     "award": "A.S. T Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=816",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=816",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35262",
@@ -6603,7 +6389,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35293",
@@ -6611,7 +6399,9 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35348",
@@ -6619,7 +6409,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=560",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=560",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35356",
@@ -6627,7 +6419,9 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=560",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=560",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35636",
@@ -6635,7 +6429,9 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35637",
@@ -6643,7 +6439,19 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=746",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=746",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35640",
+    "title": "Computer Applications for Small Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
+    "coverage": 0.75,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
+    "was_coverage": 0.75,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35646",
@@ -6651,7 +6459,19 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "37403",
+    "title": "ARTNM: Commercial Illustration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328",
+    "coverage": 0.833,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328",
+    "was_coverage": 0.833,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37576",
@@ -6659,7 +6479,9 @@
     "award": "A.A- T Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=914",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=914",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "37581",
@@ -6667,7 +6489,19 @@
     "award": "A.A- T Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=916",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=916",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38640",
+    "title": "Acoustical Installer Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
+    "coverage": 0.941,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
+    "was_coverage": 0.941,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "39339",
@@ -6675,7 +6509,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=197",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=197",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "40096",
@@ -6683,7 +6519,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=219",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=219",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "40111",
@@ -6691,7 +6529,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41294",
@@ -6699,7 +6539,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41295",
@@ -6707,7 +6549,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41296",
@@ -6715,7 +6559,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41297",
@@ -6723,7 +6569,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42424",
@@ -6731,7 +6579,9 @@
     "award": "A.S. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=807",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=807",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42725",
@@ -6739,7 +6589,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42734",
@@ -6747,7 +6599,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=933",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=933",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42735",
@@ -6755,7 +6609,9 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "42736",
@@ -6763,7 +6619,9 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
     "coverage": 1.0,
-    "was_coverage": 1.0
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "44531",
@@ -6771,10 +6629,1495 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=923",
     "coverage": 0.857,
-    "was_coverage": 0.857
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=923",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
    }
   ],
-  "held_opens_on_list": []
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "43212067552"
+ "fingerprints": {
+  "04514": {
+   "sha256": "7afd19af1d122fb41798c76d9cd2a2de15d2bbbbf733739d562e51898b2c4e73",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=664"
+  },
+  "04516": {
+   "sha256": "c795efac163c26f5a56d04abe54aa343e770798db77e8577fba9c0d687c80c4f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=698"
+  },
+  "04518": {
+   "sha256": "55a26130962c2dbc96068db4227fb4d72b6f3cf0bee84f758a1db0f3ea567054",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=398"
+  },
+  "04521": {
+   "sha256": "6a61852cadabb5009f135258da8c65ea24d87eec7658bde1057f6fa2c5933592",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739"
+  },
+  "04522": {
+   "sha256": "984539179a51b87dedf725f63710721e5a5055bac888219bbcf5d3f0919c9235",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=744"
+  },
+  "04523": {
+   "sha256": "0670bf081f61126a122a88f83453a586884f1bdf365282ac772c2ab958214e8d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=745"
+  },
+  "04524": {
+   "sha256": "9b273c97e87fff281ca9e79e09e36e2d9032683b44ba70a65a4346721da718b5",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=860"
+  },
+  "04525": {
+   "sha256": "61c3d81f6bbaf5c065fb499e519b525964ad3ea2b989b90cfbad3f2e42e3de6d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=409"
+  },
+  "04526": {
+   "sha256": "5301d16c4015f2688808ed696cf49c1073f1aa41871a99f2ad17605d7311fd4e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706"
+  },
+  "04528": {
+   "sha256": "d4f3f384c22ea79fc8996b788de832ae809ba2a55fdbfc6379e58f715e34712c",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=475"
+  },
+  "04533": {
+   "sha256": "f32ea3ef1151cae60f40714a0c31c1b8b6a848510a2420fbfda5542f972795a7",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=491"
+  },
+  "04534": {
+   "sha256": "3bec8937306c5f8aadd576cd7e0cf4bbfb2982c3a529df6ae2404f866d630b23",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=363"
+  },
+  "04535": {
+   "sha256": "8b2bec1326fbcb5dee68df8056d3dfcbb455ca95056b4f4bcd2a68ba6aded2ce",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=355"
+  },
+  "04536": {
+   "sha256": "5f2ab961a270ccb59fdfcaf0e489381fe838caa55b24b8a6d89ae4d475cc774d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=155"
+  },
+  "04537": {
+   "sha256": "274566bb7a5a82330598ac3c9ea6341b4f902add268d48ec53abb10c1fa3896a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=157"
+  },
+  "04538": {
+   "sha256": "52df547191ffeaee533dd0c68e30fb821dac4d0c7ef2e2b8c673ce21a464f065",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=481"
+  },
+  "04540": {
+   "sha256": "afc36c0896c27eea8cc47950645ff872d11d933970cc4124c320509377c38ffa",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965"
+  },
+  "04542": {
+   "sha256": "b10f6109e339ca4d3ec6a8c505afed3e8cab326a61b8205b35edcf456e0c91b0",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=308"
+  },
+  "04544": {
+   "sha256": "bd5dce682ff0b8327a2c6aba9c9b421572d38ab8cc11b0346a4a6e0264591b37",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=941"
+  },
+  "04551": {
+   "sha256": "27e4cca2ef98b2a5d7749d487e116f0b5faf9c76ab1455af6de12bb8857b075a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=808"
+  },
+  "04552": {
+   "sha256": "209b5056f16d788182aa5acfd4fdeafb8cd342b633e931487c30b2d2775d38c6",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=909"
+  },
+  "04554": {
+   "sha256": "00211f290d985cc3f401fecaa52a0c718f71a38649ab6442717d13731516906f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=577"
+  },
+  "04555": {
+   "sha256": "521ff34c12a6bee748ec9710342349f84a1aab0e1f0b0ef858dc3b14d5756b36",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=501"
+  },
+  "04563": {
+   "sha256": "dd4524c50f3b859c4eb531b49d811ca6b515cba20602f26bc9834a82547a866d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=844"
+  },
+  "04570": {
+   "sha256": "ed06bb6f9e68460abb3f0372d3088e5bc9b00eebe7ea2218b2cf1c5a461a4b48",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630"
+  },
+  "04571": {
+   "sha256": "492d35395644b6193b166d0a35d79e11eee2b809702b50682b25b00e1767aa6f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=635"
+  },
+  "04572": {
+   "sha256": "0c365a20da8b5aac55f1a72cbfe312b579ec9a6f1ea844c7225c63f708f8836b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=588"
+  },
+  "04579": {
+   "sha256": "bca6bf41b9e701b27b59d5f01a894014d43f6b59719f88790c536e21524b3231",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=675"
+  },
+  "07196": {
+   "sha256": "0b6714c7effe52093612edcec15c47b7e1928a2c0936a7e36ac443b1b2eca9c4",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=131"
+  },
+  "07199": {
+   "sha256": "be96e9e8c5e2e8ad70ca338ea3d392b41bdca2740807c0b19e416e53389a5c78",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=398"
+  },
+  "07200": {
+   "sha256": "0670bf081f61126a122a88f83453a586884f1bdf365282ac772c2ab958214e8d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=745"
+  },
+  "07206": {
+   "sha256": "89de707aa8e37a4d0deeea0da19b5eab43300e4aadbbc86aa9a320e03327ee7e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=429"
+  },
+  "07207": {
+   "sha256": "318f7f0c1210c00a36819516387d3e728d93c1d7b05bf747d8bc6917c63bcfc8",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=431"
+  },
+  "07209": {
+   "sha256": "3656550569284887ecb459764d0b6fded326a2591282f065d59cf1908a5b6a17",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=482"
+  },
+  "07210": {
+   "sha256": "0aa43f15e7bcbad46d58629d2f9366c20559f601cfefe6861a5d1c3edc867c03",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=520"
+  },
+  "07213": {
+   "sha256": "b731d05d8bcd640a3582d5004ee60c15ee9af18902b3d592014a9ac64dc62455",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=362"
+  },
+  "07215": {
+   "sha256": "c35e982b0b332dd2001676af8cf8045d24c5e92b69724fa5a074633a2c866b38",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=364"
+  },
+  "07216": {
+   "sha256": "d8e38f04ed67e04d99f84c01fab33144e1e471e0cc1da39169edcd736b2f9da3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=370"
+  },
+  "07217": {
+   "sha256": "7f50c2acf9e9043e974e9f7388bd0ec552be34d7fdd515db228c19b6d959a04d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=370"
+  },
+  "07223": {
+   "sha256": "60ca4fdd582960c874dea11ed400380cc2a06a3a968773998fd6086e83c69416",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=766"
+  },
+  "07224": {
+   "sha256": "d13ecbd887fbc0d5175ec8087492de5eec4988ac5a0155c17946c556783e639c",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=942"
+  },
+  "07228": {
+   "sha256": "58218c21f10effe9bfa8d318542aef260e5d7268c99adb3060feee425dab9d04",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=805"
+  },
+  "07230": {
+   "sha256": "47367cc6e0b3b6ff144935990d964f5be9e95d2f4c7fca9bfc261d1604c34764",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674"
+  },
+  "07231": {
+   "sha256": "df717e39b00d9ce1e4f33dda7139a15979bf6413f331cd2264ac94834087a9a2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922"
+  },
+  "07232": {
+   "sha256": "249a906726ffe5e7896ec4a8eb51a3f6db2e19c45a2c939d39fe2354485ac693",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922"
+  },
+  "07234": {
+   "sha256": "3aa7180d83b2b8d1c4408b0fa925df88aac58943f9bf0aba8100f9a3bc073809",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=350"
+  },
+  "11548": {
+   "sha256": "8b14240e4a48a9f956614ac15496059774d9c807e35b8bc0c2156b072d740b98",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=162"
+  },
+  "11553": {
+   "sha256": "7f78dca44a0358515151e834ffb13256fcaa0344c9dd5f6ae56d8e44e68b3fa3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=767"
+  },
+  "11554": {
+   "sha256": "6e09e18fcac67461aa36bbda1f7042f213b5114c3e5ee09877cf60982577dba7",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=697"
+  },
+  "11555": {
+   "sha256": "29e2c95cb8dd765936ae559afc8d27ff0effea97d8eaf8728cbffdb9a8efb88f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=578"
+  },
+  "11556": {
+   "sha256": "f64fc61d9638ccff25d9d6aba23ecef6c359d03a103687926b4c618b64cc01cb",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=504"
+  },
+  "11557": {
+   "sha256": "6c354b23fbb83214ad0befbca9901a49500f9f79f9b06758282675c6e755ce16",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=500"
+  },
+  "11563": {
+   "sha256": "fb452d7dab4f7d77ab7f5898c321405602d00d028d531849e98117dc532b78ff",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=634"
+  },
+  "11564": {
+   "sha256": "0458f56584e301b748aebab92ec8921a5094ef1fa1f0615923216dd9d2583495",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630"
+  },
+  "11565": {
+   "sha256": "492d35395644b6193b166d0a35d79e11eee2b809702b50682b25b00e1767aa6f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=635"
+  },
+  "11566": {
+   "sha256": "146bc48a364525f6bf136f714faf2f40062243cec7e8078c231f3cc3b840c6e2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=632"
+  },
+  "11994": {
+   "sha256": "90689f204478ae08eed2f6503518bdaa78fd5e0d93109866d85dbb90ee2d754b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=829"
+  },
+  "12110": {
+   "sha256": "df92e0080aa4d0e6abb4f4a5c4a5b41e6bfd44d377ffcefd28ac23c7b11365c9",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=382"
+  },
+  "12153": {
+   "sha256": "f157321ba219b9810d2f06f7e5c6703562ab1a98fb4d91e13725cb4b1c002f74",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=156"
+  },
+  "12154": {
+   "sha256": "abbce0dd3e9270a1b42767e1c7812147118a8efd50e49034de65bbdf127e2759",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=159"
+  },
+  "12180": {
+   "sha256": "5205db6d76dda487c3cfde6c3fd4c0ca093df050bea59430ac4038ecaadad2d7",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=437"
+  },
+  "12181": {
+   "sha256": "874440fd2848a567d61185d18a9053e0dc59ad512866b1d3b00f009e4fad1d1e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428"
+  },
+  "12186": {
+   "sha256": "124704bba8bb04e8d4aaa15311bcc913d31f23bf24c3a9211b32f00268a41d96",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=401"
+  },
+  "12189": {
+   "sha256": "fb05f1074bb03c3206a9f610463a46b204c34a5329cde1c9a30aaa536d0c860e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=505"
+  },
+  "12190": {
+   "sha256": "fb05f1074bb03c3206a9f610463a46b204c34a5329cde1c9a30aaa536d0c860e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=505"
+  },
+  "12191": {
+   "sha256": "e5e0cad9738aa6c98b257bb05ef00a68d351770cf354623378ebc76e730113ee",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=506"
+  },
+  "12207": {
+   "sha256": "a784b5a07cee2aadb8c74918c189096dabe920ae544b8186188ddbbda3f92771",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=747"
+  },
+  "12236": {
+   "sha256": "585a9636b6fdbe119299b470e5387255c8d1d4ea8439d2f142aebfccb9c85851",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=433"
+  },
+  "12237": {
+   "sha256": "f1990905434b07d101123bb11fc3054a8359797de91a7d5b7040d8a3fc482d57",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=432"
+  },
+  "12238": {
+   "sha256": "89de707aa8e37a4d0deeea0da19b5eab43300e4aadbbc86aa9a320e03327ee7e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=429"
+  },
+  "12239": {
+   "sha256": "576b42242131c5c036c55554ccf913ceccf8eb91054cefe6bdf66e0ecf2a5a89",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=432"
+  },
+  "12250": {
+   "sha256": "9fcde69526b4cfb3e74c5a27ee9fee7cb54c48a9460c2014d673ff2ff2d32222",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=362"
+  },
+  "12268": {
+   "sha256": "89fe31a9e002891549069511f72b9420e9423b54d56b892f439b778b897e55af",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=613"
+  },
+  "12348": {
+   "sha256": "f5ac0a02ef7c3f20c5149a3922b2ce0ee27481689849a5e24878ba524d58c7bb",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=598"
+  },
+  "12377": {
+   "sha256": "a775d4a2fc5d6e3c69bb0488fb7434e7284e6e2b1d644d5ae1c7e388c92fec40",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749"
+  },
+  "12448": {
+   "sha256": "c324b87b0a5b3fca577264611fa6af4d8908cf985c8def250c21dfcf1786149b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=330"
+  },
+  "12449": {
+   "sha256": "0871f0db4d5aa50a131beea38f084d3f75a2ba4a12957bf39cbc89cb55bd7482",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=335"
+  },
+  "12450": {
+   "sha256": "bbc7c8e2c5686b597031d7d3fc9bd317ce26cb9a1ba453557d13bbd454bf78d0",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=334"
+  },
+  "12451": {
+   "sha256": "abda0af7456d2bd76f6f8645a3a9894f15c06aba5357f2daad728a772e5930a9",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=333"
+  },
+  "12659": {
+   "sha256": "cf3c581adcd527164125a9f8d8784e17f66c4c05b43aa773eef9f578fb377e48",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674"
+  },
+  "12675": {
+   "sha256": "c54744cb5b75fd44de767cfbbedf97dfcd8eea7ddf97aa861754edc608f3eab6",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965"
+  },
+  "12686": {
+   "sha256": "97b56fade41e32739fbd5018ab292f75e232ef1aa408941ac6e23a4e8ddf4fd2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=343"
+  },
+  "13941": {
+   "sha256": "5bf66aaa996bf8fed7247de0ada9257476749f575f0e6d3d47e9174ed361fd1a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=791"
+  },
+  "14255": {
+   "sha256": "11e20f50186aa76181711536c8fc1f1dc4489bc0f2cf2694656f442834d0f8d2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=764"
+  },
+  "14256": {
+   "sha256": "d2c813c60c2d2199a134ae600563a2b66cb1a8db1184d55f68fa05d8992427fe",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=769"
+  },
+  "14337": {
+   "sha256": "53430809a9870675a2b8fdb78000efc9d7048f421e9137985f132596730efcad",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=445"
+  },
+  "14339": {
+   "sha256": "4426ea65f7c71f126d52642ee22de601106095e1bf4d686f4f097f69623d12cc",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=445"
+  },
+  "14463": {
+   "sha256": "72023321646336fa64babf2c480ebd4a63e80e4a866dce437910701e08352645",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=943"
+  },
+  "14464": {
+   "sha256": "a0ed1e90479d371f775794561543c7a4798351474d7a5efd793bcc81355baa8b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944"
+  },
+  "14465": {
+   "sha256": "04e68e2ff08d70221769bd5f68d2d41cc91f08e12d0c962851833292efce1eaa",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944"
+  },
+  "14466": {
+   "sha256": "868da57b032a60b43ef9c39092a6e62a74b28bb0a3d1cf4bdfe2b99efffaf153",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=952"
+  },
+  "14470": {
+   "sha256": "f5b7b2bca6626749368eba3a79ccf150856defca138c5fbbfcf5700ab9771675",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=369"
+  },
+  "14477": {
+   "sha256": "6cde6fb288e67c6e41dc90463e291ac1a5fa7c27736494b18d1ff0b717a37642",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=500"
+  },
+  "14520": {
+   "sha256": "907a1264cbacedd796ed2034bda4973973ae160bb0272c154be665c193f4c6ea",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519"
+  },
+  "14684": {
+   "sha256": "132bae2e97599170299f3526367b80fa4988c2239779b6838132c2851ce76392",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=145"
+  },
+  "14999": {
+   "sha256": "89711ba1bb4e7429e8e410179e9caa8b98fac9baadcbe862d873255632952480",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=163"
+  },
+  "15319": {
+   "sha256": "caff41d998b169fdcd68fa36e90c6ccb9c9146e0f63aa1d5a358b5e8ccb29c31",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=356"
+  },
+  "15325": {
+   "sha256": "b11ddf69cd9de8f2a8a10bea90b907f394caa47a18ae8f16dd0c37c61887eef2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=433"
+  },
+  "15519": {
+   "sha256": "52f1e929a122e9355f6d4d4fd8d8867bf32b0baf2293ccb04664fcc4865baa28",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=853"
+  },
+  "15605": {
+   "sha256": "34fb205f8c8a926bf456a3ceb6e19719ca7816fbfe84582a0ca73ed2defbf556",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=525"
+  },
+  "15606": {
+   "sha256": "f589f1b43d83058bd8c65b24037885f93494721c484657c4e266caa540212514",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=524"
+  },
+  "15613": {
+   "sha256": "beb331b772e26fe4534580dcba21598bc1917a6940e924e66c909a2160cd46fb",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965"
+  },
+  "15615": {
+   "sha256": "ddbc51519b6bb73f621cef08b83b09429e41cf953408f767fe3e73dd98b90cd7",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519"
+  },
+  "16596": {
+   "sha256": "d32faeace0c3b5d2c0b16ad500def543cda91fd5fb2442a0fe5ab1e43e67e3ea",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=590"
+  },
+  "16714": {
+   "sha256": "fc67ffa1a899fbdc87bc70da7b41a156a82e4cc37fee59f75f58040796095ef1",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=87"
+  },
+  "16734": {
+   "sha256": "c12c6b5240257c4ab247ca2d4b68aa528e04e19bf00392ba69cdb97b790a3d22",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=482"
+  },
+  "16747": {
+   "sha256": "fca653acc9b3d473d7a2742860a5bb77235d79174f308e80dd0d15bd799f28ea",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=768"
+  },
+  "16784": {
+   "sha256": "e50c984e86db17b7407bee8e368a4bc2802bca0dc3eb354e106774d8662500be",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=517"
+  },
+  "16817": {
+   "sha256": "72d7bf30fc75a58a8df03b2381718e5d191537dcfbde538513bf0a85e4b40d15",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=614"
+  },
+  "16820": {
+   "sha256": "076bba53864005dec9415cd37422fde8649a6080cd971af09d4bc7f5424e64a2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823"
+  },
+  "16946": {
+   "sha256": "be0c2e05b284d35ec8d1184b1873da808a51619790d0bd4223ff60c6359153b4",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428"
+  },
+  "16948": {
+   "sha256": "50e95055e3a963ce40b070460f47465698db2e3d5e3ddb9f26d2a1fa73448aa3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=134"
+  },
+  "17117": {
+   "sha256": "087c9e7d566e9f1ec35bf9d01700895e0d4957437817d9a6b2d6a3288b4cabc3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=131"
+  },
+  "17372": {
+   "sha256": "1785d495ac78bb64e7aa468db133e32a009354a230217e0267251f12f569cc7f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=412"
+  },
+  "17937": {
+   "sha256": "2c81b93e8e44b8955ff73ff3ad66d0c6699c29ab559bcfb6345ccab64cb25fe1",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=689"
+  },
+  "17938": {
+   "sha256": "0720d4448e2d081a94a0c6509f62e21ff9cc8cf80205b06f02149b8080678b0a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=690"
+  },
+  "17939": {
+   "sha256": "aa206b5e2d5b3f666da244a1519f4f17a724789b026704af166f2e47240a290b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=690"
+  },
+  "17940": {
+   "sha256": "e95b7f6e37284d2e7e91fa57b5b99827de528c48389f67f67e9f76e663f0e29a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=694"
+  },
+  "18005": {
+   "sha256": "c870dac2d577e698ee6338bab1543576b4912b98d5a8e54ccfaf88bed3d32e22",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=491"
+  },
+  "18845": {
+   "sha256": "ca0c55c0a9bddab92b3f9ab8146668a4a08489a051976ac348a392efedde09d6",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932"
+  },
+  "19330": {
+   "sha256": "b07f8ae7ea5d6ce7541dbcffac4ca615a790c320b64fbdbc079e4e70f180d7f3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846"
+  },
+  "19335": {
+   "sha256": "45776967056f6fe29039f27478ed7c1bcb5521aba663d8fd7bfa0ce5208aff58",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=603"
+  },
+  "19361": {
+   "sha256": "86da3478e235193b60774db357c9b6f5b7fb8de1bb181bfe78cdef65d1a94f7b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=355"
+  },
+  "19772": {
+   "sha256": "9bd4b1855fc95d15283e5d01c3c5f6551ee69bd0948fc62b3d3c0d82b7798530",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=645"
+  },
+  "20097": {
+   "sha256": "db57a813d501be85d07101b393863bf27c3851e9b6d9a975070de7878a874646",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=666"
+  },
+  "20099": {
+   "sha256": "cb5596b77fa06f913b184d5e56b293fdee7789431a634a96d3114f03d6e60169",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=790"
+  },
+  "20100": {
+   "sha256": "b4aa7144332ec37601ee7e268c2c1099406d4dc444195d27006ecb5aa46d5832",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=385"
+  },
+  "20101": {
+   "sha256": "e1704384cbaca7cded2a41a3e06da2b3ca17cad3f47befa44177fb70ae3d5c99",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=131"
+  },
+  "20102": {
+   "sha256": "4863440dda4ec479182d93c0d0b0318fa280c52ddfe5c4a83652d70694b0d5e2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741"
+  },
+  "20103": {
+   "sha256": "3f3b5ff4e863b0bc7ff609582db89cf234406ca5eff5b933556ece887131b6c0",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739"
+  },
+  "20104": {
+   "sha256": "0bd95e2e45dae105f4fde8e9a8d5ea6c7ba05dfc2cc79bc7ab4fb0eb9115ca16",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396"
+  },
+  "20105": {
+   "sha256": "dc861815375a0b6dd4f17b3e23d24ca0b58d29577162eae610b825af634a9f9e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=861"
+  },
+  "20107": {
+   "sha256": "7e673862b8d1cc5d8a363c48b65fbb0fd3033383c126d46cfcb78446f66c0974",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=336"
+  },
+  "20108": {
+   "sha256": "de230b48d400d650394e2f81a15f55dc3baf61abb4ffb115f9866c165291b37b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=438"
+  },
+  "20109": {
+   "sha256": "2d7e62d47e696488fae141eeae88a0fdd478415a607a9f22d5f62cd9a2a3e137",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428"
+  },
+  "20110": {
+   "sha256": "58948ea995588e8adbe01dfc8f89af77a7e8a9992caababa3dc635193a15b8fa",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=436"
+  },
+  "20111": {
+   "sha256": "3c9d4149251eb55f09d52902b9a5de2cc5142cfc78a18f3875dd3e273f0adc4d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=439"
+  },
+  "20113": {
+   "sha256": "b2bdda0ddfee7a4498ea1659aa2262bc2a2ebdc28ca5283e911858ed200189c8",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=476"
+  },
+  "20114": {
+   "sha256": "1a6871e5cd251da68fdc5c995fc04a235960b796a39232663fd8f25b2117b235",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=343"
+  },
+  "20115": {
+   "sha256": "368ef855b58b2caf9c4e0aab3647edf48d46ea54e17ec7573d5f8c14e818a12b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=484"
+  },
+  "20116": {
+   "sha256": "3830215053dfda9c54b9ecb48e30aa188369dab18ed954cb0c8614c695d8f39e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=520"
+  },
+  "20117": {
+   "sha256": "fbbb3d22b9595782e5544d592cbc73db01c8bce2d473ebc065f8cd53012c635a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=484"
+  },
+  "20118": {
+   "sha256": "4c01641676b7d19c78badddce6a2c2a2bd03555abfa44103fa432eedca2a40ff",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=365"
+  },
+  "20119": {
+   "sha256": "29f2f6a698fd41182d564d7fddcef7c88d26cec1e04ad2d7ace88a40cd35f9fa",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=361"
+  },
+  "20120": {
+   "sha256": "11ba12fdd1b8606ea8b94b97f8631db89b2a636317e1bd9a163430411c067bb2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=367"
+  },
+  "20121": {
+   "sha256": "de37d466f03efae5fbedbda7bb28dff6f26cc513001aef64b93b628092ee64c2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=172"
+  },
+  "20122": {
+   "sha256": "bbd9e600a079456183a7619e10ae981891110963ff36c85df8ad8e9986989b32",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=177"
+  },
+  "20124": {
+   "sha256": "5a15306b3e055cb3cdc570c2f64d61c1d6b6da5755d891d371915821a3876574",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=175"
+  },
+  "20125": {
+   "sha256": "0e64d449efbacb29450dff59758bacd9a52498b033a742ca8e7d03dbb4231973",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=483"
+  },
+  "20126": {
+   "sha256": "d72dbe644d3e519d37f3769422df20918af13d73967ad5932987b85d03e8619b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=188"
+  },
+  "20127": {
+   "sha256": "ac1cc2837cbd54792af6adb76f11be8ed0b9339c14e60be30216f4884a686fe3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=162"
+  },
+  "20128": {
+   "sha256": "43cd2f8b7274a1c32c38e85c7beceafda3d95f9dc34672c4a5d26bd4b74818c0",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=217"
+  },
+  "20129": {
+   "sha256": "e57c6b83789f5a9230cfa1199573cf6bdc4352c9d639eb264f105a7bc00ce78e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=810"
+  },
+  "20130": {
+   "sha256": "9748bd5b521948443a581a829b73897419f5526b0fba4778abf46c8c489142c2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=829"
+  },
+  "20131": {
+   "sha256": "57eab100f537031f47e22c0588a6e8556bb983dc9f67e3824619fb96e3a5a7f9",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576"
+  },
+  "20132": {
+   "sha256": "966508d5aafb701f70b1d9545e2c2ef6f1a57340b60a5ac5ab2ee6e20752725c",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576"
+  },
+  "20133": {
+   "sha256": "fae09c46713b778da7dbd893efe7d68f75862496797da41b6d61fc0be85bb542",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674"
+  },
+  "20134": {
+   "sha256": "cc63b0a80c27ffbe43cf63ba974a92be902444d00512084af600b11636166c10",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630"
+  },
+  "20135": {
+   "sha256": "b83496ca08ac9b5e47fe24e00ae25d7a556ebcc8cb3828d74859aa5edfefce45",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=633"
+  },
+  "20137": {
+   "sha256": "fb452d7dab4f7d77ab7f5898c321405602d00d028d531849e98117dc532b78ff",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=634"
+  },
+  "20138": {
+   "sha256": "38626ff2d0484448b4653ddf9daa78c4047402ca0d297ad687e55bbdd2630896",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=640"
+  },
+  "20139": {
+   "sha256": "f276b42b29dad73ed4f2ed61978cff6f03333eb591c93a5ad68feeacaa8211e2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630"
+  },
+  "20140": {
+   "sha256": "076bba53864005dec9415cd37422fde8649a6080cd971af09d4bc7f5424e64a2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823"
+  },
+  "20141": {
+   "sha256": "3ed7c9b71d01a87b3d7e38a79f83f6c7d2dacdc5f3017c8b7d3ff1d75e957640",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=924"
+  },
+  "20142": {
+   "sha256": "df717e39b00d9ce1e4f33dda7139a15979bf6413f331cd2264ac94834087a9a2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922"
+  },
+  "20143": {
+   "sha256": "d877b840f62a02d4a5ae1398e5f0c468c0e9df7678b659f64e7aa6f6e4aeafc8",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=588"
+  },
+  "20144": {
+   "sha256": "a7330ac46d836351628513d1ec25eebffca94761246cd8d53f0af8f252e2f732",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=615"
+  },
+  "30019": {
+   "sha256": "ad5b108501e43f805675c914464e8351529e3bb34dec422f871a96e2d8975728",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=368"
+  },
+  "30020": {
+   "sha256": "df5c52d7df4e22eb69615c5fe0cae5348724ee635eb14106d7f157cc27b73a42",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=493"
+  },
+  "30021": {
+   "sha256": "436b76215d32b64b18917ba3f9f11532b36ca0acb953e75e012fc4cc0a91afa6",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=537"
+  },
+  "30022": {
+   "sha256": "81b8d01640efd3cfd3255a99d97cc9ddb847276a07d28ec54f94e4dd5cadab67",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=537"
+  },
+  "30023": {
+   "sha256": "5360d042425cbd09dd6b85b6e520870304d01cf319244dbe859719dbac50033c",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=664"
+  },
+  "30024": {
+   "sha256": "1e1b094ce922f7560ea59fd7d31fa343656e77d7bf1a1f4db87d07896f111ad7",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=665"
+  },
+  "30025": {
+   "sha256": "94c61390ac5151dc80c36de4a90b09f4c6e1cd17c45d684c555c445986881227",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519"
+  },
+  "30268": {
+   "sha256": "336cd4137b3d79a56f4be77952df18cd8aad4d74fb176541d33929f816793327",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=139"
+  },
+  "30308": {
+   "sha256": "db15492c15f9c46a5436939eafa8c4acacd7c88c2ca57bebdccf116ff1a58706",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=715"
+  },
+  "30341": {
+   "sha256": "1db5eae7f345895c730a7007dfe4b3f4692c40abfa47a9fd9ab65d753274e2b5",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=895"
+  },
+  "30352": {
+   "sha256": "dfdb5f90950cec900211ce079a0cb923c202765570782a9c718642ab9cb36fb1",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=818"
+  },
+  "30420": {
+   "sha256": "926fd6a49691e11fd446af724f30b8530b3dc454a3d4b93f1a3e4862de1c33ae",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=367"
+  },
+  "30480": {
+   "sha256": "86fefe7a7a75a6353c64a589227ad7817f47245e9108755d1eb19ed91865cf9f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=714"
+  },
+  "30567": {
+   "sha256": "32c9bac5bb3e2743d35a5c28d5729778203c414f8029c8dbd68dacc6ae733083",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=394"
+  },
+  "30595": {
+   "sha256": "9c94e47ca7d57bc6db934920dd6d246b41a6cb39162a2fbf022a4732f2fca2ba",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=852"
+  },
+  "30636": {
+   "sha256": "50cdb0d04aeb0b1501beffc3f39d61f93a088a69ef035ca1fa44c997fa8195b5",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=928"
+  },
+  "30823": {
+   "sha256": "db4c6f2c78b56ea3d5b5195a299da6a23ca2155ab41cc04075f24a88c08ec1f8",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749"
+  },
+  "30842": {
+   "sha256": "f694342133eeb6cf69cd01de00ffc3355988c4f8292226b125cd0e8acaaaa41c",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=312"
+  },
+  "30846": {
+   "sha256": "a4223fbc1092c4375cb341c8b8a97a1dfad42a83dc3527b7f9d374c3d01e2153",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=650"
+  },
+  "30938": {
+   "sha256": "31497d574fa9b16c09824dda87501cefe44f5f5a4ad795717c09e2d9eacfae1f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=622"
+  },
+  "30984": {
+   "sha256": "336cd4137b3d79a56f4be77952df18cd8aad4d74fb176541d33929f816793327",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=139"
+  },
+  "31031": {
+   "sha256": "49e3b61cd876f79c9cdd575e172b48e23c608206338f1ffe5ec229abc129fabf",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=540"
+  },
+  "31052": {
+   "sha256": "39da7d59bc650f73038c2280014a3f39e18d18968e161f7ffcc7aabc6e5db588",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=500"
+  },
+  "31084": {
+   "sha256": "3aa5d217b1aeefce95641eb7e6c0ede3ba16c56a154eb8968ef106f5fd2f1e5a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=310"
+  },
+  "31299": {
+   "sha256": "f03097d8e51b636597a429a467ed530bb15443b37218372b3491192e8a837eb0",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=463"
+  },
+  "31390": {
+   "sha256": "6a3f8045519a1625541281451285473b3292947e468e13bf84b572251c0def76",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=545"
+  },
+  "31434": {
+   "sha256": "2c804947fd9e7d96f51c61ba9530edddf0b253c90aaa69507787e3a9234125b4",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=652"
+  },
+  "31466": {
+   "sha256": "5bb95e33eb79c211ad9efbdef54012bca700492350d48102ae350b720b9c8488",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=713"
+  },
+  "31537": {
+   "sha256": "75dd51a7c63d18ec852cb3b6719af512532d361b7cb7bdc3a26e0dc0159e6d88",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=332"
+  },
+  "31560": {
+   "sha256": "f26b00236e539a6ad346912cc379803871641313c39e1f1b579ceaf3d0a80276",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=332"
+  },
+  "31582": {
+   "sha256": "692ae2f36dac03903fa154bd06d5d055894aaf69c6b1b3c147743ceacd639e65",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328"
+  },
+  "31583": {
+   "sha256": "c324b87b0a5b3fca577264611fa6af4d8908cf985c8def250c21dfcf1786149b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=330"
+  },
+  "32275": {
+   "sha256": "379171e682914d7ad836b5cf9df13aac85fb4fd5565a006eabc71817a344880f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=608"
+  },
+  "32487": {
+   "sha256": "8d381b612fd7dc916b08686338d07bb52bb44aae5d1524054058cc812611e81e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706"
+  },
+  "32560": {
+   "sha256": "b07f8ae7ea5d6ce7541dbcffac4ca615a790c320b64fbdbc079e4e70f180d7f3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846"
+  },
+  "32630": {
+   "sha256": "90339fdb4c721c47b7a889c318f893da3c15ff7c2f5b06e8ff1e8b09263d5002",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=765"
+  },
+  "32643": {
+   "sha256": "8842ee376aebeb8c2b4ede5357b04d013d628df3f4730221cfe9318e4c414b12",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=940"
+  },
+  "32720": {
+   "sha256": "5dd2a7c5c96dc36ef6e3263d9c308f4f8f4a58fa6bd2126160cfdcfac4435989",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=513"
+  },
+  "32828": {
+   "sha256": "33868fba7ba26b826fd948bdde4176338065d9787a73be46922d52b9b9074178",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=325"
+  },
+  "33203": {
+   "sha256": "132bae2e97599170299f3526367b80fa4988c2239779b6838132c2851ce76392",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=145"
+  },
+  "33273": {
+   "sha256": "88c7932f519b931c4075408158c2066a344fec12282e796aaf26479111726b5d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=976"
+  },
+  "33335": {
+   "sha256": "2fdf2e118ee689d171da2255a8c8b423fc53e8ac72f3eaedf18adac83df6ca90",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=294"
+  },
+  "35040": {
+   "sha256": "d296b826f5e6cb51b977805c6607e549044c12518489ff4f380bd231f361973a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=503"
+  },
+  "35062": {
+   "sha256": "4f31baa04934397d96116fa02d8e4be92bfa20cd0e39bbecf14215dde72c7f1d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=837"
+  },
+  "35075": {
+   "sha256": "636113cefea5dd25ad7cff6cc7db2cc4dd0cf27111f1c594b72895e2d8f5817d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=366"
+  },
+  "35164": {
+   "sha256": "c6fad3c8d4a23a0faa8d5fbd2b5bb8c710b868643491f8974cc282b53a3301ab",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=816"
+  },
+  "35262": {
+   "sha256": "beb331b772e26fe4534580dcba21598bc1917a6940e924e66c909a2160cd46fb",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965"
+  },
+  "35289": {
+   "sha256": "5c7cfdbb82612faf106f94325f767aa81a0f5d00ee88c8c3eef8a9803db24319",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=541"
+  },
+  "35290": {
+   "sha256": "90065df015ab8524bcc0a761ac2938d225c9fa7af3df3a97c28e62db459d00f3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=541"
+  },
+  "35291": {
+   "sha256": "2f72476e148a91c2601c1682a27dedaf590b8aa7d4633247b75acd175c1a8e6c",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=542"
+  },
+  "35293": {
+   "sha256": "89662516d9867ab27459296697b7f69241825863464e4b81c1220b35c003361f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771"
+  },
+  "35294": {
+   "sha256": "50ab3f78240af4ee1a678d8d35959ec578d1beab96d6367e8e6f9e498fdbdfa2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=766"
+  },
+  "35348": {
+   "sha256": "dd20be767951e4f4bcd81213d5b6f307b4d5bfffbb96a6af95e3b92c7d65cc51",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=560"
+  },
+  "35356": {
+   "sha256": "0f9287179930342760382ba9abd5bcb4b57f4b9e6b090d71d501338b3b79320e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=560"
+  },
+  "35384": {
+   "sha256": "ed344eec11af8d2e0b22b9166412ece29c1cafba67f3e6ffd1b3f910ff707201",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=402"
+  },
+  "35620": {
+   "sha256": "aad5deadb5878952487fabf2aa2241336bd926e0f0c4738ba3b164ebd3474b09",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=381"
+  },
+  "35636": {
+   "sha256": "3f3b5ff4e863b0bc7ff609582db89cf234406ca5eff5b933556ece887131b6c0",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739"
+  },
+  "35637": {
+   "sha256": "98745e3c62ada88f5ade6696e3b33516ed2bc54463a78dc6c86268c097677469",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=746"
+  },
+  "35640": {
+   "sha256": "9e3e738530fc53c972d3ea0dc26f8ee7c7babb9648da768d2a664feae6497297",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396"
+  },
+  "35641": {
+   "sha256": "40f951fcbaa8d0c3686684d65fa2331889c277e2893f9fd9a66d13aba6b1ff28",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=401"
+  },
+  "35642": {
+   "sha256": "d5f8189a50415b672e092c27580170d6159c6bc4c7b2cf9e6660dc809535b02d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=494"
+  },
+  "35644": {
+   "sha256": "d9cf0f516d798dc036c2ae331a8216f120422fb4d876279399d7a3c7b963d906",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=491"
+  },
+  "35645": {
+   "sha256": "a1f4076c18708c651e5b5d6fc879ac825d814f51262b19e5849239cde2c4a6cb",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=491"
+  },
+  "35646": {
+   "sha256": "36646d818e162c68b12548968ed84e4d22c861f421c07df585fe38cdf947f81b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741"
+  },
+  "35925": {
+   "sha256": "0038ec185394928bd8166cb249c3b38a87fd17bcfeedcb6f44a02ffc3ef1c4e5",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=313"
+  },
+  "35934": {
+   "sha256": "c0704de94407fb69f2a45133200232c646899333b8aefcea1dacd7e97da928ee",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=952"
+  },
+  "37399": {
+   "sha256": "3537a19ce1b2b989482eed796c858a70ecfc32551c317791cfe16a383367519a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=333"
+  },
+  "37400": {
+   "sha256": "8d5098dfd5d0b0e1732d3d8766d3bef42748bb442ed0100c769ed10374d809c7",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=370"
+  },
+  "37403": {
+   "sha256": "55d7e4e5f3258567badf3eaee490ea306a49cf8221390eabc067ce676295f155",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328"
+  },
+  "37404": {
+   "sha256": "f2bf79dca43a9e22b1db5767009e1ad061a9d2e2b9aea920e6991af8b23c22e5",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=330"
+  },
+  "37405": {
+   "sha256": "bbf1e639cde2b21f12e316cf75adafd83ab94ef3c627d48362d9490bbbdb671e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=335"
+  },
+  "37576": {
+   "sha256": "28bbedca1d0492aa6bc265f7d059eeb2434babcc933703cce572b92e7add6dd2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=914"
+  },
+  "37581": {
+   "sha256": "a4edb0eb46a635c98f17e51dff2001f35a960e448127792f5fb51ce6de5b39ab",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=916"
+  },
+  "37687": {
+   "sha256": "0f01f7e08e759aeceeb5581d72d7ea26723fdfb3867329155b2ac7bd8201d7de",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=160"
+  },
+  "37889": {
+   "sha256": "7cd0b1ab7b1e802fd8877647c9bab851ff422aa29d67721741b06c613b243d44",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=493"
+  },
+  "37892": {
+   "sha256": "11819fc655a3820632edad6486d59d42b3f8ec4656ab88277dd713ea167846d5",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=494"
+  },
+  "37899": {
+   "sha256": "5f1d42f8a3cfad92a7a72c4f83e839efa2f80f1263e6e7b91e04a9b4d4929e45",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=645"
+  },
+  "37938": {
+   "sha256": "b480f086ae167cae27de3bda4388041f4f27db3aa9bca47b13befec602b45f28",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=369"
+  },
+  "38640": {
+   "sha256": "e2a6d84fbfde350c7ca50a24bc906bb84bab6637e45a1809697a6c4806cb3d5b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153"
+  },
+  "38955": {
+   "sha256": "24e6817fe94006e2463962b34087d61521e40890745c192377d11b45bf5bbab3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=492"
+  },
+  "39057": {
+   "sha256": "27921a141a640d8ca8e1c5cdc5631cf5a602f4d28ad7a3055ac248f75eb11734",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153"
+  },
+  "39255": {
+   "sha256": "900a7033ea7396c0140e81fb6abc1b2a31dffc4976abab6db52e7568aaa52c2c",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=193"
+  },
+  "39256": {
+   "sha256": "237c603c8c450c7dad5e24a7402f9d5818aa740abb6ad1c6976e8dc042ce2b3c",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167"
+  },
+  "39275": {
+   "sha256": "00abbf5f097adfb43898788ef46dccca785b31e17e54cbfceeb2b761f70296bc",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=161"
+  },
+  "39338": {
+   "sha256": "e9d8aa85784c016368ab51866f67b46ae1ebfd3f4ea075ddedc914377ed33959",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=160"
+  },
+  "39339": {
+   "sha256": "e3e36956d51ea733059a71a1e1961d2627989291cb2373fdbe5b663cca4f2c06",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=197"
+  },
+  "39340": {
+   "sha256": "a95395e81d843bac00c33700615b44934cc27270192e965e02cf450581023dae",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=166"
+  },
+  "39341": {
+   "sha256": "a1ce2ab5682f1225bfa80bbe781cb5a105d4814cb6abc41468cd5a4acf14c142",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211"
+  },
+  "39389": {
+   "sha256": "6d00aa58f988e3f83e11ceeb7fcfca6284a4e82ee9f6f0efea93a41992c71dae",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167"
+  },
+  "39448": {
+   "sha256": "e5b4024871c471763b211712bb3ba4b641517dd3ff51638ccfdbcf9b5a68d954",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168"
+  },
+  "39451": {
+   "sha256": "918a01fe9da917f4b584a419839d2ce17b07c0b7ac1c8509abf25b4aa7f74bf6",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=162"
+  },
+  "39589": {
+   "sha256": "aec75f814eb0fcea3e644d5ae0955c3b5943d29fbded381f04b8fca26354a602",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=194"
+  },
+  "39590": {
+   "sha256": "a1fa99f8d4327e24ca46f81bc747c3a2be6fd88d7318502b611a31cc9b7bf69a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=195"
+  },
+  "39591": {
+   "sha256": "3d15f63013d3723eb5a58b35eb82defecc12affb0394b76c1115efab0c3677a0",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=195"
+  },
+  "39592": {
+   "sha256": "8ab4371b2928b43b1ee3d85f37f57605436332a4c9357f3e705c8d928908c9e0",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=170"
+  },
+  "39593": {
+   "sha256": "3c7f8c84a84b334ca926a0fb6df12da0a4299cdbb163afa37ab41f3af2a44a5a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=171"
+  },
+  "39594": {
+   "sha256": "92ace492ce967bef57a36c07fff1503bcab4a11770d35a1e59b0ac93f099bf31",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=171"
+  },
+  "39595": {
+   "sha256": "0f01f7e08e759aeceeb5581d72d7ea26723fdfb3867329155b2ac7bd8201d7de",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=160"
+  },
+  "39596": {
+   "sha256": "7771ee57b34bb11889a2682ada9b995f63b67afeb4a2e1218d80bf0089168ace",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=192"
+  },
+  "39597": {
+   "sha256": "900a7033ea7396c0140e81fb6abc1b2a31dffc4976abab6db52e7568aaa52c2c",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=193"
+  },
+  "39598": {
+   "sha256": "73057638211cbefa48ffd0d95cfad51857dfa81e2a672b271e130d4014b91a33",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=198"
+  },
+  "39599": {
+   "sha256": "bf0d356c4377efbd4213cd50887869e39af69fbc0df814d46e1024cc5e04cbbd",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=199"
+  },
+  "39600": {
+   "sha256": "358c9570c1befea342142bf648516255ee4cfc4a32d844875f84be572205f273",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=200"
+  },
+  "39659": {
+   "sha256": "0086298b7af1336fd57590fc91d353dd03cfd88f9c8868b55f5ca24e99490d96",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=212"
+  },
+  "39661": {
+   "sha256": "0322368dc6553c83651d984ad5f2295895b185926d89d63a01cc70919ae6442a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=213"
+  },
+  "39663": {
+   "sha256": "6d00aa58f988e3f83e11ceeb7fcfca6284a4e82ee9f6f0efea93a41992c71dae",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167"
+  },
+  "39665": {
+   "sha256": "4f47e9470fdecfc9e6f1fd0d2a60541ea025a885a7c346c8cb3006aeb66629b9",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=213"
+  },
+  "39666": {
+   "sha256": "6d00aa58f988e3f83e11ceeb7fcfca6284a4e82ee9f6f0efea93a41992c71dae",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167"
+  },
+  "39668": {
+   "sha256": "6d00aa58f988e3f83e11ceeb7fcfca6284a4e82ee9f6f0efea93a41992c71dae",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=167"
+  },
+  "39669": {
+   "sha256": "f16e85b41496976117ad881be63b58fea4b091d253aabcd466d6e12f2489c648",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=205"
+  },
+  "39731": {
+   "sha256": "a1ce2ab5682f1225bfa80bbe781cb5a105d4814cb6abc41468cd5a4acf14c142",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211"
+  },
+  "39732": {
+   "sha256": "a1ce2ab5682f1225bfa80bbe781cb5a105d4814cb6abc41468cd5a4acf14c142",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211"
+  },
+  "39733": {
+   "sha256": "75476376abafd23219ffc8a4a6ffd9cc2e896865f11e939d93e7b4dfa295df6f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=209"
+  },
+  "39734": {
+   "sha256": "f8548825e340c1a38c98d1be5586128a08413064711a48e86ffe8182b466c5db",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=210"
+  },
+  "40094": {
+   "sha256": "0ff98dc15c0ee25c11979f7f7cc2422f79c4e42a13ab0358848f67f6a03b5de6",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=196"
+  },
+  "40095": {
+   "sha256": "0ff98dc15c0ee25c11979f7f7cc2422f79c4e42a13ab0358848f67f6a03b5de6",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=196"
+  },
+  "40096": {
+   "sha256": "f5941d17dfe84374247c3138e28db4f8c29da086bf6425c9be5c8ae7b42f8711",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=219"
+  },
+  "40098": {
+   "sha256": "2d4ad5b520fee1625897881ccc4a93c37dc6e1deb2a3b11b68c172ef1d09fabe",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=186"
+  },
+  "40099": {
+   "sha256": "ae70045219e0a6b4c3f1f66d62c6788eea95345c8e26760ef10f4de577d9e29e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=183"
+  },
+  "40100": {
+   "sha256": "de37d466f03efae5fbedbda7bb28dff6f26cc513001aef64b93b628092ee64c2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=172"
+  },
+  "40110": {
+   "sha256": "e9242ea302048810ea7eea634182ee48edad98e21fc81b862998bf49d5af4f84",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153"
+  },
+  "40111": {
+   "sha256": "d8fa7eec08f09a91e7fc5f9d292a25680696e5a354a775442578d6de6db626ce",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153"
+  },
+  "40112": {
+   "sha256": "5a15306b3e055cb3cdc570c2f64d61c1d6b6da5755d891d371915821a3876574",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=175"
+  },
+  "40113": {
+   "sha256": "fd5df4b5477cf7dcce720522ed9bfe8ded8d3d8ed53ba7b45269b521242f807d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=176"
+  },
+  "40114": {
+   "sha256": "f8ac18e7659c6cc5feaf638279fdbd2e6cbaba7c0a3e519d29ef15a8bd052a05",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=177"
+  },
+  "40332": {
+   "sha256": "918a01fe9da917f4b584a419839d2ce17b07c0b7ac1c8509abf25b4aa7f74bf6",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=162"
+  },
+  "40536": {
+   "sha256": "bbd9e600a079456183a7619e10ae981891110963ff36c85df8ad8e9986989b32",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=177"
+  },
+  "40544": {
+   "sha256": "293d0beac25e7b2b221d8a55000e4a1ff0ac0e1ba07ddb029eebf51fe53e883a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=157"
+  },
+  "40545": {
+   "sha256": "293d0beac25e7b2b221d8a55000e4a1ff0ac0e1ba07ddb029eebf51fe53e883a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=157"
+  },
+  "40579": {
+   "sha256": "293d0beac25e7b2b221d8a55000e4a1ff0ac0e1ba07ddb029eebf51fe53e883a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=157"
+  },
+  "40617": {
+   "sha256": "d72dbe644d3e519d37f3769422df20918af13d73967ad5932987b85d03e8619b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=188"
+  },
+  "40618": {
+   "sha256": "e80f8663201bd757114dfeeb0f2429220ed498f859856ad8a0f6ef169e71e03d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=159"
+  },
+  "40619": {
+   "sha256": "e80f8663201bd757114dfeeb0f2429220ed498f859856ad8a0f6ef169e71e03d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=159"
+  },
+  "40860": {
+   "sha256": "ac1cc2837cbd54792af6adb76f11be8ed0b9339c14e60be30216f4884a686fe3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=162"
+  },
+  "40861": {
+   "sha256": "05dacb96fd519bee82ae7ccbecbe46eb1ce770158cb518ed01de30dc1d587ab4",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=216"
+  },
+  "40864": {
+   "sha256": "244880ea1d87fc6154f81f5c65904eed3e27e0371012ed211d490558c9ed0a71",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=216"
+  },
+  "40865": {
+   "sha256": "93ab6851835d9e0d890e442151e32f7bad86fcd53b4f4989bded3f39035a82e3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=162"
+  },
+  "41038": {
+   "sha256": "fa89fbc7d186657ef78828c56b98117992a748442b2f96359df0eca0ea71e96f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=397"
+  },
+  "41294": {
+   "sha256": "f0d439138433a370d83b5c2aa1cd6382c3490a3017d3958b3d68d22283ba636b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795"
+  },
+  "41295": {
+   "sha256": "f0d439138433a370d83b5c2aa1cd6382c3490a3017d3958b3d68d22283ba636b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795"
+  },
+  "41296": {
+   "sha256": "f0d439138433a370d83b5c2aa1cd6382c3490a3017d3958b3d68d22283ba636b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795"
+  },
+  "41297": {
+   "sha256": "f0d439138433a370d83b5c2aa1cd6382c3490a3017d3958b3d68d22283ba636b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795"
+  },
+  "41503": {
+   "sha256": "25ad0ca3ae31f34aad65b9d192f167f30aa2935f01d5af99906c98e7a564abe6",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=158"
+  },
+  "41504": {
+   "sha256": "c7f04cf75849b2504b9aca6f0844284a0e14f867399aaa51f2f959c472b2d246",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=182"
+  },
+  "41505": {
+   "sha256": "19d896a17857a47b2e86a0c688141c6ca362057cb5903f01bb32486d62423825",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=180"
+  },
+  "41506": {
+   "sha256": "19d896a17857a47b2e86a0c688141c6ca362057cb5903f01bb32486d62423825",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=180"
+  },
+  "41507": {
+   "sha256": "b0da15f86a2efecb856a2476e15f3637a1024b3a64e2412b85f59ba81755afff",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=181"
+  },
+  "41508": {
+   "sha256": "c7f04cf75849b2504b9aca6f0844284a0e14f867399aaa51f2f959c472b2d246",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=182"
+  },
+  "41562": {
+   "sha256": "62a679667e5b742f1c0877391edea10ccc82c7b8890fd674f655a46ebae16e03",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=562"
+  },
+  "41563": {
+   "sha256": "81ef5366be128f9aca952904c67ba817193df8f41cee4182af0a0ac3e78b7696",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=564"
+  },
+  "41564": {
+   "sha256": "e96b1c49c629fd9209158eefd56643f602490c36b917a2b5b428f39a251f36e2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=443"
+  },
+  "41565": {
+   "sha256": "eaa943c3107d810a64e6e7f93e92a5a6654ba4c1de88f8daaf700437f29120d5",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=563"
+  },
+  "42152": {
+   "sha256": "e4b499d222c43973b38879360ba3d8e0fe973966c6f5e44565931faced342d8e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=218"
+  },
+  "42153": {
+   "sha256": "8e6fa771863905f2b6dd51566d2409e7c7c0b65ba6096db07ba42843182a979b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=163"
+  },
+  "42154": {
+   "sha256": "8e6fa771863905f2b6dd51566d2409e7c7c0b65ba6096db07ba42843182a979b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=163"
+  },
+  "42157": {
+   "sha256": "43cd2f8b7274a1c32c38e85c7beceafda3d95f9dc34672c4a5d26bd4b74818c0",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=217"
+  },
+  "42424": {
+   "sha256": "8409bec43ac1af4ca8662ab9f8766dbeb7bfaa0fd21ff1fc521a50d6474d262b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=807"
+  },
+  "42546": {
+   "sha256": "4dc6b3cc97718fefa95621bec0fc9d7a1a5885107bb3141cadcd2e1dc2780b84",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=131"
+  },
+  "42725": {
+   "sha256": "c7d56794f8341fb6a5e95bd8326dca69cc45e063df2ebcc6b0897096d828bdcb",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932"
+  },
+  "42734": {
+   "sha256": "b5d223a1e9ab64a884e322450d8f035212f5bd981c2a9be707a595be3ab0587a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=933"
+  },
+  "42735": {
+   "sha256": "735637bdc355c0e40c85112ac839447430b34160c368a50c744250c10a10708d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932"
+  },
+  "42736": {
+   "sha256": "2df24633eec225baa6834d35016febe13d49741ed9b17790b443950c0b1f89a2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932"
+  },
+  "42859": {
+   "sha256": "bedb9fbdd36309cce80a8de6c5c18dc6928cad48e0ab7b6b9e97e2fc19b211c9",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=423"
+  },
+  "42860": {
+   "sha256": "9c0ead1384a0f9e730a85b29fb8c58417cbf6122b99ce640fbaf49babaf48fcd",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=442"
+  },
+  "42868": {
+   "sha256": "fc99fa01563b5449b62e347335acb48fdbf3afa787e021d020b082ed076ffab7",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=442"
+  },
+  "42885": {
+   "sha256": "3da3d695682ce4017cebf5ff9668bef18875ac01cc1504a52ea5046199793360",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=441"
+  },
+  "43358": {
+   "sha256": "636113cefea5dd25ad7cff6cc7db2cc4dd0cf27111f1c594b72895e2d8f5817d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=366"
+  },
+  "43381": {
+   "sha256": "fc9fb8b12f92abb814a5474582be016e5b33ff56ac09c47e710f761701bf55e3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=364"
+  },
+  "43606": {
+   "sha256": "b1c0b0a4c029a1dd23196c387c7a4be09328f41cc0c1b289c005d18cdadadc99",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=649"
+  },
+  "43950": {
+   "sha256": "a000fc3dac1d5ec5dec5909b24f824bf2a87c02d33142098414c40c98e3c340e",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=355"
+  },
+  "43951": {
+   "sha256": "2efc54493c58c754c49dbefec47fc1d4aa0b26a19a9ebf5cb28a205634804c9b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=355"
+  },
+  "44154": {
+   "sha256": "9a81cf1ee47380b45b9b698e2798e1cc5d88176090979708660c98c22667253b",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=516"
+  },
+  "44357": {
+   "sha256": "7cd48d12f15b0679949a124af598e70151228c94da20e1f15ba86655499dae54",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=435"
+  },
+  "44412": {
+   "sha256": "9837acb96a4f2da11277941af3a6878663b301115c715f9f71f9c088efa2d7b6",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=399"
+  },
+  "44413": {
+   "sha256": "49f718eefebe50351a49d91bf59c8d17e80afca61ff506ed6d4a03afb8999807",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=411"
+  },
+  "44446": {
+   "sha256": "65d759e43aea5f169fa187cbf3c1320d30965b6366bc95e970c25fe7cb7b45c5",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=394"
+  },
+  "44531": {
+   "sha256": "3c615671aa9dea24d32b136fc14ea9ef404e83a37843ea58697ead1b1d156ca7",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=923"
+  },
+  "44962": {
+   "sha256": "30429d4ddaec25ce0723a180aaf41fa6cb7f39b26543ab984888821fea02185a",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=314"
+  },
+  "44999": {
+   "sha256": "2e7238e56ef4f86d9862f38bc8a4838de5e771f257e29c8b4da730f7b08566bd",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=312"
+  },
+  "45960": {
+   "sha256": "d26b13aa49e99116278df167463e4974e36ee221f8c076a139ced5f67a57fa48",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=158"
+  },
+  "45961": {
+   "sha256": "92cfee7dd4e2aa4b2ff77baa82a2432a14830d73e8965dc28425c8a1e4f80a67",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=184"
+  },
+  "45962": {
+   "sha256": "d218ec84a18e78d5f361640cd55a40b2b49d3d5916c05e7f4d0eb7ae1922cfff",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=185"
+  },
+  "45963": {
+   "sha256": "d218ec84a18e78d5f361640cd55a40b2b49d3d5916c05e7f4d0eb7ae1922cfff",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=185"
+  },
+  "45977": {
+   "sha256": "2d4ad5b520fee1625897881ccc4a93c37dc6e1deb2a3b11b68c172ef1d09fabe",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=186"
+  },
+  "45978": {
+   "sha256": "8b6f3262411864e5202d9319434931d137e3e4721da0c18a0f72d31b89e8fdb3",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=187"
+  },
+  "45997": {
+   "sha256": "5b96a3ddc8706dbbfb17f3b70c92d5251294822e1362c3957e7f3eba2aa323f4",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=164"
+  },
+  "45998": {
+   "sha256": "6114f8881e97e4431162a83584ab51b8a1fcd401cd91c8b64ee1cbde4ecf6fc9",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=220"
+  },
+  "45999": {
+   "sha256": "865a061b9a65756d33b4f1411c15ca6688933833bb8c7400051e0a7046539c15",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=164"
+  },
+  "46000": {
+   "sha256": "e2b72b27db1de918c5c96b79c1e7a347fb7d94a192285f69bfd029f3a85847fc",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=223"
+  },
+  "46001": {
+   "sha256": "6b9854e742bad512816fa531cbc95dcddd5132714fa91eae8d4dcbcdbd786dac",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=224"
+  },
+  "46005": {
+   "sha256": "6114f8881e97e4431162a83584ab51b8a1fcd401cd91c8b64ee1cbde4ecf6fc9",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=220"
+  },
+  "46012": {
+   "sha256": "6c37172bf2f6d4b2e0440e035ca72a4ce37fe224f4a936a5480a443b61d3c505",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=165"
+  },
+  "46013": {
+   "sha256": "cbd8f8c3eaa159293045257e50cc487530f2f98fab3fb388520617211fbce3b2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=225"
+  },
+  "46014": {
+   "sha256": "cbd8f8c3eaa159293045257e50cc487530f2f98fab3fb388520617211fbce3b2",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=225"
+  },
+  "46015": {
+   "sha256": "7916e2e0d3c0a1b43ba4fad9fe6f0751016bedc2607887cfe279a5a6ebe3f6ee",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=165"
+  },
+  "46016": {
+   "sha256": "7a2830fc6918f7b265b5b6c2470db34fc71f4cfcbc2bbbfb8979d05d309aec55",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=228"
+  },
+  "46017": {
+   "sha256": "98c5c4fd1b72bbeb2bbf4f10d12dc9faa7323d031e341b440f678701dc4e7701",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=229"
+  },
+  "46363": {
+   "sha256": "d611a895957eadb02bbf2c94d3150cb71c256e3e6181777e22eedb19fe981daf",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=329"
+  },
+  "46364": {
+   "sha256": "544d681f3a537ab627799672155e44348773cf23363d3cda951199d975c25d5f",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=434"
+  },
+  "46434": {
+   "sha256": "55b2bfb795ea447f9cad65c6af53dee71c3c11e2240d38bcda235c916ee82f8d",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=399"
+  },
+  "46503": {
+   "sha256": "aad5deadb5878952487fabf2aa2241336bd926e0f0c4738ba3b164ebd3474b09",
+   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=381"
+  }
+ },
+ "staged_from": {
+  "run": "43212067552",
+  "proof": "the filed account equal but for its run, and 125 programs at their address and coverage",
+  "pages_loaded": 0
+ },
+ "run": "43693265189"
 }

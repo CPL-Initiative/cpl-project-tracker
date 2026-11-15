@@ -46,30 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 112,
+   "placed": 115,
    "listed": 115,
-   "share": 0.974,
-   "missing": [
-    "ASTR300",
-    "ASTR400",
-    "BIOL303"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ASTRC1001",
+     "listed": "ASTR300",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ASTRC1001L",
+     "listed": "ASTR400",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIOL303",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "ASTRC1001",
-    "ASTRC1001L",
-    "BIOLC1000"
-   ],
-   "flagged": [
-    "ASTRC1001",
-    "ASTRC1001L",
-    "BIOLC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -997,7 +1002,7 @@
    "Page footer reads 'Programs of Study – Astronomy' though the section is the General Science A.S.; text following the outcomes is the Astronomy course listing, not part of this program."
   ]
  },
- "extracted_run": "43212067552",
+ "extracted_run": 43693265189,
  "source_sha": "5ac7a2c20964b31e",
  "source_codes": [
   "ANTH300",
@@ -1114,5 +1119,6 @@
   "PSYC310",
   "PSYC311"
  ],
- "source_coverage": 0.983
+ "source_coverage": 0.983,
+ "read_run": "43212067552"
 }

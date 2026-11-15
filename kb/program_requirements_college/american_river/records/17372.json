@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 9,
    "listed": 9,
-   "share": 0.778,
-   "missing": [
-    "LA300",
-    "LA350"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "PLGL300",
+     "listed": "LA300",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "PLGL350",
+     "listed": "LA350",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "PLGL300",
-    "PLGL350"
-   ],
-   "flagged": [
-    "PLGL300",
-    "PLGL350"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -233,5 +236,6 @@
    "The description also says the certificate provides skills for 'entry-level clerical positions in law offices'; the career entry is taken from the Career Information heading. Legal Assistant/Paralegal is named only as a different program, which this certificate does not prepare for, so it is not recorded as a career."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

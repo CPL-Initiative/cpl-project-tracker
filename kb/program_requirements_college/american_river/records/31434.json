@@ -46,39 +46,50 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 52,
+   "placed": 58,
    "listed": 58,
-   "share": 0.897,
-   "missing": [
-    "ECON302",
-    "ECON304",
-    "HIST310",
-    "HIST311",
-    "HIST483",
-    "HIST484"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON304",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON302",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST310",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST483",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST311",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002H",
+     "listed": "HIST484",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -657,7 +668,7 @@
    "Outcomes are printed under 'Student Learning Outcomes' for the program on page 654, following the A.A.-T. section; recorded for this award."
   ]
  },
- "extracted_run": "43212067552",
+ "extracted_run": 43693265189,
  "source_sha": "6a1a5f5fc8729f5d",
  "source_codes": [
   "ANTH310",
@@ -717,5 +728,6 @@
   "TA302",
   "TA303"
  ],
- "source_coverage": 0.966
+ "source_coverage": 0.966,
+ "read_run": "43212067552"
 }

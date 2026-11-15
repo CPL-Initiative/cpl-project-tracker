@@ -46,33 +46,40 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 18,
    "listed": 18,
-   "share": 0.778,
-   "missing": [
-    "COMM321",
-    "HSER300",
-    "HSER310",
-    "HSER330"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM321",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD300",
+     "listed": "HSER300",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD310",
+     "listed": "HSER310",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD330",
+     "listed": "HSER330",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "COMMC1004",
-    "SWCD300",
-    "SWCD310",
-    "SWCD330"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "SWCD300",
-    "SWCD310",
-    "SWCD330"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -338,7 +345,7 @@
    "Career Information also lists settings (skilled nursing facilities, adult day health centers, residential care facilities for the elderly, memory care units, adult day programs); these are workplaces, not careers, and were not recorded as careers."
   ]
  },
- "extracted_run": "43212067552",
+ "extracted_run": 43693265189,
  "source_sha": "499957dc7757391e",
  "source_codes": [
   "COMM325",
@@ -356,5 +363,6 @@
   "RECR310",
   "RECR320"
  ],
- "source_coverage": 0.778
+ "source_coverage": 0.778,
+ "read_run": "43212067552"
 }

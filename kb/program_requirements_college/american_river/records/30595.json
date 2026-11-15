@@ -46,14 +46,10 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 28,
    "listed": 32,
-   "share": 0.75,
+   "share": 0.875,
    "missing": [
-    "HSER330",
-    "HSER340",
-    "HSER341",
-    "HSER342",
     "PSYC310",
     "PSYC330",
     "PSYCC1000",
@@ -61,22 +57,34 @@
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "SWCD330",
+     "listed": "HSER330",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD340",
+     "listed": "HSER340",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD341",
+     "listed": "HSER341",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD342",
+     "listed": "HSER342",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "SWCD330",
-    "SWCD340",
-    "SWCD341",
-    "SWCD342"
-   ],
-   "flagged": [
-    "SWCD330",
-    "SWCD340",
-    "SWCD341",
-    "SWCD342"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -433,7 +441,7 @@
    "The A.A. in Psychology section on pages 853-854 is a different award and was not used, except to note likely cut-off courses."
   ]
  },
- "extracted_run": "43212067552",
+ "extracted_run": 43693265189,
  "source_sha": "d2aa3f43b10833cb",
  "source_codes": [
   "ECE312",
@@ -463,5 +471,6 @@
   "STATC1000",
   "STATC1000H"
  ],
- "source_coverage": 0.812
+ "source_coverage": 0.812,
+ "read_run": "43212067552"
 }

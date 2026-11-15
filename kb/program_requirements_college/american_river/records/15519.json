@@ -46,33 +46,40 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 28,
+   "placed": 32,
    "listed": 32,
-   "share": 0.875,
-   "missing": [
-    "HSER330",
-    "HSER340",
-    "HSER341",
-    "HSER342"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "SWCD330",
+     "listed": "HSER330",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD340",
+     "listed": "HSER340",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD341",
+     "listed": "HSER341",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD342",
+     "listed": "HSER342",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "SWCD330",
-    "SWCD340",
-    "SWCD341",
-    "SWCD342"
-   ],
-   "flagged": [
-    "SWCD330",
-    "SWCD340",
-    "SWCD341",
-    "SWCD342"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -435,5 +442,6 @@
    "Careers taken from the Career Information paragraph, which describes opportunities for psychologists with graduate degrees."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

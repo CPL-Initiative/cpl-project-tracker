@@ -46,33 +46,40 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 21,
    "listed": 21,
-   "share": 0.81,
-   "missing": [
-    "COMM321",
-    "HSER300",
-    "HSER310",
-    "HSER330"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM321",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD300",
+     "listed": "HSER300",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD310",
+     "listed": "HSER310",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD330",
+     "listed": "HSER330",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "COMMC1004",
-    "SWCD300",
-    "SWCD310",
-    "SWCD330"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "SWCD300",
-    "SWCD310",
-    "SWCD330"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -355,5 +362,6 @@
    "Outcomes at the top of page 637 belong to the preceding program and were not used; the outcomes recorded are those printed after this certificate's Total Units."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

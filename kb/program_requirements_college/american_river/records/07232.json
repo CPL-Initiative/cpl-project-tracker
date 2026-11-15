@@ -46,45 +46,60 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 18,
    "listed": 18,
-   "share": 0.556,
-   "missing": [
-    "HSER300",
-    "HSER310",
-    "HSER330",
-    "HSER340",
-    "HSER360",
-    "HSER362",
-    "HSER365",
-    "HSER498"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "SWCD300",
+     "listed": "HSER300",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD310",
+     "listed": "HSER310",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD330",
+     "listed": "HSER330",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD340",
+     "listed": "HSER340",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD360",
+     "listed": "HSER360",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD362",
+     "listed": "HSER362",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD365",
+     "listed": "HSER365",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD498",
+     "listed": "HSER498",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
-   "codes": [
-    "SWCD300",
-    "SWCD310",
-    "SWCD330",
-    "SWCD340",
-    "SWCD360",
-    "SWCD362",
-    "SWCD365",
-    "SWCD498"
-   ],
-   "flagged": [
-    "SWCD300",
-    "SWCD310",
-    "SWCD330",
-    "SWCD340",
-    "SWCD360",
-    "SWCD362",
-    "SWCD365",
-    "SWCD498"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -350,5 +365,6 @@
    "A Social Work Certificate with identical requirements and outcomes appears later on the page; only the A.A. section was read."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

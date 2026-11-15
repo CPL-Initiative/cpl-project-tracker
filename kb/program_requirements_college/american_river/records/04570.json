@@ -46,33 +46,40 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 17,
    "listed": 17,
-   "share": 0.765,
-   "missing": [
-    "COMM321",
-    "HSER300",
-    "HSER310",
-    "HSER330"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM321",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD300",
+     "listed": "HSER300",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD310",
+     "listed": "HSER310",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD330",
+     "listed": "HSER330",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "COMMC1004",
-    "SWCD300",
-    "SWCD310",
-    "SWCD330"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "SWCD300",
-    "SWCD310",
-    "SWCD330"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -338,5 +345,6 @@
    "Career information names entry to mid-level administrative positions in state and local government agencies, non-profit organizations, institutions, and private sector businesses serving older people and adults with disabilities; recorded as one career field."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }
