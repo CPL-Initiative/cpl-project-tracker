@@ -46,33 +46,29 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 22,
-   "share": 0.727,
+   "share": 0.773,
    "missing": [
     "HMSV24",
     "PSYC9",
     "PSYCC1000",
     "PSYCC1000H",
-    "SOCI3",
     "SOCIC1000"
    ],
-   "unexplained": [
-    "SOCI3"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 6,
    "codes": [
     "COOP41",
     "HIST22",
     "HIST23",
     "PSYC1A",
     "PSYC1AH",
-    "SOC1",
-    "SOC3"
+    "SOC1"
    ],
    "flagged": [
     "COOP41",
@@ -82,7 +78,7 @@
     "PSYC1AH",
     "SOC1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -120,7 +116,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -366,5 +362,6 @@
    "No program learning outcomes or careers printed in the text."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

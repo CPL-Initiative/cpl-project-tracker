@@ -108,7 +108,7 @@
    "status": "unequal",
    "computed": [
     45.0,
-    46.0
+    76.0
    ],
    "stated": [
     9.0,
@@ -116,7 +116,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 45.0-46.0; the catalog states 9.0-73.0"
+    "the blocks sum to 45.0-76.0; the catalog states 9.0-73.0"
    ]
   },
   "repeated": {
@@ -449,5 +449,6 @@
    "No program outcomes or careers appear in the supplied Requisites text; the Program Overview tab was not included."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

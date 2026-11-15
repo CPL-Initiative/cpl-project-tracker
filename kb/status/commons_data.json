@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T03:03:36Z",
+ "written_at": "2026-11-15T03:03:45Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15848,
-  "gap": 6487,
+  "passing": 15851,
+  "gap": 6484,
   "with_gap": 118,
   "cost_usd": 1343.32,
-  "passed_at_read": 15340,
+  "passed_at_read": 15350,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15848,
-  "gap": 6487
+  "passing": 15851,
+  "gap": 6484
  },
  "census_live": {
   "basis": "live",
@@ -7458,13 +7458,13 @@
    "harvested": true,
    "slug": "merced",
    "programs": 182,
-   "passing": 141,
-   "gap": 41,
+   "passing": 144,
+   "gap": 38,
    "causes": {
     "no_closed_list": 10,
     "page_not_found": 9,
     "places_none": 1,
-    "unknown_without_live": 21
+    "unknown_without_live": 18
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -7491,7 +7491,7 @@
    "read_at": "2026-10-19T10:44:44Z",
    "read_kind": "capture",
    "cost_usd": 9.69,
-   "passed_at_read": 134,
+   "passed_at_read": 144,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -7504,9 +7504,9 @@
    "extracted": 163,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
-    "invented": 5,
-    "arithmetic": 25,
+    "coverage": 2,
+    "invented": 1,
+    "arithmetic": 18,
     "repeated": 0,
     "outcomes": 0
    },
@@ -7517,9 +7517,9 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1700.6,
-   "run": "39239492986",
+   "run": "43609965348",
    "levers": {
-    "reconcile_steps": 21,
+    "reconcile_steps": 18,
     "program_course_file_check": 10,
     "reader_page_search": 9,
     "reader_page_assignment": 1
@@ -7530,7 +7530,7 @@
      "models": {
       "claude-opus-5-5": 163
      },
-     "run": "39239492986",
+     "run": "43609965348",
      "at": "2026-10-19T10:44:44Z",
      "cost_usd": 9.69,
      "platform": "coursedog"

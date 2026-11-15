@@ -83,7 +83,7 @@
    "status": "unequal",
    "computed": [
     33.0,
-    33.0
+    40.0
    ],
    "stated": [
     30.0,
@@ -91,7 +91,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 33.0-33.0; the catalog states 30.0-30.0"
+    "the blocks sum to 33.0-40.0; the catalog states 30.0-30.0"
    ]
   },
   "repeated": {
@@ -352,5 +352,6 @@
    "No general education pattern, degree total, outcomes, or careers are printed on this Requisites page."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }
