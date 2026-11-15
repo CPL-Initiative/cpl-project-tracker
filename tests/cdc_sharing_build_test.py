@@ -15,7 +15,8 @@ must exit 1 and name the fault in words. A non-object row is a problem, never an
   (7)  a source file the repo does not hold;
   (7)  ... and a source file outside the repo, a directory, or not a string;
   (8)  a missing registry, with its stale output left behind;
-  (9)  held roles that are not a list of names.
+  (9)  held roles that are not a list of names;
+  (10) a row of a class the site never serves (restricted, or agreement) that names a published file or no place.
 
 Run from repo root: python3 tests/cdc_sharing_build_test.py
 """
@@ -38,6 +39,7 @@ DICT = {
         "aggregate": {"word": "Aggregate, not PII", "definition": "Counts.", "public_site": "may serve"},
         "agreement": {"word": "Needs an agreement", "definition": "Under an agreement.", "public_site": "does not serve"},
         "held": {"word": "Held for the team", "definition": "For the team.", "public_site": "may serve"},
+        "restricted": {"word": "Restricted", "definition": "Never served.", "public_site": "does not serve"},
     },
     "systems": {"cobi": {"name": "COBI", "holder": "The team"}},
     "elements": [
@@ -46,7 +48,8 @@ DICT = {
         {"id": "b", "name": "Field B", "labels": ["B"], "definition": "B field.", "system": "cobi", "class": "agreement",
          "source_file": "kb/private.csv"},
     ],
-    "held_not_shown": [],
+    "held_not_shown": [{"id": "roster", "name": "A roster", "definition": "Staff.", "system": "cobi", "class": "restricted",
+                        "where": "a gated table", "outside_share": "Never.", "lives_in": ["table:a_roster"]}],
     "join_keys": [{"id": "k1", "name": "Key one", "definition": "Joins.", "public_side": "One", "other_side": "Two",
                    "other_class": "agreement"}],
     "agreements": [{"id": "ag", "name": "An agreement", "parties": "Two parties", "status": "not recorded", "covers": "Things."}],
@@ -159,6 +162,26 @@ expect("(7) a source file that is not a string is a problem, never a TypeError",
 r = copy.deepcopy(REG)
 r["integrations"][0]["evidence"] = ["kb"]
 expect("(4) a directory is never evidence", DICT, r, "cites evidence 'kb'")
+d = copy.deepcopy(DICT)
+d["held_not_shown"][0]["lives_in"] = ["table:a_roster", "file:kb/status/served.json"]
+expect("(10) a restricted row naming a file the allowlist publishes is named", d, REG,
+       "held item roster is class restricted, which the public site does not serve, but .github/pages_allowlist.txt publishes kb/status/served.json")
+d = copy.deepcopy(DICT)
+del d["held_not_shown"][0]["lives_in"]
+expect("(10) a restricted row that names no table or file is named", d, REG, "held item roster is class restricted")
+d = copy.deepcopy(DICT)
+d["held_not_shown"][0]["lives_in"] = ["somewhere"]
+expect("(10) a lives_in entry that is neither table: nor file: is named", d, REG, "has lives_in entry 'somewhere'")
+d = copy.deepcopy(DICT)
+d["held_not_shown"][0]["lives_in"] = ["file:kb/private.csv"]
+root = repo(d, REG)
+rc, out = run(root, check=False)
+results.append(("(10) a restricted row in a withheld file passes", rc == 0, out))
+root = repo(DICT, REG)
+rc, out = run(root, check=False)
+results.append(("(10) a held status field naming a published file passes (element a, kb/status/served.json)",
+                rc == 0 and "2 rows the site never serves checked" in out, out))
+
 d = copy.deepcopy(DICT)
 d["held_not_shown"] = [{"id": "h", "name": "H", "definition": "x", "where": "x", "outside_share": "x", "system": "cobi",
                         "class": "held", "roles": "CEO"}]

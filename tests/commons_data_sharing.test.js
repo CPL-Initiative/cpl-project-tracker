@@ -10,7 +10,8 @@
 //   (4) ⭐ the decided classes: the CPL Coordinator and Counselor routing contacts public (the landing pages route a
 //       student to them); the other nine staff roles, MAP's approval stage and the nudge author held for the team and
 //       left out of any outside share; the held class never claims the public site does not serve it; MAP student
-//       counts aggregate under the student-detail ADR, with the CER's older floors named; exactly four classes;
+//       counts aggregate under the student-detail ADR, with the CER's older floors named; exactly five classes, the fifth
+//       restricted (the site never serves it): student-level rows and staff and user rosters, each naming where it lives;
 //   (5) the card on a college's panel: each class with its fields, what is held and not shown, the join keys, the
 //       agreements' status, and a word that opens the full view;
 //   (6) ⭐ the full view has its own address (#commons/data/sharing), opens from it, reports it, and sits in the views'
@@ -113,22 +114,27 @@ const CONTAINERS = new Set(HAND.containers || []);
   check("(3) every container heading the file names is a section the panel draws" + (unusedContainers.length ? "; not drawn: " + unusedContainers.join(", ") : ""), !unusedContainers.length);
 
   // (4) the decided classes.
-  check("(4) ⭐ exactly four classes, in order: public, aggregate, agreement, held", JSON.stringify(Object.keys(HAND.classes)) === JSON.stringify(["public", "aggregate", "agreement", "held"]));
+  check("(4) ⭐ exactly five classes, in order: public, aggregate, agreement, held, restricted", JSON.stringify(Object.keys(HAND.classes)) === JSON.stringify(["public", "aggregate", "agreement", "held", "restricted"]));
   check("(4) the aggregate class names the student-detail disclosure ADR as its rule, and its floor of 10",
     /adr-student-detail-aggregate-disclosure-control\.md/.test(HAND.classes.aggregate.definition) && /fewer than 10/.test(HAND.classes.aggregate.definition));
   const H = Object.fromEntries(HAND.held_not_shown.map((h) => [h.id, h]));
-  check("(4) ⭐ the other nine staff role contacts (map/sync_map_users.py) are held for the team and left out of any outside share",
-    H.staff_role_contacts && H.staff_role_contacts.class === "held" && /map\/sync_map_users\.py/.test(H.staff_role_contacts.where) && /^Left out/.test(H.staff_role_contacts.outside_share) &&
+  check("(4) ⭐ the other staff role contacts (map/sync_map_users.py) are restricted and never in an outside share",
+    H.staff_role_contacts && H.staff_role_contacts.class === "restricted" && /map\/sync_map_users\.py/.test(H.staff_role_contacts.where) && /^Never/.test(H.staff_role_contacts.outside_share) &&
     !/CPL Coordinator|CPL Counselor/.test(H.staff_role_contacts.definition));
   check("(4) ⭐ the CPL Coordinator and Counselor routing contacts are public, as map_college_contacts_pub serves them",
     H.routing_contacts && H.routing_contacts.class === "public" && /map_college_contacts_pub/.test(H.routing_contacts.where));
   check("(4) landing page contacts carry the class their definition states: public", H.landing_page_contacts && H.landing_page_contacts.class === "public");
-  check("(4) the nudge author (map_college_nudges.last_nudged_by) is held and left out", H.nudge_author && H.nudge_author.class === "held" && /last_nudged_by/.test(H.nudge_author.where));
+  check("(4) the nudge author (map_college_nudges.last_nudged_by) is restricted", H.nudge_author && H.nudge_author.class === "restricted" && /last_nudged_by/.test(H.nudge_author.where));
+  check("(4) ⭐ the student-level rows and the MAP user roster are restricted", ["map_student_rows", "map_college_users"].every((k) => H[k] && H[k].class === "restricted"));
+  check("(4) ⭐ restricted: the public site does not serve it, every restricted row names the table or file it lives in, and the held class holds only status fields",
+    HAND.classes.restricted.public_site === "does not serve" &&
+    HAND.held_not_shown.filter((h) => h.class === "restricted").every((h) => Array.isArray(h.lives_in) && h.lives_in.length && h.lives_in.every((x) => /^(table|file):\S/.test(x))) &&
+    HAND.held_not_shown.every((h) => h.class !== "held") && HAND.elements.filter((e) => e.class === "held").every((e) => e.source_file === "kb/status/commons_data.json"));
   check("(4) ⭐ no class says its fields are never published: COBI's own status files are on the public site",
     !/never published|not published/i.test(JSON.stringify(HAND.classes)) && HAND.classes.held.public_site === "may serve");
   check("(4) the aggregate class names the CER's cohort floor of 2 beside its floor of 5", /below 2/.test(HAND.classes.aggregate.definition) && /below 5/.test(HAND.classes.aggregate.definition));
-  check("(4) ⭐ MAP's articulation Status (the approval stage) is held for the team",
-    H.map_articulation_status && H.map_articulation_status.class === "held" && /approval/.test(H.map_articulation_status.name));
+  check("(4) ⭐ MAP's articulation Status (the approval stage) is restricted",
+    H.map_articulation_status && H.map_articulation_status.class === "restricted" && /approval/.test(H.map_articulation_status.name));
   check("(4) ⭐ MAP student counts are aggregate, under the ADR's floor", H.map_student_counts && H.map_student_counts.class === "aggregate" && /10/.test(H.map_student_counts.outside_share));
   check("(4) a COMIS element is filled only from the repo's own files: SP02 and SP04 stay empty and say so",
     HAND.join_keys.filter((j) => /SP0[24]/.test(j.comis_note || "")).every((j) => j.comis_element === "") &&
@@ -140,21 +146,21 @@ const CONTAINERS = new Set(HAND.containers || []);
   D.render(T.root, M, "college/" + D.slugOf(first), new Date());
   const card = T.root.querySelector('#cdd-panel [data-cdc-ext="sharing"]');
   check("(5) the card's heading is Data elements and sharing", txt(card && card.querySelector("h3")) === "Data elements and sharing");
-  const sum = ["public", "aggregate", "agreement", "held"].reduce((n, k) => {
+  const sum = ["public", "aggregate", "agreement", "held", "restricted"].reduce((n, k) => {
     const g = card && card.querySelector('.cdc-sw-class[data-class="' + k + '"] h4');
     const m = /\((\d+)\)$/.exec(txt(g));
     return n + (m ? Number(m[1]) : 0);
   }, 0);
-  check("(5) the card's four class counts add up to every field the file defines (" + sum + " of " + BUILT.elements.length + ")", sum === BUILT.elements.length);
-  check("(5) the card names what is held and not shown, staff contacts among them, and says they are left out of any outside share",
-    /Staff role contacts/.test(txt(card && card.querySelector('[data-class="not-shown"]'))) && /left out of any outside share/.test(txt(card)));
+  check("(5) the card's class counts add up to every field the file defines (" + sum + " of " + BUILT.elements.length + ")", sum === BUILT.elements.length);
+  check("(5) the card names what is restricted and not shown, staff contacts among them, and says the site never serves them and they never go in an outside share",
+    /Staff role contacts/.test(txt(card && card.querySelector('[data-class="restricted-not-shown"]'))) && /never serves these/.test(txt(card)) && /never go in an outside share/.test(txt(card)));
   const pubBox = card && card.querySelector('[data-class="public-not-shown"]');
-  const heldBox = card && card.querySelector('[data-class="not-shown"]');
+  const heldBox = card && card.querySelector('[data-class="restricted-not-shown"]');
   check("(5) ⭐ the public routing contacts sit under their own heading, never under Held",
     pubBox && /^Public and not shown/.test(txt(pubBox.querySelector("h4"))) && /CPL Coordinator and CPL Counselor routing contacts/.test(txt(pubBox)) &&
     !/routing contacts|Landing page contacts/.test(txt(heldBox && heldBox.querySelector(".cdc-sw-names"))));
   const staffRoles = (H.staff_role_contacts.roles || []);
-  check("(5) ⭐ the held staff roles are counted and named from the data, the CPL Assistant among them (" + staffRoles.length + ")",
+  check("(5) ⭐ the restricted staff roles are counted and named from the data, the CPL Assistant among them (" + staffRoles.length + ")",
     staffRoles.indexOf("CPL Assistant") >= 0 && heldBox && heldBox.querySelector("[data-held-roles]").getAttribute("data-held-roles") === String(staffRoles.length) &&
     new RegExp(staffRoles.length + " other staff roles").test(txt(heldBox)) && /CPL Assistant/.test(txt(heldBox)));
   const notPublicKeys = BUILT.join_keys.filter((j) => j.other_class !== "public");
@@ -191,7 +197,7 @@ const CONTAINERS = new Set(HAND.containers || []);
   // (6) the statewide card on the list's page.
   D.render(T.root, M, "", new Date());
   const st = T.root.querySelector("#cdc-sw-state");
-  check("(6) the statewide card sits on the list's page with every class's count", st && ["public", "aggregate", "agreement", "held"].every((k) => st.querySelector('li[data-class="' + k + '"]')) &&
+  check("(6) the statewide card sits on the list's page with every class's count", st && ["public", "aggregate", "agreement", "held", "restricted"].every((k) => st.querySelector('li[data-class="' + k + '"]')) &&
     new RegExp(BUILT.elements.length + " fields").test(txt(st)));
   check("(6) ⭐ the statewide card counts only the keys whose other side is not public (" + notPublicKeys.length + " of " + BUILT.join_keys.length + ")",
     st && new RegExp("^" + notPublicKeys.length + " keys join a public record to one that is not: ").test(txt(st.querySelectorAll("p.cdd-of")[0])) &&

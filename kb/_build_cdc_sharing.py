@@ -3,14 +3,15 @@
 
 One hand-kept file, kb/cdc_data_dictionary.json, defines every field a college's CDC page shows: its definition, its
 source system, its COMIS element where the repo records one, its sharing class (public; aggregate, not PII; needs an
-agreement; held for the team) and the key where a public record joins one that is not public. It also lists what
+agreement; held for the team; restricted) and the key where a public record joins one that is not public. It also lists what
 COBI or MAP holds that the page does not show, the join keys and the agreements (status only, never an agreement's
 text).
 
 Each class says whether the public site may serve a field of its class ("public_site": "may serve" or "does not
-serve"). An element that names its source_file is held to that: a field whose class does not serve it, from a file
-the Pages allowlist (.github/pages_allowlist.txt) publishes, is a problem, so the class table cannot say a file is
-kept off the site while the site serves it.
+serve"). Every row of a class that does not serve, an element or a held-and-not-shown row, must name where it lives
+(an element's source_file, or lives_in: "table:<name>" or "file:<path>"), and a file it names that the Pages
+allowlist (.github/pages_allowlist.txt) publishes is a problem. So the class table cannot say the site never serves
+student-level rows or staff rosters while a published file carries them.
 
 This builder reads that file alone, checks it, and writes two things from it:
 
@@ -53,7 +54,7 @@ OUT_INTEGRATIONS = "kb/status/cdc_integrations.json"
 INTEGRATION_STATUS = ("live", "in progress", "proposed", "not started")
 SCOPES = ("statewide", "per_college")
 
-CLASSES = ("public", "aggregate", "agreement", "held")
+CLASSES = ("public", "aggregate", "agreement", "held", "restricted")
 PUBLIC_SITE = ("may serve", "does not serve")
 ALLOWLIST = ".github/pages_allowlist.txt"
 CROSSWALK_DIR = "kb/college_identity"
@@ -99,6 +100,57 @@ def dicts(rows, what: str, out: list[str]) -> list[dict]:
     return good
 
 
+def not_served(cls: dict, k) -> bool:
+    c = cls.get(k) if isinstance(cls, dict) else None
+    return isinstance(c, dict) and c.get("public_site") == "does not serve"
+
+
+def lives_in(row: dict, out: list[str], what: str) -> list[tuple[str, str]]:
+    """Where a row lives: its source_file, then each lives_in entry, as (kind, name) pairs."""
+    i = row.get("id") or "?"
+    places: list[tuple[str, str]] = []
+    if isinstance(row.get("source_file"), str) and row["source_file"]:
+        places.append(("file", row["source_file"]))
+    raw = row.get("lives_in")
+    if raw is None:
+        return places
+    if not isinstance(raw, list):
+        out.append("%s %s has lives_in %r; list \"table:<name>\" or \"file:<path>\" entries" % (what, i, raw))
+        return places
+    for x in raw:
+        kind, _, name = x.partition(":") if isinstance(x, str) else ("", "", "")
+        if kind not in ("table", "file") or not name.strip():
+            out.append("%s %s has lives_in entry %r; use \"table:<name>\" or \"file:<path>\"" % (what, i, x))
+        else:
+            places.append((kind, name.strip()))
+    return places
+
+
+def guard(what: str, row: dict, cls: dict, published, out: list[str]) -> bool:
+    """A row of a class the public site does not serve names where it lives, and no file it names is published.
+    Returns whether the row was checked."""
+    i = row.get("id") or "?"
+    places = lives_in(row, out, what)
+    if not not_served(cls, row.get("class")):
+        return False
+    if not places:
+        out.append("%s %s is class %s, which the public site does not serve, and names no table or file it lives in"
+                   % (what, i, row.get("class")))
+    for kind, name in places:
+        if kind == "file" and published is not None and served(name, published):
+            out.append("%s %s is class %s, which the public site does not serve, but %s publishes %s"
+                       % (what, i, row.get("class"), ALLOWLIST, name))
+    return True
+
+
+def guarded(d: dict) -> int:
+    """How many rows the allowlist guard checks: every element and held-and-not-shown row of a class that does not
+    serve."""
+    cls = d.get("classes") or {}
+    rows = [r for r in (d.get("elements") or []) + (d.get("held_not_shown") or []) if isinstance(r, dict)]
+    return sum(1 for r in rows if not_served(cls, r.get("class")))
+
+
 def problems(d: dict, root: str | None = None) -> list[str]:
     """Every rule the hand-kept file breaks, in words; an empty list means it is sound. With root, an element's
     source_file must exist there and agree with the Pages allowlist."""
@@ -129,8 +181,8 @@ def problems(d: dict, root: str | None = None) -> list[str]:
     if not elements:
         out.append("elements lists no field; the page shows at least one")
     published = pages_published(root) if root is not None else None
-    if root is not None and published is None and any(e.get("source_file") for e in elements):
-        out.append("elements name source files, and %s could not be read to check them" % ALLOWLIST)
+    if root is not None and published is None:
+        out.append("%s could not be read to check where each row lives" % ALLOWLIST)
     seen_ids: set[str] = set()
     seen_labels: dict[str, str] = {}
     for e in elements:
@@ -142,7 +194,7 @@ def problems(d: dict, root: str | None = None) -> list[str]:
             if not e.get(f):
                 out.append("element %s has no %s" % (i, f))
         if e.get("class") not in CLASSES:
-            out.append("element %s has class %r, not one of the four" % (i, e.get("class")))
+            out.append("element %s has class %r, not one of the five" % (i, e.get("class")))
         if e.get("system") not in systems:
             out.append("element %s names system %r, which systems does not define" % (i, e.get("system")))
         if e.get("join_key") and e["join_key"] not in keys:
@@ -156,16 +208,12 @@ def problems(d: dict, root: str | None = None) -> list[str]:
         src = e.get("source_file")
         if src is not None and not isinstance(src, str):
             out.append("element %s has source_file %r; name a file path inside the repo" % (i, src))
-        elif src and root is not None:
-            if not inside_file(root, src):
-                out.append("element %s names source file %r, which the repo does not hold" % (i, src))
-            c = cls.get(e.get("class"))
-            site = c.get("public_site") if isinstance(c, dict) else None
-            if published is not None and site == "does not serve" and served(src, published):
-                out.append("element %s is class %s, which the public site does not serve, but %s publishes its file %s"
-                           % (i, e.get("class"), ALLOWLIST, src))
+        elif src and root is not None and not inside_file(root, src):
+            out.append("element %s names source file %r, which the repo does not hold" % (i, src))
+        guard("element", e, cls, published, out)
     for h in dicts(d.get("held_not_shown") or [], "held_not_shown", out):
         i = h.get("id") or "?"
+        guard("held item", h, cls, published, out)
         roles = h.get("roles")
         if roles is not None and (not isinstance(roles, list) or not roles or not all(isinstance(r, str) and r for r in roles)):
             out.append("held item %s has roles %r; list each role by name" % (i, roles))
@@ -173,7 +221,7 @@ def problems(d: dict, root: str | None = None) -> list[str]:
             out.append("held item id %s repeats an element id" % i)
         seen_ids.add(i)
         if h.get("class") not in CLASSES:
-            out.append("held item %s has class %r, not one of the four" % (i, h.get("class")))
+            out.append("held item %s has class %r, not one of the five" % (i, h.get("class")))
         if h.get("system") not in systems:
             out.append("held item %s names system %r, which systems does not define" % (i, h.get("system")))
         for f in ("name", "definition", "where", "outside_share"):
@@ -181,7 +229,7 @@ def problems(d: dict, root: str | None = None) -> list[str]:
                 out.append("held item %s has no %s" % (i, f))
     for j in join_keys:
         if j.get("other_class") not in CLASSES:
-            out.append("join key %s has other_class %r, not one of the four" % (j.get("id"), j.get("other_class")))
+            out.append("join key %s has other_class %r, not one of the five" % (j.get("id"), j.get("other_class")))
         for f in ("name", "definition", "public_side", "other_side"):
             if not j.get(f):
                 out.append("join key %s has no %s" % (j.get("id"), f))
@@ -391,7 +439,7 @@ def markdown(b: dict) -> str:
         "and the view at `#commons/data/sharing`. The datasets themselves, their owners and procedures are in",
         "[`data_dictionary`](data_dictionary.md).",
         "",
-        "## The four classes",
+        "## The five classes",
         "",
     ]
     for k in CLASSES:
@@ -486,9 +534,9 @@ def main(argv=None) -> int:
         print("cdc sharing: stale %s; run python3 kb/_build_cdc_sharing.py" % ", ".join(stale), file=sys.stderr)
         return 1
     n = b["counts"]["elements"]
-    print("cdc sharing: %d fields (%s), %d held and not shown, %d join keys, %d agreements%s%s" % (
+    print("cdc sharing: %d fields (%s), %d held and not shown, %d join keys, %d agreements, %d rows the site never serves checked against the allowlist%s%s" % (
         len(b["elements"]), ", ".join("%s %d" % (k, n[k]) for k in CLASSES), len(b["held_not_shown"]),
-        len(b["join_keys"]), len(b["agreements"]),
+        len(b["join_keys"]), len(b["agreements"]), guarded(d),
         "; %d integrations (%s)" % (len(g["integrations"]), ", ".join("%s %d" % (s, g["counts"][s]) for s in INTEGRATION_STATUS)) if g else "",
         " (current)" if a.check else ""))
     return 0

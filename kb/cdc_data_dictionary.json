@@ -20,8 +20,13 @@
     },
     "held": {
       "word": "Held for the team",
-      "definition": "For the team's own work in COBI or MAP. The public site serves COBI's status files, so anyone may read a field of this class there; held means it is left out of any outside share by default.",
+      "definition": "COBI's own status fields for the team's work: read dates, costs, runs, machine checks, scouting and the team's asks. The public site serves COBI's status files, so anyone may read a field of this class there; held means it is left out of any outside share by default.",
       "public_site": "may serve"
+    },
+    "restricted": {
+      "word": "Restricted",
+      "definition": "Student-level rows and staff and user rosters. The public site never serves it: signed-in reviewers or the service role read it where it lives, a gated table or a runner-only file. It is never written to a published file and never goes in an outside share.",
+      "public_site": "does not serve"
     }
   },
   "systems": {
@@ -753,9 +758,12 @@
       "name": "MAP articulation Status (the approval stage)",
       "definition": "The stage of MAP's approval cascade an articulation row sits at, for example Initiator or Implementation. Workflow state inside MAP; an outside reader would take it for a college's public position.",
       "system": "map",
-      "class": "held",
+      "class": "restricted",
       "where": "stg_map_student_credit.status, loaded by kb/_sync_map_custom_reports.py",
-      "outside_share": "Left out."
+      "outside_share": "Never in an outside share.",
+      "lives_in": [
+        "table:stg_map_student_credit"
+      ]
     },
     {
       "id": "routing_contacts",
@@ -775,9 +783,9 @@
       "name": "Staff role contacts (the other ten roles)",
       "definition": "Each college's contacts by the other ten MAP roles (Primary Contact, VPAA, VPSS, CEO, CPL Assistant, Articulation Officer, Faculty Lead, Lead Initiator, Academic Senate President, School Certifying Official): a name and an email per role, and an email alone for the CPL Assistant. Staff contacts, not audit-log ids.",
       "system": "map",
-      "class": "held",
+      "class": "restricted",
       "where": "map_college_contacts, loaded by map/sync_map_users.py (View_CollegeContacts_APIDataset); never written to disk or committed",
-      "outside_share": "Left out of any outside share by default.",
+      "outside_share": "Never in an outside share.",
       "roles": [
         "Primary Contact",
         "VPAA",
@@ -789,6 +797,9 @@
         "Lead Initiator",
         "Academic Senate President",
         "School Certifying Official"
+      ],
+      "lives_in": [
+        "table:map_college_contacts"
       ]
     },
     {
@@ -796,18 +807,24 @@
       "name": "MAP college users and roles",
       "definition": "Each MAP user at a college: first and last name, email, username, role, disciplines, status and last update.",
       "system": "map",
-      "class": "held",
+      "class": "restricted",
       "where": "map_college_users, loaded by map/sync_map_users.py (View_CollegeUsersRoles_APIDataset); never written to disk or committed",
-      "outside_share": "Left out of any outside share by default."
+      "outside_share": "Never in an outside share.",
+      "lives_in": [
+        "table:map_college_users"
+      ]
     },
     {
       "id": "nudge_author",
       "name": "Who last nudged a college",
       "definition": "The team member who last sent a college a nudge, with the time: an internal accountability log.",
       "system": "cobi",
-      "class": "held",
+      "class": "restricted",
       "where": "map_college_nudges.last_nudged_by (map/supabase_map_contacts.sql), written by the MAP Users tab (map_users.js)",
-      "outside_share": "Left out of any outside share by default."
+      "outside_share": "Never in an outside share.",
+      "lives_in": [
+        "table:map_college_nudges"
+      ]
     },
     {
       "id": "landing_page_contacts",
@@ -823,9 +840,13 @@
       "name": "Pseudonymous per-student CPL rows",
       "definition": "MAP's per-student credit rows, keyed by a surrogate number derived inside the pull from MAP's salt-hashed student id; no name, date of birth or real id is fetched.",
       "system": "map",
-      "class": "held",
+      "class": "restricted",
       "where": "map_student_credit (reviewers only) and stg_map_student_credit (service role only), loaded by kb/_sync_map_custom_reports.py; the daily pull's rows stay on the runner for the run alone",
-      "outside_share": "Never shared; the reviewer-only base of the student-detail disclosure ADR."
+      "outside_share": "Never shared; the reviewer-only base of the student-detail disclosure ADR.",
+      "lives_in": [
+        "table:map_student_credit",
+        "table:stg_map_student_credit"
+      ]
     },
     {
       "id": "map_student_counts",

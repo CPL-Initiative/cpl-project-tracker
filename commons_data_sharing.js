@@ -21,7 +21,7 @@
   var FILE = "kb/status/cdc_sharing.json";
   var VIEW_KEY = "sharing";
   var TITLE = "Data elements and sharing";
-  var ORDER = ["public", "aggregate", "agreement", "held"];
+  var ORDER = ["public", "aggregate", "agreement", "held", "restricted"];
   var ST = { data: null, error: "" };
 
   function el(tag, attrs, kids) {
@@ -74,10 +74,9 @@
         el("h4", { text: classWord(D, k) + " (" + rows.length + ")" }),
         el("p", { cls: "cdc-sw-names", text: rows.map(function (r) { return r.name; }).join(", ") + "." })]));
     });
-    /* What COBI or MAP holds that this page does not show: the public rows under their own heading, the rest held. */
+    /* What COBI or MAP holds that this page does not show, one group per class: public rows, then each other class
+       under its own heading, so a public contact never sits under Held and a restricted roster never under Public. */
     var notShown = D.held_not_shown || [];
-    var pub = notShown.filter(function (h) { return h.class === "public"; });
-    var held = notShown.filter(function (h) { return h.class !== "public"; });
     function names(rows) { return rows.map(function (h) { return h.name + " (" + classLower(D, h.class) + ")"; }).join(", ") + "."; }
     function roleList(rows) {
       var r = [];
@@ -85,21 +84,17 @@
       return r;
     }
     function joinWords(w) { return w.length < 2 ? w.join("") : w.slice(0, -1).join(", ") + " and " + w[w.length - 1]; }
-    if (pub.length) {
-      var routing = roleList(pub);
-      sec.appendChild(el("div", { cls: "cdc-sw-class", "data-class": "public-not-shown" }, [
-        el("h4", { text: "Public and not shown on this page (" + pub.length + ")" }),
-        el("p", { cls: "cdc-sw-names", text: names(pub) }),
-        routing.length ? el("p", { cls: "cdd-of", text: "The " + joinWords(routing) + " contacts are public: every college landing page routes a student to them." }) : null]));
-    }
-    if (held.length) {
-      var staff = roleList(held);
-      sec.appendChild(el("div", { cls: "cdc-sw-class", "data-class": "not-shown" }, [
-        el("h4", { text: "Held and not shown on this page (" + held.length + ")" }),
-        el("p", { cls: "cdc-sw-names", text: names(held) }),
-        el("p", { cls: "cdd-of", "data-held-roles": String(staff.length), text: (staff.length ? "The contacts for " + plural(staff.length, "other staff role", "other staff roles") + " (" + joinWords(staff) + "), " : "") +
-          "MAP's approval stage and the MAP users are left out of any outside share." })]));
-    }
+    ORDER.forEach(function (k) {
+      var rows = byClass(notShown, k);
+      if (!rows.length) return;
+      var roles = roleList(rows), note = null;
+      if (k === "public" && roles.length) note = el("p", { cls: "cdd-of", text: "The " + joinWords(roles) + " contacts are public: every college landing page routes a student to them." });
+      if (k === "restricted") note = el("p", { cls: "cdd-of", "data-held-roles": String(roles.length), text: "The public site never serves these: signed-in reviewers or the service role read them where they live, and they never go in an outside share." +
+        (roles.length ? " Among them are the contacts for " + plural(roles.length, "other staff role", "other staff roles") + " (" + joinWords(roles) + ")." : "") });
+      sec.appendChild(el("div", { cls: "cdc-sw-class", "data-class": k + "-not-shown" }, [
+        el("h4", { text: classWord(D, k) + " and not shown on this page (" + rows.length + ")" }),
+        el("p", { cls: "cdc-sw-names", text: names(rows) }), note]));
+    });
     var joins = (D.elements || []).filter(function (e) { return e.join_key; });
     var open = notPublicKeys(D).map(function (j) { return j.id; });
     var used = [];
@@ -152,7 +147,7 @@
     var n = (D.counts || {}).elements || {};
     sec.appendChild(el("p", { cls: "cdd-src", text: "Built by " + D.builder + " from " + D.source + " alone; the same definitions draw the card on each college's panel and the doc " + D.doc + ". A COMIS element is filled only where the repo's own reference files record it." }));
 
-    sec.appendChild(el("h3", { cls: "cdd-h3", id: "cdc-sw-classes", text: "The four classes" }));
+    sec.appendChild(el("h3", { cls: "cdd-h3", id: "cdc-sw-classes", text: "The five classes" }));
     sec.appendChild(el("ul", { cls: "cdc-sw-deflist" }, ORDER.map(function (k) {
       return el("li", { "data-class": k }, [el("strong", { text: classWord(D, k) + " (" + plural(n[k] || 0, "field", "fields") + "). " }), classDef(D, k)]);
     })));
