@@ -44,68 +44,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 96,
+   "placed": 109,
    "listed": 111,
-   "share": 0.865,
+   "share": 0.982,
    "missing": [
     "AHS1",
-    "AHS2",
-    "HIS1",
-    "HIS16",
-    "HIS17",
-    "HIS18",
-    "HIS19",
-    "HIS2",
-    "HIS25",
-    "HIS2H",
-    "HIS32",
-    "HIS33",
-    "HIS35",
-    "HIS60",
-    "HIS61"
+    "AHS2"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 18,
+   "count": 5,
    "codes": [
     "ARTHC1100",
     "ARTHC1200",
-    "HIST1",
-    "HIST16",
-    "HIST17",
-    "HIST18",
-    "HIST19",
-    "HIST2",
-    "HIST25",
-    "HIST2H",
-    "HIST32",
-    "HIST33",
-    "HIST35",
     "HIST42",
-    "HIST60",
-    "HIST61",
     "MUS19H",
     "SPA2H"
    ],
    "flagged": [
     "ARTHC1100",
     "ARTHC1200",
-    "HIST1",
-    "HIST16",
-    "HIST17",
-    "HIST18",
-    "HIST19",
-    "HIST2",
-    "HIST25",
-    "HIST2H",
-    "HIST32",
-    "HIST33",
-    "HIST35",
     "HIST42",
-    "HIST60",
-    "HIST61",
     "MUS19H",
     "SPA2H"
    ],
@@ -122,6 +84,7 @@
     15.0,
     15.0
    ],
+   "against": "program",
    "why": [
     "'Group 7 - RCCD Study Abroad Program' chooses units but names no minimum"
    ]
@@ -139,6 +102,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": false
  },
@@ -1106,5 +1077,6 @@
    "Program learning outcomes are printed for this certificate; the page covers only this award."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

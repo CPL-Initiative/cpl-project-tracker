@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -112,6 +113,7 @@
     77.0,
     77.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -127,6 +129,14 @@
    "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -553,5 +563,6 @@
    "Honors twins (PSYC-C1000H, SOC-1H, STAT-C1000H) recorded as alternatives of their base courses."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }

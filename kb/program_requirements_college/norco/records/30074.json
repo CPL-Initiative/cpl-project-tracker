@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -90,6 +91,7 @@
     30.0,
     30.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -105,6 +107,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -295,5 +305,6 @@
    "The text begins with a truncated heading fragment ('on - Associate of Science Degree...'), suggesting page text was cut at the top."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

@@ -591,7 +591,7 @@ goals   = workplan_goals.<span class="kw">yr_2025_26 … yr_2029_30</span>   <sp
      3.3→active_colleges · 4.1→veteran_sprint
 <span class="kw">2.</span> PID_TO_KPI_BREAKDOWN card     → a headline KPI breakdown row      <span class="cm"># metric_source='live'</span>
      3.1.1→workforce · 3.1.2→military · 3.1.3→apprentice
-<span class="kw">3.</span> else workplan_goals.<span class="kw">current</span>  → explicit manual value            <span class="cm"># metric_source='workplan'</span>
+<span class="kw">3.</span> else workplan_goals.<span class="kw">cur_&lt;year&gt;</span>  → explicit manual value            <span class="cm"># metric_source='workplan'</span>
 <span class="kw">4.</span> else projects.<span class="kw">kpi_metric</span>       → Supabase baseline</div>
       <p style="margin-top:0.5rem;font-size:0.78rem;color:#555;">The old <code>populate_current_metrics()</code> / <code>_pmetric_int</code> / <code>_ppct</code> / <code>_pcount</code> cluster and the "Excel Col R/S/T-AC" columns were <strong>deleted</strong> in the Excel-retirement work (PR #213) — ignore any doc that still cites them.</p>
     </div>
@@ -639,7 +639,7 @@ goals   = workplan_goals.<span class="kw">yr_2025_26 … yr_2029_30</span>   <sp
           </div>
           <div class="detail-box">
             <h4>Live-wired card</h4>
-            <p><code>2.1</code> → <code>credit_recommendations</code> headline KPI via <code>PID_TO_KPI_KEY</code> (the exhibit-count total from CustomReport JSON). The rest show <code>projects.kpi_metric</code> / <code>workplan_goals.current</code>.</p>
+            <p><code>2.1</code> → <code>credit_recommendations</code> headline KPI via <code>PID_TO_KPI_KEY</code> (the exhibit-count total from CustomReport JSON). The rest show <code>projects.kpi_metric</code> / <code>workplan_goals.cur_&lt;year&gt;</code>.</p>
           </div>
           <div class="detail-box">
             <h4>Edit</h4>
@@ -697,7 +697,7 @@ goals   = workplan_goals.<span class="kw">yr_2025_26 … yr_2029_30</span>   <sp
           </div>
           <div class="detail-box">
             <h4>Live-wired card</h4>
-            <p><code>4.1</code> Veteran Sprint → <code>veteran_sprint</code> headline KPI (<code>PID_TO_KPI_KEY</code>). Others show <code>projects.kpi_metric</code> / <code>workplan_goals.current</code>.</p>
+            <p><code>4.1</code> Veteran Sprint → <code>veteran_sprint</code> headline KPI (<code>PID_TO_KPI_KEY</code>). Others show <code>projects.kpi_metric</code> / <code>workplan_goals.cur_&lt;year&gt;</code>.</p>
           </div>
         </div>
       </div>
@@ -904,7 +904,7 @@ app_actual = [[2024, 196],  [2025, <span class="kw">300</span>],   [2026, app_no
   goal_values    = workplan_goals GOAL row     <span class="cm"># yr_2025_26 … yr_2029_30</span>
   stretch_values = workplan_goals STRETCH row
   current        = live headline KPI (if PID_TO_KPI_KEY-mapped)
-                   else workplan_goals.current (manual)
+                   else workplan_goals.cur_&lt;year&gt; (manual)
                    else projects.kpi_metric
   goal_total = sum(goal_values); stretch_total = sum(stretch_values)
 

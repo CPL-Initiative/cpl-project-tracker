@@ -46,17 +46,12 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 23,
    "listed": 26,
-   "share": 0.692,
+   "share": 0.885,
    "missing": [
     "BIOSC102",
-    "BIOSC117",
-    "BIOSC119",
     "BIOSC130",
-    "BIOSC139",
-    "BIOSC140",
-    "BIOSC146",
     "PSYC214"
    ],
    "unexplained": [],
@@ -64,22 +59,12 @@
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 2,
    "codes": [
-    "BIOL117",
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
     "BIOLC1000",
     "PH250"
    ],
    "flagged": [
-    "BIOL117",
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
     "BIOLC1000",
     "PH250"
    ],
@@ -428,5 +413,6 @@
    "Program learning outcomes are printed once for the program and recorded for this A.S.-T award."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43609976980,
+ "read_run": "43379378196"
 }

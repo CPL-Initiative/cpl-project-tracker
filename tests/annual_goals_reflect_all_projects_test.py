@@ -39,7 +39,7 @@ def _goal_pair(aid, name, kind, ladder=0):
     for rt in ("GOAL", "STRETCH"):
         r = {k: ladder for k in YEAR_KEYS}
         r.update({"activity_id": aid, "name": name, "row_type": rt,
-                  "kind": kind, "description": "", "current": None})
+                  "kind": kind, "description": "", "cur_2025_26": None})
         rows.append(r)
     return rows
 

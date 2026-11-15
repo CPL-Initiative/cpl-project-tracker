@@ -55,6 +55,7 @@
     "ELE55"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -80,6 +81,7 @@
     27.0,
     28.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,6 +97,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -244,5 +254,6 @@
    "The text begins mid-word ('l programmers'), suggesting the page's opening (including its title) was cut off."
   ]
  },
- "extracted_run": "38095619629"
+ "extracted_run": 43609971090,
+ "read_run": "38095619629"
 }

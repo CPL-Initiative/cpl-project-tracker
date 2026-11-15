@@ -51,6 +51,7 @@
     "CIS78B"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -84,6 +85,7 @@
     26.0,
     27.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -99,6 +101,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -333,5 +343,6 @@
    "Section heading also carries codes NAS647/C/NCE647 in the page title."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

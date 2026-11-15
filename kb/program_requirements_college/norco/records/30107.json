@@ -57,6 +57,7 @@
     "MAT11",
     "MAT25"
    ],
+   "none_placed": false,
    "pass": false
   },
   "invented": {
@@ -92,6 +93,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
     "'Elective Courses' chooses units but names no minimum"
    ]
@@ -109,6 +111,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -1318,5 +1331,6 @@
    "Catalog additions: MATH C2210, MATH C2220, BIO 4, CIS 5, HES 1, PSYC 2H."
   ]
  },
- "extracted_run": "38095619629"
+ "extracted_run": 43609971090,
+ "read_run": "38095619629"
 }

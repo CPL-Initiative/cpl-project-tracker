@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 586 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 587 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 104 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 74 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 614 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1479** | |
+| Reference (pull-side) | 76 | [`catalog/reference.md`](catalog/reference.md) |
+| Session handoffs | 615 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1483** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-14 (S653 SkyGodwit, Sam's session, conductor mode, full checkpoint): the course-id route (#3312, 7 of 17 prefix aliases retire); five colleges reread from filed pages (#3317 to #3321); the Honors field (#3313) and step 1 applied (#3329); College Data Collection's sort and panel (#3314); the Riverside City fault found in the S646 claim rule (#3324); new `docs/reference/stack_scouting.md` and the KB note `methodology-a-test-must-not-take-its-rule-as-the-truth`; handoff `session_654_handoff.md` (SkyWhimbrel).
 - 2026-11-14 (S652 SkyAvocet, the CPL Queue routine's 12:12Z firing, Sam in session, full checkpoint): the identities map applied (#3298) and its 625 held entries dropped (#3302) on Sam's word; catalog-first collection on his rule, slice C merged (#3301, 17 prefix aliases) and slice A drafted (#3300); COBIx's electives-fill census (#3297); the display's structured-fields design (#3296, #3303); new KB note `methodology-a-new-matcher-is-gated-by-a-self-recall-test`; lessons compacted into their archives; handoff `session_653_handoff.md`.
 - 2026-11-14 (S651 SkyDunlin, the CPL Queue routine's 09:12Z firing, full checkpoint): #3291 Lassen (Cal-GETC 34 from its own catalog, five rows reread, display run 43586782908); #3294 the Veteran map's public header; #3283 sdccd's 2,532 objective rows loaded; draft #3293 the one dry run, held for COBIx; a display rule withdrawn for structured fields; plan v2 on #3111 (the August drop is Pierce); harvest lessons compacted into archive 5; handoff `session_652_handoff.md`.
 - 2026-11-14 (S650 SkyPlover, the CPL Queue routine's 06:12Z firing, full checkpoint): Open Asks Sheet 196 published; #3285 (Exhibits cross-tab reopen), #3286 and #3290 (College Data Collection), #3287 (credential harvest), #3289 (Veteran map UI pass) and #3288 (Cosumnes River's two pinned pages, 136 to 138 passing) merged; the degree electives-fill false pass found and held for the one dry run; Lassen and sdccd started; handoff 651 (SkyDunlin).
@@ -131,4 +132,3 @@ Authoritative external sources we've cached:
 - 2026-11-14 (S649 SkyOriole, conductor, Sam in session; written while the session continued): seven merges (#3260, #3263, #3259, #3269, #3266, #3261, #3262); the Exhibits Review reads saved titles live (held 168 to 0); objectives collected with every SLO read; Cal-GETC applied at Cerro Coso (35) and Cosumnes River (39656 at 34); College Data Collection on Sam's six asks; lanes `cer-procedures` and `commons` compacted under budget; new archives `commons_lessons_archive.md` and `program_requirements_harvest_lessons_archive_5.md`; handoff 650 (SkyPlover).
 - 2026-11-13 (S648 SkyTanager, the light refresh, while the session continued): #3248, #3239, #3252 (Grossmont Cal-GETC 34) and #3245 (FIRE M1274 into FIRE 130 X, applied) merged; Glendale loaded, rereads to come; Open Asks Sheet 194 replaces 193 (the BUSI row delete as its own card); handoff 649 rewritten in place; refresh receipt not yet run.
 - 2026-11-13 (S648 SkyTanager, conductor, Sam in session; written while the session continued): eight merges (#3227, #3242, #3240, #3243, #3241, #3246, #3244, #3247); College Data Collection on Sam's #3229 words; Cal-GETC 34 by per-college evidence; the issuer tag list; Open Asks Sheet 193; handoff 649.
-- 2026-11-13 (S647 SkyPipit, the afternoon, Sam in session): four merges (#3231, #3233, #3232, #3236); the Commons data dashboard complete at `#commons/data` with four views and its first live read; the Exhibits fixes of #3223 and #3228; the `live-counts` environment; Open Asks Sheet 192; handoff 648 refreshed.

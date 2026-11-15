@@ -45,12 +45,10 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 35,
+   "placed": 37,
    "listed": 43,
-   "share": 0.814,
+   "share": 0.86,
    "missing": [
-    "ANTHRO102",
-    "ANTHRO102H",
     "CD126",
     "HIST100",
     "SOC110",
@@ -63,10 +61,8 @@
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 6,
    "codes": [
-    "ANTH102",
-    "ANTH102H",
     "CDEV126",
     "HISTC1001",
     "SOCI110",
@@ -75,8 +71,6 @@
     "SOCI141H"
    ],
    "flagged": [
-    "ANTH102",
-    "ANTH102H",
     "CDEV126",
     "HISTC1001",
     "SOCI110",
@@ -547,6 +541,6 @@
    "Footnote 1 on HUMSV 195A and HUMSV 198C: students must find and select an agency for fieldwork hours before registering."
   ]
  },
- "extracted_run": 43355003065,
- "read_run": "38748858322"
+ "extracted_run": 43609973859,
+ "read_run": 43355003065
 }

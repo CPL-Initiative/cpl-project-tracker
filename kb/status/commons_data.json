@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T18:25:52Z",
+ "written_at": "2026-11-15T03:28:04Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -143,7 +143,8 @@
   "catalog_checks": "internal",
   "read_seconds": "internal",
   "run": "internal",
-  "levers": "internal"
+  "levers": "internal",
+  "collection": "internal"
  },
  "tba": {
   "apis": "The checklist is filed in the data dictionary; this tile shows it in the next slice of the page.",
@@ -167,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15840,
-  "gap": 6495,
+  "passing": 15856,
+  "gap": 6479,
   "with_gap": 118,
   "cost_usd": 1343.32,
-  "passed_at_read": 15332,
+  "passed_at_read": 15358,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -185,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15840,
-  "gap": 6495
+  "passing": 15856,
+  "gap": 6479
  },
  "census_live": {
   "basis": "live",
@@ -275,6 +276,29 @@
     "scorer_noncredit_hours": 2,
     "ge_units_steps": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 156,
+     "models": {
+      "claude-opus-5-5": 156
+     },
+     "run": "38843474519",
+     "at": "2026-10-16T03:03:09Z",
+     "cost_usd": 12.41,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 149,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 223,
    "census_gap": 89,
    "census_passing": 134
@@ -358,6 +382,29 @@
     "ge_units_steps": 13,
     "program_course_file_check": 3
    },
+   "collection": {
+    "program_reader": {
+     "records": 368,
+     "models": {
+      "claude-opus-5-5": 368
+     },
+     "run": "43212067552",
+     "at": "2026-11-12T11:49:22Z",
+     "cost_usd": 29.97,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 327,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 363,
    "census_gap": 67,
    "census_passing": 296
@@ -437,6 +484,29 @@
     "program_course_file_check": 2,
     "reader_page_search": 2,
     "scorer_noncredit_hours": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 195,
+     "models": {
+      "claude-opus-5-5": 195
+     },
+     "run": "38979725726",
+     "at": "2026-10-16T23:09:09Z",
+     "cost_usd": 14.18,
+     "platform": "elumen"
+    },
+    "slo_read": null,
+    "plo_programs": 120,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 83,
    "census_gap": 22,
@@ -521,6 +591,32 @@
     "reader_page_assignment": 2,
     "scorer_noncredit_hours": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 231,
+     "models": {
+      "claude-opus-5-5": 231
+     },
+     "run": "38414480070",
+     "at": "2026-10-13T14:35:10Z",
+     "cost_usd": 13.38,
+     "platform": "elumen"
+    },
+    "slo_read": null,
+    "plo_programs": 230,
+    "ppm_member": {
+     "host": "programmap.bakersfieldcollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 244,
    "census_gap": 39,
    "census_passing": 205
@@ -592,6 +688,29 @@
     "reader_page_assignment": 15,
     "reader_page_search": 5,
     "reconcile_steps": 2
+   },
+   "collection": {
+    "program_reader": {
+     "records": 71,
+     "models": {
+      "claude-opus-5-5": 71
+     },
+     "run": "39006332820",
+     "at": "2026-10-17T05:28:38Z",
+     "cost_usd": 4.68,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 53,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 66,
    "census_gap": 18,
@@ -674,6 +793,32 @@
     "scorer_noncredit_hours": 2,
     "reader_page_assignment": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 90,
+     "models": {
+      "claude-opus-5-5": 90
+     },
+     "run": "43141644775",
+     "at": "2026-11-12T02:30:35Z",
+     "cost_usd": 5.81,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 58,
+    "ppm_member": {
+     "host": "berkeley-city.programmapper.com",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 74,
    "census_gap": 43,
    "census_passing": 31
@@ -750,6 +895,29 @@
     "program_course_file_check": 24,
     "reader_page_search": 3,
     "reader_page_assignment": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 165,
+     "models": {
+      "claude-opus-5-5": 165
+     },
+     "run": "42985449223",
+     "at": "2026-11-11T08:16:43Z",
+     "cost_usd": 10.69,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 163,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 192,
    "census_gap": 54,
@@ -831,6 +999,35 @@
     "reader_page_assignment": 3,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 271,
+     "models": {
+      "claude-opus-5-5": 271
+     },
+     "run": "38670925488",
+     "at": "2026-10-15T02:26:55Z",
+     "cost_usd": 18.26,
+     "platform": "elumen"
+    },
+    "slo_read": {
+     "run": "38507187621",
+     "at": "2026-10-14T04:50:16Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/cabrillo/read_38507187621_p3of3.json"
+    },
+    "plo_programs": 267,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 283,
    "census_gap": 48,
    "census_passing": 235
@@ -900,6 +1097,29 @@
     "reader_page_search": 7,
     "program_course_file_check": 1,
     "reader_page_assignment": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 12,
+     "models": {
+      "claude-opus-5-5": 12
+     },
+     "run": "39006334571",
+     "at": "2026-10-17T05:28:46Z",
+     "cost_usd": 0.5,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 0,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 12,
    "census_gap": 3,
@@ -977,6 +1197,32 @@
     "reconcile_steps": 8,
     "reader_page_assignment": 3,
     "reader_page_search": 2
+   },
+   "collection": {
+    "program_reader": {
+     "records": 73,
+     "models": {
+      "claude-opus-5-5": 73
+     },
+     "run": "39202270482",
+     "at": "2026-10-19T05:01:45Z",
+     "cost_usd": 5.5,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 68,
+    "ppm_member": {
+     "host": "programmapper.canadacollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 126,
    "census_gap": 65,
@@ -1063,6 +1309,32 @@
     "reader_page_assignment": 3,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 305,
+     "models": {
+      "claude-opus-5-5": 305
+     },
+     "run": "38656800189",
+     "at": "2026-10-14T23:54:27Z",
+     "cost_usd": 16.78,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 287,
+    "ppm_member": {
+     "host": "programmap.cerritos.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 287,
    "census_gap": 41,
    "census_passing": 246
@@ -1143,6 +1415,29 @@
     "reader_page_search": 9,
     "program_course_file_check": 6
    },
+   "collection": {
+    "program_reader": {
+     "records": 65,
+     "models": {
+      "claude-opus-5-5": 65
+     },
+     "run": "39046789844",
+     "at": "2026-10-17T15:51:20Z",
+     "cost_usd": 4.87,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 51,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 78,
    "census_gap": 51,
    "census_passing": 27
@@ -1218,6 +1513,32 @@
     "program_course_file_check": 4,
     "reader_page_assignment": 2,
     "ge_units_steps": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 233,
+     "models": {
+      "claude-opus-5-5": 233
+     },
+     "run": "38843479215",
+     "at": "2026-10-16T03:03:31Z",
+     "cost_usd": 15.83,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 225,
+    "ppm_member": {
+     "host": "chabot.programmapper.com",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 203,
    "census_gap": 27,
@@ -1300,6 +1621,32 @@
     "program_course_file_check": 3,
     "reader_page_assignment": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 193,
+     "models": {
+      "claude-opus-5-5": 193
+     },
+     "run": "38242003226",
+     "at": "2026-10-12T11:21:28Z",
+     "cost_usd": 10.48,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 189,
+    "ppm_member": {
+     "host": "programmap.chaffey.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 201,
    "census_gap": 20,
    "census_passing": 181
@@ -1379,6 +1726,29 @@
     "program_course_file_check": 8,
     "reader_page_assignment": 6,
     "ge_units_steps": 3
+   },
+   "collection": {
+    "program_reader": {
+     "records": 175,
+     "models": {
+      "claude-opus-5-5": 175
+     },
+     "run": "39726639865",
+     "at": "2026-10-22T05:13:06Z",
+     "cost_usd": 11.56,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 174,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 193,
    "census_gap": 46,
@@ -1470,6 +1840,29 @@
     "ge_units_steps": 2,
     "scorer_noncredit_hours": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 349,
+     "models": {
+      "claude-opus-5-5": 349
+     },
+     "run": "39056434592",
+     "at": "2026-10-17T18:04:39Z",
+     "cost_usd": 23.72,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 247,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 414,
    "census_gap": 157,
    "census_passing": 257
@@ -1547,6 +1940,32 @@
     "reader_page_assignment": 15,
     "program_course_file_check": 8,
     "reader_page_search": 6
+   },
+   "collection": {
+    "program_reader": {
+     "records": 115,
+     "models": {
+      "claude-opus-5-5": 115
+     },
+     "run": "39006155986",
+     "at": "2026-10-17T05:25:41Z",
+     "cost_usd": 8.34,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 56,
+    "ppm_member": {
+     "host": "programmap.cloviscollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 124,
    "census_gap": 57,
@@ -1632,6 +2051,32 @@
     "reconcile_steps": 5,
     "reader_page_assignment": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 55,
+     "models": {
+      "claude-opus-5-5": 55
+     },
+     "run": "43355010411",
+     "at": "2026-11-13T02:52:37Z",
+     "cost_usd": 3.48,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 54,
+    "ppm_member": {
+     "host": "programmapper.coalingacollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 58,
    "census_gap": 12,
    "census_passing": 46
@@ -1713,6 +2158,38 @@
     "reader_page_search": 5,
     "scorer_noncredit_hours": 5
    },
+   "collection": {
+    "program_reader": {
+     "records": 154,
+     "models": {
+      "claude-opus-5-5": 154
+     },
+     "run": "38445051060",
+     "at": "2026-10-13T18:15:00Z",
+     "cost_usd": 8.52,
+     "platform": "courseleaf"
+    },
+    "slo_read": {
+     "run": "38508963773",
+     "at": "2026-10-14T04:34:21Z",
+     "system": "courseleaf",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/cccd/read_38508963773_p2of2.json"
+    },
+    "plo_programs": 141,
+    "ppm_member": {
+     "host": "programmap.coastline.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 138,
    "census_gap": 34,
    "census_passing": 104
@@ -1790,6 +2267,29 @@
     "reader_page_search": 9,
     "ge_units_steps": 6,
     "scorer_noncredit_hours": 5
+   },
+   "collection": {
+    "program_reader": {
+     "records": 59,
+     "models": {
+      "claude-opus-5-5": 59
+     },
+     "run": "42892493763",
+     "at": "2026-11-10T20:12:35Z",
+     "cost_usd": 4.05,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 59,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 83,
    "census_gap": 48,
@@ -1870,6 +2370,29 @@
     "reader_page_search": 5,
     "ge_units_steps": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 89,
+     "models": {
+      "claude-opus-5-5": 89
+     },
+     "run": "38984695817",
+     "at": "2026-10-17T00:06:11Z",
+     "cost_usd": 6.13,
+     "platform": "elumen"
+    },
+    "slo_read": null,
+    "plo_programs": 89,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 152,
    "census_gap": 72,
    "census_passing": 80
@@ -1945,6 +2468,32 @@
     "reader_page_assignment": 5,
     "reader_page_search": 3,
     "reconcile_steps": 3
+   },
+   "collection": {
+    "program_reader": {
+     "records": 61,
+     "models": {
+      "claude-opus-5-5": 61
+     },
+     "run": "39914644770",
+     "at": "2026-10-23T06:59:19Z",
+     "cost_usd": 5.05,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 56,
+    "ppm_member": {
+     "host": "programmap.collegeofsanmateo.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 98,
    "census_gap": 45,
@@ -2033,6 +2582,32 @@
     "program_course_file_check": 19,
     "reader_page_assignment": 12,
     "ge_units_steps": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 160,
+     "models": {
+      "claude-opus-5-5": 160
+     },
+     "run": "39006378829",
+     "at": "2026-10-17T05:29:27Z",
+     "cost_usd": 13.55,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 131,
+    "ppm_member": {
+     "host": "programmap.canyons.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 279,
    "census_gap": 170,
@@ -2123,6 +2698,29 @@
     "ge_units_steps": 1,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 358,
+     "models": {
+      "claude-opus-5-5": 358
+     },
+     "run": "43421133593",
+     "at": "2026-11-13T11:59:31Z",
+     "cost_usd": 28.43,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 306,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 206,
    "census_gap": 54,
    "census_passing": 152
@@ -2203,6 +2801,29 @@
     "reader_page_search": 3,
     "ge_units_steps": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 73,
+     "models": {
+      "claude-opus-5-5": 73
+     },
+     "run": "43018781168",
+     "at": "2026-11-11T12:18:07Z",
+     "cost_usd": 5.41,
+     "platform": "elumen"
+    },
+    "slo_read": null,
+    "plo_programs": 65,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 76,
    "census_gap": 18,
    "census_passing": 58
@@ -2277,6 +2898,29 @@
     "reader_page_search": 12,
     "reader_page_assignment": 7,
     "scorer_noncredit_hours": 4
+   },
+   "collection": {
+    "program_reader": {
+     "records": 125,
+     "models": {
+      "claude-opus-5-5": 125
+     },
+     "run": "38748848139",
+     "at": "2026-10-15T14:10:10Z",
+     "cost_usd": 8.75,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 118,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 137,
    "census_gap": 51,
@@ -2355,6 +2999,29 @@
     "reconcile_steps": 3,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 73,
+     "models": {
+      "claude-opus-5-5": 73
+     },
+     "run": "42354853403",
+     "at": "2026-11-07T08:18:59Z",
+     "cost_usd": 4.86,
+     "platform": "elumen"
+    },
+    "slo_read": null,
+    "plo_programs": 69,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 78,
    "census_gap": 13,
    "census_passing": 65
@@ -2424,6 +3091,35 @@
    "levers": {
     "reconcile_steps": 4,
     "program_course_file_check": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 82,
+     "models": {
+      "claude-opus-5-5": 82
+     },
+     "run": "42471133430",
+     "at": "2026-11-08T11:12:10Z",
+     "cost_usd": 5.46,
+     "platform": "elumen"
+    },
+    "slo_read": {
+     "run": "41979319035",
+     "at": "2026-11-05T06:47:43Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/gocolumbia/read_41979319035_p2of2.json"
+    },
+    "plo_programs": 82,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 82,
    "census_gap": 5,
@@ -2503,6 +3199,32 @@
     "reader_page_search": 5,
     "program_course_file_check": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 81,
+     "models": {
+      "claude-opus-5-5": 81
+     },
+     "run": "39006336111",
+     "at": "2026-10-17T05:28:42Z",
+     "cost_usd": 5.84,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 58,
+    "ppm_member": {
+     "host": "programmap.compton.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 86,
    "census_gap": 20,
    "census_passing": 66
@@ -2581,6 +3303,38 @@
     "program_course_file_check": 26,
     "reader_page_assignment": 9,
     "reader_page_search": 8
+   },
+   "collection": {
+    "program_reader": {
+     "records": 97,
+     "models": {
+      "claude-opus-5-5": 97
+     },
+     "run": "38979730323",
+     "at": "2026-10-16T23:09:38Z",
+     "cost_usd": 6.44,
+     "platform": "elumen"
+    },
+    "slo_read": {
+     "run": "42434894498",
+     "at": "2026-11-08T02:16:24Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/ccc/read_42434894498_p2of2.json"
+    },
+    "plo_programs": 38,
+    "ppm_member": {
+     "host": "mypath.contracosta.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 109,
    "census_gap": 56,
@@ -2677,6 +3431,29 @@
     "reconcile_steps": 10,
     "reader_page_assignment": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 48,
+     "models": {
+      "claude-opus-5-5": 48
+     },
+     "run": "39035222722",
+     "at": "2026-10-17T13:07:57Z",
+     "cost_usd": 3.84,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 43,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 58,
    "census_gap": 23,
    "census_passing": 35
@@ -2765,6 +3542,29 @@
     "program_course_file_check": 7,
     "reader_page_search": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 217,
+     "models": {
+      "claude-opus-5-5": 217
+     },
+     "run": "39047009824",
+     "at": "2026-10-17T15:54:21Z",
+     "cost_usd": 18.96,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 168,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 216,
    "census_gap": 76,
    "census_passing": 140
@@ -2838,6 +3638,29 @@
     "program_course_file_check": 39,
     "reconcile_steps": 21,
     "reader_page_search": 3
+   },
+   "collection": {
+    "program_reader": {
+     "records": 76,
+     "models": {
+      "claude-opus-5-5": 76
+     },
+     "run": "39116269641",
+     "at": "2026-10-18T09:41:56Z",
+     "cost_usd": 5.37,
+     "platform": "smartcatalog"
+    },
+    "slo_read": null,
+    "plo_programs": 74,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 107,
    "census_gap": 58,
@@ -2920,6 +3743,38 @@
     "reader_page_assignment": 2,
     "ge_units_steps": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 183,
+     "models": {
+      "claude-opus-5-5": 183
+     },
+     "run": "39063368678",
+     "at": "2026-10-17T19:40:02Z",
+     "cost_usd": 10.93,
+     "platform": "curriqunet"
+    },
+    "slo_read": {
+     "run": "42768224688",
+     "at": "2026-11-10T07:25:14Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/cuesta/read_42768224688_p2of2.json"
+    },
+    "plo_programs": 127,
+    "ppm_member": {
+     "host": "programmap.cuesta.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 200,
    "census_gap": 37,
    "census_passing": 163
@@ -2995,6 +3850,29 @@
     "reader_page_search": 4,
     "reader_page_assignment": 3,
     "ge_units_steps": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 182,
+     "models": {
+      "claude-opus-5-5": 182
+     },
+     "run": "38748833332",
+     "at": "2026-10-15T14:10:08Z",
+     "cost_usd": 13.84,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 179,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 179,
    "census_gap": 37,
@@ -3072,6 +3950,32 @@
     "reader_page_assignment": 6,
     "ge_units_steps": 2,
     "scorer_noncredit_hours": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 274,
+     "models": {
+      "claude-opus-5-5": 274
+     },
+     "run": "39853370754",
+     "at": "2026-10-22T21:15:37Z",
+     "cost_usd": 18.14,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 242,
+    "ppm_member": {
+     "host": "programmap.cypresscollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 254,
    "census_gap": 18,
@@ -3158,6 +4062,32 @@
     "ge_units_steps": 1,
     "reader_page_search": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 221,
+     "models": {
+      "claude-opus-5-5": 221
+     },
+     "run": "43072075772",
+     "at": "2026-11-11T17:53:38Z",
+     "cost_usd": 17.15,
+     "platform": "elumen"
+    },
+    "slo_read": null,
+    "plo_programs": 13,
+    "ppm_member": {
+     "host": "program-maps.deanza.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 115,
    "census_gap": 16,
    "census_passing": 99
@@ -3170,13 +4100,13 @@
    "harvested": true,
    "slug": "diablo_valley",
    "programs": 267,
-   "passing": 197,
-   "gap": 70,
+   "passing": 198,
+   "gap": 69,
    "causes": {
     "no_closed_list": 23,
     "page_not_found": 30,
     "places_none": 1,
-    "unknown_without_live": 16
+    "unknown_without_live": 15
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -3203,7 +4133,7 @@
    "read_at": "2026-11-13T06:35:26Z",
    "read_kind": "capture",
    "cost_usd": 13.85,
-   "passed_at_read": 197,
+   "passed_at_read": 198,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -3226,8 +4156,8 @@
    "extracted": 214,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
-    "invented": 4,
+    "coverage": 5,
+    "invented": 3,
     "arithmetic": 12,
     "repeated": 0,
     "outcomes": 0
@@ -3239,14 +4169,37 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1567.3,
-   "run": "43379378196",
+   "run": "43609976980",
    "levers": {
     "reader_page_search": 30,
     "program_course_file_check": 23,
-    "reconcile_steps": 10,
+    "reconcile_steps": 9,
     "ge_units_steps": 5,
     "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 214,
+     "models": {
+      "claude-opus-5-5": 214
+     },
+     "run": "43609976980",
+     "at": "2026-11-13T06:35:26Z",
+     "cost_usd": 13.85,
+     "platform": "elumen"
+    },
+    "slo_read": null,
+    "plo_programs": 213,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 260,
    "census_gap": 63,
@@ -3340,6 +4293,32 @@
     "reader_page_assignment": 4,
     "ge_units_steps": 3
    },
+   "collection": {
+    "program_reader": {
+     "records": 137,
+     "models": {
+      "claude-opus-5-5": 137
+     },
+     "run": "43357061643",
+     "at": "2026-11-13T03:11:03Z",
+     "cost_usd": 10.74,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 133,
+    "ppm_member": {
+     "host": "programmap.elac.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 227,
    "census_gap": 128,
    "census_passing": 99
@@ -3419,6 +4398,32 @@
     "reader_page_assignment": 7,
     "scorer_noncredit_hours": 5
    },
+   "collection": {
+    "program_reader": {
+     "records": 124,
+     "models": {
+      "claude-opus-5-5": 124
+     },
+     "run": "38631686677",
+     "at": "2026-10-14T20:24:46Z",
+     "cost_usd": 8.08,
+     "platform": "acalog"
+    },
+    "slo_read": null,
+    "plo_programs": 0,
+    "ppm_member": {
+     "host": "programmap.elcamino.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 187,
    "census_gap": 98,
    "census_passing": 89
@@ -3493,6 +4498,32 @@
     "reader_page_assignment": 12,
     "reader_page_search": 6,
     "program_course_file_check": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 86,
+     "models": {
+      "claude-opus-5-5": 86
+     },
+     "run": "38748875071",
+     "at": "2026-10-15T14:10:30Z",
+     "cost_usd": 5.92,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 74,
+    "ppm_member": {
+     "host": "programmap.evc.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 69,
    "census_gap": 16,
@@ -3570,6 +4601,29 @@
     "reader_page_search": 4,
     "reader_page_assignment": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 45,
+     "models": {
+      "claude-opus-5-5": 45
+     },
+     "run": "38935127435",
+     "at": "2026-10-16T16:52:03Z",
+     "cost_usd": 3.15,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 0,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 52,
    "census_gap": 21,
    "census_passing": 31
@@ -3644,6 +4698,29 @@
     "ge_units_steps": 5,
     "reader_page_assignment": 3,
     "reader_page_search": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 107,
+     "models": {
+      "claude-opus-5-5": 107
+     },
+     "run": "39046850071",
+     "at": "2026-10-17T15:52:04Z",
+     "cost_usd": 9.43,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 98,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 104,
    "census_gap": 21,
@@ -3726,6 +4803,32 @@
     "ge_units_steps": 7,
     "reader_page_search": 5,
     "scorer_noncredit_hours": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 185,
+     "models": {
+      "claude-opus-5-5": 185
+     },
+     "run": "39726637264",
+     "at": "2026-10-22T05:13:13Z",
+     "cost_usd": 14.82,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 125,
+    "ppm_member": {
+     "host": "foothill.programmapper.com",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 194,
    "census_gap": 67,
@@ -3813,6 +4916,29 @@
     "reconcile_steps": 6,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 237,
+     "models": {
+      "claude-opus-5-5": 237
+     },
+     "run": "38563582873",
+     "at": "2026-10-14T12:26:36Z",
+     "cost_usd": 14.1,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 209,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 266,
    "census_gap": 62,
    "census_passing": 204
@@ -3893,6 +5019,32 @@
     "ge_units_steps": 4,
     "reader_page_assignment": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 313,
+     "models": {
+      "claude-opus-5-5": 313
+     },
+     "run": "38675136988",
+     "at": "2026-10-15T03:14:32Z",
+     "cost_usd": 22.21,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 309,
+    "ppm_member": {
+     "host": "pathways.fullcoll.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 331,
    "census_gap": 54,
    "census_passing": 277
@@ -3972,6 +5124,32 @@
     "reader_page_assignment": 5,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 106,
+     "models": {
+      "claude-opus-5-5": 106
+     },
+     "run": "38948144064",
+     "at": "2026-10-16T18:33:54Z",
+     "cost_usd": 7.53,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 99,
+    "ppm_member": {
+     "host": "gavilan.programmapper.com",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 133,
    "census_gap": 54,
    "census_passing": 79
@@ -4050,6 +5228,32 @@
     "reader_page_search": 24,
     "scorer_noncredit_hours": 2,
     "paid_read": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 242,
+     "models": {
+      "claude-opus-5-5": 242
+     },
+     "run": "43497305929",
+     "at": "2026-11-13T17:24:31Z",
+     "cost_usd": 16.04,
+     "platform": "coursedog"
+    },
+    "slo_read": null,
+    "plo_programs": 68,
+    "ppm_member": {
+     "host": "programmap.glendale.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 296,
    "census_gap": 183,
@@ -4131,6 +5335,38 @@
     "reader_page_search": 17,
     "reader_page_assignment": 6,
     "scorer_noncredit_hours": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 135,
+     "models": {
+      "claude-opus-5-5": 135
+     },
+     "run": "39688079435",
+     "at": "2026-10-21T22:41:56Z",
+     "cost_usd": 8.72,
+     "platform": "courseleaf"
+    },
+    "slo_read": {
+     "run": "41399075269",
+     "at": "2026-11-02T07:02:26Z",
+     "system": "courseleaf",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/cccd/read_41399075269_p2of2.json"
+    },
+    "plo_programs": 128,
+    "ppm_member": {
+     "host": "programmap.goldenwestcollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 175,
    "census_gap": 72,
@@ -4228,6 +5464,29 @@
     "ge_units_steps": 1,
     "paid_read": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 144,
+     "models": {
+      "claude-opus-5-5": 144
+     },
+     "run": "43482160320",
+     "at": "2026-11-13T18:26:08Z",
+     "cost_usd": 10.61,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 139,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 185,
    "census_gap": 62,
    "census_passing": 123
@@ -4307,6 +5566,32 @@
     "ge_units_steps": 2,
     "scorer_noncredit_hours": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 94,
+     "models": {
+      "claude-opus-5-5": 94
+     },
+     "run": "40314109801",
+     "at": "2026-10-26T11:35:34Z",
+     "cost_usd": 6.33,
+     "platform": "coursedog"
+    },
+    "slo_read": null,
+    "plo_programs": 3,
+    "ppm_member": {
+     "host": "pm.hartnell.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 108,
    "census_gap": 29,
    "census_passing": 79
@@ -4385,6 +5670,32 @@
     "program_course_file_check": 7,
     "reader_page_assignment": 6
    },
+   "collection": {
+    "program_reader": {
+     "records": 131,
+     "models": {
+      "claude-opus-5-5": 131
+     },
+     "run": "39691376155",
+     "at": "2026-10-21T23:10:18Z",
+     "cost_usd": 8.02,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 121,
+    "ppm_member": {
+     "host": "programmap.imperial.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 134,
    "census_gap": 29,
    "census_passing": 105
@@ -4458,6 +5769,31 @@
     "program_course_file_check": 25,
     "reconcile_steps": 14,
     "reader_page_search": 2
+   },
+   "collection": {
+    "program_reader": {
+     "records": 144,
+     "models": {
+      "claude-opus-5-5": 144
+     },
+     "run": "39539599944",
+     "at": "2026-10-21T03:38:56Z",
+     "cost_usd": 11.02,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 103,
+    "ppm_member": null,
+    "maps": {
+     "held": 1,
+     "on_records": 1,
+     "files": [
+      "kb/program_requirements_pilot/sequences/ivc_10265.json"
+     ]
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 166,
    "census_gap": 40,
@@ -4536,6 +5872,38 @@
     "reader_page_search": 5,
     "program_course_file_check": 4
    },
+   "collection": {
+    "program_reader": {
+     "records": 78,
+     "models": {
+      "claude-opus-5-5": 78
+     },
+     "run": "38984692790",
+     "at": "2026-10-17T00:06:04Z",
+     "cost_usd": 4.95,
+     "platform": "elumen"
+    },
+    "slo_read": {
+     "run": "42346413202",
+     "at": "2026-11-07T06:49:57Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/ltcc/read_42346413202_p2of2.json"
+    },
+    "plo_programs": 76,
+    "ppm_member": {
+     "host": "programmap.ltcc.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 87,
    "census_gap": 29,
    "census_passing": 58
@@ -4605,6 +5973,32 @@
     "reader_page_search": 25,
     "reconcile_steps": 16,
     "scorer_noncredit_hours": 6
+   },
+   "collection": {
+    "program_reader": {
+     "records": 150,
+     "models": {
+      "claude-opus-5-5": 150
+     },
+     "run": "38935141023",
+     "at": "2026-10-16T16:52:09Z",
+     "cost_usd": 10.1,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 150,
+    "ppm_member": {
+     "host": "mapsforsuccess.laney.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 174,
    "census_gap": 47,
@@ -4687,6 +6081,38 @@
     "program_course_file_check": 3,
     "reader_page_assignment": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 195,
+     "models": {
+      "claude-opus-5-5": 195
+     },
+     "run": "42892238131",
+     "at": "2026-11-10T20:10:35Z",
+     "cost_usd": 12.09,
+     "platform": "curriqunet"
+    },
+    "slo_read": {
+     "run": "41784805869",
+     "at": "2026-11-04T08:03:38Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/laspositas/read_41784805869_p3of3.json"
+    },
+    "plo_programs": 189,
+    "ppm_member": {
+     "host": "programmap.laspositascollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 153,
    "census_gap": 17,
    "census_passing": 136
@@ -4766,6 +6192,29 @@
     "program_course_file_check": 5,
     "reader_page_assignment": 5
    },
+   "collection": {
+    "program_reader": {
+     "records": 64,
+     "models": {
+      "claude-opus-5-5": 64
+     },
+     "run": "39006337658",
+     "at": "2026-10-17T05:28:43Z",
+     "cost_usd": 4.54,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 53,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 34,
    "census_gap": 22,
    "census_passing": 12
@@ -4843,6 +6292,32 @@
     "program_course_file_check": 8,
     "reader_page_assignment": 5,
     "reconcile_steps": 3
+   },
+   "collection": {
+    "program_reader": {
+     "records": 73,
+     "models": {
+      "claude-opus-5-5": 73
+     },
+     "run": "38979392604",
+     "at": "2026-10-16T23:05:16Z",
+     "cost_usd": 5.29,
+     "platform": "elumen"
+    },
+    "slo_read": null,
+    "plo_programs": 63,
+    "ppm_member": {
+     "host": "programmap.lemoorecollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 74,
    "census_gap": 13,
@@ -4924,6 +6399,32 @@
     "reader_page_assignment": 19,
     "reader_page_search": 17,
     "program_course_file_check": 6
+   },
+   "collection": {
+    "program_reader": {
+     "records": 368,
+     "models": {
+      "claude-opus-5-5": 368
+     },
+     "run": "39891611701",
+     "at": "2026-10-23T03:00:28Z",
+     "cost_usd": 19.18,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 347,
+    "ppm_member": {
+     "host": "programmap.lbcc.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 304,
    "census_gap": 28,
@@ -5007,6 +6508,32 @@
     "program_course_file_check": 2,
     "ge_units_steps": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 250,
+     "models": {
+      "claude-opus-5-5": 250
+     },
+     "run": "43212072618",
+     "at": "2026-11-12T11:50:06Z",
+     "cost_usd": 20.28,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 241,
+    "ppm_member": {
+     "host": "programmap.lacitycollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 248,
    "census_gap": 27,
    "census_passing": 221
@@ -5085,6 +6612,32 @@
     "program_course_file_check": 3,
     "reader_page_search": 3
    },
+   "collection": {
+    "program_reader": {
+     "records": 118,
+     "models": {
+      "claude-opus-5-5": 118
+     },
+     "run": "39006381839",
+     "at": "2026-10-17T05:29:31Z",
+     "cost_usd": 8.94,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 102,
+    "ppm_member": {
+     "host": "programmapper.lahc.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 121,
    "census_gap": 35,
    "census_passing": 86
@@ -5162,6 +6715,32 @@
     "reader_page_search": 12,
     "reconcile_steps": 9,
     "reader_page_assignment": 3
+   },
+   "collection": {
+    "program_reader": {
+     "records": 128,
+     "models": {
+      "claude-opus-5-5": 128
+     },
+     "run": "39054675770",
+     "at": "2026-10-17T17:40:22Z",
+     "cost_usd": 8.92,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 124,
+    "ppm_member": {
+     "host": "programmap.lamission.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 148,
    "census_gap": 34,
@@ -5247,6 +6826,32 @@
     "ge_units_steps": 1,
     "reader_page_search": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 194,
+     "models": {
+      "claude-opus-5-5": 194
+     },
+     "run": "43355018296",
+     "at": "2026-11-13T02:53:03Z",
+     "cost_usd": 15.01,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 153,
+    "ppm_member": {
+     "host": "programmapper.piercecollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 201,
    "census_gap": 43,
    "census_passing": 158
@@ -5327,6 +6932,32 @@
     "ge_units_steps": 2,
     "reader_page_search": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 94,
+     "models": {
+      "claude-opus-5-5": 94
+     },
+     "run": "39061735776",
+     "at": "2026-10-17T19:17:43Z",
+     "cost_usd": 6.0,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 83,
+    "ppm_member": {
+     "host": "programmap.lasc.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 132,
    "census_gap": 60,
    "census_passing": 72
@@ -5405,6 +7036,32 @@
     "reader_page_assignment": 11,
     "reader_page_search": 10
    },
+   "collection": {
+    "program_reader": {
+     "records": 178,
+     "models": {
+      "claude-opus-5-5": 178
+     },
+     "run": "39115770293",
+     "at": "2026-10-18T09:34:14Z",
+     "cost_usd": 14.2,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 153,
+    "ppm_member": {
+     "host": "programmap.lattc.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 210,
    "census_gap": 68,
    "census_passing": 142
@@ -5469,6 +7126,32 @@
    "levers": {
     "unpark": 35
    },
+   "collection": {
+    "program_reader": {
+     "records": 223,
+     "models": {
+      "claude-opus-5-5": 223
+     },
+     "run": "41188677929",
+     "at": "2026-10-31T09:28:39Z",
+     "cost_usd": 15.45,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 212,
+    "ppm_member": {
+     "host": "programmap.lavc.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 206,
    "census_gap": 20,
    "census_passing": 186
@@ -5532,6 +7215,29 @@
    "run": "42376691800",
    "levers": {
     "unpark": 59
+   },
+   "collection": {
+    "program_reader": {
+     "records": 83,
+     "models": {
+      "claude-opus-5-5": 83
+     },
+     "run": "42376691800",
+     "at": "2026-11-07T13:24:16Z",
+     "cost_usd": 6.01,
+     "platform": "elumen"
+    },
+    "slo_read": null,
+    "plo_programs": 82,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 103,
    "census_gap": 59,
@@ -5608,6 +7314,32 @@
     "reader_page_assignment": 8,
     "reader_page_search": 5,
     "ge_units_steps": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 106,
+     "models": {
+      "claude-opus-5-5": 106
+     },
+     "run": "38935148408",
+     "at": "2026-10-16T16:52:10Z",
+     "cost_usd": 6.89,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 98,
+    "ppm_member": {
+     "host": "programmap.maderacollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 111,
    "census_gap": 27,
@@ -5691,6 +7423,29 @@
     "program_course_file_check": 2,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 118,
+     "models": {
+      "claude-opus-5-5": 118
+     },
+     "run": "39006339282",
+     "at": "2026-10-17T05:28:48Z",
+     "cost_usd": 7.4,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 77,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 115,
    "census_gap": 43,
    "census_passing": 72
@@ -5703,13 +7458,13 @@
    "harvested": true,
    "slug": "merced",
    "programs": 182,
-   "passing": 141,
-   "gap": 41,
+   "passing": 144,
+   "gap": 38,
    "causes": {
     "no_closed_list": 10,
     "page_not_found": 9,
     "places_none": 1,
-    "unknown_without_live": 21
+    "unknown_without_live": 18
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -5736,7 +7491,7 @@
    "read_at": "2026-10-19T10:44:44Z",
    "read_kind": "capture",
    "cost_usd": 9.69,
-   "passed_at_read": 134,
+   "passed_at_read": 144,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -5749,9 +7504,9 @@
    "extracted": 163,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
-    "invented": 5,
-    "arithmetic": 25,
+    "coverage": 2,
+    "invented": 1,
+    "arithmetic": 18,
     "repeated": 0,
     "outcomes": 0
    },
@@ -5762,12 +7517,38 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1700.6,
-   "run": "39239492986",
+   "run": "43609965348",
    "levers": {
-    "reconcile_steps": 21,
+    "reconcile_steps": 18,
     "program_course_file_check": 10,
     "reader_page_search": 9,
     "reader_page_assignment": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 163,
+     "models": {
+      "claude-opus-5-5": 163
+     },
+     "run": "43609965348",
+     "at": "2026-10-19T10:44:44Z",
+     "cost_usd": 9.69,
+     "platform": "coursedog"
+    },
+    "slo_read": null,
+    "plo_programs": 0,
+    "ppm_member": {
+     "host": "merced.programmapper.com",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 165,
    "census_gap": 37,
@@ -5836,6 +7617,29 @@
    "levers": {
     "reconcile_steps": 10,
     "program_course_file_check": 2
+   },
+   "collection": {
+    "program_reader": {
+     "records": 81,
+     "models": {
+      "claude-opus-5-5": 81
+     },
+     "run": "38935152199",
+     "at": "2026-10-16T16:53:10Z",
+     "cost_usd": 6.13,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 11,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 82,
    "census_gap": 12,
@@ -5913,6 +7717,29 @@
     "reconcile_steps": 24,
     "reader_page_search": 19,
     "reader_page_assignment": 17
+   },
+   "collection": {
+    "program_reader": {
+     "records": 142,
+     "models": {
+      "claude-opus-5-5": 142
+     },
+     "run": "39746427354",
+     "at": "2026-10-22T08:18:02Z",
+     "cost_usd": 11.96,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 125,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 145,
    "census_gap": 61,
@@ -5996,6 +7823,38 @@
     "ge_units_steps": 3,
     "reader_page_assignment": 3
    },
+   "collection": {
+    "program_reader": {
+     "records": 108,
+     "models": {
+      "claude-opus-5-5": 108
+     },
+     "run": "39000023893",
+     "at": "2026-10-17T03:46:49Z",
+     "cost_usd": 7.56,
+     "platform": "elumen"
+    },
+    "slo_read": {
+     "run": "42186782928",
+     "at": "2026-11-06T09:16:18Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/mission/read_42186782928_p2of2.json"
+    },
+    "plo_programs": 106,
+    "ppm_member": {
+     "host": "programmaps.missioncollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 96,
    "census_gap": 25,
    "census_passing": 71
@@ -6075,6 +7934,38 @@
     "reader_page_assignment": 4,
     "program_course_file_check": 3
    },
+   "collection": {
+    "program_reader": {
+     "records": 189,
+     "models": {
+      "claude-opus-5-5": 189
+     },
+     "run": "38477845911",
+     "at": "2026-10-13T22:28:04Z",
+     "cost_usd": 12.03,
+     "platform": "elumen"
+    },
+    "slo_read": {
+     "run": "38515689944",
+     "at": "2026-10-14T06:18:39Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/mjc/read_38515689944_p3of3.json"
+    },
+    "plo_programs": 185,
+    "ppm_member": {
+     "host": "programmap.mjc.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 192,
    "census_gap": 32,
    "census_passing": 160
@@ -6138,6 +8029,29 @@
    "run": "42195216637",
    "levers": {
     "unpark": 21
+   },
+   "collection": {
+    "program_reader": {
+     "records": 205,
+     "models": {
+      "claude-opus-5-5": 202
+     },
+     "run": "42195216637",
+     "at": "2026-11-06T09:29:47Z",
+     "cost_usd": 13.48,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 198,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 205,
    "census_gap": 22,
@@ -6217,6 +8131,32 @@
     "program_course_file_check": 6,
     "reader_page_search": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 144,
+     "models": {
+      "claude-opus-5-5": 144
+     },
+     "run": "39600815599",
+     "at": "2026-10-21T12:37:11Z",
+     "cost_usd": 10.4,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 135,
+    "ppm_member": {
+     "host": "programmap.moorparkcollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 142,
    "census_gap": 35,
    "census_passing": 107
@@ -6229,12 +8169,13 @@
    "harvested": true,
    "slug": "moreno_valley",
    "programs": 149,
-   "passing": 133,
-   "gap": 16,
+   "passing": 134,
+   "gap": 15,
    "causes": {
     "no_closed_list": 5,
     "page_not_found": 4,
-    "unknown_without_live": 7
+    "places_none": 1,
+    "unknown_without_live": 5
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -6263,7 +8204,7 @@
    "read_at": "2026-10-11T04:17:25Z",
    "read_kind": "capture",
    "cost_usd": 9.6,
-   "passed_at_read": 132,
+   "passed_at_read": 134,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6276,9 +8217,9 @@
    "extracted": 140,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
-    "invented": 2,
-    "arithmetic": 6,
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 5,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6289,11 +8230,41 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1237.7,
-   "run": "38111056537",
+   "run": "43609968396",
    "levers": {
-    "reconcile_steps": 7,
     "program_course_file_check": 5,
-    "reader_page_search": 4
+    "reconcile_steps": 5,
+    "reader_page_search": 4,
+    "reader_page_assignment": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 140,
+     "models": {
+      "claude-opus-5-5": 140
+     },
+     "run": "43609968396",
+     "at": "2026-10-11T04:17:25Z",
+     "cost_usd": 9.6,
+     "platform": "curriqunet"
+    },
+    "slo_read": {
+     "run": "43532407553",
+     "at": "2026-11-14T02:18:04Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/rccd/read_43532407553_p4of4.json"
+    },
+    "plo_programs": 139,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 149,
    "census_gap": 17,
@@ -6376,6 +8347,32 @@
     "reconcile_steps": 24,
     "reader_page_assignment": 13
    },
+   "collection": {
+    "program_reader": {
+     "records": 397,
+     "models": {
+      "claude-opus-5-5": 397
+     },
+     "run": "39891607837",
+     "at": "2026-10-23T02:51:00Z",
+     "cost_usd": 22.47,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 263,
+    "ppm_member": null,
+    "maps": {
+     "held": 2,
+     "on_records": 2,
+     "files": [
+      "kb/program_requirements_pilot/sequences/mtsac_03086.json",
+      "kb/program_requirements_pilot/sequences/mtsac_33876.json"
+     ]
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 384,
    "census_gap": 91,
    "census_passing": 293
@@ -6450,6 +8447,29 @@
     "program_course_file_check": 22,
     "reconcile_steps": 16,
     "reader_page_assignment": 3
+   },
+   "collection": {
+    "program_reader": {
+     "records": 116,
+     "models": {
+      "claude-opus-5-5": 116
+     },
+     "run": "42212319155",
+     "at": "2026-11-06T11:57:46Z",
+     "cost_usd": 9.28,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 2,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 134,
    "census_gap": 40,
@@ -6528,6 +8548,29 @@
     "reconcile_steps": 10,
     "reader_page_assignment": 4
    },
+   "collection": {
+    "program_reader": {
+     "records": 98,
+     "models": {
+      "claude-opus-5-5": 98
+     },
+     "run": "38748853261",
+     "at": "2026-10-15T14:10:14Z",
+     "cost_usd": 6.36,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 94,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 123,
    "census_gap": 43,
    "census_passing": 80
@@ -6540,13 +8583,13 @@
    "harvested": true,
    "slug": "norco",
    "programs": 161,
-   "passing": 128,
-   "gap": 33,
+   "passing": 130,
+   "gap": 31,
    "causes": {
     "no_closed_list": 11,
     "page_not_found": 2,
     "places_none": 1,
-    "unknown_without_live": 19
+    "unknown_without_live": 17
    },
    "census_causes": {
     "course_added": 1,
@@ -6576,7 +8619,7 @@
    "read_at": "2026-10-11T04:56:59Z",
    "read_kind": "capture",
    "cost_usd": 10.12,
-   "passed_at_read": 126,
+   "passed_at_read": 130,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6589,9 +8632,9 @@
    "extracted": 148,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
-    "invented": 4,
-    "arithmetic": 20,
+    "coverage": 2,
+    "invented": 2,
+    "arithmetic": 17,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6602,12 +8645,41 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1379.7,
-   "run": "38113150250",
+   "run": "43609971090",
    "levers": {
-    "reconcile_steps": 19,
+    "reconcile_steps": 17,
     "program_course_file_check": 11,
     "reader_page_search": 2,
     "reader_page_assignment": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 148,
+     "models": {
+      "claude-opus-5-5": 148
+     },
+     "run": "43609971090",
+     "at": "2026-10-11T04:56:59Z",
+     "cost_usd": 10.12,
+     "platform": "curriqunet"
+    },
+    "slo_read": {
+     "run": "43532407553",
+     "at": "2026-11-14T02:18:04Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/rccd/read_43532407553_p4of4.json"
+    },
+    "plo_programs": 145,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 161,
    "census_gap": 33,
@@ -6684,6 +8756,29 @@
     "program_course_file_check": 8,
     "reader_page_assignment": 4,
     "reconcile_steps": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 82,
+     "models": {
+      "claude-opus-5-5": 82
+     },
+     "run": "43342034608",
+     "at": "2026-11-13T01:05:23Z",
+     "cost_usd": 3.66,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 0,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 107,
    "census_gap": 32,
@@ -6764,6 +8859,29 @@
     "reader_page_assignment": 12,
     "reconcile_steps": 5,
     "ge_units_steps": 3
+   },
+   "collection": {
+    "program_reader": {
+     "records": 146,
+     "models": {
+      "claude-opus-5-5": 146
+     },
+     "run": "39063337090",
+     "at": "2026-10-17T19:39:44Z",
+     "cost_usd": 10.02,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 127,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 202,
    "census_gap": 76,
@@ -6850,6 +8968,38 @@
     "ge_units_steps": 12,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 274,
+     "models": {
+      "claude-opus-5-5": 274
+     },
+     "run": "43136182950",
+     "at": "2026-11-12T01:45:35Z",
+     "cost_usd": 19.44,
+     "platform": "courseleaf"
+    },
+    "slo_read": {
+     "run": "42585338847",
+     "at": "2026-11-09T10:10:28Z",
+     "system": "courseleaf",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/cccd/read_42585338847_p4of4.json"
+    },
+    "plo_programs": 261,
+    "ppm_member": {
+     "host": "programmap.orangecoastcollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 317,
    "census_gap": 101,
    "census_passing": 216
@@ -6924,6 +9074,32 @@
     "reader_page_search": 12,
     "reader_page_assignment": 2,
     "program_course_file_check": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 120,
+     "models": {
+      "claude-opus-5-5": 120
+     },
+     "run": "39612119359",
+     "at": "2026-10-21T13:57:35Z",
+     "cost_usd": 8.98,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 118,
+    "ppm_member": {
+     "host": "oxnard.programmapper.com",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 85,
    "census_gap": 23,
@@ -7004,6 +9180,29 @@
     "reader_page_search": 2,
     "program_course_file_check": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 66,
+     "models": {
+      "claude-opus-5-5": 66
+     },
+     "run": "39852997888",
+     "at": "2026-10-22T20:58:06Z",
+     "cost_usd": 5.08,
+     "platform": "acalog"
+    },
+    "slo_read": null,
+    "plo_programs": 64,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 62,
    "census_gap": 28,
    "census_passing": 34
@@ -7079,6 +9278,32 @@
     "reconcile_steps": 16,
     "program_course_file_check": 11,
     "reader_page_assignment": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 282,
+     "models": {
+      "claude-opus-5-5": 282
+     },
+     "run": "42371822077",
+     "at": "2026-11-07T12:19:04Z",
+     "cost_usd": 18.75,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 258,
+    "ppm_member": {
+     "host": "programmap.palomar.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 247,
    "census_gap": 27,
@@ -7160,6 +9385,32 @@
     "reconcile_steps": 18,
     "reader_page_assignment": 4,
     "ge_units_steps": 2
+   },
+   "collection": {
+    "program_reader": {
+     "records": 297,
+     "models": {
+      "claude-opus-5-5": 297
+     },
+     "run": "39758679671",
+     "at": "2026-10-22T09:54:20Z",
+     "cost_usd": 20.91,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 287,
+    "ppm_member": {
+     "host": "pasadena-city.programmapper.ws",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 357,
    "census_gap": 116,
@@ -7243,6 +9494,32 @@
     "ge_units_steps": 2,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 82,
+     "models": {
+      "claude-opus-5-5": 82
+     },
+     "run": "39046786897",
+     "at": "2026-10-17T15:51:20Z",
+     "cost_usd": 6.13,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 65,
+    "ppm_member": {
+     "host": "pathwaysmap.portervillecollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 74,
    "census_gap": 32,
    "census_passing": 42
@@ -7321,6 +9598,32 @@
     "reader_page_search": 4,
     "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 196,
+     "models": {
+      "claude-opus-5-5": 196
+     },
+     "run": "39616074283",
+     "at": "2026-10-21T14:22:23Z",
+     "cost_usd": 11.18,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 6,
+    "ppm_member": {
+     "host": "programmap.reedleycollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 211,
    "census_gap": 36,
@@ -7402,6 +9705,29 @@
     "reader_page_assignment": 4,
     "ge_units_steps": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 292,
+     "models": {
+      "claude-opus-5-5": 292
+     },
+     "run": "43154073220",
+     "at": "2026-11-12T04:22:11Z",
+     "cost_usd": 18.94,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 0,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 321,
    "census_gap": 45,
    "census_passing": 276
@@ -7414,12 +9740,12 @@
    "harvested": true,
    "slug": "riverside_city",
    "programs": 268,
-   "passing": 222,
-   "gap": 46,
+   "passing": 230,
+   "gap": 38,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 18,
-    "unknown_without_live": 22
+    "unknown_without_live": 14
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -7446,7 +9772,7 @@
    "read_at": "2026-10-11T03:28:38Z",
    "read_kind": "capture",
    "cost_usd": 15.03,
-   "passed_at_read": 221,
+   "passed_at_read": 229,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -7459,9 +9785,9 @@
    "extracted": 244,
    "errors": 0,
    "failed_checks": {
-    "coverage": 9,
-    "invented": 9,
-    "arithmetic": 15,
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 14,
     "repeated": 0,
     "outcomes": 1
    },
@@ -7472,11 +9798,40 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 2130.5,
-   "run": "38108461470",
+   "run": "43605883626",
    "levers": {
-    "reconcile_steps": 22,
     "reader_page_search": 18,
+    "reconcile_steps": 14,
     "program_course_file_check": 6
+   },
+   "collection": {
+    "program_reader": {
+     "records": 244,
+     "models": {
+      "claude-opus-5-5": 244
+     },
+     "run": "43605883626",
+     "at": "2026-10-11T03:28:38Z",
+     "cost_usd": 15.03,
+     "platform": "curriqunet"
+    },
+    "slo_read": {
+     "run": "43532407553",
+     "at": "2026-11-14T02:18:04Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/rccd/read_43532407553_p4of4.json"
+    },
+    "plo_programs": 244,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 205,
    "census_gap": 38,
@@ -7558,6 +9913,29 @@
     "ge_units_steps": 14,
     "reader_page_search": 3
    },
+   "collection": {
+    "program_reader": {
+     "records": 204,
+     "models": {
+      "claude-opus-5-5": 204
+     },
+     "run": "39047070975",
+     "at": "2026-10-17T15:55:20Z",
+     "cost_usd": 18.5,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 181,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 221,
    "census_gap": 74,
    "census_passing": 147
@@ -7636,6 +10014,32 @@
     "reader_page_assignment": 10,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 321,
+     "models": {
+      "claude-opus-5-5": 321
+     },
+     "run": "38843470509",
+     "at": "2026-10-16T03:03:07Z",
+     "cost_usd": 25.88,
+     "platform": "curriqunet"
+    },
+    "slo_read": null,
+    "plo_programs": 311,
+    "ppm_member": {
+     "host": "learningpathways.saddleback.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 259,
    "census_gap": 57,
    "census_passing": 202
@@ -7648,14 +10052,14 @@
    "harvested": true,
    "slug": "san_bernardino_valley",
    "programs": 236,
-   "passing": 161,
-   "gap": 75,
+   "passing": 162,
+   "gap": 74,
    "causes": {
     "found_not_extracted": 4,
     "no_closed_list": 4,
     "page_not_found": 3,
     "places_none": 25,
-    "unknown_without_live": 39
+    "unknown_without_live": 38
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -7684,7 +10088,7 @@
    "read_at": "2026-11-13T02:52:38Z",
    "read_kind": "capture",
    "cost_usd": 15.44,
-   "passed_at_read": 161,
+   "passed_at_read": 162,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -7707,8 +10111,8 @@
    "extracted": 225,
    "errors": 0,
    "failed_checks": {
-    "coverage": 30,
-    "invented": 5,
+    "coverage": 27,
+    "invented": 2,
     "arithmetic": 61,
     "repeated": 0,
     "outcomes": 0
@@ -7720,15 +10124,38 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1514.5,
-   "run": "43355003065",
+   "run": "43609973859",
    "levers": {
     "reader_page_assignment": 25,
-    "reconcile_steps": 22,
+    "reconcile_steps": 21,
     "ge_units_steps": 12,
     "scorer_noncredit_hours": 5,
     "paid_read": 4,
     "program_course_file_check": 4,
     "reader_page_search": 3
+   },
+   "collection": {
+    "program_reader": {
+     "records": 225,
+     "models": {
+      "claude-opus-5-5": 225
+     },
+     "run": "43609973859",
+     "at": "2026-11-13T02:52:38Z",
+     "cost_usd": 15.44,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 200,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 203,
    "census_gap": 62,
@@ -7808,6 +10235,35 @@
     "reader_page_assignment": 4,
     "reconcile_steps": 4
    },
+   "collection": {
+    "program_reader": {
+     "records": 171,
+     "models": {
+      "claude-opus-5-5": 171
+     },
+     "run": "38347787891",
+     "at": "2026-10-13T04:43:55Z",
+     "cost_usd": 12.88,
+     "platform": "curriqunet"
+    },
+    "slo_read": {
+     "run": "43566273142",
+     "at": "2026-11-14T10:20:16Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/sdccd/read_43566273142_p4of4.json"
+    },
+    "plo_programs": 144,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 186,
    "census_gap": 25,
    "census_passing": 161
@@ -7879,6 +10335,29 @@
     "program_course_file_check": 24,
     "reader_page_assignment": 19,
     "reader_page_search": 11
+   },
+   "collection": {
+    "program_reader": {
+     "records": 109,
+     "models": {
+      "claude-opus-5-5": 109
+     },
+     "run": "39035224783",
+     "at": "2026-10-17T13:07:55Z",
+     "cost_usd": 4.95,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 0,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 138,
    "census_gap": 51,
@@ -7958,6 +10437,35 @@
     "reader_page_assignment": 2,
     "reconcile_steps": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 177,
+     "models": {
+      "claude-opus-5-5": 177
+     },
+     "run": "38322747831",
+     "at": "2026-10-12T23:34:09Z",
+     "cost_usd": 15.34,
+     "platform": "curriqunet"
+    },
+    "slo_read": {
+     "run": "43566273142",
+     "at": "2026-11-14T10:20:16Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/sdccd/read_43566273142_p4of4.json"
+    },
+    "plo_programs": 168,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 179,
    "census_gap": 17,
    "census_passing": 162
@@ -8031,6 +10539,38 @@
     "program_course_file_check": 22,
     "reader_page_search": 4,
     "reconcile_steps": 3
+   },
+   "collection": {
+    "program_reader": {
+     "records": 120,
+     "models": {
+      "claude-opus-5-5": 120
+     },
+     "run": "38355780721",
+     "at": "2026-10-13T06:17:41Z",
+     "cost_usd": 9.65,
+     "platform": "curriqunet"
+    },
+    "slo_read": {
+     "run": "43566273142",
+     "at": "2026-11-14T10:20:16Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/sdccd/read_43566273142_p4of4.json"
+    },
+    "plo_programs": 118,
+    "ppm_member": {
+     "host": "san-diego-miramar.programmapper.com",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 124,
    "census_gap": 26,
@@ -8108,6 +10648,32 @@
     "program_course_file_check": 18,
     "reconcile_steps": 2,
     "reader_page_assignment": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 203,
+     "models": {
+      "claude-opus-5-5": 203
+     },
+     "run": "40523400149",
+     "at": "2026-10-27T14:43:03Z",
+     "cost_usd": 13.42,
+     "platform": "acalog"
+    },
+    "slo_read": null,
+    "plo_programs": 201,
+    "ppm_member": {
+     "host": "programmap.deltacollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 245,
    "census_gap": 50,
@@ -8199,6 +10765,32 @@
     "reader_page_search": 6,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 84,
+     "models": {
+      "claude-opus-5-5": 84
+     },
+     "run": "43357106423",
+     "at": "2026-11-13T03:11:34Z",
+     "cost_usd": 6.63,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 77,
+    "ppm_member": {
+     "host": "jaguarspot.sjcc.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 93,
    "census_gap": 58,
    "census_passing": 35
@@ -8280,6 +10872,35 @@
     "ge_units_steps": 1,
     "paid_read": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 347,
+     "models": {
+      "claude-opus-5-5": 346
+     },
+     "run": "38843461766",
+     "at": "2026-10-16T03:03:02Z",
+     "cost_usd": 22.03,
+     "platform": "curriqunet"
+    },
+    "slo_read": {
+     "run": "41589637097",
+     "at": "2026-11-03T08:08:41Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/sac/read_41589637097_p4of4.json"
+    },
+    "plo_programs": 278,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 368,
    "census_gap": 44,
    "census_passing": 324
@@ -8359,6 +10980,32 @@
     "reconcile_steps": 25,
     "reader_page_assignment": 7,
     "scorer_noncredit_hours": 2
+   },
+   "collection": {
+    "program_reader": {
+     "records": 254,
+     "models": {
+      "claude-opus-5-5": 254
+     },
+     "run": "39782741424",
+     "at": "2026-10-22T13:05:28Z",
+     "cost_usd": 18.39,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 248,
+    "ppm_member": {
+     "host": "degree-map.sbcc.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 294,
    "census_gap": 87,
@@ -8441,6 +11088,31 @@
     "reader_page_assignment": 13,
     "paid_read": 1,
     "reader_page_search": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 239,
+     "models": {
+      "claude-opus-5-5": 238
+     },
+     "run": "39567439681",
+     "at": "2026-10-21T08:13:16Z",
+     "cost_usd": 20.34,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 209,
+    "ppm_member": null,
+    "maps": {
+     "held": 1,
+     "on_records": 1,
+     "files": [
+      "kb/program_requirements_pilot/sequences/smc_43767.json"
+     ]
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 254,
    "census_gap": 72,
@@ -8534,6 +11206,32 @@
     "reader_page_search": 6,
     "program_course_file_check": 4
    },
+   "collection": {
+    "program_reader": {
+     "records": 268,
+     "models": {
+      "claude-opus-5-5": 268
+     },
+     "run": "39037637820",
+     "at": "2026-10-17T13:43:10Z",
+     "cost_usd": 22.48,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 213,
+    "ppm_member": {
+     "host": "programmap.santarosa.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 280,
    "census_gap": 89,
    "census_passing": 191
@@ -8624,6 +11322,29 @@
     "scorer_noncredit_hours": 8,
     "reader_page_assignment": 6
    },
+   "collection": {
+    "program_reader": {
+     "records": 222,
+     "models": {
+      "claude-opus-5-5": 222
+     },
+     "run": "43387912036",
+     "at": "2026-11-13T07:46:13Z",
+     "cost_usd": 16.03,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 1,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 241,
    "census_gap": 66,
    "census_passing": 175
@@ -8704,6 +11425,35 @@
     "program_course_file_check": 13,
     "reader_page_search": 13,
     "ge_units_steps": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 124,
+     "models": {
+      "claude-opus-5-5": 124
+     },
+     "run": "39006384701",
+     "at": "2026-10-17T05:29:29Z",
+     "cost_usd": 11.12,
+     "platform": "pdf"
+    },
+    "slo_read": {
+     "run": "43168135589",
+     "at": "2026-11-12T07:42:29Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/shasta/read_43168135589_p2of2.json"
+    },
+    "plo_programs": 82,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 138,
    "census_gap": 78,
@@ -8793,6 +11543,32 @@
     "reader_page_assignment": 9,
     "ge_units_steps": 3
    },
+   "collection": {
+    "program_reader": {
+     "records": 111,
+     "models": {
+      "claude-opus-5-5": 111
+     },
+     "run": "39993005180",
+     "at": "2026-10-23T17:14:18Z",
+     "cost_usd": 10.21,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 98,
+    "ppm_member": {
+     "host": "programmap.sierracollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 190,
    "census_gap": 105,
    "census_passing": 85
@@ -8877,6 +11653,32 @@
     "reader_page_assignment": 11,
     "reader_page_search": 5,
     "reconcile_steps": 2
+   },
+   "collection": {
+    "program_reader": {
+     "records": 53,
+     "models": {
+      "claude-opus-5-5": 53
+     },
+     "run": "39035209486",
+     "at": "2026-10-17T13:07:43Z",
+     "cost_usd": 3.83,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 39,
+    "ppm_member": {
+     "host": "programmapper.skylinecollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 122,
    "census_gap": 94,
@@ -8968,6 +11770,29 @@
     "program_course_file_check": 8,
     "reader_page_search": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 162,
+     "models": {
+      "claude-opus-5-5": 162
+     },
+     "run": "43355021555",
+     "at": "2026-11-13T02:52:52Z",
+     "cost_usd": 13.17,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 142,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 154,
    "census_gap": 39,
    "census_passing": 115
@@ -9055,6 +11880,29 @@
     "reader_page_search": 13,
     "scorer_noncredit_hours": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 220,
+     "models": {
+      "claude-opus-5-5": 220
+     },
+     "run": "38563578596",
+     "at": "2026-10-14T12:26:30Z",
+     "cost_usd": 13.77,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 156,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 251,
    "census_gap": 93,
    "census_passing": 158
@@ -9138,6 +11986,29 @@
     "ge_units_steps": 1,
     "paid_read": 1
    },
+   "collection": {
+    "program_reader": {
+     "records": 57,
+     "models": {
+      "claude-opus-5-5": 57
+     },
+     "run": "39259699774",
+     "at": "2026-10-19T13:24:33Z",
+     "cost_usd": 4.15,
+     "platform": "smartcatalog"
+    },
+    "slo_read": null,
+    "plo_programs": 10,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 77,
    "census_gap": 41,
    "census_passing": 36
@@ -9218,6 +12089,32 @@
     "reader_page_search": 5,
     "reader_page_assignment": 3,
     "scorer_noncredit_hours": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 173,
+     "models": {
+      "claude-opus-5-5": 173
+     },
+     "run": "39622549965",
+     "at": "2026-10-21T15:06:57Z",
+     "cost_usd": 12.5,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 171,
+    "ppm_member": {
+     "host": "programmap.venturacollege.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 177,
    "census_gap": 58,
@@ -9301,6 +12198,29 @@
     "reader_page_assignment": 8,
     "ge_units_steps": 2
    },
+   "collection": {
+    "program_reader": {
+     "records": 176,
+     "models": {
+      "claude-opus-5-5": 176
+     },
+     "run": "43215222441",
+     "at": "2026-11-12T12:11:04Z",
+     "cost_usd": 10.13,
+     "platform": "courseleaf"
+    },
+    "slo_read": null,
+    "plo_programs": 6,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 197,
    "census_gap": 68,
    "census_passing": 129
@@ -9380,6 +12300,32 @@
     "reader_page_assignment": 15,
     "reader_page_search": 14,
     "scorer_noncredit_hours": 5
+   },
+   "collection": {
+    "program_reader": {
+     "records": 214,
+     "models": {
+      "claude-opus-5-5": 214
+     },
+     "run": "39536207109",
+     "at": "2026-10-21T03:13:49Z",
+     "cost_usd": 14.97,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 196,
+    "ppm_member": {
+     "host": "programmap.wlac.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 233,
    "census_gap": 60,
@@ -9462,6 +12408,32 @@
     "paid_read": 3,
     "program_course_file_check": 3
    },
+   "collection": {
+    "program_reader": {
+     "records": 134,
+     "models": {
+      "claude-opus-5-5": 134
+     },
+     "run": "43142245126",
+     "at": "2026-11-12T02:37:11Z",
+     "cost_usd": 11.19,
+     "platform": "custom_html"
+    },
+    "slo_read": null,
+    "plo_programs": 133,
+    "ppm_member": {
+     "host": "programmapper.westvalley.edu",
+     "by": "programmapper.org/ppm-schools, copied 2026-10-21"
+    },
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
+   },
    "census_programs": 139,
    "census_gap": 22,
    "census_passing": 117
@@ -9533,6 +12505,29 @@
     "program_course_file_check": 4,
     "reconcile_steps": 2,
     "reader_page_assignment": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 65,
+     "models": {
+      "claude-opus-5-5": 65
+     },
+     "run": "39006340803",
+     "at": "2026-10-17T05:28:57Z",
+     "cost_usd": 4.7,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 62,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 69,
    "census_gap": 7,
@@ -9610,6 +12605,29 @@
     "program_course_file_check": 10,
     "reader_page_assignment": 4,
     "reader_page_search": 1
+   },
+   "collection": {
+    "program_reader": {
+     "records": 93,
+     "models": {
+      "claude-opus-5-5": 93
+     },
+     "run": "39006517642",
+     "at": "2026-10-17T05:31:43Z",
+     "cost_usd": 7.44,
+     "platform": "pdf"
+    },
+    "slo_read": null,
+    "plo_programs": 83,
+    "ppm_member": null,
+    "maps": {
+     "held": 0,
+     "on_records": 0,
+     "files": []
+    },
+    "integration": {
+     "state": "none_known"
+    }
    },
    "census_programs": 99,
    "census_gap": 25,
@@ -16340,5 +19358,38 @@
     "note": "Today public catalog pages are read; an API helps where pages block readers or catalogs are PDFs. No plan is recorded in the repo yet."
    }
   ]
+ },
+ "collection": {
+  "ppm_list": {
+   "file": "kb/supabase_program_source_ppm_hosts_s444.sql",
+   "by": "programmapper.org/ppm-schools, copied 2026-10-21",
+   "colleges": 60
+  },
+  "maps": {
+   "files": "kb/program_requirements_pilot/sequences/*.json",
+   "held": 4
+  },
+  "coci": {
+   "exports": [
+    "kb/reference/coci_course_list.xlsx",
+    "tmc/source_data/coci_program_export_2026-06-17.csv"
+   ],
+   "workflow": "COCI offerings sync"
+  },
+  "slo_reader": {
+   "script": "kb/_course_outcomes_read.py",
+   "workflow": "Course outcomes read",
+   "cost": "No model cost: the reader opens public pages and calls no model. Runner time is not recorded."
+  },
+  "program_reader": {
+   "scripts": "kb/_program_requirements_college.py (capture, extract, file)",
+   "workflows": [
+    "Program requirements, one college",
+    "Program requirements, a wave of colleges"
+   ]
+  },
+  "integration": {
+   "known": 0
+  }
  }
 }

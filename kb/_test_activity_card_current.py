@@ -6,7 +6,7 @@ authoritative Current the Annual Workplan tab shows, so the card stops drifting
 from the headline KPI:
   * mapped sub-activities (PID_TO_KPI_KEY) → the live MERGED headline KPI value
     (verbatim display string), metric_source='live';
-  * unmapped sub-activities with an EXPLICIT workplan_goals.current → that manual
+  * unmapped sub-activities with an EXPLICIT workplan_goals.cur_<year> → that manual
     value, metric_source='workplan';
   * everything else keeps its Excel kpi_metric (no regression).
 

@@ -90,8 +90,8 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    13.0,
-    16.0
+    16.0,
+    22.0
    ],
    "stated": [
     19.0,
@@ -99,7 +99,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 13.0-16.0; the catalog states 19.0-19.0"
+    "the blocks sum to 16.0-22.0; the catalog states 19.0-19.0"
    ]
   },
   "repeated": {
@@ -359,5 +359,6 @@
    "No general education pattern, degree total, outcomes or careers are printed in this Requisites section."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

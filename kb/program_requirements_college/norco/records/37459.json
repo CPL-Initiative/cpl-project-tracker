@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     24.0,
     24.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -218,5 +231,6 @@
    "Degree total is 60 CSU transferable units including major and Cal-GETC; major total stated as 24.00."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

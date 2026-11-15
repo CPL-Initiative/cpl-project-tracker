@@ -118,8 +118,24 @@
     strong: { word: "Confidence strong", test: function (c) { return level(c) === "strong"; } },
     partial: { word: "Confidence partial", test: function (c) { return level(c) === "partial"; } },
     limited: { word: "Confidence limited", test: function (c) { return level(c) === "limited"; } },
-    overall: { word: "Colleges with an overall bar", test: function (c, M) { return !!overallOf(M || VIEW.M, c); } }
+    overall: { word: "Colleges with an overall bar", test: function (c, M) { return !!overallOf(M || VIEW.M, c); } },
+    /* Program pathway maps (#3310, COBIx's review of #3316): the colleges whose term-by-term maps are committed, and
+       the colleges by mapState, so the statewide line's counts each open what they count. */
+    maps: { word: "Program maps held", test: function (c) { return ((c.collection || {}).maps || {}).held > 0; } },
+    /* Held by mapState (the mapper's member list or a registry map source) with no map committed yet, so the four
+       counts on the statewide line add up to every college (COBIx, 18:26Z on #3316). */
+    maps_published: { word: "Program maps: published, not yet committed", test: function (c, M) { return mapState(M || VIEW.M, c) === "held" && !(((c.collection || {}).maps || {}).held > 0); } },
+    maps_none: { word: "Program maps: none found when looked for", test: function (c, M) { return mapState(M || VIEW.M, c) === "none"; } },
+    maps_unknown: { word: "Program maps: not looked for yet", test: function (c, M) { return mapState(M || VIEW.M, c) === "unknown"; } }
   };
+  /* A college's program-maps state, the one rule the statewide line and the Program pathway maps card share (the card
+     reads it through its helpers): held when the mapper member list names the college, the registry holds a map source
+     or a map is committed; none when the registry's reader looked and found none; otherwise unknown. */
+  function mapState(M, c) {
+    var k = (c && c.collection) || {}, g = ((liveOf(M, c) || {}).registry) || null;
+    var reg = !g || g.row === false ? "unknown" : g.sequence_source ? "held" : g.sequence_checked ? "none" : "unknown";
+    return k.ppm_member || reg === "held" || ((k.maps || {}).held) ? "held" : reg === "none" ? "none" : "unknown";
+  }
   /* The level the builder wrote from the rule (rule.confidence); the page never derives one of its own. */
   function level(c) { return c && c.confidence ? c.confidence.level : null; }
   var LEVEL_RANK = { strong: 3, partial: 2, limited: 1 };
@@ -151,7 +167,8 @@
     var obj = function (v) { return v && typeof v === "object" && !Array.isArray(v) ? v : {}; };
     return { colleges: colleges, statewide: data.statewide || {}, rule: data.rule || {}, tba: data.tba || {},
       sources: data.sources || {}, written: data.written_at || "", fields: data.fields || {},
-      live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis), census_live: obj(data.census_live) };
+      live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis), census_live: obj(data.census_live),
+      collection: obj(data.collection) };   // the college cards' statewide facts (#3310)
   }
   function listFor(M, filter) {
     var f = FILTERS[filter] || FILTERS.all;
@@ -194,7 +211,6 @@
   function pc(v) { return v == null ? "" : Math.round(v * 100) + "%"; }
   /* A registry boolean in words: the registry records a link only when one is seen, so the word is "held". */
   function heldWord(v) { return v ? "held" : "not held"; }
-  function pathwayWord(g) { return g.sequence_source ? "held" : g.sequence_checked ? "none found when looked for" : "not looked for yet"; }
 
   /* ── slice 3: the catalog platform each harvested college's capture read (shareable), a filter of words ── */
   function platformsOf(M, filter) {
@@ -342,6 +358,30 @@
   function defaultSort(M) { return liveRead(M) ? { k: "overall", d: -1, auto: true } : { k: "pr", d: -1, auto: true }; }
   /* The three views beside the college list (slice 3; the districts S648), each at its own address. */
   var VIEWS = { districts: "Colleges by district", slos: "Colleges with collected SLOs", dictionary: "The data dictionary", apis: "The API checklist" };
+  /* Modules beside this file (#3310): each registers on window.CPL_CDC_EXT with its views (added to VIEWS, so each has
+     its own address), ledes, ready (it reads its own file), view, panel (sections on a college's panel) and statewide
+     (a card on the list's page). A module that fails to load leaves the page as it was. */
+  var EXT_FILES = [["commons_data_sharing.js", "CPL_CDC_SHARING"], ["commons_data_integrations.js", "CPL_CDC_INTEGRATIONS"]];
+  function exts() { return Array.isArray(window.CPL_CDC_EXT) ? window.CPL_CDC_EXT.filter(Boolean) : []; }
+  function extHost() { return { go: go }; }
+  function loadExts() {
+    var T = window.CPL_TABS;
+    /* One after another, so the views' menu keeps the order EXT_FILES gives. */
+    return EXT_FILES.reduce(function (p, f) {
+      return p.then(function () { return window[f[1]] || !(T && T.loadScript) ? null : new Promise(function (res) { T.loadScript(f[0], f[1], res); }); });
+    }, Promise.resolve()).then(function () {
+      return Promise.all(exts().map(function (x) {
+        Object.keys(x.views || {}).forEach(function (k) { if (!own(VIEWS, k)) VIEWS[k] = x.views[k]; });
+        return x.ready ? Promise.resolve(x.ready(window.fetch)).catch(function () { return null; }) : null;
+      }));
+    }).catch(function () { return null; });
+  }
+  function extCall(name, args) {
+    return exts().reduce(function (out, x) {
+      if (typeof x[name] !== "function") return out;
+      try { var r = x[name].apply(x, args); return out.concat(r == null ? [] : r); } catch (e) { return out; }
+    }, []);
+  }
   /* What a link opens in the side panel (Sam, in session, S649: "all links should open to the sidebar instead on new
      tab ... give the option to go to new tab from the sidebar"). Each is a word in the address after the college (or
      after a view): one that names an item takes it as the next word, a safe word (a control number, a key, a slug),
@@ -615,11 +655,10 @@
     }
     if (lv) cat.parts.push({ key: "registry", title: "What the program source registry holds (" + liveWords(M) + ")",
       lines: lg.row === false ? [["Registry row", "No registry row for this college"]]
-        : [["Catalog link", heldWord(lg.catalog_link)], ["Curriculum view", heldWord(lg.course_outline_link)], ["Pathway source", pathwayWord(lg)]],
+        : [["Catalog link", heldWord(lg.catalog_link)], ["Curriculum view", heldWord(lg.course_outline_link)]],   // the pathway source: its own card (#3310)
       stamp: { at: M.live.read_at, kind: "live read" } });
     if (lv) cat.src = (cat.src ? cat.src + "; " : "") + "live: " + liveSrc(M, "registry");
     L.push(cat);
-    L.push({ key: "ppm", group: "Collected", label: "Program Pathways Mapper (PPM)", tba: tbaOf(M, "ppm") });
     L.push({ key: "desc", group: "Connected", label: "Course descriptions", tba: tbaOf(M, "descriptions") });
     L.push({ key: "cpl", group: "Connected", label: "CPL and MAP", tba: tbaOf(M, "cpl") });
     L.push({ key: "mis", group: "Connected", label: "COMIS and MIS", tba: tbaOf(M, "mis") });
@@ -1071,6 +1110,31 @@
      the focus on open, Escape closes it and the focus returns to the word that opened it); a non-modal dialog, so the
      page beside it stays live (#3310). Its width lasts the visit; nothing is stored. ── */
   function section(h, kids) { return el("section", { cls: "cdd-psec" }, [el("h3", { text: h })].concat(kids)); }
+  /* The panel's further cards, each module its own file (#3310: How it's collected, Program pathway maps, Data
+     sources in commons_data_cards.js). A module loads the first time a panel draws, then the panel draws again; it
+     gets this module's helpers, so the look, the dates and the words stay one. Add a module with one row here. */
+  var CARD_MODULES = [["commons_data_cards.js", "CPL_COMMONS_DATA_CARDS"]];
+  function moreCards(M, c) {
+    var H = { el: el, section: section, dl: dl, when: when, day: day, fmt: fmt, liveOf: liveOf, liveRead: liveRead, liveWords: liveWords,
+      platformWord: platformWord, paneWord: paneWord, mapState: mapState, slugOf: slugOf };
+    return [].concat.apply([], CARD_MODULES.map(function (m) {
+      var mod = window[m[1]];
+      /* A card module that throws says so, quietly, on the panel and in the console (COBIx's review of #3316): a
+         broken card never reads as a college with nothing to show. */
+      if (mod && mod.sections) {
+        try { return mod.sections(M, c, H) || []; }
+        catch (e) {
+          try { if (window.console && console.warn) console.warn("College Data Collection: " + m[0] + " could not draw its cards for " + c.name, e); } catch (w) { /* no console */ }
+          return [el("p", { cls: "cdd-of", "data-card-error": m[0], text: "This card could not be shown." })];
+        }
+      }
+      if (window.CPL_TABS && window.CPL_TABS.loadScript && !moreCards[m[0]]) {
+        moreCards[m[0]] = true;
+        window.CPL_TABS.loadScript(m[0], m[1], function () { if (window[m[1]] && S.panel != null && VIEW.panel && !S.pane) drawPanel(); });
+      }
+      return [];
+    }));
+  }
   function panelBody(M, c, now) {
     var sp = c.spot_check, out = [];
     var ov = overallOf(M, c);
@@ -1100,6 +1164,7 @@
         return el("div", { cls: "cdd-pds", "data-ds": d.key }, kids);
       })));
     });
+    out = out.concat(moreCards(M, c));
     /* Dates: when the collection was read, spot-checked and scouted. Whether a person confirmed a record is never a
        headline (Sam, Nov 13, #3229: "downfocus on whether something has been reviewed"): the load time and the
        person-confirmed count sit in one quiet team-internal line under the dates. */
@@ -1126,6 +1191,7 @@
     /* Each source opens in this panel (S649); the capture's folder is what the capture holds, never a GitHub page. */
     var src = sourceWords(c).concat(SOURCE_KEYS.filter(function (k) { return sourceOf(M, c, k); }).map(function (k) { return paneWord(sourceOf(M, c, k).word, { k: "source", a: k }, c.id); }));
     if (sp && sp.settled_later) src.push(el("span", { text: "A later settlement beside the spot-check receipt" }));
+    out = out.concat(extCall("panel", [M, c, extHost()]));
     out.push(section("Sources", [el("ul", { cls: "cdd-srcs" }, src.map(function (s) { return el("li", null, [s]); }))]));
     return out;
   }
@@ -1298,11 +1364,13 @@
         : S.view === "slos" ? "The colleges whose course SLOs or objectives the live read holds: how many courses, how many sit on Active programs, and when each was loaded."
         : S.view === "dictionary" ? "Every dataset College Data Collection tracks: who holds it, how we get it today, what would improve it, how far it has come, and the evidence for each claim."
         : S.view === "apis" ? "Each API the datasets would connect through: who holds it, whether a connection is needed, its status and the evidence for that status."
+        : S.view ? exts().map(function (x) { return (x.ledes || {})[S.view]; }).filter(Boolean)[0] || ""
         : "Every college and continuing-education campus: what we have collected for it, how complete it is, how confident we are in it, and what is in the way." })
     ]));
     wrap.appendChild(viewNav());
     if (S.view) {
-      wrap.appendChild(S.view === "districts" ? districtsView(M) : S.view === "slos" ? slosView(M) : S.view === "dictionary" ? dictionaryView(M) : apisView(M));
+      wrap.appendChild(S.view === "districts" ? districtsView(M) : S.view === "slos" ? slosView(M) : S.view === "dictionary" ? dictionaryView(M) : S.view === "apis" ? apisView(M)
+        : extCall("view", [S.view, M, extHost()])[0] || tba("This view could not be drawn."));
       var vpage = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);
       root.appendChild(vpage);
       drawPanel(VIEW.now);   // no college on a view: the panel stays hidden and the page live, unless a source is open
@@ -1412,6 +1480,7 @@
     drawHead(); drawBody();
     list.appendChild(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "Colleges", tabindex: "0" }, [table]));
     wrap.appendChild(list);
+    extCall("statewide", [M, extHost()]).forEach(function (n) { wrap.appendChild(n); });
     wrap.appendChild(notes(M));
     wrap.appendChild(comingNext(M));
     var page = el("div", { cls: "cmn-page" }, [wrap, panelShell()]);   // the panel beside the wrapper, which stays live while it is open (#3310)
@@ -1423,7 +1492,8 @@
 
   /* The three views of the dashboard, as words: the list, the dictionary, the checklist. */
   function viewNav() {
-    var items = [["", "The college list"], ["districts", VIEWS.districts], ["slos", VIEWS.slos], ["dictionary", VIEWS.dictionary], ["apis", VIEWS.apis]];
+    var items = [["", "The college list"], ["districts", VIEWS.districts], ["slos", VIEWS.slos], ["dictionary", VIEWS.dictionary], ["apis", VIEWS.apis]]
+      .concat(exts().reduce(function (a, x) { return a.concat(Object.keys(x.views || {}).map(function (k) { return [k, VIEWS[k] || x.views[k]]; })); }, []));
     return el("nav", { cls: "cdd-views", "aria-label": "College Data Collection views" }, items.map(function (it) {
       var on = (S.view || "") === it[0];
       var a = el("a", { href: "#commons/data" + (it[0] ? "/" + it[0] : ""), cls: "cdd-viewword", "data-goto": it[0] || "list", "aria-current": on ? "page" : null, text: it[1] });
@@ -1630,6 +1700,26 @@
 
   /* What the mock shows beyond these views, each in one line with what it waits on: the builder's own reason where
      the file holds one, and the dictionary's stage where the doc names the dataset. No empty panel. */
+  /* The statewide program-maps line (COBIx's review of #3316): the committed maps (collection.maps.held), then the
+     colleges that publish maps not yet committed, none found when looked for, and not looked for yet. The four college
+     counts add up to every college, and each count is the word that opens the colleges it counts. A zero count is
+     plain text, since its list would be empty. The words match the Program pathway maps card. */
+  function mapsLine(M) {
+    var held = ((M.collection || {}).maps || {}).held || 0;
+    function n(f) { return listFor(M, f).length; }
+    function word(f, text) {
+      if (!n(f)) return el("span", { "data-zero": f, text: text });
+      var b = el("button", { type: "button", cls: "cmn-word", "data-filter": f, text: text });
+      b.addEventListener("click", function () { pick(f); });
+      return b;
+    }
+    return el("span", { "data-maps-line": "true" }, [
+      word("maps", fmt(held) + " term-by-term " + (held === 1 ? "map" : "maps") + " committed, at " + plural(n("maps"), "college", "colleges")),
+      "; ", word("maps_published", plural(n("maps_published"), "college", "colleges") + " publish maps not yet committed"),
+      "; ", word("maps_none", plural(n("maps_none"), "college", "colleges") + " none found when looked for"),
+      "; ", word("maps_unknown", plural(n("maps_unknown"), "college", "colleges") + " not looked for yet"),
+      ". Each college's Program pathway maps card says where and on what platform."]);
+  }
   function comingNext(M) {
     var D = Array.isArray((M.dictionary || {}).datasets) ? M.dictionary.datasets : [];
     function stage(name) { var x = D.filter(function (d) { return d.name === name; })[0]; return x && x.stage ? " Dictionary stage: " + x.stage + "." : ""; }
@@ -1642,7 +1732,7 @@
       ["Curriculum view and pathway source links per college", "The live registry says whether each is held, never its address. Waits on the live read carrying the links themselves; the catalog the capture read opens from the row, and each program still to pass opens its own catalog page from its cause."],
       ["The JST funnel",(tbaOf(M, "jst") || "Waits on an authorized-student feed.") + stage("JST authorizations")],
       ["SIS and curriculum system tiles", "Wait on the district profiles (#3198); a college's system stays unknown until its profile names it."],
-      ["Program Pathways Mapper reads per college", (tbaOf(M, "ppm") || "Waits on a per-college read of the committed term maps.") + stage("Program Pathways Mapper (PPM)")],
+      ["Program pathway maps per college", mapsLine(M)],
       ["Course descriptions per college", (tbaOf(M, "descriptions") || "Waits on the description classifier's counts (#3219).") + stage("Course descriptions")],
       ["MIS course matches per college", (tbaOf(M, "mis") || "Waits on a join of the committed MIS course file to each college.") + stage("COMIS / MIS data")],
       ["COE regional demand per college", (tbaOf(M, "coe") || "Waits on a per-college read of the regional crosswalk.") + stage("COE labor market data")]
@@ -1689,10 +1779,11 @@
   }
 
   function load() {
+    var ext = loadExts();
     return fetch(FILE, { cache: "no-store" }).then(function (r) {
       if (!r || !r.ok) throw new Error(FILE + " answered " + (r ? r.status : "nothing"));
       return r.json();
-    }).then(model);
+    }).then(function (d) { return ext.then(function () { return model(d); }); });
   }
   var cache = null;
   /* An address that names a college opens its panel; the panel's heading takes the focus, as a click would give it. */

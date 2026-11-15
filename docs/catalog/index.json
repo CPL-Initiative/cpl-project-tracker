@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 586,
+   "count": 587,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4705,6 +4705,22 @@
      "title": "A test file is a memory budget, and the process boundary is the only allocator",
      "type": "methodology",
      "updated": "2026-08-20"
+    },
+    {
+     "created": "2026-11-14",
+     "governs": [],
+     "path": "docs/kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "testing",
+      "matching",
+      "program-requirements",
+      "honors"
+     ],
+     "title": "A test must not take its own rule as the truth",
+     "type": "methodology",
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-08-25",
@@ -15970,7 +15986,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 74,
+   "count": 76,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16009,7 +16025,7 @@
      ],
      "title": "Annual Workplan Goals / adding, moving and counting sub-activities \u2014 lane state",
      "type": null,
-     "updated": "2026-10-20"
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-10-18",
@@ -16221,7 +16237,7 @@
      ],
      "title": "Governance & team enablement \u2014 lane state",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-08-28",
@@ -16279,7 +16295,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-14"
     },
     {
      "created": "2026-08-28",
@@ -16632,6 +16648,22 @@
      "updated": ""
     },
     {
+     "created": "2026-11-14",
+     "governs": [],
+     "path": "docs/reference/cdc_data_dictionary.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "commons",
+      "data-dictionary",
+      "data-sharing",
+      "privacy"
+     ],
+     "title": "College Data Collection: the data dictionary and data-sharing classes",
+     "type": null,
+     "updated": "2026-11-15"
+    },
+    {
      "created": "2026-11-11",
      "governs": [],
      "path": "docs/reference/conductor_mode.md",
@@ -16957,6 +16989,21 @@
      "updated": "2026-09-29"
     },
     {
+     "created": "2026-11-14",
+     "governs": [],
+     "path": "docs/reference/stack_scouting.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "conductor",
+      "governance-team-enablement",
+      "scouting"
+     ],
+     "title": "Stack scouting: one line per tool trial",
+     "type": null,
+     "updated": "2026-11-14"
+    },
+    {
      "created": "2026-11-11",
      "governs": [],
      "path": "docs/reference/canonical_credential_model.md",
@@ -17042,8 +17089,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 614,
+   "count": 615,
    "docs": [
+    {
+     "created": "2026-11-14",
+     "governs": [],
+     "n": 654,
+     "path": "docs/session_654_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 654 handoff (from SkyGodwit, S653)",
+     "type": null,
+     "updated": "2026-11-14"
+    },
     {
      "created": "2026-11-14",
      "governs": [],
@@ -27412,5 +27473,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1479
+ "total": 1483
 }

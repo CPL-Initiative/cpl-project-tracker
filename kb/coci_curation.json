@@ -1,7 +1,7 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-14T13:44:21Z",
+  "_synced_at": "2026-11-14T20:24:24Z",
   "count": 30715,
   "curations": {
     "AERO M1001": {
@@ -94904,9 +94904,10 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "HUMA M10ME": {
-      "merge_into": "HUMA M1110",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "honors_of": "HUMA M1110",
+      "merge_dismissed": "HUMA M10ME|HUMA M10OI|HUMA M1110",
+      "reviewed_by": "honors-s652@bot",
+      "reviewed_at": "2026-11-14T15:21:04.075029+00:00"
     },
     "HUMA M10MN": {
       "merge_into": "HUMA M1126",
@@ -95016,9 +95017,9 @@
     },
     "HUMA M1110": {
       "discipline": "Religious Studies",
-      "reviewed_by": "trailcrew-ccr3-s112@bot",
-      "reviewed_at": "2026-07-12T21:17:48.970211+00:00",
-      "unified_title": "World Religions (Honors)"
+      "reviewed_by": "honors-s652@bot",
+      "reviewed_at": "2026-11-14T18:44:02.349377+00:00",
+      "unified_title": "World Religions"
     },
     "HUMA M1111": {
       "unified_title": "E/W Culture/Civ from 1700",
@@ -117193,9 +117194,10 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "LIBR M1040": {
-      "unified_title": "Media & Information Literacy (Honors)",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "merge_dismissed": "LIBR M1040|LIBR M10CJ",
+      "reviewed_by": "honors-s652@bot",
+      "reviewed_at": "2026-11-14T18:44:02.349377+00:00",
+      "unified_title": "Media & Information Literacy"
     },
     "LIBR M1041": {
       "unified_title": "Intro Info Resources & Rsrch",
@@ -117349,9 +117351,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "LIBR M10CJ": {
-      "merge_into": "LIBR M1040",
-      "reviewed_by": "automerge-v1@bot",
-      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+      "honors_of": "LIBR M1040"
     },
     "LIBR M10CM": {
       "merge_into": "LIBR M1041",

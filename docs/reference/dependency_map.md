@@ -360,6 +360,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `*.full.json` | scripts: `kb/_ccr_trail.py` | — |
 | `.claude/commands/checkpoint.md` | scripts: `kb/_consolidation_loss_audit.py`, `kb/_doctrine_scenarios.py` | — |
 | `.claude/settings.json` | scripts: `scripts/check_hooks_live.py`, `scripts/install_prompt_guards.py` | scripts: `scripts/install_prompt_guards.py` |
+| `.github/pages_allowlist.txt` | scripts: `kb/_build_cdc_sharing.py` | — |
 | `/tmp/metrics_status` | workflows: `daily-dashboard.yml` | — |
 | `/tmp/scrape_detail` | workflows: `daily-dashboard.yml` | — |
 | `<date>-skyview-globe-prototype.html` | scripts: `prototype/globe/build_globe.py` | scripts: `prototype/globe/build_globe.py` |
@@ -450,6 +451,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/INDEX.md` | scripts: `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/doctrine.py` | — |
 | `docs/catalog/index.json` | tabs: `governance` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
+| `docs/reference/cdc_data_dictionary.md` | scripts: `kb/_build_cdc_sharing.py` | — |
 | `docs/reference/conductor_mode.md` | scripts: `kb/_docs_audit.py` | — |
 | `docs/reference/data_dictionary.md` | scripts: `kb/_build_commons_data_status.py` | — |
 | `docs/reference/data_sources.md` | scripts: `kb/_build_commons_data_status.py` | — |
@@ -622,6 +624,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_sync_moc_crosswalk.py` | workflows: `moc-crosswalk-sync.yml` | — |
 | `kb/_sync_peer_articulations.py` | workflows: `credential-catalog-sync.yml` | — |
 | `kb/_sync_program_checked.py` | workflows: `daily-dashboard.yml` | — |
+| `kb/_test_workplan_current_hybrid.py` | workflows: `js-tests.yml` | — |
 | `kb/_typesafe_cr_trial.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_typesafe_smoke.py` | workflows: `typesafe-smoke.yml` | — |
 | `kb/_xai_smoke.py` | workflows: `xai-smoke.yml` | — |
@@ -640,6 +643,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/ccr_cpl_funnel.json` | scripts: `kb/_build_ccr_cpl.py` | — |
 | `kb/ccr_doubt.json` | scripts: `kb/_build_commons_status.py` | scripts: `kb/_ccr_seed_recheck_dryrun.py` · committed by: `daily-dashboard.yml` |
 | `kb/ccr_procedures.json` | scripts: `kb/_ccr_seed_recheck_dryrun.py` | — |
+| `kb/cdc_data_dictionary.json` | scripts: `kb/_build_cdc_sharing.py` | — |
+| `kb/cdc_integrations.json` | scripts: `kb/_build_cdc_sharing.py` | — |
 | `kb/cer_classified.json` | scripts: `kb/_cer_procedures.py` | scripts: `kb/_cer_procedures.py` · committed by: `cer-procedures.yml` |
 | `kb/cer_procedures.json` | tabs: `exhibits` · scripts: `kb/_build_commons_status.py`, `kb/_cer_procedures.py`, `scripts/build_exhibits_list_preview.py` | — |
 | `kb/cer_procedures_out/latest.json` | tabs: `credential-reference`, `exhibits` · scripts: `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `scripts/build_exhibits_list_preview.py` | committed by: `cer-procedures.yml` |
@@ -793,6 +798,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot/records/*.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_pilot/registry_read.json` | scripts: `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_roep_display.py`, `kb/_program_requirements_dated_reads.py` | committed by: `program-requirements-dated-reads.yml` |
 | `kb/program_requirements_pilot/reviewed_readings.json` | scripts: `kb/_program_requirements_file.py`, `kb/_program_requirements_load.py` | — |
+| `kb/program_requirements_pilot/sequences/*.json` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/ivc_all_program_maps_p1.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/mtsac_gps_n0486.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/mtsac_gps_s0401.json` | scripts: `kb/_program_map_parse.py` | — |
@@ -829,7 +835,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/cid_descriptors.json` | tabs: `canonical-subj4` · scripts: `excel_to_dashboard.py`, `kb/_add_descriptions.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_cr_reference.py`, `kb/_jev_agri_families.py`, `kb/_overmerge_dryrun.py`, `kb/_preseed_null_issuers.py`, `kb/_reclustering_s648_dryrun.py`, `kb/_row_audit.py`, `kb/_seed_authority_codes.py`, `kb/_seed_coci_courses.py`, `kb/_seed_cx_common_courses.py`, `kb/_subj4_dryrun.py`, `kb/_suggest_unclassified.py`, `tmc/_parse_tmc_pdfs.py` | — |
 | `kb/reference/cip_cte_certified_260715.json` | scripts: `kb/_build_cip_crosswalk.py` | — |
 | `kb/reference/cip_searchable_260715.xlsx` | scripts: `kb/_build_cip_crosswalk.py` | — |
-| `kb/reference/coci_course_list.xlsx` | scripts: `chatbox/build_coci_offerings.py`, `excel_to_dashboard.py`, `kb/_analyze_witness_kinship.py`, `kb/_apply_crossdisc_remint.py`, `kb/_audit_control_number_claims.py`, `kb/_audit_subject_map.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_cip_fitcheck.py`, `kb/_build_coci_lookup.py`, `kb/_build_college_courses.py`, `kb/_build_course_top_consensus.py`, `kb/_build_cpl_pathway_ccr.py`, `kb/_build_esl_fold_spotcheck.py`, `kb/_build_program_course_graph.py`, `kb/_crossdisc_dryrun.py`, `kb/_join_cid_articulations.py`, `kb/_overmerge_dryrun.py`, `kb/_reclustering_s648_dryrun.py`, `kb/_remint_apply.py`, `kb/_remint_dryrun.py`, `kb/_suggest_unclassified.py`, `tmc/_build_college_courses.py` | — |
+| `kb/reference/coci_course_list.xlsx` | scripts: `chatbox/build_coci_offerings.py`, `excel_to_dashboard.py`, `kb/_analyze_witness_kinship.py`, `kb/_apply_crossdisc_remint.py`, `kb/_audit_control_number_claims.py`, `kb/_audit_subject_map.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_cip_fitcheck.py`, `kb/_build_coci_lookup.py`, `kb/_build_college_courses.py`, `kb/_build_commons_data_status.py`, `kb/_build_course_top_consensus.py`, `kb/_build_cpl_pathway_ccr.py`, `kb/_build_esl_fold_spotcheck.py`, `kb/_build_program_course_graph.py`, `kb/_crossdisc_dryrun.py`, `kb/_join_cid_articulations.py`, `kb/_overmerge_dryrun.py`, `kb/_reclustering_s648_dryrun.py`, `kb/_remint_apply.py`, `kb/_remint_dryrun.py`, `kb/_suggest_unclassified.py`, `tmc/_build_college_courses.py` | — |
 | `kb/reference/coci_courses.json` | scripts: `excel_to_dashboard.py`, `kb/_identities_rebuild.py`, `kb/_identities_rekey_dryrun.py`, `kb/_seed_coci_articulations.py`, `kb/_seed_coci_courses.py` | scripts: `kb/_seed_coci_courses.py` |
 | `kb/reference/coci_program_course_file.csv` | none found | committed by: `program-course-fetch.yml` |
 | `kb/reference/coci_program_file.csv` | none found | committed by: `program-course-fetch.yml` |
@@ -867,6 +873,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/spot_checks/*.check.json` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/spot_checks/README.md` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/statewide_exhibit_categories.json` | scripts: `excel_to_dashboard.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_seed_statewide_categories.py` | scripts: `kb/_seed_statewide_categories.py` |
+| `kb/status/cdc_integrations.json` | modules: `commons_data_integrations.js` · scripts: `kb/_build_cdc_sharing.py` | — |
+| `kb/status/cdc_sharing.json` | modules: `commons_data_sharing.js` · scripts: `kb/_build_cdc_sharing.py` | — |
 | `kb/status/commons.json` | tabs: `canonical-subj4`, `coci-lookup`, `cpl-pathways`, `cr-reference`, `exhibits`, `library`, `program-requirements` · scripts: `kb/_build_commons_status.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/status/commons_data.json` | tabs: `commons` · scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/status/commons_history.json` | scripts: `kb/_build_commons_status.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
@@ -1063,13 +1071,20 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/alias_chain_single_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
 | `tests/anchor_rekey_dryrun_test.py` | workflows: `js-tests.yml` | — |
+| `tests/annual_goals_activity_grouping_test.py` | workflows: `js-tests.yml` | — |
+| `tests/annual_goals_contrast_test.py` | workflows: `js-tests.yml` | — |
+| `tests/annual_goals_reflect_all_projects_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ap_official_titles_test.py` | workflows: `js-tests.yml` | — |
 | `tests/apply_concurrency_test.py` | workflows: `js-tests.yml` | — |
 | `tests/athl_four_remint_test.py` | workflows: `js-tests.yml` | — |
+| `tests/authority_codes_seed_test.py` | workflows: `js-tests.yml` | — |
 | `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
+| `tests/authority_recode_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/bash_read_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/browser_install_single_source_test.py` | workflows: `js-tests.yml` | — |
+| `tests/budget_ledger_structure_test.py` | workflows: `js-tests.yml` | — |
 | `tests/budget_section_first_light_test.py` | workflows: `js-tests.yml` | — |
+| `tests/ccc_metric_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_cpl_payload_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_cpl_universe_members_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_cpl_universe_test.py` | workflows: `js-tests.yml` | — |
@@ -1080,6 +1095,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/ccr_sky_payload_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_members_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_orbits_test.py` | workflows: `js-tests.yml` | — |
+| `tests/cdc_sharing_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_classifier_rules_size_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_decision_apply_retry_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_decision_apply_test.py` | workflows: `js-tests.yml` | — |
@@ -1112,7 +1128,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/course_outline_registry_fill_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_title_cleanup_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_title_mojibake_test.py` | workflows: `js-tests.yml` | — |
+| `tests/cpl_pathway_membership_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cred_rename_fold_issuer_test.py` | workflows: `js-tests.yml` | — |
+| `tests/cred_rename_row_move_receipt_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_catalog_sync_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_catalog_widening_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_family_apply_test.py` | workflows: `js-tests.yml` | — |
@@ -1128,7 +1146,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/csr_quarterly_probe_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_trail_rules_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ctdl_exchange_seed_test.py` | workflows: `js-tests.yml` | — |
-| `tests/custom_report_payload_test.py` | workflows: `map-custom-report-load.yml` | — |
+| `tests/custom_report_duplicate_view_test.py` | workflows: `js-tests.yml` | — |
+| `tests/custom_report_payload_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/custom_report_response_test.py` | workflows: `js-tests.yml` | — |
 | `tests/daily_scrape_fails_loudly_test.py` | workflows: `js-tests.yml` | — |
 | `tests/dependency_map_test.py` | workflows: `js-tests.yml` | — |
@@ -1146,6 +1165,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/esl_relevel_bands_test.py` | workflows: `js-tests.yml` | — |
 | `tests/esl_sheet_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/eths_remint_test.py` | workflows: `js-tests.yml` | — |
+| `tests/every_test_runs_test.py` | workflows: `js-tests.yml` | — |
+| `tests/exhibit_reanalysis_checks_test.py` | workflows: `js-tests.yml` | — |
 | `tests/exhibit_reanalysis_jev_test.py` | workflows: `js-tests.yml` | — |
 | `tests/exhibit_slo_neighbors_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/exhibit_subject_fill_test.py` | workflows: `js-tests.yml` | — |
@@ -1155,9 +1176,14 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/fold_issuer_single_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/fold_unclassified_test.py` | workflows: `js-tests.yml` | — |
 | `tests/funding_career_import_test.py` | workflows: `js-tests.yml` | — |
+| `tests/funding_config_edit_apply_test.py` | workflows: `js-tests.yml` | — |
+| `tests/funding_consolidated_measures_test.py` | workflows: `js-tests.yml` | — |
+| `tests/funding_cpl_types_test.py` | workflows: `js-tests.yml` | — |
+| `tests/funding_cr_backlog_test.py` | workflows: `js-tests.yml` | — |
 | `tests/funding_name_resolver_test.py` | workflows: `js-tests.yml` | — |
 | `tests/funding_nc_counts_test.py` | workflows: `js-tests.yml` | — |
 | `tests/funding_origination_test.py` | workflows: `js-tests.yml` | — |
+| `tests/funding_portal_applied_test.py` | workflows: `js-tests.yml` | — |
 | `tests/glyph_sweep_test.py` | workflows: `js-tests.yml` | — |
 | `tests/governance_docs_panel.test.js` | workflows: `js-tests.yml` | — |
 | `tests/harvest_gap_census_test.py` | workflows: `js-tests.yml` | — |
@@ -1187,15 +1213,18 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/merge_read_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mid_outcomes_compare_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mid_short_code_gate_test.py` | workflows: `js-tests.yml` | — |
+| `tests/mojibake_repair_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mq_title5_rename_test.py` | workflows: `js-tests.yml` | — |
 | `tests/next_slo_colleges_test.py` | workflows: `js-tests.yml` | — |
 | `tests/occupation_matcher_stemming_test.py` | workflows: `js-tests.yml` | — |
 | `tests/orphan_parent_worklist_test.py` | workflows: `js-tests.yml` | — |
 | `tests/pages_allowlist.test.js` | workflows: `js-tests.yml` | — |
 | `tests/partner_crosswalk_test.py` | workflows: `js-tests.yml` | — |
+| `tests/powershell_ascii_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_course_graph_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_courses_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_map_parse_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_record_verdicts_sql_test.py` | workflows: `js-tests.yml` | — |
@@ -1203,7 +1232,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_dated_reads_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_display_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_extract_halt_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_extract_schema_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_extraction_gate_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_fragment_path_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_heading_agreement_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pdf_numbers_after_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
@@ -1217,30 +1248,45 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/rekey_kb_curation_chain_test.py` | workflows: `js-tests.yml` | — |
 | `tests/remint_blast_radius_test.py` | workflows: `js-tests.yml` | — |
 | `tests/roep_display_test.py` | workflows: `js-tests.yml` | — |
+| `tests/row_audit_subject_outlier_test.py` | workflows: `js-tests.yml` | — |
+| `tests/row_audit_top_source_score_test.py` | workflows: `js-tests.yml` | — |
 | `tests/run.js` | workflows: `js-tests.yml` | — |
 | `tests/second_reader_test.py` | workflows: `js-tests.yml` | — |
+| `tests/service_key_environment_test.py` | workflows: `js-tests.yml` | — |
 | `tests/sheet181_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
 | `tests/skyview_built_from_source_test.py` | workflows: `js-tests.yml` | — |
+| `tests/standards_2_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
+| `tests/standards_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
 | `tests/statewide_cid_hold_test.py` | workflows: `js-tests.yml` | — |
 | `tests/statewide_kpi_test.py` | workflows: `js-tests.yml` | — |
 | `tests/statewide_recs_test.py` | workflows: `js-tests.yml` | — |
 | `tests/stop_hook_git_check_test.py` | workflows: `js-tests.yml` | — |
+| `tests/subjects_list_recode_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_function_grants_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_migrate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_sql_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/supabase_table_grants_test.py` | workflows: `js-tests.yml` | — |
 | `tests/title_in_use_test.py` | workflows: `js-tests.yml` | — |
 | `tests/top_code_lookup_code4_test.py` | workflows: `js-tests.yml` | — |
+| `tests/top_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/uc_cur_promote_test.py` | workflows: `js-tests.yml` | — |
+| `tests/uc_cur_zscheme_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ui_pass_test.py` | workflows: `js-tests.yml` | — |
 | `tests/umbrella_codes_are_declared_test.py` | workflows: `js-tests.yml` | — |
 | `tests/unified_units_range_test.py` | workflows: `js-tests.yml` | — |
+| `tests/veteran_jst_test.py` | workflows: `js-tests.yml` | — |
+| `tests/veteran_sprint_jst_test.py` | workflows: `js-tests.yml` | — |
 | `tests/video_context_test.py` | workflows: `js-tests.yml` | — |
 | `tests/vision_2030_first_light_test.py` | workflows: `js-tests.yml` | — |
 | `tests/workflow_failure_watch_test.py` | workflows: `js-tests.yml` | — |
+| `tests/workplan_charts_zero_ladder_test.py` | workflows: `js-tests.yml` | — |
+| `tests/workplan_description_drafts_test.py` | workflows: `js-tests.yml` | — |
+| `tests/workplan_goals_current_column_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/workplan_reports_year_pair_test.py` | workflows: `js-tests.yml` | — |
 | `tests/zband_retire_apply_test.py` | workflows: `js-tests.yml` | — |
+| `tests/zband_retire_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `thumbs-more.json` | pages: `tools/first_light_gallery/gallery.html` | — |
+| `tmc/source_data/coci_program_export_*.csv` | scripts: `kb/_build_commons_data_status.py` | — |
 | `tmc/tmc_or_groups.json` | scripts: `tmc/_parse_tmc_pdfs.py` | — |
 | `tmc_builder.js` | pages: `CPL_Dashboard.html` | — |
 | `tools/first_light_candidates.json` | scripts: `scripts/fetch_gallery_thumbs.py` | committed by: `first-light-art.yml` |
@@ -1491,5 +1537,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 951 file
-datasets · 195 external services · 594 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 997 file
+datasets · 195 external services · 597 consumers · 72 workflows · 41 tabs.

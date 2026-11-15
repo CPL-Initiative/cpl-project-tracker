@@ -99,10 +99,19 @@ PROGRAM_PATH = re.compile(
 # and Santa Barbara City's /justice-studies/administration-justice-ast/ were both dropped, so
 # every Administration of Justice program at the two colleges lost its own page to a C-ID chart
 # or another degree (sitemap read 39770285975, S447).
+# A fragment a catalog includes into its pages, never a page of its own: a folder whose name starts with an
+# underscore and names headers, includes or partials (Skyline's programs/_program-headers/english.xml tied
+# English A.A. 05825 with english-aa.php, and the lookup filed it not_matched; S653). The other underscore
+# folders the committed captures name (_data, _documents, _pdf-books, _resources, _web-items) hold catalog
+# PDFs and feeds pages are read from, and stay (tests/program_requirements_fragment_path_test.py). No path reads
+# a fragment as a program page: program_candidates() and link_page_ok() through NOT_PROGRAM_PATH, ncl_page()
+# directly, a program code or not (S654).
+FRAGMENT_PATH = re.compile(r"/_[^/]*(?:header|include|partial|fragment|snippet)s?(?=/)", re.I)
 NOT_PROGRAM_PATH = re.compile(
     r"course-?descriptions?|/courses?/|coursesaz|/archive|/previous|/policies|/policy|"
     r"/services|/student-services|/admission|/calendar|/faculty|/staff|/search|/pdf/|"
-    r"\.pdf$|/general-information|/administration(?=/|$)|/glossary|/index\.html?$|/addend", re.I)
+    r"\.pdf$|/general-information|/administration(?=/|$)|/glossary|/index\.html?$|/addend|"
+    + FRAGMENT_PATH.pattern, re.I)
 
 
 # ── the college's programs, from the state's files ─────────────────────────
@@ -570,7 +579,12 @@ def heading_names_program(page: dict, program: dict) -> bool:
 # certificate kept it and 16 others (Speech/Communication A.A., Social Science A.A., Spanish
 # A.A.-T among them) filed it as a page they lost. A pattern's page is never another program's list.
 GE_PATTERN = re.compile(r"\bcal[\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge\b|\bcsu[\s-]general[\s-]education\b|"
-                        r"\bgeneral[\s-]education[\s-](?:breadth|pattern)", re.I)
+                        r"\bgeneral[\s-]education[\s-](?:breadth|pattern)|"
+                        # the patterns under their long names (Crafton Hills, Victor Valley; S653)
+                        r"\b(?:california|intersegmental)[\s-](?:general[\s-]education|ge)[\s-]transfer[\s-]curriculum\b|"
+                        # Taft's "Intersegmental GE Transfer Curriculum", Skyline's "California State University
+                        # General Education" (S653)
+                        r"\bcalifornia[\s-]state[\s-]university[\s-]general[\s-]education\b", re.I)
 
 
 def ge_pattern(text: str | None) -> bool:
@@ -584,10 +598,129 @@ def ge_pattern_page(pg: dict) -> bool:
     return any(ge_pattern(x) for x in (pg.get("code"), pg.get("h1"), pg.get("title"), path))
 
 
-def candidates(program: dict, pages: list[dict]) -> list[dict]:
+# A heading's state control number: LACCD's catalog PDFs print it beside the award ("English T032905G AA-T",
+# "Equine Science AS P002809C"), a letter, the number with a leading zero, a letter.
+GE_CONTROL = re.compile(r"(?<![A-Za-z0-9])[A-Z]?0*(\d{5})[A-Z]?(?![A-Za-z0-9])")
+# Words a pattern page's heading prints that say nothing of which program it is (S653 third reader): the district,
+# a stray "GE" or "Associate" left once the award and the pattern are set aside, a PDF table's "Y".
+GE_HEAD_NOISE = {"laccd", "ge", "associate", "y"}
+# A version or a number in a title: "2.0", "2", "v2", "Version 2", "V2.0" all read 2.
+GE_NUMBER = re.compile(r"\b(?:v(?:ersion)?\s*)?(\d+(?:\.\d+)?)\b", re.I)
+
+
+def _award_start(text: str) -> int:
+    """Where a heading's award begins (NCL_ADT, NCL_KIND), the end when it prints none: the title and its version
+    sit before it, its unit counts after ("Chemistry 2.0 AS-T 37.5")."""
+    letters = [c for c in text if c.isalpha()]
+    shouting = bool(letters) and sum(c.isupper() for c in letters) > 0.6 * len(letters)
+    at = len(text)
+    for pat in NCL_ADT + [p for _, p in NCL_KIND if not (shouting and not p.flags & re.I)]:
+        m = pat.search(text)
+        if m:
+            at = min(at, m.start())
+    return at
+
+
+def ge_identity(text: str | None, heading: bool = False) -> tuple[frozenset, frozenset, frozenset]:
+    """(title words, identity tokens, numbers) of a title, or of a heading's part before its award with its
+    control number and noise words set aside. Identity is a Roman numeral or an option letter (Spanish II,
+    Level I, Option A); numbers are versions in any spelling, "2.0" and "v2" alike."""
+    t = text or ""
+    if heading:
+        t = GE_CONTROL.sub(" ", t[:_award_start(t)])
+    nums = frozenset(re.sub(r"\.0+$", "", m.group(1)) for m in GE_NUMBER.finditer(t))
+    words, ident = ncl_words(GE_NUMBER.sub(" ", t))
+    words = frozenset(w for w in words if not (heading and w in GE_HEAD_NOISE))
+    return words, frozenset(x for x in ident if not x.isdigit()), nums
+
+
+def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
+    """The one listed program a general education pattern's page belongs to, or None (S653). Riverside City
+    heads each transfer degree's own page with the degree and the pattern it follows, "Sociology - Associate
+    in Arts for Transfer (ADT) - AA696 (CalGETC)", and under the S646 rule each lost its own page (36
+    page_claimed in capture 43619958385). The pattern's words set aside, every component the heading prints
+    must agree with the program, each one comparison here:
+      control  a heading printing a listed program's state control number is that program's page and no
+               other's (LA Trade-Tech's cut PDF windows, "Development T038461G AA-T"), when the program's
+               title and the heading's words agree at least one way; a number alone settles nothing (S654);
+      title    the heading's words before its award are the program's title words, both ways ("Art History
+               AA-T" is never History's, "Business Administration: Accounting" never plain Business
+               Administration's);
+      identity a Roman numeral or option letter agrees (Spanish II is never Spanish I's, Option B never A's);
+      award    a heading that names an award takes that award only (Moreno Valley's MAS643, the A.S.-T's
+               page, is never its Administration of Justice A.S.'s);
+      version  a number in the title part ("2.0", "2", "v2") goes to the sibling printing the same one where
+               one is listed; where none is, a program printing no number keeps it (Moreno Valley's one
+               Physics, 43792, on its 2.0 page), and a heading printing none goes to the sibling printing none.
+               A number after the award is units, never a version.
+    More than one program left, or none, owns nothing. A pattern's own page ("Cal-GETC - Certificate of
+    Achievement", Glendale's, the S646 case) names no program once the pattern is set aside."""
+    head = GE_PATTERN.sub(" ", pg.get("h1") or TITLE_SPLIT.split(pg.get("title") or "")[0] or "")
+    words, ident, nums = ge_identity(head, heading=True)
+    ctl = {m.group(1) for m in GE_CONTROL.finditer(head)}
+    if ctl:
+        # A five-digit run names its program only when the program's title agrees with the heading's words at
+        # least one way (COBIx on #3324, S654): a ZIP code or a five-digit course id that happens to be a listed
+        # program's control number never skips the title, award and version checks below. A cut window that
+        # prints no title word ("T031018H AS-T") disagrees with no title.
+        named = [p for p in programs if str(p.get("control_number") or "").lstrip("0").zfill(5) in ctl
+                 and _ge_title_one_way(ge_identity(p.get("title"))[0], words)]
+        if named:
+            return named[0] if len(named) == 1 else None
+    if not words:
+        return None
+    kinds = award_kinds_in(head)
+    classes = [c for c in kinds if c in NCL_CLASS]
+    kinds = {k for k in kinds if k not in NCL_CLASS}
+
+    def award_agrees(p):
+        kind = P.award_kind(p.get("award"))
+        return all(kind in NCL_CLASS[c] for c in classes) and (not kinds or kind in kinds)
+    fits = []
+    for p in programs:
+        tw, tid, tn = ge_identity(p.get("title"))
+        if tw and all(_named(w, words) for w in tw) and all(_named(h, tw) for h in words) and tid == ident \
+                and award_agrees(p) and (not tn or not nums or tn == nums):
+            fits.append((p, tn))
+    if any(tn == nums for _, tn in fits):
+        fits = [f for f in fits if f[1] == nums]
+    return fits[0][0] if len(fits) == 1 else None
+
+
+def _ge_title_one_way(title_words: frozenset, head_words: frozenset) -> bool:
+    """Whether a program's title words and a heading's agree at least one way: every title word in the heading,
+    or every heading word in the title."""
+    return all(_named(w, head_words) for w in title_words) or all(_named(h, title_words) for h in head_words)
+
+
+def ge_page_names_program(pg: dict, program: dict, programs: list | None = None,
+                          owners: dict | None = None) -> bool:
+    """Whether a general education pattern's page belongs to this program among the college's listed
+    programs (ge_page_owner); programs left None weighs the program alone. owners, when given, holds each
+    page's owner among these same programs, keyed by the heading and title the owner is read from, so
+    assign() works a page's owner out once (COBIx on #3324, S654); never share one across program lists."""
+    if owners is None or programs is None:
+        owner = ge_page_owner(pg, programs if programs is not None else [program])
+    else:
+        key = (pg.get("h1"), pg.get("title"))
+        if key not in owners:
+            owners[key] = ge_page_owner(pg, programs)
+        owner = owners[key]
+    if owner is None:
+        return False
+    if owner is program:
+        return True
+    cn = program.get("control_number")
+    return cn is not None and owner.get("control_number") == cn
+
+
+def candidates(program: dict, pages: list[dict], programs: list | None = None,
+               owners: dict | None = None) -> list[dict]:
     """Every page naming at least ACCEPT_SHARE of the program's listed courses,
     best first: the page naming its award, then the larger share of its title,
-    then the higher coverage."""
+    then the higher coverage. programs is every listed program at the college (assign()
+    passes it), so a pattern's page goes to the one program it belongs to (ge_page_owner);
+    owners is assign()'s cache of those owners, one per page (ge_page_names_program)."""
     courses = program["closed_list"]
     if not courses:
         return []
@@ -604,8 +737,10 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
             continue
         # A general education pattern's page lists courses in every discipline, so it names
         # most of many programs' lists; it is the list of a program only when the program is
-        # that pattern (ge_pattern(), S646).
-        if ge_pattern_page(pg) and not ge_pattern(program.get("title")):
+        # that pattern (ge_pattern(), S646), or when its heading names the program beside the
+        # pattern (ge_page_names_program(), S653: Riverside City's transfer degrees).
+        if ge_pattern_page(pg) and not ge_pattern(program.get("title")) \
+                and not ge_page_names_program(pg, program, programs, owners):
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
@@ -992,7 +1127,8 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     one with none left is read from no page, and says which page went to whom
     (method page_claimed), so a sibling's requirements never stand in for its own.
     Returns {control number: {"best": candidate or None, "claimed_by": [...]}}."""
-    ranked = {p["control_number"]: candidates(p, pages) for p in programs if p["closed_list"]}
+    owners: dict = {}   # a pattern page's owner, worked out once per page (ge_page_names_program)
+    ranked = {p["control_number"]: candidates(p, pages, programs, owners) for p in programs if p["closed_list"]}
     # A Coursedog tab that prints another listed program's title is no candidate for this one
     # (tab_names_another, S647); a page holding several programs is left to page_winners().
     plain = {p["control_number"]: _plain(p.get("title")) for p in programs}
@@ -1266,8 +1402,10 @@ def ncl_page(pg: dict, college_words: frozenset = frozenset()) -> dict:
     readings = [ncl_words(r) for r in ncl_readings(pg, college_words)]
     return {"pg": pg, "key": pg.get("group") or page_stem(pg.get("url")), "keys": page_keys(pg),
             "readings": readings, "kinds": page_award_kinds(pg),
-            "program_page": bool(pg.get("code") or pg.get("node") or pg.get("group")) or not (
-                NOT_PROGRAM_PATH.search(pg.get("url") or "") or NOT_PROGRAM_PAGE.search(path)),
+            # a fragment a catalog includes is no program page, whatever code it carries (FRAGMENT_PATH, S654)
+            "program_page": not FRAGMENT_PATH.search(urllib.parse.urlparse(pg.get("url") or "").path) and (
+                bool(pg.get("code") or pg.get("node") or pg.get("group")) or not (
+                    NOT_PROGRAM_PATH.search(pg.get("url") or "") or NOT_PROGRAM_PAGE.search(path))),
             # A GE pattern's own page: it names a pattern and nothing else once the pattern is set aside
             # (Riverside City heads its transfer degrees "Sociology ADT CalGETC", a program's page).
             "ge": ge_pattern_page(pg) and not any(w for w, _ in readings)}
@@ -5660,19 +5798,6 @@ def forced(folder: str, tokens: str) -> set[str]:
     return out
 
 
-def call_charge(cost_usd, usage) -> float:
-    """What one call counts toward a ceiling (S644): its price, or, for a call that carries usage and
-    no price (a fallback model the table does not price), its usage at the most expensive model's
-    price, so an unpriced call never slips under the stop. A call with neither spent nothing the
-    function reported."""
-    import _program_requirements_extract as X
-    if isinstance(cost_usd, (int, float)):
-        return float(cost_usd)
-    if usage:
-        return max((X.cost(m, usage) or 0.0) for m in X.PRICE) if X.PRICE else 0.0
-    return 0.0
-
-
 REFUSED_METHODS = ("page_challenged",)
 
 
@@ -5961,10 +6086,16 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             keep_from: str | None = None, force: set[str] | None = None,
             ceiling_usd: float | None = None, halt_wait_s: float = HALT_WAIT_S) -> int:
     """Send each source that needs a model call, score it and write its record under out_dir.
-    ceiling_usd (the wave sets it to its limit; None, the default, is no ceiling): the run's
-    actual cost is summed as each call comes back, and once it reaches the ceiling no further program
-    is sent. The calls already in flight finish, so the run can pass the ceiling by at most `workers`
-    programs' reads. A program not sent keeps its filed record and is listed in not_sent_<shard>.json.
+    ceiling_usd (the workflows set it to $40; None, the default, is no ceiling) is the spend meter's
+    (kb/_spend_meter.py, S654): before each post it reserves the program's estimate (the college's rate x the
+    margin, as the price step priced it) and refuses when the charges, the reservations in flight and this one
+    would pass the ceiling; from then on no program is sent. A call settles at its priced usage, at its worst case
+    when it was sent and answered no usage, and at $0 when it never reached the model. The run can pass the
+    ceiling only by calls in flight costing more than their estimates: a call costs at most $1.12 (M.worst_case
+    of the largest committed request, about 81,000 characters, santa_rosa_junior 37016), $1.02 over a $0.10
+    estimate, so $6.14 with six workers, and $1.02 more for each further part of a read in parts in flight. A
+    program not sent keeps its filed record and is listed in not_sent_<shard>.json with the meter's total
+    (meter_charge_usd); check-extract then ends the run red.
     A call the function answers 503 (its caller check could not reach the database) or 401 (the key
     refused) is tried once more after halt_wait_s; answered so again, it halts the read the same way
     (S647, Sheet 190 card 6): nothing more is sent, no record is written for it, the halt is written to
@@ -6089,7 +6220,13 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     import threading
     kept_list: list[dict] = []
     kept_lock = threading.Lock()
-    spend = {"usd": 0.0, "stopped": False}
+    import _program_requirements_wave as W
+    import _spend_meter as M
+    # The reservation per post: the college's rate (its filed records' mean cost, never below the default) x the
+    # margin, the same figure the price step multiplied by the programs to send.
+    _cpp = W.cost_per_program(W.load_records(keep_from))[0] if keep_from else W.DEFAULT_COST_PER_PROGRAM
+    meter = M.Meter(ceiling_usd, round(_cpp * W.PRICE_MARGIN, 5))
+    stop_said = [False]
     not_sent: list[str] = []
     failed: list[dict] = []
     calls = [0]
@@ -6110,14 +6247,26 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
 
     def one(src: dict) -> None:
         t0 = time.time()
-        with kept_lock:
-            stopped = spend["stopped"] or bool(halt)
-            if stopped:
+        def held() -> None:
+            # The stop held this program before any post: it keeps its filed record and is sent next run.
+            with kept_lock:
                 not_sent.append(src["control_number"])
-        if stopped:
+                say = not stop_said[0] and meter.stopped and not halt
+                stop_said[0] = stop_said[0] or say
+            if say:
+                print("ceiling: the hard stop held the read at $%.2f charged against $%.2f; no further program is "
+                      "sent" % (meter.spent, ceiling_usd or 0), flush=True)
             keep_filed(src["control_number"])
+
+        with kept_lock:
+            stopped = meter.stopped or bool(halt)
+        if stopped:
+            held()
             return
-        got = X.call(src, key)
+        got = X.call(src, key, meter=meter)
+        if got.get("stopped"):
+            held()
+            return
         h = X.halt_of(got)
         if h and not halt and halt_wait_s:
             # One more try after a pause, so a single slow probe does not end a long read (S647).
@@ -6127,7 +6276,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 retry = not halt
             if retry:
                 earlier = got
-                got = X.call(src, key)
+                got = X.call(src, key, meter=meter)
                 h = X.halt_of(got)
                 if earlier.get("usage"):
                     # A read in parts can answer 503 after its other parts were paid: the retry's record carries
@@ -6143,7 +6292,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             # files no stub over a record (S647; run 43384599013 filed 121). The calls in flight finish.
             # Usage the halting answer carries (paid parts of a read in parts) still counts (S648 review).
             # cost_usd is priced as a record's is (X.cost; unpriced usage counted apart), so run_cost adds like to
-            # like; call_charge's dearest-model price is for the ceiling only.
+            # like; the meter already counted the call toward the ceiling.
             price = priced(got)
             with kept_lock:
                 first = not halt
@@ -6154,8 +6303,6 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                     halt_paid["usd"] += price
                 elif got.get("usage"):
                     halt_paid["unpriced"] += 1
-                if ceiling_usd is not None:
-                    spend["usd"] += call_charge(price, got.get("usage"))
             if first:
                 print("halted at %s: %s (HTTP %s%s). No further program is sent and no record is written "
                       "over; the filed records stay." % (
@@ -6163,13 +6310,6 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                           ", " + h["reason"] if h.get("reason") else ""), flush=True)
             keep_filed(src["control_number"])
             return
-        if ceiling_usd is not None:
-            with kept_lock:
-                spend["usd"] += call_charge(priced(got), got.get("usage"))
-                if spend["usd"] >= ceiling_usd and not spend["stopped"]:
-                    spend["stopped"] = True
-                    print("ceiling: $%.2f reached at $%.2f; no further program is sent" % (ceiling_usd, spend["usd"]),
-                          flush=True)
         rec = got.get("record")
         with kept_lock:
             calls[0] += 1
@@ -6257,7 +6397,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         if not_sent:
             # file_run keeps each listed program's previous sources.json entry, so the next run sends it again.
             _write(os.path.join(out_dir, "not_sent_%d.json" % shard),
-                   {"ceiling_usd": ceiling_usd, "spent_usd": round(spend["usd"], 2),
+                   {"ceiling_usd": ceiling_usd, "meter_charge_usd": round(meter.spent, 2),
                     "halted": dict(halt) or None, "programs": sorted(not_sent)})
             print("%s: %d programs not sent" % ("halted" if halt else "ceiling", len(not_sent)), flush=True)
         if halt:
@@ -6276,7 +6416,9 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         # check-extract reads to end the job red (extract_failed_run).
         _write(os.path.join(out_dir, "extract_account_%d.json" % shard),
                {"run": run_id, "shard": shard, "calls": calls[0],
-                "failed": sorted(failed, key=lambda x: x["control_number"])})
+                "failed": sorted(failed, key=lambda x: x["control_number"]),
+                # what the spend meter counted toward the hard stop: priced usage, worst cases, $0 refusals
+                "meter_charge_usd": round(meter.spent, 5)})
         if failed:
             print("extract_failed: %d of %d calls failed; the filed records stay" % (len(failed), calls[0]), flush=True)
     if halt:
@@ -6314,6 +6456,32 @@ def check_extract(out_dir: str) -> int:
     h = extract_halt(out_dir)
     if h:
         print("::error::" + halt_message(h))
+        return 1
+    # An extraction asked for and refused over the limit ends red (S654), so a session reading the run's conclusion
+    # never takes the refusal for a read; a free run (extract=0, nothing to send) stays green.
+    try:
+        with open(os.path.join(out_dir, "wave_price.json")) as fh:
+            priced = json.load(fh)
+    except (OSError, ValueError):
+        priced = {}
+    if isinstance(priced, dict) and priced.get("extract_asked") and not priced.get("go") \
+            and priced.get("within_limit") is False:
+        print("::error::the extraction was asked for and refused: the estimate $%.2f is over the $%.0f limit, so "
+              "nothing was extracted" % (priced.get("price_usd") or 0, priced.get("limit_usd") or 0))
+        return 1
+    # A read the hard stop held ends red too (S654 review): the run is no whole read, though spending stopped.
+    held = []
+    for path in sorted(glob.glob(os.path.join(out_dir, "not_sent_*.json"))):
+        try:
+            with open(path) as fh:
+                ns = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        if isinstance(ns, dict) and ns.get("programs") and not ns.get("halted"):
+            held += list(ns["programs"])
+    if held:
+        print("::error::the hard stop held %d programs (first: %s); the run is no whole read, and the next run sends "
+              "them" % (len(held), held[0]))
         return 1
     acct = extract_accounts(out_dir)
     if acct["calls"] is None:

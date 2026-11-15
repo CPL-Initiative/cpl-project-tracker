@@ -78,8 +78,11 @@
     "coci_lookup.test.js": 32,
     "commons_ase.test.js": 36,
     "commons_data.test.js": 220,
+    "commons_data_cards.test.js": 38,
     "commons_data_controls.test.js": 56,
     "commons_data_catalog_link.test.js": 6,
+    "commons_data_sharing.test.js": 36,
+    "commons_data_integrations.test.js": 26,
     "coci_list.test.js": 40,
     "college_activity.test.js": 7,
     "college_activity_jst.test.js": 18,
@@ -202,6 +205,7 @@
     "factsheet_edit_section_hide.test.js": 24,
     "factsheet_edit_section_reorder.test.js": 22,
     "factsheet_edit_sections.test.js": 23,
+    "factsheet_public_header.test.js": 39,
     "factsheet_word.test.js": 22,
     "first_light.test.js": 42,
     "first_light_apply_findings.test.js": 45,
@@ -413,6 +417,6 @@
     "pages_allowlist.test.js": 33,
     "veteran_map_controls_words.test.js": 12,
     "program_requirements_lassen_calgetc.test.js": 28,
-    "veteran_map_public_header.test.js": 23
+    "veteran_map_public_header.test.js": 25
   }
 }

@@ -83,7 +83,7 @@
    "status": "unequal",
    "computed": [
     29.0,
-    29.0
+    33.0
    ],
    "stated": [
     25.0,
@@ -91,7 +91,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 29.0-29.0; the catalog states 25.0-29.0"
+    "the blocks sum to 29.0-33.0; the catalog states 25.0-29.0"
    ]
   },
   "repeated": {
@@ -429,5 +429,6 @@
    "The page prints no program learning outcomes and no careers."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

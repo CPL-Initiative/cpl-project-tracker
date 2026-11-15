@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -78,6 +79,7 @@
     25.0,
     26.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -93,6 +95,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -253,5 +263,6 @@
    "ELE-55, DFT-51, ELC-77 and MAN-60 appear in the catalog section but not in the closed list; marked as catalog additions."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }
