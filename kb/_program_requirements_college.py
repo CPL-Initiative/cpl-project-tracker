@@ -602,6 +602,9 @@ def ge_pattern_page(pg: dict) -> bool:
 # A heading's state control number: LACCD's catalog PDFs print it beside the award ("English T032905G AA-T",
 # "Equine Science AS P002809C"), a letter, the number with a leading zero, a letter.
 GE_CONTROL = re.compile(r"(?<![A-Za-z0-9])[A-Z]?0*(\d{5})[A-Z]?(?![A-Za-z0-9])")
+# The district's own print of a control number: a campus letter, six digits, a letter (T042296D, V032851G, M003340C).
+# Unambiguous, it names its program with or without title words, wherever the award sits (S654 second reader).
+DISTRICT_CONTROL = re.compile(r"(?<![A-Za-z0-9])[A-Z]0(\d{5})[A-Z](?![A-Za-z0-9])")
 # Words a pattern page's heading prints that say nothing of which program it is (S653 third reader): the district,
 # a stray "GE" or "Associate" left once the award and the pattern are set aside, a PDF table's "Y".
 GE_HEAD_NOISE = {"laccd", "ge", "associate", "y"}
@@ -641,9 +644,10 @@ def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
     in Arts for Transfer (ADT) - AA696 (CalGETC)", and under the S646 rule each lost its own page (36
     page_claimed in capture 43619958385). The pattern's words set aside, every component the heading prints
     must agree with the program, each one comparison here:
-      control  a heading printing a listed program's state control number is that program's page and no
-               other's (LA Trade-Tech's cut PDF windows, "Development T038461G AA-T"), when the program's
-               title and the heading's words agree at least one way; a number alone settles nothing (S654);
+      control  a heading printing a listed program's control number in the district's print (T038461G) is
+               that program's page and no other's (LA Trade-Tech's cut PDF windows, "Development T038461G
+               AA-T"); a bare five-digit run only when the heading's title words agree with the program's at
+               least one way (S654);
       title    the heading's words before its award are the program's title words, both ways ("Art History
                AA-T" is never History's, "Business Administration: Accounting" never plain Business
                Administration's);
@@ -658,21 +662,26 @@ def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
     Achievement", Glendale's, the S646 case) names no program once the pattern is set aside."""
     head = GE_PATTERN.sub(" ", pg.get("h1") or TITLE_SPLIT.split(pg.get("title") or "")[0] or "")
     words, ident, nums = ge_identity(head, heading=True)
-    ctl = {m.group(1) for m in GE_CONTROL.finditer(head)}
-    if ctl:
-        # A five-digit run names its program only when the program's title agrees with the heading's words at
-        # least one way (COBIx on #3324, S654): a ZIP code or a five-digit course id that happens to be a listed
-        # program's control number never skips the title, award and version checks below. A program with no title
-        # words is never named by its number. A heading with no title words is named only when it is an award-led
-        # cut window, the control number and then the award ("T031018H AS-T", LA Trade-Tech's PDF windows); any
-        # other ("LACCD 92506 Cal-GETC") refuses (COBIx 6887933755, S654).
-        cut = not words and _ge_cut_window(head)
+    # A control number in the district's own print (DISTRICT_CONTROL: "T042296D C", "AA-T V032851G", "ASSOCIATE OF
+    # ARTS (AA) Accounting (M003340C)") names its listed program, whatever words or award sit around it (S654 second
+    # reader: the narrower cut-window rule refused 84 of main's 314 right namings).
+    district = {m.group(1) for m in DISTRICT_CONTROL.finditer(head)}
+    if district:
+        named = [p for p in programs if str(p.get("control_number") or "").lstrip("0").zfill(5) in district]
+        if named:
+            return named[0] if len(named) == 1 else None
+    # A bare five-digit run names its program only when the heading has title words and they agree with the
+    # program's title at least one way (COBIx on #3324 and 6887933755, S654): a ZIP code, a five-digit course id or
+    # "LACCD 92506 Cal-GETC" never skips the title, award and version checks below, and a program with no title
+    # words is never named by a bare number.
+    ctl = {m.group(1) for m in GE_CONTROL.finditer(head)} - district
+    if ctl and words:
         named = []
         for p in programs:
             if str(p.get("control_number") or "").lstrip("0").zfill(5) not in ctl:
                 continue
             tw = ge_identity(p.get("title"))[0]
-            if tw and (cut or (words and _ge_title_one_way(tw, words))):
+            if tw and _ge_title_one_way(tw, words):
                 named.append(p)
         if named:
             return named[0] if len(named) == 1 else None
@@ -694,13 +703,6 @@ def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
     if any(tn == nums for _, tn in fits):
         fits = [f for f in fits if f[1] == nums]
     return fits[0][0] if len(fits) == 1 else None
-
-
-def _ge_cut_window(head: str) -> bool:
-    """Whether a heading is an award-led cut window: nothing before its award but one control number
-    ("T031018H AS-T", "T039546G AAT"), the shape LA Trade-Tech's catalog PDF prints when a window cuts the title off."""
-    at = _award_start(head)
-    return at < len(head) and bool(GE_CONTROL.fullmatch(head[:at].strip(" -\u2013:,")))
 
 
 def _ge_title_one_way(title_words: frozenset, head_words: frozenset) -> bool:
