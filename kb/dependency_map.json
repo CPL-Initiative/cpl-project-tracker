@@ -1916,7 +1916,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1356,
+     "line": 1380,
      "tabs": [
       "commons"
      ]
@@ -6535,7 +6535,23 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 892,
+     "line": 904,
+     "tabs": [
+      "commons"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:commons_curation_eta.js": {
+   "consumers": [
+    {
+     "id": "module:commons.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 990,
      "tabs": [
       "commons"
      ]
@@ -6551,7 +6567,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 909,
+     "line": 921,
      "tabs": [
       "commons"
      ]
@@ -15118,7 +15134,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 920
+     "line": 941
     }
    ],
    "served": false,
@@ -15714,7 +15730,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1065
+     "line": 1086
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -16512,7 +16528,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1010
+     "line": 1031
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -29604,7 +29620,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1139,
+     "line": 1161,
      "tabs": [
       "commons"
      ]
@@ -31605,7 +31621,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 801,
+     "line": 813,
      "tabs": [
       "commons"
      ]
@@ -31615,7 +31631,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 784,
+     "line": 796,
      "tabs": [
       "commons"
      ]
@@ -33181,7 +33197,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1117,
+     "line": 1139,
      "tabs": [
       "commons"
      ]
@@ -33698,6 +33714,9 @@
    "commons"
   ],
   "commons_ase.js": [
+   "commons"
+  ],
+  "commons_curation_eta.js": [
    "commons"
   ],
   "commons_data.js": [

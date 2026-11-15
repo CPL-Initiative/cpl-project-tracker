@@ -794,11 +794,32 @@ def load_history(root):
     return h
 
 
-def record_history(history, day, readings):
+def pair_readings(rows):
+    """Each reference's settled count, its universe and its person-confirmed count for the day (S661, the Commons
+    curation ETA reads its pace from these): {key: [n, of, person]}."""
+    out = {}
+    for r in rows:
+        p = r.get("pair") or []
+        n = p[0].get("n") if p else None
+        of = p[0].get("of") if p else None
+        # Both counts or neither: a missing universe would read as a negative remaining (COBIx on #3375).
+        if isinstance(n, int) and not isinstance(n, bool) and isinstance(of, int) and not isinstance(of, bool):
+            person = p[1].get("n") if len(p) > 1 and isinstance(p[1].get("n"), int) else None
+            out[r.get("key")] = [n, p[0].get("of"), person]
+    return out
+
+
+def record_history(history, day, readings, pairs=None):
     days = dict(history.get("days") or {})
     days[day] = readings
     keep = sorted(days)[-HISTORY_KEEP_DAYS:]
-    return {"schema": 1, "days": {d: days[d] for d in keep}}
+    out = {"schema": 1, "days": {d: days[d] for d in keep}}
+    P = dict(history.get("pairs") or {})
+    if pairs is not None:
+        P[day] = pairs
+    if P:
+        out["pairs"] = {d: P[d] for d in sorted(P)[-HISTORY_KEEP_DAYS:]}
+    return out
 
 
 def _when(stamp):
@@ -1113,7 +1134,7 @@ def build_with_history(root, now=None):
         building.append(row)
     queue = build_queue(rows)
     now = now or iso_now()
-    history = record_history(load_history(root), now[:10], routine_readings(rows))
+    history = record_history(load_history(root), now[:10], routine_readings(rows), pair_readings(rows))
     queue["stalled"] = build_stalled(rows, history, now)
     dk = _safe(docket, root)
     bl = _safe(lambda r: batches(r, queue, dk if isinstance(dk, list) else []), root)
