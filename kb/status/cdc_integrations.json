@@ -3,7 +3,7 @@
  "source": "kb/cdc_integrations.json",
  "builder": "kb/_build_cdc_sharing.py",
  "doc": "docs/reference/cdc_data_dictionary.md",
- "updated": "2026-11-14",
+ "updated": "2026-11-15",
  "statuses": {
   "live": "In use today, by the path named in its evidence.",
   "in progress": "Being built or connected now.",
@@ -82,16 +82,17 @@
    "id": "comis_datamart",
    "name": "COMIS Data Mart (public)",
    "scope": "statewide",
-   "status": "live",
-   "cadence": "On dispatch",
+   "status": "in progress",
+   "cadence": "",
    "replaces": "Asking for each college's program-course lists.",
    "owner": "co_mis",
    "agreement": "",
    "evidence": [
+    "kb/reference/coci_program_course_file.csv.gz",
     ".github/workflows/program-course-fetch.yml",
     "kb/_fetch_program_course_files.py"
    ],
-   "note": "The public Program Course File, fetched on the runner; the weekly schedule is commented out until a dispatch confirms it.",
+   "note": "The public Program Course File in the repo was loaded by hand (PR #3239). The workflow that would fetch it on the runner has not yet succeeded: its three runs (2026-07-16) failed, and its weekly schedule is commented out until a dispatch succeeds.",
    "owner_role": "Chancellor's Office MIS unit",
    "agreement_name": "",
    "agreement_status": ""
@@ -195,8 +196,8 @@
   "colleges": {}
  },
  "counts": {
-  "live": 4,
-  "in progress": 0,
+  "live": 3,
+  "in progress": 1,
   "proposed": 4,
   "not started": 1
  }

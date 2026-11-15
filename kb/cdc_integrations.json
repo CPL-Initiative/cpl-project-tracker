@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "about": "Hand-kept registry of the integrations College Data Collection (CDC) uses or would use (#3310 item 5): each with its status, what it would replace, its owner by role and the agreement it needs (a key into the agreements of kb/cdc_data_dictionary.json). kb/_build_cdc_sharing.py builds kb/status/cdc_integrations.json from it; commons_data_integrations.js draws the statewide view at #commons/data/integrations and exposes each college's rows for the Data sources card. People appear by role only. A status moves only with a record in the repo (a workflow, a script, a request) named in evidence.",
-  "updated": "2026-11-14",
+  "updated": "2026-11-15",
   "statuses": {
     "live": "In use today, by the path named in its evidence.",
     "in progress": "Being built or connected now.",
@@ -32,10 +32,10 @@
       "replaces": "Matching a college's courses to C-ID descriptors by hand.", "owner": "cid", "agreement": "",
       "evidence": ["kb/_ingest_cid_articulations.py", "kb/reference/cid_articulations.json"],
       "note": "A c-id.net extract a curator supplies, normalized by the ingest script; no scheduled read." },
-    { "id": "comis_datamart", "name": "COMIS Data Mart (public)", "scope": "statewide", "status": "live", "cadence": "On dispatch",
+    { "id": "comis_datamart", "name": "COMIS Data Mart (public)", "scope": "statewide", "status": "in progress", "cadence": "",
       "replaces": "Asking for each college's program-course lists.", "owner": "co_mis", "agreement": "",
-      "evidence": [".github/workflows/program-course-fetch.yml", "kb/_fetch_program_course_files.py"],
-      "note": "The public Program Course File, fetched on the runner; the weekly schedule is commented out until a dispatch confirms it." },
+      "evidence": ["kb/reference/coci_program_course_file.csv.gz", ".github/workflows/program-course-fetch.yml", "kb/_fetch_program_course_files.py"],
+      "note": "The public Program Course File in the repo was loaded by hand (PR #3239). The workflow that would fetch it on the runner has not yet succeeded: its three runs (2026-07-16) failed, and its weekly schedule is commented out until a dispatch succeeds." },
     { "id": "co_data_lake", "name": "Chancellor's Office data lake and dataset APIs", "scope": "statewide", "status": "proposed", "cadence": "",
       "replaces": "Saved snapshots: the July COCI copy and the one Fall 2025 COMIS course file.", "owner": "co_research_data", "agreement": "co_data_lake",
       "evidence": ["docs/reference/data_dictionary.md::Common Cloud"],

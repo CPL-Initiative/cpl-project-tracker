@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 957,
+  "file_datasets": 959,
   "external_services": 195,
-  "consumers": 595,
+  "consumers": 597,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -4700,6 +4700,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:.github/pages_allowlist.txt": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 58
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:/tmp/metrics_status": {
    "consumers": [
     {
@@ -7967,7 +7980,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 42
+     "line": 50
     }
    ],
    "served": false,
@@ -8006,7 +8019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 886
+     "line": 887
     }
    ],
    "served": false,
@@ -11190,7 +11203,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 40
+     "line": 48
     }
    ],
    "served": false,
@@ -11203,7 +11216,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 43
+     "line": 51
     }
    ],
    "served": false,
@@ -17510,7 +17523,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 537
+     "line": 538
     }
    ],
    "served": false,
@@ -18527,7 +18540,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 538
+     "line": 539
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -19701,11 +19714,18 @@
   "file:kb/status/cdc_integrations.json": {
    "consumers": [
     {
+     "id": "module:commons_data_integrations.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
      "id": "script:kb/_build_cdc_sharing.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
+     "line": 52
     }
    ],
    "served": true,
@@ -19714,11 +19734,18 @@
   "file:kb/status/cdc_sharing.json": {
    "consumers": [
     {
+     "id": "module:commons_data_sharing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
      "id": "script:kb/_build_cdc_sharing.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 41
+     "line": 49
     }
    ],
    "served": true,
@@ -24407,6 +24434,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/cdc_sharing_build_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/cer_classifier_rules_size_test.py": {
    "consumers": [
     {
@@ -26522,7 +26562,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 538
+     "line": 539
     }
    ],
    "served": false,
@@ -33859,6 +33899,7 @@
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
     "tests/commons_data_status_build_test.py",
+    "tests/cdc_sharing_build_test.py",
     "tests/commons_cost_read_test.py",
     "tests/commons_data_live_test.py",
     "kb/_build_commons_status.py",

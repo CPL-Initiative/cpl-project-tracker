@@ -7,8 +7,10 @@
 //   (2) ⭐ every field a college's page shows (its panel's dataset headings, sections and labeled lines, the list's
 //       columns) is defined in kb/cdc_data_dictionary.json: a new card or line fails here until it is defined;
 //   (3) ⭐ every field the file defines is shown by some college's page: a stale definition fails here;
-//   (4) ⭐ the decided classes: staff role contacts and MAP's approval stage held, not published, and left out of any
-//       outside share; MAP student counts aggregate under the student-detail ADR; exactly four classes;
+//   (4) ⭐ the decided classes: the CPL Coordinator and Counselor routing contacts public (the landing pages route a
+//       student to them); the other nine staff roles, MAP's approval stage and the nudge author held for the team and
+//       left out of any outside share; the held class never claims the public site does not serve it; MAP student
+//       counts aggregate under the student-detail ADR, with the CER's older floors named; exactly four classes;
 //   (5) the card on a college's panel: each class with its fields, what is held and not shown, the join keys, the
 //       agreements' status, and a word that opens the full view;
 //   (6) ⭐ the full view has its own address (#commons/data/sharing), opens from it, reports it, and sits in the views'
@@ -115,9 +117,17 @@ const CONTAINERS = new Set(HAND.containers || []);
   check("(4) the aggregate class names the student-detail disclosure ADR as its rule, and its floor of 10",
     /adr-student-detail-aggregate-disclosure-control\.md/.test(HAND.classes.aggregate.definition) && /fewer than 10/.test(HAND.classes.aggregate.definition));
   const H = Object.fromEntries(HAND.held_not_shown.map((h) => [h.id, h]));
-  check("(4) ⭐ staff role contacts (map/sync_map_users.py) are held, not published, and left out of any outside share",
-    H.staff_role_contacts && H.staff_role_contacts.class === "held" && /map\/sync_map_users\.py/.test(H.staff_role_contacts.where) && /^Left out/.test(H.staff_role_contacts.outside_share));
-  check("(4) ⭐ MAP's articulation Status (the approval stage) is held, not published",
+  check("(4) ⭐ the other nine staff role contacts (map/sync_map_users.py) are held for the team and left out of any outside share",
+    H.staff_role_contacts && H.staff_role_contacts.class === "held" && /map\/sync_map_users\.py/.test(H.staff_role_contacts.where) && /^Left out/.test(H.staff_role_contacts.outside_share) &&
+    !/CPL Coordinator|CPL Counselor/.test(H.staff_role_contacts.definition));
+  check("(4) ⭐ the CPL Coordinator and Counselor routing contacts are public, as map_college_contacts_pub serves them",
+    H.routing_contacts && H.routing_contacts.class === "public" && /map_college_contacts_pub/.test(H.routing_contacts.where));
+  check("(4) landing page contacts carry the class their definition states: public", H.landing_page_contacts && H.landing_page_contacts.class === "public");
+  check("(4) the nudge author (map_college_nudges.last_nudged_by) is held and left out", H.nudge_author && H.nudge_author.class === "held" && /last_nudged_by/.test(H.nudge_author.where));
+  check("(4) ⭐ no class says its fields are never published: COBI's own status files are on the public site",
+    !/never published|not published/i.test(JSON.stringify(HAND.classes)) && HAND.classes.held.public_site === "may serve");
+  check("(4) the aggregate class names the CER's cohort floor of 2 beside its floor of 5", /below 2/.test(HAND.classes.aggregate.definition) && /below 5/.test(HAND.classes.aggregate.definition));
+  check("(4) ⭐ MAP's articulation Status (the approval stage) is held for the team",
     H.map_articulation_status && H.map_articulation_status.class === "held" && /approval/.test(H.map_articulation_status.name));
   check("(4) ⭐ MAP student counts are aggregate, under the ADR's floor", H.map_student_counts && H.map_student_counts.class === "aggregate" && /10/.test(H.map_student_counts.outside_share));
   check("(4) a COMIS element is filled only from the repo's own files: SP02 and SP04 stay empty and say so",
@@ -138,6 +148,7 @@ const CONTAINERS = new Set(HAND.containers || []);
   check("(5) the card's four class counts add up to every field the file defines (" + sum + " of " + BUILT.elements.length + ")", sum === BUILT.elements.length);
   check("(5) the card names what is held and not shown, staff contacts among them, and says they are left out of any outside share",
     /Staff role contacts/.test(txt(card && card.querySelector('[data-class="not-shown"]'))) && /left out of any outside share/.test(txt(card)));
+  check("(5) a class word inside a sentence lowers its first letter only: aggregate, not PII", /\(aggregate, not PII\)/.test(txt(card)) && !/not pii/.test(txt(card)));
   check("(5) the card lists the join keys its fields use", card && card.querySelectorAll(".cdc-sw-joins li").length >= 3 && /Program control number: joins/.test(txt(card)));
   check("(5) the card states the agreements by status only", /^Agreements: .*Status only/.test(txt(card && card.querySelector("[data-agreements]"))));
   const open = card && card.querySelector('button.cmn-word[data-view="sharing"]');

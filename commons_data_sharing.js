@@ -37,6 +37,11 @@
   }
   function plural(n, one, many) { return n + " " + (n === 1 ? one : many); }
   function classWord(D, k) { return ((D.classes || {})[k] || {}).word || k; }
+  /* The class word inside a sentence: its first letter lowered, so "Aggregate, not PII" keeps its PII. */
+  function classLower(D, k) { var w = classWord(D, k); return w.charAt(0).toLowerCase() + w.slice(1); }
+  function classDef(D, k) { return ((D.classes || {})[k] || {}).definition || ""; }
+  /* The join keys whose other side is not public: the ones where a public record meets one that is not. */
+  function notPublicKeys(D) { return (D.join_keys || []).filter(function (j) { return j.other_class !== "public"; }); }
   function byClass(rows, k) { return (rows || []).filter(function (r) { return r.class === k; }); }
   function keyOf(D, id) { return (D.join_keys || []).filter(function (j) { return j.id === id; })[0] || null; }
   function unread(node) {
@@ -72,17 +77,18 @@
     var held = D.held_not_shown || [];
     if (held.length) sec.appendChild(el("div", { cls: "cdc-sw-class", "data-class": "not-shown" }, [
       el("h4", { text: "Held and not shown on this page (" + held.length + ")" }),
-      el("p", { cls: "cdc-sw-names", text: held.map(function (h) { return h.name + " (" + classWord(D, h.class).toLowerCase() + ")"; }).join(", ") + "." }),
-      el("p", { cls: "cdd-of", text: "Staff contacts and MAP's approval stage are left out of any outside share." })]));
+      el("p", { cls: "cdc-sw-names", text: held.map(function (h) { return h.name + " (" + classLower(D, h.class) + ")"; }).join(", ") + "." }),
+      el("p", { cls: "cdd-of", text: "The CPL Coordinator and CPL Counselor routing contacts are public: every college landing page routes a student to them. The other nine staff roles, MAP's approval stage and the MAP users are left out of any outside share." })]));
     var joins = (D.elements || []).filter(function (e) { return e.join_key; });
+    var open = notPublicKeys(D).map(function (j) { return j.id; });
     var used = [];
-    joins.forEach(function (e) { if (used.indexOf(e.join_key) < 0) used.push(e.join_key); });
+    joins.forEach(function (e) { if (used.indexOf(e.join_key) < 0 && open.indexOf(e.join_key) >= 0) used.push(e.join_key); });
     if (used.length) sec.appendChild(el("div", { cls: "cdc-sw-class", "data-class": "joins" }, [
       el("h4", { text: "Where these fields meet data that is not public" }),
       el("ul", { cls: "cdc-sw-joins" }, used.map(function (id) {
         var j = keyOf(D, id);
         return j ? el("li", { "data-join": id, text: j.name + ": joins " + j.public_side.charAt(0).toLowerCase() + j.public_side.slice(1) + " to " +
-          j.other_side.charAt(0).toLowerCase() + j.other_side.slice(1) + " (" + classWord(D, j.other_class).toLowerCase() + ")." }) : null;
+          j.other_side.charAt(0).toLowerCase() + j.other_side.slice(1) + " (" + classLower(D, j.other_class) + ")." }) : null;
       }))]));
     sec.appendChild(el("p", { cls: "cdd-of", "data-agreements": "true", text: agreementLine(D) }));
     sec.appendChild(el("p", { cls: "cdd-of" }, [viewWord(host, "Every field's definition, source and class, and the agreements", "panel")]));
@@ -97,12 +103,13 @@
     if (!D) return unread(sec);
     var n = (D.counts || {}).elements || {};
     sec.appendChild(el("p", { cls: "cdc-sw-lede", text: "What is public, what is not, and where the two join, for every college's page. " +
-      plural((D.elements || []).length, "field", "fields") + ": " + ORDER.map(function (k) { return (n[k] || 0) + " " + classWord(D, k).toLowerCase(); }).join("; ") + "." }));
+      plural((D.elements || []).length, "field", "fields") + ": " + ORDER.map(function (k) { return (n[k] || 0) + " " + classLower(D, k); }).join("; ") + "." }));
     sec.appendChild(el("ul", null, ORDER.map(function (k) {
-      return el("li", { "data-class": k }, [el("strong", { text: classWord(D, k) + ". " }), (D.classes[k] || {}).definition || ""]);
+      return el("li", { "data-class": k }, [el("strong", { text: classWord(D, k) + ". " }), classDef(D, k)]);
     })));
-    sec.appendChild(el("p", { cls: "cdd-of", text: plural((D.join_keys || []).length, "key joins", "keys join") + " a public record to one that is not: " +
-      (D.join_keys || []).map(function (j) { return j.name; }).join(", ") + ". " + agreementLine(D) }));
+    var keys = notPublicKeys(D);
+    sec.appendChild(el("p", { cls: "cdd-of", text: plural(keys.length, "key joins", "keys join") + " a public record to one that is not: " +
+      keys.map(function (j) { return j.name; }).join(", ") + ". " + agreementLine(D) }));
     sec.appendChild(el("p", { cls: "cdd-of" }, [viewWord(host, "The full data dictionary and the agreements", "statewide")]));
     return sec;
   }
@@ -126,7 +133,7 @@
 
     sec.appendChild(el("h3", { cls: "cdd-h3", id: "cdc-sw-classes", text: "The four classes" }));
     sec.appendChild(el("ul", { cls: "cdc-sw-deflist" }, ORDER.map(function (k) {
-      return el("li", { "data-class": k }, [el("strong", { text: classWord(D, k) + " (" + plural(n[k] || 0, "field", "fields") + "). " }), (D.classes[k] || {}).definition || ""]);
+      return el("li", { "data-class": k }, [el("strong", { text: classWord(D, k) + " (" + plural(n[k] || 0, "field", "fields") + "). " }), classDef(D, k)]);
     })));
 
     sec.appendChild(el("h3", { cls: "cdd-h3", id: "cdc-sw-fields", text: "The fields each college's page shows" }));
@@ -135,7 +142,7 @@
       ["Field", "Definition", "System", "COMIS element", "Class", "Join key"],
       (D.elements || []).map(function (e) {
         return el("tr", { "data-element": e.id, "data-class": e.class }, [
-          el("th", { scope: "row", "data-label": "Field" }, [e.name, el("span", { cls: "cdd-of", text: "Shown as " + e.labels.join("; ") })]),
+          el("th", { scope: "row", "data-label": "Field" }, [e.name, el("span", { cls: "cdd-of", text: "Shown as " + (e.labels || []).join("; ") })]),
           td("Definition", e.definition), td("System", e.system_name), td("COMIS element", e.comis_element || "None recorded"),
           td("Class", classWord(D, e.class)), td("Join key", e.join_key_name || "None")]);
       })));
@@ -150,20 +157,21 @@
           td("Definition", h.definition), td("Class", classWord(D, h.class)), td("Where it is held", h.where), td("Outside share", h.outside_share)]);
       })));
 
-    sec.appendChild(el("h3", { cls: "cdd-h3", id: "cdc-sw-joins", text: "Where public meets not public" }));
-    sec.appendChild(table("cdc-sw-joins-table", "Each key that joins a public record to one that is not public",
+    sec.appendChild(el("h3", { cls: "cdd-h3", id: "cdc-sw-joins", text: "The join keys" }));
+    sec.appendChild(el("p", { cls: "cdd-of", text: "Each key that joins a public record to another record, and the other record's class." }));
+    sec.appendChild(table("cdc-sw-joins-table", "Each key that joins a public record to another record, and the other record's class",
       ["cdc-c-name", "cdc-c-def", "cdc-c-side", "cdc-c-side", "cdc-c-comis"],
       ["Join key", "Definition", "Public side", "Other side", "COMIS element"],
       (D.join_keys || []).map(function (j) {
         return el("tr", { "data-join": j.id }, [el("th", { scope: "row", "data-label": "Join key", text: j.name }), td("Definition", j.definition),
-          td("Public side", j.public_side), td("Other side", j.other_side + " (" + classWord(D, j.other_class).toLowerCase() + ")"),
+          td("Public side", j.public_side), td("Other side", j.other_side + " (" + classLower(D, j.other_class) + ")"),
           el("td", { "data-label": "COMIS element" }, [j.comis_element || "None recorded", j.comis_note ? el("span", { cls: "cdd-of", text: j.comis_note }) : null])]);
       })));
 
     sec.appendChild(el("h3", { cls: "cdd-h3", id: "cdc-sw-agreements", text: "Agreements" }));
     sec.appendChild(el("p", { cls: "cdd-of", text: agreementLine(D) + " A status the repo does not record reads not recorded." }));
     sec.appendChild(table("cdc-sw-agreements-table", "Each agreement: its parties, its status, what it covers",
-      ["cdc-c-name", "cdc-c-parties", "cdc-c-status", "cdc-c-def", "cdc-c-def"],
+      ["cdc-c-name", "cdc-c-parties", "cdc-c-status", "cdc-c-covers", "cdc-c-note"],
       ["Agreement", "Parties", "Status", "Covers", "Note"],
       (D.agreements || []).map(function (a) {
         return el("tr", { "data-agreement": a.id, "data-status": a.status }, [el("th", { scope: "row", "data-label": "Agreement", text: a.name }),
@@ -194,6 +202,7 @@
     ".cdc-sw-table tbody th { font-weight:700; }",
     ".cdc-c-name { width:17%; } .cdc-c-def { width:31%; } .cdc-c-sys { width:17%; } .cdc-c-comis { width:13%; } .cdc-c-class { width:11%; } .cdc-c-key { width:11%; }",
     ".cdc-c-where { width:22%; } .cdc-c-share { width:19%; } .cdc-c-side { width:19%; } .cdc-c-parties { width:20%; } .cdc-c-status { width:11%; }",
+    ".cdc-c-covers { width:26%; } .cdc-c-note { width:26%; }",
     ".cdc-sw-open { font-size:inherit; }"
   ].join("\n");
   function ensureCss() {

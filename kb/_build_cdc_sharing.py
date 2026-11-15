@@ -3,9 +3,14 @@
 
 One hand-kept file, kb/cdc_data_dictionary.json, defines every field a college's CDC page shows: its definition, its
 source system, its COMIS element where the repo records one, its sharing class (public; aggregate, not PII; needs an
-agreement; held, not published) and the key where a public record joins one that is not public. It also lists what
+agreement; held for the team) and the key where a public record joins one that is not public. It also lists what
 COBI or MAP holds that the page does not show, the join keys and the agreements (status only, never an agreement's
 text).
+
+Each class says whether the public site may serve a field of its class ("public_site": "may serve" or "does not
+serve"). An element that names its source_file is held to that: a field whose class does not serve it, from a file
+the Pages allowlist (.github/pages_allowlist.txt) publishes, is a problem, so the class table cannot say a file is
+kept off the site while the site serves it.
 
 This builder reads that file alone, checks it, and writes two things from it:
 
@@ -23,7 +28,8 @@ agreement key and every piece of evidence (a path that exists; path::text must a
 and an Integrations section at the end of the doc.
 
 Both are deterministic (no clock), so --check compares them byte for byte. tests/commons_data_sharing.test.js runs
---check and fails when the page shows a field the file does not define, or the file defines one no view shows.
+--check and fails when the page shows a field the file does not define, or the file defines one no view shows;
+tests/cdc_sharing_build_test.py breaks each rule in a fixture and expects the builder to name it.
 
 Usage:
   python3 kb/_build_cdc_sharing.py           # write both
@@ -34,7 +40,9 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
+import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCE = "kb/cdc_data_dictionary.json"
@@ -46,6 +54,9 @@ INTEGRATION_STATUS = ("live", "in progress", "proposed", "not started")
 SCOPES = ("statewide", "per_college")
 
 CLASSES = ("public", "aggregate", "agreement", "held")
+PUBLIC_SITE = ("may serve", "does not serve")
+ALLOWLIST = ".github/pages_allowlist.txt"
+CROSSWALK_DIR = "kb/college_identity"
 AGREEMENT_STATUS = ("exists", "pending", "might be needed", "not needed", "not recorded")
 
 
@@ -54,21 +65,75 @@ def load_source(root: str) -> dict:
         return json.load(f)
 
 
-def problems(d: dict) -> list[str]:
-    """Every rule the hand-kept file breaks, in words; an empty list means it is sound."""
+def pages_published(root: str) -> list[str] | None:
+    """The paths the Pages allowlist publishes (publish and publish? lines), or None when the file is missing."""
+    path = os.path.join(root, ALLOWLIST)
+    if not os.path.isfile(path):
+        return None
+    out = []
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            w = line.split()
+            if len(w) >= 2 and w[0] in ("publish", "publish?"):
+                out.append(w[1].rstrip("/"))
+    return out
+
+
+def served(rel: str, published: list[str]) -> bool:
+    """A publish line names the file, or a folder above it."""
+    rel = rel.strip("/")
+    return any(rel == p or rel.startswith(p + "/") for p in published)
+
+
+def dicts(rows, what: str, out: list[str]) -> list[dict]:
+    """The rows that are objects; each one that is not is a problem, never an AttributeError."""
+    if not isinstance(rows, list):
+        out.append("%s must be a list" % what)
+        return []
+    good = []
+    for n, r in enumerate(rows):
+        if isinstance(r, dict):
+            good.append(r)
+        else:
+            out.append("%s row %d is %s, not an object" % (what, n + 1, type(r).__name__))
+    return good
+
+
+def problems(d: dict, root: str | None = None) -> list[str]:
+    """Every rule the hand-kept file breaks, in words; an empty list means it is sound. With root, an element's
+    source_file must exist there and agree with the Pages allowlist."""
     out: list[str] = []
+    if not isinstance(d, dict):
+        return ["%s must be an object" % SOURCE]
     cls = d.get("classes") or {}
+    if not isinstance(cls, dict):
+        out.append("classes must be an object")
+        cls = {}
     if tuple(cls.keys()) != CLASSES:
         out.append("classes must be exactly %s, in that order; found %s" % (", ".join(CLASSES), ", ".join(cls)))
     for k, v in cls.items():
-        if not (v or {}).get("word") or not (v or {}).get("definition"):
+        v = v if isinstance(v, dict) else {}
+        if not v.get("word") or not v.get("definition"):
             out.append("class %s needs a word and a definition" % k)
+        if v.get("public_site") not in PUBLIC_SITE:
+            out.append("class %s has public_site %r; use %s" % (k, v.get("public_site"), " or ".join(PUBLIC_SITE)))
     systems = d.get("systems") or {}
-    keys = {j.get("id") for j in d.get("join_keys") or []}
-    agreements = d.get("agreements") or []
+    join_keys = dicts(d.get("join_keys") or [], "join_keys", out)
+    keys: set = set()
+    for j in join_keys:
+        if j.get("id") in keys:
+            out.append("join key id %s is defined twice" % j.get("id"))
+        keys.add(j.get("id"))
+    agreements = dicts(d.get("agreements") or [], "agreements", out)
+    elements = dicts(d.get("elements") or [], "elements", out)
+    if not elements:
+        out.append("elements lists no field; the page shows at least one")
+    published = pages_published(root) if root is not None else None
+    if root is not None and published is None and any(e.get("source_file") for e in elements):
+        out.append("elements name source files, and %s could not be read to check them" % ALLOWLIST)
     seen_ids: set[str] = set()
     seen_labels: dict[str, str] = {}
-    for e in d.get("elements") or []:
+    for e in elements:
         i = e.get("id") or "?"
         if i in seen_ids:
             out.append("element id %s is defined twice" % i)
@@ -88,7 +153,16 @@ def problems(d: dict) -> list[str]:
             if lab in seen_labels:
                 out.append("label %r belongs to both %s and %s" % (lab, seen_labels[lab], i))
             seen_labels[lab] = i
-    for h in d.get("held_not_shown") or []:
+        src = e.get("source_file")
+        if src and root is not None:
+            if not os.path.isfile(os.path.join(root, src)):
+                out.append("element %s names source file %r, which the repo does not hold" % (i, src))
+            c = cls.get(e.get("class"))
+            site = c.get("public_site") if isinstance(c, dict) else None
+            if published is not None and site == "does not serve" and served(src, published):
+                out.append("element %s is class %s, which the public site does not serve, but %s publishes its file %s"
+                           % (i, e.get("class"), ALLOWLIST, src))
+    for h in dicts(d.get("held_not_shown") or [], "held_not_shown", out):
         i = h.get("id") or "?"
         if i in seen_ids:
             out.append("held item id %s repeats an element id" % i)
@@ -100,7 +174,7 @@ def problems(d: dict) -> list[str]:
         for f in ("name", "definition", "where", "outside_share"):
             if not h.get(f):
                 out.append("held item %s has no %s" % (i, f))
-    for j in d.get("join_keys") or []:
+    for j in join_keys:
         if j.get("other_class") not in CLASSES:
             out.append("join key %s has other_class %r, not one of the four" % (j.get("id"), j.get("other_class")))
         for f in ("name", "definition", "public_side", "other_side"):
@@ -128,9 +202,15 @@ def load_registry(root: str) -> dict | None:
 
 
 def evidence_ok(root: str, item: str) -> bool:
-    """A path that exists; path::text must also contain the text."""
+    """A path inside the repo that exists; path::text must also contain the text. A path that resolves outside the
+    root (an absolute path, ../, a link out) is never evidence."""
+    if not isinstance(item, str):
+        return False
     rel, _, text = item.partition("::")
-    path = os.path.join(root, rel)
+    top = os.path.realpath(root)
+    path = os.path.realpath(os.path.join(root, rel))
+    if not rel or os.path.isabs(rel) or not path.startswith(top + os.sep):
+        return False
     if not os.path.isfile(path):
         return os.path.isdir(path) and not text
     if not text:
@@ -139,14 +219,35 @@ def evidence_ok(root: str, item: str) -> bool:
         return text in f.read()
 
 
+def slugify(name: str) -> str:
+    """The Commons data tab's slugOf: accents dropped, lowercase, every run of other characters one hyphen."""
+    n = unicodedata.normalize("NFD", name or "")
+    n = "".join(ch for ch in n if not unicodedata.combining(ch))
+    return re.sub(r"[^a-z0-9]+", "-", n.lower()).strip("-")
+
+
+def crosswalk_slugs(root: str) -> set[str] | None:
+    """Every college's slug, from the newest committed identity crosswalk (the page's name: Calbright once)."""
+    base = os.path.join(root, CROSSWALK_DIR)
+    dated = sorted(x for x in (os.listdir(base) if os.path.isdir(base) else [])
+                   if re.fullmatch(r"\d{4}-\d{2}-\d{2}", x) and os.path.isfile(os.path.join(base, x, "crosswalk.json")))
+    if not dated:
+        return None
+    with open(os.path.join(base, dated[-1], "crosswalk.json"), encoding="utf-8") as f:
+        cw = json.load(f)
+    return {slugify(re.sub(r"\s+(Non-Credit|Credit)$", "", c.get("college_name") or "")) for c in cw.get("colleges") or []}
+
+
 def registry_problems(r: dict, d: dict, root: str) -> list[str]:
     out: list[str] = []
+    if not isinstance(r, dict):
+        return ["%s must be an object" % REGISTRY]
     if tuple((r.get("statuses") or {}).keys()) != INTEGRATION_STATUS:
         out.append("integration statuses must be exactly %s, in that order" % ", ".join(INTEGRATION_STATUS))
     roles = r.get("roles") or {}
-    agreements = {a.get("id") for a in d.get("agreements") or []}
+    agreements = {a.get("id") for a in d.get("agreements") or [] if isinstance(a, dict)}
     seen: set[str] = set()
-    for x in r.get("integrations") or []:
+    for x in dicts(r.get("integrations") or [], "integrations", out):
         i = x.get("id") or "?"
         if i in seen:
             out.append("integration %s is listed twice" % i)
@@ -168,14 +269,23 @@ def registry_problems(r: dict, d: dict, root: str) -> list[str]:
         if x.get("status") in ("live", "in progress") and not x.get("evidence"):
             out.append("integration %s is %s with no evidence in the repo" % (i, x.get("status")))
     per = r.get("per_college") or {}
-    ids = {x.get("id") for x in r.get("integrations") or [] if x.get("scope") == "per_college"}
-    for slug, rows in [("default", per.get("default") or [])] + list((per.get("colleges") or {}).items()):
-        for row in rows:
+    ids = {x.get("id") for x in r.get("integrations") or [] if isinstance(x, dict) and x.get("scope") == "per_college"}
+    named = per.get("colleges") or {}
+    if named:
+        slugs = crosswalk_slugs(root)
+        if slugs is None:
+            out.append("per_college names colleges, and no identity crosswalk under %s could be read to check them" % CROSSWALK_DIR)
+        else:
+            for slug in named:
+                if slug not in slugs:
+                    out.append("per-college rows name %r, which is no college's slug in the identity crosswalk" % slug)
+    for slug, rows in [("default", per.get("default") or [])] + list(named.items()):
+        for row in dicts(rows, "per-college rows for %s" % slug, out):
             if row.get("integration") not in ids:
                 out.append("per-college row %s names %r, which is no per-college integration" % (slug, row.get("integration")))
             if not row.get("state"):
                 out.append("per-college row %s for %s has no state" % (slug, row.get("integration")))
-    if {row.get("integration") for row in per.get("default") or []} != ids:
+    if {row.get("integration") for row in per.get("default") or [] if isinstance(row, dict)} != ids:
         out.append("per_college needs one default row for each per-college integration")
     return out
 
@@ -287,7 +397,8 @@ def markdown(b: dict) -> str:
     for h in b["held_not_shown"]:
         L.append("| %s | %s | %s | %s | %s | %s |" % (cell(h["name"]), cell(h["definition"]), cell(h["system_name"]),
                  C[h["class"]]["word"], cell(h["where"]), cell(h["outside_share"])))
-    L += ["", "## Where public meets not public", "",
+    L += ["", "## The join keys", "",
+          "Each key that joins a public record to another record, and the other record's class.", "",
           "| Join key | Definition | Public side | Other side | Other side's class | COMIS element |", "|---|---|---|---|---|---|"]
     for j in b["join_keys"]:
         L.append("| %s | %s | %s | %s | %s | %s |" % (cell(j["name"]), cell(j["definition"]), cell(j["public_side"]),
@@ -332,7 +443,11 @@ def main(argv=None) -> int:
     a = ap.parse_args(argv)
     d = load_source(a.root)
     reg = load_registry(a.root)
-    bad = problems(d) + (registry_problems(reg, d, a.root) if reg is not None else [])
+    bad = problems(d, a.root)
+    if reg is None:
+        bad.append("%s is missing; the integrations view and %s would go stale without it" % (REGISTRY, OUT_INTEGRATIONS))
+    else:
+        bad += registry_problems(reg, d if isinstance(d, dict) else {}, a.root)
     if bad:
         for p in bad:
             print("cdc sharing: %s" % p, file=sys.stderr)

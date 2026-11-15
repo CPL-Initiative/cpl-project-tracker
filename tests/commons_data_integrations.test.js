@@ -5,9 +5,10 @@
 // WHAT THIS GUARDS:
 //   (1) ⭐ the built file is current with the registry, and every agreement and every piece of evidence it names
 //       exists (the builder's --check);
-//   (2) ⭐ the starter set: live MAP custom-report API, COCI, C-ID and the COMIS Data Mart; proposed Chancellor's Office
-//       data lake APIs, COMIS awards by control number and CCCStart JST authorizations; per college, SIS and
-//       curriculum system APIs; four statuses exactly;
+//   (2) ⭐ the shape of the live hand-kept registry only: four statuses exactly, evidence wherever a status is live or
+//       in progress, every agreement resolves, the per-college integrations exist. Its values (which integration is
+//       live) move with the registry, so the views below draw a FIXTURE registry and a status change never fails a
+//       test with no code fault (p-test-reads-live-review-file-s649);
 //   (3) ⭐ people by role only: no name and no email in the registry or the module; an agreement shows status only;
 //   (4) ⭐ the view has its own address (#commons/data/integrations), opens from it, reports it, sits in the views'
 //       menu after Data elements and sharing, lists every integration by status, and each agreement opens the
@@ -40,17 +41,35 @@ catch (e) { built = "FAILED: " + (e.stderr || e.message); }
 check("(1) ⭐ kb/status/cdc_integrations.json is current, and every agreement and piece of evidence the registry names exists (" + built.trim().slice(-120) + ")",
   /(\d+) integrations/.test(built) && /\(current\)/.test(built));
 
-const BY = Object.fromEntries(REG.integrations.map((x) => [x.id, x]));
-check("(2) exactly four statuses, in order: live, in progress, proposed, not started", JSON.stringify(Object.keys(REG.statuses)) === JSON.stringify(["live", "in progress", "proposed", "not started"]));
-check("(2) ⭐ live: the MAP custom-report API (nightly), COCI, C-ID and the COMIS Data Mart",
-  ["map_custom_report_api", "coci", "cid", "comis_datamart"].every((k) => BY[k] && BY[k].status === "live") && BY.map_custom_report_api.cadence === "Nightly");
-check("(2) ⭐ proposed: the Chancellor's Office data lake and dataset APIs, COMIS awards by control number, CCCStart JST authorizations",
-  ["co_data_lake", "comis_awards", "cccstart_jst"].every((k) => BY[k] && BY[k].status === "proposed"));
-check("(2) per college: SIS APIs and curriculum system APIs", ["sis_api", "curriculum_system_api"].every((k) => BY[k] && BY[k].scope === "per_college"));
-check("(2) a live integration names its evidence in the repo", REG.integrations.filter((x) => x.status === "live").every((x) => x.evidence.length));
-check("(2) the drafted COMIS awards request is said to be unrecorded, never linked to a guess", BY.comis_awards.request === "" && /not recorded/.test(BY.comis_awards.note));
+const STATUSES = ["live", "in progress", "proposed", "not started"];
+check("(2) exactly four statuses, in order: live, in progress, proposed, not started", JSON.stringify(Object.keys(REG.statuses)) === JSON.stringify(STATUSES));
+check("(2) every integration carries one of the four statuses", REG.integrations.every((x) => STATUSES.indexOf(x.status) >= 0));
+check("(2) ⭐ an integration that is live or in progress names its evidence in the repo",
+  REG.integrations.filter((x) => x.status === "live" || x.status === "in progress").every((x) => (x.evidence || []).length));
 const AG = new Set(DICT.agreements.map((a) => a.id));
 check("(2) every agreement an integration needs is in the dictionary's agreements", REG.integrations.every((x) => !x.agreement || AG.has(x.agreement)));
+const PER = new Set(REG.integrations.filter((x) => x.scope === "per_college").map((x) => x.id));
+check("(2) every per-college default row names a per-college integration", (REG.per_college.default || []).every((r) => PER.has(r.integration)));
+
+/* A fixture registry, in the built file's shape: one integration at each status, one per-college pair. */
+const FIX = {
+  schema: 1, source: "kb/cdc_integrations.json", builder: "kb/_build_cdc_sharing.py", doc: "docs/reference/cdc_data_dictionary.md", updated: "2026-11-15",
+  statuses: { "live": "In use today.", "in progress": "Being built.", "proposed": "Asked for.", "not started": "Nothing asked for." },
+  roles: { a: "Role A", b: "Role B" },
+  integrations: [
+    { id: "fx_proposed", name: "Fixture data lake APIs", scope: "statewide", status: "proposed", cadence: "", replaces: "Saved snapshots.", owner: "b", owner_role: "Role B",
+      agreement: "co_data_lake", agreement_name: "Fixture data lake agreement", agreement_status: "might be needed", evidence: [], note: "" },
+    { id: "fx_live", name: "Fixture live feed", scope: "statewide", status: "live", cadence: "Nightly", replaces: "Hand exports.", owner: "a", owner_role: "Role A",
+      agreement: "", agreement_name: "", agreement_status: "", evidence: ["scripts/daily_build.sh"], note: "" },
+    { id: "fx_building", name: "Fixture feed being built", scope: "statewide", status: "in progress", cadence: "", replaces: "Asking by email.", owner: "a", owner_role: "Role A",
+      agreement: "", agreement_name: "", agreement_status: "", evidence: ["kb/_fetch_program_course_files.py"], note: "" },
+    { id: "sis_api", name: "Student information system (SIS) APIs", scope: "per_college", status: "not started", cadence: "", replaces: "Nothing recorded.", owner: "b", owner_role: "Role B",
+      agreement: "", agreement_name: "", agreement_status: "", evidence: [], note: "" },
+    { id: "curriculum_system_api", name: "Curriculum system APIs", scope: "per_college", status: "proposed", cadence: "", replaces: "Reading outlines by hand.", owner: "a", owner_role: "Role A",
+      agreement: "", agreement_name: "", agreement_status: "", evidence: [], note: "" }],
+  per_college: { default: [{ integration: "sis_api", state: "none known", note: "" }, { integration: "curriculum_system_api", state: "none known", note: "" }], colleges: {} },
+  counts: { "live": 1, "in progress": 1, "proposed": 2, "not started": 1 }
+};
 
 const NAMES = /\b(Pedro|Craig|Jory|Terrence|Willett|Malone|Ashley|Jessica|Sam)\b/;
 check("(3) ⭐ people by role only: no person's name in the registry, the built file or the module",
@@ -78,7 +97,7 @@ function dom(hash, files) {
 function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new Promise((r) => w.setTimeout(r, 0))); }
 
 (async function () {
-  const files = { "kb/status/commons_data.json": REAL, "kb/status/cdc_sharing.json": SHARING, "kb/status/cdc_integrations.json": BUILT };
+  const files = { "kb/status/commons_data.json": REAL, "kb/status/cdc_sharing.json": SHARING, "kb/status/cdc_integrations.json": FIX };
   const V = dom("#commons/data/integrations", files);
   const D = V.w.CPL_COMMONS_DATA;
   await D.boot(V.root, "integrations");
@@ -86,10 +105,10 @@ function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new
   check("(4) ⭐ #commons/data/integrations opens the view from its arrival, and the view names itself in its report",
     D.address() === "commons/data/integrations" && txt(V.root.querySelector("#cdd-h")) === "Integrations" && !!V.root.querySelector("#cdc-in-view"));
   const rows = [...V.root.querySelectorAll("#cdc-in-table tbody tr")];
-  check("(4) every integration is a row (" + rows.length + " of " + REG.integrations.length + ")", rows.length === REG.integrations.length);
+  check("(4) every integration is a row (" + rows.length + " of " + FIX.integrations.length + ")", rows.length === FIX.integrations.length);
   const order = ["live", "in progress", "proposed", "not started"];
   check("(4) the rows run live, in progress, proposed, not started", rows.every((r, i) => !i || order.indexOf(rows[i - 1].getAttribute("data-status")) <= order.indexOf(r.getAttribute("data-status"))));
-  check("(4) each row says what it would replace, and its owner by role", rows.every((r) => txt(r.querySelector('[data-label="Would replace"]')) && Object.values(REG.roles).indexOf(txt(r.querySelector('[data-label="Owner"]'))) >= 0));
+  check("(4) each row says what it would replace, and its owner by role", rows.every((r) => txt(r.querySelector('[data-label="Would replace"]')) && Object.values(FIX.roles).indexOf(txt(r.querySelector('[data-label="Owner"]'))) >= 0));
   check("(4) the counts line names every status", order.every((s) => new RegExp("\\d+ " + s).test(txt(V.root.querySelector("#cdc-in-sum")))));
   check("(4) every header cell has its scope, in a labeled region, laid out fixed by its column group",
     [...V.root.querySelectorAll("#cdc-in-table th")].every((th) => th.getAttribute("scope")) && V.root.querySelector("#cdc-in-table").parentNode.getAttribute("aria-label") === "Integrations" &&
@@ -98,8 +117,8 @@ function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new
   check("(4) the views' menu carries Integrations at its address, after Data elements and sharing",
     navs.indexOf("integrations") > navs.indexOf("sharing") && navs.indexOf("sharing") > 0 &&
     V.root.querySelector('nav.cdd-views a[data-goto="integrations"]').getAttribute("href") === "#commons/data/integrations");
-  const ag = V.root.querySelector('#cdc-in-table tr[data-integration="co_data_lake"] button.cdc-in-agree');
-  check("(4) an agreement shows its name and status only", ag && txt(ag) === "Chancellor's Office data lake and dataset APIs" && /Might be needed/.test(txt(ag.parentNode)));
+  const ag = V.root.querySelector('#cdc-in-table tr[data-integration="fx_proposed"] button.cdc-in-agree');
+  check("(4) an agreement shows its name and status only", ag && txt(ag) === "Fixture data lake agreement" && /Might be needed/.test(txt(ag.parentNode)));
   if (ag) ag.click();
   await flush(V.w);
   check("(4) ⭐ an agreement opens the agreements on Data elements and sharing", D.address() === "commons/data/sharing" && !!V.root.querySelector("#cdc-sw-agreements-table"));
