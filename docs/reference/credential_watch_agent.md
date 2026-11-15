@@ -1,7 +1,7 @@
 ---
 title: "The industry-credential watch agent"
 created: 2026-09-30
-updated: 2026-11-14
+updated: 2026-11-15
 tags: [reference, credential-registry, partner-crosswalks, watch-agent, routine]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -39,7 +39,7 @@ established. I don't want our nightly jobs to collide"*, then *"Go"*).** Step 10
 [`scheduled_sessions`](scheduled_sessions.md) runs this page once a UTC day, a slice of issuers a night, until its
 stopping rule moves it back to weekly. The Monday routine is disabled: section *Armed*.
 
-**The stopping rule's count (nights in a row under 25 added or changed):** 3 of 14 at 2026-11-14. 2026-11-11 added 25 and retired 1 (#3103), which resets it; 2026-11-12 changed none (#3141); 2026-11-13 added 1 and changed 1 (#3210); 2026-11-14 added 3. Each night's step 10 updates this line.
+**The stopping rule's count (nights in a row under 25 added or changed):** 4 of 14 at 2026-11-15. 2026-11-11 added 25 and retired 1 (#3103), which resets it; 2026-11-12 changed none (#3141); 2026-11-13 added 1 and changed 1 (#3210); 2026-11-14 added 3; 2026-11-15 changed 1. Each night's step 10 updates this line.
 
 ## What it keeps current
 
@@ -151,7 +151,7 @@ covers what only reading can.
 
 ## The network
 
-Still blocked on 2026-11-06 (S590, #2835): learn.snowflake.com (snowflake.com's certification page 404s), help.salesforce.com, trailheadacademy.salesforce.com and Meta's facebook.com Blueprint pages. Salesforce's 16 renames (2026-07-24) and 24 retirements (2027-02-01) wait on help.salesforce.com; Snowflake's rows stay unverified.
+Still blocked on 2026-11-06 (S590, #2835): learn.snowflake.com (snowflake.com's certification page 404s), help.salesforce.com, trailheadacademy.salesforce.com and Meta's facebook.com Blueprint pages. Salesforce's 16 renames (2026-07-24) and 24 retirements (2027-02-01) wait on help.salesforce.com; Snowflake's rows stay unverified. On 2026-11-15 www.snowflake.com answered 403 and learn.snowflake.com did not resolve; blog.google, academy.openai.com and cert.eccouncil.org did not resolve either.
 
 On 2026-09-30 the environment's network policy blocked the issuers' own pages,
 so the first build confirmed most rows from search results quoting them. Sam
