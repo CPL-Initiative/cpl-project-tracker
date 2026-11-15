@@ -3643,8 +3643,12 @@ def _printed(code):
     return "%s %s" % m.groups() if m else code
 
 
-with open(os.path.join(ROOT, "kb", "program_requirements_college", "riverside_city", "sources.json")) as _fh:
-    rcc_src = [s for s in json.load(_fh) if (s.get("source") or {}).get("url")]
+# The filed rows these checks read live in a committed fixture (S654; p-test-reads-live-review-file-s649), so a new
+# filing never moves them: tests/fixtures/ge_page_owner_assign_s654.json, measured 2026-11-15.
+with open(os.path.join(ROOT, "tests", "fixtures", "ge_page_owner_assign_s654.json")) as _fh:
+    GE_ASSIGN = {k: [{"control_number": cn, "title": t, "award": a, "source": {"url": u, "h1": h}, "codes_found": c}
+                     for cn, t, a, u, h, c in rows] for k, rows in json.load(_fh)["colleges"].items()}
+rcc_src = GE_ASSIGN["riverside_city"]
 rcc_pages, rcc_seen = [], set()
 for s in rcc_src:
     if s["source"]["url"] in rcc_seen:
@@ -3758,6 +3762,64 @@ check((C.ge_page_owner({"h1": "Development T038461G AA-T Cal-GETC 10 9-10 19-20"
                            _gp(("31018", "Business Administration", "A.S. T Degree"),
                                ("3", "Business Administration", "A.S. Degree"))) or {}).get("control_number") == "31018",
       "control: a heading printing its own program's control number still resolves, a cut window with no title too")
+# A control number in the district's own print (a campus letter, six digits, a letter) names its program with or
+# without title words, wherever the award sits; a bare five-digit run only beside title words that agree with the
+# program's title one way, so a wordless heading or a blank-titled program refuses it (COBIx 6887933755; the S654
+# second reader's self-recall).
+check(C.ge_page_owner({"h1": "LACCD 92506 Cal-GETC"}, _gp(("92506", "Nursing", "A.S. Degree"))) is None
+      and C.ge_page_owner({"h1": "92506 Cal-GETC (34 units)"}, _gp(("92506", "Nursing", "A.S. Degree"))) is None,
+      "control: a bare number in a heading with no title words names no program")
+check(C.ge_page_owner({"h1": "Kinesiology 32948 AA-T Cal-GETC"}, _gp(("32948", "", "A.A- T Degree"))) is None
+      and C.ge_page_owner({"h1": "32948 AA-T Cal-GETC"}, _gp(("32948", None, "A.A- T Degree"))) is None,
+      "control: a listed program with a blank title is never named by a bare number")
+check((C.ge_page_owner({"h1": "T031018H AS-T Cal-GETC 25 - 25"},
+                       _gp(("31018", "Early Childhood Education", "A.S. T Degree"))) or {}).get("control_number") == "31018"
+      and (C.ge_page_owner({"h1": "T039546G AAT Cal-GETC 18-19 - 18-19"},
+                           _gp(("39546", "Social Justice Studies - Gender Studies", "A.A- T Degree"))) or {})
+      .get("control_number") == "39546"
+      and (C.ge_page_owner({"h1": "AA-T V032851G Cal-GETC"}, _gp(("32851", "Geography", "A.A- T Degree"))) or {})
+      .get("control_number") == "32851"
+      and (C.ge_page_owner({"h1": "T042296D C 8.5 - 8.5"}, _gp(("42296", "Welding", "Certificate of Achievement"))) or {})
+      .get("control_number") == "42296",
+      "control: a district-print number names its program in a heading with no title words, the award before or after")
+# LA Mission's "ASSOCIATE OF ARTS (AA) Accounting (M003340C)" refused under the cut-window rule: ge_identity reads a
+# heading's title words before its award, and this heading begins with the award, so it read as wordless.
+check((C.ge_page_owner({"h1": "ASSOCIATE OF ARTS (AA) Accounting (M003340C)"},
+                       _gp(("03340", "Accounting", "A.A. Degree"), ("03341", "Accounting", "Certificate of Achievement")))
+       or {}).get("control_number") == "03340",
+      "control: a heading that leads with its award names the program its district-print number prints")
+check((C.ge_page_owner({"h1": "Kinesiology T032948G AA-T Cal-GETC"}, _gp(("32948", "", "A.A- T Degree"))) or {})
+      .get("control_number") == "32948", "control: a district-print number names its program though the title is blank")
+# The three cut windows on 38461 (Child and Adolescent Development) each print T038461G, the district's own number for
+# the program: the number names it, so each owns 38461. The words beside it are a PDF window's cut ("Development"), an
+# abbreviation ("Child Dev") or a fragment ("elopment"), and the number is what identifies the page.
+_cad = _gp(("38461", "Child and Adolescent Development", "A.A- T Degree"), ("38462", "Child Development", "A.S. Degree"))
+check(all((C.ge_page_owner({"h1": h + " T038461G AA-T Cal-GETC 10 9-10 19-20"}, _cad) or {}).get("control_number")
+          == "38461" for h in ("Development", "Child Dev", "elopment")),
+      "control: each of three cut windows printing T038461G owns 38461, whatever fragment of the title it prints")
+
+# The self-recall (S654): every filed heading that prints exactly one listed program's control number, with the program
+# that number identifies (tests/fixtures/ge_control_recall_s654.json, measured 2026-11-15). The expected owner comes
+# from the printed number, never from the title logic. Every district-print heading names its program and no heading
+# names a wrong one; a bare number beside label words ("STATE CODE 02808", "Control Number: 11909") refuses by rule.
+with open(os.path.join(ROOT, "tests", "fixtures", "ge_control_recall_s654.json")) as _fh:
+    GE_RECALL = json.load(_fh)["colleges"]
+_rc = {"district": [0, 0, 0], "bare": [0, 0, 0]}   # right, none, wrong
+_rc_wrong = []
+for _slug, _c in sorted(GE_RECALL.items()):
+    _progs = _gp(*_c["programs"])
+    for _h, _want in _c["headings"]:
+        _kind = "district" if C.DISTRICT_CONTROL.search(C.GE_PATTERN.sub(" ", _h)) else "bare"
+        _got = (C.ge_page_owner({"h1": _h}, _progs) or {}).get("control_number")
+        _rc[_kind][0 if _got == _want else (1 if _got is None else 2)] += 1
+        if _got not in (None, _want):
+            _rc_wrong.append((_slug, _h[:50], _want, _got))
+print("report: self-recall over %d filed headings printing a control number: district print %d right, %d none; "
+      "bare %d right, %d none; %d wrong" % (sum(map(sum, _rc.values())), _rc["district"][0], _rc["district"][1],
+                                             _rc["bare"][0], _rc["bare"][1], len(_rc_wrong)))
+check(_rc["district"] == [589, 0, 0] and _rc["bare"][2] == 0 and sum(_rc["bare"]) == 250 and not _rc_wrong,
+      "self-recall: all 589 district-print headings name their program and none of the 839 names a wrong one: %r %r"
+      % (_rc, _rc_wrong[:3]))
 check(C.ge_pattern("California General Education Transfer Curriculum")
       and C.ge_pattern("Intersegmental General Education Transfer Curriculum")
       and C.ge_pattern("Intersegmental GE Transfer Curriculum")
@@ -3876,8 +3938,7 @@ print("report: live filed claims on a pattern's page: %d allowed, %d refused (fi
 check({("moreno_valley", "30150"), ("riverside_city", "30578"), ("riverside_city", "32692"),
        ("riverside_city", "32745"), ("riverside_city", "33829")} <= ge_refuse,
       "the five wrong filed claims (30150 and the four 2.0 pages' plain siblings) are refused")
-mv_rs = [s for s in json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "moreno_valley", "sources.json")))
-         if (s.get("source") or {}).get("url")]
+mv_rs = GE_ASSIGN["moreno_valley"]
 mv_pages = {}
 for s in mv_rs:
     mv_pages.setdefault(s["source"]["url"], (s["source"]["h1"], set()))[1].update(s["codes_found"])

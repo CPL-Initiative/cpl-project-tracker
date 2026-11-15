@@ -45,7 +45,9 @@ for kept in ("https://catalog.skylinecollege.edu/current/_data/programs-SKYLINE.
              "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=39975"):
     check(not C.NOT_PROGRAM_PATH.search(urllib.parse.urlparse(kept).path),
           "an underscore folder that is no fragment stays: %s" % kept)
-for gone in ("/programs/_program-headers/english.xml", "/x/_includes/nav.html", "/x/_partials/program/", "/_header/a.php"):
+for gone in ("/programs/_program-headers/english.xml", "/x/_includes/nav.html", "/x/_partials/program/", "/_header/a.php",
+             # the keyword before the end of the folder's name (COBIx 6888023433, S654)
+             "/_header-files/a.php", "/_partials-v2/x/", "/_includes_old/n.html"):
     check(bool(C.FRAGMENT_PATH.search(gone)) and bool(C.NOT_PROGRAM_PATH.search(gone)),
           "a fragment folder is turned away: %s" % gone)
 
