@@ -1,13 +1,13 @@
 {
  "_about": "Dry run of the honors_of rows and base-plus-H mints. Nothing applied. Design: docs/reference/honors_of_design.md.",
- "written": "2026-11-15T04:15:33Z",
+ "written": "2026-11-15T06:44:20Z",
  "date": "2026-11-15",
  "cohort": "honors-s653@bot",
  "cohort_rows": "honors-rows-s653@bot",
  "alias_era": "kb/anchor_rekey_out/2026-11-08/alias_map.json",
  "reproduction": {
   "committed": {
-   "members_generated_at": "2026-11-14 20:25",
+   "members_generated_at": "2026-11-15 06:19",
    "pairs": 527,
    "course_rows": 1140
   },
@@ -5464,7 +5464,7 @@
     "the base holds more than one title group",
     "a college gives the base two course numbers: Moorpark College",
     "the sequence marks differ across the base and the Honors side",
-    "the base's courses carry 2 subjects: BIO, BTE"
+    "the base's courses carry 3 subjects: BIO, BIOT, BTE"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -5511,7 +5511,7 @@
     "the base holds more than one title group",
     "a college gives the base two course numbers: Moorpark College",
     "the sequence marks differ across the base and the Honors side",
-    "the base's courses carry 2 subjects: BIO, BTE"
+    "the base's courses carry 3 subjects: BIO, BIOT, BTE"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -6098,7 +6098,7 @@
     "the base holds more than one title group",
     "a college gives the base two course numbers: Berkeley City College, Cabrillo College, Cañada College",
     "the sequence marks differ across the base and the Honors side",
-    "the base's courses carry 4 subjects: BIO, BOT, BTN, ZOO"
+    "the base's courses carry 5 subjects: BIO, BIOT, BOT, BTN"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -8704,7 +8704,7 @@
     "the base holds more than one title group",
     "a college gives the base two course numbers: Antelope Valley College, Cañada College, Citrus College",
     "the sequence marks differ across the base and the Honors side",
-    "the base's courses carry 18 subjects: CIS, CIT, CMP, COM"
+    "the base's courses carry 19 subjects: CIS, CIT, CMP, CMPT"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -8751,7 +8751,7 @@
     "the base holds more than one title group",
     "a college gives the base two course numbers: Cabrillo College, Cañada College, City College of San Francisco",
     "the sequence marks differ across the base and the Honors side",
-    "the base's courses carry 10 subjects: CIS, CIT, CMP, COM"
+    "the base's courses carry 11 subjects: CIS, CIT, CMP, CMPT"
    ],
    "report_lump": [],
    "action": "row only (official base)"
@@ -22712,7 +22712,7 @@
     "a college gives the base two course numbers: Citrus College, Copper Mountain College, Glendale Community College",
     "the sequence marks differ across the base and the Honors side",
     "the Honors id holds more than one Honors title group",
-    "the base's courses carry 15 subjects: A, ART, BI, BIO"
+    "the base's courses carry 16 subjects: A, ART, BI, BIO"
    ],
    "report_lump": [
     "the base holds more than one course: 5 of two or more local courses each, directed research seminar (11); undergraduate research experience (8); independent research in biology (2); introduction to independent research in physics (2)",
@@ -22847,7 +22847,7 @@
     "the base holds more than one title group",
     "a college gives the base two course numbers: De Anza College",
     "the sequence marks differ across the base and the Honors side",
-    "the base's courses carry 7 subjects: CIS, CIT, COM, CPS"
+    "the base's courses carry 7 subjects: CIS, CIT, CMPT, CPS"
    ],
    "report_lump": [],
    "action": "row, mint held"
@@ -22887,11 +22887,11 @@
    ],
    "holds": [],
    "no_mint": [
-    "the base is a split candidate (the base's courses carry 4 subjects: AOM, CBO, CIS, COM): the mint waits for the split"
+    "the base is a split candidate (the base's courses carry 4 subjects: AOM, CBO, CIS, CMPT): the mint waits for the split"
    ],
    "notes": [],
    "split_candidate": [
-    "the base's courses carry 4 subjects: AOM, CBO, CIS, COM"
+    "the base's courses carry 4 subjects: AOM, CBO, CIS, CMPT"
    ],
    "report_lump": [],
    "action": "row, mint held"

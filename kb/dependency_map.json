@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 997,
+  "file_datasets": 998,
   "external_services": 195,
   "consumers": 599,
   "workflows": 72,
@@ -17854,7 +17854,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 377
+     "line": 388
     },
     {
      "id": "script:kb/_reclustering_s648_dryrun.py",
@@ -25842,6 +25842,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/honors_subject_reading_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/ib_official_titles_test.py": {
    "consumers": [
     {
@@ -27813,7 +27826,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 722
+     "line": 733
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27897,7 +27910,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 722
+     "line": 733
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -28068,7 +28081,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 722
+     "line": 733
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -34601,6 +34614,7 @@
     "tests/browser_install_single_source_test.py",
     "tests/honors_of_test.py",
     "tests/honors_of_rows_check_test.py",
+    "tests/honors_subject_reading_test.py",
     "kb/credential_aliases.py",
     "tests/credential_title_resolver_test.py",
     "tests/credential_title_resolver_single_source_test.py",

@@ -88,17 +88,20 @@ def subject_untouched(code, base_code):
     return lead(code) == lead(base_code)
 
 
-def honors_subject(code):
-    """The subject carries the H as an Honors marker the college uses on other subjects too: today only Victor Valley's
-    form (CHEMH 206). An H-ending subject that names a discipline of its own (ARTH, PSYCH, MATH, ENGLISH, HEALTH) is
-    not one."""
+def honors_subject(code, college=None):
+    """The subject carries the H as an Honors marker at this college: today only Victor Valley's form (CHEMH 206,
+    HISTH 3B). An H-ending subject that names a discipline of its own (ARTH, PSYCH, MATH, ENGLISH, HEALTH) is not one,
+    and the same letters at another college are that college's own subject."""
     subj = re.split(r"\s+", (code or "").upper().strip(), maxsplit=1)[0]
-    return subj in HONORS_SUBJECTS
+    return subj in HONORS_SUBJECTS.get(college, ())
 
 
-# Subjects whose trailing H is the Honors marker, read by hand from unified_courses_members.js (2026-11-15): Victor
-# Valley's CHEMH, BIOLH and their kin. Every other H-ending subject names a discipline.
-HONORS_SUBJECTS = frozenset({"CHEMH"})
+# Subjects whose trailing H is the Honors marker, by college, read from unified_courses_members.js on the 2026-11-15
+# 06:19 payload (S655, COBIx's finding 2 on #3315): every course with an Honors word whose subject is another subject
+# plus H at its own college. Two, both Victor Valley's: CHEMH 206 (beside CHEM 206) and HISTH 3B (no HIST 3B filed
+# today). The other H-ending subjects on an Honors-word course (ANTH, MATH, ARTH, ARCH, ERTH, ETH, HLTH, PSYCH, AH,
+# SPCH, HEALTH, PUBH) each name a discipline.
+HONORS_SUBJECTS = {"Victor Valley College": frozenset({"CHEMH", "HISTH"})}
 
 
 def anchor_kind(hrow, brow, college_keys=frozenset(), drop=()):
@@ -112,7 +115,7 @@ def anchor_kind(hrow, brow, college_keys=frozenset(), drop=()):
         hb = hb or hrow["code"]
     if not hb or number_key(hb, drop) != number_key(brow["code"], drop):
         return None
-    if "subject_marker" not in drop and not subject_untouched(hrow["code"], hb) and not honors_subject(hrow["code"]):
+    if "subject_marker" not in drop and not subject_untouched(hrow["code"], hb) and not honors_subject(hrow["code"], hrow["college"]):
         # An H that ends the subject is a marker only where the subject is the base's plus H (Victor Valley's CHEMH
         # 206 beside CHEM 206); ARTH beside ART, PSYCH beside PSYC, MATH beside MAT are two subjects, Honors word or
         # not (COBIx on #3315, 03:26Z).

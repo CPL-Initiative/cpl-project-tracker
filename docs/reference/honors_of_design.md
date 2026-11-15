@@ -226,6 +226,11 @@ the rewiring (`sam-mids-are-ours-trial-and-error-2026-11-14`, `sam-mid-care-goes
   differs from no mark), the Honors side's title groups and the base's subjects (MATH, BIOL and LIB are three) flag a
   base as a **split candidate** for the re-clustering lane, and the flag waits its mint only. A row on an impure base
   is the base's own impurity, and its anchors say where the row goes when the base is split.
+- **A subject is read by its first three letters**, except where those letters join two disciplines:
+  `SUBJECT_FAMILY_APART` reads ENGR, COMP and BIOT (and their long forms) apart from ENGL, COMM and BIOL (COBIx's
+  finding 1, S655). **An H ending the subject is the Honors marker** only for the subjects `HONORS_SUBJECTS` lists by
+  college: Victor Valley's CHEMH and HISTH, every such subject on the 2026-11-15 payload (finding 2). Both are pinned
+  by `tests/honors_subject_reading_test.py`.
 - **Every row carries its anchors** (college, both codes, both titles) in `plan.json` and `plan.md`, and the class
   digest covers them.
 - **The apply-day re-measure and its receipt.** `--check` reads the newest plan folder (or `--date`), re-measures on
@@ -237,7 +242,9 @@ the rewiring (`sam-mids-are-ours-trial-and-error-2026-11-14`, `sam-mid-care-goes
   header refuses, and the runner keeps a list of files that must carry a receipt (the rows SQL first), so deleting
   the header line never skips the gate.
 
-**The plan today** (committed `unified_courses_members.js`, generated 2026-11-14 20:25; local courses): 590 anchors on
+**The plan today** (committed `unified_courses_members.js`, generated 2026-11-15 06:19, the daily run `e0573f42`;
+redrawn S655 and identical to the 2026-11-14 20:25 plan in every pair, class, anchor and both digests; the two subject
+readings moved only the split-flag text of 8 pairs; local courses): 590 anchors on
 M-ID Honors courses and 3 doubtful. 519 pair records: 129 row and mint, 179 row with the mint held (176 on a split
 candidate), 74 row only on an official base, 40 held, 97 none. Waiting the mint on split candidates moved 157 mints;
 the rows and their digest are unchanged. Held by first reason: 27 anchors split, 8 an official base holding a CCN-coded

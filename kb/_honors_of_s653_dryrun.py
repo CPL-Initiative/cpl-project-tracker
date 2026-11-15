@@ -359,10 +359,21 @@ def split_flags(w, h, b):
 
 def subject_family(code):
     """A code's subject read loosely: its letters before the number, the first three (ENGL, ENG and ENGLISH are one;
-    MATH, BIOL and LIB are three). A cross-listing (HIST 128 beside BIOL 128) reads as two, which only waits a mint."""
+    MATH, BIOL and LIB are three). A cross-listing (HIST 128 beside BIOL 128) reads as two, which only waits a mint.
+    Three letters join some disciplines, so a subject named in SUBJECT_FAMILY_APART reads as its own family first
+    (COBIx's finding 1 on #3315: ENGR beside ENGL, COMP beside COMM, BIOT beside BIOL)."""
     lead = re.split(r"\d", (code or "").upper(), maxsplit=1)[0]
     lead = re.sub(r"\(.*?\)", "", lead)
-    return re.sub(r"[^A-Z]", "", lead)[:3]
+    word = re.sub(r"[^A-Z]", "", re.split(r"\s", lead.strip(), maxsplit=1)[0])
+    return SUBJECT_FAMILY_APART.get(word) or re.sub(r"[^A-Z]", "", lead)[:3]
+
+
+# The subjects whose first three letters match another discipline's, read from unified_courses_members.js on the
+# 2026-11-15 06:19 payload (S655): engineering under ENG, computing under COM, biotechnology under BIO. The match is
+# on the subject word alone, so a campus letter after it (ENGR B10, Bakersfield's COMP B12) leaves it apart. COMS stays with COM: most
+# colleges file Communication Studies under it.
+SUBJECT_FAMILY_APART = {"ENGR": "ENGR", "ENGIN": "ENGR", "COMP": "CMPT", "COMPSCI": "CMPT", "COMSC": "CMPT",
+                        "COMSCI": "CMPT", "BIOT": "BIOT", "BIOTECH": "BIOT"}
 
 
 def plan_pairs(w, rows, out_dir, live_cur, second):
